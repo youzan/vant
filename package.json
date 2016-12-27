@@ -1,0 +1,62 @@
+{
+  "name": "oxygen",
+  "version": "0.0.1",
+  "description": "有赞vue wap组件库",
+  "main": "lib/oxygen.common.js",
+  "style": "lib/style.css",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
+  "scripts": {
+    "dev": "npm run bootstrap && npm run build:entry",
+    "bootstrap": "npm i",
+    "dist": "npm run clean && npm run build:entry",
+    "deploy": "npm run build:entry",
+    "build:entry": "node build/bin/build-entry",
+    "pub": "sh build/release.sh",
+    "pub:all": "node build/bin/build-all.js && lerna publish",
+    "clean": "rimraf lib && rimraf packages/*/lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.qima-inc.com:fe/oxygen.git"
+  },
+  "keywords": [
+    "youzan",
+    "vue"
+  ],
+  "author": "youzanfe",
+  "license": "ISC",
+  "dependencies": {
+    "array-find-index": "^1.0.2",
+    "raf.js": "0.0.4",
+    "wind-dom": "0.0.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "fastclick": "^1.0.6",
+    "file-loader": "^0.9.0",
+    "gh-pages": "^0.11.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
+    "json-templater": "^1.0.4",
+    "lerna": "2.0.0-beta.31",
+    "my-local-ip": "^1.0.0",
+    "postcss": "^5.2.0",
+    "postcss-loader": "^0.13.0",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "uppercamelcase": "^1.1.0",
+    "url-loader": "^0.5.7",
+    "vue": "^2.1.7",
+    "vue-loader": "^9.5.3",
+    "vue-router": "^2.0.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-shell-plugin": "^0.4.3"
+  }
+}

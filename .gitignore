@@ -1,0 +1,10 @@
+*.log*
+.cache
+.DS_Store
+.idea
+packages/**/lib
+lib/*
+!lib/index.js
+!lib/style.css
+node_modules
+example/dist
