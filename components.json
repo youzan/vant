@@ -1,3 +1,5 @@
 {
-  "sample": "./packages/sample/index.js"
+  "sample": "./packages/sample/index.js",
+  "test": "./packages/test/index.js",
+  "test2": "./packages/test2/index.js"
 }
