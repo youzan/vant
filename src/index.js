@@ -4,7 +4,6 @@ const install = function(Vue) {
   if (install.installed) return;
 
   Vue.component(Sample.name, Sample);
-
 };
 
 // auto install

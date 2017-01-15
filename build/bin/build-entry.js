@@ -13,7 +13,6 @@ const install = function(Vue) {
   if (install.installed) return;
 
 {{install}}
-
 };
 
 // auto install

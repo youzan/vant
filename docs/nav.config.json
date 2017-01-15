@@ -1,0 +1,18 @@
+{
+  "zh-CN": [
+    {
+      "name": "基础组件",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "path": "/sample",
+              "title": "Sample组件"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
