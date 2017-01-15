@@ -21,7 +21,7 @@ gulp.task('copy', function(callback) {
 
   exec('cd packages && git clone git@gitlab.qima-inc.com:fe/vue-seed.git ' + name, function(err, stdout, stderr) {
     gutil.log('-------> 拉取 vue-seed');
-    exec('rm -rf ./' + name + '/.git', function(err, stdout, stderr) {
+    exec('rm -rf ./packages/' + name + '/.git', function(err, stdout, stderr) {
       gutil.log('-------> ' + name + '组件初始化成功');
       callback();
     });
