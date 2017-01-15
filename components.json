@@ -1,3 +1,6 @@
 {
-  "cell": "./packages/cell/index.js"
+  "sample": "./packages/sample/index.js",
+  "pangxie": "./packages/pangxie/index.js",
+  "pangxie1": "./packages/pangxie1/index.js",
+  "pangxie2": "./packages/pangxie2/index.js"
 }

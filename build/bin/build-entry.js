@@ -8,21 +8,12 @@ var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  Vue.component({{name}}.name, {{name}});';
 var MAIN_TEMPLATE = `{{include}}
-import '../src/assets/font/iconfont.css';
 
 const install = function(Vue) {
   if (install.installed) return;
 
 {{install}}
-  Vue.use(InfiniteScroll);
-  Vue.use(Lazyload, {
-    loading: require('./assets/loading-spin.svg'),
-    try: 3
-  });
 
-  Vue.$messagebox = Vue.prototype.$messagebox = MessageBox;
-  Vue.$toast = Vue.prototype.$toast = Toast;
-  Vue.$indicator = Vue.prototype.$indicator = Indicator;
 };
 
 // auto install

@@ -2,6 +2,7 @@
 .cache
 .DS_Store
 .idea
+.vscode
 packages/**/lib
 lib/*
 !lib/index.js
