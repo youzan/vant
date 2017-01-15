@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/your-component-name",
+  "version": "0.0.1",
+  "description": "vue component",
+  "main": "./lib/index.js",
+  "author": "who r u",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
