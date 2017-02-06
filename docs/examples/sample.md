@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      author: 'test'
+      author: 'pangxie'
     };
   }
 };
@@ -16,7 +16,7 @@ author设置为test
 
 :::demo 样例代码
 ```html
-<sample author="author"></sample>
+<sample :author="author"></sample>
 ```
 :::
 

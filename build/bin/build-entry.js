@@ -8,6 +8,14 @@ var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  Vue.component({{name}}.name, {{name}});';
 var MAIN_TEMPLATE = `{{include}}
+import 'es6-promise/auto';
+import axios from 'axios';
+import foreach from 'lodash/foreach';
+import filter from 'lodash/filter';
+import find from 'lodash/find';
+import map from 'lodash/map';
+// zenui
+import '../packages/zenui/src/index.pcss';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -23,6 +31,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 module.exports = {
   install,
   version: '{{version}}',
+  axios,
+  _: {
+    foreach,
+    filter,
+    find,
+    map
+  },
 {{list}}
 };
 `;

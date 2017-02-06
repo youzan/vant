@@ -12,24 +12,30 @@ Vue.use(VueRouter);
 Vue.component('demo-block', demoBlock);
 Vue.component('side-nav', SideNav);
 
-// init components
-// for (let i in Oxygen) {
-//   let module = Oxygen[i];
-//   if (!module.ignoreInit) {
-//     Vue.component(module.name, module);
-//   }
-// }
-
 const router = new VueRouter({
   mode: 'hash',
   base: __dirname,
   routes
 });
 
-// router.beforeEach(function(transition) {
-//   window.scrollTo(0, 0);
-//   transition.next();
-// });
+let indexScrollTop = 0;
+router.beforeEach((route, redirect, next) => {
+  if (route.path !== '/') {
+    indexScrollTop = document.body.scrollTop;
+  }
+  document.title = route.meta.title || document.title;
+  next();
+});
+
+router.afterEach(route => {
+  if (route.path !== '/') {
+    document.body.scrollTop = 0;
+  } else {
+    Vue.nextTick(() => {
+      document.body.scrollTop = indexScrollTop;
+    });
+  }
+});
 
 new Vue({ // eslint-disable-line
   render: h => h(App),

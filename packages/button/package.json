@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/o2-button",
+  "version": "0.0.1",
+  "description": "button component",
+  "main": "./lib/index.js",
+  "author": "niunai",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

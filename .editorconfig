@@ -16,5 +16,8 @@ indent_size = 2
 [*.vue]
 indent_size = 2
 
-[*.scss]
-indent_size = 4
+[*.pcss]
+indent_size = 2
+
+[Makefile]
+indent_style = tab

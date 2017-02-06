@@ -9,6 +9,10 @@
             {
               "path": "/sample",
               "title": "Sample组件"
+            },
+            {
+              "path": "/button",
+              "title": "Button组件"
             }
           ]
         }
