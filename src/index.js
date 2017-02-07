@@ -1,5 +1,6 @@
 import Sample from '../packages/sample/index.js';
 import Button from '../packages/button/index.js';
+import Switch from '../packages/switch/index.js';
 import 'es6-promise/auto';
 import axios from 'axios';
 import foreach from 'lodash/foreach';
@@ -14,6 +15,7 @@ const install = function(Vue) {
 
   Vue.component(Sample.name, Sample);
   Vue.component(Button.name, Button);
+  Vue.component(Switch.name, Switch);
 };
 
 // auto install
@@ -32,5 +34,6 @@ module.exports = {
     map
   },
   Sample,
-  Button
+  Button,
+  Switch
 };

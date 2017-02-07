@@ -13,6 +13,10 @@
             {
               "path": "/button",
               "title": "Button组件"
+            },
+            {
+              "path": "/switch",
+              "title": "Switch组件"
             }
           ]
         }

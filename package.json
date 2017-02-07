@@ -100,6 +100,7 @@
     "prismjs": "^1.5.1",
     "rimraf": "^2.5.4",
     "run-sequence": "^1.2.2",
+    "saladcss-bem":"^0.0.1",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1",
     "theaterjs": "^3.0.0",

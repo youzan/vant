@@ -1,0 +1,48 @@
+
+@component-namespace o2{
+  @component switch { 
+    height: 29px;
+    width: 49px;
+    display: inline-block;
+    border-radius: 16px;
+    position: relative;
+    border: 1px solid;
+
+    @descendent node {
+      width: 27px;
+      height: 27px;
+      border-radius: 100%;
+      background-color: #fff;
+      border: .5px solid rgba(0, 0, 0, .1);
+      position: absolute;
+      box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+      @when on {
+        left: 0;
+      }
+
+      @when off {
+        right: 0;
+      }
+
+    }
+
+    @when on {
+      background-color: #44db5e;
+      border-color: #44db5e;
+    }
+
+    @when off {
+      background-color: #fff;
+      border-color: rgba(0, 0, 0, .1);
+    }
+
+    @when loading {
+        /* TODO */
+    }
+
+    @when disabled {
+      background-color: #f2f2f2;
+      border-color: rgba(0, 0, 0, .1);
+    }
+  }
+}

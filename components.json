@@ -1,4 +1,5 @@
 {
   "sample": "./packages/sample/index.js",
-  "button": "./packages/button/index.js"
+  "button": "./packages/button/index.js",
+  "switch": "./packages/switch/index.js"
 }
