@@ -57,13 +57,6 @@ export default {
     toggleState: function() {
       if (this.disabled || this.loading) return;
       this.onChange(!this.checked);
-    },
-
-    /*
-     *
-     */
-    getState: function() {
-      return this.checked;
     }
   }
 };
