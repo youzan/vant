@@ -1,6 +1,6 @@
-import Sample from '../packages/sample/index.js';
-import Button from '../packages/button/index.js';
-import Switch from '../packages/switch/index.js';
+import Sample from '../packages/sample';
+import Button from '../packages/button';
+import Switch from '../packages/switch';
 // zenui
 import '../packages/zenui/src/index.pcss';
 
