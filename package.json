@@ -112,7 +112,7 @@
     "vue-markdown-loader": "^0.6.1",
     "vue-router": "^2.0.0",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.1.10",
+    "vue-template-compiler": "^2.1.8",
     "vue-template-es2015-compiler": "^1.4.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.16.0",
