@@ -24,18 +24,16 @@
   },
   "keywords": [
     "youzan",
-    "vue"
+    "vue",
+    "component"
   ],
   "author": "youzanfe",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.15.3",
-    "es6-promise": "4.0.5",
-    "lodash": "4.17.4",
-    "raf.js": "0.0.4",
-    "vue": "2.1.8",
-    "vue-template-compiler": "2.1.8",
-    "vuex": "2.1.1"
+    "raf.js": "0.0.4"
+  },
+  "peerDependencies": {
+    "vue": "^2.1.8"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
@@ -100,7 +98,7 @@
     "prismjs": "^1.5.1",
     "rimraf": "^2.5.4",
     "run-sequence": "^1.2.2",
-    "saladcss-bem":"^0.0.1",
+    "saladcss-bem": "^0.0.1",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.1",
     "theaterjs": "^3.0.0",
@@ -114,7 +112,7 @@
     "vue-markdown-loader": "^0.6.1",
     "vue-router": "^2.0.0",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.1.8",
+    "vue-template-compiler": "^2.1.10",
     "vue-template-es2015-compiler": "^1.4.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.16.0",
