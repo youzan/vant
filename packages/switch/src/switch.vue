@@ -1,7 +1,7 @@
 <template>
-<div class="o2-switch" :class="['is-' + switchState]" @click="toggleState">
-  <div class="o2-switch-node"></div>
-</div>
+  <div class="o2-switch" :class="['is-' + switchState]" @click="toggleState">
+    <div class="o2-switch-node"></div>
+  </div>
 </template>
 
 <script>
@@ -17,8 +17,7 @@
  * @example
  * <o2-switch checked="true" disabled="false"></o2-switch>
  */
-export default 
-{
+export default {
   name: 'o2-switch',
   props: {
     checked: {
@@ -41,13 +40,13 @@ export default
   computed: {
     switchState: function() {
       if (this.disabled) {
-          return 'disabled';
+        return 'disabled';
       } else if (this.loading) {
-          return 'loading';
+        return 'loading';
       } else if (this.checked) {
-          return 'on';
+        return 'on';
       } else {
-          return 'off';
+        return 'off';
       }
     }
   },
@@ -56,12 +55,12 @@ export default
      * 开关状态交互。
      */
     toggleState: function() {
-      if(this.disabled || this.loading) return;
+      if (this.disabled || this.loading) return;
       this.onChange(!this.checked);
     },
 
     /*
-     * 
+     *
      */
     getState: function() {
       return this.checked;
