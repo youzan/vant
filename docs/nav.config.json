@@ -13,10 +13,27 @@
             {
               "path": "/button",
               "title": "Button组件"
-            },
+            }
+          ]
+        },
+        {
+          "groupName": "Form",
+          "list": [
             {
               "path": "/switch",
               "title": "Switch组件"
+            },
+            {
+              "path": "/field",
+              "title": "Field组件"
+            },
+            {
+              "path": "/radio",
+              "title": "Radio组件"
+            },
+            {
+              "path": "/checkbox",
+              "title": "Checkbox组件"
             }
           ]
         }
