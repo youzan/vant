@@ -1,10 +1,21 @@
+<style>
+.cell-groups {
+  padding-left: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+</style>
+
 ## Cell 组件
 
 ### 基础用法
 
 :::demo 样例代码
 ```html
-<o2-cell title="单元格" value="单元格标题"></o2-cell>
+<div class="cell-groups">
+  <o2-cell title="单元格1" value="单元格1内容"></o2-cell>
+  <o2-cell title="单元格2" value="单元格2内容"></o2-cell>
+</div>
 ```
 :::
 

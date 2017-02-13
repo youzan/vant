@@ -12,8 +12,8 @@
       <slot>
         <span v-text="value"></span>
       </slot>
-      <i class="o2-cell-arrow-right" v-if="isLink"></i>
     </div>
+    <i class="o2-cell-arrow-right" v-if="isLink"></i>
   </a>
 </template>
 
@@ -35,6 +35,17 @@ export default {
 @component-namespace o2 {
   @component cell {
     display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px 10px 0;
+    line-height: 22px;
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+
+    &:last-child {
+      border-bottom: 0;
+    }
 
     @descendent title {
       float: left;
