@@ -1,5 +1,8 @@
 {
   "sample": "./packages/sample/index.js",
   "button": "./packages/button/index.js",
-  "switch": "./packages/switch/index.js"
+  "switch": "./packages/switch/index.js",
+  "field": "./packages/field/index.js",
+  "radio": "./packages/radio/index.js",
+  "cell": "./packages/cell/index.js"
 }
