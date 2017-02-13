@@ -8,11 +8,20 @@
           "list": [
             {
               "path": "/sample",
-              "title": "Sample组件"
+              "title": "Sample"
             },
             {
               "path": "/button",
-              "title": "Button组件"
+              "title": "Button"
+            }
+          ]
+        },
+        {
+          "groupName": "CSS组件",
+          "list": [
+            {
+              "path": "/cell",
+              "title": "Cell"
             }
           ]
         },
@@ -21,19 +30,19 @@
           "list": [
             {
               "path": "/switch",
-              "title": "Switch组件"
+              "title": "Switch"
             },
             {
               "path": "/field",
-              "title": "Field组件"
+              "title": "Field"
             },
             {
               "path": "/radio",
-              "title": "Radio组件"
+              "title": "Radio"
             },
             {
               "path": "/checkbox",
-              "title": "Checkbox组件"
+              "title": "Checkbox"
             }
           ]
         }
