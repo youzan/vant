@@ -4,6 +4,7 @@ import Switch from '../packages/switch/index.js';
 import Field from '../packages/field/index.js';
 import Radio from '../packages/radio/index.js';
 import Cell from '../packages/cell/index.js';
+import Icon from '../packages/icon/index.js';
 // zenui
 import '../packages/zenui/src/index.pcss';
 
@@ -16,6 +17,7 @@ const install = function(Vue) {
   Vue.component(Field.name, Field);
   Vue.component(Radio.name, Radio);
   Vue.component(Cell.name, Cell);
+  Vue.component(Icon.name, Icon);
 };
 
 // auto install
@@ -31,5 +33,6 @@ module.exports = {
   Switch,
   Field,
   Radio,
-  Cell
+  Cell,
+  Icon
 };
