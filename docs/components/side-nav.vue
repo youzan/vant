@@ -60,60 +60,60 @@
   };
 </script>
 
-<style lang="less">
-.side-nav {
-  width: 25%;
-  box-sizing: border-box;
-  padding-right: 30px;
-  float: left;
+<style lang="css">
+  .side-nav {
+    width: 25%;
+    box-sizing: border-box;
+    padding-right: 30px;
+    float: left;
 
-  li {
-    list-style: none;
-  }
-  ul {
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-  }
-
-  .nav-item {
-    a {
-      font-size: 16px;
-      color: #5e6d82;
-      line-height: 40px;
-      height: 40px;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      display: block;
-      position: relative;
-      transition: all .3s;
-
-      &.active {
-        color: #20a0ff;
-      }
+    li {
+      list-style: none;
     }
+    ul {
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
     .nav-item {
       a {
-        display: block;
-        height: 40px;
+        font-size: 16px;
+        color: #5e6d82;
         line-height: 40px;
-        font-size: 13px;
-        padding-left: 24px;
+        height: 40px;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        transition: all .3s;
 
-
-        &:hover {
+        &.active {
           color: #20a0ff;
         }
       }
+      .nav-item {
+        a {
+          display: block;
+          height: 40px;
+          line-height: 40px;
+          font-size: 13px;
+          padding-left: 24px;
+
+
+          &:hover {
+            color: #20a0ff;
+          }
+        }
+      }
+    }
+    .nav-group__title {
+      font-size: 12px;
+      color: #99a9bf;
+      padding-left: 8px;
+      line-height: 26px;
+      margin-top: 10px;
     }
   }
-  .nav-group__title {
-    font-size: 12px;
-    color: #99a9bf;
-    padding-left: 8px;
-    line-height: 26px;
-    margin-top: 10px;
-  }
-}
 </style>

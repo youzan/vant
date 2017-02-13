@@ -67,7 +67,7 @@
   };
 </script>
 
-<style lang="less">
+<style lang="css">
   .demo-block {
     border: solid 1px #eaeefb;
     border-radius: 4px;

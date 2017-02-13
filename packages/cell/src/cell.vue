@@ -13,7 +13,7 @@
         <span v-text="value"></span>
       </slot>
     </div>
-    <i class="o2-cell-arrow-right" v-if="isLink"></i>
+    <i class="zui-icon zui-icon-arrow" v-if="isLink"></i>
   </a>
 </template>
 
