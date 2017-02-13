@@ -1,27 +1,30 @@
 {
   "zh-CN": [
     {
-      "name": "基础组件",
+      "name": "oxygen组件",
       "groups": [
-        {
-          "groupName": "Basic",
-          "list": [
-            {
-              "path": "/sample",
-              "title": "Sample"
-            },
-            {
-              "path": "/button",
-              "title": "Button"
-            }
-          ]
-        },
         {
           "groupName": "CSS组件",
           "list": [
             {
+              "path": "/button",
+              "title": "Button"
+            },
+            {
               "path": "/cell",
               "title": "Cell"
+            },
+            {
+              "path": "/loading",
+              "title": "Loading"
+            },
+            {
+              "path": "/progress",
+              "title": "Progress"
+            },
+            {
+              "path": "/card",
+              "title": "Card"
             }
           ]
         },
@@ -43,6 +46,55 @@
             {
               "path": "/checkbox",
               "title": "Checkbox"
+            }
+          ]
+        },
+        {
+          "groupName": "JS组件",
+          "list": [
+            {
+              "path": "/tab",
+              "title": "Tab"
+            },
+            {
+              "path": "/toast",
+              "title": "Toast"
+            },
+            {
+              "path": "/img-uploader",
+              "title": "Img Uploader"
+            },
+            {
+              "path": "/picker",
+              "title": "Picker"
+            },
+            {
+              "path": "/datetime-picker",
+              "title": "Datetime Picker"
+            },
+            {
+              "path": "/lazyload",
+              "title": "Lazyload"
+            },
+            {
+              "path": "/pop",
+              "title": "Pop"
+            },
+            {
+              "path": "/swipe",
+              "title": "Swipe"
+            },
+            {
+              "path": "/waterfall",
+              "title": "Waterfall"
+            },
+            {
+              "path": "/dialog",
+              "title": "Dialog"
+            },
+            {
+              "path": "/img-preview",
+              "title": "Img Preview"
             }
           ]
         }

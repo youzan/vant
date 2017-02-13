@@ -2,7 +2,7 @@
   <a class="o2-cell" :href="url">
     <div class="o2-cell-title">
       <slot name="icon">
-        <i v-if="icon" class="o2-icon" :class="'o2-icon-' + icon"></i>
+        <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
       </slot>
       <slot name="title">
         <span class="o2-cell-text" v-text="title"></span>
