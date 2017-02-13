@@ -1,6 +1,6 @@
 <template>
   <div class="o2-switch" :class="['is-' + switchState]" @click="toggleState">
-    <div class="o2-switch-node"></div>
+    <div class="o2-switch-node" :class="['is-' + switchState]"></div>
   </div>
 </template>
 

@@ -29,11 +29,17 @@
     @when on {
       background-color: #44db5e;
       border-color: #44db5e;
+      @descendent node {
+        left: 0;
+      }
     }
 
     @when off {
       background-color: #fff;
       border-color: rgba(0, 0, 0, .1);
+      @descendent node {
+        right: 0;
+      }
     }
 
     @when loading {
