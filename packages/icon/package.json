@@ -1,0 +1,9 @@
+{
+  "name": "o2-icon",
+  "version": "0.0.1",
+  "description": "o2-icon",
+  "main": "index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "devDependencies": {},
+  "dependencies": {}
+}

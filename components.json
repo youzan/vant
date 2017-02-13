@@ -4,5 +4,6 @@
   "switch": "./packages/switch/index.js",
   "field": "./packages/field/index.js",
   "radio": "./packages/radio/index.js",
-  "cell": "./packages/cell/index.js"
+  "cell": "./packages/cell/index.js",
+  "icon": "./packages/icon/index.js"
 }
