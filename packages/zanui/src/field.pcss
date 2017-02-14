@@ -7,6 +7,12 @@
     display: table;
     overflow: hidden;
 
+    @when textarea {
+      .o2-field-control {
+        min-height: 60px;
+      }
+    }
+
     @when nolabel {
       .o2-cell-title {
         display: none;
@@ -14,6 +20,7 @@
 
       .o2-cell-value {
         width: 100%;
+        padding-left: 0;
       }
     }
 

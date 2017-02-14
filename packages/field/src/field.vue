@@ -3,6 +3,7 @@
     class="o2-field"
     :title="label"
     :class="{
+      'is-textarea': type === 'textarea',
       'is-nolabel': !label
     }">
     <textarea
