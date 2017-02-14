@@ -8,8 +8,8 @@ var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  Vue.component({{name}}.name, {{name}});';
 var MAIN_TEMPLATE = `{{include}}
-// zenui
-import '../packages/zenui/src/index.pcss';
+// zanui
+import '../packages/zanui/src/index.pcss';
 
 const install = function(Vue) {
   if (install.installed) return;

@@ -4,5 +4,6 @@
   "field": "./packages/field/index.js",
   "radio": "./packages/radio/index.js",
   "cell": "./packages/cell/index.js",
-  "icon": "./packages/icon/index.js"
+  "icon": "./packages/icon/index.js",
+  "cell-group": "./packages/cell-group/index.js"
 }

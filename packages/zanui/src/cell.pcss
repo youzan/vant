@@ -1,0 +1,63 @@
+@import "./common/var.pcss";
+@import "./mixins/border_retina.pcss";
+
+@component-namespace o2 {
+  @component cell-group {
+    padding-left: 10px;
+    position: relative;
+
+    &::after {
+      @mixin border-retina (top, bottom);
+    }
+  }
+
+  @component cell {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 10px 10px 0;
+    line-height: 22px;
+    background-color: $c-white;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+
+    &::after {
+      @mixin border-retina (bottom);
+    }
+
+    &:last-child {
+      &::after {
+        border-bottom: 0;
+      }
+    }
+
+    @descendent title {
+      float: left;
+    }
+
+    @descendent label {
+      display: block;
+      font-size: 12px;
+      line-height: 1.2;
+      color: #666;
+    }
+
+    @descendent value {
+      float: right;
+
+      @when link {
+        margin-right: 20px;
+      }
+    }
+
+    .zui-icon-arrow {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: #999;
+      font-size: 12px;
+    }
+  }
+}

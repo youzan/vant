@@ -4,8 +4,9 @@ import Field from '../packages/field/index.js';
 import Radio from '../packages/radio/index.js';
 import Cell from '../packages/cell/index.js';
 import Icon from '../packages/icon/index.js';
-// zenui
-import '../packages/zenui/src/index.pcss';
+import CellGroup from '../packages/cell-group/index.js';
+// zanui
+import '../packages/zanui/src/index.pcss';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -16,6 +17,7 @@ const install = function(Vue) {
   Vue.component(Radio.name, Radio);
   Vue.component(Cell.name, Cell);
   Vue.component(Icon.name, Icon);
+  Vue.component(CellGroup.name, CellGroup);
 };
 
 // auto install
@@ -31,5 +33,6 @@ module.exports = {
   Field,
   Radio,
   Cell,
-  Icon
+  Icon,
+  CellGroup
 };

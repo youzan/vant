@@ -40,7 +40,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
       'oxygen': path.join(__dirname, '..'),
-      'src': path.join(__dirname, '../src')
+      'src': path.join(__dirname, '../src'),
+      'packages': path.join(__dirname, '../packages')
     }
   },
   module: {

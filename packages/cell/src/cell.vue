@@ -6,9 +6,10 @@
       </slot>
       <slot name="title">
         <span class="o2-cell-text" v-text="title"></span>
+        <span class="o2-cell-label" v-text="label"></span>
       </slot>
     </div>
-    <div class="o2-cell-value">
+    <div class="o2-cell-value" :class="{ 'is-link' : isLink }">
       <slot>
         <span v-text="value"></span>
       </slot>
@@ -26,34 +27,8 @@ export default {
     title: String,
     value: String,
     url: String,
+    label: String,
     isLink: Boolean
   }
 };
 </script>
-
-<style>
-@component-namespace o2 {
-  @component cell {
-    display: block;
-    overflow: hidden;
-    position: relative;
-    padding: 10px 10px 10px 0;
-    line-height: 22px;
-    color: #666;
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-
-    &:last-child {
-      border-bottom: 0;
-    }
-
-    @descendent title {
-      float: left;
-    }
-
-    @descendent value {
-      float: right;
-    }
-  }
-}
-</style>
