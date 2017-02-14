@@ -32,7 +32,7 @@ export default {
 
 ### 无label的输入框
 
-:::demo 根据`type`属性显示不同的输入框。
+:::demo 不传入`label`属性即可。
 ```html
 <o2-cell-group>
   <o2-field type="text" placeholder="请输入用户名"></o2-field>
@@ -42,7 +42,7 @@ export default {
 
 ### 监听change事件
 
-:::demo 根据`type`属性显示不同的输入框。
+:::demo 监听组件的`change`事件。
 ```html
 <o2-cell-group>
   <o2-field type="text" label="用户名：" placeholder="请输入用户名" @change="handleChange"></o2-field>
