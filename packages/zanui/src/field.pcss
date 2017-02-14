@@ -1,0 +1,47 @@
+@import "./common/var.pcss";
+@import "./mixins/border_retina.pcss";
+
+@component-namespace o2 {
+  @component field {
+    width: 100%;
+    display: table;
+    overflow: hidden;
+
+    @when nolabel {
+      .o2-cell-title {
+        display: none;
+      }
+
+      .o2-cell-value {
+        width: 100%;
+      }
+    }
+
+    .o2-cell-title,
+    .o2-cell-value {
+      float: none;
+      display: table-cell;
+      box-sizing: border-box;
+    }
+
+    .o2-cell-title {
+      width: 90px;
+      text-align: right;
+    }
+
+    .o2-cell-value {
+      width: 90%;
+      padding-left: 10px;
+    }
+
+    @descendent control {
+      border: 0;
+      font-size: 14px;
+      line-height: 22px;
+      display: block;
+      width: 100%;
+      resize: none;
+      outline: 0;
+    }
+  }
+}

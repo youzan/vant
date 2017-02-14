@@ -6,7 +6,7 @@
       </slot>
       <slot name="title">
         <span class="o2-cell-text" v-text="title"></span>
-        <span class="o2-cell-label" v-text="label"></span>
+        <span class="o2-cell-label" v-if="label" v-text="label"></span>
       </slot>
     </div>
     <div class="o2-cell-value" :class="{ 'is-link' : isLink }">
