@@ -1,5 +1,5 @@
 <template>
-  <a class="o2-cell" :href="url">
+  <a class="o2-cell" :href="url" @click="handleClick">
     <div class="o2-cell-title">
       <slot name="icon">
         <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
@@ -29,6 +29,12 @@ export default {
     url: String,
     label: String,
     isLink: Boolean
+  },
+
+  methods: {
+    handleClick() {
+      this.$emit('click');
+    }
   }
 };
 </script>

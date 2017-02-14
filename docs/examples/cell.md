@@ -6,6 +6,16 @@
 }
 </style>
 
+<script>
+export default {
+  methods: {
+    handleClick() {
+      console.log('cell click');
+    }
+  }
+};
+</script>
+
 ## Cell 组件
 
 ### 基础用法
@@ -24,7 +34,7 @@
 :::demo 传入`label`属性，属性值为描述信息的值。
 ```html
 <o2-cell-group>
-  <o2-cell title="单元格1" label="描述信息" is-link></o2-cell>
+  <o2-cell title="单元格1" label="描述信息" is-link url="javascript:void(0)" @click="handleClick"></o2-cell>
   <o2-cell title="单元格2" label="描述信息"></o2-cell>
 </o2-cell-group>
 ```
