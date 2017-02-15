@@ -77,8 +77,8 @@
               "title": "Lazyload"
             },
             {
-              "path": "/pop",
-              "title": "Pop"
+              "path": "/popup",
+              "title": "Popup"
             },
             {
               "path": "/swipe",

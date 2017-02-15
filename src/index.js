@@ -5,6 +5,7 @@ import Radio from '../packages/radio/index.js';
 import Cell from '../packages/cell/index.js';
 import Icon from '../packages/icon/index.js';
 import CellGroup from '../packages/cell-group/index.js';
+import Popup from '../packages/popup/index.js';
 // zanui
 import '../packages/zanui/src/index.pcss';
 
@@ -18,6 +19,7 @@ const install = function(Vue) {
   Vue.component(Cell.name, Cell);
   Vue.component(Icon.name, Icon);
   Vue.component(CellGroup.name, CellGroup);
+  Vue.component(Popup.name, Popup);
 };
 
 // auto install
@@ -34,5 +36,6 @@ module.exports = {
   Radio,
   Cell,
   Icon,
-  CellGroup
+  CellGroup,
+  Popup
 };
