@@ -53,18 +53,4 @@ ul {
   -webkit-font-smoothing: auto;
 }
 
-// 操作类图标 - 导出
-@font-face {
-  font-family: "handle";
-  src: url("./fonts/iconfont.eot"); /* IE9*/
-  src: url("./fonts/iconfont.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("./fonts/iconfont.woff") format("woff"), /* chrome、firefox */
-  url("./fonts/iconfont.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("./fonts/iconfont.svg#iconfont") format("svg"); /* iOS 4.1- */
-}
 
-.iconhandle {
-  font-family: "handle";
-  font-size: 16px;
-  font-style: normal;
-}

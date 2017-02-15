@@ -40,7 +40,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
       'oxygen': path.join(__dirname, '..'),
-      'src': path.join(__dirname, '../src')
+      'src': path.join(__dirname, '../src'),
+      'packages': path.join(__dirname, '../packages')
     }
   },
   module: {
@@ -61,10 +62,6 @@ module.exports = {
       {
         test: /\.pcss$/,
         loader: 'style-loader!css-loader!postcss-loader'
-      },
-      {
-        test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.md/,
