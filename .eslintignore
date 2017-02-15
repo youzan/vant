@@ -1,3 +1,4 @@
 lib/
 dist/
 node_modules/
+build/
