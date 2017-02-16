@@ -14,7 +14,6 @@ const getDOM = function(dom) {
 
 let scrollBarWidth;
 const getScrollBarWidth = () => {
-  if (Vue.prototype.$isServer) return;
   if (scrollBarWidth !== undefined) return scrollBarWidth;
 
   const outer = document.createElement('div');
@@ -76,14 +75,7 @@ export default {
       if (val) {
         if (this.opening) return;
 
-        if (!this.rendered) {
-          this.rendered = true;
-          Vue.nextTick(() => {
-            this.open();
-          });
-        } else {
-          this.open();
-        }
+        this.open();
       } else {
         this.close();
       }
