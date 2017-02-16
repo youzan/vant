@@ -57,7 +57,7 @@ export default {
 
   beforeMount() {
     if (this.transition !== 'popup-fade') {
-      this.currentTransition = `popup-slide-${ this.position }`;
+      this.currentTransition = `popup-slide-${this.position}`;
     }
   },
 

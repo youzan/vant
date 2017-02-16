@@ -74,9 +74,9 @@ export default {
     value(val) {
       if (val) {
         if (this.opening) return;
-
         this.open();
       } else {
+        if (this.closing) return;
         this.close();
       }
     }
@@ -125,13 +125,18 @@ export default {
           this.closing = false;
         }
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), dom);
+
+        // 如果滚动时需要锁定
         if (props.lockOnScroll) {
           // 将原来的`bodyOverflow`和`bodyPaddingRight`存起来
           if (!this.bodyOverflow) {
             this.bodyPaddingRight = document.body.style.paddingRight;
             this.bodyOverflow = document.body.style.overflow;
           }
+
           scrollBarWidth = getScrollBarWidth();
+
+          // 页面是否`overflow`
           let bodyHasOverflow = document.documentElement.clientHeight < document.body.scrollHeight;
           if (scrollBarWidth > 0 && bodyHasOverflow) {
             document.body.style.paddingRight = scrollBarWidth + 'px';

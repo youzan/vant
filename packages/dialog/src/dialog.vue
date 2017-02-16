@@ -19,7 +19,6 @@
 
 <script>
 import Popup from 'packages/popup';
-import PopupManager from 'src/mixins/popup/popup-manager';
 
 const CANCEL_TEXT = '取消';
 const CONFIRM_TEXT = '确认';
