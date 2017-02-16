@@ -174,9 +174,13 @@ export default {
         }, 200);
       }
 
-      PopupManager.closeModal(this._popupId);
       this.opened = false;
+      this.doAfterClose();
+    },
+
+    doAfterClose() {
       this.closing = false;
+      PopupManager.closeModal(this._popupId);
     }
   },
 

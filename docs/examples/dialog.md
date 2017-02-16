@@ -5,8 +5,8 @@ export default {
   methods: {
     handleAlertClick() {
       Dialog.alert({
-        title: 'alert',
-        message: 'alert message'
+        title: 'alert标题',
+        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
       }).then((action) => {
         console.log(action);
       });
@@ -14,8 +14,8 @@ export default {
 
     handleConfirmClick() {
       Dialog.confirm({
-        title: 'confirm',
-        message: 'confirm message'
+        title: 'confirm标题',
+        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
       }).then((action) => {
         console.log(action);
       }, (error) => {
