@@ -52,6 +52,9 @@ const PopupManager = {
     }
   },
 
+  /**
+   * 遮罩层点击回调，`closeOnClickOverlay`为`true`时会关闭当前`popup`
+   */
   handleOverlayClick() {
     const topModal = PopupManager.modalStack[PopupManager.modalStack.length - 1];
     if (!topModal) return;

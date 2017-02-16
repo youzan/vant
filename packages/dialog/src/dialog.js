@@ -24,7 +24,7 @@ const defaultCallback = action => {
   }
 };
 
-var initInstance = () => {
+const initInstance = () => {
   instance = new DialogConstructor({
     el: document.createElement('div')
   });
@@ -32,7 +32,7 @@ var initInstance = () => {
   instance.callback = defaultCallback;
 };
 
-var showNextDialog = () => {
+const showNextDialog = () => {
   if (!instance) {
     initInstance();
   }
