@@ -6,6 +6,7 @@ import Cell from '../packages/cell/index.js';
 import Icon from '../packages/icon/index.js';
 import CellGroup from '../packages/cell-group/index.js';
 import Popup from '../packages/popup/index.js';
+import Dialog from '../packages/dialog/index.js';
 // zanui
 import '../packages/zanui/src/index.pcss';
 
@@ -20,6 +21,7 @@ const install = function(Vue) {
   Vue.component(Icon.name, Icon);
   Vue.component(CellGroup.name, CellGroup);
   Vue.component(Popup.name, Popup);
+  // Vue.component(Dialog.name, Dialog);
 };
 
 // auto install
@@ -37,5 +39,6 @@ module.exports = {
   Cell,
   Icon,
   CellGroup,
-  Popup
+  Popup,
+  Dialog
 };

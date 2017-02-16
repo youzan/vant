@@ -81,6 +81,10 @@
               "title": "Popup"
             },
             {
+              "path": "/dialog",
+              "title": "Dialog"
+            },
+            {
               "path": "/swipe",
               "title": "Swipe"
             },

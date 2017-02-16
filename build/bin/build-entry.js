@@ -51,7 +51,7 @@ ComponentNames.forEach(name => {
     'Lazyload',
 
       // services
-    'MessageBox',
+    'Dialog',
     'Toast',
     'Indicator'
   ].indexOf(componentName) === -1) {
