@@ -1,5 +1,5 @@
 <template>
-  <transition name="dialog-fade">
+  <transition name="dialog-bounce">
     <div class="o2-dialog-wrapper">
       <div class="o2-dialog" v-show="value">
         <div class="o2-dialog-header" v-if="title">
@@ -19,6 +19,7 @@
 
 <script>
 import Popup from 'packages/popup';
+import PopupManager from 'src/mixins/popup/popup-manager';
 
 const CANCEL_TEXT = '取消';
 const CONFIRM_TEXT = '确认';
@@ -57,6 +58,29 @@ export default {
     handleAction(action) {
       this.value = false;
       this.callback && this.callback(action);
+    },
+
+    close() {
+      if (this.closing) return;
+
+      this.closing = true;
+
+      this.value = false;
+
+      if (this.lockOnScroll) {
+        setTimeout(() => {
+          if (this.modal && this.bodyOverflow !== 'hidden') {
+            document.body.style.overflow = this.bodyOverflow;
+            document.body.style.paddingRight = this.bodyPaddingRight;
+          }
+          this.bodyOverflow = null;
+          this.bodyPaddingRight = null;
+        }, 200);
+      }
+
+      PopupManager.closeModal(this._popupId);
+      this.opened = false;
+      this.closing = false;
     }
   }
 };

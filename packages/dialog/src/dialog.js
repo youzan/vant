@@ -16,9 +16,9 @@ const defaultCallback = action => {
       callback(action);
     }
 
-    if (currentDialog.resolve && action !== 'cancel') {
+    if (currentDialog.resolve && action === 'confirm') {
       currentDialog.resolve(action);
-    } else {
+    } else if (currentDialog.reject && action === 'cancel') {
       currentDialog.reject(action);
     }
   }
@@ -47,7 +47,6 @@ var showNextDialog = () => {
         instance[prop] = options[prop];
       }
     }
-    console.log(instance)
 
     if (options.callback === undefined) {
       instance.callback = defaultCallback;
@@ -62,7 +61,6 @@ var showNextDialog = () => {
 };
 
 var DialogBox = options => {
-  console.log(options)
   return new Promise((resolve, reject) => { // eslint-disable-line
     dialogQueue.push({
       options: merge({}, options),
@@ -78,13 +76,15 @@ var DialogBox = options => {
 DialogBox.alert = function(options) {
   return DialogBox(merge({
     type: 'alert',
-    closeOnClickOverlay: false
+    closeOnClickOverlay: false,
+    showCancelButton: false
   }, options));
 };
 
 DialogBox.confirm = function(options) {
   return DialogBox(merge({
     type: 'confirm',
+    closeOnClickOverlay: true,
     showCancelButton: true
   }, options));
 };

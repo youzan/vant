@@ -7,6 +7,8 @@ export default {
       Dialog.alert({
         title: 'alert',
         message: 'alert message'
+      }).then((action) => {
+        console.log(action);
       });
     },
 
@@ -14,6 +16,10 @@ export default {
       Dialog.confirm({
         title: 'confirm',
         message: 'confirm message'
+      }).then((action) => {
+        console.log(action);
+      }, (error) => {
+        console.log(error);
       });
     }
   }
