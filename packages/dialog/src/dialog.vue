@@ -43,7 +43,7 @@ export default {
 
   data() {
     return {
-      title: '提示',
+      title: '',
       message: '',
       type: '',
       showConfirmButton: true,
