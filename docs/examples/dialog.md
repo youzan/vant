@@ -32,9 +32,9 @@ export default {
 
 :::demo
 ```html
-<o2-button @click="handleAlertClick">alert</o2-button>
+<z-button @click="handleAlertClick">alert</z-button>
 
-<o2-button @click="handleConfirmClick">confirm</o2-button>
+<z-button @click="handleConfirmClick">confirm</z-button>
 ```
 :::
 

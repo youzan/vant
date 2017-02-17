@@ -7,6 +7,7 @@ import Icon from '../packages/icon/index.js';
 import CellGroup from '../packages/cell-group/index.js';
 import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
+import Picker from '../packages/picker/index.js';
 // zanui
 import '../packages/zanui/src/index.pcss';
 
@@ -21,7 +22,7 @@ const install = function(Vue) {
   Vue.component(Icon.name, Icon);
   Vue.component(CellGroup.name, CellGroup);
   Vue.component(Popup.name, Popup);
-  // Vue.component(Dialog.name, Dialog);
+  Vue.component(Picker.name, Picker);
 };
 
 // auto install
@@ -40,5 +41,6 @@ module.exports = {
   Icon,
   CellGroup,
   Popup,
-  Dialog
+  Dialog,
+  Picker
 };

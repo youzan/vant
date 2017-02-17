@@ -2,9 +2,9 @@
   <button
     :type="nativeType"
     :class="[
-      'o2-button',
-      'o2-button--' + type,
-      'o2-button--' + size,
+      'z-button',
+      'z-button--' + type,
+      'z-button--' + size,
       {
         'is-disabled': disabled,
         'is-loading': loading
@@ -13,14 +13,14 @@
     :disabled="disabled"
     @click="handleClick"
   >
-    <i v-if="loading" class="o2-icon-loading"></i>
-    <span class="o2-button-text"><slot></slot></span>
+    <i v-if="loading" class="z-icon-loading"></i>
+    <span class="z-button-text"><slot></slot></span>
   </button>
 </template>
 
 <script>
 /**
- * o2-header
+ * z-header
  * @module components/button
  * @desc 按钮
  * @param {string} [type=default] - 显示类型，接受 default, primary, danger
@@ -30,10 +30,10 @@
  * @param {slot} - 显示文本
  *
  * @example
- * <o2-button size="large" type="primary">按钮</o2-button>
+ * <z-button size="large" type="primary">按钮</z-button>
  */
 export default {
-  name: 'o2-button',
+  name: 'z-button',
 
   methods: {
     handleClick(e) {

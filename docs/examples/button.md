@@ -23,27 +23,27 @@
 <div class="page-button">
   <h1 class="page-title">Button</h1>
   <div class="page-button-group">
-    <o2-button size="large">default</o2-button>
-    <o2-button size="large" type="primary">primary</o2-button>
-    <o2-button size="large" type="danger">danger</o2-button>
+    <z-button size="large">default</z-button>
+    <z-button size="large" type="primary">primary</z-button>
+    <z-button size="large" type="danger">danger</z-button>
   </div>
 
   <div class="page-button-group">
-    <o2-button>default</o2-button>
-    <o2-button type="primary">primary</o2-button>
-    <o2-button type="danger">danger</o2-button>
+    <z-button>default</z-button>
+    <z-button type="primary">primary</z-button>
+    <z-button type="danger">danger</z-button>
   </div>
 
   <div class="page-button-group">
-    <o2-button size="small">default</o2-button>
-    <o2-button size="small" type="primary">primary</o2-button>
-    <o2-button size="small" type="danger">danger</o2-button>
+    <z-button size="small">default</z-button>
+    <z-button size="small" type="primary">primary</z-button>
+    <z-button size="small" type="danger">danger</z-button>
   </div>
 
   <div class="page-button-group">
-    <o2-button disabled size="large">default</o2-button>
-    <o2-button disabled size="large" type="primary">primary</o2-button>
-    <o2-button disabled size="large" type="danger" class="aaa">danger</o2-button>
+    <z-button disabled size="large">default</z-button>
+    <z-button disabled size="large" type="primary">primary</z-button>
+    <z-button disabled size="large" type="danger" class="aaa">danger</z-button>
   </div>
 </div>
 ```

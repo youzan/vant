@@ -1,5 +1,5 @@
 <template>
-  <div class="o2-radio-group">
+  <div class="z-radio-group">
     <slot></slot>
   </div>
 </template>

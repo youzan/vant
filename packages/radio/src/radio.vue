@@ -1,20 +1,20 @@
 <template>
-  <o2-cell
-    class="o2-radio"
+  <z-cell
+    class="z-radio"
     :class="{
       'is-disabled': disabled
     }">
-  </o2-cell>
+  </z-cell>
 </template>
 
 <script>
-import O2Cell from 'packages/cell';
+import zCell from 'packages/cell';
 
 export default {
-  name: 'o2-radio',
+  name: 'z-radio',
 
   components: {
-    O2Cell
+    zCell
   },
 
   props: {

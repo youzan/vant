@@ -14,7 +14,7 @@ export default {
 
 :::demo
 ```html
-<o2-radio v-model="radio"></o2-radio>
+<z-radio v-model="radio"></z-radio>
 ```
 :::
 

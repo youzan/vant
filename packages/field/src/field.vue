@@ -1,6 +1,6 @@
 <template>
-  <o2-cell
-    class="o2-field"
+  <z-cell
+    class="z-field"
     :title="label"
     :class="{
       'is-textarea': type === 'textarea',
@@ -8,7 +8,7 @@
     }">
     <textarea
       v-if="type === 'textarea'"
-      class="o2-field-control"
+      class="z-field-control"
       v-model="currentValue"
       @change="$emit('change', currentValue)"
       :placeholder="placeholder"
@@ -18,7 +18,7 @@
     </textarea>
     <input
       v-else
-      class="o2-field-control"
+      class="z-field-control"
       :value="currentValue"
       @change="$emit('change', currentValue)"
       @input="handleInput"
@@ -27,17 +27,17 @@
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
-  </o2-cell>
+  </z-cell>
 </template>
 
 <script>
-import O2Cell from 'packages/cell';
+import zCell from 'packages/cell';
 
 export default {
-  name: 'o2-field',
+  name: 'z-field',
 
   components: {
-    O2Cell
+    zCell
   },
 
   props: {

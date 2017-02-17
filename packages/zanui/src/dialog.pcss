@@ -1,6 +1,6 @@
 @import "./mixins/border_retina.pcss";
 
-@component-namespace o2 {
+@component-namespace z {
   @component dialog-wrapper {
     position: absolute;
   }
@@ -53,11 +53,11 @@
     }
 
     .is-twobtn {
-      .o2-dialog-btn {
+      .z-dialog-btn {
         width: 50%;
       }
 
-      .o2-dialog-cancel {
+      .z-dialog-cancel {
         &::after {
           @mixin border-retina (right);
         }

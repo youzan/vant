@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/o2-button",
+  "name": "@youzan/z-button",
   "version": "0.0.1",
   "description": "button component",
   "main": "./lib/index.js",

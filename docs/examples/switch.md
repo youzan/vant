@@ -45,8 +45,8 @@ export default {
 ```html
 <div class="page-switch">
   <span class="page-switch-text">Switch state: {{switchStateText}}</span>
-  <o2-switch class="page-switch-sample" :checked="switchState" :on-change="updateState"></o2-switch>
-  <o2-switch class="page-switch-sample" :checked="false" :disabled="true"></o2-switch>
+  <z-switch class="page-switch-sample" :checked="switchState" :on-change="updateState"></z-switch>
+  <z-switch class="page-switch-sample" :checked="false" :disabled="true"></z-switch>
 </div>
 ```
 

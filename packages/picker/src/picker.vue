@@ -1,0 +1,147 @@
+<template>
+  <div class="z-picker">
+    <div class="z-picker-toolbar">
+      <slot>
+      </slot>
+    </div>
+    <div class="z-picker-columns">
+      <picker-column
+        v-for="(item, index) in columns"
+        v-model="values[index]"
+        :values="item.values"
+        :class-name="item.className"
+        :itemHeight="itemHeight"
+        :visible-item-count="visibleItemCount"
+        @change="columnValueChange">
+      </picker-column>
+    </div>
+  </div>
+</template>
+
+<script>
+import PickerColumn from './picker-column';
+
+const DEFAULT_ITEM_HEIGHT = 44;
+
+export default {
+  name: 'z-picker',
+
+  components: {
+    PickerColumn
+  },
+
+  props: {
+    /**
+     * 每一列可见备选元素的个数
+     */
+    visibileColumnCount: {
+      type: Number,
+      default: 5
+    },
+    /**
+     * 选中元素区高度
+     */
+    itemHeight: {
+      type: Number,
+      default: DEFAULT_ITEM_HEIGHT
+    },
+    /**
+     * 对象数组，配置每一列显示的数据
+     */
+    columns: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    /**
+     * 否在组件顶部显示一个toolbar
+     */
+    showToolbar: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  computed: {
+    values() {
+      let columns = this.columns || [];
+      let values = [];
+
+      columns.forEach(column => {
+        values.push(column.value || column[column.defaultIndex || 0]);
+      });
+
+      return values;
+    }
+  },
+
+  methods: {
+    /**
+     * 处理列`change`事件
+     */
+    columnValueChange() {
+      this.$emit('change', this, this.values);
+    },
+
+    /**
+     * 获取对应索引的列的实例
+     */
+    getColumn(index) {
+      let children = this.$children.filter(child => child.$options.name === 'z-picker-column');
+      return children[index];
+    },
+
+    /**
+     * 获取对应列中选中的值
+     */
+    getColumnValue(index) {
+      let column = this.getColumn(index);
+      return column && column.value;
+    },
+
+    /**
+     * 设置对应列中选中的值
+     */
+    setColumnValue(index, value) {
+      let column = this.getColumn(index);
+      if (column) {
+        column.currentValue = value;
+      }
+    },
+
+    /**
+     * 获取对应列中所有的备选值
+     */
+    getColumnValues(index) {
+      let column = this.getColumn(index);
+    },
+
+    /**
+     * 设置对应列中所有的备选值
+     */
+    setColumnValues(index, values) {
+      let column = this.getColumn(index);
+      if (column) {
+
+      }
+    },
+
+    /**
+     * 获取所有列中被选中的值，返回一个数组
+     */
+    getValues() {
+      return this.values;
+    },
+
+    /**
+     * `values`为一个数组，设置所有列中被选中的值
+     */
+    setValues(values) {
+      values.forEach((value, index) => {
+        this.setColumnValue(index, value);
+      });
+    }
+  }
+};
+</script>

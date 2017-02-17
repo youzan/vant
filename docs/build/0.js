@@ -394,60 +394,60 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "page-title"
   }, [_vm._v("Button")]), _vm._v(" "), _c('div', {
     staticClass: "page-button-group"
-  }, [_c('o2-button', {
+  }, [_c('z-button', {
     attrs: {
       "size": "large"
     }
-  }, [_vm._v("default")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("default")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "size": "large",
       "type": "primary"
     }
-  }, [_vm._v("primary")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("primary")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "size": "large",
       "type": "danger"
     }
   }, [_vm._v("danger")])], 1), _vm._v(" "), _c('div', {
     staticClass: "page-button-group"
-  }, [_c('o2-button', [_vm._v("default")]), _vm._v(" "), _c('o2-button', {
+  }, [_c('z-button', [_vm._v("default")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "type": "primary"
     }
-  }, [_vm._v("primary")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("primary")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "type": "danger"
     }
   }, [_vm._v("danger")])], 1), _vm._v(" "), _c('div', {
     staticClass: "page-button-group"
-  }, [_c('o2-button', {
+  }, [_c('z-button', {
     attrs: {
       "size": "small"
     }
-  }, [_vm._v("default")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("default")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "size": "small",
       "type": "primary"
     }
-  }, [_vm._v("primary")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("primary")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "size": "small",
       "type": "danger"
     }
   }, [_vm._v("danger")])], 1), _vm._v(" "), _c('div', {
     staticClass: "page-button-group"
-  }, [_c('o2-button', {
+  }, [_c('z-button', {
     attrs: {
       "disabled": "",
       "size": "large"
     }
-  }, [_vm._v("default")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("default")]), _vm._v(" "), _c('z-button', {
     attrs: {
       "disabled": "",
       "size": "large",
       "type": "primary"
     }
-  }, [_vm._v("primary")]), _vm._v(" "), _c('o2-button', {
+  }, [_vm._v("primary")]), _vm._v(" "), _c('z-button', {
     staticClass: "aaa",
     attrs: {
       "disabled": "",
@@ -491,7 +491,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -499,11 +499,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -515,11 +515,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -531,7 +531,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -547,15 +547,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("default"), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("default"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("type")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -563,11 +563,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("type")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -575,7 +575,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -591,7 +591,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -599,11 +599,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -615,11 +615,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("size")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -631,7 +631,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -647,7 +647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("disabled")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
@@ -657,11 +657,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("disabled")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
@@ -675,11 +675,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("disabled")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
@@ -697,7 +697,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -763,13 +763,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "page-switch"
   }, [_c('span', {
     staticClass: "page-switch-text"
-  }, [_vm._v("Switch state: " + _vm._s(_vm.switchStateText))]), _vm._v(" "), _c('o2-switch', {
+  }, [_vm._v("Switch state: " + _vm._s(_vm.switchStateText))]), _vm._v(" "), _c('z-switch', {
     staticClass: "page-switch-sample",
     attrs: {
       "checked": _vm.switchState,
       "onchange": _vm.updateState
     }
-  }), _vm._v(" "), _c('o2-switch', {
+  }), _vm._v(" "), _c('z-switch', {
     staticClass: "page-switch-sample",
     attrs: {
       "checked": false,
@@ -804,7 +804,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-switch")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -820,11 +820,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("z-switch")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("z-switch")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -840,7 +840,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+  }, [_vm._v("z-switch")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
