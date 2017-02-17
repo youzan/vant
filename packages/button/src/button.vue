@@ -32,14 +32,12 @@
  * @example
  * <z-button size="large" type="primary">按钮</z-button>
  */
+
+const allowedSize = ['mini', 'small', 'normal', 'large'];
+const allowedType = ['default', 'danger', 'primary'];
+
 export default {
   name: 'z-button',
-
-  methods: {
-    handleClick(e) {
-      this.$emit('click', e);
-    }
-  },
 
   props: {
     disabled: Boolean,
@@ -49,23 +47,14 @@ export default {
       type: String,
       default: 'default',
       validator(value) {
-        return [
-          'default',
-          'danger',
-          'primary'
-        ].indexOf(value) > -1;
+        return allowedSize.indexOf(value) > -1;
       }
     },
     size: {
       type: String,
       default: 'normal',
       validator(value) {
-        return [
-          'mini',
-          'small',
-          'normal',
-          'large'
-        ].indexOf(value) > -1;
+        return allowedType.indexOf(value) > -1;
       }
     }
   }

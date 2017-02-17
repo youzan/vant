@@ -12,11 +12,7 @@ export default {
   },
   methods: {
     updateState(newState) {
-      console.log('changing');
       this.switchState = newState;
-    },
-    handleClick() {
-      alert('click');
     }
   }
 };
@@ -26,12 +22,15 @@ export default {
     @component switch {
       padding: 0 15px 15px;
 
-      @descendent sample {
-        margin: 0 15px;
+      @descendent wrapper {
+        margin: 30px;
+        width: 100px;
+        float: left;
+        text-align: center;
       }
 
       @descendent text {
-        margin-right: 20px;
+        margin: 20px 0;
       }
     }
   }
@@ -44,9 +43,14 @@ export default {
 :::demo 样例代码
 ```html
 <div class="page-switch">
-  <span class="page-switch-text">Switch state: {{switchStateText}}</span>
-  <z-switch class="page-switch-sample" :checked="switchState" :on-change="updateState"></z-switch>
-  <z-switch class="page-switch-sample" :checked="false" :disabled="true"></z-switch>
+  <div class="page-switch-wrapper">
+    <o2-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></o2-switch>
+    <div class="page-switch-text">{{switchStateText}}</div>
+  </div>
+  <div class="page-switch-wrapper">
+    <o2-switch class="some-customized-class" :checked="true" :disabled="true"></o2-switch>
+    <div class="page-switch-text">OFF, DISABLED</div>
+  </div>
 </div>
 ```
 
@@ -55,17 +59,16 @@ export default {
 export default {
   data() {
     return {
-      switchState: false
+      switchState: true
     };
   },
   computed: {
     switchStateText() {
-      return this.switchState ? 'on' : 'off';
+      return this.switchState ? ' ON' : 'OFF';
     }
   },
   methods: {
     updateState(newState) {
-      console.log('changing');
       this.switchState = newState;
     }
   }
@@ -77,7 +80,7 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| checked | 开关状态 | boolean  | false          | true,false    |
-| loading | loading状态 | boolean  | false          | true,false    |
-| disabled | 禁用状态 | boolean  | false          | true,false    |
+| checked | 开关状态 | boolean  | false          | true, false    |
+| loading | loading状态 | boolean  | false          | true, false    |
+| disabled | 禁用状态 | boolean  | false          | true, false    |
 | onChange | 回调 | function  | function（）{}      | -    |

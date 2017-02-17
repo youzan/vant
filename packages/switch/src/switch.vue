@@ -1,12 +1,12 @@
 <template>
-  <div class="z-switch" :class="['is-' + switchState]" @click="toggleState">
-    <div class="z-switch-node"></div>
+  <div class="o2-switch" :class="['is-' + switchState]" @click="toggleState">
+    <div class="o2-switch-node" :class="['is-' + switchState]"></div>
   </div>
 </template>
 
 <script>
 /**
- * z-switch
+ * o2-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [checked=false] - 开关状态
@@ -15,10 +15,10 @@
  * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
- * <z-switch checked="true" disabled="false"></z-switch>
+ * <o2-switch checked="true" disabled="false"></o2-switch>
  */
 export default {
-  name: 'z-switch',
+  name: 'o2-switch',
   props: {
     checked: {
       type: Boolean,
