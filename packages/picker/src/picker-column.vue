@@ -1,6 +1,10 @@
 <template>
   <div class="z-picker-column">
-    
+    <div class="z-picker-column-wrapper">
+      <div class="z-picker-item">
+        
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,17 +39,22 @@ export default {
   data() {
     return {
       currentValue: this.value,
+      currentValues: this.values,
       dragging: false
     };
   },
 
   watch: {
     values(val) {
+      this.currentValue = val;
+    },
+
+    currentValues(val) {
 
     },
 
     currentValue(val) {
-      this.$emit('change');
+      this.$emit('change', this);
     }
   },
 
