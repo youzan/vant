@@ -9,7 +9,7 @@ import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 // zanui
-import '../packages/zanui/src/index.pcss';
+import '../packages/zanui-css/src/index.pcss';
 
 const install = function(Vue) {
   if (install.installed) return;
