@@ -4,8 +4,8 @@
 var config = {
 
     "bem": {
-        "shortcuts": {"component": "c", "modifier": "m", "descendent": "d"},
-        "separators": {"descendent": "-", "modifier": "--"}
+        "shortcuts": {"component": "b", "modifier": "m", "descendent": "e"},
+        "separators": {"descendent": "__", "modifier": "--"}
     }/*,
     "autoprefixer": {"browsers": ["ie > 8", "last 2 versions"]},
     "rem": {"browsers": ["ie > 8", "last 2 versions"]}*/

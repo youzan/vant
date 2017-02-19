@@ -1,26 +1,4 @@
-<template>
-  <button
-    :type="nativeType"
-    :class="[
-      'z-button',
-      'z-button--' + type,
-      'z-button--' + size,
-      {
-        'is-disabled': disabled,
-        'is-loading': loading
-      }
-    ]"
-    :disabled="disabled"
-    @click="handleClick"
-  >
-    <i v-if="loading" class="z-icon-loading"></i>
-    <span class="z-button-text"><slot></slot></span>
-  </button>
-</template>
-
-<script>
 /**
- * z-header
  * @module components/button
  * @desc 按钮
  * @param {string} [type=default] - 显示类型，接受 default, primary, danger
@@ -42,21 +20,52 @@ export default {
   props: {
     disabled: Boolean,
     loading: Boolean,
+    block: Boolean,
+    tag: {
+      type: String,
+      default: 'button'
+    },
     nativeType: String,
     type: {
       type: String,
       default: 'default',
       validator(value) {
-        return allowedSize.indexOf(value) > -1;
+        return allowedType.indexOf(value) > -1;
       }
     },
     size: {
       type: String,
       default: 'normal',
       validator(value) {
-        return allowedType.indexOf(value) > -1;
+        return allowedSize.indexOf(value) > -1;
       }
     }
+  },
+
+  render(h) {
+    let { type, nativeType, size, disabled, loading, block } = this;
+    let Tag = this.tag;
+
+    return (
+      <Tag
+        type={nativeType}
+        disabled={disabled}
+        class={[
+          'z-button',
+          'z-button--' + type,
+          'z-button--' + size,
+          {
+            'is-disabled': disabled,
+            'is-loading': loading,
+            'is-block': block
+          }
+        ]}
+      >
+        {
+          loading ? <i class="z-icon-loading"></i> : null
+        }
+        <span class="z-button-text">{this.$slots.default}</span>
+      </Tag>
+    );
   }
 };
-</script>

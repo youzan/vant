@@ -109,7 +109,7 @@ if (process.env.NODE_ENV === 'production') {
         postcss: getPoastcssPlugin,
         babel: {
           presets: ['es2015'],
-          plugins: ['transform-runtime']
+          plugins: ['transform-runtime', 'transform-vue-jsx']
         },
         eslint: {
           formatter: require('eslint-friendly-formatter')

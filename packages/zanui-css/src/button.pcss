@@ -1,10 +1,12 @@
 @import "./common/var.pcss";
 
 @component-namespace z {
-  @component button {
+  @b button {
     position: relative;
-    display: block;
+    padding: 0;
+    display: inline-block;
     height: 45px;
+    line-height: 43px;
     border-radius: 4px;
     border: 0;
     box-sizing: border-box;
@@ -25,43 +27,58 @@
       opacity: .3;
     }
 
-    @modifier default {
+    @m default {
       color: $button-default-color;
       background-color: $button-default-background-color;
       border: 1px solid $button-default-border-color;
     }
 
-    @modifier primary {
+    @m primary {
       color: $button-primary-color;
       background-color: $button-primary-background-color;
       border: 1px solid $button-primary-border-color;
     }
 
-    @modifier danger {
+    @m danger {
       color: $button-danger-color;
       background-color: $button-danger-background-color;
       border: 1px solid $button-danger-border-color;
     }
 
-    @modifier large {
-      display: block;
+    @m large {
       width: 100%;
+      height: 50px;
+      line-height: 48px;
+      font-size: 16px;
     }
 
-    @modifier normal {
-      display: inline-block;
-      padding: 0 12px;
-    }
-
-    @modifier small {
-      display: inline-block;
+    @m normal {
       font-size: 14px;
-      padding: 0 12px;
-      height: 33px;
+    }
+
+    @m small {
+      min-width: 60px;
+      height: 30px;
+      line-height: 28px;
+      font-size: 12px;
+    }
+
+    @m mini {
+      display: inline-block;
+      width: 50px;
+      height: 22px;
+      line-height: 20px;
+      font-size: 10px;
     }
 
     @when disabled {
-      opacity: .6;
+      color: $button-disabled-color;
+      background-color: $button-disabled-background-color;
+      border: 1px solid $button-disabled-border-color;
+    }
+
+    @when block {
+      display: block;
     }
   }
 }
