@@ -1,10 +1,10 @@
 <template>
   <div class="z-picker">
-    <div class="z-picker-toolbar">
+    <div class="z-picker__toolbar">
       <slot>
       </slot>
     </div>
-    <div class="z-picker-columns">
+    <div class="z-picker__columns" :class="['z-picker__columns--' + columns.length]">
       <picker-column
         v-for="(item, index) in columns"
         v-model="values[index]"
@@ -69,7 +69,7 @@ export default {
       let values = [];
 
       columns.forEach(column => {
-        values.push(column.value || column[column.defaultIndex || 0]);
+        values.push(column.value || column.values[column.defaultIndex || 0]);
       });
 
       return values;

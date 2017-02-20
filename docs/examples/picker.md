@@ -1,6 +1,28 @@
+<script>
+export default {
+  data() {
+    return {
+      pickerColumns: [
+        {
+          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水']
+        }
+      ]
+    };
+  }
+};
+</script>
+
 ## Picker组件
 
 模仿iOS中的`UIPickerView`。
+
+### 基础用法
+
+:::demo 基础用法
+```html
+<z-picker :columns="pickerColumns"></z-picker>
+```
+:::
 
 ### API
 
