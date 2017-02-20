@@ -14,6 +14,7 @@
         :visible-item-count="visibleItemCount"
         @change="columnValueChange">
       </picker-column>
+      <div class="z-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
   </div>
 </template>
@@ -97,7 +98,8 @@ export default {
      */
     getColumnValue(index) {
       let column = this.getColumn(index);
-      return column && column.value;
+      console.log(column)
+      return column && column.values[column.valueIndex];
     },
 
     /**

@@ -1,5 +1,5 @@
 <template>
-  <div class="z-picker-column">
+  <div class="z-picker-column" :class="classNames">
     <div class="z-picker-column-wrapper" :class="{ dragging: isDragging }" ref="wrapper" :style="{ height: visibleContentHeight + 'px' }">
       <div
         v-for="item in currentValues"
@@ -53,7 +53,7 @@ export default {
 
   watch: {
     values(val) {
-      this.currentValue = val;
+      this.currentValues = val;
     },
 
     currentValues(val) {
@@ -66,7 +66,6 @@ export default {
       this.doOnValueChange();
 
       this.$emit('change', this);
-      this.$emit('input', val);
     }
   },
 
@@ -78,28 +77,41 @@ export default {
       return this.itemHeight * this.visibileColumnCount;
     },
 
+    /**
+     * 当前选中值在`values`中的索引
+     */
     valueIndex() {
       return this.currentValues.indexOf(this.currentValue);
     },
 
+    /**
+     * 计算picker的拖动范围
+     */
     dragRange() {
       var values = this.currentValues;
       var visibileColumnCount = this.visibileColumnCount;
       var itemHeight = this.itemHeight;
 
       return [ -itemHeight * (values.length - Math.ceil(visibileColumnCount / 2)), itemHeight * Math.floor(visibileColumnCount / 2) ];
+    },
+
+    /**
+     * 计算`classNames`
+     */
+    classNames() {
+      return this.className.split(' ');
     }
   },
 
   mounted() {
-    this.ready = true;
-    this.$emit('input', this.currentValue);
-
     this.initEvents();
     this.doOnValueChange();
   },
 
   methods: {
+    /**
+     * 将当前`value`值转换成需要垂直方向需要`translate`的值
+     */
     value2Translate(value) {
       let values = this.currentValues;
       let valueIndex = values.indexOf(value);
@@ -107,10 +119,13 @@ export default {
       let itemHeight = this.itemHeight;
 
       if (valueIndex !== -1) {
-        return (valueIndex - offset) * -itemHeight;
+        return (valueIndex - offset) * (-itemHeight);
       }
     },
 
+    /**
+     * 根据当前`translate`的值转换成当前选中的`value`
+     */
     translate2Value(translate) {
       let itemHeight = this.itemHeight;
       translate = Math.round(translate / itemHeight) * itemHeight;
@@ -120,6 +135,9 @@ export default {
       return this.currentValues[index];
     },
 
+    /**
+     * 初始化拖动事件
+     */
     initEvents() {
       var el = this.$refs.wrapper;
       var dragState = {};
@@ -195,6 +213,8 @@ export default {
     doOnValueChange() {
       let value = this.currentValue;
       let wrapper = this.$refs.wrapper;
+
+      this.$emit('input', this.currentValue);
 
       translateUtil.translateElement(wrapper, null, this.value2Translate(value));
     }
