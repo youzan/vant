@@ -115,6 +115,7 @@ export default {
      */
     getColumnValues(index) {
       let column = this.getColumn(index);
+      return column && column.currentValues;
     },
 
     /**
@@ -123,7 +124,7 @@ export default {
     setColumnValues(index, values) {
       let column = this.getColumn(index);
       if (column) {
-
+        column.currentValues = values;
       }
     },
 
