@@ -29,13 +29,25 @@ export default {
       type: Number,
       default: 5
     },
+    /**
+     * 该列所有的可选值
+     */
     values: {
       type: Array,
       default() {
         return [];
       }
     },
-    className: {},
+    /**
+     * 每列添加额外的`className`
+     */
+    className: {
+      type: String,
+      default: ''
+    },
+    /**
+     * 行高
+     */
     itemHeight: {
       type: Number,
       default: DEFAULT_ITEM_HEIGHT
@@ -146,6 +158,7 @@ export default {
 
       draggable(el, {
         start: (event) => {
+          // 存储当前状态
           dragState = {
             range: this.dragRange,
             start: new Date(),
@@ -210,6 +223,9 @@ export default {
       });
     },
 
+    /**
+     * `value`改变时调用
+     */
     doOnValueChange() {
       let value = this.currentValue;
       let wrapper = this.$refs.wrapper;

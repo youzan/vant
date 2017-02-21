@@ -4,6 +4,9 @@
     :class="{
       'is-disabled': disabled
     }">
+    <span class="z-radio__label">
+      <slot></slot>
+    </span>
   </z-cell>
 </template>
 
