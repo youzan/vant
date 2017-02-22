@@ -8,7 +8,7 @@
     }">
     <textarea
       v-if="type === 'textarea'"
-      class="z-field-control"
+      class="z-field__control"
       v-model="currentValue"
       @change="$emit('change', currentValue)"
       :placeholder="placeholder"
@@ -18,7 +18,7 @@
     </textarea>
     <input
       v-else
-      class="z-field-control"
+      class="z-field__control"
       :value="currentValue"
       @change="$emit('change', currentValue)"
       @input="handleInput"

@@ -1,15 +1,15 @@
 <template>
   <a class="z-cell" :href="url" @click="handleClick">
-    <div class="z-cell-title">
+    <div class="z-cell__title">
       <slot name="icon">
         <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
       </slot>
       <slot name="title">
         <span class="z-cell-text" v-text="title"></span>
-        <span class="z-cell-label" v-if="label" v-text="label"></span>
+        <span class="z-cell__abel" v-if="label" v-text="label"></span>
       </slot>
     </div>
-    <div class="z-cell-value" :class="{ 'is-link' : isLink }">
+    <div class="z-cell__value" :class="{ 'is-link' : isLink }">
       <slot>
         <span v-text="value"></span>
       </slot>
