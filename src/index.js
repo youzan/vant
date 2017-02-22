@@ -9,6 +9,7 @@ import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
+import Waterfall from '../packages/waterfall/index.js';
 // zanui
 import '../packages/zanui-css/src/index.pcss';
 
@@ -25,6 +26,7 @@ const install = function(Vue) {
   Vue.component(Popup.name, Popup);
   Vue.component(Picker.name, Picker);
   Vue.component(RadioGroup.name, RadioGroup);
+  Vue.component(Waterfall.name, Waterfall);
 };
 
 // auto install
@@ -45,5 +47,6 @@ module.exports = {
   Popup,
   Dialog,
   Picker,
-  RadioGroup
+  RadioGroup,
+  Waterfall
 };
