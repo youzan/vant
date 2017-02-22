@@ -1,6 +1,6 @@
 <template>
-  <div class="o2-switch" :class="['is-' + switchState]" @click="toggleState">
-    <div class="o2-switch-node" :class="['is-' + switchState]"></div>
+  <div class="z-switch" :class="switchState" @click="toggleState">
+    <div class="z-switch__node" :class="switchState"></div>
   </div>
 </template>
 
@@ -39,15 +39,12 @@ export default {
   },
   computed: {
     switchState: function() {
-      if (this.disabled) {
-        return 'disabled';
-      } else if (this.loading) {
-        return 'loading';
-      } else if (this.checked) {
-        return 'on';
-      } else {
-        return 'off';
-      }
+      let switchState = this.checked ? ['is-on'] : ['is-off'];
+
+      if (this.disabled) switchState.push('is-disabled');
+      if (this.loading) switchState.push('is-loading');
+
+      return switchState;
     }
   },
   methods: {
