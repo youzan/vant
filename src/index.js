@@ -8,6 +8,7 @@ import CellGroup from '../packages/cell-group/index.js';
 import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
+import RadioGroup from '../packages/radio-group/index.js';
 // zanui
 import '../packages/zanui-css/src/index.pcss';
 
@@ -23,6 +24,7 @@ const install = function(Vue) {
   Vue.component(CellGroup.name, CellGroup);
   Vue.component(Popup.name, Popup);
   Vue.component(Picker.name, Picker);
+  Vue.component(RadioGroup.name, RadioGroup);
 };
 
 // auto install
@@ -42,5 +44,6 @@ module.exports = {
   CellGroup,
   Popup,
   Dialog,
-  Picker
+  Picker,
+  RadioGroup
 };

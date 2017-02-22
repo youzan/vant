@@ -6,6 +6,10 @@
 
 <script>
 export default {
+  name: 'z-radio-group',
 
+  props: {
+    value: [String, Number]
+  }
 };
 </script>
