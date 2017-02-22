@@ -66,7 +66,7 @@
 
 ### 自定义按钮标签
 
-:::demo 有时按钮需要是一个a标签
+:::demo 按钮默认是button标签，可以使用tag属性修改为一个a标签
 ```html 
 <div class="z-button-group">
   <div class="z-button-1-1">
