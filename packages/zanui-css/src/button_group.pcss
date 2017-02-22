@@ -1,0 +1,29 @@
+@define-mixin button-wrap {
+  display: inline-block;
+  box-sizing: border-box;
+  padding-right: 10px;
+  &:last-child {
+    padding-right: 0;
+  }
+  .z-button {
+    width: 100%;
+  }
+}
+
+@component-namespace z {
+  @b button-group {
+    font-size: 0;
+  }
+  @b button-1-1 {
+    @mixin button-wrap;
+    width: 100%;
+  }
+  @b button-2-1 {
+    @mixin button-wrap;
+    width: 50%;
+  }
+  @b button-3-1 {
+    @mixin button-wrap;
+    width: 33.33%;
+  }
+}

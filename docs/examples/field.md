@@ -22,11 +22,11 @@ export default {
 
 :::demo 根据`type`属性显示不同的输入框。
 ```html
-<o2-cell-group>
-  <o2-field type="text" label="用户名：" placeholder="请输入用户名"></o2-field>
-  <o2-field type="password" label="密码：" placeholder="请输入密码"></o2-field>
-  <o2-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍"></o2-field>
-</o2-cell-group>
+<z-cell-group>
+  <z-field type="text" label="用户名：" placeholder="请输入用户名"></z-field>
+  <z-field type="password" label="密码：" placeholder="请输入密码"></z-field>
+  <z-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍"></z-field>
+</z-cell-group>
 ```
 :::
 
@@ -34,9 +34,9 @@ export default {
 
 :::demo 不传入`label`属性即可。
 ```html
-<o2-cell-group>
-  <o2-field type="text" placeholder="请输入用户名"></o2-field>
-</o2-cell-group>
+<z-cell-group>
+  <z-field type="text" placeholder="请输入用户名"></z-field>
+</z-cell-group>
 ```
 :::
 
@@ -44,9 +44,9 @@ export default {
 
 :::demo 监听组件的`change`事件。
 ```html
-<o2-cell-group>
-  <o2-field type="text" label="用户名：" placeholder="请输入用户名" @change="handleChange"></o2-field>
-</o2-cell-group>
+<z-cell-group>
+  <z-field type="text" label="用户名：" placeholder="请输入用户名" @change="handleChange"></z-field>
+</z-cell-group>
 ```
 :::
 

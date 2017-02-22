@@ -1,7 +1,7 @@
 {
-  "name": "o2-icon",
+  "name": "z-icon",
   "version": "0.0.1",
-  "description": "o2-icon",
+  "description": "z-icon",
   "main": "index.js",
   "author": "zhangmin <zhangmin@youzan.com>",
   "devDependencies": {},

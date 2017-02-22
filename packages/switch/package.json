@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/o2-switch",
+  "name": "@youzan/z-switch",
   "version": "0.0.1",
   "description": "switch component",
   "main": "./lib/index.js",
