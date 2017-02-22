@@ -25,6 +25,10 @@
             {
               "path": "/card",
               "title": "Card"
+            },
+            {
+              "path": "/loading",
+              "title": "Loading"
             }
           ]
         },
