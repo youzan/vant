@@ -8,7 +8,7 @@
 }
 
 @component-namespace z {
-  @component popup {
+  @b popup {
     position: fixed;
     background-color: #fff;
     top: 50%;
@@ -17,7 +17,7 @@
     backface-visibility: hidden;
     transition: .2s ease-out;
 
-    @modifier top {
+    @m top {
       top: 0;
       right: auto;
       bottom: auto;
@@ -25,7 +25,7 @@
       transform: translate3d(-50%, 0, 0);
     }
 
-    @modifier right {
+    @m right {
       top: 50%;
       right: 0;
       bottom: auto;
@@ -33,7 +33,7 @@
       transform: translate3d(0, -50%, 0);
     }
 
-    @modifier bottom {
+    @m bottom {
       top: auto;
       bottom: 0;
       right: auto;
@@ -41,7 +41,7 @@
       transform: translate3d(-50%, 0, 0);
     }
 
-    @modifier left {
+    @m left {
       top: 50%;
       right: auto;
       bottom: auto;

@@ -42,6 +42,12 @@ export default {
     }
   },
 
+  methods: {
+    handleClick() {
+      this.$emit('click');
+    }
+  },
+
   render(h) {
     let { type, nativeType, size, disabled, loading, block } = this;
     let Tag = this.tag;
@@ -60,6 +66,7 @@ export default {
             'is-block': block
           }
         ]}
+        onClick={this.handleClick}
       >
         {
           loading ? <i class="z-icon-loading"></i> : null
