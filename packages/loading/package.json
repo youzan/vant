@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/z-loading",
+  "version": "0.0.1",
+  "description": "loading component",
+  "main": "./lib/index.js",
+  "author": "jiangruowei",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
