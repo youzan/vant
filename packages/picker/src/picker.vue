@@ -98,7 +98,6 @@ export default {
      */
     getColumnValue(index) {
       let column = this.getColumn(index);
-      console.log(column)
       return column && column.values[column.valueIndex];
     },
 
