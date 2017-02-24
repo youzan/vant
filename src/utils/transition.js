@@ -7,7 +7,7 @@ if (!Vue.prototype.$isServer) {
   var engine;
   var translate3d = false;
 
-  if (window.opera && Object.prototype.toString.call(opera) === '[object Opera]') {
+  if (window.opera && Object.prototype.toString.call(window.opera) === '[object Opera]') {
     engine = 'presto';
   } else if ('MozAppearance' in docStyle) {
     engine = 'gecko';
@@ -77,7 +77,7 @@ if (!Vue.prototype.$isServer) {
     if (element === null || element.style === null) return;
 
     var transformValue = element.style[transformProperty];
-    
+
     if (transformValue) {
       transformValue = transformValue.replace(/translate\(\s*(-?\d+(\.?\d+?)?)px,\s*(-?\d+(\.\d+)?)px\)\s*translateZ\(0px\)/g, '');
       element.style[transformProperty] = transformValue;

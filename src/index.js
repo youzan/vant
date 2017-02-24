@@ -9,8 +9,7 @@ import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
-// zanui
-import '../packages/zanui-css/src/index.pcss';
+import Loading from '../packages/loading/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -25,6 +24,7 @@ const install = function(Vue) {
   Vue.component(Popup.name, Popup);
   Vue.component(Picker.name, Picker);
   Vue.component(RadioGroup.name, RadioGroup);
+  Vue.component(Loading.name, Loading);
 };
 
 // auto install
@@ -45,5 +45,6 @@ module.exports = {
   Popup,
   Dialog,
   Picker,
-  RadioGroup
+  RadioGroup,
+  Loading
 };

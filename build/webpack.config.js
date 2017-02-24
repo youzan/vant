@@ -57,10 +57,6 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?root=./docs/'
-      },
-      {
-        test: /\.pcss$/,
         loader: 'style-loader!css-loader!postcss-loader'
       },
       {

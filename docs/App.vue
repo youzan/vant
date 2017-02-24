@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="css">
+  @import './assets/docs.css';
+
   .page-container {
     width: 1140px;
     padding: 0 30px;

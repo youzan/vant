@@ -5,8 +5,8 @@
         <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
       </slot>
       <slot name="title">
-        <span class="z-cell-text" v-text="title"></span>
-        <span class="z-cell__abel" v-if="label" v-text="label"></span>
+        <span class="z-cell__text" v-text="title"></span>
+        <span class="z-cell__label" v-if="label" v-text="label"></span>
       </slot>
     </div>
     <div class="z-cell__value" :class="{ 'is-link' : isLink }">

@@ -154,7 +154,9 @@ export default {
       var el = this.$refs.wrapper;
       var dragState = {};
 
-      var velocityTranslate, prevTranslate, pickerItems;
+      var velocityTranslate;
+      var prevTranslate;
+      var pickerItems; // eslint-disable-line
 
       draggable(el, {
         start: (event) => {
@@ -166,7 +168,7 @@ export default {
             startTop: event.pageY,
             startTranslateTop: translateUtil.getElementTranslate(el).top
           };
-          pickerItems = el.querySelectorAll('.z-picker-item');
+          pickerItems = el.querySelectorAll('.z-picker-item'); // eslint-disable-line
         },
 
         drag: (event) => {
