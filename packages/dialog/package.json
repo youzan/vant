@@ -1,10 +1,10 @@
 {
-  "name": "<%= name %>",
-  "version": "<%= version %>",
-  "description": "<%= description %>",
-  "main": "./lib/index.js",
-  "author": "<%= author %>",
-  "license": "<%= license %>",
+  "name": "@youzan/z-dialog",
+  "version": "0.0.1",
+  "description": "dialog component",
+  "main": "./index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "license": "MIT",
   "devDependencies": {},
   "dependencies": {}
 }

@@ -29,6 +29,18 @@
             {
               "path": "/loading",
               "title": "Loading"
+            },
+            {
+              "path": "/steps",
+              "title": "Steps"
+            },
+            {
+              "path": "/badge",
+              "title": "Badge"
+            },
+            {
+              "path": "/search",
+              "title": "Search"
             }
           ]
         },
@@ -95,10 +107,6 @@
             {
               "path": "/waterfall",
               "title": "Waterfall"
-            },
-            {
-              "path": "/dialog",
-              "title": "Dialog"
             },
             {
               "path": "/img-preview",

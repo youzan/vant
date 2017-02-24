@@ -1,3 +1,10 @@
 {
-  "name": "z-field"
+  "name": "@youzan/z-field",
+  "version": "0.0.1",
+  "description": "form field component",
+  "main": "./index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
 }
