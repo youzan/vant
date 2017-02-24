@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Popup from 'packages/popup';
+import Popup from 'src/mixins/popup';
 
 const CANCEL_TEXT = '取消';
 const CONFIRM_TEXT = '确认';

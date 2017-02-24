@@ -6,7 +6,7 @@ config.entry = {
 
 config.output = {
   filename: './dist/[name].js',
-  library: 'Oxygen',
+  library: 'zanui',
   libraryTarget: 'umd'
 }
 

@@ -11,9 +11,10 @@
   ],
   "scripts": {
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
-    "build:file": "node build/bin/build-entry.js",
-    "build": "npm run clean && npm run lint && npm run build:file && npm run concat:dev && npm run concat:prod",
     "dev": "npm run bootstrap && npm run build:file",
+    "build:file": "node build/bin/build-entry.js",
+    "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js",
+    "build": "npm run clean && npm run lint && npm run build:file && webpack --progress --hide-modules --config  build/webpack.build.min.js && webpack --progress --hide-modules --config  build/webpack.build.js",
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "docs": "npm run dev && webpack-dev-server --inline --hot --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",

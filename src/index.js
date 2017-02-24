@@ -10,8 +10,6 @@ import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
 import Loading from '../packages/loading/index.js';
-// zanui
-import '../packages/zanui-css/src/index.pcss';
 
 const install = function(Vue) {
   if (install.installed) return;
