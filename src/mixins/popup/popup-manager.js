@@ -122,9 +122,8 @@ const PopupManager = {
           if (modalDom.parentNode) modalDom.parentNode.removeChild(modalDom);
 
           modalDom.style.display = 'none';
-          this.modalDom = undefined;
+          this.modalDom = null;
         }
-        removeClass(modalDom, 'v-modal-leave');
       }, 200);
     }
   }
