@@ -2,7 +2,7 @@
   display: inline-block;
   box-sizing: border-box;
   padding-right: 10px;
-  &:last-child {
+  &::last-child {
     padding-right: 0;
   }
   .z-button {
@@ -13,16 +13,23 @@
 @component-namespace z {
   @b button-group {
     font-size: 0;
+
+    > .z-button {
+      margin-right: 10px;
+      &::last-child {
+        margin-right: 0;
+      }
+    }
   }
-  @b button-1-1 {
+  @b button-1 {
     @mixin button-wrap;
     width: 100%;
   }
-  @b button-2-1 {
+  @b button-2 {
     @mixin button-wrap;
     width: 50%;
   }
-  @b button-3-1 {
+  @b button-3 {
     @mixin button-wrap;
     width: 33.33%;
   }
