@@ -131,10 +131,8 @@ export default {
         setTimeout(() => {
           if (this.modal && this.bodyOverflow !== 'hidden') {
             document.body.style.overflow = this.bodyOverflow;
-            document.body.style.paddingRight = this.bodyPaddingRight;
           }
           this.bodyOverflow = null;
-          this.bodyPaddingRight = null;
         }, 200);
       }
 

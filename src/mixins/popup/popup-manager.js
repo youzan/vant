@@ -70,7 +70,7 @@ const PopupManager = {
 
     const modalStack = this.modalStack;
 
-    for (let i = 0, j = modalStack.length; i < j; i++) {
+    for (let i = 0, len = modalStack.length; i < len; i++) {
       const item = modalStack[i];
       if (item.id === id) {
         return;
@@ -79,10 +79,7 @@ const PopupManager = {
 
     const modalDom = getModal();
 
-    addClass(modalDom, 'v-modal');
-    setTimeout(() => {
-      removeClass(modalDom, 'v-modal-enter');
-    }, 200);
+    addClass(modalDom, 'z-modal');
 
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
       dom.parentNode.appendChild(modalDom);
