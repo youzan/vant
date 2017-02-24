@@ -33,7 +33,7 @@
       }
     }
 
-    @empty-cells: show title {
+    @e title {
       float: left;
       overflow: hidden;
     }
