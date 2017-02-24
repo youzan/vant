@@ -12,30 +12,6 @@ const getDOM = function(dom) {
   return dom;
 };
 
-let scrollBarWidth;
-const getScrollBarWidth = () => {
-  if (scrollBarWidth !== undefined) return scrollBarWidth;
-
-  const outer = document.createElement('div');
-  outer.style.visibility = 'hidden';
-  outer.style.width = '100px';
-  outer.style.position = 'absolute';
-  outer.style.top = '-9999px';
-  document.body.appendChild(outer);
-
-  const widthNoScroll = outer.offsetWidth;
-  outer.style.overflow = 'scroll';
-
-  const inner = document.createElement('div');
-  inner.style.width = '100%';
-  outer.appendChild(inner);
-
-  const widthWithScroll = inner.offsetWidth;
-  outer.parentNode.removeChild(outer);
-
-  return widthNoScroll - widthWithScroll;
-};
-
 export default {
   props: {
     /**
@@ -92,8 +68,7 @@ export default {
       opening: false,
       opened: false,
       closing: false,
-      bodyOverflow: null,
-      bodyPaddingRight: null
+      bodyOverflow: null
     };
   },
 
@@ -128,19 +103,11 @@ export default {
 
         // 如果滚动时需要锁定
         if (props.lockOnScroll) {
-          // 将原来的`bodyOverflow`和`bodyPaddingRight`存起来
+          // 将原来的`bodyOverflow`存起来
           if (!this.bodyOverflow) {
-            this.bodyPaddingRight = document.body.style.paddingRight;
             this.bodyOverflow = document.body.style.overflow;
           }
 
-          scrollBarWidth = getScrollBarWidth();
-
-          // 页面是否`overflow`
-          let bodyHasOverflow = document.documentElement.clientHeight < document.body.scrollHeight;
-          if (scrollBarWidth > 0 && bodyHasOverflow) {
-            document.body.style.paddingRight = scrollBarWidth + 'px';
-          }
           document.body.style.overlay = 'hidden';
         }
       }
