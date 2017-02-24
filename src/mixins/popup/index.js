@@ -154,9 +154,7 @@ export default {
 
     if (this.modal && this.bodyOverflow !== null && this.bodyOverflow !== 'hidden') {
       document.body.style.overflow = this.bodyOverflow;
-      document.body.style.paddingRight = this.bodyPaddingRight;
     }
     this.bodyOverflow = null;
-    this.bodyPaddingRight = null;
   }
 };
