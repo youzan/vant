@@ -52,6 +52,27 @@ export default {
     let { type, nativeType, size, disabled, loading, block } = this;
     let Tag = this.tag;
 
-    
+    return (
+      <Tag
+        type={nativeType}
+        disabled={disabled}
+        class={[
+          'z-button',
+          'z-button--' + type,
+          'z-button--' + size,
+          {
+            'is-disabled': disabled,
+            'is-loading': loading,
+            'is-block': block
+          }
+        ]}
+        onClick={this.handleClick}
+      >
+        {
+          loading ? <i class="z-icon-loading"></i> : null
+        }
+        <span class="z-button-text">{this.$slots.default}</span>
+      </Tag>
+    );
   }
 };
