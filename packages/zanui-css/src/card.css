@@ -6,7 +6,11 @@
     background: #FAFAFA;
     overflow: hidden;
     position: relative;
-    margin-bottom: 10px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     @e img {
       float: left;

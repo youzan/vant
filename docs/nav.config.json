@@ -19,6 +19,10 @@
               "title": "Progress"
             },
             {
+              "path": "/panel",
+              "title": "Panel"
+            },
+            {
               "path": "/card",
               "title": "Card"
             },

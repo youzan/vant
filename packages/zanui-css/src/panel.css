@@ -1,7 +1,36 @@
 @component-namespace z {
   @b panel {
-    padding: 5px 15px;
-    background: #D8D8D8;
-    overflow: hidden;
+    background: #fff;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+
+    @e header {
+      padding: 10px 15px;
+      position: relative;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    @e title {
+      font-size: 14px;
+      color: #333;
+    }
+
+    @e desc {
+      font-size: 12px;
+      color: #666;
+    }
+
+    @e status {
+      font-size: 14px;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: #FF4444;
+    }
+
+    @e footer {
+      border-top: 1px solid #E5E5E5;
+      padding: 10px 15px;
+    }
   }
 }
