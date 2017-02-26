@@ -1,0 +1,7 @@
+@component-namespace z {
+  @b panel {
+    padding: 5px 15px;
+    background: #D8D8D8;
+    overflow: hidden;
+  }
+}

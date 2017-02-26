@@ -1,5 +1,5 @@
 <template>
-  <z-cell
+  <div
     class="z-radio"
     :class="{
       'is-disabled': disabled
@@ -11,18 +11,12 @@
     <span class="z-radio__label">
       <slot></slot>
     </span>
-  </z-cell>
+  </div>
 </template>
 
 <script>
-import zCell from 'packages/cell';
-
 export default {
   name: 'z-radio',
-
-  components: {
-    zCell
-  },
 
   props: {
     disabled: Boolean,

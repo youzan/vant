@@ -1,4 +1,4 @@
-@import "./mixins/border_retina.pcss";
+@import "./mixins/border_retina.css";
 
 @component-namespace z {
   @b dialog-wrapper {

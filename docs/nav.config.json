@@ -15,10 +15,6 @@
               "title": "Cell"
             },
             {
-              "path": "/loading",
-              "title": "Loading"
-            },
-            {
               "path": "/progress",
               "title": "Progress"
             },

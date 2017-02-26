@@ -4,6 +4,7 @@
 @import './button.css';
 @import './button_group.css';
 @import './cell.css';
+@import './card.css';
 @import './dialog.css';
 @import './field.css';
 @import './icon.css';
@@ -12,3 +13,4 @@
 @import './popup.css';
 @import './radio.css';
 @import './switch.css';
+@import './panel.css';

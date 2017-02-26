@@ -1,5 +1,5 @@
-@import "./common/var.pcss";
-@import "./mixins/border_retina.pcss";
+@import "./common/var.css";
+@import "./mixins/border_retina.css";
 
 @component-namespace z {
   @b field {

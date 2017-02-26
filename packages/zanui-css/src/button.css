@@ -1,4 +1,4 @@
-@import "./common/var.pcss";
+@import "./common/var.css";
 
 @component-namespace z {
   @b button {
