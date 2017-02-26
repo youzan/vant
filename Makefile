@@ -11,4 +11,4 @@ init:
 	node build/bin/init.js $(filter-out $@,$(MAKECMDGOALS))
 
 dev:
-	npm run docs
+	npm run dev

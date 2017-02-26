@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App';
+import App from './ExamplesDocsApp';
 import routes from './router.config';
 import demoBlock from './components/demo-block';
 import SideNav from './components/side-nav';

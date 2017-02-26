@@ -10,15 +10,15 @@ let componentPaths = [];
 delete components.font;
 
 Object.keys(components).forEach(key => {
-  const filePath = path.join(__dirname, `../../packages/${key}/cooking.conf.js`);
+  const filePath = path.join(__dirname, `../../packages/${key}/webpack.conf.js`);
 
   if (existsSync(filePath)) {
-    componentPaths.push(`packages/${key}/cooking.conf.js`);
+    componentPaths.push(`packages/${key}/webpack.conf.js`);
   }
 });
 
 const paths = componentPaths.join(',');
-const cli = `node_modules/.bin/cooking build -c ${paths} -p`;
+const cli = `node_modules/.bin/webpack build -c ${paths} -p`;
 
 execSync(cli, {
   stdio: 'inherit'

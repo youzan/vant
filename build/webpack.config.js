@@ -24,7 +24,8 @@ function wrap(render) {
 
 module.exports = {
   entry: {
-    'build-docs': './docs/index.js'
+    'zanui-docs': './docs/index.js',
+    'zanui-examples': './docs/examples.js'
   },
   output: {
     path: './docs/build',
@@ -39,7 +40,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.pcss'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
-      'oxygen': path.join(__dirname, '..'),
+      'zanui': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages')
     }
