@@ -15,7 +15,7 @@
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
-    "build:zanui": "webpack --progress --hide-modules --config  build/webpack.build.js && webpack --progress --hide-modules --config  build/webpack.build.min.js",
+    "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:utils && npm run build:zanui-css",
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
