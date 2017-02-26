@@ -26,7 +26,6 @@ const install = function(Vue) {
   Vue.component(Popup.name, Popup);
   Vue.component(Picker.name, Picker);
   Vue.component(RadioGroup.name, RadioGroup);
-  Vue.component(Waterfall.name, Waterfall);
 };
 
 // auto install

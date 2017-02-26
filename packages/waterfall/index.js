@@ -1,3 +1,3 @@
-import SampleComponent from './src/main';
+import Waterfall from './src/main.js';
 
-export default SampleComponent;
+export default Waterfall;
