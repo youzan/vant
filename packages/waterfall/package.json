@@ -1,5 +1,5 @@
 {
-  "name": "waterfall",
+  "name": "@youzan/waterfall",
   "version": "0.0.1",
   "description": "瀑布流",
   "main": "./lib/index.js",

@@ -51,6 +51,8 @@
     @e desc {
       font-size: 12px;
       color: #666;
+      max-height: 20px;
+      @mixin multi-ellipsis 1;
     }
 
     @e price {
