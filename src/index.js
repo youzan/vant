@@ -9,6 +9,7 @@ import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
+import Waterfall from '../packages/waterfall/index.js';
 import Loading from '../packages/loading/index.js';
 import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
@@ -50,6 +51,7 @@ module.exports = {
   Dialog,
   Picker,
   RadioGroup,
+  Waterfall,
   Loading,
   Panel,
   Card
