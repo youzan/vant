@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/oxygen",
+  "name": "@youzan/zanui-vue",
   "version": "0.0.1",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.qima-inc.com:fe/oxygen.git"
+    "url": "git@gitlab.qima-inc.com:fe/zanui-vue.git"
   },
   "keywords": [
     "youzan",
