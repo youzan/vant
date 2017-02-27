@@ -1,47 +1,47 @@
-@import "./common/var.pcss";
-@import "./mixins/border_retina.pcss";
+@import "./common/var.css";
+@import "./mixins/border_retina.css";
 
 @component-namespace z {
-  @component field {
+  @b field {
     width: 100%;
     overflow: hidden;
 
     @when textarea {
-      .z-field-control {
+      .z-field__control {
         min-height: 60px;
       }
     }
 
     @when nolabel {
-      .z-cell-title {
+      .z-cell__title {
         display: none;
       }
 
-      .z-cell-value {
+      .z-cell__value {
         width: 100%;
         padding-left: 0;
       }
     }
 
-    .z-cell-title,
-    .z-cell-value {
+    .z-cell__title,
+    .z-cell__value {
       float: none;
       box-sizing: border-box;
     }
 
-    .z-cell-title {
+    .z-cell__title {
       width: 90px;
       position: absolute;
       top: 10px;
       left: 0;
     }
 
-    .z-cell-value {
+    .z-cell__value {
       width: 100%;
       padding-left: 90px;
     }
 
-    .z-field-control {
+    @e control {
       border: 0;
       font-size: 14px;
       line-height: 22px;

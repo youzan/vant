@@ -24,7 +24,8 @@ function wrap(render) {
 
 module.exports = {
   entry: {
-    'build-docs': './docs/index.js'
+    'zanui-docs': './docs/index.js',
+    'zanui-examples': './docs/examples.js'
   },
   output: {
     path: './docs/build',
@@ -39,7 +40,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.pcss'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
-      'oxygen': path.join(__dirname, '..'),
+      'zanui': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages')
     }
@@ -57,10 +58,6 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?root=./docs/'
-      },
-      {
-        test: /\.pcss$/,
         loader: 'style-loader!css-loader!postcss-loader'
       },
       {
@@ -91,8 +88,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new ExtractTextPlugin(`yzvue_base_${version}_min.css`),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false},
-      output: {comments: false},
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
       sourceMap: false
     }),
     new webpack.LoaderOptionsPlugin({

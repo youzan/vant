@@ -1,8 +1,8 @@
-@import "./common/var.pcss";
-@import "./mixins/border_retina.pcss";
+@import "./common/var.css";
+@import "./mixins/border_retina.css";
 
 @component-namespace z {
-  @component cell-group {
+  @b cell-group {
     padding-left: 10px;
     position: relative;
 
@@ -11,7 +11,7 @@
     }
   }
 
-  @component cell {
+  @b cell {
     display: block;
     overflow: hidden;
     position: relative;
@@ -33,19 +33,19 @@
       }
     }
 
-    @descendent title {
+    @e title {
       float: left;
       overflow: hidden;
     }
 
-    @descendent label {
+    @e label {
       display: block;
       font-size: 12px;
       line-height: 1.2;
       color: #666;
     }
 
-    @descendent value {
+    @e value {
       float: right;
       overflow: hidden;
 

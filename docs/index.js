@@ -1,11 +1,12 @@
-import './assets/docs.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './App';
+import App from './ExamplesDocsApp';
 import routes from './router.config';
 import demoBlock from './components/demo-block';
 import SideNav from './components/side-nav';
 import Oxygen from '../src/index';
+
+import 'packages/zanui-css/src/index.css';
 
 Vue.use(Oxygen);
 Vue.use(VueRouter);

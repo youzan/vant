@@ -23,7 +23,7 @@ const registerRoute = (navConfig) => {
     route.push({
       path: '/component' + page.path,
       component: function(resolve) {
-        require([`./examples${page.path}.md`], resolve);
+        require([`./examples-docs${page.path}.md`], resolve);
       }
     });
   }

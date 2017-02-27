@@ -2,7 +2,7 @@
   "name": "@youzan/z-switch",
   "version": "0.0.1",
   "description": "switch component",
-  "main": "./lib/index.js",
+  "main": "./index.js",
   "author": "jiangruowei",
   "license": "MIT",
   "devDependencies": {},

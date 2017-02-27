@@ -2,8 +2,8 @@
   "name": "@youzan/oxygen",
   "version": "0.0.1",
   "description": "有赞vue wap组件库",
-  "main": "lib/oxygen.js",
-  "style": "lib/style.css",
+  "main": "lib/zanui.js",
+  "style": "lib/zanui-css/index.css",
   "files": [
     "lib",
     "src",
@@ -11,11 +11,13 @@
   ],
   "scripts": {
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
+    "dev": "npm run bootstrap && npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.js",
     "build:file": "node build/bin/build-entry.js",
-    "build": "npm run clean && npm run lint && npm run build:file && npm run concat:dev && npm run concat:prod",
-    "dev": "npm run bootstrap && npm run build:file",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
+    "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
+    "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
+    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:utils && npm run build:zanui-css",
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
-    "docs": "npm run dev && webpack-dev-server --inline --hot --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet"
   },

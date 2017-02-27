@@ -43,13 +43,17 @@ export default {
 :::demo 样例代码
 ```html
 <div class="page-switch">
-  <div class="page-switch-wrapper">
+  <div class="page-switch__wrapper">
     <o2-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></o2-switch>
-    <div class="page-switch-text">{{switchStateText}}</div>
+    <div class="page-switch__text">{{switchStateText}}</div>
   </div>
-  <div class="page-switch-wrapper">
+  <div class="page-switch__wrapper">
     <o2-switch class="some-customized-class" :checked="true" :disabled="true"></o2-switch>
-    <div class="page-switch-text">OFF, DISABLED</div>
+    <div class="page-switch__text">ON, DISABLED</div>
+  </div>
+  <div class="page-switch__wrapper">
+    <o2-switch class="some-customized-class" :checked="false" :disabled="true"></o2-switch>
+    <div class="page-switch__text">OFF, DISABLED</div>
   </div>
 </div>
 ```

@@ -1,0 +1,86 @@
+@import "./mixins/ellipsis.css";
+
+@component-namespace z {
+  @b card {
+    padding: 5px 15px;
+    background: #FAFAFA;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @e img {
+      float: left;
+      width: 90px;
+      height: 90px;
+      border: 0;
+    }
+
+    @e content {
+      margin-left: 100px;
+      display: table;
+
+      @when center {
+        display: table;
+        height: 90px;
+
+        .z-card__info {
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    @e row {
+      overflow: hidden;
+      padding-right: 80px;
+      position: relative;
+    }
+
+    @e title {
+      line-height: 20px;
+      color: #333;
+      max-height: 40px;
+      margin-bottom: 5px;
+      @mixin multi-ellipsis 2;
+    }
+
+    @e desc {
+      font-size: 12px;
+      color: #666;
+    }
+
+    @e price {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      text-align: right;
+      font-size: 14px;
+      color: #333;
+    }
+
+    @e num {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      text-align: right;
+      font-size: 12px;
+      color: #666;
+    }
+
+    @e footer {
+      position: absolute;
+      right: 15px;
+      bottom: 5px;
+
+      .z-button {
+        margin-left: 5px;
+      }
+    }
+  }
+}

@@ -2,15 +2,15 @@
   <transition name="dialog-bounce">
     <div class="z-dialog-wrapper">
       <div class="z-dialog" v-show="value">
-        <div class="z-dialog-header" v-if="title">
-          <div class="z-dialog-title" v-text="title"></div>
+        <div class="z-dialog__header" v-if="title">
+          <div class="z-dialog__title" v-text="title"></div>
         </div>
-        <div class="z-dialog-content" v-if="message">
-          <div class="z-dialog-message" v-html="message"></div>
+        <div class="z-dialog__content" v-if="message">
+          <div class="z-dialog__message" v-html="message"></div>
         </div>
-        <div class="z-dialog-footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
-          <button class="z-dialog-btn z-dialog-cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
-          <button class="z-dialog-btn z-dialog-confirm" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
+        <div class="z-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
+          <button class="z-dialog__btn z-dialog__cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
+          <button class="z-dialog__btn z-dialog__confirm" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Popup from 'packages/popup';
+import Popup from 'src/mixins/popup';
 
 const CANCEL_TEXT = '取消';
 const CONFIRM_TEXT = '确认';

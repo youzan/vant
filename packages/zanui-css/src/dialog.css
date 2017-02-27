@@ -1,11 +1,11 @@
-@import "./mixins/border_retina.pcss";
+@import "./mixins/border_retina.css";
 
 @component-namespace z {
-  @component dialog-wrapper {
+  @b dialog-wrapper {
     position: absolute;
   }
 
-  @component dialog {
+  @b dialog {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -18,11 +18,11 @@
     backface-visibility: hidden;
     transition: .2s;
 
-    @descendent header {
+    @e header {
       padding: 15px 0 0;
     }
 
-    @descendent content {
+    @e content {
       padding: 15px 20px;
       min-height: 36px;
       position: relative;
@@ -32,7 +32,7 @@
       }
     }
 
-    @descendent title {
+    @e title {
       text-align: center;
       padding-left: 0;
       margin-bottom: 0;
@@ -40,31 +40,31 @@
       color: #333;
     }
 
-    @descendent message {
+    @e message {
       color: #999;
       margin: 0;
       font-size: 14px;
       line-height: 1.5;
     }
 
-    @descendent footer {
+    @e footer {
       font-size: 14px;
       overflow: hidden;
-    }
 
-    .is-twobtn {
-      .z-dialog-btn {
-        width: 50%;
-      }
+      @when twobtn {
+        .z-dialog__btn {
+          width: 50%;
+        }
 
-      .z-dialog-cancel {
-        &::after {
-          @mixin border-retina (right);
+        .z-dialog__cancel {
+          &::after {
+            @mixin border-retina (right);
+          }
         }
       }
     }
 
-    @descendent btn {
+    @e btn {
       line-height: 40px;
       border: 0;
       background-color: #fff;
@@ -74,11 +74,11 @@
       position: relative;
     }
 
-    @descendent cancel {
+    @e cancel {
       color: #333;
     }
 
-    @descendent confirm {
+    @e confirm {
       color: #00C000;
       width: 100%;
     }
