@@ -1,6 +1,6 @@
 <template>
   <div class="page-card">
-    <h1 class="page-title">Card</h1>
+    <h1 class="page-title">Waterfall</h1>
 
     <h2 class="page-sub-title">基础用法</h2>
     <div class="waterfall">
