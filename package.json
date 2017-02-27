@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
