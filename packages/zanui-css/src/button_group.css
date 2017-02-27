@@ -2,7 +2,7 @@
   display: inline-block;
   box-sizing: border-box;
   padding-right: 10px;
-  &::last-child {
+  &:last-child {
     padding-right: 0;
   }
   .z-button {

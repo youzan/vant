@@ -26,7 +26,7 @@ export default {
 
   .page-container {
     height: 100%;
-    min-width: 960px;
+    overflow: scroll;
 
     h2 {
       font-size: 28px;

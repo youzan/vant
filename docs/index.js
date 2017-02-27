@@ -8,7 +8,7 @@ import SideNav from './components/side-nav';
 import Mobile from './components/mobile';
 import ZanUI from '../src/index';
 
-import 'packages/zanui-css/src/index.css';
+import '../packages/zanui-css/src/index.css';
 
 Vue.use(ZanUI);
 Vue.use(VueRouter);

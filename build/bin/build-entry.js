@@ -18,9 +18,9 @@ const install = function(Vue) {
 // auto install
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
-};
+}
 
-module.exports = {
+export default {
   install,
   version: '{{version}}',
 {{list}}
