@@ -41,7 +41,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  version: '0.0.1',
+  version: '0.0.4',
   Button,
   Switch,
   Field,

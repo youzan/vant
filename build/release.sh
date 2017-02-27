@@ -30,9 +30,6 @@ then
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
-  git checkout dev
-  git rebase master
-  git push origin dev
 
   npm publish
 fi
