@@ -1,6 +1,4 @@
-import navConfig from './nav.config.json';
-
-const registerRoute = (navConfig) => {
+const registerRoute = (navConfig, isExample) => {
   let route = [];
   let navs = navConfig['zh-CN'];
   navs.forEach(nav => {
@@ -23,14 +21,14 @@ const registerRoute = (navConfig) => {
     route.push({
       path: '/component' + page.path,
       component: function(resolve) {
-        require([`./examples-docs${page.path}.md`], resolve);
+        require([isExample ? `./examples${page.path}.vue` : `./examples-docs${page.path}.md`], resolve);
       }
     });
   }
 
+  // console.log(route);
+
   return route;
 };
 
-let route = registerRoute(navConfig);
-
-export default route;
+export default registerRoute;

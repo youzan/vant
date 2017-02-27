@@ -43,32 +43,26 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      data: Array,
-      base: {
-        type: String,
-        default: ''
-      }
-    },
-    data() {
-      return {
-        highlights: [],
-        navState: []
-      };
-    }
-  };
+import navConfig from '../nav.config.json';
+
+export default {
+  data() {
+    return {
+      highlights: [],
+      navState: [],
+      data: navConfig['zh-CN'],
+      base: '/component'
+    };
+  }
+};
 </script>
 
-<style lang="css">
+<style>
   .side-nav {
-    width: 18%;
+    width: 100%;
     box-sizing: border-box;
     padding: 40px 20px;
-    float: left;
     background: #f9fafb;
-    height: inherit;
-    overflow: auto;
 
     li {
       list-style: none;

@@ -1,33 +1,9 @@
-<style>
-.z-panel-sum {
-  background: #fff;
-  text-align: right;
-  font-size: 14px;
-  color: #333;
-  line-height: 30px;
-  padding-right: 15px;
-
-  span {
-    color: red;
-  }
-}
-
-.z-panel-buttons {
-  text-align: right;
-
-  .z-button {
-    margin-left: 5px;
-  }
-}
-</style>
-
 ## Panel 面板
 
 面板只是一个容器，里面可以放入自定义的内容。
 
 ### 基础用法
 
-:::demo
 ```html
 <z-panel title="标题" desc="标题描述" status="状态">
   <z-card
@@ -52,13 +28,11 @@
   </div>
 </z-panel>
 ```
-:::
 
 ### 高级用法
 
 使用具名`slot`自定义内容。
 
-:::demo
 ```html
 <z-panel title="标题" desc="标题描述" status="状态">
   <z-card
@@ -87,7 +61,6 @@
   </div>
 </z-panel>
 ```
-:::
 
 ### API
 

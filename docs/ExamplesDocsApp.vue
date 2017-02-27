@@ -1,9 +1,10 @@
 <template>
-  <div class="page-container">
+  <div class="page-container clearfix">
     <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
     <div class="page-content">
       <router-view></router-view>
     </div>
+    <mobile></mobile>
   </div>
 </template>
 
@@ -24,9 +25,8 @@ export default {
   @import './assets/docs.css';
 
   .page-container {
-    width: 1140px;
-    padding: 0 30px;
-    margin: 0 auto;
+    height: 100%;
+    min-width: 960px;
 
     h2 {
       font-size: 28px;
@@ -34,10 +34,12 @@ export default {
       margin: 20px 0;
       line-height: 40px;
     }
+
     h3 {
       font-size: 22px;
       margin: 23px 0;
     }
+
     h2, h3, h4, h5 {
       font-weight: normal;
       color: #1f2f3d;
@@ -57,6 +59,7 @@ export default {
         }
       }
     }
+
     p {
       font-size: 14px;
       color: #5e6d82;
@@ -65,8 +68,32 @@ export default {
   }
 
   .page-content {
-    width: 75%;
+    width: 52%;
+    box-sizing: border-box;
     float: left;
+    padding: 0 15px;
+    overflow: auto;
+    height: inherit;
+  }
+
+  .mobile-wrapper {
+    float: left;
+    width: 30%;
+    height: 300px;
+    position: relative;
+  }
+
+  .mobile {
+    margin: 20px 20px 0;
+    height: 100%;
+    box-sizing: border-box;
+    width: 365px;
+  }
+
+  .demo-page {
+    width: 100%;
+    border: 5px solid #f5f5f5;
+    height: 580px;
   }
 
   .table {
@@ -77,16 +104,16 @@ export default {
     font-size: 14px;
     margin-bottom: 45px;
 
-    th:first-child {
-      padding-left: 10px;
-    }
-
     th {
       text-align: left;
       border-top: 1px solid #eaeefb;
       border-bottom: 1px solid #eaeefb;
       background-color: #eff2f7;
       padding: 10px;
+
+      &:first-child {
+        padding-left: 10px;
+      }
     }
 
     td {

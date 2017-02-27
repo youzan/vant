@@ -1,18 +1,9 @@
-<style lang="css">
-  @component-namespace z {
-    @component button-group {
-      .z-button-1 {
-        margin-bottom: 15px;
-      }
-    }
-  }
-</style>
-
 ## Button组件
 
 ### 按钮功能
 
-:::demo 只接受primary, default, danger三种类型，默认default
+只接受primary, default, danger三种类型，默认default。
+
 ```html
 <div class="z-button-group">
   <div class="z-button-1">
@@ -26,11 +17,9 @@
   </div>
 </div>
 ```
-:::
 
 ### 禁用状态
 
-:::demo 
 ```html
 <div class="z-button-group">
   <div class="z-button-1">
@@ -38,11 +27,11 @@
   </div>
 </div>
 ```
-:::
 
 ### 按钮尺寸
 
-:::demo 只接受large, normal, small, mini四种尺寸，默认normal
+只接受large, normal, small, mini四种尺寸，默认normal。
+
 ```html 
 <div class="z-button-group">
   <div class="z-button-1">
@@ -62,11 +51,11 @@
 </div>
 
 ```
-:::
 
 ### 自定义按钮标签
 
-:::demo 按钮默认是button标签，可以使用tag属性修改为一个a标签
+按钮默认是button标签，可以使用tag属性修改为一个a标签。
+
 ```html 
 <div class="z-button-group">
   <div class="z-button-1">
@@ -74,10 +63,11 @@
   </div>
 </div>
 ```
-:::
 
 ### button group
-:::demo 一组按钮
+
+一组按钮。
+
 ```html 
 <div class="z-button-group">
   <z-button type="primary" size="small">确认付款</z-button>
@@ -85,8 +75,6 @@
   <z-button size="small">取消订单</z-button>
 </div>
 ```
-:::
-
 
 ### API
 

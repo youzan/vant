@@ -13,6 +13,7 @@ import Waterfall from '../packages/waterfall/index.js';
 import Loading from '../packages/loading/index.js';
 import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
+import Steps from '../packages/steps/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -30,6 +31,7 @@ const install = function(Vue) {
   Vue.component(Loading.name, Loading);
   Vue.component(Panel.name, Panel);
   Vue.component(Card.name, Card);
+  Vue.component(Steps.name, Steps);
 };
 
 // auto install
@@ -54,5 +56,6 @@ module.exports = {
   Waterfall,
   Loading,
   Panel,
-  Card
+  Card,
+  Steps
 };

@@ -1,7 +1,7 @@
 {
   "name": "@youzan/z-panel",
   "version": "0.0.1",
-  "description": "picker component",
+  "description": "panel component",
   "main": "./index.js",
   "author": "zhangmin <zhangmin@youzan.com>",
   "license": "MIT",

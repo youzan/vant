@@ -13,5 +13,6 @@
   "waterfall": "./packages/waterfall/index.js",
   "loading": "./packages/loading/index.js",
   "panel": "./packages/panel/index.js",
-  "card": "./packages/card/index.js"
+  "card": "./packages/card/index.js",
+  "steps": "./packages/steps/index.js"
 }

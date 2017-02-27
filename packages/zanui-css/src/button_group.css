@@ -23,6 +23,7 @@
   }
   @b button-1 {
     @mixin button-wrap;
+    padding-right: 0;
     width: 100%;
   }
   @b button-2 {

@@ -1,46 +1,7 @@
-<script>
-export default {
-  data() {
-    return {
-      switchState: true
-    };
-  },
-  computed: {
-    switchStateText() {
-      return this.switchState ? 'ON' : 'OFF';
-    }
-  },
-  methods: {
-    updateState(newState) {
-      this.switchState = newState;
-    }
-  }
-};
-</script>
-<style lang="css">
-  @component-namespace page {
-    @component switch {
-      padding: 0 15px 15px;
-
-      @descendent wrapper {
-        margin: 30px;
-        width: 100px;
-        float: left;
-        text-align: center;
-      }
-
-      @descendent text {
-        margin: 20px 0;
-      }
-    }
-  }
-</style>
-
 ## Switch组件
 
 ### 基础用法
 
-:::demo 样例代码
 ```html
 <div class="page-switch">
   <div class="page-switch__wrapper">
@@ -56,10 +17,8 @@ export default {
     <div class="page-switch__text">OFF, DISABLED</div>
   </div>
 </div>
-```
 
-
-```javascript
+<script>
 export default {
   data() {
     return {
@@ -76,9 +35,9 @@ export default {
       this.switchState = newState;
     }
   }
-};
+};  
+</script>
 ```
-:::
 
 ### API
 

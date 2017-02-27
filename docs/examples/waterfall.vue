@@ -1,27 +1,29 @@
-## Waterfall 瀑布流
+<template>
+  <div class="page-card">
+    <h1 class="page-title">Card</h1>
 
-### 基础用法
-
-```html
-<div class="waterfall">
-  <div
-    v-waterfall-lower="loadMore"
-    v-waterfall-upper="loadMoreUpper"
-    waterfall-disabled="isWaterfallDisabled"
-    waterfall-offset="400"
-  >
-    <div
-      class="waterfall-item"
-      v-for="item in list"
-      style="text-align: center;"
-    >
-      {{ item }}
-    </div>
-    <div v-if="loading" style="text-align: center;">
-      loading
+    <h2 class="page-sub-title">基础用法</h2>
+    <div class="waterfall">
+      <div
+        v-waterfall-lower="loadMore"
+        v-waterfall-upper="loadMoreUpper"
+        waterfall-disabled="isWaterfallDisabled"
+        waterfall-offset="400"
+      >
+        <div
+          class="waterfall-item"
+          v-for="item in list"
+          style="text-align: center;"
+        >
+          {{ item }}
+        </div>
+        <div v-if="loading" style="text-align: center;">
+          loading
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</template>
 
 <script>
 export default {
@@ -61,12 +63,17 @@ export default {
   }
 };
 </script>
-```
 
-### API
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| waterfall-disabled | 是否禁止瀑布流触发 | Boolean  | false |  |
-| waterfall-offset | 触发瀑布流加载的阈值 | Number  | 300 |   |
-
+<style>
+.waterfall {
+  height: 300px;
+  overflow: scroll;
+}
+.waterfall-item {
+  line-height: 20px;
+  padding: 5px 0;
+}
+.page-sub-title {
+  padding: 15px;
+}
+</style>
