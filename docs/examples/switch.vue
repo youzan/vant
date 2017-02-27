@@ -17,6 +17,7 @@
         <div class="page-switch__text">OFF, DISABLED</div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>

@@ -44,15 +44,13 @@ ComponentNames.forEach(name => {
   }));
 
   if ([
-      // directives
-    'InfiniteScroll',
+    // directives
     'Lazyload',
+    'Waterfall',
 
-      // services
+    // services
     'Dialog',
-    'Toast',
-    'Indicator',
-    'Waterfall'
+    'Toast'
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,

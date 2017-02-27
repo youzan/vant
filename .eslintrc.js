@@ -25,7 +25,7 @@ module.exports = {
     'no-new': 0
   },
   "globals": {
-    "oxygen": true,
+    "zanui": true,
     "location": true,
     "Swiper": true,
     "wysihtml5": true,
