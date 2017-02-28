@@ -4,7 +4,9 @@
 
 :::demo 样例代码
 ```html
-<z-search placeholder="商品名称">
+<z-search 
+    placeholder="商品名称"
+>
 </z-search>
 ```
 :::
