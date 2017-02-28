@@ -1,0 +1,10 @@
+{
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "<%= description %>",
+  "main": "./lib/index.js",
+  "author": "<%= author %>",
+  "license": "<%= license %>",
+  "devDependencies": {},
+  "dependencies": {}
+}

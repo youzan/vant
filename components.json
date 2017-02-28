@@ -12,5 +12,6 @@
   "radio-group": "./packages/radio-group/index.js",
   "loading": "./packages/loading/index.js",
   "badge": "./packages/badge/index.js",
-  "badge-group": "./packages/badge-group/index.js"
+  "badge-group": "./packages/badge-group/index.js",
+  "search": "./packages/search/index.js"
 }
