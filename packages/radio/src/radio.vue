@@ -35,7 +35,7 @@ export default {
 
   computed: {
     isGroup() {
-      return !!this.findRadioGroup()
+      return !!this.findRadioGroup();
     },
 
     currentValue: {
