@@ -5,7 +5,7 @@
 ### 基础用法
 
 ```html
-<z-picker :columns="pickerColumns" @change="handlePickerChange"></z-picker>
+<zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
 ```
 
 ### API

@@ -1,16 +1,16 @@
 <template>
-  <div class="z-panel">
-    <div class="z-panel__header">
+  <div class="zan-panel">
+    <div class="zan-panel__header">
       <slot name="header">
-        <h4 class="z-panel__title" v-text="title"></h4>
-        <span class="z-panel__desc" v-if="desc" v-text="desc"></span>
-        <span class="z-panel__status" v-if="status" v-text="status"></span>
+        <h4 class="zan-panel__title" v-text="title"></h4>
+        <span class="zan-panel__desc" v-if="desc" v-text="desc"></span>
+        <span class="zan-panel__status" v-if="status" v-text="status"></span>
       </slot>
     </div>
-    <div class="z-panel__content">
+    <div class="zan-panel__content">
       <slot></slot>
     </div>
-    <div class="z-panel__footer" v-if="this.$slots.footer">
+    <div class="zan-panel__footer" v-if="this.$slots.footer">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'z-panel',
+  name: 'zan-panel',
   props: {
     title: String,
     desc: String,

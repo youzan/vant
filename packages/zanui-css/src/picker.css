@@ -1,4 +1,4 @@
-@component-namespace z {
+@component-namespace zan {
   @b picker {
     overflow: hidden;
 
@@ -11,26 +11,26 @@
       overflow: hidden;
 
       @m 1 {
-        .z-picker-column {
+        .zan-picker-column {
           width: 100%;
         }
       }
 
       @m 2 {
-        .z-picker-column {
+        .zan-picker-column {
           width: 50%;
         }
       }
 
       @m 3 {
-        .z-picker-column {
+        .zan-picker-column {
           width: 33.333%;
         }
       }
     }
   }
 
-  .z-picker-center-highlight {
+  .zan-picker-center-highlight {
     box-sizing: border-box;
     position: absolute;
     left: 0;
@@ -40,26 +40,26 @@
     pointer-events: none;
   }
 
-  .z-picker-center-highlight:before,
-  .z-picker-center-highlight:after {
+  .zan-picker-center-highlight:before,
+  .zan-picker-center-highlight:after {
     content: '';
     position: absolute;
     height: 1px;
     width: 100%;
     background-color: #eaeaea;
     display: block;
-    z-index: 15;
+    zan-index: 15;
     transform: scaleY(0.5);
   }
 
-  .z-picker-center-highlight:before {
+  .zan-picker-center-highlight:before {
     left: 0;
     top: 0;
     bottom: auto;
     right: auto;
   }
 
-  .z-picker-center-highlight:after {
+  .zan-picker-center-highlight:after {
     left: 0;
     bottom: 0;
     right: auto;

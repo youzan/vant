@@ -1,15 +1,22 @@
 <template>
-  <div class="z-radio-group">
+  <div class="zan-radio-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'z-radio-group',
+  name: 'zan-radio-group',
 
   props: {
-    value: [String, Number]
+    value: {},
+    disabled: Boolean
+  },
+
+  watch: {
+    value(value) {
+      this.$emit('change', value);
+    }
   }
 };
 </script>

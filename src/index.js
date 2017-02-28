@@ -41,9 +41,9 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export default {
+module.exports = {
   install,
-  version: '0.0.4',
+  version: '0.0.7',
   Button,
   Switch,
   Field,

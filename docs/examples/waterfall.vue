@@ -10,8 +10,8 @@
         waterfall-disabled="isWaterfallDisabled"
         waterfall-offset="400"
       >
-        <div v-for="item in list" class="z-cell" style="text-align: center;">{{ item }}</div>
-        <!-- <z-loading v-if="loading" style="text-align: center;"></z-loading> -->
+        <div v-for="item in list" class="zan-cell" style="text-align: center;">{{ item }}</div>
+        <!-- <zan-loading v-if="loading" style="text-align: center;"></zan-loading> -->
         <div style="text-align: center;">loading</div>
       </div>
     </div>

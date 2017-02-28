@@ -1,7 +1,7 @@
 @import "./common/var.css";
 @import "./mixins/border_retina.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b cell-group {
     padding-left: 10px;
     position: relative;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
     line-height: 22px;
     background-color: $c-white;
-    color: #333;
+    color: $c-black;
     font-size: 14px;
     text-decoration: none;
 
@@ -42,7 +42,7 @@
       display: block;
       font-size: 12px;
       line-height: 1.2;
-      color: #666;
+      color: $c-gray-darker;
     }
 
     @e value {
@@ -52,14 +52,18 @@
       @when link {
         margin-right: 20px;
       }
+
+      @when alone {
+        float: left;
+      }
     }
 
-    .zui-icon-arrow {
+    .zan-icon-arrow {
       position: absolute;
       top: 50%;
       right: 10px;
       transform: translateY(-50%);
-      color: #999;
+      color: $c-gray-dark;
       font-size: 12px;
     }
   }

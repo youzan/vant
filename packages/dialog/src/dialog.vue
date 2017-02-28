@@ -1,16 +1,16 @@
 <template>
   <transition name="dialog-bounce">
-    <div class="z-dialog-wrapper">
-      <div class="z-dialog" v-show="value">
-        <div class="z-dialog__header" v-if="title">
-          <div class="z-dialog__title" v-text="title"></div>
+    <div class="zan-dialog-wrapper">
+      <div class="zan-dialog" v-show="value">
+        <div class="zan-dialog__header" v-if="title">
+          <div class="zan-dialog__title" v-text="title"></div>
         </div>
-        <div class="z-dialog__content" v-if="message">
-          <div class="z-dialog__message" v-html="message"></div>
+        <div class="zan-dialog__content" v-if="message">
+          <div class="zan-dialog__message" v-html="message"></div>
         </div>
-        <div class="z-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
-          <button class="z-dialog__btn z-dialog__cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
-          <button class="z-dialog__btn z-dialog__confirm" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
+        <div class="zan-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
+          <button class="zan-dialog__btn zan-dialog__cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>
+          <button class="zan-dialog__btn zan-dialog__confirm" v-show="showConfirmButton" @click="handleAction('confirm')">{{ confirmButtonText }}</button>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@ const CANCEL_TEXT = '取消';
 const CONFIRM_TEXT = '确认';
 
 export default {
-  name: 'z-dialog',
+  name: 'zan-dialog',
 
   mixins: [Popup],
 
