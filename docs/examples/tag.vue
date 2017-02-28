@@ -5,28 +5,28 @@
     <h2 class="page-sub-title">基础用法</h2>
     <div>
       <div class="tags-container">
-        <z-tag>返现</z-tag>
-        <z-tag :plain="true">返现</z-tag>
+        <zan-tag>返现</zan-tag>
+        <zan-tag :plain="true">返现</zan-tag>
       </div>
       <div class="tags-container">
-        <z-tag type="danger">返现</z-tag>
-        <z-tag type="danger">四字标签</z-tag>
-        <z-tag type="danger">一</z-tag>
+        <zan-tag type="danger">返现</zan-tag>
+        <zan-tag type="danger">四字标签</zan-tag>
+        <zan-tag type="danger">一</zan-tag>
       </div>
       <div class="tags-container">
-        <z-tag type="danger">返现</z-tag>
-        <z-tag :plain="true" type="danger">返现</z-tag>
+        <zan-tag type="danger">返现</zan-tag>
+        <zan-tag :plain="true" type="danger">返现</zan-tag>
       </div>
       <div class="tags-container">
-        <z-tag type="primary">返现</z-tag>
-        <z-tag :plain="true" type="primary">返现</z-tag>
+        <zan-tag type="primary">返现</zan-tag>
+        <zan-tag :plain="true" type="primary">返现</zan-tag>
       </div>
       <div class="tags-container">
-        <z-tag type="success">返现</z-tag>
-        <z-tag :plain="true" type="success">返现</z-tag>
+        <zan-tag type="success">返现</zan-tag>
+        <zan-tag :plain="true" type="success">返现</zan-tag>
       </div>
       <div class="tags-container">
-        <z-tag type="danger" :mark="true">返现</z-tag>
+        <zan-tag type="danger" :mark="true">返现</zan-tag>
       </div>
     </div>
   </div>
@@ -45,7 +45,7 @@ export default {
 .tags-container {
   padding: 5px 15px;
 
-  .z-tag + .z-tag {
+  .zan-tag + .zan-tag {
     margin-left: 10px;
   }
 }

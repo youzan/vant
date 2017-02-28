@@ -2,15 +2,15 @@
 
 ### 基础用法
 ```html
-<z-tag>返现</z-tag>
-<z-tag :plain="true">返现</z-tag>
+<zan-tag>返现</zan-tag>
+<zan-tag :plain="true">返现</zan-tag>
 ```
 
 ### 高级用法
 ```html
-<z-tag type="danger">返现</z-tag>
-<z-tag type="success">返现</z-tag>
-<z-tag type="success" :plain="true">返现</z-tag>
+<zan-tag type="danger">返现</zan-tag>
+<zan-tag type="success">返现</zan-tag>
+<zan-tag type="success" :plain="true">返现</zan-tag>
 ```
 
 ### API

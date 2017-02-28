@@ -1,7 +1,7 @@
 @import "./common/var.css";
 @import "./mixins/border_retina.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b tag {
     position: relative;
     display: inline-block;
