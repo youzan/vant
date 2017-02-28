@@ -9,6 +9,8 @@ import ZanUI from '../src/index';
 
 import '../packages/zanui-css/src/index.css';
 
+import { Dialog } from '../src/index';
+console.log(Dialog);
 Vue.use(ZanUI);
 Vue.use(VueRouter);
 Vue.component('side-nav', SideNav);
