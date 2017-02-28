@@ -14,10 +14,16 @@ Vue.use(VueRouter);
 Vue.component('side-nav', SideNav);
 Vue.component('mobile', Mobile);
 
+let routesConfig = routes(navConfig);
+routesConfig.push({
+  path: '/',
+  redirect: '/component/button'
+});
+
 const router = new VueRouter({
   mode: 'hash',
   base: __dirname,
-  routes: routes(navConfig)
+  routes: routesConfig
 });
 
 let indexScrollTop = 0;
@@ -36,6 +42,7 @@ router.afterEach(route => {
     Vue.nextTick(() => {
       document.body.scrollTop = indexScrollTop;
     });
+
   }
 });
 
