@@ -9,7 +9,14 @@ export default {
   name: 'z-radio-group',
 
   props: {
-    value: [String, Number]
+    value: {},
+    disabled: Boolean
+  },
+
+  watch: {
+    value(value) {
+      this.$emit('change', value);
+    }
   }
 };
 </script>
