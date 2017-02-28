@@ -14,6 +14,7 @@ import Loading from '../packages/loading/index.js';
 import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
 import Steps from '../packages/steps/index.js';
+import Tag from '../packages/tag/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -32,6 +33,7 @@ const install = function(Vue) {
   Vue.component(Panel.name, Panel);
   Vue.component(Card.name, Card);
   Vue.component(Steps.name, Steps);
+  Vue.component(Tag.name, Tag);
 };
 
 // auto install
@@ -57,5 +59,6 @@ export default {
   Loading,
   Panel,
   Card,
-  Steps
+  Steps,
+  Tag
 };
