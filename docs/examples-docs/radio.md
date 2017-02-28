@@ -12,11 +12,9 @@ export default {
 
 ### 基础用法
 
-:::demo
 ```html
-<z-radio v-model="radio"></z-radio>
+<z-radio v-model="radio">单选框</z-radio>
 ```
-:::
 
 ### API
 

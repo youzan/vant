@@ -14,7 +14,8 @@
 </template>
 
 <script>
-import { Dialog } from 'src/index';
+import ZanUI from 'src/index';
+let { Dialog } = ZanUI;
 
 export default {
   methods: {
