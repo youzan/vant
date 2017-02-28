@@ -19,7 +19,7 @@
   }
 }
 
-@component-namespace z {
+@component-namespace zan {
   @b loading { 
     height: 30px;
     width: 30px;

@@ -1,15 +1,15 @@
 <template>
-  <a class="z-cell" :href="url" @click="handleClick">
-    <div class="z-cell__title">
+  <a class="zan-cell" :href="url" @click="handleClick">
+    <div class="zan-cell__title">
       <slot name="icon">
         <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
       </slot>
       <slot name="title">
-        <span class="z-cell__text" v-text="title"></span>
-        <span class="z-cell__label" v-if="label" v-text="label"></span>
+        <span class="zan-cell__text" v-text="title"></span>
+        <span class="zan-cell__label" v-if="label" v-text="label"></span>
       </slot>
     </div>
-    <div class="z-cell__value" :class="{
+    <div class="zan-cell__value" :class="{
       'is-link': isLink,
       'is-alone': !title && !label
     }">
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'z-cell',
+  name: 'zan-cell',
 
   props: {
     icon: String,

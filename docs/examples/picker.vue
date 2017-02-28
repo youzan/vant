@@ -3,7 +3,7 @@
     <h1 class="page-title">Picker</h1>
 
     <h2 class="page-sub-title">基础用法</h2>
-    <z-picker :columns="pickerColumns" @change="handlePickerChange"></z-picker>
+    <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
   </div>  
 </template>
 

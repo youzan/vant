@@ -1,15 +1,15 @@
 <template>
   <div
-    class="z-radio"
+    class="zan-radio"
     :class="{
       'is-disabled': isDisabled
     }">
-    <span class="z-radio__input">
+    <span class="zan-radio__input">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
-        class="z-radio__control"
+        class="zan-radio__control"
         :disabled="isDisabled">
       <span class="zui-icon" :class="{
         'zui-icon-checked': currentValue === name,
@@ -17,7 +17,7 @@
       }">
       </span>
     </span>
-    <span class="z-radio__label">
+    <span class="zan-radio__label">
       <slot></slot>
     </span>
   </div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'z-radio',
+  name: 'zan-radio',
 
   props: {
     disabled: Boolean,
@@ -40,12 +40,12 @@ export default {
 
     currentValue: {
       get() {
-        return this.isGroup ? this.parentGroup.value : this.value;
+        return this.isGroup ? (this.parentGroup && this.parentGroup.value) : this.value;
       },
 
       set(val) {
         if (this.isGroup) {
-          this.parentGroup.$emit('input', val);
+          this.parentGroup && this.parentGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }
@@ -54,7 +54,7 @@ export default {
 
     isDisabled() {
       return this.isGroup
-          ? this.parentGroup.disabled || this.disabled
+          ? (this.parentGroup && this.parentGroup.disabled) || this.disabled
           : this.disabled;
     }
   },
@@ -65,7 +65,7 @@ export default {
 
       let parent = this.$parent;
       while (parent) {
-        if (parent.$options.name === 'z-radio-group') {
+        if (parent.$options.name === 'zan-radio-group') {
           this.parentGroup = parent;
           break;
         } else {

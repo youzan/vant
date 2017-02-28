@@ -31,9 +31,9 @@ export default {
 ### 基础用法
 
 ```html
-<z-button @click="handleAlertClick">alert</z-button>
+<zan-button @click="handleAlertClick">alert</zan-button>
 
-<z-button @click="handleConfirmClick">confirm</z-button>
+<zan-button @click="handleConfirmClick">confirm</zan-button>
 
 <script>
 import { Dialog } from 'src/index';
