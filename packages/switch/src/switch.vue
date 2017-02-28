@@ -6,7 +6,7 @@
 
 <script>
 /**
- * o2-switch
+ * z-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [checked=false] - 开关状态
@@ -15,10 +15,10 @@
  * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
- * <o2-switch checked="true" disabled="false"></o2-switch>
+ * <z-switch checked="true" disabled="false"></o2-switch>
  */
 export default {
-  name: 'o2-switch',
+  name: 'z-switch',
   props: {
     checked: {
       type: Boolean,
