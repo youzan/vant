@@ -1,9 +1,11 @@
 <template>
-  <div class="z-loading"></div>
+  <div class="zan-loading-container">
+  	<span class="zan-loading"></span>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'z-loading'
+  name: 'zan-loading'
 };
 </script>
