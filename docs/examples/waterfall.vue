@@ -3,23 +3,16 @@
     <h1 class="page-title">Waterfall</h1>
 
     <h2 class="page-sub-title">基础用法</h2>
-    <div class="waterfall">
+    <div>
       <div
         v-waterfall-lower="loadMore"
         v-waterfall-upper="loadMoreUpper"
         waterfall-disabled="isWaterfallDisabled"
         waterfall-offset="400"
       >
-        <div
-          class="waterfall-item"
-          v-for="item in list"
-          style="text-align: center;"
-        >
-          {{ item }}
-        </div>
-        <div v-if="loading" style="text-align: center;">
-          loading
-        </div>
+        <div v-for="item in list" class="z-cell" style="text-align: center;">{{ item }}</div>
+        <!-- <z-loading v-if="loading" style="text-align: center;"></z-loading> -->
+        <div style="text-align: center;">loading</div>
       </div>
     </div>
   </div>
@@ -44,7 +37,7 @@ export default {
       this.loading = true;
       setTimeout(() => {
         let lastNumber = this.list[this.list.length - 1];
-        for (let i = 0; i < 5; i ++) {
+        for (let i = 0; i < 5; i++) {
           lastNumber += 1;
           this.list.push(lastNumber);
         }
@@ -65,14 +58,6 @@ export default {
 </script>
 
 <style>
-.waterfall {
-  height: 300px;
-  overflow: scroll;
-}
-.waterfall-item {
-  line-height: 20px;
-  padding: 5px 0;
-}
 .page-sub-title {
   padding: 15px;
 }
