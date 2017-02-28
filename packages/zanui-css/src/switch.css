@@ -1,5 +1,5 @@
 @component-namespace z {
-  @component switch { 
+  @b switch { 
     height: 29px;
     width: 49px;
     display: inline-block;
@@ -7,7 +7,7 @@
     position: relative;
     border: 1px solid;
 
-    @descendent node {
+    @e node {
       width: 27px;
       height: 27px;
       border-radius: 100%;
