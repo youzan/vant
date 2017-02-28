@@ -451,13 +451,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
   data: function data() {
@@ -928,7 +921,7 @@ exports = module.exports = __webpack_require__(14)();
 
 
 // module
-exports.push([module.i, ".waterfall{height:300px;overflow:scroll}.waterfall-item{line-height:20px;padding:5px 0}.page-sub-title{padding:15px}", ""]);
+exports.push([module.i, ".page-sub-title{padding:15px}", ""]);
 
 // exports
 
@@ -987,7 +980,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(242),
+  __webpack_require__(243),
   /* scopeId */
   null,
   /* cssModules */
@@ -1031,7 +1024,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(176),
   /* template */
-  __webpack_require__(237),
+  __webpack_require__(238),
   /* scopeId */
   null,
   /* cssModules */
@@ -1053,7 +1046,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(177),
   /* template */
-  __webpack_require__(235),
+  __webpack_require__(236),
   /* scopeId */
   null,
   /* cssModules */
@@ -1075,7 +1068,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(178),
   /* template */
-  __webpack_require__(231),
+  __webpack_require__(232),
   /* scopeId */
   null,
   /* cssModules */
@@ -1115,7 +1108,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(179),
   /* template */
-  __webpack_require__(234),
+  __webpack_require__(235),
   /* scopeId */
   null,
   /* cssModules */
@@ -1137,7 +1130,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(180),
   /* template */
-  __webpack_require__(238),
+  __webpack_require__(239),
   /* scopeId */
   null,
   /* cssModules */
@@ -1181,7 +1174,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(182),
   /* template */
-  __webpack_require__(239),
+  __webpack_require__(240),
   /* scopeId */
   null,
   /* cssModules */
@@ -1199,7 +1192,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(230),
+  __webpack_require__(231),
   /* scopeId */
   null,
   /* cssModules */
@@ -1217,7 +1210,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(232),
+  __webpack_require__(233),
   /* scopeId */
   null,
   /* cssModules */
@@ -1239,7 +1232,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(183),
   /* template */
-  __webpack_require__(233),
+  __webpack_require__(234),
   /* scopeId */
   null,
   /* cssModules */
@@ -1257,7 +1250,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(241),
+  __webpack_require__(242),
   /* scopeId */
   null,
   /* cssModules */
@@ -1275,7 +1268,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(184),
   /* template */
-  __webpack_require__(240),
+  __webpack_require__(241),
   /* scopeId */
   null,
   /* cssModules */
@@ -1293,7 +1286,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(229),
+  __webpack_require__(230),
   /* scopeId */
   null,
   /* cssModules */
@@ -1311,7 +1304,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(228),
+  __webpack_require__(229),
   /* scopeId */
   null,
   /* cssModules */
@@ -1329,7 +1322,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(244),
+  __webpack_require__(245),
   /* scopeId */
   null,
   /* cssModules */
@@ -1347,7 +1340,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(245),
+  __webpack_require__(227),
   /* scopeId */
   null,
   /* cssModules */
@@ -1365,7 +1358,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(185),
   /* template */
-  __webpack_require__(243),
+  __webpack_require__(244),
   /* scopeId */
   null,
   /* cssModules */
@@ -1383,7 +1376,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(236),
+  __webpack_require__(237),
   /* scopeId */
   null,
   /* cssModules */
@@ -1419,7 +1412,7 @@ var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(227),
+  __webpack_require__(228),
   /* scopeId */
   null,
   /* cssModules */
@@ -1714,6 +1707,292 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', [_c('h2', {
     attrs: {
+      "id": "popup-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#popup-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Popup组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow1 = true\"")]), _vm._v(">")]), _vm._v("从下方弹出popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"bottom\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-popup-1\"")]), _vm._v(">")]), _vm._v("\n  xxxx\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow2 = true\"")]), _vm._v(">")]), _vm._v("从上方方弹出popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"top\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-popup-2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  更新成功\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow3 = true\"")]), _vm._v(">")]), _vm._v("从右方弹出popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow3\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"right\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-popup-3\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click.native")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow3 = false\"")]), _vm._v(">")]), _vm._v("关闭 popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow4 = true\"")]), _vm._v(">")]), _vm._v("从中间弹出popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow4\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("transition")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popup-fade\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"z-popup-4\"")]), _vm._v(">")]), _vm._v("\n  一些内容\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("popupShow1")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("popupShow2")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("popupShow3")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("popupShow4")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v("\n    }\n  },\n\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("watch")]), _vm._v(": {\n    popupShow2(val) {\n      "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("if")]), _vm._v(" (val) {\n        setTimeout("), _c('span', {
+    staticClass: "hljs-function"
+  }, [_c('span', {
+    staticClass: "hljs-params"
+  }, [_vm._v("()")]), _vm._v(" =>")]), _vm._v(" {\n          "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("this")]), _vm._v(".popupShow2 = "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(";\n        }, "), _c('span', {
+    staticClass: "hljs-number"
+  }, [_vm._v("2000")]), _vm._v(");\n      }\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("利用"), _c('code', [_vm._v("v-model")]), _vm._v("绑定当前组件是否显示")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
       "id": "waterfall-pu-bu-liu"
     }
   }, [_c('a', {
@@ -1936,7 +2215,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2408,7 +2687,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2600,7 +2879,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3030,7 +3309,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3080,7 +3359,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3308,7 +3587,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 233 */
+/* 234 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3686,7 +3965,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 234 */
+/* 235 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3707,7 +3986,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 235 */
+/* 236 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3731,7 +4010,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 236 */
+/* 237 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3751,7 +4030,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 237 */
+/* 238 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3846,7 +4125,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 238 */
+/* 239 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3944,7 +4223,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 239 */
+/* 240 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3954,9 +4233,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "page-title"
   }, [_vm._v("Waterfall")]), _vm._v(" "), _c('h2', {
     staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', {
-    staticClass: "waterfall"
-  }, [_c('div', {
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', [_c('div', {
     directives: [{
       name: "waterfall-lower",
       rawName: "v-waterfall-lower",
@@ -3974,20 +4251,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._l((_vm.list), function(item) {
     return _c('div', {
-      staticClass: "waterfall-item",
+      staticClass: "z-cell",
       staticStyle: {
         "text-align": "center"
       }
-    }, [_vm._v("\n        " + _vm._s(item) + "\n      ")])
-  }), _vm._v(" "), (_vm.loading) ? _c('div', {
+    }, [_vm._v(_vm._s(item))])
+  }), _vm._v(" "), _c('div', {
     staticStyle: {
       "text-align": "center"
     }
-  }, [_vm._v("\n        loading\n      ")]) : _vm._e()], 2)])])
+  }, [_vm._v("loading")])], 2)])])
 },staticRenderFns: []}
 
 /***/ }),
-/* 240 */
+/* 241 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4107,7 +4384,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 241 */
+/* 242 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4127,7 +4404,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 242 */
+/* 243 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4227,7 +4504,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 243 */
+/* 244 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4283,7 +4560,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 244 */
+/* 245 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4364,292 +4641,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("¶")]), _vm._v(" change事件")]), _vm._v(" "), _c('p', [_vm._v("在"), _c('code', [_vm._v("change")]), _vm._v("事件中，可以获取到"), _c('code', [_vm._v("picker")]), _vm._v("实例，对"), _c('code', [_vm._v("picker")]), _vm._v("进行相应的更新等操作：")]), _vm._v(" "), _c('table', {
     staticClass: "table"
   }, [_c('thead', [_c('tr', [_c('th', [_vm._v("函数")]), _vm._v(" "), _c('th', [_vm._v("说明")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("getColumnValue(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValue(index, value)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getColumnValues(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValues(index, values)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getValues()")]), _vm._v(" "), _c('td', [_vm._v("获取所有列中被选中的值，返回一个数组")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setValues(values)")]), _vm._v(" "), _c('td', [_c('code', [_vm._v("values")]), _vm._v("为一个数组，设置所有列中被选中的值")])])])])])
-}]}
-
-/***/ }),
-/* 245 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "popup-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#popup-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Popup组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow1 = true\"")]), _vm._v(">")]), _vm._v("从下方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow1\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"bottom\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-popup-1\"")]), _vm._v(">")]), _vm._v("\n  xxxx\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow2 = true\"")]), _vm._v(">")]), _vm._v("从上方方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"top\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-popup-2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  更新成功\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3 = true\"")]), _vm._v(">")]), _vm._v("从右方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"right\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-popup-3\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click.native")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3 = false\"")]), _vm._v(">")]), _vm._v("关闭 popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow4 = true\"")]), _vm._v(">")]), _vm._v("从中间弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow4\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("transition")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popup-fade\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"z-popup-4\"")]), _vm._v(">")]), _vm._v("\n  一些内容\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("z-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow1")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow2")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow3")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow4")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v("\n    }\n  },\n\n  "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("watch")]), _vm._v(": {\n    popupShow2(val) {\n      "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("if")]), _vm._v(" (val) {\n        setTimeout("), _c('span', {
-    staticClass: "hljs-function"
-  }, [_c('span', {
-    staticClass: "hljs-params"
-  }, [_vm._v("()")]), _vm._v(" =>")]), _vm._v(" {\n          "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("this")]), _vm._v(".popupShow2 = "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(";\n        }, "), _c('span', {
-    staticClass: "hljs-number"
-  }, [_vm._v("2000")]), _vm._v(");\n      }\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("利用"), _c('code', [_vm._v("v-model")]), _vm._v("绑定当前组件是否显示")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
 }]}
 
 /***/ }),
@@ -4868,13 +4859,13 @@ var content = __webpack_require__(193);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(43)("2980cef7", content, true);
+var update = __webpack_require__(43)("0dcc6677", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5184d01e!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-1.vue", function() {
-     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5184d01e!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-1.vue");
+   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue", function() {
+     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
