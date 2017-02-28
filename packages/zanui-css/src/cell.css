@@ -52,6 +52,10 @@
       @when link {
         margin-right: 20px;
       }
+
+      @when alone {
+        float: left;
+      }
     }
 
     .zui-icon-arrow {

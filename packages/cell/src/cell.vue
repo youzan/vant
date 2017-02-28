@@ -9,7 +9,10 @@
         <span class="z-cell__label" v-if="label" v-text="label"></span>
       </slot>
     </div>
-    <div class="z-cell__value" :class="{ 'is-link' : isLink }">
+    <div class="z-cell__value" :class="{
+      'is-link': isLink,
+      'is-alone': !title && !label
+    }">
       <slot>
         <span v-text="value"></span>
       </slot>

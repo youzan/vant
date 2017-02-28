@@ -63,6 +63,27 @@ export default {
 </script>
 ```
 
+### 与Cell组件一起使用
+
+```html
+<z-radio-group v-model="radio4">
+  <z-cell-group>
+    <z-cell><z-radio name="1">单选框1</z-radio></z-cell>
+    <z-cell><z-radio name="2">单选框2</z-radio></z-cell>
+  </z-cell-group>
+</z-radio-group>
+
+<script>
+export default {
+  data() {
+    return {
+      radio4: '1'
+    }
+  }
+};
+</script>
+```
+
 ### Radio API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |

@@ -2,8 +2,6 @@
 
 @component-namespace z {
   @b radio {
-    margin: 10px 0;
-
     @when disabled {
       .zui-icon {
         color: #d1dbe5;
@@ -33,6 +31,8 @@
     .zui-icon {
       font-size: 22px;
       line-height: 1;
+      position: relative;
+      top: 1px;
     }
 
     .zui-icon-checked {
