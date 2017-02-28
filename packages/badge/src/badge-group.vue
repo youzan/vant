@@ -6,6 +6,11 @@
 
 <script>
 export default {
-  name: 'z-badge-group'
+  name: 'z-badge-group',
+  data () {
+    return {
+      activeKey: '0'
+    }
+  }
 };
 </script>
