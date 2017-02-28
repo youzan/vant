@@ -61,7 +61,7 @@
       padding: 0 20px;
     }
   }
-  @component-namespace z {
+  @component-namespace zan {
     @b button-group {
       .zan-button-1 {
         margin-bottom: 10px;

@@ -11,9 +11,9 @@
         type="radio"
         class="zan-radio__control"
         :disabled="isDisabled">
-      <span class="zui-icon" :class="{
-        'zui-icon-checked': currentValue === name,
-        'zui-icon-check': currentValue !== name
+      <span class="zan-icon" :class="{
+        'zan-icon-checked': currentValue === name,
+        'zan-icon-check': currentValue !== name
       }">
       </span>
     </span>

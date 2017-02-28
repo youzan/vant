@@ -2,7 +2,7 @@
   <a class="zan-cell" :href="url" @click="handleClick">
     <div class="zan-cell__title">
       <slot name="icon">
-        <i v-if="icon" class="zui-icon" :class="'zui-icon-' + icon"></i>
+        <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
       </slot>
       <slot name="title">
         <span class="zan-cell__text" v-text="title"></span>
@@ -17,7 +17,7 @@
         <span v-text="value"></span>
       </slot>
     </div>
-    <i class="zui-icon zui-icon-arrow" v-if="isLink"></i>
+    <i class="zan-icon zan-icon-arrow" v-if="isLink"></i>
   </a>
 </template>
 

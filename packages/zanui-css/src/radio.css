@@ -3,7 +3,7 @@
 @component-namespace zan {
   @b radio {
     @when disabled {
-      .zui-icon {
+      .zan-icon {
         color: #d1dbe5;
       }
     }
@@ -28,16 +28,16 @@
       line-height: 22px;
     }
 
-    .zui-icon {
+    .zan-icon {
       font-size: 22px;
       line-height: 1;
     }
 
-    .zui-icon-checked {
+    .zan-icon-checked {
       color: $c-green;
     }
 
-    .zui-icon-check {
+    .zan-icon-check {
       color: $c-gray-dark;
     }
   }
