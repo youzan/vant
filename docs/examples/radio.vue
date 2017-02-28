@@ -2,18 +2,29 @@
   <div class="page-radio">
     <h1 class="page-title">Radio</h1>
 
-    <h2 class="page-sub-title">基础用法</h2>
-    <z-radio name="1" v-model="radio1">单选框1</z-radio>
-    <z-radio name="2" v-model="radio1">单选框2</z-radio>
+    <div class="demo-wrapper">
+      <h2 class="page-sub-title">基础用法</h2>
+      <z-radio name="1" v-model="radio1">单选框1</z-radio>
+      <z-radio name="2" v-model="radio1">单选框2</z-radio>
 
-    <h2 class="page-sub-title">禁用状态</h2>
-    <z-radio name="1" v-model="radio2" disabled>未选中禁用</z-radio>
-    <z-radio name="2" v-model="radio2" disabled>选中且禁用</z-radio>
+      <h2 class="page-sub-title">禁用状态</h2>
+      <z-radio name="1" v-model="radio2" disabled>未选中禁用</z-radio>
+      <z-radio name="2" v-model="radio2" disabled>选中且禁用</z-radio>
 
-    <h2 class="page-sub-title">radio组</h2>
-    <z-radio-group v-model="radio3">
-      <z-radio name="1">单选框1</z-radio>
-      <z-radio name="2">单选框2</z-radio>
+      <h2 class="page-sub-title">radio组</h2>
+      <z-radio-group v-model="radio3">
+        <z-radio name="1">单选框1</z-radio>
+        <z-radio name="2">单选框2</z-radio>
+      </z-radio-group>
+
+      <h2 class="page-sub-title">与Cell组件一起使用</h2>
+    </div>
+
+    <z-radio-group v-model="radio4">
+      <z-cell-group>
+        <z-cell><z-radio name="1">单选框1</z-radio></z-cell>
+        <z-cell><z-radio name="2">单选框2</z-radio></z-cell>
+      </z-cell-group>
     </z-radio-group>
   </div>
 </template>
@@ -24,14 +35,19 @@ export default {
     return {
       radio1: '1',
       radio2: '2',
-      radio3: '1'
-    }
+      radio3: '1',
+      radio4: '1'
+    };
   }
 };
 </script>
 
 <style>
-.page-radio {
+.demo-wrapper {
   padding: 0 15px;
+
+  .z-radio {
+    margin: 10px 0;
+  }
 }
 </style>
