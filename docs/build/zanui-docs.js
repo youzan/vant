@@ -11139,7 +11139,7 @@ exports.default = {
   props: {
     icon: String,
     title: String,
-    value: String,
+    value: [String, Number],
     url: String,
     label: String,
     isLink: Boolean
@@ -15381,10 +15381,16 @@ _vue2.default.use(_vueRouter2.default);
 _vue2.default.component('side-nav', _sideNav2.default);
 _vue2.default.component('mobile', _mobile2.default);
 
+var routesConfig = (0, _router2.default)(_navConfig2.default);
+routesConfig.push({
+  path: '/',
+  redirect: '/component/button'
+});
+
 var router = new _vueRouter2.default({
   mode: 'hash',
   base: __dirname,
-  routes: (0, _router2.default)(_navConfig2.default)
+  routes: routesConfig
 });
 
 var indexScrollTop = 0;

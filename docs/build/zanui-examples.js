@@ -11139,7 +11139,7 @@ exports.default = {
   props: {
     icon: String,
     title: String,
-    value: String,
+    value: [String, Number],
     url: String,
     label: String,
     isLink: Boolean
