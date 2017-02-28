@@ -30,7 +30,7 @@ module.exports = {
   output: {
     path: './docs/build/',
     publicPath: 'docs/build/',
-    filename: '[name].[hash:8].js'
+    filename: '[name].js'
   },
   resolve: {
     modules: [

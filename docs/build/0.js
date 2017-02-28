@@ -10614,13 +10614,13 @@ var content = __webpack_require__(199);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(14)("0dcc6677", content, true);
+var update = __webpack_require__(14)("066c09a4", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue", function() {
-     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue");
+   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5168a11c!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-2.vue", function() {
+     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5168a11c!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-2.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
