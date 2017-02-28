@@ -11,7 +11,11 @@
         type="radio"
         class="z-radio__control"
         :disabled="isDisabled">
-      <span class="z-radio__circle"></span>
+      <span class="zui-icon" :class="{
+        'zui-icon-checked': currentValue === name,
+        'zui-icon-check': currentValue !== name
+      }">
+      </span>
     </span>
     <span class="z-radio__label">
       <slot></slot>
