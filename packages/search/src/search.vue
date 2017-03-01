@@ -2,7 +2,7 @@
   <div class="zan-search" :class="{ 'is-focus' : isFocus }">
     <div class="zan-search__input-wrap">
       <input type="text" :placeholder="placeholder" v-model="value" v-refocus="focusStatus"  @focus="handleFocus" @keyup.enter="handleSearch">
-      <span class="zui-icon zui-icon-close" @click="handleClean"></span>
+      <span class="zan-icon zan-icon-close" @click="handleClean"></span>
     </div>
     <div class="zan-search__cancel" :class="{ 'is-focus' : isFocus }" @click="handleBack">取消</div>
   </div>
@@ -13,12 +13,7 @@
     name: 'zan-search',
     props: {
       placeholder: {
-        type: String,
-        required: true
-      },
-      onSearch: {
-        type: Function,
-        default: function() {}
+        type: String
       }
     },
     data() {
@@ -51,9 +46,9 @@
         this.focusStatus = false;
         this.isFocus = false;
       },
-      handleSearch(ev) {
+      handleSearch() {
         // input输入回车后，发送回调
-        this.onSearch(ev.target.value)
+        this.$emit('search', this.value)
       }
     }
   };
