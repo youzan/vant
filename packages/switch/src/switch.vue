@@ -8,7 +8,7 @@
 
 <script>
 /**
- * z-switch
+ * zan-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [checked=false] - 开关状态
@@ -17,7 +17,7 @@
  * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
- * <z-switch checked="true" disabled="false"></o2-switch>
+ * <zan-switch checked="true" disabled="false"></zan-switch>
  */
 export default {
   name: 'zan-switch',
