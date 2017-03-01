@@ -1,4 +1,4 @@
-@component-namespace z {
+@component-namespace zan {
   @b switch { 
     height: 29px;
     width: 49px;
@@ -26,6 +26,15 @@
       }
     }
 
+    @e loading {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
     @when on {
       background-color: #44db5e;
       border-color: #44db5e;
@@ -37,14 +46,7 @@
     }
 
     @when disabled {
-      @when off {
-        background-color: #f2f2f2;
-        border-color: rgba(0, 0, 0, .1);
-      }
-      @when on {
-        background-color: #a6e7b1;
-        border-color: #a6e7b1;
-      }
+      opacity: .4;
     }
   }
 }

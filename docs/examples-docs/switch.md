@@ -4,17 +4,29 @@
 
 ```html
 <div class="page-switch">
-  <div class="page-switch__wrapper">
-    <z-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></z-switch>
-    <div class="page-switch__text">{{switchStateText}}</div>
-  </div>
-  <div class="page-switch__wrapper">
-    <z-switch class="some-customized-class" :checked="true" :disabled="true"></z-switch>
-    <div class="page-switch__text">ON, DISABLED</div>
-  </div>
-  <div class="page-switch__wrapper">
-    <z-switch class="some-customized-class" :checked="false" :disabled="true"></z-switch>
-    <div class="page-switch__text">OFF, DISABLED</div>
+  <h1 class="page-title">Switch</h1>
+  <h2 class="page-sub-title">基础用法</h2>
+  <div class="page-switch">
+    <div class="page-switch__wrapper">
+      <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>
+      <div class="page-switch__text">{{switchStateText}}</div>
+    </div>
+    <div class="page-switch__wrapper">
+      <zan-switch class="some-customized-class" :checked="true" :disabled="true"></zan-switch>
+      <div class="page-switch__text">ON, DISABLED</div>
+    </div>
+    <div class="page-switch__wrapper">
+      <zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
+      <div class="page-switch__text">OFF, DISABLED</div>
+    </div>
+    <div class="page-switch__wrapper">
+      <zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
+      <div class="page-switch__text">ON, LOADING</div>
+    </div>
+    <div class="page-switch__wrapper">
+      <zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
+      <div class="page-switch__text">OFF, LOADING</div>
+    </div>
   </div>
 </div>
 

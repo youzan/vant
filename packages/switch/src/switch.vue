@@ -1,6 +1,8 @@
 <template>
-  <div class="z-switch" :class="switchState" @click="toggleState">
-    <div class="z-switch__node" :class="switchState"></div>
+  <div class="zan-switch" :class="switchState" @click="toggleState">
+    <div class="zan-switch__node" :class="switchState">
+      <zan-loading v-if="loading" class="zan-switch__loading"></zan-loading>
+    </div>
   </div>
 </template>
 
@@ -18,7 +20,7 @@
  * <z-switch checked="true" disabled="false"></o2-switch>
  */
 export default {
-  name: 'z-switch',
+  name: 'zan-switch',
   props: {
     checked: {
       type: Boolean,
