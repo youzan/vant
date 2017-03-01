@@ -1,18 +1,14 @@
 <template>
-  <div>
-    <h2>author: {{ author }}</h2>
-    <div>Hello {{ name }}</div>
+  <div class="zan-steps">
+    <div class="zan-steps__desc"></div>
+    <div class="zan-steps__items">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Sample',
-    props: ['author'],
-    data() {
-      return {
-        name: 'World'
-      };
-    }
+    name: 'zan-steps'
   };
 </script>

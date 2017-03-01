@@ -20,5 +20,6 @@
   "checkbox-group": "./packages/checkbox-group/index.js",
   "badge-group": "./packages/badge-group/index.js",
   "badge": "./packages/badge/index.js",
-  "search": "./packages/search/index.js"
+  "search": "./packages/search/index.js",
+  "step": "./packages/step/index.js"
 }
