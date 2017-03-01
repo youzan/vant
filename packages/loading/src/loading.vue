@@ -1,6 +1,6 @@
 <template>
-  <div class="zan-loading-container">
-  	<span class="zan-loading"></span>
+  <div class="zan-loading">
+  	<span class="zan-spinner"></span>
   </div>
 </template>
 
