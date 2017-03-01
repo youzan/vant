@@ -17,6 +17,12 @@
         <zan-radio name="2">单选框2</zan-radio>
       </zan-radio-group>
 
+      <h2 class="page-sub-title">禁用radio组</h2>
+      <zan-radio-group v-model="radio3" disabled>
+        <zan-radio name="1">单选框1</zan-radio>
+        <zan-radio name="2">单选框2</zan-radio>
+      </zan-radio-group>
+
       <h2 class="page-sub-title">与Cell组件一起使用</h2>
     </div>
 

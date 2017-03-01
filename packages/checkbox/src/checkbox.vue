@@ -67,6 +67,9 @@ export default {
       }
     },
 
+    /**
+     * `checkbox`是否被选中
+     */
     isChecked() {
       if ({}.toString.call(this.currentValue) === '[object Boolean]') {
         return this.currentValue;
