@@ -1,12 +1,14 @@
 <template>
   <div class="zan-switch" :class="switchState" @click="toggleState">
-    <div class="zan-switch__node" :class="switchState"></div>
+    <div class="zan-switch__node" :class="switchState">
+      <zan-loading v-if="loading" class="zan-switch__loading"></zan-loading>
+    </div>
   </div>
 </template>
 
 <script>
 /**
- * o2-switch
+ * zan-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [checked=false] - 开关状态
@@ -15,7 +17,7 @@
  * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
- * <o2-switch checked="true" disabled="false"></o2-switch>
+ * <zan-switch checked="true" disabled="false"></zan-switch>
  */
 export default {
   name: 'zan-switch',

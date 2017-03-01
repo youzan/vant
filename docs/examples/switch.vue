@@ -16,6 +16,14 @@
         <zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
         <div class="page-switch__text">OFF, DISABLED</div>
       </div>
+      <div class="page-switch__wrapper">
+        <zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
+        <div class="page-switch__text">ON, LOADING</div>
+      </div>
+      <div class="page-switch__wrapper">
+        <zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
+        <div class="page-switch__text">OFF, LOADING</div>
+      </div>
     </div>
   </div>
 </template>
