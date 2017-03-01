@@ -15,6 +15,8 @@ import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
 import Steps from '../packages/steps/index.js';
 import Tag from '../packages/tag/index.js';
+import Checkbox from '../packages/checkbox/index.js';
+import CheckboxGroup from '../packages/checkbox-group/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -34,6 +36,8 @@ const install = function(Vue) {
   Vue.component(Card.name, Card);
   Vue.component(Steps.name, Steps);
   Vue.component(Tag.name, Tag);
+  Vue.component(Checkbox.name, Checkbox);
+  Vue.component(CheckboxGroup.name, CheckboxGroup);
 };
 
 // auto install
@@ -60,5 +64,7 @@ module.exports = {
   Panel,
   Card,
   Steps,
-  Tag
+  Tag,
+  Checkbox,
+  CheckboxGroup
 };

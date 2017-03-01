@@ -24,8 +24,12 @@
 </template>
 
 <script>
+import findParent from 'src/mixins/findParent';
+
 export default {
   name: 'zan-radio',
+
+  mixins: [findParent],
 
   props: {
     disabled: Boolean,
@@ -35,17 +39,17 @@ export default {
 
   computed: {
     isGroup() {
-      return !!this.findRadioGroup();
+      return !!this.findParentByComponentName('zan-radio-group');
     },
 
     currentValue: {
       get() {
-        return this.isGroup ? (this.parentGroup && this.parentGroup.value) : this.value;
+        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
       },
 
       set(val) {
-        if (this.isGroup) {
-          this.parentGroup && this.parentGroup.$emit('input', val);
+        if (this.isGroup && this.parentGroup) {
+           this.parentGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }
@@ -53,27 +57,9 @@ export default {
     },
 
     isDisabled() {
-      return this.isGroup
-          ? (this.parentGroup && this.parentGroup.disabled) || this.disabled
+      return this.isGroup && this.parentGroup
+          ? this.parentGroup.disabled || this.disabled
           : this.disabled;
-    }
-  },
-
-  methods: {
-    findRadioGroup() {
-      if (this.parentGroup) return;
-
-      let parent = this.$parent;
-      while (parent) {
-        if (parent.$options.name === 'zan-radio-group') {
-          this.parentGroup = parent;
-          break;
-        } else {
-          parent = parent.$parent;
-        }
-      }
-
-      return this.parentGroup;
     }
   }
 };
