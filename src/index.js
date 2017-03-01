@@ -20,6 +20,7 @@ import CheckboxGroup from '../packages/checkbox-group/index.js';
 import BadgeGroup from '../packages/badge-group/index.js';
 import Badge from '../packages/badge/index.js';
 import Search from '../packages/search/index.js';
+import Step from '../packages/step/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -44,6 +45,7 @@ const install = function(Vue) {
   Vue.component(BadgeGroup.name, BadgeGroup);
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
+  Vue.component(Step.name, Step);
 };
 
 // auto install
@@ -53,7 +55,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  version: '0.0.7',
+  version: '0.0.8',
   Button,
   Switch,
   Field,
@@ -75,5 +77,6 @@ module.exports = {
   CheckboxGroup,
   BadgeGroup,
   Badge,
-  Search
+  Search,
+  Step
 };
