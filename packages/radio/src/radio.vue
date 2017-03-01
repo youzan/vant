@@ -1,61 +1,65 @@
 <template>
-  <z-cell
-    class="z-radio"
+  <div
+    class="zan-radio"
     :class="{
-      'is-disabled': disabled
+      'is-disabled': isDisabled
     }">
-    <span class="z-radio__input">
-      <input type="radio" class="z-radio__control">
-      <span class="z-radio__circle"></span>
+    <span class="zan-radio__input">
+      <input
+        :value="name"
+        v-model="currentValue"
+        type="radio"
+        class="zan-radio__control"
+        :disabled="isDisabled">
+      <span class="zan-icon" :class="{
+        'zan-icon-checked': currentValue === name,
+        'zan-icon-check': currentValue !== name
+      }">
+      </span>
     </span>
-    <span class="z-radio__label">
+    <span class="zan-radio__label">
       <slot></slot>
     </span>
-  </z-cell>
+  </div>
 </template>
 
 <script>
-import zCell from 'packages/cell';
+import findParent from 'src/mixins/findParent';
 
 export default {
-  name: 'z-radio',
+  name: 'zan-radio',
 
-  components: {
-    zCell
-  },
+  mixins: [findParent],
 
   props: {
     disabled: Boolean,
     value: {},
-    parentGroup: null
+    name: [String, Number]
   },
 
   computed: {
     isGroup() {
-      let parent = this.$parent;
-      while (parent) {
-        if (parent.$options.name === 'z-radio-group') {
-          this.parentGroup = parent;
-          return true;
-        } else {
-          parent = parent.$parent;
-        }
-      }
-      return false;
+      return !!this.findParentByComponentName('zan-radio-group');
     },
 
-    model: {
+    currentValue: {
       get() {
-        return this.isGroup ? this.parentGroup.value : this.value;
+        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
       },
 
       set(val) {
-        if (this.isGroup) {
-
+        if (this.isGroup && this.parentGroup) {
+           this.parentGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }
       }
+    },
+
+    isDisabled() {
+      return this.isGroup && this.parentGroup
+          ? this.parentGroup.disabled || this.disabled
+          : this.disabled;
     }
   }
 };

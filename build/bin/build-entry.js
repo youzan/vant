@@ -18,7 +18,7 @@ const install = function(Vue) {
 // auto install
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
-};
+}
 
 module.exports = {
   install,
@@ -44,14 +44,13 @@ ComponentNames.forEach(name => {
   }));
 
   if ([
-      // directives
-    'InfiniteScroll',
+    // directives
     'Lazyload',
+    'Waterfall',
 
-      // services
+    // services
     'Dialog',
-    'Toast',
-    'Indicator'
+    'Toast'
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,

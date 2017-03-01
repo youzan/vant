@@ -9,10 +9,17 @@ import Popup from '../packages/popup/index.js';
 import Dialog from '../packages/dialog/index.js';
 import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
+import Waterfall from '../packages/waterfall/index.js';
 import Loading from '../packages/loading/index.js';
 import Badge from '../packages/badge/index.js';
 import BadgeGroup from '../packages/badge-group/index.js';
 import Search from '../packages/search/index.js';
+import Panel from '../packages/panel/index.js';
+import Card from '../packages/card/index.js';
+import Steps from '../packages/steps/index.js';
+import Tag from '../packages/tag/index.js';
+import Checkbox from '../packages/checkbox/index.js';
+import CheckboxGroup from '../packages/checkbox-group/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -31,16 +38,22 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(BadgeGroup.name, BadgeGroup);
   Vue.component(Search.name, Search);
+  Vue.component(Panel.name, Panel);
+  Vue.component(Card.name, Card);
+  Vue.component(Steps.name, Steps);
+  Vue.component(Tag.name, Tag);
+  Vue.component(Checkbox.name, Checkbox);
+  Vue.component(CheckboxGroup.name, CheckboxGroup);
 };
 
 // auto install
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
-};
+}
 
 module.exports = {
   install,
-  version: '0.0.1',
+  version: '0.0.7',
   Button,
   Switch,
   Field,
@@ -55,5 +68,13 @@ module.exports = {
   Loading,
   Badge,
   BadgeGroup,
-  Search
+  Search,
+  Waterfall,
+  Loading,
+  Panel,
+  Card,
+  Steps,
+  Tag,
+  Checkbox,
+  CheckboxGroup
 };

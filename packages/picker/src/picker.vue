@@ -1,10 +1,10 @@
 <template>
-  <div class="z-picker">
-    <div class="z-picker__toolbar">
+  <div class="zan-picker">
+    <div class="zan-picker__toolbar">
       <slot>
       </slot>
     </div>
-    <div class="z-picker__columns" :class="['z-picker__columns--' + columns.length]">
+    <div class="zan-picker__columns" :class="['zan-picker__columns--' + columns.length]">
       <picker-column
         v-for="(item, index) in columns"
         v-model="values[index]"
@@ -14,7 +14,7 @@
         :visible-item-count="visibleItemCount"
         @change="columnValueChange">
       </picker-column>
-      <div class="z-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
+      <div class="zan-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import PickerColumn from './picker-column';
 const DEFAULT_ITEM_HEIGHT = 44;
 
 export default {
-  name: 'z-picker',
+  name: 'zan-picker',
 
   components: {
     PickerColumn
@@ -89,7 +89,7 @@ export default {
      * 获取对应索引的列的实例
      */
     getColumn(index) {
-      let children = this.$children.filter(child => child.$options.name === 'z-picker-column');
+      let children = this.$children.filter(child => child.$options.name === 'zan-picker-column');
       return children[index];
     },
 

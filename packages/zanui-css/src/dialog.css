@@ -1,6 +1,6 @@
-@import "./mixins/border_retina.pcss";
+@import "./mixins/border_retina.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b dialog-wrapper {
     position: absolute;
   }
@@ -52,11 +52,11 @@
       overflow: hidden;
 
       @when twobtn {
-        .z-dialog__btn {
+        .zan-dialog__btn {
           width: 50%;
         }
 
-        .z-dialog__cancel {
+        .zan-dialog__cancel {
           &::after {
             @mixin border-retina (right);
           }

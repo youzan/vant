@@ -8,14 +8,14 @@
  * @param {slot} - 显示文本
  *
  * @example
- * <z-button size="large" type="primary">按钮</z-button>
+ * <zan-button size="large" type="primary">按钮</zan-button>
  */
 
 const allowedSize = ['mini', 'small', 'normal', 'large'];
 const allowedType = ['default', 'danger', 'primary'];
 
 export default {
-  name: 'z-button',
+  name: 'zan-button',
 
   props: {
     disabled: Boolean,
@@ -52,6 +52,27 @@ export default {
     let { type, nativeType, size, disabled, loading, block } = this;
     let Tag = this.tag;
 
-    
+    return (
+      <Tag
+        type={nativeType}
+        disabled={disabled}
+        class={[
+          'zan-button',
+          'zan-button--' + type,
+          'zan-button--' + size,
+          {
+            'is-disabled': disabled,
+            'is-loading': loading,
+            'is-block': block
+          }
+        ]}
+        onClick={this.handleClick}
+      >
+        {
+          loading ? <i class="zan-icon-loading"></i> : null
+        }
+        <span class="zan-button-text">{this.$slots.default}</span>
+      </Tag>
+    );
   }
 };

@@ -10,8 +10,12 @@
   "dialog": "./packages/dialog/index.js",
   "picker": "./packages/picker/index.js",
   "radio-group": "./packages/radio-group/index.js",
+  "waterfall": "./packages/waterfall/index.js",
   "loading": "./packages/loading/index.js",
-  "badge": "./packages/badge/index.js",
-  "badge-group": "./packages/badge-group/index.js",
-  "search": "./packages/search/index.js"
+  "panel": "./packages/panel/index.js",
+  "card": "./packages/card/index.js",
+  "steps": "./packages/steps/index.js",
+  "tag": "./packages/tag/index.js",
+  "checkbox": "./packages/checkbox/index.js",
+  "checkbox-group": "./packages/checkbox-group/index.js"
 }

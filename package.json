@@ -1,9 +1,9 @@
 {
-  "name": "@youzan/oxygen",
-  "version": "0.0.1",
+  "name": "@youzan/zanui-vue",
+  "version": "0.0.7",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
-  "style": "lib/zanui-css.css",
+  "style": "lib/zanui-css/index.css",
   "files": [
     "lib",
     "src",
@@ -13,16 +13,17 @@
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
     "dev": "npm run bootstrap && npm run build:file && webpack-dev-server --port 8282 --inline --hot --config build/webpack.config.js",
     "build:file": "node build/bin/build-entry.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
-    "build:zanui": "webpack --progress --hide-modules --config  build/webpack.build.js && webpack --progress --hide-modules --config  build/webpack.build.min.js",
-    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:zanui-css",
+    "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
+    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:utils && npm run build:zanui-css",
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.qima-inc.com:fe/oxygen.git"
+    "url": "git@gitlab.qima-inc.com:fe/zanui-vue.git"
   },
   "keywords": [
     "youzan",

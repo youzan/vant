@@ -1,7 +1,7 @@
 {
   "zh-CN": [
     {
-      "name": "oxygen组件",
+      "name": "ZanUI组件",
       "groups": [
         {
           "groupName": "CSS组件",
@@ -15,12 +15,12 @@
               "title": "Cell"
             },
             {
-              "path": "/loading",
-              "title": "Loading"
-            },
-            {
               "path": "/progress",
               "title": "Progress"
+            },
+            {
+              "path": "/panel",
+              "title": "Panel"
             },
             {
               "path": "/card",
@@ -33,6 +33,10 @@
             {
               "path": "/steps",
               "title": "Steps"
+            },
+            {
+              "path": "/tag",
+              "title": "Tag"
             },
             {
               "path": "/badge",

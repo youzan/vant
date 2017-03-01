@@ -1,6 +1,6 @@
-@import "./common/var.pcss";
+@import "./common/var.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b button {
     position: relative;
     padding: 0;
@@ -53,6 +53,7 @@
     }
 
     @m normal {
+      padding: 0 10px;
       font-size: 14px;
     }
 

@@ -19,7 +19,7 @@ then
   echo "Releasing zanui-css $VERSION ..."
   cd packages/zanui-css
   npm version $VERSION --message "[release] $VERSION"
-  npm publish
+  npm publish --registry=http://registry.npm.qima-inc.com
   cd ../..
 
   # commit
@@ -30,9 +30,6 @@ then
   # publish
   git push origin master
   git push origin refs/tags/v$VERSION
-  git checkout dev
-  git rebase master
-  git push origin dev
 
-  npm publish
+  npm publish --registry=http://registry.npm.qima-inc.com
 fi

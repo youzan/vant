@@ -85,7 +85,6 @@ export default {
 
       const dom = getDOM(this.$el);
       const props = merge({}, this, options);
-      const overlay = props.overlay;
       const zIndex = props.zIndex;
 
       // 如果属性中传入了`zIndex`，则覆盖`PopupManager`中对应的`zIndex`
@@ -94,7 +93,7 @@ export default {
       }
 
       // 如果显示遮罩层
-      if (overlay) {
+      if (this.overlay) {
         if (this.closing) {
           PopupManager.closeModal(this._popupId);
           this.closing = false;
@@ -102,7 +101,7 @@ export default {
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), dom);
 
         // 如果滚动时需要锁定
-        if (props.lockOnScroll) {
+        if (this.lockOnScroll) {
           // 将原来的`bodyOverflow`存起来
           if (!this.bodyOverflow) {
             this.bodyOverflow = document.body.style.overflow;

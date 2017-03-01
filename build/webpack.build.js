@@ -10,4 +10,10 @@ config.output = {
   libraryTarget: 'umd'
 };
 
+config.externals = {
+  vue: 'Vue'
+};
+
+delete config.devtool;
+
 module.exports = config;

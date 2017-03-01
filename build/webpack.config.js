@@ -28,8 +28,8 @@ module.exports = {
     'zanui-examples': './docs/examples.js'
   },
   output: {
-    path: './docs/build',
-    publicPath: 'docs/build',
+    path: './docs/build/',
+    publicPath: 'docs/build/',
     filename: '[name].js'
   },
   resolve: {
@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
         loader: 'babel-loader'
       },
       {
@@ -88,8 +88,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new ExtractTextPlugin(`yzvue_base_${version}_min.css`),
     new webpack.optimize.UglifyJsPlugin({
-      compress: {warnings: false},
-      output: {comments: false},
+      compress: {
+        warnings: false
+      },
+      output: {
+        comments: false
+      },
       sourceMap: false
     }),
     new webpack.LoaderOptionsPlugin({
@@ -122,31 +126,6 @@ if (process.env.NODE_ENV === 'production') {
               slugify: slugify,
               permalink: true,
               permalinkBefore: true
-            }],
-            [require('markdown-it-container'), 'demo', {
-              validate: function(params) {
-                return params.trim().match(/^demo\s*(.*)$/);
-              },
-
-              render: function(tokens, idx) {
-                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
-                if (tokens[idx].nesting === 1) {
-                  var description = (m && m.length > 1) ? m[1] : '';
-                  var content = tokens[idx + 1].content;
-                  var html = convert(striptags.strip(content, ['script', 'style']));
-                  var script = striptags.fetch(content, 'script');
-                  var style = striptags.fetch(content, 'style');
-                  var descriptionHTML = description
-                    ? md.render(description)
-                    : '';
-
-                  return `<demo-block class="demo-box">
-                            <div class="source" slot="source">${html}</div>
-                            ${descriptionHTML}
-                            <div class="highlight" slot="highlight">`;
-                }
-                return '</div></demo-block>\n';
-              }
             }]
           ],
           preprocess: function(MarkdownIt, source) {

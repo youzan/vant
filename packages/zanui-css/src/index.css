@@ -4,6 +4,7 @@
 @import './button.css';
 @import './button_group.css';
 @import './cell.css';
+@import './card.css';
 @import './dialog.css';
 @import './field.css';
 @import './icon.css';
@@ -14,4 +15,7 @@
 @import './switch.css';
 @import './badge.css';
 @import './search.css';
-
+@import './panel.css';
+@import './steps.css';
+@import './tag.css';
+@import './checkbox.css';

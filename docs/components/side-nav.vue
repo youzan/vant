@@ -62,10 +62,13 @@
 
 <style lang="css">
   .side-nav {
-    width: 25%;
+    width: 18%;
     box-sizing: border-box;
-    padding-right: 30px;
+    padding: 40px 20px;
     float: left;
+    background: #f9fafb;
+    height: inherit;
+    overflow: auto;
 
     li {
       list-style: none;

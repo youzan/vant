@@ -1,7 +1,7 @@
 ## 下载项目
 ```bash
-git@gitlab.qima-inc.com:fe/oxygen.git
-cd oxygen
+git@gitlab.qima-inc.com:fe/zanui-vue.git
+cd zanui-vue
 ```
 
 ## 安装组件依赖库

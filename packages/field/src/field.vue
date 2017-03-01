@@ -1,6 +1,6 @@
 <template>
-  <z-cell
-    class="z-field"
+  <zan-cell
+    class="zan-field"
     :title="label"
     :class="{
       'is-textarea': type === 'textarea',
@@ -8,7 +8,7 @@
     }">
     <textarea
       v-if="type === 'textarea'"
-      class="z-field__control"
+      class="zan-field__control"
       v-model="currentValue"
       @change="$emit('change', currentValue)"
       :placeholder="placeholder"
@@ -18,7 +18,7 @@
     </textarea>
     <input
       v-else
-      class="z-field__control"
+      class="zan-field__control"
       :value="currentValue"
       @change="$emit('change', currentValue)"
       @input="handleInput"
@@ -27,14 +27,14 @@
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
-  </z-cell>
+  </zan-cell>
 </template>
 
 <script>
 import zCell from 'packages/cell';
 
 export default {
-  name: 'z-field',
+  name: 'zan-field',
 
   components: {
     zCell
