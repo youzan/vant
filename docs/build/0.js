@@ -3,8 +3,8 @@ webpackJsonp([0],[
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(41)('wks')
-  , uid        = __webpack_require__(44)
+var store      = __webpack_require__(42)('wks')
+  , uid        = __webpack_require__(45)
   , Symbol     = __webpack_require__(2).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
 
@@ -41,7 +41,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(19)
-  , createDesc = __webpack_require__(40);
+  , createDesc = __webpack_require__(41);
 module.exports = __webpack_require__(9) ? function(object, key, value){
   return dP.f(object, key, createDesc(1, value));
 } : function(object, key, value){
@@ -133,8 +133,8 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(5)
-  , IE8_DOM_DEFINE = __webpack_require__(100)
-  , toPrimitive    = __webpack_require__(119)
+  , IE8_DOM_DEFINE = __webpack_require__(113)
+  , toPrimitive    = __webpack_require__(132)
   , dP             = Object.defineProperty;
 
 exports.f = __webpack_require__(9) ? Object.defineProperty : function defineProperty(O, P, Attributes){
@@ -196,8 +196,8 @@ module.exports = function(it, tag, stat){
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(41)('keys')
-  , uid    = __webpack_require__(44);
+var shared = __webpack_require__(42)('keys')
+  , uid    = __webpack_require__(45);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
@@ -218,7 +218,7 @@ module.exports = function(it){
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(102)
+var IObject = __webpack_require__(115)
   , defined = __webpack_require__(21);
 module.exports = function(it){
   return IObject(defined(it));
@@ -316,7 +316,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _cell = __webpack_require__(128);
+var _cell = __webpack_require__(143);
 
 var _cell2 = _interopRequireDefault(_cell);
 
@@ -334,16 +334,49 @@ exports.default = _cell2.default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+/**
+ * 根据父组件名找到对应`parent`
+ */
+exports.default = {
+  methods: {
+    findParentByComponentName: function findParentByComponentName(name) {
+      if (this.parentGroup) return;
+
+      var parent = this.$parent;
+      while (parent) {
+        if (parent.$options.name === name) {
+          this.parentGroup = parent;
+          break;
+        } else {
+          parent = parent.$parent;
+        }
+      }
+
+      return this.parentGroup;
+    }
+  }
+};
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _merge = __webpack_require__(34);
+var _merge = __webpack_require__(35);
 
 var _merge2 = _interopRequireDefault(_merge);
 
-var _popupManager = __webpack_require__(91);
+var _popupManager = __webpack_require__(104);
 
 var _popupManager2 = _interopRequireDefault(_popupManager);
 
@@ -506,7 +539,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -539,7 +572,7 @@ exports.default = function (target) {
 ;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // getting tag from 19.1.3.6 Object.prototype.toString()
@@ -567,7 +600,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -576,26 +609,26 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2).document && document.documentElement;
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY        = __webpack_require__(39)
+var LIBRARY        = __webpack_require__(40)
   , $export        = __webpack_require__(30)
-  , redefine       = __webpack_require__(114)
+  , redefine       = __webpack_require__(127)
   , hide           = __webpack_require__(6)
   , has            = __webpack_require__(17)
   , Iterators      = __webpack_require__(10)
-  , $iterCreate    = __webpack_require__(105)
+  , $iterCreate    = __webpack_require__(118)
   , setToStringTag = __webpack_require__(23)
-  , getPrototypeOf = __webpack_require__(111)
+  , getPrototypeOf = __webpack_require__(124)
   , ITERATOR       = __webpack_require__(1)('iterator')
   , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
   , FF_ITERATOR    = '@@iterator'
@@ -658,13 +691,13 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 module.exports = true;
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 module.exports = function(bitmap, value){
@@ -677,7 +710,7 @@ module.exports = function(bitmap, value){
 };
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2)
@@ -688,12 +721,12 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx                = __webpack_require__(16)
-  , invoke             = __webpack_require__(101)
-  , html               = __webpack_require__(37)
+  , invoke             = __webpack_require__(114)
+  , html               = __webpack_require__(38)
   , cel                = __webpack_require__(22)
   , global             = __webpack_require__(2)
   , process            = global.process
@@ -768,7 +801,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.15 ToLength
@@ -779,7 +812,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 var id = 0
@@ -789,25 +822,25 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _index = __webpack_require__(69);
+var _index = __webpack_require__(78);
 
 var _index2 = _interopRequireDefault(_index);
 
-var _index3 = __webpack_require__(85);
+var _index3 = __webpack_require__(98);
 
 var _index4 = _interopRequireDefault(_index3);
 
-var _index5 = __webpack_require__(75);
+var _index5 = __webpack_require__(86);
 
 var _index6 = _interopRequireDefault(_index5);
 
-var _index7 = __webpack_require__(83);
+var _index7 = __webpack_require__(94);
 
 var _index8 = _interopRequireDefault(_index7);
 
@@ -815,53 +848,77 @@ var _index9 = __webpack_require__(32);
 
 var _index10 = _interopRequireDefault(_index9);
 
-var _index11 = __webpack_require__(76);
+var _index11 = __webpack_require__(87);
 
 var _index12 = _interopRequireDefault(_index11);
 
-var _index13 = __webpack_require__(72);
+var _index13 = __webpack_require__(81);
 
 var _index14 = _interopRequireDefault(_index13);
 
-var _index15 = __webpack_require__(81);
+var _index15 = __webpack_require__(92);
 
 var _index16 = _interopRequireDefault(_index15);
 
-var _index17 = __webpack_require__(73);
+var _index17 = __webpack_require__(84);
 
 var _index18 = _interopRequireDefault(_index17);
 
-var _index19 = __webpack_require__(79);
+var _index19 = __webpack_require__(90);
 
 var _index20 = _interopRequireDefault(_index19);
 
-var _index21 = __webpack_require__(82);
+var _index21 = __webpack_require__(93);
 
 var _index22 = _interopRequireDefault(_index21);
 
-var _index23 = __webpack_require__(87);
+var _index23 = __webpack_require__(100);
 
 var _index24 = _interopRequireDefault(_index23);
 
-var _index25 = __webpack_require__(77);
+var _index25 = __webpack_require__(88);
 
 var _index26 = _interopRequireDefault(_index25);
 
-var _index27 = __webpack_require__(78);
+var _index27 = __webpack_require__(89);
 
 var _index28 = _interopRequireDefault(_index27);
 
-var _index29 = __webpack_require__(71);
+var _index29 = __webpack_require__(80);
 
 var _index30 = _interopRequireDefault(_index29);
 
-var _index31 = __webpack_require__(84);
+var _index31 = __webpack_require__(97);
 
 var _index32 = _interopRequireDefault(_index31);
 
-var _index33 = __webpack_require__(86);
+var _index33 = __webpack_require__(99);
 
 var _index34 = _interopRequireDefault(_index33);
+
+var _index35 = __webpack_require__(83);
+
+var _index36 = _interopRequireDefault(_index35);
+
+var _index37 = __webpack_require__(82);
+
+var _index38 = _interopRequireDefault(_index37);
+
+var _index39 = __webpack_require__(76);
+
+var _index40 = _interopRequireDefault(_index39);
+
+var _index41 = __webpack_require__(77);
+
+var _index42 = _interopRequireDefault(_index41);
+
+var _index43 = __webpack_require__(95);
+
+var _index44 = _interopRequireDefault(_index43);
+
+var _index45 = __webpack_require__(96);
+
+var _index46 = _interopRequireDefault(_index45);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -883,6 +940,12 @@ var install = function install(Vue) {
   Vue.component(_index30.default.name, _index30.default);
   Vue.component(_index32.default.name, _index32.default);
   Vue.component(_index34.default.name, _index34.default);
+  Vue.component(_index36.default.name, _index36.default);
+  Vue.component(_index38.default.name, _index38.default);
+  Vue.component(_index40.default.name, _index40.default);
+  Vue.component(_index42.default.name, _index42.default);
+  Vue.component(_index44.default.name, _index44.default);
+  Vue.component(_index46.default.name, _index46.default);
 };
 
 // auto install
@@ -892,7 +955,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install: install,
-  version: '0.0.7',
+  version: '0.0.8',
   Button: _index2.default,
   Switch: _index4.default,
   Field: _index6.default,
@@ -909,28 +972,34 @@ module.exports = {
   Panel: _index28.default,
   Card: _index30.default,
   Steps: _index32.default,
-  Tag: _index34.default
+  Tag: _index34.default,
+  Checkbox: _index36.default,
+  CheckboxGroup: _index38.default,
+  BadgeGroup: _index40.default,
+  Badge: _index42.default,
+  Search: _index44.default,
+  Step: _index46.default
 };
 
 /***/ }),
-/* 46 */,
 /* 47 */,
 /* 48 */,
 /* 49 */,
 /* 50 */,
-/* 51 */
+/* 51 */,
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(112)
-  , enumBugKeys = __webpack_require__(36);
+var $keys       = __webpack_require__(125)
+  , enumBugKeys = __webpack_require__(37);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
 };
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.13 ToObject(argument)
@@ -940,7 +1009,92 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 53 */
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'zan-badge-group',
+
+  props: {
+    // 当前激活 tab 面板的 key
+    activeKey: {
+      type: [Number, String],
+      default: 0
+    }
+  },
+
+  data: function data() {
+    return {
+      computedActiveKey: this.activeKey
+    };
+  }
+};
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'zan-badge',
+  props: {
+    mark: {
+      type: [Number, String],
+      required: true
+    },
+    title: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String
+    },
+    info: {
+      type: String
+    }
+  },
+  methods: {
+    handleClick: function handleClick() {
+      this.$parent.computedActiveKey = this.mark;
+    }
+  },
+  computed: {
+    classNames: function classNames() {
+      return {
+        'is-select': this.mark === this.$parent.computedActiveKey
+      };
+    }
+  }
+};
+
+/***/ }),
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -981,7 +1135,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 54 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1002,7 +1156,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 55 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1055,7 +1209,39 @@ exports.default = {
 };
 
 /***/ }),
-/* 56 */
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'zan-checkbox-group',
+
+  props: {
+    value: {},
+    disabled: Boolean
+  },
+
+  watch: {
+    value: function value(val) {
+      this.$emit('change', val);
+    }
+  }
+};
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1065,7 +1251,116 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _popup = __webpack_require__(33);
+var _findParent = __webpack_require__(33);
+
+var _findParent2 = _interopRequireDefault(_findParent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  name: 'zan-checkbox',
+
+  mixins: [_findParent2.default],
+
+  props: {
+    disabled: Boolean,
+    value: {},
+    name: [String, Number]
+  },
+
+  computed: {
+    /**
+     * `checkbox`是否在`zan-checkbox-group`中
+     */
+    isGroup: function isGroup() {
+      return !!this.findParentByComponentName('zan-checkbox-group');
+    },
+
+
+    /**
+     * `checkbox`当前值
+     */
+    currentValue: {
+      get: function get() {
+        return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
+      },
+      set: function set(val) {
+        if (this.isGroup && this.parentGroup) {
+          var parentValue = this.parentGroup.value.slice();
+          if (val) {
+            if (parentValue.indexOf(this.name) === -1) {
+              parentValue.push(this.name);
+              this.parentGroup.$emit('input', parentValue);
+            }
+          } else {
+            var index = parentValue.indexOf(this.name);
+            if (index !== -1) {
+              parentValue.splice(index, 1);
+              this.parentGroup.$emit('input', parentValue);
+            }
+          }
+        } else {
+          this.$emit('input', val);
+        }
+      }
+    },
+
+    /**
+     * `checkbox`是否被选中
+     */
+    isChecked: function isChecked() {
+      if ({}.toString.call(this.currentValue) === '[object Boolean]') {
+        return this.currentValue;
+      } else if (Array.isArray(this.currentValue)) {
+        return this.currentValue.indexOf(this.name) > -1;
+      }
+    },
+
+
+    /**
+     * `checkbox`是否被禁用
+     */
+    isDisabled: function isDisabled() {
+      return this.isGroup && this.parentGroup ? this.parentGroup.disabled || this.disabled : this.disabled;
+    }
+  }
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _popup = __webpack_require__(34);
 
 var _popup2 = _interopRequireDefault(_popup);
 
@@ -1156,7 +1451,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 57 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1248,7 +1543,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 58 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1271,7 +1566,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 59 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1284,13 +1579,15 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
   name: 'zan-loading'
 };
 
 /***/ }),
-/* 60 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1328,7 +1625,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 61 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1338,11 +1635,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _transition = __webpack_require__(93);
+var _transition = __webpack_require__(106);
 
 var _transition2 = _interopRequireDefault(_transition);
 
-var _draggable = __webpack_require__(80);
+var _draggable = __webpack_require__(91);
 
 var _draggable2 = _interopRequireDefault(_draggable);
 
@@ -1595,7 +1892,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 62 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1605,7 +1902,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _pickerColumn = __webpack_require__(134);
+var _pickerColumn = __webpack_require__(151);
 
 var _pickerColumn2 = _interopRequireDefault(_pickerColumn);
 
@@ -1768,7 +2065,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 63 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1778,7 +2075,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _popup = __webpack_require__(33);
+var _popup = __webpack_require__(34);
 
 var _popup2 = _interopRequireDefault(_popup);
 
@@ -1851,7 +2148,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 64 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1883,7 +2180,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 65 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1892,34 +2189,17 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _findParent = __webpack_require__(33);
+
+var _findParent2 = _interopRequireDefault(_findParent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
   name: 'zan-radio',
+
+  mixins: [_findParent2.default],
 
   props: {
     disabled: Boolean,
@@ -1929,17 +2209,17 @@ exports.default = {
 
   computed: {
     isGroup: function isGroup() {
-      return !!this.findRadioGroup();
+      return !!this.findParentByComponentName('zan-radio-group');
     },
 
 
     currentValue: {
       get: function get() {
-        return this.isGroup ? this.parentGroup && this.parentGroup.value : this.value;
+        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
       },
       set: function set(val) {
-        if (this.isGroup) {
-          this.parentGroup && this.parentGroup.$emit('input', val);
+        if (this.isGroup && this.parentGroup) {
+          this.parentGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }
@@ -1947,31 +2227,37 @@ exports.default = {
     },
 
     isDisabled: function isDisabled() {
-      return this.isGroup ? this.parentGroup && this.parentGroup.disabled || this.disabled : this.disabled;
-    }
-  },
-
-  methods: {
-    findRadioGroup: function findRadioGroup() {
-      if (this.parentGroup) return;
-
-      var parent = this.$parent;
-      while (parent) {
-        if (parent.$options.name === 'zan-radio-group') {
-          this.parentGroup = parent;
-          break;
-        } else {
-          parent = parent.$parent;
-        }
-      }
-
-      return this.parentGroup;
+      return this.isGroup && this.parentGroup ? this.parentGroup.disabled || this.disabled : this.disabled;
     }
   }
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
-/* 66 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1980,6 +2266,9 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
 //
 //
 //
@@ -1989,17 +2278,54 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: 'Sample',
-  props: ['author'],
+  name: 'zan-search',
+  props: {
+    placeholder: {
+      type: String
+    }
+  },
   data: function data() {
     return {
-      name: 'World'
+      value: '',
+      focusStatus: false,
+      isFocus: false
     };
+  },
+
+  directives: {
+    refocus: {
+      update: function update(el, state) {
+        if (state.value) {
+          el.focus();
+        }
+      }
+    }
+  },
+  methods: {
+    handleFocus: function handleFocus() {
+      // 进入input焦点，出现close和取消
+      this.isFocus = true;
+    },
+    handleClean: function handleClean() {
+      // 点击close后清空vlaue后，再聚焦input框
+      this.value = '';
+      this.focusStatus = true;
+    },
+    handleBack: function handleBack() {
+      // 点击取消后，清空所有回复最初状态
+      this.value = '';
+      this.focusStatus = false;
+      this.isFocus = false;
+    },
+    handleSearch: function handleSearch() {
+      // input输入回车后，发送回调
+      this.$emit('search', this.value);
+    }
   }
 };
 
 /***/ }),
-/* 67 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2015,8 +2341,55 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+exports.default = {
+  name: 'zan-step'
+};
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'zan-steps'
+};
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+
 /**
- * o2-switch
+ * zan-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [checked=false] - 开关状态
@@ -2025,7 +2398,7 @@ Object.defineProperty(exports, "__esModule", {
  * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
- * <o2-switch checked="true" disabled="false"></o2-switch>
+ * <zan-switch checked="true" disabled="false"></zan-switch>
  */
 exports.default = {
   name: 'zan-switch',
@@ -2069,7 +2442,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 68 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2095,7 +2468,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 69 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2105,7 +2478,45 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _button = __webpack_require__(70);
+var _badgeGroup = __webpack_require__(139);
+
+var _badgeGroup2 = _interopRequireDefault(_badgeGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _badgeGroup2.default;
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _badge = __webpack_require__(140);
+
+var _badge2 = _interopRequireDefault(_badge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _badge2.default;
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _button = __webpack_require__(79);
 
 var _button2 = _interopRequireDefault(_button);
 
@@ -2114,7 +2525,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _button2.default;
 
 /***/ }),
-/* 70 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2213,7 +2624,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 71 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2223,7 +2634,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _card = __webpack_require__(126);
+var _card = __webpack_require__(141);
 
 var _card2 = _interopRequireDefault(_card);
 
@@ -2232,7 +2643,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _card2.default;
 
 /***/ }),
-/* 72 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2242,7 +2653,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _cellGroup = __webpack_require__(127);
+var _cellGroup = __webpack_require__(142);
 
 var _cellGroup2 = _interopRequireDefault(_cellGroup);
 
@@ -2251,7 +2662,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _cellGroup2.default;
 
 /***/ }),
-/* 73 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2261,7 +2672,45 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _dialog = __webpack_require__(74);
+var _checkboxGroup = __webpack_require__(144);
+
+var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _checkboxGroup2.default;
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _checkbox = __webpack_require__(145);
+
+var _checkbox2 = _interopRequireDefault(_checkbox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _checkbox2.default;
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _dialog = __webpack_require__(85);
 
 var _dialog2 = _interopRequireDefault(_dialog);
 
@@ -2270,7 +2719,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _dialog2.default;
 
 /***/ }),
-/* 74 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2280,7 +2729,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _promise = __webpack_require__(94);
+var _promise = __webpack_require__(107);
 
 var _promise2 = _interopRequireDefault(_promise);
 
@@ -2288,11 +2737,11 @@ var _vue = __webpack_require__(3);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _dialog = __webpack_require__(129);
+var _dialog = __webpack_require__(146);
 
 var _dialog2 = _interopRequireDefault(_dialog);
 
-var _merge = __webpack_require__(34);
+var _merge = __webpack_require__(35);
 
 var _merge2 = _interopRequireDefault(_merge);
 
@@ -2395,7 +2844,7 @@ DialogBox.close = function () {
 exports.default = DialogBox;
 
 /***/ }),
-/* 75 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2405,7 +2854,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _field = __webpack_require__(130);
+var _field = __webpack_require__(147);
 
 var _field2 = _interopRequireDefault(_field);
 
@@ -2414,7 +2863,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _field2.default;
 
 /***/ }),
-/* 76 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2424,7 +2873,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _icon = __webpack_require__(131);
+var _icon = __webpack_require__(148);
 
 var _icon2 = _interopRequireDefault(_icon);
 
@@ -2433,7 +2882,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _icon2.default;
 
 /***/ }),
-/* 77 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2443,7 +2892,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _loading = __webpack_require__(132);
+var _loading = __webpack_require__(149);
 
 var _loading2 = _interopRequireDefault(_loading);
 
@@ -2452,7 +2901,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _loading2.default;
 
 /***/ }),
-/* 78 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2462,7 +2911,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _panel = __webpack_require__(133);
+var _panel = __webpack_require__(150);
 
 var _panel2 = _interopRequireDefault(_panel);
 
@@ -2471,7 +2920,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _panel2.default;
 
 /***/ }),
-/* 79 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2481,7 +2930,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _picker = __webpack_require__(135);
+var _picker = __webpack_require__(152);
 
 var _picker2 = _interopRequireDefault(_picker);
 
@@ -2490,7 +2939,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _picker2.default;
 
 /***/ }),
-/* 80 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2563,7 +3012,7 @@ var supportTouch = !_vue2.default.prototype.$isServer && 'ontouchstart' in windo
 ;
 
 /***/ }),
-/* 81 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2573,7 +3022,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _popup = __webpack_require__(136);
+var _popup = __webpack_require__(153);
 
 var _popup2 = _interopRequireDefault(_popup);
 
@@ -2582,7 +3031,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _popup2.default;
 
 /***/ }),
-/* 82 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2592,7 +3041,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _radioGroup = __webpack_require__(137);
+var _radioGroup = __webpack_require__(154);
 
 var _radioGroup2 = _interopRequireDefault(_radioGroup);
 
@@ -2601,7 +3050,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _radioGroup2.default;
 
 /***/ }),
-/* 83 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2611,7 +3060,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _radio = __webpack_require__(138);
+var _radio = __webpack_require__(155);
 
 var _radio2 = _interopRequireDefault(_radio);
 
@@ -2620,7 +3069,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _radio2.default;
 
 /***/ }),
-/* 84 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2630,7 +3079,45 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _steps = __webpack_require__(139);
+var _search = __webpack_require__(156);
+
+var _search2 = _interopRequireDefault(_search);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _search2.default;
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _step = __webpack_require__(157);
+
+var _step2 = _interopRequireDefault(_step);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _step2.default;
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _steps = __webpack_require__(158);
 
 var _steps2 = _interopRequireDefault(_steps);
 
@@ -2639,7 +3126,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _steps2.default;
 
 /***/ }),
-/* 85 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2649,7 +3136,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _switch = __webpack_require__(140);
+var _switch = __webpack_require__(159);
 
 var _switch2 = _interopRequireDefault(_switch);
 
@@ -2658,7 +3145,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _switch2.default;
 
 /***/ }),
-/* 86 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2668,7 +3155,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _main = __webpack_require__(141);
+var _main = __webpack_require__(160);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -2677,7 +3164,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _main2.default;
 
 /***/ }),
-/* 87 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2687,7 +3174,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _main = __webpack_require__(89);
+var _main = __webpack_require__(102);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -2696,7 +3183,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _main2.default;
 
 /***/ }),
-/* 88 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2734,7 +3221,7 @@ exports.default = function (type) {
   };
 };
 
-var _utils = __webpack_require__(90);
+var _utils = __webpack_require__(103);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -2808,7 +3295,7 @@ function handleScrollEvent() {
 ;
 
 /***/ }),
-/* 89 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2818,7 +3305,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _directive = __webpack_require__(88);
+var _directive = __webpack_require__(101);
 
 var _directive2 = _interopRequireDefault(_directive);
 
@@ -2841,7 +3328,7 @@ _directive2.default.install = install;
 exports.default = _directive2.default;
 
 /***/ }),
-/* 90 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2931,7 +3418,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 91 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2941,7 +3428,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _dom = __webpack_require__(92);
+var _dom = __webpack_require__(105);
 
 var hasModal = false;
 
@@ -3073,7 +3560,7 @@ var PopupManager = {
 exports.default = PopupManager;
 
 /***/ }),
-/* 92 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3144,7 +3631,7 @@ function removeClass(el, cls) {
 };
 
 /***/ }),
-/* 93 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3259,29 +3746,29 @@ if (!_vue2.default.prototype.$isServer) {
 exports.default = exportObj;
 
 /***/ }),
-/* 94 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(95), __esModule: true };
+module.exports = { "default": __webpack_require__(108), __esModule: true };
 
 /***/ }),
-/* 95 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(122);
-__webpack_require__(124);
-__webpack_require__(125);
-__webpack_require__(123);
+__webpack_require__(135);
+__webpack_require__(137);
+__webpack_require__(138);
+__webpack_require__(136);
 module.exports = __webpack_require__(8).Promise;
 
 /***/ }),
-/* 96 */
+/* 109 */
 /***/ (function(module, exports) {
 
 module.exports = function(){ /* empty */ };
 
 /***/ }),
-/* 97 */
+/* 110 */
 /***/ (function(module, exports) {
 
 module.exports = function(it, Constructor, name, forbiddenField){
@@ -3291,14 +3778,14 @@ module.exports = function(it, Constructor, name, forbiddenField){
 };
 
 /***/ }),
-/* 98 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = __webpack_require__(26)
-  , toLength  = __webpack_require__(43)
-  , toIndex   = __webpack_require__(118);
+  , toLength  = __webpack_require__(44)
+  , toIndex   = __webpack_require__(131);
 module.exports = function(IS_INCLUDES){
   return function($this, el, fromIndex){
     var O      = toIObject($this)
@@ -3317,15 +3804,15 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ }),
-/* 99 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(16)
-  , call        = __webpack_require__(104)
-  , isArrayIter = __webpack_require__(103)
+  , call        = __webpack_require__(117)
+  , isArrayIter = __webpack_require__(116)
   , anObject    = __webpack_require__(5)
-  , toLength    = __webpack_require__(43)
-  , getIterFn   = __webpack_require__(120)
+  , toLength    = __webpack_require__(44)
+  , getIterFn   = __webpack_require__(133)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -3347,7 +3834,7 @@ exports.BREAK  = BREAK;
 exports.RETURN = RETURN;
 
 /***/ }),
-/* 100 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(9) && !__webpack_require__(31)(function(){
@@ -3355,7 +3842,7 @@ module.exports = !__webpack_require__(9) && !__webpack_require__(31)(function(){
 });
 
 /***/ }),
-/* 101 */
+/* 114 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -3376,7 +3863,7 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
-/* 102 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -3386,7 +3873,7 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 };
 
 /***/ }),
-/* 103 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -3399,7 +3886,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 104 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -3416,13 +3903,13 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 105 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var create         = __webpack_require__(109)
-  , descriptor     = __webpack_require__(40)
+var create         = __webpack_require__(122)
+  , descriptor     = __webpack_require__(41)
   , setToStringTag = __webpack_require__(23)
   , IteratorPrototype = {};
 
@@ -3435,7 +3922,7 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ }),
-/* 106 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(1)('iterator')
@@ -3461,7 +3948,7 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
-/* 107 */
+/* 120 */
 /***/ (function(module, exports) {
 
 module.exports = function(done, value){
@@ -3469,11 +3956,11 @@ module.exports = function(done, value){
 };
 
 /***/ }),
-/* 108 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(2)
-  , macrotask = __webpack_require__(42).set
+  , macrotask = __webpack_require__(43).set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
   , process   = global.process
   , Promise   = global.Promise
@@ -3542,13 +4029,13 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 109 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(5)
-  , dPs         = __webpack_require__(110)
-  , enumBugKeys = __webpack_require__(36)
+  , dPs         = __webpack_require__(123)
+  , enumBugKeys = __webpack_require__(37)
   , IE_PROTO    = __webpack_require__(24)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
@@ -3562,7 +4049,7 @@ var createDict = function(){
     , gt     = '>'
     , iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(37).appendChild(iframe);
+  __webpack_require__(38).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -3589,12 +4076,12 @@ module.exports = Object.create || function create(O, Properties){
 
 
 /***/ }),
-/* 110 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(19)
   , anObject = __webpack_require__(5)
-  , getKeys  = __webpack_require__(51);
+  , getKeys  = __webpack_require__(52);
 
 module.exports = __webpack_require__(9) ? Object.defineProperties : function defineProperties(O, Properties){
   anObject(O);
@@ -3607,12 +4094,12 @@ module.exports = __webpack_require__(9) ? Object.defineProperties : function def
 };
 
 /***/ }),
-/* 111 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(17)
-  , toObject    = __webpack_require__(52)
+  , toObject    = __webpack_require__(53)
   , IE_PROTO    = __webpack_require__(24)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
@@ -3625,12 +4112,12 @@ module.exports = Object.getPrototypeOf || function(O){
 };
 
 /***/ }),
-/* 112 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(17)
   , toIObject    = __webpack_require__(26)
-  , arrayIndexOf = __webpack_require__(98)(false)
+  , arrayIndexOf = __webpack_require__(111)(false)
   , IE_PROTO     = __webpack_require__(24)('IE_PROTO');
 
 module.exports = function(object, names){
@@ -3647,7 +4134,7 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 113 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var hide = __webpack_require__(6);
@@ -3659,13 +4146,13 @@ module.exports = function(target, src, safe){
 };
 
 /***/ }),
-/* 114 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(6);
 
 /***/ }),
-/* 115 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3685,7 +4172,7 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 116 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -3698,7 +4185,7 @@ module.exports = function(O, D){
 };
 
 /***/ }),
-/* 117 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(25)
@@ -3720,7 +4207,7 @@ module.exports = function(TO_STRING){
 };
 
 /***/ }),
-/* 118 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(25)
@@ -3732,7 +4219,7 @@ module.exports = function(index, length){
 };
 
 /***/ }),
-/* 119 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.1.1 ToPrimitive(input [, PreferredType])
@@ -3749,10 +4236,10 @@ module.exports = function(it, S){
 };
 
 /***/ }),
-/* 120 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(35)
+var classof   = __webpack_require__(36)
   , ITERATOR  = __webpack_require__(1)('iterator')
   , Iterators = __webpack_require__(10);
 module.exports = __webpack_require__(8).getIteratorMethod = function(it){
@@ -3762,13 +4249,13 @@ module.exports = __webpack_require__(8).getIteratorMethod = function(it){
 };
 
 /***/ }),
-/* 121 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var addToUnscopables = __webpack_require__(96)
-  , step             = __webpack_require__(107)
+var addToUnscopables = __webpack_require__(109)
+  , step             = __webpack_require__(120)
   , Iterators        = __webpack_require__(10)
   , toIObject        = __webpack_require__(26);
 
@@ -3776,7 +4263,7 @@ var addToUnscopables = __webpack_require__(96)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(38)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(39)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -3802,29 +4289,29 @@ addToUnscopables('values');
 addToUnscopables('entries');
 
 /***/ }),
-/* 122 */
+/* 135 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 123 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var LIBRARY            = __webpack_require__(39)
+var LIBRARY            = __webpack_require__(40)
   , global             = __webpack_require__(2)
   , ctx                = __webpack_require__(16)
-  , classof            = __webpack_require__(35)
+  , classof            = __webpack_require__(36)
   , $export            = __webpack_require__(30)
   , isObject           = __webpack_require__(18)
   , aFunction          = __webpack_require__(20)
-  , anInstance         = __webpack_require__(97)
-  , forOf              = __webpack_require__(99)
-  , speciesConstructor = __webpack_require__(116)
-  , task               = __webpack_require__(42).set
-  , microtask          = __webpack_require__(108)()
+  , anInstance         = __webpack_require__(110)
+  , forOf              = __webpack_require__(112)
+  , speciesConstructor = __webpack_require__(129)
+  , task               = __webpack_require__(43).set
+  , microtask          = __webpack_require__(121)()
   , PROMISE            = 'Promise'
   , TypeError          = global.TypeError
   , process            = global.process
@@ -4016,7 +4503,7 @@ if(!USE_NATIVE){
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = __webpack_require__(113)($Promise.prototype, {
+  Internal.prototype = __webpack_require__(126)($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected){
       var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -4043,7 +4530,7 @@ if(!USE_NATIVE){
 
 $export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
 __webpack_require__(23)($Promise, PROMISE);
-__webpack_require__(115)(PROMISE);
+__webpack_require__(128)(PROMISE);
 Wrapper = __webpack_require__(8)[PROMISE];
 
 // statics
@@ -4067,7 +4554,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return capability.promise;
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(106)(function(iter){
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(119)(function(iter){
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -4113,15 +4600,15 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(106)(functio
 });
 
 /***/ }),
-/* 124 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at  = __webpack_require__(117)(true);
+var $at  = __webpack_require__(130)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(38)(String, 'String', function(iterated){
+__webpack_require__(39)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -4136,10 +4623,10 @@ __webpack_require__(38)(String, 'String', function(iterated){
 });
 
 /***/ }),
-/* 125 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(121);
+__webpack_require__(134);
 var global        = __webpack_require__(2)
   , hide          = __webpack_require__(6)
   , Iterators     = __webpack_require__(10)
@@ -4154,248 +4641,14 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(53),
-  /* template */
-  __webpack_require__(144),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 127 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(54),
   /* template */
-  __webpack_require__(146),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(55),
-  /* template */
-  __webpack_require__(151),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(56),
-  /* template */
-  __webpack_require__(147),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(57),
-  /* template */
-  __webpack_require__(153),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(58),
-  /* template */
-  __webpack_require__(150),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(59),
-  /* template */
-  __webpack_require__(152),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(60),
-  /* template */
-  __webpack_require__(149),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(61),
-  /* template */
-  __webpack_require__(156),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(62),
-  /* template */
-  __webpack_require__(145),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(63),
-  /* template */
-  __webpack_require__(157),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(64),
-  /* template */
-  __webpack_require__(142),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(65),
-  /* template */
-  __webpack_require__(154),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(66),
-  /* template */
-  __webpack_require__(148),
+  __webpack_require__(177),
   /* scopeId */
   null,
   /* cssModules */
@@ -4411,9 +4664,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(67),
+  __webpack_require__(55),
   /* template */
-  __webpack_require__(155),
+  __webpack_require__(164),
   /* scopeId */
   null,
   /* cssModules */
@@ -4429,9 +4682,9 @@ module.exports = Component.exports
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(68),
+  __webpack_require__(56),
   /* template */
-  __webpack_require__(143),
+  __webpack_require__(166),
   /* scopeId */
   null,
   /* cssModules */
@@ -4443,6 +4696,348 @@ module.exports = Component.exports
 
 /***/ }),
 /* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(57),
+  /* template */
+  __webpack_require__(169),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(58),
+  /* template */
+  __webpack_require__(175),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(59),
+  /* template */
+  __webpack_require__(165),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(60),
+  /* template */
+  __webpack_require__(171),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(61),
+  /* template */
+  __webpack_require__(170),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(62),
+  /* template */
+  __webpack_require__(178),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(63),
+  /* template */
+  __webpack_require__(174),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(64),
+  /* template */
+  __webpack_require__(176),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(65),
+  /* template */
+  __webpack_require__(173),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(66),
+  /* template */
+  __webpack_require__(181),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(67),
+  /* template */
+  __webpack_require__(167),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(68),
+  /* template */
+  __webpack_require__(182),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(69),
+  /* template */
+  __webpack_require__(161),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(70),
+  /* template */
+  __webpack_require__(179),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(71),
+  /* template */
+  __webpack_require__(168),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(72),
+  /* template */
+  __webpack_require__(163),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(73),
+  /* template */
+  __webpack_require__(172),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(74),
+  /* template */
+  __webpack_require__(180),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(75),
+  /* template */
+  __webpack_require__(162),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4452,7 +5047,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 143 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4466,7 +5061,48 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 144 */
+/* 163 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "zan-step"
+  })
+},staticRenderFns: []}
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    staticClass: "zan-badge",
+    class: _vm.classNames,
+    attrs: {
+      "href": _vm.url
+    },
+    on: {
+      "click": _vm.handleClick
+    }
+  }, [_c('div', {
+    staticClass: "zan-badge__active"
+  }), _vm._v(" "), (_vm.info) ? _c('div', {
+    staticClass: "zan-badge__info"
+  }, [_vm._v(_vm._s(_vm.info))]) : _vm._e(), _vm._v("\n  " + _vm._s(_vm.title) + "\n")])
+},staticRenderFns: []}
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "zan-checkbox-group"
+  }, [_vm._t("default")], 2)
+},staticRenderFns: []}
+
+/***/ }),
+/* 166 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4499,7 +5135,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 145 */
+/* 167 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4544,7 +5180,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 146 */
+/* 168 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "zan-search",
+    class: {
+      'is-focus': _vm.isFocus
+    }
+  }, [_c('div', {
+    staticClass: "zan-search__input-wrap"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.value),
+      expression: "value"
+    }, {
+      name: "refocus",
+      rawName: "v-refocus",
+      value: (_vm.focusStatus),
+      expression: "focusStatus"
+    }],
+    attrs: {
+      "type": "text",
+      "placeholder": _vm.placeholder
+    },
+    domProps: {
+      "value": (_vm.value)
+    },
+    on: {
+      "focus": _vm.handleFocus,
+      "keyup": function($event) {
+        if (_vm._k($event.keyCode, "enter", 13)) { return null; }
+        _vm.handleSearch($event)
+      },
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.value = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "zan-icon zan-icon-close",
+    on: {
+      "click": _vm.handleClean
+    }
+  })]), _vm._v(" "), _c('div', {
+    staticClass: "zan-search__cancel",
+    class: {
+      'is-focus': _vm.isFocus
+    },
+    on: {
+      "click": _vm.handleBack
+    }
+  }, [_vm._v("取消")])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 169 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4554,7 +5248,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 147 */
+/* 170 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4621,15 +5315,77 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 148 */
+/* 171 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h2', [_vm._v("author: " + _vm._s(_vm.author))]), _vm._v(" "), _c('div', [_vm._v("Hello " + _vm._s(_vm.name))])])
+  return _c('div', {
+    staticClass: "zan-checkbox",
+    class: {
+      'is-disabled': _vm.isDisabled
+    }
+  }, [_c('span', {
+    staticClass: "zan-checkbox__input"
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.currentValue),
+      expression: "currentValue"
+    }],
+    staticClass: "zan-checkbox__control",
+    attrs: {
+      "type": "checkbox",
+      "disabled": _vm.isDisabled
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.currentValue) ? _vm._i(_vm.currentValue, null) > -1 : (_vm.currentValue)
+    },
+    on: {
+      "__c": function($event) {
+        var $$a = _vm.currentValue,
+          $$el = $event.target,
+          $$c = $$el.checked ? (true) : (false);
+        if (Array.isArray($$a)) {
+          var $$v = null,
+            $$i = _vm._i($$a, $$v);
+          if ($$c) {
+            $$i < 0 && (_vm.currentValue = $$a.concat($$v))
+          } else {
+            $$i > -1 && (_vm.currentValue = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+          }
+        } else {
+          _vm.currentValue = $$c
+        }
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    staticClass: "zan-icon",
+    class: {
+      'zan-icon-checked': _vm.isChecked,
+      'zan-icon-check': !_vm.isChecked
+    }
+  })]), _vm._v(" "), _c('span', {
+    staticClass: "zan-checkbox__label"
+  }, [_vm._t("default")], 2)])
 },staticRenderFns: []}
 
 /***/ }),
-/* 149 */
+/* 172 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "zan-steps"
+  }, [_c('div', {
+    staticClass: "zan-steps__desc"
+  }), _vm._v(" "), _c('div', {
+    staticClass: "zan-steps__items"
+  }, [_vm._t("default")], 2)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 173 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4660,7 +5416,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 150 */
+/* 174 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4671,7 +5427,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 151 */
+/* 175 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4714,17 +5470,31 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 152 */
+/* 176 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "zan-loading"
+  }, [_c('span', {
+    staticClass: "zan-spinner"
+  })])
+}]}
+
+/***/ }),
+/* 177 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "zan-loading"
-  })
+    staticClass: "zan-badge-group"
+  }, [_vm._t("default")], 2)
 },staticRenderFns: []}
 
 /***/ }),
-/* 153 */
+/* 178 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4785,7 +5555,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 154 */
+/* 179 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4829,7 +5599,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 155 */
+/* 180 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4842,11 +5612,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "zan-switch__node",
     class: _vm.switchState
-  })])
+  }, [(_vm.loading) ? _c('zan-loading', {
+    staticClass: "zan-switch__loading"
+  }) : _vm._e()], 1)])
 },staticRenderFns: []}
 
 /***/ }),
-/* 156 */
+/* 181 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4877,7 +5649,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 157 */
+/* 182 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -4898,22 +5670,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 158 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./examples/button.vue": 209,
-	"./examples/card.vue": 210,
-	"./examples/cell.vue": 211,
-	"./examples/dialog.vue": 212,
-	"./examples/field.vue": 213,
-	"./examples/panel.vue": 214,
-	"./examples/picker.vue": 215,
-	"./examples/popup.vue": 216,
-	"./examples/radio.vue": 217,
-	"./examples/switch.vue": 218,
-	"./examples/tag.vue": 219,
-	"./examples/waterfall.vue": 220
+	"./examples/badge.vue": 239,
+	"./examples/button.vue": 240,
+	"./examples/card.vue": 241,
+	"./examples/cell.vue": 242,
+	"./examples/checkbox.vue": 243,
+	"./examples/dialog.vue": 244,
+	"./examples/field.vue": 245,
+	"./examples/loading.vue": 246,
+	"./examples/panel.vue": 247,
+	"./examples/picker.vue": 248,
+	"./examples/popup.vue": 249,
+	"./examples/radio.vue": 250,
+	"./examples/search.vue": 251,
+	"./examples/switch.vue": 252,
+	"./examples/tag.vue": 253,
+	"./examples/waterfall.vue": 254
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4929,28 +5705,31 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 158;
+webpackContext.id = 183;
 
 
 /***/ }),
-/* 159 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./examples-docs/button.md": 275,
-	"./examples-docs/card.md": 276,
-	"./examples-docs/cell.md": 277,
-	"./examples-docs/checkbox.md": 278,
-	"./examples-docs/dialog.md": 279,
-	"./examples-docs/field.md": 280,
-	"./examples-docs/panel.md": 281,
-	"./examples-docs/picker.md": 282,
-	"./examples-docs/popup.md": 283,
-	"./examples-docs/radio.md": 284,
-	"./examples-docs/steps.md": 285,
-	"./examples-docs/switch.md": 286,
-	"./examples-docs/tag.md": 287,
-	"./examples-docs/waterfall.md": 288
+	"./examples-docs/badge.md": 322,
+	"./examples-docs/button.md": 323,
+	"./examples-docs/card.md": 324,
+	"./examples-docs/cell.md": 325,
+	"./examples-docs/checkbox.md": 326,
+	"./examples-docs/dialog.md": 327,
+	"./examples-docs/field.md": 328,
+	"./examples-docs/loading.md": 329,
+	"./examples-docs/panel.md": 330,
+	"./examples-docs/picker.md": 331,
+	"./examples-docs/popup.md": 332,
+	"./examples-docs/radio.md": 333,
+	"./examples-docs/search.md": 334,
+	"./examples-docs/steps.md": 335,
+	"./examples-docs/switch.md": 336,
+	"./examples-docs/tag.md": 337,
+	"./examples-docs/waterfall.md": 338
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -4966,31 +5745,31 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 159;
+webpackContext.id = 184;
 
 
 /***/ }),
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5050,7 +5829,70 @@ exports.default = {
 };
 
 /***/ }),
-/* 181 */
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      checkbox1: true,
+      checkbox2: true,
+      list: ['a', 'b', 'c'],
+      result: ['a', 'b']
+    };
+  },
+
+
+  watch: {
+    result: function result(val) {
+      console.log(val);
+    }
+  }
+};
+
+/***/ }),
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5060,7 +5902,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(45);
+var _index = __webpack_require__(46);
 
 exports.default = {
   methods: {
@@ -5100,7 +5942,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 182 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5149,7 +5991,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 183 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5159,7 +6001,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _keys = __webpack_require__(192);
+var _keys = __webpack_require__(219);
 
 var _keys2 = _interopRequireDefault(_keys);
 
@@ -5203,7 +6045,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 184 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5273,7 +6115,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 185 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5282,6 +6124,12 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5326,7 +6174,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 186 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5335,6 +6183,32 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = {
+  methods: {
+    goSearch: function goSearch(value) {
+      alert(value);
+    }
+  }
+};
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5378,7 +6252,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 187 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5427,7 +6301,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 188 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5498,7 +6372,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 189 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5644,7 +6518,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 190 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5654,7 +6528,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(45);
+var _index = __webpack_require__(46);
 
 exports.default = {
   methods: {
@@ -5743,7 +6617,7 @@ exports.default = {
 //
 
 /***/ }),
-/* 191 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5752,6 +6626,22 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5875,20 +6765,20 @@ exports.default = {
 };
 
 /***/ }),
-/* 192 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = { "default": __webpack_require__(193), __esModule: true };
+module.exports = { "default": __webpack_require__(220), __esModule: true };
 
 /***/ }),
-/* 193 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(195);
+__webpack_require__(222);
 module.exports = __webpack_require__(8).Object.keys;
 
 /***/ }),
-/* 194 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // most Object methods by ES6 should accept primitives
@@ -5903,21 +6793,21 @@ module.exports = function(KEY, exec){
 };
 
 /***/ }),
-/* 195 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
-var toObject = __webpack_require__(52)
-  , $keys    = __webpack_require__(51);
+var toObject = __webpack_require__(53)
+  , $keys    = __webpack_require__(52);
 
-__webpack_require__(194)('keys', function(){
+__webpack_require__(221)('keys', function(){
   return function keys(it){
     return $keys(toObject(it));
   };
 });
 
 /***/ }),
-/* 196 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -5931,8 +6821,8 @@ exports.push([module.i, ".page-sub-title{padding:15px}", ""]);
 
 
 /***/ }),
-/* 197 */,
-/* 198 */
+/* 224 */,
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -5946,7 +6836,21 @@ exports.push([module.i, ".page-sub-title{padding:20px 15px}", ""]);
 
 
 /***/ }),
-/* 199 */
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)();
+// imports
+
+
+// module
+exports.push([module.i, ".checkbox-demo-wrapper{padding:0 15px}.checkbox-demo-wrapper .zan-checkbox{margin:10px 0}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -5960,7 +6864,7 @@ exports.push([module.i, ".official-img{width:31px;vertical-align:middle;border:0
 
 
 /***/ }),
-/* 200 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -5974,7 +6878,21 @@ exports.push([module.i, ".page-dialog{padding:0 15px}.page-dialog .zan-button-1{
 
 
 /***/ }),
-/* 201 */
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)();
+// imports
+
+
+// module
+exports.push([module.i, ".page-badge{padding:0 15px}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -5988,7 +6906,7 @@ exports.push([module.i, ".official-img{width:31px;vertical-align:middle;border:0
 
 
 /***/ }),
-/* 202 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6002,7 +6920,7 @@ exports.push([module.i, ".zan-popup-1{width:100%;height:200px}.zan-popup-2{width
 
 
 /***/ }),
-/* 203 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6016,7 +6934,7 @@ exports.push([module.i, ".page-sub-title{padding:25px 15px}.tags-container{paddi
 
 
 /***/ }),
-/* 204 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6030,7 +6948,21 @@ exports.push([module.i, ".page-sub-title{padding:15px}", ""]);
 
 
 /***/ }),
-/* 205 */
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)();
+// imports
+
+
+// module
+exports.push([module.i, ".page-badge{padding:0 15px}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6044,7 +6976,7 @@ exports.push([module.i, ".page-button{padding:0 20px}.zan-button-group .zan-butt
 
 
 /***/ }),
-/* 206 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6052,13 +6984,13 @@ exports = module.exports = __webpack_require__(4)();
 
 
 // module
-exports.push([module.i, ".demo-wrapper{padding:0 15px}.demo-wrapper .zan-radio{margin:10px 0}", ""]);
+exports.push([module.i, ".radio-demo-wrapper{padding:0 15px}.radio-demo-wrapper .zan-radio{margin:10px 0}", ""]);
 
 // exports
 
 
 /***/ }),
-/* 207 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6072,7 +7004,7 @@ exports.push([module.i, ".zan-panel-sum{background:#fff;text-align:right;font-si
 
 
 /***/ }),
-/* 208 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(4)();
@@ -6086,18 +7018,18 @@ exports.push([module.i, ".page-switch{padding:0 15px 15px}.page-switch__wrapper{
 
 
 /***/ }),
-/* 209 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(271)
+__webpack_require__(312)
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(255),
+  __webpack_require__(287),
   /* scopeId */
   null,
   /* cssModules */
@@ -6108,18 +7040,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 210 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(262)
+__webpack_require__(318)
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(235),
+  __webpack_require__(296),
   /* scopeId */
   null,
   /* cssModules */
@@ -6130,18 +7062,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 211 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(267)
+__webpack_require__(306)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(180),
+  null,
   /* template */
-  __webpack_require__(249),
+  __webpack_require__(272),
   /* scopeId */
   null,
   /* cssModules */
@@ -6152,18 +7084,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 212 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(266)
+__webpack_require__(313)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(181),
+  __webpack_require__(205),
   /* template */
-  __webpack_require__(247),
+  __webpack_require__(289),
   /* scopeId */
   null,
   /* cssModules */
@@ -6174,18 +7106,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 213 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(264)
+__webpack_require__(309)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(182),
+  __webpack_require__(206),
   /* template */
-  __webpack_require__(243),
+  __webpack_require__(281),
   /* scopeId */
   null,
   /* cssModules */
@@ -6196,18 +7128,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 214 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(273)
+__webpack_require__(311)
 
 var Component = __webpack_require__(0)(
   /* script */
-  null,
+  __webpack_require__(207),
   /* template */
-  __webpack_require__(260),
+  __webpack_require__(285),
   /* scopeId */
   null,
   /* cssModules */
@@ -6218,36 +7150,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(183),
-  /* template */
-  __webpack_require__(246),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 216 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(268)
+__webpack_require__(308)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(184),
+  __webpack_require__(208),
   /* template */
-  __webpack_require__(250),
+  __webpack_require__(280),
   /* scopeId */
   null,
   /* cssModules */
@@ -6258,18 +7172,36 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 217 */
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(286),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(272)
+__webpack_require__(320)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(185),
+  null,
   /* template */
-  __webpack_require__(258),
+  __webpack_require__(303),
   /* scopeId */
   null,
   /* cssModules */
@@ -6280,18 +7212,36 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 218 */
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(209),
+  /* template */
+  __webpack_require__(284),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(274)
+__webpack_require__(314)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(186),
+  __webpack_require__(210),
   /* template */
-  __webpack_require__(261),
+  __webpack_require__(290),
   /* scopeId */
   null,
   /* cssModules */
@@ -6302,18 +7252,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 219 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(269)
+__webpack_require__(319)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(187),
+  __webpack_require__(211),
   /* template */
-  __webpack_require__(251),
+  __webpack_require__(299),
   /* scopeId */
   null,
   /* cssModules */
@@ -6324,18 +7274,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 220 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(270)
+__webpack_require__(317)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(188),
+  __webpack_require__(212),
   /* template */
-  __webpack_require__(252),
+  __webpack_require__(294),
   /* scopeId */
   null,
   /* cssModules */
@@ -6346,54 +7296,18 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 221 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  null,
-  /* template */
-  __webpack_require__(242),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 222 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  null,
-  /* template */
-  __webpack_require__(244),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 223 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(265)
+__webpack_require__(321)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(189),
+  __webpack_require__(213),
   /* template */
-  __webpack_require__(245),
+  __webpack_require__(304),
   /* scopeId */
   null,
   /* cssModules */
@@ -6404,14 +7318,58 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 224 */
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(315)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(214),
+  /* template */
+  __webpack_require__(291),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(316)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(215),
+  /* template */
+  __webpack_require__(292),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(254),
+  __webpack_require__(305),
   /* scopeId */
   null,
   /* cssModules */
@@ -6422,32 +7380,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 225 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(190),
-  /* template */
-  __webpack_require__(253),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 226 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(241),
+  __webpack_require__(278),
   /* scopeId */
   null,
   /* cssModules */
@@ -6458,14 +7398,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 227 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(240),
+  __webpack_require__(282),
   /* scopeId */
   null,
   /* cssModules */
@@ -6476,14 +7416,36 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 228 */
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(310)
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(216),
+  /* template */
+  __webpack_require__(283),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(259),
+  __webpack_require__(295),
   /* scopeId */
   null,
   /* cssModules */
@@ -6494,14 +7456,32 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 229 */
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(217),
+  /* template */
+  __webpack_require__(293),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(238),
+  __webpack_require__(277),
   /* scopeId */
   null,
   /* cssModules */
@@ -6512,32 +7492,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 230 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(0)(
-  /* script */
-  __webpack_require__(191),
-  /* template */
-  __webpack_require__(257),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 231 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(248),
+  __webpack_require__(279),
   /* scopeId */
   null,
   /* cssModules */
@@ -6548,14 +7510,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 232 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(236),
+  __webpack_require__(301),
   /* scopeId */
   null,
   /* cssModules */
@@ -6566,14 +7528,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 233 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(256),
+  __webpack_require__(300),
   /* scopeId */
   null,
   /* cssModules */
@@ -6584,14 +7546,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 234 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Component = __webpack_require__(0)(
   /* script */
   null,
   /* template */
-  __webpack_require__(239),
+  __webpack_require__(302),
   /* scopeId */
   null,
   /* cssModules */
@@ -6602,7 +7564,115 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 235 */
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  __webpack_require__(218),
+  /* template */
+  __webpack_require__(298),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(276),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(288),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(273),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(297),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(0)(
+  /* script */
+  null,
+  /* template */
+  __webpack_require__(275),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 272 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6655,7 +7725,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 236 */
+/* 273 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -6695,15 +7765,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
+  }, [_vm._v("h1")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-title\"")]), _vm._v(">")]), _vm._v("Switch"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h1")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h2")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-sub-title\"")]), _vm._v(">")]), _vm._v("基础用法"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h2")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
   }, [_vm._v("div")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("\"page-switch\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-switch")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -6719,7 +7821,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("zan-switch")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -6731,11 +7833,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -6743,11 +7845,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("zan-switch")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -6763,7 +7865,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("zan-switch")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -6775,11 +7877,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -6787,11 +7889,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("zan-switch")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
@@ -6807,7 +7909,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("o2-switch")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("zan-switch")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -6816,6 +7918,98 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
   }, [_vm._v("\"page-switch__text\"")]), _vm._v(">")]), _vm._v("OFF, DISABLED"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-switch")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"some-customized-class\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":checked")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"true\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":loading")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"true\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-switch")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-switch__text\"")]), _vm._v(">")]), _vm._v("ON, LOADING"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-switch__wrapper\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-switch")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"some-customized-class\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":checked")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"false\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":loading")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"true\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-switch")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-switch__text\"")]), _vm._v(">")]), _vm._v("OFF, LOADING"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -6877,294 +8071,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 237 */,
-/* 238 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "popup-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#popup-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Popup组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow1 = true\"")]), _vm._v(">")]), _vm._v("从下方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow1\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"bottom\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-popup-1\"")]), _vm._v(">")]), _vm._v("\n  xxxx\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow2 = true\"")]), _vm._v(">")]), _vm._v("从上方方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"top\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-popup-2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  更新成功\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3 = true\"")]), _vm._v(">")]), _vm._v("从右方弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("position")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"right\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-popup-3\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click.native")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow3 = false\"")]), _vm._v(">")]), _vm._v("关闭 popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow4 = true\"")]), _vm._v(">")]), _vm._v("从中间弹出popup"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popupShow4\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("transition")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"popup-fade\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-popup-4\"")]), _vm._v(">")]), _vm._v("\n  一些内容\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow1")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow2")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow3")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("popupShow4")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v("\n    }\n  },\n\n  "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("watch")]), _vm._v(": {\n    popupShow2(val) {\n      "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("if")]), _vm._v(" (val) {\n        setTimeout("), _c('span', {
-    staticClass: "hljs-function"
-  }, [_c('span', {
-    staticClass: "hljs-params"
-  }, [_vm._v("()")]), _vm._v(" =>")]), _vm._v(" {\n          "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("this")]), _vm._v(".popupShow2 = "), _c('span', {
-    staticClass: "hljs-literal"
-  }, [_vm._v("false")]), _vm._v(";\n        }, "), _c('span', {
-    staticClass: "hljs-number"
-  }, [_vm._v("2000")]), _vm._v(");\n      }\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("利用"), _c('code', [_vm._v("v-model")]), _vm._v("绑定当前组件是否显示")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
-}]}
-
-/***/ }),
-/* 239 */
+/* 274 */,
+/* 275 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7394,7 +8302,3258 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 240 */
+/* 276 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "search-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#search-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Search 组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-search")]), _vm._v(" \n    "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"商品名称\"")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@search")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"goSearch\"")]), _vm._v("\n>")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-search")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-javascript"
+  }, [_c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("methods")]), _vm._v(": {\n    goSearch(value) {\n      alert(value)\n    }\n  }\n};\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("必须")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("placeholder")]), _vm._v(" "), _c('td', [_vm._v("input的placeholder文案")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "field-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#field-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Field组件")]), _vm._v(" "), _c('p', [_vm._v("表单中"), _c('code', [_vm._v("input")]), _vm._v("或"), _c('code', [_vm._v("textarea")]), _vm._v("的输入框。")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('p', [_vm._v("根据"), _c('code', [_vm._v("type")]), _vm._v("属性显示不同的输入框。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"用户名：\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"请输入用户名\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"password\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"密码：\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"请输入密码\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"textarea\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"个人介绍：\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"请输入个人介绍\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "wu-label-de-shu-ru-kuang"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#wu-label-de-shu-ru-kuang",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 无label的输入框")]), _vm._v(" "), _c('p', [_vm._v("不传入"), _c('code', [_vm._v("label")]), _vm._v("属性即可。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"请输入用户名\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "jian-ting-change-shi-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#jian-ting-change-shi-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 监听change事件")]), _vm._v(" "), _c('p', [_vm._v("监听组件的"), _c('code', [_vm._v("change")]), _vm._v("事件。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"用户名：\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"请输入用户名\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@change")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"handleChange\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("输入框类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("text")]), _vm._v(" "), _c('td', [_vm._v("text, number, email, url, tel, date, datetime, password, textarea")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("placeholder")]), _vm._v(" "), _c('td', [_vm._v("输入框placeholder")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("输入框的值")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("label")]), _vm._v(" "), _c('td', [_vm._v("输入框标签")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用输入框")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("readonly")]), _vm._v(" "), _c('td', [_vm._v("输入框是否只读")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("maxlength")]), _vm._v(" "), _c('td', [_vm._v("输入框maxlength")]), _vm._v(" "), _c('td', [_vm._v("[String, Number]")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "button-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#button-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Button组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "an-niu-gong-neng"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#an-niu-gong-neng",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 按钮功能")]), _vm._v(" "), _c('p', [_vm._v("只接受primary, default, danger三种类型，默认default。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("default"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"primary\"")]), _vm._v(">")]), _vm._v("primary"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"danger\"")]), _vm._v(">")]), _vm._v("danger"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "jin-yong-zhuang-tai"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#jin-yong-zhuang-tai",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 禁用状态")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("diabled"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "an-niu-chi-cun"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#an-niu-chi-cun",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 按钮尺寸")]), _vm._v(" "), _c('p', [_vm._v("只接受large, normal, small, mini四种尺寸，默认normal。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"large\"")]), _vm._v(">")]), _vm._v("large"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":style")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"{ width: '50%' }\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"primary\"")]), _vm._v(">")]), _vm._v("normal"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("small"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("mini"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "zi-ding-yi-an-niu-biao-qian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#zi-ding-yi-an-niu-biao-qian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 自定义按钮标签")]), _vm._v(" "), _c('p', [_vm._v("按钮默认是button标签，可以使用tag属性修改为一个a标签。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("tag")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"a\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"primary\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("href")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"https://www.youzan.com\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("target")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"_blank\"")]), _vm._v(">")]), _vm._v("a标签按钮"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "button-group"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#button-group",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" button group")]), _vm._v(" "), _c('p', [_vm._v("一组按钮。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"primary\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("确认付款"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("确认收货"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("取消订单"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("按钮类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'default'")]), _vm._v(" "), _c('td', [_vm._v("'primary', 'danger'")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("size")]), _vm._v(" "), _c('td', [_vm._v("按钮尺寸")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'normal'")]), _vm._v(" "), _c('td', [_vm._v("'large', 'small', 'mini'")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("tag")]), _vm._v(" "), _c('td', [_vm._v("按钮标签")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'button'")]), _vm._v(" "), _c('td', [_vm._v("'a', 'span', ...")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("diabled")]), _vm._v(" "), _c('td', [_vm._v("按钮是否禁用")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("block")]), _vm._v(" "), _c('td', [_vm._v("按钮是否显示为块级元素")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('p', [_vm._v("l## Switch组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("template")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-loading\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h1")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-title\"")]), _vm._v(">")]), _vm._v("Loading"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h1")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h2")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-sub-title\"")]), _vm._v(">")]), _vm._v("Loading展示"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h2")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"page-loading__example1\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-loading")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"some-customized-class\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("style")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"padding-top: 50px; text-align: center;\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-loading")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("template")]), _vm._v(">")]), _vm._v("\n")])])])
+}]}
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-field"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Field")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
+    attrs: {
+      "type": "text",
+      "label": "用户名：",
+      "placeholder": "请输入用户名"
+    }
+  }), _vm._v(" "), _c('zan-field', {
+    attrs: {
+      "type": "password",
+      "label": "密码：",
+      "placeholder": "请输入密码"
+    }
+  }), _vm._v(" "), _c('zan-field', {
+    attrs: {
+      "type": "textarea",
+      "label": "个人介绍：",
+      "placeholder": "请输入个人介绍"
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("无label的输入框")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
+    attrs: {
+      "type": "text",
+      "placeholder": "请输入用户名"
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("监听change事件")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
+    attrs: {
+      "type": "text",
+      "label": "用户名：",
+      "placeholder": "请输入用户名"
+    },
+    on: {
+      "change": _vm.handleChange
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-checkbox"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Checkbox")]), _vm._v(" "), _c('div', {
+    staticClass: "checkbox-demo-wrapper"
+  }, [_c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-checkbox', {
+    model: {
+      value: (_vm.checkbox1),
+      callback: function($$v) {
+        _vm.checkbox1 = $$v
+      }
+    }
+  }, [_vm._v("复选框1")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("禁用状态")]), _vm._v(" "), _c('zan-checkbox', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.checkbox2),
+      callback: function($$v) {
+        _vm.checkbox2 = $$v
+      }
+    }
+  }, [_vm._v("复选框2")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("Checkbox组")]), _vm._v(" "), _c('zan-checkbox-group', {
+    model: {
+      value: (_vm.result),
+      callback: function($$v) {
+        _vm.result = $$v
+      }
+    }
+  }, _vm._l((_vm.list), function(item) {
+    return _c('zan-checkbox', {
+      attrs: {
+        "name": item
+      }
+    }, [_vm._v("复选框" + _vm._s(item))])
+  })), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("禁用Checkbox组")]), _vm._v(" "), _c('zan-checkbox-group', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.result),
+      callback: function($$v) {
+        _vm.result = $$v
+      }
+    }
+  }, _vm._l((_vm.list), function(item) {
+    return _c('zan-checkbox', {
+      attrs: {
+        "name": item
+      }
+    }, [_vm._v("复选框" + _vm._s(item))])
+  })), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("与Cell组件一起使用")])], 1), _vm._v(" "), _c('zan-checkbox-group', {
+    model: {
+      value: (_vm.result),
+      callback: function($$v) {
+        _vm.result = $$v
+      }
+    }
+  }, [_c('zan-cell-group', _vm._l((_vm.list), function(item) {
+    return _c('zan-cell', [_c('zan-checkbox', {
+      attrs: {
+        "name": item
+      }
+    }, [_vm._v("复选框" + _vm._s(item))])], 1)
+  }))], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "card-tu-wen-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#card-tu-wen-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Card 图文组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('p', [_vm._v("当没有底部按钮时，右侧内容会居中显示。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-card")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余\"")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("desc")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"描述\"")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("thumb")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg\"")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-card")]), _vm._v(">")]), _vm._v("\n\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "gao-ji-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#gao-ji-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('p', [_vm._v("可以使用具名"), _c('code', [_vm._v("slot")]), _vm._v("重写标题等信息，其中包含"), _c('code', [_vm._v("title")]), _vm._v("、"), _c('code', [_vm._v("desc")]), _vm._v("、"), _c('code', [_vm._v("footer")]), _vm._v("和"), _c('code', [_vm._v("tag")]), _vm._v("四个"), _c('code', [_vm._v("slot")]), _vm._v("。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-card")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余\"")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("desc")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"商品SKU1，商品SKU2\"")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("thumb")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__row\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"title\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h4")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__title\"")]), _vm._v(">")]), _vm._v("商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h4")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__price\"")]), _vm._v(">")]), _vm._v("¥ 2.00"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__row\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"desc\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h4")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__desc\"")]), _vm._v(">")]), _vm._v("商品sku"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("h4")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__num\"")]), _vm._v(">")]), _vm._v("x 2"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-card__footer\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"footer\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("按钮一"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("按钮二"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-card")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("thumb")]), _vm._v(" "), _c('td', [_vm._v("左侧图片")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("标题")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("desc")]), _vm._v(" "), _c('td', [_vm._v("描述")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "slot"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#slot",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("自定义标题")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("desc")]), _vm._v(" "), _c('td', [_vm._v("自定义描述")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("tags")]), _vm._v(" "), _c('td', [_vm._v("自定义tags")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("footer")]), _vm._v(" "), _c('td', [_vm._v("自定义footer")])])])])])
+}]}
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "cell-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#cell-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Cell 组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("value")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格1内容\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("value")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格2内容\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "biao-ti-dai-miao-shu-xin-xi"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#biao-ti-dai-miao-shu-xin-xi",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 标题带描述信息")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("label")]), _vm._v("属性，属性值为描述信息的值。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"描述信息\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("is-link")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"javascript:void(0)\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"handleClick\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"单元格2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("label")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"描述信息\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "dai-tu-biao"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#dai-tu-biao",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 带图标")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("icon")]), _vm._v("属性。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"起码运动馆\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"home\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"location\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ke-dian-ji-de-lian-jie"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ke-dian-ji-de-lian-jie",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 可点击的链接")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("url")]), _vm._v("属性，传入"), _c('code', [_vm._v("isLink")]), _vm._v("属性则会在右侧显示箭头。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"起码运动馆\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("value")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"进入店铺\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"home\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"location\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "gao-ji-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#gao-ji-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('p', [_vm._v("如以上用法不能满足你的需求，可以使用对应的"), _c('code', [_vm._v("slot")]), _vm._v("来自定义显示的内容。包含三个"), _c('code', [_vm._v("slot")]), _vm._v("，默认"), _c('code', [_vm._v("slot")]), _vm._v("，"), _c('code', [_vm._v("icon")]), _vm._v("和"), _c('code', [_vm._v("title")]), _vm._v("的"), _c('code', [_vm._v("slot")]), _vm._v("。")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("value")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"进入店铺\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"home\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("is-link")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("template")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"title\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-cell-text\"")]), _vm._v(">")]), _vm._v("起码运动馆"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("img")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("src")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"//su.yzcdn.cn/v2/image/account/icon_guan_160421.png\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"official-img\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("template")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"location\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("icon")]), _vm._v(" "), _c('td', [_vm._v("左侧图标")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("左侧标题")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("右侧内容")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("isLink")]), _vm._v(" "), _c('td', [_vm._v("是否为链接，链接会在右侧出现箭头")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("url")]), _vm._v(" "), _c('td', [_vm._v("跳转链接")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("label")]), _vm._v(" "), _c('td', [_vm._v("描述信息，显示在标题下方")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "slot"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#slot",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("-")]), _vm._v(" "), _c('td', [_vm._v("自定义显示内容")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("icon")]), _vm._v(" "), _c('td', [_vm._v("自定义icon")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("自定义title")])])])])])
+}]}
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-picker"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Picker")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-picker', {
+    attrs: {
+      "columns": _vm.pickerColumns
+    },
+    on: {
+      "change": _vm.handlePickerChange
+    }
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-dialog"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Dialog")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": _vm.handleAlertClick
+    }
+  }, [_vm._v("点击我打开alert提示框")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": _vm.handleConfirmClick
+    }
+  }, [_vm._v("点击我打开confirm提示框")])], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-loading"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Loading")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("Loading展示")]), _vm._v(" "), _c('div', {
+    staticClass: "page-loading__example1"
+  }, [_c('zan-loading', {
+    staticClass: "some-customized-class",
+    staticStyle: {
+      "padding-top": "50px",
+      "text-align": "center"
+    }
+  })], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-badge"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Badge")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-badge-group', {
+    attrs: {
+      "active-key": "2"
+    }
+  }, [_c('zan-badge', {
+    attrs: {
+      "mark": "0",
+      "title": "热销榜",
+      "info": "8",
+      "url": "http://baidu.com"
+    }
+  }), _vm._v(" "), _c('zan-badge', {
+    attrs: {
+      "mark": "1",
+      "title": "花式寿司",
+      "info": "99"
+    }
+  }), _vm._v(" "), _c('zan-badge', {
+    attrs: {
+      "mark": "2",
+      "title": "火炽寿司"
+    }
+  }), _vm._v(" "), _c('zan-badge', {
+    attrs: {
+      "mark": "3",
+      "title": "手握寿司",
+      "info": "199"
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "steps-bu-zou-tiao"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#steps-bu-zou-tiao",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Steps 步骤条")])])
+}]}
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-cell"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Cell")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
+    attrs: {
+      "title": "单元格1",
+      "value": "单元格1内容"
+    }
+  }), _vm._v(" "), _c('zan-cell', {
+    attrs: {
+      "title": "单元格2",
+      "value": "单元格2内容"
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("标题带描述信息")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
+    attrs: {
+      "title": "单元格1",
+      "label": "描述信息",
+      "is-link": "",
+      "url": "javascript:void(0)"
+    },
+    on: {
+      "click": _vm.handleClick
+    }
+  }), _vm._v(" "), _c('zan-cell', {
+    attrs: {
+      "title": "单元格2",
+      "label": "描述信息"
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("带图标")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
+    attrs: {
+      "title": "起码运动馆",
+      "icon": "home"
+    }
+  }), _vm._v(" "), _c('zan-cell', {
+    attrs: {
+      "title": "线下门店",
+      "icon": "location"
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("可点击的链接")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
+    attrs: {
+      "title": "起码运动馆",
+      "value": "进入店铺",
+      "icon": "home",
+      "url": "http://youzan.com",
+      "is-link": ""
+    }
+  }), _vm._v(" "), _c('zan-cell', {
+    attrs: {
+      "title": "线下门店",
+      "icon": "location",
+      "url": "http://youzan.com",
+      "is-link": ""
+    }
+  })], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("高级用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
+    attrs: {
+      "value": "进入店铺",
+      "icon": "home",
+      "url": "http://youzan.com",
+      "is-link": ""
+    }
+  }, [_c('template', {
+    slot: "title"
+  }, [_c('span', {
+    staticClass: "zan-cell-text"
+  }, [_vm._v("起码运动馆")]), _vm._v(" "), _c('img', {
+    staticClass: "official-img",
+    attrs: {
+      "src": "//su.yzcdn.cn/v2/image/account/icon_guan_160421.png"
+    }
+  })])], 2), _vm._v(" "), _c('zan-cell', {
+    attrs: {
+      "title": "线下门店",
+      "icon": "location",
+      "url": "http://youzan.com",
+      "is-link": ""
+    }
+  })], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-popup"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Popup")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": function($event) {
+        _vm.popupShow1 = true
+      }
+    }
+  }, [_vm._v("从下方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
+    staticClass: "zan-popup-1",
+    attrs: {
+      "position": "bottom"
+    },
+    model: {
+      value: (_vm.popupShow1),
+      callback: function($$v) {
+        _vm.popupShow1 = $$v
+      }
+    }
+  }, [_vm._v("\n    xxxx\n  ")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": function($event) {
+        _vm.popupShow2 = true
+      }
+    }
+  }, [_vm._v("从上方方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
+    staticClass: "zan-popup-2",
+    attrs: {
+      "position": "top",
+      "overlay": false
+    },
+    model: {
+      value: (_vm.popupShow2),
+      callback: function($$v) {
+        _vm.popupShow2 = $$v
+      }
+    }
+  }, [_vm._v("\n    更新成功\n  ")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": function($event) {
+        _vm.popupShow3 = true
+      }
+    }
+  }, [_vm._v("从右方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
+    staticClass: "zan-popup-3",
+    attrs: {
+      "position": "right",
+      "overlay": false
+    },
+    model: {
+      value: (_vm.popupShow3),
+      callback: function($$v) {
+        _vm.popupShow3 = $$v
+      }
+    }
+  }, [_c('zan-button', {
+    nativeOn: {
+      "click": function($event) {
+        _vm.popupShow3 = false
+      }
+    }
+  }, [_vm._v("关闭 popup")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    on: {
+      "click": function($event) {
+        _vm.popupShow4 = true
+      }
+    }
+  }, [_vm._v("从中间弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
+    staticClass: "zan-popup-4",
+    attrs: {
+      "transition": "popup-fade"
+    },
+    model: {
+      value: (_vm.popupShow4),
+      callback: function($$v) {
+        _vm.popupShow4 = $$v
+      }
+    }
+  }, [_vm._v("\n    一些内容\n  ")])], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-cell"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Tag")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', [_c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "plain": true
+    }
+  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("四字标签")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("一")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "plain": true,
+      "type": "danger"
+    }
+  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', {
+    attrs: {
+      "type": "primary"
+    }
+  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "plain": true,
+      "type": "primary"
+    }
+  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', {
+    attrs: {
+      "type": "success"
+    }
+  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
+    attrs: {
+      "plain": true,
+      "type": "success"
+    }
+  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "tags-container"
+  }, [_c('zan-tag', {
+    attrs: {
+      "type": "danger",
+      "mark": true
+    }
+  }, [_vm._v("返现")])], 1)])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 292 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-card"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Waterfall")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', [_c('div', {
+    directives: [{
+      name: "waterfall-lower",
+      rawName: "v-waterfall-lower",
+      value: (_vm.loadMore),
+      expression: "loadMore"
+    }, {
+      name: "waterfall-upper",
+      rawName: "v-waterfall-upper",
+      value: (_vm.loadMoreUpper),
+      expression: "loadMoreUpper"
+    }],
+    attrs: {
+      "waterfall-disabled": "isWaterfallDisabled",
+      "waterfall-offset": "400"
+    }
+  }, [_vm._l((_vm.list), function(item) {
+    return _c('div', {
+      staticClass: "zan-cell",
+      staticStyle: {
+        "text-align": "center"
+      }
+    }, [_vm._v(_vm._s(item))])
+  }), _vm._v(" "), _c('div', {
+    staticStyle: {
+      "text-align": "center"
+    }
+  }, [_vm._v("loading")])], 2)])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "dialog-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#dialog-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Dialog组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"handleAlertClick\"")]), _vm._v(">")]), _vm._v("alert"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"handleConfirmClick\"")]), _vm._v(">")]), _vm._v("confirm"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("import")]), _vm._v(" { Dialog } "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("from")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'src/index'")]), _vm._v(";\n\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("methods")]), _vm._v(": {\n    handleAlertClick() {\n      Dialog.alert({\n        "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'alert标题'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("message")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'")]), _vm._v("\n      }).then("), _c('span', {
+    staticClass: "hljs-function"
+  }, [_vm._v("("), _c('span', {
+    staticClass: "hljs-params"
+  }, [_vm._v("action")]), _vm._v(") =>")]), _vm._v(" {\n        "), _c('span', {
+    staticClass: "hljs-built_in"
+  }, [_vm._v("console")]), _vm._v(".log(action);\n      });\n    },\n\n    handleConfirmClick() {\n      Dialog.confirm({\n        "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'confirm标题'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("message")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'")]), _vm._v("\n      }).then("), _c('span', {
+    staticClass: "hljs-function"
+  }, [_vm._v("("), _c('span', {
+    staticClass: "hljs-params"
+  }, [_vm._v("action")]), _vm._v(") =>")]), _vm._v(" {\n        "), _c('span', {
+    staticClass: "hljs-built_in"
+  }, [_vm._v("console")]), _vm._v(".log(action);\n      }, (error) => {\n        "), _c('span', {
+    staticClass: "hljs-built_in"
+  }, [_vm._v("console")]), _vm._v(".log(error);\n      });\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("标题")]), _vm._v(" "), _c('td', [_vm._v("String")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("message")]), _vm._v(" "), _c('td', [_vm._v("内容")]), _vm._v(" "), _c('td', [_vm._v("String")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-search"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Search")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-search', {
+    attrs: {
+      "placeholder": "商品名称"
+    },
+    on: {
+      "search": _vm.goSearch
+    }
+  })], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "checkbox-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#checkbox-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Checkbox组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"checkbox1\"")]), _vm._v(">")]), _vm._v("复选框1"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("checkbox1")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("true")]), _vm._v("\n    };\n  }\n}; \n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "jin-yong-zhuang-tai"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#jin-yong-zhuang-tai",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 禁用状态")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"checkbox2\"")]), _vm._v(">")]), _vm._v("复选框2"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("checkbox2")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("true")]), _vm._v("\n    };\n  }\n}; \n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "checkbox-zu"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#checkbox-zu",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Checkbox组")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"result\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-for")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item in list\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item\"")]), _vm._v(">")]), _vm._v("复选框"), _c('span', [_vm._v("{{")]), _vm._v("item"), _c('span', [_vm._v("}}")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("list")]), _vm._v(": [\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'c'")]), _vm._v("\n      ],\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("result")]), _vm._v(": ["), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(", "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v("]\n    };\n  },\n\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("watch")]), _vm._v(": {\n    result(val) {\n      "), _c('span', {
+    staticClass: "hljs-built_in"
+  }, [_vm._v("console")]), _vm._v(".log(val);\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "jin-yong-checkbox-zu"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#jin-yong-checkbox-zu",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 禁用Checkbox组")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"result\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-for")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item in list\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item\"")]), _vm._v(">")]), _vm._v("复选框"), _c('span', [_vm._v("{{")]), _vm._v("item"), _c('span', [_vm._v("}}")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("list")]), _vm._v(": [\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'c'")]), _vm._v("\n      ],\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("result")]), _vm._v(": ["), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(", "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v("]\n    };\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "yu-cell-zu-jian-yi-qi-shi-yong"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#yu-cell-zu-jian-yi-qi-shi-yong",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 与Cell组件一起使用")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"result\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-for")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item in list\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"item\"")]), _vm._v(">")]), _vm._v("复选框"), _c('span', [_vm._v("{{")]), _vm._v("item"), _c('span', [_vm._v("}}")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-checkbox-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("list")]), _vm._v(": [\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v(",\n        "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'c'")]), _vm._v("\n      ],\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("result")]), _vm._v(": ["), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'a'")]), _vm._v(", "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'b'")]), _vm._v("]\n    };\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "checkbox-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#checkbox-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Checkbox API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("name")]), _vm._v(" "), _c('td', [_vm._v("根据这个来判断radio是否选中")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "checkboxgroup-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#checkboxgroup-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" CheckboxGroup API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "checkboxgroup-event"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#checkboxgroup-event",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" CheckboxGroup Event")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("事件名称")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("回调参数")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("change")]), _vm._v(" "), _c('td', [_vm._v("当绑定值变化时触发的事件")]), _vm._v(" "), _c('td', [_vm._v("当前组件的值")])])])])])
+}]}
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-button"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Button")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("按钮功能")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', [_vm._v("default")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    attrs: {
+      "type": "primary"
+    }
+  }, [_vm._v("primary")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    attrs: {
+      "type": "danger"
+    }
+  }, [_vm._v("danger")])], 1)]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("禁用状态")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    attrs: {
+      "disabled": ""
+    }
+  }, [_vm._v("diabled")])], 1)]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("按钮尺寸")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    attrs: {
+      "size": "large"
+    }
+  }, [_vm._v("large")])], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('div', {
+    staticClass: "zan-button-3"
+  }, [_c('zan-button', {
+    attrs: {
+      "type": "primary"
+    }
+  }, [_vm._v("normal")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-3"
+  }, [_c('zan-button', {
+    attrs: {
+      "size": "small"
+    }
+  }, [_vm._v("small")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-3"
+  }, [_c('zan-button', {
+    attrs: {
+      "size": "mini"
+    }
+  }, [_vm._v("mini")])], 1)]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("自定义按钮标签")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('div', {
+    staticClass: "zan-button-1"
+  }, [_c('zan-button', {
+    attrs: {
+      "tag": "a",
+      "type": "primary",
+      "href": "https://www.youzan.com",
+      "target": "_blank"
+    }
+  }, [_vm._v("a标签按钮")])], 1)]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("button group")]), _vm._v(" "), _c('div', {
+    staticClass: "zan-button-group"
+  }, [_c('zan-button', {
+    attrs: {
+      "type": "primary",
+      "size": "small"
+    }
+  }, [_vm._v("确认付款")]), _vm._v(" "), _c('zan-button', {
+    attrs: {
+      "size": "small"
+    }
+  }, [_vm._v("确认收货")]), _vm._v(" "), _c('zan-button', {
+    attrs: {
+      "size": "small"
+    }
+  }, [_vm._v("取消订单")])], 1)])
+},staticRenderFns: []}
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "tag-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#tag-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Tag 组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":plain")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"true\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "gao-ji-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#gao-ji-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"danger\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"success\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"success\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":plain")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"true\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("plain")]), _vm._v(" "), _c('td', [_vm._v("是否是空心tag")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("mark")]), _vm._v(" "), _c('td', [_vm._v("是否是标记")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("tag类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("'primary', 'success', 'danger'")])])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "slot"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#slot",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("-")]), _vm._v(" "), _c('td', [_vm._v("自定义tag显示内容")])])])])])
+}]}
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "radio-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#radio-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Radio组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio1\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("radio1")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "jin-yong-zhuang-tai"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#jin-yong-zhuang-tai",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 禁用状态")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("未选中禁用"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("选中且禁用"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("radio2")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'2'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "radio-zu"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#radio-zu",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" radio组")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio3\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("radio3")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "yu-cell-zu-jian-yi-qi-shi-yong"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#yu-cell-zu-jian-yi-qi-shi-yong",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 与Cell组件一起使用")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"radio4\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("name")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-radio-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
+    staticClass: "javascript"
+  }, [_vm._v("\n"), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("radio4")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "radio-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#radio-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Radio API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("name")]), _vm._v(" "), _c('td', [_vm._v("根据这个来判断radio是否选中")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "radiogroup-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#radiogroup-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" RadioGroup API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "radiogroup-event"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#radiogroup-event",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" RadioGroup Event")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("事件名称")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("回调参数")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("change")]), _vm._v(" "), _c('td', [_vm._v("当绑定值变化时触发的事件")]), _vm._v(" "), _c('td', [_vm._v("当前组件的值")])])])])])
+}]}
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "page-radio"
+  }, [_c('h1', {
+    staticClass: "page-title"
+  }, [_vm._v("Radio")]), _vm._v(" "), _c('div', {
+    staticClass: "radio-demo-wrapper"
+  }, [_c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "1"
+    },
+    model: {
+      value: (_vm.radio1),
+      callback: function($$v) {
+        _vm.radio1 = $$v
+      }
+    }
+  }, [_vm._v("单选框1")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "2"
+    },
+    model: {
+      value: (_vm.radio1),
+      callback: function($$v) {
+        _vm.radio1 = $$v
+      }
+    }
+  }, [_vm._v("单选框2")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("禁用状态")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "1",
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.radio2),
+      callback: function($$v) {
+        _vm.radio2 = $$v
+      }
+    }
+  }, [_vm._v("未选中禁用")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "2",
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.radio2),
+      callback: function($$v) {
+        _vm.radio2 = $$v
+      }
+    }
+  }, [_vm._v("选中且禁用")]), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("radio组")]), _vm._v(" "), _c('zan-radio-group', {
+    model: {
+      value: (_vm.radio3),
+      callback: function($$v) {
+        _vm.radio3 = $$v
+      }
+    }
+  }, [_c('zan-radio', {
+    attrs: {
+      "name": "1"
+    }
+  }, [_vm._v("单选框1")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "2"
+    }
+  }, [_vm._v("单选框2")])], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("禁用radio组")]), _vm._v(" "), _c('zan-radio-group', {
+    attrs: {
+      "disabled": ""
+    },
+    model: {
+      value: (_vm.radio3),
+      callback: function($$v) {
+        _vm.radio3 = $$v
+      }
+    }
+  }, [_c('zan-radio', {
+    attrs: {
+      "name": "1"
+    }
+  }, [_vm._v("单选框1")]), _vm._v(" "), _c('zan-radio', {
+    attrs: {
+      "name": "2"
+    }
+  }, [_vm._v("单选框2")])], 1), _vm._v(" "), _c('h2', {
+    staticClass: "page-sub-title"
+  }, [_vm._v("与Cell组件一起使用")])], 1), _vm._v(" "), _c('zan-radio-group', {
+    model: {
+      value: (_vm.radio4),
+      callback: function($$v) {
+        _vm.radio4 = $$v
+      }
+    }
+  }, [_c('zan-cell-group', [_c('zan-cell', [_c('zan-radio', {
+    attrs: {
+      "name": "1"
+    }
+  }, [_vm._v("单选框1")])], 1), _vm._v(" "), _c('zan-cell', [_c('zan-radio', {
+    attrs: {
+      "name": "2"
+    }
+  }, [_vm._v("单选框2")])], 1)], 1)], 1)], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "picker-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#picker-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Picker组件")]), _vm._v(" "), _c('p', [_vm._v("模仿iOS中的"), _c('code', [_vm._v("UIPickerView")]), _vm._v("。")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-picker")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":columns")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"pickerColumns\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@change")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"handlePickerChange\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-picker")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("visibileColumnCount")]), _vm._v(" "), _c('td', [_vm._v("每一列可见备选元素的个数")]), _vm._v(" "), _c('td', [_vm._v("Number")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("itemHeight")]), _vm._v(" "), _c('td', [_vm._v("选中元素区高度")]), _vm._v(" "), _c('td', [_vm._v("Number")]), _vm._v(" "), _c('td', [_vm._v("44")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("columns")]), _vm._v(" "), _c('td', [_vm._v("对象数组，配置每一列显示的数据")]), _vm._v(" "), _c('td', [_vm._v("Array")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("showToolbar")]), _vm._v(" "), _c('td', [_vm._v("是否在组件顶部显示一个toolbar")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("true")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "columns"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#columns",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" columns")]), _vm._v(" "), _c('p', [_c('code', [_vm._v("API")]), _vm._v("中的"), _c('code', [_vm._v("columns")]), _vm._v("为一个对象数组，数组中的每一个对象配置每一列，每一列有以下"), _c('code', [_vm._v("key")]), _vm._v("：")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("key")]), _vm._v(" "), _c('th', [_vm._v("说明")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("values")]), _vm._v(" "), _c('td', [_vm._v("列中对应的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("defaultIndex")]), _vm._v(" "), _c('td', [_vm._v("初始选中值的索引，默认为0")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("className")]), _vm._v(" "), _c('td', [_vm._v("为对应列添加特殊的"), _c('code', [_vm._v("class")])])])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "change-shi-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#change-shi-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" change事件")]), _vm._v(" "), _c('p', [_vm._v("在"), _c('code', [_vm._v("change")]), _vm._v("事件中，可以获取到"), _c('code', [_vm._v("picker")]), _vm._v("实例，对"), _c('code', [_vm._v("picker")]), _vm._v("进行相应的更新等操作：")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("函数")]), _vm._v(" "), _c('th', [_vm._v("说明")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("getColumnValue(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValue(index, value)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getColumnValues(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValues(index, values)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getValues()")]), _vm._v(" "), _c('td', [_vm._v("获取所有列中被选中的值，返回一个数组")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setValues(values)")]), _vm._v(" "), _c('td', [_c('code', [_vm._v("values")]), _vm._v("为一个数组，设置所有列中被选中的值")])])])])])
+}]}
+
+/***/ }),
+/* 301 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7866,7 +12025,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 }]}
 
 /***/ }),
-/* 241 */
+/* 302 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -7874,15 +12033,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('section', [_c('h2', {
     attrs: {
-      "id": "field-zu-jian"
+      "id": "popup-zu-jian"
     }
   }, [_c('a', {
     staticClass: "header-anchor",
     attrs: {
-      "href": "#field-zu-jian",
+      "href": "#popup-zu-jian",
       "aria-hidden": "true"
     }
-  }, [_vm._v("¶")]), _vm._v(" Field组件")]), _vm._v(" "), _c('p', [_vm._v("表单中"), _c('code', [_vm._v("input")]), _vm._v("或"), _c('code', [_vm._v("textarea")]), _vm._v("的输入框。")]), _vm._v(" "), _c('h3', {
+  }, [_vm._v("¶")]), _vm._v(" Popup组件")]), _vm._v(" "), _c('h3', {
     attrs: {
       "id": "ji-chu-yong-fa"
     }
@@ -7892,199 +12051,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "#ji-chu-yong-fa",
       "aria-hidden": "true"
     }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('p', [_vm._v("根据"), _c('code', [_vm._v("type")]), _vm._v("属性显示不同的输入框。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"用户名：\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"请输入用户名\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"password\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"密码：\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"请输入密码\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"textarea\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"个人介绍：\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"请输入个人介绍\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "wu-label-de-shu-ru-kuang"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#wu-label-de-shu-ru-kuang",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 无label的输入框")]), _vm._v(" "), _c('p', [_vm._v("不传入"), _c('code', [_vm._v("label")]), _vm._v("属性即可。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"请输入用户名\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "jian-ting-change-shi-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#jian-ting-change-shi-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 监听change事件")]), _vm._v(" "), _c('p', [_vm._v("监听组件的"), _c('code', [_vm._v("change")]), _vm._v("事件。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"text\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"用户名：\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("placeholder")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"请输入用户名\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@change")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"handleChange\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-field")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("输入框类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("text")]), _vm._v(" "), _c('td', [_vm._v("text, number, email, url, tel, date, datetime, password, textarea")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("placeholder")]), _vm._v(" "), _c('td', [_vm._v("输入框placeholder")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("输入框的值")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("label")]), _vm._v(" "), _c('td', [_vm._v("输入框标签")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用输入框")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("readonly")]), _vm._v(" "), _c('td', [_vm._v("输入框是否只读")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("maxlength")]), _vm._v(" "), _c('td', [_vm._v("输入框maxlength")]), _vm._v(" "), _c('td', [_vm._v("[String, Number]")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
-}]}
-
-/***/ }),
-/* 242 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "button-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#button-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Button组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "an-niu-gong-neng"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#an-niu-gong-neng",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 按钮功能")]), _vm._v(" "), _c('p', [_vm._v("只接受primary, default, danger三种类型，默认default。")]), _vm._v(" "), _c('pre', [_c('code', {
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
     staticClass: "hljs language-html"
   }, [_c('span', {
     staticClass: "hljs-tag"
@@ -8094,377 +12061,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("default"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
   }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"primary\"")]), _vm._v(">")]), _vm._v("primary"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"danger\"")]), _vm._v(">")]), _vm._v("danger"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "jin-yong-zhuang-tai"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#jin-yong-zhuang-tai",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 禁用状态")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("diabled"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "an-niu-chi-cun"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#an-niu-chi-cun",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 按钮尺寸")]), _vm._v(" "), _c('p', [_vm._v("只接受large, normal, small, mini四种尺寸，默认normal。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"large\"")]), _vm._v(">")]), _vm._v("large"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":style")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"{ width: '50%' }\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"primary\"")]), _vm._v(">")]), _vm._v("normal"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("small"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-3\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("mini"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "zi-ding-yi-an-niu-biao-qian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#zi-ding-yi-an-niu-biao-qian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 自定义按钮标签")]), _vm._v(" "), _c('p', [_vm._v("按钮默认是button标签，可以使用tag属性修改为一个a标签。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("tag")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"a\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"primary\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("href")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"https://www.youzan.com\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("target")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"_blank\"")]), _vm._v(">")]), _vm._v("a标签按钮"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "button-group"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#button-group",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" button group")]), _vm._v(" "), _c('p', [_vm._v("一组按钮。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-button-group\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"primary\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("确认付款"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("确认收货"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"small\"")]), _vm._v(">")]), _vm._v("取消订单"), _c('span', {
+  }, [_vm._v("\"popupShow1 = true\"")]), _vm._v(">")]), _vm._v("从下方弹出popup"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -8472,149 +12077,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("按钮类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'default'")]), _vm._v(" "), _c('td', [_vm._v("'primary', 'danger'")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("size")]), _vm._v(" "), _c('td', [_vm._v("按钮尺寸")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'normal'")]), _vm._v(" "), _c('td', [_vm._v("'large', 'small', 'mini'")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("tag")]), _vm._v(" "), _c('td', [_vm._v("按钮标签")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'button'")]), _vm._v(" "), _c('td', [_vm._v("'a', 'span', ...")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("diabled")]), _vm._v(" "), _c('td', [_vm._v("按钮是否禁用")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("block")]), _vm._v(" "), _c('td', [_vm._v("按钮是否显示为块级元素")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')])])])])
-}]}
-
-/***/ }),
-/* 243 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-field"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Field")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
-    attrs: {
-      "type": "text",
-      "label": "用户名：",
-      "placeholder": "请输入用户名"
-    }
-  }), _vm._v(" "), _c('zan-field', {
-    attrs: {
-      "type": "password",
-      "label": "密码：",
-      "placeholder": "请输入密码"
-    }
-  }), _vm._v(" "), _c('zan-field', {
-    attrs: {
-      "type": "textarea",
-      "label": "个人介绍：",
-      "placeholder": "请输入个人介绍"
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("无label的输入框")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
-    attrs: {
-      "type": "text",
-      "placeholder": "请输入用户名"
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("监听change事件")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-field', {
-    attrs: {
-      "type": "text",
-      "label": "用户名：",
-      "placeholder": "请输入用户名"
-    },
-    on: {
-      "change": _vm.handleChange
-    }
-  })], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 244 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "card-tu-wen-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#card-tu-wen-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Card 图文组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('p', [_vm._v("当没有底部按钮时，右侧内容会居中显示。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-card")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余\"")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("\"popupShow1\"")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("desc")]), _vm._v("="), _c('span', {
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"描述\"")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("\"bottom\"")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("thumb")]), _vm._v("="), _c('span', {
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg\"")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+  }, [_vm._v("\"zan-popup-1\"")]), _vm._v(">")]), _vm._v("\n  xxxx\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-card")]), _vm._v(">")]), _vm._v("\n\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "gao-ji-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#gao-ji-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('p', [_vm._v("可以使用具名"), _c('code', [_vm._v("slot")]), _vm._v("重写标题等信息，其中包含"), _c('code', [_vm._v("title")]), _vm._v("、"), _c('code', [_vm._v("desc")]), _vm._v("、"), _c('code', [_vm._v("footer")]), _vm._v("和"), _c('code', [_vm._v("tag")]), _vm._v("四个"), _c('code', [_vm._v("slot")]), _vm._v("。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-card")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余\"")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("desc")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"商品SKU1，商品SKU2\"")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("thumb")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -8622,930 +12105,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__row\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"title\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("h4")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__title\"")]), _vm._v(">")]), _vm._v("商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("h4")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__price\"")]), _vm._v(">")]), _vm._v("¥ 2.00"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__row\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"desc\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("h4")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__desc\"")]), _vm._v(">")]), _vm._v("商品sku"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("h4")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__num\"")]), _vm._v(">")]), _vm._v("x 2"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("class")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"zan-card__footer\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"footer\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
   }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
+  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("按钮一"), _c('span', {
+  }, [_vm._v("\"popupShow2 = true\"")]), _vm._v(">")]), _vm._v("从上方方弹出popup"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("size")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"mini\"")]), _vm._v(">")]), _vm._v("按钮二"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
   }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
     staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-card")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("thumb")]), _vm._v(" "), _c('td', [_vm._v("左侧图片")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("标题")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("desc")]), _vm._v(" "), _c('td', [_vm._v("描述")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "slot"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#slot",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("自定义标题")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("desc")]), _vm._v(" "), _c('td', [_vm._v("自定义描述")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("tags")]), _vm._v(" "), _c('td', [_vm._v("自定义tags")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("footer")]), _vm._v(" "), _c('td', [_vm._v("自定义footer")])])])])])
-}]}
-
-/***/ }),
-/* 245 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "cell-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#cell-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Cell 组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"单元格1\"")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("\"popupShow2\"")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("value")]), _vm._v("="), _c('span', {
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"单元格1内容\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"单元格2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("value")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"单元格2内容\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "biao-ti-dai-miao-shu-xin-xi"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#biao-ti-dai-miao-shu-xin-xi",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 标题带描述信息")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("label")]), _vm._v("属性，属性值为描述信息的值。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"单元格1\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"描述信息\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("is-link")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("url")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"javascript:void(0)\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@click")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"handleClick\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"单元格2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("label")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"描述信息\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "dai-tu-biao"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#dai-tu-biao",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 带图标")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("icon")]), _vm._v("属性。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"起码运动馆\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"home\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"location\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ke-dian-ji-de-lian-jie"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ke-dian-ji-de-lian-jie",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 可点击的链接")]), _vm._v(" "), _c('p', [_vm._v("传入"), _c('code', [_vm._v("url")]), _vm._v("属性，传入"), _c('code', [_vm._v("isLink")]), _vm._v("属性则会在右侧显示箭头。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"起码运动馆\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("value")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"进入店铺\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"home\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("url")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"location\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("url")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "gao-ji-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#gao-ji-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('p', [_vm._v("如以上用法不能满足你的需求，可以使用对应的"), _c('code', [_vm._v("slot")]), _vm._v("来自定义显示的内容。包含三个"), _c('code', [_vm._v("slot")]), _vm._v("，默认"), _c('code', [_vm._v("slot")]), _vm._v("，"), _c('code', [_vm._v("icon")]), _vm._v("和"), _c('code', [_vm._v("title")]), _vm._v("的"), _c('code', [_vm._v("slot")]), _vm._v("。")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("value")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"进入店铺\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"home\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("url")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("is-link")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("template")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("slot")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"title\"")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("\"top\"")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"zan-cell-text\"")]), _vm._v(">")]), _vm._v("起码运动馆"), _c('span', {
+  }, [_vm._v("\"zan-popup-2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  更新成功\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("span")]), _vm._v(">")]), _vm._v("\n      "), _c('span', {
+  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("img")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("src")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"//su.yzcdn.cn/v2/image/account/icon_guan_160421.png\"")]), _vm._v(" "), _c('span', {
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-attr"
   }, [_vm._v("class")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"official-img\"")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("template")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"线下门店\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("icon")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"location\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("url")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"http://youzan.com\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("is-link")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("icon")]), _vm._v(" "), _c('td', [_vm._v("左侧图标")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("左侧标题")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("右侧内容")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("isLink")]), _vm._v(" "), _c('td', [_vm._v("是否为链接，链接会在右侧出现箭头")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("url")]), _vm._v(" "), _c('td', [_vm._v("跳转链接")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("label")]), _vm._v(" "), _c('td', [_vm._v("描述信息，显示在标题下方")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("''")])])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "slot"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#slot",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("-")]), _vm._v(" "), _c('td', [_vm._v("自定义显示内容")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("icon")]), _vm._v(" "), _c('td', [_vm._v("自定义icon")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("自定义title")])])])])])
-}]}
-
-/***/ }),
-/* 246 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-picker"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Picker")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-picker', {
-    attrs: {
-      "columns": _vm.pickerColumns
-    },
-    on: {
-      "change": _vm.handlePickerChange
-    }
-  })], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 247 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-dialog"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Dialog")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": _vm.handleAlertClick
-    }
-  }, [_vm._v("点击我打开alert提示框")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": _vm.handleConfirmClick
-    }
-  }, [_vm._v("点击我打开confirm提示框")])], 1)])
-},staticRenderFns: []}
-
-/***/ }),
-/* 248 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "steps-bu-zou-tiao"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#steps-bu-zou-tiao",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Steps 步骤条")])])
-}]}
-
-/***/ }),
-/* 249 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-cell"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Cell")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
-    attrs: {
-      "title": "单元格1",
-      "value": "单元格1内容"
-    }
-  }), _vm._v(" "), _c('zan-cell', {
-    attrs: {
-      "title": "单元格2",
-      "value": "单元格2内容"
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("标题带描述信息")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
-    attrs: {
-      "title": "单元格1",
-      "label": "描述信息",
-      "is-link": "",
-      "url": "javascript:void(0)"
-    },
-    on: {
-      "click": _vm.handleClick
-    }
-  }), _vm._v(" "), _c('zan-cell', {
-    attrs: {
-      "title": "单元格2",
-      "label": "描述信息"
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("带图标")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
-    attrs: {
-      "title": "起码运动馆",
-      "icon": "home"
-    }
-  }), _vm._v(" "), _c('zan-cell', {
-    attrs: {
-      "title": "线下门店",
-      "icon": "location"
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("可点击的链接")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
-    attrs: {
-      "title": "起码运动馆",
-      "value": "进入店铺",
-      "icon": "home",
-      "url": "http://youzan.com",
-      "is-link": ""
-    }
-  }), _vm._v(" "), _c('zan-cell', {
-    attrs: {
-      "title": "线下门店",
-      "icon": "location",
-      "url": "http://youzan.com",
-      "is-link": ""
-    }
-  })], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("高级用法")]), _vm._v(" "), _c('zan-cell-group', [_c('zan-cell', {
-    attrs: {
-      "value": "进入店铺",
-      "icon": "home",
-      "url": "http://youzan.com",
-      "is-link": ""
-    }
-  }, [_c('template', {
-    slot: "title"
-  }, [_c('span', {
-    staticClass: "zan-cell-text"
-  }, [_vm._v("起码运动馆")]), _vm._v(" "), _c('img', {
-    staticClass: "official-img",
-    attrs: {
-      "src": "//su.yzcdn.cn/v2/image/account/icon_guan_160421.png"
-    }
-  })])], 2), _vm._v(" "), _c('zan-cell', {
-    attrs: {
-      "title": "线下门店",
-      "icon": "location",
-      "url": "http://youzan.com",
-      "is-link": ""
-    }
-  })], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 250 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-popup"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Popup")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": function($event) {
-        _vm.popupShow1 = true
-      }
-    }
-  }, [_vm._v("从下方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
-    staticClass: "zan-popup-1",
-    attrs: {
-      "position": "bottom"
-    },
-    model: {
-      value: (_vm.popupShow1),
-      callback: function($$v) {
-        _vm.popupShow1 = $$v
-      }
-    }
-  }, [_vm._v("\n    xxxx\n  ")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": function($event) {
-        _vm.popupShow2 = true
-      }
-    }
-  }, [_vm._v("从上方方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
-    staticClass: "zan-popup-2",
-    attrs: {
-      "position": "top",
-      "overlay": false
-    },
-    model: {
-      value: (_vm.popupShow2),
-      callback: function($$v) {
-        _vm.popupShow2 = $$v
-      }
-    }
-  }, [_vm._v("\n    更新成功\n  ")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": function($event) {
-        _vm.popupShow3 = true
-      }
-    }
-  }, [_vm._v("从右方弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
-    staticClass: "zan-popup-3",
-    attrs: {
-      "position": "right",
-      "overlay": false
-    },
-    model: {
-      value: (_vm.popupShow3),
-      callback: function($$v) {
-        _vm.popupShow3 = $$v
-      }
-    }
-  }, [_c('zan-button', {
-    nativeOn: {
-      "click": function($event) {
-        _vm.popupShow3 = false
-      }
-    }
-  }, [_vm._v("关闭 popup")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    on: {
-      "click": function($event) {
-        _vm.popupShow4 = true
-      }
-    }
-  }, [_vm._v("从中间弹出popup")])], 1), _vm._v(" "), _c('zan-popup', {
-    staticClass: "zan-popup-4",
-    attrs: {
-      "transition": "popup-fade"
-    },
-    model: {
-      value: (_vm.popupShow4),
-      callback: function($$v) {
-        _vm.popupShow4 = $$v
-      }
-    }
-  }, [_vm._v("\n    一些内容\n  ")])], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 251 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-cell"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Tag")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', [_c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "plain": true
-    }
-  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', {
-    attrs: {
-      "type": "danger"
-    }
-  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "type": "danger"
-    }
-  }, [_vm._v("四字标签")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "type": "danger"
-    }
-  }, [_vm._v("一")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', {
-    attrs: {
-      "type": "danger"
-    }
-  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "plain": true,
-      "type": "danger"
-    }
-  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', {
-    attrs: {
-      "type": "primary"
-    }
-  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "plain": true,
-      "type": "primary"
-    }
-  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', {
-    attrs: {
-      "type": "success"
-    }
-  }, [_vm._v("返现")]), _vm._v(" "), _c('zan-tag', {
-    attrs: {
-      "plain": true,
-      "type": "success"
-    }
-  }, [_vm._v("返现")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "tags-container"
-  }, [_c('zan-tag', {
-    attrs: {
-      "type": "danger",
-      "mark": true
-    }
-  }, [_vm._v("返现")])], 1)])])
-},staticRenderFns: []}
-
-/***/ }),
-/* 252 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-card"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Waterfall")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('div', [_c('div', {
-    directives: [{
-      name: "waterfall-lower",
-      rawName: "v-waterfall-lower",
-      value: (_vm.loadMore),
-      expression: "loadMore"
-    }, {
-      name: "waterfall-upper",
-      rawName: "v-waterfall-upper",
-      value: (_vm.loadMoreUpper),
-      expression: "loadMoreUpper"
-    }],
-    attrs: {
-      "waterfall-disabled": "isWaterfallDisabled",
-      "waterfall-offset": "400"
-    }
-  }, [_vm._l((_vm.list), function(item) {
-    return _c('div', {
-      staticClass: "zan-cell",
-      staticStyle: {
-        "text-align": "center"
-      }
-    }, [_vm._v(_vm._s(item))])
-  }), _vm._v(" "), _c('div', {
-    staticStyle: {
-      "text-align": "center"
-    }
-  }, [_vm._v("loading")])], 2)])])
-},staticRenderFns: []}
-
-/***/ }),
-/* 253 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "dialog-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#dialog-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Dialog组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -9553,11 +12161,59 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("@click")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"handleAlertClick\"")]), _vm._v(">")]), _vm._v("alert"), _c('span', {
+  }, [_vm._v("\"popupShow3 = true\"")]), _vm._v(">")]), _vm._v("从右方弹出popup"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow3\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("position")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"right\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-popup-3\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v(":overlay")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"false\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("@click.native")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow3 = false\"")]), _vm._v(">")]), _vm._v("关闭 popup"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-button-1\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -9565,11 +12221,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hljs-attr"
   }, [_vm._v("@click")]), _vm._v("="), _c('span', {
     staticClass: "hljs-string"
-  }, [_vm._v("\"handleConfirmClick\"")]), _vm._v(">")]), _vm._v("confirm"), _c('span', {
+  }, [_vm._v("\"popupShow4 = true\"")]), _vm._v(">")]), _vm._v("从中间弹出popup"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
-  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
+  }, [_vm._v("zan-button")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("div")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-popup")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popupShow4\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("transition")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"popup-fade\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("class")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"zan-popup-4\"")]), _vm._v(">")]), _vm._v("\n  一些内容\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-popup")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("<"), _c('span', {
     staticClass: "hljs-name"
@@ -9577,47 +12257,41 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "javascript"
   }, [_vm._v("\n"), _c('span', {
     staticClass: "hljs-keyword"
-  }, [_vm._v("import")]), _vm._v(" { Dialog } "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("from")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'src/index'")]), _vm._v(";\n\n"), _c('span', {
-    staticClass: "hljs-keyword"
   }, [_vm._v("export")]), _vm._v(" "), _c('span', {
     staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  "), _c('span', {
+  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("methods")]), _vm._v(": {\n    handleAlertClick() {\n      Dialog.alert({\n        "), _c('span', {
+  }, [_vm._v("popupShow1")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'alert标题'")]), _vm._v(",\n        "), _c('span', {
+  }, [_vm._v("popupShow2")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
     staticClass: "hljs-attr"
-  }, [_vm._v("message")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'")]), _vm._v("\n      }).then("), _c('span', {
+  }, [_vm._v("popupShow3")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(",\n      "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("popupShow4")]), _vm._v(": "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v("\n    }\n  },\n\n  "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("watch")]), _vm._v(": {\n    popupShow2(val) {\n      "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("if")]), _vm._v(" (val) {\n        setTimeout("), _c('span', {
     staticClass: "hljs-function"
-  }, [_vm._v("("), _c('span', {
+  }, [_c('span', {
     staticClass: "hljs-params"
-  }, [_vm._v("action")]), _vm._v(") =>")]), _vm._v(" {\n        "), _c('span', {
-    staticClass: "hljs-built_in"
-  }, [_vm._v("console")]), _vm._v(".log(action);\n      });\n    },\n\n    handleConfirmClick() {\n      Dialog.confirm({\n        "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("title")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'confirm标题'")]), _vm._v(",\n        "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("message")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'")]), _vm._v("\n      }).then("), _c('span', {
-    staticClass: "hljs-function"
-  }, [_vm._v("("), _c('span', {
-    staticClass: "hljs-params"
-  }, [_vm._v("action")]), _vm._v(") =>")]), _vm._v(" {\n        "), _c('span', {
-    staticClass: "hljs-built_in"
-  }, [_vm._v("console")]), _vm._v(".log(action);\n      }, (error) => {\n        "), _c('span', {
-    staticClass: "hljs-built_in"
-  }, [_vm._v("console")]), _vm._v(".log(error);\n      });\n    }\n  }\n};\n")]), _c('span', {
+  }, [_vm._v("()")]), _vm._v(" =>")]), _vm._v(" {\n          "), _c('span', {
+    staticClass: "hljs-keyword"
+  }, [_vm._v("this")]), _vm._v(".popupShow2 = "), _c('span', {
+    staticClass: "hljs-literal"
+  }, [_vm._v("false")]), _vm._v(";\n        }, "), _c('span', {
+    staticClass: "hljs-number"
+  }, [_vm._v("2000")]), _vm._v(");\n      }\n    }\n  }\n};\n")]), _c('span', {
     staticClass: "hljs-tag"
   }, [_vm._v("</"), _c('span', {
     staticClass: "hljs-name"
@@ -9633,773 +12307,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
     staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("标题")]), _vm._v(" "), _c('td', [_vm._v("String")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("message")]), _vm._v(" "), _c('td', [_vm._v("内容")]), _vm._v(" "), _c('td', [_vm._v("String")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("value")]), _vm._v(" "), _c('td', [_vm._v("利用"), _c('code', [_vm._v("v-model")]), _vm._v("绑定当前组件是否显示")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')])])])])
 }]}
 
 /***/ }),
-/* 254 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "checkbox-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#checkbox-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Checkbox组件")])])
-}]}
-
-/***/ }),
-/* 255 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-button"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Button")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("按钮功能")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', [_vm._v("default")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    attrs: {
-      "type": "primary"
-    }
-  }, [_vm._v("primary")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    attrs: {
-      "type": "danger"
-    }
-  }, [_vm._v("danger")])], 1)]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("禁用状态")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    attrs: {
-      "disabled": ""
-    }
-  }, [_vm._v("diabled")])], 1)]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("按钮尺寸")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    attrs: {
-      "size": "large"
-    }
-  }, [_vm._v("large")])], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('div', {
-    staticClass: "zan-button-3"
-  }, [_c('zan-button', {
-    attrs: {
-      "type": "primary"
-    }
-  }, [_vm._v("normal")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-3"
-  }, [_c('zan-button', {
-    attrs: {
-      "size": "small"
-    }
-  }, [_vm._v("small")])], 1), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-3"
-  }, [_c('zan-button', {
-    attrs: {
-      "size": "mini"
-    }
-  }, [_vm._v("mini")])], 1)]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("自定义按钮标签")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('div', {
-    staticClass: "zan-button-1"
-  }, [_c('zan-button', {
-    attrs: {
-      "tag": "a",
-      "type": "primary",
-      "href": "https://www.youzan.com",
-      "target": "_blank"
-    }
-  }, [_vm._v("a标签按钮")])], 1)]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("button group")]), _vm._v(" "), _c('div', {
-    staticClass: "zan-button-group"
-  }, [_c('zan-button', {
-    attrs: {
-      "type": "primary",
-      "size": "small"
-    }
-  }, [_vm._v("确认付款")]), _vm._v(" "), _c('zan-button', {
-    attrs: {
-      "size": "small"
-    }
-  }, [_vm._v("确认收货")]), _vm._v(" "), _c('zan-button', {
-    attrs: {
-      "size": "small"
-    }
-  }, [_vm._v("取消订单")])], 1)])
-},staticRenderFns: []}
-
-/***/ }),
-/* 256 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "tag-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#tag-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Tag 组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":plain")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"true\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "gao-ji-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#gao-ji-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 高级用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"danger\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"success\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("type")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"success\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":plain")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"true\"")]), _vm._v(">")]), _vm._v("返现"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-tag")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("plain")]), _vm._v(" "), _c('td', [_vm._v("是否是空心tag")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("mark")]), _vm._v(" "), _c('td', [_vm._v("是否是标记")]), _vm._v(" "), _c('td', [_vm._v("boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td', [_vm._v("''")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("type")]), _vm._v(" "), _c('td', [_vm._v("tag类型")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("'primary', 'success', 'danger'")])])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "slot"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#slot",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Slot")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("name")]), _vm._v(" "), _c('th', [_vm._v("描述")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("-")]), _vm._v(" "), _c('td', [_vm._v("自定义tag显示内容")])])])])])
-}]}
-
-/***/ }),
-/* 257 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "radio-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#radio-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Radio组件")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"1\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio1\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("radio1")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "jin-yong-zhuang-tai"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#jin-yong-zhuang-tai",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 禁用状态")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"1\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("未选中禁用"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio2\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("disabled")]), _vm._v(">")]), _vm._v("选中且禁用"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("radio2")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'2'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "radio-zu"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#radio-zu",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" radio组")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio-group")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio3\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"2\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("radio3")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "yu-cell-zu-jian-yi-qi-shi-yong"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#yu-cell-zu-jian-yi-qi-shi-yong",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 与Cell组件一起使用")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio-group")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("v-model")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"radio4\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"1\"")]), _vm._v(">")]), _vm._v("单选框1"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n    "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("name")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"2\"")]), _vm._v(">")]), _vm._v("单选框2"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-cell-group")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-radio-group")]), _vm._v(">")]), _vm._v("\n\n"), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _c('span', {
-    staticClass: "javascript"
-  }, [_vm._v("\n"), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("export")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("default")]), _vm._v(" {\n  data() {\n    "), _c('span', {
-    staticClass: "hljs-keyword"
-  }, [_vm._v("return")]), _vm._v(" {\n      "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("radio4")]), _vm._v(": "), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("'1'")]), _vm._v("\n    }\n  }\n};\n")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("script")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "radio-api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#radio-api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Radio API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("name")]), _vm._v(" "), _c('td', [_vm._v("根据这个来判断radio是否选中")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "radiogroup-api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#radiogroup-api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" RadioGroup API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("disabled")]), _vm._v(" "), _c('td', [_vm._v("是否禁用单选框")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("false")]), _vm._v(" "), _c('td')])])])])
-}]}
-
-/***/ }),
-/* 258 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "page-radio"
-  }, [_c('h1', {
-    staticClass: "page-title"
-  }, [_vm._v("Radio")]), _vm._v(" "), _c('div', {
-    staticClass: "demo-wrapper"
-  }, [_c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("基础用法")]), _vm._v(" "), _c('zan-radio', {
-    attrs: {
-      "name": "1"
-    },
-    model: {
-      value: (_vm.radio1),
-      callback: function($$v) {
-        _vm.radio1 = $$v
-      }
-    }
-  }, [_vm._v("单选框1")]), _vm._v(" "), _c('zan-radio', {
-    attrs: {
-      "name": "2"
-    },
-    model: {
-      value: (_vm.radio1),
-      callback: function($$v) {
-        _vm.radio1 = $$v
-      }
-    }
-  }, [_vm._v("单选框2")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("禁用状态")]), _vm._v(" "), _c('zan-radio', {
-    attrs: {
-      "name": "1",
-      "disabled": ""
-    },
-    model: {
-      value: (_vm.radio2),
-      callback: function($$v) {
-        _vm.radio2 = $$v
-      }
-    }
-  }, [_vm._v("未选中禁用")]), _vm._v(" "), _c('zan-radio', {
-    attrs: {
-      "name": "2",
-      "disabled": ""
-    },
-    model: {
-      value: (_vm.radio2),
-      callback: function($$v) {
-        _vm.radio2 = $$v
-      }
-    }
-  }, [_vm._v("选中且禁用")]), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("radio组")]), _vm._v(" "), _c('zan-radio-group', {
-    model: {
-      value: (_vm.radio3),
-      callback: function($$v) {
-        _vm.radio3 = $$v
-      }
-    }
-  }, [_c('zan-radio', {
-    attrs: {
-      "name": "1"
-    }
-  }, [_vm._v("单选框1")]), _vm._v(" "), _c('zan-radio', {
-    attrs: {
-      "name": "2"
-    }
-  }, [_vm._v("单选框2")])], 1), _vm._v(" "), _c('h2', {
-    staticClass: "page-sub-title"
-  }, [_vm._v("与Cell组件一起使用")])], 1), _vm._v(" "), _c('zan-radio-group', {
-    model: {
-      value: (_vm.radio4),
-      callback: function($$v) {
-        _vm.radio4 = $$v
-      }
-    }
-  }, [_c('zan-cell-group', [_c('zan-cell', [_c('zan-radio', {
-    attrs: {
-      "name": "1"
-    }
-  }, [_vm._v("单选框1")])], 1), _vm._v(" "), _c('zan-cell', [_c('zan-radio', {
-    attrs: {
-      "name": "2"
-    }
-  }, [_vm._v("单选框2")])], 1)], 1)], 1)], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 259 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('section', [_c('h2', {
-    attrs: {
-      "id": "picker-zu-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#picker-zu-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" Picker组件")]), _vm._v(" "), _c('p', [_vm._v("模仿iOS中的"), _c('code', [_vm._v("UIPickerView")]), _vm._v("。")]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "ji-chu-yong-fa"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#ji-chu-yong-fa",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
-    staticClass: "hljs language-html"
-  }, [_c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("<"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-picker")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v(":columns")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"pickerColumns\"")]), _vm._v(" "), _c('span', {
-    staticClass: "hljs-attr"
-  }, [_vm._v("@change")]), _vm._v("="), _c('span', {
-    staticClass: "hljs-string"
-  }, [_vm._v("\"handlePickerChange\"")]), _vm._v(">")]), _c('span', {
-    staticClass: "hljs-tag"
-  }, [_vm._v("</"), _c('span', {
-    staticClass: "hljs-name"
-  }, [_vm._v("zan-picker")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "api"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#api",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" API")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("可选值")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("visibileColumnCount")]), _vm._v(" "), _c('td', [_vm._v("每一列可见备选元素的个数")]), _vm._v(" "), _c('td', [_vm._v("Number")]), _vm._v(" "), _c('td', [_vm._v("5")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("itemHeight")]), _vm._v(" "), _c('td', [_vm._v("选中元素区高度")]), _vm._v(" "), _c('td', [_vm._v("Number")]), _vm._v(" "), _c('td', [_vm._v("44")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("columns")]), _vm._v(" "), _c('td', [_vm._v("对象数组，配置每一列显示的数据")]), _vm._v(" "), _c('td', [_vm._v("Array")]), _vm._v(" "), _c('td'), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("showToolbar")]), _vm._v(" "), _c('td', [_vm._v("是否在组件顶部显示一个toolbar")]), _vm._v(" "), _c('td', [_vm._v("Boolean")]), _vm._v(" "), _c('td', [_vm._v("true")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "columns"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#columns",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" columns")]), _vm._v(" "), _c('p', [_c('code', [_vm._v("API")]), _vm._v("中的"), _c('code', [_vm._v("columns")]), _vm._v("为一个对象数组，数组中的每一个对象配置每一列，每一列有以下"), _c('code', [_vm._v("key")]), _vm._v("：")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("key")]), _vm._v(" "), _c('th', [_vm._v("说明")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("values")]), _vm._v(" "), _c('td', [_vm._v("列中对应的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("defaultIndex")]), _vm._v(" "), _c('td', [_vm._v("初始选中值的索引，默认为0")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("className")]), _vm._v(" "), _c('td', [_vm._v("为对应列添加特殊的"), _c('code', [_vm._v("class")])])])])]), _vm._v(" "), _c('h3', {
-    attrs: {
-      "id": "change-shi-jian"
-    }
-  }, [_c('a', {
-    staticClass: "header-anchor",
-    attrs: {
-      "href": "#change-shi-jian",
-      "aria-hidden": "true"
-    }
-  }, [_vm._v("¶")]), _vm._v(" change事件")]), _vm._v(" "), _c('p', [_vm._v("在"), _c('code', [_vm._v("change")]), _vm._v("事件中，可以获取到"), _c('code', [_vm._v("picker")]), _vm._v("实例，对"), _c('code', [_vm._v("picker")]), _vm._v("进行相应的更新等操作：")]), _vm._v(" "), _c('table', {
-    staticClass: "table"
-  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("函数")]), _vm._v(" "), _c('th', [_vm._v("说明")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("getColumnValue(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValue(index, value)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中选中的值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getColumnValues(index)")]), _vm._v(" "), _c('td', [_vm._v("获取对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setColumnValues(index, values)")]), _vm._v(" "), _c('td', [_vm._v("设置对应列中所有的备选值")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("getValues()")]), _vm._v(" "), _c('td', [_vm._v("获取所有列中被选中的值，返回一个数组")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("setValues(values)")]), _vm._v(" "), _c('td', [_c('code', [_vm._v("values")]), _vm._v("为一个数组，设置所有列中被选中的值")])])])])])
-}]}
-
-/***/ }),
-/* 260 */
+/* 303 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -10505,7 +12417,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 261 */
+/* 304 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -10547,17 +12459,185 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "page-switch__text"
-  }, [_vm._v("OFF, DISABLED")])], 1)])])
+  }, [_vm._v("OFF, DISABLED")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "page-switch__wrapper"
+  }, [_c('zan-switch', {
+    staticClass: "some-customized-class",
+    attrs: {
+      "checked": true,
+      "loading": true
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "page-switch__text"
+  }, [_vm._v("ON, LOADING")])], 1), _vm._v(" "), _c('div', {
+    staticClass: "page-switch__wrapper"
+  }, [_c('zan-switch', {
+    staticClass: "some-customized-class",
+    attrs: {
+      "checked": false,
+      "loading": true
+    }
+  }), _vm._v(" "), _c('div', {
+    staticClass: "page-switch__text"
+  }, [_vm._v("OFF, LOADING")])], 1)])])
 },staticRenderFns: []}
 
 /***/ }),
-/* 262 */
+/* 305 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('section', [_c('h2', {
+    attrs: {
+      "id": "badge-zu-jian"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#badge-zu-jian",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" Badge 组件")]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "ji-chu-yong-fa"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#ji-chu-yong-fa",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" 基础用法")]), _vm._v(" "), _c('pre', [_c('code', {
+    staticClass: "hljs language-html"
+  }, [_c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge-group")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("active-key")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("mark")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"0\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"热销榜\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("info")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"8\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("url")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"http://baidu.com\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("mark")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"1\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"花式寿司\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("info")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"99\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("mark")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"2\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"火炽寿司\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(">")]), _vm._v("\n  "), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("<"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("mark")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"3\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("title")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"手握寿司\"")]), _vm._v(" "), _c('span', {
+    staticClass: "hljs-attr"
+  }, [_vm._v("info")]), _vm._v("="), _c('span', {
+    staticClass: "hljs-string"
+  }, [_vm._v("\"199\"")]), _vm._v(">")]), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge")]), _vm._v(">")]), _vm._v("\n"), _c('span', {
+    staticClass: "hljs-tag"
+  }, [_vm._v("</"), _c('span', {
+    staticClass: "hljs-name"
+  }, [_vm._v("zan-badge-group")]), _vm._v(">")]), _vm._v("\n")])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "z-badge-group-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#z-badge-group-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" z-badge-group API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("必须")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("active-key")]), _vm._v(" "), _c('td', [_vm._v("激活的badge的索引")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("'0'但必须子badge里的mark是有0位索引")]), _vm._v(" "), _c('td')])])]), _vm._v(" "), _c('h3', {
+    attrs: {
+      "id": "z-badge-api"
+    }
+  }, [_c('a', {
+    staticClass: "header-anchor",
+    attrs: {
+      "href": "#z-badge-api",
+      "aria-hidden": "true"
+    }
+  }, [_vm._v("¶")]), _vm._v(" z-badge API")]), _vm._v(" "), _c('table', {
+    staticClass: "table"
+  }, [_c('thead', [_c('tr', [_c('th', [_vm._v("参数")]), _vm._v(" "), _c('th', [_vm._v("说明")]), _vm._v(" "), _c('th', [_vm._v("类型")]), _vm._v(" "), _c('th', [_vm._v("默认值")]), _vm._v(" "), _c('th', [_vm._v("必须")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("mark")]), _vm._v(" "), _c('td', [_vm._v("badge的唯一key值")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("required")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("title")]), _vm._v(" "), _c('td', [_vm._v("badge的文案标题")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td', [_vm._v("required")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("info")]), _vm._v(" "), _c('td', [_vm._v("当前badge的提示消息数量")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("''")]), _vm._v(" "), _c('td')]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("url")]), _vm._v(" "), _c('td', [_vm._v("跳转链接")]), _vm._v(" "), _c('td', [_vm._v("string")]), _vm._v(" "), _c('td', [_vm._v("全连接直接跳转或者hash")]), _vm._v(" "), _c('td')])])])])
+}]}
+
+/***/ }),
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(196);
+var content = __webpack_require__(223);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10577,14 +12657,14 @@ if(false) {
 }
 
 /***/ }),
-/* 263 */,
-/* 264 */
+/* 307 */,
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(198);
+var content = __webpack_require__(225);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10604,23 +12684,23 @@ if(false) {
 }
 
 /***/ }),
-/* 265 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(199);
+var content = __webpack_require__(226);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(14)("066c09a4", content, true);
+var update = __webpack_require__(14)("9ce34130", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5168a11c!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-2.vue", function() {
-     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-5168a11c!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-2.vue");
+   module.hot.accept("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-42176c3e!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkbox.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-42176c3e!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./checkbox.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -10630,13 +12710,39 @@ if(false) {
 }
 
 /***/ }),
-/* 266 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(200);
+var content = __webpack_require__(227);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(14)("0dcc6677", content, true);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue", function() {
+     var newContent = require("!!../../css-loader/index.js?minimize!../../vue-loader/lib/style-rewriter.js?id=data-v-514c721a!../../vue-loader/lib/selector.js?type=styles&index=0!./cell-3.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(228);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10656,13 +12762,39 @@ if(false) {
 }
 
 /***/ }),
-/* 267 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(201);
+var content = __webpack_require__(229);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(14)("ca84493e", content, true);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6a888038!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./badge.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6a888038!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./badge.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(230);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10682,13 +12814,13 @@ if(false) {
 }
 
 /***/ }),
-/* 268 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(202);
+var content = __webpack_require__(231);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10708,13 +12840,13 @@ if(false) {
 }
 
 /***/ }),
-/* 269 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(203);
+var content = __webpack_require__(232);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10734,13 +12866,13 @@ if(false) {
 }
 
 /***/ }),
-/* 270 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(204);
+var content = __webpack_require__(233);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10760,13 +12892,39 @@ if(false) {
 }
 
 /***/ }),
-/* 271 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(205);
+var content = __webpack_require__(234);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(14)("40bd7ec8", content, true);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e61b863!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./search.vue", function() {
+     var newContent = require("!!../../node_modules/css-loader/index.js?minimize!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e61b863!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./search.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10786,13 +12944,13 @@ if(false) {
 }
 
 /***/ }),
-/* 272 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(206);
+var content = __webpack_require__(236);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10812,13 +12970,13 @@ if(false) {
 }
 
 /***/ }),
-/* 273 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(207);
+var content = __webpack_require__(237);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10838,13 +12996,13 @@ if(false) {
 }
 
 /***/ }),
-/* 274 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(208);
+var content = __webpack_require__(238);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -10864,88 +13022,106 @@ if(false) {
 }
 
 /***/ }),
-/* 275 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(221);
+module.exports = __webpack_require__(255);
 
 /***/ }),
-/* 276 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(222);
+module.exports = __webpack_require__(256);
 
 /***/ }),
-/* 277 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(223);
+module.exports = __webpack_require__(257);
 
 /***/ }),
-/* 278 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(224);
+module.exports = __webpack_require__(258);
 
 /***/ }),
-/* 279 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(225);
+module.exports = __webpack_require__(259);
 
 /***/ }),
-/* 280 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(226);
+module.exports = __webpack_require__(260);
 
 /***/ }),
-/* 281 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(227);
+module.exports = __webpack_require__(261);
 
 /***/ }),
-/* 282 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(228);
+module.exports = __webpack_require__(262);
 
 /***/ }),
-/* 283 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(229);
+module.exports = __webpack_require__(263);
 
 /***/ }),
-/* 284 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(230);
+module.exports = __webpack_require__(264);
 
 /***/ }),
-/* 285 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(231);
+module.exports = __webpack_require__(265);
 
 /***/ }),
-/* 286 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(232);
+module.exports = __webpack_require__(266);
 
 /***/ }),
-/* 287 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(233);
+module.exports = __webpack_require__(267);
 
 /***/ }),
-/* 288 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(234);
+module.exports = __webpack_require__(268);
+
+/***/ }),
+/* 336 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(269);
+
+/***/ }),
+/* 337 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(270);
+
+/***/ }),
+/* 338 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(271);
 
 /***/ })
 ]);
