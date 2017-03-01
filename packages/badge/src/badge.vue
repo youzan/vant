@@ -9,7 +9,7 @@
 export default {
   name: 'z-badge',
   props: {
-    badgeKey: {
+    mark: {
       type: [Number, String],
       required: true
     },
@@ -18,23 +18,17 @@ export default {
       required: true
     },
     url: String,
-    value: String,
     info: String
-  },
-  data () {
-    return {
-      isSelected: false
-    }
   },
   methods: {
     handleClick() {
-      this.$parent.activeKey = this.badgeKey;
+      this.$parent.computedActiveKey = this.mark;
     }
   },
   computed: {
     classNames () {
       return {
-        'is-select': this.badgeKey == this.$parent.activeKey ? true : false
+        'is-select': this.mark == this.$parent.computedActiveKey ? true : false
       }
     }
   }
