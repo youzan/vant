@@ -1,16 +1,16 @@
 <template>
-  <div class="z-search" :class="{ 'is-focus' : isFocus }">
-    <div class="z-search__input-wrap">
+  <div class="zan-search" :class="{ 'is-focus' : isFocus }">
+    <div class="zan-search__input-wrap">
       <input type="text" :placeholder="placeholder" v-model="value" v-refocus="focusStatus"  @focus="handleFocus" @keyup.enter="handleSearch">
       <span class="zui-icon zui-icon-close" @click="handleClean"></span>
     </div>
-    <div class="z-search__cancel" :class="{ 'is-focus' : isFocus }" @click="handleBack">取消</div>
+    <div class="zan-search__cancel" :class="{ 'is-focus' : isFocus }" @click="handleBack">取消</div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'z-search',
+    name: 'zan-search',
     props: {
       placeholder: {
         type: String,

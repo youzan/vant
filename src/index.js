@@ -11,9 +11,6 @@ import Picker from '../packages/picker/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
 import Waterfall from '../packages/waterfall/index.js';
 import Loading from '../packages/loading/index.js';
-import Badge from '../packages/badge/index.js';
-import BadgeGroup from '../packages/badge-group/index.js';
-import Search from '../packages/search/index.js';
 import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
 import Steps from '../packages/steps/index.js';
@@ -35,9 +32,6 @@ const install = function(Vue) {
   Vue.component(Picker.name, Picker);
   Vue.component(RadioGroup.name, RadioGroup);
   Vue.component(Loading.name, Loading);
-  Vue.component(Badge.name, Badge);
-  Vue.component(BadgeGroup.name, BadgeGroup);
-  Vue.component(Search.name, Search);
   Vue.component(Panel.name, Panel);
   Vue.component(Card.name, Card);
   Vue.component(Steps.name, Steps);
@@ -65,10 +59,6 @@ module.exports = {
   Dialog,
   Picker,
   RadioGroup,
-  Loading,
-  Badge,
-  BadgeGroup,
-  Search,
   Waterfall,
   Loading,
   Panel,

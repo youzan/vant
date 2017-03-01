@@ -1,7 +1,7 @@
 @import "./common/var.pcss";
 @import "./mixins/border_retina.pcss";
 
-@component-namespace z {
+@component-namespace zan {
     @b badge-group {
         position: relative;
         width: 85px;
@@ -50,7 +50,7 @@
             font-weight: bold;
             color: $c-black;
             background-color: $c-white;
-            .z-badge__active {
+            .zan-badge__active {
                 display: block;
             }
             &::after {

@@ -4,12 +4,12 @@
 
 :::demo 样例代码
 ```html
-<z-badge-group active-key="2">
-  <z-badge mark="0" title="热销榜" info="8" url="http://baidu.com"></z-badge>
-  <z-badge mark="1" title="花式寿司" info="99"></z-badge>
-  <z-badge mark="2" title="火炽寿司"></z-badge>
-  <z-badge mark="3" title="手握寿司" info="199"></z-badge>
-</z-badge-group>
+<zan-badge-group active-key="2">
+  <zan-badge mark="0" title="热销榜" info="8" url="http://baidu.com"></zan-badge>
+  <zan-badge mark="1" title="花式寿司" info="99"></zan-badge>
+  <zan-badge mark="2" title="火炽寿司"></zan-badge>
+  <zan-badge mark="3" title="手握寿司" info="199"></zan-badge>
+</zan-badge-group>
 ```
 :::
 

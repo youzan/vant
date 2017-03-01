@@ -1,13 +1,13 @@
 <template>
-    <a class="z-badge" :class="classNames" :href="url" @click="handleClick">
-      <div class="z-badge__active"></div>
-      <div v-if="info" class="z-badge__info">{{info}}</div>
+    <a class="zan-badge" :class="classNames" :href="url" @click="handleClick">
+      <div class="zan-badge__active"></div>
+      <div v-if="info" class="zan-badge__info">{{info}}</div>
       {{title}}
     </a>
 </template>
 <script>
 export default {
-  name: 'z-badge',
+  name: 'zan-badge',
   props: {
     mark: {
       type: [Number, String],

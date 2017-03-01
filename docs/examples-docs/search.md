@@ -13,11 +13,11 @@ export default {
 
 :::demo 样例代码
 ```html
-<z-search 
+<zan-search 
     placeholder="商品名称"
     :on-search="goSearch"
 >
-</z-search>
+</zan-search>
 ```
 
 ```javascript

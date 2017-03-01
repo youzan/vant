@@ -1,5 +1,5 @@
 @import "./common/var.pcss";
-@component-namespace z {
+@component-namespace zan {
     @b search {
         display: flex;
         flex-direction: row;
@@ -10,7 +10,7 @@
         padding: 4px 15px;
         background-color: #F2F2F2;
         @when focus {
-            .z-search__input-wrap {
+            .zan-search__input-wrap {
                 width: 82%;   
             }
             span {
