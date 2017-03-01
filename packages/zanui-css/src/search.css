@@ -1,4 +1,5 @@
-@import "./common/var.pcss";
+@import "./common/var.css";
+
 @component-namespace zan {
     @b search {
         display: flex;
