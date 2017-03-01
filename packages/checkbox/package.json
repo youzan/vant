@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/zan-checkbox",
+  "version": "0.0.1",
+  "description": "checkbox component",
+  "main": "./index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

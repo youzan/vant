@@ -35,6 +35,10 @@
               "title": "Steps"
             },
             {
+              "path": "/tag",
+              "title": "Tag"
+            },
+            {
               "path": "/badge",
               "title": "Badge"
             },

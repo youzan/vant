@@ -1,13 +1,13 @@
 <template>
-  <div class="z-card">
-    <img :src="thumb" alt="" class="z-card__img">
-    <div class="z-card__content" :class="{'is-center': !this.$slots.footer}">
-      <div class="z-card__info">
+  <div class="zan-card">
+    <img :src="thumb" alt="" class="zan-card__img">
+    <div class="zan-card__content" :class="{'is-center': !this.$slots.footer}">
+      <div class="zan-card__info">
         <slot name="title">
-          <h4 v-text="title" class="z-card__title"></h4>
+          <h4 v-text="title" class="zan-card__title"></h4>
         </slot>
         <slot name="desc">
-          <p v-if="desc" v-text="desc" class="z-card__title"></p>
+          <p v-if="desc" v-text="desc" class="zan-card__title"></p>
         </slot>
         <slot name="tags"></slot>
       </div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'z-card',
+  name: 'zan-card',
   props: {
     thumb: {
       type: String,

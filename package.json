@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run bootstrap && npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.js",
+    "dev": "npm run build:file && webpack-dev-server --port 8282 --inline --hot --config build/webpack.config.js",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
@@ -39,6 +39,7 @@
     "vue": "^2.1.8"
   },
   "devDependencies": {
+    "autoprefixer": "^6.7.5",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^6.1.2",
@@ -50,6 +51,7 @@
     "babel-plugin-transform-vue-jsx": "^3.3.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-runtime": "^6.11.0",
+    "cheerio": "^0.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "cp-cli": "^1.0.2",
     "cross-env": "^3.1.3",
@@ -68,6 +70,7 @@
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",
     "gulp-postcss": "^6.1.1",
+    "gulp-util": "^3.0.8",
     "highlight.js": "^9.8.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",

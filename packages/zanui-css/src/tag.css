@@ -1,0 +1,66 @@
+@import "./common/var.css";
+@import "./mixins/border_retina.css";
+
+@component-namespace zan {
+  @b tag {
+    position: relative;
+    display: inline-block;
+    line-height: 14px;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 10px;
+    background: $c-gray;
+    color: $c-white;
+
+    &::after {
+      @mixin border-retina (top, right, bottom, left), $c-gray;
+      border-radius: 4px;
+    }
+
+    @m success {
+      background: $c-green;
+
+      &::after {
+        border-color: $c-green;
+      }
+      @when plain {
+        color: $c-green;
+      }
+    }
+
+    @m danger {
+      background: $button-danger-background-color;
+
+      &::after {
+        border-color: $button-danger-background-color;
+      }
+      @when plain {
+        color: $button-danger-background-color;
+      }
+    }
+
+    @m primary {
+      background: $c-blue;
+
+      &::after {
+        border-color: $c-blue;
+      }
+      @when plain {
+        color: $c-blue;
+      }
+    }
+
+    @when plain {
+      background: $c-white;
+      color: $c-gray;
+    }
+
+    @when mark {
+      border-radius: 0 8px 8px 0;
+
+      &::after {
+        border-radius: 0 16px 16px 0;
+      }
+    }
+  }
+}

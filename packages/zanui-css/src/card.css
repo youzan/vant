@@ -1,6 +1,6 @@
 @import "./mixins/ellipsis.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b card {
     padding: 5px 15px;
     background: #FAFAFA;
@@ -27,7 +27,7 @@
         display: table;
         height: 90px;
 
-        .z-card__info {
+        .zan-card__info {
           display: table-cell;
           vertical-align: middle;
         }
@@ -80,7 +80,7 @@
       right: 15px;
       bottom: 5px;
 
-      .z-button {
+      .zan-button {
         margin-left: 5px;
       }
     }

@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/z-field",
+  "name": "@youzan/zan-field",
   "version": "0.0.1",
   "description": "form field component",
   "main": "./index.js",

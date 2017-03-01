@@ -1,10 +1,10 @@
 <template>
-  <i :class="'zenui-icon-' + name"></i>
+  <i class="zanui-icon" :class="'zan-icon-' + name"></i>
 </template>
 
 <script>
   export default {
-    name: 'z-icon',
+    name: 'zan-icon',
 
     props: {
       name: String
