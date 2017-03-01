@@ -2,7 +2,7 @@
   <div class="page-radio">
     <h1 class="page-title">Radio</h1>
 
-    <div class="demo-wrapper">
+    <div class="radio-demo-wrapper">
       <h2 class="page-sub-title">基础用法</h2>
       <zan-radio name="1" v-model="radio1">单选框1</zan-radio>
       <zan-radio name="2" v-model="radio1">单选框2</zan-radio>
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <style>
-.demo-wrapper {
+.radio-demo-wrapper {
   padding: 0 15px;
 
   .zan-radio {
