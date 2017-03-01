@@ -30,10 +30,10 @@ export default {
     }
   },
   computed: {
-    classNames () {
+    classNames() {
       return {
-        'is-select': this.mark == this.$parent.computedActiveKey ? true : false
-      }
+        'is-select': this.mark === this.$parent.computedActiveKey
+      };
     }
   }
 };

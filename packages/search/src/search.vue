@@ -48,7 +48,7 @@
       },
       handleSearch() {
         // input输入回车后，发送回调
-        this.$emit('search', this.value)
+        this.$emit('search', this.value);
       }
     }
   };

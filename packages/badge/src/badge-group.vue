@@ -5,19 +5,21 @@
 </template>
 
 <script>
-export default {
-  name: 'zan-badge-group',
-  props: {
-    // 当前激活 tab 面板的 key
-    activeKey: {
-      type: [Number, String],
-      default: 0
+  export default {
+    name: 'zan-badge-group',
+
+    props: {
+      // 当前激活 tab 面板的 key
+      activeKey: {
+        type: [Number, String],
+        default: 0
+      }
+    },
+
+    data() {
+      return {
+        computedActiveKey: this.activeKey
+      };
     }
-  },
-  data () {
-    return {
-      computedActiveKey: this.activeKey
-    }
-  }
-};
+  };
 </script>

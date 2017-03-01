@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run bootstrap && npm run build:file && webpack-dev-server --port 8282 --inline --hot --config build/webpack.config.js",
+    "dev": "npm run build:file && webpack-dev-server --port 8282 --inline --hot --config build/webpack.config.js",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
