@@ -17,8 +17,12 @@ export default {
       type: String,
       required: true
     },
-    url: String,
-    info: String
+    url: {
+      type: String
+    },
+    info: {
+      type: String
+    }
   },
   methods: {
     handleClick() {

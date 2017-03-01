@@ -1,7 +1,7 @@
 <template>
   <div class="z-search" :class="{ 'is-focus' : isFocus }">
     <div class="z-search__input-wrap">
-      <input type="text" :placeholder="placeholder" v-model="value" v-refocus="focusStatus"  @focus="handleFocus">
+      <input type="text" :placeholder="placeholder" v-model="value" v-refocus="focusStatus"  @focus="handleFocus" @keyup.enter="handleSearch">
       <span class="zui-icon zui-icon-close" @click="handleClean"></span>
     </div>
     <div class="z-search__cancel" :class="{ 'is-focus' : isFocus }" @click="handleBack">取消</div>
@@ -12,7 +12,14 @@
   export default {
     name: 'z-search',
     props: {
-      placeholder: String
+      placeholder: {
+        type: String,
+        required: true
+      },
+      onSearch: {
+        type: Function,
+        default: function() {}
+      }
     },
     data() {
       return {
@@ -30,16 +37,23 @@
     },
     methods: {
       handleFocus() {
+        // 进入input焦点，出现close和取消
         this.isFocus = true;
       },
       handleClean() {
+        // 点击close后清空vlaue后，再聚焦input框
         this.value = '';
         this.focusStatus = true;
       },
       handleBack() {
+        // 点击取消后，清空所有回复最初状态
         this.value = '';
         this.focusStatus = false;
         this.isFocus = false;
+      },
+      handleSearch(ev) {
+        // input输入回车后，发送回调
+        this.onSearch(ev.target.value)
       }
     }
   };
