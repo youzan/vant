@@ -49,7 +49,7 @@ export default {
 
       set(val) {
         if (this.isGroup && this.parentGroup) {
-           this.parentGroup.$emit('input', val);
+          this.parentGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }

@@ -17,6 +17,9 @@ import Steps from '../packages/steps/index.js';
 import Tag from '../packages/tag/index.js';
 import Checkbox from '../packages/checkbox/index.js';
 import CheckboxGroup from '../packages/checkbox-group/index.js';
+import BadgeGroup from '../packages/badge-group/index.js';
+import Badge from '../packages/badge/index.js';
+import Search from '../packages/search/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -38,6 +41,9 @@ const install = function(Vue) {
   Vue.component(Tag.name, Tag);
   Vue.component(Checkbox.name, Checkbox);
   Vue.component(CheckboxGroup.name, CheckboxGroup);
+  Vue.component(BadgeGroup.name, BadgeGroup);
+  Vue.component(Badge.name, Badge);
+  Vue.component(Search.name, Search);
 };
 
 // auto install
@@ -66,5 +72,8 @@ module.exports = {
   Steps,
   Tag,
   Checkbox,
-  CheckboxGroup
+  CheckboxGroup,
+  BadgeGroup,
+  Badge,
+  Search
 };
