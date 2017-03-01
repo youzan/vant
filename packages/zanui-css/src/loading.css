@@ -23,6 +23,8 @@
   @b loading {
     width: 30px;
     height: 30px;
+    line-height: 0;
+    font-size: 0;
   }
 
   @b spinner { 
