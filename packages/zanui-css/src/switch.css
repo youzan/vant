@@ -1,28 +1,31 @@
+@import "./mixins/border_retina.css";
+
 @component-namespace zan {
   @b switch { 
     height: 29px;
     width: 49px;
     display: inline-block;
-    border-radius: 16px;
     position: relative;
-    border: 1px solid;
+    background: #fff;
+    border-radius: 16px;
+    &::after{
+      @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
+      border-width: 3px;
+      border-radius: 32px;
+    }
 
     @e node {
       width: 27px;
       height: 27px;
       border-radius: 100%;
       background-color: #fff;
-      border: .5px solid rgba(0, 0, 0, .1);
       position: absolute;
       box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
-      @when on {
-        left: 20px;
-        transition: all .5s ease-in-out;
-      }
-
-      @when off {
-        left: 0;
-        transition: all .5s ease-in-out;
+      left: 0;
+      top: 1px;
+      &::after {
+        @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
+        border-radius: 100%;
       }
     }
 
@@ -35,17 +38,20 @@
       transform: translate3d(-50%, -50%, 0);
     }
 
-    @when on {
+    @m on {
       background-color: #44db5e;
-      border-color: #44db5e;
+      &::after { border-color: #44db5e; }
+      .zan-switch__node {
+        transform: translateX(20px);
+      }
     }
 
-    @when off {
+    @m off {
       background-color: #fff;
       border-color: rgba(0, 0, 0, .1);
     }
 
-    @when disabled {
+    @m disabled {
       opacity: .4;
     }
   }
