@@ -61,9 +61,9 @@ export default {
           'zan-button--' + type,
           'zan-button--' + size,
           {
-            'is-disabled': disabled,
-            'is-loading': loading,
-            'is-block': block
+            'z-button--disabled': disabled,
+            'z-button--loading': loading,
+            'z-button--block': block
           }
         ]}
         onClick={this.handleClick}
