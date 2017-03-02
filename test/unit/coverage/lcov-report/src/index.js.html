@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.17% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>26/48</span>
+      </div>
+      <div class='fl pad1y'>
+        <span class="strong">1 branch</span>
+        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Button from '../packages/button/index.js';
+import Switch from '../packages/switch/index.js';
+import Field from '../packages/field/index.js';
+import Radio from '../packages/radio/index.js';
+import Cell from '../packages/cell/index.js';
+import Icon from '../packages/icon/index.js';
+import CellGroup from '../packages/cell-group/index.js';
+import Popup from '../packages/popup/index.js';
+import Dialog from '../packages/dialog/index.js';
+import Picker from '../packages/picker/index.js';
+import RadioGroup from '../packages/radio-group/index.js';
+import Waterfall from '../packages/waterfall/index.js';
+import Loading from '../packages/loading/index.js';
+import Panel from '../packages/panel/index.js';
+import Card from '../packages/card/index.js';
+import Steps from '../packages/steps/index.js';
+import Tag from '../packages/tag/index.js';
+import Checkbox from '../packages/checkbox/index.js';
+import CheckboxGroup from '../packages/checkbox-group/index.js';
+import BadgeGroup from '../packages/badge-group/index.js';
+import Badge from '../packages/badge/index.js';
+import Search from '../packages/search/index.js';
+&nbsp;
+const install = <span class="fstat-no" title="function not covered" >function(Vue) {</span>
+<span class="cstat-no" title="statement not covered" >  if (install.installed) <span class="cstat-no" title="statement not covered" >r</span></span>eturn;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Button.name, Button);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Switch.name, Switch);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Field.name, Field);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Radio.name, Radio);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Cell.name, Cell);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Icon.name, Icon);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(CellGroup.name, CellGroup);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Popup.name, Popup);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Picker.name, Picker);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(RadioGroup.name, RadioGroup);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Loading.name, Loading);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Panel.name, Panel);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Card.name, Card);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Steps.name, Steps);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Tag.name, Tag);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Checkbox.name, Checkbox);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(CheckboxGroup.name, CheckboxGroup);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(BadgeGroup.name, BadgeGroup);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Badge.name, Badge);
+<span class="cstat-no" title="statement not covered" >  V</span>ue.component(Search.name, Search);
+};
+&nbsp;
+// auto install
+<span class="missing-if-branch" title="if path not taken" >I</span>if (typeof window !== 'undefined' &amp;&amp; window.Vue) {
+<span class="cstat-no" title="statement not covered" >  i</span>nstall(window.Vue);
+}
+&nbsp;
+module.exports = {
+  install,
+  version: '0.0.7',
+  Button,
+  Switch,
+  Field,
+  Radio,
+  Cell,
+  Icon,
+  CellGroup,
+  Popup,
+  Dialog,
+  Picker,
+  RadioGroup,
+  Waterfall,
+  Loading,
+  Panel,
+  Card,
+  Steps,
+  Tag,
+  Checkbox,
+  CheckboxGroup,
+  BadgeGroup,
+  Badge,
+  Search
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 02 2017 17:21:26 GMT+0800 (CST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

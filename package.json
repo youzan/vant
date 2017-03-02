@@ -19,7 +19,9 @@
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:utils && npm run build:zanui-css",
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
-    "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet"
+    "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
+    "test": "karma start test/unit/karma.conf.js; npm run coverage",
+    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  "
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "vue": "^2.1.8"
   },
   "devDependencies": {
+    "2webpack2": "^1.2.1",
     "autoprefixer": "^6.7.5",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.17.0",
@@ -78,6 +81,8 @@
     "isparta-loader": "^2.0.0",
     "json-loader": "^0.5.4",
     "json-templater": "^1.0.4",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
     "lerna": "2.0.0-beta.31",
     "lolex": "^1.5.1",
     "markdown-it": "^6.1.1",
@@ -100,6 +105,7 @@
     "postcss-utils": "^1.0.1",
     "precss": "^1.4.0",
     "prismjs": "^1.5.1",
+    "progress-bar-webpack-plugin": "^1.9.3",
     "rimraf": "^2.5.4",
     "run-sequence": "^1.2.2",
     "saladcss-bem": "^0.0.1",

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for packages/waterfall/src/utils.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">packages/waterfall/src/</a> utils.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.26% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">2.7% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>1/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span></span></span></span>
+  debounce(func, wait, immediate) {
+<span class="cstat-no" title="statement not covered" >    v</span>ar timeout, args, context, timestamp, result;
+<span class="cstat-no" title="statement not covered" >    r</span>eturn <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >      c</span>ontext = this;
+<span class="cstat-no" title="statement not covered" >      a</span>rgs = arguments;
+<span class="cstat-no" title="statement not covered" >      t</span>imestamp = new Date();
+<span class="cstat-no" title="statement not covered" >      v</span>ar later = <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        v</span>ar last = (new Date()) - timestamp;
+<span class="cstat-no" title="statement not covered" >        if (last &lt; wait) {</span>
+<span class="cstat-no" title="statement not covered" >          t</span>imeout = setTimeout(later, wait - last);
+        } else {
+<span class="cstat-no" title="statement not covered" >          t</span>imeout = null;
+<span class="cstat-no" title="statement not covered" >          r</span>esult = func.apply(context, args);
+        }
+      };
+<span class="cstat-no" title="statement not covered" >      if (!timeout) {</span>
+<span class="cstat-no" title="statement not covered" >        t</span>imeout = setTimeout(later, wait);
+      }
+<span class="cstat-no" title="statement not covered" >      r</span>eturn result;
+    };
+  },
+&nbsp;
+  // 找到最近的触发滚动事件的元素
+  getScrollEventTarget(element) {
+<span class="cstat-no" title="statement not covered" >    v</span>ar currentNode = element;
+    // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
+<span class="cstat-no" title="statement not covered" >    while (currentNode &amp;&amp; currentNode.tagName !== 'HTML' &amp;&amp; currentNode.tagName !== 'BODY' &amp;&amp; currentNode.nodeType === 1) {</span>
+<span class="cstat-no" title="statement not covered" >      v</span>ar overflowY = this.getComputedStyle(currentNode).overflowY;
+<span class="cstat-no" title="statement not covered" >      if (overflowY === 'scroll' || overflowY === 'auto') {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn currentNode;
+      }
+<span class="cstat-no" title="statement not covered" >      c</span>urrentNode = currentNode.parentNode;
+    }
+<span class="cstat-no" title="statement not covered" >    r</span>eturn window;
+  },
+&nbsp;
+  // 判断元素是否被加入到页面节点内
+  isAttached(element) {
+<span class="cstat-no" title="statement not covered" >    v</span>ar currentNode = element.parentNode;
+<span class="cstat-no" title="statement not covered" >    while (currentNode) {</span>
+<span class="cstat-no" title="statement not covered" >      if (currentNode.tagName === 'HTML') {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn true;
+      }
+<span class="cstat-no" title="statement not covered" >      if (currentNode.nodeType === 11) {</span>
+<span class="cstat-no" title="statement not covered" >        r</span>eturn false;
+      }
+<span class="cstat-no" title="statement not covered" >      c</span>urrentNode = currentNode.parentNode;
+    }
+<span class="cstat-no" title="statement not covered" >    r</span>eturn false;
+  },
+&nbsp;
+  // 获取滚动高度
+  getScrollTop(element) {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn 'scrollTop' in element ? element.scrollTop : element.pageYOffset;
+  },
+&nbsp;
+  // 获取元素距离顶部高度
+  getElementTop(element) {
+<span class="cstat-no" title="statement not covered" >    if (element === window) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn this.getScrollTop(window);
+    }
+<span class="cstat-no" title="statement not covered" >    r</span>eturn element.getBoundingClientRect().top + this.getScrollTop(window);
+  },
+&nbsp;
+  getVisibleHeight(element) {
+<span class="cstat-no" title="statement not covered" >    if (element === window) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn element.innerHeight;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    r</span>eturn element.getBoundingClientRect().height;
+  },
+&nbsp;
+  getComputedStyle: document.defaultView.getComputedStyle.bind(document.defaultView)
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 02 2017 17:21:26 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/mixins/popup/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">src/mixins/popup/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.26% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.71% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/56</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Vue from 'vue';
+import merge from 'src/utils/merge';
+import PopupManager from './popup-manager';
+&nbsp;
+let idSeed = 1;
+&nbsp;
+const getDOM = <span class="fstat-no" title="function not covered" >function(dom) {</span>
+<span class="cstat-no" title="statement not covered" >  if (dom.nodeType === 3) {</span>
+<span class="cstat-no" title="statement not covered" >    d</span>om = dom.nextElementSibling || dom.nextSibling;
+<span class="cstat-no" title="statement not covered" >    g</span>etDOM(dom);
+  }
+<span class="cstat-no" title="statement not covered" >  r</span>eturn dom;
+};
+&nbsp;
+export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
+  props: {
+    /**
+     * popup当前显示状态
+     */
+    value: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * 是否显示遮罩层
+     */
+    overlay: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * 点击遮罩层是否关闭popup
+     */
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: false
+    },
+    zIndex: [String, Number],
+    /**
+     * popup滚动时是否body内容也滚动
+     * 默认为不滚动
+     */
+    lockOnScroll: {
+      type: Boolean,
+      default: true
+    }
+  },
+&nbsp;
+  watch: <span class="fstat-no" title="function not covered" >{</span>
+    value(val) {
+<span class="cstat-no" title="statement not covered" >      if (val) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.opening) <span class="cstat-no" title="statement not covered" >r</span></span>eturn;
+<span class="cstat-no" title="statement not covered" >        t</span>his.open();
+      } else {
+<span class="cstat-no" title="statement not covered" >        if (this.closing) <span class="cstat-no" title="statement not covered" >r</span></span>eturn;
+<span class="cstat-no" title="statement not covered" >        t</span>his.close();
+      }
+    }
+  },
+&nbsp;
+  beforeMount() {
+<span class="cstat-no" title="statement not covered" >    t</span>his._popupId = 'popup-' + idSeed++;
+<span class="cstat-no" title="statement not covered" >    P</span>opupManager.register(this._popupId, this);
+  },
+&nbsp;
+  data() {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn {
+      opening: false,
+      opened: false,
+      closing: false,
+      bodyOverflow: null
+    };
+  },
+&nbsp;
+  methods: <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span></span>
+    /**
+     * 显示popup
+     */
+    open(options) {
+<span class="cstat-no" title="statement not covered" >      if (this.opened) <span class="cstat-no" title="statement not covered" >r</span></span>eturn;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      t</span>his.opening = true;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      t</span>his.$emit('input', true);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      c</span>onst dom = getDOM(this.$el);
+<span class="cstat-no" title="statement not covered" >      c</span>onst props = merge({}, this, options);
+<span class="cstat-no" title="statement not covered" >      c</span>onst zIndex = props.zIndex;
+&nbsp;
+      // 如果属性中传入了`zIndex`，则覆盖`PopupManager`中对应的`zIndex`
+<span class="cstat-no" title="statement not covered" >      if (zIndex) {</span>
+<span class="cstat-no" title="statement not covered" >        P</span>opupManager.zIndex = zIndex;
+      }
+&nbsp;
+      // 如果显示遮罩层
+<span class="cstat-no" title="statement not covered" >      if (this.overlay) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.closing) {</span>
+<span class="cstat-no" title="statement not covered" >          P</span>opupManager.closeModal(this._popupId);
+<span class="cstat-no" title="statement not covered" >          t</span>his.closing = false;
+        }
+<span class="cstat-no" title="statement not covered" >        P</span>opupManager.openModal(this._popupId, PopupManager.nextZIndex(), dom);
+&nbsp;
+        // 如果滚动时需要锁定
+<span class="cstat-no" title="statement not covered" >        if (this.lockOnScroll) {</span>
+          // 将原来的`bodyOverflow`存起来
+<span class="cstat-no" title="statement not covered" >          if (!this.bodyOverflow) {</span>
+<span class="cstat-no" title="statement not covered" >            t</span>his.bodyOverflow = document.body.style.overflow;
+          }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >          d</span>ocument.body.style.overlay = 'hidden';
+        }
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      d</span>om.style.zIndex = PopupManager.nextZIndex();
+<span class="cstat-no" title="statement not covered" >      t</span>his.opened = true;
+<span class="cstat-no" title="statement not covered" >      t</span>his.opening = false;
+    },
+&nbsp;
+    /**
+     * 关闭popup
+     */
+    close() <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      if (this.closing) <span class="cstat-no" title="statement not covered" >r</span></span>eturn;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      t</span>his.closing = true;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      t</span>his.$emit('input', false);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      if (this.lockOnScroll) {</span>
+<span class="cstat-no" title="statement not covered" >        s</span>etTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          if (this.modal &amp;&amp; this.bodyOverflow !== 'hidden') {</span>
+<span class="cstat-no" title="statement not covered" >            d</span>ocument.body.style.overflow = this.bodyOverflow;
+          }
+<span class="cstat-no" title="statement not covered" >          t</span>his.bodyOverflow = null;
+        }, 200);
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      t</span>his.opened = false;
+<span class="cstat-no" title="statement not covered" >      t</span>his.doAfterClose();
+    },
+&nbsp;
+    doAfterClose() {
+<span class="cstat-no" title="statement not covered" >      t</span>his.closing = false;
+<span class="cstat-no" title="statement not covered" >      P</span>opupManager.closeModal(this._popupId);
+    }
+  },
+&nbsp;
+  beforeDestroy() {
+<span class="cstat-no" title="statement not covered" >    P</span>opupManager.deregister(this._popupId);
+<span class="cstat-no" title="statement not covered" >    P</span>opupManager.closeModal(this._popupId);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (this.modal &amp;&amp; this.bodyOverflow !== null &amp;&amp; this.bodyOverflow !== 'hidden') {</span>
+<span class="cstat-no" title="statement not covered" >      d</span>ocument.body.style.overflow = this.bodyOverflow;
+    }
+<span class="cstat-no" title="statement not covered" >    t</span>his.bodyOverflow = null;
+  }
+};
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Mar 02 2017 17:21:26 GMT+0800 (CST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>
