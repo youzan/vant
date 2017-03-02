@@ -10,4 +10,4 @@ lib/*
 node_modules
 example/dist
 dist
-test/unit/coverage/*
+test/unit/coverage
