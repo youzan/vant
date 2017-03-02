@@ -1,5 +1,7 @@
+@import "./common/var.css";
+
 @component-namespace zan {
   @b steps {
-    color: red;
+    padding: 15px 0;
   }
 }

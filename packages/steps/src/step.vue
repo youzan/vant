@@ -6,6 +6,10 @@
 
 <script>
 export default {
-  name: 'zan-step'
+  name: 'zan-step',
+
+  props: {
+    title: String
+  }
 };
 </script>
