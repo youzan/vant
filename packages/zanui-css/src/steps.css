@@ -12,6 +12,12 @@
       }
     }
 
+    @m 3 {
+      .zan-step {
+        width: 50%;
+      }
+    }
+
     @e icon {
       font-size: 40px;
       line-height: 1;
