@@ -49,13 +49,13 @@ const install = function(Vue) {
 };
 
 // auto install
-// if (typeof window !== 'undefined' && window.Vue) {
-//   install(window.Vue);
-// }
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
 
 module.exports = {
   install,
-  version: '0.0.11',
+  version: '0.0.12',
   Button,
   Switch,
   Field,
