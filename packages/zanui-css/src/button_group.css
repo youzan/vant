@@ -6,16 +6,16 @@
   &:last-child {
     padding-right: 0;
   }
-  .z-button {
+  .zan-button {
     width: 100%;
   }
 }
 
-@component-namespace z {
+@component-namespace zan {
   @b button-group {
     font-size: 0;
 
-    > .z-button {
+    > .zan-button {
       margin-right: 10px;
       &::last-child {
         margin-right: 0;

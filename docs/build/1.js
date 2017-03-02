@@ -1,17 +1,17 @@
 webpackJsonp([1],{
 
-/***/ 165:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(249)
+__webpack_require__(307)
 
 var Component = __webpack_require__(0)(
   /* script */
-  __webpack_require__(175),
+  __webpack_require__(204),
   /* template */
-  __webpack_require__(226),
+  __webpack_require__(274),
   /* scopeId */
   null,
   /* cssModules */
@@ -23,7 +23,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 175:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -33,7 +33,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _navConfig = __webpack_require__(22);
+var _navConfig = __webpack_require__(7);
 
 var _navConfig2 = _interopRequireDefault(_navConfig);
 
@@ -95,10 +95,10 @@ exports.default = {
 
 /***/ }),
 
-/***/ 191:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(14)();
+exports = module.exports = __webpack_require__(4)();
 // imports
 
 
@@ -110,7 +110,7 @@ exports.push([module.i, ".side-nav{width:100%;box-sizing:border-box;padding:40px
 
 /***/ }),
 
-/***/ 226:
+/***/ 274:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -168,17 +168,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 
 /***/ }),
 
-/***/ 249:
+/***/ 307:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(191);
+var content = __webpack_require__(224);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(43)("1517d9c0", content, true);
+var update = __webpack_require__(14)("1517d9c0", content, true);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags

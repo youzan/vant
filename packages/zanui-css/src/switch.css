@@ -1,5 +1,5 @@
-@component-namespace z {
-  @component switch { 
+@component-namespace zan {
+  @b switch { 
     height: 29px;
     width: 49px;
     display: inline-block;
@@ -7,7 +7,7 @@
     position: relative;
     border: 1px solid;
 
-    @descendent node {
+    @e node {
       width: 27px;
       height: 27px;
       border-radius: 100%;
@@ -16,14 +16,23 @@
       position: absolute;
       box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
       @when on {
-        left: 0;
+        left: 20px;
         transition: all .5s ease-in-out;
       }
 
       @when off {
-        left: 20px;
+        left: 0;
         transition: all .5s ease-in-out;
       }
+    }
+
+    @e loading {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
     }
 
     @when on {
@@ -36,18 +45,8 @@
       border-color: rgba(0, 0, 0, .1);
     }
 
-    @when loading {
-        /* TODO */
-    }
-
     @when disabled {
-      @when off {
-        background-color: #f2f2f2;
-        border-color: rgba(0, 0, 0, .1);
-      }
-      @when on {
-        background-color: #a6e7b1;
-      }
+      opacity: .4;
     }
   }
 }

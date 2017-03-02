@@ -1,7 +1,7 @@
 <template>
   <div class="examples-container">
     <router-link class="page-back" v-if="visible" :to="'/'">
-      <i class="zui-icon zui-icon-arrow"></i>
+      <i class="zan-icon zan-icon-arrow"></i>
     </router-link>
     <router-view></router-view>
   </div>

@@ -5,11 +5,7 @@ import navConfig from './nav.config.json';
 import routes from './router.config';
 import SideNav from './components/side-nav';
 import Mobile from './components/mobile';
-import ZanUI from '../src/index';
 
-import '../packages/zanui-css/src/index.css';
-
-Vue.use(ZanUI);
 Vue.use(VueRouter);
 Vue.component('side-nav', SideNav);
 Vue.component('mobile', Mobile);

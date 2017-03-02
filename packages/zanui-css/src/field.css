@@ -1,42 +1,42 @@
 @import "./common/var.css";
 @import "./mixins/border_retina.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b field {
     width: 100%;
     overflow: hidden;
 
     @when textarea {
-      .z-field__control {
+      .zan-field__control {
         min-height: 60px;
       }
     }
 
     @when nolabel {
-      .z-cell__title {
+      .zan-cell__title {
         display: none;
       }
 
-      .z-cell__value {
+      .zan-cell__value {
         width: 100%;
         padding-left: 0;
       }
     }
 
-    .z-cell__title,
-    .z-cell__value {
+    .zan-cell__title,
+    .zan-cell__value {
       float: none;
       box-sizing: border-box;
     }
 
-    .z-cell__title {
+    .zan-cell__title {
       width: 90px;
       position: absolute;
       top: 10px;
       left: 0;
     }
 
-    .z-cell__value {
+    .zan-cell__value {
       width: 100%;
       padding-left: 90px;
     }

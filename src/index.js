@@ -14,6 +14,13 @@ import Loading from '../packages/loading/index.js';
 import Panel from '../packages/panel/index.js';
 import Card from '../packages/card/index.js';
 import Steps from '../packages/steps/index.js';
+import Tag from '../packages/tag/index.js';
+import Checkbox from '../packages/checkbox/index.js';
+import CheckboxGroup from '../packages/checkbox-group/index.js';
+import BadgeGroup from '../packages/badge-group/index.js';
+import Badge from '../packages/badge/index.js';
+import Search from '../packages/search/index.js';
+import Step from '../packages/step/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -32,16 +39,23 @@ const install = function(Vue) {
   Vue.component(Panel.name, Panel);
   Vue.component(Card.name, Card);
   Vue.component(Steps.name, Steps);
+  Vue.component(Tag.name, Tag);
+  Vue.component(Checkbox.name, Checkbox);
+  Vue.component(CheckboxGroup.name, CheckboxGroup);
+  Vue.component(BadgeGroup.name, BadgeGroup);
+  Vue.component(Badge.name, Badge);
+  Vue.component(Search.name, Search);
+  Vue.component(Step.name, Step);
 };
 
 // auto install
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
+// if (typeof window !== 'undefined' && window.Vue) {
+//   install(window.Vue);
+// }
 
-export default {
+module.exports = {
   install,
-  version: '0.0.4',
+  version: '0.0.10',
   Button,
   Switch,
   Field,
@@ -57,5 +71,12 @@ export default {
   Loading,
   Panel,
   Card,
-  Steps
+  Steps,
+  Tag,
+  Checkbox,
+  CheckboxGroup,
+  BadgeGroup,
+  Badge,
+  Search,
+  Step
 };

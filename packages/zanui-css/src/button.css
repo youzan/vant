@@ -1,6 +1,6 @@
 @import "./common/var.css";
 
-@component-namespace z {
+@component-namespace zan {
   @b button {
     position: relative;
     padding: 0;

@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.4",
+  "version": "0.0.10",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -39,6 +39,7 @@
     "vue": "^2.1.8"
   },
   "devDependencies": {
+    "autoprefixer": "^6.7.5",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^6.1.2",
@@ -50,6 +51,7 @@
     "babel-plugin-transform-vue-jsx": "^3.3.0",
     "babel-preset-es2015": "^6.16.0",
     "babel-runtime": "^6.11.0",
+    "cheerio": "^0.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "cp-cli": "^1.0.2",
     "cross-env": "^3.1.3",
@@ -68,6 +70,7 @@
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",
     "gulp-postcss": "^6.1.1",
+    "gulp-util": "^3.0.8",
     "highlight.js": "^9.8.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",

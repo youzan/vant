@@ -2,12 +2,12 @@
   <div class="page-dialog">
     <h1 class="page-title">Dialog</h1>
 
-    <div class="z-button-1">
-      <z-button @click="handleAlertClick">点击我打开alert提示框</z-button>
+    <div class="zan-button-1">
+      <zan-button @click="handleAlertClick">点击我打开alert提示框</zan-button>
     </div>
 
-    <div class="z-button-1">
-      <z-button @click="handleConfirmClick">点击我打开confirm提示框</z-button>
+    <div class="zan-button-1">
+      <zan-button @click="handleConfirmClick">点击我打开confirm提示框</zan-button>
     </div>
 
   </div>
@@ -46,7 +46,7 @@ export default {
   @b dialog {
     padding: 0 15px;
 
-    .z-button-1 {
+    .zan-button-1 {
       margin-bottom: 10px;
     }
   }
