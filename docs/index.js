@@ -42,7 +42,6 @@ router.afterEach(route => {
     Vue.nextTick(() => {
       document.body.scrollTop = indexScrollTop;
     });
-
   }
 });
 

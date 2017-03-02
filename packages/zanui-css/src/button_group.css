@@ -2,6 +2,7 @@
   display: inline-block;
   box-sizing: border-box;
   padding-right: 10px;
+  vertical-align: middle;
   &:last-child {
     padding-right: 0;
   }

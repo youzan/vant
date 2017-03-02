@@ -75,13 +75,13 @@
       font-size: 10px;
     }
 
-    @when disabled {
+    @m disabled {
       color: $button-disabled-color;
       background-color: $button-disabled-background-color;
       border: 1px solid $button-disabled-border-color;
     }
 
-    @when block {
+    @m block {
       display: block;
     }
   }
