@@ -55,7 +55,7 @@ const install = function(Vue) {
 
 module.exports = {
   install,
-  version: '0.0.9',
+  version: '0.0.10',
   Button,
   Switch,
   Field,
