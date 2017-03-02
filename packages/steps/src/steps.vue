@@ -16,19 +16,19 @@ export default {
   props: {
     active: Number,
     icon: String,
-    iconClass: String,
+    // iconClass: String,
     title: String,
     description: String
   },
 
   computed: {
-    computedIconClass() {
-      let iconName = `zan-icon-${this.icon}`;
-      let result = (iconClass && iconClass.split(' ')) || [];
-      result.push(iconName);
+    // computedIconClass() {
+    //   let iconName = `zan-icon-${this.icon}`;
+    //   let result = (iconClass && iconClass.split(' ')) || [];
+    //   result.push(iconName);
 
-      return result;
-    }
+    //   return result;
+    // }
   }
 };
 </script>

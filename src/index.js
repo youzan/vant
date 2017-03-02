@@ -48,14 +48,14 @@ const install = function(Vue) {
   Vue.component(Step.name, Step);
 };
 
-auto install
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
+// auto install
+// if (typeof window !== 'undefined' && window.Vue) {
+//   install(window.Vue);
+// }
 
 module.exports = {
   install,
-  version: '0.0.8',
+  version: '0.0.9',
   Button,
   Switch,
   Field,
