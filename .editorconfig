@@ -16,7 +16,7 @@ indent_size = 2
 [*.vue]
 indent_size = 2
 
-[*.pcss]
+[*.css]
 indent_size = 2
 
 [Makefile]

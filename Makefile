@@ -1,3 +1,4 @@
+.PHONY: test
 usage = "\
 Usage:                       make <option> \n\n\
 init componentname           初始化一个新组件，请忽视makefile的报错  \n\n\
@@ -12,3 +13,6 @@ init:
 
 dev:
 	npm run dev
+
+test:
+	npm run test
