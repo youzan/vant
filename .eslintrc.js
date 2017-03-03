@@ -10,7 +10,8 @@ module.exports = {
 
   env: {
     es6: true,
-    node: true
+    node: true,
+    mocha: true
   },
 
   plugins: ['vue'],
@@ -22,10 +23,6 @@ module.exports = {
     document: false,
     navigator: false,
     window: false
-  },
-
-  env: {
-    mocha: true
   },
 
   rules: {
