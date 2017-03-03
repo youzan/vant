@@ -1,3 +1,9 @@
+require('babel-polyfill');
+
+require('babel-core/register')({
+  presets: [require('babel-preset-es2015')]
+});
+
 var webpackConfig = require('./get-webpack-conf');
 
 module.exports = function(config) {
