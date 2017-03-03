@@ -1,6 +1,6 @@
-import { addClass, removeClass } from 'src/utils/dom';
+import { addClass } from 'src/utils/dom';
 
-let hasModal = false;
+let hasModal = false; // eslint-disable-line
 
 const getModal = function() {
   let modalDom = PopupManager.modalDom;

@@ -5,6 +5,7 @@
   @b cell-group {
     padding-left: 10px;
     position: relative;
+    background-color: #fff;
 
     &::after {
       @mixin border-retina (top, bottom);

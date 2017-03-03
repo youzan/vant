@@ -1,8 +1,9 @@
 <template>
-  <div class="zan-switch" :class="switchState" @click="toggleState">
-    <div class="zan-switch__node" :class="switchState">
+  <div class="zan-switch" :class="switchStates" @click="toggleState">
+    <div class="zan-switch__node">
       <zan-loading v-if="loading" class="zan-switch__loading"></zan-loading>
     </div>
+    <div class="zan-switch__bg"></div>
   </div>
 </template>
 
@@ -40,13 +41,11 @@ export default {
     }
   },
   computed: {
-    switchState: function() {
-      let switchState = this.checked ? ['is-on'] : ['is-off'];
+    switchStates: function() {
+      let switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off'),
+        'zan-switch--' + (this.disabled ? 'disabled' : '')];
 
-      if (this.disabled) switchState.push('is-disabled');
-      if (this.loading) switchState.push('is-loading');
-
-      return switchState;
+      return switchStates;
     }
   },
   methods: {

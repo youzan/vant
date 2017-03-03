@@ -14,7 +14,7 @@ describe('Switch', () => {
     vm.mount();
 
     expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('is-on')).to.true;
+    expect(vm.el.classList.contains('zan-switch--on')).to.true;
   });
 
   it('create off switch', () => {
@@ -42,11 +42,11 @@ describe('Switch', () => {
     });
     vm.mount();
     expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('is-off')).to.true;
+    expect(vm.el.classList.contains('zan-switch--off')).to.true;
     vm.el.click();
 
     setTimeout(() => {
-      expect(vm.el.classList.contains('is-off')).to.true;
+      expect(vm.el.classList.contains('zan-switch--off')).to.true;
       done();
     });
   });
@@ -72,11 +72,11 @@ describe('Switch', () => {
     });
     vm.mount();
     expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('is-off')).to.true;
+    expect(vm.el.classList.contains('zan-switch--off')).to.true;
     vm.el.click();
 
     setTimeout(() => {
-      expect(vm.el.classList.contains('is-on')).to.true;
+      expect(vm.el.classList.contains('zan-switch--on')).to.true;
       done();
     });
   });
