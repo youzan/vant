@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     switchStates: function() {
-      let switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off'),
+      const switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off'),
         'zan-switch--' + (this.disabled ? 'disabled' : '')];
 
       return switchStates;

@@ -1,0 +1,15 @@
+@component-namespace zan {
+  @b image-preview {
+    position: absolute;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+
+    @e image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}

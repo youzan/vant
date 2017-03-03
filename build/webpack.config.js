@@ -84,12 +84,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
-      }
-    }),
-    new ExtractTextPlugin(`yzvue_base_${version}_min.css`),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
       },
       output: {
         comments: false
@@ -101,9 +95,7 @@ if (process.env.NODE_ENV === 'production') {
     })
   ];
 } else {
-  // development 环境不会抽css - -
   module.exports.plugins = [
-    new ExtractTextPlugin('style.dev.css'),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {

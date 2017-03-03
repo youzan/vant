@@ -10,16 +10,20 @@ module.exports = {
 
   env: {
     es6: true,
-    node: true
+    node: true,
+    mocha: true
   },
 
   plugins: ['vue'],
 
   globals: {
+    expect: true,
+    sinon: true,
     zanui: true,
     document: false,
     navigator: false,
-    window: false
+    window: false,
+    require: true
   },
 
   rules: {

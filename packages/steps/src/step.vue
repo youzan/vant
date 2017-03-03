@@ -21,8 +21,8 @@ export default {
 
   computed: {
     status() {
-      let index = this.$parent.steps.indexOf(this);
-      let active = this.$parent.active;
+      const index = this.$parent.steps.indexOf(this);
+      const active = this.$parent.active;
 
       if (index === -1) {
         return '';

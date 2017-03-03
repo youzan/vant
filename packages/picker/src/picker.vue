@@ -66,8 +66,8 @@ export default {
 
   computed: {
     values() {
-      let columns = this.columns || [];
-      let values = [];
+      const columns = this.columns || [];
+      const values = [];
 
       columns.forEach(column => {
         values.push(column.value || column.values[column.defaultIndex || 0]);
@@ -89,7 +89,7 @@ export default {
      * 获取对应索引的列的实例
      */
     getColumn(index) {
-      let children = this.$children.filter(child => child.$options.name === 'zan-picker-column');
+      const children = this.$children.filter(child => child.$options.name === 'zan-picker-column');
       return children[index];
     },
 
@@ -97,7 +97,7 @@ export default {
      * 获取对应列中选中的值
      */
     getColumnValue(index) {
-      let column = this.getColumn(index);
+      const column = this.getColumn(index);
       return column && column.values[column.valueIndex];
     },
 
@@ -105,7 +105,7 @@ export default {
      * 设置对应列中选中的值
      */
     setColumnValue(index, value) {
-      let column = this.getColumn(index);
+      const column = this.getColumn(index);
       if (column) {
         column.currentValue = value;
       }
@@ -115,7 +115,7 @@ export default {
      * 获取对应列中所有的备选值
      */
     getColumnValues(index) {
-      let column = this.getColumn(index);
+      const column = this.getColumn(index);
       return column && column.currentValues;
     },
 
@@ -123,7 +123,7 @@ export default {
      * 设置对应列中所有的备选值
      */
     setColumnValues(index, values) {
-      let column = this.getColumn(index);
+      const column = this.getColumn(index);
       if (column) {
         column.currentValues = values;
       }
