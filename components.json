@@ -23,5 +23,6 @@
   "search": "./packages/search/index.js",
   "step": "./packages/step/index.js",
   "tabs": "./packages/tabs/index.js",
-  "tab": "./packages/tab/index.js"
+  "tab": "./packages/tab/index.js",
+  "lazyload": "./packages/lazyload/index.js"
 }
