@@ -34,8 +34,8 @@ export default {
 
   computed: {
     computedIconClass() {
-      let iconName = `zan-icon-${this.icon}`;
-      let result = this.iconClass.split(' ');
+      const iconName = `zan-icon-${this.icon}`;
+      const result = this.iconClass.split(' ');
       result.push(iconName);
 
       return result;

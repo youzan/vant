@@ -21,7 +21,8 @@ module.exports = {
     zanui: true,
     document: false,
     navigator: false,
-    window: false
+    window: false,
+    require: true
   },
 
   env: {

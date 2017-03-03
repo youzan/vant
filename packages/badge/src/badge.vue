@@ -5,6 +5,7 @@
       {{title}}
     </a>
 </template>
+
 <script>
 export default {
   name: 'zan-badge',
