@@ -21,6 +21,8 @@ import BadgeGroup from '../packages/badge-group/index.js';
 import Badge from '../packages/badge/index.js';
 import Search from '../packages/search/index.js';
 import Step from '../packages/step/index.js';
+import Tabs from '../packages/tabs/index.js';
+import Tab from '../packages/tab/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -46,6 +48,8 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
   Vue.component(Step.name, Step);
+  Vue.component(Tabs.name, Tabs);
+  Vue.component(Tab.name, Tab);
 };
 
 // auto install
@@ -78,5 +82,7 @@ module.exports = {
   BadgeGroup,
   Badge,
   Search,
-  Step
+  Step,
+  Tabs,
+  Tab
 };
