@@ -20,9 +20,11 @@ $c-background: #f8f8f8;
 $button-primary-color: $c-white;
 $button-primary-background-color: $c-green-wx;
 $button-primary-border-color: #0a0;
+
 $button-default-color: $c-black;
 $button-default-background-color: $c-white;
 $button-default-border-color: #bbb;
+
 $button-danger-color: $c-white;
 $button-danger-background-color: #f44;
 $button-danger-border-color: #e33;
@@ -30,71 +32,3 @@ $button-danger-border-color: #e33;
 $button-disabled-color: $c-gray-dark;
 $button-disabled-background-color: $c-gray-light;
 $button-disabled-border-color: #cacaca;
-
-:root{
-
-  /* zan-index
- -------------------------- */
-  --index-normal: 1;
-  --index-top: 1000;
-  --index-popper: 2000;
-
-  /* Link
-  -------------------------- */
-  --link-color: #475669;
-  --link-hover-color: var(--color-primary);
-
-  /* Border
-  -------------------------- */
-  --border-width-base: 1px;
-  --border-style-base: solid;
-  --border-color-base: var(--color-grey);
-  --border-color-hover: #8492a6;
-  --border-base: var(--border-width-base) var(--border-style-base) var(--border-color-base);
-  --border-radius-base: 4px;
-  --border-radius-small: 2px;
-  --border-radius-circle: 100%;
-  --shadow-base: 0 0 2px rgba(var(--color-black), 0.18), 0 0 1px var(--color-blue-light);
-
-  /* Box-shadow
-  -------------------------- */
-  --box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
-  --box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
-
-  /* Fill
-  -------------------------- */
-  --fill-base: var(--color-white);
-
-  /* Font
-  -------------------------- */
-  --font-size-base: 14px;
-  --font-color-base: #1f2d3d;
-  --font-color-disabled-base: #bbb;
-
-  /* Size
-  -------------------------- */
-  --size-base: 14px;
-
-
-  /* Disable base
-  -------------------------- */
-  --disabled-fill-base: #EFF2F7;
-  --disabled-color-base: #bbb;
-  --disabled-border-base: #D3DCE6;
-
-  /* Icon
-  -------------------------- */
-  --icon-color: #666;
-
-  /* Button
-  -------------------------- */
-
-  --button-default-color: #656b79;
-  --button-default-background-color: #f6f8fa;
-  --button-default-plain-color: #5a5a5a;
-  --button-default-box-shadow: 0 0 1px #b8bbbf;
-  --button-primary-color: #fff;
-  --button-primary-background-color: #06BF04;
-  --button-danger-color: #fff;
-  --button-danger-background-color: #ef4f4f;
-}

@@ -1,4 +1,5 @@
-@import "./common/var.css";
+@import './common/var';
+@import './loading';
 
 @component-namespace zan {
   @b button {
@@ -25,6 +26,10 @@
 
     &:not(.is-disabled):active::after {
       opacity: .3;
+    }
+
+    & + .zan-button {
+      margin-left: 10px;
     }
 
     @m default {
@@ -73,6 +78,10 @@
       height: 22px;
       line-height: 20px;
       font-size: 10px;
+
+      & + .zan-button--mini {
+        margin-left: 5px;
+      }
     }
 
     @m disabled {
@@ -83,6 +92,20 @@
 
     @m block {
       display: block;
+      width: 100%;
+    }
+
+    @m loading {
+      .zan-button__text {
+        display: none;
+      }
+    }
+
+    @e icon-loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
     }
   }
 }

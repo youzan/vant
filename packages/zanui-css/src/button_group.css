@@ -15,12 +15,7 @@
   @b button-group {
     font-size: 0;
 
-    > .zan-button {
-      margin-right: 10px;
-      &::last-child {
-        margin-right: 0;
-      }
-    }
+
   }
   @b button-1 {
     @mixin button-wrap;
