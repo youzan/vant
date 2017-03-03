@@ -10521,6 +10521,23 @@ module.exports = Component.exports
 module.exports = {
 	"zh-CN": [
 		{
+			"name": "开发指南",
+			"groups": [
+				{
+					"list": [
+						{
+							"path": "/install",
+							"title": "安装"
+						},
+						{
+							"path": "/quickstart",
+							"title": "快速上手"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "ZanUI组件",
 			"groups": [
 				{

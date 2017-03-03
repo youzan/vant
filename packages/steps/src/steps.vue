@@ -1,13 +1,15 @@
 <template>
-  <div class="zan-steps">
+  <div class="zan-steps" :class="`zan-steps--${steps.length}`">
     <div class="zan-steps__status" v-if="icon">
-      <i class="zan-icon" :class="computedIconClass"></i>
+      <i class="zan-icon zan-steps__icon" :class="computedIconClass"></i>
       <div class="zan-steps__message">
         <div class="zan-steps__message-wrapper">
           <h4 class="zan-steps__title" v-text="title"></h4>
           <p class="zan-steps__desc" v-text="description"></p>
         </div>
       </div>
+      <slot name="message-extra">
+      </slot>
     </div>
     <div class="zan-steps__items">
       <slot></slot>
@@ -38,6 +40,12 @@ export default {
 
       return result;
     }
+  },
+
+  data() {
+    return {
+      steps: []
+    };
   }
 };
 </script>
