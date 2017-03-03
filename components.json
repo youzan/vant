@@ -21,5 +21,6 @@
   "badge-group": "./packages/badge-group/index.js",
   "badge": "./packages/badge/index.js",
   "search": "./packages/search/index.js",
-  "step": "./packages/step/index.js"
+  "step": "./packages/step/index.js",
+  "image-preview": "./packages/image-preview/index.js"
 }

@@ -130,8 +130,8 @@
               "title": "Waterfall"
             },
             {
-              "path": "/img-preview",
-              "title": "Img Preview"
+              "path": "/image-preview",
+              "title": "ImagePreview 图片预览"
             }
           ]
         }
