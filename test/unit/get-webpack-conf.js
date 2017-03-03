@@ -4,7 +4,7 @@ const to2 = require('2webpack2');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const getPostcssPlugin = require('../../build/utils/postcss_pipe');
 
-let webpackConfig = {
+const webpackConfig = {
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     publicPath: '/dist/',
@@ -129,4 +129,4 @@ let webpackConfig = {
   }
 };
 
-module.exports = to2(webpackConfig, {quiet: true, context: true});
+module.exports = to2(webpackConfig, { quiet: true, context: true });
