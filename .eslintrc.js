@@ -24,7 +24,12 @@ module.exports = {
     'no-extra-boolean-cast': 0,
     'no-new': 0
   },
+  "env": {
+    "mocha": true
+  },
   "globals": {
+    "expect": true,
+    "sinon": true,
     "zanui": true,
     "location": true,
     "Swiper": true,

@@ -1,6 +1,8 @@
 const path = require('path');
 const to2 = require('2webpack2');
+// const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const getPostcssPlugin = require('../../build/utils/postcss_pipe');
 
 let webpackConfig = {
   output: {
@@ -12,6 +14,7 @@ let webpackConfig = {
   plugins: [
     new ProgressBarPlugin()
   ],
+  postcss: getPostcssPlugin,
   resolve: {
     extensions: [
       '',
@@ -23,7 +26,6 @@ let webpackConfig = {
       src: path.resolve(process.cwd(), 'src'),
       packages: path.resolve(process.cwd(), 'packages'),
       examples: path.resolve(process.cwd(), 'examples'),
-      'element-ui': path.resolve(process.cwd()),
       vue$: 'vue/dist/vue.common.js'
     }
   },

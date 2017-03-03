@@ -5,17 +5,19 @@ let id = 0;
 class Creater {
   constructor(Compo, propsData) {
     let Ctor = Vue.extend(Compo);
-    this.vueInstance = new Ctor({ propsData });
+    this.vue = new Ctor({ propsData });
+    this.el = null;
   }
 
   mount() {
     const elem = exports.createElm();
-    this.vueInstance.$mount(elem);
+    this.vue.$mount(elem);
+    this.el = this.vue.$el;
   }
 
   triggerEvent(name, ...opts) {
     let eventName;
-    let elem = this.vueInstance.$el;
+    let elem = this.el;
 
     if (/^mouse|click/.test(name)) {
       eventName = 'MouseEvents';
@@ -35,9 +37,9 @@ class Creater {
   }
 
   destroy() {
-    this.vueInstance.$el &&
-    this.vueInstance.$el.parentNode &&
-    this.vueInstance.$el.parentNode.removeChild(this.$el);
+    this.el &&
+    this.el.parentNode &&
+    this.el.parentNode.removeChild(this.el);
   }
 }
 

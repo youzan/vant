@@ -20,7 +20,8 @@
     "builddocs": "webpack --progress --hide-modules --config  build/webpack.config.js && set NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
-    "test": "karma start test/unit/karma.conf.js; npm run coverage",
+    "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
+    "test:watch": "karma start test/unit/karma.conf.js",
     "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  "
   },
   "repository": {
