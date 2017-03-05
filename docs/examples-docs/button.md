@@ -64,6 +64,21 @@
 </div>
 ```
 
+### loading按钮
+
+表示loading状态
+
+```html 
+<div class="zan-button-group">
+  <div class="zan-button-1">
+    <zan-button type="primary" loading>111</zan-button>
+  </div>
+  <div class="zan-button-1">
+    <zan-button loading>222</zan-button>
+  </div>
+</div>
+```
+
 ### button group
 
 一组按钮。

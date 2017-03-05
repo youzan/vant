@@ -22,6 +22,8 @@ import Badge from '../packages/badge/index.js';
 import Search from '../packages/search/index.js';
 import Step from '../packages/step/index.js';
 import ImagePreview from '../packages/image-preview/index.js';
+import Col from '../packages/col/index.js';
+import Row from '../packages/row/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -47,6 +49,9 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
   Vue.component(Step.name, Step);
+  Vue.component(ImagePreview.name, ImagePreview);
+  Vue.component(Col.name, Col);
+  Vue.component(Row.name, Row);
 };
 
 // auto install
@@ -80,5 +85,7 @@ module.exports = {
   Badge,
   Search,
   Step,
-  ImagePreview
+  ImagePreview,
+  Col,
+  Row
 };
