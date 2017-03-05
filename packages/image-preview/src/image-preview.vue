@@ -1,7 +1,10 @@
 <template>
   <transition name="image-fade">
-    <div class="zan-image-preview" ref="previewContainer" v-show="value">
-      <img class="zan-image-preview__image" :src="image" alt="" :style="imageStyle">
+    <div class="zan-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
+      <img class="zan-image-preview__image" :src="image" alt="" :class="{
+        'zan-image-preview__image--center': true,
+        'zan-image-preview__image--top': imageIsLargeView
+      }">
     </div>
   </transition>
 </template>
@@ -30,25 +33,46 @@ export default {
 
   data() {
     return {
-      image: 'https://img.yzcdn.cn/upload_files/2017/03/02/FhDtQ7okM18PeQ3P0RAfIzVADUEq.jpg'
+      image: '',
+      viewportSize: null
     };
   },
 
-  mounted() {
-    this.open();
-    this.previewSize = this.$refs.previewContainer.getBoundingClientRect();
-  },
-
-  computed: {
+  methods: {
+    handlePreviewClick() {
+      this.value = false;
+    },
     /**
      * 图片样式计算
      * 根据屏幕自适应显示最长边
      */
-    imageStyle() {
-    }
-  },
+    computeImageStyle() {
+      let previewSize = this.$refs.previewContainer.getBoundingClientRect();
+      let img = new Image();
+      let _this = this;
 
-  methods: {
+      img.onload = function() {
+        let imgRatio = parseFloat(this.width / this.height);
+        let previewRatio = parseFloat(previewSize.width / previewSize.height);
+
+        if (previewRatio <= imgRatio) {
+          let top = (previewSize.height - parseInt(previewSize.width / imgRatio, 10)) / 2;
+          _this.imageStyle = {
+            width: '100%',
+            height: 'auto',
+            top: top + 'px'
+          };
+        } else if (previewRatio > imgRatio) {
+          _this.imageStyle = {
+            width: 'auto',
+            height: '100%'
+          };
+        }
+      };
+
+      img.src = this.image;
+    },
+
     close() {
       if (this.closing) return;
 

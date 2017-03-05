@@ -47,7 +47,6 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
   Vue.component(Step.name, Step);
-  Vue.component(ImagePreview.name, ImagePreview);
 };
 
 // auto install

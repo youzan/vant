@@ -50,7 +50,8 @@ ComponentNames.forEach(name => {
 
     // services
     'Dialog',
-    'Toast'
+    'Toast',
+    'ImagePreview'
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,
