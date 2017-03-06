@@ -64,7 +64,7 @@ export default {
     }
   }
 
-  .page-title {
+  .demo-title {
     font-size: 20px;
     margin: 20px auto;
     text-align: center;
@@ -72,8 +72,8 @@ export default {
     line-height: 1;
   }
 
-  .page-sub-title {
+  .demo-sub-title {
     font-size: 16px;
-    padding: 10px 0;
+    padding: 10px 15px;
   }
 </style>

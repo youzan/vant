@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-badge-group active-key="2">
   <zan-badge mark="0" title="热销榜" info="8" url="http://baidu.com"></zan-badge>

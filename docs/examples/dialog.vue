@@ -1,19 +1,14 @@
-<template>
-  <div class="page-dialog">
-    <h1 class="page-title">Dialog</h1>
+<template><section class="demo-dialog"><h1 class="demo-title">dialog</h1><example-block title="基础用法">
+                <zan-button @click="handleAlertClick">alert</zan-button>
 
-    <div class="zan-button-1">
-      <zan-button @click="handleAlertClick">点击我打开alert提示框</zan-button>
-    </div>
+<zan-button @click="handleConfirmClick">confirm</zan-button>
 
-    <div class="zan-button-1">
-      <zan-button @click="handleConfirmClick">点击我打开confirm提示框</zan-button>
-    </div>
 
-  </div>
-</template>
+
+              </example-block></section></template>
 
 <script>
+import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 import { Dialog } from 'src/index';
 
 export default {
@@ -40,15 +35,3 @@ export default {
   }
 };
 </script>
-
-<style>
-@component-namespace page {
-  @b dialog {
-    padding: 0 15px;
-
-    .zan-button-1 {
-      margin-bottom: 10px;
-    }
-  }
-}
-</style>

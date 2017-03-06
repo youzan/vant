@@ -21,7 +21,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="demo-loading">
   <h2 class="demo-sub-title">渐变深色spinner</h2>

@@ -12,7 +12,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-search placeholder="商品名称" @search="goSearch"></zan-search>
 <script>

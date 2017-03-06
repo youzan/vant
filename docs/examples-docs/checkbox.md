@@ -39,7 +39,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="zan-checkbox-wrapper">
   <zan-checkbox v-model="checkbox1">复选框1</zan-checkbox>
@@ -59,7 +59,7 @@ export default {
 
 ### 禁用状态
 
-:::demo
+:::demo 禁用状态
 ```html
 <div class="zan-checkbox-wrapper">
   <zan-checkbox v-model="checkbox2">复选框2</zan-checkbox>
@@ -79,7 +79,7 @@ export default {
 
 ### Checkbox组
 
-:::demo
+:::demo Checkbox组
 ```html
 <div class="zan-checkbox-wrapper">
   <zan-checkbox-group v-model="result">
@@ -112,7 +112,7 @@ export default {
 
 ### 禁用Checkbox组
 
-:::demo
+:::demo 禁用Checkbox组
 ```html
 <div class="zan-checkbox-wrapper">
   <zan-checkbox-group v-model="result" disabled>
@@ -139,7 +139,7 @@ export default {
 
 ### 与Cell组件一起使用
 
-:::demo
+:::demo 与Cell组件一起使用
 ```html
 <zan-checkbox-group v-model="result">
   <zan-cell-group>

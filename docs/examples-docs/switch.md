@@ -21,7 +21,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="demo-switch__wrapper">
   <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>

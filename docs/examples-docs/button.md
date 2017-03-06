@@ -39,7 +39,7 @@
 
 ### 禁用状态
 
-:::demo
+:::demo 禁用状态
 ```html
 <zan-row>
   <zan-col span="24">
@@ -53,7 +53,7 @@
 
 只接受large, normal, small, mini四种尺寸，默认normal。
 
-:::demo
+:::demo 按钮尺寸
 ```html 
 <zan-row>
   <zan-col span="24">
@@ -78,7 +78,7 @@
 
 按钮默认是button标签，可以使用tag属性修改为一个a标签。
 
-:::demo
+:::demo 自定义按钮标签
 ```html 
 <zan-row>
   <zan-col span="24">
@@ -92,7 +92,7 @@
 
 表示loading状态
 
-:::demo
+:::demo loading按钮
 ```html 
 <zan-row>
   <zan-col span="24">
@@ -109,7 +109,7 @@
 
 一组按钮。
 
-:::demo
+:::demo button group
 ```html 
 <div class="button-group">
   <zan-button type="primary" size="small">确认付款</zan-button>

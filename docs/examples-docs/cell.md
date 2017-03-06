@@ -20,7 +20,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-cell-group>
   <zan-cell title="单元格1" value="单元格1内容"></zan-cell>
@@ -33,7 +33,7 @@ export default {
 
 传入`label`属性，属性值为描述信息的值。
 
-:::demo
+:::demo 标题带描述信息
 ```html
 <zan-cell-group>
   <zan-cell title="单元格1" label="描述信息" is-link url="javascript:void(0)" @click="handleClick"></zan-cell>
@@ -46,7 +46,7 @@ export default {
 
 传入`icon`属性。
 
-:::demo
+:::demo 带图标
 ```html
 <zan-cell-group>
   <zan-cell title="起码运动馆" icon="home"></zan-cell>
@@ -59,7 +59,7 @@ export default {
 
 传入`url`属性，传入`isLink`属性则会在右侧显示箭头。
 
-:::demo
+:::demo 可点击的链接
 ```html
 <zan-cell-group>
   <zan-cell title="起码运动馆" value="进入店铺" icon="home" url="http://youzan.com" is-link></zan-cell>
@@ -72,7 +72,7 @@ export default {
 
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容。包含三个`slot`，默认`slot`，`icon`和`title`的`slot`。
 
-:::demo
+:::demo 高级用法
 ```html
 <zan-cell-group>
   <zan-cell value="进入店铺" icon="home" url="http://youzan.com" is-link>

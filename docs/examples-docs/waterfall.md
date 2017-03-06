@@ -2,7 +2,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="waterfall">
   <div

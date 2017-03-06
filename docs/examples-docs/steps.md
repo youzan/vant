@@ -32,7 +32,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-steps :active="active" icon="certificate" icon-class="steps-success" title="等待商家发货" description="等待商家发货等待商家发货等待商家发货等待商家发货等待商家发货">
   <zan-step>买家下单</zan-step>
@@ -63,7 +63,7 @@ export default {
 
 ### 只显示步骤条
 
-:::demo
+:::demo 只显示步骤条
 ```html
 <zan-steps :active="active">
   <zan-step>买家下单</zan-step>

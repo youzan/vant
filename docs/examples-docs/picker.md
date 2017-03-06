@@ -35,7 +35,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
 ```

@@ -35,7 +35,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-panel title="标题" desc="标题描述" status="状态">
   <div class="panel-content">
@@ -49,7 +49,7 @@
 
 使用具名`slot`自定义内容。
 
-:::demo
+:::demo 高级用法
 ```html
 <zan-panel title="标题" desc="标题描述" status="状态">
   <zan-card

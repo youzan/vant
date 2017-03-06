@@ -1,28 +1,26 @@
-<template>
-  <div class="page-loading">
-    <h1 class="page-title">Loading</h1>
-    <h2 class="page-sub-title">渐变深色spinner</h2>
-    <div class="page-loading__example">
-      <zan-loading class="some-customized-class"></zan-loading>
-    </div>
-    <h2 class="page-sub-title">渐变浅色spinner</h2>
-    <div class="page-loading__example page-loading__example--with-bg">
-      <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
-    </div>
-    <h2 class="page-sub-title">单色spinner</h2>
-    <div class="page-loading__example">
-      <zan-loading class="some-customized-class" :type="'circle'" :color="'white'"></zan-loading>
-    </div>
-    <h2 class="page-sub-title">单色spinner</h2>
-    <div class="page-loading__example">
-      <zan-loading class="some-customized-class" :type="'circle'" :color="'black'"></zan-loading>
-    </div>
+<template><section class="demo-loading"><h1 class="demo-title">loading</h1><example-block title="基础用法">
+                <div class="demo-loading">
+  <h2 class="demo-sub-title">渐变深色spinner</h2>
+  <div class="demo-loading__example">
+    <zan-loading class="some-customized-class"></zan-loading>
   </div>
-</template>
+  <h2 class="demo-sub-title">渐变浅色spinner</h2>
+  <div class="demo-loading__example demo-loading__example--with-bg">
+    <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
+  </div>
+  <h2 class="demo-sub-title">单色spinner</h2>
+  <div class="demo-loading__example">
+    <zan-loading class="some-customized-class" :type="'circle'" :color="'white'"></zan-loading>
+  </div>
+  <h2 class="demo-sub-title">单色spinner</h2>
+  <div class="demo-loading__example">
+    <zan-loading class="some-customized-class" :type="'circle'" :color="'black'"></zan-loading>
+  </div>
+</div>
 
-
+              </example-block></section></template>
 <style>
-.page-loading__example{
+.demo-loading__example{
   width: 30px;
   height: 30px;
   padding: 20px;
@@ -31,11 +29,13 @@
   border: 1px solid transparent;
 }
 
-.page-loading__example--with-bg {
+.demo-loading__example--with-bg {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.page-loading {
+.demo-loading {
   padding: 0 20px;
 }
 </style>
+<script>
+import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>

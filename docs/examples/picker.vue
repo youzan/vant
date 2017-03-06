@@ -1,13 +1,10 @@
-<template>
-  <div class="page-picker">
-    <h1 class="page-title">Picker</h1>
+<template><section class="demo-picker"><h1 class="demo-title">picker</h1><example-block title="基础用法">
+                <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
 
-    <h2 class="page-sub-title">基础用法</h2>
-    <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
-  </div>  
-</template>
+              </example-block></section></template>
 
 <script>
+import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],

@@ -12,7 +12,7 @@
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="tags-container">
   <zan-tag>返现</zan-tag>
@@ -28,7 +28,7 @@
 
 ### 高级用法
 
-:::demo
+:::demo 高级用法
 ```html
 <div class="tags-container">
   <zan-tag type="danger">返现</zan-tag>

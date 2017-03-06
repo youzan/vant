@@ -29,7 +29,7 @@ export default {
 
 ### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <div class="zan-radios">
   <zan-radio name="1" v-model="radio1">单选框1</zan-radio>
@@ -50,7 +50,7 @@ export default {
 
 ### 禁用状态
 
-:::demo
+:::demo 禁用状态
 ```html
 <div class="zan-radios">
   <zan-radio name="1" v-model="radio2" disabled>未选中禁用</zan-radio>
@@ -71,7 +71,7 @@ export default {
 
 ### radio组
 
-:::demo
+:::demo radio组
 ```html
 <div class="zan-radios">
   <zan-radio-group v-model="radio3">
@@ -94,7 +94,7 @@ export default {
 
 ### 与Cell组件一起使用
 
-:::demo
+:::demo 与Cell组件一起使用
 ```html
 <zan-radio-group v-model="radio4">
   <zan-cell-group>
