@@ -1,5 +1,5 @@
-@import './common/var';
-@import './loading';
+@import './common/var.css';
+@import './loading.css';
 
 @component-namespace zan {
   @b button {
