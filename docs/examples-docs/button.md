@@ -21,7 +21,7 @@
 
 只接受primary, default, danger三种类型，默认default。
 
-:::demo
+:::demo 按钮功能
 ```html
 <zan-row>
   <zan-col span="24">

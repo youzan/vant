@@ -130,8 +130,6 @@ if (process.env.NODE_ENV === 'production') {
                   var description = (m && m.length > 1) ? m[1] : '';
                   var content = tokens[idx + 1].content;
                   var html = convert(striptags.strip(content, ['script', 'style']));
-                  var script = striptags.fetch(content, 'script');
-                  var style = striptags.fetch(content, 'style');
 
                   return `<demo-block class="demo-box">
                             <div class="examples" slot="examples">${html}</div>
