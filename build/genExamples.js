@@ -15,17 +15,17 @@ var renderVueTemplate = function (html, componentName) {
     decodeEntities: false,
     lowerCaseAttributeNames: false,
     lowerCaseTags: false
-  })
+  });
 
   var output = {
     style: $.html('style'),
     script: $.html('script'),
     'example-block': $.html('example-block')
-  }
-  var result
+  };
+  var result;
 
-  $('style').remove()
-  $('script').remove()
+  $('style').remove();
+  $('script').remove();
 
   var script = '';
   if (output.script) {
@@ -38,7 +38,7 @@ var renderVueTemplate = function (html, componentName) {
     output.style + '\n' +
     script;
 
-  return result
+  return result;
 }
 
 function convert(str) {
@@ -79,7 +79,7 @@ for (var item in Components) {
   var content = parser.render(itemMd);
   var result = renderVueTemplate(content, item);
 
-  var exampleVueName = `${docsDir}/examples/${item}.vue`;
+  var exampleVueName = `${docsDir}/examples-dist/${item}.vue`;
 
   if (!fs.existsSync(exampleVueName)) {
     fs.closeSync(fs.openSync(exampleVueName, 'w'));

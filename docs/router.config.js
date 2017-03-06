@@ -21,7 +21,7 @@ const registerRoute = (navConfig, isExample) => {
     route.push({
       path: '/component' + page.path,
       component: function(resolve) {
-        require([isExample ? `./examples${page.path}.vue` : `./examples-docs${page.path}.md`], resolve);
+        require([isExample ? `./examples-dist${page.path}.vue` : `./examples-docs${page.path}.md`], resolve);
       }
     });
   }
