@@ -53,6 +53,7 @@
       margin: 0 0 10px;
       overflow: hidden;
       padding-bottom: 20px;
+      position: relative;
     }
   }
 
@@ -105,7 +106,7 @@
 
       .zan-step__circle-container {
         left: auto;
-        right: -6px;
+        right: -8px;
       }
 
       .zan-step__line {

@@ -1,17 +1,52 @@
+<style>
+.tags-container {
+  padding: 5px 15px;
+
+  .zan-tag + .zan-tag {
+    margin-left: 10px;
+  }
+}
+</style>
+
 ## Tag 组件
 
 ### 基础用法
+
+:::demo
 ```html
-<zan-tag>返现</zan-tag>
-<zan-tag :plain="true">返现</zan-tag>
+<div class="tags-container">
+  <zan-tag>返现</zan-tag>
+  <zan-tag :plain="true">返现</zan-tag>
+</div>
+<div class="tags-container">
+  <zan-tag type="danger">返现</zan-tag>
+  <zan-tag type="danger">四字标签</zan-tag>
+  <zan-tag type="danger">一</zan-tag>
+</div>
 ```
+:::
 
 ### 高级用法
+
+:::demo
 ```html
-<zan-tag type="danger">返现</zan-tag>
-<zan-tag type="success">返现</zan-tag>
-<zan-tag type="success" :plain="true">返现</zan-tag>
+<div class="tags-container">
+  <zan-tag type="danger">返现</zan-tag>
+  <zan-tag :plain="true" type="danger">返现</zan-tag>
+</div>
+<div class="tags-container">
+  <zan-tag type="primary">返现</zan-tag>
+  <zan-tag :plain="true" type="primary">返现</zan-tag>
+</div>
+<div class="tags-container">
+  <zan-tag type="success">返现</zan-tag>
+  <zan-tag :plain="true" type="success">返现</zan-tag>
+</div>
+<div class="tags-container">
+  <zan-tag type="danger" :mark="true">返现</zan-tag>
+</div>
 ```
+:::
 
 ### API
 

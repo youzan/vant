@@ -1,5 +1,5 @@
 <template>
-  <div class="zan-step" :class="`zan-step--${status}`">
+  <div class="zan-step" :class="statusClass">
     <div class="zan-step__circle-container">
       <i class="zan-step__circle" v-if="status !== 'process'"></i>
       <i class="zan-icon zan-icon-checked" v-else></i>
@@ -31,6 +31,10 @@ export default {
       } else if (index === active) {
         return 'process';
       }
+    },
+    statusClass() {
+      const status = this.status;
+      return status ? 'zan-step--' + status : '';
     }
   }
 };

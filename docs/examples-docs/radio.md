@@ -1,8 +1,25 @@
+<style>
+@component-namespace demo {
+  @b radio {
+    .zan-radios {
+      padding: 0 20px;
+
+      .zan-radio {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+</style>
+
 <script>
 export default {
   data() {
     return {
-      radio: '1'
+      radio1: '1',
+      radio2: '2',
+      radio3: '1',
+      radio4: '1'
     };
   }
 };
@@ -12,9 +29,12 @@ export default {
 
 ### 基础用法
 
+:::demo
 ```html
-<zan-radio name="1" v-model="radio1">单选框1</zan-radio>
-<zan-radio name="2" v-model="radio1">单选框2</zan-radio>
+<div class="zan-radios">
+  <zan-radio name="1" v-model="radio1">单选框1</zan-radio>
+  <zan-radio name="2" v-model="radio1">单选框2</zan-radio>
+</div>
 
 <script>
 export default {
@@ -26,12 +46,16 @@ export default {
 };
 </script>
 ```
+:::
 
 ### 禁用状态
 
+:::demo
 ```html
-<zan-radio name="1" v-model="radio2" disabled>未选中禁用</zan-radio>
-<zan-radio name="2" v-model="radio2" disabled>选中且禁用</zan-radio>
+<div class="zan-radios">
+  <zan-radio name="1" v-model="radio2" disabled>未选中禁用</zan-radio>
+  <zan-radio name="2" v-model="radio2" disabled>选中且禁用</zan-radio>
+</div>
 
 <script>
 export default {
@@ -43,15 +67,19 @@ export default {
 };
 </script>
 ```
+:::
 
 ### radio组
 
+:::demo
 ```html
-<zan-radio-group v-model="radio3">
-  <zan-radio name="1">单选框1</zan-radio>
-  <zan-radio name="2">单选框2</zan-radio>
-</zan-radio-group>
-
+<div class="zan-radios">
+  <zan-radio-group v-model="radio3">
+    <zan-radio name="1">单选框1</zan-radio>
+    <zan-radio name="2">单选框2</zan-radio>
+  </zan-radio-group>
+</div>
+  
 <script>
 export default {
   data() {
@@ -62,9 +90,11 @@ export default {
 };
 </script>
 ```
+:::
 
 ### 与Cell组件一起使用
 
+:::demo
 ```html
 <zan-radio-group v-model="radio4">
   <zan-cell-group>
@@ -83,6 +113,7 @@ export default {
 };
 </script>
 ```
+:::
 
 ### Radio API
 

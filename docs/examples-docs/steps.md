@@ -1,7 +1,38 @@
+<style>
+@component-namespace demo {
+  @b steps {
+    .steps-success {
+      color: #06bf04;
+    }
+
+    .zan-button {
+      margin-left: 15px;
+    }
+  }
+}
+</style>
+
+<script>
+export default {
+  data() {
+    return {
+      active: 0
+    };
+  },
+
+  methods: {
+    nextStep() {
+      if (++this.active > 3) this.active = 0;
+    }
+  }
+}
+</script>
+
 ## Steps 步骤条
 
 ### 基础用法
 
+:::demo
 ```html
 <zan-steps :active="active" icon="certificate" icon-class="steps-success" title="等待商家发货" description="等待商家发货等待商家发货等待商家发货等待商家发货等待商家发货">
   <zan-step>买家下单</zan-step>
@@ -9,6 +40,8 @@
   <zan-step>买家提货</zan-step>
   <zan-step>交易完成</zan-step>
 </zan-steps>
+
+<zan-button @click="nextStep">下一步</zan-button>
 
 <script>
 export default {
@@ -26,9 +59,11 @@ export default {
 }
 </script>
 ```
+:::
 
 ### 只显示步骤条
 
+:::demo
 ```html
 <zan-steps :active="active">
   <zan-step>买家下单</zan-step>
@@ -37,6 +72,7 @@ export default {
   <zan-step>交易完成</zan-step>
 </zan-steps>
 ```
+:::
 
 
 ### Steps API

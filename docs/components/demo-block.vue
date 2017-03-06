@@ -44,6 +44,7 @@ export default {
       padding: 20px 0;
       min-height: 200px;
       max-height: 600px;
+      overflow: auto;
     }
 
     .highlight {

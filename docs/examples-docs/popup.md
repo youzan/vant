@@ -2,6 +2,7 @@
 
 ### 基础用法
 
+:::demo
 ```html
 <div class="zan-button-1">
   <zan-button @click="popupShow1 = true">从下方弹出popup</zan-button>
@@ -54,6 +55,7 @@ export default {
 };
 </script>
 ```
+:::
 
 ### API
 

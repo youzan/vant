@@ -2,7 +2,7 @@
   <div
     class="zan-checkbox"
     :class="{
-      'is-disabled': isDisabled
+      'zan-checkbox--disabled': isDisabled
     }">
     <span class="zan-checkbox__input">
       <input

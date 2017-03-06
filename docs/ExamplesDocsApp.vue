@@ -58,12 +58,6 @@ export default {
         }
       }
     }
-
-    p {
-      font-size: 14px;
-      color: #5e6d82;
-      margin: 14px 0;
-    }
   }
 
   .page-content {
@@ -72,6 +66,12 @@ export default {
     height: inherit;
     margin-left: 320px;
     padding: 0 20px;
+
+    section > p {
+      font-size: 14px;
+      color: #5e6d82;
+      margin: 14px 0;
+    }
   }
 
   .demo-page {

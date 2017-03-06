@@ -2,7 +2,9 @@
 
 @component-namespace zan {
   @b checkbox {
-    @when disabled {
+    overflow: hidden;
+
+    @m disabled {
       .zan-icon {
         color: #d1dbe5;
       }
@@ -12,6 +14,7 @@
       position: relative;
       height: 22px;
       margin-right: 15px;
+      float: left;
     }
 
     @e control {
@@ -26,6 +29,8 @@
 
     @e label {
       line-height: 22px;
+      margin-left: 37px;
+      display: block;
     }
 
     .zan-icon {

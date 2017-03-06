@@ -2,7 +2,9 @@
 
 @component-namespace zan {
   @b radio {
-    @when disabled {
+    overflow: hidden;
+
+    @m disabled {
       .zan-icon {
         color: #d1dbe5;
       }
@@ -11,7 +13,7 @@
     @e input {
       position: relative;
       height: 22px;
-      margin-right: 15px;
+      float: left;
     }
 
     @e control {
@@ -26,6 +28,8 @@
 
     @e label {
       line-height: 22px;
+      display: block;
+      margin-left: 37px;
     }
 
     .zan-icon {

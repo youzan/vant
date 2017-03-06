@@ -30,6 +30,7 @@ export default {
 
 ### 基础用法
 
+:::demo
 ```html
 <zan-button @click="handleAlertClick">alert</zan-button>
 
@@ -63,6 +64,7 @@ export default {
 };
 </script>
 ```
+:::
 
 ### API
 
