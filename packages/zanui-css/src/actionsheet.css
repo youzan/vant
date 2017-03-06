@@ -1,0 +1,9 @@
+@component-namespace zan {
+  @b actionsheet {
+  }
+}
+
+.actionsheet-float-bottom-enter,
+.actionsheet-float-bottom-leave-active {
+  transform: translate3d(-50%, 100%, 0);
+}

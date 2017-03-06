@@ -47,16 +47,16 @@ export default {
      * 根据屏幕自适应显示最长边
      */
     computeImageStyle() {
-      let previewSize = this.$refs.previewContainer.getBoundingClientRect();
-      let img = new Image();
-      let _this = this;
+      const previewSize = this.$refs.previewContainer.getBoundingClientRect();
+      const img = new Image();
+      const _this = this;
 
       img.onload = function() {
-        let imgRatio = parseFloat(this.width / this.height);
-        let previewRatio = parseFloat(previewSize.width / previewSize.height);
+        const imgRatio = parseFloat(this.width / this.height);
+        const previewRatio = parseFloat(previewSize.width / previewSize.height);
 
         if (previewRatio <= imgRatio) {
-          let top = (previewSize.height - parseInt(previewSize.width / imgRatio, 10)) / 2;
+          const top = (previewSize.height - parseInt(previewSize.width / imgRatio, 10)) / 2;
           _this.imageStyle = {
             width: '100%',
             height: 'auto',

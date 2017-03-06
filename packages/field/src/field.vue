@@ -31,13 +31,13 @@
 </template>
 
 <script>
-import zCell from 'packages/cell';
+import zanCell from 'packages/cell';
 
 export default {
   name: 'zan-field',
 
   components: {
-    zCell
+    zanCell
   },
 
   props: {
