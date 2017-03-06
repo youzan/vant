@@ -62,7 +62,7 @@
 
 <style lang="css">
   .side-nav {
-    width: 18%;
+    width: 320px;
     box-sizing: border-box;
     padding: 40px 20px;
     float: left;

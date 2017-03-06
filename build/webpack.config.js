@@ -118,6 +118,27 @@ if (process.env.NODE_ENV === 'production') {
               slugify: slugify,
               permalink: true,
               permalinkBefore: true
+            }],
+            [require('markdown-it-container'), 'demo', {
+              validate: function(params) {
+                return params.trim().match(/^demo\s*(.*)$/);
+              },
+
+              render: function(tokens, idx) {
+                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+                if (tokens[idx].nesting === 1) {
+                  var description = (m && m.length > 1) ? m[1] : '';
+                  var content = tokens[idx + 1].content;
+                  var html = convert(striptags.strip(content, ['script', 'style']));
+                  var script = striptags.fetch(content, 'script');
+                  var style = striptags.fetch(content, 'style');
+
+                  return `<demo-block class="demo-box">
+                            <div class="examples" slot="examples">${html}</div>
+                            <div class="highlight" slot="highlight">`;
+                }
+                return '</div></demo-block>\n';
+              }
             }]
           ],
           preprocess: function(MarkdownIt, source) {

@@ -24,6 +24,7 @@ import Step from '../packages/step/index.js';
 import ImagePreview from '../packages/image-preview/index.js';
 import Col from '../packages/col/index.js';
 import Row from '../packages/row/index.js';
+import Actionsheet from '../packages/actionsheet/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -49,9 +50,9 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
   Vue.component(Step.name, Step);
-  Vue.component(ImagePreview.name, ImagePreview);
   Vue.component(Col.name, Col);
   Vue.component(Row.name, Row);
+  Vue.component(Actionsheet.name, Actionsheet);
 };
 
 // auto install
@@ -87,5 +88,6 @@ module.exports = {
   Step,
   ImagePreview,
   Col,
-  Row
+  Row,
+  Actionsheet
 };
