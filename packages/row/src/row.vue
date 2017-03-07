@@ -20,9 +20,9 @@
       style() {
         const gutter = Number(this.gutter);
         const margin = `-${gutter / 2}px`;
-        return gutter ?
-          { marginLeft: margin, marginRight: margin } :
-          {};
+        return gutter
+          ? { marginLeft: margin, marginRight: margin }
+          : {};
       }
     }
   };

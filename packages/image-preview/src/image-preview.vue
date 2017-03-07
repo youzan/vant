@@ -47,30 +47,30 @@ export default {
      * 根据屏幕自适应显示最长边
      */
     computeImageStyle() {
-      const previewSize = this.$refs.previewContainer.getBoundingClientRect();
-      const img = new Image();
-      const _this = this;
+      // const previewSize = this.$refs.previewContainer.getBoundingClientRect();
+      // const img = new Image();
+      // const _this = this;
 
-      img.onload = function() {
-        const imgRatio = parseFloat(this.width / this.height);
-        const previewRatio = parseFloat(previewSize.width / previewSize.height);
+      // img.onload = function() {
+      //   const imgRatio = parseFloat(this.width / this.height);
+      //   const previewRatio = parseFloat(previewSize.width / previewSize.height);
 
-        if (previewRatio <= imgRatio) {
-          const top = (previewSize.height - parseInt(previewSize.width / imgRatio, 10)) / 2;
-          _this.imageStyle = {
-            width: '100%',
-            height: 'auto',
-            top: top + 'px'
-          };
-        } else if (previewRatio > imgRatio) {
-          _this.imageStyle = {
-            width: 'auto',
-            height: '100%'
-          };
-        }
-      };
+      //   if (previewRatio <= imgRatio) {
+      //     const top = (previewSize.height - parseInt(previewSize.width / imgRatio, 10)) / 2;
+      //     _this.imageStyle = {
+      //       width: '100%',
+      //       height: 'auto',
+      //       top: top + 'px'
+      //     };
+      //   } else if (previewRatio > imgRatio) {
+      //     _this.imageStyle = {
+      //       width: 'auto',
+      //       height: '100%'
+      //     };
+      //   }
+      // };
 
-      img.src = this.image;
+      // img.src = this.image;
     },
 
     close() {
