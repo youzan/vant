@@ -1,33 +1,47 @@
+<style>
+  @component-namespace demo {
+    @b switch {
+      padding: 0 15px 15px;
+
+      @e wrapper {
+        width: 33.33%;
+        float: left;
+        text-align: center;
+      }
+
+      @e text {
+        margin: 20px 0;
+      }
+    }
+  }
+</style>
+
+
 ## Switch组件
 
 ### 基础用法
 
+:::demo 基础用法
 ```html
-<div class="page-switch">
-  <h1 class="page-title">Switch</h1>
-  <h2 class="page-sub-title">基础用法</h2>
-  <div class="page-switch">
-    <div class="page-switch__wrapper">
-      <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>
-      <div class="page-switch__text">{{switchStateText}}</div>
-    </div>
-    <div class="page-switch__wrapper">
-      <zan-switch class="some-customized-class" :checked="true" :disabled="true"></zan-switch>
-      <div class="page-switch__text">ON, DISABLED</div>
-    </div>
-    <div class="page-switch__wrapper">
-      <zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
-      <div class="page-switch__text">OFF, DISABLED</div>
-    </div>
-    <div class="page-switch__wrapper">
-      <zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
-      <div class="page-switch__text">ON, LOADING</div>
-    </div>
-    <div class="page-switch__wrapper">
-      <zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
-      <div class="page-switch__text">OFF, LOADING</div>
-    </div>
-  </div>
+<div class="demo-switch__wrapper">
+  <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>
+  <div class="demo-switch__text">{{switchStateText}}</div>
+</div>
+<div class="demo-switch__wrapper">
+  <zan-switch class="some-customized-class" :checked="true" :disabled="true"></zan-switch>
+  <div class="demo-switch__text">ON, DISABLED</div>
+</div>
+<div class="demo-switch__wrapper">
+  <zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
+  <div class="demo-switch__text">OFF, DISABLED</div>
+</div>
+<div class="demo-switch__wrapper">
+  <zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
+  <div class="demo-switch__text">ON, LOADING</div>
+</div>
+<div class="demo-switch__wrapper">
+  <zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
+  <div class="demo-switch__text">OFF, LOADING</div>
 </div>
 
 <script>
@@ -50,6 +64,7 @@ export default {
 };  
 </script>
 ```
+:::
 
 ### API
 

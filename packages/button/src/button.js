@@ -61,17 +61,23 @@ export default {
           'zan-button--' + type,
           'zan-button--' + size,
           {
-            'is-disabled': disabled,
-            'is-loading': loading,
-            'is-block': block
+            'zan-button--disabled': disabled,
+            'zan-button--loading': loading,
+            'zan-button--block': block
           }
         ]}
         onClick={this.handleClick}
       >
         {
-          loading ? <i class="zan-icon-loading"></i> : null
+          loading ?
+            <zan-loading
+              class="zan-button__icon-loading"
+              type="circle"
+              color={type === 'default' ? 'black' : 'white'}>
+            </zan-loading> :
+            null
         }
-        <span class="zan-button-text">{this.$slots.default}</span>
+        <span class="zan-button__text">{this.$slots.default}</span>
       </Tag>
     );
   }

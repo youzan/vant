@@ -2,7 +2,7 @@
   <div
     class="zan-checkbox"
     :class="{
-      'is-disabled': isDisabled
+      'zan-checkbox--disabled': isDisabled
     }">
     <span class="zan-checkbox__input">
       <input
@@ -54,14 +54,14 @@ export default {
 
       set(val) {
         if (this.isGroup && this.parentGroup) {
-          let parentValue = this.parentGroup.value.slice();
+          const parentValue = this.parentGroup.value.slice();
           if (val) {
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
               this.parentGroup.$emit('input', parentValue);
             }
           } else {
-            let index = parentValue.indexOf(this.name);
+            const index = parentValue.indexOf(this.name);
             if (index !== -1) {
               parentValue.splice(index, 1);
               this.parentGroup.$emit('input', parentValue);

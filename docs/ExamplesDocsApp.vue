@@ -4,7 +4,6 @@
     <div class="page-content">
       <router-view></router-view>
     </div>
-    <mobile></mobile>
   </div>
 </template>
 
@@ -59,35 +58,20 @@ export default {
         }
       }
     }
+  }
 
-    p {
+  .page-content {
+    box-sizing: border-box;
+    overflow: auto;
+    height: inherit;
+    margin-left: 320px;
+    padding: 0 20px;
+
+    section > p {
       font-size: 14px;
       color: #5e6d82;
       margin: 14px 0;
     }
-  }
-
-  .page-content {
-    width: 52%;
-    box-sizing: border-box;
-    float: left;
-    padding: 0 15px;
-    overflow: auto;
-    height: inherit;
-  }
-
-  .mobile-wrapper {
-    float: left;
-    width: 30%;
-    height: 300px;
-    position: relative;
-  }
-
-  .mobile {
-    margin: 20px 20px 0;
-    height: 100%;
-    box-sizing: border-box;
-    width: 365px;
   }
 
   .demo-page {

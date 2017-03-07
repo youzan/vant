@@ -17,9 +17,9 @@ if (!Vue.prototype.$isServer) {
     engine = 'trident';
   }
 
-  var cssPrefix = {trident: '-ms-', gecko: '-moz-', webkit: '-webkit-', presto: '-o-'}[engine];
+  var cssPrefix = { trident: '-ms-', gecko: '-moz-', webkit: '-webkit-', presto: '-o-' }[engine];
 
-  var vendorPrefix = {trident: 'ms', gecko: 'Moz', webkit: 'Webkit', presto: 'O'}[engine];
+  var vendorPrefix = { trident: 'ms', gecko: 'Moz', webkit: 'Webkit', presto: 'O' }[engine];
 
   var helperElem = document.createElement('div');
   var perspectiveProperty = vendorPrefix + 'Perspective';
@@ -34,7 +34,7 @@ if (!Vue.prototype.$isServer) {
   }
 
   var getTranslate = function(element) {
-    var result = {left: 0, top: 0};
+    var result = { left: 0, top: 0 };
     if (element === null || element.style === null) return result;
 
     var transform = element.style[transformProperty];

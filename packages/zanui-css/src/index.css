@@ -2,7 +2,6 @@
   css组件库入口，组装成css组件库
  */
 @import './button.css';
-@import './button_group.css';
 @import './cell.css';
 @import './card.css';
 @import './dialog.css';
@@ -20,3 +19,7 @@
 @import './tag.css';
 @import './checkbox.css';
 @import './tab.css';
+@import './col.css';
+@import './row.css';
+@import './image_preview.css';
+@import './actionsheet.css';

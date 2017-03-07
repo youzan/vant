@@ -11,7 +11,7 @@
     </div>
     <div class="zan-cell__value" :class="{
       'is-link': isLink,
-      'is-alone': !title && !label
+      'is-alone': !this.$slots.title && !title && !label
     }">
       <slot>
         <span v-text="value"></span>

@@ -24,5 +24,9 @@
   "step": "./packages/step/index.js",
   "tabs": "./packages/tabs/index.js",
   "tab": "./packages/tab/index.js",
-  "lazyload": "./packages/lazyload/index.js"
+  "lazyload": "./packages/lazyload/index.js",
+  "image-preview": "./packages/image-preview/index.js",
+  "col": "./packages/col/index.js",
+  "row": "./packages/row/index.js",
+  "actionsheet": "./packages/actionsheet/index.js"
 }

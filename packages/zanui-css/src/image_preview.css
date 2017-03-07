@@ -1,0 +1,29 @@
+@component-namespace zan {
+  @b image-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+
+    @e image {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: .2s;
+      position: absolute;
+      left: 0;
+
+      @m center {
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+      }
+
+      @m top {
+        top: 0;
+        transform: none;
+      }
+    }
+  }
+}

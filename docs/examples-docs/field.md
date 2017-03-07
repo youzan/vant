@@ -6,6 +6,7 @@
 
 根据`type`属性显示不同的输入框。
 
+:::demo 基础用法
 ```html
 <zan-cell-group>
   <zan-field type="text" label="用户名：" placeholder="请输入用户名"></zan-field>
@@ -13,26 +14,31 @@
   <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍"></zan-field>
 </zan-cell-group>
 ```
+:::
 
 ### 无label的输入框
 
 不传入`label`属性即可。
 
+:::demo 无label的输入框
 ```html
 <zan-cell-group>
   <zan-field type="text" placeholder="请输入用户名"></zan-field>
 </zan-cell-group>
 ```
+:::
 
 ### 监听change事件
 
 监听组件的`change`事件。
 
+:::demo 监听change事件
 ```html
 <zan-cell-group>
   <zan-field type="text" label="用户名：" placeholder="请输入用户名" @change="handleChange"></zan-field>
 </zan-cell-group>
 ```
+:::
 
 ### API
 

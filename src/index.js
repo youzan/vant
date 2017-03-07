@@ -23,6 +23,10 @@ import Search from '../packages/search/index.js';
 import Step from '../packages/step/index.js';
 import Tabs from '../packages/tabs/index.js';
 import Tab from '../packages/tab/index.js';
+import ImagePreview from '../packages/image-preview/index.js';
+import Col from '../packages/col/index.js';
+import Row from '../packages/row/index.js';
+import Actionsheet from '../packages/actionsheet/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -50,6 +54,9 @@ const install = function(Vue) {
   Vue.component(Step.name, Step);
   Vue.component(Tabs.name, Tabs);
   Vue.component(Tab.name, Tab);
+  Vue.component(Col.name, Col);
+  Vue.component(Row.name, Row);
+  Vue.component(Actionsheet.name, Actionsheet);
 };
 
 // auto install
@@ -59,7 +66,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  version: '0.0.8',
+  version: '0.0.15',
   Button,
   Switch,
   Field,
@@ -84,5 +91,9 @@ module.exports = {
   Search,
   Step,
   Tabs,
-  Tab
+  Tab,
+  ImagePreview,
+  Col,
+  Row,
+  Actionsheet
 };

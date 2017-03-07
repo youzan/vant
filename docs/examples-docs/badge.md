@@ -2,6 +2,7 @@
 
 ### 基础用法
 
+:::demo 基础用法
 ```html
 <zan-badge-group active-key="2">
   <zan-badge mark="0" title="热销榜" info="8" url="http://baidu.com"></zan-badge>
@@ -10,6 +11,7 @@
   <zan-badge mark="3" title="手握寿司" info="199"></zan-badge>
 </zan-badge-group>
 ```
+:::
 
 ### z-badge-group API
 

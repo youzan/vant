@@ -1,11 +1,41 @@
 <template>
-  <div class="zan-step">
-    
+  <div class="zan-step" :class="statusClass">
+    <div class="zan-step__circle-container">
+      <i class="zan-step__circle" v-if="status !== 'process'"></i>
+      <i class="zan-icon zan-icon-checked" v-else></i>
+    </div>
+    <p class="zan-step__title">
+      <slot></slot>
+    </p>
+    <div class="zan-step__line"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-step'
+  name: 'zan-step',
+
+  beforeCreate() {
+    this.$parent.steps.push(this);
+  },
+
+  computed: {
+    status() {
+      const index = this.$parent.steps.indexOf(this);
+      const active = this.$parent.active;
+
+      if (index === -1) {
+        return '';
+      } else if (index < active) {
+        return 'finish';
+      } else if (index === active) {
+        return 'process';
+      }
+    },
+    statusClass() {
+      const status = this.status;
+      return status ? 'zan-step--' + status : '';
+    }
+  }
 };
 </script>

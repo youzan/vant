@@ -2,7 +2,7 @@
   <div
     class="zan-radio"
     :class="{
-      'is-disabled': isDisabled
+      'zan-radio--disabled': isDisabled
     }">
     <span class="zan-radio__input">
       <input
@@ -44,6 +44,7 @@ export default {
 
     currentValue: {
       get() {
+        console.log(this.value);
         return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
       },
 

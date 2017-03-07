@@ -11,7 +11,7 @@ config.output = {
 };
 
 config.externals = {
-  vue: 'Vue'
+  vue: 'vue'
 };
 
 delete config.devtool;

@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import merge from 'src/utils/merge';
 import PopupManager from './popup-manager';
 

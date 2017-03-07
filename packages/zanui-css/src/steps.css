@@ -1,5 +1,150 @@
+@import "./common/var.css";
+@import "./mixins/ellipsis.css";
+
 @component-namespace zan {
   @b steps {
-    color: red;
+    overflow: hidden;
+    padding: 0 10px;
+
+    @m 4 {
+      .zan-step {
+        width: 33.2%;
+      }
+    }
+
+    @m 3 {
+      .zan-step {
+        width: 50%;
+      }
+    }
+
+    @e icon {
+      font-size: 40px;
+      line-height: 1;
+      float: left;
+      margin-right: 10px;
+    }
+
+    @e message {
+      display: table;
+      height: 40px;
+      margin: 15px 0;
+
+      .zan-steps__message-wrapper {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+
+    @e title {
+      font-size: 14px;
+      color: $c-black;
+    }
+
+    @e desc {
+      font-size: 12px;
+      line-height: 1.5;
+      color: $c-gray-dark;
+      max-height: 18px;
+      @mixin multi-ellipsis 1;
+    }
+
+    @e items {
+      margin: 0 0 10px;
+      overflow: hidden;
+      padding-bottom: 20px;
+      position: relative;
+    }
+  }
+
+  @b step {
+    font-size: 14px;
+    float: left;
+    position: relative;
+    color: $c-gray-dark;
+
+    @m finish {
+      color: $c-black;
+
+      .zan-step__circle,
+      .zan-step__line {
+        background-color: $c-green;
+      }
+    }
+
+    @m process {
+      color: $c-black;
+
+      .zan-step__circle-container {
+        top: 24px;
+      }
+
+      .zan-icon {
+        font-size: 12px;
+        color: $c-green;
+        line-height: 1;
+        display: block;
+      }
+    }
+
+    &:first-child {
+      .zan-step__title {
+        transform: none;
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      position: absolute;
+      right: 10px;
+      width: auto;
+
+      .zan-step__title {
+        transform: none;
+        margin-left: 0;
+      }
+
+      .zan-step__circle-container {
+        left: auto;
+        right: -8px;
+      }
+
+      .zan-step__line {
+        width: 0;
+      }
+    }
+
+    .zan-step__circle-container {
+      position: absolute;
+      top: 28px;
+      left: -8px;
+      padding: 0 8px;
+      background-color: #fff;
+      z-index: 1;
+    }
+
+    @e circle {
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #888;
+      border-radius: 50%;
+    }
+
+    @e title {
+      font-size: 12px;
+      transform: translate3d(-50%, 0, 0);
+      display: inline-block;
+      margin-left: 3px;
+    }
+
+    @e line {
+      position: absolute;
+      left: 0px;
+      top: 30px;
+      width: 100%;
+      height: 1px;
+      background-color: $c-gray-light;
+    }
   }
 }

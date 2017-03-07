@@ -1,17 +1,4 @@
-## Search 组件
-
-### 基础用法
-
-
-```html
-<zan-search 
-    placeholder="商品名称"
-    @search="goSearch"
->
-</zan-search>
-```
-
-```javascript
+<script>
 export default {
   methods: {
     goSearch(value) {
@@ -19,7 +6,26 @@ export default {
     }
   }
 };
+</script>
+
+## Search 组件
+
+### 基础用法
+
+:::demo 基础用法
+```html
+<zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+<script>
+export default {
+  methods: {
+    goSearch(value) {
+      alert(value)
+    }
+  }
+};
+</script>
 ```
+:::
 
 ### API
 

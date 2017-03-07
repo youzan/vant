@@ -78,15 +78,9 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.plugins = [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: 'production'
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
-    new ExtractTextPlugin(`yzvue_base_${version}_min.css`),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -96,14 +90,6 @@ if (process.env.NODE_ENV === 'production') {
       },
       sourceMap: false
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ];
-} else {
-  // development 环境不会抽css - -
-  module.exports.plugins = [
-    new ExtractTextPlugin('style.dev.css'),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -126,6 +112,81 @@ if (process.env.NODE_ENV === 'production') {
               slugify: slugify,
               permalink: true,
               permalinkBefore: true
+            }],
+            [require('markdown-it-container'), 'demo', {
+              validate: function(params) {
+                return params.trim().match(/^demo\s*(.*)$/);
+              },
+
+              render: function(tokens, idx) {
+                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+                if (tokens[idx].nesting === 1) {
+                  var description = (m && m.length > 1) ? m[1] : '';
+                  var content = tokens[idx + 1].content;
+                  var html = convert(striptags.strip(content, ['script', 'style']));
+
+                  return `<demo-block class="demo-box">
+                            <div class="examples" slot="examples">${html}</div>
+                            <div class="highlight" slot="highlight">`;
+                }
+                return '</div></demo-block>\n';
+              }
+            }]
+          ],
+          preprocess: function(MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function() {
+              return '<table class="table">';
+            };
+            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
+            return source;
+          }
+        }
+      }
+    })
+  ];
+} else {
+  module.exports.plugins = [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      options: {
+        postcss: getPoastcssPlugin,
+        babel: {
+          presets: ['es2015'],
+          plugins: ['transform-runtime', 'transform-vue-jsx']
+        },
+        eslint: {
+          formatter: require('eslint-friendly-formatter')
+        },
+        vue: {
+          autoprefixer: false,
+          postcss: getPoastcssPlugin
+        },
+        vueMarkdown: {
+          use: [
+            [require('markdown-it-anchor'), {
+              level: 2,
+              slugify: slugify,
+              permalink: true,
+              permalinkBefore: true
+            }],
+            [require('markdown-it-container'), 'demo', {
+              validate: function(params) {
+                return params.trim().match(/^demo\s*(.*)$/);
+              },
+
+              render: function(tokens, idx) {
+                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+                if (tokens[idx].nesting === 1) {
+                  var description = (m && m.length > 1) ? m[1] : '';
+                  var content = tokens[idx + 1].content;
+                  var html = convert(striptags.strip(content, ['script', 'style']));
+
+                  return `<demo-block class="demo-box">
+                            <div class="examples" slot="examples">${html}</div>
+                            <div class="highlight" slot="highlight">`;
+                }
+                return '</div></demo-block>\n';
+              }
             }]
           ],
           preprocess: function(MarkdownIt, source) {

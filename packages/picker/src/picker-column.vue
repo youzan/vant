@@ -104,7 +104,7 @@ export default {
       var visibileColumnCount = this.visibileColumnCount;
       var itemHeight = this.itemHeight;
 
-      return [ -itemHeight * (values.length - Math.ceil(visibileColumnCount / 2)), itemHeight * Math.floor(visibileColumnCount / 2) ];
+      return [-itemHeight * (values.length - Math.ceil(visibileColumnCount / 2)), itemHeight * Math.floor(visibileColumnCount / 2)];
     },
 
     /**
@@ -125,10 +125,10 @@ export default {
      * 将当前`value`值转换成需要垂直方向需要`translate`的值
      */
     value2Translate(value) {
-      let values = this.currentValues;
-      let valueIndex = values.indexOf(value);
-      let offset = Math.floor(this.visibileColumnCount / 2);
-      let itemHeight = this.itemHeight;
+      const values = this.currentValues;
+      const valueIndex = values.indexOf(value);
+      const offset = Math.floor(this.visibileColumnCount / 2);
+      const itemHeight = this.itemHeight;
 
       if (valueIndex !== -1) {
         return (valueIndex - offset) * (-itemHeight);
@@ -139,10 +139,10 @@ export default {
      * 根据当前`translate`的值转换成当前选中的`value`
      */
     translate2Value(translate) {
-      let itemHeight = this.itemHeight;
+      const itemHeight = this.itemHeight;
       translate = Math.round(translate / itemHeight) * itemHeight;
 
-      let index = -(translate - Math.floor(this.visibileColumnCount / 2) * itemHeight) / itemHeight;
+      const index = -(translate - Math.floor(this.visibileColumnCount / 2) * itemHeight) / itemHeight;
 
       return this.currentValues[index];
     },
@@ -177,8 +177,8 @@ export default {
           dragState.left = event.pageX;
           dragState.top = event.pageY;
 
-          let deltaY = dragState.top - dragState.startTop;
-          let translate = dragState.startTranslateTop + deltaY;
+          const deltaY = dragState.top - dragState.startTop;
+          const translate = dragState.startTranslateTop + deltaY;
 
           translateUtil.translateElement(el, null, translate);
 
@@ -229,8 +229,8 @@ export default {
      * `value`改变时调用
      */
     doOnValueChange() {
-      let value = this.currentValue;
-      let wrapper = this.$refs.wrapper;
+      const value = this.currentValue;
+      const wrapper = this.$refs.wrapper;
 
       this.$emit('input', this.currentValue);
 

@@ -2,6 +2,7 @@
 
 ### 基础用法
 
+:::demo 基础用法
 ```html
 <div class="waterfall">
   <div
@@ -62,6 +63,7 @@ export default {
 };
 </script>
 ```
+:::
 
 ### API
 
