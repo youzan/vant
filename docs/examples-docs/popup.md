@@ -1,3 +1,26 @@
+<script>
+export default {
+  data() {
+    return {
+      popupShow1: false,
+      popupShow2: false,
+      popupShow3: false,
+      popupShow4: false
+    }
+  },
+
+  watch: {
+    popupShow2(val) {
+      if (val) {
+        setTimeout(() => {
+          this.popupShow2 = false;
+        }, 2000);
+      }
+    }
+  }
+};
+</script>
+
 ## Popup组件
 
 ### 基础用法
