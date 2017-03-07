@@ -23,6 +23,7 @@ import Search from '../packages/search/index.js';
 import Step from '../packages/step/index.js';
 import Tabs from '../packages/tabs/index.js';
 import Tab from '../packages/tab/index.js';
+import Lazyload from '../packages/lazyload/index.js';
 import ImagePreview from '../packages/image-preview/index.js';
 import Col from '../packages/col/index.js';
 import Row from '../packages/row/index.js';
@@ -92,6 +93,7 @@ module.exports = {
   Step,
   Tabs,
   Tab,
+  Lazyload,
   ImagePreview,
   Col,
   Row,

@@ -2,25 +2,90 @@
 
 ### 基础用法
 
+:::demo 基础用法
 ```html
 <zan-tabs>
-  <zan-tab tab-key="0" title="选项一">内容一</zan-tab>
-  <zan-tab tab-key="1" title="选项二">内容二</zan-tab>
-  <zan-tab tab-key="2" title="选项三">内容三</zan-tab>
-  <zan-tab tab-key="3" title="选项四">内容四</zan-tab>
-  <zan-tab tab-key="4" title="选项五">内容五</zan-tab>
+  <zan-tab title="选项一">内容一</zan-tab>
+  <zan-tab title="选项二">内容二</zan-tab>
+  <zan-tab title="选项三">内容三</zan-tab>
+  <zan-tab title="选项四">内容四</zan-tab>
+  <zan-tab title="选项五">内容五</zan-tab>
 </zan-tabs>
 ```
 
-### 自定义样式用法
-
+<script>
+export default {
+  methods: {
+    popalert() {
+      alert('haha')
+    }
+  }
+};
+</script>
+:::
+### 禁用用法
+:::demo 禁用用法
 ```html
-<zan-tabs active-tab-key="2" tabs-class-name="custom-tabwrap" tab-class-name="custom-tab">
-    <zan-tab tab-key="0" title="选项一" tab-pane-class-name="custom-pane">内容一</zan-tab>
-    <zan-tab tab-key="1" title="选项二" tab-pane-class-name="custom-pane">内容二</zan-tab>
-    <zan-tab tab-key="2" title="选项三" tab-pane-class-name="custom-pane">内容三</zan-tab>
-    <zan-tab tab-key="3" title="选项四" tab-pane-class-name="custom-pane">内容四</zan-tab>
-    <zan-tab tab-key="4" title="选项五" tab-pane-class-name="custom-pane">内容五</zan-tab>
+<zan-tabs>
+  <zan-tab title="选项一">内容一</zan-tab>
+  <zan-tab disable title="选项二" @ondisable="popalert">内容二</zan-tab>
+  <zan-tab title="选项三">内容三</zan-tab>
+  <zan-tab title="选项四">内容四</zan-tab>
+  <zan-tab title="选项五">内容五</zan-tab>
+</zan-tabs>
+<script>
+export default {
+  methods: {
+    popalert() {
+      alert('haha')
+    }
+  }
+};
+</script>
+```
+:::
+
+### card样式用法
+:::demo card样式用法
+```html
+<zan-tabs classtype="card">
+  <zan-tab title="选项一">内容一</zan-tab>
+  <zan-tab title="选项二">内容二</zan-tab>
+  <zan-tab title="选项三">内容三</zan-tab>
+  <zan-tab title="选项四">内容四</zan-tab>
+  <zan-tab title="选项五">内容五</zan-tab>
+</zan-tabs>
+```
+:::
+<style>
+  .page-tab {
+    padding: 0 15px;
+  }
+  .custom-tabwrap .zan-tab-active{
+    color: #20a0ff;
+  }
+  .custom-tabwrap .zan-tabs-nav-bar{
+    background: #20a0ff;
+  }
+  .custom-tab {
+    font-weight: bold;
+  }
+  .custom-pane {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
+</style>
+
+### 自定义样式用法
+:::demo 自定义样式用法
+```html
+<zan-tabs active="2" classname="custom-tabwrap">
+    <zan-tab title="选项一" paneclass="custom-pane">内容一</zan-tab>
+    <zan-tab title="选项二" paneclass="custom-pane">内容二</zan-tab>
+    <zan-tab title="选项三" paneclass="custom-pane">内容三</zan-tab>
+    <zan-tab title="选项四" paneclass="custom-pane">内容四</zan-tab>
+    <zan-tab title="选项五" paneclass="custom-pane">内容五</zan-tab>
 </zan-tabs>
 <style>
   .page-tab {
@@ -42,19 +107,21 @@
   }
 </style>
 ```
-
+:::
 
 ### zan-tabs API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
+| 参数       | 说明      | 类型       | 默认值       | 可选      |
 |-----------|-----------|-----------|-------------|-------------|
-| active-key | 激活的badge的索引 | string  | '0'但必须子badge里的mark是有0位索引 |           |
+| classtype | 两种UI | string  | line |     card      |
+| active | 默认激活的tab | string || number  | 0 |           |
+| classname | tabs自定义classname | string  | '' |           |
 
 
-### z-badge API
+### zan-tab API
 | 参数       | 说明      | 类型       | 默认值       | 必须       |
 |-----------|-----------|-----------|-------------|-------------|
-| mark | badge的唯一key值 | string  | ''          | required         |
-| title | badge的文案标题 | string  | ''          | required          |
-| info | 当前badge的提示消息数量 | string  | ''          |           |
-| url | 跳转链接 | string  | 全连接直接跳转或者hash          |           |
+| title | tab的标题 | string  | ''          | required         |
+| paneclass | 底部内容区的classname | string  | ''          |           |
+| disable | 是否禁用这个tab | Boolean  | false      |           |
+

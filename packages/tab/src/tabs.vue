@@ -3,11 +3,11 @@
     <div class="zan-tabs-nav" :class="classNames">
       <div class="zan-tabs-nav-bar" :style="navBarStyle"></div>
       <div
-        v-for="tab in tabs"
-        class="zan-tab J-tab-key"
-        :class="[{'zan-tab-active': tab.tabKey == switchActiveTabKey}, tabClassName]"
-        :data-key="tab.tabKey"
-        @click="handleTabClick(tab.tabKey)"
+        v-for="(tab, index) in tabs"
+        class="zan-tab"
+        :class="{'zan-tab-active': index == switchActiveTabKey}"
+        ref="tabkey"
+        @click="handleTabClick(index,tab)"
       >
         {{ tab.title }}
       </div>
@@ -21,41 +21,36 @@
     name: 'zan-tabs',
     props: {
       // 外部传入的激活的tab标签
-      activeTabKey: {
+      active: {
         type: [Number, String],
         default: 0
       },
       // 是默认的line还是card
-      classType: {
+      classtype: {
         type: String,
         default: 'line'
       },
       // nav的wrap的样式
-      tabsClassName: {
+      classname: {
         type: String,
         default: ''
-      },
-      // 每个nav里tab的样式
-      tabClassName: {
-        type: String
       }
     },
     data() {
       return {
         tabs: [],
         isReady: false,
-        switchActiveTabKey: this.activeTabKey
+        switchActiveTabKey: this.active
       };
     },
     computed: {
       classNames () {
-        return [ `zan-tabs-${this.classType}`, this.tabsClassName ]
+        return [ `zan-tabs-${this.classtype}`, this.classname ]
       },
       navBarStyle () {
         if(!this.isReady) return;
         let tabKey = this.switchActiveTabKey;
-        let selectors = `.J-tab-key[data-key="${tabKey}"]`;
-        let elem = this.$el.querySelector(selectors) || {};
+        let elem = this.$refs.tabkey[tabKey];
         let w = `${elem.offsetWidth || 0}px`;
         let x = `${elem.offsetLeft || 0}px`;
         return {
@@ -65,14 +60,12 @@
       }
     },
     methods: {
-      tabCreate (tabKey, title) {
-        this.tabs.push({
-          tabKey: tabKey,
-          title: title
-        });
-      },
-      handleTabClick(tabKey) {
-        this.switchActiveTabKey = tabKey;
+      handleTabClick(index, el) {
+        if(el.disable) {
+          el.$emit('ondisable');
+          return 
+        }
+        this.switchActiveTabKey = index;
       }
     },
     mounted () {
