@@ -15,7 +15,7 @@
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
-    "build:components": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.components.js",
+    "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
     "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
     "build:docs": "npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
