@@ -1,3 +1,14 @@
+<style>
+@component-namespace demo {
+  @b popup {
+    .zan-popup-4 {
+      width: 60%;
+      height: 200px;
+    }
+  }
+}
+</style>
+
 <script>
 export default {
   data() {
