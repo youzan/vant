@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.18",
+  "version": "0.0.17",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -24,7 +24,8 @@
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
     "test:watch": "karma start test/unit/karma.conf.js",
-    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  "
+    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
+    "deploy": "sh build/release.sh"
   },
   "repository": {
     "type": "git",
