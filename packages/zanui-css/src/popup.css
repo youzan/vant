@@ -18,6 +18,7 @@
     transition: .2s ease-out;
 
     @m top {
+      width: 100%;
       top: 0;
       right: auto;
       bottom: auto;
@@ -34,6 +35,7 @@
     }
 
     @m bottom {
+      width: 100%;
       top: auto;
       bottom: 0;
       right: auto;

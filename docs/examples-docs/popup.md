@@ -35,6 +35,13 @@ export default {
         }, 2000);
       }
     }
+  },
+
+  methods: {
+    handlePopupButtonClick() {
+      this.popupShow1 = false;
+      this.popupShow4 = true;
+    }
   }
 };
 </script>
@@ -49,7 +56,7 @@ export default {
   <zan-button @click="popupShow1 = true">从下方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
-  <zan-button @click="popupShow4 = true" type="primary">从中间弹出popup</zan-button>
+  <zan-button @click="handlePopupButtonClick" type="primary">从中间弹出popup</zan-button>
 </zan-popup>
 
 <div class="zan-row">
@@ -69,6 +76,9 @@ export default {
 <div class="zan-row">
   <zan-button @click="popupShow4 = true">从中间弹出popup</zan-button>
 </div>
+<zan-popup v-model="popupShow4" class="zan-popup-4">
+  从中间弹出popup
+</zan-popup>
 
 <script>
 export default {
