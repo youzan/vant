@@ -115,13 +115,12 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | classtype | 两种UI | string  | line |     card      |
 | active | 默认激活的tab | string || number  | 0 |           |
-| classname | tabs自定义classname | string  | '' |           |
+| navclass | tabs的内部nav上的自定义classname | string  | '' |           |
 
 
 ### zan-tab API
 | 参数       | 说明      | 类型       | 默认值       | 必须       |
 |-----------|-----------|-----------|-------------|-------------|
 | title | tab的标题 | string  | ''          | required         |
-| paneclass | 底部内容区的classname | string  | ''          |           |
 | disable | 是否禁用这个tab | Boolean  | false      |           |
 
