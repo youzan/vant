@@ -26,12 +26,12 @@
         default: 0
       },
       // 是默认的line还是card
-      classtype: {
+      type: {
         type: String,
         default: 'line'
       },
       // nav的wrap的样式
-      classname: {
+      navclass: {
         type: String,
         default: ''
       }
@@ -44,36 +44,36 @@
       };
     },
     computed: {
-      classNames () {
-        return [ `zan-tabs-${this.classtype}`, this.classname ]
+      classNames() {
+        return [`zan-tabs-${this.type}`, this.navclass];
       },
-      navBarStyle () {
-        if(!this.isReady) return;
-        let tabKey = this.switchActiveTabKey;
-        let elem = this.$refs.tabkey[tabKey];
-        let w = `${elem.offsetWidth || 0}px`;
-        let x = `${elem.offsetLeft || 0}px`;
+      navBarStyle() {
+        if (!this.isReady) return;
+        const tabKey = this.switchActiveTabKey;
+        const elem = this.$refs.tabkey[tabKey];
+        const offsetWidth = `${elem.offsetWidth || 0}px`;
+        const offsetLeft = `${elem.offsetLeft || 0}px`;
         return {
-          width: w,
-          transform: `translate3d(${x}, 0px, 0px)`
-        }
+          width: offsetWidth,
+          transform: `translate3d(${offsetLeft}, 0px, 0px)`
+        };
       }
     },
     methods: {
       handleTabClick(index, el) {
-        if(el.disable) {
-          el.$emit('ondisable');
-          return 
+        if (el.disable) {
+          el.$emit('disable');
+          return;
         }
         this.switchActiveTabKey = index;
       }
     },
-    mounted () {
-      //页面载入完成
+    mounted() {
+      // 页面载入完成
       this.$nextTick(() => {
         // 可以开始触发在computed中关于nav-bar的css动画
         this.isReady = true;
-      })
+      });
     }
   };
 </script>

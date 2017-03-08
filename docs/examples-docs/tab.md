@@ -28,7 +28,7 @@ export default {
 ```html
 <zan-tabs>
   <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab disable title="选项二" @ondisable="popalert">内容二</zan-tab>
+  <zan-tab disable title="选项二" @disable="popalert">内容二</zan-tab>
   <zan-tab title="选项三">内容三</zan-tab>
   <zan-tab title="选项四">内容四</zan-tab>
   <zan-tab title="选项五">内容五</zan-tab>
@@ -48,7 +48,7 @@ export default {
 ### card样式用法
 :::demo card样式用法
 ```html
-<zan-tabs classtype="card">
+<zan-tabs type="card">
   <zan-tab title="选项一">内容一</zan-tab>
   <zan-tab title="选项二">内容二</zan-tab>
   <zan-tab title="选项三">内容三</zan-tab>
@@ -80,12 +80,12 @@ export default {
 ### 自定义样式用法
 :::demo 自定义样式用法
 ```html
-<zan-tabs active="2" classname="custom-tabwrap">
-    <zan-tab title="选项一" paneclass="custom-pane">内容一</zan-tab>
-    <zan-tab title="选项二" paneclass="custom-pane">内容二</zan-tab>
-    <zan-tab title="选项三" paneclass="custom-pane">内容三</zan-tab>
-    <zan-tab title="选项四" paneclass="custom-pane">内容四</zan-tab>
-    <zan-tab title="选项五" paneclass="custom-pane">内容五</zan-tab>
+<zan-tabs active="2" navclass="custom-tabwrap">
+    <zan-tab title="选项一" class="custom-pane">内容一</zan-tab>
+    <zan-tab title="选项二" class="custom-pane">内容二</zan-tab>
+    <zan-tab title="选项三" class="custom-pane">内容三</zan-tab>
+    <zan-tab title="选项四" class="custom-pane">内容四</zan-tab>
+    <zan-tab title="选项五" class="custom-pane">内容五</zan-tab>
 </zan-tabs>
 <style>
   .page-tab {

@@ -13,20 +13,14 @@
         type: String,
         required: true
       },
-      paneclass: {
-        type: String
-      },
       disable: Boolean
     },
     computed: {
       classNames() {
-        return [
-          {'is-select': this.$parent.tabs.indexOf(this) == this.$parent.switchActiveTabKey },
-          this.paneclass
-        ];
+        return { 'is-select': this.$parent.tabs.indexOf(this) === this.$parent.switchActiveTabKey };
       }
     },
-    created () {
+    created() {
       this.$parent.tabs.push(this);
     }
   };
