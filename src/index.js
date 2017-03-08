@@ -21,6 +21,9 @@ import BadgeGroup from '../packages/badge-group/index.js';
 import Badge from '../packages/badge/index.js';
 import Search from '../packages/search/index.js';
 import Step from '../packages/step/index.js';
+import Tabs from '../packages/tabs/index.js';
+import Tab from '../packages/tab/index.js';
+import Lazyload from '../packages/lazyload/index.js';
 import ImagePreview from '../packages/image-preview/index.js';
 import Col from '../packages/col/index.js';
 import Row from '../packages/row/index.js';
@@ -50,6 +53,8 @@ const install = function(Vue) {
   Vue.component(Badge.name, Badge);
   Vue.component(Search.name, Search);
   Vue.component(Step.name, Step);
+  Vue.component(Tabs.name, Tabs);
+  Vue.component(Tab.name, Tab);
   Vue.component(Col.name, Col);
   Vue.component(Row.name, Row);
   Vue.component(Actionsheet.name, Actionsheet);
@@ -86,6 +91,9 @@ module.exports = {
   Badge,
   Search,
   Step,
+  Tabs,
+  Tab,
+  Lazyload,
   ImagePreview,
   Col,
   Row,
