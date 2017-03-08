@@ -1,7 +1,9 @@
 <template>
   <div class="zan-picker">
-    <div class="zan-picker__toolbar">
+    <div class="zan-picker__toolbar" v-show="showToolbar">
       <slot>
+        <a href="javascript:void(0)" class="zan-picker__cancel" @click="handlePickerCancel">取消</a>
+        <a href="javascript:void(0)" class="zan-picker__confirm" @click="handlePickerConfirm">完成</a>
       </slot>
     </div>
     <div class="zan-picker__columns" :class="['zan-picker__columns--' + columns.length]">
@@ -60,7 +62,7 @@ export default {
      */
     showToolbar: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
 
@@ -78,6 +80,12 @@ export default {
   },
 
   methods: {
+    handlePickerCancel() {
+      this.$emit('cancel');
+    },
+    handlePickerConfirm() {
+      this.$emit('confirm');
+    },
     /**
      * 处理列`change`事件
      */

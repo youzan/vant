@@ -24,6 +24,12 @@ export default {
   methods: {
     handlePickerChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
+    },
+    handlePickerCancel() {
+      alert('picker cancel');
+    },
+    handlePickerConfirm() {
+      alert('picker confirm');
     }
   }
 };
@@ -38,6 +44,14 @@ export default {
 :::demo 基础用法
 ```html
 <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
+```
+:::
+
+### 带toolbar的Picker
+
+:::demo 带toolbar的Picker
+```html
+<zan-picker :columns="pickerColumns" show-toolbar @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></zan-picker>
 ```
 :::
 
