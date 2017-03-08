@@ -1,0 +1,11 @@
+{
+  "name": "@youzan/zanui-vue",
+  "version": "0.0.21",
+  "dependencies": {
+    "raf.js": {
+      "version": "0.0.4",
+      "from": "raf.js@0.0.4",
+      "resolved": "http://registry.npm.qima-inc.com/raf.js/download/raf.js-0.0.4.tgz"
+    }
+  }
+}
