@@ -83,7 +83,7 @@ const PopupManager = {
 
     document.body.appendChild(modalDom);
 
-    if (zIndex && !hasModal) {
+    if (zIndex) {
       modalDom.style.zIndex = zIndex;
     }
     modalDom.style.display = '';
@@ -114,12 +114,10 @@ const PopupManager = {
 
     if (modalStack.length === 0) {
       setTimeout(() => {
-        if (modalStack.length === 0) {
-          if (modalDom.parentNode) modalDom.parentNode.removeChild(modalDom);
+        if (modalDom.parentNode) modalDom.parentNode.removeChild(modalDom);
 
-          modalDom.style.display = 'none';
-          this.modalDom = null;
-        }
+        modalDom.style.display = 'none';
+        this.modalDom = null;
       }, 200);
     }
   }

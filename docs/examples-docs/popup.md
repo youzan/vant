@@ -39,7 +39,6 @@ export default {
 
   methods: {
     handlePopupButtonClick() {
-      this.popupShow1 = false;
       this.popupShow4 = true;
     }
   }
