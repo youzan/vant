@@ -30,7 +30,16 @@
 
 
               </example-block></section></template>
-
+<style>
+@component-namespace demo {
+  @b popup {
+    .zan-popup-4 {
+      width: 60%;
+      height: 200px;
+    }
+  }
+}
+</style>
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 export default {
