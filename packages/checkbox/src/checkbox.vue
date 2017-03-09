@@ -100,7 +100,7 @@ export default {
       if (this.isDisabled) {
         return;
       }
-      this.$refs.input.click();
+      this.currentValue = !this.currentValue;
     }
   }
 };
