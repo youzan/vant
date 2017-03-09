@@ -17,7 +17,11 @@
 </style>
 
 <script>
+import MobileComputed from 'components/mobile-computed';
+
 export default {
+  mixins: [MobileComputed],
+
   data() {
     return {
       show1: false,
@@ -86,6 +90,11 @@ export default {
 </zan-actionsheet>
 ```
 :::
+
+点击以下按钮查看手机端效果：
+
+<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API
 

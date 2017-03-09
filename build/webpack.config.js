@@ -43,7 +43,8 @@ module.exports = {
       'zanui': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages'),
-      'lib': path.join(__dirname, '../lib')
+      'lib': path.join(__dirname, '../lib'),
+      'components': path.join(__dirname, '../docs/components')
     }
   },
   module: {

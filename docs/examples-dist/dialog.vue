@@ -6,12 +6,29 @@
 
 
               </example-block></section></template>
-
+<style>
+@component-namespace demo {
+  @b dialog {
+    .zan-button {
+      margin: 15px;
+    }
+  }
+}
+</style>
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 import { Dialog } from 'src/index';
+import MobileComputed from 'components/mobile-computed';
 
 export default {
+  mixins: [MobileComputed],
+
+  computed: {
+    mobileUrl() {
+      return '/examples.html' + location.hash;
+    }
+  },
+
   methods: {
     handleAlertClick() {
       Dialog.alert({

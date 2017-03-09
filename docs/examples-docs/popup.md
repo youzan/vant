@@ -8,16 +8,36 @@
       padding: 20px;
     }
 
+    .zan-popup-2 {
+      line-height: 50px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.701961);
+      color: #fff;
+    }
+
+    .zan-popup-3 {
+      width: 100%;
+      height: 100%;
+    }
+
     .zan-popup-4 {
       width: 60%;
       height: 200px;
+    }
+
+    .zan-button {
+      margin: 15px;
     }
   }
 }
 </style>
 
 <script>
+import MobileComputed from 'components/mobile-computed';
+
 export default {
+  mixins: [MobileComputed],
+
   data() {
     return {
       popupShow1: false,
@@ -35,12 +55,6 @@ export default {
         }, 2000);
       }
     }
-  },
-
-  methods: {
-    handlePopupButtonClick() {
-      this.popupShow4 = true;
-    }
   }
 };
 </script>
@@ -52,10 +66,10 @@ export default {
 :::demo 基础用法
 ```html
 <div class="zan-row">
-  <zan-button @click="popupShow1 = true">从下方弹出popup</zan-button>
+  <zan-button @click="popupShow1 = true;">从下方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
-  <zan-button @click="handlePopupButtonClick" type="primary">从中间弹出popup</zan-button>
+  更新成功
 </zan-popup>
 
 <div class="zan-row">
@@ -101,8 +115,14 @@ export default {
   }
 };
 </script>
+
 ```
 :::
+
+点击以下按钮查看手机端效果：
+
+<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API
 
