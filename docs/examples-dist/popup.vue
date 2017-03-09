@@ -3,7 +3,7 @@
   <zan-button @click="popupShow1 = true">从下方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
-  xxxx
+  <zan-button @click="handlePopupButtonClick" type="primary">从中间弹出popup</zan-button>
 </zan-popup>
 
 <div class="zan-row">
@@ -23,8 +23,8 @@
 <div class="zan-row">
   <zan-button @click="popupShow4 = true">从中间弹出popup</zan-button>
 </div>
-<zan-popup v-model="popupShow4" transition="popup-fade" class="zan-popup-4">
-  一些内容
+<zan-popup v-model="popupShow4" class="zan-popup-4">
+  从中间弹出popup
 </zan-popup>
 
 
@@ -33,6 +33,13 @@
 <style>
 @component-namespace demo {
   @b popup {
+    .zan-popup-1 {
+      width: 100%;
+      height: 200px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
     .zan-popup-4 {
       width: 60%;
       height: 200px;
@@ -59,6 +66,12 @@ export default {
           this.popupShow2 = false;
         }, 2000);
       }
+    }
+  },
+
+  methods: {
+    handlePopupButtonClick() {
+      this.popupShow4 = true;
     }
   }
 };

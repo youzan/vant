@@ -90,6 +90,10 @@
           "groupName": "JS组件",
           "list": [
             {
+              "path": "/actionsheet",
+              "title": "ActionSheet"
+            },
+            {
               "path": "/tab",
               "title": "Tab"
             },

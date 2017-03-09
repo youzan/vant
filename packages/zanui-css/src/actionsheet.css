@@ -1,9 +1,81 @@
+@import './common/var.css';
+@import './mixins/border_retina.css';
+
 @component-namespace zan {
   @b actionsheet {
+    position: fixed;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    backface-visibility: hidden;
+    transition: .2s ease-out;
+    background-color: #e0e0e0;
+
+    @m withtitle {
+      background-color: $c-white;
+    }
+
+    @e item {
+      line-height: 50px;
+      text-align: center;
+      color: $c-black;
+      font-size: 16px;
+      position: relative;
+      background-color: $c-white;
+
+      @m loading {
+        padding: 10px 0;
+      }
+
+      &::after {
+        @mixin border-retina (top);
+      }
+    }
+
+    @e subname {
+      color: $c-gray-darker;
+      font-size: 12px;
+    }
+
+    @e loading {
+      margin: 0 auto;
+    }
+
+    @e button {
+      display: block;
+      margin-top: 5px;
+      line-height: 50px;
+      color: $c-black;
+      font-size: 16px;
+      text-align: center;
+      background-color: $c-white;
+    }
+
+    @e header {
+      line-height: 44px;
+      color: $c-black;
+      text-align: center;
+      position: relative;
+
+      &::after {
+        @mixin border-retina (top, bottom);
+      }
+
+      .zan-icon-close {
+        position: absolute;
+        font-size: 22px;
+        line-height: 22px;
+        top: 11px;
+        right: 15px;
+      }
+    }
   }
 }
 
-.actionsheet-float-bottom-enter,
-.actionsheet-float-bottom-leave-active {
+.actionsheet-float-enter,
+.actionsheet-float-leave-active {
   transform: translate3d(-50%, 100%, 0);
 }
