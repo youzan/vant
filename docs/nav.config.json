@@ -28,6 +28,10 @@
               "title": "Button"
             },
             {
+              "path": "/icon",
+              "title": "Icon"
+            },
+            {
               "path": "/cell",
               "title": "Cell"
             },

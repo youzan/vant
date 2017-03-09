@@ -3,14 +3,15 @@
     class="zan-field"
     :title="label"
     :class="{
-      'is-textarea': type === 'textarea',
-      'is-nolabel': !label
+      'zan-field--hastextarea': type === 'textarea',
+      'zan-field--nolabel': !label,
+      'zan-field--disabled': disabled,
+      'zan-field--error': error
     }">
     <textarea
       v-if="type === 'textarea'"
       class="zan-field__control"
       v-model="currentValue"
-      @change="$emit('change', currentValue)"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
@@ -20,7 +21,6 @@
       v-else
       class="zan-field__control"
       :value="currentValue"
-      @change="$emit('change', currentValue)"
       @input="handleInput"
       :type="type"
       :placeholder="placeholder"
@@ -46,9 +46,10 @@ export default {
       default: 'text'
     },
     placeholder: String,
-    value: String,
+    value: {},
     label: String,
     disabled: Boolean,
+    error: Boolean,
     readonly: Boolean,
     maxlength: [String, Number]
   },
@@ -66,7 +67,6 @@ export default {
 
     currentValue(val) {
       this.$emit('input', val);
-      console.log(val);
     }
   },
 
