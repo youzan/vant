@@ -38,7 +38,7 @@ router.beforeEach((route, redirect, next) => {
     indexScrollTop = document.body.scrollTop;
   }
   if (isMobile()) {
-    window.location.replace('/examples.html#' + route.path);
+    window.location.replace(location.pathname + 'examples.html#' + route.path);
     return;
   }
   document.title = route.meta.title || document.title;
