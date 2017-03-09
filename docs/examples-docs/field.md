@@ -54,7 +54,7 @@ export default {
 
 传入`error`属性即可。
 
-:::demo 禁用的输入框
+:::demo 错误的输入框
 ```html
 <zan-cell-group>
   <zan-field label="用户名：" type="text" placeholder="请输入用户名" error></zan-field>
