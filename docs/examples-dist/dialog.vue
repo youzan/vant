@@ -23,12 +23,6 @@ import MobileComputed from 'components/mobile-computed';
 export default {
   mixins: [MobileComputed],
 
-  computed: {
-    mobileUrl() {
-      return '/examples.html' + location.hash;
-    }
-  },
-
   methods: {
     handleAlertClick() {
       Dialog.alert({
