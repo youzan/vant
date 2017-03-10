@@ -3,7 +3,7 @@
   <zan-button @click="popupShow1 = true;">从下方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
-  更新成功
+  <zan-button @click="showDialog">弹出dialog</zan-button>
 </zan-popup>
 
 <div class="zan-row">
@@ -67,6 +67,7 @@
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 import MobileComputed from 'components/mobile-computed';
+import Dialog from 'packages/dialog';
 
 export default {
   mixins: [MobileComputed],
@@ -87,6 +88,19 @@ export default {
           this.popupShow2 = false;
         }, 2000);
       }
+    }
+  },
+
+  methods: {
+    showDialog() {
+      Dialog.confirm({
+        title: 'confirm标题',
+        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
+      }).then((action) => {
+        console.log(action);
+      }, (error) => {
+        console.log(error);
+      });
     }
   }
 };
