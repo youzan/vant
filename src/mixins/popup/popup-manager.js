@@ -1,13 +1,24 @@
+import Vue from 'vue';
 import { addClass } from 'src/utils/dom';
 
-let hasModal = false; // eslint-disable-line
+let popupContext = {
+  hasModal: false,
+  instances: {},
+  modalStack: []
+};
+
+if (Vue.prototype.$isServer) {
+  global.popupContext = popupContext;
+} else {
+  window.popupContext = popupContext;
+}
 
 const getModal = function() {
   let modalDom = PopupManager.modalDom;
   if (modalDom) {
-    hasModal = true;
+    popupContext.hasModal = true;
   } else {
-    hasModal = false;
+    popupContext.hasModal = false;
     modalDom = document.createElement('div');
     PopupManager.modalDom = modalDom;
 
@@ -24,31 +35,27 @@ const getModal = function() {
   return modalDom;
 };
 
-const instances = {};
-
 const PopupManager = {
   zIndex: 2000,
-
-  modalStack: [],
 
   nextZIndex() {
     return this.zIndex++;
   },
 
   getInstance(id) {
-    return instances[id];
+    return popupContext.instances[id];
   },
 
   register(id, instance) {
     if (id && instance) {
-      instances[id] = instance;
+      popupContext.instances[id] = instance;
     }
   },
 
   deregister(id) {
     if (id) {
-      instances[id] = null;
-      delete instances[id];
+      popupContext.instances[id] = null;
+      delete popupContext.instances[id];
     }
   },
 
@@ -56,7 +63,7 @@ const PopupManager = {
    * 遮罩层点击回调，`closeOnClickOverlay`为`true`时会关闭当前`popup`
    */
   handleOverlayClick() {
-    const topModal = PopupManager.modalStack[PopupManager.modalStack.length - 1];
+    const topModal = popupContext.modalStack[popupContext.modalStack.length - 1];
     if (!topModal) return;
 
     const instance = PopupManager.getInstance(topModal.id);
@@ -68,7 +75,7 @@ const PopupManager = {
   openModal(id, zIndex, dom) {
     if (!id || zIndex === undefined) return;
 
-    const modalStack = this.modalStack;
+    const modalStack = popupContext.modalStack;
 
     for (let i = 0, len = modalStack.length; i < len; i++) {
       const item = modalStack[i];
@@ -88,11 +95,11 @@ const PopupManager = {
     }
     modalDom.style.display = '';
 
-    this.modalStack.push({ id: id, zIndex: zIndex });
+    popupContext.modalStack.push({ id: id, zIndex: zIndex });
   },
 
   closeModal(id) {
-    const modalStack = this.modalStack;
+    const modalStack = popupContext.modalStack;
     const modalDom = getModal();
 
     if (modalStack.length > 0) {
