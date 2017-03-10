@@ -14,6 +14,7 @@ function doBindEvent() {
   if (disabledExpr) {
     this.vm.$watch(disabledExpr, (value) => {
       this.disabled = value;
+      this.scrollEventListener();
     });
     disabled = Boolean(this.vm[disabledExpr]);
   }
