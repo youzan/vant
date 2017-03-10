@@ -72,7 +72,7 @@ export default {
 
   beforeMount() {
     this._popupId = 'popup-' + popupContext.idSeed++;
-    PopupManager.register(this._popupId, this);
+    PopupManager.register(this._popupId, this, popupContext);
   },
 
   data() {
