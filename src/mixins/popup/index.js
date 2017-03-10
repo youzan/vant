@@ -2,18 +2,17 @@ import Vue from 'vue';
 import merge from 'src/utils/merge';
 import PopupManager from './popup-manager';
 
-let popupContext = {
-  idSeed: 1,
-  zIndex: 2000,
-  hasModal: false,
-  instances: {},
-  modalStack: []
-};
-
-if (Vue.prototype.$isServer) {
-  global.popupContext = popupContext;
+let popupContext;
+if (!window.popupContext) {
+  popupContext = window.popupContext = {
+    idSeed: 1,
+    zIndex: 2000,
+    hasModal: false,
+    instances: {},
+    modalStack: []
+  };
 } else {
-  window.popupContext = popupContext;
+  popupContext = window.popupContext;
 }
 
 const getDOM = function(dom) {
