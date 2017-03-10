@@ -1,21 +1,12 @@
 import Vue from 'vue';
-import merge from 'src/utils/merge';
 import { addClass } from 'src/utils/dom';
 
 let popupContext;
 if (Vue.prototype.$isServer) {
   popupContext = global.popupContext || {};
-  global.popupContext = popupContext;
 } else {
   popupContext = window.popupContext || {};
-  window.popupContext = popupContext;
 }
-
-popupContext = merge(popupContext, {
-  hasModal: false,
-  instances: {},
-  modalStack: []
-});
 
 const getModal = function() {
   let modalDom = PopupManager.modalDom;
@@ -40,10 +31,8 @@ const getModal = function() {
 };
 
 const PopupManager = {
-  zIndex: 2000,
-
   nextZIndex() {
-    return this.zIndex++;
+    return popupContext.zIndex++;
   },
 
   getInstance(id) {
