@@ -69,7 +69,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  version: '0.0.26',
+  version: '0.0.27',
   Button,
   Switch,
   Field,
