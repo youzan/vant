@@ -34,7 +34,7 @@ export default {
       line-height: 40px;
     }
 
-    h3 {
+    section > h3 {
       font-size: 22px;
       margin: 23px 0;
     }
