@@ -1,17 +1,21 @@
 import Vue from 'vue';
+import merge from 'src/utils/merge';
 import { addClass } from 'src/utils/dom';
 
-let popupContext = {
+let popupContext;
+if (Vue.prototype.$isServer) {
+  popupContext = global.popupContext || {};
+  global.popupContext = popupContext;
+} else {
+  popupContext = window.popupContext || {};
+  window.popupContext = popupContext;
+}
+
+popupContext = merge(popupContext, {
   hasModal: false,
   instances: {},
   modalStack: []
-};
-
-if (Vue.prototype.$isServer) {
-  global.popupContext = popupContext;
-} else {
-  window.popupContext = popupContext;
-}
+});
 
 const getModal = function() {
   let modalDom = PopupManager.modalDom;

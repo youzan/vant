@@ -1,7 +1,19 @@
+import Vue from 'vue';
 import merge from 'src/utils/merge';
 import PopupManager from './popup-manager';
 
-let idSeed = 1;
+let popupContext;
+if (Vue.prototype.$isServer) {
+  popupContext = global.popupContext || {};
+  global.popupContext = popupContext;
+} else {
+  popupContext = window.popupContext || {};
+  window.popupContext = popupContext;
+}
+
+popupContext = merge(popupContext, {
+  idSeed: 1
+});
 
 const getDOM = function(dom) {
   if (dom.nodeType === 3) {
@@ -58,7 +70,7 @@ export default {
   },
 
   beforeMount() {
-    this._popupId = 'popup-' + idSeed++;
+    this._popupId = 'popup-' + popupContext.idSeed++;
     PopupManager.register(this._popupId, this);
   },
 
