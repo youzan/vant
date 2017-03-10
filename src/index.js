@@ -28,6 +28,7 @@ import ImagePreview from '../packages/image-preview/index.js';
 import Col from '../packages/col/index.js';
 import Row from '../packages/row/index.js';
 import Actionsheet from '../packages/actionsheet/index.js';
+import Quantity from '../packages/quantity/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -58,6 +59,7 @@ const install = function(Vue) {
   Vue.component(Col.name, Col);
   Vue.component(Row.name, Row);
   Vue.component(Actionsheet.name, Actionsheet);
+  Vue.component(Quantity.name, Quantity);
 };
 
 // auto install
@@ -97,5 +99,6 @@ module.exports = {
   ImagePreview,
   Col,
   Row,
-  Actionsheet
+  Actionsheet,
+  Quantity
 };

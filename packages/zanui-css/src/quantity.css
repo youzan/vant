@@ -1,0 +1,77 @@
+@import './common/var.css';
+
+@component-namespace zan {
+  @b quantity {
+    font-size: 0;
+
+    @e stepper {
+      width: 40px;
+      height: 30px;
+      box-sizing: border-box;
+      background-color: $c-white;
+      border: 1px solid $c-gray-dark;
+      position: relative;
+      outline: 0;
+      padding: 5px;
+      vertical-align: middle;
+
+      &::before {
+        width: 9px;
+        height: 1px;
+      }
+
+      &::after {
+        width: 1px;
+        height: 9px;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #6c6c6c;
+      }
+    }
+
+    @e minus {
+      border-radius: 2px 0 0 2px;
+
+      &::after {
+        display: none;
+      }
+
+      @m disabled {
+        background-color: #f8f8f8;
+        border-color: #e8e8e8 #999 #e8e8e8 #e8e8e8;
+      }
+    }
+
+    @e plus {
+      border-radius: 0 2px 2px 0;
+
+      @m disabled {
+        background-color: #f8f8f8;
+        border-color: #e8e8e8 #e8e8e8 #e8e8e8 #999;
+      }
+    }
+
+    @e input {
+      width: 33px;
+      height: 26px;
+      padding: 1px;
+      border: 1px solid $c-gray-dark;
+      border-width: 1px 0;
+      box-sizing: content-box;
+      color: $c-gray-darker;
+      font-size: 14px;
+      outline: 0;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}

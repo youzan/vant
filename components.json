@@ -28,5 +28,6 @@
   "image-preview": "./packages/image-preview/index.js",
   "col": "./packages/col/index.js",
   "row": "./packages/row/index.js",
-  "actionsheet": "./packages/actionsheet/index.js"
+  "actionsheet": "./packages/actionsheet/index.js",
+  "quantity": "./packages/quantity/index.js"
 }

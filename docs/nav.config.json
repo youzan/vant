@@ -134,6 +134,10 @@
               "title": "Swipe"
             },
             {
+              "path": "/quantity",
+              "title": "Quantity"
+            },
+            {
               "path": "/waterfall",
               "title": "Waterfall"
             },

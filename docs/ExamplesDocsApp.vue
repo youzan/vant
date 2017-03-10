@@ -72,6 +72,12 @@ export default {
       color: #5e6d82;
       margin: 14px 0;
     }
+
+     p > code {
+      background-color: #eee;
+      padding: 2px 4px;
+      color: #26a2ff;
+    }
   }
 
   .demo-page {
