@@ -27,7 +27,6 @@
     <span class="zan-card__price">¥ 2.00</span>
   </div>
   <div class="zan-card__row" slot="desc">
-    <h4 class="zan-card__desc">商品sku</h4>
     <span class="zan-card__num">x 2</span>
   </div>
   <div class="zan-card__footer" slot="footer">
