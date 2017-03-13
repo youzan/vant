@@ -29,6 +29,7 @@ import Col from '../packages/col/index.js';
 import Row from '../packages/row/index.js';
 import Actionsheet from '../packages/actionsheet/index.js';
 import Quantity from '../packages/quantity/index.js';
+import Progress from '../packages/progress/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -60,6 +61,7 @@ const install = function(Vue) {
   Vue.component(Row.name, Row);
   Vue.component(Actionsheet.name, Actionsheet);
   Vue.component(Quantity.name, Quantity);
+  Vue.component(Progress.name, Progress);
 };
 
 // auto install
@@ -100,5 +102,6 @@ module.exports = {
   Col,
   Row,
   Actionsheet,
-  Quantity
+  Quantity,
+  Progress
 };

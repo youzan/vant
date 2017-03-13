@@ -29,5 +29,6 @@
   "col": "./packages/col/index.js",
   "row": "./packages/row/index.js",
   "actionsheet": "./packages/actionsheet/index.js",
-  "quantity": "./packages/quantity/index.js"
+  "quantity": "./packages/quantity/index.js",
+  "progress": "./packages/progress/index.js"
 }
