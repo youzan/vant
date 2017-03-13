@@ -59,12 +59,12 @@ export default {
       return this.inactive ? '#cacaca' : this.color;
     },
     pivotStyle() {
-      let pivotStyle = {
+      const pivotStyle = {
         backgroundColor: this.componentColor,
         color: this.textColor,
         left: this.percentage + '%',
         marginLeft: '-14px'
-      }
+      };
       console.log(this.percentage);
       if (this.percentage <= 5) {
         pivotStyle.left = '0%';
