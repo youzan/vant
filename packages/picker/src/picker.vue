@@ -14,7 +14,8 @@
         :class-name="item.className"
         :itemHeight="itemHeight"
         :visible-item-count="visibleItemCount"
-        @change="columnValueChange">
+        :value-key="valueKey"
+        @change="columnValueChange(index)">
       </picker-column>
       <div class="zan-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
@@ -63,7 +64,8 @@ export default {
     showToolbar: {
       type: Boolean,
       default: false
-    }
+    },
+    valueKey: String
   },
 
   computed: {
@@ -81,16 +83,16 @@ export default {
 
   methods: {
     handlePickerCancel() {
-      this.$emit('cancel');
+      this.$emit('cancel', this.values);
     },
     handlePickerConfirm() {
-      this.$emit('confirm');
+      this.$emit('confirm', this.values);
     },
     /**
      * 处理列`change`事件
      */
-    columnValueChange() {
-      this.$emit('change', this, this.values);
+    columnValueChange(index) {
+      this.$emit('change', this, this.values, index);
     },
 
     /**

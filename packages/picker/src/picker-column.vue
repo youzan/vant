@@ -6,7 +6,7 @@
         class="zan-picker-column__item"
         :class="{ 'zan-picker-column__item--selected': item === currentValue }"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }">
-        {{item}}
+        {{ typeof item === 'object' && item[valueKey] ? item[valueKey] : item }}
       </div>
     </div>
   </div>
@@ -52,7 +52,8 @@ export default {
       type: Number,
       default: DEFAULT_ITEM_HEIGHT
     },
-    value: {}
+    value: {},
+    valueKey: String
   },
 
   data() {

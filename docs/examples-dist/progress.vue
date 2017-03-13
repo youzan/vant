@@ -22,13 +22,13 @@
               </example-block><example-block title="自定义颜色">
                 
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivottext="红色" color="#ed5050" :percentage="26"></zan-progress>
+  <zan-progress class="demo-progress__demo1" pivot-text="红色" color="#ed5050" :percentage="26"></zan-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivottext="橙色" color="#f60" :percentage="46"></zan-progress>
+  <zan-progress class="demo-progress__demo1" pivot-text="橙色" color="#f60" :percentage="46"></zan-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivottext="黄色" color="#f09000" :percentage="66"></zan-progress>
+  <zan-progress class="demo-progress__demo1" pivot-text="黄色" color="#f09000" :percentage="66"></zan-progress>
 </div>
 
               </example-block></section></template>
@@ -36,7 +36,6 @@
   @component-namespace demo {
     @b progress {
       @e wrapper {
-        width: 100%;
         padding: 5px;
         margin: 20px 10px;
       }

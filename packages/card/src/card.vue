@@ -7,7 +7,7 @@
           <h4 v-text="title" class="zan-card__title"></h4>
         </slot>
         <slot name="desc">
-          <p v-if="desc" v-text="desc" class="zan-card__title"></p>
+          <p v-if="desc" v-text="desc" class="zan-card__desc"></p>
         </slot>
         <slot name="tags"></slot>
       </div>
