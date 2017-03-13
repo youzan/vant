@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-switch",
+  "name": "@youzan/zan-progress",
   "version": "0.0.1",
   "description": "progress component",
   "main": "./index.js",
