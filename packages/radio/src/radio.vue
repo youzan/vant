@@ -44,7 +44,6 @@ export default {
 
     currentValue: {
       get() {
-        console.log(this.value);
         return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
       },
 

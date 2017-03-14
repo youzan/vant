@@ -1,3 +1,13 @@
+<style>
+@component-namespace demo {
+  @b field {
+    .zan-field-wrapper {
+      padding: 0 10px;
+    }
+  }
+}
+</style>
+
 <script>
 export default {
   data() {
@@ -35,6 +45,18 @@ export default {
 <zan-cell-group>
   <zan-field type="text" placeholder="请输入用户名"></zan-field>
 </zan-cell-group>
+```
+:::
+
+### 带border的输入框
+
+传入一个`border`属性。
+
+:::demo 带border的输入框
+```html
+<div class="zan-field-wrapper">
+  <zan-field type="text" placeholder="请输入用户名" border></zan-field>
+</div>
 ```
 :::
 

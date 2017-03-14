@@ -36,6 +36,20 @@
       }
     }
 
+    @m border {
+      .zan-field__control {
+        padding-left: 10px;
+      }
+
+      &::after {
+        @mixin border-retina (top, right, bottom, left);
+      }
+
+      &:last-child::after {
+        @mixin border-retina (bottom);
+      }
+    }
+
     .zan-cell__title,
     .zan-cell__value {
       float: none;
