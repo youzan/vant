@@ -106,8 +106,8 @@
               "title": "Toast"
             },
             {
-              "path": "/img-uploader",
-              "title": "Img Uploader"
+              "path": "/uploader",
+              "title": "Uploader"
             },
             {
               "path": "/picker",
