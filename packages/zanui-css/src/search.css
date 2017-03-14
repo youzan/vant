@@ -1,4 +1,4 @@
-@import "./common/var.css";
+@import './common/var.css';
 
 @component-namespace zan {
     @b search {

@@ -1,4 +1,5 @@
-@import "./mixins/border_retina.css";
+@import './mixins/border_retina.css';
+@import './popup.css';
 
 @component-namespace zan {
   @b dialog-wrapper {
