@@ -1,6 +1,13 @@
 <template><section class="demo-picker"><h1 class="demo-title">picker</h1><example-block title="基础用法">
                 <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
 
+
+
+              </example-block><example-block title="带toolbar的Picker">
+                <zan-picker :columns="pickerColumns" show-toolbar="" @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></zan-picker>
+
+
+
               </example-block></section></template>
 
 <script>
@@ -30,6 +37,12 @@ export default {
   methods: {
     handlePickerChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
+    },
+    handlePickerCancel() {
+      alert('picker cancel');
+    },
+    handlePickerConfirm() {
+      alert('picker confirm');
     }
   }
 };

@@ -42,7 +42,9 @@ module.exports = {
       'vue$': 'vue/dist/vue.runtime.common.js',
       'zanui': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
-      'packages': path.join(__dirname, '../packages')
+      'packages': path.join(__dirname, '../packages'),
+      'lib': path.join(__dirname, '../lib'),
+      'components': path.join(__dirname, '../docs/components')
     }
   },
   module: {

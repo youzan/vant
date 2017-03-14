@@ -1,7 +1,20 @@
+<style>
+@component-namespace demo {
+  @b dialog {
+    .zan-button {
+      margin: 15px;
+    }
+  }
+}
+</style>
+
 <script>
 import { Dialog } from 'src/index';
+import MobileComputed from 'components/mobile-computed';
 
 export default {
+  mixins: [MobileComputed],
+
   methods: {
     handleAlertClick() {
       Dialog.alert({
@@ -65,6 +78,12 @@ export default {
 </script>
 ```
 :::
+
+点击以下按钮查看手机端效果：
+
+<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
+
 
 ### API
 

@@ -1,28 +1,54 @@
 <template>
   <transition name="actionsheet-float">
-    <div class="zan-actionsheet" v-show="currentValue">
-      <div class="zan-actionsheet-header" v-if="title">
+    <div class="zan-actionsheet" :class="[ title ? 'zan-actionsheet--withtitle' : '' ]" v-show="currentValue">
+      <div class="zan-actionsheet__header" v-if="title">
         <h3 v-text="title"></h3>
+        <zan-icon name="close" @click.stop="currentValue = false"></zan-icon>
       </div>
-      <slot>
-        <ul class="zan-actionsheet-list">
-          <li v-for="item in actions" class="zan-actionsheet-item" :class="item.className" @click.stop="handleItemClick(item)">{{ item.name }}</li>
+      <template v-if="!title">
+        <ul class="zan-actionsheet__list">
+          <li
+            v-for="item in actions"
+            class="zan-actionsheet__item"
+            :class="[item.className, item.loading ? 'zan-actionsheet__item--loading' : '']"
+            @click.stop="handleItemClick(item)">
+            <template v-if="!item.loading">
+              <span class="zan-actionsheet__name">{{ item.name }}</span>
+              <span class="zan-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+            </template>
+            <template v-else>
+              <zan-loading class="zan-actionsheet__loading" type="circle" color="black"></zan-loading>
+            </template>
+          </li>
         </ul>
-        <a class="zan-actionsheet-button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
-      </slot>
+        <a class="zan-actionsheet__button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
+      </template>
+      <template v-else>
+        <div class="zan-actionsheet__content">
+          <slot></slot>
+        </div>
+      </template>
     </div>
   </transition>
 </template>
 
 <script>
 import Popup from 'src/mixins/popup';
+import ZanLoading from 'packages/loading';
+import ZanIcon from 'packages/icon';
 
 export default {
   name: 'zan-actionsheet',
 
   mixins: [Popup],
 
+  components: {
+    ZanLoading,
+    ZanIcon
+  },
+
   props: {
+    value: {},
     actions: {
       type: Array,
       default: () => []
@@ -40,7 +66,7 @@ export default {
 
   data() {
     return {
-      currentValue: false
+      currentValue: this.value
     };
   },
 

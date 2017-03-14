@@ -6,13 +6,13 @@
     width: 100%;
     overflow: hidden;
 
-    @when textarea {
+    @m hastextarea {
       .zan-field__control {
         min-height: 60px;
       }
     }
 
-    @when nolabel {
+    @m nolabel {
       .zan-cell__title {
         display: none;
       }
@@ -20,6 +20,19 @@
       .zan-cell__value {
         width: 100%;
         padding-left: 0;
+      }
+    }
+
+    @m disabled {
+      .zan-field__control {
+        color: $c-gray-dark;
+      }
+    }
+
+    @m error {
+      .zan-field__control,
+      .zan-cell__title {
+        color: $c-red;
       }
     }
 

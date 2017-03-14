@@ -1,5 +1,44 @@
+<style>
+@component-namespace demo {
+  @b popup {
+    .zan-popup-1 {
+      width: 100%;
+      height: 200px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    .zan-popup-2 {
+      line-height: 50px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.701961);
+      color: #fff;
+    }
+
+    .zan-popup-3 {
+      width: 100%;
+      height: 100%;
+    }
+
+    .zan-popup-4 {
+      width: 60%;
+      height: 200px;
+    }
+
+    .zan-button {
+      margin: 15px;
+    }
+  }
+}
+</style>
+
 <script>
+import MobileComputed from 'components/mobile-computed';
+import Dialog from 'packages/dialog';
+
 export default {
+  mixins: [MobileComputed],
+
   data() {
     return {
       popupShow1: false,
@@ -17,6 +56,19 @@ export default {
         }, 2000);
       }
     }
+  },
+
+  methods: {
+    showDialog() {
+      Dialog.confirm({
+        title: 'confirm标题',
+        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
+      }).then((action) => {
+        console.log(action);
+      }, (error) => {
+        console.log(error);
+      });
+    }
   }
 };
 </script>
@@ -28,10 +80,10 @@ export default {
 :::demo 基础用法
 ```html
 <div class="zan-row">
-  <zan-button @click="popupShow1 = true">从下方弹出popup</zan-button>
+  <zan-button @click="popupShow1 = true;">从下方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
-  xxxx
+  <zan-button @click="showDialog">弹出dialog</zan-button>
 </zan-popup>
 
 <div class="zan-row">
@@ -51,8 +103,8 @@ export default {
 <div class="zan-row">
   <zan-button @click="popupShow4 = true">从中间弹出popup</zan-button>
 </div>
-<zan-popup v-model="popupShow4" transition="popup-fade" class="zan-popup-4">
-  一些内容
+<zan-popup v-model="popupShow4" class="zan-popup-4">
+  从中间弹出popup
 </zan-popup>
 
 <script>
@@ -77,8 +129,14 @@ export default {
   }
 };
 </script>
+
 ```
 :::
+
+点击以下按钮查看手机端效果：
+
+<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API
 

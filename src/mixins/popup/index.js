@@ -1,7 +1,19 @@
+import Vue from 'vue';
 import merge from 'src/utils/merge';
 import PopupManager from './popup-manager';
 
-let idSeed = 1;
+let popupContext;
+if (!window.popupContext) {
+  popupContext = window.popupContext = {
+    idSeed: 1,
+    zIndex: 2000,
+    hasModal: false,
+    instances: {},
+    modalStack: []
+  };
+} else {
+  popupContext = window.popupContext;
+}
 
 const getDOM = function(dom) {
   if (dom.nodeType === 3) {
@@ -58,8 +70,8 @@ export default {
   },
 
   beforeMount() {
-    this._popupId = 'popup-' + idSeed++;
-    PopupManager.register(this._popupId, this);
+    this._popupId = 'popup-' + popupContext.idSeed++;
+    PopupManager.register(this._popupId, this, popupContext);
   },
 
   data() {
@@ -86,9 +98,9 @@ export default {
       const props = merge({}, this, options);
       const zIndex = props.zIndex;
 
-      // 如果属性中传入了`zIndex`，则覆盖`PopupManager`中对应的`zIndex`
+      // 如果属性中传入了`zIndex`，则覆盖`popupContext`中对应的`zIndex`
       if (zIndex) {
-        PopupManager.zIndex = zIndex;
+        popupContext.zIndex = zIndex;
       }
 
       // 如果显示遮罩层

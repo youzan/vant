@@ -34,7 +34,7 @@ export default {
       line-height: 40px;
     }
 
-    h3 {
+    section > h3 {
       font-size: 22px;
       margin: 23px 0;
     }
@@ -71,6 +71,12 @@ export default {
       font-size: 14px;
       color: #5e6d82;
       margin: 14px 0;
+    }
+
+     p > code {
+      background-color: #eee;
+      padding: 2px 4px;
+      color: #26a2ff;
     }
   }
 

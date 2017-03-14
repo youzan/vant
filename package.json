@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.15",
+  "version": "0.0.30",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -24,7 +24,8 @@
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
     "test:watch": "karma start test/unit/karma.conf.js",
-    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  "
+    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
+    "deploy": "sh build/release.sh"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
     "raf.js": "0.0.4"
   },
   "peerDependencies": {
-    "vue": "^2.1.8"
+    "vue": "2.1.8"
   },
   "devDependencies": {
     "2webpack2": "^1.2.1",
@@ -129,14 +130,14 @@
     "transliteration": "^1.1.11",
     "uppercamelcase": "^1.1.0",
     "url-loader": "^0.5.7",
-    "vue": "^2.1.8",
+    "vue": "2.1.8",
     "vue-hot-reload-api": "^1.3.3",
     "vue-html-loader": "^1.2.3",
-    "vue-loader": "^10.0.2",
+    "vue-loader": "^10.3.0",
     "vue-markdown-loader": "^0.6.1",
     "vue-router": "^2.0.0",
     "vue-style-loader": "^1.0.0",
-    "vue-template-compiler": "^2.1.8",
+    "vue-template-compiler": "2.1.8",
     "vue-template-es2015-compiler": "^1.4.2",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^1.16.0",

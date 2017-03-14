@@ -18,7 +18,10 @@
 @import './steps.css';
 @import './tag.css';
 @import './checkbox.css';
+@import './tab.css';
 @import './col.css';
 @import './row.css';
 @import './image_preview.css';
 @import './actionsheet.css';
+@import './quantity.css';
+@import './progress.css';

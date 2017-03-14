@@ -2,28 +2,6 @@
 
 ### 基础用法
 
-:::demo 基础用法
-```html
-<div class="waterfall">
-  <div
-    v-waterfall-lower="loadMore"
-    v-waterfall-upper="loadMoreUpper"
-    waterfall-disabled="isWaterfallDisabled"
-    waterfall-offset="400"
-  >
-    <div
-      class="waterfall-item"
-      v-for="item in list"
-      style="text-align: center;"
-    >
-      {{ item }}
-    </div>
-    <div v-if="loading" style="text-align: center;">
-      loading
-    </div>
-  </div>
-</div>
-
 <script>
 export default {
   data() {
@@ -62,6 +40,35 @@ export default {
   }
 };
 </script>
+
+<style>
+  .waterfall {
+    max-height: 300px;
+    overflow: scroll;
+  }
+</style>
+
+:::demo 基础用法
+```html
+<div class="waterfall">
+  <div
+    v-waterfall-lower="loadMore"
+    v-waterfall-upper="loadMoreUpper"
+    waterfall-disabled="isWaterfallDisabled"
+    waterfall-offset="400"
+  >
+    <div
+      class="waterfall-item"
+      v-for="item in list"
+      style="text-align: center;"
+    >
+      {{ item }}
+    </div>
+    <div v-if="loading" style="text-align: center;">
+      loading
+    </div>
+  </div>
+</div>
 ```
 :::
 
@@ -69,6 +76,6 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| waterfall-disabled | 是否禁止瀑布流触发 | Boolean  | false |  |
+| waterfall-disabled | 在vue对象中表示是否禁止瀑布流触发的key值 | String  | - |  |
 | waterfall-offset | 触发瀑布流加载的阈值 | Number  | 300 |   |
 

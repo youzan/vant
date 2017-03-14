@@ -1,9 +1,29 @@
+@import "./mixins/border_retina.css";
+
 @component-namespace zan {
   @b picker {
     overflow: hidden;
 
     @e toolbar {
       height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      padding: 0 15px;
+      position: relative;
+
+      &::after {
+        @mixin border-retina (top, bottom);
+      }
+    }
+
+    @e cancel {
+      color: #3388FF;
+      float: left;
+    }
+
+    @e confirm {
+      color: #3388FF;
+      float: right;
     }
 
     @e columns {

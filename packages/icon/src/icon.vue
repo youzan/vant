@@ -1,5 +1,5 @@
 <template>
-  <i class="zanui-icon" :class="'zan-icon-' + name"></i>
+  <i class="zan-icon" :class="'zan-icon-' + name" @click="handleIconClick"></i>
 </template>
 
 <script>
@@ -8,6 +8,12 @@
 
     props: {
       name: String
+    },
+
+    methods: {
+      handleIconClick(event) {
+        this.$emit('click', event);
+      }
     }
   };
 </script>

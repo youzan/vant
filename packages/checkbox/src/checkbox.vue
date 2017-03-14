@@ -6,6 +6,7 @@
     }">
     <span class="zan-checkbox__input">
       <input
+        ref="input"
         v-model="currentValue"
         type="checkbox"
         class="zan-checkbox__control"
@@ -16,7 +17,7 @@
       }">
       </span>
     </span>
-    <span class="zan-checkbox__label">
+    <span class="zan-checkbox__label" @click="handleLabelClick">
       <slot></slot>
     </span>
   </div>
@@ -91,6 +92,15 @@ export default {
       return this.isGroup && this.parentGroup
           ? this.parentGroup.disabled || this.disabled
           : this.disabled;
+    }
+  },
+
+  methods: {
+    handleLabelClick() {
+      if (this.isDisabled) {
+        return;
+      }
+      this.currentValue = !this.currentValue;
     }
   }
 };

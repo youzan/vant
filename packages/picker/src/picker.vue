@@ -1,7 +1,9 @@
 <template>
   <div class="zan-picker">
-    <div class="zan-picker__toolbar">
+    <div class="zan-picker__toolbar" v-show="showToolbar">
       <slot>
+        <a href="javascript:void(0)" class="zan-picker__cancel" @click="handlePickerCancel">取消</a>
+        <a href="javascript:void(0)" class="zan-picker__confirm" @click="handlePickerConfirm">完成</a>
       </slot>
     </div>
     <div class="zan-picker__columns" :class="['zan-picker__columns--' + columns.length]">
@@ -12,7 +14,8 @@
         :class-name="item.className"
         :itemHeight="itemHeight"
         :visible-item-count="visibleItemCount"
-        @change="columnValueChange">
+        :value-key="valueKey"
+        @change="columnValueChange(index)">
       </picker-column>
       <div class="zan-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
@@ -60,8 +63,9 @@ export default {
      */
     showToolbar: {
       type: Boolean,
-      default: true
-    }
+      default: false
+    },
+    valueKey: String
   },
 
   computed: {
@@ -78,11 +82,17 @@ export default {
   },
 
   methods: {
+    handlePickerCancel() {
+      this.$emit('cancel', this.values);
+    },
+    handlePickerConfirm() {
+      this.$emit('confirm', this.values);
+    },
     /**
      * 处理列`change`事件
      */
-    columnValueChange() {
-      this.$emit('change', this, this.values);
+    columnValueChange(index) {
+      this.$emit('change', this, this.values, index);
     },
 
     /**

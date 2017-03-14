@@ -5,6 +5,10 @@ delete config.devtool;
 
 config.entry = Components;
 
+config.externals = {
+  vue: 'vue'
+};
+
 config.output = {
   path: './lib',
   filename: '[name].js',

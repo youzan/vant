@@ -28,6 +28,10 @@
               "title": "Button"
             },
             {
+              "path": "/icon",
+              "title": "Icon"
+            },
+            {
               "path": "/cell",
               "title": "Cell"
             },
@@ -90,6 +94,10 @@
           "groupName": "JS组件",
           "list": [
             {
+              "path": "/actionsheet",
+              "title": "ActionSheet"
+            },
+            {
               "path": "/tab",
               "title": "Tab"
             },
@@ -124,6 +132,10 @@
             {
               "path": "/swipe",
               "title": "Swipe"
+            },
+            {
+              "path": "/quantity",
+              "title": "Quantity"
             },
             {
               "path": "/waterfall",
