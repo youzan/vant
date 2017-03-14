@@ -28,9 +28,11 @@
     },
     methods: {
       onValueChange (event) {
+        
         if (this.disabled) {
           return;
         }
+
         var files = event.target.files;
         var file = files[0];
         if (!file) return;
@@ -55,7 +57,7 @@
         } else if (this.resultType == 'text') {
           reader.readAsText(file);
         } 
-        
+
       }
     }
   };
