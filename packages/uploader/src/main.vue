@@ -38,6 +38,7 @@
         if (this.beforeRead && ! this.beforeRead(file)) return;
         
         var reader = new FileReader();
+
         reader.onload = (e) => {
           this.$emit('file-readed',
             {
@@ -48,11 +49,13 @@
             });
           this.$refs.input.value = '';
         };
+
         if (this.resultType == 'dataUrl') {
           reader.readAsDataURL(file);
         } else if (this.resultType == 'text') {
           reader.readAsText(file);
         } 
+        
       }
     }
   };
