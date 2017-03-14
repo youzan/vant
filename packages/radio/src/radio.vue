@@ -17,7 +17,7 @@
       }">
       </span>
     </span>
-    <span class="zan-radio__label">
+    <span class="zan-radio__label" @click="handleLabelClick">
       <slot></slot>
     </span>
   </div>
@@ -60,6 +60,15 @@ export default {
       return this.isGroup && this.parentGroup
           ? this.parentGroup.disabled || this.disabled
           : this.disabled;
+    }
+  },
+
+  methods: {
+    handleLabelClick() {
+      if (this.isDisabled) {
+        return;
+      }
+      this.currentValue = this.name;
     }
   }
 };
