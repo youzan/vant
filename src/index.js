@@ -30,6 +30,8 @@ import Row from '../packages/row/index.js';
 import Actionsheet from '../packages/actionsheet/index.js';
 import Quantity from '../packages/quantity/index.js';
 import Progress from '../packages/progress/index.js';
+import Swipe from '../packages/swipe/index.js';
+import SwipeItem from '../packages/swipe-item/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -62,6 +64,8 @@ const install = function(Vue) {
   Vue.component(Actionsheet.name, Actionsheet);
   Vue.component(Quantity.name, Quantity);
   Vue.component(Progress.name, Progress);
+  Vue.component(Swipe.name, Swipe);
+  Vue.component(SwipeItem.name, SwipeItem);
 };
 
 // auto install
@@ -103,5 +107,7 @@ module.exports = {
   Row,
   Actionsheet,
   Quantity,
-  Progress
+  Progress,
+  Swipe,
+  SwipeItem
 };

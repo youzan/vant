@@ -1,5 +1,6 @@
 <template>
   <div
+    @click="handleRadioClick"
     class="zan-radio"
     :class="{
       'zan-radio--disabled': isDisabled
@@ -69,6 +70,10 @@ export default {
         return;
       }
       this.currentValue = this.name;
+    },
+
+    handleRadioClick() {
+      this.$emit('click');
     }
   }
 };
