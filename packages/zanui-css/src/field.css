@@ -42,6 +42,7 @@
       }
 
       &::after {
+        border-radius: 2px;
         @mixin border-retina (top, right, bottom, left);
       }
 
