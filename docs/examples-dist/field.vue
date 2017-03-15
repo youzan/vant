@@ -10,6 +10,11 @@
   <zan-field type="text" placeholder="请输入用户名"></zan-field>
 </zan-cell-group>
 
+              </example-block><example-block title="带border的输入框">
+                <div class="zan-field-wrapper">
+  <zan-field type="text" placeholder="请输入用户名" border=""></zan-field>
+</div>
+
               </example-block><example-block title="禁用的输入框">
                 <zan-cell-group>
   <zan-field label="用户名：" type="text" placeholder="请输入用户名" v-model="username" disabled></zan-field>
@@ -21,7 +26,15 @@
 </zan-cell-group>
 
               </example-block></section></template>
-
+<style>
+@component-namespace demo {
+  @b field {
+    .zan-field-wrapper {
+      padding: 0 10px;
+    }
+  }
+}
+</style>
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 export default {

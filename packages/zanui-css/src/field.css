@@ -1,5 +1,6 @@
-@import "./common/var.css";
-@import "./mixins/border_retina.css";
+@import './common/var.css';
+@import './mixins/border_retina.css';
+@import './cell.css';
 
 @component-namespace zan {
   @b field {
@@ -33,6 +34,21 @@
       .zan-field__control,
       .zan-cell__title {
         color: $c-red;
+      }
+    }
+
+    @m border {
+      .zan-field__control {
+        padding-left: 10px;
+      }
+
+      &::after {
+        border-radius: 2px;
+        @mixin border-retina (top, right, bottom, left);
+      }
+
+      &:last-child::after {
+        @mixin border-retina (bottom);
       }
     }
 

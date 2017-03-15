@@ -6,7 +6,8 @@
       'zan-field--hastextarea': type === 'textarea',
       'zan-field--nolabel': !label,
       'zan-field--disabled': disabled,
-      'zan-field--error': error
+      'zan-field--error': error,
+      'zan-field--border': border
     }">
     <textarea
       v-if="type === 'textarea'"
@@ -51,7 +52,8 @@ export default {
     disabled: Boolean,
     error: Boolean,
     readonly: Boolean,
-    maxlength: [String, Number]
+    maxlength: [String, Number],
+    border: Boolean
   },
 
   data() {

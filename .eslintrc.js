@@ -23,7 +23,8 @@ module.exports = {
     document: false,
     navigator: false,
     window: false,
-    require: true
+    require: true,
+    FileReader: true
   },
 
   rules: {

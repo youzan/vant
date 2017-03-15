@@ -6,7 +6,6 @@
     }">
     <span class="zan-checkbox__input">
       <input
-        ref="input"
         v-model="currentValue"
         type="checkbox"
         class="zan-checkbox__control"

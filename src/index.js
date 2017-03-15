@@ -31,6 +31,9 @@ import Actionsheet from '../packages/actionsheet/index.js';
 import Quantity from '../packages/quantity/index.js';
 import Progress from '../packages/progress/index.js';
 import Toast from '../packages/toast/index.js';
+import Uploader from '../packages/uploader/index.js';
+import Swipe from '../packages/swipe/index.js';
+import SwipeItem from '../packages/swipe-item/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -63,6 +66,9 @@ const install = function(Vue) {
   Vue.component(Actionsheet.name, Actionsheet);
   Vue.component(Quantity.name, Quantity);
   Vue.component(Progress.name, Progress);
+  Vue.component(Uploader.name, Uploader);
+  Vue.component(Swipe.name, Swipe);
+  Vue.component(SwipeItem.name, SwipeItem);
 };
 
 // auto install
@@ -72,7 +78,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  version: '0.0.30',
+  version: '0.0.31',
   Button,
   Switch,
   Field,
@@ -105,5 +111,8 @@ module.exports = {
   Actionsheet,
   Quantity,
   Progress,
-  Toast
+  Toast,
+  Uploader,
+  Swipe,
+  SwipeItem
 };

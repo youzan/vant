@@ -43,8 +43,8 @@ export default {
   },
 
   methods: {
-    handleClick() {
-      this.$emit('click');
+    handleClick(e) {
+      this.$emit('click', e);
     }
   },
 
