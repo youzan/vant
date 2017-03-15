@@ -3,9 +3,9 @@ import Vue from 'vue';
 const ToastConstructor = Vue.extend(require('./toast.vue'));
 let toastQueue = [];
 
-let getInstance = () => {
+const getInstance = () => {
   if (toastQueue.length > 0) {
-    let instance = toastQueue[0];
+    const instance = toastQueue[0];
     toastQueue.splice(0, 1);
     return instance;
   }
@@ -26,7 +26,6 @@ const removeDom = event => {
   }
 };
 
-
 var Toast = (options = {}) => {
   const duration = options.duration || 3000;
 
@@ -41,7 +40,6 @@ var Toast = (options = {}) => {
   Vue.nextTick(function() {
     instance.visible = true;
     instance.$el.removeEventListener('transitionend', removeDom);
-    
     instance.timer = setTimeout(function() {
       if (instance.closed) return;
       instance.visible = false;
