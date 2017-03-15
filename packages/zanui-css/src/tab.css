@@ -1,5 +1,6 @@
-@import "./common/var.css";
-@import "./mixins/border_retina.css";
+@import './common/var.css';
+@import './mixins/border_retina.css';
+
 @component-namespace zan {
     @b tabs {
         position: relative;
