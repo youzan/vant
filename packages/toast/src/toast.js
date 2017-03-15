@@ -1,12 +1,12 @@
 import Vue from 'vue';
 
 const ToastConstructor = Vue.extend(require('./toast.vue'));
-let toastPool = [];
+let toastQueue = [];
 
 let getInstance = () => {
-  if (toastPool.length > 0) {
-    let instance = toastPool[0];
-    toastPool.splice(0, 1);
+  if (toastQueue.length > 0) {
+    let instance = toastQueue[0];
+    toastQueue.splice(0, 1);
     return instance;
   }
   return new ToastConstructor({
@@ -16,7 +16,7 @@ let getInstance = () => {
 
 const returnInstance = instance => {
   if (instance) {
-    toastPool.push(instance);
+    toastQueue.push(instance);
   }
 };
 
@@ -31,6 +31,7 @@ var Toast = (options = {}) => {
   const duration = options.duration || 3000;
 
   let instance = getInstance();
+  returnInstance(instance);
   instance.closed = false;
   clearTimeout(instance.timer);
   instance.type = options.type ? options.type : 'text';
@@ -40,20 +41,15 @@ var Toast = (options = {}) => {
   Vue.nextTick(function() {
     instance.visible = true;
     instance.$el.removeEventListener('transitionend', removeDom);
+    
     instance.timer = setTimeout(function() {
       if (instance.closed) return;
-      instance.close();
+      instance.visible = false;
+      instance.$el.addEventListener('transitionend', removeDom);
+      instance.closed = true;
     }, duration);
   });
   return instance;
-};
-
-
-Toast.close = function() {
-  this.visible = false;
-  this.$el.addEventListener('transitionend', removeDom);
-  this.closed = true;
-  returnInstance(this);
 };
 
 export default Toast;

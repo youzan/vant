@@ -1,6 +1,6 @@
 <template>
   <transition name="zan-toast">
-    <div class="zan-toast" :class="['zan-toast' + displayStyle]" v-show="visible">
+    <div class="zan-toast" :class="['zan-toast--' + displayStyle]" v-show="visible">
       <!-- 只显示文字 -->
       <template v-if="displayStyle === 'text'" >
         <div class="zan-toast__text">{{message}}</div>
@@ -10,8 +10,8 @@
           <zan-loading v-if="type === 'loading'" type="gradient-circle" color="white"></zan-loading>
       </template>
       <!-- 图案加文字 -->
-      <template v-if="displayStyle === 'iconPlusText'">
-        <zan-cell class="zan-toast__icon":name="check"></zan-cell>
+      <template v-if="displayStyle === 'default'">
+        <zan-icon class="zan-toast__icon" name="check"></zan-icon>
         <div class="zan-toast__text">{{message}}</div>
       </template>
     </div>
@@ -19,21 +19,17 @@
 </template>
 
 <script>
-import zanLoading from 'packages/Loading';
+import zanLoading from 'packages/loading';
 import zanIcon from 'packages/icon';
 
-const TOAST_TYPE = ['text', 'loading', 'success', 'failure'];
+const TOAST_TYPES = ['text', 'loading', 'success', 'failure'];
 /**
  * zan-toast
- * @module components/switch
- * @desc 开关
- * @param {boolean} [checked=false] - 开关状态
- * @param {boolean} [disabled=false] - 禁用
- * @param {boolean} [loading=false] - loading状态
- * @param {callback} [onChange] - 开关状态改变回调函数。
+ * @module components/toast
+ * @desc toast
+ * @param {string} [type=false] - 类型
+ * @param {string} [message] - 信息
  *
- * @example
- * <zan-switch checked="true" disabled="false"></zan-switch>
  */
 export default {
   name: 'zan-toast',
@@ -45,7 +41,10 @@ export default {
   props: {
     type: {
       type: String,
-      default: false
+      default: 'text',
+      validate(value) {
+        return TOAST_TYPES.indexOf(value) > -1;
+      }
     },
     message: {
       type: String,
@@ -57,6 +56,11 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      visible: false
+    };
+  },
   computed: {
     displayStyle() {
       switch (this.type) {
@@ -65,7 +69,7 @@ export default {
         case 'loading':
           return 'loading';
         default:
-          return 'iconPlusText';
+          return 'default';
       }
     },
     iconName() {

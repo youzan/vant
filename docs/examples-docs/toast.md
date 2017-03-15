@@ -62,5 +62,5 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | String  | '' |   |
-| message | 内容 | String  | '' |   |
+| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
+| message | 内容 | String  | '' | - |
