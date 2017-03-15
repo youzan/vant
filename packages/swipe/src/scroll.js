@@ -49,7 +49,6 @@ extend(Scroll.prototype, {
       left: 0,
       width: '100%',
       height: '100%',
-      display: 'block',
       '-webkit-transform': 'translate3d(-9999px, 0, 0)',
       'pointer-events': 'none'
     };
@@ -75,6 +74,7 @@ extend(Scroll.prototype, {
     page = this.getCurrentPage();
     if (page) {
       page.style['-webkit-transform'] = 'translate3d(' + offset + 'px, 0, 0)';
+      page.style['display'] = 'block';
     }
 
     leftPage = this.pages[this.mapLoopPage(currentOffsetPage - 1)];
