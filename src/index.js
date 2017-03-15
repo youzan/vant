@@ -30,6 +30,7 @@ import Row from '../packages/row/index.js';
 import Actionsheet from '../packages/actionsheet/index.js';
 import Quantity from '../packages/quantity/index.js';
 import Progress from '../packages/progress/index.js';
+import Toast from '../packages/toast/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -103,5 +104,6 @@ module.exports = {
   Row,
   Actionsheet,
   Quantity,
-  Progress
+  Progress,
+  Toast
 };

@@ -30,5 +30,6 @@
   "row": "./packages/row/index.js",
   "actionsheet": "./packages/actionsheet/index.js",
   "quantity": "./packages/quantity/index.js",
-  "progress": "./packages/progress/index.js"
+  "progress": "./packages/progress/index.js",
+  "toast": "./packages/toast/index.js"
 }
