@@ -30,21 +30,21 @@ function doBindEvent() {
 
 // 处理滚动函数
 function handleScrollEvent() {
-  let element = this.el;
-  let scrollEventTarget = this.scrollEventTarget;
+  const element = this.el;
+  const scrollEventTarget = this.scrollEventTarget;
 
   // 已被禁止的滚动处理
   if (this.disabled) return;
 
-  let targetScrollTop = Utils.getScrollTop(scrollEventTarget);
-  let targetBottom = targetScrollTop + Utils.getVisibleHeight(scrollEventTarget);
+  const targetScrollTop = Utils.getScrollTop(scrollEventTarget);
+  const targetBottom = targetScrollTop + Utils.getVisibleHeight(scrollEventTarget);
 
   // 判断是否到了底
   let needLoadMoreToLower = false;
   if (element === scrollEventTarget) {
     needLoadMoreToLower = scrollEventTarget.scollHeight - targetBottom < this.offset;
   } else {
-    let elementBottom = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget) + Utils.getVisibleHeight(element);
+    const elementBottom = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget) + Utils.getVisibleHeight(element);
     needLoadMoreToLower = elementBottom - Utils.getVisibleHeight(scrollEventTarget) < this.offset;
   }
   if (needLoadMoreToLower) {
@@ -56,11 +56,35 @@ function handleScrollEvent() {
   if (element === scrollEventTarget) {
     needLoadMoreToUpper = targetScrollTop < this.offset;
   } else {
-    let elementTop = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget);
+    const elementTop = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget);
     needLoadMoreToUpper = elementTop + this.offset > 0;
   }
   if (needLoadMoreToUpper) {
     this.cb['upper'] && this.cb['upper']({ target: scrollEventTarget, top: targetScrollTop });
+  }
+}
+
+// 绑定事件
+function startBind(el) {
+  const context = el[CONTEXT];
+
+  context.vm.$nextTick(function() {
+    if (Utils.isAttached(el)) {
+      doBindEvent.call(el[CONTEXT]);
+    }
+  });
+}
+
+// 确认何时绑事件监听函数
+function doCheckStartBind(el) {
+  const context = el[CONTEXT];
+
+  if (context.vm._isMounted) {
+    startBind(el);
+  } else {
+    context.vm.$on('hook:mounted', function() {
+      startBind(el);
+    });
   }
 }
 
@@ -76,11 +100,7 @@ export default function(type) {
       }
       el[CONTEXT].cb[type] = binding.value;
 
-      vnode.context.$on('hook:mounted', function() {
-        if (Utils.isAttached(el)) {
-          doBindEvent.call(el[CONTEXT]);
-        }
-      });
+      doCheckStartBind(el);
     },
 
     update(el) {
