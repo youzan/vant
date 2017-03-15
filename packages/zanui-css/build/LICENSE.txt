@@ -1,0 +1,12 @@
+Font license info
+
+
+## zanui-icon
+
+   Copyright (C) 2017 by original authors
+
+   Author:    houzi, zhangmin
+   License:   MIT (https://opensource.org/licenses/MIT)
+   Homepage:  http://github.com/youzan
+
+

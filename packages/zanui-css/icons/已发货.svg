@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>已发货</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M20.3076923,9.5 L1.69230769,9.5 C0.761538462,9.5 0,8.645 0,7.6 L0,1.9 C0,0.855 0.761538462,0 1.69230769,0 L20.3076923,0 C21.2384615,0 22,0.855 22,1.9 L22,7.6 C22,8.645 21.2384615,9.5 20.3076923,9.5 L20.3076923,9.5 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="22" height="9.5" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <path d="M19.1818182,20 L2.81818182,20 C1.81818182,20 1,19.1 1,18 L1,8 L21,8 L21,18 C21,19.1 20.1818182,20 19.1818182,20 L19.1818182,20 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="20" height="12" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <polygon id="path-5" points="8 16 11 13.7142857 14 16 14 0 8 0"></polygon>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="6" height="16" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="已发货">
+            <rect id="Rectangle-979" fill="#06BF04" x="0" y="0" width="40" height="40" rx="4"></rect>
+            <g id="Page-1" transform="translate(9.000000, 10.000000)" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <use id="Stroke-1" mask="url(#mask-2)" xlink:href="#path-1"></use>
+                <use id="Stroke-5" mask="url(#mask-4)" xlink:href="#path-3"></use>
+                <use id="Stroke-3" mask="url(#mask-6)" fill="#06BF04" xlink:href="#path-5"></use>
+            </g>
+        </g>
+    </g>
+</svg>
