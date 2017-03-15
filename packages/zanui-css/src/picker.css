@@ -1,4 +1,4 @@
-@import "./mixins/border_retina.css";
+@import './mixins/border_retina.css';
 
 @component-namespace zan {
   @b picker {
