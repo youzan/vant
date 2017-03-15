@@ -34,7 +34,7 @@ extend(Scroll.prototype, {
 
   update: function() {
     const oldPages = this.pages
-    this.pages = this.wrapElem.querySelectorAll('.swp-page');
+    this.pages = this.wrapElem.querySelectorAll('.zan-swipe-item');
     if (oldPages && oldPages.length === this.pages.length) {
       const isSame = Array.prototype.every.call(this.pages, (elem, index) => {
         return this.pages[index] === oldPages[index]
@@ -50,7 +50,8 @@ extend(Scroll.prototype, {
       width: '100%',
       height: '100%',
       display: 'block',
-      '-webkit-transform': 'translate3d(-9999px, 0, 0)'
+      '-webkit-transform': 'translate3d(-9999px, 0, 0)',
+      'pointer-events': 'none'
     };
     setElementsStyles(this.pages, defaultStyle);
     this.mCache = {

@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-## Dialog组件
+## Toast
 
 ### 基础用法
 
@@ -56,6 +56,7 @@ export default {
 };
 </script>
 ```
+:::
 
 
 ### API

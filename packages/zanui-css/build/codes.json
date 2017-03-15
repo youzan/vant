@@ -1,0 +1,269 @@
+[
+  {
+    "name": "qr-invalid",
+    "css": "zan-icon-qr-invalid",
+    "hexCodepoint": "0xe800",
+    "codepoint": 59392,
+    "keywords": [
+      "qr",
+      "invalid"
+    ]
+  },
+  {
+    "name": "qr",
+    "css": "zan-icon-qr",
+    "hexCodepoint": "0xe801",
+    "codepoint": 59393,
+    "keywords": [
+      "qr"
+    ]
+  },
+  {
+    "name": "pay-fail",
+    "css": "zan-icon-pay-fail",
+    "hexCodepoint": "0xe802",
+    "codepoint": 59394,
+    "keywords": [
+      "pay",
+      "fail"
+    ]
+  },
+  {
+    "name": "exchange",
+    "css": "zan-icon-exchange",
+    "hexCodepoint": "0xe803",
+    "codepoint": 59395,
+    "keywords": [
+      "exchange"
+    ]
+  },
+  {
+    "name": "close",
+    "css": "zan-icon-close",
+    "hexCodepoint": "0xe804",
+    "codepoint": 59396,
+    "keywords": [
+      "close"
+    ]
+  },
+  {
+    "name": "location",
+    "css": "zan-icon-location",
+    "hexCodepoint": "0xe805",
+    "codepoint": 59397,
+    "keywords": [
+      "location"
+    ]
+  },
+  {
+    "name": "upgrade",
+    "css": "zan-icon-upgrade",
+    "hexCodepoint": "0xe806",
+    "codepoint": 59398,
+    "keywords": [
+      "upgrade"
+    ]
+  },
+  {
+    "name": "check",
+    "css": "zan-icon-check",
+    "hexCodepoint": "0xe807",
+    "codepoint": 59399,
+    "keywords": [
+      "check"
+    ]
+  },
+  {
+    "name": "checked",
+    "css": "zan-icon-checked",
+    "hexCodepoint": "0xe808",
+    "codepoint": 59400,
+    "keywords": [
+      "checked"
+    ]
+  },
+  {
+    "name": "like-o",
+    "css": "zan-icon-like-o",
+    "hexCodepoint": "0xe809",
+    "codepoint": 59401,
+    "keywords": [
+      "like",
+      "outline"
+    ]
+  },
+  {
+    "name": "like",
+    "css": "zan-icon-like",
+    "hexCodepoint": "0xe80a",
+    "codepoint": 59402,
+    "keywords": [
+      "like",
+      "filled"
+    ]
+  },
+  {
+    "name": "chat",
+    "css": "zan-icon-chat",
+    "hexCodepoint": "0xe80b",
+    "codepoint": 59403,
+    "keywords": [
+      "chat"
+    ]
+  },
+  {
+    "name": "paid",
+    "css": "zan-icon-paid",
+    "hexCodepoint": "0xe80c",
+    "codepoint": 59404,
+    "keywords": [
+      "account",
+      "paid"
+    ]
+  },
+  {
+    "name": "delivered",
+    "css": "zan-icon-delivered",
+    "hexCodepoint": "0xe80d",
+    "codepoint": 59405,
+    "keywords": [
+      "delivered"
+    ]
+  },
+  {
+    "name": "finished",
+    "css": "zan-icon-finished",
+    "hexCodepoint": "0xe80e",
+    "codepoint": 59406,
+    "keywords": [
+      "finished"
+    ]
+  },
+  {
+    "name": "shop",
+    "css": "zan-icon-shop",
+    "hexCodepoint": "0xe80f",
+    "codepoint": 59407,
+    "keywords": [
+      "shop"
+    ]
+  },
+  {
+    "name": "deliver",
+    "css": "zan-icon-deliver",
+    "hexCodepoint": "0xe810",
+    "codepoint": 59408,
+    "keywords": [
+      "deliver"
+    ]
+  },
+  {
+    "name": "success",
+    "css": "zan-icon-success",
+    "hexCodepoint": "0xe811",
+    "codepoint": 59409,
+    "keywords": [
+      "success"
+    ]
+  },
+  {
+    "name": "photograph",
+    "css": "zan-icon-photograph",
+    "hexCodepoint": "0xe812",
+    "codepoint": 59410,
+    "keywords": [
+      "photograph"
+    ]
+  },
+  {
+    "name": "add",
+    "css": "zan-icon-add",
+    "hexCodepoint": "0xe813",
+    "codepoint": 59411,
+    "keywords": [
+      "add"
+    ]
+  },
+  {
+    "name": "not-payed",
+    "css": "zan-icon-not-payed",
+    "hexCodepoint": "0xe814",
+    "codepoint": 59412,
+    "keywords": [
+      "not",
+      "payed"
+    ]
+  },
+  {
+    "name": "add2",
+    "css": "zan-icon-add2",
+    "hexCodepoint": "0xe815",
+    "codepoint": 59413,
+    "keywords": [
+      "add2"
+    ]
+  },
+  {
+    "name": "photo",
+    "css": "zan-icon-photo",
+    "hexCodepoint": "0xe816",
+    "codepoint": 59414,
+    "keywords": [
+      "photo"
+    ]
+  },
+  {
+    "name": "logistics",
+    "css": "zan-icon-logistics",
+    "hexCodepoint": "0xe817",
+    "codepoint": 59415,
+    "keywords": [
+      "logistics"
+    ]
+  },
+  {
+    "name": "edit",
+    "css": "zan-icon-edit",
+    "hexCodepoint": "0xe818",
+    "codepoint": 59416,
+    "keywords": [
+      "edit"
+    ]
+  },
+  {
+    "name": "passed",
+    "css": "zan-icon-passed",
+    "hexCodepoint": "0xe819",
+    "codepoint": 59417,
+    "keywords": [
+      "passed"
+    ]
+  },
+  {
+    "name": "cart",
+    "css": "zan-icon-cart",
+    "hexCodepoint": "0xe81a",
+    "codepoint": 59418,
+    "keywords": [
+      "cart"
+    ]
+  },
+  {
+    "name": "arrow",
+    "css": "zan-icon-arrow",
+    "hexCodepoint": "0xe81b",
+    "codepoint": 59419,
+    "keywords": [
+      "arrow"
+    ]
+  },
+  {
+    "name": "gift",
+    "css": "zan-icon-gift",
+    "hexCodepoint": "0xe81c",
+    "codepoint": 59420,
+    "keywords": [
+      "gift"
+    ]
+  }
+]
