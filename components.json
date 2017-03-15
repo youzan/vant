@@ -31,8 +31,8 @@
   "actionsheet": "./packages/actionsheet/index.js",
   "quantity": "./packages/quantity/index.js",
   "progress": "./packages/progress/index.js",
+  "toast": "./packages/toast/index.js",
   "uploader": "./packages/uploader/index.js",
   "swipe": "./packages/swipe/index.js",
   "swipe-item": "./packages/swipe-item/index.js"
-
 }

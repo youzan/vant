@@ -30,6 +30,7 @@ import Row from '../packages/row/index.js';
 import Actionsheet from '../packages/actionsheet/index.js';
 import Quantity from '../packages/quantity/index.js';
 import Progress from '../packages/progress/index.js';
+import Toast from '../packages/toast/index.js';
 import Uploader from '../packages/uploader/index.js';
 import Swipe from '../packages/swipe/index.js';
 import SwipeItem from '../packages/swipe-item/index.js';
@@ -110,6 +111,7 @@ module.exports = {
   Actionsheet,
   Quantity,
   Progress,
+  Toast,
   Uploader,
   Swipe,
   SwipeItem

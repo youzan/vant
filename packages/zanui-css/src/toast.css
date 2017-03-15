@@ -1,0 +1,36 @@
+@import './common/var.css';
+
+@component-namespace zan {
+  @b toast {
+    position: fixed;
+    border-radius: 5px;
+    background-color: #272727;
+    opacity: 0.7;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 12px;
+    color: $c-white;
+    text-align: center;
+
+    @m loading {
+      padding: 45px;
+    }
+
+    @m text {
+      padding: 11px;
+    }
+
+    @m default {
+      width: 120px;
+      height: 120px;
+      .zan-toast__icon {
+        padding: 20px;
+        font-size: 36px;
+      }
+      .zan-toast__text {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
