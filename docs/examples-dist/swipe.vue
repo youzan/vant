@@ -1,4 +1,4 @@
-<template><section class="demo-swipe"><h1 class="demo-title">swipe</h1><example-block title="">
+<template><section class="demo-swipe"><h1 class="demo-title">swipe</h1><example-block title="基础用法">
                 <zan-swipe>
   <zan-swipe-item>
     <img src="https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg?imageView2/2/w/980/h/980/q/75/format/webp" alt="">
