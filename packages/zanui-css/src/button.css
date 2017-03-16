@@ -32,6 +32,10 @@
       margin-left: 10px;
     }
 
+    & + .zan-button--block {
+      margin-left: 0;
+    }
+
     @m default {
       color: $button-default-color;
       background-color: $button-default-background-color;

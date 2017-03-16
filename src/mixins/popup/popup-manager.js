@@ -77,7 +77,11 @@ const PopupManager = {
 
     addClass(modalDom, 'zan-modal');
 
-    document.body.appendChild(modalDom);
+    if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
+      dom.parentNode.appendChild(modalDom);
+    } else {
+      document.body.appendChild(modalDom);
+    }
 
     if (zIndex) {
       modalDom.style.zIndex = zIndex;
