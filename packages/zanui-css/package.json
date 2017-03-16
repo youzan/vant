@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-css",
-  "version": "0.0.31",
+  "version": "0.0.36",
   "description": "zanui css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
