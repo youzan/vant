@@ -3,9 +3,10 @@
 @component-namespace zan {
   @b toast {
     position: fixed;
+    z-index: 3000;
     border-radius: 5px;
     background-color: #272727;
-    opacity: 0.7;
+    opacity: .7;
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);

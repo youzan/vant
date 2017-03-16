@@ -34,7 +34,7 @@ extend(Scroll.prototype, {
 
   update: function() {
     const oldPages = this.pages
-    this.pages = this.wrapElem.querySelectorAll('.swp-page');
+    this.pages = this.wrapElem.querySelectorAll('.zan-swipe-item');
     if (oldPages && oldPages.length === this.pages.length) {
       const isSame = Array.prototype.every.call(this.pages, (elem, index) => {
         return this.pages[index] === oldPages[index]
@@ -49,8 +49,8 @@ extend(Scroll.prototype, {
       left: 0,
       width: '100%',
       height: '100%',
-      display: 'block',
-      '-webkit-transform': 'translate3d(-9999px, 0, 0)'
+      '-webkit-transform': 'translate3d(-9999px, 0, 0)',
+      'pointer-events': 'none'
     };
     setElementsStyles(this.pages, defaultStyle);
     this.mCache = {
@@ -74,6 +74,7 @@ extend(Scroll.prototype, {
     page = this.getCurrentPage();
     if (page) {
       page.style['-webkit-transform'] = 'translate3d(' + offset + 'px, 0, 0)';
+      page.style['display'] = 'block';
     }
 
     leftPage = this.pages[this.mapLoopPage(currentOffsetPage - 1)];

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>升级地址</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="升级地址">
+            <rect id="Rectangle-204" x="0" y="0" width="24" height="24"></rect>
+            <path d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,23 C5.92486775,23 1,18.0751322 1,12 C1,5.92486775 5.92486775,1 12,1 C18.0751322,1 23,5.92486775 23,12 C23,18.0751322 18.0751322,23 12,23 Z" id="Oval-87" fill="#333333" fill-rule="nonzero"></path>
+            <polygon id="Combined-Shape" fill="#333333" fill-rule="nonzero" points="12.5 8.20710678 16.6464466 12.3535534 17.3535534 11.6464466 12 6.29289322 6.64644661 11.6464466 7.35355339 12.3535534 11.5 8.20710678 11.5 19 12.5 19"></polygon>
+        </g>
+    </g>
+</svg>
