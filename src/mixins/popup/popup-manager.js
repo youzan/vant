@@ -2,13 +2,15 @@ import Vue from 'vue';
 import { addClass } from 'src/utils/dom';
 
 const getModal = function() {
-  let modalDom = PopupManager.modalDom;
+  let modalDom = window.popupContext && window.popupContext.modalDom;
+
   if (modalDom) {
-    PopupManager.popupContext.hasModal = true;
+    window.popupContext.hasModal = true;
   } else {
-    PopupManager.popupContext.hasModal = false;
+    window.popupContext.hasModal = false;
+
     modalDom = document.createElement('div');
-    PopupManager.modalDom = modalDom;
+    window.popupContext.modalDom = modalDom;
 
     modalDom.addEventListener('touchmove', function(event) {
       event.preventDefault();
