@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: 'zanui-icon';
-  src: url('../font/zanui-icon-3f61f62c01.eot');
-  src: url('../font/zanui-icon-3f61f62c01.eot?#iefix') format('embedded-opentype'),
-       url('../font/zanui-icon-3f61f62c01.woff2') format('woff2'),
-       url('../font/zanui-icon-3f61f62c01.woff') format('woff'),
-       url('../font/zanui-icon-3f61f62c01.ttf') format('truetype'),
-       url('../font/zanui-icon-3f61f62c01.svg?#zanui-icon') format('svg');
+  src: url('../font/zanui-icon-6821b64ee1.eot');
+  src: url('../font/zanui-icon-6821b64ee1.eot?#iefix') format('embedded-opentype'),
+       url('../font/zanui-icon-6821b64ee1.woff2') format('woff2'),
+       url('../font/zanui-icon-6821b64ee1.woff') format('woff'),
+       url('../font/zanui-icon-6821b64ee1.ttf') format('truetype'),
+       url('../font/zanui-icon-6821b64ee1.svg?#zanui-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,7 +17,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'zanui-icon';
-    src: url('../font/zanui-icon-3f61f62c01.svg?#zanui-icon') format('svg');
+    src: url('../font/zanui-icon-6821b64ee1.svg?#zanui-icon') format('svg');
   }
 }
 */
@@ -59,30 +59,25 @@
  
 .zan-icon-qr-invalid:before { content: '\e800'; } /* '' */
 .zan-icon-qr:before { content: '\e801'; } /* '' */
-.zan-icon-pay-fail:before { content: '\e802'; } /* '' */
-.zan-icon-exchange:before { content: '\e803'; } /* '' */
-.zan-icon-close:before { content: '\e804'; } /* '' */
-.zan-icon-location:before { content: '\e805'; } /* '' */
-.zan-icon-upgrade:before { content: '\e806'; } /* '' */
-.zan-icon-check:before { content: '\e807'; } /* '' */
-.zan-icon-checked:before { content: '\e808'; } /* '' */
-.zan-icon-like-o:before { content: '\e809'; } /* '' */
-.zan-icon-like:before { content: '\e80a'; } /* '' */
-.zan-icon-chat:before { content: '\e80b'; } /* '' */
-.zan-icon-paid:before { content: '\e80c'; } /* '' */
-.zan-icon-delivered:before { content: '\e80d'; } /* '' */
-.zan-icon-finished:before { content: '\e80e'; } /* '' */
-.zan-icon-shop:before { content: '\e80f'; } /* '' */
-.zan-icon-deliver:before { content: '\e810'; } /* '' */
-.zan-icon-success:before { content: '\e811'; } /* '' */
-.zan-icon-photograph:before { content: '\e812'; } /* '' */
-.zan-icon-add:before { content: '\e813'; } /* '' */
-.zan-icon-not-payed:before { content: '\e814'; } /* '' */
-.zan-icon-add2:before { content: '\e815'; } /* '' */
-.zan-icon-photo:before { content: '\e816'; } /* '' */
-.zan-icon-logistics:before { content: '\e817'; } /* '' */
-.zan-icon-edit:before { content: '\e818'; } /* '' */
-.zan-icon-passed:before { content: '\e819'; } /* '' */
-.zan-icon-cart:before { content: '\e81a'; } /* '' */
-.zan-icon-arrow:before { content: '\e81b'; } /* '' */
-.zan-icon-gift:before { content: '\e81c'; } /* '' */
+.zan-icon-exchange:before { content: '\e802'; } /* '' */
+.zan-icon-close:before { content: '\e803'; } /* '' */
+.zan-icon-location:before { content: '\e804'; } /* '' */
+.zan-icon-upgrade:before { content: '\e805'; } /* '' */
+.zan-icon-check:before { content: '\e806'; } /* '' */
+.zan-icon-checked:before { content: '\e807'; } /* '' */
+.zan-icon-like-o:before { content: '\e808'; } /* '' */
+.zan-icon-like:before { content: '\e809'; } /* '' */
+.zan-icon-chat:before { content: '\e80a'; } /* '' */
+.zan-icon-shop:before { content: '\e80b'; } /* '' */
+.zan-icon-photograph:before { content: '\e80c'; } /* '' */
+.zan-icon-add:before { content: '\e80d'; } /* '' */
+.zan-icon-add2:before { content: '\e80e'; } /* '' */
+.zan-icon-photo:before { content: '\e80f'; } /* '' */
+.zan-icon-logistics:before { content: '\e810'; } /* '' */
+.zan-icon-edit:before { content: '\e811'; } /* '' */
+.zan-icon-passed:before { content: '\e812'; } /* '' */
+.zan-icon-cart:before { content: '\e813'; } /* '' */
+.zan-icon-arrow:before { content: '\e814'; } /* '' */
+.zan-icon-gift:before { content: '\e815'; } /* '' */
+.zan-icon-search:before { content: '\e816'; } /* '' */
+.zan-icon-clear:before { content: '\e817'; } /* '' */

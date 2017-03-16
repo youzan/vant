@@ -18,7 +18,6 @@
 ```html
 <zan-icon name="qr-invalid"></zan-icon>
 <zan-icon name="qr"></zan-icon>
-<zan-icon name="pay-fail"></zan-icon>
 <zan-icon name="exchange"></zan-icon>
 <zan-icon name="close"></zan-icon>
 <zan-icon name="location"></zan-icon>
@@ -28,15 +27,9 @@
 <zan-icon name="like-o"></zan-icon>
 <zan-icon name="like"></zan-icon>
 <zan-icon name="chat"></zan-icon>
-<zan-icon name="paid"></zan-icon>
-<zan-icon name="delivered"></zan-icon>
-<zan-icon name="finished"></zan-icon>
 <zan-icon name="shop"></zan-icon>
-<zan-icon name="deliver"></zan-icon>
-<zan-icon name="success"></zan-icon>
 <zan-icon name="photograph"></zan-icon>
 <zan-icon name="add"></zan-icon>
-<zan-icon name="not-payed"></zan-icon>
 <zan-icon name="add2"></zan-icon>
 <zan-icon name="photo"></zan-icon>
 <zan-icon name="logistics"></zan-icon>
@@ -45,6 +38,8 @@
 <zan-icon name="cart"></zan-icon>
 <zan-icon name="arrow"></zan-icon>
 <zan-icon name="gift"></zan-icon>
+<zan-icon name="search"></zan-icon>
+<zan-icon name="clear"></zan-icon>
 ```
 :::
 

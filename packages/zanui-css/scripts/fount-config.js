@@ -23,11 +23,6 @@ module.exports = {
       css: 'qr'
     },
     {
-      keywords: ['pay', 'fail'],
-      src: '交易失败.svg',
-      css: 'pay-fail'
-    },
-    {
       keywords: ['exchange'],
       src: '兑换.svg',
       css: 'exchange',
@@ -65,7 +60,7 @@ module.exports = {
     },
     {
       keywords: ['like', 'filled'],
-      src: '喜欢.svg',
+      src: '喜欢2.svg',
       css: 'like'
     },
     {
@@ -74,34 +69,9 @@ module.exports = {
       css: 'chat'
     },
     {
-      keywords: ['account', 'paid'],
-      src: '已付款.svg',
-      css: 'paid'
-    },
-    {
-      keywords: ['delivered'],
-      src: '已发货.svg',
-      css: 'delivered'
-    },
-    {
-      keywords: ['finished'],
-      src: '已完成.svg',
-      css: 'finished'
-    },
-    {
       keywords: ['shop'],
       src: '店铺.svg',
       css: 'shop'
-    },
-    {
-      keywords: ['deliver'],
-      src: '待发货.svg',
-      css: 'deliver'
-    },
-    {
-      keywords: ['success'],
-      src: '成功开团.svg',
-      css: 'success'
     },
     {
       keywords: ['photograph'],
@@ -112,11 +82,6 @@ module.exports = {
       keywords: ['add'],
       src: '新增地址.svg',
       css: 'add'
-    },
-    {
-      keywords: ['not', 'payed'],
-      src: '未付款.svg',
-      css: 'not-payed'
     },
     {
       keywords: ['add2'],
@@ -157,6 +122,16 @@ module.exports = {
       keywords: ['gift'],
       src: '送礼.svg',
       css: 'gift'
+    },
+    {
+      keywords: ['search'],
+      src: '搜索.svg',
+      css: 'search'
+    },
+    {
+      keywords: ['clear'],
+      src: '清除搜索.svg',
+      css: 'clear'
     }
   ]
 };
