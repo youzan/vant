@@ -16,7 +16,7 @@
     "license_url": "https://opensource.org/licenses/MIT",
     "homepage": "http://github.com/youzan",
     "css_prefix_text": "zan-icon-",
-    "filename_hash": "-6821b64ee1",
+    "filename_hash": "-ca65df15f4",
     "columns": 4,
     "css_use_suffix": false
   },
@@ -96,8 +96,8 @@
         "check"
       ],
       "width": 1000,
-      "d": "M500 9a341 341 0 1 1 0 682 341 341 0 0 1 0-682z m0-68a409 409 0 1 0 0 818 409 409 0 0 0 0-818z",
-      "segments": 8
+      "d": "M0 850h1000v-1000h-1000z m500-841a341 341 0 1 1 0 682 341 341 0 0 1 0-682z m0-68a409 409 0 1 0 0 818 409 409 0 0 0 0-818z",
+      "segments": 13
     },
     {
       "src": "选中.svg",
@@ -287,6 +287,28 @@
       "width": 1000,
       "d": "M500-150a500 500 0 1 0 0 1000 500 500 0 0 0 0-1000z m0 576l-164 164-76-76 164-164-164-164 76-76 164 164 164-164 76 76-164 164 164 164-76 76-164-164z",
       "segments": 18
+    },
+    {
+      "src": "成功.svg",
+      "code": 59416,
+      "css": "success",
+      "keywords": [
+        "success"
+      ],
+      "width": 1000,
+      "d": "M86 334a8 8 0 0 0 0 12l54 54a9 9 0 0 0 13 1l190-160c10-9 27-9 37 0l472 423a9 9 0 0 0 13 0l49-49a8 8 0 0 0 0-11l-540-532a17 17 0 0 0-24 0l-264 262z",
+      "segments": 14
+    },
+    {
+      "src": "失败.svg",
+      "code": 59417,
+      "css": "fail",
+      "keywords": [
+        "fail"
+      ],
+      "width": 968,
+      "d": "M419 721a16 16 0 0 0 16 16h98c9 0 16-7 15-16l-13-516c0-9-8-16-17-16h-68a17 17 0 0 0-17 16l-14 516z m65-726a65 65 0 1 0 0 129 65 65 0 0 0 0-129z",
+      "segments": 14
     }
   ],
   "badGlyphs": [

@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zan-icon';
-  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-6821b64ee1.eot');
-  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-6821b64ee1.eot?#iefix') format('embedded-opentype'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-6821b64ee1.woff2') format('woff2'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-6821b64ee1.woff') format('woff'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-6821b64ee1.ttf') format('truetype')
+  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-ca65df15f4.eot');
+  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-ca65df15f4.eot?#iefix') format('embedded-opentype'),
+       url('//b.yzcdn.cn/zanui/icon/zanui-icon-ca65df15f4.woff2') format('woff2'),
+       url('//b.yzcdn.cn/zanui/icon/zanui-icon-ca65df15f4.woff') format('woff'),
+       url('//b.yzcdn.cn/zanui/icon/zanui-icon-ca65df15f4.ttf') format('truetype')
 }
 
 .zan-icon {
@@ -71,3 +71,5 @@
 .zan-icon-gift:before { content: '\e815'; } /* '' */
 .zan-icon-search:before { content: '\e816'; } /* '' */
 .zan-icon-clear:before { content: '\e817'; } /* '' */
+.zan-icon-success:before { content: '\e818'; } /* '' */
+.zan-icon-fail:before { content: '\e819'; } /* '' */

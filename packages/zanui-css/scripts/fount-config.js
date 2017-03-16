@@ -132,6 +132,16 @@ module.exports = {
       keywords: ['clear'],
       src: '清除搜索.svg',
       css: 'clear'
+    },
+    {
+      keywords: ['success'],
+      src: '成功.svg',
+      css: 'success'
+    },
+    {
+      keywords: ['fail'],
+      src: '失败.svg',
+      css: 'fail'
     }
   ]
 };

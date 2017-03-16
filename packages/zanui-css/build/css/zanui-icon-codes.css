@@ -25,3 +25,5 @@
 .zan-icon-gift:before { content: '\e815'; } /* '' */
 .zan-icon-search:before { content: '\e816'; } /* '' */
 .zan-icon-clear:before { content: '\e817'; } /* '' */
+.zan-icon-success:before { content: '\e818'; } /* '' */
+.zan-icon-fail:before { content: '\e819'; } /* '' */

@@ -25,3 +25,5 @@
 .zan-icon-gift { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe815;&nbsp;'); }
 .zan-icon-search { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe816;&nbsp;'); }
 .zan-icon-clear { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe817;&nbsp;'); }
+.zan-icon-success { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe818;&nbsp;'); }
+.zan-icon-fail { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe819;&nbsp;'); }

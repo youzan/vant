@@ -40,6 +40,8 @@
 <zan-icon name="gift"></zan-icon>
 <zan-icon name="search"></zan-icon>
 <zan-icon name="clear"></zan-icon>
+<zan-icon name="success"></zan-icon>
+<zan-icon name="fail"></zan-icon>
 ```
 :::
 

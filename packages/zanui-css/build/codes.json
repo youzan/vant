@@ -217,5 +217,23 @@
     "keywords": [
       "clear"
     ]
+  },
+  {
+    "name": "success",
+    "css": "zan-icon-success",
+    "hexCodepoint": "0xe818",
+    "codepoint": 59416,
+    "keywords": [
+      "success"
+    ]
+  },
+  {
+    "name": "fail",
+    "css": "zan-icon-fail",
+    "hexCodepoint": "0xe819",
+    "codepoint": 59417,
+    "keywords": [
+      "fail"
+    ]
   }
 ]
