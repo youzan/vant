@@ -22,7 +22,7 @@
 import zanLoading from 'packages/loading';
 import zanIcon from 'packages/icon';
 
-const TOAST_TYPES = ['text', 'loading', 'success', 'failure'];
+const TOAST_TYPES = ['text', 'loading', 'success', 'fail'];
 /**
  * zan-toast
  * @module components/toast
@@ -50,7 +50,7 @@ export default {
       type: String,
       default: '',
       validate(value) {
-        if (this.type === 'success' || this.type === 'failure') {
+        if (this.type === 'success' || this.type === 'fail') {
           return value.length <= 16;
         }
       }

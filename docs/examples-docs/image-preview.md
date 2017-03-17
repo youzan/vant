@@ -1,3 +1,13 @@
+<style>
+@component-namespace demo {
+  @b image-preview {
+    .zan-button {
+      margin-left: 15px;
+    }
+  }
+}
+</style>
+
 <script>
 import { ImagePreview } from 'src/index';
 

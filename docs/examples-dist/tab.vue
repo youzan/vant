@@ -38,6 +38,15 @@
 
               </example-block></section></template>
 <style>
+@component-namespace demo {
+  @b tab {
+    .zan-tabs-pane {
+      background-color: #fff;
+      padding: 20px;
+    }
+  }
+}
+</style><style>
   .page-tab {
     padding: 0 15px;
   }

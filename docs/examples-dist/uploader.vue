@@ -7,7 +7,7 @@
               </example-block><example-block title="自定义上传图标">
                 <div class="uploader-container">
   <zan-uploader @file-readed="logContent">
-    <zan-icon name="camera"></zan-icon>
+    <zan-icon name="photograph"></zan-icon>
   </zan-uploader>
 </div>
 

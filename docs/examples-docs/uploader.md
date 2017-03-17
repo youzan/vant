@@ -31,7 +31,7 @@ export default {
 ```html
 <div class="uploader-container">
   <zan-uploader @file-readed="logContent">
-    <zan-icon name="camera"></zan-icon>
+    <zan-icon name="photograph"></zan-icon>
   </zan-uploader>
 </div>
 ```
