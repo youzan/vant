@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import merge from 'src/utils/merge';
 
 const ToastConstructor = Vue.extend(require('./toast.vue'));
 let toastQueue = [];
@@ -48,6 +49,28 @@ var Toast = (options = {}) => {
     }, duration);
   });
   return instance;
+};
+
+Toast.loading = (options) => {
+  return new Toast(merge({
+    type: 'loading'
+  }, options));
+};
+
+Toast.success = (options) => {
+  const message = typeof options === 'string' ? options : options.message;
+  return new Toast(merge({
+    type: 'success',
+    message: message
+  }, options));
+};
+
+Toast.fail = (options) => {
+  const message = typeof options === 'string' ? options : options.message;
+  return new Toast(merge({
+    type: 'fail',
+    message: message
+  }, options));
 };
 
 export default Toast;

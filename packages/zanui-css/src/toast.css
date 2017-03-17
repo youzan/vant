@@ -19,7 +19,8 @@
     }
 
     @m text {
-      padding: 11px;
+      padding: 12px;
+      min-width: 200px;
     }
 
     @m default {
