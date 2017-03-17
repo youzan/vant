@@ -3,6 +3,7 @@
 @component-namespace zan {
   @b picker {
     overflow: hidden;
+    background-color: #fff;
 
     @e toolbar {
       height: 40px;
