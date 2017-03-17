@@ -1,127 +1,100 @@
 import Switch from 'packages/switch';
-import { createVue } from '../creater';
+import ZanLoading from 'packages/loading';
+import { mount } from 'avoriaz';
+// import { stub } from 'sinon';
 
 describe('Switch', () => {
-  let vm;
+  let wrapper;
+
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
-  it('create', () => {
-    vm = createVue(Switch, {
-      checked: true
+  it('create on switch', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        checked: true
+      }
     });
-    vm.mount();
 
-    expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('zan-switch--on')).to.true;
+    expect(wrapper.hasClass('zan-switch')).to.be.true;
+    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
   });
 
   it('create off switch', () => {
-    vm = createVue(Switch, {
-      checked: false
+    wrapper = mount(Switch, {
+      propsData: {
+        checked: false
+      }
     });
-    vm.mount();
 
-    expect(vm.el.classList.contains('zan-switch')).to.true;
+    expect(wrapper.hasClass('zan-switch')).to.be.true;
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
   });
 
   it('create loading switch', () => {
-    vm = createVue({
-      data() {
-        return {
-          checked: false
-        };
-      },
-      components: {
-        'zan-switch': Switch
-      },
-      template: `
-        <zan-switch :loading="true"></zan-switch>
-      `
-    });
-    vm.mount();
-
-    expect(vm.el.classList.contains('zan-switch--loading')).to.true;
-  });
-
-  it('switch click disabled', done => {
-    vm = createVue({
-      data() {
-        return {
-          checked: false
-        };
-      },
-      components: {
-        'zan-switch': Switch
-      },
-      template: `
-        <zan-switch :disabled="disabled"></zan-switch>
-      `
-    });
-    vm.mount();
-    expect(vm.el.classList.contains('zan-switch--disabled')).to.true;
-    expect(vm.el.classList.contains('zan-switch--off')).to.true;
-    vm.el.click();
-
-    setTimeout(() => {
-      expect(vm.el.classList.contains('zan-switch--off')).to.true;
-      done();
-    });
-  });
-
-  it('switch click default', done => {
-    vm = createVue({
-      data() {
-        return {
-          checked: false
-        };
-      },
-      components: {
-        'zan-switch': Switch
-      },
-      template: `
-        <zan-switch :checked="checked"></zan-switch>
-      `
-    });
-    vm.mount();
-    expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('zan-switch--off')).to.true;
-    vm.el.click();
-
-    setTimeout(() => {
-      expect(vm.el.classList.contains('zan-switch--off')).to.true;
-      done();
-    });
-  });
-
-  it('switch click', done => {
-    vm = createVue({
-      data() {
-        return {
-          checked: false
-        };
-      },
-      components: {
-        'zan-switch': Switch
-      },
-      template: `
-        <zan-switch :checked="checked" :onChange="handleClick"></zan-switch>
-      `,
-      methods: {
-        handleClick(e) {
-          this.checked = !this.checked;
-        }
+    wrapper = mount(Switch, {
+      propsData: {
+        loading: true
       }
     });
-    vm.mount();
-    expect(vm.el.classList.contains('zan-switch')).to.true;
-    expect(vm.el.classList.contains('zan-switch--off')).to.true;
-    vm.el.click();
+    const loading = wrapper.find(ZanLoading)[0];
 
-    setTimeout(() => {
-      expect(vm.el.classList.contains('zan-switch--on')).to.true;
-      done();
+    expect(wrapper.hasClass('zan-switch')).to.be.true;
+    expect(loading.isVueComponent).to.be.true;
+  });
+
+  it('loading switch should be unclickable', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        loading: true,
+        checked: true
+      }
     });
+
+    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+    wrapper.simulate('click');
+    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+  });
+
+  it('create disabled switch', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        disabled: true
+      }
+    });
+
+    expect(wrapper.hasClass('zan-switch')).to.be.true;
+    expect(wrapper.hasClass('zan-switch--disabled')).to.be.true;
+  });
+
+  it('disabled switch should be unclickable', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        disabled: true,
+        checked: false
+      }
+    });
+
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    wrapper.simulate('click');
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+  });
+
+  it('click event should fire change event', () => {
+    wrapper = mount(Switch, {
+      propsData: {
+        checked: false
+      },
+      methods: {
+
+      }
+    });
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    wrapper.simulate('click');
+    expect(eventStub.calledOnce).to.be.true;
+    expect(eventStub.calledWith('change')).to.be.true;
   });
 });
