@@ -4,6 +4,9 @@
       <i class="zan-icon zan-icon-arrow"></i>
     </router-link>
     <router-view></router-view>
+    <div class="footer">
+      <img src="https://b.yzcdn.cn/v2/image/wap/zanui-logo.png" alt="logo" class="zanui-logo">
+    </div>
   </div>
 </template>
 
@@ -43,8 +46,16 @@ export default {
     text-decoration: none;
   }
 
+  body, html {
+    height: 100%;
+  }
+
   .examples-container {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+    height: 100%;
+    overflow: auto;
+    background: #f9fafb;
+    position: relative;
   }
 
   .page-back {
@@ -75,5 +86,19 @@ export default {
   .demo-sub-title {
     font-size: 16px;
     padding: 10px 15px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+
+  .zanui-logo {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: auto;
   }
 </style>

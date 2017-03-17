@@ -33,13 +33,15 @@ export default {
 
 <style>
 .mobile-popup {
-  width: 380px;
-  height: 500px;
-  border: 5px solid #e5e5e5;
+  width: 375px;
+  height: 650px;
+  background: url(https://b.yzcdn.cn/v2/image/wap/zanui-mobile-container.png) no-repeat;
 }
 
 .mobile-popup-iframe {
   width: 100%;
-  height: 500px;
+  position: relative;
+  top: 64px;
+  height: 586px;
 }
 </style>
