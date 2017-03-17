@@ -26,6 +26,50 @@ describe('Switch', () => {
     expect(vm.el.classList.contains('zan-switch')).to.true;
   });
 
+  it('create loading switch', () => {
+    vm = createVue({
+      data() {
+        return {
+          checked: false
+        };
+      },
+      components: {
+        'zan-switch': Switch
+      },
+      template: `
+        <zan-switch :loading="true"></zan-switch>
+      `
+    });
+    vm.mount();
+
+    expect(vm.el.classList.contains('zan-switch--loading')).to.true;
+  });
+
+  it('switch click disabled', done => {
+    vm = createVue({
+      data() {
+        return {
+          checked: false
+        };
+      },
+      components: {
+        'zan-switch': Switch
+      },
+      template: `
+        <zan-switch :disabled="disabled"></zan-switch>
+      `
+    });
+    vm.mount();
+    expect(vm.el.classList.contains('zan-switch--disabled')).to.true;
+    expect(vm.el.classList.contains('zan-switch--off')).to.true;
+    vm.el.click();
+
+    setTimeout(() => {
+      expect(vm.el.classList.contains('zan-switch--off')).to.true;
+      done();
+    });
+  });
+
   it('switch click default', done => {
     vm = createVue({
       data() {
