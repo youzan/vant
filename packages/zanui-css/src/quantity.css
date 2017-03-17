@@ -72,6 +72,7 @@
       outline: 0;
       vertical-align: middle;
       text-align: center;
+      -webkit-appearance: none;
     }
   }
 }
