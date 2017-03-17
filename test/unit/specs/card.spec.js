@@ -1,20 +1,19 @@
-import { createVue } from '../creater';
 import Card from 'packages/card';
+import { mount } from 'avoriaz';
 
 describe('Card', () => {
-  let vm;
+  let wrapper;
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
   it('create', () => {
-    vm = createVue(Card, {
-      title: 'card',
-      desc: 'card',
-      thumb: 'https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg'
+    wrapper = mount(Card, {
+      propsData: {
+        thumb: 'thumb'
+      }
     });
-    vm.mount();
 
-    expect(vm.el.classList.contains('zan-card')).to.true;
+    expect(wrapper.hasClass('zan-card')).to.be.true;
   });
 });

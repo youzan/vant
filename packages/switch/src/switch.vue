@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import ZanLoading from 'packages/loading';
 /**
  * zan-switch
  * @module components/switch
@@ -21,6 +22,9 @@
  */
 export default {
   name: 'zan-switch',
+  components: {
+    'zan-loading': ZanLoading
+  },
   props: {
     checked: {
       type: Boolean,

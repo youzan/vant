@@ -1,16 +1,17 @@
-import { createVue } from '../creater';
 import ActionSheet from 'packages/actionsheet';
+import { mount } from 'avoriaz';
 
 describe('ActionSheet', () => {
-  let vm;
+  let wrapper;
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
   it('create', () => {
-    vm = createVue(ActionSheet);
-    vm.mount();
+    wrapper = mount(ActionSheet, {
+      propsData: {}
+    });
 
-    expect(vm.el.classList.contains('zan-actionsheet')).to.true;
+    expect(wrapper.hasClass('zan-actionsheet')).to.be.true;
   });
 });

@@ -47,6 +47,7 @@
   "devDependencies": {
     "2webpack2": "^1.2.1",
     "autoprefixer": "^6.7.5",
+    "avoriaz": "^1.9.1",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.17.0",
     "babel-eslint": "^6.1.2",
