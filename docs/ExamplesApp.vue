@@ -51,7 +51,7 @@ export default {
   }
 
   .examples-container {
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     height: 100%;
     overflow: auto;
     background: #f9fafb;
@@ -89,8 +89,7 @@ export default {
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
+    margin-top: 30px;
     width: 100%;
     padding-bottom: 15px;
   }
