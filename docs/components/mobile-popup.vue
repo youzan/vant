@@ -40,6 +40,10 @@ export default {
 
 .mobile-popup-iframe {
   width: 100%;
+  box-sizing: border-box;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
   position: relative;
   top: 64px;
   height: 586px;
