@@ -1,16 +1,17 @@
-import { createVue } from '../creater';
 import Field from 'packages/field';
+import { mount } from 'avoriaz';
 
 describe('Field', () => {
-  let vm;
+  let wrapper;
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
   it('create', () => {
-    vm = createVue(Field);
-    vm.mount();
+    wrapper = mount(Field, {
+      propsData: {}
+    });
 
-    expect(vm.el.classList.contains('zan-field')).to.true;
+    expect(wrapper.hasClass('zan-field')).to.be.true;
   });
 });
