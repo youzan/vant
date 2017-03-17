@@ -10,14 +10,16 @@
         box-sizing: border-box;
         padding: 4px 15px;
         background-color: #F2F2F2;
-        @when focus {
+
+        @m focus {
             .zan-search__input-wrap {
                 width: 82%;   
             }
-            span {
+            .zan-icon-clear {
                 display: inline-block;
             }
         }
+
         @e input-wrap {
             position: relative;
             width: 90%;
@@ -25,12 +27,7 @@
             border: 1px solid $c-gray-light;
             border-radius: 4px;
             background-color: $c-white;
-            span {
-                display: none;
-                position: absolute;
-                right: 5px;
-                top: 8px;
-            }
+
             input {
                 width: 100%;
                 height: 14px;
@@ -40,14 +37,33 @@
                 outline: none;
             }
         }
+
         @e cancel {
             display: none;
             color: #44BB00;
             font-size: 14px;
             white-space: nowrap;
-            @when focus {
+            margin-left: 5px;
+
+            @m focus {
                display: block;
             }
+        }
+
+        .zan-icon-search {
+            color: $c-gray-darker;
+            position: absolute;
+            top: 9px;
+            left: 10px;
+            font-size: 16px;
+        }
+
+        .zan-icon-clear {
+            display: none;
+            position: absolute;
+            right: 5px;
+            top: 8px;
+            color: #888;
         }
     }
 }

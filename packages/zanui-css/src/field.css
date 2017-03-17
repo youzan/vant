@@ -31,8 +31,7 @@
     }
 
     @m error {
-      .zan-field__control,
-      .zan-cell__title {
+      .zan-field__control {
         color: $c-red;
       }
     }

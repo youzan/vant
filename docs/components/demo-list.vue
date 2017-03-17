@@ -1,49 +1,20 @@
 <template>
   <div class="side-nav">
-    <ul>
-      <li class="nav-item" v-for="item in data">
-        <a v-if="!item.path">{{item.name}}</a>
-        <router-link
-          v-else
-          active-class="active"
-          :to="base + item.path"
-          exact
-          v-text="item.title || item.name">
-        </router-link>
-        <ul class="pure-menu-list sub-nav" v-if="item.children">
-          <li class="nav-item" v-for="navItem in item.children">
-            <router-link
-              active-class="active"
-              :to="base + navItem.path"
-              v-text="navItem.title || navItem.name">
-            </router-link>
-          </li>
-        </ul>
-        <template v-if="item.groups">
-          <div class="nav-group" v-for="group in item.groups">
-            <div class="nav-group__title">{{group.groupName}}</div>
-            <ul class="pure-menu-list">
-              <template v-for="navItem in group.list">
-                <li
-                  class="nav-item"
-                  v-if="!navItem.disabled">
-                  <router-link
-                    active-class="active"
-                    :to="base + navItem.path"
-                    v-text="navItem.title">
-                  </router-link>
-                </li>
-              </template>
-            </ul>
-          </div>
-        </template>
-      </li>
-    </ul>
+    <h1 class="zanui-title">Zan UI Wap</h1>
+    <h2 class="zanui-desc">有赞移动wap端组件库</h2>
+    <div class="mobile-navs">
+      <template v-for="item in data">
+        <div class="mobile-nav-item" v-if="item.showInMobile">
+          <mobile-nav v-for="group in item.groups"  :group="group" :base="base"></mobile-nav>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
 <script>
 import navConfig from '../nav.config.json';
+import MobileNav from './mobile-nav';
 
 export default {
   data() {
@@ -53,6 +24,10 @@ export default {
       data: navConfig['zh-CN'],
       base: '/component'
     };
+  },
+
+  components: {
+    MobileNav
   }
 };
 </script>
@@ -61,56 +36,25 @@ export default {
   .side-nav {
     width: 100%;
     box-sizing: border-box;
-    padding: 40px 20px;
-    background: #f9fafb;
+    padding: 90px 15px 20px;
+    position: relative;
+    z-index: 1;
 
-    li {
-      list-style: none;
-    }
-    ul {
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
+    .zanui-title,
+    .zanui-desc {
+      text-align: center;
+      font-weight: normal;
     }
 
-    .nav-item {
-      a {
-        font-size: 16px;
-        color: #5e6d82;
-        line-height: 40px;
-        height: 40px;
-        margin: 0;
-        padding: 0;
-        text-decoration: none;
-        display: block;
-        position: relative;
-        transition: all .3s;
-
-        &.active {
-          color: #20a0ff;
-        }
-      }
-      .nav-item {
-        a {
-          display: block;
-          height: 40px;
-          line-height: 40px;
-          font-size: 13px;
-          padding-left: 24px;
-
-
-          &:hover {
-            color: #20a0ff;
-          }
-        }
-      }
+    .zanui-title {
+      font-size: 26px;
+      color: #333;
     }
-    .nav-group__title {
-      font-size: 12px;
-      color: #99a9bf;
-      padding-left: 8px;
-      line-height: 26px;
-      margin-top: 10px;
+
+    .zanui-desc {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 50px;
     }
   }
 </style>
