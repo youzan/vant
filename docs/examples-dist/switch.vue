@@ -1,6 +1,6 @@
 <template><section class="demo-switch"><h1 class="demo-title">switch</h1><example-block title="基础用法">
                 <div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>
+  <zan-switch class="some-customized-class" :checked="switchState" @change="updateState"></zan-switch>
   <div class="demo-switch__text">{{switchStateText}}</div>
 </div>
 <div class="demo-switch__wrapper">
@@ -41,4 +41,22 @@
   }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>
+import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+export default {
+  data() {
+    return {
+      switchState: true
+    };
+  },
+  computed: {
+    switchStateText() {
+      return this.switchState ? ' ON' : 'OFF';
+    }
+  },
+  methods: {
+    updateState(newState) {
+      this.switchState = newState;
+    }
+  }
+};  
+</script>

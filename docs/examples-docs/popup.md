@@ -22,7 +22,10 @@
 
     .zan-popup-4 {
       width: 60%;
-      height: 200px;
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
     }
 
     .zan-button {

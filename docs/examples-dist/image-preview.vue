@@ -4,7 +4,15 @@
 
 
               </example-block></section></template>
-
+<style>
+@component-namespace demo {
+  @b image-preview {
+    .zan-button {
+      margin-left: 15px;
+    }
+  }
+}
+</style>
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
 import { ImagePreview } from 'src/index';

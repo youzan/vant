@@ -29,7 +29,7 @@
 export default {
   props: {
     group: {
-      type: Array,
+      type: Object,
       default: () => {
         return [];
       }
