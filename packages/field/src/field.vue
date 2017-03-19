@@ -2,6 +2,7 @@
   <zan-cell
     class="zan-field"
     :title="label"
+    :required="required"
     :class="{
       'zan-field--hastextarea': type === 'textarea',
       'zan-field--nolabel': !label,
@@ -52,6 +53,7 @@ export default {
     disabled: Boolean,
     error: Boolean,
     readonly: Boolean,
+    required: Boolean,
     maxlength: [String, Number],
     border: Boolean
   },
