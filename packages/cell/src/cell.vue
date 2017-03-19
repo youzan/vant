@@ -1,6 +1,6 @@
 <template>
   <a class="zan-cell" :href="url" @click="handleClick">
-    <div class="zan-cell__title">
+    <div :class="{ 'zan-cell__title': true, 'zan-cell__required': required }">
       <slot name="icon">
         <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
       </slot>
@@ -31,7 +31,8 @@ export default {
     value: [String, Number],
     url: String,
     label: String,
-    isLink: Boolean
+    isLink: Boolean,
+    required: Boolean
   },
 
   methods: {

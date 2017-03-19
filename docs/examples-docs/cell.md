@@ -29,6 +29,18 @@ export default {
 ```
 :::
 
+### 带*号，标明必填
+
+传入`required`属性
+
+:::demo  带*号，标明必填
+```html
+<zan-cell-group>
+  <zan-cell title="单元格1" required></zan-cell>
+</zan-cell-group>
+```
+:::
+
 ### 标题带描述信息
 
 传入`label`属性，属性值为描述信息的值。
