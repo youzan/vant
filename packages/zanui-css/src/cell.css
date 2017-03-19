@@ -35,7 +35,6 @@
 
     @e title {
       display: inline-block;
-      overflow: hidden;
       /* 清除空白字符对高度的影响 */
       vertical-align: bottom;
 

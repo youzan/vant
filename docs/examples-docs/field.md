@@ -29,9 +29,9 @@ export default {
 :::demo 基础用法
 ```html
 <zan-cell-group>
-  <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username"></zan-field>
-  <zan-field type="password" label="密码：" placeholder="请输入密码"></zan-field>
-  <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍"></zan-field>
+  <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></zan-field>
+  <zan-field type="password" label="密码：" placeholder="请输入密码" required></zan-field>
+  <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></zan-field>
 </zan-cell-group>
 ```
 :::
