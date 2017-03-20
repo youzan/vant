@@ -34,5 +34,6 @@
   "toast": "./packages/toast/index.js",
   "uploader": "./packages/uploader/index.js",
   "swipe": "./packages/swipe/index.js",
-  "swipe-item": "./packages/swipe-item/index.js"
+  "swipe-item": "./packages/swipe-item/index.js",
+  "datetime-picker": "./packages/datetime-picker/index.js"
 }

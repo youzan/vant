@@ -48,6 +48,18 @@
           width: 33.333%;
         }
       }
+
+      @m 4 {
+        .zan-picker-column {
+          width: 25%;
+        }
+      }
+
+      @m 5 {
+        .zan-picker-column {
+          width: 20%;
+        }
+      }
     }
   }
 
