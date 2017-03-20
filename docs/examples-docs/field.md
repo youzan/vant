@@ -84,6 +84,19 @@ export default {
 ```
 :::
 
+
+### Autosize的输入框(仅支持textarea)
+
+传入`autosize`属性, 且将`rows`设为1。
+
+:::demo 错误的输入框
+```html
+<zan-cell-group>
+  <zan-field label="留言：" type="textarea" placeholder="请输入留言" rows="1" autosize></zan-field>
+</zan-cell-group>
+```
+:::
+
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
@@ -96,4 +109,7 @@ export default {
 | error | 输入框是否有错误 | boolean  | false |   |
 | readonly | 输入框是否只读 | boolean  | false |   |
 | maxlength | 输入框maxlength | [String, Number]  | '' |   |
+| rows | textarea rows | [String, Number]   | '' |   |
+| cols | textarea cols | [String, Number]  | '' |   |
+| autosize | 自动调整高度(仅支持textarea) | Boolean  | false |  true, false |
 
