@@ -57,18 +57,24 @@ export default {
 
   data() {
     return {
-
+      innerValue: this.val
     };
   },
 
   watch: {
     value(val) {
       this.innerValue = val;
+    },
+    innerValue(val) {
+      console.log(val + '!!!');
+      this.$emit('input', val);
     }
   },
 
   computed: {
     ranges() {
+      console.log(this.innerValue + '!!');
+      // return this.innerValue + '!!';
       if (this.type === 'time') {
         return [
           [this.minHour, this.maxHour],
@@ -176,6 +182,7 @@ debugger
       this.$emit('confirm', this.innerValue);
     },
     handlePickerChange(picker, values, index) {
+      console.log(this.innerValue);
       let value;
 
       if (this.type === 'time') {
@@ -194,10 +201,9 @@ debugger
         }
         value = new Date(year, month - 1, date, hour, minute);
       }
-      debugger
       this.innerValue = value;
-      console.log(value);
-      this.$emit('input', value);
+      console.log(value, this.innerValue);
+      // this.$emit('input', value);
     }
   },
 
