@@ -50,6 +50,12 @@
       }
     }
 
+    @m autosize {
+      .zan-field__control {
+        min-height: 0px;
+      }
+    }
+
     .zan-cell__title,
     .zan-cell__value {
       float: none;
