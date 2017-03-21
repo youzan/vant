@@ -65,7 +65,7 @@
       }
 
       @when alone {
-        float: left;
+        float: none;
       }
     }
 

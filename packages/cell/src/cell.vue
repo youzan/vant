@@ -1,6 +1,6 @@
 <template>
   <a class="zan-cell" :href="url" @click="handleClick">
-    <div :class="{ 'zan-cell__title': true, 'zan-cell__required': required }">
+    <div :class="{ 'zan-cell__title': true, 'zan-cell__required': required }" v-if="this.$slots.title || title || label">
       <slot name="icon">
         <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
       </slot>

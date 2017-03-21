@@ -16,6 +16,7 @@
       ref="textareaElement"
       class="zan-field__control"
       v-model="currentValue"
+      @focus="handleInputFocus"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
@@ -28,6 +29,7 @@
       class="zan-field__control"
       :value="currentValue"
       @input="handleInput"
+      @focus="handleInputFocus"
       :type="type"
       :placeholder="placeholder"
       :maxlength="maxlength"
@@ -104,6 +106,10 @@ export default {
       // 需要先设为0， 才可以让scrollHeight正确计算。
       textareaElement.style.height = 0 + 'px';
       textareaElement.style.height = (textareaElement.scrollHeight - textAreaDiff) + 'px';
+    },
+
+    handleInputFocus() {
+      this.$emit('focus');
     }
   }
 };
