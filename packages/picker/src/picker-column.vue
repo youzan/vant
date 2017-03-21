@@ -65,6 +65,9 @@ export default {
   },
 
   watch: {
+    value(val) {
+      this.currentValue = val;
+    },
     values(val) {
       this.currentValues = val;
     },
