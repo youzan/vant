@@ -5,6 +5,7 @@ import navConfig from './nav.config.json';
 import routes from './router.config';
 import SideNav from './components/side-nav';
 import DemoBlock from './components/demo-block';
+import FooterNav from './components/footer-nav';
 import ZanUI from 'src/index.js';
 
 import 'packages/zanui-css/src/index.css';
@@ -19,6 +20,7 @@ Vue.use(VueRouter);
 Vue.use(ZanUI);
 Vue.component('side-nav', SideNav);
 Vue.component('demo-block', DemoBlock);
+Vue.component('footer-nav', FooterNav);
 
 let routesConfig = routes(navConfig);
 routesConfig.push({
@@ -32,27 +34,14 @@ const router = new VueRouter({
   routes: routesConfig
 });
 
-let indexScrollTop = 0;
 router.beforeEach((route, redirect, next) => {
-  if (route.path !== '/') {
-    indexScrollTop = document.body.scrollTop;
-  }
+  window.scrollTo(0, 0);
   if (isMobile()) {
     window.location.replace(location.pathname + 'examples.html#' + route.path);
     return;
   }
   document.title = route.meta.title || document.title;
   next();
-});
-
-router.afterEach(route => {
-  if (route.path !== '/') {
-    document.body.scrollTop = 0;
-  } else {
-    Vue.nextTick(() => {
-      document.body.scrollTop = indexScrollTop;
-    });
-  }
 });
 
 new Vue({ // eslint-disable-line

@@ -3,6 +3,7 @@
     <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
     <div class="page-content">
       <router-view></router-view>
+      <footer-nav></footer-nav>
     </div>
   </div>
 </template>
