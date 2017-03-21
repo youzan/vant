@@ -27,15 +27,16 @@ export default {
     height: 100%;
     overflow: scroll;
 
-    h2 {
-      font-size: 28px;
-      color: #1f2d3d;
+    section > h2 {
+      font-size: 36px;
+      color: #333;
       margin: 20px 0;
-      line-height: 40px;
+      line-height: 1.5;
     }
 
     section > h3 {
-      font-size: 22px;
+      font-size: 30px;
+      color: #333;
       margin: 23px 0;
     }
 
@@ -64,19 +65,21 @@ export default {
     box-sizing: border-box;
     overflow: auto;
     height: inherit;
-    margin-left: 320px;
+    margin-left: 220px;
     padding: 0 20px;
 
     section > p {
       font-size: 14px;
-      color: #5e6d82;
+      color: #666;
       margin: 14px 0;
     }
 
-     p > code {
-      background-color: #eee;
+    p > code {
+      background-color: #F2F2F2;
+      display: inline-block;
+      border: 1px solid #E5E5E5;
       padding: 2px 4px;
-      color: #26a2ff;
+      color: #333;
     }
   }
 
@@ -90,15 +93,14 @@ export default {
     border-collapse: collapse;
     width: 100%;
     background-color: #fff;
-    color: #5e6d82;
+    color: #333;
     font-size: 14px;
     margin-bottom: 45px;
 
     th {
       text-align: left;
-      border-top: 1px solid #eaeefb;
-      border-bottom: 1px solid #eaeefb;
-      background-color: #eff2f7;
+      border: 1px solid #E5E5E5;
+      background-color: #F2F2F2;
       padding: 10px;
 
       &:first-child {
@@ -107,8 +109,16 @@ export default {
     }
 
     td {
-      border-bottom: 1px solid #eaeefb;
+      border: 1px solid #E5E5E5;
       padding: 10px;
+
+      code {
+        background-color: #F2F2F2;
+        display: inline-block;
+        border: 1px solid #E5E5E5;
+        padding: 2px 4px;
+        color: #333;
+      }
     }
   }
 </style>

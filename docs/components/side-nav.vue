@@ -62,11 +62,12 @@
 
 <style lang="css">
   .side-nav {
-    width: 320px;
+    width: 220px;
     box-sizing: border-box;
     padding: 40px 20px;
+    border-right: 1px solid #E5E5E5;
     float: left;
-    background: #f9fafb;
+    background-color: #fff;
     height: inherit;
     overflow: auto;
 
@@ -82,7 +83,7 @@
     .nav-item {
       a {
         font-size: 16px;
-        color: #5e6d82;
+        color: #333;
         line-height: 40px;
         height: 40px;
         margin: 0;
@@ -93,7 +94,7 @@
         transition: all .3s;
 
         &.active {
-          color: #20a0ff;
+          color: #3388FF;
         }
       }
       .nav-item {
@@ -104,16 +105,15 @@
           font-size: 13px;
           padding-left: 24px;
 
-
           &:hover {
-            color: #20a0ff;
+            color: #3388FF;
           }
         }
       }
     }
     .nav-group__title {
       font-size: 12px;
-      color: #99a9bf;
+      color: #666;
       padding-left: 8px;
       line-height: 26px;
       margin-top: 10px;

@@ -79,11 +79,11 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| active | 当前激活的步骤，从0开始 | Number  | ''          | ''          |
-| icon | 当前步骤的icon | string  | ''          | ''          |
-| iconClass | 当前步骤栏为icon添加的类 | string  | ''          | ''          |
-| title | 当前步骤从标题 | string  | ''          | ''          |
-| description | 当前步骤描述 | string  | ''          | ''          |
+| active | 当前激活的步骤，从0开始 | `number`  |          |          |
+| icon | 当前步骤的icon | `string`  |          |          |
+| iconClass | 当前步骤栏为icon添加的类 | `string`  |          |          |
+| title | 当前步骤从标题 | `string`  |          |          |
+| description | 当前步骤描述 | `string`  |          |          |
 
 ### Steps Slot
 
