@@ -3,7 +3,7 @@
     <div class="zan-toast" :class="['zan-toast--' + displayStyle]" v-show="visible">
       <!-- 只显示文字 -->
       <template v-if="displayStyle === 'text'" >
-        <div class="zan-toast__text">{{message}}</div>
+        <div class="zan-toast__text" v-html="message"></div>
       </template>
       <!-- 加载中 -->
       <template v-if="displayStyle === 'loading'">
@@ -12,7 +12,7 @@
       <!-- 图案加文字 -->
       <template v-if="displayStyle === 'default'">
         <zan-icon class="zan-toast__icon" name="check"></zan-icon>
-        <div class="zan-toast__text">{{message}}</div>
+        <div class="zan-toast__text" v-html="message"></div>
       </template>
     </div>
   </transition>
