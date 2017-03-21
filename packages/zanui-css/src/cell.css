@@ -3,7 +3,7 @@
 
 @component-namespace zan {
   @b cell-group {
-    padding-left: 10px;
+    padding-left: 15px;
     position: relative;
     background-color: #fff;
 
@@ -14,9 +14,8 @@
 
   @b cell {
     display: block;
-    overflow: hidden;
     position: relative;
-    padding: 10px 10px 10px 0;
+    padding: 10px 15px 10px 0;
     box-sizing: border-box;
     line-height: 22px;
     background-color: $c-white;
@@ -35,8 +34,19 @@
     }
 
     @e title {
-      float: left;
-      overflow: hidden;
+      display: inline-block;
+      /* 清除空白字符对高度的影响 */
+      vertical-align: bottom;
+
+      &.zan-cell__required {
+        &::before {
+          content: '*';
+          position: absolute;
+          left: -7px;
+          font-size: 14px;
+          color: #f44;
+        }
+      }
     }
 
     @e label {
@@ -62,7 +72,7 @@
     .zan-icon-arrow {
       position: absolute;
       top: 50%;
-      right: 10px;
+      right: 15px;
       transform: translateY(-50%);
       color: $c-gray-dark;
       font-size: 12px;

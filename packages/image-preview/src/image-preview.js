@@ -12,13 +12,13 @@ const initInstance = () => {
   });
 };
 
-var ImagePreviewBox = image => {
+var ImagePreviewBox = images => {
   if (!instance) {
     initInstance();
   }
 
   if (!instance.value) {
-    instance.image = image;
+    instance.images = images;
 
     document.body.appendChild(instance.$el);
 

@@ -16,6 +16,25 @@
   }
 </style>
 
+<script>
+export default {
+  data() {
+    return {
+      switchState: true
+    };
+  },
+  computed: {
+    switchStateText() {
+      return this.switchState ? ' ON' : 'OFF';
+    }
+  },
+  methods: {
+    updateState(newState) {
+      this.switchState = newState;
+    }
+  }
+};  
+</script>
 
 ## Switch组件
 
@@ -24,7 +43,7 @@
 :::demo 基础用法
 ```html
 <div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="switchState" :on-change="updateState"></zan-switch>
+  <zan-switch class="some-customized-class" :checked="switchState" @change="updateState"></zan-switch>
   <div class="demo-switch__text">{{switchStateText}}</div>
 </div>
 <div class="demo-switch__wrapper">
@@ -73,4 +92,3 @@ export default {
 | checked | 开关状态 | boolean  | false          | true, false    |
 | loading | loading状态 | boolean  | false          | true, false    |
 | disabled | 禁用状态 | boolean  | false          | true, false    |
-| onChange | 回调 | function  | function（）{}      | -    |

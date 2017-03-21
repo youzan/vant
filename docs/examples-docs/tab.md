@@ -1,3 +1,14 @@
+<style>
+@component-namespace demo {
+  @b tab {
+    .zan-tabs-pane {
+      background-color: #fff;
+      padding: 20px;
+    }
+  }
+}
+</style>
+
 ## Tab 组件
 
 ### 基础用法

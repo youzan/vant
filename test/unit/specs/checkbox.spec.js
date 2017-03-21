@@ -1,16 +1,17 @@
-import { createVue } from '../creater';
 import Checkbox from 'packages/checkbox';
+import { mount } from 'avoriaz';
 
 describe('Checkbox', () => {
-  let vm;
+  let wrapper;
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
   it('create', () => {
-    vm = createVue(Checkbox);
-    vm.mount();
+    wrapper = mount(Checkbox, {
+      propsData: {}
+    });
 
-    expect(vm.el.classList.contains('zan-checkbox')).to.true;
+    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
   });
 });

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import ZanLoading from 'packages/loading';
 /**
  * zan-switch
  * @module components/switch
@@ -15,13 +16,15 @@
  * @param {boolean} [checked=false] - 开关状态
  * @param {boolean} [disabled=false] - 禁用
  * @param {boolean} [loading=false] - loading状态
- * @param {callback} [onChange] - 开关状态改变回调函数。
  *
  * @example
  * <zan-switch checked="true" disabled="false"></zan-switch>
  */
 export default {
   name: 'zan-switch',
+  components: {
+    'zan-loading': ZanLoading
+  },
   props: {
     checked: {
       type: Boolean,
@@ -34,10 +37,6 @@ export default {
     loading: {
       type: Boolean,
       default: false
-    },
-    onChange: {
-      type: Function,
-      default: function() {}
     }
   },
   computed: {
@@ -54,7 +53,7 @@ export default {
      */
     toggleState: function() {
       if (this.disabled || this.loading) return;
-      this.onChange(!this.checked);
+      this.$emit('change', !this.checked);
     }
   }
 };

@@ -3,6 +3,7 @@
 @component-namespace zan {
   @b picker {
     overflow: hidden;
+    background-color: #fff;
 
     @e toolbar {
       height: 40px;
@@ -45,6 +46,18 @@
       @m 3 {
         .zan-picker-column {
           width: 33.333%;
+        }
+      }
+
+      @m 4 {
+        .zan-picker-column {
+          width: 25%;
+        }
+      }
+
+      @m 5 {
+        .zan-picker-column {
+          width: 20%;
         }
       }
     }

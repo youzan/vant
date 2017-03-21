@@ -5,7 +5,6 @@
 @component-namespace zan {
   @b field {
     width: 100%;
-    overflow: hidden;
 
     @m hastextarea {
       .zan-field__control {
@@ -31,8 +30,7 @@
     }
 
     @m error {
-      .zan-field__control,
-      .zan-cell__title {
+      .zan-field__control {
         color: $c-red;
       }
     }
@@ -49,6 +47,12 @@
 
       &:last-child::after {
         @mixin border-retina (bottom);
+      }
+    }
+
+    @m autosize {
+      .zan-field__control {
+        min-height: 0px;
       }
     }
 

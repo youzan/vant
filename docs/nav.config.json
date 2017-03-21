@@ -19,9 +19,10 @@
     },
     {
       "name": "ZanUI组件",
+      "showInMobile": true,
       "groups": [
         {
-          "groupName": "CSS组件",
+          "groupName": "基础组件",
           "list": [
             {
               "path": "/button",
@@ -64,13 +65,41 @@
               "title": "Badge"
             },
             {
+              "path": "/tab",
+              "title": "Tab"
+            },
+            {
+              "path": "/lazyload",
+              "title": "Lazyload"
+            },
+            {
+              "path": "/popup",
+              "title": "Popup"
+            },
+            {
+              "path": "/swipe",
+              "title": "Swipe"
+            },
+            {
               "path": "/search",
               "title": "Search"
+            },
+            {
+              "path": "/quantity",
+              "title": "Quantity"
+            },
+            {
+              "path": "/waterfall",
+              "title": "Waterfall"
+            },
+            {
+              "path": "/image-preview",
+              "title": "ImagePreview"
             }
           ]
         },
         {
-          "groupName": "Form",
+          "groupName": "表单",
           "list": [
             {
               "path": "/switch",
@@ -87,27 +116,23 @@
             {
               "path": "/checkbox",
               "title": "Checkbox"
+            },
+            {
+              "path": "/uploader",
+              "title": "Uploader"
             }
           ]
         },
         {
-          "groupName": "JS组件",
+          "groupName": "操作反馈",
           "list": [
             {
               "path": "/actionsheet",
               "title": "ActionSheet"
             },
             {
-              "path": "/tab",
-              "title": "Tab"
-            },
-            {
               "path": "/toast",
               "title": "Toast"
-            },
-            {
-              "path": "/img-uploader",
-              "title": "Img Uploader"
             },
             {
               "path": "/picker",
@@ -118,32 +143,8 @@
               "title": "Datetime Picker"
             },
             {
-              "path": "/lazyload",
-              "title": "Lazyload"
-            },
-            {
-              "path": "/popup",
-              "title": "Popup"
-            },
-            {
               "path": "/dialog",
               "title": "Dialog"
-            },
-            {
-              "path": "/swipe",
-              "title": "Swipe"
-            },
-            {
-              "path": "/quantity",
-              "title": "Quantity"
-            },
-            {
-              "path": "/waterfall",
-              "title": "Waterfall"
-            },
-            {
-              "path": "/image-preview",
-              "title": "ImagePreview"
             }
           ]
         }

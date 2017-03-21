@@ -1,16 +1,17 @@
-import { createVue } from '../creater';
 import CellGroup from 'packages/cell-group';
+import { mount } from 'avoriaz';
 
-describe('Cell', () => {
-  let vm;
+describe('CellGroup', () => {
+  let wrapper;
   afterEach(() => {
-    vm && vm.destroy();
+    wrapper && wrapper.destroy();
   });
 
-  it('cell group create', () => {
-    vm = createVue(CellGroup);
-    vm.mount();
+  it('create', () => {
+    wrapper = mount(CellGroup, {
+      propsData: {}
+    });
 
-    expect(vm.el.classList.contains('zan-cell-group')).to.true;
+    expect(wrapper.hasClass('zan-cell-group')).to.be.true;
   });
 });

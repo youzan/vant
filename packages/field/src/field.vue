@@ -2,21 +2,26 @@
   <zan-cell
     class="zan-field"
     :title="label"
+    :required="required"
     :class="{
       'zan-field--hastextarea': type === 'textarea',
       'zan-field--nolabel': !label,
       'zan-field--disabled': disabled,
       'zan-field--error': error,
-      'zan-field--border': border
+      'zan-field--border': border,
+      'zan-field--autosize': autosize
     }">
     <textarea
       v-if="type === 'textarea'"
+      ref="textareaElement"
       class="zan-field__control"
       v-model="currentValue"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
-      :readonly="readonly">
+      :readonly="readonly"
+      :rows="rows"
+      :cols="cols">
     </textarea>
     <input
       v-else
@@ -32,6 +37,7 @@
 </template>
 
 <script>
+const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'datetime', 'password', 'textarea'];
 import zanCell from 'packages/cell';
 
 export default {
@@ -44,7 +50,10 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'text'
+      default: 'text',
+      validate(value) {
+        return VALID_TYPES.indexOf(value) > -1;
+      }
     },
     placeholder: String,
     value: {},
@@ -52,8 +61,18 @@ export default {
     disabled: Boolean,
     error: Boolean,
     readonly: Boolean,
+    required: Boolean,
     maxlength: [String, Number],
-    border: Boolean
+    border: Boolean,
+    rows: [String, Number],
+    cols: [String, Number],
+    autosize: {
+      type: Boolean,
+      default: false,
+      validate(value) {
+        if (value && this.type !== 'textarea') return false;
+      }
+    }
   },
 
   data() {
@@ -68,6 +87,7 @@ export default {
     },
 
     currentValue(val) {
+      if (this.autosize && this.type === 'textarea') this.sizeAdjust();
       this.$emit('input', val);
     }
   },
@@ -75,6 +95,15 @@ export default {
   methods: {
     handleInput(event) {
       this.currentValue = event.target.value;
+    },
+
+    sizeAdjust() {
+      const textareaElement = this.$refs.textareaElement;
+      const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
+          parseInt(textareaElement.style.paddingTop, 10)) || 0;
+      // 需要先设为0， 才可以让scrollHeight正确计算。
+      textareaElement.style.height = 0 + 'px';
+      textareaElement.style.height = (textareaElement.scrollHeight - textAreaDiff) + 'px';
     }
   }
 };

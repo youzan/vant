@@ -29,9 +29,9 @@ export default {
 :::demo 基础用法
 ```html
 <zan-cell-group>
-  <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username"></zan-field>
-  <zan-field type="password" label="密码：" placeholder="请输入密码"></zan-field>
-  <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍"></zan-field>
+  <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></zan-field>
+  <zan-field type="password" label="密码：" placeholder="请输入密码" required></zan-field>
+  <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></zan-field>
 </zan-cell-group>
 ```
 :::
@@ -84,6 +84,19 @@ export default {
 ```
 :::
 
+
+### Autosize的输入框(仅支持textarea)
+
+传入`autosize`属性, 且将`rows`设为1。
+
+:::demo 错误的输入框
+```html
+<zan-cell-group>
+  <zan-field label="留言：" type="textarea" placeholder="请输入留言" rows="1" autosize></zan-field>
+</zan-cell-group>
+```
+:::
+
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
@@ -96,4 +109,7 @@ export default {
 | error | 输入框是否有错误 | boolean  | false |   |
 | readonly | 输入框是否只读 | boolean  | false |   |
 | maxlength | 输入框maxlength | [String, Number]  | '' |   |
+| rows | textarea rows | [String, Number]   | '' |   |
+| cols | textarea cols | [String, Number]  | '' |   |
+| autosize | 自动调整高度(仅支持textarea) | Boolean  | false |  true, false |
 

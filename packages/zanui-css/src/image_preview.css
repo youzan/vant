@@ -5,13 +5,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
 
     @e image {
       display: block;
       width: 100%;
       height: auto;
-      transition: .2s;
+      transition: .2s ease-out;
       position: absolute;
       left: 0;
 
@@ -19,11 +19,10 @@
         top: 50%;
         transform: translate3d(0, -50%, 0);
       }
+    }
 
-      @m top {
-        top: 0;
-        transform: none;
-      }
+    .zan-swipe {
+      height: 100%;
     }
   }
 }

@@ -7,7 +7,7 @@
 </zan-popup>
 
 <div class="zan-row">
-  <zan-button @click="popupShow2 = true">从上方方弹出popup</zan-button>
+  <zan-button @click="popupShow2 = true">从上方弹出popup</zan-button>
 </div>
 <zan-popup v-model="popupShow2" position="top" class="zan-popup-2" :overlay="false">
   更新成功
@@ -55,7 +55,10 @@
 
     .zan-popup-4 {
       width: 60%;
-      height: 200px;
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 5px;
+      text-align: center;
     }
 
     .zan-button {

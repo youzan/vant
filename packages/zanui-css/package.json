@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-css",
-  "version": "0.0.31",
+  "version": "0.0.38",
   "description": "zanui css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -9,7 +9,8 @@
     "src"
   ],
   "scripts": {
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:icons": "sh scripts/build.sh"
   },
   "license": "MIT",
   "devDependencies": {

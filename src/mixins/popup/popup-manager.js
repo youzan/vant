@@ -2,13 +2,15 @@ import Vue from 'vue';
 import { addClass } from 'src/utils/dom';
 
 const getModal = function() {
-  let modalDom = PopupManager.modalDom;
+  let modalDom = window.popupContext && window.popupContext.modalDom;
+
   if (modalDom) {
-    PopupManager.popupContext.hasModal = true;
+    window.popupContext.hasModal = true;
   } else {
-    PopupManager.popupContext.hasModal = false;
+    window.popupContext.hasModal = false;
+
     modalDom = document.createElement('div');
-    PopupManager.modalDom = modalDom;
+    window.popupContext.modalDom = modalDom;
 
     modalDom.addEventListener('touchmove', function(event) {
       event.preventDefault();
@@ -75,7 +77,11 @@ const PopupManager = {
 
     addClass(modalDom, 'zan-modal');
 
-    document.body.appendChild(modalDom);
+    if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
+      dom.parentNode.appendChild(modalDom);
+    } else {
+      document.body.appendChild(modalDom);
+    }
 
     if (zIndex) {
       modalDom.style.zIndex = zIndex;
