@@ -4,11 +4,17 @@
     :class="blockClass">
     <slot name="examples"></slot>
     <div class="highlight-wrapper">
-      <!-- <div class="highlight-toggle">
+      <div class="highlight-toggle">
         <span v-text="description"></span>
-      </div> -->
-      <slot name="highlight">
-      </slot>
+        <i class="zan-icon zan-icon-arrow" @click="showCode = !showCode" :class="{
+          'zan-icon-arrow-close': !showCode
+        }">
+        </i>
+      </div>
+      <div class="highlight-code" v-show="showCode">
+        <slot name="highlight">
+        </slot>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +23,12 @@
 export default {
   props: {
     description: String
+  },
+
+  data() {
+    return {
+      showCode: true
+    };
   },
 
   computed: {
@@ -39,6 +51,7 @@ export default {
   .demo-block {
     transition: .2s;
     overflow: hidden;
+    margin-bottom: 20px;
 
     code {
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
@@ -84,6 +97,27 @@ export default {
       padding: 20px;
       border-bottom: 1px solid #e5e5e5;
       color: #666;
+      position: relative;
+
+      .zan-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        transform: rotate(-90deg);
+        border: 2px solid #888;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.zan-icon-arrow-close {
+          transform: rotate(90deg);
+        }
+      }
     }
   }
 </style>

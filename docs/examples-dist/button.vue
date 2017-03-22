@@ -1,4 +1,4 @@
-<template><section class="demo-button"><h1 class="demo-title">button</h1><example-block title="按钮功能">
+<template><section class="demo-button"><h1 class="demo-title">button</h1><example-block title="按钮功能，只接受primary, default, danger三种类型，默认default。">
                 <zan-row>
   <zan-col span="24">
     <zan-button block="">default</zan-button>
@@ -18,7 +18,7 @@
   </zan-col>
 </zan-row>
 
-              </example-block><example-block title="按钮尺寸">
+              </example-block><example-block title="按钮尺寸，只接受`large`, `normal`, `small`, `mini`四种尺寸，默认`normal`。">
                 <zan-row>
   <zan-col span="24">
     <zan-button size="large">large</zan-button>
@@ -36,7 +36,7 @@
   </zan-col>
 </zan-row>
 
-              </example-block><example-block title="自定义按钮标签">
+              </example-block><example-block title="自定义按钮标签，按钮默认是`button`标签，可以使用`tag`属性修改为一个`a`标签。">
                 <zan-row>
   <zan-col span="24">
     <zan-button tag="a" type="primary" href="https://www.youzan.com" target="_blank">a标签按钮</zan-button>
