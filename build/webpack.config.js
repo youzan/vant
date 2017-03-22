@@ -28,8 +28,8 @@ module.exports = {
     'zanui-examples': './docs/examples.js'
   },
   output: {
-    path: './docs/build/',
-    publicPath: '/docs/build/',
+    path: './docs/dist/',
+    publicPath: '/docs/dist/',
     filename: '[name].js'
   },
   resolve: {
