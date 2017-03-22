@@ -60,7 +60,6 @@ export default {
     box-sizing: border-box;
     padding: 40px 0;
     float: left;
-    background-color: #fff;
 
     li {
       list-style: none;

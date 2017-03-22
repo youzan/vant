@@ -22,6 +22,7 @@ body {
   font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
+  background-color: #f8f8f8;
 }
 
 a {
@@ -65,12 +66,32 @@ ul, ol {
   }
 }
 
+.page-header {
+  height: 60px;
+  background-color: #fff;
+}
+
+.page-container {
+  margin: 40px 15px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 10000px;
+    top: 0;
+    left: 220px;
+    background-color: #E5E5E5;
+  }
+}
+
 .page-content {
   box-sizing: border-box;
-  overflow: auto;
   margin-left: 220px;
-  padding: 0 20px;
-  border-left: 1px solid #E5E5E5;
+  padding: 0 40px;
 
   section {
     > h2 {

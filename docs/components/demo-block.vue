@@ -1,31 +1,16 @@
 <template>
-  <div
-    class="demo-block"
-    :class="blockClass">
+  <div class="demo-block" :class="blockClass">
     <slot name="examples"></slot>
-      <slot name="highlight">
-      </slot>
+    <slot name="highlight"></slot>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    description: String
-  },
-
   computed: {
     blockClass() {
       return `demo-${this.$route.path.split('/').pop()}`;
-    },
-
-    codeAreaHeight() {
-      return Math.max(this.$el.getElementsByClassName('examples')[0].clientHeight, this.$el.getElementsByClassName('highlight')[0].clientHeight);
     }
-  },
-
-  mounted() {
-    // this.$el.getElementsByClassName('highlight')[0].style.height = `${this.codeAreaHeight + 1}px`;
   }
 };
 </script>
@@ -44,10 +29,12 @@ export default {
       width: 320px;
       float: right;
       box-sizing: border-box;
-      padding: 74px 0 0;
+      padding: 10px 0 0;
       min-height: 200px;
       max-height: 600px;
       overflow: auto;
+      background-color: #F8F8F8;
+      border: 1px solid #E5E5E5;
     }
 
     .highlight {
@@ -66,7 +53,7 @@ export default {
         max-height: none;
         border-radius: 0;
         padding: 20px;
-        background-color: #f8f8f8;
+        background-color: #F8F8F8;
 
         &::before {
           content: none;

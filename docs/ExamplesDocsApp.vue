@@ -1,9 +1,13 @@
 <template>
-  <div class="page-container clearfix">
-    <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
-    <div class="page-content">
-      <router-view></router-view>
-      <footer-nav></footer-nav>
+  <div class="app">
+    <div class="page-header">
+    </div>
+    <div class="page-container clearfix">
+      <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
+      <div class="page-content">
+        <router-view></router-view>
+        <footer-nav></footer-nav>
+      </div>
     </div>
   </div>
 </template>
