@@ -29,7 +29,7 @@
       padding: 45px;
     }
 
-    @m text {
+    @m text, html {
       padding: 12px;
       min-width: 200px;
     }

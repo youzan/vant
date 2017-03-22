@@ -34,6 +34,7 @@ import Toast from '../packages/toast/index.js';
 import Uploader from '../packages/uploader/index.js';
 import Swipe from '../packages/swipe/index.js';
 import SwipeItem from '../packages/swipe-item/index.js';
+import DatetimePicker from '../packages/datetime-picker/index.js';
 
 const install = function(Vue) {
   if (install.installed) return;
@@ -69,6 +70,7 @@ const install = function(Vue) {
   Vue.component(Uploader.name, Uploader);
   Vue.component(Swipe.name, Swipe);
   Vue.component(SwipeItem.name, SwipeItem);
+  Vue.component(DatetimePicker.name, DatetimePicker);
 };
 
 // auto install
@@ -78,7 +80,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 module.exports = {
   install,
-  version: '0.0.38',
+  version: '0.0.39',
   Button,
   Switch,
   Field,
@@ -114,5 +116,6 @@ module.exports = {
   Toast,
   Uploader,
   Swipe,
-  SwipeItem
+  SwipeItem,
+  DatetimePicker
 };

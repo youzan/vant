@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.js",
+    "dev": "npm run build:file && webpack-dev-server --inline --history-api-fallback --hot --config build/webpack.config.js",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
@@ -141,7 +141,7 @@
     "vue-template-compiler": "2.1.8",
     "vue-template-es2015-compiler": "^1.4.2",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.16.0",
+    "webpack-dev-server": "^1.16.3",
     "webpack-merge": "^2.0.0",
     "webpack-node-externals": "^1.5.4",
     "webpack-vendor-chunk-plugin": "^1.0.0"

@@ -1,4 +1,4 @@
-## Badge 组件
+## Badge
 
 ### 基础用法
 
@@ -17,13 +17,13 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
-| active-key | 激活的badge的索引 | string  | '0'但必须子badge里的mark是有0位索引 |           |
+| active-key | 激活的`badge`的索引 | `string`  | `0`但必须子badge里的mark是有`0`位索引 |           |
 
 
 ### z-badge API
 | 参数       | 说明      | 类型       | 默认值       | 必须       |
 |-----------|-----------|-----------|-------------|-------------|
-| mark | badge的唯一key值 | string  | ''          | required         |
-| title | badge的文案标题 | string  | ''          | required          |
-| info | 当前badge的提示消息数量 | string  | ''          |           |
-| url | 跳转链接 | string  | 全连接直接跳转或者hash          |           |
+| mark | badge的唯一key值 | `string`  | `''`          | `required`         |
+| title | badge的文案标题 | `string`  | `''`          | `required`          |
+| info | 当前badge的提示消息数量 | `string`  | `''`         |           |
+| url | 跳转链接 | `string`  | 全连接直接跳转或者hash          |           |

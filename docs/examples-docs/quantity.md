@@ -57,9 +57,9 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| min | 最小值 | string/number | 1          | ''          |
-| max | 最大值 | string/number  | ''          | ''          |
-| step | 步数 | string/number  | 1         | ''          |
-| disabled | 是否被禁用了 | boolean  | false      | ''          |
-| defaultValue | 默认值 | string/number  | 1      | ''          |
+| min | 最小值 | `string`, `number` | `1`         |           |
+| max | 最大值 | `string`, `number`  |           |           |
+| step | 步数 | `string`, `number`  | `1`         |           |
+| disabled | 是否被禁用了 | `boolean`  | `false`      |           |
+| defaultValue | 默认值 | `string`, `number`  | `1`      |           |
 

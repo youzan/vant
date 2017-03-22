@@ -15,6 +15,10 @@
           <zan-icon class="zan-toast__icon" :name="type"></zan-icon>
           <div class="zan-toast__text">{{message}}</div>
         </template>
+        <!-- 传入html -->
+        <template v-if="displayStyle === 'html'">
+          <div class="zan-toast__text" v-html="message"></div>
+        </template>
       </div>
       <div class="zan-toast__overlay" v-if="forbidClick"></div>
     </div>
@@ -25,7 +29,8 @@
 import zanLoading from 'packages/loading';
 import zanIcon from 'packages/icon';
 
-const TOAST_TYPES = ['text', 'loading', 'success', 'fail'];
+const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
+const DEFAULT_STYLE_LIST = ['success', 'fail'];
 /**
  * zan-toast
  * @module components/toast
@@ -70,14 +75,7 @@ export default {
   },
   computed: {
     displayStyle() {
-      switch (this.type) {
-        case 'text':
-          return 'text';
-        case 'loading':
-          return 'loading';
-        default:
-          return 'default';
-      }
+      return DEFAULT_STYLE_LIST.indexOf(this.type) > -1 ?  'default' : this.type;
     }
   }
 };

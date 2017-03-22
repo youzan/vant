@@ -124,14 +124,14 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选      |
 |-----------|-----------|-----------|-------------|-------------|
-| classtype | 两种UI | string  | line |     card      |
-| active | 默认激活的tab | string || number  | 0 |           |
-| navclass | tabs的内部nav上的自定义classname | string  | '' |           |
+| classtype | 两种UI | `string`  | `line` |     `line`, `card`      |
+| active | 默认激活的tab | `string`, `number`  | `0` |           |
+| navclass | tabs的内部nav上的自定义classname | `string`  |  |           |
 
 
 ### zan-tab API
-| 参数       | 说明      | 类型       | 默认值       | 必须       |
+| 参数       | 说明      | 类型       | 默认值       | 可选       |
 |-----------|-----------|-----------|-------------|-------------|
-| title | tab的标题 | string  | ''          | required         |
-| disable | 是否禁用这个tab | Boolean  | false      |           |
+| title | tab的标题 | `string`  |         |          |
+| disable | 是否禁用这个tab | `boolean`  | `false`      |           |
 

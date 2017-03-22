@@ -52,6 +52,12 @@ export default {
     },
     closeToast() {
       this.toast.clear();
+    },
+    showHtmlToast() {
+      Toast({
+        type: 'html',
+        message: '<em>HTML<em>'
+      })
     }
   }
 };
@@ -140,28 +146,55 @@ export default {
 :::
 
 
+### 传入html
+
+:::demo 手动关闭
+```html
+<zan-button @click="showHtmlToast">打开</zan-button>
+
+<script>
+import { Toast } from 'src/index';
+
+export default {
+  methods: {
+    showHtmlToast() {
+      Toast({
+        type: 'html',
+        message: '<em>HTML<em>'
+      })
+    }
+  }
+};
+</script>
+```
+:::
+
 
 ### 基础用法
 ### Toast(options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
+| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'fail', 'html'  |
 | message | 内容 | String  | '' | - |\| message | 内容 | String  | '' | - 
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
 
 ### 快速用法
-### Toast(message)
+### Toast(message) || Toast(message, options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | message | 内容 | String  | '' | - |
+| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
 
 ### Toast.loading() || Toast.loading(message, options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
 
 ### Toast.success(message) || Toast.success(message, options)
 
@@ -169,6 +202,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
 
 ### Toast.fail(message) || Toast.fail(message, options)
 
@@ -176,6 +210,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
 
 ### instanceOfToast.clear()
 关闭toast。

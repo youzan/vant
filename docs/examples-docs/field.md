@@ -84,16 +84,32 @@ export default {
 ```
 :::
 
+
+### Autosize的输入框(仅支持textarea)
+
+传入`autosize`属性, 且将`rows`设为1。
+
+:::demo 错误的输入框
+```html
+<zan-cell-group>
+  <zan-field label="留言：" type="textarea" placeholder="请输入留言" rows="1" autosize></zan-field>
+</zan-cell-group>
+```
+:::
+
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 输入框类型 | string  | text | text, number, email, url, tel, date, datetime, password, textarea  |
-| placeholder | 输入框placeholder | string  | '' |   |
-| value | 输入框的值 | string  | '' |   |
-| label | 输入框标签 | string  | '' |   |
-| disabled | 是否禁用输入框 | boolean  | false |   |
-| error | 输入框是否有错误 | boolean  | false |   |
-| readonly | 输入框是否只读 | boolean  | false |   |
-| maxlength | 输入框maxlength | [String, Number]  | '' |   |
+| type | 输入框类型 | `string`  | `text` | `text`, `number`, `email`, `url`, `tel`, `date`, `datetime`, `password`, `textarea`  |
+| placeholder | 输入框placeholder | `string`  |  |   |
+| value | 输入框的值 | `string`  |  |   |
+| label | 输入框标签 | `string`  |  |   |
+| disabled | 是否禁用输入框 | `boolean`  | `false` |   |
+| error | 输入框是否有错误 | `boolean`  | `false` |   |
+| readonly | 输入框是否只读 | `boolean`  | `false` |   |
+| maxlength | 输入框maxlength | `string`, `number`  |  |   |
+| rows | textarea rows | `string`, `number`   |  |   |
+| cols | textarea cols | `string`, `number`  |  |   |
+| autosize | 自动调整高度(仅支持textarea) | `boolean`  | `false` |  `true`, `false` |
 
