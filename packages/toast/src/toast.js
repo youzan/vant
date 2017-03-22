@@ -36,16 +36,20 @@ var Toast = (options = {}) => {
   clearTimeout(instance.timer);
   instance.type = options.type ? options.type : 'text';
   instance.message = typeof options === 'string' ? options : options.message;
+  instance.forbidClick = options.forbidClick ? options.forbidClick : false;
+  instance.clear = () => {
+    if (instance.closed) return;
+    instance.visible = false;
+    instance.$el.addEventListener('transitionend', removeDom);
+    instance.closed = true;
+  };
 
   document.body.appendChild(instance.$el);
   Vue.nextTick(function() {
     instance.visible = true;
     instance.$el.removeEventListener('transitionend', removeDom);
     instance.timer = setTimeout(function() {
-      if (instance.closed) return;
-      instance.visible = false;
-      instance.$el.addEventListener('transitionend', removeDom);
-      instance.closed = true;
+      instance.clear();
     }, duration);
   });
   return instance;

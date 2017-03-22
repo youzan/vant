@@ -1,19 +1,22 @@
 <template>
   <transition name="zan-toast">
-    <div class="zan-toast" :class="['zan-toast--' + displayStyle]" v-show="visible">
-      <!-- 只显示文字 -->
-      <template v-if="displayStyle === 'text'" >
-        <div class="zan-toast__text">{{message}}</div>
-      </template>
-      <!-- 加载中 -->
-      <template v-if="displayStyle === 'loading'">
-          <zan-loading v-if="type === 'loading'" type="gradient-circle" color="white"></zan-loading>
-      </template>
-      <!-- 图案加文字 -->
-      <template v-if="displayStyle === 'default'">
-        <zan-icon class="zan-toast__icon" name="check"></zan-icon>
-        <div class="zan-toast__text">{{message}}</div>
-      </template>
+    <div class="zan-toast-wrapper" v-show="visible">
+      <div class="zan-toast" :class="['zan-toast--' + displayStyle]">
+        <!-- 只显示文字 -->
+        <template v-if="displayStyle === 'text'" >
+          <div class="zan-toast__text">{{message}}</div>
+        </template>
+        <!-- 加载中 -->
+        <template v-if="displayStyle === 'loading'">
+            <zan-loading v-if="type === 'loading'" type="gradient-circle" color="white"></zan-loading>
+        </template>
+        <!-- 图案加文字 -->
+        <template v-if="displayStyle === 'default'">
+          <zan-icon class="zan-toast__icon" :name="type"></zan-icon>
+          <div class="zan-toast__text">{{message}}</div>
+        </template>
+      </div>
+      <div class="zan-toast__overlay" v-if="forbidClick"></div>
     </div>
   </transition>
 </template>
@@ -54,6 +57,10 @@ export default {
           return value.length <= 16;
         }
       }
+    },
+    forbidClick: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -71,10 +78,6 @@ export default {
         default:
           return 'default';
       }
-    },
-    iconName() {
-      // TODO: 更新icon
-      return 'check';
     }
   }
 };
