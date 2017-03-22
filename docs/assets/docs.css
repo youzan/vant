@@ -96,6 +96,7 @@ ul, ol {
     > ul li,
     > ol li {
       color: #666;
+      font-size: 14px;
       line-height: 20px;
       margin: 10px 0 10px 20px;
       padding-left: 20px;

@@ -47,11 +47,10 @@ router.beforeEach((route, redirect, next) => {
 });
 
 router.afterEach((route) => {
-  if (route.page !== '/') {
-    const sideNavHeight = document.querySelector('.side-nav').clientHeight;
+  if (route.path !== '/') {
+    const sideNavBox = document.querySelector('.side-nav');
     const pageContentBox = document.querySelector('.page-content');
-    const pageContentHeight = pageContentBox.clientHeight;
-    pageContentBox.style.height = Math.max(sideNavHeight, pageContentHeight) + 'px';
+    pageContentBox.style.height = Math.max(sideNavBox && sideNavBox.clientHeight, pageContentBox && pageContentBox.clientHeight) + 'px';
   }
 });
 
