@@ -22,6 +22,7 @@
     color: $c-black;
     font-size: 14px;
     text-decoration: none;
+    overflow: hidden;
 
     &::after {
       @mixin border-retina (bottom);
@@ -34,9 +35,7 @@
     }
 
     @e title {
-      display: inline-block;
-      /* 清除空白字符对高度的影响 */
-      vertical-align: bottom;
+      float: left;
 
       &.zan-cell__required {
         &::before {
