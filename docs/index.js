@@ -46,6 +46,16 @@ router.beforeEach((route, redirect, next) => {
   next();
 });
 
+router.afterEach((route) => {
+  if (route.path !== '/') {
+    const sideNavBox = document.querySelector('.side-nav');
+    const pageContentBox = document.querySelector('.page-content');
+    if (pageContentBox) {
+      pageContentBox.style.height = Math.max(sideNavBox && sideNavBox.clientHeight, pageContentBox && pageContentBox.clientHeight) + 'px';
+    }
+  }
+});
+
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router
