@@ -127,7 +127,7 @@ if (process.env.NODE_ENV === 'production') {
                   var content = tokens[idx + 1].content;
                   var html = convert(striptags.strip(content, ['script', 'style']));
 
-                  return `<demo-block class="demo-box">
+                  return `<demo-block class="demo-box" description="${description}">
                             <div class="examples" slot="examples">${html}</div>
                             <div class="highlight" slot="highlight">`;
                 }
@@ -183,7 +183,7 @@ if (process.env.NODE_ENV === 'production') {
                   var content = tokens[idx + 1].content;
                   var html = convert(striptags.strip(content, ['script', 'style']));
 
-                  return `<demo-block class="demo-box">
+                  return `<demo-block class="demo-box" description="${description}">
                             <div class="examples" slot="examples">${html}</div>
                             <div class="highlight" slot="highlight">`;
                 }
