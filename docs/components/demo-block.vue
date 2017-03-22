@@ -3,13 +3,22 @@
     class="demo-block"
     :class="blockClass">
     <slot name="examples"></slot>
-    <slot name="highlight">
-    </slot>
+    <div class="highlight-wrapper">
+      <!-- <div class="highlight-toggle">
+        <span v-text="description"></span>
+      </div> -->
+      <slot name="highlight">
+      </slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    description: String
+  },
+
   computed: {
     blockClass() {
       return `demo-${this.$route.path.split('/').pop()}`;
@@ -21,15 +30,13 @@ export default {
   },
 
   mounted() {
-    this.$el.getElementsByClassName('highlight')[0].style.height = `${this.codeAreaHeight + 1}px`;
+    // this.$el.getElementsByClassName('highlight')[0].style.height = `${this.codeAreaHeight + 1}px`;
   }
 };
 </script>
 
 <style>
   .demo-block {
-    border: solid 1px #eaeefb;
-    border-radius: 4px;
     transition: .2s;
     overflow: hidden;
 
@@ -38,19 +45,22 @@ export default {
     }
 
     .examples {
-      width: 375px;
+      width: 320px;
+      height: 568px;
+      background: url(https://b.yzcdn.cn/v2/image/wap/zanui-mobile-demo.png) no-repeat;
       float: right;
       box-sizing: border-box;
-      padding: 20px 0;
+      padding: 74px 0 0;
       min-height: 200px;
       max-height: 600px;
       overflow: auto;
     }
 
-    .highlight {
-      margin-right: 375px;
+    .highlight-wrapper {
+      margin-right: 345px;
       box-sizing: border-box;
-      border-right: solid 1px #eaeefb;
+      border: 1px solid #E5E5E5;
+      border-radius: 4px;
 
       pre {
         margin: 0;
@@ -61,11 +71,19 @@ export default {
         border: none;
         max-height: none;
         border-radius: 0;
+        padding: 20px;
+        background-color: #f8f8f8;
 
         &::before {
           content: none;
         }
       }
+    }
+
+    .highlight-toggle {
+      padding: 20px;
+      border-bottom: 1px solid #e5e5e5;
+      color: #666;
     }
   }
 </style>
