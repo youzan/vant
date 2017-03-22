@@ -3,19 +3,8 @@
     class="demo-block"
     :class="blockClass">
     <slot name="examples"></slot>
-    <div class="highlight-wrapper">
-      <div class="highlight-toggle">
-        <span v-text="description"></span>
-        <i class="zan-icon zan-icon-arrow" @click="showCode = !showCode" :class="{
-          'zan-icon-arrow-close': !showCode
-        }">
-        </i>
-      </div>
-      <div class="highlight-code" v-show="showCode">
-        <slot name="highlight">
-        </slot>
-      </div>
-    </div>
+      <slot name="highlight">
+      </slot>
   </div>
 </template>
 
@@ -23,12 +12,6 @@
 export default {
   props: {
     description: String
-  },
-
-  data() {
-    return {
-      showCode: true
-    };
   },
 
   computed: {
@@ -59,8 +42,6 @@ export default {
 
     .examples {
       width: 320px;
-      height: 568px;
-      background: url(https://b.yzcdn.cn/v2/image/wap/zanui-mobile-demo.png) no-repeat;
       float: right;
       box-sizing: border-box;
       padding: 74px 0 0;
@@ -69,7 +50,7 @@ export default {
       overflow: auto;
     }
 
-    .highlight-wrapper {
+    .highlight {
       margin-right: 345px;
       box-sizing: border-box;
       border: 1px solid #E5E5E5;
@@ -89,33 +70,6 @@ export default {
 
         &::before {
           content: none;
-        }
-      }
-    }
-
-    .highlight-toggle {
-      padding: 20px;
-      border-bottom: 1px solid #e5e5e5;
-      color: #666;
-      position: relative;
-
-      .zan-icon {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        text-align: center;
-        font-size: 12px;
-        color: #888;
-        transform: rotate(-90deg);
-        border: 2px solid #888;
-        border-radius: 50%;
-        cursor: pointer;
-
-        &.zan-icon-arrow-close {
-          transform: rotate(90deg);
         }
       }
     }

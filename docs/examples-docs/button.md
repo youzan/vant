@@ -17,13 +17,11 @@
 
 ## Button 按钮
 
-### 使用指南
+### 按钮功能
 
-一些使用指南。
+只接受`primary`, `default`, `danger`三种类型，默认`default`。
 
-### 代码示例
-
-:::demo 按钮功能，只接受primary, default, danger三种类型，默认default。
+:::demo 按钮功能
 ```html
 <zan-row>
   <zan-col span="24">
@@ -39,6 +37,8 @@
 ```
 :::
 
+### 禁用状态
+
 :::demo 禁用状态
 ```html
 <zan-row>
@@ -49,7 +49,11 @@
 ```
 :::
 
-:::demo 按钮尺寸，只接受`large`, `normal`, `small`, `mini`四种尺寸，默认`normal`。
+### 按钮尺寸
+
+只接受`large`, `normal`, `small`, `mini`四种尺寸，默认`normal`。
+
+:::demo 按钮尺寸
 ```html 
 <zan-row>
   <zan-col span="24">
@@ -70,7 +74,11 @@
 ```
 :::
 
-:::demo 自定义按钮标签，按钮默认是`button`标签，可以使用`tag`属性修改为一个`a`标签。
+### 自定义按钮标签
+
+按钮默认是`button`标签，可以使用`tag`属性修改为一个`a`标签。
+
+:::demo 自定义按钮标签
 ```html 
 <zan-row>
   <zan-col span="24">
@@ -79,6 +87,8 @@
 </zan-row>
 ```
 :::
+
+### loading按钮
 
 :::demo loading按钮
 ```html 
@@ -92,6 +102,8 @@
 </zan-row>
 ```
 :::
+
+### button group
 
 :::demo button group
 ```html 
