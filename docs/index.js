@@ -29,7 +29,7 @@ routesConfig.push({
 });
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'history',
   base: __dirname,
   routes: routesConfig
 });

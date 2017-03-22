@@ -29,7 +29,7 @@ module.exports = {
   },
   output: {
     path: './docs/build/',
-    publicPath: 'docs/build/',
+    publicPath: '/docs/build/',
     filename: '[name].js'
   },
   resolve: {
