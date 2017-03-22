@@ -75,7 +75,7 @@ export default {
   },
   computed: {
     displayStyle() {
-      return DEFAULT_STYLE_LIST.indexOf(this.type) > -1 ?  'default' : this.type;
+      return DEFAULT_STYLE_LIST.indexOf(this.type) > -1 ? 'default' : this.type;
     }
   }
 };
