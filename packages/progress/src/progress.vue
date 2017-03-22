@@ -2,9 +2,7 @@
   <div class="zan-progress">
     <div class="zan-progress__bar">
       <span class="zan-progress__bar__finished-portion" :style="{backgroundColor: componentColor, width: percentage + '%'}"></span>
-      <span class="zan-progress__bar__pivot" :style="pivotStyle">
-        {{pivotText}}
-      </span>
+      <span class="zan-progress__bar__pivot" :style="pivotStyle">{{currentPivotText}}</span>
     </div>
   </div>
 </template>
@@ -29,7 +27,7 @@ export default {
   props: {
     percentage: {
       type: Number,
-      default: 0,
+      required: true,
       validate(value) {
         return value <= 100 && value >= 0;
       }
@@ -55,6 +53,9 @@ export default {
   },
 
   computed: {
+    currentPivotText() {
+      return this.pivotText ? this.pivotText : this.this.percentage.toString() + '%';
+    },
     componentColor() {
       return this.inactive ? '#cacaca' : this.color;
     },
@@ -65,7 +66,6 @@ export default {
         left: this.percentage + '%',
         marginLeft: '-14px'
       };
-      console.log(this.percentage);
       if (this.percentage <= 5) {
         pivotStyle.left = '0%';
         pivotStyle.marginLeft = '0';

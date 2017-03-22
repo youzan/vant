@@ -1,19 +1,26 @@
 <template>
   <transition name="zan-toast">
-    <div class="zan-toast" :class="['zan-toast--' + displayStyle]" v-show="visible">
-      <!-- 只显示文字 -->
-      <template v-if="displayStyle === 'text'" >
-        <div class="zan-toast__text" v-html="message"></div>
-      </template>
-      <!-- 加载中 -->
-      <template v-if="displayStyle === 'loading'">
-          <zan-loading v-if="type === 'loading'" type="gradient-circle" color="white"></zan-loading>
-      </template>
-      <!-- 图案加文字 -->
-      <template v-if="displayStyle === 'default'">
-        <zan-icon class="zan-toast__icon" name="check"></zan-icon>
-        <div class="zan-toast__text" v-html="message"></div>
-      </template>
+    <div class="zan-toast-wrapper" v-show="visible">
+      <div class="zan-toast" :class="['zan-toast--' + displayStyle]">
+        <!-- 只显示文字 -->
+        <template v-if="displayStyle === 'text'" >
+          <div class="zan-toast__text">{{message}}</div>
+        </template>
+        <!-- 加载中 -->
+        <template v-if="displayStyle === 'loading'">
+            <zan-loading v-if="type === 'loading'" type="gradient-circle" color="white"></zan-loading>
+        </template>
+        <!-- 图案加文字 -->
+        <template v-if="displayStyle === 'default'">
+          <zan-icon class="zan-toast__icon" :name="type"></zan-icon>
+          <div class="zan-toast__text">{{message}}</div>
+        </template>
+        <!-- 传入html -->
+        <template v-if="displayStyle === 'html'">
+          <div class="zan-toast__text" v-html="message"></div>
+        </template>
+      </div>
+      <div class="zan-toast__overlay" v-if="forbidClick"></div>
     </div>
   </transition>
 </template>
@@ -22,7 +29,8 @@
 import zanLoading from 'packages/loading';
 import zanIcon from 'packages/icon';
 
-const TOAST_TYPES = ['text', 'loading', 'success', 'fail'];
+const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
+const DEFAULT_STYLE_LIST = ['success', 'fail'];
 /**
  * zan-toast
  * @module components/toast
@@ -54,6 +62,10 @@ export default {
           return value.length <= 16;
         }
       }
+    },
+    forbidClick: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -63,18 +75,7 @@ export default {
   },
   computed: {
     displayStyle() {
-      switch (this.type) {
-        case 'text':
-          return 'text';
-        case 'loading':
-          return 'loading';
-        default:
-          return 'default';
-      }
-    },
-    iconName() {
-      // TODO: 更新icon
-      return 'check';
+      return DEFAULT_STYLE_LIST.indexOf(this.type) > -1 ?  'default' : this.type;
     }
   }
 };
