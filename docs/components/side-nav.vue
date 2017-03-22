@@ -58,7 +58,7 @@ export default {
   .side-nav {
     width: 220px;
     box-sizing: border-box;
-    padding: 40px 20px;
+    padding: 40px 0;
     float: left;
     background-color: #fff;
 
@@ -83,9 +83,11 @@ export default {
         display: block;
         position: relative;
         transition: all .3s;
+        padding: 0 20px;
 
         &.active {
           color: #3388FF;
+          background-color: #F2F2F2;
         }
       }
       .nav-item {
@@ -94,7 +96,7 @@ export default {
           height: 40px;
           line-height: 40px;
           font-size: 14px;
-          padding-left: 24px;
+          padding-left: 44px;
 
           &:hover {
             color: #3388FF;
@@ -105,7 +107,7 @@ export default {
     .nav-group__title {
       font-size: 12px;
       color: #666;
-      padding-left: 8px;
+      padding-left: 28px;
       line-height: 26px;
       margin-top: 10px;
     }
