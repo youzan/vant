@@ -18,16 +18,10 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
-  overflow: hidden;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  height: 100%;
 }
 
 a {

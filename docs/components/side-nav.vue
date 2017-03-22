@@ -43,21 +43,15 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      data: Array,
-      base: {
-        type: String,
-        default: ''
-      }
-    },
-    data() {
-      return {
-        highlights: [],
-        navState: []
-      };
+export default {
+  props: {
+    data: Array,
+    base: {
+      type: String,
+      default: ''
     }
-  };
+  }
+};
 </script>
 
 <style lang="css">
@@ -65,11 +59,8 @@
     width: 220px;
     box-sizing: border-box;
     padding: 40px 20px;
-    border-right: 1px solid #E5E5E5;
     float: left;
     background-color: #fff;
-    height: inherit;
-    overflow: auto;
 
     li {
       list-style: none;

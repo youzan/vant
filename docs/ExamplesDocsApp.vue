@@ -25,9 +25,6 @@ export default {
   @import './assets/docs.css';
 
   .page-container {
-    height: 100%;
-    overflow: scroll;
-
     section > h2 {
       font-size: 36px;
       color: #333;
@@ -65,9 +62,9 @@ export default {
   .page-content {
     box-sizing: border-box;
     overflow: auto;
-    height: inherit;
     margin-left: 220px;
     padding: 0 20px;
+    border-left: 1px solid #E5E5E5;
 
     section > p {
       font-size: 14px;
