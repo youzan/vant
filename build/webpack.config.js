@@ -29,7 +29,7 @@ module.exports = {
   },
   output: {
     path: './docs/dist/',
-    publicPath: '/docs/dist/',
+    publicPath: '/vue/docs/dist/',
     filename: '[name].js'
   },
   resolve: {
