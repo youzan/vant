@@ -93,7 +93,7 @@ export default {
           display: block;
           height: 40px;
           line-height: 40px;
-          font-size: 13px;
+          font-size: 14px;
           padding-left: 24px;
 
           &:hover {
