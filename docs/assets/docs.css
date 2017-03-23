@@ -133,11 +133,12 @@ ul, ol {
     }
 
     > h5 {
-      font-size: 20px
+      font-size: 14px
     }
 
     > h6 {
-      font-size: 16px;
+      font-size: 14px;
+      color: #666;
     }
 
     > p {
