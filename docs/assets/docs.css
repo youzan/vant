@@ -71,40 +71,73 @@ ul, ol {
   background-color: #fff;
 }
 
-.page-container {
+.main-content {
   margin: 40px 15px;
+}
+
+.page-container {
   background-color: #fff;
   position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 10000px;
-    top: 0;
-    left: 220px;
-    background-color: #E5E5E5;
-  }
+  display: table;
+  width: 100%;
 }
 
 .page-content {
   box-sizing: border-box;
   margin-left: 220px;
   padding: 0 40px;
+  display: table-cell;
 
   section {
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      color: #333;
+      line-height: 1.5;
+      margin: 20px 0;
+      font-weight: normal;
+
+      &:hover a {
+        opacity: .4;
+      }
+
+      a {
+        float: left;
+        margin-left: -20px;
+        opacity: 0;
+        cursor: pointer;
+
+        &:hover {
+          opacity: .4;
+        }
+      }
+    }
+
+    > h1 {
+      font-size: 40px;
+    }
+
     > h2 {
       font-size: 36px;
-      color: #333;
-      margin: 20px 0;
-      line-height: 1.5;
     }
 
     > h3 {
       font-size: 30px;
-      color: #333;
-      margin: 23px 0;
+    }
+
+    > h4 {
+      font-size: 24px;
+    }
+
+    > h5 {
+      font-size: 20px
+    }
+
+    > h6 {
+      font-size: 16px;
     }
 
     > p {
@@ -137,26 +170,6 @@ ul, ol {
 
       li {
         margin-left: 0;
-      }
-    }
-  }
-
-  h2, h3, h4, h5 {
-    font-weight: normal;
-    color: #1f2f3d;
-
-    &:hover a {
-      opacity: .4;
-    }
-
-    a {
-      float: left;
-      margin-left: -20px;
-      opacity: 0;
-      cursor: pointer;
-
-      &:hover {
-        opacity: .4;
       }
     }
   }
@@ -198,3 +211,8 @@ ul, ol {
   }
 }
 
+.page-footer {
+  height: 150px;
+  margin-top: 40px;
+  background-color: #fff;
+}
