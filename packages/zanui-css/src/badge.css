@@ -13,14 +13,14 @@
         display: block;
         overflow: hidden;
         position: relative;
-        padding: 20px 15px;
+        padding: 20px 12px;
         box-sizing: border-box;
-        line-height: 14px;
+        line-height: 1.4;
         background-color: $c-background;
         color: $c-gray-darker;
         font-size: 14px;
         text-decoration: none;
-        white-space: nowrap;
+        word-break: break-all;
         @e active {
             display: none;
             position: absolute;
