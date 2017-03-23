@@ -1,14 +1,8 @@
-/**
- * Created by tsxuehu on 17/1/4.
- */
 var config = {
-
-    "bem": {
-        "shortcuts": {"component": "b", "modifier": "m", "descendent": "e"},
-        "separators": {"descendent": "__", "modifier": "--"}
-    }/*,
-    "autoprefixer": {"browsers": ["ie > 8", "last 2 versions"]},
-    "rem": {"browsers": ["ie > 8", "last 2 versions"]}*/
+    'bem': {
+        'shortcuts': {'component': 'b', 'modifier': 'm', 'descendent': 'e'},
+        'separators': {'descendent': '__', 'modifier': '--'}
+    }
 };
 // https://github.com/trysound/postcss-easy-import
 var partialImport = require("postcss-easy-import")();
