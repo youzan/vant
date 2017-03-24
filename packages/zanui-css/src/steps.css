@@ -5,6 +5,7 @@
   @b steps {
     overflow: hidden;
     padding: 0 10px;
+    background-color: #fff;
 
     @m 4 {
       .zan-step {

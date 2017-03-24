@@ -15,11 +15,11 @@
 }
 </style>
 
-## Button组件
+## Button 按钮
 
 ### 按钮功能
 
-只接受primary, default, danger三种类型，默认default。
+只接受`primary`, `default`, `danger`三种类型，默认`default`。
 
 :::demo 按钮功能
 ```html
@@ -51,7 +51,7 @@
 
 ### 按钮尺寸
 
-只接受large, normal, small, mini四种尺寸，默认normal。
+只接受`large`, `normal`, `small`, `mini`四种尺寸，默认`normal`。
 
 :::demo 按钮尺寸
 ```html 
@@ -76,7 +76,7 @@
 
 ### 自定义按钮标签
 
-按钮默认是button标签，可以使用tag属性修改为一个a标签。
+按钮默认是`button`标签，可以使用`tag`属性修改为一个`a`标签。
 
 :::demo 自定义按钮标签
 ```html 
@@ -89,8 +89,6 @@
 :::
 
 ### loading按钮
-
-表示loading状态
 
 :::demo loading按钮
 ```html 
@@ -107,8 +105,6 @@
 
 ### button group
 
-一组按钮。
-
 :::demo button group
 ```html 
 <div class="button-group">
@@ -123,9 +119,9 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 按钮类型 | string  | 'default'          | 'primary', 'danger'   |
-| size | 按钮尺寸 | string  | 'normal'          | 'large', 'small', 'mini'  |
-| tag | 按钮标签 | string  | 'button'          | 'a', 'span', ...  |
-| diabled | 按钮是否禁用 | Boolean  |           |      |
-| block | 按钮是否显示为块级元素 | Boolean  |           |      |
+| type | 按钮类型 | `string`  | `default`          | `primary`, `danger`   |
+| size | 按钮尺寸 | `string`  | `normal`          | `large`, `small`, `mini`  |
+| tag | 按钮标签 | `string`  | `button`          | `a`, `span`, ...  |
+| diabled | 按钮是否禁用 | `boolean`  |           |      |
+| block | 按钮是否显示为块级元素 | `boolean`  |           |      |
 

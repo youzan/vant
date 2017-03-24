@@ -5,6 +5,8 @@
     .zan-icon {
       margin: 10px;
       font-size: 45px;
+      width: 56px;
+      text-align: center;
     }
   }
 } 
@@ -49,4 +51,4 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| name | icon名称 | string  | '' |   |
+| name | icon名称 | `string`  | `''` |   |

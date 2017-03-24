@@ -1,10 +1,7 @@
 <template>
-  <div
-    class="demo-block"
-    :class="blockClass">
+  <div class="demo-block" :class="blockClass">
     <slot name="examples"></slot>
-    <slot name="highlight">
-    </slot>
+    <slot name="highlight"></slot>
   </div>
 </template>
 
@@ -13,44 +10,38 @@ export default {
   computed: {
     blockClass() {
       return `demo-${this.$route.path.split('/').pop()}`;
-    },
-
-    codeAreaHeight() {
-      return Math.max(this.$el.getElementsByClassName('examples')[0].clientHeight, this.$el.getElementsByClassName('highlight')[0].clientHeight);
     }
-  },
-
-  mounted() {
-    this.$el.getElementsByClassName('highlight')[0].style.height = `${this.codeAreaHeight + 1}px`;
   }
 };
 </script>
 
 <style>
   .demo-block {
-    border: solid 1px #eaeefb;
-    border-radius: 4px;
     transition: .2s;
     overflow: hidden;
+    margin-bottom: 20px;
 
     code {
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
     }
 
     .examples {
-      width: 375px;
+      width: 320px;
       float: right;
       box-sizing: border-box;
-      padding: 20px 0;
+      padding: 10px 0 0;
       min-height: 200px;
       max-height: 600px;
       overflow: auto;
+      background-color: #F8F8F8;
+      border: 1px solid #E5E5E5;
     }
 
     .highlight {
-      margin-right: 375px;
+      margin-right: 345px;
       box-sizing: border-box;
-      border-right: solid 1px #eaeefb;
+      border: 1px solid #E5E5E5;
+      border-radius: 4px;
 
       pre {
         margin: 0;
@@ -61,6 +52,8 @@ export default {
         border: none;
         max-height: none;
         border-radius: 0;
+        padding: 20px;
+        background-color: #F8F8F8;
 
         &::before {
           content: none;

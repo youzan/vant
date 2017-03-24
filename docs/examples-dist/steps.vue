@@ -27,7 +27,7 @@
     }
 
     .zan-button {
-      margin-left: 15px;
+      margin: 15px 0 0 15px;
     }
   }
 }

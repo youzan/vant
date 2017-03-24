@@ -28,8 +28,8 @@ module.exports = {
     'zanui-examples': './docs/examples.js'
   },
   output: {
-    path: './docs/build/',
-    publicPath: 'docs/build/',
+    path: './docs/dist/',
+    publicPath: '/vue/docs/dist/',
     filename: '[name].js'
   },
   resolve: {
@@ -72,12 +72,67 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: [
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      options: {
+        postcss: getPoastcssPlugin,
+        babel: {
+          presets: ['es2015'],
+          plugins: ['transform-runtime', 'transform-vue-jsx']
+        },
+        eslint: {
+          formatter: require('eslint-friendly-formatter')
+        },
+        vue: {
+          autoprefixer: false,
+          postcss: getPoastcssPlugin
+        },
+        vueMarkdown: {
+          use: [
+            [require('markdown-it-anchor'), {
+              level: 2,
+              slugify: slugify,
+              permalink: true,
+              permalinkBefore: true
+            }],
+            [require('markdown-it-container'), 'demo', {
+              validate: function(params) {
+                return params.trim().match(/^demo\s*(.*)$/);
+              },
+
+              render: function(tokens, idx) {
+                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+                if (tokens[idx].nesting === 1) {
+                  var description = (m && m.length > 1) ? m[1] : '';
+                  var content = tokens[idx + 1].content;
+                  var html = convert(striptags.strip(content, ['script', 'style']));
+
+                  return `<demo-block class="demo-box" description="${description}">
+                            <div class="examples" slot="examples">${html}</div>
+                            <div class="highlight" slot="highlight">`;
+                }
+                return '</div></demo-block>\n';
+              }
+            }]
+          ],
+          preprocess: function(MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function() {
+              return '<table class="table">';
+            };
+            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
+            return source;
+          }
+        }
+      }
+    })
+  ]
 };
 
 if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool;
-  module.exports.plugins = [
+  module.exports.plugins = module.exports.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
@@ -92,114 +147,5 @@ if (process.env.NODE_ENV === 'production') {
       },
       sourceMap: false
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      options: {
-        postcss: getPoastcssPlugin,
-        babel: {
-          presets: ['es2015'],
-          plugins: ['transform-runtime', 'transform-vue-jsx']
-        },
-        eslint: {
-          formatter: require('eslint-friendly-formatter')
-        },
-        vue: {
-          autoprefixer: false,
-          postcss: getPoastcssPlugin
-        },
-        vueMarkdown: {
-          use: [
-            [require('markdown-it-anchor'), {
-              level: 2,
-              slugify: slugify,
-              permalink: true,
-              permalinkBefore: true
-            }],
-            [require('markdown-it-container'), 'demo', {
-              validate: function(params) {
-                return params.trim().match(/^demo\s*(.*)$/);
-              },
-
-              render: function(tokens, idx) {
-                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
-                if (tokens[idx].nesting === 1) {
-                  var description = (m && m.length > 1) ? m[1] : '';
-                  var content = tokens[idx + 1].content;
-                  var html = convert(striptags.strip(content, ['script', 'style']));
-
-                  return `<demo-block class="demo-box">
-                            <div class="examples" slot="examples">${html}</div>
-                            <div class="highlight" slot="highlight">`;
-                }
-                return '</div></demo-block>\n';
-              }
-            }]
-          ],
-          preprocess: function(MarkdownIt, source) {
-            MarkdownIt.renderer.rules.table_open = function() {
-              return '<table class="table">';
-            };
-            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
-            return source;
-          }
-        }
-      }
-    })
-  ];
-} else {
-  module.exports.plugins = [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      options: {
-        postcss: getPoastcssPlugin,
-        babel: {
-          presets: ['es2015'],
-          plugins: ['transform-runtime', 'transform-vue-jsx']
-        },
-        eslint: {
-          formatter: require('eslint-friendly-formatter')
-        },
-        vue: {
-          autoprefixer: false,
-          postcss: getPoastcssPlugin
-        },
-        vueMarkdown: {
-          use: [
-            [require('markdown-it-anchor'), {
-              level: 2,
-              slugify: slugify,
-              permalink: true,
-              permalinkBefore: true
-            }],
-            [require('markdown-it-container'), 'demo', {
-              validate: function(params) {
-                return params.trim().match(/^demo\s*(.*)$/);
-              },
-
-              render: function(tokens, idx) {
-                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
-                if (tokens[idx].nesting === 1) {
-                  var description = (m && m.length > 1) ? m[1] : '';
-                  var content = tokens[idx + 1].content;
-                  var html = convert(striptags.strip(content, ['script', 'style']));
-
-                  return `<demo-block class="demo-box">
-                            <div class="examples" slot="examples">${html}</div>
-                            <div class="highlight" slot="highlight">`;
-                }
-                return '</div></demo-block>\n';
-              }
-            }]
-          ],
-          preprocess: function(MarkdownIt, source) {
-            MarkdownIt.renderer.rules.table_open = function() {
-              return '<table class="table">';
-            };
-            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
-            return source;
-          }
-        }
-      }
-    })
-  ];
-};
+  ]);
+}

@@ -1,7 +1,6 @@
 import Switch from 'packages/switch';
 import ZanLoading from 'packages/loading';
 import { mount } from 'avoriaz';
-// import { stub } from 'sinon';
 
 describe('Switch', () => {
   let wrapper;

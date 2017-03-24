@@ -69,10 +69,6 @@
               "title": "Tab"
             },
             {
-              "path": "/lazyload",
-              "title": "Lazyload"
-            },
-            {
               "path": "/popup",
               "title": "Popup"
             },

@@ -14,12 +14,6 @@
         type: [Number, String],
         default: 0
       }
-    },
-
-    data() {
-      return {
-        computedActiveKey: this.activeKey
-      };
     }
   };
 </script>
