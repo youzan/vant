@@ -7,6 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var version = require('../package.json').version;
 var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function convert(str) {
   str = str.replace(/(&#x)(\w{4});/gi, function($0) {
@@ -52,7 +53,17 @@ module.exports = {
     loaders: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              css: ExtractTextPlugin.extract({
+                use: 'css-loader!postcss-loader',
+                fallback: 'vue-style-loader'
+              })
+            }
+          }
+        }]
       },
       {
         test: /\.js$/,
@@ -61,7 +72,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader!postcss-loader'
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader!postcss-loader'
+        })
       },
       {
         test: /\.md/,
@@ -76,6 +89,7 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new ProgressBarPlugin(),
+    new ExtractTextPlugin('[name].css'),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
