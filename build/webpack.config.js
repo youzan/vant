@@ -6,6 +6,7 @@ var striptags = require('./strip-tags');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var version = require('../package.json').version;
 var getPoastcssPlugin = require('./utils/postcss_pipe');
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 function convert(str) {
   str = str.replace(/(&#x)(\w{4});/gi, function($0) {
@@ -74,6 +75,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new ProgressBarPlugin(),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -81,9 +83,6 @@ module.exports = {
         babel: {
           presets: ['es2015'],
           plugins: ['transform-runtime', 'transform-vue-jsx']
-        },
-        eslint: {
-          formatter: require('eslint-friendly-formatter')
         },
         vue: {
           autoprefixer: false,
