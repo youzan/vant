@@ -21,7 +21,7 @@ export default {
 <div class="uploader-container">
     <zan-uploader 
         :before-read="logContent"
-        @file-readed="logContent">
+        :after-read="logContent">
     </zan-uploader>
 </div>
 ```
@@ -30,7 +30,7 @@ export default {
 :::demo 自定义上传图标
 ```html
 <div class="uploader-container">
-  <zan-uploader @file-readed="logContent">
+  <zan-uploader :after-read="logContent">
     <zan-icon name="photograph"></zan-icon>
   </zan-uploader>
 </div>
@@ -45,7 +45,7 @@ export default {
 | result-type | 读取文件的方式，以base64的方式读取；以文本的方式读取 | `string`  | `dataUrl`          | `dataUrl`, `text`         |
 | disable | 是否禁用上传,在图片上传期间设置为true，禁止用户点击此组件上传图片 | `boolean`  | `false`          |           |
 | before-read | 读文件之前的钩子，参数为选择的文件，若返回 false 则停止读取文件。 | `Function`  |           |  |
-| file-readed | 文件读完之后出发此事件，参数为{name:'文件名',type:'文件类型',size:'文件大小',content:'读的内容'} | `Function`  |           |  |
+| after-read | 文件读完之后回调此函数，参数为{name:'文件名',type:'文件类型',size:'文件大小',content:'读的内容'} | `Function`  |           |  |
 
 ### Slot
 
