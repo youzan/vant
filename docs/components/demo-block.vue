@@ -23,25 +23,27 @@ export default {
 
     code {
       font-family: Menlo, Monaco, Consolas, Courier, monospace;
+      overflow: auto;
+      white-space: pre-wrap;
     }
 
     .examples {
       width: 320px;
-      float: right;
       box-sizing: border-box;
       padding: 10px 0 0;
       min-height: 200px;
-      max-height: 600px;
+      max-height: 500px;
       overflow: auto;
       background-color: #F8F8F8;
       border: 1px solid #E5E5E5;
+      float: right;
     }
 
     .highlight {
-      margin-right: 345px;
       box-sizing: border-box;
       border: 1px solid #E5E5E5;
       border-radius: 4px;
+      margin-right: 345px;
 
       pre {
         margin: 0;

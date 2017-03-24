@@ -78,15 +78,15 @@ ul, ol {
 .page-container {
   background-color: #fff;
   position: relative;
-  display: table;
+  display: flex;
   width: 100%;
+  overflow: hidden;
 }
 
 .page-content {
   box-sizing: border-box;
-  margin-left: 220px;
   padding: 0 40px;
-  display: table-cell;
+  flex: 1;
 
   section {
     > h1,

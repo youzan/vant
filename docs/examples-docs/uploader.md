@@ -12,7 +12,7 @@ export default {
   }
 };  
 </script>
-## Uploader 组件
+## Uploader 图片上传
 
 ### 基础用法
 

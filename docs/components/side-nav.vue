@@ -56,10 +56,9 @@ export default {
 
 <style lang="css">
   .side-nav {
-    width: 220px;
+    width: 250px;
     box-sizing: border-box;
     padding: 40px 0;
-    display: table-cell;
     border-right: 1px solid #e5e5e5;
 
     li {

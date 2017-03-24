@@ -35,9 +35,7 @@ export default {
 };
 </script>
 
-## Picker组件
-
-模仿iOS中的`UIPickerView`。
+## Picker 选择器
 
 ### 基础用法
 

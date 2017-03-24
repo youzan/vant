@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-## Quantity
+## Quantity 数量选择
 
 ### 基础用法
 

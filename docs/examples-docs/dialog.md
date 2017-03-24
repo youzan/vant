@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-## Dialog组件
+## Dialog 弹出框
 
 ### 基础用法
 

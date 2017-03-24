@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-## ActionSheet
+## ActionSheet 行动按钮
 
 ### 基础用法
 

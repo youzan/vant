@@ -17,7 +17,7 @@
 }
 </style>
 
-## Loading 加载中
+## Loading 加载
 
 ### 基础用法
 

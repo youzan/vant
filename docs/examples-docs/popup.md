@@ -76,7 +76,7 @@ export default {
 };
 </script>
 
-## Popup组件
+## Popup 弹出菜单
 
 ### 基础用法
 

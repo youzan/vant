@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-## Radio组件
+## Radio 单选框
 
 ### 基础用法
 

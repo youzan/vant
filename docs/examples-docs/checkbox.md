@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-## Checkbox组件
+## Checkbox 复选框
 
 ### 基础用法
 

@@ -36,7 +36,7 @@ export default {
 };  
 </script>
 
-## Switch组件
+## Switch 开关
 
 ### 基础用法
 

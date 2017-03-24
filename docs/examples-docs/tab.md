@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-## Tab 组件
+## Tab 标签
 
 ### 基础用法
 

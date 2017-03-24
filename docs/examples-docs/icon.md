@@ -12,9 +12,11 @@
 } 
 </style>
 
-## Icon
+## Icon 图标
 
-### 所有Icon
+### 基础用法
+
+设置`name`属性为对应的图标名称即可。
 
 :::demo 所有Icon
 ```html

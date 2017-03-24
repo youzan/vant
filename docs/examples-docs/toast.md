@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-## Toast
+## Toast 轻提示
 
 ### 基础用法
 

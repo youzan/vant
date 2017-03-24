@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-## Field组件
+## Field 输入框
 
 表单中`input`或`textarea`的输入框。
 

@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-## Search 组件
+## Search 搜索
 
 ### 基础用法
 

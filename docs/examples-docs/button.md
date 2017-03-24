@@ -39,6 +39,8 @@
 
 ### 禁用状态
 
+在组件上加上`disabled`属性即可，此时按钮不可点击。
+
 :::demo 禁用状态
 ```html
 <zan-row>
@@ -90,6 +92,8 @@
 
 ### loading按钮
 
+`loading`状态的按钮。
+
 :::demo loading按钮
 ```html 
 <zan-row>
@@ -100,18 +104,6 @@
     <zan-button loading block></zan-button>
   </zan-col>
 </zan-row>
-```
-:::
-
-### button group
-
-:::demo button group
-```html 
-<div class="button-group">
-  <zan-button type="primary" size="small">确认付款</zan-button>
-  <zan-button size="small">确认收货</zan-button>
-  <zan-button size="small">取消订单</zan-button>
-</div>
 ```
 :::
 
