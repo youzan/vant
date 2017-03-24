@@ -1,3 +1,4 @@
+var path = require('path');
 var Components = require('../components.json');
 var config = require('./webpack.config.js');
 
@@ -10,7 +11,7 @@ config.externals = {
 };
 
 config.output = {
-  path: './lib',
+  path: path.join(__dirname, '../lib'),
   filename: '[name].js',
   libraryTarget: 'umd'
 };
