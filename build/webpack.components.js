@@ -1,6 +1,6 @@
 var path = require('path');
 var Components = require('../components.json');
-var config = require('./webpack.config.js');
+var config = require('./webpack.build.js');
 
 delete config.devtool;
 

@@ -8,6 +8,14 @@ var version = require('../package.json').version;
 var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var StyleExtractPlugin;
+if (process.env.NODE_ENV === 'production') {
+  StyleExtractPlugin = new ExtractTextPlugin('[name].[hash:8].css');
+} else {
+  StyleExtractPlugin = new ExtractTextPlugin('[name].css');
+}
 
 function convert(str) {
   str = str.replace(/(&#x)(\w{4});/gi, function($0) {
@@ -26,12 +34,12 @@ function wrap(render) {
 
 module.exports = {
   entry: {
-    'zanui-docs': './docs/index.js',
-    'zanui-examples': './docs/examples.js'
+    'docs': './docs/index.js',
+    'examples': './docs/examples.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: '/vue/docs/dist/',
+    publicPath: '/',
     filename: '[name].js'
   },
   resolve: {
@@ -88,8 +96,20 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    StyleExtractPlugin,
     new ProgressBarPlugin(),
-    new ExtractTextPlugin('[name].css'),
+    new HtmlWebpackPlugin({
+      chunks: ['docs'],
+      template: 'docs/index.tpl',
+      filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['examples'],
+      template: 'docs/index.tpl',
+      filename: 'examples.html',
+      inject: true
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -145,6 +165,11 @@ module.exports = {
 
 if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool;
+  module.exports.output = {
+    path: path.join(__dirname, '../docs/dist'),
+    publicPath: './',
+    filename: '[name].[hash:8].js'
+  };
   module.exports.plugins = module.exports.plugins.concat([
     new webpack.DefinePlugin({
       'process.env': {
@@ -153,7 +178,8 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: true
       },
       output: {
         comments: false

@@ -30,7 +30,7 @@ routesConfig.push({
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/vue',
+  base: __dirname,
   routes: routesConfig
 });
 
