@@ -2,6 +2,10 @@ const registerRoute = (navConfig, isExample) => {
   let route = [];
   let navs = navConfig['zh-CN'];
   navs.forEach(nav => {
+    if (isExample && !nav.showInMobile) {
+      return;
+    }
+
     if (nav.groups) {
       nav.groups.forEach(group => {
         group.list.forEach(nav => {

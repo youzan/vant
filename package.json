@@ -22,7 +22,7 @@
     "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:components && npm run build:utils && npm run build:zanui-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
-    "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
+    "lint": "eslint src/**/*.js packages/**/*.{js,vue} build/**/*.js --quiet",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
     "test:watch": "karma start test/unit/karma.conf.js",
     "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
