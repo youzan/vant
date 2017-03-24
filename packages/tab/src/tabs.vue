@@ -1,24 +1,25 @@
 <template>
   <div class="zan-tabs">
-    <div class="zan-tabs-nav" :class="classNames">
-      <div class="zan-tabs-nav-bar" :style="navBarStyle"></div>
+    <div class="zan-tabs__nav" :class="classNames">
+      <div class="zan-tabs__nav-bar" :style="navBarStyle"></div>
       <div
         v-for="(tab, index) in tabs"
         class="zan-tab"
-        :class="{'zan-tab-active': index == switchActiveTabKey}"
+        :class="{'zan-tab--active': index == switchActiveTabKey}"
         ref="tabkey"
         @click="handleTabClick(index,tab)"
       >
         {{ tab.title }}
       </div>
     </div>
-    <div class="zan-tabs-content"><slot></slot></div>
+    <div class="zan-tabs__content"><slot></slot></div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'zan-tabs',
+
     props: {
       // 外部传入的激活的tab标签
       active: {
@@ -36,17 +37,26 @@
         default: ''
       }
     },
+
     data() {
       return {
         tabs: [],
         isReady: false,
-        switchActiveTabKey: this.active
+        switchActiveTabKey: +this.active
       };
     },
+
+    watch: {
+      active(val) {
+        this.switchActiveTabKey = +val;
+      }
+    },
+
     computed: {
       classNames() {
-        return [`zan-tabs-${this.type}`, this.navclass];
+        return [`zan-tabs__nav--${this.type}`, `zan-tabs--col-${this.tabs.length}`, this.navclass];
       },
+
       navBarStyle() {
         if (!this.isReady) return;
         const tabKey = this.switchActiveTabKey;
@@ -59,6 +69,7 @@
         };
       }
     },
+
     methods: {
       handleTabClick(index, el) {
         if (el.disable) {
@@ -68,6 +79,7 @@
         this.switchActiveTabKey = index;
       }
     },
+
     mounted() {
       // 页面载入完成
       this.$nextTick(() => {

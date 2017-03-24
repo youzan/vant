@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -10,22 +10,23 @@
     "packages"
   ],
   "scripts": {
-    "bootstrap": "npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run build:file && webpack-dev-server --inline --history-api-fallback --hot --config build/webpack.config.js",
+    "bootstrap": "yarn || npm i --registry=http://registry.npm.qima-inc.com",
+    "dev": "npm run build:file && webpack-dev-server --inline --history-api-fallback --hot --config build/webpack.config.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
     "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
     "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
-    "build:docs": "npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
+    "deploy": "npm run deploy:docs && gh-pages -d docs/dist && rimraf docs/dist",
+    "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:components && npm run build:utils && npm run build:zanui-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
     "test:watch": "karma start test/unit/karma.conf.js",
     "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
-    "deploy": "sh build/release.sh"
+    "release": "npm run bootstrap && sh build/release.sh"
   },
   "repository": {
     "type": "git",
@@ -77,10 +78,8 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "file-loader": "^0.9.0",
     "file-save": "^0.2.0",
-    "gh-pages": "^0.11.0",
+    "gh-pages": "^0.12.0",
     "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-postcss": "^6.1.1",
     "gulp-util": "^3.0.8",
     "highlight.js": "^9.8.0",
     "html-loader": "^0.4.3",
