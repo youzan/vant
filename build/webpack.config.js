@@ -34,6 +34,7 @@ function wrap(render) {
 
 module.exports = {
   entry: {
+    'vendor': ['vue', 'vue-router'],
     'docs': './docs/index.js',
     'examples': './docs/examples.js'
   },
@@ -99,13 +100,13 @@ module.exports = {
     StyleExtractPlugin,
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
-      chunks: ['docs'],
+      chunks: ['vendor', 'docs'],
       template: 'docs/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['examples'],
+      chunks: ['vendor', 'examples'],
       template: 'docs/index.tpl',
       filename: 'examples.html',
       inject: true
@@ -186,5 +187,9 @@ if (process.env.NODE_ENV === 'production') {
       },
       sourceMap: false
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    })
   ]);
 }
