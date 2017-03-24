@@ -1,5 +1,5 @@
 <template>
-  <div class="zan-tabs-pane" :class="classNames">
+  <div class="zan-tab__pane" :class="classNames">
     <slot></slot>
   </div>
 </template>
@@ -17,7 +17,7 @@
     },
     computed: {
       classNames() {
-        return { 'is-select': this.$parent.tabs.indexOf(this) === this.$parent.switchActiveTabKey };
+        return { 'zan-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.switchActiveTabKey };
       }
     },
     created() {
