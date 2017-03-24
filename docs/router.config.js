@@ -18,11 +18,12 @@ const registerRoute = (navConfig, isExample) => {
   });
 
   function addRoute(page) {
+    const component = isExample
+      ? require(`./examples-dist${page.path}.vue`)
+      : require(`./examples-docs${page.path}.md`);
     route.push({
       path: '/component' + page.path,
-      component: function(resolve) {
-        require([isExample ? `./examples-dist${page.path}.vue` : `./examples-docs${page.path}.md`], resolve);
-      }
+      component: component.default || component
     });
   }
 

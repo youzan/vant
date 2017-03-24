@@ -7,15 +7,15 @@ import ZanUI from '../src/index';
 
 import 'packages/zanui-css/src/index.css';
 
+import DemoList from './components/demo-list.vue';
+
 Vue.use(ZanUI);
 Vue.use(VueRouter);
 
 let routesConfig = routes(navConfig, true);
 routesConfig.push({
   path: '/',
-  component: function(resolve) {
-    require(['./components/demo-list.vue'], resolve);
-  }
+  component: DemoList.default || DemoList
 });
 const router = new VueRouter({
   mode: 'hash',

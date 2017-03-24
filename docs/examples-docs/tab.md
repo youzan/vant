@@ -1,13 +1,33 @@
 <style>
 @component-namespace demo {
   @b tab {
-    .zan-tabs-pane {
+    .zan-tab__pane {
       background-color: #fff;
       padding: 20px;
     }
   }
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      active: 2
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.active = 3;
+    }, 1000);
+  },
+  methods: {
+    popalert() {
+      alert('haha')
+    }
+  }
+};
+</script>
 
 ## Tab 组件
 
@@ -24,20 +44,11 @@
 </zan-tabs>
 ```
 
-<script>
-export default {
-  methods: {
-    popalert() {
-      alert('haha')
-    }
-  }
-};
-</script>
 :::
 ### 禁用用法
 :::demo 禁用用法
 ```html
-<zan-tabs>
+<zan-tabs :active="active">
   <zan-tab title="选项一">内容一</zan-tab>
   <zan-tab disable title="选项二" @disable="popalert">内容二</zan-tab>
   <zan-tab title="选项三">内容三</zan-tab>

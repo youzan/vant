@@ -9,5 +9,5 @@ lib/*
 !lib/style.css
 node_modules
 example/dist
-./dist
+/docs/dist
 test/unit/coverage
