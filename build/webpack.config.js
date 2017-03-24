@@ -30,7 +30,7 @@ module.exports = {
     'zanui-examples': './docs/examples.js'
   },
   output: {
-    path: './docs/dist/',
+    path: path.join(__dirname, '../docs/dist'),
     publicPath: '/vue/docs/dist/',
     filename: '[name].js'
   },
