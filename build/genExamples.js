@@ -81,6 +81,7 @@ for (var item in Components) {
 
   var exampleVueName = `${docsDir}/examples-dist/${item}.vue`;
 
+  // 新建一个文件
   if (!fs.existsSync(exampleVueName)) {
     fs.closeSync(fs.openSync(exampleVueName, 'w'));
   }

@@ -19,21 +19,27 @@ export default {
       required: true
     },
     url: {
-      type: String
+      type: String,
+      default: 'javascript:;'
     },
     info: {
       type: String
     }
   },
   methods: {
-    handleClick() {
-      this.$parent.computedActiveKey = this.mark;
+    handleClick(e) {
+      this.$emit('click', e, {
+        mark: this.mark,
+        title: this.title,
+        url: this.url,
+        info: this.info
+      });
     }
   },
   computed: {
     classNames() {
       return {
-        'is-select': this.mark === this.$parent.computedActiveKey
+        'is-select': this.mark === this.$parent.activeKey
       };
     }
   }

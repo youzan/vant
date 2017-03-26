@@ -1,4 +1,4 @@
-import Utils from './utils.js';
+import Utils from 'src/utils/scroll.js';
 
 const CONTEXT = '@@Waterfall';
 const OFFSET = 300;

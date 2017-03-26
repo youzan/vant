@@ -12,7 +12,7 @@
 }
 </style>
 
-## Swipe
+## Swipe 轮播
 
 ### 基础用法
 

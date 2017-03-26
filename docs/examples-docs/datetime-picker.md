@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-## Picker组件
+## Datetime Picker 时间选择
 
 模仿iOS中的`UIPickerView`。
 

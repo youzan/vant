@@ -17,7 +17,7 @@
 }
 </style>
 
-## Loading
+## Loading 加载
 
 ### 基础用法
 
@@ -43,3 +43,10 @@
 </div>
 ```
 :::
+
+### API
+
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+|-----------|-----------|-----------|-------------|-------------|
+| color | `loading`颜色 | `string`  | `black`          | `black`, `white`   |
+| type | `loading`类型 | `string`  | `gradient-circle`          | `gradient-circle`, `circle`   |

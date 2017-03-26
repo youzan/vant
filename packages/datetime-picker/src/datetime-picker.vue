@@ -81,7 +81,6 @@ export default {
           [0, 59]
         ];
       }
-debugger
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', this.innerValue);
       const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', this.innerValue);
 

@@ -10,7 +10,7 @@
 </style>
 
 
-## Switch组件
+## Progress 进度条
 
 ### 基础用法
 
@@ -64,9 +64,9 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| inactive | 是否只会 | boolean  | false          | true, false    |
-| percentage | 进度百分比 | number  | false          | 0-100    |
-| pivotText | 文字显示 | string  | 百分比文字          | -   |
-| color | 进度条颜色 | string  | #38f    | hexvalue   |
-| textColor | 进度条文字颜色 | string  | #fff    | hexvalue   |
+| inactive | 是否只会 | `boolean`  | `false`          | `true`, `false`    |
+| percentage | 进度百分比 | `number`  | `false`          | `0-100`    |
+| pivotText | 文字显示 | `string`  | 百分比文字          | -   |
+| color | 进度条颜色 | `string`  | `#38f`    | hexvalue   |
+| textColor | 进度条文字颜色 | `string`  | `#fff`    | hexvalue   |
 

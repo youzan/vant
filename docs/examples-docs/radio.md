@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-## Radio组件
+## Radio 单选框
 
 ### 基础用法
 
@@ -119,14 +119,14 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用单选框 | Boolean  | false |   |
-| name | 根据这个来判断radio是否选中 | Boolean  | false |   |
+| disabled | 是否禁用单选框 | `boolean`  | `false` |   |
+| name | 根据这个来判断radio是否选中 | `boolean`  | `false` |   |
 
 ### RadioGroup API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用单选框 | Boolean  | false |   |
+| disabled | 是否禁用单选框 | `boolean`  | `false` |   |
 
 ### RadioGroup Event
 

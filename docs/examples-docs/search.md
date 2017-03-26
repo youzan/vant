@@ -8,7 +8,7 @@ export default {
 };
 </script>
 
-## Search 组件
+## Search 搜索
 
 ### 基础用法
 
@@ -31,4 +31,4 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 必须       |
 |-----------|-----------|-----------|-------------|-------------|
-| placeholder | input的placeholder文案 | string  |           |     |
+| placeholder | `input`的`placeholder`文案 | `string`  |           |     |

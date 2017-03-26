@@ -34,6 +34,8 @@
     .zan-icon {
       margin: 10px;
       font-size: 45px;
+      width: 56px;
+      text-align: center;
     }
   }
 } 

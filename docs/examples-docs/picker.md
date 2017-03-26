@@ -35,9 +35,7 @@ export default {
 };
 </script>
 
-## Picker组件
-
-模仿iOS中的`UIPickerView`。
+## Picker 选择器
 
 ### 基础用法
 
@@ -127,10 +125,10 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | Number  | 5 |   |
-| itemHeight | 选中元素区高度 | Number  | 44 |   |
-| columns | 对象数组，配置每一列显示的数据 | Array  |  |   |
-| showToolbar | 是否在组件顶部显示一个toolbar | Boolean  | true |   |
+| visibileColumnCount | 每一列可见备选元素的个数 | `number`  | `5` |   |
+| itemHeight | 选中元素区高度 | `number`  | `44` |   |
+| columns | 对象数组，配置每一列显示的数据 | `Array`  |  |   |
+| showToolbar | 是否在组件顶部显示一个toolbar | `Boolean`  | `true` |   |
 
 ### columns
 

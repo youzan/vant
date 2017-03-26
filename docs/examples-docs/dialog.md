@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-## Dialog组件
+## Dialog 弹出框
 
 ### 基础用法
 
@@ -89,5 +89,5 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | String  | '' |   |
-| message | 内容 | String  | '' |   |
+| title | 标题 | `string`  |  |   |
+| message | 内容 | `string`  |  |   |

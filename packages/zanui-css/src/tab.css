@@ -2,86 +2,109 @@
 @import './mixins/border_retina.css';
 
 @component-namespace zan {
-    @b tabs {
-        position: relative;
+  @b tabs {
+    position: relative;
+
+    @m col-2 {
+      .zan-tab {
+        width: 50%;
+      }
     }
-    @b tabs-line {
+
+    @m col-3 {
+      .zan-tab {
+        width: 33.33333333333333%;
+      }
+    }
+
+    @m col-4 {
+      .zan-tab {
+        width: 25%;
+      }
+    }
+
+    @m col-5 {
+      .zan-tab {
+        width: 20%;
+      }
+    }
+
+    @e nav {
+      overflow: hidden;
+      transition: transform .5s cubic-bezier(.645, .045, .355, 1);
+      position: relative;
+
+      @m line {
         height: 44px;
         background-color: $c-white;
         &::after {
-            @mixin border-retina (top);
-            @mixin border-retina (bottom);
+          @mixin border-retina (top);
+          @mixin border-retina (bottom);
         }
         @b tabs-nav-bar {
-            display: block;
+          display: block;
         }
-    }
-    @b tabs-card {
+      }
+
+      @m card {
         height: 28px;
         margin: 0 15px;
         background-color: $c-white;
         border-radius: 2px;
         border: 1px solid #666666;
         overflow: hidden;
-        .zan-tabs-nav-bar {
-            display: none;
+        .zan-tabs__nav-bar {
+          display: none;
         }
         .zan-tab {
-            color: #666666;
-            line-height: 28px;
-            border-right: 1px solid #666666;
-            &:last-child {
-                border-right: none;
-            }
-            &.zan-tab-active {
-                background-color: #666666;
-                color: $c-white;
-            }
+          color: #666666;
+          line-height: 28px;
+          border-right: 1px solid #666666;
+          &:last-child {
+            border-right: none;
+          }
+          &.zan-tab--active {
+            background-color: #666666;
+            color: $c-white;
+          }
         }
+      }
     }
-    @b tabs-nav {
-        display: flex;
-        transition: transform .5s cubic-bezier(.645, .045, .355, 1);
-        position: relative;
-        /*float: left*/
-        &::after, &::before {
-            display: table;
-            content: " "
-        }
-        &::after {
-            clear: both
-        }
+
+    @e nav-bar {
+      z-index: 1;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      background-color: #f13e3a;
+      transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+      transform-origin: 0 0;
     }
-    @b tabs-nav-bar {
-        z-index: 1;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 2px;
-        background-color: #f13e3a;
-        transition: transform .3s cubic-bezier(.645, .045, .355, 1);
-        transform-origin: 0 0;
+  }
+
+  @b tab {
+    color: $c-black;
+    font-size: 14px;
+    line-height: 44px;
+    box-sizing: border-box;
+    transition: color .3s cubic-bezier(.645, .045, .355, 1);
+    cursor: pointer;
+    text-align: center;
+    float: left;
+
+    @m active {
+      color: #FF4444;
     }
-    @b tab {
-        color: $c-black;
-        font-size: 14px;
-        line-height: 44px;
-        flex: 1;
-        display: inline-block;
-        box-sizing: border-box;
-        transition: color .3s cubic-bezier(.645, .045, .355, 1);
-        cursor: pointer;
-        text-align: center;
+
+    @e pane {
+      display: none;
+
+      @m select {
+        display: block;
+      }
     }
-    @b tab-active {
-        color: #FF4444;
-    }
-    @b tabs-pane {
-        display: none;
-        @when select {
-            display: block;
-        }   
-    }
+  }
 }
 
 

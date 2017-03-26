@@ -8,7 +8,7 @@
 }
 </style>
 
-## Tag 组件
+## Tag 标记
 
 ### 基础用法
 
@@ -52,9 +52,9 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| plain | 是否是空心tag | boolean  | false          | ''          |
-| mark | 是否是标记 | boolean  | false          | ''          |
-| type | tag类型 | string  | ''          | 'primary', 'success', 'danger' |
+| plain | 是否是空心tag | `boolean`  | `false`          |           |
+| mark | 是否是标记 | `boolean`  | `false`          |           |
+| type | tag类型 | `string`  | `''`          | `primary`, `success`, `danger` |
 
 ### Slot
 

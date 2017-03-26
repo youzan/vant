@@ -7,7 +7,7 @@ export default {
 
   computed: {
     mobileUrl() {
-      return location.pathname + 'examples.html' + location.hash;
+      return '/examples.html#' + location.pathname.slice(4);
     }
   },
 

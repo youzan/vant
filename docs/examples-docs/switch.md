@@ -36,7 +36,7 @@ export default {
 };  
 </script>
 
-## Switch组件
+## Switch 开关
 
 ### 基础用法
 
@@ -89,6 +89,6 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| checked | 开关状态 | boolean  | false          | true, false    |
-| loading | loading状态 | boolean  | false          | true, false    |
-| disabled | 禁用状态 | boolean  | false          | true, false    |
+| checked | 开关状态 | `boolean`  | `false`          | `true`, `false`    |
+| loading | loading状态 | `boolean`  | `false`          | `true`, `false`    |
+| disabled | 禁用状态 | `boolean`  | `false`          | `true`, `false`    |

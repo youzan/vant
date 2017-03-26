@@ -5,14 +5,18 @@
     .zan-icon {
       margin: 10px;
       font-size: 45px;
+      width: 56px;
+      text-align: center;
     }
   }
 } 
 </style>
 
-## Icon
+## Icon 图标
 
-### 所有Icon
+### 基础用法
+
+设置`name`属性为对应的图标名称即可。
 
 :::demo 所有Icon
 ```html
@@ -49,4 +53,4 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| name | icon名称 | string  | '' |   |
+| name | icon名称 | `string`  | `''` |   |

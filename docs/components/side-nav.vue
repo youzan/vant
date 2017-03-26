@@ -43,32 +43,23 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      data: Array,
-      base: {
-        type: String,
-        default: ''
-      }
-    },
-    data() {
-      return {
-        highlights: [],
-        navState: []
-      };
+export default {
+  props: {
+    data: Array,
+    base: {
+      type: String,
+      default: ''
     }
-  };
+  }
+};
 </script>
 
 <style lang="css">
   .side-nav {
-    width: 320px;
+    width: 250px;
     box-sizing: border-box;
-    padding: 40px 20px;
-    float: left;
-    background: #f9fafb;
-    height: inherit;
-    overflow: auto;
+    padding: 40px 0;
+    border-right: 1px solid #e5e5e5;
 
     li {
       list-style: none;
@@ -82,7 +73,7 @@
     .nav-item {
       a {
         font-size: 16px;
-        color: #5e6d82;
+        color: #333;
         line-height: 40px;
         height: 40px;
         margin: 0;
@@ -91,9 +82,11 @@
         display: block;
         position: relative;
         transition: all .3s;
+        padding: 0 20px;
 
         &.active {
-          color: #20a0ff;
+          color: #3388FF;
+          background-color: #F2F2F2;
         }
       }
       .nav-item {
@@ -101,20 +94,19 @@
           display: block;
           height: 40px;
           line-height: 40px;
-          font-size: 13px;
-          padding-left: 24px;
-
+          font-size: 14px;
+          padding-left: 44px;
 
           &:hover {
-            color: #20a0ff;
+            color: #3388FF;
           }
         }
       }
     }
     .nav-group__title {
       font-size: 12px;
-      color: #99a9bf;
-      padding-left: 8px;
+      color: #666;
+      padding-left: 28px;
       line-height: 26px;
       margin-top: 10px;
     }

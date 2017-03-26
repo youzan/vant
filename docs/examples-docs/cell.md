@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-## Cell 组件
+## Cell 单元格
 
 ### 基础用法
 
@@ -102,17 +102,17 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | 左侧图标 | string  | ''          | ''          |
-| title | 左侧标题 | string  | ''          | ''          |
-| value | 右侧内容 | string  | ''          | ''          |
-| isLink | 是否为链接，链接会在右侧出现箭头 | boolean  | ''          | ''          |
-| url | 跳转链接 | string  | ''          | ''          |
-| label | 描述信息，显示在标题下方 | string  | ''          | ''          |
+| icon | 左侧图标 | `string`  |           |           |
+| title | 左侧标题 | `string`  |           |           |
+| value | 右侧内容 | `string`  |           |           |
+| isLink | 是否为链接，链接会在右侧出现箭头 | `boolean`  |           |           |
+| url | 跳转链接 | `string`  |           |           |
+| label | 描述信息，显示在标题下方 | `string`  |           |           |
 
 ### Slot
 
 | name       | 描述      |
 |-----------|-----------|
 | - | 自定义显示内容 |
-| icon | 自定义icon |
-| title | 自定义title |
+| icon | 自定义`icon` |
+| title | 自定义`title` |
