@@ -168,7 +168,7 @@ if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool;
   module.exports.output = {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: './',
+    publicPath: '/vue',
     filename: '[name].[hash:8].js'
   };
   module.exports.plugins = module.exports.plugins.concat([
