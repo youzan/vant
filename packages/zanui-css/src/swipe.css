@@ -19,8 +19,8 @@
       height: 5px;
       display: inline-block;
       border-radius: 100%;
-      background: #000;
-      opacity: .2;
+      background: #999;
+      opacity: .8;
       margin: 0 3px;
       z-index: 1;
 
