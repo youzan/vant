@@ -39,7 +39,7 @@ router.beforeEach((route, redirect, next) => {
     window.scrollTo(0, 0);
   }
   if (isMobile()) {
-    window.location.replace(location.pathname + 'examples.html#' + route.path);
+    window.location.replace('/vue/' + 'examples.html#' + route.path);
     return;
   }
   document.title = route.meta.title || document.title;
