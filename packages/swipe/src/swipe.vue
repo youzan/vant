@@ -32,7 +32,7 @@ export default {
     return {
       currIndex: 0,
       swipes: []
-    }
+    };
   },
 
   mounted() {

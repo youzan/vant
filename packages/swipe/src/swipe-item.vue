@@ -8,7 +8,6 @@
 export default {
   name: 'zan-swipe-item',
 
-
   beforeCreate() {
     this.$parent.swipes.push(this);
   }
