@@ -39,7 +39,7 @@ router.beforeEach((route, redirect, next) => {
     window.scrollTo(0, 0);
   }
 
-  const pathname = process.env.NODE_ENV === 'production' ? '/vue' : '/';
+  const pathname = process.env.NODE_ENV === 'production' ? '/vue/' : '/';
   if (isMobile()) {
     window.location.replace(pathname + 'examples.html#/');
     return;
