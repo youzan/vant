@@ -5,6 +5,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
+    height: 100%;
 
     @e indicators {
       position: absolute;
@@ -28,13 +29,19 @@
         opacity: 1;
       }
     }
+
+    @e items {
+      position: relative;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+    }
   }
 
   @b swipe-item {
     display: none;
-    width: 100%;
     height: 100%;
-    overflow: hidden;
+    width: 100%;
     text-align: center;
 
     img {
