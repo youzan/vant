@@ -35,8 +35,8 @@ function wrap(render) {
 module.exports = {
   entry: {
     'vendor': ['vue', 'vue-router'],
-    'docs': './docs/index.js',
-    'examples': './docs/examples.js'
+    'zan-docs': './docs/index.js',
+    'zan-examples': './docs/examples.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -100,13 +100,13 @@ module.exports = {
     StyleExtractPlugin,
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'docs'],
+      chunks: ['vendor', 'zan-docs'],
       template: 'docs/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'examples'],
+      chunks: ['vendor', 'zan-examples'],
       template: 'docs/index.tpl',
       filename: 'examples.html',
       inject: true
