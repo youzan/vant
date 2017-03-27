@@ -6,6 +6,10 @@
 
 <script>
 export default {
-  name: 'zan-swipe-item'
+  name: 'zan-swipe-item',
+
+  beforeCreate() {
+    this.$parent.swipes.push(this);
+  }
 };
 </script>
