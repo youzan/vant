@@ -53,13 +53,6 @@
   </zan-col>
 </zan-row>
 
-              </example-block><example-block title="button group">
-                <div class="button-group">
-  <zan-button type="primary" size="small">确认付款</zan-button>
-  <zan-button size="small">确认收货</zan-button>
-  <zan-button size="small">取消订单</zan-button>
-</div>
-
               </example-block></section></template>
 <style>
 @component-namespace demo {

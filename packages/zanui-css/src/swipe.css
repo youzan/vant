@@ -1,24 +1,49 @@
+@import './common/var.css';
+
 @component-namespace zan {
-    @b swipe {
-        position: relative;
-        overflow: hidden;
-        width: 100%;
+  @b swipe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @e indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    @b swipe-item {
-        display: none;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        text-align: center;
+    @e indicator {
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      border-radius: 100%;
+      background: #000;
+      opacity: .2;
+      margin: 0 3px;
+      z-index: 1;
 
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        &:first-child {
-            display: block;
-        }
+      @m active {
+        background: $c-orange;
+        opacity: 1;
+      }
     }
+  }
+
+  @b swipe-item {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &:first-child {
+      display: block;
+    }
+  }
 }

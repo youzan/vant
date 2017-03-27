@@ -1,6 +1,14 @@
 <template>
   <div class="zan-swipe">
-    <slot></slot>
+    <div class="zan-swipe__items">
+      <slot></slot>
+    </div>
+    <div class="zan-swipe__indicators" v-if="showIndicators">
+      <span class="zan-swipe__indicator" v-for="i in swipes.length" :class="{
+        'zan-swipe__indicator--active': currIndex === i -1
+      }">
+      </span>
+    </div>
   </div>
 </template>
 
@@ -13,13 +21,17 @@ export default {
   name: 'zan-swipe',
 
   props: {
-    autoPlay: {
+    autoPlay: Boolean,
+    showIndicators: {
       type: Boolean,
-      default: false
-    },
-    onPageChangeEnd: {
-      type: Function,
-      default: () => {}
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      currIndex: 0,
+      swipes: []
     }
   },
 
@@ -53,6 +65,13 @@ export default {
 
   updated() {
     this.scroll.update();
+  },
+
+  methods: {
+    onPageChangeEnd(page, currIndex) {
+      this.currIndex = +currIndex;
+      this.$emit('pagechange:end', page, currIndex);
+    }
   }
 };
 </script>
