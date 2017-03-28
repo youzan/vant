@@ -65,23 +65,19 @@ export default {
   },
 
   watch: {
-    value(val) {
-      this.currentValue = val;
-    },
     values(val) {
       this.currentValues = val;
     },
-
     currentValues(val) {
       if (this.valueIndex === -1) {
         this.currentValue = (val || [])[0];
       }
     },
-
     currentValue(val) {
       this.doOnValueChange();
 
-      this.$emit('change', this);
+      this.$emit('input', val);
+      this.$emit('columnChange', this);
     }
   },
 
@@ -235,8 +231,6 @@ export default {
     doOnValueChange() {
       const value = this.currentValue;
       const wrapper = this.$refs.wrapper;
-
-      this.$emit('input', this.currentValue);
 
       translateUtil.translateElement(wrapper, null, this.value2Translate(value));
     }

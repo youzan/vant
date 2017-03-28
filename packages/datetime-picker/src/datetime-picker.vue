@@ -1,5 +1,6 @@
 <template>
   <zan-picker
+    ref="picker"
     :columns="columns"
     :visible-item-count="visibleItemCount"
     @change="handlePickerChange"
@@ -27,6 +28,10 @@ export default {
       validator(value) {
         return allowedType.indexOf(value) > -1;
       }
+    },
+    format: {
+      type: String,
+      default: 'yyyy.mm.dd hh时 mm分'
     },
     visibleItemCount: {
       type: Number,
@@ -56,31 +61,45 @@ export default {
   },
 
   data() {
+    let value = this.value;
+    if (!value) {
+      if (this.type.indexOf('date') > -1) {
+        value = this.minDate;
+      } else {
+        const minHour = this.minHour;
+        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
+      }
+    } else {
+      value = this.correctValue(value);
+    }
+
     return {
-      innerValue: this.val
+      innerValue: value
     };
   },
 
   watch: {
     value(val) {
-      this.innerValue = val;
+      val = this.correctValue(val);
+      const isEqual = this.type === 'time' ? val === this.innerValue : val.valueOf() === this.innerValue.valueOf();
+      if (!isEqual) this.innerValue = val;
     },
     innerValue(val) {
       console.log(val + '!!!');
+      this.updateColumnValue(val);
       this.$emit('input', val);
     }
   },
 
   computed: {
     ranges() {
-      console.log(this.innerValue + '!!');
-      // return this.innerValue + '!!';
       if (this.type === 'time') {
         return [
           [this.minHour, this.maxHour],
           [0, 59]
         ];
       }
+
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', this.innerValue);
       const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', this.innerValue);
 
@@ -96,7 +115,7 @@ export default {
       return result;
     },
     columns() {
-      return this.ranges.map(range => {
+      const results = this.ranges.map(range => {
         const values = this.times(range[1] - range[0] + 1, index => {
           const value = range[0] + index;
           return value < 10 ? `0${value}` : `${value}`;
@@ -106,10 +125,31 @@ export default {
           values
         };
       });
+      return results;
     }
   },
 
   methods: {
+    correctValue(value) {
+      // 仅时间
+      if (this.type === 'time') {
+        const [hour, minute] = value.split(':');
+        let correctedHour = Math.max(hour, this.minHour);
+        correctedHour = Math.min(correctedHour, this.maxHour);
+
+        return `${correctedHour}:${minute}`;
+      }
+
+      // 含有日期的情况
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', value);
+      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', value);
+      const minDay = new Date(minYear, minMonth - 1, minDate, minHour, minMinute);
+      const maxDay = new Date(maxYear, maxMonth - 1, maxDate, maxHour, maxMinute);
+      value = Math.max(value, minDay);
+      value = Math.min(value, maxDay);
+
+      return new Date(value);
+    },
     times(n, iteratee) {
       let index = -1;
       const result = Array(n);
@@ -137,11 +177,11 @@ export default {
       if (value.getFullYear() === year) {
         month = boundary.getMonth() + 1;
         if (value.getMonth() + 1 === month) {
-          date = value.getDate();
+          date = boundary.getDate();
           if (value.getDate() === date) {
-            hour = value.getHours();
+            hour = boundary.getHours();
             if (value.getHours() === hour) {
-              minute = value.getMinutes();
+              minute = boundary.getMinutes();
             }
           }
         }
@@ -180,8 +220,9 @@ export default {
     handlePickerConfirm(values) {
       this.$emit('confirm', this.innerValue);
     },
-    handlePickerChange(picker, values, index) {
-      console.log(this.innerValue);
+    handlePickerChange(picker) {
+      const values = picker.$children.filter(child => child.currentValue !== undefined).map(child => child.currentValue);
+      console.log(values);
       let value;
 
       if (this.type === 'time') {
@@ -200,21 +241,50 @@ export default {
         }
         value = new Date(year, month - 1, date, hour, minute);
       }
+      value = this.correctValue(value);
       this.innerValue = value;
       console.log(value, this.innerValue);
-      // this.$emit('input', value);
-    }
-  },
-
-  created() {
-    this.innerValue = this.value;
-    if (!this.innerValue) {
-      if (this.type.indexOf('date') > -1) {
-        this.innerValue = this.minDate;
+    },
+    updateColumnValue(value) {
+      let values = [];
+      if (this.type === 'time') {
+        const currentValue = value.split(':');
+        values = [
+          currentValue[0],
+          currentValue[1]
+        ];
       } else {
-        const minHour = this.minHour;
-        this.innerValue = `${minHour > 10 ? minHour : '0' + minHour}:00`;
+        values = [
+          `${value.getFullYear()}`,
+          `0${value.getMonth() + 1}`.slice(-2),
+          `0${value.getDate()}`.slice(-2)
+        ];
+        if (this.type === 'datetime') {
+          values.push(
+            `0${value.getHours()}`.slice(-2),
+            `0${value.getMinutes()}`.slice(-2)
+          );
+        }
       }
+      this.$nextTick(() => {
+        this.setColumnByValues(values);
+      });
+    },
+    setColumnByValues(values) {
+      const setColumnValue = this.$refs.picker.setColumnValue;
+      if (this.type === 'time') {
+        setColumnValue(0, values[0]);
+        setColumnValue(1, values[1]);
+      } else {
+        setColumnValue(0, values[0]);
+        setColumnValue(1, values[1]);
+        setColumnValue(2, values[2]);
+        if (this.type === 'datetime') {
+          setColumnValue(3, values[3]);
+          setColumnValue(4, values[4]);
+        }
+      }
+      [].forEach.call(this.$refs.picker.$children, child => child.doOnValueChange());
     }
   }
 };

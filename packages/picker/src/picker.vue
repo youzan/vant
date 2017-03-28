@@ -15,7 +15,7 @@
         :itemHeight="itemHeight"
         :visible-item-count="visibleItemCount"
         :value-key="valueKey"
-        @change="columnValueChange(index)">
+        @columnChange="columnValueChange(index)">
       </picker-column>
       <div class="zan-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>

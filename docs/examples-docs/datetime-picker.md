@@ -4,7 +4,8 @@ export default {
     return {
       minHour: 10,
       maxHour: 20,
-      minDate: new Date()
+      minDate: new Date(),
+      currentDate: null
     };
   },
 
@@ -31,8 +32,10 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-datetime-picker 
-  type="time" 
+<zan-datetime-picker
+  v-model="currentDate"
+  type="datetime"
+  format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
