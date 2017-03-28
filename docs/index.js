@@ -25,7 +25,7 @@ Vue.component('footer-nav', FooterNav);
 let routesConfig = routes(navConfig);
 routesConfig.push({
   path: '/',
-  redirect: '/component/button'
+  redirect: '/component/install'
 });
 
 const router = new VueRouter({
@@ -38,8 +38,10 @@ router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0);
   }
+
+  const pathname = process.env.NODE_ENV === 'production' ? '/vue/' : '/';
   if (isMobile()) {
-    window.location.replace(location.pathname + 'examples.html#' + route.path);
+    window.location.replace(pathname + 'examples.html#/');
     return;
   }
   document.title = route.meta.title || document.title;
