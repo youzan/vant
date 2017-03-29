@@ -9,7 +9,7 @@
         <span class="zan-cell__label" v-if="label" v-text="label"></span>
       </slot>
     </div>
-    <div class="zan-cell__value" :class="{
+    <div class="zan-cell__value" v-if="value || this.$slots.default" :class="{
       'is-link': isLink,
       'is-alone': !this.$slots.title && !title && !label
     }">
