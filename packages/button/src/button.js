@@ -11,8 +11,8 @@
  * <zan-button size="large" type="primary">按钮</zan-button>
  */
 
-const allowedSize = ['mini', 'small', 'normal', 'large'];
-const allowedType = ['default', 'danger', 'primary'];
+const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
+const ALLOWED_TYPE = ['default', 'danger', 'primary'];
 
 export default {
   name: 'zan-button',
@@ -31,14 +31,14 @@ export default {
       type: String,
       default: 'default',
       validator(value) {
-        return allowedType.indexOf(value) > -1;
+        return ALLOWED_TYPE.indexOf(value) > -1;
       }
     },
     size: {
       type: String,
       default: 'normal',
       validator(value) {
-        return allowedSize.indexOf(value) > -1;
+        return ALLOWED_SIZE.indexOf(value) > -1;
       }
     }
   },

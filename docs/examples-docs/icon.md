@@ -14,9 +14,41 @@
 
 ## Icon 图标
 
-### 基础用法
+### 使用指南
 
-设置`name`属性为对应的图标名称即可。
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Icon`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Icon`组件了：
+
+```js
+import Vue from 'vue';
+import { Icon } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/icon.css';
+
+Vue.component(Icon.name, Icon);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Icon`组件，这样只能在你注册的组件中使用`Icon`：
+
+```js
+import { Icon } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-icon': Icon
+  }
+};
+```
+
+### 代码演示
+
+#### 基础用法
+
+设置`name`属性为对应的图标名称即可，以下目前有的所有图标：
 
 :::demo 所有Icon
 ```html
