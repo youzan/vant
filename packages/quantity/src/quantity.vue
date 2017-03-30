@@ -76,8 +76,9 @@ export default {
       this.$emit('change', val);
     },
     value(val) {
-      if (val) {
-        this.currentValue = this.correctValue(+val);
+      val = this.correctValue(+val);
+      if (val !== this.currentValue) {
+        this.currentValue = val;
       }
     }
   },

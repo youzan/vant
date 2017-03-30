@@ -29,7 +29,7 @@
 <zan-icon name="check"></zan-icon>
 <zan-icon name="checked"></zan-icon>
 <zan-icon name="like-o"></zan-icon>
-<zan-icon name="like"></zan-icon>
+<zan-icon name="like" :style="{ color: '#f44' }"></zan-icon>
 <zan-icon name="chat"></zan-icon>
 <zan-icon name="shop"></zan-icon>
 <zan-icon name="photograph"></zan-icon>
