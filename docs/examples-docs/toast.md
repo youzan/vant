@@ -38,7 +38,7 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      cosnt id = window.setInterval(() => {
+      const id = window.setInterval(() => {
         if (leftSec <= 1) {
           window.clearInterval(id);
           toast.message = '跳转中...'
