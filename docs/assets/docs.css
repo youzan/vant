@@ -68,7 +68,43 @@ ul, ol {
 
 .page-header {
   height: 60px;
-  background-color: #fff;
+  background-color: #fbfbfb;
+  overflow: hidden;
+}
+
+.page-header-logo {
+  float: left;
+
+  > a {
+    display: block;
+    width: 78px;
+    height: 20px;
+    background-image: url(https://img.yzcdn.cn/upload_files/2017/03/30/Fjm3aSwID8ROIV_5TO6dZdJ_IEgz.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 20px 0 0 20px;
+  }
+}
+
+.page-header-navs {
+  float: right;
+  margin-right: 50px;
+
+  li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    line-height: 60px;
+    color: #333;
+    font-size: 16px;
+    margin: 0 35px;
+
+    &.active {
+      color: #3388FF;
+    }
+  }
 }
 
 .main-content {
@@ -213,7 +249,7 @@ ul, ol {
 }
 
 .page-footer {
-  height: 150px;
+  height: 72px;
   margin-top: 40px;
-  background-color: #fff;
+  background-color: #34383B;
 }

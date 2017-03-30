@@ -1,7 +1,17 @@
 <template>
   <div class="app">
     <div class="page-header">
-      header
+      <h1 class="page-header-logo">
+        <a href="#"></a>
+      </h1>
+      <ul class="page-header-navs">
+        <li>
+          <a href="#">首页</a>
+        </li>
+        <li>
+          <a href="#" class="active">组件</a>
+        </li>
+      </ul>
     </div>
     <div class="main-content">
       <div class="page-container clearfix">
@@ -13,7 +23,6 @@
       </div>
     </div>
     <div class="page-footer">
-      footer
     </div>
   </div>
 </template>

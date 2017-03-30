@@ -1,5 +1,5 @@
 <template><section class="demo-datetime-picker"><h1 class="demo-title">datetime-picker</h1><example-block title="基础用法">
-                <zan-datetime-picker type="time" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
+                <zan-datetime-picker v-model="currentDate" type="datetime" format="yyyy.mm.dd hh时 mm分" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
 </zan-datetime-picker>
 
 
@@ -13,7 +13,8 @@ export default {
     return {
       minHour: 10,
       maxHour: 20,
-      minDate: new Date()
+      minDate: new Date(),
+      currentDate: null
     };
   },
 

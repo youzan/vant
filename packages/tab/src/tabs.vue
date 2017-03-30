@@ -7,7 +7,7 @@
         class="zan-tab"
         :class="{'zan-tab--active': index == switchActiveTabKey}"
         ref="tabkey"
-        @click="handleTabClick(index,tab)"
+        @click="handleTabClick(index, tab)"
       >
         {{ tab.title }}
       </div>
@@ -76,6 +76,7 @@
           el.$emit('disable');
           return;
         }
+        this.$emit('click', index);
         this.switchActiveTabKey = index;
       }
     },

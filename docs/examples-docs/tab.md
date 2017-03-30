@@ -1,3 +1,4 @@
+
 <style>
 @component-namespace demo {
   @b tab {
@@ -24,6 +25,10 @@ export default {
   methods: {
     popalert() {
       alert('haha')
+    },
+
+    handleTabClick(index) {
+      alert(index);
     }
   }
 };
@@ -43,9 +48,10 @@ export default {
   <zan-tab title="选项五">内容五</zan-tab>
 </zan-tabs>
 ```
-
 :::
+
 ### 禁用用法
+
 :::demo 禁用用法
 ```html
 <zan-tabs :active="active">
@@ -68,6 +74,7 @@ export default {
 :::
 
 ### card样式用法
+
 :::demo card样式用法
 ```html
 <zan-tabs type="card">
@@ -100,6 +107,7 @@ export default {
 </style>
 
 ### 自定义样式用法
+
 :::demo 自定义样式用法
 ```html
 <zan-tabs active="2" navclass="custom-tabwrap">
@@ -128,6 +136,30 @@ export default {
     line-height: 50px;
   }
 </style>
+```
+:::
+
+### click事件
+
+:::demo click事件
+```html
+<zan-tabs @click="handleTabClick">
+  <zan-tab title="选项一">内容一</zan-tab>
+  <zan-tab title="选项二">内容二</zan-tab>
+  <zan-tab title="选项三">内容三</zan-tab>
+  <zan-tab title="选项四">内容四</zan-tab>
+  <zan-tab title="选项五">内容五</zan-tab>
+</zan-tabs>
+
+<script>
+export default {
+  methods: {
+    handleTabClick(index) {
+      alert(index);
+    }
+  }
+};
+</script>
 ```
 :::
 
