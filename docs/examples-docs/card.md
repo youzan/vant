@@ -1,6 +1,38 @@
 ## Card 图文组件
 
-### 基础用法
+### 使用指南
+
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Card`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Card`组件了：
+
+```js
+import Vue from 'vue';
+import { Card } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/card.css';
+
+Vue.component(Card.name, Card);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Card`组件，这样只能在你注册的组件中使用`Card`：
+
+```js
+import { Card } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-card': Card
+  }
+};
+```
+
+### 代码演示
+
+#### 基础用法
 
 当没有底部按钮时，右侧内容会居中显示。
 
@@ -14,7 +46,7 @@
 ```
 :::
 
-### 高级用法
+#### 高级用法
 
 可以使用具名`slot`重写标题等信息，其中包含`title`、`desc`、`footer`和`tag`四个`slot`。
 

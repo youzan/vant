@@ -2,7 +2,7 @@
   <div class="zan-progress">
     <div class="zan-progress__bar">
       <span class="zan-progress__bar__finished-portion" :style="{backgroundColor: componentColor, width: percentage + '%'}"></span>
-      <span class="zan-progress__bar__pivot" :style="pivotStyle">{{currentPivotText}}</span>
+      <span class="zan-progress__bar__pivot" :style="pivotStyle">{{ pivotText }}</span>
     </div>
   </div>
 </template>
@@ -21,6 +21,11 @@
  * @example
  * <zan-switch checked="true" disabled="false"></zan-switch>
  */
+
+const DEFAULT_COLOR = '#38f';
+const DEFAULT_TEXT_COLOR = '#fff';
+const INACTIVE_COLOR = '#cacaca';
+
 export default {
   name: 'zan-progress',
 
@@ -32,32 +37,29 @@ export default {
         return value <= 100 && value >= 0;
       }
     },
-    inactive: {
-      type: Boolean,
-      default: false
-    },
+    inactive: Boolean,
     pivotText: {
       type: String,
       default: function() {
-        return this.percentage.toString() + '%';
+        return this.percentage + '%';
       }
     },
     color: {
       type: String,
-      default: '#38f'
+      default: DEFAULT_COLOR
     },
     textColor: {
       type: String,
-      default: '#fff'
+      default: DEFAULT_TEXT_COLOR
     }
   },
 
   computed: {
     currentPivotText() {
-      return this.pivotText ? this.pivotText : this.this.percentage.toString() + '%';
+      return this.pivotText ? this.pivotText : this.percentage + '%';
     },
     componentColor() {
-      return this.inactive ? '#cacaca' : this.color;
+      return this.inactive ? INACTIVE_COLOR : this.color;
     },
     pivotStyle() {
       const pivotStyle = {

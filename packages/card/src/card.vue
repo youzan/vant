@@ -1,7 +1,7 @@
 <template>
   <div class="zan-card">
     <img :src="thumb" alt="" class="zan-card__img">
-    <div class="zan-card__content" :class="{'is-center': !this.$slots.footer}">
+    <div class="zan-card__content" :class="{'zan-card__content--center': !this.$slots.footer}">
       <div class="zan-card__info">
         <slot name="title">
           <h4 v-text="title" class="zan-card__title"></h4>

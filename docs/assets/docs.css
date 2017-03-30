@@ -41,13 +41,13 @@ ul, ol {
   list-style: none;
 }
 
-.hljs {
-  line-height: 1.8;
+code.hljs {
+  line-height: 1.5;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
-  padding: 18px 24px;
-  background-color: #f9fafc;
-  border: solid 1px #eaeefb;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: solid 1px #E5E5E5;
   margin-bottom: 25px;
   border-radius: 4px;
   -webkit-font-smoothing: auto;

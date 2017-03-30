@@ -1,8 +1,16 @@
 <style>
-.official-img {
-  width: 31px;
-  vertical-align: middle;
-  border: 0;
+@component-namespace demo {
+  @b card {
+    .official-img {
+      width: 31px;
+      vertical-align: middle;
+      border: 0;
+    }
+
+    .examples {
+      background-color: #fff;
+    }
+  }
 }
 </style>
 
