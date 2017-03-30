@@ -2,24 +2,18 @@ import Vue from 'vue';
 import merge from 'src/utils/merge';
 
 const ToastConstructor = Vue.extend(require('./toast.vue'));
-let toastQueue = [];
+let instance;
 
 const getInstance = () => {
-  if (toastQueue.length > 0) {
-    const instance = toastQueue[0];
-    toastQueue.splice(0, 1);
-    return instance;
+  if (instance) {
+    instance.clear();
   }
-  return new ToastConstructor({
+  instance = new ToastConstructor({
     el: document.createElement('div')
   });
+  return instance;
 };
 
-const returnInstance = instance => {
-  if (instance) {
-    toastQueue.push(instance);
-  }
-};
 
 const removeDom = event => {
   if (event.target.parentNode) {
@@ -31,7 +25,6 @@ var Toast = (options = {}) => {
   const duration = options.duration || 3000;
 
   let instance = getInstance();
-  returnInstance(instance);
   instance.closed = false;
   clearTimeout(instance.timer);
   instance.type = options.type ? options.type : 'text';
