@@ -1,7 +1,7 @@
 <template>
-  <a class="zan-cell" :href="url" @click="handleClick">
+  <a :class="['zan-cell', { 'zan-cell--required': required }]" :href="url" @click="handleClick">
     <div
-      :class="{ 'zan-cell__title': true, 'zan-cell__required': required }"
+      class="zan-cell__title"
       v-if="this.$slots.title || title"
     >
       <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
@@ -14,8 +14,8 @@
       class="zan-cell__value"
       v-if="value || this.$slots.default"
       :class="{
-        'is-link': isLink,
-        'is-alone': !this.$slots.title && !title && !label
+        'zan-cell__value--link': isLink,
+        'zan-cell__value--alone': !this.$slots.title && !title && !label
       }"
     >
       <slot>
