@@ -44,7 +44,7 @@ module.exports = {
     'generator-star-spacing': [2, { 'before': true, 'after': true }],
     'handle-callback-err': [2, '^(err|error)$' ],
     'indent': [2, 2, { 'SwitchCase': 1 }],
-    'jsx-quotes': [2, 'prefer-single'],
+    'jsx-quotes': [2, 'prefer-double'],
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
     'keyword-spacing': [2, { 'before': true, 'after': true }],
     'new-cap': [2, { 'newIsCap': true, 'capIsNew': false }],

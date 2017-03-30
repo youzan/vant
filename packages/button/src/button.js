@@ -21,6 +21,7 @@ export default {
     disabled: Boolean,
     loading: Boolean,
     block: Boolean,
+    bottomAction: Boolean,
     tag: {
       type: String,
       default: 'button'
@@ -49,8 +50,8 @@ export default {
   },
 
   render(h) {
-    let { type, nativeType, size, disabled, loading, block } = this;
-    let Tag = this.tag;
+    const { type, nativeType, size, disabled, loading, block, bottomAction } = this;
+    const Tag = this.tag;
 
     return (
       <Tag
@@ -63,19 +64,20 @@ export default {
           {
             'zan-button--disabled': disabled,
             'zan-button--loading': loading,
-            'zan-button--block': block
+            'zan-button--block': block,
+            'zan-button--bottom-action': bottomAction
           }
         ]}
         onClick={this.handleClick}
       >
         {
-          loading ?
-            <zan-loading
-              class="zan-button__icon-loading"
-              type="circle"
-              color={type === 'default' ? 'black' : 'white'}>
-            </zan-loading> :
-            null
+          loading
+            ? <zan-loading
+                class="zan-button__icon-loading"
+                type="circle"
+                color={type === 'default' ? 'black' : 'white'}>
+              </zan-loading>
+            : null
         }
         <span class="zan-button__text">{this.$slots.default}</span>
       </Tag>

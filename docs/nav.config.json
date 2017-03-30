@@ -53,6 +53,10 @@
               "title": "Loading 加载"
             },
             {
+              "path": "/layout",
+              "title": "Layout 布局"
+            },
+            {
               "path": "/steps",
               "title": "Steps 步骤条"
             },
