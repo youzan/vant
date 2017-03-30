@@ -36,6 +36,17 @@
 </zan-tabs>
 
 
+              </example-block><example-block title="click事件">
+                <zan-tabs @click="handleTabClick">
+  <zan-tab title="选项一">内容一</zan-tab>
+  <zan-tab title="选项二">内容二</zan-tab>
+  <zan-tab title="选项三">内容三</zan-tab>
+  <zan-tab title="选项四">内容四</zan-tab>
+  <zan-tab title="选项五">内容五</zan-tab>
+</zan-tabs>
+
+
+
               </example-block></section></template>
 <style>
 @component-namespace demo {
@@ -81,6 +92,10 @@ export default {
   methods: {
     popalert() {
       alert('haha')
+    },
+
+    handleTabClick(index) {
+      alert(index);
     }
   }
 };

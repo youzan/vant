@@ -141,6 +141,8 @@ export default {
 
 ### click事件
 
+可以在`zan-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
+
 :::demo click事件
 ```html
 <zan-tabs @click="handleTabClick">
@@ -173,6 +175,7 @@ export default {
 
 
 ### zan-tab API
+
 | 参数       | 说明      | 类型       | 默认值       | 可选       |
 |-----------|-----------|-----------|-------------|-------------|
 | title | tab的标题 | `string`  |         |          |

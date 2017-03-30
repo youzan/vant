@@ -24,15 +24,19 @@
     <zan-button size="large">large</zan-button>
   </zan-col>
 </zan-row>
-<zan-row gutter="10">
-  <zan-col span="8">
-    <zan-button type="primary" block="">normal</zan-button>
+<zan-row>
+  <zan-col span="24">
+    <zan-button size="normal">normal</zan-button>
   </zan-col>
-  <zan-col span="8">
-    <zan-button size="small" block="">small</zan-button>
+</zan-row>
+<zan-row>
+  <zan-col span="24">
+    <zan-button size="small">small</zan-button>
   </zan-col>
-  <zan-col span="8">
-    <zan-button size="mini" block="">mini</zan-button>
+</zan-row>
+<zan-row>
+  <zan-col span="24">
+    <zan-button size="mini">mini</zan-button>
   </zan-col>
 </zan-row>
 
@@ -53,6 +57,21 @@
   </zan-col>
 </zan-row>
 
+              </example-block><example-block title="">
+                <zan-row>
+  <zan-col span="24">
+    <zan-button type="primary" bottom-action="">立即购买</zan-button>
+  </zan-col>
+</zan-row>
+<zan-row>
+  <zan-col span="12">
+    <zan-button bottom-action="">加入购物车</zan-button>
+  </zan-col>
+  <zan-col span="12">
+    <zan-button type="primary" bottom-action="">立即购买</zan-button>
+  </zan-col>
+</zan-row>
+
               </example-block></section></template>
 <style>
 @component-namespace demo {
@@ -62,10 +81,6 @@
     }
     .zan-col {
       margin-bottom: 10px;
-    }
-    .button-group {
-      font-size: 0;
-      padding: 0 20px;
     }
   }
 }
