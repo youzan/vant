@@ -50,3 +50,7 @@
     }
   }
 }
+
+.zan-toast-fade-enter, .zan-toast-fade-leave-active {
+  opacity: 0;
+}
