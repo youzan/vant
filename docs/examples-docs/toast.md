@@ -38,14 +38,9 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      window.setInterval(() => {
-        if (leftSec <= 0) {
-          window.clearInterval();
-          toast.clear();
-          return;
-        }
+      cosnt id = window.setInterval(() => {
         if (leftSec <= 1) {
-          window.clearInterval();
+          window.clearInterval(id);
           toast.message = '跳转中...'
           return;
         }
@@ -111,7 +106,7 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      window.setInterval(() => {
+      const id = window.setInterval(() => {
         if (leftSec <= 1) {
           window.clearInterval();
           toast.message = '跳转中...'
