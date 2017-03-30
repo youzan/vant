@@ -38,9 +38,9 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      window.setInterval(() => {
+      const id = window.setInterval(() => {
         if (leftSec <= 1) {
-          window.clearInterval();
+          window.clearInterval(id);
           toast.message = '跳转中...'
           return;
         }
@@ -106,9 +106,9 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      window.setInterval(() => {
+      const id = window.setInterval(() => {
         if (leftSec <= 1) {
-          window.clearInterval();
+          window.clearInterval(id);
           toast.message = '跳转中...'
           return;
         }
@@ -134,10 +134,10 @@ import { Toast } from 'src/index';
 export default {
   methods: {
     showToast() {
-      this.toast = Toast('我是提示文案，建议不超过十五字~');
+      Toast('我是提示文案，建议不超过十五字~');
     },
     closeToast() {
-      this.toast.clear();
+      Toast.clear();
     }
   }
 };
@@ -212,5 +212,5 @@ export default {
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
 | duration | 时长(ms) | Number  | 3000ms | -|
 
-### instanceOfToast.clear()
+### Toast.clear()
 关闭toast。

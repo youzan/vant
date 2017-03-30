@@ -44,9 +44,13 @@
       }
 
       .zan-toast__text {
-        padding-bottom: 20px;
+        padding: 15px 0 20px;
         font-size: 14px;
       }
     }
   }
+}
+
+.zan-toast-fade-enter, .zan-toast-fade-leave-active {
+  opacity: 0;
 }
