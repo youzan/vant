@@ -51,6 +51,7 @@
         this.value = '';
         this.focusStatus = false;
         this.isFocus = false;
+        this.$emit('cancel');
       },
       handleSearch() {
         // input输入回车后，发送回调
