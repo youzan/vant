@@ -5,9 +5,8 @@ const ToastConstructor = Vue.extend(require('./toast.vue'));
 let instance;
 
 const getInstance = () => {
-  if (instance) {
-    instance.clear();
-  }
+  if (instance) instance.clear();
+
   instance = new ToastConstructor({
     el: document.createElement('div')
   });
@@ -69,5 +68,9 @@ Toast.fail = (options) => {
     message: message
   }, options));
 };
+
+Toast.clear = () => {
+  if (instance) instance.clear();
+}
 
 export default Toast;

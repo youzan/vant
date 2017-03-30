@@ -139,10 +139,10 @@ import { Toast } from 'src/index';
 export default {
   methods: {
     showToast() {
-      this.toast = Toast('我是提示文案，建议不超过十五字~');
+      Toast('我是提示文案，建议不超过十五字~');
     },
     closeToast() {
-      this.toast.clear();
+      Toast.clear();
     }
   }
 };
