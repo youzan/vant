@@ -6,7 +6,7 @@
       class="footer-nav__link footer-nav__left"
       @click="handleNavClick('prev')">
       <zan-icon name="arrow"></zan-icon>
-      {{ leftNav.title }}
+      <span>{{ leftNav.title }}</span>
     </a>
     <a
       href="javascript:void(0)"
@@ -14,7 +14,7 @@
       class="footer-nav__link footer-nav__right"
       @click="handleNavClick('next')">
       <zan-icon name="arrow"></zan-icon>
-      {{ rightNav.title }}
+      <span>{{ rightNav.title }}</span>
     </a>
   </div>
 </template>
@@ -85,27 +85,26 @@ export default {
 <style>
 @component-namespace footer {
   @b nav {
-    padding: 24px 0;
-    font-size: 30px;
+    padding: 24px 40px;
     overflow: hidden;
+    border-top: 1px solid #e5e5e5;
 
     @e link {
       color: #3388FF;
       overflow: hidden;
-      padding-top: 35px;
       position: relative;
+      font-size: 20px;
+      line-height: 1.5;
 
       .zan-icon {
+        box-sizing: border-box;
         width: 20px;
-        display: block;
         font-size: 12px;
-        line-height: 20px;
+        line-height: 16px;
         border: 2px solid #3388FF;
         border-radius: 50%;
         text-align: center;
-        margin-bottom: 10px;
-        position: absolute;
-        top: 0;
+        margin-top: 5px;
       }
     }
 
@@ -113,8 +112,9 @@ export default {
       float: left;
 
       .zan-icon {
+        float: left;
         transform: rotate(180deg);
-        left: 0;
+        margin-right: 10px;
       }
     }
 
@@ -122,7 +122,8 @@ export default {
       float: right;
 
       .zan-icon {
-        right: 0;
+        float: right;
+        margin-left: 10px;
       }
     }
   }

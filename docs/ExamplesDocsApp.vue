@@ -9,9 +9,13 @@
           <a href="#">首页</a>
         </li>
         <li>
-          <a href="#" class="active">组件</a>
+          <a href="#" class="active">基础组件</a>
+        </li>
+        <li>
+          <a href="#">业务组件</a>
         </li>
       </ul>
+      <a href="#" class="github-logo">Github</a>
     </div>
     <div class="main-content">
       <div class="page-container clearfix">

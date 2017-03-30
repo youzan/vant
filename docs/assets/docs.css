@@ -70,6 +70,8 @@ ul, ol {
   height: 60px;
   background-color: #fbfbfb;
   overflow: hidden;
+  padding-right: 62px;
+  position: relative;
 }
 
 .page-header-logo {
@@ -88,7 +90,6 @@ ul, ol {
 
 .page-header-navs {
   float: right;
-  margin-right: 50px;
 
   li {
     float: left;
@@ -99,12 +100,26 @@ ul, ol {
     line-height: 60px;
     color: #333;
     font-size: 16px;
-    margin: 0 35px;
+    margin: 0 20px;
 
-    &.active {
+    &.active,
+    &:hover {
       color: #3388FF;
     }
   }
+}
+
+.github-logo {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+  width: 22px;
+  height: 0;
+  padding-top: 22px;
+  overflow: hidden;
+  background-image: url(https://img.yzcdn.cn/upload_files/2017/03/30/Fil9peDfgzvk3kj-oFCsElS4FS1x.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .main-content {
@@ -121,10 +136,11 @@ ul, ol {
 
 .page-content {
   box-sizing: border-box;
-  padding: 0 40px;
   flex: 1;
 
   section {
+    padding: 0 40px;
+
     > h1,
     > h2,
     > h3,
