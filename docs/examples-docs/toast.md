@@ -217,5 +217,5 @@ export default {
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
 | duration | 时长(ms) | Number  | 3000ms | -|
 
-### instanceOfToast.clear()
+### Toast.clear()
 关闭toast。
