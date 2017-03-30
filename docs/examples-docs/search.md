@@ -3,6 +3,9 @@ export default {
   methods: {
     goSearch(value) {
       alert(value)
+    },
+    handleChange(value) {
+      console.log(value);
     }
   }
 };
@@ -14,7 +17,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+<zan-search placeholder="商品名称" @search="goSearch" @change="handleChange"></zan-search>
 <script>
 export default {
   methods: {
