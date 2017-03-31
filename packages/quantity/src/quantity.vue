@@ -7,7 +7,12 @@
         'zan-quantity__minus--disabled': isMinusDisabled
       }">
     </button>
-    <input type="text" class="zan-quantity__input" :value="currentValue" @input="handleInputChange" :disabled="disabled">
+    <input
+      type="text"
+      class="zan-quantity__input"
+      :value="currentValue"
+      @input="handleInputChange"
+      :disabled="disabled">
     <button
       @click="handleChange('plus')"
       class="zan-quantity__stepper zan-quantity__plus"

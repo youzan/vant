@@ -1,26 +1,9 @@
 <style>
 @component-namespace demo {
   @b popup {
+    padding: 0 15px;
+
     .zan-popup-1 {
-      width: 100%;
-      height: 200px;
-      box-sizing: border-box;
-      padding: 20px;
-    }
-
-    .zan-popup-2 {
-      line-height: 50px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.701961);
-      color: #fff;
-    }
-
-    .zan-popup-3 {
-      width: 100%;
-      height: 100%;
-    }
-
-    .zan-popup-4 {
       width: 60%;
       box-sizing: border-box;
       padding: 20px;
@@ -28,8 +11,28 @@
       text-align: center;
     }
 
+    .zan-popup-2 {
+      width: 100%;
+      height: 200px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+
+    .zan-popup-3 {
+      line-height: 50px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.701961);
+      color: #fff;
+    }
+
+    .zan-popup-4,
+    .zan-popup-4 {
+      width: 100%;
+      height: 100%;
+    }
+
     .zan-button {
-      margin: 15px;
+      margin: 0 10px;
     }
   }
 }
@@ -47,15 +50,16 @@ export default {
       popupShow1: false,
       popupShow2: false,
       popupShow3: false,
-      popupShow4: false
+      popupShow4: false,
+      popupShow5: false
     }
   },
 
   watch: {
-    popupShow2(val) {
+    popupShow3(val) {
       if (val) {
         setTimeout(() => {
-          this.popupShow2 = false;
+          this.popupShow3 = false;
         }, 2000);
       }
     }
@@ -78,36 +82,85 @@ export default {
 
 ## Popup 弹出菜单
 
-### 基础用法
+### 使用指南
+
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Popup`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Popup`组件了：
+
+```js
+import Vue from 'vue';
+import { Popup } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/popup.css';
+
+Vue.component(Popup.name, Popup);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Popup`组件，这样只能在你注册的组件中使用`Popup`：
+
+```js
+import { Popup } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-popup': Popup
+  }
+};
+```
+
+### 代码演示
+
+#### 基础用法
+
+`popup`默认情况下是从中间弹出。
 
 :::demo 基础用法
 ```html
-<div class="zan-row">
-  <zan-button @click="popupShow1 = true;">从下方弹出popup</zan-button>
-</div>
-<zan-popup v-model="popupShow1" position="bottom" class="zan-popup-1">
+<zan-button block @click="popupShow1 = true">从中间弹出popup</zan-button>
+<zan-popup v-model="popupShow1" class="zan-popup-1">
+  从中间弹出popup
+</zan-popup>
+
+<script>
+export default {
+  data() {
+    return {
+      popupShow1: false
+    }
+  }
+};
+</script>
+```
+:::
+
+#### 从不同位置弹出菜单
+
+可以设置`position`属性，`popup`即能从不同位置弹出，`position`的可选值有`top`，`bottom`，`right`，`left`。
+
+:::demo 从不同位置弹出菜单
+```html
+<zan-button block @click="popupShow2 = true;">从下方弹出popup</zan-button>
+<zan-popup v-model="popupShow2" position="bottom" class="zan-popup-2">
   <zan-button @click="showDialog">弹出dialog</zan-button>
 </zan-popup>
 
-<div class="zan-row">
-  <zan-button @click="popupShow2 = true">从上方弹出popup</zan-button>
-</div>
-<zan-popup v-model="popupShow2" position="top" class="zan-popup-2" :overlay="false">
+<zan-button block @click="popupShow3 = true">从上方弹出popup</zan-button>
+<zan-popup v-model="popupShow3" position="top" class="zan-popup-3" :overlay="false">
   更新成功
 </zan-popup>
 
-<div class="zan-row">
-  <zan-button @click="popupShow3 = true">从右方弹出popup</zan-button>
-</div>
-<zan-popup v-model="popupShow3" position="right" class="zan-popup-3" :overlay="false">
-  <zan-button @click.native="popupShow3 = false">关闭 popup</zan-button>
+<zan-button block @click="popupShow4 = true">从右方弹出popup</zan-button>
+<zan-popup v-model="popupShow4" position="right" class="zan-popup-4" :overlay="false">
+  <zan-button @click.native="popupShow4 = false">关闭 popup</zan-button>
 </zan-popup>
 
-<div class="zan-row">
-  <zan-button @click="popupShow4 = true">从中间弹出popup</zan-button>
-</div>
-<zan-popup v-model="popupShow4" class="zan-popup-4">
-  从中间弹出popup
+<zan-button block @click="popupShow5 = true">从左方弹出popup</zan-button>
+<zan-popup v-model="popupShow5" position="left" class="zan-popup-5" :overlay="false">
+  <zan-button @click.native="popupShow5 = false">关闭 popup</zan-button>
 </zan-popup>
 
 <script>
@@ -132,7 +185,6 @@ export default {
   }
 };
 </script>
-
 ```
 :::
 
@@ -145,4 +197,9 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 利用`v-model`绑定当前组件是否显示 | `boolean`  | |   |
+| value | 利用`v-model`绑定当前组件是否显示 | `boolean`  | `false` | `true`, `false`  |
+| overlay | 是否显示背景遮罩层 | `boolean`  | `true` | `true`, `false`  |
+| lockOnScroll | 背景是否跟随滚动 | `boolean`  | `false` | `true`, `false`  |
+| position | 弹出菜单位置 | `string`  |  | `top`, `bottom`, `right`, `left`  |
+| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `boolean`  | `true` | `true`, `false`  |
+| transition | 弹出菜单的`transition` | `string`  | `popup-slide` |   |
