@@ -53,9 +53,7 @@
         border-radius: 2px;
         border: 1px solid #666666;
         overflow: hidden;
-        .zan-tabs__nav-bar {
-          display: none;
-        }
+
         .zan-tab {
           color: #666666;
           line-height: 28px;

@@ -14,7 +14,7 @@ command_exists () {
 
 fontname() {
   if command_exists superman ; then
-    echo "//b.yzcdn.cn$server_prefix/$(basename $basepath/../build/font/zanui-icon-*.$1)"
+    echo "https://b.yzcdn.cn$server_prefix/$(basename $basepath/../build/font/zanui-icon-*.$1)"
   else
     echo "$(abspath $basepath/../build/font/zanui-icon-*.$1)"
   fi
