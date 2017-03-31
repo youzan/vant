@@ -66,7 +66,8 @@ module.exports = {
     {
       keywords: ['chat'],
       src: '客服.svg',
-      css: 'chat'
+      css: 'chat',
+      'correct_contour_direction': true
     },
     {
       keywords: ['shop'],
@@ -142,6 +143,11 @@ module.exports = {
       keywords: ['fail'],
       src: '失败.svg',
       css: 'fail'
+    },
+    {
+      keywords: ['contact'],
+      src: '联系人.svg',
+      css: 'contact'
     }
   ]
 };

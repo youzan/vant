@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zan-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.eot');
-  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-f9c0557ddc.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-f9c0557ddc.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-f9c0557ddc.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-f9c0557ddc.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-f9c0557ddc.ttf') format('truetype')
 }
 
 .zan-icon {
@@ -73,3 +73,4 @@
 .zan-icon-clear:before { content: '\e817'; } /* '' */
 .zan-icon-success:before { content: '\e818'; } /* '' */
 .zan-icon-fail:before { content: '\e819'; } /* '' */
+.zan-icon-contact:before { content: '\e81a'; } /* '' */
