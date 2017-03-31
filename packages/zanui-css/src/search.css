@@ -3,67 +3,58 @@
 
 @component-namespace zan {
   @b search {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     position: relative;
     box-sizing: border-box;
     padding: 4px 15px;
     background-color: #F2F2F2;
 
     @m focus {
-      .zan-search__input-wrap {
-        width: 82%;   
-      }
-      .zan-icon-clear {
-        display: inline-block;
-      }
+      padding-right: 50px;
     }
 
     @e input-wrap {
       position: relative;
-      width: 90%;
       padding: 8px 24px 8px 35px;
       border: 1px solid $c-gray-light;
       border-radius: 4px;
       background-color: $c-white;
+    }
 
-      input {
-        width: 100%;
-        height: 14px;
-        font-size: 14px;
-        color: $c-gray-dark;
-        border: none;
-        outline: none;
-      }
+    @e input {
+      display: block;
+      width: 100%;
+      height: 14px;
+      font-size: 14px;
+      color: $c-gray-dark;
+      border: none;
+      outline: none;
     }
 
     @e cancel {
-      display: none;
-      color: #44BB00;
+      position: absolute;
+      line-height: 34px;
+      padding: 4px 0;
+      top: 0;
+      right: 10px;
       font-size: 14px;
-      white-space: nowrap;
-      margin-left: 5px;
-
-      @m focus {
-        display: block;
-      }
+      color: $c-green;
     }
 
     .zan-icon-search {
       color: $c-gray-darker;
       position: absolute;
-      top: 9px;
+      top: 8px;
       left: 10px;
       font-size: 16px;
+      line-height: 1;
     }
 
     .zan-icon-clear {
-      display: none;
+      font-size: 14px;
+      line-height: 1;
       position: absolute;
       right: 5px;
-      top: 8px;
+      top: 9px;
       color: #888;
     }
   }

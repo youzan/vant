@@ -5,13 +5,14 @@
       <input
         type="text"
         :placeholder="placeholder"
+        class="zan-search__input"
         v-model="value"
         v-refocus="focusStatus"
         @focus="handleFocus"
         @keyup.enter="handleSearch">
-      <zan-icon name="clear" @click="handleClean"></zan-icon>
+      <zan-icon name="clear" @click="handleClean" v-show="isFocus"></zan-icon>
     </div>
-    <div class="zan-search__cancel" :class="{ 'zan-search__cancel--focus' : isFocus }" @click="handleBack">取消</div>
+    <div class="zan-search__cancel" v-show="isFocus" @click="handleBack">取消</div>
   </div>
 </template>
 
