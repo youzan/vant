@@ -25,6 +25,7 @@
 <zan-icon name="clear"></zan-icon>
 <zan-icon name="success"></zan-icon>
 <zan-icon name="fail"></zan-icon>
+<zan-icon name="contact"></zan-icon>
 
               </example-block></section></template>
 <style>

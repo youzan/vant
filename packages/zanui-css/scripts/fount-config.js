@@ -147,7 +147,8 @@ module.exports = {
     {
       keywords: ['contact'],
       src: '联系人.svg',
-      css: 'contact'
+      css: 'contact',
+      'correct_contour_direction': true
     }
   ]
 };
