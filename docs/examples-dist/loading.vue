@@ -24,7 +24,10 @@
 
     .demo-loading__example--with-bg {
       background-color: rgba(0, 0, 0, 0.5);
-      margin-bottom: 10px;
+      margin: 0 auto;
+      width: 80px;
+      padding: 25px 0;
+      border-radius: 10px;
     }
   }
 }

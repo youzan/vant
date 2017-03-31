@@ -1,5 +1,11 @@
 <template><section class="demo-search"><h1 class="demo-title">search</h1><example-block title="基础用法">
-                <zan-search placeholder="商品名称" @search="goSearch" @change="handleChange"></zan-search>
+                <zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+
+
+
+              </example-block><example-block title="监听对应事件">
+                <zan-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></zan-search>
+
 
 
               </example-block></section></template>
@@ -13,6 +19,9 @@ export default {
     },
     handleChange(value) {
       console.log(value);
+    },
+    handleCancel() {
+      alert('cancel');
     }
   }
 };

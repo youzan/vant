@@ -1,5 +1,6 @@
 @import './common/var.css';
 @import './mixins/border_retina.css';
+@import './icon.css';
 
 @component-namespace zan {
   @b cell-group {

@@ -1,5 +1,6 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
+@import './icon.css';
 
 @component-namespace zan {
   @b steps {

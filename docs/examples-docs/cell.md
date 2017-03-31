@@ -1,19 +1,3 @@
-<style>
-@component-namespace demo {
-  @b card {
-    .official-img {
-      width: 31px;
-      vertical-align: middle;
-      border: 0;
-    }
-
-    .examples {
-      background-color: #fff;
-    }
-  }
-}
-</style>
-
 <script>
 export default {
   methods: {
@@ -118,7 +102,7 @@ export default {
   <zan-cell value="进入店铺" icon="home" url="http://youzan.com" is-link>
     <template slot="title">
       <span class="zan-cell-text">起码运动馆</span>
-      <img src="//su.yzcdn.cn/v2/image/account/icon_guan_160421.png" class="official-img">
+      <zan-tag type="danger">官方</zan-tag>
     </template>
   </zan-cell>
   <zan-cell title="线下门店" icon="location" url="http://youzan.com" is-link></zan-cell>
