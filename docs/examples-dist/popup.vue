@@ -61,7 +61,7 @@
     }
 
     .zan-popup-4,
-    .zan-popup-4 {
+    .zan-popup-5 {
       width: 100%;
       height: 100%;
     }

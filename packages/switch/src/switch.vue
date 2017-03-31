@@ -18,7 +18,7 @@ import ZanLoading from 'packages/loading';
  * @param {boolean} [loading=false] - loading状态
  *
  * @example
- * <zan-switch checked="true" disabled="false"></zan-switch>
+ * <zan-switch :checked="true" :disabled="false"></zan-switch>
  */
 export default {
   name: 'zan-switch',
@@ -26,23 +26,17 @@ export default {
     'zan-loading': ZanLoading
   },
   props: {
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    loading: {
-      type: Boolean,
-      default: false
-    }
+    checked: Boolean,
+    disabled: Boolean,
+    loading: Boolean
   },
   computed: {
     switchStates: function() {
-      const switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off'),
-        'zan-switch--' + (this.disabled ? 'disabled' : '')];
+      const switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off')];
+
+      if (this.disabled) {
+        switchStates.push('zan-switch--disabled');
+      }
 
       return switchStates;
     }
