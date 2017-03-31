@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'zan-icon';
-  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-d64cb2f719.eot');
-  src: url('//b.yzcdn.cn/zanui/icon/zanui-icon-d64cb2f719.eot?#iefix') format('embedded-opentype'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-d64cb2f719.woff2') format('woff2'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-d64cb2f719.woff') format('woff'),
-       url('//b.yzcdn.cn/zanui/icon/zanui-icon-d64cb2f719.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/zanui-icon-c69ed306e0.ttf') format('truetype')
 }
 
 .zan-icon {
