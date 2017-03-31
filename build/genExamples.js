@@ -3,6 +3,7 @@ var markdownItContainer = require('markdown-it-container');
 var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
+var chalk = require('chalk');
 var striptags = require('./strip-tags');
 var navs = require('../docs/nav.config.json');
 navs = navs['zh-CN'];
@@ -106,5 +107,5 @@ for (var i = 0; i < components.length; i++) {
   });
 }
 
-console.log('generate examples success!');
+console.log(chalk.green('generate examples success!'));
 

@@ -1,7 +1,10 @@
 <style>
 @component-namespace demo {
   @b popup {
-    padding: 0 15px;
+    .examples,
+    .example-block {
+      padding: 0 15px;
+    }
 
     .zan-popup-1 {
       width: 60%;
@@ -26,13 +29,13 @@
     }
 
     .zan-popup-4,
-    .zan-popup-4 {
+    .zan-popup-5 {
       width: 100%;
       height: 100%;
     }
 
     .zan-button {
-      margin: 0 10px;
+      margin: 10px 0;
     }
   }
 }

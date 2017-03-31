@@ -48,7 +48,7 @@ module.exports = {
       path.join(__dirname, '../node_modules'),
       'node_modules'
     ],
-    extensions: ['.js', '.vue', '.pcss'],
+    extensions: ['.js', '.vue', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
       'zanui': path.join(__dirname, '..'),
@@ -97,20 +97,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    StyleExtractPlugin,
     new ProgressBarPlugin(),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'zan-docs'],
-      template: 'docs/index.tpl',
-      filename: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'zan-examples'],
-      template: 'docs/index.tpl',
-      filename: 'examples.html',
-      inject: true
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -160,7 +147,20 @@ module.exports = {
           }
         }
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'zan-docs'],
+      template: 'docs/index.tpl',
+      filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'zan-examples'],
+      template: 'docs/index.tpl',
+      filename: 'examples.html',
+      inject: true
+    }),
+    StyleExtractPlugin
   ]
 };
 
