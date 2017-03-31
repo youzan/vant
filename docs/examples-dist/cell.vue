@@ -4,11 +4,6 @@
   <zan-cell title="单元格2" value="单元格2内容"></zan-cell>
 </zan-cell-group>
 
-              </example-block><example-block title="带*号，标明必填">
-                <zan-cell-group>
-  <zan-cell title="单元格1" required></zan-cell>
-</zan-cell-group>
-
               </example-block><example-block title="标题带描述信息">
                 <zan-cell-group>
   <zan-cell title="单元格1" label="描述信息" is-link="" url="javascript:void(0)" @click="handleClick"></zan-cell>
@@ -40,10 +35,18 @@
 
               </example-block></section></template>
 <style>
-.official-img {
-  width: 31px;
-  vertical-align: middle;
-  border: 0;
+@component-namespace demo {
+  @b card {
+    .official-img {
+      width: 31px;
+      vertical-align: middle;
+      border: 0;
+    }
+
+    .examples {
+      background-color: #fff;
+    }
+  }
 }
 </style>
 <script>

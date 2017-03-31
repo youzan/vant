@@ -1,5 +1,5 @@
 <template><section class="demo-search"><h1 class="demo-title">search</h1><example-block title="基础用法">
-                <zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+                <zan-search placeholder="商品名称" @search="goSearch" @change="handleChange"></zan-search>
 
 
               </example-block></section></template>
@@ -10,6 +10,9 @@ export default {
   methods: {
     goSearch(value) {
       alert(value)
+    },
+    handleChange(value) {
+      console.log(value);
     }
   }
 };
