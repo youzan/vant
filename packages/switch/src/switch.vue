@@ -13,7 +13,7 @@ import ZanLoading from 'packages/loading';
  * zan-switch
  * @module components/switch
  * @desc 开关
- * @param {boolean} [checked=false] - 开关状态
+ * @param {boolean} [value=false] - 开关状态
  * @param {boolean} [disabled=false] - 禁用
  * @param {boolean} [loading=false] - loading状态
  *
@@ -26,9 +26,24 @@ export default {
     'zan-loading': ZanLoading
   },
   props: {
-    checked: Boolean,
+    value: Boolean,
     disabled: Boolean,
-    loading: Boolean
+    loading: Boolean,
+    onChange: Function
+  },
+  data() {
+    return {
+      checked: this.value
+    };
+  },
+  watch: {
+    checked(val) {
+      this.$emit('input', val);
+    },
+
+    value(val) {
+      this.checked = val;
+    }
   },
   computed: {
     switchStates: function() {
@@ -47,7 +62,12 @@ export default {
      */
     toggleState: function() {
       if (this.disabled || this.loading) return;
-      this.$emit('change', !this.checked);
+      console.log('d');
+      if (this.onChange) {
+        this.onChange(!this.checked);
+      } else {
+        this.checked = !this.checked;
+      }
     }
   }
 };

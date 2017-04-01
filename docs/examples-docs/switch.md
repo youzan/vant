@@ -13,15 +13,26 @@
 </style>
 
 <script>
+import Dialog from 'packages/dialog';
+
 export default {
   data() {
     return {
-      switchState: true
+      switchState1: true,
+      switchState2: true,
+      switchStateTrue: true,
+      switchStateFalse: false
     };
   },
   methods: {
     updateState(newState) {
-      this.switchState = newState;
+      const state = newState ? '打开' : '关闭';
+      Dialog.confirm({
+        title: '提醒',
+        message: '是否' + state + '开关？'
+      }).then((action) => {
+        this.switchState2 = newState;
+      }, (error) => {});
     }
   }
 };  
@@ -65,20 +76,47 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-switch class="some-customized-class" :checked="switchState" @change="updateState"></zan-switch>
-<div class="demo-switch__text">{{ this.switchState ? ' ON' : 'OFF' }}</div>
+<zan-switch class="some-customized-class" v-model="switchState1"></zan-switch>
+<div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
 
 
 <script>
 export default {
   data() {
     return {
-      switchState: true
+      switchState1: true
+    };
+  }
+};  
+</script>
+```
+:::
+
+:::demo 基础用法
+```html
+<zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
+<div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
+
+
+<script>
+import Dialog from 'packages/dialog';
+
+export default {
+  data() {
+    return {
+      switchState2: true
     };
   },
   methods: {
     updateState(newState) {
-      this.switchState = newState;
+      const state = newState ? '打开' : '关闭';
+      Dialog.confirm({
+        title: '提醒',
+        message: '是否' + state + '开关？'
+      }).then((action) => {
+        this.switchState2 = newState;
+      }, (error) => {
+      });
     }
   }
 };  
@@ -86,17 +124,29 @@ export default {
 ```
 :::
 
+
 #### 禁用状态
 
 设置`disabled`属性为`true`，此时开关不可点击。
 
 :::demo
 ```html
-<zan-switch class="some-customized-class" :checked="true" :disabled="true"></zan-switch>
+<zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
 <div class="demo-switch__text">ON, DISABLED</div>
 
-<zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
+<zan-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></zan-switch>
 <div class="demo-switch__text">OFF, DISABLED</div>
+
+<script>
+export default {
+  data() {
+    return {
+      switchStateTrue: true,
+      switchStateFalse: false
+    };
+  }
+};  
+</script>
 ```
 :::
 
@@ -106,11 +156,22 @@ export default {
 
 :::demo
 ```html
-<zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
+<zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
 <div class="demo-switch__text">ON, LOADING</div>
 
-<zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
+<zan-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></zan-switch>
 <div class="demo-switch__text">OFF, LOADING</div>
+
+<script>
+export default {
+  data() {
+    return {
+      switchStateTrue: true,
+      switchStateFalse: false
+    };
+  }
+};  
+</script>
 ```
 :::
 
@@ -118,12 +179,7 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| checked | 开关状态 | `boolean`  | `false`          | `true`, `false`    |
+| v-model | 开关状态 | `boolean`  | `false`          | `true`, `false`    |
 | loading | loading状态 | `boolean`  | `false`          | `true`, `false`    |
 | disabled | 禁用状态 | `boolean`  | `false`          | `true`, `false`    |
-
-### Event
-
-| 事件名       | 说明      | 参数       |
-|-----------|-----------|-----------|
-| change | 开关状态切换时触发 | `value`：开关新的状态值 |
+| onChange | 开关状态切换回调(默认则改变开关状态) | `function`  | -          | - |
