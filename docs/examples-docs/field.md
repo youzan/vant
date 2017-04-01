@@ -22,7 +22,39 @@ export default {
 
 表单中`input`或`textarea`的输入框。
 
-### 基础用法
+### 使用指南
+
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Field`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Field`组件了：
+
+```js
+import Vue from 'vue';
+import { Field } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/field.css';
+
+Vue.component(Field.name, Field);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Field`组件，这样只能在你注册的组件中使用`Field`：
+
+```js
+import { Field } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-field': Field
+  }
+};
+```
+
+### 代码演示
+
+#### 基础用法
 
 根据`type`属性显示不同的输入框。
 
@@ -36,7 +68,7 @@ export default {
 ```
 :::
 
-### 无label的输入框
+#### 无label的输入框
 
 不传入`label`属性即可。
 
@@ -48,7 +80,7 @@ export default {
 ```
 :::
 
-### 带border的输入框
+#### 带border的输入框
 
 传入一个`border`属性。
 
@@ -60,7 +92,7 @@ export default {
 ```
 :::
 
-### 禁用的输入框
+#### 禁用的输入框
 
 传入`disabled`属性即可。
 
@@ -72,7 +104,7 @@ export default {
 ```
 :::
 
-### 错误的输入框
+#### 错误的输入框
 
 传入`error`属性即可。
 
@@ -85,7 +117,7 @@ export default {
 :::
 
 
-### Autosize的输入框(仅支持textarea)
+#### Autosize的输入框(仅支持textarea)
 
 传入`autosize`属性, 且将`rows`设为1。
 
