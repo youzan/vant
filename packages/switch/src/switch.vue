@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       checked: this.value
-    }
+    };
   },
   watch: {
     checked(val) {
