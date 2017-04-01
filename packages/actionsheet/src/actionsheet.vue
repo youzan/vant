@@ -89,7 +89,9 @@ export default {
 
   methods: {
     handleItemClick(item) {
-
+      if (item.callback && typeof item.callback === 'function') {
+        item.callback(item);
+      }
     }
   }
 };

@@ -65,7 +65,17 @@ export default {
 
 ## Toast 轻提示
 
-### 基础用法
+### 使用指南
+
+`Toast`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
+
+```js
+import { Toast } from '@youzan/zanui-vue';
+```
+
+### 代码演示
+
+#### 基础用法
 
 :::demo 基础用法
 ```html
@@ -121,7 +131,7 @@ export default {
 ```
 :::
 
-### 手动关闭
+#### 手动关闭
 
 :::demo 手动关闭
 ```html
@@ -146,7 +156,7 @@ export default {
 :::
 
 
-### 传入html
+#### 传入html
 
 :::demo 手动关闭
 ```html
@@ -171,7 +181,8 @@ export default {
 
 
 ### 基础用法
-### Toast(options)
+
+#### Toast(options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
@@ -181,7 +192,8 @@ export default {
 | duration | 时长(ms) | Number  | 3000ms | -|
 
 ### 快速用法
-### Toast(message) || Toast(message, options)
+
+#### Toast(message) || Toast(message, options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
@@ -189,22 +201,14 @@ export default {
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
 | duration | 时长(ms) | Number  | 3000ms | -|
 
-### Toast.loading() || Toast.loading(message, options)
+#### Toast.loading() || Toast.loading(message, options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
 | duration | 时长(ms) | Number  | 3000ms | -|
 
-### Toast.success(message) || Toast.success(message, options)
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-### Toast.fail(message) || Toast.fail(message, options)
+#### Toast.success(message) || Toast.success(message, options)
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
@@ -212,5 +216,14 @@ export default {
 | forbidClick | 不允许背景点击 | Boolean  | false | true, false|
 | duration | 时长(ms) | Number  | 3000ms | -|
 
-### Toast.clear()
+#### Toast.fail(message) || Toast.fail(message, options)
+
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+|-----------|-----------|-----------|-------------|-------------|
+| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
+| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
+| duration | 时长(ms) | Number  | 3000ms | -|
+
+#### Toast.clear()
+
 关闭toast。

@@ -1,5 +1,7 @@
 ## Waterfall 瀑布流
 
+### 使用指南
+
 #### 全局注册
 
 `Waterfall`引入后就自动全局安装。如果需要，可以再次手动安装：
@@ -73,6 +75,8 @@ export default {
     overflow: scroll;
   }
 </style>
+
+#### 基础用法
 
 :::demo 基础用法
 ```html

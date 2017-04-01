@@ -41,7 +41,17 @@ export default {
 
 ## Dialog 弹出框
 
-### 基础用法
+### 使用指南
+
+`Dialog`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它，它接受一个数组作为参数，数组中的每一项对应了图片链接。
+
+```js
+import { Dialog } from '@youzan/zanui-vue';
+```
+
+### 代码演示
+
+#### 基础用法
 
 :::demo 基础用法
 ```html
