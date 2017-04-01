@@ -1,7 +1,7 @@
 <template>
   <transition name="image-fade">
     <div class="zan-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
-      <zan-swipe>
+      <zan-swipe :show-indicators="false">
         <zan-swipe-item v-for="item in images">
           <img class="zan-image-preview__image" :src="item" alt="" :class="{
             'zan-image-preview__image--center': true

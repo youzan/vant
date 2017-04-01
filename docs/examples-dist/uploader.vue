@@ -1,12 +1,12 @@
 <template><section class="demo-uploader"><h1 class="demo-title">uploader</h1><example-block title="基础用法">
                 <div class="uploader-container">
-    <zan-uploader :before-read="logContent" @file-readed="logContent">
+    <zan-uploader :before-read="logContent" :after-read="logContent">
     </zan-uploader>
 </div>
 
               </example-block><example-block title="自定义上传图标">
                 <div class="uploader-container">
-  <zan-uploader @file-readed="logContent">
+  <zan-uploader :after-read="logContent">
     <zan-icon name="photograph"></zan-icon>
   </zan-uploader>
 </div>
