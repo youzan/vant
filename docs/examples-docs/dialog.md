@@ -51,17 +51,15 @@ import { Dialog } from '@youzan/zanui-vue';
 
 ### 代码演示
 
-#### 基础用法
+#### 消息提示
 
-:::demo 基础用法
+用于提示一些消息，只包含一个确认按钮。
+
+:::demo 消息提示
 ```html
 <zan-button @click="handleAlertClick">alert</zan-button>
 
-<zan-button @click="handleConfirmClick">confirm</zan-button>
-
 <script>
-import { Dialog } from 'src/index';
-
 export default {
   methods: {
     handleAlertClick() {
@@ -71,8 +69,24 @@ export default {
       }).then((action) => {
         console.log(action);
       });
-    },
+    }
+  }
+};
+</script>
+```
+:::
 
+#### 消息确认
+
+用于确认消息，包含取消和确认按钮。
+
+:::demo 消息确认
+```html
+<zan-button @click="handleConfirmClick">confirm</zan-button>
+
+<script>
+export default {
+  methods: {
     handleConfirmClick() {
       Dialog.confirm({
         title: 'confirm标题',
@@ -94,10 +108,21 @@ export default {
 <zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
 <mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
+### 方法
 
-### API
+#### Dialog.alert(options)
+
+消息提示时使用该方法。
+
+#### Dialog.confirm(options)
+
+消息确认时使用该方法。
+
+### Options
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | `string`  |  |   |
 | message | 内容 | `string`  |  |   |
+| confirmButtonText | 确认按钮的文案 | `string`  |  `确认` |   |
+| cancelButtonText | 取消按钮的文案 | `string`  | `取消` |   |
