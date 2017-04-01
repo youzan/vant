@@ -27,7 +27,41 @@ export default {
 
 ## Radio 单选框
 
+### 使用指南
+
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Radio`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Radio`组件了：
+
+```js
+import Vue from 'vue';
+import { Radio, RadioGroup } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/radio.css';
+
+Vue.component(Radio.name, Radio);
+Vue.component(RadioGroup.name, RadioGroup);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Radio`组件，这样只能在你注册的组件中使用`Radio`：
+
+```js
+import { Radio, RadioGroup } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-radio': Radio,
+    'zan-radio-group': RadioGroup
+  }
+};
+```
+
 ### 基础用法
+
+通过`v-model`绑定值即可。当`Radio`选中时，绑定的值即为`Radio`中`name`属性设置的值。
 
 :::demo 基础用法
 ```html
@@ -50,6 +84,8 @@ export default {
 
 ### 禁用状态
 
+设置`disabled`属性即可，此时`Radio`不能点击。
+
 :::demo 禁用状态
 ```html
 <div class="zan-radios">
@@ -70,6 +106,8 @@ export default {
 :::
 
 ### radio组
+
+需要与`zan-radio-group`一起使用，在`zan-radio-group`通过`v-model`来绑定当前选中的值。例如下面的`radio3`：
 
 :::demo radio组
 ```html
@@ -93,6 +131,8 @@ export default {
 :::
 
 ### 与Cell组件一起使用
+
+此时你需要再引入`Cell`和`CellGroup`组件。
 
 :::demo 与Cell组件一起使用
 ```html

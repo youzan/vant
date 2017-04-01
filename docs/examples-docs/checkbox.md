@@ -37,7 +37,41 @@ export default {
 
 ## Checkbox 复选框
 
+### 使用指南
+
+如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Checkbox`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Checkbox`组件了：
+
+```js
+import Vue from 'vue';
+import { Checkbox, CheckboxGroup } from '@youzan/zanui-vue';
+import '@youzan/zanui-vue/lib/zanui-css/checkbox.css';
+
+Vue.component(Checkbox.name, Checkbox);
+Vue.component(CheckboxGroup.name, CheckboxGroup);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`Checkbox`组件，这样只能在你注册的组件中使用`Checkbox`：
+
+```js
+import { Checkbox, CheckboxGroup } from '@youzan/zanui-vue';
+
+export default {
+  components: {
+    'zan-checkbox': Checkbox,
+    'zan-checkbox-group': CheckboxGroup
+  }
+};
+```
+
 ### 基础用法
+
+通过`v-model`绑定值即可。当`Checkbox`选中时，绑定的值即为`true`，否则为`false`。当单个`Checkbox`使用时，更建议使用`Switch`组件。
 
 :::demo 基础用法
 ```html
@@ -59,6 +93,8 @@ export default {
 
 ### 禁用状态
 
+设置`disabled`属性即可，此时`Checkbox`不能点击。
+
 :::demo 禁用状态
 ```html
 <div class="zan-checkbox-wrapper">
@@ -78,6 +114,8 @@ export default {
 :::
 
 ### Checkbox组
+
+需要与`zan-checkbox-group`一起使用，值通过`v-model`绑定在`zan-checkbox-group`上，例如下面的`result`，此时`result`的值是一个数组。数组中的项即为选中的`Checkbox`的`name`属性设置的值。
 
 :::demo Checkbox组
 ```html
@@ -112,6 +150,8 @@ export default {
 
 ### 禁用Checkbox组
 
+禁用`zan-checkbox-group`，此时整个组都不可点击。
+
 :::demo 禁用Checkbox组
 ```html
 <div class="zan-checkbox-wrapper">
@@ -138,6 +178,8 @@ export default {
 :::
 
 ### 与Cell组件一起使用
+
+此时你需要再引入`Cell`和`CellGroup`组件。
 
 :::demo 与Cell组件一起使用
 ```html
