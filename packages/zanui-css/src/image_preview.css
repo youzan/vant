@@ -11,25 +11,26 @@
 
     @e image {
       display: block;
-      width: 100%;
-      height: auto;
-      transition: .2s ease-out;
       position: absolute;
       left: 0;
 
       @m center {
+        width: 100%;
+        height: auto;
         top: 50%;
         transform: translate3d(0, -50%, 0);
       }
     }
 
-    .zan-swipe {
+    .zan-image-preview__image--big {
       height: 100%;
-      overflow: visible;
+      width: auto;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
     }
 
-    .zan-swipe__items {
-      overflow: visible;
+    .zan-swipe {
+      height: 100%;
     }
   }
 }
