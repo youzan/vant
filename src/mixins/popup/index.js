@@ -118,7 +118,7 @@ export default {
             this.bodyOverflow = document.body.style.overflow;
           }
 
-          document.body.style.overlay = 'hidden';
+          document.body.style.overflow = 'hidden';
         }
       }
 
@@ -139,7 +139,7 @@ export default {
 
       if (this.lockOnScroll) {
         setTimeout(() => {
-          if (this.modal && this.bodyOverflow !== 'hidden') {
+          if (this.overlay && this.bodyOverflow !== 'hidden') {
             document.body.style.overflow = this.bodyOverflow;
           }
           this.bodyOverflow = null;
