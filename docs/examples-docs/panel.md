@@ -79,7 +79,7 @@ export default {
 
 #### 高级用法
 
-使用具名`slot`自定义内容。
+使用`slot`自定义内容。比如在自定义内容中放入一个`zan-card`。
 
 :::demo 高级用法
 ```html

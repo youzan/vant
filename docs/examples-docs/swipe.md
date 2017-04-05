@@ -80,6 +80,19 @@ export default {
     <img v-lazy="img" alt="">
   </zan-swipe-item>
 </zan-swipe>
+
+<script>
+export default {
+  data() {
+    return {
+      images: [
+        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
+        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+      ]
+    };
+  }
+};
+</script>
 ```
 :::
 
@@ -94,6 +107,25 @@ export default {
     <img v-lazy="img" alt="">
   </zan-swipe-item>
 </zan-swipe>
+
+<script>
+export default {
+  data() {
+    return {
+      autoImages: [
+        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
+        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
+      ]
+    };
+  },
+
+  methods: {
+    handlePageEnd(page, index) {
+      console.log(page, index);
+    }
+  }
+};
+</script>
 ```
 :::
 
