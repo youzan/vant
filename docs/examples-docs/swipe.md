@@ -14,6 +14,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      autoImages: [
+        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
+        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
+      ],
+      images: [
+        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
+        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+      ]
+    };
+  },
+
   methods: {
     handlePageEnd(page, index) {
       console.log(page, index);
@@ -63,11 +76,8 @@ export default {
 :::demo 基础用法
 ```html
 <zan-swipe>
-  <zan-swipe-item>
-    <img src="https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg?imageView2/2/w/980/h/980/q/75/format/webp" alt="">
-  </zan-swipe-item>
-  <zan-swipe-item>
-    <img src="https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg?imageView2/2/w/980/h/980/q/75/format/webp" alt="">
+  <zan-swipe-item v-for="img in images">
+    <img v-lazy="img" alt="">
   </zan-swipe-item>
 </zan-swipe>
 ```
@@ -80,11 +90,8 @@ export default {
 :::demo 自动轮播
 ```html
 <zan-swipe auto-play @pagechange:end="handlePageEnd">
-  <zan-swipe-item>
-    <img src="https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg?imageView2/2/w/980/h/980/q/75/format/webp" alt="">
-  </zan-swipe-item>
-  <zan-swipe-item>
-    <img src="https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg?imageView2/2/w/980/h/980/q/75/format/webp" alt="">
+  <zan-swipe-item v-for="img in autoImages">
+    <img v-lazy="img" alt="">
   </zan-swipe-item>
 </zan-swipe>
 ```

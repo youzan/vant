@@ -10,6 +10,9 @@ import 'packages/zanui-css/src/index.css';
 import DemoList from './components/demo-list.vue';
 
 Vue.use(ZanUI);
+Vue.use(ZanUI.Lazyload, {
+  lazyComponent: true
+});
 Vue.use(VueRouter);
 
 let routesConfig = routes(navConfig, true);

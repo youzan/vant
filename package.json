@@ -40,7 +40,8 @@
   "author": "youzanfe",
   "license": "ISC",
   "dependencies": {
-    "raf.js": "0.0.4"
+    "raf.js": "0.0.4",
+    "vue-lazyload": "^1.0.3"
   },
   "peerDependencies": {
     "vue": "2.1.8"

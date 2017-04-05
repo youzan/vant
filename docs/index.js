@@ -18,6 +18,9 @@ function isMobile() {
 
 Vue.use(VueRouter);
 Vue.use(ZanUI);
+Vue.use(ZanUI.Lazyload, {
+  lazyComponent: true
+});
 Vue.component('side-nav', SideNav);
 Vue.component('demo-block', DemoBlock);
 Vue.component('footer-nav', FooterNav);
