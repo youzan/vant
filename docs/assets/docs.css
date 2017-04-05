@@ -66,49 +66,6 @@ code.hljs {
   }
 }
 
-.page-header {
-  height: 60px;
-  background-color: #fbfbfb;
-  overflow: hidden;
-  padding-right: 62px;
-  position: relative;
-}
-
-.page-header-logo {
-  float: left;
-
-  > a {
-    display: block;
-    width: 78px;
-    height: 20px;
-    background-image: url(https://img.yzcdn.cn/upload_files/2017/03/30/Fjm3aSwID8ROIV_5TO6dZdJ_IEgz.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin: 20px 0 0 20px;
-  }
-}
-
-.page-header-navs {
-  float: right;
-
-  li {
-    float: left;
-  }
-
-  a {
-    display: block;
-    line-height: 60px;
-    color: #333;
-    font-size: 16px;
-    margin: 0 20px;
-
-    &.active,
-    &:hover {
-      color: #3388FF;
-    }
-  }
-}
-
 .github-logo {
   position: absolute;
   top: 19px;
@@ -123,7 +80,7 @@ code.hljs {
 }
 
 .main-content {
-  margin: 40px 15px;
+  margin: 50px 15px 40px;
 }
 
 .page-container {
@@ -262,10 +219,4 @@ code.hljs {
     border: 1px solid #E5E5E5;
     padding: 10px;
   }
-}
-
-.page-footer {
-  height: 72px;
-  margin-top: 40px;
-  background-color: #34383B;
 }
