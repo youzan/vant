@@ -1,6 +1,6 @@
 <template><section class="demo-popup"><h1 class="demo-title">popup</h1><example-block title="基础用法">
                 <zan-button block="" @click="popupShow1 = true">从中间弹出popup</zan-button>
-<zan-popup v-model="popupShow1" class="zan-popup-1">
+<zan-popup v-model="popupShow1" class="zan-popup-1" :lock-on-scroll="true">
   从中间弹出popup
 </zan-popup>
 
