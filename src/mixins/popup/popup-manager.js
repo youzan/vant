@@ -1,16 +1,16 @@
-import Vue from 'vue';
 import { addClass } from 'src/utils/dom';
+import PopupContext from './popup-context';
 
 const getModal = function() {
-  let modalDom = window.popupContext && window.popupContext.modalDom;
+  let modalDom = PopupContext.getContext('modalDom');
 
   if (modalDom) {
-    window.popupContext.hasModal = true;
+    PopupContext.setContext('hasModal', true);
   } else {
-    window.popupContext.hasModal = false;
+    PopupContext.setContext('hasModal', false);
 
     modalDom = document.createElement('div');
-    window.popupContext.modalDom = modalDom;
+    PopupContext.setContext('modalDom', modalDom);
 
     modalDom.addEventListener('touchmove', function(event) {
       event.preventDefault();
@@ -27,24 +27,25 @@ const getModal = function() {
 
 const PopupManager = {
   nextZIndex() {
-    return this.popupContext.zIndex++;
+    return PopupContext.plusKeyByOne('zIndex');
   },
 
   getInstance(id) {
-    return this.popupContext.instances[id];
+    return PopupContext.getContext('instances')[id];
   },
 
-  register(id, instance, context) {
+  register(id, instance) {
     if (id && instance) {
-      this.popupContext = context;
-      this.popupContext.instances[id] = instance;
+      let instances = PopupContext.getContext('instances');
+      instances[id] = instance;
     }
   },
 
   deregister(id) {
     if (id) {
-      this.popupContext.instances[id] = null;
-      delete this.popupContext.instances[id];
+      let instances = PopupContext.getContext('instances');
+      instances[id] = null;
+      delete instances[id];
     }
   },
 
@@ -52,7 +53,8 @@ const PopupManager = {
    * 遮罩层点击回调，`closeOnClickOverlay`为`true`时会关闭当前`popup`
    */
   handleOverlayClick() {
-    const topModal = this.popupContext.modalStack[this.popupContext.modalStack.length - 1];
+    const modalStack = PopupContext.getContext('modalStack');
+    const topModal = modalStack[modalStack.length - 1];
     if (!topModal) return;
 
     const instance = PopupManager.getInstance(topModal.id);
@@ -64,7 +66,7 @@ const PopupManager = {
   openModal(id, zIndex, dom) {
     if (!id || zIndex === undefined) return;
 
-    const modalStack = this.popupContext.modalStack;
+    const modalStack = PopupContext.getContext('modalStack');
 
     for (let i = 0, len = modalStack.length; i < len; i++) {
       const item = modalStack[i];
@@ -88,11 +90,11 @@ const PopupManager = {
     }
     modalDom.style.display = '';
 
-    this.popupContext.modalStack.push({ id: id, zIndex: zIndex });
+    modalStack.push({ id: id, zIndex: zIndex });
   },
 
   closeModal(id) {
-    const modalStack = this.popupContext.modalStack;
+    const modalStack = PopupContext.getContext('modalStack');
     const modalDom = getModal();
 
     if (modalStack.length > 0) {
