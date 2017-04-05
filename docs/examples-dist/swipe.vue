@@ -5,12 +5,16 @@
   </zan-swipe-item>
 </zan-swipe>
 
+
+
               </example-block><example-block title="自动轮播">
                 <zan-swipe auto-play="" @pagechange:end="handlePageEnd">
   <zan-swipe-item v-for="img in autoImages">
     <img v-lazy="img" alt="">
   </zan-swipe-item>
 </zan-swipe>
+
+
 
               </example-block></section></template>
 <style>
