@@ -14,14 +14,14 @@ export default {
     type: {
       type: String,
       default: 'gradient-circle',
-      validate(value) {
+      validator(value) {
         return VALID_TYPES.indexOf(value) > -1;
       }
     },
     color: {
       type: String,
       default: 'black',
-      validate(value) {
+      validator(value) {
         return VALID_COLORS.indexOf(value) > -1;
       }
     }

@@ -53,7 +53,7 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validate(value) {
+      validator(value) {
         return VALID_TYPES.indexOf(value) > -1;
       }
     },
@@ -71,7 +71,7 @@ export default {
     autosize: {
       type: Boolean,
       default: false,
-      validate(value) {
+      validator(value) {
         if (value && this.type !== 'textarea') return false;
       }
     }

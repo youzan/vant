@@ -62,7 +62,6 @@ export default {
      */
     toggleState: function() {
       if (this.disabled || this.loading) return;
-      console.log('d');
       if (this.onChange) {
         this.onChange(!this.checked);
       } else {
