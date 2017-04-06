@@ -1,22 +1,6 @@
 <template>
   <div class="app">
-    <div class="page-header">
-      <h1 class="page-header-logo">
-        <a href="#"></a>
-      </h1>
-      <ul class="page-header-navs">
-        <li>
-          <a href="#">首页</a>
-        </li>
-        <li>
-          <a href="#" class="active">基础组件</a>
-        </li>
-        <li>
-          <a href="#">业务组件</a>
-        </li>
-      </ul>
-      <a href="#" class="github-logo">Github</a>
-    </div>
+    <page-header></page-header>
     <div class="main-content">
       <div class="page-container clearfix">
         <side-nav :data="navConfig['zh-CN']" base="/component"></side-nav>
@@ -26,8 +10,7 @@
         </div>
       </div>
     </div>
-    <div class="page-footer">
-    </div>
+    <page-footer></page-footer>
   </div>
 </template>
 

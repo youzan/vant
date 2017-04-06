@@ -1,27 +1,6 @@
-import Vue from 'vue';
 import merge from 'src/utils/merge';
 import PopupManager from './popup-manager';
-
-let popupContext;
-if (!window.popupContext) {
-  popupContext = window.popupContext = {
-    idSeed: 1,
-    zIndex: 2000,
-    hasModal: false,
-    instances: {},
-    modalStack: []
-  };
-} else {
-  popupContext = window.popupContext;
-}
-
-const getDOM = function(dom) {
-  if (dom.nodeType === 3) {
-    dom = dom.nextElementSibling || dom.nextSibling;
-    getDOM(dom);
-  }
-  return dom;
-};
+import PopupContext from './popup-context';
 
 export default {
   props: {
@@ -70,8 +49,8 @@ export default {
   },
 
   beforeMount() {
-    this._popupId = 'popup-' + popupContext.idSeed++;
-    PopupManager.register(this._popupId, this, popupContext);
+    this._popupId = 'popup-' + PopupContext.plusKeyByOne('idSeed');
+    PopupManager.register(this._popupId, this);
   },
 
   data() {
@@ -94,13 +73,12 @@ export default {
 
       this.$emit('input', true);
 
-      const dom = getDOM(this.$el);
       const props = merge({}, this, options);
       const zIndex = props.zIndex;
 
       // 如果属性中传入了`zIndex`，则覆盖`popupContext`中对应的`zIndex`
       if (zIndex) {
-        popupContext.zIndex = zIndex;
+        PopupContext.setContext('zIndex', zIndex);
       }
 
       // 如果显示遮罩层
@@ -109,7 +87,7 @@ export default {
           PopupManager.closeModal(this._popupId);
           this.closing = false;
         }
-        PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), dom);
+        PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), this.$el);
 
         // 如果滚动时需要锁定
         if (this.lockOnScroll) {
@@ -118,11 +96,11 @@ export default {
             this.bodyOverflow = document.body.style.overflow;
           }
 
-          document.body.style.overlay = 'hidden';
+          document.body.style.overflow = 'hidden';
         }
       }
 
-      dom.style.zIndex = PopupManager.nextZIndex();
+      this.$el.style.zIndex = PopupManager.nextZIndex();
       this.opened = true;
       this.opening = false;
     },
@@ -139,7 +117,7 @@ export default {
 
       if (this.lockOnScroll) {
         setTimeout(() => {
-          if (this.modal && this.bodyOverflow !== 'hidden') {
+          if (this.overlay && this.bodyOverflow !== 'hidden') {
             document.body.style.overflow = this.bodyOverflow;
           }
           this.bodyOverflow = null;
@@ -160,7 +138,7 @@ export default {
     PopupManager.deregister(this._popupId);
     PopupManager.closeModal(this._popupId);
 
-    if (this.modal && this.bodyOverflow !== null && this.bodyOverflow !== 'hidden') {
+    if (this.overlay && this.bodyOverflow !== null && this.bodyOverflow !== 'hidden') {
       document.body.style.overflow = this.bodyOverflow;
     }
     this.bodyOverflow = null;

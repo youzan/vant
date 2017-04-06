@@ -14,6 +14,12 @@
         type: [Number, String],
         default: 0
       }
+    },
+
+    data() {
+      return {
+        badges: []
+      };
     }
   };
 </script>

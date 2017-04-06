@@ -1,24 +1,32 @@
 <template><section class="demo-switch"><h1 class="demo-title">switch</h1><example-block title="基础用法">
-                <div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="switchState" @change="updateState"></zan-switch>
-  <div class="demo-switch__text">{{switchStateText}}</div>
-</div>
-<div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="true" :disabled="true"></zan-switch>
-  <div class="demo-switch__text">ON, DISABLED</div>
-</div>
-<div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="false" :disabled="true"></zan-switch>
-  <div class="demo-switch__text">OFF, DISABLED</div>
-</div>
-<div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="true" :loading="true"></zan-switch>
-  <div class="demo-switch__text">ON, LOADING</div>
-</div>
-<div class="demo-switch__wrapper">
-  <zan-switch class="some-customized-class" :checked="false" :loading="true"></zan-switch>
-  <div class="demo-switch__text">OFF, LOADING</div>
-</div>
+                <zan-switch class="some-customized-class" v-model="switchState1"></zan-switch>
+<div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
+
+
+
+
+              </example-block><example-block title="基础用法">
+                <zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
+<div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
+
+
+
+
+              </example-block><example-block title="">
+                <zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
+<div class="demo-switch__text">ON, DISABLED</div>
+
+<zan-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></zan-switch>
+<div class="demo-switch__text">OFF, DISABLED</div>
+
+
+
+              </example-block><example-block title="">
+                <zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
+<div class="demo-switch__text">ON, LOADING</div>
+
+<zan-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></zan-switch>
+<div class="demo-switch__text">OFF, LOADING</div>
 
 
 
@@ -26,36 +34,38 @@
 <style>
   @component-namespace demo {
     @b switch {
-      padding: 0 15px 15px;
-
-      @e wrapper {
-        width: 33.33%;
-        float: left;
+      .examples {
         text-align: center;
       }
 
       @e text {
-        margin: 20px 0;
+        margin: 20px auto;
       }
     }
   }
 </style>
 <script>
 import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Dialog from 'packages/dialog';
+
 export default {
   data() {
     return {
-      switchState: true
+      switchState1: true,
+      switchState2: true,
+      switchStateTrue: true,
+      switchStateFalse: false
     };
-  },
-  computed: {
-    switchStateText() {
-      return this.switchState ? ' ON' : 'OFF';
-    }
   },
   methods: {
     updateState(newState) {
-      this.switchState = newState;
+      const state = newState ? '打开' : '关闭';
+      Dialog.confirm({
+        title: '提醒',
+        message: '是否' + state + '开关？'
+      }).then((action) => {
+        this.switchState2 = newState;
+      }, (error) => {});
     }
   }
 };  

@@ -1,7 +1,10 @@
-<template><section class="demo-dialog"><h1 class="demo-title">dialog</h1><example-block title="基础用法">
+<template><section class="demo-dialog"><h1 class="demo-title">dialog</h1><example-block title="消息提示">
                 <zan-button @click="handleAlertClick">alert</zan-button>
 
-<zan-button @click="handleConfirmClick">confirm</zan-button>
+
+
+              </example-block><example-block title="消息确认">
+                <zan-button @click="handleConfirmClick">confirm</zan-button>
 
 
 

@@ -1,7 +1,11 @@
 <template>
   <div class="zan-steps" :class="`zan-steps--${steps.length}`">
-    <div class="zan-steps__status" v-if="icon">
-      <i class="zan-icon zan-steps__icon" :class="computedIconClass"></i>
+    <div class="zan-steps__status" v-if="title || description">
+      <div class="zan-steps__icon" v-if="icon || $slot.icon">
+        <slot name="icon">
+          <zan-icon :name="icon" :class="iconClass"></zan-icon>
+        </slot>
+      </div>
       <div class="zan-steps__message">
         <div class="zan-steps__message-wrapper">
           <h4 class="zan-steps__title" v-text="title"></h4>
@@ -11,15 +15,23 @@
       <slot name="message-extra">
       </slot>
     </div>
-    <div class="zan-steps__items">
+    <div class="zan-steps__items" :class="{
+      'zan-steps__items--alone': !title && !description
+    }">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
+import Icon from 'packages/icon';
+
 export default {
   name: 'zan-steps',
+
+  components: {
+    'zan-icon': Icon
+  },
 
   props: {
     active: Number,
@@ -30,16 +42,6 @@ export default {
     },
     title: String,
     description: String
-  },
-
-  computed: {
-    computedIconClass() {
-      const iconName = `zan-icon-${this.icon}`;
-      const result = this.iconClass.split(' ');
-      result.push(iconName);
-
-      return result;
-    }
   },
 
   data() {

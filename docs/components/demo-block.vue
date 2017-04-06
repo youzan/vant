@@ -30,8 +30,8 @@ export default {
     .examples {
       width: 320px;
       box-sizing: border-box;
-      padding: 10px 0 0;
-      min-height: 200px;
+      padding: 10px 0;
+      min-height: 60px;
       max-height: 500px;
       overflow: auto;
       background-color: #F8F8F8;

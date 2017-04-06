@@ -18,6 +18,7 @@
         default: false
       },
       beforeRead: Function,
+      afterRead: Function,
       resultType: {
         type: String,
         default: 'dataUrl',
@@ -37,7 +38,7 @@
         if (this.beforeRead && !this.beforeRead(file)) return;
         var reader = new FileReader();
         reader.onload = (e) => {
-          this.$emit('file-readed',
+          this.afterRead && this.afterRead(
             {
               name: file.name,
               type: file.type,

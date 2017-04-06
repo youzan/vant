@@ -1,5 +1,7 @@
 <template>
-    <a class="zan-badge" :class="classNames" :href="url" @click="handleClick">
+    <a class="zan-badge" :href="url" @click="handleClick" :class="{
+      'zan-badge--select': isSelect
+    }">
       <div class="zan-badge__active"></div>
       <div v-if="info" class="zan-badge__info">{{info}}</div>
       {{title}}
@@ -9,11 +11,8 @@
 <script>
 export default {
   name: 'zan-badge',
+
   props: {
-    mark: {
-      type: [Number, String],
-      required: true
-    },
     title: {
       type: String,
       required: true
@@ -26,21 +25,25 @@ export default {
       type: String
     }
   },
+
+  beforeCreate() {
+    this.$parent.badges.push(this);
+  },
+
+  computed: {
+    isSelect() {
+      const parent = this.$parent;
+      return parent.badges.indexOf(this) === parent.activeKey;
+    }
+  },
+
   methods: {
     handleClick(e) {
       this.$emit('click', e, {
-        mark: this.mark,
         title: this.title,
         url: this.url,
         info: this.info
       });
-    }
-  },
-  computed: {
-    classNames() {
-      return {
-        'is-select': this.mark === this.$parent.activeKey
-      };
     }
   }
 };

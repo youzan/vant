@@ -41,17 +41,25 @@ export default {
 
 ## Dialog 弹出框
 
-### 基础用法
+### 使用指南
 
-:::demo 基础用法
+`Dialog`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它，它接受一个数组作为参数，数组中的每一项对应了图片链接。
+
+```js
+import { Dialog } from '@youzan/zanui-vue';
+```
+
+### 代码演示
+
+#### 消息提示
+
+用于提示一些消息，只包含一个确认按钮。
+
+:::demo 消息提示
 ```html
 <zan-button @click="handleAlertClick">alert</zan-button>
 
-<zan-button @click="handleConfirmClick">confirm</zan-button>
-
 <script>
-import { Dialog } from 'src/index';
-
 export default {
   methods: {
     handleAlertClick() {
@@ -61,8 +69,24 @@ export default {
       }).then((action) => {
         console.log(action);
       });
-    },
+    }
+  }
+};
+</script>
+```
+:::
 
+#### 消息确认
+
+用于确认消息，包含取消和确认按钮。
+
+:::demo 消息确认
+```html
+<zan-button @click="handleConfirmClick">confirm</zan-button>
+
+<script>
+export default {
+  methods: {
     handleConfirmClick() {
       Dialog.confirm({
         title: 'confirm标题',
@@ -84,10 +108,21 @@ export default {
 <zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
 <mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
+### 方法
 
-### API
+#### Dialog.alert(options)
+
+消息提示时使用该方法。
+
+#### Dialog.confirm(options)
+
+消息确认时使用该方法。
+
+### Options
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | `string`  |  |   |
 | message | 内容 | `string`  |  |   |
+| confirmButtonText | 确认按钮的文案 | `string`  |  `确认` |   |
+| cancelButtonText | 取消按钮的文案 | `string`  | `取消` |   |
