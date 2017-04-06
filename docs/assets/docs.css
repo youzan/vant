@@ -66,19 +66,6 @@ code.hljs {
   }
 }
 
-.github-logo {
-  position: absolute;
-  top: 19px;
-  right: 20px;
-  width: 22px;
-  height: 0;
-  padding-top: 22px;
-  overflow: hidden;
-  background-image: url(https://img.yzcdn.cn/upload_files/2017/03/30/Fil9peDfgzvk3kj-oFCsElS4FS1x.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .main-content {
   margin: 50px 15px 40px;
 }
