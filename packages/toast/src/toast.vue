@@ -50,14 +50,14 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validate(value) {
+      validator(value) {
         return TOAST_TYPES.indexOf(value) > -1;
       }
     },
     message: {
       type: String,
       default: '',
-      validate(value) {
+      validator(value) {
         if (this.type === 'success' || this.type === 'fail') {
           return value.length <= 16;
         }

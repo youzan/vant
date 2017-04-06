@@ -11,11 +11,17 @@
  * <zan-button size="large" type="primary">按钮</zan-button>
  */
 
+import ZanLoading from 'packages/loading';
+
 const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
 const ALLOWED_TYPE = ['default', 'danger', 'primary'];
 
 export default {
   name: 'zan-button',
+
+  components: {
+    'zan-loading': ZanLoading
+  },
 
   props: {
     disabled: Boolean,
@@ -45,6 +51,7 @@ export default {
 
   methods: {
     handleClick(e) {
+      if (this.loading || this.disabled) return;
       this.$emit('click', e);
     }
   },

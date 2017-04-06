@@ -33,7 +33,7 @@ export default {
     percentage: {
       type: Number,
       required: true,
-      validate(value) {
+      validator(value) {
         return value <= 100 && value >= 0;
       }
     },
@@ -55,9 +55,6 @@ export default {
   },
 
   computed: {
-    currentPivotText() {
-      return this.pivotText ? this.pivotText : this.percentage + '%';
-    },
     componentColor() {
       return this.inactive ? INACTIVE_COLOR : this.color;
     },
