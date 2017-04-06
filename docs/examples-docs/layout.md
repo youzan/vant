@@ -12,11 +12,19 @@
 
 .gray {
     height: 30px;
+    line-height: 30px;
+    font-size: 12px;
     background: #666;
+    color: #fff;
+    text-align: center;
 }
 .white {
     height: 30px;
+    line-height: 30px;
+    font-size: 12px;
     background: #fff;
+    color: #333;
+    text-align: center;
 }
 </style>
 
@@ -30,18 +38,26 @@ Layout组件提供了`24列栅格`，通过在`zan-col`上添加`span`属性设�
 ```html
 <zan-row>
   <zan-col span="8">
-    <div class="gray"></div>
+    <div class="gray">span: 8</div>
   </zan-col>
   <zan-col span="8">
-    <div class="white"></div>
+    <div class="white">span: 8</div>
   </zan-col>
   <zan-col span="8">
-    <div class="gray"></div>
+    <div class="gray">span: 8</div>
+  </zan-col>
+</zan-row>
+<zan-row>
+  <zan-col span="4">
+    <div class="gray">span: 4</div>
+  </zan-col>
+  <zan-col span="10" offset="4">
+    <div class="gray">offset: 4, span: 10</div>
   </zan-col>
 </zan-row>
 <zan-row>
   <zan-col offset="12" span="12">
-    <div class="gray"></div>
+    <div class="gray">offset: 12, span: 12</div>
   </zan-col>
 </zan-row>
 ```
@@ -54,14 +70,27 @@ Layout组件提供了`24列栅格`，通过在`zan-col`上添加`span`属性设�
 ```html
 <zan-row gutter="10">
   <zan-col span="8">
-    <div class="gray"></div>
+    <div class="gray">span: 8</div>
   </zan-col>
   <zan-col span="8">
-    <div class="white"></div>
+    <div class="gray">span: 8</div>
   </zan-col>
   <zan-col span="8">
-    <div class="gray"></div>
+    <div class="gray">span: 8</div>
   </zan-col>
 </zan-row>
 ```
 :::
+
+### API
+
+#### Row
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+|-----------|-----------|-----------|-------------|-------------|
+| gutter | 列元素之间的间距（单位为px） | `String | Number`  | -  |   |
+
+#### Column
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+|-----------|-----------|-----------|-------------|-------------|
+| span | 列元素宽度 | `String | Number`  | -  |   |
+| offset | 列元素偏移宽度 | `String | Number`  | -  |   |
