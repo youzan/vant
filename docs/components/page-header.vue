@@ -5,24 +5,24 @@
     </h1>
     <ul class="page-header__navs">
       <li class="page-header__item">
-        <a href="#" class="page-header__link">首页</a>
+        <a href="/" class="page-header__link">首页</a>
       </li>
       <li class="page-header__item">
-        <a href="#" class="page-header__link">PC端</a>
+        <a href="http://react.fe.qima-inc.com/" class="page-header__link">PC端</a>
       </li>
       <li class="page-header__item">
-        <a href="#" class="page-header__link page-header__link--active">移动端</a>
+        <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">移动端</a>
       </li>
       <li class="page-header__item">
-        <a href="#" class="page-header__link">微信小程序</a>
+        <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">微信小程序</a>
       </li>
     </ul>
     <ul class="page-header__subnavs">
       <li class="page-header__item">
-        <a href="#" class="page-header__link page-header__link--active">基础组件</a>
+        <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">基础组件</a>
       </li>
       <li class="page-header__item">
-        <a href="#" class="page-header__link">业务组件</a>
+        <a href="http://zanui.qima-inc.com/captain" class="page-header__link">业务组件</a>
       </li>
       <li class="page-header__item">
         <span class="page-header__link">V1.0</span>
@@ -37,9 +37,12 @@
 <style>
 @component-namespace page {
   @b header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
     height: 60px;
     background-color: #fbfbfb;
-    position: relative;
 
     @e logo {
       float: left;
@@ -61,6 +64,7 @@
 
     @e item {
       float: left;
+      height: 50px;
     }
 
     @e subnavs {
@@ -70,6 +74,7 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      background-color: #f2f2f2;
 
       a,
       span {

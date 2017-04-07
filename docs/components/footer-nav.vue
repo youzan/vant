@@ -97,14 +97,13 @@ export default {
       line-height: 1.5;
 
       .zan-icon {
-        box-sizing: border-box;
         width: 20px;
         font-size: 12px;
-        line-height: 16px;
+        line-height: 20px;
         border: 2px solid #3388FF;
         border-radius: 50%;
         text-align: center;
-        margin-top: 5px;
+        margin-top: 3px;
       }
     }
 
