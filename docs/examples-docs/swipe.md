@@ -64,7 +64,7 @@ import { Swipe, SwipeItem } from '@youzan/zanui-vue';
 export default {
   components: {
     'zan-swipe': Swipe,
-    'zam-swipe-item': SwipeItem
+    'zan-swipe-item': SwipeItem
   }
 };
 ```
