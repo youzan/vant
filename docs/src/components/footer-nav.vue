@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import navConfig from '../nav.config.json';
+import navConfig from '../nav.config.js';
 
 export default {
   data() {

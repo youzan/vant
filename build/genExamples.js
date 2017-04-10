@@ -5,7 +5,7 @@ var path = require('path');
 var cheerio = require('cheerio');
 var chalk = require('chalk');
 var striptags = require('./strip-tags');
-var navs = require('../docs/nav.config.json');
+var navs = require('../docs/src/nav.config.js');
 navs = navs['zh-CN'];
 
 var parser = markdownIt('default', {
@@ -31,9 +31,9 @@ var renderVueTemplate = function (html, componentName) {
 
   var script = '';
   if (output.script) {
-    script = output.script.replace('<script>', '<script>\nimport Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);');
+    script = output.script.replace('<script>', '<script>\nimport Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);');
   } else {
-    script = '<script>\nimport Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>';
+    script = '<script>\nimport Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);</script>';
   }
 
   result = `<template><section class="demo-${componentName}"><h1 class="demo-title">${componentName}</h1>` + output['example-block'] + '</section></template>\n' +

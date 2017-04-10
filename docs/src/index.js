@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesDocsApp';
-import navConfig from './nav.config.json';
+import navConfig from './nav.config.js';
 import routes from './router.config';
-import SideNav from './components/side-nav';
-import DemoBlock from './components/demo-block';
-import FooterNav from './components/footer-nav';
-import PageHeader from './components/page-header';
-import PageFooter from './components/page-footer';
 import ZanUI from 'src/index.js';
+import packagesJson from 'zanui/package.json';
+
+const global = {
+  version: packagesJson.version
+};
+window._global = global;
 
 import 'packages/zanui-css/src/index.css';
 
@@ -23,11 +24,7 @@ Vue.use(ZanUI);
 Vue.use(ZanUI.Lazyload, {
   lazyComponent: true
 });
-Vue.component('side-nav', SideNav);
-Vue.component('demo-block', DemoBlock);
-Vue.component('footer-nav', FooterNav);
-Vue.component('page-header', PageHeader);
-Vue.component('page-footer', PageFooter);
+
 
 let routesConfig = routes(navConfig);
 routesConfig.push({

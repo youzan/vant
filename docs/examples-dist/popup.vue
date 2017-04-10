@@ -73,7 +73,7 @@
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
 import MobileComputed from 'components/mobile-computed';
 import Dialog from 'packages/dialog';
 

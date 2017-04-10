@@ -15,8 +15,20 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import 'highlight.js/styles/color-brewer.css';
-import navConfig from './nav.config.json';
+import navConfig from './nav.config.js';
+import SideNav from './components/side-nav';
+import DemoBlock from './components/demo-block';
+import FooterNav from './components/footer-nav';
+import PageHeader from './components/page-header';
+import PageFooter from './components/page-footer';
+
+Vue.component('side-nav', SideNav);
+Vue.component('demo-block', DemoBlock);
+Vue.component('footer-nav', FooterNav);
+Vue.component('page-header', PageHeader);
+Vue.component('page-footer', PageFooter);
 
 export default {
   data() {
@@ -28,5 +40,5 @@ export default {
 </script>
 
 <style lang="css">
-  @import './assets/docs.css';
+  @import '../assets/docs.css';
 </style>

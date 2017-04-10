@@ -1,4 +1,4 @@
-{
+module.exports = {
   "zh-CN": [
     {
       "name": "开发指南",

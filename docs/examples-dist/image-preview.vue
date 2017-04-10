@@ -14,7 +14,7 @@
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
 import { ImagePreview } from 'src/index';
 import MobileComputed from 'components/mobile-computed';
 

@@ -1,4 +1,4 @@
-import MobilePopup from 'components/mobile-popup.vue';
+import MobilePopup from './mobile-popup.vue';
 
 export default {
   components: {

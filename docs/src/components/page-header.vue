@@ -25,7 +25,7 @@
         <a href="http://zanui.qima-inc.com/captain" class="page-header__link">业务组件</a>
       </li>
       <li class="page-header__item">
-        <span class="page-header__link">V1.0</span>
+        <span class="page-header__link">V{{ version }}</span>
       </li>
       <li class="page-header__item">
         <a href="#" class="page-header__github" target="_blank"></a>
@@ -33,6 +33,16 @@
     </ul>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      version: window._global.version
+    };
+  }
+};
+</script>
 
 <style>
 @component-namespace page {

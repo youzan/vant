@@ -11,7 +11,7 @@
               </example-block></section></template>
 
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
 export default {
   methods: {
     goSearch(value) {

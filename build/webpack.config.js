@@ -35,8 +35,8 @@ function wrap(render) {
 module.exports = {
   entry: {
     'vendor': ['vue', 'vue-router'],
-    'zan-docs': './docs/index.js',
-    'zan-examples': './docs/examples.js'
+    'zan-docs': './docs/src/index.js',
+    'zan-examples': './docs/src/examples.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -55,7 +55,7 @@ module.exports = {
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages'),
       'lib': path.join(__dirname, '../lib'),
-      'components': path.join(__dirname, '../docs/components')
+      'components': path.join(__dirname, '../docs/src/components')
     }
   },
   module: {
@@ -150,13 +150,13 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'zan-docs'],
-      template: 'docs/index.tpl',
+      template: 'docs/src/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'zan-examples'],
-      template: 'docs/index.tpl',
+      template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true
     }),
