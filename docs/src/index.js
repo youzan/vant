@@ -11,6 +11,7 @@ const global = {
 };
 window._global = global;
 
+import '../assets/docs.css';
 import 'packages/zanui-css/src/index.css';
 
 function isMobile() {

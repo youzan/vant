@@ -38,7 +38,3 @@ export default {
   }
 };
 </script>
-
-<style lang="css">
-  @import '../assets/docs.css';
-</style>
