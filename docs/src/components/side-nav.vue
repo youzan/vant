@@ -2,7 +2,7 @@
   <div class="side-nav">
     <ul>
       <li class="nav-item" v-for="item in data">
-        <a v-if="!item.path">{{item.name}}</a>
+        <a href="javascript:void(0)" v-if="!item.path" @click="handleTitleClick(item)">{{item.name}}</a>
         <router-link
           v-else
           active-class="active"
@@ -49,6 +49,15 @@ export default {
     base: {
       type: String,
       default: ''
+    }
+  },
+
+  methods: {
+    handleTitleClick(item) {
+      const firstGroup = item.groups && item.groups[0];
+      if (firstGroup && firstGroup.list && firstGroup.list.length !==  0) {
+        return this.$router.replace(this.base + firstGroup.list[0].path);
+      }
     }
   }
 };

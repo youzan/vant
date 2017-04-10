@@ -4,10 +4,10 @@ import App from './ExamplesDocsApp';
 import navConfig from './nav.config.js';
 import routes from './router.config';
 import ZanUI from 'src/index.js';
-import packagesJson from 'zanui/package.json';
+import packageJson from '../../package.json';
 
 const global = {
-  version: packagesJson.version
+  version: packageJson.version
 };
 window._global = global;
 
