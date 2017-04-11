@@ -47,7 +47,8 @@ export default {
 :::demo 基础用法
 ```html
 <zan-cell-group>
-  <zan-cell title="单元格1" value="单元格1内容"></zan-cell>
+  <zan-cell title="单元格1" value="单元格1内容">
+  </zan-cell>
   <zan-cell title="单元格2" value="单元格2内容"></zan-cell>
 </zan-cell-group>
 ```
