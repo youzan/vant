@@ -4,7 +4,9 @@
       class="zan-cell__title"
       v-if="this.$slots.title || title"
     >
-      <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
+      <slot name="icon">
+        <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
+      <slot>
       <slot name="title">
         <span class="zan-cell__text" v-text="title"></span>
         <span class="zan-cell__label" v-if="label" v-text="label"></span>
