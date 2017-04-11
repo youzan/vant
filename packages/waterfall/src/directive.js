@@ -109,7 +109,7 @@ export default function(type) {
 
     unbind(el) {
       const context = el[CONTEXT];
-      context.scrollEventTarget.removeEventListener('scroll', context.scrollEventListener);
+      context.scrollEventTarget && context.scrollEventTarget.removeEventListener('scroll', context.scrollEventListener);
     }
   };
 };
