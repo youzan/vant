@@ -26,7 +26,6 @@ Vue.use(ZanUI.Lazyload, {
   lazyComponent: true
 });
 
-
 let routesConfig = routes(navConfig);
 routesConfig.push({
   path: '/',
@@ -44,9 +43,9 @@ router.beforeEach((route, redirect, next) => {
     window.scrollTo(0, 0);
   }
 
-  const pathname = process.env.NODE_ENV === 'production' ? '/vue/' : '/';
+  const pathname = process.env.NODE_ENV === 'production' ? '/vue/examples' : '/examples.html';
   if (isMobile()) {
-    window.location.replace(pathname + 'examples.html#/');
+    window.location.replace(pathname);
     return;
   }
   document.title = route.meta.title || document.title;

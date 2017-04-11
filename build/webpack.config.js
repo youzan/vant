@@ -9,6 +9,7 @@ var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -160,6 +161,7 @@ module.exports = {
       filename: 'examples.html',
       inject: true
     }),
+    new OptimizeCssAssetsPlugin(),
     StyleExtractPlugin
   ]
 };
