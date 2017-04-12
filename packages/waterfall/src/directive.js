@@ -104,7 +104,8 @@ export default function(type) {
     },
 
     update(el) {
-      el[CONTEXT].scrollEventListener();
+      const context = el[CONTEXT];
+      context.scrollEventListener && context.scrollEventListener();
     },
 
     unbind(el) {
