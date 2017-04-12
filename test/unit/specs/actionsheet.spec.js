@@ -106,10 +106,14 @@ describe('ActionSheet', () => {
     });
 
     expect(wrapper.data().currentValue).to.be.false;
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+
     wrapper.vm.value = true;
     wrapper.update();
     Vue.nextTick(() => {
       expect(wrapper.data().currentValue).to.be.true;
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input'));
       done();
     });
   });
