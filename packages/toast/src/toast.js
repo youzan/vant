@@ -13,7 +13,6 @@ const getInstance = () => {
   return instance;
 };
 
-
 const removeDom = event => {
   if (event.target.parentNode) {
     event.target.parentNode.removeChild(event.target);
@@ -23,7 +22,7 @@ const removeDom = event => {
 var Toast = (options = {}) => {
   const duration = options.duration || 3000;
 
-  let instance = getInstance();
+  const instance = getInstance();
   instance.closed = false;
   clearTimeout(instance.timer);
   instance.type = options.type ? options.type : 'text';
@@ -71,6 +70,6 @@ Toast.fail = (options) => {
 
 Toast.clear = () => {
   if (instance) instance.clear();
-}
+};
 
 export default Toast;

@@ -1,4 +1,4 @@
-import { requestAnimationFrame, cancelAnimationFrame, EventEmitter, extend } from './utils'
+import { requestAnimationFrame, cancelAnimationFrame, EventEmitter, extend } from './utils';
 
 function SpringDummy(scroll, input, options) {
   var wrapElem = scroll.wrapElem;
@@ -31,7 +31,6 @@ function SpringDummy(scroll, input, options) {
   }).on('bounceStart', function() {
     self.input.deaf();
   });
-
 }
 
 SpringDummy.prototype = Object.create(new EventEmitter());
@@ -85,7 +84,6 @@ extend(SpringDummy.prototype, {
           addition = w * (tempOffsetPage - offsetPage + this.scroll.pages.length - 1);
         }
       }
-
     }
 
     this.initTween(addition - dist, 150, 'bounce');
@@ -105,12 +103,12 @@ extend(SpringDummy.prototype, {
     function round() {
       elapse = new Date() - startTime;
       if (elapse > duration) {
-        self.emit(eventName, {x: dist}, true);
+        self.emit(eventName, { x: dist }, true);
         self.emit(eventName + 'End');
         return;
       }
 
-      self.emit(eventName, {x: dist / duration * elapse}, false);
+      self.emit(eventName, { x: dist / duration * elapse }, false);
       self.tweenRid = requestAnimationFrame(round);
     }
     round();

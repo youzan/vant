@@ -1,10 +1,10 @@
-import { EventEmitter, extend } from './utils'
+import { EventEmitter, extend } from './utils';
 
 const setElementsStyles = (elems, styles) => {
   Array.prototype.forEach.call(elems, item => {
-    extend(item.style, styles)
-  })
-}
+    extend(item.style, styles);
+  });
+};
 
 function Scroll(wrapElem, options) {
   EventEmitter.apply(this, arguments);
@@ -33,14 +33,14 @@ extend(Scroll.prototype, {
   },
 
   update: function() {
-    const oldPages = this.pages
+    const oldPages = this.pages;
     this.pages = this.wrapElem.querySelectorAll('.zan-swipe-item');
     if (oldPages && oldPages.length === this.pages.length) {
       const isSame = Array.prototype.every.call(this.pages, (elem, index) => {
-        return this.pages[index] === oldPages[index]
-      })
+        return this.pages[index] === oldPages[index];
+      });
       if (isSame) {
-        return
+        return;
       }
     }
     var defaultStyle = {

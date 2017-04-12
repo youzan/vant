@@ -56,6 +56,7 @@ export default {
     title: String,
     cancelText: String,
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
