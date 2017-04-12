@@ -10,7 +10,7 @@ let dialogQueue = [];
 
 const defaultCallback = action => {
   if (currentDialog) {
-    let callback = currentDialog.callback;
+    const callback = currentDialog.callback;
 
     if (typeof callback === 'function') {
       callback(action);
@@ -40,9 +40,9 @@ const showNextDialog = () => {
   if (!instance.value && dialogQueue.length > 0) {
     currentDialog = dialogQueue.shift();
 
-    let options = currentDialog.options;
+    const options = currentDialog.options;
 
-    for (let prop in options) {
+    for (const prop in options) {
       if (options.hasOwnProperty(prop)) {
         instance[prop] = options[prop];
       }

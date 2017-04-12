@@ -110,7 +110,6 @@ describe('Switch', () => {
   });
 
   it('toggle switch value from v-model', function(done) {
-    let checked = false;
     wrapper = mount(Switch, {
       propsData: {
         value: false

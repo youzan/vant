@@ -24,7 +24,6 @@ Input.prototype = Object.create(new EventEmitter());
 
 extend(Input.prototype, {
   bind: function(host) {
-
     bindEvents(host, 'touchstart mousedown', this.onTouchStart);
     if (this.options.listenMoving) {
       bindEvents(window, 'touchmove mousemove', this.onTouchMove);
@@ -74,11 +73,11 @@ extend(Input.prototype, {
       this.orgDirection = Math.abs(distX) > Math.abs(distY);
     }
 
-    this.emit('move', {x: distX, y: distY}, isEnd, e, {orgDirection: this.orgDirection});
+    this.emit('move', { x: distX, y: distY }, isEnd, e, { orgDirection: this.orgDirection });
   },
 
   pointerEventToXY: function(e) {
-    var out = {x: 0, y: 0};
+    var out = { x: 0, y: 0 };
     var type = e.type;
     if (e.originalEvent) {
       e = e.originalEvent;

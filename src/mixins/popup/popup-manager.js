@@ -36,14 +36,14 @@ const PopupManager = {
 
   register(id, instance) {
     if (id && instance) {
-      let instances = PopupContext.getContext('instances');
+      const instances = PopupContext.getContext('instances');
       instances[id] = instance;
     }
   },
 
   deregister(id) {
     if (id) {
-      let instances = PopupContext.getContext('instances');
+      const instances = PopupContext.getContext('instances');
       instances[id] = null;
       delete instances[id];
     }

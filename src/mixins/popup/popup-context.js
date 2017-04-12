@@ -2,7 +2,7 @@ import merge from 'src/utils/merge';
 
 let context;
 if (window && window.popupContext) {
-  context = window.popupContext
+  context = window.popupContext;
 }
 
 const DEFAULT_CONTEXT = {
@@ -11,7 +11,7 @@ const DEFAULT_CONTEXT = {
   hasModal: false,
   instances: {},
   modalStack: []
-}
+};
 
 context = window.popupContext = merge({}, DEFAULT_CONTEXT, context);
 

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import ImagePreview from './image-preview.vue';
-import merge from 'src/utils/merge';
 
 let instance;
 
