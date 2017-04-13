@@ -125,6 +125,16 @@
    <span>contact</span>
   </zan-col>
 </zan-row>
+<zan-row>
+  <zan-col span="8">
+   <zan-icon name="wechat"></zan-icon>
+   <span>wechat</span>
+  </zan-col>
+  <zan-col span="8">
+   <zan-icon name="alipay"></zan-icon>
+   <span>alipay</span>
+  </zan-col>
+</zan-row>
 
               </example-block></section></template>
 <style>
