@@ -1,12 +1,10 @@
 <template>
     <div class="zan-uploader">
         <slot>
-          <div>
-             <zan-button block>上传文件</zan-button>
-          </div>
+
         </slot>
         <template v-if="disabled">
-          <input type="file" @change="onValueChange" disabled="disabled" class="zan-uploader__input" ref="input" />
+          <input type="file" @change="onValueChange" disabled="disabled" class="zan-uploader__input" />
         </template>
         <template v-else>
           <input type="file" @change="onValueChange"  class="zan-uploader__input" ref="input" />
@@ -48,7 +46,7 @@
               file: file,
               content: e.target.result
             });
-          this.$refs.input.value = '';
+          this.$refs.input && (this.$refs.input.value = '');
         };
         if (this.resultType === 'dataUrl') {
           reader.readAsDataURL(file);
