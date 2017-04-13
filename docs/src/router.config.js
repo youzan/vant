@@ -2,6 +2,10 @@ const registerRoute = (navConfig, isExample) => {
   let route = [];
   let navs = navConfig['zh-CN'];
   navs.forEach(nav => {
+    if (isExample && !nav.showInMobile) {
+      return;
+    }
+
     if (nav.groups) {
       nav.groups.forEach(group => {
         group.list.forEach(nav => {
@@ -19,8 +23,8 @@ const registerRoute = (navConfig, isExample) => {
 
   function addRoute(page) {
     const component = isExample
-      ? require(`./examples-dist${page.path}.vue`)
-      : require(`./examples-docs${page.path}.md`);
+      ? require(`../examples-dist${page.path}.vue`)
+      : require(`../examples-docs${page.path}.md`);
     route.push({
       path: '/component' + page.path,
       component: component.default || component

@@ -3,9 +3,7 @@
     <div class="zan-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
       <zan-swipe>
         <zan-swipe-item v-for="item in images">
-          <img class="zan-image-preview__image" :src="item" alt="" :class="{
-            'zan-image-preview__image--center': true
-          }">
+          <img class="zan-image-preview__image" @load="handleLoad" :src="item" alt="">
         </zan-swipe-item>
       </zan-swipe>
     </div>
@@ -51,6 +49,22 @@ export default {
   methods: {
     handlePreviewClick() {
       this.value = false;
+    },
+
+    handleLoad(event) {
+      const containerSize = this.$refs.previewContainer.getBoundingClientRect();
+      const ratio = containerSize.width / containerSize.height;
+      const target = event.currentTarget;
+      const targetRatio = target.width / target.height;
+
+      const centerClass = 'zan-image-preview__image--center';
+      const bigClass = 'zan-image-preview__image--big';
+
+      if (targetRatio > ratio) {
+        target.className += (' ' + centerClass);
+      } else {
+        target.className += (' ' + bigClass);
+      }
     },
 
     close() {

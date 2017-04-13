@@ -56,6 +56,7 @@ export default {
     title: String,
     cancelText: String,
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
@@ -89,7 +90,9 @@ export default {
 
   methods: {
     handleItemClick(item) {
-
+      if (item.callback && typeof item.callback === 'function') {
+        item.callback(item);
+      }
     }
   }
 };

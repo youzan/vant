@@ -5,12 +5,16 @@
 <zan-actionsheet v-model="show1" :actions="actions1">
 </zan-actionsheet>
 
+
+
               </example-block><example-block title="带取消按钮的ActionSheet">
                 <div class="zan-row">
   <zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
 </div>
 <zan-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
 </zan-actionsheet>
+
+
 
               </example-block><example-block title="带标题的ActionSheet">
                 <div class="zan-row">
@@ -39,7 +43,7 @@
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
 import MobileComputed from 'components/mobile-computed';
 
 export default {
@@ -53,7 +57,8 @@ export default {
       actions1: [
         {
           name: '微信安全支付',
-          className: 'actionsheet-wx'
+          className: 'actionsheet-wx',
+          callback: this.handleActionClick
         },
         {
           name: '支付宝支付',
@@ -71,6 +76,12 @@ export default {
         }
       ]
     };
+  },
+
+  methods: {
+    handleActionClick(item) {
+      console.log(item);
+    }
   }
 }
 </script>

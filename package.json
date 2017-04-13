@@ -1,6 +1,6 @@
 {
   "name": "@youzan/zanui-vue",
-  "version": "0.0.42",
+  "version": "0.1.0",
   "description": "有赞vue wap组件库",
   "main": "lib/zanui.js",
   "style": "lib/zanui-css/index.css",
@@ -22,7 +22,7 @@
     "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:components && npm run build:utils && npm run build:zanui-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
-    "lint": "eslint src/**/*.js packages/**/*.{js,vue} --quiet",
+    "lint": "eslint src/**/*.js packages/**/*.{js,vue} build/**/*.js --quiet",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
     "test:watch": "karma start test/unit/karma.conf.js",
     "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
@@ -40,7 +40,8 @@
   "author": "youzanfe",
   "license": "ISC",
   "dependencies": {
-    "raf.js": "0.0.4"
+    "raf.js": "0.0.4",
+    "vue-lazyload": "^1.0.3"
   },
   "peerDependencies": {
     "vue": "2.1.8"
@@ -62,6 +63,7 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-runtime": "^6.11.0",
     "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "cheerio": "^0.22.0",
     "copy-webpack-plugin": "^4.0.1",
     "cp-cli": "^1.0.2",
@@ -102,6 +104,7 @@
     "markdown-it-anchor": "^2.5.0",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.2.0",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
     "postcss": "^5.1.2",
     "postcss-easy-import": "^2.0.0",
     "postcss-loader": "^1.3.3",

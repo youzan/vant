@@ -1,5 +1,6 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
+@import './icon.css';
 
 @component-namespace zan {
   @b steps {
@@ -20,10 +21,13 @@
     }
 
     @e icon {
-      font-size: 40px;
-      line-height: 1;
       float: left;
       margin-right: 10px;
+    }
+
+    .zan-icon {
+      font-size: 40px;
+      line-height: 1;
     }
 
     @e message {
@@ -53,8 +57,12 @@
     @e items {
       margin: 0 0 10px;
       overflow: hidden;
-      padding-bottom: 20px;
       position: relative;
+      padding-bottom: 20px;
+
+      @m alone {
+        padding-top: 10px;
+      }
     }
   }
 

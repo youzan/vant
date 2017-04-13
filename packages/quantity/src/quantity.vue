@@ -7,7 +7,12 @@
         'zan-quantity__minus--disabled': isMinusDisabled
       }">
     </button>
-    <input type="text" class="zan-quantity__input" :value="currentValue" @input="handleInputChange" :disabled="disabled">
+    <input
+      type="text"
+      class="zan-quantity__input"
+      :value="currentValue"
+      @input="handleInputChange"
+      :disabled="disabled">
     <button
       @click="handleChange('plus')"
       class="zan-quantity__stepper zan-quantity__plus"
@@ -44,8 +49,14 @@ export default {
   },
 
   data() {
+    let value = this.value ? +this.value : +this.defaultValue;
+    const correctedValue = this.correctValue(value);
+    if (value !== correctedValue) {
+      value = correctedValue;
+      this.$emit('input', value);
+    }
     return {
-      currentValue: this.value ? +this.value : +this.defaultValue
+      currentValue: value
     };
   },
 
@@ -66,38 +77,38 @@ export default {
 
   watch: {
     currentValue(val) {
-      this.$emit('input', +val);
+      this.$emit('input', val);
+      this.$emit('change', val);
     },
     value(val) {
-      if (val) {
-        this.currentValue = +val;
+      val = this.correctValue(+val);
+      if (val !== this.currentValue) {
+        this.currentValue = val;
       }
     }
   },
 
   methods: {
+    // 纠正value值
+    correctValue(value) {
+      value = Math.max(this.min, value);
+      value = Math.min(this.max, value);
+      return value;
+    },
     handleInputChange(event) {
-      let val = +event.target.value;
-      const max = +this.max;
-      const min = +this.min;
+      const val = +event.target.value;
 
-      if (val > max) {
-        val = max;
-      } else if (val < min) {
-        val = min;
-      }
-
-      this.currentValue = val;
+      this.currentValue = this.correctValue(val);
     },
     handleChange(type) {
       if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
+        this.$emit('overlimit', type);
         return;
       }
 
       const step = +this.step;
       const currentValue = +this.currentValue;
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
-      this.$emit('change', this.currentValue);
     }
   }
 };

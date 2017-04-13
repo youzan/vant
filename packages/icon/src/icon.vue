@@ -7,7 +7,10 @@
     name: 'zan-icon',
 
     props: {
-      name: String
+      name: {
+        type: String,
+        required: true
+      }
     },
 
     methods: {

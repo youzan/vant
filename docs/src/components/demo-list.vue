@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import navConfig from '../nav.config.json';
+import navConfig from '../nav.config.js';
 import MobileNav from './mobile-nav';
 
 export default {

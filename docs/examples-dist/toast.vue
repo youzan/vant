@@ -30,7 +30,7 @@
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
 import { Toast } from 'src/index';
 
 export default {
@@ -60,9 +60,9 @@ export default {
         type: 'success',
         message: leftSec.toString()
       });
-      window.setInterval(() => {
+      const id = window.setInterval(() => {
         if (leftSec <= 1) {
-          window.clearInterval();
+          window.clearInterval(id);
           toast.message = '跳转中...'
           return;
         }

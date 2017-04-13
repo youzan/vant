@@ -13,15 +13,15 @@
         type: String,
         required: true
       },
-      disable: Boolean
+      disabled: Boolean
+    },
+    beforeCreate() {
+      this.$parent.tabs.push(this);
     },
     computed: {
       classNames() {
-        return { 'zan-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.switchActiveTabKey };
+        return { 'zan-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.curActive };
       }
-    },
-    created() {
-      this.$parent.tabs.push(this);
     }
   };
 </script>

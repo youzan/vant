@@ -1,41 +1,36 @@
-<template><section class="demo-loading"><h1 class="demo-title">loading</h1><example-block title="基础用法">
-                <div class="demo-loading">
-  <h2 class="demo-sub-title">渐变深色spinner</h2>
-  <div class="demo-loading__example">
-    <zan-loading class="some-customized-class"></zan-loading>
-  </div>
-  <h2 class="demo-sub-title">渐变浅色spinner</h2>
-  <div class="demo-loading__example demo-loading__example--with-bg">
-    <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
-  </div>
-  <h2 class="demo-sub-title">单色spinner</h2>
-  <div class="demo-loading__example">
-    <zan-loading class="some-customized-class" :type="'circle'" :color="'white'"></zan-loading>
-  </div>
-  <h2 class="demo-sub-title">单色spinner</h2>
-  <div class="demo-loading__example">
-    <zan-loading class="some-customized-class" :type="'circle'" :color="'black'"></zan-loading>
-  </div>
+<template><section class="demo-loading"><h1 class="demo-title">loading</h1><example-block title="渐变深色spinner">
+                <zan-loading class="some-customized-class"></zan-loading>
+
+              </example-block><example-block title="">
+                <div class="demo-loading__example demo-loading__example--with-bg">
+  <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
 </div>
+
+              </example-block><example-block title="">
+                <zan-loading class="circle-loading" :type="'circle'" :color="'white'"></zan-loading>
+<zan-loading class="circle-loading" :type="'circle'" :color="'black'"></zan-loading>
 
               </example-block></section></template>
 <style>
-.demo-loading__example{
-  width: 30px;
-  height: 30px;
-  padding: 20px;
-  margin: auto;
-  border-radius: 5px;
-  border: 1px solid transparent;
-}
+@component-namespace demo {
+  @b loading {
+    .zan-loading {
+      margin: 0 auto;
+    }
 
-.demo-loading__example--with-bg {
-  background-color: rgba(0, 0, 0, 0.5);
-}
+    .circle-loading {
+      margin: 20px auto;
+    }
 
-.demo-loading {
-  padding: 0 20px;
+    .demo-loading__example--with-bg {
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 0 auto;
+      width: 80px;
+      padding: 25px 0;
+      border-radius: 10px;
+    }
+  }
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);</script>

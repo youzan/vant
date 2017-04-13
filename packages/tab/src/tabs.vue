@@ -1,18 +1,23 @@
 <template>
-  <div class="zan-tabs">
-    <div class="zan-tabs__nav" :class="classNames">
-      <div class="zan-tabs__nav-bar" :style="navBarStyle"></div>
+  <div class="zan-tabs" :class="[`zan-tabs--${type}`]">
+    <div
+      class="zan-tabs__nav"
+      :class="[`zan-tabs__nav--${this.type}`, `zan-tabs--col-${this.tabs.length}`]"
+    >
+      <div class="zan-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div
         v-for="(tab, index) in tabs"
         class="zan-tab"
-        :class="{'zan-tab--active': index == switchActiveTabKey}"
+        :class="{'zan-tab--active': index === curActive}"
         ref="tabkey"
-        @click="handleTabClick(index,tab)"
+        @click="handleTabClick(index, tab)"
       >
         {{ tab.title }}
       </div>
     </div>
-    <div class="zan-tabs__content"><slot></slot></div>
+    <div class="zan-tabs__content">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -30,11 +35,6 @@
       type: {
         type: String,
         default: 'line'
-      },
-      // nav的wrap的样式
-      navclass: {
-        type: String,
-        default: ''
       }
     },
 
@@ -42,27 +42,28 @@
       return {
         tabs: [],
         isReady: false,
-        switchActiveTabKey: +this.active
+        curActive: +this.active
       };
     },
 
     watch: {
       active(val) {
-        this.switchActiveTabKey = +val;
+        this.curActive = +val;
       }
     },
 
     computed: {
-      classNames() {
-        return [`zan-tabs__nav--${this.type}`, `zan-tabs--col-${this.tabs.length}`, this.navclass];
-      },
-
+      /**
+       * `type`为`line`时，tab下方的横线的样式
+       */
       navBarStyle() {
-        if (!this.isReady) return;
-        const tabKey = this.switchActiveTabKey;
+        if (!this.isReady || this.type !== 'line') return;
+
+        const tabKey = this.curActive;
         const elem = this.$refs.tabkey[tabKey];
         const offsetWidth = `${elem.offsetWidth || 0}px`;
         const offsetLeft = `${elem.offsetLeft || 0}px`;
+
         return {
           width: offsetWidth,
           transform: `translate3d(${offsetLeft}, 0px, 0px)`
@@ -71,12 +72,20 @@
     },
 
     methods: {
+      /**
+       * tab点击事件
+       *
+       * @param {number} index tab在tabs中的索引
+       * @param {Object} el tab的vue实例
+       */
       handleTabClick(index, el) {
-        if (el.disable) {
-          el.$emit('disable');
+        if (el.disabled) {
+          el.$emit('disabled', index);
           return;
         }
-        this.switchActiveTabKey = index;
+
+        this.$emit('click', index);
+        this.curActive = index;
       }
     },
 

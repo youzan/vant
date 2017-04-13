@@ -15,7 +15,7 @@
 
     @e img {
       width: 90px;
-      height: 90px;
+      height: auto;
       border: 0;
       position: absolute;
       top: 5px;
@@ -26,7 +26,7 @@
       display: table;
       width: 100%;
 
-      @when center {
+      @m center {
         display: table;
         height: 90px;
 

@@ -3,8 +3,10 @@ var markdownItContainer = require('markdown-it-container');
 var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
+var chalk = require('chalk');
 var striptags = require('./strip-tags');
-var Components = require('../components.json');
+var navs = require('../docs/src/nav.config.js');
+navs = navs['zh-CN'];
 
 var parser = markdownIt('default', {
   html: true
@@ -29,9 +31,9 @@ var renderVueTemplate = function (html, componentName) {
 
   var script = '';
   if (output.script) {
-    script = output.script.replace('<script>', '<script>\nimport Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);');
+    script = output.script.replace('<script>', '<script>\nimport Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);');
   } else {
-    script = '<script>\nimport Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>';
+    script = '<script>\nimport Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);</script>';
   }
 
   result = `<template><section class="demo-${componentName}"><h1 class="demo-title">${componentName}</h1>` + output['example-block'] + '</section></template>\n' +
@@ -69,18 +71,34 @@ parser.use(markdownItContainer, 'demo', {
 });
 
 var docsDir = path.resolve(__dirname, '../docs');
-for (var item in Components) {
-  var itemMdFile = `${docsDir}/examples-docs/${item}.md`;
+var components = [];
+for (var i = 0; i < navs.length; i++) {
+  var navItem = navs[i];
+
+  if (!navItem.showInMobile) continue;
+
+  if (!navItem.groups) {
+    components.push(navs[i]);
+  } else {
+    for (var j = 0; j < navItem.groups.length; j++) {
+      components = components.concat(navItem.groups[j].list);
+    }
+  }
+}
+for (var i = 0; i < components.length; i++) {
+  var item = components[i];
+  var itemMdFile = `${docsDir}/examples-docs${item.path}.md`;
   if (!fs.existsSync(itemMdFile)) {
     continue;
   }
 
-  var itemMd = fs.readFileSync(`${docsDir}/examples-docs/${item}.md`).toString();
+  var itemMd = fs.readFileSync(`${docsDir}/examples-docs${item.path}.md`).toString();
   var content = parser.render(itemMd);
-  var result = renderVueTemplate(content, item);
+  var result = renderVueTemplate(content, item.path.slice(1));
 
-  var exampleVueName = `${docsDir}/examples-dist/${item}.vue`;
+  var exampleVueName = `${docsDir}/examples-dist/${item.path}.vue`;
 
+  // 新建一个文件
   if (!fs.existsSync(exampleVueName)) {
     fs.closeSync(fs.openSync(exampleVueName, 'w'));
   }
@@ -89,5 +107,5 @@ for (var item in Components) {
   });
 }
 
-console.log('generate examples success!');
+console.log(chalk.green('generate examples success!'));
 

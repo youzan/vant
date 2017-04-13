@@ -41,13 +41,13 @@ ul, ol {
   list-style: none;
 }
 
-.hljs {
-  line-height: 1.8;
+code.hljs {
+  line-height: 1.5;
   font-family: Menlo, Monaco, Consolas, Courier, monospace;
   font-size: 12px;
-  padding: 18px 24px;
-  background-color: #f9fafc;
-  border: solid 1px #eaeefb;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: solid 1px #E5E5E5;
   margin-bottom: 25px;
   border-radius: 4px;
   -webkit-font-smoothing: auto;
@@ -66,29 +66,26 @@ ul, ol {
   }
 }
 
-.page-header {
-  height: 60px;
-  background-color: #fff;
-}
-
 .main-content {
-  margin: 40px 15px;
+  margin: 110px 20px 40px;
+  padding-top: 20px;
 }
 
 .page-container {
   background-color: #fff;
   position: relative;
-  display: table;
+  display: flex;
   width: 100%;
+  overflow: hidden;
 }
 
 .page-content {
   box-sizing: border-box;
-  margin-left: 220px;
-  padding: 0 40px;
-  display: table-cell;
+  flex: 1;
 
   section {
+    padding: 0 40px;
+
     > h1,
     > h2,
     > h3,
@@ -210,10 +207,4 @@ ul, ol {
     border: 1px solid #E5E5E5;
     padding: 10px;
   }
-}
-
-.page-footer {
-  height: 150px;
-  margin-top: 40px;
-  background-color: #fff;
 }

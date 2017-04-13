@@ -1,4 +1,4 @@
-{
+module.exports = {
   "zh-CN": [
     {
       "name": "开发指南",
@@ -26,71 +26,79 @@
           "list": [
             {
               "path": "/button",
-              "title": "Button"
+              "title": "Button 按钮"
             },
             {
               "path": "/icon",
-              "title": "Icon"
+              "title": "Icon 图标"
             },
             {
               "path": "/cell",
-              "title": "Cell"
+              "title": "Cell 单元格"
             },
             {
               "path": "/progress",
-              "title": "Progress"
+              "title": "Progress 进度条"
             },
             {
               "path": "/panel",
-              "title": "Panel"
+              "title": "Panel 面板"
             },
             {
               "path": "/card",
-              "title": "Card"
+              "title": "Card 图文组件"
             },
             {
               "path": "/loading",
-              "title": "Loading"
+              "title": "Loading 加载"
+            },
+            {
+              "path": "/layout",
+              "title": "Layout 布局"
             },
             {
               "path": "/steps",
-              "title": "Steps"
+              "title": "Steps 步骤条"
             },
             {
               "path": "/tag",
-              "title": "Tag"
+              "title": "Tag 标记"
             },
             {
               "path": "/badge",
-              "title": "Badge"
+              "title": "Badge 徽章"
             },
             {
               "path": "/tab",
-              "title": "Tab"
+              "title": "Tab 标签"
             },
             {
               "path": "/popup",
-              "title": "Popup"
+              "title": "Popup 弹出菜单"
             },
             {
               "path": "/swipe",
-              "title": "Swipe"
+              "title": "Swipe 轮播"
             },
             {
               "path": "/search",
-              "title": "Search"
+              "title": "Search 搜索"
             },
             {
               "path": "/quantity",
-              "title": "Quantity"
+              "title": "Quantity 数量选择"
             },
             {
               "path": "/waterfall",
-              "title": "Waterfall"
+              "title": "Waterfall 瀑布流"
             },
             {
               "path": "/image-preview",
-              "title": "ImagePreview"
+              "title": "ImagePreview 图片预览"
+            },
+            {
+              "path": "/lazyload",
+              "title": "Lazyload 图片懒加载"
             }
           ]
         },
@@ -99,23 +107,23 @@
           "list": [
             {
               "path": "/switch",
-              "title": "Switch"
+              "title": "Switch 开关"
             },
             {
               "path": "/field",
-              "title": "Field"
+              "title": "Field 输入框"
             },
             {
               "path": "/radio",
-              "title": "Radio"
+              "title": "Radio 单选框"
             },
             {
               "path": "/checkbox",
-              "title": "Checkbox"
+              "title": "Checkbox 复选框"
             },
             {
               "path": "/uploader",
-              "title": "Uploader"
+              "title": "Uploader 图片上传"
             }
           ]
         },
@@ -124,23 +132,23 @@
           "list": [
             {
               "path": "/actionsheet",
-              "title": "ActionSheet"
+              "title": "ActionSheet 行动按钮"
             },
             {
               "path": "/toast",
-              "title": "Toast"
+              "title": "Toast 轻提示"
             },
             {
               "path": "/picker",
-              "title": "Picker"
+              "title": "Picker 选择器"
             },
             {
               "path": "/datetime-picker",
-              "title": "Datetime Picker"
+              "title": "Datetime Picker 时间选择"
             },
             {
               "path": "/dialog",
-              "title": "Dialog"
+              "title": "Dialog 弹出框"
             }
           ]
         }

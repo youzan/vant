@@ -1,13 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesDocsApp';
-import navConfig from './nav.config.json';
+import navConfig from './nav.config.js';
 import routes from './router.config';
-import SideNav from './components/side-nav';
-import DemoBlock from './components/demo-block';
-import FooterNav from './components/footer-nav';
 import ZanUI from 'src/index.js';
+import packageJson from '../../package.json';
 
+const global = {
+  version: packageJson.version
+};
+window._global = global;
+
+import '../assets/docs.css';
 import 'packages/zanui-css/src/index.css';
 
 function isMobile() {
@@ -18,14 +22,14 @@ function isMobile() {
 
 Vue.use(VueRouter);
 Vue.use(ZanUI);
-Vue.component('side-nav', SideNav);
-Vue.component('demo-block', DemoBlock);
-Vue.component('footer-nav', FooterNav);
+Vue.use(ZanUI.Lazyload, {
+  lazyComponent: true
+});
 
 let routesConfig = routes(navConfig);
 routesConfig.push({
   path: '/',
-  redirect: '/component/button'
+  redirect: '/component/install'
 });
 
 const router = new VueRouter({
@@ -38,8 +42,10 @@ router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0);
   }
+
+  const pathname = process.env.NODE_ENV === 'production' ? '/vue/examples' : '/examples.html';
   if (isMobile()) {
-    window.location.replace(location.pathname + 'examples.html#' + route.path);
+    window.location.replace(pathname);
     return;
   }
   document.title = route.meta.title || document.title;

@@ -11,16 +11,23 @@
  * <zan-button size="large" type="primary">按钮</zan-button>
  */
 
-const allowedSize = ['mini', 'small', 'normal', 'large'];
-const allowedType = ['default', 'danger', 'primary'];
+import ZanLoading from 'packages/loading';
+
+const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
+const ALLOWED_TYPE = ['default', 'danger', 'primary'];
 
 export default {
   name: 'zan-button',
+
+  components: {
+    'zan-loading': ZanLoading
+  },
 
   props: {
     disabled: Boolean,
     loading: Boolean,
     block: Boolean,
+    bottomAction: Boolean,
     tag: {
       type: String,
       default: 'button'
@@ -30,27 +37,28 @@ export default {
       type: String,
       default: 'default',
       validator(value) {
-        return allowedType.indexOf(value) > -1;
+        return ALLOWED_TYPE.indexOf(value) > -1;
       }
     },
     size: {
       type: String,
       default: 'normal',
       validator(value) {
-        return allowedSize.indexOf(value) > -1;
+        return ALLOWED_SIZE.indexOf(value) > -1;
       }
     }
   },
 
   methods: {
     handleClick(e) {
+      if (this.loading || this.disabled) return;
       this.$emit('click', e);
     }
   },
 
   render(h) {
-    let { type, nativeType, size, disabled, loading, block } = this;
-    let Tag = this.tag;
+    const { type, nativeType, size, disabled, loading, block, bottomAction } = this;
+    const Tag = this.tag;
 
     return (
       <Tag
@@ -63,19 +71,20 @@ export default {
           {
             'zan-button--disabled': disabled,
             'zan-button--loading': loading,
-            'zan-button--block': block
+            'zan-button--block': block,
+            'zan-button--bottom-action': bottomAction
           }
         ]}
         onClick={this.handleClick}
       >
         {
-          loading ?
-            <zan-loading
-              class="zan-button__icon-loading"
-              type="circle"
-              color={type === 'default' ? 'black' : 'white'}>
-            </zan-loading> :
-            null
+          loading
+            ? <zan-loading
+                class="zan-button__icon-loading"
+                type="circle"
+                color={type === 'default' ? 'black' : 'white'}>
+              </zan-loading>
+            : null
         }
         <span class="zan-button__text">{this.$slots.default}</span>
       </Tag>

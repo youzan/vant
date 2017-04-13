@@ -1,4 +1,5 @@
 import Switch from 'packages/switch';
+import Vue from 'vue';
 import ZanLoading from 'packages/loading';
 import { mount } from 'avoriaz';
 
@@ -12,7 +13,7 @@ describe('Switch', () => {
   it('create on switch', () => {
     wrapper = mount(Switch, {
       propsData: {
-        checked: true
+        value: true
       }
     });
 
@@ -23,7 +24,7 @@ describe('Switch', () => {
   it('create off switch', () => {
     wrapper = mount(Switch, {
       propsData: {
-        checked: false
+        value: false
       }
     });
 
@@ -47,7 +48,7 @@ describe('Switch', () => {
     wrapper = mount(Switch, {
       propsData: {
         loading: true,
-        checked: true
+        value: true
       }
     });
 
@@ -71,7 +72,7 @@ describe('Switch', () => {
     wrapper = mount(Switch, {
       propsData: {
         disabled: true,
-        checked: false
+        value: false
       }
     });
 
@@ -80,20 +81,50 @@ describe('Switch', () => {
     expect(wrapper.hasClass('zan-switch--off')).to.be.true;
   });
 
-  it('click event should fire change event', () => {
+  it('click should toggle the switch', () => {
     wrapper = mount(Switch, {
       propsData: {
-        checked: false
-      },
-      methods: {
+        value: false
+      }
+    });
 
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    wrapper.simulate('click');
+    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+  });
+
+  it('click should call callback function', () => {
+    const stub = sinon.stub();
+    wrapper = mount(Switch, {
+      propsData: {
+        value: false,
+        onChange: stub
+      }
+    });
+
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    wrapper.simulate('click');
+    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(stub.calledOnce).to.be.true;
+    expect(stub.calledWith(true));
+  });
+
+  it('toggle switch value from v-model', function(done) {
+    wrapper = mount(Switch, {
+      propsData: {
+        value: false
       }
     });
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     expect(wrapper.hasClass('zan-switch--off')).to.be.true;
-    wrapper.simulate('click');
-    expect(eventStub.calledOnce).to.be.true;
-    expect(eventStub.calledWith('change')).to.be.true;
+    wrapper.vm.value = true;
+    wrapper.update();
+    Vue.nextTick(() => {
+      expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input'));
+      done();
+    });
   });
 });

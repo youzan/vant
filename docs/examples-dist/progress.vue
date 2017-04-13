@@ -19,9 +19,9 @@
 <div class="demo-progress__wrapper">
   <zan-progress class="demo-progress__demo1" :inactive="true" :percentage="100"></zan-progress>
 </div>
-              </example-block><example-block title="自定义颜色">
-                
-<div class="demo-progress__wrapper">
+
+              </example-block><example-block title="自定义颜色和文字">
+                <div class="demo-progress__wrapper">
   <zan-progress class="demo-progress__demo1" pivot-text="红色" color="#ed5050" :percentage="26"></zan-progress>
 </div>
 <div class="demo-progress__wrapper">
@@ -43,4 +43,4 @@
   } 
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "../components/example-block";Vue.component("example-block", ExampleBlock);</script>
+import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);</script>

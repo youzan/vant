@@ -1,5 +1,6 @@
 @import './common/var.css';
 @import './mixins/border_retina.css';
+@import './icon.css';
 
 @component-namespace zan {
   @b cell-group {
@@ -36,16 +37,6 @@
 
     @e title {
       float: left;
-
-      &.zan-cell__required {
-        &::before {
-          content: '*';
-          position: absolute;
-          left: -7px;
-          font-size: 14px;
-          color: #f44;
-        }
-      }
     }
 
     @e label {
@@ -59,12 +50,29 @@
       float: right;
       overflow: hidden;
 
-      @when link {
+      @m link {
         margin-right: 20px;
       }
 
-      @when alone {
+      @m alone {
         float: none;
+      }
+    }
+
+    @m required {
+      overflow: visible;
+
+      &::before {
+        content: '*';
+        position: absolute;
+        left: -7px;
+        font-size: 14px;
+        color: #f44;
+      }
+
+      .zan-cell__title {
+        float: none;
+        display: inline-block;
       }
     }
 

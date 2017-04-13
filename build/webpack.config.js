@@ -9,6 +9,7 @@ var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -35,8 +36,8 @@ function wrap(render) {
 module.exports = {
   entry: {
     'vendor': ['vue', 'vue-router'],
-    'docs': './docs/index.js',
-    'examples': './docs/examples.js'
+    'zan-docs': './docs/src/index.js',
+    'zan-examples': './docs/src/examples.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -48,14 +49,14 @@ module.exports = {
       path.join(__dirname, '../node_modules'),
       'node_modules'
     ],
-    extensions: ['.js', '.vue', '.pcss'],
+    extensions: ['.js', '.vue', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
       'zanui': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages'),
       'lib': path.join(__dirname, '../lib'),
-      'components': path.join(__dirname, '../docs/components')
+      'components': path.join(__dirname, '../docs/src/components')
     }
   },
   module: {
@@ -97,20 +98,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
-    StyleExtractPlugin,
     new ProgressBarPlugin(),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'docs'],
-      template: 'docs/index.tpl',
-      filename: 'index.html',
-      inject: true
-    }),
-    new HtmlWebpackPlugin({
-      chunks: ['vendor', 'examples'],
-      template: 'docs/index.tpl',
-      filename: 'examples.html',
-      inject: true
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -160,7 +148,21 @@ module.exports = {
           }
         }
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'zan-docs'],
+      template: 'docs/src/index.tpl',
+      filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['vendor', 'zan-examples'],
+      template: 'docs/src/index.tpl',
+      filename: 'examples.html',
+      inject: true
+    }),
+    new OptimizeCssAssetsPlugin(),
+    StyleExtractPlugin
   ]
 };
 
@@ -168,7 +170,7 @@ if (process.env.NODE_ENV === 'production') {
   delete module.exports.devtool;
   module.exports.output = {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: './',
+    publicPath: '/vue',
     filename: '[name].[hash:8].js'
   };
   module.exports.plugins = module.exports.plugins.concat([

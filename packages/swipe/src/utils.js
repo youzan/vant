@@ -18,11 +18,11 @@ EventEmitter.prototype = {
     if (arr) {
       arr.forEach(function(cb) {
         cb.apply(self, argus);
-      })
+      });
     }
   },
   removeListener: function(name, fn) {
-    if (this.__events[name] == undefined) {
+    if (!this.__events[name]) {
       return;
     }
     let index;
@@ -50,14 +50,14 @@ const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnim
               };
 
 const bindEvents = (elem, eventNames, fn) => {
-  eventNames = eventNames.split(/\s+/)
-  eventNames.forEach(eventName => elem.addEventListener(eventName, fn))
-}
+  eventNames = eventNames.split(/\s+/);
+  eventNames.forEach(eventName => elem.addEventListener(eventName, fn));
+};
 
 const removeEvents = (elem, eventNames, fn) => {
-  eventNames = eventNames.split(/\s+/)
-  eventNames.forEach(eventName => elem.removeEventListener(eventName, fn))
-}
+  eventNames = eventNames.split(/\s+/);
+  eventNames.forEach(eventName => elem.removeEventListener(eventName, fn));
+};
 
 export {
   extend,

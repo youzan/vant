@@ -32,3 +32,9 @@ $button-danger-border-color: #e33;
 $button-disabled-color: $c-gray-dark;
 $button-disabled-background-color: $c-gray-light;
 $button-disabled-border-color: #cacaca;
+
+$bottom-action-button-default-color: $c-white;
+$bottom-action-button-default-background-color: #f85;
+
+$bottom-action-button-primary-color: $c-white;
+$bottom-action-button-primary-background-color: #f44;
