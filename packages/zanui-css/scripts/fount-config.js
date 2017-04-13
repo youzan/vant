@@ -157,7 +157,7 @@ module.exports = {
     },
     {
       keywords: ['alipay'],
-      src: '支付宝.svg',
+      src: '支付宝支付.svg',
       css: 'alipay'
     }
   ]
