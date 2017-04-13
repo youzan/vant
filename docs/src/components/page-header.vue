@@ -1,23 +1,25 @@
 <template>
   <div class="page-header">
-    <h1 class="page-header__logo">
-      <a href="#"></a>
-    </h1>
-    <ul class="page-header__navs">
-      <li class="page-header__item">
-        <a href="/" class="page-header__link">首页</a>
-      </li>
-      <li class="page-header__item">
-        <a href="http://react.fe.qima-inc.com/" class="page-header__link">PC端</a>
-      </li>
-      <li class="page-header__item">
-        <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">移动端</a>
-      </li>
-      <li class="page-header__item">
-        <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">微信小程序</a>
-      </li>
-    </ul>
-    <ul class="page-header__subnavs">
+    <div class="page-header__top">
+      <h1 class="page-header__logo">
+        <a href="#"></a>
+      </h1>
+      <ul class="page-header__navs">
+        <li class="page-header__item">
+          <a href="/" class="page-header__link">首页</a>
+        </li>
+        <li class="page-header__item">
+          <a href="http://react.fe.qima-inc.com/" class="page-header__link">PC端</a>
+        </li>
+        <li class="page-header__item">
+          <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">移动端</a>
+        </li>
+        <li class="page-header__item">
+          <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">微信小程序</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="page-header__subnavs" :class="{ 'page-header__subnavs--shadow': scrollTop > 0 }">
       <li class="page-header__item">
         <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">基础组件</a>
       </li>
@@ -38,8 +40,21 @@
 export default {
   data() {
     return {
-      version: window._global.version
+      version: window._global.version,
+      scrollTop: 0
     };
+  },
+
+  mounted() {
+    const _this = this;
+    let timer;
+    window.addEventListener('scroll', () => {
+      clearTimeout(timer);
+      const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      let timer = setTimeout(() => {
+        _this.scrollTop = scrollTop;
+      }, 500);
+    });
   }
 };
 </script>
@@ -51,8 +66,13 @@ export default {
     top: 0;
     z-index: 1;
     width: 100%;
-    height: 60px;
-    background-color: #fbfbfb;
+    
+    @e top {
+      overflow: hidden;
+      height: 60px;
+      background-color: #fbfbfb;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    }
 
     @e logo {
       float: left;
@@ -78,13 +98,16 @@ export default {
     }
 
     @e subnavs {
-      position: absolute;
       line-height: 50px;
-      top: 60px;
       display: flex;
       justify-content: center;
-      width: 100%;
       background-color: #f2f2f2;
+      position: relative;
+      z-index: -1;
+
+      @m shadow {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+      }
 
       a,
       span {

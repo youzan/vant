@@ -1,6 +1,7 @@
 <template><section class="demo-cell"><h1 class="demo-title">cell</h1><example-block title="基础用法">
                 <zan-cell-group>
-  <zan-cell title="单元格1" value="单元格1内容"></zan-cell>
+  <zan-cell title="单元格1" value="单元格1内容">
+  </zan-cell>
   <zan-cell title="单元格2" value="单元格2内容"></zan-cell>
 </zan-cell-group>
 

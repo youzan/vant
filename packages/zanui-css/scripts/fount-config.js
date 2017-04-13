@@ -149,6 +149,16 @@ module.exports = {
       src: '联系人.svg',
       css: 'contact',
       'correct_contour_direction': true
+    },
+    {
+      keywords: ['wechat'],
+      src: '微信支付.svg',
+      css: 'wechat'
+    },
+    {
+      keywords: ['alipay'],
+      src: '支付宝支付.svg',
+      css: 'alipay'
     }
   ]
 };
