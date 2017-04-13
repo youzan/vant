@@ -2,13 +2,6 @@ import Badge from 'packages/badge';
 import BadgeGroup from 'packages/badge-group';
 import { mount } from 'avoriaz';
 
-describe('Badge', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
-  });
-});
-
 describe('BadgeGroup', () => {
   let wrapper;
   afterEach(() => {
