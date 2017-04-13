@@ -73,6 +73,7 @@ export default {
       default: false,
       validator(value) {
         if (value && this.type !== 'textarea') return false;
+        return true;
       }
     }
   },
