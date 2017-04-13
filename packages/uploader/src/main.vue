@@ -5,7 +5,12 @@
              <zan-button block>上传文件</zan-button>
           </div>
         </slot>
-        <input type="file" @change="onValueChange"  class="zan-uploader__input" ref="input" />
+        <template v-if="disabled">
+          <input type="file" @change="onValueChange" disabled="disabled" class="zan-uploader__input" ref="input" />
+        </template>
+        <template v-else>
+          <input type="file" @change="onValueChange"  class="zan-uploader__input" ref="input" />
+        </template>
     </div>
 </template>
 
@@ -40,9 +45,7 @@
         reader.onload = (e) => {
           this.afterRead && this.afterRead(
             {
-              name: file.name,
-              type: file.type,
-              size: file.size,
+              file: file,
               content: e.target.result
             });
           this.$refs.input.value = '';
