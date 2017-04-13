@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import ActionSheet from 'packages/actionsheet';
 import { mount } from 'avoriaz';
 
@@ -8,7 +7,7 @@ describe('ActionSheet', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create', () => {
+  it('create a actionsheet', () => {
     wrapper = mount(ActionSheet, {
       propsData: {}
     });
@@ -98,21 +97,20 @@ describe('ActionSheet', () => {
     expect(cancelButton.text()).to.equal('cancel');
   });
 
-  it('toggle actionsheet value', () => {
+  it('toggle actionsheet value from v-model', (done) => {
     wrapper = mount(ActionSheet, {
       propsData: {
         value: false
       }
     });
 
-    expect(wrapper.data().currentValue).to.be.false;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
+    expect(wrapper.data().currentValue).to.be.false;
 
     wrapper.vm.value = true;
     wrapper.update();
-    Vue.nextTick(() => {
+    wrapper.vm.$nextTick(() => {
       expect(wrapper.data().currentValue).to.be.true;
-      expect(eventStub.calledOnce).to.be.true;
       expect(eventStub.calledWith('input'));
       done();
     });

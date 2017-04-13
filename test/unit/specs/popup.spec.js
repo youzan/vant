@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import Popup from 'packages/popup';
 import { mount } from 'avoriaz';
 
@@ -19,7 +18,26 @@ describe('Popup', () => {
     expect(wrapper.instance().currentTransition).to.equal('popup-slide-bottom');
   });
 
-  it('create a show popup', () => {
+  it('create a show popup', (done) => {
+    wrapper = mount(Popup, {
+      propsData: {
+        value: false
+      }
+    });
+
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    expect(wrapper.data().currentValue).to.be.false;
+
+    wrapper.vm.value = true;
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.data().currentValue).to.be.true;
+      expect(eventStub.calledWith('input'));
+      done();
+    });
+  });
+
+  it('toggle popup show', () => {
     wrapper = mount(Popup, {
       propsData: {
         value: true
@@ -27,16 +45,5 @@ describe('Popup', () => {
     });
 
     expect(wrapper.data().currentValue).to.be.true;
-
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-
-    wrapper.vm.value = false;
-    wrapper.update();
-    Vue.nextTick(() => {
-      expect(wrapper.data().currentValue).to.be.true;
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('input'));
-      done();
-    });
   });
 });

@@ -16,7 +16,7 @@ describe('Field', () => {
     expect(wrapper.hasClass('zan-field')).to.be.true;
   });
 
-  it('create a text field with initialize value', () => {
+  it('create a text field with initialize value', (done) => {
     wrapper = mount(Field, {
       propsData: {
         value: 'test'
