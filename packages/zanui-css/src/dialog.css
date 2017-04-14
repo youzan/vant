@@ -46,6 +46,11 @@
       margin: 0;
       font-size: 14px;
       line-height: 1.5;
+
+      @m notitle {
+        color: #333;
+        font-size: 16px;
+      }
     }
 
     @e footer {

@@ -25,6 +25,14 @@ export default {
       });
     },
 
+    handleAlert2Click() {
+      Dialog.alert({
+        message: '无标题alert'
+      }).then((action) => {
+        console.log(action);
+      });
+    },
+
     handleConfirmClick() {
       Dialog.confirm({
         title: 'confirm标题',
@@ -58,6 +66,7 @@ import { Dialog } from '@youzan/zanui-vue';
 :::demo 消息提示
 ```html
 <zan-button @click="handleAlertClick">alert</zan-button>
+<zan-button @click="handleAlert2Click">无标题alert</zan-button>
 
 <script>
 export default {
@@ -65,6 +74,14 @@ export default {
     handleAlertClick() {
       Dialog.alert({
         title: 'alert标题',
+        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
+      }).then((action) => {
+        console.log(action);
+      });
+    },
+
+    handleAlert2Click() {
+      Dialog.alert({
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
       }).then((action) => {
         console.log(action);
