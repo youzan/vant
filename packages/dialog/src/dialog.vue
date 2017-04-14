@@ -6,7 +6,7 @@
           <div class="zan-dialog__title" v-text="title"></div>
         </div>
         <div class="zan-dialog__content" v-if="message">
-          <div class="zan-dialog__message" v-html="message"></div>
+          <div class="zan-dialog__message" :class="{ 'zan-dialog__message--notitle': !title }" v-html="message"></div>
         </div>
         <div class="zan-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
           <button class="zan-dialog__btn zan-dialog__cancel" v-show="showCancelButton" @click="handleAction('cancel')">{{ cancelButtonText }}</button>

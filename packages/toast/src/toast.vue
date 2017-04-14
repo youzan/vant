@@ -56,12 +56,7 @@ export default {
     },
     message: {
       type: String,
-      default: '',
-      validator(value) {
-        if (this.type === 'success' || this.type === 'fail') {
-          return value.length <= 16;
-        }
-      }
+      default: ''
     },
     forbidClick: {
       type: Boolean,

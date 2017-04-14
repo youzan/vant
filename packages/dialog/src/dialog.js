@@ -76,6 +76,8 @@ var DialogBox = options => {
 DialogBox.alert = function(options) {
   return DialogBox(merge({
     type: 'alert',
+    title: '',
+    message: '',
     closeOnClickOverlay: false,
     showCancelButton: false
   }, options));
@@ -84,6 +86,8 @@ DialogBox.alert = function(options) {
 DialogBox.confirm = function(options) {
   return DialogBox(merge({
     type: 'confirm',
+    title: '',
+    message: '',
     closeOnClickOverlay: true,
     showCancelButton: true
   }, options));

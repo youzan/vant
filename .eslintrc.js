@@ -24,7 +24,8 @@ module.exports = {
     navigator: false,
     window: false,
     require: true,
-    FileReader: true
+    FileReader: true,
+    File: true
   },
 
   rules: {
