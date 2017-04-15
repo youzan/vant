@@ -272,11 +272,10 @@ autoprefixer@^6.3.1, autoprefixer@^6.7.5:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-avoriaz@^1.9.1:
-  version "1.9.1"
-  resolved "http://registry.npm.qima-inc.com/avoriaz/download/avoriaz-1.9.1.tgz#8156666e3ed60f1185a1645dd4b991facbdbcbf1"
+avoriaz@^1.11.1:
+  version "1.11.1"
+  resolved "http://registry.npm.qima-inc.com/avoriaz/download/avoriaz-1.11.1.tgz#55bf9456b998b73d82f1c74c90a3858b7088ce3f"
   dependencies:
-    lodash "^4.17.4"
     vue "^2.2.1"
 
 aws-sign2@~0.6.0:
