@@ -79,8 +79,6 @@ export default {
     isChecked() {
       if ({}.toString.call(this.currentValue) === '[object Boolean]') {
         return this.currentValue;
-      } else if (Array.isArray(this.currentValue)) {
-        return this.currentValue.indexOf(this.name) > -1;
       }
     },
 
@@ -89,7 +87,7 @@ export default {
      */
     isDisabled() {
       return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled || this.disabled
+          ? this.parentGroup.disabled
           : this.disabled;
     }
   },
