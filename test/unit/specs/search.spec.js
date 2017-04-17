@@ -36,6 +36,6 @@ describe('Search', () => {
       expect(eventStub.calledOnce).to.be.true;
       expect(eventStub.calledWith('change'));
       done();
-    })
+    });
   });
 });
