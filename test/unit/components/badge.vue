@@ -16,9 +16,7 @@ export default {
   },
 
   methods: {
-    onItemClick() {
-      console.log('click');
-    }
+    onItemClick() {}
   }
 };
 </script>
