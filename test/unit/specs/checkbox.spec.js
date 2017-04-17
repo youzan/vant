@@ -1,51 +1,131 @@
-// import Checkbox from 'packages/checkbox';
-// import CheckboxGroup from 'packages/checkbox-group';
-// import { mount } from 'avoriaz';
+import { mount } from 'avoriaz';
+import Checkbox from 'packages/checkbox';
+import CheckboxTestComponent from '../components/checkbox';
 
-// describe('Checkbox', () => {
-//   let wrapper;
-//   afterEach(() => {
-//     wrapper && wrapper.destroy();
-//   });
+describe('CheckboxGroup', () => {
+  let wrapper;
+  afterEach(() => {
+    wrapper && wrapper.destroy();
+  });
 
-//   it('create a checkbox', () => {
-//     wrapper = mount(Checkbox, {
-//       propsData: {}
-//     });
+  it('create a checkbox-group', () => {
+    wrapper = mount(CheckboxTestComponent);
 
-//     expect(wrapper.hasClass('zan-checkbox')).to.be.true;
-//   });
-// });
+    expect(wrapper.hasClass('zan-checkbox-group')).to.be.true;
 
-// describe('CheckboxGroup', () => {
-//   let wrapper;
-//   afterEach(() => {
-//     wrapper && wrapper.destroy();
-//   });
+    expect(wrapper.vNode.child.value.length).to.equal(2);
+    expect(wrapper.vNode.child.disabled).to.be.false;
+  });
 
-//   it('create a checkbox-group', () => {
-//     wrapper = mount(CheckboxGroup, {
-//       propsData: {}
-//     });
+  it('emit a change event', (done) => {
+    wrapper = mount(CheckboxTestComponent);
 
-//     expect(wrapper.hasClass('zan-checkbox-group')).to.be.true;
-//   });
+    expect(wrapper.vNode.child.value.length).to.equal(2);
+    const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
-//   // it('emit a change event', () => {
-//   //   wrapper = mount(CheckboxGroup, {
-//   //     propsData: {
-//   //       value: false
-//   //     }
-//   //   });
+    wrapper.setData({
+      'result': ['a']
+    });
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vNode.child.value.length).to.equal(1);
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('change'));
+      done();
+    });
+  });
 
-//   //   const eventStub = sinon.stub(wrapper.vm, '$emit');
+  it('click on checked checkbox', (done) => {
+    wrapper = mount(CheckboxTestComponent);
 
-//   //   wrapper.vm.value = true;
-//   //   wrapper.update();
-//   //   Vue.nextTick(() => {
-//   //     expect(eventStub.calledOnce).to.be.true;
-//   //     expect(eventStub.calledWith('change'));
-//   //     done();
-//   //   });
-//   // });
-// });
+    const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
+
+    const firstCheckboxLabel = wrapper.find('.zan-checkbox')[0].find('.zan-checkbox__label')[0];
+    firstCheckboxLabel.simulate('click');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input'));
+      done();
+    });
+  });
+
+  it('click on unchecked checkbox', (done) => {
+    wrapper = mount(CheckboxTestComponent);
+
+    const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
+
+    const lastCheckboxLabel = wrapper.find('.zan-checkbox')[3].find('.zan-checkbox__label')[0];
+    lastCheckboxLabel.simulate('click');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input'));
+      done();
+    });
+  });
+});
+
+describe('Checkbox', () => {
+  let wrapper;
+  afterEach(() => {
+    wrapper && wrapper.destroy();
+  });
+
+  it('create a checkbox', () => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        value: false,
+        disabled: false
+      }
+    });
+
+    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
+    expect(wrapper.instance().currentValue).to.be.false;
+    expect(wrapper.instance().isDisabled).to.be.false;
+    expect(wrapper.instance().isChecked).to.be.false;
+  });
+
+  it('click on a checkbox', (done) => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        value: false,
+        disabled: false
+      }
+    });
+
+    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+
+    const checkboxLabel = wrapper.find('.zan-checkbox__label')[0];
+    checkboxLabel.simulate('click');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input'));
+      done();
+    });
+  });
+
+  it('click on a disabled checkbox', () => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        value: false,
+        disabled: true
+      }
+    });
+
+    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
+    expect(wrapper.hasClass('zan-checkbox--disabled')).to.be.true;
+    expect(wrapper.instance().currentValue).to.be.false;
+    expect(wrapper.instance().isDisabled).to.be.true;
+
+    const checkboxLabel = wrapper.find('.zan-checkbox__label')[0];
+    checkboxLabel.simulate('click');
+
+    expect(wrapper.instance().currentValue).to.be.false;
+  });
+});
