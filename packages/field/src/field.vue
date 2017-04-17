@@ -70,10 +70,7 @@ export default {
     cols: [String, Number],
     autosize: {
       type: Boolean,
-      default: false,
-      validator(value) {
-        if (value && this.type !== 'textarea') return false;
-      }
+      default: false
     }
   },
 

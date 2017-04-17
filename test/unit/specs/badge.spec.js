@@ -1,6 +1,5 @@
-// import Badge from 'packages/badge';
-import BadgeGroup from 'packages/badge-group';
 import { mount } from 'avoriaz';
+import BadgeTestComponent from '../components/badge';
 
 describe('BadgeGroup', () => {
   let wrapper;
@@ -9,10 +8,22 @@ describe('BadgeGroup', () => {
   });
 
   it('create a badge-group', () => {
-    wrapper = mount(BadgeGroup);
+    wrapper = mount(BadgeTestComponent);
 
     expect(wrapper.hasClass('zan-badge-group')).to.be.true;
-    expect(wrapper.instance().activeKey).to.equal(0);
-    expect(wrapper.data().badges.length).to.equal(0);
+
+    expect(wrapper.vNode.child.activeKey).to.equal(0);
+    expect(wrapper.vNode.child.badges.length).to.equal(2);
+  });
+
+  it('emit a click event when click badge', () => {
+    wrapper = mount(BadgeTestComponent);
+
+    const badge = wrapper.find('.zan-badge')[0];
+    const eventStub = sinon.stub(badge.vNode.child, '$emit');
+    badge.simulate('click');
+
+    expect(eventStub.calledWith('click')).to.be.true;
   });
 });
+
