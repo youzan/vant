@@ -1,5 +1,6 @@
-<template><section class="demo-dialog"><h1 class="demo-title">dialog</h1><example-block title="消息提示">
+<template><section class="demo-dialog"><h1 class="demo-title">Dialog 弹出框</h1><example-block title="消息提示">
                 <zan-button @click="handleAlertClick">alert</zan-button>
+<zan-button @click="handleAlert2Click">无标题alert</zan-button>
 
 
 
@@ -31,6 +32,14 @@ export default {
       Dialog.alert({
         title: 'alert标题',
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
+      }).then((action) => {
+        console.log(action);
+      });
+    },
+
+    handleAlert2Click() {
+      Dialog.alert({
+        message: '无标题alert'
       }).then((action) => {
         console.log(action);
       });

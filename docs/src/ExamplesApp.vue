@@ -1,11 +1,8 @@
 <template>
   <div class="examples-container">
-    <router-link class="page-back" v-if="visible" :to="'/'">
-      <i class="zan-icon zan-icon-arrow"></i>
-    </router-link>
     <router-view></router-view>
     <div class="footer">
-      <img src="https://b.yzcdn.cn/v2/image/wap/zanui-logo.png" alt="logo" class="zanui-logo">
+      <img src="https://img.yzcdn.cn/upload_files/2017/04/18/FjupTe9o1apJhJr5qR-4ucXqPs7e.png" alt="logo" class="zanui-logo">
     </div>
   </div>
 </template>
@@ -51,7 +48,7 @@ export default {
   }
 
   .examples-container {
-    padding-bottom: 10px;
+    padding-bottom: 54px;
     height: 100%;
     overflow: auto;
     background: #f9fafb;
@@ -76,22 +73,26 @@ export default {
   }
 
   .demo-title {
-    font-size: 20px;
-    margin: 20px auto;
-    text-align: center;
+    font-size: 16px;
     display: block;
     line-height: 1;
+    padding: 20px 15px 10px;
   }
 
   .demo-sub-title {
-    font-size: 16px;
+    font-size: 14px;
+    color: #999;
     padding: 10px 15px;
   }
 
   .footer {
     margin-top: 30px;
     width: 100%;
-    padding-bottom: 15px;
+    padding: 10px 0 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #f9fafb;
   }
 
   .zanui-logo {

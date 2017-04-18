@@ -1,4 +1,4 @@
-<template><section class="demo-icon"><h1 class="demo-title">icon</h1><example-block title="所有Icon">
+<template><section class="demo-icon"><h1 class="demo-title">Icon 图标</h1><example-block title="所有Icon">
                 <zan-row>
   <zan-col span="8">
    <zan-icon name="qr-invalid"></zan-icon>

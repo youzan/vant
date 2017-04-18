@@ -1,4 +1,4 @@
-<template><section class="demo-switch"><h1 class="demo-title">switch</h1><example-block title="基础用法">
+<template><section class="demo-switch"><h1 class="demo-title">Switch 开关</h1><example-block title="基础用法">
                 <zan-switch class="some-customized-class" v-model="switchState1"></zan-switch>
 <div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
 

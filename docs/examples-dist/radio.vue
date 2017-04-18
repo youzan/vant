@@ -1,4 +1,4 @@
-<template><section class="demo-radio"><h1 class="demo-title">radio</h1><example-block title="基础用法">
+<template><section class="demo-radio"><h1 class="demo-title">Radio 单选框</h1><example-block title="基础用法">
                 <div class="zan-radios">
   <zan-radio name="1" v-model="radio1">单选框1</zan-radio>
   <zan-radio name="2" v-model="radio1">单选框2</zan-radio>

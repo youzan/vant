@@ -1,4 +1,4 @@
-<template><section class="demo-waterfall"><h1 class="demo-title">waterfall</h1><example-block title="基础用法">
+<template><section class="demo-waterfall"><h1 class="demo-title">Waterfall 瀑布流</h1><example-block title="基础用法">
                 <div class="waterfall">
   <div v-waterfall-lower="loadMore" v-waterfall-upper="loadMoreUpper" waterfall-disabled="isWaterfallDisabled" waterfall-offset="400">
     <div class="waterfall-item" v-for="item in list" style="text-align: center;">

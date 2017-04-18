@@ -1,4 +1,4 @@
-<template><section class="demo-lazyload"><h1 class="demo-title">lazyload</h1><example-block title="基础用法">
+<template><section class="demo-lazyload"><h1 class="demo-title">Lazyload 图片懒加载</h1><example-block title="基础用法">
                 <ul class="image-list" ref="container">
   <li v-for="img in imageList">
     <img class="lazy-img" v-lazy="img">

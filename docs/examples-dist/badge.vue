@@ -1,4 +1,4 @@
-<template><section class="demo-badge"><h1 class="demo-title">badge</h1><example-block title="基础用法">
+<template><section class="demo-badge"><h1 class="demo-title">Badge 徽章</h1><example-block title="基础用法">
                 <zan-badge-group>
   <zan-badge title="热销榜" info="8" url="http://baidu.com" @click="onItemClick"></zan-badge>
   <zan-badge title="花式寿司" info="99" @click="onItemClick"></zan-badge>

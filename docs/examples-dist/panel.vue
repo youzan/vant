@@ -1,4 +1,4 @@
-<template><section class="demo-panel"><h1 class="demo-title">panel</h1><example-block title="基础用法">
+<template><section class="demo-panel"><h1 class="demo-title">Panel 面板</h1><example-block title="基础用法">
                 <zan-panel title="标题" desc="标题描述" status="状态">
   <div class="panel-content">
     panel内容

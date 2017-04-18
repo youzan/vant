@@ -1,4 +1,4 @@
-<template><section class="demo-tab"><h1 class="demo-title">tab</h1><example-block title="基础用法">
+<template><section class="demo-tab"><h1 class="demo-title">Tab 标签</h1><example-block title="基础用法">
                 <zan-tabs>
   <zan-tab title="选项一">内容一</zan-tab>
   <zan-tab title="选项二">内容二</zan-tab>

@@ -59,6 +59,7 @@ export default {
       color: #333;
       line-height: 56px;
       position: relative;
+      user-select: none;
 
       @m open {
         color: #999;
@@ -68,6 +69,7 @@ export default {
         color: #333;
         display: block;
         border-top: 1px solid #e5e5e5;
+        user-select: none;
       }
 
       .zan-icon-arrow {

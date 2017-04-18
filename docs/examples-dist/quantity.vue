@@ -1,4 +1,4 @@
-<template><section class="demo-quantity"><h1 class="demo-title">quantity</h1><example-block title="基础用法">
+<template><section class="demo-quantity"><h1 class="demo-title">Quantity 数量选择</h1><example-block title="基础用法">
                 <zan-quantity v-model="quantity1"></zan-quantity>
 <p class="curr-quantity">当前值：{{ quantity1 }}</p>
 

@@ -2,7 +2,7 @@
 @component-namespace demo {
   @b button {
     .zan-row {
-      padding: 0 20px;
+      padding: 0 15px;
     }
     .zan-col {
       margin-bottom: 10px;

@@ -1,4 +1,4 @@
-<template><section class="demo-checkbox"><h1 class="demo-title">checkbox</h1><example-block title="基础用法">
+<template><section class="demo-checkbox"><h1 class="demo-title">Checkbox 复选框</h1><example-block title="基础用法">
                 <div class="zan-checkbox-wrapper">
   <zan-checkbox v-model="checkbox1">复选框1</zan-checkbox>
 </div>

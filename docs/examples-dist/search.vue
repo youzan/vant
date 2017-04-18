@@ -1,4 +1,4 @@
-<template><section class="demo-search"><h1 class="demo-title">search</h1><example-block title="基础用法">
+<template><section class="demo-search"><h1 class="demo-title">Search 搜索</h1><example-block title="基础用法">
                 <zan-search placeholder="商品名称" @search="goSearch"></zan-search>
 
 

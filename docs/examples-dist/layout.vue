@@ -1,4 +1,4 @@
-<template><section class="demo-layout"><h1 class="demo-title">layout</h1><example-block title="常规用法">
+<template><section class="demo-layout"><h1 class="demo-title">Layout 布局</h1><example-block title="常规用法">
                 <zan-row>
   <zan-col span="8">
     <div class="gray">span: 8</div>

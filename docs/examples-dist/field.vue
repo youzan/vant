@@ -1,4 +1,4 @@
-<template><section class="demo-field"><h1 class="demo-title">field</h1><example-block title="基础用法">
+<template><section class="demo-field"><h1 class="demo-title">Field 输入框</h1><example-block title="基础用法">
                 <zan-cell-group>
   <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></zan-field>
   <zan-field type="password" label="密码：" placeholder="请输入密码" required></zan-field>

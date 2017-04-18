@@ -1,4 +1,4 @@
-<template><section class="demo-tag"><h1 class="demo-title">tag</h1><example-block title="基础用法">
+<template><section class="demo-tag"><h1 class="demo-title">Tag 标记</h1><example-block title="基础用法">
                 <div class="tags-container">
   <zan-tag>返现</zan-tag>
   <zan-tag plain="">返现</zan-tag>

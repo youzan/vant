@@ -1,4 +1,4 @@
-<template><section class="demo-picker"><h1 class="demo-title">picker</h1><example-block title="基础用法">
+<template><section class="demo-picker"><h1 class="demo-title">Picker 选择器</h1><example-block title="基础用法">
                 <zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
 
 

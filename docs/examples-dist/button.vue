@@ -1,4 +1,4 @@
-<template><section class="demo-button"><h1 class="demo-title">button</h1><example-block title="按钮功能">
+<template><section class="demo-button"><h1 class="demo-title">Button 按钮</h1><example-block title="按钮功能">
                 <zan-row>
   <zan-col span="24">
     <zan-button block="">default</zan-button>
@@ -77,7 +77,7 @@
 @component-namespace demo {
   @b button {
     .zan-row {
-      padding: 0 20px;
+      padding: 0 15px;
     }
     .zan-col {
       margin-bottom: 10px;

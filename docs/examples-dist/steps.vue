@@ -1,4 +1,4 @@
-<template><section class="demo-steps"><h1 class="demo-title">steps</h1><example-block title="基础用法">
+<template><section class="demo-steps"><h1 class="demo-title">Steps 步骤条</h1><example-block title="基础用法">
                 <zan-steps :active="active" icon="logistics" icon-class="steps-success" title="等待商家发货" description="等待商家发货等待商家发货等待商家发货等待商家发货等待商家发货">
   <zan-step>买家下单</zan-step>
   <zan-step>商家接单</zan-step>

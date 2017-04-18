@@ -47,8 +47,12 @@ export default {
     }
 
     .zanui-title {
-      font-size: 26px;
-      color: #333;
+      padding-top: 40px;
+      height: 0;
+      overflow: hidden;
+      background: url(https://img.yzcdn.cn/upload_files/2017/04/18/FveNmX6aFsQm1jUhcvBBZn6UrZFi.png) center center no-repeat;
+      background-size: 156px 40px;
+      margin-bottom: 10px;
     }
 
     .zanui-desc {

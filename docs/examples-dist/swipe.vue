@@ -1,4 +1,4 @@
-<template><section class="demo-swipe"><h1 class="demo-title">swipe</h1><example-block title="基础用法">
+<template><section class="demo-swipe"><h1 class="demo-title">Swipe 轮播</h1><example-block title="基础用法">
                 <zan-swipe>
   <zan-swipe-item v-for="img in images">
     <img v-lazy="img" alt="">

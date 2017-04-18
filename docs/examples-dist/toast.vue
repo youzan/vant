@@ -1,4 +1,4 @@
-<template><section class="demo-toast"><h1 class="demo-title">toast</h1><example-block title="基础用法">
+<template><section class="demo-toast"><h1 class="demo-title">Toast 轻提示</h1><example-block title="基础用法">
                 <zan-button @click="showSimpleToast">普通文字提示</zan-button>
 <zan-button @click="showLoadingToast">加载Toast</zan-button>
 <zan-button @click="showSuccessToast">成功</zan-button>

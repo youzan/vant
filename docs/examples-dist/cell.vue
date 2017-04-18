@@ -1,4 +1,4 @@
-<template><section class="demo-cell"><h1 class="demo-title">cell</h1><example-block title="基础用法">
+<template><section class="demo-cell"><h1 class="demo-title">Cell 单元格</h1><example-block title="基础用法">
                 <zan-cell-group>
   <zan-cell title="单元格1" value="单元格1内容">
   </zan-cell>

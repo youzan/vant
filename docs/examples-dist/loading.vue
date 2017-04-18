@@ -1,4 +1,4 @@
-<template><section class="demo-loading"><h1 class="demo-title">loading</h1><example-block title="渐变深色spinner">
+<template><section class="demo-loading"><h1 class="demo-title">Loading 加载</h1><example-block title="渐变深色spinner">
                 <zan-loading class="some-customized-class"></zan-loading>
 
               </example-block><example-block title="">

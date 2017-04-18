@@ -1,4 +1,4 @@
-<template><section class="demo-progress"><h1 class="demo-title">progress</h1><example-block title="基础用法">
+<template><section class="demo-progress"><h1 class="demo-title">Progress 进度条</h1><example-block title="基础用法">
                 <div class="demo-progress__wrapper">
   <zan-progress class="demo-progress__demo1" :percentage="0"></zan-progress>
 </div>

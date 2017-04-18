@@ -1,4 +1,4 @@
-<template><section class="demo-actionsheet"><h1 class="demo-title">actionsheet</h1><example-block title="基础用法">
+<template><section class="demo-actionSheet"><h1 class="demo-title">ActionSheet 行动按钮</h1><example-block title="基础用法">
                 <div class="zan-row">
   <zan-button @click="show1 = true">弹出actionsheet</zan-button>
 </div>

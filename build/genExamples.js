@@ -12,7 +12,7 @@ var parser = markdownIt('default', {
   html: true
 });
 
-var renderVueTemplate = function (html, componentName) {
+var renderVueTemplate = function(html, componentTitle) {
   var $ = cheerio.load(html, {
     decodeEntities: false,
     lowerCaseAttributeNames: false,
@@ -36,12 +36,14 @@ var renderVueTemplate = function (html, componentName) {
     script = '<script>\nimport Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);</script>';
   }
 
-  result = `<template><section class="demo-${componentName}"><h1 class="demo-title">${componentName}</h1>` + output['example-block'] + '</section></template>\n' +
+  var componentName = componentTitle.split(' ')[0];
+  componentName = componentName.slice(0, 1).toLowerCase() + componentName.slice(1);
+  result = `<template><section class="demo-${componentName}"><h1 class="demo-title">${componentTitle}</h1>` + output['example-block'] + '</section></template>\n' +
     output.style + '\n' +
     script;
 
   return result;
-}
+};
 
 function convert(str) {
   str = str.replace(/(&#x)(\w{4});/gi, function($0) {
@@ -94,7 +96,7 @@ for (var i = 0; i < components.length; i++) {
 
   var itemMd = fs.readFileSync(`${docsDir}/examples-docs${item.path}.md`).toString();
   var content = parser.render(itemMd);
-  var result = renderVueTemplate(content, item.path.slice(1));
+  var result = renderVueTemplate(content, item.title);
 
   var exampleVueName = `${docsDir}/examples-dist/${item.path}.vue`;
 
