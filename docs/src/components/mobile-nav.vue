@@ -1,7 +1,7 @@
 <template>
   <div class="mobile-nav-group">
     <div
-      class="mobile-nav-group__title"
+      class="mobile-nav-group__title mobile-nav-group__basetitle"
       :class="{
         'mobile-nav-group__title--open': isOpen
       }"
@@ -15,8 +15,10 @@
           v-if="!navItem.disabled">
           <router-link
             active-class="active"
-            :to="base + navItem.path"
-            v-text="navItem.title">
+            :to="base + navItem.path">
+            <p>
+              {{ navItem.title }}
+            </p>
           </router-link>
           <zan-icon name="arrow"></zan-icon>
         </li>
@@ -50,9 +52,12 @@ export default {
   @b nav-group {
     border-radius: 2px;
     margin-bottom: 15px;
-    padding-left: 20px;
     background-color: #fff;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
+
+    @e basetitle {
+      padding-left: 20px;
+    }
 
     @e title {
       font-size: 16px;
@@ -68,8 +73,17 @@ export default {
       a {
         color: #333;
         display: block;
-        border-top: 1px solid #e5e5e5;
         user-select: none;
+        padding-left: 20px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+        &:active {
+          background: #ECECEC;
+        }
+
+        > p {
+          border-top: 1px solid #e5e5e5;
+        }
       }
 
       .zan-icon-arrow {
