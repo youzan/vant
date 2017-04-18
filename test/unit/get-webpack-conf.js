@@ -16,6 +16,10 @@ const webpackConfig = {
   ],
   postcss: getPostcssPlugin,
   resolve: {
+    modules: [
+      path.resolve(process.cwd(), 'node_modules'),
+      'node_modules'
+    ],
     extensions: [
       '',
       '.js',
