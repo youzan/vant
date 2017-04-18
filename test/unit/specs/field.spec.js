@@ -40,18 +40,39 @@ describe('Field', () => {
     });
   });
 
-  it('input some value to filed', (done) => {
+  it('focus on input', (done) => {
     wrapper = mount(Field, {
-      propsData: {}
+      propsData: {
+        value: ''
+      }
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const input = wrapper.find('.zan-field__control')[0];
-    input.element.focus();
+    input.simulate('focus');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledWith('focus'));
+      done();
+    });
+  });
+
+  it('input something to field', (done) => {
+    wrapper = mount(Field, {
+      propsData: {
+        value: ''
+      }
+    });
+
+    const input = wrapper.find('.zan-field__control')[0];
+
+    input.element.value = 'test';
+    input.simulate('input');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.data().currentValue).to.equal('test');
       done();
     });
   });
@@ -68,7 +89,7 @@ describe('Field', () => {
     expect(wrapper.hasClass('zan-field--hastextarea')).to.be.true;
   });
 
-  it('create a autosize textarea field', () => {
+  it('create a autosize textarea field', (done) => {
     wrapper = mount(Field, {
       propsData: {
         type: 'textarea',
@@ -78,5 +99,20 @@ describe('Field', () => {
 
     expect(wrapper.hasClass('zan-field')).to.be.true;
     expect(wrapper.hasClass('zan-field--autosize')).to.be.true;
+
+    const textarea = wrapper.find('.zan-field__control')[0];
+    const textareaElement = textarea.element;
+    const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
+          parseInt(textareaElement.style.paddingTop, 10)) || 0;
+
+    textareaElement.value = 'test';
+    textarea.simulate('input');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.data().currentValue).to.equal('test');
+      expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
+      done();
+    });
   });
 });
