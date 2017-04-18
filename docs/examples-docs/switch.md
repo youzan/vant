@@ -1,8 +1,15 @@
 <style>
   @component-namespace demo {
     @b switch {
-      .examples {
+      .examples,
+      .example-block  {
         text-align: center;
+      }
+
+      .example-block {
+        .demo-sub-title {
+          text-align: left;
+        }
       }
 
       @e text {
@@ -92,7 +99,7 @@ export default {
 ```
 :::
 
-:::demo 基础用法
+:::demo
 ```html
 <zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
 <div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
@@ -129,7 +136,7 @@ export default {
 
 设置`disabled`属性为`true`，此时开关不可点击。
 
-:::demo
+:::demo 禁用状态
 ```html
 <zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
 <div class="demo-switch__text">ON, DISABLED</div>
@@ -154,7 +161,7 @@ export default {
 
 设置`loading`属性为`true`，此时开关为加载状态，一般用于点击开关时正在向后端发送请求，此时正在loading，请求成功后，结束loading。
 
-:::demo
+:::demo loading状态
 ```html
 <zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
 <div class="demo-switch__text">ON, LOADING</div>

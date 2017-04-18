@@ -133,7 +133,7 @@ module.exports = {
           "list": [
             {
               "path": "/actionsheet",
-              "title": "ActionSheet 行动按钮"
+              "title": "Actionsheet 行动按钮"
             },
             {
               "path": "/toast",

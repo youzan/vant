@@ -64,7 +64,7 @@ export default {
 
 #### 渐变浅色spinner
 
-:::demo
+:::demo 渐变浅色spinner
 ```html
 <div class="demo-loading__example demo-loading__example--with-bg">
   <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
@@ -74,7 +74,7 @@ export default {
 
 #### 单色spinner
 
-:::demo
+:::demo 单色spinner
 ```html
 <zan-loading class="circle-loading" :type="'circle'" :color="'white'"></zan-loading>
 <zan-loading class="circle-loading" :type="'circle'" :color="'black'"></zan-loading>

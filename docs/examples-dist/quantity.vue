@@ -14,7 +14,7 @@
 @component-namespace demo {
   @b quantity {
     .zan-quantity {
-      margin: 15px;
+      margin-left: 15px;
     }
 
     .curr-quantity {

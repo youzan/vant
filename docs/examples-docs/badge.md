@@ -1,3 +1,18 @@
+<style>
+@component-namespace demo {
+  @b badge {
+    .badge-group-wrapper {
+      padding: 30px 20px;
+      background-color: #fff;
+    }
+
+    .zan-badge-group {
+      margin: 0 auto;
+    }
+  }
+}
+</style>
+
 <script>
   export default {
     data() {
@@ -55,12 +70,14 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-badge-group>
-  <zan-badge title="热销榜" info="8" url="http://baidu.com" @click="onItemClick"></zan-badge>
-  <zan-badge title="花式寿司" info="99" @click="onItemClick"></zan-badge>
-  <zan-badge title="火炽寿司" @click="onItemClick"></zan-badge>
-  <zan-badge title="手握寿司" info="199" @click="onItemClick"></zan-badge>
-</zan-badge-group>
+<div class="badge-group-wrapper">
+  <zan-badge-group>
+    <zan-badge title="热销榜" info="8" url="http://baidu.com" @click="onItemClick"></zan-badge>
+    <zan-badge title="花式寿司" info="99" @click="onItemClick"></zan-badge>
+    <zan-badge title="火炽寿司" @click="onItemClick"></zan-badge>
+    <zan-badge title="手握寿司" info="199" @click="onItemClick"></zan-badge>
+  </zan-badge-group>
+</div>
 ```
 :::
 
@@ -70,12 +87,14 @@ export default {
 
 :::demo 选中某个badge
 ```html
-<zan-badge-group :active-key="2">
-  <zan-badge title="热销榜" info="8" url="http://baidu.com" @click="onItemClick"></zan-badge>
-  <zan-badge title="花式寿司" info="99" @click="onItemClick"></zan-badge>
-  <zan-badge title="火炽寿司" @click="onItemClick"></zan-badge>
-  <zan-badge title="手握寿司" info="199" @click="onItemClick"></zan-badge>
-</zan-badge-group>
+<div class="badge-group-wrapper">
+  <zan-badge-group :active-key="2">
+    <zan-badge title="热销榜" info="8" url="http://baidu.com" @click="onItemClick"></zan-badge>
+    <zan-badge title="花式寿司" info="99" @click="onItemClick"></zan-badge>
+    <zan-badge title="火炽寿司" @click="onItemClick"></zan-badge>
+    <zan-badge title="手握寿司" info="199" @click="onItemClick"></zan-badge>
+  </zan-badge-group>
+</div>
 ```
 :::
 

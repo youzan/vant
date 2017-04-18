@@ -1,25 +1,19 @@
-<template><section class="demo-actionSheet"><h1 class="demo-title">ActionSheet 行动按钮</h1><example-block title="基础用法">
-                <div class="zan-row">
-  <zan-button @click="show1 = true">弹出actionsheet</zan-button>
-</div>
+<template><section class="demo-actionsheet"><h1 class="demo-title">Actionsheet 行动按钮</h1><example-block title="基础用法">
+                <zan-button @click="show1 = true">弹出actionsheet</zan-button>
 <zan-actionsheet v-model="show1" :actions="actions1">
 </zan-actionsheet>
 
 
 
               </example-block><example-block title="带取消按钮的ActionSheet">
-                <div class="zan-row">
-  <zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
-</div>
+                <zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
 <zan-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
 </zan-actionsheet>
 
 
 
               </example-block><example-block title="带标题的ActionSheet">
-                <div class="zan-row">
-  <zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
-</div>
+                <zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
 <zan-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
   <p>一些内容</p>
 </zan-actionsheet>

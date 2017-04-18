@@ -99,9 +99,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<div class="zan-row">
-  <zan-button @click="show1 = true">弹出actionsheet</zan-button>
-</div>
+<zan-button @click="show1 = true">弹出actionsheet</zan-button>
 <zan-actionsheet v-model="show1" :actions="actions1">
 </zan-actionsheet>
 
@@ -150,9 +148,7 @@ export default {
 
 :::demo 带取消按钮的ActionSheet
 ```html
-<div class="zan-row">
-  <zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
-</div>
+<zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
 <zan-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
 </zan-actionsheet>
 
@@ -195,9 +191,7 @@ export default {
 
 :::demo 带标题的ActionSheet
 ```html
-<div class="zan-row">
-  <zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
-</div>
+<zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
 <zan-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
   <p>一些内容</p>
 </zan-actionsheet>

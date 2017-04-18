@@ -1,4 +1,4 @@
-<template><section class="demo-imagePreview"><h1 class="demo-title">ImagePreview 图片预览</h1><example-block title="">
+<template><section class="demo-image-preview"><h1 class="demo-title">ImagePreview 图片预览</h1><example-block title="基础用法">
                 <zan-button @click="handleImagePreview">预览图片</zan-button>
 
 

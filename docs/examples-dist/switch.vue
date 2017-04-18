@@ -5,14 +5,14 @@
 
 
 
-              </example-block><example-block title="基础用法">
+              </example-block><example-block title="">
                 <zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
 <div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
 
 
 
 
-              </example-block><example-block title="">
+              </example-block><example-block title="禁用状态">
                 <zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
 <div class="demo-switch__text">ON, DISABLED</div>
 
@@ -21,7 +21,7 @@
 
 
 
-              </example-block><example-block title="">
+              </example-block><example-block title="loading状态">
                 <zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
 <div class="demo-switch__text">ON, LOADING</div>
 
@@ -34,8 +34,15 @@
 <style>
   @component-namespace demo {
     @b switch {
-      .examples {
+      .examples,
+      .example-block  {
         text-align: center;
+      }
+
+      .example-block {
+        .demo-sub-title {
+          text-align: left;
+        }
       }
 
       @e text {

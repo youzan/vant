@@ -77,7 +77,9 @@
     @e control {
       border: 0;
       font-size: 14px;
-      line-height: 22px;
+      line-height: 24px;
+      height: 24px;
+      padding: 0;
       display: block;
       width: 100%;
       resize: none;

@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var cheerio = require('cheerio');
 var chalk = require('chalk');
+var decamelize = require('decamelize');
 var striptags = require('./strip-tags');
 var navs = require('../docs/src/nav.config.js');
 navs = navs['zh-CN'];
@@ -37,7 +38,7 @@ var renderVueTemplate = function(html, componentTitle) {
   }
 
   var componentName = componentTitle.split(' ')[0];
-  componentName = componentName.slice(0, 1).toLowerCase() + componentName.slice(1);
+  componentName = decamelize(componentName, '-');
   result = `<template><section class="demo-${componentName}"><h1 class="demo-title">${componentTitle}</h1>` + output['example-block'] + '</section></template>\n' +
     output.style + '\n' +
     script;

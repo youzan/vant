@@ -49,7 +49,7 @@ export default {
 
 #### 基础用法
 
-:::demo 
+:::demo 基础用法
 ```html
 <div class="uploader-container">
   <zan-uploader :after-read="logContent">

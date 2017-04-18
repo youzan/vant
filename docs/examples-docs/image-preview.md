@@ -41,7 +41,7 @@ import { ImagePreview } from '@youzan/zanui-vue';
 
 #### 基础用法
 
-:::demo
+:::demo 基础用法
 ```html
 <zan-button @click="handleImagePreview">预览图片</zan-button>
 

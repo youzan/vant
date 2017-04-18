@@ -51,7 +51,7 @@ export default {
     padding-bottom: 54px;
     height: 100%;
     overflow: auto;
-    background: #f9fafb;
+    background: #f8f8f8;
     position: relative;
   }
 
@@ -76,13 +76,13 @@ export default {
     font-size: 16px;
     display: block;
     line-height: 1;
-    padding: 20px 15px 10px;
+    padding: 20px 15px 0;
   }
 
   .demo-sub-title {
     font-size: 14px;
     color: #999;
-    padding: 10px 15px;
+    padding: 30px 15px 10px;
   }
 
   .footer {
@@ -92,7 +92,7 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
-    background: #f9fafb;
+    background: #f8f8f8;
   }
 
   .zanui-logo {

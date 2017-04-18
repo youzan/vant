@@ -1,12 +1,12 @@
 <template><section class="demo-loading"><h1 class="demo-title">Loading 加载</h1><example-block title="渐变深色spinner">
                 <zan-loading class="some-customized-class"></zan-loading>
 
-              </example-block><example-block title="">
+              </example-block><example-block title="渐变浅色spinner">
                 <div class="demo-loading__example demo-loading__example--with-bg">
   <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
 </div>
 
-              </example-block><example-block title="">
+              </example-block><example-block title="单色spinner">
                 <zan-loading class="circle-loading" :type="'circle'" :color="'white'"></zan-loading>
 <zan-loading class="circle-loading" :type="'circle'" :color="'black'"></zan-loading>
 
