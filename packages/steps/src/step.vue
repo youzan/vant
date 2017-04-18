@@ -24,9 +24,7 @@ export default {
       const index = this.$parent.steps.indexOf(this);
       const active = this.$parent.active;
 
-      if (index === -1) {
-        return '';
-      } else if (index < active) {
+      if (index < active) {
         return 'finish';
       } else if (index === active) {
         return 'process';
