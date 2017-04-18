@@ -51,7 +51,7 @@ export default {
     window.addEventListener('scroll', () => {
       clearTimeout(timer);
       const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-      let timer = setTimeout(() => {
+      timer = setTimeout(() => {
         _this.scrollTop = scrollTop;
       }, 500);
     });
