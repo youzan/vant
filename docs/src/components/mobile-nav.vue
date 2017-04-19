@@ -8,7 +8,7 @@
       @click="isOpen = !isOpen">
       {{group.groupName}}
     </div>
-    <ul class="pure-menu-list" v-show="isOpen">
+    <ul class="mobile-nav-group__list" :class="{ 'mobile-nav-group__list--open': isOpen }">
       <template v-for="navItem in group.list">
         <li
           class="mobile-nav-group__title"
@@ -92,6 +92,15 @@ export default {
         line-height: 1;
         top: 24px;
         right: 20px;
+      }
+    }
+
+    @e list {
+      height: 0;
+      transition: height .5s ease-out;
+
+      @m open {
+        height: auto;
       }
     }
 
