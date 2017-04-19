@@ -8,9 +8,9 @@ export default {
   computed: {
     mobileUrl() {
       if (process.env.NODE_ENV === 'production') {
-        return '/vue/examples#' + location.pathname.slice(4);
+        return '/zanui/vue/examples#' + location.pathname;
       } else {
-        return '/examples.html#' + location.pathname.slice(4);
+        return '/examples.html#' + location.pathname;
       }
     }
   },

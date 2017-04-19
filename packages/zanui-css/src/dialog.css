@@ -25,7 +25,6 @@
 
     @e content {
       padding: 15px 20px;
-      min-height: 36px;
       position: relative;
 
       &::after {
@@ -71,6 +70,7 @@
     }
 
     @e btn {
+      font-size: 16px;
       line-height: 40px;
       border: 0;
       background-color: #fff;

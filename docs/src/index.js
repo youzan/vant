@@ -6,6 +6,7 @@ import routes from './router.config';
 import ZanUI from 'src/index.js';
 import packageJson from '../../package.json';
 
+const isProduction = process.env.NODE_ENV === 'production';
 const global = {
   version: packageJson.version
 };
@@ -34,7 +35,7 @@ routesConfig.push({
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/zanui/vue',
+  base: isProduction ? '/zanui/vue/' : __dirname,
   routes: routesConfig
 });
 
@@ -43,7 +44,7 @@ router.beforeEach((route, redirect, next) => {
     window.scrollTo(0, 0);
   }
 
-  const pathname = process.env.NODE_ENV === 'production' ? '/vue/examples' : '/examples.html';
+  const pathname = isProduction ? '/vue/examples' : '/examples.html';
   if (isMobile()) {
     window.location.replace(pathname);
     return;

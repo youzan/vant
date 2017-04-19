@@ -15,6 +15,7 @@ Vue.use(ZanUI.Lazyload, {
 });
 Vue.use(VueRouter);
 
+const isProduction = process.env.NODE_ENV === 'production';
 const routesConfig = routes(navConfig, true);
 routesConfig.push({
   path: '/',
@@ -22,7 +23,7 @@ routesConfig.push({
 });
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vue',
+  base: isProduction ? '/zanui/vue/' : __dirname,
   routes: routesConfig
 });
 
