@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/van-toast",
+  "version": "0.0.1",
+  "description": "toast component",
+  "main": "./index.js",
+  "author": "jiangruowei",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

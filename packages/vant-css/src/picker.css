@@ -1,0 +1,143 @@
+@import './mixins/border_retina.css';
+
+@component-namespace van {
+  @b picker {
+    overflow: hidden;
+    background-color: #fff;
+
+    @e toolbar {
+      height: 40px;
+      line-height: 40px;
+      overflow: hidden;
+      padding: 0 15px;
+      position: relative;
+
+      &::after {
+        @mixin border-retina (top, bottom);
+      }
+    }
+
+    @e cancel {
+      color: #3388FF;
+      float: left;
+    }
+
+    @e confirm {
+      color: #3388FF;
+      float: right;
+    }
+
+    @e columns {
+      position: relative;
+      overflow: hidden;
+
+      @m 1 {
+        .van-picker-column {
+          width: 100%;
+        }
+      }
+
+      @m 2 {
+        .van-picker-column {
+          width: 50%;
+        }
+      }
+
+      @m 3 {
+        .van-picker-column {
+          width: 33.333%;
+        }
+      }
+
+      @m 4 {
+        .van-picker-column {
+          width: 25%;
+        }
+      }
+
+      @m 5 {
+        .van-picker-column {
+          width: 20%;
+        }
+      }
+    }
+  }
+
+  .van-picker-center-highlight {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    margin-top: -18px;
+    pointer-events: none;
+  }
+
+  .van-picker-center-highlight:before,
+  .van-picker-center-highlight:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: #eaeaea;
+    display: block;
+    van-index: 15;
+    transform: scaleY(0.5);
+  }
+
+  .van-picker-center-highlight:before {
+    left: 0;
+    top: 0;
+    bottom: auto;
+    right: auto;
+  }
+
+  .van-picker-center-highlight:after {
+    left: 0;
+    bottom: 0;
+    right: auto;
+    top: auto;
+  }
+
+  @b picker-column {
+    font-size: 18px;
+    overflow: hidden;
+    position: relative;
+    max-height: 100%;
+    float: left;
+    text-align: center;
+
+    @e item {
+      height: 44px;
+      line-height: 44px;
+      padding: 0 10px;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #707274;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      transition-duration: .3s;
+      backface-visibility: hidden;
+
+      @m selected {
+        color: #000;
+        transform: translate3d(0, 0, 0) rotateX(0);
+      }
+    }
+  }
+
+  .picker-column-wrapper {
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    backface-visibility: hidden;
+  }
+
+  .picker-column-wrapper.dragging,
+  .picker-column-wrapper.dragging .picker-item {
+    transition-duration: 0s;
+  }
+}

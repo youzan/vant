@@ -1,0 +1,56 @@
+@import './common/var.css';
+
+@component-namespace van {
+  @b swipe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    @e indicators {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @e indicator {
+      width: 5px;
+      height: 5px;
+      display: inline-block;
+      border-radius: 100%;
+      background: #999;
+      opacity: .8;
+      margin: 0 3px;
+      z-index: 1;
+
+      @m active {
+        background: $c-orange;
+        opacity: 1;
+      }
+    }
+
+    @e items {
+      position: relative;
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+    }
+  }
+
+  @b swipe-item {
+    display: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &:first-child {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/van-image-pewview",
+  "version": "0.0.1",
+  "description": "image preview component",
+  "main": "./index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

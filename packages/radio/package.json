@@ -1,0 +1,10 @@
+{
+  "name": "@youzan/van-radio",
+  "version": "0.0.1",
+  "description": "radio component",
+  "main": "./index.js",
+  "author": "zhangmin <zhangmin@youzan.com>",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@youzan/zanui-css",
+  "version": "0.1.2",
+  "description": "zanui css.",
+  "main": "lib/index.css",
+  "style": "lib/index.css",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "build:icons": "sh scripts/build.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-postcss": "^6.1.1",
+    "postcss-salad": "^1.0.5"
+  },
+  "dependencies": {}
+}

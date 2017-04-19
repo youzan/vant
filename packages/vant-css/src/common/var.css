@@ -1,0 +1,40 @@
+/* UI标准色 */
+$c-white: #fff;
+$c-black: #333;
+$c-green: #06bf04;
+$c-green-wx: #4b0;
+$c-red: #ed5050;
+$c-gray: #c9c9c9;
+$c-gray-light: #e5e5e5;
+$c-gray-darker: #666;
+$c-gray-dark: #999;
+$c-yellow: #f09000;
+$c-yellow-light: #fcff00;
+$c-orange: #f60;
+$c-orange-dark: #f15a0c;
+$c-blue: #38f;
+
+$c-background: #f8f8f8;
+
+/* 按钮颜色 */
+$button-primary-color: $c-white;
+$button-primary-background-color: $c-green-wx;
+$button-primary-border-color: #0a0;
+
+$button-default-color: $c-black;
+$button-default-background-color: $c-white;
+$button-default-border-color: #bbb;
+
+$button-danger-color: $c-white;
+$button-danger-background-color: #f44;
+$button-danger-border-color: #e33;
+
+$button-disabled-color: $c-gray-dark;
+$button-disabled-background-color: $c-gray-light;
+$button-disabled-border-color: #cacaca;
+
+$bottom-action-button-default-color: $c-white;
+$bottom-action-button-default-background-color: #f85;
+
+$bottom-action-button-primary-color: $c-white;
+$bottom-action-button-primary-background-color: #f44;
