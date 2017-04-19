@@ -12,7 +12,7 @@
           <a href="http://react.fe.qima-inc.com/" class="page-header__link">PC端</a>
         </li>
         <li class="page-header__item">
-          <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">移动端</a>
+          <a href="http://zanui.qima-inc.com/zanui/vue" class="page-header__link page-header__link--active">移动端</a>
         </li>
         <li class="page-header__item">
           <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">微信小程序</a>
@@ -21,7 +21,7 @@
     </div>
     <ul class="page-header__subnavs" :class="{ 'page-header__subnavs--shadow': scrollTop > 0 }">
       <li class="page-header__item">
-        <a href="http://zanui.qima-inc.com/vue" class="page-header__link page-header__link--active">基础组件</a>
+        <a href="http://zanui.qima-inc.com/zanui/vue" class="page-header__link page-header__link--active">基础组件</a>
       </li>
       <li class="page-header__item">
         <a href="http://zanui.qima-inc.com/captain" class="page-header__link">业务组件</a>
@@ -30,7 +30,7 @@
         <span class="page-header__link">V{{ version }}</span>
       </li>
       <li class="page-header__item">
-        <a href="#" class="page-header__github" target="_blank"></a>
+        <a href="https://github.com/youzan/vant" class="page-header__github" target="_blank"></a>
       </li>
     </ul>
   </div>
