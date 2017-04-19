@@ -9,7 +9,7 @@
 ## 一、安装
 
 ```shell
-ynpm install vant
+npm i -S vant
 ```
  
 ## 二、使用
