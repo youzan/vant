@@ -1738,7 +1738,7 @@ debug@~0.7.4:
   version "0.7.4"
   resolved "http://registry.npm.qima-inc.com/debug/download/debug-0.7.4.tgz#06e1ea8082c2cb14e39806e22e2f6f757f92af39"
 
-decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2:
+decamelize@^1.0.0, decamelize@^1.1.1, decamelize@^1.1.2, decamelize@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.qima-inc.com/decamelize/download/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
@@ -2175,6 +2175,17 @@ eslint-import-resolver-node@^0.2.0:
     debug "^2.2.0"
     object-assign "^4.0.1"
     resolve "^1.1.6"
+
+eslint-loader@^1.7.1:
+  version "1.7.1"
+  resolved "http://registry.npm.qima-inc.com/eslint-loader/download/eslint-loader-1.7.1.tgz#50b158dd6272dcefb97e984254837f81a5802ce0"
+  dependencies:
+    find-cache-dir "^0.1.1"
+    loader-fs-cache "^1.0.0"
+    loader-utils "^1.0.2"
+    object-assign "^4.0.1"
+    object-hash "^1.1.4"
+    rimraf "^2.6.1"
 
 eslint-module-utils@^2.0.0:
   version "2.0.0"
@@ -3952,6 +3963,13 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
+loader-fs-cache@^1.0.0:
+  version "1.0.1"
+  resolved "http://registry.npm.qima-inc.com/loader-fs-cache/download/loader-fs-cache-1.0.1.tgz#56e0bf08bd9708b26a765b68509840c8dec9fdbc"
+  dependencies:
+    find-cache-dir "^0.1.1"
+    mkdirp "0.5.1"
+
 loader-runner@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.qima-inc.com/loader-runner/download/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
@@ -4642,6 +4660,10 @@ object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
 object-component@0.0.3:
   version "0.0.3"
   resolved "http://registry.npm.qima-inc.com/object-component/download/object-component-0.0.3.tgz#f0c69aa50efc95b866c186f400a33769cb2f1291"
+
+object-hash@^1.1.4:
+  version "1.1.8"
+  resolved "http://registry.npm.qima-inc.com/object-hash/download/object-hash-1.1.8.tgz#28a659cf987d96a4dabe7860289f3b5326c4a03c"
 
 object-keys@^1.0.10, object-keys@^1.0.8:
   version "1.0.11"
