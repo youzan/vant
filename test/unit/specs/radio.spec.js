@@ -11,7 +11,7 @@ describe('RadioGroup', () => {
   it('create a radio-group', () => {
     wrapper = mount(RadioTestComponent);
 
-    expect(wrapper.hasClass('zan-radio-group')).to.be.true;
+    expect(wrapper.hasClass('van-radio-group')).to.be.true;
 
     expect(wrapper.vNode.child.value).to.equal('1');
     expect(wrapper.vNode.child.disabled).to.be.false;
@@ -40,7 +40,7 @@ describe('RadioGroup', () => {
 
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
-    const uncheckedRadioLabel = wrapper.find('.zan-radio')[1].find('.zan-radio__label')[0];
+    const uncheckedRadioLabel = wrapper.find('.van-radio')[1].find('.van-radio__label')[0];
     uncheckedRadioLabel.simulate('click');
 
     wrapper.update();
@@ -67,8 +67,8 @@ describe('Radio', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-radio')).to.be.true;
-    expect(wrapper.hasClass('zan-radio--disabled')).to.be.false;
+    expect(wrapper.hasClass('van-radio')).to.be.true;
+    expect(wrapper.hasClass('van-radio--disabled')).to.be.false;
     expect(wrapper.instance().currentValue).to.equal('1');
     expect(wrapper.instance().isDisabled).to.be.false;
   });
@@ -82,7 +82,7 @@ describe('Radio', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-radio')).to.be.true;
+    expect(wrapper.hasClass('van-radio')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     wrapper.simulate('click');
@@ -103,10 +103,10 @@ describe('Radio', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-radio')).to.be.true;
+    expect(wrapper.hasClass('van-radio')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const checkboxLabel = wrapper.find('.zan-radio__label')[0];
+    const checkboxLabel = wrapper.find('.van-radio__label')[0];
     checkboxLabel.simulate('click');
 
     wrapper.update();
@@ -126,12 +126,12 @@ describe('Radio', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-radio')).to.be.true;
-    expect(wrapper.hasClass('zan-radio--disabled')).to.be.true;
+    expect(wrapper.hasClass('van-radio')).to.be.true;
+    expect(wrapper.hasClass('van-radio--disabled')).to.be.true;
     expect(wrapper.instance().currentValue).to.equal('1');
     expect(wrapper.instance().isDisabled).to.be.true;
 
-    const checkboxLabel = wrapper.find('.zan-radio__label')[0];
+    const checkboxLabel = wrapper.find('.van-radio__label')[0];
     checkboxLabel.simulate('click');
 
     expect(wrapper.instance().currentValue).to.equal('1');

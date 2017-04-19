@@ -15,8 +15,8 @@ describe('Icon', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-icon')).to.be.true;
-    expect(wrapper.hasClass('zan-icon-arrow')).to.be.true;
+    expect(wrapper.hasClass('van-icon')).to.be.true;
+    expect(wrapper.hasClass('van-icon-arrow')).to.be.true;
   });
 
   it('emit a click event', () => {

@@ -1,30 +1,30 @@
 <template>
   <transition name="actionsheet-float">
-    <div class="zan-actionsheet" :class="[ title ? 'zan-actionsheet--withtitle' : '' ]" v-show="currentValue">
-      <div class="zan-actionsheet__header" v-if="title">
+    <div class="van-actionsheet" :class="[ title ? 'van-actionsheet--withtitle' : '' ]" v-show="currentValue">
+      <div class="van-actionsheet__header" v-if="title">
         <h3 v-text="title"></h3>
-        <zan-icon name="close" @click.stop="currentValue = false"></zan-icon>
+        <van-icon name="close" @click.stop="currentValue = false"></van-icon>
       </div>
       <template v-if="!title">
-        <ul class="zan-actionsheet__list">
+        <ul class="van-actionsheet__list">
           <li
             v-for="item in actions"
-            class="zan-actionsheet__item"
-            :class="[item.className, item.loading ? 'zan-actionsheet__item--loading' : '']"
+            class="van-actionsheet__item"
+            :class="[item.className, item.loading ? 'van-actionsheet__item--loading' : '']"
             @click.stop="handleItemClick(item)">
             <template v-if="!item.loading">
-              <span class="zan-actionsheet__name">{{ item.name }}</span>
-              <span class="zan-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+              <span class="van-actionsheet__name">{{ item.name }}</span>
+              <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
             </template>
             <template v-else>
-              <zan-loading class="zan-actionsheet__loading" type="circle" color="black"></zan-loading>
+              <van-loading class="van-actionsheet__loading" type="circle" color="black"></van-loading>
             </template>
           </li>
         </ul>
-        <a class="zan-actionsheet__button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
+        <a class="van-actionsheet__button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
       </template>
       <template v-else>
-        <div class="zan-actionsheet__content">
+        <div class="van-actionsheet__content">
           <slot></slot>
         </div>
       </template>
@@ -38,7 +38,7 @@ import ZanLoading from 'packages/loading';
 import ZanIcon from 'packages/icon';
 
 export default {
-  name: 'zan-actionsheet',
+  name: 'van-actionsheet',
 
   mixins: [Popup],
 

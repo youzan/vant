@@ -16,19 +16,19 @@ describe('Tabs', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-tabs')).to.be.true;
-    expect(wrapper.hasClass('zan-tabs--card')).to.be.true;
+    expect(wrapper.hasClass('van-tabs')).to.be.true;
+    expect(wrapper.hasClass('van-tabs--card')).to.be.true;
   });
 
   it('create a tabs with four tab', () => {
     // wrapper = mount(TabsTestComponent);
 
-    // expect(wrapper.hasClass('zan-tabs')).to.be.true;
-    // expect(wrapper.hasClass('zan-tabs--line')).to.be.true;
+    // expect(wrapper.hasClass('van-tabs')).to.be.true;
+    // expect(wrapper.hasClass('van-tabs--line')).to.be.true;
 
     // const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
-    // const tabTitle = wrapper.find('.zan-tab__pane')[2];
+    // const tabTitle = wrapper.find('.van-tab__pane')[2];
     // tabTitle.simulate('click');
 
     // wrapper.vm.$nextTick(() => {

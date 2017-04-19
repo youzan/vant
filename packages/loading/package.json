@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-loading",
+  "name": "@youzan/van-loading",
   "version": "0.0.1",
   "description": "loading component",
   "main": "./lib/index.js",

@@ -1,18 +1,18 @@
 <template><section class="demo-swipe"><h1 class="demo-title">Swipe 轮播</h1><example-block title="基础用法">
-                <zan-swipe>
-  <zan-swipe-item v-for="img in images">
+                <van-swipe>
+  <van-swipe-item v-for="img in images">
     <img v-lazy="img" alt="">
-  </zan-swipe-item>
-</zan-swipe>
+  </van-swipe-item>
+</van-swipe>
 
 
 
               </example-block><example-block title="自动轮播">
-                <zan-swipe auto-play="" @pagechange:end="handlePageEnd">
-  <zan-swipe-item v-for="img in autoImages">
+                <van-swipe auto-play="" @pagechange:end="handlePageEnd">
+  <van-swipe-item v-for="img in autoImages">
     <img v-lazy="img" alt="">
-  </zan-swipe-item>
-</zan-swipe>
+  </van-swipe-item>
+</van-swipe>
 
 
 
@@ -20,7 +20,7 @@
 <style>
 @component-namespace demo {
   @b swipe {
-    .zan-swipe {
+    .van-swipe {
       height: 200px;
 
       img {

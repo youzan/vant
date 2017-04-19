@@ -8,7 +8,7 @@
 
 ```js
 import Vue from 'vue';
-import { Waterfall } from '@youzan/zanui-vue';
+import { Waterfall } from 'vant';
 
 Waterfall.install(Vue);
 ```
@@ -18,7 +18,7 @@ Waterfall.install(Vue);
 如果你只是想在某个组件中使用`Waterfall`，你可以在对应组件中注册`Waterfall`指令，这样只能在你注册的组件中使用`Waterfall`：
 
 ```js
-import { Waterfall } from '@youzan/zanui-vue';
+import { Waterfall } from 'vant';
 
 export default {
   directives: {

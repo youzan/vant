@@ -5,7 +5,7 @@ import navConfig from './nav.config.js';
 import routes from './router.config';
 import ZanUI from 'src/index';
 
-import 'packages/zanui-css/src/index.css';
+import 'packages/vant-css/src/index.css';
 
 import DemoList from './components/demo-list.vue';
 

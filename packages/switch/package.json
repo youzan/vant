@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-switch",
+  "name": "@youzan/van-switch",
   "version": "0.0.1",
   "description": "switch component",
   "main": "./index.js",

@@ -9,8 +9,8 @@ describe('Progress', () => {
     wrapper = mount(Progress, {
       propsData: propsData
     });
-    bar = wrapper.find('.zan-progress__bar__finished-portion')[0];
-    pivot = wrapper.find('.zan-progress__bar__pivot')[0];
+    bar = wrapper.find('.van-progress__bar__finished-portion')[0];
+    pivot = wrapper.find('.van-progress__bar__pivot')[0];
   };
 
   afterEach(() => {
@@ -20,7 +20,7 @@ describe('Progress', () => {
   it('create active 3% progress bar', () => {
     initProgressBar({ percentage: 3 });
 
-    expect(wrapper.hasClass('zan-progress')).to.be.true;
+    expect(wrapper.hasClass('van-progress')).to.be.true;
     expect(bar.is('span')).to.be.true;
     expect(bar.hasStyle('width', '3%'));
 
@@ -33,7 +33,7 @@ describe('Progress', () => {
   it('create active 35% progress bar', () => {
     initProgressBar({ percentage: 35 });
 
-    expect(wrapper.hasClass('zan-progress')).to.be.true;
+    expect(wrapper.hasClass('van-progress')).to.be.true;
     expect(bar.is('span')).to.be.true;
     expect(bar.hasStyle('width', '35%'));
 
@@ -46,7 +46,7 @@ describe('Progress', () => {
   it('create active 98% progress bar', () => {
     initProgressBar({ percentage: 98 });
 
-    expect(wrapper.hasClass('zan-progress')).to.be.true;
+    expect(wrapper.hasClass('van-progress')).to.be.true;
     expect(bar.is('span')).to.be.true;
     expect(bar.hasStyle('width', '98%'));
 

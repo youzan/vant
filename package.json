@@ -1,9 +1,9 @@
 {
-  "name": "@youzan/zanui-vue",
+  "name": "vant",
   "version": "0.1.2",
   "description": "有赞vue wap组件库",
-  "main": "lib/zanui.js",
-  "style": "lib/zanui-css/index.css",
+  "main": "lib/vant.js",
+  "style": "lib/vant-css/index.css",
   "files": [
     "lib",
     "src",
@@ -14,13 +14,13 @@
     "dev": "npm run build:file && webpack-dev-server --inline --history-api-fallback --hot --config build/webpack.config.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "build:zanui-css": "gulp build --gulpfile packages/zanui-css/gulpfile.js && cp-cli packages/zanui-css/lib lib/zanui-css",
+    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp-cli packages/vant-css/lib lib/vant-css",
     "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
-    "build:zanui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
+    "build:vant": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
     "deploy": "npm run deploy:docs && gh-pages -d docs/dist && rimraf docs/dist",
     "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
-    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:zanui && npm run build:components && npm run build:utils && npm run build:zanui-css",
+    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:vant && npm run build:components && npm run build:utils && npm run build:vant-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "felint lint src/**/*.js packages/**/*.{js,vue} build/**/*.js",
     "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.qima-inc.com:fe/zanui-vue.git"
+    "url": "git@github.com:youzan/vant.git"
   },
   "keywords": [
     "youzan",

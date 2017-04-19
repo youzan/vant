@@ -5,7 +5,7 @@
       color: #06bf04;
     }
 
-    .zan-button {
+    .van-button {
       margin: 15px 0 0 15px;
     }
   }
@@ -32,7 +32,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -40,8 +40,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Steps, Step } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/steps.css';
+import { Steps, Step } from 'vant';
+import 'vant/lib/vant-css/steps.css';
 
 Vue.component(Steps.name, Steps);
 Vue.component(Step.name, Step);
@@ -52,12 +52,12 @@ Vue.component(Step.name, Step);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Steps`组件，这样只能在你注册的组件中使用`Steps`：
 
 ```js
-import { Steps, Step } from '@youzan/zanui-vue';
+import { Steps, Step } from 'vant';
 
 export default {
   components: {
-    'zan-steps': Steps,
-    'zan-step': Step
+    'van-steps': Steps,
+    'van-step': Step
   }
 };
 ```
@@ -68,14 +68,14 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-steps :active="active" icon="logistics" icon-class="steps-success" title="等待商家发货" description="等待商家发货等待商家发货等待商家发货等待商家发货等待商家发货">
-  <zan-step>买家下单</zan-step>
-  <zan-step>商家接单</zan-step>
-  <zan-step>买家提货</zan-step>
-  <zan-step>交易完成</zan-step>
-</zan-steps>
+<van-steps :active="active" icon="logistics" icon-class="steps-success" title="等待商家发货" description="等待商家发货等待商家发货等待商家发货等待商家发货等待商家发货">
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>
+</van-steps>
 
-<zan-button @click="nextStep">下一步</zan-button>
+<van-button @click="nextStep">下一步</van-button>
 
 <script>
 export default {
@@ -101,12 +101,12 @@ export default {
 
 :::demo 只显示步骤条
 ```html
-<zan-steps :active="active">
-  <zan-step>买家下单</zan-step>
-  <zan-step>商家接单</zan-step>
-  <zan-step>买家提货</zan-step>
-  <zan-step>交易完成</zan-step>
-</zan-steps>
+<van-steps :active="active">
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>
+</van-steps>
 ```
 :::
 

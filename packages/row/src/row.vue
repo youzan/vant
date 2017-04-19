@@ -8,11 +8,11 @@
 
 <script>
   export default {
-    name: 'zan-row',
+    name: 'van-row',
     props: {
       prefix: {
         type: String,
-        default: 'zan'
+        default: 'van'
       },
       gutter: [Number, String]
     },

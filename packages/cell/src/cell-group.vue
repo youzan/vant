@@ -1,11 +1,11 @@
 <template>
-  <div class="zan-cell-group">
+  <div class="van-cell-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-cell-group'
+  name: 'van-cell-group'
 };
 </script>

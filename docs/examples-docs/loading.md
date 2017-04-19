@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b loading {
-    .zan-loading {
+    .van-loading {
       margin: 0 auto;
     }
 
@@ -24,7 +24,7 @@
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -32,8 +32,8 @@
 
 ```js
 import Vue from 'vue';
-import { Loading } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/loading.css';
+import { Loading } from 'vant';
+import 'vant/lib/vant-css/loading.css';
 
 Vue.component(Loading.name, Loading);
 ```
@@ -43,11 +43,11 @@ Vue.component(Loading.name, Loading);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Loading`组件，这样只能在你注册的组件中使用`Loading`：
 
 ```js
-import { Loading } from '@youzan/zanui-vue';
+import { Loading } from 'vant';
 
 export default {
   components: {
-    'zan-loading': Loading
+    'van-loading': Loading
   }
 };
 ```
@@ -58,7 +58,7 @@ export default {
 
 :::demo 渐变深色spinner
 ```html
-<zan-loading class="some-customized-class"></zan-loading>
+<van-loading class="some-customized-class"></van-loading>
 ```
 :::
 
@@ -67,7 +67,7 @@ export default {
 :::demo 渐变浅色spinner
 ```html
 <div class="demo-loading__example demo-loading__example--with-bg">
-  <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
+  <van-loading class="some-customized-class" :color="'white'"></van-loading>
 </div>
 ```
 :::
@@ -76,8 +76,8 @@ export default {
 
 :::demo 单色spinner
 ```html
-<zan-loading class="circle-loading" :type="'circle'" :color="'white'"></zan-loading>
-<zan-loading class="circle-loading" :type="'circle'" :color="'black'"></zan-loading>
+<van-loading class="circle-loading" :type="'circle'" :color="'white'"></van-loading>
+<van-loading class="circle-loading" :type="'circle'" :color="'black'"></van-loading>
 ```
 :::
 

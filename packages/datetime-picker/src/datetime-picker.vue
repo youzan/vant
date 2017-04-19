@@ -1,12 +1,12 @@
 <template>
-  <zan-picker
+  <van-picker
     ref="picker"
     :columns="columns"
     :visible-item-count="visibleItemCount"
     @change="handlePickerChange"
     @confirm="handlePickerConfirm"
     showToolbar>
-  </zan-picker>
+  </van-picker>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ import Picker from 'packages/picker';
 const allowedType = ['time', 'date', 'datetime'];
 
 export default {
-  name: 'zan-datetime-picker',
+  name: 'van-datetime-picker',
 
   components: {
     Picker

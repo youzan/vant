@@ -11,7 +11,7 @@ describe('CheckboxGroup', () => {
   it('create a checkbox-group', () => {
     wrapper = mount(CheckboxTestComponent);
 
-    expect(wrapper.hasClass('zan-checkbox-group')).to.be.true;
+    expect(wrapper.hasClass('van-checkbox-group')).to.be.true;
 
     expect(wrapper.vNode.child.value.length).to.equal(2);
     expect(wrapper.vNode.child.disabled).to.be.false;
@@ -40,7 +40,7 @@ describe('CheckboxGroup', () => {
 
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
-    const firstCheckboxLabel = wrapper.find('.zan-checkbox')[0].find('.zan-checkbox__label')[0];
+    const firstCheckboxLabel = wrapper.find('.van-checkbox')[0].find('.van-checkbox__label')[0];
     firstCheckboxLabel.simulate('click');
 
     wrapper.update();
@@ -56,7 +56,7 @@ describe('CheckboxGroup', () => {
 
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
-    const lastCheckboxLabel = wrapper.find('.zan-checkbox')[3].find('.zan-checkbox__label')[0];
+    const lastCheckboxLabel = wrapper.find('.van-checkbox')[3].find('.van-checkbox__label')[0];
     lastCheckboxLabel.simulate('click');
 
     wrapper.update();
@@ -82,7 +82,7 @@ describe('Checkbox', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
     expect(wrapper.instance().currentValue).to.be.false;
     expect(wrapper.instance().isDisabled).to.be.false;
     expect(wrapper.instance().isChecked).to.be.false;
@@ -96,10 +96,10 @@ describe('Checkbox', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const checkboxLabel = wrapper.find('.zan-checkbox__label')[0];
+    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
     checkboxLabel.simulate('click');
 
     wrapper.update();
@@ -118,12 +118,12 @@ describe('Checkbox', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-checkbox')).to.be.true;
-    expect(wrapper.hasClass('zan-checkbox--disabled')).to.be.true;
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
+    expect(wrapper.hasClass('van-checkbox--disabled')).to.be.true;
     expect(wrapper.instance().currentValue).to.be.false;
     expect(wrapper.instance().isDisabled).to.be.true;
 
-    const checkboxLabel = wrapper.find('.zan-checkbox__label')[0];
+    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
     checkboxLabel.simulate('click');
 
     expect(wrapper.instance().currentValue).to.be.false;

@@ -1,10 +1,10 @@
 <template>
-  <zan-steps :active="active">
-    <zan-step>买家下单</zan-step>
-    <zan-step>商家接单</zan-step>
-    <zan-step>买家提货</zan-step>
-    <zan-step>交易完成</zan-step>
-  </zan-steps>
+  <van-steps :active="active">
+    <van-step>买家下单</van-step>
+    <van-step>商家接单</van-step>
+    <van-step>买家提货</van-step>
+    <van-step>交易完成</van-step>
+  </van-steps>
 </template>
 
 <script>
@@ -13,8 +13,8 @@ import Step from 'packages/step';
 
 export default {
   components: {
-    'zan-step': Step,
-    'zan-steps': Steps
+    'van-step': Step,
+    'van-steps': Steps
   },
 
   data() {

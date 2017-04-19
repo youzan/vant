@@ -1,50 +1,50 @@
 <template><section class="demo-layout"><h1 class="demo-title">Layout 布局</h1><example-block title="常规用法">
-                <zan-row>
-  <zan-col span="8">
+                <van-row>
+  <van-col span="8">
     <div class="gray">span: 8</div>
-  </zan-col>
-  <zan-col span="8">
+  </van-col>
+  <van-col span="8">
     <div class="white">span: 8</div>
-  </zan-col>
-  <zan-col span="8">
+  </van-col>
+  <van-col span="8">
     <div class="gray">span: 8</div>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="4">
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="4">
     <div class="gray">span: 4</div>
-  </zan-col>
-  <zan-col span="10" offset="4">
+  </van-col>
+  <van-col span="10" offset="4">
     <div class="gray">offset: 4, span: 10</div>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col offset="12" span="12">
+  </van-col>
+</van-row>
+<van-row>
+  <van-col offset="12" span="12">
     <div class="gray">offset: 12, span: 12</div>
-  </zan-col>
-</zan-row>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="在列元素之间增加间距">
-                <zan-row gutter="10">
-  <zan-col span="8">
+                <van-row gutter="10">
+  <van-col span="8">
     <div class="gray">span: 8</div>
-  </zan-col>
-  <zan-col span="8">
+  </van-col>
+  <van-col span="8">
     <div class="gray">span: 8</div>
-  </zan-col>
-  <zan-col span="8">
+  </van-col>
+  <van-col span="8">
     <div class="gray">span: 8</div>
-  </zan-col>
-</zan-row>
+  </van-col>
+</van-row>
 
               </example-block></section></template>
 <style>
 @component-namespace demo {
   @b layout {
-    .zan-row {
+    .van-row {
       padding: 0 20px;
     }
-    .zan-col {
+    .van-col {
       margin-bottom: 10px;
     }
   }

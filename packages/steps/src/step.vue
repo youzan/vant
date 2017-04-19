@@ -1,19 +1,19 @@
 <template>
-  <div class="zan-step" :class="statusClass">
-    <div class="zan-step__circle-container">
-      <i class="zan-step__circle" v-if="status !== 'process'"></i>
-      <i class="zan-icon zan-icon-checked" v-else></i>
+  <div class="van-step" :class="statusClass">
+    <div class="van-step__circle-container">
+      <i class="van-step__circle" v-if="status !== 'process'"></i>
+      <i class="van-icon van-icon-checked" v-else></i>
     </div>
-    <p class="zan-step__title">
+    <p class="van-step__title">
       <slot></slot>
     </p>
-    <div class="zan-step__line"></div>
+    <div class="van-step__line"></div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-step',
+  name: 'van-step',
 
   beforeCreate() {
     this.$parent.steps.push(this);
@@ -32,7 +32,7 @@ export default {
     },
     statusClass() {
       const status = this.status;
-      return status ? 'zan-step--' + status : '';
+      return status ? 'van-step--' + status : '';
     }
   }
 };

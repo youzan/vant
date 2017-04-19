@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-badge-group">
+  <div class="van-badge-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'zan-badge-group',
+    name: 'van-badge-group',
 
     props: {
       // 当前激活 tab 面板的 key

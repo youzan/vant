@@ -1,150 +1,150 @@
 <template><section class="demo-icon"><h1 class="demo-title">Icon 图标</h1><example-block title="所有Icon">
-                <zan-row>
-  <zan-col span="8">
-   <zan-icon name="qr-invalid"></zan-icon>
+                <van-row>
+  <van-col span="8">
+   <van-icon name="qr-invalid"></van-icon>
    <span>qr-invalid</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="qr"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="qr"></van-icon>
    <span>qr</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="exchange"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="exchange"></van-icon>
    <span>exchange</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="close"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="close"></van-icon>
    <span>close</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="location"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="location"></van-icon>
    <span>location</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="upgrade"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="upgrade"></van-icon>
    <span>upgrade</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="check"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="check"></van-icon>
    <span>check</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="checked"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="checked"></van-icon>
    <span>checked</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="like-o"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="like-o"></van-icon>
    <span>like-o</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="like" style="color: red;"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="like" style="color: red;"></van-icon>
    <span>like</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="chat"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="chat"></van-icon>
    <span>chat</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="shop"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="shop"></van-icon>
    <span>shop</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="photograph"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="photograph"></van-icon>
    <span>photograph</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="add"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="add"></van-icon>
    <span>add</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="add2"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="add2"></van-icon>
    <span>add2</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="photo"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="photo"></van-icon>
    <span>photo</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="logistics"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="logistics"></van-icon>
    <span>logistics</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="edit"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="edit"></van-icon>
    <span>edit</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="passed"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="passed"></van-icon>
    <span>passed</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="cart"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="cart"></van-icon>
    <span>cart</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="arrow"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="arrow"></van-icon>
    <span>arrow</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="gift"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="gift"></van-icon>
    <span>gift</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="search"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="search"></van-icon>
    <span>search</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="clear"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="clear"></van-icon>
    <span>clear</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="success"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="success"></van-icon>
    <span>success</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="fail"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="fail"></van-icon>
    <span>fail</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="contact"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="contact"></van-icon>
    <span>contact</span>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="8">
-   <zan-icon name="wechat"></zan-icon>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="8">
+   <van-icon name="wechat"></van-icon>
    <span>wechat</span>
-  </zan-col>
-  <zan-col span="8">
-   <zan-icon name="alipay"></zan-icon>
+  </van-col>
+  <van-col span="8">
+   <van-icon name="alipay"></van-icon>
    <span>alipay</span>
-  </zan-col>
-</zan-row>
+  </van-col>
+</van-row>
 
               </example-block></section></template>
 <style>
 @component-namespace demo {
   @b icon {
-    .zan-col {
+    .van-col {
       text-align: center;
     }
 
-    .zan-icon {
+    .van-icon {
       font-size: 45px;
       display: block;
       margin: 15px 0;

@@ -5,7 +5,7 @@
       color: #06BF04;
     }
 
-    .zan-button {
+    .van-button {
       margin-left: 15px;
     }
 
@@ -63,7 +63,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -71,8 +71,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { ActionSheet } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/actionSheet.css';
+import { ActionSheet } from 'vant';
+import 'vant/lib/vant-css/actionSheet.css';
 
 Vue.component(ActionSheet.name, ActionSheet);
 ```
@@ -82,11 +82,11 @@ Vue.component(ActionSheet.name, ActionSheet);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`ActionSheet`组件，这样只能在你注册的组件中使用`ActionSheet`：
 
 ```js
-import { ActionSheet } from '@youzan/zanui-vue';
+import { ActionSheet } from 'vant';
 
 export default {
   components: {
-    'zan-actionSheet': ActionSheet
+    'van-actionSheet': ActionSheet
   }
 };
 ```
@@ -99,9 +99,9 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-button @click="show1 = true">弹出actionsheet</zan-button>
-<zan-actionsheet v-model="show1" :actions="actions1">
-</zan-actionsheet>
+<van-button @click="show1 = true">弹出actionsheet</van-button>
+<van-actionsheet v-model="show1" :actions="actions1">
+</van-actionsheet>
 
 <script>
 export default {
@@ -148,9 +148,9 @@ export default {
 
 :::demo 带取消按钮的ActionSheet
 ```html
-<zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
-<zan-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
-</zan-actionsheet>
+<van-button @click="show2 = true">弹出带取消按钮的actionsheet</van-button>
+<van-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
+</van-actionsheet>
 
 <script>
 export default {
@@ -191,16 +191,16 @@ export default {
 
 :::demo 带标题的ActionSheet
 ```html
-<zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
-<zan-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
+<van-button @click="show3 = true">弹出带标题的actionsheet</van-button>
+<van-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
   <p>一些内容</p>
-</zan-actionsheet>
+</van-actionsheet>
 ```
 :::
 
 点击以下按钮查看手机端效果：
 
-<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
 <mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API

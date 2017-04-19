@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-card",
+  "name": "@youzan/van-card",
   "version": "0.0.1",
   "description": "card component",
   "main": "./index.js",

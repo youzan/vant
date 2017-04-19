@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-datetime-picker",
+  "name": "@youzan/van-datetime-picker",
   "version": "0.0.1",
   "description": "datetime picker component",
   "main": "./index.js",

@@ -1,22 +1,22 @@
 <template>
   <div
-    class="zan-checkbox"
+    class="van-checkbox"
     :class="{
-      'zan-checkbox--disabled': isDisabled
+      'van-checkbox--disabled': isDisabled
     }">
-    <span class="zan-checkbox__input">
+    <span class="van-checkbox__input">
       <input
         v-model="currentValue"
         type="checkbox"
-        class="zan-checkbox__control"
+        class="van-checkbox__control"
         :disabled="isDisabled">
-      <span class="zan-icon" :class="{
-        'zan-icon-checked': isChecked,
-        'zan-icon-check': !isChecked
+      <span class="van-icon" :class="{
+        'van-icon-checked': isChecked,
+        'van-icon-check': !isChecked
       }">
       </span>
     </span>
-    <span class="zan-checkbox__label" @click="handleLabelClick">
+    <span class="van-checkbox__label" @click="handleLabelClick">
       <slot></slot>
     </span>
   </div>
@@ -26,7 +26,7 @@
 import findParent from 'src/mixins/findParent';
 
 export default {
-  name: 'zan-checkbox',
+  name: 'van-checkbox',
 
   mixins: [findParent],
 
@@ -38,10 +38,10 @@ export default {
 
   computed: {
     /**
-     * `checkbox`是否在`zan-checkbox-group`中
+     * `checkbox`是否在`van-checkbox-group`中
      */
     isGroup() {
-      return !!this.findParentByComponentName('zan-checkbox-group');
+      return !!this.findParentByComponentName('van-checkbox-group');
     },
 
     /**

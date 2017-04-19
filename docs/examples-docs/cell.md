@@ -12,7 +12,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -20,8 +20,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Cell } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/cell.css';
+import { Cell } from 'vant';
+import 'vant/lib/vant-css/cell.css';
 
 Vue.component(Cell.name, Cell);
 ```
@@ -31,11 +31,11 @@ Vue.component(Cell.name, Cell);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Cell`组件，这样只能在你注册的组件中使用`Cell`：
 
 ```js
-import { Cell } from '@youzan/zanui-vue';
+import { Cell } from 'vant';
 
 export default {
   components: {
-    'zan-cell': Cell
+    'van-cell': Cell
   }
 };
 ```
@@ -46,11 +46,10 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-cell-group>
-  <zan-cell title="单元格1" value="单元格1内容">
-  </zan-cell>
-  <zan-cell title="单元格2" value="单元格2内容"></zan-cell>
-</zan-cell-group>
+<van-cell-group>
+  <van-cell title="单元格1" value="单元格1内容"></van-cell>
+  <van-cell title="单元格2" value="单元格2内容"></van-cell>
+</van-cell-group>
 ```
 :::
 
@@ -60,10 +59,10 @@ export default {
 
 :::demo 标题带描述信息
 ```html
-<zan-cell-group>
-  <zan-cell title="单元格1" label="描述信息" is-link url="javascript:void(0)" @click="handleClick"></zan-cell>
-  <zan-cell title="单元格2" label="描述信息"></zan-cell>
-</zan-cell-group>
+<van-cell-group>
+  <van-cell title="单元格1" label="描述信息" is-link url="javascript:void(0)" @click="handleClick"></van-cell>
+  <van-cell title="单元格2" label="描述信息"></van-cell>
+</van-cell-group>
 ```
 :::
 
@@ -73,10 +72,10 @@ export default {
 
 :::demo 带图标
 ```html
-<zan-cell-group>
-  <zan-cell title="起码运动馆" icon="home"></zan-cell>
-  <zan-cell title="线下门店" icon="location"></zan-cell>
-</zan-cell-group>
+<van-cell-group>
+  <van-cell title="起码运动馆" icon="home"></van-cell>
+  <van-cell title="线下门店" icon="location"></van-cell>
+</van-cell-group>
 ```
 :::
 
@@ -86,10 +85,10 @@ export default {
 
 :::demo 可点击的链接
 ```html
-<zan-cell-group>
-  <zan-cell title="起码运动馆" value="进入店铺" icon="home" url="http://youzan.com" is-link></zan-cell>
-  <zan-cell title="线下门店" icon="location" url="http://youzan.com" is-link></zan-cell>
-</zan-cell-group>
+<van-cell-group>
+  <van-cell title="起码运动馆" value="进入店铺" icon="home" url="http://youzan.com" is-link></van-cell>
+  <van-cell title="线下门店" icon="location" url="http://youzan.com" is-link></van-cell>
+</van-cell-group>
 ```
 :::
 
@@ -99,15 +98,15 @@ export default {
 
 :::demo 高级用法
 ```html
-<zan-cell-group>
-  <zan-cell value="进入店铺" icon="home" url="http://youzan.com" is-link>
+<van-cell-group>
+  <van-cell value="进入店铺" icon="home" url="http://youzan.com" is-link>
     <template slot="title">
-      <span class="zan-cell-text">起码运动馆</span>
-      <zan-tag type="danger">官方</zan-tag>
+      <span class="van-cell-text">起码运动馆</span>
+      <van-tag type="danger">官方</van-tag>
     </template>
-  </zan-cell>
-  <zan-cell title="线下门店" icon="location" url="http://youzan.com" is-link></zan-cell>
-</zan-cell-group>
+  </van-cell>
+  <van-cell title="线下门店" icon="location" url="http://youzan.com" is-link></van-cell>
+</van-cell-group>
 ```
 :::
 

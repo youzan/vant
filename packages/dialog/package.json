@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-dialog",
+  "name": "@youzan/van-dialog",
   "version": "0.0.1",
   "description": "dialog component",
   "main": "./index.js",

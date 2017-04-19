@@ -1,36 +1,36 @@
 <template>
-  <a :class="['zan-cell', { 'zan-cell--required': required }]" :href="url" @click="handleClick">
+  <a :class="['van-cell', { 'van-cell--required': required }]" :href="url" @click="handleClick">
     <div
-      class="zan-cell__title"
+      class="van-cell__title"
       v-if="this.$slots.title || title"
     >
       <slot name="icon">
-        <i v-if="icon" class="zan-icon" :class="'zan-icon-' + icon"></i>
+        <i v-if="icon" class="van-icon" :class="'van-icon-' + icon"></i>
       </slot>
       <slot name="title">
-        <span class="zan-cell__text" v-text="title"></span>
-        <span class="zan-cell__label" v-if="label" v-text="label"></span>
+        <span class="van-cell__text" v-text="title"></span>
+        <span class="van-cell__label" v-if="label" v-text="label"></span>
       </slot>
     </div>
     <div
-      class="zan-cell__value"
+      class="van-cell__value"
       v-if="value || this.$slots.default"
       :class="{
-        'zan-cell__value--link': isLink,
-        'zan-cell__value--alone': !this.$slots.title && !title && !label
+        'van-cell__value--link': isLink,
+        'van-cell__value--alone': !this.$slots.title && !title && !label
       }"
     >
       <slot>
         <span v-text="value"></span>
       </slot>
     </div>
-    <i class="zan-icon zan-icon-arrow" v-if="isLink"></i>
+    <i class="van-icon van-icon-arrow" v-if="isLink"></i>
   </a>
 </template>
 
 <script>
 export default {
-  name: 'zan-cell',
+  name: 'van-cell',
 
   props: {
     icon: String,

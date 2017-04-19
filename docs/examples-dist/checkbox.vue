@@ -1,43 +1,43 @@
 <template><section class="demo-checkbox"><h1 class="demo-title">Checkbox 复选框</h1><example-block title="基础用法">
-                <div class="zan-checkbox-wrapper">
-  <zan-checkbox v-model="checkbox1">复选框1</zan-checkbox>
+                <div class="van-checkbox-wrapper">
+  <van-checkbox v-model="checkbox1">复选框1</van-checkbox>
 </div>
 
 
 
               </example-block><example-block title="禁用状态">
-                <div class="zan-checkbox-wrapper">
-  <zan-checkbox v-model="checkbox2">复选框2</zan-checkbox>
+                <div class="van-checkbox-wrapper">
+  <van-checkbox v-model="checkbox2">复选框2</van-checkbox>
 </div>
 
 
 
               </example-block><example-block title="Checkbox组">
-                <div class="zan-checkbox-wrapper">
-  <zan-checkbox-group v-model="result">
-    <zan-checkbox v-for="item in list" :name="item">复选框{{item}}</zan-checkbox>
-  </zan-checkbox-group>
+                <div class="van-checkbox-wrapper">
+  <van-checkbox-group v-model="result">
+    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+  </van-checkbox-group>
 </div>
 
 
 
               </example-block><example-block title="禁用Checkbox组">
-                <div class="zan-checkbox-wrapper">
-  <zan-checkbox-group v-model="result" disabled>
-    <zan-checkbox v-for="item in list" :name="item">复选框{{item}}</zan-checkbox>
-  </zan-checkbox-group>
+                <div class="van-checkbox-wrapper">
+  <van-checkbox-group v-model="result" disabled>
+    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+  </van-checkbox-group>
 </div>
 
 
 
               </example-block><example-block title="与Cell组件一起使用">
-                <zan-checkbox-group v-model="result">
-  <zan-cell-group>
-    <zan-cell v-for="item in list">
-      <zan-checkbox :name="item">复选框{{item}}</zan-checkbox>
-    </zan-cell>
-  </zan-cell-group>
-</zan-checkbox-group>
+                <van-checkbox-group v-model="result">
+  <van-cell-group>
+    <van-cell v-for="item in list">
+      <van-checkbox :name="item">复选框{{item}}</van-checkbox>
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>
 
 
 
@@ -45,10 +45,10 @@
 <style>
 @component-namespace demo {
   @b checkbox {
-    .zan-checkbox-wrapper {
+    .van-checkbox-wrapper {
       padding: 0 20px;
 
-      .zan-checkbox {
+      .van-checkbox {
         margin: 10px 0;
       }
     }

@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b field {
-    .zan-field-wrapper {
+    .van-field-wrapper {
       padding: 0 10px;
     }
   }
@@ -24,7 +24,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -32,8 +32,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Field } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/field.css';
+import { Field } from 'vant';
+import 'vant/lib/vant-css/field.css';
 
 Vue.component(Field.name, Field);
 ```
@@ -43,11 +43,11 @@ Vue.component(Field.name, Field);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Field`组件，这样只能在你注册的组件中使用`Field`：
 
 ```js
-import { Field } from '@youzan/zanui-vue';
+import { Field } from 'vant';
 
 export default {
   components: {
-    'zan-field': Field
+    'van-field': Field
   }
 };
 ```
@@ -60,11 +60,11 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-cell-group>
-  <zan-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></zan-field>
-  <zan-field type="password" label="密码：" placeholder="请输入密码" required></zan-field>
-  <zan-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></van-field>
+  <van-field type="password" label="密码：" placeholder="请输入密码" required></van-field>
+  <van-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></van-field>
+</van-cell-group>
 ```
 :::
 
@@ -74,9 +74,9 @@ export default {
 
 :::demo 无label的输入框
 ```html
-<zan-cell-group>
-  <zan-field type="text" placeholder="请输入用户名"></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field type="text" placeholder="请输入用户名"></van-field>
+</van-cell-group>
 ```
 :::
 
@@ -86,8 +86,8 @@ export default {
 
 :::demo 带border的输入框
 ```html
-<div class="zan-field-wrapper">
-  <zan-field type="text" placeholder="请输入用户名" border></zan-field>
+<div class="van-field-wrapper">
+  <van-field type="text" placeholder="请输入用户名" border></van-field>
 </div>
 ```
 :::
@@ -98,9 +98,9 @@ export default {
 
 :::demo 禁用的输入框
 ```html
-<zan-cell-group>
-  <zan-field label="用户名：" type="text" placeholder="请输入用户名" v-model="username" disabled></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field label="用户名：" type="text" placeholder="请输入用户名" v-model="username" disabled></van-field>
+</van-cell-group>
 ```
 :::
 
@@ -110,9 +110,9 @@ export default {
 
 :::demo 错误的输入框
 ```html
-<zan-cell-group>
-  <zan-field label="用户名：" type="text" placeholder="请输入用户名" error></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field label="用户名：" type="text" placeholder="请输入用户名" error></van-field>
+</van-cell-group>
 ```
 :::
 
@@ -123,9 +123,9 @@ export default {
 
 :::demo 错误的输入框
 ```html
-<zan-cell-group>
-  <zan-field label="留言：" type="textarea" placeholder="请输入留言" rows="1" autosize></zan-field>
-</zan-cell-group>
+<van-cell-group>
+  <van-field label="留言：" type="textarea" placeholder="请输入留言" rows="1" autosize></van-field>
+</van-cell-group>
 ```
 :::
 

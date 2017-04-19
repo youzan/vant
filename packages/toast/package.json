@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-toast",
+  "name": "@youzan/van-toast",
   "version": "0.0.1",
   "description": "toast component",
   "main": "./index.js",

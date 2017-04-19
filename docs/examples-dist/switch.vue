@@ -1,31 +1,31 @@
 <template><section class="demo-switch"><h1 class="demo-title">Switch 开关</h1><example-block title="基础用法">
-                <zan-switch class="some-customized-class" v-model="switchState1"></zan-switch>
+                <van-switch class="some-customized-class" v-model="switchState1"></van-switch>
 <div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
 
 
 
 
               </example-block><example-block title="">
-                <zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
+                <van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
 <div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
 
 
 
 
               </example-block><example-block title="禁用状态">
-                <zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
+                <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
 <div class="demo-switch__text">ON, DISABLED</div>
 
-<zan-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
 <div class="demo-switch__text">OFF, DISABLED</div>
 
 
 
               </example-block><example-block title="loading状态">
-                <zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
+                <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
 <div class="demo-switch__text">ON, LOADING</div>
 
-<zan-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
 <div class="demo-switch__text">OFF, LOADING</div>
 
 

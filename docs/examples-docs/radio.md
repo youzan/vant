@@ -1,10 +1,10 @@
 <style>
 @component-namespace demo {
   @b radio {
-    .zan-radios {
+    .van-radios {
       padding: 0 20px;
 
-      .zan-radio {
+      .van-radio {
         margin: 10px 0;
       }
     }
@@ -29,7 +29,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -37,8 +37,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Radio, RadioGroup } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/radio.css';
+import { Radio, RadioGroup } from 'vant';
+import 'vant/lib/vant-css/radio.css';
 
 Vue.component(Radio.name, Radio);
 Vue.component(RadioGroup.name, RadioGroup);
@@ -49,25 +49,26 @@ Vue.component(RadioGroup.name, RadioGroup);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Radio`组件，这样只能在你注册的组件中使用`Radio`：
 
 ```js
-import { Radio, RadioGroup } from '@youzan/zanui-vue';
+import { Radio, RadioGroup } from 'vant';
 
 export default {
   components: {
-    'zan-radio': Radio,
-    'zan-radio-group': RadioGroup
+    'van-radio': Radio,
+    'van-radio-group': RadioGroup
   }
 };
 ```
+### 代码演示
 
-### 基础用法
+#### 基础用法
 
 通过`v-model`绑定值即可。当`Radio`选中时，绑定的值即为`Radio`中`name`属性设置的值。
 
 :::demo 基础用法
 ```html
-<div class="zan-radios">
-  <zan-radio name="1" v-model="radio1">单选框1</zan-radio>
-  <zan-radio name="2" v-model="radio1">单选框2</zan-radio>
+<div class="van-radios">
+  <van-radio name="1" v-model="radio1">单选框1</van-radio>
+  <van-radio name="2" v-model="radio1">单选框2</van-radio>
 </div>
 
 <script>
@@ -82,15 +83,15 @@ export default {
 ```
 :::
 
-### 禁用状态
+#### 禁用状态
 
 设置`disabled`属性即可，此时`Radio`不能点击。
 
 :::demo 禁用状态
 ```html
-<div class="zan-radios">
-  <zan-radio name="1" v-model="radio2" disabled>未选中禁用</zan-radio>
-  <zan-radio name="2" v-model="radio2" disabled>选中且禁用</zan-radio>
+<div class="van-radios">
+  <van-radio name="1" v-model="radio2" disabled>未选中禁用</van-radio>
+  <van-radio name="2" v-model="radio2" disabled>选中且禁用</van-radio>
 </div>
 
 <script>
@@ -105,17 +106,17 @@ export default {
 ```
 :::
 
-### radio组
+#### radio组
 
-需要与`zan-radio-group`一起使用，在`zan-radio-group`通过`v-model`来绑定当前选中的值。例如下面的`radio3`：
+需要与`van-radio-group`一起使用，在`van-radio-group`通过`v-model`来绑定当前选中的值。例如下面的`radio3`：
 
 :::demo radio组
 ```html
-<div class="zan-radios">
-  <zan-radio-group v-model="radio3">
-    <zan-radio name="1">单选框1</zan-radio>
-    <zan-radio name="2">单选框2</zan-radio>
-  </zan-radio-group>
+<div class="van-radios">
+  <van-radio-group v-model="radio3">
+    <van-radio name="1">单选框1</van-radio>
+    <van-radio name="2">单选框2</van-radio>
+  </van-radio-group>
 </div>
   
 <script>
@@ -130,18 +131,18 @@ export default {
 ```
 :::
 
-### 与Cell组件一起使用
+#### 与Cell组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件。
 
 :::demo 与Cell组件一起使用
 ```html
-<zan-radio-group v-model="radio4">
-  <zan-cell-group>
-    <zan-cell><zan-radio name="1">单选框1</zan-radio></zan-cell>
-    <zan-cell><zan-radio name="2">单选框2</zan-radio></zan-cell>
-  </zan-cell-group>
-</zan-radio-group>
+<van-radio-group v-model="radio4">
+  <van-cell-group>
+    <van-cell><van-radio name="1">单选框1</van-radio></van-cell>
+    <van-cell><van-radio name="2">单选框2</van-radio></van-cell>
+  </van-cell-group>
+</van-radio-group>
 
 <script>
 export default {

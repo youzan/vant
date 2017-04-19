@@ -39,7 +39,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -47,8 +47,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Picker } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/picker.css';
+import { Picker } from 'vant';
+import 'vant/lib/vant-css/picker.css';
 
 Vue.component(Picker.name, Picker);
 ```
@@ -58,11 +58,11 @@ Vue.component(Picker.name, Picker);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Picker`组件，这样只能在你注册的组件中使用`Picker`：
 
 ```js
-import { Picker } from '@youzan/zanui-vue';
+import { Picker } from 'vant';
 
 export default {
   components: {
-    'zan-picker': Picker
+    'van-picker': Picker
   }
 };
 ```
@@ -73,7 +73,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-picker :columns="pickerColumns" @change="handlePickerChange"></zan-picker>
+<van-picker :columns="pickerColumns" @change="handlePickerChange"></van-picker>
 
 <script>
 const citys = {
@@ -112,7 +112,7 @@ export default {
 
 :::demo 带toolbar的Picker
 ```html
-<zan-picker :columns="pickerColumns" show-toolbar @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></zan-picker>
+<van-picker :columns="pickerColumns" show-toolbar @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></van-picker>
 
 <script>
 const citys = {

@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-checkbox-group">
+  <div class="van-checkbox-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-checkbox-group',
+  name: 'van-checkbox-group',
 
   props: {
     value: {},

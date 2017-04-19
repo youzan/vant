@@ -1,11 +1,11 @@
 <template>
-  <div class="zan-swipe">
-    <div class="zan-swipe__items">
+  <div class="van-swipe">
+    <div class="van-swipe__items">
       <slot></slot>
     </div>
-    <div class="zan-swipe__indicators" v-if="showIndicators">
-      <span class="zan-swipe__indicator" v-for="i in swipes.length" :class="{
-        'zan-swipe__indicator--active': currIndex === i -1
+    <div class="van-swipe__indicators" v-if="showIndicators">
+      <span class="van-swipe__indicator" v-for="i in swipes.length" :class="{
+        'van-swipe__indicator--active': currIndex === i -1
       }">
       </span>
     </div>
@@ -18,7 +18,7 @@ import Scroll from './scroll';
 import SpringDummy from './spring_dummy';
 
 export default {
-  name: 'zan-swipe',
+  name: 'van-swipe',
 
   props: {
     autoPlay: Boolean,

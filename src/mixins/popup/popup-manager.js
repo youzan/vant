@@ -77,7 +77,7 @@ const PopupManager = {
 
     const modalDom = getModal();
 
-    addClass(modalDom, 'zan-modal');
+    addClass(modalDom, 'van-modal');
 
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
       dom.parentNode.appendChild(modalDom);

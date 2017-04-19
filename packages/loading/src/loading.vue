@@ -1,6 +1,6 @@
 <template>
-  <div class="zan-loading">
-    <span class="zan-loading__spinner" :class="['zan-loading__spinner--' + type, 'zan-loading__spinner--' + color]"></span>
+  <div class="van-loading">
+    <span class="van-loading__spinner" :class="['van-loading__spinner--' + type, 'van-loading__spinner--' + color]"></span>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 const VALID_TYPES = ['gradient-circle', 'circle'];
 const VALID_COLORS = ['black', 'white'];
 export default {
-  name: 'zan-loading',
+  name: 'van-loading',
 
   props: {
     type: {

@@ -1,9 +1,9 @@
 <template>
-  <zan-popup v-model="currentValue" :lock-on-scroll="true">
+  <van-popup v-model="currentValue" :lock-on-scroll="true">
     <div class="mobile-popup">
       <iframe :src="url" class="mobile-popup-iframe"></iframe>
     </div>
-  </zan-popup>
+  </van-popup>
 </template>
 
 <script>

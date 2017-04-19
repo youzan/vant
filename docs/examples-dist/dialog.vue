@@ -1,11 +1,11 @@
 <template><section class="demo-dialog"><h1 class="demo-title">Dialog 弹出框</h1><example-block title="消息提示">
-                <zan-button @click="handleAlertClick">alert</zan-button>
-<zan-button @click="handleAlert2Click">无标题alert</zan-button>
+                <van-button @click="handleAlertClick">alert</van-button>
+<van-button @click="handleAlert2Click">无标题alert</van-button>
 
 
 
               </example-block><example-block title="消息确认">
-                <zan-button @click="handleConfirmClick">confirm</zan-button>
+                <van-button @click="handleConfirmClick">confirm</van-button>
 
 
 
@@ -13,7 +13,7 @@
 <style>
 @component-namespace demo {
   @b dialog {
-    .zan-button {
+    .van-button {
       margin: 15px;
     }
   }

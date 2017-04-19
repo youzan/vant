@@ -4,7 +4,7 @@
 // describe('Toast', () => {
 //   // it('create simple toast', () => {
 //   //   Toast('a message');
-//   //   var toast = document.querySelector('.zan-toast');
+//   //   var toast = document.querySelector('.van-toast');
 
 //   //   expect(toast).not.to.be.underfined;
 
@@ -15,7 +15,7 @@
 
 //   // it('create loading toast', () => {
 //   //   Toast.loading('');
-//   //   var toast = document.querySelector('.zan-toast');
+//   //   var toast = document.querySelector('.van-toast');
 
 //   //   expect(toast).not.to.be.underfined;
 
@@ -25,7 +25,7 @@
 //   // });
 //   // it('create loading toast', () => {
 //   //   Toast.success('');
-//   //   var toast = document.querySelector('.zan-toast');
+//   //   var toast = document.querySelector('.van-toast');
 
 //   //   expect(toast).not.to.be.underfined;
 

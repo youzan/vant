@@ -1,21 +1,21 @@
 <template><section class="demo-toast"><h1 class="demo-title">Toast 轻提示</h1><example-block title="基础用法">
-                <zan-button @click="showSimpleToast">普通文字提示</zan-button>
-<zan-button @click="showLoadingToast">加载Toast</zan-button>
-<zan-button @click="showSuccessToast">成功</zan-button>
-<zan-button @click="showFailToast">失败</zan-button>
-<zan-button @click="showForbidClickToast">背景不能点击</zan-button>
-<zan-button @click="showCustomizedToast(5000)">倒数5秒</zan-button>
+                <van-button @click="showSimpleToast">普通文字提示</van-button>
+<van-button @click="showLoadingToast">加载Toast</van-button>
+<van-button @click="showSuccessToast">成功</van-button>
+<van-button @click="showFailToast">失败</van-button>
+<van-button @click="showForbidClickToast">背景不能点击</van-button>
+<van-button @click="showCustomizedToast(5000)">倒数5秒</van-button>
 
 
 
               </example-block><example-block title="手动关闭">
-                <zan-button @click="showToast">打开</zan-button>
-<zan-button @click="closeToast">关闭</zan-button>
+                <van-button @click="showToast">打开</van-button>
+<van-button @click="closeToast">关闭</van-button>
 
 
 
               </example-block><example-block title="手动关闭">
-                <zan-button @click="showHtmlToast">打开</zan-button>
+                <van-button @click="showHtmlToast">打开</van-button>
 
 
 
@@ -23,7 +23,7 @@
 <style>
 @component-namespace demo {
   @b toast {
-    .zan-button {
+    .van-button {
       margin: 15px;
     }
   }

@@ -1,8 +1,8 @@
 <template>
-  <zan-radio-group v-model="radio">
-    <zan-radio name="1">单选框1</zan-radio>
-    <zan-radio name="2">单选框2</zan-radio>
-  </zan-radio-group>
+  <van-radio-group v-model="radio">
+    <van-radio name="1">单选框1</van-radio>
+    <van-radio name="2">单选框2</van-radio>
+  </van-radio-group>
 </template>
   
 <script>
@@ -11,8 +11,8 @@ import RadioGroup from 'packages/radio-group';
 
 export default {
   components: {
-    'zan-radio': Radio,
-    'zan-radio-group': RadioGroup
+    'van-radio': Radio,
+    'van-radio-group': RadioGroup
   },
 
   data() {

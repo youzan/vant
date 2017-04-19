@@ -1,22 +1,22 @@
 <template><section class="demo-actionsheet"><h1 class="demo-title">Actionsheet 行动按钮</h1><example-block title="基础用法">
-                <zan-button @click="show1 = true">弹出actionsheet</zan-button>
-<zan-actionsheet v-model="show1" :actions="actions1">
-</zan-actionsheet>
+                <van-button @click="show1 = true">弹出actionsheet</van-button>
+<van-actionsheet v-model="show1" :actions="actions1">
+</van-actionsheet>
 
 
 
               </example-block><example-block title="带取消按钮的ActionSheet">
-                <zan-button @click="show2 = true">弹出带取消按钮的actionsheet</zan-button>
-<zan-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
-</zan-actionsheet>
+                <van-button @click="show2 = true">弹出带取消按钮的actionsheet</van-button>
+<van-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
+</van-actionsheet>
 
 
 
               </example-block><example-block title="带标题的ActionSheet">
-                <zan-button @click="show3 = true">弹出带标题的actionsheet</zan-button>
-<zan-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
+                <van-button @click="show3 = true">弹出带标题的actionsheet</van-button>
+<van-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
   <p>一些内容</p>
-</zan-actionsheet>
+</van-actionsheet>
 
               </example-block></section></template>
 <style>
@@ -26,7 +26,7 @@
       color: #06BF04;
     }
 
-    .zan-button {
+    .van-button {
       margin-left: 15px;
     }
 

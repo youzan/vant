@@ -1,21 +1,21 @@
 <template>
-  <div class="zan-tabs" :class="[`zan-tabs--${type}`]">
+  <div class="van-tabs" :class="[`van-tabs--${type}`]">
     <div
-      class="zan-tabs__nav"
-      :class="[`zan-tabs__nav--${this.type}`, `zan-tabs--col-${this.tabs.length}`]"
+      class="van-tabs__nav"
+      :class="[`van-tabs__nav--${this.type}`, `van-tabs--col-${this.tabs.length}`]"
     >
-      <div class="zan-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
+      <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div
         v-for="(tab, index) in tabs"
-        class="zan-tab"
-        :class="{'zan-tab--active': index === curActive}"
+        class="van-tab"
+        :class="{'van-tab--active': index === curActive}"
         ref="tabkey"
         @click="handleTabClick(index, tab)"
       >
         {{ tab.title }}
       </div>
     </div>
-    <div class="zan-tabs__content">
+    <div class="van-tabs__content">
       <slot></slot>
     </div>
   </div>
@@ -23,7 +23,7 @@
 
 <script>
   export default {
-    name: 'zan-tabs',
+    name: 'van-tabs',
 
     props: {
       // 外部传入的激活的tab标签

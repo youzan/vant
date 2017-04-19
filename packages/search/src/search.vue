@@ -1,18 +1,18 @@
 <template>
-  <div class="zan-search" :class="{ 'zan-search--focus' : isFocus }">
-    <div class="zan-search__input-wrap">
-      <zan-icon name="search"></zan-icon>
+  <div class="van-search" :class="{ 'van-search--focus' : isFocus }">
+    <div class="van-search__input-wrap">
+      <van-icon name="search"></van-icon>
       <input
         type="text"
         :placeholder="placeholder"
-        class="zan-search__input"
+        class="van-search__input"
         v-model="value"
         v-refocus="focusStatus"
         @focus="handleFocus"
         @keyup.enter="handleSearch">
-      <zan-icon name="clear" @click="handleClean" v-show="isFocus"></zan-icon>
+      <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
     </div>
-    <div class="zan-search__cancel" v-show="isFocus" @click="handleBack">取消</div>
+    <div class="van-search__cancel" v-show="isFocus" @click="handleBack">取消</div>
   </div>
 </template>
 
@@ -20,7 +20,7 @@
   import ZanIcon from 'packages/icon';
 
   export default {
-    name: 'zan-search',
+    name: 'van-search',
 
     components: {
       ZanIcon

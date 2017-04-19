@@ -1,24 +1,24 @@
 <template>
   <div
     @click="handleRadioClick"
-    class="zan-radio"
+    class="van-radio"
     :class="{
-      'zan-radio--disabled': isDisabled
+      'van-radio--disabled': isDisabled
     }">
-    <span class="zan-radio__input">
+    <span class="van-radio__input">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
-        class="zan-radio__control"
+        class="van-radio__control"
         :disabled="isDisabled">
-      <span class="zan-icon" :class="{
-        'zan-icon-checked': currentValue === name,
-        'zan-icon-check': currentValue !== name
+      <span class="van-icon" :class="{
+        'van-icon-checked': currentValue === name,
+        'van-icon-check': currentValue !== name
       }">
       </span>
     </span>
-    <span class="zan-radio__label" @click="handleLabelClick">
+    <span class="van-radio__label" @click="handleLabelClick">
       <slot></slot>
     </span>
   </div>
@@ -28,7 +28,7 @@
 import findParent from 'src/mixins/findParent';
 
 export default {
-  name: 'zan-radio',
+  name: 'van-radio',
 
   mixins: [findParent],
 
@@ -40,7 +40,7 @@ export default {
 
   computed: {
     isGroup() {
-      return !!this.findParentByComponentName('zan-radio-group');
+      return !!this.findParentByComponentName('van-radio-group');
     },
 
     currentValue: {

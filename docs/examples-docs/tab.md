@@ -1,19 +1,19 @@
 <style>
 @component-namespace demo {
   @b tab {
-    .zan-tab__pane {
+    .van-tab__pane {
       background-color: #fff;
       padding: 20px;
     }
 
-    .zan-tabs--card .zan-tab__pane {
+    .van-tabs--card .van-tab__pane {
       background-color: transparent;
     }
 
-    .custom-tabwrap .zan-tab-active {
+    .custom-tabwrap .van-tab-active {
       color: #20a0ff;
     }
-    .custom-tabwrap .zan-tabs-nav-bar {
+    .custom-tabwrap .van-tabs-nav-bar {
       background: #20a0ff;
     }
     .custom-pane {
@@ -53,7 +53,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -61,8 +61,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Tab, Tabs } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/tab.css';
+import { Tab, Tabs } from 'vant';
+import 'vant/lib/vant-css/tab.css';
 
 Vue.component(Tab.name, Tab);
 Vue.component(Tabs.name, Tabs);
@@ -73,12 +73,12 @@ Vue.component(Tabs.name, Tabs);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Tab`组件，这样只能在你注册的组件中使用`Tab`：
 
 ```js
-import { Tab, Tabs } from '@youzan/zanui-vue';
+import { Tab, Tabs } from 'vant';
 
 export default {
   components: {
-    'zan-tab': Tab,
-    'zan-tabs': Tabs
+    'van-tab': Tab,
+    'van-tabs': Tabs
   }
 };
 ```
@@ -91,45 +91,45 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-tabs>
-  <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab title="选项二">内容二</zan-tab>
-  <zan-tab title="选项三">内容三</zan-tab>
-  <zan-tab title="选项四">内容四</zan-tab>
-  <zan-tab title="选项五">内容五</zan-tab>
-</zan-tabs>
+<van-tabs>
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+</van-tabs>
 ```
 :::
 
 #### active特定tab
 
-可以在`zan-tabs`上设置`active`为对应`tab`的索引（从0开始，即0代表第一个）即可激活对应`tab`。
+可以在`van-tabs`上设置`active`为对应`tab`的索引（从0开始，即0代表第一个）即可激活对应`tab`。
 
 :::demo 基础用法
 ```html
-<zan-tabs :active="active">
-  <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab title="选项二">内容二</zan-tab>
-  <zan-tab title="选项三">内容三</zan-tab>
-  <zan-tab title="选项四">内容四</zan-tab>
-  <zan-tab title="选项五">内容五</zan-tab>
-</zan-tabs>
+<van-tabs :active="active">
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+</van-tabs>
 ```
 :::
 
 #### 禁用tab
 
-在对应的`zan-tab`上设置`disabled`属性即可，如果需要监听禁用事件，可以监听`disabled`事件。
+在对应的`van-tab`上设置`disabled`属性即可，如果需要监听禁用事件，可以监听`disabled`事件。
 
 :::demo 禁用tab
 ```html
-<zan-tabs>
-  <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab title="选项二" disabled @disabled="popalert">内容二</zan-tab>
-  <zan-tab title="选项三">内容三</zan-tab>
-  <zan-tab title="选项四">内容四</zan-tab>
-  <zan-tab title="选项五">内容五</zan-tab>
-</zan-tabs>
+<van-tabs>
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+</van-tabs>
 
 <script>
 export default {
@@ -145,24 +145,24 @@ export default {
 
 #### card样式
 
-`Tabs`目前有两种样式：`line`和`card`，默认为`line`样式，也就上面基础用法中的样式，你可以在`zan-tabs`上设置`type`为`card`改为card样式。
+`Tabs`目前有两种样式：`line`和`card`，默认为`line`样式，也就上面基础用法中的样式，你可以在`van-tabs`上设置`type`为`card`改为card样式。
 
 :::demo card样式
 ```html
-<zan-tabs type="card">
-  <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab title="选项二">内容二</zan-tab>
-  <zan-tab title="选项三">内容三</zan-tab>
-  <zan-tab title="选项四">内容四</zan-tab>
-  <zan-tab title="选项五">内容五</zan-tab>
-</zan-tabs>
+<van-tabs type="card">
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+</van-tabs>
 ```
 :::
 <style>
-  .custom-tabwrap .zan-tab-active {
+  .custom-tabwrap .van-tab-active {
     color: #20a0ff;
   }
-  .custom-tabwrap .zan-tabs-nav-bar {
+  .custom-tabwrap .van-tabs-nav-bar {
     background: #20a0ff;
   }
   .custom-pane {
@@ -174,23 +174,23 @@ export default {
 
 #### 自定义样式
 
-可以在`zan-tabs`上设置对应的`class`，从而自定义某些样式。
+可以在`van-tabs`上设置对应的`class`，从而自定义某些样式。
 
 :::demo 自定义样式
 ```html
-<zan-tabs active="2" class="custom-tabwrap">
-    <zan-tab title="选项一" class="custom-pane">内容一</zan-tab>
-    <zan-tab title="选项二" class="custom-pane">内容二</zan-tab>
-    <zan-tab title="选项三" class="custom-pane">内容三</zan-tab>
-    <zan-tab title="选项四" class="custom-pane">内容四</zan-tab>
-    <zan-tab title="选项五" class="custom-pane">内容五</zan-tab>
-</zan-tabs>
+<van-tabs active="2" class="custom-tabwrap">
+    <van-tab title="选项一" class="custom-pane">内容一</van-tab>
+    <van-tab title="选项二" class="custom-pane">内容二</van-tab>
+    <van-tab title="选项三" class="custom-pane">内容三</van-tab>
+    <van-tab title="选项四" class="custom-pane">内容四</van-tab>
+    <van-tab title="选项五" class="custom-pane">内容五</van-tab>
+</van-tabs>
 
 <style>
-  .custom-tabwrap .zan-tab-active {
+  .custom-tabwrap .van-tab-active {
     color: #20a0ff;
   }
-  .custom-tabwrap .zan-tabs-nav-bar {
+  .custom-tabwrap .van-tabs-nav-bar {
     background: #20a0ff;
   }
   .custom-pane {
@@ -204,17 +204,17 @@ export default {
 
 #### click事件
 
-可以在`zan-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
+可以在`van-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
 
 :::demo click事件
 ```html
-<zan-tabs @click="handleTabClick">
-  <zan-tab title="选项一">内容一</zan-tab>
-  <zan-tab title="选项二">内容二</zan-tab>
-  <zan-tab title="选项三">内容三</zan-tab>
-  <zan-tab title="选项四">内容四</zan-tab>
-  <zan-tab title="选项五">内容五</zan-tab>
-</zan-tabs>
+<van-tabs @click="handleTabClick">
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+</van-tabs>
 
 <script>
 export default {
@@ -228,7 +228,7 @@ export default {
 ```
 :::
 
-### zan-tabs API
+### van-tabs API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选      |
 |-----------|-----------|-----------|-------------|-------------|
@@ -237,14 +237,14 @@ export default {
 | navclass | tabs的内部nav上的自定义classname | `string`  |  |           |
 
 
-### zan-tab API
+### van-tab API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选       |
 |-----------|-----------|-----------|-------------|-------------|
 | title | tab的标题 | `string`  |         |          |
 | disabled | 是否禁用这个tab | `boolean`  | `false`      |           |
 
-### zan-tabs Event
+### van-tabs Event
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|

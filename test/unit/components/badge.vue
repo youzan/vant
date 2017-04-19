@@ -1,8 +1,8 @@
 <template>
-  <zan-badge-group>
-    <zan-badge title="热销榜" info="8" @click="onItemClick"></zan-badge>
-    <zan-badge title="手握寿司" info="199" @click="onItemClick"></zan-badge>
-  </zan-badge-group>
+  <van-badge-group>
+    <van-badge title="热销榜" info="8" @click="onItemClick"></van-badge>
+    <van-badge title="手握寿司" info="199" @click="onItemClick"></van-badge>
+  </van-badge-group>
 </template>
 
 <script>
@@ -11,8 +11,8 @@ import BadgeGroup from 'packages/badge-group';
 
 export default {
   components: {
-    'zan-badge': Badge,
-    'zan-badge-group': BadgeGroup
+    'van-badge': Badge,
+    'van-badge-group': BadgeGroup
   },
 
   methods: {

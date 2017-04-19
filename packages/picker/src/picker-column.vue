@@ -1,10 +1,10 @@
 <template>
-  <div class="zan-picker-column" :class="classNames">
-    <div class="zan-picker-column-wrapper" :class="{ dragging: isDragging }" ref="wrapper" :style="{ height: visibleContentHeight + 'px' }">
+  <div class="van-picker-column" :class="classNames">
+    <div class="van-picker-column-wrapper" :class="{ dragging: isDragging }" ref="wrapper" :style="{ height: visibleContentHeight + 'px' }">
       <div
         v-for="item in currentValues"
-        class="zan-picker-column__item"
-        :class="{ 'zan-picker-column__item--selected': item === currentValue }"
+        class="van-picker-column__item"
+        :class="{ 'van-picker-column__item--selected': item === currentValue }"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }">
         {{ typeof item === 'object' && item[valueKey] ? item[valueKey] : item }}
       </div>
@@ -19,7 +19,7 @@ import draggable from './draggable';
 const DEFAULT_ITEM_HEIGHT = 44;
 
 export default {
-  name: 'zan-picker-column',
+  name: 'van-picker-column',
 
   props: {
     /**
@@ -168,7 +168,7 @@ export default {
             startTop: event.pageY,
             startTranslateTop: translateUtil.getElementTranslate(el).top
           };
-          pickerItems = el.querySelectorAll('.zan-picker-item'); // eslint-disable-line
+          pickerItems = el.querySelectorAll('.van-picker-item'); // eslint-disable-line
         },
 
         drag: (event) => {

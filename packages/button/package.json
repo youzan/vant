@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-button",
+  "name": "@youzan/van-button",
   "version": "0.0.1",
   "description": "button component",
   "main": "./index.js",

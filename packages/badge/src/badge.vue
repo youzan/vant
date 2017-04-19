@@ -1,16 +1,16 @@
 <template>
-    <a class="zan-badge" :href="url" @click="handleClick" :class="{
-      'zan-badge--select': isSelect
+    <a class="van-badge" :href="url" @click="handleClick" :class="{
+      'van-badge--select': isSelect
     }">
-      <div class="zan-badge__active"></div>
-      <div v-if="info" class="zan-badge__info">{{info}}</div>
+      <div class="van-badge__active"></div>
+      <div v-if="info" class="van-badge__info">{{info}}</div>
       {{title}}
     </a>
 </template>
 
 <script>
 export default {
-  name: 'zan-badge',
+  name: 'van-badge',
 
   props: {
     title: {

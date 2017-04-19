@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-swipe-item">
+  <div class="van-swipe-item">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-swipe-item',
+  name: 'van-swipe-item',
 
   beforeCreate() {
     this.$parent.swipes.push(this);

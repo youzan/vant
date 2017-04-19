@@ -49,7 +49,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -57,8 +57,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Switch } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/switch.css';
+import { Switch } from 'vant';
+import 'vant/lib/vant-css/switch.css';
 
 Vue.component(Switch.name, Switch);
 ```
@@ -68,11 +68,11 @@ Vue.component(Switch.name, Switch);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Switch`组件，这样只能在你注册的组件中使用`Switch`：
 
 ```js
-import { Switch } from '@youzan/zanui-vue';
+import { Switch } from 'vant';
 
 export default {
   components: {
-    'zan-switch': Switch
+    'van-switch': Switch
   }
 };
 ```
@@ -83,7 +83,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-switch class="some-customized-class" v-model="switchState1"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchState1"></van-switch>
 <div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
 
 
@@ -101,7 +101,7 @@ export default {
 
 :::demo
 ```html
-<zan-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
 <div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
 
 
@@ -138,10 +138,10 @@ export default {
 
 :::demo 禁用状态
 ```html
-<zan-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
 <div class="demo-switch__text">ON, DISABLED</div>
 
-<zan-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
 <div class="demo-switch__text">OFF, DISABLED</div>
 
 <script>
@@ -163,10 +163,10 @@ export default {
 
 :::demo loading状态
 ```html
-<zan-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
 <div class="demo-switch__text">ON, LOADING</div>
 
-<zan-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></zan-switch>
+<van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
 <div class="demo-switch__text">OFF, LOADING</div>
 
 <script>

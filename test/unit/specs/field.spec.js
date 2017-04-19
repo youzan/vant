@@ -15,7 +15,7 @@ describe('Field', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-field')).to.be.true;
+    expect(wrapper.hasClass('van-field')).to.be.true;
     expect(wrapper.propsData().type).to.equal('text');
   });
 
@@ -26,7 +26,7 @@ describe('Field', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-field')).to.be.true;
+    expect(wrapper.hasClass('van-field')).to.be.true;
     expect(wrapper.data().currentValue).to.equal('test');
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
@@ -48,7 +48,7 @@ describe('Field', () => {
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    const input = wrapper.find('.zan-field__control')[0];
+    const input = wrapper.find('.van-field__control')[0];
     input.simulate('focus');
 
     wrapper.update();
@@ -65,7 +65,7 @@ describe('Field', () => {
       }
     });
 
-    const input = wrapper.find('.zan-field__control')[0];
+    const input = wrapper.find('.van-field__control')[0];
 
     input.element.value = 'test';
     input.simulate('input');
@@ -85,8 +85,8 @@ describe('Field', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-field')).to.be.true;
-    expect(wrapper.hasClass('zan-field--hastextarea')).to.be.true;
+    expect(wrapper.hasClass('van-field')).to.be.true;
+    expect(wrapper.hasClass('van-field--hastextarea')).to.be.true;
   });
 
   it('create a autosize textarea field', (done) => {
@@ -97,10 +97,10 @@ describe('Field', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-field')).to.be.true;
-    expect(wrapper.hasClass('zan-field--autosize')).to.be.true;
+    expect(wrapper.hasClass('van-field')).to.be.true;
+    expect(wrapper.hasClass('van-field--autosize')).to.be.true;
 
-    const textarea = wrapper.find('.zan-field__control')[0];
+    const textarea = wrapper.find('.van-field__control')[0];
     const textareaElement = textarea.element;
     const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
           parseInt(textareaElement.style.paddingTop, 10)) || 0;

@@ -1,22 +1,22 @@
 <template>
-  <div class="zan-steps" :class="`zan-steps--${steps.length}`">
-    <div class="zan-steps__status" v-if="title || description">
-      <div class="zan-steps__icon" v-if="icon || $slot.icon">
+  <div class="van-steps" :class="`van-steps--${steps.length}`">
+    <div class="van-steps__status" v-if="title || description">
+      <div class="van-steps__icon" v-if="icon || $slot.icon">
         <slot name="icon">
-          <zan-icon :name="icon" :class="iconClass"></zan-icon>
+          <van-icon :name="icon" :class="iconClass"></van-icon>
         </slot>
       </div>
-      <div class="zan-steps__message">
-        <div class="zan-steps__message-wrapper">
-          <h4 class="zan-steps__title" v-text="title"></h4>
-          <p class="zan-steps__desc" v-text="description"></p>
+      <div class="van-steps__message">
+        <div class="van-steps__message-wrapper">
+          <h4 class="van-steps__title" v-text="title"></h4>
+          <p class="van-steps__desc" v-text="description"></p>
         </div>
       </div>
       <slot name="message-extra">
       </slot>
     </div>
-    <div class="zan-steps__items" :class="{
-      'zan-steps__items--alone': !title && !description
+    <div class="van-steps__items" :class="{
+      'van-steps__items--alone': !title && !description
     }">
       <slot></slot>
     </div>
@@ -27,10 +27,10 @@
 import Icon from 'packages/icon';
 
 export default {
-  name: 'zan-steps',
+  name: 'van-steps',
 
   components: {
-    'zan-icon': Icon
+    'van-icon': Icon
   },
 
   props: {

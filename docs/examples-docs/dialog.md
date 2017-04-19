@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b dialog {
-    .zan-button {
+    .van-button {
       margin: 15px;
     }
   }
@@ -54,7 +54,7 @@ export default {
 `Dialog`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它，它接受一个数组作为参数，数组中的每一项对应了图片链接。
 
 ```js
-import { Dialog } from '@youzan/zanui-vue';
+import { Dialog } from 'vant';
 ```
 
 ### 代码演示
@@ -65,8 +65,8 @@ import { Dialog } from '@youzan/zanui-vue';
 
 :::demo 消息提示
 ```html
-<zan-button @click="handleAlertClick">alert</zan-button>
-<zan-button @click="handleAlert2Click">无标题alert</zan-button>
+<van-button @click="handleAlertClick">alert</van-button>
+<van-button @click="handleAlert2Click">无标题alert</van-button>
 
 <script>
 export default {
@@ -99,7 +99,7 @@ export default {
 
 :::demo 消息确认
 ```html
-<zan-button @click="handleConfirmClick">confirm</zan-button>
+<van-button @click="handleConfirmClick">confirm</van-button>
 
 <script>
 export default {
@@ -122,7 +122,7 @@ export default {
 
 点击以下按钮查看手机端效果：
 
-<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
 <mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### 方法

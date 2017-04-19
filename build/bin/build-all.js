@@ -5,7 +5,7 @@ const execSync = require('child_process').execSync;
 const existsSync = require('fs').existsSync;
 const path = require('path');
 
-let componentPaths = [];
+const componentPaths = [];
 
 delete components.font;
 

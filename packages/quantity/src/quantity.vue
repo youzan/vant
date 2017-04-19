@@ -1,23 +1,23 @@
 <template>
-  <div class="zan-quantity">
+  <div class="van-quantity">
     <button
       @click="handleChange('minus')"
-      class="zan-quantity__stepper zan-quantity__minus"
+      class="van-quantity__stepper van-quantity__minus"
       :class="{
-        'zan-quantity__minus--disabled': isMinusDisabled
+        'van-quantity__minus--disabled': isMinusDisabled
       }">
     </button>
     <input
       type="text"
-      class="zan-quantity__input"
+      class="van-quantity__input"
       :value="currentValue"
       @input="handleInputChange"
       :disabled="disabled">
     <button
       @click="handleChange('plus')"
-      class="zan-quantity__stepper zan-quantity__plus"
+      class="van-quantity__stepper van-quantity__plus"
       :class="{
-        'zan-quantity__plus--disabled': isPlusDisabled
+        'van-quantity__plus--disabled': isPlusDisabled
       }">
     </button>
   </div>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'zan-quantity',
+  name: 'van-quantity',
 
   props: {
     min: {

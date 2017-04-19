@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b quantity {
-    .zan-quantity {
+    .van-quantity {
       margin-left: 15px;
     }
 
@@ -27,7 +27,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -35,8 +35,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Quantity } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/quantity.css';
+import { Quantity } from 'vant';
+import 'vant/lib/vant-css/quantity.css';
 
 Vue.component(Quantity.name, Quantity);
 ```
@@ -46,11 +46,11 @@ Vue.component(Quantity.name, Quantity);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Quantity`组件，这样只能在你注册的组件中使用`Quantity`：
 
 ```js
-import { Quantity } from '@youzan/zanui-vue';
+import { Quantity } from 'vant';
 
 export default {
   components: {
-    'zan-quantity': Quantity
+    'van-quantity': Quantity
   }
 };
 ```
@@ -61,7 +61,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-quantity v-model="quantity1"></zan-quantity>
+<van-quantity v-model="quantity1"></van-quantity>
 <p class="curr-quantity">当前值：{{ quantity1 }}</p>
 ```
 :::
@@ -72,7 +72,7 @@ export default {
 
 :::demo 禁用Quantity
 ```html
-<zan-quantity v-model="quantity1" disabled></zan-quantity>
+<van-quantity v-model="quantity1" disabled></van-quantity>
 ```
 :::
 
@@ -82,7 +82,7 @@ export default {
 
 :::demo 高级用法
 ```html
-<zan-quantity v-model="quantity2" min="5" max="40" step="2" default-value="9"></zan-quantity>
+<van-quantity v-model="quantity2" min="5" max="40" step="2" default-value="9"></van-quantity>
 <p class="curr-quantity">当前值：{{ quantity2 }}</p>
 ```
 :::

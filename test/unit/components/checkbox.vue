@@ -1,7 +1,7 @@
 <template>
-  <zan-checkbox-group v-model="result">
-    <zan-checkbox v-for="item in list" :name="item">复选框{{item}}</zan-checkbox>
-  </zan-checkbox-group>
+  <van-checkbox-group v-model="result">
+    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+  </van-checkbox-group>
 </template>
 
 <script>
@@ -10,8 +10,8 @@ import CheckboxGroup from 'packages/checkbox-group';
 
 export default {
   components: {
-    'zan-checkbox': Checkbox,
-    'zan-checkbox-group': CheckboxGroup
+    'van-checkbox': Checkbox,
+    'van-checkbox-group': CheckboxGroup
   },
 
   data() {

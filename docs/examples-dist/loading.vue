@@ -1,20 +1,20 @@
 <template><section class="demo-loading"><h1 class="demo-title">Loading 加载</h1><example-block title="渐变深色spinner">
-                <zan-loading class="some-customized-class"></zan-loading>
+                <van-loading class="some-customized-class"></van-loading>
 
               </example-block><example-block title="渐变浅色spinner">
                 <div class="demo-loading__example demo-loading__example--with-bg">
-  <zan-loading class="some-customized-class" :color="'white'"></zan-loading>
+  <van-loading class="some-customized-class" :color="'white'"></van-loading>
 </div>
 
               </example-block><example-block title="单色spinner">
-                <zan-loading class="circle-loading" :type="'circle'" :color="'white'"></zan-loading>
-<zan-loading class="circle-loading" :type="'circle'" :color="'black'"></zan-loading>
+                <van-loading class="circle-loading" :type="'circle'" :color="'white'"></van-loading>
+<van-loading class="circle-loading" :type="'circle'" :color="'black'"></van-loading>
 
               </example-block></section></template>
 <style>
 @component-namespace demo {
   @b loading {
-    .zan-loading {
+    .van-loading {
       margin: 0 auto;
     }
 

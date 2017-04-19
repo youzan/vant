@@ -8,7 +8,7 @@
  * @param {slot} - 显示文本
  *
  * @example
- * <zan-button size="large" type="primary">按钮</zan-button>
+ * <van-button size="large" type="primary">按钮</van-button>
  */
 
 import ZanLoading from 'packages/loading';
@@ -17,10 +17,10 @@ const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
 const ALLOWED_TYPE = ['default', 'danger', 'primary'];
 
 export default {
-  name: 'zan-button',
+  name: 'van-button',
 
   components: {
-    'zan-loading': ZanLoading
+    'van-loading': ZanLoading
   },
 
   props: {
@@ -65,28 +65,28 @@ export default {
         type={nativeType}
         disabled={disabled}
         class={[
-          'zan-button',
-          'zan-button--' + type,
-          'zan-button--' + size,
+          'van-button',
+          'van-button--' + type,
+          'van-button--' + size,
           {
-            'zan-button--disabled': disabled,
-            'zan-button--loading': loading,
-            'zan-button--block': block,
-            'zan-button--bottom-action': bottomAction
+            'van-button--disabled': disabled,
+            'van-button--loading': loading,
+            'van-button--block': block,
+            'van-button--bottom-action': bottomAction
           }
         ]}
         onClick={this.handleClick}
       >
         {
           loading
-            ? <zan-loading
-                class="zan-button__icon-loading"
+            ? <van-loading
+                class="van-button__icon-loading"
                 type="circle"
                 color={type === 'default' ? 'black' : 'white'}>
-              </zan-loading>
+              </van-loading>
             : null
         }
-        <span class="zan-button__text">{this.$slots.default}</span>
+        <span class="van-button__text">{this.$slots.default}</span>
       </Tag>
     );
   }

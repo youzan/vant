@@ -1,15 +1,15 @@
 <template>
-  <div class="zan-progress">
-    <div class="zan-progress__bar">
-      <span class="zan-progress__bar__finished-portion" :style="{backgroundColor: componentColor, width: percentage + '%'}"></span>
-      <span class="zan-progress__bar__pivot" :style="pivotStyle">{{ pivotText }}</span>
+  <div class="van-progress">
+    <div class="van-progress__bar">
+      <span class="van-progress__bar__finished-portion" :style="{backgroundColor: componentColor, width: percentage + '%'}"></span>
+      <span class="van-progress__bar__pivot" :style="pivotStyle">{{ pivotText }}</span>
     </div>
   </div>
 </template>
 
 <script>
 /**
- * zan-progress
+ * van-progress
  * @module components/progress
  * @desc 开关
  * @param {boolean} [inactive=false] - 是否置灰
@@ -19,7 +19,7 @@
  * @param {string} [textColor='#fff'] - 进度条文字颜色
  *
  * @example
- * <zan-switch checked="true" disabled="false"></zan-switch>
+ * <van-switch checked="true" disabled="false"></van-switch>
  */
 
 const DEFAULT_COLOR = '#38f';
@@ -27,7 +27,7 @@ const DEFAULT_TEXT_COLOR = '#fff';
 const INACTIVE_COLOR = '#cacaca';
 
 export default {
-  name: 'zan-progress',
+  name: 'van-progress',
 
   props: {
     percentage: {

@@ -1,20 +1,20 @@
 <template>
-    <div class="zan-uploader">
-        <slot>
+  <div class="van-uploader">
+    <slot>
 
-        </slot>
-        <template v-if="disabled">
-          <input type="file" @change="onValueChange" disabled="disabled" class="zan-uploader__input" />
-        </template>
-        <template v-else>
-          <input type="file" @change="onValueChange"  class="zan-uploader__input" ref="input" />
-        </template>
-    </div>
+    </slot>
+    <template v-if="disabled">
+      <input type="file" @change="onValueChange" disabled="disabled" class="van-uploader__input" />
+    </template>
+    <template v-else>
+      <input type="file" @change="onValueChange"  class="van-uploader__input" ref="input" />
+    </template>
+  </div>
 </template>
 
 <script>
   export default {
-    name: 'zan-uploader',
+    name: 'van-uploader',
     props: {
       disabled: {
         type: Boolean,

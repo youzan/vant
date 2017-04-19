@@ -15,15 +15,15 @@ describe('Quantity', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-quantity')).to.be.true;
     expect(wrapper.data().currentValue).to.equal(1);
 
-    const plusButton = wrapper.find('.zan-quantity__plus')[0];
+    const plusButton = wrapper.find('.van-quantity__plus')[0];
     plusButton.simulate('click');
 
     expect(wrapper.data().currentValue).to.equal(2);
 
-    const minusButton = wrapper.find('.zan-quantity__minus')[0];
+    const minusButton = wrapper.find('.van-quantity__minus')[0];
     minusButton.simulate('click');
     expect(wrapper.data().currentValue).to.equal(1);
   });
@@ -35,9 +35,9 @@ describe('Quantity', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-quantity')).to.be.true;
-    const minusButton = wrapper.find('.zan-quantity__minus')[0];
-    expect(minusButton.hasClass('zan-quantity__minus--disabled')).to.be.true;
+    expect(wrapper.hasClass('van-quantity')).to.be.true;
+    const minusButton = wrapper.find('.van-quantity__minus')[0];
+    expect(minusButton.hasClass('van-quantity__minus--disabled')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     minusButton.simulate('click');
@@ -48,8 +48,8 @@ describe('Quantity', () => {
       done();
     });
 
-    const plusButton = wrapper.find('.zan-quantity__plus')[0];
-    expect(plusButton.hasClass('zan-quantity__plus--disabled')).to.be.true;
+    const plusButton = wrapper.find('.van-quantity__plus')[0];
+    expect(plusButton.hasClass('van-quantity__plus--disabled')).to.be.true;
 
     plusButton.simulate('click');
 
@@ -67,7 +67,7 @@ describe('Quantity', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-quantity')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     wrapper.vm.value = 2;
@@ -87,7 +87,7 @@ describe('Quantity', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-quantity')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -103,7 +103,7 @@ describe('Quantity', () => {
       }
     });
 
-    const input = wrapper.find('.zan-quantity__input')[0];
+    const input = wrapper.find('.van-quantity__input')[0];
     input.element.value = 2;
     input.simulate('input');
 

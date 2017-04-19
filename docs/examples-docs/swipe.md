@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b swipe {
-    .zan-swipe {
+    .van-swipe {
       height: 200px;
 
       img {
@@ -39,7 +39,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -47,8 +47,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Swipe, SwipeItem } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/swipe.css';
+import { Swipe, SwipeItem } from 'vant';
+import 'vant/lib/vant-css/swipe.css';
 
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
@@ -59,12 +59,12 @@ Vue.component(SwipeItem.name, SwipeItem);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Swipe`组件，这样只能在你注册的组件中使用`Swipe`：
 
 ```js
-import { Swipe, SwipeItem } from '@youzan/zanui-vue';
+import { Swipe, SwipeItem } from 'vant';
 
 export default {
   components: {
-    'zan-swipe': Swipe,
-    'zan-swipe-item': SwipeItem
+    'van-swipe': Swipe,
+    'van-swipe-item': SwipeItem
   }
 };
 ```
@@ -75,11 +75,11 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-swipe>
-  <zan-swipe-item v-for="img in images">
+<van-swipe>
+  <van-swipe-item v-for="img in images">
     <img v-lazy="img" alt="">
-  </zan-swipe-item>
-</zan-swipe>
+  </van-swipe-item>
+</van-swipe>
 
 <script>
 export default {
@@ -102,11 +102,11 @@ export default {
 
 :::demo 自动轮播
 ```html
-<zan-swipe auto-play @pagechange:end="handlePageEnd">
-  <zan-swipe-item v-for="img in autoImages">
+<van-swipe auto-play @pagechange:end="handlePageEnd">
+  <van-swipe-item v-for="img in autoImages">
     <img v-lazy="img" alt="">
-  </zan-swipe-item>
-</zan-swipe>
+  </van-swipe-item>
+</van-swipe>
 
 <script>
 export default {

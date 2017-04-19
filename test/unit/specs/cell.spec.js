@@ -13,7 +13,7 @@ describe('CellGroup', () => {
       propsData: {}
     });
 
-    expect(wrapper.hasClass('zan-cell-group')).to.be.true;
+    expect(wrapper.hasClass('van-cell-group')).to.be.true;
   });
 });
 
@@ -26,7 +26,7 @@ describe('Cell', () => {
   it('create', () => {
     wrapper = mount(Cell);
 
-    expect(wrapper.hasClass('zan-cell')).to.be.true;
+    expect(wrapper.hasClass('van-cell')).to.be.true;
   });
 
   it('create a required cell', () => {
@@ -36,8 +36,8 @@ describe('Cell', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-cell')).to.be.true;
-    expect(wrapper.hasClass('zan-cell--required')).to.be.true;
+    expect(wrapper.hasClass('van-cell')).to.be.true;
+    expect(wrapper.hasClass('van-cell--required')).to.be.true;
   });
 
   it('emit a click event', () => {

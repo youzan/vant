@@ -18,7 +18,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -26,8 +26,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Search } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/search.css';
+import { Search } from 'vant';
+import 'vant/lib/vant-css/search.css';
 
 Vue.component(Search.name, Search);
 ```
@@ -37,11 +37,11 @@ Vue.component(Search.name, Search);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Search`组件，这样只能在你注册的组件中使用`Search`：
 
 ```js
-import { Search } from '@youzan/zanui-vue';
+import { Search } from 'vant';
 
 export default {
   components: {
-    'zan-search': Search
+    'van-search': Search
   }
 };
 ```
@@ -54,7 +54,7 @@ export default {
 
 :::demo 基础用法
 ```html
-<zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+<van-search placeholder="商品名称" @search="goSearch"></van-search>
 
 <script>
 export default {
@@ -74,7 +74,7 @@ export default {
 
 :::demo 监听对应事件
 ```html
-<zan-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></zan-search>
+<van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
 
 <script>
 export default {

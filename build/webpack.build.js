@@ -3,12 +3,12 @@ var getPostcssPlugin = require('./utils/postcss_pipe');
 var config = require('./webpack.config.js');
 
 config.entry = {
-  'zanui': './src/index.js'
+  'vant': './src/index.js'
 };
 
 config.output = {
   filename: './lib/[name].js',
-  library: 'zanui',
+  library: 'vant',
   libraryTarget: 'umd'
 };
 

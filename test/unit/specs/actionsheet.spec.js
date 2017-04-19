@@ -12,8 +12,8 @@ describe('ActionSheet', () => {
       propsData: {}
     });
 
-    expect(wrapper.hasClass('zan-actionsheet')).to.be.true;
-    expect(wrapper.contains('.zan-actionsheet__list')).to.be.true;
+    expect(wrapper.hasClass('van-actionsheet')).to.be.true;
+    expect(wrapper.contains('.van-actionsheet__list')).to.be.true;
     expect(wrapper.instance().actions.length).to.equal(0);
     expect(wrapper.instance().overlay).to.be.true;
     expect(wrapper.instance().closeOnClickOverlay).to.be.true;
@@ -36,9 +36,9 @@ describe('ActionSheet', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-actionsheet--withtitle')).to.be.true;
-    expect(wrapper.contains('.zan-actionsheet__header')).to.be.true;
-    expect(wrapper.contains('.zan-actionsheet__content')).to.be.true;
+    expect(wrapper.hasClass('van-actionsheet--withtitle')).to.be.true;
+    expect(wrapper.contains('.van-actionsheet__header')).to.be.true;
+    expect(wrapper.contains('.van-actionsheet__content')).to.be.true;
   });
 
   it('create actions actionsheet', () => {
@@ -57,12 +57,12 @@ describe('ActionSheet', () => {
       }
     });
 
-    const actionItems = wrapper.find('.zan-actionsheet__item');
+    const actionItems = wrapper.find('.van-actionsheet__item');
 
     expect(actionItems.length).to.equal(2);
-    expect(actionItems[0].contains('.zan-actionsheet__name')).to.be.true;
-    expect(actionItems[0].contains('.zan-actionsheet__subname')).to.be.true;
-    expect(actionItems[1].contains('.zan-actionsheet__loading')).to.be.true;
+    expect(actionItems[0].contains('.van-actionsheet__name')).to.be.true;
+    expect(actionItems[0].contains('.van-actionsheet__subname')).to.be.true;
+    expect(actionItems[1].contains('.van-actionsheet__loading')).to.be.true;
   });
 
   it('handle actionsheet item click with callback', () => {
@@ -80,7 +80,7 @@ describe('ActionSheet', () => {
       }
     });
 
-    const actionItem = wrapper.find('.zan-actionsheet__item')[0];
+    const actionItem = wrapper.find('.van-actionsheet__item')[0];
     actionItem.simulate('click');
     expect(called).to.be.true;
   });
@@ -92,8 +92,8 @@ describe('ActionSheet', () => {
       }
     });
 
-    const cancelButton = wrapper.find('.zan-actionsheet__button')[0];
-    expect(wrapper.contains('.zan-actionsheet__button')).to.be.true;
+    const cancelButton = wrapper.find('.van-actionsheet__button')[0];
+    expect(wrapper.contains('.van-actionsheet__button')).to.be.true;
     expect(cancelButton.text()).to.equal('cancel');
   });
 

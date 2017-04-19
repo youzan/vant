@@ -17,8 +17,8 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch')).to.be.true;
-    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+    expect(wrapper.hasClass('van-switch')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
   it('create off switch', () => {
@@ -28,8 +28,8 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch')).to.be.true;
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
   });
 
   it('create loading switch', () => {
@@ -40,7 +40,7 @@ describe('Switch', () => {
     });
     const loading = wrapper.find(ZanLoading)[0];
 
-    expect(wrapper.hasClass('zan-switch')).to.be.true;
+    expect(wrapper.hasClass('van-switch')).to.be.true;
     expect(loading.isVueComponent).to.be.true;
   });
 
@@ -52,9 +52,9 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.true;
     wrapper.simulate('click');
-    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
   it('create disabled switch', () => {
@@ -64,8 +64,8 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch')).to.be.true;
-    expect(wrapper.hasClass('zan-switch--disabled')).to.be.true;
+    expect(wrapper.hasClass('van-switch')).to.be.true;
+    expect(wrapper.hasClass('van-switch--disabled')).to.be.true;
   });
 
   it('disabled switch should be unclickable', () => {
@@ -76,9 +76,9 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
     wrapper.simulate('click');
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
   });
 
   it('click should toggle the switch', () => {
@@ -88,9 +88,9 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
     wrapper.simulate('click');
-    expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
   it('click should call callback function', () => {
@@ -102,9 +102,9 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
     wrapper.simulate('click');
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
     expect(stub.calledOnce).to.be.true;
     expect(stub.calledWith(true));
   });
@@ -117,11 +117,11 @@ describe('Switch', () => {
     });
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    expect(wrapper.hasClass('zan-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--off')).to.be.true;
     wrapper.vm.value = true;
     wrapper.update();
     Vue.nextTick(() => {
-      expect(wrapper.hasClass('zan-switch--on')).to.be.true;
+      expect(wrapper.hasClass('van-switch--on')).to.be.true;
       expect(eventStub.calledOnce).to.be.true;
       expect(eventStub.calledWith('input'));
       done();

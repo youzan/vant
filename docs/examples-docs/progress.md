@@ -14,7 +14,7 @@
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -22,8 +22,8 @@
 
 ```js
 import Vue from 'vue';
-import { Progress } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/progress.css';
+import { Progress } from 'vant';
+import 'vant/lib/vant-css/progress.css';
 
 Vue.component(Progress.name, Progress);
 ```
@@ -33,11 +33,11 @@ Vue.component(Progress.name, Progress);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Progress`组件，这样只能在你注册的组件中使用`Progress`：
 
 ```js
-import { Progress } from '@youzan/zanui-vue';
+import { Progress } from 'vant';
 
 export default {
   components: {
-    'zan-progress': Progress
+    'van-progress': Progress
   }
 };
 ```
@@ -51,13 +51,13 @@ export default {
 :::demo 基础用法
 ```html
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" :percentage="0"></zan-progress>
+  <van-progress class="demo-progress__demo1" :percentage="0"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo2" :percentage="46"></zan-progress>
+  <van-progress class="demo-progress__demo2" :percentage="46"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" :percentage="100"></zan-progress>
+  <van-progress class="demo-progress__demo1" :percentage="100"></van-progress>
 </div>
 ```
 :::
@@ -70,13 +70,13 @@ export default {
 :::demo Inactive
 ```html
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" :inactive="true" :percentage="0"></zan-progress>
+  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="0"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo2" :inactive="true" :percentage="46"></zan-progress>
+  <van-progress class="demo-progress__demo2" :inactive="true" :percentage="46"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" :inactive="true" :percentage="100"></zan-progress>
+  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="100"></van-progress>
 </div>
 ```
 :::
@@ -89,13 +89,13 @@ export default {
 :::demo 自定义颜色和文字
 ```html
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivot-text="红色" color="#ed5050" :percentage="26"></zan-progress>
+  <van-progress class="demo-progress__demo1" pivot-text="红色" color="#ed5050" :percentage="26"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivot-text="橙色" color="#f60" :percentage="46"></zan-progress>
+  <van-progress class="demo-progress__demo1" pivot-text="橙色" color="#f60" :percentage="46"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <zan-progress class="demo-progress__demo1" pivot-text="黄色" color="#f09000" :percentage="66"></zan-progress>
+  <van-progress class="demo-progress__demo1" pivot-text="黄色" color="#f09000" :percentage="66"></van-progress>
 </div>
 ```
 :::

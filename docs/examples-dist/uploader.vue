@@ -1,8 +1,8 @@
 <template><section class="demo-uploader"><h1 class="demo-title">Uploader 图片上传</h1><example-block title="基础用法">
                 <div class="uploader-container">
-  <zan-uploader :after-read="logContent">
-    <zan-icon name="photograph"></zan-icon>
-  </zan-uploader>
+  <van-uploader :after-read="logContent">
+    <van-icon name="photograph"></van-icon>
+  </van-uploader>
 </div>
 
               </example-block></section></template>

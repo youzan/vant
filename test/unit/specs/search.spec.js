@@ -11,7 +11,7 @@ describe('Search', () => {
   it('create a quantity', () => {
     wrapper = mount(Search);
 
-    expect(wrapper.hasClass('zan-search')).to.be.true;
+    expect(wrapper.hasClass('van-search')).to.be.true;
     expect(wrapper.data().focusStatus).to.be.false;
     expect(wrapper.data().isFocus).to.be.false;
   });
@@ -19,7 +19,7 @@ describe('Search', () => {
   it('focus on input', () => {
     wrapper = mount(Search);
 
-    const input = wrapper.find('.zan-search__input')[0];
+    const input = wrapper.find('.van-search__input')[0];
     input.simulate('focus');
 
     expect(wrapper.data().isFocus).to.be.true;
@@ -45,10 +45,10 @@ describe('Search', () => {
     wrapper.setData({ value: 'test' });
     expect(wrapper.data().value).to.be.equal('test');
 
-    const input = wrapper.find('.zan-search__input')[0];
+    const input = wrapper.find('.van-search__input')[0];
     input.simulate('focus');
 
-    const cleanBtn = wrapper.find('.zan-icon-clear')[0];
+    const cleanBtn = wrapper.find('.van-icon-clear')[0];
     cleanBtn.simulate('click');
     expect(wrapper.data().value).to.equal('');
     expect(wrapper.data().focusStatus).to.be.true;
@@ -62,10 +62,10 @@ describe('Search', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const input = wrapper.find('.zan-search__input')[0];
+    const input = wrapper.find('.van-search__input')[0];
     input.simulate('focus');
 
-    const cancelBtn = wrapper.find('.zan-search__cancel')[0];
+    const cancelBtn = wrapper.find('.van-search__cancel')[0];
     cancelBtn.simulate('click');
 
     wrapper.vm.$nextTick(() => {
@@ -83,7 +83,7 @@ describe('Search', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const input = wrapper.find('.zan-search__input')[0];
+    const input = wrapper.find('.van-search__input')[0];
     input.simulate('keyup.enter');
 
     wrapper.vm.$nextTick(() => {

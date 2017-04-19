@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-radio",
+  "name": "@youzan/van-radio",
   "version": "0.0.1",
   "description": "radio component",
   "main": "./index.js",

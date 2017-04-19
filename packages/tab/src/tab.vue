@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-tab__pane" :class="classNames">
+  <div class="van-tab__pane" :class="classNames">
     <slot></slot>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'zan-tab',
+    name: 'van-tab',
     props: {
       // 选项卡头显示文字
       title: {
@@ -20,7 +20,7 @@
     },
     computed: {
       classNames() {
-        return { 'zan-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.curActive };
+        return { 'van-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.curActive };
       }
     }
   };

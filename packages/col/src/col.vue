@@ -14,13 +14,13 @@
 
 <script>
   export default {
-    name: 'zan-col',
+    name: 'van-col',
     props: {
       span: [Number, String],
       offset: [Number, String],
       prefix: {
         type: String,
-        default: 'zan'
+        default: 'van'
       }
     },
     computed: {

@@ -1,10 +1,10 @@
 <template>
-  <i class="zan-icon" :class="'zan-icon-' + name" @click="handleIconClick"></i>
+  <i class="van-icon" :class="'van-icon-' + name" @click="handleIconClick"></i>
 </template>
 
 <script>
   export default {
-    name: 'zan-icon',
+    name: 'van-icon',
 
     props: {
       name: {

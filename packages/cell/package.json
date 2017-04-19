@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-cell",
+  "name": "@youzan/van-cell",
   "version": "0.0.1",
   "description": "cell component",
   "main": "./index.js",

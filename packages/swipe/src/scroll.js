@@ -34,7 +34,7 @@ extend(Scroll.prototype, {
 
   update: function() {
     const oldPages = this.pages;
-    this.pages = this.wrapElem.querySelectorAll('.zan-swipe-item');
+    this.pages = this.wrapElem.querySelectorAll('.van-swipe-item');
     if (oldPages && oldPages.length === this.pages.length) {
       const isSame = Array.prototype.every.call(this.pages, (elem, index) => {
         return this.pages[index] === oldPages[index];

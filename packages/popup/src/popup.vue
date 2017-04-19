@@ -1,6 +1,6 @@
 <template>
   <transition :name="currentTransition">
-    <div v-show="currentValue" class="zan-popup" :class="[position ? 'zan-popup--' + position : '']">
+    <div v-show="currentValue" class="van-popup" :class="[position ? 'van-popup--' + position : '']">
       <slot></slot>
     </div>
   </transition>
@@ -10,7 +10,7 @@
 import Popup from 'src/mixins/popup';
 
 export default {
-  name: 'zan-popup',
+  name: 'van-popup',
 
   mixins: [Popup],
 

@@ -1,85 +1,85 @@
 <template><section class="demo-button"><h1 class="demo-title">Button 按钮</h1><example-block title="按钮功能">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button block="">default</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button type="primary" block="">primary</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button type="danger" block="">danger</zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button block="">default</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button type="primary" block="">primary</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button type="danger" block="">danger</van-button>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="禁用状态">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button disabled block="">diabled</zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button disabled block="">diabled</van-button>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="按钮尺寸">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button size="large">large</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="normal">normal</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="small">small</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="mini">mini</zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button size="large">large</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="normal">normal</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="small">small</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="mini">mini</van-button>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="自定义按钮标签">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button tag="a" type="primary" href="https://www.youzan.com" target="_blank">a标签按钮</zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button tag="a" type="primary" href="https://www.youzan.com" target="_blank">a标签按钮</van-button>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="loading按钮">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button type="primary" loading="" block="">loading</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button loading="" block=""></zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button type="primary" loading="" block="">loading</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button loading="" block=""></van-button>
+  </van-col>
+</van-row>
 
               </example-block><example-block title="">
-                <zan-row>
-  <zan-col span="24">
-    <zan-button type="primary" bottom-action="">立即购买</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="12">
-    <zan-button bottom-action="">加入购物车</zan-button>
-  </zan-col>
-  <zan-col span="12">
-    <zan-button type="primary" bottom-action="">立即购买</zan-button>
-  </zan-col>
-</zan-row>
+                <van-row>
+  <van-col span="24">
+    <van-button type="primary" bottom-action="">立即购买</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="12">
+    <van-button bottom-action="">加入购物车</van-button>
+  </van-col>
+  <van-col span="12">
+    <van-button type="primary" bottom-action="">立即购买</van-button>
+  </van-col>
+</van-row>
 
               </example-block></section></template>
 <style>
 @component-namespace demo {
   @b button {
-    .zan-row {
+    .van-row {
       padding: 0 15px;
     }
-    .zan-col {
+    .van-col {
       margin-bottom: 10px;
     }
   }

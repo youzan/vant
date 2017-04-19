@@ -2,7 +2,7 @@
 .tags-container {
   padding: 5px 15px;
 
-  .zan-tag + .zan-tag {
+  .van-tag + .van-tag {
     margin-left: 10px;
   }
 }
@@ -12,7 +12,7 @@
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -20,8 +20,8 @@
 
 ```js
 import Vue from 'vue';
-import { Tag } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/tag.css';
+import { Tag } from 'vant';
+import 'vant/lib/vant-css/tag.css';
 
 Vue.component(Tag.name, Tag);
 ```
@@ -31,11 +31,11 @@ Vue.component(Tag.name, Tag);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Tag`组件，这样只能在你注册的组件中使用`Tag`：
 
 ```js
-import { Tag } from '@youzan/zanui-vue';
+import { Tag } from 'vant';
 
 export default {
   components: {
-    'zan-tag': Tag
+    'van-tag': Tag
   }
 };
 ```
@@ -49,13 +49,13 @@ export default {
 :::demo 基础用法
 ```html
 <div class="tags-container">
-  <zan-tag>返现</zan-tag>
-  <zan-tag plain>返现</zan-tag>
+  <van-tag>返现</van-tag>
+  <van-tag plain>返现</van-tag>
 </div>
 <div class="tags-container">
-  <zan-tag type="danger">返现</zan-tag>
-  <zan-tag type="danger">四字标签</zan-tag>
-  <zan-tag type="danger">一</zan-tag>
+  <van-tag type="danger">返现</van-tag>
+  <van-tag type="danger">四字标签</van-tag>
+  <van-tag type="danger">一</van-tag>
 </div>
 ```
 :::
@@ -67,19 +67,19 @@ export default {
 :::demo 高级用法
 ```html
 <div class="tags-container">
-  <zan-tag type="danger">返现</zan-tag>
-  <zan-tag plain type="danger">返现</zan-tag>
+  <van-tag type="danger">返现</van-tag>
+  <van-tag plain type="danger">返现</van-tag>
 </div>
 <div class="tags-container">
-  <zan-tag type="primary">返现</zan-tag>
-  <zan-tag plain type="primary">返现</zan-tag>
+  <van-tag type="primary">返现</van-tag>
+  <van-tag plain type="primary">返现</van-tag>
 </div>
 <div class="tags-container">
-  <zan-tag type="success">返现</zan-tag>
-  <zan-tag plain type="success">返现</zan-tag>
+  <van-tag type="success">返现</van-tag>
+  <van-tag plain type="success">返现</van-tag>
 </div>
 <div class="tags-container">
-  <zan-tag type="danger" mark>返现</zan-tag>
+  <van-tag type="danger" mark>返现</van-tag>
 </div>
 ```
 :::

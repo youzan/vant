@@ -1,10 +1,10 @@
 <template><section class="demo-search"><h1 class="demo-title">Search 搜索</h1><example-block title="基础用法">
-                <zan-search placeholder="商品名称" @search="goSearch"></zan-search>
+                <van-search placeholder="商品名称" @search="goSearch"></van-search>
 
 
 
               </example-block><example-block title="监听对应事件">
-                <zan-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></zan-search>
+                <van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
 
 
 

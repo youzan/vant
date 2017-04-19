@@ -26,13 +26,43 @@ export default {
 
 ## Datetime Picker 时间选择
 
-模仿iOS中的`UIPickerView`。
+### 使用指南
 
-### 基础用法
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
+
+#### 全局注册
+
+你可以在全局注册`Radio`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Radio`组件了：
+
+```js
+import Vue from 'vue';
+import { DatetimePicker } from 'vant';
+
+Vue.component(DatetimePicker.name, DatetimePicker);
+```
+
+#### 局部注册
+
+如果你只是想在某个组件中使用，你可以在对应组件中注册`DatetimePicker`组件，这样只能在你注册的组件中使用`DatetimePicker`：
+
+```js
+import { DatetimePicker } from 'vant';
+
+export default {
+  components: {
+    'van-datetime-picker': DatetimePicker
+  }
+};
+```
+
+
+### 代码演示
+
+#### 基础用法
 
 :::demo 基础用法
 ```html
-<zan-datetime-picker
+<van-datetime-picker
   v-model="currentDate"
   type="datetime"
   format="yyyy.mm.dd hh时 mm分"
@@ -40,7 +70,7 @@ export default {
   :max-hour="maxHour"
   :min-date="minDate"
   @change="handlePickerChange">  
-</zan-datetime-picker>
+</van-datetime-picker>
 
 <script>
 
@@ -60,6 +90,38 @@ export default {
   }
 };
 </script>
+```
+:::
+
+#### 选择日期
+
+:::demo 选择日期
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="date"
+  format="yyyy.mm.dd hh时 mm分"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
+  @change="handlePickerChange">  
+</van-datetime-picker>
+```
+:::
+
+#### 选择时间
+
+:::demo 选择时间
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="time"
+  format="yyyy.mm.dd hh时 mm分"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
+  @change="handlePickerChange">  
+</van-datetime-picker>
 ```
 :::
 

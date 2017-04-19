@@ -1,10 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 var slugify = require('transliteration').slugify;
-var md = require('markdown-it')();
 var striptags = require('./strip-tags');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var version = require('../package.json').version;
 var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -36,8 +34,8 @@ function wrap(render) {
 module.exports = {
   entry: {
     'vendor': ['vue', 'vue-router'],
-    'zan-docs': './docs/src/index.js',
-    'zan-examples': './docs/src/examples.js'
+    'vant-docs': './docs/src/index.js',
+    'vant-examples': './docs/src/examples.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -52,7 +50,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
-      'zanui': path.join(__dirname, '..'),
+      'vant': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages'),
       'lib': path.join(__dirname, '../lib'),
@@ -150,13 +148,13 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'zan-docs'],
+      chunks: ['vendor', 'vant-docs'],
       template: 'docs/src/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'zan-examples'],
+      chunks: ['vendor', 'vant-examples'],
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true

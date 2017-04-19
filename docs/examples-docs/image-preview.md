@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b image-preview {
-    .zan-button {
+    .van-button {
       margin-left: 15px;
     }
   }
@@ -34,7 +34,7 @@ export default {
 `ImagePreview`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
 
 ```js
-import { ImagePreview } from '@youzan/zanui-vue';
+import { ImagePreview } from 'vant';
 ```
 
 ### 代码演示
@@ -43,7 +43,7 @@ import { ImagePreview } from '@youzan/zanui-vue';
 
 :::demo 基础用法
 ```html
-<zan-button @click="handleImagePreview">预览图片</zan-button>
+<van-button @click="handleImagePreview">预览图片</van-button>
 
 <script>
 import { ImagePreview } from 'src/index';
@@ -64,7 +64,7 @@ export default {
 
 点击以下按钮查看手机端效果：
 
-<zan-button @click="mobileShow = true">点击查看手机端效果</zan-button>
+<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
 <mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### 方法参数

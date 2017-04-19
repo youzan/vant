@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-popup",
+  "name": "@youzan/van-popup",
   "version": "0.0.1",
   "description": "popup component",
   "main": "./index.js",

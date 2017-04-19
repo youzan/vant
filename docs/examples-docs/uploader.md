@@ -17,7 +17,7 @@ export default {
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -25,8 +25,8 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Uploader } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/uploader.css';
+import { Uploader } from 'vant';
+import 'vant/lib/vant-css/uploader.css';
 
 Vue.component(Uploader.name, Uploader);
 ```
@@ -36,11 +36,11 @@ Vue.component(Uploader.name, Uploader);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Uploader`组件，这样只能在你注册的组件中使用`Uploader`：
 
 ```js
-import { Uploader } from '@youzan/zanui-vue';
+import { Uploader } from 'vant';
 
 export default {
   components: {
-    'zan-uploader': Uploader
+    'van-uploader': Uploader
   }
 };
 ```
@@ -52,9 +52,9 @@ export default {
 :::demo 基础用法
 ```html
 <div class="uploader-container">
-  <zan-uploader :after-read="logContent">
-    <zan-icon name="photograph"></zan-icon>
-  </zan-uploader>
+  <van-uploader :after-read="logContent">
+    <van-icon name="photograph"></van-icon>
+  </van-uploader>
 </div>
 ```
 :::

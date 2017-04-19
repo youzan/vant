@@ -1,20 +1,20 @@
 <template>
-  <zan-cell
-    class="zan-field"
+  <van-cell
+    class="van-field"
     :title="label"
     :required="required"
     :class="{
-      'zan-field--hastextarea': type === 'textarea',
-      'zan-field--nolabel': !label,
-      'zan-field--disabled': disabled,
-      'zan-field--error': error,
-      'zan-field--border': border,
-      'zan-field--autosize': autosize
+      'van-field--hastextarea': type === 'textarea',
+      'van-field--nolabel': !label,
+      'van-field--disabled': disabled,
+      'van-field--error': error,
+      'van-field--border': border,
+      'van-field--autosize': autosize
     }">
     <textarea
       v-if="type === 'textarea'"
       ref="textareaElement"
-      class="zan-field__control"
+      class="van-field__control"
       v-model="currentValue"
       @focus="handleInputFocus"
       :placeholder="placeholder"
@@ -26,7 +26,7 @@
     </textarea>
     <input
       v-else
-      class="zan-field__control"
+      class="van-field__control"
       :value="currentValue"
       @input="handleInput"
       @focus="handleInputFocus"
@@ -35,7 +35,7 @@
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
-  </zan-cell>
+  </van-cell>
 </template>
 
 <script>
@@ -43,7 +43,7 @@ const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'datetime'
 import zanCell from 'packages/cell';
 
 export default {
-  name: 'zan-field',
+  name: 'van-field',
 
   components: {
     zanCell

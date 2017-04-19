@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-panel",
+  "name": "@youzan/van-panel",
   "version": "0.0.1",
   "description": "panel component",
   "main": "./index.js",

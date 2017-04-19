@@ -14,7 +14,7 @@ describe('Popup', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-popup')).to.be.true;
+    expect(wrapper.hasClass('van-popup')).to.be.true;
     expect(wrapper.instance().currentTransition).to.equal('popup-slide-bottom');
   });
 

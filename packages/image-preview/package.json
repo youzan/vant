@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-image-pewview",
+  "name": "@youzan/van-image-pewview",
   "version": "0.0.1",
   "description": "image preview component",
   "main": "./index.js",

@@ -55,7 +55,7 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Lazyload } from '@youzan/zanui-vue';
+import { Lazyload } from 'vant';
 
 Vue.use(Lazyload, options);
 ```

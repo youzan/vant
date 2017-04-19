@@ -1,10 +1,10 @@
 <style>
 @component-namespace demo {
   @b button {
-    .zan-row {
+    .van-row {
       padding: 0 15px;
     }
-    .zan-col {
+    .van-col {
       margin-bottom: 10px;
     }
   }
@@ -15,7 +15,7 @@
 
 ### 使用指南
 
-如果你已经按照[快速上手](/vue/component/quickstart)中引入了整个`ZanUI`，以下**组件注册**就可以忽略了，因为你已经全局注册了`ZanUI`中的全部组件。
+如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
 
 #### 全局注册
 
@@ -23,8 +23,8 @@
 
 ```js
 import Vue from 'vue';
-import { Button } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/button.css';
+import { Button } from 'vant';
+import 'vant/lib/vant-css/button.css';
 
 Vue.component(Button.name, Button);
 ```
@@ -34,11 +34,11 @@ Vue.component(Button.name, Button);
 如果你只是想在某个组件中使用，你可以在对应组件中注册`Button`组件，这样只能在你注册的组件中使用`Button`：
 
 ```js
-import { Button } from '@youzan/zanui-vue';
+import { Button } from 'vant';
 
 export default {
   components: {
-    'zan-button': Button
+    'van-button': Button
   }
 };
 ```
@@ -51,17 +51,17 @@ export default {
 
 :::demo 按钮功能
 ```html
-<zan-row>
-  <zan-col span="24">
-    <zan-button block>default</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button type="primary" block>primary</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button type="danger" block>danger</zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button block>default</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button type="primary" block>primary</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button type="danger" block>danger</van-button>
+  </van-col>
+</van-row>
 ```
 :::
 
@@ -71,11 +71,11 @@ export default {
 
 :::demo 禁用状态
 ```html
-<zan-row>
-  <zan-col span="24">
-    <zan-button disabled block>diabled</zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button disabled block>diabled</van-button>
+  </van-col>
+</van-row>
 ```
 :::
 
@@ -85,26 +85,26 @@ export default {
 
 :::demo 按钮尺寸
 ```html 
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="large">large</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="normal">normal</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="small">small</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="24">
-    <zan-button size="mini">mini</zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="large">large</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="normal">normal</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="small">small</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="24">
+    <van-button size="mini">mini</van-button>
+  </van-col>
+</van-row>
 ```
 :::
 
@@ -114,11 +114,11 @@ export default {
 
 :::demo 自定义按钮标签
 ```html 
-<zan-row>
-  <zan-col span="24">
-    <zan-button tag="a" type="primary" href="https://www.youzan.com" target="_blank">a标签按钮</zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button tag="a" type="primary" href="https://www.youzan.com" target="_blank">a标签按钮</van-button>
+  </van-col>
+</van-row>
 ```
 :::
 
@@ -128,14 +128,14 @@ export default {
 
 :::demo loading按钮
 ```html 
-<zan-row>
-  <zan-col span="24">
-    <zan-button type="primary" loading block>loading</zan-button>
-  </zan-col>
-  <zan-col span="24">
-    <zan-button loading block></zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button type="primary" loading block>loading</van-button>
+  </van-col>
+  <van-col span="24">
+    <van-button loading block></van-button>
+  </van-col>
+</van-row>
 ```
 :::
 
@@ -145,19 +145,19 @@ export default {
 
 :::demo 
 ```html 
-<zan-row>
-  <zan-col span="24">
-    <zan-button type="primary" bottom-action>立即购买</zan-button>
-  </zan-col>
-</zan-row>
-<zan-row>
-  <zan-col span="12">
-    <zan-button bottom-action>加入购物车</zan-button>
-  </zan-col>
-  <zan-col span="12">
-    <zan-button type="primary" bottom-action>立即购买</zan-button>
-  </zan-col>
-</zan-row>
+<van-row>
+  <van-col span="24">
+    <van-button type="primary" bottom-action>立即购买</van-button>
+  </van-col>
+</van-row>
+<van-row>
+  <van-col span="12">
+    <van-button bottom-action>加入购物车</van-button>
+  </van-col>
+  <van-col span="12">
+    <van-button type="primary" bottom-action>立即购买</van-button>
+  </van-col>
+</van-row>
 ```
 :::
 

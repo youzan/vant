@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-picker">
-    <div class="zan-picker__toolbar" v-show="showToolbar">
+  <div class="van-picker">
+    <div class="van-picker__toolbar" v-show="showToolbar">
       <slot>
-        <a href="javascript:void(0)" class="zan-picker__cancel" @click="handlePickerCancel">取消</a>
-        <a href="javascript:void(0)" class="zan-picker__confirm" @click="handlePickerConfirm">完成</a>
+        <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">取消</a>
+        <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">完成</a>
       </slot>
     </div>
-    <div class="zan-picker__columns" :class="['zan-picker__columns--' + columns.length]">
+    <div class="van-picker__columns" :class="['van-picker__columns--' + columns.length]">
       <picker-column
         v-for="(item, index) in columns"
         v-model="values[index]"
@@ -17,7 +17,7 @@
         :value-key="valueKey"
         @columnChange="columnValueChange(index)">
       </picker-column>
-      <div class="zan-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
+      <div class="van-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ import PickerColumn from './picker-column';
 const DEFAULT_ITEM_HEIGHT = 44;
 
 export default {
-  name: 'zan-picker',
+  name: 'van-picker',
 
   components: {
     PickerColumn
@@ -99,7 +99,7 @@ export default {
      * 获取对应索引的列的实例
      */
     getColumn(index) {
-      const children = this.$children.filter(child => child.$options.name === 'zan-picker-column');
+      const children = this.$children.filter(child => child.$options.name === 'van-picker-column');
       return children[index];
     },
 

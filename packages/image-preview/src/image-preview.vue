@@ -1,11 +1,11 @@
 <template>
   <transition name="image-fade">
-    <div class="zan-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
-      <zan-swipe>
-        <zan-swipe-item v-for="item in images">
-          <img class="zan-image-preview__image" @load="handleLoad" :src="item" alt="">
-        </zan-swipe-item>
-      </zan-swipe>
+    <div class="van-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
+      <van-swipe>
+        <van-swipe-item v-for="item in images">
+          <img class="van-image-preview__image" @load="handleLoad" :src="item" alt="">
+        </van-swipe-item>
+      </van-swipe>
     </div>
   </transition>
 </template>
@@ -16,7 +16,7 @@ import ZanSwipe from 'packages/swipe';
 import ZanSwipeItem from 'packages/swipe-item';
 
 export default {
-  name: 'zan-image-preview',
+  name: 'van-image-preview',
 
   mixins: [Popup],
 
@@ -57,8 +57,8 @@ export default {
       const target = event.currentTarget;
       const targetRatio = target.width / target.height;
 
-      const centerClass = 'zan-image-preview__image--center';
-      const bigClass = 'zan-image-preview__image--big';
+      const centerClass = 'van-image-preview__image--center';
+      const bigClass = 'van-image-preview__image--big';
 
       if (targetRatio > ratio) {
         target.className += (' ' + centerClass);

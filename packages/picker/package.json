@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-picker",
+  "name": "@youzan/van-picker",
   "version": "0.0.1",
   "description": "picker component",
   "main": "./index.js",

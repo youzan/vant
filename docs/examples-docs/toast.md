@@ -1,7 +1,7 @@
 <style>
 @component-namespace demo {
   @b toast {
-    .zan-button {
+    .van-button {
       margin: 15px;
     }
   }
@@ -70,7 +70,7 @@ export default {
 `Toast`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
 
 ```js
-import { Toast } from '@youzan/zanui-vue';
+import { Toast } from 'vant';
 ```
 
 ### 代码演示
@@ -79,12 +79,12 @@ import { Toast } from '@youzan/zanui-vue';
 
 :::demo 基础用法
 ```html
-<zan-button @click="showSimpleToast">普通文字提示</zan-button>
-<zan-button @click="showLoadingToast">加载Toast</zan-button>
-<zan-button @click="showSuccessToast">成功</zan-button>
-<zan-button @click="showFailToast">失败</zan-button>
-<zan-button @click="showForbidClickToast">背景不能点击</zan-button>
-<zan-button @click="showCustomizedToast(5000)">倒数5秒</zan-button>
+<van-button @click="showSimpleToast">普通文字提示</van-button>
+<van-button @click="showLoadingToast">加载Toast</van-button>
+<van-button @click="showSuccessToast">成功</van-button>
+<van-button @click="showFailToast">失败</van-button>
+<van-button @click="showForbidClickToast">背景不能点击</van-button>
+<van-button @click="showCustomizedToast(5000)">倒数5秒</van-button>
 
 <script>
 import { Toast } from 'src/index';
@@ -135,8 +135,8 @@ export default {
 
 :::demo 手动关闭
 ```html
-<zan-button @click="showToast">打开</zan-button>
-<zan-button @click="closeToast">关闭</zan-button>
+<van-button @click="showToast">打开</van-button>
+<van-button @click="closeToast">关闭</van-button>
 
 <script>
 import { Toast } from 'src/index';
@@ -160,7 +160,7 @@ export default {
 
 :::demo 手动关闭
 ```html
-<zan-button @click="showHtmlToast">打开</zan-button>
+<van-button @click="showHtmlToast">打开</van-button>
 
 <script>
 import { Toast } from 'src/index';

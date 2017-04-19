@@ -14,6 +14,6 @@ describe('Card', () => {
       }
     });
 
-    expect(wrapper.hasClass('zan-card')).to.be.true;
+    expect(wrapper.hasClass('van-card')).to.be.true;
   });
 });

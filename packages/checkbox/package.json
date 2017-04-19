@@ -1,5 +1,5 @@
 {
-  "name": "@youzan/zan-checkbox",
+  "name": "@youzan/van-checkbox",
   "version": "0.0.1",
   "description": "checkbox component",
   "main": "./index.js",

@@ -1,16 +1,16 @@
 <template>
-  <div class="zan-switch" :class="switchStates" @click="toggleState">
-    <div class="zan-switch__node">
-      <zan-loading v-if="loading" class="zan-switch__loading"></zan-loading>
+  <div class="van-switch" :class="switchStates" @click="toggleState">
+    <div class="van-switch__node">
+      <van-loading v-if="loading" class="van-switch__loading"></van-loading>
     </div>
-    <div class="zan-switch__bg"></div>
+    <div class="van-switch__bg"></div>
   </div>
 </template>
 
 <script>
-import ZanLoading from 'packages/loading';
+import VanLoading from 'packages/loading';
 /**
- * zan-switch
+ * van-switch
  * @module components/switch
  * @desc 开关
  * @param {boolean} [value=false] - 开关状态
@@ -18,12 +18,12 @@ import ZanLoading from 'packages/loading';
  * @param {boolean} [loading=false] - loading状态
  *
  * @example
- * <zan-switch :checked="true" :disabled="false"></zan-switch>
+ * <van-switch :checked="true" :disabled="false"></van-switch>
  */
 export default {
-  name: 'zan-switch',
+  name: 'van-switch',
   components: {
-    'zan-loading': ZanLoading
+    'van-loading': VanLoading
   },
   props: {
     value: Boolean,
@@ -47,10 +47,10 @@ export default {
   },
   computed: {
     switchStates: function() {
-      const switchStates = ['zan-switch--' + (this.checked ? 'on' : 'off')];
+      const switchStates = ['van-switch--' + (this.checked ? 'on' : 'off')];
 
       if (this.disabled) {
-        switchStates.push('zan-switch--disabled');
+        switchStates.push('van-switch--disabled');
       }
 
       return switchStates;

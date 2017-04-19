@@ -1,12 +1,12 @@
 <template>
-  <div class="zan-radio-group">
+  <div class="van-radio-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'zan-radio-group',
+  name: 'van-radio-group',
 
   props: {
     value: {},
