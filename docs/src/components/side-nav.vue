@@ -55,7 +55,7 @@ export default {
   methods: {
     handleTitleClick(item) {
       const firstGroup = item.groups && item.groups[0];
-      if (firstGroup && firstGroup.list && firstGroup.list.length !==  0) {
+      if (firstGroup && firstGroup.list && firstGroup.list.length !== 0) {
         return this.$router.replace(this.base + firstGroup.list[0].path);
       }
     }
@@ -65,7 +65,7 @@ export default {
 
 <style lang="css">
   .side-nav {
-    width: 250px;
+    flex: 0 0 250px;
     box-sizing: border-box;
     padding: 40px 0;
     border-right: 1px solid #e5e5e5;
