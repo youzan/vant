@@ -1,7 +1,7 @@
 {
-  "name": "@youzan/zanui-css",
+  "name": "vant",
   "version": "0.1.2",
-  "description": "zanui css.",
+  "description": "vant css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "files": [
