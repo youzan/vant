@@ -8,22 +8,24 @@
       @click="isOpen = !isOpen">
       {{group.groupName}}
     </div>
-    <ul class="mobile-nav-group__list" :class="{ 'mobile-nav-group__list--open': isOpen }">
-      <template v-for="navItem in group.list">
-        <li
-          class="mobile-nav-group__title"
-          v-if="!navItem.disabled">
-          <router-link
-            active-class="active"
-            :to="base + navItem.path">
-            <p>
-              {{ navItem.title }}
-            </p>
-          </router-link>
-          <zan-icon name="arrow"></zan-icon>
-        </li>
-      </template>
-    </ul>
+    <div class="mobile-nav-group__list-wrapper" :class="{ 'mobile-nav-group__list-wrapper--open': isOpen }">
+      <ul class="mobile-nav-group__list" :class="{ 'mobile-nav-group__list--open': isOpen }">
+        <template v-for="navItem in group.list">
+          <li
+            class="mobile-nav-group__title"
+            v-if="!navItem.disabled">
+            <router-link
+              active-class="active"
+              :to="base + navItem.path">
+              <p>
+                {{ navItem.title }}
+              </p>
+            </router-link>
+            <van-icon name="arrow"></van-icon>
+          </li>
+        </template>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -86,7 +88,7 @@ export default {
         }
       }
 
-      .zan-icon-arrow {
+      .van-icon-arrow {
         position: absolute;
         font-size: 12px;
         line-height: 1;
@@ -95,12 +97,21 @@ export default {
       }
     }
 
-    @e list {
+    @e list-wrapper {
       height: 0;
-      transition: height .5s ease-out;
+      overflow: hidden;
 
       @m open {
         height: auto;
+      }
+    }
+
+    @e list {
+      transform: translateY(-50%);
+      transition: transform .2s ease-out;
+
+      @m open {
+        transform: translateY(0);
       }
     }
 

@@ -1,8 +1,16 @@
 <template><section class="demo-datetime"><h1 class="demo-title">Datetime Picker 时间选择</h1><example-block title="基础用法">
-                <zan-datetime-picker v-model="currentDate" type="datetime" format="yyyy.mm.dd hh时 mm分" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
-</zan-datetime-picker>
+                <van-datetime-picker v-model="currentDate" type="datetime" format="yyyy.mm.dd hh时 mm分" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
+</van-datetime-picker>
 
 
+
+              </example-block><example-block title="选择日期">
+                <van-datetime-picker v-model="currentDate" type="date" format="yyyy.mm.dd hh时 mm分" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
+</van-datetime-picker>
+
+              </example-block><example-block title="选择时间">
+                <van-datetime-picker v-model="currentDate" type="time" format="yyyy.mm.dd hh时 mm分" :min-hour="minHour" :max-hour="maxHour" :min-date="minDate" @change="handlePickerChange">  
+</van-datetime-picker>
 
               </example-block></section></template>
 

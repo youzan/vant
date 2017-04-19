@@ -57,7 +57,7 @@
   </van-col>
 </van-row>
 
-              </example-block><example-block title="">
+              </example-block><example-block title="页面底部操作按钮">
                 <van-row>
   <van-col span="24">
     <van-button type="primary" bottom-action="">立即购买</van-button>

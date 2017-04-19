@@ -143,7 +143,7 @@ export default {
 
 一般用于`fixed`在底部的区域或是`popup`弹层的底部，一般只使用`primary`和`normal`两种状态。
 
-:::demo 
+:::demo 页面底部操作按钮
 ```html 
 <van-row>
   <van-col span="24">
