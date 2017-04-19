@@ -1,0 +1,52 @@
+.van-col {
+  float: left;
+  box-sizing: border-box;
+}
+.van-col-1 { width: 4.166666666666667%; }
+.van-col-2 { width: 8.333333333333334%; }
+.van-col-3 { width: 12.5%; }
+.van-col-4 { width: 16.666666666666668%; }
+.van-col-5 { width: 20.833333333333336%; }
+.van-col-6 { width: 25%; }
+.van-col-7 { width: 29.166666666666668%; }
+.van-col-8 { width: 33.333333333333336%; }
+.van-col-9 { width: 37.5%; }
+.van-col-10 { width: 41.66666666666667%; }
+.van-col-11 { width: 45.833333333333336%; }
+.van-col-12 { width: 50%; }
+.van-col-13 { width: 54.16666666666667%; }
+.van-col-14 { width: 58.333333333333336%; }
+.van-col-15 { width: 62.50000000000001%; }
+.van-col-16 { width: 66.66666666666667%; }
+.van-col-17 { width: 70.83333333333334%; }
+.van-col-18 { width: 75%; }
+.van-col-19 { width: 79.16666666666667%; }
+.van-col-20 { width: 83.33333333333334%; }
+.van-col-21 { width: 87.5%; }
+.van-col-22 { width: 91.66666666666667%; }
+.van-col-23 { width: 95.83333333333334%; }
+.van-col-24 { width: 100%; }
+.van-col-offset-1 { margin-left: 4.166666666666667%; }
+.van-col-offset-2 { margin-left: 8.333333333333334%; }
+.van-col-offset-3 { margin-left: 12.5%; }
+.van-col-offset-4 { margin-left: 16.666666666666668%; }
+.van-col-offset-5 { margin-left: 20.833333333333336%; }
+.van-col-offset-6 { margin-left: 25%; }
+.van-col-offset-7 { margin-left: 29.166666666666668%; }
+.van-col-offset-8 { margin-left: 33.333333333333336%; }
+.van-col-offset-9 { margin-left: 37.5%; }
+.van-col-offset-10 { margin-left: 41.66666666666667%; }
+.van-col-offset-11 { margin-left: 45.833333333333336%; }
+.van-col-offset-12 { margin-left: 50%; }
+.van-col-offset-13 { margin-left: 54.16666666666667%; }
+.van-col-offset-14 { margin-left: 58.333333333333336%; }
+.van-col-offset-15 { margin-left: 62.50000000000001%; }
+.van-col-offset-16 { margin-left: 66.66666666666667%; }
+.van-col-offset-17 { margin-left: 70.83333333333334%; }
+.van-col-offset-18 { margin-left: 75%; }
+.van-col-offset-19 { margin-left: 79.16666666666667%; }
+.van-col-offset-20 { margin-left: 83.33333333333334%; }
+.van-col-offset-21 { margin-left: 87.5%; }
+.van-col-offset-22 { margin-left: 91.66666666666667%; }
+.van-col-offset-23 { margin-left: 95.83333333333334%; }
+.van-col-offset-24 { margin-left: 100%; }
