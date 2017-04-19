@@ -9,7 +9,7 @@
 ## 一、安装
 
 ```shell
-ynpm install @youzan/zanui-vue
+ynpm install vant
 ```
  
 ## 二、使用
@@ -19,20 +19,20 @@ ynpm install @youzan/zanui-vue
  
 ```javascript
 import Vue from 'vue';
-import ZanUI from '@youzan/zanui-vue';
+import vant from 'vant';
 // 你也可以使用自己的主题
-import '@youzan/zanui-vue/lib/zanui-css/index.css';
+import 'vant/lib/vant-css/index.css';
 
-Vue.use(ZanUI);
+Vue.use(vant);
 ```
  
 ### 2. 按需导入组件
 
 ```javascript
 import Vue from 'vue';
-import { Button, Cell } from '@youzan/zanui-vue';
-import '@youzan/zanui-vue/lib/zanui-css/button.css';
-import '@youzan/zanui-vue/lib/zanui-css/cell.css';
+import { Button, Cell } from 'vant';
+import 'vant/lib/vant-css/button.css';
+import 'vant/lib/vant-css/cell.css';
 
 Vue.component(Button.name, Button);
 Vue.component(Cell.name, Cell);
