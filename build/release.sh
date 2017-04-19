@@ -15,9 +15,9 @@ then
   # build
   VERSION=$VERSION npm run dist
 
-  # publish zanui-css
-  echo "Releasing zanui-css $VERSION ..."
-  cd packages/zanui-css
+  # publish vant-css
+  echo "Releasing vant-css $VERSION ..."
+  cd packages/vant-css
   npm version $VERSION --message "[release] $VERSION"
   npm publish
   cd ../..
