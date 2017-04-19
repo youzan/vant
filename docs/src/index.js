@@ -26,7 +26,7 @@ Vue.use(ZanUI.Lazyload, {
   lazyComponent: true
 });
 
-let routesConfig = routes(navConfig);
+const routesConfig = routes(navConfig);
 routesConfig.push({
   path: '/',
   redirect: '/component/install'
@@ -34,7 +34,7 @@ routesConfig.push({
 
 const router = new VueRouter({
   mode: 'history',
-  base: '/vue',
+  base: '/zanui/vue',
   routes: routesConfig
 });
 

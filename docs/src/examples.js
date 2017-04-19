@@ -15,14 +15,14 @@ Vue.use(ZanUI.Lazyload, {
 });
 Vue.use(VueRouter);
 
-let routesConfig = routes(navConfig, true);
+const routesConfig = routes(navConfig, true);
 routesConfig.push({
   path: '/',
   component: DemoList.default || DemoList
 });
 const router = new VueRouter({
   mode: 'hash',
-  base: __dirname,
+  base: '/zanui/vue',
   routes: routesConfig
 });
 
