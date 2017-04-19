@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import zanLoading from 'packages/loading';
-import zanIcon from 'packages/icon';
+import vanLoading from 'packages/loading';
+import vanIcon from 'packages/icon';
 
 const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
 const DEFAULT_STYLE_LIST = ['success', 'fail'];
@@ -43,8 +43,8 @@ export default {
   name: 'van-toast',
 
   components: {
-    'van-loading': zanLoading,
-    'van-icon': zanIcon
+    'van-loading': vanLoading,
+    'van-icon': vanIcon
   },
   props: {
     type: {

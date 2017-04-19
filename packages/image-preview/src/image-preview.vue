@@ -12,8 +12,8 @@
 
 <script>
 import Popup from 'src/mixins/popup';
-import ZanSwipe from 'packages/swipe';
-import ZanSwipeItem from 'packages/swipe-item';
+import VanSwipe from 'packages/swipe';
+import VanSwipeItem from 'packages/swipe-item';
 
 export default {
   name: 'van-image-preview',
@@ -21,8 +21,8 @@ export default {
   mixins: [Popup],
 
   components: {
-    ZanSwipe,
-    ZanSwipeItem
+    VanSwipe,
+    VanSwipeItem
   },
 
   props: {

@@ -34,8 +34,8 @@
 
 <script>
 import Popup from 'src/mixins/popup';
-import ZanLoading from 'packages/loading';
-import ZanIcon from 'packages/icon';
+import VanLoading from 'packages/loading';
+import VanIcon from 'packages/icon';
 
 export default {
   name: 'van-actionsheet',
@@ -43,8 +43,8 @@ export default {
   mixins: [Popup],
 
   components: {
-    ZanLoading,
-    ZanIcon
+    VanLoading,
+    VanIcon
   },
 
   props: {

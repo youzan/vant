@@ -11,7 +11,7 @@
  * <van-button size="large" type="primary">按钮</van-button>
  */
 
-import ZanLoading from 'packages/loading';
+import VanLoading from 'packages/loading';
 
 const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
 const ALLOWED_TYPE = ['default', 'danger', 'primary'];
@@ -20,7 +20,7 @@ export default {
   name: 'van-button',
 
   components: {
-    'van-loading': ZanLoading
+    'van-loading': VanLoading
   },
 
   props: {

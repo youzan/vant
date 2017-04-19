@@ -1,3 +1,3 @@
-import ZanLoading from './src/loading';
+import Loading from './src/loading';
 
-export default ZanLoading;
+export default Loading;

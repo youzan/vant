@@ -40,13 +40,13 @@
 
 <script>
 const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'datetime', 'password', 'textarea'];
-import zanCell from 'packages/cell';
+import vanCell from 'packages/cell';
 
 export default {
   name: 'van-field',
 
   components: {
-    zanCell
+    vanCell
   },
 
   props: {
