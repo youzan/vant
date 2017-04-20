@@ -23,9 +23,9 @@
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:vant && npm run build:components && npm run build:utils && npm run build:vant-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "felint lint src/**/*.js packages/**/*.{js,vue} build/**/*.js",
-    "test": "karma start test/unit/karma.conf.js --single-run; npm run coverage",
+    "test": "karma start test/unit/karma.conf.js --single-run",
+    "test:coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
     "test:watch": "karma start test/unit/karma.conf.js",
-    "coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
     "release": "npm run bootstrap && sh build/release.sh"
   },
   "repository": {
