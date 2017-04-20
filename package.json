@@ -72,6 +72,7 @@
     "decamelize": "^1.2.0",
     "eslint-loader": "^1.7.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
+    "favicons-webpack-plugin": "0.0.7",
     "felint": "^0.5.0-alpha.3",
     "file-loader": "^0.9.0",
     "file-save": "^0.2.0",
