@@ -80,7 +80,7 @@
        */
       handleTabClick(index, el) {
         if (el.disabled) {
-          el.$emit('disabled', index);
+          this.$emit('disabled', index);
           return;
         }
 

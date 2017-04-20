@@ -51,7 +51,7 @@ make init componentName
 在`docs/nav.config.json`文件里合适的地方写入组件声明，根据组件类型（JS组件，CSS组件，Form等）进行区分 在`docs/examples-docs`目录里新建同名的md文件，如`waterfall.md`，在项目的根目录下执行以下命令，启动server：
 
 ```shell
-make dev
+npm run dev
 ```
 
 浏览器访问[http://localhost:8080](http://localhost:8080)就可以看到所有组件的示例了。

@@ -17,13 +17,13 @@
 </template>
 
 <script>
-  import ZanIcon from 'packages/icon';
+  import VanIcon from 'packages/icon';
 
   export default {
     name: 'van-search',
 
     components: {
-      ZanIcon
+      VanIcon
     },
 
     props: {

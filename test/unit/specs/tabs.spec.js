@@ -1,6 +1,6 @@
 import Tabs from 'packages/tabs';
 import { mount } from 'avoriaz';
-// import TabsTestComponent from '../components/tabs';
+import TabsTestComponent from '../components/tabs';
 
 describe('Tabs', () => {
   let wrapper;
@@ -20,22 +20,20 @@ describe('Tabs', () => {
     expect(wrapper.hasClass('van-tabs--card')).to.be.true;
   });
 
-  it('create a tabs with four tab', () => {
-    // wrapper = mount(TabsTestComponent);
+  it('create a tabs with four tab', (done) => {
+    wrapper = mount(TabsTestComponent);
 
-    // expect(wrapper.hasClass('van-tabs')).to.be.true;
-    // expect(wrapper.hasClass('van-tabs--line')).to.be.true;
+    expect(wrapper.hasClass('van-tabs')).to.be.true;
+    expect(wrapper.hasClass('van-tabs--line')).to.be.true;
 
-    // const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
+    const tabsContainer = wrapper.find('.van-tabs')[0];
+    expect(tabsContainer.vNode.child.curActive).to.equal(0);
 
-    // const tabTitle = wrapper.find('.van-tab__pane')[2];
-    // tabTitle.simulate('click');
-
-    // wrapper.vm.$nextTick(() => {
-    //   // expect(.curActive).to.equal(2);
-    //   console.log(wrapper.vNode.child);
-    //   expect(eventStub.calledWith('click'));
-    //   done();
-    // });
+    wrapper.vm.active = 1;
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(tabsContainer.vNode.child.curActive).to.equal(1);
+      done();
+    });
   });
 });

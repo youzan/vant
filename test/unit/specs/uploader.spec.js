@@ -15,13 +15,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
+    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
   });
 
   it('disabled', () => {
@@ -32,13 +26,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
+    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
   });
 
   it('before read', () => {
@@ -52,13 +40,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '')] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '')] }})).to.equal(undefined);
   });
 
   it('read text', () => {
@@ -73,13 +55,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 
   it('read text no after hook', () => {
@@ -91,13 +67,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 
   it('read dataUrl', () => {
@@ -112,6 +82,6 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 });
