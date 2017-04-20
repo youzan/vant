@@ -88,6 +88,7 @@ export default {
     overflow: auto;
     background: #f8f8f8;
     position: relative;
+    -webkit-overflow-scrolling: touch;
   }
 
   .page-back {
