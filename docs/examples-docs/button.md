@@ -3,6 +3,7 @@
   @b button {
     .van-button {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      user-select: none;
     }
     .van-row {
       padding: 0 15px;

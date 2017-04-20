@@ -15,20 +15,30 @@
 
 
               </example-block><example-block title="禁用状态">
-                <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
-<div class="demo-switch__text">ON, DISABLED</div>
-
-<van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
-<div class="demo-switch__text">OFF, DISABLED</div>
+                <van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
+    <div class="demo-switch__text">打开</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
+    <div class="demo-switch__text">关闭</div>
+  </van-col>
+</van-row>
 
 
 
               </example-block><example-block title="loading状态">
-                <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
-<div class="demo-switch__text">ON, LOADING</div>
-
-<van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
-<div class="demo-switch__text">OFF, LOADING</div>
+                <van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
+    <div class="demo-switch__text">打开</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
+    <div class="demo-switch__text">关闭</div>
+  </van-col>
+</van-row>
 
 
 
@@ -36,9 +46,17 @@
 <style>
   @component-namespace demo {
     @b switch {
+      .van-switch {
+        float: left;
+        margin: 0 15px;
+      }
+
       @e text {
         display: inline-block;
         line-height: 32px;
+        float: left;
+        font-size: 14px;
+        color: #333;
       }
     }
   }
@@ -51,7 +69,7 @@ export default {
   data() {
     return {
       switchState1: true,
-      switchState2: true,
+      switchState2: false,
       switchStateTrue: true,
       switchStateFalse: false
     };
