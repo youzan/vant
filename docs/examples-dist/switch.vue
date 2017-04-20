@@ -1,13 +1,15 @@
 <template><section class="demo-switch"><h1 class="demo-title">Switch 开关</h1><example-block title="基础用法">
-                <van-switch class="some-customized-class" v-model="switchState1"></van-switch>
-<div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
+                <van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchState1"></van-switch>
+    <div class="demo-switch__text">{{ switchState1 ? ' 打开' : '关闭' }}</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
+    <div class="demo-switch__text">{{ switchState2 ? ' 打开' : '关闭' }}</div>
+  </van-col>
+</van-row>
 
-
-
-
-              </example-block><example-block title="">
-                <van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
-<div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
 
 
 
@@ -34,19 +36,9 @@
 <style>
   @component-namespace demo {
     @b switch {
-      .examples,
-      .example-block  {
-        text-align: center;
-      }
-
-      .example-block {
-        .demo-sub-title {
-          text-align: left;
-        }
-      }
-
       @e text {
-        margin: 20px auto;
+        display: inline-block;
+        line-height: 32px;
       }
     }
   }

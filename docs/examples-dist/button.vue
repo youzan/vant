@@ -76,6 +76,9 @@
 <style>
 @component-namespace demo {
   @b button {
+    .van-button {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
     .van-row {
       padding: 0 15px;
     }
