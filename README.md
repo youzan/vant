@@ -5,7 +5,7 @@
     <img alt="项目logo" src="https://img.yzcdn.cn/upload_files/2017/04/20/FlkVrSlOr-SGK9qQqtilN6-IFZyT.png">
 </p>
 <p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
-[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
+[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)  [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
  
 ## 一、安装
 
