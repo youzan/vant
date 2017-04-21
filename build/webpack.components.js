@@ -7,7 +7,7 @@ delete config.devtool;
 config.entry = Components;
 
 config.externals = {
-  vue: 'vue'
+  vue: 'Vue'
 };
 
 config.output = {
