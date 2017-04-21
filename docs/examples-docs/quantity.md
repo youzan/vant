@@ -83,7 +83,7 @@ export default {
 :::demo 高级用法
 ```html
 <van-quantity v-model="quantity2" min="5" max="40" step="2" default-value="9"></van-quantity>
-<p class="curr-quantity">当前值：{{ quantity2 }}</p>
+<p class="curr-quantity">当前值：{{ quantity2 || 9 }}</p>
 ```
 :::
 

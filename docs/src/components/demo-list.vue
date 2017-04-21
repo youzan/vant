@@ -44,6 +44,7 @@ export default {
     .zanui-desc {
       text-align: center;
       font-weight: normal;
+      user-select: none;
     }
 
     .zanui-title {

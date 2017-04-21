@@ -13,7 +13,7 @@
         :values="item.values"
         :class-name="item.className"
         :itemHeight="itemHeight"
-        :visible-item-count="visibleItemCount"
+        :visible-item-count="visibileColumnCount"
         :value-key="valueKey"
         @columnChange="columnValueChange(index)">
       </picker-column>

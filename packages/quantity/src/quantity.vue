@@ -1,5 +1,5 @@
 <template>
-  <div class="van-quantity">
+  <div class="van-quantity" :class="{ 'van-quantity--disabled': disabled }">
     <button
       @click="handleChange('minus')"
       class="van-quantity__stepper van-quantity__minus"

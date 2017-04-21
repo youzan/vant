@@ -1,5 +1,5 @@
 import Button from 'packages/button';
-import ZanLoading from 'packages/loading';
+import VanLoading from 'packages/loading';
 import { mount } from 'avoriaz';
 
 describe('Button', () => {
@@ -122,7 +122,7 @@ describe('Button', () => {
         loading: true
       }
     });
-    const loading = wrapper.find(ZanLoading)[0];
+    const loading = wrapper.find(VanLoading)[0];
 
     expect(wrapper.hasClass('van-button')).to.be.true;
     expect(loading.isVueComponent).to.be.true;
@@ -131,5 +131,20 @@ describe('Button', () => {
     wrapper.simulate('click');
 
     expect(eventStub.called).to.be.false;
+  });
+
+  it('create a primary loading button', () => {
+    wrapper = mount(Button, {
+      propsData: {
+        type: 'primary',
+        loading: true
+      }
+    });
+
+    expect(wrapper.hasClass('van-button')).to.be.true;
+    expect(wrapper.hasClass('van-button--primary')).to.be.true;
+
+    const loading = wrapper.find(VanLoading)[0];
+    expect(loading.isVueComponent).to.be.true;
   });
 });
