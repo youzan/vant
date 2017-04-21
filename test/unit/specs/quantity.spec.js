@@ -88,9 +88,13 @@ describe('Quantity', () => {
     });
 
     expect(wrapper.hasClass('van-quantity')).to.be.true;
+    expect(wrapper.vm.currentValue).to.equal(30);
     const eventStub = sinon.stub(wrapper.vm, '$emit');
+
+    wrapper.vm.value = 30;
     wrapper.update();
     wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.currentValue).to.equal(30);
       expect(eventStub.calledWith('input'));
       done();
     });

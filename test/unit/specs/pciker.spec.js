@@ -16,7 +16,7 @@ describe('Picker', () => {
 
     expect(wrapper.hasClass('van-picker')).to.be.true;
     expect(wrapper.contains('.van-picker__toolbar')).to.be.true;
-    expect(wrapper.computed().values().length).to.equal(0);
+    expect(wrapper.vm.values.length).to.equal(0);
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const cancelBtn = wrapper.find('.van-picker__cancel')[0];
