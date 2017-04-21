@@ -1,3 +1,4 @@
+@import './common/var.css';
 @-webkit-keyframes loading {
   from {
     -webkit-transform: rotate(0deg);
@@ -28,12 +29,12 @@
     height: 30px;
     line-height: 0;
     font-size: 0;
-  
-    @e spinner { 
+
+    @e spinner {
       display: inline-block;
       height: 100%;
       width: 100%;
-      
+
       -webkit-animation: loading 0.8s linear;
       -webkit-animation-iteration-count: infinite;
       animation: loading 0.8s linear;
