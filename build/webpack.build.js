@@ -13,7 +13,7 @@ config.output = {
 };
 
 config.externals = {
-  vue: 'vue'
+  vue: 'Vue'
 };
 
 config.plugins = [

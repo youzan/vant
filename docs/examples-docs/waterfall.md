@@ -54,11 +54,7 @@ export default {
           this.list.push(lastNumber);
         }
         this.loading = false;
-      }, 2500);
-    },
-    loadMoreUpper() {
-      if (this.list[0] < 0) return;
-      this.list.unshift(-1);
+      }, 2000);
     }
   },
   computed: {
@@ -71,8 +67,23 @@ export default {
 
 <style>
   .waterfall {
-    max-height: 300px;
+    max-height: 360px;
     overflow: scroll;
+    border-top: 1px solid #e5e5e5;
+  }
+  .waterfall-item {
+    line-height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .page-desc {
+    padding: 5px 0;
+    line-height: 1.4;
+    font-size: 14px;
+    text-align: center;
+    color: #666;
+  }
+  .van-loading {
+    margin: 10px auto;
   }
 </style>
 
@@ -80,10 +91,10 @@ export default {
 
 :::demo 基础用法
 ```html
+<p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
 <div class="waterfall">
   <div
     v-waterfall-lower="loadMore"
-    v-waterfall-upper="loadMoreUpper"
     waterfall-disabled="isWaterfallDisabled"
     waterfall-offset="400"
   >
@@ -94,9 +105,11 @@ export default {
     >
       {{ item }}
     </div>
-    <div v-if="loading" style="text-align: center;">
-      loading
-    </div>
+    <van-loading
+      v-if="loading"
+      :type="'circle'"
+      :color="'black'"
+    ></van-loading>
   </div>
 </div>
 ```
