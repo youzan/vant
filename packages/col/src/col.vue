@@ -25,7 +25,8 @@
     },
     computed: {
       gutter() {
-        return Number(this.$parent.gutter);
+        if (!this.$parent) return 0;
+        return Number(this.$parent.gutter) || 0;
       },
       style() {
         const padding = `${this.gutter / 2}px`;

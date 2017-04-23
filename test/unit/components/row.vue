@@ -1,15 +1,15 @@
 <template>
-  <zan-row gutter="10">
-    <zan-col span="8">
+  <van-row gutter="10">
+    <van-col span="8">
       <div class="gray">span: 8</div>
-    </zan-col>
-    <zan-col span="8">
+    </van-col>
+    <van-col span="8">
       <div class="gray">span: 8</div>
-    </zan-col>
-    <zan-col span="8">
+    </van-col>
+    <van-col span="8">
       <div class="gray">span: 8</div>
-    </zan-col>
-  </zan-row>
+    </van-col>
+  </van-row>
 </template>
 
 <script>
@@ -18,8 +18,8 @@ import Col from 'packages/col';
 
 export default {
   components: {
-    'zan-row': Row,
-    'zan-col': Col
+    'van-row': Row,
+    'van-col': Col
   }
 };
 </script>
