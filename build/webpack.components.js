@@ -7,7 +7,12 @@ delete config.devtool;
 config.entry = Components;
 
 config.externals = {
-  vue: 'Vue'
+  vue: {
+    root: 'Vue',
+    commonjs: 'vue',
+    commonjs2: 'vue',
+    amd: 'vue'
+  }
 };
 
 config.output = {
