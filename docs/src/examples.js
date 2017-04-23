@@ -23,9 +23,11 @@ routesConfig.push({
 const router = new VueRouter({
   mode: 'history',
   base: '/zanui/vue/examples',
-  routes: routesConfig,
-  scrollBehavior: function() {
-    return { x: 0, y: 0 }
+  routes: routesConfig
+});
+router.beforeEach((route, redirect, next) => {
+  if (route.path !== '/') {
+    window.scrollTo(0, 0);
   }
 });
 
