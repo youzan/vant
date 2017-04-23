@@ -83,6 +83,10 @@ export default {
     height: 100%;
   }
 
+  body {
+    font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  }
+
   .examples-container {
     height: 100%;
     overflow: auto;
@@ -117,6 +121,7 @@ export default {
 
   .demo-sub-title {
     font-size: 14px;
+    font-weight: normal;
     color: #999;
     padding: 30px 15px 10px;
   }

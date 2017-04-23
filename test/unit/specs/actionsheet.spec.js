@@ -75,6 +75,9 @@ describe('ActionSheet', () => {
             callback: () => {
               called = true;
             }
+          },
+          {
+            name: '微信'
           }
         ]
       }
@@ -83,6 +86,9 @@ describe('ActionSheet', () => {
     const actionItem = wrapper.find('.van-actionsheet__item')[0];
     actionItem.simulate('click');
     expect(called).to.be.true;
+
+    const secondActionItem = wrapper.find('.van-actionsheet__item')[1];
+    secondActionItem.simulate('click');
   });
 
   it('create actionsheet with cancel button', () => {
