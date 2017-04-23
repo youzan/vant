@@ -48,9 +48,7 @@ extend(Scroll.prototype, {
       top: 0,
       left: 0,
       width: '100%',
-      height: '100%',
-      '-webkit-transform': 'translate3d(-9999px, 0, 0)',
-      'pointer-events': 'none'
+      height: '100%'
     };
     setElementsStyles(this.pages, defaultStyle);
     this.mCache = {

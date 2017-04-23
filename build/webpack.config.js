@@ -43,6 +43,14 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js'
   },
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
+        { from: /^\/zanui\/vue/, to: '/index.html' }
+      ]
+    }
+  },
   resolve: {
     modules: [
       path.join(__dirname, '../node_modules'),

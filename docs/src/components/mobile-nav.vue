@@ -5,7 +5,7 @@
       :class="{
         'mobile-nav-group__title--open': isOpen
       }"
-      @click="isOpen = !isOpen">
+      @click="handleNavTitleClick">
       {{group.groupName}}
     </div>
     <div class="mobile-nav-group__list-wrapper" :class="{ 'mobile-nav-group__list-wrapper--open': isOpen }">
@@ -38,13 +38,26 @@ export default {
         return [];
       }
     },
-    base: String
+    base: String,
+    navKey: [String, Number]
   },
 
   data() {
     return {
       isOpen: false
     };
+  },
+
+  mounted() {
+    this.isOpen = JSON.parse(sessionStorage.getItem('mobile-nav-' + this.navKey));
+    console.log(this.isOpen, this.navKey);
+  },
+
+  methods: {
+    handleNavTitleClick() {
+      this.isOpen = !this.isOpen;
+      sessionStorage.setItem('mobile-nav-' + this.navKey, this.isOpen);
+    }
   }
 };
 </script>

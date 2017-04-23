@@ -6,6 +6,8 @@
   <van-loading class="some-customized-class" :color="'white'"></van-loading>
 </div>
 
+
+
               </example-block><example-block title="单色spinner">
                 <van-loading class="circle-loading" :type="'circle'" :color="'white'"></van-loading>
 <van-loading class="circle-loading" :type="'circle'" :color="'black'"></van-loading>
@@ -23,10 +25,10 @@
     }
 
     .demo-loading__example--with-bg {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(17, 17, 17, 0.7);
       margin: 0 auto;
-      width: 80px;
-      padding: 25px 0;
+      width: 120px;
+      padding: 45px 0;
       border-radius: 10px;
     }
   }

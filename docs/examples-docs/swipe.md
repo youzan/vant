@@ -77,7 +77,9 @@ export default {
 ```html
 <van-swipe>
   <van-swipe-item v-for="img in images">
-    <img v-lazy="img" alt="">
+    <a href="https://youzan.com" target="_blank">
+      <img v-lazy="img" alt="">
+    </a>
   </van-swipe-item>
 </van-swipe>
 
