@@ -1,5 +1,5 @@
 <template>
-  <div class="van-loading">
+  <div class="van-loading" :class="['van-loading--' + type]">
     <span class="van-loading__spinner" :class="['van-loading__spinner--' + type, 'van-loading__spinner--' + color]"></span>
   </div>
 </template>

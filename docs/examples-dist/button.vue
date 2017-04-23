@@ -23,18 +23,12 @@
   <van-col span="24">
     <van-button size="large">large</van-button>
   </van-col>
-</van-row>
-<van-row>
   <van-col span="24">
     <van-button size="normal">normal</van-button>
   </van-col>
-</van-row>
-<van-row>
   <van-col span="24">
     <van-button size="small">small</van-button>
   </van-col>
-</van-row>
-<van-row>
   <van-col span="24">
     <van-button size="mini">mini</van-button>
   </van-col>
@@ -82,9 +76,14 @@
     }
     .van-row {
       padding: 0 15px;
+      margin-bottom: 20px;
     }
-    .van-col {
-      margin-bottom: 10px;
+    .van-col-24 {
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

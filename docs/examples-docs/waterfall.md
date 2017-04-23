@@ -74,6 +74,7 @@ export default {
   .waterfall-item {
     line-height: 50px;
     border-bottom: 1px solid #e5e5e5;
+    background: #fff;
   }
   .page-desc {
     padding: 5px 0;

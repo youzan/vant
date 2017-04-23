@@ -123,7 +123,8 @@ export default {
     font-size: 14px;
     font-weight: normal;
     color: #999;
-    padding: 30px 15px 10px;
+    padding: 0 15px;
+    margin: 30px 0 10px;
   }
 
   .footer {

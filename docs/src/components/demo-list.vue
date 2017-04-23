@@ -5,7 +5,7 @@
     <div class="mobile-navs">
       <template v-for="item in data">
         <div class="mobile-nav-item" v-if="item.showInMobile">
-          <mobile-nav v-for="group in item.groups"  :group="group" :base="base"></mobile-nav>
+          <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index"></mobile-nav>
         </div>
       </template>
     </div>
