@@ -16,7 +16,6 @@ describe('Field', () => {
     });
 
     expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.propsData().type).to.equal('text');
   });
 
   it('create a text field with initialize value', (done) => {

@@ -27,23 +27,12 @@ const router = new VueRouter({
   routes: routesConfig
 });
 
-let indexScrollTop = 0;
 router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
-    indexScrollTop = document.body.scrollTop;
+    window.scrollTo(0, 0);
   }
   document.title = route.meta.title || document.title;
   next();
-});
-
-router.afterEach(route => {
-  if (route.path !== '/') {
-    document.body.scrollTop = 0;
-  } else {
-    Vue.nextTick(() => {
-      document.body.scrollTop = indexScrollTop;
-    });
-  }
 });
 
 new Vue({ // eslint-disable-line

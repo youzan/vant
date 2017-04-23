@@ -8,6 +8,7 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -190,6 +191,39 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity
+    }),
+    new FaviconsWebpackPlugin({
+      // Your source logo
+      logo: path.join(__dirname, '../docs/assets/ZanUIlogo256x256.png'),
+      // The prefix for all image files (might be a folder or a name)
+      prefix: 'favico-[hash]-',
+      // Emit all stats of the generated icons
+      // emitStats: false,
+      // The name of the json containing all favicon information
+      // statsFilename: 'iconstats-[hash].json',
+      // Generate a cache file with control hashes and
+      // don't rebuild the favicons until those hashes change
+      persistentCache: false,
+      // Inject the html into the html-webpack-plugin
+      inject: true,
+      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+      background: '#fff',
+      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+      title: 'Vant',
+
+      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
     })
   ]);
 }

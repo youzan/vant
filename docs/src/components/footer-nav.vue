@@ -96,7 +96,7 @@ export default {
       font-size: 20px;
       line-height: 1.5;
 
-      .zan-icon {
+      .van-icon {
         width: 20px;
         font-size: 12px;
         line-height: 20px;
@@ -110,7 +110,7 @@ export default {
     @e left {
       float: left;
 
-      .zan-icon {
+      .van-icon {
         float: left;
         transform: rotate(180deg);
         margin-right: 10px;
@@ -120,7 +120,7 @@ export default {
     @e right {
       float: right;
 
-      .zan-icon {
+      .van-icon {
         float: right;
         margin-left: 10px;
       }

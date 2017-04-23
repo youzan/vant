@@ -1,17 +1,53 @@
 <template>
-  <div class="examples-container">
-    <router-view></router-view>
-    <div class="footer">
+  <div class="examples-container" ref="container">
+    <div class="demo-content" ref="demo">
+      <router-view></router-view>
+    </div>
+    <div class="footer" :class="{ 'footer-fixed': isFooterFixed }">
       <img src="https://img.yzcdn.cn/upload_files/2017/04/18/FjupTe9o1apJhJr5qR-4ucXqPs7e.png" alt="logo" class="zanui-logo">
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+
 export default {
   computed: {
     visible() {
       return ['/'].indexOf(this.$route.path) < 0;
+    }
+  },
+
+  data() {
+    return {
+      isFooterFixed: false
+    };
+  },
+
+  mounted() {
+    this.computeFooterFixed();
+  },
+
+  watch: {
+    '$route.path': function(val) {
+      Vue.nextTick(() => {
+        this.computeFooterFixed();
+      });
+    }
+  },
+
+  methods: {
+    computeFooterFixed() {
+      if (this.$refs.container) {
+        const demoSize = this.$refs.demo.getBoundingClientRect();
+        const containerSize = this.$refs.container.getBoundingClientRect();
+        if (demoSize.height < containerSize.height - 54) {
+          this.isFooterFixed = true;
+          return;
+        }
+      }
+      this.isFooterFixed = false;
     }
   }
 };
@@ -47,12 +83,16 @@ export default {
     height: 100%;
   }
 
+  body {
+    font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  }
+
   .examples-container {
-    padding-bottom: 54px;
     height: 100%;
     overflow: auto;
     background: #f8f8f8;
     position: relative;
+    -webkit-overflow-scrolling: touch;
   }
 
   .page-back {
@@ -81,6 +121,7 @@ export default {
 
   .demo-sub-title {
     font-size: 14px;
+    font-weight: normal;
     color: #999;
     padding: 30px 15px 10px;
   }
@@ -89,10 +130,13 @@ export default {
     margin-top: 30px;
     width: 100%;
     padding: 10px 0 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
     background: #f8f8f8;
+    
+    &.footer-fixed {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   .zanui-logo {

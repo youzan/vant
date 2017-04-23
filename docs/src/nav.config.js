@@ -7,10 +7,6 @@ module.exports = {
         {
           "list": [
             {
-              "path": "/install",
-              "title": "安装"
-            },
-            {
               "path": "/quickstart",
               "title": "快速上手"
             }
@@ -19,7 +15,7 @@ module.exports = {
       ]
     },
     {
-      "name": "ZanUI组件",
+      "name": "Vant组件",
       "showInMobile": true,
       "groups": [
         {

@@ -30,7 +30,7 @@ Vue.use(ZanUI.Lazyload, {
 const routesConfig = routes(navConfig);
 routesConfig.push({
   path: '/',
-  redirect: '/component/install'
+  redirect: '/component/quickstart'
 });
 
 const router = new VueRouter({

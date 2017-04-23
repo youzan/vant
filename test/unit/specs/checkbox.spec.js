@@ -77,15 +77,36 @@ describe('Checkbox', () => {
   it('create a checkbox', () => {
     wrapper = mount(Checkbox, {
       propsData: {
-        value: false,
+        value: true,
         disabled: false
       }
     });
 
     expect(wrapper.hasClass('van-checkbox')).to.be.true;
-    expect(wrapper.instance().currentValue).to.be.false;
-    expect(wrapper.instance().isDisabled).to.be.false;
-    expect(wrapper.instance().isChecked).to.be.false;
+    expect(wrapper.vm.currentValue).to.be.true;
+    expect(wrapper.vm.isDisabled).to.be.false;
+    expect(wrapper.vm.isChecked).to.be.true;
+  });
+
+  it('create a not boolean value checkbox', (done) => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        value: 'test',
+        name: 'test'
+      }
+    });
+
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
+    expect(wrapper.vm.currentValue).to.equal('test');
+    expect(wrapper.vm.isDisabled).to.be.false;
+    expect(wrapper.vm.isChecked).to.be.true;
+
+    wrapper.vm.value = null;
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.currentValue).to.equal(null);
+      done();
+    });
   });
 
   it('click on a checkbox', (done) => {
@@ -120,12 +141,12 @@ describe('Checkbox', () => {
 
     expect(wrapper.hasClass('van-checkbox')).to.be.true;
     expect(wrapper.hasClass('van-checkbox--disabled')).to.be.true;
-    expect(wrapper.instance().currentValue).to.be.false;
-    expect(wrapper.instance().isDisabled).to.be.true;
+    expect(wrapper.vm.currentValue).to.be.false;
+    expect(wrapper.vm.isDisabled).to.be.true;
 
     const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
     checkboxLabel.simulate('click');
 
-    expect(wrapper.instance().currentValue).to.be.false;
+    expect(wrapper.vm.currentValue).to.be.false;
   });
 });

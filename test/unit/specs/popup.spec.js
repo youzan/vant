@@ -46,4 +46,15 @@ describe('Popup', () => {
 
     expect(wrapper.data().currentValue).to.be.true;
   });
+
+  it('create a popup-fade transition popup', () => {
+    wrapper = mount(Popup, {
+      propsData: {
+        transition: 'popup-fade'
+      }
+    });
+
+    expect(wrapper.hasClass('van-popup')).to.be.true;
+    expect(wrapper.instance().currentTransition).to.equal('popup-fade');
+  });
 });

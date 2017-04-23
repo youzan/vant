@@ -56,12 +56,14 @@ export default {
         if (this.isGroup && this.parentGroup) {
           const parentValue = this.parentGroup.value.slice();
           if (val) {
+            /* istanbul ignore else */
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
               this.parentGroup.$emit('input', parentValue);
             }
           } else {
             const index = parentValue.indexOf(this.name);
+            /* istanbul ignore else */
             if (index !== -1) {
               parentValue.splice(index, 1);
               this.parentGroup.$emit('input', parentValue);
@@ -77,8 +79,11 @@ export default {
      * `checkbox`是否被选中
      */
     isChecked() {
-      if ({}.toString.call(this.currentValue) === '[object Boolean]') {
-        return this.currentValue;
+      const currentValue = this.currentValue;
+      if ({}.toString.call(currentValue) === '[object Boolean]') {
+        return currentValue;
+      } else if (currentValue !== null && currentValue !== undefined) {
+        return currentValue === this.name;
       }
     },
 

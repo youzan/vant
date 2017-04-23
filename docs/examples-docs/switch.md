@@ -1,19 +1,17 @@
 <style>
   @component-namespace demo {
     @b switch {
-      .examples,
-      .example-block  {
-        text-align: center;
-      }
-
-      .example-block {
-        .demo-sub-title {
-          text-align: left;
-        }
+      .van-switch {
+        float: left;
+        margin: 0 15px;
       }
 
       @e text {
-        margin: 20px auto;
+        display: inline-block;
+        line-height: 32px;
+        float: left;
+        font-size: 14px;
+        color: #333;
       }
     }
   }
@@ -26,7 +24,7 @@ export default {
   data() {
     return {
       switchState1: true,
-      switchState2: true,
+      switchState2: false,
       switchStateTrue: true,
       switchStateFalse: false
     };
@@ -83,35 +81,25 @@ export default {
 
 :::demo 基础用法
 ```html
-<van-switch class="some-customized-class" v-model="switchState1"></van-switch>
-<div class="demo-switch__text">{{ switchState1 ? ' ON' : 'OFF' }}</div>
+<van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchState1"></van-switch>
+    <div class="demo-switch__text">{{ switchState1 ? ' 打开' : '关闭' }}</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
+    <div class="demo-switch__text">{{ switchState2 ? ' 打开' : '关闭' }}</div>
+  </van-col>
+</van-row>
+
 
 
 <script>
 export default {
   data() {
     return {
-      switchState1: true
-    };
-  }
-};  
-</script>
-```
-:::
-
-:::demo
-```html
-<van-switch class="some-customized-class" v-model="switchState2" :on-change="updateState"></van-switch>
-<div class="demo-switch__text">{{ switchState2 ? ' ON' : 'OFF' }}</div>
-
-
-<script>
-import Dialog from 'packages/dialog';
-
-export default {
-  data() {
-    return {
-      switchState2: true
+      switchState1: true,
+      switchState2: false
     };
   },
   methods: {
@@ -131,18 +119,22 @@ export default {
 ```
 :::
 
-
 #### 禁用状态
 
 设置`disabled`属性为`true`，此时开关不可点击。
 
 :::demo 禁用状态
 ```html
-<van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
-<div class="demo-switch__text">ON, DISABLED</div>
-
-<van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
-<div class="demo-switch__text">OFF, DISABLED</div>
+<van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
+    <div class="demo-switch__text">打开</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
+    <div class="demo-switch__text">关闭</div>
+  </van-col>
+</van-row>
 
 <script>
 export default {
@@ -163,11 +155,16 @@ export default {
 
 :::demo loading状态
 ```html
-<van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
-<div class="demo-switch__text">ON, LOADING</div>
-
-<van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
-<div class="demo-switch__text">OFF, LOADING</div>
+<van-row>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
+    <div class="demo-switch__text">打开</div>
+  </van-col>
+  <van-col span="12">
+    <van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
+    <div class="demo-switch__text">关闭</div>
+  </van-col>
+</van-row>
 
 <script>
 export default {
