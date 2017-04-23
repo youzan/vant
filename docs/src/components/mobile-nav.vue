@@ -50,7 +50,6 @@ export default {
 
   mounted() {
     this.isOpen = JSON.parse(sessionStorage.getItem('mobile-nav-' + this.navKey));
-    console.log(this.isOpen, this.navKey);
   },
 
   methods: {

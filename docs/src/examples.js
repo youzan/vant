@@ -29,6 +29,7 @@ router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0);
   }
+  next();
 });
 
 new Vue({ // eslint-disable-line
