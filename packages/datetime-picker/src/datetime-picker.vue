@@ -31,7 +31,7 @@ export default {
     },
     format: {
       type: String,
-      default: 'yyyy.mm.dd hh时 mm分'
+      default: 'YYYY.MM.DD HH时 mm分'
     },
     visibleItemCount: {
       type: Number,

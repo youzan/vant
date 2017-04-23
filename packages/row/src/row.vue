@@ -14,7 +14,10 @@
         type: String,
         default: 'van'
       },
-      gutter: [Number, String]
+      gutter: {
+        type: [Number, String],
+        default: 0
+      }
     },
     computed: {
       style() {
