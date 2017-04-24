@@ -32,6 +32,7 @@
       line-height: 22px;
       margin-left: 37px;
       display: block;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);      
     }
 
     .van-icon {
