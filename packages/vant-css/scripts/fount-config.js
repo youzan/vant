@@ -36,7 +36,8 @@ module.exports = {
     {
       keywords: ['location'],
       src: '其他分店.svg',
-      css: 'location'
+      css: 'location',
+      'correct_contour_direction': true
     },
     {
       keywords: ['upgrade'],
@@ -97,7 +98,8 @@ module.exports = {
     {
       keywords: ['logistics'],
       src: '物流.svg',
-      css: 'logistics'
+      css: 'logistics',
+      'correct_contour_direction': true
     },
     {
       keywords: ['edit'],
