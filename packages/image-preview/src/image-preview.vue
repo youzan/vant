@@ -74,9 +74,10 @@ export default {
 
       this.value = false;
 
+      /* istanbul ignore else */
       if (this.lockOnScroll) {
         setTimeout(() => {
-          if (this.modal && this.bodyOverflow !== 'hidden') {
+          if (this.overlay && this.bodyOverflow !== 'hidden') {
             document.body.style.overflow = this.bodyOverflow;
           }
           this.bodyOverflow = null;

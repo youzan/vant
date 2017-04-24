@@ -8,9 +8,6 @@ describe('Dialog', () => {
       el.parentNode.removeChild(el);
     }
     Dialog.close();
-    if (el.__vue__) {
-      el.__vue__.$destroy();
-    }
   });
 
   it('create a alert dialog', (done) => {
@@ -39,14 +36,21 @@ describe('Dialog', () => {
     expect(document.querySelector('.van-dialog-wrapper')).to.exist;
   });
 
-  it('create a dialog with callback', () => {
-    Dialog.alert({
+  it('create a confirm dialog with callback', (done) => {
+    let dialogAction;
+    Dialog.confirm({
       title: 'title',
       message: 'message',
-      callback: () => {
+      callback: (action) => {
+        dialogAction = action;
       }
     });
 
     expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    setTimeout(() => {
+      document.querySelector('.van-dialog__cancel').click();
+      expect(dialogAction).to.equal('cancel');
+      done();
+    }, 50);
   });
 });

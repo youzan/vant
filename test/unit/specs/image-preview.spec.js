@@ -19,10 +19,11 @@ describe('ImagePreview', () => {
     ]);
 
     expect(document.querySelector('.van-image-preview')).to.exist;
+
     setTimeout(() => {
       document.querySelector('.van-swipe-item').click();
       setTimeout(() => {
-        expect(document.querySelector('.van-image-preview').style.display).to.equal('none');
+        expect(document.querySelector('.van-image-preview').__vue__.$parent.value).to.be.false;
         done();
       }, 500);
     }, 500);

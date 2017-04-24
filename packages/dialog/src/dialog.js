@@ -9,13 +9,8 @@ let instance;
 let dialogQueue = [];
 
 const defaultCallback = action => {
+  /* istanbul ignore else */
   if (currentDialog) {
-    const callback = currentDialog.callback;
-
-    if (typeof callback === 'function') {
-      callback(action);
-    }
-
     if (currentDialog.resolve && action === 'confirm') {
       currentDialog.resolve(action);
     } else if (currentDialog.reject && action === 'cancel') {
@@ -43,6 +38,7 @@ const showNextDialog = () => {
     const options = currentDialog.options;
 
     for (const prop in options) {
+      /* istanbul ignore else */
       if (options.hasOwnProperty(prop)) {
         instance[prop] = options[prop];
       }
