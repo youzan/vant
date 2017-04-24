@@ -1,13 +1,20 @@
+@import './mixins/border_retina.css';
+
 @component-namespace van {
   @b panel {
     background: #fff;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid #E5E5E5;
+    position: relative;
+
+    &::after {
+      @mixin border-retina (top, bottom);
+    }
 
     @e header {
       padding: 10px 15px;
       position: relative;
-      border-bottom: 1px solid #E5E5E5;
+      &::after {
+        @mixin border-retina (bottom);
+      }
     }
 
     @e title {
@@ -29,8 +36,12 @@
     }
 
     @e footer {
-      border-top: 1px solid #E5E5E5;
       padding: 10px 15px;
+      position: relative;
+
+      &::after {
+        @mixin border-retina (top);
+      }
     }
   }
 }

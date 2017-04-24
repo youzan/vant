@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-587aa52c96.eot');
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-587aa52c96.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-587aa52c96.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-587aa52c96.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-587aa52c96.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-9e3e482229.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-9e3e482229.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-9e3e482229.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-9e3e482229.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-9e3e482229.ttf') format('truetype')
 }
 
 .van-icon {
