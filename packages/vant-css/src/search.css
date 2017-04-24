@@ -44,7 +44,8 @@
     .van-icon-search {
       color: $c-gray-darker;
       position: absolute;
-      top: 8px;
+      top: 50%;
+      transform: translateY(-50%);
       left: 10px;
       font-size: 16px;
       line-height: 1;
