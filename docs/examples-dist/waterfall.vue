@@ -11,26 +11,30 @@
 
               </example-block></section></template>
 <style>
-  .waterfall {
-    max-height: 360px;
-    overflow: scroll;
-    border-top: 1px solid #e5e5e5;
+@component-namespace demo {
+  @b waterfall {
+    .waterfall {
+      max-height: 360px;
+      overflow: scroll;
+      border-top: 1px solid #e5e5e5;
+    }
+    .waterfall-item {
+      line-height: 50px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #fff;
+    }
+    .page-desc {
+      padding: 5px 0;
+      line-height: 1.4;
+      font-size: 14px;
+      text-align: center;
+      color: #666;
+    }
+    .van-loading {
+      margin: 10px auto;
+    }
   }
-  .waterfall-item {
-    line-height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
-  }
-  .page-desc {
-    padding: 5px 0;
-    line-height: 1.4;
-    font-size: 14px;
-    text-align: center;
-    color: #666;
-  }
-  .van-loading {
-    margin: 10px auto;
-  }
+}
 </style>
 <script>
 import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);

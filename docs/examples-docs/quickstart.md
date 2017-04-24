@@ -1,7 +1,7 @@
 ## Vant
 
 一套`Vue 2.0`的基础组件。
-A collection of essential UI components written with Vue 2.0.
+<br>A collection of essential UI components written with Vue 2.0.
 
 ### 安装
 
