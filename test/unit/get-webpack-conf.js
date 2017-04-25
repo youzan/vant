@@ -1,6 +1,5 @@
 const path = require('path');
-const to2 = require('2webpack2');
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const getPostcssPlugin = require('../../build/utils/postcss_pipe');
 
@@ -9,23 +8,33 @@ const webpackConfig = {
     path: path.resolve(process.cwd(), 'dist'),
     publicPath: '/dist/',
     filename: '[name].js',
-    chunkFilename: '[id].js'
+    chunkFilename: '[id].js',
+    libraryTarget: 'umd'
   },
   plugins: [
-    new ProgressBarPlugin()
+    new ProgressBarPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      options: {
+        postcss: getPostcssPlugin,
+        babel: {
+          presets: ['es2015'],
+          plugins: ['transform-runtime', 'transform-vue-jsx']
+        },
+        vue: {
+          autoprefixer: false,
+          preserveWhitespace: false,
+          postcss: getPostcssPlugin
+        }
+      }
+    })
   ],
-  postcss: getPostcssPlugin,
   resolve: {
     modules: [
       path.resolve(process.cwd(), 'node_modules'),
       'node_modules'
     ],
-    extensions: [
-      '',
-      '.js',
-      '.json',
-      '.vue'
-    ],
+    extensions: ['.js', '.json', '.vue'],
     alias: {
       src: path.resolve(process.cwd(), 'src'),
       packages: path.resolve(process.cwd(), 'packages'),
@@ -33,104 +42,75 @@ const webpackConfig = {
       vue$: 'vue/dist/vue.common.js'
     }
   },
-  resolveLoader: {},
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.(jsx?|babel|es6)$/,
-        include: path.resolve(process.cwd()),
-        exclude: /node_modules|utils\/popper\.js|utils\/date.\js/,
-        loaders: [
-          'babel-loader'
-        ]
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index/,
+        use: ['isparta-loader']
       },
       {
-        test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
+        test: /\.js$/,
+        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        use: ['babel-loader']
       },
       {
-        test: /\.css$/,
-        loaders: [
+        test: /\.(css|pcss)$/,
+        use: [
           'style-loader',
           'css-loader',
           'postcss-loader'
         ]
       },
       {
-        test: /\.html$/,
-        loaders: [
-          'html-loader?minimize=false'
-        ]
-      },
-      {
-        test: /\.otf|ttf|woff2?|eot(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: 'static/[name].[hash:7].[ext]'
-        }
-      },
-      {
-        test: /\.svg(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: 'static/[name].[hash:7].[ext]'
-        }
-      },
-      {
         test: /\.(gif|png|jpe?g)(\?\S*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000,
-          name: 'static/[name].[hash:7].[ext]'
-        }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            query: {
+              limit: 10000,
+              name: 'static/[name].[hash:7].[ext]'
+            }
+          }
+        }]
       },
       {
-        test: /\.vue$/,
-        loaders: [
-          'vue-loader'
-        ]
+        test: /test\/unit\/components\/.*\.vue$/,
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              css: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
+              ]
+            }
+          }
+        }]
+      },
+      {
+        test: /packages\/.*\.vue$/,
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              css: [
+                'style-loader',
+                'css-loader',
+                'postcss-loader'
+              ],
+              js: [
+                'isparta-loader'
+              ]
+            }
+          }
+        }]
       }
-    ],
-    preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'isparta',
-        exclude: /node_modules|utils\/popper\.js|utils\/date.\js/,
-        include: /src|packages/
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules|bower_components/,
-        loader: 'eslint-loader'
-      },
-      {
-        test: /\.vue$/,
-        exclude: /node_modules|bower_components/,
-        loader: 'eslint-loader'
-      }
-    ],
-    postLoaders: []
+    ]
   },
-  devtool: '#inline-source-map',
-  vue: {
-    loaders: {
-      css: 'vue-style-loader!css-loader?sourceMap',
-      less: 'vue-style-loader!css-loader?sourceMap!less-loader?sourceMap',
-      sass: 'vue-style-loader!css-loader?sourceMap!sass-loader?indentedSyntax&sourceMap',
-      scss: 'vue-style-loader!css-loader?sourceMap!sass-loader?sourceMap',
-      stylus: 'vue-style-loader!css-loader?sourceMap!stylus-loader?sourceMap',
-      styl: 'vue-style-loader!css-loader?sourceMap!stylus-loader?sourceMap',
-      js: 'isparta-loader!eslint-loader'
-    },
-    preserveWhitespace: false
-  },
-  eslint: {
-    emitWarning: true
-  }
+  devtool: '#inline-source-map'
 };
 
-module.exports = to2(webpackConfig, { quiet: true, context: true });
+module.exports = webpackConfig;
