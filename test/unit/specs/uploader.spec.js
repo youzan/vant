@@ -26,7 +26,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
   });
 });
 describe('Uploader', () => {
@@ -43,7 +43,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
   });
 });
 describe('Uploader', () => {
@@ -63,7 +63,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '')] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '')] }})).to.equal(undefined);
   });
 });
 describe('Uploader', () => {
@@ -78,13 +78,12 @@ describe('Uploader', () => {
         disabled: false,
         resultType: 'text',
         afterRead: (file) => {
-          console.log(file);
         }
       }
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 });
 describe('Uploader', () => {
@@ -102,7 +101,7 @@ describe('Uploader', () => {
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 });
 describe('Uploader', () => {
@@ -117,12 +116,11 @@ describe('Uploader', () => {
         disabled: false,
         resultType: 'dataUrl',
         afterRead: (file) => {
-          console.log(file);
         }
       }
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.methods().onValueChange.call(wrapper.vm, { target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
 });
