@@ -20,10 +20,12 @@ describe('Utils Dom', () => {
   it('addClass and removeClass', () => {
     expect(hasClass(wrapper, 'test-class')).to.be.true;
 
-    addClass(wrapper, 'other-class');
+    addClass(wrapper, ' other-class');
     expect(hasClass(wrapper, 'other-class')).to.be.true;
+    expect(addClass()).to.equal(undefined);
 
-    removeClass(wrapper, 'other-class');
+    removeClass(wrapper, ' other-class');
     expect(hasClass(wrapper, 'other-class')).to.be.false;
+    expect(removeClass()).to.equal(undefined);
   });
 });
