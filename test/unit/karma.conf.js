@@ -9,7 +9,7 @@ var travis = process.env.TRAVIS;
 
 module.exports = function(config) {
   config.set({
-    browsers: travis ? ['PhantomJS'] : ['PhantomJS', 'Chrome'],
+    browsers: travis ? ['PhantomJS'] : ['Chrome'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
