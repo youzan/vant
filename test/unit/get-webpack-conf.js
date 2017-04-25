@@ -47,7 +47,7 @@ const webpackConfig = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index|packages\/swipe/,
+        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index|src\/utils|src\/mixins|packages\/swipe/,
         use: ['isparta-loader']
       },
       {

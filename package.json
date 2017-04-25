@@ -24,7 +24,7 @@
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "felint lint src/**/*.js packages/**/*.{js,vue} build/**/*.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
-    "test:coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
+    "test:coverage": "open test/unit/coverage/lcov-report/index.html",
     "test:watch": "karma start test/unit/karma.conf.js",
     "release": "npm run bootstrap && sh build/release.sh"
   },
