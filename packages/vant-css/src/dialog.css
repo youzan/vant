@@ -71,8 +71,9 @@
 
     @e btn {
       font-size: 16px;
-      line-height: 40px;
+      line-height: 52px;
       border: 0;
+      padding: 0;
       background-color: #fff;
       float: left;
       box-sizing: border-box;

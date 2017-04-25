@@ -11,3 +11,5 @@ node_modules
 example/dist
 /docs/dist
 test/unit/coverage
+packages/vant-css/build
+packages/vant-css/icons

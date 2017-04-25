@@ -1,36 +1,39 @@
-// import Toast from 'packages/toast';
-// import { mount } from 'avoriaz';
+import Toast from 'packages/toast';
 
-// describe('Toast', () => {
-//   // it('create simple toast', () => {
-//   //   Toast('a message');
-//   //   var toast = document.querySelector('.van-toast');
+describe('Toast', () => {
+  afterEach(() => {
+    const el = document.querySelector('.van-toast-wrapper');
+    if (!el) return;
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
+    Toast.clear();
+    if (el.__vue__) {
+      el.__vue__.$destroy();
+    }
+  });
 
-//   //   expect(toast).not.to.be.underfined;
+  it('create a toast', () => {
+    Toast('我是提示文案，建议不超过十五字~');
 
-//   //   setTimeout(() => {
-//   //     expect(toast.hidden).to.be.true;
-//   //   }, 301);
-//   // });
+    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+  });
 
-//   // it('create loading toast', () => {
-//   //   Toast.loading('');
-//   //   var toast = document.querySelector('.van-toast');
+  it('create a loading toast', () => {
+    Toast.loading();
 
-//   //   expect(toast).not.to.be.underfined;
+    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+  });
 
-//   //   setTimeout(() => {
-//   //     expect(toast.hidden).to.be.true;
-//   //   }, 301);
-//   // });
-//   // it('create loading toast', () => {
-//   //   Toast.success('');
-//   //   var toast = document.querySelector('.van-toast');
+  it('create a success toast', () => {
+    Toast.success('success');
 
-//   //   expect(toast).not.to.be.underfined;
+    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+  });
 
-//   //   setTimeout(() => {
-//   //     expect(toast.hidden).to.be.true;
-//   //   }, 301);
-//   // });
-// });
+  it('create a fali toast', () => {
+    Toast.fail('fail');
+
+    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+  });
+});

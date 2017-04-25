@@ -5,10 +5,8 @@ var striptags = require('./strip-tags');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var getPoastcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -42,6 +40,14 @@ module.exports = {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
     filename: '[name].js'
+  },
+  devServer: {
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
+        { from: /^\/zanui\/vue/, to: '/index.html' }
+      ]
+    }
   },
   resolve: {
     modules: [
@@ -164,66 +170,3 @@ module.exports = {
     StyleExtractPlugin
   ]
 };
-
-if (process.env.NODE_ENV === 'production') {
-  delete module.exports.devtool;
-  module.exports.output = {
-    path: path.join(__dirname, '../docs/dist'),
-    publicPath: '/zanui/vue',
-    filename: '[name].[hash:8].js'
-  };
-  module.exports.plugins = module.exports.plugins.concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true
-      },
-      output: {
-        comments: false
-      },
-      sourceMap: false
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity
-    }),
-    new FaviconsWebpackPlugin({
-      // Your source logo
-      logo: path.join(__dirname, '../docs/assets/ZanUIlogo256x256.png'),
-      // The prefix for all image files (might be a folder or a name)
-      prefix: 'favico-[hash]-',
-      // Emit all stats of the generated icons
-      // emitStats: false,
-      // The name of the json containing all favicon information
-      // statsFilename: 'iconstats-[hash].json',
-      // Generate a cache file with control hashes and
-      // don't rebuild the favicons until those hashes change
-      persistentCache: false,
-      // Inject the html into the html-webpack-plugin
-      inject: true,
-      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-      background: '#fff',
-      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-      title: 'Vant',
-
-      // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-      icons: {
-        android: true,
-        appleIcon: true,
-        appleStartup: true,
-        coast: false,
-        favicons: true,
-        firefox: true,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false
-      }
-    })
-  ]);
-}

@@ -24,10 +24,20 @@
 
 @component-namespace van {
   @b loading {
-    width: 30px;
-    height: 30px;
+    
     line-height: 0;
     font-size: 0;
+
+    @m circle {
+      width: 16px;
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    @m gradient-circle {
+      width: 30px;
+      height: 30px;
+    }
   
     @e spinner { 
       display: inline-block;

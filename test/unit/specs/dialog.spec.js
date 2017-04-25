@@ -1,27 +1,56 @@
-// import Dialog from 'packages/dialog';
-import DialogComponent from 'packages/dialog/src/dialog.vue';
-import { mount } from 'avoriaz';
+import Dialog from 'packages/dialog';
 
 describe('Dialog', () => {
-  let wrapper;
   afterEach(() => {
-    wrapper && wrapper.destroy();
+    const el = document.querySelector('.van-dialog-wrapper');
+    if (!el) return;
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
+    Dialog.close();
   });
 
-  it('create a dialog component', () => {
-    let called = false;
-    wrapper = mount(DialogComponent);
-    wrapper.vm.callback = () => {
-      called = true;
-    };
+  it('create a alert dialog', (done) => {
+    Dialog.alert({
+      title: 'title',
+      message: 'message'
+    }).then((action) => {
+      expect(action).to.equal('confirm');
+      done();
+    });
 
-    expect(wrapper.hasClass('van-dialog-wrapper')).to.be.true;
-    expect(wrapper.data().confirmButtonText).to.equal('确认');
+    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    expect(document.querySelector('.van-dialog__cancel').style.display).to.equal('none');
 
-    const confirmBtn = wrapper.find('.van-dialog__confirm')[0];
-    confirmBtn.simulate('click');
+    setTimeout(() => {
+      document.querySelector('.van-dialog__confirm').click();
+    }, 500);
+  });
 
-    expect(wrapper.vm.value).to.be.false;
-    expect(called).to.be.true;
+  it('create a confirm dialog', () => {
+    Dialog.confirm({
+      title: 'title',
+      message: 'message'
+    });
+
+    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+  });
+
+  it('create a confirm dialog with callback', (done) => {
+    let dialogAction;
+    Dialog.confirm({
+      title: 'title',
+      message: 'message',
+      callback: (action) => {
+        dialogAction = action;
+      }
+    });
+
+    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    setTimeout(() => {
+      document.querySelector('.van-dialog__cancel').click();
+      expect(dialogAction).to.equal('cancel');
+      done();
+    }, 50);
   });
 });
