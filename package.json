@@ -10,8 +10,8 @@
     "packages"
   ],
   "scripts": {
-    "bootstrap": "yarn || npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.js --content-base ./",
+    "bootstrap": "yarn || npm i",
+    "dev": "npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp-cli packages/vant-css/lib lib/vant-css",
@@ -19,7 +19,7 @@
     "build:vant": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
     "deploy": "npm run deploy:docs && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
-    "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.js",
+    "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:vant && npm run build:components && npm run build:utils && npm run build:vant-css",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "felint lint src/**/*.js packages/**/*.{js,vue} build/**/*.js",
@@ -73,7 +73,6 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-vue": "^2.0.1",
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
-    "favicons-webpack-plugin": "0.0.7",
     "felint": "^0.5.0-alpha.3",
     "file-loader": "^0.9.0",
     "file-save": "^0.2.0",

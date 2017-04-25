@@ -58,7 +58,13 @@ npm run dev
 ```
 
 浏览器访问[http://localhost:8080](http://localhost:8080)就可以看到所有组件的示例了。
+
+## 四、手机预览
+
+可以手机扫码以下二维码访问手机端demo：
+
+![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
-## 四、开源协议
+## 五、开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
