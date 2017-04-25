@@ -1,4 +1,4 @@
-import Waterfall from '../components/waterfall';
+import Waterfall from '../components/waterfall/waterfall';
 import { mount } from 'avoriaz';
 
 describe('Waterfall', () => {
