@@ -68,6 +68,7 @@ export default {
     },
 
     close() {
+      /* istanbul ignore if */
       if (this.closing) return;
 
       this.closing = true;

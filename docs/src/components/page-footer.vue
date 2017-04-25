@@ -5,7 +5,7 @@
         <a href="https://www.youzan.com/" class="page-footer__link" target="_blank">有赞官网</a>
       </li>
       <li class="page-footer__item">
-        <a href="#" class="page-footer__link" target="_blank">有赞云</a>
+        <a href="https://www.youzanyun.com/" class="page-footer__link" target="_blank">有赞云</a>
       </li>
       <li class="page-footer__item">
         <a href="https://job.youzan.com/" class="page-footer__link" target="_blank">加入我们</a>
