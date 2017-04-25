@@ -47,7 +47,7 @@ const webpackConfig = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index/,
+        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index|packages\/swipe/,
         use: ['isparta-loader']
       },
       {
@@ -76,7 +76,7 @@ const webpackConfig = {
         }]
       },
       {
-        test: /test\/unit\/components\/.*\.vue$/,
+        test: /test\/unit\/components\/.*\.vue$|packages\/swipe\/.*\.vue$/,
         use: [{
           loader: 'vue-loader',
           options: {
@@ -92,6 +92,7 @@ const webpackConfig = {
       },
       {
         test: /packages\/.*\.vue$/,
+        exclude: /packages\/swipe/,
         use: [{
           loader: 'vue-loader',
           options: {
