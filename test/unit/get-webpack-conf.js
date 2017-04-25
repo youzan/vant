@@ -13,15 +13,6 @@ const webpackConfig = {
   },
   plugins: [
     new ProgressBarPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      output: {
-        comments: false
-      },
-      sourceMap: false
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
@@ -48,9 +39,7 @@ const webpackConfig = {
       src: path.resolve(process.cwd(), 'src'),
       packages: path.resolve(process.cwd(), 'packages'),
       examples: path.resolve(process.cwd(), 'examples'),
-      vue$: 'vue/dist/vue.runtime.common.js',
-      docs: path.resolve(process.cwd(), 'docs/examples-docs'),
-      zanutil: '@youzan/zanutil/src'
+      vue$: 'vue/dist/vue.common.js'
     }
   },
   module: {
