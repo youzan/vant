@@ -14,6 +14,7 @@ const getInstance = () => {
 };
 
 const removeDom = event => {
+  /* istanbul ignore else */
   if (event.target.parentNode) {
     event.target.parentNode.removeChild(event.target);
   }
@@ -69,6 +70,7 @@ Toast.fail = (options) => {
 };
 
 Toast.clear = () => {
+  /* istanbul ignore else */
   if (instance) instance.clear();
 };
 
