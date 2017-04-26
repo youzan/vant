@@ -15,12 +15,21 @@
       },
       disabled: Boolean
     },
-    beforeCreate() {
-      this.$parent.tabs.push(this);
+    data() {
+      const nextIndex = this.$parent.tabs.length;
+      this.$parent.tabs.push({
+        title: this.title,
+        disabled: this.disabled,
+        index: nextIndex
+      });
+
+      return {
+        key: nextIndex
+      };
     },
     computed: {
       classNames() {
-        return { 'van-tab__pane--select': this.$parent.tabs.indexOf(this) === this.$parent.curActive };
+        return { 'van-tab__pane--select': this.key === this.$parent.curActive };
       }
     }
   };

@@ -1,5 +1,5 @@
 <template>
-  <van-tabs :active="active">
+  <van-tabs :active="active" @click="handleTabClick" @disabled="handleTabDisabledClick">
     <van-tab title="选项一">内容一</van-tab>
     <van-tab title="选项二">内容二</van-tab>
     <van-tab title="选项三" disabled>内容三</van-tab>
@@ -22,6 +22,15 @@ export default {
     return {
       active: 0
     };
+  },
+
+  methods: {
+    handleTabClick(index) {
+      this.$emit('click');
+    },
+    handleTabDisabledClick(index) {
+      this.$emit('disabled');
+    }
   }
 };
 </script>
