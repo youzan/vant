@@ -8,7 +8,6 @@
 
 <script>
 import Popup from 'src/mixins/popup';
-
 export default {
   name: 'van-popup',
 
