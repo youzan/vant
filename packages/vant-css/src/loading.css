@@ -1,3 +1,5 @@
+@import './common/var.css';
+
 @-webkit-keyframes loading {
   from {
     -webkit-transform: rotate(0deg);
@@ -24,7 +26,7 @@
 
 @component-namespace van {
   @b loading {
-    
+
     line-height: 0;
     font-size: 0;
 
@@ -38,12 +40,12 @@
       width: 30px;
       height: 30px;
     }
-  
-    @e spinner { 
+
+    @e spinner {
       display: inline-block;
       height: 100%;
       width: 100%;
-      
+
       -webkit-animation: loading 0.8s linear;
       -webkit-animation-iteration-count: infinite;
       animation: loading 0.8s linear;
