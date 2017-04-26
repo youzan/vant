@@ -93,20 +93,4 @@ describe('Toast', () => {
       done();
     }, 500);
   });
-
-  it('use clear to close toast', (done) => {
-    const toast = Toast({
-      message: 'test',
-      duration: 10000
-    });
-
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
-    setTimeout(() => {
-      toast.clear();
-      setTimeout(() => {
-        expect(document.querySelector('.van-toast-wrapper')).to.not.exist;
-        done();
-      }, 500);
-    }, 50);    
-  });
 });
