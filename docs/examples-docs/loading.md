@@ -10,10 +10,10 @@
     }
 
     .demo-loading__example--with-bg {
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(17, 17, 17, 0.7);
       margin: 0 auto;
-      width: 80px;
-      padding: 25px 0;
+      width: 120px;
+      padding: 45px 0;
       border-radius: 10px;
     }
   }
@@ -69,6 +69,15 @@ export default {
 <div class="demo-loading__example demo-loading__example--with-bg">
   <van-loading class="some-customized-class" :color="'white'"></van-loading>
 </div>
+
+<style>
+.demo-loading__example--with-bg {
+  background-color: rgba(17, 17, 17, 0.7);
+  width: 120px;
+  padding: 45px 0;
+  border-radius: 10px;
+}
+</style>
 ```
 :::
 

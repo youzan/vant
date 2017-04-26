@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i --registry=http://registry.npm.qima-inc.com",
-    "dev": "npm run build:file && webpack-dev-server --inline --history-api-fallback --hot --config build/webpack.config.js --content-base ./",
+    "dev": "npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp-cli packages/vant-css/lib lib/vant-css",
