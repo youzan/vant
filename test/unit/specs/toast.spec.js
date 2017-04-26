@@ -1,5 +1,4 @@
 import Toast from 'packages/toast';
-import Vue from 'vue';
 
 describe('Toast', () => {
   afterEach(() => {
