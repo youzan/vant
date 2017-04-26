@@ -163,6 +163,9 @@ describe('PickerColumn', () => {
 
     expect(wrapper.hasClass('van-picker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
+    expect(wrapper.vm.visibleContentHeight).to.equal(44 * 5);
+    expect(wrapper.vm.dragRange[0]).to.equal(3 * 44);
+    expect(wrapper.vm.dragRange[1]).to.equal(2 * 44);
   });
 
   it('change picker-column values', (done) => {
@@ -180,20 +183,15 @@ describe('PickerColumn', () => {
     });
   });
 
-  it('create a picker with values', (done) => {
+  it('create a picker test translate', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2]
+        values: [1, 2, 3, 4, 5]
       }
     });
 
-    expect(wrapper.vm.values.length).to.equal(2);
-    wrapper.vm.currentValues = [2, 3];
-    wrapper.update();
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.values.length).to.equal(2);
-      expect(wrapper.vm.currentValue).to.equal(2);
-      done();
-    });
+    expect(wrapper.vm.values.length).to.equal(5);
+    expect(wrapper.vm.value2Translate(2)).to.equal((1- Math.floor(5 / 2)) * (-44));
+    expect(wrapper.vm.translate2Value(0)).to.equal(3);
   });
 });
