@@ -2,6 +2,8 @@ import Picker from 'packages/picker';
 import PickerColumn from 'packages/picker/src/picker-column';
 import { mount } from 'avoriaz';
 
+const itemHeight = 44;
+
 const pickerColumns = [
   {
     values: ['vip', 'normal'],
@@ -163,9 +165,9 @@ describe('PickerColumn', () => {
 
     expect(wrapper.hasClass('van-picker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(0);
-    expect(wrapper.vm.visibleContentHeight).to.equal(44 * 5);
-    expect(wrapper.vm.dragRange[0]).to.equal(3 * 44);
-    expect(wrapper.vm.dragRange[1]).to.equal(2 * 44);
+    expect(wrapper.vm.visibleContentHeight).to.equal(itemHeight * 5);
+    expect(wrapper.vm.dragRange[0]).to.equal(3 * itemHeight);
+    expect(wrapper.vm.dragRange[1]).to.equal(2 * itemHeight);
   });
 
   it('change picker-column values', (done) => {
@@ -191,7 +193,7 @@ describe('PickerColumn', () => {
     });
 
     expect(wrapper.vm.values.length).to.equal(5);
-    expect(wrapper.vm.value2Translate(2)).to.equal((1- Math.floor(5 / 2)) * (-44));
+    expect(wrapper.vm.value2Translate(2)).to.equal((1- Math.floor(5 / 2)) * (-itemHeight));
     expect(wrapper.vm.translate2Value(0)).to.equal(3);
   });
 });
