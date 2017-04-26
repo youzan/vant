@@ -76,7 +76,6 @@ describe('Uploader', () => {
     wrapper = mount(Uploader, {
       propsData: {
         disabled: false,
-        resultType: 'text',
         afterRead: (file) => {
         }
       }
@@ -96,25 +95,6 @@ describe('Uploader', () => {
     wrapper = mount(Uploader, {
       propsData: {
         disabled: false,
-        resultType: 'text'
-      }
-    });
-
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
-  });
-});
-describe('Uploader', () => {
-  let wrapper;
-  afterEach(() => {
-    wrapper && wrapper.destroy();
-  });
-
-  it('read dataUrl', () => {
-    wrapper = mount(Uploader, {
-      propsData: {
-        disabled: false,
-        resultType: 'dataUrl',
         afterRead: (file) => {
         }
       }

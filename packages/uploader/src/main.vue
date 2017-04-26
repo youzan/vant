@@ -21,14 +21,7 @@
         default: false
       },
       beforeRead: Function,
-      afterRead: Function,
-      resultType: {
-        type: String,
-        default: 'dataUrl',
-        validator(value) {
-          return value === 'dataUrl' || value === 'text';
-        }
-      }
+      afterRead: Function
     },
     methods: {
       onValueChange(event) {
@@ -48,11 +41,7 @@
             });
           this.$refs.input && (this.$refs.input.value = '');
         };
-        if (this.resultType === 'dataUrl') {
-          reader.readAsDataURL(file);
-        } else if (this.resultType === 'text') {
-          reader.readAsText(file);
-        }
+        reader.readAsDataURL(file);
       }
     }
   };
