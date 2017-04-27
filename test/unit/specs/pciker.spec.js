@@ -170,6 +170,25 @@ describe('PickerColumn', () => {
     expect(wrapper.vm.dragRange[1]).to.equal(2 * itemHeight);
   });
 
+  it('change picker-column value', (done) => {
+    wrapper = mount(PickerColumn, {
+      propsData: {
+        values: [1, 2, 3, 4, 5],
+        value: 1
+      }
+    });
+    
+    expect(wrapper.hasClass('van-picker-column')).to.be.true;
+    expect(wrapper.vm.values.length).to.equal(5);
+
+    wrapper.vm.value = 3;
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.currentValue).to.equal(3);
+      done();
+    });
+  });
+
   it('change picker-column values', (done) => {
     wrapper = mount(PickerColumn);
 

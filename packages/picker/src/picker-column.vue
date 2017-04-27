@@ -69,12 +69,13 @@ export default {
       this.currentValues = val;
     },
     currentValues(val) {
+      /* istanbul ignore else */
       if (this.valueIndex === -1) {
         this.currentValue = (val || [])[0];
       }
     },
     value(val) {
-      this.currentVal = val;
+      this.currentValue = val;
     },
     currentValue(val) {
       this.doOnValueChange();
