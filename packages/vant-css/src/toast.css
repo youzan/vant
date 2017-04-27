@@ -51,6 +51,9 @@
   }
 }
 
-.van-toast-fade-enter, .van-toast-fade-leave-active {
+.van-toast-fade-enter-active, .van-toast-fade-leave-active {
+  transition: opacity .2s;
+}
+.van-toast-fade-enter, .van-toast-fade-leave-to {
   opacity: 0;
 }

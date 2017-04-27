@@ -18,6 +18,18 @@ describe('Field', () => {
     expect(wrapper.hasClass('van-field')).to.be.true;
   });
 
+  it('create a border field', () => {
+    wrapper = mount(Field, {
+      propsData: {
+        type: 'text',
+        border: true
+      }
+    });
+
+    expect(wrapper.hasClass('van-field')).to.be.true;
+    expect(wrapper.hasClass('van-field--border')).to.be.true;
+  });
+
   it('create a text field with initialize value', (done) => {
     wrapper = mount(Field, {
       propsData: {
