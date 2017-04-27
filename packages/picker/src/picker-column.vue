@@ -73,6 +73,9 @@ export default {
         this.currentValue = (val || [])[0];
       }
     },
+    value(val) {
+      this.currentVal = val;
+    },
     currentValue(val) {
       this.doOnValueChange();
 
