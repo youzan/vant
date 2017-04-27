@@ -16,6 +16,7 @@ var ImagePreviewBox = images => {
     initInstance();
   }
 
+  /* istanbul ignore else */
   if (!instance.value) {
     instance.images = images;
 
