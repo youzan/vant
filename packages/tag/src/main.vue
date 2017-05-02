@@ -5,12 +5,14 @@
 </template>
 
 <script>
+  const ALLOW_TYPE = ['', 'danger', 'success', 'primary'];
+
   export default {
     name: 'van-tag',
     props: {
       type: {
         validator: function (val) {
-          return ~['', 'danger', 'success', 'primary'].indexOf(val);
+          return ~ALLOW_TYPE.indexOf(val);
         }
       },
       mark: Boolean,
