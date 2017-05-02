@@ -37,6 +37,7 @@ Vue.component(Uploader.name, Uploader);
 
 ```js
 import { Uploader } from 'vant';
+import 'vant/lib/vant-css/uploader.css';
 
 export default {
   components: {

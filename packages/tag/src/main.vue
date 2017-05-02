@@ -8,7 +8,11 @@
   export default {
     name: 'van-tag',
     props: {
-      type: String,
+      type: {
+        validator: function (val) {
+          return ~['', 'danger', 'success', 'primary'].indexOf(val);
+        }
+      },
       mark: Boolean,
       plain: Boolean
     }

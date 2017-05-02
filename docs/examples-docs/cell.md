@@ -20,9 +20,10 @@ export default {
 
 ```js
 import Vue from 'vue';
-import { Cell } from 'vant';
+import { Cell, CellGroup } from 'vant';
 import 'vant/lib/vant-css/cell.css';
 
+Vue.component(CellGroup.name, CellGroup);
 Vue.component(Cell.name, Cell);
 ```
 
@@ -32,9 +33,11 @@ Vue.component(Cell.name, Cell);
 
 ```js
 import { Cell } from 'vant';
+import 'vant/lib/vant-css/cell.css';
 
 export default {
   components: {
+    'van-cell-group': CellGroup,
     'van-cell': Cell
   }
 };
@@ -43,6 +46,8 @@ export default {
 ### 代码演示
 
 #### 基础用法
+
+你可以将`van-cell-group`组件看成一个容器即可。
 
 :::demo 基础用法
 ```html

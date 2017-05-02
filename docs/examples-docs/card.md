@@ -22,6 +22,7 @@ Vue.component(Card.name, Card);
 
 ```js
 import { Card } from 'vant';
+import 'vant/lib/vant-css/card.css';
 
 export default {
   components: {

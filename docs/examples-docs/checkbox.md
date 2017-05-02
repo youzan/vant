@@ -60,6 +60,7 @@ Vue.component(CheckboxGroup.name, CheckboxGroup);
 
 ```js
 import { Checkbox, CheckboxGroup } from 'vant';
+import 'vant/lib/vant-css/checkbox.css';
 
 export default {
   components: {

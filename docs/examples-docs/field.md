@@ -44,6 +44,7 @@ Vue.component(Field.name, Field);
 
 ```js
 import { Field } from 'vant';
+import 'vant/lib/vant-css/field.css';
 
 export default {
   components: {
