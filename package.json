@@ -1,9 +1,10 @@
 {
   "name": "vant",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
+  "unpkg": "lib/index.js",
   "files": [
     "lib",
     "src",

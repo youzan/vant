@@ -66,15 +66,14 @@ export default {
     /**
      * 显示popup
      */
-    open(options) {
+    open() {
       if (this.opened) return;
 
       this.opening = true;
 
       this.$emit('input', true);
 
-      const props = merge({}, this, options);
-      const zIndex = props.zIndex;
+      const zIndex = this.zIndex;
 
       // 如果属性中传入了`zIndex`，则覆盖`popupContext`中对应的`zIndex`
       if (zIndex) {

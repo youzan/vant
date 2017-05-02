@@ -1,6 +1,6 @@
 import Switch from 'packages/switch';
 import Vue from 'vue';
-import ZanLoading from 'packages/loading';
+import VanLoading from 'packages/loading';
 import { mount } from 'avoriaz';
 
 describe('Switch', () => {
@@ -38,7 +38,7 @@ describe('Switch', () => {
         loading: true
       }
     });
-    const loading = wrapper.find(ZanLoading)[0];
+    const loading = wrapper.find(VanLoading)[0];
 
     expect(wrapper.hasClass('van-switch')).to.be.true;
     expect(loading.isVueComponent).to.be.true;
