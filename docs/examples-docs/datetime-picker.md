@@ -47,7 +47,6 @@ Vue.component(DatetimePicker.name, DatetimePicker);
 
 ```js
 import { DatetimePicker } from 'vant';
-import { DatetimePicker } from 'vant';
 
 export default {
   components: {

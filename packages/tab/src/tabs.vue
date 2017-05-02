@@ -38,7 +38,7 @@
       },
       // 切换tab的动画时间
       duration: {
-        type: [Number],
+        type: Number,
         default: 0.3
       }
     },
