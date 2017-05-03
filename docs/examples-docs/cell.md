@@ -58,6 +58,19 @@ export default {
 ```
 :::
 
+#### 只设置value
+
+只设置`value`时会向左对齐。
+
+:::demo 只设置value
+```html
+<van-cell-group>
+  <van-cell value="单元格1内容"></van-cell>
+  <van-cell value="单元格2内容"></van-cell>
+</van-cell-group>
+```
+:::
+
 #### 标题带描述信息
 
 传入`label`属性，属性值为描述信息的值。
@@ -65,8 +78,8 @@ export default {
 :::demo 标题带描述信息
 ```html
 <van-cell-group>
-  <van-cell title="单元格1" label="描述信息" is-link url="javascript:void(0)" @click="handleClick"></van-cell>
-  <van-cell title="单元格2" label="描述信息"></van-cell>
+  <van-cell title="单元格1" label="描述信息" value="查看专栏" is-link url="javascript:void(0)" @click="handleClick"></van-cell>
+  <van-cell title="单元格2" label="描述信息" value="查看专栏" is-link></van-cell>
 </van-cell-group>
 ```
 :::
