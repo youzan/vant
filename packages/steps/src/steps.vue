@@ -1,7 +1,7 @@
 <template>
   <div class="van-steps" :class="`van-steps--${steps.length}`">
     <div class="van-steps__status" v-if="title || description">
-      <div class="van-steps__icon" v-if="icon || $slot.icon">
+      <div class="van-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">
           <van-icon :name="icon" :class="iconClass"></van-icon>
         </slot>

@@ -59,6 +59,7 @@ Vue.component(Picker.name, Picker);
 
 ```js
 import { Picker } from 'vant';
+import 'vant/lib/vant-css/picker.css';
 
 export default {
   components: {

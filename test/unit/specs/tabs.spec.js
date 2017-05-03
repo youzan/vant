@@ -68,4 +68,10 @@ describe('Tabs', () => {
       done();
     });
   });
+
+  it('check animation duration', () => {
+    wrapper = mount(TabsTestComponent);
+
+    expect(wrapper.style.transitionDuration != '').to.be.true;
+  });
 });

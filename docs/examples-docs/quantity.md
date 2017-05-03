@@ -47,6 +47,7 @@ Vue.component(Quantity.name, Quantity);
 
 ```js
 import { Quantity } from 'vant';
+import 'vant/lib/vant-css/quantity.css';
 
 export default {
   components: {

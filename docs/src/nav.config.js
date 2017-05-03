@@ -22,6 +22,10 @@ module.exports = {
           "groupName": "基础组件",
           "list": [
             {
+              "path": "/layout",
+              "title": "Layout 布局"
+            },
+            {
               "path": "/button",
               "title": "Button 按钮"
             },
@@ -38,20 +42,16 @@ module.exports = {
               "title": "Progress 进度条"
             },
             {
-              "path": "/panel",
-              "title": "Panel 面板"
-            },
-            {
               "path": "/card",
               "title": "Card 图文组件"
             },
             {
-              "path": "/loading",
-              "title": "Loading 加载"
+              "path": "/panel",
+              "title": "Panel 面板"
             },
             {
-              "path": "/layout",
-              "title": "Layout 布局"
+              "path": "/loading",
+              "title": "Loading 加载"
             },
             {
               "path": "/steps",

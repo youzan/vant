@@ -44,6 +44,7 @@ Vue.component(Button.name, Button);
 
 ```js
 import { Button } from 'vant';
+import 'vant/lib/vant-css/button.css';
 
 export default {
   components: {
@@ -170,7 +171,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | 按钮类型 | `string`  | `default`          | `primary`, `danger`   |
 | size | 按钮尺寸 | `string`  | `normal`          | `large`, `small`, `mini`  |
-| tag | 按钮标签 | `string`  | `button`          | `a`, `span`, ...  |
+| tag | 按钮标签 | `string`  | `button`          | 任何有意义的`html`标签, 如`a`, `span`等  |
 | diabled | 按钮是否禁用 | `boolean`  |  `false`  |      |
 | block | 按钮是否显示为块级元素 | `boolean`  |   `false`   |      |
 | bottomAction | 按钮是否显示为底部行动按钮，一般显示在页面底部，有特殊样式 | `boolean`  |   `false`   |      |

@@ -35,6 +35,11 @@
       type: {
         type: String,
         default: 'line'
+      },
+      // 切换tab的动画时间
+      duration: {
+        type: Number,
+        default: 0.3
       }
     },
 
@@ -66,7 +71,8 @@
 
         return {
           width: offsetWidth,
-          transform: `translate3d(${offsetLeft}, 0px, 0px)`
+          transform: `translate3d(${offsetLeft}, 0px, 0px)`,
+          transitionDuration: `${this.duration}s`
         };
       }
     },
