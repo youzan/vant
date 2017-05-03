@@ -44,6 +44,7 @@ Vue.component(Loading.name, Loading);
 
 ```js
 import { Loading } from 'vant';
+import 'vant/lib/vant-css/loading.css';
 
 export default {
   components: {

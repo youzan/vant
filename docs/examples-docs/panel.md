@@ -53,6 +53,7 @@ Vue.component(Panel.name, Panel);
 
 ```js
 import { Panel } from 'vant';
+import 'vant/lib/vant-css/panel.css';
 
 export default {
   components: {

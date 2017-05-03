@@ -60,6 +60,7 @@ Vue.component(SwipeItem.name, SwipeItem);
 
 ```js
 import { Swipe, SwipeItem } from 'vant';
+import 'vant/lib/vant-css/swipe.css';
 
 export default {
   components: {

@@ -56,6 +56,8 @@ Vue.component(Col.name, Col);
 
 ```js
 import { Row, Col } from 'vant';
+import 'vant/lib/vant-css/col.css';
+import 'vant/lib/vant-css/row.css';
 
 export default {
   components: {
@@ -106,7 +108,7 @@ Layout组件提供了`24列栅格`，通过在`van-col`上添加`span`属性设�
 
 :::demo 在列元素之间增加间距
 ```html
-<van-row gutter="10">
+<van-row gutter="20">
   <van-col span="8">
     <div class="gray">span: 8</div>
   </van-col>

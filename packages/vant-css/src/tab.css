@@ -86,7 +86,6 @@
     font-size: 14px;
     line-height: 44px;
     box-sizing: border-box;
-    transition: color .3s cubic-bezier(.645, .045, .355, 1);
     cursor: pointer;
     text-align: center;
     float: left;
