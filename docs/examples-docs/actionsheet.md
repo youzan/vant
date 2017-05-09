@@ -83,6 +83,7 @@ Vue.component(ActionSheet.name, ActionSheet);
 
 ```js
 import { ActionSheet } from 'vant';
+import 'vant/lib/vant-css/actionSheet.css';
 
 export default {
   components: {

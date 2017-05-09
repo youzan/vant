@@ -38,6 +38,7 @@ Vue.component(Icon.name, Icon);
 
 ```js
 import { Icon } from 'vant';
+import 'vant/lib/vant-css/icon.css';
 
 export default {
   components: {

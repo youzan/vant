@@ -1,5 +1,5 @@
 <template>
-  <van-tabs :active="active" @click="handleTabClick" @disabled="handleTabDisabledClick">
+  <van-tabs :active="active" :duration="duration" @click="handleTabClick" @disabled="handleTabDisabledClick">
     <van-tab title="选项一">内容一</van-tab>
     <van-tab title="选项二">内容二</van-tab>
     <van-tab title="选项三" disabled>内容三</van-tab>
@@ -20,7 +20,8 @@ export default {
 
   data() {
     return {
-      active: 0
+      active: 0,
+      duration: 0.5
     };
   },
 

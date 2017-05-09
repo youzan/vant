@@ -102,6 +102,7 @@ Vue.component(Popup.name, Popup);
 
 ```js
 import { Popup } from 'vant';
+import 'vant/lib/vant-css/popup.css';
 
 export default {
   components: {

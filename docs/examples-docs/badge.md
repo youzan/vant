@@ -53,6 +53,7 @@ Vue.component(BadgeGroup.name, BadgeGroup);
 
 ```js
 import { Badge, BadgeGroup } from 'vant';
+import 'vant/lib/vant-css/badge.css';
 
 export default {
   components: {

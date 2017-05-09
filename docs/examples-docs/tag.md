@@ -32,6 +32,7 @@ Vue.component(Tag.name, Tag);
 
 ```js
 import { Tag } from 'vant';
+import 'vant/lib/vant-css/tag.css';
 
 export default {
   components: {
@@ -44,18 +45,17 @@ export default {
 
 #### 基础用法
 
-`Tag`目前有三种类型，`danger`、`success`、`primary`，它们分别显示为红色，绿色和蓝色，你也可以加上自定义的类，为它们加上其他的颜色。
+`Tag`默认是灰色，另外还有有三种类型，`danger`、`success`、`primary`，它们分别显示为红色，绿色和蓝色，你也可以加上自定义的类，为它们加上其他的颜色。
 
 :::demo 基础用法
 ```html
 <div class="tags-container">
   <van-tag>返现</van-tag>
-  <van-tag plain>返现</van-tag>
 </div>
 <div class="tags-container">
   <van-tag type="danger">返现</van-tag>
-  <van-tag type="danger">四字标签</van-tag>
-  <van-tag type="danger">一</van-tag>
+  <van-tag type="success">四字标签</van-tag>
+  <van-tag type="primary">一</van-tag>
 </div>
 ```
 :::
@@ -67,6 +67,10 @@ export default {
 :::demo 高级用法
 ```html
 <div class="tags-container">
+  <van-tag>返现</van-tag>
+  <van-tag plain>返现</van-tag>
+</div>
+<div class="tags-container">
   <van-tag type="danger">返现</van-tag>
   <van-tag plain type="danger">返现</van-tag>
 </div>
@@ -77,9 +81,6 @@ export default {
 <div class="tags-container">
   <van-tag type="success">返现</van-tag>
   <van-tag plain type="success">返现</van-tag>
-</div>
-<div class="tags-container">
-  <van-tag type="danger" mark>返现</van-tag>
 </div>
 ```
 :::

@@ -74,6 +74,7 @@ Vue.component(Tabs.name, Tabs);
 
 ```js
 import { Tab, Tabs } from 'vant';
+import 'vant/lib/vant-css/tab.css';
 
 export default {
   components: {
@@ -103,7 +104,7 @@ export default {
 
 #### active特定tab
 
-可以在`van-tabs`上设置`active`为对应`tab`的索引（从0开始，即0代表第一个）即可激活对应`tab`。
+可以在`van-tabs`上设置`active`为对应`tab`的索引（从0开始，即0代表第一个）即可激活对应`tab`，默认为0。
 
 :::demo 基础用法
 ```html
@@ -117,6 +118,20 @@ export default {
 ```
 :::
 
+### 设置切换tab的动画时间
+
+通过设置`duration`来指定时间，默认为0.3s，只接受`Number`类型参数。
+
+:::demo 设置切换tab的动画时间
+```html
+<van-tabs :duration="0.6">
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+</van-tabs>
+```
+:::
+
 #### 禁用tab
 
 在对应的`van-tab`上设置`disabled`属性即可，如果需要监听禁用事件，可以监听`disabled`事件。
@@ -124,7 +139,7 @@ export default {
 :::demo 禁用tab
 ```html
 <van-tabs>
-  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项三">内容一</van-tab>
   <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
@@ -235,6 +250,7 @@ export default {
 | classtype | 两种UI | `string`  | `line` |     `line`, `card`      |
 | active | 默认激活的tab | `string`, `number`  | `0` |           |
 | navclass | tabs的内部nav上的自定义classname | `string`  |  |           |
+| duration | 切换tab的动画时间 | `number` | `0.3` | |           |
 
 
 ### van-tab API

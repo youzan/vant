@@ -38,6 +38,7 @@ Vue.component(Search.name, Search);
 
 ```js
 import { Search } from 'vant';
+import 'vant/lib/vant-css/search.css';
 
 export default {
   components: {

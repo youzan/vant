@@ -53,6 +53,7 @@ Vue.component(Step.name, Step);
 
 ```js
 import { Steps, Step } from 'vant';
+import 'vant/lib/vant-css/steps.css';
 
 export default {
   components: {
@@ -97,7 +98,7 @@ export default {
 
 #### 只显示步骤条
 
-当你不设置`title`或`description`属性时，就会🈯️显示步骤条，而没有步骤的详细信息。
+当你不设置`title`或`description`属性时，就会只显示步骤条，而没有步骤的详细信息。
 
 :::demo 只显示步骤条
 ```html
@@ -110,6 +111,22 @@ export default {
 ```
 :::
 
+### 高级用法
+
+可以使用具名`slot`增加自定义内容，其中包含`icon`和`message-extra`。
+
+:::demo 高级用法
+```html
+<van-steps :active="active" title="等待商家发货">
+  <van-icon slot="icon" name="like"></van-icon>
+  <p slot="message-extra">流程</p>
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>  
+</van-steps>
+```
+:::
 
 ### Steps API
 

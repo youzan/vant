@@ -1,0 +1,26 @@
+@reset-global mobile;
+
+body {
+  font-family: Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, Arial, sans-serif;
+	color: #333;
+	background-color: #eee;
+	-webkit-backface-visibility: hidden;
+}
+
+a {
+  background: transparent;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button,
+input[type='number'],input[type='text'],input[type='password'],input[type='email'],input[type='search'],
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+      -moz-appearance: none;
+}
