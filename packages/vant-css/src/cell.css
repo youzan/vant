@@ -79,7 +79,7 @@
       }
     }
 
-    .van-icon {
+    @e right-icon {
       position: absolute;
       top: 50%;
       right: 15px;
