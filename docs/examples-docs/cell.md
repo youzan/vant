@@ -112,7 +112,7 @@ export default {
 
 #### 高级用法
 
-如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容。包含三个`slot`，默认`slot`，`icon`和`title`的`slot`。
+如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容。包含三个`slot`，默认`slot`、`icon`、`title`和`right-icon`的`slot`。
 
 :::demo 高级用法
 ```html
@@ -124,6 +124,11 @@ export default {
     </template>
   </van-cell>
   <van-cell title="线下门店" icon="location" url="http://youzan.com" is-link></van-cell>
+  <van-cell title="其他">
+    <template slot="right-icon">
+      <van-icon name="passed" class="van-cell__right-icon" style="font-size: 16px;"></van-icon>
+    </template>
+  </van-cell>
 </van-cell-group>
 ```
 :::
@@ -146,3 +151,4 @@ export default {
 | - | 自定义显示内容 |
 | icon | 自定义`icon` |
 | title | 自定义`title` |
+| right-icon | 自定义右侧按钮，默认是`arrow` |
