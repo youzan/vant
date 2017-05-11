@@ -67,6 +67,7 @@ Vue.component(Switch.name, Switch);
 
 ```js
 import { Switch } from 'vant';
+import 'vant/lib/vant-css/switch.css';
 
 export default {
   components: {

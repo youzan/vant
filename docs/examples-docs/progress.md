@@ -34,6 +34,7 @@ Vue.component(Progress.name, Progress);
 
 ```js
 import { Progress } from 'vant';
+import 'vant/lib/vant-css/progress.css';
 
 export default {
   components: {

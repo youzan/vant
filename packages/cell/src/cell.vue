@@ -24,7 +24,9 @@
         <span v-text="value"></span>
       </slot>
     </div>
-    <i class="van-icon van-icon-arrow" v-if="isLink"></i>
+    <slot name="right-icon">
+      <i class="van-cell__right-icon van-icon van-icon-arrow" v-if="isLink"></i>
+    </slot>
   </a>
 </template>
 
