@@ -5102,6 +5102,12 @@ postcss-convert-values@^2.3.4:
     postcss "^5.0.11"
     postcss-value-parser "^3.1.2"
 
+postcss-css-reset@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/postcss-css-reset/-/postcss-css-reset-1.0.2.tgz#769f2d62d3f1f76e2600fb4f79066399bebe2bd8"
+  dependencies:
+    postcss "^5.0.19"
+
 postcss-custom-media@^5.0.0:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/postcss-custom-media/-/postcss-custom-media-5.0.1.tgz#138d25a184bf2eb54de12d55a6c01c30a9d8bd81"
