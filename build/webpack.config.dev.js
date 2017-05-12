@@ -39,7 +39,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
+    umdNamedDefine: true
   },
   devServer: {
     historyApiFallback: {

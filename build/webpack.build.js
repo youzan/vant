@@ -9,7 +9,8 @@ config.entry = {
 config.output = {
   filename: './lib/[name].js',
   library: 'vant',
-  libraryTarget: 'umd'
+  libraryTarget: 'umd',
+  umdNamedDefine: true
 };
 
 config.externals = {
