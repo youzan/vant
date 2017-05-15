@@ -16,9 +16,16 @@
   <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
+              </example-block><example-block title="设置切换tab的动画时间">
+                <van-tabs :duration="0.6">
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+</van-tabs>
+
               </example-block><example-block title="禁用tab">
                 <van-tabs>
-  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项三">内容一</van-tab>
   <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
