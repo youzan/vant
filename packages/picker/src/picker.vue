@@ -4,6 +4,7 @@
       <slot>
         <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">取消</a>
         <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">完成</a>
+        <p v-if="title" class="van-picker__title">{{ title }}</p>
       </slot>
     </div>
     <div class="van-picker__columns" :class="['van-picker__columns--' + columns.length]">
@@ -64,6 +65,13 @@ export default {
     showToolbar: {
       type: Boolean,
       default: false
+    },
+    /**
+     * 顶部toolbar 显示的title
+     */
+    title: {
+      type: String,
+      default: ''
     },
     valueKey: String
   },
