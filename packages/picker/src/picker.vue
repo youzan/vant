@@ -69,10 +69,7 @@ export default {
     /**
      * 顶部toolbar 显示的title
      */
-    title: {
-      type: String,
-      default: ''
-    },
+    title: String,
     valueKey: String
   },
 
