@@ -208,7 +208,8 @@ describe('PickerColumn', () => {
   it('create a picker test translate', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2, 3, 4, 5]
+        values: [1, 2, 3, 4, 5],
+        value: 1
       }
     });
 
@@ -227,23 +228,40 @@ describe('PickerColumn', () => {
 
     expect(wrapper.vm.values.length).to.equal(5);
 
-    const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
-    nColumn.simulate('mousedown', {
-      pageY: 0
-    });
+    setTimeout(() => {
+      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+
+      const eventMouseObject = new window.Event('mousedown');
+      eventMouseObject.pageY = 0;
+      nColumn.element.dispatchEvent(eventMouseObject);
+
+      const eventTouchObject = new window.Event('touchstart');
+      eventTouchObject.changedTouches = [{ pageY: 0 }];
+      nColumn.element.dispatchEvent(eventTouchObject);
+    }, 500);
 
     setTimeout(() => {
-      const nDocument = new Wrapper({ elm: document }, () => {}, true);
-      nDocument.simulate('mousemove', {
-        pageY: 50
-      });
+      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
 
-      nDocument.simulate('mouseup');
+      const eventMouseMoveObject = new window.Event('mousemove');
+      eventMouseMoveObject.pageY = 40;
+      document.dispatchEvent(eventMouseMoveObject);
+
+      const eventObject = new window.Event('touchmove');
+      eventObject.changedTouches = [{ pageY: 40 }];
+      nColumn.element.dispatchEvent(eventObject);
+
+      // 结束滚动
+      const eventMouseUpObject = new window.Event('mouseup');
+      document.dispatchEvent(eventMouseUpObject);
+      const eventEndObject = new window.Event('touchend');
+      eventEndObject.changedTouches = [{}];
+      nColumn.element.dispatchEvent(eventEndObject);
     }, 1000);
 
     setTimeout(() => {
       const nItem = wrapper.find('.van-picker-column__item');
-      expect(nItem[2].hasClass('van-picker-column__item--selected')).to.be.true;
+      expect(nItem[1].hasClass('van-picker-column__item--selected')).to.be.true;
 
       done();
     }, 1200);
