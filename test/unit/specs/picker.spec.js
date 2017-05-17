@@ -1,6 +1,7 @@
 import Picker from 'packages/picker';
 import PickerColumn from 'packages/picker/src/picker-column';
 import { mount } from 'avoriaz';
+import Wrapper from 'avoriaz/dist/Wrapper';
 
 const itemHeight = 44;
 
@@ -177,7 +178,7 @@ describe('PickerColumn', () => {
         value: 1
       }
     });
-    
+
     expect(wrapper.hasClass('van-picker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(5);
 
@@ -212,7 +213,39 @@ describe('PickerColumn', () => {
     });
 
     expect(wrapper.vm.values.length).to.equal(5);
-    expect(wrapper.vm.value2Translate(2)).to.equal((1- Math.floor(5 / 2)) * (-itemHeight));
+    expect(wrapper.vm.value2Translate(2)).to.equal((1 - Math.floor(5 / 2)) * (-itemHeight));
     expect(wrapper.vm.translate2Value(0)).to.equal(3);
+  });
+
+  it('test draggable', done => {
+    wrapper = mount(PickerColumn, {
+      propsData: {
+        values: [1, 2, 3, 4, 5]
+      },
+      attachToDocument: true
+    });
+
+    expect(wrapper.vm.values.length).to.equal(5);
+
+    const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+    nColumn.simulate('mousedown', {
+      pageY: 0
+    });
+
+    setTimeout(() => {
+      const nDocument = new Wrapper({ elm: document }, () => {}, true);
+      nDocument.simulate('mousemove', {
+        pageY: 50
+      });
+
+      nDocument.simulate('mouseup');
+    }, 1000);
+
+    setTimeout(() => {
+      const nItem = wrapper.find('.van-picker-column__item');
+      expect(nItem[2].hasClass('van-picker-column__item--selected')).to.be.true;
+
+      done();
+    }, 1200);
   });
 });
