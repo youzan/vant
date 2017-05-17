@@ -27,6 +27,17 @@
       float: right;
     }
 
+    @e title {
+      height: 40px;
+      padding: 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      word-break: break-all;
+      text-align: center;
+    }
+
     @e columns {
       position: relative;
       overflow: hidden;

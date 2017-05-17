@@ -172,6 +172,7 @@ export default {
             startTop: event.pageY,
             startTranslateTop: translateUtil.getElementTranslate(el).top
           };
+
           pickerItems = el.querySelectorAll('.van-picker-item'); // eslint-disable-line
         },
 
