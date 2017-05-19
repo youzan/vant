@@ -1,6 +1,7 @@
 /**
   css组件库入口，组装成css组件库
  */
+@import './reset.css';
 @import './button.css';
 @import './cell.css';
 @import './card.css';

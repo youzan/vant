@@ -50,6 +50,7 @@ Vue.component(RadioGroup.name, RadioGroup);
 
 ```js
 import { Radio, RadioGroup } from 'vant';
+import 'vant/lib/vant-css/radio.css';
 
 export default {
   components: {

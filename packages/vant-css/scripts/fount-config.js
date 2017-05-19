@@ -161,6 +161,16 @@ module.exports = {
       keywords: ['alipay'],
       src: '支付宝支付.svg',
       css: 'alipay'
+    },
+    {
+      keywords: ['password', 'view'],
+      src: '密码可查看.svg',
+      css: 'password-view'
+    },
+    {
+      keywords: ['password', 'not', 'view'],
+      src: '密码不可查看.svg',
+      css: 'password-not-view'
     }
   ]
 };
