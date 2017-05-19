@@ -18,6 +18,16 @@
   <van-step>交易完成</van-step>
 </van-steps>
 
+              </example-block><example-block title="高级用法">
+                <van-steps :active="active" title="等待商家发货">
+  <van-icon slot="icon" name="like"></van-icon>
+  <p slot="message-extra">流程</p>
+  <van-step>买家下单</van-step>
+  <van-step>商家接单</van-step>
+  <van-step>买家提货</van-step>
+  <van-step>交易完成</van-step>  
+</van-steps>
+
               </example-block></section></template>
 <style>
 @component-namespace demo {
