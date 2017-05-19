@@ -1,6 +1,7 @@
 import Picker from 'packages/picker';
 import PickerColumn from 'packages/picker/src/picker-column';
 import { mount } from 'avoriaz';
+import Wrapper from 'avoriaz/dist/Wrapper';
 
 const itemHeight = 44;
 
@@ -177,7 +178,7 @@ describe('PickerColumn', () => {
         value: 1
       }
     });
-    
+
     expect(wrapper.hasClass('van-picker-column')).to.be.true;
     expect(wrapper.vm.values.length).to.equal(5);
 
@@ -207,12 +208,62 @@ describe('PickerColumn', () => {
   it('create a picker test translate', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2, 3, 4, 5]
+        values: [1, 2, 3, 4, 5],
+        value: 1
       }
     });
 
     expect(wrapper.vm.values.length).to.equal(5);
-    expect(wrapper.vm.value2Translate(2)).to.equal((1- Math.floor(5 / 2)) * (-itemHeight));
+    expect(wrapper.vm.value2Translate(2)).to.equal((1 - Math.floor(5 / 2)) * (-itemHeight));
     expect(wrapper.vm.translate2Value(0)).to.equal(3);
+  });
+
+  it('test draggable', done => {
+    wrapper = mount(PickerColumn, {
+      propsData: {
+        values: [1, 2, 3, 4, 5]
+      },
+      attachToDocument: true
+    });
+
+    expect(wrapper.vm.values.length).to.equal(5);
+
+    setTimeout(() => {
+      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+
+      const eventMouseObject = new window.Event('mousedown');
+      eventMouseObject.pageY = 0;
+      nColumn.element.dispatchEvent(eventMouseObject);
+
+      const eventTouchObject = new window.Event('touchstart');
+      eventTouchObject.changedTouches = [{ pageY: 0 }];
+      nColumn.element.dispatchEvent(eventTouchObject);
+    }, 500);
+
+    setTimeout(() => {
+      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+
+      const eventMouseMoveObject = new window.Event('mousemove');
+      eventMouseMoveObject.pageY = 40;
+      document.dispatchEvent(eventMouseMoveObject);
+
+      const eventObject = new window.Event('touchmove');
+      eventObject.changedTouches = [{ pageY: 40 }];
+      nColumn.element.dispatchEvent(eventObject);
+
+      // 结束滚动
+      const eventMouseUpObject = new window.Event('mouseup');
+      document.dispatchEvent(eventMouseUpObject);
+      const eventEndObject = new window.Event('touchend');
+      eventEndObject.changedTouches = [{}];
+      nColumn.element.dispatchEvent(eventEndObject);
+    }, 1000);
+
+    setTimeout(() => {
+      const nItem = wrapper.find('.van-picker-column__item');
+      expect(nItem[1].hasClass('van-picker-column__item--selected')).to.be.true;
+
+      done();
+    }, 1200);
   });
 });

@@ -8,6 +8,7 @@ const citys = {
 export default {
   data() {
     return {
+      title: '地区选择',
       pickerColumns: [
         {
           values: Object.keys(citys),
@@ -113,7 +114,14 @@ export default {
 
 :::demo 带toolbar的Picker
 ```html
-<van-picker :columns="pickerColumns" show-toolbar @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></van-picker>
+<van-picker
+  :title="title"
+  :columns="pickerColumns"
+  show-toolbar
+  @change="handlePickerChange"
+  @cancel="handlePickerCancel"
+  @confirm="handlePickerConfirm"
+></van-picker>
 
 <script>
 const citys = {
@@ -125,6 +133,7 @@ const citys = {
 export default {
   data() {
     return {
+      title: '地区选择',
       pickerColumns: [
         {
           values: Object.keys(citys),
@@ -162,6 +171,7 @@ export default {
 | itemHeight | 选中元素区高度 | `number`  | `44` |   |
 | columns | 对象数组，配置每一列显示的数据 | `Array`  |  |   |
 | showToolbar | 是否在组件顶部显示一个toolbar | `Boolean`  | `true` |   |
+| title | 在toolbar上显示的标题文字 | `String`  |  |   |
 
 ### columns
 
