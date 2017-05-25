@@ -176,6 +176,11 @@ module.exports = {
       keywords: ['wap', 'nav'],
       src: 'wap导航.svg',
       css: 'wap-nav'
+    },
+    {
+      keywords: ['wap', 'home'],
+      src: 'wap首页.svg',
+      css: 'wap-home'
     }
   ]
 };
