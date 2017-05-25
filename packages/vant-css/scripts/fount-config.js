@@ -164,13 +164,18 @@ module.exports = {
     },
     {
       keywords: ['password', 'view'],
-      src: '密码可查看.svg',
+      src: '密码可见.svg',
       css: 'password-view'
     },
     {
       keywords: ['password', 'not', 'view'],
-      src: '密码不可查看.svg',
+      src: '密码不见.svg',
       css: 'password-not-view'
+    },
+    {
+      keywords: ['wap', 'nav'],
+      src: 'wap导航.svg',
+      css: 'wap-nav'
     }
   ]
 };
