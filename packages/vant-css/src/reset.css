@@ -42,6 +42,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     display: block
 }
 
+* {
+  box-sizing: content-box;
+}
+
 body {
   font-family: Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, Arial, sans-serif;
 	color: #333;

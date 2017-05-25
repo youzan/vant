@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.5.8",
+  "version": "0.5.10",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -19,7 +19,8 @@
     "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
     "build:vant": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:example": "node build/genExamples.js",
-    "deploy": "npm run deploy:docs && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
+    "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
+    "deploy:cdn": "superman cdn /zanui/vue docs/dist/*.js docs/dist/*.css",
     "deploy:docs": "rimraf docs/dist && npm run build:example && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "dist": "npm run clean && npm run build:file && npm run lint && npm run build:vant && npm run build:components && npm run build:utils && npm run build:vant-css",
     "clean": "rimraf lib && rimraf packages/*/lib",

@@ -124,6 +124,14 @@
     <van-icon name="password-not-view"></van-icon>
     <span>password-not-view</span>
   </van-col>
+  <van-col span="8">
+    <van-icon name="wap-nav"></van-icon>
+    <span>wap-nav</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="wap-home"></van-icon>
+    <span>wap-home</span>
+  </van-col>
 </van-row>
 
               </example-block></section></template>
