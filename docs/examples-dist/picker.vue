@@ -4,7 +4,7 @@
 
 
               </example-block><example-block title="带toolbar的Picker">
-                <van-picker :columns="pickerColumns" show-toolbar="" @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></van-picker>
+                <van-picker :title="title" :columns="pickerColumns" show-toolbar="" @change="handlePickerChange" @cancel="handlePickerCancel" @confirm="handlePickerConfirm"></van-picker>
 
 
 
@@ -21,6 +21,7 @@ const citys = {
 export default {
   data() {
     return {
+      title: '地区选择',
       pickerColumns: [
         {
           values: Object.keys(citys),
