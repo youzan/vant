@@ -1,5 +1,9 @@
 @reset-global mobile;
 
+* {
+  box-sizing: content-box;
+}
+
 body {
   font-family: Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, Arial, sans-serif;
 	color: #333;
