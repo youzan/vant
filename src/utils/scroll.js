@@ -55,6 +55,11 @@ export default {
     return 'scrollTop' in element ? element.scrollTop : element.pageYOffset;
   },
 
+  // 设置滚动高度
+  setScrollTop(element, value) {
+    'scrollTop' in element ? element.scrollTop = value : element.scrollTo(element.scrollX, value);
+  },
+
   // 获取元素距离顶部高度
   getElementTop(element) {
     if (element === window) {
