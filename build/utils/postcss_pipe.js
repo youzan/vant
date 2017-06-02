@@ -4,7 +4,6 @@ var config = {
         'separators': {'descendent': '__', 'modifier': '--'}
     }
 };
-var reset = require('postcss-css-reset')();
 
 // https://github.com/trysound/postcss-easy-import
 var partialImport = require('postcss-easy-import')();
@@ -25,7 +24,6 @@ module.exports = function (webpack) {
     partialImport,
     bem,
     precss,
-    autoprefixer,
-    reset
+    autoprefixer
   ];
 };

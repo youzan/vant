@@ -1,6 +1,6 @@
 <template>
   <transition name="image-fade">
-    <div class="van-image-preview" ref="previewContainer" v-show="value" @click="handlePreviewClick">
+    <div class="van-image-preview" ref="previewContainer" v-show="value">
       <van-swipe>
         <van-swipe-item v-for="item in images">
           <img class="van-image-preview__image" @load="handleLoad" :src="item" alt="">
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import Popup from 'src/mixins/popup';
 import VanSwipe from 'packages/swipe';
 import VanSwipeItem from 'packages/swipe-item';
@@ -47,12 +48,9 @@ export default {
   },
 
   methods: {
-    handlePreviewClick() {
-      this.value = false;
-    },
-
     handleLoad(event) {
-      const containerSize = this.$refs.previewContainer.getBoundingClientRect();
+      const container = this.$refs.previewContainer;
+      const containerSize = container.getBoundingClientRect();
       const ratio = containerSize.width / containerSize.height;
       const target = event.currentTarget;
       const targetRatio = target.width / target.height;
@@ -87,6 +85,28 @@ export default {
 
       this.opened = false;
       this.doAfterClose();
+    }
+  },
+
+  mounted() {
+    const supportTouch = !Vue.prototype.$isServer && 'ontouchstart' in window;
+    const container = this.$refs.previewContainer;
+
+    if (supportTouch) {
+      let touchStartTime;
+
+      container.addEventListener('touchstart', () => {
+        touchStartTime = new Date();
+      });
+      container.addEventListener('touchend', () => {
+        if (new Date() - touchStartTime < 1500) {
+          this.value = false;
+        }
+      });
+    } else {
+      container.addEventListener('click', () => {
+        this.value = false;
+      });
     }
   }
 };

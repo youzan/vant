@@ -1,6 +1,6 @@
 {
   "name": "vant-css",
-  "version": "0.5.6",
+  "version": "0.5.11",
   "description": "vant css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -18,7 +18,6 @@
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.1.7",
     "gulp-postcss": "^6.1.1",
-    "postcss-css-reset": "^1.0.2",
     "postcss-easy-import": "^2.0.0",
     "precss": "^1.4.0",
     "saladcss-bem": "^0.0.1"
