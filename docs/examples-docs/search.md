@@ -69,6 +69,14 @@ export default {
 ```
 :::
 
+#### 微杂志页搜索样式
+
+:::demo 基础用法
+```html
+<van-search placeholder="搜索商品" type="showcase"></van-search>
+```
+:::
+
 #### 监听对应事件
 
 除了`search`事件，还有`change`和`cancel`事件，`change`事件在`input`输入框每次`change`时触发，适用于实时搜索等，`cancel`在取消按钮点击时触发。
@@ -97,9 +105,10 @@ export default {
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须       |
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `string`  |           |     |
+| type | 搜索样式类型 | `string`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
 
 ### Event
 

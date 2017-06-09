@@ -1,5 +1,8 @@
 <template>
-  <div class="van-search" :class="{ 'van-search--focus' : isFocus }">
+  <div
+    class="van-search"
+    v-clickoutside="handleClickoutside"
+    :class="{ 'van-search--focus': isFocus, 'van-search--showcase': type === 'showcase' }">
     <div class="van-search__input-wrap">
       <van-icon name="search"></van-icon>
       <input
@@ -12,12 +15,13 @@
         @keyup.enter="handleSearch">
       <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
     </div>
-    <div class="van-search__cancel" v-show="isFocus" @click="handleBack">取消</div>
+    <div class="van-search__cancel" v-show="type !== 'showcase' && isFocus" @click="handleBack">取消</div>
   </div>
 </template>
 
 <script>
   import VanIcon from 'packages/icon';
+  import Clickoutside from 'src/utils/clickoutside';
 
   export default {
     name: 'van-search',
@@ -27,7 +31,11 @@
     },
 
     props: {
-      placeholder: String
+      placeholder: String,
+      type: {
+        type: String,
+        default: 'normal'
+      }
     },
 
     watch: {
@@ -45,6 +53,7 @@
     },
 
     directives: {
+      Clickoutside,
       refocus: {
         update: function(el, state) {
           if (state.value) {
@@ -85,6 +94,11 @@
        */
       handleSearch() {
         this.$emit('search', this.value);
+      },
+
+      handleClickoutside() {
+        this.isFocus = false;
+        this.focusStatus = false;
       }
     }
   };
