@@ -12,6 +12,15 @@
       padding-right: 50px;
     }
 
+    @m showcase {
+      padding: 10px;
+      background-color: #f8f8f8;
+
+      .van-search__input-wrap {
+        border-color: $c-gray-light;
+      }
+    }
+
     @e input-wrap {
       position: relative;
       padding: 8px 24px 8px 35px;
