@@ -1,4 +1,5 @@
 import ImagePreview from 'packages/image-preview';
+import Wrapper from 'avoriaz/dist/Wrapper';
 
 describe('ImagePreview', () => {
   beforeEach(() => {
@@ -22,7 +23,11 @@ describe('ImagePreview', () => {
     expect(document.querySelector('.van-image-preview')).to.exist;
 
     setTimeout(() => {
-      document.querySelector('.van-swipe-item').click();
+      const image = document.querySelector('.van-image-preview');
+      const avImage = new Wrapper({ elm: image }, () => {}, false);
+      avImage.simulate('click');
+      avImage.simulate('touchstart');
+      avImage.simulate('touchend');
       setTimeout(() => {
         expect(document.querySelector('.van-image-preview').__vue__.$parent.value).to.be.false;
         expect(document.body.style.overflow).to.equal('');
@@ -42,7 +47,12 @@ describe('ImagePreview', () => {
     expect(document.querySelector('.van-image-preview')).to.exist;
 
     setTimeout(() => {
-      document.querySelector('.van-swipe-item').click();
+      const image = document.querySelector('.van-image-preview');
+      const avImage = new Wrapper({ elm: image }, () => {}, false);
+      avImage.simulate('click');
+      avImage.simulate('touchstart');
+      avImage.simulate('touchend');
+
       setTimeout(() => {
         expect(document.querySelector('.van-image-preview').__vue__.$parent.value).to.be.false;
         expect(document.body.style.overflow).to.equal('hidden');

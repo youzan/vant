@@ -25,7 +25,7 @@
 </van-row>
 
               </example-block><example-block title="在列元素之间增加间距">
-                <van-row gutter="10">
+                <van-row gutter="20">
   <van-col span="8">
     <div class="gray">span: 8</div>
   </van-col>

@@ -4,10 +4,16 @@
   <van-cell title="单元格2" value="单元格2内容"></van-cell>
 </van-cell-group>
 
+              </example-block><example-block title="只设置value">
+                <van-cell-group>
+  <van-cell value="单元格1内容"></van-cell>
+  <van-cell value="单元格2内容"></van-cell>
+</van-cell-group>
+
               </example-block><example-block title="标题带描述信息">
                 <van-cell-group>
-  <van-cell title="单元格1" label="描述信息" is-link="" url="javascript:void(0)" @click="handleClick"></van-cell>
-  <van-cell title="单元格2" label="描述信息"></van-cell>
+  <van-cell title="单元格1" label="描述信息" value="查看专栏" is-link="" url="javascript:void(0)" @click="handleClick"></van-cell>
+  <van-cell title="单元格2" label="描述信息" value="查看专栏" is-link=""></van-cell>
 </van-cell-group>
 
               </example-block><example-block title="带图标">
@@ -31,6 +37,11 @@
     </template>
   </van-cell>
   <van-cell title="线下门店" icon="location" url="http://youzan.com" is-link=""></van-cell>
+  <van-cell title="其他">
+    <template slot="right-icon">
+      <van-icon name="passed" class="van-cell__right-icon" style="font-size: 16px;"></van-icon>
+    </template>
+  </van-cell>
 </van-cell-group>
 
               </example-block></section></template>

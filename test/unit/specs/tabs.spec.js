@@ -36,4 +36,42 @@ describe('Tabs', () => {
       done();
     });
   });
+
+  it('listen click event', (done) => {
+    wrapper = mount(TabsTestComponent, {
+      attachToDocument: true
+    });
+
+    const clickSpy = sinon.spy();
+    wrapper.vm.$on('click', clickSpy);
+
+    wrapper.vm.$nextTick(() => {
+      const nTab = wrapper.find('.van-tab')[0];
+      nTab.simulate('click');
+      expect(clickSpy.calledOnce).to.be.true;
+      done();
+    });
+  });
+
+  it('listen click disable event', (done) => {
+    wrapper = mount(TabsTestComponent, {
+      attachToDocument: true
+    });
+
+    const clickDisabledSpy = sinon.spy();
+    wrapper.vm.$on('disabled', clickDisabledSpy);
+
+    wrapper.vm.$nextTick(() => {
+      const nTab = wrapper.find('.van-tab')[2];
+      nTab.simulate('click');
+      expect(clickDisabledSpy.calledOnce).to.be.true;
+      done();
+    });
+  });
+
+  it('check animation duration', () => {
+    wrapper = mount(TabsTestComponent);
+
+    expect(wrapper.style.transitionDuration != '').to.be.true;
+  });
 });

@@ -38,6 +38,7 @@ Vue.component(Search.name, Search);
 
 ```js
 import { Search } from 'vant';
+import 'vant/lib/vant-css/search.css';
 
 export default {
   components: {
@@ -65,6 +66,14 @@ export default {
   }
 };
 </script>
+```
+:::
+
+#### 微杂志页搜索样式
+
+:::demo 基础用法
+```html
+<van-search placeholder="搜索商品" type="showcase"></van-search>
 ```
 :::
 
@@ -96,9 +105,10 @@ export default {
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须       |
+| 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `string`  |           |     |
+| type | 搜索样式类型 | `string`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
 
 ### Event
 

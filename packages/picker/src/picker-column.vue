@@ -69,9 +69,13 @@ export default {
       this.currentValues = val;
     },
     currentValues(val) {
+      /* istanbul ignore else */
       if (this.valueIndex === -1) {
         this.currentValue = (val || [])[0];
       }
+    },
+    value(val) {
+      this.currentValue = val;
     },
     currentValue(val) {
       this.doOnValueChange();
@@ -168,6 +172,7 @@ export default {
             startTop: event.pageY,
             startTranslateTop: translateUtil.getElementTranslate(el).top
           };
+
           pickerItems = el.querySelectorAll('.van-picker-item'); // eslint-disable-line
         },
 

@@ -14,7 +14,8 @@
   }
 
   @b cell {
-    display: block;
+    width: 100%;
+    display: table;
     position: relative;
     padding: 10px 15px 10px 0;
     box-sizing: border-box;
@@ -36,7 +37,7 @@
     }
 
     @e title {
-      float: left;
+      display: table-cell;
     }
 
     @e label {
@@ -47,15 +48,17 @@
     }
 
     @e value {
-      float: right;
+      display: table-cell;
+      text-align: right;
+      vertical-align: middle;
       overflow: hidden;
 
       @m link {
-        margin-right: 20px;
+        padding-right: 20px;
       }
 
       @m alone {
-        float: none;
+        text-align: left;
       }
     }
 
@@ -76,7 +79,7 @@
       }
     }
 
-    .van-icon-arrow {
+    @e right-icon {
       position: absolute;
       top: 50%;
       right: 15px;

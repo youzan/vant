@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var getPostcssPlugin = require('./utils/postcss_pipe');
-var config = require('./webpack.config.js');
+var config = require('./webpack.config.dev.js');
 
 config.entry = {
   'vant': './src/index.js'
@@ -9,7 +9,8 @@ config.entry = {
 config.output = {
   filename: './lib/[name].js',
   library: 'vant',
-  libraryTarget: 'umd'
+  libraryTarget: 'umd',
+  umdNamedDefine: true
 };
 
 config.externals = {

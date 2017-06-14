@@ -3,7 +3,7 @@ var path = require('path');
 var slugify = require('transliteration').slugify;
 var striptags = require('./strip-tags');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var getPoastcssPlugin = require('./utils/postcss_pipe');
+var getPostcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -39,7 +39,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
+    umdNamedDefine: true
   },
   devServer: {
     historyApiFallback: {
@@ -107,14 +108,14 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        postcss: getPoastcssPlugin,
+        postcss: getPostcssPlugin,
         babel: {
           presets: ['es2015'],
           plugins: ['transform-runtime', 'transform-vue-jsx']
         },
         vue: {
           autoprefixer: false,
-          postcss: getPoastcssPlugin
+          postcss: getPostcssPlugin
         },
         vueMarkdown: {
           use: [

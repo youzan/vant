@@ -92,4 +92,25 @@ describe('Search', () => {
       done();
     });
   });
+
+  it('create a showcase type search', () => {
+    wrapper = mount(Search, {
+      propsData: {
+        type: 'showcase'
+      }
+    });
+
+    expect(wrapper.hasClass('van-search')).to.be.true;
+    expect(wrapper.hasClass('van-search--showcase')).to.be.true;
+
+    const input = wrapper.find('.van-search__input')[0];
+    input.simulate('focus');
+
+    expect(wrapper.data().isFocus).to.be.true;
+
+    const body = document.body;
+    body.click();
+    expect(wrapper.data().isFocus).to.be.false;
+    expect(wrapper.data().focusStatus).to.be.false;
+  });
 });

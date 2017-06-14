@@ -38,6 +38,7 @@ import SwipeItem from '../packages/swipe-item/index.js';
 import DatetimePicker from '../packages/datetime-picker/index.js';
 
 const install = function(Vue) {
+  /* istanbul ignore if */
   if (install.installed) return;
 
   Vue.component(Button.name, Button);
@@ -75,14 +76,14 @@ const install = function(Vue) {
   Vue.component(DatetimePicker.name, DatetimePicker);
 };
 
-// auto install
+/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
 module.exports = {
   install,
-  version: '0.5.1',
+  version: '0.5.12',
   Button,
   Switch,
   Field,

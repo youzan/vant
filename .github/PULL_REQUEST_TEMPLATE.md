@@ -2,7 +2,7 @@
 
 ### 提交 PR 前请确保完成以下内容:
 
-1. Fork [the repository](https://github.com/youzan/vant) and create your branch from `master`.
+1. Fork [the repository](https://github.com/youzan/vant) and create your branch from `dev`.
 2. Follow the [contributing guide](./CONTRIBUTING.md) to setup your develop environment.
 2. If you've added code that should be tested, add tests!
 3. If you've changed APIs, update the documentation.
