@@ -7,7 +7,7 @@
 
               </example-block><example-block title="禁用状态">
                 <div class="van-checkbox-wrapper">
-  <van-checkbox v-model="checkbox2">复选框2</van-checkbox>
+  <van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
 </div>
 
 

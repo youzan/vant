@@ -124,7 +124,7 @@ describe('Picker', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const cancelBtn = wrapper.find('.van-picker__cancel')[0];
-    cancelBtn.simulate('click');
+    cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;
@@ -145,7 +145,7 @@ describe('Picker', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const cancelBtn = wrapper.find('.van-picker__confirm')[0];
-    cancelBtn.simulate('click');
+    cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;

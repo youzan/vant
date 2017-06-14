@@ -60,7 +60,7 @@ describe('Field', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const input = wrapper.find('.van-field__control')[0];
-    input.simulate('focus');
+    input.trigger('focus');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -79,7 +79,7 @@ describe('Field', () => {
     const input = wrapper.find('.van-field__control')[0];
 
     input.element.value = 'test';
-    input.simulate('input');
+    input.trigger('input');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -117,7 +117,7 @@ describe('Field', () => {
           parseInt(textareaElement.style.paddingTop, 10)) || 0;
 
     textareaElement.value = 'test';
-    textarea.simulate('input');
+    textarea.trigger('input');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
