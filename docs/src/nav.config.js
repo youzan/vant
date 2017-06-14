@@ -34,6 +34,10 @@ module.exports = {
               "title": "Cell 单元格"
             },
             {
+              "path": "/cell-swipe",
+              "title": "Cell Swipe 滑动单元格"
+            },
+            {
               "path": "/progress",
               "title": "Progress 进度条"
             },
