@@ -25,8 +25,12 @@ const router = new VueRouter({
   base: '/zanui/vue/examples',
   routes: routesConfig
 });
-router.afterEach((route, redirect, next) => {
-  document.querySelector('.examples-container').scrollTop = 0;
+router.beforeEach((to, from, next) => {
+  const container = document.querySelector('.examples-container');
+  if (container) {
+    document.querySelector('.examples-container').scrollTop = 0;
+  }
+  next()
 });
 
 new Vue({ // eslint-disable-line

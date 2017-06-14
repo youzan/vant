@@ -10,8 +10,9 @@
     </div>
     <div class="mobile-nav-group__list-wrapper" :class="{ 'mobile-nav-group__list-wrapper--open': isOpen }">
       <ul class="mobile-nav-group__list" :class="{ 'mobile-nav-group__list--open': isOpen }">
-        <template v-for="navItem in group.list">
+        <template v-for="(navItem, index) in group.list">
           <li
+            :key="index"
             class="mobile-nav-group__title"
             v-if="!navItem.disabled">
             <router-link

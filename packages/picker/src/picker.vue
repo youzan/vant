@@ -10,6 +10,7 @@
     <div class="van-picker__columns" :class="['van-picker__columns--' + columns.length]">
       <picker-column
         v-for="(item, index) in columns"
+        :key="index"
         v-model="values[index]"
         :values="item.values"
         :class-name="item.className"
