@@ -5,17 +5,17 @@
     @touchstart="startDrag"
     @touchmove="onDrag"
     @touchend="endDrag"
-    class="mint-cell-swipe"
+    class="van-cell-swipe"
     ref="cell">
-    <div class="mint-cell-wrapper">
+    <div class="van-cell-wrapper">
       <slot>单元格内容</slot>
     </div>
-    <div class="mint-cell-left">
+    <div class="van-cell-left">
       <div ref="left">
         <slot name="left"></slot>
       </div>
     </div>
-    <div class="mint-cell-right">
+    <div class="van-cell-right">
       <div ref="right">
         <slot name="right"></slot>
       </div>
@@ -24,9 +24,8 @@
 </template>
 
 <script>
-  import {once} from '../utils/dom';
-  import Clickoutside from '../utils/clickoutside';
-  import './cell-swipe.css'
+  import {once} from 'src/utils/dom';
+  import Clickoutside from 'src/utils/clickoutside';
   
   export default {
     name: 'van-cell-swipe',
@@ -49,7 +48,7 @@
       }
     },
     mounted() {
-      this.wrap = this.$refs.cell.querySelector('.mint-cell-wrapper');
+      this.wrap = this.$refs.cell.querySelector('.van-cell-wrapper');
       this.leftElm = this.$refs.left;
       this.leftWrapElm = this.leftElm.parentNode;
       this.leftDefaultTransform = this.translate3d(-this.leftWidth - 1);
