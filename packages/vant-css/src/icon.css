@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.eot');
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-8d0a704edb.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-8d0a704edb.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-8d0a704edb.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-8d0a704edb.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-8d0a704edb.ttf') format('truetype')
 }
 
 .van-icon {
@@ -80,3 +80,9 @@
 .van-icon-password-not-view:before { content: '\e81e'; } /* '' */
 .van-icon-wap-nav:before { content: '\e81f'; } /* '' */
 .van-icon-wap-home:before { content: '\e820'; } /* '' */
+.van-icon-ecard-pay:before { content: '\e821'; } /* '' */
+.van-icon-balance-pay:before { content: '\e822'; } /* '' */
+.van-icon-peer-pay:before { content: '\e823'; } /* '' */
+.van-icon-credit-pay:before { content: '\e824'; } /* '' */
+.van-icon-debit-pay:before { content: '\e825'; } /* '' */
+.van-icon-other-pay:before { content: '\e826'; } /* '' */

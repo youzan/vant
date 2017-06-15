@@ -181,6 +181,37 @@ module.exports = {
       keywords: ['wap', 'home'],
       src: 'wap首页.svg',
       css: 'wap-home'
+    },
+    {
+      keywords: ['ecard', 'pay'],
+      src: '有赞E卡.svg',
+      css: 'ecard-pay',
+      'correct_contour_direction': true
+    },
+    {
+      keywords: ['balance', 'pay'],
+      src: '余额支付.svg',
+      css: 'balance-pay'
+    },
+    {
+      keywords: ['peer', 'pay'],
+      src: '找人代付.svg',
+      css: 'peer-pay'
+    },
+    {
+      keywords: ['credit', 'pay'],
+      src: '信用卡支付.svg',
+      css: 'credit-pay'
+    },
+    {
+      keywords: ['debit', 'pay'],
+      src: '借记卡支付.svg',
+      css: 'debit-pay'
+    },
+    {
+      keywords: ['other', 'pay'],
+      src: '其他支付方式.svg',
+      css: 'other-pay'
     }
   ]
 };
