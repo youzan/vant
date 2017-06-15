@@ -53,7 +53,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
-    wrapper.simulate('click');
+    wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
@@ -77,7 +77,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    wrapper.simulate('click');
+    wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
   });
 
@@ -89,7 +89,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    wrapper.simulate('click');
+    wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
@@ -103,7 +103,7 @@ describe('Switch', () => {
     });
 
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    wrapper.simulate('click');
+    wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
     expect(stub.calledOnce).to.be.true;
     expect(stub.calledWith(true));

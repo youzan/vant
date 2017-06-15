@@ -101,7 +101,7 @@ export default {
 :::demo 禁用状态
 ```html
 <div class="van-checkbox-wrapper">
-  <van-checkbox v-model="checkbox2">复选框2</van-checkbox>
+  <van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
 </div>
 
 <script>
@@ -124,7 +124,7 @@ export default {
 ```html
 <div class="van-checkbox-wrapper">
   <van-checkbox-group v-model="result">
-    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
 
@@ -159,7 +159,7 @@ export default {
 ```html
 <div class="van-checkbox-wrapper">
   <van-checkbox-group v-model="result" disabled>
-    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
 
@@ -188,7 +188,7 @@ export default {
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="item in list">
+    <van-cell v-for="(item, index) in list" :key="index">
       <van-checkbox :name="item">复选框{{item}}</van-checkbox>
     </van-cell>
   </van-cell-group>

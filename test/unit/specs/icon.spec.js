@@ -27,7 +27,7 @@ describe('Icon', () => {
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.simulate('click');
+    wrapper.trigger('click');
 
     expect(eventStub.calledOnce).to.be.true;
     expect(eventStub.calledWith('click')).to.be.true;

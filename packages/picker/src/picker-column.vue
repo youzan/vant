@@ -2,7 +2,8 @@
   <div class="van-picker-column" :class="classNames">
     <div class="van-picker-column-wrapper" :class="{ dragging: isDragging }" ref="wrapper" :style="{ height: visibleContentHeight + 'px' }">
       <div
-        v-for="item in currentValues"
+        v-for="(item, index) in currentValues"
+        :key="index"
         class="van-picker-column__item"
         :class="{ 'van-picker-column__item--selected': item === currentValue }"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }">

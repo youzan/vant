@@ -11,13 +11,13 @@
 
               </example-block><example-block title="Inactive">
                 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="0"></van-progress>
+  <van-progress class="demo-progress__demo1" inactive="" :percentage="0"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo2" :inactive="true" :percentage="46"></van-progress>
+  <van-progress class="demo-progress__demo2" inactive="" :percentage="46"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="100"></van-progress>
+  <van-progress class="demo-progress__demo1" inactive="" :percentage="100"></van-progress>
 </div>
 
               </example-block><example-block title="自定义颜色和文字">

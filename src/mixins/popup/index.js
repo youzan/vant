@@ -67,6 +67,7 @@ export default {
      * 显示popup
      */
     open() {
+      if (this.$isServer) return;
       if (this.opened) return;
 
       this.opening = true;

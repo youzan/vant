@@ -105,7 +105,8 @@ export default {
   >
     <div
       class="waterfall-item"
-      v-for="item in list"
+      v-for="(item, index) in list"
+      :key="index"
       style="text-align: center;"
     >
       {{ item }}

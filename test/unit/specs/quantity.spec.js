@@ -19,12 +19,12 @@ describe('Quantity', () => {
     expect(wrapper.data().currentValue).to.equal(1);
 
     const plusButton = wrapper.find('.van-quantity__plus')[0];
-    plusButton.simulate('click');
+    plusButton.trigger('click');
 
     expect(wrapper.data().currentValue).to.equal(2);
 
     const minusButton = wrapper.find('.van-quantity__minus')[0];
-    minusButton.simulate('click');
+    minusButton.trigger('click');
     expect(wrapper.data().currentValue).to.equal(1);
   });
 
@@ -40,7 +40,7 @@ describe('Quantity', () => {
     expect(minusButton.hasClass('van-quantity__minus--disabled')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    minusButton.simulate('click');
+    minusButton.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -51,7 +51,7 @@ describe('Quantity', () => {
     const plusButton = wrapper.find('.van-quantity__plus')[0];
     expect(plusButton.hasClass('van-quantity__plus--disabled')).to.be.true;
 
-    plusButton.simulate('click');
+    plusButton.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -109,7 +109,7 @@ describe('Quantity', () => {
 
     const input = wrapper.find('.van-quantity__input')[0];
     input.element.value = 2;
-    input.simulate('input');
+    input.trigger('input');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {

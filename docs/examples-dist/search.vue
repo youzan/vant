@@ -3,6 +3,9 @@
 
 
 
+              </example-block><example-block title="基础用法">
+                <van-search placeholder="搜索商品" type="showcase"></van-search>
+
               </example-block><example-block title="监听对应事件">
                 <van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
 

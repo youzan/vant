@@ -69,7 +69,7 @@ Vue.use(Lazyload, options);
 :::demo 基础用法
 ```html
 <ul class="image-list" ref="container">
-  <li v-for="img in imageList">
+  <li v-for="(img, index) in imageList" :key="index">
     <img class="lazy-img" v-lazy="img">
   </li>
 </ul>
@@ -100,7 +100,7 @@ export default {
 :::demo 背景图懒加载
 ```html
 <ul class="image-list" ref="container">
-  <li v-for="img in backgroundImageList">
+  <li v-for="(img, index) in backgroundImageList" :key="index">
     <div class="lazy-background" v-lazy:background-image="img"></div>
   </li>
 </ul>
@@ -128,7 +128,7 @@ export default {
 ```html
 <lazy-component @show="handleComponentShow">
   <ul class="image-list">
-    <li v-for="img in componentImageList">
+    <li v-for="(img, index) in componentImageList" :key="index">
       <img class="lazy-img" v-lazy="img">
     </li>
   </ul>

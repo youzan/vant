@@ -20,7 +20,7 @@ describe('Search', () => {
     wrapper = mount(Search);
 
     const input = wrapper.find('.van-search__input')[0];
-    input.simulate('focus');
+    input.trigger('focus');
 
     expect(wrapper.data().isFocus).to.be.true;
   });
@@ -46,10 +46,10 @@ describe('Search', () => {
     expect(wrapper.data().value).to.be.equal('test');
 
     const input = wrapper.find('.van-search__input')[0];
-    input.simulate('focus');
+    input.trigger('focus');
 
     const cleanBtn = wrapper.find('.van-icon-clear')[0];
-    cleanBtn.simulate('click');
+    cleanBtn.trigger('click');
     expect(wrapper.data().value).to.equal('');
     expect(wrapper.data().focusStatus).to.be.true;
   });
@@ -63,10 +63,10 @@ describe('Search', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const input = wrapper.find('.van-search__input')[0];
-    input.simulate('focus');
+    input.trigger('focus');
 
     const cancelBtn = wrapper.find('.van-search__cancel')[0];
-    cancelBtn.simulate('click');
+    cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {
       expect(wrapper.data().value).to.be.equal('');
@@ -84,12 +84,33 @@ describe('Search', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const input = wrapper.find('.van-search__input')[0];
-    input.simulate('keyup.enter');
+    input.trigger('keyup.enter');
 
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;
       expect(eventStub.calledWith('search'));
       done();
     });
+  });
+
+  it('create a showcase type search', () => {
+    wrapper = mount(Search, {
+      propsData: {
+        type: 'showcase'
+      }
+    });
+
+    expect(wrapper.hasClass('van-search')).to.be.true;
+    expect(wrapper.hasClass('van-search--showcase')).to.be.true;
+
+    const input = wrapper.find('.van-search__input')[0];
+    input.trigger('focus');
+
+    expect(wrapper.data().isFocus).to.be.true;
+
+    const body = document.body;
+    body.click();
+    expect(wrapper.data().isFocus).to.be.false;
+    expect(wrapper.data().focusStatus).to.be.false;
   });
 });

@@ -41,7 +41,7 @@ describe('CheckboxGroup', () => {
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
     const firstCheckboxLabel = wrapper.find('.van-checkbox')[0].find('.van-checkbox__label')[0];
-    firstCheckboxLabel.simulate('click');
+    firstCheckboxLabel.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -57,7 +57,7 @@ describe('CheckboxGroup', () => {
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
     const lastCheckboxLabel = wrapper.find('.van-checkbox')[3].find('.van-checkbox__label')[0];
-    lastCheckboxLabel.simulate('click');
+    lastCheckboxLabel.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -121,7 +121,7 @@ describe('Checkbox', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
-    checkboxLabel.simulate('click');
+    checkboxLabel.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -145,7 +145,7 @@ describe('Checkbox', () => {
     expect(wrapper.vm.isDisabled).to.be.true;
 
     const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
-    checkboxLabel.simulate('click');
+    checkboxLabel.trigger('click');
 
     expect(wrapper.vm.currentValue).to.be.false;
   });

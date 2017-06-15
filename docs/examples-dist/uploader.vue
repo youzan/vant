@@ -5,6 +5,8 @@
   </van-uploader>
 </div>
 
+
+
               </example-block></section></template>
 <style>
 .uploader-container {

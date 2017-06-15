@@ -41,7 +41,7 @@ describe('RadioGroup', () => {
     const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
 
     const uncheckedRadioLabel = wrapper.find('.van-radio')[1].find('.van-radio__label')[0];
-    uncheckedRadioLabel.simulate('click');
+    uncheckedRadioLabel.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -85,7 +85,7 @@ describe('Radio', () => {
     expect(wrapper.hasClass('van-radio')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    wrapper.simulate('click');
+    wrapper.trigger('click');
     wrapper.update();
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;
@@ -107,7 +107,7 @@ describe('Radio', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const checkboxLabel = wrapper.find('.van-radio__label')[0];
-    checkboxLabel.simulate('click');
+    checkboxLabel.trigger('click');
 
     wrapper.update();
     wrapper.vm.$nextTick(() => {
@@ -132,7 +132,7 @@ describe('Radio', () => {
     expect(wrapper.instance().isDisabled).to.be.true;
 
     const checkboxLabel = wrapper.find('.van-radio__label')[0];
-    checkboxLabel.simulate('click');
+    checkboxLabel.trigger('click');
 
     expect(wrapper.instance().currentValue).to.equal('1');
   });

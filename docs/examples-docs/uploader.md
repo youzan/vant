@@ -3,6 +3,7 @@
   padding: 5px 15px;
 }
 </style>
+
 <script>
 export default {
   methods: {
@@ -57,6 +58,16 @@ export default {
     <van-icon name="photograph"></van-icon>
   </van-uploader>
 </div>
+
+<script>
+export default {
+  methods: {
+    logContent(file) {
+      console.log(file)
+    }
+  }
+};  
+</script>
 ```
 :::
 

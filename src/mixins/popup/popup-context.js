@@ -1,8 +1,11 @@
 import merge from 'src/utils/merge';
+import Vue from 'vue';
 
 let context;
-if (window && window.popupContext) {
-  context = window.popupContext;
+const _global = Vue.prototype.$isServer ? global : window;
+
+if (_global && _global.popupContext) {
+  context = _global.popupContext;
 }
 
 const DEFAULT_CONTEXT = {
@@ -13,7 +16,7 @@ const DEFAULT_CONTEXT = {
   modalStack: []
 };
 
-context = window.popupContext = merge({}, DEFAULT_CONTEXT, context);
+context = _global.popupContext = merge({}, DEFAULT_CONTEXT, context);
 
 const PopupContext = {
   getContext(key) {

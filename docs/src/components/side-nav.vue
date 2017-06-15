@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <ul>
-      <li class="nav-item" v-for="item in data">
+      <li class="nav-item" v-for="(item, index) in data" :key="index">
         <a href="javascript:void(0)" v-if="!item.path" @click="handleTitleClick(item)">{{item.name}}</a>
         <router-link
           v-else
@@ -11,7 +11,7 @@
           v-text="item.title || item.name">
         </router-link>
         <ul class="pure-menu-list sub-nav" v-if="item.children">
-          <li class="nav-item" v-for="navItem in item.children">
+          <li class="nav-item" v-for="(navItem, index) in item.children" :key="index">
             <router-link
               active-class="active"
               :to="base + navItem.path"
@@ -20,11 +20,12 @@
           </li>
         </ul>
         <template v-if="item.groups">
-          <div class="nav-group" v-for="group in item.groups">
+          <div class="nav-group" v-for="(group, index) in item.groups" :key="index">
             <div class="nav-group__title">{{group.groupName}}</div>
             <ul class="pure-menu-list">
-              <template v-for="navItem in group.list">
+              <template v-for="(navItem, index) in group.list">
                 <li
+                  :key="index"
                   class="nav-item"
                   v-if="!navItem.disabled">
                   <router-link

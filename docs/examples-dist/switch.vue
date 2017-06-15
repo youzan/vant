@@ -17,11 +17,11 @@
               </example-block><example-block title="禁用状态">
                 <van-row>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateTrue" disabled></van-switch>
     <div class="demo-switch__text">打开</div>
   </van-col>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateFalse" disabled></van-switch>
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>
@@ -31,11 +31,11 @@
               </example-block><example-block title="loading状态">
                 <van-row>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateTrue" loading=""></van-switch>
     <div class="demo-switch__text">打开</div>
   </van-col>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateFalse" loading=""></van-switch>
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>

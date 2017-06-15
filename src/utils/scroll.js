@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 export default {
   debounce(func, wait, immediate) {
     var timeout, args, context, timestamp, result;
@@ -76,5 +78,5 @@ export default {
     return element.getBoundingClientRect().height;
   },
 
-  getComputedStyle: document.defaultView.getComputedStyle.bind(document.defaultView)
+  getComputedStyle: !Vue.prototype.$isServer && document.defaultView.getComputedStyle.bind(document.defaultView)
 };

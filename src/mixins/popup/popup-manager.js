@@ -1,7 +1,9 @@
+import Vue from 'vue';
 import { addClass } from 'src/utils/dom';
 import PopupContext from './popup-context';
 
 const getModal = function() {
+  if (Vue.prototype.$isServer) return;
   let modalDom = PopupContext.getContext('modalDom');
 
   if (modalDom) {

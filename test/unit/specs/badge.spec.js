@@ -21,7 +21,7 @@ describe('BadgeGroup', () => {
 
     const badge = wrapper.find('.van-badge')[0];
     const eventStub = sinon.stub(badge.vNode.child, '$emit');
-    badge.simulate('click');
+    badge.trigger('click');
 
     expect(eventStub.calledWith('click')).to.be.true;
   });
