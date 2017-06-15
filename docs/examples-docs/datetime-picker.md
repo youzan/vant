@@ -73,13 +73,13 @@ export default {
 </van-datetime-picker>
 
 <script>
-
 export default {
   data() {
     return {
       minHour: 10,
       maxHour: 20,
-      minDate: new Date()
+      minDate: new Date(),
+      currentDate: null
     };
   },
 

@@ -47,7 +47,7 @@ describe('Tabs', () => {
 
     wrapper.vm.$nextTick(() => {
       const nTab = wrapper.find('.van-tab')[0];
-      nTab.simulate('click');
+      nTab.trigger('click');
       expect(clickSpy.calledOnce).to.be.true;
       done();
     });
@@ -63,7 +63,7 @@ describe('Tabs', () => {
 
     wrapper.vm.$nextTick(() => {
       const nTab = wrapper.find('.van-tab')[2];
-      nTab.simulate('click');
+      nTab.trigger('click');
       expect(clickDisabledSpy.calledOnce).to.be.true;
       done();
     });

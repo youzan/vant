@@ -7,6 +7,7 @@
       <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div
         v-for="(tab, index) in tabs"
+        :key="index"
         class="van-tab"
         :class="{'van-tab--active': index === curActive}"
         ref="tabkey"

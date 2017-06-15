@@ -3,9 +3,9 @@
     <h1 class="zanui-title">Zan UI Wap</h1>
     <h2 class="zanui-desc">有赞移动wap端组件库</h2>
     <div class="mobile-navs">
-      <template v-for="item in data">
-        <div class="mobile-nav-item" v-if="item.showInMobile">
-          <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index"></mobile-nav>
+      <template v-for="(item, index) in data">
+        <div class="mobile-nav-item" v-if="item.showInMobile" :key="index">
+          <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index"></mobile-nav>
         </div>
       </template>
     </div>

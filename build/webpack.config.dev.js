@@ -7,6 +7,7 @@ var getPostcssPlugin = require('./utils/postcss_pipe');
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -25,8 +26,7 @@ function convert(str) {
 function wrap(render) {
   return function() {
     return render.apply(this, arguments)
-      .replace('<code class="', '<code class="hljs ')
-      .replace('<code>', '<code class="hljs">');
+      .replace(/\<code v-pre class=\"/, '<code v-pre class="hljs ');
   };
 };
 
@@ -58,7 +58,6 @@ module.exports = {
     extensions: ['.js', '.vue', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.runtime.common.js',
-      'vant': path.join(__dirname, '..'),
       'src': path.join(__dirname, '../src'),
       'packages': path.join(__dirname, '../packages'),
       'lib': path.join(__dirname, '../lib'),
@@ -167,7 +166,9 @@ module.exports = {
       filename: 'examples.html',
       inject: true
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),
-    StyleExtractPlugin
+    StyleExtractPlugin,
+    new FriendlyErrorsPlugin()
   ]
 };

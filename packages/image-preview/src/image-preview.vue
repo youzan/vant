@@ -2,7 +2,7 @@
   <transition name="image-fade">
     <div class="van-image-preview" ref="previewContainer" v-show="value">
       <van-swipe>
-        <van-swipe-item v-for="item in images">
+        <van-swipe-item v-for="(item, index) in images" :key="index">
           <img class="van-image-preview__image" @load="handleLoad" :src="item" alt="">
         </van-swipe-item>
       </van-swipe>

@@ -17,7 +17,7 @@ describe('Button', () => {
     expect(wrapper.hasClass('van-button--normal')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.simulate('click');
+    wrapper.trigger('click');
 
     expect(eventStub.calledOnce).to.be.true;
     expect(eventStub.calledWith('click')).to.be.true;
@@ -111,7 +111,7 @@ describe('Button', () => {
     expect(wrapper.hasClass('van-button--disabled')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.simulate('click');
+    wrapper.trigger('click');
 
     expect(eventStub.called).to.be.false;
   });
@@ -128,7 +128,7 @@ describe('Button', () => {
     expect(loading.isVueComponent).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.simulate('click');
+    wrapper.trigger('click');
 
     expect(eventStub.called).to.be.false;
   });

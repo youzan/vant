@@ -7,7 +7,7 @@
 
               </example-block><example-block title="禁用状态">
                 <div class="van-checkbox-wrapper">
-  <van-checkbox v-model="checkbox2">复选框2</van-checkbox>
+  <van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
 </div>
 
 
@@ -15,7 +15,7 @@
               </example-block><example-block title="Checkbox组">
                 <div class="van-checkbox-wrapper">
   <van-checkbox-group v-model="result">
-    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
 
@@ -24,7 +24,7 @@
               </example-block><example-block title="禁用Checkbox组">
                 <div class="van-checkbox-wrapper">
   <van-checkbox-group v-model="result" disabled>
-    <van-checkbox v-for="item in list" :name="item">复选框{{item}}</van-checkbox>
+    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
 
@@ -33,7 +33,7 @@
               </example-block><example-block title="与Cell组件一起使用">
                 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="item in list">
+    <van-cell v-for="(item, index) in list" :key="index">
       <van-checkbox :name="item">复选框{{item}}</van-checkbox>
     </van-cell>
   </van-cell-group>

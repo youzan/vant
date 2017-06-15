@@ -128,11 +128,11 @@ export default {
 ```html
 <van-row>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateTrue" :disabled="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateTrue" disabled></van-switch>
     <div class="demo-switch__text">打开</div>
   </van-col>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateFalse" :disabled="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateFalse" disabled></van-switch>
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>
@@ -158,11 +158,11 @@ export default {
 ```html
 <van-row>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateTrue" :loading="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateTrue" loading></van-switch>
     <div class="demo-switch__text">打开</div>
   </van-col>
   <van-col span="12">
-    <van-switch class="some-customized-class" v-model="switchStateFalse" :loading="true"></van-switch>
+    <van-switch class="some-customized-class" v-model="switchStateFalse" loading></van-switch>
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>

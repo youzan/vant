@@ -84,11 +84,11 @@ describe('ActionSheet', () => {
     });
 
     const actionItem = wrapper.find('.van-actionsheet__item')[0];
-    actionItem.simulate('click');
+    actionItem.trigger('click');
     expect(called).to.be.true;
 
     const secondActionItem = wrapper.find('.van-actionsheet__item')[1];
-    secondActionItem.simulate('click');
+    secondActionItem.trigger('click');
   });
 
   it('create actionsheet with cancel button', () => {
