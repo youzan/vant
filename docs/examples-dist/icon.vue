@@ -121,16 +121,40 @@
     <span>password-view</span>
   </van-col>
   <van-col span="8">
-    <van-icon name="password-not-view"></van-icon>
-    <span>password-not-view</span>
-  </van-col>
-  <van-col span="8">
     <van-icon name="wap-nav"></van-icon>
     <span>wap-nav</span>
   </van-col>
   <van-col span="8">
+    <van-icon name="password-not-view"></van-icon>
+    <span>password-not-view</span>
+  </van-col>
+  <van-col span="8">
     <van-icon name="wap-home"></van-icon>
     <span>wap-home</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="ecard-pay"></van-icon>
+    <span>ecard-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="balance-pay"></van-icon>
+    <span>balance-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="peer-pay"></van-icon>
+    <span>peer-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="credit-pay"></van-icon>
+    <span>credit-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="debit-pay"></van-icon>
+    <span>debit-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="other-pay"></van-icon>
+    <span>other-pay</span>
   </van-col>
 </van-row>
 
@@ -140,6 +164,7 @@
   @b icon {
     .van-col {
       text-align: center;
+      height: 120px;
     }
 
     .van-icon {

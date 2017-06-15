@@ -186,12 +186,12 @@ export default {
     <span>password-not-view</span>
   </van-col>
   <van-col span="8">
-    <van-icon name="ecard-pay"></van-icon>
-    <span>ecard-pay</span>
-  </van-col>
-  <van-col span="8">
     <van-icon name="wap-home"></van-icon>
     <span>wap-home</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="ecard-pay"></van-icon>
+    <span>ecard-pay</span>
   </van-col>
   <van-col span="8">
     <van-icon name="balance-pay"></van-icon>
