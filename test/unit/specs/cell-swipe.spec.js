@@ -26,7 +26,7 @@ describe('CellSwipe', () => {
     wrapper.vm.swipeLeaveTransition(1);
     wrapper.vm.swipeLeaveTransition(-1);
     wrapper.vm.endDrag();
-    expect(wrapper.hasClass('van-cell-wrapper')).to.be.true;
+    expect(wrapper.hasClass('van-cell-swipe')).to.be.true;
   });
 });
 
@@ -37,7 +37,7 @@ describe('CellSwipe-left', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a CellSwipe', () => {
+  it('create a CellSwipe left', () => {
     wrapper = mount(CellSwipe, {
       propsData: {
         leftWidth: 2,
@@ -62,6 +62,6 @@ describe('CellSwipe-left', () => {
     wrapper.vm.swipeLeaveTransition(1);
     wrapper.vm.swipeLeaveTransition(-1);
     wrapper.vm.endDrag();
-    expect(wrapper.hasClass('van-cell-wrapper')).to.be.true;
+    expect(wrapper.hasClass('van-cell-swipe')).to.be.true;
   });
 });
