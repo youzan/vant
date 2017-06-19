@@ -1,4 +1,3 @@
-
 <style>
 .swipe-delete-btn {
     background-color: #FF4444;
@@ -21,7 +20,7 @@
     line-height: 44px;
 }
 </style>
-## 滑动单元格
+## CellSwipe 滑动单元格
 
 ### 使用指南
 
