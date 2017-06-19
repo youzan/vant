@@ -46,6 +46,7 @@
       .van-toast__text {
         padding: 15px 0 20px;
         font-size: 14px;
+        line-height: 1.2;
       }
     }
   }
