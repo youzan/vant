@@ -39,7 +39,7 @@
 </template>
 
 <script>
-const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'datetime', 'password', 'textarea'];
+const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
 import vanCell from 'packages/cell';
 
 export default {
