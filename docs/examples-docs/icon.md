@@ -323,6 +323,14 @@ export default {
     <van-icon name="underway"></van-icon>
     <span>underway</span>
   </van-col>
+  <van-col span="8">
+    <van-icon name="point-gift"></van-icon>
+    <span>point-gift</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="after-sale"></van-icon>
+    <span>after-sale</span>
+  </van-col>
 </van-row>
 ```
 :::
