@@ -56,7 +56,17 @@ export default {
 
 #### 基础用法
 
-设置`name`属性为对应的图标名称即可，以下目前有的所有图标：
+设置`name`属性为对应的图标名称即可：
+
+:::demo 所有Icon
+```html
+<van-icon name="qr-invalid" style="text-align: center"></van-icon>
+```
+:::
+
+#### 所有Icons
+
+以下目前有的所有图标及其名称：
 
 :::demo 所有Icon
 ```html
@@ -312,6 +322,14 @@ export default {
   <van-col span="8">
     <van-icon name="underway"></van-icon>
     <span>underway</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="point-gift"></van-icon>
+    <span>point-gift</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="after-sale"></van-icon>
+    <span>after-sale</span>
   </van-col>
 </van-row>
 ```

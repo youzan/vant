@@ -21,7 +21,7 @@
 import Popup from 'src/mixins/popup';
 
 const CANCEL_TEXT = '取消';
-const CONFIRM_TEXT = '确认';
+const CONFIRM_TEXT = '确定';
 
 export default {
   name: 'van-dialog',

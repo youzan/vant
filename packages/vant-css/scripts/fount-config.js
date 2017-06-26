@@ -333,6 +333,16 @@ module.exports = {
       keywords: ['underway'],
       src: '进行中.svg',
       css: 'underway'
+    },
+    {
+      keywords: ['point', 'gift'],
+      src: '积分礼包.svg',
+      css: 'point-gift'
+    },
+    {
+      keywords: ['after', 'sale'],
+      src: '售后记录.svg',
+      css: 'after-sale'
     }
   ]
 };
