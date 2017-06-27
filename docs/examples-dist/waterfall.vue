@@ -2,7 +2,7 @@
                 <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
 <div class="waterfall">
   <div v-waterfall-lower="loadMore" waterfall-disabled="isWaterfallDisabled" waterfall-offset="400">
-    <div class="waterfall-item" v-for="item in list" style="text-align: center;">
+    <div class="waterfall-item" v-for="(item, index) in list" :key="index" style="text-align: center;">
       {{ item }}
     </div>
     <van-loading v-if="loading" :type="'circle'" :color="'black'"></van-loading>

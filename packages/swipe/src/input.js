@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { EventEmitter, extend, bindEvents, removeEvents } from './utils';
 
 function Input(host, options) {
@@ -24,6 +25,7 @@ Input.prototype = Object.create(new EventEmitter());
 
 extend(Input.prototype, {
   bind: function(host) {
+    if (Vue.prototype.$isServer) return;
     bindEvents(host, 'touchstart mousedown', this.onTouchStart);
     if (this.options.listenMoving) {
       bindEvents(window, 'touchmove mousemove', this.onTouchMove);
@@ -104,6 +106,7 @@ extend(Input.prototype, {
   },
 
   destroy: function() {
+    if (Vue.prototype.$isServer) return;
     removeEvents(this.host, 'touchstart mousedown', this.onTouchStart);
     if (this.options.listenMoving) {
       removeEvents(window, 'touchmove mousemove', this.onTouchMove);

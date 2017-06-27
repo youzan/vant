@@ -6,6 +6,7 @@
   "cell": "./packages/cell/index.js",
   "icon": "./packages/icon/index.js",
   "cell-group": "./packages/cell-group/index.js",
+  "cell-swipe": "./packages/cell-swipe/index.js",
   "popup": "./packages/popup/index.js",
   "dialog": "./packages/dialog/index.js",
   "picker": "./packages/picker/index.js",

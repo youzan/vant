@@ -181,6 +181,168 @@ module.exports = {
       keywords: ['wap', 'home'],
       src: 'wap首页.svg',
       css: 'wap-home'
+    },
+    {
+      keywords: ['ecard', 'pay'],
+      src: '有赞E卡.svg',
+      css: 'ecard-pay',
+      'correct_contour_direction': true
+    },
+    {
+      keywords: ['balance', 'pay'],
+      src: '余额支付.svg',
+      css: 'balance-pay'
+    },
+    {
+      keywords: ['peer', 'pay'],
+      src: '找人代付.svg',
+      css: 'peer-pay'
+    },
+    {
+      keywords: ['credit', 'pay'],
+      src: '信用卡支付.svg',
+      css: 'credit-pay'
+    },
+    {
+      keywords: ['debit', 'pay'],
+      src: '借记卡支付.svg',
+      css: 'debit-pay'
+    },
+    {
+      keywords: ['other', 'pay'],
+      src: '其他支付方式.svg',
+      css: 'other-pay'
+    },
+    {
+      keywords: ['cart'],
+      src: '购物车.svg',
+      css: 'cart'
+    },
+    {
+      keywords: ['browsing', 'history'],
+      src: '浏览记录.svg',
+      css: 'browsing-history'
+    },
+    {
+      keywords: ['goods', 'collect'],
+      src: '商品收藏.svg',
+      css: 'goods-collect'
+    },
+    {
+      keywords: ['shop', 'collect'],
+      src: '店铺收藏.svg',
+      css: 'shop-collect'
+    },
+    {
+      keywords: ['receive', 'gift'],
+      src: '收礼物.svg',
+      css: 'receive-gift',
+      'correct_contour_direction': true
+    },
+    {
+      keywords: ['send', 'gift'],
+      src: '送出赠品.svg',
+      css: 'send-gift'
+    },
+    {
+      keywords: ['setting'],
+      src: '设置.svg',
+      css: 'setting'
+    },
+    {
+      keywords: ['points'],
+      src: '积分.svg',
+      css: 'points'
+    },
+    {
+      keywords: ['coupon'],
+      src: '优惠券.svg',
+      css: 'coupon'
+    },
+    {
+      keywords: ['free', 'postage'],
+      src: '包邮.svg',
+      css: 'free-postage'
+    },
+    {
+      keywords: ['discount'],
+      src: '折扣.svg',
+      css: 'discount'
+    },
+    {
+      keywords: ['birthday', 'privilege'],
+      src: '生日特权.svg',
+      css: 'birthday-privilege'
+    },
+    {
+      keywords: ['member', 'day', 'privilege'],
+      src: '会员日特权.svg',
+      css: 'member-day-privilege'
+    },
+    {
+      keywords: ['balance', 'details'],
+      src: '余额明细.svg',
+      css: 'balance-details'
+    },
+    {
+      keywords: ['cash', 'back', 'record'],
+      src: '返现记录.svg',
+      css: 'cash-back-record'
+    },
+    {
+      keywords: ['points', 'mall'],
+      src: '积分商城.svg',
+      css: 'points-mall'
+    },
+    {
+      keywords: ['exchange', 'record'],
+      src: '兑换记录.svg',
+      css: 'exchange-record'
+    },
+    {
+      keywords: ['pending', 'payment'],
+      src: '待付款.svg',
+      css: 'pending-payment'
+    },
+    {
+      keywords: ['pending', 'orders'],
+      src: '待接单.svg',
+      css: 'pending-orders'
+    },
+    {
+      keywords: ['pending', 'deliver'],
+      src: '待发货.svg',
+      css: 'pending-deliver'
+    },
+    {
+      keywords: ['pending', 'evaluate'],
+      src: '待评价.svg',
+      css: 'pending-evaluate'
+    },
+    {
+      keywords: ['gift', 'card', 'pay'],
+      src: '礼品卡支付.svg',
+      css: 'gift-card-pay'
+    },
+    {
+      keywords: ['cash', 'on', 'deliver'],
+      src: '货到付款.svg',
+      css: 'cash-on-deliver'
+    },
+    {
+      keywords: ['underway'],
+      src: '进行中.svg',
+      css: 'underway'
+    },
+    {
+      keywords: ['point', 'gift'],
+      src: '积分礼包.svg',
+      css: 'point-gift'
+    },
+    {
+      keywords: ['after', 'sale'],
+      src: '售后记录.svg',
+      css: 'after-sale'
     }
   ]
 };

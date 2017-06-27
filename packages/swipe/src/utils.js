@@ -1,4 +1,4 @@
-'use strict';
+import Vue from 'vue';
 
 var extend = Object.assign.bind(Object);
 
@@ -37,17 +37,24 @@ EventEmitter.prototype = {
   }
 };
 
-const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||
-              function(callback, element) {
-                return window.setTimeout(callback, 1000 / 60);
-              };
+const isSupportRequestAnimationFrame = !Vue.prototype.$isServer &&
+  (window.requestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.msRequestAnimationFrame);
+const isSupportCancelAnimationFrame = !Vue.prototype.$isServer &&
+  (window.cancelAnimationFrame ||
+  window.mozCancelAnimationFrame ||
+  window.webkitCancelAnimationFrame ||
+  window.msCancelAnimationFrame);
 
-const cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame ||
-              window.webkitCancelAnimationFrame || window.msRequestAnimationFrame ||
-              function(id) {
-                clearTimeout(id);
-              };
+const requestAnimationFrame = isSupportRequestAnimationFrame || function(callback, element) {
+  return window.setTimeout(callback, 1000 / 60);
+};
+
+const cancelAnimationFrame = isSupportCancelAnimationFrame || function(id) {
+  clearTimeout(id);
+};
 
 const bindEvents = (elem, eventNames, fn) => {
   eventNames = eventNames.split(/\s+/);

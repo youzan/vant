@@ -1,4 +1,7 @@
 <template><section class="demo-icon"><h1 class="demo-title">Icon 图标</h1><example-block title="所有Icon">
+                <van-icon name="qr-invalid" style="text-align: center"></van-icon>
+
+              </example-block><example-block title="所有Icon">
                 <van-row>
   <van-col span="8">
     <van-icon name="qr-invalid"></van-icon>
@@ -65,10 +68,6 @@
     <span>photo</span>
   </van-col>
   <van-col span="8">
-    <van-icon name="logistics"></van-icon>
-    <span>logistics</span>
-  </van-col>
-  <van-col span="8">
     <van-icon name="edit"></van-icon>
     <span>edit</span>
   </van-col>
@@ -121,16 +120,148 @@
     <span>password-view</span>
   </van-col>
   <van-col span="8">
-    <van-icon name="password-not-view"></van-icon>
-    <span>password-not-view</span>
-  </van-col>
-  <van-col span="8">
     <van-icon name="wap-nav"></van-icon>
     <span>wap-nav</span>
   </van-col>
   <van-col span="8">
+    <van-icon name="password-not-view"></van-icon>
+    <span>password-not-view</span>
+  </van-col>
+  <van-col span="8">
     <van-icon name="wap-home"></van-icon>
     <span>wap-home</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="ecard-pay"></van-icon>
+    <span>ecard-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="balance-pay"></van-icon>
+    <span>balance-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="peer-pay"></van-icon>
+    <span>peer-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="credit-pay"></van-icon>
+    <span>credit-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="debit-pay"></van-icon>
+    <span>debit-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="other-pay"></van-icon>
+    <span>other-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="cart"></van-icon>
+    <span>cart</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="browsing-history"></van-icon>
+    <span>browsing-history</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="goods-collect"></van-icon>
+    <span>goods-collect</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="shop-collect"></van-icon>
+    <span>shop-collect</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="receive-gift"></van-icon>
+    <span>receive-gift</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="send-gift"></van-icon>
+    <span>send-gift</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="setting"></van-icon>
+    <span>setting</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="points"></van-icon>
+    <span>points</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="coupon"></van-icon>
+    <span>coupon</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="free-postage"></van-icon>
+    <span>free-postage</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="discount"></van-icon>
+    <span>discount</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="birthday-privilege"></van-icon>
+    <span>birthday-privilege</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="member-day-privilege"></van-icon>
+    <span>member-day-privilege</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="balance-details"></van-icon>
+    <span>balance-details</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="cash-back-record"></van-icon>
+    <span>cash-back-record</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="points-mall"></van-icon>
+    <span>points-mall</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="exchange-record"></van-icon>
+    <span>exchange-record</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="pending-payment"></van-icon>
+    <span>pending-payment</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="pending-orders"></van-icon>
+    <span>pending-orders</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="pending-deliver"></van-icon>
+    <span>pending-deliver</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="logistics"></van-icon>
+    <span>logistics</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="pending-evaluate"></van-icon>
+    <span>pending-evaluate</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="cash-on-deliver"></van-icon>
+    <span>cash-on-deliver</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="gift-card-pay"></van-icon>
+    <span>gift-card-pay</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="underway"></van-icon>
+    <span>underway</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="point-gift"></van-icon>
+    <span>point-gift</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="after-sale"></van-icon>
+    <span>after-sale</span>
   </van-col>
 </van-row>
 
@@ -138,8 +269,13 @@
 <style>
 @component-namespace demo {
   @b icon {
+    .examples {
+      max-height: none;
+    }
+
     .van-col {
       text-align: center;
+      height: 120px;
     }
 
     .van-icon {

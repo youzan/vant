@@ -4,8 +4,8 @@
       <slot></slot>
     </div>
     <div class="van-swipe__indicators" v-if="showIndicators">
-      <span class="van-swipe__indicator" v-for="i in swipes.length" :class="{
-        'van-swipe__indicator--active': currIndex === i -1
+      <span class="van-swipe__indicator" v-for="(item, index) in swipes.length" :key="index" :class="{
+        'van-swipe__indicator--active': currIndex === index
       }">
       </span>
     </div>

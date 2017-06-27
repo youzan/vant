@@ -4,6 +4,7 @@
 @import './reset.css';
 @import './button.css';
 @import './cell.css';
+@import './cell-swipe.css';
 @import './card.css';
 @import './dialog.css';
 @import './field.css';

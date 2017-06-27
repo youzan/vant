@@ -1,7 +1,7 @@
 ## Vant
 
-一套`Vue 2.0`的基础组件。
-<br>A collection of essential UI components written with Vue 2.0.
+一套基于`Vue.js 2.0`的Mobile组件库
+<br>A Vue.js 2.0 Mobile UI
 
 ### 安装
 
@@ -32,3 +32,25 @@ import 'vant/lib/vant-css/cell.css';
 Vue.component(Button.name, Button);
 Vue.component(Cell.name, Cell);
 ```
+
+### 自定义主题
+
+`Vant`默认提供一套主题，`CSS`命名采用`BEM`的风格方便使用者覆盖样式。如果你想完全替换主题色或者部分样式，可以使用下面的方法：
+
+#### 下载主题
+
+可以通过Github或npm来下载主题：
+
+```shell
+# npm
+npm i vant-css -D
+
+# github
+git clone git@github.com:youzan/vant.git
+cd packages/vant-css
+```
+
+#### 修改主题
+
+修改你下载主题对应的样式即可，然后引入你修改后的主题。
+

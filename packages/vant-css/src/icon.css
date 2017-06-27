@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.eot');
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-3f0c3903d3.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-ab58022933.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-ab58022933.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-ab58022933.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-ab58022933.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-ab58022933.ttf') format('truetype')
 }
 
 .van-icon {
@@ -80,3 +80,35 @@
 .van-icon-password-not-view:before { content: '\e81e'; } /* '' */
 .van-icon-wap-nav:before { content: '\e81f'; } /* '' */
 .van-icon-wap-home:before { content: '\e820'; } /* '' */
+.van-icon-ecard-pay:before { content: '\e821'; } /* '' */
+.van-icon-balance-pay:before { content: '\e822'; } /* '' */
+.van-icon-peer-pay:before { content: '\e823'; } /* '' */
+.van-icon-credit-pay:before { content: '\e824'; } /* '' */
+.van-icon-debit-pay:before { content: '\e825'; } /* '' */
+.van-icon-other-pay:before { content: '\e826'; } /* '' */
+.van-icon-cart:before { content: '\e827'; } /* '' */
+.van-icon-browsing-history:before { content: '\e828'; } /* '' */
+.van-icon-goods-collect:before { content: '\e829'; } /* '' */
+.van-icon-shop-collect:before { content: '\e82a'; } /* '' */
+.van-icon-receive-gift:before { content: '\e82b'; } /* '' */
+.van-icon-send-gift:before { content: '\e82c'; } /* '' */
+.van-icon-setting:before { content: '\e82d'; } /* '' */
+.van-icon-points:before { content: '\e82e'; } /* '' */
+.van-icon-coupon:before { content: '\e82f'; } /* '' */
+.van-icon-free-postage:before { content: '\e830'; } /* '' */
+.van-icon-discount:before { content: '\e831'; } /* '' */
+.van-icon-birthday-privilege:before { content: '\e832'; } /* '' */
+.van-icon-member-day-privilege:before { content: '\e833'; } /* '' */
+.van-icon-balance-details:before { content: '\e834'; } /* '' */
+.van-icon-cash-back-record:before { content: '\e835'; } /* '' */
+.van-icon-points-mall:before { content: '\e836'; } /* '' */
+.van-icon-exchange-record:before { content: '\e837'; } /* '' */
+.van-icon-pending-payment:before { content: '\e838'; } /* '' */
+.van-icon-pending-orders:before { content: '\e839'; } /* '' */
+.van-icon-pending-deliver:before { content: '\e83a'; } /* '' */
+.van-icon-pending-evaluate:before { content: '\e83b'; } /* '' */
+.van-icon-gift-card-pay:before { content: '\e83c'; } /* '' */
+.van-icon-cash-on-deliver:before { content: '\e83d'; } /* '' */
+.van-icon-underway:before { content: '\e83e'; } /* '' */
+.van-icon-point-gift:before { content: '\e83f'; } /* '' */
+.van-icon-after-sale:before { content: '\e840'; } /* '' */

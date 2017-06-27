@@ -1,6 +1,6 @@
 <template><section class="demo-lazyload"><h1 class="demo-title">Lazyload 图片懒加载</h1><example-block title="基础用法">
                 <ul class="image-list" ref="container">
-  <li v-for="img in imageList">
+  <li v-for="(img, index) in imageList" :key="index">
     <img class="lazy-img" v-lazy="img">
   </li>
 </ul>
@@ -9,7 +9,7 @@
 
               </example-block><example-block title="背景图懒加载">
                 <ul class="image-list" ref="container">
-  <li v-for="img in backgroundImageList">
+  <li v-for="(img, index) in backgroundImageList" :key="index">
     <div class="lazy-background" v-lazy:background-image="img"></div>
   </li>
 </ul>
@@ -19,7 +19,7 @@
               </example-block><example-block title="懒加载模块">
                 <lazy-component @show="handleComponentShow">
   <ul class="image-list">
-    <li v-for="img in componentImageList">
+    <li v-for="(img, index) in componentImageList" :key="index">
       <img class="lazy-img" v-lazy="img">
     </li>
   </ul>

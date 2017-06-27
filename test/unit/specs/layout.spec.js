@@ -13,7 +13,7 @@ describe('Layout', () => {
     wrapper = mount(Row);
 
     expect(wrapper.hasClass('van-row')).to.be.true;
-    expect(wrapper.computed().style()).to.be.empty;
+    expect(wrapper.vm.style).to.be.empty;
   });
 
   it('create a simple column', () => {
@@ -26,7 +26,7 @@ describe('Layout', () => {
     expect(wrapper.hasClass('van-col')).to.be.true;
     expect(wrapper.hasClass('van-col-8')).to.be.true;
     expect(wrapper.hasClass('van-col-offset-8')).to.be.true;
-    expect(wrapper.computed().gutter()).to.equal(0);
+    expect(wrapper.vm.gutter).to.equal(0);
   });
 
   it('create a gutter row', () => {

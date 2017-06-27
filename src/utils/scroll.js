@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 export default {
   debounce(func, wait, immediate) {
     var timeout, args, context, timestamp, result;
@@ -55,6 +57,11 @@ export default {
     return 'scrollTop' in element ? element.scrollTop : element.pageYOffset;
   },
 
+  // 设置滚动高度
+  setScrollTop(element, value) {
+    'scrollTop' in element ? element.scrollTop = value : element.scrollTo(element.scrollX, value);
+  },
+
   // 获取元素距离顶部高度
   getElementTop(element) {
     if (element === window) {
@@ -71,5 +78,5 @@ export default {
     return element.getBoundingClientRect().height;
   },
 
-  getComputedStyle: document.defaultView.getComputedStyle.bind(document.defaultView)
+  getComputedStyle: !Vue.prototype.$isServer && document.defaultView.getComputedStyle.bind(document.defaultView)
 };

@@ -8,7 +8,8 @@
       <template v-if="!title">
         <ul class="van-actionsheet__list">
           <li
-            v-for="item in actions"
+            v-for="(item, index) in actions"
+            :key="index"
             class="van-actionsheet__item"
             :class="[item.className, item.loading ? 'van-actionsheet__item--loading' : '']"
             @click.stop="handleItemClick(item)">

@@ -71,13 +71,13 @@ export default {
 :::demo Inactive
 ```html
 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="0"></van-progress>
+  <van-progress class="demo-progress__demo1" inactive :percentage="0"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo2" :inactive="true" :percentage="46"></van-progress>
+  <van-progress class="demo-progress__demo2" inactive :percentage="46"></van-progress>
 </div>
 <div class="demo-progress__wrapper">
-  <van-progress class="demo-progress__demo1" :inactive="true" :percentage="100"></van-progress>
+  <van-progress class="demo-progress__demo1" inactive :percentage="100"></van-progress>
 </div>
 ```
 :::

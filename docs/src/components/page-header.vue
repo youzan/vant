@@ -9,13 +9,13 @@
           <a href="https://www.youzanyun.com/zanui" class="page-header__link">首页</a>
         </li>
         <li class="page-header__item">
-          <a href="https://www.youzanyun.com/zanui/react" class="page-header__link">PC端</a>
+          <a href="https://www.youzanyun.com/zanui/react" class="page-header__link">Zent - PC端</a>
         </li>
         <li class="page-header__item">
-          <a href="https://www.youzanyun.com/zanui/vue" class="page-header__link page-header__link--active">移动端</a>
+          <a href="https://www.youzanyun.com/zanui/vue" class="page-header__link page-header__link--active">Vant - 移动端</a>
         </li>
         <li class="page-header__item">
-          <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">微信小程序</a>
+          <a href="https://github.com/youzan/zanui-weapp" class="page-header__link">ZanUi-WeApp - 微信小程序</a>
         </li>
       </ul>
     </div>
