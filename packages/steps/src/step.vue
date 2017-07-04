@@ -1,12 +1,12 @@
 <template>
-  <div class="van-step" :class="statusClass">
+  <div class="van-step" :class="stepClass">
     <div class="van-step__circle-container">
       <i class="van-step__circle" v-if="status !== 'process'"></i>
-      <i class="van-icon van-icon-checked" v-else></i>
+      <i class="van-icon van-icon-checked" :style="{ color: $parent.activeColor }" v-else></i>
     </div>
-    <p class="van-step__title">
+    <div class="van-step__title" :style="titleStyle">
       <slot></slot>
-    </p>
+    </div>
     <div class="van-step__line"></div>
   </div>
 </template>
@@ -30,9 +30,18 @@ export default {
         return 'process';
       }
     },
-    statusClass() {
+    stepClass() {
       const status = this.status;
-      return status ? 'van-step--' + status : '';
+      const statusClass = status ? 'van-step--' + status : '';
+      const directionClass = `van-step--${this.$parent.direction}`;
+      return [directionClass, statusClass];
+    },
+    titleStyle() {
+      if (this.status === 'process') {
+        return {
+          color: this.$parent.activeColor
+        };
+      }
     }
   }
 };
