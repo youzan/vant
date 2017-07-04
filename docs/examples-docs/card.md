@@ -86,4 +86,5 @@ export default {
 | title | 自定义标题 |
 | desc | 自定义描述 |
 | tags | 自定义tags |
+| thumb | 自定义thumb |
 | footer | 自定义footer |
