@@ -111,6 +111,29 @@ export default {
 ```
 :::
 
+#### 竖式步骤条
+
+可以通过设置`direction`属性来改变步骤条的显示方式，可选值有`vertical/horizontal`。
+
+:::demo 只显示步骤条
+```html
+<van-steps direction="vertical" :active="0" active-color="#f60">
+  <van-step>
+    <h3>【城市】最新的物流状态之类的表述哈哈哈哈</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+  <van-step>
+    <h3>【城市】已经过了的物流状态我是折行我是折行我是折行联系电话：158630099999</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+  <van-step>
+    <h3>未发货</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+</van-steps>
+```
+:::
+
 ### 高级用法
 
 可以使用具名`slot`增加自定义内容，其中包含`icon`和`message-extra`。
@@ -137,6 +160,8 @@ export default {
 | iconClass | 当前步骤栏为icon添加的类 | `string`  |          |          |
 | title | 当前步骤从标题 | `string`  |          |          |
 | description | 当前步骤描述 | `string`  |          |          |
+| direction | 	显示方向 | `string`  |   `horizontal`       |      `vertical/horizontal`    |
+| activeColor | 	`active`状态时的颜色 | `string`  |   `#06bf04`       |        |
 
 ### Steps Slot
 
