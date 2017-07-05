@@ -1,3 +1,6 @@
+import Vue from 'vue';
+const isServer = Vue.prototype.$isServer;
+
 const trim = function(string) {
   return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
 };
@@ -66,7 +69,7 @@ export const once = function(el, event, fn) {
 };
 
 export const on = (function() {
-  if (document.addEventListener) {
+  if (!isServer && document.addEventListener) {
     return function(element, event, handler) {
       if (element && event && handler) {
         element.addEventListener(event, handler, false);
@@ -82,7 +85,7 @@ export const on = (function() {
 })();
 
 export const off = (function() {
-  if (document.removeEventListener) {
+  if (!isServer && document.removeEventListener) {
     return function(element, event, handler) {
       if (element && event) {
         element.removeEventListener(event, handler, false);
