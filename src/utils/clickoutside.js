@@ -6,6 +6,8 @@
  * <div v-clickoutside="handleClose">
  * ```
  */
+import Vue from 'vue';
+const isServer = Vue.prototype.$isServer;
 const clickoutsideContext = '@@clickoutsideContext';
 
 export default {
@@ -20,7 +22,7 @@ export default {
       methodName: binding.expression,
       arg: binding.arg || 'click'
     };
-    document.addEventListener(el[clickoutsideContext].arg, documentHandler);
+    !isServer && document.addEventListener(el[clickoutsideContext].arg, documentHandler);
   },
 
   update(el, binding) {
@@ -28,7 +30,7 @@ export default {
   },
 
   unbind(el) {
-    document.removeEventListener(
+    !isServer && document.removeEventListener(
       el[clickoutsideContext].arg,
       el[clickoutsideContext].documentHandler);
   },

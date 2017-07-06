@@ -18,6 +18,22 @@
   <van-step>交易完成</van-step>
 </van-steps>
 
+              </example-block><example-block title="只显示步骤条">
+                <van-steps direction="vertical" :active="0" active-color="#f60">
+  <van-step>
+    <h3>【城市】最新的物流状态之类的表述哈哈哈哈</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+  <van-step>
+    <h3>【城市】已经过了的物流状态我是折行我是折行我是折行联系电话：158630099999</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+  <van-step>
+    <h3>未发货</h3>
+    <p>2016-07-12 12:12:12</p>
+  </van-step>
+</van-steps>
+
               </example-block><example-block title="高级用法">
                 <van-steps :active="active" title="等待商家发货">
   <van-icon slot="icon" name="like"></van-icon>
