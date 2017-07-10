@@ -1,8 +1,26 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
+    <div class="van-tabs__nav-wrap" v-if="type === 'line' && tabs.length > 4">
+      <div class="van-tabs__swipe" ref="swipe">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar" :style="navBarStyle"></div>
+          <div
+            v-for="(tab, index) in tabs"
+            :key="index"
+            class="van-tab"
+            :class="{'van-tab--active': index === curActive}"
+            ref="tabkey"
+            @click="handleTabClick(index, tab)"
+          >
+            {{ tab.title }}
+          </div>
+        </div>
+      </div>
+    </div>
     <div
+      v-else
       class="van-tabs__nav"
-      :class="[`van-tabs__nav--${this.type}`, `van-tabs--col-${this.tabs.length}`]"
+      :class="[`van-tabs__nav--${this.type}`]"
     >
       <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div
@@ -23,6 +41,9 @@
 </template>
 
 <script>
+  import swipe from './swipe';
+  import translateUtil from 'src/utils/transition';
+
   export default {
     name: 'van-tabs',
 
@@ -48,13 +69,21 @@
       return {
         tabs: [],
         isReady: false,
-        curActive: +this.active
+        curActive: +this.active,
+        isSwiping: false
       };
     },
 
     watch: {
       active(val) {
         this.curActive = +val;
+      },
+
+      curActive() {
+        /* istanbul ignore else */
+        if (this.tabs.length > 4) {
+          this.doOnValueChange();
+        }
       }
     },
 
@@ -72,10 +101,31 @@
 
         return {
           width: offsetWidth,
-          transform: `translate3d(${offsetLeft}, 0px, 0px)`,
+          transform: `translate3d(${offsetLeft}, 0, 0)`,
           transitionDuration: `${this.duration}s`
         };
       }
+    },
+
+    mounted() {
+      // 页面载入完成
+      this.$nextTick(() => {
+        // 可以开始触发在computed中关于nav-bar的css动画
+        this.isReady = true;
+        this.initEvents();
+  
+        if (this.tabs.length > 4) {
+          const swipeWidth = this.$refs.swipe.getBoundingClientRect().width;
+          const lastTab = this.$refs.tabkey[this.tabs.length - 1];
+          const lastTabWidth = lastTab.offsetWidth;
+          const lastTabOffsetLeft = lastTab.offsetLeft;
+          const maxTranslate = (lastTabOffsetLeft + lastTabWidth) - swipeWidth;
+
+          this.swipeWidth = swipeWidth;
+          this.maxTranslate = maxTranslate;
+          this.doOnValueChange();
+        }
+      });
     },
 
     methods: {
@@ -93,15 +143,63 @@
 
         this.$emit('click', index);
         this.curActive = index;
-      }
-    },
+      },
 
-    mounted() {
-      // 页面载入完成
-      this.$nextTick(() => {
-        // 可以开始触发在computed中关于nav-bar的css动画
-        this.isReady = true;
-      });
+      /**
+       * 将当前value值转换为需要translate的值
+       */
+      value2Translate(value) {
+        const maxTranslate = this.maxTranslate;
+        const tab = this.$refs.tabkey[value];
+        const tabWidth = tab.offsetWidth;
+        const tabOffsetLeft = tab.offsetLeft;
+        let translate = tabOffsetLeft + (tabWidth * 2.7) - this.swipeWidth;
+        if (translate < 0) {
+          translate = 0;
+        }
+
+        return -1 * (translate > maxTranslate ? maxTranslate : translate);
+      },
+
+      initEvents() {
+        const el = this.$refs.swipe;
+        if (!el) return;
+
+        let swipeState = {};
+
+        swipe(el, {
+          start: event => {
+            swipeState = {
+              start: new Date(),
+              startLeft: event.pageX,
+              startTranslateLeft: translateUtil.getElementTranslate(el).left
+            };
+          },
+
+          drag: event => {
+            this.isSwiping = true;
+
+            swipeState.left = event.pageX;
+            const deltaX = swipeState.left - swipeState.startLeft;
+            const translate = swipeState.startTranslateLeft + deltaX;
+
+            if (translate > 0 || (translate * -1) > this.maxTranslate ) return;
+
+            translateUtil.translateElement(el, translate, null);
+          },
+
+          end: () => {
+            this.isSwiping = false;
+          }
+        })
+      },
+
+      doOnValueChange() {
+        const value = +this.curActive;
+        const swipe = this.$refs.swipe;
+
+        translateUtil.translateElement(swipe, this.value2Translate(value), null);
+      }
     }
   };
 </script>

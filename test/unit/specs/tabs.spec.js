@@ -1,6 +1,7 @@
 import Tabs from 'packages/tabs';
 import { mount } from 'avoriaz';
 import TabsTestComponent from '../components/tabs';
+import FiveTabsTestComponent from '../components/five-tabs';
 
 describe('Tabs', () => {
   let wrapper;
@@ -73,5 +74,11 @@ describe('Tabs', () => {
     wrapper = mount(TabsTestComponent);
 
     expect(wrapper.style.transitionDuration != '').to.be.true;
+  });
+
+  it('create a tabs greater then 4', () => {
+    wrapper = mount(FiveTabsTestComponent, {
+      attachToDocument: true
+    });
   });
 });
