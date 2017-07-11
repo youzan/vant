@@ -194,6 +194,7 @@ export default {
         },
 
         end: () => {
+          /* istanbul ignore else */
           if (this.isDragging) {
             this.isDragging = false;
 

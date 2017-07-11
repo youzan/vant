@@ -97,7 +97,6 @@ export default {
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 ```
 :::
@@ -113,7 +112,6 @@ export default {
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 ```
 :::
@@ -132,6 +130,25 @@ export default {
 ```
 :::
 
+#### 多于4个tab时
+
+多于4个tab时，可以横向滚动tab。
+
+:::demo 多于4个tab时
+```html
+<van-tabs>
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
+  <van-tab title="选项五">内容五</van-tab>
+  <van-tab title="选项六">内容六</van-tab>
+  <van-tab title="选项七">内容七</van-tab>
+  <van-tab title="选项八">内容八</van-tab>
+</van-tabs>
+```
+:::
+
 #### 禁用tab
 
 在对应的`van-tab`上设置`disabled`属性即可，如果需要监听禁用事件，可以监听`disabled`事件。
@@ -139,11 +156,10 @@ export default {
 :::demo 禁用tab
 ```html
 <van-tabs>
-  <van-tab title="选项三">内容一</van-tab>
+  <van-tab title="选项一">内容一</van-tab>
   <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
 <script>
@@ -169,7 +185,6 @@ export default {
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 ```
 :::
@@ -198,7 +213,6 @@ export default {
     <van-tab title="选项二" class="custom-pane">内容二</van-tab>
     <van-tab title="选项三" class="custom-pane">内容三</van-tab>
     <van-tab title="选项四" class="custom-pane">内容四</van-tab>
-    <van-tab title="选项五" class="custom-pane">内容五</van-tab>
 </van-tabs>
 
 <style>
@@ -228,7 +242,6 @@ export default {
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
 <script>

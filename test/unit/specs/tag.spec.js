@@ -18,12 +18,4 @@ describe('Tag', () => {
       }
     })
   });
-
-  it('create with wrong typeProps', () => {
-    wrapper = mount(Tag, {
-      propsData: {
-        type: 'wrong'
-      }
-    })
-  });
 });

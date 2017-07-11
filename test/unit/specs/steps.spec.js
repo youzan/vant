@@ -21,8 +21,21 @@ describe('Steps', () => {
 
     const finishStep = wrapper.find('.van-step')[0];
     expect(finishStep.hasClass('van-step--finish')).to.be.true;
+    expect(finishStep.hasClass('van-step--horizontal')).to.be.true;
 
     const proccessStep = wrapper.find('.van-step')[1];
     expect(proccessStep.hasClass('van-step--process')).to.be.true;
+  });
+
+  it('create a vertical step', () => {
+    wrapper = mount(Steps, {
+      propsData: {
+        direction: 'vertical'
+      }
+    });
+
+    expect(wrapper.hasClass('van-steps')).to.be.true;
+    expect(wrapper.hasClass('van-steps--vertical')).to.be.true;
+    expect(wrapper.data().steps.length).to.equal(0);
   });
 });

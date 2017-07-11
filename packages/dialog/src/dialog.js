@@ -32,6 +32,7 @@ const showNextDialog = () => {
     initInstance();
   }
 
+  /* istanbul ignore else */
   if (!instance.value && dialogQueue.length > 0) {
     currentDialog = dialogQueue.shift();
 

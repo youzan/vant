@@ -5,27 +5,20 @@
   @b tabs {
     position: relative;
 
-    @m col-2 {
-      .van-tab {
-        width: 50%;
-      }
+    @e nav-wrap {
+      overflow: hidden;
     }
 
-    @m col-3 {
-      .van-tab {
-        width: 33.33333333333333%;
-      }
-    }
+    @e swipe {
+      user-select: none;
+      transition: transform ease .3s;
 
-    @m col-4 {
       .van-tab {
-        width: 25%;
+        flex: 0 0 22%;
       }
-    }
 
-    @m col-5 {
-      .van-tab {
-        width: 20%;
+      .van-tabs__nav {
+        overflow: visible;
       }
     }
 
@@ -33,16 +26,15 @@
       overflow: hidden;
       transition: transform .5s cubic-bezier(.645, .045, .355, 1);
       position: relative;
+      display: flex;
 
       @m line {
         height: 44px;
-        background-color: $c-white;
-        &::after {
-          @mixin border-retina (top);
-          @mixin border-retina (bottom);
-        }
-        @b tabs-nav-bar {
-          display: block;
+
+        .van-tab {
+          &::after {
+            @mixin border-retina (top, bottom);
+          }
         }
       }
 
@@ -55,14 +47,16 @@
         overflow: hidden;
 
         .van-tab {
-          color: #666666;
+          color: #666;
           line-height: 28px;
-          border-right: 1px solid #666666;
+          border-right: 1px solid #666;
+
           &:last-child {
             border-right: none;
           }
+
           &.van-tab--active {
-            background-color: #666666;
+            background-color: #666;
             color: $c-white;
           }
         }
@@ -82,13 +76,16 @@
   }
 
   @b tab {
+    position: relative;
     color: $c-black;
+    background-color: $c-white;
     font-size: 14px;
     line-height: 44px;
     box-sizing: border-box;
     cursor: pointer;
     text-align: center;
-    float: left;
+    flex: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     @m active {
       color: #FF4444;
