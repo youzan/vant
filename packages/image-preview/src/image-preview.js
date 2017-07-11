@@ -6,6 +6,7 @@ let instance;
 const ImagePreviewConstructor = Vue.extend(ImagePreview);
 
 const initInstance = () => {
+  /* istanbul ignore if */
   if (Vue.prototype.$isServer) return;
   instance = new ImagePreviewConstructor({
     el: document.createElement('div')
@@ -13,6 +14,7 @@ const initInstance = () => {
 };
 
 var ImagePreviewBox = images => {
+  /* istanbul ignore if */
   if (Vue.prototype.$isServer) return;
   if (!instance) {
     initInstance();
