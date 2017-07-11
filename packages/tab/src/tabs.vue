@@ -104,6 +104,19 @@
           transform: `translate3d(${offsetLeft}, 0, 0)`,
           transitionDuration: `${this.duration}s`
         };
+      },
+      swipeWidth() {
+        return this.$refs.swipe && this.$refs.swipe.getBoundingClientRect().width;
+      },
+      maxTranslate() {
+        /* istanbul ignore if */
+        if (!this.$refs.tabkey) return;
+
+        const lastTab = this.$refs.tabkey[this.tabs.length - 1];
+        const lastTabWidth = lastTab.offsetWidth;
+        const lastTabOffsetLeft = lastTab.offsetLeft;
+
+        return (lastTabOffsetLeft + lastTabWidth) - this.swipeWidth;
       }
     },
 
@@ -115,14 +128,6 @@
         this.initEvents();
   
         if (this.tabs.length > 4) {
-          const swipeWidth = this.$refs.swipe.getBoundingClientRect().width;
-          const lastTab = this.$refs.tabkey[this.tabs.length - 1];
-          const lastTabWidth = lastTab.offsetWidth;
-          const lastTabOffsetLeft = lastTab.offsetLeft;
-          const maxTranslate = (lastTabOffsetLeft + lastTabWidth) - swipeWidth;
-
-          this.swipeWidth = swipeWidth;
-          this.maxTranslate = maxTranslate;
           this.doOnValueChange();
         }
       });
@@ -149,8 +154,11 @@
        * 将当前value值转换为需要translate的值
        */
       value2Translate(value) {
-        const maxTranslate = this.maxTranslate;
+        /* istanbul ignore if */
+        if (!this.$refs.tabkey) return 0;
+
         const tab = this.$refs.tabkey[value];
+        const maxTranslate = this.maxTranslate;
         const tabWidth = tab.offsetWidth;
         const tabOffsetLeft = tab.offsetLeft;
         let translate = tabOffsetLeft + (tabWidth * 2.7) - this.swipeWidth;
@@ -158,6 +166,7 @@
           translate = 0;
         }
 
+        console.log(translate, maxTranslate, 'trnaslate');
         return -1 * (translate > maxTranslate ? maxTranslate : translate);
       },
 
@@ -183,6 +192,7 @@
             const deltaX = swipeState.left - swipeState.startLeft;
             const translate = swipeState.startTranslateLeft + deltaX;
 
+            /* istanbul ignore else */
             if (translate > 0 || (translate * -1) > this.maxTranslate ) return;
 
             translateUtil.translateElement(el, translate, null);
