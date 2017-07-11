@@ -166,7 +166,6 @@
           translate = 0;
         }
 
-        console.log(translate, maxTranslate, 'trnaslate');
         return -1 * (translate > maxTranslate ? maxTranslate : translate);
       },
 
