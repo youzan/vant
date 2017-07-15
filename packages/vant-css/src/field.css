@@ -1,6 +1,7 @@
 @import './common/var.css';
 @import './mixins/border_retina.css';
 @import './cell.css';
+@import './icon.css';
 
 @component-namespace van {
   @b field {
@@ -84,6 +85,14 @@
       width: 100%;
       resize: none;
       outline: 0;
+    }
+
+    @e icon {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+      padding: 10px;
     }
   }
 }
