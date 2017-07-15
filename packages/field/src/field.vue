@@ -17,6 +17,7 @@
       class="van-field__control"
       v-model="currentValue"
       @focus="handleInputFocus"
+      @blur="handleInputBlur"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
@@ -30,23 +31,27 @@
       :value="currentValue"
       @input="handleInput"
       @focus="handleInputFocus"
+      @blur="handleInputBlur"
       :type="type"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
+    <van-icon v-if="icon" :name="icon" class="van-field__icon" @click="onIconClick"></van-icon>
   </van-cell>
 </template>
 
 <script>
 const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
 import vanCell from 'packages/cell';
+import vanIcon from 'packages/icon';
 
 export default {
   name: 'van-field',
 
   components: {
-    vanCell
+    vanCell,
+    vanIcon
   },
 
   props: {
@@ -71,6 +76,11 @@ export default {
     autosize: {
       type: Boolean,
       default: false
+    },
+    icon: String,
+    onIconClick: {
+      type: Function,
+      default: () => {}
     }
   },
 
@@ -107,6 +117,10 @@ export default {
 
     handleInputFocus() {
       this.$emit('focus');
+    },
+
+    handleInputBlur() {
+      this.$emit('blur');
     }
   }
 };
