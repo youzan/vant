@@ -1,12 +1,31 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
 @import './icon.css';
+@import './mixins/border_retina.css';
 
 @component-namespace van {
   @b steps {
     overflow: hidden;
-    padding: 0 10px;
     background-color: #fff;
+
+    @m horizontal {
+      padding: 0 10px;
+
+      .van-steps__items {
+        margin: 0 0 10px;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 22px;
+
+        &.van-steps__items--alone {
+          padding-top: 10px;
+        }
+      }
+    }
+
+    @m vertical {
+      padding: 0 0 0 35px;
+    }
 
     @m 4 {
       .van-step {
@@ -53,86 +72,94 @@
       max-height: 18px;
       @mixin multi-ellipsis 1;
     }
-
-    @e items {
-      margin: 0 0 10px;
-      overflow: hidden;
-      position: relative;
-      padding-bottom: 20px;
-
-      @m alone {
-        padding-top: 10px;
-      }
-    }
   }
 
   @b step {
     font-size: 14px;
-    float: left;
     position: relative;
     color: $c-gray-dark;
+    
+    @m horizontal {
+      float: left;
 
-    @m finish {
-      color: $c-black;
-
-      .van-step__circle,
-      .van-step__line {
-        background-color: $c-green;
+      &:first-child {
+        .van-step__title {
+          transform: none;
+          margin-left: 0;
+        }
       }
-    }
 
-    @m process {
-      color: $c-black;
+      &:last-child {
+        position: absolute;
+        right: 10px;
+        width: auto;
+
+        .van-step__title {
+          transform: none;
+          margin-left: 0;
+        }
+
+        .van-step__circle-container {
+          left: auto;
+          right: -9px;
+        }
+
+        .van-step__line {
+          width: 0;
+        }
+      }
 
       .van-step__circle-container {
-        top: 24px;
+        position: absolute;
+        top: 28px;
+        left: -8px;
+        padding: 0 8px;
+        background-color: #fff;
+        z-index: 1;
       }
 
-      .van-icon {
+      .van-step__title {
         font-size: 12px;
-        color: $c-green;
-        line-height: 1;
-        display: block;
-      }
-    }
-
-    &:first-child {
-      .van-step__title {
-        transform: none;
-        margin-left: 0;
-      }
-    }
-
-    &:last-child {
-      position: absolute;
-      right: 10px;
-      width: auto;
-
-      .van-step__title {
-        transform: none;
-        margin-left: 0;
-      }
-
-      .van-step__circle-container {
-        left: auto;
-        right: -9px;
+        transform: translate3d(-50%, 0, 0);
+        display: inline-block;
+        margin-left: 3px;
       }
 
       .van-step__line {
-        width: 0;
+        position: absolute;
+        left: 0px;
+        top: 30px;
+        width: 100%;
+        height: 1px;
+        background-color: $c-gray-light;
+      }
+
+      &.van-step--finish {
+        color: $c-black;
+
+        .van-step__circle,
+        .van-step__line {
+          background-color: $c-green;
+        }
+      }
+
+      &.van-step--process {
+        color: $c-black;
+
+        .van-step__circle-container {
+          top: 24px;
+        }
+
+        .van-icon {
+          font-size: 12px;
+          color: $c-green;
+          line-height: 1;
+          display: block;
+        }
       }
     }
 
-    .van-step__circle-container {
-      position: absolute;
-      top: 28px;
-      left: -8px;
-      padding: 0 8px;
-      background-color: #fff;
-      z-index: 1;
-    }
-
-    @e circle {
+    .van-step__circle {
       display: block;
       width: 5px;
       height: 5px;
@@ -140,20 +167,59 @@
       border-radius: 50%;
     }
 
-    @e title {
-      font-size: 12px;
-      transform: translate3d(-50%, 0, 0);
-      display: inline-block;
-      margin-left: 3px;
-    }
+    @m vertical {
+      float: none;
+      display: block;
+      font-size: 14px;
+      line-height: 18px;
+      padding: 10px 10px 10px 0;
 
-    @e line {
-      position: absolute;
-      left: 0px;
-      top: 30px;
-      width: 100%;
-      height: 1px;
-      background-color: $c-gray-light;
+      &::after {
+        @mixin border-retina (bottom);
+      }
+
+      &:first-child {
+        &::before {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 20px;
+          background-color: #fff;
+          top: 0;
+          left: -15px;
+          z-index: 1;
+        }
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+
+      .van-step__circle-container > i {
+        position: absolute;
+        z-index: 2;
+      }
+
+      .van-icon-checked {
+        top: 12px;
+        left: -20px;
+        line-height: 1;
+        font-size: 12px;
+      }
+
+      .van-step__circle {
+        top: 16px;
+        left: -17px;
+      }
+
+      .van-step__line {
+        position: absolute;
+        top: 0;
+        left: -15px;
+        width: 1px;
+        height: 100%;
+        background-color: $c-gray-light;
+      }
     }
   }
 }

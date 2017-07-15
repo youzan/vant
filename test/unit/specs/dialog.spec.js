@@ -1,4 +1,5 @@
 import Dialog from 'packages/dialog';
+import Vue from 'vue';
 
 describe('Dialog', () => {
   afterEach(() => {
@@ -51,6 +52,6 @@ describe('Dialog', () => {
       document.querySelector('.van-dialog__cancel').click();
       expect(dialogAction).to.equal('cancel');
       done();
-    }, 50);
+    }, 500);
   });
 });
