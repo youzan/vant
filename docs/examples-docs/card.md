@@ -77,6 +77,7 @@ export default {
 | thumb | 左侧图片 | `string`  |          |          |
 | title | 标题 | `string`  |          |          |
 | desc | 描述 | `string`  |          |          |
+| centered | 内容是否垂直居中 | `string`  | `false` |          |
 
 
 ### Slot
