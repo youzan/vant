@@ -1,5 +1,5 @@
 <template>
-  <div class="van-steps" :class="`van-steps--${steps.length}`">
+  <div class="van-steps" :class="stepsClass">
     <div class="van-steps__status" v-if="title || description">
       <div class="van-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">
@@ -41,13 +41,31 @@ export default {
       default: ''
     },
     title: String,
-    description: String
+    description: String,
+    direction: {
+      type: String,
+      default: 'horizontal'
+    },
+    activeColor: {
+      type: String,
+      default: '#06bf04'
+    }
   },
 
   data() {
     return {
       steps: []
     };
+  },
+
+  computed: {
+    stepsClass() {
+      const direction = this.direction;
+      const lengthClass = `van-steps--${this.steps.length}`;
+      const directionClass = `van-steps--${direction}`;
+
+      return direction === 'horizontal' ? [lengthClass, directionClass] : [directionClass];
+    }
   }
 };
 </script>

@@ -97,11 +97,7 @@ code.hljs {
       margin: 20px 0;
       font-weight: normal;
 
-      &:hover a {
-        opacity: .4;
-      }
-
-      a {
+      .header-anchor {
         float: left;
         margin-left: -20px;
         opacity: 0;

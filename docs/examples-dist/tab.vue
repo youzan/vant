@@ -4,7 +4,6 @@
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
               </example-block><example-block title="基础用法">
@@ -13,7 +12,6 @@
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
               </example-block><example-block title="设置切换tab的动画时间">
@@ -23,13 +21,24 @@
   <van-tab title="选项三">内容三</van-tab>
 </van-tabs>
 
-              </example-block><example-block title="禁用tab">
+              </example-block><example-block title="多于4个tab时">
                 <van-tabs>
-  <van-tab title="选项三">内容一</van-tab>
-  <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
   <van-tab title="选项五">内容五</van-tab>
+  <van-tab title="选项六">内容六</van-tab>
+  <van-tab title="选项七">内容七</van-tab>
+  <van-tab title="选项八">内容八</van-tab>
+</van-tabs>
+
+              </example-block><example-block title="禁用tab">
+                <van-tabs>
+  <van-tab title="选项一">内容一</van-tab>
+  <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
+  <van-tab title="选项三">内容三</van-tab>
+  <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
 
 
@@ -40,7 +49,6 @@
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
               </example-block><example-block title="自定义样式">
@@ -49,7 +57,6 @@
     <van-tab title="选项二" class="custom-pane">内容二</van-tab>
     <van-tab title="选项三" class="custom-pane">内容三</van-tab>
     <van-tab title="选项四" class="custom-pane">内容四</van-tab>
-    <van-tab title="选项五" class="custom-pane">内容五</van-tab>
 </van-tabs>
 
 
@@ -60,7 +67,6 @@
   <van-tab title="选项二">内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
-  <van-tab title="选项五">内容五</van-tab>
 </van-tabs>
 
 

@@ -92,6 +92,7 @@ export default {
     const supportTouch = !Vue.prototype.$isServer && 'ontouchstart' in window;
     const container = this.$refs.previewContainer;
 
+    /* istanbul ignore else */
     if (supportTouch) {
       let touchStartTime;
 
@@ -99,6 +100,7 @@ export default {
         touchStartTime = new Date();
       });
       container.addEventListener('touchend', () => {
+        /* istanbul ignore else */
         if (new Date() - touchStartTime < 1500) {
           this.value = false;
         }
