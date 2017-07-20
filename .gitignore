@@ -14,3 +14,4 @@ example/dist
 test/unit/coverage
 packages/vant-css/build
 packages/vant-css/icons
+docs/examples-dist
