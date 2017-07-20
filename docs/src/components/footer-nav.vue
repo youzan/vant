@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import navConfig from '../nav.config.js';
+import docConfig from '../doc.config.js';
 
 export default {
   data() {
@@ -41,7 +41,7 @@ export default {
 
   methods: {
     setNav() {
-      let nav = navConfig['zh-CN'];
+      let nav = docConfig['zh-CN'].nav;
       for (let i = 0; i < nav.length; i++) {
         let navItem = nav[i];
         if (!navItem.groups) {

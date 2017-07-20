@@ -1,21 +1,21 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesApp';
-import navConfig from './nav.config.js';
 import routes from './router.config';
 import ZanUI from 'src/index';
-
+import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
 
 import DemoList from './components/demo-list.vue';
 
 Vue.use(ZanUI);
+Vue.use(ZanDoc);
 Vue.use(ZanUI.Lazyload, {
   lazyComponent: true
 });
 Vue.use(VueRouter);
 
-const routesConfig = routes(navConfig, true);
+const routesConfig = routes(true);
 routesConfig.push({
   path: '/',
   component: DemoList.default || DemoList

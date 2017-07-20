@@ -134,6 +134,7 @@
     "webpack-dev-server": "^1.16.3",
     "webpack-merge": "^2.0.0",
     "webpack-node-externals": "^1.5.4",
-    "webpack-vendor-chunk-plugin": "^1.0.0"
+    "webpack-vendor-chunk-plugin": "^1.0.0",
+    "zan-doc": "^0.0.7"
   }
 }
