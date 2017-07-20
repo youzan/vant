@@ -1,7 +1,7 @@
 @import './mixins/border_retina.css';
 
 @component-namespace van {
-  @b switch { 
+  @b switch {
     height: 31px;
     width: 51px;
     display: inline-block;
@@ -24,6 +24,7 @@
       left: 1px;
       top: 1px;
       z-index: 2;
+      transition: transform .3s;
       &::after {
         @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
         border-radius: 27px;
