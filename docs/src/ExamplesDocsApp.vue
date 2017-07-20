@@ -19,7 +19,7 @@ export default {
   computed: {
     simulatorSrc() {
       const dir = this.$route.path.split('/').pop();
-      if (dir === 'quickstart') {
+      if (dir === 'quickstart' || dir === 'changelog') {
         return '/zanui/vue/examples';
       } else {
         return `/zanui/vue/examples/component/${dir}`;

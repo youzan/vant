@@ -23,11 +23,13 @@ module.exports = {
             "list": [
               {
                 "path": "/quickstart",
-                "title": "快速上手"
+                "title": "快速上手",
+                noExample: true
               },
               {
                 "path": "/changelog",
-                "title": "更新日志"
+                "title": "更新日志",
+                noExample: true
               }
             ]
           }
