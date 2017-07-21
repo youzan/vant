@@ -1,6 +1,7 @@
 <template>
   <van-cell
     class="van-field"
+    v-clickoutside="handleInputBlur"
     :title="label"
     :required="required"
     :class="{
@@ -17,7 +18,6 @@
       class="van-field__control"
       v-model="currentValue"
       @focus="handleInputFocus"
-      @blur="handleInputBlur"
       :placeholder="placeholder"
       :maxlength="maxlength"
       :disabled="disabled"
@@ -31,7 +31,6 @@
       :value="currentValue"
       @input="handleInput"
       @focus="handleInputFocus"
-      @blur="handleInputBlur"
       :type="type"
       :placeholder="placeholder"
       :maxlength="maxlength"
@@ -45,6 +44,7 @@
 const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
 import vanCell from 'packages/cell';
 import vanIcon from 'packages/icon';
+import Clickoutside from 'src/utils/clickoutside';
 
 export default {
   name: 'van-field',
@@ -52,6 +52,10 @@ export default {
   components: {
     vanCell,
     vanIcon
+  },
+
+  directives: {
+    Clickoutside
   },
 
   props: {
@@ -86,7 +90,8 @@ export default {
 
   data() {
     return {
-      currentValue: this.value
+      currentValue: this.value,
+      focused: false
     };
   },
 
@@ -116,10 +121,16 @@ export default {
     },
 
     handleInputFocus() {
+      this.focused = true;
       this.$emit('focus');
     },
 
     handleInputBlur() {
+      if (!this.focused) {
+        return;
+      }
+
+      this.focused = false;
       this.$emit('blur');
     }
   }
