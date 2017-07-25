@@ -37,7 +37,7 @@
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
-    <van-icon v-if="icon&& currentValue!= ''" :name="icon" class="van-field__icon" @click="onIconClick"></van-icon>
+    <van-icon v-if="icon && currentValue" :name="icon" class="van-field__icon" @click="onIconClick"></van-icon>
   </van-cell>
 </template>
 

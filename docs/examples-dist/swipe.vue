@@ -1,24 +1,26 @@
-<template><section class="demo-swipe"><h1 class="demo-title">Swipe 轮播</h1><example-block title="基础用法">
-                <van-swipe>
-  <van-swipe-item v-for="(img, index) in images" :key="index">
-    <a href="https://youzan.com" target="_blank">
-      <img v-lazy="img" alt="">
-    </a>
-  </van-swipe-item>
-</van-swipe>
+<template>
+  <section class="demo-swipe">
+    <h1 class="demo-title">Swipe 轮播</h1>
+    <example-block title="基础用法">
+      <van-swipe>
+        <van-swipe-item v-for="(img, index) in images" :key="index">
+          <a href="https://youzan.com" target="_blank">
+            <img v-lazy="img" alt="">
+          </a>
+        </van-swipe-item>
+      </van-swipe>
 
+    </example-block>
+    <example-block title="自动轮播">
+      <van-swipe auto-play="" @pagechange:end="handlePageEnd">
+        <van-swipe-item v-for="(img, index) in autoImages" :key="index">
+          <img v-lazy="img" alt="">
+        </van-swipe-item>
+      </van-swipe>
 
-
-              </example-block><example-block title="自动轮播">
-                <van-swipe auto-play="" @pagechange:end="handlePageEnd">
-  <van-swipe-item v-for="(img, index) in autoImages" :key="index">
-    <img v-lazy="img" alt="">
-  </van-swipe-item>
-</van-swipe>
-
-
-
-              </example-block></section></template>
+    </example-block>
+  </section>
+</template>
 <style>
 @component-namespace demo {
   @b swipe {
@@ -33,7 +35,7 @@
 }
 </style>
 <script>
-import Vue from "vue";import ExampleBlock from "components/example-block";Vue.component("example-block", ExampleBlock);
+import Vue from "vue"; import ExampleBlock from "components/example-block"; Vue.component("example-block", ExampleBlock);
 export default {
   data() {
     return {
