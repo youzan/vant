@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import navConfig from '../nav.config.js';
+import docConfig from '../doc.config.js';
 import MobileNav from './mobile-nav';
 
 export default {
@@ -21,7 +21,7 @@ export default {
     return {
       highlights: [],
       navState: [],
-      data: navConfig['zh-CN'],
+      data: docConfig['zh-CN'].nav,
       base: '/component'
     };
   },

@@ -8,6 +8,12 @@ var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const isProduction = process.env.NODE_ENV === 'production';
+const watchExample = require('./genExamples');
+
+if (!isProduction) {
+  watchExample();  
+}
 
 var StyleExtractPlugin;
 if (process.env.NODE_ENV === 'production') {
@@ -32,7 +38,7 @@ function wrap(render) {
 
 module.exports = {
   entry: {
-    'vendor': ['vue', 'vue-router'],
+    'vendor': ['vue', 'vue-router', 'zan-doc'],
     'vant-docs': './docs/src/index.js',
     'vant-examples': './docs/src/examples.js'
   },
@@ -118,37 +124,23 @@ module.exports = {
         },
         vueMarkdown: {
           use: [
-            [require('markdown-it-anchor'), {
-              level: 2,
-              slugify: slugify,
-              permalink: true,
-              permalinkBefore: true
-            }],
             [require('markdown-it-container'), 'demo', {
               validate: function(params) {
                 return params.trim().match(/^demo\s*(.*)$/);
               },
 
               render: function(tokens, idx) {
-                var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
                 if (tokens[idx].nesting === 1) {
-                  var description = (m && m.length > 1) ? m[1] : '';
-                  var content = tokens[idx + 1].content;
-                  var html = convert(striptags.strip(content, ['script', 'style']));
-
-                  return `<demo-block class="demo-box" description="${description}">
-                            <div class="examples" slot="examples">${html}</div>
-                            <div class="highlight" slot="highlight">`;
+                  return `<demo-block class="demo-box"><div class="highlight" slot="highlight">`;
                 }
-                return '</div></demo-block>\n';
+                return `</div></demo-block>\n`;
               }
             }]
           ],
           preprocess: function(MarkdownIt, source) {
             MarkdownIt.renderer.rules.table_open = function() {
-              return '<table class="table">';
+              return '<table class="zan-doc-table">';
             };
-            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
             return source;
           }
         }
