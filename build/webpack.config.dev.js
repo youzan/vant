@@ -53,6 +53,10 @@ module.exports = {
             loader: "vue-loader",
             options: {
               loaders: {
+                postcss: ExtractTextPlugin.extract({
+                  use: styleLoaders,
+                  fallback: "vue-style-loader"
+                }),
                 css: ExtractTextPlugin.extract({
                   use: styleLoaders,
                   fallback: "vue-style-loader"

@@ -1,102 +1,100 @@
 @import './common/var.css';
 @import './mixins/border_retina.css';
 
-@component-namespace van {
-  @b tabs {
-    position: relative;
+.van-tabs {
+  position: relative;
 
-    @e nav-wrap {
-      overflow: hidden;
+  &__nav-wrap {
+    overflow: hidden;
+  }
+
+  &__swipe {
+    user-select: none;
+    transition: transform ease .3s;
+
+    .van-tab {
+      flex: 0 0 22%;
     }
 
-    @e swipe {
-      user-select: none;
-      transition: transform ease .3s;
-
-      .van-tab {
-        flex: 0 0 22%;
-      }
-
-      .van-tabs__nav {
-        overflow: visible;
-      }
-    }
-
-    @e nav {
-      overflow: hidden;
-      transition: transform .5s cubic-bezier(.645, .045, .355, 1);
-      position: relative;
-      display: flex;
-
-      @m line {
-        height: 44px;
-
-        .van-tab {
-          &::after {
-            @mixin border-retina (top, bottom);
-          }
-        }
-      }
-
-      @m card {
-        height: 28px;
-        margin: 0 15px;
-        background-color: $c-white;
-        border-radius: 2px;
-        border: 1px solid #666666;
-        overflow: hidden;
-
-        .van-tab {
-          color: #666;
-          line-height: 28px;
-          border-right: 1px solid #666;
-
-          &:last-child {
-            border-right: none;
-          }
-
-          &.van-tab--active {
-            background-color: #666;
-            color: $c-white;
-          }
-        }
-      }
-    }
-
-    @e nav-bar {
-      z-index: 1;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      background-color: #f13e3a;
-      transition: transform .3s cubic-bezier(.645, .045, .355, 1);
-      transform-origin: 0 0;
+    .van-tabs__nav {
+      overflow: visible;
     }
   }
 
-  @b tab {
+  &__nav {
+    overflow: hidden;
+    transition: transform .5s cubic-bezier(.645, .045, .355, 1);
     position: relative;
-    color: $c-black;
-    background-color: $c-white;
-    font-size: 14px;
-    line-height: 44px;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: center;
-    flex: 1;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    display: flex;
 
-    @m active {
-      color: #FF4444;
+    &--line {
+      height: 44px;
+
+      .van-tab {
+        &::after {
+          @mixin border-retina (top, bottom);
+        }
+      }
     }
 
-    @e pane {
-      display: none;
+    &--card {
+      height: 28px;
+      margin: 0 15px;
+      background-color: $c-white;
+      border-radius: 2px;
+      border: 1px solid #666666;
+      overflow: hidden;
 
-      @m select {
-        display: block;
+      .van-tab {
+        color: #666;
+        line-height: 28px;
+        border-right: 1px solid #666;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        &.van-tab--active {
+          background-color: #666;
+          color: $c-white;
+        }
       }
+    }
+  }
+
+  &__nav-bar {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #f13e3a;
+    transition: transform .3s cubic-bezier(.645, .045, .355, 1);
+    transform-origin: 0 0;
+  }
+}
+
+.van-tab {
+  position: relative;
+  color: $c-black;
+  background-color: $c-white;
+  font-size: 14px;
+  line-height: 44px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &--active {
+    color: #FF4444;
+  }
+
+  &__pane {
+    display: none;
+
+    &--select {
+      display: block;
     }
   }
 }

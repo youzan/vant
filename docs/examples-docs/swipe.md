@@ -1,12 +1,10 @@
 <style>
-@component-namespace demo {
-  @b swipe {
-    .van-swipe {
-      height: 200px;
+.demo-swipe {
+  .van-swipe {
+    height: 200px;
 
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
     }
   }
 }

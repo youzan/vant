@@ -1,13 +1,11 @@
 <style>
-@component-namespace demo {
-  @b steps {
-    .steps-success {
-      color: #06bf04;
-    }
+.demo-steps {
+  .steps-success {
+    color: #06bf04;
+  }
 
-    .van-button {
-      margin: 15px 0 0 15px;
-    }
+  .van-button {
+    margin: 15px 0 0 15px;
   }
 }
 </style>

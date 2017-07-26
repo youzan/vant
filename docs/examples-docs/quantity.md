@@ -1,13 +1,11 @@
 <style>
-@component-namespace demo {
-  @b quantity {
-    .van-quantity {
-      margin-left: 15px;
-    }
+.demo-quantity {
+  .van-quantity {
+    margin-left: 15px;
+  }
 
-    .curr-quantity {
-      margin: 15px;
-    }
+  .curr-quantity {
+    margin: 15px;
   }
 }
 </style>

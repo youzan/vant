@@ -1,9 +1,7 @@
 <style>
-@component-namespace demo {
-  @b image-preview {
-    .van-button {
-      margin-left: 15px;
-    }
+.demo-image-preview {
+  .van-button {
+    margin-left: 15px;
   }
 }
 </style>

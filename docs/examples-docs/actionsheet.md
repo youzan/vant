@@ -1,17 +1,15 @@
 <style>
-@component-namespace demo {
-  @b actionsheet {
-    .actionsheet-wx {
-      color: #06BF04;
-    }
+.demo-actionsheet {
+  .actionsheet-wx {
+    color: #06BF04;
+  }
 
-    .van-button {
-      margin-left: 15px;
-    }
+  .van-button {
+    margin-left: 15px;
+  }
 
-    .title-actionsheet p {
-      padding: 20px;
-    }
+  .title-actionsheet p {
+    padding: 20px;
   }
 }
 </style>

@@ -1,30 +1,28 @@
 <style>
-@component-namespace demo {
-  @b panel {
-    .van-panel-sum {
-      background: #fff;
-      text-align: right;
-      font-size: 14px;
-      color: #333;
-      line-height: 30px;
-      padding-right: 15px;
+.demo-panel {
+  .van-panel-sum {
+    background: #fff;
+    text-align: right;
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+    padding-right: 15px;
 
-      span {
-        color: red;
-      }
+    span {
+      color: red;
     }
+  }
 
-    .van-panel-buttons {
-      text-align: right;
+  .van-panel-buttons {
+    text-align: right;
 
-      .van-button {
-        margin-left: 5px;
-      }
+    .van-button {
+      margin-left: 5px;
     }
+  }
 
-    .panel-content {
-      padding: 20px;
-    }
+  .panel-content {
+    padding: 20px;
   }
 }
 </style>

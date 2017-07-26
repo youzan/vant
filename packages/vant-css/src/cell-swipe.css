@@ -1,27 +1,30 @@
-
-.van-cell-swipe .van-cell-wrapper, .van-cell-swipe .van-cell-left, .van-cell-swipe .van-cell-right {
-    -webkit-transition: -webkit-transform 150ms ease-in-out;
-    transition: -webkit-transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out;
-    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
-}
-
-.van-cell-swipe{
+.van-cell {
+  &-swipe {
     position: relative;
     min-height: 48px;
     overflow: hidden;
-}
-.van-cell-right{
+
+    .van-cell-wrapper,
+    .van-cell-left,
+    .van-cell-right {
+      transition: transform 150ms ease-in-out;
+    }
+  }
+
+  &-left,
+  &-right {
     position: absolute;
     height: 100%;
-    right: 0;
     top: 0;
-    transform: translate3d(100%,0,0);
-}
-.van-cell-left {
-    position: absolute;
-    height: 100%;
+  }
+
+  &-left {
     left: 0;
-    top: 0;
-    transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  &-right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
 }

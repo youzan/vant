@@ -1,69 +1,67 @@
 @import './common/var.css';
 @import './mixins/border_retina.css';
 
-@component-namespace van {
-  @b tag {
-    position: relative;
-    display: inline-block;
-    line-height: 14px;
-    padding: 1px 5px;
-    border-radius: 2px;
-    font-size: 10px;
-    background: $c-gray;
-    color: $c-white;
+.van-tag {
+  position: relative;
+  display: inline-block;
+  line-height: 14px;
+  padding: 1px 5px;
+  border-radius: 2px;
+  font-size: 10px;
+  background: $c-gray;
+  color: $c-white;
+
+  &::after {
+    @mixin border-retina (top, right, bottom, left), $c-gray;
+    border-radius: 4px;
+  }
+
+  &--success {
+    background: $c-green;
 
     &::after {
-      @mixin border-retina (top, right, bottom, left), $c-gray;
-      border-radius: 4px;
+      border-color: $c-green;
     }
 
-    @m success {
-      background: $c-green;
+    &.is-plain {
+      color: $c-green;
+    }
+  }
 
-      &::after {
-        border-color: $c-green;
-      }
+  &--danger {
+    background: $button-danger-background-color;
 
-      @when plain {
-        color: $c-green;
-      }
+    &::after {
+      border-color: $button-danger-background-color;
     }
 
-    @m danger {
-      background: $button-danger-background-color;
+    &.is-plain {
+      color: $button-danger-background-color;
+    }
+  }
 
-      &::after {
-        border-color: $button-danger-background-color;
-      }
+  &--primary {
+    background: $c-blue;
 
-      @when plain {
-        color: $button-danger-background-color;
-      }
+    &::after {
+      border-color: $c-blue;
     }
 
-    @m primary {
-      background: $c-blue;
-
-      &::after {
-        border-color: $c-blue;
-      }
-
-      @when plain {
-        color: $c-blue;
-      }
+    &.is-plain {
+      color: $c-blue;
     }
+  }
 
-    @when plain {
-      background: $c-white;
-      color: $c-gray;
-    }
+  &.is-plain {
+    background: $c-white;
+    color: $c-gray;
+  }
 
-    @when mark {
-      border-radius: 0 8px 8px 0;
+  &.is-mark {
+    border-radius: 0 8px 8px 0;
 
-      &::after {
-        border-radius: 0 16px 16px 0;
-      }
+    &::after {
+      border-radius: 0 16px 16px 0;
     }
   }
 }

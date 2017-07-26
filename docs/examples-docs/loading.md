@@ -1,21 +1,19 @@
 <style>
-@component-namespace demo {
-  @b loading {
-    .van-loading {
-      margin: 0 auto;
-    }
+.demo-loading {
+  .van-loading {
+    margin: 0 auto;
+  }
 
-    .circle-loading {
-      margin: 20px auto;
-    }
+  .circle-loading {
+    margin: 20px auto;
+  }
 
-    .demo-loading__example--with-bg {
-      background-color: rgba(17, 17, 17, 0.7);
-      margin: 0 auto;
-      width: 120px;
-      padding: 45px 0;
-      border-radius: 10px;
-    }
+  .demo-loading__example--with-bg {
+    background-color: rgba(17, 17, 17, 0.7);
+    margin: 0 auto;
+    width: 120px;
+    padding: 45px 0;
+    border-radius: 10px;
   }
 }
 </style>

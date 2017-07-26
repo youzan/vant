@@ -1,12 +1,10 @@
 <style>
-  @component-namespace demo {
-    @b progress {
-      @e wrapper {
-        padding: 5px;
-        margin: 20px 10px;
-      }
-    }
-  } 
+.demo-progress {
+  &__wrapper {
+    padding: 5px;
+    margin: 20px 10px;
+  }
+} 
 </style>
 
 
