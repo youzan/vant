@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-var getPostcssPlugin = require('./utils/postcss_pipe');
 var config = require('./webpack.config.dev.js');
 
 config.entry = {
@@ -30,15 +29,13 @@ config.plugins = [
     minimize: true,
     debug: false,
     options: {
-      postcss: getPostcssPlugin,
       babel: {
         presets: ['es2015'],
         plugins: ['transform-runtime', 'transform-vue-jsx']
       },
       vue: {
         autoprefixer: false,
-        preserveWhitespace: false,
-        postcss: getPostcssPlugin
+        preserveWhitespace: false
       }
     }
   })
