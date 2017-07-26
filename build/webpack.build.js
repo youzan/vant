@@ -38,7 +38,8 @@ config.plugins = [
         preserveWhitespace: false
       }
     }
-  })
+  }),
+  new webpack.optimize.ModuleConcatenationPlugin()
 ];
 
 delete config.devtool;

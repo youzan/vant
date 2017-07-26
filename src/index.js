@@ -37,43 +37,49 @@ import Swipe from '../packages/swipe/index.js';
 import SwipeItem from '../packages/swipe-item/index.js';
 import DatetimePicker from '../packages/datetime-picker/index.js';
 
+const version = '0.6.6';
+const components = [
+  Button,
+  Switch,
+  Field,
+  Radio,
+  Cell,
+  Icon,
+  CellGroup,
+  CellSwipe,
+  Popup,
+  Picker,
+  RadioGroup,
+  Loading,
+  Panel,
+  Card,
+  Steps,
+  Tag,
+  Checkbox,
+  CheckboxGroup,
+  BadgeGroup,
+  Badge,
+  Search,
+  Step,
+  Tabs,
+  Tab,
+  Col,
+  Row,
+  Actionsheet,
+  Quantity,
+  Progress,
+  Uploader,
+  Swipe,
+  SwipeItem,
+  DatetimePicker
+];
+
 const install = function(Vue) {
-  /* istanbul ignore if */
   if (install.installed) return;
 
-  Vue.component(Button.name, Button);
-  Vue.component(Switch.name, Switch);
-  Vue.component(Field.name, Field);
-  Vue.component(Radio.name, Radio);
-  Vue.component(Cell.name, Cell);
-  Vue.component(Icon.name, Icon);
-  Vue.component(CellGroup.name, CellGroup);
-  Vue.component(CellSwipe.name, CellSwipe);
-  Vue.component(Popup.name, Popup);
-  Vue.component(Picker.name, Picker);
-  Vue.component(RadioGroup.name, RadioGroup);
-  Vue.component(Loading.name, Loading);
-  Vue.component(Panel.name, Panel);
-  Vue.component(Card.name, Card);
-  Vue.component(Steps.name, Steps);
-  Vue.component(Tag.name, Tag);
-  Vue.component(Checkbox.name, Checkbox);
-  Vue.component(CheckboxGroup.name, CheckboxGroup);
-  Vue.component(BadgeGroup.name, BadgeGroup);
-  Vue.component(Badge.name, Badge);
-  Vue.component(Search.name, Search);
-  Vue.component(Step.name, Step);
-  Vue.component(Tabs.name, Tabs);
-  Vue.component(Tab.name, Tab);
-  Vue.component(Col.name, Col);
-  Vue.component(Row.name, Row);
-  Vue.component(Actionsheet.name, Actionsheet);
-  Vue.component(Quantity.name, Quantity);
-  Vue.component(Progress.name, Progress);
-  Vue.component(Uploader.name, Uploader);
-  Vue.component(Swipe.name, Swipe);
-  Vue.component(SwipeItem.name, SwipeItem);
-  Vue.component(DatetimePicker.name, DatetimePicker);
+  components.forEach(component => {
+    Vue.component(component.name, component);
+  });
 };
 
 /* istanbul ignore if */
@@ -81,9 +87,51 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-module.exports = {
+export {
   install,
-  version: '0.6.6',
+  version,
+  Button,
+  Switch,
+  Field,
+  Radio,
+  Cell,
+  Icon,
+  CellGroup,
+  CellSwipe,
+  Popup,
+  Dialog,
+  Picker,
+  RadioGroup,
+  Waterfall,
+  Loading,
+  Panel,
+  Card,
+  Steps,
+  Tag,
+  Checkbox,
+  CheckboxGroup,
+  BadgeGroup,
+  Badge,
+  Search,
+  Step,
+  Tabs,
+  Tab,
+  Lazyload,
+  ImagePreview,
+  Col,
+  Row,
+  Actionsheet,
+  Quantity,
+  Progress,
+  Toast,
+  Uploader,
+  Swipe,
+  SwipeItem,
+  DatetimePicker
+};
+export default {
+  install,
+  version,
   Button,
   Switch,
   Field,
