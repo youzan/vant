@@ -16,6 +16,19 @@
     border-radius: 4px;
   }
 
+  &.is-plain {
+    background: $c-white;
+    color: $c-gray;
+  }
+
+  &.is-mark {
+    border-radius: 0 8px 8px 0;
+
+    &::after {
+      border-radius: 0 16px 16px 0;
+    }
+  }
+
   &--success {
     background: $c-green;
 
@@ -49,19 +62,6 @@
 
     &.is-plain {
       color: $c-blue;
-    }
-  }
-
-  &.is-plain {
-    background: $c-white;
-    color: $c-gray;
-  }
-
-  &.is-mark {
-    border-radius: 0 8px 8px 0;
-
-    &::after {
-      border-radius: 0 16px 16px 0;
     }
   }
 }

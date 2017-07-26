@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
-    "dev": "npm run build:file && webpack-dev-server --inline --hot --config build/webpack.config.dev.js --content-base ./",
+    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp-cli packages/vant-css/lib lib/vant-css",
@@ -43,14 +43,14 @@
   "license": "ISC",
   "dependencies": {
     "raf.js": "0.0.4",
-    "vue-lazyload": "^1.0.3"
+    "vue-lazyload": "^1.0.6"
   },
   "peerDependencies": {
     "vue": "2.3.4"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    "avoriaz": "^2.0.0",
+    "avoriaz": "2.0.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -67,11 +67,11 @@
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "eslint-plugin-vue": "^2.1.0",
-    "extract-text-webpack-plugin": "^3.0.0",
+    "extract-text-webpack-plugin": "2.1.2",
     "felint": "^0.5.0-alpha.3",
     "file-save": "^0.2.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "gh-pages": "^0.12.0",
+    "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
     "highlight.js": "^9.12.0",
@@ -98,12 +98,11 @@
     "precss": "^2.0.0",
     "progress-bar-webpack-plugin": "^1.10.0",
     "rimraf": "^2.5.4",
-    "run-sequence": "^1.2.2",
-    "saladcss-bem": "^0.0.1",
-    "sinon": "^1.17.7",
-    "sinon-chai": "^2.8.0",
-    "style-loader": "^0.13.1",
-    "uppercamelcase": "^1.1.0",
+    "run-sequence": "^2.1.0",
+    "sinon": "^2.4.0",
+    "sinon-chai": "^2.12.0",
+    "style-loader": "^0.18.2",
+    "uppercamelcase": "^3.0.0",
     "url-loader": "^0.5.9",
     "vue": "2.3.4",
     "vue-hot-reload-api": "^2.1.0",
@@ -114,7 +113,7 @@
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "2.3.4",
     "vue-template-es2015-compiler": "^1.4.2",
-    "webpack": "^3.4.0",
+    "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
     "webpack-merge": "^4.1.0",
     "zan-doc": "^0.1.0"

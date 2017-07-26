@@ -7,6 +7,24 @@
 
   width: 100%;
 
+  .van-cell__title,
+  .van-cell__value {
+    float: none;
+    box-sizing: border-box;
+  }
+
+  .van-cell__title {
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .van-cell__value {
+    width: 100%;
+    padding-left: 90px;
+  }
+
   &--hastextarea {
     .van-field__control {
       min-height: 60px;
@@ -55,24 +73,6 @@
     .van-field__control {
       min-height: 0px;
     }
-  }
-
-  .van-cell__title,
-  .van-cell__value {
-    float: none;
-    box-sizing: border-box;
-  }
-
-  .van-cell__title {
-    width: 90px;
-    position: absolute;
-    top: 10px;
-    left: 0;
-  }
-
-  .van-cell__value {
-    width: 100%;
-    padding-left: 90px;
   }
 
   &__control {

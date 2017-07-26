@@ -3,12 +3,6 @@
 .van-radio {
   overflow: hidden;
 
-  &--disabled {
-    .van-icon {
-      color: #d1dbe5;
-    }
-  }
-
   &__input {
     position: relative;
     height: 22px;
@@ -44,5 +38,11 @@
 
   .van-icon-check {
     color: $c-gray-dark;
+  }
+
+  &--disabled {
+    .van-icon {
+      color: #d1dbe5;
+    }
   }
 }

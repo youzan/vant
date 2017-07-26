@@ -137,7 +137,10 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),
-    new ExtractTextPlugin({ filename: isProduction ? "[name].[hash:8].css" : "[name].css" }),
+    new ExtractTextPlugin({
+      filename: isProduction ? "[name].[hash:8].css" : "[name].css",
+      allChunks: true
+    }),
     new FriendlyErrorsPlugin()
   ]
 };
