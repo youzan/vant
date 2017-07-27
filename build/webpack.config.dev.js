@@ -37,7 +37,7 @@ module.exports = {
     modules: [path.join(__dirname, "../node_modules"), "node_modules"],
     extensions: [".js", ".vue", ".css"],
     alias: {
-      vue$: "vue/dist/vue.runtime.common.js",
+      vue$: "vue/dist/vue.esm.js",
       src: path.join(__dirname, "../src"),
       packages: path.join(__dirname, "../packages"),
       lib: path.join(__dirname, "../lib"),
@@ -91,10 +91,6 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        babel: {
-          presets: ["es2015"],
-          plugins: ["transform-runtime", "transform-vue-jsx"]
-        },
         vue: {
           autoprefixer: false
         },

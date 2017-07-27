@@ -769,9 +769,9 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.11.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
+babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.25.0:
+  version "6.25.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.25.0.tgz#33b98eaa5d482bb01a8d1aa6b437ad2b01aec41c"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
@@ -6806,9 +6806,9 @@ sinon-chai@^2.12.0:
   version "2.12.0"
   resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-2.12.0.tgz#da71e9642ef7b893ba3cf2af806396a00aa45927"
 
-sinon@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/sinon/-/sinon-2.4.0.tgz#398de1bd15c9c6d671b5ed708c8a121a213ae8b7"
+sinon@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/sinon/-/sinon-2.4.1.tgz#021fd64b54cb77d9d2fb0d43cdedfae7629c3a36"
   dependencies:
     diff "^3.1.0"
     formatio "1.2.0"
@@ -7716,9 +7716,9 @@ vue-markdown-loader@^1.0.0:
     loader-utils "^0.2.15"
     markdown-it "^6.0.5"
 
-vue-router@^2.5.0:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.5.3.tgz#073783f564b6aece6c8a59c63e298dc2aabfb51b"
+vue-router@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.7.0.tgz#16d424493aa51c3c8cce8b7c7210ea4c3a89aff1"
 
 vue-style-loader@^3.0.0:
   version "3.0.1"
@@ -7727,24 +7727,20 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.3.4.tgz#5a88ac2c5e4d5d6218e6aa80e7e221fb7e67894c"
+vue-template-compiler@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.4.2.tgz#5a45d843f148b098f6c1d1e35ac20c4956d30ad1"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
-
-vue-template-es2015-compiler@^1.4.2:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.2.tgz#a0a6c50c941d2a4abda963f2f42c337ac450ee95"
 
 vue-template-es2015-compiler@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.3.tgz#22787de4e37ebd9339b74223bc467d1adee30545"
 
-vue@2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.4.tgz#5ec3b87a191da8090bbef56b7cfabd4158038171"
+vue@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.4.2.tgz#a9855261f191c978cc0dc1150531b8d08149b58c"
 
 watchpack@^1.4.0:
   version "1.4.0"

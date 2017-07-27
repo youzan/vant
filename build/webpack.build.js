@@ -29,10 +29,6 @@ config.plugins = [
     minimize: true,
     debug: false,
     options: {
-      babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime', 'transform-vue-jsx']
-      },
       vue: {
         autoprefixer: false,
         preserveWhitespace: false
