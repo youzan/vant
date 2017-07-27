@@ -58,7 +58,7 @@ export default {
 
 设置`name`属性为对应的图标名称即可：
 
-:::demo 所有Icon
+:::demo 基础用法
 ```html
 <van-icon name="qr-invalid" style="text-align: center"></van-icon>
 ```

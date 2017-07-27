@@ -14,6 +14,15 @@ export default {
     return {
       username: 'zhangmin'
     };
+  },
+  methods: {
+    onIconClick() {
+      this.username = '';
+    },
+
+    onFieldBlur() {
+      console.log('blured');
+    }
   }
 };
 </script>
@@ -62,7 +71,15 @@ export default {
 :::demo 基础用法
 ```html
 <van-cell-group>
-  <van-field type="text" label="用户名：" placeholder="请输入用户名" v-model="username" required></van-field>
+  <van-field
+    type="text"
+    label="用户名："
+    placeholder="请输入用户名"
+    v-model="username"
+    icon="clear"
+    :on-icon-click="onIconClick"
+    @blur="onFieldBlur"
+    required></van-field>
   <van-field type="password" label="密码：" placeholder="请输入密码" required></van-field>
   <van-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></van-field>
 </van-cell-group>
@@ -145,4 +162,6 @@ export default {
 | rows | textarea rows | `string`, `number`   |  |   |
 | cols | textarea cols | `string`, `number`  |  |   |
 | autosize | 自动调整高度(仅支持textarea) | `boolean`  | `false` |  `true`, `false` |
+| icon | 输入框尾部图标 | `string`  |  |  icon中支持的类型 |
+| onIconClick | 点击图标的回调函数 | `function`  |  |  |
 

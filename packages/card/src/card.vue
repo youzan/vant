@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-card', { 'van-card--center': !$slots.footer }]">
+  <div :class="['van-card', { 'van-card--center': centered }]">
     <div class="van-card__thumb">
       <slot name="thumb">
         <img :src="thumb" class="van-card__img" />
@@ -21,10 +21,12 @@
 <script>
 export default {
   name: 'van-card',
+
   props: {
     thumb: String,
     title: String,
-    desc: String
+    desc: String,
+    centered: Boolean
   }
 };
 </script>

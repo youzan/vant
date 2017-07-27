@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesDocsApp';
-import navConfig from './nav.config.js';
 import routes from './router.config';
 import ZanUI from 'src/index.js';
+import ZanDoc from 'zan-doc';
 import packageJson from '../../package.json';
+import DemoBlock from './components/demo-block';
 
 const global = {
   version: packageJson.version
@@ -22,11 +23,13 @@ function isMobile() {
 
 Vue.use(VueRouter);
 Vue.use(ZanUI);
+Vue.use(ZanDoc);
 Vue.use(ZanUI.Lazyload, {
   lazyComponent: true
 });
+Vue.component('demo-block', DemoBlock);
 
-const routesConfig = routes(navConfig);
+const routesConfig = routes();
 routesConfig.push({
   path: '/',
   redirect: '/component/quickstart'

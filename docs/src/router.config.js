@@ -1,6 +1,7 @@
-const registerRoute = (navConfig, isExample) => {
+const navs = require('./doc.config')['zh-CN'].nav;
+
+const registerRoute = (isExample) => {
   let route = [];
-  let navs = navConfig['zh-CN'];
   navs.forEach(nav => {
     if (isExample && !nav.showInMobile) {
       return;

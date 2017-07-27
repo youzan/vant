@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -134,6 +134,7 @@
     "webpack-dev-server": "^1.16.3",
     "webpack-merge": "^2.0.0",
     "webpack-node-externals": "^1.5.4",
-    "webpack-vendor-chunk-plugin": "^1.0.0"
+    "webpack-vendor-chunk-plugin": "^1.0.0",
+    "zan-doc": "^0.1.0"
   }
 }
