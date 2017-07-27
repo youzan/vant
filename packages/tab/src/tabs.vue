@@ -92,7 +92,7 @@
        * `type`为`line`时，tab下方的横线的样式
        */
       navBarStyle() {
-        if (!this.isReady || this.type !== 'line') return;
+        if (!this.isReady || this.type !== 'line' || !this.$refs.tabkey) return;
 
         const tabKey = this.curActive;
         const elem = this.$refs.tabkey[tabKey];

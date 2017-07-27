@@ -7308,7 +7308,7 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@0.1.0:
+zan-doc@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.0.tgz#6ea2aba808c39b35b9730899f000dbf05806cbad"
   dependencies:
