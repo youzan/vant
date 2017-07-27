@@ -1,47 +1,47 @@
-const webpack = require("webpack");
-const path = require("path");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const ProgressBarPlugin = require("progress-bar-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
-const isProduction = process.env.NODE_ENV === "production";
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+const isProduction = process.env.NODE_ENV === 'production';
 const styleLoaders = [
-  { loader: "css-loader" },
-  { loader: "postcss-loader", options: { sourceMap: true } }
+  { loader: 'css-loader' },
+  { loader: 'postcss-loader', options: { sourceMap: true } }
 ];
-require("./genExamples")(isProduction);
+require('./genExamples')(isProduction);
 
 module.exports = {
   entry: {
-    vendor: ["vue", "vue-router", "zan-doc"],
-    "vant-docs": "./docs/src/index.js",
-    "vant-examples": "./docs/src/examples.js"
+    vendor: ['vue', 'vue-router', 'zan-doc'],
+    'vant-docs': './docs/src/index.js',
+    'vant-examples': './docs/src/examples.js'
   },
   output: {
-    path: path.join(__dirname, "../docs/dist"),
-    publicPath: "/",
-    filename: "[name].js",
+    path: path.join(__dirname, '../docs/dist'),
+    publicPath: '/',
+    filename: '[name].js',
     umdNamedDefine: true
   },
   devServer: {
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vue\/examples/, to: "/examples.html" },
-        { from: /^\/zanui\/vue/, to: "/index.html" }
+        { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
+        { from: /^\/zanui\/vue/, to: '/index.html' }
       ]
     },
-    stats: "errors-only"
+    stats: 'errors-only'
   },
   resolve: {
-    modules: [path.join(__dirname, "../node_modules"), "node_modules"],
-    extensions: [".js", ".vue", ".css"],
+    modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
+    extensions: ['.js', '.vue', '.css'],
     alias: {
-      vue$: "vue/dist/vue.esm.js",
-      src: path.join(__dirname, "../src"),
-      packages: path.join(__dirname, "../packages"),
-      lib: path.join(__dirname, "../lib"),
-      components: path.join(__dirname, "../docs/src/components")
+      vue$: 'vue/dist/vue.esm.js',
+      src: path.join(__dirname, '../src'),
+      packages: path.join(__dirname, '../packages'),
+      lib: path.join(__dirname, '../lib'),
+      components: path.join(__dirname, '../docs/src/components')
     }
   },
   module: {
@@ -50,16 +50,16 @@ module.exports = {
         test: /\.vue$/,
         use: [
           {
-            loader: "vue-loader",
+            loader: 'vue-loader',
             options: {
               loaders: {
                 postcss: ExtractTextPlugin.extract({
                   use: styleLoaders,
-                  fallback: "vue-style-loader"
+                  fallback: 'vue-style-loader'
                 }),
                 css: ExtractTextPlugin.extract({
                   use: styleLoaders,
-                  fallback: "vue-style-loader"
+                  fallback: 'vue-style-loader'
                 })
               }
             }
@@ -69,7 +69,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -77,15 +77,15 @@ module.exports = {
       },
       {
         test: /\.md/,
-        loader: "vue-markdown-loader"
+        loader: 'vue-markdown-loader'
       },
       {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
-        loader: "url-loader"
+        loader: 'url-loader'
       }
     ]
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   plugins: [
     new ProgressBarPlugin(),
     new webpack.LoaderOptionsPlugin({
@@ -97,8 +97,8 @@ module.exports = {
         vueMarkdown: {
           use: [
             [
-              require("markdown-it-container"),
-              "demo",
+              require('markdown-it-container'),
+              'demo',
               {
                 validate: function(params) {
                   return params.trim().match(/^demo\s*(.*)$/);
@@ -106,7 +106,7 @@ module.exports = {
 
                 render: function(tokens, idx) {
                     return tokens[idx].nesting === 1 
-                      ? `<demo-block class="demo-box"><div class="highlight" slot="highlight">`
+                      ? `<demo-block class="demo-box"><div class="highlight" slot="highlight"å>`
                       :`</div></demo-block>\n`;
                 }
               }
@@ -120,21 +120,21 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      chunks: ["vendor", "vant-docs"],
-      template: "docs/src/index.tpl",
-      filename: "index.html",
+      chunks: ['vendor', 'vant-docs'],
+      template: 'docs/src/index.tpl',
+      filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ["vendor", "vant-examples"],
-      template: "docs/src/index.tpl",
-      filename: "examples.html",
+      chunks: ['vendor', 'vant-examples'],
+      template: 'docs/src/index.tpl',
+      filename: 'examples.html',
       inject: true
     }),
     new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),
     new ExtractTextPlugin({
-      filename: isProduction ? "[name].[hash:8].css" : "[name].css",
+      filename: isProduction ? '[name].[hash:8].css' : '[name].css',
       allChunks: true
     }),
     new FriendlyErrorsPlugin()
