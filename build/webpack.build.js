@@ -1,12 +1,13 @@
-var webpack = require('webpack');
-var config = require('./webpack.config.dev.js');
+const webpack = require('webpack');
+const config = require('./webpack.config.dev.js');
+const isMinify = process.argv.indexOf('-p') !== -1;
 
 config.entry = {
   'vant': './src/index.js'
 };
 
 config.output = {
-  filename: './lib/[name].js',
+  filename: isMinify ? './lib/[name].min.js' : './lib/[name].js',
   library: 'vant',
   libraryTarget: 'umd',
   umdNamedDefine: true

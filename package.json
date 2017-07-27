@@ -16,7 +16,7 @@
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp -R packages/vant-css/lib/ lib/vant-css",
-    "build:components": "webpack --progress --hide-modules --config build/webpack.components.js",
+    "build:components": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.components.js",
     "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --config build/webpack.build.js",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
     "deploy:cdn": "superman cdn /zanui/vue docs/dist/*.js docs/dist/*.css",
