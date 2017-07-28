@@ -52,9 +52,12 @@ Object.keys(components).forEach((componentName) => {
   const dir = path.join(__dirname, '../../lib/', componentName, '/style');
   const file = path.join(dir, 'index.js');
   const cssPath = path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`);
-  const content = fs.existsSync(cssPath) ? `require('../../vant-css/${componentName}.css');` : '';
+  const content = [`require('../../vant-css/base.css');`];
+  if (fs.existsSync(cssPath)) {
+    content.push(`require('../../vant-css/${componentName}.css');`);
+  }
   mkdir(dir);
-  writeFile(file, content);
+  writeFile(file, content.join('\n'));
 });
 log('Finished', 'build:style-entries');
 
