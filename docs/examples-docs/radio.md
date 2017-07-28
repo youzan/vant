@@ -1,12 +1,10 @@
 <style>
-@component-namespace demo {
-  @b radio {
-    .van-radios {
-      padding: 0 20px;
+.demo-radio {
+  .van-radios {
+    padding: 0 20px;
 
-      .van-radio {
-        margin: 10px 0;
-      }
+    .van-radio {
+      margin: 10px 0;
     }
   }
 }

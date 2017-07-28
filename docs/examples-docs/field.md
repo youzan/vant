@@ -1,9 +1,7 @@
 <style>
-@component-namespace demo {
-  @b field {
-    .van-field-wrapper {
-      padding: 0 10px;
-    }
+.demo-field {
+  .van-field-wrapper {
+    padding: 0 10px;
   }
 }
 </style>

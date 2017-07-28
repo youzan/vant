@@ -1,12 +1,10 @@
 <style>
-@component-namespace demo {
-  @b layout {
-    .van-row {
-      padding: 0 20px;
-    }
-    .van-col {
-      margin-bottom: 10px;
-    }
+.demo-layout {
+  .van-row {
+    padding: 0 20px;
+  }
+  .van-col {
+    margin-bottom: 10px;
   }
 }
 

@@ -2,7 +2,7 @@
 
 一套基于`Vue.js 2.0`的 Mobile 组件库
 
-[查看业务组件库 Captain-UI](https://www.youzanyun.com/zanui/captain/component/quickstart)
+[查看业务组件库 Captain-UI](/zanui/captain/component/quickstart)
 
 ### 安装
 

@@ -2,74 +2,72 @@
 @import './mixins/border_retina.css';
 @import './popup.css';
 
-@component-namespace van {
-  @b actionsheet {
-    position: fixed;
-    width: 100%;
-    top: auto;
-    bottom: 0;
-    right: auto;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
-    backface-visibility: hidden;
-    transition: .2s ease-out;
-    background-color: #e0e0e0;
+.van-actionsheet {
+  position: fixed;
+  width: 100%;
+  top: auto;
+  bottom: 0;
+  right: auto;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  backface-visibility: hidden;
+  transition: .2s ease-out;
+  background-color: #e0e0e0;
 
-    @m withtitle {
-      background-color: $c-white;
+  &--withtitle {
+    background-color: $c-white;
+  }
+
+  &__item {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    color: $c-black;
+    font-size: 16px;
+    position: relative;
+    background-color: $c-white;
+
+    &::after {
+      @mixin border-retina (top);
+    }
+  }
+
+  &__subname {
+    color: $c-gray-darker;
+    font-size: 12px;
+  }
+
+  &__loading {
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  &__button {
+    display: block;
+    margin-top: 5px;
+    line-height: 50px;
+    color: $c-black;
+    font-size: 16px;
+    text-align: center;
+    background-color: $c-white;
+  }
+
+  &__header {
+    line-height: 44px;
+    color: $c-black;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      @mixin border-retina (top, bottom);
     }
 
-    @e item {
-      line-height: 50px;
-      height: 50px;
-      text-align: center;
-      color: $c-black;
-      font-size: 16px;
-      position: relative;
-      background-color: $c-white;
-
-      &::after {
-        @mixin border-retina (top);
-      }
-    }
-
-    @e subname {
-      color: $c-gray-darker;
-      font-size: 12px;
-    }
-
-    @e loading {
-      margin: 0 auto;
-      display: inline-block;
-    }
-
-    @e button {
-      display: block;
-      margin-top: 5px;
-      line-height: 50px;
-      color: $c-black;
-      font-size: 16px;
-      text-align: center;
-      background-color: $c-white;
-    }
-
-    @e header {
-      line-height: 44px;
-      color: $c-black;
-      text-align: center;
-      position: relative;
-
-      &::after {
-        @mixin border-retina (top, bottom);
-      }
-
-      .van-icon-close {
-        position: absolute;
-        font-size: 22px;
-        line-height: 22px;
-        top: 11px;
-        right: 15px;
-      }
+    .van-icon-close {
+      position: absolute;
+      font-size: 22px;
+      line-height: 22px;
+      top: 11px;
+      right: 15px;
     }
   }
 }

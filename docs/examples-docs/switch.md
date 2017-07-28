@@ -1,20 +1,18 @@
 <style>
-  @component-namespace demo {
-    @b switch {
-      .van-switch {
-        float: left;
-        margin: 0 15px;
-      }
-
-      @e text {
-        display: inline-block;
-        line-height: 32px;
-        float: left;
-        font-size: 14px;
-        color: #333;
-      }
-    }
+.demo-switch {
+  .van-switch {
+    float: left;
+    margin: 0 15px;
   }
+
+  &__text {
+    display: inline-block;
+    line-height: 32px;
+    float: left;
+    font-size: 14px;
+    color: #333;
+  }
+}
 </style>
 
 <script>

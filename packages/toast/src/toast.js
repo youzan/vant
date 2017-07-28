@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import merge from 'src/utils/merge';
+import ToastComponent from './toast.vue';
 
-const ToastConstructor = Vue.extend(require('./toast.vue'));
+const ToastConstructor = Vue.extend(ToastComponent);
 let instance;
 
 const getInstance = () => {
@@ -24,6 +25,7 @@ var Toast = (options = {}) => {
   const duration = options.duration || 3000;
 
   const instance = getInstance();
+
   instance.closed = false;
   clearTimeout(instance.timer);
   instance.type = options.type ? options.type : 'text';

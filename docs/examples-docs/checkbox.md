@@ -1,12 +1,10 @@
 <style>
-@component-namespace demo {
-  @b checkbox {
-    .van-checkbox-wrapper {
-      padding: 0 20px;
+.demo-checkbox {
+  .van-checkbox-wrapper {
+    padding: 0 20px;
 
-      .van-checkbox {
-        margin: 10px 0;
-      }
+    .van-checkbox {
+      margin: 10px 0;
     }
   }
 }

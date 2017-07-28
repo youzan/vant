@@ -1,9 +1,7 @@
 <style>
-@component-namespace demo {
-  @b dialog {
-    .van-button {
-      margin: 15px;
-    }
+.demo-dialog {
+  .van-button {
+    margin: 15px;
   }
 }
 </style>

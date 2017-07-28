@@ -1,26 +1,24 @@
 <style>
-@component-namespace demo {
-  @b tab {
-    .van-tab__pane {
-      background-color: #fff;
-      padding: 20px;
-    }
+.demo-tab {
+  .van-tab__pane {
+    background-color: #fff;
+    padding: 20px;
+  }
 
-    .van-tabs--card .van-tab__pane {
-      background-color: transparent;
-    }
+  .van-tabs--card .van-tab__pane {
+    background-color: transparent;
+  }
 
-    .custom-tabwrap .van-tab-active {
-      color: #20a0ff;
-    }
-    .custom-tabwrap .van-tabs-nav-bar {
-      background: #20a0ff;
-    }
-    .custom-pane {
-      text-align: center;
-      height: 50px;
-      line-height: 50px;
-    }
+  .custom-tabwrap .van-tab-active {
+    color: #20a0ff;
+  }
+  .custom-tabwrap .van-tabs-nav-bar {
+    background: #20a0ff;
+  }
+  .custom-pane {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
   }
 }
 </style>

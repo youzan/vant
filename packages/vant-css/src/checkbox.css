@@ -1,51 +1,49 @@
 @import './common/var.css';
 
-@component-namespace van {
-  @b checkbox {
-    overflow: hidden;
+.van-checkbox {
+  overflow: hidden;
 
-    @m disabled {
-      .van-icon {
-        color: #d1dbe5;
-      }
-    }
+  .van-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
 
-    @e input {
-      position: relative;
-      height: 22px;
-      margin-right: 15px;
-      float: left;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
+  .van-icon-checked {
+    color: $c-green;
+  }
 
-    @e control {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 22px;
-      height: 22px;
-      opacity: 0;
-      margin: 0;
-    }
+  .van-icon-check {
+    color: $c-gray-dark;
+  }
 
-    @e label {
-      line-height: 22px;
-      margin-left: 37px;
-      display: block;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);      
-    }
-
+  &--disabled {
     .van-icon {
-      font-size: 22px;
-      line-height: 1;
+      color: #d1dbe5;
     }
+  }
 
-    .van-icon-checked {
-      color: $c-green;
-    }
+  &__input {
+    position: relative;
+    height: 22px;
+    margin-right: 15px;
+    float: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-    .van-icon-check {
-      color: $c-gray-dark;
-    }
+  &__control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    opacity: 0;
+    margin: 0;
+  }
+
+  &__label {
+    line-height: 22px;
+    margin-left: 37px;
+    display: block;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);      
   }
 }

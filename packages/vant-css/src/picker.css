@@ -1,75 +1,73 @@
 @import './mixins/border_retina.css';
 
-@component-namespace van {
-  @b picker {
+.van-picker {
+  overflow: hidden;
+  background-color: #fff;
+
+  &__toolbar {
+    height: 40px;
+    line-height: 40px;
     overflow: hidden;
-    background-color: #fff;
+    padding: 0 15px;
+    position: relative;
 
-    @e toolbar {
-      height: 40px;
-      line-height: 40px;
-      overflow: hidden;
-      padding: 0 15px;
-      position: relative;
+    &::after {
+      @mixin border-retina (top, bottom);
+    }
+  }
 
-      &::after {
-        @mixin border-retina (top, bottom);
+  &__cancel {
+    color: #3388FF;
+    float: left;
+  }
+
+  &__confirm {
+    color: #3388FF;
+    float: right;
+  }
+
+  &__title {
+    height: 40px;
+    padding: 0 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  &__columns {
+    position: relative;
+    overflow: hidden;
+
+    &--1 {
+      .van-picker-column {
+        width: 100%;
       }
     }
 
-    @e cancel {
-      color: #3388FF;
-      float: left;
+    &--2 {
+      .van-picker-column {
+        width: 50%;
+      }
     }
 
-    @e confirm {
-      color: #3388FF;
-      float: right;
+    &--3 {
+      .van-picker-column {
+        width: 33.333%;
+      }
     }
 
-    @e title {
-      height: 40px;
-      padding: 0 10px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      word-wrap: normal;
-      word-break: break-all;
-      text-align: center;
+    &--4 {
+      .van-picker-column {
+        width: 25%;
+      }
     }
 
-    @e columns {
-      position: relative;
-      overflow: hidden;
-
-      @m 1 {
-        .van-picker-column {
-          width: 100%;
-        }
-      }
-
-      @m 2 {
-        .van-picker-column {
-          width: 50%;
-        }
-      }
-
-      @m 3 {
-        .van-picker-column {
-          width: 33.333%;
-        }
-      }
-
-      @m 4 {
-        .van-picker-column {
-          width: 25%;
-        }
-      }
-
-      @m 5 {
-        .van-picker-column {
-          width: 20%;
-        }
+    &--5 {
+      .van-picker-column {
+        width: 20%;
       }
     }
   }
@@ -92,7 +90,6 @@
     width: 100%;
     background-color: #eaeaea;
     display: block;
-    van-index: 15;
     transform: scaleY(0.5);
   }
 
@@ -110,7 +107,7 @@
     top: auto;
   }
 
-  @b picker-column {
+  &-column {
     font-size: 18px;
     overflow: hidden;
     position: relative;
@@ -118,7 +115,7 @@
     float: left;
     text-align: center;
 
-    @e item {
+    &__item {
       height: 44px;
       line-height: 44px;
       padding: 0 10px;
@@ -134,7 +131,7 @@
       transition-duration: .3s;
       backface-visibility: hidden;
 
-      @m selected {
+      &--selected {
         color: #000;
         transform: translate3d(0, 0, 0) rotateX(0);
       }

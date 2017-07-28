@@ -1,20 +1,18 @@
 <style>
-@component-namespace demo {
-  @b icon {
-    .examples {
-      max-height: none;
-    }
+.demo-icon {
+  .examples {
+    max-height: none;
+  }
 
-    .van-col {
-      text-align: center;
-      height: 120px;
-    }
+  .van-col {
+    text-align: center;
+    height: 120px;
+  }
 
-    .van-icon {
-      font-size: 45px;
-      display: block;
-      margin: 15px 0;
-    }
+  .van-icon {
+    font-size: 45px;
+    display: block;
+    margin: 15px 0;
   }
 } 
 </style>

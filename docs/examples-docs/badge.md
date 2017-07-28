@@ -1,14 +1,12 @@
 <style>
-@component-namespace demo {
-  @b badge {
-    .badge-group-wrapper {
-      padding: 30px 20px;
-      background-color: #fff;
-    }
+.demo-badge {
+  .badge-group-wrapper {
+    padding: 30px 20px;
+    background-color: #fff;
+  }
 
-    .van-badge-group {
-      margin: 0 auto;
-    }
+  .van-badge-group {
+    margin: 0 auto;
   }
 }
 </style>

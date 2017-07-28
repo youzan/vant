@@ -1,37 +1,35 @@
 <style>
-@component-namespace demo {
-  @b popup {
-    .van-button {
-      margin: 10px 15px;
-    }
+.demo-popup {
+  .van-button {
+    margin: 10px 15px;
+  }
 
-    .van-popup-1 {
-      width: 60%;
-      box-sizing: border-box;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
+  .van-popup-1 {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
 
-    .van-popup-2 {
-      width: 100%;
-      height: 200px;
-      box-sizing: border-box;
-      padding: 20px;
-    }
+  .van-popup-2 {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 20px;
+  }
 
-    .van-popup-3 {
-      line-height: 50px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.701961);
-      color: #fff;
-    }
+  .van-popup-3 {
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.701961);
+    color: #fff;
+  }
 
-    .van-popup-4,
-    .van-popup-5 {
-      width: 100%;
-      height: 100%;
-    }
+  .van-popup-4,
+  .van-popup-5 {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

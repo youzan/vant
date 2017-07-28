@@ -1,17 +1,15 @@
 <style>
-@component-namespace demo {
-  @b lazyload {
-    .lazy-img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
+.demo-lazyload {
+  .lazy-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
-    .lazy-background {
-      height: 300px;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+  .lazy-background {
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 </style>

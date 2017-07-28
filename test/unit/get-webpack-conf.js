@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const getPostcssPlugin = require('../../build/utils/postcss_pipe');
 
 const webpackConfig = {
   output: {
@@ -16,15 +15,13 @@ const webpackConfig = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        postcss: getPostcssPlugin,
         babel: {
           presets: ['es2015'],
           plugins: ['transform-runtime', 'transform-vue-jsx']
         },
         vue: {
           autoprefixer: false,
-          preserveWhitespace: false,
-          postcss: getPostcssPlugin
+          preserveWhitespace: false
         }
       }
     })

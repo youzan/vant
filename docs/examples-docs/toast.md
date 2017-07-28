@@ -1,9 +1,7 @@
 <style>
-@component-namespace demo {
-  @b toast {
-    .van-button {
-      margin: 15px;
-    }
+.demo-toast {
+  .van-button {
+    margin: 15px;
   }
 }
 </style>
