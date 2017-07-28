@@ -5,7 +5,12 @@ const webpack = require('webpack');
 
 delete config.devtool;
 
-config.entry = Components;
+const entry = {};
+Object.keys(Components).forEach(key => {
+  entry[key + '/index'] = Components[key];
+});
+
+config.entry = entry;
 
 config.externals = {
   vue: {

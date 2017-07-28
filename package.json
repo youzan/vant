@@ -15,13 +15,13 @@
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
-    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js && cp -R packages/vant-css/lib/ lib/vant-css",
-    "build:components": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.components.js",
-    "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --config build/webpack.build.js",
+    "build:components": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.components.js --color",
+    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && cp -R packages/vant-css/lib/ lib/vant-css",
+    "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
     "deploy:cdn": "superman cdn /zanui/vue docs/dist/*.js docs/dist/*.css",
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
-    "dist": "npm run clean && npm run build:file && npm run lint && npm run build:vant && npm run build:components && npm run build:utils && npm run build:vant-css",
+    "dist": "node build/bin/build-lib.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "lint": "felint lint src/**/*.js packages/**/*.{js,vue} build/**/*.js",
     "test": "karma start test/unit/karma.conf.js --single-run",
@@ -107,7 +107,7 @@
     "vue-hot-reload-api": "^2.1.0",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.0.2",
-    "vue-markdown-loader": "^1.0.0",
+    "vue-markdown-loader": "^2.0.0",
     "vue-router": "^2.7.0",
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.4.2",
@@ -115,6 +115,6 @@
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
     "webpack-merge": "^4.1.0",
-    "zan-doc": "^0.1.0"
+    "zan-doc": "^0.1.3"
   }
 }
