@@ -329,6 +329,38 @@ export default {
     <van-icon name="after-sale"></van-icon>
     <span>after-sale</span>
   </van-col>
+  <van-col span="8">
+    <van-icon name="edit-data"></van-icon>
+    <span>edit-data</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="question"></van-icon>
+    <span>question</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="delete"></van-icon>
+    <span>delete</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="records"></van-icon>
+    <span>records</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="description"></van-icon>
+    <span>description</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="card"></van-icon>
+    <span>card</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="gift-card"></van-icon>
+    <span>gift-card</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="coupon"></van-icon>
+    <span>coupon</span>
+  </van-col>
 </van-row>
 ```
 :::

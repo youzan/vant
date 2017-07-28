@@ -341,8 +341,48 @@ module.exports = {
     },
     {
       keywords: ['after', 'sale'],
-      src: '售后记录.svg',
+      src: '售后.svg',
       css: 'after-sale'
+    },
+    {
+      keywords: ['edit', 'data'],
+      src: '编辑资料.svg',
+      css: 'edit-data'
+    },
+    {
+      keywords: ['question'],
+      src: '答疑.svg',
+      css: 'question'
+    },
+    {
+      keywords: ['delete'],
+      src: '删除.svg',
+      css: 'delete'
+    },
+    {
+      keywords: ['records'],
+      src: '记录.svg',
+      css: 'records'
+    },
+    {
+      keywords: ['description'],
+      src: '描述.svg',
+      css: 'description'
+    },
+    {
+      keywords: ['card'],
+      src: '卡.svg',
+      css: 'card'
+    },
+    {
+      keywords: ['gift', 'card'],
+      src: '礼卡.svg',
+      css: 'gift-card'
+    },
+    {
+      keywords: ['coupon'],
+      src: '优惠券卡.svg',
+      css: 'coupon'
     }
   ]
 };
