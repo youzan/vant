@@ -5,6 +5,7 @@
     :visible-item-count="visibleItemCount"
     @change="handlePickerChange"
     @confirm="handlePickerConfirm"
+    @cancel="$emit('cancel')"
     showToolbar>
   </van-picker>
 </template>
@@ -85,7 +86,6 @@ export default {
       if (!isEqual) this.innerValue = val;
     },
     innerValue(val) {
-      console.log(val + '!!!');
       this.updateColumnValue(val);
       this.$emit('input', val);
     }
@@ -217,12 +217,11 @@ export default {
     isShortMonth(month) {
       return [4, 6, 9, 11].indexOf(month) > -1;
     },
-    handlePickerConfirm(values) {
+    handlePickerConfirm() {
       this.$emit('confirm', this.innerValue);
     },
     handlePickerChange(picker) {
       const values = picker.$children.filter(child => child.currentValue !== undefined).map(child => child.currentValue);
-      console.log(values);
       let value;
 
       if (this.type === 'time') {
@@ -243,7 +242,7 @@ export default {
       }
       value = this.correctValue(value);
       this.innerValue = value;
-      console.log(value, this.innerValue);
+      this.$emit('change', picker);
     },
     updateColumnValue(value) {
       let values = [];
