@@ -81,18 +81,20 @@ const PopupManager = {
 
     addClass(modalDom, 'van-modal');
 
+    let domParentNode;
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
-      dom.parentNode.appendChild(modalDom);
+      domParentNode = dom.parentNode
     } else {
-      document.body.appendChild(modalDom);
+      domParentNode = document.body;
     }
+    domParentNode.appendChild(modalDom);
 
     if (zIndex) {
       modalDom.style.zIndex = zIndex;
     }
     modalDom.style.display = '';
 
-    modalStack.push({ id: id, zIndex: zIndex });
+    modalStack.push({ id: id, zIndex: zIndex, parentNode: domParentNode });
   },
 
   closeModal(id) {
@@ -105,6 +107,9 @@ const PopupManager = {
         modalStack.pop();
         if (modalStack.length > 0) {
           modalDom.style.zIndex = modalStack[modalStack.length - 1].zIndex;
+          modalDom.parentNode.removeChild(modalDom);
+          const currModalParent = modalStack[0].parentNode;
+          currModalParent && currModalParent.appendChild(modalDom);
         }
       } else {
         for (let i = modalStack.length - 1; i >= 0; i--) {
