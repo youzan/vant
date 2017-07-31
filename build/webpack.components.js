@@ -24,8 +24,8 @@ config.externals = {
 config.output = {
   path: path.join(__dirname, '../lib'),
   filename: '[name].js',
-  libraryTarget: 'umd',
-  umdNamedDefine: true
+  libraryExport: "default",
+  libraryTarget: 'umd'
 };
 
 module.exports = config;
