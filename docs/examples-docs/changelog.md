@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6) (2017-07-15)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.6.5...v0.6.6)
+
+**非兼容更新和新特性:**
+
+- 新增：Field 增加blur事件 && Field 支持尾部icon [\#53](https://github.com/youzan/vant/pull/53) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.6.5](https://github.com/youzan/vant/tree/v0.6.5) (2017-07-11)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.6.4...v0.6.5)
 
