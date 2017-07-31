@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2) (2017-07-31)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.6.6...v0.7.2)
+
+**非兼容更新和新特性:**
+
+- 支持 babel-plugin-import [\#62](https://github.com/youzan/vant/pull/62) ([chenjiahan](https://github.com/chenjiahan))
+- 依赖更新 && 构建调整 [\#60](https://github.com/youzan/vant/pull/60) ([chenjiahan](https://github.com/chenjiahan))
+- Switch 组件: 个人建议加了动画效果 [\#59](https://github.com/youzan/vant/pull/59) ([BosenY](https://github.com/BosenY))
+- 文档改版 [\#55](https://github.com/youzan/vant/pull/55) ([chenjiahan](https://github.com/chenjiahan))
+- 新增：Card 组件增加 centered 属性 [\#54](https://github.com/youzan/vant/pull/54) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- fix: datetimepicker cancel event not work [\#64](https://github.com/youzan/vant/pull/64) ([chenjiahan](https://github.com/chenjiahan))
+- 修复：popup多层级van-modal未插入到正确的位置 [\#63](https://github.com/youzan/vant/pull/63) ([cookfront](https://github.com/cookfront))
+- 新增几个图标 && 修复tabs组件为空报错的问题 [\#61](https://github.com/youzan/vant/pull/61) ([cookfront](https://github.com/cookfront))
+- Fix: deploy doc fail [\#56](https://github.com/youzan/vant/pull/56) ([chenjiahan](https://github.com/chenjiahan))
+
+**处理的 Issue:**
+
+- SVG's SMIL animations deprecated  [\#46](https://github.com/youzan/vant/issues/46)
+
 ## [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6) (2017-07-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.6.5...v0.6.6)
 
