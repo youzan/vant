@@ -5,20 +5,21 @@ export default {
       minHour: 10,
       maxHour: 20,
       minDate: new Date(),
-      currentDate: null
+      currentDate1: null,
+      currentDate2: null,
+      currentDate3: null
     };
   },
 
   methods: {
     handlePickerChange(picker, values) {
-      // picker.setColumnValues(1, citys[values[0]]);
       console.log(values);
     },
     handlePickerCancel() {
-      alert('picker cancel');
+      console.log('picker cancel');
     },
     handlePickerConfirm() {
-      alert('picker confirm');
+      console.log('picker confirm');
     }
   }
 };
@@ -63,7 +64,7 @@ export default {
 :::demo 基础用法
 ```html
 <van-datetime-picker
-  v-model="currentDate"
+  v-model="currentDate1"
   type="datetime"
   format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
@@ -98,7 +99,7 @@ export default {
 :::demo 选择日期
 ```html
 <van-datetime-picker
-  v-model="currentDate"
+  v-model="currentDate2"
   type="date"
   format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
@@ -114,13 +115,13 @@ export default {
 :::demo 选择时间
 ```html
 <van-datetime-picker
-  v-model="currentDate"
+  v-model="currentDate3"
   type="time"
   format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
-  @change="handlePickerChange">  
+  @change="handlePickerChange">
 </van-datetime-picker>
 ```
 :::
@@ -144,6 +145,14 @@ export default {
 | values | 列中对应的备选值 |
 | defaultIndex | 初始选中值的索引，默认为0 |
 | className | 为对应列添加特殊的`class` |
+
+### Event
+
+| 事件名称       | 说明      | 回调参数 |
+|-----------|-----------|-----------|
+| change | 当值变化时触发的事件 | picker 实例 |
+| confirm | 点击完成按钮时触发的事件 | 当前 value |
+| cancel | 点击取消按钮时触发的事件 | - |
 
 ### change事件
 
