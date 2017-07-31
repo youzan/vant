@@ -7707,9 +7707,9 @@ vue-loader@^13.0.2:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.5.3"
 
-vue-markdown-loader@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-1.0.0.tgz#255a2608e388991faa354618e4f4b642ebb7e0db"
+vue-markdown-loader@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-2.0.0.tgz#d3cadbf9c8976a81f2d5e39496d505fd4f31bc96"
   dependencies:
     cheerio "^0.20.0"
     highlight.js "^9.4.0"
@@ -8043,9 +8043,9 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.0.tgz#6ea2aba808c39b35b9730899f000dbf05806cbad"
+zan-doc@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.4.tgz#e226a438b07ffe1a08706f6349536438fec25f36"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"

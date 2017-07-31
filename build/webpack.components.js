@@ -5,7 +5,12 @@ const webpack = require('webpack');
 
 delete config.devtool;
 
-config.entry = Components;
+const entry = {};
+Object.keys(Components).forEach(key => {
+  entry[key + '/index'] = Components[key];
+});
+
+config.entry = entry;
 
 config.externals = {
   vue: {
@@ -19,8 +24,8 @@ config.externals = {
 config.output = {
   path: path.join(__dirname, '../lib'),
   filename: '[name].js',
-  libraryTarget: 'umd',
-  umdNamedDefine: true
+  libraryExport: "default",
+  libraryTarget: 'umd'
 };
 
 module.exports = config;
