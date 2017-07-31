@@ -45,7 +45,7 @@
     "vue-lazyload": "^1.0.6"
   },
   "peerDependencies": {
-    "vue": "2.3.4"
+    "vue": "2.4.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
