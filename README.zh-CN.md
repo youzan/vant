@@ -9,28 +9,27 @@
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev) [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
  
-[访问中文版](./README.zh-CN.md)
-
-## Install
+## 一、安装
 
 ```shell
 npm i -S vant
 ```
  
-## Usage
+## 二、使用
  
  
-### Import all components
+### 1. 导入所有组件
  
 ```javascript
 import Vue from 'vue';
 import vant from 'vant';
+// 你也可以使用自己的主题
 import 'vant/lib/vant-css/index.css';
 
 Vue.use(vant);
 ```
  
-### Import on demand
+### 2. 按需导入组件
 
 ```javascript
 import Vue from 'vue';
@@ -42,30 +41,30 @@ Vue.component(Button.name, Button);
 Vue.component(Cell.name, Cell);
 ```
 
-## Development
+## 三、开发
 
-### Add a new component
+### 1. 新建一个组件
 
 ```shell
 make init componentName
 ```
 
-### Start coding
+### 2. 示例预览
 
-Start development mode:
+在`docs/nav.config.json`文件里合适的地方写入组件声明，根据组件类型（JS组件，CSS组件，Form等）进行区分 在`docs/examples-docs`目录里新建同名的md文件，如`waterfall.md`，在项目的根目录下执行以下命令，启动server：
 
 ```shell
 npm run dev
 ```
 
-Browser visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
+浏览器访问[http://localhost:8080](http://localhost:8080)就可以看到所有组件的示例了。
 
-## Preview
+## 四、手机预览
 
-You can sweep the phone to scan the following two-dimensional code to access the phone side demo：
+可以手机扫码以下二维码访问手机端demo：
 
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
-## LICENSE
+## 五、开源协议
 
-This project is based on the [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) agreement and is free to enjoy and participate in open source.
+本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
