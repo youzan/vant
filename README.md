@@ -62,7 +62,7 @@ Browser visit [http://localhost:8080](http://localhost:8080) to see an example o
 
 ## Preview
 
-You can sweep the phone to scan the following two-dimensional code to access the phone side demo：
+You can sweep the phone to scan the following QR code to access the phone side demo：
 
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
