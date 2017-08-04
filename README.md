@@ -30,7 +30,7 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(vant);
 ```
  
-### Import on demand
+### On demand
 
 ```javascript
 import Vue from 'vue';
@@ -58,14 +58,14 @@ Start development mode:
 npm run dev
 ```
 
-Browser visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
+Visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
 
 ## Preview
 
-You can sweep the phone to scan the following QR code to access the phone side demo：
+You can scan the following QR code to access the demo：
 
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
 ## LICENSE
 
-This project is based on the [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) agreement and is free to enjoy and participate in open source.
+[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)
