@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -14,7 +14,7 @@
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
-    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js --presets=es2015",
     "build:components": "cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && cp -R packages/vant-css/lib/ lib/vant-css",
     "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
