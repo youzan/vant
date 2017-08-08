@@ -1,5 +1,17 @@
 ## 更新日志
 
+## [v0.7.3](https://github.com/youzan/vant/tree/v0.7.3) (2017-08-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.2...v0.7.3)
+
+**处理的 Issue:**
+
+- datetime-picker的问题 [\#45](https://github.com/youzan/vant/issues/45)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- fix: utils 修复babel编译 [\#67](https://github.com/youzan/vant/pull/67) ([pangxie1991](https://github.com/pangxie1991))
+- README.md使用英文文档 [\#66](https://github.com/youzan/vant/pull/66) ([cookfront](https://github.com/cookfront))
+
 ## [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2) (2017-07-31)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.6.6...v0.7.2)
 
