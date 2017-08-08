@@ -383,6 +383,16 @@ module.exports = {
       keywords: ['coupon'],
       src: '优惠券卡.svg',
       css: 'coupon'
+    },
+    {
+      keywords: ['clock'],
+      src: '时钟.svg',
+      css: 'clock'
+    },
+    {
+      keywords: ['gold-coin'],
+      src: '金币.svg',
+      css: 'gold-coin'
     }
   ]
 };

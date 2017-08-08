@@ -361,6 +361,14 @@ export default {
     <van-icon name="coupon"></van-icon>
     <span>coupon</span>
   </van-col>
+  <van-col span="8">
+    <van-icon name="clock"></van-icon>
+    <span>clock</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="gold-coin"></van-icon>
+    <span>gold-coin</span>
+  </van-col>
 </van-row>
 ```
 :::
