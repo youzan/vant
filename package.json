@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.7.4",
+  "version": "0.7.3",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
