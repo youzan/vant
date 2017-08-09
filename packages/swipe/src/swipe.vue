@@ -36,11 +36,6 @@ export default {
   },
 
   mounted() {
-    const pages = this.$el.querySelectorAll('.van-swipe-item')
-    if (pages.length <= 1) {
-      return
-    }
-
     this.input = new Input(this.$el, {
       listenMoving: true
     });
