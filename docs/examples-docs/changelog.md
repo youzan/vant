@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
+
+**非兼容更新和新特性:**
+
+- 新增几个icon [\#69](https://github.com/youzan/vant/pull/69) ([cookfront](https://github.com/cookfront))
+
 ## [v0.7.5](https://github.com/youzan/vant/tree/v0.7.5) (2017-08-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.3...v0.7.5)
 
