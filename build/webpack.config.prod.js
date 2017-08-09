@@ -8,7 +8,8 @@ module.exports = merge(devConfig, {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: 'https://b.yzcdn.cn/zanui/vue',
     filename: '[name].[hash:8].js',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    chunkFilename: 'async.[name].[chunkhash:8].js'
   },
   devtool: false,
   plugins: [

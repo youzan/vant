@@ -2,15 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesDocsApp';
 import routes from './router.config';
-import ZanUI from 'src/index.js';
 import ZanDoc from 'zan-doc';
-import packageJson from '../../package.json';
 import DemoBlock from './components/demo-block';
-
-const global = {
-  version: packageJson.version
-};
-window._global = global;
 
 import '../assets/docs.css';
 import 'packages/vant-css/src/index.css';
@@ -22,11 +15,7 @@ function isMobile() {
 }
 
 Vue.use(VueRouter);
-Vue.use(ZanUI);
 Vue.use(ZanDoc);
-Vue.use(ZanUI.Lazyload, {
-  lazyComponent: true
-});
 Vue.component('demo-block', DemoBlock);
 
 const routesConfig = routes();
