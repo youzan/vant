@@ -18,27 +18,39 @@ npm i -S vant
 ## 二、使用
  
  
-### 1. 导入所有组件
+### 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+
+   ```js
+   // .babelrc or babel-loader option
+   {
+     "plugins": [
+       ["import", { "libraryName": "vant", "style": true }]
+     ]
+   }
+   ```
+   
+   接着你可以直接引入 vant 组件，等价于下方的按需引入组件
+
+   ```js
+   // 模块化地引入 js 和 css, 通过 babel-plugin-import 插件解析
+   import { Button } from 'vant';
+   ```
+
+### 按需引入组件
+
+   ```jsx
+   import { Button } from 'vant/lib/button';
+   import 'vant/lib/vant-css/button.css';
+   ```
+ 
+### 导入所有组件
  
 ```javascript
 import Vue from 'vue';
 import vant from 'vant';
-// 你也可以使用自己的主题
 import 'vant/lib/vant-css/index.css';
 
 Vue.use(vant);
-```
- 
-### 2. 按需导入组件
-
-```javascript
-import Vue from 'vue';
-import { Button, Cell } from 'vant';
-import 'vant/lib/vant-css/button.css';
-import 'vant/lib/vant-css/cell.css';
-
-Vue.component(Button.name, Button);
-Vue.component(Cell.name, Cell);
 ```
 
 ## 三、开发
