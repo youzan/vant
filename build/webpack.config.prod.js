@@ -6,7 +6,7 @@ var devConfig = require('./webpack.config.dev.js');
 module.exports = merge(devConfig, {
   output: {
     path: path.join(__dirname, '../docs/dist'),
-    publicPath: 'https://b.yzcdn.cn/zanui/vue',
+    publicPath: 'https://b.yzcdn.cn/zanui/vue/',
     filename: '[name].[hash:8].js',
     umdNamedDefine: true,
     chunkFilename: 'async.[name].[chunkhash:8].js'
