@@ -45,7 +45,7 @@ npm i -S vant
  
 ### 导入所有组件
  
-```javascrip
+```javascript
 import Vue from 'vue';
 import vant from 'vant';
 import 'vant/lib/vant-css/index.css';

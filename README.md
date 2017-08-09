@@ -47,7 +47,7 @@ npm i -S vant
  
 ### Import all components
  
-```javascrip
+```javascript
 import Vue from 'vue';
 import vant from 'vant';
 import 'vant/lib/vant-css/index.css';
