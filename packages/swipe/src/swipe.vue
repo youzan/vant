@@ -36,11 +36,6 @@ export default {
   },
 
   mounted() {
-    const pages = this.$el.querySelectorAll('.van-swipe-item')
-    if (pages.length <= 1) {
-      return
-    }
-
     this.input = new Input(this.$el, {
       listenMoving: true
     });
@@ -66,10 +61,28 @@ export default {
     }).on('autoPlay', function(dist, isEnd) {
       scroll.movePage(dist.x, isEnd);
     });
+    this.dummy = dummy
   },
 
-  updated() {
-    this.scroll.update();
+  watch: {
+    swipes(value) {
+      if (this.autoPlay && value.length > 1) {
+        this.dummy.initMove()
+      } else {
+        this.dummy.clearMove()
+      }
+      this.scroll.update();
+      return value
+    },
+
+    autoPlay(value) {
+      if (value && this.swipes.length > 1) {
+        this.dummy.initMove()
+      } else {
+        this.dummy.clearMove()
+      }
+      return value
+    }
   },
 
   methods: {
