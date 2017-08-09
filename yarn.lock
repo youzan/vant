@@ -8143,9 +8143,9 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@0.1.11:
-  version "0.1.11"
-  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.11.tgz#cc51ec5e6789930abafcc1648624d6002e7a4c9b"
+zan-doc@0.1.12:
+  version "0.1.12"
+  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.12.tgz#65b3d43c6a18dbb939c5ea28d6a4630697de6824"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"

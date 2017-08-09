@@ -37,7 +37,7 @@ module.exports = {
     modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
     extensions: ['.js', '.vue', '.css'],
     alias: {
-      vue: 'vue/dist/vue.esm.js',
+      vue: 'vue/dist/vue.runtime.esm.js',
       src: path.join(__dirname, '../src'),
       packages: path.join(__dirname, '../packages'),
       lib: path.join(__dirname, '../lib'),
