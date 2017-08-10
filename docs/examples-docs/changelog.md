@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
+
+**修复:**
+
+- Fixed: one page Swipe components error [\#70](https://github.com/youzan/vant/pull/70) ([Raistlin916](https://github.com/Raistlin916))
+
 ## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
 
