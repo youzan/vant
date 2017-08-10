@@ -4,8 +4,6 @@ import App from './ExamplesDocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import DemoBlock from './components/demo-block';
-
-import '../assets/docs.css';
 import 'packages/vant-css/src/index.css';
 
 function isMobile() {

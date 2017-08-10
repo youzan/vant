@@ -1,2 +1,3 @@
-import CellSwipe from './components/CellSwipe.vue'
+import CellSwipe from './src/cell-swipe';
+
 export default CellSwipe;

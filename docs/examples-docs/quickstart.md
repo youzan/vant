@@ -2,8 +2,6 @@
 
 一套基于`Vue.js 2.0`的 Mobile 组件库
 
-[查看业务组件库 Captain-UI](/zanui/captain/component/quickstart)
-
 ### 安装
 
 ```shell
@@ -12,26 +10,39 @@ npm i vant -S
 
 ### 引入组件
 
-#### 完整引入
+#### 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
 
+   ```js
+   // .babelrc or babel-loader option
+   {
+     "plugins": [
+       ["import", { "libraryName": "vant", "style": true }]
+     ]
+   }
+   ```
+   
+   接着你可以直接引入 vant 组件，等价于下方的按需引入组件
+
+   ```js
+   // 模块化地引入 js 和 css, 通过 babel-plugin-import 插件解析
+   import { Button } from 'vant';
+   ```
+
+#### 按需引入组件
+
+   ```jsx
+   import { Button } from 'vant/lib/button';
+   import 'vant/lib/vant-css/button.css';
+   ```
+ 
+#### 导入所有组件
+ 
 ```javascript
 import Vue from 'vue';
-import ZanUI from 'vant';
+import vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 
-Vue.use(ZanUI);
-```
-
-#### 按需引入
-
-```javascript
-import Vue from 'vue';
-import { Button, Cell } from 'vant';
-import 'vant/lib/vant-css/button.css';
-import 'vant/lib/vant-css/cell.css';
-
-Vue.component(Button.name, Button);
-Vue.component(Cell.name, Cell);
+Vue.use(vant);
 ```
 
 ### 自定义主题
@@ -42,7 +53,7 @@ Vue.component(Cell.name, Cell);
 
 可以通过Github或npm来下载主题：
 
-```shell
+```bash
 # npm
 npm i vant-css -D
 
