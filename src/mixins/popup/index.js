@@ -58,11 +58,45 @@ export default {
       opening: false,
       opened: false,
       closing: false,
-      bodyOverflow: null
+      bodyOverflow: null,
+      pos: {
+        x: 0,
+        y: 0
+      }
     };
   },
 
   methods: {
+    recordPosition(e) {
+      this.pos = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY
+      };
+    },
+    watchTouchMove(e) {
+      const pos = this.pos;
+      const dx = e.touches[0].clientX - pos.x;
+      const dy = e.touches[0].clientY - pos.y;
+      const direction = dy > 0 ? '10' : '01';
+      const el = this.$el.querySelector('.scroller') || this.$el;
+      const scrollTop = el.scrollTop;
+      const scrollHeight = el.scrollHeight;
+      const offsetHeight = el.offsetHeight;
+      const isVertical = Math.abs(dx) < Math.abs(dy);
+
+      let status = '11';
+
+      if (scrollTop === 0) {
+        status = offsetHeight >= scrollHeight ? '00' : '01';
+      } else if (scrollTop + offsetHeight >= scrollHeight) {
+        status = '10';
+      }
+
+      if (status !== '11' && isVertical && !(parseInt(status, 2) & parseInt(direction, 2))) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    },
     /**
      * 显示popup
      */
@@ -103,6 +137,8 @@ export default {
       this.$el.style.zIndex = PopupManager.nextZIndex();
       this.opened = true;
       this.opening = false;
+      document.addEventListener('touchstart', this.recordPosition, false);
+      document.addEventListener('touchmove', this.watchTouchMove, false);
     },
 
     /**
@@ -131,6 +167,8 @@ export default {
     doAfterClose() {
       this.closing = false;
       PopupManager.closeModal(this._popupId);
+      document.removeEventListener('touchstart', this.recordPosition, false);
+      document.removeEventListener('touchmove', this.watchTouchMove, false);
     }
   },
 
