@@ -53,11 +53,6 @@ export default {
     PopupManager.register(this._popupId, this);
   },
 
-  mounted() {
-    document.addEventListener('touchstart', this.recordPosition, false);
-    document.addEventListener('touchmove', this.watchTouchMove, false);
-  },
-
   data() {
     return {
       opening: false,
@@ -142,6 +137,8 @@ export default {
       this.$el.style.zIndex = PopupManager.nextZIndex();
       this.opened = true;
       this.opening = false;
+      document.addEventListener('touchstart', this.recordPosition, false);
+      document.addEventListener('touchmove', this.watchTouchMove, false);
     },
 
     /**
@@ -170,6 +167,8 @@ export default {
     doAfterClose() {
       this.closing = false;
       PopupManager.closeModal(this._popupId);
+      document.removeEventListener('touchstart', this.recordPosition, false);
+      document.removeEventListener('touchmove', this.watchTouchMove, false);
     }
   },
 
@@ -181,8 +180,5 @@ export default {
       document.body.style.overflow = this.bodyOverflow;
     }
     this.bodyOverflow = null;
-
-    document.removeEventListener('touchstart', this.recordPosition, false);
-    document.removeEventListener('touchmove', this.watchTouchMove, false);
   }
 };
