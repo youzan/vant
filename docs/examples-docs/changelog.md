@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- not require reset.css by default [\#72](https://github.com/youzan/vant/pull/72) ([chenjiahan](https://github.com/chenjiahan))
+- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
 
