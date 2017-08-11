@@ -50,7 +50,10 @@
 
   &--error {
     .van-field__control {
-      color: $c-red;
+      &,
+      &::placeholder {
+        color: $c-red;
+      }
     }
   }
 

@@ -8,11 +8,8 @@
 
 <script>
 import { ImagePreview } from 'src/index';
-import MobileComputed from 'components/mobile-computed';
 
 export default {
-  mixins: [MobileComputed],
-
   methods: {
     handleImagePreview() {
       ImagePreview([
@@ -59,11 +56,6 @@ export default {
 </script>
 ```
 :::
-
-点击以下按钮查看手机端效果：
-
-<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
-<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### 方法参数
 

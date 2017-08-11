@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
+
+**修复:**
+
+- Fixed: one page Swipe components error [\#70](https://github.com/youzan/vant/pull/70) ([Raistlin916](https://github.com/Raistlin916))
+
+## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
+
+**非兼容更新和新特性:**
+
+- 新增几个icon [\#69](https://github.com/youzan/vant/pull/69) ([cookfront](https://github.com/cookfront))
+
+## [v0.7.5](https://github.com/youzan/vant/tree/v0.7.5) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.3...v0.7.5)
+
+**修复:**
+
+- fix: one page swiper broken [\#68](https://github.com/youzan/vant/pull/68) ([Raistlin916](https://github.com/Raistlin916))
+
+**处理的 Issue:**
+
+- 安装业务组件导致基础组件css样式文件引入失败 [\#65](https://github.com/youzan/vant/issues/65)
+
 ## [v0.7.3](https://github.com/youzan/vant/tree/v0.7.3) (2017-08-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.2...v0.7.3)
 

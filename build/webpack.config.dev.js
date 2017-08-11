@@ -14,7 +14,6 @@ require('./genExamples')(isProduction);
 
 module.exports = {
   entry: {
-    vendor: ['vue', 'vue-router', 'zan-doc'],
     'vant-docs': './docs/src/index.js',
     'vant-examples': './docs/src/examples.js'
   },
@@ -22,7 +21,8 @@ module.exports = {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
     filename: '[name].js',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    chunkFilename: 'async.[name].js'
   },
   devServer: {
     historyApiFallback: {
@@ -37,7 +37,7 @@ module.exports = {
     modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
     extensions: ['.js', '.vue', '.css'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
+      vue: 'vue/dist/vue.runtime.esm.js',
       src: path.join(__dirname, '../src'),
       packages: path.join(__dirname, '../packages'),
       lib: path.join(__dirname, '../lib'),
@@ -130,6 +130,10 @@ module.exports = {
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: 2
     }),
     new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),
