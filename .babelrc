@@ -6,7 +6,7 @@
     ]
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-vue-jsx"
+    "transform-vue-jsx",
+    "external-helpers"
   ]
 }
