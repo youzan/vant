@@ -4,6 +4,7 @@ import vue from 'rollup-plugin-vue';
 import alias from 'zan-rollup-plugin-alias';
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
+import filesize from 'rollup-plugin-filesize';
 import commonjs from 'rollup-plugin-commonjs';
 import componentsConfig from '../components.json';
 
@@ -37,6 +38,7 @@ export default Object.keys(componentsConfig).map(component => {
     ],
     plugins: [
       vue(),
+      filesize(),
       babel({
         externalHelpers: true
       }),
