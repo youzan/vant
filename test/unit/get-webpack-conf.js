@@ -26,6 +26,7 @@ const webpackConfig = {
       }
     })
   ],
+  stats: 'errors-only',
   resolve: {
     modules: [
       path.resolve(process.cwd(), 'node_modules'),
