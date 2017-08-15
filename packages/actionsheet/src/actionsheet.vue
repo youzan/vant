@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Popup from 'src/mixins/popup';
+import Popup from 'packages/mixins/popup';
 import VanLoading from 'packages/loading';
 import VanIcon from 'packages/icon';
 

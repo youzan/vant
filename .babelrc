@@ -1,12 +1,9 @@
 {
-  "presets": [
-    [
-      "es2015",
-      { "modules": false }
-    ]
-  ],
-  "plugins": [
-    "transform-vue-jsx",
-    "external-helpers"
-  ]
+  "presets": [["es2015", { "modules": false }]],
+  "plugins": ["transform-vue-jsx", "transform-runtime"],
+  "env": {
+    "utils": {
+      "presets": [["es2015", { "modules": "commonjs" }]]
+    }
+  }
 }

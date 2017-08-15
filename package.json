@@ -14,9 +14,8 @@
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
-    "build:utils": "cross-env BABEL_ENV=utils babel packages/common --out-dir lib/common --presets=es2015",
     "build:components": "rollup -c ./build/rollup.config.lib.js --color",
-    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && cp -R packages/vant-css/lib/ lib/vant-css",
+    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && mkdir lib/vant-css && cp -R packages/vant-css/lib/ lib/vant-css",
     "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
     "deploy:cdn": "superman cdn /zanui/vue docs/dist/*.js docs/dist/*.css",
@@ -41,6 +40,7 @@
   "author": "youzanfe",
   "license": "ISC",
   "dependencies": {
+    "babel-runtime": "6.x",
     "raf.js": "0.0.4",
     "vue-lazyload": "^1.0.6"
   },
@@ -60,7 +60,6 @@
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.16.0",
-    "babel-runtime": "^6.25.0",
     "babelrc-rollup": "^3.0.0",
     "chai": "^4.1.1",
     "cheerio": "^0.22.0",

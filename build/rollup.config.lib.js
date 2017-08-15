@@ -11,8 +11,8 @@ import componentsConfig from '../components.json';
 const extensions = ['.js', '.vue'];
 
 // 打包时排除 mixins、utils、其他组件
-const utilsPath = path.resolve(__dirname, '../packages/common/utils/');
-const mixinsPath = path.resolve(__dirname, '../packages/common/mixins/');
+const utilsPath = path.resolve(__dirname, '../packages/utils/');
+const mixinsPath = path.resolve(__dirname, '../packages/mixins/');
 const external = [
   ...fs.readdirSync(utilsPath).map(item => path.resolve(utilsPath, item)),
   ...fs.readdirSync(mixinsPath).map(item => path.resolve(mixinsPath, item)),
@@ -22,7 +22,7 @@ const external = [
 ];
 
 export default Object.keys(componentsConfig).map(component => {
-  return {
+  const config = {
     entry: componentsConfig[component],
     targets: [
       {
@@ -33,29 +33,33 @@ export default Object.keys(componentsConfig).map(component => {
     external: [
       'vue',
       'vue-lazyload',
-      path.resolve(__dirname, '../packages/common/mixins/popup/index.js'),
+      path.resolve(__dirname, '../packages/mixins/popup/index.js'),
       ...external
     ],
     plugins: [
       vue(),
       filesize(),
-      babel({
-        externalHelpers: true
+      commonjs({
+        extensions
       }),
       resolve({
         main: true,
         jsnext: true,
         extensions
       }),
-      commonjs({
-        extensions
-      }),
       alias({
         resolve: extensions,
-        'src/mixins': path.resolve(__dirname, '../packages/common/mixins'),
-        'src/utils': path.resolve(__dirname, '../packages/common/utils'),
         packages: path.resolve(__dirname, '../packages')
       })
     ]
   };
+
+  // button 使用 jsx，需要借助 babel
+  if (component === 'button') {
+    config.plugins.unshift(babel({
+      runtimeHelpers: true
+    }));
+  }
+
+  return config;
 });

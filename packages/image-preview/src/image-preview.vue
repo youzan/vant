@@ -12,7 +12,7 @@
 
 <script>
 import Vue from 'vue';
-import Popup from 'src/mixins/popup';
+import Popup from 'packages/mixins/popup';
 import VanSwipe from 'packages/swipe';
 import VanSwipeItem from 'packages/swipe-item';
 

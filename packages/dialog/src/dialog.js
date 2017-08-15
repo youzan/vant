@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Dialog from './dialog.vue';
-import merge from 'src/utils/merge';
+import merge from 'packages/utils/merge';
 
 const DialogConstructor = Vue.extend(Dialog);
 

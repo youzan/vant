@@ -21,7 +21,7 @@
 
 <script>
   import VanIcon from 'packages/icon';
-  import Clickoutside from 'src/utils/clickoutside';
+  import Clickoutside from 'packages/utils/clickoutside';
 
   export default {
     name: 'van-search',

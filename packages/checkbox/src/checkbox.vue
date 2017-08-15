@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import findParent from 'src/mixins/findParent';
+import findParent from 'packages/mixins/findParent';
 
 export default {
   name: 'van-checkbox',

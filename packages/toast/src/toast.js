@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import merge from 'src/utils/merge';
+import merge from 'packages/utils/merge';
 import ToastComponent from './toast.vue';
 
 const ToastConstructor = Vue.extend(ToastComponent);

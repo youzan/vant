@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import {once} from 'src/utils/dom';
-  import Clickoutside from 'src/utils/clickoutside';
+  import {once} from 'packages/utils/dom';
+  import Clickoutside from 'packages/utils/clickoutside';
   
   export default {
     name: 'van-cell-swipe',
