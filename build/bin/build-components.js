@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
-const compileVue = require('./compile-vue');
+const compiler = require('./sfc-compiler');
 const libDir = path.resolve(__dirname, '../../lib');
 const srcDir = path.resolve(__dirname, '../../packages');
 require('shelljs/global');
@@ -27,7 +27,7 @@ function compileVueFiles(dir) {
       const outputVuePath = absolutePath + '.js';
       const outputJsPath = absolutePath.replace('.vue', '.js');
       const output = fs.existsSync(outputJsPath) ? outputVuePath : outputJsPath;
-      fs.outputFileSync(output, compileVue(source));
+      fs.outputFileSync(output, compiler(source));
     }
   });
 }

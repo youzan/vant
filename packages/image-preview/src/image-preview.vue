@@ -12,9 +12,9 @@
 
 <script>
 import Vue from 'vue';
-import Popup from 'packages/mixins/popup';
-import VanSwipe from 'packages/swipe';
-import VanSwipeItem from 'packages/swipe-item';
+import Popup from '../../mixins/popup';
+import VanSwipe from '../../swipe';
+import VanSwipeItem from '../../swipe-item';
 
 export default {
   name: 'van-image-preview',

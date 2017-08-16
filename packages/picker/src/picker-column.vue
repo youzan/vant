@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import translateUtil from 'packages/utils/transition';
+import translateUtil from '../../utils/transition';
 import draggable from './draggable';
 
 const DEFAULT_ITEM_HEIGHT = 44;

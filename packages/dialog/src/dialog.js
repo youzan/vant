@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Dialog from './dialog.vue';
-import merge from 'packages/utils/merge';
+import merge from '../../utils/merge';
 
 const DialogConstructor = Vue.extend(Dialog);
 
@@ -60,7 +60,7 @@ const showNextDialog = () => {
 var DialogBox = options => {
   return new Promise((resolve, reject) => { // eslint-disable-line
     dialogQueue.push({
-      options: merge({}, options),
+      options: merge({ ...options }),
       callback: options.callback,
       resolve: resolve,
       reject: reject

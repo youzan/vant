@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Picker from 'packages/picker';
+import Picker from '../../picker';
 
 const allowedType = ['time', 'date', 'datetime'];
 

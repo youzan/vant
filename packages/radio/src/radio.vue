@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import findParent from 'packages/mixins/findParent';
+import findParent from '../../mixins/findParent';
 
 export default {
   name: 'van-radio',

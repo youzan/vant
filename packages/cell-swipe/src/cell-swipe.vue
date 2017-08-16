@@ -24,8 +24,8 @@
 </template>
 
 <script>
-  import {once} from 'packages/utils/dom';
-  import Clickoutside from 'packages/utils/clickoutside';
+  import {once} from '../../utils/dom';
+  import Clickoutside from '../../utils/clickoutside';
   
   export default {
     name: 'van-cell-swipe',
@@ -51,10 +51,12 @@
       this.wrap = this.$refs.cell.querySelector('.van-cell-wrapper');
       this.leftElm = this.$refs.left;
       this.leftWrapElm = this.leftElm.parentNode;
+      this.leftDefaultTransform = this.translate3d(-this.leftWidth - 1);
       this.leftWrapElm.style.webkitTransform = this.leftDefaultTransform;
 
       this.rightElm = this.$refs.right;
       this.rightWrapElm = this.rightElm.parentNode;
+      this.rightDefaultTransform = this.translate3d(this.rightWidth);
       this.rightWrapElm.style.webkitTransform = this.rightDefaultTransform;
     },
     methods: {
@@ -98,12 +100,14 @@
         }, 0);
       },
       startDrag(evt) {
+        console.log('startDrag')
         evt = evt.changedTouches ? evt.changedTouches[0] : evt;
         this.dragging = true;
         this.start.x = evt.pageX;
         this.start.y = evt.pageY;
       },
       onDrag(evt) {
+        console.log('onDrag')
         if (this.opened) {
           !this.swiping && this.swipeMove(0);
           this.opened = false;
@@ -128,6 +132,7 @@
         this.swipeMove(offsetLeft);
       },
       endDrag() {
+        console.log('endDrag')
         if (!this.swiping) return;
         this.swipeLeaveTransition(this.offsetLeft > 0 ? -1 : 1);
       }

@@ -34,9 +34,9 @@
 </template>
 
 <script>
-import Popup from 'packages/mixins/popup';
-import VanLoading from 'packages/loading';
-import VanIcon from 'packages/icon';
+import Popup from '../../mixins/popup';
+import VanLoading from '../../loading';
+import VanIcon from '../../icon';
 
 export default {
   name: 'van-actionsheet',

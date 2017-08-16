@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import VanLoading from 'packages/loading';
+import VanLoading from '../../loading';
 /**
  * van-switch
  * @module components/switch

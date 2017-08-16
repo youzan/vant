@@ -1,3 +1,3 @@
-import Step from 'packages/steps/src/step';
+import Step from '../steps/src/step';
 
 export default Step;
