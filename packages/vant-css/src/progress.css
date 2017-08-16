@@ -1,33 +1,32 @@
 @import './common/var.css';
 
-@component-namespace van {
-  @b progress {
-    @e bar {
-      height: 4px;
-      border-radius: 4.5px;
-      width: 100%;
-      background: $c-gray-light;
-      position: relative;
+.van-progress {
+  &__bar {
+    height: 4px;
+    border-radius: 4.5px;
+    width: 100%;
+    background: $c-gray-light;
+    position: relative;
 
-      @e finished-portion {
-        border-radius: 4.5px;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        display: inline-block;
-      }
-      @e pivot {
-        padding: 2px 0;
-        font-size: 8px;
-        position: absolute;
-        border-radius: 6px;
-        width: 28px;
-        background-color: $c-gray-light;
-        line-height: 8px;
-        text-align: center;
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
-      }
+    &__finished-portion {
+      border-radius: 4.5px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      display: inline-block;
+    }
+
+    &__pivot {
+      padding: 2px 0;
+      font-size: 8px;
+      position: absolute;
+      border-radius: 6px;
+      width: 28px;
+      background-color: $c-gray-light;
+      line-height: 8px;
+      text-align: center;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
     }
   }
 }

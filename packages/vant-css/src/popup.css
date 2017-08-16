@@ -1,5 +1,5 @@
-@component-namespace van {
-  @b modal {
+.van {
+  &-modal {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -9,7 +9,7 @@
     transition: all .5s ease-out;
   }
 
-  @b popup {
+  &-popup {
     position: fixed;
     background-color: #fff;
     top: 50%;
@@ -18,7 +18,7 @@
     backface-visibility: hidden;
     transition: .2s ease-out;
 
-    @m top {
+    &--top {
       width: 100%;
       top: 0;
       right: auto;
@@ -27,7 +27,7 @@
       transform: translate3d(-50%, 0, 0);
     }
 
-    @m right {
+    &--right {
       top: 50%;
       right: 0;
       bottom: auto;
@@ -35,7 +35,7 @@
       transform: translate3d(0, -50%, 0);
     }
 
-    @m bottom {
+    &--bottom {
       width: 100%;
       top: auto;
       bottom: 0;
@@ -44,7 +44,7 @@
       transform: translate3d(-50%, 0, 0);
     }
 
-    @m left {
+    &--left {
       top: 50%;
       right: auto;
       bottom: auto;

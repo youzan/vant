@@ -69,12 +69,6 @@ extend(Scroll.prototype, {
     var leftOffset = offset - wrapWidth;
     var rightOffset = offset + wrapWidth;
 
-    page = this.getCurrentPage();
-    if (page) {
-      page.style['-webkit-transform'] = 'translate3d(' + offset + 'px, 0, 0)';
-      page.style['display'] = 'block';
-    }
-
     leftPage = this.pages[this.mapLoopPage(currentOffsetPage - 1)];
     if (leftPage) {
       if (Math.abs(leftOffset) <= wrapWidth) {
@@ -95,6 +89,12 @@ extend(Scroll.prototype, {
           rightPage.style['-webkit-transform'] = 'translate3d(-9999px, 0, 0)';
         }
       }
+    }
+
+    page = this.getCurrentPage();
+    if (page) {
+      page.style['-webkit-transform'] = 'translate3d(' + offset + 'px, 0, 0)';
+      page.style['display'] = 'block';
     }
   },
 

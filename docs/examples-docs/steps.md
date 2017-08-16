@@ -1,13 +1,11 @@
 <style>
-@component-namespace demo {
-  @b steps {
-    .steps-success {
-      color: #06bf04;
-    }
+.demo-steps {
+  .steps-success {
+    color: #06bf04;
+  }
 
-    .van-button {
-      margin: 15px 0 0 15px;
-    }
+  .van-button {
+    margin: 15px 0 0 15px;
   }
 }
 </style>
@@ -29,39 +27,6 @@ export default {
 </script>
 
 ## Steps 步骤条
-
-### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Steps`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Steps`组件了：
-
-```js
-import Vue from 'vue';
-import { Steps, Step } from 'vant';
-import 'vant/lib/vant-css/steps.css';
-
-Vue.component(Steps.name, Steps);
-Vue.component(Step.name, Step);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Steps`组件，这样只能在你注册的组件中使用`Steps`：
-
-```js
-import { Steps, Step } from 'vant';
-import 'vant/lib/vant-css/steps.css';
-
-export default {
-  components: {
-    'van-steps': Steps,
-    'van-step': Step
-  }
-};
-```
 
 ### 代码演示
 

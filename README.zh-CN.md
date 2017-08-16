@@ -9,17 +9,16 @@
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev) [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
  
-[访问中文版](./README.zh-CN.md)
-
-## Install
+## 一、安装
 
 ```shell
 npm i -S vant
 ```
  
-## Usage
-
-### Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
+## 二、使用
+ 
+ 
+### 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
 
    ```js
    // .babelrc or babel-loader option
@@ -29,23 +28,22 @@ npm i -S vant
      ]
    }
    ```
-
-   Then you can import components from vant, equivalent to import manually below.
+   
+   接着你可以直接引入 vant 组件，等价于下方的按需引入组件
 
    ```js
-   // import js and css modularly, parsed by babel-plugin-import
-   import { Button } from 'vant';
+   // 模块化地引入 js 和 css, 通过 babel-plugin-import 插件解析
+   import { Button } from 'vant';
    ```
 
-### Manually import
+### 按需引入组件
 
    ```jsx
-   import { Button } from 'vant';
+   import { Button } from 'vant/lib/button';
    import 'vant/lib/vant-css/button.css';
    ```
  
- 
-### Import all components
+### 导入所有组件
  
 ```javascript
 import Vue from 'vue';
@@ -54,31 +52,31 @@ import 'vant/lib/vant-css/index.css';
 
 Vue.use(vant);
 ```
- 
-## Development
 
-### Add a new component
+## 三、开发
+
+### 1. 新建一个组件
 
 ```shell
 make init componentName
 ```
 
-### Start coding
+### 2. 示例预览
 
-Start development mode:
+在`docs/nav.config.json`文件里合适的地方写入组件声明，根据组件类型（JS组件，CSS组件，Form等）进行区分 在`docs/examples-docs`目录里新建同名的md文件，如`waterfall.md`，在项目的根目录下执行以下命令，启动server：
 
 ```shell
 npm run dev
 ```
 
-Visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
+浏览器访问[http://localhost:8080](http://localhost:8080)就可以看到所有组件的示例了。
 
-## Preview
+## 四、手机预览
 
-You can scan the following QR code to access the demo：
+可以手机扫码以下二维码访问手机端demo：
 
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
-## LICENSE
+## 五、开源协议
 
-[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)
+本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。

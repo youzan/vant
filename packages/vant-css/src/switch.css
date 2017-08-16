@@ -1,61 +1,59 @@
 @import './mixins/border_retina.css';
 
-@component-namespace van {
-  @b switch {
-    height: 31px;
-    width: 51px;
-    display: inline-block;
-    position: relative;
-    background: #fff;
-    border-radius: 16px;
-    &::after{
+.van-switch {
+  height: 31px;
+  width: 51px;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  &::after{
+    @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
+    border-width: 3px;
+    border-radius: 32px;
+  }
+
+  &__node {
+    width: 28px;
+    height: 28px;
+    border-radius: 13.5px;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+    left: 1px;
+    top: 1px;
+    z-index: 2;
+    transition: transform .3s;
+    &::after {
       @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
-      border-width: 3px;
-      border-radius: 32px;
+      border-radius: 27px;
     }
+  }
 
-    @e node {
-      width: 28px;
-      height: 28px;
-      border-radius: 13.5px;
-      background-color: #fff;
-      position: absolute;
-      box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
-      left: 1px;
-      top: 1px;
-      z-index: 2;
-      transition: transform .3s;
-      &::after {
-        @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
-        border-radius: 27px;
-      }
-    }
+  &__loading {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    margin: 0;
+  }
 
-    @e loading {
-      width: 16px;
-      height: 16px;
-      position: relative;
-      left: 50%;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0);
-      margin: 0;
+  &--on {
+    background-color: #44db5e;
+    &::after { border-color: #44db5e; }
+    .van-switch__node {
+      transform: translateX(20px);
     }
+  }
 
-    @m on {
-      background-color: #44db5e;
-      &::after { border-color: #44db5e; }
-      .van-switch__node {
-        transform: translateX(20px);
-      }
-    }
+  &--off {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, .1);
+  }
 
-    @m off {
-      background-color: #fff;
-      border-color: rgba(0, 0, 0, .1);
-    }
-
-    @m disabled {
-      opacity: .4;
-    }
+  &--disabled {
+    opacity: .4;
   }
 }

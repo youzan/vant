@@ -1,5 +1,79 @@
 ## 更新日志
 
+## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- not require reset.css by default [\#72](https://github.com/youzan/vant/pull/72) ([chenjiahan](https://github.com/chenjiahan))
+- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
+
+**修复:**
+
+- Fixed: one page Swipe components error [\#70](https://github.com/youzan/vant/pull/70) ([Raistlin916](https://github.com/Raistlin916))
+
+## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
+
+**非兼容更新和新特性:**
+
+- 新增几个icon [\#69](https://github.com/youzan/vant/pull/69) ([cookfront](https://github.com/cookfront))
+
+## [v0.7.5](https://github.com/youzan/vant/tree/v0.7.5) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.3...v0.7.5)
+
+**修复:**
+
+- fix: one page swiper broken [\#68](https://github.com/youzan/vant/pull/68) ([Raistlin916](https://github.com/Raistlin916))
+
+**处理的 Issue:**
+
+- 安装业务组件导致基础组件css样式文件引入失败 [\#65](https://github.com/youzan/vant/issues/65)
+
+## [v0.7.3](https://github.com/youzan/vant/tree/v0.7.3) (2017-08-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.2...v0.7.3)
+
+**处理的 Issue:**
+
+- datetime-picker的问题 [\#45](https://github.com/youzan/vant/issues/45)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- fix: utils 修复babel编译 [\#67](https://github.com/youzan/vant/pull/67) ([pangxie1991](https://github.com/pangxie1991))
+- README.md使用英文文档 [\#66](https://github.com/youzan/vant/pull/66) ([cookfront](https://github.com/cookfront))
+
+## [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2) (2017-07-31)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.6.6...v0.7.2)
+
+**非兼容更新和新特性:**
+
+- 支持 babel-plugin-import [\#62](https://github.com/youzan/vant/pull/62) ([chenjiahan](https://github.com/chenjiahan))
+- 依赖更新 && 构建调整 [\#60](https://github.com/youzan/vant/pull/60) ([chenjiahan](https://github.com/chenjiahan))
+- Switch 组件: 个人建议加了动画效果 [\#59](https://github.com/youzan/vant/pull/59) ([BosenY](https://github.com/BosenY))
+- 文档改版 [\#55](https://github.com/youzan/vant/pull/55) ([chenjiahan](https://github.com/chenjiahan))
+- 新增：Card 组件增加 centered 属性 [\#54](https://github.com/youzan/vant/pull/54) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- fix: datetimepicker cancel event not work [\#64](https://github.com/youzan/vant/pull/64) ([chenjiahan](https://github.com/chenjiahan))
+- 修复：popup多层级van-modal未插入到正确的位置 [\#63](https://github.com/youzan/vant/pull/63) ([cookfront](https://github.com/cookfront))
+- 新增几个图标 && 修复tabs组件为空报错的问题 [\#61](https://github.com/youzan/vant/pull/61) ([cookfront](https://github.com/cookfront))
+- Fix: deploy doc fail [\#56](https://github.com/youzan/vant/pull/56) ([chenjiahan](https://github.com/chenjiahan))
+
+**处理的 Issue:**
+
+- SVG's SMIL animations deprecated  [\#46](https://github.com/youzan/vant/issues/46)
+
+## [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6) (2017-07-15)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.6.5...v0.6.6)
+
+**非兼容更新和新特性:**
+
+- 新增：Field 增加blur事件 && Field 支持尾部icon [\#53](https://github.com/youzan/vant/pull/53) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.6.5](https://github.com/youzan/vant/tree/v0.6.5) (2017-07-11)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.6.4...v0.6.5)
 

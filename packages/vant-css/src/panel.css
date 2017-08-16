@@ -1,47 +1,45 @@
 @import './mixins/border_retina.css';
 
-@component-namespace van {
-  @b panel {
-    background: #fff;
+.van-panel {
+  background: #fff;
+  position: relative;
+
+  &::after {
+    @mixin border-retina (top, bottom);
+  }
+
+  &__header {
+    padding: 10px 15px;
+    position: relative;
+    &::after {
+      @mixin border-retina (bottom);
+    }
+  }
+
+  &__title {
+    font-size: 14px;
+    color: #333;
+  }
+
+  &__desc {
+    font-size: 12px;
+    color: #666;
+  }
+
+  &__status {
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #FF4444;
+  }
+
+  &__footer {
+    padding: 10px 15px;
     position: relative;
 
     &::after {
-      @mixin border-retina (top, bottom);
-    }
-
-    @e header {
-      padding: 10px 15px;
-      position: relative;
-      &::after {
-        @mixin border-retina (bottom);
-      }
-    }
-
-    @e title {
-      font-size: 14px;
-      color: #333;
-    }
-
-    @e desc {
-      font-size: 12px;
-      color: #666;
-    }
-
-    @e status {
-      font-size: 14px;
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      color: #FF4444;
-    }
-
-    @e footer {
-      padding: 10px 15px;
-      position: relative;
-
-      &::after {
-        @mixin border-retina (top);
-      }
+      @mixin border-retina (top);
     }
   }
 }

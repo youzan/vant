@@ -1,24 +1,18 @@
 <template>
   <transition name="van-toast-fade">
     <div class="van-toast-wrapper" v-show="visible">
-      <div class="van-toast" :class="['van-toast--' + displayStyle]">
+      <div :class="['van-toast', 'van-toast--' + displayStyle]">
         <!-- 只显示文字 -->
-        <template v-if="displayStyle === 'text'" >
-          <div class="van-toast__text">{{message}}</div>
-        </template>
+        <div v-if="displayStyle === 'text'" class="van-toast__text">{{ message }}</div>
         <!-- 加载中 -->
-        <template v-if="displayStyle === 'loading'">
-            <van-loading v-if="type === 'loading'" type="gradient-circle" color="white"></van-loading>
-        </template>
+        <van-loading v-if="displayStyle === 'loading' && type === 'loading'" type="gradient-circle" color="white"></van-loading>
         <!-- 图案加文字 -->
         <template v-if="displayStyle === 'default'">
           <van-icon class="van-toast__icon" :name="type"></van-icon>
-          <div class="van-toast__text">{{message}}</div>
+          <div class="van-toast__text">{{ message }}</div>
         </template>
         <!-- 传入html -->
-        <template v-if="displayStyle === 'html'">
-          <div class="van-toast__text" v-html="message"></div>
-        </template>
+        <div v-if="displayStyle === 'html'" class="van-toast__text" v-html="message"></div>
       </div>
       <div class="van-toast__overlay" v-if="forbidClick"></div>
     </div>

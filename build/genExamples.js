@@ -11,8 +11,6 @@ function extract(watch = false) {
   });
 }
 
-extract();
-
-module.exports = function watch() {
-  extract(true);
+module.exports = function watch(isProduction) {
+  extract(!isProduction);
 };

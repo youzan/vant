@@ -1,6 +1,6 @@
 {
   "name": "vant-css",
-  "version": "0.6.6",
+  "version": "0.7.9",
   "description": "vant css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -14,13 +14,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^6.7.5",
+    "autoprefixer": "^7.1.2",
     "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-postcss": "^6.1.1",
-    "postcss-easy-import": "^2.0.0",
-    "precss": "^1.4.0",
-    "saladcss-bem": "^0.0.1"
+    "gulp-cssmin": "^0.2.0",
+    "gulp-postcss": "^7.0.0",
+    "postcss-easy-import": "^2.1.0",
+    "precss": "^2.0.0"
   },
   "dependencies": {}
 }

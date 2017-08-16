@@ -1,13 +1,13 @@
-var webpack = require('webpack');
-var getPostcssPlugin = require('./utils/postcss_pipe');
-var config = require('./webpack.config.dev.js');
+const webpack = require('webpack');
+const config = require('./webpack.config.dev.js');
+const isMinify = process.argv.indexOf('-p') !== -1;
 
 config.entry = {
   'vant': './src/index.js'
 };
 
 config.output = {
-  filename: './lib/[name].js',
+  filename: isMinify ? './lib/[name].min.js' : './lib/[name].js',
   library: 'vant',
   libraryTarget: 'umd',
   umdNamedDefine: true
@@ -30,18 +30,13 @@ config.plugins = [
     minimize: true,
     debug: false,
     options: {
-      postcss: getPostcssPlugin,
-      babel: {
-        presets: ['es2015'],
-        plugins: ['transform-runtime', 'transform-vue-jsx']
-      },
       vue: {
         autoprefixer: false,
-        preserveWhitespace: false,
-        postcss: getPostcssPlugin
+        preserveWhitespace: false
       }
     }
-  })
+  }),
+  new webpack.optimize.ModuleConcatenationPlugin()
 ];
 
 delete config.devtool;

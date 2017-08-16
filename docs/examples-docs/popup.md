@@ -1,48 +1,43 @@
 <style>
-@component-namespace demo {
-  @b popup {
-    .van-button {
-      margin: 10px 15px;
-    }
+.demo-popup {
+  .van-button {
+    margin: 10px 15px;
+  }
 
-    .van-popup-1 {
-      width: 60%;
-      box-sizing: border-box;
-      padding: 20px;
-      border-radius: 5px;
-      text-align: center;
-    }
+  .van-popup-1 {
+    width: 60%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
 
-    .van-popup-2 {
-      width: 100%;
-      height: 200px;
-      box-sizing: border-box;
-      padding: 20px;
-    }
+  .van-popup-2 {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 20px;
+  }
 
-    .van-popup-3 {
-      line-height: 50px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.701961);
-      color: #fff;
-    }
+  .van-popup-3 {
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.701961);
+    color: #fff;
+  }
 
-    .van-popup-4,
-    .van-popup-5 {
-      width: 100%;
-      height: 100%;
-    }
+  .van-popup-4,
+  .van-popup-5 {
+    width: 100%;
+    height: 100%;
   }
 }
 </style>
 
 <script>
-import MobileComputed from 'components/mobile-computed';
 import Dialog from 'packages/dialog';
 
 export default {
-  mixins: [MobileComputed],
-
   data() {
     return {
       popupShow1: false,
@@ -79,37 +74,6 @@ export default {
 </script>
 
 ## Popup 弹出菜单
-
-### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Popup`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Popup`组件了：
-
-```js
-import Vue from 'vue';
-import { Popup } from 'vant';
-import 'vant/lib/vant-css/popup.css';
-
-Vue.component(Popup.name, Popup);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Popup`组件，这样只能在你注册的组件中使用`Popup`：
-
-```js
-import { Popup } from 'vant';
-import 'vant/lib/vant-css/popup.css';
-
-export default {
-  components: {
-    'van-popup': Popup
-  }
-};
-```
 
 ### 代码演示
 
@@ -187,11 +151,6 @@ export default {
 </script>
 ```
 :::
-
-点击以下按钮查看手机端效果：
-
-<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
-<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API
 

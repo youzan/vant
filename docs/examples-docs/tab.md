@@ -1,26 +1,24 @@
 <style>
-@component-namespace demo {
-  @b tab {
-    .van-tab__pane {
-      background-color: #fff;
-      padding: 20px;
-    }
+.demo-tab {
+  .van-tab__pane {
+    background-color: #fff;
+    padding: 20px;
+  }
 
-    .van-tabs--card .van-tab__pane {
-      background-color: transparent;
-    }
+  .van-tabs--card .van-tab__pane {
+    background-color: transparent;
+  }
 
-    .custom-tabwrap .van-tab-active {
-      color: #20a0ff;
-    }
-    .custom-tabwrap .van-tabs-nav-bar {
-      background: #20a0ff;
-    }
-    .custom-pane {
-      text-align: center;
-      height: 50px;
-      line-height: 50px;
-    }
+  .custom-tabwrap .van-tab-active {
+    color: #20a0ff;
+  }
+  .custom-tabwrap .van-tabs-nav-bar {
+    background: #20a0ff;
+  }
+  .custom-pane {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
   }
 }
 </style>
@@ -50,39 +48,6 @@ export default {
 </script>
 
 ## Tab 标签
-
-### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Tab`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Tab`组件了：
-
-```js
-import Vue from 'vue';
-import { Tab, Tabs } from 'vant';
-import 'vant/lib/vant-css/tab.css';
-
-Vue.component(Tab.name, Tab);
-Vue.component(Tabs.name, Tabs);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Tab`组件，这样只能在你注册的组件中使用`Tab`：
-
-```js
-import { Tab, Tabs } from 'vant';
-import 'vant/lib/vant-css/tab.css';
-
-export default {
-  components: {
-    'van-tab': Tab,
-    'van-tabs': Tabs
-  }
-};
-```
 
 ### 代码演示
 

@@ -1,56 +1,23 @@
 <style>
-@component-namespace demo {
-  @b icon {
-    .examples {
-      max-height: none;
-    }
+.demo-icon {
+  .examples {
+    max-height: none;
+  }
 
-    .van-col {
-      text-align: center;
-      height: 120px;
-    }
+  .van-col {
+    text-align: center;
+    height: 120px;
+  }
 
-    .van-icon {
-      font-size: 45px;
-      display: block;
-      margin: 15px 0;
-    }
+  .van-icon {
+    font-size: 45px;
+    display: block;
+    margin: 15px 0;
   }
 } 
 </style>
 
 ## Icon 图标
-
-### 使用指南
-
-如果你已经按照快速上手中引入了整个，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Icon`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Icon`组件了：
-
-```js
-import Vue from 'vue';
-import { Icon } from 'vant';
-import 'vant/lib/vant-css/icon.css';
-
-Vue.component(Icon.name, Icon);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Icon`组件，这样只能在你注册的组件中使用`Icon`：
-
-```js
-import { Icon } from 'vant';
-import 'vant/lib/vant-css/icon.css';
-
-export default {
-  components: {
-    'van-icon': Icon
-  }
-};
-```
 
 ### 代码演示
 
@@ -330,6 +297,46 @@ export default {
   <van-col span="8">
     <van-icon name="after-sale"></van-icon>
     <span>after-sale</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="edit-data"></van-icon>
+    <span>edit-data</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="question"></van-icon>
+    <span>question</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="delete"></van-icon>
+    <span>delete</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="records"></van-icon>
+    <span>records</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="description"></van-icon>
+    <span>description</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="card"></van-icon>
+    <span>card</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="gift-card"></van-icon>
+    <span>gift-card</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="coupon"></van-icon>
+    <span>coupon</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="clock"></van-icon>
+    <span>clock</span>
+  </van-col>
+  <van-col span="8">
+    <van-icon name="gold-coin"></van-icon>
+    <span>gold-coin</span>
   </van-col>
 </van-row>
 ```

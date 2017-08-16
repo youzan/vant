@@ -3,18 +3,23 @@ var fs = require('fs');
 var render = require('json-templater/string');
 var uppercamelcase = require('uppercamelcase');
 var path = require('path');
-var chalk = require('chalk');
 
 var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
-var ISNTALL_COMPONENT_TEMPLATE = '  Vue.component({{name}}.name, {{name}});';
+var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
 var MAIN_TEMPLATE = `{{include}}
 
+const version = '{{version}}';
+const components = [
+{{components}}
+];
+
 const install = function(Vue) {
-  /* istanbul ignore if */
   if (install.installed) return;
 
-{{install}}
+  components.forEach(component => {
+    Vue.component(component.name, component);
+  });
 };
 
 /* istanbul ignore if */
@@ -22,9 +27,14 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-module.exports = {
+export {
   install,
-  version: '{{version}}',
+  version,
+{{list}}
+};
+export default {
+  install,
+  version,
 {{list}}
 };
 `;
@@ -66,11 +76,11 @@ ComponentNames.forEach(name => {
 
 var template = render(MAIN_TEMPLATE, {
   include: includeComponentTemplate.join('\n'),
-  install: installTemplate.join('\n'),
-  version: process.env.VERSION || require('../../package.json').version,
-  list: listTemplate.join(',\n')
+  list: listTemplate.join(',\n'),
+  components: installTemplate.join(',\n') || ' ',
+  version: process.env.VERSION || require('../../package.json').version
 });
 
 fs.writeFileSync(OUTPUT_PATH, template);
-console.log(chalk.green('[build entry] DONE:' + OUTPUT_PATH));
+console.log('[build entry] DONE:' + OUTPUT_PATH);
 

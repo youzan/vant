@@ -3,96 +3,98 @@
 @import './cell.css';
 @import './icon.css';
 
-@component-namespace van {
-  @b field {
+.van-field {
+
+  width: 100%;
+
+  .van-cell__title,
+  .van-cell__value {
+    float: none;
+    box-sizing: border-box;
+  }
+
+  .van-cell__title {
+    width: 90px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  .van-cell__value {
     width: 100%;
+    padding-left: 90px;
+  }
 
-    @m hastextarea {
-      .van-field__control {
-        min-height: 60px;
-      }
+  &--hastextarea {
+    .van-field__control {
+      min-height: 60px;
+    }
+  }
+
+  &--nolabel {
+    .van-cell__title {
+      display: none;
     }
 
-    @m nolabel {
-      .van-cell__title {
-        display: none;
-      }
-
-      .van-cell__value {
-        width: 100%;
-        padding-left: 0;
-      }
+    .van-cell__value {
+      width: 100%;
+      padding-left: 0;
     }
+  }
 
-    @m disabled {
-      .van-field__control {
-        color: $c-gray-dark;
-      }
+  &--disabled {
+    .van-field__control {
+      color: $c-gray-dark;
     }
+  }
 
-    @m error {
-      .van-field__control {
+  &--error {
+    .van-field__control {
+      &,
+      &::placeholder {
         color: $c-red;
       }
     }
+  }
 
-    @m border {
-      .van-field__control {
-        padding-left: 10px;
-      }
-
-      &::after {
-        border-radius: 2px;
-        @mixin border-retina (top, right, bottom, left);
-      }
-
-      &:last-child::after {
-        @mixin border-retina (bottom);
-      }
+  &--border {
+    .van-field__control {
+      padding-left: 10px;
     }
 
-    @m autosize {
-      .van-field__control {
-        min-height: 0px;
-      }
+    &::after {
+      border-radius: 2px;
+      @mixin border-retina (top, right, bottom, left);
     }
 
-    .van-cell__title,
-    .van-cell__value {
-      float: none;
-      box-sizing: border-box;
+    &:last-child::after {
+      @mixin border-retina (bottom);
     }
+  }
 
-    .van-cell__title {
-      width: 90px;
-      position: absolute;
-      top: 10px;
-      left: 0;
+  &--autosize {
+    .van-field__control {
+      min-height: 0px;
     }
+  }
 
-    .van-cell__value {
-      width: 100%;
-      padding-left: 90px;
-    }
+  &__control {
+    border: 0;
+    font-size: 14px;
+    line-height: 24px;
+    height: 24px;
+    padding: 0;
+    display: block;
+    width: 100%;
+    resize: none;
+    outline: 0;
+  }
 
-    @e control {
-      border: 0;
-      font-size: 14px;
-      line-height: 24px;
-      height: 24px;
-      padding: 0;
-      display: block;
-      width: 100%;
-      resize: none;
-      outline: 0;
-    }
-
-    @e icon {
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate3d(0, -50%, 0);
-      padding: 10px;
-    }
+  &__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    padding: 10px;
   }
 }

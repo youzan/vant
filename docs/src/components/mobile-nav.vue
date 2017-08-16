@@ -62,82 +62,79 @@ export default {
 };
 </script>
 
-<style>
-@component-namespace mobile {
-  @b nav-group {
-    border-radius: 2px;
-    margin-bottom: 15px;
-    background-color: #fff;
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
+<style lang="postcss">
+.mobile-nav-group {
+  border-radius: 2px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10);
 
-    @e basetitle {
-      padding-left: 20px;
+  &__basetitle {
+    padding-left: 20px;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: #333;
+    line-height: 56px;
+    position: relative;
+    user-select: none;
+
+    &--open {
+      color: #999;
     }
 
-    @e title {
-      font-size: 16px;
+    a {
       color: #333;
-      line-height: 56px;
-      position: relative;
+      display: block;
       user-select: none;
+      padding-left: 20px;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-      @m open {
-        color: #999;
+      &:active {
+        background: #ECECEC;
       }
 
-      a {
-        color: #333;
-        display: block;
-        user-select: none;
-        padding-left: 20px;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
-        &:active {
-          background: #ECECEC;
-        }
-
-        > p {
-          border-top: 1px solid #e5e5e5;
-        }
-      }
-
-      .van-icon-arrow {
-        position: absolute;
-        font-size: 12px;
-        line-height: 1;
-        top: 24px;
-        right: 20px;
+      > p {
+        border-top: 1px solid #e5e5e5;
       }
     }
 
-    @e list-wrapper {
-      height: 0;
-      overflow: hidden;
-
-      @m open {
-        height: auto;
-      }
-    }
-
-    @e list {
-      transform: translateY(-50%);
-      transition: transform .2s ease-out;
-
-      @m open {
-        transform: translateY(0);
-      }
-    }
-
-    li {
-      list-style: none;
-    }
-
-    ul {
-      padding: 0;
-      margin: 0;
-      overflow: hidden;
+    .van-icon-arrow {
+      position: absolute;
+      font-size: 12px;
+      line-height: 1;
+      top: 24px;
+      right: 20px;
     }
   }
-}
 
+  &__list-wrapper {
+    height: 0;
+    overflow: hidden;
+
+    &--open {
+      height: auto;
+    }
+  }
+
+  &__list {
+    transform: translateY(-50%);
+    transition: transform .2s ease-out;
+
+    &--open {
+      transform: translateY(0);
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+}
 </style>

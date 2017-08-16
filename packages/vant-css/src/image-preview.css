@@ -1,0 +1,34 @@
+@import './swipe.css';
+
+.van-image-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  &__image {
+    display: block;
+    position: absolute;
+    left: 0;
+
+    &--center {
+      width: 100%;
+      height: auto;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
+    }
+  }
+
+  .van-image-preview__image--big {
+    height: 100%;
+    width: auto;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  .van-swipe {
+    height: 100%;
+  }
+}

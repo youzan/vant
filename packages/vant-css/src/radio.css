@@ -1,50 +1,48 @@
 @import "./common/var.css";
 
-@component-namespace van {
-  @b radio {
-    overflow: hidden;
+.van-radio {
+  overflow: hidden;
 
-    @m disabled {
-      .van-icon {
-        color: #d1dbe5;
-      }
-    }
+  &__input {
+    position: relative;
+    height: 22px;
+    float: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-    @e input {
-      position: relative;
-      height: 22px;
-      float: left;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
+  &__control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    opacity: 0;
+    margin: 0;
+  }
 
-    @e control {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 22px;
-      height: 22px;
-      opacity: 0;
-      margin: 0;
-    }
+  &__label {
+    line-height: 22px;
+    display: block;
+    margin-left: 37px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 
-    @e label {
-      line-height: 22px;
-      display: block;
-      margin-left: 37px;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    }
+  .van-icon {
+    font-size: 22px;
+    line-height: 1;
+  }
 
+  .van-icon-checked {
+    color: $c-green;
+  }
+
+  .van-icon-check {
+    color: $c-gray-dark;
+  }
+
+  &--disabled {
     .van-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .van-icon-checked {
-      color: $c-green;
-    }
-
-    .van-icon-check {
-      color: $c-gray-dark;
+      color: #d1dbe5;
     }
   }
 }
