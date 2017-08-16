@@ -37,6 +37,10 @@ export default {
     },
     lockOnScroll: {
       default: true
+    },
+    zIndex: {
+      type: [String, Number],
+      default: 2500
     }
   },
 
