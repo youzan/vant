@@ -7,8 +7,7 @@
  * 4. 构建每个组件对应的 [component].js
  * 5. 构建 vant-css
  * 6. 生成每个组件目录下的 style 入口
- * 7. 编译 utils
- * 8. 打包 JS 文件：vant.js && vant.min.js
+ * 7. 打包 JS 文件：vant.js && vant.min.js
  */
 
 const fs = require('fs');
@@ -17,32 +16,27 @@ const components = require('../../components.json');
 const chalk = require('chalk');
 require('shelljs/global');
 
-// 1. clean dir
-log('Starting', 'clean');
-exec('npm run clean --silent');
-log('Finished', 'clean');
+// 1. lint 
+log('Starting', 'lint');
+exec('npm run lint --silent');
+log('Finished', 'lint');
 
 // 2. build entry
 log('Starting', 'build:entry');
 exec('npm run build:file --silent');
 log('Finished', 'build:entry');
 
-// 3. lint 
-log('Starting', 'lint');
-exec('npm run lint --silent');
-log('Finished', 'lint');
-
-// 4. build [component].js
+// 3. build [component].js
 log('Starting', 'build:component');
 exec('npm run build:components --silent');
 log('Finished', 'build:component');
 
-// 5. build vant-css
+// 4. build vant-css
 log('Starting', 'build:vant-css');
 exec('npm run build:vant-css --silent');
 log('Finished', 'build:vant-css');
 
-// 6. build style entrys
+// 5. build style entrys
 log('Starting', 'build:style-entries');
 Object.keys(components).forEach((componentName) => {
   const dir = path.join(__dirname, '../../lib/', componentName, '/style');
@@ -57,17 +51,10 @@ Object.keys(components).forEach((componentName) => {
 });
 log('Finished', 'build:style-entries');
 
-// 7. build utils 
-log('Starting', 'build:utils');
-exec('cross-env BABEL_ENV=utils babel packages/utils --out-dir lib/utils');
-exec('cross-env BABEL_ENV=utils babel packages/mixins --out-dir lib/mixins');
-log('Finished', 'build:utils');
-
-// 8. build vant.js 
+// 6. build vant.js 
 log('Starting', 'build:vant');
 exec('npm run build:vant --silent');
 log('Finished', 'build:vant');
-
 
 // helpers
 function log(status, action, breakLine) {
