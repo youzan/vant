@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Dialog from './dialog.vue';
-import merge from '../../utils/merge';
 
 const DialogConstructor = Vue.extend(Dialog);
 
@@ -20,10 +19,14 @@ const defaultCallback = action => {
 };
 
 const initInstance = () => {
+  console.log('init instance');
   instance = new DialogConstructor({
     el: document.createElement('div')
   });
 
+  instance.$on('input', value => {
+    instance.value = value;
+  })
   instance.callback = defaultCallback;
 };
 
@@ -34,9 +37,10 @@ const showNextDialog = () => {
 
   /* istanbul ignore else */
   if (!instance.value && dialogQueue.length > 0) {
+    console.log('shift instance');
     currentDialog = dialogQueue.shift();
 
-    const options = currentDialog.options;
+    const { options } = currentDialog;
 
     for (const prop in options) {
       /* istanbul ignore else */
@@ -45,22 +49,17 @@ const showNextDialog = () => {
       }
     }
 
-    if (options.callback === undefined) {
-      instance.callback = defaultCallback;
-    }
-
+    instance.callback = options.callback || defaultCallback;
+    instance.value = true;
     document.body.appendChild(instance.$el);
-
-    Vue.nextTick(() => {
-      instance.value = true;
-    });
   }
 };
 
 var DialogBox = options => {
   return new Promise((resolve, reject) => { // eslint-disable-line
+    console.log('push instance');
     dialogQueue.push({
-      options: merge({ ...options }),
+      options: { ...options },
       callback: options.callback,
       resolve: resolve,
       reject: reject
@@ -71,23 +70,25 @@ var DialogBox = options => {
 };
 
 DialogBox.alert = function(options) {
-  return DialogBox(merge({
+  return DialogBox({
     type: 'alert',
     title: '',
     message: '',
     closeOnClickOverlay: false,
-    showCancelButton: false
-  }, options));
+    showCancelButton: false,
+    ...options
+  });
 };
 
 DialogBox.confirm = function(options) {
-  return DialogBox(merge({
+  return DialogBox({
     type: 'confirm',
     title: '',
     message: '',
     closeOnClickOverlay: true,
-    showCancelButton: true
-  }, options));
+    showCancelButton: true,
+    ...options
+  });
 };
 
 DialogBox.close = function() {
