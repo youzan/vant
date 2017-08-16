@@ -547,12 +547,6 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-external-helpers@^6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-external-helpers/-/babel-plugin-external-helpers-6.22.0.tgz#2285f48b02bd5dede85175caf8c62e86adccefa1"
-  dependencies:
-    babel-runtime "^6.22.0"
-
 babel-plugin-module-resolver@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-module-resolver/-/babel-plugin-module-resolver-2.7.1.tgz#18be3c42ddf59f7a456c9e0512cd91394f6e4be1"
@@ -7593,9 +7587,3 @@ zan-doc@0.1.12:
     markdown-it "^8.3.1"
     markdown-it-container "^2.0.0"
     node-watch "^0.5.5"
-
-zan-rollup-plugin-alias@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/zan-rollup-plugin-alias/-/zan-rollup-plugin-alias-1.0.1.tgz#5004b659cdac960a83d75d4b3f8480b3982fbdd8"
-  dependencies:
-    slash "^1.0.0"

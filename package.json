@@ -52,7 +52,6 @@
     "babel-cli": "^6.14.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
-    "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -103,7 +102,6 @@
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.5.9",
     "vue": "^2.4.2",
-    "vue-hot-reload-api": "^2.1.0",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.0.4",
     "vue-markdown-loader": "^2.0.0",
@@ -111,11 +109,9 @@
     "vue-sfc-compiler": "^0.0.1",
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.4.2",
-    "vue-template-es2015-compiler": "^1.5.3",
     "webpack": "^3.5.4",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
-    "zan-doc": "0.1.12",
-    "zan-rollup-plugin-alias": "1.0.1"
+    "zan-doc": "0.1.12"
   }
 }

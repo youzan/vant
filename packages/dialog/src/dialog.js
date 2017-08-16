@@ -19,7 +19,6 @@ const defaultCallback = action => {
 };
 
 const initInstance = () => {
-  console.log('init instance');
   instance = new DialogConstructor({
     el: document.createElement('div')
   });
@@ -37,7 +36,6 @@ const showNextDialog = () => {
 
   /* istanbul ignore else */
   if (!instance.value && dialogQueue.length > 0) {
-    console.log('shift instance');
     currentDialog = dialogQueue.shift();
 
     const { options } = currentDialog;
@@ -57,7 +55,6 @@ const showNextDialog = () => {
 
 var DialogBox = options => {
   return new Promise((resolve, reject) => { // eslint-disable-line
-    console.log('push instance');
     dialogQueue.push({
       options: { ...options },
       callback: options.callback,
