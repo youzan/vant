@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 const path = require('path');
-const compiler = require('./sfc-compiler');
+const compiler = require('vue-sfc-compiler');
 const libDir = path.resolve(__dirname, '../../lib');
 const srcDir = path.resolve(__dirname, '../../packages');
 require('shelljs/global');
