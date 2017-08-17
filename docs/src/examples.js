@@ -2,7 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesApp';
 import routes from './router.config';
-import ZanUI from 'src/index';
+import ZanUI from 'packages/index';
 import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
 

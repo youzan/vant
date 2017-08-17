@@ -1,6 +1,6 @@
 <template>
   <transition name="actionsheet-float">
-    <div class="van-actionsheet" :class="[ title ? 'van-actionsheet--withtitle' : '' ]" v-show="currentValue">
+    <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="currentValue">
       <div class="van-actionsheet__header" v-if="title">
         <h3 v-text="title"></h3>
         <van-icon name="close" @click.stop="currentValue = false"></van-icon>
@@ -17,9 +17,7 @@
               <span class="van-actionsheet__name">{{ item.name }}</span>
               <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
             </template>
-            <template v-else>
-              <van-loading class="van-actionsheet__loading" type="circle" color="black"></van-loading>
-            </template>
+            <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
           </li>
         </ul>
         <a class="van-actionsheet__button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
@@ -34,9 +32,9 @@
 </template>
 
 <script>
-import Popup from 'src/mixins/popup';
-import VanLoading from 'packages/loading';
-import VanIcon from 'packages/icon';
+import Popup from '../../mixins/popup';
+import VanLoading from '../../loading';
+import VanIcon from '../../icon';
 
 export default {
   name: 'van-actionsheet',

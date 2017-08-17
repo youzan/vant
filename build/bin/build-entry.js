@@ -4,8 +4,8 @@ var render = require('json-templater/string');
 var uppercamelcase = require('uppercamelcase');
 var path = require('path');
 
-var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
-var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
+var OUTPUT_PATH = path.join(__dirname, '../../packages/index.js');
+var IMPORT_TEMPLATE = 'import {{name}} from \'./{{package}}\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
 var MAIN_TEMPLATE = `{{include}}
 

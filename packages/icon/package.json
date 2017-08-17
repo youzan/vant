@@ -1,9 +1,0 @@
-{
-  "name": "@youzan/van-icon",
-  "version": "0.0.1",
-  "description": "van-icon",
-  "main": "index.js",
-  "author": "zhangmin <zhangmin@youzan.com>",
-  "devDependencies": {},
-  "dependencies": {}
-}

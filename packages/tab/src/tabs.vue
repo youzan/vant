@@ -42,7 +42,7 @@
 
 <script>
   import swipe from './swipe';
-  import translateUtil from 'src/utils/transition';
+  import translateUtil from '../../utils/transition';
 
   export default {
     name: 'van-tabs',

@@ -43,8 +43,8 @@
 
 <script>
 const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
-import vanCell from 'packages/cell';
-import vanIcon from 'packages/icon';
+import vanCell from '../../cell';
+import vanIcon from '../../icon';
 
 export default {
   name: 'van-field',

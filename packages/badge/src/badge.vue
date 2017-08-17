@@ -1,13 +1,13 @@
 <template>
-    <a
-      class="van-badge"
-      :class="{ 'van-badge--select': isSelect }"
-      :href="url"
-      @click="handleClick">
-      <div class="van-badge__active"></div>
-      <div v-if="info" class="van-badge__info">{{info}}</div>
-      {{title}}
-    </a>
+  <a
+    class="van-badge"
+    :class="{ 'van-badge--select': isSelect }"
+    :href="url"
+    @click="handleClick">
+    <div class="van-badge__active"></div>
+    <div v-if="info" class="van-badge__info">{{info}}</div>
+    {{title}}
+  </a>
 </template>
 
 <script>

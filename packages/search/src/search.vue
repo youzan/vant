@@ -20,8 +20,8 @@
 </template>
 
 <script>
-  import VanIcon from 'packages/icon';
-  import Clickoutside from 'src/utils/clickoutside';
+  import VanIcon from '../../icon';
+  import Clickoutside from '../../utils/clickoutside';
 
   export default {
     name: 'van-search',

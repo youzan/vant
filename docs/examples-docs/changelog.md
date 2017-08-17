@@ -90,7 +90,7 @@
 
 **非兼容更新和新特性:**
 
-- src/utils目录支持SSR [\#51](https://github.com/youzan/vant/pull/51) ([cookfront](https://github.com/cookfront))
+- packages/utils目录支持SSR [\#51](https://github.com/youzan/vant/pull/51) ([cookfront](https://github.com/cookfront))
 
 ## [v0.6.3](https://github.com/youzan/vant/tree/v0.6.3) (2017-07-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.6.2...v0.6.3)

@@ -1,7 +1,7 @@
 require('babel-polyfill');
 
 require('babel-core/register')({
-  presets: [require('babel-preset-es2015')]
+  presets: [require('babel-preset-env')]
 });
 
 var webpackConfig = require('./get-webpack-conf');
