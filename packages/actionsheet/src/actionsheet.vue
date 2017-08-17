@@ -10,7 +10,7 @@
           v-for="(item, index) in actions"
           :key="index"
           :class="['van-actionsheet__item', item.className, { 'van-actionsheet__item--loading': item.loading }]"
-          @click.stop="handleItemClick(item)">
+          @click.stop="onClickItem(item)">
           <template v-if="!item.loading">
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
@@ -64,7 +64,7 @@ export default {
   },
 
   methods: {
-    handleItemClick(item) {
+    onClickItem(item) {
       if (typeof item.callback === 'function') {
         item.callback(item);
       }

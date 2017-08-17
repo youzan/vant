@@ -7272,9 +7272,9 @@ vue-router@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.7.0.tgz#16d424493aa51c3c8cce8b7c7210ea4c3a89aff1"
 
-vue-sfc-compiler@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vue-sfc-compiler/-/vue-sfc-compiler-0.0.1.tgz#389221eb198efaa8d7ad6a7e8c3f57d10ea952ed"
+vue-sfc-compiler@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/vue-sfc-compiler/-/vue-sfc-compiler-0.0.2.tgz#f6b4c16f4449459cce83a9852266b753565e7b7c"
   dependencies:
     vue-template-compiler "^2.4.2"
     vue-template-es2015-compiler "^1.5.3"
