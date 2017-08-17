@@ -1,40 +1,35 @@
 <template>
-  <transition name="actionsheet-float">
-    <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="currentValue">
+  <transition name="van-actionsheet-float">
+    <div :class="['van-actionsheet', { 'van-actionsheet--withtitle': title }]" v-show="value">
       <div class="van-actionsheet__header" v-if="title">
-        <h3 v-text="title"></h3>
-        <van-icon name="close" @click.stop="currentValue = false"></van-icon>
+        <h3 v-text="title" />
+        <van-icon name="close" @click.stop="$emit('input', false)" />
       </div>
-      <template v-if="!title">
-        <ul class="van-actionsheet__list">
-          <li
-            v-for="(item, index) in actions"
-            :key="index"
-            class="van-actionsheet__item"
-            :class="[item.className, item.loading ? 'van-actionsheet__item--loading' : '']"
-            @click.stop="handleItemClick(item)">
-            <template v-if="!item.loading">
-              <span class="van-actionsheet__name">{{ item.name }}</span>
-              <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
-            </template>
-            <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
-          </li>
-        </ul>
-        <a class="van-actionsheet__button" @click.stop="currentValue = false" v-if="cancelText">{{ cancelText }}</a>
-      </template>
-      <template v-else>
-        <div class="van-actionsheet__content">
-          <slot></slot>
-        </div>
-      </template>
+      <ul v-if="!title" class="van-actionsheet__list">
+        <li
+          v-for="(item, index) in actions"
+          :key="index"
+          :class="['van-actionsheet__item', item.className, { 'van-actionsheet__item--loading': item.loading }]"
+          @click.stop="handleItemClick(item)">
+          <template v-if="!item.loading">
+            <span class="van-actionsheet__name">{{ item.name }}</span>
+            <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+          </template>
+          <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
+        </li>
+      </ul>
+      <div class="van-actionsheet__item van-actionsheet__cancel" @click.stop="$emit('input', false)" v-if="cancelText">{{ cancelText }}</div>
+      <div class="van-actionsheet__content" v-else>
+        <slot></slot>
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
 import Popup from '../../mixins/popup';
-import VanLoading from '../../loading';
 import VanIcon from '../../icon';
+import VanLoading from '../../loading';
 
 export default {
   name: 'van-actionsheet',
@@ -42,12 +37,12 @@ export default {
   mixins: [Popup],
 
   components: {
-    VanLoading,
-    VanIcon
+    [VanIcon.name]: VanIcon,
+    [VanLoading.name]: VanLoading
   },
 
   props: {
-    value: {},
+    value: Boolean,
     actions: {
       type: Array,
       default: () => []
@@ -64,32 +59,13 @@ export default {
     }
   },
 
-  data() {
-    return {
-      currentValue: this.value
-    };
-  },
-
-  watch: {
-    currentValue(val) {
-      this.$emit('input', val);
-    },
-
-    value(val) {
-      this.currentValue = val;
-    }
-  },
-
   mounted() {
-    if (this.value) {
-      this.currentValue = true;
-      this.open();
-    }
+    this.value && this.open();
   },
 
   methods: {
     handleItemClick(item) {
-      if (item.callback && typeof item.callback === 'function') {
+      if (typeof item.callback === 'function') {
         item.callback(item);
       }
     }
