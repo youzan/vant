@@ -3,7 +3,7 @@ import Vue from 'vue';
 
 describe('Dialog', () => {
   afterEach(() => {
-    const el = document.querySelector('.van-dialog-wrapper');
+    const el = document.querySelector('.van-dialog');
     if (!el) return;
     if (el.parentNode) {
       el.parentNode.removeChild(el);
@@ -20,7 +20,7 @@ describe('Dialog', () => {
       done();
     });
 
-    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    expect(document.querySelector('.van-dialog')).to.exist;
     expect(document.querySelector('.van-dialog__cancel').style.display).to.equal('none');
 
     setTimeout(() => {
@@ -34,7 +34,7 @@ describe('Dialog', () => {
       message: 'message'
     });
 
-    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    expect(document.querySelector('.van-dialog')).to.exist;
   });
 
   it('create a confirm dialog with callback', (done) => {
@@ -47,7 +47,7 @@ describe('Dialog', () => {
       }
     });
 
-    expect(document.querySelector('.van-dialog-wrapper')).to.exist;
+    expect(document.querySelector('.van-dialog')).to.exist;
     setTimeout(() => {
       document.querySelector('.van-dialog__cancel').click();
       expect(dialogAction).to.equal('cancel');

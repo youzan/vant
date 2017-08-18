@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v0.7.10](https://github.com/youzan/vant/tree/v0.7.10) (2017-08-16)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.8...v0.7.10)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- fix: 修复popup和dialog同时出现时，几率出现dialog被挡住的情况 [\#75](https://github.com/youzan/vant/pull/75) ([pangxie1991](https://github.com/pangxie1991))
+- 修复：popup滚动穿透 [\#73](https://github.com/youzan/vant/pull/73) ([cookfront](https://github.com/cookfront))
+
 ## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
 

@@ -1,4 +1,4 @@
-import merge from 'src/utils/merge';
+import merge from '../../utils/merge';
 import Vue from 'vue';
 
 let context;

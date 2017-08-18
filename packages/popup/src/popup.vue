@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Popup from 'src/mixins/popup';
+import Popup from '../../mixins/popup';
 export default {
   name: 'van-popup',
 

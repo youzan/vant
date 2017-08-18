@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { addClass } from 'src/utils/dom';
+import { addClass } from '../../utils/dom';
 import PopupContext from './popup-context';
 
 const getModal = function() {

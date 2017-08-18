@@ -11,7 +11,7 @@
  * <van-button size="large" type="primary">按钮</van-button>
  */
 
-import VanLoading from 'packages/loading';
+import VanLoading from '../../loading';
 
 const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
 const ALLOWED_TYPE = ['default', 'danger', 'primary'];
