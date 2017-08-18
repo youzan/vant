@@ -4,26 +4,23 @@
 
 .van-actionsheet {
   position: fixed;
-  width: 100%;
-  top: auto;
+  left: 0;
+  right: 0;
   bottom: 0;
-  right: auto;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0);
-  backface-visibility: hidden;
+  color: $c-black;
   transition: .2s ease-out;
   background-color: #e0e0e0;
+  backface-visibility: hidden;
 
   &--withtitle {
     background-color: $c-white;
   }
 
   &__item {
-    line-height: 50px;
     height: 50px;
-    text-align: center;
-    color: $c-black;
+    line-height: 50px;
     font-size: 16px;
+    text-align: center;
     position: relative;
     background-color: $c-white;
 
@@ -33,28 +30,20 @@
   }
 
   &__subname {
-    color: $c-gray-darker;
     font-size: 12px;
+    color: $c-gray-darker;
   }
 
   &__loading {
-    margin: 0 auto;
     display: inline-block;
   }
 
-  &__button {
-    display: block;
+  &__cancel {
     margin-top: 5px;
-    line-height: 50px;
-    color: $c-black;
-    font-size: 16px;
-    text-align: center;
-    background-color: $c-white;
   }
 
   &__header {
     line-height: 44px;
-    color: $c-black;
     text-align: center;
     position: relative;
 
@@ -63,16 +52,16 @@
     }
 
     .van-icon-close {
+      top: 11px;
+      right: 15px;
       position: absolute;
       font-size: 22px;
       line-height: 22px;
-      top: 11px;
-      right: 15px;
     }
   }
-}
 
-.actionsheet-float-enter,
-.actionsheet-float-leave-active {
-  transform: translate3d(-50%, 100%, 0);
+  &-float-enter,
+  &-float-leave-active {
+    transform: translate3d(0, 100%, 0);
+  }
 }

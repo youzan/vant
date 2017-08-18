@@ -24,6 +24,7 @@
     bottom: 0;
     background-color: #000;
     opacity: 0;
+    border-radius: inherit; /* inherit parent's border radius */
   }
 
   &:not(.is-disabled):active::after {
