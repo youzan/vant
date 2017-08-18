@@ -37,7 +37,7 @@ import Swipe from './swipe';
 import SwipeItem from './swipe-item';
 import DatetimePicker from './datetime-picker';
 
-const version = '0.8.0';
+const version = '0.8.1';
 const components = [
   Button,
   Switch,

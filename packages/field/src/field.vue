@@ -9,7 +9,8 @@
       'van-field--disabled': disabled,
       'van-field--error': error,
       'van-field--border': border,
-      'van-field--autosize': autosize
+      'van-field--autosize': autosize,
+      'van-field--has-icon': showIcon
     }">
     <textarea
       v-if="type === 'textarea'"
@@ -37,7 +38,11 @@
       :maxlength="maxlength"
       :disabled="disabled"
       :readonly="readonly">
-    <van-icon v-if="icon && currentValue" :name="icon" class="van-field__icon" @click="onIconClick"></van-icon>
+    <div v-if="showIcon" class="van-field__icon" @click="onIconClick">
+      <slot name="icon">
+        <van-icon :name="icon"></van-icon>
+      </slot>
+    </div>
   </van-cell>
 </template>
 
@@ -98,6 +103,17 @@ export default {
     currentValue(val) {
       if (this.autosize && this.type === 'textarea') this.sizeAdjust();
       this.$emit('input', val);
+    }
+  },
+
+  computed: {
+    showIcon() {
+      // 有icon的slot，就认为一直展示
+      if (this.$slots.icon) {
+        return true;
+      }
+
+      return this.icon && this.currentValue;
     }
   },
 

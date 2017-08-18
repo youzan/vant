@@ -47,7 +47,15 @@ export default {
     :on-icon-click="onIconClick"
     @blur="onFieldBlur"
     required></van-field>
-  <van-field type="password" label="密码：" placeholder="请输入密码" required></van-field>
+  <van-field
+    type="password"
+    label="密码："
+    placeholder="请输入密码"
+    required>
+    <template slot="icon">
+      <van-icon name="search"></van-icon>
+    </template>
+  </van-field>
   <van-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></van-field>
 </van-cell-group>
 ```
@@ -131,4 +139,10 @@ export default {
 | autosize | 自动调整高度(仅支持textarea) | `boolean`  | `false` |  `true`, `false` |
 | icon | 输入框尾部图标 | `string`  |  |  icon中支持的类型 |
 | onIconClick | 点击图标的回调函数 | `function`  |  |  |
+
+### Slot
+
+| name       | 描述      |
+|-----------|-----------|
+| icon | 自定义icon |
 

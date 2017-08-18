@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.8.0](https://github.com/youzan/vant/tree/v0.8.0) (2017-08-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.10...v0.8.0)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- Optimize component building, reduce dist file size  [\#74](https://github.com/youzan/vant/pull/74) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.7.10](https://github.com/youzan/vant/tree/v0.7.10) (2017-08-16)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.8...v0.7.10)
 
