@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-## Datetime Picker 时间选择
+## DatetimePicker 时间选择
 
 ### 代码演示
 
