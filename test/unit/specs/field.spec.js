@@ -120,10 +120,10 @@ describe('Field', () => {
     textarea.trigger('input');
 
     wrapper.update();
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.data().currentValue).to.equal('test');
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
       done();
-    });
+    }, 500);
   });
 });
