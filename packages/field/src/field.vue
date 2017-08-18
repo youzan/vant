@@ -101,7 +101,9 @@ export default {
     },
 
     currentValue(val) {
-      if (this.autosize && this.type === 'textarea') this.sizeAdjust();
+      if (this.autosize && this.type === 'textarea') {
+        this.$nextTick(() => this.sizeAdjust());
+      }
       this.$emit('input', val);
     }
   },
