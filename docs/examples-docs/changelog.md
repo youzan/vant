@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.8.3](https://github.com/youzan/vant/tree/v0.8.3) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.1...v0.8.3)
+
+**修复:**
+
+- fix: dialog wrong z-index  [\#77](https://github.com/youzan/vant/pull/77) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.8.1](https://github.com/youzan/vant/tree/v0.8.1) (2017-08-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.0...v0.8.1)
 
