@@ -1,9 +1,23 @@
 ## 更新日志
 
+## [v0.8.1](https://github.com/youzan/vant/tree/v0.8.1) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.0...v0.8.1)
+
+**非兼容更新和新特性:**
+
+- field 增加icon slot支持 [\#76](https://github.com/youzan/vant/pull/76) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v0.8.0](https://github.com/youzan/vant/tree/v0.8.0) (2017-08-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.10...v0.8.0)
+
+**非兼容更新和新特性:**
+
+- Optimize component building, reduce dist file size  [\#74](https://github.com/youzan/vant/pull/74) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.7.10](https://github.com/youzan/vant/tree/v0.7.10) (2017-08-16)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.8...v0.7.10)
 
-**合并的 Pull Request (可能有不兼容改动):**
+**修复:**
 
 - fix: 修复popup和dialog同时出现时，几率出现dialog被挡住的情况 [\#75](https://github.com/youzan/vant/pull/75) ([pangxie1991](https://github.com/pangxie1991))
 - 修复：popup滚动穿透 [\#73](https://github.com/youzan/vant/pull/73) ([cookfront](https://github.com/cookfront))
@@ -11,10 +25,13 @@
 ## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
 
-**合并的 Pull Request (可能有不兼容改动):**
+**非兼容更新和新特性:**
+
+- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
 
 - not require reset.css by default [\#72](https://github.com/youzan/vant/pull/72) ([chenjiahan](https://github.com/chenjiahan))
-- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
