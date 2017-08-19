@@ -64,6 +64,33 @@ export default {
 ```
 :::
 
+#### 隐藏指示器
+
+需要设置`show-indicators`属性为`false`，即会隐藏指示器。
+
+:::demo 隐藏指示器
+```html
+<van-swipe :show-indicators="false">
+  <van-swipe-item v-for="(img, index) in autoImages" :key="index">
+    <img v-lazy="img" alt="">
+  </van-swipe-item>
+</van-swipe>
+
+<script>
+export default {
+  data() {
+    return {
+      autoImages: [
+        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
+        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
+      ]
+    };
+  }
+};
+</script>
+```
+:::
+
 #### 自动轮播
 
 需要设置`auto-play`属性为`true`，即会自动轮播。
