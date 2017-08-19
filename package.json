@@ -73,6 +73,8 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "gh-pages": "^1.0.0",
     "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-postcss": "^7.0.0",
     "gulp-util": "^3.0.8",
     "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.29.0",
