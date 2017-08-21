@@ -169,8 +169,11 @@ export default {
     doAfterClose() {
       this.closing = false;
       PopupManager.closeModal(this._popupId);
-      document.removeEventListener('touchstart', this.recordPosition, false);
-      document.removeEventListener('touchmove', this.watchTouchMove, false);
+
+      if (this.preventScroll) {
+        document.removeEventListener('touchstart', this.recordPosition, false);
+        document.removeEventListener('touchmove', this.watchTouchMove, false);
+      }
     }
   },
 
