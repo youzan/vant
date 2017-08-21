@@ -95,6 +95,14 @@ export default {
     };
   },
 
+  mounted() {
+    if (this.autosize && this.type === 'textarea') {
+      const el = this.$refs.textareaElement;
+      el.style.height = el.scrollHeight + 'px';
+      el.style.overflowY = 'hidden';
+    }
+  },
+
   watch: {
     value(val) {
       this.currentValue = val;
@@ -102,7 +110,7 @@ export default {
 
     currentValue(val) {
       if (this.autosize && this.type === 'textarea') {
-        this.$nextTick(() => this.sizeAdjust());
+        this.$nextTick(this.sizeAdjust);
       }
       this.$emit('input', val);
     }
@@ -125,12 +133,9 @@ export default {
     },
 
     sizeAdjust() {
-      const textareaElement = this.$refs.textareaElement;
-      const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
-          parseInt(textareaElement.style.paddingTop, 10)) || 0;
-      // 需要先设为0， 才可以让scrollHeight正确计算。
-      textareaElement.style.height = 0 + 'px';
-      textareaElement.style.height = (textareaElement.scrollHeight - textAreaDiff) + 'px';
+      const el = this.$refs.textareaElement;
+      el.style.height = 'auto';
+      el.style.height = el.scrollHeight + 'px';
     },
 
     handleInputFocus() {
