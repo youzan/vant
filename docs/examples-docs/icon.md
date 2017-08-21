@@ -1,5 +1,7 @@
 <style>
 .demo-icon {
+  font-size: 0;
+
   .examples {
     max-height: none;
   }
@@ -7,17 +9,49 @@
   .van-col {
     text-align: center;
     height: 120px;
+    float: none;
+    display: inline-block;
   }
 
   .van-icon {
     font-size: 45px;
-    display: block;
     margin: 15px 0;
+    display: block;
+  }
+
+  span {
+    font-size: 14px;
   }
 } 
 </style>
 
+<script>
+import Vue from 'vue';
+import { Icon } from 'packages';
+
+Vue.component('van-icon-inner', Icon);
+Vue.component('van-icon', {
+  props: ['name'],
+
+  render(h) {
+    return <van-col span="8">
+      <van-icon-inner name={this.name}></van-icon-inner>
+      <span>{this.name}</span>
+    </van-col>
+  }
+});
+
+export default {};
+</script>
+
 ## Icon 图标
+
+### 使用指南
+``` javascript
+import { Icon } from 'vant';
+
+Vue.component(Icon.name, Icon);
+```
 
 ### 代码演示
 
@@ -27,318 +61,91 @@
 
 :::demo 基础用法
 ```html
-<van-icon name="qr-invalid" style="text-align: center"></van-icon>
+<van-icon name="success"></van-icon>
 ```
 :::
 
 #### 所有Icons
 
-以下目前有的所有图标及其名称：
+以下为目前所有的图标：
 
 :::demo 所有Icon
 ```html
-<van-row>
-  <van-col span="8">
-    <van-icon name="qr-invalid"></van-icon>
-    <span>qr-invalid</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="qr"></van-icon>
-    <span>qr</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="exchange"></van-icon>
-    <span>exchange</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="close"></van-icon>
-    <span>close</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="location"></van-icon>
-    <span>location</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="upgrade"></van-icon>
-    <span>upgrade</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="check"></van-icon>
-    <span>check</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="checked"></van-icon>
-    <span>checked</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="like-o"></van-icon>
-    <span>like-o</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="like" style="color: red;"></van-icon>
-    <span>like</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="chat"></van-icon>
-    <span>chat</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="shop"></van-icon>
-    <span>shop</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="photograph"></van-icon>
-    <span>photograph</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="add"></van-icon>
-    <span>add</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="add2"></van-icon>
-    <span>add2</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="photo"></van-icon>
-    <span>photo</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="edit"></van-icon>
-    <span>edit</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="passed"></van-icon>
-    <span>passed</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="cart"></van-icon>
-    <span>cart</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="arrow"></van-icon>
-    <span>arrow</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="gift"></van-icon>
-    <span>gift</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="search"></van-icon>
-    <span>search</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="clear"></van-icon>
-    <span>clear</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="success"></van-icon>
-    <span>success</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="fail"></van-icon>
-    <span>fail</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="contact"></van-icon>
-    <span>contact</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="wechat"></van-icon>
-    <span>wechat</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="alipay"></van-icon>
-    <span>alipay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="password-view"></van-icon>
-    <span>password-view</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="wap-nav"></van-icon>
-    <span>wap-nav</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="password-not-view"></van-icon>
-    <span>password-not-view</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="wap-home"></van-icon>
-    <span>wap-home</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="ecard-pay"></van-icon>
-    <span>ecard-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="balance-pay"></van-icon>
-    <span>balance-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="peer-pay"></van-icon>
-    <span>peer-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="credit-pay"></van-icon>
-    <span>credit-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="debit-pay"></van-icon>
-    <span>debit-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="other-pay"></van-icon>
-    <span>other-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="cart"></van-icon>
-    <span>cart</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="browsing-history"></van-icon>
-    <span>browsing-history</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="goods-collect"></van-icon>
-    <span>goods-collect</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="shop-collect"></van-icon>
-    <span>shop-collect</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="receive-gift"></van-icon>
-    <span>receive-gift</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="send-gift"></van-icon>
-    <span>send-gift</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="setting"></van-icon>
-    <span>setting</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="points"></van-icon>
-    <span>points</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="coupon"></van-icon>
-    <span>coupon</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="free-postage"></van-icon>
-    <span>free-postage</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="discount"></van-icon>
-    <span>discount</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="birthday-privilege"></van-icon>
-    <span>birthday-privilege</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="member-day-privilege"></van-icon>
-    <span>member-day-privilege</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="balance-details"></van-icon>
-    <span>balance-details</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="cash-back-record"></van-icon>
-    <span>cash-back-record</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="points-mall"></van-icon>
-    <span>points-mall</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="exchange-record"></van-icon>
-    <span>exchange-record</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="pending-payment"></van-icon>
-    <span>pending-payment</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="pending-orders"></van-icon>
-    <span>pending-orders</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="pending-deliver"></van-icon>
-    <span>pending-deliver</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="logistics"></van-icon>
-    <span>logistics</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="pending-evaluate"></van-icon>
-    <span>pending-evaluate</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="cash-on-deliver"></van-icon>
-    <span>cash-on-deliver</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="gift-card-pay"></van-icon>
-    <span>gift-card-pay</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="underway"></van-icon>
-    <span>underway</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="point-gift"></van-icon>
-    <span>point-gift</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="after-sale"></van-icon>
-    <span>after-sale</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="edit-data"></van-icon>
-    <span>edit-data</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="question"></van-icon>
-    <span>question</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="delete"></van-icon>
-    <span>delete</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="records"></van-icon>
-    <span>records</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="description"></van-icon>
-    <span>description</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="card"></van-icon>
-    <span>card</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="gift-card"></van-icon>
-    <span>gift-card</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="coupon"></van-icon>
-    <span>coupon</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="clock"></van-icon>
-    <span>clock</span>
-  </van-col>
-  <van-col span="8">
-    <van-icon name="gold-coin"></van-icon>
-    <span>gold-coin</span>
-  </van-col>
-</van-row>
+<van-icon name="qr-invalid"></van-icon>
+<van-icon name="qr"></van-icon>
+<van-icon name="exchange"></van-icon>
+<van-icon name="close"></van-icon>
+<van-icon name="location"></van-icon>
+<van-icon name="upgrade"></van-icon>
+<van-icon name="check"></van-icon>
+<van-icon name="checked"></van-icon>
+<van-icon name="like-o"></van-icon>
+<van-icon name="like" style="color: red;"></van-icon>
+<van-icon name="chat"></van-icon>
+<van-icon name="shop"></van-icon>
+<van-icon name="photograph"></van-icon>
+<van-icon name="add"></van-icon>
+<van-icon name="add2"></van-icon>
+<van-icon name="photo"></van-icon>
+<van-icon name="edit"></van-icon>
+<van-icon name="passed"></van-icon>
+<van-icon name="cart"></van-icon>
+<van-icon name="arrow"></van-icon>
+<van-icon name="gift"></van-icon>
+<van-icon name="search"></van-icon>
+<van-icon name="clear"></van-icon>
+<van-icon name="success"></van-icon>
+<van-icon name="fail"></van-icon>
+<van-icon name="contact"></van-icon>
+<van-icon name="wechat"></van-icon>
+<van-icon name="alipay"></van-icon>
+<van-icon name="password-view"></van-icon>
+<van-icon name="wap-nav"></van-icon>
+<van-icon name="password-not-view"></van-icon>
+<van-icon name="wap-home"></van-icon>
+<van-icon name="ecard-pay"></van-icon>
+<van-icon name="balance-pay"></van-icon>
+<van-icon name="peer-pay"></van-icon>
+<van-icon name="credit-pay"></van-icon>
+<van-icon name="debit-pay"></van-icon>
+<van-icon name="other-pay"></van-icon>
+<van-icon name="cart"></van-icon>
+<van-icon name="browsing-history"></van-icon>
+<van-icon name="goods-collect"></van-icon>
+<van-icon name="shop-collect"></van-icon>
+<van-icon name="receive-gift"></van-icon>
+<van-icon name="send-gift"></van-icon>
+<van-icon name="setting"></van-icon>
+<van-icon name="points"></van-icon>
+<van-icon name="coupon"></van-icon>
+<van-icon name="free-postage"></van-icon>
+<van-icon name="discount"></van-icon>
+<van-icon name="birthday-privilege"></van-icon>
+<van-icon name="member-day-privilege"></van-icon>
+<van-icon name="balance-details"></van-icon>
+<van-icon name="cash-back-record"></van-icon>
+<van-icon name="points-mall"></van-icon>
+<van-icon name="exchange-record"></van-icon>
+<van-icon name="pending-payment"></van-icon>
+<van-icon name="pending-orders"></van-icon>
+<van-icon name="pending-deliver"></van-icon>
+<van-icon name="logistics"></van-icon>
+<van-icon name="pending-evaluate"></van-icon>
+<van-icon name="cash-on-deliver"></van-icon>
+<van-icon name="gift-card-pay"></van-icon>
+<van-icon name="underway"></van-icon>
+<van-icon name="point-gift"></van-icon>
+<van-icon name="after-sale"></van-icon>
+<van-icon name="edit-data"></van-icon>
+<van-icon name="question"></van-icon>
+<van-icon name="delete"></van-icon>
+<van-icon name="records"></van-icon>
+<van-icon name="description"></van-icon>
+<van-icon name="card"></van-icon>
+<van-icon name="gift-card"></van-icon>
+<van-icon name="coupon"></van-icon>
+<van-icon name="clock"></van-icon>
+<van-icon name="gold-coin"></van-icon>
 ```
 :::
 
