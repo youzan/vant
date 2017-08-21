@@ -21,6 +21,13 @@
 
 ## Button 按钮
 
+### 使用指南
+``` javascript
+import { Button } from 'vant';
+
+Vue.component(Button.name, Button);
+```
+
 ### 代码演示
 
 #### 按钮类型

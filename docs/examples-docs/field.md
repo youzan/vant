@@ -29,6 +29,13 @@ export default {
 
 表单中`input`或`textarea`的输入框。
 
+### 使用指南
+``` javascript
+import { Field } from 'vant';
+
+Vue.component(Field.name, Field);
+```
+
 ### 代码演示
 
 #### 基础用法

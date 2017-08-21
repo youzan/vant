@@ -43,6 +43,13 @@ export default {
 
 ## Switch 开关
 
+### 使用指南
+``` javascript
+import { Switch } from 'vant';
+
+Vue.component(Switch.name, Switch);
+```
+
 ### 代码演示
 
 #### 基础用法

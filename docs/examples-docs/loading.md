@@ -20,6 +20,13 @@
 
 ## Loading 加载
 
+### 使用指南
+``` javascript
+import { Loading } from 'vant';
+
+Vue.component(Loading.name, Loading);
+```
+
 ### 代码演示
 
 #### 渐变深色spinner

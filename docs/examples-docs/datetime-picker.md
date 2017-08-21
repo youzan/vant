@@ -27,6 +27,13 @@ export default {
 
 ## DatetimePicker 时间选择
 
+### 使用指南
+``` javascript
+import { DatetimePicker } from 'vant';
+
+Vue.component(DatetimePicker.name, DatetimePicker);
+```
+
 ### 代码演示
 
 #### 基础用法

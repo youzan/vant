@@ -22,6 +22,13 @@
 </style>
 ## CellSwipe 滑动单元格
 
+### 使用指南
+``` javascript
+import { CellSwipe } from 'vant';
+
+Vue.component(CellSwipe.name, CellSwipe);
+```
+
 ### 代码演示
 
 #### 基础用法
@@ -32,13 +39,8 @@
   <van-cell-group>
     <van-cell title="单元格1" value="单元格1内容"></van-cell>
   </van-cell-group>
-  
-  <span slot="right" class="swipe-delete-btn">
-      删除
-  </span>
-  <span slot="left" class="swipe-check-btn">
-      选择
-  </span>
+  <span slot="right" class="swipe-delete-btn">删除</span>
+  <span slot="left" class="swipe-check-btn">选择</span>
 </van-cell-swipe>
 ```
 :::
@@ -48,13 +50,13 @@
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| right-width | 右侧滑动按钮宽度 | `number`  |      0     |           |
-| left-width | 左侧滑动按钮宽度 | `number`  |       0    |           |
+| left-width | 左侧滑动按钮宽度 | `number`  | 0 | |
+| right-width | 右侧滑动按钮宽度 | `number`  | 0 | |
 
 ### Slot
 
 | name       | 描述      |
 |-----------|-----------|
 | - | 自定义显示内容 |
-| right | 右侧滑动内容 |
 | left | 左侧滑动内容 |
+| right | 右侧滑动内容 |
