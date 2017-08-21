@@ -29,10 +29,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((route, redirect, next) => {
-  if (route.path !== '/') {
-    window.scrollTo(0, 0);
-  }
-
   const pathname = '/zanui/vue/examples';
   if (isMobile()) {
     window.location.replace(pathname);

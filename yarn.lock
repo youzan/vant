@@ -5163,6 +5163,10 @@ npmlog@^4.0.2:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
@@ -7922,12 +7926,13 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.1.13.tgz#df532b538ba613a4fe39e436ec553de3e7c25918"
+zan-doc@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.2.0.tgz#40b31c4f1cc5ae539853a06b30f1cb479e2edca3"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"
     markdown-it "^8.3.1"
     markdown-it-container "^2.0.0"
     node-watch "^0.5.5"
+    nprogress "^0.2.0"
