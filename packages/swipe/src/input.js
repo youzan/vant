@@ -26,6 +26,7 @@ Input.prototype = Object.create(new EventEmitter());
 extend(Input.prototype, {
   bind: function(host) {
     if (Vue.prototype.$isServer) return;
+    bindEvents(host, 'dragstart', e => e.preventDefault());
     bindEvents(host, 'touchstart mousedown', this.onTouchStart);
     if (this.options.listenMoving) {
       bindEvents(window, 'touchmove mousemove', this.onTouchMove);
