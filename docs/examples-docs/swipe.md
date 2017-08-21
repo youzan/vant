@@ -35,6 +35,13 @@ export default {
 
 ## Swipe 轮播
 
+### 使用指南
+``` javascript
+import { Swipe } from 'vant';
+
+Vue.component(Swipe.name, Swipe);
+```
+
 ### 代码演示
 
 #### 基础用法

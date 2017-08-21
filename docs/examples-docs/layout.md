@@ -28,7 +28,14 @@
 
 ## Layout 布局
 
-主要提供了`van-row`和`van-col`两个组件来进行行列布局。
+提供了`van-row`和`van-col`两个组件来进行行列布局。
+
+### 使用指南
+``` javascript
+import { Layout } from 'vant';
+
+Vue.component(Layout.name, Layout);
+```
 
 ### 代码演示
 

@@ -1,5 +1,12 @@
 ## Card 图文组件
 
+### 使用指南
+``` javascript
+import { Card } from 'vant';
+
+Vue.component(Card.name, Card);
+```
+
 ### 代码演示
 
 #### 基础用法
