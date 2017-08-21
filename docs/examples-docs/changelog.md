@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.8.4](https://github.com/youzan/vant/tree/v0.8.4) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.3...v0.8.4)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- fix: field 计算autosize，需要nextTick [\#78](https://github.com/youzan/vant/pull/78) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.8.3](https://github.com/youzan/vant/tree/v0.8.3) (2017-08-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.1...v0.8.3)
 
