@@ -1,22 +1,16 @@
 <template>
-  <i class="van-icon" :class="'van-icon-' + name" @click="handleIconClick"></i>
+  <i :class="['van-icon', 'van-icon-' + name]" @click="$emit('click', $event)" />
 </template>
 
 <script>
-  export default {
-    name: 'van-icon',
+export default {
+  name: 'van-icon',
 
-    props: {
-      name: {
-        type: String,
-        required: true
-      }
-    },
-
-    methods: {
-      handleIconClick(event) {
-        this.$emit('click', event);
-      }
+  props: {
+    name: {
+      type: String,
+      required: true
     }
-  };
+  }
+};
 </script>

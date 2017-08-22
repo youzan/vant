@@ -65,9 +65,7 @@ Vue.component(Icon.name, Icon);
 ```
 :::
 
-#### 所有Icons
-
-以下为目前所有的图标：
+#### 图标列表
 
 :::demo 所有Icon
 ```html
