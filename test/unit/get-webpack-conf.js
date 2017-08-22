@@ -74,7 +74,7 @@ const webpackConfig = {
         }]
       },
       {
-        test: /test\/unit\/components\/.*\.vue$|packages\/swipe\/.*\.vue$/,
+        test: /\.vue$/,
         use: [{
           loader: 'vue-loader',
           options: {
@@ -83,25 +83,6 @@ const webpackConfig = {
                 'style-loader',
                 'css-loader',
                 'postcss-loader'
-              ]
-            }
-          }
-        }]
-      },
-      {
-        test: /packages\/.*\.vue$/,
-        exclude: /packages\/swipe/,
-        use: [{
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              css: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader'
-              ],
-              js: [
-                'isparta-loader'
               ]
             }
           }
