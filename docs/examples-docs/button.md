@@ -48,10 +48,10 @@ Vue.component(Button.name, Button);
 
 :::demo 按钮尺寸
 ```html 
-<van-button size="large">large</van-button>
-<van-button size="normal">normal</van-button>
-<van-button size="small">small</van-button>
-<van-button size="mini">mini</van-button>
+<van-button size="large">Large</van-button>
+<van-button size="normal">Normal</van-button>
+<van-button size="small">Small</van-button>
+<van-button size="mini">Mini</van-button>
 ```
 :::
 
@@ -61,7 +61,7 @@ Vue.component(Button.name, Button);
 
 :::demo 禁用状态
 ```html
-<van-button disabled>diabled</van-button>
+<van-button disabled>Diabled</van-button>
 ```
 :::
 
@@ -80,7 +80,7 @@ Vue.component(Button.name, Button);
 :::demo 自定义按钮标签
 ```html 
 <van-button tag="a" href="https://www.youzan.com" target="_blank">
-  a标签按钮
+  a 标签按钮
 </van-button>
 ```
 :::
