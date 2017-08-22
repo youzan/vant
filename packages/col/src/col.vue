@@ -33,7 +33,7 @@ export default {
       const padding = `${this.gutter / 2}px`;
       return this.gutter
         ? { paddingLeft: padding, paddingRight: padding }
-        : null;
+        : {};
     }
   }
 };
