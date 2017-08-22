@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import merge from '../utils/merge';
 import ToastComponent from './toast';
 
 const ToastConstructor = Vue.extend(ToastComponent);
@@ -50,25 +49,28 @@ var Toast = (options = {}) => {
 };
 
 Toast.loading = (options) => {
-  return new Toast(merge({
-    type: 'loading'
-  }, options));
+  return new Toast({
+    type: 'loading',
+    ...options
+  });
 };
 
 Toast.success = (options) => {
   const message = typeof options === 'string' ? options : options.message;
-  return new Toast(merge({
+  return new Toast({
     type: 'success',
-    message: message
-  }, options));
+    message: message,
+    ...options
+  });
 };
 
 Toast.fail = (options) => {
   const message = typeof options === 'string' ? options : options.message;
-  return new Toast(merge({
+  return new Toast({
     type: 'fail',
-    message: message
-  }, options));
+    message: message,
+    ...options
+  });
 };
 
 Toast.clear = () => {

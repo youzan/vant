@@ -80,7 +80,7 @@ export default {
           return;
         } else {
           this.swipeMove(0);
-          once(this.wrap, 'webkitTransitionEnd', _ => {
+          once(this.wrap, 'webkitTransitionEnd', () => {
             this.wrap.style.webkitTransform = '';
             this.rightWrapElm.style.webkitTransform = this.rightDefaultTransform;
             this.leftWrapElm.style.webkitTransform = this.leftDefaultTransform;
