@@ -83,7 +83,8 @@ const webpackConfig = {
                 'style-loader',
                 'css-loader',
                 'postcss-loader'
-              ]
+              ],
+              js: ['isparta-loader']
             }
           }
         }]
