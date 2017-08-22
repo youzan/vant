@@ -5,7 +5,7 @@
   }
   .van-col {
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 30px;
     text-align: center;
     margin-bottom: 10px;
