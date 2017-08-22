@@ -1,4 +1,3 @@
-import merge from '../../utils/merge';
 import PopupManager from './popup-manager';
 import PopupContext from './popup-context';
 

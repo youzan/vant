@@ -1,5 +1,4 @@
 import Vue from 'vue';
-import { addClass } from '../../utils/dom';
 import PopupContext from './popup-context';
 
 const getModal = function() {
@@ -79,7 +78,7 @@ const PopupManager = {
 
     const modalDom = getModal();
 
-    addClass(modalDom, 'van-modal');
+    modalDom.classList.add('van-modal');
 
     let domParentNode;
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
