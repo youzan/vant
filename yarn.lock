@@ -4809,7 +4809,7 @@ markdown-it@^6.0.5:
     mdurl "~1.0.1"
     uc.micro "^1.0.1"
 
-markdown-it@^8.3.1, markdown-it@^8.3.2:
+markdown-it@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.3.2.tgz#df4b86530d17c3bc9beec3b68d770b92ea17ae96"
   dependencies:
@@ -7926,13 +7926,13 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/zan-doc/-/zan-doc-0.2.0.tgz#40b31c4f1cc5ae539853a06b30f1cb479e2edca3"
+zan-doc@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/zan-doc/-/zan-doc-0.2.1.tgz#34723ea180d0ac2e183b66d2a3e4a04b4f6fe91b"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"
-    markdown-it "^8.3.1"
+    markdown-it "^8.3.2"
     markdown-it-container "^2.0.0"
     node-watch "^0.5.5"
     nprogress "^0.2.0"

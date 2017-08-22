@@ -40,7 +40,7 @@ module.exports = {
         ]
       },
       {
-        "name": "Vant组件",
+        "name": "组件列表",
         "showInMobile": true,
         "groups": [
           {
