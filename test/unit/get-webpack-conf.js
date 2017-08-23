@@ -16,7 +16,7 @@ const webpackConfig = {
       minimize: true,
       options: {
         babel: {
-          presets: ['es2015'],
+          presets: ['env'],
           plugins: ['transform-runtime', 'transform-vue-jsx']
         },
         vue: {
@@ -26,6 +26,7 @@ const webpackConfig = {
       }
     })
   ],
+  stats: 'errors-only',
   resolve: {
     modules: [
       path.resolve(process.cwd(), 'node_modules'),
@@ -44,12 +45,12 @@ const webpackConfig = {
       {
         enforce: 'pre',
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\/|docs|test|src\/index|src\/utils|src\/mixins|packages\/swipe/,
+        exclude: /node_modules|vue-router\/|vue-loader\/|docs|test|src\/index|src\/utils|src\/mixins|packages\/swipe/,
         use: ['isparta-loader']
       },
       {
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        exclude: /node_modules|vue-router\/|vue-loader\//,
         use: ['babel-loader']
       },
       {
@@ -73,23 +74,7 @@ const webpackConfig = {
         }]
       },
       {
-        test: /test\/unit\/components\/.*\.vue$|packages\/swipe\/.*\.vue$/,
-        use: [{
-          loader: 'vue-loader',
-          options: {
-            loaders: {
-              css: [
-                'style-loader',
-                'css-loader',
-                'postcss-loader'
-              ]
-            }
-          }
-        }]
-      },
-      {
-        test: /packages\/.*\.vue$/,
-        exclude: /packages\/swipe/,
+        test: /\.vue$/,
         use: [{
           loader: 'vue-loader',
           options: {
@@ -99,9 +84,7 @@ const webpackConfig = {
                 'css-loader',
                 'postcss-loader'
               ],
-              js: [
-                'isparta-loader'
-              ]
+              js: ['isparta-loader']
             }
           }
         }]

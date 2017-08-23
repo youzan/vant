@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { Toast } from 'src/index';
+import { Toast } from 'packages/index';
 
 export default {
   methods: {
@@ -85,7 +85,7 @@ import { Toast } from 'vant';
 <van-button @click="showCustomizedToast(5000)">倒数5秒</van-button>
 
 <script>
-import { Toast } from 'src/index';
+import { Toast } from 'packages/index';
 
 export default {
   methods: {
@@ -137,7 +137,7 @@ export default {
 <van-button @click="closeToast">关闭</van-button>
 
 <script>
-import { Toast } from 'src/index';
+import { Toast } from 'packages/index';
 
 export default {
   methods: {
@@ -161,7 +161,7 @@ export default {
 <van-button @click="showHtmlToast">打开</van-button>
 
 <script>
-import { Toast } from 'src/index';
+import { Toast } from 'packages/index';
 
 export default {
   methods: {

@@ -35,6 +35,13 @@ export default {
 
 ## Swipe 轮播
 
+### 使用指南
+``` javascript
+import { Swipe } from 'vant';
+
+Vue.component(Swipe.name, Swipe);
+```
+
 ### 代码演示
 
 #### 基础用法
@@ -56,6 +63,33 @@ export default {
       images: [
         'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
         'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+      ]
+    };
+  }
+};
+</script>
+```
+:::
+
+#### 隐藏指示器
+
+需要设置`show-indicators`属性为`false`，即会隐藏指示器。
+
+:::demo 隐藏指示器
+```html
+<van-swipe :show-indicators="false">
+  <van-swipe-item v-for="(img, index) in autoImages" :key="index">
+    <img v-lazy="img" alt="">
+  </van-swipe-item>
+</van-swipe>
+
+<script>
+export default {
+  data() {
+    return {
+      autoImages: [
+        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
+        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
       ]
     };
   }

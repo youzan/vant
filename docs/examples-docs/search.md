@@ -16,6 +16,13 @@ export default {
 
 ## Search 搜索
 
+### 使用指南
+``` javascript
+import { Search } from 'vant';
+
+Vue.component(Search.name, Search);
+```
+
 ### 代码演示
 
 #### 基础用法

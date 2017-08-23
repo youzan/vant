@@ -40,7 +40,7 @@ module.exports = {
         ]
       },
       {
-        "name": "Vant组件",
+        "name": "组件列表",
         "showInMobile": true,
         "groups": [
           {
@@ -64,7 +64,7 @@ module.exports = {
               },
               {
                 "path": "/cell-swipe",
-                "title": "Cell Swipe 滑动单元格"
+                "title": "CellSwipe 滑动单元格"
               },
               {
                 "path": "/progress",
@@ -170,7 +170,7 @@ module.exports = {
               },
               {
                 "path": "/datetime-picker",
-                "title": "Datetime Picker 时间选择"
+                "title": "DatetimePicker 时间选择"
               },
               {
                 "path": "/dialog",

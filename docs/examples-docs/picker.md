@@ -38,6 +38,13 @@ export default {
 
 ## Picker 选择器
 
+### 使用指南
+``` javascript
+import { Picker } from 'vant';
+
+Vue.component(Picker.name, Picker);
+```
+
 ### 代码演示
 
 #### 基础用法

@@ -1,5 +1,6 @@
 import ActionSheet from 'packages/actionsheet';
 import { mount } from 'avoriaz';
+import { DOMChecker } from '../utils';
 
 describe('ActionSheet', () => {
   let wrapper;
@@ -26,7 +27,13 @@ describe('ActionSheet', () => {
       }
     });
 
-    expect(wrapper.instance().currentValue).to.be.true;
+    DOMChecker(wrapper, {
+      noStyle: {
+        '.van-actionsheet': {
+          display: 'none'
+        }
+      }
+    });
   });
 
   it('create title type actionsheet', () => {
@@ -98,8 +105,8 @@ describe('ActionSheet', () => {
       }
     });
 
-    const cancelButton = wrapper.find('.van-actionsheet__button')[0];
-    expect(wrapper.contains('.van-actionsheet__button')).to.be.true;
+    const cancelButton = wrapper.find('.van-actionsheet__cancel')[0];
+    expect(wrapper.contains('.van-actionsheet__cancel')).to.be.true;
     expect(cancelButton.text()).to.equal('cancel');
   });
 
@@ -111,12 +118,24 @@ describe('ActionSheet', () => {
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    expect(wrapper.data().currentValue).to.be.false;
+    DOMChecker(wrapper, {
+      style: {
+        '.van-actionsheet': {
+          display: 'none'
+        }
+      }
+    });
 
     wrapper.vm.value = true;
     wrapper.update();
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().currentValue).to.be.true;
+      DOMChecker(wrapper, {
+        noStyle: {
+          '.van-actionsheet': {
+            display: 'none'
+          }
+        }
+      });
       expect(eventStub.calledWith('input'));
       done();
     });

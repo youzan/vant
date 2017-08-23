@@ -23,6 +23,13 @@ export default {
 
 ## Quantity 数量选择
 
+### 使用指南
+``` javascript
+import { Quantity } from 'vant';
+
+Vue.component(Quantity.name, Quantity);
+```
+
 ### 代码演示
 
 #### 基础用法
