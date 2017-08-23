@@ -24,11 +24,9 @@
     },
     methods: {
       triggerWaterfallLower() {
-        console.log('waterfall lower trigger');
         this.onWaterfallLower();
       },
       triggerWaterfallUpper() {
-        console.log('waterfall upper trigger');
         this.onWaterfallUpper();
       }
     }

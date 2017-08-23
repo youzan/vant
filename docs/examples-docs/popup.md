@@ -75,6 +75,13 @@ export default {
 
 ## Popup 弹出菜单
 
+### 使用指南
+``` javascript
+import { Popup } from 'vant';
+
+Vue.component(Popup.name, Popup);
+```
+
 ### 代码演示
 
 #### 基础用法

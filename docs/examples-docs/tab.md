@@ -49,6 +49,14 @@ export default {
 
 ## Tab 标签
 
+### 使用指南
+``` javascript
+import { Tab, Tabs } from 'vant';
+
+Vue.component(Tab.name, Tab);
+Vue.component(Tabs.name, Tabs);
+```
+
 ### 代码演示
 
 #### 基础用法

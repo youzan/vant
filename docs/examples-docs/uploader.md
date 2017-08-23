@@ -16,6 +16,13 @@ export default {
 
 ## Uploader 图片上传
 
+### 使用指南
+``` javascript
+import { Uploader } from 'vant';
+
+Vue.component(Uploader.name, Uploader);
+```
+
 ### 代码演示
 
 #### 基础用法
