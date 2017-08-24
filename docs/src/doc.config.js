@@ -27,20 +27,20 @@ module.exports = {
                 noExample: true
               },
               {
+                "title": "业务组件",
+                "link": "/zanui/captain/component/quickstart"
+              },
+              {
                 "path": "/changelog",
                 "title": "更新日志",
                 noExample: true
-              },
-              {
-                "title": "业务组件",
-                "link": "/zanui/captain/component/quickstart"
               }
             ]
           }
         ]
       },
       {
-        "name": "组件列表",
+        "name": "组件",
         "showInMobile": true,
         "groups": [
           {
