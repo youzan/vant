@@ -67,7 +67,7 @@ ajv-keywords@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-2.1.0.tgz#a296e17f7bfae7c1ce4f7e0de53d29cb32162df0"
 
-ajv@^4.7.0, ajv@^4.9.1:
+ajv@^4.11.2, ajv@^4.7.0, ajv@^4.9.1:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-4.11.8.tgz#82ffb02b29e662ae53bdc20af15947706739c536"
   dependencies:
@@ -2768,14 +2768,14 @@ extglob@^0.3.1:
   dependencies:
     is-extglob "^1.0.0"
 
-extract-text-webpack-plugin@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-2.1.2.tgz#756ef4efa8155c3681833fbc34da53b941746d6c"
+extract-text-webpack-plugin@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/extract-text-webpack-plugin/-/extract-text-webpack-plugin-2.0.0.tgz#8640f72609800a3528f13a2a9634d566a5c1ae60"
   dependencies:
+    ajv "^4.11.2"
     async "^2.1.2"
     loader-utils "^1.0.2"
-    schema-utils "^0.3.0"
-    webpack-sources "^1.0.1"
+    webpack-sources "^0.1.0"
 
 extract-zip@~1.6.5:
   version "1.6.5"
@@ -6816,6 +6816,10 @@ source-list-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
 
+source-list-map@~0.1.7:
+  version "0.1.8"
+  resolved "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.8.tgz#c550b2ab5427f6b3f21f5afead88c4f5587b2106"
+
 source-map-support@^0.4.15:
   version "0.4.16"
   resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.16.tgz#16fecf98212467d017d586a2af68d628b9421cd8"
@@ -7603,9 +7607,9 @@ vue-loader@^13.0.4:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.5.3"
 
-vue-markdown-loader@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-2.0.0.tgz#d3cadbf9c8976a81f2d5e39496d505fd4f31bc96"
+vue-markdown-loader@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/vue-markdown-loader/-/vue-markdown-loader-2.1.0.tgz#112d1921dd56daa29906b7c012623c6c5d6e0d8c"
   dependencies:
     cheerio "^0.20.0"
     highlight.js "^9.4.0"
@@ -7706,6 +7710,13 @@ webpack-merge@^4.1.0:
   resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.1.0.tgz#6ad72223b3e0b837e531e4597c199f909361511e"
   dependencies:
     lodash "^4.17.4"
+
+webpack-sources@^0.1.0:
+  version "0.1.5"
+  resolved "https://registry.npmjs.org/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
+  dependencies:
+    source-list-map "~0.1.7"
+    source-map "~0.5.3"
 
 webpack-sources@^1.0.1:
   version "1.0.1"
@@ -7926,9 +7937,9 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/zan-doc/-/zan-doc-0.2.1.tgz#34723ea180d0ac2e183b66d2a3e4a04b4f6fe91b"
+zan-doc@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.npmjs.org/zan-doc/-/zan-doc-0.2.2.tgz#ebf8ffda5bd3cf9277cc3e59c48476a3fbf84d9f"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"

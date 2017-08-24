@@ -5,6 +5,7 @@ import routes from './router.config';
 import ZanUI from 'packages/index';
 import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
+import 'zan-doc/src/helper/touch-simulator';
 
 import DemoList from './components/demo-list.vue';
 
