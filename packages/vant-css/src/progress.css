@@ -1,32 +1,27 @@
 @import './common/var.css';
 
 .van-progress {
-  &__bar {
-    height: 4px;
-    border-radius: 4.5px;
-    width: 100%;
-    background: $c-gray-light;
-    position: relative;
+  height: 4px;
+  position: relative;
+  border-radius: 4px;
+  background: $c-gray-light;
 
-    &__finished-portion {
-      border-radius: 4.5px;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      display: inline-block;
-    }
+  &__portion {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    border-radius: 4px;
+  }
 
-    &__pivot {
-      padding: 2px 0;
-      font-size: 8px;
-      position: absolute;
-      border-radius: 6px;
-      width: 28px;
-      background-color: $c-gray-light;
-      line-height: 8px;
-      text-align: center;
-      top: 50%;
-      transform: translate3d(0, -50%, 0);
-    }
+  &__pivot {
+    top: 50%;
+    width: 28px;
+    font-size: 8px;
+    margin-top: -6px;
+    position: absolute;
+    border-radius: 6px;
+    line-height: 12px;
+    text-align: center;
+    background-color: $c-gray-light;
   }
 }
