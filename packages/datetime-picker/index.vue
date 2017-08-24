@@ -285,6 +285,10 @@ export default {
       }
       [].forEach.call(this.$refs.picker.$children, child => child.doOnValueChange());
     }
+  },
+
+  mounted() {
+    this.updateColumnValue(this.innerValue);
   }
 };
 </script>
