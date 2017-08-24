@@ -3,7 +3,7 @@ const config = require('./webpack.config.dev.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 
 config.entry = {
-  'vant': './src/index.js'
+  'vant': './packages/index.js'
 };
 
 config.output = {

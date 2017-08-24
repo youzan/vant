@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { Dialog } from 'src/index';
+import { Dialog } from 'packages/index';
 
 export default {
   methods: {

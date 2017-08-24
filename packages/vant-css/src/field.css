@@ -78,6 +78,12 @@
     }
   }
 
+  &--has-icon {
+    .van-field__control {
+      width: 90%;
+    }
+  }
+
   &__control {
     border: 0;
     font-size: 14px;

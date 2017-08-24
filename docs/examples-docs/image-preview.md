@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { ImagePreview } from 'src/index';
+import { ImagePreview } from 'packages/index';
 
 export default {
   methods: {
@@ -41,7 +41,7 @@ import { ImagePreview } from 'vant';
 <van-button @click="handleImagePreview">预览图片</van-button>
 
 <script>
-import { ImagePreview } from 'src/index';
+import { ImagePreview } from 'packages/index';
 
 export default {
   methods: {

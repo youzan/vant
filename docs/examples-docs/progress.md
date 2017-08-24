@@ -10,6 +10,13 @@
 
 ## Progress 进度条
 
+### 使用指南
+``` javascript
+import { Progress } from 'vant';
+
+Vue.component(Progress.name, Progress);
+```
+
 ### 代码演示
 
 #### 基础用法

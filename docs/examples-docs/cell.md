@@ -10,6 +10,14 @@ export default {
 
 ## Cell 单元格
 
+### 使用指南
+``` javascript
+import { Cell, CellGroup } from 'vant';
+
+Vue.component(Cell.name, Cell);
+Vue.component(CellGroup.name, CellGroup);
+```
+
 ### 代码演示
 
 #### 基础用法
