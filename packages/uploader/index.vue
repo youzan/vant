@@ -1,7 +1,7 @@
 <template>
   <div class="van-uploader">
     <slot></slot>
-    <input type="file" @change="onValueChange" :disabled="disable" class="van-uploader__input" ref="input" />
+    <input type="file" @change="onValueChange" :disabled="disabled" class="van-uploader__input" ref="input" />
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'van-uploader',
 
   props: {
-    disable: {
+    disabled: {
       type: Boolean,
       default: false
     },
@@ -25,7 +25,7 @@ export default {
 
   methods: {
     onValueChange(event) {
-      if (this.disable) {
+      if (this.disabled) {
         return;
       }
 
