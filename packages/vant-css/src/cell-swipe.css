@@ -1,29 +1,26 @@
-.van-cell {
-  &-swipe {
-    position: relative;
-    min-height: 48px;
-    overflow: hidden;
+.van-cell-swipe {
+  overflow: hidden;
+  position: relative;
 
-    .van-cell-wrapper,
-    .van-cell-left,
-    .van-cell-right {
-      transition: transform 150ms ease-in-out;
-    }
+  &__wrapper,
+  &__left,
+  &__right {
+    transition: transform .15s ease-in-out;
   }
 
-  &-left,
-  &-right {
-    position: absolute;
-    height: 100%;
+  &__left,
+  &__right {
     top: 0;
+    height: 100%;
+    position: absolute;
   }
 
-  &-left {
+  &__left {
     left: 0;
     transform: translate3d(-100%, 0, 0);
   }
 
-  &-right {
+  &__right {
     right: 0;
     transform: translate3d(100%, 0, 0);
   }
