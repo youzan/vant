@@ -1,9 +1,26 @@
 ## 更新日志
 
+## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5) (2017-08-21)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.4...v0.8.5)
+
+**非兼容更新和新特性:**
+
+- Doc: add usage guide && top progress [\#83](https://github.com/youzan/vant/pull/83) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Popup: not preventScroll by default [\#84](https://github.com/youzan/vant/pull/84) ([chenjiahan](https://github.com/chenjiahan))
+- fix: swipe sometimes will change to drag image [\#81](https://github.com/youzan/vant/pull/81) ([pangxie1991](https://github.com/pangxie1991))
+
+**处理的 Issue:**
+
+- Href link does not work [\#82](https://github.com/youzan/vant/issues/82)
+- Swipe image not displayed [\#79](https://github.com/youzan/vant/issues/79)
+
 ## [v0.8.4](https://github.com/youzan/vant/tree/v0.8.4) (2017-08-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.3...v0.8.4)
 
-**合并的 Pull Request (可能有不兼容改动):**
+**修复:**
 
 - fix: field 计算autosize，需要nextTick [\#78](https://github.com/youzan/vant/pull/78) ([pangxie1991](https://github.com/pangxie1991))
 
