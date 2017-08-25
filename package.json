@@ -26,6 +26,7 @@
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:coverage": "open test/unit/coverage/lcov-report/index.html",
     "test:watch": "karma start test/unit/karma.conf.js",
+    "test:single": "node ./test/unit/selector.js",
     "release": "npm run bootstrap && sh build/release.sh"
   },
   "repository": {

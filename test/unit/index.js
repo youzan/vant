@@ -1,5 +1,13 @@
 require('packages/vant-css/src/index.css');
 
-// require all test files (files that ends with .spec.js)
+// 读取配置文件，判断运行单个测试文件还是所有测试文件
 const testsReq = require.context('./specs', true, /\.spec$/);
-testsReq.keys().forEach(testsReq);
+if (process.env.TEST_FILE) {
+  testsReq.keys().forEach((file) => {
+    if (file.indexOf(process.env.TEST_FILE) !== -1) {
+      testsReq(file);
+    }
+  });
+} else {
+  testsReq.keys().forEach(testsReq);
+}
