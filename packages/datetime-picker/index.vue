@@ -19,7 +19,7 @@ export default {
   name: 'van-datetime-picker',
 
   components: {
-    'van-picker': Picker
+    [Picker.name]: Picker
   },
 
   props: {

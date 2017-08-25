@@ -61,27 +61,27 @@ export default {
     }).on('autoPlay', function(dist, isEnd) {
       scroll.movePage(dist.x, isEnd);
     });
-    this.dummy = dummy
+    this.dummy = dummy;
   },
 
   watch: {
     swipes(value) {
       if (this.autoPlay && value.length > 1) {
-        this.dummy.initMove()
+        this.dummy.initMove();
       } else {
-        this.dummy.clearMove()
+        this.dummy.clearMove();
       }
       this.scroll.update();
-      return value
+      return value;
     },
 
     autoPlay(value) {
       if (value && this.swipes.length > 1) {
-        this.dummy.initMove()
+        this.dummy.initMove();
       } else {
-        this.dummy.clearMove()
+        this.dummy.clearMove();
       }
-      return value
+      return value;
     }
   },
 

@@ -48,15 +48,15 @@
 
 <script>
 const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
-import vanCell from '../cell';
-import vanIcon from '../icon';
+import Cell from '../cell';
+import Icon from '../icon';
 
 export default {
   name: 'van-field',
 
   components: {
-    vanCell,
-    vanIcon
+    [Cell.name]: Cell,
+    [Icon.name]: Icon
   },
 
   props: {

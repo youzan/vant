@@ -138,7 +138,7 @@ export default {
 
       if (this.preventScroll) {
         document.addEventListener('touchstart', this.recordPosition, false);
-        document.addEventListener('touchmove', this.watchTouchMove, false);        
+        document.addEventListener('touchmove', this.watchTouchMove, false);
       }
     },
 
