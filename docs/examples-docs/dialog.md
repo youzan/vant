@@ -9,33 +9,29 @@
 <script>
 import { Dialog } from 'packages/index';
 
+const message = '弹窗内容';
+
 export default {
   methods: {
-    handleAlertClick() {
+    onClickAlert() {
       Dialog.alert({
-        title: 'alert标题',
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
-        console.log(action);
+        title: '标题',
+        message
       });
     },
 
-    handleAlert2Click() {
+    onClickAlert2() {
       Dialog.alert({
-        message: '无标题alert'
-      }).then((action) => {
-        console.log(action);
+        message
       });
     },
 
-    handleConfirmClick() {
+    onClickConfirm() {
       Dialog.confirm({
-        title: 'confirm标题',
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
+        title: '标题',
+        message
+      }).catch(action => {
         console.log(action);
-      }, (error) => {
-        console.log(error);
       });
     }
   }
@@ -46,8 +42,6 @@ export default {
 
 ### 使用指南
 
-`Dialog`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它，它接受一个数组作为参数，数组中的每一项对应了图片链接。
-
 ```js
 import { Dialog } from 'vant';
 ```
@@ -56,30 +50,30 @@ import { Dialog } from 'vant';
 
 #### 消息提示
 
-用于提示一些消息，只包含一个确认按钮。
+用于提示一些消息，只包含一个确认按钮
 
 :::demo 消息提示
 ```html
-<van-button @click="handleAlertClick">alert</van-button>
-<van-button @click="handleAlert2Click">无标题alert</van-button>
+<van-button @click="onClickAlert">Alert</van-button>
+<van-button @click="onClickAlert2">无标题 Alert</van-button>
 
 <script>
 export default {
   methods: {
-    handleAlertClick() {
+    onClickAlert() {
       Dialog.alert({
-        title: 'alert标题',
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
-        console.log(action);
+        title: '标题',
+        message: '弹窗内容'
+      }).then(() => {
+        // on close
       });
     },
 
-    handleAlert2Click() {
+    onClickAlert2() {
       Dialog.alert({
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
-        console.log(action);
+        message: '弹窗内容'
+      }).then(() => {
+        // on close
       });
     }
   }
@@ -90,23 +84,23 @@ export default {
 
 #### 消息确认
 
-用于确认消息，包含取消和确认按钮。
+用于确认消息，包含取消和确认按钮
 
 :::demo 消息确认
 ```html
-<van-button @click="handleConfirmClick">confirm</van-button>
+<van-button @click="onClickConfirm">Confirm</van-button>
 
 <script>
 export default {
   methods: {
-    handleConfirmClick() {
+    onClickConfirm() {
       Dialog.confirm({
-        title: 'confirm标题',
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
-        console.log(action);
-      }, (error) => {
-        console.log(error);
+        title: '标题',
+        message: '弹窗内容'
+      }).then(() => {
+        // on confirm
+      }).catch(() => {
+        // on cancel
       });
     }
   }
@@ -117,19 +111,22 @@ export default {
 
 ### 方法
 
-#### Dialog.alert(options)
-
-消息提示时使用该方法。
-
-#### Dialog.confirm(options)
-
-消息确认时使用该方法。
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Dialog.alert | options | `Promise`  | 展示消息提示弹窗 |
+| Dialog.confirm | options | `Promise`  | 展示消息确认弹窗 |
+| Dialog.close | - | `void`  | 关闭弹窗 |
 
 ### Options
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `string`  |  |   |
-| message | 内容 | `string`  |  |   |
-| confirmButtonText | 确认按钮的文案 | `string`  |  `确认` |   |
-| cancelButtonText | 取消按钮的文案 | `string`  | `取消` |   |
+| title | 标题 | `String`  |  |   |
+| message | 内容 | `String`  |  |   |
+| showConfirmButton | 是否展示确认按钮 | `Boolean`  |  `true` |   |
+| showCancelButton | 是否展示取消按钮 | `Boolean`  |  `false` |   |
+| confirmButtonText | 确认按钮的文案 | `String`  |  `确认` |   |
+| cancelButtonText | 取消按钮的文案 | `String`  | `取消` |   |
+| overlay | 是否展示蒙层 | `Boolean`  | `true` |   |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean`  | `false` |   |
+| lockOnScroll | 是否禁用背景滚动 | `Boolean`  | `true` |   |

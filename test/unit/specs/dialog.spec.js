@@ -3,11 +3,6 @@ import Vue from 'vue';
 
 describe('Dialog', () => {
   afterEach(() => {
-    const el = document.querySelector('.van-dialog');
-    if (!el) return;
-    if (el.parentNode) {
-      el.parentNode.removeChild(el);
-    }
     Dialog.close();
   });
 
@@ -28,30 +23,32 @@ describe('Dialog', () => {
     }, 500);
   });
 
-  it('create a confirm dialog', () => {
+  it('create a confirm dialog', (done) => {
     Dialog.confirm({
       title: 'title',
       message: 'message'
+    }).catch((action) => {
+      expect(action).to.equal('cancel');
+      done();
     });
 
     expect(document.querySelector('.van-dialog')).to.exist;
+
+    setTimeout(() => {
+      document.querySelector('.van-dialog__cancel').click();
+    }, 500);
   });
 
   it('create a confirm dialog with callback', (done) => {
-    let dialogAction;
     Dialog.confirm({
-      title: 'title',
-      message: 'message',
       callback: (action) => {
-        dialogAction = action;
+        expect(action).to.equal('cancel');
+        done();
       }
     });
 
-    expect(document.querySelector('.van-dialog')).to.exist;
     setTimeout(() => {
       document.querySelector('.van-dialog__cancel').click();
-      expect(dialogAction).to.equal('cancel');
-      done();
     }, 500);
   });
 });

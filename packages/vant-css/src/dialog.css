@@ -42,9 +42,10 @@
     overflow: hidden;
 
     &.is-twobtn {
+      display: flex;
+
       .van-button {
-        width: 50%;
-        float: left;
+        flex: 1;
       }
 
       .van-dialog__cancel {
@@ -63,7 +64,10 @@
   }
 
   &__confirm {
-    color: #00C000;
+    &,
+    &:active {
+      color: #00C000;
+    }
   }
 
   &-bounce-enter {
