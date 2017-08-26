@@ -20,14 +20,14 @@
 </template>
 
 <script>
-import VanIcon from '../icon';
+import Icon from '../icon';
 import Clickoutside from '../utils/clickoutside';
 
 export default {
   name: 'van-search',
 
   components: {
-    VanIcon
+    [Icon.name]: Icon
   },
 
   props: {

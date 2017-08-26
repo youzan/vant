@@ -82,7 +82,7 @@ const PopupManager = {
 
     let domParentNode;
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
-      domParentNode = dom.parentNode
+      domParentNode = dom.parentNode;
     } else {
       domParentNode = document.body;
     }

@@ -8,7 +8,7 @@
       </slot>
     </div>
     <div class="van-picker__columns" :class="['van-picker__columns--' + columns.length]">
-      <picker-column
+      <van-picker-column
         v-for="(item, index) in columns"
         :key="index"
         v-model="values[index]"
@@ -17,8 +17,8 @@
         :itemHeight="itemHeight"
         :visible-item-count="visibileColumnCount"
         :value-key="valueKey"
-        @columnChange="columnValueChange(index)">
-      </picker-column>
+        @columnChange="columnValueChange(index)"
+      />
       <div class="van-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
   </div>
@@ -33,7 +33,7 @@ export default {
   name: 'van-picker',
 
   components: {
-    PickerColumn
+    [PickerColumn.name]: PickerColumn
   },
 
   props: {

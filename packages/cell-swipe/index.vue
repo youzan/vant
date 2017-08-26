@@ -51,7 +51,7 @@ export default {
     wrapperStyle() {
       return {
         transform: `translate3d(${this.offset}px, 0, 0)`
-      }
+      };
     }
   },
 
@@ -72,9 +72,8 @@ export default {
       if (direction > 0 && -offset > rightWidth * 0.4 && rightWidth > 0) {
         this.swipeMove(-rightWidth);
         this.resetSwipeStatus();
-      }
       // left
-      else if (direction < 0 && offset >leftWidth * 0.4 && leftWidth > 0) {
+      } else if (direction < 0 && offset > leftWidth * 0.4 && leftWidth > 0) {
         this.swipeMove(leftWidth);
         this.resetSwipeStatus();
       } else {
@@ -114,7 +113,7 @@ export default {
 
     endDrag() {
       if (this.swiping) {
-        this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);        
+        this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       };
     }
   }
