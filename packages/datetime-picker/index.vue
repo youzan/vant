@@ -270,6 +270,9 @@ export default {
       });
     },
     setColumnByValues(values) {
+      if (!this.$refs.picker) {
+        return;
+      }
       const setColumnValue = this.$refs.picker.setColumnValue;
       if (this.type === 'time') {
         setColumnValue(0, values[0]);

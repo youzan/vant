@@ -62,7 +62,7 @@ export function triggerTouch(wrapper, eventName, x, y) {
     radiusX: 2.5,
     radiusY: 2.5,
     rotationAngle: 10,
-    force: 0.5,
+    force: 0.5
   };
 
   const event = document.createEvent('CustomEvent');
