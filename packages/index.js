@@ -11,6 +11,7 @@ import CheckboxGroup from './checkbox-group';
 import Col from './col';
 import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
+import ExpressWay from './express-way';
 import Field from './field';
 import Icon from './icon';
 import ImagePreview from './image-preview';
@@ -53,6 +54,7 @@ const components = [
   CheckboxGroup,
   Col,
   DatetimePicker,
+  ExpressWay,
   Field,
   Icon,
   Loading,
@@ -107,6 +109,7 @@ export {
   Col,
   DatetimePicker,
   Dialog,
+  ExpressWay,
   Field,
   Icon,
   ImagePreview,

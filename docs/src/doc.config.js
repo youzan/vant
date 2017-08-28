@@ -186,6 +186,10 @@ module.exports = {
             "groupName": "业务组件",
             "list": [
               {
+                "path": "/express-way",
+                "title": "ExpressWay 配送方式"
+              },
+              {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
               }
