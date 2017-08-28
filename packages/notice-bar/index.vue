@@ -2,7 +2,7 @@
   <div v-show="showNoticeBar" @click="$emit('click')" :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]">
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
       <div class="van-notice-bar__content" ref="content" :style="contentStyle" @transitionend="onTransitionEnd">
-        <slot></slot>
+        <slot>{{ text }}</slot>
       </div>
     </div>
     <van-icon class="van-notice-bar__icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
@@ -22,6 +22,7 @@ export default {
   },
 
   props: {
+    text: String,
     mode: {
       type: String,
       default: '',
