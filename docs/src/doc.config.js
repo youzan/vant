@@ -181,6 +181,15 @@ module.exports = {
                 "title": "Toast 轻提示"
               }
             ]
+          },
+          {
+            "groupName": "业务组件",
+            "list": [
+              {
+                "path": "/switch-cell",
+                "title": "SwitchCell 开关单元格"
+              }
+            ]
           }
         ]
       }

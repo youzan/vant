@@ -31,6 +31,7 @@ import Steps from './steps';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
 import Switch from './switch';
+import SwitchCell from './switch-cell';
 import Tab from './tab';
 import Tabs from './tabs';
 import Tag from './tag';
@@ -70,6 +71,7 @@ const components = [
   Swipe,
   SwipeItem,
   Switch,
+  SwitchCell,
   Tab,
   Tabs,
   Tag,
@@ -125,6 +127,7 @@ export {
   Swipe,
   SwipeItem,
   Switch,
+  SwitchCell,
   Tab,
   Tabs,
   Tag,
