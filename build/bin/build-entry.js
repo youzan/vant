@@ -34,8 +34,7 @@ export {
 };
 export default {
   install,
-  version,
-{{list}}
+  version
 };
 `;
 

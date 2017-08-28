@@ -1,0 +1,36 @@
+@import './common/var.css';
+
+.van-notice-bar {
+  color: #f60;
+  padding: 9px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: #fff7cc;
+
+  &--withicon {
+    position: relative;
+    padding-right: 30px;
+  }
+
+  &__icon {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    font-size: 15px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &__content-wrap {
+    height: 18px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    white-space: nowrap;
+    transition-property: left;
+    transition-timing-function: linear;
+  }
+}

@@ -7,14 +7,14 @@ const defaultProps = {
     leftWidth: 100,
     rightWidth: 100
   }
-}
+};
 
 describe('CellSwipe', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
-  
+
   it('render left or right part when has width', () => {
     wrapper = mount(CellSwipe, defaultProps);
     expect(wrapper.find('.van-cell-swipe__left').length).to.equal(1);
@@ -97,7 +97,7 @@ describe('CellSwipe', () => {
 
       triggerTouch(wrapper, 'touchstart', 0, 0);
       triggerTouch(wrapper, 'touchmove', 1, 0);
-      
+
       wrapper.vm.$nextTick(() => {
         expect(wrapper.vm.offset).to.equal(0);
         expect(wrapper.vm.opened).to.be.false;

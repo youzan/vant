@@ -90,11 +90,11 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.4",
-    "markdown-it": "^8.3.2",
+    "markdown-it": "^8.4.0",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.4.2",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
-    "postcss": "^6.0.8",
+    "postcss": "^6.0.10",
     "postcss-easy-import": "^2.1.0",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
@@ -117,6 +117,6 @@
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
-    "zan-doc": "^0.2.2"
+    "zan-doc": "^0.2.5"
   }
 }
