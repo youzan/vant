@@ -75,7 +75,21 @@ function getWebpackConfig(testFileName) {
           ]
         },
         {
-          test: /\.vue$/,
+          test: /test\/unit\/components\/.*\.vue$|packages\/swipe\/.*\.vue$/,
+          use: [
+            {
+              loader: 'vue-loader',
+              options: {
+                loaders: {
+                  css: ['style-loader', 'css-loader', 'postcss-loader']
+                }
+              }
+            }
+          ]
+        },
+        {
+          test: /packages\/.*\.vue$/,
+          exclude: /packages\/swipe\/.*\.vue$/,
           use: [
             {
               loader: 'vue-loader',
