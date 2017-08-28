@@ -1,4 +1,4 @@
-import NoticeBar from 'packages/notice-bar';
+import NoticeBar from '../components/notice-bar';
 import { mount } from 'avoriaz';
 
 describe('NoticeBar', () => {
@@ -13,7 +13,7 @@ describe('NoticeBar', () => {
       attachToDocument: true
     });
 
-    expect(wrapper.hasClass('van-notice-bar')).to.be.true;
+    expect(wrapper.find('.van-notice-bar').length).to.equal(1);
   });
 
   it('mode closeable', () => {
@@ -45,18 +45,17 @@ describe('NoticeBar', () => {
   it('notice-bar transitionend', (done) => {
     wrapper = mount(NoticeBar, {
       propsData: {
-        text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。',
-        speed: 10000,
+        text: '足协杯战线连续第2年上演广州德比战',
+        speed: 1000,
         delay: 0
       },
       attachToDocument: true
     });
 
     const content = wrapper.find('.van-notice-bar__content')[0];
-
     setTimeout(() => {
       expect(content.hasStyle('transition-delay', '0s')).to.be.true;
       done();
-    }, 1500);
+    }, 500);
   });
 });

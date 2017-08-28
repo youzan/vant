@@ -70,7 +70,7 @@ export default {
     const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
     if (this.scrollable && offsetWidth > wrapWidth) {
       this.offsetWidth = offsetWidth;
-      this.duration = Math.ceil((offsetWidth + wrapWidth) / this.speed);
+      this.duration = (offsetWidth + wrapWidth) / this.speed;
     }
   },
 
