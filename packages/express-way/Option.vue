@@ -25,14 +25,8 @@ export default {
   },
 
   props: {
-    currentExpressWay: {
-      type: Number,
-      required: true
-    },
-    data: {
-      type: Object,
-      required: true
-    }
+    data: Object,
+    currentExpressWay: Number
   }
 };
 </script>
