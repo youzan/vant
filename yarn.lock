@@ -4819,6 +4819,16 @@ markdown-it@^8.3.2:
     mdurl "^1.0.1"
     uc.micro "^1.0.3"
 
+markdown-it@^8.4.0:
+  version "8.4.0"
+  resolved "https://registry.npmjs.org/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
+  dependencies:
+    argparse "^1.0.7"
+    entities "~1.1.1"
+    linkify-it "^2.0.0"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.3"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -6036,12 +6046,20 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.8, postcss@^6.0.9:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.3, postcss@^6.0.6, postcss@^6.0.9:
   version "6.0.9"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.9.tgz#54819766784a51c65b1ec4d54c2f93765438c35a"
   dependencies:
     chalk "^2.1.0"
     source-map "^0.5.6"
+    supports-color "^4.2.1"
+
+postcss@^6.0.10:
+  version "6.0.10"
+  resolved "https://registry.npmjs.org/postcss/-/postcss-6.0.10.tgz#c311b89734483d87a91a56dc9e53f15f4e6e84e4"
+  dependencies:
+    chalk "^2.1.0"
+    source-map "^0.5.7"
     supports-color "^4.2.1"
 
 precss@^2.0.0:
@@ -6847,6 +6865,10 @@ source-map@^0.1.41:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   dependencies:
     amdefine ">=0.0.4"
+
+source-map@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.npmjs.org/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 source-map@~0.2.0:
   version "0.2.0"
@@ -7937,9 +7959,9 @@ yeast@0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
-zan-doc@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.npmjs.org/zan-doc/-/zan-doc-0.2.2.tgz#ebf8ffda5bd3cf9277cc3e59c48476a3fbf84d9f"
+zan-doc@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.npmjs.org/zan-doc/-/zan-doc-0.2.3.tgz#79a8a4b6b5377e5900fd9a37034bb481ab281cf8"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"
