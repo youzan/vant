@@ -5,21 +5,21 @@
 </template>
 
 <script>
-  export default {
-    name: 'van-badge-group',
+export default {
+  name: 'van-badge-group',
 
-    props: {
-      // 当前激活 tab 面板的 key
-      activeKey: {
-        type: [Number, String],
-        default: 0
-      }
-    },
-
-    data() {
-      return {
-        badges: []
-      };
+  props: {
+    // 当前激活 tab 面板的 key
+    activeKey: {
+      type: [Number, String],
+      default: 0
     }
-  };
+  },
+
+  data() {
+    return {
+      badges: []
+    };
+  }
+};
 </script>

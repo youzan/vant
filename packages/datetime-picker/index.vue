@@ -19,7 +19,7 @@ export default {
   name: 'van-datetime-picker',
 
   components: {
-    'van-picker': Picker
+    [Picker.name]: Picker
   },
 
   props: {
@@ -270,6 +270,9 @@ export default {
       });
     },
     setColumnByValues(values) {
+      if (!this.$refs.picker) {
+        return;
+      }
       const setColumnValue = this.$refs.picker.setColumnValue;
       if (this.type === 'time') {
         setColumnValue(0, values[0]);
@@ -285,6 +288,10 @@ export default {
       }
       [].forEach.call(this.$refs.picker.$children, child => child.doOnValueChange());
     }
+  },
+
+  mounted() {
+    this.updateColumnValue(this.innerValue);
   }
 };
 </script>

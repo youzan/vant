@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import vanLoading from '../loading';
-import vanIcon from '../icon';
+import Icon from '../icon';
+import Loading from '../loading';
 
 const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
 const DEFAULT_STYLE_LIST = ['success', 'fail'];
@@ -37,8 +37,8 @@ export default {
   name: 'van-toast',
 
   components: {
-    'van-loading': vanLoading,
-    'van-icon': vanIcon
+    [Icon.name]: Icon,
+    [Loading.name]: Loading
   },
   props: {
     type: {

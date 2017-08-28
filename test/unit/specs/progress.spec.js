@@ -9,8 +9,8 @@ describe('Progress', () => {
     wrapper = mount(Progress, {
       propsData: propsData
     });
-    bar = wrapper.find('.van-progress__bar__finished-portion')[0];
-    pivot = wrapper.find('.van-progress__bar__pivot')[0];
+    bar = wrapper.find('.van-progress__portion')[0];
+    pivot = wrapper.find('.van-progress__pivot')[0];
   };
 
   afterEach(() => {
