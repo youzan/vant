@@ -36,6 +36,7 @@ import Uploader from './uploader';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
 import DatetimePicker from './datetime-picker';
+import NoticeBar from './notice-bar';
 
 const version = '0.8.6';
 const components = [
@@ -71,7 +72,8 @@ const components = [
   Uploader,
   Swipe,
   SwipeItem,
-  DatetimePicker
+  DatetimePicker,
+  NoticeBar
 ];
 
 const install = function(Vue) {
@@ -127,47 +129,10 @@ export {
   Uploader,
   Swipe,
   SwipeItem,
-  DatetimePicker
+  DatetimePicker,
+  NoticeBar
 };
 export default {
   install,
-  version,
-  Button,
-  Switch,
-  Field,
-  Radio,
-  Cell,
-  Icon,
-  CellGroup,
-  CellSwipe,
-  Popup,
-  Dialog,
-  Picker,
-  RadioGroup,
-  Waterfall,
-  Loading,
-  Panel,
-  Card,
-  Steps,
-  Tag,
-  Checkbox,
-  CheckboxGroup,
-  BadgeGroup,
-  Badge,
-  Search,
-  Step,
-  Tabs,
-  Tab,
-  Lazyload,
-  ImagePreview,
-  Col,
-  Row,
-  Actionsheet,
-  Quantity,
-  Progress,
-  Toast,
-  Uploader,
-  Swipe,
-  SwipeItem,
-  DatetimePicker
+  version
 };

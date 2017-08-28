@@ -4,7 +4,7 @@ import App from './ExamplesDocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import DemoBlock from './components/demo-block';
-import 'packages/vant-css/src/index.css';
+import 'packages/vant-css/src/reset.css';
 
 const isMobile = (function() {
   var platform = navigator.userAgent.toLowerCase();

@@ -125,6 +125,10 @@ module.exports = {
               {
                 "path": "/lazyload",
                 "title": "Lazyload 图片懒加载"
+              },
+              {
+                "path": "/notice-bar",
+                "title": "NoticeBar 通告栏"
               }
             ]
           },
