@@ -1,4 +1,4 @@
-var Components = require('../../components.json');
+var Components = require('./get-components')();
 var fs = require('fs');
 var render = require('json-templater/string');
 var uppercamelcase = require('uppercamelcase');
@@ -40,13 +40,11 @@ export default {
 
 delete Components.font;
 
-var ComponentNames = Object.keys(Components);
-
 var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
 
-ComponentNames.forEach(name => {
+Components.forEach(name => {
   var componentName = uppercamelcase(name);
 
   includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
