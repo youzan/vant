@@ -9,7 +9,6 @@ import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
-import Collapse from './collapse';
 import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
 import Field from './field';
@@ -52,7 +51,6 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Col,
-  Collapse,
   DatetimePicker,
   Field,
   Icon,
@@ -105,7 +103,6 @@ export {
   Checkbox,
   CheckboxGroup,
   Col,
-  Collapse,
   DatetimePicker,
   Dialog,
   Field,

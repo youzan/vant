@@ -51,12 +51,16 @@ module.exports = {
                 "title": "Layout 布局"
               },
               {
+                "path": "/badge",
+                "title": "Badge 徽章"
+              },
+              {
                 "path": "/button",
                 "title": "Button 按钮"
               },
               {
-                "path": "/icon",
-                "title": "Icon 图标"
+                "path": "/card",
+                "title": "Card 图文组件"
               },
               {
                 "path": "/cell",
@@ -67,56 +71,8 @@ module.exports = {
                 "title": "CellSwipe 滑动单元格"
               },
               {
-                "path": "/progress",
-                "title": "Progress 进度条"
-              },
-              {
-                "path": "/card",
-                "title": "Card 图文组件"
-              },
-              {
-                "path": "/panel",
-                "title": "Panel 面板"
-              },
-              {
-                "path": "/loading",
-                "title": "Loading 加载"
-              },
-              {
-                "path": "/steps",
-                "title": "Steps 步骤条"
-              },
-              {
-                "path": "/tag",
-                "title": "Tag 标记"
-              },
-              {
-                "path": "/badge",
-                "title": "Badge 徽章"
-              },
-              {
-                "path": "/tab",
-                "title": "Tab 标签"
-              },
-              {
-                "path": "/popup",
-                "title": "Popup 弹出菜单"
-              },
-              {
-                "path": "/swipe",
-                "title": "Swipe 轮播"
-              },
-              {
-                "path": "/search",
-                "title": "Search 搜索"
-              },
-              {
-                "path": "/quantity",
-                "title": "Quantity 数量选择"
-              },
-              {
-                "path": "/waterfall",
-                "title": "Waterfall 瀑布流"
+                "path": "/icon",
+                "title": "Icon 图标"
               },
               {
                 "path": "/image-preview",
@@ -127,8 +83,52 @@ module.exports = {
                 "title": "Lazyload 图片懒加载"
               },
               {
+                "path": "/loading",
+                "title": "Loading 加载"
+              },
+              {
                 "path": "/notice-bar",
                 "title": "NoticeBar 通告栏"
+              },
+              {
+                "path": "/panel",
+                "title": "Panel 面板"
+              },
+              {
+                "path": "/popup",
+                "title": "Popup 弹出菜单"
+              },
+              {
+                "path": "/progress",
+                "title": "Progress 进度条"
+              },
+              {
+                "path": "/quantity",
+                "title": "Quantity 数量选择"
+              },
+              {
+                "path": "/steps",
+                "title": "Steps 步骤条"
+              },
+              {
+                "path": "/tab",
+                "title": "Tab 标签"
+              },
+              {
+                "path": "/tag",
+                "title": "Tag 标记"
+              },
+              {
+                "path": "/swipe",
+                "title": "Swipe 轮播"
+              },
+              {
+                "path": "/search",
+                "title": "Search 搜索"
+              },
+              {
+                "path": "/waterfall",
+                "title": "Waterfall 瀑布流"
               }
             ]
           },
@@ -136,8 +136,8 @@ module.exports = {
             "groupName": "表单",
             "list": [
               {
-                "path": "/switch",
-                "title": "Switch 开关"
+                "path": "/checkbox",
+                "title": "Checkbox 复选框"
               },
               {
                 "path": "/field",
@@ -148,8 +148,8 @@ module.exports = {
                 "title": "Radio 单选框"
               },
               {
-                "path": "/checkbox",
-                "title": "Checkbox 复选框"
+                "path": "/switch",
+                "title": "Switch 开关"
               },
               {
                 "path": "/uploader",
@@ -165,20 +165,20 @@ module.exports = {
                 "title": "Actionsheet 行动按钮"
               },
               {
-                "path": "/toast",
-                "title": "Toast 轻提示"
-              },
-              {
-                "path": "/picker",
-                "title": "Picker 选择器"
-              },
-              {
                 "path": "/datetime-picker",
                 "title": "DatetimePicker 时间选择"
               },
               {
                 "path": "/dialog",
                 "title": "Dialog 弹出框"
+              },
+              {
+                "path": "/picker",
+                "title": "Picker 选择器"
+              },
+              {
+                "path": "/toast",
+                "title": "Toast 轻提示"
               }
             ]
           }
