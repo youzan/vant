@@ -71,4 +71,25 @@ describe('SwitchCell', () => {
       }
     });
   });
+
+  it('listen to change event', (done) => {
+    wrapper = mount(SwitchCell, {
+      attachToDocument: true,
+      propsData: {
+        value: false
+      }
+    });
+
+    wrapper.vm.$on('input', (value) => {
+      wrapper.vm.value = value;
+    });
+
+    wrapper.vm.$on('change', (value) => {
+      expect(value).to.be.true;
+      done();
+    });
+
+    const switchEl = wrapper.find('.van-switch')[0];
+    switchEl.trigger('click');
+  });
 });
