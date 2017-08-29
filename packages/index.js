@@ -19,6 +19,7 @@ import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
 import Panel from './panel';
+import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
@@ -60,6 +61,7 @@ const components = [
   Loading,
   NoticeBar,
   Panel,
+  PayOrder,
   Picker,
   Popup,
   Progress,
@@ -117,6 +119,7 @@ export {
   Loading,
   NoticeBar,
   Panel,
+  PayOrder,
   Picker,
   Popup,
   Progress,

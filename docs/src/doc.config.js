@@ -190,6 +190,10 @@ module.exports = {
                 "title": "ExpressWay 配送方式"
               },
               {
+                "path": "/pay-order",
+                "title": "PayOrder 提交订单栏"
+              },
+              {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
               }
