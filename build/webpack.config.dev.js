@@ -60,6 +60,7 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
+              preserveWhitespace: false,
               loaders: {
                 postcss: ExtractTextPlugin.extract({
                   use: styleLoaders,
