@@ -28,5 +28,5 @@ gulp.task('copy', function(callback) {
   });
 });
 
-runSequence('copy', 'addComponents');
+runSequence('copy');
 
