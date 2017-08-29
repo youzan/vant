@@ -1,0 +1,87 @@
+## PayOrder 支付订单
+
+<script>
+import { Toast } from 'packages/index';
+
+export default {
+  methods: {
+    onClickButton() {
+      Toast('点击按钮');
+    }
+  }
+}
+</script>
+
+<style>
+.demo-pay-order {
+  .van-pay-order {
+    position: relative;
+  }
+}
+</style>
+
+### 使用指南
+``` javascript
+import { PayOrder } from 'vant';
+
+Vue.component(PayOrder.name, PayOrder);
+```
+
+### 代码演示
+
+#### 基础用法
+
+:::demo 基础用法
+```html
+<van-pay-order
+  :price="3050"
+  button-text="提交订单"
+  @submit="onClickButton"
+/>
+```
+:::
+
+#### 禁用状态
+禁用状态下不会触发`submit`事件
+
+:::demo 禁用状态
+```html
+<van-pay-order
+  disabled
+  :price="3050"
+  button-text="提交订单"
+  tip="您的收货地址不支持同城送, 我们已为您推荐快递"
+  @submit="onClickButton"
+/>
+```
+:::
+
+#### 加载状态
+加载状态下不会触发`submit`事件
+:::demo 加载状态
+```html
+<van-pay-order
+  loading
+  :price="3050"
+  button-text="提交订单"
+  @submit="onClickButton"
+/>
+```
+:::
+
+### API
+
+| 参数       | 说明      | 类型       | 默认值       | 必须      |
+|-----------|-----------|-----------|-------------|-------------|
+| price | 价格（单位分） |  `Number` |  | 是 |
+| button-text | 按钮文字 | `String`  |   | 是 |
+| button-type | 按钮类型 |  `String` | `danger` | 否 |
+| tip | 提示文案 |  `String` |  | 否 |
+| disabled | 是否禁用按钮 |  `Boolean` | `false` | 否 |
+| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | 否 |
+
+### Event
+
+| 事件名       | 说明      | 参数       |
+|-----------|-----------|-----------|
+| submit | 按钮点击事件回调 | - |
