@@ -67,19 +67,13 @@ export default {
         'postage_desc': '由商家门店提供配送服务, 起送价 0.01 元',
         'postage_title': '同城配送',
         'express_type': 1
-      }, {
-        'postage': 0,
-        'postage_desc': '由商家选择合作快递为您服务',
-        'postage_title': '快递发货',
-        'express_type': 2,
-        'postage_warn_desc': '3天后发货'
       }]
     };
   },
 
   methods: {
-    onChange(item, index) {
-      Toast('配送方式更换为:' + item.postage_title);
+    onChange(item) {
+      Toast(`配送方式更换为:${item.postage_title}`);
     }
   }
 }
@@ -93,7 +87,7 @@ export default {
 ```html
 <van-cell-group>
   <van-express-way 
-    :value="-1" 
+    :value="1" 
     :express-list="expressList"
     :editable="false"
     @change="onChange"
