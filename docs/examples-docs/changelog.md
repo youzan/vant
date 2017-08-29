@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6) (2017-08-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.5...v0.8.6)
+
+**非兼容更新和新特性:**
+
+- dalete merge && class operating methods [\#88](https://github.com/youzan/vant/pull/88) ([chenjiahan](https://github.com/chenjiahan))
+- directory adjust: delete entry index.js [\#87](https://github.com/youzan/vant/pull/87) ([chenjiahan](https://github.com/chenjiahan))
+- Button: reduce unnecessary styles [\#86](https://github.com/youzan/vant/pull/86) ([chenjiahan](https://github.com/chenjiahan))
+- Layout: optimize doc [\#85](https://github.com/youzan/vant/pull/85) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Fix datetime-picker init value [\#89](https://github.com/youzan/vant/pull/89) ([w91](https://github.com/w91))
+
+**处理的 Issue:**
+
+- When 'showIndicators' set to 'false' The second image does not show [\#80](https://github.com/youzan/vant/issues/80)
+
 ## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5) (2017-08-21)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.4...v0.8.5)
 

@@ -40,7 +40,7 @@ import Toast from './toast';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.8.6';
+const version = '0.8.7';
 const components = [
   Actionsheet,
   Badge,
