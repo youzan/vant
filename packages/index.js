@@ -1,77 +1,83 @@
+import Actionsheet from './actionsheet';
+import Badge from './badge';
+import BadgeGroup from './badge-group';
 import Button from './button';
-import Switch from './switch';
-import Field from './field';
-import Radio from './radio';
+import Card from './card';
 import Cell from './cell';
-import Icon from './icon';
 import CellGroup from './cell-group';
 import CellSwipe from './cell-swipe';
-import Popup from './popup';
-import Dialog from './dialog';
-import Picker from './picker';
-import RadioGroup from './radio-group';
-import Waterfall from './waterfall';
-import Loading from './loading';
-import Panel from './panel';
-import Card from './card';
-import Steps from './steps';
-import Tag from './tag';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
-import BadgeGroup from './badge-group';
-import Badge from './badge';
+import Col from './col';
+import DatetimePicker from './datetime-picker';
+import Dialog from './dialog';
+import ExpressWay from './express-way';
+import Field from './field';
+import Icon from './icon';
+import ImagePreview from './image-preview';
+import Lazyload from './lazyload';
+import Loading from './loading';
+import NoticeBar from './notice-bar';
+import Panel from './panel';
+import Picker from './picker';
+import Popup from './popup';
+import Progress from './progress';
+import Quantity from './quantity';
+import Radio from './radio';
+import RadioGroup from './radio-group';
+import Row from './row';
 import Search from './search';
 import Step from './step';
-import Tabs from './tabs';
-import Tab from './tab';
-import Lazyload from './lazyload';
-import ImagePreview from './image-preview';
-import Col from './col';
-import Row from './row';
-import Actionsheet from './actionsheet';
-import Quantity from './quantity';
-import Progress from './progress';
-import Toast from './toast';
-import Uploader from './uploader';
+import Steps from './steps';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
-import DatetimePicker from './datetime-picker';
+import Switch from './switch';
+import SwitchCell from './switch-cell';
+import Tab from './tab';
+import Tabs from './tabs';
+import Tag from './tag';
+import Toast from './toast';
+import Uploader from './uploader';
+import Waterfall from './waterfall';
 
-const version = '0.8.4';
+const version = '0.8.7';
 const components = [
+  Actionsheet,
+  Badge,
+  BadgeGroup,
   Button,
-  Switch,
-  Field,
-  Radio,
+  Card,
   Cell,
-  Icon,
   CellGroup,
   CellSwipe,
-  Popup,
-  Picker,
-  RadioGroup,
-  Loading,
-  Panel,
-  Card,
-  Steps,
-  Tag,
   Checkbox,
   CheckboxGroup,
-  BadgeGroup,
-  Badge,
+  Col,
+  DatetimePicker,
+  ExpressWay,
+  Field,
+  Icon,
+  Loading,
+  NoticeBar,
+  Panel,
+  Picker,
+  Popup,
+  Progress,
+  Quantity,
+  Radio,
+  RadioGroup,
+  Row,
   Search,
   Step,
-  Tabs,
-  Tab,
-  Col,
-  Row,
-  Actionsheet,
-  Quantity,
-  Progress,
-  Uploader,
+  Steps,
   Swipe,
   SwipeItem,
-  DatetimePicker
+  Switch,
+  SwitchCell,
+  Tab,
+  Tabs,
+  Tag,
+  Uploader
 ];
 
 const install = function(Vue) {
@@ -90,84 +96,49 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
+  Actionsheet,
+  Badge,
+  BadgeGroup,
   Button,
-  Switch,
-  Field,
-  Radio,
+  Card,
   Cell,
-  Icon,
   CellGroup,
   CellSwipe,
-  Popup,
-  Dialog,
-  Picker,
-  RadioGroup,
-  Waterfall,
-  Loading,
-  Panel,
-  Card,
-  Steps,
-  Tag,
   Checkbox,
   CheckboxGroup,
-  BadgeGroup,
-  Badge,
+  Col,
+  DatetimePicker,
+  Dialog,
+  ExpressWay,
+  Field,
+  Icon,
+  ImagePreview,
+  Lazyload,
+  Loading,
+  NoticeBar,
+  Panel,
+  Picker,
+  Popup,
+  Progress,
+  Quantity,
+  Radio,
+  RadioGroup,
+  Row,
   Search,
   Step,
-  Tabs,
-  Tab,
-  Lazyload,
-  ImagePreview,
-  Col,
-  Row,
-  Actionsheet,
-  Quantity,
-  Progress,
-  Toast,
-  Uploader,
+  Steps,
   Swipe,
   SwipeItem,
-  DatetimePicker
+  Switch,
+  SwitchCell,
+  Tab,
+  Tabs,
+  Tag,
+  Toast,
+  Uploader,
+  Waterfall
 };
 export default {
   install,
-  version,
-  Button,
-  Switch,
-  Field,
-  Radio,
-  Cell,
-  Icon,
-  CellGroup,
-  CellSwipe,
-  Popup,
-  Dialog,
-  Picker,
-  RadioGroup,
-  Waterfall,
-  Loading,
-  Panel,
-  Card,
-  Steps,
-  Tag,
-  Checkbox,
-  CheckboxGroup,
-  BadgeGroup,
-  Badge,
-  Search,
-  Step,
-  Tabs,
-  Tab,
-  Lazyload,
-  ImagePreview,
-  Col,
-  Row,
-  Actionsheet,
-  Quantity,
-  Progress,
-  Toast,
-  Uploader,
-  Swipe,
-  SwipeItem,
-  DatetimePicker
+  version
 };

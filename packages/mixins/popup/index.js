@@ -1,19 +1,14 @@
-import merge from '../../utils/merge';
 import PopupManager from './popup-manager';
 import PopupContext from './popup-context';
 
 export default {
   props: {
-    /**
-     * popup当前显示状态
-     */
+    // popup当前显示状态
     value: {
       type: Boolean,
       default: false
     },
-    /**
-     * 是否显示遮罩层
-     */
+    // 是否显示遮罩层
     overlay: {
       type: Boolean,
       default: false
@@ -26,13 +21,16 @@ export default {
       default: false
     },
     zIndex: [String, Number],
-    /**
-     * popup滚动时是否body内容也滚动
-     * 默认为不滚动
-     */
+    // popup滚动时是否body内容也滚动
+    // 默认为不滚动
     lockOnScroll: {
       type: Boolean,
       default: true
+    },
+    // 防止滚动穿透
+    preventScroll: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -137,8 +135,11 @@ export default {
       this.$el.style.zIndex = PopupManager.nextZIndex();
       this.opened = true;
       this.opening = false;
-      document.addEventListener('touchstart', this.recordPosition, false);
-      document.addEventListener('touchmove', this.watchTouchMove, false);
+
+      if (this.preventScroll) {
+        document.addEventListener('touchstart', this.recordPosition, false);
+        document.addEventListener('touchmove', this.watchTouchMove, false);
+      }
     },
 
     /**
@@ -167,8 +168,11 @@ export default {
     doAfterClose() {
       this.closing = false;
       PopupManager.closeModal(this._popupId);
-      document.removeEventListener('touchstart', this.recordPosition, false);
-      document.removeEventListener('touchmove', this.watchTouchMove, false);
+
+      if (this.preventScroll) {
+        document.removeEventListener('touchstart', this.recordPosition, false);
+        document.removeEventListener('touchmove', this.watchTouchMove, false);
+      }
     }
   },
 

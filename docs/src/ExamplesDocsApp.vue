@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import 'highlight.js/styles/color-brewer.css';
 import docConfig from './doc.config';
 
 export default {

@@ -35,6 +35,13 @@ export default {
 
 ## Checkbox 复选框
 
+### 使用指南
+``` javascript
+import { Checkbox } from 'vant';
+
+Vue.component(Checkbox.name, Checkbox);
+```
+
 ### 代码演示
 
 #### 基础用法

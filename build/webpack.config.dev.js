@@ -6,11 +6,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
+const docConfig = require('../docs/src/doc.config');
+const { extractExample } = require('zan-doc/src/helper');
 const styleLoaders = [
   { loader: 'css-loader' },
   { loader: 'postcss-loader', options: { sourceMap: true } }
 ];
-require('./genExamples')(isProduction);
+
+// extract [components].vue from [components].md
+extractExample({
+  src: path.resolve(__dirname, '../docs/examples-docs'),
+  dist: path.resolve(__dirname, '../docs/examples-dist'),
+  nav: docConfig['zh-CN'].nav,
+  watch: !isProduction
+});
 
 module.exports = {
   entry: {

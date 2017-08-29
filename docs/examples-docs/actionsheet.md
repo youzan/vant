@@ -55,6 +55,13 @@ export default {
 
 ## Actionsheet 行动按钮
 
+### 使用指南
+``` javascript
+import { Actionsheet } from 'vant';
+
+Vue.component(Actionsheet.name, Actionsheet);
+```
+
 ### 代码演示
 
 #### 基础用法

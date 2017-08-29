@@ -29,6 +29,13 @@
 
 ## Panel 面板
 
+### 使用指南
+``` javascript
+import { Panel } from 'vant';
+
+Vue.component(Panel.name, Panel);
+```
+
 ### 代码演示
 
 #### 基础用法

@@ -10,6 +10,13 @@
 
 ## Tag 标记
 
+### 使用指南
+``` javascript
+import { Tag } from 'vant';
+
+Vue.component(Tag.name, Tag);
+```
+
 ### 代码演示
 
 #### 基础用法

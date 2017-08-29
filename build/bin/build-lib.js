@@ -12,7 +12,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const components = require('../../components.json');
+const components = require('./get-components')();
 const chalk = require('chalk');
 require('shelljs/global');
 
@@ -38,7 +38,7 @@ log('Finished', 'build:vant-css');
 
 // 5. build style entrys
 log('Starting', 'build:style-entries');
-Object.keys(components).forEach((componentName) => {
+components.forEach((componentName) => {
   const dir = path.join(__dirname, '../../lib/', componentName, '/style');
   const file = path.join(dir, 'index.js');
   const cssPath = path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`);

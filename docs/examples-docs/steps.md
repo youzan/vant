@@ -28,6 +28,14 @@ export default {
 
 ## Steps 步骤条
 
+### 使用指南
+``` javascript
+import { Step, Steps } from 'vant';
+
+Vue.component(Step.name, Step);
+Vue.component(Steps.name, Steps);
+```
+
 ### 代码演示
 
 #### 基础用法

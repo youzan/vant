@@ -25,6 +25,13 @@ export default {
 
 ## Radio 单选框
 
+### 使用指南
+``` javascript
+import { Radio } from 'vant';
+
+Vue.component(Radio.name, Radio);
+```
+
 ### 代码演示
 
 #### 基础用法
