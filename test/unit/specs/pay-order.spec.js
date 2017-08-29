@@ -33,7 +33,8 @@ describe('PayOrder', () => {
     wrapper = mount(PayOrder, {
       propsData: {
         price: 3005,
-        buttonText: '提交订单'
+        buttonText: '提交订单',
+        buttonType: 'normal'
       }
     });
 
@@ -66,7 +67,6 @@ describe('PayOrder', () => {
   it('can not submit when disabled', () => {
     wrapper = mount(PayOrder, {
       propsData: {
-        price: 3005,
         disabled: true,
         buttonText: '提交订单'
       }
@@ -83,7 +83,6 @@ describe('PayOrder', () => {
   it('can not submit when loading', () => {
     wrapper = mount(PayOrder, {
       propsData: {
-        price: 3005,
         loading: true,
         buttonText: '提交订单'
       }

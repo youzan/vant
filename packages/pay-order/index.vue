@@ -2,7 +2,7 @@
   <div class="van-pay-order">
     <div class="van-pay-order__tip" v-show="tip">{{ tip }}</div>
     <div class="van-pay-order__bar">
-      <div class="van-pay-order__price">
+      <div class="van-pay-order__price" v-if="typeof price === 'number'">
         <span class="van-pay-order__price-text">合计：</span>
         <span class="van-pay-order__price-interger">¥{{ priceInterger }}.</span>
         <span class="van-pay-order__price-decimal">{{ priceDecimal }}</span>
@@ -26,19 +26,13 @@ export default {
 
   props: {
     tip: String,
-    disabled: Boolean,
+    type: Number,
     loading: Boolean,
-    buttonText: {
-      type: String,
-      required: true
-    },
+    disabled: Boolean,
+    buttonText: String,
     buttonType: {
       type: String,
       default: 'danger'
-    },
-    price: {
-      type: Number,
-      required: true
     }
   },
 
