@@ -34,7 +34,7 @@ describe('PayOrder', () => {
       propsData: {
         price: 3005,
         buttonText: '提交订单',
-        buttonType: 'normal'
+        buttonType: 'default'
       }
     });
 

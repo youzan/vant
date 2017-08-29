@@ -1,5 +1,6 @@
 import Popup from 'packages/popup';
 import { mount } from 'avoriaz';
+import { triggerTouch } from '../utils';
 
 describe('Popup', () => {
   let wrapper;
@@ -56,5 +57,61 @@ describe('Popup', () => {
 
     expect(wrapper.hasClass('van-popup')).to.be.true;
     expect(wrapper.instance().currentTransition).to.equal('popup-fade');
+  });
+
+  it('popup prevent scroll', (done) => {
+    wrapper = mount(Popup, {
+      propsData: {
+        preventScroll: true,
+        value: true
+      }
+    });
+
+    expect(wrapper.hasClass('van-popup')).to.be.true;
+
+    setTimeout(() => {
+      expect(wrapper.data().currentValue).to.be.true;
+      wrapper.vm.value = false;
+      triggerTouch(document, 'touchstart', 0, 0);
+      triggerTouch(document, 'touchmove', 0, 10);
+      triggerTouch(document, 'touchmove', 0, 30);
+      triggerTouch(document, 'touchmove', 0, -30);
+
+      setTimeout(() => {
+        expect(wrapper.data().currentValue).to.be.false;
+        done();
+      }, 300);
+    }, 300);
+  });
+
+  it('popup modal', (done) => {
+    wrapper = mount(Popup, {
+      propsData: {
+        preventScroll: true,
+        value: true
+      }
+    });
+
+    wrapper.vm.$on('input', val => {
+      wrapper.vm.value = val;
+    });
+
+    expect(wrapper.hasClass('van-popup')).to.be.true;
+
+    const modal = document.querySelector('.van-modal');
+
+    setTimeout(() => {
+      triggerTouch(modal, 'touchstart', 0, 0);
+      triggerTouch(modal, 'touchmove', 0, 10);
+      triggerTouch(modal, 'touchmove', 0, 30);
+      triggerTouch(modal, 'touchmove', 0, -30);
+      expect(modal).to.exist;
+
+      modal.click();
+      setTimeout(() => {
+        expect(wrapper.data().currentValue).to.be.false;
+        done();
+      }, 300);
+    }, 300);
   });
 });
