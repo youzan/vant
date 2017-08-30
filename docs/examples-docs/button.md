@@ -7,6 +7,11 @@
     &--bottom-action {
       margin-bottom: 15px;
     }
+
+    &--small,
+    &--normal {
+      margin-right: 10px;
+    }
   }
 
   .zan-doc-demo-block {
