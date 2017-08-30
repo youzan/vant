@@ -190,6 +190,10 @@ module.exports = {
                 "title": "ExpressWay 配送方式"
               },
               {
+                "path": "/order-goods",
+                "title": "OrderGoods 下单页商品列表"
+              },
+              {
                 "path": "/pay-order",
                 "title": "PayOrder 提交订单栏"
               },
