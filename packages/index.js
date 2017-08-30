@@ -15,6 +15,7 @@ import ExpressWay from './express-way';
 import Field from './field';
 import Icon from './icon';
 import ImagePreview from './image-preview';
+import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
@@ -59,6 +60,7 @@ const components = [
   ExpressWay,
   Field,
   Icon,
+  InvalidGoods,
   Loading,
   NoticeBar,
   OrderGoods,
@@ -117,6 +119,7 @@ export {
   Field,
   Icon,
   ImagePreview,
+  InvalidGoods,
   Lazyload,
   Loading,
   NoticeBar,
