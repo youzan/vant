@@ -190,6 +190,10 @@ module.exports = {
                 "title": "ExpressWay 配送方式"
               },
               {
+                "path": "/invalid-goods",
+                "title": "InvalidGoods 不可用商品列表"
+              },
+              {
                 "path": "/order-goods",
                 "title": "OrderGoods 下单页商品列表"
               },
