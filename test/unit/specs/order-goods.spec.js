@@ -76,6 +76,8 @@ describe('OrderGoods', () => {
       }
     });
 
+    wrapper.find('.van-button')[0].trigger('click');
+
     DOMChecker(wrapper, {
       text: {
         '.van-order-goods-empty p': '当前没有可购买的商品，请重新选择',
@@ -91,7 +93,6 @@ describe('OrderGoods', () => {
     wrapper = mount(OrderGoods, {
       attachToDocument: true,
       propsData: {
-        itemList: [],
         emptyIcon: 'https://img.yzcdn.cn/upload_files/2017/07/01/FlIeRrn5bMRoWhcwp4Dp1TmVAXKy.jpg',
         emptyMessage: '测试',
         emptyButtonText: '测试'
@@ -109,6 +110,28 @@ describe('OrderGoods', () => {
     });
   });
 
+  it('edit message', () => {
+    wrapper = mount(OrderGoods, {
+      attachToDocument: true,
+      propsData: {
+        itemList: [item1],
+        message: ''
+      }
+    });
+
+    wrapper.vm.$on('input', val => {
+      wrapper.value = val;
+    });
+
+    const textarea = wrapper.find('textarea')[0];
+    textarea.value = '测试留言';
+    textarea.trigger('input');
+
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.value).to.equal('测试留言');
+    });
+  });
+
   it('message not editable', () => {
     wrapper = mount(OrderGoods, {
       attachToDocument: true,
@@ -123,6 +146,29 @@ describe('OrderGoods', () => {
       text: {
         '.van-order-goods-message p': '留言留言'
       }
+    });
+  });
+
+  it('message not editable && empty', () => {
+    wrapper = mount(OrderGoods, {
+      attachToDocument: true,
+      propsData: {
+        itemList: [item1],
+        message: '',
+        messageEditable: false
+      }
+    });
+
+    wrapper.vm.$on('input', val => {
+      wrapper.value = val;
+    });
+
+    wrapper.vm.$nextTick(() => {
+      DOMChecker(wrapper, {
+        text: {
+          '.van-order-goods-message p': '无'
+        }
+      });
     });
   });
 
@@ -228,8 +274,26 @@ describe('OrderGoods', () => {
       count: {
         '.van-order-goods-card__message-button': 1,
         '.van-order-goods-card__message li': 2
+      },
+      style: {
+        '.van-order-goods-card__message': {
+          'display': 'none'
+        }
       }
     });
+
+    const messageButton = wrapper.find('.van-order-goods-card__message-button')[0];
+    messageButton.trigger('click');
+
+    setTimeout(function() {
+      DOMChecker(wrapper, {
+        noStyle: {
+          '.van-order-goods-card__message': {
+            'display': 'none'
+          }
+        }
+      });
+    }, 300);
   });
 
   it('multi items', () => {
