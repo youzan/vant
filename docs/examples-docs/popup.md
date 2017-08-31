@@ -169,3 +169,4 @@ export default {
 | position | 弹出菜单位置 | `string`  |  | `top`, `bottom`, `right`, `left`  |
 | closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `boolean`  | `true` | `true`, `false`  |
 | transition | 弹出菜单的`transition` | `string`  | `popup-slide` |   |
+| preventScroll | 是否防止滚动穿透 | `boolean`  | `false` |  `true`, `false` |
