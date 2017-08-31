@@ -30,7 +30,7 @@
 <script>
 import {
   Icon
-} from 'vant';
+} from 'packages/icon';
 
 export default {
   name: 'van-deep-select',
