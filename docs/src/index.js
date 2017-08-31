@@ -4,7 +4,6 @@ import App from './ExamplesDocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import DemoBlock from './components/demo-block';
-import 'packages/vant-css/src/reset.css';
 
 const isMobile = (function() {
   var platform = navigator.userAgent.toLowerCase();
@@ -14,7 +13,7 @@ const isMobile = (function() {
 
 Vue.use(VueRouter);
 Vue.use(ZanDoc);
-Vue.component('demo-block', DemoBlock);
+Vue.component(DemoBlock.name, DemoBlock);
 
 const routesConfig = routes();
 routesConfig.push({
@@ -41,7 +40,7 @@ router.afterEach(() => {
   if (!isMobile) {
     window.scrollTo(0, 0);
   }
-})
+});
 
 new Vue({ // eslint-disable-line
   render: h => h(App),

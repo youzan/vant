@@ -2,7 +2,7 @@
   <div class="van-order-goods-empty">
     <img :src="icon" />
     <p>{{ message }}</p>
-    <van-button @click="onClickButton">{{ buttonText }}</van-button>
+    <van-button @click="$emit('clickEmptyButton')">{{ buttonText }}</van-button>
   </div>
 </template>
 
@@ -20,12 +20,6 @@ export default {
     icon: String,
     message: String,
     buttonText: String
-  },
-
-  methods: {
-    onClickButton() {
-      history.back();
-    }
   }
 };
 </script>

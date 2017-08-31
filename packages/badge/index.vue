@@ -1,12 +1,8 @@
 <template>
-  <a
-    class="van-badge"
-    :class="{ 'van-badge--select': isSelect }"
-    :href="url"
-    @click="handleClick">
+  <a :class="['van-badge', { 'van-badge--select': isSelect }]" :href="url" @click="onClick">
     <div class="van-badge__active"></div>
-    <div v-if="info" class="van-badge__info">{{info}}</div>
-    {{title}}
+    <div v-if="info" class="van-badge__info">{{ info }}</div>
+    {{ title }}
   </a>
 </template>
 
@@ -40,12 +36,8 @@ export default {
   },
 
   methods: {
-    handleClick(e) {
-      this.$emit('click', e, {
-        title: this.title,
-        url: this.url,
-        info: this.info
-      });
+    onClick() {
+      this.$emit('click', this.$parent.badges.indexOf(this));
     }
   }
 };

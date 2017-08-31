@@ -221,6 +221,12 @@ export default {
 | is_period_buy | 是否为周期购 | `Boolean` |
 | show_delivery_time | 是否显示发货时间 | `Boolean` |
 
+### Event
+
+| 事件名       | 说明      | 参数       |
+|-----------|-----------|-----------|
+| clickEmptyButton | 点击商品为空时的按钮时触发 | - |
+
 ### Slot
 | name       | 描述      |
 |-----------|-----------|

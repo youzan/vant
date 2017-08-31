@@ -58,9 +58,9 @@ Vue.component(NoticeBar.name, NoticeBar);
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | mode | 通告栏模式 | String | `''` | `closeable` `link` |
-| delay | 动画延迟时间，单位秒 | Number | `1` | |
-| scrollable | 是否滚动 | Boolean | `true` | |
-| speed | 滚动速率，单位px | Number | `40` | |
+| delay | 动画延迟时间，单位秒 | Number | `1` | - |
+| speed | 滚动速率，单位px | Number | `40` | - |
+| scrollable | 是否滚动 | Boolean | `true` | - |
 
 ### Event
 

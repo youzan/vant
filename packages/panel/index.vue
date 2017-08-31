@@ -10,7 +10,7 @@
     <div class="van-panel__content">
       <slot></slot>
     </div>
-    <div class="van-panel__footer" v-if="this.$slots.footer">
+    <div class="van-panel__footer" v-if="$slots.footer">
       <slot name="footer"></slot>
     </div>
   </div>

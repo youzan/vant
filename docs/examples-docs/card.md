@@ -1,3 +1,13 @@
+<script>
+export default {
+  data() {
+    return {
+      imageURL: '//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg'
+    }
+  }
+}
+</script>
+
 ## Card 图文组件
 
 ### 使用指南
@@ -11,15 +21,9 @@ Vue.component(Card.name, Card);
 
 #### 基础用法
 
-当没有底部按钮时，右侧内容会居中显示。
-
 :::demo 基础用法
 ```html
-<van-card
-  title="商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余"
-  desc="描述"
-  thumb="https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg">
-</van-card>
+<van-card title="商品名称" desc="商品描述" :thumb="imageURL" />
 ```
 :::
 
@@ -29,10 +33,9 @@ Vue.component(Card.name, Card);
 
 :::demo 高级用法
 ```html
-<van-card
-  thumb="https://img.yzcdn.cn/upload_files/2017/02/17/FnDwvwHmU-OiqsbjAO5X7wh1KWrR.jpg!100x100.jpg">
+<van-card :thumb="imageURL">
   <div class="van-card__row" slot="title">
-    <h4 class="van-card__title">商品名称是什么，两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余两行显示状态如效果图，多余多余多余</h4>
+    <h4 class="van-card__title">商品名称</h4>
     <span class="van-card__price">¥ 2.00</span>
   </div>
   <div class="van-card__row" slot="desc">
@@ -50,11 +53,10 @@ Vue.component(Card.name, Card);
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| thumb | 左侧图片 | `string`  |          |          |
-| title | 标题 | `string`  |          |          |
-| desc | 描述 | `string`  |          |          |
-| centered | 内容是否垂直居中 | `string`  | `false` |          |
-
+| thumb | 左侧图片 | `String`  | - | - |
+| title | 标题 | `String`  | - | - |
+| desc | 描述 | `String`  | - | - |
+| centered | 内容是否垂直居中 | `String`  | `false` | - |
 
 ### Slot
 
@@ -62,6 +64,6 @@ Vue.component(Card.name, Card);
 |-----------|-----------|
 | title | 自定义标题 |
 | desc | 自定义描述 |
-| tags | 自定义tags |
-| thumb | 自定义thumb |
-| footer | 自定义footer |
+| tags | 自定义 tags |
+| thumb | 自定义 thumb |
+| footer | 自定义 footer |

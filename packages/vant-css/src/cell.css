@@ -37,6 +37,10 @@
 
   &__title {
     display: table-cell;
+
+    .van-icon {
+      margin-right: 5px;
+    }
   }
 
   &__label {
