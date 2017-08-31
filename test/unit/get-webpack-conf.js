@@ -35,7 +35,7 @@ function getWebpackConfig(testFileName) {
     stats: 'errors-only',
     resolve: {
       modules: [path.resolve(process.cwd(), 'node_modules'), 'node_modules'],
-      extensions: ['.js', '.json', '.vue'],
+      extensions: ['.js', '.json', '.vue', '.css'],
       alias: {
         src: path.resolve(process.cwd(), 'src'),
         packages: path.resolve(process.cwd(), 'packages'),

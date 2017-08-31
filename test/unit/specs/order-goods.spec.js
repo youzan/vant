@@ -76,6 +76,9 @@ describe('OrderGoods', () => {
       }
     });
 
+    const submitSpyFunc = sinon.spy();
+    wrapper.vm.$on('clickEmptyButton', submitSpyFunc);
+
     wrapper.find('.van-button')[0].trigger('click');
 
     DOMChecker(wrapper, {
@@ -87,6 +90,8 @@ describe('OrderGoods', () => {
         '.van-order-goods-empty img': 'http://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png'
       }
     });
+
+    expect(submitSpyFunc.calledOnce).to.be.true;
   });
 
   it('empty list config', () => {
@@ -110,7 +115,7 @@ describe('OrderGoods', () => {
     });
   });
 
-  it('edit message', () => {
+  it('edit message', (done) => {
     wrapper = mount(OrderGoods, {
       attachToDocument: true,
       propsData: {
@@ -120,16 +125,14 @@ describe('OrderGoods', () => {
     });
 
     wrapper.vm.$on('input', val => {
-      wrapper.value = val;
+      wrapper.vm.message = val;
+      expect(wrapper.vm.message).to.equal('测试留言');
+      done();
     });
 
     const textarea = wrapper.find('textarea')[0];
-    textarea.value = '测试留言';
+    textarea.element.value = '测试留言';
     textarea.trigger('input');
-
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.value).to.equal('测试留言');
-    });
   });
 
   it('message not editable', () => {
@@ -159,16 +162,10 @@ describe('OrderGoods', () => {
       }
     });
 
-    wrapper.vm.$on('input', val => {
-      wrapper.value = val;
-    });
-
-    wrapper.vm.$nextTick(() => {
-      DOMChecker(wrapper, {
-        text: {
-          '.van-order-goods-message p': '无'
-        }
-      });
+    DOMChecker(wrapper, {
+      text: {
+        '.van-order-goods-message p': ''
+      }
     });
   });
 
@@ -262,7 +259,7 @@ describe('OrderGoods', () => {
     });
   });
 
-  it('item with message', () => {
+  it('item with message', (done) => {
     wrapper = mount(OrderGoods, {
       attachToDocument: true,
       propsData: {
@@ -293,6 +290,7 @@ describe('OrderGoods', () => {
           }
         }
       });
+      done();
     }, 300);
   });
 
