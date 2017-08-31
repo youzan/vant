@@ -13,8 +13,8 @@
 <script>
 import Vue from 'vue';
 import Popup from '../mixins/popup';
-import VanSwipe from '../swipe';
-import VanSwipeItem from '../swipe-item';
+import Swipe from '../swipe';
+import SwipeItem from '../swipe-item';
 
 export default {
   name: 'van-image-preview',
@@ -22,8 +22,8 @@ export default {
   mixins: [Popup],
 
   components: {
-    VanSwipe,
-    VanSwipeItem
+    [Swipe.name]: Swipe,
+    [SwipeItem.name]: SwipeItem
   },
 
   props: {

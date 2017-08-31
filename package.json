@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -26,6 +26,7 @@
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:coverage": "open test/unit/coverage/lcov-report/index.html",
     "test:watch": "karma start test/unit/karma.conf.js",
+    "test:single": "node ./test/unit/selector.js",
     "release": "npm run bootstrap && sh build/release.sh"
   },
   "repository": {
@@ -47,7 +48,7 @@
     "vue": "2.4.2"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.3",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -66,7 +67,7 @@
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.5",
     "eslint-plugin-vue": "^2.1.0",
-    "extract-text-webpack-plugin": "2.1.2",
+    "extract-text-webpack-plugin": "2.0.0",
     "felint": "^0.5.0-alpha.3",
     "file-loader": "^0.11.2",
     "file-save": "^0.2.0",
@@ -89,11 +90,11 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.4",
-    "markdown-it": "^8.3.2",
+    "markdown-it": "^8.4.0",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.4.2",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
-    "postcss": "^6.0.8",
+    "postcss": "^6.0.10",
     "postcss-easy-import": "^2.1.0",
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
@@ -108,7 +109,7 @@
     "vue": "^2.4.2",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^13.0.4",
-    "vue-markdown-loader": "^2.0.0",
+    "vue-markdown-loader": "^2.1.0",
     "vue-router": "^2.7.0",
     "vue-sfc-compiler": "^0.0.2",
     "vue-style-loader": "^3.0.0",
@@ -116,6 +117,6 @@
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
-    "zan-doc": "^0.2.1"
+    "zan-doc": "^0.2.9"
   }
 }

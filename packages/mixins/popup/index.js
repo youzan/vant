@@ -99,6 +99,7 @@ export default {
      * 显示popup
      */
     open() {
+      /* istanbul ignore if */
       if (this.$isServer) return;
       if (this.opened) return;
 
@@ -138,7 +139,7 @@ export default {
 
       if (this.preventScroll) {
         document.addEventListener('touchstart', this.recordPosition, false);
-        document.addEventListener('touchmove', this.watchTouchMove, false);        
+        document.addEventListener('touchmove', this.watchTouchMove, false);
       }
     },
 

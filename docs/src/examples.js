@@ -2,15 +2,16 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesApp';
 import routes from './router.config';
-import ZanUI from 'packages/index';
+import Vant, { Lazyload } from 'packages/index';
 import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
+import 'zan-doc/src/helper/touch-simulator';
 
 import DemoList from './components/demo-list.vue';
 
-Vue.use(ZanUI);
+Vue.use(Vant);
 Vue.use(ZanDoc);
-Vue.use(ZanUI.Lazyload, {
+Vue.use(Lazyload, {
   lazyComponent: true
 });
 Vue.use(VueRouter);

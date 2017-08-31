@@ -13,9 +13,9 @@ export default {
   },
 
   destroyed() {
-    const index = this.$parent.swipes.indexOf(this)
+    const index = this.$parent.swipes.indexOf(this);
     if (index > -1) {
-      this.$parent.swipes.splice(index, 1)
+      this.$parent.swipes.splice(index, 1);
     }
   }
 };

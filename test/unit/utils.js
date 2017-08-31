@@ -31,7 +31,9 @@ export function DOMChecker(wrapper, rules) {
   if (style) {
     Object.keys(style).forEach(key => {
       Object.keys(style[key]).forEach(prop => {
-        expect(wrapper.find(key)[0].hasStyle(prop, style[key][prop])).to.equal(true);
+        expect(wrapper.find(key)[0].hasStyle(prop, style[key][prop])).to.equal(
+          true
+        );
       });
     });
   }
@@ -39,8 +41,35 @@ export function DOMChecker(wrapper, rules) {
   if (noStyle) {
     Object.keys(noStyle).forEach(key => {
       Object.keys(noStyle[key]).forEach(prop => {
-        expect(wrapper.find(key)[0].hasStyle(prop, noStyle[key][prop])).to.equal(false);
+        expect(
+          wrapper.find(key)[0].hasStyle(prop, noStyle[key][prop])
+        ).to.equal(false);
       });
     });
   }
+}
+
+// 触发一个 touch 事件
+export function triggerTouch(wrapper, eventName, x, y) {
+  const el = wrapper.element ? wrapper.element : wrapper;
+  const touch = {
+    identifier: Date.now(),
+    target: el,
+    pageX: x,
+    pageY: y,
+    clientX: x,
+    clientY: y,
+    radiusX: 2.5,
+    radiusY: 2.5,
+    rotationAngle: 10,
+    force: 0.5
+  };
+
+  const event = document.createEvent('CustomEvent');
+  event.initCustomEvent(eventName, true, true, {});
+  event.touches = [touch];
+  event.targetTouches = [touch];
+  event.changedTouches = [touch];
+
+  el.dispatchEvent(event);
 }

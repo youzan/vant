@@ -8,22 +8,12 @@
 </template>
 
 <script>
-import VanLoading from '../loading';
-/**
- * van-switch
- * @module components/switch
- * @desc 开关
- * @param {boolean} [value=false] - 开关状态
- * @param {boolean} [disabled=false] - 禁用
- * @param {boolean} [loading=false] - loading状态
- *
- * @example
- * <van-switch :checked="true" :disabled="false"></van-switch>
- */
+import Loading from '../loading';
+
 export default {
   name: 'van-switch',
   components: {
-    'van-loading': VanLoading
+    [Loading.name]: Loading
   },
   props: {
     value: Boolean,

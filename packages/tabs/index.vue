@@ -192,7 +192,7 @@
             const translate = swipeState.startTranslateLeft + deltaX;
 
             /* istanbul ignore else */
-            if (translate > 0 || (translate * -1) > this.maxTranslate ) return;
+            if (translate > 0 || (translate * -1) > this.maxTranslate) return;
 
             translateUtil.translateElement(el, translate, null);
           },
@@ -200,7 +200,7 @@
           end: () => {
             this.isSwiping = false;
           }
-        })
+        });
       },
 
       doOnValueChange() {

@@ -28,21 +28,5 @@ gulp.task('copy', function(callback) {
   });
 });
 
-
-// 添加到 components.json
-gulp.task('addComponents', function(callback) {
-  const componentsFile = require('../../components.json');
-  if (componentsFile[name]) {
-    console.error(`${name} 已存在.`);
-    process.exit(1);
-  }
-  componentsFile[name] = `./packages/${name}/index.js`;
-  fileSave(path.join(__dirname, '../../components.json'))
-    .write(JSON.stringify(componentsFile, null, '  '), 'utf8')
-    .end('\n');
-  gutil.log('-------> components.json文件更新成功');
-  gutil.log(gutil.colors.yellow('-------> 请无视下面的make报错'));
-});
-
-runSequence('copy', 'addComponents');
+runSequence('copy');
 

@@ -12,9 +12,7 @@
     props: {
       type: {
         type: String,
-        validator: function (val) {
-          return ~ALLOW_TYPE.indexOf(val);
-        }
+        validator: val => ~ALLOW_TYPE.indexOf(val)
       },
       mark: Boolean,
       plain: Boolean

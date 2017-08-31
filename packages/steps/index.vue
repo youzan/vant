@@ -30,7 +30,7 @@ export default {
   name: 'van-steps',
 
   components: {
-    'van-icon': Icon
+    [Icon.name]: Icon
   },
 
   props: {
