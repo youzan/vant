@@ -29,7 +29,6 @@
 
 <script>
 import {
-  Popup,
   Icon
 } from 'vant';
 
@@ -37,7 +36,6 @@ export default {
   name: 'van-deep-select',
 
   components: {
-    'van-popup': Popup,
     'van-icon': Icon
   },
 
