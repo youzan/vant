@@ -54,42 +54,42 @@ export default {
 </script>
 
 <style>
-  body {
-    -webkit-font-smoothing: antialiased;    
-  }
+body {
+  -webkit-font-smoothing: antialiased;    
+}
 
-  body, html {
-    height: 100%;
-  }
+body, html {
+  height: 100%;
+}
 
-  .examples-container {
-    height: 100%;
-    overflow: auto;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
+.examples-container {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 
-    &::-webkit-scrollbar {
-      width: 0;
-    }
+  &::-webkit-scrollbar {
+    width: 0;
   }
+}
 
-  .footer {
-    margin-top: 30px;
-    width: 100%;
-    padding: 10px 0 20px;
-    background: #f8f8f8;
-    
-    &.footer-fixed {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
+.footer {
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0 20px;
+  background: #f8f8f8;
+  
+  &.footer-fixed {
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
+}
 
-  .zanui-logo {
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: auto;
-  }
+.zanui-logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: auto;
+}
 </style>
