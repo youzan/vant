@@ -17,18 +17,19 @@
     height: 50px;
     font-size: 10px;
     min-width: 15%;
+    position: relative;
     text-align: center;
     background-color: #fff;
     flex-direction: column;
     justify-content: center;
 
     &::after {
-      @mixin border-retina (top, right), #cacaca;
+      @mixin border-retina (top, left), #cacaca;
     }
 
-    &:last-child {
+    &:first-child {
       &::after {
-        border-right-width: 0;
+        border-left-width: 0;
       }
     }
 
