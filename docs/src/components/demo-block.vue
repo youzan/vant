@@ -6,6 +6,8 @@
 
 <script>
 export default {
+  name: 'demo-block',
+
   computed: {
     component() {
       return this.$route.path.split('/').pop();

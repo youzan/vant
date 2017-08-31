@@ -54,11 +54,6 @@ export default {
 </script>
 
 <style>
-  a {
-    color: #4078c0;
-    text-decoration: none;
-  }
-
   body {
     -webkit-font-smoothing: antialiased;    
   }
@@ -70,9 +65,12 @@ export default {
   .examples-container {
     height: 100%;
     overflow: auto;
-    background: #f8f8f8;
     position: relative;
     -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
   }
 
   .footer {
