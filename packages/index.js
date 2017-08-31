@@ -15,10 +15,13 @@ import ExpressWay from './express-way';
 import Field from './field';
 import Icon from './icon';
 import ImagePreview from './image-preview';
+import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
+import OrderGoods from './order-goods';
 import Panel from './panel';
+import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
@@ -57,9 +60,12 @@ const components = [
   ExpressWay,
   Field,
   Icon,
+  InvalidGoods,
   Loading,
   NoticeBar,
+  OrderGoods,
   Panel,
+  PayOrder,
   Picker,
   Popup,
   Progress,
@@ -113,10 +119,13 @@ export {
   Field,
   Icon,
   ImagePreview,
+  InvalidGoods,
   Lazyload,
   Loading,
   NoticeBar,
+  OrderGoods,
   Panel,
+  PayOrder,
   Picker,
   Popup,
   Progress,

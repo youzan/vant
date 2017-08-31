@@ -190,6 +190,18 @@ module.exports = {
                 "title": "ExpressWay 配送方式"
               },
               {
+                "path": "/invalid-goods",
+                "title": "InvalidGoods 不可用商品列表"
+              },
+              {
+                "path": "/order-goods",
+                "title": "OrderGoods 下单页商品列表"
+              },
+              {
+                "path": "/pay-order",
+                "title": "PayOrder 提交订单栏"
+              },
+              {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
               }

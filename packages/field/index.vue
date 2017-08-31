@@ -47,9 +47,10 @@
 </template>
 
 <script>
-const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
 import Cell from '../cell';
 import Icon from '../icon';
+
+const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
 
 export default {
   name: 'van-field',
@@ -63,15 +64,14 @@ export default {
     type: {
       type: String,
       default: 'text',
-      validator(value) {
-        return VALID_TYPES.indexOf(value) > -1;
-      }
+      validator: value => VALID_TYPES.indexOf(value) > -1
     },
-    placeholder: String,
     value: {},
+    icon: String,
     label: String,
-    disabled: Boolean,
+    placeholder: String,
     error: Boolean,
+    disabled: Boolean,
     readonly: Boolean,
     required: Boolean,
     maxlength: [String, Number],
@@ -82,7 +82,6 @@ export default {
       type: Boolean,
       default: false
     },
-    icon: String,
     onIconClick: {
       type: Function,
       default: () => {}

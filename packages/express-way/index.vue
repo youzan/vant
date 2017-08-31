@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import Option from './Option.vue';
-import Actionsheet from '../actionsheet';
+import Option from './Option';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
+import Actionsheet from '../actionsheet';
 
 export default {
   name: 'van-express-way',

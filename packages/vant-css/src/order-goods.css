@@ -1,0 +1,214 @@
+@import "./mixins/border_retina";
+
+.van-order-goods {
+  background-color: #fff;
+
+  &-card {
+    margin-left: -15px;
+    position: relative;
+    background-color: #fafafa;
+
+    &:not(:first-child),
+    &__delivery {
+      &::after {
+        @mixin border-retina (top);
+      }
+    }
+
+    &__tags {
+      flex: 1;
+    }
+
+    &__tag-green,
+    &__tag-red {
+      font-size: 10px;
+      padding: 3px 5px;
+      margin-right: 5px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    &__tag-green {
+      color: #fff;
+      background-color: #4b0;
+    }
+
+    &__tag-red {
+      color: #ed5050;
+      padding: 5px 8px;
+      border: 1px solid #ed5050;
+    }
+
+    &__delivery {
+      padding-left: 15px;
+      background-color: transparent;
+
+      .van-cell__value {
+        color: #666;
+      }
+    }
+
+    &__present {
+      top: 0;
+      left: 3px;
+      width: 18px;
+      height: 36px;
+      position: absolute;
+      background: url("https://b.yzcdn.cn/v2/image/wap/trade/confirm/present@2x.png") no-repeat;
+      background-size: 18px 36px;
+    }
+
+    .van-button&__message-button {
+      height: 24px;
+      padding: 0 5px;
+      font-size: 10px;
+      line-height: 22px;
+    }
+
+    &__button {
+      padding: 20px 15px 0;
+      .van-button {
+        height: 40px;
+        line-height: 38px;
+      }
+    }
+
+    &__message {
+      width: 100%;
+      height: 100%;
+      background-color: #f8f8f8;
+
+      h2 {
+        color: #999;
+        font-size: 12px;
+        line-height: 18px;
+        padding: 5px 0 5px 10px;
+      }
+
+      ul {
+        background-color: #fff;
+      }
+
+      p,
+      a,
+      label {
+        font-size: 14px;
+        padding: 14px 0;
+        line-height: 20px;
+        vertical-align: top;
+        display: inline-block;
+      }
+
+      label {
+        color: #c9c9c9;
+        min-width: 90px;
+      }
+
+      li {
+        display: flex;
+        padding: 0 10px;
+        position: relative;
+
+        &:not(:last-child)::after {
+          @mixin border-retina (bottom);
+        }
+
+        img {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+
+  &-empty {
+    margin-left: -15px;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      @mixin border-retina (top);
+    }
+
+    p {
+      color: #999;
+      padding: 0 10px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    img {
+      width: 80px;
+      height: 84px;
+      padding: 15px 0;
+    }
+
+    .van-button {
+      height: 41px;
+      margin: 15px 0;
+      padding: 0 10px;
+      line-height: 39px;
+      border-color: #e5e5e5;
+    }
+  }
+
+  &-header {
+    line-height: 50px;
+
+    a,
+    img,
+    .van-icon {
+      vertical-align: middle;
+    }
+
+    .van-icon {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+
+    a {
+      color: #333;
+      font-size: 14px;
+    }
+
+    img {
+      height: 14px;
+      margin-left: 5px;
+    }
+  }
+
+  &-message {
+    textarea {
+      color: #666;
+      padding: 0;
+      width: 100%;
+      height: 22px;
+      border: none;
+      resize: none;
+      outline: none;
+      display: block;
+      font-size: 14px;
+      line-height: 22px;
+      transition: height .3s ease-in-out;
+    }
+
+    textarea&-focused {
+      height: 48px;
+    }
+
+    p {
+      color: #666;
+      text-align: left;
+    }
+
+    .van-cell__title {
+      width: 75px;
+    }
+  }
+
+  &-price {
+    .van-cell__value {
+      color: #f44;
+    }
+  }
+}

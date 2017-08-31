@@ -32,9 +32,7 @@
       display: block;
     }
     &::after {
-      @mixin border-retina (top);
-      @mixin border-retina (right);
-      @mixin border-retina (left);
+      @mixin border-retina (top, right, left);
     }
   }
 

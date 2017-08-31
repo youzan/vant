@@ -1,0 +1,121 @@
+@import "./mixins/ellipsis";
+
+$van-invalid-goods-photo-size: 90px;
+
+.van {
+  &-invalid-goods {
+    margin: 10px 0;
+
+    &__title {
+      color: #999;
+      font-size: 12px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    &__container {
+      padding: 5px 10px;
+    }
+
+    &__gallery {
+      overflow: hidden;
+      height: $van-invalid-goods-photo-size;
+    }
+
+    &__thumb {
+      float: left;
+      display: flex;
+      height: 100%;
+      position: relative;
+      margin-right: 5px;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        max-width: $van-invalid-goods-photo-size;
+        max-height: $van-invalid-goods-photo-size;
+      }
+    }
+
+    &__count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      color: #666;
+      font-size: 14px;
+      padding-right: 8px;
+      line-height: calc($van-invalid-goods-photo-size + 10px);
+      background-color: #fff;
+      text-align: right;
+
+      span {
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+    }
+
+    &__list {
+      max-height: 400px;
+      overflow-y: scroll;
+    }
+  }
+
+  &-invalid-goods-card {
+    color: #999;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background-color: #fafafa;
+    height: $van-invalid-goods-photo-size;
+
+    &__flag {
+      position: absolute;
+      left: 0;
+      top: 70px;
+      width: $van-invalid-goods-photo-size;
+      color: #fff;
+      font-size: 12px;
+      line-height: 20px;
+      text-align: center;
+      background-color: rgba(0,0,0,.6);
+    }
+
+    &__content {
+      width: 100%;
+      padding-left: 100px;
+      box-sizing: border-box;
+    }
+
+    &__row {
+      display: flex;
+      line-height: 20px;
+    }
+
+    &__title,
+    &__sku {
+      flex: 1;
+      @mixin multi-ellipsis 2;
+    }
+
+    &__title,
+    &__price {
+      font-size: 14px;
+    }
+
+    &__num,
+    &__sku {
+      font-size: 12px;
+    }
+
+    &__desc {
+      color: #f60;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+
+  .van-icon-arrow {
+    color: #666;
+    font-size: 10px;
+  }
+}
