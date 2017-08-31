@@ -10,8 +10,6 @@
 }
 
 .van-loading {
-
-  line-height: 0;
   font-size: 0;
 
   &--circle {
@@ -26,11 +24,10 @@
   }
 
   &__spinner {
-    display: inline-block;
-    height: 100%;
     width: 100%;
-    animation: van-loading 0.8s linear;
-    animation-iteration-count: infinite;
+    height: 100%;
+    display: inline-block;
+    animation: van-loading 0.8s linear infinite;
 
     &--circle {
       border-radius: 100%;
