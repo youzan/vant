@@ -13,6 +13,9 @@ import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
 import ExpressWay from './express-way';
 import Field from './field';
+import GoodsAction from './goods-action';
+import GoodsActionBigBtn from './goods-action-big-btn';
+import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import InvalidGoods from './invalid-goods';
@@ -59,6 +62,9 @@ const components = [
   DatetimePicker,
   ExpressWay,
   Field,
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn,
   Icon,
   InvalidGoods,
   Loading,
@@ -117,6 +123,9 @@ export {
   Dialog,
   ExpressWay,
   Field,
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn,
   Icon,
   ImagePreview,
   InvalidGoods,

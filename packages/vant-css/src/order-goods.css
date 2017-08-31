@@ -1,4 +1,4 @@
-@import "./mixins/border_retina";
+@import "./mixins/border_retina.css";
 
 .van-order-goods {
   background-color: #fff;
