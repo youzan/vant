@@ -10,6 +10,7 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
 import DatetimePicker from './datetime-picker';
+import DeepSelect from './deep-select';
 import Dialog from './dialog';
 import ExpressWay from './express-way';
 import Field from './field';
@@ -57,6 +58,7 @@ const components = [
   CheckboxGroup,
   Col,
   DatetimePicker,
+  DeepSelect,
   ExpressWay,
   Field,
   Icon,
@@ -114,6 +116,7 @@ export {
   CheckboxGroup,
   Col,
   DatetimePicker,
+  DeepSelect,
   Dialog,
   ExpressWay,
   Field,

@@ -1,11 +1,6 @@
 import Vue from 'vue';
 
-let context;
 const _global = Vue.prototype.$isServer ? global : window;
-
-if (_global && _global.popupContext) {
-  context = _global.popupContext;
-}
 
 const DEFAULT_CONTEXT = {
   idSeed: 1,
@@ -15,23 +10,24 @@ const DEFAULT_CONTEXT = {
   modalStack: []
 };
 
-context = _global.popupContext = {
-  ...DEFAULT_CONTEXT,
-  ...context
-};
+if (!_global.popupContext) {
+  _global.popupContext = {
+    ...DEFAULT_CONTEXT
+  };
+}
 
 const PopupContext = {
   getContext(key) {
-    return context[key];
+    return _global.popupContext[key];
   },
 
   setContext(key, value) {
-    context[key] = value;
+    _global.popupContext[key] = value;
   },
 
   plusKeyByOne(key) {
-    const oldVal = +context[key];
-    context[key] = oldVal + 1;
+    const oldVal = +_global.popupContext[key];
+    _global.popupContext[key] = oldVal + 1;
 
     return oldVal;
   }

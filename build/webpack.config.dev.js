@@ -34,6 +34,7 @@ module.exports = {
     chunkFilename: 'async.[name].js'
   },
   devServer: {
+    host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
         { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
@@ -114,7 +115,7 @@ module.exports = {
                 },
 
                 render: function(tokens, idx) {
-                    return tokens[idx].nesting === 1 
+                    return tokens[idx].nesting === 1
                       ? `<demo-block class="demo-box"><div class="highlight" slot="highlight"å>`
                       :`</div></demo-block>\n`;
                 }
