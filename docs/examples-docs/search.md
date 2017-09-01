@@ -83,8 +83,8 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| placeholder | `input`的`placeholder`文案 | `string`  |           |     |
-| type | 搜索样式类型 | `string`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
+| placeholder | `input`的`placeholder`文案 | `String`  |           |     |
+| type | 搜索样式类型 | `String`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
 
 ### Event
 
