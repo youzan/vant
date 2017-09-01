@@ -45,8 +45,7 @@ Vue.component(Checkbox.name, Checkbox);
 ### 代码演示
 
 #### 基础用法
-
-通过`v-model`绑定值即可。当`Checkbox`选中时，绑定的值即为`true`，否则为`false`。当单个`Checkbox`使用时，更建议使用`Switch`组件。
+通过`v-model`绑定 checkbox 的勾选状态
 
 :::demo 基础用法
 ```html
