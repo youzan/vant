@@ -186,6 +186,10 @@ module.exports = {
             "groupName": "业务组件",
             "list": [
               {
+                "path": "/deep-select",
+                "title": "DeepSelect 分类选择组件"
+              },
+              {
                 "path": "/express-way",
                 "title": "ExpressWay 配送方式"
               },
