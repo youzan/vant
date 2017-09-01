@@ -1,4 +1,4 @@
-@import "./mixins/ellipsis";
+@import "./mixins/ellipsis.css";
 
 $van-invalid-goods-photo-size: 90px;
 

@@ -103,6 +103,7 @@
     line-height: 50px;
     border: 0;
     border-radius: 0;
+    font-size: 16px;
     color: $bottom-action-button-default-color;
     background-color: $bottom-action-button-default-background-color;
 

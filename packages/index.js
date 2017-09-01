@@ -10,9 +10,13 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
 import DatetimePicker from './datetime-picker';
+import DeepSelect from './deep-select';
 import Dialog from './dialog';
 import ExpressWay from './express-way';
 import Field from './field';
+import GoodsAction from './goods-action';
+import GoodsActionBigBtn from './goods-action-big-btn';
+import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import InvalidGoods from './invalid-goods';
@@ -57,8 +61,12 @@ const components = [
   CheckboxGroup,
   Col,
   DatetimePicker,
+  DeepSelect,
   ExpressWay,
   Field,
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn,
   Icon,
   InvalidGoods,
   Loading,
@@ -114,9 +122,13 @@ export {
   CheckboxGroup,
   Col,
   DatetimePicker,
+  DeepSelect,
   Dialog,
   ExpressWay,
   Field,
+  GoodsAction,
+  GoodsActionBigBtn,
+  GoodsActionMiniBtn,
   Icon,
   ImagePreview,
   InvalidGoods,
