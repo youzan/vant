@@ -11,13 +11,17 @@
     height: 100px;
     float: none;
     display: inline-block;
-    color: rgba(69, 90, 100, .8);
+
+    .van-icon {
+      display: block;
+    }
   }
 
   .van-icon {
+    display: none;
     font-size: 32px;
     margin: 15px 0;
-    display: block;
+    color: rgba(69, 90, 100, .8);
   }
 
   span {
@@ -28,7 +32,7 @@
 
 <script>
 import Vue from 'vue';
-import { Icon } from 'packages';
+import { Icon, Col } from 'packages';
 
 const icons = [
   'close',
@@ -108,16 +112,17 @@ const icons = [
   'coupon'
 ];
 
-Vue.component('van-icon-inner', Icon);
-Vue.component('van-icon', {
-  props: ['name'],
-
+const IconListConstructor = Vue.extend({
+  components: {
+    [Col.name]: Col,
+    [Icon.name]: Icon
+  },
   render(h) {
     return (
       <div>
         {icons.map(icon => (
           <van-col span="8">
-            <van-icon-inner name={icon}></van-icon-inner>
+            <van-icon name={icon}></van-icon>
             <span>{icon}</span>
           </van-col>
         ))}
@@ -126,7 +131,17 @@ Vue.component('van-icon', {
   }
 });
 
-export default {};
+export default {
+  mounted() {
+    const IconList = new IconListConstructor({
+      el: document.createElement('div')  
+    });
+    const block = document.querySelector('.zan-doc-demo-block');
+    if (block) {
+      block.appendChild(IconList.$el);
+    }
+  }
+};
 </script>
 
 ## Icon 图标
@@ -143,10 +158,9 @@ Vue.component(Icon.name, Icon);
 #### 基础用法
 
 设置`name`属性为对应的图标名称即可，所有可用的图标名称见右侧列表
-
-:::demo 基础用法
+:::demo 图标列表
 ```html
-<van-icon name="success"></van-icon>
+<van-icon name="success" />
 ```
 :::
 
