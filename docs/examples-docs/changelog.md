@@ -1,5 +1,101 @@
 ## 更新日志
 
+## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6) (2017-08-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.5...v0.8.6)
+
+**非兼容更新和新特性:**
+
+- dalete merge && class operating methods [\#88](https://github.com/youzan/vant/pull/88) ([chenjiahan](https://github.com/chenjiahan))
+- directory adjust: delete entry index.js [\#87](https://github.com/youzan/vant/pull/87) ([chenjiahan](https://github.com/chenjiahan))
+- Button: reduce unnecessary styles [\#86](https://github.com/youzan/vant/pull/86) ([chenjiahan](https://github.com/chenjiahan))
+- Layout: optimize doc [\#85](https://github.com/youzan/vant/pull/85) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Fix datetime-picker init value [\#89](https://github.com/youzan/vant/pull/89) ([w91](https://github.com/w91))
+
+**处理的 Issue:**
+
+- When 'showIndicators' set to 'false' The second image does not show [\#80](https://github.com/youzan/vant/issues/80)
+
+## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5) (2017-08-21)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.4...v0.8.5)
+
+**非兼容更新和新特性:**
+
+- Doc: add usage guide && top progress [\#83](https://github.com/youzan/vant/pull/83) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Popup: not preventScroll by default [\#84](https://github.com/youzan/vant/pull/84) ([chenjiahan](https://github.com/chenjiahan))
+- fix: swipe sometimes will change to drag image [\#81](https://github.com/youzan/vant/pull/81) ([pangxie1991](https://github.com/pangxie1991))
+
+**处理的 Issue:**
+
+- Href link does not work [\#82](https://github.com/youzan/vant/issues/82)
+- Swipe image not displayed [\#79](https://github.com/youzan/vant/issues/79)
+
+## [v0.8.4](https://github.com/youzan/vant/tree/v0.8.4) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.3...v0.8.4)
+
+**修复:**
+
+- fix: field 计算autosize，需要nextTick [\#78](https://github.com/youzan/vant/pull/78) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v0.8.3](https://github.com/youzan/vant/tree/v0.8.3) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.1...v0.8.3)
+
+**修复:**
+
+- fix: dialog wrong z-index  [\#77](https://github.com/youzan/vant/pull/77) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.8.1](https://github.com/youzan/vant/tree/v0.8.1) (2017-08-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.0...v0.8.1)
+
+**非兼容更新和新特性:**
+
+- field 增加icon slot支持 [\#76](https://github.com/youzan/vant/pull/76) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v0.8.0](https://github.com/youzan/vant/tree/v0.8.0) (2017-08-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.10...v0.8.0)
+
+**非兼容更新和新特性:**
+
+- Optimize component building, reduce dist file size  [\#74](https://github.com/youzan/vant/pull/74) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.7.10](https://github.com/youzan/vant/tree/v0.7.10) (2017-08-16)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.8...v0.7.10)
+
+**修复:**
+
+- fix: 修复popup和dialog同时出现时，几率出现dialog被挡住的情况 [\#75](https://github.com/youzan/vant/pull/75) ([pangxie1991](https://github.com/pangxie1991))
+- 修复：popup滚动穿透 [\#73](https://github.com/youzan/vant/pull/73) ([cookfront](https://github.com/cookfront))
+
+## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
+
+**非兼容更新和新特性:**
+
+- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- not require reset.css by default [\#72](https://github.com/youzan/vant/pull/72) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
+
+**修复:**
+
+- Fixed: one page Swipe components error [\#70](https://github.com/youzan/vant/pull/70) ([Raistlin916](https://github.com/Raistlin916))
+
+## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
+
+**非兼容更新和新特性:**
+
+- 新增几个icon [\#69](https://github.com/youzan/vant/pull/69) ([cookfront](https://github.com/cookfront))
+
 ## [v0.7.5](https://github.com/youzan/vant/tree/v0.7.5) (2017-08-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.7.3...v0.7.5)
 

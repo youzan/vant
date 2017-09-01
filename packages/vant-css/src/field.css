@@ -50,7 +50,10 @@
 
   &--error {
     .van-field__control {
-      color: $c-red;
+      &,
+      &::placeholder {
+        color: $c-red;
+      }
     }
   }
 
@@ -72,6 +75,12 @@
   &--autosize {
     .van-field__control {
       min-height: 0px;
+    }
+  }
+
+  &--has-icon {
+    .van-field__control {
+      width: 90%;
     }
   }
 

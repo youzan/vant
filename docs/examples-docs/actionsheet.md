@@ -15,11 +15,7 @@
 </style>
 
 <script>
-import MobileComputed from 'components/mobile-computed';
-
 export default {
-  mixins: [MobileComputed],
-
   data() {
     return {
       show1: false,
@@ -57,37 +53,13 @@ export default {
 }
 </script>
 
-## ActionSheet 行动按钮
+## Actionsheet 行动按钮
 
 ### 使用指南
+``` javascript
+import { Actionsheet } from 'vant';
 
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`ActionSheet`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`ActionSheet`组件了：
-
-```js
-import Vue from 'vue';
-import { ActionSheet } from 'vant';
-import 'vant/lib/vant-css/actionSheet.css';
-
-Vue.component(ActionSheet.name, ActionSheet);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`ActionSheet`组件，这样只能在你注册的组件中使用`ActionSheet`：
-
-```js
-import { ActionSheet } from 'vant';
-import 'vant/lib/vant-css/actionSheet.css';
-
-export default {
-  components: {
-    'van-actionSheet': ActionSheet
-  }
-};
+Vue.component(Actionsheet.name, Actionsheet);
 ```
 
 ### 代码演示
@@ -141,11 +113,11 @@ export default {
 ```
 :::
 
-#### 带取消按钮的ActionSheet
+#### 带取消按钮的 Actionsheet
 
-如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
+如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
 
-:::demo 带取消按钮的ActionSheet
+:::demo 带取消按钮的 Actionsheet
 ```html
 <van-button @click="show2 = true">弹出带取消按钮的actionsheet</van-button>
 <van-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
@@ -184,11 +156,11 @@ export default {
 ```
 :::
 
-#### 带标题的ActionSheet
+#### 带标题的 Actionsheet
 
-如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
+如果传入了`title`属性，且不为空，则另外一种样式的`Actionsheet`，里面内容需要自定义。
 
-:::demo 带标题的ActionSheet
+:::demo 带标题的 Actionsheet
 ```html
 <van-button @click="show3 = true">弹出带标题的actionsheet</van-button>
 <van-actionsheet v-model="show3" title="支持以下配送方式" class="title-actionsheet">
@@ -196,11 +168,6 @@ export default {
 </van-actionsheet>
 ```
 :::
-
-点击以下按钮查看手机端效果：
-
-<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
-<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### API
 
@@ -210,9 +177,10 @@ export default {
 | title | 标题 | `String`  |  |    |
 | cancelText | 取消按钮文案 | `String`  |  |    |
 | overlay | 是否显示遮罩 | `Boolean`  |  |    |
-| closeOnClickOverlay | 点击遮罩是否关闭`ActionSheet` | `Boolean`  |  |    |
+| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean`  |  |    |
 
 ### actions
+
 
 `API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
 

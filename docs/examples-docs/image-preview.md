@@ -7,14 +7,11 @@
 </style>
 
 <script>
-import { ImagePreview } from 'src/index';
-import MobileComputed from 'components/mobile-computed';
+import { ImagePreview } from 'packages/index';
 
 export default {
-  mixins: [MobileComputed],
-
   methods: {
-    handleImagePreview() {
+    showImagePreview() {
       ImagePreview([
         'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
         'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
@@ -41,29 +38,22 @@ import { ImagePreview } from 'vant';
 
 :::demo 基础用法
 ```html
-<van-button @click="handleImagePreview">预览图片</van-button>
+<van-button @click="showImagePreview">预览图片</van-button>
+```
 
-<script>
-import { ImagePreview } from 'src/index';
-
+```javascript
 export default {
   methods: {
-    handleImagePreview() {
+    showImagePreview() {
       ImagePreview([
-        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
       ]);
     }
   }
 };
-</script>
 ```
 :::
-
-点击以下按钮查看手机端效果：
-
-<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
-<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
 
 ### 方法参数
 

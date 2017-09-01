@@ -1,11 +1,11 @@
-var Components = require('../../components.json');
+var Components = require('./get-components')();
 var fs = require('fs');
 var render = require('json-templater/string');
 var uppercamelcase = require('uppercamelcase');
 var path = require('path');
 
-var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
-var IMPORT_TEMPLATE = 'import {{name}} from \'../packages/{{package}}/index.js\';';
+var OUTPUT_PATH = path.join(__dirname, '../../packages/index.js');
+var IMPORT_TEMPLATE = 'import {{name}} from \'./{{package}}\';';
 var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
 var MAIN_TEMPLATE = `{{include}}
 
@@ -34,20 +34,17 @@ export {
 };
 export default {
   install,
-  version,
-{{list}}
+  version
 };
 `;
 
 delete Components.font;
 
-var ComponentNames = Object.keys(Components);
-
 var includeComponentTemplate = [];
 var installTemplate = [];
 var listTemplate = [];
 
-ComponentNames.forEach(name => {
+Components.forEach(name => {
   var componentName = uppercamelcase(name);
 
   includeComponentTemplate.push(render(IMPORT_TEMPLATE, {

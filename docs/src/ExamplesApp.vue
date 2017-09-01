@@ -54,96 +54,42 @@ export default {
 </script>
 
 <style>
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
-  del, dfn, em, img, ins, kbd, q, s, samp,
-  small, strike, strong, sub, sup, tt, var,
-  b, u, i, center,
-  dl, dt, dd, ol, ul, li,
-  fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td,
-  article, aside, canvas, details, embed, 
-  figure, figcaption, footer, header, hgroup, 
-  menu, nav, output, ruby, section, summary,
-  time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-  }
+body {
+  -webkit-font-smoothing: antialiased;    
+}
 
-  a {
-    color: #4078c0;
-    text-decoration: none;
-  }
+body, html {
+  height: 100%;
+}
 
-  body, html {
-    height: 100%;
-  }
+.examples-container {
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
 
-  body {
-    font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  &::-webkit-scrollbar {
+    width: 0;
   }
+}
 
-  .examples-container {
-    height: 100%;
-    overflow: auto;
-    background: #f8f8f8;
-    position: relative;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .page-back {
-    display: inline-block;
+.footer {
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0 20px;
+  background: #f8f8f8;
+  
+  &.footer-fixed {
     position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    color: #333;
-    transform: rotate(180deg);
-
-    i {
-      font-size: 24px;
-      line-height: 40px;
-    }
+    bottom: 0;
+    left: 0;
   }
+}
 
-  .demo-title {
-    font-size: 16px;
-    display: block;
-    line-height: 1;
-    padding: 20px 15px 0;
-  }
-
-  .demo-sub-title {
-    font-size: 14px;
-    font-weight: normal;
-    color: #999;
-    padding: 0 15px;
-    margin: 30px 0 10px;
-  }
-
-  .footer {
-    margin-top: 30px;
-    width: 100%;
-    padding: 10px 0 20px;
-    background: #f8f8f8;
-    
-    &.footer-fixed {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
-
-  .zanui-logo {
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: auto;
-  }
+.zanui-logo {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: auto;
+}
 </style>

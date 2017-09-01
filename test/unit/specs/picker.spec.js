@@ -1,7 +1,6 @@
 import Picker from 'packages/picker';
-import PickerColumn from 'packages/picker/src/picker-column';
+import PickerColumn from 'packages/picker/picker-column';
 import { mount } from 'avoriaz';
-import Wrapper from 'avoriaz/dist/Wrapper';
 
 const itemHeight = 44;
 

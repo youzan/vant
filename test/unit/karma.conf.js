@@ -1,10 +1,10 @@
 require('babel-polyfill');
 
 require('babel-core/register')({
-  presets: [require('babel-preset-es2015')]
+  presets: [require('babel-preset-env')]
 });
 
-var webpackConfig = require('./get-webpack-conf');
+var getWebpackConfig = require('./get-webpack-conf');
 var travis = process.env.TRAVIS;
 
 module.exports = function(config) {
@@ -14,9 +14,10 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './index.js': ['webpack', 'sourcemap'],
+      'test/unit/!(components)/**/*.vue': ['coverage']
     },
-    webpack: webpackConfig,
+    webpack: getWebpackConfig(getTestFileName()),
     webpackMiddleware: {
       noInfo: true
     },
@@ -30,3 +31,8 @@ module.exports = function(config) {
     singleRun: false
   });
 };
+
+function getTestFileName() {
+  const flagIndex = process.argv.indexOf('--file');
+  return flagIndex !== -1 ? process.argv[flagIndex + 1] : '';
+}

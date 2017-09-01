@@ -30,34 +30,10 @@ export default {
 表单中`input`或`textarea`的输入框。
 
 ### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Field`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Field`组件了：
-
-```js
-import Vue from 'vue';
+``` javascript
 import { Field } from 'vant';
-import 'vant/lib/vant-css/field.css';
 
 Vue.component(Field.name, Field);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Field`组件，这样只能在你注册的组件中使用`Field`：
-
-```js
-import { Field } from 'vant';
-import 'vant/lib/vant-css/field.css';
-
-export default {
-  components: {
-    'van-field': Field
-  }
-};
 ```
 
 ### 代码演示
@@ -78,7 +54,15 @@ export default {
     :on-icon-click="onIconClick"
     @blur="onFieldBlur"
     required></van-field>
-  <van-field type="password" label="密码：" placeholder="请输入密码" required></van-field>
+  <van-field
+    type="password"
+    label="密码："
+    placeholder="请输入密码"
+    required>
+    <template slot="icon">
+      <van-icon name="search"></van-icon>
+    </template>
+  </van-field>
   <van-field type="textarea" label="个人介绍：" placeholder="请输入个人介绍" required></van-field>
 </van-cell-group>
 ```
@@ -162,4 +146,10 @@ export default {
 | autosize | 自动调整高度(仅支持textarea) | `boolean`  | `false` |  `true`, `false` |
 | icon | 输入框尾部图标 | `string`  |  |  icon中支持的类型 |
 | onIconClick | 点击图标的回调函数 | `function`  |  |  |
+
+### Slot
+
+| name       | 描述      |
+|-----------|-----------|
+| icon | 自定义icon |
 

@@ -6,6 +6,7 @@
 @import './cell.css';
 @import './cell-swipe.css';
 @import './card.css';
+@import './deep-select.css';
 @import './dialog.css';
 @import './field.css';
 @import './icon.css';
@@ -30,3 +31,10 @@
 @import './toast.css';
 @import './uploader.css';
 @import './swipe.css';
+@import './notice-bar.css';
+@import './switch-cell.css';
+@import './express-way.css';
+@import './pay-order.css';
+@import './order-goods.css';
+@import './invalid-goods.css';
+@import './goods-action.css';

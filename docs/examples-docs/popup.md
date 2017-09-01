@@ -35,12 +35,9 @@
 </style>
 
 <script>
-import MobileComputed from 'components/mobile-computed';
 import Dialog from 'packages/dialog';
 
 export default {
-  mixins: [MobileComputed],
-
   data() {
     return {
       popupShow1: false,
@@ -79,34 +76,10 @@ export default {
 ## Popup 弹出菜单
 
 ### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Popup`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Popup`组件了：
-
-```js
-import Vue from 'vue';
+``` javascript
 import { Popup } from 'vant';
-import 'vant/lib/vant-css/popup.css';
 
 Vue.component(Popup.name, Popup);
-```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`Popup`组件，这样只能在你注册的组件中使用`Popup`：
-
-```js
-import { Popup } from 'vant';
-import 'vant/lib/vant-css/popup.css';
-
-export default {
-  components: {
-    'van-popup': Popup
-  }
-};
 ```
 
 ### 代码演示
@@ -186,18 +159,13 @@ export default {
 ```
 :::
 
-点击以下按钮查看手机端效果：
-
-<van-button @click="mobileShow = true">点击查看手机端效果</van-button>
-<mobile-popup v-model="mobileShow" :url="mobileUrl"></mobile-popup>
-
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 利用`v-model`绑定当前组件是否显示 | `boolean`  | `false` | `true`, `false`  |
-| overlay | 是否显示背景遮罩层 | `boolean`  | `true` | `true`, `false`  |
-| lockOnScroll | 背景是否跟随滚动 | `boolean`  | `false` | `true`, `false`  |
-| position | 弹出菜单位置 | `string`  |  | `top`, `bottom`, `right`, `left`  |
-| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `boolean`  | `true` | `true`, `false`  |
-| transition | 弹出菜单的`transition` | `string`  | `popup-slide` |   |
+| v-model | 当前组件是否显示 | `Boolean`  | `false` | - |
+| overlay | 是否显示背景遮罩层 | `Boolean`  | `true` | -  |
+| lockOnScroll | 背景是否跟随滚动 | `Boolean`  | `false` | - |
+| position | 弹出菜单位置 | `String`  | - | `top`, `bottom`, `right`, `left`  |
+| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `Boolean`  | `true` | - |
+| transition | 弹出菜单的`transition` | `String`  | `popup-slide` |   |

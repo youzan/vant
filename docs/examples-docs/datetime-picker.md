@@ -5,15 +5,16 @@ export default {
       minHour: 10,
       maxHour: 20,
       minDate: new Date(),
-      currentDate1: null,
+      maxDate: new Date(2019, 10, 1),
+      currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
       currentDate3: null
     };
   },
 
   methods: {
-    handlePickerChange(picker, values) {
-      console.log(values);
+    handlePickerChange(picker) {
+      console.log(picker);
     },
     handlePickerCancel() {
       console.log('picker cancel');
@@ -25,37 +26,14 @@ export default {
 };
 </script>
 
-## Datetime Picker 时间选择
+## DatetimePicker 时间选择
 
 ### 使用指南
-
-如果你已经按照快速上手中引入了整个`vant`，以下**组件注册**就可以忽略了，因为你已经全局注册了`vant`中的全部组件。
-
-#### 全局注册
-
-你可以在全局注册`Radio`组件，比如页面的主文件（`index.js`，`main.js`），这样页面任何地方都可以直接使用`Radio`组件了：
-
-```js
-import Vue from 'vue';
+``` javascript
 import { DatetimePicker } from 'vant';
 
 Vue.component(DatetimePicker.name, DatetimePicker);
 ```
-
-#### 局部注册
-
-如果你只是想在某个组件中使用，你可以在对应组件中注册`DatetimePicker`组件，这样只能在你注册的组件中使用`DatetimePicker`：
-
-```js
-import { DatetimePicker } from 'vant';
-
-export default {
-  components: {
-    'van-datetime-picker': DatetimePicker
-  }
-};
-```
-
 
 ### 代码演示
 
@@ -66,10 +44,10 @@ export default {
 <van-datetime-picker
   v-model="currentDate1"
   type="datetime"
-  format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
+  :max-date="maxDate"
   @change="handlePickerChange">  
 </van-datetime-picker>
 
@@ -80,13 +58,14 @@ export default {
       minHour: 10,
       maxHour: 20,
       minDate: new Date(),
-      currentDate: null
+      maxDate: new Date(2019, 10, 1),
+      currentDate: new Date(2018, 0, 1)
     };
   },
 
   methods: {
-    handlePickerChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
+    handlePickerChange(picker) {
+      console.log(picker);
     }
   }
 };
@@ -101,7 +80,6 @@ export default {
 <van-datetime-picker
   v-model="currentDate2"
   type="date"
-  format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
@@ -117,7 +95,6 @@ export default {
 <van-datetime-picker
   v-model="currentDate3"
   type="time"
-  format="yyyy.mm.dd hh时 mm分"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
@@ -132,19 +109,11 @@ export default {
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | visibileColumnCount | 每一列可见备选元素的个数 | Number  | 5 |   |
-| itemHeight | 选中元素区高度 | Number  | 44 |   |
-| columns | 对象数组，配置每一列显示的数据 | Array  |  |   |
-| showToolbar | 是否在组件顶部显示一个toolbar | Boolean  | true |   |
-
-### columns
-
-`API`中的`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
-
-| key       | 说明      |
-|-----------|-----------|
-| values | 列中对应的备选值 |
-| defaultIndex | 初始选中值的索引，默认为0 |
-| className | 为对应列添加特殊的`class` |
+| type | 组件类型 | String  | 'datetime' |  'datetime', 'date', 'time' |
+| minDate | 可选的最小日期 | Date  | 十年前的 1 月 1 日 |   |
+| maxDate | 可选的最大日期 | Date  | 十年后的 12 月 31 日 |   |
+| minHour | 可选的最小小时 | Number  | 0 |   |
+| maxHour | 可选的最大小时 | Number  | 23 |   |
 
 ### Event
 

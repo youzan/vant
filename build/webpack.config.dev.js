@@ -6,15 +6,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
+const docConfig = require('../docs/src/doc.config');
+const { extractExample } = require('zan-doc/src/helper');
 const styleLoaders = [
   { loader: 'css-loader' },
   { loader: 'postcss-loader', options: { sourceMap: true } }
 ];
-require('./genExamples')(isProduction);
+
+// extract [components].vue from [components].md
+extractExample({
+  src: path.resolve(__dirname, '../docs/examples-docs'),
+  dist: path.resolve(__dirname, '../docs/examples-dist'),
+  nav: docConfig['zh-CN'].nav,
+  watch: !isProduction
+});
 
 module.exports = {
   entry: {
-    vendor: ['vue', 'vue-router', 'zan-doc'],
     'vant-docs': './docs/src/index.js',
     'vant-examples': './docs/src/examples.js'
   },
@@ -22,9 +30,11 @@ module.exports = {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
     filename: '[name].js',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    chunkFilename: 'async.[name].js'
   },
   devServer: {
+    host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
         { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
@@ -37,8 +47,7 @@ module.exports = {
     modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
     extensions: ['.js', '.vue', '.css'],
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
-      src: path.join(__dirname, '../src'),
+      vue: 'vue/dist/vue.runtime.esm.js',
       packages: path.join(__dirname, '../packages'),
       lib: path.join(__dirname, '../lib'),
       components: path.join(__dirname, '../docs/src/components')
@@ -52,6 +61,7 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
+              preserveWhitespace: false,
               loaders: {
                 postcss: ExtractTextPlugin.extract({
                   use: styleLoaders,
@@ -68,7 +78,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        exclude: /node_modules|vue-router\/|vue-loader\//,
         loader: 'babel-loader'
       },
       {
@@ -105,7 +115,7 @@ module.exports = {
                 },
 
                 render: function(tokens, idx) {
-                    return tokens[idx].nesting === 1 
+                    return tokens[idx].nesting === 1
                       ? `<demo-block class="demo-box"><div class="highlight" slot="highlight"å>`
                       :`</div></demo-block>\n`;
                 }
@@ -130,6 +140,10 @@ module.exports = {
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: 2
     }),
     new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),

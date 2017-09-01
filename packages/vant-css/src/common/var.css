@@ -13,6 +13,7 @@ $c-yellow-light: #fcff00;
 $c-orange: #f60;
 $c-orange-dark: #f15a0c;
 $c-blue: #38f;
+$c-active: #e8e8e8;
 
 $c-background: #f8f8f8;
 
@@ -23,7 +24,7 @@ $button-primary-border-color: #0a0;
 
 $button-default-color: $c-black;
 $button-default-background-color: $c-white;
-$button-default-border-color: #bbb;
+$button-default-border-color: #ccc;
 
 $button-danger-color: $c-white;
 $button-danger-background-color: #f44;
