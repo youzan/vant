@@ -7,6 +7,9 @@ export default {
   methods: {
     onClickButton() {
       Toast('点击按钮');
+    },
+    onClickEditAddress() {
+      Toast('修改地址');
     }
   }
 }
@@ -16,6 +19,9 @@ export default {
 .demo-pay-order {
   .van-pay-order {
     position: relative;
+  }
+  .van-edit-address {
+    color: #38F;
   }
 }
 </style>
@@ -69,6 +75,22 @@ Vue.component(PayOrder.name, PayOrder);
 ```
 :::
 
+#### 
+提示文案中的额外操作和说明
+:::demo 提示文案中添加操作
+```html
+<van-pay-order
+  :price="3050"
+  button-text="提交订单"
+  @submit="onClickButton"
+>
+  <span slot="tip">
+    您的收货地址不支持同城送, <span class="van-edit-address" @click="onClickEditAddress">修改地址 ></span>
+  </span>
+</van-pay-order>
+```
+:::
+
 ### API
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
@@ -85,3 +107,9 @@ Vue.component(PayOrder.name, PayOrder);
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|
 | submit | 按钮点击事件回调 | - |
+
+### Slot
+
+| 名称      | 说明      |
+|-----------|-----------|
+| tip | 提示文案中的额外操作和说明 |
