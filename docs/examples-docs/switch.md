@@ -158,7 +158,7 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 开关状态 | `boolean`  | `false`          | `true`, `false`    |
-| loading | loading状态 | `boolean`  | `false`          | `true`, `false`    |
-| disabled | 禁用状态 | `boolean`  | `false`          | `true`, `false`    |
-| onChange | 开关状态切换回调(默认则改变开关状态) | `function`  | -          | - |
+| v-model | 开关状态 | `Boolean`  | `false`          | `true`, `false`    |
+| loading | loading状态 | `Boolean`  | `false`          | `true`, `false`    |
+| disabled | 禁用状态 | `Boolean`  | `false`          | `true`, `false`    |
+| onChange | 开关状态切换回调(默认则改变开关状态) | `Function`  | -          | - |
