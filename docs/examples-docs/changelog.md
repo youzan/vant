@@ -1,5 +1,17 @@
 ## 更新日志
 
+## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7) (2017-08-29)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.6...v0.8.7)
+
+**非兼容更新和新特性:**
+
+- add ExpressWay component [\#96](https://github.com/youzan/vant/pull/96) ([chenjiahan](https://github.com/chenjiahan))
+- add CellSwitch component [\#95](https://github.com/youzan/vant/pull/95) ([chenjiahan](https://github.com/chenjiahan))
+- add NoticeBar && test cases [\#94](https://github.com/youzan/vant/pull/94) ([chenjiahan](https://github.com/chenjiahan))
+- Dialog: support both function call and component call [\#93](https://github.com/youzan/vant/pull/93) ([chenjiahan](https://github.com/chenjiahan))
+- CellSwipe: improve test coverage && code review [\#91](https://github.com/youzan/vant/pull/91) ([chenjiahan](https://github.com/chenjiahan))
+- Progress: adjust DOM struct [\#90](https://github.com/youzan/vant/pull/90) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6) (2017-08-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.5...v0.8.6)
 
