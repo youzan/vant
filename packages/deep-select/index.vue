@@ -28,9 +28,7 @@
 </template>
 
 <script>
-import {
-  Icon
-} from 'packages/icon';
+import Icon from 'packages/icon';
 
 export default {
   name: 'van-deep-select',
