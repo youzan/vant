@@ -194,6 +194,10 @@ module.exports = {
                 "title": "ExpressWay 配送方式"
               },
               {
+                "path": "/goods-action",
+                "title": "GoodsAction 商品操作"
+              },
+              {
                 "path": "/invalid-goods",
                 "title": "InvalidGoods 不可用商品列表"
               },
