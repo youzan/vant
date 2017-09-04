@@ -23,6 +23,7 @@ extractExample({
 
 module.exports = {
   entry: {
+    vendor: ['packages'],
     'vant-docs': './docs/src/index.js',
     'vant-examples': './docs/src/examples.js'
   },
@@ -87,7 +88,18 @@ module.exports = {
       },
       {
         test: /\.md/,
-        loader: 'vue-markdown-loader'
+        loader: 'vue-markdown-loader',
+        options: {
+          preventExtract: true,
+          use: [[require('markdown-it-container'), 'demo']],
+          preprocess(MarkdownIt, source) {
+            const styleRegexp = /<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/i;
+            const scriptRegexp = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i;
+            MarkdownIt.renderer.rules.table_open = () =>
+              '<table class="zan-doc-table">';
+            return source.replace(styleRegexp, '').replace(scriptRegexp, '');
+          }
+        }
       },
       {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
@@ -98,23 +110,6 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new ProgressBarPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      options: {
-        vueMarkdown: {
-          preventExtract: true,
-          use: [
-            [require('markdown-it-container'), 'demo']
-          ],
-          preprocess(MarkdownIt, source) {
-            const styleRegexp = /<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/i;
-            const scriptRegexp = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i;
-            MarkdownIt.renderer.rules.table_open = () => '<table class="zan-doc-table">';
-            return source.replace(styleRegexp, '').replace(scriptRegexp, '');
-          }
-        }
-      }
-    }),
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'vant-docs'],
       template: 'docs/src/index.tpl',
@@ -132,7 +127,6 @@ module.exports = {
       minChunks: 2,
       filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),
     new ExtractTextPlugin({
       filename: isProduction ? '[name].[hash:8].css' : '[name].css',

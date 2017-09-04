@@ -1,7 +1,7 @@
 ## ExpressWay 配送方式
 
 <script>
-import { Toast, CellGroup } from 'packages';
+import { Toast } from 'packages';
 
 export default {
   data() {
@@ -26,10 +26,6 @@ export default {
     onChange(item, index) {
       Toast('配送方式更换为:' + item.postage_title);
     }
-  },
-
-  components: {
-    [CellGroup.name]: CellGroup
   }
 }
 </script>
