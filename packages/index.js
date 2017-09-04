@@ -23,6 +23,8 @@ import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
+import OrderCoupon from './order-coupon';
+import OrderCouponList from './order-coupon-list';
 import OrderGoods from './order-goods';
 import Panel from './panel';
 import PayOrder from './pay-order';
@@ -71,6 +73,8 @@ const components = [
   InvalidGoods,
   Loading,
   NoticeBar,
+  OrderCoupon,
+  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,
@@ -135,6 +139,8 @@ export {
   Lazyload,
   Loading,
   NoticeBar,
+  OrderCoupon,
+  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,
