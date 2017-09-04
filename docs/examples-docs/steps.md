@@ -55,8 +55,9 @@ Vue.component(Steps.name, Steps);
 </van-steps>
 
 <van-button @click="nextStep">下一步</van-button>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -70,7 +71,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 

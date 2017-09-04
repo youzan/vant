@@ -71,8 +71,9 @@ Vue.use(Lazyload, options);
     <img class="lazy-img" v-lazy="img">
   </li>
 </ul>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -87,7 +88,6 @@ export default {
     };
   }
 }
-</script>
 ```
 :::
 
@@ -102,8 +102,9 @@ export default {
     <div class="lazy-background" v-lazy:background-image="img"></div>
   </li>
 </ul>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -114,7 +115,6 @@ export default {
     };
   }
 }
-</script>
 ```
 :::
 
@@ -131,8 +131,9 @@ export default {
     </li>
   </ul>
 </lazy-component>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -149,7 +150,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 

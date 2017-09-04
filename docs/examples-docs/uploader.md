@@ -34,8 +34,9 @@ Vue.component(Uploader.name, Uploader);
     <van-icon name="photograph"></van-icon>
   </van-uploader>
 </div>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     logContent(file) {
@@ -43,7 +44,6 @@ export default {
     }
   }
 };  
-</script>
 ```
 :::
 
