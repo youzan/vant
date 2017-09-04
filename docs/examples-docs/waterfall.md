@@ -58,7 +58,7 @@ export default {
     }
   },
   computed: {
-    isWaterfallDisabled: function() {
+    isWaterfallDisabled() {
       return this.loading || this.finished;
     }
   }
@@ -123,8 +123,8 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `function`  | - |  |
-| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `function`  | - |  |
-| waterfall-disabled | 在vue对象中表示是否禁止瀑布流触发的key值 | `string`  | - |  |
-| waterfall-offset | 触发瀑布流加载的阈值 | `number`  | `300` |   |
+| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function`  | - |  |
+| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function`  | - |  |
+| waterfall-disabled | 在vue对象中表示是否禁止瀑布流触发的key值 | `String`  | - |  |
+| waterfall-offset | 触发瀑布流加载的阈值 | `Number`  | `300` |   |
 

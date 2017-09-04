@@ -1,19 +1,8 @@
 <style>
 .demo-loading {
   .van-loading {
-    margin: 0 auto;
-  }
-
-  .circle-loading {
-    margin: 20px auto;
-  }
-
-  .demo-loading__example--with-bg {
-    background-color: rgba(17, 17, 17, 0.7);
-    margin: 0 auto;
-    width: 120px;
-    padding: 45px 0;
-    border-radius: 10px;
+    display: inline-block;
+    margin: 10px 0 10px 20px;
   }
 }
 </style>
@@ -29,39 +18,21 @@ Vue.component(Loading.name, Loading);
 
 ### 代码演示
 
-#### 渐变深色spinner
+#### 单色 spinner
 
-:::demo 渐变深色spinner
+:::demo 单色 spinner
 ```html
-<van-loading class="some-customized-class"></van-loading>
+<van-loading type="circle" color="white"></van-loading>
+<van-loading type="circle" color="black"></van-loading>
 ```
 :::
 
-#### 渐变浅色spinner
+#### 渐变色 spinner
 
-:::demo 渐变浅色spinner
+:::demo 渐变色 spinner
 ```html
-<div class="demo-loading__example demo-loading__example--with-bg">
-  <van-loading class="some-customized-class" :color="'white'"></van-loading>
-</div>
-
-<style>
-.demo-loading__example--with-bg {
-  background-color: rgba(17, 17, 17, 0.7);
-  width: 120px;
-  padding: 45px 0;
-  border-radius: 10px;
-}
-</style>
-```
-:::
-
-#### 单色spinner
-
-:::demo 单色spinner
-```html
-<van-loading class="circle-loading" :type="'circle'" :color="'white'"></van-loading>
-<van-loading class="circle-loading" :type="'circle'" :color="'black'"></van-loading>
+<van-loading type="gradient-circle" color="black"></van-loading>
+<van-loading type="gradient-circle" color="white"></van-loading>
 ```
 :::
 
@@ -69,5 +40,5 @@ Vue.component(Loading.name, Loading);
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| color | `loading`颜色 | `string`  | `black`          | `black`, `white`   |
-| type | `loading`类型 | `string`  | `gradient-circle`          | `gradient-circle`, `circle`   |
+| color | 颜色 | `String` | `black` | `black` `white`   |
+| type | 类型 | `String` | `gradient-circle` | `gradient-circle` `circle`   |

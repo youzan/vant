@@ -99,6 +99,7 @@ export default {
      * 显示popup
      */
     open() {
+      /* istanbul ignore if */
       if (this.$isServer) return;
       if (this.opened) return;
 

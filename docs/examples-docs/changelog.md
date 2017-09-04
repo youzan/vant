@@ -1,5 +1,56 @@
 ## 更新日志
 
+## [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8) (2017-09-01)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.7...v0.8.8)
+
+**非兼容更新和新特性:**
+
+- Checkbox: support listen to change event [\#104](https://github.com/youzan/vant/pull/104) ([chenjiahan](https://github.com/chenjiahan))
+- add GoodsAction component [\#102](https://github.com/youzan/vant/pull/102) ([chenjiahan](https://github.com/chenjiahan))
+- add InvalidGoods component [\#100](https://github.com/youzan/vant/pull/100) ([chenjiahan](https://github.com/chenjiahan))
+- add OrderGoods component [\#99](https://github.com/youzan/vant/pull/99) ([chenjiahan](https://github.com/chenjiahan))
+- add PayOrder component [\#98](https://github.com/youzan/vant/pull/98) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- 修复 make init bug [\#97](https://github.com/youzan/vant/pull/97) ([pangxie1991](https://github.com/pangxie1991))
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
+- Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
+- Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7) (2017-08-29)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.6...v0.8.7)
+
+**非兼容更新和新特性:**
+
+- add ExpressWay component [\#96](https://github.com/youzan/vant/pull/96) ([chenjiahan](https://github.com/chenjiahan))
+- add CellSwitch component [\#95](https://github.com/youzan/vant/pull/95) ([chenjiahan](https://github.com/chenjiahan))
+- add NoticeBar && test cases [\#94](https://github.com/youzan/vant/pull/94) ([chenjiahan](https://github.com/chenjiahan))
+- Dialog: support both function call and component call [\#93](https://github.com/youzan/vant/pull/93) ([chenjiahan](https://github.com/chenjiahan))
+- CellSwipe: improve test coverage && code review [\#91](https://github.com/youzan/vant/pull/91) ([chenjiahan](https://github.com/chenjiahan))
+- Progress: adjust DOM struct [\#90](https://github.com/youzan/vant/pull/90) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6) (2017-08-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.5...v0.8.6)
+
+**非兼容更新和新特性:**
+
+- dalete merge && class operating methods [\#88](https://github.com/youzan/vant/pull/88) ([chenjiahan](https://github.com/chenjiahan))
+- directory adjust: delete entry index.js [\#87](https://github.com/youzan/vant/pull/87) ([chenjiahan](https://github.com/chenjiahan))
+- Button: reduce unnecessary styles [\#86](https://github.com/youzan/vant/pull/86) ([chenjiahan](https://github.com/chenjiahan))
+- Layout: optimize doc [\#85](https://github.com/youzan/vant/pull/85) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Fix datetime-picker init value [\#89](https://github.com/youzan/vant/pull/89) ([w91](https://github.com/w91))
+
+**处理的 Issue:**
+
+- When 'showIndicators' set to 'false' The second image does not show [\#80](https://github.com/youzan/vant/issues/80)
+
 ## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5) (2017-08-21)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.4...v0.8.5)
 

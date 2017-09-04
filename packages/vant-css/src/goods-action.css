@@ -1,0 +1,46 @@
+@import './common/var.css';
+@import './mixins/border_retina.css';
+
+.van-goods-action {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  position: fixed;
+
+  &__big-btn {
+    flex: 1;
+  }
+
+  &__mini-btn {
+    color: #666;
+    display: flex;
+    height: 50px;
+    font-size: 10px;
+    min-width: 15%;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+
+    &::after {
+      @mixin border-retina (top, left), #cacaca;
+    }
+
+    &:first-child {
+      &::after {
+        border-left-width: 0;
+      }
+    }
+
+    &:active {
+      background-color: $c-active;
+    }
+  }
+
+  &__mini-btn-icon {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+}

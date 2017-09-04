@@ -66,9 +66,15 @@ Vue.component(Quantity.name, Quantity);
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| min | 最小值 | `string`, `number` | `1`         |           |
-| max | 最大值 | `string`, `number`  |           |           |
-| step | 步数 | `string`, `number`  | `1`         |           |
-| disabled | 是否被禁用了 | `boolean`  | `false`      |           |
-| defaultValue | 默认值 | `string`, `number`  | `1`      |           |
+| min | 最小值 | `String | Number` | `1` | - |
+| max | 最大值 | `String | Number` | - | - |
+| defaultValue | 默认值 | `String | Number` | `1` | - |
+| step | 步数 | `String | Number` | `1` | - |
+| disabled | 是否禁用 | `Boolean` | `false` | - |
 
+### Event
+
+| 事件名称       | 说明      | 回调参数 |
+|-----------|-----------|-----------|
+| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| overlimit | 点击不可用的按钮时触发 | - |
