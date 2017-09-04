@@ -119,7 +119,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 

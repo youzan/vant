@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 import App from './ExamplesDocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
-import DemoBlock from './components/demo-block';
 
 const isMobile = (function() {
   var platform = navigator.userAgent.toLowerCase();
@@ -13,7 +12,6 @@ const isMobile = (function() {
 
 Vue.use(VueRouter);
 Vue.use(ZanDoc);
-Vue.component(DemoBlock.name, DemoBlock);
 
 const routesConfig = routes();
 routesConfig.push({

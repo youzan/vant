@@ -101,30 +101,16 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        vue: {
-          autoprefixer: false
-        },
         vueMarkdown: {
+          preventExtract: true,
           use: [
-            [
-              require('markdown-it-container'),
-              'demo',
-              {
-                validate: function(params) {
-                  return params.trim().match(/^demo\s*(.*)$/);
-                },
-
-                render: function(tokens, idx) {
-                    return tokens[idx].nesting === 1
-                      ? `<demo-block class="demo-box"><div class="highlight" slot="highlight"å>`
-                      :`</div></demo-block>\n`;
-                }
-              }
-            ]
+            [require('markdown-it-container'), 'demo']
           ],
-          preprocess: function(MarkdownIt, source) {
+          preprocess(MarkdownIt, source) {
+            const styleRegexp = /<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/i;
+            const scriptRegexp = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i;
             MarkdownIt.renderer.rules.table_open = () => '<table class="zan-doc-table">';
-            return source;
+            return source.replace(styleRegexp, '').replace(scriptRegexp, '');
           }
         }
       }
@@ -143,7 +129,8 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: 2
+      minChunks: 2,
+      filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
     }),
     new webpack.HotModuleReplacementPlugin(),
     new OptimizeCssAssetsPlugin(),

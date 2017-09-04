@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { ImagePreview } from 'packages/index';
+import { ImagePreview } from 'packages';
 
 export default {
   methods: {

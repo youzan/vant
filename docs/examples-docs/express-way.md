@@ -1,7 +1,7 @@
 ## ExpressWay 配送方式
 
 <script>
-import { Toast, CellGroup } from 'packages/index';
+import { Toast, CellGroup } from 'packages';
 
 export default {
   data() {
@@ -47,17 +47,16 @@ Vue.component(ExpressWay.name, ExpressWay);
 
 :::demo 基础用法
 ```html
-<template>
-  <van-cell-group>
-    <van-express-way 
-      v-model="currentExpressType" 
-      :express-list="expressList" 
-      @change="onChange"
-    />
-  </van-cell-group>
-</tempalte>
+<van-cell-group>
+  <van-express-way
+    v-model="currentExpressType"
+    :express-list="expressList"
+    @change="onChange"
+  ></van-express-way>
+</van-cell-group>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -77,7 +76,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 
@@ -91,7 +89,7 @@ export default {
     :express-list="expressList"
     :editable="false"
     @change="onChange"
-  />
+  ></van-express-way>
 </van-cell-group>
 ```
 :::

@@ -94,8 +94,9 @@ Vue.component(Popup.name, Popup);
 <van-popup v-model="popupShow1" class="van-popup-1" :lock-on-scroll="true">
   从中间弹出popup
 </van-popup>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -103,7 +104,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -133,8 +133,9 @@ export default {
 <van-popup v-model="popupShow5" position="left" class="van-popup-5" :overlay="false">
   <van-button @click.native="popupShow5 = false">关闭 popup</van-button>
 </van-popup>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -155,7 +156,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

@@ -1,7 +1,7 @@
 ## PayOrder 支付订单
 
 <script>
-import { Toast } from 'packages/index';
+import { Toast } from 'packages';
 
 export default {
   methods: {

@@ -33,11 +33,10 @@ Vue.component(InvalidGoods.name, InvalidGoods);
 
 :::demo 基础用法
 ```html
-<template>
-  <van-invalid-goods :goods="goods" />
-<tempalte/>
+<van-invalid-goods :goods="goods" />
+```
 
-<script>
+```javascript
 const item = {
   num: 2,
   sku_id: 123,
@@ -58,7 +57,6 @@ export default {
      }
    }
 }
-</script>
 ```
 :::
 

@@ -55,8 +55,9 @@ Vue.component(Swipe.name, Swipe);
     </a>
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -67,7 +68,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 
@@ -82,8 +82,9 @@ export default {
     <img v-lazy="img" alt="">
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -94,7 +95,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 
@@ -109,8 +109,9 @@ export default {
     <img v-lazy="img" alt="">
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -127,7 +128,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
