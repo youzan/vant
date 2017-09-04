@@ -55,8 +55,9 @@ Vue.component(Swipe.name, Swipe);
     </a>
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -67,7 +68,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 
@@ -82,8 +82,9 @@ export default {
     <img v-lazy="img" alt="">
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -94,7 +95,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 
@@ -109,8 +109,9 @@ export default {
     <img v-lazy="img" alt="">
   </van-swipe-item>
 </van-swipe>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -127,7 +128,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -135,8 +135,8 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| autoPlay | 是否自动轮播 | `boolean`  |    `false`     |    `true`, `false`      |
-| showIndicators | 是否显示指示器 | `boolean`  |   `true`       |   `true`, `false`       |
+| autoPlay | 是否自动轮播 | `Boolean`  |    `false`     |    `true`, `false`      |
+| showIndicators | 是否显示指示器 | `Boolean`  |   `true`       |   `true`, `false`       |
 
 ### 事件
 

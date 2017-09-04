@@ -2,12 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesApp';
 import routes from './router.config';
-import Vant, { Lazyload } from 'packages/index';
+import Vant, { Lazyload } from 'packages';
 import ZanDoc from 'zan-doc';
+import DemoList from './components/demo-list';
 import 'packages/vant-css/src/index.css';
 import 'zan-doc/src/helper/touch-simulator';
-
-import DemoList from './components/demo-list.vue';
 
 Vue.use(Vant);
 Vue.use(ZanDoc);
@@ -19,7 +18,7 @@ Vue.use(VueRouter);
 const routesConfig = routes(true);
 routesConfig.push({
   path: '/',
-  component: DemoList.default || DemoList
+  component: DemoList
 });
 const router = new VueRouter({
   mode: 'history',
@@ -31,8 +30,14 @@ router.beforeEach((to, from, next) => {
   if (container) {
     document.querySelector('.examples-container').scrollTop = 0;
   }
-  next()
+  next();
 });
+
+router.afterEach(() => {
+  window.syncPath();
+});
+
+window.vueRouter = router;
 
 new Vue({ // eslint-disable-line
   render: h => h(App),

@@ -27,10 +27,6 @@ module.exports = merge(devConfig, {
         comments: false
       },
       sourceMap: false
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity
     })
   ]
 });

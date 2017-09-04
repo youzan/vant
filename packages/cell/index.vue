@@ -2,7 +2,7 @@
   <a :class="['van-cell', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
     <div
       class="van-cell__title"
-      v-if="this.$slots.title || title"
+      v-if="$slots.title || title"
     >
       <slot name="icon">
         <i v-if="icon" class="van-icon" :class="'van-icon-' + icon"></i>
@@ -14,10 +14,10 @@
     </div>
     <div
       class="van-cell__value"
-      v-if="value || this.$slots.default"
+      v-if="value || $slots.default"
       :class="{
         'van-cell__value--link': isLink,
-        'van-cell__value--alone': !this.$slots.title && !title && !label
+        'van-cell__value--alone': !$slots.title && !title && !label
       }"
     >
       <slot>

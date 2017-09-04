@@ -31,22 +31,23 @@ export default {
   mixins: [findParent],
 
   props: {
-    disabled: Boolean,
     value: {},
+    disabled: Boolean,
     name: [String, Number]
   },
 
+  watch: {
+    value(val) {
+      this.$emit('change', val);
+    }
+  },
+
   computed: {
-    /**
-     * `checkbox`是否在`van-checkbox-group`中
-     */
+    // checkbox 是否在 van-checkbox-group 中
     isGroup() {
       return !!this.findParentByComponentName('van-checkbox-group');
     },
 
-    /**
-     * `checkbox`当前值
-     */
     currentValue: {
       get() {
         return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
@@ -75,9 +76,6 @@ export default {
       }
     },
 
-    /**
-     * `checkbox`是否被选中
-     */
     isChecked() {
       const currentValue = this.currentValue;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
@@ -87,9 +85,6 @@ export default {
       }
     },
 
-    /**
-     * `checkbox`是否被禁用
-     */
     isDisabled() {
       return this.isGroup && this.parentGroup
           ? this.parentGroup.disabled

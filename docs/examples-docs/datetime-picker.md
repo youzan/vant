@@ -50,8 +50,9 @@ Vue.component(DatetimePicker.name, DatetimePicker);
   :max-date="maxDate"
   @change="handlePickerChange">  
 </van-datetime-picker>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -69,7 +70,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

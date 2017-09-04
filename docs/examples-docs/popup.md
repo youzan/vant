@@ -94,8 +94,9 @@ Vue.component(Popup.name, Popup);
 <van-popup v-model="popupShow1" class="van-popup-1" :lock-on-scroll="true">
   从中间弹出popup
 </van-popup>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -103,7 +104,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -133,8 +133,9 @@ export default {
 <van-popup v-model="popupShow5" position="left" class="van-popup-5" :overlay="false">
   <van-button @click.native="popupShow5 = false">关闭 popup</van-button>
 </van-popup>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -155,7 +156,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -163,10 +163,9 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 利用`v-model`绑定当前组件是否显示 | `boolean`  | `false` | `true`, `false`  |
-| overlay | 是否显示背景遮罩层 | `boolean`  | `true` | `true`, `false`  |
-| lockOnScroll | 背景是否跟随滚动 | `boolean`  | `false` | `true`, `false`  |
-| position | 弹出菜单位置 | `string`  |  | `top`, `bottom`, `right`, `left`  |
-| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `boolean`  | `true` | `true`, `false`  |
-| transition | 弹出菜单的`transition` | `string`  | `popup-slide` |   |
-| preventScroll | 是否防止滚动穿透 | `boolean`  | `false` |  `true`, `false` |
+| v-model | 当前组件是否显示 | `Boolean`  | `false` | - |
+| overlay | 是否显示背景遮罩层 | `Boolean`  | `true` | -  |
+| lockOnScroll | 背景是否跟随滚动 | `Boolean`  | `false` | - |
+| position | 弹出菜单位置 | `String`  | - | `top`, `bottom`, `right`, `left`  |
+| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `Boolean`  | `true` | - |
+| transition | 弹出菜单的`transition` | `String`  | `popup-slide` |   |

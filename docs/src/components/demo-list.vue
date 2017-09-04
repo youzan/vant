@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import docConfig from '../doc.config.js';
+import docConfig from '../doc.config';
 import MobileNav from './mobile-nav';
 
 export default {

@@ -134,8 +134,9 @@ Vue.component(Tabs.name, Tabs);
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     popalert() {
@@ -143,7 +144,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -216,8 +216,9 @@ export default {
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     handleTabClick(index) {
@@ -225,7 +226,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -233,18 +233,18 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选      |
 |-----------|-----------|-----------|-------------|-------------|
-| classtype | 两种UI | `string`  | `line` |     `line`, `card`      |
-| active | 默认激活的tab | `string`, `number`  | `0` |           |
-| navclass | tabs的内部nav上的自定义classname | `string`  |  |           |
-| duration | 切换tab的动画时间 | `number` | `0.3` | |           |
+| classtype | 两种UI | `String`  | `line` |     `line`, `card`      |
+| active | 默认激活的tab | `String`, `Number`  | `0` |           |
+| navclass | tabs的内部nav上的自定义classname | `String`  |  |           |
+| duration | 切换tab的动画时间 | `Number` | `0.3` | |           |
 
 
 ### van-tab API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选       |
 |-----------|-----------|-----------|-------------|-------------|
-| title | tab的标题 | `string`  |         |          |
-| disabled | 是否禁用这个tab | `boolean`  | `false`      |           |
+| title | tab的标题 | `String`  |         |          |
+| disabled | 是否禁用这个tab | `Boolean`  | `false`      |           |
 
 ### van-tabs Event
 

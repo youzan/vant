@@ -3,7 +3,10 @@
     <div class="van-swipe__items">
       <slot></slot>
     </div>
-    <div class="van-swipe__indicators" v-if="showIndicators">
+    <div
+      class="van-swipe__indicators"
+      v-if="showIndicators && swipes.length > 1"
+    >
       <span class="van-swipe__indicator" v-for="(item, index) in swipes.length" :key="index" :class="{
         'van-swipe__indicator--active': currIndex === index
       }">

@@ -71,8 +71,9 @@ Vue.use(Lazyload, options);
     <img class="lazy-img" v-lazy="img">
   </li>
 </ul>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -87,7 +88,6 @@ export default {
     };
   }
 }
-</script>
 ```
 :::
 
@@ -102,8 +102,9 @@ export default {
     <div class="lazy-background" v-lazy:background-image="img"></div>
   </li>
 </ul>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -114,7 +115,6 @@ export default {
     };
   }
 }
-</script>
 ```
 :::
 
@@ -131,8 +131,9 @@ export default {
     </li>
   </ul>
 </lazy-component>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -149,7 +150,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 
@@ -157,11 +157,11 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| loading | 加载时的图片 | `string`  |  |   |
-| error | 错误时的图片 | `string`  |  |   |
-| preload | 预加载高度的比例 | `string`  |  |   |
-| attempt | 尝试次数 | `number`  | `3` |   |
+| loading | 加载时的图片 | `String`  |  |   |
+| error | 错误时的图片 | `String`  |  |   |
+| preload | 预加载高度的比例 | `String`  |  |   |
+| attempt | 尝试次数 | `Number`  | `3` |   |
 | listenEvents | 监听的事件 | `Array`  | `['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove']` |   |
 | adapter | 适配器 | `Object`  |  |   |
 | filter | 图片url过滤 | `Object`  |  |   |
-| lazyComponent | 是否能懒加载模块 | `boolean`  | `false` |   |
+| lazyComponent | 是否能懒加载模块 | `Boolean`  | `false` |   |

@@ -12,6 +12,7 @@
       :icon="emptyIcon"
       :message="emptyMessage"
       :button-text="emptyButtonText"
+      @clickEmptyButton="$emit('clickEmptyButton')"
     />
     <div class="van-order-goods-list">
       <van-order-goods-card

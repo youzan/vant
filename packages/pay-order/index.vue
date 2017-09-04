@@ -1,6 +1,6 @@
 <template>
   <div class="van-pay-order">
-    <div class="van-pay-order__tip" v-show="tip">{{ tip }}</div>
+    <div class="van-pay-order__tip" v-show="tip || hasTipSlot">{{ tip }}<slot name="tip" /></div>
     <div class="van-pay-order__bar">
       <div class="van-pay-order__price">
         <template v-if="hasPrice">
@@ -49,6 +49,9 @@ export default {
     priceDecimal() {
       const decimal = this.price % 100;
       return (decimal < 10 ? '0' : '') + decimal;
+    },
+    hasTipSlot () {
+      return !!this.$slots['tip']
     }
   },
 

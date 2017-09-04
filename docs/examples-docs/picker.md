@@ -52,8 +52,9 @@ Vue.component(Picker.name, Picker);
 :::demo 基础用法
 ```html
 <van-picker :columns="pickerColumns" @change="handlePickerChange"></van-picker>
+```
 
-<script>
+```javascript
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
@@ -82,7 +83,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -98,8 +98,9 @@ export default {
   @cancel="handlePickerCancel"
   @confirm="handlePickerConfirm"
 ></van-picker>
+```
 
-<script>
+```javascript
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
@@ -135,7 +136,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -143,8 +143,8 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | `number`  | `5` |   |
-| itemHeight | 选中元素区高度 | `number`  | `44` |   |
+| visibileColumnCount | 每一列可见备选元素的个数 | `Number`  | `5` |   |
+| itemHeight | 选中元素区高度 | `Number`  | `44` |   |
 | columns | 对象数组，配置每一列显示的数据 | `Array`  |  |   |
 | showToolbar | 是否在组件顶部显示一个toolbar | `Boolean`  | `true` |   |
 | title | 在toolbar上显示的标题文字 | `String`  |  |   |
