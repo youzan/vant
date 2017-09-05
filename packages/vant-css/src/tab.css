@@ -10,7 +10,7 @@
 
   &__swipe {
     user-select: none;
-    transition: transform ease .3s;
+    transition: transform linear .2s;
 
     .van-tab {
       flex: 0 0 22%;
