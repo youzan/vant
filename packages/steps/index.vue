@@ -16,8 +16,8 @@
       </slot>
     </div>
     <div class="van-steps__items" :class="{
-      'van-steps__items--alone': !title && !description
-    }">
+        'van-steps__items--alone': !title && !description
+      }">
       <slot></slot>
     </div>
   </div>
@@ -60,11 +60,11 @@ export default {
 
   computed: {
     stepsClass() {
-      const direction = this.direction;
-      const lengthClass = `van-steps--${this.steps.length}`;
-      const directionClass = `van-steps--${direction}`;
-
-      return direction === 'horizontal' ? [lengthClass, directionClass] : [directionClass];
+      return [
+        `van-steps--${this.direction}`, {
+          [`van-steps--${this.steps.length}`]: this.direction === 'horizontal'
+        }
+      ];
     }
   }
 };

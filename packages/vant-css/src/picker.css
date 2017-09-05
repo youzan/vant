@@ -1,19 +1,14 @@
-@import './mixins/border_retina.css';
+@import './common/var.css';
 
 .van-picker {
   overflow: hidden;
-  background-color: #fff;
+  background-color: $white;
 
   &__toolbar {
     height: 40px;
     line-height: 40px;
     overflow: hidden;
     padding: 0 15px;
-    position: relative;
-
-    &::after {
-      @mixin border-retina (top, bottom);
-    }
   }
 
   &__cancel {
@@ -129,11 +124,9 @@
       width: 100%;
       box-sizing: border-box;
       transition-duration: .3s;
-      backface-visibility: hidden;
 
       &--selected {
-        color: #000;
-        transform: translate3d(0, 0, 0) rotateX(0);
+        color: $black;
       }
     }
   }
@@ -141,7 +134,6 @@
   .picker-column-wrapper {
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
-    backface-visibility: hidden;
   }
 
   .picker-column-wrapper.dragging,

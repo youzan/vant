@@ -9,11 +9,11 @@
   }
 
   .van-icon-checked {
-    color: $c-green;
+    color: $green;
   }
 
   .van-icon-check {
-    color: $c-gray-dark;
+    color: $gray-dark;
   }
 
   &--disabled {
@@ -27,7 +27,6 @@
     height: 22px;
     margin-right: 15px;
     float: left;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   &__control {
@@ -43,7 +42,6 @@
   &__label {
     line-height: 22px;
     margin-left: 37px;
-    display: block;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);      
+    display: block; 
   }
 }

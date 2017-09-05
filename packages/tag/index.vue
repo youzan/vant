@@ -1,5 +1,5 @@
 <template>
-  <span :class="['van-tag', { [`van-tag--${type}`]: type, 'is-plain': plain, 'is-mark': mark }]">
+  <span :class="['van-tag', 'van-hairline--surround', { [`van-tag--${type}`]: type, 'is-plain': plain, 'is-mark': mark }]">
     <slot></slot>
   </span>
 </template>

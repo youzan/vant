@@ -1,3 +1,5 @@
+@import './common/var.css';
+
 .van-switch-cell {
   .van-cell__title {
     vertical-align: middle;

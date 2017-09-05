@@ -1,49 +1,34 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
 
 .van-badge {
-
   display: block;
   overflow: hidden;
-  position: relative;
-  padding: 20px 12px;
-  box-sizing: border-box;
-  line-height: 1.4;
-  background-color: $c-background;
-  color: $c-gray-darker;
   font-size: 14px;
-  text-decoration: none;
+  line-height: 1.4;
+  box-sizing: border-box;
+  padding: 20px 12px 20px 9px;
+  color: $gray-darker;
+  background-color: $background-color;
   word-break: break-all;
+  border-left: 3px solid transparent;
+
+  &:not(:last-child)::after {
+    border-bottom-width: 1px;
+  }
 
   &-group {
-    position: relative;
     width: 85px;
-
-    &::after {
-      @mixin border-retina (top);
-    }
   }
 
   &--select {
     font-weight: bold;
-    color: $c-black;
-    background-color: $c-white;
-    .van-badge__active {
-      display: block;
-    }
-    &::after {
-      @mixin border-retina (top, right, left);
-    }
-  }
+    color: $text-color;
+    border-color: $red;
+    background-color: $white;
 
-  &__active {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 3px;
-    height: 100%;
-    background-color: #FF4444;
+    &::after {
+      border-right-width: 1px;
+    }
   }
 
   &__info {
@@ -51,25 +36,14 @@
     top: 2px;
     right: 2px;
     font-size: 10px;
-    transform:scale(0.8);
+    color: $white;    
+    transform: scale(0.8);
     text-align: center;
     box-sizing: border-box;
     padding: 0 6px;
     min-width: 18px;
-    height: 18px;
     line-height: 18px;
     border-radius: 9px;
-    background-color: #FF4444;
-    color: $c-white;
-  }
-
-  &::after {
-    @mixin border-retina (bottom);
-  }
-
-  &:last-child {
-    &::after {
-      border-bottom: 0;
-    }
+    background-color: $red;
   }
 }

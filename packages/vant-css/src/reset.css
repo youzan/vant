@@ -8,7 +8,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 html {
-    line-height: 1
+    line-height: 1;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ol, ul {
@@ -48,15 +49,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   font-family: Arial, Helvetica, "STHeiti STXihei", "Microsoft YaHei", Tohoma, sans-serif;
-	color: #333;
-	background-color: #f8f8f8;
-	-webkit-backface-visibility: hidden;
+	color: $text-color;
+	background-color: $background-color;
 }
 
 a {
   background: transparent;
   text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button,
@@ -65,7 +64,6 @@ select,
 textarea {
   font-family: inherit;
   margin: 0;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-appearance: none;
       -moz-appearance: none;
 }

@@ -1,20 +1,34 @@
+@import '../common/var.css';
+
 $border-poses: top, right, bottom, left;
 
-@define-mixin border-retina $poses: $border-poses, $border-retina-color: #e5e5e5 {
+@define-mixin border-retina $poses: $border-poses, $border-retina-color: $gray-light {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  box-sizing: border-box;
   width: 200%;
   height: 200%;
   transform: scale(.5);
-  transform-origin: left top;
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
+  transform-origin: 0 0;
   pointer-events: none;
+  box-sizing: border-box;
 
   @each $pos in $poses {
     border-$(pos): 1px solid $border-retina-color;
   }
+}
+
+@define-mixin hairline $border-retina-color: $gray-light {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid $border-retina-color;
 }

@@ -21,7 +21,7 @@
         :data="item"
       />
     </div>
-    <div class="van-order-coupon-list__close" @click="onClickNotUse">{{ closeButtonText }}</div>
+    <div class="van-order-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
   </van-popup>
 </template>
 

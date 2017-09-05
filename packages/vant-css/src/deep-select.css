@@ -9,24 +9,23 @@
 
   &__nav {
     width: 143px;
-    /*float: left;*/
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     overflow: scroll;
-    background-color: $c-white;
+    background-color: $white;
     -webkit-overflow-scrolling: touch;
   }
 
   &__nitem {
     line-height: 44px;
     padding: 0 15px;
-    background-color: $c-white;
+    background-color: $white;
     @mixin multi-ellipsis 1;
 
     &--active {
-      background-color: $c-background;
+      background-color: $background-color;
     }
   }
 
@@ -52,7 +51,7 @@
   &__selected {
     float: right;
     position: absolute;
-    right: 0px;
+    right: 0;
     top: 0;
     bottom: 0;
   }

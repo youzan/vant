@@ -1,6 +1,6 @@
 <template>
   <div class="van-picker">
-    <div class="van-picker__toolbar" v-show="showToolbar">
+    <div class="van-picker__toolbar van-hairline--top-bottom" v-show="showToolbar">
       <slot>
         <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">取消</a>
         <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">完成</a>
