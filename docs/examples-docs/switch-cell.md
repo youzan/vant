@@ -25,13 +25,12 @@ Vue.component(SwitchCell.name, SwitchCell);
 
 :::demo 基础用法
 ```html
-<template>
- <van-cell-group>
-   <van-switch-cell v-model="checked" title="标题" />
- </van-cell-group>
-</template>
+<van-cell-group>
+  <van-switch-cell v-model="checked" title="标题" />
+</van-cell-group>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -39,7 +38,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 

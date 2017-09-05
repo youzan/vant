@@ -134,8 +134,9 @@ Vue.component(Tabs.name, Tabs);
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     popalert() {
@@ -143,7 +144,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -216,8 +216,9 @@ export default {
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     handleTabClick(index) {
@@ -225,7 +226,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

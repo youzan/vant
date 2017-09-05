@@ -3,11 +3,9 @@
     <h1 class="zanui-title">Zan UI Wap</h1>
     <h2 class="zanui-desc">有赞移动wap端组件库</h2>
     <div class="mobile-navs">
-      <template v-for="(item, index) in data">
-        <div class="mobile-nav-item" v-if="item.showInMobile" :key="index">
-          <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index"></mobile-nav>
-        </div>
-      </template>
+      <div class="mobile-nav-item" v-for="(item, index) in data" v-if="item.showInMobile" :key="index">
+        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index" />
+      </div>
     </div>
   </div>
 </template>
@@ -19,8 +17,6 @@ import MobileNav from './mobile-nav';
 export default {
   data() {
     return {
-      highlights: [],
-      navState: [],
       data: docConfig['zh-CN'].nav,
       base: '/component'
     };

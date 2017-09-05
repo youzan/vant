@@ -7,7 +7,7 @@
     .van-quantity__input,
     .van-quantity__minus,
     .van-quantity__plus {
-      border-color: #e8e8e8;
+      border-color: $active-color;
     }
   }
 
@@ -15,10 +15,9 @@
     width: 40px;
     height: 30px;
     box-sizing: border-box;
-    background-color: $c-white;
-    border: 1px solid $c-gray-dark;
+    background-color: $white;
+    border: 1px solid $border-color;
     position: relative;
-    outline: 0;
     padding: 5px;
     vertical-align: middle;
 
@@ -53,8 +52,8 @@
     }
 
     &--disabled {
-      background-color: #f8f8f8;
-      border-color: #e8e8e8 #999 #e8e8e8 #e8e8e8;
+      background-color: $background-color;
+      border-color: $active-color $border-color $active-color $active-color;
     }
   }
 
@@ -62,8 +61,8 @@
     border-radius: 0 2px 2px 0;
 
     &--disabled {
-      background-color: #f8f8f8;
-      border-color: #e8e8e8 #e8e8e8 #e8e8e8 #999;
+      background-color: $background-color;
+      border-color: $active-color $active-color $active-color $border-color;
     }
   }
 
@@ -71,13 +70,12 @@
     width: 33px;
     height: 26px;
     padding: 1px;
-    border: 1px solid $c-gray-dark;
+    border: 1px solid $border-color;
     border-width: 1px 0;
     border-radius: 0;
     box-sizing: content-box;
-    color: $c-gray-darker;
+    color: $gray-darker;
     font-size: 14px;
-    outline: 0;
     vertical-align: middle;
     text-align: center;
     -webkit-appearance: none;

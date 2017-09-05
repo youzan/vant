@@ -18,13 +18,13 @@
     height: 5px;
     display: inline-block;
     border-radius: 100%;
-    background: #999;
+    background: $gray-dark;
     opacity: .8;
     margin: 0 3px;
     z-index: 1;
 
     &--active {
-      background: $c-orange;
+      background: $orange;
       opacity: 1;
     }
   }

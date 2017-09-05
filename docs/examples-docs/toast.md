@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { Toast } from 'packages/index';
+import { Toast } from 'packages';
 
 export default {
   methods: {
@@ -83,9 +83,10 @@ import { Toast } from 'vant';
 <van-button @click="showFailToast">失败</van-button>
 <van-button @click="showForbidClickToast">背景不能点击</van-button>
 <van-button @click="showCustomizedToast(5000)">倒数5秒</van-button>
+```
 
-<script>
-import { Toast } from 'packages/index';
+```javascript
+import { Toast } from 'packages';
 
 export default {
   methods: {
@@ -125,7 +126,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -135,9 +135,10 @@ export default {
 ```html
 <van-button @click="showToast">打开</van-button>
 <van-button @click="closeToast">关闭</van-button>
+```
 
-<script>
-import { Toast } from 'packages/index';
+```javascript
+import { Toast } from 'packages';
 
 export default {
   methods: {
@@ -149,34 +150,8 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
-
-
-#### 传入html
-
-:::demo 手动关闭
-```html
-<van-button @click="showHtmlToast">打开</van-button>
-
-<script>
-import { Toast } from 'packages/index';
-
-export default {
-  methods: {
-    showHtmlToast() {
-      Toast({
-        type: 'html',
-        message: '<em>HTML<em>'
-      })
-    }
-  }
-};
-</script>
-```
-:::
-
 
 ### 基础用法
 

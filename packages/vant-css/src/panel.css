@@ -1,29 +1,20 @@
-@import './mixins/border_retina.css';
+@import './common/var.css';
 
 .van-panel {
-  background: #fff;
-  position: relative;
-
-  &::after {
-    @mixin border-retina (top, bottom);
-  }
+  background: $white;
 
   &__header {
     padding: 10px 15px;
-    position: relative;
-    &::after {
-      @mixin border-retina (bottom);
-    }
   }
 
   &__title {
     font-size: 14px;
-    color: #333;
+    color: $text-color;
   }
 
   &__desc {
     font-size: 12px;
-    color: #666;
+    color: $gray-darker;
   }
 
   &__status {
@@ -31,15 +22,10 @@
     position: absolute;
     top: 10px;
     right: 15px;
-    color: #FF4444;
+    color: $red;
   }
 
   &__footer {
     padding: 10px 15px;
-    position: relative;
-
-    &::after {
-      @mixin border-retina (top);
-    }
   }
 }

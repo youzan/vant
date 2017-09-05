@@ -1,7 +1,7 @@
 <template>
   <transition name="van-actionsheet-float">
     <div :class="['van-actionsheet', { 'van-actionsheet--withtitle': title }]" v-show="value">
-      <div class="van-actionsheet__header" v-if="title">
+      <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <h3 v-text="title" />
         <van-icon name="close" @click.stop="$emit('input', false)" />
       </div>
@@ -9,7 +9,7 @@
         <li
           v-for="(item, index) in actions"
           :key="index"
-          :class="['van-actionsheet__item', item.className, { 'van-actionsheet__item--loading': item.loading }]"
+          :class="['van-actionsheet__item', 'van-hairline--top', item.className, { 'van-actionsheet__item--loading': item.loading }]"
           @click.stop="onClickItem(item)">
           <template v-if="!item.loading">
             <span class="van-actionsheet__name">{{ item.name }}</span>
@@ -18,7 +18,7 @@
           <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
         </li>
       </ul>
-      <div class="van-actionsheet__item van-actionsheet__cancel" @click.stop="$emit('input', false)" v-if="cancelText">{{ cancelText }}</div>
+      <div class="van-actionsheet__item van-actionsheet__cancel van-hairline--top" @click.stop="$emit('input', false)" v-if="cancelText">{{ cancelText }}</div>
       <div class="van-actionsheet__content" v-else>
         <slot></slot>
       </div>

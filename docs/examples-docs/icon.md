@@ -32,7 +32,6 @@
 
 <script>
 import Vue from 'vue';
-import { Icon, Col } from 'packages';
 
 const icons = [
   'close',
@@ -113,10 +112,6 @@ const icons = [
 ];
 
 const IconListConstructor = Vue.extend({
-  components: {
-    [Col.name]: Col,
-    [Icon.name]: Icon
-  },
   render(h) {
     return (
       <div>

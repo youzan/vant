@@ -1,5 +1,4 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
 
 .van-tabs {
   position: relative;
@@ -10,7 +9,7 @@
 
   &__swipe {
     user-select: none;
-    transition: transform ease .3s;
+    transition: transform linear .2s;
 
     .van-tab {
       flex: 0 0 22%;
@@ -32,7 +31,7 @@
 
       .van-tab {
         &::after {
-          @mixin border-retina (top, bottom);
+          border-width: 1px 0;
         }
       }
     }
@@ -40,23 +39,23 @@
     &--card {
       height: 28px;
       margin: 0 15px;
-      background-color: $c-white;
+      background-color: $white;
       border-radius: 2px;
-      border: 1px solid #666666;
+      border: 1px solid $gray-darker;
       overflow: hidden;
 
       .van-tab {
-        color: #666;
+        color: $gray-darker;
         line-height: 28px;
-        border-right: 1px solid #666;
+        border-right: 1px solid $gray-darker;
 
         &:last-child {
           border-right: none;
         }
 
         &.van-tab--active {
-          background-color: #666;
-          color: $c-white;
+          background-color: $gray-darker;
+          color: $white;
         }
       }
     }
@@ -76,18 +75,17 @@
 
 .van-tab {
   position: relative;
-  color: $c-black;
-  background-color: $c-white;
+  color: $text-color;
+  background-color: $white;
   font-size: 14px;
   line-height: 44px;
   box-sizing: border-box;
   cursor: pointer;
   text-align: center;
   flex: 1;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &--active {
-    color: #FF4444;
+    color: $red;
   }
 
   &__pane {
@@ -98,19 +96,3 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

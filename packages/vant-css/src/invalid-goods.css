@@ -1,3 +1,4 @@
+@import './common/var.css';
 @import "./mixins/ellipsis.css";
 
 $van-invalid-goods-photo-size: 90px;
@@ -7,7 +8,7 @@ $van-invalid-goods-photo-size: 90px;
     margin: 10px 0;
 
     &__title {
-      color: #999;
+      color: $gray-dark;
       font-size: 12px;
       text-align: center;
       margin-bottom: 10px;
@@ -42,11 +43,11 @@ $van-invalid-goods-photo-size: 90px;
       top: 0;
       right: 0;
       width: 80px;
-      color: #666;
+      color: $gray-darker;
       font-size: 14px;
       padding-right: 8px;
       line-height: calc($van-invalid-goods-photo-size + 10px);
-      background-color: #fff;
+      background-color: $white;
       text-align: right;
 
       span {
@@ -62,7 +63,7 @@ $van-invalid-goods-photo-size: 90px;
   }
 
   &-invalid-goods-card {
-    color: #999;
+    color: $gray-dark;
     margin: 10px 0;
     padding: 5px 10px;
     background-color: #fafafa;
@@ -73,7 +74,7 @@ $van-invalid-goods-photo-size: 90px;
       left: 0;
       top: 70px;
       width: $van-invalid-goods-photo-size;
-      color: #fff;
+      color: $white;
       font-size: 12px;
       line-height: 20px;
       text-align: center;
@@ -108,14 +109,14 @@ $van-invalid-goods-photo-size: 90px;
     }
 
     &__desc {
-      color: #f60;
+      color: $orange;
       font-size: 12px;
       margin-top: 5px;
     }
   }
 
   .van-icon-arrow {
-    color: #666;
+    color: $gray-darker;
     font-size: 10px;
   }
 }

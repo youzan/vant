@@ -4,7 +4,7 @@
   height: 4px;
   position: relative;
   border-radius: 4px;
-  background: $c-gray-light;
+  background: $gray-light;
 
   &__portion {
     left: 0;
@@ -22,6 +22,6 @@
     border-radius: 6px;
     line-height: 12px;
     text-align: center;
-    background-color: $c-gray-light;
+    background-color: $gray-light;
   }
 }

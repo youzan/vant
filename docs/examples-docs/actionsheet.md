@@ -73,8 +73,9 @@ Vue.component(Actionsheet.name, Actionsheet);
 <van-button @click="show1 = true">弹出actionsheet</van-button>
 <van-actionsheet v-model="show1" :actions="actions1">
 </van-actionsheet>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -109,7 +110,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 
@@ -122,8 +122,9 @@ export default {
 <van-button @click="show2 = true">弹出带取消按钮的actionsheet</van-button>
 <van-actionsheet v-model="show2" :actions="actions1" cancel-text="取消">
 </van-actionsheet>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -152,7 +153,6 @@ export default {
     };
   }
 }
-</script>
 ```
 :::
 

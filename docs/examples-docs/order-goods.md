@@ -64,16 +64,15 @@ Vue.component(OrderGoods.name, OrderGoods);
 
 :::demo 基础用法
 ```html
-<template>
-  <van-order-goods
-    v-model="message1"
-    shop-name="起码运动馆"
-    :price="1050"
-    :item-list="itemList1"
-  />
-</template>
+<van-order-goods
+  v-model="message1"
+  shop-name="起码运动馆"
+  :price="1050"
+  :item-list="itemList1"
+/>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -87,7 +86,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 
@@ -95,17 +93,16 @@ export default {
 
 :::demo 积分商品
 ```html
-<template>
-  <van-order-goods
-    v-model="message2"
-    shop-name="起码运动馆"
-    :item-list="itemList2"
-    :price="50"
-    :points="200"
-  />
-</template>
+<van-order-goods
+  v-model="message2"
+  shop-name="起码运动馆"
+  :item-list="itemList2"
+  :price="50"
+  :points="200"
+/>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -124,7 +121,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 
@@ -132,16 +128,15 @@ export default {
 
 :::demo 预售商品
 ```html
-<template>
-  <van-order-goods
-    v-model="message3"
-    shop-name="起码运动馆"
-    :price="1050"
-    :item-list="itemList3"
-  />
-</template>
+<van-order-goods
+  v-model="message3"
+  shop-name="起码运动馆"
+  :price="1050"
+  :item-list="itemList3"
+/>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -159,7 +154,6 @@ export default {
     }
   }
 }
-</script>
 ```
 :::
 

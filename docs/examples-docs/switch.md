@@ -66,10 +66,9 @@ Vue.component(Switch.name, Switch);
     <div class="demo-switch__text">{{ switchState2 ? ' 打开' : '关闭' }}</div>
   </van-col>
 </van-row>
+```
 
-
-
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -90,7 +89,6 @@ export default {
     }
   }
 };  
-</script>
 ```
 :::
 
@@ -110,8 +108,9 @@ export default {
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -120,7 +119,6 @@ export default {
     };
   }
 };  
-</script>
 ```
 :::
 
@@ -140,8 +138,9 @@ export default {
     <div class="demo-switch__text">关闭</div>
   </van-col>
 </van-row>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -150,7 +149,6 @@ export default {
     };
   }
 };  
-</script>
 ```
 :::
 

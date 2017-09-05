@@ -44,8 +44,8 @@ Vue.component(Radio.name, Radio);
   <van-radio name="1" v-model="radio1">单选框1</van-radio>
   <van-radio name="2" v-model="radio1">单选框2</van-radio>
 </div>
-
-<script>
+```
+```javascript
 export default {
   data() {
     return {
@@ -53,7 +53,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -67,8 +66,9 @@ export default {
   <van-radio name="1" v-model="radio2" disabled>未选中禁用</van-radio>
   <van-radio name="2" v-model="radio2" disabled>选中且禁用</van-radio>
 </div>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -76,7 +76,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -92,8 +91,9 @@ export default {
     <van-radio name="2">单选框2</van-radio>
   </van-radio-group>
 </div>
+```
   
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -101,7 +101,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -117,8 +116,9 @@ export default {
     <van-cell><van-radio name="2">单选框2</van-radio></van-cell>
   </van-cell-group>
 </van-radio-group>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -126,7 +126,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

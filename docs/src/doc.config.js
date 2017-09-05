@@ -202,6 +202,10 @@ module.exports = {
                 "title": "InvalidGoods 不可用商品列表"
               },
               {
+                "path": "/order-coupon",
+                "title": "OrderCoupon 下单页优惠券"
+              },
+              {
                 "path": "/order-goods",
                 "title": "OrderGoods 下单页商品列表"
               },

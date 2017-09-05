@@ -7,7 +7,7 @@
 </style>
 
 <script>
-import { Dialog } from 'packages/index';
+import { Dialog } from 'packages';
 
 const message = '弹窗内容';
 
@@ -56,8 +56,9 @@ import { Dialog } from 'vant';
 ```html
 <van-button @click="onClickAlert">Alert</van-button>
 <van-button @click="onClickAlert2">无标题 Alert</van-button>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     onClickAlert() {
@@ -78,7 +79,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -89,8 +89,9 @@ export default {
 :::demo 消息确认
 ```html
 <van-button @click="onClickConfirm">Confirm</van-button>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     onClickConfirm() {
@@ -105,7 +106,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

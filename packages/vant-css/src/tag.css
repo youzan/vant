@@ -1,24 +1,22 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
 
 .van-tag {
-  position: relative;
   display: inline-block;
   line-height: 14px;
   padding: 1px 5px;
   border-radius: 2px;
   font-size: 10px;
-  background: $c-gray;
-  color: $c-white;
+  background: $gray;
+  color: $white;
 
   &::after {
-    @mixin border-retina (top, right, bottom, left), $c-gray;
+    border-color: $gray;
     border-radius: 4px;
   }
 
   &.is-plain {
-    background: $c-white;
-    color: $c-gray;
+    background: $white;
+    color: $gray;
   }
 
   &.is-mark {
@@ -30,14 +28,14 @@
   }
 
   &--success {
-    background: $c-green;
+    background: $green;
 
     &::after {
-      border-color: $c-green;
+      border-color: $green;
     }
 
     &.is-plain {
-      color: $c-green;
+      color: $green;
     }
   }
 
@@ -54,14 +52,14 @@
   }
 
   &--primary {
-    background: $c-blue;
+    background: $blue;
 
     &::after {
-      border-color: $c-blue;
+      border-color: $blue;
     }
 
     &.is-plain {
-      color: $c-blue;
+      color: $blue;
     }
   }
 }

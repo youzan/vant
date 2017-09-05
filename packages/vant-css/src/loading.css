@@ -36,8 +36,8 @@
       box-sizing: border-box;
 
       &.van-loading__spinner--black {
-        border-color: $c-gray;
-        border-top-color: $c-gray-darker;
+        border-color: $gray;
+        border-top-color: $gray-darker;
       }
 
       &.van-loading__spinner--white {

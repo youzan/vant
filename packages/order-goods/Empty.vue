@@ -1,5 +1,5 @@
 <template>
-  <div class="van-order-goods-empty">
+  <div class="van-order-goods-empty van-hairline--top">
     <img :src="icon" />
     <p>{{ message }}</p>
     <van-button @click="$emit('clickEmptyButton')">{{ buttonText }}</van-button>

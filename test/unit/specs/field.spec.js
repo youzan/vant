@@ -1,4 +1,5 @@
 import Field from 'packages/field';
+import FieldWithIcon from '../components/field';
 import { mount } from 'avoriaz';
 
 describe('Field', () => {
@@ -125,5 +126,44 @@ describe('Field', () => {
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
       done();
     }, 500);
+  });
+
+  it('show icon when has value and icon props', () => {
+    wrapper = mount(Field, {
+      propsData: {
+        icon: 'name',
+        value: '123'
+      }
+    });
+
+    expect(wrapper.find('.van-field__icon').length).to.equal(1);
+  });
+
+  it('create a field with icon slot', () => {
+    const fn = sinon.spy();
+
+    wrapper = mount(FieldWithIcon, {
+      propsData: {
+        onIconClick: fn
+      }
+    });
+
+    wrapper.find('.van-field__icon')[0].trigger('click');
+    expect(fn.calledOnce).to.be.true;
+  });
+
+  it('blur event', (done) => {
+    const blur = sinon.spy();
+    const clickIcon = sinon.spy();
+
+    wrapper = mount(FieldWithIcon, {});
+    wrapper.vm.$on('blur', blur);
+
+    wrapper.find('.van-field__icon')[0].trigger('click');
+    wrapper.find('.van-field__control')[0].trigger('blur');
+
+    expect(blur.calledOnce).to.be.true;
+    expect(clickIcon.calledOnce).to.be.false;
+    done();
   });
 });
