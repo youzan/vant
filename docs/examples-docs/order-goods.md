@@ -134,6 +134,7 @@ export default {
   :price="1050"
   :item-list="itemList3"
 />
+```
 
 ```javascript
 export default {

@@ -1,7 +1,4 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
-@import './cell.css';
-@import './icon.css';
 
 .van-field {
 
@@ -44,7 +41,7 @@
 
   &--disabled {
     .van-field__control {
-      color: $c-gray-dark;
+      color: $gray-dark;
     }
   }
 
@@ -52,7 +49,7 @@
     .van-field__control {
       &,
       &::placeholder {
-        color: $c-red;
+        color: $red;
       }
     }
   }
@@ -64,17 +61,12 @@
 
     &::after {
       border-radius: 2px;
-      @mixin border-retina (top, right, bottom, left);
-    }
-
-    &:last-child::after {
-      @mixin border-retina (bottom);
     }
   }
 
   &--autosize {
     .van-field__control {
-      min-height: 0px;
+      min-height: 0;
     }
   }
 
@@ -93,7 +85,6 @@
     display: block;
     width: 100%;
     resize: none;
-    outline: 0;
   }
 
   &__icon {

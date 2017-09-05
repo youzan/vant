@@ -1,31 +1,29 @@
-@import './mixins/border_retina.css';
+@import './common/var.css';
 
 .van-switch {
   height: 31px;
   width: 51px;
   display: inline-block;
   position: relative;
-  background: #fff;
+  background: $white;
   border-radius: 16px;
-  &::after{
-    @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
-    border-width: 3px;
-    border-radius: 32px;
-  }
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 32px;
 
   &__node {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border-radius: 13.5px;
-    background-color: #fff;
+    background-color: $white;
     position: absolute;
     box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
-    left: 1px;
-    top: 1px;
+    left: 0;
+    top: 0;
     z-index: 2;
     transition: transform .3s;
+
     &::after {
-      @mixin border-retina (top, right, bottom, left), rgba(0, 0, 0, .1);
+      border-color: rgba(0, 0, 0, .1);
       border-radius: 27px;
     }
   }
@@ -42,14 +40,18 @@
 
   &--on {
     background-color: #44db5e;
-    &::after { border-color: #44db5e; }
+
+    &::after {
+      border-color: #44db5e;
+    }
+
     .van-switch__node {
-      transform: translateX(20px);
+      transform: translateX(21px);
     }
   }
 
   &--off {
-    background-color: #fff;
+    background-color: $white;
     border-color: rgba(0, 0, 0, .1);
   }
 

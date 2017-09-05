@@ -1,5 +1,5 @@
 <template>
-  <a :class="['van-cell', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
+  <a :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
     <div
       class="van-cell__title"
       v-if="$slots.title || title"

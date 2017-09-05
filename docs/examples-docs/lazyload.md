@@ -1,14 +1,15 @@
 <style>
 .demo-lazyload {
-  .lazy-img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .lazy-background {
-    height: 300px;
-    background-size: cover;
+  img,
+  div[lazy] {
+    padding: 15px;
+    width: 315px;
+    height: 250px;
+    margin: 10px 15px 0;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    background-size: 315px 250px;
+    background-position: 15px;
     background-repeat: no-repeat;
   }
 }
@@ -19,20 +20,18 @@ export default {
   data() {
     return {
       imageList: [
-        'https://img.yzcdn.cn/upload_files/2016/01/27/Fo2dFWjXYzWDR9Jaa1AEqk1jt7e0',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FkyhiZfVE8tx-4qjxR2VeiqsSZYL',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FpWD3kX18w8qjM6faH-4JqOWHsF4',
-        'https://img.yzcdn.cn/upload_files/2016/09/08/9ff28d555e5760fa830344f12efa0087.jpg',
-        'https://img.yzcdn.cn/upload_files/2016/11/13/FlZIeSgbSANSPkmUHttMjoIgY3cv.jpg',
-        'https://img.yzcdn.cn/upload_files/2016/12/12/FuxgsGPRnupGu_eaMuaR8W0DuSKp.jpeg'
+        'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/c0dab461920687911536621b345a0bc9.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/fd08f07665ed67d50e11b32a21ce0682.jpg'
       ],
       backgroundImageList: [
-        'https://img.yzcdn.cn/upload_files/2016/01/27/Fo2dFWjXYzWDR9Jaa1AEqk1jt7e0',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FkyhiZfVE8tx-4qjxR2VeiqsSZYL'
+        'https://img.yzcdn.cn/public_files/2017/09/05/bac1903e863834ace25773f3554b6890.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/138c32d4384b5e4a78dc4e1ba58e6a80.jpg'
       ],
       componentImageList: [
-        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
-        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
+        'https://img.yzcdn.cn/public_files/2017/09/05/100a7845756a70af2df513bdd1307d0e.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/8a4f5be8289cb3a7434fc19a3de780a2.jpg'
       ]
     };
   },
@@ -61,16 +60,11 @@ Vue.use(Lazyload, options);
 ### 代码演示
 
 #### 基础用法
-
-比如商品详情页很多图片的情况需要对图片进行懒加载，只需将`v-lazy`指令的值设置为你需要懒加载的图片。
+将`v-lazy`指令的值设置为你需要懒加载的图片
 
 :::demo 基础用法
 ```html
-<ul class="image-list" ref="container">
-  <li v-for="(img, index) in imageList" :key="index">
-    <img class="lazy-img" v-lazy="img">
-  </li>
-</ul>
+<img v-for="img in imageList" v-lazy="img">
 ```
 
 ```javascript
@@ -78,12 +72,8 @@ export default {
   data() {
     return {
       imageList: [
-        'https://img.yzcdn.cn/upload_files/2016/01/27/Fo2dFWjXYzWDR9Jaa1AEqk1jt7e0',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FkyhiZfVE8tx-4qjxR2VeiqsSZYL',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FpWD3kX18w8qjM6faH-4JqOWHsF4',
-        'https://img.yzcdn.cn/upload_files/2016/09/08/9ff28d555e5760fa830344f12efa0087.jpg',
-        'https://img.yzcdn.cn/upload_files/2016/11/13/FlZIeSgbSANSPkmUHttMjoIgY3cv.jpg',
-        'https://img.yzcdn.cn/upload_files/2016/12/12/FuxgsGPRnupGu_eaMuaR8W0DuSKp.jpeg'
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
       ]
     };
   }
@@ -93,15 +83,11 @@ export default {
 
 #### 背景图懒加载
 
-和图片懒加载不同的背景图懒加载需要使用`v-lazy:background-image`，值设置为背景图片的地址。还有一个需要注意的是你需要设置容器的样式，否则高度不会撑开。
+和图片懒加载不同，背景图懒加载需要使用`v-lazy:background-image`，值设置为背景图片的地址，需要注意的是必须声明容器高度。
 
 :::demo 背景图懒加载
 ```html
-<ul class="image-list" ref="container">
-  <li v-for="(img, index) in backgroundImageList" :key="index">
-    <div class="lazy-background" v-lazy:background-image="img"></div>
-  </li>
-</ul>
+<div v-for="img in backgroundImageList" v-lazy:background-image="img" />
 ```
 
 ```javascript
@@ -109,8 +95,8 @@ export default {
   data() {
     return {
       backgroundImageList: [
-        'https://img.yzcdn.cn/upload_files/2016/01/27/Fo2dFWjXYzWDR9Jaa1AEqk1jt7e0',
-        'https://img.yzcdn.cn/upload_files/2016/01/27/FkyhiZfVE8tx-4qjxR2VeiqsSZYL'
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
       ]
     };
   }
@@ -124,12 +110,8 @@ export default {
 
 :::demo 懒加载模块
 ```html
-<lazy-component @show="handleComponentShow">
-  <ul class="image-list">
-    <li v-for="(img, index) in componentImageList" :key="index">
-      <img class="lazy-img" v-lazy="img">
-    </li>
-  </ul>
+<lazy-component>
+  <img v-for="img in componentImageList" v-lazy="img">
 </lazy-component>
 ```
 
@@ -138,16 +120,10 @@ export default {
   data() {
     return {
       componentImageList: [
-        'https://img.yzcdn.cn/upload_files/2017/03/09/FvkZahKoq1vkxLQFdVWeLf2UCqDz.png',
-        'https://img.yzcdn.cn/upload_files/2017/03/09/Fk0rpe_svu9d5Xk3MUCWd1QeMXOu.png'
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
       ]
     };
-  },
-
-  methods: {
-    handleComponentShow() {
-      console.log('component show');
-    }
   }
 }
 ```
@@ -157,11 +133,13 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| loading | 加载时的图片 | `String`  |  |   |
-| error | 错误时的图片 | `String`  |  |   |
-| preload | 预加载高度的比例 | `String`  |  |   |
-| attempt | 尝试次数 | `Number`  | `3` |   |
-| listenEvents | 监听的事件 | `Array`  | `['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove']` |   |
-| adapter | 适配器 | `Object`  |  |   |
-| filter | 图片url过滤 | `Object`  |  |   |
-| lazyComponent | 是否能懒加载模块 | `Boolean`  | `false` |   |
+| loading | 加载时的图片 | `String` | - | - |
+| error | 错误时的图片 | `String` | - | - |
+| preload | 预加载高度的比例 | `String` | - | - |
+| attempt | 尝试次数 | `Number` | `3` |   |
+| listenEvents | 监听的事件 | `Array`  | `scroll`等 | - |
+| adapter | 适配器 | `Object` | - | - |
+| filter | 图片url过滤 | `Object` | - | - |
+| lazyComponent | 是否能懒加载模块 | `Boolean` | `false` | - |
+
+更多内容请参照：[ vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)

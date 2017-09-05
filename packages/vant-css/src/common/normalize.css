@@ -1,0 +1,27 @@
+/**
+ * 基本样式入口
+ */
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+input,
+button,
+textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

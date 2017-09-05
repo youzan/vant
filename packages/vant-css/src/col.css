@@ -1,3 +1,5 @@
+@import './common/var.css';
+
 .van-col {
   float: left;
   box-sizing: border-box;

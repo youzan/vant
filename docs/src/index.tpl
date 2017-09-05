@@ -6,7 +6,7 @@
   <link rel="shortcut icon" href="https://b.yzcdn.cn/zanui/icon/zanui.ico">
   <title>ZanUI - 移动端</title>
 </head>
-<body>
+<body ontouchstart>
 
   <div id="app-container">
     <app></app>

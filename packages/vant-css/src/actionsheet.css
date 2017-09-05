@@ -1,19 +1,16 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
-@import './popup.css';
 
 .van-actionsheet {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  color: $c-black;
+  color: $text-color;
   transition: .2s ease-out;
-  background-color: #e0e0e0;
-  backface-visibility: hidden;
+  background-color: $background-color;
 
   &--withtitle {
-    background-color: $c-white;
+    background-color: $white;
   }
 
   &__item {
@@ -21,17 +18,16 @@
     line-height: 50px;
     font-size: 16px;
     text-align: center;
-    position: relative;
-    background-color: $c-white;
+    background-color: $white;
 
-    &::after {
-      @mixin border-retina (top);
+    &:active {
+      background-color: $active-color;
     }
   }
 
   &__subname {
     font-size: 12px;
-    color: $c-gray-darker;
+    color: $gray-darker;
   }
 
   &__loading {
@@ -39,17 +35,12 @@
   }
 
   &__cancel {
-    margin-top: 5px;
+    margin-top: 10px;
   }
 
   &__header {
     line-height: 44px;
     text-align: center;
-    position: relative;
-
-    &::after {
-      @mixin border-retina (top, bottom);
-    }
 
     .van-icon-close {
       top: 11px;

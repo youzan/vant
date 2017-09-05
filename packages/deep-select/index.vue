@@ -1,20 +1,20 @@
 <template>
-  <div class="van-deep-select" v-bind:style="{ height: mainHeight + 'px' }">
+  <div class="van-deep-select" :style="{ height: mainHeight + 'px' }">
     <div class="van-deep-select__nav">
       <div
         v-for="(item, index) in items"
         class="van-deep-select__nitem"
-        v-bind:class="{ 'van-deep-select__nitem--active': mainActiveIndex === index }"
+        :class="{ 'van-deep-select__nitem--active': mainActiveIndex === index }"
         @click="onNavClick(index)">
         {{ item.text }}
       </div>
     </div>
-    <div class="van-deep-select__content" v-bind:style="{ height: itemHeight + 'px' }">
+    <div class="van-deep-select__content" :style="{ height: itemHeight + 'px' }">
       <div
         v-for="item in subItems"
         :key="item.id"
         class="van-deep-select__item"
-        v-bind:class="{ 'van-deep-select__item--active': activeId === item.id }"
+        :class="{ 'van-deep-select__item--active': activeId === item.id }"
         @click="onItemSelect(item)">
         {{ item.text }}
         <van-icon

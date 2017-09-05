@@ -1,3 +1,5 @@
+@import './common/var.css';
+
 .van {
   &-modal {
     position: fixed;
@@ -5,17 +7,16 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.701961);
-    transition: all .5s ease-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: .5s ease-out;
   }
 
   &-popup {
     position: fixed;
-    background-color: #fff;
+    background-color: $white;
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
-    backface-visibility: hidden;
     transition: .2s ease-out;
 
     &--top {

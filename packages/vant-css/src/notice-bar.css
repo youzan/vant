@@ -1,7 +1,7 @@
 @import './common/var.css';
 
 .van-notice-bar {
-  color: #f60;
+  color: $orange;
   padding: 9px 10px;
   font-size: 12px;
   line-height: 1.5;

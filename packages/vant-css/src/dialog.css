@@ -1,5 +1,4 @@
-@import './mixins/border_retina.css';
-@import './popup.css';
+@import './common/var.css';
 
 .van-dialog {
   position: fixed;
@@ -10,11 +9,9 @@
   overflow: hidden;
   transition: .2s;
   border-radius: 4px;
-  background-color: #fff;
-  backface-visibility: hidden;
+  background-color: $white;
   transform: translate3d(-50%, -50%, 0);
   
-
   &__header {
     padding: 15px 0 0;
     text-align: center;
@@ -22,10 +19,9 @@
 
   &__content {
     padding: 15px 20px;
-    position: relative;
 
     &::after {
-      @mixin border-retina (bottom);
+      border-bottom-width: 1px;
     }
   }
 
@@ -33,7 +29,7 @@
     line-height: 1.5;
 
     &--withtitle {
-      color: #999;
+      color: $gray-dark;
       font-size: 14px;
     }
   }
@@ -46,15 +42,6 @@
 
       .van-button {
         flex: 1;
-      }
-
-      .van-dialog__cancel {
-        position: relative;
-
-        &::before {
-          @mixin border-retina (right);
-          left: -2px;
-        }
       }
     }
   }
