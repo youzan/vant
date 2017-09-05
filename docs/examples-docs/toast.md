@@ -153,31 +153,6 @@ export default {
 ```
 :::
 
-
-#### 传入html
-
-:::demo 手动关闭
-```html
-<van-button @click="showHtmlToast">打开</van-button>
-```
-
-```javascript
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    showHtmlToast() {
-      Toast({
-        type: 'html',
-        message: '<em>HTML<em>'
-      })
-    }
-  }
-};
-```
-:::
-
-
 ### 基础用法
 
 #### Toast(options)
