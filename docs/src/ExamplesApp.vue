@@ -10,8 +10,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
-
 export default {
   computed: {
     visible() {
@@ -30,8 +28,8 @@ export default {
   },
 
   watch: {
-    '$route.path': function(val) {
-      Vue.nextTick(() => {
+    '$route.path'(val) {
+      this.$nextTick(() => {
         this.computeFooterFixed();
       });
     }

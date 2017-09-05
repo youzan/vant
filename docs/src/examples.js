@@ -25,15 +25,12 @@ const router = new VueRouter({
   base: '/zanui/vue/examples',
   routes: routesConfig
 });
-router.beforeEach((to, from, next) => {
+
+router.afterEach(() => {
   const container = document.querySelector('.examples-container');
   if (container) {
     document.querySelector('.examples-container').scrollTop = 0;
   }
-  next();
-});
-
-router.afterEach(() => {
   window.syncPath();
 });
 
