@@ -1,5 +1,6 @@
 import Area from 'packages/area';
 import { mount } from 'avoriaz';
+import AreaList from '../mock/area.json';
 
 describe('Area', () => {
   let wrapper;
@@ -8,7 +9,11 @@ describe('Area', () => {
   });
 
   it('create an area', () => {
-    wrapper = mount(Area);
+    wrapper = mount(Area, {
+      propsData: {
+        areaList: AreaList
+      }
+    });
 
     expect(wrapper.hasClass('van-area')).to.be.true;
   });
@@ -16,6 +21,7 @@ describe('Area', () => {
   it('create an area with default value', (done) => {
     wrapper = mount(Area, {
       propsData: {
+        areaList: AreaList,
         value: '110101'
       }
     });
@@ -37,6 +43,7 @@ describe('Area', () => {
   it('create an area and set value', (done) => {
     wrapper = mount(Area, {
       propsData: {
+        areaList: AreaList,
         value: '110101'
       }
     });
@@ -68,6 +75,7 @@ describe('Area', () => {
   it('create an area with columnsNum equal 2', () => {
     wrapper = mount(Area, {
       propsData: {
+        areaList: AreaList,
         columnsNum: 2
       }
     });
@@ -79,6 +87,7 @@ describe('Area', () => {
   it('create an area with columnsNum equal 1', () => {
     wrapper = mount(Area, {
       propsData: {
+        areaList: AreaList,
         columnsNum: 1
       }
     });
@@ -88,7 +97,11 @@ describe('Area', () => {
   });
 
   it('create an area and click cancel', (done) => {
-    wrapper = mount(Area);
+    wrapper = mount(Area, {
+      propsData: {
+        areaList: AreaList
+      }
+    });
 
     expect(wrapper.hasClass('van-area')).to.be.true;
     const cancelBtn = wrapper.find('.van-picker__cancel')[0];
