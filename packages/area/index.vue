@@ -6,7 +6,6 @@
 
 <script>
 import Picker from '../picker';
-import AreaList from './area.json';
 
 const DEFAULT_PROVINCE = {
   code: '-1',
@@ -36,10 +35,7 @@ export default {
 
   props: {
     value: {},
-    areaList: {
-      type: Object,
-      default: AreaList
-    },
+    areaList: Object,
     /**
      * 省市县显示列数，3-省市县，2-省市，1-省
      */
