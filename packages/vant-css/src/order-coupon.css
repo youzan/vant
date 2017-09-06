@@ -1,10 +1,10 @@
-@import "./mixins/border_retina.css";
+@import './common/var.css';
 @import "./mixins/ellipsis.css";
 
 .van-order-coupon {
   &-list {
     height: 100%;
-    background-color: #f8f8f8;
+    background-color: $background-color;
 
     &__top {
       position: absolute;
@@ -13,10 +13,6 @@
       width: 100%;
       z-index: 1;
       box-sizing: border-box;
-
-      &::after {
-        border-top: none;
-      }
     }
 
     &__exchange {
@@ -34,7 +30,7 @@
       -webkit-overflow-scrolling: touch;
 
       h3 {
-        color: #999;
+        color: $gray-dark;
         margin: 15px 0;
         font-size: 14px;
         position: relative;
@@ -47,7 +43,7 @@
           height: 1px;
           top: 50%;
           position: absolute;
-          background-color: #e5e5e5;
+          background-color: $gray-light;
         }
 
         &::before {
@@ -74,11 +70,7 @@
       line-height: 45px;
       text-align: center;
       position: absolute;
-      background-color: #fff;
-
-      &::after {
-        @mixin border-retina (top);
-      }
+      background-color: $white;
     }
   }
 
@@ -102,7 +94,7 @@
 
     &__gradient {
       flex: 1;
-      color: #fff;
+      color: $white;
       display: flex;
       margin-left: -1px; /* hack for flex space */
       text-align: center;
@@ -134,7 +126,7 @@
       padding: 0 15px;
       overflow: hidden;
       position: relative;
-      background-color: #fff;
+      background-color: $white;
       flex-direction: column;
       justify-content: center;
       border-radius: 0 4px 4px 0;
@@ -146,7 +138,7 @@
 
       p,
       span {
-        color: #999;
+        color: $gray-dark;
         font-size: 12px;
         margin-top: 5px;
       }
@@ -168,13 +160,13 @@
       border-style: solid;
       border-width: 18px 19px;
       border-radius: 0 4px 0 0;
-      border-color: #f44 #f44 transparent transparent;
+      border-color: $red $red transparent transparent;
 
       .van-icon {
         position: absolute;
         top: -13px;
         right: -13px;
-        color: #fff;
+        color: $white;
         font-size: 12px;
         
         &::before {

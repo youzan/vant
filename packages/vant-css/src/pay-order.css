@@ -1,3 +1,5 @@
+@import './common/var.css';
+
 .van-pay-order {
   left: 0;
   bottom: 0;
@@ -7,7 +9,7 @@
   user-select: none;
 
   &__tip {
-    color: #f60;
+    color: $orange;
     font-size: 12px;
     line-height: 18px;
     padding: 10px 10px;
@@ -18,7 +20,7 @@
     height: 50px;
     display: flex;
     line-height: 50px;
-    background-color: #fff;
+    background-color: $white;
   }
 
   &__price {
@@ -28,17 +30,17 @@
   }
 
   &__price-text {
-    color: #666;
+    color: $gray-darker;
     font-size: 16px;
   }
 
   &__price-interger {
-    color: #f44;
+    color: $red;
     font-size: 16px;
   }
 
   &__price-decimal {
-    color: #f44;
+    color: $red;
     font-size: 12px;
   }
 

@@ -3,6 +3,7 @@
  */
 
 /* base */
+@import './base.css';
 @import './reset.css';
 
 /* common components */

@@ -18,8 +18,7 @@ window.syncPath = function(dir) {
 };
 
 window.changePath = function(path) {
-  const router = window.vueRouter;
-  router.replace(path);
+  window.vueRouter.replace(path);
 };
 
 function iframeReady(iframe, callback) {
@@ -27,10 +26,15 @@ function iframeReady(iframe, callback) {
   if (doc.readyState === 'complete') {
     callback();
   } else {
-    iframe.onload = () => {
-      setTimeout(() => {
+    const interval = () => {
+      if (iframe.contentWindow.changePath) {
         callback();
-      }, 50);
+      } else {
+        setTimeout(() => {
+          interval();
+        }, 50);
+      }
     };
+    iframe.onload = interval;
   }
 }

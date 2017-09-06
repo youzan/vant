@@ -21,7 +21,7 @@ export default {
 }
 </style>
 
-## GoodsAction 商品操作组件
+## GoodsAction 商品操作
 
 ### 使用指南
 ``` javascript

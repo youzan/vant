@@ -1,5 +1,4 @@
 import Dialog from 'packages/dialog';
-import Vue from 'vue';
 
 describe('Dialog', () => {
   afterEach(() => {

@@ -1,5 +1,5 @@
 <template>
-  <div class="van-step" :class="stepClass">
+  <div class="van-step van-hairline" :class="stepClass">
     <div class="van-step__circle-container">
       <i class="van-step__circle" v-if="status !== 'process'"></i>
       <i class="van-icon van-icon-checked" :style="{ color: $parent.activeColor }" v-else></i>

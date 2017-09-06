@@ -2,4 +2,7 @@
  * 基本样式入口
  */
 
-@import './reset.css';
+@import "./common/var.css";
+@import "./common/normalize.css";
+@import "./common/hairline.css";
+

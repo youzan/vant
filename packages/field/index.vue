@@ -9,6 +9,7 @@
       'van-field--disabled': disabled,
       'van-field--error': error,
       'van-field--border': border,
+      'van-hairline--surround': border,
       'van-field--autosize': autosize,
       'van-field--has-icon': showIcon
     }">

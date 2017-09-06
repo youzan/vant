@@ -1,5 +1,5 @@
 <template>
-  <div class="van-cell-group">
+  <div class="van-cell-group van-hairline--top-bottom">
     <slot></slot>
   </div>
 </template>
