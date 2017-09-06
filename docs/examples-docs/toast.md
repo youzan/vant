@@ -1,7 +1,7 @@
 <style>
 .demo-toast {
   .van-button {
-    margin: 15px;
+    margin-left: 15px;
   }
 }
 </style>
@@ -11,7 +11,7 @@ import { Toast } from 'packages';
 
 export default {
   methods: {
-    showSimpleToast() {
+    showToast() {
       Toast('我是提示文案，建议不超过十五字~');
     },
     showLoadingToast() {
@@ -23,39 +23,23 @@ export default {
     showFailToast() {
       Toast.fail('失败文案');
     },
-    showForbidClickToast() {
-      Toast({
-        message: '背景不能点击',
-        forbidClick: true
-      })
-    },
     showCustomizedToast(duration) {
-      let leftSec = duration / 1000;
-      let toast = Toast({
-        duration: duration + 1000,
-        type: 'success',
-        message: leftSec.toString()
+      const toast = Toast.loading({
+        duration: 0,  
+        forbidClick: true,
+        message: '倒计时 3 秒'
       });
-      const id = window.setInterval(() => {
-        if (leftSec <= 1) {
-          window.clearInterval(id);
-          toast.message = '跳转中...'
-          return;
+
+      let second = 3;
+      const timer = setInterval(() => {
+        second--;
+        if (second) {
+          toast.message = `倒计时 ${second} 秒`;
+        } else {
+          clearInterval(timer);
+          Toast.clear();
         }
-        toast.message = (--leftSec).toString();
       }, 1000);
-    },
-    showToast() {
-      this.toast = Toast('我是提示文案，建议不超过十五字~');
-    },
-    closeToast() {
-      this.toast.clear();
-    },
-    showHtmlToast() {
-      Toast({
-        type: 'html',
-        message: '<em>HTML<em>'
-      })
     }
   }
 };
@@ -65,63 +49,96 @@ export default {
 
 ### 使用指南
 
-`Toast`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
-
-```js
+```javascript
 import { Toast } from 'vant';
 ```
 
 ### 代码演示
 
-#### 基础用法
+#### 文字提示
 
-:::demo 基础用法
+:::demo 文字提示
 ```html
-<van-button @click="showSimpleToast">普通文字提示</van-button>
-<van-button @click="showLoadingToast">加载Toast</van-button>
-<van-button @click="showSuccessToast">成功</van-button>
-<van-button @click="showFailToast">失败</van-button>
-<van-button @click="showForbidClickToast">背景不能点击</van-button>
-<van-button @click="showCustomizedToast(5000)">倒数5秒</van-button>
+<van-button @click="showToast">文字提示</van-button>
 ```
 
 ```javascript
-import { Toast } from 'packages';
-
 export default {
   methods: {
-    showSimpleToast() {
+    showToast() {
       Toast('我是提示文案，建议不超过十五字~');
-    },
+    }
+  }
+}
+```
+:::
+
+#### 加载提示
+
+:::demo 加载提示
+```html
+<van-button @click="showLoadingToast">加载提示</van-button>
+```
+
+```javascript
+export default {
+  methods: {
     showLoadingToast() {
       Toast.loading();
-    },
+    }
+  }
+}
+```
+:::
+
+#### 成功/失败提示
+
+:::demo 成功/失败提示
+```html
+<van-button @click="showSuccessToast">成功提示</van-button>
+<van-button @click="showFailToast">失败提示</van-button>
+```
+
+```javascript
+export default {
+  methods: {
     showSuccessToast() {
       Toast.success('成功文案');
     },
     showFailToast() {
       Toast.fail('失败文案');
-    },
-    showForbidClickToast() {
-      Toast({
-        message: '背景不能点击',
-        forbidClick: true
-      })
-    },
-    showCustomizedToast(duration) {
-      let leftSec = duration / 1000;
-      let toast = Toast({
-        duration: duration + 1000,
-        type: 'success',
-        message: leftSec.toString()
+    }
+  }
+}
+```
+:::
+
+#### 高级用法
+
+:::demo 高级用法
+```html
+<van-button @click="showCustomizedToast">高级用法</van-button>
+```
+
+```javascript
+export default {
+  methods: {
+    showCustomizedToast() {
+      const toast = Toast.loading({
+        duration: 0,       // 持续展示 toast
+        forbidClick: true, // 禁用背景点击
+        message: '倒计时 3 秒'
       });
-      const id = window.setInterval(() => {
-        if (leftSec <= 1) {
-          window.clearInterval(id);
-          toast.message = '跳转中...'
-          return;
+
+      let second = 3;
+      const timer = setInterval(() => {
+        second--;
+        if (second) {
+          toast.message = `倒计时 ${second} 秒`;
+        } else {
+          clearInterval(timer);
+          Toast.clear();
         }
-        toast.message = (--leftSec).toString();
       }, 1000);
     }
   }
@@ -129,74 +146,21 @@ export default {
 ```
 :::
 
-#### 手动关闭
+### 方法
 
-:::demo 手动关闭
-```html
-<van-button @click="showToast">打开</van-button>
-<van-button @click="closeToast">关闭</van-button>
-```
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| Toast | `options | message` | toast 实例 | 展示提示 |
+| Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
+| Toast.success | `options | message` | toast 实例 | 展示成功提示 |
+| Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
+| Toast.clear | - | `void` | 关闭提示 |
 
-```javascript
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    showToast() {
-      Toast('我是提示文案，建议不超过十五字~');
-    },
-    closeToast() {
-      Toast.clear();
-    }
-  }
-};
-```
-:::
-
-### 基础用法
-
-#### Toast(options)
+### Options
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'fail', 'html'  |
-| message | 内容 | String  | '' | - |\| message | 内容 | String  | '' | - 
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-### 快速用法
-
-#### Toast(message) || Toast(message, options)
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| message | 内容 | String  | '' | - |
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-#### Toast.loading() || Toast.loading(message, options)
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-#### Toast.success(message) || Toast.success(message, options)
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-#### Toast.fail(message) || Toast.fail(message, options)
-
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
-|-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | String  | 'text' | 'text', 'loading', 'success', 'failure'  |
-| forbidClick | 不允许背景点击 | Boolean  | false | true, false|
-| duration | 时长(ms) | Number  | 3000ms | -|
-
-#### Toast.clear()
-
-关闭toast。
+| type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
+| message | 内容 | `String` | `''` | - |
+| forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
+| duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
