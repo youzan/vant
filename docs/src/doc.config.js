@@ -216,6 +216,10 @@ module.exports = {
               {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
+              },
+              {
+                "path": "/area",
+                "title": "Area 省市区选择"
               }
             ]
           }
