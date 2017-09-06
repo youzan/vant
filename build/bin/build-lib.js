@@ -1,18 +1,14 @@
 /**
  * Build npm lib
  * Steps:
- * 1. 清理目录
+ * 1. 代码格式校验
  * 2. 构建 JS 入口文件
- * 3. 代码格式校验
  * 4. 构建每个组件对应的 [component].js
- * 5. 构建 vant-css
+ * 4. 构建 vant-css
+ * 5. 打包 JS 文件：vant.js && vant.min.js
  * 6. 生成每个组件目录下的 style 入口
- * 7. 打包 JS 文件：vant.js && vant.min.js
  */
 
-const fs = require('fs');
-const path = require('path');
-const components = require('./get-components')();
 const chalk = require('chalk');
 require('shelljs/global');
 
@@ -36,25 +32,15 @@ log('Starting', 'build:vant-css');
 exec('npm run build:vant-css --silent');
 log('Finished', 'build:vant-css');
 
-// 5. build style entrys
-log('Starting', 'build:style-entries');
-components.forEach((componentName) => {
-  const dir = path.join(__dirname, '../../lib/', componentName, '/style');
-  const file = path.join(dir, 'index.js');
-  const cssPath = path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`);
-  const content = [`require('../../vant-css/base.css');`];
-  if (fs.existsSync(cssPath)) {
-    content.push(`require('../../vant-css/${componentName}.css');`);
-  }
-  mkdir(dir);
-  writeFile(file, content.join('\n'));
-});
-log('Finished', 'build:style-entries');
-
-// 6. build vant.js 
+// 5. build vant.js 
 log('Starting', 'build:vant');
 exec('npm run build:vant --silent');
 log('Finished', 'build:vant');
+
+// 6. build style entrys
+log('Starting', 'build:style-entries');
+exec('npm run build:style-entry --silent');
+log('Finished', 'build:style-entries');
 
 // helpers
 function log(status, action, breakLine) {
@@ -65,17 +51,4 @@ function log(status, action, breakLine) {
 
 function padZero(num) {
   return (num < 10 ? '0' : '') + num;
-}
-
-function writeFile(pathname, content) {
-  if (!fs.existsSync(pathname)) {
-    fs.closeSync(fs.openSync(pathname, 'w'));
-  }
-  fs.writeFileSync(pathname, content, { encoding: 'utf8' });
-}
-
-function mkdir(pathname) {
-  if (!fs.existsSync(pathname)) {
-    fs.mkdirSync(pathname);
-  }
 }
