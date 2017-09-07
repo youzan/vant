@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   transform: translate3d(-50%, -50%, 0);
-  background-color: rgb(39, 39, 39, .7);
+  background-color: rgba(39, 39, 39, .7);
 
   &-wrapper {
     transition: opacity .2s;
