@@ -58,5 +58,5 @@ Dialog.close = () => {
 
 export default Dialog;
 export {
-  Dialog
+  DialogComponent as Dialog
 };
