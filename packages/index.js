@@ -1,4 +1,5 @@
 import Actionsheet from './actionsheet';
+import Area from './area';
 import Badge from './badge';
 import BadgeGroup from './badge-group';
 import Button from './button';
@@ -53,6 +54,7 @@ import Waterfall from './waterfall';
 const version = '0.8.9';
 const components = [
   Actionsheet,
+  Area,
   Badge,
   BadgeGroup,
   Button,
@@ -117,6 +119,7 @@ export {
   install,
   version,
   Actionsheet,
+  Area,
   Badge,
   BadgeGroup,
   Button,
