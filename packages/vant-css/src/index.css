@@ -38,6 +38,7 @@
 @import './actionsheet.css';
 @import './dialog.css';
 @import './picker.css';
+@import './pull-refresh.css';
 @import './toast.css';
 
 /* business components */

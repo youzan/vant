@@ -31,6 +31,7 @@ import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
+import PullRefresh from './pull-refresh';
 import Quantity from './quantity';
 import Radio from './radio';
 import RadioGroup from './radio-group';
@@ -81,6 +82,7 @@ const components = [
   Picker,
   Popup,
   Progress,
+  PullRefresh,
   Quantity,
   Radio,
   RadioGroup,
@@ -147,6 +149,7 @@ export {
   Picker,
   Popup,
   Progress,
+  PullRefresh,
   Quantity,
   Radio,
   RadioGroup,
