@@ -177,6 +177,10 @@ module.exports = {
                 "title": "Picker 选择器"
               },
               {
+                "path": "/pull-refresh",
+                "title": "PullRefresh 下拉刷新"
+              },
+              {
                 "path": "/toast",
                 "title": "Toast 轻提示"
               }

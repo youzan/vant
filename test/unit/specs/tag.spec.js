@@ -16,6 +16,6 @@ describe('Tag', () => {
       propsData: {
         type: 'primary'
       }
-    })
+    });
   });
 });
