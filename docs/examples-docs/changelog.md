@@ -1,10 +1,14 @@
 ## 更新日志
 
+## [v0.8.9](https://github.com/youzan/vant/tree/v0.8.9) (2017-09-01)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.8...v0.8.9)
+
 ## [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8) (2017-09-01)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.7...v0.8.8)
 
 **非兼容更新和新特性:**
 
+- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
 - Checkbox: support listen to change event [\#104](https://github.com/youzan/vant/pull/104) ([chenjiahan](https://github.com/chenjiahan))
 - add GoodsAction component [\#102](https://github.com/youzan/vant/pull/102) ([chenjiahan](https://github.com/chenjiahan))
 - add InvalidGoods component [\#100](https://github.com/youzan/vant/pull/100) ([chenjiahan](https://github.com/chenjiahan))
@@ -17,7 +21,6 @@
 
 **合并的 Pull Request (可能有不兼容改动):**
 
-- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
 - Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
 - Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
 
