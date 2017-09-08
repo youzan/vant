@@ -10,6 +10,8 @@ import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
+import CouponCell from './coupon-cell';
+import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
 import DeepSelect from './deep-select';
 import Dialog from './dialog';
@@ -24,8 +26,6 @@ import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
-import OrderCoupon from './order-coupon';
-import OrderCouponList from './order-coupon-list';
 import OrderGoods from './order-goods';
 import Panel from './panel';
 import PayOrder from './pay-order';
@@ -65,6 +65,8 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Col,
+  CouponCell,
+  CouponList,
   DatetimePicker,
   DeepSelect,
   ExpressWay,
@@ -76,8 +78,6 @@ const components = [
   InvalidGoods,
   Loading,
   NoticeBar,
-  OrderCoupon,
-  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,
@@ -130,6 +130,8 @@ export {
   Checkbox,
   CheckboxGroup,
   Col,
+  CouponCell,
+  CouponList,
   DatetimePicker,
   DeepSelect,
   Dialog,
@@ -144,8 +146,6 @@ export {
   Lazyload,
   Loading,
   NoticeBar,
-  OrderCoupon,
-  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,

@@ -1,17 +1,17 @@
 <template>
-  <div :class="['van-order-coupon-coupon', { 'van-order-coupon-coupon--disabled': disabled }]">
-    <div class="van-order-coupon-coupon__head">
-      <div class="van-order-coupon-coupon__lines"></div>
-      <div class="van-order-coupon-coupon__gradient">
+  <div :class="['van-coupon-item', { 'van-coupon-item--disabled': disabled }]">
+    <div class="van-coupon-item__head">
+      <div class="van-coupon-item__lines"></div>
+      <div class="van-coupon-item__gradient">
         <h2 v-html="faceAmount" />
         <p>{{ conditionMessage }}</p>
       </div>
     </div>
-    <div class="van-order-coupon-coupon__body">
+    <div class="van-coupon-item__body">
       <h2>{{ data.name }}</h2>
       <span>{{ validPeriod }}</span>
       <p v-if="disabled && data.reason">{{ data.reason }}</p>
-      <div class="van-order-coupon-coupon__corner" v-if="chosen">
+      <div class="van-coupon-item__corner" v-if="chosen">
         <van-icon name="success" />
       </div>
     </div>
@@ -22,7 +22,7 @@
 import Icon from '../icon';
 
 export default {
-  name: 'van-order-coupon-coupon',
+  name: 'van-coupon-item',
 
   components: {
     [Icon.name]: Icon

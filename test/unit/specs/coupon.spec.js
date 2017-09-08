@@ -1,5 +1,5 @@
-import OrderCoupon from 'packages/order-coupon';
-import OrderCouponList from 'packages/order-coupon-list';
+import CouponCell from 'packages/coupon-cell';
+import CouponList from 'packages/coupon-list';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
 
@@ -42,14 +42,14 @@ const disabledDiscountCoupon = {
   reason: '未满足使用门槛'
 };
 
-describe('OrderCoupon', () => {
+describe('CouponCell', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
 
   it('no coupon', () => {
-    wrapper = mount(OrderCoupon, {});
+    wrapper = mount(CouponCell, {});
 
     DOMChecker(wrapper, {
       text: {
@@ -59,7 +59,7 @@ describe('OrderCoupon', () => {
   });
 
   it('has two coupon', () => {
-    wrapper = mount(OrderCoupon, {
+    wrapper = mount(CouponCell, {
       propsData: {
         coupons: [coupon, discountCoupon]
       }
@@ -73,7 +73,7 @@ describe('OrderCoupon', () => {
   });
 
   it('select first coupon', () => {
-    wrapper = mount(OrderCoupon, {
+    wrapper = mount(CouponCell, {
       propsData: {
         chosenCoupon: 0,
         coupons: [coupon, discountCoupon]
@@ -92,7 +92,7 @@ describe('OrderCoupon', () => {
   });
 
   it('not editable', () => {
-    wrapper = mount(OrderCoupon, {
+    wrapper = mount(CouponCell, {
       propsData: {
         chosenCoupon: 0,
         coupons: [coupon, discountCoupon],
@@ -112,14 +112,14 @@ describe('OrderCoupon', () => {
   });
 });
 
-describe('OrderCouponList', () => {
+describe('CouponList', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
 
   it('no coupon', () => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       propsData: {
         chosenCoupon: -1
       }
@@ -127,15 +127,15 @@ describe('OrderCouponList', () => {
 
     DOMChecker(wrapper, {
       count: {
-        '.van-order-coupon-coupon': 0,
-        '.van-order-coupon-coupon--disabled': 0,
-        '.van-order-coupon-list__list h3': 0
+        '.van-coupon-item': 0,
+        '.van-coupon-item--disabled': 0,
+        '.van-coupon-list__list h3': 0
       }
     });
   });
 
   it('has two coupon', () => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       propsData: {
         chosenCoupon: -1,
         coupons: [coupon, discountCoupon],
@@ -144,15 +144,15 @@ describe('OrderCouponList', () => {
     });
     DOMChecker(wrapper, {
       count: {
-        '.van-order-coupon-coupon': 4,
-        '.van-order-coupon-coupon--disabled': 2,
-        '.van-order-coupon-list__list h3': 1
+        '.van-coupon-item': 4,
+        '.van-coupon-item--disabled': 2,
+        '.van-coupon-list__list h3': 1
       }
     });
   });
 
   it('switch to first coupon', (done) => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
         show: true,
@@ -168,8 +168,8 @@ describe('OrderCouponList', () => {
 
     // 弹出 popup
     setTimeout(() => {
-      expect(wrapper.find('.van-order-coupon-list')[0].hasStyle('display', 'none')).to.equal(false);
-      wrapper.find('.van-order-coupon-coupon')[0].trigger('click');
+      expect(wrapper.find('.van-coupon-list')[0].hasStyle('display', 'none')).to.equal(false);
+      wrapper.find('.van-coupon-item')[0].trigger('click');
 
       setTimeout(() => {
         expect(wrapper.vm.chosenCoupon).to.equal(0);
@@ -179,7 +179,7 @@ describe('OrderCouponList', () => {
   });
 
   it('cancel select coupon', (done) => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
         show: false,
@@ -198,17 +198,17 @@ describe('OrderCouponList', () => {
     });
 
     setTimeout(() => {
-      wrapper.find('.van-order-coupon-list__close')[0].trigger('click');
+      wrapper.find('.van-coupon-list__close')[0].trigger('click');
       setTimeout(() => {
         expect(wrapper.vm.chosenCoupon).to.equal(-1);
-        expect(wrapper.find('.van-order-coupon-list')[0].hasStyle('display', 'none')).to.equal(true);
+        expect(wrapper.find('.van-coupon-list')[0].hasStyle('display', 'none')).to.equal(true);
         done();
       }, 500);
     }, 500);
   });
 
   it('denominations format', () => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
         coupons: [coupon, {
@@ -227,15 +227,15 @@ describe('OrderCouponList', () => {
       }
     });
 
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[0].text()).to.equal('¥ 1.5');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[1].text()).to.equal('¥ 0.1');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[2].text()).to.equal('¥ 1');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[3].text()).to.equal('¥ 1.35');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[4].text()).to.equal('');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[0].text()).to.equal('¥ 1.5');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[1].text()).to.equal('¥ 0.1');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[2].text()).to.equal('¥ 1');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[3].text()).to.equal('¥ 1.35');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[4].text()).to.equal('');
   });
 
   it('discount format', () => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
         coupons: [discountCoupon, {
@@ -248,13 +248,13 @@ describe('OrderCouponList', () => {
       }
     });
 
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[0].text()).to.equal('8.8折');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[1].text()).to.equal('1折');
-    expect(wrapper.find('.van-order-coupon-coupon__gradient h2')[2].text()).to.equal('');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[0].text()).to.equal('8.8折');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[1].text()).to.equal('1折');
+    expect(wrapper.find('.van-coupon-item__gradient h2')[2].text()).to.equal('');
   });
 
   it('add coupon', (done) => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
         show: true,
@@ -282,7 +282,7 @@ describe('OrderCouponList', () => {
       wrapper.find('.van-field__control')[0].trigger('input');
 
       setTimeout(() => {
-        wrapper.find('.van-order-coupon-list__exchange')[0].trigger('click');
+        wrapper.find('.van-coupon-list__exchange')[0].trigger('click');
         DOMChecker(wrapper, {
           count: {
             '.van-button--disabled': 0
@@ -290,12 +290,12 @@ describe('OrderCouponList', () => {
         });
 
         setTimeout(() => {
-          expect(wrapper.find('.van-order-coupon-list')[0].hasStyle('display', 'none')).to.equal(false);
+          expect(wrapper.find('.van-coupon-list')[0].hasStyle('display', 'none')).to.equal(false);
           DOMChecker(wrapper, {
             count: {
               '.van-button--disabled': 1,
-              '.van-order-coupon-coupon': 6,
-              '.van-order-coupon-coupon--disabled': 2
+              '.van-coupon-item': 6,
+              '.van-coupon-item--disabled': 2
             }
           });
           done();
@@ -305,7 +305,7 @@ describe('OrderCouponList', () => {
   });
 
   it('displayedCouponIndex out of range', (done) => {
-    wrapper = mount(OrderCouponList, {
+    wrapper = mount(CouponList, {
       propsData: {
         show: true,
         displayedCouponIndex: -100,

@@ -1,4 +1,4 @@
-## OrderCoupon 下单页优惠券
+## Coupon 优惠券选择器
 
 <script>
 import { Toast } from 'packages';
@@ -61,10 +61,10 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { OrderCoupon, OrderCouponList } from 'vant';
+import { CouponCell, CouponList } from 'vant';
 
-Vue.component(OrderCoupon.name, OrderCoupon);
-Vue.component(OrderCouponList.name, OrderCouponList);
+Vue.component(CouponCell.name, CouponCell);
+Vue.component(CouponList.name, CouponList);
 ```
 
 ### 代码演示
@@ -74,25 +74,25 @@ Vue.component(OrderCouponList.name, OrderCouponList);
 :::demo 基础用法
 ```html
 <!-- 优惠券单元格 -->
-<van-order-coupon
+<van-coupon-cell
   :coupons="coupons"
   :chosen-coupon="chosenCoupon"
   @click="showList = true"
-></van-order-coupon>
+></van-coupon-cell>
 
 <!-- 优惠券列表 -->
-<van-order-coupon-list
+<van-coupon-list
   v-model="showList"
   :coupons="coupons"
   :chosen-coupon="chosenCoupon"
   :disabled-coupons="disabledCoupons"
   @change="onChange"
   @exchange="onExchange"
-></van-order-coupon-list>
+></van-coupon-list>
 ```
 
 ```javascript
-const mockCoupon = {
+const coupon = {
   available: 1,
   discount: 0,
   denominations: 150,
@@ -109,8 +109,8 @@ export default {
   data() {
     return {
       chosenCoupon: -1,
-      coupons: [mockCoupon],
-      disabledCoupons: [mockCoupon]
+      coupons: [coupon],
+      disabledCoupons: [coupon]
     }
   },
 
@@ -119,22 +119,23 @@ export default {
       this.chosenCoupon = index;
     },
     onExchange(code) {
-      this.coupons.push(mockCoupon);
+      this.coupons.push(coupon);
     }
   }
 }
 ```
 :::
 
-### OrderCoupon API
+### CouponCell API
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
+| title | 单元格标题 | `String` | `优惠` | - |
 | chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
 
-### OrderCouponList API
+### CouponList API
 
 | 参数       | 说明      | 类型       | 默认值       | 必须      |
 |-----------|-----------|-----------|-------------|-------------|
@@ -149,7 +150,7 @@ export default {
 | disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
 | inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
 
-### OrderCouponList Event
+### CouponList Event
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|

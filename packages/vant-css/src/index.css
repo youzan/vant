@@ -41,13 +41,15 @@
 @import './pull-refresh.css';
 @import './toast.css';
 
+/* high order components */
+@import './switch-cell.css';
+
 /* business components */
 @import './deep-select.css';
 @import './express-way.css';
 @import './goods-action.css';
 @import './invalid-goods.css';
 @import './notice-bar.css';
-@import './order-coupon.css';
+@import './coupon.css';
 @import './order-goods.css';
 @import './pay-order.css';
-@import './switch-cell.css';

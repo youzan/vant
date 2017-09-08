@@ -1,7 +1,7 @@
 <template>
-  <div class="van-order-coupon">
+  <div class="van-coupon-cell">
     <van-cell-group>
-      <van-cell title="优惠" :isLink="editable" @click="$emit('click')">
+      <van-cell :title="title" :isLink="editable" @click="$emit('click')">
         <div v-if="coupons[chosenCoupon]">
           <h2>{{ amount }}</h2>
           <span>{{ coupons[chosenCoupon].condition }}</span>
@@ -17,7 +17,7 @@ import Cell from '../cell';
 import CellGroup from '../cell-group';
 
 export default {
-  name: 'van-order-coupon',
+  name: 'van-coupon-cell',
 
   components: {
     [Cell.name]: Cell,
@@ -29,6 +29,10 @@ export default {
   },
 
   props: {
+    title: {
+      type: String,
+      default: '优惠'
+    },
     coupons: {
       type: Array,
       default: () => []

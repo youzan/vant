@@ -1,11 +1,11 @@
 <template>
-  <van-popup v-model="showPopup" position="bottom" class="van-order-coupon-list">
-    <van-cell-group class="van-order-coupon-list__top">
+  <van-popup v-model="showPopup" position="bottom" class="van-coupon-list">
+    <van-cell-group class="van-coupon-list__top">
       <van-field v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
-      <van-button size="small" type="danger" class="van-order-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
+      <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
     </van-cell-group>
-    <div class="van-order-coupon-list__list" ref="list">
-      <van-order-coupon-coupon
+    <div class="van-coupon-list__list" ref="list">
+      <van-coupon-item
         ref="card"
         v-for="(item, index) in coupons"
         :key="item.id || item.name"
@@ -14,27 +14,27 @@
         @click.native="onClickCoupon(index)"
       />
       <h3 v-if="disabledCoupons.length">{{ disabledListTitle }}</h3>
-      <van-order-coupon-coupon
+      <van-coupon-item
         disabled
         v-for="item in disabledCoupons"
         :key="item.id || item.name"
         :data="item"
       />
     </div>
-    <div class="van-order-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
+    <div class="van-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
   </van-popup>
 </template>
 
 <script>
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import Coupon from './Coupon';
+import Item from './Item';
 import Field from '../field';
 import Popup from '../popup';
 import Button from '../button';
 
 export default {
-  name: 'van-order-coupon-list',
+  name: 'van-coupon-list',
 
   components: {
     [Button.name]: Button,
@@ -42,7 +42,7 @@ export default {
     [CellGroup.name]: CellGroup,
     [Field.name]: Field,
     [Popup.name]: Popup,
-    [Coupon.name]: Coupon
+    [Item.name]: Item
   },
 
   model: {
