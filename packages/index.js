@@ -24,7 +24,6 @@ import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
-import OrderGoods from './order-goods';
 import Panel from './panel';
 import PayOrder from './pay-order';
 import Picker from './picker';
@@ -74,7 +73,6 @@ const components = [
   Icon,
   Loading,
   NoticeBar,
-  OrderGoods,
   Panel,
   PayOrder,
   Picker,
@@ -140,7 +138,6 @@ export {
   Lazyload,
   Loading,
   NoticeBar,
-  OrderGoods,
   Panel,
   PayOrder,
   Picker,
