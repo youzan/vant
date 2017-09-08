@@ -60,7 +60,7 @@ module.exports = {
               },
               {
                 "path": "/card",
-                "title": "Card 图文"
+                "title": "Card 卡片"
               },
               {
                 "path": "/cell",
