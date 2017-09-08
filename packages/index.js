@@ -33,6 +33,7 @@ import Radio from './radio';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Search from './search';
+import Sku from './sku';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
@@ -83,6 +84,7 @@ const components = [
   RadioGroup,
   Row,
   Search,
+  Sku,
   Step,
   Stepper,
   Steps,
@@ -149,6 +151,7 @@ export {
   RadioGroup,
   Row,
   Search,
+  Sku,
   Step,
   Stepper,
   Steps,
