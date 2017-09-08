@@ -73,7 +73,7 @@ export default {
 };
 </script>
 
-## Popup 弹出菜单
+## Popup 弹出层
 
 ### 使用指南
 ``` javascript
@@ -107,11 +107,11 @@ export default {
 ```
 :::
 
-#### 从不同位置弹出菜单
+#### 从不同位置弹出层
 
 可以设置`position`属性，`popup`即能从不同位置弹出，`position`的可选值有`top`，`bottom`，`right`，`left`。
 
-:::demo 从不同位置弹出菜单
+:::demo 从不同位置弹出层
 ```html
 <van-button @click="popupShow2 = true;">从下方弹出popup</van-button>
 <van-popup v-model="popupShow2" position="bottom" class="van-popup-2">
@@ -166,7 +166,7 @@ export default {
 | v-model | 当前组件是否显示 | `Boolean`  | `false` | - |
 | overlay | 是否显示背景遮罩层 | `Boolean`  | `true` | -  |
 | lockOnScroll | 背景是否跟随滚动 | `Boolean`  | `false` | - |
-| position | 弹出菜单位置 | `String`  | - | `top`, `bottom`, `right`, `left`  |
-| closeOnClickOverlay | 点击遮罩层是否关闭弹出菜单 | `Boolean`  | `true` | - |
-| transition | 弹出菜单的`transition` | `String`  | `popup-slide` |   |
+| position | 弹出层位置 | `String`  | - | `top`, `bottom`, `right`, `left`  |
+| closeOnClickOverlay | 点击遮罩层是否关闭弹出层 | `Boolean`  | `true` | - |
+| transition | 弹出层的`transition` | `String`  | `popup-slide` |   |
 | preventScroll | 是否防止滚动穿透 | `Boolean`  | `false` | -  |

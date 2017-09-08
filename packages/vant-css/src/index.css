@@ -12,10 +12,11 @@
 @import './badge.css';
 @import './button.css';
 @import './cell.css';
-@import './cell-swipe.css';
 @import './card.css';
 @import './icon.css';
 @import './loading.css';
+@import './nav-bar.css';
+@import './notice-bar.css';
 @import './popup.css';
 @import './search.css';
 @import './panel.css';
@@ -23,7 +24,7 @@
 @import './tag.css';
 @import './tab.css';
 @import './image-preview.css';
-@import './quantity.css';
+@import './stepper.css';
 @import './progress.css';
 @import './swipe.css';
 
@@ -41,13 +42,12 @@
 @import './pull-refresh.css';
 @import './toast.css';
 
-/* business components */
-@import './deep-select.css';
-@import './express-way.css';
-@import './goods-action.css';
-@import './invalid-goods.css';
-@import './notice-bar.css';
-@import './order-coupon.css';
-@import './order-goods.css';
-@import './pay-order.css';
+/* high order components */
+@import './cell-swipe.css';
 @import './switch-cell.css';
+@import './tree-select.css';
+
+/* business components */
+@import './coupon-list.css';
+@import './goods-action.css';
+@import './submit-bar.css';
