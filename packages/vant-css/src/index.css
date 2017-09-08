@@ -34,6 +34,7 @@
 @import './radio.css';
 @import './switch.css';
 @import './uploader.css';
+@import './number-keyboard.css';
 
 /* action components */
 @import './actionsheet.css';

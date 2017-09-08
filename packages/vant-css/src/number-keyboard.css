@@ -1,0 +1,52 @@
+@import "./common/var.css";
+
+.van-number-keyboard {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  user-select: none;
+  background-color: $white;
+  animation-timing-function: ease-out;
+
+  &__title {
+    font-weight: 400;
+    text-align: center;
+    color: $gray-dark;
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  i {
+    width: calc(100%/3);
+    height: 54px;
+    font-size: 24px;
+    line-height: 54px;
+    font-style: normal;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+
+    &::after {
+      border-top-width: 1px;
+    }
+
+    &:not(:nth-of-type(3n))::after {
+      border-right-width: 1px;
+    }
+
+    &:nth-of-type(10),
+    &:nth-of-type(12) {
+      background-color: #F3F3F6;
+    }
+  }
+
+  &__delete {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAeCAMAAABg6AyVAAAAbFBMVEUAAAAfHiIdHB4eHR8dHR4eHB4dHB4dHR8gICIdHB4dHB4dHB4dHB8eHh8hISEeHR8fHB8fHR8fHR8fHx8eHiArKyszMzMeHB8eHB8fHR8eHiAeHh4dHB4vLjDY2Nn////b29zKysq9vb28vLzkfBRpAAAAHHRSTlMAK/PW+I/llBv77N1kSCPwWlFAOTMGBb28hHlu08g5sgAAAMlJREFUOMuV1MsWgiAQgGHQyOx+s+sgYO//jnnMGIdDDfwbN99CYEDQFiVEKkolPUG7gl9VTWC31NKuDbVz+Fc1tRJtPDmxS2BS3p5ZC+XXnnbAVoz2WEBCH7uZAalzGoa06whGiznT6sG2xgX4QO2Aej1+KN7XBKL2FvGaMtTWBhbQhtoaYzVQrHKwuGf8hhAPSF5g3xPSt45sCHcouNWx436FGA+RHyQcD35EcUj54U8ff4WYvVi1zLjelUh/OG6XjOeLWv5hfAOI+HLwwOAqhAAAAABJRU5ErkJggg==") no-repeat center center;
+    background-size: auto 15px;
+  }
+
+  i&--active {
+    background-color: $active-color!important;
+  }
+}

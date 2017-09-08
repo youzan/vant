@@ -144,6 +144,10 @@ module.exports = {
                 "title": "Field 输入框"
               },
               {
+                "path": "/number-keyboard",
+                "title": "NumberKeyboard 数字键盘"
+              },
+              {
                 "path": "/radio",
                 "title": "Radio 单选框"
               },

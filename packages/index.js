@@ -24,6 +24,7 @@ import Lazyload from './lazyload';
 import Loading from './loading';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
+import NumberKeyboard from './number-keyboard';
 import Panel from './panel';
 import Picker from './picker';
 import Popup from './popup';
@@ -74,6 +75,7 @@ const components = [
   Loading,
   NavBar,
   NoticeBar,
+  NumberKeyboard,
   Panel,
   Picker,
   Popup,
@@ -140,6 +142,7 @@ export {
   Loading,
   NavBar,
   NoticeBar,
+  NumberKeyboard,
   Panel,
   Picker,
   Popup,
