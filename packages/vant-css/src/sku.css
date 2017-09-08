@@ -1,4 +1,4 @@
-@import './mixins/border_retina';
+@import './mixins/border_retina.css';
 
 .van-sku-container {
   background: #f8f8f8;
