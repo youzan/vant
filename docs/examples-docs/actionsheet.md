@@ -32,10 +32,6 @@ export default {
           loading: true
         },
         {
-          name: '有赞E卡',
-          subname: '（剩余260.50元）'
-        },
-        {
           name: '信用卡支付'
         },
         {
@@ -91,10 +87,6 @@ export default {
           loading: true
         },
         {
-          name: '有赞E卡',
-          subname: '（剩余260.50元）'
-        },
-        {
           name: '信用卡支付'
         },
         {
@@ -138,10 +130,6 @@ export default {
         {
           name: '支付宝支付',
           loading: true
-        },
-        {
-          name: '有赞E卡',
-          subname: '（剩余260.50元）'
         },
         {
           name: '信用卡支付'

@@ -8,7 +8,7 @@ export default {
 }
 </script>
 
-## Card 图文组件
+## Card 卡片
 
 ### 使用指南
 ``` javascript
