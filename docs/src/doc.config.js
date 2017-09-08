@@ -83,6 +83,10 @@ module.exports = {
                 "title": "Loading 加载"
               },
               {
+                "path": "/nav-bar",
+                "title": "NavBar 导航栏"
+              },
+              {
                 "path": "/notice-bar",
                 "title": "NoticeBar 通告栏"
               },
