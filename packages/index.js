@@ -22,6 +22,7 @@ import Icon from './icon';
 import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
 import Loading from './loading';
+import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import Panel from './panel';
 import Picker from './picker';
@@ -71,6 +72,7 @@ const components = [
   GoodsActionMiniBtn,
   Icon,
   Loading,
+  NavBar,
   NoticeBar,
   Panel,
   Picker,
@@ -136,6 +138,7 @@ export {
   ImagePreview,
   Lazyload,
   Loading,
+  NavBar,
   NoticeBar,
   Panel,
   Picker,
