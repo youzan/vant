@@ -70,13 +70,14 @@ Vue.component(Sku.name, Sku);
 ```
 :::
 
-#### 自定义部分sku子组件
+#### 自定义sku slot区块
 :::demo 
 ```html
 <template>
   <div class="sku-container">
     <van-sku
       v-model="showCustomAction"
+      stepper-title="我要买"
       :sku="sku"
       :goods="goods"
       :hide-stock="sku.hide_stock"
@@ -119,8 +120,22 @@ Vue.component(Sku.name, Sku);
 | showAddCartBtn | 是否显示加入购物车按钮 | Boolean  | true |  否 |
 | quota | 限购数(0表示不限购) | Number  | 0 |  否 |
 | quotaUsed | 已经购买过的数量 | Number  | 0 |  否 |
+| resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | Boolean  | false |  否 |
+| stepperTitle | 数量选择组件左侧文案 | String  | '购买数量' |  否 |
 | add-cart | 点击添加购物车回调 | Function(skuData: Object)  | - |  否 |
 | buy-clicked | 点击购买回调 | Function(skuData: Object)  | - |  否 |
+
+### slots
+sku组件默认划分好了若干区块，这些区块都定义成了slot，可以按需进行替换。区块顺序见下表：
+
+| 名称      | 说明      | 
+|-----------|-----------|
+| sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
+| sku-group | 商品sku展示区 |
+| extra-sku-group | 额外商品sku展示区，一般用不到 |
+| sku-stepper | 商品数量选择区 |
+| sku-messages | 商品留言区 |
+| sku-actions | 操作按钮区 |
 
 ### 数据结构
 #### sku对象结构
