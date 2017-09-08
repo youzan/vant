@@ -1,14 +1,14 @@
 <template>
-  <div class="van-pay-order">
-    <div class="van-pay-order__tip" v-show="tip || $slots.tip">
+  <div class="van-submit-bar">
+    <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
       {{ tip }}<slot name="tip"></slot>
     </div>
-    <div class="van-pay-order__bar">
-      <div class="van-pay-order__price">
+    <div class="van-submit-bar__bar">
+      <div class="van-submit-bar__price">
         <template v-if="hasPrice">
-          <span class="van-pay-order__price-text">合计：</span>
-          <span class="van-pay-order__price-interger">¥{{ priceInterger }}.</span>
-          <span class="van-pay-order__price-decimal">{{ priceDecimal }}</span>
+          <span class="van-submit-bar__price-text">合计：</span>
+          <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
+          <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
         </template>
       </div>
       <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">
@@ -22,7 +22,7 @@
 import Button from '../button';
 
 export default {
-  name: 'van-pay-order',
+  name: 'van-submit-bar',
 
   components: {
     [Button.name]: Button

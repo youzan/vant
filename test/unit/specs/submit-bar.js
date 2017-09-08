@@ -1,8 +1,8 @@
-import PayOrder from 'packages/pay-order';
+import SubmitBar from 'packages/submit-bar';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
 
-describe('PayOrder', () => {
+describe('SubmitBar', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
@@ -15,22 +15,22 @@ describe('PayOrder', () => {
       tip: '您的收货地址不支持同城送, 我们已为您推荐快递'
     };
 
-    wrapper = mount(PayOrder, {
+    wrapper = mount(SubmitBar, {
       propsData: props
     });
 
     DOMChecker(wrapper, {
       text: {
         '.van-button__text': props.buttonText,
-        '.van-pay-order__price-interger': '¥30.',
-        '.van-pay-order__price-decimal': '50',
-        '.van-pay-order__tip': props.tip
+        '.van-submit-bar__price-interger': '¥30.',
+        '.van-submit-bar__price-decimal': '50',
+        '.van-submit-bar__tip': props.tip
       }
     });
   });
 
   it('no tip', () => {
-    wrapper = mount(PayOrder, {
+    wrapper = mount(SubmitBar, {
       propsData: {
         price: 3005,
         buttonText: '提交订单',
@@ -41,15 +41,15 @@ describe('PayOrder', () => {
     DOMChecker(wrapper, {
       text: {
         '.van-button__text': '提交订单',
-        '.van-pay-order__price-interger': '¥30.',
-        '.van-pay-order__price-decimal': '05',
-        '.van-pay-order__tip': ''
+        '.van-submit-bar__price-interger': '¥30.',
+        '.van-submit-bar__price-decimal': '05',
+        '.van-submit-bar__tip': ''
       }
     });
   });
 
   it('handle submit', () => {
-    wrapper = mount(PayOrder, {
+    wrapper = mount(SubmitBar, {
       propsData: {
         price: 3005,
         buttonText: '提交订单'
@@ -65,7 +65,7 @@ describe('PayOrder', () => {
   });
 
   it('can not submit when disabled', () => {
-    wrapper = mount(PayOrder, {
+    wrapper = mount(SubmitBar, {
       propsData: {
         disabled: true,
         buttonText: '提交订单'
@@ -81,7 +81,7 @@ describe('PayOrder', () => {
   });
 
   it('can not submit when loading', () => {
-    wrapper = mount(PayOrder, {
+    wrapper = mount(SubmitBar, {
       propsData: {
         loading: true,
         buttonText: '提交订单'

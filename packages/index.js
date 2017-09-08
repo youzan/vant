@@ -24,7 +24,6 @@ import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
 import Panel from './panel';
-import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
@@ -36,6 +35,7 @@ import Search from './search';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
+import SubmitBar from './submit-bar';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
 import Switch from './switch';
@@ -73,7 +73,6 @@ const components = [
   Loading,
   NoticeBar,
   Panel,
-  PayOrder,
   Picker,
   Popup,
   Progress,
@@ -85,6 +84,7 @@ const components = [
   Step,
   Stepper,
   Steps,
+  SubmitBar,
   Swipe,
   SwipeItem,
   Switch,
@@ -138,7 +138,6 @@ export {
   Loading,
   NoticeBar,
   Panel,
-  PayOrder,
   Picker,
   Popup,
   Progress,
@@ -150,6 +149,7 @@ export {
   Step,
   Stepper,
   Steps,
+  SubmitBar,
   Swipe,
   SwipeItem,
   Switch,

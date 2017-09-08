@@ -215,8 +215,8 @@ module.exports = {
                 "title": "GoodsAction 商品页行动点"
               },
               {
-                "path": "/pay-order",
-                "title": "PayOrder 提交订单栏"
+                "path": "/submit-bar",
+                "title": "SubmitBar 提交订单栏"
               }
             ]
           }

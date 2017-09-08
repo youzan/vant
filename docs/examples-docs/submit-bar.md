@@ -1,4 +1,4 @@
-## PayOrder 提交订单栏
+## SubmitBar 提交订单栏
 
 <script>
 import { Toast } from 'packages';
@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style>
-.demo-pay-order {
-  .van-pay-order {
+.demo-submit-bar {
+  .van-submit-bar {
     position: relative;
   }
   .van-edit-address {
@@ -28,9 +28,9 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { PayOrder } from 'vant';
+import { SubmitBar } from 'vant';
 
-Vue.component(PayOrder.name, PayOrder);
+Vue.component(SubmitBar.name, SubmitBar);
 ```
 
 ### 代码演示
@@ -39,7 +39,7 @@ Vue.component(PayOrder.name, PayOrder);
 
 :::demo 基础用法
 ```html
-<van-pay-order
+<van-submit-bar
   :price="3050"
   button-text="提交订单"
   @submit="onClickButton"
@@ -52,7 +52,7 @@ Vue.component(PayOrder.name, PayOrder);
 
 :::demo 禁用状态
 ```html
-<van-pay-order
+<van-submit-bar
   disabled
   :price="3050"
   button-text="提交订单"
@@ -66,7 +66,7 @@ Vue.component(PayOrder.name, PayOrder);
 加载状态下不会触发`submit`事件
 :::demo 加载状态
 ```html
-<van-pay-order
+<van-submit-bar
   loading
   :price="3050"
   button-text="提交订单"
@@ -79,7 +79,7 @@ Vue.component(PayOrder.name, PayOrder);
 提示文案中的额外操作和说明
 :::demo 提示文案中添加操作
 ```html
-<van-pay-order
+<van-submit-bar
   :price="3050"
   button-text="提交订单"
   @submit="onClickButton"
@@ -87,7 +87,7 @@ Vue.component(PayOrder.name, PayOrder);
   <span slot="tip">
     您的收货地址不支持同城送, <span class="van-edit-address" @click="onClickEditAddress">修改地址 ></span>
   </span>
-</van-pay-order>
+</van-submit-bar>
 ```
 :::
 

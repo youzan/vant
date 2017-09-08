@@ -46,7 +46,7 @@
 @import './tree-select.css';
 
 /* business components */
+@import './coupon-list.css';
 @import './goods-action.css';
 @import './notice-bar.css';
-@import './coupon.css';
-@import './pay-order.css';
+@import './submit-bar.css';
