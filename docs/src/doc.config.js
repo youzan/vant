@@ -202,6 +202,10 @@ module.exports = {
                 "title": "GoodsAction 商品操作"
               },
               {
+                "path": "/sku",
+                "title": "Sku 商品规格弹层"
+              },
+              {
                 "path": "/invalid-goods",
                 "title": "InvalidGoods 不可用商品列表"
               },
