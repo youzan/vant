@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Stepper from 'packages/stepper';
+import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
 
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;

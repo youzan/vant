@@ -63,8 +63,8 @@
 
 <script>
 import Vue from 'vue';
-import Popup from 'packages/popup';
-import Toast from 'packages/toast';
+import Popup from '../../popup';
+import Toast from '../../toast';
 import SkuHeader from '../components/SkuHeader';
 import SkuRow from '../components/SkuRow';
 import SkuStepper from '../components/SkuStepper';
