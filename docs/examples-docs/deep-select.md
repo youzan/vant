@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-## DeepSelect 分类选择组件
+## DeepSelect 分类选择
 
 ### 使用指南
 ``` javascript

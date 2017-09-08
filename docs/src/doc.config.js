@@ -60,15 +60,11 @@ module.exports = {
               },
               {
                 "path": "/card",
-                "title": "Card 图文组件"
+                "title": "Card 图文"
               },
               {
                 "path": "/cell",
                 "title": "Cell 单元格"
-              },
-              {
-                "path": "/cell-swipe",
-                "title": "CellSwipe 滑动单元格"
               },
               {
                 "path": "/icon",
@@ -96,15 +92,15 @@ module.exports = {
               },
               {
                 "path": "/popup",
-                "title": "Popup 弹出菜单"
+                "title": "Popup 弹出层"
               },
               {
                 "path": "/progress",
                 "title": "Progress 进度条"
               },
               {
-                "path": "/quantity",
-                "title": "Quantity 数量选择"
+                "path": "/stepper",
+                "title": "Stepper 步进器"
               },
               {
                 "path": "/steps",
@@ -190,6 +186,10 @@ module.exports = {
             "groupName": "高阶组件",
             "list": [
               {
+                "path": "/cell-swipe",
+                "title": "CellSwipe 滑动单元格"
+              },
+              {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
               }
@@ -204,7 +204,7 @@ module.exports = {
               },
               {
                 "path": "/deep-select",
-                "title": "DeepSelect 分类选择组件"
+                "title": "DeepSelect 分类选择"
               },
               {
                 "path": "/goods-action",

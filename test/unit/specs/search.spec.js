@@ -8,7 +8,7 @@ describe('Search', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a quantity', () => {
+  it('create a stepper', () => {
     wrapper = mount(Search);
 
     expect(wrapper.hasClass('van-search')).to.be.true;

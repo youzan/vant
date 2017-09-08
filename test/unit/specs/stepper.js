@@ -1,43 +1,43 @@
-import Quantity from 'packages/quantity';
+import Stepper from 'packages/stepper';
 import { mount } from 'avoriaz';
 
-describe('Quantity', () => {
+describe('Stepper', () => {
   let wrapper;
 
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a quantity', () => {
-    wrapper = mount(Quantity, {
+  it('create a stepper', () => {
+    wrapper = mount(Stepper, {
       propsData: {
         defaultValue: 1
       }
     });
 
-    expect(wrapper.hasClass('van-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-stepper')).to.be.true;
     expect(wrapper.data().currentValue).to.equal(1);
 
-    const plusButton = wrapper.find('.van-quantity__plus')[0];
+    const plusButton = wrapper.find('.van-stepper__plus')[0];
     plusButton.trigger('click');
 
     expect(wrapper.data().currentValue).to.equal(2);
 
-    const minusButton = wrapper.find('.van-quantity__minus')[0];
+    const minusButton = wrapper.find('.van-stepper__minus')[0];
     minusButton.trigger('click');
     expect(wrapper.data().currentValue).to.equal(1);
   });
 
-  it('create a disabled quantity', (done) => {
-    wrapper = mount(Quantity, {
+  it('create a disabled stepper', (done) => {
+    wrapper = mount(Stepper, {
       propsData: {
         disabled: true
       }
     });
 
-    expect(wrapper.hasClass('van-quantity')).to.be.true;
-    const minusButton = wrapper.find('.van-quantity__minus')[0];
-    expect(minusButton.hasClass('van-quantity__minus--disabled')).to.be.true;
+    expect(wrapper.hasClass('van-stepper')).to.be.true;
+    const minusButton = wrapper.find('.van-stepper__minus')[0];
+    expect(minusButton.hasClass('van-stepper__minus--disabled')).to.be.true;
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     minusButton.trigger('click');
@@ -48,8 +48,8 @@ describe('Quantity', () => {
       done();
     });
 
-    const plusButton = wrapper.find('.van-quantity__plus')[0];
-    expect(plusButton.hasClass('van-quantity__plus--disabled')).to.be.true;
+    const plusButton = wrapper.find('.van-stepper__plus')[0];
+    expect(plusButton.hasClass('van-stepper__plus--disabled')).to.be.true;
 
     plusButton.trigger('click');
 
@@ -60,14 +60,14 @@ describe('Quantity', () => {
     });
   });
 
-  it('update quantity value use v-model', (done) => {
-    wrapper = mount(Quantity, {
+  it('update stepper value use v-model', (done) => {
+    wrapper = mount(Stepper, {
       propsData: {
         value: 1
       }
     });
 
-    expect(wrapper.hasClass('van-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-stepper')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     wrapper.vm.value = 2;
@@ -80,14 +80,14 @@ describe('Quantity', () => {
   });
 
   it('correct value when value is not correct', (done) => {
-    wrapper = mount(Quantity, {
+    wrapper = mount(Stepper, {
       propsData: {
         value: 50,
         max: 30
       }
     });
 
-    expect(wrapper.hasClass('van-quantity')).to.be.true;
+    expect(wrapper.hasClass('van-stepper')).to.be.true;
     expect(wrapper.vm.currentValue).to.equal(30);
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
@@ -101,13 +101,13 @@ describe('Quantity', () => {
   });
 
   it('handle when input change', (done) => {
-    wrapper = mount(Quantity, {
+    wrapper = mount(Stepper, {
       propsData: {
         value: 1
       }
     });
 
-    const input = wrapper.find('.van-quantity__input')[0];
+    const input = wrapper.find('.van-stepper__input')[0];
     input.element.value = 2;
     input.trigger('input');
 

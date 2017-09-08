@@ -27,7 +27,7 @@ describe('DeepSelect', () => {
     });
     expect(wrapper.hasClass('van-deep-select')).to.be.true;
     expect(wrapper.hasStyle('height', '44px')).to.be.true;
-    expect(wrapper.propsData().maxHeight).to.equal(200);
+    expect(wrapper.vm.maxHeight).to.equal(200);
   });
 
   it('interact with this component', () => {

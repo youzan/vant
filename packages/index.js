@@ -30,7 +30,7 @@ import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
 import PullRefresh from './pull-refresh';
-import Quantity from './quantity';
+import Stepper from './stepper';
 import Radio from './radio';
 import RadioGroup from './radio-group';
 import Row from './row';
@@ -79,7 +79,7 @@ const components = [
   Popup,
   Progress,
   PullRefresh,
-  Quantity,
+  Stepper,
   Radio,
   RadioGroup,
   Row,
@@ -144,7 +144,7 @@ export {
   Popup,
   Progress,
   PullRefresh,
-  Quantity,
+  Stepper,
   Radio,
   RadioGroup,
   Row,

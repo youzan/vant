@@ -1,10 +1,10 @@
 <style>
-.demo-quantity {
-  .van-quantity {
+.demo-stepper {
+  .van-stepper {
     margin-left: 15px;
   }
 
-  .curr-quantity {
+  .curr-stepper {
     margin: 15px;
   }
 }
@@ -14,20 +14,20 @@
 export default {
   data() {
     return {
-      quantity1: 1,
-      quantity2: null,
+      stepper1: 1,
+      stepper2: null,
     };
   }
 };
 </script>
 
-## Quantity 数量选择
+## Stepper 步进器
 
 ### 使用指南
 ``` javascript
-import { Quantity } from 'vant';
+import { Stepper } from 'vant';
 
-Vue.component(Quantity.name, Quantity);
+Vue.component(Stepper.name, Stepper);
 ```
 
 ### 代码演示
@@ -36,29 +36,28 @@ Vue.component(Quantity.name, Quantity);
 
 :::demo 基础用法
 ```html
-<van-quantity v-model="quantity1"></van-quantity>
-<p class="curr-quantity">当前值：{{ quantity1 }}</p>
+<van-stepper v-model="stepper1"></van-stepper>
+<p class="curr-stepper">当前值：{{ stepper1 }}</p>
 ```
 :::
 
-#### 禁用Quantity
+#### 禁用状态
+通过设置`disabled`属性来禁用 stepper
 
-设置`disabled`属性，此时`quantity`不可改变。
-
-:::demo 禁用Quantity
+:::demo 禁用状态
 ```html
-<van-quantity v-model="quantity1" disabled></van-quantity>
+<van-stepper v-model="stepper1" disabled></van-stepper>
 ```
 :::
 
 #### 高级用法
 
-默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`defaultValue`属性。
+默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`defaultValue`属性
 
 :::demo 高级用法
 ```html
-<van-quantity v-model="quantity2" min="5" max="40" step="2" default-value="9"></van-quantity>
-<p class="curr-quantity">当前值：{{ quantity2 || 9 }}</p>
+<van-stepper v-model="stepper2" min="5" max="40" step="2" default-value="9"></van-stepper>
+<p class="curr-stepper">当前值：{{ stepper2 || 9 }}</p>
 ```
 :::
 
