@@ -28,19 +28,19 @@
             </div>
           </slot>
           <slot name="extra-sku-group" :skuEventBus="skuEventBus"></slot>
-          <slot name="sku-quantity" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
-            <van-sku-quantity
-              ref="skuQuantity"
+          <slot name="sku-stepper" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
+            <van-sku-stepper
+              ref="skuStepper"
               :skuEventBus="skuEventBus"
               :selectedSku="selectedSku"
               :selectedSkuComb="selectedSkuComb"
               :selectedNum="selectedNum"
-              :quantityTitle="quantityTitle"
+              :stepperTitle="stepperTitle"
               :sku="sku"
               :quota="quota"
               :quotaUsed="quotaUsed"
               :hideStock="hideStock">
-            </van-sku-quantity>
+            </van-sku-stepper>
           </slot>
          <slot name="sku-messages">
             <van-sku-messages
@@ -67,7 +67,7 @@ import Popup from 'packages/popup';
 import Toast from 'packages/toast';
 import SkuHeader from '../components/SkuHeader';
 import SkuRow from '../components/SkuRow';
-import SkuQuantity from '../components/SkuQuantity';
+import SkuStepper from '../components/SkuStepper';
 import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
 import { isAllSelected, getSkuComb, getSelectedSkuValues } from '../utils/skuHelper';
@@ -82,7 +82,7 @@ export default {
     [Popup.name]: Popup,
     [SkuHeader.name]: SkuHeader,
     [SkuRow.name]: SkuRow,
-    [SkuQuantity.name]: SkuQuantity,
+    [SkuStepper.name]: SkuStepper,
     [SkuMessages.name]: SkuMessages,
     [SkuActions.name]: SkuActions
   },
@@ -113,7 +113,7 @@ export default {
       default: true
     },
     buyText: String,
-    quantityTitle: {
+    stepperTitle: {
       type: String,
       default: '购买数量'
     },
@@ -121,7 +121,7 @@ export default {
       type: Number,
       default: 150
     },
-    resetQuantityOnHide: Boolean,
+    resetStepperOnHide: Boolean,
     value: Boolean
   },
 
@@ -145,8 +145,8 @@ export default {
           selectedSkuComb: this.selectedSkuComb
         });
 
-        if (this.resetQuantityOnHide) {
-          this.$refs.skuQuantity && this.$refs.skuQuantity.setCurrentNum(1);
+        if (this.resetStepperOnHide) {
+          this.$refs.skuStepper && this.$refs.skuStepper.setCurrentNum(1);
         }
       }
     },

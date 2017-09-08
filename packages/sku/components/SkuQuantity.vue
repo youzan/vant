@@ -1,8 +1,8 @@
 <template>
-  <div class="van-sku-quantity-stock">
-    <div class="van-sku-quantity-container">
-      <div class="van-sku__quantity-title">{{ quantityTitle }}：</div>
-      <van-quantity v-model="currentNum" :min="1" :max="quantityLimit" class="van-sku__quantity" @overlimit="handleOverLimit"></van-quantity>
+  <div class="van-sku-stepper-stock">
+    <div class="van-sku-stepper-container">
+      <div class="van-sku__stepper-title">{{ stepperTitle }}：</div>
+      <van-stepper v-model="currentNum" :min="1" :max="stepperLimit" class="van-sku__stepper" @overlimit="handleOverLimit"></van-stepper>
     </div>
     <div v-if="!hideStock" class="van-sku__stock">剩余{{ stock }}件</div>
     <div v-if="quota > 0" class="van-sku__quota">每人限购{{ quota }}件</div>
@@ -10,16 +10,16 @@
 </template>
 
 <script>
-import Quantity from 'packages/quantity';
+import Stepper from 'packages/stepper';
 import { LIMIT_TYPE } from '../constants';
 
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default {
-  name: 'van-sku-quantity',
+  name: 'van-sku-stepper',
 
   components: {
-    [Quantity.name]: Quantity
+    [Stepper.name]: Stepper
   },
 
   props: {
@@ -34,7 +34,7 @@ export default {
       type: Boolean,
       default: false
     },
-    quantityTitle: {
+    stepperTitle: {
       type: String,
       default: '购买数量'
     }
@@ -52,7 +52,7 @@ export default {
     currentNum(num) {
       this.skuEventBus.$emit('sku:numChange', num);
     },
-    quantityLimit(limit) {
+    stepperLimit(limit) {
       if (limit < this.currentNum) {
         this.currentNum = limit;
       }
@@ -66,7 +66,7 @@ export default {
       }
       return this.sku.stock_num;
     },
-    quantityLimit() {
+    stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;
       let limit;
 

@@ -60,7 +60,7 @@ Vue.component(Sku.name, Sku);
       :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
-      :reset-quantity-on-hide="true"
+      :reset-stepper-on-hide="true"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
@@ -85,7 +85,7 @@ Vue.component(Sku.name, Sku);
       :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
-      :reset-quantity-on-hide="true"
+      :reset-stepper-on-hide="true"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >

@@ -135,22 +135,22 @@
 }
 
 /*
-  sku quantity
+  sku stepper
 */
-.van-sku-quantity-stock {
+.van-sku-stepper-stock {
   padding: 12px 0;
   margin-left: 15px;
 }
-.van-sku-quantity-container {
+.van-sku-stepper-container {
   height: 30px;
   margin-right: 20px;
 }
-.van-sku__quantity-title {
+.van-sku__stepper-title {
   float: left;
   line-height: 30px;
   font-size: 14px;
 }
-.van-sku__quantity {
+.van-sku__stepper {
   float: right;
   top: 7px;
   left: 4px;
