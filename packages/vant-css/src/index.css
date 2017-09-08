@@ -46,7 +46,6 @@
 
 /* business components */
 @import './deep-select.css';
-@import './express-way.css';
 @import './goods-action.css';
 @import './invalid-goods.css';
 @import './notice-bar.css';

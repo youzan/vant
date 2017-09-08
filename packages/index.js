@@ -15,7 +15,6 @@ import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
 import DeepSelect from './deep-select';
 import Dialog from './dialog';
-import ExpressWay from './express-way';
 import Field from './field';
 import GoodsAction from './goods-action';
 import GoodsActionBigBtn from './goods-action-big-btn';
@@ -69,7 +68,6 @@ const components = [
   CouponList,
   DatetimePicker,
   DeepSelect,
-  ExpressWay,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
@@ -135,7 +133,6 @@ export {
   DatetimePicker,
   DeepSelect,
   Dialog,
-  ExpressWay,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
