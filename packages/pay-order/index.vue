@@ -1,7 +1,7 @@
 <template>
   <div class="van-pay-order">
     <div class="van-pay-order__tip" v-show="tip || $slots.tip">
-      <slot name="tip">{{ tip }}</slot>
+      {{ tip }}<slot name="tip"></slot>
     </div>
     <div class="van-pay-order__bar">
       <div class="van-pay-order__price">

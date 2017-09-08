@@ -187,43 +187,36 @@ module.exports = {
             ]
           },
           {
+            "groupName": "高阶组件",
+            "list": [
+              {
+                "path": "/switch-cell",
+                "title": "SwitchCell 开关单元格"
+              }
+            ]
+          },
+          {
             "groupName": "业务组件",
             "list": [
+              {
+                "path": "/area",
+                "title": "Area 省市区选择"
+              },
               {
                 "path": "/deep-select",
                 "title": "DeepSelect 分类选择组件"
               },
               {
-                "path": "/express-way",
-                "title": "ExpressWay 配送方式"
-              },
-              {
                 "path": "/goods-action",
-                "title": "GoodsAction 商品操作"
+                "title": "GoodsAction 商品页行动点"
               },
               {
-                "path": "/invalid-goods",
-                "title": "InvalidGoods 不可用商品列表"
-              },
-              {
-                "path": "/order-coupon",
-                "title": "OrderCoupon 下单页优惠券"
-              },
-              {
-                "path": "/order-goods",
-                "title": "OrderGoods 下单页商品列表"
+                "path": "/coupon",
+                "title": "Coupon 优惠券选择器"
               },
               {
                 "path": "/pay-order",
                 "title": "PayOrder 提交订单栏"
-              },
-              {
-                "path": "/switch-cell",
-                "title": "SwitchCell 开关单元格"
-              },
-              {
-                "path": "/area",
-                "title": "Area 省市区选择"
               }
             ]
           }
