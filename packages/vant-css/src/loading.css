@@ -41,8 +41,8 @@
       }
 
       &.van-loading__spinner--white {
-        border-color: rgba(0, 0, 0, .5);
-        border-top-color: transparent;
+        border-color: rgba(0, 0, 0, .1);
+        border-top-color: rgba(255, 255, 255, .7);
       }
     }
 
