@@ -66,3 +66,10 @@ cd packages/vant-css
 
 修改你下载主题对应的样式即可，然后引入你修改后的主题。
 
+### vue-cli模板
+
+可以使用`vue-cli`来初始化`vant`的通用模板：
+
+```shell
+vue init youzan/vue-cli-template-vant projectName
+```

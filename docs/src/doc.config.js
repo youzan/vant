@@ -177,6 +177,10 @@ module.exports = {
                 "title": "Picker 选择器"
               },
               {
+                "path": "/pull-refresh",
+                "title": "PullRefresh 下拉刷新"
+              },
+              {
                 "path": "/toast",
                 "title": "Toast 轻提示"
               }
@@ -202,6 +206,10 @@ module.exports = {
                 "title": "InvalidGoods 不可用商品列表"
               },
               {
+                "path": "/order-coupon",
+                "title": "OrderCoupon 下单页优惠券"
+              },
+              {
                 "path": "/order-goods",
                 "title": "OrderGoods 下单页商品列表"
               },
@@ -212,6 +220,10 @@ module.exports = {
               {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
+              },
+              {
+                "path": "/area",
+                "title": "Area 省市区选择"
               }
             ]
           }

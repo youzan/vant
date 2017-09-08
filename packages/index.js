@@ -1,4 +1,5 @@
 import Actionsheet from './actionsheet';
+import Area from './area';
 import Badge from './badge';
 import BadgeGroup from './badge-group';
 import Button from './button';
@@ -23,12 +24,15 @@ import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
+import OrderCoupon from './order-coupon';
+import OrderCouponList from './order-coupon-list';
 import OrderGoods from './order-goods';
 import Panel from './panel';
 import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
+import PullRefresh from './pull-refresh';
 import Quantity from './quantity';
 import Radio from './radio';
 import RadioGroup from './radio-group';
@@ -47,9 +51,10 @@ import Toast from './toast';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.8.9';
+const version = '0.9.1';
 const components = [
   Actionsheet,
+  Area,
   Badge,
   BadgeGroup,
   Button,
@@ -71,12 +76,15 @@ const components = [
   InvalidGoods,
   Loading,
   NoticeBar,
+  OrderCoupon,
+  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,
   Picker,
   Popup,
   Progress,
+  PullRefresh,
   Quantity,
   Radio,
   RadioGroup,
@@ -111,6 +119,7 @@ export {
   install,
   version,
   Actionsheet,
+  Area,
   Badge,
   BadgeGroup,
   Button,
@@ -135,12 +144,15 @@ export {
   Lazyload,
   Loading,
   NoticeBar,
+  OrderCoupon,
+  OrderCouponList,
   OrderGoods,
   Panel,
   PayOrder,
   Picker,
   Popup,
   Progress,
+  PullRefresh,
   Quantity,
   Radio,
   RadioGroup,

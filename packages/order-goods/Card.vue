@@ -1,5 +1,5 @@
 <template>
-  <div class="van-order-goods-card">
+  <div class="van-order-goods-card van-hairline">
     <van-card>
       <div slot="thumb">
         <img :src="data.img_url" />
@@ -29,11 +29,11 @@
         </div>
       </template>
     </van-card>
-    <van-cell class="van-order-goods-card__delivery" v-if="data.show_delivery_time" title="发货时间" :value="data.delivery_time" />
+    <van-cell class="van-order-goods-card__delivery van-hairline--top" v-if="data.show_delivery_time" title="发货时间" :value="data.delivery_time" />
     <van-popup v-if="hasMessage" class="van-order-goods-card__message" v-model="showMessage" position="right">
       <h2>备注信息</h2>
       <ul>
-        <li v-for="(value, key) in data.message">
+        <li v-for="(value, key) in data.message" class="van-hairline">
           <label>{{ key }}</label>
           <a v-if="isURL(value)" :href="value">
             <img :src="value" />

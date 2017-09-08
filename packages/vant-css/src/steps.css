@@ -1,11 +1,9 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
-@import './icon.css';
-@import './mixins/border_retina.css';
 
 .van-steps {
   overflow: hidden;
-  background-color: #fff;
+  background-color: $white;
 
   &--horizontal {
     padding: 0 10px;
@@ -61,13 +59,13 @@
 
   &__title {
     font-size: 14px;
-    color: $c-black;
+    color: $text-color;
   }
 
   &__desc {
     font-size: 12px;
     line-height: 1.5;
-    color: $c-gray-dark;
+    color: $gray-dark;
     max-height: 18px;
     @mixin multi-ellipsis 1;
   }
@@ -76,7 +74,7 @@
 .van-step {
   font-size: 14px;
   position: relative;
-  color: $c-gray-dark;
+  color: $gray-dark;
   
   &--horizontal {
     float: left;
@@ -113,7 +111,7 @@
       top: 28px;
       left: -8px;
       padding: 0 8px;
-      background-color: #fff;
+      background-color: $white;
       z-index: 1;
     }
 
@@ -130,20 +128,20 @@
       top: 30px;
       width: 100%;
       height: 1px;
-      background-color: $c-gray-light;
+      background-color: $gray-light;
     }
 
     &.van-step--finish {
-      color: $c-black;
+      color: $text-color;
 
       .van-step__circle,
       .van-step__line {
-        background-color: $c-green;
+        background-color: $green;
       }
     }
 
     &.van-step--process {
-      color: $c-black;
+      color: $text-color;
 
       .van-step__circle-container {
         top: 24px;
@@ -151,7 +149,7 @@
 
       .van-icon {
         font-size: 12px;
-        color: $c-green;
+        color: $green;
         line-height: 1;
         display: block;
       }
@@ -173,8 +171,8 @@
     line-height: 18px;
     padding: 10px 10px 10px 0;
 
-    &::after {
-      @mixin border-retina (bottom);
+    &:not(:last-child)::after {
+      border-bottom-width: 1px;
     }
 
     &:first-child {
@@ -183,15 +181,11 @@
         position: absolute;
         width: 1px;
         height: 20px;
-        background-color: #fff;
+        background-color: $white;
         top: 0;
         left: -15px;
         z-index: 1;
       }
-    }
-
-    &:last-child::after {
-      display: none;
     }
 
     .van-step__circle-container > i {
@@ -217,7 +211,7 @@
       left: -15px;
       width: 1px;
       height: 100%;
-      background-color: $c-gray-light;
+      background-color: $gray-light;
     }
   }
 }

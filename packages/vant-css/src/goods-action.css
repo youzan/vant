@@ -1,5 +1,4 @@
 @import './common/var.css';
-@import './mixins/border_retina.css';
 
 .van-goods-action {
   left: 0;
@@ -13,29 +12,26 @@
   }
 
   &__mini-btn {
-    color: #666;
+    color: $gray-darker;
     display: flex;
     height: 50px;
     font-size: 10px;
     min-width: 15%;
-    position: relative;
     text-align: center;
-    background-color: #fff;
+    background-color: $white;
     flex-direction: column;
     justify-content: center;
 
     &::after {
-      @mixin border-retina (top, left), #cacaca;
+      border-width: 1px 0 0 1px;
     }
 
-    &:first-child {
-      &::after {
-        border-left-width: 0;
-      }
+    &:first-child::after {
+      border-left-width: 0;
     }
 
     &:active {
-      background-color: $c-active;
+      background-color: $active-color;
     }
   }
 

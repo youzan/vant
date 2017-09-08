@@ -1,7 +1,7 @@
 <template>
-  <div class="van-switch" :class="switchStates" @click="toggleState">
-    <div class="van-switch__node">
-      <van-loading v-if="loading" class="van-switch__loading"></van-loading>
+  <div class="van-switch" :class="[`van-switch--${checked ? 'on' : 'off'}`, { 'van-switch--disabled': disabled }]" @click="toggleState">
+    <div class="van-switch__node van-hairline-surround">
+      <van-loading v-if="loading" class="van-switch__loading" />
     </div>
     <div class="van-switch__bg"></div>
   </div>
@@ -33,17 +33,6 @@ export default {
 
     value(val) {
       this.checked = val;
-    }
-  },
-  computed: {
-    switchStates: function() {
-      const switchStates = ['van-switch--' + (this.checked ? 'on' : 'off')];
-
-      if (this.disabled) {
-        switchStates.push('van-switch--disabled');
-      }
-
-      return switchStates;
     }
   },
   methods: {

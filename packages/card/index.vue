@@ -7,14 +7,22 @@
     </div>
     <div class="van-card__content">
       <slot name="title">
-        <h4 v-text="title" class="van-card__title"></h4>
+        <div class="van-card__row" v-if="title || price !== undefined">
+          <h4 v-if="title" class="van-card__title">{{ title }}</h4>
+          <p v-if="price !== undefined" class="van-card__price">¥ {{ price }}</p>
+        </div>
       </slot>
       <slot name="desc">
-        <p v-if="desc" v-text="desc" class="van-card__desc"></p>
+        <div class="van-card__row" v-if="desc || num !== undefined">
+          <p v-if="desc" class="van-card__desc">{{ desc }}</p>
+          <p v-if="num !== undefined" class="van-card__num">x {{ num }}</p>
+        </div>
       </slot>
       <slot name="tags"></slot>
     </div>
-    <slot name="footer"></slot>
+    <div class="van-card__footer" v-if="$slots.footer">
+      <slot name="footer"></slot>      
+    </div>
   </div>
 </template>
 
@@ -26,7 +34,9 @@ export default {
     thumb: String,
     title: String,
     desc: String,
-    centered: Boolean
+    num: [Number, String],
+    centered: Boolean,
+    price: [Number, String]
   }
 };
 </script>

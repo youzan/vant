@@ -52,8 +52,9 @@ Vue.component(Picker.name, Picker);
 :::demo 基础用法
 ```html
 <van-picker :columns="pickerColumns" @change="handlePickerChange"></van-picker>
+```
 
-<script>
+```javascript
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
@@ -82,7 +83,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -98,8 +98,9 @@ export default {
   @cancel="handlePickerCancel"
   @confirm="handlePickerConfirm"
 ></van-picker>
+```
 
-<script>
+```javascript
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
@@ -135,7 +136,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

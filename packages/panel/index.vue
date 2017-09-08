@@ -1,6 +1,6 @@
 <template>
-  <div class="van-panel">
-    <div class="van-panel__header">
+  <div class="van-panel van-hairline--top-bottom">
+    <div class="van-panel__header van-hairline--bottom">
       <slot name="header">
         <h4 class="van-panel__title" v-text="title"></h4>
         <span class="van-panel__desc" v-if="desc" v-text="desc"></span>
@@ -10,7 +10,7 @@
     <div class="van-panel__content">
       <slot></slot>
     </div>
-    <div class="van-panel__footer" v-if="$slots.footer">
+    <div class="van-panel__footer van-hairline--top" v-if="$slots.footer">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -20,8 +20,8 @@
 export default {
   name: 'van-panel',
   props: {
-    title: String,
     desc: String,
+    title: String,
     status: String
   }
 };

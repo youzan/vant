@@ -32,8 +32,9 @@ Vue.component(Search.name, Search);
 :::demo 基础用法
 ```html
 <van-search placeholder="商品名称" @search="goSearch"></van-search>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     goSearch(value) {
@@ -41,7 +42,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -60,8 +60,9 @@ export default {
 :::demo 监听对应事件
 ```html
 <van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
+```
 
-<script>
+```javascript
 export default {
   methods: {
     goSearch(value) {
@@ -75,7 +76,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 

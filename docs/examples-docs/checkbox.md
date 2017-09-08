@@ -52,16 +52,16 @@ Vue.component(Checkbox.name, Checkbox);
 <div class="van-checkbox-wrapper">
   <van-checkbox v-model="checkbox1">复选框1</van-checkbox>
 </div>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
       checkbox1: true
     };
   }
-}; 
-</script>
+};
 ```
 :::
 
@@ -74,16 +74,16 @@ export default {
 <div class="van-checkbox-wrapper">
   <van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
 </div>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
       checkbox2: true
     };
   }
-}; 
-</script>
+};
 ```
 :::
 
@@ -98,8 +98,9 @@ export default {
     <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -118,7 +119,6 @@ export default {
     }
   }
 };
-</script>
 ```
 :::
 
@@ -133,8 +133,9 @@ export default {
     <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </div>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -147,7 +148,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 
@@ -164,8 +164,9 @@ export default {
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
+```
 
-<script>
+```javascript
 export default {
   data() {
     return {
@@ -178,7 +179,6 @@ export default {
     };
   }
 };
-</script>
 ```
 :::
 

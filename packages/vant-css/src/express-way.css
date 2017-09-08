@@ -1,9 +1,11 @@
+@import './common/var.css';
+
 .van-express-way {
   padding: 0;
 
   &__fee,
   &__type {
-    color: #666;
+    color: $gray-darker;
     line-height: 1.5;
   }
 
@@ -35,7 +37,7 @@
       padding-left: 30px;
 
       p {
-        color: #999;
+        color: $gray-dark;
         font-size: 12px;
         line-height: 16px;
       }
@@ -52,7 +54,7 @@
     }
 
     &__warn {
-      color: #f09000;
+      color: $yellow;
     }
   }
 }

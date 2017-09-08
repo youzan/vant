@@ -10,10 +10,9 @@
   box-sizing: border-box;
   font-size: 16px;
   text-align: center;
-  outline: 0;
   -webkit-appearance: none;
 
-  &::after {
+  &::before {
     content: " ";
     position: absolute;
     top: 0;
@@ -21,11 +20,11 @@
     right: 0;
     bottom: 0;
     opacity: 0;
-    background-color: #000;
+    background-color: $black;
     border-radius: inherit; /* inherit parent's border radius */
   }
 
-  &:not(.is-disabled):active::after {
+  &:not(.is-disabled):active::before {
     opacity: .3;
   }
 
@@ -39,7 +38,7 @@
     border: 1px solid $button-default-border-color;
 
     &:active {
-      color: $c-gray-dark;
+      color: $gray-dark;
     }
   }
 
@@ -71,6 +70,12 @@
     height: 30px;
     line-height: 28px;
     font-size: 12px;
+  }
+
+  &--loading {
+    .van-button__text {
+      display: none;
+    }
   }
 
   /* mini图标默认宽度50px，文字不能超过4个 */
@@ -108,7 +113,7 @@
     background-color: $bottom-action-button-default-background-color;
 
     &:active {
-      color: #fff;
+      color: $white;
     }
 
     &.van-button--primary {

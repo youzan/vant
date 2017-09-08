@@ -18,20 +18,23 @@ Vue.use(VueRouter);
 const routesConfig = routes(true);
 routesConfig.push({
   path: '/',
-  component: DemoList.default || DemoList
+  component: DemoList
 });
 const router = new VueRouter({
   mode: 'history',
   base: '/zanui/vue/examples',
   routes: routesConfig
 });
-router.beforeEach((to, from, next) => {
+
+router.afterEach(() => {
   const container = document.querySelector('.examples-container');
   if (container) {
     document.querySelector('.examples-container').scrollTop = 0;
   }
-  next();
+  window.syncPath();
 });
+
+window.vueRouter = router;
 
 new Vue({ // eslint-disable-line
   render: h => h(App),
