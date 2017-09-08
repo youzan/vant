@@ -226,40 +226,10 @@ var _global = {
     "is_virtual": "0",
     "quota_used": 0,
     "goods_info": {
-        "title": "\u725b\u5976\u6d4b\u8bd5",
-        "picture": ["https:\/\/img.yzcdn.cn\/upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2\/2\/w\/100\/h\/100\/q\/75\/format\/webp"],
+        "title": "测试商品",
+        "picture": ["https:\/\/img.yzcdn.cn\/upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2\/2\/w\/100\/h\/100\/q\/75\/format\/jpg"],
         "price": 1,
         "origin": ""
-    },
-    "url": {
-        "base": "https:\/\/www.youzan.com",
-        "bbs": "http:\/\/bbs.youzan.com",
-        "cdn": "https:\/\/b.yzcdn.cn\/",
-        "cdn_static": "https:\/\/b.yzcdn.cn\/v2",
-        "daxue": "http:\/\/xuetang.youzan.com",
-        "fenxiao": "\/\/fx.youzan.com",
-        "fuwu": "http:\/\/fuwu.youzan.com",
-        "img": "http:\/\/img.youzan.com",
-        "imgqn": "https:\/\/img.yzcdn.cn",
-        "login": "http:\/\/login.youzan.com",
-        "open": "\/\/open.youzan.com",
-        "static": "\/\/static.youzan.com\/v2",
-        "trade": "https:\/\/trade.koudaitong.com",
-        "v1": "https:\/\/www.youzan.com\/v1",
-        "v1_static": "https:\/\/b.yzcdn.cn\/v1",
-        "v2": "https:\/\/www.youzan.com\/v2",
-        "wap": "https:\/\/h5.youzan.com\/v2",
-        "ws": "ws:\/\/im.youzan.com:8080",
-        "www": "\/\/www.youzan.com\/v2",
-        "youzan": "http:\/\/www.youzan.com",
-        "cloud": "https:\/\/dl.yzcdn.cn",
-        "pf": "http:\/\/pifa.youzan.com",
-        "uic": "\/\/uic.youzan.com",
-        "store": "\/\/store.youzan.com",
-        "market": "http:\/\/pfmarket.youzan.com",
-        "im": "http:\/\/b-im.youzan.com",
-        "help": "\/\/help.youzan.com",
-        "materials": "\/\/materials.youzan.com"
     }
 };
 

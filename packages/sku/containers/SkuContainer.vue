@@ -13,7 +13,7 @@
         </slot>
         <div class="van-sku-body scroller" :style="bodyStyle">
           <slot name="sku-group" :selectedSku="selectedSku">
-            <div class="van-sku-group-container">
+            <div v-if="hasSku" class="van-sku-group-container">
               <div v-for="(skutreeItem, index) in skuTree"
                 class="van-sku-row-group"
                 :key="index">
@@ -171,8 +171,11 @@ export default {
     isSkuCombSelected() {
       return isAllSelected(this.sku.tree, this.selectedSku);
     },
+    hasSku() {
+      return !this.sku.none_sku;
+    },
     selectedSkuComb() {
-      if (this.sku.none_sku) {
+      if (!this.hasSku) {
         return {
           id: this.sku.collection_id,
           price: Math.round(this.sku.price * 100),

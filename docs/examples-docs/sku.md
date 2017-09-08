@@ -55,7 +55,6 @@ Vue.component(Sku.name, Sku);
       v-model="showBase"
       :sku="sku"
       :goods="goods"
-      :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
       :show-add-cart-btn="true"
       :quota="quota"
@@ -80,7 +79,6 @@ Vue.component(Sku.name, Sku);
       v-model="showCustomAction"
       :sku="sku"
       :goods="goods"
-      :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
       :show-add-cart-btn="true"
       :quota="quota"
@@ -117,7 +115,6 @@ Vue.component(Sku.name, Sku);
 | v-model | 是否显示sku | Boolean  | false |    是      |
 | sku | 商品sku数据 | Object  | - |    是      |
 | goods | 商品信息 | Object  | - |  是 |
-| goodsId | 商品id | String  | - |  是 |
 | hideStock | 是否显示商品剩余库存 | Boolean  | false | 否  |
 | showAddCartBtn | 是否显示加入购物车按钮 | Boolean  | true |  否 |
 | quota | 限购数(0表示不限购) | Number  | 0 |  否 |
