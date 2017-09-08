@@ -10,36 +10,32 @@ import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
+import CouponCell from './coupon-cell';
+import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
-import DeepSelect from './deep-select';
 import Dialog from './dialog';
-import ExpressWay from './express-way';
 import Field from './field';
 import GoodsAction from './goods-action';
 import GoodsActionBigBtn from './goods-action-big-btn';
 import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
-import InvalidGoods from './invalid-goods';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import NoticeBar from './notice-bar';
-import OrderCoupon from './order-coupon';
-import OrderCouponList from './order-coupon-list';
-import OrderGoods from './order-goods';
 import Panel from './panel';
-import PayOrder from './pay-order';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
 import PullRefresh from './pull-refresh';
-import Quantity from './quantity';
 import Radio from './radio';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Search from './search';
 import Step from './step';
+import Stepper from './stepper';
 import Steps from './steps';
+import SubmitBar from './submit-bar';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
 import Switch from './switch';
@@ -48,6 +44,7 @@ import Tab from './tab';
 import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
+import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
@@ -65,33 +62,29 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Col,
+  CouponCell,
+  CouponList,
   DatetimePicker,
-  DeepSelect,
-  ExpressWay,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
-  InvalidGoods,
   Loading,
   NoticeBar,
-  OrderCoupon,
-  OrderCouponList,
-  OrderGoods,
   Panel,
-  PayOrder,
   Picker,
   Popup,
   Progress,
   PullRefresh,
-  Quantity,
   Radio,
   RadioGroup,
   Row,
   Search,
   Step,
+  Stepper,
   Steps,
+  SubmitBar,
   Swipe,
   SwipeItem,
   Switch,
@@ -99,6 +92,7 @@ const components = [
   Tab,
   Tabs,
   Tag,
+  TreeSelect,
   Uploader
 ];
 
@@ -130,36 +124,32 @@ export {
   Checkbox,
   CheckboxGroup,
   Col,
+  CouponCell,
+  CouponList,
   DatetimePicker,
-  DeepSelect,
   Dialog,
-  ExpressWay,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
-  InvalidGoods,
   Lazyload,
   Loading,
   NoticeBar,
-  OrderCoupon,
-  OrderCouponList,
-  OrderGoods,
   Panel,
-  PayOrder,
   Picker,
   Popup,
   Progress,
   PullRefresh,
-  Quantity,
   Radio,
   RadioGroup,
   Row,
   Search,
   Step,
+  Stepper,
   Steps,
+  SubmitBar,
   Swipe,
   SwipeItem,
   Switch,
@@ -168,6 +158,7 @@ export {
   Tabs,
   Tag,
   Toast,
+  TreeSelect,
   Uploader,
   Waterfall
 };

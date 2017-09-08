@@ -1,0 +1,58 @@
+@import "./mixins/ellipsis.css";
+@import "./mixins/clearfix.css";
+@import './common/var.css';
+
+.van-tree-select {
+  user-select: none;
+  position: relative;
+  @mixin clearfix;
+
+  &__nav {
+    width: 143px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow: scroll;
+    background-color: $white;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__nitem {
+    line-height: 44px;
+    padding: 0 15px;
+    background-color: $white;
+    @mixin multi-ellipsis 1;
+
+    &--active {
+      background-color: $background-color;
+    }
+  }
+
+  &__content {
+    padding: 0 15px;
+    margin-left: 143px;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  &__item {
+    position: relative;
+    line-height: 44px;
+    padding-left: 5px;
+    padding-right: 18px;
+    @mixin multi-ellipsis 1;
+    
+    &--active {
+      color: $button-danger-background-color;
+    }
+  }
+
+  &__selected {
+    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
