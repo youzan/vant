@@ -2,7 +2,7 @@
 @import "./mixins/clearfix.css";
 @import './common/var.css';
 
-.van-deep-select {
+.van-tree-select {
   user-select: none;
   position: relative;
   @mixin clearfix;

@@ -1,19 +1,19 @@
-import DeepSelect from 'packages/deep-select';
+import TreeSelect from 'packages/tree-select';
 import { mount } from 'avoriaz';
 
-describe('DeepSelect', () => {
+describe('TreeSelect', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
 
-  it('create an empty deep-select', () => {
-    wrapper = mount(DeepSelect);
+  it('create an empty tree-select', () => {
+    wrapper = mount(TreeSelect);
     expect(wrapper.hasStyle('height', '0px')).to.be.true;
   });
 
-  it('create a deep-select correctly', () => {
-    wrapper = mount(DeepSelect, {
+  it('create a tree-select correctly', () => {
+    wrapper = mount(TreeSelect, {
       propsData: {
         items: [{
           text: 'A',
@@ -25,13 +25,13 @@ describe('DeepSelect', () => {
         maxHeight: 200
       }
     });
-    expect(wrapper.hasClass('van-deep-select')).to.be.true;
+    expect(wrapper.hasClass('van-tree-select')).to.be.true;
     expect(wrapper.hasStyle('height', '44px')).to.be.true;
     expect(wrapper.vm.maxHeight).to.equal(200);
   });
 
   it('interact with this component', () => {
-    wrapper = mount(DeepSelect, {
+    wrapper = mount(TreeSelect, {
       propsData: {
         items: [{
           text: 'A',
@@ -58,10 +58,10 @@ describe('DeepSelect', () => {
     wrapper.vm.$on('itemclick', item => {
       wrapper.vm.activeId = item.id;
     });
-    const secondNav = wrapper.find('.van-deep-select__nitem')[1];
+    const secondNav = wrapper.find('.van-tree-select__nitem')[1];
     secondNav.trigger('click');
     expect(wrapper.vm.mainActiveIndex).to.equal(1);
-    const target = wrapper.find('.van-deep-select__item')[0];
+    const target = wrapper.find('.van-tree-select__item')[0];
     target.trigger('click');
     expect(wrapper.vm.activeId).to.equal(345);
   });

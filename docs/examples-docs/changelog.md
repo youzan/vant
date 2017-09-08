@@ -21,7 +21,7 @@
 
 **合并的 Pull Request (可能有不兼容改动):**
 
-- Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
+- Add tree-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
 - Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7) (2017-08-29)

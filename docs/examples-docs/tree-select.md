@@ -74,13 +74,13 @@ export default {
 }
 </script>
 
-## DeepSelect 分类选择
+## TreeSelect 分类选择
 
 ### 使用指南
 ``` javascript
-import { DeepSelect } from 'vant';
+import { TreeSelect } from 'vant';
 
-Vue.component(DeepSelect.name, DeepSelect);
+Vue.component(TreeSelect.name, TreeSelect);
 ```
 
 ### 代码演示
@@ -89,13 +89,13 @@ Vue.component(DeepSelect.name, DeepSelect);
 
 :::demo 基础用法
 ```html
-<van-deep-select
+<van-tree-select
   :items="items"
   :main-active-index="mainActiveIndex"
   :active-id="activeId"
   @navclick="onNavClick"
   @itemclick="onItemClick"
-></van-deep-select>
+></van-tree-select>
 ```
 
 ```javascript

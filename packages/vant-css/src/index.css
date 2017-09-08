@@ -12,7 +12,6 @@
 @import './badge.css';
 @import './button.css';
 @import './cell.css';
-@import './cell-swipe.css';
 @import './card.css';
 @import './icon.css';
 @import './loading.css';
@@ -42,10 +41,11 @@
 @import './toast.css';
 
 /* high order components */
+@import './cell-swipe.css';
 @import './switch-cell.css';
+@import './tree-select.css';
 
 /* business components */
-@import './deep-select.css';
 @import './goods-action.css';
 @import './notice-bar.css';
 @import './coupon.css';

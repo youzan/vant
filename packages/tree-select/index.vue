@@ -1,26 +1,26 @@
 <template>
-  <div class="van-deep-select" :style="{ height: mainHeight + 'px' }">
-    <div class="van-deep-select__nav">
+  <div class="van-tree-select" :style="{ height: mainHeight + 'px' }">
+    <div class="van-tree-select__nav">
       <div
         v-for="(item, index) in items"
-        class="van-deep-select__nitem"
-        :class="{ 'van-deep-select__nitem--active': mainActiveIndex === index }"
-        @click="onNavClick(index)">
+        class="van-tree-select__nitem"
+        :class="{ 'van-tree-select__nitem--active': mainActiveIndex === index }"
+        @click="$emit('navclick', index)">
         {{ item.text }}
       </div>
     </div>
-    <div class="van-deep-select__content" :style="{ height: itemHeight + 'px' }">
+    <div class="van-tree-select__content" :style="{ height: itemHeight + 'px' }">
       <div
         v-for="item in subItems"
         :key="item.id"
-        class="van-deep-select__item"
-        :class="{ 'van-deep-select__item--active': activeId === item.id }"
+        class="van-tree-select__item"
+        :class="{ 'van-tree-select__item--active': activeId === item.id }"
         @click="onItemSelect(item)">
         {{ item.text }}
         <van-icon
           v-if="activeId === item.id"
           name="success"
-          class="van-deep-select__selected"
+          class="van-tree-select__selected"
         ></van-icon>
       </div>
     </div>
@@ -31,7 +31,7 @@
 import Icon from 'packages/icon';
 
 export default {
-  name: 'van-deep-select',
+  name: 'van-tree-select',
 
   components: {
     'van-icon': Icon
@@ -40,9 +40,7 @@ export default {
   props: {
     items: {
       type: Array,
-      default () {
-        return [];
-      }
+      default: () => []
     },
     mainActiveIndex: {
       type: Number,
@@ -73,12 +71,8 @@ export default {
   },
 
   methods: {
-    onNavClick(index) {
-      this.$emit('navclick', index);
-    },
     onItemSelect(data) {
-      const exportData = Object.assign({}, data);
-      this.$emit('itemclick', exportData);
+      this.$emit('itemclick', { ...data });
     }
   }
 };

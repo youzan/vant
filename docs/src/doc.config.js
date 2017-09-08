@@ -99,6 +99,10 @@ module.exports = {
                 "title": "Progress 进度条"
               },
               {
+                "path": "/search",
+                "title": "Search 搜索"
+              },
+              {
                 "path": "/stepper",
                 "title": "Stepper 步进器"
               },
@@ -107,20 +111,16 @@ module.exports = {
                 "title": "Steps 步骤条"
               },
               {
+                "path": "/swipe",
+                "title": "Swipe 轮播"
+              },
+              {
                 "path": "/tab",
                 "title": "Tab 标签"
               },
               {
                 "path": "/tag",
                 "title": "Tag 标记"
-              },
-              {
-                "path": "/swipe",
-                "title": "Swipe 轮播"
-              },
-              {
-                "path": "/search",
-                "title": "Search 搜索"
               },
               {
                 "path": "/waterfall",
@@ -192,7 +192,11 @@ module.exports = {
               {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
-              }
+              },
+              {
+                "path": "/tree-select",
+                "title": "TreeSelect 分类选择"
+              },
             ]
           },
           {
@@ -203,16 +207,12 @@ module.exports = {
                 "title": "Area 省市区选择"
               },
               {
-                "path": "/deep-select",
-                "title": "DeepSelect 分类选择"
+                "path": "/coupon",
+                "title": "Coupon 优惠券选择器"
               },
               {
                 "path": "/goods-action",
                 "title": "GoodsAction 商品页行动点"
-              },
-              {
-                "path": "/coupon",
-                "title": "Coupon 优惠券选择器"
               },
               {
                 "path": "/pay-order",

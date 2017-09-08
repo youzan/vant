@@ -13,7 +13,6 @@ import Col from './col';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
-import DeepSelect from './deep-select';
 import Dialog from './dialog';
 import Field from './field';
 import GoodsAction from './goods-action';
@@ -30,12 +29,12 @@ import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
 import PullRefresh from './pull-refresh';
-import Stepper from './stepper';
 import Radio from './radio';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Search from './search';
 import Step from './step';
+import Stepper from './stepper';
 import Steps from './steps';
 import Swipe from './swipe';
 import SwipeItem from './swipe-item';
@@ -45,6 +44,7 @@ import Tab from './tab';
 import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
+import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
@@ -65,7 +65,6 @@ const components = [
   CouponCell,
   CouponList,
   DatetimePicker,
-  DeepSelect,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
@@ -79,12 +78,12 @@ const components = [
   Popup,
   Progress,
   PullRefresh,
-  Stepper,
   Radio,
   RadioGroup,
   Row,
   Search,
   Step,
+  Stepper,
   Steps,
   Swipe,
   SwipeItem,
@@ -93,6 +92,7 @@ const components = [
   Tab,
   Tabs,
   Tag,
+  TreeSelect,
   Uploader
 ];
 
@@ -127,7 +127,6 @@ export {
   CouponCell,
   CouponList,
   DatetimePicker,
-  DeepSelect,
   Dialog,
   Field,
   GoodsAction,
@@ -144,12 +143,12 @@ export {
   Popup,
   Progress,
   PullRefresh,
-  Stepper,
   Radio,
   RadioGroup,
   Row,
   Search,
   Step,
+  Stepper,
   Steps,
   Swipe,
   SwipeItem,
@@ -159,6 +158,7 @@ export {
   Tabs,
   Tag,
   Toast,
+  TreeSelect,
   Uploader,
   Waterfall
 };
