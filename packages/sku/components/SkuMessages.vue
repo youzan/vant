@@ -24,8 +24,8 @@
 
 <script>
 import isEmpty from 'lodash/isEmpty';
-import Field from 'packages/field';
-import CellGroup from 'packages/cell-group';
+import Field from '../../field';
+import CellGroup from '../../cell-group';
 import validateEmail from 'zan-utils/validate/email';
 import validateNumber from 'zan-utils/validate/number';
 
