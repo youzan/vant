@@ -148,6 +148,10 @@ module.exports = {
                 "title": "NumberKeyboard 数字键盘"
               },
               {
+                "path": "/password-input",
+                "title": "PasswordInput 密码输入框"
+              },
+              {
                 "path": "/radio",
                 "title": "Radio 单选框"
               },

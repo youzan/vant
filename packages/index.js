@@ -26,6 +26,7 @@ import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import NumberKeyboard from './number-keyboard';
 import Panel from './panel';
+import PasswordInput from './password-input';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
@@ -78,6 +79,7 @@ const components = [
   NoticeBar,
   NumberKeyboard,
   Panel,
+  PasswordInput,
   Picker,
   Popup,
   Progress,
@@ -146,6 +148,7 @@ export {
   NoticeBar,
   NumberKeyboard,
   Panel,
+  PasswordInput,
   Picker,
   Popup,
   Progress,
