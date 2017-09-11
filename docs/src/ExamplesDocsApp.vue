@@ -11,6 +11,11 @@ import docConfig from './doc.config';
 
 export default {
   data() {
+    if (location.host === 'www.youzanyun.com') {
+      const group = docConfig['zh-CN'].nav[0].groups[0];
+      group.list = group.list.filter(item => item.title !== '业务组件');
+    }
+
     return {
       simulator: this.getSimulatorPath(),
       config: docConfig['zh-CN']

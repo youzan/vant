@@ -1,81 +1,57 @@
 import Vue from 'vue';
-import ToastComponent from './toast';
+import VueToast from './toast';
 
-const ToastConstructor = Vue.extend(ToastComponent);
 let instance;
 
-const getInstance = () => {
-  if (instance) instance.clear();
-
-  instance = new ToastConstructor({
-    el: document.createElement('div')
-  });
-  return instance;
-};
-
-const removeDom = event => {
-  /* istanbul ignore else */
-  if (event.target.parentNode) {
-    event.target.parentNode.removeChild(event.target);
+const defaultOptions = {
+  visible: true,
+  type: 'text',
+  duration: 3000,
+  forbidClick: false,
+  clear: () => {
+    instance.visible = false;
   }
 };
 
-var Toast = (options = {}) => {
-  const duration = options.duration || 3000;
+const createInstance = () => {
+  if (!instance) {
+    const ToastConstructor = Vue.extend(VueToast);
+    instance = new ToastConstructor({
+      el: document.createElement('div')
+    });
+    document.body.appendChild(instance.$el);
+  }
+};
 
-  const instance = getInstance();
+const Toast = (options = {}) => {
+  createInstance();
 
-  instance.closed = false;
+  options = typeof options === 'string' ? { message: options } : options;
+  options = { ...defaultOptions, ...options };
+  Object.assign(instance, options);
+
   clearTimeout(instance.timer);
-  instance.type = options.type ? options.type : 'text';
-  instance.message = typeof options === 'string' ? options : options.message;
-  instance.forbidClick = options.forbidClick ? options.forbidClick : false;
-  instance.clear = () => {
-    if (instance.closed) return;
-    instance.visible = false;
-    instance.$el.addEventListener('transitionend', removeDom);
-    instance.closed = true;
-  };
 
-  document.body.appendChild(instance.$el);
-  Vue.nextTick(function() {
-    instance.visible = true;
-    instance.$el.removeEventListener('transitionend', removeDom);
-    instance.timer = setTimeout(function() {
+  if (options.duration !== 0) {
+    instance.timer = setTimeout(() => {
       instance.clear();
-    }, duration);
-  });
+    }, options.duration);
+  }
+
   return instance;
 };
 
-Toast.loading = (options) => {
-  return new Toast({
-    type: 'loading',
-    ...options
-  });
-};
+const createMethod = type => (options = {}) => Toast({
+  type,
+  message: typeof options === 'string' ? options : options.message,
+  ...options
+});
 
-Toast.success = (options) => {
-  const message = typeof options === 'string' ? options : options.message;
-  return new Toast({
-    type: 'success',
-    message: message,
-    ...options
-  });
-};
-
-Toast.fail = (options) => {
-  const message = typeof options === 'string' ? options : options.message;
-  return new Toast({
-    type: 'fail',
-    message: message,
-    ...options
-  });
-};
-
+Toast.loading = createMethod('loading');
+Toast.success = createMethod('success');
+Toast.fail = createMethod('fail');
 Toast.clear = () => {
-  /* istanbul ignore else */
-  if (instance) instance.clear();
+  instance && instance.clear();
 };
 
 export default Toast;

@@ -1,10 +1,60 @@
 ## 更新日志
 
+## [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2) (2017-09-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.1...v0.9.2)
+
+**非兼容更新和新特性:**
+
+- add NavBar component [\#121](https://github.com/youzan/vant/pull/121) ([chenjiahan](https://github.com/chenjiahan))
+- Rename some components and use more suitable names [\#120](https://github.com/youzan/vant/pull/120) ([chenjiahan](https://github.com/chenjiahan))
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- sku组件迁移 [\#123](https://github.com/youzan/vant/pull/123) ([w91](https://github.com/w91))
+
+## [v0.9.1](https://github.com/youzan/vant/tree/v0.9.1) (2017-09-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.0...v0.9.1)
+
+**修复:**
+
+- Toast: fix background color [\#118](https://github.com/youzan/vant/pull/118) ([chenjiahan](https://github.com/chenjiahan))
+
+**处理的 Issue:**
+
+- 请问captain-ui 开源了吗？ [\#116](https://github.com/youzan/vant/issues/116)
+
+## [v0.9.0](https://github.com/youzan/vant/tree/v0.9.0) (2017-09-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.9...v0.9.0)
+
+**非兼容更新和新特性:**
+
+- add PullRefresh component [\#117](https://github.com/youzan/vant/pull/117) ([chenjiahan](https://github.com/chenjiahan))
+- Build: analyzes component dependencies when build style entries [\#115](https://github.com/youzan/vant/pull/115) ([chenjiahan](https://github.com/chenjiahan))
+- Toast: use flex layout, support loading with text, improve performance [\#114](https://github.com/youzan/vant/pull/114) ([chenjiahan](https://github.com/chenjiahan))
+- Card: support num and price props [\#112](https://github.com/youzan/vant/pull/112) ([chenjiahan](https://github.com/chenjiahan))
+- vant-css: use hairline classes instead of mixins [\#110](https://github.com/youzan/vant/pull/110) ([chenjiahan](https://github.com/chenjiahan))
+- update `popup` and `quickstart` readme [\#109](https://github.com/youzan/vant/pull/109) ([cookfront](https://github.com/cookfront))
+- add OrderCoupon component [\#108](https://github.com/youzan/vant/pull/108) ([chenjiahan](https://github.com/chenjiahan))
+- Doc: improve site load speed [\#107](https://github.com/youzan/vant/pull/107) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Fix: swipe tabs animation time and timing function [\#111](https://github.com/youzan/vant/pull/111) ([cookfront](https://github.com/cookfront))
+- hide indicators when one swipe page [\#106](https://github.com/youzan/vant/pull/106) ([Raistlin916](https://github.com/Raistlin916))
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- 新增：Area（省市区选择）组件 [\#113](https://github.com/youzan/vant/pull/113) ([cookfront](https://github.com/cookfront))
+
+## [v0.8.9](https://github.com/youzan/vant/tree/v0.8.9) (2017-09-01)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.8.8...v0.8.9)
+
 ## [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8) (2017-09-01)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.7...v0.8.8)
 
 **非兼容更新和新特性:**
 
+- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
 - Checkbox: support listen to change event [\#104](https://github.com/youzan/vant/pull/104) ([chenjiahan](https://github.com/chenjiahan))
 - add GoodsAction component [\#102](https://github.com/youzan/vant/pull/102) ([chenjiahan](https://github.com/chenjiahan))
 - add InvalidGoods component [\#100](https://github.com/youzan/vant/pull/100) ([chenjiahan](https://github.com/chenjiahan))
@@ -17,7 +67,6 @@
 
 **合并的 Pull Request (可能有不兼容改动):**
 
-- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
 - Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
 - Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
 

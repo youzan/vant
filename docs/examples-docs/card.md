@@ -8,7 +8,7 @@ export default {
 }
 </script>
 
-## Card 图文组件
+## Card 卡片
 
 ### 使用指南
 ``` javascript
@@ -23,25 +23,29 @@ Vue.component(Card.name, Card);
 
 :::demo 基础用法
 ```html
-<van-card title="商品名称" desc="商品描述" :thumb="imageURL" />
+<van-card
+  title="商品名称"
+  desc="商品描述"
+  num="2"
+  price="2.00"
+  :thumb="imageURL"
+/>
 ```
 :::
 
 #### 高级用法
-
-可以使用具名`slot`重写标题等信息，其中包含`title`、`desc`、`footer`和`tag`四个`slot`。
+可以通过具名`slot`添加定制内容
 
 :::demo 高级用法
 ```html
-<van-card :thumb="imageURL">
-  <div class="van-card__row" slot="title">
-    <h4 class="van-card__title">商品名称</h4>
-    <span class="van-card__price">¥ 2.00</span>
-  </div>
-  <div class="van-card__row" slot="desc">
-    <span class="van-card__num">x 2</span>
-  </div>
-  <div class="van-card__footer" slot="footer">
+<van-card
+  title="商品名称"
+  desc="商品描述"  
+  num="2"
+  price="2.00"
+  :thumb="imageURL"
+>
+  <div slot="footer">
     <van-button size="mini">按钮一</van-button>
     <van-button size="mini">按钮二</van-button>
   </div>
@@ -51,11 +55,13 @@ Vue.component(Card.name, Card);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| thumb | 左侧图片 | `String`  | - | - |
-| title | 标题 | `String`  | - | - |
-| desc | 描述 | `String`  | - | - |
+| thumb | 左侧图片 | `String` | - | - |
+| title | 标题 | `String` | - | - |
+| desc | 描述 | `String` | - | - |
+| num | 商品数量 | `String | Number` | - | - |
+| price | 商品价格 | `String | Number` | - | - |
 | centered | 内容是否垂直居中 | `String`  | `false` | - |
 
 ### Slot

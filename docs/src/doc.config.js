@@ -60,15 +60,11 @@ module.exports = {
               },
               {
                 "path": "/card",
-                "title": "Card 图文组件"
+                "title": "Card 卡片"
               },
               {
                 "path": "/cell",
                 "title": "Cell 单元格"
-              },
-              {
-                "path": "/cell-swipe",
-                "title": "CellSwipe 滑动单元格"
               },
               {
                 "path": "/icon",
@@ -87,6 +83,10 @@ module.exports = {
                 "title": "Loading 加载"
               },
               {
+                "path": "/nav-bar",
+                "title": "NavBar 导航栏"
+              },
+              {
                 "path": "/notice-bar",
                 "title": "NoticeBar 通告栏"
               },
@@ -96,19 +96,27 @@ module.exports = {
               },
               {
                 "path": "/popup",
-                "title": "Popup 弹出菜单"
+                "title": "Popup 弹出层"
               },
               {
                 "path": "/progress",
                 "title": "Progress 进度条"
               },
               {
-                "path": "/quantity",
-                "title": "Quantity 数量选择"
+                "path": "/search",
+                "title": "Search 搜索"
+              },
+              {
+                "path": "/stepper",
+                "title": "Stepper 步进器"
               },
               {
                 "path": "/steps",
                 "title": "Steps 步骤条"
+              },
+              {
+                "path": "/swipe",
+                "title": "Swipe 轮播"
               },
               {
                 "path": "/tab",
@@ -117,14 +125,6 @@ module.exports = {
               {
                 "path": "/tag",
                 "title": "Tag 标记"
-              },
-              {
-                "path": "/swipe",
-                "title": "Swipe 轮播"
-              },
-              {
-                "path": "/search",
-                "title": "Search 搜索"
               },
               {
                 "path": "/waterfall",
@@ -142,6 +142,14 @@ module.exports = {
               {
                 "path": "/field",
                 "title": "Field 输入框"
+              },
+              {
+                "path": "/number-keyboard",
+                "title": "NumberKeyboard 数字键盘"
+              },
+              {
+                "path": "/password-input",
+                "title": "PasswordInput 密码输入框"
               },
               {
                 "path": "/radio",
@@ -177,45 +185,54 @@ module.exports = {
                 "title": "Picker 选择器"
               },
               {
+                "path": "/pull-refresh",
+                "title": "PullRefresh 下拉刷新"
+              },
+              {
                 "path": "/toast",
                 "title": "Toast 轻提示"
               }
             ]
           },
           {
-            "groupName": "业务组件",
+            "groupName": "高阶组件",
             "list": [
               {
-                "path": "/deep-select",
-                "title": "DeepSelect 分类选择组件"
-              },
-              {
-                "path": "/express-way",
-                "title": "ExpressWay 配送方式"
-              },
-              {
-                "path": "/goods-action",
-                "title": "GoodsAction 商品操作"
-              },
-              {
-                "path": "/invalid-goods",
-                "title": "InvalidGoods 不可用商品列表"
-              },
-              {
-                "path": "/order-coupon",
-                "title": "OrderCoupon 下单页优惠券"
-              },
-              {
-                "path": "/order-goods",
-                "title": "OrderGoods 下单页商品列表"
-              },
-              {
-                "path": "/pay-order",
-                "title": "PayOrder 提交订单栏"
+                "path": "/cell-swipe",
+                "title": "CellSwipe 滑动单元格"
               },
               {
                 "path": "/switch-cell",
                 "title": "SwitchCell 开关单元格"
+              },
+              {
+                "path": "/tree-select",
+                "title": "TreeSelect 分类选择"
+              },
+            ]
+          },
+          {
+            "groupName": "业务组件",
+            "list": [
+              {
+                "path": "/area",
+                "title": "Area 省市区选择"
+              },
+              {
+                "path": "/coupon",
+                "title": "Coupon 优惠券选择器"
+              },
+              {
+                "path": "/goods-action",
+                "title": "GoodsAction 商品页行动点"
+              },
+              {
+                "path": "/submit-bar",
+                "title": "SubmitBar 提交订单栏"
+              },
+              {
+                "path": "/sku",
+                "title": "Sku 商品规格弹层"
               }
             ]
           }

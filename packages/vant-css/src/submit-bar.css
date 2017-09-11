@@ -1,0 +1,61 @@
+@import './common/var.css';
+
+.van-submit-bar {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  user-select: none;
+
+  &__tip {
+    color: $orange;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 10px 10px;
+    background-color: #fff6e1;
+  }
+
+  &__bar {
+    height: 50px;
+    display: flex;
+    line-height: 50px;
+    background-color: $white;
+  }
+
+  &__price {
+    flex: 1;
+    text-align: right;
+    padding-right: 10px;
+  }
+
+  &__price-text {
+    color: $gray-darker;
+    font-size: 16px;
+  }
+
+  &__price-interger {
+    color: $red;
+    font-size: 16px;
+  }
+
+  &__price-decimal {
+    color: $red;
+    font-size: 12px;
+  }
+
+  .van-button {
+    width: 110px;
+    height: 100%;
+    border-radius: 0;
+
+    &--disabled {
+      border: none;
+    }
+
+    .van-loading__spinner--white {
+      border-color: rgba(255,255,255, .8);
+      border-top-color: transparent;
+    }
+  }
+}
