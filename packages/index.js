@@ -34,6 +34,7 @@ import Radio from './radio';
 import RadioGroup from './radio-group';
 import Row from './row';
 import Search from './search';
+import Sku from './sku';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
@@ -50,7 +51,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.9.1';
+const version = '0.9.2';
 const components = [
   Actionsheet,
   Area,
@@ -85,6 +86,7 @@ const components = [
   RadioGroup,
   Row,
   Search,
+  Sku,
   Step,
   Stepper,
   Steps,
@@ -152,6 +154,7 @@ export {
   RadioGroup,
   Row,
   Search,
+  Sku,
   Step,
   Stepper,
   Steps,

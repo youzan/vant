@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2) (2017-09-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.1...v0.9.2)
+
+**非兼容更新和新特性:**
+
+- add NavBar component [\#121](https://github.com/youzan/vant/pull/121) ([chenjiahan](https://github.com/chenjiahan))
+- Rename some components and use more suitable names [\#120](https://github.com/youzan/vant/pull/120) ([chenjiahan](https://github.com/chenjiahan))
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- sku组件迁移 [\#123](https://github.com/youzan/vant/pull/123) ([w91](https://github.com/w91))
+
+## [v0.9.1](https://github.com/youzan/vant/tree/v0.9.1) (2017-09-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.0...v0.9.1)
+
+**修复:**
+
+- Toast: fix background color [\#118](https://github.com/youzan/vant/pull/118) ([chenjiahan](https://github.com/chenjiahan))
+
+**处理的 Issue:**
+
+- 请问captain-ui 开源了吗？ [\#116](https://github.com/youzan/vant/issues/116)
+
 ## [v0.9.0](https://github.com/youzan/vant/tree/v0.9.0) (2017-09-07)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.8.9...v0.9.0)
 
@@ -31,12 +54,12 @@
 
 **非兼容更新和新特性:**
 
-- SubmitBar component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
+- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
 - Checkbox: support listen to change event [\#104](https://github.com/youzan/vant/pull/104) ([chenjiahan](https://github.com/chenjiahan))
 - add GoodsAction component [\#102](https://github.com/youzan/vant/pull/102) ([chenjiahan](https://github.com/chenjiahan))
 - add InvalidGoods component [\#100](https://github.com/youzan/vant/pull/100) ([chenjiahan](https://github.com/chenjiahan))
 - add OrderGoods component [\#99](https://github.com/youzan/vant/pull/99) ([chenjiahan](https://github.com/chenjiahan))
-- add SubmitBar component [\#98](https://github.com/youzan/vant/pull/98) ([chenjiahan](https://github.com/chenjiahan))
+- add PayOrder component [\#98](https://github.com/youzan/vant/pull/98) ([chenjiahan](https://github.com/chenjiahan))
 
 **修复:**
 
@@ -44,7 +67,7 @@
 
 **合并的 Pull Request (可能有不兼容改动):**
 
-- Add tree-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
+- Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
 - Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7) (2017-08-29)
