@@ -1,17 +1,12 @@
 import NumberKeyboard from 'packages/number-keyboard';
+import NumberKeyboardKeepAlive from '../components/number-keyboard';
 import { mount } from 'avoriaz';
 import { triggerTouch } from '../utils';
 
 function mockKeyDown(wrapper, keyIndex) {
   const customEvent = document.createEvent('CustomEvent');
   customEvent.initCustomEvent('touchstart', true, true, {});
-  Object.defineProperty(customEvent, 'target', {
-    value: {
-      dataset: {
-        key: keyIndex
-      }
-    }
-  });
+  wrapper.element.dataset.key = keyIndex;
   wrapper.element.dispatchEvent(customEvent);
 }
 
@@ -82,11 +77,12 @@ describe('NumberKeyboard', () => {
     const show = sinon.spy();
     wrapper.vm.$on('show', show);
     wrapper.vm.show = true;
+    wrapper.trigger('animationend');
 
     setTimeout(() => {
       expect(show.calledOnce).to.be.true;
       done();
-    }, 800);
+    }, 100);
   });
 
   it('listen to show event when no transtion', (done) => {
@@ -118,11 +114,12 @@ describe('NumberKeyboard', () => {
     const hide = sinon.spy();
     wrapper.vm.$on('hide', hide);
     wrapper.vm.show = false;
+    wrapper.trigger('animationend');
 
     setTimeout(() => {
       expect(hide.calledOnce).to.be.true;
       done();
-    }, 800);
+    }, 100);
   });
 
   it('listen to hide event when no transtion', (done) => {
@@ -140,6 +137,23 @@ describe('NumberKeyboard', () => {
 
     wrapper.vm.$nextTick(() => {
       expect(hide.calledOnce).to.be.true;
+      done();
+    });
+  });
+
+  it('keey-alive live cycle', (done) => {
+    wrapper = mount(NumberKeyboardKeepAlive, {
+      attachToDocument: true,
+      propsData: {
+        showKeyboard: true
+      }
+    });
+
+    expect(wrapper.find('.van-number-keyboard').length).to.equal(1);
+
+    wrapper.vm.showKeyboard = false;
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.find('.van-number-keyboard').length).to.equal(0);
       done();
     });
   });
