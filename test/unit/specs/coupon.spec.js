@@ -155,7 +155,6 @@ describe('CouponList', () => {
     wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
-        show: true,
         chosenCoupon: -1,
         coupons: [coupon, discountCoupon],
         disabledCoupons: [disabledCoupon, disabledDiscountCoupon]
@@ -166,9 +165,7 @@ describe('CouponList', () => {
       wrapper.vm.chosenCoupon = index;
     });
 
-    // 弹出 popup
     setTimeout(() => {
-      expect(wrapper.find('.van-coupon-list')[0].hasStyle('display', 'none')).to.equal(false);
       wrapper.find('.van-coupon-item')[0].trigger('click');
 
       setTimeout(() => {
@@ -182,15 +179,12 @@ describe('CouponList', () => {
     wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
-        show: false,
         chosenCoupon: 0,
         displayedCouponIndex: 0,
         coupons: [coupon, discountCoupon],
         disabledCoupons: [disabledCoupon, disabledDiscountCoupon]
       }
     });
-
-    wrapper.vm.show = true;
 
     wrapper.vm.$on('change', (index) => {
       wrapper.vm.chosenCoupon = index;
@@ -201,7 +195,6 @@ describe('CouponList', () => {
       wrapper.find('.van-coupon-list__close')[0].trigger('click');
       setTimeout(() => {
         expect(wrapper.vm.chosenCoupon).to.equal(-1);
-        expect(wrapper.find('.van-coupon-list')[0].hasStyle('display', 'none')).to.equal(true);
         done();
       }, 500);
     }, 500);
@@ -257,7 +250,6 @@ describe('CouponList', () => {
     wrapper = mount(CouponList, {
       attachToDocument: true,
       propsData: {
-        show: true,
         chosenCoupon: 0,
         coupons: [coupon, discountCoupon, emptyCoupon],
         disabledCoupons: [disabledCoupon, disabledDiscountCoupon]
@@ -307,7 +299,6 @@ describe('CouponList', () => {
   it('displayedCouponIndex out of range', (done) => {
     wrapper = mount(CouponList, {
       propsData: {
-        show: true,
         displayedCouponIndex: -100,
         coupons: [coupon, discountCoupon, emptyCoupon]
       }
