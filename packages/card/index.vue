@@ -8,14 +8,14 @@
     <div class="van-card__content">
       <slot name="title">
         <div class="van-card__row" v-if="title || price !== undefined">
-          <h4 v-if="title" class="van-card__title">{{ title }}</h4>
-          <p v-if="price !== undefined" class="van-card__price">¥ {{ price }}</p>
+          <div v-if="title" class="van-card__title">{{ title }}</div>
+          <div v-if="price !== undefined" class="van-card__price">¥ {{ price }}</div>
         </div>
       </slot>
       <slot name="desc">
         <div class="van-card__row" v-if="desc || num !== undefined">
-          <p v-if="desc" class="van-card__desc">{{ desc }}</p>
-          <p v-if="num !== undefined" class="van-card__num">x {{ num }}</p>
+          <div v-if="desc" class="van-card__desc">{{ desc }}</div>
+          <div v-if="num !== undefined" class="van-card__num">x {{ num }}</div>
         </div>
       </slot>
       <slot name="tags"></slot>

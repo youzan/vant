@@ -2,7 +2,7 @@
   <transition name="van-actionsheet-float">
     <div :class="['van-actionsheet', { 'van-actionsheet--withtitle': title }]" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
-        <h3 v-text="title" />
+        <div v-text="title" />
         <van-icon name="close" @click.stop="$emit('input', false)" />
       </div>
       <ul v-if="!title" class="van-actionsheet__list">

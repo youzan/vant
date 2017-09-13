@@ -4,6 +4,7 @@
 .van-coupon {
   &-list {
     height: 100%;
+    position: relative;
     background-color: $background-color;
 
     &__top {
@@ -33,6 +34,7 @@
         color: $gray-dark;
         margin: 15px 0;
         font-size: 14px;
+        font-weight: normal;
         position: relative;
         text-align: center;
 
@@ -105,7 +107,8 @@
 
       h2 {
         font-size: 22px;
-        margin-bottom: 10px;
+        font-weight: normal;
+        margin: 0 0 10px;
 
         span {
           font-size: 16px;
@@ -113,6 +116,7 @@
       }
 
       p {
+        margin: 0;
         font-size: 14px;
         font-weight: 300;
         @mixin multi-ellipsis 1;
@@ -132,8 +136,10 @@
       border-radius: 0 4px 4px 0;
 
       h2 {
+        margin: 0;
         opacity: .8;
         font-size: 16px;
+        font-weight: normal;
       }
 
       p,

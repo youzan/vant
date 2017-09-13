@@ -29,33 +29,33 @@ export default {
 </script>
 
 <style>
-  .side-nav {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 90px 15px 20px;
-    position: relative;
-    z-index: 1;
+.side-nav {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 40px 15px 20px;
+  position: relative;
+  z-index: 1;
 
-    .zanui-title,
-    .zanui-desc {
-      text-align: center;
-      font-weight: normal;
-      user-select: none;
-    }
-
-    .zanui-title {
-      padding-top: 40px;
-      height: 0;
-      overflow: hidden;
-      background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
-      background-size: 156px 40px;
-      margin-bottom: 10px;
-    }
-
-    .zanui-desc {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 50px;
-    }
+  .zanui-title,
+  .zanui-desc {
+    text-align: center;
+    font-weight: normal;
+    user-select: none;
   }
+
+  .zanui-title {
+    padding-top: 40px;
+    height: 0;
+    overflow: hidden;
+    background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
+    background-size: 156px 40px;
+    margin-bottom: 10px;
+  }
+
+  .zanui-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 50px;
+  }
+}
 </style>

@@ -8,11 +8,11 @@ module.exports = {
       '微信小程序': 'https://github.com/youzan/zanui-weapp'
     },
     footer: {
-      copyright: `2012-${(new Date()).getFullYear()} © youzanyun.com -  浙公网安备 33010602004354号 增值电信业务经营许可证：浙B2-20140331 - 浙ICP备13037466号`,
+      github: 'https://github.com/youzan/vant',
       nav: {
         '有赞官网': 'https://www.youzan.com/',
-        '有赞云': 'http://www.youzanyun.com/zanui',
-        '加入我们': 'https://job.youzan.com/'
+        '加入我们': 'https://job.youzan.com/',
+        '意见反馈': 'https://github.com/youzan/vant/issues'
       }
     },
     nav: [
