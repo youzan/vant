@@ -6,6 +6,10 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }

@@ -8,8 +8,8 @@
       </div>
       <div class="van-steps__message">
         <div class="van-steps__message-wrapper">
-          <h4 class="van-steps__title" v-text="title"></h4>
-          <p class="van-steps__desc" v-text="description"></p>
+          <div class="van-steps__title" v-text="title"></div>
+          <div class="van-steps__desc" v-text="description"></div>
         </div>
       </div>
       <slot name="message-extra">
