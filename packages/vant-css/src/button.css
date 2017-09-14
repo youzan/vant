@@ -36,10 +36,6 @@
     color: $button-default-color;
     background-color: $button-default-background-color;
     border: 1px solid $button-default-border-color;
-
-    &:active {
-      color: $gray-dark;
-    }
   }
 
   &--primary {
@@ -91,12 +87,6 @@
     }
   }
 
-  &--disabled {
-    color: $button-disabled-color;
-    background-color: $button-disabled-background-color;
-    border: 1px solid $button-disabled-border-color;
-  }
-
   &--block {
     width: 100%;
     display: block;
@@ -112,13 +102,14 @@
     color: $bottom-action-button-default-color;
     background-color: $bottom-action-button-default-background-color;
 
-    &:active {
-      color: $white;
-    }
-
     &.van-button--primary {
-      color: $bottom-action-button-primary-color;
       background-color: $bottom-action-button-primary-background-color;
     }
+  }
+
+  &--disabled {
+    color: $button-disabled-color;
+    background-color: $button-disabled-background-color;
+    border: 1px solid $button-disabled-border-color;
   }
 }
