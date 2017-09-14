@@ -2,19 +2,18 @@
   <transition name="van-toast-fade">
     <div class="van-toast-wrapper" v-show="visible">
       <div :class="['van-toast', 'van-toast--' + displayStyle]">
-        <!-- 只显示文字 -->
+        <!-- text only -->
         <div v-if="displayStyle === 'text'" class="van-toast__text">{{ message }}</div>
-        <!-- 加载中 -->
-        <van-loading v-if="displayStyle === 'loading' && type === 'loading'" type="gradient-circle" color="white"></van-loading>
-        <!-- 图案加文字 -->
+        <div v-if="displayStyle === 'html'" class="van-toast__text" v-html="message" />
+
+        <!-- with icon -->
         <template v-if="displayStyle === 'default'">
-          <van-icon class="van-toast__icon" :name="type"></van-icon>
-          <div class="van-toast__text">{{ message }}</div>
+          <van-loading v-if="type === 'loading'" color="white" />
+          <van-icon v-else class="van-toast__icon" :name="type" />
+          <div v-if="message" class="van-toast__text">{{ message }}</div>
         </template>
-        <!-- 传入html -->
-        <div v-if="displayStyle === 'html'" class="van-toast__text" v-html="message"></div>
       </div>
-      <div class="van-toast__overlay" v-if="forbidClick"></div>
+      <div class="van-toast__overlay" v-if="forbidClick" />
     </div>
   </transition>
 </template>
@@ -24,15 +23,8 @@ import Icon from '../icon';
 import Loading from '../loading';
 
 const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
-const DEFAULT_STYLE_LIST = ['success', 'fail'];
-/**
- * van-toast
- * @module components/toast
- * @desc toast
- * @param {string} [type=false] - 类型
- * @param {string} [message] - 信息
- *
- */
+const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
+
 export default {
   name: 'van-toast',
 
@@ -40,13 +32,12 @@ export default {
     [Icon.name]: Icon,
     [Loading.name]: Loading
   },
+
   props: {
     type: {
       type: String,
       default: 'text',
-      validator(value) {
-        return TOAST_TYPES.indexOf(value) > -1;
-      }
+      validator: value => TOAST_TYPES.indexOf(value) > -1
     },
     message: {
       type: String,
@@ -57,14 +48,16 @@ export default {
       default: false
     }
   },
+
   data() {
     return {
       visible: false
     };
   },
+
   computed: {
     displayStyle() {
-      return DEFAULT_STYLE_LIST.indexOf(this.type) > -1 ? 'default' : this.type;
+      return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
     }
   }
 };

@@ -1,0 +1,202 @@
+@import './mixins/border_retina.css';
+
+.van-sku-container {
+  background: #f8f8f8;
+}
+.van-sku-layout {
+  background: #fff;
+}
+.van-sku-body {
+  max-height: 350px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.van-sku-group-container {
+  position: relative;
+  padding-top: 12px;
+  padding-bottom: 2px;
+  margin-left: 15px;
+
+  &::after {
+    @mixin border-retina (bottom);
+  }
+}
+
+.van-sku-row-group {
+  margin-right: 15px;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/*
+  sku header
+ */
+.van-sku-header {
+  position: relative;
+  margin-left: 15px;
+
+  &::after {
+    @mixin border-retina (bottom);
+  }
+}
+.van-sku-header__img-wrap {
+  position: relative;
+  float: left;
+  margin-top: -10px;
+  width: 80px;
+  height: 80px;
+  background: #fafafa;
+  border-radius: 2px;
+
+  .van-sku__goods-img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.van-sku-header__goods-info {
+  padding: 10px 60px 10px 10px;
+  min-height: 62px;
+  overflow: hidden;
+}
+.van-sku__goods-name {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.van-sku__price-symbol {
+  font-size: 14px;
+  vertical-align: middle;
+}
+.van-sku__price-num {
+  vertical-align: middle;
+}
+.van-sku__goods-price {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f44;
+  vertical-align: middle;
+}
+.van-sku__close-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAUVBMVEUAAACfn5+bm5uampqZmZmoqKiampqampqZmZmampqampqbm5ubm5uZmZmqqqqampqampqZmZmampqampqampqbm5ubm5uampqdnZ2ampqZmZkjZXmqAAAAGnRSTlMAFYBC5wm+rdPv1Ckl8wzZxKWicm9eUjoN8nSyS9UAAAFVSURBVDjLvZXbrsIgEEWhtAUU6M1a3f//oSeHWKfuVhv7IC+TkJVhz4UZ9bsThq5uYmzqbgifSV04LI4r9Fs0FRHw/WhCugUz9h6IRdpmryVgzfLGWKC8brEF0E58ObVAsUIrC1y2fFwAW9GdhTfb6oyHZQ3+/C7us39VcgXE79o3sIgylayXdZdpIaJVH08rQnTE9BmeEPXsWMK1rV6m01Xz/dO1g5H3nH6yNcoZNnCPPoOXTjplemYlnR4h2wG9YppZ1WPItsOomGZWjeiyrWEU08wqgzrbBkERfWJWBTTZRiTFNLMqIWZ7x43atQYa+lA33EmG5KyB0yyDApT8/uvWFCCnTvIrtKRuLgqzQktRpNzMCi3l5kaymZXqiGS3blGX2Zl2ftGi6+avqtcsUvN/8a2++LCHRsH+kDkwvg4Mxt2Re3yY85pIsiaOLKD91faz8wcoUxux/aS9awAAAABJRU5ErkJggg==);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: 7px 10px;
+}
+
+/*
+  sku row
+*/
+.van-sku-row__title {
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+.van-sku-row__item {
+  display: inline-block;
+  padding: 5px 9px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 16px;
+  min-width: 32px;
+  line-height: 16px;
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  border: 1px solid #999;
+  border-radius: 3px;
+
+  &.van-sku-row__item--active {
+    border-color: #f44;
+    color: #fff;
+    background: #f44;
+  }
+  &.van-sku-row__item--disabled {
+    background: #efefef;
+    border-color: #e5e5e5;
+    color: #cacaca;
+  }
+}
+
+/*
+  sku stepper
+*/
+.van-sku-stepper-stock {
+  padding: 12px 0;
+  margin-left: 15px;
+}
+.van-sku-stepper-container {
+  height: 30px;
+  margin-right: 20px;
+}
+.van-sku__stepper-title {
+  float: left;
+  line-height: 30px;
+  font-size: 14px;
+}
+.van-sku__stepper {
+  float: right;
+  top: 7px;
+  left: 4px;
+}
+.van-sku__stock {
+  display: inline-block;
+  margin-right: 10px;
+  color: #999;
+  font-size: 12px;
+}
+.van-sku__quota {
+  display: inline-block;
+  color: #f44;
+  font-size: 12px;
+}
+
+/*
+  sku actions
+*/
+.van-sku-actions {
+  margin-top: 10px;
+  font-size: 0;
+}
+.van-sku__add-cart-btn {
+  width: 50%;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  background: #f85;
+  color: #fff;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+
+  & + .van-sku__buy-btn {
+    width: 50%;
+  }
+}
+.van-sku__buy-btn {
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  background: #f44;
+  color: #fff;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+}
