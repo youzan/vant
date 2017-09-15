@@ -24,7 +24,7 @@
     border-radius: inherit; /* inherit parent's border radius */
   }
 
-  &:not(.is-disabled):active::before {
+  &:not([disabled]):active::before {
     opacity: .3;
   }
 
