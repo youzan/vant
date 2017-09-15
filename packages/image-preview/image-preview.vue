@@ -101,7 +101,7 @@ export default {
       });
       container.addEventListener('touchend', () => {
         /* istanbul ignore else */
-        if (new Date() - touchStartTime < 1500) {
+        if (new Date() - touchStartTime < 100) {
           this.value = false;
         }
       });
