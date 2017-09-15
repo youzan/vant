@@ -1,5 +1,18 @@
 ## 更新日志
 
+## [v0.9.3](https://github.com/youzan/vant/tree/v0.9.3) (2017-09-13)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.2...v0.9.3)
+
+**非兼容更新和新特性:**
+
+- 你们页面上（譬如底部区域），能不能github上查看这个框架的issues入口，每次都是点更新日志切换到issues的！ [\#127](https://github.com/youzan/vant/issues/127)
+- add PasswordInput component [\#124](https://github.com/youzan/vant/pull/124) ([chenjiahan](https://github.com/chenjiahan))
+- add NumberKeyboard component [\#122](https://github.com/youzan/vant/pull/122) ([chenjiahan](https://github.com/chenjiahan))
+
+**修复:**
+
+- Fix: component style should not depend on reset.css [\#128](https://github.com/youzan/vant/pull/128) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2) (2017-09-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.1...v0.9.2)
 
