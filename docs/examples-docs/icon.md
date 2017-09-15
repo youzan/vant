@@ -110,7 +110,6 @@ const icons = [
   'gift-card',
   'coupon',
   'completed',
-  'music',
   'value-card'
 ];
 
