@@ -52,7 +52,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.9.4';
+const version = '0.9.5';
 const components = [
   Actionsheet,
   Area,
