@@ -12,6 +12,13 @@
   .van-steps__message + p {
     margin-bottom: 10px;
   }
+
+  p,
+  h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+  }
 }
 </style>
 

@@ -10,9 +10,9 @@
       @touchcancel="blurKey"
       @animationend="onAnimationEnd"
     >
-      <h3 class="van-number-keyboard__title van-hairline--top">
+      <div class="van-number-keyboard__title van-hairline--top">
         <span>{{ title }}</span>
-      </h3>
+      </div>
       <i 
         v-for="(key, index) in keys" 
         v-text="key"

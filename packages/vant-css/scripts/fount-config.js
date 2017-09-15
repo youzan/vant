@@ -393,6 +393,11 @@ module.exports = {
       keywords: ['gold-coin'],
       src: '金币.svg',
       css: 'gold-coin'
+    },
+    {
+      keywords: ['completed'],
+      src: '已完成.svg',
+      css: 'completed'
     }
   ]
 };

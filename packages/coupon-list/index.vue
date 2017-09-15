@@ -1,5 +1,5 @@
 <template>
-  <van-popup v-model="showPopup" position="bottom" class="van-coupon-list">
+  <div class="van-coupon-list">
     <van-cell-group class="van-coupon-list__top">
       <van-field v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
       <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
@@ -22,7 +22,7 @@
       />
     </div>
     <div class="van-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
-  </van-popup>
+  </div>
 </template>
 
 <script>
@@ -45,15 +45,7 @@ export default {
     [Item.name]: Item
   },
 
-  model: {
-    prop: 'show'
-  },
-
   props: {
-    show: {
-      type: Boolean,
-      default: false
-    },
     chosenCoupon: {
       type: Number,
       default: -1
@@ -93,13 +85,6 @@ export default {
   },
 
   watch: {
-    show(val) {
-      this.showPopup = val;
-    },
-    showPopup(val) {
-      this.$emit('input', val);
-      this.scrollToTop();
-    },
     displayedCouponIndex(val) {
       this.scrollToShowCoupon(val);
     }
@@ -107,8 +92,7 @@ export default {
 
   data() {
     return {
-      exchangeCode: '',
-      showPopup: this.show
+      exchangeCode: ''
     };
   },
 
@@ -118,11 +102,9 @@ export default {
 
   methods: {
     onClickNotUse() {
-      this.showPopup = false;
       this.$emit('change', -1);
     },
     onClickCoupon(index) {
-      this.showPopup = false;
       this.$emit('change', index);
     },
     onClickExchangeButton() {
@@ -142,11 +124,6 @@ export default {
           list.scrollTop = card[index].$el.offsetTop - 100;
         }
       });
-    },
-    scrollToTop() {
-      const { list } = this.$refs;
-
-      list.scrollTop = 0;
     }
   }
 };
