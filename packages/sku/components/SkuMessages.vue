@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import isEmpty from 'lodash/isEmpty';
 import Field from '../../field';
 import CellGroup from '../../cell-group';
 import validateEmail from 'zan-utils/validate/email';
@@ -117,7 +116,7 @@ export default {
         const value = values[i];
         const message = this.internalMessages[i];
 
-        if (isEmpty(value)) {
+        if (value === '') {
           // 必填字段的校验
           if (message.required == '1') { // eslint-disable-line
             if (message.type === 'image') {

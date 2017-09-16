@@ -14,15 +14,21 @@
         <div class="van-sku-body scroller" :style="bodyStyle">
           <slot name="sku-group" :selectedSku="selectedSku">
             <div v-if="hasSku" class="van-sku-group-container">
-              <div v-for="(skutreeItem, index) in skuTree"
+              <div v-for="(skuTreeItem, index) in skuTree"
                 class="van-sku-row-group"
                 :key="index">
                 <van-sku-row
-                  v-bind="$attrs"
                   :skuEventBus="skuEventBus"
-                  :skuRow="skutreeItem"
-                  :skuList="sku.list"
-                  :selectedSku="selectedSku">
+                  :skuRow="skuTreeItem">
+                  <van-sku-row-item
+                    v-for="(skuValue, index) in skuTreeItem.v"
+                    :key="index"
+                    :skuKeyStr="skuTreeItem.k_s"
+                    :skuValue="skuValue"
+                    :skuEventBus="skuEventBus"
+                    :selectedSku="selectedSku"
+                    :skuList="sku.list">
+                  </van-sku-row-item>
                 </van-sku-row>
               </div>
             </div>
@@ -67,6 +73,7 @@ import Popup from '../../popup';
 import Toast from '../../toast';
 import SkuHeader from '../components/SkuHeader';
 import SkuRow from '../components/SkuRow';
+import SkuRowItem from '../components/SkuRowItem';
 import SkuStepper from '../components/SkuStepper';
 import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
@@ -82,6 +89,7 @@ export default {
     [Popup.name]: Popup,
     [SkuHeader.name]: SkuHeader,
     [SkuRow.name]: SkuRow,
+    [SkuRowItem.name]: SkuRowItem,
     [SkuStepper.name]: SkuStepper,
     [SkuMessages.name]: SkuMessages,
     [SkuActions.name]: SkuActions

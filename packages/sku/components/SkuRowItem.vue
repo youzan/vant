@@ -8,11 +8,6 @@
 </template>
 
 <script>
-import assign from 'lodash/assign';
-import filter from 'lodash/filter';
-import keys from 'lodash/keys';
-import every from 'lodash/every';
-
 export default {
   name: 'van-sku-row-item',
 
@@ -29,12 +24,12 @@ export default {
       return this.skuValue.id === this.selectedSku[this.skuKeyStr];
     },
     isChoosable() {
-      const matchedSku = assign({}, this.selectedSku, {
+      const matchedSku = Object.assign({}, this.selectedSku, {
         [this.skuKeyStr]: this.skuValue.id
       });
-      const skusToCheck = filter(keys(matchedSku), skuKey => matchedSku[skuKey] !== '');
-      const filteredSku = filter(this.skuList, sku => {
-        return every(skusToCheck, function(skuKey) {
+      const skusToCheck = Object.keys(matchedSku).filter(skuKey => matchedSku[skuKey] !== '');
+      const filteredSku = this.skuList.filter(sku => {
+        return skusToCheck.every(skuKey => {
           // 后端给的skuValue.id有时候是数字有时候是字符串，全等会匹配不上
           return matchedSku[skuKey] == sku[skuKey]; // eslint-disable-line
         });
@@ -47,7 +42,7 @@ export default {
 
   methods: {
     onSkuSelected() {
-      this.skuEventBus.$emit('sku:select', assign({}, this.skuValue, { skuKeyStr: this.skuKeyStr }));
+      this.skuEventBus.$emit('sku:select', Object.assign({}, this.skuValue, { skuKeyStr: this.skuKeyStr }));
     }
   }
 };
