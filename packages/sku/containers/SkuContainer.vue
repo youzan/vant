@@ -1,5 +1,5 @@
 <template>
-  <van-popup v-model="show" position="bottom" :lock-scroll="true">
+  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" :lock-scroll="true">
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
@@ -42,7 +42,7 @@
               :selectedSkuComb="selectedSkuComb"
               :selectedNum="selectedNum"
               :stepperTitle="stepperTitle"
-              :sku="sku"
+              :skuStockNum="sku.stock_num"
               :quota="quota"
               :quotaUsed="quotaUsed"
               :hideStock="hideStock">
@@ -51,17 +51,18 @@
          <slot name="sku-messages">
             <van-sku-messages
               ref="skuMessages"
+              :messagePlaceholderMap="messagePlaceholderMap"
               :messages="sku.messages">
             </van-sku-messages>
           </slot>
-          <slot name="sku-actions" :skuEventBus="skuEventBus">
-            <van-sku-actions
-              :skuEventBus="skuEventBus"
-              :buyText="buyText"
-              :showAddCartBtn="showAddCartBtn">
-            </van-sku-actions>
-          </slot>
         </div>
+        <slot name="sku-actions" :skuEventBus="skuEventBus">
+          <van-sku-actions
+            :skuEventBus="skuEventBus"
+            :buyText="buyText"
+            :showAddCartBtn="showAddCartBtn">
+          </van-sku-actions>
+        </slot>
       </div>
     </div>
   </van-popup>
@@ -78,7 +79,7 @@ import SkuStepper from '../components/SkuStepper';
 import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
 import { isAllSelected, getSkuComb, getSelectedSkuValues } from '../utils/skuHelper';
-import { LIMIT_TYPE } from '../constants';
+import { LIMIT_TYPE, DEFAULT_STEPPER_TITLE } from '../constants';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
@@ -123,13 +124,19 @@ export default {
     buyText: String,
     stepperTitle: {
       type: String,
-      default: '购买数量'
+      default: DEFAULT_STEPPER_TITLE
     },
     bodyOffsetTop: {
       type: Number,
-      default: 150
+      default: 200
     },
     resetStepperOnHide: Boolean,
+    messagePlaceholderMap: {
+      type: Object,
+      default() {
+        return {};
+      }
+    },
     value: Boolean
   },
 
@@ -169,7 +176,7 @@ export default {
   computed: {
     bodyStyle() {
       const windowHeight = window.innerHeight;
-      // header高度大概82px
+      // header高度82px, sku actions高度50px，如果改动了样式自己传下bodyOffsetTop调整下
       const maxHeight = windowHeight - this.bodyOffsetTop;
 
       return {
@@ -178,6 +185,13 @@ export default {
     },
     isSkuCombSelected() {
       return isAllSelected(this.sku.tree, this.selectedSku);
+    },
+    // sku数据不存在时不渲染模板
+    isSkuEmpty() {
+      for (var key in this.sku) {
+        if (Object.prototype.hasOwnProperty.call(this.sku, key)) return false;
+      }
+      return true;
     },
     hasSku() {
       return !this.sku.none_sku;
@@ -250,7 +264,7 @@ export default {
       if (this.isSkuCombSelected) {
         const error = this.validateSkuMessages();
         // sku留言没有错误则校验通过
-        return error ? error : '';
+        return error;
       } else {
         return '请选择完整的规格';
       }

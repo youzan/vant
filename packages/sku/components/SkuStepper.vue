@@ -11,7 +11,7 @@
 
 <script>
 import Stepper from '../../stepper';
-import { LIMIT_TYPE } from '../constants';
+import { LIMIT_TYPE, DEFAULT_BUY_TEXT } from '../constants';
 
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
@@ -24,7 +24,7 @@ export default {
 
   props: {
     skuEventBus: Object,
-    sku: Object,
+    skuStockNum: Number,
     selectedSku: Object,
     selectedSkuComb: Object,
     selectedNum: Number,
@@ -36,7 +36,7 @@ export default {
     },
     stepperTitle: {
       type: String,
-      default: '购买数量'
+      default: DEFAULT_BUY_TEXT
     }
   },
 
@@ -64,7 +64,7 @@ export default {
       if (this.selectedSkuComb) {
         return this.selectedSkuComb.stock_num;
       }
-      return this.sku.stock_num;
+      return this.skuStockNum;
     },
     stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;

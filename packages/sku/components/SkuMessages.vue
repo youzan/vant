@@ -1,12 +1,12 @@
 <template>
-  <van-cell-group>
+  <van-cell-group class="van-sku-messages">
     <template v-for="(message, index) in internalMessages">
       <template v-if="message.type === 'image'"></template>
       <van-field v-else-if="message.multiple == '1'"
         :key="index"
         :required="message.required == '1'"
         :label="message.name"
-        placeholder="点击填写段落文本"
+        :placeholder="placeholderMap.textarea"
         type="textarea"
         v-model="messageValues[index]">
       </van-field>
@@ -14,7 +14,7 @@
         :key="index"
         :required="message.required == '1'"
         :label="message.name"
-        :placeholder="PLACEHOLDER_MAP[message.type]"
+        :placeholder="placeholderMap[message.type]"
         :type="getType(message)"
         v-model="messageValues[index]">
       </van-field>
@@ -27,15 +27,7 @@ import Field from '../../field';
 import CellGroup from '../../cell-group';
 import validateEmail from 'zan-utils/validate/email';
 import validateNumber from 'zan-utils/validate/number';
-
-const PLACEHOLDER_MAP = {
-  'id_no': '输入18位身份证号码',
-  text: '输入文本',
-  tel: '输入数字',
-  email: '输入邮箱',
-  date: '点击选择日期',
-  time: '点击选择时间'
-};
+import { DEFAULT_PLACEHOLDER_MAP } from '../constants';
 
 export default {
   name: 'van-sku-messages',
@@ -46,12 +38,13 @@ export default {
   },
 
   props: {
-    messages: Array
+    messages: Array,
+    messagePlaceholderMap: Object
   },
 
   data() {
     return {
-      PLACEHOLDER_MAP
+      placeholderMap: Object.assign({}, DEFAULT_PLACEHOLDER_MAP, this.messagePlaceholderMap)
     };
   },
 
@@ -127,12 +120,6 @@ export default {
             }
           }
         } else {
-          // if (message.type == 'image') {
-          //   loaded = _this.$el.find('#ipt-' + j).data('uploaded');
-          //   if (loaded == 'false' || !loaded) {
-          //     return '图片还在上传中，请稍等。。';
-          //   }
-          // }
           if (message.type === 'tel' && !validateNumber(value)) {
             return '请填写正确的数字格式留言';
           }
