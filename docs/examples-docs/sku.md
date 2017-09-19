@@ -15,6 +15,10 @@ export default {
       goods: goods,
       quota: data.quota,
       quotaUsed: data.quota_used,
+      initialSku: {
+        s1: '30349',
+        s2: '1193'
+      }
     }
   },
 
@@ -85,6 +89,7 @@ Vue.component(Sku.name, Sku);
       :quota="quota"
       :quota-used="quotaUsed"
       :reset-stepper-on-hide="true"
+      :initial-sku="initialSku"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
@@ -200,6 +205,11 @@ skuData: {
     message_0:"12",
     message_1:"",
     ... // 有几个留言就有几条
+  },
+  // 另一种格式的留言，key不同
+  cartMessages: {
+    '留言1': 'xxxx',
+    ... // key是message的name
   },
   // 选择的商品数量
   selectedNum:1,
