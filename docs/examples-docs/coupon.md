@@ -1,5 +1,3 @@
-## Coupon 优惠券选择器
-
 <script>
 import { Toast } from 'packages';
 
@@ -49,6 +47,7 @@ export default {
 
   methods: {
     onChange(index) {
+      this.showList = false;      
       this.chosenCoupon = index;
     },
     onExchange(code) {
@@ -58,6 +57,16 @@ export default {
   }
 }
 </script>
+
+<style>
+.demo-coupon {
+  .van-popup {
+    height: 100%;
+  }
+}
+</style>
+
+## Coupon 优惠券选择器
 
 ### 使用指南
 ``` javascript
@@ -81,14 +90,15 @@ Vue.component(CouponList.name, CouponList);
 ></van-coupon-cell>
 
 <!-- 优惠券列表 -->
-<van-coupon-list
-  v-model="showList"
-  :coupons="coupons"
-  :chosen-coupon="chosenCoupon"
-  :disabled-coupons="disabledCoupons"
-  @change="onChange"
-  @exchange="onExchange"
-></van-coupon-list>
+<van-popup v-model="showList" position="bottom">
+  <van-coupon-list
+    :coupons="coupons"
+    :chosen-coupon="chosenCoupon"
+    :disabled-coupons="disabledCoupons"
+    @change="onChange"
+    @exchange="onExchange"
+  ></van-coupon-list>
+</van-popup>
 ```
 
 ```javascript
@@ -116,6 +126,7 @@ export default {
 
   methods: {
     onChange(index) {
+      this.showList = false;
       this.chosenCoupon = index;
     },
     onExchange(code) {

@@ -108,7 +108,9 @@ const icons = [
   'description',
   'card',
   'gift-card',
-  'coupon'
+  'coupon',
+  'completed',
+  'value-card'
 ];
 
 const IconListConstructor = Vue.extend({

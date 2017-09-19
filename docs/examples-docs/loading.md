@@ -22,8 +22,8 @@ Vue.component(Loading.name, Loading);
 
 :::demo 单色 spinner
 ```html
-<van-loading type="circle" color="white"></van-loading>
 <van-loading type="circle" color="black"></van-loading>
+<van-loading type="circle" color="white"></van-loading>
 ```
 :::
 

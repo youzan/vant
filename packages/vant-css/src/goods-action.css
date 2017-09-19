@@ -17,6 +17,7 @@
     height: 50px;
     font-size: 10px;
     min-width: 15%;
+    line-height: 1;    
     text-align: center;
     background-color: $white;
     flex-direction: column;

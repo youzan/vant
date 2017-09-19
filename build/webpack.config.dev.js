@@ -1,9 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 const docConfig = require('../docs/src/doc.config');
@@ -127,7 +126,6 @@ module.exports = {
       minChunks: 2,
       filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
     }),
-    new OptimizeCssAssetsPlugin(),
     new ExtractTextPlugin({
       filename: isProduction ? '[name].[hash:8].css' : '[name].css',
       allChunks: true

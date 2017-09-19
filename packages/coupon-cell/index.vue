@@ -3,8 +3,8 @@
     <van-cell-group>
       <van-cell :title="title" :isLink="editable" @click="$emit('click')">
         <div v-if="coupons[chosenCoupon]">
-          <h2>{{ amount }}</h2>
-          <span>{{ coupons[chosenCoupon].condition }}</span>
+          <div>{{ amount }}</div>
+          <div>{{ coupons[chosenCoupon].condition }}</div>
         </div>
         <template v-else>{{ guide }}</template>
       </van-cell>

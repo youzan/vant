@@ -74,7 +74,8 @@ Vue.component(Button.name, Button);
 
 :::demo 加载状态
 ```html 
-<van-button loading />
+<van-button loading></van-button>
+<van-button loading type="primary"></van-button>
 ```
 :::
 

@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.9.2",
+  "version": "0.9.5",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -95,7 +95,6 @@
     "markdown-it": "^8.4.0",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.4.2",
-    "optimize-css-assets-webpack-plugin": "^3.1.1",
     "postcss": "^6.0.10",
     "postcss-easy-import": "^2.1.0",
     "postcss-loader": "^2.0.6",

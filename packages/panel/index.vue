@@ -2,7 +2,7 @@
   <div class="van-panel van-hairline--top-bottom">
     <div class="van-panel__header van-hairline--bottom">
       <slot name="header">
-        <h4 class="van-panel__title" v-text="title"></h4>
+        <div class="van-panel__title" v-text="title"></div>
         <span class="van-panel__desc" v-if="desc" v-text="desc"></span>
         <span class="van-panel__status" v-if="status" v-text="status"></span>
       </slot>

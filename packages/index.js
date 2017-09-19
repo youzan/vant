@@ -24,7 +24,9 @@ import Lazyload from './lazyload';
 import Loading from './loading';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
+import NumberKeyboard from './number-keyboard';
 import Panel from './panel';
+import PasswordInput from './password-input';
 import Picker from './picker';
 import Popup from './popup';
 import Progress from './progress';
@@ -50,7 +52,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.9.2';
+const version = '0.9.5';
 const components = [
   Actionsheet,
   Area,
@@ -75,7 +77,9 @@ const components = [
   Loading,
   NavBar,
   NoticeBar,
+  NumberKeyboard,
   Panel,
+  PasswordInput,
   Picker,
   Popup,
   Progress,
@@ -142,7 +146,9 @@ export {
   Loading,
   NavBar,
   NoticeBar,
+  NumberKeyboard,
   Panel,
+  PasswordInput,
   Picker,
   Popup,
   Progress,
