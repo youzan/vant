@@ -1,30 +1,31 @@
 @import './common/var.css';
 
+$van-checkbox-size: 18px;
+
 .van-checkbox {
   overflow: hidden;
 
-  .van-icon {
-    font-size: 22px;
-    line-height: 1;
-  }
+  .van-icon-success {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+    border: 1px solid #aaa;
+    width: $van-checkbox-size;
+    height: $van-checkbox-size;
 
-  .van-icon-checked {
-    color: $green;
-  }
-
-  .van-icon-check {
-    color: $gray-dark;
-  }
-
-  &--disabled {
-    .van-icon {
-      color: #d1dbe5;
+    &::before {
+      margin: 0 auto;
+      line-height: $van-checkbox-size;
+      transition: all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+      transform: scale(0);
     }
   }
 
   &__input {
     position: relative;
-    height: 22px;
+    height: calc($van-checkbox-size + 2px);
     margin-right: 15px;
     float: left;
   }
@@ -33,15 +34,42 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 22px;
-    height: 22px;
     opacity: 0;
     margin: 0;
+    width: calc($van-checkbox-size + 2px);
+    height: calc($van-checkbox-size + 2px);
   }
 
   &__label {
-    line-height: 22px;
-    margin-left: 37px;
     display: block; 
+    margin-left: 37px;
+    line-height: calc($van-checkbox-size + 2px);
+  }
+
+  &--round {
+    .van-icon-success {
+      border-radius: 100%;
+    }
+  }
+
+  &__control:checked + .van-icon-success {
+    border-color: $green;
+    background-color: $green;
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  &--disabled {
+    .van-icon-success {
+      border-color: #d1dbe5;
+      background-color: transparent;
+    }
+
+    .van-checkbox__control:checked + .van-icon-success {
+      border-color: #d1dbe5;
+      background-color: #d1dbe5;      
+    }
   }
 }
