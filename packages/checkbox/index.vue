@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Icon from '../Icon';
+import Icon from '../icon';
 import findParent from '../mixins/findParent';
 
 export default {
