@@ -1,10 +1,11 @@
 <style>
 .demo-checkbox {
-  .van-checkbox-wrapper {
-    padding: 0 20px;
-
+  .van-checkbox {
+    margin: 10px 0 0 20px;
+  }
+  .van-cell {
     .van-checkbox {
-      margin: 10px 0;
+      margin: 0;
     }
   }
 }
@@ -49,9 +50,7 @@ Vue.component(Checkbox.name, Checkbox);
 
 :::demo 基础用法
 ```html
-<div class="van-checkbox-wrapper">
-  <van-checkbox v-model="checkbox1">复选框1</van-checkbox>
-</div>
+<van-checkbox v-model="checkbox1">复选框1</van-checkbox>
 ```
 
 ```javascript
@@ -71,9 +70,7 @@ export default {
 
 :::demo 禁用状态
 ```html
-<div class="van-checkbox-wrapper">
-  <van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
-</div>
+<van-checkbox v-model="checkbox2" disabled>复选框2</van-checkbox>
 ```
 
 ```javascript
@@ -93,22 +90,22 @@ export default {
 
 :::demo Checkbox组
 ```html
-<div class="van-checkbox-wrapper">
-  <van-checkbox-group v-model="result">
-    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
-  </van-checkbox-group>
-</div>
+<van-checkbox-group v-model="result">
+  <van-checkbox
+    v-for="(item, index) in list"
+    :key="index"
+    :name="item"
+  >
+    复选框{{ item }}
+  </van-checkbox>
+</van-checkbox-group>
 ```
 
 ```javascript
 export default {
   data() {
     return {
-      list: [
-        'a',
-        'b',
-        'c'
-      ],
+      list: ['a', 'b', 'c'],
       result: ['a', 'b']
     };
   },
@@ -117,35 +114,6 @@ export default {
     result(val) {
       console.log(val);
     }
-  }
-};
-```
-:::
-
-#### 禁用Checkbox组
-
-禁用`van-checkbox-group`，此时整个组都不可点击。
-
-:::demo 禁用Checkbox组
-```html
-<div class="van-checkbox-wrapper">
-  <van-checkbox-group v-model="result" disabled>
-    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
-  </van-checkbox-group>
-</div>
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      list: [
-        'a',
-        'b',
-        'c'
-      ],
-      result: ['a', 'b']
-    };
   }
 };
 ```
@@ -160,7 +128,7 @@ export default {
 <van-checkbox-group v-model="result">
   <van-cell-group>
     <van-cell v-for="(item, index) in list" :key="index">
-      <van-checkbox :name="item">复选框{{item}}</van-checkbox>
+      <van-checkbox :name="item">复选框{{ item }}</van-checkbox>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -170,11 +138,7 @@ export default {
 export default {
   data() {
     return {
-      list: [
-        'a',
-        'b',
-        'c'
-      ],
+      list: ['a', 'b', 'c'],
       result: ['a', 'b']
     };
   }
@@ -186,14 +150,15 @@ export default {
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
+| name | 标识 Checkbox 名称 | `Boolean`  | `false` | - |
 | disabled | 是否禁用单选框 | `Boolean`  | `false` | - |
-| name | 根据这个来判断radio是否选中 | `Boolean`  | `false` | - |
+| shape | 形状 | `String`  | `round` | `square` |
 
 ### CheckboxGroup API
 
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
 
 ### Checkbox Event
 

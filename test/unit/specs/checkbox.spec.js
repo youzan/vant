@@ -88,6 +88,18 @@ describe('Checkbox', () => {
     expect(wrapper.vm.isChecked).to.be.true;
   });
 
+  it('create a checkbox with name', () => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        name: 'a',
+        disabled: false
+      }
+    });
+
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
+    expect(!!wrapper.vm.isChecked).to.be.false;
+  });
+
   it('create a not boolean value checkbox', (done) => {
     wrapper = mount(Checkbox, {
       propsData: {
