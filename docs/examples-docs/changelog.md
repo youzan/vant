@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v0.9.6](https://github.com/youzan/vant/tree/v0.9.6) (2017-09-20)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.4...v0.9.6)
+
+**修复:**
+
+- ImagePreview 图片预览，有bug，滑动就没有图片了！ [\#126](https://github.com/youzan/vant/issues/126)
+- fix: reset.css compile error [\#136](https://github.com/youzan/vant/pull/136) ([chenjiahan](https://github.com/chenjiahan))
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- 移除大部分Lodash函数，更新文档 [\#135](https://github.com/youzan/vant/pull/135) ([w91](https://github.com/w91))
+- 修复：图片预览 滑动关闭bug [\#134](https://github.com/youzan/vant/pull/134) ([pangxie1991](https://github.com/pangxie1991))
+- icon 增加会员余额图标 [\#133](https://github.com/youzan/vant/pull/133) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.9.4](https://github.com/youzan/vant/tree/v0.9.4) (2017-09-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.3...v0.9.4)
 
