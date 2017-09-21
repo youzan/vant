@@ -8,6 +8,7 @@ $van-checkbox-size: 18px;
   .van-icon-success {
     color: #fff;
     display: block;
+    line-height: 1;
     font-size: 14px;
     text-align: center;
     pointer-events: none;

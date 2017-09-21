@@ -1,5 +1,5 @@
 /**
- * style entry
+ * Entry of all component's style
  */
 
 /* base */
@@ -50,6 +50,7 @@
 @import './tree-select.css';
 
 /* business components */
+@import './address-list.css';
 @import './coupon-list.css';
 @import './goods-action.css';
 @import './submit-bar.css';

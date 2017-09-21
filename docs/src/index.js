@@ -35,6 +35,10 @@ router.afterEach(() => {
 
 window.vueRouter = router;
 
+if (process.env.NODE_ENV !== 'production') {
+  Vue.config.productionTip = false;
+}
+
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router
