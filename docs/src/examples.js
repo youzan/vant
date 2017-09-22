@@ -42,5 +42,6 @@ if (process.env.NODE_ENV !== 'production') {
 
 new Vue({ // eslint-disable-line
   render: h => h(App),
-  router
-}).$mount('#app-container');
+  router,
+  el: '#app-container'
+});
