@@ -27,6 +27,7 @@
     <slot name="right-icon">
       <i class="van-cell__right-icon van-icon van-icon-arrow" v-if="isLink"></i>
     </slot>
+    <slot name="extra"></slot>
   </a>
 </template>
 

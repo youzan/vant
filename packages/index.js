@@ -1,4 +1,5 @@
 import Actionsheet from './actionsheet';
+import AddressList from './address-list';
 import Area from './area';
 import Badge from './badge';
 import BadgeGroup from './badge-group';
@@ -55,6 +56,7 @@ import Waterfall from './waterfall';
 const version = '0.9.7';
 const components = [
   Actionsheet,
+  AddressList,
   Area,
   Badge,
   BadgeGroup,
@@ -121,6 +123,7 @@ export {
   install,
   version,
   Actionsheet,
+  AddressList,
   Area,
   Badge,
   BadgeGroup,

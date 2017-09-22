@@ -25,7 +25,12 @@
 
     .van-icon {
       margin-right: 5px;
+      vertical-align: middle;
     }
+  }
+
+  &__text {
+    vertical-align: middle;
   }
 
   &__label {

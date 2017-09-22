@@ -22,7 +22,7 @@
     padding-left: 90px;
   }
 
-  &--hastextarea {
+  &--has-textarea {
     .van-field__control {
       min-height: 60px;
     }

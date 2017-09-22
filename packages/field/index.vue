@@ -1,47 +1,43 @@
 <template>
   <van-cell
-    class="van-field"
     :title="label"
     :required="required"
-    :class="{
-      'van-field--hastextarea': type === 'textarea',
+    :class="['van-field', {
+      'van-field--has-textarea': type === 'textarea',
       'van-field--nolabel': !label,
-      'van-field--disabled': disabled,
+      'van-field--disabled': $attrs.disabled,
       'van-field--error': error,
       'van-field--border': border,
-      'van-hairline--surround': border,
       'van-field--autosize': autosize,
-      'van-field--has-icon': showIcon
-    }">
+      'van-field--has-icon': hasIcon,
+      'van-hairline--surround': border
+    }]">
     <textarea
       v-if="type === 'textarea'"
-      ref="textareaElement"
+      v-bind="$attrs"
+      v-on="$listeners"
+      ref="textarea"
       class="van-field__control"
-      v-model="currentValue"
-      @focus="handleInputFocus"
-      @blur="handleInputBlur"
-      :placeholder="placeholder"
-      :maxlength="maxlength"
-      :disabled="disabled"
-      :readonly="readonly"
-      :rows="rows"
-      :cols="cols">
-    </textarea>
+      :value="value"
+      @input="onInput"
+    />
     <input
       v-else
+      v-bind="$attrs"
+      v-on="$listeners"      
       class="van-field__control"
-      :value="currentValue"
-      @input="handleInput"
-      @focus="handleInputFocus"
-      @blur="handleInputBlur"
       :type="type"
-      :placeholder="placeholder"
-      :maxlength="maxlength"
-      :disabled="disabled"
-      :readonly="readonly">
-    <div v-if="showIcon" class="van-field__icon" @click="onIconClick">
+      :value="value"
+      @input="onInput"
+    />
+    <div
+      v-if="hasIcon"
+      v-show="$slots.icon || value"
+      class="van-field__icon"
+      @touchstart.prevent="onClickIcon"
+    >
       <slot name="icon">
-        <van-icon :name="icon"></van-icon>
+        <van-icon :name="icon" />
       </slot>
     </div>
   </van-cell>
@@ -70,80 +66,52 @@ export default {
     value: {},
     icon: String,
     label: String,
-    placeholder: String,
     error: Boolean,
-    disabled: Boolean,
-    readonly: Boolean,
     required: Boolean,
-    maxlength: [String, Number],
     border: Boolean,
-    rows: [String, Number],
-    cols: [String, Number],
-    autosize: {
-      type: Boolean,
-      default: false
-    },
+    autosize: Boolean,
     onIconClick: {
       type: Function,
       default: () => {}
     }
   },
 
-  data() {
-    return {
-      currentValue: this.value
-    };
+  watch: {
+    value() {
+      if (this.autosize && this.type === 'textarea') {
+        this.$nextTick(this.adjustSize);
+      }
+    }
   },
 
   mounted() {
     if (this.autosize && this.type === 'textarea') {
-      const el = this.$refs.textareaElement;
+      const el = this.$refs.textarea;
       el.style.height = el.scrollHeight + 'px';
       el.style.overflowY = 'hidden';
     }
   },
 
-  watch: {
-    value(val) {
-      this.currentValue = val;
-    },
-
-    currentValue(val) {
-      if (this.autosize && this.type === 'textarea') {
-        this.$nextTick(this.sizeAdjust);
-      }
-      this.$emit('input', val);
-    }
-  },
-
   computed: {
-    showIcon() {
-      // 有icon的slot，就认为一直展示
-      if (this.$slots.icon) {
-        return true;
-      }
-
-      return this.icon && this.currentValue;
+    hasIcon() {
+      return this.$slots.icon || this.icon;
     }
   },
 
   methods: {
-    handleInput(event) {
-      this.currentValue = event.target.value;
+    onInput(event) {
+      this.$emit('input', event.target.value);
     },
 
-    sizeAdjust() {
-      const el = this.$refs.textareaElement;
+    onClickIcon() {
+      this.$emit('click-icon');
+      this.onIconClick();
+    },
+
+    adjustSize() {
+      const el = this.$refs.textarea;
       el.style.height = 'auto';
       el.style.height = el.scrollHeight + 'px';
-    },
-
-    handleInputFocus() {
-      this.$emit('focus');
-    },
-
-    handleInputBlur() {
-      this.$emit('blur');
     }
   }
 };

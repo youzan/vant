@@ -215,6 +215,10 @@ module.exports = {
             "groupName": "业务组件",
             "list": [
               {
+                "path": "/address-list",
+                "title": "AddressList 地址列表"
+              },
+              {
                 "path": "/area",
                 "title": "Area 省市区选择"
               },
