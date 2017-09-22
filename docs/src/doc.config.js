@@ -215,6 +215,10 @@ module.exports = {
             "groupName": "业务组件",
             "list": [
               {
+                "path": "/address-edit",
+                "title": "AddressEdit 地址编辑"
+              },
+              {
                 "path": "/address-list",
                 "title": "AddressList 地址列表"
               },
