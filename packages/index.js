@@ -1,4 +1,5 @@
 import Actionsheet from './actionsheet';
+import AddressEdit from './address-edit';
 import AddressList from './address-list';
 import Area from './area';
 import Badge from './badge';
@@ -56,6 +57,7 @@ import Waterfall from './waterfall';
 const version = '0.9.7';
 const components = [
   Actionsheet,
+  AddressEdit,
   AddressList,
   Area,
   Badge,
@@ -123,6 +125,7 @@ export {
   install,
   version,
   Actionsheet,
+  AddressEdit,
   AddressList,
   Area,
   Badge,
