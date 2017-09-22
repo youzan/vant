@@ -1,5 +1,12 @@
 ## 更新日志
 
+### [0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
+`2017-09-21`
+
+**Improvements**
+- Checkbox: 支持 shape 属性 [\#137](https://github.com/youzan/vant/pull/137) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.9.6](https://github.com/youzan/vant/tree/v0.9.6) 
 `2017-09-20`
 
