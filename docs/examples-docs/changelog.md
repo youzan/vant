@@ -1,451 +1,217 @@
 ## 更新日志
 
-## [v0.9.6](https://github.com/youzan/vant/tree/v0.9.6) (2017-09-20)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.9.4...v0.9.6)
+### [0.9.6](https://github.com/youzan/vant/tree/v0.9.6) 
+`2017-09-20`
 
-**修复:**
+**Improvements**
+- Sku：移除大部分 Lodash 函数 [\#135](https://github.com/youzan/vant/pull/135) [@w91](https://github.com/w91)
+- Icon：增加会员余额图标 [\#133](https://github.com/youzan/vant/pull/133) [@pangxie1991](https://github.com/pangxie1991)
 
-- ImagePreview 图片预览，有bug，滑动就没有图片了！ [\#126](https://github.com/youzan/vant/issues/126)
-- fix: reset.css compile error [\#136](https://github.com/youzan/vant/pull/136) ([chenjiahan](https://github.com/chenjiahan))
+**Bug Fixes**
+- 修复 ImagePreview 滑动后无法展示图片的问题 [\#126](https://github.com/youzan/vant/issues/126) [@pangxie1991](https://github.com/pangxie1991)
+- 修复 reset.css 编译失败的问题 [\#136](https://github.com/youzan/vant/pull/136) [@chenjiahan](https://github.com/chenjiahan)
 
-**合并的 Pull Request (可能有不兼容改动):**
 
-- 移除大部分Lodash函数，更新文档 [\#135](https://github.com/youzan/vant/pull/135) ([w91](https://github.com/w91))
-- 修复：图片预览 滑动关闭bug [\#134](https://github.com/youzan/vant/pull/134) ([pangxie1991](https://github.com/pangxie1991))
-- icon 增加会员余额图标 [\#133](https://github.com/youzan/vant/pull/133) ([pangxie1991](https://github.com/pangxie1991))
 
-## [v0.9.4](https://github.com/youzan/vant/tree/v0.9.4) (2017-09-15)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.9.3...v0.9.4)
+### [0.9.4](https://github.com/youzan/vant/tree/v0.9.4) 
+`2017-09-15`
 
-**修复:**
+**Improvements**
+- Icon: 增加已完成图标 [\#129](https://github.com/youzan/vant/pull/129) [@cookfront](https://github.com/cookfront)
 
-- Button: fix disabled color wrong when has bottomAction prop [\#131](https://github.com/youzan/vant/pull/131) ([chenjiahan](https://github.com/chenjiahan))
+**Bug Fixes**
+- 修复 Button 同时使用 disabled 和 bottomAction 属性时颜色错误的问题 [\#131](https://github.com/youzan/vant/pull/131) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Button 不可用状态下 acitive 背景色错误的问题 [\#132](https://github.com/youzan/vant/pull/132) [@chenjiahan](https://github.com/chenjiahan)
 
-**合并的 Pull Request (可能有不兼容改动):**
 
-- Button: fix active color when disabled [\#132](https://github.com/youzan/vant/pull/132) ([chenjiahan](https://github.com/chenjiahan))
-- 新增：增加一个已完成的icon [\#129](https://github.com/youzan/vant/pull/129) ([cookfront](https://github.com/cookfront))
 
-## [v0.9.3](https://github.com/youzan/vant/tree/v0.9.3) (2017-09-13)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.9.2...v0.9.3)
+### [0.9.3](https://github.com/youzan/vant/tree/v0.9.3) 
+`2017-09-13`
 
-**非兼容更新和新特性:**
+**Improvements**
+- 新增 PasswordInput 组件 [\#124](https://github.com/youzan/vant/pull/124) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 NumberKeyboard 组件 [\#122](https://github.com/youzan/vant/pull/122) [@chenjiahan](https://github.com/chenjiahan)
+- 新增文档底部 issue 入口 [\#127](https://github.com/youzan/vant/issues/127) [@chenjiahan](https://github.com/chenjiahan)
 
-- 你们页面上（譬如底部区域），能不能github上查看这个框架的issues入口，每次都是点更新日志切换到issues的！ [\#127](https://github.com/youzan/vant/issues/127)
-- add PasswordInput component [\#124](https://github.com/youzan/vant/pull/124) ([chenjiahan](https://github.com/chenjiahan))
-- add NumberKeyboard component [\#122](https://github.com/youzan/vant/pull/122) ([chenjiahan](https://github.com/chenjiahan))
+**Bug Fixes**
+- 修复部分组件样式依赖 reset.css 的问题 [\#128](https://github.com/youzan/vant/pull/128) [@chenjiahan](https://github.com/chenjiahan)
 
-**修复:**
 
-- Fix: component style should not depend on reset.css [\#128](https://github.com/youzan/vant/pull/128) ([chenjiahan](https://github.com/chenjiahan))
+### [0.9.2](https://github.com/youzan/vant/tree/v0.9.2)
+`2017-09-08`
 
-## [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2) (2017-09-08)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.9.1...v0.9.2)
+**Breaking changes**
+- 内置 van-hairline 类，用于添加 0.5px 边框 [\#110](https://github.com/youzan/vant/pull/110) [@chenjiahan](https://github.com/chenjiahan)
+- Quantity：重命名为 Stepper [\#120](https://github.com/youzan/vant/pull/120) [@chenjiahan](https://github.com/chenjiahan)
+- PayOrder 重命名为 SubmitBar [\#120](https://github.com/youzan/vant/pull/120) [@chenjiahan](https://github.com/chenjiahan)
+- DeepSelect: 重命名为 TreeSelect [\#120](https://github.com/youzan/vant/pull/120) [@chenjiahan](https://github.com/chenjiahan)
+- OrderCoupon: 拆分为 CouponList 和 CouponCell 组件 [\#120](https://github.com/youzan/vant/pull/120) [@chenjiahan](https://github.com/chenjiahan)
 
-**非兼容更新和新特性:**
+**Bug Fixes**
+- 修复 Tabs 动画过渡效果 [\#111](https://github.com/youzan/vant/pull/111) [@cookfront](https://github.com/cookfront)
+- 修复 Swipe 页数为一时指示器未隐藏的问题 [\#106](https://github.com/youzan/vant/pull/106) [@Raistlin916](https://github.com/Raistlin916)
+- 修复 Toast 背景色值错误的问题 [\#118](https://github.com/youzan/vant/pull/118) [@chenjiahan](https://github.com/chenjiahan)
+- 修复自动引入组件样式时未引入内部依赖组件样式的问题 [\#115](https://github.com/youzan/vant/pull/115) [@chenjiahan](https://github.com/chenjiahan)
 
-- add NavBar component [\#121](https://github.com/youzan/vant/pull/121) ([chenjiahan](https://github.com/chenjiahan))
-- Rename some components and use more suitable names [\#120](https://github.com/youzan/vant/pull/120) ([chenjiahan](https://github.com/chenjiahan))
+**Improvements**
+- 新增 Sku 组件 [\#123](https://github.com/youzan/vant/pull/123) [@w91](https://github.com/w91)
+- 新增 Area 组件 [\#113](https://github.com/youzan/vant/pull/113) [@cookfront](https://github.com/cookfront)
+- 新增 NavBar 组件 [\#121](https://github.com/youzan/vant/pull/121) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 PullRefresh 组件 [\#117](https://github.com/youzan/vant/pull/117) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 OrderCoupon 组件 [\#108](https://github.com/youzan/vant/pull/108) [@chenjiahan](https://github.com/chenjiahan)
+- 优化文档加载速度 [\#107](https://github.com/youzan/vant/pull/107) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Popup 文档 [\#109](https://github.com/youzan/vant/pull/109) [@cookfront](https://github.com/cookfront)
+- Card：支持 num 和 price 属性 [\#112](https://github.com/youzan/vant/pull/112) [@chenjiahan](https://github.com/chenjiahan)
+- Toast: 支持 loading 和 text 属性同时使用，优化渲染性能 [\#114](https://github.com/youzan/vant/pull/114) [@chenjiahan](https://github.com/chenjiahan)
+- Toast：布局方式改为 Flex 布局 [\#114](https://github.com/youzan/vant/pull/114) [@chenjiahan](https://github.com/chenjiahan)
 
-**合并的 Pull Request (可能有不兼容改动):**
+### [0.8.8](https://github.com/youzan/vant/tree/v0.8.8) 
+`2017-09-01`
 
-- sku组件迁移 [\#123](https://github.com/youzan/vant/pull/123) ([w91](https://github.com/w91))
+**Improvements**
+- 新增 DeepSelect 组件 [\#103](https://github.com/youzan/vant/pull/103) [@Tinysymphony](https://github.com/Tinysymphony)
+- 新增 GoodsAction 组件 [\#102](https://github.com/youzan/vant/pull/102) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 OrderGoods 组件 [\#99](https://github.com/youzan/vant/pull/99) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 PayOrder 组件 [\#98](https://github.com/youzan/vant/pull/98) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Step、Loading、Tag、Badge 文档 [\#101](https://github.com/youzan/vant/pull/101) [@chenjiahan](https://github.com/chenjiahan)
+- Checkbox: 支持 change 事件 [\#104](https://github.com/youzan/vant/pull/104) [@chenjiahan](https://github.com/chenjiahan)
 
-## [v0.9.1](https://github.com/youzan/vant/tree/v0.9.1) (2017-09-07)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.9.0...v0.9.1)
+**Bug Fixes**
+- 修复 make init 命令报错的问题 [\#97](https://github.com/youzan/vant/pull/97) [@pangxie1991](https://github.com/pangxie1991)
 
-**修复:**
 
-- Toast: fix background color [\#118](https://github.com/youzan/vant/pull/118) ([chenjiahan](https://github.com/chenjiahan))
+### [0.8.7](https://github.com/youzan/vant/tree/v0.8.7) 
+`2017-08-29`
 
-**处理的 Issue:**
+**Improvements**
+- 新增 NoticeBar 组件 [\#94](https://github.com/youzan/vant/pull/94) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 CellSwitch 组件 [\#95](https://github.com/youzan/vant/pull/95) [@chenjiahan](https://github.com/chenjiahan)
+- Dialog: 支持通过组件的方式进行调用 [\#93](https://github.com/youzan/vant/pull/93) [@chenjiahan](https://github.com/chenjiahan)
+- Progress: 简化 DOM 结构 [\#90](https://github.com/youzan/vant/pull/90) [@chenjiahan](https://github.com/chenjiahan)
+- CellSwipe: 性能优化，补充单元测试 [\#91](https://github.com/youzan/vant/pull/91) [@chenjiahan](https://github.com/chenjiahan)
 
-- 请问captain-ui 开源了吗？ [\#116](https://github.com/youzan/vant/issues/116)
+### [0.8.6](https://github.com/youzan/vant/tree/v0.8.6) 
+`2017-08-24`
 
-## [v0.9.0](https://github.com/youzan/vant/tree/v0.9.0) (2017-09-07)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.9...v0.9.0)
+**Improvements**
+- 去除对 merge 和 class 操作方法的依赖 [\#88](https://github.com/youzan/vant/pull/88) [@chenjiahan](https://github.com/chenjiahan)
+- 目录结构简化，去除 index.js 文件 [\#87](https://github.com/youzan/vant/pull/87) [@chenjiahan](https://github.com/chenjiahan)
+- Button: 精简部分样式 [\#86](https://github.com/youzan/vant/pull/86) [@chenjiahan](https://github.com/chenjiahan)
+- Layout: 文档优化 [\#85](https://github.com/youzan/vant/pull/85) [@chenjiahan](https://github.com/chenjiahan)
 
-**非兼容更新和新特性:**
+**Bug Fixes**
+- 修复 DatetimePicker 初始值错误的问题 [\#89](https://github.com/youzan/vant/pull/89) [@w91](https://github.com/w91)
 
-- add PullRefresh component [\#117](https://github.com/youzan/vant/pull/117) ([chenjiahan](https://github.com/chenjiahan))
-- Build: analyzes component dependencies when build style entries [\#115](https://github.com/youzan/vant/pull/115) ([chenjiahan](https://github.com/chenjiahan))
-- Toast: use flex layout, support loading with text, improve performance [\#114](https://github.com/youzan/vant/pull/114) ([chenjiahan](https://github.com/chenjiahan))
-- Card: support num and price props [\#112](https://github.com/youzan/vant/pull/112) ([chenjiahan](https://github.com/chenjiahan))
-- vant-css: use hairline classes instead of mixins [\#110](https://github.com/youzan/vant/pull/110) ([chenjiahan](https://github.com/chenjiahan))
-- update `popup` and `quickstart` readme [\#109](https://github.com/youzan/vant/pull/109) ([cookfront](https://github.com/cookfront))
-- add OrderCoupon component [\#108](https://github.com/youzan/vant/pull/108) ([chenjiahan](https://github.com/chenjiahan))
-- Doc: improve site load speed [\#107](https://github.com/youzan/vant/pull/107) ([chenjiahan](https://github.com/chenjiahan))
+### [0.8.5](https://github.com/youzan/vant/tree/v0.8.5) 
+`2017-08-21`
 
-**修复:**
+**Breaking changes**
+- 优化单个组件构建方式, 减少文件体积 [\#74](https://github.com/youzan/vant/pull/74) [@chenjiahan](https://github.com/chenjiahan)
 
-- Fix: swipe tabs animation time and timing function [\#111](https://github.com/youzan/vant/pull/111) ([cookfront](https://github.com/cookfront))
-- hide indicators when one swipe page [\#106](https://github.com/youzan/vant/pull/106) ([Raistlin916](https://github.com/Raistlin916))
+**Improvements**
+- 新增文档组件使用指南 [\#83](https://github.com/youzan/vant/pull/83) [@chenjiahan](https://github.com/chenjiahan)
+- 新增文档加载动效 [\#83](https://github.com/youzan/vant/pull/83) [@chenjiahan](https://github.com/chenjiahan)
+- Field：新增 icon slot [\#76](https://github.com/youzan/vant/pull/76) [@pangxie1991](https://github.com/pangxie1991)
 
-**合并的 Pull Request (可能有不兼容改动):**
+**Bug Fixes**
+- 修复 Popup 默认开启 preventScroll 导致无法局部滚动的问题 [\#84](https://github.com/youzan/vant/pull/84) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Field autosize 高度错误的问题 [\#78](https://github.com/youzan/vant/pull/78) [@pangxie1991](https://github.com/pangxie1991)
+- 修复 Dialog z-index 错误的问题  [\#77](https://github.com/youzan/vant/pull/77) [@chenjiahan](https://github.com/chenjiahan)
 
-- 新增：Area（省市区选择）组件 [\#113](https://github.com/youzan/vant/pull/113) ([cookfront](https://github.com/cookfront))
 
-## [v0.8.9](https://github.com/youzan/vant/tree/v0.8.9) (2017-09-01)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.8...v0.8.9)
+### [0.7.8](https://github.com/youzan/vant/tree/v0.7.8) 
+`2017-08-10`
 
-## [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8) (2017-09-01)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.7...v0.8.8)
+**Improvements**
+- 新增 README 英文文档 [\#66](https://github.com/youzan/vant/pull/66) [@cookfront](https://github.com/cookfront)
+- 新增 babel-plugin-import 使用教程 [\#71](https://github.com/youzan/vant/pull/71) [@chenjiahan](https://github.com/chenjiahan)
+- 新增多个 Icon 类型 [\#69](https://github.com/youzan/vant/pull/69) [@cookfront](https://github.com/cookfront)
 
-**非兼容更新和新特性:**
+**Bug Fixes**
+- 修复 Swipe 组件报错的问题 [\#70](https://github.com/youzan/vant/pull/70) [@Raistlin916](https://github.com/Raistlin916)
+- 修复 DatetimePicker cancel 事件无法触发的问题 [\#45](https://github.com/youzan/vant/issues/45) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 utils 编译时未转成 ES5 的问题 [\#67](https://github.com/youzan/vant/pull/67) [@pangxie1991](https://github.com/pangxie1991)
 
-- PayOrder component add tip slot [\#105](https://github.com/youzan/vant/pull/105) ([Raistlin916](https://github.com/Raistlin916))
-- Checkbox: support listen to change event [\#104](https://github.com/youzan/vant/pull/104) ([chenjiahan](https://github.com/chenjiahan))
-- add GoodsAction component [\#102](https://github.com/youzan/vant/pull/102) ([chenjiahan](https://github.com/chenjiahan))
-- add InvalidGoods component [\#100](https://github.com/youzan/vant/pull/100) ([chenjiahan](https://github.com/chenjiahan))
-- add OrderGoods component [\#99](https://github.com/youzan/vant/pull/99) ([chenjiahan](https://github.com/chenjiahan))
-- add PayOrder component [\#98](https://github.com/youzan/vant/pull/98) ([chenjiahan](https://github.com/chenjiahan))
 
-**修复:**
+### [0.7.2](https://github.com/youzan/vant/tree/v0.7.2) 
+`2017-07-31`
 
-- 修复 make init bug [\#97](https://github.com/youzan/vant/pull/97) ([pangxie1991](https://github.com/pangxie1991))
+**Breaking changes**
+- 文档站点样式改版 [\#55](https://github.com/youzan/vant/pull/55) [@chenjiahan](https://github.com/chenjiahan)
+- 支持 babel-plugin-import [\#62](https://github.com/youzan/vant/pull/62) [@chenjiahan](https://github.com/chenjiahan)
 
-**合并的 Pull Request (可能有不兼容改动):**
+**Bug Fixes**
+- 修复 Popup 多层级 modal 未插入到正确的位置的问题 [\#63](https://github.com/youzan/vant/pull/63) [@cookfront](https://github.com/cookfront)
+- 修复 Tabs 组件为空报错的问题 [\#61](https://github.com/youzan/vant/pull/61) [@cookfront](https://github.com/cookfront)
 
-- Add deep-select component and fix a popup bug. [\#103](https://github.com/youzan/vant/pull/103) ([Tinysymphony](https://github.com/Tinysymphony))
-- Doc: update Step/Loading/Tag/Badge documents [\#101](https://github.com/youzan/vant/pull/101) ([chenjiahan](https://github.com/chenjiahan))
+**Improvements**
+- Switch：增加过渡动画效果 [\#59](https://github.com/youzan/vant/pull/59) [@BosenY](https://github.com/BosenY)
+- Card：支持 centered 属性 [\#54](https://github.com/youzan/vant/pull/54) [@chenjiahan](https://github.com/chenjiahan)
 
-## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7) (2017-08-29)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.6...v0.8.7)
+### [0.6.6](https://github.com/youzan/vant/tree/v0.6.6) 
+`2017-07-15`
 
-**非兼容更新和新特性:**
+**Improvements**
+- Tabs：支持滑动 [\#52](https://github.com/youzan/vant/pull/52) [@cookfront](https://github.com/cookfront)
+- Steps：新增 direction 和 activeColor 属性，支持竖向展示 [\#49](https://github.com/youzan/vant/pull/49) [@cookfront](https://github.com/cookfront)
+- Card：支持 thumb slot [\#48](https://github.com/youzan/vant/pull/48) [@chenjiahan](https://github.com/chenjiahan)
+- Field：支持 blur 事件，新增 icon slot [\#53](https://github.com/youzan/vant/pull/53) [@pangxie1991](https://github.com/pangxie1991)
 
-- add ExpressWay component [\#96](https://github.com/youzan/vant/pull/96) ([chenjiahan](https://github.com/chenjiahan))
-- add CellSwitch component [\#95](https://github.com/youzan/vant/pull/95) ([chenjiahan](https://github.com/chenjiahan))
-- add NoticeBar && test cases [\#94](https://github.com/youzan/vant/pull/94) ([chenjiahan](https://github.com/chenjiahan))
-- Dialog: support both function call and component call [\#93](https://github.com/youzan/vant/pull/93) ([chenjiahan](https://github.com/chenjiahan))
-- CellSwipe: improve test coverage && code review [\#91](https://github.com/youzan/vant/pull/91) ([chenjiahan](https://github.com/chenjiahan))
-- Progress: adjust DOM struct [\#90](https://github.com/youzan/vant/pull/90) ([chenjiahan](https://github.com/chenjiahan))
+### [0.6.2](https://github.com/youzan/vant/tree/v0.6.2) 
+`2017-06-26`
 
-## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6) (2017-08-24)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.5...v0.8.6)
+**Improvements**
+- Filed组件：支持 time类型 [\#43](https://github.com/youzan/vant/pull/43) [@cookfront](https://github.com/cookfront)
 
-**非兼容更新和新特性:**
+**Bug Fixes**
+- 修复 Toast 样式问题 [\#42](https://github.com/youzan/vant/pull/42) [@cookfront](https://github.com/cookfront)
+- 修复人民币符号在 iOS 下显示问题 [\#44](https://github.com/youzan/vant/pull/44) [@w91](https://github.com/w91)
 
-- dalete merge && class operating methods [\#88](https://github.com/youzan/vant/pull/88) ([chenjiahan](https://github.com/chenjiahan))
-- directory adjust: delete entry index.js [\#87](https://github.com/youzan/vant/pull/87) ([chenjiahan](https://github.com/chenjiahan))
-- Button: reduce unnecessary styles [\#86](https://github.com/youzan/vant/pull/86) ([chenjiahan](https://github.com/chenjiahan))
-- Layout: optimize doc [\#85](https://github.com/youzan/vant/pull/85) ([chenjiahan](https://github.com/chenjiahan))
 
-**修复:**
+### [0.6.0](https://github.com/youzan/vant/tree/v0.6.0) 
+`2017-06-15`
 
-- Fix datetime-picker init value [\#89](https://github.com/youzan/vant/pull/89) ([w91](https://github.com/w91))
+**Improvements**
+- 支持 SSR [\#40](https://github.com/youzan/vant/pull/40) [@cookfront](https://github.com/cookfront)
+- 新增多个 Icon 类型 [\#40](https://github.com/youzan/vant/pull/40) [@cookfront](https://github.com/cookfront)
+- 新增 CellSwipe 组件 [\#39](https://github.com/youzan/vant/pull/39) [@tsxuehu](https://github.com/tsxuehu)
+- 新增 Search 组件微杂志样式 [\#38](https://github.com/youzan/vant/pull/38) [@cookfront](https://github.com/cookfront)
 
-**处理的 Issue:**
+### [0.5.8](https://github.com/youzan/vant/tree/v0.5.8) 
+`2017-05-25`
 
-- When 'showIndicators' set to 'false' The second image does not show [\#80](https://github.com/youzan/vant/issues/80)
+**Improvements**
+- 新增多个 Icon 类型 [\#29](https://github.com/youzan/vant/pull/29) [@cookfront](https://github.com/cookfront)
+- 新增打包后的 amd 模块名称 [\#28](https://github.com/youzan/vant/pull/28) [@pangxie1991](https://github.com/pangxie1991)
+- 移除 postcss-reset 插件 [\#35](https://github.com/youzan/vant/pull/35) [@cookfront](https://github.com/cookfront)
+- Picker：支持 title 属性 [\#30](https://github.com/youzan/vant/pull/30) [@pangxie1991](https://github.com/pangxie1991)
 
-## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5) (2017-08-21)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.4...v0.8.5)
+**Bug Fixes**
+- 修复长按图片后隐藏的问题 [\#32](https://github.com/youzan/vant/pull/32) [@w91](https://github.com/w91)
 
-**非兼容更新和新特性:**
 
-- Doc: add usage guide && top progress [\#83](https://github.com/youzan/vant/pull/83) ([chenjiahan](https://github.com/chenjiahan))
+### [0.5.4](https://github.com/youzan/vant/tree/v0.5.4) 
+`2017-05-09`
 
-**修复:**
+**Bug Fixes**
+- 修复 Cell 同时设置 title 和 label 时 value 不居中的问题 [\#26](https://github.com/youzan/vant/pull/26) [@cookfront](https://github.com/cookfront)
+- 修复 Popup zIndex 类型错误 [\#24](https://github.com/youzan/vant/pull/24) [@cookfront](https://github.com/cookfront)
+- 修复 Picker 状态更新错误 [\#23](https://github.com/youzan/vant/pull/23) [@cookfront](https://github.com/cookfront)
 
-- Popup: not preventScroll by default [\#84](https://github.com/youzan/vant/pull/84) ([chenjiahan](https://github.com/chenjiahan))
-- fix: swipe sometimes will change to drag image [\#81](https://github.com/youzan/vant/pull/81) ([pangxie1991](https://github.com/pangxie1991))
+**Improvements**
+- 新增 reset.css [\#27](https://github.com/youzan/vant/pull/27) [@cookfront](https://github.com/cookfront)
+- Cell: 新增 right-icon slot [\#27](https://github.com/youzan/vant/pull/27) [@cookfront](https://github.com/cookfront)
 
-**处理的 Issue:**
 
-- Href link does not work [\#82](https://github.com/youzan/vant/issues/82)
-- Swipe image not displayed [\#79](https://github.com/youzan/vant/issues/79)
+### [0.5.2](https://github.com/youzan/vant/tree/v0.5.2) 
+`2017-04-26`
 
-## [v0.8.4](https://github.com/youzan/vant/tree/v0.8.4) (2017-08-18)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.3...v0.8.4)
+**Improvements**
+- 新增 Picker 组件测试用例 [\#20](https://github.com/youzan/vant/pull/20) [@cookfront](https://github.com/cookfront)
+- 新增 Col & Row 组件测试用例 [\#16](https://github.com/youzan/vant/pull/16) [@w91](https://github.com/w91)
+- 新增 Uploader 单元测试 [\#9](https://github.com/youzan/vant/pull/9) [@tsxuehu](https://github.com/tsxuehu)
 
-**修复:**
-
-- fix: field 计算autosize，需要nextTick [\#78](https://github.com/youzan/vant/pull/78) ([pangxie1991](https://github.com/pangxie1991))
-
-## [v0.8.3](https://github.com/youzan/vant/tree/v0.8.3) (2017-08-18)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.1...v0.8.3)
-
-**修复:**
-
-- fix: dialog wrong z-index  [\#77](https://github.com/youzan/vant/pull/77) ([chenjiahan](https://github.com/chenjiahan))
-
-## [v0.8.1](https://github.com/youzan/vant/tree/v0.8.1) (2017-08-18)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.8.0...v0.8.1)
-
-**非兼容更新和新特性:**
-
-- field 增加icon slot支持 [\#76](https://github.com/youzan/vant/pull/76) ([pangxie1991](https://github.com/pangxie1991))
-
-## [v0.8.0](https://github.com/youzan/vant/tree/v0.8.0) (2017-08-17)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.10...v0.8.0)
-
-**非兼容更新和新特性:**
-
-- Optimize component building, reduce dist file size  [\#74](https://github.com/youzan/vant/pull/74) ([chenjiahan](https://github.com/chenjiahan))
-
-## [v0.7.10](https://github.com/youzan/vant/tree/v0.7.10) (2017-08-16)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.8...v0.7.10)
-
-**修复:**
-
-- fix: 修复popup和dialog同时出现时，几率出现dialog被挡住的情况 [\#75](https://github.com/youzan/vant/pull/75) ([pangxie1991](https://github.com/pangxie1991))
-- 修复：popup滚动穿透 [\#73](https://github.com/youzan/vant/pull/73) ([cookfront](https://github.com/cookfront))
-
-## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8) (2017-08-10)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.7...v0.7.8)
-
-**非兼容更新和新特性:**
-
-- 补充 babel-plugin-import 文档 [\#71](https://github.com/youzan/vant/pull/71) ([chenjiahan](https://github.com/chenjiahan))
-
-**修复:**
-
-- not require reset.css by default [\#72](https://github.com/youzan/vant/pull/72) ([chenjiahan](https://github.com/chenjiahan))
-
-## [v0.7.7](https://github.com/youzan/vant/tree/v0.7.7) (2017-08-09)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.6...v0.7.7)
-
-**修复:**
-
-- Fixed: one page Swipe components error [\#70](https://github.com/youzan/vant/pull/70) ([Raistlin916](https://github.com/Raistlin916))
-
-## [v0.7.6](https://github.com/youzan/vant/tree/v0.7.6) (2017-08-08)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.5...v0.7.6)
-
-**非兼容更新和新特性:**
-
-- 新增几个icon [\#69](https://github.com/youzan/vant/pull/69) ([cookfront](https://github.com/cookfront))
-
-## [v0.7.5](https://github.com/youzan/vant/tree/v0.7.5) (2017-08-08)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.3...v0.7.5)
-
-**修复:**
-
-- fix: one page swiper broken [\#68](https://github.com/youzan/vant/pull/68) ([Raistlin916](https://github.com/Raistlin916))
-
-**处理的 Issue:**
-
-- 安装业务组件导致基础组件css样式文件引入失败 [\#65](https://github.com/youzan/vant/issues/65)
-
-## [v0.7.3](https://github.com/youzan/vant/tree/v0.7.3) (2017-08-04)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.7.2...v0.7.3)
-
-**处理的 Issue:**
-
-- datetime-picker的问题 [\#45](https://github.com/youzan/vant/issues/45)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- fix: utils 修复babel编译 [\#67](https://github.com/youzan/vant/pull/67) ([pangxie1991](https://github.com/pangxie1991))
-- README.md使用英文文档 [\#66](https://github.com/youzan/vant/pull/66) ([cookfront](https://github.com/cookfront))
-
-## [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2) (2017-07-31)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.6...v0.7.2)
-
-**非兼容更新和新特性:**
-
-- 支持 babel-plugin-import [\#62](https://github.com/youzan/vant/pull/62) ([chenjiahan](https://github.com/chenjiahan))
-- 依赖更新 && 构建调整 [\#60](https://github.com/youzan/vant/pull/60) ([chenjiahan](https://github.com/chenjiahan))
-- Switch 组件: 个人建议加了动画效果 [\#59](https://github.com/youzan/vant/pull/59) ([BosenY](https://github.com/BosenY))
-- 文档改版 [\#55](https://github.com/youzan/vant/pull/55) ([chenjiahan](https://github.com/chenjiahan))
-- 新增：Card 组件增加 centered 属性 [\#54](https://github.com/youzan/vant/pull/54) ([chenjiahan](https://github.com/chenjiahan))
-
-**修复:**
-
-- fix: datetimepicker cancel event not work [\#64](https://github.com/youzan/vant/pull/64) ([chenjiahan](https://github.com/chenjiahan))
-- 修复：popup多层级van-modal未插入到正确的位置 [\#63](https://github.com/youzan/vant/pull/63) ([cookfront](https://github.com/cookfront))
-- 新增几个图标 && 修复tabs组件为空报错的问题 [\#61](https://github.com/youzan/vant/pull/61) ([cookfront](https://github.com/cookfront))
-- Fix: deploy doc fail [\#56](https://github.com/youzan/vant/pull/56) ([chenjiahan](https://github.com/chenjiahan))
-
-**处理的 Issue:**
-
-- SVG's SMIL animations deprecated  [\#46](https://github.com/youzan/vant/issues/46)
-
-## [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6) (2017-07-15)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.5...v0.6.6)
-
-**非兼容更新和新特性:**
-
-- 新增：Field 增加blur事件 && Field 支持尾部icon [\#53](https://github.com/youzan/vant/pull/53) ([pangxie1991](https://github.com/pangxie1991))
-
-## [v0.6.5](https://github.com/youzan/vant/tree/v0.6.5) (2017-07-11)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.4...v0.6.5)
-
-**非兼容更新和新特性:**
-
-- tabs组件支持滑动 [\#52](https://github.com/youzan/vant/pull/52) ([cookfront](https://github.com/cookfront))
-
-**处理的 Issue:**
-
-- 有计划都生成vue版本吗 [\#50](https://github.com/youzan/vant/issues/50)
-
-## [v0.6.4](https://github.com/youzan/vant/tree/v0.6.4) (2017-07-06)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.3...v0.6.4)
-
-**非兼容更新和新特性:**
-
-- src/utils目录支持SSR [\#51](https://github.com/youzan/vant/pull/51) ([cookfront](https://github.com/cookfront))
-
-## [v0.6.3](https://github.com/youzan/vant/tree/v0.6.3) (2017-07-04)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.2...v0.6.3)
-
-**非兼容更新和新特性:**
-
-- 步骤条组件新增direction和activeColor属性，增加了竖的步骤条 [\#49](https://github.com/youzan/vant/pull/49) ([cookfront](https://github.com/cookfront))
-- Card component supoort thumb slot，use flex layout [\#48](https://github.com/youzan/vant/pull/48) ([chenjiahan](https://github.com/chenjiahan))
-
-**修复:**
-
-- 修复人民币符号在ios显示问题 [\#44](https://github.com/youzan/vant/pull/44) ([w91](https://github.com/w91))
-
-**处理的 Issue:**
-
-- goods-action 文档有误 [\#47](https://github.com/youzan/vant/issues/47)
-
-## [v0.6.2](https://github.com/youzan/vant/tree/v0.6.2) (2017-06-26)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.1...v0.6.2)
-
-**非兼容更新和新特性:**
-
-- 新增icon、filed组件新增time类型和Dialog组件默认文案修改 [\#43](https://github.com/youzan/vant/pull/43) ([cookfront](https://github.com/cookfront))
-
-## [v0.6.1](https://github.com/youzan/vant/tree/v0.6.1) (2017-06-19)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.6.0...v0.6.1)
-
-**修复:**
-
-- 新增icon和修复toast样式问题 [\#42](https://github.com/youzan/vant/pull/42) ([cookfront](https://github.com/cookfront))
-
-## [v0.6.0](https://github.com/youzan/vant/tree/v0.6.0) (2017-06-15)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.12...v0.6.0)
-
-**非兼容更新和新特性:**
-
-- Search组件新增微杂志样式 [\#38](https://github.com/youzan/vant/pull/38) ([cookfront](https://github.com/cookfront))
-- 支持SSR、升级Vue版本和增加新的icon [\#40](https://github.com/youzan/vant/pull/40) ([cookfront](https://github.com/cookfront))
-- 增加cell swipe组件 [\#39](https://github.com/youzan/vant/pull/39) ([tsxuehu](https://github.com/tsxuehu))
-
-## [v0.5.12](https://github.com/youzan/vant/tree/v0.5.12) (2017-06-02)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.11...v0.5.12)
-
-**处理的 Issue:**
-
-- 业务组件的cap-goods-list出现问题 [\#36](https://github.com/youzan/vant/issues/36)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- utils/scroll [\#37](https://github.com/youzan/vant/pull/37) ([pangxie1991](https://github.com/pangxie1991))
-
-## [v0.5.11](https://github.com/youzan/vant/tree/v0.5.11) (2017-05-25)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.10...v0.5.11)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 移除postcss-reset [\#35](https://github.com/youzan/vant/pull/35) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.10](https://github.com/youzan/vant/tree/v0.5.10) (2017-05-25)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.9...v0.5.10)
-
-## [v0.5.9](https://github.com/youzan/vant/tree/v0.5.9) (2017-05-25)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.8...v0.5.9)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 新增微信导航icon [\#34](https://github.com/youzan/vant/pull/34) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.8](https://github.com/youzan/vant/tree/v0.5.8) (2017-05-25)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.7...v0.5.8)
-
-**修复:**
-
-- 修复长按图片后，图片会隐藏问题 [\#32](https://github.com/youzan/vant/pull/32) ([w91](https://github.com/w91))
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 新增微信导航icon [\#33](https://github.com/youzan/vant/pull/33) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.7](https://github.com/youzan/vant/tree/v0.5.7) (2017-05-19)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.6...v0.5.7)
-
-**非兼容更新和新特性:**
-
-- picker 增加 title 显示 [\#30](https://github.com/youzan/vant/pull/30) ([pangxie1991](https://github.com/pangxie1991))
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 更新reset中body背景色 [\#31](https://github.com/youzan/vant/pull/31) ([w91](https://github.com/w91))
-
-## [v0.5.6](https://github.com/youzan/vant/tree/v0.5.6) (2017-05-15)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.4...v0.5.6)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 添加两个新的icon [\#29](https://github.com/youzan/vant/pull/29) ([cookfront](https://github.com/cookfront))
-- 改变打包出来的amd模块，增加amd模块的名字 [\#28](https://github.com/youzan/vant/pull/28) ([pangxie1991](https://github.com/pangxie1991))
-
-## [v0.5.4](https://github.com/youzan/vant/tree/v0.5.4) (2017-05-09)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.3...v0.5.4)
-
-**修复:**
-
-- 修复：添加reset.css和cell加上right-icon的slot [\#27](https://github.com/youzan/vant/pull/27) ([cookfront](https://github.com/cookfront))
-- 修复：cell同时设置title和label时，value不居中 [\#26](https://github.com/youzan/vant/pull/26) ([cookfront](https://github.com/cookfront))
-- 修复：popup的zIndex转换为number [\#24](https://github.com/youzan/vant/pull/24) ([cookfront](https://github.com/cookfront))
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- fix bugs and add new features [\#25](https://github.com/youzan/vant/pull/25) ([radicalviva](https://github.com/radicalviva))
-
-## [v0.5.3](https://github.com/youzan/vant/tree/v0.5.3) (2017-04-27)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.2...v0.5.3)
-
-**修复:**
-
-- 修复：picker中值变了后未更新picker-colum中的值 [\#23](https://github.com/youzan/vant/pull/23) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.2](https://github.com/youzan/vant/tree/v0.5.2) (2017-04-26)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.1...v0.5.2)
-
-**处理的 Issue:**
-
-- does it render UI Natively just like React - Native or  like ionic ? [\#15](https://github.com/youzan/vant/issues/15)
-- give me an english version of this :  https://www.youzanyun.com/zanui/react/guides/install [\#14](https://github.com/youzan/vant/issues/14)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 修复：webpack打包修复 [\#21](https://github.com/youzan/vant/pull/21) ([cookfront](https://github.com/cookfront))
-- unit test: picker [\#20](https://github.com/youzan/vant/pull/20) ([cookfront](https://github.com/cookfront))
-- Fix: 修复toast关闭时未移除Dom节点，以及补上单元测试 [\#19](https://github.com/youzan/vant/pull/19) ([cookfront](https://github.com/cookfront))
-- tabs 组件修改 [\#18](https://github.com/youzan/vant/pull/18) ([pangxie1991](https://github.com/pangxie1991))
-- 补充 Col & Row 测试用例 [\#16](https://github.com/youzan/vant/pull/16) ([w91](https://github.com/w91))
-- 单元测试 排除src/目录 [\#13](https://github.com/youzan/vant/pull/13) ([pangxie1991](https://github.com/pangxie1991))
-- 添加单元测试 [\#12](https://github.com/youzan/vant/pull/12) ([cookfront](https://github.com/cookfront))
-- test 环境不跑 PhantomJS [\#11](https://github.com/youzan/vant/pull/11) ([pangxie1991](https://github.com/pangxie1991))
-- 修改 unit test 的配置 [\#10](https://github.com/youzan/vant/pull/10) ([pangxie1991](https://github.com/pangxie1991))
-- unit test: uploader [\#9](https://github.com/youzan/vant/pull/9) ([tsxuehu](https://github.com/tsxuehu))
-- 文档页样式优化和打包配置优化 [\#8](https://github.com/youzan/vant/pull/8) ([cookfront](https://github.com/cookfront))
-- 修复表单组件样式和单元测试用例 [\#7](https://github.com/youzan/vant/pull/7) ([cookfront](https://github.com/cookfront))
-- 文档小细节优化 [\#6](https://github.com/youzan/vant/pull/6) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.1](https://github.com/youzan/vant/tree/v0.5.1) (2017-04-24)
-[Full Changelog](https://github.com/youzan/vant/compare/v0.5.0...v0.5.1)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- 文档细节优化，search、loading和dialog组件样式修复 [\#5](https://github.com/youzan/vant/pull/5) ([cookfront](https://github.com/cookfront))
-
-## [v0.5.0](https://github.com/youzan/vant/tree/v0.5.0) (2017-04-23)
-**处理的 Issue:**
-
-- 一些建议 [\#1](https://github.com/youzan/vant/issues/1)
-
-**合并的 Pull Request (可能有不兼容改动):**
-
-- use vue in amd & commonjs, use Vue in root [\#4](https://github.com/youzan/vant/pull/4) ([pangxie1991](https://github.com/pangxie1991))
-- 手机端样式细节调整，补充测试用例 [\#3](https://github.com/youzan/vant/pull/3) ([cookfront](https://github.com/cookfront))
-- 补充waterfall文档，依赖vue改为Vue [\#2](https://github.com/youzan/vant/pull/2) ([pangxie1991](https://github.com/pangxie1991))
-
-
-
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+**Bug Fixes**
+- 修复 Webpack 打包错误 [\#21](https://github.com/youzan/vant/pull/21) [@cookfront](https://github.com/cookfront)
+- 修复 Toast 关闭时未移除 Dom 节点的问题 [\#19](https://github.com/youzan/vant/pull/19) [@cookfront](https://github.com/cookfront)
+- 修复组件样式问题 [\#5](https://github.com/youzan/vant/pull/5) [@cookfront](https://github.com/cookfront)
