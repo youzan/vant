@@ -11,7 +11,7 @@
         v-model="messageValues[index]">
       </van-field>
       <van-field v-else
-        :key="goodsId + '-' + index"
+        :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="placeholderMap[message.type]"
