@@ -51,6 +51,7 @@
          <slot name="sku-messages">
             <van-sku-messages
               ref="skuMessages"
+              :collectionId="sku.collection_id"
               :messagePlaceholderMap="messagePlaceholderMap"
               :messages="sku.messages">
             </van-sku-messages>
