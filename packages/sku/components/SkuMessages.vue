@@ -3,7 +3,7 @@
     <template v-for="(message, index) in internalMessages">
       <template v-if="message.type === 'image'"></template>
       <van-field v-else-if="message.multiple == '1'"
-        :key="collectionId + '-' + index"
+        :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="placeholderMap.textarea"
@@ -11,7 +11,7 @@
         v-model="messageValues[index]">
       </van-field>
       <van-field v-else
-        :key="collectionId + '-' + index"
+        :key="goodsId + '-' + index"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="placeholderMap[message.type]"
@@ -40,7 +40,7 @@ export default {
   props: {
     messages: Array,
     messagePlaceholderMap: Object,
-    collectionId: Number
+    goodsId: [Number, String]
   },
 
   data() {

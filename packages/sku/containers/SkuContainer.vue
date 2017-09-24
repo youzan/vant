@@ -51,7 +51,7 @@
          <slot name="sku-messages">
             <van-sku-messages
               ref="skuMessages"
-              :collectionId="sku.collection_id"
+              :goodsId="goodsId"
               :messagePlaceholderMap="messagePlaceholderMap"
               :messages="sku.messages">
             </van-sku-messages>
@@ -99,6 +99,7 @@ export default {
 
   props: {
     goods: Object,
+    goodsId: [Number, String],
     initialSku: {
       type: Object,
       default() {
@@ -314,6 +315,7 @@ export default {
         return;
       }
       this.$emit(type, {
+        goodsId: this.goodsId,
         selectedNum: this.selectedNum,
         selectedSkuComb: this.selectedSkuComb,
         messages: this.getSkuMessages(),
