@@ -24,6 +24,7 @@ describe('Sku', (done) => {
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods,
         resetStepperOnHide: true
       }
@@ -74,6 +75,7 @@ describe('Sku', (done) => {
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods
       }
     });
@@ -120,6 +122,7 @@ describe('Sku', (done) => {
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods,
         quota: data.quota,
         quotaUsed: data.quota_used
@@ -160,6 +163,7 @@ describe('Sku', (done) => {
       propsData: {
         value: false,
         sku: newData.sku,
+        goodsId: newData.goods_id,
         goods: goods
       }
     });
@@ -178,6 +182,7 @@ describe('Sku', (done) => {
         initialSku,
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods
       }
     });
@@ -262,6 +267,7 @@ describe('Sku', (done) => {
         initialSku,
         value: true,
         sku: newData.sku,
+        goodsId: newData.goods_id,
         goods: goods
       }
     });
