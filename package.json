@@ -41,7 +41,7 @@
     "component"
   ],
   "author": "youzanfe",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
     "vue-lazyload": "^1.1.3",
