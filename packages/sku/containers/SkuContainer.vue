@@ -45,6 +45,7 @@
               :skuStockNum="sku.stock_num"
               :quota="quota"
               :quotaUsed="quotaUsed"
+              :disableStepperInput="disableStepperInput"
               :hideStock="hideStock">
             </van-sku-stepper>
           </slot>
@@ -133,6 +134,7 @@ export default {
       default: 200
     },
     resetStepperOnHide: Boolean,
+    disableStepperInput: Boolean,
     messagePlaceholderMap: {
       type: Object,
       default() {

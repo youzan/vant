@@ -8,11 +8,11 @@
       }">
     </button>
     <input
-      type="text"
+      type="number"
       class="van-stepper__input"
       :value="currentValue"
       @input="handleInputChange"
-      :disabled="disabled">
+      :disabled="disabled || disableInput">
     <button
       @click="handleChange('plus')"
       class="van-stepper__stepper van-stepper__plus"
@@ -42,6 +42,7 @@ export default {
       default: 1
     },
     disabled: Boolean,
+    disableInput: Boolean,
     defaultValue: {
       type: [String, Number],
       default: 1
@@ -91,8 +92,13 @@ export default {
   methods: {
     // 纠正value值
     correctValue(value) {
-      value = Math.max(this.min, value);
-      value = Math.min(this.max, value);
+      if (Number.isNaN(value)) {
+        value = this.min;
+      } else {
+        value = Math.max(this.min, value);
+        value = Math.min(this.max, value);
+      }
+
       return value;
     },
     handleInputChange(event) {

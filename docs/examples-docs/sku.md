@@ -16,6 +16,8 @@ export default {
       goodsId: data.goods_id,
       quota: data.quota,
       quotaUsed: data.quota_used,
+      disableStepperInput: true,
+      resetStepperOnHide: true,
       initialSku: {
         s1: '30349',
         s2: '1193'
@@ -62,10 +64,10 @@ Vue.component(Sku.name, Sku);
       :goods="goods"
       :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
-      :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
-      :reset-stepper-on-hide="true"
+      :reset-stepper-on-hide="resetStepperOnHide"
+      :disable-stepper-input="disableStepperInput"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
@@ -130,6 +132,7 @@ Vue.component(Sku.name, Sku);
 | quota | 限购数(0表示不限购) | Number  | 0 |  否 |
 | quotaUsed | 已经购买过的数量 | Number  | 0 |  否 |
 | resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | Boolean  | false |  否 |
+| disableStepperInput | 是否禁用sku中stepper的input框 | Boolean | false | 否 |
 | stepperTitle | 数量选择组件左侧文案 | String  | '购买数量' |  否 |
 | add-cart | 点击添加购物车回调 | Function(skuData: Object)  | - |  否 |
 | buy-clicked | 点击购买回调 | Function(skuData: Object)  | - |  否 |
