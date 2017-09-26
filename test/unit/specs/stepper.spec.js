@@ -60,6 +60,17 @@ describe('Stepper', () => {
     });
   });
 
+  it('only disable stepper input', () => {
+    wrapper = mount(Stepper, {
+      propsData: {
+        disableInput: true
+      }
+    });
+
+    const input = wrapper.find('.van-stepper__input')[0];
+    expect(input.hasAttribute('disabled', 'disabled')).to.be.true;
+  });
+
   it('update stepper value use v-model', (done) => {
     wrapper = mount(Stepper, {
       propsData: {
@@ -96,7 +107,14 @@ describe('Stepper', () => {
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.currentValue).to.equal(30);
       expect(eventStub.calledWith('input'));
-      done();
+
+      // value设置非数字时，则使用设置的最小值（默认1）
+      wrapper.vm.value = 'abc';
+      wrapper.update();
+      wrapper.vm.$nextTick(() => {
+        expect(wrapper.vm.currentValue).to.equal(1);
+        done();
+      });
     });
   });
 
