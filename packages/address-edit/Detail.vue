@@ -14,9 +14,9 @@
       @focus="handleFocus"
       @blur="handleBlur"
       >
-      <template v-if="value && isFocused" slot="icon">
-        <span v-if="isAndroid" class="van-address-edit-detail__finish-edit van-font--12">完成</span>
-        <van-icon v-else name="clear" />
+      <template slot="icon">
+        <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">完成</span>
+        <van-icon v-else-if="showIcon" name="clear"  />
       </template>
     </van-field>
 
@@ -70,6 +70,10 @@ export default {
   computed: {
     showSearchList() {
       return this.showSearchResult && this.isFocused && this.searchResult.length > 0;
+    },
+
+    showIcon() {
+      return this.value && this.isFocused;
     }
   },
 
@@ -89,11 +93,11 @@ export default {
     },
 
     onIconClick() {
-      // 安卓直接完成，不触发清除
       if (this.isAndroid) {
-        return;
+        this.$refs.root.querySelector('.van-field__control').blur();
+      } else {
+        this.$emit('input', '');
       }
-      this.$emit('input', '');
     },
 
     onSuggestSelect(express) {

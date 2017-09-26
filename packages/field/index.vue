@@ -15,11 +15,12 @@
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
-      v-on="$listeners"
       ref="textarea"
       class="van-field__control"
       :value="value"
       @input="onInput"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
     />
     <input
       v-else
@@ -29,6 +30,8 @@
       :type="type"
       :value="value"
       @input="onInput"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
     />
     <div
       v-if="hasIcon"

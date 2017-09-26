@@ -23,9 +23,14 @@
     margin-bottom: 10px;
   }
 
+  .van-icon-clear {
+    color: $gray-dark;
+  }
+
   &-detail {
     &__finish-edit {
       color: $blue;
+      font-size: 12px;
     }
 
     &__suggest-list {
@@ -39,7 +44,7 @@
     &__location {
       float: left;
       font-size: 18px;
-      color: #666;
+      color: $gray-darker;
     }
 
     &__item-info {
@@ -54,7 +59,7 @@
 
     &__subtitle {
       font-size: 12px;
-      color: #666;
+      color: $gray-darker;
     }
   }
 }

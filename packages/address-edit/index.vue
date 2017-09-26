@@ -105,7 +105,17 @@ export default {
     },
     addressInfo: {
       type: Object,
-      default: () => ({})
+      default: () => ({
+        user_name: '',
+        tel: '',
+        province: '',
+        city: '',
+        county: '',
+        area_code: '',
+        postal_code: '',
+        address_detail: '',
+        is_default: false
+      })
     },
     searchResult: {
       type: Array,
@@ -129,9 +139,12 @@ export default {
   },
 
   watch: {
-    addressInfo(val) {
-      this.currentInfo = val;
-      this.isEdit = !!val.id;
+    addressInfo: {
+      handler(val) {
+        this.currentInfo = val;
+        this.isEdit = !!val.id;
+      },
+      deep: true
     }
   },
 
@@ -191,8 +204,8 @@ export default {
         return !msg;
       });
 
-      if (isValid) {
-        this.$emit('save', this.currentInfo, this.isEdit);
+      if (isValid && !this.isSaving) {
+        this.$emit('save', this.currentInfo);
       }
     },
 
