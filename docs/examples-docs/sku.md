@@ -16,6 +16,8 @@ export default {
       goodsId: data.goods_id,
       quota: data.quota,
       quotaUsed: data.quota_used,
+      disableStepperInput: true,
+      resetStepperOnHide: true,
       initialSku: {
         s1: '30349',
         s2: '1193'
@@ -62,10 +64,10 @@ Vue.component(Sku.name, Sku);
       :goods="goods"
       :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
-      :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
-      :reset-stepper-on-hide="true"
+      :reset-stepper-on-hide="resetStepperOnHide"
+      :disable-stepper-input="disableStepperInput"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
