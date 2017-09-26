@@ -42,7 +42,7 @@ function handleScrollEvent() {
   // 判断是否到了底
   let needLoadMoreToLower = false;
   if (element === scrollEventTarget) {
-    needLoadMoreToLower = scrollEventTarget.scollHeight - targetBottom < this.offset;
+    needLoadMoreToLower = scrollEventTarget.scrollHeight - targetBottom < this.offset;
   } else {
     const elementBottom = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget) + Utils.getVisibleHeight(element);
     needLoadMoreToLower = elementBottom - Utils.getVisibleHeight(scrollEventTarget) < this.offset;
