@@ -14,10 +14,9 @@ describe('Dialog', () => {
       done();
     });
 
-    expect(document.querySelector('.van-dialog')).to.exist;
-    expect(document.querySelector('.van-dialog__cancel').style.display).to.equal('none');
-
     setTimeout(() => {
+      expect(document.querySelector('.van-dialog')).to.exist;
+      expect(document.querySelector('.van-dialog__cancel').style.display).to.equal('none');
       document.querySelector('.van-dialog__confirm').click();
     }, 500);
   });

@@ -1,0 +1,65 @@
+@import './common/var.css';
+
+.van-address-edit {
+  &__buttons {
+    padding: 20px 10px;
+  }
+
+  &__area {
+    .van-cell__title {
+      width: 90px;
+    }
+
+    .van-cell__value {
+      text-align: left;
+
+      span {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .van-button {
+    margin-bottom: 10px;
+  }
+
+  .van-icon-clear {
+    color: $gray-dark;
+  }
+
+  &-detail {
+    &__finish-edit {
+      color: $blue;
+      font-size: 12px;
+    }
+
+    &__suggest-list {
+      margin-left: -15px;
+
+      &::after {
+        border-top-width: 0;
+      }
+    }
+
+    &__location {
+      float: left;
+      font-size: 18px;
+      color: $gray-darker;
+    }
+
+    &__item-info {
+      margin-left: 26px;
+      line-height: 1.6;
+    }
+
+    &__title {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+      color: $gray-darker;
+    }
+  }
+}
