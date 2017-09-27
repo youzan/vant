@@ -24,8 +24,7 @@
     />
     <input
       v-else
-      v-bind="$attrs"
-      v-on="$listeners"      
+      v-bind="$attrs"  
       class="van-field__control"
       :type="type"
       :value="value"
