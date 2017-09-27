@@ -242,7 +242,6 @@ describe('AddressEdit', () => {
             done();
           });
           document.querySelector('.van-dialog__confirm').click();
-          done();
         }, 300);
       });
     }, 300);

@@ -4,15 +4,9 @@ import areaList from '../mock/area.json';
 
 export default {
   data() {
-    setTimeout(() => {
-      this.test.user_name = 'b';
-    }, 1000);
     return {
       areaList,
-      searchResult: [],
-      test: {
-        user_name: 'a'
-      }
+      searchResult: []
     }
   },
 
@@ -61,7 +55,6 @@ Vue.component(AddressEdit.name, AddressEdit);
 :::demo 基础用法
 ```html
 <van-address-edit
-  :address-info="test"
   :area-list="areaList"
   :show-postal="true"
   :show-set-default="true"
