@@ -1,35 +1,51 @@
 <template>
-  <div class="van-tab__pane" :class="classNames">
+  <div :class="['van-tab__pane', { 'van-tab__pane--select': key === $parent.curActive }]">
     <slot></slot>
   </div>
 </template>
 
 <script>
+import findParent from '../mixins/findParent';
+
 export default {
   name: 'van-tab',
+
+  mixins: [findParent],
+
   props: {
-    // 选项卡头显示文字
     title: {
       type: String,
       required: true
     },
     disabled: Boolean
   },
-  data() {
-    const nextIndex = this.$parent.tabs.length;
-    this.$parent.tabs.push({
-      title: this.title,
-      disabled: this.disabled,
-      index: nextIndex
-    });
 
+  data() {
+    this.findParentByComponentName('van-tabs');
+    const nextIndex = this.parentGroup.tabs.length;
+    this.updateParentData(nextIndex);
     return {
       key: nextIndex
     };
   },
-  computed: {
-    classNames() {
-      return { 'van-tab__pane--select': this.key === this.$parent.curActive };
+
+  watch: {
+    title() {
+      this.updateParentData();
+    },
+    disabled() {
+      this.updateParentData();
+    }
+  },
+
+  methods: {
+    updateParentData(nextIndex) {
+      const index = arguments.length ? nextIndex : this.key;
+      this.parentGroup.tabs.splice(index, 1, {
+        title: this.title,
+        disabled: this.disabled,
+        index
+      });
     }
   }
 };

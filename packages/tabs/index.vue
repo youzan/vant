@@ -8,9 +8,9 @@
             v-for="(tab, index) in tabs"
             :key="index"
             class="van-tab van-hairline"
-            :class="{'van-tab--active': index === curActive}"
+            :class="{ 'van-tab--active': index === curActive }"
             ref="tabkey"
-            @click="handleTabClick(index, tab)"
+            @click="handleTabClick(index)"
           >
             {{ tab.title }}
           </div>
@@ -27,9 +27,9 @@
         v-for="(tab, index) in tabs"
         :key="index"
         class="van-tab van-hairline"
-        :class="{'van-tab--active': index === curActive}"
+        :class="{ 'van-tab--active': index === curActive }"
         ref="tabkey"
-        @click="handleTabClick(index, tab)"
+        @click="handleTabClick(index)"
       >
         {{ tab.title }}
       </div>
@@ -134,14 +134,8 @@
     },
 
     methods: {
-      /**
-       * tab点击事件
-       *
-       * @param {number} index tab在tabs中的索引
-       * @param {Object} el tab的vue实例
-       */
-      handleTabClick(index, el) {
-        if (el.disabled) {
+      handleTabClick(index) {
+        if (this.tabs[index].disabled) {
           this.$emit('disabled', index);
           return;
         }
