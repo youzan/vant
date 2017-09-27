@@ -21,8 +21,8 @@
     width: 100%;
     height: 100%;
     border: inherit;
-    border-color: #000;
-    background-color: #000;
+    border-color: $black;
+    background-color: $black;
     border-radius: inherit;/* inherit parent's border radius */
     transform: translate3d(-50%, -50%, 0); 
   }
