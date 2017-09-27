@@ -1,5 +1,34 @@
 ## 更新日志
 
+## [v0.9.9](https://github.com/youzan/vant/tree/v0.9.9) (2017-09-26)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.8...v0.9.9)
+
+**处理的 Issue:**
+
+- npm无法安装 npm WARN vant@0.9.7 requires a peer of vue@2.4.2 but none was installed.   [\#141](https://github.com/youzan/vant/issues/141)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- 增加单独禁用stepper input功能 [\#146](https://github.com/youzan/vant/pull/146) ([w91](https://github.com/w91))
+- 优化：waterfall 文档和组件优化 [\#145](https://github.com/youzan/vant/pull/145) ([pangxie1991](https://github.com/pangxie1991))
+- fix: wrong license in package.json [\#144](https://github.com/youzan/vant/pull/144) ([airyland](https://github.com/airyland))
+
+## [v0.9.8](https://github.com/youzan/vant/tree/v0.9.8) (2017-09-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.7...v0.9.8)
+
+**非兼容更新和新特性:**
+
+- update changelog.md [\#140](https://github.com/youzan/vant/pull/140) ([chenjiahan](https://github.com/chenjiahan))
+- 	add AddressList component [\#138](https://github.com/youzan/vant/pull/138) ([chenjiahan](https://github.com/chenjiahan))
+
+**处理的 Issue:**
+
+- pull-refresh 下拉成功后如何关闭加载，给的例子关闭不了 [\#139](https://github.com/youzan/vant/issues/139)
+
+**合并的 Pull Request (可能有不兼容改动):**
+
+- fix: sku message key [\#142](https://github.com/youzan/vant/pull/142) ([w91](https://github.com/w91))
+
 ## [v0.9.7](https://github.com/youzan/vant/tree/v0.9.7) (2017-09-21)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.6...v0.9.7)
 
