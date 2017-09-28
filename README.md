@@ -57,14 +57,6 @@ Vue.use(vant);
  
 ## Development
 
-### Add a new component
-
-```shell
-make init componentName
-```
-
-### Start coding
-
 Start development mode:
 
 ```shell
