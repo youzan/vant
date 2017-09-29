@@ -34,3 +34,11 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss">
+.zan-doc-content--quickstart {
+  h3:not(:first-of-type) {
+    margin-top: 35px;
+  }
+}
+</style>

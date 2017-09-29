@@ -10,39 +10,42 @@ npm i vant -S
 
 ### 引入组件
 
-#### 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+#### 方式一. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+```bash
+# 安装 babel-plugin-import 插件
+npm i babel-plugin-import -D
+```
 
-   ```js
-   // .babelrc or babel-loader option
-   {
-     "plugins": [
-       ["import", { "libraryName": "vant", "style": true }]
-     ]
-   }
-   ```
-   
-   接着你可以直接引入 vant 组件，等价于下方的按需引入组件
+```js
+// 在 .babelrc 或 babel-loader 中添加插件配置
+{
+  "plugins": [
+    ["import", { "libraryName": "vant", "style": true }]
+  ]
+}
+```
 
-   ```js
-   // 模块化地引入 js 和 css, 通过 babel-plugin-import 插件解析
-   import { Button } from 'vant';
-   ```
+接着你可以在代码中直接引入 Vant 组件，插件会自动将代码转化为方式二中的按需引入形式。
 
-#### 按需引入组件
+```js
+import { Button } from 'vant';
+```
 
-   ```jsx
-   import { Button } from 'vant/lib/button';
-   import 'vant/lib/vant-css/button.css';
-   ```
+#### 方式二. 按需引入组件
+
+```js
+import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/button.css';
+```
  
-#### 导入所有组件
- 
-```javascript
+#### 方式三. 导入所有组件
+
+```js
 import Vue from 'vue';
-import vant from 'vant';
+import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 
-Vue.use(vant);
+Vue.use(Vant);
 ```
 
 ### 自定义主题
@@ -66,9 +69,8 @@ cd packages/vant-css
 
 修改你下载主题对应的样式即可，然后引入你修改后的主题。
 
-### vue-cli模板
-
-可以使用`vue-cli`来初始化`vant`的通用模板：
+### vue-cli 模板
+可以使用`vue-cli`来初始化`Vant`的通用模板：
 
 ```shell
 vue init youzan/vue-cli-template-vant projectName
