@@ -227,6 +227,10 @@ module.exports = {
                 "title": "Area 省市区选择"
               },
               {
+                "path": "/contact",
+                "title": "Contact 联系人"
+              },
+              {
                 "path": "/coupon",
                 "title": "Coupon 优惠券选择器"
               },
