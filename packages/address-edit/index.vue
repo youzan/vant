@@ -76,7 +76,7 @@ import Dialog from '../dialog';
 import Area from '../area';
 import Detail from './Detail';
 import SwitchCell from '../switch-cell';
-import validateMobile from 'zan-utils/validate/mobile';
+import validateMobile from '../utils/validate/mobile';
 
 export default {
   name: 'van-address-edit',

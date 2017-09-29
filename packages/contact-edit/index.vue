@@ -31,7 +31,7 @@ import Button from '../button';
 import CellGroup from '../cell-group';
 import Dialog from '../dialog';
 import Toast from '../toast';
-import validateMobile from 'zan-utils/validate/mobile';
+import validateMobile from '../utils/validate/mobile';
 
 export default {
   name: 'van-contact-edit',
