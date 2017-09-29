@@ -117,6 +117,7 @@
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.4.2",
     "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0",
     "zan-doc": "0.2.17"
