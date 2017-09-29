@@ -1,4 +1,3 @@
-import find from 'lodash/find';
 /*
   normalize sku tree
 
@@ -50,12 +49,11 @@ export const isAllSelected = (skuTree, selectedSku) => {
 
 // 根据已选择的sku获取skuComb
 export const getSkuComb = (skuList, selectedSku) => {
-  const skuComb = find(skuList, skuComb => {
+  const skuComb = skuList.filter(skuComb => {
     return Object.keys(selectedSku).every(skuKeyStr => {
-      // 后端给的key有时数字有时字符串，需要兼容=。=
-      return skuComb[skuKeyStr] == selectedSku[skuKeyStr]; // eslint-disable-line
+      return String(skuComb[skuKeyStr]) === String(selectedSku[skuKeyStr]); // eslint-disable-line
     });
-  });
+  })[0];
   return skuComb;
 };
 
@@ -67,7 +65,7 @@ export const getSelectedSkuValues = (skuTree, selectedSku) => {
     const skuValueId = selectedSku[skuKeyStr];
 
     if (skuValueId) {
-      const skuValue = find(skuValues, skuValue => skuValue.id === skuValueId);
+      const skuValue = skuValues.filter(skuValue => skuValue.id === skuValueId)[0];
       skuValue && selectedValues.push(skuValue);
     }
     return selectedValues;

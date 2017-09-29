@@ -41,7 +41,7 @@ import Icon from '../icon';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import UA from 'zan-utils/browser/ua_browser';
+import isAndroid from '../utils/env/is-andriod';
 
 export default {
   name: 'van-address-edit-detail',
@@ -62,7 +62,7 @@ export default {
 
   data() {
     return {
-      isAndroid: UA.isAndroid(),
+      isAndroid: isAndroid(),
       isFocused: false
     };
   },

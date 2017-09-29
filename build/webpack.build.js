@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const config = require('./webpack.config.dev.js');
-const isMinify = process.argv.indexOf('-p') !== -1;
+const isMinify = process.argv.indexOf('-p') !== -1; 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 config.entry = {
   'vant': './packages/index.js'
@@ -38,6 +39,11 @@ config.plugins = [
   }),
   new webpack.optimize.ModuleConcatenationPlugin()
 ];
+
+// analyze bundle size if need
+// if (isMinify) {
+//   config.plugins.push(new BundleAnalyzerPlugin());
+// }
 
 delete config.devtool;
 
