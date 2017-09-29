@@ -146,4 +146,15 @@ describe('Tabs', () => {
       done();
     }, 1200);
   });
+
+  it('watch tab props changes', (done) => {
+    wrapper = mount(TabsTestComponent);
+    wrapper.vm.firstTabTitle = '测试标题';
+    wrapper.vm.firstTabDisabled = true;
+
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.find('.van-tab')[0].text().replace(/\n|\s/g, '')).to.equal('测试标题');
+      done();
+    });
+  });
 });

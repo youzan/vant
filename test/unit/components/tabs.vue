@@ -1,6 +1,6 @@
 <template>
   <van-tabs :active="active" :duration="duration" @click="handleTabClick" @disabled="handleTabDisabledClick">
-    <van-tab title="选项一">内容一</van-tab>
+    <van-tab :title="firstTabTitle" :disabled="firstTabDisabled">内容一</van-tab>
     <van-tab title="选项二">内容二</van-tab>
     <van-tab title="选项三" disabled>内容三</van-tab>
     <van-tab title="选项四">内容四</van-tab>
@@ -15,6 +15,16 @@ export default {
   components: {
     'van-tab': Tab,
     'van-tabs': Tabs
+  },
+
+  props: {
+    firstTabTitle: {
+      type: String,
+      default: '选项一'
+    },
+    firstTabDisabled: {
+      type: Boolean
+    }
   },
 
   data() {

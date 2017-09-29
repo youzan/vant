@@ -1,5 +1,26 @@
 ## 更新日志
 
+### [0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
+`2017-09-26`
+
+**Improvements**
+- Sku：支持禁用 Stepper [\#146](https://github.com/youzan/vant/pull/146) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+- 修复 packages.json 中 license 标注错误 [\#144](https://github.com/youzan/vant/pull/144) [@airyland](https://github.com/airyland)
+- 修复 Waterfall 滚动计算错误的问题 [\#145](https://github.com/youzan/vant/pull/145) [@pangxie1991](https://github.com/pangxie1991)
+
+
+### [0.9.8](https://github.com/youzan/vant/tree/v0.9.8)
+`2017-09-24`
+
+**Improvements**
+- 新增 AddressList 组件 [\#138](https://github.com/youzan/vant/pull/138) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 changelog 结构 [\#140](https://github.com/youzan/vant/pull/140) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Sku 留言渲染错误 [\#142](https://github.com/youzan/vant/pull/142) [@w91](https://github.com/w91)
+
 ### [0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
 `2017-09-21`
 

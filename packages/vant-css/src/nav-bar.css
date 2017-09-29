@@ -10,6 +10,7 @@
 
   .van-icon {
     color: $blue;
+    vertical-align: middle;
   }
 
   &__arrow {
@@ -52,6 +53,7 @@
     margin: 0 -15px;
     padding: 0 15px;
     display: inline-block;
+    vertical-align: middle;
 
     &:active {
       background-color: $active-color;
