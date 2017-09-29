@@ -43,7 +43,7 @@ if (!Vue.prototype.$isServer) {
     }
 
     cancelTranslateElement(element);
-    element.style[transformProperty] += ' translate(' + (x ? (x + 'px') : '0px') + ',' + (y ? (y + 'px') : '0px') + ')';
+    element.style[transformProperty] += ' translate(' + (x ? (x + 'px') : '0px') + ',' + (y ? (y + 'px') : '0px') + ') translateZ(0px)';
   };
 
   var cancelTranslateElement = function(element) {
