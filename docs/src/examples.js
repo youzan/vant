@@ -21,7 +21,7 @@ routesConfig.push({
   component: DemoList
 });
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: '/zanui/vue/examples',
   routes: routesConfig
 });
