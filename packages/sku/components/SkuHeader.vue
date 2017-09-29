@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import find from 'lodash/find';
 import urlHelper from 'zan-utils/url/helper';
 
 export default {
@@ -53,9 +52,13 @@ export default {
       if (!id) return;
 
       // 目前skuImg都挂载在skuTree中s1那类sku上
-      const treeItem = find(this.skuTree, (treeItem) => treeItem.k_s === 's1') || {};
-      const matchedSku = find(treeItem.v, (skuValue) => skuValue.id === id);
+      const treeItem = this.skuTree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
 
+      if (!treeItem.v) {
+        return;
+      }
+
+      const matchedSku = treeItem.v.filter(skuValue => skuValue.id === id)[0];
       if (matchedSku && matchedSku.imgUrl) {
         return urlHelper.getCdnImageUrl(matchedSku.imgUrl);
       }
