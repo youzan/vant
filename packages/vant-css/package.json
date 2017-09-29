@@ -14,12 +14,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^7.1.4",
     "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.2.0",
+    "gulp-clean-css": "^3.9.0",
     "gulp-postcss": "^7.0.0",
-    "postcss-easy-import": "^2.1.0",
+    "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0"
-  },
-  "dependencies": {}
+  }
 }
