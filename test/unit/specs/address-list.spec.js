@@ -63,7 +63,7 @@ describe('AddressList', () => {
     wrapper.find('.van-address-list__edit')[0].trigger('click');
   });
 
-  it('listen to change event', (done) => {
+  it('listen to select event', (done) => {
     wrapper = mount(AddressList, {
       propsData: {
         value: '1',
@@ -71,7 +71,7 @@ describe('AddressList', () => {
       }
     });
 
-    wrapper.vm.$on('change', (item, index) => {
+    wrapper.vm.$on('select', (item, index) => {
       expect(item.id).to.equal('3');
       done();
     });

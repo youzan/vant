@@ -13,6 +13,8 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
 import ContactCard from './contact-card';
+import ContactEdit from './contact-edit';
+import ContactList from './contact-list';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
@@ -72,6 +74,8 @@ const components = [
   CheckboxGroup,
   Col,
   ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,
@@ -141,6 +145,8 @@ export {
   CheckboxGroup,
   Col,
   ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,

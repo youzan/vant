@@ -8,7 +8,7 @@
       <template v-else-if="type === 'edit'">
         <van-icon class="van-contact-card__icon" name="contact" />
         <div class="van-contact-card__text">
-          <p>联系人：{{ username }}</p>
+          <p>联系人：{{ name }}</p>
           <p>联系电话：{{ tel }}</p>
         </div>
       </template>
@@ -32,7 +32,7 @@ export default {
       type: String,
       default: 'add'
     },
-    username: {
+    name: {
       type: String
     },
     tel: {

@@ -52,8 +52,10 @@
 /* business components */
 @import './address-edit.css';
 @import './address-list.css';
+@import './contact-card.css';
+@import './contact-list.css';
+@import './contact-edit.css';
 @import './coupon-list.css';
 @import './goods-action.css';
 @import './submit-bar.css';
 @import './sku.css';
-@import './contact-card.css';

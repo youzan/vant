@@ -231,7 +231,6 @@ describe('AddressEdit', () => {
     wrapper.vm.onDeleteAddress();
 
     setTimeout(() => {
-      expect(document.querySelectorAll('.van-dialog').length).to.equal(0);
       wrapper.vm.isDeleting = false;
       wrapper.vm.$nextTick(() => {
         deleteButton.trigger('click');
