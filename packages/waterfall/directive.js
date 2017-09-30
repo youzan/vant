@@ -32,7 +32,6 @@ function doBindEvent() {
 function handleScrollEvent() {
   const element = this.el;
   const scrollEventTarget = this.scrollEventTarget;
-
   // 已被禁止的滚动处理
   if (this.disabled) return;
 
