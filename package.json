@@ -44,8 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
-    "vue-lazyload": "^1.1.3",
-    "zan-utils": "^1.0.14"
+    "vue-lazyload": "^1.1.3"
   },
   "peerDependencies": {
     "vue": "2.4.2"
