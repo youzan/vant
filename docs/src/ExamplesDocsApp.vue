@@ -24,11 +24,11 @@ export default {
 
   methods: {
     getSimulatorPath() {
-      const dir = location.pathname.split('/').pop();
+      const dir = location.hash.split('/').pop();
       if (dir === 'quickstart' || dir === 'changelog') {
         return '/zanui/vue/examples';
       } else {
-        return `/zanui/vue/examples/component/${dir}`;
+        return `/zanui/vue/examples#/component/${dir}`;
       }
     }
   }
