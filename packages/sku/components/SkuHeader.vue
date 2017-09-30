@@ -12,8 +12,6 @@
 </template>
 
 <script>
-import urlHelper from 'zan-utils/url/helper';
-
 export default {
   name: 'van-sku-header',
 
@@ -32,7 +30,7 @@ export default {
     goodsImg() {
       const s1Id = this.selectedSku.s1;
       const skuImg = this.getSkuImg(s1Id);
-
+      // 优先使用选中sku的图片
       return skuImg || this.goods.picture;
     },
     price() {
@@ -60,7 +58,7 @@ export default {
 
       const matchedSku = treeItem.v.filter(skuValue => skuValue.id === id)[0];
       if (matchedSku && matchedSku.imgUrl) {
-        return urlHelper.getCdnImageUrl(matchedSku.imgUrl);
+        return matchedSku.imgUrl;
       }
     }
   }

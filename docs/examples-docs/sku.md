@@ -160,11 +160,11 @@ sku组件默认划分好了若干区块，这些区块都定义成了slot，可�
         "v": [{
             "id": "30349", // skuValueId：规格值id 
             "name": "红色", // skuValueName：规格值名称 
-            "imgUrl": "upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg" // 规格类目图片，暂时只能第一个规格类目可以定义图片
+            "imgUrl": "https:\/\/img.yzcdn.cn\/upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg" // 规格类目图片，只有第一个规格类目可以定义图片
         }, {
             "id": "1215",
             "name": "蓝色",
-            "imgUrl": "upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg"
+            "imgUrl": "https:\/\/img.yzcdn.cn\/upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg"
         }],
         "k_s": "s1" // skuKeyStr：sku组合列表（下方list）中当前类目对应的key值，value值会是从属于当前类目的一个规格值id 
     }, ...],
