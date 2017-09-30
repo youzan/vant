@@ -72,7 +72,7 @@ describe('Waterfall', () => {
   });
 
   it('test waterfall function after hide', (done) => {
-    const waterfallLowerSpy = sinon.spy(function() {});
+    const waterfallLowerSpy = sinon.spy();
     wrapper = mount(HiddenWaterfall, {
       attachToDocument: true,
       propsData: {
