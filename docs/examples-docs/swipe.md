@@ -37,9 +37,10 @@ export default {
 
 ### 使用指南
 ``` javascript
-import { Swipe } from 'vant';
+import { Swipe, SwipeItem } from 'vant';
 
 Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 ```
 
 ### 代码演示
