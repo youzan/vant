@@ -16,7 +16,7 @@ const styleLoaders = [
 extractExample({
   src: path.resolve(__dirname, '../docs/examples-docs'),
   dist: path.resolve(__dirname, '../docs/examples-dist'),
-  nav: docConfig['zh-CN'].nav,
+  nav: docConfig,
   watch: !isProduction
 });
 

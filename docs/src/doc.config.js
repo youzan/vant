@@ -251,5 +251,21 @@ module.exports = {
         ]
       }
     ]
+  },
+  "en-US": {
+    header: {
+      'Homepage': 'https://www.youzanyun.com/zanui',
+      'PC': 'https://www.youzanyun.com/zanui/react',
+      'Mobile': 'https://www.youzanyun.com/zanui/vue',
+      'Weapp': 'https://github.com/youzan/zanui-weapp'
+    },
+    footer: {
+      github: 'https://github.com/youzan/vant',
+      nav: {
+        'Youzan': 'https://www.youzan.com/',
+        'Join us': 'https://job.youzan.com/',
+        'Feedback': 'https://github.com/youzan/vant/issues'
+      }
+    }
   }
 }
