@@ -5,7 +5,8 @@ module.exports = {
       '首页': 'https://www.youzanyun.com/zanui',
       'PC端': 'https://www.youzanyun.com/zanui/react',
       '移动端': 'https://www.youzanyun.com/zanui/vue',
-      '微信小程序': 'https://github.com/youzan/zanui-weapp'
+      '微信小程序': 'https://github.com/youzan/zanui-weapp',
+      'English': '#/en-US/'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
@@ -257,7 +258,8 @@ module.exports = {
       'Homepage': 'https://www.youzanyun.com/zanui',
       'PC': 'https://www.youzanyun.com/zanui/react',
       'Mobile': 'https://www.youzanyun.com/zanui/vue',
-      'Weapp': 'https://github.com/youzan/zanui-weapp'
+      'Weapp': 'https://github.com/youzan/zanui-weapp',
+      '中文': '#/zh-CN/'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
@@ -266,6 +268,238 @@ module.exports = {
         'Join us': 'https://job.youzan.com/',
         'Feedback': 'https://github.com/youzan/vant/issues'
       }
-    }
+    },
+    nav: [
+      {
+        "name": "开发指南",
+        "groups": [
+          {
+            "list": [
+              {
+                "path": "/quickstart",
+                "title": "Quickstart",
+                noExample: true
+              },
+              {
+                "path": "/changelog",
+                "title": "Changelog",
+                noExample: true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Components",
+        "showInMobile": true,
+        "groups": [
+          {
+            "groupName": "Base Components",
+            "list": [
+              {
+                "path": "/layout",
+                "title": "Layout"
+              },
+              {
+                "path": "/badge",
+                "title": "Badge"
+              },
+              {
+                "path": "/button",
+                "title": "Button"
+              },
+              {
+                "path": "/card",
+                "title": "Card"
+              },
+              {
+                "path": "/cell",
+                "title": "Cell"
+              },
+              {
+                "path": "/icon",
+                "title": "Icon"
+              },
+              {
+                "path": "/image-preview",
+                "title": "ImagePreview"
+              },
+              {
+                "path": "/lazyload",
+                "title": "Lazyload"
+              },
+              {
+                "path": "/loading",
+                "title": "Loading"
+              },
+              {
+                "path": "/nav-bar",
+                "title": "NavBar"
+              },
+              {
+                "path": "/notice-bar",
+                "title": "NoticeBar"
+              },
+              {
+                "path": "/panel",
+                "title": "Panel"
+              },
+              {
+                "path": "/popup",
+                "title": "Popup"
+              },
+              {
+                "path": "/progress",
+                "title": "Progress"
+              },
+              {
+                "path": "/search",
+                "title": "Search"
+              },
+              {
+                "path": "/stepper",
+                "title": "Stepper"
+              },
+              {
+                "path": "/steps",
+                "title": "Steps"
+              },
+              {
+                "path": "/swipe",
+                "title": "Swipe"
+              },
+              {
+                "path": "/tab",
+                "title": "Tab"
+              },
+              {
+                "path": "/tag",
+                "title": "Tag"
+              },
+              {
+                "path": "/waterfall",
+                "title": "Waterfall"
+              }
+            ]
+          },
+          {
+            "groupName": "Form",
+            "list": [
+              {
+                "path": "/checkbox",
+                "title": "Checkbox 复选框"
+              },
+              {
+                "path": "/field",
+                "title": "Field 输入框"
+              },
+              {
+                "path": "/number-keyboard",
+                "title": "NumberKeyboard 数字键盘"
+              },
+              {
+                "path": "/password-input",
+                "title": "PasswordInput 密码输入框"
+              },
+              {
+                "path": "/radio",
+                "title": "Radio 单选框"
+              },
+              {
+                "path": "/switch",
+                "title": "Switch 开关"
+              },
+              {
+                "path": "/uploader",
+                "title": "Uploader 图片上传"
+              }
+            ]
+          },
+          {
+            "groupName": "操作反馈",
+            "list": [
+              {
+                "path": "/actionsheet",
+                "title": "Actionsheet 行动按钮"
+              },
+              {
+                "path": "/datetime-picker",
+                "title": "DatetimePicker 时间选择"
+              },
+              {
+                "path": "/dialog",
+                "title": "Dialog 弹出框"
+              },
+              {
+                "path": "/picker",
+                "title": "Picker 选择器"
+              },
+              {
+                "path": "/pull-refresh",
+                "title": "PullRefresh 下拉刷新"
+              },
+              {
+                "path": "/toast",
+                "title": "Toast 轻提示"
+              }
+            ]
+          },
+          {
+            "groupName": "高阶组件",
+            "list": [
+              {
+                "path": "/cell-swipe",
+                "title": "CellSwipe 滑动单元格"
+              },
+              {
+                "path": "/switch-cell",
+                "title": "SwitchCell 开关单元格"
+              },
+              {
+                "path": "/tree-select",
+                "title": "TreeSelect 分类选择"
+              },
+            ]
+          },
+          {
+            "groupName": "业务组件",
+            "list": [
+              {
+                "path": "/address-edit",
+                "title": "AddressEdit 地址编辑"
+              },
+              {
+                "path": "/address-list",
+                "title": "AddressList 地址列表"
+              },
+              {
+                "path": "/area",
+                "title": "Area 省市区选择"
+              },
+              {
+                "path": "/contact",
+                "title": "Contact 联系人"
+              },
+              {
+                "path": "/coupon",
+                "title": "Coupon 优惠券选择器"
+              },
+              {
+                "path": "/goods-action",
+                "title": "GoodsAction 商品页行动点"
+              },
+              {
+                "path": "/submit-bar",
+                "title": "SubmitBar 提交订单栏"
+              },
+              {
+                "path": "/sku",
+                "title": "Sku 商品规格弹层"
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

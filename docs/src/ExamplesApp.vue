@@ -4,6 +4,6 @@
 
 <style lang="postcss">
 body {
-  -webkit-font-smoothing: antialiased;    
+  -webkit-font-smoothing: antialiased;
 }
 </style>

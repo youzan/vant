@@ -1,7 +1,10 @@
+import isMobile from './utils/is-mobile';
+import { iframeReady } from './utils/iframe';
+
 const userLang = window.localStorage.getItem('VANT_LANGUAGE') || window.navigator.language || 'en-US';
-let defaultLang = '/en-US';
+let defaultLang = 'en-US';
 if (userLang.indexOf('zh-') !== -1) {
-  defaultLang = '/zh-CN';
+  defaultLang = 'zh-CN';
 }
 
 let currentLang = defaultLang;
@@ -11,5 +14,19 @@ export function getLang() {
 }
 
 export function setLang(lang) {
+  window.localStorage.setItem('VANT_LANGUAGE', lang);
   currentLang = lang;
 }
+
+window.setLang = setLang;
+
+window.syncLang = function syncLang() {
+  const isInIframe = window !== window.top;
+  const iframe = document.querySelector('iframe');
+
+  if (!isInIframe && !isMobile && iframe) {
+    iframeReady(iframe, () => {
+      iframe.contentWindow.setLang(currentLang);
+    });
+  }
+};

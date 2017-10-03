@@ -1,24 +1,38 @@
 import docConfig from './doc.config';
 import { getLang } from './lang';
+import DemoList from './components/demo-list';
 import componentDocs from '../examples-dist/entry-docs';
 import componentDemos from '../examples-dist/entry-demos';
 import './iframe-router';
 
-const defaultLang = getLang();
-// const navs = docConfig['zh-CN'].nav;
-// const navConfig = docConfig;
-
 const registerRoute = (isExample) => {
   const route = [{
     path: '/',
-    redirect: `/${defaultLang}/`
+    redirect: to => {
+      return `/${getLang()}/`;
+    }
   }, {
     path: '*',
-    redirect: `/${defaultLang}/`
+    redirect: to => {
+      return `/${getLang()}/`;
+    }
   }];
 
   Object.keys(docConfig).forEach((lang, index) => {
-    const navs = docConfig[lang];
+    if (isExample) {
+      route.push({
+        path: `/${lang}`,
+        component: DemoList,
+        meta: { lang }
+      });
+    } else {
+      route.push({
+        path: `/${lang}`,
+        redirect: `/${lang}/component/quickstart`
+      });
+    }
+
+    const navs = docConfig[lang].nav || [];
     navs.forEach(nav => {
       if (isExample && !nav.showInMobile) {
         return;
@@ -41,7 +55,8 @@ const registerRoute = (isExample) => {
         const name = lang + '/' + path.replace('/', '');
         route.push({
           path: `/${lang}/component${path}`,
-          component: isExample ? componentDemos[name] : componentDocs[name]
+          component: isExample ? componentDemos[name] : componentDocs[name],
+          meta: { lang }
         });
       }
     }

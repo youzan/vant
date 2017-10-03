@@ -1,7 +1,7 @@
 ## Sku 商品购买组件
 
 <script>
-import data from '../mock/sku';
+import data from '../../mock/sku';
 
 const goods = data.goods_info;
 goods.picture = goods.picture[0];
