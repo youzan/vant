@@ -1,9 +1,9 @@
 import docConfig from './doc.config';
-import { getLang } from './lang';
+import { getLang } from './utils/lang';
 import DemoList from './components/demo-list';
 import componentDocs from '../examples-dist/entry-docs';
 import componentDemos from '../examples-dist/entry-demos';
-import './iframe-router';
+import './utils/iframe-router';
 
 const registerRoute = (isExample) => {
   const route = [{

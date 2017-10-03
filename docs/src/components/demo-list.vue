@@ -13,12 +13,11 @@
 <script>
 import docConfig from '../doc.config';
 import MobileNav from './mobile-nav';
-import { getLang } from '../lang';
+import { getLang } from '../utils/lang';
 
 export default {
   data() {
     return {
-      base: 'component',
       docConfig,
       lang: getLang()
     };
@@ -37,6 +36,10 @@ export default {
   },
 
   computed: {
+    base() {
+      return `${this.lang}/component`;
+    },
+
     navList() {
       return this.docConfig[this.lang].nav || [];
     }

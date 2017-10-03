@@ -8,7 +8,7 @@
 
 <script>
 import docConfig from './doc.config';
-import { getLang } from './lang';
+import { getLang } from './utils/lang';
 
 export default {
   data() {

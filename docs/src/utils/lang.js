@@ -1,5 +1,5 @@
-import isMobile from './utils/is-mobile';
-import { iframeReady } from './utils/iframe';
+import isMobile from './is-mobile';
+import { iframeReady } from './iframe';
 
 const userLang = window.localStorage.getItem('VANT_LANGUAGE') || window.navigator.language || 'en-US';
 let defaultLang = 'en-US';
