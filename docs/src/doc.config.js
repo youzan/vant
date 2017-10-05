@@ -57,7 +57,7 @@ module.exports = {
               },
               {
                 "path": "/button",
-                "title": "Button - - 按钮"
+                "title": "Button - 按钮"
               },
               {
                 "path": "/card",
@@ -65,7 +65,7 @@ module.exports = {
               },
               {
                 "path": "/cell",
-                "title": "Cell - - 单元格"
+                "title": "Cell - 单元格"
               },
               {
                 "path": "/icon",
@@ -73,7 +73,7 @@ module.exports = {
               },
               {
                 "path": "/image-preview",
-                "title": "ImagePreview - - 图片预览"
+                "title": "ImagePreview - 图片预览"
               },
               {
                 "path": "/lazyload",
