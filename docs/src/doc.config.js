@@ -6,10 +6,7 @@ module.exports = {
       'PC端': 'https://www.youzanyun.com/zanui/react',
       '移动端': 'https://www.youzanyun.com/zanui/vue',
       '微信小程序': 'https://github.com/youzan/zanui-weapp',
-      '多语言': {
-        'English': '#/en-US/',
-        '中文': '#/zh-CN'
-      }
+      'English': '#/en-US/'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
@@ -262,10 +259,7 @@ module.exports = {
       'PC': 'https://www.youzanyun.com/zanui/react',
       'Mobile': 'https://www.youzanyun.com/zanui/vue',
       'Weapp': 'https://github.com/youzan/zanui-weapp',
-      'Translations': {
-        '中文': '#/zh-CN',
-        'English': '#/en-US/'
-      }
+      '中文': '#/zh-CN'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
