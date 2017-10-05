@@ -31,7 +31,7 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js',
     umdNamedDefine: true,
-    chunkFilename: 'async.[name].js'
+    chunkFilename: 'async_[name].js'
   },
   devServer: {
     host: '0.0.0.0',
