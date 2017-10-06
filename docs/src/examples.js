@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './ExamplesApp';
 import routes from './router.config';
+import { setLang } from './utils/lang';
 import Vant, { Lazyload } from 'packages';
 import ZanDoc from 'zan-doc';
 import 'packages/vant-css/src/index.css';
@@ -26,7 +27,7 @@ router.afterEach((route) => {
   if (container) {
     document.querySelector('.examples-container').scrollTop = 0;
   }
-  window.setLang(route.meta.lang);
+  setLang(route.meta.lang);
 });
 
 window.vueRouter = router;

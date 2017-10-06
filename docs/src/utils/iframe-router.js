@@ -3,6 +3,7 @@
  */
 
 import isMobile from './is-mobile';
+import { setLang } from './lang';
 import { iframeReady } from './iframe';
 
 window.syncPath = function(dir) {
@@ -25,6 +26,6 @@ window.changePath = function(path = '') {
     lang = pathParts[1];
   }
 
-  window.setLang(lang);
+  setLang(lang);
   window.vueRouter.replace(path);
 };
