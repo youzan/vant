@@ -9,7 +9,7 @@ module.exports = merge(devConfig, {
     publicPath: 'https://b.yzcdn.cn/zanui/vue/',
     filename: '[name].[hash:8].js',
     umdNamedDefine: true,
-    chunkFilename: 'async.[name].[chunkhash:8].js'
+    chunkFilename: 'async_[name].[chunkhash:8].js'
   },
   devtool: false,
   plugins: [

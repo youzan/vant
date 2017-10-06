@@ -17,4 +17,4 @@ github_changelog_generator \
   --issues-label "**处理的 Issue:**" \
   --pr-label "**合并的 Pull Request (可能有不兼容改动):**" \
   --no-unreleased \
-  -o $basepath/../docs/examples-docs/changelog-generated.md
+  -o $basepath/../docs/examples-docs/zh-CN/changelog-generated.md

@@ -16,7 +16,7 @@ const styleLoaders = [
 extractExample({
   src: path.resolve(__dirname, '../docs/examples-docs'),
   dist: path.resolve(__dirname, '../docs/examples-dist'),
-  nav: docConfig['zh-CN'].nav,
+  nav: docConfig,
   watch: !isProduction
 });
 
@@ -31,7 +31,7 @@ module.exports = {
     publicPath: '/',
     filename: '[name].js',
     umdNamedDefine: true,
-    chunkFilename: 'async.[name].js'
+    chunkFilename: 'async_[name].js'
   },
   devServer: {
     host: '0.0.0.0',

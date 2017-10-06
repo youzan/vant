@@ -1,6 +1,6 @@
 <script>
 import { Toast } from 'packages';
-import areaList from '../mock/area.json';
+import areaList from '../../mock/area.json';
 
 export default {
   data() {
