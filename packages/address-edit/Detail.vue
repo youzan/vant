@@ -41,7 +41,7 @@ import Icon from '../icon';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import isAndroid from '../utils/env/is-andriod';
+import isAndroid from '../utils/env/is-android';
 
 export default {
   name: 'van-address-edit-detail',
