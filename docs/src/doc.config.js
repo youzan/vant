@@ -303,6 +303,10 @@ module.exports = {
               }
             ]
           },
+          {
+            "groupName": "Form",
+            "list": []
+          },
         ]
       }
     ]
