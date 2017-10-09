@@ -1,0 +1,87 @@
+## 开发 vant
+
+#### 初始化项目:
+
+```bash
+yarn
+
+npm run dev
+```
+
+浏览器访问 [http://localhost:8080](http://localhost:8080) 就可以看到所有组件的示例了。
+
+#### 代码目录结构
+
+- 仓库的组件代码都位于 `packages` 下，每个组件一个文件夹
+- 所有的组件样式代码都位于 `packages/vant-css/src` 下，`vant-css` 也会在发布时单独发包
+- `docs/examples-docs` 目录下是文档网站的代码，根据语言划分为 zh-CN 和 en-US，本地开发时可以在根目录下运行 `npm run dev` 开启文档网站。
+
+项目目录大致如下：
+
+```
+vant
+├── build            # 组件打包配置和编译需要的脚本
+├── docs             # 文档网站代码
+├── packages         # 组件源代码
+├── test             # 组件测试代码
+```
+
+#### 添加新组件
+
+主要步骤：
+
+- 添加 Vue 代码
+以添加新组件 `Button` 为例，首先在 `packages` 目录下新建目录 `button`，用 `index.js` 或者 `index.vue` 文件做为组件入口，需要的话可以建其他文件来组织代码。
+
+- 添加样式代码
+组件对应的样式需要放到 `packages/vant-css/src` 目录下，`Button` 组件的话需要新建一个文件 `button.css`。如若个组件样式比较复杂，为了方便组织代码可以在 `packages/vant-css/src` 下面新建一个同名目录 `button`，里面可以放一些 partial 样式。
+新添加的 `button.css` 文件需要在 `packages/vant-css/src/index.css` 中手动 import。
+
+- 添加文档
+新组件的文档编写，需要在 `docs/examples-docs` 下各个语言中新建对应同名文档 `button.md`，并在 `docs/src/doc.config.js` 中进行文档路径配置
+
+- 添加测试代码
+需要在 `test/unit/specs` 目录下增加对应组件的测试文件，以 .spec.js 结尾，如：`button.spec.js`。测试框架使用了 karma + mocha + sinon + chai，vue 相关的操作使用了 [avoriaz](https://github.com/eddyerburgh/avoriaz)
+
+
+## 组件文档如何编写
+
+`docs/examples-docs` 下根据语言划分了组件文档，每个组件需要在各语言中编辑对应的文档。组件文档采用 markdown 格式，内容包括使用示例以及 `API` 等。具体书写规范请参考 [组件文档书写规范](markdown)。
+
+#### API 说明
+
+组件的 API 说明，请以表格的形式书写，表格包含以下列：
+
+| 参数         |   说明         | 类型     | 默认值      | 备选值            |
+| ------------ | ------------- | -------- | ---------- | ----------------- |
+| visible      | 是否可见       | bool     |  `false` | `true` \| `false` |
+
+#### Event 说明
+
+| 事件名       | 说明      | 参数       |
+|-----------|-----------|-----------|
+| click | 点击按钮时触发 | event：事件对象 |
+
+## 一些实用技巧
+
+#### 组件互相引用
+
+比如说 `Dialog` 里面引用了 `Button` 组件，直接写相对路径引用即可。
+
+#### 组件导出
+
+为了统一管理，每个组件只能通过 `export default` 一个东西，如果需要导出多个变量，请把其余变量挂载在 `export default` 的变量上。
+
+#### 样式
+
+组件样式使用 `precss`，语法请参考 [precss 文档](https://github.com/jonathantneal/precss).
+
+#### 关于 z-index
+
+为了防止 `z-index` 滥用，我们规定了组件库内部的 `z-index` 使用规范。
+
+`z-index` 优先级（从高到低）：
+
+* 特殊组件：Toast 永远在最上面，[3000, +∞)
+* ‘用完就关’ 的组件：Dialog, Pop, Actionsheet, image-preview 等 [2000, 3000)
+* 其他：组件内部用来控制层次的 z-index 的区间 [-10, 10]，尽可能写小，一般1，2，3这种就够了。
