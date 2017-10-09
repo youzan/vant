@@ -12,9 +12,9 @@ basepath=$(dirname $0)
 
 github_changelog_generator \
   --header-label "## 更新日志" \
-  --bugs-label "**修复:**" \
-  --enhancement-label "**非兼容更新和新特性:**" \
-  --issues-label "**处理的 Issue:**" \
-  --pr-label "**合并的 Pull Request (可能有不兼容改动):**" \
+  --bugs-label "**Bug Fixes**" \
+  --enhancement-label "**Breaking changes**" \
+  --issues-label "**Issue**" \
+  --pr-label "**Improvements**" \
   --no-unreleased \
   -o $basepath/../docs/examples-docs/zh-CN/changelog-generated.md
