@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
+`2017-10-09`
+
+**Improvements**
+- 新增 Contact 组件 [\#160](https://github.com/youzan/vant/pull/160) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 AddressEdit 组件 [\#147](https://github.com/youzan/vant/pull/147) [@chenjiahan](https://github.com/chenjiahan)
+- 新增英文文档支持 [\#170](https://github.com/youzan/vant/pull/170) [@pangxie1991](https://github.com/pangxie1991)
+- 去除 zan-utils 依赖 [\#168](https://github.com/youzan/vant/pull/168) [@w91](https://github.com/w91) [@chenjiahan](https://github.com/chenjiahan)
+- 去除 transition 中冗余的兼容代码 [\#162](https://github.com/youzan/vant/pull/162) [@chenjiahan](https://github.com/chenjiahan)
+- 使用 clean-css 代替 gulp-cssmin [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab props 修改后未同步至父组件的问题 [\#148](https://github.com/youzan/vant/pull/148) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Button active 状态下边框样式问题 [\#150](https://github.com/youzan/vant/issues/150) [@ZWkang](https://github.com/ZWkang)
+- 修复 Stepper 组件输入框样式错误 [\#159](https://github.com/youzan/vant/pull/159) [@w91](https://github.com/w91)
+- 修复 Waterfall 未显示时 disable 属性无法生效的问题 [\#166](https://github.com/youzan/vant/pull/166) [@pangxie1991](https://github.com/pangxie1991)
+- 修复 vant-css 构建过程中未编译 calc 属性的问题  [@chenjiahan](https://github.com/chenjiahan)
+- 修复 MacOS 下 npm run dev 报错的问题 [\#152](https://github.com/youzan/vant/issues/152) [@chenjiahan](https://github.com/chenjiahan)
+- 修复文档在部分低版本浏览器路由失效的问题 [\#158](https://github.com/youzan/vant/pull/158) [@pangxie1991](https://github.com/pangxie1991)
+- 修复文档中遗漏 SwipeItem 组件引入方式的问题 [\#167](https://github.com/youzan/vant/pull/167) [@OlafCheng](https://github.com/OlafCheng)
+
 ### [0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
 `2017-09-26`
 
