@@ -55,7 +55,7 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(vant);
 ```
  
-## Development
+## How to contribute
 
 Start development mode:
 
