@@ -31,16 +31,21 @@ vant
 主要步骤：
 
 - 添加 Vue 代码
+
 以添加新组件 `Button` 为例，首先在 `packages` 目录下新建目录 `button`，用 `index.js` 或者 `index.vue` 文件做为组件入口，需要的话可以建其他文件来组织代码。
 
 - 添加样式代码
+
 组件对应的样式需要放到 `packages/vant-css/src` 目录下，`Button` 组件的话需要新建一个文件 `button.css`。如若个组件样式比较复杂，为了方便组织代码可以在 `packages/vant-css/src` 下面新建一个同名目录 `button`，里面可以放一些 partial 样式。
+
 新添加的 `button.css` 文件需要在 `packages/vant-css/src/index.css` 中手动 import。
 
 - 添加文档
+
 新组件的文档编写，需要在 `docs/examples-docs` 下各个语言中新建对应同名文档 `button.md`，并在 `docs/src/doc.config.js` 中进行文档路径配置
 
 - 添加测试代码
+
 需要在 `test/unit/specs` 目录下增加对应组件的测试文件，以 .spec.js 结尾，如：`button.spec.js`。测试框架使用了 karma + mocha + sinon + chai，vue 相关的操作使用了 [avoriaz](https://github.com/eddyerburgh/avoriaz)
 
 
