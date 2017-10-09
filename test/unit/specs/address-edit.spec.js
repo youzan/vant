@@ -268,7 +268,7 @@ describe('AddressEdit', () => {
       }
     });
 
-    wrapper.vm.isAndriod = false;
+    wrapper.vm.isAndroid = false;
     wrapper.find('.van-field__control')[2].trigger('focus');
 
     wrapper.vm.$nextTick(() => {
@@ -280,7 +280,7 @@ describe('AddressEdit', () => {
     });
   });
 
-  it('finish edit address detail in andriod', done => {
+  it('finish edit address detail in android', done => {
     wrapper = mount(AddressDetail, {
       propsData: {
         value: '123'
