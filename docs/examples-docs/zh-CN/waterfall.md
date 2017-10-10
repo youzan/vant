@@ -10,7 +10,7 @@
 import Vue from 'vue';
 import { Waterfall } from 'vant';
 
-Waterfall.install(Vue);
+Vue.use(Waterfall);
 ```
 
 #### 局部注册
@@ -41,12 +41,10 @@ export default {
       finished: false
     };
   },
-
   directives: {
     WaterfallLower: Waterfall('lower'),
     WaterfallUpper: Waterfall('upper')
   },
-
   methods: {
     loadMore() {
       if (this.list.length >= 50) {
