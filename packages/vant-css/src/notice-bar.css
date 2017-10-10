@@ -30,7 +30,6 @@
   &__content {
     position: absolute;
     white-space: nowrap;
-    transition-property: left;
     transition-timing-function: linear;
   }
 }

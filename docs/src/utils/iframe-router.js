@@ -3,6 +3,8 @@
  */
 
 import isMobile from './is-mobile';
+import { setLang } from './lang';
+import { iframeReady } from './iframe';
 
 window.syncPath = function(dir) {
   const router = window.vueRouter;
@@ -17,25 +19,13 @@ window.syncPath = function(dir) {
   }
 };
 
-window.changePath = function(path) {
+window.changePath = function(path = '') {
+  const pathParts = path.split('/');
+  let lang = pathParts[0];
+  if (path[0] === '/') {
+    lang = pathParts[1];
+  }
+
+  setLang(lang);
   window.vueRouter.replace(path);
 };
-
-function iframeReady(iframe, callback) {
-  const doc = iframe.contentDocument || iframe.contentWindow.document;
-  const interval = () => {
-    if (iframe.contentWindow.changePath) {
-      callback();
-    } else {
-      setTimeout(() => {
-        interval();
-      }, 50);
-    }
-  };
-
-  if (doc.readyState === 'complete') {
-    interval();
-  } else {
-    iframe.onload = interval;
-  }
-}

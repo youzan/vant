@@ -17,7 +17,7 @@
             v-if="!navItem.disabled">
             <router-link
               active-class="active"
-              :to="base + navItem.path">
+              :to="'/' + base + navItem.path">
               <p>
                 {{ navItem.title }}
               </p>

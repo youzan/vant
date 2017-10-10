@@ -1,4 +1,5 @@
 import Waterfall from '../components/waterfall/waterfall';
+import HiddenWaterfall from '../components/waterfall/waterfall-hide';
 import { mount } from 'avoriaz';
 
 describe('Waterfall', () => {
@@ -66,6 +67,24 @@ describe('Waterfall', () => {
       expect(waterfallUpperSpy.calledOnce).to.be.true;
       expect(item.length).to.equal(4);
       expect(item[0].text()).to.equal('1');
+      done();
+    }, 500);
+  });
+
+  it('test waterfall function after hide', (done) => {
+    const waterfallLowerSpy = sinon.spy();
+    wrapper = mount(HiddenWaterfall, {
+      attachToDocument: true,
+      propsData: {
+        show: false,
+        disabled: false,
+        list: [{ id: 10 }],
+        onWaterfallLower: waterfallLowerSpy
+      }
+    });
+
+    setTimeout(() => {
+      expect(waterfallLowerSpy.called).to.be.false;
       done();
     }, 500);
   });

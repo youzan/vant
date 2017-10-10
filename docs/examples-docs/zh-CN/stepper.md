@@ -69,7 +69,8 @@ Vue.component(Stepper.name, Stepper);
 | max | 最大值 | `String | Number` | - | - |
 | defaultValue | 默认值 | `String | Number` | `1` | - |
 | step | 步数 | `String | Number` | `1` | - |
-| disabled | 是否禁用 | `Boolean` | `false` | - |
+| disabled | 是否禁用 | `Boolean` | `false` | - | 
+| disableInput | 是否禁用input框 | `Boolean` | `false` | - |
 
 ### Event
 

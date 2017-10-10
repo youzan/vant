@@ -1,5 +1,5 @@
 <script>
-import AreaList from '../mock/area.json';
+import AreaList from '../../mock/area.json';
 
 export default {
   data() {
@@ -31,7 +31,7 @@ Vue.component(Area.name, Area);
 <van-area :area-list="areaList"></van-area>
 
 <script>
-import AreaList from '../mock/area.json';
+import AreaList from '../../mock/area.json';
 
 export default {
   data() {

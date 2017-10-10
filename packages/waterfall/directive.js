@@ -32,20 +32,24 @@ function doBindEvent() {
 function handleScrollEvent() {
   const element = this.el;
   const scrollEventTarget = this.scrollEventTarget;
-
   // 已被禁止的滚动处理
   if (this.disabled) return;
 
   const targetScrollTop = Utils.getScrollTop(scrollEventTarget);
-  const targetBottom = targetScrollTop + Utils.getVisibleHeight(scrollEventTarget);
+  const targetVisibleHeight = Utils.getVisibleHeight(scrollEventTarget);
+  // 滚动元素可视区域下边沿到滚动元素元素最顶上 距离
+  const targetBottom = targetScrollTop + targetVisibleHeight;
+
+  // 如果无元素高度，考虑为元素隐藏，直接返回
+  if (!targetVisibleHeight) return;
 
   // 判断是否到了底
   let needLoadMoreToLower = false;
   if (element === scrollEventTarget) {
-    needLoadMoreToLower = scrollEventTarget.scollHeight - targetBottom < this.offset;
+    needLoadMoreToLower = scrollEventTarget.scrollHeight - targetBottom < this.offset;
   } else {
     const elementBottom = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget) + Utils.getVisibleHeight(element);
-    needLoadMoreToLower = elementBottom - Utils.getVisibleHeight(scrollEventTarget) < this.offset;
+    needLoadMoreToLower = elementBottom - targetVisibleHeight < this.offset;
   }
   if (needLoadMoreToLower) {
     this.cb['lower'] && this.cb['lower']({ target: scrollEventTarget, top: targetScrollTop });

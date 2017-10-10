@@ -1,7 +1,7 @@
-var webpack = require('webpack');
-var merge = require('webpack-merge');
-var path = require('path');
-var devConfig = require('./webpack.config.dev.js');
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const path = require('path');
+const devConfig = require('./webpack.config.dev.js');
 
 module.exports = merge(devConfig, {
   output: {
@@ -9,7 +9,7 @@ module.exports = merge(devConfig, {
     publicPath: 'https://b.yzcdn.cn/zanui/vue/',
     filename: '[name].[hash:8].js',
     umdNamedDefine: true,
-    chunkFilename: 'async.[name].[chunkhash:8].js'
+    chunkFilename: 'async_[name].[chunkhash:8].js'
   },
   devtool: false,
   plugins: [

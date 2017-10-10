@@ -2,9 +2,14 @@ import Sku from 'packages/sku';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
 import data from '../mock/sku';
+import repeat from 'lodash/repeat';
 
 const { skuHelper } = Sku;
 const goods = data.goods_info;
+const initialSku = {
+  s1: '30349',
+  s2: '1193'
+};
 goods.picture = goods.picture[0];
 
 describe('Sku', (done) => {
@@ -19,6 +24,7 @@ describe('Sku', (done) => {
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods,
         resetStepperOnHide: true
       }
@@ -41,23 +47,35 @@ describe('Sku', (done) => {
     const selectedSku = skuHelper.getSelectedSkuValues(data.sku.tree, wrapper.vm.selectedSku);
     expect(selectedSku[0].id).to.equal('30349');
 
-    // 关闭sku弹层
-    const closeCallback = sinon.spy();
-    const closeIcon = wrapper.find('.van-sku__close-icon')[0];
-    wrapper.vm.$on('sku-close', closeCallback);
-    closeIcon.trigger('click');
+    // 测试sku图片
+    const firstSku = wrapper.find('.van-sku-row__item')[0];
+    firstSku.trigger('click');
     wrapper.vm.$nextTick(() => {
-      expect(closeCallback.calledOnce).to.be.true;
-      done();
+      DOMChecker(wrapper, {
+        src: {
+          '.van-sku__goods-img': 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg'
+        }
+      });
+
+      // 关闭sku弹层
+      const closeCallback = sinon.spy();
+      const closeIcon = wrapper.find('.van-sku__close-icon')[0];
+      wrapper.vm.$on('sku-close', closeCallback);
+      closeIcon.trigger('click');
+      wrapper.vm.$nextTick(() => {
+        expect(closeCallback.calledOnce).to.be.true;
+        done();
+      });
     });
   });
 
-  it('click buy and addCart', (done) => {
+  it('should trigger an event or toast error when click buy and addCart', (done) => {
     wrapper = mount(Sku, {
       attachToDocument: true,
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods
       }
     });
@@ -98,12 +116,13 @@ describe('Sku', (done) => {
     });
   });
 
-  it('change step value', (done) =>{
+  it('should modify current num or toast error when change step value', (done) => {
     wrapper = mount(Sku, {
       attachToDocument: true,
       propsData: {
         value: true,
         sku: data.sku,
+        goodsId: data.goods_id,
         goods: goods,
         quota: data.quota,
         quotaUsed: data.quota_used
@@ -135,14 +154,16 @@ describe('Sku', (done) => {
     });
   });
 
-  it('test none sku', (done) => {
-    data.sku.none_sku = true; // eslint-disable-line
+  it('should not render sku group when none_sku is true', (done) => {
+    const newData = Object.assign({}, data);
+    newData.sku.none_sku = true; // eslint-disable-line
 
     wrapper = mount(Sku, {
       attachToDocument: true,
       propsData: {
         value: false,
-        sku: data.sku,
+        sku: newData.sku,
+        goodsId: newData.goods_id,
         goods: goods
       }
     });
@@ -151,6 +172,121 @@ describe('Sku', (done) => {
     wrapper.vm.$nextTick(() => {
       expect(wrapper.find('.van-sku-group-container').length).to.equal(0);
       done();
+    });
+  });
+
+  it('should toast error when sku messages fail to pass validation', (done) => {
+    wrapper = mount(Sku, {
+      attachToDocument: true,
+      propsData: {
+        initialSku,
+        value: true,
+        sku: data.sku,
+        goodsId: data.goods_id,
+        goods: goods
+      }
+    });
+
+    const buyBtn = wrapper.find('.van-sku__buy-btn')[0];
+    const skuMessages = wrapper.find('.van-sku-messages')[0];
+    const inputs = skuMessages.find('input');
+    const textarea = skuMessages.find('textarea')[0];
+    // 修改留言内容
+    inputs[0].element.value = 123;
+    // 测试身份证号
+    inputs[1].element.value = 234;
+    inputs[0].trigger('input');
+    inputs[1].trigger('input');
+
+    wrapper.vm.$nextTick(() => {
+      // 点击购买
+      buyBtn.trigger('click');
+
+      wrapper.vm.$nextTick(() => {
+        const toastText = document.querySelector('.van-toast__text');
+        expect(toastText.textContent).to.equal('请填写正确的身份证号码');
+
+        inputs[1].element.value = 330101198801012211;
+        // 测试textarea字数限制
+        textarea.element.value = repeat('*', 201);
+        inputs[1].trigger('input');
+        textarea.trigger('input');
+
+        wrapper.vm.$nextTick(() => {
+          buyBtn.trigger('click');
+
+          wrapper.vm.$nextTick(() => {
+            expect(toastText.textContent).to.equal('留言4 写的太多了<br/>不要超过200字');
+
+            textarea.element.value = '';
+            // 测试数字留言
+            inputs[2].element.value = 'abc';
+            textarea.trigger('input');
+            inputs[2].trigger('input');
+
+            wrapper.vm.$nextTick(() => {
+              buyBtn.trigger('click');
+
+              wrapper.vm.$nextTick(() => {
+                expect(toastText.textContent).to.equal('请填写正确的数字格式留言');
+
+                inputs[2].element.value = 0;
+                inputs[3].element.value = 345;
+                inputs[2].trigger('input');
+                inputs[3].trigger('input');
+
+                wrapper.vm.$nextTick(() => {
+                  buyBtn.trigger('click');
+
+                  wrapper.vm.$nextTick(() => {
+                    expect(toastText.textContent).to.equal('请填写正确的邮箱');
+                    done();
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+
+  it('should toast error when there is no stock', (done) => {
+    /* eslint-disable */
+    const newData = Object.assign({}, data);
+    newData.sku.stock_num = 0;
+    newData.sku.messages = [];
+    newData.sku.list.forEach((item) => {
+      item.stock_num = 0;
+    });
+    /* eslint-enable */
+
+    wrapper = mount(Sku, {
+      attachToDocument: true,
+      propsData: {
+        initialSku,
+        value: true,
+        sku: newData.sku,
+        goodsId: newData.goods_id,
+        goods: goods
+      }
+    });
+
+    const buyBtn = wrapper.find('.van-sku__buy-btn')[0];
+
+    wrapper.vm.$nextTick(() => {
+      buyBtn.trigger('click');
+      wrapper.vm.$nextTick(() => {
+        const toastText = document.querySelector('.van-toast__text');
+        expect(toastText.textContent).to.equal('商品已经无法购买啦');
+
+        const plusBtn = wrapper.find('.van-stepper__plus')[0];
+        plusBtn.trigger('click');
+        wrapper.vm.$nextTick(() => {
+          expect(toastText.textContent).to.equal('库存不足');
+          done();
+        });
+      });
     });
   });
 });

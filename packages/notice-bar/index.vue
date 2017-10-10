@@ -57,10 +57,10 @@ export default {
     },
     contentStyle() {
       return {
-        left: -this.offsetWidth + 'px',
+        transform: `translate3d(${-this.offsetWidth}px, 0, 0)`,
         transitionDelay: this.delay + 's',
         transitionDuration: this.duration + 's',
-        transitionProperty: this.diableTransition ? 'none' : 'left'
+        transitionProperty: this.diableTransition ? 'none' : 'all'
       };
     }
   },

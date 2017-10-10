@@ -1,7 +1,7 @@
 ## Sku 商品购买组件
 
 <script>
-import data from '../mock/sku';
+import data from '../../mock/sku';
 
 const goods = data.goods_info;
 goods.picture = goods.picture[0];
@@ -13,8 +13,15 @@ export default {
       showCustomAction: false,
       sku: data.sku,
       goods: goods,
+      goodsId: data.goods_id,
       quota: data.quota,
       quotaUsed: data.quota_used,
+      disableStepperInput: true,
+      resetStepperOnHide: true,
+      initialSku: {
+        s1: '30349',
+        s2: '1193'
+      }
     }
   },
 
@@ -55,11 +62,12 @@ Vue.component(Sku.name, Sku);
       v-model="showBase"
       :sku="sku"
       :goods="goods"
+      :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
-      :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
-      :reset-stepper-on-hide="true"
+      :reset-stepper-on-hide="resetStepperOnHide"
+      :disable-stepper-input="disableStepperInput"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
@@ -80,11 +88,13 @@ Vue.component(Sku.name, Sku);
       stepper-title="我要买"
       :sku="sku"
       :goods="goods"
+      :goods-id="goodsId"
       :hide-stock="sku.hide_stock"
       :show-add-cart-btn="true"
       :quota="quota"
       :quota-used="quotaUsed"
       :reset-stepper-on-hide="true"
+      :initial-sku="initialSku"
       @buy-clicked="handleBuyClicked"
       @add-cart="handleAddCartClicked"
     >
@@ -116,11 +126,13 @@ Vue.component(Sku.name, Sku);
 | v-model | 是否显示sku | Boolean  | false |    是      |
 | sku | 商品sku数据 | Object  | - |    是      |
 | goods | 商品信息 | Object  | - |  是 |
+| goodsId | 商品id | String/Number  | - |  是 |
 | hideStock | 是否显示商品剩余库存 | Boolean  | false | 否  |
 | showAddCartBtn | 是否显示加入购物车按钮 | Boolean  | true |  否 |
 | quota | 限购数(0表示不限购) | Number  | 0 |  否 |
 | quotaUsed | 已经购买过的数量 | Number  | 0 |  否 |
 | resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | Boolean  | false |  否 |
+| disableStepperInput | 是否禁用sku中stepper的input框 | Boolean | false | 否 |
 | stepperTitle | 数量选择组件左侧文案 | String  | '购买数量' |  否 |
 | add-cart | 点击添加购物车回调 | Function(skuData: Object)  | - |  否 |
 | buy-clicked | 点击购买回调 | Function(skuData: Object)  | - |  否 |
@@ -148,11 +160,11 @@ sku组件默认划分好了若干区块，这些区块都定义成了slot，可�
         "v": [{
             "id": "30349", // skuValueId：规格值id 
             "name": "红色", // skuValueName：规格值名称 
-            "imgUrl": "upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg" // 规格类目图片，暂时只能第一个规格类目可以定义图片
+            "imgUrl": "https:\/\/img.yzcdn.cn\/upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg" // 规格类目图片，只有第一个规格类目可以定义图片
         }, {
             "id": "1215",
             "name": "蓝色",
-            "imgUrl": "upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg"
+            "imgUrl": "https:\/\/img.yzcdn.cn\/upload_files\/2017\/03\/16\/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg"
         }],
         "k_s": "s1" // skuKeyStr：sku组合列表（下方list）中当前类目对应的key值，value值会是从属于当前类目的一个规格值id 
     }, ...],
@@ -200,6 +212,11 @@ skuData: {
     message_0:"12",
     message_1:"",
     ... // 有几个留言就有几条
+  },
+  // 另一种格式的留言，key不同
+  cartMessages: {
+    '留言1': 'xxxx',
+    ... // key是message的name
   },
   // 选择的商品数量
   selectedNum:1,

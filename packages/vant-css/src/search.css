@@ -32,8 +32,12 @@
     width: 100%;
     height: 14px;
     font-size: 14px;
-    color: $gray-dark;
+    color: $gray-darker;
     border: none;
+
+    &::placeholder {
+      color: $gray-dark;
+    }
   }
 
   &__cancel {

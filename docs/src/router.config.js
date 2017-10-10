@@ -1,42 +1,66 @@
 import docConfig from './doc.config';
+import { getLang } from './utils/lang';
+import DemoList from './components/demo-list';
 import componentDocs from '../examples-dist/entry-docs';
 import componentDemos from '../examples-dist/entry-demos';
-import './iframe-router';
-
-const navs = docConfig['zh-CN'].nav;
+import './utils/iframe-router';
 
 const registerRoute = (isExample) => {
   const route = [{
+    path: '/',
+    redirect: to => {
+      return `/${getLang()}/`;
+    }
+  }, {
     path: '*',
-    redirect: '/'
+    redirect: to => {
+      return `/${getLang()}/`;
+    }
   }];
 
-  navs.forEach(nav => {
-    if (isExample && !nav.showInMobile) {
-      return;
+  Object.keys(docConfig).forEach((lang, index) => {
+    if (isExample) {
+      route.push({
+        path: `/${lang}`,
+        component: DemoList,
+        meta: { lang }
+      });
+    } else {
+      route.push({
+        path: `/${lang}`,
+        redirect: `/${lang}/component/quickstart`
+      });
     }
 
-    if (nav.groups) {
-      nav.groups.forEach(group => {
-        group.list.forEach(addRoute);
-      });
-    } else if (nav.children) {
-      nav.children.forEach(addRoute);
-    } else {
-      addRoute(nav);
+    const navs = docConfig[lang].nav || [];
+    navs.forEach(nav => {
+      if (isExample && !nav.showInMobile) {
+        return;
+      }
+
+      if (nav.groups) {
+        nav.groups.forEach(group => {
+          group.list.forEach(page => addRoute(page, lang));
+        });
+      } else if (nav.children) {
+        nav.children.forEach(page => addRoute(page, lang));
+      } else {
+        addRoute(nav, lang);
+      }
+    });
+
+    function addRoute(page, lang) {
+      const { path } = page;
+      if (path) {
+        const name = lang + '/' + path.replace('/', '');
+        route.push({
+          path: `/${lang}/component${path}`,
+          component: isExample ? componentDemos[name] : componentDocs[name],
+          meta: { lang }
+        });
+      }
     }
   });
-
-  function addRoute(page) {
-    const { path } = page;
-    if (path) {
-      const name = path.replace('/', '');
-      route.push({
-        path: '/component' + path,
-        component: isExample ? componentDemos[name] : componentDocs[name]
-      });
-    }
-  }
 
   return route;
 };

@@ -1,9 +1,9 @@
 <template>
   <div class="side-nav">
-    <h1 class="zanui-title">Zan UI Wap</h1>
-    <h2 class="zanui-desc">有赞移动wap端组件库</h2>
+    <h1 class="zanui-title">Zan UI</h1>
+    <h2 class="zanui-desc">有赞移动端 Vue 组件库</h2>
     <div class="mobile-navs">
-      <div class="mobile-nav-item" v-for="(item, index) in data" v-if="item.showInMobile" :key="index">
+      <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
         <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index" />
       </div>
     </div>
@@ -13,17 +13,36 @@
 <script>
 import docConfig from '../doc.config';
 import MobileNav from './mobile-nav';
+import { getLang } from '../utils/lang';
 
 export default {
   data() {
     return {
-      data: docConfig['zh-CN'].nav,
-      base: '/component'
+      docConfig,
+      lang: getLang()
     };
+  },
+
+  beforeRouteEnter(to, from, next) {
+    next(vm => vm.lang = to.meta.lang);
+  },
+
+  beforeRouteUpdate(to, from, next) {
+    this.lang = to.meta.lang;
   },
 
   components: {
     MobileNav
+  },
+
+  computed: {
+    base() {
+      return `${this.lang}/component`;
+    },
+
+    navList() {
+      return this.docConfig[this.lang].nav || [];
+    }
   }
 };
 </script>

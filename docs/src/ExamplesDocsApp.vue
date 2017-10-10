@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <zan-doc :simulator="simulator" :config="config">
+    <zan-doc :simulator="simulator" :config="config" :base="base">
       <router-view></router-view>
     </zan-doc>
   </div>
@@ -8,29 +8,45 @@
 
 <script>
 import docConfig from './doc.config';
+import { getLang } from './utils/lang';
 
 export default {
   data() {
-    if (location.host === 'www.youzanyun.com') {
+    if (window.location.host === 'www.youzanyun.com') {
       const group = docConfig['zh-CN'].nav[0].groups[0];
       group.list = group.list.filter(item => item.title !== '业务组件');
     }
 
+    const hash = window.location.hash;
+
     return {
-      simulator: this.getSimulatorPath(),
-      config: docConfig['zh-CN']
+      simulator: `/zanui/vue/examples${hash}`,
+      lang: getLang()
     };
   },
 
-  methods: {
-    getSimulatorPath() {
-      const dir = location.pathname.split('/').pop();
-      if (dir === 'quickstart' || dir === 'changelog') {
-        return '/zanui/vue/examples';
-      } else {
-        return `/zanui/vue/examples/component/${dir}`;
-      }
+  computed: {
+    base() {
+      return `/${this.lang}/component`;
+    },
+
+    config() {
+      return docConfig[this.lang];
+    }
+  },
+
+  watch: {
+    '$route'(to) {
+      this.lang = to.meta.lang;
     }
   }
 };
 </script>
+
+<style lang="postcss">
+.zan-doc-content--quickstart {
+  h3:not(:first-of-type) {
+    margin-top: 35px;
+  }
+}
+</style>

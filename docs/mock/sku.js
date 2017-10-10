@@ -11,7 +11,7 @@ var _global = {
             "v": [{
                 "id": "30349",
                 "name": "\u5929\u84dd\u8272",
-                "imgUrl": "upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg"
+                "imgUrl": "https:\/\/img.yzcdn.cn\/upload_files\/2017\/02\/21\/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg"
             }],
             "k_s": "s1",
             "count": 2

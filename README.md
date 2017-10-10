@@ -55,23 +55,9 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(vant);
 ```
  
-## Development
+## How to contribute
 
-### Add a new component
-
-```shell
-make init componentName
-```
-
-### Start coding
-
-Start development mode:
-
-```shell
-npm run dev
-```
-
-Visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
+Please make sure to read the [Contributing Guide](./docs/examples-docs/en-US/contribute.md) before making a pull request.
 
 ## Preview
 

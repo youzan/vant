@@ -15,7 +15,7 @@ Waterfall.install(Vue);
 
 #### 局部注册
 
-如果你只是想在某个组件中使用`Waterfall`，你可以在对应组件中注册`Waterfall`指令，这样只能在你注册的组件中使用`Waterfall`：
+如果你只是想在某个组件中使用`Waterfall`，可以在对应组件中注册`Waterfall`指令，这样只能在你注册的组件中使用`Waterfall`：
 
 ```js
 import { Waterfall } from 'vant';
@@ -31,17 +31,25 @@ export default {
 ### 代码演示
 
 <script>
+import { Waterfall } from 'packages';
+
 export default {
   data() {
     return {
-      list: [1, 2, 3, 4, 5],
+      list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       loading: false,
       finished: false
     };
   },
+
+  directives: {
+    WaterfallLower: Waterfall('lower'),
+    WaterfallUpper: Waterfall('upper')
+  },
+
   methods: {
     loadMore() {
-      if (this.list.length >= 200) {
+      if (this.list.length >= 50) {
         this.finished = true;
         return;
       }
@@ -54,7 +62,7 @@ export default {
           this.list.push(lastNumber);
         }
         this.loading = false;
-      }, 2000);
+      }, 200);
     }
   },
   computed: {
@@ -67,15 +75,16 @@ export default {
 
 <style>
 .demo-waterfall {
-  .waterfall {
+  ul {
     max-height: 360px;
     overflow: scroll;
     border-top: 1px solid #e5e5e5;
   }
-  .waterfall-item {
+  li {
     line-height: 50px;
     border-bottom: 1px solid #e5e5e5;
     background: #fff;
+    text-align: center;
   }
   .page-desc {
     padding: 5px 0;
@@ -84,38 +93,22 @@ export default {
     text-align: center;
     color: #666;
   }
-  .van-loading {
-    margin: 10px auto;
-  }
 }
 </style>
 
 #### 基础用法
+使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 false，禁止 `v-waterfall-lower` 监听滚动事件
 
+注意：`waterfall-disabled` 传入的是 vue 对象中表示是否禁止瀑布流触发 key 值，类型是字符串
 :::demo 基础用法
 ```html
 <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
-<div class="waterfall">
-  <div
-    v-waterfall-lower="loadMore"
-    waterfall-disabled="isWaterfallDisabled"
-    waterfall-offset="400"
-  >
-    <div
-      class="waterfall-item"
-      v-for="(item, index) in list"
-      :key="index"
-      style="text-align: center;"
-    >
-      {{ item }}
-    </div>
-    <van-loading
-      v-if="loading"
-      :type="'circle'"
-      :color="'black'"
-    ></van-loading>
-  </div>
-</div>
+<ul
+  v-waterfall-lower="loadMore"
+  waterfall-disabled="isWaterfallDisabled"
+  waterfall-offset="400">
+  <li v-for="(item, index) in list">{{ item }}</li>
+</ul>
 ```
 :::
 
@@ -125,6 +118,6 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function`  | - |  |
 | v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function`  | - |  |
-| waterfall-disabled | 在vue对象中表示是否禁止瀑布流触发的key值 | `String`  | - |  |
+| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String`  | - |  |
 | waterfall-offset | 触发瀑布流加载的阈值 | `Number`  | `300` |   |
 

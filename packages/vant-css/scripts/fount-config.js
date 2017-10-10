@@ -398,6 +398,11 @@ module.exports = {
       keywords: ['completed'],
       src: '已完成.svg',
       css: 'completed'
+    },
+    {
+      keywords: ['value-card'],
+      src: '会员余额.svg',
+      css: 'value-card'
     }
   ]
 };

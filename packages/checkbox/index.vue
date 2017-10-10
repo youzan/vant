@@ -1,39 +1,46 @@
 <template>
   <div
-    class="van-checkbox"
-    :class="{
+    :class="[
+      'van-checkbox',
+      `van-checkbox--${shape}`, {
       'van-checkbox--disabled': isDisabled
-    }">
+    }]">
     <span class="van-checkbox__input">
       <input
         v-model="currentValue"
         type="checkbox"
         class="van-checkbox__control"
-        :disabled="isDisabled">
-      <span class="van-icon" :class="{
-        'van-icon-checked': isChecked,
-        'van-icon-check': !isChecked
-      }">
-      </span>
+        :disabled="isDisabled"
+      />
+      <van-icon name="success" />
     </span>
-    <span class="van-checkbox__label" @click="handleLabelClick">
+    <span class="van-checkbox__label" @click="onClickLabel">
       <slot></slot>
     </span>
   </div>
 </template>
 
 <script>
+import Icon from '../icon';
 import findParent from '../mixins/findParent';
 
 export default {
   name: 'van-checkbox',
+
+  components: {
+    [Icon.name]: Icon
+  },
 
   mixins: [findParent],
 
   props: {
     value: {},
     disabled: Boolean,
-    name: [String, Number]
+    name: [String, Number],
+    shape: {
+      type: String,
+      default: 'round'
+    }
   },
 
   watch: {
@@ -77,7 +84,7 @@ export default {
     },
 
     isChecked() {
-      const currentValue = this.currentValue;
+      const { currentValue } = this;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
         return currentValue;
       } else if (currentValue !== null && currentValue !== undefined) {
@@ -93,7 +100,7 @@ export default {
   },
 
   methods: {
-    handleLabelClick() {
+    onClickLabel() {
       if (this.isDisabled) {
         return;
       }

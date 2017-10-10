@@ -38,16 +38,12 @@ describe('Field', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.data().currentValue).to.equal('test');
-
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     wrapper.vm.value = 'test2';
-    wrapper.update();
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().currentValue).to.equal('test2');
       expect(eventStub.calledWith('input'));
+      expect(wrapper.find('.van-field__control')[0].element.value).to.equal('test2');
       done();
     });
   });
@@ -70,25 +66,6 @@ describe('Field', () => {
     });
   });
 
-  it('input something to field', (done) => {
-    wrapper = mount(Field, {
-      propsData: {
-        value: ''
-      }
-    });
-
-    const input = wrapper.find('.van-field__control')[0];
-
-    input.element.value = 'test';
-    input.trigger('input');
-
-    wrapper.update();
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().currentValue).to.equal('test');
-      done();
-    });
-  });
-
   it('create a textarea field', () => {
     wrapper = mount(Field, {
       propsData: {
@@ -98,7 +75,7 @@ describe('Field', () => {
     });
 
     expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.hasClass('van-field--hastextarea')).to.be.true;
+    expect(wrapper.hasClass('van-field--has-textarea')).to.be.true;
   });
 
   it('create a autosize textarea field', (done) => {
@@ -107,6 +84,10 @@ describe('Field', () => {
         type: 'textarea',
         autosize: true
       }
+    });
+
+    wrapper.vm.$on('input', val => {
+      wrapper.vm.value = val;
     });
 
     expect(wrapper.hasClass('van-field')).to.be.true;
@@ -122,7 +103,7 @@ describe('Field', () => {
 
     wrapper.update();
     setTimeout(() => {
-      expect(wrapper.data().currentValue).to.equal('test');
+      expect(wrapper.find('.van-field__control')[0].element.value).to.equal('test');
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
       done();
     }, 500);
@@ -136,6 +117,7 @@ describe('Field', () => {
       }
     });
 
+    wrapper.find('.van-field__icon')[0].trigger('touchstart');
     expect(wrapper.find('.van-field__icon').length).to.equal(1);
   });
 
@@ -148,18 +130,21 @@ describe('Field', () => {
       }
     });
 
-    wrapper.find('.van-field__icon')[0].trigger('click');
+    wrapper.find('.van-field__icon')[0].trigger('touchstart');
     expect(fn.calledOnce).to.be.true;
   });
 
   it('blur event', (done) => {
     const blur = sinon.spy();
+    const focus = sinon.spy();
     const clickIcon = sinon.spy();
 
     wrapper = mount(FieldWithIcon, {});
     wrapper.vm.$on('blur', blur);
+    wrapper.vm.$on('focus', focus);
 
     wrapper.find('.van-field__icon')[0].trigger('click');
+    wrapper.find('.van-field__control')[0].trigger('focus');
     wrapper.find('.van-field__control')[0].trigger('blur');
 
     expect(blur.calledOnce).to.be.true;

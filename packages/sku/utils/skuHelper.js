@@ -1,10 +1,3 @@
-import isArray from 'lodash/isArray';
-import keys from 'lodash/keys';
-import filter from 'lodash/filter';
-import find from 'lodash/find';
-import isObject from 'lodash/isObject';
-import every from 'lodash/every';
-
 /*
   normalize sku tree
 
@@ -49,37 +42,30 @@ export const normalizeSkuTree = (skuTree) => {
 
 // 判断是否所有的sku都已经选中
 export const isAllSelected = (skuTree, selectedSku) => {
-  if (!isArray(skuTree)) {
-    throw new Error('skuTree must be array');
-  }
-  if (!isObject(selectedSku)) {
-    throw new Error('selectedSku must be object');
-  }
-
-  const selected = filter(keys(selectedSku), skuKeyStr => selectedSku[skuKeyStr] !== '');
+  // 筛选selectedSku对象中key值不为空的值
+  const selected = Object.keys(selectedSku).filter(skuKeyStr => selectedSku[skuKeyStr] !== '');
   return skuTree.length === selected.length;
 };
 
 // 根据已选择的sku获取skuComb
 export const getSkuComb = (skuList, selectedSku) => {
-  const skuComb = find(skuList, (skuComb) => {
-    return every(keys(selectedSku), skuKeyStr => {
-      // 后端给的key有时数字有时字符串，需要兼容=。=
-      return skuComb[skuKeyStr] == selectedSku[skuKeyStr]; // eslint-disable-line
+  const skuComb = skuList.filter(skuComb => {
+    return Object.keys(selectedSku).every(skuKeyStr => {
+      return String(skuComb[skuKeyStr]) === String(selectedSku[skuKeyStr]); // eslint-disable-line
     });
-  });
+  })[0];
   return skuComb;
 };
 
 // 获取已选择的sku名称
 export const getSelectedSkuValues = (skuTree, selectedSku) => {
   const normalizedTree = normalizeSkuTree(skuTree);
-  return keys(selectedSku).reduce((selectedValues, skuKeyStr) => {
+  return Object.keys(selectedSku).reduce((selectedValues, skuKeyStr) => {
     const skuValues = normalizedTree[skuKeyStr];
     const skuValueId = selectedSku[skuKeyStr];
 
     if (skuValueId) {
-      const skuValue = find(skuValues, skuValue => skuValue.id === skuValueId);
+      const skuValue = skuValues.filter(skuValue => skuValue.id === skuValueId)[0];
       skuValue && selectedValues.push(skuValue);
     }
     return selectedValues;
