@@ -18,7 +18,7 @@
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color && mkdir lib/vant-css && cp -R packages/vant-css/lib/ lib/vant-css",
     "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
     "build:style-entry": "VUE_ENV=server node build/bin/build-style-entry.js",
-    "build:changelog": "sh build/build-changelog.sh",
+    "build:changelog": "sh build/bin/build-changelog.sh",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
     "deploy:cdn": "superman cdn /zanui/vue docs/dist/*.js docs/dist/*.css && superman cdn /zanui/vue/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vue/async_zh-CN docs/dist/async_zh-CN/*.js",
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",

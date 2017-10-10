@@ -53,15 +53,11 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(vant);
 ```
 
-## 三、开发
+## 三、贡献代码
 
-在`docs/src/doc.config.js`文件里合适的地方写入组件声明，根据组件类型（JS组件，CSS组件，Form等）进行区分，在`docs/examples-docs`目录里新建同名的 md 文件，如`waterfall.md`，在项目的根目录下执行以下命令，启动 server：
+修改代码请阅读我们的 [开发指南](./docs/examples-docs/zh-CN/contribute.md)。
 
-```shell
-npm run dev
-```
-
-浏览器访问[http://localhost:8080](http://localhost:8080)就可以看到所有组件的示例了。
+使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
 ## 四、手机预览
 
