@@ -10,7 +10,7 @@
 import Vue from 'vue';
 import { Waterfall } from 'vant';
 
-Waterfall.install(Vue);
+Vue.use(Waterfall);
 ```
 
 #### 局部注册
@@ -31,6 +31,9 @@ export default {
 ### 代码演示
 
 <script>
+import Vue from 'vue';
+import Waterfall from 'packages/waterfall';
+
 export default {
   data() {
     return {
@@ -38,6 +41,10 @@ export default {
       loading: false,
       finished: false
     };
+  },
+  directives: {
+    WaterfallLower: Waterfall('lower'),
+    WaterfallUpper: Waterfall('upper')
   },
   methods: {
     loadMore() {
