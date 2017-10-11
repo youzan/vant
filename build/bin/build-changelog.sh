@@ -17,4 +17,4 @@ github_changelog_generator \
   --issues-label "**Issue**" \
   --pr-label "**Improvements**" \
   --no-unreleased \
-  -o $basepath/../docs/examples-docs/zh-CN/changelog-generated.md
+  -o $basepath/../../docs/examples-docs/zh-CN/changelog-generated.md
