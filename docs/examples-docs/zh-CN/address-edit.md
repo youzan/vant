@@ -125,7 +125,7 @@ export default {
 | key       | 说明      | 类型       |
 |-----------|-----------|-----------|
 | id | 每条地址的唯一标识 | `String | Number` |
-| name | 收货人姓名 | `String` |
+| user_name | 收货人姓名 | `String` |
 | tel | 收货人手机号 | `String` |
 | province | 省份 | `String` |
 | city | 城市 | `String` |
