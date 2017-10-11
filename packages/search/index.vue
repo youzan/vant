@@ -72,7 +72,7 @@ export default {
     },
 
     /**
-     * 点击close后清空vlaue后，再聚焦input框
+     * 点击close后清空value后，再聚焦input框
      */
     handleClean() {
       this.value = '';

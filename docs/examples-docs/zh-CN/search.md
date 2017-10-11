@@ -47,7 +47,7 @@ export default {
 
 #### 微杂志页搜索样式
 
-:::demo 基础用法
+:::demo 微杂志页搜索样式
 ```html
 <van-search placeholder="搜索商品" type="showcase"></van-search>
 ```
