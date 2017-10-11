@@ -2,19 +2,18 @@
 export default {
   data() {
     return {
-      basicSearch: ''
+      search: '',
+      basicSearch: '',
+      simpleSearch: ''
     };
   },
 
   methods: {
-    goSearch(value) {
-      alert(value)
+    goSearch() {
+      alert(this.search);
     },
     goBasicSearch() {
       alert(this.basicSearch);
-    },
-    handleChange(value) {
-      console.log(value);
     },
     handleCancel() {
       alert('cancel');
@@ -36,7 +35,11 @@ Vue.component(Search.name, Search);
 
 #### 基础用法
 
-如果你只需要在搜索时有个回调，只要监听一个`search`事件。
+通过 v-model 可以 获取/控制 搜索文案。
+
+如果你需要在搜索时有个回调，监听`search`事件即可。
+
+在 van-search 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
 
 :::demo 基础用法
 ```html
@@ -47,20 +50,24 @@ Vue.component(Search.name, Search);
 
 ```javascript
 export default {
+  data() {
+    return { basicSearch: '' };
+  },
+
   methods: {
-    goSearch(value) {
-      alert(value)
+    goBasicSearch() {
+      alert(this.basicSearch)
     }
   }
 };
 ```
 :::
 
-#### 微杂志页搜索样式
+#### 简单搜索样式
 
-:::demo 微杂志页搜索样式
+:::demo 简单搜索样式
 ```html
-<van-search placeholder="搜索商品" type="simple"></van-search>
+<van-search placeholder="搜索商品" type="simple" v-model="simpleSearch"></van-search>
 ```
 :::
 
@@ -70,17 +77,18 @@ export default {
 
 :::demo 监听对应事件
 ```html
-<van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
+<van-search placeholder="商品名称" @search="goSearch" @cancel="handleCancel" v-model="search"></van-search>
 ```
 
 ```javascript
 export default {
+  data() {
+    return { search: '' };
+  },
+
   methods: {
     goSearch(value) {
       alert(value)
-    },
-    handleChange(value) {
-      console.log(value);
     },
     handleCancel() {
       alert('cancel');
@@ -101,6 +109,5 @@ export default {
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|
-| change | `input`输入框每次`change`时触发，适用于实时搜索等 | value：当前`input`输入框的值  |
 | cancel | 取消搜索 |   |
 | search | 确定搜索 | value：当前`input`输入框的值  |
