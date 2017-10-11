@@ -10,7 +10,7 @@
 import Vue from 'vue';
 import { Waterfall } from 'vant';
 
-Waterfall.install(Vue);
+Vue.use(Waterfall);
 ```
 
 #### 局部注册
@@ -31,6 +31,8 @@ export default {
 ### 代码演示
 
 <script>
+import { Waterfall } from 'packages';
+
 export default {
   data() {
     return {
@@ -39,9 +41,13 @@ export default {
       finished: false
     };
   },
+  directives: {
+    WaterfallLower: Waterfall('lower'),
+    WaterfallUpper: Waterfall('upper')
+  },
   methods: {
     loadMore() {
-      if (this.list.length >= 200) {
+      if (this.list.length >= 50) {
         this.finished = true;
         return;
       }
@@ -90,6 +96,8 @@ export default {
 
 #### 基础用法
 使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 false，禁止 `v-waterfall-lower` 监听滚动事件
+
+注意：`waterfall-disabled` 传入的是 vue 对象中表示是否禁止瀑布流触发 key 值，类型是字符串
 :::demo 基础用法
 ```html
 <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
@@ -108,6 +116,6 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function`  | - |  |
 | v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function`  | - |  |
-| waterfall-disabled | 在vue对象中表示是否禁止瀑布流触发的key值 | `String`  | - |  |
+| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String`  | - |  |
 | waterfall-offset | 触发瀑布流加载的阈值 | `Number`  | `300` |   |
 
