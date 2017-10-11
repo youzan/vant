@@ -1,5 +1,16 @@
 ## Changelog
 
+## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
+`2017-10-11`
+
+**Improvements**
+- add Contribute document [\#182](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
+**Bug Fixes**
+- fix AddressEdit name key [\#187](https://github.com/youzan/vant/pull/187) [@chenjiahan](https://github.com/chenjiahan)
+- fix Filed textarea wrong height when display none [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
+- fix compile error in windows [\#185](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
 ## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
 `2017-10-09`
 

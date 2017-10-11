@@ -12,9 +12,6 @@ export default {
 
   methods: {
     onSave() {
-      this.test = {
-        user_name: 'b'
-      };
       Toast('save');
     },
     onDelete() {

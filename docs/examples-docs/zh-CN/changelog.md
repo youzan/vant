@@ -1,5 +1,17 @@
 ## 更新日志
 
+## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
+`2017-10-11`
+
+**Improvements**
+- 新增 Contribute 相关文档 [\#182](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
+**Bug Fixes**
+- 修正 AddressEdit 组件姓名字段的键名为 name [\#187](https://github.com/youzan/vant/pull/187) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Filed type 为 textarea 且 display none 时高度计算错误的问题 [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 windows 下项目编译失败的问题 [\#185](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
+
 ## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
 `2017-10-09`
 

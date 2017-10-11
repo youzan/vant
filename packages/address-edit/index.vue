@@ -5,9 +5,9 @@
         maxlength="15"
         placeholder="名字"
         :label="addressText + '人'"
-        v-model="currentInfo.user_name"
-        :error="errorInfo.user_name"
-        @focus="onFocus('user_name')"
+        v-model="currentInfo.name"
+        :error="errorInfo.name"
+        @focus="onFocus('name')"
       />
       <van-field
         type="tel"
@@ -106,7 +106,7 @@ export default {
     addressInfo: {
       type: Object,
       default: () => ({
-        user_name: '',
+        name: '',
         tel: '',
         province: '',
         city: '',
@@ -130,7 +130,7 @@ export default {
       isEdit: !!this.addressInfo.id,
       detailFocused: false,
       errorInfo: {
-        user_name: false,
+        name: false,
         tel: false,
         address_detail: false,
         postal_code: false
@@ -185,7 +185,7 @@ export default {
 
     onSaveAddress() {
       const items = [
-        'user_name',
+        'name',
         'tel',
         'area_code',
         'address_detail'
@@ -213,7 +213,7 @@ export default {
       const value = this.currentInfo[key];
 
       switch (key) {
-        case 'user_name':
+        case 'name':
           return value ? value.length <= 15 ? '' : '名字过长，请重新输入' : '请填写名字';
         case 'tel':
           return validateMobile(value) ? '' : '请填写正确的手机号码或电话号码';
