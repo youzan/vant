@@ -6,7 +6,7 @@
     <div class="van-search__input-wrap">
       <van-icon name="search"></van-icon>
       <input
-        type="text"
+        type="search"
         :placeholder="placeholder"
         class="van-search__input"
         v-model="value"
