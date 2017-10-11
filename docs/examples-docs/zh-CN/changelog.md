@@ -1,5 +1,12 @@
 ## 更新日志
 
+## [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12) 
+`2017-10-11`
+
+**Bug Fixes**
+
+- 修复 Search 样式问题 [\#191](https://github.com/youzan/vant/pull/191) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
 `2017-10-11`
 

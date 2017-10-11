@@ -1,5 +1,40 @@
 ## 更新日志
 
+## [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12) (2017-10-11)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.11...v0.9.12)
+
+**Issue**
+
+- 使用 babel-plugin-import 引入组件报错 [\#193](https://github.com/youzan/vant/issues/193)
+- checkbox的change事件逻辑 [\#189](https://github.com/youzan/vant/issues/189)
+- 全局引入后，AddressEdit使用报错 [\#183](https://github.com/youzan/vant/issues/183)
+- \<i\>display: inline-block 有一些由字体大小造成的空白，使用calc（100%/3）后一行只有两个元素，第三个元素换行 [\#171](https://github.com/youzan/vant/issues/171)
+
+**Improvements**
+
+- \[bug fix\] Search: 优化显示 [\#191](https://github.com/youzan/vant/pull/191) ([pangxie1991](https://github.com/pangxie1991))
+
+## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11) (2017-10-11)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.10...v0.9.11)
+
+**Bug Fixes**
+
+- 在windows中执行npm run dev ， 然后访问页面会报错 [\#176](https://github.com/youzan/vant/issues/176)
+- \[bugfix\]: textarea filed height incorrect when display none [\#188](https://github.com/youzan/vant/pull/188) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit correct name key [\#187](https://github.com/youzan/vant/pull/187) ([chenjiahan](https://github.com/chenjiahan))
+
+**Issue**
+
+- AddressList 中select事件无效 [\#184](https://github.com/youzan/vant/issues/184)
+- vue打包时 area.json会被打包到app.js里 [\#179](https://github.com/youzan/vant/issues/179)
+- 微信支付中使用Toast [\#178](https://github.com/youzan/vant/issues/178)
+
+**Improvements**
+
+- \[bug fix\] Docs: 支持在 windows 下进行编译 [\#185](https://github.com/youzan/vant/pull/185) ([pangxie1991](https://github.com/pangxie1991))
+- \[new feature\] Docs: 增加 contribute 指南 [\#182](https://github.com/youzan/vant/pull/182) ([pangxie1991](https://github.com/pangxie1991))
+- \[new feature\] Docs: waterfall 文档优化 [\#175](https://github.com/youzan/vant/pull/175) ([pangxie1991](https://github.com/pangxie1991))
+
 ## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10) (2017-10-09)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.9...v0.9.10)
 
