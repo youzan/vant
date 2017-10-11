@@ -1,8 +1,17 @@
 <script>
 export default {
+  data() {
+    return {
+      basicSearch: ''
+    };
+  },
+
   methods: {
     goSearch(value) {
       alert(value)
+    },
+    goBasicSearch() {
+      alert(this.basicSearch);
     },
     handleChange(value) {
       console.log(value);
@@ -31,7 +40,9 @@ Vue.component(Search.name, Search);
 
 :::demo 基础用法
 ```html
-<van-search placeholder="商品名称" @search="goSearch"></van-search>
+<form action="/">
+  <van-search placeholder="商品名称" @search="goBasicSearch()" v-model="basicSearch"></van-search>
+</form>
 ```
 
 ```javascript

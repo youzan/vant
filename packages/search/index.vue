@@ -7,12 +7,13 @@
       <van-icon name="search"></van-icon>
       <input
         type="search"
+        :value="value"
         :placeholder="placeholder"
         class="van-search__input"
-        v-model="value"
         v-refocus="focusStatus"
+        @input="handleInput"
         @focus="handleFocus"
-        @keyup.enter="handleSearch">
+        @keypress.enter.prevent="handleSearch">
       <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
     </div>
     <div class="van-search__cancel" v-show="type !== 'simple' && isFocus" @click="handleBack">取消</div>
@@ -32,21 +33,15 @@ export default {
 
   props: {
     placeholder: String,
+    value: String,
     type: {
       type: String,
       default: 'normal'
     }
   },
 
-  watch: {
-    value(val) {
-      this.$emit('change', val);
-    }
-  },
-
   data() {
     return {
-      value: '',
       focusStatus: false,
       isFocus: false
     };
@@ -71,11 +66,15 @@ export default {
       this.isFocus = true;
     },
 
+    handleInput(event) {
+      this.$emit('input', event.target.value);
+    },
+
     /**
      * 点击close后清空value后，再聚焦input框
      */
     handleClean() {
-      this.value = '';
+      this.$emit('input', '');
       this.focusStatus = true;
     },
 
@@ -83,7 +82,7 @@ export default {
      * 点击取消后，清空所有回复最初状态
      */
     handleBack() {
-      this.value = '';
+      this.$emit('input', '');
       this.focusStatus = false;
       this.isFocus = false;
       this.$emit('cancel');
@@ -92,8 +91,10 @@ export default {
     /**
      * input输入回车后，发送回调
      */
-    handleSearch() {
-      this.$emit('search', this.value);
+    handleSearch(e) {
+      e.preventDefault();
+      this.$emit('search');
+      return false;
     },
 
     handleClickoutside() {
