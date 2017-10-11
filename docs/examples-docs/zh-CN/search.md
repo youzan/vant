@@ -49,7 +49,7 @@ export default {
 
 :::demo 微杂志页搜索样式
 ```html
-<van-search placeholder="搜索商品" type="showcase"></van-search>
+<van-search placeholder="搜索商品" type="simple"></van-search>
 ```
 :::
 
@@ -84,7 +84,7 @@ export default {
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `String`  |           |     |
-| type | 搜索样式类型 | `String`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
+| type | 搜索样式类型 | `String`  |     `normal`      |  `normal`：普通样式，`simple`：简单样式，无背景和取消按钮   |
 
 ### Event
 

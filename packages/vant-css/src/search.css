@@ -12,11 +12,7 @@
 
   &--showcase {
     padding: 10px;
-    background-color: $background-color;
-
-    .van-search__input-wrap {
-      border-color: $gray-light;
-    }
+    background-color: transparent;
   }
 
   &__input-wrap {

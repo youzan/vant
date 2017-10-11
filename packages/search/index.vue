@@ -2,7 +2,7 @@
   <div
     class="van-search"
     v-clickoutside="handleClickoutside"
-    :class="{ 'van-search--focus': isFocus, 'van-search--showcase': type === 'showcase' }">
+    :class="{ 'van-search--focus': isFocus, 'van-search--showcase': type === 'simple' }">
     <div class="van-search__input-wrap">
       <van-icon name="search"></van-icon>
       <input
@@ -15,7 +15,7 @@
         @keyup.enter="handleSearch">
       <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
     </div>
-    <div class="van-search__cancel" v-show="type !== 'showcase' && isFocus" @click="handleBack">取消</div>
+    <div class="van-search__cancel" v-show="type !== 'simple' && isFocus" @click="handleBack">取消</div>
   </div>
 </template>
 
