@@ -31,12 +31,6 @@ export default {
 
   destroyed() {
     this.$parent.swipes.splice(this.index, 1);
-  },
-
-  watch: {
-    'offset'(val) {
-      console.log(this.offset);
-    }
   }
 };
 </script>

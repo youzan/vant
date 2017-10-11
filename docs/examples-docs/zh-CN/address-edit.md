@@ -125,7 +125,7 @@ export default {
 | key       | 说明      | 类型       |
 |-----------|-----------|-----------|
 | id | 每条地址的唯一标识 | `String | Number` |
-| user_name | 收货人姓名 | `String` |
+| name | 收货人姓名 | `String` |
 | tel | 收货人手机号 | `String` |
 | province | 省份 | `String` |
 | city | 城市 | `String` |
@@ -142,4 +142,4 @@ export default {
 | address | 详细地址 | `String` |
 
 #### 省市县列表数据格式
-请参考 [Area](/zanui/vue/component/area) 组件。
+请参考 [Area](#/zh-CN/component/area) 组件。

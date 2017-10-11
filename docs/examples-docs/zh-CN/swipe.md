@@ -7,10 +7,10 @@
 
     &-item {
       color: #fff;
-      height: 160px;
+      min-height: 140px;
       font-size: 20px;
       text-align: center;
-      line-height: 160px;
+      line-height: 150px;
 
       &:nth-child(even) {
         background-color: #39a9ed;
@@ -23,6 +23,12 @@
 
     img {
       width: 100%;
+      height: 240px;
+      display: block;
+      padding: 30px 60px;
+      box-sizing: border-box;
+      background-color: #fff;
+      pointer-events: none;
     }
   }
 }
@@ -33,8 +39,10 @@ export default {
   data() {
     return {
       images: [
-        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+        'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/c0dab461920687911536621b345a0bc9.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/fd08f07665ed67d50e11b32a21ce0682.jpg'
       ]
     };
   }
@@ -54,31 +62,42 @@ Vue.component(SwipeItem.name, SwipeItem);
 ### 代码演示
 
 #### 基础用法
+通过`autoplay`属性设置自动轮播间隔
 
 :::demo 基础用法
 ```html
-<van-swipe>
+<van-swipe :autoplay="3000">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
 </van-swipe>
 ```
 :::
 
-#### 自动轮播
-通过`autoplay`属性设置自动轮播间隔
-
-:::demo 自动轮播
-```html
-
-```
-:::
-
 #### 图片懒加载
-通过`autoplay`属性设置自动轮播间隔
+配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
 
-:::demo 自动轮播
+:::demo 图片懒加载
 ```html
+<van-swipe>
+  <van-swipe-item v-for="(image, index) in images" :key="index">
+    <img v-lazy="image" />
+  </van-swipe-item>
+</van-swipe>
+```
 
+```javascript
+export default {
+  data() {
+    return {
+      images: [
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
+      ]
+    }
+  }
+}
 ```
 :::
 

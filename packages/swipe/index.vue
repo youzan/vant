@@ -7,12 +7,12 @@
       @touchmove="onTouchMove"
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
-      @transitionend="onChange"
+      @transitionend="$emit('change', activeIndicator)"
     >
       <slot></slot>
     </div>
     <div class="van-swipe__indicators" v-if="showIndicators && count > 1">
-      <i v-for="index in count" :class="{ 'van-swipe__indicator--active': index - 1 === activePoint }" />
+      <i v-for="index in count" :class="{ 'van-swipe__indicator--active': index - 1 === activeIndicator }" />
     </div>
 </div>
 </template>
@@ -67,7 +67,7 @@ export default {
       };
     },
 
-    activePoint() {
+    activeIndicator() {
       return (this.active + this.count) % this.count;
     }
   },
@@ -82,30 +82,11 @@ export default {
       this.startX = event.touches[0].clientX;
       this.startY = event.touches[0].clientY;
 
-      console.log('active：', this.active);
-
-      // todo two slide
       if (this.active === -1) {
         this.move(this.count);
-        this.swipes[this.count - 1].offset = 0;
-        this.swipes[0].offset = this.count * this.width;
       }
       if (this.active === this.count) {
-        this.swipes[0].offset = 0;
-        this.swipes[this.count - 1].offset = -this.count * this.width;
         this.move(-this.count);
-      }
-      if (this.active === this.count - 2) {
-        this.swipes[this.count - 1].offset = 0;
-      }
-      if (this.active === this.count - 1) {
-        this.swipes[0].offset = this.count * this.width;
-      }
-      if (this.active === 0) {
-        this.swipes[this.count - 1].offset = -this.count * this.width;
-      }
-      if (this.active === 1) {
-        this.swipes[0].offset = 0;
       }
     },
 
@@ -124,18 +105,27 @@ export default {
         this.move(Math.abs(this.deltaX) > 50 ? (this.deltaX > 0 ? -1 : 1) : 0);
         this.currentDuration = this.duration;
       }
-
       this.autoPlay();
     },
 
     move(move = 0, offset = 0) {
-      let { active } = this;
+      const { active, count, swipes, deltaX, width } = this;
+
       if (move) {
-        active += move;
-        this.active = active;
-        this.$emit('input', this.activePoint);
+        if (active === -1) {
+          swipes[count - 1].offset = 0;
+        }
+        swipes[0].offset = active === count - 1 ? count * width : 0;
+
+        this.active += move;
+      } else {
+        if (active === 0) {
+          swipes[count - 1].offset = deltaX > 0 ? -count * width : 0;
+        } else if (active === count - 1) {
+          swipes[0].offset = deltaX < 0 ? count * width : 0;
+        }
       }
-      this.offset = offset - (active + 1) * this.width;
+      this.offset = offset - (this.active + 1) * this.width;
     },
 
     autoPlay() {
@@ -166,10 +156,6 @@ export default {
 
     range(num, arr) {
       return Math.min(Math.max(num, arr[0]), arr[1]);
-    },
-
-    onChange() {
-      this.$emit('change', this.activePoint);
     }
   }
 };
