@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-sizing: border-box;
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(39, 39, 39, .7);
 
@@ -32,12 +33,12 @@
 
   &--text {
     padding: 12px;
-    min-width: 200px;
+    min-width: 220px;
   }
 
   &--default {
-    width: 90px;
-    min-height: 90px;
+    width: 120px;
+    min-height: 120px;
     padding: 15px;
 
     .van-toast__icon {
