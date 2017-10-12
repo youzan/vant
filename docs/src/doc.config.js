@@ -305,7 +305,32 @@ module.exports = {
           },
           {
             "groupName": "Form",
-            "list": []
+            "list": [
+              {
+                "path": "/checkbox",
+                "title": "Checkbox"
+              },
+              {
+                "path": "/field",
+                "title": "Field"
+              },
+              {
+                "path": "/number-keyboard",
+                "title": "NumberKeyboard"
+              },
+              {
+                "path": "/password-input",
+                "title": "PasswordInput"
+              },
+              {
+                "path": "/radio",
+                "title": "Radio"
+              },
+              {
+                "path": "/switch",
+                "title": "Switch"
+              }
+            ]
           },
         ]
       }

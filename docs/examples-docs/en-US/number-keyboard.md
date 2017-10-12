@@ -1,11 +1,3 @@
-<style>
-.demo-number-keyboard {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-</style>
-
 <script>
 import { Toast } from 'packages';
 
@@ -27,27 +19,27 @@ export default {
 }
 </script>
 
-## NumberKeyboard 数字键盘
+## NumberKeyboard
 
-### 使用指南
+### Install
 ``` javascript
 import { NumberKeyboard } from 'vant';
 
 Vue.component(NumberKeyboard.name, NumberKeyboard);
 ```
 
-### 代码演示
+### Usage
 
-#### 基础用法
+#### Basic Usage
 
-:::demo 基础用法
+:::demo Basic Usage
 ```html
 <van-button @touchstart.native.stop="showKeyboard = true">
-  弹出键盘
+  ShowKeyboard
 </van-button>
 
 <van-button @touchstart.native.stop="showKeyboard = false">
-  收起键盘
+  HideKeyboard
 </van-button>
 
 <van-number-keyboard
@@ -81,21 +73,21 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| show | 是否显示键盘 | `Boolean`  | - | - |
-| title | 键盘标题 | `String` | - | - |
-| extraKey | 左下角按键内容 | `String`  | `''` | - |
-| zIndex | 键盘 z-index | `Number`  | `100` | - |
-| transition | 是否开启过场动画 | `Boolean`  | `true` | - |
-| showDeleteKey | 是否展示删除按钮 | `Boolean`  | `true` | - |
+| show | Whether to show keyboard | `Boolean`  | - | - |
+| title | Keyboard title | `String` | - | - |
+| extraKey | Content of bottom left key | `String`  | `''` | - |
+| zIndex | Keyboard z-index | `Number`  | `100` | - |
+| transition | Whether to show transition animation | `Boolean`  | `true` | - |
+| showDeleteKey | Whether to show delete button | `Boolean`  | `true` | - |
 
 ### Event
 
-| 事件名 | 说明 | 参数 |
+| Event | Description | Attribute |
 |-----------|-----------|-----------|
-| input | 点击按键时触发 | key: 按键内容 |
-| delete | 点击删除键时触发 | - |
-| blur | 点击非键盘区域时触发 | - |
-| show | 键盘完全弹出时触发 | - |
-| hide | 键盘完全收起时触发 | - |
+| input | Triggered when keydown | key: Content of the key |
+| delete | Triggered when press delete key | - |
+| blur | Triggered when blur keyboard | - |
+| show | Triggered when keyboard is fully displayed. | - |
+| hide | Triggered when keyboard is fully hidden. | - |

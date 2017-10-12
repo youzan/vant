@@ -47,15 +47,14 @@ export default {
 ```
 :::
 
-
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| result-type | 读取文件的方式，以base64的方式读取；以文本的方式读取 | `String`  | `dataUrl`          | `dataUrl`, `text`         |
-| disable | 是否禁用上传,在图片上传期间设置为true，禁止用户点击此组件上传图片 | `Boolean`  | `false`          |           |
-| before-read | 读文件之前的钩子，参数为选择的文件，若返回 false 则停止读取文件。 | `Function`  |           |  |
-| after-read | 文件读完之后回调此函数，参数为{file:'选择的文件',content:'读的内容'} | `Function`  |           |  |
+| resultType | 读取文件的方式，以base64的方式读取；以文本的方式读取 | `String` | `dataUrl` | `text` |
+| disable | 是否禁用上传,在图片上传期间设置为true，禁止用户点击此组件上传图片 | `Boolean` | `false` | - |
+| beforeRead | 读文件之前的钩子，参数为选择的文件，若返回 false 则停止读取文件 | `Function` | - | - |
+| afterRead | 文件读完之后回调此函数，参数为 { file:'选择的文件',content:'读的内容' } | `Function` | - | - |
 
 ### Slot
 
