@@ -3,17 +3,13 @@ export default {
   data() {
     return {
       search: '',
-      basicSearch: '',
-      simpleSearch: ''
+      basicSearch: ''
     };
   },
 
   methods: {
     goSearch() {
       alert(this.search);
-    },
-    goBasicSearch() {
-      alert(this.basicSearch);
     },
     handleCancel() {
       alert('cancel');
@@ -35,49 +31,38 @@ Vue.component(Search.name, Search);
 
 #### 基础用法
 
-通过 v-model 可以 获取/控制 搜索文案。
-
-如果你需要在搜索时有个回调，监听`search`事件即可。
-
-在 van-search 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
+`van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色
 
 :::demo 基础用法
 ```html
-<form action="/">
-  <van-search placeholder="商品名称" @search="goBasicSearch()" v-model="basicSearch"></van-search>
-</form>
+<van-search placeholder="搜索框基础用法" v-model="basicSearch" background="transparent"></van-search>
 ```
 
 ```javascript
 export default {
   data() {
     return { basicSearch: '' };
-  },
-
-  methods: {
-    goBasicSearch() {
-      alert(this.basicSearch)
-    }
   }
 };
 ```
 :::
 
-#### 简单搜索样式
-
-:::demo 简单搜索样式
-```html
-<van-search placeholder="搜索商品" type="simple" v-model="simpleSearch"></van-search>
-```
-:::
-
 #### 监听对应事件
 
-除了`search`事件，还有`change`和`cancel`事件，`change`事件在`input`输入框每次`change`时触发，适用于实时搜索等，`cancel`在取消按钮点击时触发。
+`van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的 搜索/回车 按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
+
+Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
 
 :::demo 监听对应事件
 ```html
-<van-search placeholder="商品名称" @search="goSearch" @cancel="handleCancel" v-model="search"></van-search>
+<form action="/">
+  <van-search
+    placeholder="请输入商品名称"
+    v-model="search"
+    :show-cancel="true"
+    @search="goSearch"
+    @cancel="handleCancel"></van-search>
+</form>
 ```
 
 ```javascript
@@ -87,8 +72,8 @@ export default {
   },
 
   methods: {
-    goSearch(value) {
-      alert(value)
+    goSearch() {
+      alert(this.search)
     },
     handleCancel() {
       alert('cancel');
@@ -103,11 +88,12 @@ export default {
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `String`  |           |     |
-| type | 搜索样式类型 | `String`  |     `normal`      |  `normal`：普通样式，`simple`：简单样式，无背景和取消按钮   |
+| background | 搜索框背景色 | `String`  |     `#f2f2f2`      |  所有浏览器支持的颜色描述   |
+| showCancel | 是否在搜索框聚焦是显示右侧取消按钮 | `Boolean`  |     false      |     |
 
 ### Event
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|
 | cancel | 取消搜索 |   |
-| search | 确定搜索 | value：当前`input`输入框的值  |
+| search | 确定搜索 |   |

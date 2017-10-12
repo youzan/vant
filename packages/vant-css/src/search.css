@@ -6,13 +6,8 @@
   padding: 4px 15px;
   background-color: #F2F2F2;
 
-  &--focus {
+  &--show-cancel {
     padding-right: 50px;
-  }
-
-  &--showcase {
-    padding: 10px;
-    background-color: transparent;
   }
 
   &__input-wrap {
