@@ -129,24 +129,24 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| name | name of checkbox | `Boolean`  | `false` | - |
-| disabled | if the checkbox is diabled | `Boolean`  | `false` | - |
-| shape | shape of checkbox | `String`  | `round` | `square` |
+| name | Checkbox name | `Boolean`  | `false` | - |
+| disabled | Diable checkbox | `Boolean`  | `false` | - |
+| shape | Checkbox shape | `String`  | `round` | `square` |
 
 ### CheckboxGroup API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | if all checkboxes are diabled | `Boolean` | `false` | - |
+| disabled | Disable all checkboxes | `Boolean` | `false` | - |
 
 ### Checkbox Event
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
-| change | triggered when value changed | current value |
+| change | Triggered when value changed | current value |
 
 ### CheckboxGroup Event
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
-| change | triggered when value changed | current value |
+| change | Triggered when value changed | current value |
