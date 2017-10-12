@@ -61,6 +61,6 @@ Set grid spacing using `gutter` attribute. The default value is 0
 #### Column
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| span | number of column the grid spans | `String | Number`  | - | - |
+| span | number of column the grid spans | `String | Number` | - | - |
 | offset | number of spacing on the left side of the grid | `String | Number` | -  | - |
 | prefix | className prefix | `String`  | `van` | - |

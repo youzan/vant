@@ -10,7 +10,7 @@ npm i vant -S
 
 ### Usage
 
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
 ```bash
 # Install babel-plugin-import
 npm i babel-plugin-import -D

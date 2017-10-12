@@ -329,10 +329,6 @@ module.exports = {
               {
                 "path": "/switch",
                 "title": "Switch"
-              },
-              {
-                "path": "/uploader",
-                "title": "Uploader"
               }
             ]
           },

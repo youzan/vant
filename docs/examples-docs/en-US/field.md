@@ -70,9 +70,9 @@ Use `type` prop to custom diffrent type fileds.
 ```
 :::
 
-#### ErrorInfo
+#### Error Info
 
-:::demo ErrorInfo
+:::demo Error Info
 ```html
 <van-cell-group>
   <van-field label="Username" placeholder="Username" error></van-field>
@@ -81,7 +81,7 @@ Use `type` prop to custom diffrent type fileds.
 :::
 
 #### Auto resize
-Textarea Filed can be auto resize when has `autosize` prop.
+Textarea Filed can be auto resize when has `autosize` prop
 
 :::demo Auto resize
 ```html
