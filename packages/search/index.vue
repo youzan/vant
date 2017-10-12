@@ -1,23 +1,26 @@
 <template>
   <div
     class="van-search"
-    v-clickoutside="handleClickoutside"
-    :class="{ 'van-search--show-cancel': isFocus && showCancel }"
+    :class="{ 'van-search--show-action': showAction }"
     :style="{ 'background-color': background }">
-    <div class="van-search__input-wrap">
+    <div class="van-search__input-wrap" v-clickoutside="handleClickoutside">
       <van-icon name="search"></van-icon>
       <input
         type="search"
-        :value="value"
-        :placeholder="placeholder"
         class="van-search__input"
         v-refocus="focusStatus"
+        :value="value"
+        :placeholder="placeholder"
         @input="handleInput"
         @focus="handleFocus"
         @keypress.enter.prevent="handleSearch">
       <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
     </div>
-    <div class="van-search__cancel" v-show="showCancel && isFocus" @click="handleBack">取消</div>
+    <div class="van-search__action" v-if="showAction">
+      <slot name="action">
+        <p class="van-search__action-text" @click="handleBack">取消</p>
+      </slot>
+    </div>
   </div>
 </template>
 
@@ -35,7 +38,7 @@ export default {
   props: {
     placeholder: String,
     value: String,
-    showCancel: {
+    showAction: {
       type: Boolean,
       default: false
     },
@@ -81,6 +84,11 @@ export default {
     handleClean() {
       this.$emit('input', '');
       this.focusStatus = true;
+
+      // 保证多次点击 clean 后，仍能触发 refocus
+      this.$nextTick(() => {
+        this.focusStatus = false;
+      });
     },
 
     /**
@@ -88,8 +96,6 @@ export default {
      */
     handleBack() {
       this.$emit('input', '');
-      this.focusStatus = false;
-      this.isFocus = false;
       this.$emit('cancel');
     },
 

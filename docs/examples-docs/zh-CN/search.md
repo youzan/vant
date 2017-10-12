@@ -3,7 +3,8 @@ export default {
   data() {
     return {
       search: '',
-      basicSearch: ''
+      basicSearch: '',
+      slotSearch: ''
     };
   },
 
@@ -11,12 +12,21 @@ export default {
     goSearch() {
       alert(this.search);
     },
+    goSlotSearch() {
+      alert(this.slotSearch);
+    },
     handleCancel() {
       alert('cancel');
     }
   }
 };
 </script>
+
+<style>
+.demo-search-action {
+  padding: 0 10px;
+}
+</style>
 
 ## Search 搜索
 
@@ -31,19 +41,11 @@ Vue.component(Search.name, Search);
 
 #### 基础用法
 
-`van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色
+`van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 :::demo 基础用法
 ```html
 <van-search placeholder="搜索框基础用法" v-model="basicSearch" background="transparent"></van-search>
-```
-
-```javascript
-export default {
-  data() {
-    return { basicSearch: '' };
-  }
-};
 ```
 :::
 
@@ -59,27 +61,27 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   <van-search
     placeholder="请输入商品名称"
     v-model="search"
-    :show-cancel="true"
+    :show-action="true"
     @search="goSearch"
     @cancel="handleCancel"></van-search>
 </form>
 ```
+:::
 
-```javascript
-export default {
-  data() {
-    return { search: '' };
-  },
+#### 自定义行动按钮
 
-  methods: {
-    goSearch() {
-      alert(this.search)
-    },
-    handleCancel() {
-      alert('cancel');
-    }
-  }
-};
+`van-search` 支持自定义右侧取消按钮，使用名字为 action 的 slot 即可。使用此 slot 以后，原有的 cancel 事件不再生效。
+
+:::demo 自定义行动按钮
+```html
+<van-search
+  v-model="slotSearch"
+  :show-action="true"
+  @search="goSlotSearch">
+  <template slot="action">
+    <p class="demo-search-action" @click="goSlotSearch">搜索</p>
+  </template>    
+</van-search>
 ```
 :::
 
@@ -89,11 +91,17 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `String`  |           |     |
 | background | 搜索框背景色 | `String`  |     `#f2f2f2`      |  所有浏览器支持的颜色描述   |
-| showCancel | 是否在搜索框聚焦是显示右侧取消按钮 | `Boolean`  |     false      |     |
+| showAction | 是否在搜索框右侧显示取消按钮 | `Boolean`  |     false      |     |
 
 ### Event
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|
-| cancel | 取消搜索 |   |
-| search | 确定搜索 |   |
+| cancel | 取消搜索 | - |
+| search | 确定搜索 | - |
+
+### Slot
+
+| name       | 描述      |
+|-----------|-----------|
+| action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
