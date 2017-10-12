@@ -1,6 +1,7 @@
 <template>
   <div class="van-swipe">
     <div 
+      v-if="count > 1"
       :style="trackStyle"
       class="van-swipe__track"
       @touchstart="onTouchStart"
@@ -8,6 +9,12 @@
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
       @transitionend="$emit('change', activeIndicator)"
+    >
+      <slot></slot>
+    </div>
+    <div 
+      v-else
+      class="van-swipe__track"
     >
       <slot></slot>
     </div>
@@ -41,7 +48,6 @@ export default {
       active: 0,
       deltaX: 0,
       swipes: [],
-      childrenOffset: [],
       direction: '',
       currentDuration: 0,
       width: window.innerWidth
@@ -49,8 +55,13 @@ export default {
   },
 
   mounted() {
-    this.move(0);
-    this.autoPlay();
+    this.initialize();
+  },
+
+  watch: {
+    swipes() {
+      this.initialize();
+    }
   },
 
   computed: {
@@ -59,7 +70,7 @@ export default {
     },
 
     trackStyle() {
-      return this.count === 1 ? {} : {
+      return {
         paddingLeft: this.width + 'px',
         width: (this.count + 2) * this.width + 'px',
         transitionDuration: `${this.currentDuration}ms`,
@@ -73,6 +84,18 @@ export default {
   },
 
   methods: {
+    initialize() {
+      // reset offset when children changes
+      clearTimeout(this.timer);
+      this.active = 0;
+      this.currentDuration = 0;
+      this.offset = this.count > 1 ? -this.width : 0;
+      this.swipes.forEach(swipe => {
+        swipe.offset = 0;
+      });
+      this.autoPlay();
+    },
+
     onTouchStart(event) {
       clearTimeout(this.timer);
 
@@ -82,10 +105,10 @@ export default {
       this.startX = event.touches[0].clientX;
       this.startY = event.touches[0].clientY;
 
-      if (this.active === -1) {
+      if (this.active <= -1) {
         this.move(this.count);
       }
-      if (this.active === this.count) {
+      if (this.active >= this.count) {
         this.move(-this.count);
       }
     },
@@ -115,7 +138,7 @@ export default {
         if (active === -1) {
           swipes[count - 1].offset = 0;
         }
-        swipes[0].offset = active === count - 1 ? count * width : 0;
+        swipes[0].offset = active === count - 1 && move > 0 ? count * width : 0;
 
         this.active += move;
       } else {
@@ -135,7 +158,7 @@ export default {
         this.timer = setTimeout(() => {
           this.currentDuration = 0;
 
-          if (this.active === this.count) {
+          if (this.active >= this.count) {
             this.move(-this.count);
           }
 
