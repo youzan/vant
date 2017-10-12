@@ -10,7 +10,6 @@ export default {
 
   beforeCreate() {
     this.$parent.swipes.push(this);
-    this.$parent.childrenOffset.push(0);
   },
 
   data() {
