@@ -1,53 +1,44 @@
 @import './common/var.css';
+$van-swipe-indicator: 6px;
 
 .van-swipe {
-  position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
-
-  &__indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &__indicator {
-    width: 5px;
-    height: 5px;
-    display: inline-block;
-    border-radius: 100%;
-    background: $gray-dark;
-    opacity: .8;
-    margin: 0 3px;
-    z-index: 1;
-
-    &--active {
-      background: $orange;
-      opacity: 1;
-    }
-  }
-
-  &__items {
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-  }
+  position: relative;
+  user-select: none;
 
   &-item {
-    display: none;
+    float: left;
     height: 100%;
-    width: 100%;
-    text-align: center;
+  }
 
-    img {
-      width: 100%;
-      height: auto;
+  &__track {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__indicators {
+    left: 50%;
+    bottom: 10px;
+    position: absolute;
+    height: $van-swipe-indicator;
+    transform: translate3d(-50%, 0, 0);
+
+    > i {
+      border-radius: 100%;
+      vertical-align: top;
+      display: inline-block;
+      background-color: $gray-dark;
+      width: $van-swipe-indicator;
+      height: $van-swipe-indicator;
+      &:not(:last-child) {
+        margin-right: $van-swipe-indicator;
+      }
     }
 
-    &:first-child {
-      display: block;
+    .van-swipe__indicator {
+      &--active {
+        background-color: $orange;
+      }
     }
   }
 }

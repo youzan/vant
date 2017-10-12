@@ -3,9 +3,10 @@
 
 .van-card {
   color: $text-color;
-  height: 90px;
+  height: 100px;
   background: #fafafa;
   position: relative;
+  box-sizing: border-box;
   padding: 5px 15px 5px 115px;
 
   &:not(:first-child) {
