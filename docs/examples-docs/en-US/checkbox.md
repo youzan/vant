@@ -28,9 +28,9 @@ export default {
 };
 </script>
 
-## Checkbox 复选框
+## Checkbox
 
-### 使用指南
+### Install
 ``` javascript
 import { Checkbox, CheckboxGroup } from 'vant';
 
@@ -38,14 +38,13 @@ Vue.component(Checkbox.name, Checkbox);
 Vue.component(CheckboxGroup.name, CheckboxGroup);
 ```
 
-### 代码演示
+### Usage
 
-#### 基础用法
-通过`v-model`绑定 checkbox 的勾选状态
+#### Basic Usage
 
-:::demo 基础用法
+:::demo Basic Usage
 ```html
-<van-checkbox v-model="checkbox1">复选框 1</van-checkbox>
+<van-checkbox v-model="checkbox1">Checkbox 1</van-checkbox>
 ```
 
 ```javascript
@@ -59,19 +58,18 @@ export default {
 ```
 :::
 
-#### 禁用状态
+#### Disabled
 
-:::demo 禁用状态
+:::demo Disabled
 ```html
-<van-checkbox v-model="checkbox2" disabled>复选框 2</van-checkbox>
+<van-checkbox v-model="checkbox2" disabled>Checkbox 2</van-checkbox>
 ```
 :::
 
-#### Checkbox 组
+#### CheckboxGroup
+When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an array and bound with CheckboxGroup by v-model.
 
-需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
-
-:::demo Checkbox 组
+:::demo CheckboxGroup
 ```html
 <van-checkbox-group v-model="result">
   <van-checkbox
@@ -79,7 +77,7 @@ export default {
     :key="index"
     :name="item"
   >
-    复选框 {{ item }}
+    Checkbox {{ item }}
   </van-checkbox>
 </van-checkbox-group>
 ```
@@ -91,21 +89,25 @@ export default {
       list: ['a', 'b', 'c'],
       result: ['a', 'b']
     };
+  },
+
+  watch: {
+    result(val) {
+      console.log(val);
+    }
   }
 };
 ```
 :::
 
-#### 与 Cell 组件一起使用
+#### Inside a Cell
 
-此时你需要再引入`Cell`和`CellGroup`组件
-
-:::demo 与Cell组件一起使用
+:::demo Inside a Cell
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
     <van-cell v-for="(item, index) in list" :key="index">
-      <van-checkbox :name="item">复选框{{ item }}</van-checkbox>
+      <van-checkbox :name="item">Checkbox{{ item }}</van-checkbox>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -125,26 +127,26 @@ export default {
 
 ### Checkbox API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| name | 标识 Checkbox 名称 | `Boolean`  | `false` | - |
-| disabled | 是否禁用单选框 | `Boolean`  | `false` | - |
-| shape | 形状 | `String`  | `round` | `square` |
+| name | name of checkbox | `Boolean`  | `false` | - |
+| disabled | if the checkbox is diabled | `Boolean`  | `false` | - |
+| shape | shape of checkbox | `String`  | `round` | `square` |
 
 ### CheckboxGroup API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| disabled | if all checkboxes are diabled | `Boolean` | `false` | - |
 
 ### Checkbox Event
 
-| 事件名称       | 说明      | 回调参数 |
+| Event | Description | Parameters |
 |-----------|-----------|-----------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| change | triggered when value changed | current value |
 
 ### CheckboxGroup Event
 
-| 事件名称       | 说明      | 回调参数 |
+| Event | Description | Parameters |
 |-----------|-----------|-----------|
-| change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| change | triggered when value changed | current value |
