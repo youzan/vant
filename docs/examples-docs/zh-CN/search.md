@@ -1,11 +1,19 @@
 <script>
 export default {
+  data() {
+    return {
+      search: '',
+      basicSearch: '',
+      slotSearch: ''
+    };
+  },
+
   methods: {
-    goSearch(value) {
-      alert(value)
+    goSearch() {
+      alert(this.search);
     },
-    handleChange(value) {
-      console.log(value);
+    goSlotSearch() {
+      alert(this.slotSearch);
     },
     handleCancel() {
       alert('cancel');
@@ -13,6 +21,12 @@ export default {
   }
 };
 </script>
+
+<style>
+.demo-search-action {
+  padding: 0 10px;
+}
+</style>
 
 ## Search 搜索
 
@@ -27,55 +41,47 @@ Vue.component(Search.name, Search);
 
 #### 基础用法
 
-如果你只需要在搜索时有个回调，只要监听一个`search`事件。
+`van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 :::demo 基础用法
 ```html
-<van-search placeholder="商品名称" @search="goSearch"></van-search>
-```
-
-```javascript
-export default {
-  methods: {
-    goSearch(value) {
-      alert(value)
-    }
-  }
-};
-```
-:::
-
-#### 微杂志页搜索样式
-
-:::demo 基础用法
-```html
-<van-search placeholder="搜索商品" type="showcase"></van-search>
+<van-search placeholder="搜索框基础用法" v-model="basicSearch" background="transparent"></van-search>
 ```
 :::
 
 #### 监听对应事件
 
-除了`search`事件，还有`change`和`cancel`事件，`change`事件在`input`输入框每次`change`时触发，适用于实时搜索等，`cancel`在取消按钮点击时触发。
+`van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的 搜索/回车 按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
+
+Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
 
 :::demo 监听对应事件
 ```html
-<van-search placeholder="商品名称" @search="goSearch" @change="handleChange" @cancel="handleCancel"></van-search>
+<form action="/">
+  <van-search
+    placeholder="请输入商品名称"
+    v-model="search"
+    :show-action="true"
+    @search="goSearch"
+    @cancel="handleCancel"></van-search>
+</form>
 ```
+:::
 
-```javascript
-export default {
-  methods: {
-    goSearch(value) {
-      alert(value)
-    },
-    handleChange(value) {
-      console.log(value);
-    },
-    handleCancel() {
-      alert('cancel');
-    }
-  }
-};
+#### 自定义行动按钮
+
+`van-search` 支持自定义右侧取消按钮，使用名字为 action 的 slot 即可。使用此 slot 以后，原有的 cancel 事件不再生效。
+
+:::demo 自定义行动按钮
+```html
+<van-search
+  v-model="slotSearch"
+  :show-action="true"
+  @search="goSlotSearch">
+  <template slot="action">
+    <p class="demo-search-action" @click="goSlotSearch">搜索</p>
+  </template>    
+</van-search>
 ```
 :::
 
@@ -84,12 +90,18 @@ export default {
 | 参数       | 说明      | 类型       | 默认值       | 可选值       |
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | `input`的`placeholder`文案 | `String`  |           |     |
-| type | 搜索样式类型 | `String`  |     `normal`      |  `normal`：普通样式，`showcase`：微杂志页样式   |
+| background | 搜索框背景色 | `String`  |     `#f2f2f2`      |  所有浏览器支持的颜色描述   |
+| showAction | 是否在搜索框右侧显示取消按钮 | `Boolean`  |     false      |     |
 
 ### Event
 
 | 事件名       | 说明      | 参数       |
 |-----------|-----------|-----------|
-| change | `input`输入框每次`change`时触发，适用于实时搜索等 | value：当前`input`输入框的值  |
-| cancel | 取消搜索 |   |
-| search | 确定搜索 | value：当前`input`输入框的值  |
+| cancel | 取消搜索 | - |
+| search | 确定搜索 | - |
+
+### Slot
+
+| name       | 描述      |
+|-----------|-----------|
+| action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
