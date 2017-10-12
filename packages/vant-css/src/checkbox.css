@@ -1,12 +1,12 @@
 @import './common/var.css';
 
-$van-checkbox-size: 18px;
+$van-checkbox-size: 20px;
 
 .van-checkbox {
   overflow: hidden;
 
   .van-icon-success {
-    color: #fff;
+    color: $white;
     display: block;
     line-height: 1;
     font-size: 14px;
@@ -15,10 +15,11 @@ $van-checkbox-size: 18px;
     border: 1px solid #aaa;
     width: $van-checkbox-size;
     height: $van-checkbox-size;
+    box-sizing: border-box;
 
     &::before {
       margin: 0 auto;
-      line-height: $van-checkbox-size;
+      line-height: calc($van-checkbox-size - 2px);
       transition: all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
       transform: scale(0);
     }
@@ -26,7 +27,7 @@ $van-checkbox-size: 18px;
 
   &__input {
     position: relative;
-    height: calc($van-checkbox-size + 2px);
+    height: $van-checkbox-size;
     margin-right: 15px;
     float: left;
   }
@@ -37,14 +38,14 @@ $van-checkbox-size: 18px;
     left: 0;
     opacity: 0;
     margin: 0;
-    width: calc($van-checkbox-size + 2px);
-    height: calc($van-checkbox-size + 2px);
+    width: $van-checkbox-size;
+    height: $van-checkbox-size;
   }
 
   &__label {
     display: block; 
     margin-left: 37px;
-    line-height: calc($van-checkbox-size + 2px);
+    line-height: $van-checkbox-size;
   }
 
   &--round {

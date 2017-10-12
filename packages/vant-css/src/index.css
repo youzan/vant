@@ -4,7 +4,6 @@
 
 /* base */
 @import './base.css';
-@import './reset.css';
 
 /* common components */
 @import './col.css';

@@ -68,13 +68,13 @@ export default {
     overflow: hidden;
     background: url(https://img.yzcdn.cn/upload_files/2017/04/20/FjwR1mraVIqtHWb8YWDW_YzQ_Kh2.png) center center no-repeat;
     background-size: 156px 40px;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
   }
 
   .zanui-desc {
     font-size: 14px;
     color: #666;
-    margin-bottom: 50px;
+    margin: 0 0 50px;
   }
 }
 </style>

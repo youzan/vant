@@ -6,7 +6,7 @@
   user-select: none;
   text-align: center;
   line-height: 46px;
-  background-color: #fff;
+  background-color: $white;
 
   .van-icon {
     color: $blue;

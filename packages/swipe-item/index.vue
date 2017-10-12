@@ -1,5 +1,5 @@
 <template>
-  <div class="van-swipe-item">
+  <div class="van-swipe-item" :style="style">
     <slot></slot>
   </div>
 </template>
@@ -10,13 +10,27 @@ export default {
 
   beforeCreate() {
     this.$parent.swipes.push(this);
+    this.$parent.childrenOffset.push(0);
+  },
+
+  data() {
+    return {
+      offset: 0,
+      index: this.$parent.swipes.indexOf(this)
+    };
+  },
+
+  computed: {
+    style() {
+      return {
+        width: this.$parent.width + 'px',
+        transform: `translate3d(${this.offset}px, 0, 0)`
+      };
+    }
   },
 
   destroyed() {
-    const index = this.$parent.swipes.indexOf(this);
-    if (index > -1) {
-      this.$parent.swipes.splice(index, 1);
-    }
+    this.$parent.swipes.splice(this.index, 1);
   }
 };
 </script>

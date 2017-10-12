@@ -19,7 +19,7 @@ export default {
 </script>
 
 ## PasswordInput 密码输入框
-密码输入框组件通常与 [数字键盘](/zanui/vue/component/number-keyboard) 组件配合使用
+密码输入框组件通常与 [数字键盘](#/zh-CN/component/number-keyboard) 组件配合使用
 
 ### 使用指南
 ``` javascript
