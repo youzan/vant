@@ -29,7 +29,7 @@ export default {
 ```
 
 ### 代码演示
-
+```js
 <script>
 import { Waterfall } from 'packages';
 
@@ -93,6 +93,7 @@ export default {
   }
 }
 </style>
+```
 
 #### 基础用法
 使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 false，禁止 `v-waterfall-lower` 监听滚动事件
