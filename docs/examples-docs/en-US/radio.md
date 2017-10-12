@@ -1,15 +1,3 @@
-<style>
-.demo-radio {
-  .van-radios {
-    padding: 0 20px;
-
-    .van-radio {
-      margin: 10px 0;
-    }
-  }
-}
-</style>
-
 <script>
 export default {
   data() {

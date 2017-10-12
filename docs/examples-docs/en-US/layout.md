@@ -1,27 +1,3 @@
-<style>
-.demo-layout {
-  .van-row {
-    padding: 0 15px;
-  }
-  .van-col {
-    color: #fff;
-    font-size: 13px;
-    line-height: 30px;
-    text-align: center;
-    margin-bottom: 10px;
-    background-clip: content-box;
-
-    &:nth-child(odd) {
-      background-color: #39a9ed;
-    }
-
-    &:nth-child(even) {
-      background-color: #66c6f2;
-    }
-  }
-}
-</style>
-
 ## Layout
 
 Quickly and easily create layouts with `van-row` and `van-col`

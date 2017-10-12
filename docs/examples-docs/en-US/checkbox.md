@@ -1,16 +1,3 @@
-<style>
-.demo-checkbox {
-  .van-checkbox {
-    margin: 10px 0 0 20px;
-  }
-  .van-cell {
-    .van-checkbox {
-      margin: 0;
-    }
-  }
-}
-</style>
-
 <script>
 export default {
   data() {

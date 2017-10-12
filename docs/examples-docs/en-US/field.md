@@ -1,9 +1,3 @@
-<style>
-.demo-field {
-  padding-bottom: 30px;
-}
-</style>
-
 <script>
 export default {
   data() {

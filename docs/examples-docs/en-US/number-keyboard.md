@@ -1,11 +1,3 @@
-<style>
-.demo-number-keyboard {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-</style>
-
 <script>
 import { Toast } from 'packages';
 
