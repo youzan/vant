@@ -96,6 +96,7 @@ export default {
       }
 
       > p {
+        margin: 0;
         border-top: 1px solid #e5e5e5;
       }
     }

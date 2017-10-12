@@ -30,6 +30,8 @@ ul {
   list-style: none;
 }
 
-button {
-  font-family: inherit;
+input,
+button,
+textarea {
+  font: inherit;
 }

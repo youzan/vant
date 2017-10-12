@@ -54,10 +54,11 @@
 
     &__title {
       font-size: 14px;
-      margin-bottom: 4px;
+      margin: 0 0 4px;
     }
 
     &__subtitle {
+      margin: 0;
       font-size: 12px;
       color: $gray-darker;
     }
