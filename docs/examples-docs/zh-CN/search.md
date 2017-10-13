@@ -79,7 +79,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   :show-action="true"
   @search="goSlotSearch">
   <template slot="action">
-    <p class="demo-search-action" @click="goSlotSearch">搜索</p>
+    <div class="demo-search-action" @click="goSlotSearch">搜索</div>
   </template>    
 </van-search>
 ```
