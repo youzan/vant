@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-## Tab 标签
+## Tab 标签页
 
 ### 使用指南
 ``` javascript

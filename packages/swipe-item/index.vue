@@ -8,14 +8,9 @@
 export default {
   name: 'van-swipe-item',
 
-  beforeCreate() {
-    this.$parent.swipes.push(this);
-  },
-
   data() {
     return {
-      offset: 0,
-      index: this.$parent.swipes.indexOf(this)
+      offset: 0
     };
   },
 
@@ -28,8 +23,12 @@ export default {
     }
   },
 
+  beforeCreate() {
+    this.$parent.swipes.push(this);
+  },
+
   destroyed() {
-    this.$parent.swipes.splice(this.index, 1);
+    this.$parent.swipes.splice(this.$parent.swipes.indexOf(this), 1);
   }
 };
 </script>

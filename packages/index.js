@@ -50,6 +50,8 @@ import SwipeItem from './swipe-item';
 import Switch from './switch';
 import SwitchCell from './switch-cell';
 import Tab from './tab';
+import Tabbar from './tabbar';
+import TabbarItem from './tabbar-item';
 import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
@@ -108,6 +110,8 @@ const components = [
   Switch,
   SwitchCell,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabs,
   Tag,
   TreeSelect,
@@ -182,6 +186,8 @@ export {
   Switch,
   SwitchCell,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabs,
   Tag,
   Toast,
