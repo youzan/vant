@@ -2,7 +2,7 @@
 
 .van-contact-card {
   position: relative;
-  background-color: #fff;
+  background-color: $white;
 
   &--add {
     line-height: 40px;

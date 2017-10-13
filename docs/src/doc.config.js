@@ -121,7 +121,11 @@ module.exports = {
               },
               {
                 "path": "/tab",
-                "title": "Tab - 标签"
+                "title": "Tab - 标签页"
+              },
+              {
+                "path": "/tabbar",
+                "title": "Tabbar - 标签栏"
               },
               {
                 "path": "/tag",
@@ -305,7 +309,32 @@ module.exports = {
           },
           {
             "groupName": "Form",
-            "list": []
+            "list": [
+              {
+                "path": "/checkbox",
+                "title": "Checkbox"
+              },
+              {
+                "path": "/field",
+                "title": "Field"
+              },
+              {
+                "path": "/number-keyboard",
+                "title": "NumberKeyboard"
+              },
+              {
+                "path": "/password-input",
+                "title": "PasswordInput"
+              },
+              {
+                "path": "/radio",
+                "title": "Radio"
+              },
+              {
+                "path": "/switch",
+                "title": "Switch"
+              }
+            ]
           },
         ]
       }

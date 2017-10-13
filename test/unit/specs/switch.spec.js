@@ -1,5 +1,4 @@
 import Switch from 'packages/switch';
-import Vue from 'vue';
 import VanLoading from 'packages/loading';
 import { mount } from 'avoriaz';
 
@@ -88,43 +87,12 @@ describe('Switch', () => {
       }
     });
 
+    wrapper.vm.$on('input', val => {
+      wrapper.vm.value = val;
+    });
+
     expect(wrapper.hasClass('van-switch--off')).to.be.true;
     wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
-  });
-
-  it('click should call callback function', () => {
-    const stub = sinon.stub();
-    wrapper = mount(Switch, {
-      propsData: {
-        value: false,
-        onChange: stub
-      }
-    });
-
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    wrapper.trigger('click');
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    expect(stub.calledOnce).to.be.true;
-    expect(stub.calledWith(true));
-  });
-
-  it('toggle switch value from v-model', function(done) {
-    wrapper = mount(Switch, {
-      propsData: {
-        value: false
-      }
-    });
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
-    wrapper.vm.value = true;
-    wrapper.update();
-    Vue.nextTick(() => {
-      expect(wrapper.hasClass('van-switch--on')).to.be.true;
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('input'));
-      done();
-    });
   });
 });

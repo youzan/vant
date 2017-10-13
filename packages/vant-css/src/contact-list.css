@@ -25,8 +25,9 @@
   }
 
   &__text {
+    margin: 0;
+    color: $text-color;
     font-size: 14px;
-    color: #333;
     line-height: 1.5;
   }
 

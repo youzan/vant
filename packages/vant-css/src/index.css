@@ -4,7 +4,6 @@
 
 /* base */
 @import './base.css';
-@import './reset.css';
 
 /* common components */
 @import './col.css';
@@ -23,6 +22,7 @@
 @import './steps.css';
 @import './tag.css';
 @import './tab.css';
+@import './tabbar.css';
 @import './image-preview.css';
 @import './stepper.css';
 @import './progress.css';

@@ -10,7 +10,7 @@ export default {
     return {
       value: '',
       password: '',
-      username: 'zhangmin',
+      username: '',
       message: ''
     };
   }
@@ -19,7 +19,7 @@ export default {
 
 ## Field 输入框
 
-表单中`input`或`textarea`的输入框。
+`input`或`textarea`的输入框。
 
 ### 使用指南
 ``` javascript
@@ -109,7 +109,7 @@ Vue.component(Field.name, Field);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 输入框类型 | `String`  | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
 | value | 输入框的值 | `String`  | - | - |
@@ -121,7 +121,7 @@ Vue.component(Field.name, Field);
 
 ### Event
 
-| 事件名称       | 说明      | 回调参数 |
+| 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | focus | 输入框聚焦时触发 | - |
 | blur | 输入框失焦时触发 | - |
@@ -129,6 +129,6 @@ Vue.component(Field.name, Field);
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | icon | 自定义icon |

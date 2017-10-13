@@ -18,10 +18,10 @@ export default {
 }
 </script>
 
-## PasswordInput 密码输入框
-密码输入框组件通常与 [数字键盘](#/zh-CN/component/number-keyboard) 组件配合使用
+## PasswordInput
+The PasswordInput component is usually used with [NumberKeyboard](#/en-US/component/number-keyboard) Component.
 
-### 使用指南
+### Install
 ``` javascript
 import { PasswordInput, NumberKeyBoard } from 'vant';
 
@@ -29,20 +29,20 @@ Vue.component(PasswordInput.name, PasswordInput);
 Vue.component(NumberKeyBoard.name, NumberKeyBoard);
 ```
 
-### 代码演示
+### Usage
 
-#### 基础用法
+#### Basic Usage
 
-:::demo 基础用法
+:::demo Basic Usage
 ```html
-<!-- 密码输入框 -->
+<!-- PasswordInput -->
 <van-password-input
   :value="value"
-  info="密码为 6 位数字"
+  info="Some tips"
   @focus="showKeyboard = true"
 ></van-password-input>
 
-<!-- 数字键盘 -->
+<!-- NumberKeyboard -->
 <van-number-keyboard
   :show="showKeyboard"
   @input="onInput"
@@ -74,15 +74,15 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 密码值 | `String`  | `''` | - |
-| length | 密码最大长度 | `Number` | `6` | - |
-| info | 输入框下方提示 | `String` | - | - |
-| errorInfo | 输入框下方错误提示 | `String` | - | - |
+| value | Password value | `String`  | `''` | - |
+| length | Maxlength of password | `Number` | `6` | - |
+| info | Bottom info | `String` | - | - |
+| errorInfo | Bottom error info | `String` | - | - |
 
 ### Event
 
-| 事件名 | 说明 | 参数 |
+| Event | Description | Attribute |
 |-----------|-----------|-----------|
-| focus | 输入框聚焦时触发 | - |
+| focus | Triggered when input get focused | - |

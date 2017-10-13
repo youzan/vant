@@ -1,16 +1,19 @@
 <style>
 .demo-lazyload {
+  padding: 15px;
+
   img,
   div[lazy] {
     padding: 15px;
-    width: 315px;
+    width: 100%;
     height: 250px;
-    margin: 10px 15px 0;
+    margin: 10px 0 0;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     background-size: 315px 250px;
     background-position: 15px;
     background-repeat: no-repeat;
+    box-sizing: border-box;
   }
 }
 </style>

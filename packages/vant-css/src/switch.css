@@ -1,12 +1,13 @@
 @import './common/var.css';
 
 .van-switch {
-  height: 31px;
-  width: 51px;
+  height: 33px;
+  width: 53px;
   display: inline-block;
   position: relative;
   background: $white;
   border-radius: 16px;
+  box-sizing: border-box;
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 32px;
 

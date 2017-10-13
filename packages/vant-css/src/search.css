@@ -1,26 +1,19 @@
 @import './common/var.css';
 
 .van-search {
-  position: relative;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   padding: 4px 15px;
-  background-color: #F2F2F2;
 
-  &--focus {
-    padding-right: 50px;
-  }
-
-  &--showcase {
-    padding: 10px;
-    background-color: $background-color;
-
-    .van-search__input-wrap {
-      border-color: $gray-light;
-    }
+  &--show-action {
+    padding-right: 0;
   }
 
   &__input-wrap {
     position: relative;
+    flex: 1;
+    height: 16px;
     padding: 8px 24px 8px 35px;
     border: 1px solid $gray-light;
     border-radius: 4px;
@@ -30,7 +23,9 @@
   &__input {
     display: block;
     width: 100%;
-    height: 14px;
+    height: 16px;
+    line-height: 16px;
+    padding: 0;
     font-size: 14px;
     color: $gray-darker;
     border: none;
@@ -38,15 +33,23 @@
     &::placeholder {
       color: $gray-dark;
     }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
   }
 
-  &__cancel {
-    position: absolute;
+  &__action {
     line-height: 34px;
-    padding: 4px 0;
-    top: 0;
-    right: 10px;
     font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  &__action-text {
+    padding: 0 10px;
     color: $green;
   }
 
@@ -64,9 +67,11 @@
     font-size: 14px;
     line-height: 16px;
     position: absolute;
-    right: 5px;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
+    /* 增加 clear 点击区域 */
+    padding: 5px;
     color: #888;
   }
 }
