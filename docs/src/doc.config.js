@@ -121,7 +121,11 @@ module.exports = {
               },
               {
                 "path": "/tab",
-                "title": "Tab - 标签"
+                "title": "Tab - 标签页"
+              },
+              {
+                "path": "/tabbar",
+                "title": "Tabbar - 标签栏"
               },
               {
                 "path": "/tag",
