@@ -1,65 +1,49 @@
+import Vue from 'vue';
+import { mount } from 'avoriaz';
+import { triggerTouch } from '../utils';
 import ImagePreview from 'packages/image-preview';
-import Wrapper from 'avoriaz/dist/Wrapper';
+import ImagePreviewVue from 'packages/image-preview/image-preview';
+
+const images = [
+  'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
+  'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
+  'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
+];
 
 describe('ImagePreview', () => {
-  beforeEach(() => {
-    document.body.style.overflow = '';
-  });
+  let wrapper;
 
   afterEach(() => {
-    const el = document.querySelector('.van-image-preview');
-    if (!el) return;
-    if (el.parentNode) {
-      el.parentNode.removeChild(el);
-    }
+    wrapper && wrapper.destroy();
   });
 
-  it('create a image preview', (done) => {
-    ImagePreview([
-      'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
-      'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-      'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
-    ]);
-
-    expect(document.querySelector('.van-image-preview')).to.exist;
-
-    setTimeout(() => {
-      const image = document.querySelector('.van-image-preview');
-      const avImage = new Wrapper({ elm: image }, () => {}, false);
-      avImage.trigger('click');
-      avImage.trigger('touchstart');
-      avImage.trigger('touchend');
-      setTimeout(() => {
-        expect(document.querySelector('.van-image-preview').__vue__.$parent.value).to.be.false;
-        expect(document.body.style.overflow).to.equal('');
-        done();
-      }, 500);
-    }, 500);
+  it('call ImagePreview Function', (done) => {
+    ImagePreview(images);
+    Vue.nextTick(() => {
+      expect(document.querySelectorAll('.van-image-preview img').length).to.equal(3);
+      done();
+    });
   });
 
-  it('create a body hidden image preview', (done) => {
-    document.body.style.overflow = 'hidden';
+  it('create a ImagePreview Component', (done) => {
+    wrapper = mount(ImagePreviewVue);
+    wrapper.vm.images = images;
+    wrapper.vm.value = true;
 
-    ImagePreview([
-      'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
-      'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-      'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
-    ]);
+    expect(wrapper.hasClass('van-image-preview')).to.be.true;
 
-    expect(document.querySelector('.van-image-preview')).to.exist;
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.find('img').length).to.equal(3);
+      triggerTouch(wrapper, 'touchstart', 0, 0);
+      triggerTouch(wrapper, 'touchmove', 100, 100);
+      triggerTouch(wrapper, 'touchend', 0, 0);
+      expect(wrapper.vm.value).to.be.true;
 
-    setTimeout(() => {
-      const image = document.querySelector('.van-image-preview');
-      const avImage = new Wrapper({ elm: image }, () => {}, false);
-      avImage.trigger('click');
-      avImage.trigger('touchstart');
-      avImage.trigger('touchend');
-
-      setTimeout(() => {
-        expect(document.querySelector('.van-image-preview').__vue__.$parent.value).to.be.false;
-        expect(document.body.style.overflow).to.equal('hidden');
-        done();
-      }, 500);
-    }, 500);
+      triggerTouch(wrapper, 'touchstart', 0, 0);
+      triggerTouch(wrapper, 'touchmove', 0, 0);
+      triggerTouch(wrapper, 'touchend', 0, 0);
+      expect(wrapper.vm.value).to.be.false;
+      done();
+    });
   });
 });
