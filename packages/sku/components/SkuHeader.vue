@@ -1,5 +1,5 @@
 <template>
-  <div class="van-sku-header">
+  <div class="van-sku-header van-hairline--bottom">
     <div class="van-sku-header__img-wrap">
       <img class="van-sku__goods-img" :src="goodsImg">
     </div>
