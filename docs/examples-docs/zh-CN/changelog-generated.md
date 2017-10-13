@@ -1,5 +1,29 @@
 ## 更新日志
 
+## [v0.10.0](https://github.com/youzan/vant/tree/v0.10.0) (2017-10-13)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.9.12...v0.10.0)
+
+**Breaking changes**
+
+- \[breaking change\] remove reset.css dependencies [\#196](https://github.com/youzan/vant/pull/196) ([chenjiahan](https://github.com/chenjiahan))
+
+**Issue**
+
+- 滑动单元格问题 [\#195](https://github.com/youzan/vant/issues/195)
+- 样式初始化中的box-sizing [\#192](https://github.com/youzan/vant/issues/192)
+- 移动端如何自适应宽度？ [\#190](https://github.com/youzan/vant/issues/190)
+- file组件 里 textarea 获取不了scrollHeight [\#181](https://github.com/youzan/vant/issues/181)
+
+**Improvements**
+
+- \[bugfix\] delete unnecessary style in sku [\#205](https://github.com/youzan/vant/pull/205) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add Tabbar component [\#204](https://github.com/youzan/vant/pull/204) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] ImagePreview reconstruct [\#201](https://github.com/youzan/vant/pull/201) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Swipe shouid re initialize when item changes [\#200](https://github.com/youzan/vant/pull/200) ([chenjiahan](https://github.com/chenjiahan))
+- \[Document\] add form components english document [\#199](https://github.com/youzan/vant/pull/199) ([chenjiahan](https://github.com/chenjiahan))
+- \[breaking change\] Search: 修改原有结构 [\#198](https://github.com/youzan/vant/pull/198) ([pangxie1991](https://github.com/pangxie1991))
+- \[breaking change\] reconstruct Swipe component [\#194](https://github.com/youzan/vant/pull/194) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12) (2017-10-11)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.11...v0.9.12)
 
