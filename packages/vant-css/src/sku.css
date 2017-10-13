@@ -20,12 +20,7 @@
 
   &-group-container {
     margin-left: 15px;
-    position: relative;
     padding: 12px 0 2px;
-
-    &::after {
-      @mixin border-retina (bottom);
-    }
   }
 
   &-row-group {
@@ -38,12 +33,7 @@
 
   /* sku header */
   &-header {
-    position: relative;
     margin-left: 15px;
-
-    &::after {
-      @mixin border-retina (bottom);
-    }
 
     &__img-wrap {
       position: relative;

@@ -1,4 +1,4 @@
-@import "../mixins/border_retina.css";
+@import "../mixins/border-retina.css";
 
 .van-hairline {
   &,
