@@ -10,6 +10,15 @@
   }
 }
 
+@keyframes van-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .van-slide-bottom {
   &-enter-active {
     animation: van-slide-bottom-enter .3s both ease;
