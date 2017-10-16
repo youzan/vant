@@ -1,5 +1,22 @@
 ## Changelog
 
+### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
+`2017-10-13`
+
+**Breaking changes**
+- remove reset.css in vant-css [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196) [@chenjiahan](https://github.com/chenjiahan)
+- reconstruct Swipe component, adjust some API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200) [@chenjiahan](https://github.com/chenjiahan)
+- optimize Search component，adjust struct [\#198](https://github.com/youzan/vant/pull/198) [@pangxie1991](https://github.com/pangxie1991)
+
+**Improvements**
+- add Tabbar componnet [#157](https://github.com/youzan/vant/issues/157) [\#204](https://github.com/youzan/vant/pull/204) [@chenjiahan](https://github.com/chenjiahan)
+- add english document of Form components [\#199](https://github.com/youzan/vant/pull/199) [@chenjiahan](https://github.com/chenjiahan)
+- optimize Sku style [\#205](https://github.com/youzan/vant/pull/205) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix ImagePreview beating bug when loading image [\#201](https://github.com/youzan/vant/pull/201) [@chenjiahan](https://github.com/chenjiahan)
+- fix Field height error when type is textarea and display none [\#181](https://github.com/youzan/vant/issues/181) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.9.12](https://github.com/youzan/vant/tree/v0.9.12) 
 `2017-10-11`
 

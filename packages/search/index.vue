@@ -18,7 +18,7 @@
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
-        <p class="van-search__action-text" @click="handleBack">取消</p>
+        <div class="van-search__action-text" @click="handleBack">取消</div>
       </slot>
     </div>
   </div>

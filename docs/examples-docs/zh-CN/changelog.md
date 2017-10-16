@@ -1,10 +1,27 @@
 ## 更新日志
 
+### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
+`2017-10-13`
+
+**Breaking changes**
+- 移除 vant-css 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196) [@chenjiahan](https://github.com/chenjiahan)
+- 重写 Swipe 组件，调整部分 API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Search 组件，修改原有结构 [\#198](https://github.com/youzan/vant/pull/198) [@pangxie1991](https://github.com/pangxie1991)
+
+**Improvements**
+- 新增 Tabbar 组件 [#157](https://github.com/youzan/vant/issues/157) [\#204](https://github.com/youzan/vant/pull/204) [@chenjiahan](https://github.com/chenjiahan)
+- 新增表单相关组件英文文档 [\#199](https://github.com/youzan/vant/pull/199) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Sku 样式 [\#205](https://github.com/youzan/vant/pull/205) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 ImagePreview 图片加载过程中跳动的问题 [\#201](https://github.com/youzan/vant/pull/201) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Field 组件 type 为 textarea 且 display none 时高度计算错误的问题 [\#181](https://github.com/youzan/vant/issues/181) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.9.12](https://github.com/youzan/vant/tree/v0.9.12) 
 `2017-10-11`
 
 **Bug Fixes**
-
 - 修复 Search 样式问题 [\#191](https://github.com/youzan/vant/pull/191) ([pangxie1991](https://github.com/pangxie1991))
 
 ### [0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
