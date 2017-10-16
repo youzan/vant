@@ -2,18 +2,16 @@
 module.exports = {
   "zh-CN": {
     header: {
-      '首页': 'https://www.youzanyun.com/zanui',
-      'PC端': 'https://www.youzanyun.com/zanui/react',
-      '移动端': 'https://www.youzanyun.com/zanui/vue',
-      '微信小程序': 'https://github.com/youzan/zanui-weapp',
-      'English': '#/en-US/'
+      Github: 'https://github.com/youzan/vant',
+      English: '#/en-US/'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
       nav: {
-        '有赞官网': 'https://www.youzan.com/',
-        '加入我们': 'https://job.youzan.com/',
-        '意见反馈': 'https://github.com/youzan/vant/issues'
+        'React': 'https://www.youzanyun.com/zanui/react',
+        '微信小程序': 'https://github.com/youzan/zanui-weapp',
+        '意见反馈': 'https://github.com/youzan/vant/issues',
+        '开发指南': 'https://github.com/youzan/vant/blob/dev/docs/examples-docs/zh-CN/contribute.md'
       }
     },
     nav: [
@@ -259,18 +257,16 @@ module.exports = {
   },
   "en-US": {
     header: {
-      'Homepage': 'https://www.youzanyun.com/zanui',
-      'PC': 'https://www.youzanyun.com/zanui/react',
-      'Mobile': 'https://www.youzanyun.com/zanui/vue',
-      'Weapp': 'https://github.com/youzan/zanui-weapp',
+      Github: 'https://github.com/youzan/vant',
       '中文': '#/zh-CN'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
       nav: {
-        'Youzan': 'https://www.youzan.com/',
-        'Join us': 'https://job.youzan.com/',
-        'Feedback': 'https://github.com/youzan/vant/issues'
+        'React': 'https://www.youzanyun.com/zanui/react',
+        'Weapp': 'https://github.com/youzan/zanui-weapp',
+        'Feedback': 'https://github.com/youzan/vant/issues',
+        'Contribute': 'https://github.com/youzan/vant/blob/dev/docs/examples-docs/en-US/contribute.md'
       }
     },
     nav: [
