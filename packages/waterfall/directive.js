@@ -6,6 +6,11 @@ const OFFSET = 300;
 // 绑定事件到元素上
 // 读取基本的控制变量
 function doBindEvent() {
+  if (this.el[CONTEXT].binded) {
+    return;
+  }
+  this.el[CONTEXT].binded = true;
+
   this.scrollEventListener = Utils.debounce(handleScrollEvent.bind(this), 200);
   this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
 
@@ -52,7 +57,7 @@ function handleScrollEvent() {
     needLoadMoreToLower = elementBottom - targetVisibleHeight < this.offset;
   }
   if (needLoadMoreToLower) {
-    this.cb['lower'] && this.cb['lower']({ target: scrollEventTarget, top: targetScrollTop });
+    this.cb.lower && this.cb.lower({ target: scrollEventTarget, top: targetScrollTop });
   }
 
   // 判断是否到了顶
@@ -64,7 +69,7 @@ function handleScrollEvent() {
     needLoadMoreToUpper = elementTop + this.offset > 0;
   }
   if (needLoadMoreToUpper) {
-    this.cb['upper'] && this.cb['upper']({ target: scrollEventTarget, top: targetScrollTop });
+    this.cb.upper && this.cb.upper({ target: scrollEventTarget, top: targetScrollTop });
   }
 }
 

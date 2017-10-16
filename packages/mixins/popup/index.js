@@ -1,9 +1,9 @@
-import PopupManager from './popup-manager';
-import PopupContext from './popup-context';
+import manager from './popup-manager';
+import context from './popup-context';
 
 export default {
   props: {
-    // popup当前显示状态
+    // popup 当前显示状态
     value: {
       type: Boolean,
       default: false
@@ -13,16 +13,13 @@ export default {
       type: Boolean,
       default: false
     },
-    /**
-     * 点击遮罩层是否关闭popup
-     */
+    // 点击遮罩层是否关闭 popup
     closeOnClickOverlay: {
       type: Boolean,
       default: false
     },
     zIndex: [String, Number],
-    // popup滚动时是否body内容也滚动
-    // 默认为不滚动
+    // popup 滚动时是否禁用 body 滚动
     lockOnScroll: {
       type: Boolean,
       default: true
@@ -36,27 +33,18 @@ export default {
 
   watch: {
     value(val) {
-      if (val) {
-        if (this.opening) return;
-        this.open();
-      } else {
-        if (this.closing) return;
-        this.close();
-      }
+      this[val ? 'open' : 'close']();
     }
   },
 
   beforeMount() {
-    this._popupId = 'popup-' + PopupContext.plusKeyByOne('idSeed');
-    PopupManager.register(this._popupId, this);
+    this._popupId = 'popup-' + context.plusKeyByOne('idSeed');
+    context.instances[this._popupId] = this;
   },
 
   data() {
     return {
-      opening: false,
       opened: false,
-      closing: false,
-      bodyOverflow: null,
       pos: {
         x: 0,
         y: 0
@@ -71,6 +59,7 @@ export default {
         y: e.touches[0].clientY
       };
     },
+
     watchTouchMove(e) {
       const pos = this.pos;
       const dx = e.touches[0].clientX - pos.x;
@@ -95,47 +84,28 @@ export default {
         e.stopPropagation();
       }
     },
-    /**
-     * 显示popup
-     */
-    open() {
-      /* istanbul ignore if */
-      if (this.$isServer) return;
-      if (this.opened) return;
 
-      this.opening = true;
+    open() {
+      if (this.opened || this.$isServer) {
+        return;
+      }
 
       this.$emit('input', true);
 
-      const zIndex = this.zIndex;
-
-      // 如果属性中传入了`zIndex`，则覆盖`popupContext`中对应的`zIndex`
-      if (zIndex) {
-        PopupContext.setContext('zIndex', zIndex);
+      // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
+      if (this.zIndex !== undefined) {
+        context.zIndex = this.zIndex;
       }
 
-      // 如果显示遮罩层
       if (this.overlay) {
-        if (this.closing) {
-          PopupManager.closeModal(this._popupId);
-          this.closing = false;
-        }
-        PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), this.$el);
-
-        // 如果滚动时需要锁定
+        manager.openModal(this._popupId, context.plusKeyByOne('zIndex'), this.$el);
         if (this.lockOnScroll) {
-          // 将原来的`bodyOverflow`存起来
-          if (!this.bodyOverflow) {
-            this.bodyOverflow = document.body.style.overflow;
-          }
-
-          document.body.style.overflow = 'hidden';
+          document.body.classList.add('van-overflow-hidden');
         }
       }
 
-      this.$el.style.zIndex = PopupManager.nextZIndex();
+      this.$el.style.zIndex = context.plusKeyByOne('zIndex');
       this.opened = true;
-      this.opening = false;
 
       if (this.preventScroll) {
         document.addEventListener('touchstart', this.recordPosition, false);
@@ -143,23 +113,15 @@ export default {
       }
     },
 
-    /**
-     * 关闭popup
-     */
     close() {
-      if (this.closing) return;
-
-      this.closing = true;
+      if (!this.opened || this.$isServer) {
+        return;
+      }
 
       this.$emit('input', false);
 
       if (this.lockOnScroll) {
-        setTimeout(() => {
-          if (this.overlay && this.bodyOverflow !== 'hidden') {
-            document.body.style.overflow = this.bodyOverflow;
-          }
-          this.bodyOverflow = null;
-        }, 200);
+        document.body.classList.remove('van-overflow-hidden');
       }
 
       this.opened = false;
@@ -167,8 +129,7 @@ export default {
     },
 
     doAfterClose() {
-      this.closing = false;
-      PopupManager.closeModal(this._popupId);
+      manager.closeModal(this._popupId);
 
       if (this.preventScroll) {
         document.removeEventListener('touchstart', this.recordPosition, false);
@@ -178,12 +139,10 @@ export default {
   },
 
   beforeDestroy() {
-    PopupManager.deregister(this._popupId);
-    PopupManager.closeModal(this._popupId);
-
-    if (this.overlay && this.bodyOverflow !== null && this.bodyOverflow !== 'hidden') {
-      document.body.style.overflow = this.bodyOverflow;
+    context.instances[this._popupId] = null;
+    manager.closeModal(this._popupId);
+    if (this.lockOnScroll) {
+      document.body.classList.remove('van-overflow-hidden');
     }
-    this.bodyOverflow = null;
   }
 };
