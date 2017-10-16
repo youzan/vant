@@ -67,7 +67,7 @@ vant
 
 ## 组件文档如何编写
 
-`docs/examples-docs` 下根据语言划分了组件文档，每个组件需要在各语言中编辑对应的文档。组件文档采用 markdown 格式，内容包括使用示例以及 `API` 等。具体书写规范请参考 [组件文档书写规范](../docs/examples-docs/zh-CN/markdown.md)。
+`docs/examples-docs` 下根据语言划分了组件文档，每个组件需要在各语言中编辑对应的文档。组件文档采用 markdown 格式，内容包括使用示例以及 `API` 等。具体书写规范请参考 [组件文档书写规范](./MARKDOWN.md)。
 
 #### API 说明
 
