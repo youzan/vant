@@ -57,7 +57,7 @@ Vue.use(vant);
  
 ## How to contribute
 
-Please make sure to read the [Contributing Guide](./.github/contribute.en-US.md) before making a pull request.
+Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.en-US.md) before making a pull request.
 
 ## Preview
 
