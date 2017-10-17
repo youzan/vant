@@ -19,9 +19,7 @@ $van-checkbox-size: 20px;
 
     &::before {
       margin: 0 auto;
-      line-height: calc($van-checkbox-size - 2px);
-      transition: all .2s cubic-bezier(.12,.4,.29,1.46) .1s;
-      transform: scale(0);
+      line-height: $van-checkbox-size;
     }
   }
 
@@ -57,10 +55,6 @@ $van-checkbox-size: 20px;
   &__control:checked + .van-icon-success {
     border-color: $green;
     background-color: $green;
-
-    &::before {
-      transform: scale(1);
-    }
   }
 
   &--disabled {
