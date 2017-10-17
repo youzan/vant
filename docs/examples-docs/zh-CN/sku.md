@@ -101,7 +101,7 @@ Vue.component(Sku.name, Sku);
       <!-- 隐藏sku messages -->
       <template slot="sku-messages"></template>
       <!-- 自定义sku actions -->
-      <template slot="sku-actions" scope="props">
+      <template slot="sku-actions" slot-scope="props">
         <div class="van-sku-actions">
           <button class="van-sku__add-cart-btn" @click="handlePointClicked">
             积分兑换

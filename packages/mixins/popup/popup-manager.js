@@ -1,132 +1,67 @@
-import Vue from 'vue';
-import PopupContext from './popup-context';
-
-const getModal = function() {
-  if (Vue.prototype.$isServer) return;
-  let modalDom = PopupContext.getContext('modalDom');
-
-  if (modalDom) {
-    PopupContext.setContext('hasModal', true);
-  } else {
-    PopupContext.setContext('hasModal', false);
-
-    modalDom = document.createElement('div');
-    PopupContext.setContext('modalDom', modalDom);
-
-    modalDom.addEventListener('touchmove', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-    });
-
-    modalDom.addEventListener('click', function() {
-      PopupManager.handleOverlayClick && PopupManager.handleOverlayClick();
-    });
-  }
-
-  return modalDom;
-};
+import context from './popup-context';
 
 const PopupManager = {
-  nextZIndex() {
-    return PopupContext.plusKeyByOne('zIndex');
-  },
+  getModal() {
+    let { modal } = context;
 
-  getInstance(id) {
-    return PopupContext.getContext('instances')[id];
-  },
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.classList.add('van-modal');
+      modal.addEventListener('touchmove', event => {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+      modal.addEventListener('click', () => {
+        PopupManager.handleOverlayClick();
+      });
 
-  register(id, instance) {
-    if (id && instance) {
-      const instances = PopupContext.getContext('instances');
-      instances[id] = instance;
+      context.modal = modal;
     }
+
+    return modal;
   },
 
-  deregister(id) {
-    if (id) {
-      const instances = PopupContext.getContext('instances');
-      instances[id] = null;
-      delete instances[id];
-    }
-  },
-
-  /**
-   * 遮罩层点击回调，`closeOnClickOverlay`为`true`时会关闭当前`popup`
-   */
+  // close popup when click modal && closeOnClickOverlay is true
   handleOverlayClick() {
-    const modalStack = PopupContext.getContext('modalStack');
-    const topModal = modalStack[modalStack.length - 1];
-    if (!topModal) return;
-
-    const instance = PopupManager.getInstance(topModal.id);
-    if (instance && instance.closeOnClickOverlay) {
-      instance.close();
+    const { topModal } = context;
+    if (topModal) {
+      const instance = context.instances[topModal.id];
+      if (instance && instance.closeOnClickOverlay) {
+        instance.close();
+      }
     }
   },
 
   openModal(id, zIndex, dom) {
-    if (!id || zIndex === undefined) return;
+    const { modalStack } = context;
+    const exist = modalStack.some(item => item.id === id);
 
-    const modalStack = PopupContext.getContext('modalStack');
+    if (!exist) {
+      const modal = this.getModal();
+      modal.style.zIndex = zIndex;
 
-    for (let i = 0, len = modalStack.length; i < len; i++) {
-      const item = modalStack[i];
-      if (item.id === id) {
-        return;
-      }
-    }
-
-    const modalDom = getModal();
-
-    modalDom.classList.add('van-modal');
-
-    let domParentNode;
-    if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
-      domParentNode = dom.parentNode;
-    } else {
-      domParentNode = document.body;
-    }
-    domParentNode.appendChild(modalDom);
-
-    if (zIndex) {
-      modalDom.style.zIndex = zIndex;
-    }
-    modalDom.style.display = '';
-
-    modalStack.push({ id: id, zIndex: zIndex, parentNode: domParentNode });
+      const parentNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
+      parentNode.appendChild(modal);
+      modalStack.push({ id, zIndex, parentNode });
+    };
   },
 
   closeModal(id) {
-    const modalStack = PopupContext.getContext('modalStack');
-    const modalDom = getModal();
+    const { modalStack } = context;
 
-    if (modalStack.length > 0) {
-      const topItem = modalStack[modalStack.length - 1];
-      if (topItem.id === id) {
+    if (modalStack.length) {
+      if (context.topModal.id === id) {
+        const modal = this.getModal();
         modalStack.pop();
-        if (modalStack.length > 0) {
-          modalDom.style.zIndex = modalStack[modalStack.length - 1].zIndex;
-          modalDom.parentNode.removeChild(modalDom);
-          const currModalParent = modalStack[0].parentNode;
-          currModalParent && currModalParent.appendChild(modalDom);
+        modal.parentNode.removeChild(modal);
+        if (modalStack.length) {
+          const { topModal } = context;
+          modal.style.zIndex = topModal.zIndex;
+          topModal.parentNode.appendChild(modal);
         }
       } else {
-        for (let i = modalStack.length - 1; i >= 0; i--) {
-          if (modalStack[i].id === id) {
-            modalStack.splice(i, 1);
-            break;
-          }
-        }
+        context.modalStack = modalStack.filter(item => item.id !== id);
       }
-    }
-
-    if (modalStack.length === 0) {
-      setTimeout(() => {
-        if (modalDom.parentNode) modalDom.parentNode.removeChild(modalDom);
-
-        modalDom.style.display = 'none';
-        this.modalDom = null;
-      }, 200);
     }
   }
 };

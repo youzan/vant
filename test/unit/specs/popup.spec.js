@@ -27,12 +27,11 @@ describe('Popup', () => {
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    expect(wrapper.data().currentValue).to.be.false;
+    expect(wrapper.element.style.display).to.equal('none');
 
     wrapper.vm.value = true;
-    wrapper.update();
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().currentValue).to.be.true;
+      expect(wrapper.element.style.display).to.equal('');
       expect(eventStub.calledWith('input'));
       done();
     });
@@ -45,7 +44,7 @@ describe('Popup', () => {
       }
     });
 
-    expect(wrapper.data().currentValue).to.be.true;
+    expect(wrapper.element.style.display).to.equal('');
   });
 
   it('create a popup-fade transition popup', () => {
@@ -70,7 +69,7 @@ describe('Popup', () => {
     expect(wrapper.hasClass('van-popup')).to.be.true;
 
     setTimeout(() => {
-      expect(wrapper.data().currentValue).to.be.true;
+      expect(wrapper.element.style.display).to.equal('');
       wrapper.vm.value = false;
       triggerTouch(document, 'touchstart', 0, 0);
       triggerTouch(document, 'touchmove', 0, 10);
@@ -78,7 +77,7 @@ describe('Popup', () => {
       triggerTouch(document, 'touchmove', 0, -30);
 
       setTimeout(() => {
-        expect(wrapper.data().currentValue).to.be.false;
+        expect(wrapper.element.style.display).to.equal('none');
         done();
       }, 300);
     }, 300);
