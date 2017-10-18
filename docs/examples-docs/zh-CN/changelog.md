@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
+`2017-10-18`
+
+**Improvements**
+- 升级 Vue 依赖至 2.5.0 版本 [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Tabs swipeThreshold 属性 [\#206](https://github.com/youzan/vant/pull/206) [@cookfront](https://github.com/cookfront)
+
+**Bug Fixes**
+- 修复 Swipe 组件 destroyed 时未清除 autoplay timer 的问题 [\#218](https://github.com/youzan/vant/pull/218) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Tab 组件 slot text 文本换行问题 [\#217](https://github.com/youzan/vant/pull/217) [@cookfront](https://github.com/cookfront)
+- 修复 TreeSelect 依赖路径错误 [\#216](https://github.com/youzan/vant/pull/216) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Checkbox 在微信浏览器下的边框渲染错误 [\#214](https://github.com/youzan/vant/pull/214) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Popup modal 层在某些情况下无法展示的问题 [\#211](https://github.com/youzan/vant/pull/211) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Waterfall 重复绑定事件的问题 [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
 `2017-10-13`
 

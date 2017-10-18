@@ -1,5 +1,34 @@
 ## 更新日志
 
+## [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1) (2017-10-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.0...v0.10.1)
+
+**Breaking changes**
+
+- tabs标签个数建议 [\#203](https://github.com/youzan/vant/issues/203)
+- 轮播高度自适应 [\#180](https://github.com/youzan/vant/issues/180)
+- 能添加个底部tabbar吗 [\#157](https://github.com/youzan/vant/issues/157)
+- \[bugfix\] Popup modal display error [\#211](https://github.com/youzan/vant/pull/211) ([chenjiahan](https://github.com/chenjiahan))
+
+**Bug Fixes**
+
+- \[bugfix\] Swipe should clear autoplay timer when destroyed [\#218](https://github.com/youzan/vant/pull/218) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\]: fix tab component when has a lot of text, show ellipsis [\#217](https://github.com/youzan/vant/pull/217) ([cookfront](https://github.com/cookfront))
+- \[bugfix\] TreeSelect dependency path error [\#216](https://github.com/youzan/vant/pull/216) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Checkbox border render error in weixin browser [\#214](https://github.com/youzan/vant/pull/214) ([chenjiahan](https://github.com/chenjiahan))
+- \\[bugfix\\] Popup modal display error [\#211](https://github.com/youzan/vant/pull/211) ([chenjiahan](https://github.com/chenjiahan))
+
+**Issue**
+
+- 如何增加自定义Icon [\#177](https://github.com/youzan/vant/issues/177)
+- Swipe 组件不显示 [\#174](https://github.com/youzan/vant/issues/174)
+
+**Improvements**
+
+- \[new feature\] Docs: contribute.md 移动至 .github 下 [\#212](https://github.com/youzan/vant/pull/212) ([pangxie1991](https://github.com/pangxie1991))
+- \[bug fix\] Search: 修复无 reset 下展示 [\#210](https://github.com/youzan/vant/pull/210) ([pangxie1991](https://github.com/pangxie1991))
+- \[new feature\]: tabs component add swipeThreshold prop [\#206](https://github.com/youzan/vant/pull/206) ([cookfront](https://github.com/cookfront))
+
 ## [v0.10.0](https://github.com/youzan/vant/tree/v0.10.0) (2017-10-13)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.9.12...v0.10.0)
 
