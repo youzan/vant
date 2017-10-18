@@ -103,13 +103,13 @@ Textarea Filed can be auto resize when has `autosize` prop
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Filed type | `String`  | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
-| value | Filed value | `String`  | - | - |
-| label | Filed label | `String`  | - | - |
-| disabled | Disable field  | `Boolean`  | `false` | - |
-| error | Whether to show error info | `Boolean`  | `false` | - |
-| autosize | Textarea auto resize | `Boolean`  | `false` | - |
-| icon | Right side Icon name | `String`  | - | - |
+| type | Filed type | `String` | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
+| value | Filed value | `String` | - | - |
+| label | Filed label | `String` | - | - |
+| disabled | Disable field | `Boolean` | `false` | - |
+| error | Whether to show error info | `Boolean` | `false` | - |
+| autosize | Textarea auto resize | `Boolean` | `false` | - |
+| icon | Right side Icon name | `String` | - | - |
 
 ### Event
 

@@ -1,16 +1,3 @@
-<style>
-.demo-image-preview {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-.van-image-preview {
-  img {
-    pointer-events: none;
-  }
-}
-</style>
-
 <script>
 import { ImagePreview } from 'packages';
 
@@ -27,23 +14,21 @@ export default {
 };
 </script>
 
-## ImagePreview 图片预览
+## ImagePreview
 
-### 使用指南
-
-`ImagePreview`和其他组件不同，不是通过HTML结构的方式来使用，而是通过函数调用的方式。使用前需要先引入它。
+### Install
 
 ```js
 import { ImagePreview } from 'vant';
 ```
 
-### 代码演示
+### Usage
 
-#### 基础用法
+#### Basic Usage
 
-:::demo 基础用法
+:::demo Basic Usage
 ```html
-<van-button @click="showImagePreview">预览图片</van-button>
+<van-button @click="showImagePreview">Show</van-button>
 ```
 
 ```javascript
@@ -62,6 +47,6 @@ export default {
 
 ### 方法参数
 
-| 参数名       | 说明      | 类型 |
+| Attribute | Description | Type |
 |-----------|-----------|-----------|
-| imageUrls | 需要预览的图片 | `Array` |
+| imageUrls | Image URL list | `Array` |

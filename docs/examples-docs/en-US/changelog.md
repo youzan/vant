@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
+`2017-10-18`
+
+**Improvements**
+- upgrade Vue version to 2.5.0 [@chenjiahan](https://github.com/chenjiahan)
+- add Tabs swipeThreshold prop [\#206](https://github.com/youzan/vant/pull/206) [@cookfront](https://github.com/cookfront)
+
+**Bug Fixes**
+- fix Swipe not clear autoplay timer when destroyed [\#218](https://github.com/youzan/vant/pull/218) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab slot text ellipsis [\#217](https://github.com/youzan/vant/pull/217) [@cookfront](https://github.com/cookfront)
+- fix TreeSelect denpendency path error [\#216](https://github.com/youzan/vant/pull/216) [@chenjiahan](https://github.com/chenjiahan)
+- fix Checkbox border render error in Weixin browser [\#214](https://github.com/youzan/vant/pull/214) [@chenjiahan](https://github.com/chenjiahan)
+- fix Popup modal can not display in some cases [\#211](https://github.com/youzan/vant/pull/211) [@chenjiahan](https://github.com/chenjiahan)
+- fix Waterfall repeated event bind [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
 `2017-10-13`
 
