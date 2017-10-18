@@ -1,4 +1,5 @@
 @import './common/var.css';
+@import './mixins/ellipsis.css';
 
 .van-tabs {
   position: relative;
@@ -83,6 +84,7 @@
   cursor: pointer;
   text-align: center;
   flex: 1;
+  @mixin multi-ellipsis 1;
 
   &--active {
     color: $red;
