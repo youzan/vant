@@ -116,9 +116,9 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| name | Checkbox name | `Boolean`  | `false` | - |
-| disabled | Diable checkbox | `Boolean`  | `false` | - |
-| shape | Checkbox shape | `String`  | `round` | `square` |
+| name | Checkbox name | `Boolean` | `false` | - |
+| disabled | Diable checkbox | `Boolean` | `false` | - |
+| shape | Checkbox shape | `String` | `round` | `square` |
 
 ### CheckboxGroup API
 

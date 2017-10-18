@@ -1,28 +1,3 @@
-<style>
-.demo-lazyload {
-  padding: 15px;
-
-  img,
-  div[lazy] {
-    padding: 15px;
-    width: 100%;
-    height: 250px;
-    margin: 10px 0 0;
-    background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    background-size: 315px 250px;
-    background-position: 15px;
-    background-repeat: no-repeat;
-    box-sizing: border-box;
-  }
-
-  .zan-doc-demo-block__title,
-  .zan-doc-demo-block__subtitle {
-    padding-left: 0;
-  }
-}
-</style>
-
 <script>
 export default {
   data() {
@@ -52,11 +27,9 @@ export default {
 }
 </script>
 
-## Lazyload 图片懒加载
+## Lazyload
 
-### 使用指南
-
-`Lazyload`是`Vue`指令，所以需要使用它必须将它注册到`Vue`的指令中。
+### Install
 
 ```js
 import Vue from 'vue';
@@ -65,12 +38,11 @@ import { Lazyload } from 'vant';
 Vue.use(Lazyload, options);
 ```
 
-### 代码演示
+### Usage
 
-#### 基础用法
-将`v-lazy`指令的值设置为你需要懒加载的图片
+#### Basic Usage
 
-:::demo 基础用法
+:::demo Basic Usage
 ```html
 <img v-for="img in imageList" v-lazy="img">
 ```
@@ -89,11 +61,10 @@ export default {
 ```
 :::
 
-#### 背景图懒加载
+#### Background Image
+Use `v-lazy:background-image` to set background url, and declare the height of the container.
 
-和图片懒加载不同，背景图懒加载需要使用`v-lazy:background-image`，值设置为背景图片的地址，需要注意的是必须声明容器高度。
-
-:::demo 背景图懒加载
+:::demo Background Image
 ```html
 <div v-for="img in backgroundImageList" v-lazy:background-image="img" />
 ```
@@ -112,11 +83,9 @@ export default {
 ```
 :::
 
-#### 懒加载模块
+#### Lazyload Component
 
-懒加载模块需要使用到`lazy-component`，将需要懒加载的内容放在`lazy-component`中即可。
-
-:::demo 懒加载模块
+:::demo Lazyload Component
 ```html
 <lazy-component>
   <img v-for="img in componentImageList" v-lazy="img">
@@ -139,15 +108,15 @@ export default {
 
 ### Options
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| loading | 加载时的图片 | `String` | - | - |
-| error | 错误时的图片 | `String` | - | - |
-| preload | 预加载高度的比例 | `String` | - | - |
-| attempt | 尝试次数 | `Number` | `3` |   |
-| listenEvents | 监听的事件 | `Array`  | `scroll`等 | - |
-| adapter | 适配器 | `Object` | - | - |
-| filter | 图片url过滤 | `Object` | - | - |
-| lazyComponent | 是否能懒加载模块 | `Boolean` | `false` | - |
+| loading | Src of the image while loading | `String` | - | - |
+| error | Src of the image upon load fail | `String` | - | - |
+| preload | Proportion of pre-loading height | `String` | - | - |
+| attempt | Attempts count | `Number` | `3` | |
+| listenEvents | Events that you want vue listen for | `Array` | `scroll`... | - |
+| adapter | Dynamically modify the attribute of element | `Object` | - | - |
+| filter | The image's listener filter | `Object` | - | - |
+| lazyComponent | Lazyload component | `Boolean` | `false` | - |
 
-更多内容请参照：[ vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)
+See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)

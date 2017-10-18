@@ -76,7 +76,7 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| value | Password value | `String`  | `''` | - |
+| value | Password value | `String` | `''` | - |
 | length | Maxlength of password | `Number` | `6` | - |
 | info | Bottom info | `String` | - | - |
 | errorInfo | Bottom error info | `String` | - | - |

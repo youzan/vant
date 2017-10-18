@@ -75,12 +75,12 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| show | Whether to show keyboard | `Boolean`  | - | - |
+| show | Whether to show keyboard | `Boolean` | - | - |
 | title | Keyboard title | `String` | - | - |
-| extraKey | Content of bottom left key | `String`  | `''` | - |
-| zIndex | Keyboard z-index | `Number`  | `100` | - |
-| transition | Whether to show transition animation | `Boolean`  | `true` | - |
-| showDeleteKey | Whether to show delete button | `Boolean`  | `true` | - |
+| extraKey | Content of bottom left key | `String` | `''` | - |
+| zIndex | Keyboard z-index | `Number` | `100` | - |
+| transition | Whether to show transition animation | `Boolean` | `true` | - |
+| showDeleteKey | Whether to show delete button | `Boolean` | `true` | - |
 
 ### Event
 
