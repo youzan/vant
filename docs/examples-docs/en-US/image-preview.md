@@ -45,7 +45,7 @@ export default {
 ```
 :::
 
-### 方法参数
+### Arguments
 
 | Attribute | Description | Type |
 |-----------|-----------|-----------|

@@ -97,16 +97,16 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否在加载中 | `Boolean`  | - | - |
-| pullingText | 下拉过程中顶部文案 | `String`  | `下拉即可刷新...` | - |
-| loosingText | 释放过程中顶部文案 | `String`  | `释放即可刷新...` | - |
-| loadingText | 加载过程中顶部文案 | `String`  | `加载中...` | - |
-| animationDuration | 动画时长 | `Number`  | `300` | - |
-| headHeight | 顶部内容高度 | `Number`  | `50` | - |
+| v-model | 是否在加载中 | `Boolean` | - | - |
+| pullingText | 下拉过程中顶部文案 | `String` | `下拉即可刷新...` | - |
+| loosingText | 释放过程中顶部文案 | `String` | `释放即可刷新...` | - |
+| loadingText | 加载过程中顶部文案 | `String` | `加载中...` | - |
+| animationDuration | 动画时长 | `Number` | `300` | - |
+| headHeight | 顶部内容高度 | `Number` | `50` | - |
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | - | 自定义内容 |
 | normal | 非下拉状态时顶部内容 |

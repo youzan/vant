@@ -127,9 +127,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| name | 标识 Checkbox 名称 | `Boolean`  | `false` | - |
-| disabled | 是否禁用单选框 | `Boolean`  | `false` | - |
-| shape | 形状 | `String`  | `round` | `square` |
+| name | 标识 Checkbox 名称 | `Boolean` | `false` | - |
+| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| shape | 形状 | `String` | `round` | `square` |
 
 ### CheckboxGroup API
 

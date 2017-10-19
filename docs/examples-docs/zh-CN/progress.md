@@ -55,7 +55,7 @@ Vue.component(Progress.name, Progress);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | inactive | 是否置灰 | `Boolean` | `false` | |
 | percentage | 进度百分比 | `Number` | `false` | `0-100` |

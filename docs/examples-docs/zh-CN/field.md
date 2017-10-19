@@ -111,13 +111,13 @@ Vue.component(Field.name, Field);
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 输入框类型 | `String`  | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
-| value | 输入框的值 | `String`  | - | - |
-| label | 输入框标签 | `String`  | - | - |
-| disabled | 是否禁用输入框 | `Boolean`  | `false` | - |
-| error | 输入框是否有错误 | `Boolean`  | `false` | - |
-| autosize | 高度自适应(仅支持textarea) | `Boolean`  | `false` | - |
-| icon | 输入框尾部图标 | `String`  | - |  Icon 组件支持的类型 |
+| type | 输入框类型 | `String` | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
+| value | 输入框的值 | `String` | - | - |
+| label | 输入框标签 | `String` | - | - |
+| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
+| error | 输入框是否有错误 | `Boolean` | `false` | - |
+| autosize | 高度自适应(仅支持textarea) | `Boolean` | `false` | - |
+| icon | 输入框尾部图标 | `String` | - |  Icon 组件支持的类型 |
 
 ### Event
 
