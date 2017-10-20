@@ -17,53 +17,12 @@
 npm i -S vant
 ```
  
-## Usage
-
-### Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
-
-   ```js
-   // .babelrc or babel-loader option
-   {
-     "plugins": [
-       ["import", { "libraryName": "vant", "style": true }]
-     ]
-   }
-   ```
-
-   Then you can import components from vant, equivalent to import manually below.
-
-   ```js
-   // import js and css modularly, parsed by babel-plugin-import
-   import { Button } from 'vant';
-   ```
-
-### Manually import
-
-   ```jsx
-   import { Button } from 'vant';
-   import 'vant/lib/vant-css/button.css';
-   ```
+## Quickstart
+See [Quickstart](https://www.youzanyun.com/zanui/vue#/en-US/component/quickstart).
  
- 
-### Import all components
- 
-```javascript
-import Vue from 'vue';
-import vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+## How to contribute
 
-Vue.use(vant);
-```
- 
-## Development
-
-Start development mode:
-
-```shell
-npm run dev
-```
-
-Visit [http://localhost:8080](http://localhost:8080) to see an example of all components.
+Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
 
 ## Preview
 

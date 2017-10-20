@@ -146,7 +146,7 @@
       span {
         color: $gray-dark;
         font-size: 12px;
-        margin-top: 5px;
+        margin: 5px 0 0;
       }
 
       p,

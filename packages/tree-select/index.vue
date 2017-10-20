@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import Icon from 'packages/icon';
+import Icon from '../icon';
 
 export default {
   name: 'van-tree-select',
 
   components: {
-    'van-icon': Icon
+    [Icon.name]: Icon
   },
 
   props: {

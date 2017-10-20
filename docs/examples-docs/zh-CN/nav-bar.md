@@ -45,7 +45,7 @@ Vue.component(NavBar.name, NavBar);
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | title | 自定义标题 |
 | left | 自定义左侧区域内容 |

@@ -12,9 +12,6 @@ export default {
 
   methods: {
     onSave() {
-      this.test = {
-        user_name: 'b'
-      };
       Toast('save');
     },
     onDelete() {
@@ -99,7 +96,7 @@ export default {
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | areaList | 地区列表 | `Object` | - | - |
 | addressInfo | 收货人信息 | `Object` | `{}` | - |
@@ -113,7 +110,7 @@ export default {
 
 ### Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
@@ -122,7 +119,7 @@ export default {
 ### 数据格式
 
 #### addressInfo 数据格式
-| key       | 说明      | 类型       |
+| key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | id | 每条地址的唯一标识 | `String | Number` |
 | name | 收货人姓名 | `String` |
@@ -136,10 +133,10 @@ export default {
 | is_default | 是否为默认地址 | `String` |
 
 #### searchResult 数据格式
-| key       | 说明      | 类型       |
+| key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | name | 地名 | `String` |
 | address | 详细地址 | `String` |
 
 #### 省市县列表数据格式
-请参考 [Area](/zanui/vue/component/area) 组件。
+请参考 [Area](#/zh-CN/component/area) 组件。

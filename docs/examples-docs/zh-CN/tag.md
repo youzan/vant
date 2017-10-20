@@ -60,14 +60,14 @@ Vue.component(Tag.name, Tag);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | `String`  | `''`| `primary` `success` `danger` |
-| plain | 是否为空心样式 | `Boolean` | `false` | |
-| mark | 是否为标记样式 | `Boolean` | `false` | |
+| type | 类型 | `String` | `''`| `primary` `success` `danger` |
+| plain | 是否为空心样式 | `Boolean` | `false` | - |
+| mark | 是否为标记样式 | `Boolean` | `false` | - |
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | - | 自定义 Tag 显示内容 |

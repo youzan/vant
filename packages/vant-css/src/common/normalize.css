@@ -29,3 +29,9 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+input,
+button,
+textarea {
+  font: inherit;
+}

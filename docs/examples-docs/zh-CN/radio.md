@@ -41,8 +41,8 @@ Vue.component(Radio.name, Radio);
 :::demo 基础用法
 ```html
 <div class="van-radios">
-  <van-radio name="1" v-model="radio1">单选框1</van-radio>
-  <van-radio name="2" v-model="radio1">单选框2</van-radio>
+  <van-radio name="1" v-model="radio1">单选框 1</van-radio>
+  <van-radio name="2" v-model="radio1">单选框 2</van-radio>
 </div>
 ```
 ```javascript
@@ -87,8 +87,8 @@ export default {
 ```html
 <div class="van-radios">
   <van-radio-group v-model="radio3">
-    <van-radio name="1">单选框1</van-radio>
-    <van-radio name="2">单选框2</van-radio>
+    <van-radio name="1">单选框 1</van-radio>
+    <van-radio name="2">单选框 2</van-radio>
   </van-radio-group>
 </div>
 ```
@@ -104,11 +104,11 @@ export default {
 ```
 :::
 
-#### 与Cell组件一起使用
+#### 与 Cell 组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件。
 
-:::demo 与Cell组件一起使用
+:::demo 与 Cell 组件一起使用
 ```html
 <van-radio-group v-model="radio4">
   <van-cell-group>
@@ -131,19 +131,19 @@ export default {
 
 ### Radio API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用单选框 | `Boolean`  | `false` |   |
-| name | 根据这个来判断radio是否选中 | `Boolean`  | `false` |   |
+| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| name | 根据这个来判断 radio 是否选中 | `Boolean` | `false` | - |
 
 ### RadioGroup API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | 是否禁用单选框 | `Boolean`  | `false` |   |
+| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
 
 ### RadioGroup Event
 
-| 事件名称       | 说明      | 回调参数 |
+| 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |

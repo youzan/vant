@@ -1,6 +1,6 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
-    <div class="van-tabs__nav-wrap" v-if="type === 'line' && tabs.length > 4">
+    <div class="van-tabs__nav-wrap" v-if="type === 'line' && tabs.length > swipeThreshold">
       <div class="van-tabs__swipe" ref="swipe">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__nav-bar" :style="navBarStyle"></div>
@@ -62,6 +62,10 @@
       duration: {
         type: Number,
         default: 0.3
+      },
+      swipeThreshold: {
+        type: Number,
+        default: 4
       }
     },
 
@@ -81,7 +85,7 @@
 
       curActive() {
         /* istanbul ignore else */
-        if (this.tabs.length > 4) {
+        if (this.tabs.length > this.swipeThreshold) {
           this.doOnValueChange();
         }
       }
@@ -127,7 +131,7 @@
         this.isReady = true;
         this.initEvents();
   
-        if (this.tabs.length > 4) {
+        if (this.tabs.length > this.swipeThreshold) {
           this.doOnValueChange();
         }
       });

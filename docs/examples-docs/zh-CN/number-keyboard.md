@@ -83,16 +83,16 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| show | 是否显示键盘 | `Boolean`  | - | - |
-| title | 键盘标题 | `String` | `安全输入键盘` | - |
-| extraKey | 左下角按键内容 | `String`  | `''` | - |
-| zIndex | 键盘 z-index | `Number`  | `100` | - |
-| transition | 是否开启过场动画 | `Boolean`  | `true` | - |
-| showDeleteKey | 是否展示删除按钮 | `Boolean`  | `true` | - |
+| show | 是否显示键盘 | `Boolean` | - | - |
+| title | 键盘标题 | `String` | - | - |
+| extraKey | 左下角按键内容 | `String` | `''` | - |
+| zIndex | 键盘 z-index | `Number` | `100` | - |
+| transition | 是否开启过场动画 | `Boolean` | `true` | - |
+| showDeleteKey | 是否展示删除按钮 | `Boolean` | `true` | - |
 
 ### Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | input | 点击按键时触发 | key: 按键内容 |
 | delete | 点击删除键时触发 | - |

@@ -38,7 +38,7 @@ Vue.component(Loading.name, Loading);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| color | 颜色 | `String` | `black` | `black` `white`   |
-| type | 类型 | `String` | `gradient-circle` | `gradient-circle` `circle`   |
+| color | 颜色 | `String` | `black` | `black` `white` |
+| type | 类型 | `String` | `gradient-circle` | `gradient-circle` `circle` |

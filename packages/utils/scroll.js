@@ -2,13 +2,13 @@ import Vue from 'vue';
 
 export default {
   debounce(func, wait, immediate) {
-    var timeout, args, context, timestamp, result;
+    let timeout, args, context, timestamp, result;
     return function() {
       context = this;
       args = arguments;
       timestamp = new Date();
-      var later = function() {
-        var last = (new Date()) - timestamp;
+      const later = () => {
+        const last = (new Date()) - timestamp;
         if (last < wait) {
           timeout = setTimeout(later, wait - last);
         } else {
@@ -25,10 +25,10 @@ export default {
 
   // 找到最近的触发滚动事件的元素
   getScrollEventTarget(element) {
-    var currentNode = element;
+    let currentNode = element;
     // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
     while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
-      var overflowY = this.getComputedStyle(currentNode).overflowY;
+      const overflowY = this.getComputedStyle(currentNode).overflowY;
       if (overflowY === 'scroll' || overflowY === 'auto') {
         return currentNode;
       }
@@ -39,7 +39,7 @@ export default {
 
   // 判断元素是否被加入到页面节点内
   isAttached(element) {
-    var currentNode = element.parentNode;
+    let currentNode = element.parentNode;
     while (currentNode) {
       if (currentNode.tagName === 'HTML') {
         return true;
@@ -64,18 +64,11 @@ export default {
 
   // 获取元素距离顶部高度
   getElementTop(element) {
-    if (element === window) {
-      return this.getScrollTop(window);
-    }
-    return element.getBoundingClientRect().top + this.getScrollTop(window);
+    return (element === window ? 0 : element.getBoundingClientRect().top) + this.getScrollTop(window);
   },
 
   getVisibleHeight(element) {
-    if (element === window) {
-      return element.innerHeight;
-    }
-
-    return element.getBoundingClientRect().height;
+    return element === window ? element.innerHeight : element.getBoundingClientRect().height;
   },
 
   getComputedStyle: !Vue.prototype.$isServer && document.defaultView.getComputedStyle.bind(document.defaultView)

@@ -10,7 +10,7 @@ npm i vant -S
 
 ### Usage
 
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
 ```bash
 # Install babel-plugin-import
 npm i babel-plugin-import -D
@@ -35,6 +35,7 @@ import { Button } from 'vant';
 
 ```js
 import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
  
@@ -46,4 +47,14 @@ import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 
 Vue.use(Vant);
+```
+
+### CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+
+<!-- import script --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```

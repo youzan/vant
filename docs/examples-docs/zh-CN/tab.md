@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-## Tab 标签
+## Tab 标签页
 
 ### 使用指南
 ``` javascript
@@ -89,7 +89,7 @@ Vue.component(Tabs.name, Tabs);
 ```
 :::
 
-### 设置切换tab的动画时间
+#### 设置切换tab的动画时间
 
 通过设置`duration`来指定时间，默认为0.3s，只接受`Number`类型参数。
 
@@ -103,11 +103,11 @@ Vue.component(Tabs.name, Tabs);
 ```
 :::
 
-#### 多于4个tab时
+#### 横向滚动tab
 
-多于4个tab时，可以横向滚动tab。
+默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipeThreshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
 
-:::demo 多于4个tab时
+:::demo 横向滚动tab
 ```html
 <van-tabs>
   <van-tab title="选项一">内容一</van-tab>
@@ -231,24 +231,24 @@ export default {
 
 ### van-tabs API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选      |
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
 |-----------|-----------|-----------|-------------|-------------|
-| classtype | 两种UI | `String`  | `line` |     `line`, `card`      |
-| active | 默认激活的tab | `String`, `Number`  | `0` |           |
-| navclass | tabs的内部nav上的自定义classname | `String`  |  |           |
-| duration | 切换tab的动画时间 | `Number` | `0.3` | |           |
+| classtype | 两种UI | `String` | `line` |     `line`, `card` |
+| active | 默认激活的tab | `String`, `Number` | `0` | - |
+| navclass | tabs的内部nav上的自定义classname | `String` | - | - |
+| duration | 切换tab的动画时间 | `Number` | `0.3` | - | - |
 
 
 ### van-tab API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选       |
+| 参数 | 说明 | 类型 | 默认值 | 可选 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | tab的标题 | `String`  |         |          |
-| disabled | 是否禁用这个tab | `Boolean`  | `false`      |           |
+| title | tab的标题 | `String` | - | - |
+| disabled | 是否禁用这个tab | `Boolean` | `false` | - |
 
 ### van-tabs Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 某个tab点击事件 | index：点击的`tab`的索引 |
 | disabled | 某个tab禁用时点击事件 | index：点击的`tab`的索引 |

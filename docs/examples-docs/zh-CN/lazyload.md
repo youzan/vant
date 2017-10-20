@@ -1,16 +1,24 @@
 <style>
 .demo-lazyload {
+  padding: 15px;
+
   img,
   div[lazy] {
     padding: 15px;
-    width: 315px;
+    width: 100%;
     height: 250px;
-    margin: 10px 15px 0;
+    margin: 10px 0 0;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     background-size: 315px 250px;
     background-position: 15px;
     background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  .zan-doc-demo-block__title,
+  .zan-doc-demo-block__subtitle {
+    padding-left: 0;
   }
 }
 </style>
@@ -131,13 +139,13 @@ export default {
 
 ### Options
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | loading | 加载时的图片 | `String` | - | - |
 | error | 错误时的图片 | `String` | - | - |
 | preload | 预加载高度的比例 | `String` | - | - |
-| attempt | 尝试次数 | `Number` | `3` |   |
-| listenEvents | 监听的事件 | `Array`  | `scroll`等 | - |
+| attempt | 尝试次数 | `Number` | `3` | - |
+| listenEvents | 监听的事件 | `Array` | `scroll`等 | - |
 | adapter | 适配器 | `Object` | - | - |
 | filter | 图片url过滤 | `Object` | - | - |
 | lazyComponent | 是否能懒加载模块 | `Boolean` | `false` | - |

@@ -1,5 +1,78 @@
 ## 更新日志
 
+### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
+`2017-10-18`
+
+**Improvements**
+- 升级 Vue 依赖至 2.5.0 版本 [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Tabs swipeThreshold 属性 [\#206](https://github.com/youzan/vant/pull/206) [@cookfront](https://github.com/cookfront)
+
+**Bug Fixes**
+- 修复 Swipe 组件 destroyed 时未清除 autoplay timer 的问题 [\#218](https://github.com/youzan/vant/pull/218) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Tab 组件 slot text 文本换行问题 [\#217](https://github.com/youzan/vant/pull/217) [@cookfront](https://github.com/cookfront)
+- 修复 TreeSelect 依赖路径错误 [\#216](https://github.com/youzan/vant/pull/216) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Checkbox 在微信浏览器下的边框渲染错误 [\#214](https://github.com/youzan/vant/pull/214) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Popup modal 层在某些情况下无法展示的问题 [\#211](https://github.com/youzan/vant/pull/211) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Waterfall 重复绑定事件的问题 [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
+`2017-10-13`
+
+**Breaking changes**
+- 移除 vant-css 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196) [@chenjiahan](https://github.com/chenjiahan)
+- 重写 Swipe 组件，调整部分 API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Search 组件，修改原有结构 [\#198](https://github.com/youzan/vant/pull/198) [@pangxie1991](https://github.com/pangxie1991)
+
+**Improvements**
+- 新增 Tabbar 组件 [#157](https://github.com/youzan/vant/issues/157) [\#204](https://github.com/youzan/vant/pull/204) [@chenjiahan](https://github.com/chenjiahan)
+- 新增表单相关组件英文文档 [\#199](https://github.com/youzan/vant/pull/199) [@chenjiahan](https://github.com/chenjiahan)
+- 优化 Sku 样式 [\#205](https://github.com/youzan/vant/pull/205) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 ImagePreview 图片加载过程中跳动的问题 [\#201](https://github.com/youzan/vant/pull/201) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Field 组件 type 为 textarea 且 display none 时高度计算错误的问题 [\#181](https://github.com/youzan/vant/issues/181) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.9.12](https://github.com/youzan/vant/tree/v0.9.12) 
+`2017-10-11`
+
+**Bug Fixes**
+- 修复 Search 样式问题 [\#191](https://github.com/youzan/vant/pull/191) ([pangxie1991](https://github.com/pangxie1991))
+
+### [0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
+`2017-10-11`
+
+**Improvements**
+- 新增 Contribute 相关文档 [\#182](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
+**Bug Fixes**
+- 修正 AddressEdit 组件姓名字段的键名为 name [\#187](https://github.com/youzan/vant/pull/187) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Filed type 为 textarea 且 display none 时高度计算错误的问题 [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 windows 下项目编译失败的问题 [\#185](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
+
+
+### [0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
+`2017-10-09`
+
+**Improvements**
+- 新增 Contact 组件 [\#160](https://github.com/youzan/vant/pull/160) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 AddressEdit 组件 [\#147](https://github.com/youzan/vant/pull/147) [@chenjiahan](https://github.com/chenjiahan)
+- 新增英文文档支持 [\#170](https://github.com/youzan/vant/pull/170) [@pangxie1991](https://github.com/pangxie1991)
+- 去除 zan-utils 依赖 [\#168](https://github.com/youzan/vant/pull/168) [@w91](https://github.com/w91) [@chenjiahan](https://github.com/chenjiahan)
+- 去除 transition 中冗余的兼容代码 [\#162](https://github.com/youzan/vant/pull/162) [@chenjiahan](https://github.com/chenjiahan)
+- 使用 clean-css 代替 gulp-cssmin [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab props 修改后未同步至父组件的问题 [\#148](https://github.com/youzan/vant/pull/148) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Button active 状态下边框样式问题 [\#150](https://github.com/youzan/vant/issues/150) [@ZWkang](https://github.com/ZWkang)
+- 修复 Stepper 组件输入框样式错误 [\#159](https://github.com/youzan/vant/pull/159) [@w91](https://github.com/w91)
+- 修复 Waterfall 未显示时 disable 属性无法生效的问题 [\#166](https://github.com/youzan/vant/pull/166) [@pangxie1991](https://github.com/pangxie1991)
+- 修复 vant-css 构建过程中未编译 calc 属性的问题  [@chenjiahan](https://github.com/chenjiahan)
+- 修复 MacOS 下 npm run dev 报错的问题 [\#152](https://github.com/youzan/vant/issues/152) [@chenjiahan](https://github.com/chenjiahan)
+- 修复文档在部分低版本浏览器路由失效的问题 [\#158](https://github.com/youzan/vant/pull/158) [@pangxie1991](https://github.com/pangxie1991)
+- 修复文档中遗漏 SwipeItem 组件引入方式的问题 [\#167](https://github.com/youzan/vant/pull/167) [@OlafCheng](https://github.com/OlafCheng)
+
 ### [0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
 `2017-09-26`
 

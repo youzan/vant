@@ -101,7 +101,7 @@ Vue.component(Sku.name, Sku);
       <!-- 隐藏sku messages -->
       <template slot="sku-messages"></template>
       <!-- 自定义sku actions -->
-      <template slot="sku-actions" scope="props">
+      <template slot="sku-actions" slot-scope="props">
         <div class="van-sku-actions">
           <button class="van-sku__add-cart-btn" @click="handlePointClicked">
             积分兑换
@@ -121,26 +121,26 @@ Vue.component(Sku.name, Sku);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 必须      |
+| 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否显示sku | Boolean  | false |    是      |
-| sku | 商品sku数据 | Object  | - |    是      |
-| goods | 商品信息 | Object  | - |  是 |
-| goodsId | 商品id | String/Number  | - |  是 |
-| hideStock | 是否显示商品剩余库存 | Boolean  | false | 否  |
-| showAddCartBtn | 是否显示加入购物车按钮 | Boolean  | true |  否 |
-| quota | 限购数(0表示不限购) | Number  | 0 |  否 |
-| quotaUsed | 已经购买过的数量 | Number  | 0 |  否 |
-| resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | Boolean  | false |  否 |
+| v-model | 是否显示sku | Boolean | false |    是 |
+| sku | 商品sku数据 | Object | - |    是 |
+| goods | 商品信息 | Object | - |  是 |
+| goodsId | 商品id | String/Number | - |  是 |
+| hideStock | 是否显示商品剩余库存 | Boolean | false | 否 |
+| showAddCartBtn | 是否显示加入购物车按钮 | Boolean | true |  否 |
+| quota | 限购数(0表示不限购) | Number | 0 |  否 |
+| quotaUsed | 已经购买过的数量 | Number | 0 |  否 |
+| resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | Boolean | false |  否 |
 | disableStepperInput | 是否禁用sku中stepper的input框 | Boolean | false | 否 |
-| stepperTitle | 数量选择组件左侧文案 | String  | '购买数量' |  否 |
-| add-cart | 点击添加购物车回调 | Function(skuData: Object)  | - |  否 |
-| buy-clicked | 点击购买回调 | Function(skuData: Object)  | - |  否 |
+| stepperTitle | 数量选择组件左侧文案 | String | '购买数量' |  否 |
+| add-cart | 点击添加购物车回调 | Function(skuData: Object) | - |  否 |
+| buy-clicked | 点击购买回调 | Function(skuData: Object) | - |  否 |
 
 ### slots
 sku组件默认划分好了若干区块，这些区块都定义成了slot，可以按需进行替换。区块顺序见下表：
 
-| 名称      | 说明      | 
+| Name | 说明 | 
 |-----------|-----------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
 | sku-group | 商品sku展示区 |

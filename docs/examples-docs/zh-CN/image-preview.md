@@ -4,6 +4,11 @@
     margin-left: 15px;
   }
 }
+.van-image-preview {
+  img {
+    pointer-events: none;
+  }
+}
 </style>
 
 <script>
@@ -57,6 +62,6 @@ export default {
 
 ### 方法参数
 
-| 参数名       | 说明      | 类型 |
+| 参数名 | 说明 | 类型 |
 |-----------|-----------|-----------|
 | imageUrls | 需要预览的图片 | `Array` |
