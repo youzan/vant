@@ -12,7 +12,7 @@
           </van-sku-header>
         </slot>
         <div class="van-sku-body scroller" :style="bodyStyle">
-          <slot name="sku-group" :selectedSku="selectedSku">
+          <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container">
               <div v-for="(skuTreeItem, index) in skuTree"
                 class="van-sku-row-group"
