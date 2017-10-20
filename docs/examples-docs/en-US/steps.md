@@ -31,13 +31,13 @@ Vue.component(Steps.name, Steps);
 :::demo Basic Usage
 ```html
 <van-steps :active="active">
-  <van-step>买家下单</van-step>
-  <van-step>商家接单</van-step>
-  <van-step>买家提货</van-step>
-  <van-step>交易完成</van-step>
+  <van-step>Step1</van-step>
+  <van-step>Step2</van-step>
+  <van-step>Step3</van-step>
+  <van-step>Step4</van-step>
 </van-steps>
 
-<van-button @click="nextStep">下一步</van-button>
+<van-button @click="nextStep">Next</van-button>
 ```
 
 ```javascript
@@ -57,62 +57,57 @@ export default {
 ```
 :::
 
-#### 物流描述
+#### Description
 
-通过`title`和`description`属性来定义物流描述信息
-
-:::demo 物流描述
+:::demo Description
 ```html
 <van-steps
   :active="active"
   icon="logistics"
   icon-class="steps-success"
-  title="等待商家发货"
-  description="物流描述"
+  title="Title"
+  description="Description"
 >
-  <van-step>买家下单</van-step>
-  <van-step>商家接单</van-step>
-  <van-step>买家提货</van-step>
-  <van-step>交易完成</van-step>
+  <van-step>Step1</van-step>
+  <van-step>Step2</van-step>
+  <van-step>Step3</van-step>
+  <van-step>Step4</van-step>
 </van-steps>
 ```
 :::
 
-#### 竖向步骤条
+#### Vertical Steps
 
-可以通过设置`direction`属性来改变步骤条的显示方式
-
-:::demo 竖向步骤条
+:::demo Vertical Steps
 ```html
 <van-steps direction="vertical" :active="0" active-color="#f60">
   <van-step>
-    <h3>【城市】物流状态1</h3>
+    <h3>【City】Status1</h3>
     <p>2016-07-12 12:40</p>
   </van-step>
   <van-step>
-    <h3>【城市】物流状态2</h3>
+    <h3>【City】Status2</h3>
     <p>2016-07-11 10:00</p>
   </van-step>
   <van-step>
-    <h3>快件已发货</h3>
+    <h3>【City】Status3</h3>
     <p>2016-07-10 09:30</p>
   </van-step>
 </van-steps>
 ```
 :::
 
-### #### Advanced Usage
-使用`slot`增加自定义内容
+#### Advanced Usage
 
 :::demo Advanced Usage
 ```html
-<van-steps :active="active" title="等待商家发货">
+<van-steps :active="active" title="Title">
   <van-icon slot="icon" name="location"></van-icon>
-  <p slot="message-extra">物流进度</p>
-  <van-step>买家下单</van-step>
-  <van-step>商家接单</van-step>
-  <van-step>买家提货</van-step>
-  <van-step>交易完成</van-step>  
+  <p slot="message-extra">Some text</p>
+  <van-step>Step1</van-step>
+  <van-step>Step2</van-step>
+  <van-step>Step3</van-step>
+  <van-step>Step4</van-step>  
 </van-steps>
 ```
 :::
@@ -121,17 +116,17 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| active | 当前步骤，起始值为0 | `Number` | | |
-| icon | 当前步骤的icon | `String` | | |
-| iconClass | 当前步骤栏为icon添加的类 | `String` | | |
-| title | 当前步骤从标题 | `String` | | |
-| description | 当前步骤描述 | `String` | | |
-| direction | 显示方向 | `String` | `horizontal` | `vertical` |
-| activeColor | active状态颜色 | `String` | `#06bf04` | |
+| active | Active step | `Number` | 0 | - |
+| icon | Action step icon | `String` | - | - |
+| iconClass | Icon class | `String` | - | - |
+| title | Title | `String` | - | - |
+| description | Description | `String` | - | - |
+| direction | Direction | `String` | `horizontal` | `vertical` |
+| activeColor | Active step color | `String` | `#06bf04` | - |
 
 ### Steps Slot
 
-| 名称 | Description |
+| Name | Description |
 |-----------|-----------|
-| icon | 自定义icon区域 |
-| message-extra | 状态栏添加额外的元素 |
+| icon | Custom icon |
+| message-extra | Extra content |

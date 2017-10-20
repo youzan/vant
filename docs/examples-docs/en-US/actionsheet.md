@@ -145,11 +145,11 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| actions | 行动按钮数组 | `Array` | `[]` | |
-| title | 标题 | `String` | | |
-| cancelText | 取消按钮文案 | `String` | | |
-| overlay | 是否显示遮罩 | `Boolean` | | |
-| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | | |
+| actions | 行动按钮数组 | `Array` | `[]` | - |
+| title | 标题 | `String` | - | - |
+| cancelText | 取消按钮文案 | `String` | - | - |
+| overlay | 是否显示遮罩 | `Boolean` | - | - |
+| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
 
 ### actions
 

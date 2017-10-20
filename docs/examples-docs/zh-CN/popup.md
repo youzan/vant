@@ -150,5 +150,5 @@ export default {
 | lockOnScroll | 背景是否跟随滚动 | `Boolean` | `false` | - |
 | position | 弹出层位置 | `String` | - | `top` `bottom` `right` `left` |
 | closeOnClickOverlay | 点击遮罩层是否关闭弹出层 | `Boolean` | `true` | - |
-| transition | 弹出层的`transition` | `String` | `popup-slide` | |
+| transition | 弹出层的`transition` | `String` | `popup-slide` | - |
 | preventScroll | 是否防止滚动穿透 | `Boolean` | `false` | - |

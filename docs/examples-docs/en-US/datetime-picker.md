@@ -108,16 +108,16 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | Number | 5 | |
+| visibileColumnCount | 每一列可见备选元素的个数 | Number | 5 | - |
 | type | 组件类型 | String | 'datetime' |  'datetime', 'date', 'time' |
-| minDate | 可选的最小日期 | Date | 十年前的 1 月 1 日 | |
-| maxDate | 可选的最大日期 | Date | 十年后的 12 月 31 日 | |
-| minHour | 可选的最小小时 | Number | 0 | |
-| maxHour | 可选的最大小时 | Number | 23 | |
+| minDate | 可选的最小日期 | Date | 十年前的 1 月 1 日 | - |
+| maxDate | 可选的最大日期 | Date | 十年后的 12 月 31 日 | - |
+| minHour | 可选的最小小时 | Number | 0 | - |
+| maxHour | 可选的最大小时 | Number | 23 | - |
 
 ### Event
 
-| Event | Description | 回调参数 |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | 当值变化时触发的事件 | picker 实例 |
 | confirm | 点击完成按钮时触发的事件 | 当前 value |

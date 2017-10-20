@@ -143,11 +143,11 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | `Number` | `5` | |
-| itemHeight | 选中元素区高度 | `Number` | `44` | |
-| columns | 对象数组，配置每一列显示的数据 | `Array` | | |
-| showToolbar | 是否在组件顶部显示一个toolbar | `Boolean` | `true` | |
-| title | 在toolbar上显示的标题文字 | `String` | | |
+| visibileColumnCount | 每一列可见备选元素的个数 | `Number` | `5` | - |
+| itemHeight | 选中元素区高度 | `Number` | `44` | - |
+| columns | 对象数组，配置每一列显示的数据 | `Array` | - | - |
+| showToolbar | 是否在组件顶部显示一个toolbar | `Boolean` | `true` | - |
+| title | 在toolbar上显示的标题文字 | `String` | - | - |
 
 ### columns
 

@@ -4,8 +4,6 @@
 
 #### 全局注册
 
-`Waterfall`引入后就自动全局安装。如果需要，可以再次手动安装：
-
 ```js
 import Vue from 'vue';
 import { Waterfall } from 'vant';
@@ -36,36 +34,24 @@ import { Waterfall } from 'packages';
 export default {
   data() {
     return {
-      list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      loading: false,
-      finished: false
+      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      disabled: false
     };
   },
+
   directives: {
-    WaterfallLower: Waterfall('lower'),
-    WaterfallUpper: Waterfall('upper')
+    WaterfallLower: Waterfall('lower')
   },
+
   methods: {
     loadMore() {
-      if (this.list.length >= 50) {
-        this.finished = true;
-        return;
-      }
-
-      this.loading = true;
+      this.disabled = true;
       setTimeout(() => {
-        let lastNumber = this.list[this.list.length - 1];
         for (let i = 0; i < 5; i ++) {
-          lastNumber += 1;
-          this.list.push(lastNumber);
+          this.list.push(this.list.length);
         }
-        this.loading = false;
+        this.disabled = false;
       }, 200);
-    }
-  },
-  computed: {
-    isWaterfallDisabled() {
-      return this.loading || this.finished;
     }
   }
 };
@@ -103,10 +89,37 @@ export default {
 <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
 <ul
   v-waterfall-lower="loadMore"
-  waterfall-disabled="isWaterfallDisabled"
+  waterfall-disabled="disabled"
   waterfall-offset="400">
-  <li v-for="(item, index) in list">{{ item }}</li>
+  <li v-for="item in list">{{ item }}</li>
 </ul>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      disabled: false
+    };
+  },
+
+  directives: {
+    WaterfallLower: Waterfall('lower')
+  },
+
+  methods: {
+    loadMore() {
+      this.disabled = true;
+      setTimeout(() => {
+        for (let i = 0; i < 5; i ++) {
+          this.list.push(this.list.length);
+        }
+        this.disabled = false;
+      }, 200);
+    }
+  }
+};
 ```
 :::
 
@@ -114,8 +127,8 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function` | - | |
-| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - | |
-| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - | |
-| waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` | |
+| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function` | - | - |
+| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - | - |
+| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - | - |
+| waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` | - |
 

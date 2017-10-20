@@ -10,8 +10,7 @@ Vue.component(Progress.name, Progress);
 ### Usage
 
 #### Basic Usage
-
-进度条默认为蓝色，使用`percentage`属性来设置当前进度
+Use 'percentage' prop to set current progress
 
 :::demo Basic Usage
 ```html
@@ -22,9 +21,9 @@ Vue.component(Progress.name, Progress);
 :::
 
 
-#### 进度条置灰
+#### Inactive
 
-:::demo 进度条置灰
+:::demo Inactive
 ```html
 <van-progress inactive :percentage="0"></van-progress>
 <van-progress inactive :percentage="46"></van-progress>
@@ -33,15 +32,14 @@ Vue.component(Progress.name, Progress);
 :::
 
 
-#### 样式定制
+#### Custom Style
+Use `pivot-text` to custom text，use `color` to custom bar color
 
-可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
-
-:::demo 样式定制
+:::demo Custom Style
 ```html
-<van-progress pivot-text="红色" color="#ed5050" :percentage="26"></van-progress>
-<van-progress pivot-text="橙色" color="#f60" :percentage="46"></van-progress>
-<van-progress pivot-text="黄色" color="#f09000" :percentage="66"></van-progress>
+<van-progress pivot-text="Red" color="#ed5050" :percentage="26"></van-progress>
+<van-progress pivot-text="Orange" color="#f60" :percentage="46"></van-progress>
+<van-progress pivot-text="Yellow" color="#f09000" :percentage="66"></van-progress>
 ```
 :::
 
@@ -49,8 +47,8 @@ Vue.component(Progress.name, Progress);
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| inactive | 是否置灰 | `Boolean` | `false` | |
-| percentage | 进度百分比 | `Number` | `false` | `0-100` |
-| pivotText | 文字显示 | `String` | 百分比文字 | - |
-| color | 进度条颜色 | `String` | `#38f` | hexvalue |
-| textColor | 进度条文字颜色 | `String` | `#fff` | hexvalue |
+| inactive | Whether to be gray | `Boolean` | `false` | - |
+| percentage | Percentage | `Number` | `false` | `0-100` |
+| pivotText | Text | `String` | percentage | - |
+| color | Color | `String` | `#38f` | hexvalue |
+| textColor | Text color | `String` | `#fff` | hexvalue |

@@ -68,13 +68,13 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 当前选中的省市区`code` | `String` | - | |
-| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | | |
-| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | |
+| value | 当前选中的省市区`code` | `String` | - | - |
+| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | - | - |
+| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | - |
 
 ### Event
 
-| Event | Description | 回调参数 |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方Data Structure章节 |
 | cancel | 点击取消按钮时 | - |

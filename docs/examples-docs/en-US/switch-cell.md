@@ -67,10 +67,10 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 开关状态 | `Boolean` | | |
-| title | 左侧标题 |  `String` | `''` | |
-| loading | 是否为加载状态 |  `Boolean` | `false` | |
-| disabled | 是否为禁用状态 |  `Boolean` | `false` | |
+| v-model | 开关状态 | `Boolean` | - | - |
+| title | 左侧标题 |  `String` | `''` | - |
+| loading | 是否为加载状态 |  `Boolean` | `false` | - |
+| disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
 
 ### Event
 

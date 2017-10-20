@@ -10,37 +10,35 @@ Vue.component(Tag.name, Tag);
 ### Usage
 
 #### Basic Usage
-通过 type 属性控制 Tag 颜色，默认为灰色
+
 :::demo Basic Usage
 ```html
-<van-tag>标签</van-tag>
-<van-tag type="danger">标签</van-tag>
-<van-tag type="success">标签</van-tag>
-<van-tag type="primary">标签</van-tag>
+<van-tag>Tag</van-tag>
+<van-tag type="danger">Tag</van-tag>
+<van-tag type="success">Tag</van-tag>
+<van-tag type="primary">Tag</van-tag>
 ```
 :::
 
-#### 空心样式
-设置`plain`属性设置为空心样式
+#### Plain style
 
-:::demo 空心样式
+:::demo Plain style
 ```html
-<van-tag plain>标签</van-tag>
-<van-tag plain type="danger">标签</van-tag>
-<van-tag plain type="primary">标签</van-tag>
-<van-tag plain type="success">标签</van-tag>
+<van-tag plain>Tag</van-tag>
+<van-tag plain type="danger">Tag</van-tag>
+<van-tag plain type="primary">Tag</van-tag>
+<van-tag plain type="success">Tag</van-tag>
 ```
 :::
 
-#### 标记样式
-通过`mark`设置为标记样式
+#### Mark style
 
-:::demo 标记样式
+:::demo Mark style
 ```html
-<van-tag mark>标签</van-tag>
-<van-tag mark type="danger">标签</van-tag>
-<van-tag mark type="primary">标签</van-tag>
-<van-tag mark type="success">标签</van-tag>
+<van-tag mark>Tag</van-tag>
+<van-tag mark type="danger">Tag</van-tag>
+<van-tag mark type="primary">Tag</van-tag>
+<van-tag mark type="success">Tag</van-tag>
 ```
 :::
 
@@ -49,11 +47,11 @@ Vue.component(Tag.name, Tag);
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | type | Type | `String` | `''`| `primary` `success` `danger` |
-| plain | 是否为空心样式 | `Boolean` | `false` | |
-| mark | 是否为标记样式 | `Boolean` | `false` | |
+| plain | Whether to be plain style | `Boolean` | `false` | - |
+| mark | Wtether to be mark style | `Boolean` | `false` | - |
 
 ### Slot
 
 | name | Description |
 |-----------|-----------|
-| - | 自定义 Tag 显示内容 |
+| - | Default slot |

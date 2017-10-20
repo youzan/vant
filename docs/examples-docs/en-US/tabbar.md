@@ -30,10 +30,10 @@ Vue.component(TabbarItem.name, TabbarItem);
 :::demo Basic Usage
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item icon="shop">标签</van-tabbar-item>
-  <van-tabbar-item icon="chat" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="records">标签</van-tabbar-item>
-  <van-tabbar-item icon="gold-coin">标签</van-tabbar-item>
+  <van-tabbar-item icon="shop">Tab</van-tabbar-item>
+  <van-tabbar-item icon="chat" dot>Tab</van-tabbar-item>
+  <van-tabbar-item icon="records">Tab</van-tabbar-item>
+  <van-tabbar-item icon="gold-coin">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -48,18 +48,18 @@ export default {
 ```
 :::
 
-#### 自定义图标
-通过 icon slot 自定义图标
+#### Custom icon
+Use `icon` slot to custom icon
 
-:::demo 自定义图标
+:::demo Custom icon
 ```html
 <van-tabbar v-model="active2">
   <van-tabbar-item icon="shop">
-    <span>自定义</span>
+    <span>Custom</span>
     <img slot="icon" :src="active2 === 0 ? icon.active : icon.normal" />
   </van-tabbar-item>
-  <van-tabbar-item icon="chat">标签</van-tabbar-item>
-  <van-tabbar-item icon="records">标签</van-tabbar-item>
+  <van-tabbar-item icon="chat">Tab</van-tabbar-item>
+  <van-tabbar-item icon="records">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -82,17 +82,17 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中标签的索引 | `Number` | - | - |
+| v-model | Index of current tab | `Number` | - | - |
 
 ### Tabbar Event
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| change | 切换标签时触发 | active: 当前选中标签 |
+| change | Triggered when change active tab | active: index of current tab |
 
 ### TabbarItem API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | 图标名称 | `String` | - | Icon 组件中可用的类型 |
-| dot | 是否显示小红点 | `Boolean` | - | - |
+| icon | Icon name | `String` | - | Names from Icon Component |
+| dot | Whether to show red dot | `Boolean` | - | - |

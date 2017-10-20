@@ -115,5 +115,5 @@ export default {
 | lockOnScroll | Lock body scroll | `Boolean` | `false` | - |
 | position | Position | `String` | - | `top` `bottom` `right` `left` |
 | closeOnClickOverlay | Close popup when click overlay | `Boolean` | `true` | - |
-| transition | Transition | `String` | `popup-slide` | |
+| transition | Transition | `String` | `popup-slide` | - |
 | preventScroll | Prevent background scroll | `Boolean` | `false` | - |
