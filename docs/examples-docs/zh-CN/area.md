@@ -66,15 +66,15 @@ export default {
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值      |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 当前选中的省市区`code` | `String`  | - | |
-| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object`  |  | |
-| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number`  | 3 | |
+| value | 当前选中的省市区`code` | `String` | - | - |
+| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | - | - |
+| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | - |
 
 ### Event
 
-| 事件名称       | 说明      | 回调参数 |
+| 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
 | cancel | 点击取消按钮时 | - |

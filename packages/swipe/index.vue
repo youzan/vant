@@ -58,6 +58,10 @@ export default {
     this.initialize();
   },
 
+  destroyed() {
+    clearTimeout(this.timer);
+  },
+
   watch: {
     swipes() {
       this.initialize();

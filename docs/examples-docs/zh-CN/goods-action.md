@@ -76,13 +76,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | 图标 | `String`  | - | Icon 组件支持的所有图标 |
-| iconClass | 图标额外类名 | `String`  | `''` | - |
-| url | 跳转链接 | `String`  | `javascript:;` | - |
+| icon | 图标 | `String` | - | Icon 组件支持的所有图标 |
+| iconClass | 图标额外类名 | `String` | `''` | - |
+| url | 跳转链接 | `String` | `javascript:;` | - |
 
 #### GoodsActionBigBtn
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| url | 跳转链接 | `String`  | `javascript:;` | - |
+| url | 跳转链接 | `String` | `javascript:;` | - |
 | primary | 是否主行动按钮，主行动按钮默认为红色 | `Boolean` | `false` | - |

@@ -102,8 +102,8 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Check status of Switch | `Boolean` | `false` | - |
-| loading | Whether to show loading icon | `Boolean`  | `false` | - |
-| disabled | Disable switch | `Boolean`  | `false` | - |
+| loading | Whether to show loading icon | `Boolean` | `false` | - |
+| disabled | Disable switch | `Boolean` | `false` | - |
 
 ### Event
 

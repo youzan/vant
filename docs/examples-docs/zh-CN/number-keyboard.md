@@ -83,12 +83,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| show | 是否显示键盘 | `Boolean`  | - | - |
+| show | 是否显示键盘 | `Boolean` | - | - |
 | title | 键盘标题 | `String` | - | - |
-| extraKey | 左下角按键内容 | `String`  | `''` | - |
-| zIndex | 键盘 z-index | `Number`  | `100` | - |
-| transition | 是否开启过场动画 | `Boolean`  | `true` | - |
-| showDeleteKey | 是否展示删除按钮 | `Boolean`  | `true` | - |
+| extraKey | 左下角按键内容 | `String` | `''` | - |
+| zIndex | 键盘 z-index | `Number` | `100` | - |
+| transition | 是否开启过场动画 | `Boolean` | `true` | - |
+| showDeleteKey | 是否展示删除按钮 | `Boolean` | `true` | - |
 
 ### Event
 

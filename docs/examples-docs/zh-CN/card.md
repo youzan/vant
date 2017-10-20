@@ -62,11 +62,11 @@ Vue.component(Card.name, Card);
 | desc | 描述 | `String` | - | - |
 | num | 商品数量 | `String | Number` | - | - |
 | price | 商品价格 | `String | Number` | - | - |
-| centered | 内容是否垂直居中 | `String`  | `false` | - |
+| centered | 内容是否垂直居中 | `String` | `false` | - |
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | title | 自定义标题 |
 | desc | 自定义描述 |

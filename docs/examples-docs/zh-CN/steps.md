@@ -143,19 +143,19 @@ export default {
 
 ### Steps API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| active | 当前步骤，起始值为0 | `Number` | | |
-| icon | 当前步骤的icon | `String`  | | |
-| iconClass | 当前步骤栏为icon添加的类 | `String` | | |
-| title | 当前步骤从标题 | `String`  | | |
-| description | 当前步骤描述 | `String`  | | |
-| direction | 显示方向 | `String`  | `horizontal` | `vertical` |
-| activeColor | active状态颜色 | `String`  | `#06bf04` | |
+| active | 当前步骤，起始值为0 | `Number` | - | - |
+| icon | 当前步骤的icon | `String` | - | - |
+| iconClass | 当前步骤栏为icon添加的类 | `String` | - | - |
+| title | 当前步骤标题 | `String` | - | - |
+| description | 当前步骤描述 | `String` | - | - |
+| direction | 显示方向 | `String` | `horizontal` | `vertical` |
+| activeColor | active状态颜色 | `String` | `#06bf04` | - |
 
 ### Steps Slot
 
-| 名称       | 说明      |
+| Name | 说明 |
 |-----------|-----------|
 | icon | 自定义icon区域 |
 | message-extra | 状态栏添加额外的元素 |

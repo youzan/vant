@@ -35,6 +35,7 @@ import { Button } from 'vant';
 
 ```js
 import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
  
@@ -46,6 +47,16 @@ import Vant from 'vant';
 import 'vant/lib/vant-css/index.css';
 
 Vue.use(Vant);
+```
+
+### CDN
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+
+<!-- 引入组件 --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
 ### 自定义主题
