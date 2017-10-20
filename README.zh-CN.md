@@ -8,6 +8,18 @@
 <p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev) [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
+
+## 特性
+
+- 组件都是来源于有赞的微商城业务，并且经过有赞业务的检验，更靠谱
+- 丰富的文档和Demo
+- 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- 单元测试覆盖率超过90%
+- 不仅仅有丰富的基础组件，还有许多的业务组件
+
+<p align="center">
+  < img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/09/21/34974ceef63f380373bf3d68ec7907f8.gif">
+</p >
  
 ## 安装
 
