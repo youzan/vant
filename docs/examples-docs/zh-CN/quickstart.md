@@ -35,6 +35,7 @@ import { Button } from 'vant';
 
 ```js
 import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
  
