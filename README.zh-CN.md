@@ -86,8 +86,8 @@ Vue.use(Vant);
 ## 链接
 - [详细文档](https://www.youzanyun.com/zanui/vue)
 - [更新日志](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
-- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [React 组件库 Zent](https://www.youzanyun.com/zanui/react)
+- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
  
 ## 开源协议
 

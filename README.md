@@ -76,11 +76,11 @@ Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) bef
 ## Browser Support
 Modern browsers and Android 4.0+, iOS 6+.
 
-## 链接
-- [Document](https://www.youzanyun.com/zanui/vue)
-- [Changelog](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
-- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
+## Links
+- [Documentation](https://www.youzanyun.com/zanui/vue)
+- [Change log](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
 - [React UI Zent](https://www.youzanyun.com/zanui/react)
+- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
  
 ## Preview
 You can scan the following QR code to access the demo：
