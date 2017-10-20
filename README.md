@@ -18,14 +18,71 @@ npm i -S vant
 ```
  
 ## Quickstart
-See [Quickstart](https://www.youzanyun.com/zanui/vue#/en-US/component/quickstart).
- 
-## How to contribute
 
+#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
+```bash
+# Install babel-plugin-import
+npm i babel-plugin-import -D
+```
+
+```js
+// set babel config in .babelrc or babel-loader
+{
+  "plugins": [
+    ["import", { "libraryName": "vant", "style": true }]
+  ]
+}
+```
+
+Then you can import components from vant, equivalent to import manually below.
+
+```js
+import { Button } from 'vant';
+```
+
+#### 2. Manually import
+
+```js
+import { Button } from 'vant/lib/button';
+import 'vant/lib/vant-css/base.css';
+import 'vant/lib/vant-css/button.css';
+```
+ 
+#### 3. Import all components
+
+```js
+import Vue from 'vue';
+import Vant from 'vant';
+import 'vant/lib/vant-css/index.css';
+
+Vue.use(Vant);
+```
+
+### CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+
+<!-- import script --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+```
+
+See more in [Quickstart](https://www.youzanyun.com/zanui/vue#/en-US/component/quickstart).
+ 
+## Contribution
 Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
 
-## Preview
+## Browser Support
+Modern browsers and Android 4.0+, iOS 6+.
 
+## 链接
+- [Document](https://www.youzanyun.com/zanui/vue)
+- [Changelog](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
+- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
+- [React UI Zent](https://www.youzanyun.com/zanui/react)
+ 
+## Preview
 You can scan the following QR code to access the demo：
 
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
