@@ -75,7 +75,7 @@ Vue.use(Vant);
 使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
 ## 浏览器支持
-现代浏览器以及 Android 4.0+, iOS 6+.
+现代浏览器以及 Android 4.0+, iOS 6+.
 
 ## 手机预览
 
