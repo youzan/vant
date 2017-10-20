@@ -20,7 +20,7 @@
 - Not only have the basic components, but also have a lot of business components
 
 <p align="center">
-  < img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/09/21/34974ceef63f380373bf3d68ec7907f8.gif">
+  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/09/21/34974ceef63f380373bf3d68ec7907f8.gif">
 </p >
 
 ## Install
