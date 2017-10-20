@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.10.2](https://github.com/youzan/vant/tree/v0.10.2) (2017-10-20)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.1...v0.10.2)
+
+**Bug Fixes**
+
+- 引入TreeSelect组件后报icon没找到 [\#215](https://github.com/youzan/vant/issues/215)
+- Checkbox 复选框组件bug [\#213](https://github.com/youzan/vant/issues/213)
+
+**Issue**
+
+- 如何动态赋值 [\#221](https://github.com/youzan/vant/issues/221)
+- 省市区的json文件能放出来吗？ [\#219](https://github.com/youzan/vant/issues/219)
+- 标签页 能提供纵向布局吗？现在只有横向布局 能灵活配置就好了 [\#207](https://github.com/youzan/vant/issues/207)
+- 能不能考虑增加一个  “选择图片” 的功能 [\#186](https://github.com/youzan/vant/issues/186)
+- Please open source examples code [\#169](https://github.com/youzan/vant/issues/169)
+
+**Improvements**
+
+- \[new feature\] Sku: sku-group slot add event bus [\#226](https://github.com/youzan/vant/pull/226) ([w91](https://github.com/w91))
+- \[bugfix\] Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add some english documents [\#220](https://github.com/youzan/vant/pull/220) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1) (2017-10-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.0...v0.10.1)
 
