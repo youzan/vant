@@ -49,6 +49,16 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
+### CDN
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+
+<!-- 引入组件 --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+```
+
 ### 自定义主题
 
 `Vant`提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者部分样式，可以使用下面的方法：

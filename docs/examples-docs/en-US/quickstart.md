@@ -48,3 +48,13 @@ import 'vant/lib/vant-css/index.css';
 
 Vue.use(Vant);
 ```
+
+### CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+
+<!-- import script --><script></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+```

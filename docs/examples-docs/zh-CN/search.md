@@ -87,21 +87,21 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| placeholder | `input`的`placeholder`文案 | `String`  |           |     |
-| background | 搜索框背景色 | `String`  |     `#f2f2f2`      |  所有浏览器支持的颜色描述   |
-| showAction | 是否在搜索框右侧显示取消按钮 | `Boolean`  |     false      |     |
+| placeholder | `input`的`placeholder`文案 | `String` | | |
+| background | 搜索框背景色 | `String` |     `#f2f2f2` |  所有浏览器支持的颜色描述 |
+| showAction | 是否在搜索框右侧显示取消按钮 | `Boolean` |     false | |
 
 ### Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | cancel | 取消搜索 | - |
 | search | 确定搜索 | - |
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |

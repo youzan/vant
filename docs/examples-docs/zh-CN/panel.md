@@ -55,14 +55,14 @@ Vue.component(Panel.name, Panel);
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String`  | - | - |
-| desc | 描述 | `String`  | - | - |
-| status | 状态 | `String`  | - | - |
+| title | 标题 | `String` | - | - |
+| desc | 描述 | `String` | - | - |
+| status | 状态 | `String` | - | - |
 
 
 ### Slot
 
-| name       | 描述      |
+| name | 描述 |
 |-----------|-----------|
 | - | 自定义内容 |
 | header | 自定义 header |

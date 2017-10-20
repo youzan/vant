@@ -45,7 +45,11 @@ export default {
 ```
 :::
 
+<<<<<<< HEAD
 ### 方法参数
+=======
+### Arguments
+>>>>>>> main/dev
 
 | Attribute | Description | Type |
 |-----------|-----------|-----------|

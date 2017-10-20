@@ -55,7 +55,7 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 ### API
 
-| 参数       | 说明      | 类型       | 默认值       | 可选值       |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | mode | 通告栏模式 | String | `''` | `closeable` `link` |
 | delay | 动画延迟时间，单位秒 | Number | `1` | - |
@@ -64,6 +64,6 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 ### Event
 
-| 事件名       | 说明      | 参数       |
+| 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 点击事件回调 | - |

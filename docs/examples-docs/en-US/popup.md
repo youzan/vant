@@ -4,19 +4,18 @@ import Dialog from 'packages/dialog';
 export default {
   data() {
     return {
-      popupShow1: false,
-      popupShow2: false,
-      popupShow3: false,
-      popupShow4: false,
-      popupShow5: false
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false
     }
   },
 
   watch: {
-    popupShow3(val) {
+    show3(val) {
       if (val) {
         setTimeout(() => {
-          this.popupShow3 = false;
+          this.show3 = false;
         }, 2000);
       }
     }
@@ -27,11 +26,7 @@ export default {
       Dialog.confirm({
         title: 'confirm标题',
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      }).then((action) => {
-        console.log(action);
-      }, (error) => {
-        console.log(error);
-      });
+      })
     }
   }
 };
@@ -49,53 +44,41 @@ Vue.component(Popup.name, Popup);
 ### Usage
 
 #### Basic Usage
-
-`popup`默认情况下是从中间弹出。
+Popup is located in the middle of the screen by default
 
 :::demo Basic Usage
 ```html
-<van-button @click="popupShow1 = true">从中间弹出popup</van-button>
-<van-popup v-model="popupShow1" class="van-popup-1" :lock-on-scroll="true">
-  从中间弹出popup
-</van-popup>
+<van-button @click="show1 = true">Show Popup</van-button>
+<van-popup v-model="show1">Content</van-popup>
 ```
 
 ```javascript
 export default {
   data() {
     return {
-      popupShow1: false
+      show1: false
     }
   }
 };
 ```
 :::
 
-#### 从不同位置弹出层
+#### Different Position
+Use `position` prop to set popup display position
 
-可以设置`position`属性，`popup`即能从不同位置弹出，`position`的可选值有`top`，`bottom`，`right`，`left`。
-
-:::demo 从不同位置弹出层
+:::demo Different Position
 ```html
-<van-button @click="popupShow2 = true;">从下方弹出popup</van-button>
-<van-popup v-model="popupShow2" position="bottom" class="van-popup-2">
-  <van-button @click="showDialog">弹出dialog</van-button>
+<van-button @click="show2 = true;">From Bottom</van-button>
+<van-popup v-model="show2" position="bottom">
+  <van-button @click="showDialog">Show Dialog</van-button>
 </van-popup>
 
-<van-button @click="popupShow3 = true">从上方弹出popup</van-button>
-<van-popup v-model="popupShow3" position="top" class="van-popup-3" :overlay="false">
-  更新成功
-</van-popup>
+<van-button @click="show3 = true">From Top</van-button>
+<van-popup v-model="show3" position="top" :overlay="false">Content</van-popup>
 
-<van-button @click="popupShow4 = true">从右方弹出popup</van-button>
-<van-popup v-model="popupShow4" position="right" class="van-popup-4" :overlay="false">
-  <van-button @click.native="popupShow4 = false">关闭 popup</van-button>
-</van-popup>
-
-
-<van-button @click="popupShow5 = true">从左方弹出popup</van-button>
-<van-popup v-model="popupShow5" position="left" class="van-popup-5" :overlay="false">
-  <van-button @click.native="popupShow5 = false">关闭 popup</van-button>
+<van-button @click="show4 = true">From Right</van-button>
+<van-popup v-model="show4" position="right" :overlay="false">
+  <van-button @click="show4 = false">Close</van-button>
 </van-popup>
 ```
 
@@ -103,18 +86,18 @@ export default {
 export default {
   data() {
     return {
-      popupShow1: false,
-      popupShow2: false,
-      popupShow3: false,
-      popupShow4: false
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false
     }
   },
 
   watch: {
-    popupShow2(val) {
+    show2(val) {
       if (val) {
         setTimeout(() => {
-          this.popupShow2 = false;
+          this.show2 = false;
         }, 2000);
       }
     }
@@ -127,10 +110,10 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前组件是否显示 | `Boolean` | `false` | - |
-| overlay | 是否显示背景遮罩层 | `Boolean` | `true` | - |
-| lockOnScroll | 背景是否跟随滚动 | `Boolean` | `false` | - |
-| position | 弹出层位置 | `String` | - | `top`, `bottom`, `right`, `left` |
-| closeOnClickOverlay | 点击遮罩层是否关闭弹出层 | `Boolean` | `true` | - |
-| transition | 弹出层的`transition` | `String` | `popup-slide` | |
-| preventScroll | 是否防止滚动穿透 | `Boolean` | `false` | - |
+| v-model | Whether to show popup | `Boolean` | `false` | - |
+| overlay | Whether to show overlay | `Boolean` | `true` | - |
+| lockOnScroll | Lock body scroll | `Boolean` | `false` | - |
+| position | Position | `String` | - | `top` `bottom` `right` `left` |
+| closeOnClickOverlay | Close popup when click overlay | `Boolean` | `true` | - |
+| transition | Transition | `String` | `popup-slide` | |
+| preventScroll | Prevent background scroll | `Boolean` | `false` | - |
