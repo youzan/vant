@@ -12,7 +12,7 @@ module.exports = {
         微信小程序: 'https://github.com/youzan/zanui-weapp',
         意见反馈: 'https://github.com/youzan/vant/issues',
         开发指南:
-          'https://github.com/youzan/vant/blob/dev/docs/examples-docs/zh-CN/contribute.md'
+          'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.zh-CN.md'
       }
     },
     nav: [
@@ -268,7 +268,7 @@ module.exports = {
         Weapp: 'https://github.com/youzan/zanui-weapp',
         Feedback: 'https://github.com/youzan/vant/issues',
         Contribute:
-          'https://github.com/youzan/vant/blob/dev/docs/examples-docs/en-US/contribute.md'
+          'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.md'
       }
     },
     nav: [
