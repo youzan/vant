@@ -7,7 +7,13 @@
 </p>
 <p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
 
-[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev) [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
+[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) 
+[![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
+[![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
+[![Gzip Size JS](https://img.shields.io/badge/gzip%20size:%20JS-43.3%20kB-brightgreen.svg)](https://img.shields.io/badge/gzip%20size:%20JS-43.3%20kB-brightgreen.svg)
+[![Gzip Size CSS](https://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&label=gzip%20size:%20CSS)](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&label=gzip%20size:%20CSS)
+[![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) 
+[![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
 
 ## 特性
 
