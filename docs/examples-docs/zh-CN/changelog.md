@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+`2017-10-20`
+
+**Improvements**
+
+- Sku: sku-group slot 增加 event bus [\#226](https://github.com/youzan/vant/pull/226) [@w91](https://github.com/w91)
+- 增加英文文档翻译 [\#220](https://github.com/youzan/vant/pull/220) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复组件样式依赖分析 [\#224](https://github.com/youzan/vant/pull/224) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 `2017-10-18`
 

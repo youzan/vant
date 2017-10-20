@@ -113,7 +113,7 @@ export default {
 | loading | Src of the image while loading | `String` | - | - |
 | error | Src of the image upon load fail | `String` | - | - |
 | preload | Proportion of pre-loading height | `String` | - | - |
-| attempt | Attempts count | `Number` | `3` | |
+| attempt | Attempts count | `Number` | `3` | - |
 | listenEvents | Events that you want vue listen for | `Array` | `scroll`... | - |
 | adapter | Dynamically modify the attribute of element | `Object` | - | - |
 | filter | The image's listener filter | `Object` | - | - |

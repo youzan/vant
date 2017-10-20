@@ -2,9 +2,7 @@
 
 ### Install
 
-#### 全局注册
-
-`Waterfall`引入后就自动全局安装。如果需要，可以再次手动安装：
+#### Global registration
 
 ```js
 import Vue from 'vue';
@@ -13,9 +11,8 @@ import { Waterfall } from 'vant';
 Vue.use(Waterfall);
 ```
 
-#### 局部注册
-
-如果你只是想在某个组件中使用`Waterfall`，可以在对应组件中注册`Waterfall`指令，这样只能在你注册的组件中使用`Waterfall`：
+#### Local registration
+If you just watch to use `Waterfall` in a component, you can register the directive in the component. 
 
 ```js
 import { Waterfall } from 'vant';
@@ -36,77 +33,67 @@ import { Waterfall } from 'packages';
 export default {
   data() {
     return {
-      list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      loading: false,
-      finished: false
+      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      disabled: false
     };
   },
+
   directives: {
-    WaterfallLower: Waterfall('lower'),
-    WaterfallUpper: Waterfall('upper')
+    WaterfallLower: Waterfall('lower')
   },
+
   methods: {
     loadMore() {
-      if (this.list.length >= 50) {
-        this.finished = true;
-        return;
-      }
-
-      this.loading = true;
+      this.disabled = true;
       setTimeout(() => {
-        let lastNumber = this.list[this.list.length - 1];
         for (let i = 0; i < 5; i ++) {
-          lastNumber += 1;
-          this.list.push(lastNumber);
+          this.list.push(this.list.length);
         }
-        this.loading = false;
+        this.disabled = false;
       }, 200);
-    }
-  },
-  computed: {
-    isWaterfallDisabled() {
-      return this.loading || this.finished;
     }
   }
 };
 </script>
 
-<style>
-.demo-waterfall {
-  ul {
-    max-height: 360px;
-    overflow: scroll;
-    border-top: 1px solid #e5e5e5;
-  }
-  li {
-    line-height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
-    text-align: center;
-  }
-  .page-desc {
-    padding: 5px 0;
-    line-height: 1.4;
-    font-size: 14px;
-    text-align: center;
-    color: #666;
-  }
-}
-</style>
-
 #### Basic Usage
-使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 false，禁止 `v-waterfall-lower` 监听滚动事件
 
-注意：`waterfall-disabled` 传入的是 vue 对象中表示是否禁止瀑布流触发 key 值，类型是字符串
 :::demo Basic Usage
 ```html
-<p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
+<p class="page-desc">This list will load items will scroll to bottom.</p>
 <ul
   v-waterfall-lower="loadMore"
-  waterfall-disabled="isWaterfallDisabled"
+  waterfall-disabled="disabled"
   waterfall-offset="400">
-  <li v-for="(item, index) in list">{{ item }}</li>
+  <li v-for="item in list">{{ item }}</li>
 </ul>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      disabled: false
+    };
+  },
+
+  directives: {
+    WaterfallLower: Waterfall('lower')
+  },
+
+  methods: {
+    loadMore() {
+      this.disabled = true;
+      setTimeout(() => {
+        for (let i = 0; i < 5; i ++) {
+          this.list.push(this.list.length);
+        }
+        this.disabled = false;
+      }, 200);
+    }
+  }
+};
 ```
 :::
 
@@ -114,8 +101,7 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function` | - | |
-| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - | |
-| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - | |
-| waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` | |
-
+| v-waterfall-lower | Function to trigger when scroll to bottom | `Function` | - | - |
+| v-waterfall-upper | Function to trigger when scroll to top | `Function` | - | - |
+| waterfall-disabled | Key of the property to control disable status in instance | `String` | - | - |
+| waterfall-offset | Offset to trigger callback function | `Number` | `300` | - |

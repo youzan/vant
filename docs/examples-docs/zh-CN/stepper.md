@@ -3,10 +3,6 @@
   .van-stepper {
     margin-left: 15px;
   }
-
-  .curr-stepper {
-    margin: 15px;
-  }
 }
 </style>
 
@@ -36,8 +32,17 @@ Vue.component(Stepper.name, Stepper);
 
 :::demo 基础用法
 ```html
-<van-stepper v-model="stepper1"></van-stepper>
-<p class="curr-stepper">当前值：{{ stepper1 }}</p>
+<van-stepper v-model="stepper1" />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: 1
+    }
+  }
+}
 ```
 :::
 
@@ -46,7 +51,7 @@ Vue.component(Stepper.name, Stepper);
 
 :::demo 禁用状态
 ```html
-<van-stepper v-model="stepper1" disabled></van-stepper>
+<van-stepper v-model="stepper1" disabled />
 ```
 :::
 
@@ -56,8 +61,7 @@ Vue.component(Stepper.name, Stepper);
 
 :::demo 高级用法
 ```html
-<van-stepper v-model="stepper2" min="5" max="40" step="2" default-value="9"></van-stepper>
-<p class="curr-stepper">当前值：{{ stepper2 || 9 }}</p>
+<van-stepper v-model="stepper2" min="5" max="40" step="2" default-value="9" />
 ```
 :::
 

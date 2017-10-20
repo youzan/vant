@@ -68,9 +68,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| value | 当前选中的省市区`code` | `String` | - | |
-| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | | |
-| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | |
+| value | 当前选中的省市区`code` | `String` | - | - |
+| areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | - | - |
+| columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | - |
 
 ### Event
 

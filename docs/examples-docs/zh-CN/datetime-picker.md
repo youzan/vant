@@ -108,12 +108,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | Number | 5 | |
+| visibileColumnCount | 每一列可见备选元素的个数 | Number | 5 | - |
 | type | 组件类型 | String | 'datetime' |  'datetime', 'date', 'time' |
-| minDate | 可选的最小日期 | Date | 十年前的 1 月 1 日 | |
-| maxDate | 可选的最大日期 | Date | 十年后的 12 月 31 日 | |
-| minHour | 可选的最小小时 | Number | 0 | |
-| maxHour | 可选的最大小时 | Number | 23 | |
+| minDate | 可选的最小日期 | Date | 十年前的 1 月 1 日 | - |
+| maxDate | 可选的最大日期 | Date | 十年后的 12 月 31 日 | - |
+| minHour | 可选的最小小时 | Number | 0 | - |
+| maxHour | 可选的最大小时 | Number | 23 | - |
 
 ### Event
 

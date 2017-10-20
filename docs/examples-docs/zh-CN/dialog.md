@@ -121,12 +121,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | | |
-| message | 内容 | `String` | | |
-| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | |
-| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | |
-| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | |
-| cancelButtonText | 取消按钮的文案 | `String` | `取消` | |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | |
-| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | |
-| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | |
+| title | 标题 | `String` | - | - |
+| message | 内容 | `String` | - | - |
+| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
+| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
+| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
+| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
+| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
+| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |

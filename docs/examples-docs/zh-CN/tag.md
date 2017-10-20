@@ -63,8 +63,8 @@ Vue.component(Tag.name, Tag);
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 类型 | `String` | `''`| `primary` `success` `danger` |
-| plain | 是否为空心样式 | `Boolean` | `false` | |
-| mark | 是否为标记样式 | `Boolean` | `false` | |
+| plain | 是否为空心样式 | `Boolean` | `false` | - |
+| mark | 是否为标记样式 | `Boolean` | `false` | - |
 
 ### Slot
 

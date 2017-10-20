@@ -95,10 +95,10 @@ Vue.component(SubmitBar.name, SubmitBar);
 
 | Attribute | Description | Type | Default | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| price | 价格（单位分） |  `Number` | | 是 |
-| button-text | 按钮文字 | `String` | | 是 |
+| price | 价格（单位分） |  `Number` | - | 是 |
+| button-text | 按钮文字 | `String` | - | 是 |
 | button-type | 按钮类型 |  `String` | `danger` | 否 |
-| tip | 提示文案 |  `String` | | 否 |
+| tip | 提示文案 |  `String` | - | 否 |
 | disabled | 是否禁用按钮 |  `Boolean` | `false` | 否 |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` | 否 |
 
@@ -110,6 +110,6 @@ Vue.component(SubmitBar.name, SubmitBar);
 
 ### Slot
 
-| 名称 | Description |
+| Name | Description |
 |-----------|-----------|
 | tip | 提示文案中的额外操作和说明 |

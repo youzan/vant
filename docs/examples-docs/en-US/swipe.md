@@ -26,7 +26,7 @@ Vue.component(SwipeItem.name, SwipeItem);
 ### Usage
 
 #### Basic Usage
-通过`autoplay`属性设置自动轮播间隔
+Use `autoplay` prop to set autoplay interval
 
 :::demo Basic Usage
 ```html
@@ -39,10 +39,10 @@ Vue.component(SwipeItem.name, SwipeItem);
 ```
 :::
 
-#### 图片懒加载
-配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
+#### Image Lazyload
+Use [Lazyload](#/zh-CN/component/lazyload) component to lazyload image
 
-:::demo 图片懒加载
+:::demo Image Lazyload
 ```html
 <van-swipe>
   <van-swipe-item v-for="(image, index) in images" :key="index">
@@ -69,12 +69,12 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| autoplay | 自动轮播间隔，单位为 ms | `Number` | - | - |
-| duration | 动画时长，单位为 ms | `Number` | `500` | - |
-| showIndicators | 是否显示指示器 | `Boolean` | `true` | - |
+| autoplay | Autoplay interval (ms) | `Number` | - | - |
+| duration | Animation duration (ms) | `Number` | `500` | - |
+| showIndicators | Whether to show indocators | `Boolean` | `true` | - |
 
-### 事件
+### Event
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| change | 每一页轮播结束后触发 | index, 当前页的索引 |
+| change | Triggered when current swipe change | index: index of current swipe |

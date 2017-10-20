@@ -128,11 +128,11 @@ export default {
 
 | Attribute | Description | Type | Default | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构 |  Array | [] | |
-| mainActiveIndex | 左侧导航高亮的索引 |  Number | 0 | |
-| activeId | 右侧选择项，高亮的数据id |  Number | 0 | |
+| items | 分类显示所需的数据，具体数据结构可看 数据结构 |  Array | [] | - |
+| mainActiveIndex | 左侧导航高亮的索引 |  Number | 0 | - |
+| activeId | 右侧选择项，高亮的数据id |  Number | 0 | - |
 
-#### 事件
+#### Event
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
 | navclick | 左侧导航点击时，触发的事件 |  index：被点击的导航的索引 |

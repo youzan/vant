@@ -1,5 +1,17 @@
 ## Changelog
 
+### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+`2017-10-20`
+
+**Improvements**
+
+- Sku: sku-group slot add event bus [\#226](https://github.com/youzan/vant/pull/226) [@w91](https://github.com/w91)
+- add English documents [\#220](https://github.com/youzan/vant/pull/220) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 `2017-10-18`
 
