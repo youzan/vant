@@ -9,22 +9,18 @@ const dependencyTree = require('dependency-tree');
 
 components.forEach(componentName => {
   const libDir = path.resolve(__dirname, '../../lib');
-  const dependencies = analyzeDependencies(componentName, libDir);
-  const styleDir = path.join(libDir, componentName, '/style');
-  const content = dependencies.map(component => `require('../../vant-css/${component}.css');`);
-  fs.outputFileSync(path.join(styleDir, './index.js'), content.join('\n'));
+  const content = analyzeDependencies(componentName, libDir).map(component => `require('../../vant-css/${component}.css');`);
+  fs.outputFileSync(path.join(libDir, componentName, './style/index.js'), content.join('\n'));
 });
 
 // Analyze component dependencies
 function analyzeDependencies(componentName, libDir) {
-  const dependencies = dependencyTree({
+  const checkList = ['base'];
+  search(dependencyTree({
     directory: libDir,
     filename: path.resolve(libDir, componentName, 'index.js'),
     filter: path => path.indexOf('vant/lib/') !== -1
-  })
-  const checkList = ['base'];
-  search(dependencies, checkList);
-  console.log(componentName ,checkList);
+  }), checkList);
   return checkList.filter(component => checkComponentHasStyle(component));
 }
 
@@ -39,10 +35,5 @@ function search(tree, checkList) {
 }
 
 function checkComponentHasStyle(componentName) {
-  const cssPath = path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`);
-  return fs.existsSync(cssPath);
-}
-
-function toPascal(str) {
-  return ('_' + str).replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase());
+  return fs.existsSync(path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`));
 }
