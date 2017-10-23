@@ -24,13 +24,14 @@ function analyzeDependencies(componentName, libDir) {
   })
   const checkList = ['base'];
   search(dependencies, checkList);
+  console.log(componentName ,checkList);
   return checkList.filter(component => checkComponentHasStyle(component));
 }
 
 function search(tree, checkList) {
   tree && Object.keys(tree).forEach(key => {
     search(tree[key], checkList);
-    const component = key.split('/vant/lib/')[1].replace('/index.js', '');
+    const component = key.split('/vant/lib/')[1].replace('/index.js', '').replace('mixins/', '');
     if (checkList.indexOf(component) === -1) {
       checkList.push(component);
     }

@@ -27,7 +27,10 @@
   &__group {
     height: 100%;
     overflow-y: scroll;
+    padding-bottom: 40px;
+    box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    background-color: $background-color;
   }
 
   &__name {
