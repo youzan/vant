@@ -104,6 +104,7 @@ Vue.use(Vant);
 - [更新日志](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
 - [React 组件库 Zent](https://www.youzanyun.com/zanui/react)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
+- [vant-demo](https://github.com/chenjiahan/vant-demo)
  
 ## 开源协议
 
