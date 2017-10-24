@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <zan-doc :simulator="simulator" :config="config" :base="base">
-      <router-view></router-view>
+    <zan-doc :simulators="simulators" :currentSimulator="currentSimulator" :config="config" :base="base">
+      <router-view @changeDemoURL="onChangeDemoURL"></router-view>
     </zan-doc>
   </div>
 </template>
@@ -17,10 +17,9 @@ export default {
       group.list = group.list.filter(item => item.title !== '业务组件');
     }
 
-    const hash = window.location.hash;
-
     return {
-      simulator: `/zanui/vue/examples${hash}`,
+      simulators: [`/zanui/vue/examples${location.hash}`],
+      demoURL: '',
       lang: getLang()
     };
   },
@@ -32,12 +31,22 @@ export default {
 
     config() {
       return docConfig[this.lang];
+    },
+
+    currentSimulator() {
+      return this.$route.name === 'zh-CN/demo' ? 1 : 0;
     }
   },
 
   watch: {
     '$route'(to) {
       this.lang = to.meta.lang;
+    }
+  },
+
+  methods: {
+    onChangeDemoURL(url) {
+      this.simulators = [this.simulators[0], url];
     }
   }
 };

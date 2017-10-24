@@ -28,11 +28,17 @@ module.exports = {
               },
               {
                 title: '业务组件',
-                link: '/zanui/captain/component/quickstart'
+                link: '/zanui/captain'
               },
               {
                 path: '/changelog',
                 title: '更新日志',
+                noExample: true
+              },
+              {
+                path: '/demo',
+                title: '示例页面',
+                noDocument: true,
                 noExample: true
               }
             ]
