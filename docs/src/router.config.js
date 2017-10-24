@@ -3,19 +3,16 @@ import { getLang } from './utils/lang';
 import DemoList from './components/demo-list';
 import componentDocs from '../examples-dist/entry-docs';
 import componentDemos from '../examples-dist/entry-demos';
+import Demo from './components/demo';
 import './utils/iframe-router';
 
 const registerRoute = (isExample) => {
   const route = [{
     path: '/',
-    redirect: to => {
-      return `/${getLang()}/`;
-    }
+    redirect: to => `/${getLang()}/`
   }, {
     path: '*',
-    redirect: to => {
-      return `/${getLang()}/`;
-    }
+    redirect: to => `/${getLang()}/`
   }];
 
   Object.keys(docConfig).forEach((lang, index) => {
@@ -53,9 +50,18 @@ const registerRoute = (isExample) => {
       const { path } = page;
       if (path) {
         const name = lang + '/' + path.replace('/', '');
+        let component;
+
+        if (path === '/demo') {
+          component = Demo;
+        } else {
+          component = isExample ? componentDemos[name] : componentDocs[name];
+        }
+
         route.push({
+          name,
+          component,
           path: `/${lang}/component${path}`,
-          component: isExample ? componentDemos[name] : componentDocs[name],
           meta: { lang }
         });
       }

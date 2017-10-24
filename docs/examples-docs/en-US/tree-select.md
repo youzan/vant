@@ -139,7 +139,6 @@ export default {
 | itemclick | triggered when item is selected | data: selected item |
 
 ### Data Structure
-#### Data Structure of `items` 
 
 `items` should be an array contains specified tree objects.
 

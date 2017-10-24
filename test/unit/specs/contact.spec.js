@@ -41,8 +41,8 @@ describe('ContactCard', () => {
     });
 
     expect(wrapper.hasClass('van-contact-card')).to.be.true;
-    expect(wrapper.find('.van-contact-card__text p')[0].text()).to.equal('联系人：测试姓名');
-    expect(wrapper.find('.van-contact-card__text p')[1].text()).to.equal('联系电话：13000000000');
+    expect(wrapper.find('.van-contact-card__text div')[0].text()).to.equal('联系人：测试姓名');
+    expect(wrapper.find('.van-contact-card__text div')[1].text()).to.equal('联系电话：13000000000');
   });
 });
 
