@@ -18,7 +18,7 @@ Vue.component(CellSwipe.name, CellSwipe);
   <van-cell-group>
     <van-cell title="Cell" value="Cell Content"></van-cell>
   </van-cell-group>
-  <span slot="right">Delete/span>
+  <span slot="right">Delete</span>
 </van-cell-swipe>
 ```
 :::
