@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './ExamplesApp';
+import App from './WapApp';
 import routes from './router.config';
 import { setLang } from './utils/lang';
 import Vant, { Lazyload } from 'packages';

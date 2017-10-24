@@ -23,17 +23,19 @@ module.exports = {
             list: [
               {
                 path: '/quickstart',
-                title: '快速上手',
-                noExample: true
+                title: '快速上手'
               },
               {
                 title: '业务组件',
-                link: '/zanui/captain/component/quickstart'
+                link: '/zanui/captain'
               },
               {
                 path: '/changelog',
-                title: '更新日志',
-                noExample: true
+                title: '更新日志'
+              },
+              {
+                path: '/demo',
+                title: '示例页面'
               }
             ]
           }
@@ -279,13 +281,11 @@ module.exports = {
             list: [
               {
                 path: '/quickstart',
-                title: 'Getting Started',
-                noExample: true
+                title: 'Getting Started'
               },
               {
                 path: '/changelog',
-                title: 'Changelog',
-                noExample: true
+                title: 'Changelog'
               }
             ]
           }

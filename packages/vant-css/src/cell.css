@@ -24,6 +24,7 @@
     display: table-cell;
 
     .van-icon {
+      font-size: 16px;
       margin-right: 5px;
       vertical-align: middle;
     }
