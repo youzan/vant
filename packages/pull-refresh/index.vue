@@ -1,11 +1,11 @@
 <template>
-  <div 
+  <div
     class="van-pull-refresh"
     :style="style"
     @touchstart="onTouchStart"
     @touchmove="onTouchMove"
     @touchend="onTouchEnd"
-    @touchcalcel="onTouchEnd"     
+    @touchcancel="onTouchEnd"
   >
     <div class="van-pull-refresh__head">
       <slot name="normal" v-if="status === 'normal'"></slot>
@@ -22,7 +22,7 @@
         </div>
       </slot>
     </div>
-    <slot></slot>   
+    <slot></slot>
   </div>
 </template>
 
