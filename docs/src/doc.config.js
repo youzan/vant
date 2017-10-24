@@ -23,7 +23,8 @@ module.exports = {
             list: [
               {
                 path: '/quickstart',
-                title: '快速上手'
+                title: '快速上手',
+                noExample: true
               },
               {
                 title: '业务组件',
@@ -31,11 +32,14 @@ module.exports = {
               },
               {
                 path: '/changelog',
-                title: '更新日志'
+                title: '更新日志',
+                noExample: true
               },
               {
                 path: '/demo',
-                title: '示例页面'
+                title: '示例页面',
+                noDocument: true,
+                noExample: true
               }
             ]
           }
@@ -281,11 +285,13 @@ module.exports = {
             list: [
               {
                 path: '/quickstart',
-                title: 'Getting Started'
+                title: 'Getting Started',
+                noExample: true
               },
               {
                 path: '/changelog',
-                title: 'Changelog'
+                title: 'Changelog',
+                noExample: true
               }
             ]
           }
