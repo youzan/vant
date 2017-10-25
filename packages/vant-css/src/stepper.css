@@ -44,6 +44,17 @@
     }
   }
 
+  &__minus,
+  &__plus {
+    &:active {
+      background-color: $active-color;
+    }
+
+    &--disabled:active {
+      background-color: $background-color;
+    }
+  }
+
   &__minus {
     border-radius: 2px 0 0 2px;
 

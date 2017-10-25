@@ -59,5 +59,9 @@
       color: $blue;
       font-size: 20px;
     }
+
+    &:active {
+      background-color: $active-color;
+    }
   }
 }
