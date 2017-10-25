@@ -20,7 +20,7 @@
         :key="item.id || item.name"
         :data="item"
       />
-      <div class="van-coupon-list__empty">
+      <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
         <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
         <p>暂无优惠券</p>
       </div>
