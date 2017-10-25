@@ -28,6 +28,7 @@
 
 <script>
 import Loading from '../loading';
+import Utils from '../utils/scroll';
 
 export default {
   name: 'van-pull-refresh',
@@ -140,7 +141,7 @@ export default {
     },
 
     getCeiling() {
-      this.ceiling = (window.scrollY || window.pageYOffset) === 0;
+      this.ceiling = Utils.getScrollTop(Utils.getScrollEventTarget(this.$el)) === 0;
       return this.ceiling;
     },
 
