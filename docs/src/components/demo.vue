@@ -21,15 +21,20 @@ export default {
     return {
       currentDemo: 0,
       demos: [{
+        title: '商品详情',
+        preview: 'https://img.yzcdn.cn/public_files/2017/10/24/7070a8d1d6504b864c605114d32f2aae.png',
+        url: 'https://chenjiahan.github.io/vant-demo/#/goods',
+        source: 'https://github.com/chenjiahan/vant-demo/tree/master/src/view/goods/index.vue'
+      }, {
         title: '会员中心',
         preview: 'https://img.yzcdn.cn/public_files/2017/10/23/e1d70757e3ab88d39a360b704be8f43f.png',
         url: 'https://chenjiahan.github.io/vant-demo/#/user',
-        source: 'https://github.com/chenjiahan/vant-demo/tree/master/src/view/user'
+        source: 'https://github.com/chenjiahan/vant-demo/tree/master/src/view/user/index.vue'
       }, {
         title: '购物车',
         preview: 'https://img.yzcdn.cn/public_files/2017/10/24/06b8b5ed3692314d434db7f6854dcdbe.png',
         url: 'https://chenjiahan.github.io/vant-demo/#/cart',
-        source: 'https://github.com/chenjiahan/vant-demo/tree/master/src/view/cart'
+        source: 'https://github.com/chenjiahan/vant-demo/tree/master/src/view/cart/index.vue'
       }]
     };
   },
@@ -79,9 +84,9 @@ export default {
     }
 
     a {
-      display: block;
       font-size: 12px;
       margin: 4px 0 7px;
+      display: inline-block;
     }
 
     &--active {

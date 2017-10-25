@@ -2,15 +2,13 @@
 $black: #000;
 $white: #fff;
 $red: #f44;
+$blue: #38f;
+$orange: #f60;
 $green: #06bf04;
-$green-wx: #4b0;
 $gray: #c9c9c9;
 $gray-light: #e5e5e5;
 $gray-darker: #666;
 $gray-dark: #999;
-$yellow: #f09000;
-$orange: #f60;
-$blue: #38f;
 
 /* default colors */
 $text-color: #333;
@@ -20,7 +18,6 @@ $background-color: #f8f8f8;
 
 /* button */
 $button-primary-color: $white;
-$button-primary-background-color: $green-wx;
 $button-primary-border-color: #0a0;
 $button-default-color: $text-color;
 $button-default-background-color: $white;

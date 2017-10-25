@@ -2,7 +2,7 @@
   <a :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
-        <i v-if="icon" class="van-icon" :class="'van-icon-' + icon" />
+        <van-icon v-if="icon" :name="icon" />
       </slot>
       <slot name="title">
         <span class="van-cell__text" v-text="title" />
