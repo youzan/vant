@@ -54,6 +54,15 @@
       padding-top: 10px;
     }
   }
+
+  &--top {
+    top: 50px;
+  }
+
+  &--bottom {
+    top: auto;
+    bottom: 50px;
+  }
 }
 
 .van-toast-fade-enter, .van-toast-fade-leave-to {

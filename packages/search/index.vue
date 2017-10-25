@@ -104,7 +104,7 @@ export default {
      */
     handleSearch(e) {
       e.preventDefault();
-      this.$emit('search');
+      this.$emit('search', this.value);
       return false;
     },
 

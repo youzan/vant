@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './ExamplesDocsApp';
+import App from './DocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import isMobile from './utils/is-mobile';

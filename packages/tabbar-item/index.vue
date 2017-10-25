@@ -2,7 +2,9 @@
   <div :class="['van-tabbar-item', { 'van-tabbar-item--active': active }]" @click="onClick">
     <div :class="['van-tabbar-item__icon', { 'van-tabbar-item__icon-dot': dot }]">
       <slot name="icon">
-        <van-icon v-if="icon" :name="icon" />
+        <van-icon v-if="icon" :name="icon">
+          <div v-if="info" class="van-tabbar-item__info">{{ info }}</div>
+        </van-icon>
       </slot>
     </div>
     <div class="van-tabbar-item__text">
@@ -23,7 +25,8 @@ export default {
 
   props: {
     icon: String,
-    dot: Boolean
+    dot: Boolean,
+    info: String
   },
 
   data() {

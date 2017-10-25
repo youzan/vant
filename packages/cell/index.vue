@@ -1,15 +1,12 @@
 <template>
   <a :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
-    <div
-      class="van-cell__title"
-      v-if="$slots.title || title"
-    >
+    <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
-        <i v-if="icon" class="van-icon" :class="'van-icon-' + icon"></i>
+        <van-icon v-if="icon" :name="icon" />
       </slot>
       <slot name="title">
-        <span class="van-cell__text" v-text="title"></span>
-        <span class="van-cell__label" v-if="label" v-text="label"></span>
+        <span class="van-cell__text" v-text="title" />
+        <span class="van-cell__label" v-if="label" v-text="label" />
       </slot>
     </div>
     <div
@@ -21,19 +18,25 @@
       }"
     >
       <slot>
-        <span v-text="value"></span>
+        <span v-text="value" />
       </slot>
     </div>
     <slot name="right-icon">
-      <i class="van-cell__right-icon van-icon van-icon-arrow" v-if="isLink"></i>
+      <van-icon name="arrow" class="van-cell__right-icon" v-if="isLink" />
     </slot>
-    <slot name="extra"></slot>
+    <slot name="extra" />
   </a>
 </template>
 
 <script>
+import Icon from '../icon';
+
 export default {
   name: 'van-cell',
+
+  components: {
+    [Icon.name]: Icon
+  },
 
   props: {
     icon: String,

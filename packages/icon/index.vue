@@ -1,5 +1,7 @@
 <template>
-  <i :class="['van-icon', 'van-icon-' + name]" @click="$emit('click', $event)" />
+  <i :class="['van-icon', 'van-icon-' + name]" @click="$emit('click', $event)">
+    <slot></slot>
+  </i>
 </template>
 
 <script>

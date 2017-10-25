@@ -162,5 +162,6 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
 | message | 内容 | `String` | `''` | - |
+| position | 位置 | `String` | `middle` | `top` `bottom` |
 | forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
 | duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |

@@ -32,8 +32,8 @@ Vue.component(TabbarItem.name, TabbarItem);
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">Tab</van-tabbar-item>
   <van-tabbar-item icon="chat" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="records">Tab</van-tabbar-item>
-  <van-tabbar-item icon="gold-coin">Tab</van-tabbar-item>
+  <van-tabbar-item icon="records" info="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="gold-coin" info="20">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -96,3 +96,4 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | icon | Icon name | `String` | - | Names from Icon Component |
 | dot | Whether to show red dot | `Boolean` | - | - |
+| info | Info message | `String` | - | - |

@@ -14,11 +14,11 @@ Vue.component(CellSwipe.name, CellSwipe);
 :::demo Basic Usage
 ```html
 <van-cell-swipe :right-width="65" :left-width="65">
-  <span slot="left">选择</span>
+  <span slot="left">Select</span>
   <van-cell-group>
-    <van-cell title="单元格1" value="单元格1内容"></van-cell>
+    <van-cell title="Cell" value="Cell Content"></van-cell>
   </van-cell-group>
-  <span slot="right">删除</span>
+  <span slot="right">Delete</span>
 </van-cell-swipe>
 ```
 :::
@@ -27,13 +27,13 @@ Vue.component(CellSwipe.name, CellSwipe);
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| left-width | 左侧滑动区域宽度 | `Number` | `0` | - |
-| right-width | 右侧滑动区域宽度 | `Number` | `0` | - |
+| left-width | Width of the left scrollable area | `Number` | `0` | - |
+| right-width | Width of the right scrollable area | `Number` | `0` | - |
 
 ### Slot
 
 | name | Description |
 |-----------|-----------|
-| - | 自定义显示内容 |
-| left | 左侧滑动内容 |
-| right | 右侧滑动内容 |
+| - | custom content |
+| left | content of left scrollable area |
+| right | content of right scrollabe area |

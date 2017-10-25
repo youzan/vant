@@ -1,5 +1,30 @@
 ## Changelog
 
+### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
+`2017-10-25`
+
+**Improvements**
+- add Tabbar info prop [\#245](https://github.com/youzan/vant/pull/245) [@chenjiahan](https://github.com/chenjiahan)
+- add Toast position prop [\#244](https://github.com/youzan/vant/pull/244) [@chenjiahan](https://github.com/chenjiahan)
+- add Coupon showExchangeBar prop [\#243](https://github.com/youzan/vant/pull/243) [@chenjiahan](https://github.com/chenjiahan)
+- add Advanced components english document [\#236](https://github.com/youzan/vant/pull/236) [@Tinysymphony](https://github.com/Tinysymphony)
+- add demo pages in document [\#237](https://github.com/youzan/vant/pull/237) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Address & Contact list style error [\#230](https://github.com/youzan/vant/pull/230) [@chenjiahan](https://github.com/chenjiahan)
+- fix popup style missing when build style entry [\#231](https://github.com/youzan/vant/pull/231) [@chenjiahan](https://github.com/chenjiahan)
+- fix PullRefresh touchcancel event [\#239](https://github.com/youzan/vant/pull/239) [@GeoffZhu](https://github.com/GeoffZhu)
+
+### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+`2017-10-20`
+
+**Improvements**
+- Sku: sku-group slot add event bus [\#226](https://github.com/youzan/vant/pull/226) [@w91](https://github.com/w91)
+- add English documents [\#220](https://github.com/youzan/vant/pull/220) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 `2017-10-18`
 

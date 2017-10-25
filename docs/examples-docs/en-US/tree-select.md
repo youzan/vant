@@ -4,57 +4,57 @@ export default {
   data() {
     return {
       items: [{
-        text: '所有城市',
+        text: 'All Cities',
         children: [{
-          text: '杭州',
+          text: 'Hang Zhou',
           id: 1001
         }, {
-          text: '温州',
+          text: 'Wen Zhou',
           id: 1002
         }, {
-          text: '海南',
+          text: 'Hai Nan',
           id: 1100
         }, {
-          text: '宁波',
+          text: 'Ning Bo',
           id: 1003
         }, {
-          text: '义乌',
+          text: 'Yi Wu',
           id: 1004
         }, {
-          text: '无锡',
+          text: 'Wu Xi',
           id: 1011
         }, {
-          text: '常州',
+          text: 'Chang Zhou',
           id: 1012
         }, {
-          text: '大连',
+          text: 'Da Lian',
           id: 1031
         }, {
-          text: '诸暨',
+          text: 'Zhu Ji',
           id: 1005
         }]
       }, {
-        text: '浙江',
+        text: 'Zhe Jiang',
         children: [{
-          text: '杭州',
+          text: 'Hang Zhou',
           id: 1001
         }, {
-          text: '温州',
+          text: 'Wen Zhou',
           id: 1002
         }, {
-          text: '宁波',
+          text: 'Ning Bo',
           id: 1003
         }, {
-          text: '义乌',
+          text: 'Yi Wu',
           id: 1004
         }]
       }, {
-        text: '江苏',
+        text: 'Jiang Su',
         children: [{
-          text: '无锡',
+          text: 'Wu Xi',
           id: 1011
         }, {
-          text: '常州',
+          text: 'Chang Zhou',
           id: 1012
         }]
       }],
@@ -103,9 +103,9 @@ export default {
   data() {
     return {
       items: items,
-      // 左侧高亮元素的index
+      // the index of parent item
       mainActiveIndex: 0,
-      // 被选中元素的id
+      // the id of selected item
       activeId: 1001
     };
   },
@@ -124,42 +124,42 @@ export default {
 
 ### API
 
-#### 传入参数
+#### Properties
 
 | Attribute | Description | Type | Default | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构 |  Array | [] | - |
-| mainActiveIndex | 左侧导航高亮的索引 |  Number | 0 | - |
-| activeId | 右侧选择项，高亮的数据id |  Number | 0 | - |
+| items | Required datasets for the component, see Data Structure for detail. |  Array | [] | - |
+| mainActiveIndex | The index of selected parent node |  Number | 0 | - |
+| activeId | Id of selected item |  Number | 0 | - |
 
 #### Event
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| navclick | 左侧导航点击时，触发的事件 |  index：被点击的导航的索引 |
-| itemclick | 右侧选择项被点击时，会触发的事件 | data: 该点击项的数据 |
+| navclick | triggered when parent node is selected |  index: index of selected parent |
+| itemclick | triggered when item is selected | data: selected item |
 
 ### Data Structure
-#### items 分类显示所需数据的数据结构
-`items` 整体为一个数组，数组内包含一系列描述分类的 object。
+`items` should be an array contains specified tree objects.
 
-每个分类里，text表示当前分类的名称。children 表示分类里的可选项，为数组结构，id被用来唯一标识每个选项
+In every tree object, `text` property defines the name, `id` stands for the unique key while the `children` contains sub-tree objects.
+
 ```javascript
 [
   {
-    // 导航名称
-    text: '所有城市',
-    // 该导航下所有的可选项
+    // name of the parent node
+    text: 'All Cities',
+    // leaves of this parent node
     children: [
       {
-        // 可选项的名称
-        text: '温州',
-        // 可选项的id，高亮的时候是根据id是否和选中的id是否相同进行判断的
+        // name of the leaf node
+        text: 'Washington',
+        // id of the leaf node, component highlights leaf node by comparing the activeId with this.
         id: 1002
       },
       {
-        // 可选项的名称
-        text: '杭州',
-        // 可选项的id，高亮的时候是根据id是否和选中的id是否相同进行判断的
+        // name of the leaf node
+        text: 'Baltimore',
+        // id of the leaf node, component highlights leaf node by comparing the activeId with this.
         id: 1001
       }
     ]

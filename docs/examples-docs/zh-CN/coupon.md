@@ -160,6 +160,7 @@ export default {
 | closeButtonText | 列表底部按钮文字 | `String` | 不使用优惠 | - |
 | disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
 | inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
+| showExchangeBar | 是否展示兑换栏 | `Boolean` | `true` | - |
 
 ### CouponList Event
 

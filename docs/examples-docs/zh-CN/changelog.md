@@ -1,5 +1,30 @@
 ## 更新日志
 
+### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
+`2017-10-25`
+
+**Improvements**
+- 新增 Tabbar info 属性 [\#245](https://github.com/youzan/vant/pull/245) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Toast position 属性 [\#244](https://github.com/youzan/vant/pull/244) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Coupon showExchangeBar 属性 [\#243](https://github.com/youzan/vant/pull/243) [@chenjiahan](https://github.com/chenjiahan)
+- 新增高阶组件英文文档 [\#236](https://github.com/youzan/vant/pull/236) [@Tinysymphony](https://github.com/Tinysymphony)
+- 新增示例页面文档 [\#237](https://github.com/youzan/vant/pull/237) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Address & Contact 列表底部遮挡问题 [\#230](https://github.com/youzan/vant/pull/230) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 popup 被依赖时未自动引入样式的问题 [\#231](https://github.com/youzan/vant/pull/231) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 PullRefresh touchcancel 事件名拼写错误 [\#239](https://github.com/youzan/vant/pull/239) [@GeoffZhu](https://github.com/GeoffZhu)
+
+### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+`2017-10-20`
+
+**Improvements**
+- Sku: sku-group slot 增加 event bus [\#226](https://github.com/youzan/vant/pull/226) [@w91](https://github.com/w91)
+- 新增基础英文文档 [\#220](https://github.com/youzan/vant/pull/220) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复组件间样式依赖分析遗漏的问题 [\#224](https://github.com/youzan/vant/pull/224) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 `2017-10-18`
 
