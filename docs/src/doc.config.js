@@ -8,11 +8,11 @@ module.exports = {
     footer: {
       github: 'https://github.com/youzan/vant',
       nav: {
-        React: 'https://www.youzanyun.com/zanui/react',
-        微信小程序: 'https://github.com/youzan/zanui-weapp',
+        'React 组件库': 'https://www.youzanyun.com/zanui/react',
+        小程序组件库: 'https://github.com/youzan/zanui-weapp',
         意见反馈: 'https://github.com/youzan/vant/issues',
-        开发指南:
-          'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.zh-CN.md'
+        开发指南: 'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.zh-CN.md',
+        加入我们: 'https://job.youzan.com'
       }
     },
     nav: [
@@ -270,8 +270,8 @@ module.exports = {
     footer: {
       github: 'https://github.com/youzan/vant',
       nav: {
-        React: 'https://www.youzanyun.com/zanui/react',
-        Weapp: 'https://github.com/youzan/zanui-weapp',
+        'React UI': 'https://www.youzanyun.com/zanui/react',
+        'Weapp UI': 'https://github.com/youzan/zanui-weapp',
         Feedback: 'https://github.com/youzan/vant/issues',
         Contribute:
           'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.md'
