@@ -67,7 +67,7 @@ Vue.component(CellGroup.name, CellGroup);
 :::demo Advanced Usage
 ```html
 <van-cell-group>
-  <van-cell value="Text" icon="home" is-link>
+  <van-cell value="Text" icon="shop" is-link>
     <template slot="title">
       <span class="van-cell-text">Title</span>
       <van-tag type="danger">Tag</van-tag>
