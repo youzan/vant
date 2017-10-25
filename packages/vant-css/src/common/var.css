@@ -18,6 +18,7 @@ $background-color: #f8f8f8;
 
 /* button */
 $button-primary-color: $white;
+$button-primary-background-color: #4b0;
 $button-primary-border-color: #0a0;
 $button-default-color: $text-color;
 $button-default-background-color: $white;
