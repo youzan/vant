@@ -101,7 +101,7 @@
       text-align: center;
 
       p {
-        color: #999;
+        color: $gray-dark;
         margin: 15px 0;
         font-size: 14px;
         line-height: 20px;

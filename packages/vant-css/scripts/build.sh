@@ -44,11 +44,11 @@ cat > $basepath/../src/icon.css <<EOF
 }
 
 .van-icon {
-    display: inline-block;
+  font-style: normal;
+  display: inline-block;
 }
 .van-icon::before {
   font-family: "vant-icon" !important;
-  font-style: normal;
   font-weight: normal;
   speak: none;
 
