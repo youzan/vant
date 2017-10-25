@@ -1,4 +1,6 @@
 <script>
+import { Toast } from 'packages/index';
+
 export default {
   data() {
     return {
