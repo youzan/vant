@@ -28,7 +28,7 @@
 
 <script>
 import Loading from '../loading';
-import Utils from '../utils/scroll';
+import scrollUtils from '../utils/scroll';
 
 export default {
   name: 'van-pull-refresh',
@@ -79,6 +79,10 @@ export default {
         transform: `translate3d(0,${this.height}px, 0)`
       };
     }
+  },
+
+  mounted() {
+    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
   },
 
   watch: {
@@ -141,7 +145,7 @@ export default {
     },
 
     getCeiling() {
-      this.ceiling = Utils.getScrollTop(Utils.getScrollEventTarget(this.$el)) === 0;
+      this.ceiling = scrollUtils.getScrollTop(this.scrollEl) === 0;
       return this.ceiling;
     },
 
