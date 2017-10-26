@@ -1,23 +1,22 @@
 <script>
 import { Toast } from 'packages/index';
 
-const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
+const states = {
+  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
 };
 
 export default {
   data() {
     return {
-      title: '地区选择',
+      title: 'Title',
       pickerColumns: [
         {
-          values: Object.keys(citys),
+          values: Object.keys(states),
           className: 'column1'
         },
         {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
+          values: states.Group1,
           className: 'column2'
         }
       ]
@@ -26,13 +25,13 @@ export default {
 
   methods: {
     handlePickerChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
+      picker.setColumnValues(1, states[values[0]]);
     },
     handlePickerCancel() {
-      Toast('picker cancel');
+      Toast('Cancel');
     },
     handlePickerConfirm() {
-      Toast('picker confirm');
+      Toast('Confirm');
     }
   }
 };
@@ -57,10 +56,9 @@ Vue.component(Picker.name, Picker);
 ```
 
 ```javascript
-const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
+const states = {
+  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
 };
 
 export default {
@@ -68,11 +66,11 @@ export default {
     return {
       pickerColumns: [
         {
-          values: Object.keys(citys),
+          values: Object.keys(states),
           className: 'column1'
         },
         {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
+          values: states.Group1,
           className: 'column2'
         }
       ]
@@ -88,14 +86,14 @@ export default {
 ```
 :::
 
-#### 带toolbar的Picker
+#### Picker with toolbar
 
-:::demo 带toolbar的Picker
+:::demo Picker with toolbar
 ```html
 <van-picker
+  show-toolbar
   :title="title"
   :columns="pickerColumns"
-  show-toolbar
   @change="handlePickerChange"
   @cancel="handlePickerCancel"
   @confirm="handlePickerConfirm"
@@ -103,23 +101,22 @@ export default {
 ```
 
 ```javascript
-const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
+const states = {
+  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
 };
 
 export default {
   data() {
     return {
-      title: '地区选择',
+      title: 'Title',
       pickerColumns: [
         {
-          values: Object.keys(citys),
+          values: Object.keys(states),
           className: 'column1'
         },
         {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
+          values: states.Group1,
           className: 'column2'
         }
       ]
@@ -131,10 +128,10 @@ export default {
       picker.setColumnValues(1, citys[values[0]]);
     },
     handlePickerCancel() {
-      alert('picker cancel');
+      Toast('Cancel');
     },
     handlePickerConfirm() {
-      alert('picker confirm');
+      Toast('Confirm');
     }
   }
 };
@@ -145,31 +142,28 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | `Number` | `5` | - |
-| itemHeight | 选中元素区高度 | `Number` | `44` | - |
-| columns | 对象数组，配置每一列显示的数据 | `Array` | - | - |
-| showToolbar | 是否在组件顶部显示一个toolbar | `Boolean` | `true` | - |
-| title | 在toolbar上显示的标题文字 | `String` | - | - |
+| visibileColumnCount | Count of columns to show | `Number` | `5` | - |
+| itemHeight | Item height | `Number` | `44` | - |
+| columns | Columns data | `Array` | - | - |
+| showToolbar | Whether to show toolbar | `Boolean` | `true` | - |
+| title | Toolbar title | `String` | - | - |
 
-### columns
-
-`API`中的`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+### Data struct of columns
 
 | key | Description |
 |-----------|-----------|
-| values | 列中对应的备选值 |
-| defaultIndex | 初始选中值的索引，默认为0 |
-| className | 为对应列添加特殊的`class` |
+| values | Value of column |
+| defaultIndex | Default value index |
+| className | ClassName for this column |
 
-### change事件
+### Picker instance
+The first argument of change event's callback function is a picker instance with some methods
 
-在`change`事件中，可以获取到`picker`实例，对`picker`进行相应的更新等操作：
-
-| 函数 | Description |
+| Method | Description |
 |-----------|-----------|
-| getColumnValue(index) | 获取对应列中选中的值 |
-| setColumnValue(index, value) | 设置对应列中选中的值 |
-| getColumnValues(index) | 获取对应列中所有的备选值 |
-| setColumnValues(index, values) | 设置对应列中所有的备选值 |
-| getValues() | 获取所有列中被选中的值，返回一个数组 |
-| setValues(values) | `values`为一个数组，设置所有列中被选中的值 |
+| getColumnValue(index) | get current value of the column |
+| setColumnValue(index, value) | set current value of the column |
+| getColumnValues(index) | get all values of the column |
+| setColumnValues(index, values) | set all values of the column |
+| getValues() | get current values of all columns |
+| setValues(values) | set current values of all columns |

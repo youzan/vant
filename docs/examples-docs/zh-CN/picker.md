@@ -93,9 +93,9 @@ export default {
 :::demo 带toolbar的Picker
 ```html
 <van-picker
+  show-toolbar
   :title="title"
   :columns="pickerColumns"
-  show-toolbar
   @change="handlePickerChange"
   @cancel="handlePickerCancel"
   @confirm="handlePickerConfirm"

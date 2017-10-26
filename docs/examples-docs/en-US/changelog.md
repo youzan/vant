@@ -1,6 +1,6 @@
 ## Changelog
 
-## [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
 `2017-10-26`
 
 **Improvements**
