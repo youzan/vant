@@ -13,7 +13,7 @@ export default {
     isLoading() {
       if (this.isLoading) {
         setTimeout(() => {
-          Toast('刷新成功');
+          Toast('Refresh Success');
           this.isLoading = false;
           this.count++;
         }, 500);
@@ -23,7 +23,7 @@ export default {
 
   mounted() {
     const head = document.querySelector('.van-pull-refresh__head');
-    head.insertAdjacentHTML('afterend', '<h1 class="zan-doc-demo-block__title">PullRefresh 下拉刷新</h1>');
+    head.insertAdjacentHTML('afterend', '<h1 class="zan-doc-demo-block__title">PullRefresh</h1>');
   }
 }
 </script>
@@ -41,9 +41,14 @@ Vue.component(PullRefresh.name, PullRefresh);
 
 :::demo  
 ```html
-<!-- 通过 v-model 控制加载状态 -->
-<van-pull-refresh v-model="isLoading">
-  <p>刷新次数: {{ count }}</p>
+<!-- use v-model to control loading status -->
+<van-pull-refresh
+  v-model="isLoading"
+  pulling-text="Pull to refresh..."
+  loosing-text="Loose to refresh..."
+  loading-text="Loading..."
+>
+  <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>
 ```
 
@@ -60,7 +65,7 @@ export default {
     isLoading() {
       if (this.isLoading) {
         setTimeout(() => {
-          Toast('刷新成功');
+          Toast('Refresh Success');
           this.isLoading = false;
           this.count++;
         }, 500);
@@ -75,19 +80,19 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否在加载中 | `Boolean` | - | - |
-| pullingText | 下拉过程中顶部文案 | `String` | `下拉即可刷新...` | - |
-| loosingText | 释放过程中顶部文案 | `String` | `释放即可刷新...` | - |
-| loadingText | 加载过程中顶部文案 | `String` | `加载中...` | - |
-| animationDuration | 动画时长 | `Number` | `300` | - |
-| headHeight | 顶部内容高度 | `Number` | `50` | - |
+| v-model | Loading status | `Boolean` | - | - |
+| pullingText | Text to show when pulling | `String` | `下拉即可刷新...` | - |
+| loosingText | Text to show when loosing | `String` | `释放即可刷新...` | - |
+| loadingText | Text to show when loading | `String` | `加载中...` | - |
+| animationDuration | Animation duration | `Number` | `300` | - |
+| headHeight | Height of head | `Number` | `50` | - |
 
 ### Slot
 
 | name | Description |
 |-----------|-----------|
-| - | 自定义内容 |
-| normal | 非下拉状态时顶部内容 |
-| pulling | 下拉过程中顶部内容 |
-| loosing | 释放过程中顶部内容 |
-| loading | 加载过程中顶部内容 |
+| - | Default slot |
+| normal | Content of head when at normal status |
+| pulling | Content of head when at pulling |
+| loosing | Content of head when at loosing |
+| loading | Content of head when at loading |
