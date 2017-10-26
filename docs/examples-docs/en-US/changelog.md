@@ -1,5 +1,19 @@
 ## Changelog
 
+## [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+`2017-10-26`
+
+**Improvements**
+- add more icons [\#253](https://github.com/youzan/vant/pull/253) [@pangxie1991](https://github.com/pangxie1991)
+- add document of custom theme [\#251](https://github.com/youzan/vant/pull/251) [@chenjiahan](https://github.com/chenjiahan)
+- add click feedback of buttons in components [\#248](https://github.com/youzan/vant/pull/248) [@chenjiahan](https://github.com/chenjiahan)
+- add more props of NoticeBar [\#254](https://github.com/youzan/vant/pull/254) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Swipe width calc error [\#258](https://github.com/youzan/vant/pull/258) [@chenjiahan](https://github.com/chenjiahan)
+- fix PullRefreash scroll bug when parent is scrollable [\#247](https://github.com/youzan/vant/pull/247) [@GeoffZhu](https://github.com/GeoffZhu)
+- fix CouponList empty info display bug [\#246](https://github.com/youzan/vant/pull/246) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
 `2017-10-25`
 

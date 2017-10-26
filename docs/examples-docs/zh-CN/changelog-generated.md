@@ -1,5 +1,34 @@
 ## 更新日志
 
+## [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4) (2017-10-26)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.3...v0.10.4)
+
+**Breaking changes**
+
+- 业务组件 - 购物车组件 [\#209](https://github.com/youzan/vant/issues/209)
+
+**Issue**
+
+- 希望直接支持按需引入组件 [\#257](https://github.com/youzan/vant/issues/257)
+- 请问支持自定义主题色或者有支持计划么？ [\#256](https://github.com/youzan/vant/issues/256)
+- 希望能隐藏地址列表组件的checkbox [\#250](https://github.com/youzan/vant/issues/250)
+- Coupon 优惠券选择器 顶部兑换模块的 显隐开关 [\#241](https://github.com/youzan/vant/issues/241)
+- Tabbar 是否能增加Badge。 [\#240](https://github.com/youzan/vant/issues/240)
+- Toast 轻提示建议增加上中下位置的配置 [\#233](https://github.com/youzan/vant/issues/233)
+- van-search 的@search事件无法捕获value ，老版本以前是可以的 [\#232](https://github.com/youzan/vant/issues/232)
+- Dialog蒙层样式没能正常加载 [\#229](https://github.com/youzan/vant/issues/229)
+
+**Improvements**
+
+- \[bugfix\] Swipe width calc error [\#258](https://github.com/youzan/vant/pull/258) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Notice bar support more props [\#254](https://github.com/youzan/vant/pull/254) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Icon: 增加新 icon 图标 [\#253](https://github.com/youzan/vant/pull/253) ([pangxie1991](https://github.com/pangxie1991))
+- \[bug fix\] Doc: Update waterfall.md  [\#252](https://github.com/youzan/vant/pull/252) ([liangxiaoxin](https://github.com/liangxiaoxin))
+- \[Doc\] add custom theme document [\#251](https://github.com/youzan/vant/pull/251) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] add click feedback of buttons in components [\#248](https://github.com/youzan/vant/pull/248) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] PullRefreash: when $parents.$el scrollable, pull refreash trigger error [\#247](https://github.com/youzan/vant/pull/247) ([GeoffZhu](https://github.com/GeoffZhu))
+- \[bugfix\] CouponList always show empty info [\#246](https://github.com/youzan/vant/pull/246) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.3](https://github.com/youzan/vant/tree/v0.10.3) (2017-10-25)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.2...v0.10.3)
 
