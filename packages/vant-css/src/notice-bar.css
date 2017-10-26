@@ -47,8 +47,4 @@
     white-space: nowrap;
     transition: all linear;
   }
-
-  &--with-left-icon {
-    padding-left: 30px;
-  }
 }
