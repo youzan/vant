@@ -42,6 +42,7 @@ export default {
 
   data() {
     return {
+      width: 0,
       offset: 0,
       startX: 0,
       startY: 0,
@@ -49,8 +50,7 @@ export default {
       deltaX: 0,
       swipes: [],
       direction: '',
-      currentDuration: 0,
-      width: window.innerWidth
+      currentDuration: 0
     };
   },
 
@@ -91,6 +91,7 @@ export default {
     initialize() {
       // reset offset when children changes
       clearTimeout(this.timer);
+      this.width = this.$el.getBoundingClientRect().width;
       this.active = 0;
       this.currentDuration = 0;
       this.offset = this.count > 1 ? -this.width : 0;
