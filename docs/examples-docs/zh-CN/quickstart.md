@@ -59,10 +59,6 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-#### 修改主题
-
-修改你下载主题对应的样式即可，然后引入你修改后的主题。
-
 ### vue-cli 模板
 可以使用`vue-cli`来初始化`Vant`的通用模板：
 
