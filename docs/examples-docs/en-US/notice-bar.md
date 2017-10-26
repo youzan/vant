@@ -13,7 +13,10 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 :::demo Basic Usage
 ```html
-<van-notice-bar text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily." />
+<van-notice-bar
+  text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily."
+  left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+/>
 ```
 :::
 
@@ -47,8 +50,12 @@ Vue.component(NoticeBar.name, NoticeBar);
 |-----------|-----------|-----------|-------------|-------------|
 | mode | Mode | String | `''` | `closeable` `link` |
 | delay | Animation delay (s) | Number | `1` | - |
-| speed | Scroll speed (px) | Number | `40` | - |
+| speed | Scroll speed (px) | Number | `50` | - |
 | scrollable | Whether to scroll content | Boolean | `true` | - |
+| leftIcon | Image url of left icon | String | - | - |
+| color | Text color | String | `#f60` | - |
+| background | Background color | String | `#fff7cc` | - |
+
 
 ### Event
 

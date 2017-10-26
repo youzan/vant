@@ -21,7 +21,10 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 :::demo 基础用法
 ```html
-<van-notice-bar text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。" />
+<van-notice-bar
+  text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
+  left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+/>
 ```
 :::
 
@@ -59,8 +62,11 @@ Vue.component(NoticeBar.name, NoticeBar);
 |-----------|-----------|-----------|-------------|-------------|
 | mode | 通告栏模式 | String | `''` | `closeable` `link` |
 | delay | 动画延迟时间，单位秒 | Number | `1` | - |
-| speed | 滚动速率，单位px | Number | `40` | - |
+| speed | 滚动速率，单位px | Number | `50` | - |
 | scrollable | 是否滚动 | Boolean | `true` | - |
+| leftIcon | 左侧图标图片链接 | String | - | - |
+| color | 文本颜色 | String | `#f60` | - |
+| background | 滚动条背景 | String | `#fff7cc` | - |
 
 ### Event
 

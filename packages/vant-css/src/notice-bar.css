@@ -1,10 +1,12 @@
 @import './common/var.css';
 
 .van-notice-bar {
+  display: flex;
   color: $orange;
   padding: 9px 10px;
   font-size: 12px;
   line-height: 1.5;
+  position: relative;
   background-color: #fff7cc;
 
   &--withicon {
@@ -12,7 +14,19 @@
     padding-right: 30px;
   }
 
-  &__icon {
+  &__left-icon {
+    height: 18px;
+    min-width: 20px;
+    padding-top: 1px;
+    box-sizing: border-box;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__right-icon {
     top: 10px;
     right: 10px;
     position: absolute;
@@ -22,6 +36,7 @@
   }
 
   &__content-wrap {
+    flex: 1;
     height: 18px;
     overflow: hidden;
     position: relative;
@@ -30,6 +45,10 @@
   &__content {
     position: absolute;
     white-space: nowrap;
-    transition-timing-function: linear;
+    transition: all linear;
+  }
+
+  &--with-left-icon {
+    padding-left: 30px;
   }
 }
