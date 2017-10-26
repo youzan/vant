@@ -59,23 +59,6 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-### 自定义主题
-
-`Vant`提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者部分样式，可以使用下面的方法：
-
-#### 下载主题
-
-可以通过 Github 或 npm 来下载主题：
-
-```bash
-# npm
-npm i vant-css -D
-
-# github
-git clone git@github.com:youzan/vant.git
-cd packages/vant-css
-```
-
 #### 修改主题
 
 修改你下载主题对应的样式即可，然后引入你修改后的主题。

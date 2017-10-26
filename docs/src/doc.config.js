@@ -36,6 +36,11 @@ module.exports = {
                 noExample: true
               },
               {
+                path: '/theme',
+                title: '定制主题',
+                noExample: true
+              },
+              {
                 path: '/demo',
                 title: '示例页面',
                 noDocument: true,
