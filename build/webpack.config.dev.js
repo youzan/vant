@@ -37,8 +37,8 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vue\/examples/, to: '/examples.html' },
-        { from: /^\/zanui\/vue/, to: '/index.html' }
+        { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
+        { from: /^\/zanui\/vant/, to: '/index.html' }
       ]
     },
     stats: 'errors-only'
