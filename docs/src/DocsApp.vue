@@ -18,7 +18,7 @@ export default {
     }
 
     return {
-      simulators: [`/zanui/vue/examples${location.hash}`],
+      simulators: [`/zanui/vant/examples${location.hash}`],
       demoURL: '',
       lang: getLang()
     };

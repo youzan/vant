@@ -22,6 +22,21 @@
 }
 </style>
 
+<script>
+export default {
+  data() {
+    return {
+      actList: [
+        'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/c0dab461920687911536621b345a0bc9.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg',
+        'https://img.yzcdn.cn/public_files/2017/09/05/fd08f07665ed67d50e11b32a21ce0682.jpg'
+      ]
+    }
+  }
+}
+</script>
+
 ## Layout 布局
 
 提供了`van-row`和`van-col`两个组件来进行行列布局
@@ -57,6 +72,16 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 <van-row>
   <van-col offset="12" span="12">offset: 12, span: 12</van-col>
 </van-row>
+
+<li v-for="(item,index) in actList"  :key="index" @click="toActivity(item)">
+    <van-row>
+        <van-col span="6">
+            <img :src="item" alt="">
+        </van-col>
+        <van-col  span="18" class="pr" >
+        </van-col>
+    </van-row>
+</li>
 ```
 :::
 
