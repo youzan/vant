@@ -1,11 +1,19 @@
 <template>
-  <div v-show="showNoticeBar" @click="$emit('click')" :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]">
+  <div
+    v-show="showNoticeBar"
+    :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]"
+    :style="barStyle"
+    @click="$emit('click')"
+  >
+    <div class="van-notice-bar__left-icon" v-if="leftIcon">
+      <img :src="leftIcon" />
+    </div>
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
       <div class="van-notice-bar__content" ref="content" :style="contentStyle" @transitionend="onTransitionEnd">
         <slot>{{ text }}</slot>
       </div>
     </div>
-    <van-icon class="van-notice-bar__icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
+    <van-icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
   </div>
 </template>
 
@@ -23,6 +31,9 @@ export default {
 
   props: {
     text: String,
+    leftIcon: String,
+    color: String,
+    background: String,
     mode: {
       type: String,
       default: '',
@@ -38,12 +49,13 @@ export default {
     },
     speed: {
       type: Number,
-      default: 40
+      default: 50
     }
   },
 
   data() {
     return {
+      firstRound: true,
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
@@ -55,12 +67,17 @@ export default {
     iconName() {
       return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
     },
+    barStyle() {
+      return {
+        color: this.color,
+        background: this.background
+      };
+    },
     contentStyle() {
       return {
         transform: `translate3d(${-this.offsetWidth}px, 0, 0)`,
-        transitionDelay: this.delay + 's',
-        transitionDuration: this.duration + 's',
-        transitionProperty: this.diableTransition ? 'none' : 'all'
+        transitionDelay: (this.firstRound ? this.delay : 0) + 's',
+        transitionDuration: this.duration + 's'
       };
     }
   },
@@ -69,6 +86,7 @@ export default {
     const offsetWidth = this.$refs.content.getBoundingClientRect().width;
     const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
     if (this.scrollable && offsetWidth > wrapWidth) {
+      this.wrapWidth = wrapWidth;
       this.offsetWidth = offsetWidth;
       this.duration = (offsetWidth + wrapWidth) / this.speed;
     }
@@ -79,12 +97,14 @@ export default {
       this.showNoticeBar = this.mode !== 'closeable';
     },
     onTransitionEnd() {
-      const { offsetWidth } = this;
-      this.diableTransition = true;
-      this.offsetWidth = 0;
+      const { offsetWidth, wrapWidth } = this;
+      this.firstRound = false;
+      this.duration = 0;
+      this.offsetWidth = -this.wrapWidth;
 
+      // wait for vue render && dom update
       setTimeout(() => {
-        this.diableTransition = false;
+        this.duration = (offsetWidth + 2 * wrapWidth) / this.speed;
         this.offsetWidth = offsetWidth;
       }, 50);
     }

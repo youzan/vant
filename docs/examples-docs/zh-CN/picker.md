@@ -1,4 +1,6 @@
 <script>
+import { Toast } from 'packages/index';
+
 const citys = {
   '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
   '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
@@ -27,10 +29,10 @@ export default {
       picker.setColumnValues(1, citys[values[0]]);
     },
     handlePickerCancel() {
-      alert('picker cancel');
+      Toast('picker cancel');
     },
     handlePickerConfirm() {
-      alert('picker confirm');
+      Toast('picker confirm');
     }
   }
 };
@@ -91,9 +93,9 @@ export default {
 :::demo 带toolbar的Picker
 ```html
 <van-picker
+  show-toolbar
   :title="title"
   :columns="pickerColumns"
-  show-toolbar
   @change="handlePickerChange"
   @cancel="handlePickerCancel"
   @confirm="handlePickerConfirm"

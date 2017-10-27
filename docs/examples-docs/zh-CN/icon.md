@@ -78,7 +78,7 @@ const icons = [
   'credit-pay',
   'debit-pay',
   'other-pay',
-  'cart',
+  'shopping-cart',
   'browsing-history',
   'goods-collect',
   'shop-collect',
@@ -110,7 +110,12 @@ const icons = [
   'gift-card',
   'coupon',
   'completed',
-  'value-card'
+  'value-card',
+  'certificate',
+  'tosend',
+  'sign',
+  'home',
+  'phone'
 ];
 
 const IconListConstructor = Vue.extend({

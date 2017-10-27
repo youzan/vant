@@ -1,27 +1,31 @@
 <script>
 import { Dialog } from 'packages';
 
-const message = '弹窗内容';
+const message = 'Content';
 
 export default {
   methods: {
     onClickAlert() {
       Dialog.alert({
-        title: '标题',
-        message
+        message,
+        title: 'Title',
+        confirmButtonText: 'ok'
       });
     },
 
     onClickAlert2() {
       Dialog.alert({
-        message
+        message,
+        confirmButtonText: 'ok'
       });
     },
 
     onClickConfirm() {
       Dialog.confirm({
-        title: '标题',
-        message
+        title: 'Title',
+        message,
+        confirmButtonText: 'ok',
+        cancelButtonText: 'cancel'
       }).catch(action => {
         console.log(action);
       });
@@ -40,14 +44,13 @@ import { Dialog } from 'vant';
 
 ### Usage
 
-#### 消息提示
+#### Alert dialog
+Used to prompt for some messages, only including one confirm button
 
-用于提示一些消息，只包含一个确认按钮
-
-:::demo 消息提示
+:::demo Alert dialog
 ```html
 <van-button @click="onClickAlert">Alert</van-button>
-<van-button @click="onClickAlert2">无标题 Alert</van-button>
+<van-button @click="onClickAlert2">Alert without title</van-button>
 ```
 
 ```javascript
@@ -55,8 +58,8 @@ export default {
   methods: {
     onClickAlert() {
       Dialog.alert({
-        title: '标题',
-        message: '弹窗内容'
+        title: 'Title',
+        message: 'Content'
       }).then(() => {
         // on close
       });
@@ -64,7 +67,7 @@ export default {
 
     onClickAlert2() {
       Dialog.alert({
-        message: '弹窗内容'
+        message: 'Content'
       }).then(() => {
         // on close
       });
@@ -74,11 +77,10 @@ export default {
 ```
 :::
 
-#### 消息确认
+#### Confirm dialog
+Used to confirm some messages, including a confirm button and a cancel button
 
-用于确认消息，包含取消和确认按钮
-
-:::demo 消息确认
+:::demo Confirm dialog
 ```html
 <van-button @click="onClickConfirm">Confirm</van-button>
 ```
@@ -88,8 +90,8 @@ export default {
   methods: {
     onClickConfirm() {
       Dialog.confirm({
-        title: '标题',
-        message: '弹窗内容'
+        title: 'Title',
+        message: 'Content'
       }).then(() => {
         // on confirm
       }).catch(() => {
@@ -101,24 +103,24 @@ export default {
 ```
 :::
 
-### 方法
+### Methods
 
-| 方法名 | Attribute | 返回值 | 介绍 |
+| Name | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
-| Dialog.alert | options | `Promise` | 展示消息提示弹窗 |
-| Dialog.confirm | options | `Promise` | 展示消息确认弹窗 |
-| Dialog.close | - | `void` | 关闭弹窗 |
+| Dialog.alert | options | `Promise` | Show alert dialog |
+| Dialog.confirm | options | `Promise` | Show confim dialog |
+| Dialog.close | - | `void` | Close dialog |
 
 ### Options
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | - | - |
-| message | 内容 | `String` | - | - |
-| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
-| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
-| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
-| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
-| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
-| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
+| title | Title | `String` | - | - |
+| message | Message | `String` | - | - |
+| showConfirmButton | Whether to show confirm button | `Boolean` |  `true` | - |
+| showCancelButton | Whether to show cancel button | `Boolean` |  `false` | - |
+| confirmButtonText | Confirm button text | `String` |  `确认` | - |
+| cancelButtonText | Cancel button test | `String` | `取消` | - |
+| overlay | Whether to show overlay | `Boolean` | `true` | - |
+| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` | - |
+| lockOnScroll | Whether to lock body scroll | `Boolean` | `true` | - |

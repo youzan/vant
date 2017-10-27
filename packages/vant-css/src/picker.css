@@ -8,7 +8,15 @@
     height: 40px;
     line-height: 40px;
     overflow: hidden;
+  }
+
+  &__cancel,
+  &__confirm {
     padding: 0 15px;
+
+    &:active {
+      background-color: $active-color;
+    }
   }
 
   &__cancel {

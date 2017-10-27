@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+`2017-10-26`
+
+**Improvements**
+- 新增多个图标 [\#253](https://github.com/youzan/vant/pull/253) [@pangxie1991](https://github.com/pangxie1991)
+- 新增定制主题文档 [\#251](https://github.com/youzan/vant/pull/251) [@chenjiahan](https://github.com/chenjiahan)
+- 新增多个组件的按钮点击态提示 [\#248](https://github.com/youzan/vant/pull/248) [@chenjiahan](https://github.com/chenjiahan)
+- NoticeBar：增加多个 props [\#254](https://github.com/youzan/vant/pull/254) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Swipe 在某些情况下宽度计算错误的问题 [\#258](https://github.com/youzan/vant/pull/258) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 PullRefreash 父元素可滚动时无法正常运行的问题 [\#247](https://github.com/youzan/vant/pull/247) [@GeoffZhu](https://github.com/GeoffZhu)
+- 修复 CouponList 空列表样式一直存在的问题 [\#246](https://github.com/youzan/vant/pull/246) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
 `2017-10-25`
 
