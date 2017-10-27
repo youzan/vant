@@ -84,7 +84,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-See more in [Quickstart](https://www.youzanyun.com/zanui/vue#/en-US/component/quickstart).
+See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/component/quickstart).
  
 ## Contribution
 Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) before making a pull request.
@@ -93,8 +93,8 @@ Please make sure to read the [Contributing Guide](./.github/CONTRIBUTING.md) bef
 Modern browsers and Android 4.0+, iOS 6+.
 
 ## Links
-- [Documentation](https://www.youzanyun.com/zanui/vue)
-- [Change log](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
+- [Documentation](https://www.youzanyun.com/zanui/vant)
+- [Change log](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
 - [React UI Zent](https://www.youzanyun.com/zanui/react)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [vant-demo](https://github.com/chenjiahan/vant-demo)

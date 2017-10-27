@@ -82,7 +82,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vue#/zh-CN/component/quickstart).
+更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/component/quickstart).
 
 ## 贡献代码
 
@@ -100,8 +100,8 @@ Vue.use(Vant);
 ![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
 
 ## 链接
-- [详细文档](https://www.youzanyun.com/zanui/vue)
-- [更新日志](https://www.youzanyun.com/zanui/vue#/en-US/component/changelog)
+- [详细文档](https://www.youzanyun.com/zanui/vant)
+- [更新日志](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
 - [React 组件库 Zent](https://www.youzanyun.com/zanui/react)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [vant-demo](https://github.com/chenjiahan/vant-demo)
