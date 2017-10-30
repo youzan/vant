@@ -18,7 +18,7 @@ Vue.use(VueRouter);
 const routesConfig = routes(true);
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vue/examples',
+  base: '/zanui/vant/examples',
   routes: routesConfig
 });
 

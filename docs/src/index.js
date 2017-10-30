@@ -12,13 +12,13 @@ const routesConfig = routes();
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vue/',
+  base: '/zanui/vant/',
   routes: routesConfig
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    window.location.replace('/zanui/vue/examples');
+    window.location.replace('/zanui/vant/examples');
   }
   document.title = route.meta.title || document.title;
   next();
