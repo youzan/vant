@@ -1,5 +1,15 @@
 ## Changelog
 
+### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
+`2017-10-30`
+
+**Improvements**
+- Cell support vue-router target route [\#268](https://github.com/youzan/vant/pull/268) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tabbar info display when use icon slot [\#269](https://github.com/youzan/vant/pull/269) [@chenjiahan](https://github.com/chenjiahan)
+- fix Uploader input type [\#265](https://github.com/youzan/vant/pull/265) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
 `2017-10-26`
 

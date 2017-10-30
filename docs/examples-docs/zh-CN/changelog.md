@@ -1,5 +1,15 @@
 ## 更新日志
 
+### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
+`2017-10-30`
+
+**Improvements**
+- Cell 支持 vue-router 路由跳转 [\#268](https://github.com/youzan/vant/pull/268) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tabbar 使用 icon slot 时 info prop 失效的问题 [\#269](https://github.com/youzan/vant/pull/269) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Uploader input 类型错误 [\#265](https://github.com/youzan/vant/pull/265) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
 `2017-10-26`
 
