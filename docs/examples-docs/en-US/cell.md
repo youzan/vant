@@ -92,6 +92,8 @@ Vue.component(CellGroup.name, CellGroup);
 | value | Right text | `String` | - | - |
 | label | Description below the title | `String` | - | - |
 | url | Link | `String` | - | - |
+| to | target route of the link, same as to of `vue-router` | `String | Object` | - | - |
+| replace | if true, the navigation will not leave a history record | `String` | `false` | - |
 | isLink | Whether to show link icon | `Boolean` | `false` | - |
 | required | Whether to show required mark | `Boolean` | `false` | - |
 
