@@ -112,6 +112,8 @@ Vue.component(CellGroup.name, CellGroup);
 | value | 右侧内容 | `String` | - | - |
 | label | 标题下方的描述信息 | `String` | - | - |
 | url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |
 | isLink | 是否展示右侧箭头 | `Boolean` | `false` | - |
 | required | 是否显示表单必填符号 | `Boolean` | `false` | - |
 

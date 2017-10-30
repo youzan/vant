@@ -1,5 +1,5 @@
 <template>
-  <a :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" :href="url" @click="$emit('click')">
+  <div :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" @click="onClick">
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
         <van-icon v-if="icon" :name="icon" />
@@ -25,7 +25,7 @@
       <van-icon name="arrow" class="van-cell__right-icon" v-if="isLink" />
     </slot>
     <slot name="extra" />
-  </a>
+  </div>
 </template>
 
 <script>
@@ -39,13 +39,28 @@ export default {
   },
 
   props: {
+    url: String,
     icon: String,
     title: String,
-    value: [String, Number],
-    url: String,
     label: String,
     isLink: Boolean,
-    required: Boolean
+    replace: Boolean,
+    required: Boolean,
+    to: [String, Object],
+    value: [String, Number]
+  },
+
+  methods: {
+    onClick() {
+      this.$emit('click');
+
+      const { to, url, $router, replace } = this;
+      if (to && $router) {
+        $router[replace ? 'replace' : 'push'](to);
+      } else if (url) {
+        replace ? location.replace(url) : location.href = url;
+      }
+    }
   }
 };
 </script>
