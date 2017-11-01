@@ -95,14 +95,14 @@ Modern browsers and Android 4.0+, iOS 6+.
 ## Links
 - [Documentation](https://www.youzanyun.com/zanui/vant)
 - [Change log](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
-- [React UI Zent](https://www.youzanyun.com/zanui/react)
+- [React UI Zent](https://www.youzanyun.com/zanui/zent)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [vant-demo](https://github.com/chenjiahan/vant-demo)
  
 ## Preview
 You can scan the following QR code to access the demo：
 
-![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
+![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
  
 ## LICENSE
 
