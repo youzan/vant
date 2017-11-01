@@ -97,12 +97,12 @@ Vue.use(Vant);
 
 可以手机扫码以下二维码访问手机端demo：
 
-![zanui_vue_mobile_qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
+![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
 
 ## 链接
 - [详细文档](https://www.youzanyun.com/zanui/vant)
 - [更新日志](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
-- [React 组件库 Zent](https://www.youzanyun.com/zanui/react)
+- [React 组件库 Zent](https://www.youzanyun.com/zanui/zent)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [vant-demo](https://github.com/chenjiahan/vant-demo)
  

@@ -3,8 +3,8 @@
     <div class="van-toast-wrapper" v-show="visible">
       <div :class="['van-toast', `van-toast--${displayStyle}`, `van-toast--${position}`]">
         <!-- text only -->
-        <div v-if="displayStyle === 'text'" class="van-toast__text">{{ message }}</div>
-        <div v-if="displayStyle === 'html'" class="van-toast__text" v-html="message" />
+        <div v-if="displayStyle === 'text'">{{ message }}</div>
+        <div v-if="displayStyle === 'html'" v-html="message" />
 
         <!-- with icon -->
         <template v-if="displayStyle === 'default'">
