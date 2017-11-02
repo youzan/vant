@@ -25,7 +25,13 @@
         <p>暂无优惠券</p>
       </div>
     </div>
-    <div class="van-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
+    <div
+      v-show="showCloseButton"
+      class="van-coupon-list__close van-hairline--top"
+      @click="onClickNotUse"
+    >
+      {{ closeButtonText }}
+    </div>
   </div>
 </template>
 
@@ -87,6 +93,10 @@ export default {
       default: '请输入优惠码'
     },
     showExchangeBar: {
+      type: Boolean,
+      default: true
+    },
+    showCloseButton: {
       type: Boolean,
       default: true
     }

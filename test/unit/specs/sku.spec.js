@@ -90,7 +90,7 @@ describe('Sku', (done) => {
     // 未选择完整规格时，弹出toast提示
     buyBtn.trigger('click');
     wrapper.vm.$nextTick(() => {
-      const toastText = document.querySelector('.van-toast__text');
+      const toastText = document.querySelector('.van-toast div');
       expect(toastText.textContent).to.equal('请选择完整的规格');
       expect(buyCallback.calledOnce).to.be.false;
 
@@ -133,7 +133,7 @@ describe('Sku', (done) => {
     const minusBtn = wrapper.find('.van-stepper__minus')[0];
     minusBtn.trigger('click');
     wrapper.vm.$nextTick(() => {
-      const toastText = document.querySelector('.van-toast__text');
+      const toastText = document.querySelector('.van-toast div');
       expect(toastText.textContent).to.equal('至少选择一件');
 
       // 手动修改购买数量
@@ -203,7 +203,7 @@ describe('Sku', (done) => {
       buyBtn.trigger('click');
 
       wrapper.vm.$nextTick(() => {
-        const toastText = document.querySelector('.van-toast__text');
+        const toastText = document.querySelector('.van-toast div');
         expect(toastText.textContent).to.equal('请填写正确的身份证号码');
 
         inputs[1].element.value = 330101198801012211;
@@ -277,7 +277,7 @@ describe('Sku', (done) => {
     wrapper.vm.$nextTick(() => {
       buyBtn.trigger('click');
       wrapper.vm.$nextTick(() => {
-        const toastText = document.querySelector('.van-toast__text');
+        const toastText = document.querySelector('.van-toast div');
         expect(toastText.textContent).to.equal('商品已经无法购买啦');
 
         const plusBtn = wrapper.find('.van-stepper__plus')[0];
