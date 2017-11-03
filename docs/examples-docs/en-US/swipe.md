@@ -72,6 +72,7 @@ export default {
 | autoplay | Autoplay interval (ms) | `Number` | - | - |
 | duration | Animation duration (ms) | `Number` | `500` | - |
 | showIndicators | Whether to show indocators | `Boolean` | `true` | - |
+| initialSwipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
 
 ### Event
 
