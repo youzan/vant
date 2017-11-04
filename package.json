@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -65,8 +65,8 @@
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
     "cheerio": "^0.22.0",
-    "codecov": "^2.3.1",
-    "cross-env": "^5.1.0",
+    "codecov": "^3.0.0",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "dependency-tree": "^5.11.1",
     "eslint-plugin-vue": "^2.1.0",

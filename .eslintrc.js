@@ -19,7 +19,6 @@ module.exports = {
   globals: {
     expect: true,
     sinon: true,
-    zanui: true,
     document: false,
     navigator: false,
     window: false,

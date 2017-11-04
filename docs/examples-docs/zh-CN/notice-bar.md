@@ -21,6 +21,7 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 :::demo 基础用法
 ```html
+<van-notice-bar text="测试测试。"></van-notice-bar>
 <van-notice-bar
   text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
   left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"

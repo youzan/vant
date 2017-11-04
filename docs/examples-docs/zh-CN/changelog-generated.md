@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5) (2017-10-30)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.4...v0.10.5)
+
+**Breaking changes**
+
+- Please give an english translation for the API [\#156](https://github.com/youzan/vant/issues/156)
+- 以前的产品 橱窗组件怎么没有了？ [\#119](https://github.com/youzan/vant/issues/119)
+
+**Issue**
+
+- van-col里嵌套动态img问题 [\#261](https://github.com/youzan/vant/issues/261)
+- 这是一条咨询， 非技术issues [\#259](https://github.com/youzan/vant/issues/259)
+- 图标库不方便管理，建议开源字体图标库 [\#255](https://github.com/youzan/vant/issues/255)
+
+**Improvements**
+
+- \[bugfix\] Tabbar cann't display info when use icon slot [\#269](https://github.com/youzan/vant/pull/269) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Cell support vue-router target route [\#268](https://github.com/youzan/vant/pull/268) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] uploader style error [\#265](https://github.com/youzan/vant/pull/265) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] change document site path to /zanui/vant [\#262](https://github.com/youzan/vant/pull/262) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] english document of all action components [\#260](https://github.com/youzan/vant/pull/260) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4) (2017-10-26)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.3...v0.10.4)
 

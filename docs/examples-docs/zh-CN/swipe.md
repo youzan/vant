@@ -80,7 +80,7 @@ Vue.component(SwipeItem.name, SwipeItem);
 
 :::demo 图片懒加载
 ```html
-<van-swipe>
+<van-swipe :autoplay="3000">
   <van-swipe-item v-for="(image, index) in images" :key="index">
     <img v-lazy="image" />
   </van-swipe-item>
@@ -108,6 +108,7 @@ export default {
 | autoplay | 自动轮播间隔，单位为 ms | `Number` | - | - |
 | duration | 动画时长，单位为 ms | `Number` | `500` | - |
 | showIndicators | 是否显示指示器 | `Boolean` | `true` | - |
+| initialSwipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
 
 ### 事件
 

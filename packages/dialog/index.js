@@ -7,6 +7,8 @@ const defaultConfig = {
   value: true,
   title: '',
   message: '',
+  confirmButtonText: '确认',
+  cancelButtonText: '取消',
   showCancelButton: false,
   closeOnClickOverlay: false,
   callback: action => {

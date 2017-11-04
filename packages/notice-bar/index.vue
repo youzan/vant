@@ -9,7 +9,12 @@
       <img :src="leftIcon" />
     </div>
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
-      <div class="van-notice-bar__content" ref="content" :style="contentStyle" @transitionend="onTransitionEnd">
+      <div
+        ref="content"
+        :class="['van-notice-bar__content', animationClass]"
+        :style="contentStyle"
+        @animationend="onAnimationEnd"
+      >
         <slot>{{ text }}</slot>
       </div>
     </div>
@@ -55,11 +60,12 @@ export default {
 
   data() {
     return {
+      wrapWidth: 0,
       firstRound: true,
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
-      diableTransition: false
+      animationClass: ''
     };
   },
 
@@ -75,9 +81,9 @@ export default {
     },
     contentStyle() {
       return {
-        transform: `translate3d(${-this.offsetWidth}px, 0, 0)`,
-        transitionDelay: (this.firstRound ? this.delay : 0) + 's',
-        transitionDuration: this.duration + 's'
+        paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
+        animationDelay: (this.firstRound ? this.delay : 0) + 's',
+        animationDuration: this.duration + 's'
       };
     }
   },
@@ -88,7 +94,8 @@ export default {
     if (this.scrollable && offsetWidth > wrapWidth) {
       this.wrapWidth = wrapWidth;
       this.offsetWidth = offsetWidth;
-      this.duration = (offsetWidth + wrapWidth) / this.speed;
+      this.duration = offsetWidth / this.speed;
+      this.animationClass = 'van-notice-bar__play';
     }
   },
 
@@ -96,17 +103,12 @@ export default {
     onClickIcon() {
       this.showNoticeBar = this.mode !== 'closeable';
     },
-    onTransitionEnd() {
-      const { offsetWidth, wrapWidth } = this;
+    onAnimationEnd() {
       this.firstRound = false;
-      this.duration = 0;
-      this.offsetWidth = -this.wrapWidth;
-
-      // wait for vue render && dom update
-      setTimeout(() => {
-        this.duration = (offsetWidth + 2 * wrapWidth) / this.speed;
-        this.offsetWidth = offsetWidth;
-      }, 50);
+      this.$nextTick(() => {
+        this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
+        this.animationClass = 'van-notice-bar__play--infinite';
+      });
     }
   }
 };

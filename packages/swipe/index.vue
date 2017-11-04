@@ -30,6 +30,10 @@ export default {
 
   props: {
     autoplay: Number,
+    initialSwipe: {
+      type: Number,
+      default: 0
+    },
     showIndicators: {
       type: Boolean,
       default: true
@@ -92,9 +96,9 @@ export default {
       // reset offset when children changes
       clearTimeout(this.timer);
       this.width = this.$el.getBoundingClientRect().width;
-      this.active = 0;
+      this.active = this.initialSwipe;
       this.currentDuration = 0;
-      this.offset = this.count > 1 ? -this.width : 0;
+      this.offset = this.count > 1 ? -this.width * (this.active + 1) : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });

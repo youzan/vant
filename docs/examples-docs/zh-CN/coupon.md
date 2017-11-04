@@ -157,6 +157,7 @@ export default {
 | exchangeButtonText | 兑换按钮文字 | `String` | `兑换` | - |
 | exchangeButtonDisabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
 | displayedCouponIndex | 滚动至特定优惠券位置 | `Number` | - | - |
+| showCloseButton | 是否显示列表底部按钮 | `Boolean` | `true` | - |
 | closeButtonText | 列表底部按钮文字 | `String` | 不使用优惠 | - |
 | disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
 | inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
