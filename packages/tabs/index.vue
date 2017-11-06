@@ -72,9 +72,10 @@
     data() {
       return {
         tabs: [],
-        isReady: false,
         curActive: +this.active,
-        isSwiping: false
+        isSwiping: false,
+        isInitEvents: false,
+        navBarStyle: {}
       };
     },
 
@@ -84,31 +85,27 @@
       },
 
       curActive() {
+        this.setNavBarStyle();
         /* istanbul ignore else */
         if (this.tabs.length > this.swipeThreshold) {
           this.doOnValueChange();
         }
+      },
+      
+      tabs(val) {
+        this.$nextTick(() => {
+          this.setNavBarStyle();
+          if (val.length > this.swipeThreshold) {
+            this.initEvents();
+            this.doOnValueChange();
+          } else {
+            this.isInitEvents = false;
+          }
+        });
       }
     },
 
     computed: {
-      /**
-       * `type`为`line`时，tab下方的横线的样式
-       */
-      navBarStyle() {
-        if (!this.isReady || this.type !== 'line' || !this.$refs.tabkey) return;
-
-        const tabKey = this.curActive;
-        const elem = this.$refs.tabkey[tabKey];
-        const offsetWidth = `${elem.offsetWidth || 0}px`;
-        const offsetLeft = `${elem.offsetLeft || 0}px`;
-
-        return {
-          width: offsetWidth,
-          transform: `translate3d(${offsetLeft}, 0, 0)`,
-          transitionDuration: `${this.duration}s`
-        };
-      },
       swipeWidth() {
         return this.$refs.swipe && this.$refs.swipe.getBoundingClientRect().width;
       },
@@ -127,17 +124,34 @@
     mounted() {
       // 页面载入完成
       this.$nextTick(() => {
-        // 可以开始触发在computed中关于nav-bar的css动画
-        this.isReady = true;
-        this.initEvents();
+        this.setNavBarStyle();
   
         if (this.tabs.length > this.swipeThreshold) {
+          this.initEvents();
           this.doOnValueChange();
         }
       });
     },
 
     methods: {
+      /**
+       * `type`为`line`时，tab下方的横线的样式
+       */
+      setNavBarStyle() {
+        if (this.type !== 'line' || !this.$refs.tabkey) return {};
+
+        const tabKey = this.curActive;
+        const elem = this.$refs.tabkey[tabKey];
+        const offsetWidth = `${elem.offsetWidth || 0}px`;
+        const offsetLeft = `${elem.offsetLeft || 0}px`;
+
+        this.navBarStyle = {
+          width: offsetWidth,
+          transform: `translate3d(${offsetLeft}, 0, 0)`,
+          transitionDuration: `${this.duration}s`
+        };
+      },
+
       handleTabClick(index) {
         if (this.tabs[index].disabled) {
           this.$emit('disabled', index);
@@ -169,8 +183,9 @@
 
       initEvents() {
         const el = this.$refs.swipe;
-        if (!el) return;
+        if (!el || this.isInitEvents) return;
 
+        this.isInitEvents = true;
         let swipeState = {};
 
         swipe(el, {
