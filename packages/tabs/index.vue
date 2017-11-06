@@ -98,6 +98,8 @@
           if (val.length > this.swipeThreshold) {
             this.initEvents();
             this.doOnValueChange();
+          } else {
+            this.isInitEvents = false;
           }
         });
       }
