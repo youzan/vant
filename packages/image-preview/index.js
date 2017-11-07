@@ -12,12 +12,13 @@ const initInstance = () => {
   document.body.appendChild(instance.$el);
 };
 
-const ImagePreviewBox = images => {
+const ImagePreviewBox = (images, startPosition = 0) => {
   if (!instance) {
     initInstance();
   }
 
   instance.images = images;
+  instance.startPosition = startPosition;
   instance.value = true;
 };
 

@@ -16,12 +16,12 @@ import { ImagePreview } from 'packages';
 
 export default {
   methods: {
-    showImagePreview() {
+    showImagePreview(position) {
       ImagePreview([
         'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
         'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
         'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
-      ]);
+      ], typeof position === 'number' ? position : 0);
     }
   }
 };
@@ -60,8 +60,30 @@ export default {
 ```
 :::
 
+#### 指定初始位置
+
+:::demo 指定初始位置
+```html
+<van-button @click="showImagePreview(1)">指定初始位置</van-button>
+```
+
+```javascript
+export default {
+  methods: {
+    showImagePreview(startPosition) {
+      ImagePreview([
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
+      ], startPosition);
+    }
+  }
+};
+```
+:::
+
 ### 方法参数
 
 | 参数名 | 说明 | 类型 |
 |-----------|-----------|-----------|
 | imageUrls | 需要预览的图片 | `Array` |
+| startPosition | 图片预览起始位置索引 | `Number` |
