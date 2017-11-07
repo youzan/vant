@@ -47,6 +47,19 @@ export default {
         index
       });
     }
+  },
+
+  destroyed() {
+    const key = this.key;
+    const tabs = this.parentGroup.tabs;
+
+    for (let i = 0; i < tabs.length; i++) {
+      /* istanbul ignore else */
+      if (tabs[i].index === key) {
+        this.parentGroup.tabs.splice(i, 1);
+        return;
+      }
+    }
   }
 };
 </script>

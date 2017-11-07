@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+`2017-11-06`
+
+**Improvements**
+- add Swipe initialSwipe prop [\#279](https://github.com/youzan/vant/pull/279) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Dialog button text not reset when showed [\#278](https://github.com/youzan/vant/pull/278) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284) [@cookfront](https://github.com/cookfront)
+- fix NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 `2017-10-30`
 

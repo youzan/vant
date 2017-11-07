@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+`2017-11-06`
+
+**Improvements**
+- 新增 Swipe initialSwipe 属性 [\#279](https://github.com/youzan/vant/pull/279) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Dialog 按钮文字未重置的问题 [\#278](https://github.com/youzan/vant/pull/278) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Tab 动态生成问题 [\#284](https://github.com/youzan/vant/pull/284) [@cookfront](https://github.com/cookfront)
+- 修复 NoticeBar 在页面返回时文字消失的问题 [\#280](https://github.com/youzan/vant/pull/280) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 `2017-10-30`
 
