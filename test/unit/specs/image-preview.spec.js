@@ -21,7 +21,12 @@ describe('ImagePreview', () => {
     ImagePreview(images);
     Vue.nextTick(() => {
       expect(document.querySelectorAll('.van-image-preview img').length).to.equal(3);
-      done();
+      ImagePreview(images.slice(0, 2));
+
+      Vue.nextTick(() => {
+        expect(document.querySelectorAll('.van-image-preview img').length).to.equal(2);
+        done();
+      });
     });
   });
 
