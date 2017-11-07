@@ -9,6 +9,7 @@
     padding: 0 10px;
 
     .van-steps__items {
+      display: flex;
       margin: 0 0 10px;
       overflow: hidden;
       position: relative;
@@ -22,18 +23,6 @@
 
   &--vertical {
     padding: 0 0 0 35px;
-  }
-
-  &--4 {
-    .van-step {
-      width: 33.2%;
-    }
-  }
-
-  &--3 {
-    .van-step {
-      width: 50%;
-    }
   }
 
   &__icon {
@@ -72,6 +61,7 @@
 }
 
 .van-step {
+  flex: 1;
   font-size: 14px;
   position: relative;
   color: $gray-dark;
