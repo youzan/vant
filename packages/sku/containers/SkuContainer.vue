@@ -1,5 +1,5 @@
 <template>
-  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" :lock-scroll="true">
+  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" lockOnScroll preventScroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
