@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+`2017-11-08`
+
+**Improvements**
+- 修正了所有图标尺寸，保持大小统一 [\#292](https://github.com/youzan/vant/pull/292) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview 支持自定义初始位置 [\#286](https://github.com/youzan/vant/pull/286) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Sku 滚动锁定问题 [\#291](https://github.com/youzan/vant/pull/291) [@w91](https://github.com/w91)
+- 修复 Steps 超过四项时样式错误 [\#287](https://github.com/youzan/vant/pull/287) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
 `2017-11-06`
 
