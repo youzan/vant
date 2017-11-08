@@ -13,12 +13,6 @@ export default {
       stepper1: 1,
       stepper2: null,
     };
-  },
-
-  methods: {
-    onChange(val) {
-      console.log(val);
-    }
   }
 };
 </script>
@@ -38,7 +32,7 @@ Vue.component(Stepper.name, Stepper);
 
 :::demo 基础用法
 ```html
-<van-stepper v-model="stepper1" @change="onChange" />
+<van-stepper v-model="stepper1" />
 ```
 
 ```javascript
