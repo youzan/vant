@@ -1,5 +1,25 @@
 ## 更新日志
 
+## [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7) (2017-11-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.6...v0.10.7)
+
+**Bug Fixes**
+
+- van-tab组件用v-for动态生成，无法左右滑动？ [\#267](https://github.com/youzan/vant/issues/267)
+
+**Issue**
+
+- stepper 当外界修改数值时，不触发change事件。 [\#290](https://github.com/youzan/vant/issues/290)
+- Stepper 步进器 max问题 [\#288](https://github.com/youzan/vant/issues/288)
+- Dialog 弹出框修改confirmButtonText问题 [\#277](https://github.com/youzan/vant/issues/277)
+
+**Improvements**
+
+- \[new feature\] normalize size of all icons [\#292](https://github.com/youzan/vant/pull/292) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] 修复sku弹层锁定滚动 [\#291](https://github.com/youzan/vant/pull/291) ([w91](https://github.com/w91))
+- \[bugfix\] Steps style error when has more than 4 items [\#287](https://github.com/youzan/vant/pull/287) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] ImagePreview support startPosition [\#286](https://github.com/youzan/vant/pull/286) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6) (2017-11-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.5...v0.10.6)
 
