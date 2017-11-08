@@ -570,14 +570,6 @@ babel-plugin-check-es2015-constants@^6.22.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-module-resolver@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-module-resolver/-/babel-plugin-module-resolver-2.7.1.tgz#18be3c42ddf59f7a456c9e0512cd91394f6e4be1"
-  dependencies:
-    find-babel-config "^1.0.1"
-    glob "^7.1.1"
-    resolve "^1.2.0"
-
 babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
@@ -1275,7 +1267,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.1.0:
+chalk@^2.1.0, chalk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.0.tgz#b5ea48efc9c1793dccc9b4767c93914d3f2d52ba"
   dependencies:
@@ -1961,13 +1953,13 @@ depd@1.1.1, depd@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
 
-dependency-tree@^5.11.1:
-  version "5.11.1"
-  resolved "https://registry.yarnpkg.com/dependency-tree/-/dependency-tree-5.11.1.tgz#7d07f48f7c6e4adf90cf9be57eb4c337d05af5a2"
+dependency-tree@^5.12.0:
+  version "5.12.0"
+  resolved "http://registry.npm.qima-inc.com/dependency-tree/download/dependency-tree-5.12.0.tgz#a1b7a625428a6e09bc4ce5c133fa5f6bcc9626d3"
   dependencies:
     commander "^2.6.0"
     debug "^3.1.0"
-    filing-cabinet "^1.9.0"
+    filing-cabinet "^1.12.0"
     precinct "^3.8.0"
 
 deprecated@^0.0.1:
@@ -2885,9 +2877,9 @@ filesize@~2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-2.0.4.tgz#7805941c60fcdfe63f46d7ea358c59ade11c1325"
 
-filing-cabinet@^1.9.0:
+filing-cabinet@^1.12.0:
   version "1.12.0"
-  resolved "https://registry.yarnpkg.com/filing-cabinet/-/filing-cabinet-1.12.0.tgz#6fb93fd968e83bedf1b4298f28236a8aafdf7d78"
+  resolved "http://registry.npm.qima-inc.com/filing-cabinet/download/filing-cabinet-1.12.0.tgz#6fb93fd968e83bedf1b4298f28236a8aafdf7d78"
   dependencies:
     app-module-path "^1.1.0"
     commander "^2.8.1"
@@ -2936,13 +2928,6 @@ finalhandler@1.1.0:
     parseurl "~1.3.2"
     statuses "~1.3.1"
     unpipe "~1.0.0"
-
-find-babel-config@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/find-babel-config/-/find-babel-config-1.1.0.tgz#acc01043a6749fec34429be6b64f542ebb5d6355"
-  dependencies:
-    json5 "^0.5.1"
-    path-exists "^3.0.0"
 
 find-cache-dir@^1.0.0:
   version "1.0.0"
@@ -4437,6 +4422,10 @@ karma@^1.7.1:
 kew@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/kew/-/kew-0.7.0.tgz#79d93d2d33363d6fdd2970b335d9141ad591d79b"
+
+killable@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.qima-inc.com/killable/download/killable-1.0.0.tgz#da8b84bd47de5395878f95d64d02f2449fe05e6b"
 
 kind-of@^3.0.2:
   version "3.2.2"
@@ -6200,11 +6189,19 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.10, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.3, postcss@^6.0.8, postcss@^6.0.9:
+postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.3, postcss@^6.0.8, postcss@^6.0.9:
   version "6.0.13"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.13.tgz#b9ecab4ee00c89db3ec931145bd9590bbf3f125f"
   dependencies:
     chalk "^2.1.0"
+    source-map "^0.6.1"
+    supports-color "^4.4.0"
+
+postcss@^6.0.14:
+  version "6.0.14"
+  resolved "http://registry.npm.qima-inc.com/postcss/download/postcss-6.0.14.tgz#5534c72114739e75d0afcf017db853099f562885"
+  dependencies:
+    chalk "^2.3.0"
     source-map "^0.6.1"
     supports-color "^4.4.0"
 
@@ -7841,9 +7838,9 @@ vue-lazyload@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.1.4.tgz#94dbb3fcb047f147f37900c0e22ad4fd478e31c4"
 
-vue-loader@^13.3.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-13.3.0.tgz#3bf837d490ba5dea6fc07e0835ffa6c688c8af33"
+vue-loader@^13.5.0:
+  version "13.5.0"
+  resolved "http://registry.npm.qima-inc.com/vue-loader/download/vue-loader-13.5.0.tgz#52f7b3790a267eff80012b77ea187a54586dd5d4"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
@@ -7859,9 +7856,9 @@ vue-loader@^13.3.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-markdown-loader@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-2.2.2.tgz#7bdac31dc0e44571bec8c4632e14fc2ba98fb65e"
+vue-markdown-loader@^2.2.3:
+  version "2.2.3"
+  resolved "http://registry.npm.qima-inc.com/vue-markdown-loader/download/vue-markdown-loader-2.2.3.tgz#d5bc533d8ce254349708a2a0c1490a3b7bac8959"
   dependencies:
     cheerio "^0.20.0"
     highlight.js "^9.4.0"
@@ -7886,9 +7883,16 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@>=2.5.0, vue-template-compiler@^2.5.2:
+vue-template-compiler@>=2.5.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.2.tgz#6f198ebc677b8f804315cd33b91e849315ae7177"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
+
+vue-template-compiler@^2.5.3:
+  version "2.5.3"
+  resolved "http://registry.npm.qima-inc.com/vue-template-compiler/download/vue-template-compiler-2.5.3.tgz#ab631b0694e211a6aaf0d800102b37836aae36a4"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -7897,9 +7901,9 @@ vue-template-es2015-compiler@>=1.6.0, vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.5.2:
-  version "2.5.2"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.2.tgz#fd367a87bae7535e47f9dc5c9ec3b496e5feb5a4"
+vue@^2.5.3:
+  version "2.5.3"
+  resolved "http://registry.npm.qima-inc.com/vue/download/vue-2.5.3.tgz#e1a3b1f49b6e93e574ce040b95cbc873912fecc1"
 
 watchpack@^1.4.0:
   version "1.4.0"
@@ -7945,9 +7949,9 @@ webpack-dev-middleware@^1.0.11, webpack-dev-middleware@^1.11.0:
     range-parser "^1.0.3"
     time-stamp "^2.0.0"
 
-webpack-dev-server@^2.9.2:
-  version "2.9.3"
-  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-2.9.3.tgz#f0554e88d129e87796a6f74a016b991743ca6f81"
+webpack-dev-server@^2.9.4:
+  version "2.9.4"
+  resolved "http://registry.npm.qima-inc.com/webpack-dev-server/download/webpack-dev-server-2.9.4.tgz#7883e61759c6a4b33e9b19ec4037bd4ab61428d1"
   dependencies:
     ansi-html "0.0.7"
     array-includes "^3.0.3"
@@ -7963,6 +7967,7 @@ webpack-dev-server@^2.9.2:
     import-local "^0.1.1"
     internal-ip "1.2.0"
     ip "^1.1.5"
+    killable "^1.0.0"
     loglevel "^1.4.1"
     opn "^5.1.0"
     portfinder "^1.0.9"
@@ -7976,9 +7981,9 @@ webpack-dev-server@^2.9.2:
     webpack-dev-middleware "^1.11.0"
     yargs "^6.6.0"
 
-webpack-merge@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/webpack-merge/-/webpack-merge-4.1.0.tgz#6ad72223b3e0b837e531e4597c199f909361511e"
+webpack-merge@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.npm.qima-inc.com/webpack-merge/download/webpack-merge-4.1.1.tgz#f1197a0a973e69c6fbeeb6d658219aa8c0c13555"
   dependencies:
     lodash "^4.17.4"
 

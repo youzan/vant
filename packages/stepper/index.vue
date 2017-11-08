@@ -1,24 +1,23 @@
 <template>
   <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled }">
     <button
-      @click="handleChange('minus')"
       class="van-stepper__stepper van-stepper__minus"
-      :class="{
-        'van-stepper__minus--disabled': isMinusDisabled
-      }">
+      :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
+      @click="onChange('minus')"
+    >
     </button>
     <input
       type="number"
       class="van-stepper__input"
       :value="currentValue"
-      @input="handleInputChange"
-      :disabled="disabled || disableInput">
+      :disabled="disabled || disableInput"
+      @input="onInput"
+    >
     <button
-      @click="handleChange('plus')"
       class="van-stepper__stepper van-stepper__plus"
-      :class="{
-        'van-stepper__plus--disabled': isPlusDisabled
-      }">
+      :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
+      @click="onChange('plus')"
+    >
     </button>
   </div>
 </template>
@@ -28,6 +27,9 @@ export default {
   name: 'van-stepper',
 
   props: {
+    value: {},
+    disabled: Boolean,
+    disableInput: Boolean,
     min: {
       type: [String, Number],
       default: 1
@@ -36,13 +38,10 @@ export default {
       type: [String, Number],
       default: Infinity
     },
-    value: {},
     step: {
       type: [String, Number],
       default: 1
     },
-    disabled: Boolean,
-    disableInput: Boolean,
     defaultValue: {
       type: [String, Number],
       default: 1
@@ -56,6 +55,7 @@ export default {
       value = correctedValue;
       this.$emit('input', value);
     }
+
     return {
       currentValue: value
     };
@@ -81,6 +81,7 @@ export default {
       this.$emit('input', val);
       this.$emit('change', val);
     },
+
     value(val) {
       val = this.correctValue(+val);
       if (val !== this.currentValue) {
@@ -90,7 +91,6 @@ export default {
   },
 
   methods: {
-    // 纠正value值
     correctValue(value) {
       if (Number.isNaN(value)) {
         value = this.min;
@@ -101,12 +101,13 @@ export default {
 
       return value;
     },
-    handleInputChange(event) {
-      const val = +event.target.value;
 
+    onInput(event) {
+      const val = +event.target.value;
       this.currentValue = this.correctValue(val);
     },
-    handleChange(type) {
+
+    onChange(type) {
       if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
         this.$emit('overlimit', type);
         return;
@@ -115,6 +116,7 @@ export default {
       const step = +this.step;
       const currentValue = +this.currentValue;
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
+      this.$emit(type);
     }
   }
 };

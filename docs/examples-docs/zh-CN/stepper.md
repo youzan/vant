@@ -13,6 +13,12 @@ export default {
       stepper1: 1,
       stepper2: null,
     };
+  },
+
+  methods: {
+    onChange(val) {
+      console.log(val);
+    }
   }
 };
 </script>
@@ -32,7 +38,7 @@ Vue.component(Stepper.name, Stepper);
 
 :::demo 基础用法
 ```html
-<van-stepper v-model="stepper1" />
+<van-stepper v-model="stepper1" @change="onChange" />
 ```
 
 ```javascript
@@ -82,3 +88,5 @@ export default {
 |-----------|-----------|-----------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 | overlimit | 点击不可用的按钮时触发 | - |
+| plus | 点击增加按钮时触发 | - |
+| minus | 点击减少按钮时触发 | - |

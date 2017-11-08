@@ -7,7 +7,7 @@
 
 .van-icon {
   display: inline-block;
-  font: normal normal normal 14px/1 "vant-icon";
+  font: normal normal normal 14px/1 "<%= fontName %>";
   font-size: inherit;
   text-rendering: auto;
 
