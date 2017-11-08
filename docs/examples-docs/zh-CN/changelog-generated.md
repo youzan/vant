@@ -1,5 +1,132 @@
 ## 更新日志
 
+## [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6) (2017-11-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.5...v0.10.6)
+
+**Bug Fixes**
+
+- tabbar自定义的情况下 无法生成info 是否考虑添加这个功能 [\#249](https://github.com/youzan/vant/issues/249)
+
+**Issue**
+
+- waterfall滚动到底部时无限触发加载 [\#283](https://github.com/youzan/vant/issues/283)
+- swipe [\#282](https://github.com/youzan/vant/issues/282)
+- waterfall瀑布流拉到最底之后无限触发事件 [\#281](https://github.com/youzan/vant/issues/281)
+- Card点击事件无法触发 [\#276](https://github.com/youzan/vant/issues/276)
+- Vant 下载 [\#275](https://github.com/youzan/vant/issues/275)
+- 使用steps步骤条出现最后一个离得很远的问题 [\#273](https://github.com/youzan/vant/issues/273)
+- 请问有DEMO首页的手风琴组件吗？ [\#272](https://github.com/youzan/vant/issues/272)
+- van-swipe组件添加了一个class就无法触摸滚动了 [\#270](https://github.com/youzan/vant/issues/270)
+- Cell的url 只支持 mode: history的形式 [\#266](https://github.com/youzan/vant/issues/266)
+- tabs组件文档有误 [\#264](https://github.com/youzan/vant/issues/264)
+
+**Improvements**
+
+- \[bug fix\]: tabs dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284) ([cookfront](https://github.com/cookfront))
+- \[bugfix\] NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Swipe add 'initialSwipe' prop [\#279](https://github.com/youzan/vant/pull/279) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Dialog should reset button text when showed [\#278](https://github.com/youzan/vant/pull/278) ([chenjiahan](https://github.com/chenjiahan))
+-  \[Doc\] update document site title [\#274](https://github.com/youzan/vant/pull/274) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5) (2017-10-30)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.4...v0.10.5)
+
+**Breaking changes**
+
+- Please give an english translation for the API [\#156](https://github.com/youzan/vant/issues/156)
+- 以前的产品 橱窗组件怎么没有了？ [\#119](https://github.com/youzan/vant/issues/119)
+
+**Issue**
+
+- van-col里嵌套动态img问题 [\#261](https://github.com/youzan/vant/issues/261)
+- 这是一条咨询， 非技术issues [\#259](https://github.com/youzan/vant/issues/259)
+- 图标库不方便管理，建议开源字体图标库 [\#255](https://github.com/youzan/vant/issues/255)
+
+**Improvements**
+
+- \[bugfix\] Tabbar cann't display info when use icon slot [\#269](https://github.com/youzan/vant/pull/269) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Cell support vue-router target route [\#268](https://github.com/youzan/vant/pull/268) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] uploader style error [\#265](https://github.com/youzan/vant/pull/265) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] change document site path to /zanui/vant [\#262](https://github.com/youzan/vant/pull/262) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] english document of all action components [\#260](https://github.com/youzan/vant/pull/260) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4) (2017-10-26)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.3...v0.10.4)
+
+**Breaking changes**
+
+- 业务组件 - 购物车组件 [\#209](https://github.com/youzan/vant/issues/209)
+
+**Issue**
+
+- 希望直接支持按需引入组件 [\#257](https://github.com/youzan/vant/issues/257)
+- 请问支持自定义主题色或者有支持计划么？ [\#256](https://github.com/youzan/vant/issues/256)
+- 希望能隐藏地址列表组件的checkbox [\#250](https://github.com/youzan/vant/issues/250)
+- Coupon 优惠券选择器 顶部兑换模块的 显隐开关 [\#241](https://github.com/youzan/vant/issues/241)
+- Tabbar 是否能增加Badge。 [\#240](https://github.com/youzan/vant/issues/240)
+- Toast 轻提示建议增加上中下位置的配置 [\#233](https://github.com/youzan/vant/issues/233)
+- van-search 的@search事件无法捕获value ，老版本以前是可以的 [\#232](https://github.com/youzan/vant/issues/232)
+- Dialog蒙层样式没能正常加载 [\#229](https://github.com/youzan/vant/issues/229)
+
+**Improvements**
+
+- \[bugfix\] Swipe width calc error [\#258](https://github.com/youzan/vant/pull/258) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Notice bar support more props [\#254](https://github.com/youzan/vant/pull/254) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Icon: 增加新 icon 图标 [\#253](https://github.com/youzan/vant/pull/253) ([pangxie1991](https://github.com/pangxie1991))
+- \[bug fix\] Doc: Update waterfall.md  [\#252](https://github.com/youzan/vant/pull/252) ([liangxiaoxin](https://github.com/liangxiaoxin))
+- \[Doc\] add custom theme document [\#251](https://github.com/youzan/vant/pull/251) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] add click feedback of buttons in components [\#248](https://github.com/youzan/vant/pull/248) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] PullRefreash: when $parents.$el scrollable, pull refreash trigger error [\#247](https://github.com/youzan/vant/pull/247) ([GeoffZhu](https://github.com/GeoffZhu))
+- \[bugfix\] CouponList always show empty info [\#246](https://github.com/youzan/vant/pull/246) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.10.3](https://github.com/youzan/vant/tree/v0.10.3) (2017-10-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.2...v0.10.3)
+
+**Issue**
+
+- 能否把DEMO示例的代码全部放出？ [\#235](https://github.com/youzan/vant/issues/235)
+- 能否增加一个下拉菜单及上拉加载更多 [\#234](https://github.com/youzan/vant/issues/234)
+-  ImagePreview 图片预览 组件使用后，点击图片无法显示大图 [\#225](https://github.com/youzan/vant/issues/225)
+- 能否提供cdn方式呢 [\#223](https://github.com/youzan/vant/issues/223)
+- 请问如何跟手淘lib-flexible rem布局结合 [\#222](https://github.com/youzan/vant/issues/222)
+
+**Improvements**
+
+- \[new feature\] Tabbar add 'info' prop [\#245](https://github.com/youzan/vant/pull/245) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Toast support `position` prop [\#244](https://github.com/youzan/vant/pull/244) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Coupon add 'showExchangeBar' prop && add empty style [\#243](https://github.com/youzan/vant/pull/243) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add goods demo [\#242](https://github.com/youzan/vant/pull/242) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Pull-refresh: 'touchcancel '拼写问题 [\#239](https://github.com/youzan/vant/pull/239) ([GeoffZhu](https://github.com/GeoffZhu))
+- \[bug fix\]: 高阶组件英文文档修改 [\#238](https://github.com/youzan/vant/pull/238) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[Doc\] add demo pages [\#237](https://github.com/youzan/vant/pull/237) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add Advanced components english document [\#236](https://github.com/youzan/vant/pull/236) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[bugfix\] popup style missing when build style entry [\#231](https://github.com/youzan/vant/pull/231) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Address & Contact list style [\#230](https://github.com/youzan/vant/pull/230) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add more badges in README.md [\#228](https://github.com/youzan/vant/pull/228) ([chenjiahan](https://github.com/chenjiahan))
+- update README.md [\#227](https://github.com/youzan/vant/pull/227) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.10.2](https://github.com/youzan/vant/tree/v0.10.2) (2017-10-20)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.1...v0.10.2)
+
+**Bug Fixes**
+
+- 引入TreeSelect组件后报icon没找到 [\#215](https://github.com/youzan/vant/issues/215)
+- Checkbox 复选框组件bug [\#213](https://github.com/youzan/vant/issues/213)
+
+**Issue**
+
+- 如何动态赋值 [\#221](https://github.com/youzan/vant/issues/221)
+- 省市区的json文件能放出来吗？ [\#219](https://github.com/youzan/vant/issues/219)
+- 标签页 能提供纵向布局吗？现在只有横向布局 能灵活配置就好了 [\#207](https://github.com/youzan/vant/issues/207)
+- 能不能考虑增加一个  “选择图片” 的功能 [\#186](https://github.com/youzan/vant/issues/186)
+- Please open source examples code [\#169](https://github.com/youzan/vant/issues/169)
+
+**Improvements**
+
+- \[new feature\] Sku: sku-group slot add event bus [\#226](https://github.com/youzan/vant/pull/226) ([w91](https://github.com/w91))
+- \[bugfix\] Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add some english documents [\#220](https://github.com/youzan/vant/pull/220) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1) (2017-10-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.0...v0.10.1)
 

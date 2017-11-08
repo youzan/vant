@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './ExamplesDocsApp';
+import App from './DocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
 import isMobile from './utils/is-mobile';
@@ -12,13 +12,13 @@ const routesConfig = routes();
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vue/',
+  base: '/zanui/vant/',
   routes: routesConfig
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    window.location.replace('/zanui/vue/examples');
+    window.location.replace('/zanui/vant/examples');
   }
   document.title = route.meta.title || document.title;
   next();

@@ -1,4 +1,6 @@
 <script>
+import { Toast } from 'packages/index';
+
 export default {
   data() {
     return {
@@ -41,7 +43,7 @@ Vue.component(Search.name, Search);
 
 :::demo 基础用法
 ```html
-<van-search placeholder="搜索框基础用法" v-model="basicSearch" />
+<van-search placeholder="搜索框基础用法" v-model="value" />
 ```
 :::
 
@@ -73,7 +75,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   v-model="value"
   :show-action="true"
   @search="onSearch">
-  <div slot="action" @click="goSlotSearch">搜索</div>
+  <div slot="action" @click="onSearch">搜索</div>
 </van-search>
 ```
 :::

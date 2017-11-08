@@ -24,6 +24,8 @@
 </style>
 
 <script>
+import { Toast } from 'packages/index';
+
 export default {
   data() {
     return {
@@ -36,8 +38,8 @@ export default {
     }, 1000);
   },
   methods: {
-    popalert() {
-      alert('haha')
+    onClickDisabled() {
+      Toast('Disabled!')
     },
 
     handleTabClick(index) {
@@ -128,9 +130,9 @@ Vue.component(Tabs.name, Tabs);
 
 :::demo 禁用tab
 ```html
-<van-tabs>
+<van-tabs @disabled="onClickDisabled">
   <van-tab title="选项一">内容一</van-tab>
-  <van-tab title="选项二" disabled @disabled="popalert">内容二</van-tab>
+  <van-tab title="选项二" disabled>内容二</van-tab>
   <van-tab title="选项三">内容三</van-tab>
   <van-tab title="选项四">内容四</van-tab>
 </van-tabs>
@@ -139,8 +141,8 @@ Vue.component(Tabs.name, Tabs);
 ```javascript
 export default {
   methods: {
-    popalert() {
-      alert('haha')
+    onClickDisabled() {
+      Toast('Disabled!')
     }
   }
 };

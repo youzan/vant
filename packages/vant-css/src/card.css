@@ -4,6 +4,7 @@
 .van-card {
   color: $text-color;
   height: 100px;
+  font-size: 16px;
   background: #fafafa;
   position: relative;
   box-sizing: border-box;

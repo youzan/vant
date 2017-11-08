@@ -1,11 +1,11 @@
 <template>
-  <div 
+  <div
     class="van-pull-refresh"
     :style="style"
     @touchstart="onTouchStart"
     @touchmove="onTouchMove"
     @touchend="onTouchEnd"
-    @touchcalcel="onTouchEnd"     
+    @touchcancel="onTouchEnd"
   >
     <div class="van-pull-refresh__head">
       <slot name="normal" v-if="status === 'normal'"></slot>
@@ -22,12 +22,13 @@
         </div>
       </slot>
     </div>
-    <slot></slot>   
+    <slot></slot>
   </div>
 </template>
 
 <script>
 import Loading from '../loading';
+import scrollUtils from '../utils/scroll';
 
 export default {
   name: 'van-pull-refresh',
@@ -78,6 +79,10 @@ export default {
         transform: `translate3d(0,${this.height}px, 0)`
       };
     }
+  },
+
+  mounted() {
+    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
   },
 
   watch: {
@@ -140,7 +145,7 @@ export default {
     },
 
     getCeiling() {
-      this.ceiling = (window.scrollY || window.pageYOffset) === 0;
+      this.ceiling = scrollUtils.getScrollTop(this.scrollEl) === 0;
       return this.ceiling;
     },
 

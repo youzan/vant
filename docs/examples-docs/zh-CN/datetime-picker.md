@@ -1,4 +1,6 @@
 <script>
+import { Toast } from 'packages/index';
+
 export default {
   data() {
     return {
@@ -10,18 +12,6 @@ export default {
       currentDate2: null,
       currentDate3: null
     };
-  },
-
-  methods: {
-    handlePickerChange(picker) {
-      console.log(picker);
-    },
-    handlePickerCancel() {
-      console.log('picker cancel');
-    },
-    handlePickerConfirm() {
-      console.log('picker confirm');
-    }
   }
 };
 </script>
@@ -48,8 +38,7 @@ Vue.component(DatetimePicker.name, DatetimePicker);
   :max-hour="maxHour"
   :min-date="minDate"
   :max-date="maxDate"
-  @change="handlePickerChange">  
-</van-datetime-picker>
+/>
 ```
 
 ```javascript
@@ -62,12 +51,6 @@ export default {
       maxDate: new Date(2019, 10, 1),
       currentDate: new Date(2018, 0, 1)
     };
-  },
-
-  methods: {
-    handlePickerChange(picker) {
-      console.log(picker);
-    }
   }
 };
 ```
@@ -83,8 +66,7 @@ export default {
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
-  @change="handlePickerChange">  
-</van-datetime-picker>
+/>
 ```
 :::
 
@@ -98,8 +80,7 @@ export default {
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
-  @change="handlePickerChange">
-</van-datetime-picker>
+/>
 ```
 :::
 
@@ -108,12 +89,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | 每一列可见备选元素的个数 | Number | 5 | - |
-| type | 组件类型 | String | 'datetime' |  'datetime', 'date', 'time' |
-| minDate | 可选的最小日期 | Date | 十年前的 1 月 1 日 | - |
-| maxDate | 可选的最大日期 | Date | 十年后的 12 月 31 日 | - |
-| minHour | 可选的最小小时 | Number | 0 | - |
-| maxHour | 可选的最大小时 | Number | 23 | - |
+| type | 组件类型 | `String` | 'datetime' |  'date', 'time' |
+| minDate | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
+| maxDate | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
+| minHour | 可选的最小小时 | `Number` | `0` | - |
+| maxHour | 可选的最大小时 | `Number` | `23` | - |
+| visibileColumnCount | 每一列可见备选元素的个数 | `Number` | `5` | - |
 
 ### Event
 

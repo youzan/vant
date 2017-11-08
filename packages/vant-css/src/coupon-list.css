@@ -13,20 +13,33 @@
       left: 0;
       width: 100%;
       z-index: 1;
+      padding-right: 85px;
       box-sizing: border-box;
     }
 
+    &__filed {
+      margin: 10px 0;
+      padding: 4px 10px;
+
+      &::after {
+        border-radius: 6px;
+        border-color: #cacaca;
+      }
+    }
+
     &__exchange {
-      top: 6px;
+      top: 10px;
       right: 15px;
+      height: 32px;
+      line-height: 30px;
       position: absolute;
       border-radius: 2px;
     }
 
     &__list {
-      padding: 60px 0;
       max-height: 100%;
       overflow-y: auto;
+      padding: 15px 0 60px;
       box-sizing: border-box;
       -webkit-overflow-scrolling: touch;
 
@@ -64,6 +77,10 @@
       }
     }
 
+    &--with-exchange {
+      padding-top: 60px;
+    }
+
     &__close {
       left: 0;
       bottom: 0;
@@ -73,6 +90,27 @@
       text-align: center;
       position: absolute;
       background-color: $white;
+
+      &:active {
+        background-color: $active-color;
+      }
+    }
+
+    &__empty {
+      padding-top: 100px;
+      text-align: center;
+
+      p {
+        color: $gray-dark;
+        margin: 15px 0;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      img {
+        width: 80px;
+        height: 84px;
+      }
     }
   }
 

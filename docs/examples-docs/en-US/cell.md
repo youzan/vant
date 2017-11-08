@@ -67,7 +67,7 @@ Vue.component(CellGroup.name, CellGroup);
 :::demo Advanced Usage
 ```html
 <van-cell-group>
-  <van-cell value="Text" icon="home" is-link>
+  <van-cell value="Text" icon="shop" is-link>
     <template slot="title">
       <span class="van-cell-text">Title</span>
       <van-tag type="danger">Tag</van-tag>
@@ -92,6 +92,8 @@ Vue.component(CellGroup.name, CellGroup);
 | value | Right text | `String` | - | - |
 | label | Description below the title | `String` | - | - |
 | url | Link | `String` | - | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
 | isLink | Whether to show link icon | `Boolean` | `false` | - |
 | required | Whether to show required mark | `Boolean` | `false` | - |
 

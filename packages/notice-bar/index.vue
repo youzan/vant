@@ -1,11 +1,24 @@
 <template>
-  <div v-show="showNoticeBar" @click="$emit('click')" :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]">
+  <div
+    v-show="showNoticeBar"
+    :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]"
+    :style="barStyle"
+    @click="$emit('click')"
+  >
+    <div class="van-notice-bar__left-icon" v-if="leftIcon">
+      <img :src="leftIcon" />
+    </div>
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
-      <div class="van-notice-bar__content" ref="content" :style="contentStyle" @transitionend="onTransitionEnd">
+      <div
+        ref="content"
+        :class="['van-notice-bar__content', animationClass]"
+        :style="contentStyle"
+        @animationend="onAnimationEnd"
+      >
         <slot>{{ text }}</slot>
       </div>
     </div>
-    <van-icon class="van-notice-bar__icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
+    <van-icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
   </div>
 </template>
 
@@ -23,6 +36,9 @@ export default {
 
   props: {
     text: String,
+    leftIcon: String,
+    color: String,
+    background: String,
     mode: {
       type: String,
       default: '',
@@ -38,16 +54,18 @@ export default {
     },
     speed: {
       type: Number,
-      default: 40
+      default: 50
     }
   },
 
   data() {
     return {
+      wrapWidth: 0,
+      firstRound: true,
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
-      diableTransition: false
+      animationClass: ''
     };
   },
 
@@ -55,12 +73,17 @@ export default {
     iconName() {
       return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
     },
+    barStyle() {
+      return {
+        color: this.color,
+        background: this.background
+      };
+    },
     contentStyle() {
       return {
-        transform: `translate3d(${-this.offsetWidth}px, 0, 0)`,
-        transitionDelay: this.delay + 's',
-        transitionDuration: this.duration + 's',
-        transitionProperty: this.diableTransition ? 'none' : 'all'
+        paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
+        animationDelay: (this.firstRound ? this.delay : 0) + 's',
+        animationDuration: this.duration + 's'
       };
     }
   },
@@ -69,8 +92,10 @@ export default {
     const offsetWidth = this.$refs.content.getBoundingClientRect().width;
     const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
     if (this.scrollable && offsetWidth > wrapWidth) {
+      this.wrapWidth = wrapWidth;
       this.offsetWidth = offsetWidth;
-      this.duration = (offsetWidth + wrapWidth) / this.speed;
+      this.duration = offsetWidth / this.speed;
+      this.animationClass = 'van-notice-bar__play';
     }
   },
 
@@ -78,15 +103,12 @@ export default {
     onClickIcon() {
       this.showNoticeBar = this.mode !== 'closeable';
     },
-    onTransitionEnd() {
-      const { offsetWidth } = this;
-      this.diableTransition = true;
-      this.offsetWidth = 0;
-
-      setTimeout(() => {
-        this.diableTransition = false;
-        this.offsetWidth = offsetWidth;
-      }, 50);
+    onAnimationEnd() {
+      this.firstRound = false;
+      this.$nextTick(() => {
+        this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
+        this.animationClass = 'van-notice-bar__play--infinite';
+      });
     }
   }
 };

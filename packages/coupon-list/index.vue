@@ -1,10 +1,10 @@
 <template>
   <div class="van-coupon-list">
-    <van-cell-group class="van-coupon-list__top">
-      <van-field v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
+    <van-cell-group class="van-coupon-list__top" v-if="showExchangeBar">
+      <van-field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
       <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
     </van-cell-group>
-    <div class="van-coupon-list__list" ref="list">
+    <div :class="['van-coupon-list__list', { 'van-coupon-list--with-exchange': showExchangeBar }]" ref="list">
       <van-coupon-item
         ref="card"
         v-for="(item, index) in coupons"
@@ -20,8 +20,18 @@
         :key="item.id || item.name"
         :data="item"
       />
+      <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
+        <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+        <p>暂无优惠券</p>
+      </div>
     </div>
-    <div class="van-coupon-list__close van-hairline--top" @click="onClickNotUse">{{ closeButtonText }}</div>
+    <div
+      v-show="showCloseButton"
+      class="van-coupon-list__close van-hairline--top"
+      @click="onClickNotUse"
+    >
+      {{ closeButtonText }}
+    </div>
   </div>
 </template>
 
@@ -81,6 +91,14 @@ export default {
     inputPlaceholder: {
       type: String,
       default: '请输入优惠码'
+    },
+    showExchangeBar: {
+      type: Boolean,
+      default: true
+    },
+    showCloseButton: {
+      type: Boolean,
+      default: true
     }
   },
 

@@ -16,7 +16,7 @@
     cursor: pointer;
   }
 
-  input[type="file" i]::-webkit-file-upload-button {
+  input[type="file"]::-webkit-file-upload-button {
     cursor: pointer;
   }
 }

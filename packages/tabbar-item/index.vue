@@ -4,6 +4,7 @@
       <slot name="icon">
         <van-icon v-if="icon" :name="icon" />
       </slot>
+      <div v-if="info" class="van-tabbar-item__info">{{ info }}</div>
     </div>
     <div class="van-tabbar-item__text">
       <slot></slot>
@@ -23,7 +24,8 @@ export default {
 
   props: {
     icon: String,
-    dot: Boolean
+    dot: Boolean,
+    info: String
   },
 
   data() {

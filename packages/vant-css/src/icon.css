@@ -2,19 +2,19 @@
 
 @font-face {
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-6b495bd63f.eot');
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-6b495bd63f.eot?#iefix') format('embedded-opentype'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-6b495bd63f.woff2') format('woff2'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-6b495bd63f.woff') format('woff'),
-       url('https://b.yzcdn.cn/zanui/icon/vant-icon-6b495bd63f.ttf') format('truetype')
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-860d24a3c1.eot');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-860d24a3c1.eot?#iefix') format('embedded-opentype'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-860d24a3c1.woff2') format('woff2'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-860d24a3c1.woff') format('woff'),
+       url('https://b.yzcdn.cn/zanui/icon/vant-icon-860d24a3c1.ttf') format('truetype')
 }
 
 .van-icon {
-    display: inline-block;
+  font-style: normal;
+  display: inline-block;
 }
 .van-icon::before {
   font-family: "vant-icon" !important;
-  font-style: normal;
   font-weight: normal;
   speak: none;
 
@@ -85,7 +85,7 @@
 .van-icon-credit-pay:before { content: '\e824'; } /* '' */
 .van-icon-debit-pay:before { content: '\e825'; } /* '' */
 .van-icon-other-pay:before { content: '\e826'; } /* '' */
-.van-icon-cart:before { content: '\e827'; } /* '' */
+.van-icon-shopping-cart:before { content: '\e827'; } /* '' */
 .van-icon-browsing-history:before { content: '\e828'; } /* '' */
 .van-icon-goods-collect:before { content: '\e829'; } /* '' */
 .van-icon-shop-collect:before { content: '\e82a'; } /* '' */
@@ -123,3 +123,8 @@
 .van-icon-gold-coin:before { content: '\e84a'; } /* '' */
 .van-icon-completed:before { content: '\e84b'; } /* '' */
 .van-icon-value-card:before { content: '\e84c'; } /* '' */
+.van-icon-certificate:before { content: '\e84d'; } /* '' */
+.van-icon-tosend:before { content: '\e84e'; } /* '' */
+.van-icon-sign:before { content: '\e84f'; } /* '' */
+.van-icon-home:before { content: '\e850'; } /* '' */
+.van-icon-phone:before { content: '\e851'; } /* '' */

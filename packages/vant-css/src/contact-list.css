@@ -2,6 +2,10 @@
 
 .van-contact-list {
   height: 100%;
+  overflow-y: auto;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+  background-color: $background-color;
 
   .van-cell__value {
     color: $text-color;
@@ -54,6 +58,10 @@
     .van-icon-add {
       color: $blue;
       font-size: 20px;
+    }
+
+    &:active {
+      background-color: $active-color;
     }
   }
 }

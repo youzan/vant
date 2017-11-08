@@ -30,6 +30,10 @@ export default {
 
   props: {
     autoplay: Number,
+    initialSwipe: {
+      type: Number,
+      default: 0
+    },
     showIndicators: {
       type: Boolean,
       default: true
@@ -42,6 +46,7 @@ export default {
 
   data() {
     return {
+      width: 0,
       offset: 0,
       startX: 0,
       startY: 0,
@@ -49,8 +54,7 @@ export default {
       deltaX: 0,
       swipes: [],
       direction: '',
-      currentDuration: 0,
-      width: window.innerWidth
+      currentDuration: 0
     };
   },
 
@@ -64,6 +68,10 @@ export default {
 
   watch: {
     swipes() {
+      this.initialize();
+    },
+
+    initialSwipe() {
       this.initialize();
     }
   },
@@ -91,9 +99,10 @@ export default {
     initialize() {
       // reset offset when children changes
       clearTimeout(this.timer);
-      this.active = 0;
+      this.width = this.$el.getBoundingClientRect().width;
+      this.active = this.initialSwipe;
       this.currentDuration = 0;
-      this.offset = this.count > 1 ? -this.width : 0;
+      this.offset = this.count > 1 ? -this.width * (this.active + 1) : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });

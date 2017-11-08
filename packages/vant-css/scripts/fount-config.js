@@ -214,9 +214,9 @@ module.exports = {
       css: 'other-pay'
     },
     {
-      keywords: ['cart'],
-      src: '购物车.svg',
-      css: 'cart'
+      keywords: ['shopping-cart'],
+      src: '购物车2.svg',
+      css: 'shopping-cart'
     },
     {
       keywords: ['browsing', 'history'],
@@ -403,6 +403,31 @@ module.exports = {
       keywords: ['value-card'],
       src: '会员余额.svg',
       css: 'value-card'
+    },
+    {
+      keywords: ['certificate'],
+      src: '认证.svg',
+      css: 'certificate'
+    },
+    {
+      keywords: ['tosend'],
+      src: '待发货2.svg',
+      css: 'tosend'
+    },
+    {
+      keywords: ['sign'],
+      src: '已完成2.svg',
+      css: 'sign'
+    },
+    {
+      keywords: ['home'],
+      src: '首页.svg',
+      css: 'home'
+    },
+    {
+      keywords: ['phone'],
+      src: '电话.svg',
+      css: 'phone'
     }
   ]
 };

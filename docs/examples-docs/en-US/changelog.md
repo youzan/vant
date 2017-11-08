@@ -1,5 +1,65 @@
 ## Changelog
 
+### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+`2017-11-06`
+
+**Improvements**
+- add Swipe initialSwipe prop [\#279](https://github.com/youzan/vant/pull/279) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Dialog button text not reset when showed [\#278](https://github.com/youzan/vant/pull/278) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284) [@cookfront](https://github.com/cookfront)
+- fix NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
+`2017-10-30`
+
+**Improvements**
+- Cell support vue-router target route [\#268](https://github.com/youzan/vant/pull/268) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tabbar info display when use icon slot [\#269](https://github.com/youzan/vant/pull/269) [@chenjiahan](https://github.com/chenjiahan)
+- fix Uploader input type [\#265](https://github.com/youzan/vant/pull/265) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+`2017-10-26`
+
+**Improvements**
+- add more icons [\#253](https://github.com/youzan/vant/pull/253) [@pangxie1991](https://github.com/pangxie1991)
+- add document of custom theme [\#251](https://github.com/youzan/vant/pull/251) [@chenjiahan](https://github.com/chenjiahan)
+- add click feedback of buttons in components [\#248](https://github.com/youzan/vant/pull/248) [@chenjiahan](https://github.com/chenjiahan)
+- add more props of NoticeBar [\#254](https://github.com/youzan/vant/pull/254) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Swipe width calc error [\#258](https://github.com/youzan/vant/pull/258) [@chenjiahan](https://github.com/chenjiahan)
+- fix PullRefreash scroll bug when parent is scrollable [\#247](https://github.com/youzan/vant/pull/247) [@GeoffZhu](https://github.com/GeoffZhu)
+- fix CouponList empty info display bug [\#246](https://github.com/youzan/vant/pull/246) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
+`2017-10-25`
+
+**Improvements**
+- add Tabbar info prop [\#245](https://github.com/youzan/vant/pull/245) [@chenjiahan](https://github.com/chenjiahan)
+- add Toast position prop [\#244](https://github.com/youzan/vant/pull/244) [@chenjiahan](https://github.com/chenjiahan)
+- add Coupon showExchangeBar prop [\#243](https://github.com/youzan/vant/pull/243) [@chenjiahan](https://github.com/chenjiahan)
+- add Advanced components english document [\#236](https://github.com/youzan/vant/pull/236) [@Tinysymphony](https://github.com/Tinysymphony)
+- add demo pages in document [\#237](https://github.com/youzan/vant/pull/237) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Address & Contact list style error [\#230](https://github.com/youzan/vant/pull/230) [@chenjiahan](https://github.com/chenjiahan)
+- fix popup style missing when build style entry [\#231](https://github.com/youzan/vant/pull/231) [@chenjiahan](https://github.com/chenjiahan)
+- fix PullRefresh touchcancel event [\#239](https://github.com/youzan/vant/pull/239) [@GeoffZhu](https://github.com/GeoffZhu)
+
+### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+`2017-10-20`
+
+**Improvements**
+- Sku: sku-group slot add event bus [\#226](https://github.com/youzan/vant/pull/226) [@w91](https://github.com/w91)
+- add English documents [\#220](https://github.com/youzan/vant/pull/220) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 `2017-10-18`
 

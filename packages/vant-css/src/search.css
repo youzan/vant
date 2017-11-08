@@ -51,6 +51,10 @@
   &__action-text {
     padding: 0 10px;
     color: $green;
+
+    &:active {
+      background-color: $active-color;
+    }
   }
 
   .van-icon-search {
