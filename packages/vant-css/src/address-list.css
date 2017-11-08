@@ -48,7 +48,7 @@
     position: absolute;
     top: 50%;
     right: 4px;
-    font-size: 24px;
+    font-size: 20px;
     color: $gray-dark;
     transform: translate(0, -50%);
   }

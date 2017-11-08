@@ -108,7 +108,6 @@ const icons = [
   'description',
   'card',
   'gift-card',
-  'coupon',
   'completed',
   'value-card',
   'certificate',
