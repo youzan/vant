@@ -18,21 +18,30 @@ Vue.component(Loading.name, Loading);
 
 ### 代码演示
 
-#### 单色 spinner
+#### 单色圆环
 
-:::demo 单色 spinner
+:::demo 单色圆环
 ```html
 <van-loading type="circle" color="black"></van-loading>
 <van-loading type="circle" color="white"></van-loading>
 ```
 :::
 
-#### 渐变色 spinner
+#### 渐变色圆环
 
-:::demo 渐变色 spinner
+:::demo 渐变色圆环
 ```html
 <van-loading type="gradient-circle" color="black"></van-loading>
 <van-loading type="gradient-circle" color="white"></van-loading>
+```
+:::
+
+#### Spinner
+
+:::demo Spinner
+```html
+<van-loading type="spinner" color="black"></van-loading>
+<van-loading type="spinner" color="white"></van-loading>
 ```
 :::
 
@@ -41,4 +50,4 @@ Vue.component(Loading.name, Loading);
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | color | 颜色 | `String` | `black` | `black` `white` |
-| type | 类型 | `String` | `gradient-circle` | `gradient-circle` `circle` |
+| type | 类型 | `String` | `gradient-circle` | `spinner` `circle` |
