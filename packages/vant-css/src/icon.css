@@ -9,6 +9,7 @@
   display: inline-block;
   font: normal normal normal 14px/1 "vant-icon";
   font-size: inherit;
+  line-height: inherit;
   text-rendering: auto;
 
   &:before {
