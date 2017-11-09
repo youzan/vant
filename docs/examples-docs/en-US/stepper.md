@@ -77,3 +77,5 @@ export default {
 |-----------|-----------|-----------|
 | change | Triggered when value change | value: current value |
 | overlimit | Triggered when click disabled button | - |
+| plus | Triggered when click plus button | - |
+| minus | Triggered when click minus button | - |

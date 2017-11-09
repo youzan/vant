@@ -13,11 +13,11 @@
       @input="$emit('input', $event)"
       @focus="handleFocus"
       @blur="handleBlur"
-      >
-      <template slot="icon">
+    >
+      <div slot="icon">
         <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">完成</span>
         <van-icon v-else-if="showIcon" name="clear"  />
-      </template>
+      </div>
     </van-field>
 
     <van-cell-group class="van-address-edit-detail__suggest-list" v-if="showSearchList">
