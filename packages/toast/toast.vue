@@ -13,7 +13,7 @@
           <div v-if="message" class="van-toast__text">{{ message }}</div>
         </template>
       </div>
-      <div class="van-toast__overlay" v-if="forbidClick" />
+      <div :class="['van-toast__overlay', { 'van-toast__overlay--mask': mask }]" v-if="forbidClick || mask" />
     </div>
   </transition>
 </template>
@@ -50,6 +50,10 @@ export default {
     position: {
       type: String,
       default: 'middle'
+    },
+    mask: {
+      type: Boolean,
+      default: false
     }
   },
 
