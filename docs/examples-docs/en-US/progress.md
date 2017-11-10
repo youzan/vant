@@ -49,6 +49,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 |-----------|-----------|-----------|-------------|-------------|
 | inactive | Whether to be gray | `Boolean` | `false` | - |
 | percentage | Percentage | `Number` | `false` | `0-100` |
+| showPivot | Whether to show text | `Boolean` | `true` | - |
 | pivotText | Text | `String` | percentage | - |
 | color | Color | `String` | `#38f` | hexvalue |
 | textColor | Text color | `String` | `#fff` | hexvalue |
