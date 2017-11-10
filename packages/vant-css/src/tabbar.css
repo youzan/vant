@@ -27,8 +27,14 @@
       margin-bottom: 5px;
       position: relative;
 
+      .van-icon {
+        display: block;
+      }
+
       &-dot {
         &::after {
+          top: 0;
+          right: -8px;
           width: 8px;
           height: 8px;
           content: ' ';
