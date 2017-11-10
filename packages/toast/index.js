@@ -8,6 +8,7 @@ const defaultOptions = {
   type: 'text',
   position: 'middle',
   duration: 3000,
+  mask: false,
   forbidClick: false,
   clear: () => {
     instance.visible = false;

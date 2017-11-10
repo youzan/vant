@@ -7,7 +7,7 @@ export default {
       Toast('我是提示文案，建议不超过十五字~');
     },
     showLoadingToast() {
-      Toast.loading();
+      Toast.loading({ mask: true });
     },
     showSuccessToast() {
       Toast.success('成功文案');
@@ -76,7 +76,7 @@ export default {
 export default {
   methods: {
     showLoadingToast() {
-      Toast.loading();
+      Toast.loading({ mask: true });
     }
   }
 }
@@ -109,7 +109,7 @@ export default {
 
 :::demo Advanced Usage
 ```html
-<van-button @click="showCustomizedToast">#### Advanced Usage</van-button>
+<van-button @click="showCustomizedToast">Advanced Usage</van-button>
 ```
 
 ```javascript
@@ -154,5 +154,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
 | message | 内容 | `String` | `''` | - |
+| position | 位置 | `String` | `middle` | `top` `bottom` |
+| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
 | forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
 | duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |

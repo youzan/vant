@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+`2017-11-08`
+
+**Improvements**
+- Normalize size of all icons [\#292](https://github.com/youzan/vant/pull/292) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview support custom startPosition [\#286](https://github.com/youzan/vant/pull/286) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Sku scroll lock [\#291](https://github.com/youzan/vant/pull/291) [@w91](https://github.com/w91)
+- fix Steps style error when has more than 4 items [\#287](https://github.com/youzan/vant/pull/287) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
 `2017-11-06`
 
