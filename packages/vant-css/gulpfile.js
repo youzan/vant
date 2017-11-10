@@ -35,7 +35,8 @@ gulp.task('compile', () => {
     .src('./src/*.css')
     .pipe(postcss())
     .pipe(cssmin())
-    .pipe(gulp.dest('./lib'));
+    .pipe(gulp.dest('./lib'))
+    .pipe(gulp.dest('../../lib/vant-css/'));
 });
 
 gulp.task('icon-font-ttf', () => {
