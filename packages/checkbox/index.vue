@@ -84,8 +84,7 @@ export default {
     },
 
     isChecked() {
-      const currentValue = this.currentValue;
-      console.log('this.currentValue:', this.currentValue);
+      const { currentValue } = this;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
         return currentValue;
       } else if (currentValue !== null && currentValue !== undefined) {

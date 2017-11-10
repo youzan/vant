@@ -1,5 +1,5 @@
 <template>
-  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" :lock-scroll="true">
+  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" lockOnScroll preventScroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
@@ -12,8 +12,8 @@
           </van-sku-header>
         </slot>
         <div class="van-sku-body scroller" :style="bodyStyle">
-          <slot name="sku-group" :selectedSku="selectedSku">
-            <div v-if="hasSku" class="van-sku-group-container">
+          <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
+            <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
               <div v-for="(skuTreeItem, index) in skuTree"
                 class="van-sku-row-group"
                 :key="index">

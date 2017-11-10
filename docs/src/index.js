@@ -1,28 +1,24 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './ExamplesDocsApp';
+import App from './DocsApp';
 import routes from './router.config';
 import ZanDoc from 'zan-doc';
-import isMobile from './is-mobile';
+import isMobile from './utils/is-mobile';
 
 Vue.use(VueRouter);
 Vue.use(ZanDoc);
 
 const routesConfig = routes();
-routesConfig.push({
-  path: '/',
-  redirect: '/component/quickstart'
-});
 
 const router = new VueRouter({
-  mode: 'history',
-  base: '/zanui/vue/',
+  mode: 'hash',
+  base: '/zanui/vant/',
   routes: routesConfig
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    window.location.replace('/zanui/vue/examples');
+    window.location.replace('/zanui/vant/examples');
   }
   document.title = route.meta.title || document.title;
   next();
@@ -30,7 +26,7 @@ router.beforeEach((route, redirect, next) => {
 
 router.afterEach(() => {
   window.scrollTo(0, 0);
-  window.syncPath();
+  Vue.nextTick(() => window.syncPath());
 });
 
 window.vueRouter = router;

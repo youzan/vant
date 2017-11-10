@@ -1,0 +1,66 @@
+@import './common/var.css';
+
+.van-tabbar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  background-color: #fff;
+
+  &--fixed {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+  }
+
+  &-item {
+    flex: 1;
+    color: #666;
+    display: flex;
+    line-height: 1;
+    font-size: 12px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__icon {
+      font-size: 18px;
+      margin-bottom: 5px;
+      position: relative;
+
+      &-dot {
+        &::after {
+          width: 8px;
+          height: 8px;
+          content: ' ';
+          position: absolute;
+          border-radius: 100%;
+          background-color: $red;
+        }
+      }
+
+      img {
+        height: 18px;
+      }
+    }
+
+    &__info {
+      color: #fff;
+      top: -5px;
+      right: -100%;
+      font-size: 12px;
+      transform: scale(.8);
+      box-sizing: border-box;
+      padding: 0 3px;
+      text-align: center;
+      min-width: 18px;
+      line-height: 18px;
+      border-radius: 9px;
+      background-color: $red;
+      position: absolute;
+    }
+
+    &--active {
+      color: $blue;
+    }
+  }
+}

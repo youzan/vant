@@ -49,4 +49,46 @@ describe('Cell', () => {
     expect(eventStub.calledOnce).to.be.true;
     expect(eventStub.calledWith('click')).to.be.true;
   });
+
+  it('cell with url', () => {
+    wrapper = mount(Cell, {
+      propsData: {
+        url: '#test',
+        replace: false
+      }
+    });
+
+    wrapper.trigger('click');
+
+    expect(window.location.hash).to.equal('#test');
+    window.location.hash = '';
+
+    const length = window.history.length;
+    wrapper.vm.replace = true;
+    wrapper.trigger('click');
+    expect(window.location.hash).to.equal('#test');
+    expect(window.history.length).to.equal(length);
+    window.location.hash = '';
+  });
+
+  it('cell with to', done => {
+    wrapper = mount(Cell, {
+      propsData: {
+        to: '/test',
+        replace: false
+      }
+    });
+    wrapper.vm.$router = {
+      push(path) {
+        wrapper.vm.replace = true;
+        wrapper.trigger('click');
+      },
+      replace(path) {
+        expect(path).to.equal('/test');
+        done();
+      }
+    };
+
+    wrapper.trigger('click');
+  });
 });

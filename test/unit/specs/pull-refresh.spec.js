@@ -102,7 +102,7 @@ describe('PullRefresh', () => {
       }
     });
 
-    window.scrollY = 100;
+    window.scrollTop = 100;
 
     // ignore touch event when not at page top
     triggerTouch(wrapper, 'touchstart', 0, 0);
@@ -110,7 +110,7 @@ describe('PullRefresh', () => {
     triggerTouch(wrapper, 'touchend', 0, 100);
     expect(wrapper.vm.ceiling).to.be.false;
 
-    window.scrollY = 0;
+    window.scrollTop = 0;
     triggerTouch(wrapper, 'touchmove', 0, 100);
     expect(wrapper.vm.ceiling).to.be.true;
   });

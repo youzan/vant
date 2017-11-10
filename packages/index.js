@@ -1,4 +1,5 @@
 import Actionsheet from './actionsheet';
+import AddressEdit from './address-edit';
 import AddressList from './address-list';
 import Area from './area';
 import Badge from './badge';
@@ -11,6 +12,9 @@ import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Col from './col';
+import ContactCard from './contact-card';
+import ContactEdit from './contact-edit';
+import ContactList from './contact-list';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
@@ -46,6 +50,8 @@ import SwipeItem from './swipe-item';
 import Switch from './switch';
 import SwitchCell from './switch-cell';
 import Tab from './tab';
+import Tabbar from './tabbar';
+import TabbarItem from './tabbar-item';
 import Tabs from './tabs';
 import Tag from './tag';
 import Toast from './toast';
@@ -53,9 +59,10 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.9.9';
+const version = '0.10.7';
 const components = [
   Actionsheet,
+  AddressEdit,
   AddressList,
   Area,
   Badge,
@@ -68,6 +75,9 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Col,
+  ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,
@@ -100,6 +110,8 @@ const components = [
   Switch,
   SwitchCell,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabs,
   Tag,
   TreeSelect,
@@ -123,6 +135,7 @@ export {
   install,
   version,
   Actionsheet,
+  AddressEdit,
   AddressList,
   Area,
   Badge,
@@ -135,6 +148,9 @@ export {
   Checkbox,
   CheckboxGroup,
   Col,
+  ContactCard,
+  ContactEdit,
+  ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,
@@ -170,6 +186,8 @@ export {
   Switch,
   SwitchCell,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabs,
   Tag,
   Toast,

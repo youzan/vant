@@ -136,12 +136,15 @@ describe('Field', () => {
 
   it('blur event', (done) => {
     const blur = sinon.spy();
+    const focus = sinon.spy();
     const clickIcon = sinon.spy();
 
     wrapper = mount(FieldWithIcon, {});
     wrapper.vm.$on('blur', blur);
+    wrapper.vm.$on('focus', focus);
 
     wrapper.find('.van-field__icon')[0].trigger('click');
+    wrapper.find('.van-field__control')[0].trigger('focus');
     wrapper.find('.van-field__control')[0].trigger('blur');
 
     expect(blur.calledOnce).to.be.true;

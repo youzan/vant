@@ -15,20 +15,22 @@
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
-      v-on="$listeners"
       ref="textarea"
       class="van-field__control"
       :value="value"
       @input="onInput"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
     />
     <input
       v-else
-      v-bind="$attrs"
-      v-on="$listeners"      
+      v-bind="$attrs"  
       class="van-field__control"
       :type="type"
       :value="value"
       @input="onInput"
+      @focus="$emit('focus')"
+      @blur="$emit('blur')"
     />
     <div
       v-if="hasIcon"
@@ -87,7 +89,10 @@ export default {
   mounted() {
     if (this.autosize && this.type === 'textarea') {
       const el = this.$refs.textarea;
-      el.style.height = el.scrollHeight + 'px';
+      const scrollHeight = el.scrollHeight;
+      if (scrollHeight !== 0) {
+        el.style.height = scrollHeight + 'px';
+      }
       el.style.overflowY = 'hidden';
     }
   },

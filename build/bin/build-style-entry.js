@@ -1,48 +1,39 @@
 /**
- * 生成每个组件目录下的 style 入口
+ * Build style entry of all components
  */
 
 const fs = require('fs-extra');
 const path = require('path');
 const components = require('./get-components')();
-const source = require('../../lib/vant');
+const dependencyTree = require('dependency-tree');
 
 components.forEach(componentName => {
-  const dependencies = analyzeDependencies(componentName);
-  const styleDir = path.join(__dirname, '../../lib/', componentName, '/style');
-  const content = dependencies.map(component => `require('../../vant-css/${component}.css');`);
-  fs.outputFileSync(path.join(styleDir, './index.js'), content.join('\n'));
+  const libDir = path.resolve(__dirname, '../../lib');
+  const content = analyzeDependencies(componentName, libDir).map(component => `require('../../vant-css/${component}.css');`);
+  fs.outputFileSync(path.join(libDir, componentName, './style/index.js'), content.join('\n'));
 });
 
-// 递归分析组件依赖
-// 样式引入顺序：基础样式, 组件依赖样式，组件本身样式
-function analyzeDependencies(componentName) {
+// Analyze component dependencies
+function analyzeDependencies(componentName, libDir) {
   const checkList = ['base'];
-  const search = component => {
-    const componentSource = source[toPascal(component)];  
-    if (componentSource && componentSource.components) {
-      Object.keys(componentSource.components).forEach(name => {
-        name = name.replace('van-', '');
-        if (checkList.indexOf(name) === -1) {
-          search(name);
-        }
-      });
-    }
-    if (checkList.indexOf(component) === -1) {
-      checkList.push(component);
-    }
-  }
-
-  search(componentName);
+  search(dependencyTree({
+    directory: libDir,
+    filename: path.resolve(libDir, componentName, 'index.js'),
+    filter: path => path.indexOf('vant/lib/') !== -1
+  }), checkList);
   return checkList.filter(component => checkComponentHasStyle(component));
 }
 
-// 判断组件是否有样式
-function checkComponentHasStyle(componentName) {
-  const cssPath = path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`);
-  return fs.existsSync(cssPath);
+function search(tree, checkList) {
+  tree && Object.keys(tree).forEach(key => {
+    search(tree[key], checkList);
+    const component = key.split('/vant/lib/')[1].replace('/index.js', '').replace('mixins/', '');
+    if (checkList.indexOf(component) === -1) {
+      checkList.push(component);
+    }
+  });
 }
 
-function toPascal(str) {
-  return ('_' + str).replace(/[_.-](\w|$)/g, (_, x) => x.toUpperCase());
+function checkComponentHasStyle(componentName) {
+  return fs.existsSync(path.join(__dirname, '../../lib/vant-css/', `${componentName}.css`));
 }

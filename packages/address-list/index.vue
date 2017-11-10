@@ -3,7 +3,7 @@
     <van-radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
       <van-cell-group>
         <van-cell v-for="(item, index) in list" :key="item.id">
-          <van-radio :name="item.id" @click="$emit('change', item, index)">
+          <van-radio :name="item.id" @click="$emit('select', item, index)">
             <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
             <div class="van-address-list__address">收货地址：{{ item.address }}</div>
           </van-radio>

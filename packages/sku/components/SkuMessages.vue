@@ -25,8 +25,8 @@
 <script>
 import Field from '../../field';
 import CellGroup from '../../cell-group';
-import validateEmail from 'zan-utils/validate/email';
-import validateNumber from 'zan-utils/validate/number';
+import validateEmail from '../../utils/validate/email';
+import validateNumber from '../../utils/validate/number';
 import { DEFAULT_PLACEHOLDER_MAP } from '../constants';
 
 export default {

@@ -8,7 +8,11 @@
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    transition: .5s ease-out;
+    animation: van-fade-in .3s both;
+  }
+
+  &-overflow-hidden {
+    overflow: hidden !important;
   }
 
   &-popup {

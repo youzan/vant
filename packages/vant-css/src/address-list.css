@@ -27,7 +27,10 @@
   &__group {
     height: 100%;
     overflow-y: scroll;
+    padding-bottom: 40px;
+    box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
+    background-color: $background-color;
   }
 
   &__name {
@@ -45,7 +48,7 @@
     position: absolute;
     top: 50%;
     right: 4px;
-    font-size: 24px;
+    font-size: 20px;
     color: $gray-dark;
     transform: translate(0, -50%);
   }

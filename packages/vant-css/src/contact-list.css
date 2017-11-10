@@ -1,0 +1,67 @@
+@import './common/var.css';
+
+.van-contact-list {
+  height: 100%;
+  overflow-y: auto;
+  padding-bottom: 55px;
+  box-sizing: border-box;
+  background-color: $background-color;
+
+  .van-cell__value {
+    color: $text-color;
+    padding-right: 34px;
+    position: relative;
+  }
+
+  .van-radio__label {
+    margin-left: 32px;
+  }
+
+  .van-radio__input {
+    top: 50%;
+    left: 0;
+    position: absolute;
+    transform: translate(0, -50%);
+  }
+
+  .van-icon-checked {
+    color: $blue;
+  }
+
+  &__text {
+    margin: 0;
+    color: $text-color;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  &__edit {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    font-size: 24px;
+    color: $gray-dark;
+    transform: translate(0, -50%);
+  }
+
+  &__add {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding-left: 15px;
+
+    .van-cell__text {
+      font-size: 16px;
+    }
+
+    .van-icon-add {
+      color: $blue;
+      font-size: 20px;
+    }
+
+    &:active {
+      background-color: $active-color;
+    }
+  }
+}

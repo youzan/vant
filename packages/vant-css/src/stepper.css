@@ -44,6 +44,17 @@
     }
   }
 
+  &__minus,
+  &__plus {
+    &:active {
+      background-color: $active-color;
+    }
+
+    &--disabled:active {
+      background-color: $background-color;
+    }
+  }
+
   &__minus {
     border-radius: 2px 0 0 2px;
 
@@ -79,5 +90,11 @@
     vertical-align: middle;
     text-align: center;
     -webkit-appearance: none;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }

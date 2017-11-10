@@ -10,7 +10,7 @@
       @touchcancel="blurKey"
       @animationend="onAnimationEnd"
     >
-      <div class="van-number-keyboard__title van-hairline--top">
+      <div class="van-number-keyboard__title van-hairline--top" v-if="title">
         <span>{{ title }}</span>
       </div>
       <i 
@@ -36,10 +36,7 @@ export default {
       type: String,
       default: ''
     },
-    title: {
-      type: String,
-      default: '安全输入键盘'
-    },
+    title: String,
     zIndex: {
       type: Number,
       default: 100

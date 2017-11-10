@@ -58,7 +58,10 @@ function getWebpackConfig(testFileName) {
         },
         {
           test: /\.(css|pcss)$/,
-          use: ['style-loader', 'css-loader', 'postcss-loader']
+          use: ['style-loader', 'css-loader', {
+            loader: 'postcss-loader',
+            options: { sourceMap: true }
+          }]
         },
         {
           test: /\.(gif|png|jpe?g)(\?\S*)?$/,
@@ -75,13 +78,16 @@ function getWebpackConfig(testFileName) {
           ]
         },
         {
-          test: /test\/unit\/components\/.*\.vue$|packages\/swipe\/.*\.vue$/,
+          test: /test\/unit\/components\/.*\.vue$|packages\/swipe.*\.vue$/,
           use: [
             {
               loader: 'vue-loader',
               options: {
                 loaders: {
-                  css: ['style-loader', 'css-loader', 'postcss-loader']
+                  css: ['style-loader', 'css-loader', {
+                    loader: 'postcss-loader',
+                    options: { sourceMap: true }
+                  }]
                 }
               }
             }
@@ -89,13 +95,16 @@ function getWebpackConfig(testFileName) {
         },
         {
           test: /packages\/.*\.vue$/,
-          exclude: /packages\/swipe\/.*\.vue$/,
+          exclude: /packages\/swipe.*\.vue$/,
           use: [
             {
               loader: 'vue-loader',
               options: {
                 loaders: {
-                  css: ['style-loader', 'css-loader', 'postcss-loader'],
+                  css: ['style-loader', 'css-loader', {
+                    loader: 'postcss-loader',
+                    options: { sourceMap: true }
+                  }],
                   js: ['isparta-loader']
                 }
               }

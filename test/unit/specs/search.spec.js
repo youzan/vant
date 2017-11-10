@@ -8,7 +8,7 @@ describe('Search', () => {
     wrapper && wrapper.destroy();
   });
 
-  it('create a stepper', () => {
+  it('create a search', () => {
     wrapper = mount(Search);
 
     expect(wrapper.hasClass('van-search')).to.be.true;
@@ -25,54 +25,65 @@ describe('Search', () => {
     expect(wrapper.data().isFocus).to.be.true;
   });
 
-  it('emit change event', (done) => {
-    wrapper = mount(Search);
+  it('create a search with searchText', (done) => {
+    wrapper = mount(Search, {
+      propsData: {
+        value: 'search text'
+      }
+    });
 
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.setData({ value: 'test' });
-    wrapper.update();
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().value).to.be.equal('test');
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('change'));
+      const input = wrapper.find('.van-search__input')[0];
+      expect(input.element.value === 'search text').to.be.true;
       done();
     });
   });
 
-  it('handle clean click', () => {
+  it('emit input event', () => {
     wrapper = mount(Search);
 
-    wrapper.setData({ value: 'test' });
-    expect(wrapper.data().value).to.be.equal('test');
+    const input = wrapper.find('.van-search__input')[0];
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    input.trigger('input', { target: { value: 'search' }});
+
+    expect(eventStub.calledOnce).to.be.true;
+    expect(eventStub.calledWith('input')).to.be.true;
+  });
+
+  it('handle clean click and refocus', (done) => {
+    wrapper = mount(Search);
+    wrapper.setProps({ value: 'test' });
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const input = wrapper.find('.van-search__input')[0];
     input.trigger('focus');
 
     const cleanBtn = wrapper.find('.van-icon-clear')[0];
     cleanBtn.trigger('click');
-    expect(wrapper.data().value).to.equal('');
-    expect(wrapper.data().focusStatus).to.be.true;
+
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('input')).to.be.true;
+      done();
+    });
   });
 
   it('handle cancel click', (done) => {
     wrapper = mount(Search);
 
-    wrapper.setData({ value: 'test' });
-    expect(wrapper.data().value).to.be.equal('test');
+    wrapper.setProps({ value: 'test', showAction: true });
+    expect(wrapper.vm.value).to.be.equal('test');
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const input = wrapper.find('.van-search__input')[0];
-    input.trigger('focus');
-
-    const cancelBtn = wrapper.find('.van-search__cancel')[0];
+    const cancelBtn = wrapper.find('.van-search__action-text')[0];
     cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.data().value).to.be.equal('');
-      expect(wrapper.data().focusStatus).to.be.false;
-      expect(wrapper.data().isFocus).to.be.false;
-      expect(eventStub.calledOnce).to.be.true;
+      expect(wrapper.vm.focusStatus).to.be.false;
+      expect(wrapper.vm.isFocus).to.be.false;
+      expect(eventStub.calledTwice).to.be.true;
+      expect(eventStub.calledWith('input'));
       expect(eventStub.calledWith('change'));
       done();
     });
@@ -84,7 +95,7 @@ describe('Search', () => {
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     const input = wrapper.find('.van-search__input')[0];
-    input.trigger('keyup.enter');
+    input.trigger('keypress.enter');
 
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;
@@ -93,24 +104,17 @@ describe('Search', () => {
     });
   });
 
-  it('create a showcase type search', () => {
-    wrapper = mount(Search, {
-      propsData: {
-        type: 'showcase'
-      }
-    });
-
-    expect(wrapper.hasClass('van-search')).to.be.true;
-    expect(wrapper.hasClass('van-search--showcase')).to.be.true;
+  it('blur after click outside', () => {
+    wrapper = mount(Search);
 
     const input = wrapper.find('.van-search__input')[0];
     input.trigger('focus');
 
-    expect(wrapper.data().isFocus).to.be.true;
+    expect(wrapper.vm.isFocus).to.be.true;
 
     const body = document.body;
     body.click();
-    expect(wrapper.data().isFocus).to.be.false;
-    expect(wrapper.data().focusStatus).to.be.false;
+    expect(wrapper.vm.isFocus).to.be.false;
+    expect(wrapper.vm.focusStatus).to.be.false;
   });
 });
