@@ -30,36 +30,30 @@
 
 <script>
 import Icon from '../icon';
+import RouterLink from '../mixins/router-link';
 
 export default {
   name: 'van-cell',
+
+  mixins: [RouterLink],
 
   components: {
     [Icon.name]: Icon
   },
 
   props: {
-    url: String,
     icon: String,
     title: String,
     label: String,
     isLink: Boolean,
-    replace: Boolean,
     required: Boolean,
-    to: [String, Object],
     value: [String, Number]
   },
 
   methods: {
     onClick() {
       this.$emit('click');
-
-      const { to, url, $router, replace } = this;
-      if (to && $router) {
-        $router[replace ? 'replace' : 'push'](to);
-      } else if (url) {
-        replace ? location.replace(url) : location.href = url;
-      }
+      this.routerLink();
     }
   }
 };

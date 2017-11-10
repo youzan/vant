@@ -14,9 +14,12 @@
 
 <script>
 import Icon from '../icon';
+import RouterLink from '../mixins/router-link';
 
 export default {
   name: 'van-tabbar-item',
+
+  mixins: [RouterLink],
 
   components: {
     [Icon.name]: Icon
@@ -45,6 +48,7 @@ export default {
   methods: {
     onClick() {
       this.$parent.onChange(this.$parent.items.indexOf(this));
+      this.routerLink();
     }
   }
 };
