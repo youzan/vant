@@ -59,6 +59,7 @@ Vue.component(Progress.name, Progress);
 |-----------|-----------|-----------|-------------|-------------|
 | inactive | 是否置灰 | `Boolean` | `false` | - |
 | percentage | 进度百分比 | `Number` | `false` | `0-100` |
+| showPivot | 是否显示进度文字 | `Boolean` | `true` | - |
 | pivotText | 文字显示 | `String` | 百分比文字 | - |
 | color | 进度条颜色 | `String` | `#38f` | hexvalue |
 | textColor | 进度条文字颜色 | `String` | `#fff` | hexvalue |

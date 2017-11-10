@@ -1,25 +1,25 @@
 <template>
   <div class="van-progress">
     <span class="van-progress__portion" :style="portionStyle"></span>
-    <span class="van-progress__pivot" :style="pivotStyle">{{ pivotText }}</span>
+    <span class="van-progress__pivot" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
   </div>
 </template>
 
 <script>
-const DEFAULT_COLOR = '#38f';
-const DEFAULT_TEXT_COLOR = '#fff';
-const INACTIVE_COLOR = '#cacaca';
-
 export default {
   name: 'van-progress',
 
   props: {
+    inactive: Boolean,
     percentage: {
       type: Number,
       required: true,
       validator: value => value >= 0 && value <= 100
     },
-    inactive: Boolean,
+    showPivot: {
+      type: Boolean,
+      default: true
+    },
     pivotText: {
       type: String,
       default() {
@@ -28,17 +28,17 @@ export default {
     },
     color: {
       type: String,
-      default: DEFAULT_COLOR
+      default: '#38f'
     },
     textColor: {
       type: String,
-      default: DEFAULT_TEXT_COLOR
+      default: '#fff'
     }
   },
 
   computed: {
     componentColor() {
-      return this.inactive ? INACTIVE_COLOR : this.color;
+      return this.inactive ? '#cacaca' : this.color;
     },
     pivotStyle() {
       const { percentage } = this;
