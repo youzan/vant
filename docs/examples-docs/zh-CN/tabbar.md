@@ -109,3 +109,6 @@ export default {
 | icon | 图标名称 | `String` | - | Icon 组件中可用的类型 |
 | dot | 是否显示小红点 | `Boolean` | - | - |
 | info | 图标右上角提示信息 | `String` | - | - |
+| url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |
