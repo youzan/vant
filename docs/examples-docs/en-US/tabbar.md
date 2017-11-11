@@ -97,3 +97,6 @@ export default {
 | icon | Icon name | `String` | - | Names from Icon Component |
 | dot | Whether to show red dot | `Boolean` | - | - |
 | info | Info message | `String` | - | - |
+| url | Link | `String` | - | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` | - |

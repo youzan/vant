@@ -1,5 +1,53 @@
 ## 更新日志
 
+## [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7) (2017-11-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.6...v0.10.7)
+
+**Bug Fixes**
+
+- van-tab组件用v-for动态生成，无法左右滑动？ [\#267](https://github.com/youzan/vant/issues/267)
+
+**Issue**
+
+- stepper 当外界修改数值时，不触发change事件。 [\#290](https://github.com/youzan/vant/issues/290)
+- Stepper 步进器 max问题 [\#288](https://github.com/youzan/vant/issues/288)
+- Dialog 弹出框修改confirmButtonText问题 [\#277](https://github.com/youzan/vant/issues/277)
+
+**Improvements**
+
+- \[new feature\] normalize size of all icons [\#292](https://github.com/youzan/vant/pull/292) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] 修复sku弹层锁定滚动 [\#291](https://github.com/youzan/vant/pull/291) ([w91](https://github.com/w91))
+- \[bugfix\] Steps style error when has more than 4 items [\#287](https://github.com/youzan/vant/pull/287) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] ImagePreview support startPosition [\#286](https://github.com/youzan/vant/pull/286) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6) (2017-11-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.5...v0.10.6)
+
+**Bug Fixes**
+
+- tabbar自定义的情况下 无法生成info 是否考虑添加这个功能 [\#249](https://github.com/youzan/vant/issues/249)
+
+**Issue**
+
+- waterfall滚动到底部时无限触发加载 [\#283](https://github.com/youzan/vant/issues/283)
+- swipe [\#282](https://github.com/youzan/vant/issues/282)
+- waterfall瀑布流拉到最底之后无限触发事件 [\#281](https://github.com/youzan/vant/issues/281)
+- Card点击事件无法触发 [\#276](https://github.com/youzan/vant/issues/276)
+- Vant 下载 [\#275](https://github.com/youzan/vant/issues/275)
+- 使用steps步骤条出现最后一个离得很远的问题 [\#273](https://github.com/youzan/vant/issues/273)
+- 请问有DEMO首页的手风琴组件吗？ [\#272](https://github.com/youzan/vant/issues/272)
+- van-swipe组件添加了一个class就无法触摸滚动了 [\#270](https://github.com/youzan/vant/issues/270)
+- Cell的url 只支持 mode: history的形式 [\#266](https://github.com/youzan/vant/issues/266)
+- tabs组件文档有误 [\#264](https://github.com/youzan/vant/issues/264)
+
+**Improvements**
+
+- \[bug fix\]: tabs dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284) ([cookfront](https://github.com/cookfront))
+- \[bugfix\] NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Swipe add 'initialSwipe' prop [\#279](https://github.com/youzan/vant/pull/279) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Dialog should reset button text when showed [\#278](https://github.com/youzan/vant/pull/278) ([chenjiahan](https://github.com/chenjiahan))
+-  \[Doc\] update document site title [\#274](https://github.com/youzan/vant/pull/274) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5) (2017-10-30)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.4...v0.10.5)
 

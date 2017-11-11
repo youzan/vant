@@ -7,7 +7,7 @@
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <van-swipe>
+    <van-swipe :initialSwipe="startPosition">
       <van-swipe-item v-for="(item, index) in images" :key="index">
         <img class="van-image-preview__image" :src="item" >
       </van-swipe-item>
@@ -44,7 +44,8 @@ export default {
 
   data() {
     return {
-      images: []
+      images: [],
+      startPosition: 0
     };
   },
 
@@ -63,7 +64,8 @@ export default {
       this.deltaY = event.touches[0].clientY - this.touchStartY;
     },
 
-    onTouchEnd() {
+    onTouchEnd(event) {
+      event.preventDefault();
       // prevent long tap to close component
       const deltaTime = new Date() - this.touchStartTime;
       if (deltaTime < 100 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {

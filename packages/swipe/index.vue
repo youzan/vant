@@ -69,6 +69,10 @@ export default {
   watch: {
     swipes() {
       this.initialize();
+    },
+
+    initialSwipe() {
+      this.initialize();
     }
   },
 

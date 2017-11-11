@@ -1,5 +1,27 @@
 ## 更新日志
 
+### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+`2017-11-08`
+
+**Improvements**
+- 修正了所有图标尺寸，保持大小统一 [\#292](https://github.com/youzan/vant/pull/292) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview 支持自定义初始位置 [\#286](https://github.com/youzan/vant/pull/286) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Sku 滚动锁定问题 [\#291](https://github.com/youzan/vant/pull/291) [@w91](https://github.com/w91)
+- 修复 Steps 超过四项时样式错误 [\#287](https://github.com/youzan/vant/pull/287) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+`2017-11-06`
+
+**Improvements**
+- 新增 Swipe initialSwipe 属性 [\#279](https://github.com/youzan/vant/pull/279) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Dialog 按钮文字未重置的问题 [\#278](https://github.com/youzan/vant/pull/278) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Tab 动态生成问题 [\#284](https://github.com/youzan/vant/pull/284) [@cookfront](https://github.com/cookfront)
+- 修复 NoticeBar 在页面返回时文字消失的问题 [\#280](https://github.com/youzan/vant/pull/280) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 `2017-10-30`
 

@@ -1,0 +1,22 @@
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: '<%= fontName %>';
+  src: url('https://b.yzcdn.cn/zanui/icon/<%= fontName %>.ttf') format('truetype');
+}
+
+.van-icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 "<%= fontName %>";
+  font-size: inherit;
+  text-rendering: auto;
+
+  &:before {
+    display: inline-block;
+  }
+}
+
+<% _.each(glyphs, function(glyph) { %>.van-<%= cssClass %>-<%= glyph.fileName %>:before {
+  content: "\<%= glyph.codePoint %>";
+}
+<% }); %>

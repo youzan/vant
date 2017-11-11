@@ -4,29 +4,29 @@ import { Toast } from 'packages';
 export default {
   methods: {
     showToast() {
-      Toast('我是提示文案，建议不超过十五字~');
+      Toast('Some messages');
     },
     showLoadingToast() {
-      Toast.loading();
+      Toast.loading({ mask: true });
     },
     showSuccessToast() {
-      Toast.success('成功文案');
+      Toast.success('Success');
     },
     showFailToast() {
-      Toast.fail('失败文案');
+      Toast.fail('Fail');
     },
     showCustomizedToast(duration) {
       const toast = Toast.loading({
         duration: 0,  
         forbidClick: true,
-        message: '倒计时 3 秒'
+        message: '3 seconds'
       });
 
       let second = 3;
       const timer = setInterval(() => {
         second--;
         if (second) {
-          toast.message = `倒计时 ${second} 秒`;
+          toast.message = `${second} seconds`;
         } else {
           clearInterval(timer);
           Toast.clear();
@@ -47,58 +47,58 @@ import { Toast } from 'vant';
 
 ### Usage
 
-#### 文字提示
+#### Text
 
-:::demo 文字提示
+:::demo Text
 ```html
-<van-button @click="showToast">文字提示</van-button>
+<van-button @click="showToast">Show Text</van-button>
 ```
 
 ```javascript
 export default {
   methods: {
     showToast() {
-      Toast('我是提示文案，建议不超过十五字~');
+      Toast('Some messages');
     }
   }
 }
 ```
 :::
 
-#### 加载提示
+#### Loading
 
-:::demo 加载提示
+:::demo Loading
 ```html
-<van-button @click="showLoadingToast">加载提示</van-button>
+<van-button @click="showLoadingToast">Show Loading</van-button>
 ```
 
 ```javascript
 export default {
   methods: {
     showLoadingToast() {
-      Toast.loading();
+      Toast.loading({ mask: true });
     }
   }
 }
 ```
 :::
 
-#### 成功/失败提示
+#### Success/Fail
 
-:::demo 成功/失败提示
+:::demo Success/Fail
 ```html
-<van-button @click="showSuccessToast">成功提示</van-button>
-<van-button @click="showFailToast">失败提示</van-button>
+<van-button @click="showSuccessToast">Show Success</van-button>
+<van-button @click="showFailToast">Show Fail</van-button>
 ```
 
 ```javascript
 export default {
   methods: {
     showSuccessToast() {
-      Toast.success('成功文案');
+      Toast.success('Success');
     },
     showFailToast() {
-      Toast.fail('失败文案');
+      Toast.fail('Fail');
     }
   }
 }
@@ -109,7 +109,7 @@ export default {
 
 :::demo Advanced Usage
 ```html
-<van-button @click="showCustomizedToast">#### Advanced Usage</van-button>
+<van-button @click="showCustomizedToast">Advanced Usage</van-button>
 ```
 
 ```javascript
@@ -117,16 +117,16 @@ export default {
   methods: {
     showCustomizedToast() {
       const toast = Toast.loading({
-        duration: 0,       // 持续展示 toast
-        forbidClick: true, // 禁用背景点击
-        message: '倒计时 3 秒'
+        duration: 0,       // continuous display toast
+        forbidClick: true, // forbid click background
+        message: '3 seconds'
       });
 
       let second = 3;
       const timer = setInterval(() => {
         second--;
         if (second) {
-          toast.message = `倒计时 ${second} 秒`;
+          toast.message = `${second} seconds`;
         } else {
           clearInterval(timer);
           Toast.clear();
@@ -138,21 +138,23 @@ export default {
 ```
 :::
 
-### 方法
+### Methods
 
-| 方法名 | Attribute | 返回值 | 介绍 |
+| Methods | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
-| Toast | `options | message` | toast 实例 | 展示提示 |
-| Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
-| Toast.success | `options | message` | toast 实例 | 展示成功提示 |
-| Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
-| Toast.clear | - | `void` | 关闭提示 |
+| Toast | `options | message` | toast instance | Show toast |
+| Toast.loading | `options | message` | toast instance | Show loading toast |
+| Toast.success | `options | message` | toast instance | Show success toast |
+| Toast.fail | `options | message` | toast instance | Show fail toast |
+| Toast.clear | - | `void` | Close  |
 
 ### Options
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
-| message | 内容 | `String` | `''` | - |
-| forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
-| duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
+| type | Type | `String` | `text` | `loading` `success` `fail` `html` |
+| message | Message | `String` | `''` | - |
+| position | Position | `String` | `middle` | `top` `bottom` |
+| mask | Whether to show mask | `Boolean` | `false` | - |
+| forbidClick | Whether to forbid click background | `Boolean` | `false` | - |
+| duration | Toast duration(ms) | `Number` | `3000` | Toast won't disappear if value is 0 |

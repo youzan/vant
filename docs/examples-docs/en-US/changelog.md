@@ -1,5 +1,27 @@
 ## Changelog
 
+### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+`2017-11-08`
+
+**Improvements**
+- Normalize size of all icons [\#292](https://github.com/youzan/vant/pull/292) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview support custom startPosition [\#286](https://github.com/youzan/vant/pull/286) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Sku scroll lock [\#291](https://github.com/youzan/vant/pull/291) [@w91](https://github.com/w91)
+- fix Steps style error when has more than 4 items [\#287](https://github.com/youzan/vant/pull/287) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+`2017-11-06`
+
+**Improvements**
+- add Swipe initialSwipe prop [\#279](https://github.com/youzan/vant/pull/279) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Dialog button text not reset when showed [\#278](https://github.com/youzan/vant/pull/278) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284) [@cookfront](https://github.com/cookfront)
+- fix NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 `2017-10-30`
 

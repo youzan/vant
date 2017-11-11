@@ -9,7 +9,7 @@ $van-checkbox-size: 20px;
     color: $white;
     display: block;
     line-height: 1;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     pointer-events: none;
     border: 1px solid #aaa;

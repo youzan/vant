@@ -12,7 +12,7 @@
             ref="tabkey"
             @click="handleTabClick(index)"
           >
-            {{ tab.title }}
+            <span>{{ tab.title }}</span>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
         ref="tabkey"
         @click="handleTabClick(index)"
       >
-        {{ tab.title }}
+        <span>{{ tab.title }}</span>
       </div>
     </div>
     <div class="van-tabs__content">

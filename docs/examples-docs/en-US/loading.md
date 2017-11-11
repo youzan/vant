@@ -9,21 +9,30 @@ Vue.component(Loading.name, Loading);
 
 ### Usage
 
-#### Solid color
+#### Solid Circle
 
-:::demo Solid color
+:::demo Solid Circle
 ```html
 <van-loading type="circle" color="black"></van-loading>
 <van-loading type="circle" color="white"></van-loading>
 ```
 :::
 
-#### Gradient color
+#### Gradient Circle
 
-:::demo Gradient color
+:::demo Gradient Circle
 ```html
 <van-loading type="gradient-circle" color="black"></van-loading>
 <van-loading type="gradient-circle" color="white"></van-loading>
+```
+:::
+
+#### Spinner
+
+:::demo Spinner
+```html
+<van-loading type="spinner" color="black"></van-loading>
+<van-loading type="spinner" color="white"></van-loading>
 ```
 :::
 
@@ -32,4 +41,4 @@ Vue.component(Loading.name, Loading);
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | color | Color | `String` | `black` | `black` `white` |
-| type | Type | `String` | `gradient-circle` | `gradient-circle` `circle` |
+| type | Type | `String` | `gradient-circle` | `spinner` `circle` |

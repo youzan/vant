@@ -2,8 +2,12 @@
 module.exports = {
   'zh-CN': {
     header: {
-      Github: 'https://github.com/youzan/vant',
-      English: '#/en-US/'
+      lang: {
+        text: 'En',
+        from: 'zh-CN',
+        to: 'en-US'
+      },
+      github: 'https://github.com/youzan/vant'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
@@ -269,8 +273,12 @@ module.exports = {
   },
   'en-US': {
     header: {
-      Github: 'https://github.com/youzan/vant',
-      中文: '#/zh-CN'
+      lang: {
+        text: '中文',
+        from: 'en-US',
+        to: 'zh-CN'
+      },
+      github: 'https://github.com/youzan/vant'
     },
     footer: {
       github: 'https://github.com/youzan/vant',
