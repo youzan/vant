@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
+`2017-11-11`
+
+**Improvements**
+- Tabbar: support vue-router [\#305](https://github.com/youzan/vant/pull/305) [@chenjiahan](https://github.com/chenjiahan)
+- Stepper: add plus & minus event [\#294](https://github.com/youzan/vant/pull/294) [@chenjiahan](https://github.com/chenjiahan)
+- Progress: add showPivot prop [\#300](https://github.com/youzan/vant/pull/300) [@chenjiahan](https://github.com/chenjiahan)
+- Loading: add spinner type [\#297](https://github.com/youzan/vant/pull/297) [@chenjiahan](https://github.com/chenjiahan)
+- Toast: add mask option [\#296](https://github.com/youzan/vant/pull/296) [@chenjiahan](https://github.com/chenjiahan)
+- add Tab english document [\#308](https://github.com/youzan/vant/pull/308) [@cookfront](https://github.com/cookfront)
+- add Toast english document [\#307](https://github.com/youzan/vant/pull/307) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix npm run dist errors in windows [\#301](https://github.com/youzan/vant/pull/301) [@zlkiarest](https://github.com/lkiarest)
+
 ### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
 `2017-11-08`
 
