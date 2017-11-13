@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
+`2017-11-11`
+
+**Improvements**
+- Tabbar: 支持 vue-router [\#305](https://github.com/youzan/vant/pull/305) [@chenjiahan](https://github.com/chenjiahan)
+- Stepper: 新增 plus & minus 事件 [\#294](https://github.com/youzan/vant/pull/294) [@chenjiahan](https://github.com/chenjiahan)
+- Progress: 新增 showPivot 属性 [\#300](https://github.com/youzan/vant/pull/300) [@chenjiahan](https://github.com/chenjiahan)
+- Loading: 新增 spinner 类型 [\#297](https://github.com/youzan/vant/pull/297) [@chenjiahan](https://github.com/chenjiahan)
+- Toast: 新增 mask 选项 [\#296](https://github.com/youzan/vant/pull/296) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Tab 英文文档 [\#308](https://github.com/youzan/vant/pull/308) [@cookfront](https://github.com/cookfront)
+- 新增 Toast 英文文档 [\#307](https://github.com/youzan/vant/pull/307) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 npm run dist 在 windows 下报错的问题 [\#301](https://github.com/youzan/vant/pull/301) [@zlkiarest](https://github.com/lkiarest)
+
 ### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
 `2017-11-08`
 

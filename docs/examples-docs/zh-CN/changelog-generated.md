@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.10.8](https://github.com/youzan/vant/tree/v0.10.8) (2017-11-11)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.7...v0.10.8)
+
+**Issue**
+
+- 直接引入CDN使用vant, area组件不可用 [\#304](https://github.com/youzan/vant/issues/304)
+- Area JSON  [\#303](https://github.com/youzan/vant/issues/303)
+- 最新版在windows下build会报错，还是路径分隔符的问题。。 [\#298](https://github.com/youzan/vant/issues/298)
+- 开发模式下使用轮播组件懒加载方式 页面至少等待3S 才会正确显示swipe高度 [\#295](https://github.com/youzan/vant/issues/295)
+- 按钮的禁止后，如何开启 [\#293](https://github.com/youzan/vant/issues/293)
+- Area - 省市区选择建议 [\#289](https://github.com/youzan/vant/issues/289)
+-  ImagePreview 图片预览 多张图片时，点击中间的某一张，放大后仍然从第一张开始 [\#271](https://github.com/youzan/vant/issues/271)
+
+**Improvements**
+
+- \[Doc\]: add tab english docs [\#308](https://github.com/youzan/vant/pull/308) ([cookfront](https://github.com/cookfront))
+- \[Doc\] add toast english document [\#307](https://github.com/youzan/vant/pull/307) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] update document header style [\#306](https://github.com/youzan/vant/pull/306) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Tab support vue-router [\#305](https://github.com/youzan/vant/pull/305) ([chenjiahan](https://github.com/chenjiahan))
+- 修复 windows 平台 run dist 出现异常的问题 [\#301](https://github.com/youzan/vant/pull/301) ([lkiarest](https://github.com/lkiarest))
+- \[new feature\] progress add showPivot prop [\#300](https://github.com/youzan/vant/pull/300) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add spinner type loading [\#297](https://github.com/youzan/vant/pull/297) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] toast add mask option [\#296](https://github.com/youzan/vant/pull/296) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Stepper add plus & minus event [\#294](https://github.com/youzan/vant/pull/294) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7) (2017-11-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.6...v0.10.7)
 

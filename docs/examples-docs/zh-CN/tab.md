@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     onClickDisabled() {
-      Toast('Disabled!')
+      Toast('Disabled!');
     },
 
     handleTabClick(index) {
@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-## Tab 标签页
+## Tabs 标签页
 
 ### 使用指南
 ``` javascript
@@ -126,7 +126,7 @@ Vue.component(Tabs.name, Tabs);
 
 #### 禁用tab
 
-在对应的`van-tab`上设置`disabled`属性即可，如果需要监听禁用事件，可以监听`disabled`事件。
+在对应的`van-tab`上设置`disabled`属性即可。如果需要监听禁用事件，可以在`van-tabs`上监听`disabled`事件。
 
 :::demo 禁用tab
 ```html
@@ -235,10 +235,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
 |-----------|-----------|-----------|-------------|-------------|
-| classtype | 两种UI | `String` | `line` |     `line`, `card` |
+| type | 两种UI | `String` | `line` |     `line`, `card` |
 | active | 默认激活的tab | `String`, `Number` | `0` | - |
-| navclass | tabs的内部nav上的自定义classname | `String` | - | - |
 | duration | 切换tab的动画时间 | `Number` | `0.3` | - | - |
+| swipeThreshold | 滚动阀值，默认是超过4个tab时标签页可滚动，通过这个属性可以设置超过多少个可滚动 | `Number` | `4` | - | - |
 
 
 ### van-tab API
