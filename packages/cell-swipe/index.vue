@@ -57,8 +57,8 @@ export default {
 
   methods: {
     resetSwipeStatus() {
-      this.swiping = false; // 是否正在拖动
-      this.opened = true; // 记录是否滑动左右 或者 注册
+      this.swiping = false;
+      this.opened = true;
     },
 
     swipeMove(offset = 0) {

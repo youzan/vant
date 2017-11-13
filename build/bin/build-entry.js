@@ -56,6 +56,7 @@ Components.forEach(name => {
     // directives
     'Lazyload',
     'Waterfall',
+    'Locale',
 
     // services
     'Dialog',

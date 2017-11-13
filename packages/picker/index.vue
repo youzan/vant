@@ -2,8 +2,8 @@
   <div class="van-picker">
     <div class="van-picker__toolbar van-hairline--top-bottom" v-show="showToolbar">
       <slot>
-        <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">取消</a>
-        <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">完成</a>
+        <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">{{ $t('cancel') }}</a>
+        <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">{{ $t('confirm') }}</a>
         <div v-if="title" class="van-picker__title">{{ title }}</div>
       </slot>
     </div>
@@ -25,12 +25,15 @@
 </template>
 
 <script>
-import PickerColumn from './picker-column';
+import PickerColumn from './PickerColumn';
+import { i18n } from '../locale';
 
 const DEFAULT_ITEM_HEIGHT = 44;
 
 export default {
   name: 'van-picker',
+
+  mixins: [i18n],
 
   components: {
     [PickerColumn.name]: PickerColumn
