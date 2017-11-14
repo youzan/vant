@@ -13,7 +13,8 @@
   &__input-wrap {
     position: relative;
     flex: 1;
-    height: 16px;
+    height: 34px;
+    box-sizing: border-box;
     padding: 8px 24px 8px 35px;
     border: 1px solid $gray-light;
     border-radius: 4px;
