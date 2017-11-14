@@ -1,15 +1,17 @@
 export default {
-  contactCard: {
+  confirm: 'Confirm',
+  cancel: 'Cancel',
+  vanContactCard: {
     name: 'Name',
     tel: 'Phone',
     addText: 'Add contact info'
   },
-  contactList: {
+  vanContactList: {
     name: 'Name',
     tel: 'Phone',
     addText: 'Add new contact'
   },
-  contactEdit: {
+  vanContactEdit: {
     name: 'Name',
     namePlaceholder: 'Name',
     nameEmpty: 'Name can not be empty',
@@ -21,20 +23,9 @@ export default {
     delete: 'Delete',
     confirmDelete: 'Are you sure you want to delete this contact?'
   },
-  dialog: {
-    confirm: 'Confirm',
-    cancel: 'Cancel'
-  },
-  picker: {
-    confirm: 'Confirm',
-    cancel: 'Cancel'
-  },
-  pullRefresh: {
+  vanPullRefresh: {
     pullingText: 'Pull to refresh...',
     loosingText: 'Loose to refresh...',
     loadingText: 'Loading...'
-  },
-  search: {
-    cancel: 'cancel'
   }
 };

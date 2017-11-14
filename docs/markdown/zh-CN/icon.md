@@ -1,3 +1,35 @@
+<style>
+.demo-icon {
+  font-size: 0;
+
+  .examples {
+    max-height: none;
+  }
+
+  .van-col {
+    text-align: center;
+    height: 100px;
+    float: none;
+    display: inline-block;
+
+    .van-icon {
+      display: block;
+    }
+  }
+
+  .van-icon {
+    display: none;
+    font-size: 32px;
+    margin: 15px 0;
+    color: rgba(69, 90, 100, .8);
+  }
+
+  span {
+    font-size: 14px;
+  }
+} 
+</style>
+
 <script>
 import Vue from 'vue';
 
@@ -76,7 +108,6 @@ const icons = [
   'description',
   'card',
   'gift-card',
-  'coupon',
   'completed',
   'value-card',
   'certificate',
@@ -106,7 +137,7 @@ export default {
     const IconList = new IconListConstructor({
       el: document.createElement('div')  
     });
-    const block = document.querySelector('.zan-doc-demo-block');
+    const block = document.querySelector('.van-doc-demo-block');
     if (block) {
       block.appendChild(IconList.$el);
     }
@@ -114,21 +145,21 @@ export default {
 };
 </script>
 
-## Icon
+## Icon 图标
 
-### Install
+### 使用指南
 ``` javascript
 import { Icon } from 'vant';
 
 Vue.component(Icon.name, Icon);
 ```
 
-### Usage
+### 代码演示
 
-#### Basic Usage
-View all usable icons on the right.
+#### 基础用法
 
-:::demo Icon List
+设置`name`属性为对应的图标名称即可，所有可用的图标名称见右侧列表
+:::demo 图标列表
 ```html
 <van-icon name="success" />
 ```
@@ -136,6 +167,6 @@ View all usable icons on the right.
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| name | Icon name | `String` | `''` | - |
+| name | icon名称 | `String` | `''` | - |

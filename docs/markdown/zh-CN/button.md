@@ -14,11 +14,11 @@
     }
   }
 
-  .zan-doc-demo-block {
+  .van-doc-demo-block {
     padding: 0 15px;
   }
 
-  .zan-doc-demo-block__subtitle {
+  .van-doc-demo-block__subtitle {
     padding-left: 0;
   }
 }

@@ -1,4 +1,4 @@
-import locale from '../../../packages/locale';
+import Locale from '../../../packages/locale';
 import zhCN from '../../../packages/locale/lang/zh-CN';
 import enUS from '../../../packages/locale/lang/en-US';
 
@@ -12,15 +12,9 @@ let defaultLang = 'en-US';
 if (userLang.indexOf('zh-') !== -1) {
   defaultLang = 'zh-CN';
 }
-
-let currentLang = defaultLang;
-
-export function getLang() {
-  return currentLang;
-}
+setLang(defaultLang);
 
 export function setLang(lang) {
   window.localStorage.setItem('VANT_LANGUAGE', lang);
-  locale.use(langMap[lang]);
-  currentLang = lang;
+  Locale.use(lang, langMap[lang]);
 }

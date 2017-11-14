@@ -1,3 +1,4 @@
+// This file is auto gererated by build/bin/build-entry.js
 import Actionsheet from './actionsheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
@@ -27,6 +28,7 @@ import Icon from './icon';
 import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
 import Loading from './loading';
+import Locale from './locale';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import NumberKeyboard from './number-keyboard';
@@ -118,15 +120,12 @@ const components = [
   Uploader
 ];
 
-const install = function(Vue) {
-  if (install.installed) return;
-
+const install = Vue => {
   components.forEach(component => {
     Vue.component(component.name, component);
   });
 };
 
-/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
@@ -163,6 +162,7 @@ export {
   ImagePreview,
   Lazyload,
   Loading,
+  Locale,
   NavBar,
   NoticeBar,
   NumberKeyboard,
@@ -195,6 +195,7 @@ export {
   Uploader,
   Waterfall
 };
+
 export default {
   install,
   version

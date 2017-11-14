@@ -16,8 +16,8 @@
     box-sizing: border-box;
   }
 
-  .zan-doc-demo-block__title,
-  .zan-doc-demo-block__subtitle {
+  .van-doc-demo-block__title,
+  .van-doc-demo-block__subtitle {
     padding-left: 0;
   }
 }

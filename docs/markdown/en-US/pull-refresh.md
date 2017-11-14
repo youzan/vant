@@ -23,7 +23,7 @@ export default {
 
   mounted() {
     const head = document.querySelector('.van-pull-refresh__head');
-    head.insertAdjacentHTML('afterend', '<h1 class="zan-doc-demo-block__title">PullRefresh</h1>');
+    head.insertAdjacentHTML('afterend', '<h1 class="van-doc-demo-block__title">PullRefresh</h1>');
   }
 }
 </script>

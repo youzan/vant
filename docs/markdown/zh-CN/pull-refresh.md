@@ -1,7 +1,7 @@
 <style>
 .demo-pull-refresh {
-  .zan-doc-demo-block__title,
-  .zan-doc-demo-block__subtitle {
+  .van-doc-demo-block__title,
+  .van-doc-demo-block__subtitle {
     display: none;
   }
 
@@ -9,7 +9,7 @@
     height: 450px;
     background-color: #fff;
     
-    .zan-doc-demo-block__title {
+    .van-doc-demo-block__title {
       display: block;
     }
     
@@ -45,7 +45,7 @@ export default {
 
   mounted() {
     const head = document.querySelector('.van-pull-refresh__head');
-    head.insertAdjacentHTML('afterend', '<h1 class="zan-doc-demo-block__title">PullRefresh 下拉刷新</h1>');
+    head.insertAdjacentHTML('afterend', '<h1 class="van-doc-demo-block__title">PullRefresh 下拉刷新</h1>');
   }
 }
 </script>

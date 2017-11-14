@@ -1,15 +1,17 @@
 export default {
-  contactCard: {
+  confirm: '确认',
+  cancel: '取消',
+  vanContactCard: {
     name: '联系人',
     tel: '联系电话',
     addText: '添加订单联系人信息'
   },
-  contactList: {
+  vanContactList: {
     name: '联系人',
     tel: '联系电话',
     addText: '新建联系人'
   },
-  contactEdit: {
+  vanContactEdit: {
     name: '联系人',
     namePlaceholder: '名字',
     nameEmpty: '请填写名字',
@@ -21,20 +23,12 @@ export default {
     delete: '删除联系人',
     confirmDelete: '确定要删除这个联系人么'
   },
-  dialog: {
-    confirm: '确认',
-    cancel: '取消'
+  vanPicker: {
+    confirm: '完成'
   },
-  picker: {
-    confirm: '完成',
-    cancel: '取消'
-  },
-  pullRefresh: {
+  vanPullRefresh: {
     pullingText: '下拉即可刷新...',
     loosingText: '释放即可刷新...',
     loadingText: '加载中...'
-  },
-  search: {
-    cancel: '取消'
   }
 };
