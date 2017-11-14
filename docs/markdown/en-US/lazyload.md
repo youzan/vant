@@ -42,7 +42,6 @@ Vue.use(Lazyload, options);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <img v-for="img in imageList" v-lazy="img">
 ```
@@ -59,52 +58,21 @@ export default {
   }
 }
 ```
-:::
 
-#### Background Image
+#### Lazyload Background Image
 Use `v-lazy:background-image` to set background url, and declare the height of the container.
 
-:::demo Background Image
 ```html
-<div v-for="img in backgroundImageList" v-lazy:background-image="img" />
+<div v-for="img in imageList" v-lazy:background-image="img" />
 ```
-
-```javascript
-export default {
-  data() {
-    return {
-      backgroundImageList: [
-        'https://img.yzcdn.cn/1.jpg',
-        'https://img.yzcdn.cn/2.jpg'
-      ]
-    };
-  }
-}
-```
-:::
 
 #### Lazyload Component
 
-:::demo Lazyload Component
 ```html
 <lazy-component>
-  <img v-for="img in componentImageList" v-lazy="img">
+  <img v-for="img in imageList" v-lazy="img">
 </lazy-component>
 ```
-
-```javascript
-export default {
-  data() {
-    return {
-      componentImageList: [
-        'https://img.yzcdn.cn/1.jpg',
-        'https://img.yzcdn.cn/2.jpg'
-      ]
-    };
-  }
-}
-```
-:::
 
 ### Options
 

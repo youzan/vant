@@ -1,29 +1,3 @@
-<style>
-.demo-button {
-  .van-button {
-    user-select: none;
-
-    &--large,
-    &--bottom-action {
-      margin-bottom: 15px;
-    }
-
-    &--small,
-    &--normal {
-      margin-right: 10px;
-    }
-  }
-
-  .van-doc-demo-block {
-    padding: 0 15px;
-  }
-
-  .van-doc-demo-block__subtitle {
-    padding-left: 0;
-  }
-}
-</style>
-
 ## Button 按钮
 
 ### 使用指南
@@ -39,74 +13,62 @@ Vue.component(Button.name, Button);
 
 支持`default`、`primary`、`danger`三种类型，默认为`default`
 
-:::demo 按钮类型
 ```html
 <van-button type="default">Default</van-button>
 <van-button type="primary">Primary</van-button>
 <van-button type="danger">Danger</van-button>
 ```
-:::
 
 #### 按钮尺寸
 
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
-:::demo 按钮尺寸
 ```html 
 <van-button size="large">Large</van-button>
 <van-button size="normal">Normal</van-button>
 <van-button size="small">Small</van-button>
 <van-button size="mini">Mini</van-button>
 ```
-:::
 
 #### 禁用状态
 
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
-:::demo 禁用状态
 ```html
 <van-button disabled>Diabled</van-button>
 ```
-:::
 
 #### 加载状态
 
-:::demo 加载状态
 ```html 
 <van-button loading></van-button>
 <van-button loading type="primary"></van-button>
 ```
-:::
 
 #### 自定义按钮标签
 
 按钮标签默认为`button`，可以使用`tag`属性来修改按钮标签
 
-:::demo 自定义按钮标签
 ```html 
 <van-button tag="a" href="https://www.youzan.com" target="_blank">
-  a 标签按钮
+  按钮
 </van-button>
 ```
-:::
 
 #### 页面底部操作按钮
 
-:::demo 页面底部操作按钮
 ```html 
-<van-button type="primary" bottom-action>立即购买</van-button>
+<van-button type="primary" bottom-action>按钮</van-button>
 
 <van-row>
   <van-col span="12">
-    <van-button bottom-action>加入购物车</van-button>
+    <van-button bottom-action>按钮</van-button>
   </van-col>
   <van-col span="12">
-    <van-button type="primary" bottom-action>立即购买</van-button>
+    <van-button type="primary" bottom-action>按钮</van-button>
   </van-col>
 </van-row>
 ```
-:::
 
 ### API
 

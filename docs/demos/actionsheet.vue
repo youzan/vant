@@ -1,5 +1,5 @@
 <template>
-  <demo-section name="actionsheet">
+  <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
       <van-actionsheet v-model="show1" :actions="actions" />
@@ -21,8 +21,6 @@
 
 <script>
 export default {
-  name: 'demo-actionsheet',
-
   i18n: {
     'zh-CN': {
       button1: '弹出 Actionsheet',

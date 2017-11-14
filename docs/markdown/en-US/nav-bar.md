@@ -11,35 +11,31 @@ Vue.component(NavBar.name, NavBar);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-nav-bar
   title="Title"
-  left-text="Back"
-  right-text="Button"
-  left-arrow
+  leftText="Back"
+  rightText="Button"
+  leftArrow
 />
 ```
-:::
 
 #### Advanced Usage
 
-:::demo Advanced Usage
 ```html
-<van-nav-bar title="Title" left-text="Back" left-arrow>
+<van-nav-bar title="Title" leftText="Back" leftArrow>
   <van-icon name="search" slot="right" />
 </van-nav-bar>
 ```
-:::
 
 
 ### API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | title | Title | `String` | `''` | - |
-| left-text | Left Text | `String` | `''` | - |
-| right-text | Right Text | `String` | `''` | - |
-| left-arrow | Whether to show left arrow | `Boolean` | `false` | - |
+| leftText | Left Text | `String` | `''` | - |
+| rightText | Right Text | `String` | `''` | - |
+| leftArrow | Whether to show left arrow | `Boolean` | `false` | - |
 | fixed | Whether to fixed top | `Boolean` | `false` | - |
 
 ### Slot

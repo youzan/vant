@@ -1,38 +1,3 @@
-<style>
-.demo-badge {
-  .van-badge-group {
-    width: auto;
-    margin: 0 15px;
-    padding: 20px 0;
-    background-color: #fff;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  .van-badge {
-    width: 85px;
-    margin: 0 auto;
-  }
-}
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      activeKey: 0
-    };
-  },
-  methods: {
-    onClick(key) {
-      this.activeKey = key;
-    }
-  }
-};
-</script>
-
 ## Badge 徽章
 
 ### 使用指南
@@ -48,7 +13,6 @@ Vue.component(Badge.name, Badge);
 
 通过在`van-badge-group`上设置`active-key`属性来控制选中的`badge`
 
-:::demo 基础用法
 ```html
 <van-badge-group :active-key="activeKey">
   <van-badge title="热销榜" @click="onClick"></van-badge>
@@ -72,8 +36,6 @@ export default {
   }
 };
 ```
-:::
-
 
 ### BadgeGroup API
 

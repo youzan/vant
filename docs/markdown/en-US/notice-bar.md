@@ -11,28 +11,23 @@ Vue.component(NoticeBar.name, NoticeBar);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-notice-bar
   text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily."
-  left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+  leftIcon="https://img.yzcdn.cn/1.png"
 />
 ```
-:::
 
 #### Disable scroll
 
-:::demo Disable scroll
 ```html
 <van-notice-bar :scrollable="false">
   Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
 </van-notice-bar>
 ```
-:::
 
 #### Mode
 
-:::demo Mode
 ```html
 <van-notice-bar mode="closeable">
   Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
@@ -42,7 +37,6 @@ Vue.component(NoticeBar.name, NoticeBar);
   Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
 </van-notice-bar>
 ```
-:::
 
 ### API
 

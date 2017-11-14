@@ -7761,9 +7761,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-vant-doc@^0.3.13:
-  version "0.3.13"
-  resolved "https://registry.npmjs.org/vant-doc/-/vant-doc-0.3.13.tgz#7e6c27718ef63ab8b3f12ebd4b6cbf983cc2c1be"
+vant-doc@0.3.14:
+  version "0.3.14"
+  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-0.3.14.tgz#b62724af7bfe1188513d30074e77307534dfff13"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"

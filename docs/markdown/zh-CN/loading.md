@@ -1,12 +1,3 @@
-<style>
-.demo-loading {
-  .van-loading {
-    display: inline-block;
-    margin: 10px 0 10px 20px;
-  }
-}
-</style>
-
 ## Loading 加载
 
 ### 使用指南
@@ -20,30 +11,24 @@ Vue.component(Loading.name, Loading);
 
 #### 单色圆环
 
-:::demo 单色圆环
 ```html
-<van-loading type="circle" color="black"></van-loading>
-<van-loading type="circle" color="white"></van-loading>
+<van-loading type="circle" color="black" />
+<van-loading type="circle" color="white" />
 ```
-:::
 
 #### 渐变色圆环
 
-:::demo 渐变色圆环
 ```html
-<van-loading type="gradient-circle" color="black"></van-loading>
-<van-loading type="gradient-circle" color="white"></van-loading>
+<van-loading type="gradient-circle" color="black" />
+<van-loading type="gradient-circle" color="white" />
 ```
-:::
 
 #### Spinner
 
-:::demo Spinner
 ```html
-<van-loading type="spinner" color="black"></van-loading>
-<van-loading type="spinner" color="white"></van-loading>
+<van-loading type="spinner" color="black" />
+<van-loading type="spinner" color="white" />
 ```
-:::
 
 ### API
 

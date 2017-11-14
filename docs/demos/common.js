@@ -26,14 +26,24 @@ Vue.component('demo-section', DemoSection);
 
 Locale.add({
   'zh-CN': {
+    tag: '标签',
+    desc: '描述信息',
+    back: '返回',
     title: '标题',
+    status: '状态',
+    button: '按钮',
     option: '选项',
     content: '内容',
     basicUsage: '基础用法',
     advancedUsage: '高级用法'
   },
   'en-US': {
+    tag: 'Tag',
+    desc: 'Description',
+    back: 'Back',
     title: 'Title',
+    status: 'Status',
+    button: 'Button',
     option: 'Option',
     content: 'Content',
     basicUsage: 'Basic Usage',

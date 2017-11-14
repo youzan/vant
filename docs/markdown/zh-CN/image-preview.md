@@ -1,32 +1,3 @@
-<style>
-.demo-image-preview {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-.van-image-preview {
-  img {
-    pointer-events: none;
-  }
-}
-</style>
-
-<script>
-import { ImagePreview } from 'packages';
-
-export default {
-  methods: {
-    showImagePreview(position) {
-      ImagePreview([
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
-        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
-      ], typeof position === 'number' ? position : 0);
-    }
-  }
-};
-</script>
-
 ## ImagePreview 图片预览
 
 ### 使用指南
@@ -41,45 +12,21 @@ import { ImagePreview } from 'vant';
 
 #### 基础用法
 
-:::demo 基础用法
-```html
-<van-button @click="showImagePreview">预览图片</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    showImagePreview() {
-      ImagePreview([
-        'https://img.yzcdn.cn/1.jpg',
-        'https://img.yzcdn.cn/2.jpg'
-      ]);
-    }
-  }
-};
+ImagePreview([
+  'https://img.yzcdn.cn/1.jpg',
+  'https://img.yzcdn.cn/2.jpg'
+]);
 ```
-:::
 
 #### 指定初始位置
 
-:::demo 指定初始位置
-```html
-<van-button @click="showImagePreview(1)">指定初始位置</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    showImagePreview(startPosition) {
-      ImagePreview([
-        'https://img.yzcdn.cn/1.jpg',
-        'https://img.yzcdn.cn/2.jpg'
-      ], startPosition);
-    }
-  }
-};
+ImagePreview([
+  'https://img.yzcdn.cn/1.jpg',
+  'https://img.yzcdn.cn/2.jpg'
+], 1);
 ```
-:::
 
 ### 方法参数
 

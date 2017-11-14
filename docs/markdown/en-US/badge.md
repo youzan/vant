@@ -1,18 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      activeKey: 0
-    };
-  },
-  methods: {
-    onClick(key) {
-      this.activeKey = key;
-    }
-  }
-};
-</script>
-
 ## Badge
 
 ### Install
@@ -25,11 +10,10 @@ Vue.component(Badge.name, Badge);
 ### Usage
 
 #### Basic Usage
-Use `active-key` prop to set index of chosen 'badge'
+Use `activeKey` prop to set index of chosen 'badge'
 
-:::demo Basic Usage
 ```html
-<van-badge-group :active-key="activeKey">
+<van-badge-group :activeKey="activeKey">
   <van-badge title="Title" @click="onClick"></van-badge>
   <van-badge title="Title" @click="onClick" info="8"></van-badge>
   <van-badge title="Title" @click="onClick" info="99"></van-badge>
@@ -51,13 +35,12 @@ export default {
   }
 };
 ```
-:::
 
 ### BadgeGroup API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| active-key | Index of chosen badge | `String | Number` | `0` | - |
+| activeKey | Index of chosen badge | `String | Number` | `0` | - |
 
 ### Badge API
 | Attribute | Description | Type | Default | Accepted Values |

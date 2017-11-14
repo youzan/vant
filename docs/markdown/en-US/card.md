@@ -1,13 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      imageURL: '//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg'
-    }
-  }
-}
-</script>
-
 ## Card
 
 ### Install
@@ -21,7 +11,6 @@ Vue.component(Card.name, Card);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-card
   title="Title"
@@ -31,12 +20,10 @@ Vue.component(Card.name, Card);
   :thumb="imageURL"
 />
 ```
-:::
 
 #### Advanced Usage
 Use `slot` to custom content.
 
-:::demo Advanced Usage
 ```html
 <van-card
   title="Title"
@@ -51,7 +38,6 @@ Use `slot` to custom content.
   </div>
 </van-card>
 ```
-:::
 
 ### API
 

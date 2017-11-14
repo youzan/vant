@@ -1,13 +1,3 @@
-<script>
-export default {
-  methods: {
-    handleClick() {
-      console.log('cell click');
-    }
-  }
-};
-</script>
-
 ## Cell
 
 ### Install
@@ -22,66 +12,56 @@ Vue.component(CellGroup.name, CellGroup);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-cell-group>
-  <van-cell title="Title" value="Text"></van-cell>
-  <van-cell title="Title" value="Text" label="Description"></van-cell>
+  <van-cell title="Cell title" value="Content"></van-cell>
+  <van-cell title="Cell title" value="Content" label="Description"></van-cell>
 </van-cell-group>
 ```
-:::
 
 #### Value only
 
-:::demo Value only
 ```html
 <van-cell-group>
-  <van-cell value="Text"></van-cell>
+  <van-cell value="Content"></van-cell>
 </van-cell-group>
 ```
-:::
 
 #### Left Icon
 
-:::demo Left Icon
 ```html
 <van-cell-group>
-  <van-cell title="Title" icon="location"></van-cell>
+  <van-cell title="Cell title" icon="location"></van-cell>
 </van-cell-group>
 ```
-:::
 
 #### Link
 
-:::demo Link
 ```html
 <van-cell-group>
-  <van-cell title="Title" is-link></van-cell>
-  <van-cell title="Title" is-link value="Text"></van-cell>
+  <van-cell title="Cell title" is-link></van-cell>
+  <van-cell title="Cell title" is-link value="Content"></van-cell>
 </van-cell-group>
 ```
-:::
 
 #### Advanced Usage
 
-:::demo Advanced Usage
 ```html
 <van-cell-group>
-  <van-cell value="Text" icon="shop" is-link>
+  <van-cell value="Content" icon="shop" is-link>
     <template slot="title">
-      <span class="van-cell-text">Title</span>
+      <span class="van-cell-text">Cell title</span>
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
-  <van-cell title="Title" icon="location" is-link></van-cell>
-  <van-cell title="Title">
+  <van-cell title="Cell title" icon="location" is-link></van-cell>
+  <van-cell title="Cell title">
     <template slot="right-icon">
       <van-icon name="search" class="van-cell__right-icon"></van-icon>
     </template>
   </van-cell>
 </van-cell-group>
 ```
-:::
 
 ### API
 

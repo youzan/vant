@@ -56,10 +56,16 @@ function buildDemoEntry() {
   const demos = fs.readdirSync(dir)
     .filter(name => ~name.indexOf('.vue'))
     .map(name => name.replace('.vue', ''))
-    .map(name => `'${name}': r => require.ensure([], () => r(require('./${name}')), '${name}')`);
+    .map(name => `'${name}': r => require.ensure([], () => r(wrapper(require('./${name}'), '${name}')), '${name}')`);
 
   const content = `${tips}
 import './common';
+
+function wrapper(component, name) {
+  component = component.default;
+  component.name = 'demo-' + name;
+  return component;
+}
 
 export default {
   ${demos.join(',\n  ')}

@@ -11,27 +11,23 @@ Vue.component(Panel.name, Panel);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-panel title="Title" desc="Description" status="Status">
-  <div>Panel Content</div>
+  <div>Content</div>
 </van-panel>
 ```
-:::
 
 #### Advanced Usage
 
-:::demo Advanced Usage
 ```html
 <van-panel title="Title" desc="Description" status="Status">
-  <div>Panel Content</div>
+  <div>Content</div>
   <div slot="footer">
     <van-button size="small">Button</van-button>
     <van-button size="small" type="danger">Button</van-button>
   </div>
 </van-panel>
 ```
-:::
 
 ### API
 

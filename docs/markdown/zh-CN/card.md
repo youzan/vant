@@ -1,13 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      imageURL: '//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg'
-    }
-  }
-}
-</script>
-
 ## Card 卡片
 
 ### 使用指南
@@ -21,37 +11,33 @@ Vue.component(Card.name, Card);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
 <van-card
-  title="商品名称"
-  desc="商品描述"
+  title="标题"
+  desc="描述"
   num="2"
   price="2.00"
   :thumb="imageURL"
 />
 ```
-:::
 
 #### 高级用法
 可以通过具名`slot`添加定制内容
 
-:::demo 高级用法
 ```html
 <van-card
-  title="商品名称"
-  desc="商品描述"  
+  title="标题"
+  desc="描述"  
   num="2"
   price="2.00"
   :thumb="imageURL"
 >
   <div slot="footer">
-    <van-button size="mini">按钮一</van-button>
-    <van-button size="mini">按钮二</van-button>
+    <van-button size="mini">按钮</van-button>
+    <van-button size="mini">按钮</van-button>
   </div>
 </van-card>
 ```
-:::
 
 ### API
 
