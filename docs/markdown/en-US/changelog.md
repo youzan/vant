@@ -4,12 +4,10 @@
 `2017-11-15`
 
 **Improvements**
-
-- Icon: add new icons [\#315](https://github.com/youzan/vant/pull/315) ([cookfront](https://github.com/cookfront))
+- Icon: add new icons [\#315](https://github.com/youzan/vant/pull/315) [@cookfront](https://github.com/cookfront)
 
 **Bug Fixes**
-
-- Search: fix box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) ([chenjiahan](https://github.com/chenjiahan))
+- Search: fix box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 `2017-11-11`
