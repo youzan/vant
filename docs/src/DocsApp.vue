@@ -32,7 +32,8 @@ export default {
     },
 
     currentSimulator() {
-      return this.$route.name === 'zh-CN/demo' ? 1 : 0;
+      const { name } = this.$route;
+      return name && name.indexOf('demo') !== -1 ? 1 : 0;
     }
   },
 

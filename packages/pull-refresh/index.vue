@@ -34,6 +34,8 @@ import { i18n } from '../locale';
 export default {
   name: 'van-pull-refresh',
 
+  mixins: [i18n],
+
   props: {
     pullingText: String,
     loosingText: String,

@@ -108,6 +108,7 @@ export default {
   'en-US/tab': wrapper(r => require.ensure([], () => r(require('./en-US/tab.md')), 'en-US/tab')),
   'en-US/tabbar': wrapper(r => require.ensure([], () => r(require('./en-US/tabbar.md')), 'en-US/tabbar')),
   'en-US/tag': wrapper(r => require.ensure([], () => r(require('./en-US/tag.md')), 'en-US/tag')),
+  'en-US/theme': wrapper(r => require.ensure([], () => r(require('./en-US/theme.md')), 'en-US/theme')),
   'en-US/toast': wrapper(r => require.ensure([], () => r(require('./en-US/toast.md')), 'en-US/toast')),
   'en-US/tree-select': wrapper(r => require.ensure([], () => r(require('./en-US/tree-select.md')), 'en-US/tree-select')),
   'en-US/uploader': wrapper(r => require.ensure([], () => r(require('./en-US/uploader.md')), 'en-US/uploader')),

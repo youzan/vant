@@ -305,6 +305,17 @@ module.exports = {
                 path: '/changelog',
                 title: 'Changelog',
                 noExample: true
+              },
+              {
+                path: '/theme',
+                title: 'Theme (In translation)',
+                noExample: true
+              },
+              {
+                path: '/demo',
+                title: 'Demo pages (In translation)',
+                noDocument: true,
+                noExample: true
               }
             ]
           }
@@ -491,35 +502,35 @@ module.exports = {
             list: [
               {
                 path: '/address-edit',
-                title: 'AddressEdit'
+                title: 'AddressEdit (In translation)'
               },
               {
                 path: '/address-list',
-                title: 'AddressList'
+                title: 'AddressList (In translation)'
               },
               {
                 path: '/area',
-                title: 'Area'
+                title: 'Area (In translation)'
               },
               {
                 path: '/contact',
-                title: 'Contact'
+                title: 'Contact (In translation)'
               },
               {
                 path: '/coupon',
-                title: 'Coupon'
+                title: 'Coupon (In translation)'
               },
               {
                 path: '/goods-action',
-                title: 'GoodsAction'
+                title: 'GoodsAction (In translation)'
               },
               {
                 path: '/submit-bar',
-                title: 'SubmitBar'
+                title: 'SubmitBar (In translation)'
               },
               {
                 path: '/sku',
-                title: 'Sku'
+                title: 'Sku (In translation)'
               }
             ]
           }

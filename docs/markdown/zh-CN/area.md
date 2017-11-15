@@ -87,7 +87,7 @@ Vue.component(Area.name, Area);
 }
 ```
 
-完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/docs/mock/area.json)
+完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.json)
 
 #### 点击完成时返回的数据格式
 返回的数据整体为一个数组，数组内包含 `columnsNum` 个数据， 每个数据对应一列选项中被选中的数据。
