@@ -82,7 +82,7 @@ module.exports = {
       css: 'passed'
     },
     {
-      src: '购物车.svg',
+      src: '购物车2.svg',
       css: 'cart'
     },
     {
