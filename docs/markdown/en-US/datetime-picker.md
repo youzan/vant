@@ -1,21 +1,3 @@
-<script>
-import { Toast } from 'packages/index';
-
-export default {
-  data() {
-    return {
-      minHour: 10,
-      maxHour: 20,
-      minDate: new Date(),
-      maxDate: new Date(2019, 10, 1),
-      currentDate1: new Date(2018, 0, 1),
-      currentDate2: null,
-      currentDate3: null
-    };
-  }
-};
-</script>
-
 ## DatetimePicker
 
 ### Install
@@ -29,15 +11,14 @@ Vue.component(DatetimePicker.name, DatetimePicker);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-datetime-picker
-  v-model="currentDate1"
+  v-model="currentDate"
   type="datetime"
-  :min-hour="minHour"
-  :max-hour="maxHour"
-  :min-date="minDate"
-  :max-date="maxDate"
+  :minHour="minHour"
+  :maxHour="maxHour"
+  :minDate="minDate"
+  :maxDate="maxDate"
 />
 ```
 
@@ -54,25 +35,21 @@ export default {
   }
 };
 ```
-:::
 
 #### Date Picker
 
-:::demo Date Picker
 ```html
 <van-datetime-picker
-  v-model="currentDate2"
+  v-model="currentDate"
   type="date"
   :min-hour="minHour"
   :max-hour="maxHour"
   :min-date="minDate"
 />
 ```
-:::
 
 #### Time Picker
 
-:::demo Time Picker
 ```html
 <van-datetime-picker
   v-model="currentDate3"
@@ -82,8 +59,6 @@ export default {
   :min-date="minDate"
 />
 ```
-:::
-
 
 ### API
 

@@ -11,36 +11,30 @@ Vue.component(Tag.name, Tag);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-tag>Tag</van-tag>
 <van-tag type="danger">Tag</van-tag>
 <van-tag type="success">Tag</van-tag>
 <van-tag type="primary">Tag</van-tag>
 ```
-:::
 
 #### Plain style
 
-:::demo Plain style
 ```html
 <van-tag plain>Tag</van-tag>
 <van-tag plain type="danger">Tag</van-tag>
 <van-tag plain type="primary">Tag</van-tag>
 <van-tag plain type="success">Tag</van-tag>
 ```
-:::
 
 #### Mark style
 
-:::demo Mark style
 ```html
 <van-tag mark>Tag</van-tag>
 <van-tag mark type="danger">Tag</van-tag>
 <van-tag mark type="primary">Tag</van-tag>
 <van-tag mark type="success">Tag</van-tag>
 ```
-:::
 
 ### API
 

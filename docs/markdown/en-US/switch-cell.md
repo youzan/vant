@@ -1,16 +1,5 @@
 ## SwitchCell
-
 `SwitchCell` component is an encapsulation of `Switch` and `Cell`.
-
-<script>
-export default {
-  data() {
-    return {
-      checked: true
-    }
-  }
-}
-</script>
 
 ### Install
 ``` javascript
@@ -23,10 +12,9 @@ Vue.component(SwitchCell.name, SwitchCell);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-cell-group>
-  <van-switch-cell v-model="checked" title="标题" />
+  <van-switch-cell v-model="checked" title="Title" />
 </van-cell-group>
 ```
 
@@ -39,29 +27,26 @@ export default {
   }
 }
 ```
-:::
+
 
 #### Disabled
 use `disabled` property to disable the component
 
-:::demo Disabled component
 ```html
 <van-cell-group>
-  <van-switch-cell v-model="checked" :disabled="true" title="标题" />
+  <van-switch-cell v-model="checked" disabled title="Title" />
 </van-cell-group>
 ```
-:::
+
 
 #### Loading
 use `loading` property to keep component in loading state
 
-:::demo Component in loading
 ```html
 <van-cell-group>
-  <van-switch-cell v-model="checked" :loading="true" title="标题" />
+  <van-switch-cell v-model="checked" loading title="Title" />
 </van-cell-group>
 ```
-:::
 
 ### API
 

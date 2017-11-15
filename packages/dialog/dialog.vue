@@ -14,7 +14,7 @@
           v-show="showCancelButton"
           @click="handleAction('cancel')"
         >
-          {{ cancelButtonText || $t('confirm') }}
+          {{ cancelButtonText || $t('cancel') }}
         </van-button>
         <van-button
           size="large"
@@ -22,7 +22,7 @@
           v-show="showConfirmButton"
           @click="handleAction('confirm')"
         >
-          {{ confirmButtonText || $t('cancel') }}
+          {{ confirmButtonText || $t('confirm') }}
         </van-button>
       </div>
     </div>

@@ -27,40 +27,9 @@ export default {
 
 ### Usage
 
-<script>
-import { Waterfall } from 'packages';
-
-export default {
-  data() {
-    return {
-      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      disabled: false
-    };
-  },
-
-  directives: {
-    WaterfallLower: Waterfall('lower')
-  },
-
-  methods: {
-    loadMore() {
-      this.disabled = true;
-      setTimeout(() => {
-        for (let i = 0; i < 5; i ++) {
-          this.list.push(this.list.length);
-        }
-        this.disabled = false;
-      }, 200);
-    }
-  }
-};
-</script>
-
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
-<p class="page-desc">This list will load items will scroll to bottom.</p>
 <ul
   v-waterfall-lower="loadMore"
   waterfall-disabled="disabled"
@@ -95,7 +64,6 @@ export default {
   }
 };
 ```
-:::
 
 ### API
 

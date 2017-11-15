@@ -1,19 +1,3 @@
-<style>
-.uploader-container {
-  padding: 5px 15px;
-}
-</style>
-
-<script>
-export default {
-  methods: {
-    logContent(file) {
-      console.log(file)
-    }
-  }
-};  
-</script>
-
 ## Uploader 图片上传
 
 ### 使用指南
@@ -27,13 +11,10 @@ Vue.component(Uploader.name, Uploader);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
-<div class="uploader-container">
-  <van-uploader :after-read="logContent">
-    <van-icon name="photograph"></van-icon>
-  </van-uploader>
-</div>
+<van-uploader :afterRead="logContent">
+  <van-icon name="photograph"></van-icon>
+</van-uploader>
 ```
 
 ```javascript
@@ -43,9 +24,8 @@ export default {
       console.log(file)
     }
   }
-};  
+};
 ```
-:::
 
 ### API
 

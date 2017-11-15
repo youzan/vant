@@ -13,22 +13,22 @@
       <van-button size="mini">Mini</van-button>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('disabled')">
       <van-button disabled>Diabled</van-button>
     </demo-block>
 
-    <demo-block :title="$t('title4')">
+    <demo-block :title="$t('title3')">
       <van-button loading></van-button>
       <van-button loading type="primary"></van-button>
     </demo-block>
 
-    <demo-block :title="$t('title5')">
+    <demo-block :title="$t('title4')">
       <van-button tag="a" href="https://www.youzan.com" target="_blank">
         {{ $t('button') }}
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('title6')">
+    <demo-block :title="$t('title5')">
       <van-button type="primary" bottomAction>{{ $t('button') }}</van-button>
 
       <van-row>
@@ -49,18 +49,16 @@ export default {
     'zh-CN': {
       title1: '按钮类型',
       title2: '按钮尺寸',
-      title3: '禁用状态',
-      title4: '加载状态',
-      title5: '自定义按钮标签',
-      title6: '页面底部操作按钮'
+      title3: '加载状态',
+      title4: '自定义按钮标签',
+      title5: '页面底部操作按钮'
     },
     'en-US': {
       title1: 'Type',
       title2: 'Size',
-      title3: 'Disabled',
-      title4: 'Loading',
-      title5: 'Custom Tag',
-      title6: 'Action Button'
+      title3: 'Loading',
+      title4: 'Custom Tag',
+      title5: 'Action Button'
     }
   }
 }

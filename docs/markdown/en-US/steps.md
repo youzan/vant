@@ -1,19 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      active: 0
-    };
-  },
-
-  methods: {
-    nextStep() {
-      this.active = ++this.active % 4;
-    }
-  }
-}
-</script>
-
 ## Steps
 
 ### Install
@@ -28,7 +12,6 @@ Vue.component(Steps.name, Steps);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-steps :active="active">
   <van-step>Step1</van-step>
@@ -36,8 +19,6 @@ Vue.component(Steps.name, Steps);
   <van-step>Step3</van-step>
   <van-step>Step4</van-step>
 </van-steps>
-
-<van-button @click="nextStep">Next</van-button>
 ```
 
 ```javascript
@@ -46,25 +27,16 @@ export default {
     return {
       active: 0
     };
-  },
-
-  methods: {
-    nextStep() {
-      this.active = ++this.active % 4;
-    }
   }
 }
 ```
-:::
 
 #### Description
 
-:::demo Description
 ```html
 <van-steps
   :active="active"
   icon="logistics"
-  icon-class="steps-success"
   title="Title"
   description="Description"
 >
@@ -74,13 +46,11 @@ export default {
   <van-step>Step4</van-step>
 </van-steps>
 ```
-:::
 
 #### Vertical Steps
 
-:::demo Vertical Steps
 ```html
-<van-steps direction="vertical" :active="0" active-color="#f60">
+<van-steps direction="vertical" :active="0" activeColor="#f60">
   <van-step>
     <h3>【City】Status1</h3>
     <p>2016-07-12 12:40</p>
@@ -95,22 +65,6 @@ export default {
   </van-step>
 </van-steps>
 ```
-:::
-
-#### Advanced Usage
-
-:::demo Advanced Usage
-```html
-<van-steps :active="active" title="Title">
-  <van-icon slot="icon" name="location"></van-icon>
-  <p slot="message-extra">Some text</p>
-  <van-step>Step1</van-step>
-  <van-step>Step2</van-step>
-  <van-step>Step3</van-step>
-  <van-step>Step4</van-step>  
-</van-steps>
-```
-:::
 
 ### Steps API
 

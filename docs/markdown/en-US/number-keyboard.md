@@ -1,24 +1,3 @@
-<script>
-import { Toast } from 'packages';
-
-export default {
-  data() {
-    return {
-      showKeyboard: true
-    }
-  },
-
-  methods: {
-    onInput(value) {
-      Toast('Input: ' + value);
-    },
-    onDelete() {
-      Toast('Delete');
-    }
-  }
-}
-</script>
-
 ## NumberKeyboard
 
 ### Install
@@ -32,14 +11,13 @@ Vue.component(NumberKeyboard.name, NumberKeyboard);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-button @touchstart.native.stop="showKeyboard = true">
-  ShowKeyboard
+  Show Keyboard
 </van-button>
 
 <van-button @touchstart.native.stop="showKeyboard = false">
-  HideKeyboard
+  Hide Keyboard
 </van-button>
 
 <van-number-keyboard
@@ -68,8 +46,6 @@ export default {
   }
 }
 ```
-:::
-
 
 ### API
 

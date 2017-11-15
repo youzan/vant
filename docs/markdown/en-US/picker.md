@@ -1,42 +1,3 @@
-<script>
-import { Toast } from 'packages/index';
-
-const states = {
-  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
-};
-
-export default {
-  data() {
-    return {
-      title: 'Title',
-      pickerColumns: [
-        {
-          values: Object.keys(states),
-          className: 'column1'
-        },
-        {
-          values: states.Group1,
-          className: 'column2'
-        }
-      ]
-    };
-  },
-
-  methods: {
-    handlePickerChange(picker, values) {
-      picker.setColumnValues(1, states[values[0]]);
-    },
-    handlePickerCancel() {
-      Toast('Cancel');
-    },
-    handlePickerConfirm() {
-      Toast('Confirm');
-    }
-  }
-};
-</script>
-
 ## Picker
 
 ### Install
@@ -50,9 +11,9 @@ Vue.component(Picker.name, Picker);
 
 #### Basic Usage
 
-:::demo Basic Usage
+
 ```html
-<van-picker :columns="pickerColumns" @change="handlePickerChange"></van-picker>
+<van-picker :columns="pickerColumns" @change="onChange" />
 ```
 
 ```javascript
@@ -78,26 +39,25 @@ export default {
   },
 
   methods: {
-    handlePickerChange(picker, values) {
+    onChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
     }
   }
 };
 ```
-:::
+
 
 #### Picker with toolbar
 
-:::demo Picker with toolbar
 ```html
 <van-picker
-  show-toolbar
+  showToolbar
   :title="title"
   :columns="pickerColumns"
-  @change="handlePickerChange"
-  @cancel="handlePickerCancel"
-  @confirm="handlePickerConfirm"
-></van-picker>
+  @change="onChange"
+  @cancel="onCancel"
+  @confirm="onConfirm"
+/>
 ```
 
 ```javascript
@@ -124,19 +84,18 @@ export default {
   },
 
   methods: {
-    handlePickerChange(picker, values) {
+    onChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
     },
-    handlePickerCancel() {
+    onCancel() {
       Toast('Cancel');
     },
-    handlePickerConfirm() {
+    onConfirm() {
       Toast('Confirm');
     }
   }
 };
 ```
-:::
 
 ### API
 

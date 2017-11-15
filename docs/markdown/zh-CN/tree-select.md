@@ -1,79 +1,3 @@
-<script>
-
-export default {
-  data() {
-    return {
-      items: [{
-        text: '所有城市',
-        children: [{
-          text: '杭州',
-          id: 1001
-        }, {
-          text: '温州',
-          id: 1002
-        }, {
-          text: '海南',
-          id: 1100
-        }, {
-          text: '宁波',
-          id: 1003
-        }, {
-          text: '义乌',
-          id: 1004
-        }, {
-          text: '无锡',
-          id: 1011
-        }, {
-          text: '常州',
-          id: 1012
-        }, {
-          text: '大连',
-          id: 1031
-        }, {
-          text: '诸暨',
-          id: 1005
-        }]
-      }, {
-        text: '浙江',
-        children: [{
-          text: '杭州',
-          id: 1001
-        }, {
-          text: '温州',
-          id: 1002
-        }, {
-          text: '宁波',
-          id: 1003
-        }, {
-          text: '义乌',
-          id: 1004
-        }]
-      }, {
-        text: '江苏',
-        children: [{
-          text: '无锡',
-          id: 1011
-        }, {
-          text: '常州',
-          id: 1012
-        }]
-      }],
-      mainActiveIndex: 0,
-      activeId: 1001
-    };
-  },
-  methods: {
-    onNavClick(index) {
-      this.mainActiveIndex = index;
-    },
-    onItemClick(data) {
-      console.log(data);
-      this.activeId = data.id;
-    }
-  }
-}
-</script>
-
 ## TreeSelect 分类选择
 
 ### 使用指南
@@ -87,7 +11,7 @@ Vue.component(TreeSelect.name, TreeSelect);
 
 #### 基础用法
 
-:::demo 基础用法
+
 ```html
 <van-tree-select
   :items="items"
@@ -95,7 +19,7 @@ Vue.component(TreeSelect.name, TreeSelect);
   :active-id="activeId"
   @navclick="onNavClick"
   @itemclick="onItemClick"
-></van-tree-select>
+/>
 ```
 
 ```javascript
@@ -114,13 +38,11 @@ export default {
       this.mainActiveIndex = index;
     },
     onItemClick(data) {
-      console.log(data);
       this.activeId = data.id;
     }
   }
 }
 ```
-:::
 
 ### API
 
@@ -128,9 +50,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| items | 分类显示所需的数据，具体数据结构可看 数据结构 |  Array | [] | - |
-| mainActiveIndex | 左侧导航高亮的索引 |  Number | 0 | - |
-| activeId | 右侧选择项，高亮的数据id |  Number | 0 | - |
+| items | 分类显示所需的数据，具体数据结构可看 数据结构 | `Array` | `[]` | - |
+| mainActiveIndex | 左侧导航高亮的索引 | `Number` | `0` | - |
+| activeId | 右侧选择项，高亮的数据id | `Number` | `0` | - |
 
 #### 事件
 | 事件名 | 说明 | 参数 |

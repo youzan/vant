@@ -1,29 +1,3 @@
-<script>
-import Dialog from 'packages/dialog';
-
-export default {
-  data() {
-    return {
-      checked: true,
-      checked2: true
-    };
-  },
-
-  methods: {
-    onInput(checked) {
-      Dialog.confirm({
-        title: 'Confirm',
-        confirmButtonText: 'ok',
-        cancelButtonText: 'cancel',
-        message: 'Are you sure to toggle switch?'
-      }).then(() => {
-        this.checked2 = checked;
-      });
-    }
-  }
-};
-</script>
-
 ## Switch
 
 ### Install
@@ -37,7 +11,6 @@ Vue.component(Switch.name, Switch);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-switch v-model="checked" />
 ```
@@ -51,35 +24,31 @@ export default {
   }
 };  
 ```
-:::
 
 #### Disabled
 
-:::demo Disabled
 ```html
 <van-switch v-model="checked" disabled />
 ```
-:::
 
 #### Loading
 
 
-:::demo Loading
 ```html
 <van-switch v-model="checked" loading />
 ```
-:::
 
 #### Advanced usage
-:::demo Advanced usage
+
 ```html
-<van-switch :value="checked2" @input="onInput" />
+<van-switch :value="checked" @input="onInput" />
 ```
+
 ```js
 export default {
   data() {
     return {
-      checked2: true
+      checked: true
     };
   },
 
@@ -89,13 +58,12 @@ export default {
         title: 'Confirm',
         message: 'Are you sure to toggle switch?'
       }).then(() => {
-        this.checked2 = checked;
+        this.checked = checked;
       });
     }
   }
 };  
 ```
-:::
 
 ### API
 

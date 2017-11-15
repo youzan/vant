@@ -1,22 +1,3 @@
-<style>
-.demo-field {
-  padding-bottom: 30px;
-}
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      value: '',
-      password: '',
-      username: '',
-      message: ''
-    };
-  }
-};
-</script>
-
 ## Field 输入框
 
 `input`或`textarea`的输入框。
@@ -33,18 +14,15 @@ Vue.component(Field.name, Field);
 #### 基础用法
 通过 v-model 绑定输入框的值
 
-:::demo 基础用法
 ```html
 <van-cell-group>
   <van-field v-model="value" placeholder="请输入用户名"></van-field>
 </van-cell-group>
 ```
-:::
 
 #### 自定义类型
 根据`type`属性定义不同类型的输入框
 
-:::demo 自定义类型
 ```html
 <van-cell-group>
   <van-field
@@ -66,32 +44,26 @@ Vue.component(Field.name, Field);
   </van-field>
 </van-cell-group>
 ```
-:::
 
 #### 禁用输入框
 
-:::demo 禁用输入框
 ```html
 <van-cell-group>
   <van-field value="输入框已禁用" label="用户名" disabled></van-field>
 </van-cell-group>
 ```
-:::
 
 #### 错误提示
 
-:::demo 错误提示
 ```html
 <van-cell-group>
   <van-field label="用户名" placeholder="请输入用户名" error></van-field>
 </van-cell-group>
 ```
-:::
 
 #### 高度自适应
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
-:::demo 高度自适应
 ```html
 <van-cell-group>
   <van-field
@@ -105,7 +77,6 @@ Vue.component(Field.name, Field);
   </van-field>
 </van-cell-group>
 ```
-:::
 
 ### API
 

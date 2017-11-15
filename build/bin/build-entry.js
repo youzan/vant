@@ -52,11 +52,11 @@ export default {
 }
 
 function buildDemoEntry() {
-  const dir = path.join(__dirname, '../../docs/demos');
+  const dir = path.join(__dirname, '../../docs/demos/views');
   const demos = fs.readdirSync(dir)
     .filter(name => ~name.indexOf('.vue'))
     .map(name => name.replace('.vue', ''))
-    .map(name => `'${name}': r => require.ensure([], () => r(wrapper(require('./${name}'), '${name}')), '${name}')`);
+    .map(name => `'${name}': r => require.ensure([], () => r(wrapper(require('./views/${name}'), '${name}')), '${name}')`);
 
   const content = `${tips}
 import './common';
@@ -71,7 +71,7 @@ export default {
   ${demos.join(',\n  ')}
 };
 `;
-  fs.writeFileSync(path.join(dir, './index.js'), content);
+  fs.writeFileSync(path.join(dir, '../index.js'), content);
 }
 
 function buildDocsEntry() {

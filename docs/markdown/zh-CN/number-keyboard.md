@@ -1,32 +1,3 @@
-<style>
-.demo-number-keyboard {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-</style>
-
-<script>
-import { Toast } from 'packages';
-
-export default {
-  data() {
-    return {
-      showKeyboard: true
-    }
-  },
-
-  methods: {
-    onInput(value) {
-      Toast('Input: ' + value);
-    },
-    onDelete() {
-      Toast('Delete');
-    }
-  }
-}
-</script>
-
 ## NumberKeyboard 数字键盘
 
 ### 使用指南
@@ -40,7 +11,6 @@ Vue.component(NumberKeyboard.name, NumberKeyboard);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
 <van-button @touchstart.native.stop="showKeyboard = true">
   弹出键盘
@@ -76,8 +46,6 @@ export default {
   }
 }
 ```
-:::
-
 
 ### API
 

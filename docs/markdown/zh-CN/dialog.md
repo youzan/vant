@@ -1,43 +1,3 @@
-<style>
-.demo-dialog {
-  .van-button {
-    margin: 15px;
-  }
-}
-</style>
-
-<script>
-import { Dialog } from 'packages';
-
-const message = '弹窗内容';
-
-export default {
-  methods: {
-    onClickAlert() {
-      Dialog.alert({
-        title: '标题',
-        message
-      });
-    },
-
-    onClickAlert2() {
-      Dialog.alert({
-        message
-      });
-    },
-
-    onClickConfirm() {
-      Dialog.confirm({
-        title: '标题',
-        message
-      }).catch(action => {
-        console.log(action);
-      });
-    }
-  }
-};
-</script>
-
 ## Dialog 弹出框
 
 ### 使用指南
@@ -49,65 +9,36 @@ import { Dialog } from 'vant';
 ### 代码演示
 
 #### 消息提示
-
 用于提示一些消息，只包含一个确认按钮
 
-:::demo 消息提示
-```html
-<van-button @click="onClickAlert">Alert</van-button>
-<van-button @click="onClickAlert2">无标题 Alert</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    onClickAlert() {
-      Dialog.alert({
-        title: '标题',
-        message: '弹窗内容'
-      }).then(() => {
-        // on close
-      });
-    },
+Dialog.alert({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
 
-    onClickAlert2() {
-      Dialog.alert({
-        message: '弹窗内容'
-      }).then(() => {
-        // on close
-      });
-    }
-  }
-};
+Dialog.alert({
+  message: '弹窗内容'
+}).then(() => {
+  // on close
+});
 ```
-:::
 
 #### 消息确认
-
 用于确认消息，包含取消和确认按钮
 
-:::demo 消息确认
-```html
-<van-button @click="onClickConfirm">Confirm</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    onClickConfirm() {
-      Dialog.confirm({
-        title: '标题',
-        message: '弹窗内容'
-      }).then(() => {
-        // on confirm
-      }).catch(() => {
-        // on cancel
-      });
-    }
-  }
-};
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容'
+}).then(() => {
+  // on confirm
+}).catch(() => {
+  // on cancel
+});
 ```
-:::
 
 ### 方法
 

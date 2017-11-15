@@ -1,55 +1,3 @@
-<style>
-.demo-pull-refresh {
-  .van-doc-demo-block__title,
-  .van-doc-demo-block__subtitle {
-    display: none;
-  }
-
-  .van-pull-refresh {
-    height: 450px;
-    background-color: #fff;
-    
-    .van-doc-demo-block__title {
-      display: block;
-    }
-    
-    p {
-      margin: 10px 0 0 15px;
-    }
-  }
-}
-</style>
-
-<script>
-import { Toast } from 'packages';
-
-export default {
-  data() {
-    return {
-      count: 0,
-      isLoading: false
-    }
-  },
-
-  watch: {
-    isLoading() {
-      if (this.isLoading) {
-        setTimeout(() => {
-          Toast('刷新成功');
-          this.isLoading = false;
-          this.count++;
-        }, 500);
-      }
-    }
-  },
-
-  mounted() {
-    const head = document.querySelector('.van-pull-refresh__head');
-    head.insertAdjacentHTML('afterend', '<h1 class="van-doc-demo-block__title">PullRefresh 下拉刷新</h1>');
-  }
-}
-</script>
-
 ## PullRefresh 下拉刷新
 
 ### 使用指南
@@ -61,7 +9,6 @@ Vue.component(PullRefresh.name, PullRefresh);
 
 ### 代码演示
 
-:::demo  
 ```html
 <!-- 通过 v-model 控制加载状态 -->
 <van-pull-refresh v-model="isLoading">
@@ -91,7 +38,6 @@ export default {
   }
 }
 ```
-:::
 
 ### API
 

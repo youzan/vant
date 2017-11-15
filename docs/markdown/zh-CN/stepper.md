@@ -1,22 +1,3 @@
-<style>
-.demo-stepper {
-  .van-stepper {
-    margin-left: 15px;
-  }
-}
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      stepper1: 1,
-      stepper2: null,
-    };
-  }
-};
-</script>
-
 ## Stepper 步进器
 
 ### 使用指南
@@ -30,9 +11,8 @@ Vue.component(Stepper.name, Stepper);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
-<van-stepper v-model="stepper1" />
+<van-stepper v-model="value" />
 ```
 
 ```javascript
@@ -44,26 +24,21 @@ export default {
   }
 }
 ```
-:::
 
 #### 禁用状态
 通过设置`disabled`属性来禁用 stepper
 
-:::demo 禁用状态
 ```html
-<van-stepper v-model="stepper1" disabled />
+<van-stepper v-model="value" disabled />
 ```
-:::
 
 #### 高级用法
 
 默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`defaultValue`属性
 
-:::demo 高级用法
 ```html
-<van-stepper v-model="stepper2" min="5" max="40" step="2" default-value="9" />
+<van-stepper v-model="value" min="5" max="40" step="2" defaultValue="9" />
 ```
-:::
 
 ### API
 

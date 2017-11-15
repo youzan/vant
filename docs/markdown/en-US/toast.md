@@ -1,42 +1,3 @@
-<script>
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    showToast() {
-      Toast('Some messages');
-    },
-    showLoadingToast() {
-      Toast.loading({ mask: true });
-    },
-    showSuccessToast() {
-      Toast.success('Success');
-    },
-    showFailToast() {
-      Toast.fail('Fail');
-    },
-    showCustomizedToast(duration) {
-      const toast = Toast.loading({
-        duration: 0,  
-        forbidClick: true,
-        message: '3 seconds'
-      });
-
-      let second = 3;
-      const timer = setInterval(() => {
-        second--;
-        if (second) {
-          toast.message = `${second} seconds`;
-        } else {
-          clearInterval(timer);
-          Toast.clear();
-        }
-      }, 1000);
-    }
-  }
-};
-</script>
-
 ## Toast
 
 ### Install
@@ -49,94 +10,46 @@ import { Toast } from 'vant';
 
 #### Text
 
-:::demo Text
-```html
-<van-button @click="showToast">Show Text</van-button>
+```javascript
+Toast('Some messages');
 ```
 
-```javascript
-export default {
-  methods: {
-    showToast() {
-      Toast('Some messages');
-    }
-  }
-}
-```
-:::
 
 #### Loading
 
-:::demo Loading
-```html
-<van-button @click="showLoadingToast">Show Loading</van-button>
+```javascript
+Toast.loading({ mask: true });
 ```
 
-```javascript
-export default {
-  methods: {
-    showLoadingToast() {
-      Toast.loading({ mask: true });
-    }
-  }
-}
-```
-:::
 
 #### Success/Fail
 
-:::demo Success/Fail
-```html
-<van-button @click="showSuccessToast">Show Success</van-button>
-<van-button @click="showFailToast">Show Fail</van-button>
+```javascript
+Toast.success('Success');
+Toast.fail('Fail');
 ```
 
-```javascript
-export default {
-  methods: {
-    showSuccessToast() {
-      Toast.success('Success');
-    },
-    showFailToast() {
-      Toast.fail('Fail');
-    }
-  }
-}
-```
-:::
 
 #### Advanced Usage
 
-:::demo Advanced Usage
-```html
-<van-button @click="showCustomizedToast">Advanced Usage</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    showCustomizedToast() {
-      const toast = Toast.loading({
-        duration: 0,       // continuous display toast
-        forbidClick: true, // forbid click background
-        message: '3 seconds'
-      });
+const toast = Toast.loading({
+  duration: 0,       // continuous display toast
+  forbidClick: true, // forbid click background
+  message: '3 seconds'
+});
 
-      let second = 3;
-      const timer = setInterval(() => {
-        second--;
-        if (second) {
-          toast.message = `${second} seconds`;
-        } else {
-          clearInterval(timer);
-          Toast.clear();
-        }
-      }, 1000);
-    }
+let second = 3;
+const timer = setInterval(() => {
+  second--;
+  if (second) {
+    toast.message = `${second} seconds`;
+  } else {
+    clearInterval(timer);
+    Toast.clear();
   }
-};
+}, 1000);
 ```
-:::
 
 ### Methods
 

@@ -11,7 +11,6 @@ Vue.component(CellSwipe.name, CellSwipe);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-cell-swipe :right-width="65" :left-width="65">
   <span slot="left">Select</span>
@@ -21,7 +20,6 @@ Vue.component(CellSwipe.name, CellSwipe);
   <span slot="right">Delete</span>
 </van-cell-swipe>
 ```
-:::
 
 ### API
 

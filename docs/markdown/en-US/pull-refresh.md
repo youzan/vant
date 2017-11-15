@@ -1,33 +1,3 @@
-<script>
-import { Toast } from 'packages';
-
-export default {
-  data() {
-    return {
-      count: 0,
-      isLoading: false
-    }
-  },
-
-  watch: {
-    isLoading() {
-      if (this.isLoading) {
-        setTimeout(() => {
-          Toast('Refresh Success');
-          this.isLoading = false;
-          this.count++;
-        }, 500);
-      }
-    }
-  },
-
-  mounted() {
-    const head = document.querySelector('.van-pull-refresh__head');
-    head.insertAdjacentHTML('afterend', '<h1 class="van-doc-demo-block__title">PullRefresh</h1>');
-  }
-}
-</script>
-
 ## PullRefresh
 
 ### Install
@@ -39,7 +9,6 @@ Vue.component(PullRefresh.name, PullRefresh);
 
 ### Usage
 
-:::demo  
 ```html
 <!-- use v-model to control loading status -->
 <van-pull-refresh
@@ -74,7 +43,6 @@ export default {
   }
 }
 ```
-:::
 
 ### API
 

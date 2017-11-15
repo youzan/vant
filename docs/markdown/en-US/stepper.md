@@ -1,14 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      stepper1: 1,
-      stepper2: 9,
-    };
-  }
-};
-</script>
-
 ## Stepper
 
 ### Install
@@ -22,9 +11,8 @@ Vue.component(Stepper.name, Stepper);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
-<van-stepper v-model="stepper1" />
+<van-stepper v-model="value" />
 ```
 
 ```javascript
@@ -36,29 +24,24 @@ export default {
   }
 }
 ```
-:::
 
 #### Disabled
 
-:::demo Disabled
 ```html
-<van-stepper v-model="stepper1" disabled />
+<van-stepper v-model="value" disabled />
 ```
-:::
 
 #### Advanced Usage
 
-:::demo Advanced Usage
 ```html
 <van-stepper
-  v-model="stepper2"
+  v-model="value"
   min="5"
   max="40"
   step="2"
-  default-value="9"
+  defaultValue="9"
 />
 ```
-:::
 
 ### API
 

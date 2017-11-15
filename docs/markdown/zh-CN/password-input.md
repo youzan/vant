@@ -1,23 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      value: '',
-      showKeyboard: true
-    }
-  },
-
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
-    }
-  }
-}
-</script>
-
 ## PasswordInput 密码输入框
 密码输入框组件通常与 [数字键盘](#/zh-CN/component/number-keyboard) 组件配合使用
 
@@ -33,14 +13,13 @@ Vue.component(NumberKeyBoard.name, NumberKeyBoard);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
 <!-- 密码输入框 -->
 <van-password-input
   :value="value"
   info="密码为 6 位数字"
   @focus="showKeyboard = true"
-></van-password-input>
+/>
 
 <!-- 数字键盘 -->
 <van-number-keyboard
@@ -48,7 +27,7 @@ Vue.component(NumberKeyBoard.name, NumberKeyBoard);
   @input="onInput"
   @delete="onDelete"
   @blur="showKeyboard = false"
-></van-number-keyboard>
+/>
 ```
 
 ```javascript
@@ -57,7 +36,7 @@ export default {
     return {
       value: '',
       showKeyboard: true
-    }
+    };
   },
 
   methods: {
@@ -70,7 +49,6 @@ export default {
   }
 }
 ```
-:::
 
 ### API
 

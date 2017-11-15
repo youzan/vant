@@ -1,79 +1,3 @@
-<style>
-  .demo-contact {
-    .van-popup {
-      height: 100%;
-    }
-  }
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      chosenContactId: null,
-      editingContact: {},
-      showList: false,
-      showEdit: false,
-      isEdit: false,
-      list: [{
-        name: '张三',
-        tel: '13000000000',
-        id: 0
-      }]
-    };
-  },
-
-  computed: {
-    cardType() {
-      return this.chosenContactId !== null ? 'edit' : 'add';
-    },
-
-    currentContact() {
-      const id = this.chosenContactId;
-      return id !== null ? this.list.filter(item => item.id === id)[0] : {};
-    }
-  },
-
-  methods: {
-    onAdd() {
-      this.editingContact = { id: this.list.length };
-      this.isEdit = false;
-      this.showEdit = true;
-    },
-
-    onEdit(item) {
-      this.isEdit = true;      
-      this.showEdit = true;
-      this.editingContact = item;
-    },
-
-    onSelect() {
-      this.showList = false;
-    },
-
-    onSave(info) {
-      this.showEdit = false;
-      this.showList = false;
-      
-      if (this.isEdit) {
-        this.list = this.list.map(item => item.id === info.id ? info : item);
-      } else {
-        this.list.push(info);
-      }
-      this.chosenContactId = info.id;
-    },
-
-    onDelete(info) {
-      this.showEdit = false;
-      this.list = this.list.filter(item => item.id !== info.id);
-      if (this.chosenContactId === info.id) {
-        this.chosenContactId = null;
-      }
-    }
-  }
-};
-</script>
-
 ## Contact 联系人
 通过 Contact 组件可以实现联系人的展示、选择、编辑等功能。
 
@@ -90,7 +14,6 @@ Vue.component(ContactEdit.name, ContactEdit);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
 <!-- 联系人卡片 -->
 <van-contact-card
@@ -98,7 +21,7 @@ Vue.component(ContactEdit.name, ContactEdit);
   :name="currentContact.name"
   :tel="currentContact.tel"
   @click="showList = true"
-></van-contact-card>
+/>
 
 <!-- 联系人列表 -->
 <van-popup v-model="showList" position="bottom">
@@ -114,8 +37,8 @@ Vue.component(ContactEdit.name, ContactEdit);
 <!-- 联系人编辑 -->
 <van-popup v-model="showEdit" position="bottom">
   <van-contact-edit
-    :contact-info="editingContact"
-    :is-edit="isEdit"
+    :contactInfo="editingContact"
+    :isEdit="isEdit"
     @save="onSave"
     @delete="onDelete"
   />
@@ -194,7 +117,7 @@ export default {
   }
 };
 ```
-:::
+
 
 ### ContactCard API
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |

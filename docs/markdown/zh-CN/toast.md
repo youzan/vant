@@ -1,50 +1,3 @@
-<style>
-.demo-toast {
-  .van-button {
-    margin-left: 15px;
-  }
-}
-</style>
-
-<script>
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    showToast() {
-      Toast('我是提示文案，建议不超过十五字~');
-    },
-    showLoadingToast() {
-      Toast.loading({ mask: true });
-    },
-    showSuccessToast() {
-      Toast.success('成功文案');
-    },
-    showFailToast() {
-      Toast.fail('失败文案');
-    },
-    showCustomizedToast(duration) {
-      const toast = Toast.loading({
-        duration: 0,
-        forbidClick: true,
-        message: '倒计时 3 秒'
-      });
-
-      let second = 3;
-      const timer = setInterval(() => {
-        second--;
-        if (second) {
-          toast.message = `倒计时 ${second} 秒`;
-        } else {
-          clearInterval(timer);
-          Toast.clear();
-        }
-      }, 1000);
-    }
-  }
-};
-</script>
-
 ## Toast 轻提示
 
 ### 使用指南
@@ -57,94 +10,47 @@ import { Toast } from 'vant';
 
 #### 文字提示
 
-:::demo 文字提示
-```html
-<van-button @click="showToast">文字提示</van-button>
+```javascript
+Toast('我是提示文案，建议不超过十五字~');
 ```
 
-```javascript
-export default {
-  methods: {
-    showToast() {
-      Toast('我是提示文案，建议不超过十五字~');
-    }
-  }
-}
-```
-:::
 
 #### 加载提示
 
-:::demo 加载提示
-```html
-<van-button @click="showLoadingToast">加载提示</van-button>
+```javascript
+Toast.loading({ mask: true });
 ```
 
-```javascript
-export default {
-  methods: {
-    showLoadingToast() {
-      Toast.loading({ mask: true });
-    }
-  }
-}
-```
-:::
 
 #### 成功/失败提示
 
-:::demo 成功/失败提示
-```html
-<van-button @click="showSuccessToast">成功提示</van-button>
-<van-button @click="showFailToast">失败提示</van-button>
+```javascript
+Toast.success('成功文案');
+Toast.fail('失败文案');
 ```
 
-```javascript
-export default {
-  methods: {
-    showSuccessToast() {
-      Toast.success('成功文案');
-    },
-    showFailToast() {
-      Toast.fail('失败文案');
-    }
-  }
-}
-```
-:::
 
 #### 高级用法
 
-:::demo 高级用法
-```html
-<van-button @click="showCustomizedToast">高级用法</van-button>
-```
-
 ```javascript
-export default {
-  methods: {
-    showCustomizedToast() {
-      const toast = Toast.loading({
-        duration: 0,       // 持续展示 toast
-        forbidClick: true, // 禁用背景点击
-        message: '倒计时 3 秒'
-      });
+const toast = Toast.loading({
+  duration: 0,       // 持续展示 toast
+  forbidClick: true, // 禁用背景点击
+  message: '倒计时 3 秒'
+});
 
-      let second = 3;
-      const timer = setInterval(() => {
-        second--;
-        if (second) {
-          toast.message = `倒计时 ${second} 秒`;
-        } else {
-          clearInterval(timer);
-          Toast.clear();
-        }
-      }, 1000);
-    }
+let second = 3;
+const timer = setInterval(() => {
+  second--;
+  if (second) {
+    toast.message = `倒计时 ${second} 秒`;
+  } else {
+    clearInterval(timer);
+    Toast.clear();
   }
-};
+}, 1000);
 ```
-:::
+
 
 ### 方法
 

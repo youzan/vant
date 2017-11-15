@@ -1,32 +1,5 @@
 ## Tabbar 标签栏
 
-<style>
-.demo-tabbar {
-  .van-tabbar {
-    position: relative;
-
-    &-item {
-      cursor: pointer;
-    }
-  }
-}
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      active: 0,
-      active2: 0,
-      icon: {
-        normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
-        active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
-      }
-    }
-  }
-}
-</script>
-
 ### 使用指南
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
@@ -39,7 +12,7 @@ Vue.component(TabbarItem.name, TabbarItem);
 
 #### 基础用法
 
-:::demo 基础用法
+
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">标签</van-tabbar-item>
@@ -58,17 +31,17 @@ export default {
   }
 }
 ```
-:::
+
 
 #### 自定义图标
 通过 icon slot 自定义图标
 
-:::demo 自定义图标
+
 ```html
-<van-tabbar v-model="active2">
+<van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>自定义</span>
-    <img slot="icon" :src="active2 === 0 ? icon.active : icon.normal" />
+    <img slot="icon" :src="active === 0 ? icon.active : icon.normal" />
   </van-tabbar-item>
   <van-tabbar-item icon="chat">标签</van-tabbar-item>
   <van-tabbar-item icon="records">标签</van-tabbar-item>
@@ -79,7 +52,7 @@ export default {
 export default {
   data() {
     return {
-      active2: 0,
+      active: 0,
       icon: {
         normal: '//img.yzcdn.cn/1.png',
         active: '//img.yzcdn.cn/2.png'
@@ -88,7 +61,7 @@ export default {
   }
 }
 ```
-:::
+
 
 ### Tabbar API
 

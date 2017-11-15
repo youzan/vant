@@ -2,16 +2,6 @@
 
 `SwitchCell`组件是对`Switch`和`Cell`组件的封装
 
-<script>
-export default {
-  data() {
-    return {
-      checked: true
-    }
-  }
-}
-</script>
-
 ### 使用指南
 ``` javascript
 import { SwitchCell } from 'vant';
@@ -23,7 +13,7 @@ Vue.component(SwitchCell.name, SwitchCell);
 
 #### 基础用法
 
-:::demo 基础用法
+
 ```html
 <van-cell-group>
   <van-switch-cell v-model="checked" title="标题" />
@@ -39,29 +29,24 @@ export default {
   }
 }
 ```
-:::
 
 #### 禁用状态
 通过`disabled`属性可以将组件设置为禁用状态
 
-:::demo 禁用状态
 ```html
 <van-cell-group>
-  <van-switch-cell v-model="checked" :disabled="true" title="标题" />
+  <van-switch-cell v-model="checked" disabled title="标题" />
 </van-cell-group>
 ```
-:::
 
 #### 加载状态
 通过`loading`属性可以将组件设置为加载状态
 
-:::demo 加载状态
 ```html
 <van-cell-group>
-  <van-switch-cell v-model="checked" :loading="true" title="标题" />
+  <van-switch-cell v-model="checked" loading title="标题" />
 </van-cell-group>
 ```
-:::
 
 ### API
 

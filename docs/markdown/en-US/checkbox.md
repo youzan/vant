@@ -1,20 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      checkbox1: true,
-      checkbox2: true,
-      list: [
-        'a',
-        'b',
-        'c'
-      ],
-      result: ['a', 'b']
-    };
-  }
-};
-</script>
-
 ## Checkbox
 
 ### Install
@@ -29,34 +12,29 @@ Vue.component(CheckboxGroup.name, CheckboxGroup);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
-<van-checkbox v-model="checkbox1">Checkbox 1</van-checkbox>
+<van-checkbox v-model="checked">Checkbox 1</van-checkbox>
 ```
 
 ```javascript
 export default {
   data() {
     return {
-      checkbox1: true
+      checked: true
     };
   }
 };
 ```
-:::
 
 #### Disabled
 
-:::demo Disabled
 ```html
-<van-checkbox v-model="checkbox2" disabled>Checkbox 2</van-checkbox>
+<van-checkbox v-model="checked" disabled>Checkbox 2</van-checkbox>
 ```
-:::
 
-#### CheckboxGroup
+#### Checkbox Group
 When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an array and bound with CheckboxGroup by v-model.
 
-:::demo CheckboxGroup
 ```html
 <van-checkbox-group v-model="result">
   <van-checkbox
@@ -76,41 +54,21 @@ export default {
       list: ['a', 'b', 'c'],
       result: ['a', 'b']
     };
-  },
-
-  watch: {
-    result(val) {
-      console.log(val);
-    }
   }
 };
 ```
-:::
 
 #### Inside a Cell
 
-:::demo Inside a Cell
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
     <van-cell v-for="(item, index) in list" :key="index">
-      <van-checkbox :name="item">Checkbox{{ item }}</van-checkbox>
+      <van-checkbox :name="item">Checkbox {{ item }}</van-checkbox>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
 ```
-
-```javascript
-export default {
-  data() {
-    return {
-      list: ['a', 'b', 'c'],
-      result: ['a', 'b']
-    };
-  }
-};
-```
-:::
 
 ### Checkbox API
 

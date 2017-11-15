@@ -1,43 +1,3 @@
-<script>
-import { Toast } from 'packages/index';
-
-const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
-};
-
-export default {
-  data() {
-    return {
-      title: '地区选择',
-      pickerColumns: [
-        {
-          values: Object.keys(citys),
-          className: 'column1'
-        },
-        {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-          className: 'column2'
-        }
-      ]
-    };
-  },
-
-  methods: {
-    handlePickerChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
-    },
-    handlePickerCancel() {
-      Toast('picker cancel');
-    },
-    handlePickerConfirm() {
-      Toast('picker confirm');
-    }
-  }
-};
-</script>
-
 ## Picker 选择器
 
 ### 使用指南
@@ -51,16 +11,14 @@ Vue.component(Picker.name, Picker);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
-<van-picker :columns="pickerColumns" @change="handlePickerChange"></van-picker>
+<van-picker :columns="pickerColumns" @change="onChange" />
 ```
 
 ```javascript
 const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
+  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州'],
+  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩']
 };
 
 export default {
@@ -72,7 +30,7 @@ export default {
           className: 'column1'
         },
         {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
+          values: citys['浙江'],
           className: 'column2'
         }
       ]
@@ -80,33 +38,30 @@ export default {
   },
 
   methods: {
-    handlePickerChange(picker, values) {
+    onChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
     }
   }
 };
 ```
-:::
 
-#### 带toolbar的Picker
+#### 带 toolbar 的 Picker
 
-:::demo 带toolbar的Picker
 ```html
 <van-picker
-  show-toolbar
+  showToolbar
   :title="title"
   :columns="pickerColumns"
-  @change="handlePickerChange"
-  @cancel="handlePickerCancel"
-  @confirm="handlePickerConfirm"
-></van-picker>
+  @change="onChange"
+  @cancel="onCancel"
+  @confirm="onConfirm"
+/>
 ```
 
 ```javascript
 const citys = {
-  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
-  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩', '宁德'],
-  '湖南': ['长沙', '株洲', '湘潭', '衡阳', '邵阳', '岳阳', '常德', '张家界', '益阳', '郴州', '永州', '怀化', '娄底', '湘西土家族苗族自治州']
+  '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州'],
+  '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩']
 };
 
 export default {
@@ -119,7 +74,7 @@ export default {
           className: 'column1'
         },
         {
-          values: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州', '舟山', '台州', '丽水'],
+          values: citys['浙江'],
           className: 'column2'
         }
       ]
@@ -127,19 +82,18 @@ export default {
   },
 
   methods: {
-    handlePickerChange(picker, values) {
+    onChange(picker, values) {
       picker.setColumnValues(1, citys[values[0]]);
     },
-    handlePickerCancel() {
-      alert('picker cancel');
+    onCancel() {
+      Toast('picker cancel');
     },
-    handlePickerConfirm() {
-      alert('picker confirm');
+    onConfirm() {
+      Toast('picker confirm');
     }
   }
 };
 ```
-:::
 
 ### API
 

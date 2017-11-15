@@ -33,14 +33,13 @@ Vue.component(NumberKeyBoard.name, NumberKeyBoard);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <!-- PasswordInput -->
 <van-password-input
   :value="value"
   info="Some tips"
   @focus="showKeyboard = true"
-></van-password-input>
+/>
 
 <!-- NumberKeyboard -->
 <van-number-keyboard
@@ -48,7 +47,7 @@ Vue.component(NumberKeyBoard.name, NumberKeyBoard);
   @input="onInput"
   @delete="onDelete"
   @blur="showKeyboard = false"
-></van-number-keyboard>
+/>
 ```
 
 ```javascript
@@ -57,7 +56,7 @@ export default {
     return {
       value: '',
       showKeyboard: true
-    }
+    };
   },
 
   methods: {
@@ -70,7 +69,6 @@ export default {
   }
 }
 ```
-:::
 
 ### API
 

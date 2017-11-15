@@ -1,24 +1,3 @@
-<script>
-import { Toast } from 'packages/index';
-
-export default {
-  data() {
-    return {
-      value: '',
-    };
-  },
-
-  methods: {
-    onSearch() {
-      Toast(this.value);
-    },
-    onCancel() {
-      Toast('cancel');
-    }
-  }
-};
-</script>
-
 ## Search
 
 ### Install
@@ -32,7 +11,6 @@ Vue.component(Search.name, Search);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-search placeholder="Placeholder" v-model="value" />
 ```
@@ -44,7 +22,6 @@ export default {
   }
 }
 ```
-:::
 
 #### Listen to Events
 `search` event will be triggered when click the search button on the keyboard.
@@ -53,33 +30,29 @@ export default {
 
 Tips: There will be a search button on the keyboard when Search is inside a form in iOS.
 
-:::demo Listen to Events
 ```html
 <form action="/">
   <van-search
     v-model="value"
     placeholder="Placeholder"
-    :show-action="true"
+    :showAction="true"
     @search="onSearch"
     @cancel="onCancel">
   </van-search>
 </form>
 ```
-:::
 
 #### Custom Button
 Use `action` slot to custom right button, `cancel` event will no longer be triggered when use this slot
 
-:::demo Custom Button
 ```html
 <van-search
   v-model="value"
-  :show-action="true"
+  :showAction="true"
   @search="onSearch">
   <div slot="action" @click="onSearch">Search</div>
 </van-search>
 ```
-:::
 
 ### API
 

@@ -1,35 +1,3 @@
-<style>
-.demo-switch {
-  .van-switch {
-    margin: 0 15px;
-  }
-}
-</style>
-
-<script>
-import Dialog from 'packages/dialog';
-
-export default {
-  data() {
-    return {
-      checked: true,
-      checked2: true
-    };
-  },
-
-  methods: {
-    onInput(checked) {
-      Dialog.confirm({
-        title: '提醒',
-        message: '是否切换开关？'
-      }).then(() => {
-        this.checked2 = checked;
-      });
-    }
-  }
-};  
-</script>
-
 ## Switch 开关
 
 ### 使用指南
@@ -42,8 +10,6 @@ Vue.component(Switch.name, Switch);
 ### 代码演示
 
 #### 基础用法
-
-:::demo 基础用法
 ```html
 <van-switch v-model="checked" />
 ```
@@ -57,32 +23,27 @@ export default {
   }
 };  
 ```
-:::
 
 #### 禁用状态
-:::demo 禁用状态
 ```html
 <van-switch v-model="checked" disabled />
 ```
-:::
 
 #### 加载状态
-:::demo 加载状态
 ```html
 <van-switch v-model="checked" loading />
 ```
-:::
 
 #### 高级用法
-:::demo 高级用法
 ```html
-<van-switch :value="checked2" @input="onInput" />
+<van-switch :value="checked" @input="onInput" />
 ```
+
 ```js
 export default {
   data() {
     return {
-      checked2: true
+      checked: true
     };
   },
 
@@ -92,13 +53,12 @@ export default {
         title: '提醒',
         message: '是否切换开关？'
       }).then(() => {
-        this.checked2 = checked;
+        this.checked = checked;
       });
     }
   }
 }; 
 ```
-:::
 
 
 ### API

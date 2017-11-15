@@ -1,16 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      radio1: '1',
-      radio2: '2',
-      radio3: '1',
-      radio4: '1'
-    };
-  }
-};
-</script>
-
 ## Radio
 
 ### Install
@@ -25,91 +12,49 @@ Vue.component(Radio.name, Radio);
 #### Basic Usage
 Use `v-model` to bind check status of radio. The value will be set to the name of radio when radio get checked.
 
-:::demo Basic Usage
 ```html
-<div class="van-radios">
-  <van-radio name="1" v-model="radio1">Radio 1</van-radio>
-  <van-radio name="2" v-model="radio1">Radio 2</van-radio>
-</div>
+<van-radio name="1" v-model="radio">Radio 1</van-radio>
+<van-radio name="2" v-model="radio">Radio 2</van-radio>
 ```
+
 ```javascript
 export default {
   data() {
     return {
-      radio1: '1'
+      radio: '1'
     }
   }
 };
 ```
-:::
 
 #### Disabled
 
-:::demo Disabled
 ```html
-<div class="van-radios">
-  <van-radio name="1" v-model="radio2" disabled>Disabled</van-radio>
-  <van-radio name="2" v-model="radio2" disabled>Disabled and checked</van-radio>
-</div>
+<van-radio name="1" v-model="radio" disabled>Disabled</van-radio>
+<van-radio name="2" v-model="radio" disabled>Disabled and checked</van-radio>
 ```
 
-```javascript
-export default {
-  data() {
-    return {
-      radio2: '2'
-    }
-  }
-};
-```
-:::
 
-#### RadioGroup
+#### Radio Group
 When Radios are inside a RadioGroup, the checked radio's name is bound with CheckboxGroup by `v-model`.
 
-:::demo RadioGroup
 ```html
-<div class="van-radios">
-  <van-radio-group v-model="radio3">
-    <van-radio name="1">Radio 1</van-radio>
-    <van-radio name="2">Radio 2</van-radio>
-  </van-radio-group>
-</div>
+<van-radio-group v-model="radio">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
+</van-radio-group>
 ```
-  
-```javascript
-export default {
-  data() {
-    return {
-      radio3: '1'
-    }
-  }
-};
-```
-:::
 
-#### With Cell
+#### Inside a Cell
 
-:::demo With Cell
 ```html
-<van-radio-group v-model="radio4">
+<van-radio-group v-model="radio">
   <van-cell-group>
     <van-cell><van-radio name="1">Radio 1</van-radio></van-cell>
     <van-cell><van-radio name="2">Radio 2</van-radio></van-cell>
   </van-cell-group>
 </van-radio-group>
 ```
-
-```javascript
-export default {
-  data() {
-    return {
-      radio4: '1'
-    }
-  }
-};
-```
-:::
 
 ### Radio API
 

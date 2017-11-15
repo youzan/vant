@@ -1,50 +1,5 @@
 ## Sku 商品购买组件
 
-<script>
-import data from '../../mock/sku';
-
-const goods = data.goods_info;
-goods.picture = goods.picture[0];
-
-export default {
-  data() {
-    return {
-      showBase: false,
-      showCustomAction: false,
-      sku: data.sku,
-      goods: goods,
-      goodsId: data.goods_id,
-      quota: data.quota,
-      quotaUsed: data.quota_used,
-      disableStepperInput: true,
-      resetStepperOnHide: true,
-      initialSku: {
-        s1: '30349',
-        s2: '1193'
-      }
-    }
-  },
-
-  methods: {
-    handleBuyClicked(data) {
-      alert(JSON.stringify(data));
-    },
-    handleAddCartClicked(data) {
-      alert(JSON.stringify(data));
-    },
-    handlePointClicked() {
-      alert('积分兑换');
-    }
-  }
-}
-</script>
-
-<style>
-  .sku-container {
-    padding: 0 15px;
-  }
-</style>
-
 ### 使用指南
 ```javascript
 import { Sku } from 'vant';
@@ -54,70 +9,58 @@ Vue.component(Sku.name, Sku);
 
 ### 代码演示
 #### 基础用法
-:::demo 
-```html
-<template>
-  <div class="sku-container">
-    <van-sku
-      v-model="showBase"
-      :sku="sku"
-      :goods="goods"
-      :goods-id="goodsId"
-      :hide-stock="sku.hide_stock"
-      :quota="quota"
-      :quota-used="quotaUsed"
-      :reset-stepper-on-hide="resetStepperOnHide"
-      :disable-stepper-input="disableStepperInput"
-      @buy-clicked="handleBuyClicked"
-      @add-cart="handleAddCartClicked"
-    >
-    </van-sku>
-    <van-button type="primary" @click="showBase = true" block>基础用法</van-button>
-  </d>
-</template>
-```
-:::
 
-#### 自定义sku slot区块
-:::demo 
 ```html
-<template>
-  <div class="sku-container">
-    <van-sku
-      v-model="showCustomAction"
-      stepper-title="我要买"
-      :sku="sku"
-      :goods="goods"
-      :goods-id="goodsId"
-      :hide-stock="sku.hide_stock"
-      :show-add-cart-btn="true"
-      :quota="quota"
-      :quota-used="quotaUsed"
-      :reset-stepper-on-hide="true"
-      :initial-sku="initialSku"
-      @buy-clicked="handleBuyClicked"
-      @add-cart="handleAddCartClicked"
-    >
-      <!-- 隐藏sku messages -->
-      <template slot="sku-messages"></template>
-      <!-- 自定义sku actions -->
-      <template slot="sku-actions" slot-scope="props">
-        <div class="van-sku-actions">
-          <button class="van-sku__add-cart-btn" @click="handlePointClicked">
-            积分兑换
-          </button>
-          <!-- 直接触发sku内部事件，通过内部事件执行handleBuyClicked回调 -->
-          <button class="van-sku__buy-btn" @click="props.skuEventBus.$emit('sku:buy')">
-            买买买
-          </button>
-        </div>
-      </template>
-    </van-sku>
-    <van-button type="primary" @click="showCustomAction = true" block>自定义sku actions</van-button>
-  </d>
-</template>
+<van-sku
+  v-model="showBase"
+  :sku="sku"
+  :goods="goods"
+  :goodsId="goodsId"
+  :hideStock="sku.hide_stock"
+  :quota="quota"
+  :quotaUsed="quotaUsed"
+  :resetStepperOnHide="resetStepperOnHide"
+  :disableStepperInput="disableStepperInput"
+  @buy-clicked="handleBuyClicked"
+  @add-cart="handleAddCartClicked"
+/>
 ```
-:::
+
+#### 自定义 sku slot 区块
+
+```html
+<van-sku
+  v-model="showCustomAction"
+  stepperTitle="我要买"
+  :sku="sku"
+  :goods="goods"
+  :goodsId="goodsId"
+  :hideStock="sku.hide_stock"
+  :showAddCartBtn="true"
+  :quota="quota"
+  :quotaUsed="quotaUsed"
+  :resetStepperOnHide="true"
+  :initialSku="initialSku"
+  @buy-clicked="handleBuyClicked"
+  @add-cart="handleAddCartClicked"
+>
+  <!-- 隐藏sku messages -->
+  <template slot="sku-messages"></template>
+  <!-- 自定义sku actions -->
+  <template slot="sku-actions" slot-scope="props">
+    <div class="van-sku-actions">
+      <button class="van-sku__add-cart-btn" @click="handlePointClicked">
+        积分兑换
+      </button>
+      <!-- 直接触发sku内部事件，通过内部事件执行handleBuyClicked回调 -->
+      <button class="van-sku__buy-btn" @click="props.skuEventBus.$emit('sku:buy')">
+        买买买
+      </button>
+    </div>
+  </template>
+</van-sku>
+```
+
 
 ### API
 

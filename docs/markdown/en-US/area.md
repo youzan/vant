@@ -1,15 +1,3 @@
-<script>
-import AreaList from '../../mock/area.json';
-
-export default {
-  data() {
-    return {
-      areaList: AreaList
-    }
-  }
-};
-</script>
-
 ## Area
 
 ### Install
@@ -26,43 +14,26 @@ Vue.component(Area.name, Area);
 
 要初始化一个`Area`组件，你需要传入一个`areaList`属性，`areaList`Data Structure具体可看下面Data Structure章节。
 
-:::demo Basic Usage
 ```html
-<van-area :area-list="areaList"></van-area>
-
-<script>
-import AreaList from '../../mock/area.json';
-
-export default {
-  data() {
-    return {
-      areaList: AreaList
-    }
-  }
-};
-</script>
+<van-area :areaList="areaList" />
 ```
-:::
 
-#### 选中省市县
+#### Initial Value
 
 如果想选中某个省市县，需要传入一个`value`属性，绑定对应的省市县`code`。
 
-:::demo 选中省市县
 ```html
-<van-area :area-list="areaList" value="110101"></van-area>
+<van-area :areaList="areaList" value="110101" />
 ```
-:::
 
-#### 配置显示列
+#### Columns Number
 
 可以通过`columnsNum`属性配置省市县显示的列数，默认情况下会显示省市县，当你设置为`2`，则只会显示省市选择。
 
-:::demo 配置显示列
 ```html
-<van-area :area-list="areaList" :columns-num="2"></van-area>
+<van-area :areaList="areaList" :columnsNum="2" />
 ```
-:::
+
 
 ### API
 

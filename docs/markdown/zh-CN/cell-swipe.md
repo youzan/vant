@@ -1,21 +1,3 @@
-<style>
-.van-cell-swipe__left,
-.van-cell-swipe__right {
-    color: #FFFFFF;
-    font-size: 16px;
-    width: 65px;
-    height: 44px;
-    display: inline-block;
-    text-align: center;
-    line-height: 44px;
-}
-.van-cell-swipe__left {
-  background-color: #FF4444;  
-}
-.van-cell-swipe__right {
-  background-color: #84c483;
-}
-</style>
 ## CellSwipe 滑动单元格
 
 ### 使用指南
@@ -29,17 +11,15 @@ Vue.component(CellSwipe.name, CellSwipe);
 
 #### 基础用法
 
-:::demo 基础用法
 ```html
 <van-cell-swipe :right-width="65" :left-width="65">
   <span slot="left">选择</span>
   <van-cell-group>
-    <van-cell title="单元格1" value="单元格1内容"></van-cell>
+    <van-cell title="单元格" value="内容" />
   </van-cell-group>
   <span slot="right">删除</span>
 </van-cell-swipe>
 ```
-:::
 
 ### API
 

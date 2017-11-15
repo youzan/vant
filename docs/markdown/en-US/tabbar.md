@@ -1,20 +1,5 @@
 ## Tabbar
 
-<script>
-export default {
-  data() {
-    return {
-      active: 0,
-      active2: 0,
-      icon: {
-        normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
-        active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
-      }
-    }
-  }
-}
-</script>
-
 ### Install
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
@@ -27,7 +12,6 @@ Vue.component(TabbarItem.name, TabbarItem);
 
 #### Basic Usage
 
-:::demo Basic Usage
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">Tab</van-tabbar-item>
@@ -46,17 +30,15 @@ export default {
   }
 }
 ```
-:::
 
 #### Custom icon
 Use `icon` slot to custom icon
 
-:::demo Custom icon
 ```html
-<van-tabbar v-model="active2">
+<van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>Custom</span>
-    <img slot="icon" :src="active2 === 0 ? icon.active : icon.normal" />
+    <img slot="icon" :src="active === 0 ? icon.active : icon.normal" />
   </van-tabbar-item>
   <van-tabbar-item icon="chat">Tab</van-tabbar-item>
   <van-tabbar-item icon="records">Tab</van-tabbar-item>
@@ -67,7 +49,7 @@ Use `icon` slot to custom icon
 export default {
   data() {
     return {
-      active2: 0,
+      active: 0,
       icon: {
         normal: '//img.yzcdn.cn/1.png',
         active: '//img.yzcdn.cn/2.png'
@@ -76,7 +58,6 @@ export default {
   }
 }
 ```
-:::
 
 ### Tabbar API
 

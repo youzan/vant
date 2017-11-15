@@ -28,65 +28,12 @@ export default {
 
 ### 代码演示
 
-<script>
-import { Waterfall } from 'packages';
-
-export default {
-  data() {
-    return {
-      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-      disabled: false
-    };
-  },
-
-  directives: {
-    WaterfallLower: Waterfall('lower')
-  },
-
-  methods: {
-    loadMore() {
-      this.disabled = true;
-      setTimeout(() => {
-        for (let i = 0; i < 5; i ++) {
-          this.list.push(this.list.length);
-        }
-        this.disabled = false;
-      }, 200);
-    }
-  }
-};
-</script>
-
-<style>
-.demo-waterfall {
-  ul {
-    max-height: 360px;
-    overflow: scroll;
-    border-top: 1px solid #e5e5e5;
-  }
-  li {
-    line-height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
-    text-align: center;
-  }
-  .page-desc {
-    padding: 5px 0;
-    line-height: 1.4;
-    font-size: 14px;
-    text-align: center;
-    color: #666;
-  }
-}
-</style>
-
 #### 基础用法
 使用 `v-waterfall-lower` 监听滚动到达底部，并执行相应函数。若是函数执行中需要异步加载数据，可以将 `waterfall-disabled` 指定的值置为 true，禁止 `v-waterfall-lower` 监听滚动事件
 
 注意：`waterfall-disabled` 传入的是 vue 对象中表示是否禁止瀑布流触发 key 值，类型是字符串
-:::demo 基础用法
+
 ```html
-<p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
 <ul
   v-waterfall-lower="loadMore"
   waterfall-disabled="disabled"
@@ -121,7 +68,6 @@ export default {
   }
 };
 ```
-:::
 
 ### API
 

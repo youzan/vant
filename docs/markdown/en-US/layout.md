@@ -16,7 +16,7 @@ Vue.component(Col.name, Col);
 
 Layout are based on 24-column. The attribute `span` in `Col` means the number of column the grid spans. Of course, You can use `offset` attribute to set number of spacing on the left side of the grid.
 
-:::demo Basic Usage
+
 ```html
 <van-row>
   <van-col span="8">span: 8</van-col>
@@ -34,13 +34,13 @@ Layout are based on 24-column. The attribute `span` in `Col` means the number of
   <van-col offset="12" span="12">offset: 12, span: 12</van-col>
 </van-row>
 ```
-:::
+
 
 #### Column Spacing
 
 Set grid spacing using `gutter` attribute. The default value is 0
 
-:::demo Column Spacing
+
 ```html
 <van-row gutter="20">
   <van-col span="8">span: 8</van-col>
@@ -48,7 +48,7 @@ Set grid spacing using `gutter` attribute. The default value is 0
   <van-col span="8">span: 8</van-col>
 </van-row>
 ```
-:::
+
 
 ### API
 

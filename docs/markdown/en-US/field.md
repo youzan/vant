@@ -1,16 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      value: '',
-      password: '',
-      username: '',
-      message: ''
-    };
-  }
-};
-</script>
-
 ## Field
 
 ### Install
@@ -25,18 +12,15 @@ Vue.component(Field.name, Field);
 #### Basic Usage
 The value of filed is bound with v-model.
 
-:::demo Basic Usage
 ```html
 <van-cell-group>
   <van-field v-model="value" placeholder="Username"></van-field>
 </van-cell-group>
 ```
-:::
 
-#### Custom Type
+#### Custom type
 Use `type` prop to custom diffrent type fileds.
 
-:::demo Custom Type
 ```html
 <van-cell-group>
   <van-field
@@ -58,32 +42,26 @@ Use `type` prop to custom diffrent type fileds.
   </van-field>
 </van-cell-group>
 ```
-:::
 
 #### Disabled
 
-:::demo Disabled
 ```html
 <van-cell-group>
   <van-field value="Disabled" label="Username" disabled></van-field>
 </van-cell-group>
 ```
-:::
 
-#### Error Info
+#### Error info
 
-:::demo Error Info
 ```html
 <van-cell-group>
   <van-field label="Username" placeholder="Username" error></van-field>
 </van-cell-group>
 ```
-:::
 
 #### Auto resize
 Textarea Filed can be auto resize when has `autosize` prop
 
-:::demo Auto resize
 ```html
 <van-cell-group>
   <van-field
@@ -97,7 +75,6 @@ Textarea Filed can be auto resize when has `autosize` prop
   </van-field>
 </van-cell-group>
 ```
-:::
 
 ### API
 

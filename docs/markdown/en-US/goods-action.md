@@ -1,18 +1,3 @@
-<script>
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    onClickMiniBtn() {
-      Toast('点击图标');
-    },
-    onClickBigBtn() {
-      Toast('点击按钮');
-    }
-  }
-}
-</script>
-
 ## GoodsAction
 
 ### Install
@@ -30,7 +15,7 @@ Vue.component(GoodsActionMiniBtn.name, GoodsActionMiniBtn);
 
 ### Usage
 
-:::demo 
+
 ```html
 <van-goods-action>
   <van-goods-action-mini-btn icon="chat" @click="onClickMiniBtn">
@@ -60,7 +45,6 @@ export default {
   }
 }
 ```
-:::
 
 ### API
 
