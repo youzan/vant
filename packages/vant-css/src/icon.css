@@ -2,7 +2,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-e115a13a.ttf') format('truetype');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-ecf28a69.ttf') format('truetype');
 }
 
 .van-icon {
@@ -16,37 +16,37 @@
   }
 }
 
-.van-icon-add:before {
+.van-icon-add-o:before {
   content: "\E800";
 }
-.van-icon-add2:before {
+.van-icon-add:before {
   content: "\E801";
 }
-.van-icon-after-sale:before {
+.van-icon-add2:before {
   content: "\E802";
 }
-.van-icon-alipay:before {
+.van-icon-after-sale:before {
   content: "\E803";
 }
-.van-icon-arrow:before {
+.van-icon-alipay:before {
   content: "\E804";
 }
-.van-icon-balance-details:before {
+.van-icon-arrow:before {
   content: "\E805";
 }
-.van-icon-balance-pay:before {
+.van-icon-balance-details:before {
   content: "\E806";
 }
-.van-icon-birthday-privilege:before {
+.van-icon-balance-pay:before {
   content: "\E807";
 }
-.van-icon-browsing-history:before {
+.van-icon-birthday-privilege:before {
   content: "\E808";
 }
-.van-icon-card:before {
+.van-icon-browsing-history:before {
   content: "\E809";
 }
-.van-icon-cart:before {
+.van-icon-card:before {
   content: "\E80A";
 }
 .van-icon-cash-back-record:before {
