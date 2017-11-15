@@ -4,9 +4,6 @@ import camelize from '../utils/camelize';
 import deepAssign from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
-const proto = Vue.prototype;
-const defaultLang = 'zh-CN';
-
 // component mixin
 const i18n = {
   computed: {
@@ -14,11 +11,17 @@ const i18n = {
       const { name } = this.$options;
       const prefix = name ? camelize(name) + '.' : '';
       const messages = this.$vantMessages[this.$vantLang];
-      return path => get(messages, prefix + path) || get(messages, path);
+
+      return (path, ...args) => {
+        const message = get(messages, prefix + path) || get(messages, path);
+        return typeof message === 'function' ? message.apply(null, args) : message;
+      };
     }
   }
 };
 
+const proto = Vue.prototype;
+const defaultLang = 'zh-CN';
 const locale = {
   i18n,
 
