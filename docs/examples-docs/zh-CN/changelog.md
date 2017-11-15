@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9) 
+`2017-11-15`
+
+**Improvements**
+
+- Icon: 增加几个新 icons [\#315](https://github.com/youzan/vant/pull/315) ([cookfront](https://github.com/cookfront))
+
+**Bug Fixes**
+
+- Search: 修复 box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) ([chenjiahan](https://github.com/chenjiahan))
+
 ### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 `2017-11-11`
 
