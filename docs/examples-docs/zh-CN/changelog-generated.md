@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9) (2017-11-15)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.8...v0.10.9)
+
+**Breaking changes**
+
+- 能多加些加载图标就好了 [\#202](https://github.com/youzan/vant/issues/202)
+
+**Issue**
+
+- waterfall 瀑布流无限加载问题 [\#313](https://github.com/youzan/vant/issues/313)
+- search 组件 样式错误 [\#311](https://github.com/youzan/vant/issues/311)
+- Tabbar导航 和router-link 结合 报错 ？？？ [\#302](https://github.com/youzan/vant/issues/302)
+- 能否给轻提示加个遮罩层做loading的时候会用到 [\#285](https://github.com/youzan/vant/issues/285)
+
+**Improvements**
+
+- \[new feature\]: add new icons [\#315](https://github.com/youzan/vant/pull/315) ([cookfront](https://github.com/cookfront))
+- \[bugfix\] Search box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.8](https://github.com/youzan/vant/tree/v0.10.8) (2017-11-11)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.7...v0.10.8)
 
