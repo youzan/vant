@@ -1,14 +1,14 @@
 <template>
   <section class="van-doc-demo-pages">
-    <h2>示例</h2>
-    <p>下面是一些使用 Vant 搭建的示例页面，点击图片切换至对应示例。</p>
+    <h2>{{ $t('title') }}</h2>
+    <p>{{ $t('description') }}</p>
     <div class="van-doc-demo-pages__gallery">
       <div
         :class="['van-doc-demo-pages__item', { 'van-doc-demo-pages__item--active': index === currentDemo }]"
         v-for="(demo, index) in demos"
       >
         <h4>{{ demo.title }}</h4>
-        <a :href="demo.source" target="_blank">源代码</a>
+        <a :href="demo.source" target="_blank">{{ $t('source') }}</a>
         <img :src="demo.preview" @click="onChangeDemo(demo, index)" />
       </div>
     </div>
@@ -19,26 +19,50 @@
 export default {
   name: 'van-doc-demo-pages',
 
+  i18n: {
+    'zh-CN': {
+      title: '示例',
+      source: '源代码',
+      description: '下面是一些使用 Vant 搭建的示例页面，点击图片切换至对应示例。',
+      goodsDetail: '商品详情',
+      userCenter: '会员中心',
+      shoppingCart: '购物车'
+    },
+    'en-US': {
+      title: 'Demo Pages',
+      source: 'Source code',
+      description: 'Here are some of the demo pages built using Vant, click on the picture to switch to the corresponding demo.',
+      goodsDetail: 'Goods Detail',
+      userCenter: 'User Center',
+      shoppingCart: 'Shopping Cart'
+    }
+  },
+
   data() {
     return {
-      currentDemo: 0,
-      demos: [{
-        title: '商品详情',
+      currentDemo: 0
+    };
+  },
+
+  computed: {
+    demos() {
+      return [{
+        title: this.$t('goodsDetail'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/24/7070a8d1d6504b864c605114d32f2aae.png',
         url: 'https://youzan.github.io/vant-demo/#/goods',
         source: 'https://github.com/youzan/vant-demo/tree/master/src/view/goods/index.vue'
       }, {
-        title: '会员中心',
+        title: this.$t('userCenter'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/23/e1d70757e3ab88d39a360b704be8f43f.png',
         url: 'https://youzan.github.io/vant-demo/#/user',
         source: 'https://github.com/youzan/vant-demo/tree/master/src/view/user/index.vue'
       }, {
-        title: '购物车',
+        title: this.$t('shoppingCart'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/24/06b8b5ed3692314d434db7f6854dcdbe.png',
         url: 'https://youzan.github.io/vant-demo/#/cart',
         source: 'https://github.com/youzan/vant-demo/tree/master/src/view/cart/index.vue'
-      }]
-    };
+      }];
+    }
   },
 
   beforeMount() {

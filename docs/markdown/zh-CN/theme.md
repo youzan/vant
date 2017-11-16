@@ -9,7 +9,7 @@
 // 引入基础样式
 import 'vant/packages/vant-css/src/base.css';
 
-// 引入组价对应的样式
+// 引入组件对应的样式
 import 'vant/packages/vant-css/src/button.css';
 import 'vant/packages/vant-css/src/checkbox.css';
 ```
