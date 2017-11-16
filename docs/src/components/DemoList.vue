@@ -15,7 +15,7 @@
 
 <script>
 import docConfig from '../doc.config';
-import MobileNav from './mobile-nav';
+import MobileNav from './MobileNav';
 
 export default {
   data() {
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 .side-nav {
   width: 100%;
   box-sizing: border-box;
