@@ -1,8 +1,8 @@
 <template>
   <div ref="root">
     <van-field
-      label="详细地址"
-      placeholder="如街道、楼层、门牌号等"
+      :label="$t('label.address')"
+      :placeholder="$t('placeholder.address')"
       maxlength="200"
       type="textarea"
       autosize
@@ -15,7 +15,7 @@
       @blur="handleBlur"
     >
       <div slot="icon">
-        <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">完成</span>
+        <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">{{ $t('complete') }}</span>
         <van-icon v-else-if="showIcon" name="clear"  />
       </div>
     </van-field>
@@ -42,9 +42,12 @@ import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 import isAndroid from '../utils/env/is-android';
+import { i18n } from '../locale';
 
 export default {
   name: 'van-address-edit-detail',
+
+  mixins: [i18n],
 
   components: {
     [Field.name]: Field,
@@ -85,7 +88,7 @@ export default {
     },
 
     handleBlur(e) {
-      // 等待其他地方点击事件完了以后，再触发
+      // wait for click event finished
       setTimeout(() => {
         this.isFocused = false;
         this.$emit('blur', e);

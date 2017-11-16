@@ -8,6 +8,7 @@
     line-height: 40px;
 
     .van-contact-card__icon {
+      width: 40px;
       color: $blue;
       font-size: 40px;
     }

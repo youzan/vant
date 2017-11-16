@@ -36,9 +36,7 @@ export default {
   props: {
     value: {},
     areaList: Object,
-    /**
-     * 省市县显示列数，3-省市县，2-省市，1-省
-     */
+    // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {
       type: [String, Number],
       default: 3

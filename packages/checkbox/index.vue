@@ -50,7 +50,7 @@ export default {
   },
 
   computed: {
-    // checkbox 是否在 van-checkbox-group 中
+    // whether is in van-checkbox-group
     isGroup() {
       return !!this.findParentByComponentName('van-checkbox-group');
     },

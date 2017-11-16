@@ -2,25 +2,25 @@
   <div class="van-contact-edit">
     <van-cell-group>
       <van-field
-        label="联系人"
-        maxlength="30"
-        placeholder="名字"
         v-model="currentInfo.name"
+        maxlength="30"
+        :label="$t('name')"
+        :placeholder="$t('namePlaceholder')"
         :error="errorInfo.name"
         @focus="onFocus('name')">
       </van-field>
       <van-field
-        type="tel"
-        label="联系电话"
-        placeholder="手机或固定电话"
         v-model="currentInfo.tel"
+        type="tel"
+        :label="$t('tel')"
+        :placeholder="$t('telPlaceholder')"
         :error="errorInfo.tel"
         @focus="onFocus('tel')">
       </van-field>
     </van-cell-group>
     <div class="van-contact-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveContact" type="primary">保存</van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">删除联系人</van-button>
+      <van-button block :loading="isSaving" @click="onSaveContact" type="primary">{{ $t('save') }}</van-button>
+      <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>
   </div>
 </template>
@@ -32,9 +32,12 @@ import CellGroup from '../cell-group';
 import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
+import { i18n } from '../locale';
 
 export default {
   name: 'van-contact-edit',
+
+  mixins: [i18n],
 
   components: {
     [Field.name]: Field,
@@ -81,9 +84,9 @@ export default {
       const value = this.currentInfo[key];
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : '名字过长，请重新输入' : '请填写名字';
+          return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : '请填写正确的手机号码或电话号码';
+          return validateMobile(value) ? '' : this.$t('telInvalid');
       }
     },
 
@@ -113,7 +116,7 @@ export default {
       }
 
       Dialog.confirm({
-        message: `确定要删除这个联系人么`
+        message: this.$t('confirmDelete')
       }).then(() => {
         this.$emit('delete', this.currentInfo);
       });
