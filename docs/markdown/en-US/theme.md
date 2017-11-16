@@ -1,6 +1,6 @@
 ## Custom Theme (In translation)
 
-`Vant`提供了一套默认主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。如果你想完全替换主题色或者其他样式，可以使用下面的方法：
+`Vant` provides a set of default themes, if you want to custom the theme color or other styles, you can use the following methods:
 
 ### 方案一. PostCSS 插件
 在项目中直接引入组件对应的 postcss 源代码，并通过 postcss 插件 [postcss-theme-variables](https://www.npmjs.com/package/postcss-theme-variables) 替换颜色变量，步骤如下：

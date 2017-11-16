@@ -106,7 +106,7 @@
     "style-loader": "^0.19.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
-    "vant-doc": "0.3.16",
+    "vant-doc": "0.3.17",
     "vue": "^2.5.3",
     "vue-loader": "^13.5.0",
     "vue-markdown-loader": "^2.2.3",
