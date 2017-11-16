@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import findParent from '../mixins/findParent';
+import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-tab',
@@ -21,7 +21,7 @@ export default {
   },
 
   data() {
-    this.findParentByComponentName('van-tabs');
+    this.findParentByName('van-tabs');
     const nextIndex = this.parentGroup.tabs.length;
     this.updateParentData(nextIndex);
     return {
