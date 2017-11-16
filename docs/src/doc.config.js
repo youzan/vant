@@ -49,6 +49,11 @@ module.exports = {
                 title: '示例页面',
                 noDocument: true,
                 noExample: true
+              },
+              {
+                path: '/i18n',
+                title: '国际化',
+                noExample: true
               }
             ]
           }
@@ -315,6 +320,11 @@ module.exports = {
                 path: '/demo',
                 title: 'Demo pages',
                 noDocument: true,
+                noExample: true
+              },
+              {
+                path: '/i18n',
+                title: 'Internationalization',
                 noExample: true
               }
             ]
