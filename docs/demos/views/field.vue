@@ -14,7 +14,7 @@
           icon="clear"
           :placeholder="$t('usernamePlaceholder')"
           required
-          @clickIcon="username = ''"
+          @click-icon="username = ''"
         >
         </van-field>
 

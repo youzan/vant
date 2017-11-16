@@ -49,8 +49,6 @@
 import Cell from '../cell';
 import Icon from '../icon';
 
-const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
-
 export default {
   name: 'van-field',
 
@@ -62,15 +60,14 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'text',
-      validator: value => VALID_TYPES.indexOf(value) > -1
+      default: 'text'
     },
     value: {},
     icon: String,
     label: String,
     error: Boolean,
-    required: Boolean,
     border: Boolean,
+    required: Boolean,
     autosize: Boolean,
     onIconClick: {
       type: Function,

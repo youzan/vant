@@ -13,8 +13,6 @@
 <script>
 import Picker from '../picker';
 
-const allowedType = ['time', 'date', 'datetime'];
-
 export default {
   name: 'van-datetime-picker',
 
@@ -25,10 +23,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'datetime',
-      validator(value) {
-        return allowedType.indexOf(value) > -1;
-      }
+      default: 'datetime'
     },
     format: {
       type: String,
@@ -58,7 +53,7 @@ export default {
       type: Number,
       default: 23
     },
-    value: null
+    value: {}
   },
 
   data() {

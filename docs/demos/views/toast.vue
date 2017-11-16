@@ -67,14 +67,14 @@ export default {
       const toast = Toast.loading({
         duration: 0,
         forbidClick: true,
-        message: this.$t('text4')(3)
+        message: this.$t('text4', 3)
       });
 
       let second = 3;
       const timer = setInterval(() => {
         second--;
         if (second) {
-          toast.message = this.$t('text4')(second);
+          toast.message = this.$t('text4', second);
         } else {
           clearInterval(timer);
           Toast.clear();

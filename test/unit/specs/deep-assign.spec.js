@@ -1,6 +1,6 @@
 import deepAssign from 'packages/utils/deep-assign';
 
-describe('DatetimePicker', () => {
+describe('DeepAssign', () => {
   it('basic assign', () => {
     const a = { foo: 0 };
     const b = { foo: 0, bar: 1 };

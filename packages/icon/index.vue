@@ -7,12 +7,8 @@
 <script>
 export default {
   name: 'van-icon',
-
   props: {
-    name: {
-      type: String,
-      required: true
-    }
+    name: String
   }
 };
 </script>

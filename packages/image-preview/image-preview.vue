@@ -34,9 +34,6 @@ export default {
     overlay: {
       default: true
     },
-    lockOnScroll: {
-      default: true
-    },
     closeOnClickOverlay: {
       default: true
     }
