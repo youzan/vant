@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import findParent from '../mixins/findParent';
+import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-radio',
@@ -40,7 +40,7 @@ export default {
 
   computed: {
     isGroup() {
-      return !!this.findParentByComponentName('van-radio-group');
+      return !!this.findParentByName('van-radio-group');
     },
 
     currentValue: {

@@ -22,7 +22,7 @@
 
 <script>
 import Icon from '../icon';
-import findParent from '../mixins/findParent';
+import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-checkbox',
@@ -52,7 +52,7 @@ export default {
   computed: {
     // whether is in van-checkbox-group
     isGroup() {
-      return !!this.findParentByComponentName('van-checkbox-group');
+      return !!this.findParentByName('van-checkbox-group');
     },
 
     currentValue: {
