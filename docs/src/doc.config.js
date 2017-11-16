@@ -308,12 +308,12 @@ module.exports = {
               },
               {
                 path: '/theme',
-                title: 'Theme (In translation)',
+                title: 'Custom Theme',
                 noExample: true
               },
               {
                 path: '/demo',
-                title: 'Demo pages (In translation)',
+                title: 'Demo pages',
                 noDocument: true,
                 noExample: true
               }
