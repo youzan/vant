@@ -15,13 +15,15 @@
 
   &__pivot {
     top: 50%;
-    width: 28px;
+    min-width: 28px;
+    padding: 0 5px;
     font-size: 8px;
     margin-top: -6px;
     position: absolute;
     border-radius: 6px;
     line-height: 12px;
     text-align: center;
+    box-sizing: border-box;
     background-color: $gray-light;
   }
 }

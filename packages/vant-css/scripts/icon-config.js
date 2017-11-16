@@ -62,6 +62,10 @@ module.exports = {
       css: 'add2'
     },
     {
+      src: '加购.svg',
+      css: 'add-o'
+    },
+    {
       src: '照片.svg',
       css: 'photo'
     },
@@ -78,7 +82,7 @@ module.exports = {
       css: 'passed'
     },
     {
-      src: '购物车.svg',
+      src: '购物车2.svg',
       css: 'cart'
     },
     {
@@ -158,7 +162,7 @@ module.exports = {
       css: 'other-pay'
     },
     {
-      src: '购物车2.svg',
+      src: '购物车1.svg',
       css: 'shopping-cart'
     },
     {

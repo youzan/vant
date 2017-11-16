@@ -10,15 +10,15 @@
     <div class="van-pull-refresh__head">
       <slot name="normal" v-if="status === 'normal'"></slot>
       <slot name="pulling" v-if="status === 'pulling'">
-        <span class="van-pull-refresh__text">{{ pullingText }}</span>
+        <span class="van-pull-refresh__text">{{ pullingText || $t('pullingText') }}</span>
       </slot>
       <slot name="loosing" v-if="status === 'loosing'">
-        <span class="van-pull-refresh__text">{{ loosingText }}</span>
+        <span class="van-pull-refresh__text">{{ loosingText || $t('loosingText') }}</span>
       </slot>
       <slot name="loading" v-if="status === 'loading'">
         <div class="van-pull-refresh__loading">
           <van-loading />
-          <span>{{ loadingText }}</span>
+          <span>{{ loadingText || $t('loadingText') }}</span>
         </div>
       </slot>
     </div>
@@ -29,26 +29,20 @@
 <script>
 import Loading from '../loading';
 import scrollUtils from '../utils/scroll';
+import { i18n } from '../locale';
 
 export default {
   name: 'van-pull-refresh',
 
+  mixins: [i18n],
+
   props: {
+    pullingText: String,
+    loosingText: String,
+    loadingText: String,
     value: {
       type: Boolean,
       required: true
-    },
-    pullingText: {
-      type: String,
-      default: '下拉即可刷新...'
-    },
-    loosingText: {
-      type: String,
-      default: '释放即可刷新...'
-    },
-    loadingText: {
-      type: String,
-      default: '加载中...'
     },
     animationDuration: {
       type: Number,

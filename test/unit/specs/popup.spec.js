@@ -79,7 +79,7 @@ describe('Popup', () => {
       setTimeout(() => {
         expect(wrapper.element.style.display).to.equal('none');
         done();
-      }, 300);
+      }, 500);
     }, 300);
   });
 

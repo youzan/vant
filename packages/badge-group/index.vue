@@ -9,7 +9,6 @@ export default {
   name: 'van-badge-group',
 
   props: {
-    // 当前激活 tab 面板的 key
     activeKey: {
       type: [Number, String],
       default: 0

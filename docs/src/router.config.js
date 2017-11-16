@@ -1,18 +1,15 @@
 import docConfig from './doc.config';
-import { getLang } from './utils/lang';
 import DemoList from './components/demo-list';
-import componentDocs from '../examples-dist/entry-docs';
-import componentDemos from '../examples-dist/entry-demos';
-import Demo from './components/demo';
+import componentDocs from '../markdown';
+import componentDemos from '../demos';
+import { Demos } from 'vant-doc';
+import Vue from 'vue';
 import './utils/iframe-router';
 
 const registerRoute = (isExample) => {
   const route = [{
-    path: '/',
-    redirect: to => `/${getLang()}/`
-  }, {
     path: '*',
-    redirect: to => `/${getLang()}/`
+    redirect: to => `/${Vue.prototype.$vantLang}/`
   }];
 
   Object.keys(docConfig).forEach((lang, index) => {
@@ -53,9 +50,9 @@ const registerRoute = (isExample) => {
         let component;
 
         if (path === '/demo') {
-          component = Demo;
+          component = Demos;
         } else {
-          component = isExample ? componentDemos[name] : componentDocs[name];
+          component = isExample ? componentDemos[path.replace('/', '')] : componentDocs[name];
         }
 
         route.push({

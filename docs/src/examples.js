@@ -2,14 +2,13 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
 import routes from './router.config';
-import { setLang } from './utils/lang';
 import Vant, { Lazyload } from 'packages';
-import ZanDoc from 'zan-doc';
+import VantDoc from 'vant-doc';
 import 'packages/vant-css/src/index.css';
-import 'zan-doc/src/helper/touch-simulator';
+import 'vant-doc/src/helper/touch-simulator';
 
 Vue.use(Vant);
-Vue.use(ZanDoc);
+Vue.use(VantDoc);
 Vue.use(Lazyload, {
   lazyComponent: true
 });
@@ -20,14 +19,6 @@ const router = new VueRouter({
   mode: 'hash',
   base: '/zanui/vant/examples',
   routes: routesConfig
-});
-
-router.afterEach((route) => {
-  const container = document.querySelector('.examples-container');
-  if (container) {
-    document.querySelector('.examples-container').scrollTop = 0;
-  }
-  setLang(route.meta.lang);
 });
 
 window.vueRouter = router;

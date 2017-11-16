@@ -30,7 +30,7 @@ npm run dev
 
 - 仓库的组件代码都位于 `packages` 下，每个组件一个文件夹
 - 所有的组件样式代码都位于 `packages/vant-css/src` 下，`vant-css` 也会在发布时单独发包
-- `docs/examples-docs` 目录下是文档网站的代码，根据语言划分为 zh-CN 和 en-US，本地开发时可以在根目录下运行 `npm run dev` 开启文档网站。
+- `docs/markdown` 目录下是文档网站的代码，根据语言划分为 zh-CN 和 en-US，本地开发时可以在根目录下运行 `npm run dev` 开启文档网站。
 
 项目目录大致如下：
 
@@ -58,7 +58,7 @@ vant
 
 - 添加文档
 
-新组件的文档编写，需要在 `docs/examples-docs` 下各个语言中新建对应同名文档 `button.md`，并在 `docs/src/doc.config.js` 中进行文档路径配置
+新组件的文档编写，需要在 `docs/markdown` 下各个语言中新建对应同名文档 `button.md`，在 `docs/demos` 下创建组件示例，并在 `docs/src/doc.config.js` 中进行配置组件名称
 
 - 添加测试代码
 
@@ -67,7 +67,7 @@ vant
 
 ## 组件文档如何编写
 
-`docs/examples-docs` 下根据语言划分了组件文档，每个组件需要在各语言中编辑对应的文档。组件文档采用 markdown 格式，内容包括使用示例以及 `API` 等。具体书写规范请参考 [组件文档书写规范](./MARKDOWN.md)。
+`docs/markdown` 下根据语言划分了组件文档，每个组件需要在各语言中编辑对应的文档。组件文档采用 markdown 格式，内容包括使用示例以及 `API` 等。具体书写规范请参考 [组件文档书写规范](./MARKDOWN.md)。
 
 #### API 说明
 
@@ -106,5 +106,5 @@ vant
 `z-index` 优先级（从高到低）：
 
 * 特殊组件：Toast 永远在最上面，[3000, +∞)
-* ‘用完就关’ 的组件：Dialog, Pop, Actionsheet, image-preview 等 [2000, 3000)
+* ‘用完就关’ 的组件：Dialog, Pop, Actionsheet, ImagePreview 等 [2000, 3000)
 * 其他：组件内部用来控制层次的 z-index 的区间 [-10, 10]，尽可能写小，一般1，2，3这种就够了。

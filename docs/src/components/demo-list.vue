@@ -16,22 +16,12 @@
 <script>
 import docConfig from '../doc.config';
 import MobileNav from './mobile-nav';
-import { getLang } from '../utils/lang';
 
 export default {
   data() {
     return {
-      docConfig,
-      lang: getLang()
+      docConfig
     };
-  },
-
-  beforeRouteEnter(to, from, next) {
-    next(vm => vm.lang = to.meta.lang);
-  },
-
-  beforeRouteUpdate(to, from, next) {
-    this.lang = to.meta.lang;
   },
 
   components: {
@@ -40,15 +30,15 @@ export default {
 
   computed: {
     base() {
-      return `${this.lang}/component`;
+      return `${this.$vantLang}/component`;
     },
 
     navList() {
-      return this.docConfig[this.lang].nav || [];
+      return this.docConfig[this.$vantLang].nav || [];
     },
 
     description() {
-      return this.lang === 'zh-CN' ? '有赞移动端 Vue 组件库' : 'A Vue.js 2.0 Mobile UI at YouZan';
+      return this.$vantLang === 'zh-CN' ? '有赞移动端 Vue 组件库' : 'A Vue.js 2.0 Mobile UI at YouZan';
     }
   }
 };
