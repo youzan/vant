@@ -12,10 +12,7 @@
     >
       <slot></slot>
     </div>
-    <div 
-      v-else
-      class="van-swipe__track"
-    >
+    <div v-else class="van-swipe__track">
       <slot></slot>
     </div>
     <div class="van-swipe__indicators" v-if="showIndicators && count > 1">

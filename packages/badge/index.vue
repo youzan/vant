@@ -10,17 +10,9 @@ export default {
   name: 'van-badge',
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    url: {
-      type: String,
-      default: 'javascript:;'
-    },
-    info: {
-      type: String
-    }
+    url: String,
+    info: String,
+    title: String
   },
 
   beforeCreate() {
@@ -29,8 +21,7 @@ export default {
 
   computed: {
     isSelect() {
-      const parent = this.$parent;
-      return parent.badges.indexOf(this) === parent.activeKey;
+      return this.$parent.badges.indexOf(this) === this.$parent.activeKey;
     }
   },
 

@@ -44,16 +44,11 @@ export default {
   mixins: [Popup, i18n],
 
   props: {
+    title: String,
+    message: String,
+    callback: Function,
     confirmButtonText: String,
     cancelButtonText: String,
-    title: {
-      type: String,
-      default: ''
-    },
-    message: {
-      type: String,
-      default: ''
-    },
     showConfirmButton: {
       type: Boolean,
       default: true
@@ -61,9 +56,6 @@ export default {
     showCancelButton: {
       type: Boolean,
       default: false
-    },
-    callback: {
-      type: Function
     },
     overlay: {
       default: true

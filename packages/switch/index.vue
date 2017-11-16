@@ -3,7 +3,7 @@
     <div class="van-switch__node van-hairline-surround">
       <van-loading v-if="loading" class="van-switch__loading" />
     </div>
-    <div class="van-switch__bg"></div>
+    <div class="van-switch__bg" />
   </div>
 </template>
 

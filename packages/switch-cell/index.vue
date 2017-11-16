@@ -1,6 +1,6 @@
 <template>
   <van-cell :title="title" class="van-switch-cell">
-    <van-switch :value="value" @input="$emit('input', $event)" :disabled="disabled" :loading="loading" />
+    <van-switch v-bind="$props" @input="$emit('input', $event)" />
   </van-cell>
 </template>
 

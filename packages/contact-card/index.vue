@@ -31,16 +31,12 @@ export default {
   },
 
   props: {
+    tel: String,
+    name: String,
     addText: String,
     type: {
       type: String,
       default: 'add'
-    },
-    name: {
-      type: String
-    },
-    tel: {
-      type: String
     }
   }
 };

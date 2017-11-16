@@ -33,8 +33,8 @@ export default {
   mixins: [findParent],
 
   props: {
-    disabled: Boolean,
     value: {},
+    disabled: Boolean,
     name: [String, Number]
   },
 

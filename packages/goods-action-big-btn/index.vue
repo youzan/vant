@@ -22,11 +22,8 @@ export default {
   },
 
   props: {
-    primary: Boolean,
-    url: {
-      type: String,
-      default: 'javascript:;'
-    }
+    url: String,
+    primary: Boolean
   }
 };
 </script>

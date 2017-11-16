@@ -41,11 +41,8 @@ export default {
 
   props: {
     value: String,
+    showAction: Boolean,
     placeholder: String,
-    showAction: {
-      type: Boolean,
-      default: false
-    },
     background: {
       type: String,
       default: '#f2f2f2'

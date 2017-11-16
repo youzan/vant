@@ -116,10 +116,7 @@ export default {
       type: Number,
       default: 0
     },
-    hideStock: {
-      type: Boolean,
-      default: false
-    },
+    hideStock: Boolean,
     showAddCartBtn: {
       type: Boolean,
       default: true

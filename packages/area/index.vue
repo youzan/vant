@@ -1,6 +1,14 @@
 <template>
   <div class="van-area">
-    <van-picker ref="picker" :columns="areaColumns" value-key="name" show-toolbar @change="handleAreaChange" @confirm="handleAreaConfirm" @cancel="handleAreaCancel"></van-picker>
+    <van-picker
+      ref="picker"
+      showToolbar
+      valueKey="name"
+      :columns="areaColumns"
+      @change="onChange"
+      @confirm="$emit('confirm', $event)"
+      @cancel="$emit('cancel')"
+    />
   </div>
 </template>
 
@@ -80,12 +88,7 @@ export default {
   },
 
   methods: {
-    /**
-     * 根据省市县类型和对应的`code`获取对应列表
-     *
-     * @param {string} type 省市县类型
-     * @param {string} code 对应code
-     */
+    // 根据省市县类型和对应的`code`获取对应列表
     computedAreaList(type, code) {
       const result = [];
       const curAreaList = this.areaList;
@@ -107,9 +110,7 @@ export default {
       return result;
     },
 
-    /**
-     * 获取对应省市县在列表中的索引
-     */
+    // 获取对应省市县在列表中的索引
     getAreaIndex(type, code) {
       const compareNum = type === PROVINCE_TYPE
         ? 2
@@ -125,7 +126,7 @@ export default {
       return 0;
     },
 
-    handleAreaChange(picker, values, index) {
+    onChange(picker, values, index) {
       const code = values[index].code;
       // 处理省变化
       if (index === 0) {
@@ -143,14 +144,6 @@ export default {
           [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
         );
       }
-    },
-
-    handleAreaConfirm(values) {
-      this.$emit('confirm', values);
-    },
-
-    handleAreaCancel() {
-      this.$emit('cancel');
     }
   }
 };

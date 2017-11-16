@@ -82,8 +82,8 @@ export default {
     },
 
     startDrag(event) {
-      this.startX = event.changedTouches[0].pageX;
-      this.startY = event.changedTouches[0].pageY;
+      this.startX = event.touches[0].pageX;
+      this.startY = event.touches[0].pageY;
     },
 
     onDrag(event) {
@@ -93,8 +93,8 @@ export default {
         return;
       }
 
-      const offsetTop = event.changedTouches[0].pageY - this.startY;
-      const offsetLeft = event.changedTouches[0].pageX - this.startX;
+      const offsetTop = event.touches[0].pageY - this.startY;
+      const offsetLeft = event.touches[0].pageX - this.startX;
       if ((offsetLeft < 0 && -offsetLeft > this.rightWidth) ||
         (offsetLeft > 0 && offsetLeft > this.leftWidth) ||
         (offsetLeft > 0 && !this.leftWidth) ||

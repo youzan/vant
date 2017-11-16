@@ -101,10 +101,9 @@ export default {
 
   methods: {
     onClickLabel() {
-      if (this.isDisabled) {
-        return;
+      if (!this.isDisabled) {
+        this.currentValue = !this.currentValue;
       }
-      this.currentValue = !this.currentValue;
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <div :class="`${prefix}-row`" :style="style">
+  <div class="van-row" :style="style">
     <slot></slot>
   </div>
 </template>
@@ -9,10 +9,6 @@ export default {
   name: 'van-row',
 
   props: {
-    prefix: {
-      type: String,
-      default: 'van'
-    },
     gutter: {
       type: [Number, String],
       default: 0

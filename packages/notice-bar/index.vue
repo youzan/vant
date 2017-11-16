@@ -25,8 +25,6 @@
 <script>
 import Icon from '../icon';
 
-const NOTICE_BAR_MODE = ['', 'closeable', 'link'];
-
 export default {
   name: 'van-notice-bar',
 
@@ -36,14 +34,10 @@ export default {
 
   props: {
     text: String,
-    leftIcon: String,
+    mode: String,
     color: String,
+    leftIcon: String,
     background: String,
-    mode: {
-      type: String,
-      default: '',
-      validator: val => NOTICE_BAR_MODE.indexOf(val) !== -1
-    },
     delay: {
       type: [String, Number],
       default: 1

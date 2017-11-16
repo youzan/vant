@@ -1,7 +1,7 @@
 <template>
   <div class="van-submit-bar">
     <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
-      {{ tip }}<slot name="tip"></slot>
+      {{ tip }}<slot name="tip" />
     </div>
     <div class="van-submit-bar__bar">
       <div class="van-submit-bar__price">
