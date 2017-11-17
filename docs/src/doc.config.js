@@ -111,6 +111,10 @@ module.exports = {
                 title: 'NoticeBar - 通告栏'
               },
               {
+                path: '/pagination',
+                title: 'Pagination - 分页'
+              },
+              {
                 path: '/panel',
                 title: 'Panel - 面板'
               },
