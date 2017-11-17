@@ -36,6 +36,7 @@ const icons = [
   'photograph',
   'add',
   'add2',
+  'add-o',
   'photo',
   'cart',
   'arrow',
