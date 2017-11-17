@@ -2,84 +2,80 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-pagination 
-        :total-items="totalItems" 
-        :items-per-page="itemsPerPage"
-        :show-page-size="showPageSize2" 
-        :previous-text= "$t('prevText')" 
-        :next-text= "$t('nextText')" 
+        :totalItems="totalItems" 
+        :itemsPerPage="itemsPerPage"
+        :showPageSize="showPageSize2" 
+        :previousText= "$t('prevText')" 
+        :nextText= "$t('nextText')" 
         v-model="pagination1" 
         @change="pageChanged()"
       ></van-pagination>
+      <pre>Page: {{pagination1.currentPage}} / {{pagination1.numPages}}</pre>
     </demo-block>
-    <demo-block :title="$t('simpleUsage')">
+    <demo-block :title="$t('simpleMode')">
       <van-pagination 
-        :total-items="bigTotalItems" 
-        v-model="pagination3" 
-        :previous-text= "$t('prevText')" 
-        :next-text= "$t('nextText')" 
-        @change="pageChanged3()" 
+        :totalItems="bigTotalItems" 
+        v-model="pagination2" 
+        :previousText= "$t('prevText')" 
+        :nextText= "$t('nextText')" 
         mode="simple" 
         size="small" 
       ></van-pagination>
-      <pre>Page: {{pagination3.currentPage}} / {{pagination3.numPages}}</pre>
+      <pre>Page: {{pagination2.currentPage}} / {{pagination2.numPages}}</pre>
     </demo-block>
     <demo-block :title="$t('advancedUsage')">
       <van-pagination 
-        :total-items="bigTotalItems" 
-        v-model="pagination2" 
-        :show-page-size="showPageSize" 
-        :force-ellipses="true"
-        previous-text= "上一页" 
-        next-text= "下一页" 
+        :totalItems="bigTotalItems" 
+        v-model="pagination3" 
+        :showPageSize="showPageSize" 
+        :forceEllipses="true"
+        :previousText= "$t('prevText')" 
+        :nextText= "$t('nextText')" 
       ></van-pagination>
 
-      <pre>Page: {{pagination2.currentPage}} / {{pagination2.numPages}}</pre>
+      <pre>Page: {{pagination3.currentPage}} / {{pagination3.numPages}}</pre>
     </demo-block>
   </demo-section>
 </template>
 
 <script>
-
 export default {
   i18n: {
     'zh-CN': {
-      simpleUsage: '简单模式',
+      simpleMode: '简单模式',
       prevText: '上一页',
       nextText: '下一页'
     },
     'en-US': {
-      simpleUsage: 'Simple Usage',
+      simpleMode: 'Simple Mode',
       prevText: 'Prev',
       nextText: 'Next'
     }
   },
 
   data() {
-    return  {
-        totalItems: 24,
-        pagination1: {
-            currentPage: 2
-        },
-        pagination2: {
-            currentPage: 1
-        },
-        pagination3: {
-            currentPage: 1
-        },
-        setPage: function (pageNo) {
-            this.pagination1.currentPage = pageNo;
-        },
-        pageChanged: function () {
-            console.log('Page changed to: ' + this.pagination1.currentPage);
-        },
-        pageChanged3: function () {
-            console.log('Page changed to: ' + this.pagination3.currentPage);
-        },
-        showPageSize: 3,
-        showPageSize2: 5,
-        bigTotalItems: 125,
-        itemsPerPage: 5
-    }
+    return {
+      totalItems: 24,
+      pagination1: {
+        currentPage: 2
+      },
+      pagination2: {
+        currentPage: 1
+      },
+      pagination3: {
+        currentPage: 1
+      },
+      setPage(pageNo) {
+        this.pagination1.currentPage = pageNo;
+      },
+      pageChanged() {
+        console.log('Page changed to: ' + this.pagination1.currentPage);
+      },
+      showPageSize: 3,
+      showPageSize2: 5,
+      bigTotalItems: 125,
+      itemsPerPage: 5
+    };
   }
 };
 </script>

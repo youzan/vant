@@ -12,17 +12,15 @@ Vue.component(Pagination.name, Pagination);
 
 #### 基础用法
 
-demo 基础用法
-
 ```html
 <van-pagination 
-  :total-items="totalItems" 
-  :items-per-page="itemsPerPage"
-  :show-page-size="showPageSize2" 
-  previous-text= "上一页" 
-  next-text= "下一页" 
+  :totalItems="totalItems" 
+  :itemsPerPage="itemsPerPage"
+  :showPageSize="showPageSize2" 
+  previousText= "上一页" 
+  nextText= "下一页" 
   v-model="pagination1" 
-  @change="pageChanged()"
+  @change="pageChanged"
 ></van-pagination>
 
 <pre>Page: {{pagination1.currentPage}} / {{pagination1.numPages}}</pre>
@@ -42,14 +40,11 @@ export default {
         pagination3: {
             currentPage: 1
         },
-        setPage: function (pageNo) {
+        setPage (pageNo) {
             this.pagination1.currentPage = pageNo;
         },
-        pageChanged: function () {
+        pageChanged () {
             console.log('Page changed to: ' + this.pagination1.currentPage);
-        },
-        pageChanged3: function () {
-            console.log('Page changed to: ' + this.pagination3.currentPage);
         },
         showPageSize: 3,
         showPageSize2: 5,
@@ -60,50 +55,34 @@ export default {
 }
 ```
 
-#### 简单模式
-
-设置`mode=simple`
+设置`mode=simple`，使用简单模式
 
 ```html
 <van-pagination 
-  :total-items="bigTotalItems" 
-  v-model="pagination3" 
-  :previous-text="'上一页'" 
-  :next-text="'下一页'" 
-  @change="pageChanged3()" 
+  :totalItems="bigTotalItems" 
+  v-model="pagination2" 
+  previousText="上一页" 
+  nextText="下一页" 
   mode="simple" 
-  size="small" 
 ></van-pagination>
-<pre>Page: {{pagination3.currentPage}} / {{pagination3.numPages}}</pre>
-```
-
-#### 限制最大显示按钮数
-
-设置 `rotate=true`
-
-```html
-<van-pagination 
-  :total-items="bigTotalItems" 
-  v-model="pagination2" 
-  :direction-links="true"
-  previous-text= "上一页" 
-  next-text= "下一页" 
-></van-pagination>
-```
-
-设置 `rotate: true` 和 `force-ellipses: true`
-
-```html
-<van-pagination 
-  :total-items="bigTotalItems" 
-  v-model="pagination2" 
-  :show-page-size="showPageSize" 
-  :force-ellipses="true"
-  previous-text= "上一页" 
-  next-text= "下一页" 
-></van-pagination>
-
 <pre>Page: {{pagination2.currentPage}} / {{pagination2.numPages}}</pre>
+```
+
+#### 高级用法
+
+设置 `forceEllipses: true`，显示省略号
+
+```html
+<van-pagination 
+  :totalItems="bigTotalItems" 
+  v-model="pagination3" 
+  :showPageSize="showPageSize" 
+  :forceEllipses="true"
+  previousText= "上一页" 
+  nextText= "下一页" 
+></van-pagination>
+
+<pre>Page: {{pagination3.currentPage}} / {{pagination3.numPages}}</pre>
 ```
 
 ### API
@@ -111,16 +90,12 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | 当前页码 | Object | - | - |
-| directionLinks | 显示前后指示链接 | Boolean | true | - |
-| forceEllipses | 显示省略号 | Boolean | false | - |
+| mode | 显示模式 | String | multi | multi : simple  |
 | itemsPerPage | 每页记录数 | Number | 10 | - |
-| firstText | 第一页文本 | String | First | - |
-| lastText | 尾页文本 | String | Last | - |
 | previousText | 上一页 | String | Previous | - |
 | nextText | 下一页 | String | Next | - |
 | showPageSize | 显示的页码个数 | Number | 5 | - |
-| mode | 显示模式 | String | multi | multi : simple  |
-| size | 尺寸 | String | normal | normal : small |
+| forceEllipses | 显示省略号 | Boolean | false | - |
 
 ### Event
 

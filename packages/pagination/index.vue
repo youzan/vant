@@ -36,20 +36,16 @@ export default {
       type: String,
       default: 'multi'
     },
-
     forceEllipses: Boolean,
-
     itemsPerPage: {
       type: Number,
       default: 10
     },
-
     showPageSize: {
       type: Number,
       default: 5,
       validator: value => typeof value === 'number' && value >= 1
     },
-
     /* vModel { currentPage: 1, numPages: 10 } */
     value: {
       type: Object,
@@ -62,17 +58,14 @@ export default {
         );
       }
     },
-
     previousText: {
       type: String,
       default: 'Previous'
     },
-
     nextText: {
       type: String,
       default: 'Next'
     },
-
     totalItems: {
       type: Number,
       default: 0
@@ -80,7 +73,7 @@ export default {
   },
 
   data() {
-    let currentPage = this.value.currentPage !== undefined ? this.value.currentPage : 1;
+    const currentPage = this.value.currentPage !== undefined ? this.value.currentPage : 1;
     let totalPages = this.itemsPerPage < 1 ? 1 : Math.ceil(this.totalItems / this.itemsPerPage);
     totalPages = Math.max(totalPages, 1);
 
@@ -101,7 +94,7 @@ export default {
     },
 
     pages() {
-      let pages = [];
+      const pages = [];
 
       if (this.currentPage <= 0 || this.currentPage > this.totalPages) {
         return pages;
@@ -110,7 +103,7 @@ export default {
       // Default page limits
       let startPage = 1,
         endPage = this.totalPages;
-      let isMaxSized = this.showPageSize !== undefined && this.showPageSize < this.totalPages;
+      const isMaxSized = this.showPageSize !== undefined && this.showPageSize < this.totalPages;
 
       // recompute if showPageSize
       if (isMaxSized) {
@@ -180,10 +173,7 @@ export default {
 
     triggerInput() {
       //  Emit the new data to the parent.
-      this.$emit(
-        'input',
-        this.createDataForModel(this.currentPage, this.totalPages)
-      );
+      this.$emit('input', this.createDataForModel(this.currentPage, this.totalPages));
     },
 
     makePage(number, text, active) {
