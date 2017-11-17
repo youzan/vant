@@ -7,6 +7,11 @@ const langMap = {
   'zh-CN': zhCN
 };
 
+const titleMap = {
+  'en-US': 'Vant - A Vue.js 2.0 Mobile UI at YouZan',
+  'zh-CN': 'Vant - 有赞移动端 Vue 组件库'
+};
+
 const userLang = window.localStorage.getItem('VANT_LANGUAGE') || window.navigator.language || 'en-US';
 let defaultLang = 'en-US';
 if (userLang.indexOf('zh-') !== -1) {
@@ -17,4 +22,5 @@ setLang(defaultLang);
 export function setLang(lang) {
   window.localStorage.setItem('VANT_LANGUAGE', lang);
   Locale.use(lang, langMap[lang]);
+  document.title = titleMap[lang];
 }

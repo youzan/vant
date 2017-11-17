@@ -387,6 +387,10 @@ module.exports = {
                 title: 'NoticeBar'
               },
               {
+                path: '/pagination',
+                title: 'Pagination'
+              },
+              {
                 path: '/panel',
                 title: 'Panel'
               },
