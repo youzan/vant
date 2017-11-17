@@ -1,70 +1,57 @@
 <template>
   <ul :class="['van-pagination', { 'van-pagination-simple': !isMultiMode }]">
     <li
-      :class="[{ 'van-pagination--disabled': isNoPrevious } , 'van-pagination__item', 'van-pagination__prev', 'van-hairline']"
-      @click="selectPage(currentPage - 1, $event)"
+      :class="[{ 'van-pagination--disabled': value === 1 } , 'van-pagination__item', 'van-pagination__prev', 'van-hairline']"
+      @click="selectPage(value - 1)"
     >
-      {{ previousText }}
+      {{ prevText || $t('prev') }}
     </li>
     <li 
       v-if="isMultiMode" 
       v-for="(page, index) in pages" 
       :key="index" 
       :class="[{ 'van-pagination--active': page.active }, 'van-pagination__item', 'van-pagination__page', 'van-hairline']"
-      @click="selectPage(page.number, $event)"
+      @click="selectPage(page.number)"
     >
       {{ page.text }}
     </li>
     <li v-if="!isMultiMode" class="van-pagination__page-desc">
       <slot name="pageDesc">{{ pageDesc }}</slot>
     </li>
-    <li 
-      :class="[{ 'van-pagination--disabled': isNoNext }, 'van-pagination__item', 'van-pagination__next', 'van-hairline']" 
-       @click="selectPage(currentPage + 1, $event)"
+    <li
+      :class="[{ 'van-pagination--disabled': value === computedPageCount }, 'van-pagination__item', 'van-pagination__next', 'van-hairline']" 
+       @click="selectPage(value + 1)"
     >
-      {{ nextText }}
+      {{ nextText || $t('next') }}
     </li>
   </ul>
 </template>
 
 <script>
+import { i18n } from '../locale';
+
 export default {
   name: 'van-pagination',
 
+  mixins: [i18n],
+
   props: {
+    value: Number,
+    prevText: String,
+    nextText: String,
+    pageCount: Number,
+    forceEllipses: Boolean,
     mode: {
       type: String,
       default: 'multi'
     },
-    forceEllipses: Boolean,
     itemsPerPage: {
       type: Number,
       default: 10
     },
     showPageSize: {
       type: Number,
-      default: 5,
-      validator: value => typeof value === 'number' && value >= 1
-    },
-    /* vModel { currentPage: 1, numPages: 10 } */
-    value: {
-      type: Object,
-      required: true,
-      validator: function(value) {
-        return (
-          value &&
-          value.currentPage != undefined &&
-          typeof value.currentPage === 'number'
-        );
-      }
-    },
-    previousText: {
-      type: String,
-      default: 'Previous'
-    },
-    nextText: {
-      type: String,
-      default: 'Next'
+      default: 5
     },
     totalItems: {
       type: Number,
@@ -72,117 +59,86 @@ export default {
     }
   },
 
-  data() {
-    const currentPage = this.value.currentPage !== undefined ? this.value.currentPage : 1;
-    let totalPages = this.itemsPerPage < 1 ? 1 : Math.ceil(this.totalItems / this.itemsPerPage);
-    totalPages = Math.max(totalPages, 1);
-
-    return { currentPage, totalPages };
-  },
-
   computed: {
     isMultiMode() {
       return this.mode === 'multi';
     },
 
-    isNoPrevious() {
-      return this.value.currentPage === 1;
+    computedPageCount() {
+      const count = this.pageCount || Math.ceil(this.totalItems / this.itemsPerPage);
+      return Math.max(1, count);
     },
 
-    isNoNext() {
-      return this.value.currentPage === this.totalPages;
+    pageDesc() {
+      return this.value + '/' + this.computedPageCount;
     },
 
     pages() {
       const pages = [];
-
-      if (this.currentPage <= 0 || this.currentPage > this.totalPages) {
-        return pages;
-      }
+      const pageCount = this.computedPageCount;
 
       // Default page limits
-      let startPage = 1,
-        endPage = this.totalPages;
-      const isMaxSized = this.showPageSize !== undefined && this.showPageSize < this.totalPages;
+      let startPage = 1, endPage = pageCount;
+      const isMaxSized = this.showPageSize !== undefined && this.showPageSize < pageCount;
 
       // recompute if showPageSize
       if (isMaxSized) {
         // Current page is displayed in the middle of the visible ones
-        startPage = Math.max(
-          this.currentPage - Math.floor(this.showPageSize / 2),
-          1
-        );
+        startPage = Math.max(this.value - Math.floor(this.showPageSize / 2), 1);
         endPage = startPage + this.showPageSize - 1;
 
         // Adjust if limit is exceeded
-        if (endPage > this.totalPages) {
-          endPage = this.totalPages;
+        if (endPage > pageCount) {
+          endPage = pageCount;
           startPage = endPage - this.showPageSize + 1;
         }
       }
 
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
-        let page = this.makePage(number, number, number === this.currentPage);
+        let page = this.makePage(number, number, number === this.value);
         pages.push(page);
       }
 
       // Add links to move between page sets
       if (isMaxSized && this.showPageSize > 0 && this.forceEllipses) {
         if (startPage > 1) {
-          //need ellipsis for all options unless range is too close to beginning
           let previousPageSet = this.makePage(startPage - 1, '...', false);
           pages.unshift(previousPageSet);
         }
 
-        if (endPage < this.totalPages) {
-          //need ellipsis for all options unless range is too close to end
+        if (endPage < pageCount) {
           let nextPageSet = this.makePage(endPage + 1, '...', false);
           pages.push(nextPageSet);
         }
       }
 
       return pages;
-    },
-    pageDesc() {
-      return this.currentPage + '/' + this.totalPages;
     }
   },
 
   created() {
-    // 初始value值
-    this.triggerInput();
+    this.selectPage(this.value);
   },
 
   watch: {
-    'value.currentPage'(value, oldValue) {
-      this.currentPage = value;
-
-      this.$emit('change');
+    value(page) {
+      this.selectPage(page);
     }
   },
 
   methods: {
-    selectPage(page, evt) {
-      if (this.currentPage !== page && page > 0 && page <= this.totalPages) {
-        this.currentPage = page;
+    selectPage(page) {
+      page = Math.max(1, page);
+      page = Math.min(this.computedPageCount, page);
+      if (this.value !== page) {
+        this.$emit('input', page);
+        this.$emit('change', page);
       }
-
-      this.triggerInput();
-    },
-
-    triggerInput() {
-      //  Emit the new data to the parent.
-      this.$emit('input', this.createDataForModel(this.currentPage, this.totalPages));
     },
 
     makePage(number, text, active) {
       return { number, text, active };
-    },
-
-    createDataForModel(currentPage, numPages) {
-      let data = { currentPage, numPages };
-      return data;
     }
   }
 };

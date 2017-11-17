@@ -2,38 +2,34 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-pagination 
-        :totalItems="totalItems" 
-        :itemsPerPage="itemsPerPage"
-        :showPageSize="showPageSize2" 
+        v-model="currentPage1" 
+        :totalItems="24" 
+        :itemsPerPage="5"
         :previousText= "$t('prevText')" 
         :nextText= "$t('nextText')" 
-        v-model="pagination1" 
-        @change="pageChanged()"
-      ></van-pagination>
-      <pre>Page: {{pagination1.currentPage}} / {{pagination1.numPages}}</pre>
+      />
     </demo-block>
-    <demo-block :title="$t('simpleMode')">
+
+    <demo-block :title="$t('title2')">
       <van-pagination 
-        :totalItems="bigTotalItems" 
-        v-model="pagination2" 
+        v-model="currentPage2"
+        :pageCount="12"
         :previousText= "$t('prevText')" 
         :nextText= "$t('nextText')" 
         mode="simple" 
         size="small" 
-      ></van-pagination>
-      <pre>Page: {{pagination2.currentPage}} / {{pagination2.numPages}}</pre>
+      />
     </demo-block>
-    <demo-block :title="$t('advancedUsage')">
+
+    <demo-block :title="$t('title3')">
       <van-pagination 
-        :totalItems="bigTotalItems" 
-        v-model="pagination3" 
-        :showPageSize="showPageSize" 
-        :forceEllipses="true"
+        forceEllipses
+        v-model="currentPage3" 
+        :totalItems="125" 
+        :showPageSize="3" 
         :previousText= "$t('prevText')" 
         :nextText= "$t('nextText')" 
-      ></van-pagination>
-
-      <pre>Page: {{pagination3.currentPage}} / {{pagination3.numPages}}</pre>
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -42,12 +38,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      simpleMode: '简单模式',
+      title2: '简单模式',
+      title3: '',
       prevText: '上一页',
       nextText: '下一页'
     },
     'en-US': {
-      simpleMode: 'Simple Mode',
+      title2: 'Simple Mode',
+      title3: 'Show ellipses',
       prevText: 'Prev',
       nextText: 'Next'
     }
@@ -55,26 +53,9 @@ export default {
 
   data() {
     return {
-      totalItems: 24,
-      pagination1: {
-        currentPage: 2
-      },
-      pagination2: {
-        currentPage: 1
-      },
-      pagination3: {
-        currentPage: 1
-      },
-      setPage(pageNo) {
-        this.pagination1.currentPage = pageNo;
-      },
-      pageChanged() {
-        console.log('Page changed to: ' + this.pagination1.currentPage);
-      },
-      showPageSize: 3,
-      showPageSize2: 5,
-      bigTotalItems: 125,
-      itemsPerPage: 5
+      currentPage1: 1,
+      currentPage2: 1,
+      currentPage3: 1,
     };
   }
 };
@@ -89,6 +70,10 @@ export default {
 
   .van-doc-demo-block {
     padding: 0 15px;
+  }
+
+  .van-doc-demo-block__title {
+    padding-left: 0;
   }
 }
 </style>

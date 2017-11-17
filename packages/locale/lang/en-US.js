@@ -60,6 +60,10 @@ export default {
     delete: 'Delete',
     confirmDelete: 'Are you sure you want to delete this contact?'
   },
+  vanPagination: {
+    prev: 'Previous',
+    next: 'Next'
+  },
   vanPullRefresh: {
     pullingText: 'Pull to refresh...',
     loosingText: 'Loose to refresh...',
