@@ -1,14 +1,13 @@
 <template>
   <div class="app">
-    <zan-doc :simulators="simulators" :currentSimulator="currentSimulator" :config="config" :base="base">
+    <van-doc :simulators="simulators" :currentSimulator="currentSimulator" :config="config" :base="base">
       <router-view @changeDemoURL="onChangeDemoURL"></router-view>
-    </zan-doc>
+    </van-doc>
   </div>
 </template>
 
 <script>
 import docConfig from './doc.config';
-import { getLang } from './utils/lang';
 
 export default {
   data() {
@@ -19,28 +18,22 @@ export default {
 
     return {
       simulators: [`/zanui/vant/examples${location.hash}`],
-      demoURL: '',
-      lang: getLang()
+      demoURL: ''
     };
   },
 
   computed: {
     base() {
-      return `/${this.lang}/component`;
+      return `/${this.$vantLang}/component`;
     },
 
     config() {
-      return docConfig[this.lang];
+      return docConfig[this.$vantLang];
     },
 
     currentSimulator() {
-      return this.$route.name === 'zh-CN/demo' ? 1 : 0;
-    }
-  },
-
-  watch: {
-    '$route'(to) {
-      this.lang = to.meta.lang;
+      const { name } = this.$route;
+      return name && name.indexOf('demo') !== -1 ? 1 : 0;
     }
   },
 

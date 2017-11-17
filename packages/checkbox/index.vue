@@ -22,7 +22,7 @@
 
 <script>
 import Icon from '../icon';
-import findParent from '../mixins/findParent';
+import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-checkbox',
@@ -50,9 +50,9 @@ export default {
   },
 
   computed: {
-    // checkbox 是否在 van-checkbox-group 中
+    // whether is in van-checkbox-group
     isGroup() {
-      return !!this.findParentByComponentName('van-checkbox-group');
+      return !!this.findParentByName('van-checkbox-group');
     },
 
     currentValue: {
@@ -101,10 +101,9 @@ export default {
 
   methods: {
     onClickLabel() {
-      if (this.isDisabled) {
-        return;
+      if (!this.isDisabled) {
+        this.currentValue = !this.currentValue;
       }
-      this.currentValue = !this.currentValue;
     }
   }
 };

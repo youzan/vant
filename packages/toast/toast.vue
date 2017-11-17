@@ -22,7 +22,6 @@
 import Icon from '../icon';
 import Loading from '../loading';
 
-const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
 const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
 
 export default {
@@ -34,26 +33,16 @@ export default {
   },
 
   props: {
+    mask: Boolean,
+    message: String,
+    forbidClick: Boolean,
     type: {
       type: String,
-      default: 'text',
-      validator: value => TOAST_TYPES.indexOf(value) > -1
-    },
-    message: {
-      type: String,
-      default: ''
-    },
-    forbidClick: {
-      type: Boolean,
-      default: false
+      default: 'text'
     },
     position: {
       type: String,
       default: 'middle'
-    },
-    mask: {
-      type: Boolean,
-      default: false
     }
   },
 

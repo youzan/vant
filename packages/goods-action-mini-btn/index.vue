@@ -16,15 +16,9 @@ export default {
   },
 
   props: {
+    url: String,
     icon: String,
-    iconClass: {
-      type: String,
-      default: ''
-    },
-    url: {
-      type: String,
-      default: 'javascript:;'
-    }
+    iconClass: String
   }
 };
 </script>

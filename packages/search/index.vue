@@ -3,22 +3,23 @@
     class="van-search"
     :class="{ 'van-search--show-action': showAction }"
     :style="{ 'background-color': background }">
-    <div class="van-search__input-wrap" v-clickoutside="handleClickoutside">
-      <van-icon name="search"></van-icon>
+    <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
+      <van-icon name="search" />
       <input
         type="search"
         class="van-search__input"
         v-refocus="focusStatus"
         :value="value"
         :placeholder="placeholder"
-        @input="handleInput"
-        @focus="handleFocus"
-        @keypress.enter.prevent="handleSearch">
-      <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
+        @input="onInput"
+        @focus="onFocus"
+        @keypress.enter.prevent="onSearch"
+      >
+      <van-icon name="clear" @click="onClean" v-show="isFocus" />
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
-        <div class="van-search__action-text" @click="handleBack">取消</div>
+        <div class="van-search__action-text" @click="onBack">{{ $t('cancel') }}</div>
       </slot>
     </div>
   </div>
@@ -27,21 +28,21 @@
 <script>
 import Icon from '../icon';
 import Clickoutside from '../utils/clickoutside';
+import { i18n } from '../locale';
 
 export default {
   name: 'van-search',
+
+  mixins: [i18n],
 
   components: {
     [Icon.name]: Icon
   },
 
   props: {
-    placeholder: String,
     value: String,
-    showAction: {
-      type: Boolean,
-      default: false
-    },
+    showAction: Boolean,
+    placeholder: String,
     background: {
       type: String,
       default: '#f2f2f2'
@@ -50,8 +51,8 @@ export default {
 
   data() {
     return {
-      focusStatus: false,
-      isFocus: false
+      isFocus: false,
+      focusStatus: false
     };
   },
 
@@ -67,48 +68,37 @@ export default {
   },
 
   methods: {
-    /**
-     * 进入input焦点，出现close和取消
-     */
-    handleFocus() {
+    onFocus() {
       this.isFocus = true;
     },
 
-    handleInput(event) {
+    onInput(event) {
       this.$emit('input', event.target.value);
     },
 
-    /**
-     * 点击close后清空value后，再聚焦input框
-     */
-    handleClean() {
+    // refocus after click close icon
+    onClean() {
       this.$emit('input', '');
       this.focusStatus = true;
 
-      // 保证多次点击 clean 后，仍能触发 refocus
+      // ensure refocus can work after click clean icon
       this.$nextTick(() => {
         this.focusStatus = false;
       });
     },
 
-    /**
-     * 点击取消后，清空所有回复最初状态
-     */
-    handleBack() {
+    onBack() {
       this.$emit('input', '');
       this.$emit('cancel');
     },
 
-    /**
-     * input输入回车后，发送回调
-     */
-    handleSearch(e) {
+    onSearch(e) {
       e.preventDefault();
       this.$emit('search', this.value);
       return false;
     },
 
-    handleClickoutside() {
+    onClickoutside() {
       this.isFocus = false;
       this.focusStatus = false;
     }

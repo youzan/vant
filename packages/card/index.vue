@@ -34,8 +34,8 @@ export default {
     thumb: String,
     title: String,
     desc: String,
-    num: [Number, String],
     centered: Boolean,
+    num: [Number, String],
     price: [Number, String]
   }
 };

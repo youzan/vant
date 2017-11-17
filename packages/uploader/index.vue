@@ -10,16 +10,12 @@ export default {
   name: 'van-uploader',
 
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
+    disabled: Boolean,
     beforeRead: Function,
     afterRead: Function,
     resultType: {
       type: String,
-      default: 'dataUrl',
-      validator: value => value === 'dataUrl' || value === 'text'
+      default: 'dataUrl'
     }
   },
 

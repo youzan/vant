@@ -6,19 +6,10 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 const docConfig = require('../docs/src/doc.config');
-const { extractExample } = require('zan-doc/src/helper');
 const styleLoaders = [
   { loader: 'css-loader' },
   { loader: 'postcss-loader', options: { sourceMap: true } }
 ];
-
-// extract [components].vue from [components].md
-extractExample({
-  src: path.resolve(__dirname, '../docs/examples-docs'),
-  dist: path.resolve(__dirname, '../docs/examples-dist'),
-  nav: docConfig,
-  watch: !isProduction
-});
 
 module.exports = {
   entry: {
@@ -89,15 +80,7 @@ module.exports = {
         test: /\.md/,
         loader: 'vue-markdown-loader',
         options: {
-          preventExtract: true,
-          use: [[require('markdown-it-container'), 'demo']],
-          preprocess(MarkdownIt, source) {
-            const styleRegexp = /<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/i;
-            const scriptRegexp = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/i;
-            MarkdownIt.renderer.rules.table_open = () =>
-              '<table class="zan-doc-table">';
-            return source.replace(styleRegexp, '').replace(scriptRegexp, '');
-          }
+          preventExtract: true
         }
       },
       {

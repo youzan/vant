@@ -3,21 +3,18 @@
     <div class="van-steps__status" v-if="title || description">
       <div class="van-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">
-          <van-icon :name="icon" :class="iconClass"></van-icon>
+          <van-icon :name="icon" :class="iconClass" />
         </slot>
       </div>
       <div class="van-steps__message">
         <div class="van-steps__message-wrapper">
-          <div class="van-steps__title" v-text="title"></div>
-          <div class="van-steps__desc" v-text="description"></div>
+          <div class="van-steps__title" v-text="title" />
+          <div class="van-steps__desc" v-text="description" />
         </div>
       </div>
-      <slot name="message-extra">
-      </slot>
+      <slot name="message-extra" />
     </div>
-    <div class="van-steps__items" :class="{
-        'van-steps__items--alone': !title && !description
-      }">
+    <div class="van-steps__items" :class="{ 'van-steps__items--alone': !title && !description }">
       <slot></slot>
     </div>
   </div>
@@ -34,13 +31,10 @@ export default {
   },
 
   props: {
-    active: Number,
     icon: String,
-    iconClass: {
-      type: String,
-      default: ''
-    },
     title: String,
+    active: Number,
+    iconClass: String,
     description: String,
     direction: {
       type: String,

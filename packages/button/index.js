@@ -1,8 +1,5 @@
 import Loading from '../loading';
 
-const ALLOWED_SIZE = ['mini', 'small', 'normal', 'large'];
-const ALLOWED_TYPE = ['default', 'danger', 'primary'];
-
 export default {
   name: 'van-button',
 
@@ -22,13 +19,11 @@ export default {
     },
     type: {
       type: String,
-      default: 'default',
-      validator: value => ALLOWED_TYPE.indexOf(value) > -1
+      default: 'default'
     },
     size: {
       type: String,
-      default: 'normal',
-      validator: value => ALLOWED_SIZE.indexOf(value) > -1
+      default: 'normal'
     }
   },
 

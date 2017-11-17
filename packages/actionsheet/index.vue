@@ -10,7 +10,8 @@
           v-for="(item, index) in actions"
           :key="index"
           :class="['van-actionsheet__item', 'van-hairline--top', item.className, { 'van-actionsheet__item--loading': item.loading }]"
-          @click.stop="onClickItem(item)">
+          @click.stop="onClickItem(item)"
+        >
           <template v-if="!item.loading">
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
@@ -18,8 +19,13 @@
           <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
         </li>
       </ul>
-      <div class="van-actionsheet__item van-actionsheet__cancel van-hairline--top" @click.stop="$emit('input', false)" v-if="cancelText">{{ cancelText }}</div>
-      <div class="van-actionsheet__content" v-else>
+      <div
+        v-if="cancelText"
+        v-text="cancelText"
+        class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
+        @click.stop="$emit('input', false)"
+      />
+      <div v-else class="van-actionsheet__content">
         <slot></slot>
       </div>
     </div>
@@ -43,18 +49,16 @@ export default {
 
   props: {
     value: Boolean,
+    title: String,
+    cancelText: String,
     actions: {
       type: Array,
       default: () => []
     },
-    title: String,
-    cancelText: String,
     overlay: {
-      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
-      type: Boolean,
       default: true
     }
   },

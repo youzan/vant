@@ -1,13 +1,11 @@
 <template>
   <div
-    :class="[
-      `${prefix}-col`,
-      {
-        [`${prefix}-col-${span}`]: span,
-        [`${prefix}-col-offset-${offset}`]: offset,
-      }
-    ]"
-    :style="style">
+    :class="[`van-col`, { 
+      [`van-col-${span}`]: span,
+      [`van-col-offset-${offset}`]: offset,
+    }]"
+    :style="style"
+  >
       <slot></slot>
   </div>
 </template>
@@ -18,11 +16,7 @@ export default {
 
   props: {
     span: [Number, String],
-    offset: [Number, String],
-    prefix: {
-      type: String,
-      default: 'van'
-    }
+    offset: [Number, String]
   },
 
   computed: {
@@ -31,9 +25,7 @@ export default {
     },
     style() {
       const padding = `${this.gutter / 2}px`;
-      return this.gutter
-        ? { paddingLeft: padding, paddingRight: padding }
-        : {};
+      return this.gutter ? { paddingLeft: padding, paddingRight: padding } : {};
     }
   }
 };

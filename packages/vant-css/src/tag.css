@@ -10,16 +10,11 @@
   color: $white;
 
   &::after {
-    border-color: $gray;
+    border-color: currentColor;
     border-radius: 4px;
   }
 
-  &.is-plain {
-    background: $white;
-    color: $gray;
-  }
-
-  &.is-mark {
+  &--mark {
     border-radius: 0 8px 8px 0;
 
     &::after {
@@ -30,11 +25,7 @@
   &--success {
     background: $green;
 
-    &::after {
-      border-color: $green;
-    }
-
-    &.is-plain {
+    &.van-tag--plain {
       color: $green;
     }
   }
@@ -42,11 +33,7 @@
   &--danger {
     background: $button-danger-background-color;
 
-    &::after {
-      border-color: $button-danger-background-color;
-    }
-
-    &.is-plain {
+    &.van-tag--plain {
       color: $button-danger-background-color;
     }
   }
@@ -54,12 +41,13 @@
   &--primary {
     background: $blue;
 
-    &::after {
-      border-color: $blue;
-    }
-
-    &.is-plain {
+    &.van-tag--plain {
       color: $blue;
     }
+  }
+
+  &--plain {
+    background: $white;
+    color: $gray;
   }
 }
