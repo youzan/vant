@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.11.0](https://github.com/youzan/vant/tree/v0.11.0) (2017-11-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.9...v0.11.0)
+
+**Issue**
+
+- 项目使用的zan-doc是开源的吗？ 已经找不到仓库了 ?  [\#319](https://github.com/youzan/vant/issues/319)
+- van-popup的closeOnClickOverlay 设置无效 [\#317](https://github.com/youzan/vant/issues/317)
+
+**Improvements**
+
+- \[new feature\] Pagination code review [\#328](https://github.com/youzan/vant/pull/328) ([chenjiahan](https://github.com/chenjiahan))
+- feat: 分页组件 [\#327](https://github.com/youzan/vant/pull/327) ([zgrong](https://github.com/zgrong))
+-  \[bug fix\] Icon: add-o icon add radius [\#326](https://github.com/youzan/vant/pull/326) ([cookfront](https://github.com/cookfront))
+- \[new feature\] optimize find-parent [\#325](https://github.com/youzan/vant/pull/325) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] optimize clickoutside [\#324](https://github.com/youzan/vant/pull/324) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] remove unnecessary props [\#323](https://github.com/youzan/vant/pull/323) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add Internationalization document [\#321](https://github.com/youzan/vant/pull/321) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] translate theme & demo pages [\#320](https://github.com/youzan/vant/pull/320) ([chenjiahan](https://github.com/chenjiahan))
+-  \[Doc\] update vant-demo respo [\#318](https://github.com/youzan/vant/pull/318) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\]  add lost cart icon [\#316](https://github.com/youzan/vant/pull/316) ([cookfront](https://github.com/cookfront))
+- \[new feature\] add i18n support [\#310](https://github.com/youzan/vant/pull/310) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9) (2017-11-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.8...v0.10.9)
 

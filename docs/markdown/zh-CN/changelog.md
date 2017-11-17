@@ -1,5 +1,18 @@
 ## 更新日志
 
+### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+`2017-11-17`
+
+**Breaking changes**
+- 组件支持国际化 [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- 移除部分无用的 props 及有效性检测 [\#323](https://github.com/youzan/vant/pull/323) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- 新增 Pagination 组件 [\#327](https://github.com/youzan/vant/pull/327) [\#328](https://github.com/youzan/vant/pull/328) [@zgrong](https://github.com/zgrong) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Locale 组件 [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- 新增国际化文档 [\#321](https://github.com/youzan/vant/pull/321) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add-o 图标更正为圆角 [\#326](https://github.com/youzan/vant/pull/326) [@cookfront](https://github.com/cookfront)
+
 ### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9) 
 `2017-11-15`
 
