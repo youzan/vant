@@ -32,6 +32,7 @@ export default {
   'nav-bar': r => require.ensure([], () => r(wrapper(require('./views/nav-bar'), 'nav-bar')), 'nav-bar'),
   'notice-bar': r => require.ensure([], () => r(wrapper(require('./views/notice-bar'), 'notice-bar')), 'notice-bar'),
   'number-keyboard': r => require.ensure([], () => r(wrapper(require('./views/number-keyboard'), 'number-keyboard')), 'number-keyboard'),
+  'pagination': r => require.ensure([], () => r(wrapper(require('./views/pagination'), 'pagination')), 'pagination'),
   'panel': r => require.ensure([], () => r(wrapper(require('./views/panel'), 'panel')), 'panel'),
   'password-input': r => require.ensure([], () => r(wrapper(require('./views/password-input'), 'password-input')), 'password-input'),
   'picker': r => require.ensure([], () => r(wrapper(require('./views/picker'), 'picker')), 'picker'),
