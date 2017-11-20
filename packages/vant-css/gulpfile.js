@@ -25,7 +25,7 @@ function getCodePoints() {
   config.glyphs.forEach((icon, index) => {
     const svgPath = path.join(__dirname, './icons/', icon.css + '.svg');
     if (fs.existsSync(svgPath)) {
-      codePoints[icon.css] = 0xe800 + index;
+      codePoints[icon.css] = 0xf000 + index;
     }
   });
 }
@@ -49,7 +49,7 @@ gulp.task('icon-font-ttf', () => {
         path: 'scripts/icon-template.css',
         targetPath: './icon.css',
         normalize: true,
-        firstGlyph: 0xe800,
+        firstGlyph: 0xf000,
         fixedCodepoints: getCodePoints()
       })
     )

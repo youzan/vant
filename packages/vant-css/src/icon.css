@@ -2,7 +2,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-c20e1580.ttf') format('truetype');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-6e8d2dd9.ttf') format('truetype');
 }
 
 .van-icon {
@@ -17,248 +17,248 @@
 }
 
 .van-icon-add-o:before {
-  content: "\E800";
+  content: "\F000";
 }
 .van-icon-add:before {
-  content: "\E801";
+  content: "\F001";
 }
 .van-icon-add2:before {
-  content: "\E802";
+  content: "\F002";
 }
 .van-icon-after-sale:before {
-  content: "\E803";
+  content: "\F003";
 }
 .van-icon-alipay:before {
-  content: "\E804";
+  content: "\F004";
 }
 .van-icon-arrow:before {
-  content: "\E805";
+  content: "\F005";
 }
 .van-icon-balance-details:before {
-  content: "\E806";
+  content: "\F006";
 }
 .van-icon-balance-pay:before {
-  content: "\E807";
+  content: "\F007";
 }
 .van-icon-birthday-privilege:before {
-  content: "\E808";
+  content: "\F008";
 }
 .van-icon-browsing-history:before {
-  content: "\E809";
+  content: "\F009";
 }
 .van-icon-card:before {
-  content: "\E80A";
+  content: "\F00A";
 }
 .van-icon-cart:before {
-  content: "\E80B";
+  content: "\F00B";
 }
 .van-icon-cash-back-record:before {
-  content: "\E80C";
+  content: "\F00C";
 }
 .van-icon-cash-on-deliver:before {
-  content: "\E80D";
+  content: "\F00D";
 }
 .van-icon-certificate:before {
-  content: "\E80E";
+  content: "\F00E";
 }
 .van-icon-chat:before {
-  content: "\E80F";
+  content: "\F00F";
 }
 .van-icon-check:before {
-  content: "\E810";
+  content: "\F010";
 }
 .van-icon-checked:before {
-  content: "\E811";
+  content: "\F011";
 }
 .van-icon-clear:before {
-  content: "\E812";
+  content: "\F012";
 }
 .van-icon-clock:before {
-  content: "\E813";
+  content: "\F013";
 }
 .van-icon-close:before {
-  content: "\E814";
+  content: "\F014";
 }
 .van-icon-completed:before {
-  content: "\E815";
+  content: "\F015";
 }
 .van-icon-contact:before {
-  content: "\E816";
+  content: "\F016";
 }
 .van-icon-coupon:before {
-  content: "\E817";
+  content: "\F017";
 }
 .van-icon-credit-pay:before {
-  content: "\E818";
+  content: "\F018";
 }
 .van-icon-debit-pay:before {
-  content: "\E819";
+  content: "\F019";
 }
 .van-icon-delete:before {
-  content: "\E81A";
+  content: "\F01A";
 }
 .van-icon-description:before {
-  content: "\E81B";
+  content: "\F01B";
 }
 .van-icon-discount:before {
-  content: "\E81C";
+  content: "\F01C";
 }
 .van-icon-ecard-pay:before {
-  content: "\E81D";
+  content: "\F01D";
 }
 .van-icon-edit-data:before {
-  content: "\E81E";
+  content: "\F01E";
 }
 .van-icon-edit:before {
-  content: "\E81F";
+  content: "\F01F";
 }
 .van-icon-exchange-record:before {
-  content: "\E820";
+  content: "\F020";
 }
 .van-icon-exchange:before {
-  content: "\E821";
+  content: "\F021";
 }
 .van-icon-fail:before {
-  content: "\E822";
+  content: "\F022";
 }
 .van-icon-free-postage:before {
-  content: "\E823";
+  content: "\F023";
 }
 .van-icon-gift-card-pay:before {
-  content: "\E824";
+  content: "\F024";
 }
 .van-icon-gift-card:before {
-  content: "\E825";
+  content: "\F025";
 }
 .van-icon-gift:before {
-  content: "\E826";
+  content: "\F026";
 }
 .van-icon-gold-coin:before {
-  content: "\E827";
+  content: "\F027";
 }
 .van-icon-goods-collect:before {
-  content: "\E828";
+  content: "\F028";
 }
 .van-icon-home:before {
-  content: "\E829";
+  content: "\F029";
 }
 .van-icon-like-o:before {
-  content: "\E82A";
+  content: "\F02A";
 }
 .van-icon-like:before {
-  content: "\E82B";
+  content: "\F02B";
 }
 .van-icon-location:before {
-  content: "\E82C";
+  content: "\F02C";
 }
 .van-icon-logistics:before {
-  content: "\E82D";
+  content: "\F02D";
 }
 .van-icon-member-day-privilege:before {
-  content: "\E82E";
+  content: "\F02E";
 }
 .van-icon-other-pay:before {
-  content: "\E82F";
+  content: "\F02F";
 }
 .van-icon-passed:before {
-  content: "\E830";
+  content: "\F030";
 }
 .van-icon-password-not-view:before {
-  content: "\E831";
+  content: "\F031";
 }
 .van-icon-password-view:before {
-  content: "\E832";
+  content: "\F032";
 }
 .van-icon-peer-pay:before {
-  content: "\E833";
+  content: "\F033";
 }
 .van-icon-pending-deliver:before {
-  content: "\E834";
+  content: "\F034";
 }
 .van-icon-pending-evaluate:before {
-  content: "\E835";
+  content: "\F035";
 }
 .van-icon-pending-orders:before {
-  content: "\E836";
+  content: "\F036";
 }
 .van-icon-pending-payment:before {
-  content: "\E837";
+  content: "\F037";
 }
 .van-icon-phone:before {
-  content: "\E838";
+  content: "\F038";
 }
 .van-icon-photo:before {
-  content: "\E839";
+  content: "\F039";
 }
 .van-icon-photograph:before {
-  content: "\E83A";
+  content: "\F03A";
 }
 .van-icon-point-gift:before {
-  content: "\E83B";
+  content: "\F03B";
 }
 .van-icon-points-mall:before {
-  content: "\E83C";
+  content: "\F03C";
 }
 .van-icon-points:before {
-  content: "\E83D";
+  content: "\F03D";
 }
 .van-icon-qr-invalid:before {
-  content: "\E83E";
+  content: "\F03E";
 }
 .van-icon-qr:before {
-  content: "\E83F";
+  content: "\F03F";
 }
 .van-icon-question:before {
-  content: "\E840";
+  content: "\F040";
 }
 .van-icon-receive-gift:before {
-  content: "\E841";
+  content: "\F041";
 }
 .van-icon-records:before {
-  content: "\E842";
+  content: "\F042";
 }
 .van-icon-search:before {
-  content: "\E843";
+  content: "\F043";
 }
 .van-icon-send-gift:before {
-  content: "\E844";
+  content: "\F044";
 }
 .van-icon-setting:before {
-  content: "\E845";
+  content: "\F045";
 }
 .van-icon-shop-collect:before {
-  content: "\E846";
+  content: "\F046";
 }
 .van-icon-shop:before {
-  content: "\E847";
+  content: "\F047";
 }
 .van-icon-shopping-cart:before {
-  content: "\E848";
+  content: "\F048";
 }
 .van-icon-sign:before {
-  content: "\E849";
+  content: "\F049";
 }
 .van-icon-success:before {
-  content: "\E84A";
+  content: "\F04A";
 }
 .van-icon-tosend:before {
-  content: "\E84B";
+  content: "\F04B";
 }
 .van-icon-underway:before {
-  content: "\E84C";
+  content: "\F04C";
 }
 .van-icon-upgrade:before {
-  content: "\E84D";
+  content: "\F04D";
 }
 .van-icon-value-card:before {
-  content: "\E84E";
+  content: "\F04E";
 }
 .van-icon-wap-home:before {
-  content: "\E84F";
+  content: "\F04F";
 }
 .van-icon-wap-nav:before {
-  content: "\E850";
+  content: "\F050";
 }
 .van-icon-wechat:before {
-  content: "\E851";
+  content: "\F051";
 }
