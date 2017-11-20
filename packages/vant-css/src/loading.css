@@ -60,6 +60,7 @@
     }
 
     &--spinner {
+      color: $gray;
       animation-timing-function: steps(12);
 
       i {
@@ -76,14 +77,12 @@
           display: block;
           margin: 0 auto;
           border-radius: 40%;
-          background-color: $gray;
+          background-color: currentColor;
         }
       }
 
       &.van-loading__spinner--white {
-        i::before {
-          background-color: #fff;
-        }
+        color: #fff;
       }
     }
   }

@@ -6,6 +6,7 @@
 }
 
 .van-icon {
+  width: 1em;
   display: inline-block;
   font: normal normal normal 14px/1 "<%= fontName %>";
   font-size: inherit;
