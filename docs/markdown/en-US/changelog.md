@@ -1,5 +1,18 @@
 ## Changelog
 
+### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+`2017-11-17`
+
+**Breaking changes**
+- add i18n support [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- remove some unnecessary props [\#323](https://github.com/youzan/vant/pull/323) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- add Pagination component [\#327](https://github.com/youzan/vant/pull/327) [\#328](https://github.com/youzan/vant/pull/328) [@zgrong](https://github.com/zgrong) [@chenjiahan](https://github.com/chenjiahan)
+- add Locale component [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- add Internationalization document [\#321](https://github.com/youzan/vant/pull/321) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add-o icon add radius [\#326](https://github.com/youzan/vant/pull/326) [@cookfront](https://github.com/cookfront)
+
 ### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9) 
 `2017-11-15`
 
@@ -7,7 +20,7 @@
 - Icon: add new icons [\#315](https://github.com/youzan/vant/pull/315) [@cookfront](https://github.com/cookfront)
 
 **Bug Fixes**
-- Search: fix box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) [@chenjiahan](https://github.com/chenjiahan)
+- Search: fix box-sizing [\#312](https://github.com/youzan/vant/pull/312) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 `2017-11-11`
