@@ -7,10 +7,8 @@
         </slot>
       </div>
       <div class="van-steps__message">
-        <div class="van-steps__message-wrapper">
-          <div class="van-steps__title" v-text="title" />
-          <div class="van-steps__desc" v-text="description" />
-        </div>
+        <div class="van-steps__title" v-text="title" />
+        <div class="van-steps__desc" v-text="description" />
       </div>
       <slot name="message-extra" />
     </div>

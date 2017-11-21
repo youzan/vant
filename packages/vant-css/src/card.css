@@ -64,7 +64,7 @@
     color: $gray-darker;
     font-size: 12px;
     max-height: 20px;
-    @mixin multi-ellipsis 1;
+    @mixin ellipsis;
   }
 
   &__price,
