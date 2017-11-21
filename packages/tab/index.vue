@@ -5,12 +5,10 @@
 </template>
 
 <script>
-import findParent from '../mixins/find-parent';
-
 export default {
   name: 'van-tab',
 
-  mixins: [findParent],
+  inject: ['tabs'],
 
   props: {
     title: {
@@ -21,8 +19,7 @@ export default {
   },
 
   data() {
-    this.findParentByName('van-tabs');
-    const nextIndex = this.parentGroup.tabs.length;
+    const nextIndex = this.tabs.tabs.length;
     this.updateParentData(nextIndex);
     return {
       key: nextIndex
@@ -41,7 +38,7 @@ export default {
   methods: {
     updateParentData(nextIndex) {
       const index = arguments.length ? nextIndex : this.key;
-      this.parentGroup.tabs.splice(index, 1, {
+      this.tabs.tabs.splice(index, 1, {
         title: this.title,
         disabled: this.disabled,
         index
@@ -50,14 +47,13 @@ export default {
   },
 
   destroyed() {
-    const key = this.key;
-    const tabs = this.parentGroup.tabs;
+    const { key } = this;
+    const { tabs } = this.tabs;
 
     for (let i = 0; i < tabs.length; i++) {
       /* istanbul ignore else */
       if (tabs[i].index === key) {
-        this.parentGroup.tabs.splice(i, 1);
-        return;
+        return tabs.splice(i, 1);
       }
     }
   }

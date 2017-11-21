@@ -13,6 +13,12 @@ export default {
     disabled: Boolean
   },
 
+  provide() {
+    return {
+      radioGroup: this
+    };
+  },
+
   watch: {
     value(value) {
       this.$emit('change', value);

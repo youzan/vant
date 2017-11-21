@@ -25,12 +25,12 @@
 </template>
 
 <script>
-import findParent from '../mixins/find-parent';
-
 export default {
   name: 'van-radio',
 
-  mixins: [findParent],
+  inject: {
+    radioGroup: { default: '' } 
+  },
 
   props: {
     value: {},
@@ -40,17 +40,17 @@ export default {
 
   computed: {
     isGroup() {
-      return !!this.findParentByName('van-radio-group');
+      return !!this.radioGroup;
     },
 
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
+        return this.isGroup && this.radioGroup ? this.radioGroup.value : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
-          this.parentGroup.$emit('input', val);
+        if (this.isGroup && this.radioGroup) {
+          this.radioGroup.$emit('input', val);
         } else {
           this.$emit('input', val);
         }
@@ -58,8 +58,8 @@ export default {
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled || this.disabled
+      return this.isGroup && this.radioGroup
+          ? this.radioGroup.disabled || this.disabled
           : this.disabled;
     }
   },

@@ -22,7 +22,6 @@
 
 <script>
 import Icon from '../icon';
-import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-checkbox',
@@ -31,7 +30,9 @@ export default {
     [Icon.name]: Icon
   },
 
-  mixins: [findParent],
+  inject: {
+    checkboxGroup: { default: '' } 
+  },
 
   props: {
     value: {},
@@ -52,29 +53,29 @@ export default {
   computed: {
     // whether is in van-checkbox-group
     isGroup() {
-      return !!this.findParentByName('van-checkbox-group');
+      return !!this.checkboxGroup;
     },
 
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
+        return this.isGroup && this.checkboxGroup ? this.checkboxGroup.value.indexOf(this.name) !== -1 : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
-          const parentValue = this.parentGroup.value.slice();
+        if (this.isGroup && this.checkboxGroup) {
+          const parentValue = this.checkboxGroup.value.slice();
           if (val) {
             /* istanbul ignore else */
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
-              this.parentGroup.$emit('input', parentValue);
+              this.checkboxGroup.$emit('input', parentValue);
             }
           } else {
             const index = parentValue.indexOf(this.name);
             /* istanbul ignore else */
             if (index !== -1) {
               parentValue.splice(index, 1);
-              this.parentGroup.$emit('input', parentValue);
+              this.checkboxGroup.$emit('input', parentValue);
             }
           }
         } else {
@@ -93,8 +94,8 @@ export default {
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled
+      return this.isGroup && this.checkboxGroup
+          ? this.checkboxGroup.disabled
           : this.disabled;
     }
   },

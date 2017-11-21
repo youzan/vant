@@ -13,6 +13,12 @@ export default {
     disabled: Boolean
   },
 
+  provide() {
+    return {
+      checkboxGroup: this
+    };
+  },
+
   watch: {
     value(val) {
       this.$emit('change', val);

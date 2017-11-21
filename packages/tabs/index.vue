@@ -79,6 +79,12 @@
       };
     },
 
+    provide() {
+      return {
+        tabs: this
+      };
+    },
+
     watch: {
       active(val) {
         this.curActive = +val;
