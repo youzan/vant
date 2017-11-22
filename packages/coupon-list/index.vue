@@ -4,7 +4,7 @@
       <van-field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
       <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
     </van-cell-group>
-    <div :class="['van-coupon-list__list', { 'van-coupon-list--with-exchange': showExchangeBar }]" ref="list">
+    <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
       <van-coupon-item
         ref="card"
         v-for="(item, index) in coupons"

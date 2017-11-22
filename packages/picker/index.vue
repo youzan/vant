@@ -7,16 +7,16 @@
         <div v-if="title" class="van-picker__title">{{ title }}</div>
       </slot>
     </div>
-    <div class="van-picker__columns" :class="['van-picker__columns--' + columns.length]">
+    <div class="van-picker__columns" :class="`van-picker__columns--${columns.length}`">
       <van-picker-column
         v-for="(item, index) in columns"
         :key="index"
         v-model="values[index]"
         :values="item.values"
-        :class-name="item.className"
+        :className="item.className"
         :itemHeight="itemHeight"
-        :visible-item-count="visibileColumnCount"
-        :value-key="valueKey"
+        :visibleItemCount="visibileColumnCount"
+        :valueKey="valueKey"
         @columnChange="columnValueChange(index)"
       />
       <div class="van-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>

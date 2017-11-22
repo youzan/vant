@@ -1,6 +1,6 @@
 <template>
-  <div :class="['van-tabbar-item', { 'van-tabbar-item--active': active }]" @click="onClick">
-    <div :class="['van-tabbar-item__icon', { 'van-tabbar-item__icon-dot': dot }]">
+  <div class="van-tabbar-item" :class="{ 'van-tabbar-item--active': active }" @click="onClick">
+    <div class="van-tabbar-item__icon" :class="{ 'van-tabbar-item__icon-dot': dot }">
       <slot name="icon">
         <van-icon v-if="icon" :name="icon" />
       </slot>

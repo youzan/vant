@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-nav-bar van-hairline--top-bottom', { 'van-nav-bar--fixed': fixed }]">
+  <div class="van-nav-bar van-hairline--top-bottom" :class="{ 'van-nav-bar--fixed': fixed }">
     <div class="van-nav-bar__left" @click="$emit('clickLeft')">
       <slot name="left">
         <van-icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />

@@ -1,7 +1,8 @@
 <template>
   <div
     v-show="showNoticeBar"
-    :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]"
+    class="van-notice-bar"
+    :class="{ 'van-notice-bar--withicon': mode }"
     :style="barStyle"
     @click="$emit('click')"
   >
@@ -11,7 +12,8 @@
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
       <div
         ref="content"
-        :class="['van-notice-bar__content', animationClass]"
+        class="van-notice-bar__content"
+        :class="animationClass"
         :style="contentStyle"
         @animationend="onAnimationEnd"
       >

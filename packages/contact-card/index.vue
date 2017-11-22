@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-contact-card', `van-contact-card--${type}`]" v-on="$listeners">
+  <div class="van-contact-card" :class="`van-contact-card--${type}`" v-on="$listeners">
     <div class="van-contact-card__content">
       <template v-if="type === 'add'">
         <van-icon class="van-contact-card__icon" name="add2" />

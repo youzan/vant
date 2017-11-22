@@ -1,5 +1,5 @@
 <template>
-  <div class="van-tabs" :class="[`van-tabs--${type}`]">
+  <div class="van-tabs" :class="`van-tabs--${type}`">
     <div class="van-tabs__nav-wrap" v-if="type === 'line' && tabs.length > swipeThreshold">
       <div class="van-tabs__swipe" ref="swipe">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -20,7 +20,7 @@
     <div
       v-else
       class="van-tabs__nav"
-      :class="[`van-tabs__nav--${this.type}`]"
+      :class="`van-tabs__nav--${this.type}`"
     >
       <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div

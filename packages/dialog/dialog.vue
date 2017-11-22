@@ -18,7 +18,8 @@
         </van-button>
         <van-button
           size="large"
-          :class="['van-dialog__confirm', { 'van-hairline--left': showCancelButton && showConfirmButton }]"
+          class="van-dialog__confirm"
+          :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
           v-show="showConfirmButton"
           @click="handleAction('confirm')"
         >

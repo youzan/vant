@@ -1,5 +1,5 @@
 <template>
-  <a :class="['van-badge van-hairline', { 'van-badge--select': isSelect }]" :href="url" @click="onClick">
+  <a class="van-badge van-hairline" :class="{ 'van-badge--select': isSelect }" :href="url" @click="onClick">
     <div v-if="info" class="van-badge__info">{{ info }}</div>
     {{ title }}
   </a>

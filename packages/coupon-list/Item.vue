@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-coupon-item', { 'van-coupon-item--disabled': disabled }]">
+  <div class="van-coupon-item" :class="{ 'van-coupon-item--disabled': disabled }">
     <div class="van-coupon-item__head">
       <div class="van-coupon-item__lines"></div>
       <div class="van-coupon-item__gradient">

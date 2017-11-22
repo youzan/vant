@@ -65,18 +65,15 @@
     transform: translateY(-50%);
     left: 10px;
     font-size: 16px;
-    line-height: 1;
   }
 
   .van-icon-clear {
     font-size: 14px;
-    line-height: 16px;
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    /* 增加 clear 点击区域 */
-    padding: 5px;
-    color: #888;
+    padding: 5px; /* increase click area */
+    color: $gray-dark;
   }
 }

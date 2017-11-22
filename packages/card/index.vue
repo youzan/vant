@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-card', { 'van-card--center': centered }]">
+  <div class="van-card" :class="{ 'van-card--center': centered }">
     <div class="van-card__thumb">
       <slot name="thumb">
         <img :src="thumb" class="van-card__img" />
