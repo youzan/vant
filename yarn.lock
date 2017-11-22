@@ -3624,7 +3624,7 @@ he@1.1.1, he@1.1.x, he@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
-highlight.js@^9.12.0, highlight.js@^9.4.0:
+highlight.js@^9.4.0:
   version "9.12.0"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
 
@@ -4487,12 +4487,6 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-linkify-it@~1.2.2:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/linkify-it/-/linkify-it-1.2.4.tgz#0773526c317c8fd13bd534ee1d180ff88abf881a"
-  dependencies:
-    uc.micro "^1.0.1"
-
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4914,16 +4908,6 @@ markdown-it-container@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-container/-/markdown-it-container-2.0.0.tgz#0019b43fd02eefece2f1960a2895fba81a404695"
 
-markdown-it@^6.0.5:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-6.1.1.tgz#ced037f4473ee9f5153ac414f77dc83c91ba927c"
-  dependencies:
-    argparse "^1.0.7"
-    entities "~1.1.1"
-    linkify-it "~1.2.2"
-    mdurl "~1.0.1"
-    uc.micro "^1.0.1"
-
 markdown-it@^8.3.2, markdown-it@^8.4.0:
   version "8.4.0"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.0.tgz#e2400881bf171f7018ed1bd9da441dac8af6306d"
@@ -4945,7 +4929,7 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
-mdurl@^1.0.1, mdurl@~1.0.1:
+mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
@@ -7863,25 +7847,22 @@ vue-loader@^13.5.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-markdown-loader@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/vue-markdown-loader/-/vue-markdown-loader-2.2.3.tgz#d5bc533d8ce254349708a2a0c1490a3b7bac8959"
+vue-markdown-loader@^2.3.0:
+  version "2.3.0"
+  resolved "http://registry.npm.qima-inc.com/vue-markdown-loader/download/vue-markdown-loader-2.3.0.tgz#316984bc7a84419ef30b2bb9d74919c45f460591"
   dependencies:
     cheerio "^0.20.0"
     highlight.js "^9.4.0"
     loader-utils "^0.2.15"
-    markdown-it "^6.0.5"
+    markdown-it "^8.4.0"
 
 vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
-vue-sfc-compiler@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/vue-sfc-compiler/-/vue-sfc-compiler-0.0.4.tgz#fb2158a87b19e2116fb7cff6e5ff688bcff8b545"
-  dependencies:
-    vue-template-compiler ">=2.5.0"
-    vue-template-es2015-compiler ">=1.6.0"
+vue-sfc-compiler@^0.0.5:
+  version "0.0.5"
+  resolved "http://registry.npm.qima-inc.com/vue-sfc-compiler/download/vue-sfc-compiler-0.0.5.tgz#fac2eca52185fb32afeea304c25fee1b5b1174b6"
 
 vue-style-loader@^3.0.0:
   version "3.0.3"
@@ -7890,20 +7871,20 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@>=2.5.0, vue-template-compiler@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.3.tgz#ab631b0694e211a6aaf0d800102b37836aae36a4"
+vue-template-compiler@^2.5.8:
+  version "2.5.8"
+  resolved "http://registry.npm.qima-inc.com/vue-template-compiler/download/vue-template-compiler-2.5.8.tgz#826ae77e1d5faa7fa5fca554f33872dde38de674"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
-vue-template-es2015-compiler@>=1.6.0, vue-template-es2015-compiler@^1.6.0:
+vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.5.3:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.3.tgz#e1a3b1f49b6e93e574ce040b95cbc873912fecc1"
+vue@^2.5.8:
+  version "2.5.8"
+  resolved "http://registry.npm.qima-inc.com/vue/download/vue-2.5.8.tgz#f855c1c27255184a82225f4bef225473e8faf15b"
 
 watchpack@^1.4.0:
   version "1.4.0"

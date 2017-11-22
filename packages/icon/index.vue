@@ -1,5 +1,5 @@
 <template>
-  <i class="van-icon" :class="`van-icon-${name}`" @click="$emit('click', $event)">
+  <i class="van-icon" :class="`van-icon-${name}`" v-on="$listeners">
     <slot></slot>
   </i>
 </template>
