@@ -12,6 +12,8 @@
 .van-loading {
   font-size: 0;
   line-height: 0;
+  z-index: 0;
+  position: relative;
 
   &--circle {
     width: 16px;
