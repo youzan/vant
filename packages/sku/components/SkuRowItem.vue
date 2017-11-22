@@ -1,7 +1,8 @@
 <template>
   <span v-if="isChoosable"
     @click="onSkuSelected"
-    :class="{ 'van-sku-row__item': true, 'van-sku-row__item--active': isChoosed }">
+    class="van-sku-row__item"
+    :class="{ 'van-sku-row__item--active': isChoosed }">
     {{ skuValue.name }}
   </span>
   <span v-else class="van-sku-row__item van-sku-row__item--disabled">{{ skuValue.name }}</span>

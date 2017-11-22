@@ -17,10 +17,11 @@
         v-for="(key, index) in keys" 
         v-text="key"
         :data-key="index"
-        :class="['van-hairline', {
+        class="van-hairline"
+        :class="{
           'van-number-keyboard--active': index === active,
           'van-number-keyboard__delete': index === 11 && showDeleteKey
-        }]"
+        }"
       />
     </div>
   </transition>

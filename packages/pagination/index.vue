@@ -1,7 +1,8 @@
 <template>
-  <ul :class="['van-pagination', { 'van-pagination-simple': !isMultiMode }]">
+  <ul class="van-pagination" :class="{ 'van-pagination-simple': !isMultiMode }">
     <li
-      :class="[{ 'van-pagination--disabled': value === 1 } , 'van-pagination__item', 'van-pagination__prev', 'van-hairline']"
+      class="van-pagination__item van-pagination__prev van-hairline"
+      :class="{ 'van-pagination--disabled': value === 1 }"
       @click="selectPage(value - 1)"
     >
       {{ prevText || $t('prev') }}
@@ -10,7 +11,8 @@
       v-if="isMultiMode" 
       v-for="(page, index) in pages" 
       :key="index" 
-      :class="[{ 'van-pagination--active': page.active }, 'van-pagination__item', 'van-pagination__page', 'van-hairline']"
+      class="van-pagination__item van-pagination__page van-hairline"
+      :class="{ 'van-pagination--active': page.active }"
       @click="selectPage(page.number)"
     >
       {{ page.text }}
@@ -19,7 +21,8 @@
       <slot name="pageDesc">{{ pageDesc }}</slot>
     </li>
     <li
-      :class="[{ 'van-pagination--disabled': value === computedPageCount }, 'van-pagination__item', 'van-pagination__next', 'van-hairline']" 
+      class="van-pagination__item van-pagination__next van-hairline"
+      :class="{ 'van-pagination--disabled': value === computedPageCount }" 
        @click="selectPage(value + 1)"
     >
       {{ nextText || $t('next') }}

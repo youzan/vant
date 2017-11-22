@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-steps', `van-steps--${direction}`]">
+  <div class="van-steps" :class="`van-steps--${direction}`">
     <div class="van-steps__status" v-if="title || description">
       <div class="van-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">

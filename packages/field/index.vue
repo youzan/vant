@@ -2,7 +2,8 @@
   <van-cell
     :title="label"
     :required="required"
-    :class="['van-field', {
+    class="van-field"
+    :class="{
       'van-field--has-textarea': type === 'textarea',
       'van-field--nolabel': !label,
       'van-field--disabled': $attrs.disabled,
@@ -11,7 +12,7 @@
       'van-field--autosize': autosize,
       'van-field--has-icon': hasIcon,
       'van-hairline--surround': border
-    }]">
+    }">
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
