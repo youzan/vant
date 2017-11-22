@@ -24,7 +24,7 @@
     border-color: $black;
     background-color: $black;
     border-radius: inherit;/* inherit parent's border radius */
-    transform: translate3d(-50%, -50%, 0); 
+    transform: translate(-50%, -50%); 
   }
 
   &:not([disabled]):active::before {
