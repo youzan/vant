@@ -6,9 +6,8 @@
  * ```
  */
 
-import Vue from 'vue';
+import { isServer } from './index';
 
-const isServer = Vue.prototype.$isServer;
 const context = '@@clickoutsideContext';
 
 export default {
