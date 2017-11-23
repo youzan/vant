@@ -5,26 +5,30 @@ $van-radio-size: 20px;
 .van-radio {
   overflow: hidden;
 
+  &__input,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   &__input {
     position: relative;
     height: $van-radio-size;
-    float: left;
   }
 
   &__control {
     position: absolute;
     top: 0;
     left: 0;
-    width: $van-radio-size;
-    height: $van-radio-size;
     opacity: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__label {
     line-height: $van-radio-size;
-    display: block;
-    margin-left: 37px;
+    margin-left: 10px;
   }
 
   .van-icon {

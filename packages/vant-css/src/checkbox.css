@@ -8,7 +8,6 @@ $van-checkbox-size: 20px;
   .van-icon-success {
     color: $white;
     display: block;
-    line-height: 1;
     font-size: 12px;
     text-align: center;
     pointer-events: none;
@@ -23,11 +22,15 @@ $van-checkbox-size: 20px;
     }
   }
 
+  &__input,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   &__input {
     position: relative;
     height: $van-checkbox-size;
-    margin-right: 15px;
-    float: left;
   }
 
   &__control {
@@ -36,13 +39,12 @@ $van-checkbox-size: 20px;
     left: 0;
     opacity: 0;
     margin: 0;
-    width: $van-checkbox-size;
-    height: $van-checkbox-size;
+    width: 100%;
+    height: 100%;
   }
 
   &__label {
-    display: block; 
-    margin-left: 37px;
+    margin-left: 10px;
     line-height: $van-checkbox-size;
   }
 
