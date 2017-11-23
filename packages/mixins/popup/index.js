@@ -28,6 +28,16 @@ export default {
     preventScroll: {
       type: Boolean,
       default: false
+    },
+    // 遮罩层额外样式
+    overlayStyle: {
+      type: String,
+      default: ''
+    },
+    // 遮罩层额外类
+    overlayClass: {
+      type: String,
+      default: ''
     }
   },
 
@@ -98,7 +108,13 @@ export default {
       }
 
       if (this.overlay) {
-        manager.openModal(this._popupId, context.plusKeyByOne('zIndex'), this.$el);
+        manager.openModal({
+          id: this._popupId,
+          zIndex: context.plusKeyByOne('zIndex'),
+          dom: this.$el,
+          extraClass: this.overlayClass,
+          extraStyle: this.overlayStyle
+        });
         if (this.lockOnScroll) {
           document.body.classList.add('van-overflow-hidden');
         }
