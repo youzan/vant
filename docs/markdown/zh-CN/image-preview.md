@@ -28,6 +28,19 @@ ImagePreview([
 ], 1);
 ```
 
+#### 手动关闭
+
+```javascript
+const instance = ImagePreview([
+  'https://img.yzcdn.cn/1.jpg',
+  'https://img.yzcdn.cn/2.jpg'
+]);
+
+setTimeout(() => {
+  instance.close();
+}, 1000);
+```
+
 ### 方法参数
 
 | 参数名 | 说明 | 类型 |

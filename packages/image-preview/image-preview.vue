@@ -66,7 +66,7 @@ export default {
       // prevent long tap to close component
       const deltaTime = new Date() - this.touchStartTime;
       if (deltaTime < 100 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {
-        this.value = false;
+        this.close();
       }
     }
   }

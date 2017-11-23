@@ -20,6 +20,11 @@ const ImagePreviewBox = (images, startPosition = 0) => {
   instance.images = images;
   instance.startPosition = startPosition;
   instance.value = true;
+  instance.$on('input', show => {
+    instance.value = show;
+  });
+
+  return instance;
 };
 
 export default ImagePreviewBox;
