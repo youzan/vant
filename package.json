@@ -47,7 +47,7 @@
     "vue-lazyload": "^1.1.4"
   },
   "peerDependencies": {
-    "vue": ">= 2.4.0"
+    "vue": ">= 2.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -78,7 +78,6 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-postcss": "^7.0.0",
     "gulp-util": "^3.0.8",
-    "highlight.js": "^9.12.0",
     "html-webpack-plugin": "^2.29.0",
     "isparta-loader": "^2.0.0",
     "karma": "^1.7.1",
@@ -107,13 +106,14 @@
     "uppercamelcase": "^3.0.0",
     "url-loader": "^0.6.2",
     "vant-doc": "0.3.18",
-    "vue": "^2.5.3",
+    "vue": "^2.5.8",
     "vue-loader": "^13.5.0",
-    "vue-markdown-loader": "^2.2.3",
+    "vue-markdown-loader": "^2.3.0",
     "vue-router": "^3.0.1",
-    "vue-sfc-compiler": "^0.0.4",
+    "vue-sfc-compiler": "^0.0.5",
     "vue-style-loader": "^3.0.0",
-    "vue-template-compiler": "^2.5.3",
+    "vue-template-compiler": "^2.5.8",
+    "vue-template-es2015-compiler": "^1.6.0",
     "webpack": "^3.8.1",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.4",
