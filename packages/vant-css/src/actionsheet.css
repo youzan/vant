@@ -43,11 +43,13 @@
     text-align: center;
 
     .van-icon-close {
-      top: 11px;
-      right: 15px;
+      top: 0;
+      right: 0;
+      padding: 0 15px;
+      font-size: 18px;
+      color: $gray-dark;
       position: absolute;
-      font-size: 22px;
-      line-height: 22px;
+      line-height: inherit;
     }
   }
 
