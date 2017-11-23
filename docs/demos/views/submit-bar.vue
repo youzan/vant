@@ -33,6 +33,7 @@
         buttonText="提交订单"
         @submit="onClickButton"
       >
+        <van-checkbox v-model="checked">全选</van-checkbox>
         <span slot="tip">
           您的收货地址不支持同城送, <span class="van-edit-address" @click="onClickEditAddress">修改地址 ></span>
         </span>
@@ -52,6 +53,12 @@ export default {
     }
   },
 
+  data() {
+    return {
+      checked: true
+    };
+  },
+
   methods: {
     onClickButton() {
       Toast('点击按钮');
@@ -69,8 +76,13 @@ export default {
   .van-submit-bar {
     position: relative;
   }
+
   .van-edit-address {
     color: #38F;
+  }
+
+  .van-checkbox {
+    margin-left: 15px;
   }
 }
 </style>

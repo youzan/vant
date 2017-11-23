@@ -45,7 +45,7 @@ Vue.component(SubmitBar.name, SubmitBar);
 ```
 
 #### 高级用法
-提示文案中的额外操作和说明
+通过 slot 插入自定义内容
 
 ```html
 <van-submit-bar
@@ -53,6 +53,7 @@ Vue.component(SubmitBar.name, SubmitBar);
   buttonText="提交订单"
   @submit="onClickButton"
 >
+  <van-checkbox v-model="checked">全选</van-checkbox>
   <span slot="tip">
     您的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址 ></span>
   </span>
@@ -80,4 +81,5 @@ Vue.component(SubmitBar.name, SubmitBar);
 
 | Name | 说明 |
 |-----------|-----------|
+| default | 自定义订单栏左侧内容 |
 | tip | 提示文案中的额外操作和说明 |

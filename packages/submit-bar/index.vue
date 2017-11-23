@@ -4,6 +4,7 @@
       {{ tip }}<slot name="tip" />
     </div>
     <div class="van-submit-bar__bar">
+      <slot />
       <div class="van-submit-bar__price">
         <template v-if="hasPrice">
           <span class="van-submit-bar__price-text">合计：</span>
