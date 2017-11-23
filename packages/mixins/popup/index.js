@@ -28,7 +28,15 @@ export default {
     preventScroll: {
       type: Boolean,
       default: false
-    }
+    },
+    overlayClass: {
+      type: String,
+      default: ''
+    },
+    overlayStyle: {
+      type: String,
+      default: ''
+    },
   },
 
   watch: {
@@ -104,6 +112,8 @@ export default {
         }
       }
 
+      this.$el.style.cssText = this.$el.style.cssText + ` ${this.overlayStyle}`;
+      this.$el.className = this.$el.className + ` ${this.overlayClass}`;
       this.$el.style.zIndex = context.plusKeyByOne('zIndex');
       this.opened = true;
 
