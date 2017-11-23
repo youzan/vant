@@ -32,7 +32,7 @@ const PopupManager = {
     }
   },
 
-  openModal({id, zIndex, dom, extraClass, extraStyle}) {
+  openModal({ id, zIndex, dom, extraClass, extraStyle }) {
     const { modalStack } = context;
     const exist = modalStack.some(item => item.id === id);
 
@@ -53,6 +53,7 @@ const PopupManager = {
   },
 
   closeModal(id) {
+    console.log('closeModal', id);
     const { modalStack } = context;
 
     if (modalStack.length) {

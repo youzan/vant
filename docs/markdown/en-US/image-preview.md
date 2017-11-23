@@ -25,6 +25,19 @@ ImagePreview([
 ], 1);
 ```
 
+#### Close Manually
+
+```javascript
+const instance = ImagePreview([
+  'https://img.yzcdn.cn/1.jpg',
+  'https://img.yzcdn.cn/2.jpg'
+]);
+
+setTimeout(() => {
+  instance.close();
+}, 1000);
+```
+
 ### Arguments
 
 | Attribute | Description | Type |
