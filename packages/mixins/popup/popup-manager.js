@@ -53,7 +53,6 @@ const PopupManager = {
   },
 
   closeModal(id) {
-    console.log('closeModal', id);
     const { modalStack } = context;
 
     if (modalStack.length) {

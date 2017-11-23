@@ -34,6 +34,9 @@ describe('ImagePreview', () => {
     wrapper = mount(ImagePreviewVue);
     wrapper.vm.images = images;
     wrapper.vm.value = true;
+    wrapper.vm.$on('input', val => {
+      wrapper.vm.value = val;
+    });
 
     expect(wrapper.hasClass('van-image-preview')).to.be.true;
 
