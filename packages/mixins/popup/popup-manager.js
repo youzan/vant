@@ -32,12 +32,18 @@ const PopupManager = {
     }
   },
 
-  openModal(id, zIndex, dom) {
+  openModal({id, zIndex, dom, extraClass, extraStyle}) {
     const { modalStack } = context;
     const exist = modalStack.some(item => item.id === id);
 
     if (!exist) {
       const modal = this.getModal();
+      if (extraClass) {
+        modal.classList.add(extraClass);
+      }
+      if (extraStyle) {
+        modal.style.cssText = `${modal.style.cssText} ${extraStyle}`;
+      }
       modal.style.zIndex = zIndex;
 
       const parentNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
