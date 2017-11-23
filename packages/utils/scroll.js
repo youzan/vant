@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { isServer } from './index';
 
 export default {
   debounce(func, wait, immediate) {
@@ -71,5 +71,5 @@ export default {
     return element === window ? element.innerHeight : element.getBoundingClientRect().height;
   },
 
-  getComputedStyle: !Vue.prototype.$isServer && document.defaultView.getComputedStyle.bind(document.defaultView)
+  getComputedStyle: !isServer && document.defaultView.getComputedStyle.bind(document.defaultView)
 };

@@ -41,7 +41,7 @@ import Icon from '../icon';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import isAndroid from '../utils/env/is-android';
+import { isAndroid } from '../utils';
 import { i18n } from '../locale';
 
 export default {

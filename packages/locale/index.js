@@ -1,6 +1,5 @@
 import Vue from 'vue';
-import get from '../utils/get';
-import camelize from '../utils/camelize';
+import { get, camelize } from '../utils';
 import deepAssign from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 

@@ -5,7 +5,7 @@
 import Vue from 'vue';
 import { Locale, Toast, Dialog } from 'packages';
 import { DemoBlock, DemoSection } from 'vant-doc';
-import camelize from 'packages/utils/camelize';
+import { camelize } from 'packages/utils';
 
 const demoBaseMixin = {
   beforeCreate() {

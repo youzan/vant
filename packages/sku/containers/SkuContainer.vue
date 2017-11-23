@@ -72,6 +72,7 @@
 
 <script>
 import Vue from 'vue';
+import { isServer } from '../../utils';
 import Popup from '../../popup';
 import Toast from '../../toast';
 import SkuHeader from '../components/SkuHeader';
@@ -176,6 +177,10 @@ export default {
 
   computed: {
     bodyStyle() {
+      if (isServer) {
+        return;
+      }
+
       const windowHeight = window.innerHeight;
       // header高度82px, sku actions高度50px，如果改动了样式自己传下bodyOffsetTop调整下
       const maxHeight = windowHeight - this.bodyOffsetTop;
