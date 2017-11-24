@@ -1,5 +1,23 @@
 ## 更新日志
 
+### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+`2017-11-24`
+
+**Improvements**
+- Actionsheet: 更新关闭按钮样式 [\#340](https://github.com/youzan/vant/pull/340) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: 新增 overlayClass、overlayStyle 属性 [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343) [@mickeyinfoshan](https://github.com/mickeyinfoshan) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 调整 unicode，避免展示特殊字符 [\#330](https://github.com/youzan/vant/pull/330) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview: 支持手动关闭 [\#346](https://github.com/youzan/vant/pull/346) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: 支持通过 slot-scope 判断 active 状态 [\#347](https://github.com/youzan/vant/pull/347) [@chuangbo](https://github.com/chuangbo)
+- SubmitBar: 新增左侧内容 slot [\#345](https://github.com/youzan/vant/pull/345) [@chenjiahan](https://github.com/chenjiahan)
+- 优化组件 staticClass 渲染效率 [\#337](https://github.com/youzan/vant/pull/337) [@chenjiahan](https://github.com/chenjiahan)
+- 优化文字截取相关样式 [\#334](https://github.com/youzan/vant/pull/334) [@chenjiahan](https://github.com/chenjiahan)
+- 优化按钮 css layer 及 GPU 开销 [\#336](https://github.com/youzan/vant/pull/336) [@deepkolos](https://github.com/deepkolos)
+
+**Bug Fixes**
+- 修复 SSR 过程中报错的问题 [\#344](https://github.com/youzan/vant/pull/344) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 DateTimePicker 接受非法参数时卡死的问题 [\#333](https://github.com/youzan/vant/pull/333) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
 `2017-11-17`
 
