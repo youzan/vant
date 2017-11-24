@@ -93,7 +93,14 @@ const icons = [
   'tosend',
   'sign',
   'home',
-  'phone'
+  'phone',
+  'play',
+  'pause',
+  'stop',
+  'hot',
+  'new',
+  'hot-sale',
+  'new-arrival'
 ];
 
 export default {
@@ -134,5 +141,5 @@ export default {
   span {
     font-size: 14px;
   }
-} 
+}
 </style>
