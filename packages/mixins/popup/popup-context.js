@@ -2,14 +2,14 @@ const PopupContext = {
   idSeed: 1,
   zIndex: 2000,
   instances: {},
-  modalStack: [],
+  stack: [],
 
   plusKeyByOne(key) {
     return this[key]++;
   },
 
-  get topModal() {
-    return this.modalStack[this.modalStack.length - 1];
+  get top() {
+    return this.stack[this.stack.length - 1];
   }
 };
 

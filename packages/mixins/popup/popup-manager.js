@@ -1,17 +1,22 @@
+import Vue from 'vue';
+import Modal from './Modal';
 import context from './popup-context';
+
+const modalDefaultConfig = {
+  className: '',
+  customStyle: {}
+};
 
 const PopupManager = {
   getModal() {
     let { modal } = context;
 
     if (!modal) {
-      modal = document.createElement('div');
-      modal.classList.add('van-modal');
-      modal.addEventListener('touchmove', event => {
-        event.preventDefault();
-        event.stopPropagation();
+      const ModalConstructor = Vue.extend(Modal);
+      modal = new ModalConstructor({
+        el: document.createElement('div')
       });
-      modal.addEventListener('click', () => {
+      modal.$on('click', () => {
         PopupManager.handleOverlayClick();
       });
 
@@ -23,51 +28,55 @@ const PopupManager = {
 
   // close popup when click modal && closeOnClickOverlay is true
   handleOverlayClick() {
-    const { topModal } = context;
-    if (topModal) {
-      const instance = context.instances[topModal.id];
+    const { top } = context;
+    if (top) {
+      const instance = context.instances[top.id];
       if (instance && instance.closeOnClickOverlay) {
         instance.close();
       }
     }
   },
 
-  openModal({ id, zIndex, dom, extraClass, extraStyle }) {
-    const { modalStack } = context;
-    const exist = modalStack.some(item => item.id === id);
+  openModal(config) {
+    const { id, dom } = config;
+    const exist = context.stack.some(item => item.id === id);
 
     if (!exist) {
-      const modal = this.getModal();
-      if (extraClass) {
-        modal.classList.add(extraClass);
-      }
-      if (extraStyle) {
-        modal.style.cssText = `${modal.style.cssText} ${extraStyle}`;
-      }
-      modal.style.zIndex = zIndex;
-
-      const parentNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
-      parentNode.appendChild(modal);
-      modalStack.push({ id, zIndex, parentNode });
+      const targetNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
+      context.stack.push({ id, config, targetNode });
+      this.updateModal();
     };
   },
 
   closeModal(id) {
-    const { modalStack } = context;
+    const { stack } = context;
 
-    if (modalStack.length) {
-      if (context.topModal.id === id) {
-        const modal = this.getModal();
-        modalStack.pop();
-        modal.parentNode.removeChild(modal);
-        if (modalStack.length) {
-          const { topModal } = context;
-          modal.style.zIndex = topModal.zIndex;
-          topModal.parentNode.appendChild(modal);
-        }
+    if (stack.length) {
+      if (context.top.id === id) {
+        stack.pop();
+        this.updateModal();
       } else {
-        context.modalStack = modalStack.filter(item => item.id !== id);
+        context.stack = stack.filter(item => item.id !== id);
       }
+    }
+  },
+
+  updateModal() {
+    const modal = this.getModal();
+    const el = modal.$el;
+
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
+
+    if (context.top) {
+      const { targetNode, config } = context.top;
+
+      targetNode.appendChild(el);
+      Object.assign(modal, {
+        ...modalDefaultConfig,
+        ...config
+      });
     }
   }
 };

@@ -43,6 +43,8 @@ Use `position` prop to set popup display position
 | overlay | Whether to show overlay | `Boolean` | `true` | - |
 | lockOnScroll | Lock body scroll | `Boolean` | `false` | - |
 | position | Position | `String` | - | `top` `bottom` `right` `left` |
+| overlayClass | Custom overlay class | `String` | `` | - |
+| overlayStyle | Custom overlay style | `Object` | `` | - |
 | closeOnClickOverlay | Close popup when click overlay | `Boolean` | `true` | - |
 | transition | Transition | `String` | `popup-slide` | - |
 | preventScroll | Prevent background scroll | `Boolean` | `false` | - |

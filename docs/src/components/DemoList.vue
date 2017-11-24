@@ -49,6 +49,8 @@ export default {
 
   methods: {
     switchLang(lang) {
+      const from = lang === 'zh-CN' ? 'en-US' : 'zh-CN';
+      this.$router.push(this.$route.path.replace(from, lang));
       setLang(lang);
     }
   }

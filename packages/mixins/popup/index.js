@@ -112,9 +112,10 @@ export default {
           id: this._popupId,
           zIndex: context.plusKeyByOne('zIndex'),
           dom: this.$el,
-          extraClass: this.overlayClass,
-          extraStyle: this.overlayStyle
+          className: this.overlayClass,
+          customStyle: this.overlayStyle
         });
+
         if (this.lockOnScroll) {
           document.body.classList.add('van-overflow-hidden');
         }
