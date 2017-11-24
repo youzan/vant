@@ -41,7 +41,9 @@ export default {
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>自定义</span>
-    <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.normal" />
+    <template slot="icon" slot-scope="props">
+      <img :src="props.active ? icon.active : icon.normal" />
+    </template>
   </van-tabbar-item>
   <van-tabbar-item icon="chat">标签</van-tabbar-item>
   <van-tabbar-item icon="records">标签</van-tabbar-item>

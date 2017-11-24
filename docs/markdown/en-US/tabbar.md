@@ -38,7 +38,9 @@ Use `icon` slot to custom icon
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>Custom</span>
-    <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.normal" />
+    <template slot="icon" slot-scope="props">
+      <img :src="props.active ? icon.active : icon.normal" />
+    </template>
   </van-tabbar-item>
   <van-tabbar-item icon="chat">Tab</van-tabbar-item>
   <van-tabbar-item icon="records">Tab</van-tabbar-item>
