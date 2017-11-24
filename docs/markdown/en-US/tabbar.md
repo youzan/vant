@@ -38,7 +38,7 @@ Use `icon` slot to custom icon
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>Custom</span>
-    <img slot="icon" :src="active === 0 ? icon.active : icon.normal" />
+    <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.normal" />
   </van-tabbar-item>
   <van-tabbar-item icon="chat">Tab</van-tabbar-item>
   <van-tabbar-item icon="records">Tab</van-tabbar-item>
@@ -81,3 +81,9 @@ export default {
 | url | Link | `String` | - | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
 | replace | If true, the navigation will not leave a history record | `String` | `false` | - |
+
+### TabbarItem Slot
+
+| Name | Description | Scope |
+|-----------|-----------|-----------|
+| icon | Custom icon | active |

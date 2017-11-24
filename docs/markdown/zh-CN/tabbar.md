@@ -41,7 +41,7 @@ export default {
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>自定义</span>
-    <img slot="icon" :src="active === 0 ? icon.active : icon.normal" />
+    <img slot="icon" slot-scope="props" :src="props.active ? icon.active : icon.normal" />
   </van-tabbar-item>
   <van-tabbar-item icon="chat">标签</van-tabbar-item>
   <van-tabbar-item icon="records">标签</van-tabbar-item>
@@ -85,3 +85,9 @@ export default {
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前 history | `String` | `false` | - |
+
+### TabbarItem Slot
+
+| Name | 描述 | Scope |
+|-----------|-----------|-----------|
+| icon | 自定义icon | active |
