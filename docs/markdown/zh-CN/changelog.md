@@ -1,5 +1,11 @@
 ## 更新日志
 
+### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+`2017-11-24`
+
+**Improvements**
+- Icon: 增加 7 个新图标 [\#351](https://github.com/youzan/vant/pull/351) [@w91](https://github.com/w91)
+
 ### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
 `2017-11-24`
 

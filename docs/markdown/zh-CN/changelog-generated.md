@@ -1,5 +1,20 @@
 ## 更新日志
 
+## [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2) (2017-11-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.1...v0.11.2)
+
+**Issue**
+
+- SubmitBar 控件有个左边的Slot就完美了 [\#341](https://github.com/youzan/vant/issues/341)
+- ImagePreview显示问题 [\#339](https://github.com/youzan/vant/issues/339)
+- ssr [\#338](https://github.com/youzan/vant/issues/338)
+- van-datetime-picker组件 v-model 传入  Invalid Date  导致浏览器卡死和手机浏览器卡死 [\#332](https://github.com/youzan/vant/issues/332)
+- Sku 商品购买组件 问题 [\#322](https://github.com/youzan/vant/issues/322)
+
+**Improvements**
+
+- \[new feature\] 添加新icon [\#351](https://github.com/youzan/vant/pull/351) ([w91](https://github.com/w91))
+
 ## [v0.11.1](https://github.com/youzan/vant/tree/v0.11.1) (2017-11-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.0...v0.11.1)
 
