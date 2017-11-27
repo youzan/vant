@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-tab__pane', { 'van-tab__pane--select': key === $parent.curActive }]">
+  <div class="van-tab__pane" :class="{ 'van-tab__pane--select': key === $parent.curActive }">
     <slot></slot>
   </div>
 </template>

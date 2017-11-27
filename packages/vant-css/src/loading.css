@@ -12,6 +12,8 @@
 .van-loading {
   font-size: 0;
   line-height: 0;
+  z-index: 0;
+  position: relative;
 
   &--circle {
     width: 16px;
@@ -28,6 +30,8 @@
   &__spinner {
     width: 100%;
     height: 100%;
+    position: relative;
+    z-index: -1;
     display: inline-block;
     animation: van-loading 0.8s linear infinite;
 
@@ -60,6 +64,7 @@
     }
 
     &--spinner {
+      color: $gray;
       animation-timing-function: steps(12);
 
       i {
@@ -76,14 +81,12 @@
           display: block;
           margin: 0 auto;
           border-radius: 40%;
-          background-color: $gray;
+          background-color: currentColor;
         }
       }
 
       &.van-loading__spinner--white {
-        i::before {
-          background-color: #fff;
-        }
+        color: #fff;
       }
     }
   }

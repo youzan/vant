@@ -84,7 +84,13 @@
   cursor: pointer;
   text-align: center;
   flex: 1;
-  @mixin multi-ellipsis 1;
+  padding: 0 5px;
+  min-width: 0; /* hack for flex ellipsis */
+
+  span {
+    display: block;
+    @mixin ellipsis;
+  }
 
   &--active {
     color: $red;

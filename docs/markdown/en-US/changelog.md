@@ -1,5 +1,43 @@
 ## Changelog
 
+### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+`2017-11-24`
+
+**Improvements**
+- Icon: add seven new icons [\#351](https://github.com/youzan/vant/pull/351) [@w91](https://github.com/w91)
+
+### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+`2017-11-24`
+
+**Improvements**
+- Actionsheet: update close icon style [\#340](https://github.com/youzan/vant/pull/340) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: add overlayClass and overlayStyle props [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343) [@mickeyinfoshan](https://github.com/mickeyinfoshan) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: adjust unicode for better display [\#330](https://github.com/youzan/vant/pull/330) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview: support manually close [\#346](https://github.com/youzan/vant/pull/346) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: add slot-scope to avoid check by index [\#347](https://github.com/youzan/vant/pull/347) [@chuangbo](https://github.com/chuangbo)
+- SubmitBar: add left slot [\#345](https://github.com/youzan/vant/pull/345) [@chenjiahan](https://github.com/chenjiahan)
+- optimize component static classnames [\#337](https://github.com/youzan/vant/pull/337) [@chenjiahan](https://github.com/chenjiahan)
+- optimize single line text ellipsis [\#334](https://github.com/youzan/vant/pull/334) [@chenjiahan](https://github.com/chenjiahan)
+- optimize button css layer and GPU cost [\#336](https://github.com/youzan/vant/pull/336) [@deepkolos](https://github.com/deepkolos)
+
+**Bug Fixes**
+- fix some bugs in SSR [\#344](https://github.com/youzan/vant/pull/344) [@chenjiahan](https://github.com/chenjiahan)
+- fix DateTimePicker crashed when pass invalid props [\#333](https://github.com/youzan/vant/pull/333) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+`2017-11-17`
+
+**Breaking changes**
+- add i18n support [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- remove some unnecessary props [\#323](https://github.com/youzan/vant/pull/323) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- add Pagination component [\#327](https://github.com/youzan/vant/pull/327) [\#328](https://github.com/youzan/vant/pull/328) [@zgrong](https://github.com/zgrong) [@chenjiahan](https://github.com/chenjiahan)
+- add Locale component [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- add Internationalization document [\#321](https://github.com/youzan/vant/pull/321) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add-o icon add radius [\#326](https://github.com/youzan/vant/pull/326) [@cookfront](https://github.com/cookfront)
+
 ### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9) 
 `2017-11-15`
 
@@ -7,7 +45,7 @@
 - Icon: add new icons [\#315](https://github.com/youzan/vant/pull/315) [@cookfront](https://github.com/cookfront)
 
 **Bug Fixes**
-- Search: fix box-sizing wrong [\#312](https://github.com/youzan/vant/pull/312) [@chenjiahan](https://github.com/chenjiahan)
+- Search: fix box-sizing [\#312](https://github.com/youzan/vant/pull/312) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 `2017-11-11`

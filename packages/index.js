@@ -32,6 +32,7 @@ import Locale from './locale';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import NumberKeyboard from './number-keyboard';
+import Pagination from './pagination';
 import Panel from './panel';
 import PasswordInput from './password-input';
 import Picker from './picker';
@@ -61,7 +62,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.10.9';
+const version = '0.11.2';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -92,6 +93,7 @@ const components = [
   NavBar,
   NoticeBar,
   NumberKeyboard,
+  Pagination,
   Panel,
   PasswordInput,
   Picker,
@@ -166,6 +168,7 @@ export {
   NavBar,
   NoticeBar,
   NumberKeyboard,
+  Pagination,
   Panel,
   PasswordInput,
   Picker,

@@ -18,7 +18,7 @@ const router = new VueRouter({
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    window.location.replace('/zanui/vant/examples');
+    location.replace('/zanui/vant/examples' + location.hash);
   }
   document.title = route.meta.title || document.title;
   next();
@@ -30,10 +30,6 @@ router.afterEach(() => {
 });
 
 window.vueRouter = router;
-
-if (process.env.NODE_ENV !== 'production') {
-  Vue.config.productionTip = false;
-}
 
 new Vue({ // eslint-disable-line
   render: h => h(App),

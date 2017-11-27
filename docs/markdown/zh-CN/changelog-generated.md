@@ -1,5 +1,70 @@
 ## 更新日志
 
+## [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2) (2017-11-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.1...v0.11.2)
+
+**Issue**
+
+- SubmitBar 控件有个左边的Slot就完美了 [\#341](https://github.com/youzan/vant/issues/341)
+- ImagePreview显示问题 [\#339](https://github.com/youzan/vant/issues/339)
+- ssr [\#338](https://github.com/youzan/vant/issues/338)
+- van-datetime-picker组件 v-model 传入  Invalid Date  导致浏览器卡死和手机浏览器卡死 [\#332](https://github.com/youzan/vant/issues/332)
+- Sku 商品购买组件 问题 [\#322](https://github.com/youzan/vant/issues/322)
+
+**Improvements**
+
+- \[new feature\] 添加新icon [\#351](https://github.com/youzan/vant/pull/351) ([w91](https://github.com/w91))
+
+## [v0.11.1](https://github.com/youzan/vant/tree/v0.11.1) (2017-11-24)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.0...v0.11.1)
+
+**Breaking changes**
+
+- 能不能考虑增加一个分页功能？ [\#92](https://github.com/youzan/vant/issues/92)
+
+**Issue**
+
+- card组件使用slot添加tags问题 [\#329](https://github.com/youzan/vant/issues/329)
+
+**Improvements**
+
+- \[bugfix\] Popup: update overlay style & class [\#349](https://github.com/youzan/vant/pull/349) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add switch lang button in mobile [\#348](https://github.com/youzan/vant/pull/348) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] TabbarItem: add slot-scope to avoid check by index [\#347](https://github.com/youzan/vant/pull/347) ([chuangbo](https://github.com/chuangbo))
+- \[new feature\] ImagePreview support manually close [\#346](https://github.com/youzan/vant/pull/346) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] SubmitBar: add left slot [\#345](https://github.com/youzan/vant/pull/345) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] should not access window when ssr [\#344](https://github.com/youzan/vant/pull/344) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\]Popup: 增加遮罩层overlayClass和overlayStyle属性，以提供遮罩层自定义样式  [\#343](https://github.com/youzan/vant/pull/343) ([mickeyinfoshan](https://github.com/mickeyinfoshan))
+- \[Improvement\] update actionsheet close icon style [\#340](https://github.com/youzan/vant/pull/340) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize staticClass [\#337](https://github.com/youzan/vant/pull/337) ([chenjiahan](https://github.com/chenjiahan))
+- \[optimize & bug fix\] Button: 优化layer, 修复滚动时, gpu占用过高情况 [\#336](https://github.com/youzan/vant/pull/336) ([deepkolos](https://github.com/deepkolos))
+- \[improvement\] optimize single line ellipsis [\#334](https://github.com/youzan/vant/pull/334) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] DateTimePicker validate date props [\#333](https://github.com/youzan/vant/pull/333) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Icon spinner color inherit [\#331](https://github.com/youzan/vant/pull/331) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] adjust icon-font unicode [\#330](https://github.com/youzan/vant/pull/330) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.11.0](https://github.com/youzan/vant/tree/v0.11.0) (2017-11-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.10.9...v0.11.0)
+
+**Issue**
+
+- 项目使用的zan-doc是开源的吗？ 已经找不到仓库了 ?  [\#319](https://github.com/youzan/vant/issues/319)
+- van-popup的closeOnClickOverlay 设置无效 [\#317](https://github.com/youzan/vant/issues/317)
+
+**Improvements**
+
+- \[new feature\] Pagination code review [\#328](https://github.com/youzan/vant/pull/328) ([chenjiahan](https://github.com/chenjiahan))
+- feat: 分页组件 [\#327](https://github.com/youzan/vant/pull/327) ([zgrong](https://github.com/zgrong))
+-  \[bug fix\] Icon: add-o icon add radius [\#326](https://github.com/youzan/vant/pull/326) ([cookfront](https://github.com/cookfront))
+- \[new feature\] optimize find-parent [\#325](https://github.com/youzan/vant/pull/325) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] optimize clickoutside [\#324](https://github.com/youzan/vant/pull/324) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] remove unnecessary props [\#323](https://github.com/youzan/vant/pull/323) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add Internationalization document [\#321](https://github.com/youzan/vant/pull/321) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] translate theme & demo pages [\#320](https://github.com/youzan/vant/pull/320) ([chenjiahan](https://github.com/chenjiahan))
+-  \[Doc\] update vant-demo respo [\#318](https://github.com/youzan/vant/pull/318) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\]  add lost cart icon [\#316](https://github.com/youzan/vant/pull/316) ([cookfront](https://github.com/cookfront))
+- \[new feature\] add i18n support [\#310](https://github.com/youzan/vant/pull/310) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9) (2017-11-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.10.8...v0.10.9)
 

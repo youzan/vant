@@ -64,6 +64,10 @@ export default {
   vanPicker: {
     confirm: '完成'
   },
+  vanPagination: {
+    prev: '上一页',
+    next: '下一页'
+  },
   vanPullRefresh: {
     pullingText: '下拉即可刷新...',
     loosingText: '释放即可刷新...',

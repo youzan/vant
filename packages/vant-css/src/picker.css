@@ -20,12 +20,12 @@
   }
 
   &__cancel {
-    color: #3388FF;
+    color: $blue;
     float: left;
   }
 
   &__confirm {
-    color: #3388FF;
+    color: $blue;
     float: right;
   }
 

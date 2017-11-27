@@ -1,5 +1,42 @@
 ## 更新日志
 
+### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+`2017-11-24`
+
+**Improvements**
+- Icon: 增加 7 个新图标 [\#351](https://github.com/youzan/vant/pull/351) [@w91](https://github.com/w91)
+
+### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+`2017-11-24`
+
+**Improvements**
+- Actionsheet: 更新关闭按钮样式 [\#340](https://github.com/youzan/vant/pull/340) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: 新增 overlayClass、overlayStyle 属性 [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343) [@mickeyinfoshan](https://github.com/mickeyinfoshan) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 调整 unicode，避免展示特殊字符 [\#330](https://github.com/youzan/vant/pull/330) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview: 支持手动关闭 [\#346](https://github.com/youzan/vant/pull/346) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: 支持通过 slot-scope 判断 active 状态 [\#347](https://github.com/youzan/vant/pull/347) [@chuangbo](https://github.com/chuangbo)
+- SubmitBar: 新增左侧内容 slot [\#345](https://github.com/youzan/vant/pull/345) [@chenjiahan](https://github.com/chenjiahan)
+- 优化组件 staticClass 渲染效率 [\#337](https://github.com/youzan/vant/pull/337) [@chenjiahan](https://github.com/chenjiahan)
+- 优化文字截取相关样式 [\#334](https://github.com/youzan/vant/pull/334) [@chenjiahan](https://github.com/chenjiahan)
+- 优化按钮 css layer 及 GPU 开销 [\#336](https://github.com/youzan/vant/pull/336) [@deepkolos](https://github.com/deepkolos)
+
+**Bug Fixes**
+- 修复 SSR 过程中报错的问题 [\#344](https://github.com/youzan/vant/pull/344) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 DateTimePicker 接受非法参数时卡死的问题 [\#333](https://github.com/youzan/vant/pull/333) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+`2017-11-17`
+
+**Breaking changes**
+- 组件支持国际化 [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- 移除部分无用的 props 及有效性检测 [\#323](https://github.com/youzan/vant/pull/323) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- 新增 Pagination 组件 [\#327](https://github.com/youzan/vant/pull/327) [\#328](https://github.com/youzan/vant/pull/328) [@zgrong](https://github.com/zgrong) [@chenjiahan](https://github.com/chenjiahan)
+- 新增 Locale 组件 [\#310](https://github.com/youzan/vant/pull/310) [@chenjiahan](https://github.com/chenjiahan)
+- 新增国际化文档 [\#321](https://github.com/youzan/vant/pull/321) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add-o 图标更正为圆角 [\#326](https://github.com/youzan/vant/pull/326) [@cookfront](https://github.com/cookfront)
+
 ### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9) 
 `2017-11-15`
 

@@ -1,6 +1,6 @@
 <template>
   <transition name="van-actionsheet-float">
-    <div :class="['van-actionsheet', { 'van-actionsheet--withtitle': title }]" v-show="value">
+    <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <div v-text="title" />
         <van-icon name="close" @click.stop="$emit('input', false)" />
@@ -9,14 +9,15 @@
         <li
           v-for="(item, index) in actions"
           :key="index"
-          :class="['van-actionsheet__item', 'van-hairline--top', item.className, { 'van-actionsheet__item--loading': item.loading }]"
+          class="van-actionsheet__item van-hairline--top"
+          :class="[item.className, { 'van-actionsheet__item--loading': item.loading }]"
           @click.stop="onClickItem(item)"
         >
           <template v-if="!item.loading">
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
+          <van-loading v-else class="van-actionsheet__loading" type="circle" />
         </li>
       </ul>
       <div

@@ -1,5 +1,5 @@
 <template>
-  <div :class="['van-cell', 'van-hairline', { 'van-cell--required': required }]" @click="onClick">
+  <div class="van-cell van-hairline" :class="{ 'van-cell--required': required }" @click="onClick">
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
         <van-icon v-if="icon" :name="icon" />

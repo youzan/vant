@@ -2,21 +2,16 @@
   <div
     @click="handleRadioClick"
     class="van-radio"
-    :class="{
-      'van-radio--disabled': isDisabled
-    }">
+    :class="{ 'van-radio--disabled': isDisabled }">
     <span class="van-radio__input">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
         class="van-radio__control"
-        :disabled="isDisabled">
-      <span class="van-icon" :class="{
-        'van-icon-checked': currentValue === name,
-        'van-icon-check': currentValue !== name
-      }">
-      </span>
+        :disabled="isDisabled"
+      >
+      <van-icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
     <span class="van-radio__label" @click="handleLabelClick">
       <slot></slot>
@@ -25,10 +20,15 @@
 </template>
 
 <script>
+import Icon from '../icon';
 import findParent from '../mixins/find-parent';
 
 export default {
   name: 'van-radio',
+
+  components: {
+    [Icon.name]: Icon
+  },
 
   mixins: [findParent],
 

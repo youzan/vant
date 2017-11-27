@@ -1,7 +1,7 @@
 <template>
   <div
+    class="van-checkbox"
     :class="[
-      'van-checkbox',
       `van-checkbox--${shape}`, {
       'van-checkbox--disabled': isDisabled
     }]">

@@ -1,6 +1,6 @@
 <template>
   <transition :name="currentTransition">
-    <div v-show="value" class="van-popup" :class="[position ? 'van-popup--' + position : '']">
+    <div v-show="value" class="van-popup" :class="{ [`van-popup--${position}`]: position }">
       <slot></slot>
     </div>
   </transition>

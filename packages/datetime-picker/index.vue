@@ -1,17 +1,19 @@
 <template>
   <van-picker
     ref="picker"
+    showToolbar
     :columns="columns"
-    :visible-item-count="visibleItemCount"
-    @change="handlePickerChange"
-    @confirm="handlePickerConfirm"
+    :visibleItemCount="visibleItemCount"
+    @change="onChange"
+    @confirm="onConfirm"
     @cancel="$emit('cancel')"
-    showToolbar>
-  </van-picker>
+  />
 </template>
 
 <script>
 import Picker from '../picker';
+
+const isValidDate = date => Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date.getTime());
 
 export default {
   name: 'van-datetime-picker',
@@ -37,13 +39,15 @@ export default {
       type: Date,
       default() {
         return new Date(new Date().getFullYear() - 10, 0, 1);
-      }
+      },
+      validator: isValidDate
     },
     maxDate: {
       type: Date,
       default() {
         return new Date(new Date().getFullYear() + 10, 11, 31);
-      }
+      },
+      validator: isValidDate
     },
     minHour: {
       type: Number,
@@ -57,20 +61,8 @@ export default {
   },
 
   data() {
-    let value = this.value;
-    if (!value) {
-      if (this.type.indexOf('date') > -1) {
-        value = this.minDate;
-      } else {
-        const minHour = this.minHour;
-        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
-      }
-    } else {
-      value = this.correctValue(value);
-    }
-
     return {
-      innerValue: value
+      innerValue: this.correctValue(this.value)
     };
   },
 
@@ -126,8 +118,17 @@ export default {
 
   methods: {
     correctValue(value) {
-      // 仅时间
-      if (this.type === 'time') {
+      // validate value
+      const isDateType = this.type.indexOf('date') > -1;
+      if (isDateType && !isValidDate(value)) {
+        value = this.minDate;
+      } else if (!value) {
+        const { minHour } = this;
+        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
+      }
+
+      // time type
+      if (!isDateType) {
         const [hour, minute] = value.split(':');
         let correctedHour = Math.max(hour, this.minHour);
         correctedHour = Math.min(correctedHour, this.maxHour);
@@ -135,7 +136,7 @@ export default {
         return `${correctedHour}:${minute}`;
       }
 
-      // 含有日期的情况
+      // date type
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', value);
       const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', value);
       const minDay = new Date(minYear, minMonth - 1, minDate, minHour, minMinute);
@@ -145,6 +146,7 @@ export default {
 
       return new Date(value);
     },
+
     times(n, iteratee) {
       let index = -1;
       const result = Array(n);
@@ -154,6 +156,7 @@ export default {
       }
       return result;
     },
+
     getBoundary(type, value) {
       const boundary = this[`${type}Date`];
       const year = boundary.getFullYear();
@@ -190,6 +193,7 @@ export default {
         [`${type}Minute`]: minute
       };
     },
+
     getTrueValue(formattedValue) {
       if (!formattedValue) return;
       while (isNaN(parseInt(formattedValue, 10))) {
@@ -197,6 +201,7 @@ export default {
       }
       return parseInt(formattedValue, 10);
     },
+
     getMonthEndDay(year, month) {
       if (this.isShortMonth(month)) {
         return 30;
@@ -206,16 +211,20 @@ export default {
         return 31;
       }
     },
+
     isLeapYear(year) {
       return (year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0);
     },
+
     isShortMonth(month) {
       return [4, 6, 9, 11].indexOf(month) > -1;
     },
-    handlePickerConfirm() {
+
+    onConfirm() {
       this.$emit('confirm', this.innerValue);
     },
-    handlePickerChange(picker) {
+
+    onChange(picker) {
       const values = picker.$children.filter(child => child.currentValue !== undefined).map(child => child.currentValue);
       let value;
 
@@ -239,6 +248,7 @@ export default {
       this.innerValue = value;
       this.$emit('change', picker);
     },
+
     updateColumnValue(value) {
       let values = [];
       if (this.type === 'time') {
@@ -264,6 +274,7 @@ export default {
         this.setColumnByValues(values);
       });
     },
+
     setColumnByValues(values) {
       if (!this.$refs.picker) {
         return;
