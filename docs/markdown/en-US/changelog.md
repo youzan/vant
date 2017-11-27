@@ -1,5 +1,30 @@
 ## Changelog
 
+### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+`2017-11-24`
+
+**Improvements**
+- Icon: add seven new icons [\#351](https://github.com/youzan/vant/pull/351) [@w91](https://github.com/w91)
+
+### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+`2017-11-24`
+
+**Improvements**
+- Actionsheet: update close icon style [\#340](https://github.com/youzan/vant/pull/340) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: add overlayClass and overlayStyle props [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343) [@mickeyinfoshan](https://github.com/mickeyinfoshan) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: adjust unicode for better display [\#330](https://github.com/youzan/vant/pull/330) [@chenjiahan](https://github.com/chenjiahan)
+- ImagePreview: support manually close [\#346](https://github.com/youzan/vant/pull/346) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: add slot-scope to avoid check by index [\#347](https://github.com/youzan/vant/pull/347) [@chuangbo](https://github.com/chuangbo)
+- SubmitBar: add left slot [\#345](https://github.com/youzan/vant/pull/345) [@chenjiahan](https://github.com/chenjiahan)
+- optimize component static classnames [\#337](https://github.com/youzan/vant/pull/337) [@chenjiahan](https://github.com/chenjiahan)
+- optimize single line text ellipsis [\#334](https://github.com/youzan/vant/pull/334) [@chenjiahan](https://github.com/chenjiahan)
+- optimize button css layer and GPU cost [\#336](https://github.com/youzan/vant/pull/336) [@deepkolos](https://github.com/deepkolos)
+
+**Bug Fixes**
+- fix some bugs in SSR [\#344](https://github.com/youzan/vant/pull/344) [@chenjiahan](https://github.com/chenjiahan)
+- fix DateTimePicker crashed when pass invalid props [\#333](https://github.com/youzan/vant/pull/333) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
 `2017-11-17`
 

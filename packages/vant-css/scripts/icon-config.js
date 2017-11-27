@@ -328,6 +328,34 @@ module.exports = {
     {
       src: '电话.svg',
       css: 'phone'
+    },
+    {
+      src: '播放.svg',
+      css: 'play'
+    },
+    {
+      src: '暂停.svg',
+      css: 'pause'
+    },
+    {
+      src: '停止.svg',
+      css: 'stop'
+    },
+    {
+      src: 'HOT.svg',
+      css: 'hot'
+    },
+    {
+      src: 'NEW.svg',
+      css: 'new'
+    },
+    {
+      src: '新品.svg',
+      css: 'new-arrival'
+    },
+    {
+      src: '热卖.svg',
+      css: 'hot-sale'
     }
   ]
 };

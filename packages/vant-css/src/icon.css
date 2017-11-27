@@ -2,7 +2,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-6e8d2dd9.ttf') format('truetype');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-75c072da.ttf') format('truetype');
 }
 
 .van-icon {
@@ -142,123 +142,144 @@
 .van-icon-home:before {
   content: "\F029";
 }
-.van-icon-like-o:before {
+.van-icon-hot-sale:before {
   content: "\F02A";
 }
-.van-icon-like:before {
+.van-icon-hot:before {
   content: "\F02B";
 }
-.van-icon-location:before {
+.van-icon-like-o:before {
   content: "\F02C";
 }
-.van-icon-logistics:before {
+.van-icon-like:before {
   content: "\F02D";
 }
-.van-icon-member-day-privilege:before {
+.van-icon-location:before {
   content: "\F02E";
 }
-.van-icon-other-pay:before {
+.van-icon-logistics:before {
   content: "\F02F";
 }
-.van-icon-passed:before {
+.van-icon-member-day-privilege:before {
   content: "\F030";
 }
-.van-icon-password-not-view:before {
+.van-icon-new-arrival:before {
   content: "\F031";
 }
-.van-icon-password-view:before {
+.van-icon-new:before {
   content: "\F032";
 }
-.van-icon-peer-pay:before {
+.van-icon-other-pay:before {
   content: "\F033";
 }
-.van-icon-pending-deliver:before {
+.van-icon-passed:before {
   content: "\F034";
 }
-.van-icon-pending-evaluate:before {
+.van-icon-password-not-view:before {
   content: "\F035";
 }
-.van-icon-pending-orders:before {
+.van-icon-password-view:before {
   content: "\F036";
 }
-.van-icon-pending-payment:before {
+.van-icon-pause:before {
   content: "\F037";
 }
-.van-icon-phone:before {
+.van-icon-peer-pay:before {
   content: "\F038";
 }
-.van-icon-photo:before {
+.van-icon-pending-deliver:before {
   content: "\F039";
 }
-.van-icon-photograph:before {
+.van-icon-pending-evaluate:before {
   content: "\F03A";
 }
-.van-icon-point-gift:before {
+.van-icon-pending-orders:before {
   content: "\F03B";
 }
-.van-icon-points-mall:before {
+.van-icon-pending-payment:before {
   content: "\F03C";
 }
-.van-icon-points:before {
+.van-icon-phone:before {
   content: "\F03D";
 }
-.van-icon-qr-invalid:before {
+.van-icon-photo:before {
   content: "\F03E";
 }
-.van-icon-qr:before {
+.van-icon-photograph:before {
   content: "\F03F";
 }
-.van-icon-question:before {
+.van-icon-play:before {
   content: "\F040";
 }
-.van-icon-receive-gift:before {
+.van-icon-point-gift:before {
   content: "\F041";
 }
-.van-icon-records:before {
+.van-icon-points-mall:before {
   content: "\F042";
 }
-.van-icon-search:before {
+.van-icon-points:before {
   content: "\F043";
 }
-.van-icon-send-gift:before {
+.van-icon-qr-invalid:before {
   content: "\F044";
 }
-.van-icon-setting:before {
+.van-icon-qr:before {
   content: "\F045";
 }
-.van-icon-shop-collect:before {
+.van-icon-question:before {
   content: "\F046";
 }
-.van-icon-shop:before {
+.van-icon-receive-gift:before {
   content: "\F047";
 }
-.van-icon-shopping-cart:before {
+.van-icon-records:before {
   content: "\F048";
 }
-.van-icon-sign:before {
+.van-icon-search:before {
   content: "\F049";
 }
-.van-icon-success:before {
+.van-icon-send-gift:before {
   content: "\F04A";
 }
-.van-icon-tosend:before {
+.van-icon-setting:before {
   content: "\F04B";
 }
-.van-icon-underway:before {
+.van-icon-shop-collect:before {
   content: "\F04C";
 }
-.van-icon-upgrade:before {
+.van-icon-shop:before {
   content: "\F04D";
 }
-.van-icon-value-card:before {
+.van-icon-shopping-cart:before {
   content: "\F04E";
 }
-.van-icon-wap-home:before {
+.van-icon-sign:before {
   content: "\F04F";
 }
-.van-icon-wap-nav:before {
+.van-icon-stop:before {
   content: "\F050";
 }
-.van-icon-wechat:before {
+.van-icon-success:before {
   content: "\F051";
+}
+.van-icon-tosend:before {
+  content: "\F052";
+}
+.van-icon-underway:before {
+  content: "\F053";
+}
+.van-icon-upgrade:before {
+  content: "\F054";
+}
+.van-icon-value-card:before {
+  content: "\F055";
+}
+.van-icon-wap-home:before {
+  content: "\F056";
+}
+.van-icon-wap-nav:before {
+  content: "\F057";
+}
+.van-icon-wechat:before {
+  content: "\F058";
 }
