@@ -17,7 +17,22 @@ Vue.component(NavBar.name, NavBar);
   leftText="返回"
   rightText="按钮"
   leftArrow
+  @click-left="onClickLeft"
+  @click-right="onClickRight"
 />
+```
+
+```js
+export default {
+  methods: {
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    }
+  }
+}
 ```
 
 #### 高级用法
@@ -46,3 +61,10 @@ Vue.component(NavBar.name, NavBar);
 | title | 自定义标题 |
 | left | 自定义左侧区域内容 |
 | right | 自定义右侧区域内容 |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click-left | 点击左侧按钮时触发 | - |
+| click-right | 点击右侧按钮时触发 | - |

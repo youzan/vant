@@ -17,7 +17,22 @@ Vue.component(NavBar.name, NavBar);
   leftText="Back"
   rightText="Button"
   leftArrow
+  @click-left="onClickLeft"
+  @click-right="onClickRight"
 />
+```
+
+```js
+export default {
+  methods: {
+    onClickLeft() {
+      Toast('Back');
+    },
+    onClickRight() {
+      Toast('Button');
+    }
+  }
+}
 ```
 
 #### Advanced Usage
@@ -45,3 +60,10 @@ Vue.component(NavBar.name, NavBar);
 | title | Custom title |
 | left | Custom left side content |
 | right | Custom right side content |
+
+### Event
+
+| Event | Description | Attribute |
+|-----------|-----------|-----------|
+| click-left | Triggered when click left button | - |
+| click-right | Triggered when click right button | - |
