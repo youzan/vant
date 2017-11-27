@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 ## Tabs 标签页
 
 ### 使用指南

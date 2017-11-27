@@ -1,15 +1,10 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
-const docConfig = require('../docs/src/doc.config');
-const styleLoaders = [
-  { loader: 'css-loader' },
-  { loader: 'postcss-loader', options: { sourceMap: true } }
-];
 
 module.exports = {
   entry: {
@@ -53,16 +48,7 @@ module.exports = {
             loader: 'vue-loader',
             options: {
               preserveWhitespace: false,
-              loaders: {
-                postcss: ExtractTextPlugin.extract({
-                  use: styleLoaders,
-                  fallback: 'vue-style-loader'
-                }),
-                css: ExtractTextPlugin.extract({
-                  use: styleLoaders,
-                  fallback: 'vue-style-loader'
-                })
-              }
+              extractCSS: true
             }
           }
         ]
@@ -70,18 +56,25 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules|vue-router\/|vue-loader\//,
-        loader: 'babel-loader'
+        use: [
+          'babel-loader'
+        ]
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({ use: styleLoaders })
+        use: ExtractTextPlugin.extract({
+          use: [
+            'css-loader',
+            'postcss-loader'
+          ]
+        })
       },
       {
         test: /\.md/,
-        loader: 'vue-markdown-loader',
-        options: {
-          preventExtract: true
-        }
+        use: [
+          'vue-loader',
+          'fast-vue-md-loader'
+        ]
       },
       {
         test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
