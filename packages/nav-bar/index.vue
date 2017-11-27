@@ -1,6 +1,6 @@
 <template>
   <div class="van-nav-bar van-hairline--top-bottom" :class="{ 'van-nav-bar--fixed': fixed }">
-    <div class="van-nav-bar__left" @click="$emit('clickLeft')">
+    <div class="van-nav-bar__left" @click="$emit('click-left')">
       <slot name="left">
         <van-icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
         <span v-if="leftText" v-text="leftText" class="van-nav-bar__text" />
@@ -9,7 +9,7 @@
     <div class="van-nav-bar__title">
       <slot name="title">{{ title }}</slot>
     </div>
-    <div class="van-nav-bar__right" @click="$emit('clickRight')">
+    <div class="van-nav-bar__right" @click="$emit('click-right')">
       <slot name="right">
         <span v-if="rightText" v-text="rightText" class="van-nav-bar__text" />
       </slot>
