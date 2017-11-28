@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
+`2017-11-28`
+
+**Breaking changes**
+- NavBar: 规范事件命名, 由 'clickLeft' 改为 'click-left' [\#354](https://github.com/youzan/vant/pull/354) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- CellSwipe: 新增 onClose 属性，支持异步控制 [\#356](https://github.com/youzan/vant/pull/356) [@chenjiahan](https://github.com/chenjiahan)
+- Uploader: 支持继承原生属性 [\#357](https://github.com/youzan/vant/pull/357) [@chenjiahan](https://github.com/chenjiahan)
+- 优化本地构建速度 [\#355](https://github.com/youzan/vant/pull/355) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
 `2017-11-24`
 
