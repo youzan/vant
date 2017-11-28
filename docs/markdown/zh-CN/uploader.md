@@ -13,7 +13,7 @@ Vue.component(Uploader.name, Uploader);
 
 ```html
 <van-uploader :afterRead="logContent">
-  <van-icon name="photograph"></van-icon>
+  <van-icon name="photograph" />
 </van-uploader>
 ```
 
@@ -25,6 +25,15 @@ export default {
     }
   }
 };
+```
+
+#### 设置 Input 属性
+可以直接在 Uploader 上设置 accpet 等原生属性，input 会自动继承该属性
+
+```html
+<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg">
+  <van-icon name="photograph" />
+</van-uploader>
 ```
 
 ### API
