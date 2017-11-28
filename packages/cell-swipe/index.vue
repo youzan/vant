@@ -1,19 +1,19 @@
 <template>
   <div 
-    v-clickoutside:touchstart="swipeMove"
+    v-clickoutside:touchstart="onClick"
     class="van-cell-swipe"
-    @click="swipeMove()"
+    @click="onClick('cell')"
     @touchstart="startDrag"
     @touchmove="onDrag"
     @touchend="endDrag"
     @touchcancel="endDrag"
   >
     <div class="van-cell-swipe__wrapper" :style="wrapperStyle" @transitionend="swipe = false">
-      <div class="van-cell-swipe__left" v-if="leftWidth">
+      <div class="van-cell-swipe__left" @click.stop="onClick('left')" v-if="leftWidth">
         <slot name="left"></slot>
       </div>
       <slot></slot>
-      <div class="van-cell-swipe__right" v-if="rightWidth">
+      <div class="van-cell-swipe__right" @click.stop="onClick('right')" v-if="rightWidth">
         <slot name="right"></slot>
       </div>
     </div>
@@ -27,6 +27,7 @@ export default {
   name: 'van-cell-swipe',
 
   props: {
+    onClose: Function,
     leftWidth: {
       type: Number,
       default: 0
@@ -56,6 +57,10 @@ export default {
   },
 
   methods: {
+    close() {
+      this.offset = 0;
+    },
+
     resetSwipeStatus() {
       this.swiping = false;
       this.opened = true;
@@ -115,6 +120,18 @@ export default {
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       };
+    },
+
+    onClick(position = 'outside') {
+      if (!this.offset) {
+        return;
+      }
+
+      if (this.onClose) {
+        this.onClose(position, this);
+      } else {
+        this.swipeMove(0);
+      }
     }
   }
 };

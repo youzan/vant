@@ -27,7 +27,7 @@ describe('CellSwipe', () => {
     expect(wrapper.find('.van-cell-swipe__right').length).to.equal(0);
   });
 
-  it('drag and show left part', () => {
+  it('drag and show left part', done => {
     wrapper = mount(CellSwipe, defaultProps);
 
     triggerTouch(wrapper, 'touchstart', 0, 0);
@@ -41,10 +41,11 @@ describe('CellSwipe', () => {
     expect(wrapper.vm.offset).to.equal(100);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.opened).to.be.true;
+      done();
     });
   });
 
-  it('drag and show right part', () => {
+  it('drag and show right part', done => {
     wrapper = mount(CellSwipe, defaultProps);
 
     triggerTouch(wrapper, 'touchstart', 0, 0);
@@ -53,6 +54,9 @@ describe('CellSwipe', () => {
     expect(wrapper.vm.offset).to.equal(-100);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.opened).to.be.true;
+      wrapper.trigger('click');
+      expect(wrapper.vm.offset).to.equal(0);
+      done();
     });
   });
 
@@ -112,6 +116,39 @@ describe('CellSwipe', () => {
     triggerTouch(wrapper, 'touchstart', 0, 0);
     triggerTouch(wrapper, 'touchmove', 0, 100);
     triggerTouch(wrapper, 'touchend', 0, 100);
+    expect(wrapper.vm.offset).to.equal(0);
+  });
+
+  it('on close prop', () => {
+    let clickPosition;
+    let instance;
+    const onClose = (position, ins) => {
+      clickPosition = position;
+      instance = ins;
+    };
+
+    wrapper = mount(CellSwipe, {
+      propsData: {
+        ...defaultProps.propsData,
+        onClose
+      }
+    });
+
+    wrapper.trigger('click');
+    wrapper.vm.onClick();
+    expect(clickPosition).to.equal(undefined);
+
+    wrapper.vm.offset = 100;
+    wrapper.trigger('click');
+    expect(clickPosition).to.equal('cell');
+
+    wrapper.find('.van-cell-swipe__left')[0].trigger('click');
+    expect(clickPosition).to.equal('left');
+
+    wrapper.find('.van-cell-swipe__right')[0].trigger('click');
+    expect(clickPosition).to.equal('right');
+
+    instance.close();
     expect(wrapper.vm.offset).to.equal(0);
   });
 });
