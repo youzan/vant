@@ -1,5 +1,20 @@
 ## 更新日志
 
+## [v0.11.3](https://github.com/youzan/vant/tree/v0.11.3) (2017-11-28)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.2...v0.11.3)
+
+**Issue**
+
+- 希望把购物车的业务组件和订单结算的业务组件弄上就完美了 [\#358](https://github.com/youzan/vant/issues/358)
+- NavBar怎么获取左侧文案和右侧文案的单击事件？？？ [\#353](https://github.com/youzan/vant/issues/353)
+
+**Improvements**
+
+- \[new feature\] Uploader support inherit attrs [\#357](https://github.com/youzan/vant/pull/357) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] CellSwipe support async controll [\#356](https://github.com/youzan/vant/pull/356) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize build speed [\#355](https://github.com/youzan/vant/pull/355) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] NavBar click event [\#354](https://github.com/youzan/vant/pull/354) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2) (2017-11-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.1...v0.11.2)
 
