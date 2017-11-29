@@ -5,6 +5,7 @@
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
   "unpkg": "lib/index.js",
+  "typings": "types/index.d.ts",
   "files": [
     "lib",
     "src",
