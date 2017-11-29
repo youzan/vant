@@ -15,7 +15,7 @@ export default {
   props: {
     zIndex: Number,
     className: String,
-    customStyle: Object,
+    customStyle: Object
   },
 
   computed: {
@@ -23,7 +23,7 @@ export default {
       return {
         zIndex: this.zIndex,
         ...this.customStyle
-      }
+      };
     }
   }
 };

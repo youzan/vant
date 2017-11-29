@@ -4,11 +4,11 @@ import VueToast from './toast';
 let instance;
 
 const defaultOptions = {
-  visible: true,
   type: 'text',
   mask: false,
-  position: 'middle',
+  visible: true,
   duration: 3000,
+  position: 'middle',
   forbidClick: false,
   clear: () => {
     instance.visible = false;

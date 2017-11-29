@@ -7,8 +7,11 @@ const defaultConfig = {
   value: true,
   title: '',
   message: '',
+  overlay: true,
+  lockOnScroll: true,
   confirmButtonText: '',
   cancelButtonText: '',
+  showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
   callback: action => {
