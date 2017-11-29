@@ -55,7 +55,7 @@ Vue.use(Vant);
 <!-- 引入样式 -->
 <link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
 
-<!-- 引入组件 --><script></script>
+<!-- 引入组件 -->
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 

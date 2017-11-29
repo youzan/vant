@@ -3,7 +3,7 @@
     <van-cell-group>
       <van-cell :title="title" :isLink="editable" @click="$emit('click')">
         <div v-if="coupons[chosenCoupon]">
-          <div>{{ amount }}</div>
+          <div>{{ coupons[chosenCoupon].name }}</div>
           <div>{{ coupons[chosenCoupon].condition }}</div>
         </div>
         <template v-else>{{ guide }}</template>
@@ -50,10 +50,6 @@ export default {
   computed: {
     guide() {
       return this.coupons.length === 0 ? '使用优惠' : `您有 ${this.coupons.length} 个可用优惠`;
-    },
-    amount() {
-      const coupon = this.coupons[this.chosenCoupon];
-      return `${coupon.name} 省￥${(coupon.value / 100).toFixed(2)}`;
     }
   }
 };
