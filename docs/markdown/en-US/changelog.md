@@ -1,5 +1,12 @@
 ## Changelog
 
+### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
+`2017-11-30`
+
+**Improvements**
+- add type definition files [\#361](https://github.com/youzan/vant/pull/361) [@chenjiahan](https://github.com/chenjiahan)
+- support use this.$toast/$dialog to call Toast/Dialog [\#363](https://github.com/youzan/vant/pull/363) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
 `2017-11-28`
 
