@@ -7751,9 +7751,9 @@ vue-router@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
-vue-sfc-compiler@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/vue-sfc-compiler/-/vue-sfc-compiler-0.0.5.tgz#fac2eca52185fb32afeea304c25fee1b5b1174b6"
+vue-sfc-compiler@^0.0.6:
+  version "0.0.6"
+  resolved "http://registry.npm.qima-inc.com/vue-sfc-compiler/download/vue-sfc-compiler-0.0.6.tgz#bb2645b0b53a13c0afc33ca40880940b41d80826"
 
 vue-style-loader@^3.0.0:
   version "3.0.3"
@@ -7762,9 +7762,9 @@ vue-style-loader@^3.0.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.5.8.tgz#826ae77e1d5faa7fa5fca554f33872dde38de674"
+vue-template-compiler@^2.5.9:
+  version "2.5.9"
+  resolved "http://registry.npm.qima-inc.com/vue-template-compiler/download/vue-template-compiler-2.5.9.tgz#7fabc73c8d3d12d32340cd86c5fc33e00e86d686"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -7773,9 +7773,9 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
-vue@^2.5.8:
-  version "2.5.8"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.8.tgz#f855c1c27255184a82225f4bef225473e8faf15b"
+vue@^2.5.9:
+  version "2.5.9"
+  resolved "http://registry.npm.qima-inc.com/vue/download/vue-2.5.9.tgz#b2380cd040915dca69881dafd121d760952e65f7"
 
 watchpack@^1.4.0:
   version "1.4.0"
