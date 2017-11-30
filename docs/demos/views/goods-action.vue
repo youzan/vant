@@ -3,16 +3,16 @@
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
         <van-goods-action-mini-btn icon="chat" @click="onClickMiniBtn">
-          客服
+          {{ $t('button1') }}
         </van-goods-action-mini-btn>
         <van-goods-action-mini-btn icon="cart" @click="onClickMiniBtn">
-          购物车
+          {{ $t('button2') }}
         </van-goods-action-mini-btn>
         <van-goods-action-big-btn @click="onClickBigBtn">
-          加入购物车
+          {{ $t('button3') }}
         </van-goods-action-big-btn>
         <van-goods-action-big-btn @click="onClickBigBtn" primary>
-          立即购买
+          {{ $t('button4') }}
         </van-goods-action-big-btn>
       </van-goods-action>
     </demo-block>
@@ -23,20 +23,30 @@
 export default {
   i18n: {
     'zh-CN': {
-
+      clickIcon: '点击图标',
+      clickButton: '点击按钮',
+      button1: '客服',
+      button2: '购物车',
+      button3: '加入购物车',
+      button4: '立即购买'
     },
     'en-US': {
-
+      clickIcon: 'Click Icon',
+      clickButton: 'Click Button',
+      button1: 'Icon1',
+      button2: 'Icon2',
+      button3: 'Button1',
+      button4: 'Button2'
     }
   },
 
   methods: {
     onClickMiniBtn() {
-      Toast('点击图标');
+      Toast(this.$t('clickIcon'));
     },
 
     onClickBigBtn() {
-      Toast('点击按钮');
+      Toast(this.$t('clickButton'));
     }
   }
 };

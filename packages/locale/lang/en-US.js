@@ -68,5 +68,8 @@ export default {
     pullingText: 'Pull to refresh...',
     loosingText: 'Loose to refresh...',
     loadingText: 'Loading...'
+  },
+  vanSubmitBar: {
+    label: 'Total：'
   }
 };

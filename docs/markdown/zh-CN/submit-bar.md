@@ -15,7 +15,7 @@ Vue.component(SubmitBar.name, SubmitBar);
 <van-submit-bar
   :price="3050"
   buttonText="提交订单"
-  @submit="onClickButton"
+  @submit="onSubmit"
 />
 ```
 
@@ -28,7 +28,7 @@ Vue.component(SubmitBar.name, SubmitBar);
   :price="3050"
   buttonText="提交订单"
   tip="您的收货地址不支持同城送, 我们已为您推荐快递"
-  @submit="onClickButton"
+  @submit="onSubmit"
 />
 ```
 
@@ -40,7 +40,7 @@ Vue.component(SubmitBar.name, SubmitBar);
   loading
   :price="3050"
   buttonText="提交订单"
-  @submit="onClickButton"
+  @submit="onSubmit"
 />
 ```
 
@@ -51,25 +51,26 @@ Vue.component(SubmitBar.name, SubmitBar);
 <van-submit-bar
   :price="3050"
   buttonText="提交订单"
-  @submit="onClickButton"
+  @submit="onSubmit"
 >
   <van-checkbox v-model="checked">全选</van-checkbox>
   <span slot="tip">
-    您的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址 ></span>
+    您的收货地址不支持同城送, <span>修改地址</span>
   </span>
 </van-submit-bar>
 ```
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 必须 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| price | 价格（单位分） |  `Number` | - | 是 |
-| buttonText | 按钮文字 | `String` | - | 是 |
-| buttonType | 按钮类型 |  `String` | `danger` | 否 |
-| tip | 提示文案 |  `String` | - | 否 |
-| disabled | 是否禁用按钮 |  `Boolean` | `false` | 否 |
-| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | 否 |
+| price | 价格（单位分） |  `Number` | - | - |
+| label | 价格文案 |  `String` | `合计：` | - |
+| buttonText | 按钮文字 | `String` | - | - |
+| buttonType | 按钮类型 |  `String` | `danger` | - |
+| tip | 提示文案 |  `String` | - | - |
+| disabled | 是否禁用按钮 |  `Boolean` | `false` | - |
+| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
 
 ### Event
 
