@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4) (2017-11-30)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.3...v0.11.4)
+
+**Issue**
+
+- 全局注册的组件在单文件中不识别 [\#359](https://github.com/youzan/vant/issues/359)
+- Uploader 建议添加 accept 属性 [\#350](https://github.com/youzan/vant/issues/350)
+
+**Improvements**
+
+- \[Improment\] add $toast/$dialog to Vue.prototype [\#363](https://github.com/youzan/vant/pull/363) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add type definition files [\#361](https://github.com/youzan/vant/pull/361) ([chenjiahan](https://github.com/chenjiahan))
+- \[Bugfix\] delete unnecessary coupon desc [\#360](https://github.com/youzan/vant/pull/360) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.3](https://github.com/youzan/vant/tree/v0.11.3) (2017-11-28)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.2...v0.11.3)
 
