@@ -40,6 +40,19 @@ Used to confirm some messages, including a confirm button and a cancel button
 });
 ```
 
+#### $dialog Method
+After import the Dialog component, the $dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+
+```js
+export default {
+  mounted() {
+    this.$dialog.alert({
+      message: 'Content'
+    });
+  }
+}
+```
+
 ### Methods
 
 | Name | Attribute | Return value | Description |

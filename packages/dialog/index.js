@@ -61,6 +61,8 @@ Dialog.close = () => {
   instance.value = false;
 };
 
+Vue.prototype.$dialog = Dialog;
+
 export default Dialog;
 export {
   DialogComponent as Dialog

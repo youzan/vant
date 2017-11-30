@@ -40,6 +40,19 @@ Dialog.confirm({
 });
 ```
 
+#### 组件内调用
+引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，便于在组件内调用。
+
+```js
+export default {
+  mounted() {
+    this.$dialog.alert({
+      message: '弹窗内容'
+    });
+  }
+}
+```
+
 ### 方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
