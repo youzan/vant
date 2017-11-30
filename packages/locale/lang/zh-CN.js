@@ -72,5 +72,8 @@ export default {
     pullingText: '下拉即可刷新...',
     loosingText: '释放即可刷新...',
     loadingText: '加载中...'
+  },
+  vanSubmitBar: {
+    label: '合计：'
   }
 };

@@ -540,11 +540,11 @@ module.exports = {
               },
               {
                 path: '/goods-action',
-                title: 'GoodsAction (In translation)'
+                title: 'GoodsAction'
               },
               {
                 path: '/submit-bar',
-                title: 'SubmitBar (In translation)'
+                title: 'SubmitBar'
               },
               {
                 path: '/sku',
