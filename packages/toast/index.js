@@ -56,4 +56,6 @@ Toast.clear = () => {
   instance && instance.clear();
 };
 
+Vue.prototype.$toast = Toast;
+
 export default Toast;

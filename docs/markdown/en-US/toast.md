@@ -51,6 +51,17 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
+#### $toast Method
+After import the Toast component, the $toast method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
+
+```js
+export default {
+  mounted() {
+    this.$toast('Some messages');
+  }
+}
+```
+
 ### Methods
 
 | Methods | Attribute | Return value | Description |

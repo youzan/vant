@@ -17,4 +17,10 @@ export interface Dialog {
   close(): void;
 }
 
+declare module 'vue/types/vue' {
+  interface Vue {
+    $dialog: Dialog
+  }
+}
+
 export const Dialog: Dialog;
