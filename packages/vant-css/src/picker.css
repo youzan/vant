@@ -12,6 +12,7 @@
 
   &__cancel,
   &__confirm {
+    color: $blue;
     padding: 0 15px;
 
     &:active {
@@ -20,132 +21,56 @@
   }
 
   &__cancel {
-    color: $blue;
     float: left;
   }
 
   &__confirm {
-    color: $blue;
     float: right;
   }
 
   &__title {
-    height: 40px;
-    padding: 0 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal;
-    word-break: break-all;
     text-align: center;
+    @mixin ellipsis;
   }
 
   &__columns {
+    display: flex;
     position: relative;
-    overflow: hidden;
-
-    &--1 {
-      .van-picker-column {
-        width: 100%;
-      }
-    }
-
-    &--2 {
-      .van-picker-column {
-        width: 50%;
-      }
-    }
-
-    &--3 {
-      .van-picker-column {
-        width: 33.333%;
-      }
-    }
-
-    &--4 {
-      .van-picker-column {
-        width: 25%;
-      }
-    }
-
-    &--5 {
-      .van-picker-column {
-        width: 20%;
-      }
-    }
-  }
-
-  .van-picker-center-highlight {
-    box-sizing: border-box;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    top: 50%;
-    margin-top: -18px;
-    pointer-events: none;
-  }
-
-  .van-picker-center-highlight:before,
-  .van-picker-center-highlight:after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    background-color: #eaeaea;
-    display: block;
-    transform: scaleY(0.5);
-  }
-
-  .van-picker-center-highlight:before {
-    left: 0;
-    top: 0;
-    bottom: auto;
-    right: auto;
-  }
-
-  .van-picker-center-highlight:after {
-    left: 0;
-    bottom: 0;
-    right: auto;
-    top: auto;
   }
 
   &-column {
-    font-size: 18px;
+    flex: 1;
     overflow: hidden;
+    font-size: 18px;
     position: relative;
-    max-height: 100%;
-    float: left;
     text-align: center;
 
-    &__item {
-      height: 44px;
-      line-height: 44px;
-      padding: 0 10px;
-      white-space: nowrap;
-      position: relative;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      color: #707274;
-      left: 0;
-      top: 0;
-      width: 100%;
+    ul {
       box-sizing: border-box;
-      transition-duration: .3s;
-
-      &--selected {
-        color: $black;
-      }
     }
-  }
 
-  .picker-column-wrapper {
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-  }
+    li {
+      padding: 0 10px;
+      color: $gray-darker;
+      @mixin ellipsis;
+    }
 
-  .picker-column-wrapper.dragging,
-  .picker-column-wrapper.dragging .picker-item {
-    transition-duration: 0s;
+    li&--selected {
+      color: $black;
+    }
+
+    li&--disabled {
+      opacity: .3;
+    }
+
+    &__frame {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      position: absolute;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
   }
 }
