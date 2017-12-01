@@ -1,6 +1,7 @@
 import Area from 'packages/area';
 import { mount } from 'avoriaz';
 import AreaList from '../mock/area.json';
+import { setTimeout } from 'timers';
 
 describe('Area', () => {
   let wrapper;
@@ -47,17 +48,17 @@ describe('Area', () => {
         value: '110101'
       }
     });
-    
+
     expect(wrapper.hasClass('van-area')).to.be.true;
     expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110101');
-    
+
     wrapper.setProps({
       value: '110102'
     });
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110102');
       done();
-    });
+    }, 50);
   });
 
   it('create an area with invalid areaList', () => {

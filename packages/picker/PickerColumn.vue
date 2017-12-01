@@ -74,6 +74,10 @@ export default {
   },
 
   watch: {
+    defaultIndex() {
+      this.setIndex(this.defaultIndex);
+    },
+
     options(next, prev) {
       if (JSON.stringify(next) !== JSON.stringify(prev)) {
         this.setIndex(this.defaultIndex);
