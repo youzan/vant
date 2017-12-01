@@ -4,6 +4,16 @@
       <van-picker :columns="columns" @change="onChange" />
     </demo-block>
 
+    <demo-block :title="$t('disabled')">
+      <van-picker
+        :columns="$t('disabledColumn')"
+        valueKey="text"
+        @change="onChange"
+        @cancel="onCancel"
+        @confirm="onConfirm"
+      />
+    </demo-block>
+
     <demo-block :title="$t('title2')">
       <van-picker
         showToolbar
@@ -24,17 +34,47 @@ export default {
       area: '地区选择',
       title2: '带 toolbar 的 Picker',
       column: {
-        '浙江': ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州'],
-        '福建': ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩']
-      }
+        浙江: ['杭州', '宁波', '温州', '嘉兴', '湖州', '绍兴', '金华', '衢州'],
+        福建: ['福州', '厦门', '莆田', '三明', '泉州', '漳州', '南平', '龙岩']
+      },
+      disabled: '禁用选项',
+      disabledColumn: [
+        {
+          values: [
+            {
+              text: '杭州',
+              disabled: true
+            },
+            {
+              text: '宁波'
+            },
+            {
+              text: '温州'
+            }
+          ]
+        }
+      ]
     },
     'en-US': {
       area: 'Title',
       title2: 'Picker with toolbar',
       column: {
-        'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-        'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
-      }
+        Group1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
+        Group2: ['Alabama', 'Kansas', 'Louisiana', 'Texas']
+      },
+      disabled: 'Disabled Option',
+      disabledColumn: [
+        {
+          text: 'Delaware',
+          disabled: true
+        },
+        {
+          text: 'Florida'
+        },
+        {
+          text: 'Georqia'
+        }
+      ]
     }
   },
 

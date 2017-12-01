@@ -1,6 +1,6 @@
 
 <template>
-  <div class="van-picker-column">
+  <div class="van-picker-column" :class="className">
     <div class="van-picker-column__frame van-hairline--top-bottom" :style="frameStyle" />
     <ul
       :style="wrapperStyle"
@@ -13,7 +13,7 @@
         v-for="(option, index) in options" 
         v-text="getOptionText(option)"
         :class="{
-          'van-picker-column--disabled': option.disabled,
+          'van-picker-column--disabled': isDisabled(option),
           'van-picker-column--selected': index === currentIndex
         }"
         @click="setIndex(index)"
@@ -62,7 +62,7 @@ export default {
   },
 
   created() {
-    this.$parent.children.push(this);
+    this.$parent && this.$parent.children.push(this);
   },
 
   mounted() {
@@ -70,12 +70,14 @@ export default {
   },
 
   destroyed() {
-    this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
+    this.$parent && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
   },
 
   watch: {
-    options() {
-      this.setIndex(this.defaultIndex);
+    options(next, prev) {
+      if (JSON.stringify(next) !== JSON.stringify(prev)) {
+        this.setIndex(this.defaultIndex);
+      }
     },
 
     currentIndex(index) {
@@ -105,7 +107,7 @@ export default {
     },
 
     currentValue() {
-      return this.getOptionText(this.options[this.currentIndex]);
+      return this.options[this.currentIndex];
     }
   },
 
@@ -144,12 +146,12 @@ export default {
       }
     },
 
-    isDisabled(options) {
-      return typeof option === 'object' && options.disabled;
+    isDisabled(option) {
+      return typeof option === 'object' && option.disabled;
     },
 
     getOptionText(option) {
-      return typeof option === 'object' && valueKey in item ? option[valueKey] : option;
+      return typeof option === 'object' && this.valueKey in option ? option[this.valueKey] : option;
     },
 
     setIndex(index) {

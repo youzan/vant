@@ -17,7 +17,7 @@
         :defaultIndex="item.defaultIndex"
         :itemHeight="itemHeight"
         :visibleItemCount="visibileColumnCount"
-        @change="onChange"
+        @change="onChange(index)"
       />
     </div>
   </div>
@@ -79,8 +79,8 @@ export default {
       this.$emit('confirm', this.getValues(), this.getIndexes());
     },
 
-    onChange() {
-      this.$emit('change', this, this.getValues(), this.getIndexes());
+    onChange(optionIndex) {
+      this.$emit('change', this, this.getValues(), optionIndex);
     },
 
     // get column instance by index
@@ -90,8 +90,7 @@ export default {
 
     // get column value by index
     getColumnValue(index) {
-      const column = this.getColumn(index);
-      return column ? column.currentValue : '';
+      return (this.getColumn(index) || {}).currentValue;
     },
 
     // set column value by index
@@ -102,8 +101,7 @@ export default {
 
     // get column option index by column index
     getColumnIndex(columnIndex) {
-      const column = this.getColumn(columnIndex);
-      return column ? column.currentIndex : '';
+      return (this.getColumn(columnIndex) || {}).currentIndex;
     },
 
     // set column option index by column index
@@ -114,12 +112,15 @@ export default {
 
     // get options of column by index
     getColumnValues(index) {
-      return this.currentColumns[index];
+      return (this.currentColumns[index] || {}).values;
     },
 
     // set options of column by index
     setColumnValues(index, options) {
-      this.currentColumns[index].values = options;
+      const column = this.currentColumns[index];
+      if (column) {
+        column.values = options;
+      }
     },
 
     // get values of all columns
