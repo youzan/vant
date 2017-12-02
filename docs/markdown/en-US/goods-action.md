@@ -19,16 +19,16 @@ Vue.component(GoodsActionMiniBtn.name, GoodsActionMiniBtn);
 ```html
 <van-goods-action>
   <van-goods-action-mini-btn icon="chat" @click="onClickMiniBtn">
-    客服
+    Icon1
   </van-goods-action-mini-btn>
   <van-goods-action-mini-btn icon="cart" @click="onClickMiniBtn">
-    购物车
+    Icon2
   </van-goods-action-mini-btn>
   <van-goods-action-big-btn @click="onClickBigBtn">
-    加入购物车
+    Button1
   </van-goods-action-big-btn>
   <van-goods-action-big-btn @click="onClickBigBtn" primary>
-    立即购买
+    Button2
   </van-goods-action-big-btn>
 </van-goods-action>
 ```
@@ -37,10 +37,10 @@ Vue.component(GoodsActionMiniBtn.name, GoodsActionMiniBtn);
 export default {
   methods: {
     onClickMiniBtn() {
-      Toast('点击图标');
+      Toast('Click Icon');
     },
     onClickBigBtn() {
-      Toast('点击按钮');
+      Toast('Click Button');
     }
   }
 }
@@ -52,13 +52,13 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | 图标 | `String` | - | Icon 组件支持的所有图标 |
-| iconClass | 图标额外类名 | `String` | `''` | - |
-| url | 跳转链接 | `String` | `javascript:;` | - |
+| icon | Icon | `String` | - | Icon 组件支持的所有图标 |
+| iconClass | Icon class name | `String` | `''` | - |
+| url | Link URL | `String` | `javascript:;` | - |
 
 #### GoodsActionBigBtn
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| url | 跳转链接 | `String` | `javascript:;` | - |
-| primary | 是否主行动按钮，主行动按钮默认为红色 | `Boolean` | `false` | - |
+| url | Link URL | `String` | `javascript:;` | - |
+| primary | Is primary button (red color) | `Boolean` | `false` | - |

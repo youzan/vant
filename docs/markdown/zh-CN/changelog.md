@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
+`2017-11-30`
+
+**Improvements**
+- 新增类型定义文件，增强对 TypeScript 支持 [\#361](https://github.com/youzan/vant/pull/361) [@chenjiahan](https://github.com/chenjiahan)
+- Toast/Dialog 自动挂载至 Vue.prototype, 支持 this.$toast 等方式调用 [\#363](https://github.com/youzan/vant/pull/363) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
+`2017-11-28`
+
+**Breaking changes**
+- NavBar: 规范事件命名, 由 'clickLeft' 改为 'click-left' [\#354](https://github.com/youzan/vant/pull/354) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- CellSwipe: 新增 onClose 属性，支持异步控制 [\#356](https://github.com/youzan/vant/pull/356) [@chenjiahan](https://github.com/chenjiahan)
+- Uploader: 支持继承原生属性 [\#357](https://github.com/youzan/vant/pull/357) [@chenjiahan](https://github.com/chenjiahan)
+- 优化本地构建速度 [\#355](https://github.com/youzan/vant/pull/355) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
 `2017-11-24`
 

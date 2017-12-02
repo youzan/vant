@@ -6,21 +6,25 @@ const path = require('path');
 const compiler = require('vue-sfc-compiler');
 const libDir = path.resolve(__dirname, '../../lib');
 const srcDir = path.resolve(__dirname, '../../packages');
-require('shelljs/global');
+const babel = require('babel-core');
+const compilerOption = {
+  babel: {
+    extends: path.resolve(__dirname, '../../.babelrc')
+  }
+};
 
-// 清空 lib 目录
+process.env.BABEL_ENV = 'commonjs';
+
+// clear lib
 fs.emptyDirSync(libDir);
 
-// 复制 packages
+// copy packages
 fs.copySync(srcDir, libDir);
 
 // 编译所有 .vue 文件到 .js
-compileVueFiles(libDir);
+compile(libDir);
 
-// babel 编译
-exec('cross-env BABEL_ENV=commonjs babel lib --out-dir lib');
-
-function compileVueFiles(dir) {
+function compile(dir) {
   const files = fs.readdirSync(dir);
 
   files.forEach(file => {
@@ -32,7 +36,7 @@ function compileVueFiles(dir) {
     }
     // 遍历文件夹
     else if (isDir(absolutePath)) {
-      return compileVueFiles(absolutePath);
+      return compile(absolutePath);
     }
     // 编译 .vue 文件
     else if (/\.vue$/.test(file)) {
@@ -42,7 +46,12 @@ function compileVueFiles(dir) {
       const outputVuePath = absolutePath + '.js';
       const outputJsPath = absolutePath.replace('.vue', '.js');
       const output = fs.existsSync(outputJsPath) ? outputVuePath : outputJsPath;
-      fs.outputFileSync(output, compiler(source));
+
+      fs.outputFileSync(output, compiler(source, compilerOption).js);
+    } else if (/\.js$/.test(file)) {
+      babel.transformFile(absolutePath, compilerOption.babel, (err, { code }) => {
+        fs.outputFileSync(absolutePath, code);
+      });
     }
   });
 }

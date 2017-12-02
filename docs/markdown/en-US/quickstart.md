@@ -55,6 +55,18 @@ Vue.use(Vant);
 <!-- import style -->
 <link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
 
-<!-- import script --><script></script>
+<!-- import script -->
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
+
+### Props Named Style
+HTML attributes are case-insensitive, so when using non-string templates, camelCased prop names need to use their kebab-case (hyphen-delimited) equivalents.
+
+``` html
+<!-- camelCase in JavaScript -->
+<van-cell isLink />
+
+<!-- kebab-case in HTML -->
+<van-cell is-link />
+```
+

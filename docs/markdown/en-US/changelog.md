@@ -1,10 +1,30 @@
 ## Changelog
 
+### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
+`2017-11-30`
+
+**Improvements**
+- add type definition files [\#361](https://github.com/youzan/vant/pull/361) [@chenjiahan](https://github.com/chenjiahan)
+- support use this.$toast/$dialog to call Toast/Dialog [\#363](https://github.com/youzan/vant/pull/363) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
+`2017-11-28`
+
+**Breaking changes**
+- NavBar: rename click event, change 'clickLeft' to 'click-left' [\#354](https://github.com/youzan/vant/pull/354) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+- CellSwipe: add onClose prop, support async controll [\#356](https://github.com/youzan/vant/pull/356) [@chenjiahan](https://github.com/chenjiahan)
+- Uploader: support inherit attrs [\#357](https://github.com/youzan/vant/pull/357) [@chenjiahan](https://github.com/chenjiahan)
+- optimize local compile speed [\#355](https://github.com/youzan/vant/pull/355) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
 `2017-11-24`
 
 **Improvements**
 - Icon: add seven new icons [\#351](https://github.com/youzan/vant/pull/351) [@w91](https://github.com/w91)
+
 
 ### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
 `2017-11-24`

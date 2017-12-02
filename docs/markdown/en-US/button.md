@@ -35,8 +35,8 @@ Vue.component(Button.name, Button);
 #### Loading
 
 ```html 
-<van-button loading></van-button>
-<van-button loading type="primary"></van-button>
+<van-button loading />
+<van-button loading type="primary" />
 ```
 
 #### Custom Tag

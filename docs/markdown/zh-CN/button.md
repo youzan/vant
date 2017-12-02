@@ -41,8 +41,8 @@ Vue.component(Button.name, Button);
 #### 加载状态
 
 ```html 
-<van-button loading></van-button>
-<van-button loading type="primary"></van-button>
+<van-button loading />
+<van-button loading type="primary" />
 ```
 
 #### 自定义按钮标签

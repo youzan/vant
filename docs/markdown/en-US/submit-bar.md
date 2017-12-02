@@ -1,31 +1,5 @@
 ## SubmitBar
 
-<script>
-import { Toast } from 'packages';
-
-export default {
-  methods: {
-    onClickButton() {
-      Toast('点击按钮');
-    },
-    onClickEditAddress() {
-      Toast('修改地址');
-    }
-  }
-}
-</script>
-
-<style>
-.demo-submit-bar {
-  .van-submit-bar {
-    position: relative;
-  }
-  .van-edit-address {
-    color: #38F;
-  }
-}
-</style>
-
 ### Install
 ``` javascript
 import { SubmitBar } from 'vant';
@@ -40,72 +14,73 @@ Vue.component(SubmitBar.name, SubmitBar);
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="提交订单"
-  @submit="onClickButton"
+  buttonText="Submit"
+  @submit="onSubmit"
 />
 ```
 
 #### Disabled
-禁用状态下不会触发`submit`事件
+`submit` event will not triggerd when disabled.
 
 ```html
 <van-submit-bar
   disabled
   :price="3050"
-  buttonText="提交订单"
-  tip="您的收货地址不支持同城送, 我们已为您推荐快递"
-  @submit="onClickButton"
+  buttonText="Submit"
+  tip="Some tips"
+  @submit="onSubmit"
 />
 ```
 
 #### Loading
-加载状态下不会触发`submit`事件
+`submit` event will not triggerd when loading.
 
 ```html
 <van-submit-bar
   loading
   :price="3050"
-  buttonText="提交订单"
-  @submit="onClickButton"
+  buttonText="Submit"
+  @submit="onSubmit"
 />
 ```
 
 #### Advanced Usage
-通过 slot 插入自定义内容
+Use slot to add custom contents.
 
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="提交订单"
-  @submit="onClickButton"
+  buttonText="Submit"
+  @submit="onSubmit"
 >
-  <van-checkbox v-model="checked">全选</van-checkbox>
+  <van-checkbox v-model="checked">Check</van-checkbox>
   <span slot="tip">
-    您的收货地址不支持同城送, <span @click="onClickEditAddress">修改地址 ></span>
+    Some tips, <span @click="onClickEditAddress">Link</span>
   </span>
 </van-submit-bar>
 ```
 
 ### API
 
-| Attribute | Description | Type | Default | 必须 |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| price | 价格（单位分） |  `Number` | - | 是 |
-| buttonText | 按钮文字 | `String` | - | 是 |
-| buttonType | 按钮类型 |  `String` | `danger` | 否 |
-| tip | 提示文案 |  `String` | - | 否 |
-| disabled | 是否禁用按钮 |  `Boolean` | `false` | 否 |
-| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | 否 |
+| price | Price |  `Number` | - | - |
+| label | Price label |  `String` | `合计：` | - |
+| buttonText | Button text | `String` | - | - |
+| buttonType | Button type |  `String` | `danger` | - |
+| tip | Tip |  `String` | - | - |
+| disabled | Whether to disable button |  `Boolean` | `false` | - |
+| loading | Whether to show loading icon |  `Boolean` | `false` | - |
 
 ### Event
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| submit | 按钮点击事件回调 | - |
+| submit | Triggerd when click submit button | - |
 
 ### Slot
 
 | Name | Description |
 |-----------|-----------|
-| default | 自定义订单栏左侧内容 |
-| tip | 提示文案中的额外操作和说明 |
+| default | Custom left content |
+| tip | Custom tips |
