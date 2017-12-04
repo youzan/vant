@@ -2,8 +2,8 @@
   <div class="van-picker">
     <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
       <slot>
-        <div class="van-picker__cancel" @click="onCancel">{{ $t('cancel') }}</div>
-        <div class="van-picker__confirm" @click="onConfirm">{{ $t('confirm') }}</div>
+        <div class="van-picker__cancel" @click="emit('cancel')">{{ $t('cancel') }}</div>
+        <div class="van-picker__confirm" @click="emit('confirm')">{{ $t('confirm') }}</div>
         <div class="van-picker__title" v-if="title" v-text="title" />
       </slot>
     </div>
@@ -16,7 +16,7 @@
         :className="item.className"
         :defaultIndex="item.defaultIndex"
         :itemHeight="itemHeight"
-        :visibleItemCount="visibileColumnCount"
+        :visibileColumnCount="visibileColumnCount"
         @change="onChange(index)"
       />
     </div>
@@ -26,7 +26,7 @@
 <script>
 import { i18n } from '../locale';
 import Column from './PickerColumn';
-import DeepAssign from '../utils/deep-assign';
+import deepClone from '../utils/deep-clone';
 
 export default {
   name: 'van-picker',
@@ -39,7 +39,10 @@ export default {
 
   props: {
     title: String,
-    valueKey: String,
+    valueKey: {
+      type: String,
+      default: 'text'
+    },
     itemHeight: Number,
     showToolbar: Boolean,
     visibileColumnCount: Number,
@@ -68,19 +71,25 @@ export default {
 
   methods: {
     initColumns() {
-      this.currentColumns = this.columns.map(column => DeepAssign({}, column));
+      const columns = this.columns.map(deepClone);
+      this.isSimpleColumn = columns.length && !columns[0].values;
+      this.currentColumns = this.isSimpleColumn ? [{ values: columns }] : columns;
     },
 
-    onCancel() {
-      this.$emit('cancel', this.getValues(), this.getIndexes());
+    emit(event) {
+      if (this.isSimpleColumn) {
+        this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
+      } else {
+        this.$emit(event, this.getValues(), this.getIndexes());
+      }
     },
 
-    onConfirm() {
-      this.$emit('confirm', this.getValues(), this.getIndexes());
-    },
-
-    onChange(optionIndex) {
-      this.$emit('change', this, this.getValues(), optionIndex);
+    onChange(columnIndex) {
+      if (this.isSimpleColumn) {
+        this.$emit('change', this, this.getColumnValue(0), this.getColumnIndex(0));
+      } else {
+        this.$emit('change', this, this.getValues(), columnIndex);
+      }
     },
 
     // get column instance by index

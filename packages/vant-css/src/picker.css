@@ -2,6 +2,7 @@
 
 .van-picker {
   overflow: hidden;
+  user-select: none;
   background-color: $white;
 
   &__toolbar {

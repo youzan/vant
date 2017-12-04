@@ -24,7 +24,6 @@
 
 <script>
 const DEFAULT_DURATION = 200;
-const DEFAULT_ITEM_HEIGHT = 44;
 const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
 export default {
@@ -39,7 +38,7 @@ export default {
     },
     itemHeight: {
       type: Number,
-      default: DEFAULT_ITEM_HEIGHT
+      default: 44
     },
     visibileColumnCount: {
       type: Number,
@@ -95,12 +94,13 @@ export default {
     },
 
     wrapperStyle() {
+      const { itemHeight, visibileColumnCount } = this;
       return {
         transition: `${this.duration}ms`,
         transform: `translate3d(0, ${this.offset}px, 0)`,
-        lineHeight: this.itemHeight + 'px',
-        height: this.itemHeight * this.visibileColumnCount + 'px',
-        paddingTop: this.itemHeight * Math.floor(this.visibileColumnCount / 2) + 'px'
+        lineHeight: itemHeight + 'px',
+        height: itemHeight * visibileColumnCount + 'px',
+        paddingTop: itemHeight * (visibileColumnCount - 1) / 2 + 'px'
       };
     },
 
