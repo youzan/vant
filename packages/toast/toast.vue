@@ -10,7 +10,7 @@
         <template v-if="displayStyle === 'default'">
           <van-loading v-if="type === 'loading'" color="white" />
           <van-icon v-else class="van-toast__icon" :name="type" />
-          <div v-if="message" class="van-toast__text">{{ message }}</div>
+          <div v-if="message !== undefined" class="van-toast__text">{{ message }}</div>
         </template>
       </div>
       <div class="van-toast__overlay" :class="{ 'van-toast__overlay--mask': mask }" v-if="forbidClick || mask" />
@@ -34,7 +34,7 @@ export default {
 
   props: {
     mask: Boolean,
-    message: String,
+    message: [String, Number],
     forbidClick: Boolean,
     type: {
       type: String,

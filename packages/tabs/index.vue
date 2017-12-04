@@ -20,7 +20,7 @@
     <div
       v-else
       class="van-tabs__nav"
-      :class="`van-tabs__nav--${this.type}`"
+      :class="`van-tabs__nav--${type}`"
     >
       <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
       <div
@@ -100,6 +100,11 @@
             this.doOnValueChange();
           } else {
             this.isInitEvents = false;
+          }
+
+          const activeExist = val.some(tab => tab.index === this.curActive);
+          if (!activeExist) {
+            this.curActive = val[0].index || 0;
           }
         });
       }
