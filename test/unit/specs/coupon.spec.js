@@ -82,7 +82,7 @@ describe('CouponCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__value--link div div': '新手专用优惠券'
+        '.van-cell__value--link span': '省￥1.50'
       },
       count: {
         '.van-cell__right-icon': 1
@@ -101,7 +101,7 @@ describe('CouponCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__value div div': '新手专用优惠券'
+        '.van-cell__value span': '省￥1.50'
       },
       count: {
         '.van-cell__right-icon': 0
