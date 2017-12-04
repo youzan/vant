@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+`2017-12-04`
+
+**Improvements**
+- Coupon: adjust cell text [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: support i18n [\#367](https://github.com/youzan/vant/pull/367) [@chenjiahan](https://github.com/chenjiahan)
+- Document: add props name style guide [\#366](https://github.com/youzan/vant/pull/366) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tab active block disappeared when delete tab [\#372](https://github.com/youzan/vant/pull/372) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 `2017-11-30`
 

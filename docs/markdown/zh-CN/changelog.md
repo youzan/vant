@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+`2017-12-04`
+
+**Improvements**
+- Coupon：调增 Cell 右侧文案 [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: 支持国际化 [\#367](https://github.com/youzan/vant/pull/367) [@chenjiahan](https://github.com/chenjiahan)
+- 增加 Props 命名规范相关文档 [\#366](https://github.com/youzan/vant/pull/366) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab 删除时未自动切换 active 值的问题 [\#372](https://github.com/youzan/vant/pull/372) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 `2017-11-30`
 

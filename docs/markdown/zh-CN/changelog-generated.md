@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5) (2017-12-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.4...v0.11.5)
+
+**Issue**
+
+- 使用导入所有组件的方式引入，轮播图lazyload报错Failed to resolve directive: lazy [\#369](https://github.com/youzan/vant/issues/369)
+- picker放入popup中时，不能正常显示title [\#365](https://github.com/youzan/vant/issues/365)
+- cdn的方式引入submitbar不能正常显示buttonText [\#364](https://github.com/youzan/vant/issues/364)
+- 有支持typescript的计划吗？ [\#352](https://github.com/youzan/vant/issues/352)
+
+**Improvements**
+
+- \[bugfix\] Tab: active block disappeared when delete tab [\#372](https://github.com/youzan/vant/pull/372) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CouponCell text adjust [\#371](https://github.com/youzan/vant/pull/371) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] translate SubmitBar && GoodsAction [\#367](https://github.com/youzan/vant/pull/367) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add props name style guide [\#366](https://github.com/youzan/vant/pull/366) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4) (2017-11-30)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.3...v0.11.4)
 
