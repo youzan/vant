@@ -28,7 +28,7 @@ const createInstance = () => {
 const Toast = (options = {}) => {
   createInstance();
 
-  options = typeof options === 'string' ? { message: options } : options;
+  options = typeof options === 'object' ? options : { message: options };
   options = { ...defaultOptions, ...options };
   Object.assign(instance, options);
 
@@ -45,7 +45,7 @@ const Toast = (options = {}) => {
 
 const createMethod = type => (options = {}) => Toast({
   type,
-  message: typeof options === 'string' ? options : options.message,
+  message: typeof options === 'object' ? options.message : options,
   ...options
 });
 
