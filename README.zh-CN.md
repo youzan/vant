@@ -22,7 +22,7 @@
 - 不仅仅有丰富的基础组件，还有许多的业务组件
 
 <p align="center">
-  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/09/21/34974ceef63f380373bf3d68ec7907f8.gif">
+  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
 </p >
  
 ## 安装
