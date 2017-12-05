@@ -17,14 +17,14 @@
 
 ## Features
 
-- Components come from wechat mall business of [YouZan](https://youzan.com)
+- 45+ Reusable components
+- 90%+ Unit test coverage
 - Extensive documentation and demos.
 - Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-- Unit test coverage over 90%
-- Not only have the basic components, but also have a lot of business components
+- Support TypeScript
 
 <p align="center">
-  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/09/21/34974ceef63f380373bf3d68ec7907f8.gif">
+  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/12/05/6a69f80c7ba6754795a7cc6d0766950f.png">
 </p >
 
 ## Install
