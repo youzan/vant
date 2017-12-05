@@ -5,6 +5,7 @@
 <p align="center">
     <img alt="项目logo" src="https://img.yzcdn.cn/upload_files/2017/04/20/FlkVrSlOr-SGK9qQqtilN6-IFZyT.png">
 </p>
+
 <p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) 
@@ -17,14 +18,14 @@
 
 ## Features
 
-- Components come from wechat mall business of [YouZan](https://youzan.com)
+- 45+ Reusable components
+- 90%+ Unit test coverage
 - Extensive documentation and demos
 - Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-- Unit test coverage over 90%
-- Not only have the basic components, but also have a lot of business components
+- Support TypeScript
 
 <p align="center">
-  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
+  <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
 </p >
 
 ## Install

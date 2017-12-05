@@ -15,14 +15,14 @@
  
 ## 特性
 
-- 组件都是来源于有赞的微商城业务，并且经过有赞业务的检验，更靠谱
-- 丰富的文档和Demo
-- 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- 48 个经过有赞线上业务检验的组件
 - 单元测试覆盖率超过90%
-- 不仅仅有丰富的基础组件，还有许多的业务组件
+- 完善的文档和示例
+- 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+- 支持 TypeScript
 
 <p align="center">
-  <img alt="feature demo" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
+  <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
 </p >
  
 ## 安装
