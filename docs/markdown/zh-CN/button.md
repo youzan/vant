@@ -58,14 +58,14 @@ Vue.component(Button.name, Button);
 #### 页面底部操作按钮
 
 ```html 
-<van-button type="primary" bottom-action>按钮</van-button>
+<van-button type="primary" bottomAction>按钮</van-button>
 
 <van-row>
   <van-col span="12">
-    <van-button bottom-action>按钮</van-button>
+    <van-button bottomAction>按钮</van-button>
   </van-col>
   <van-col span="12">
-    <van-button type="primary" bottom-action>按钮</van-button>
+    <van-button type="primary" bottomAction>按钮</van-button>
   </van-col>
 </van-row>
 ```

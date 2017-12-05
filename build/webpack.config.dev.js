@@ -5,6 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
+const cache = {
+  loader: 'cache-loader',
+  options: {
+    cacheDirectory: path.resolve(__dirname, '../node_modules/.cache-loader')
+  }
+};
 
 module.exports = {
   entry: {
@@ -16,7 +22,6 @@ module.exports = {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
     filename: '[name].js',
-    umdNamedDefine: true,
     chunkFilename: 'async_[name].js'
   },
   devServer: {
@@ -44,6 +49,7 @@ module.exports = {
       {
         test: /\.vue$/,
         use: [
+          cache,
           {
             loader: 'vue-loader',
             options: {
@@ -57,6 +63,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules|vue-router\/|vue-loader\//,
         use: [
+          cache,
           'babel-loader'
         ]
       },
@@ -72,6 +79,7 @@ module.exports = {
       {
         test: /\.md/,
         use: [
+          cache,
           'vue-loader',
           'fast-vue-md-loader'
         ]

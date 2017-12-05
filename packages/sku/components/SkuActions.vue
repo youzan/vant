@@ -1,17 +1,19 @@
 <template>
   <div class="van-sku-actions">
-    <button v-if="showAddCartBtn" class="van-sku__add-cart-btn" @click="onAddCartClicked">
-      加入购物车
-    </button>
-    <button class="van-sku__buy-btn" @click="onBuyClicked">
-      {{ buyText }}
-    </button>
+    <van-button v-if="showAddCartBtn" bottomAction @click="onAddCartClicked">加入购物车</van-button>
+    <van-button type="primary" bottomAction @click="onBuyClicked">{{ buyText }}</van-button>
   </div>
 </template>
 
 <script>
+import Button from '../../button';
+
 export default {
   name: 'van-sku-actions',
+
+  components: {
+    [Button.name]: Button
+  },
 
   props: {
     skuEventBus: Object,

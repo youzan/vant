@@ -59,6 +59,7 @@ export default {
 
       const columns = [];
       const curValue = this.value || '';
+      const { columnsNum } = this;
 
       columns.push({
         values: [DEFAULT_PROVINCE].concat(this.computedAreaList(PROVINCE_TYPE)),
@@ -66,7 +67,6 @@ export default {
         defaultIndex: this.getAreaIndex(PROVINCE_TYPE, curValue)
       });
 
-      const columnsNum = this.columnsNum;
       if (+columnsNum > 1) {
         columns.push({
           values: [DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, curValue.slice(0, 2))),
