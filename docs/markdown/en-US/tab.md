@@ -106,7 +106,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
 | active | Index of active tab | `String` `Number` | `0` | - |
-| duration | Toggle tab's animation time | `Number` | `0.3` | - | - |
+| duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
 | swipeThreshold | Set swipe tabs threshold | `Number` | `4` | - | - |
 
 ### Tab API

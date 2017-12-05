@@ -1,5 +1,5 @@
 <template>
-  <div class="van-tab__pane" :class="{ 'van-tab__pane--select': key === $parent.curActive }">
+  <div class="van-tab__pane" :class="{ 'van-tab__pane--select': index === parentGroup.curActive }">
     <slot></slot>
   </div>
 </template>
@@ -20,46 +20,19 @@ export default {
     disabled: Boolean
   },
 
-  data() {
+  computed: {
+    index() {
+      return this.parentGroup.tabs.indexOf(this);
+    }
+  },
+
+  created() {
     this.findParentByName('van-tabs');
-    const nextIndex = this.parentGroup.tabs.length;
-    this.updateParentData(nextIndex);
-    return {
-      key: nextIndex
-    };
-  },
-
-  watch: {
-    title() {
-      this.updateParentData();
-    },
-    disabled() {
-      this.updateParentData();
-    }
-  },
-
-  methods: {
-    updateParentData(nextIndex) {
-      const index = arguments.length ? nextIndex : this.key;
-      this.parentGroup.tabs.splice(index, 1, {
-        title: this.title,
-        disabled: this.disabled,
-        index
-      });
-    }
+    this.parentGroup.tabs.push(this);
   },
 
   destroyed() {
-    const key = this.key;
-    const tabs = this.parentGroup.tabs;
-
-    for (let i = 0; i < tabs.length; i++) {
-      /* istanbul ignore else */
-      if (tabs[i].index === key) {
-        this.parentGroup.tabs.splice(i, 1);
-        return;
-      }
-    }
+    this.parentGroup.tabs.splice(this.index, 1);
   }
 };
 </script>
