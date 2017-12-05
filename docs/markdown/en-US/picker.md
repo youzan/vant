@@ -11,56 +11,80 @@ Vue.component(Picker.name, Picker);
 
 #### Basic Usage
 
-
 ```html
-<van-picker :columns="pickerColumns" @change="onChange" />
+<van-picker :columns="columns" @change="onChange" />
 ```
 
 ```javascript
-const states = {
-  'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
-  'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
-};
-
 export default {
   data() {
     return {
-      pickerColumns: [
-        {
-          values: Object.keys(states),
-          className: 'column1'
-        },
-        {
-          values: states.Group1,
-          className: 'column2'
-        }
-      ]
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
     };
   },
-
-  methods: {
-    onChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
-    }
+  onChange(picker, value, index) {
+    Toast(`Value: ${value}, Index: ${index}`);
   }
 };
 ```
 
+#### Disable option
 
-#### Picker with toolbar
+```html
+<van-picker :columns="columns" />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      columns: [
+        { text: 'Delaware', disabled: true },
+        { text: 'Florida' },
+        { text: 'Georqia' }
+      ]
+    };
+  }
+};
+```
+
+#### Show Toolbar
 
 ```html
 <van-picker
   showToolbar
-  :title="title"
-  :columns="pickerColumns"
-  @change="onChange"
+  :title="Title"
+  :columns="columns"
   @cancel="onCancel"
   @confirm="onConfirm"
 />
 ```
 
 ```javascript
+export default {
+  data() {
+    return {
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
+    }
+  },
+  methods: {
+    onConfirm(value, index) {
+      Toast(`Value: ${value}, Index: ${index}`);
+    },
+    onCancel() {
+      Toast('Cancel');
+    }
+  }
+};
+```
+
+#### Multi columns
+
+```html
+<van-picker :columns="columns" @change="onChange" />
+```
+
+```javascript
 const states = {
   'Group1': ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
   'Group2': ['Alabama', 'Kansas', 'Louisiana', 'Texas']
@@ -69,29 +93,22 @@ const states = {
 export default {
   data() {
     return {
-      title: 'Title',
-      pickerColumns: [
+      columns: [
         {
           values: Object.keys(states),
           className: 'column1'
         },
         {
           values: states.Group1,
-          className: 'column2'
+          className: 'column2',
+          defaultIndex: 2
         }
       ]
     };
   },
-
   methods: {
     onChange(picker, values) {
-      picker.setColumnValues(1, citys[values[0]]);
-    },
-    onCancel() {
-      Toast('Cancel');
-    },
-    onConfirm() {
-      Toast('Confirm');
+      picker.setColumnValues(1, states[values[0]]);
     }
   }
 };
@@ -101,11 +118,12 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| visibileColumnCount | Count of columns to show | `Number` | `5` | - |
-| itemHeight | Item height | `Number` | `44` | - |
-| columns | Columns data | `Array` | - | - |
-| showToolbar | Whether to show toolbar | `Boolean` | `true` | - |
-| title | Toolbar title | `String` | - | - |
+| columns | Columns data | `Array` | `[]` | - |
+| showToolbar | Whether to show toolbar | `Boolean` | `false` | - |
+| title | Toolbar title | `String` | `''` | - |
+| itemHeight | Option height | `Number` | `44` | - |
+| visibileColumnCount | Count of visible columns | `Number` | `5` | - |
+| valueKey | Key of option text | `String` | `text` | - |
 
 ### Data struct of columns
 
@@ -116,13 +134,17 @@ export default {
 | className | ClassName for this column |
 
 ### Picker instance
-The first argument of change event's callback function is a picker instance with some methods
+You can get the picker instance in 'change' event, and 
 
 | Method | Description |
 |-----------|-----------|
-| getColumnValue(index) | get current value of the column |
-| setColumnValue(index, value) | set current value of the column |
-| getColumnValues(index) | get all values of the column |
-| setColumnValues(index, values) | set all values of the column |
-| getValues() | get current values of all columns |
-| setValues(values) | set current values of all columns |
+| getValues() | Get current values of all columns |
+| setValues(values) | Set current values of all columns |
+| getIndexes() | Get current indexes of all columns |
+| setIndexes(indexes) | Set current indexes of all columns |
+| getColumnValue(columnIndex) | Get current value of the column |
+| setColumnValue(columnIndex, value) | Set current value of the column |
+| getColumnIndex(columnIndex) | Get current index of the column |
+| setColumnIndex(columnIndex, optionIndex) | Set current index of the column |
+| getColumnValues(columnIndex) | Get columns data of the column |
+| setColumnValues(columnIndex, values) | Set columns data of the column |

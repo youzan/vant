@@ -1,15 +1,6 @@
 import DatetimePicker from 'packages/datetime-picker';
 import { mount } from 'avoriaz';
-import { triggerTouch } from '../utils';
-
-const dragHelper = (el, position) => {
-  triggerTouch(el, 'touchstart', 0, 0);
-  triggerTouch(el, 'touchmove', 0, position / 4);
-  triggerTouch(el, 'touchmove', 0, position / 3);
-  triggerTouch(el, 'touchmove', 0, position / 2);
-  triggerTouch(el, 'touchmove', 0, position);
-  triggerTouch(el, 'touchend', 0, position);
-};
+import { dragHelper } from '../utils';
 
 const testTime = '10:00';
 const testDate = new Date('2017/03/10 10:00');
@@ -64,12 +55,12 @@ describe('DatetimePicker', () => {
       }
     });
 
-    const [hour, minute] = wrapper.find('.van-picker-column-wrapper');
+    const [hour, minute] = wrapper.find('.van-picker-column ul');
     dragHelper(hour, -50);
     dragHelper(minute, -50);
 
     setTimeout(() => {
-      expect(wrapper.vm.innerValue).to.equal('5:05');
+      expect(wrapper.vm.innerValue).to.equal('10:01');
       done();
     }, 10);
   });
@@ -86,7 +77,7 @@ describe('DatetimePicker', () => {
     });
 
     setTimeout(() => {
-      const [year, month, day] = wrapper.find('.van-picker-column-wrapper');
+      const [year, month, day] = wrapper.find('.van-picker-column ul');
       dragHelper(year, -50);
       dragHelper(month, -50);
       dragHelper(day, -50);
@@ -94,9 +85,9 @@ describe('DatetimePicker', () => {
         const newYear = wrapper.vm.innerValue.getFullYear();
         const newMonth = wrapper.vm.innerValue.getMonth() + 1;
         const newDay = wrapper.vm.innerValue.getDate();
-        expect(newYear).to.equal(2022);
-        expect(newMonth).to.equal(8);
-        expect(newDay).to.equal(15);
+        expect(newYear).to.equal(2018);
+        expect(newMonth).to.equal(4);
+        expect(newDay).to.equal(1);
         done();
       }, 10);
     }, 10);
@@ -114,7 +105,7 @@ describe('DatetimePicker', () => {
     });
 
     setTimeout(() => {
-      const [year, month, day, hour, minute] = wrapper.find('.van-picker-column-wrapper');
+      const [year, month, day, hour, minute] = wrapper.find('.van-picker-column ul');
       dragHelper(year, -50);
       dragHelper(month, -50);
       dragHelper(day, -50);
@@ -126,11 +117,11 @@ describe('DatetimePicker', () => {
         const newDay = wrapper.vm.innerValue.getDate();
         const newHour = wrapper.vm.innerValue.getHours();
         const newMinute = wrapper.vm.innerValue.getMinutes();
-        expect(newYear).to.equal(2022);
-        expect(newMonth).to.equal(8);
-        expect(newDay).to.equal(15);
-        expect(newHour).to.equal(15);
-        expect(newMinute).to.equal(5);
+        expect(newYear).to.equal(2018);
+        expect(newMonth).to.equal(4);
+        expect(newDay).to.equal(1);
+        expect(newHour).to.equal(11);
+        expect(newMinute).to.equal(1);
         done();
       }, 10);
     }, 10);

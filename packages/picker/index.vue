@@ -1,34 +1,32 @@
 <template>
   <div class="van-picker">
-    <div class="van-picker__toolbar van-hairline--top-bottom" v-show="showToolbar">
+    <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
       <slot>
-        <a href="javascript:void(0)" class="van-picker__cancel" @click="handlePickerCancel">{{ $t('cancel') }}</a>
-        <a href="javascript:void(0)" class="van-picker__confirm" @click="handlePickerConfirm">{{ $t('confirm') }}</a>
-        <div v-if="title" class="van-picker__title">{{ title }}</div>
+        <div class="van-picker__cancel" @click="emit('cancel')">{{ $t('cancel') }}</div>
+        <div class="van-picker__confirm" @click="emit('confirm')">{{ $t('confirm') }}</div>
+        <div class="van-picker__title" v-if="title" v-text="title" />
       </slot>
     </div>
-    <div class="van-picker__columns" :class="`van-picker__columns--${columns.length}`">
+    <div class="van-picker__columns">
       <van-picker-column
-        v-for="(item, index) in columns"
+        v-for="(item, index) in currentColumns"
         :key="index"
-        v-model="values[index]"
-        :values="item.values"
-        :className="item.className"
-        :itemHeight="itemHeight"
-        :visibleItemCount="visibileColumnCount"
         :valueKey="valueKey"
-        @columnChange="columnValueChange(index)"
+        :options="item.values"
+        :className="item.className"
+        :defaultIndex="item.defaultIndex"
+        :itemHeight="itemHeight"
+        :visibileColumnCount="visibileColumnCount"
+        @change="onChange(index)"
       />
-      <div class="van-picker-center-highlight" :style="{ height: itemHeight + 'px', marginTop: -itemHeight / 2 + 'px' }"></div>
     </div>
   </div>
 </template>
 
 <script>
-import PickerColumn from './PickerColumn';
 import { i18n } from '../locale';
-
-const DEFAULT_ITEM_HEIGHT = 44;
+import Column from './PickerColumn';
+import deepClone from '../utils/deep-clone';
 
 export default {
   name: 'van-picker',
@@ -36,131 +34,125 @@ export default {
   mixins: [i18n],
 
   components: {
-    [PickerColumn.name]: PickerColumn
+    [Column.name]: Column
   },
 
   props: {
-    /**
-     * 每一列可见备选元素的个数
-     */
-    visibileColumnCount: {
-      type: Number,
-      default: 5
+    title: String,
+    valueKey: {
+      type: String,
+      default: 'text'
     },
-    /**
-     * 选中元素区高度
-     */
-    itemHeight: {
-      type: Number,
-      default: DEFAULT_ITEM_HEIGHT
-    },
-    /**
-     * 对象数组，配置每一列显示的数据
-     */
+    itemHeight: Number,
+    showToolbar: Boolean,
+    visibileColumnCount: Number,
     columns: {
       type: Array,
-      default() {
-        return [];
-      }
+      default: () => []
     },
-    /**
-     * 否在组件顶部显示一个toolbar
-     */
-    showToolbar: {
-      type: Boolean,
-      default: false
-    },
-    /**
-     * 顶部toolbar 显示的title
-     */
-    title: String,
-    valueKey: String
   },
 
-  computed: {
-    values() {
-      const columns = this.columns || [];
-      const values = [];
+  data() {
+    return {
+      children: [],
+      currentColumns: []
+    };
+  },
 
-      columns.forEach(column => {
-        values.push(column.value || column.values[column.defaultIndex || 0]);
-      });
+  created() {
+    this.initColumns();
+  },
 
-      return values;
-    }
+  watch: {
+    columns() {
+      this.initColumns();
+    },
   },
 
   methods: {
-    handlePickerCancel() {
-      this.$emit('cancel', this.values);
-    },
-    handlePickerConfirm() {
-      this.$emit('confirm', this.values);
-    },
-    /**
-     * 处理列`change`事件
-     */
-    columnValueChange(index) {
-      this.$emit('change', this, this.values, index);
+    initColumns() {
+      const columns = this.columns.map(deepClone);
+      this.isSimpleColumn = columns.length && !columns[0].values;
+      this.currentColumns = this.isSimpleColumn ? [{ values: columns }] : columns;
     },
 
-    /**
-     * 获取对应索引的列的实例
-     */
+    emit(event) {
+      if (this.isSimpleColumn) {
+        this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
+      } else {
+        this.$emit(event, this.getValues(), this.getIndexes());
+      }
+    },
+
+    onChange(columnIndex) {
+      if (this.isSimpleColumn) {
+        this.$emit('change', this, this.getColumnValue(0), this.getColumnIndex(0));
+      } else {
+        this.$emit('change', this, this.getValues(), columnIndex);
+      }
+    },
+
+    // get column instance by index
     getColumn(index) {
-      const children = this.$children.filter(child => child.$options.name === 'van-picker-column');
-      return children[index];
+      return this.children[index];
     },
 
-    /**
-     * 获取对应列中选中的值
-     */
+    // get column value by index
     getColumnValue(index) {
-      const column = this.getColumn(index);
-      return column && column.values[column.valueIndex];
+      return (this.getColumn(index) || {}).currentValue;
     },
 
-    /**
-     * 设置对应列中选中的值
-     */
+    // set column value by index
     setColumnValue(index, value) {
       const column = this.getColumn(index);
-      if (column) {
-        column.currentValue = value;
-      }
+      column && column.setValue(value);
     },
 
-    /**
-     * 获取对应列中所有的备选值
-     */
+    // get column option index by column index
+    getColumnIndex(columnIndex) {
+      return (this.getColumn(columnIndex) || {}).currentIndex;
+    },
+
+    // set column option index by column index
+    setColumnIndex(columnIndex, optionIndex) {
+      const column = this.getColumn(columnIndex);
+      column && column.setIndex(optionIndex);
+    },
+
+    // get options of column by index
     getColumnValues(index) {
-      const column = this.getColumn(index);
-      return column && column.currentValues;
+      return (this.currentColumns[index] || {}).values;
     },
 
-    /**
-     * 设置对应列中所有的备选值
-     */
-    setColumnValues(index, values) {
-      const column = this.getColumn(index);
+    // set options of column by index
+    setColumnValues(index, options) {
+      const column = this.currentColumns[index];
       if (column) {
-        column.currentValues = values;
+        column.values = options;
       }
     },
 
-    /**
-     * 获取所有列中被选中的值，返回一个数组
-     */
+    // get values of all columns
     getValues() {
-      return this.values;
+      return this.children.map(child => child.currentValue);
     },
 
-    /**
-     * `values`为一个数组，设置所有列中被选中的值
-     */
+    // set values of all columns
     setValues(values) {
       values.forEach((value, index) => {
         this.setColumnValue(index, value);
+      });
+    },
+
+    // get indexes of all columns
+    getIndexes() {
+      return this.children.map(child => child.currentIndex);
+    },
+
+    // set indexes of all columns
+    setIndexes(indexes) {
+      indexes.forEach((optionIndex, columnIndex) => {
+        this.setColumnIndex(columnIndex, optionIndex);
       });
     }
   }

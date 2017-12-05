@@ -5,7 +5,7 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-area :areaList="areaList" value="110101" />
+      <van-area :areaList="areaList" :value="value" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -31,7 +31,8 @@ export default {
 
   data() {
     return {
-      areaList: AreaList
+      areaList: AreaList,
+      value: '110101'
     };
   }
 };

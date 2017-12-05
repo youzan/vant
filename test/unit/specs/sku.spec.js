@@ -82,8 +82,8 @@ describe('Sku', (done) => {
 
     const buyCallback = sinon.spy();
     const addCartCallback = sinon.spy();
-    const buyBtn = wrapper.find('.van-sku__buy-btn')[0];
-    const addCartBtn = wrapper.find('.van-sku__add-cart-btn')[0];
+    const buyBtn = wrapper.find('.van-button--bottom-action')[1];
+    const addCartBtn = wrapper.find('.van-button--bottom-action')[0];
     wrapper.vm.$on('buy-clicked', buyCallback);
     wrapper.vm.$on('add-cart', addCartCallback);
 
@@ -187,7 +187,7 @@ describe('Sku', (done) => {
       }
     });
 
-    const buyBtn = wrapper.find('.van-sku__buy-btn')[0];
+    const buyBtn = wrapper.find('.van-button--bottom-action')[0];
     const skuMessages = wrapper.find('.van-sku-messages')[0];
     const inputs = skuMessages.find('input');
     const textarea = skuMessages.find('textarea')[0];
@@ -272,7 +272,7 @@ describe('Sku', (done) => {
       }
     });
 
-    const buyBtn = wrapper.find('.van-sku__buy-btn')[0];
+    const buyBtn = wrapper.find('.van-button--bottom-action')[0];
 
     wrapper.vm.$nextTick(() => {
       buyBtn.trigger('click');
