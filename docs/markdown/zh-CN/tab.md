@@ -106,7 +106,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | type | Tab 样式类型 | `String` | `line` | `card` |
 | active | 默认激活的 tab | `String` `Number` | `0` | - |
-| duration | 切换 tab 的动画时间 | `Number` | `0.3` | - | - |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - | - |
 | swipeThreshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - | - |
 
 ### Tab API

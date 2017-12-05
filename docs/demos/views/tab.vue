@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-tabs :active="active">
-        <van-tab :title="$t('tab') + index" v-for="index in 4" :key="index">
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -64,7 +64,8 @@ export default {
 
   data() {
     return {
-      active: 2
+      active: 2,
+      tabs: [1, 2, 3, 4]
     };
   },
 
