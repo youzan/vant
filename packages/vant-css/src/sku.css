@@ -174,35 +174,7 @@
 
   /* sku actions */
   &-actions {
+    display: flex;
     margin-top: 10px;
-    font-size: 0;
-  }
-
-  &__add-cart-btn {
-    width: 50%;
-    height: 50px;
-    padding: 0;
-    border: 0;
-    background: #f85;
-    color: $white;
-    font-size: 16px;
-    line-height: 50px;
-    text-align: center;
-
-    & + .van-sku__buy-btn {
-      width: 50%;
-    }
-  }
-
-  &__buy-btn {
-    width: 100%;
-    height: 50px;
-    padding: 0;
-    border: 0;
-    background: $red;
-    color: $white;
-    font-size: 16px;
-    line-height: 50px;
-    text-align: center;
   }
 }

@@ -42,13 +42,9 @@
           <!-- 自定义sku actions -->
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
-              <button class="van-sku__add-cart-btn" @click="handlePointClicked">
-                积分兑换
-              </button>
+              <van-button bottomAction @click="handlePointClicked">积分兑换</van-button>
               <!-- 直接触发sku内部事件，通过内部事件执行handleBuyClicked回调 -->
-              <button class="van-sku__buy-btn" @click="props.skuEventBus.$emit('sku:buy')">
-                买买买
-              </button>
+              <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
             </div>
           </template>
         </van-sku>
