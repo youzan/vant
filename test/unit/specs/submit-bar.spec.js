@@ -64,7 +64,7 @@ describe('SubmitBar', () => {
     }, 300);
   });
 
-  it('can not submit when disabled', () => {
+  it('can not submit when disabled', (done) => {
     wrapper = mount(SubmitBar, {
       propsData: {
         disabled: true,
@@ -77,10 +77,11 @@ describe('SubmitBar', () => {
     wrapper.find('.van-button')[0].trigger('click');
     setTimeout(() => {
       expect(submitSpyFunc.calledOnce).to.be.false;
+      done();
     }, 300);
   });
 
-  it('can not submit when loading', () => {
+  it('can not submit when loading', (done) => {
     wrapper = mount(SubmitBar, {
       propsData: {
         loading: true,
@@ -93,6 +94,7 @@ describe('SubmitBar', () => {
     wrapper.find('.van-button')[0].trigger('click');
     setTimeout(() => {
       expect(submitSpyFunc.calledOnce).to.be.false;
+      done();
     }, 300);
   });
 });
