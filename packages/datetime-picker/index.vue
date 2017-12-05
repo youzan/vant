@@ -225,7 +225,7 @@ export default {
     },
 
     onChange(picker) {
-      const values = picker.$children.filter(child => child.currentValue !== undefined).map(child => child.currentValue);
+      const values = picker.getValues();
       let value;
 
       if (this.type === 'time') {
@@ -279,20 +279,7 @@ export default {
       if (!this.$refs.picker) {
         return;
       }
-      const setColumnValue = this.$refs.picker.setColumnValue;
-      if (this.type === 'time') {
-        setColumnValue(0, values[0]);
-        setColumnValue(1, values[1]);
-      } else {
-        setColumnValue(0, values[0]);
-        setColumnValue(1, values[1]);
-        setColumnValue(2, values[2]);
-        if (this.type === 'datetime') {
-          setColumnValue(3, values[3]);
-          setColumnValue(4, values[4]);
-        }
-      }
-      [].forEach.call(this.$refs.picker.$children, child => child.doOnValueChange());
+      this.$refs.picker.setValues(values);
     }
   },
 
