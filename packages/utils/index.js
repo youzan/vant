@@ -19,9 +19,10 @@ export function get(object, path) {
 
 const camelizeRE = /-(\w)/g;
 export function camelize(str) {
-  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '');
+  return str.replace(camelizeRE, (_, c) => c.toUpperCase());
 }
 
 export function isAndroid() {
+  /* istanbul ignore next */
   return isServer ? false : /android/.test(navigator.userAgent.toLowerCase());
 }

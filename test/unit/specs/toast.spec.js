@@ -89,7 +89,7 @@ describe('Toast', () => {
   it('toast disappeared after duration', (done) => {
     Toast({
       message: 'toast',
-      duration: 100
+      duration: 10
     });
 
     expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.false;
@@ -97,7 +97,7 @@ describe('Toast', () => {
     setTimeout(() => {
       expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.true;
       done();
-    }, 500);
+    }, 300);
   });
 
   it('toast duration 0', (done) => {
