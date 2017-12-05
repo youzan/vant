@@ -142,6 +142,7 @@ export default {
     },
 
     adjustIndex(index) {
+      index = range(index, [0, this.count]);
       for (let i = index; i < this.count; i++) {
         if (!this.isDisabled(this.options[i])) return i;
       }

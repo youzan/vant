@@ -1,4 +1,5 @@
 @import './common/var.css';
+@import './mixins/ellipsis.css';
 
 .van-picker {
   overflow: hidden;
