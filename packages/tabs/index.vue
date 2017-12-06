@@ -1,6 +1,6 @@
 <template>
-  <div class="van-tabs" :class="`van-tabs--${type}`">
-    <div :class="{ 'van-tabs__swipe': scrollable, 'van-hairline--top-bottom': type === 'line' }">
+  <div class="van-tabs" :class="[`van-tabs--${type}`, { 'van-tabs--fixed': fixed }]">
+    <div class="van-tabs__wrap" :class="{ 'van-tabs--scrollbale': scrollable, 'van-hairline--top-bottom': type === 'line' }">
       <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
@@ -26,6 +26,7 @@
 
 <script>
 import { raf } from '../utils/raf';
+import scrollUtils from '../utils/scroll';
 
 export default {
   name: 'van-tabs',
@@ -46,14 +47,17 @@ export default {
     swipeThreshold: {
       type: Number,
       default: 4
-    }
+    },
+    sticky: Boolean
   },
 
   data() {
+    /* istanbul ignore next */
     this.winWidth = this.$isServer ? 0 : window.innerWidth;
 
     return {
       tabs: [],
+      fixed: false,
       curActive: 0,
       navBarStyle: {}
     };
@@ -72,23 +76,56 @@ export default {
     curActive() {
       this.scrollIntoView();
       this.setNavBar();
+    },
+
+    sticky(isSticky) {
+      this.scrollHandler(isSticky);
     }
   },
 
   mounted() {
     this.correctActive(this.active);
     this.setNavBar();
+
+    if (this.sticky) {
+      this.scrollHandler(true);
+    }
+  },
+
+  destoryed() {
+    /* istanbul ignore next */
+    if (this.sticky) {
+      this.scrollHandler(false);
+    }
   },
 
   computed: {
+    // whether the nav is scrollable
     scrollable() {
       return this.tabs.length > this.swipeThreshold;
     }
   },
 
   methods: {
+    // whether to bind sticky listener
+    scrollHandler(init) {
+      this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
+      this.scrollEl[init ? 'addEventListener' : 'removeEventListener']('scroll', this.onScroll);
+      this.onScroll();
+    },
+
+    // fixed tab when scrollTop > distance to top
+    onScroll() {
+      this.fixed = scrollUtils.getScrollTop(this.scrollEl) > scrollUtils.getElementTop(this.$el);
+    },
+
+    // update nav bar style
     setNavBar() {
       this.$nextTick(() => {
+        if (!this.$refs.tabs) {
+          return;
+        }
+
         const tab = this.$refs.tabs[this.curActive];
         this.navBarStyle = {
           width: `${tab.offsetWidth || 0}px`,
@@ -98,12 +135,15 @@ export default {
       });
     },
 
+    // correct the value of active
     correctActive(active) {
       active = +active;
       const exist = this.tabs.some(tab => tab.index === active);
-      this.curActive = exist ? active : (this.tabs[0].index || 0);
+      const defaultActive = (this.tabs[0] || {}).index || 0;
+      this.curActive = exist ? active : defaultActive;
     },
 
+    // emit event when clicked
     onClick(index) {
       if (this.tabs[index].disabled) {
         this.$emit('disabled', index);
@@ -113,8 +153,9 @@ export default {
       }
     },
 
+    // scroll active tab into view
     scrollIntoView() {
-      if (!this.scrollable) {
+      if (!this.scrollable || !this.$refs.tabs) {
         return;
       }
 
@@ -125,6 +166,7 @@ export default {
       const { offsetLeft, offsetWidth: tabWidth } = tab;
 
       // out of right side
+      /* istanbul ignore next */
       if ((winWidth + scrollLeft - offsetLeft - tabWidth * 1.8) < 0) {
         this.scrollTo(nav, scrollLeft, offsetLeft + tabWidth * 1.8 - winWidth);
       }
@@ -134,11 +176,13 @@ export default {
       }
     },
 
+    // animate the scrollLeft of nav
     scrollTo(el, from, to) {
       let count = 0;
       const frames = Math.round(this.duration * 1000 / 16);
       const animate = () => {
         el.scrollLeft += (to - from) / frames;
+        /* istanbul ignore next */
         if (++count < frames) {
           raf(animate);
         }
