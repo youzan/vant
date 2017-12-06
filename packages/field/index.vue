@@ -29,6 +29,7 @@
       class="van-field__control"
       :type="type"
       :value="value"
+      @keypress="onKeypress"
       @input="onInput"
       @focus="$emit('focus')"
       @blur="$emit('blur')"
@@ -109,6 +110,17 @@ export default {
     onClickIcon() {
       this.$emit('click-icon');
       this.onIconClick();
+    },
+
+    onKeypress(event) {
+      if (this.type === 'number') {
+        const { keyCode } = event;
+        const allowPoint = this.value.indexOf('.') === -1;
+        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint);
+        if (!isValidKey) {
+          event.preventDefault();
+        }
+      }
     },
 
     adjustSize() {
