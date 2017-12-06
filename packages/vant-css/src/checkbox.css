@@ -4,6 +4,7 @@ $van-checkbox-size: 20px;
 
 .van-checkbox {
   overflow: hidden;
+  user-select: none;
 
   .van-icon-success {
     color: $white;
@@ -61,13 +62,14 @@ $van-checkbox-size: 20px;
 
   &--disabled {
     .van-icon-success {
-      border-color: #d1dbe5;
-      background-color: transparent;
+      color: $background-color;
+      border-color: $gray-light;
+      background-color: currentColor;
     }
 
     .van-checkbox__control:checked + .van-icon-success {
-      border-color: #d1dbe5;
-      background-color: #d1dbe5;      
+      border-color: $gray-light;
+      background-color: $gray-light;
     }
   }
 }
