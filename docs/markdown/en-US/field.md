@@ -77,6 +77,7 @@ Textarea Filed can be auto resize when has `autosize` prop
 ```
 
 ### API
+Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
