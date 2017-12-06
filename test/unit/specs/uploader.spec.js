@@ -93,4 +93,16 @@ describe('Uploader', () => {
     expect(wrapper.contains('input')).to.equal(true);
     expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
   });
+
+  it('unknown resultType', () => {
+    wrapper = mount(Uploader, {
+      propsData: {
+        disabled: false,
+        resultType: 'xxxx'
+      }
+    });
+
+    expect(wrapper.contains('input')).to.equal(true);
+    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+  });
 });

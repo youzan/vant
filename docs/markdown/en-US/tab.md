@@ -100,13 +100,24 @@ export default {
 };
 ```
 
+#### Sticky
+In sticky mode, the tab will be fixed to top when scroll to top
+
+```html
+<van-tabs :active="active" sticky>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
 | active | Index of active tab | `String` `Number` | `0` | - |
-| duration | Toggle tab's animation time | `Number` | `0.3` | - | - |
+| duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
 | swipeThreshold | Set swipe tabs threshold | `Number` | `4` | - | - |
 
 ### Tab API

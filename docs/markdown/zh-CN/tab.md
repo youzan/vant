@@ -100,14 +100,26 @@ export default {
 };
 ```
 
+#### 粘性布局
+通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
+
+```html
+<van-tabs :active="active" sticky>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | Tab 样式类型 | `String` | `line` | `card` |
 | active | 默认激活的 tab | `String` `Number` | `0` | - |
-| duration | 切换 tab 的动画时间 | `Number` | `0.3` | - | - |
-| swipeThreshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - | - |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
+| swipeThreshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 
 ### Tab API
 
