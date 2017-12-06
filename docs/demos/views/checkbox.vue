@@ -5,7 +5,8 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-checkbox v-model="checkbox2" disabled>{{ $t('checkbox') }} 2</van-checkbox>
+      <van-checkbox :value="false" disabled>{{ $t('checkbox') }} 2</van-checkbox>
+      <van-checkbox :value="true" disabled>{{ $t('checkbox') }} 2</van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -64,6 +65,8 @@ export default {
 
 <style lang="postcss">
 .demo-checkbox {
+  background: #fff;
+
   .van-checkbox {
     margin: 10px 0 0 20px;
   }
