@@ -1,45 +1,31 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
 
+$van-tabs-line-height: 44px;
+$van-tabs-card-height: 28px;
+
 .van-tabs {
   position: relative;
-
-  &__swipe {
-    user-select: none;
-
-    .van-tab {
-      flex: 0 0 22%;
-    }
-
-    .van-tabs__nav {
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-
-      &::-webkit-scrollbar {
-        display: none;
-        background-color: transparent;
-      }
-    }
-  }
 
   &__nav {
     display: flex;
     position: relative;
+    user-select: none;
     background-color: $white;
 
     &--line {
-      height: 44px;
+      height: $van-tabs-line-height;
     }
 
     &--card {
-      height: 28px;
       margin: 0 15px;
       border-radius: 2px;
+      height: $van-tabs-card-height;
       border: 1px solid $gray-darker;
 
       .van-tab {
         color: $gray-darker;
-        line-height: 28px;
+        line-height: $van-tabs-card-height;
         border-right: 1px solid $gray-darker;
 
         &:last-child {
@@ -62,6 +48,39 @@
     position: absolute;
     background-color: $red;
   }
+
+  &--scrollbale {
+    .van-tab {
+      flex: 0 0 22%;
+    }
+
+    .van-tabs__nav {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &--fixed {
+    .van-tabs__wrap {
+      top: 0;
+      left: 0;
+      right: 0;
+      position: fixed;
+    }
+
+    &.van-tabs--line {
+      padding-top: $van-tabs-line-height;
+    }
+
+    &.van-tabs--card {
+      padding-top: $van-tabs-card-height;
+    }
+  }
 }
 
 .van-tab {
@@ -71,7 +90,7 @@
   font-size: 14px;
   position: relative;
   color: $text-color;
-  line-height: 44px;
+  line-height: $van-tabs-line-height;
   text-align: center;
   box-sizing: border-box;
   background-color: $white;

@@ -113,4 +113,20 @@ describe('Tabs', () => {
       done();
     });
   });
+
+  it('sticky', (done) => {
+    wrapper = mount(TabsTestComponent, {
+      attachToDocument: true,
+      propsData: {
+        sticky: true
+      }
+    });
+
+    wrapper.vm.sticky = false;
+
+    setTimeout(() => {
+      expect(wrapper.vm.$children[0].fixed).to.be.false;
+      done();
+    }, 30);
+  });
 });

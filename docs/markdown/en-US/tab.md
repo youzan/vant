@@ -100,6 +100,17 @@ export default {
 };
 ```
 
+#### Sticky
+In sticky mode, the tab will be fixed to top when scroll to top
+
+```html
+<van-tabs :active="active" sticky>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | Attribute | Description | Type | Default | Accepted Values |
