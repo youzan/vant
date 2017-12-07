@@ -11,16 +11,16 @@
 **Bug Fixes**
 - 修复 Popup overlayClass 类型错误 [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
 - 修复 Filed number 类型输入值过滤 [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
-- 修复 Icon 'new' 显示问题 [\#381](https://github.com/youzan/vant/pull/381) ([@pangxie1991](https://github.com/pangxie1991))
+- 修复 Icon 'new' 显示问题 [\#381](https://github.com/youzan/vant/pull/381) [@pangxie1991](https://github.com/pangxie1991)
 - 修复 Sku 按钮圆角问题 [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
 - 修复 Radio & Checkbox 禁用态样式 [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
-
+- 修复 Filed disabled 在安卓下的显示问题 [\#388](https://github.com/youzan/vant/pull/388) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
 `2017-12-04`
 
 **Improvements**
-- Coupon：调增 Cell 右侧文案 [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
+- Coupon：调整 Cell 右侧文案 [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
 - GoodsAction: 支持国际化 [\#367](https://github.com/youzan/vant/pull/367) [@chenjiahan](https://github.com/chenjiahan)
 - 增加 Props 命名规范相关文档 [\#366](https://github.com/youzan/vant/pull/366) [@chenjiahan](https://github.com/chenjiahan)
 
