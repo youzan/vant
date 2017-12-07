@@ -79,10 +79,11 @@ Vue.component(Field.name, Field);
 ```
 
 ### API
+Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly` 等
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 输入框类型 | `String` | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
+| type | 输入框类型 | `String` | `text` | `number` `email` `textarea` `tel` `datetime` `date` `password` `url` |
 | value | 输入框的值 | `String` | - | - |
 | label | 输入框标签 | `String` | - | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |

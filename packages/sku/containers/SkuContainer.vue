@@ -72,7 +72,6 @@
 
 <script>
 import Vue from 'vue';
-import { isServer } from '../../utils';
 import Popup from '../../popup';
 import Toast from '../../toast';
 import SkuHeader from '../components/SkuHeader';
@@ -177,7 +176,7 @@ export default {
 
   computed: {
     bodyStyle() {
-      if (isServer) {
+      if (this.$isServer) {
         return;
       }
 

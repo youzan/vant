@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "0.11.4",
+  "version": "0.11.7",
   "description": "有赞vue wap组件库",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
@@ -51,7 +51,7 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.1",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -63,6 +63,7 @@
     "babel-plugin-transform-vue-jsx": "^3.5.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "cache-loader": "^1.2.0",
     "chai": "^4.1.2",
     "cheerio": "^0.22.0",
     "codecov": "^3.0.0",
@@ -70,7 +71,7 @@
     "css-loader": "^0.28.7",
     "dependency-tree": "^5.12.0",
     "eslint-plugin-vue": "^2.1.0",
-    "extract-text-webpack-plugin": "2.0.0",
+    "extract-text-webpack-plugin": "3.0.2",
     "fast-vue-md-loader": "^1.0.2",
     "felint": "^0.5.0-alpha.3",
     "file-save": "^0.2.0",
@@ -115,7 +116,7 @@
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.5.9",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^3.8.1",
+    "webpack": "^3.9.1",
     "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1"

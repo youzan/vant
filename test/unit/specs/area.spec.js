@@ -26,8 +26,6 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-area')).to.be.true;
-
     const confirmBtn = wrapper.find('.van-picker__confirm')[0];
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
@@ -47,17 +45,16 @@ describe('Area', () => {
         value: '110101'
       }
     });
-    
-    expect(wrapper.hasClass('van-area')).to.be.true;
+
     expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110101');
-    
+
     wrapper.setProps({
       value: '110102'
     });
-    wrapper.vm.$nextTick(() => {
+    setTimeout(() => {
       expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110102');
       done();
-    });
+    }, 50);
   });
 
   it('create an area with invalid areaList', () => {
@@ -67,9 +64,7 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-area')).to.be.true;
     expect(wrapper.vm.areaColumns.length).to.equal(0);
-    
   });
 
   it('create an area with columnsNum equal 2', () => {
@@ -80,7 +75,6 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-area')).to.be.true;
     expect(wrapper.vm.areaColumns.length).to.equal(2);
   });
 
@@ -92,7 +86,6 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-area')).to.be.true;
     expect(wrapper.vm.areaColumns.length).to.equal(1);
   });
 
@@ -103,7 +96,6 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-area')).to.be.true;
     const cancelBtn = wrapper.find('.van-picker__cancel')[0];
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
@@ -113,5 +105,24 @@ describe('Area', () => {
       expect(eventStub.calledWith('cancel'));
       done();
     });
+  });
+
+  it('onChange method', () => {
+    wrapper = mount(Area, {
+      propsData: {
+        areaList: AreaList
+      }
+    });
+
+    let list = [];
+    const setColumnValues = (index, arr) => {
+      list = [...list, ...arr];
+    };
+    const code = { code: '110101' };
+
+    wrapper.vm.onChange({ setColumnValues }, [code], 0);
+    wrapper.vm.onChange({ setColumnValues }, [code, code], 1);
+
+    expect(list.length).to.equal(33);
   });
 });

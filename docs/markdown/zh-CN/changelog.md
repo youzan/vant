@@ -1,5 +1,42 @@
 ## 更新日志
 
+### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+`2017-12-07`
+
+**Improvements**
+- Tab: 传入 sticky 属性且切换标签时，自动滚动至顶部 [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab 初始标签滚动位置 [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
+`2017-12-07`
+
+**Improvements**
+- Picker: 支持点击切换选项、禁用选项 [\#370](https://github.com/youzan/vant/pull/370) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: 新增 sticky 属性 [\#382](https://github.com/youzan/vant/pull/382) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: 优化动画流畅度 [\#379](https://github.com/youzan/vant/pull/379) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Popup overlayClass 类型错误 [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Filed number 类型输入值过滤 [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Icon 'new' 显示问题 [\#381](https://github.com/youzan/vant/pull/381) [@pangxie1991](https://github.com/pangxie1991)
+- 修复 Sku 按钮圆角问题 [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Radio & Checkbox 禁用态样式 [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Filed disabled 在安卓下的显示问题 [\#388](https://github.com/youzan/vant/pull/388) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+`2017-12-04`
+
+**Improvements**
+- Coupon：调整 Cell 右侧文案 [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: 支持国际化 [\#367](https://github.com/youzan/vant/pull/367) [@chenjiahan](https://github.com/chenjiahan)
+- 增加 Props 命名规范相关文档 [\#366](https://github.com/youzan/vant/pull/366) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab 删除时未自动切换 active 值的问题 [\#372](https://github.com/youzan/vant/pull/372) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 `2017-11-30`
 

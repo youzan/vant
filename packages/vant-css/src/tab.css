@@ -1,53 +1,48 @@
 @import './common/var.css';
 @import './mixins/ellipsis.css';
 
+$van-tabs-line-height: 44px;
+$van-tabs-card-height: 28px;
+
 .van-tabs {
   position: relative;
 
-  &__nav-wrap {
-    overflow: hidden;
-  }
+  &__wrap {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
 
-  &__swipe {
-    user-select: none;
-    transition: transform linear .2s;
-
-    .van-tab {
-      flex: 0 0 22%;
+    &--page-top {
+      position: fixed;
     }
 
-    .van-tabs__nav {
-      overflow: visible;
+    &--content-bottom {
+      top: auto;
+      bottom: 0;
     }
   }
 
   &__nav {
-    overflow: hidden;
-    transition: transform .5s cubic-bezier(.645, .045, .355, 1);
-    position: relative;
     display: flex;
+    user-select: none;
+    position: relative;
+    background-color: $white;
 
     &--line {
-      height: 44px;
-
-      .van-tab {
-        &::after {
-          border-width: 1px 0;
-        }
-      }
+      height: $van-tabs-line-height;
     }
 
     &--card {
-      height: 28px;
       margin: 0 15px;
-      background-color: $white;
       border-radius: 2px;
+      height: $van-tabs-card-height;
       border: 1px solid $gray-darker;
-      overflow: hidden;
 
       .van-tab {
         color: $gray-darker;
-        line-height: 28px;
+        line-height: $van-tabs-card-height;
         border-right: 1px solid $gray-darker;
 
         &:last-child {
@@ -55,8 +50,8 @@
         }
 
         &.van-tab--active {
-          background-color: $gray-darker;
           color: $white;
+          background-color: $gray-darker;
         }
       }
     }
@@ -64,27 +59,48 @@
 
   &__nav-bar {
     z-index: 1;
-    position: absolute;
     left: 0;
     bottom: 0;
     height: 2px;
-    background-color: #f13e3a;
-    transition: transform .3s cubic-bezier(.645, .045, .355, 1);
-    transform-origin: 0 0;
+    position: absolute;
+    background-color: $red;
+  }
+
+  &--scrollable {
+    .van-tab {
+      flex: 0 0 22%;
+    }
+
+    .van-tabs__nav {
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &--line {
+    padding-top: $van-tabs-line-height;
+  }
+
+  &--card {
+    padding-top: $van-tabs-card-height;
   }
 }
 
 .van-tab {
+  flex: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  font-size: 14px;
   position: relative;
   color: $text-color;
-  background-color: $white;
-  font-size: 14px;
-  line-height: 44px;
-  box-sizing: border-box;
-  cursor: pointer;
+  line-height: $van-tabs-line-height;
   text-align: center;
-  flex: 1;
-  padding: 0 5px;
+  box-sizing: border-box;
+  background-color: $white;
   min-width: 0; /* hack for flex ellipsis */
 
   span {
@@ -92,8 +108,20 @@
     @mixin ellipsis;
   }
 
+  &:active {
+    background-color: $active-color;
+  }
+
   &--active {
     color: $red;
+  }
+
+  &--disabled {
+    color: $gray;
+
+    &:active {
+      background-color: $white;
+    }
   }
 
   &__pane {

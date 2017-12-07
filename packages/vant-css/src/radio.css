@@ -4,6 +4,7 @@ $van-radio-size: 20px;
 
 .van-radio {
   overflow: hidden;
+  user-select: none;
 
   &__input,
   &__label {
@@ -45,7 +46,9 @@ $van-radio-size: 20px;
 
   &--disabled {
     .van-icon {
-      color: #d1dbe5;
+      color: $gray-light;
+      border-radius: 100%;
+      background-color: $background-color;
     }
   }
 }

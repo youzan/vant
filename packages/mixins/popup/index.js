@@ -3,41 +3,24 @@ import context from './popup-context';
 
 export default {
   props: {
-    // popup 当前显示状态
-    value: {
-      type: Boolean,
-      default: false
-    },
-    // 是否显示遮罩层
-    overlay: {
-      type: Boolean,
-      default: false
-    },
-    // 点击遮罩层是否关闭 popup
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: false
-    },
+    // whether to show popup
+    value: Boolean,
+    // whether to show overlay
+    overlay: Boolean,
+    // overlay custom style
+    overlayStyle: Object,
+    // overlay custom class name
+    overlayClass: String,
+    // whether to close popup when click overlay
+    closeOnClickOverlay: Boolean,
+    // z-index
     zIndex: [String, Number],
-    // popup 滚动时是否禁用 body 滚动
+    // prevent touchmove scroll
+    preventScroll: Boolean,
+    // prevent body scroll
     lockOnScroll: {
       type: Boolean,
       default: true
-    },
-    // 防止滚动穿透
-    preventScroll: {
-      type: Boolean,
-      default: false
-    },
-    // 遮罩层额外样式
-    overlayStyle: {
-      type: String,
-      default: ''
-    },
-    // 遮罩层额外类
-    overlayClass: {
-      type: String,
-      default: ''
     }
   },
 

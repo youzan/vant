@@ -1,245 +1,178 @@
+
 <template>
-  <div class="van-picker-column" :class="classNames">
-    <div class="van-picker-column-wrapper" :class="{ dragging: isDragging }" ref="wrapper" :style="{ height: visibleContentHeight + 'px' }">
-      <div
-        v-for="(item, index) in currentValues"
-        :key="index"
-        class="van-picker-column__item"
-        :class="{ 'van-picker-column__item--selected': item === currentValue }"
-        :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }">
-        {{ typeof item === 'object' && item[valueKey] ? item[valueKey] : item }}
-      </div>
-    </div>
+  <div class="van-picker-column" :class="className">
+    <div class="van-picker-column__frame van-hairline--top-bottom" :style="frameStyle" />
+    <ul
+      :style="wrapperStyle"
+      @touchstart="onTouchStart"
+      @touchmove.prevent="onTouchMove"
+      @touchend="onTouchEnd"
+      @touchcancel="onTouchEnd"
+    >
+      <li
+        v-for="(option, index) in options" 
+        v-text="getOptionText(option)"
+        :class="{
+          'van-picker-column--disabled': isDisabled(option),
+          'van-picker-column--selected': index === currentIndex
+        }"
+        @click="setIndex(index)"
+      />
+    </ul>
   </div>
 </template>
 
 <script>
-import translateUtil from '../utils/transition';
-import draggable from './draggable';
-
-const DEFAULT_ITEM_HEIGHT = 44;
+const DEFAULT_DURATION = 200;
+const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
 export default {
   name: 'van-picker-column',
 
   props: {
-    /**
-     * 每一列可见备选元素的个数
-     */
+    valueKey: String,
+    className: String,
+    options: {
+      type: Array,
+      default: () => []
+    },
+    itemHeight: {
+      type: Number,
+      default: 44
+    },
     visibileColumnCount: {
       type: Number,
       default: 5
     },
-    /**
-     * 该列所有的可选值
-     */
-    values: {
-      type: Array,
-      default() {
-        return [];
-      }
-    },
-    /**
-     * 每列添加额外的`className`
-     */
-    className: {
-      type: String,
-      default: ''
-    },
-    /**
-     * 行高
-     */
-    itemHeight: {
+    defaultIndex: {
       type: Number,
-      default: DEFAULT_ITEM_HEIGHT
-    },
-    value: {},
-    valueKey: String
+      default: 0
+    }
   },
 
   data() {
     return {
-      currentValue: this.value,
-      currentValues: this.values,
-      isDragging: false
+      startY: 0,
+      offset: 0,
+      duration: 0,
+      startOffset: 0,
+      currentIndex: this.defaultIndex
     };
   },
 
+  created() {
+    this.$parent && this.$parent.children.push(this);
+  },
+
+  mounted() {
+    this.setIndex(this.currentIndex);
+  },
+
+  destroyed() {
+    this.$parent && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
+  },
+
   watch: {
-    values(val) {
-      this.currentValues = val;
+    defaultIndex() {
+      this.setIndex(this.defaultIndex);
     },
-    currentValues(val) {
-      /* istanbul ignore else */
-      if (this.valueIndex === -1) {
-        this.currentValue = (val || [])[0];
+
+    options(next, prev) {
+      if (JSON.stringify(next) !== JSON.stringify(prev)) {
+        this.setIndex(this.defaultIndex);
       }
     },
-    value(val) {
-      this.currentValue = val;
-    },
-    currentValue(val) {
-      this.doOnValueChange();
 
-      this.$emit('input', val);
-      this.$emit('columnChange', this);
+    currentIndex(index) {
+      this.$emit('change', index);
     }
   },
 
   computed: {
-    /**
-     * picker可见备选元素总高度
-     */
-    visibleContentHeight() {
-      return this.itemHeight * this.visibileColumnCount;
+    count() {
+      return this.options.length;
     },
 
-    /**
-     * 当前选中值在`values`中的索引
-     */
-    valueIndex() {
-      return this.currentValues.indexOf(this.currentValue);
+    wrapperStyle() {
+      const { itemHeight, visibileColumnCount } = this;
+      return {
+        transition: `${this.duration}ms`,
+        transform: `translate3d(0, ${this.offset}px, 0)`,
+        lineHeight: itemHeight + 'px',
+        height: itemHeight * visibileColumnCount + 'px',
+        paddingTop: itemHeight * (visibileColumnCount - 1) / 2 + 'px'
+      };
     },
 
-    /**
-     * 计算picker的拖动范围
-     */
-    dragRange() {
-      var values = this.currentValues;
-      var visibileColumnCount = this.visibileColumnCount;
-      var itemHeight = this.itemHeight;
-
-      return [-itemHeight * (values.length - Math.ceil(visibileColumnCount / 2)), itemHeight * Math.floor(visibileColumnCount / 2)];
-    },
-
-    /**
-     * 计算`classNames`
-     */
-    classNames() {
-      return this.className.split(' ');
-    }
-  },
-
-  mounted() {
-    this.initEvents();
-    this.doOnValueChange();
-  },
-
-  methods: {
-    /**
-     * 将当前`value`值转换成需要垂直方向需要`translate`的值
-     */
-    value2Translate(value) {
-      const values = this.currentValues;
-      const valueIndex = values.indexOf(value);
-      const offset = Math.floor(this.visibileColumnCount / 2);
-      const itemHeight = this.itemHeight;
-
-      if (valueIndex !== -1) {
-        return (valueIndex - offset) * (-itemHeight);
+    frameStyle() {
+      return {
+        height: this.itemHeight + 'px'
       }
     },
 
-    /**
-     * 根据当前`translate`的值转换成当前选中的`value`
-     */
-    translate2Value(translate) {
-      const itemHeight = this.itemHeight;
-      translate = Math.round(translate / itemHeight) * itemHeight;
+    currentValue() {
+      return this.options[this.currentIndex];
+    }
+  },
 
-      const index = -(translate - Math.floor(this.visibileColumnCount / 2) * itemHeight) / itemHeight;
-
-      return this.currentValues[index];
+  methods: {
+    onTouchStart(event) {
+      this.startY = event.touches[0].clientY;
+      this.startOffset = this.offset;
+      this.duration = 0;
     },
 
-    /**
-     * 初始化拖动事件
-     */
-    initEvents() {
-      var el = this.$refs.wrapper;
-      var dragState = {};
+    onTouchMove(event) {
+      const deltaY = event.touches[0].clientY - this.startY;
+      this.offset = range(this.startOffset + deltaY, [
+        -(this.count * this.itemHeight),
+        this.itemHeight
+      ]);
+    },
 
-      var velocityTranslate;
-      var prevTranslate;
-      var pickerItems; // eslint-disable-line
+    onTouchEnd() {
+      if (this.offset !== this.startOffset) {
+        this.duration = DEFAULT_DURATION;
+        const index = range(Math.round(-this.offset / this.itemHeight), [
+          0,
+          this.count - 1
+        ]);
+        this.setIndex(index);
+      }
+    },
 
-      draggable(el, {
-        start: (event) => {
-          // 存储当前状态
-          dragState = {
-            range: this.dragRange,
-            start: new Date(),
-            startLeft: event.pageX,
-            startTop: event.pageY,
-            startTranslateTop: translateUtil.getElementTranslate(el).top
-          };
+    adjustIndex(index) {
+      index = range(index, [0, this.count]);
+      for (let i = index; i < this.count; i++) {
+        if (!this.isDisabled(this.options[i])) return i;
+      }
+      for (let i = index - 1; i >= 0; i--) {
+        if (!this.isDisabled(this.options[i])) return i;
+      }
+    },
 
-          pickerItems = el.querySelectorAll('.van-picker-item'); // eslint-disable-line
-        },
+    isDisabled(option) {
+      return typeof option === 'object' && option.disabled;
+    },
 
-        drag: (event) => {
-          this.isDragging = true;
+    getOptionText(option) {
+      return typeof option === 'object' && this.valueKey in option ? option[this.valueKey] : option;
+    },
 
-          dragState.left = event.pageX;
-          dragState.top = event.pageY;
+    setIndex(index) {
+      index = this.adjustIndex(index);
+      this.offset = -index * this.itemHeight;
+      this.currentIndex = index;
+    },
 
-          const deltaY = dragState.top - dragState.startTop;
-          const translate = dragState.startTranslateTop + deltaY;
-
-          translateUtil.translateElement(el, null, translate);
-
-          velocityTranslate = translate - prevTranslate || translate;
-
-          prevTranslate = translate;
-        },
-
-        end: () => {
-          /* istanbul ignore else */
-          if (this.isDragging) {
-            this.isDragging = false;
-
-            var momentumRatio = 7;
-            var currentTranslate = translateUtil.getElementTranslate(el).top;
-            var duration = new Date() - dragState.start;
-
-            var momentumTranslate;
-            if (duration < 300) {
-              momentumTranslate = currentTranslate + velocityTranslate * momentumRatio;
-            }
-
-            var dragRange = dragState.range;
-
-            this.$nextTick(() => {
-              var translate;
-              var itemHeight = this.itemHeight;
-
-              if (momentumTranslate) {
-                translate = Math.round(momentumTranslate / itemHeight) * itemHeight;
-              } else {
-                translate = Math.round(currentTranslate / itemHeight) * itemHeight;
-              }
-
-              translate = Math.max(Math.min(translate, dragRange[1]), dragRange[0]);
-
-              translateUtil.translateElement(el, null, translate);
-
-              this.currentValue = this.translate2Value(translate);
-            });
-          }
-
-          dragState = {};
+    setValue(value) {
+      const { options, valueKey } = this;
+      for (let i = 0; i < options.length; i++) {
+        if (this.getOptionText(options[i]) === value) {
+          this.setIndex(i);
+          return;
         }
-      });
-    },
-
-    /**
-     * `value`改变时调用
-     */
-    doOnValueChange() {
-      const value = this.currentValue;
-      const wrapper = this.$refs.wrapper;
-
-      translateUtil.translateElement(wrapper, null, this.value2Translate(value));
+      }
     }
   }
 };

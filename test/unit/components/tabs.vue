@@ -1,5 +1,5 @@
 <template>
-  <van-tabs :active="active" :duration="duration" @click="handleTabClick" @disabled="handleTabDisabledClick">
+  <van-tabs :active="active" :duration="duration" @click="handleTabClick" @disabled="handleTabDisabledClick" :sticky="sticky">
     <van-tab :title="firstTabTitle" :disabled="firstTabDisabled">内容一</van-tab>
     <van-tab title="选项二">内容二</van-tab>
     <van-tab title="选项三" disabled>内容三</van-tab>
@@ -24,7 +24,8 @@ export default {
     },
     firstTabDisabled: {
       type: Boolean
-    }
+    },
+    sticky: Boolean
   },
 
   data() {

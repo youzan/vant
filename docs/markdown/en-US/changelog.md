@@ -1,5 +1,42 @@
 ## Changelog
 
+### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+`2017-12-07`
+
+**Improvements**
+- Tab: scroll to top when change tab & sticky [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tab initail tab position [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
+`2017-12-07`
+
+**Improvements**
+- Picker: support click to select and disabled option [\#370](https://github.com/youzan/vant/pull/370) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: support sticky prop [\#382](https://github.com/youzan/vant/pull/382) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: improve animation fluency [\#379](https://github.com/youzan/vant/pull/379) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Popup overlayClass type [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
+- fix Filed number type value filter [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
+- fix Icon 'new' display [\#381](https://github.com/youzan/vant/pull/381) ([@pangxie1991](https://github.com/pangxie1991))
+- fix Sku button border radius [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
+- fix Radio & Checkbox disabled color [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+`2017-12-04`
+
+**Improvements**
+- Coupon: adjust cell text [\#371](https://github.com/youzan/vant/pull/371) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: support i18n [\#367](https://github.com/youzan/vant/pull/367) [@chenjiahan](https://github.com/chenjiahan)
+- Document: add props name style guide [\#366](https://github.com/youzan/vant/pull/366) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tab active block disappeared when delete tab [\#372](https://github.com/youzan/vant/pull/372) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 `2017-11-30`
 

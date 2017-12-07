@@ -1,5 +1,59 @@
 ## 更新日志
 
+## [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7) (2017-12-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.6...v0.11.7)
+
+**Issue**
+
+- navbar  when click left or right  nothing happened [\#387](https://github.com/youzan/vant/issues/387)
+- Popup控件问题 [\#373](https://github.com/youzan/vant/issues/373)
+- Field组件type设置为number，在iOS的webview加载后，仍然可以输入非数字字符 [\#368](https://github.com/youzan/vant/issues/368)
+- picker 点击会跳到最后一项 [\#362](https://github.com/youzan/vant/issues/362)
+
+**Improvements**
+
+- \[Improvement\] Tab: scroll to corrent position when sticky & tab change [\#389](https://github.com/youzan/vant/pull/389) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6) (2017-12-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.5...v0.11.6)
+
+**Issue**
+
+- Popup组件滑动问题 [\#377](https://github.com/youzan/vant/issues/377)
+- Have a issue in NavBar document [\#376](https://github.com/youzan/vant/issues/376)
+
+**Improvements**
+
+- \[Improment\] improve Tab sticky fluency [\#388](https://github.com/youzan/vant/pull/388) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Filed number type value filter [\#386](https://github.com/youzan/vant/pull/386) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add explanation of Filed native propterties [\#384](https://github.com/youzan/vant/pull/384) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Radio & Checkbox disabled color [\#383](https://github.com/youzan/vant/pull/383) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Tab support sticky [\#382](https://github.com/youzan/vant/pull/382) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Icon: fix "new" icon [\#381](https://github.com/youzan/vant/pull/381) ([pangxie1991](https://github.com/pangxie1991))
+- \[Improvement\] add utils test cases [\#380](https://github.com/youzan/vant/pull/380) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab animation fluency && position [\#379](https://github.com/youzan/vant/pull/379) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Sku button border radius [\#378](https://github.com/youzan/vant/pull/378) ([chenjiahan](https://github.com/chenjiahan))
+- \[feature\] use cache loader [\#375](https://github.com/youzan/vant/pull/375) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup overlayClass type [\#374](https://github.com/youzan/vant/pull/374) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Picker: rewrite [\#370](https://github.com/youzan/vant/pull/370) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5) (2017-12-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.4...v0.11.5)
+
+**Issue**
+
+- 使用导入所有组件的方式引入，轮播图lazyload报错Failed to resolve directive: lazy [\#369](https://github.com/youzan/vant/issues/369)
+- picker放入popup中时，不能正常显示title [\#365](https://github.com/youzan/vant/issues/365)
+- cdn的方式引入submitbar不能正常显示buttonText [\#364](https://github.com/youzan/vant/issues/364)
+- 有支持typescript的计划吗？ [\#352](https://github.com/youzan/vant/issues/352)
+
+**Improvements**
+
+- \[bugfix\] Tab: active block disappeared when delete tab [\#372](https://github.com/youzan/vant/pull/372) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CouponCell text adjust [\#371](https://github.com/youzan/vant/pull/371) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] translate SubmitBar && GoodsAction [\#367](https://github.com/youzan/vant/pull/367) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add props name style guide [\#366](https://github.com/youzan/vant/pull/366) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4) (2017-11-30)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.3...v0.11.4)
 

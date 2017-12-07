@@ -95,56 +95,12 @@ describe('Tabs', () => {
         active: 7
       }
     });
- 
+
     wrapper.vm.$nextTick(() => {
       const nTab = wrapper.find('.van-tab')[6];
       nTab.trigger('click');
       done();
     });
-  });
-
-  it('test swipe', (done) => {
-    wrapper = mount(MoreTabsTestComponent, {
-      attachToDocument: true
-    });
-
-    setTimeout(() => {
-      const nSwipe = wrapper.find('.van-tabs__swipe')[0];
-
-      const eventMouseObject = new window.Event('mousedown');
-      eventMouseObject.pageX = 200;
-      nSwipe.element.dispatchEvent(eventMouseObject);
-
-      const eventTouchObject = new window.Event('touchstart');
-      eventTouchObject.changedTouches = [{ pageX: 200 }];
-      nSwipe.element.dispatchEvent(eventTouchObject);
-    }, 500);
-
-    setTimeout(() => {
-      const nSwipe = wrapper.find('.van-tabs__swipe')[0];
-
-      const eventMouseMoveObject = new window.Event('mousemove');
-      eventMouseMoveObject.pageX = 0;
-      document.dispatchEvent(eventMouseMoveObject);
-
-      const eventObject = new window.Event('touchmove');
-      eventObject.changedTouches = [{ pageX: 0 }];
-      nSwipe.element.dispatchEvent(eventObject);
-
-      // 结束滑动
-      const eventMouseUpObject = new window.Event('mouseup');
-      document.dispatchEvent(eventMouseUpObject);
-      const eventEndObject = new window.Event('touchend');
-      eventEndObject.changedTouches = [{}];
-      nSwipe.element.dispatchEvent(eventEndObject);
-    }, 1000);
-
-    setTimeout(() => {
-      const nItem = wrapper.find('.van-tab')[0];
-      expect(nItem.hasClass('van-tab--active')).to.be.true;
-
-      done();
-    }, 1200);
   });
 
   it('watch tab props changes', (done) => {
@@ -156,5 +112,21 @@ describe('Tabs', () => {
       expect(wrapper.find('.van-tab')[0].text().replace(/\n|\s/g, '')).to.equal('测试标题');
       done();
     });
+  });
+
+  it('sticky', (done) => {
+    wrapper = mount(TabsTestComponent, {
+      attachToDocument: true,
+      propsData: {
+        sticky: true
+      }
+    });
+
+    wrapper.vm.sticky = false;
+
+    setTimeout(() => {
+      expect(wrapper.vm.$children[0].position).to.equal('content-top');
+      done();
+    }, 30);
   });
 });

@@ -1,15 +1,7 @@
 <template>
-  <div class="van-coupon-cell">
-    <van-cell-group>
-      <van-cell :title="title" :isLink="editable" @click="$emit('click')">
-        <div v-if="coupons[chosenCoupon]">
-          <div>{{ coupons[chosenCoupon].name }}</div>
-          <div>{{ coupons[chosenCoupon].condition }}</div>
-        </div>
-        <template v-else>{{ guide }}</template>
-      </van-cell>
-    </van-cell-group>
-  </div>
+  <van-cell-group class="van-coupon-cell">
+    <van-cell :title="title || '优惠券码'" :value="value" :isLink="editable" @click="$emit('click')" />
+  </van-cell-group>
 </template>
 
 <script>
@@ -29,10 +21,7 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
-      default: '优惠'
-    },
+    title: String,
     coupons: {
       type: Array,
       default: () => []
@@ -48,8 +37,13 @@ export default {
   },
 
   computed: {
-    guide() {
-      return this.coupons.length === 0 ? '使用优惠' : `您有 ${this.coupons.length} 个可用优惠`;
+    value() {
+      const { coupons } = this;
+      const coupon = coupons[this.chosenCoupon];
+      if (coupon) {
+        return `省￥${(coupon.value / 100).toFixed(2)}`;
+      }
+      return coupons.length === 0 ? '使用优惠' : `您有 ${coupons.length} 个可用优惠`;
     }
   }
 };

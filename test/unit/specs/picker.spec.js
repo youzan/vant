@@ -1,19 +1,24 @@
 import Picker from 'packages/picker';
 import PickerColumn from 'packages/picker/PickerColumn';
 import { mount } from 'avoriaz';
+import { dragHelper } from '../utils';
 
-const itemHeight = 44;
-
-const pickerColumns = [
+const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
+const columns = [
   {
     values: ['vip', 'normal'],
     className: 'column1'
   },
   {
-    values: ['1990', '1991', '1992', '1993', '1994', '1995'],
+    values: simpleColumn,
     className: 'column2'
   }
 ];
+
+const disabledOption = [{
+  disabled: true,
+  text: '123'
+}];
 
 describe('Picker', () => {
   let wrapper;
@@ -24,12 +29,11 @@ describe('Picker', () => {
   it('create picker', () => {
     wrapper = mount(Picker, {
       propsData: {
-        columns: pickerColumns
+        columns: columns
       }
     });
 
     expect(wrapper.hasClass('van-picker')).to.be.true;
-    expect(wrapper.contains('.van-picker__columns--2')).to.be.true;
 
     expect(wrapper.vm.getColumnValues(0).length).to.equal(2);
     expect(wrapper.vm.getValues().length).to.equal(2);
@@ -38,11 +42,10 @@ describe('Picker', () => {
   it('set picker values', () => {
     wrapper = mount(Picker, {
       propsData: {
-        columns: pickerColumns
+        columns: columns
       }
     });
 
-    expect(wrapper.contains('.van-picker__columns--2')).to.be.true;
     expect(wrapper.vm.getColumnValues(0).length).to.equal(2);
     expect(wrapper.vm.getColumnValues(1).length).to.equal(6);
 
@@ -52,19 +55,29 @@ describe('Picker', () => {
     wrapper.vm.setColumnValue(0, 'normal');
     expect(wrapper.vm.getColumnValue(0)).to.equal('normal');
 
+    wrapper.vm.setColumnIndex(0, 0);
+    expect(wrapper.vm.getColumnValue(0)).to.equal('vip');
+
     wrapper.vm.setColumnValue(1, '1991');
     expect(wrapper.vm.getColumnValue(1)).to.equal('1991');
 
     wrapper.vm.setColumnValues(0, ['vip', 'normal', 'other']);
     expect(wrapper.vm.getColumnValues(0).length).to.equal(3);
-
     expect(wrapper.vm.getValues().length).to.equal(2);
+
     wrapper.vm.setValues(['vip', '1992']);
-    expect(wrapper.vm.getColumnValue(0)).to.equal('vip');
-    expect(wrapper.vm.getColumnValue(1)).to.equal('1992');
+    expect(wrapper.vm.getColumnIndex(0)).to.equal(0);
+    expect(wrapper.vm.getColumnIndex(1)).to.equal(2);
+    expect(wrapper.vm.getColumnIndex(2)).to.equal(undefined);
+    expect(wrapper.vm.getIndexes(2)).to.eql([0, 2]);
+
+    wrapper.vm.setIndexes([1, 4]);
+    expect(wrapper.vm.getColumnValue(0)).to.equal('normal');
+    expect(wrapper.vm.getColumnValue(1)).to.equal('1994');
+    expect(wrapper.vm.getColumnValue(2)).to.equal(undefined);
   });
 
-  it('create a invalid columns picker', () => {
+  it('create a simple column picker', () => {
     wrapper = mount(Picker, {
       propsData: {
         columns: undefined
@@ -72,13 +85,23 @@ describe('Picker', () => {
     });
 
     expect(wrapper.hasClass('van-picker')).to.be.true;
-    expect(wrapper.vm.values.length).to.equal(0);
+    expect(wrapper.vm.currentColumns.length).to.equal(0);
+  });
+
+  it('create a invalid columns picker', () => {
+    wrapper = mount(Picker, {
+      propsData: {
+        columns: simpleColumn
+      }
+    });
+
+    expect(wrapper.vm.isSimpleColumn).to.be.true;
   });
 
   it('set invalid index columns', () => {
     wrapper = mount(Picker, {
       propsData: {
-        columns: pickerColumns
+        columns: columns
       }
     });
 
@@ -94,15 +117,28 @@ describe('Picker', () => {
   it('emit a change event when column change', (done) => {
     wrapper = mount(Picker, {
       propsData: {
-        columns: pickerColumns
+        columns: columns
       }
     });
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
-    const firstColumn = wrapper.find(PickerColumn)[0];
-    firstColumn.vm.currentValue = 'normal';
+    wrapper.vm.setColumnValue(0, 'normal');
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('change'));
+      done();
+    });
+  });
 
-    firstColumn.update();
+  it('simple column emit a change event when column change', (done) => {
+    wrapper = mount(Picker, {
+      propsData: {
+        columns: simpleColumn
+      }
+    });
+
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    wrapper.vm.setColumnValue(0, '1993');
     wrapper.vm.$nextTick(() => {
       expect(eventStub.calledOnce).to.be.true;
       expect(eventStub.calledWith('change'));
@@ -119,7 +155,7 @@ describe('Picker', () => {
 
     expect(wrapper.hasClass('van-picker')).to.be.true;
     expect(wrapper.contains('.van-picker__toolbar')).to.be.true;
-    expect(wrapper.vm.values.length).to.equal(0);
+    expect(wrapper.vm.currentColumns.length).to.equal(0);
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const cancelBtn = wrapper.find('.van-picker__cancel')[0];
@@ -152,6 +188,25 @@ describe('Picker', () => {
       done();
     });
   });
+
+  it('simple column emit a confirm event', (done) => {
+    wrapper = mount(Picker, {
+      propsData: {
+        columns: simpleColumn,
+        showToolbar: true
+      }
+    });
+
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    const cancelBtn = wrapper.find('.van-picker__confirm')[0];
+    cancelBtn.trigger('click');
+
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.true;
+      expect(eventStub.calledWith('confirm'));
+      done();
+    });
+  });
 });
 
 describe('PickerColumn', () => {
@@ -164,25 +219,20 @@ describe('PickerColumn', () => {
     wrapper = mount(PickerColumn);
 
     expect(wrapper.hasClass('van-picker-column')).to.be.true;
-    expect(wrapper.vm.values.length).to.equal(0);
-    expect(wrapper.vm.visibleContentHeight).to.equal(itemHeight * 5);
-    expect(wrapper.vm.dragRange[0]).to.equal(3 * itemHeight);
-    expect(wrapper.vm.dragRange[1]).to.equal(2 * itemHeight);
+    expect(wrapper.vm.options.length).to.equal(0);
   });
 
   it('change picker-column value', (done) => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2, 3, 4, 5],
+        options: [1, 2, 3, 4, 5],
         value: 1
       }
     });
 
-    expect(wrapper.hasClass('van-picker-column')).to.be.true;
-    expect(wrapper.vm.values.length).to.equal(5);
+    expect(wrapper.vm.options.length).to.equal(5);
 
-    wrapper.vm.value = 3;
-    wrapper.update();
+    wrapper.vm.setValue(3);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.currentValue).to.equal(3);
       done();
@@ -192,77 +242,73 @@ describe('PickerColumn', () => {
   it('change picker-column values', (done) => {
     wrapper = mount(PickerColumn);
 
-    expect(wrapper.hasClass('van-picker-column')).to.be.true;
-    expect(wrapper.vm.values.length).to.equal(0);
+    expect(wrapper.vm.options.length).to.equal(0);
 
-    wrapper.vm.values = [1, 2];
-    wrapper.update();
+    wrapper.vm.options = [1, 2];
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.values.length).to.equal(2);
-      expect(wrapper.vm.currentValues.length).to.equal(2);
+      expect(wrapper.vm.options.length).to.equal(2);
       done();
     });
   });
 
-  it('create a picker test translate', () => {
+  it('change defaultIndex', (done) => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2, 3, 4, 5],
-        value: 1
+        options: simpleColumn,
+        defaultIndex: 0
       }
     });
 
-    expect(wrapper.vm.values.length).to.equal(5);
-    expect(wrapper.vm.value2Translate(2)).to.equal((1 - Math.floor(5 / 2)) * (-itemHeight));
-    expect(wrapper.vm.translate2Value(0)).to.equal(3);
+    expect(wrapper.vm.currentIndex).to.equal(0);
+    wrapper.vm.defaultIndex = 2;
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.currentIndex).to.equal(2);
+      done();
+    });
   });
 
-  it('test draggable', done => {
+  it('select disabled options', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        values: [1, 2, 3, 4, 5]
-      },
-      attachToDocument: true
+        options: [
+          { text: '1', disabled: true },
+          { text: '2' },
+          { text: '3', disabled: true },
+          { text: '4', disabled: true }
+        ],
+        valueKey: 'text'
+      }
+    });
+    expect(wrapper.vm.currentIndex).to.equal(1);
+
+    wrapper.vm.setIndex(3);
+    expect(wrapper.vm.currentIndex).to.equal(1);
+  });
+
+  it('disabled options', () => {
+    wrapper = mount(PickerColumn, {
+      propsData: {
+        options: disabledOption
+      }
     });
 
-    expect(wrapper.vm.values.length).to.equal(5);
+    expect(wrapper.find('.van-picker-column--disabled').length).to.equal(1);
+    expect(wrapper.vm.currentIndex).to.equal(undefined);
+  });
 
-    setTimeout(() => {
-      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
+  it('drag options', () => {
+    wrapper = mount(PickerColumn, {
+      propsData: {
+        options: columns[1].values
+      }
+    });
+    expect(wrapper.vm.currentIndex).to.equal(0);
 
-      const eventMouseObject = new window.Event('mousedown');
-      eventMouseObject.pageY = 0;
-      nColumn.element.dispatchEvent(eventMouseObject);
+    const column = wrapper.find('.van-picker-column ul')[0];
+    dragHelper(column, 0);
+    expect(wrapper.vm.currentIndex).to.equal(0);
 
-      const eventTouchObject = new window.Event('touchstart');
-      eventTouchObject.changedTouches = [{ pageY: 0 }];
-      nColumn.element.dispatchEvent(eventTouchObject);
-    }, 500);
-
-    setTimeout(() => {
-      const nColumn = wrapper.find('.van-picker-column-wrapper')[0];
-
-      const eventMouseMoveObject = new window.Event('mousemove');
-      eventMouseMoveObject.pageY = 40;
-      document.dispatchEvent(eventMouseMoveObject);
-
-      const eventObject = new window.Event('touchmove');
-      eventObject.changedTouches = [{ pageY: 40 }];
-      nColumn.element.dispatchEvent(eventObject);
-
-      // 结束滚动
-      const eventMouseUpObject = new window.Event('mouseup');
-      document.dispatchEvent(eventMouseUpObject);
-      const eventEndObject = new window.Event('touchend');
-      eventEndObject.changedTouches = [{}];
-      nColumn.element.dispatchEvent(eventEndObject);
-    }, 1000);
-
-    setTimeout(() => {
-      const nItem = wrapper.find('.van-picker-column__item');
-      expect(nItem[1].hasClass('van-picker-column__item--selected')).to.be.true;
-
-      done();
-    }, 1200);
+    dragHelper(column, -100);
+    expect(wrapper.vm.currentIndex).to.equal(2);
   });
 });

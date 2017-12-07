@@ -21,9 +21,12 @@
 
 <script>
 import Button from '../button';
+import { i18n } from '../locale';
 
 export default {
   name: 'van-submit-bar',
+
+  mixins: [i18n],
 
   components: {
     [Button.name]: Button

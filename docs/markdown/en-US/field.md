@@ -77,10 +77,11 @@ Textarea Filed can be auto resize when has `autosize` prop
 ```
 
 ### API
+Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Filed type | `String` | `text` | `number` `email` <br> `textarea` `tel` <br> `datetime` `date` <br> `password` `url` |
+| type | Filed type | `String` | `text` | `number` `email` `textarea` `tel` `datetime` `date` `password` `url` |
 | value | Filed value | `String` | - | - |
 | label | Filed label | `String` | - | - |
 | disabled | Disable field | `Boolean` | `false` | - |
