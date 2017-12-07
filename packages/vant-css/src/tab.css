@@ -74,11 +74,9 @@ $van-tabs-card-height: 28px;
     .van-tabs__nav {
       overflow-x: auto;
       overflow-y: hidden;
-      -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar {
         display: none;
-        background: transparent;
       }
     }
   }
