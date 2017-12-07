@@ -125,7 +125,7 @@ describe('Tabs', () => {
     wrapper.vm.sticky = false;
 
     setTimeout(() => {
-      expect(wrapper.vm.$children[0].fixed).to.be.false;
+      expect(wrapper.vm.$children[0].position).to.equal('content-top');
       done();
     }, 30);
   });

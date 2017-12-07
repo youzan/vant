@@ -85,6 +85,10 @@
     display: block;
     width: 100%;
     resize: none;
+
+    &[disabled] {
+      background-color: transparent;
+    }
   }
 
   &__icon {
