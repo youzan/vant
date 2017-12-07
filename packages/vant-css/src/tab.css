@@ -77,7 +77,7 @@ $van-tabs-card-height: 28px;
 
       &::-webkit-scrollbar {
         display: none;
-        background-color: transparent;
+        background: transparent;
       }
     }
   }
