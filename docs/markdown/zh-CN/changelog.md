@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
+`2017-12-07`
+
+**Improvements**
+- Picker: 支持点击切换选项、禁用选项 [\#370](https://github.com/youzan/vant/pull/370) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: 新增 sticky 属性 [\#382](https://github.com/youzan/vant/pull/382) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: 优化动画流畅度 [\#379](https://github.com/youzan/vant/pull/379) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Popup overlayClass 类型错误 [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Filed number 类型输入值过滤 [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Icon 'new' 显示问题 [\#381](https://github.com/youzan/vant/pull/381) ([@pangxie1991](https://github.com/pangxie1991))
+- 修复 Sku 按钮圆角问题 [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Radio & Checkbox 禁用态样式 [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
 `2017-12-04`
 
