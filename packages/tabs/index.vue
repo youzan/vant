@@ -79,6 +79,11 @@ export default {
     curActive() {
       this.scrollIntoView();
       this.setNavBar();
+
+      // scroll to correct position
+      if (this.position === 'page-top' || this.position === 'content-bottom') {
+        scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
+      }
     },
 
     sticky(isSticky) {
@@ -90,9 +95,12 @@ export default {
     this.correctActive(this.active);
     this.setNavBar();
 
-    if (this.sticky) {
-      this.scrollHandler(true);
-    }
+    this.$nextTick(() => {
+      if (this.sticky) {
+        this.scrollHandler(true);
+      }
+      this.scrollIntoView();
+    });
   },
 
   beforeDestroy() {
