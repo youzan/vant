@@ -95,9 +95,12 @@ export default {
     this.correctActive(this.active);
     this.setNavBar();
 
-    if (this.sticky) {
-      this.scrollHandler(true);
-    }
+    this.$nextTick(() => {
+      if (this.sticky) {
+        this.scrollHandler(true);
+      }
+      this.scrollIntoView();
+    });
   },
 
   beforeDestroy() {
