@@ -1,5 +1,15 @@
 ## 更新日志
 
+### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+`2017-12-07`
+
+**Improvements**
+- Tab: 传入 sticky 属性且切换标签时，自动滚动至顶部 [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tab 初始标签滚动位置 [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
 `2017-12-07`
 

@@ -1,5 +1,14 @@
 ## Changelog
 
+### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+`2017-12-07`
+
+**Improvements**
+- Tab: scroll to top when change tab & sticky [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tab initail tab position [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
 `2017-12-07`
 
