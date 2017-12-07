@@ -79,6 +79,11 @@ export default {
     curActive() {
       this.scrollIntoView();
       this.setNavBar();
+
+      // scroll to correct position
+      if (this.position === 'page-top' || this.position === 'content-bottom') {
+        scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
+      }
     },
 
     sticky(isSticky) {
