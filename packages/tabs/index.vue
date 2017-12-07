@@ -1,6 +1,9 @@
 <template>
-  <div class="van-tabs" :class="[`van-tabs--${type}`, { 'van-tabs--fixed': fixed }]">
-    <div class="van-tabs__wrap" :class="{ 'van-tabs--scrollbale': scrollable, 'van-hairline--top-bottom': type === 'line' }">
+  <div class="van-tabs" :class="[`van-tabs--${type}`]">
+    <div class="van-tabs__wrap" :class="[`van-tabs__wrap--${position}`, {
+      'van-tabs--scrollable': scrollable,
+      'van-hairline--top-bottom': type === 'line'
+    }]">
       <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
@@ -57,7 +60,7 @@ export default {
 
     return {
       tabs: [],
-      fixed: false,
+      position: 'content-top',
       curActive: 0,
       navBarStyle: {}
     };
@@ -92,7 +95,7 @@ export default {
     }
   },
 
-  destoryed() {
+  beforeDestroy() {
     /* istanbul ignore next */
     if (this.sticky) {
       this.scrollHandler(false);
@@ -111,12 +114,23 @@ export default {
     scrollHandler(init) {
       this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
       this.scrollEl[init ? 'addEventListener' : 'removeEventListener']('scroll', this.onScroll);
-      this.onScroll();
+      if (init) {
+        this.onScroll();
+      }
     },
 
-    // fixed tab when scrollTop > distance to top
+    // adjust tab position
     onScroll() {
-      this.fixed = scrollUtils.getScrollTop(this.scrollEl) > scrollUtils.getElementTop(this.$el);
+      const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
+      const elTopToPageTop = scrollUtils.getElementTop(this.$el);
+      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.nav.offsetHeight;
+      if (scrollTop > elBottomToPageTop) {
+        this.position = 'content-bottom';
+      } else if (scrollTop > elTopToPageTop) {
+        this.position = 'page-top';
+      } else {
+        this.position = 'content-top';
+      }
     },
 
     // update nav bar style

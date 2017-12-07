@@ -99,7 +99,7 @@ export default {
 
 <style lang="postcss">
 .demo-tab {
-  margin-bottom: 1000px;
+  margin-bottom: 700px;
 
   .van-tab__pane {
     background-color: #fff;
@@ -120,6 +120,12 @@ export default {
     text-align: center;
     height: 50px;
     line-height: 50px;
+  }
+
+  .van-doc-demo-block:last-child {
+    .van-tab__pane {
+      padding: 50px 20px;
+    }
   }
 }
 </style>

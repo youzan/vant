@@ -7,10 +7,27 @@ $van-tabs-card-height: 28px;
 .van-tabs {
   position: relative;
 
+  &__wrap {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    position: absolute;
+
+    &--page-top {
+      position: fixed;
+    }
+
+    &--content-bottom {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
   &__nav {
     display: flex;
-    position: relative;
     user-select: none;
+    position: relative;
     background-color: $white;
 
     &--line {
@@ -49,13 +66,13 @@ $van-tabs-card-height: 28px;
     background-color: $red;
   }
 
-  &--scrollbale {
+  &--scrollable {
     .van-tab {
       flex: 0 0 22%;
     }
 
     .van-tabs__nav {
-      overflow-y: auto;
+      overflow-x: auto;
       -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar {
@@ -65,21 +82,12 @@ $van-tabs-card-height: 28px;
     }
   }
 
-  &--fixed {
-    .van-tabs__wrap {
-      top: 0;
-      left: 0;
-      right: 0;
-      position: fixed;
-    }
+  &--line {
+    padding-top: $van-tabs-line-height;
+  }
 
-    &.van-tabs--line {
-      padding-top: $van-tabs-line-height;
-    }
-
-    &.van-tabs--card {
-      padding-top: $van-tabs-card-height;
-    }
+  &--card {
+    padding-top: $van-tabs-card-height;
   }
 }
 
