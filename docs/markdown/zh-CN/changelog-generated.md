@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7) (2017-12-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.6...v0.11.7)
+
+**Issue**
+
+- navbar  when click left or right  nothing happened [\#387](https://github.com/youzan/vant/issues/387)
+- Popup控件问题 [\#373](https://github.com/youzan/vant/issues/373)
+- Field组件type设置为number，在iOS的webview加载后，仍然可以输入非数字字符 [\#368](https://github.com/youzan/vant/issues/368)
+- picker 点击会跳到最后一项 [\#362](https://github.com/youzan/vant/issues/362)
+
+**Improvements**
+
+- \[Improvement\] Tab: scroll to corrent position when sticky & tab change [\#389](https://github.com/youzan/vant/pull/389) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6) (2017-12-07)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.5...v0.11.6)
 
