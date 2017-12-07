@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6) (2017-12-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.5...v0.11.6)
+
+**Issue**
+
+- Popup组件滑动问题 [\#377](https://github.com/youzan/vant/issues/377)
+- Have a issue in NavBar document [\#376](https://github.com/youzan/vant/issues/376)
+
+**Improvements**
+
+- \[Improment\] improve Tab sticky fluency [\#388](https://github.com/youzan/vant/pull/388) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Filed number type value filter [\#386](https://github.com/youzan/vant/pull/386) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add explanation of Filed native propterties [\#384](https://github.com/youzan/vant/pull/384) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Radio & Checkbox disabled color [\#383](https://github.com/youzan/vant/pull/383) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Tab support sticky [\#382](https://github.com/youzan/vant/pull/382) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Icon: fix "new" icon [\#381](https://github.com/youzan/vant/pull/381) ([pangxie1991](https://github.com/pangxie1991))
+- \[Improvement\] add utils test cases [\#380](https://github.com/youzan/vant/pull/380) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab animation fluency && position [\#379](https://github.com/youzan/vant/pull/379) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Sku button border radius [\#378](https://github.com/youzan/vant/pull/378) ([chenjiahan](https://github.com/chenjiahan))
+- \[feature\] use cache loader [\#375](https://github.com/youzan/vant/pull/375) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup overlayClass type [\#374](https://github.com/youzan/vant/pull/374) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Picker: rewrite [\#370](https://github.com/youzan/vant/pull/370) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5) (2017-12-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.4...v0.11.5)
 
