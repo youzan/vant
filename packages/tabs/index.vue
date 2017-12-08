@@ -28,10 +28,11 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import { raf } from '../utils/raf';
 import scrollUtils from '../utils/scroll';
 
-export default {
+export default create({
   name: 'van-tabs',
 
   props: {
@@ -200,5 +201,5 @@ export default {
       animate();
     }
   }
-};
+});
 </script>

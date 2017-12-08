@@ -26,18 +26,11 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 import Clickoutside from '../utils/clickoutside';
-import { i18n } from '../locale';
 
-export default {
+export default create({
   name: 'van-search',
-
-  mixins: [i18n],
-
-  components: {
-    Icon
-  },
 
   props: {
     value: String,
@@ -103,5 +96,5 @@ export default {
       this.focusStatus = false;
     }
   }
-};
+});
 </script>

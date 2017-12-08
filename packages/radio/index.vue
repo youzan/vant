@@ -20,15 +20,11 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 import findParent from '../mixins/find-parent';
 
-export default {
+export default create({
   name: 'van-radio',
-
-  components: {
-    Icon
-  },
 
   mixins: [findParent],
 
@@ -76,5 +72,5 @@ export default {
       this.$emit('click');
     }
   }
-};
+});
 </script>

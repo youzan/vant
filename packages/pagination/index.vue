@@ -31,12 +31,10 @@
 </template>
 
 <script>
-import { i18n } from '../locale';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-pagination',
-
-  mixins: [i18n],
 
   props: {
     value: Number,
@@ -144,5 +142,5 @@ export default {
       return { number, text, active };
     }
   }
-};
+});
 </script>

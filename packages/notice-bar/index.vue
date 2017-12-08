@@ -25,14 +25,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-notice-bar',
-
-  components: {
-    Icon
-  },
 
   props: {
     text: String,
@@ -107,5 +103,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

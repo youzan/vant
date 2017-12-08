@@ -5,9 +5,10 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import findParent from '../mixins/find-parent';
 
-export default {
+export default create({
   name: 'van-tab',
 
   mixins: [findParent],
@@ -34,5 +35,5 @@ export default {
   destroyed() {
     this.parentGroup.tabs.splice(this.index, 1);
   }
-};
+});
 </script>

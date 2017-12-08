@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-step',
 
   beforeCreate() {
@@ -37,5 +39,5 @@ export default {
       } : {};
     }
   }
-};
+});
 </script>

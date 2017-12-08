@@ -1,12 +1,13 @@
 import Vue from 'vue';
+import create from './create';
 
-export const isServer = Vue.prototype.$isServer;
+const isServer = Vue.prototype.$isServer;
 
-export function isDef(value) {
+function isDef(value) {
   return value !== undefined && value !== null;
 }
 
-export function get(object, path) {
+function get(object, path) {
   const keys = path.split('.');
   let result = object;
 
@@ -18,11 +19,19 @@ export function get(object, path) {
 }
 
 const camelizeRE = /-(\w)/g;
-export function camelize(str) {
+function camelize(str) {
   return str.replace(camelizeRE, (_, c) => c.toUpperCase());
 }
 
-export function isAndroid() {
+function isAndroid() {
   /* istanbul ignore next */
   return isServer ? false : /android/.test(navigator.userAgent.toLowerCase());
 }
+
+export {
+  get,
+  create,
+  isServer,
+  camelize,
+  isAndroid
+};

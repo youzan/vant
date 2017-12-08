@@ -16,11 +16,12 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
-export default {
+export default create({
   name: 'van-image-preview',
 
   mixins: [Popup],
@@ -70,5 +71,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

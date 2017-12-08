@@ -34,19 +34,13 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Popup from '../mixins/popup';
-import Icon from '../icon';
-import Loading from '../loading';
 
-export default {
+export default create({
   name: 'van-actionsheet',
 
   mixins: [Popup],
-
-  components: {
-    Icon,
-    Loading
-  },
 
   props: {
     value: Boolean,
@@ -75,5 +69,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

@@ -21,12 +21,10 @@
 
 <script>
 import VanButton from '../button';
-import { i18n } from '../locale';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-submit-bar',
-
-  mixins: [i18n],
 
   components: {
     VanButton
@@ -66,5 +64,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

@@ -37,21 +37,17 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 import { isAndroid } from '../utils';
-import { i18n } from '../locale';
 
-export default {
+export default create({
   name: 'van-address-edit-detail',
-
-  mixins: [i18n],
 
   components: {
     Field,
-    Icon,
     Cell,
     CellGroup
   },
@@ -107,5 +103,5 @@ export default {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     }
   }
-};
+});
 </script>

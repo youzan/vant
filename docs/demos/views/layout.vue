@@ -42,9 +42,14 @@ export default {
 
 <style lang="postcss">
 .demo-layout {
-  .van-row {
+  .van-doc-demo-block {
     padding: 0 15px;
   }
+
+  .van-doc-demo-block__title {
+    padding-left: 0;
+  }
+
   .van-col {
     color: #fff;
     font-size: 13px;

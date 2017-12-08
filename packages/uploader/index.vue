@@ -13,7 +13,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-uploader',
 
   props: {
@@ -53,5 +55,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

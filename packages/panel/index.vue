@@ -17,12 +17,14 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-panel',
   props: {
     desc: String,
     title: String,
     status: String
   }
-};
+});
 </script>

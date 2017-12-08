@@ -3,6 +3,7 @@
  */
 
 import Vue from 'vue';
+import i18n from 'packages/mixins/i18n';
 import { Locale, Toast, Dialog } from 'packages';
 import { DemoBlock, DemoSection } from 'vant-doc';
 import { camelize } from 'packages/utils';
@@ -23,7 +24,7 @@ const demoBaseMixin = {
 
 window.Toast = Toast;
 window.Dialog = Dialog;
-Vue.mixin(Locale.i18n);
+Vue.mixin(i18n);
 Vue.mixin(demoBaseMixin);
 Vue.component('demo-block', DemoBlock);
 Vue.component('demo-section', DemoSection);

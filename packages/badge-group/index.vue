@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-badge-group',
 
   props: {
@@ -20,5 +22,5 @@ export default {
       badges: []
     };
   }
-};
+});
 </script>

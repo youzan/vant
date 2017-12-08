@@ -11,11 +11,12 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Picker from '../picker';
 
 const isValidDate = date => Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date.getTime());
 
-export default {
+export default create({
   name: 'van-datetime-picker',
 
   components: {
@@ -286,5 +287,5 @@ export default {
   mounted() {
     this.updateColumnValue(this.innerValue);
   }
-};
+});
 </script>

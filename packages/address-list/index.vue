@@ -16,17 +16,16 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
 
-export default {
+export default create({
   name: 'van-address-list',
 
   components: {
-    Icon,
     Cell,
     Radio,
     CellGroup,
@@ -44,5 +43,5 @@ export default {
       default: '新增收货地址'
     }
   }
-};
+});
 </script>

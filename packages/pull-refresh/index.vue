@@ -27,14 +27,11 @@
 </template>
 
 <script>
-import Loading from '../loading';
+import { create } from '../utils';
 import scrollUtils from '../utils/scroll';
-import { i18n } from '../locale';
 
-export default {
+export default create({
   name: 'van-pull-refresh',
-
-  mixins: [i18n],
 
   props: {
     pullingText: String,
@@ -52,10 +49,6 @@ export default {
       type: Number,
       default: 50
     }
-  },
-
-  components: {
-    Loading
   },
 
   data() {
@@ -171,5 +164,5 @@ export default {
       return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     }
   }
-};
+});
 </script>

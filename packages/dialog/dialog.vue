@@ -31,18 +31,18 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import VanButton from '../button';
 import Popup from '../mixins/popup';
-import { i18n } from '../locale';
 
-export default {
+export default create({
   name: 'van-dialog',
 
   components: {
     VanButton
   },
 
-  mixins: [Popup, i18n],
+  mixins: [Popup],
 
   props: {
     title: String,
@@ -76,5 +76,5 @@ export default {
       this.callback && this.callback(action);
     }
   }
-};
+});
 </script>

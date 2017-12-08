@@ -5,7 +5,10 @@
 </template>
 
 <script>
+import install from '../utils/install';
+
 export default {
+  install,
   name: 'van-icon',
   props: {
     name: String

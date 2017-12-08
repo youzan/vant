@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-row',
 
   props: {
@@ -23,5 +25,5 @@ export default {
         : {};
     }
   }
-};
+});
 </script>

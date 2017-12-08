@@ -7,9 +7,10 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Popup from '../mixins/popup';
 
-export default {
+export default create({
   name: 'van-popup',
 
   mixins: [Popup],
@@ -44,5 +45,5 @@ export default {
       this.open();
     }
   }
-};
+});
 </script>
