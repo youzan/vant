@@ -1,5 +1,17 @@
 ## 更新日志
 
+## [v0.11.8](https://github.com/youzan/vant/tree/v0.11.8) (2017-12-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.7...v0.11.8)
+
+**Improvements**
+
+- \[Improvement\] add two new icon [\#396](https://github.com/youzan/vant/pull/396) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] simplify inner tag name [\#395](https://github.com/youzan/vant/pull/395) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: active tab should keep center [\#394](https://github.com/youzan/vant/pull/394) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: adjust default button border color [\#392](https://github.com/youzan/vant/pull/392) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] translate AddressEdit document [\#391](https://github.com/youzan/vant/pull/391) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: hide scrollbar in mobile safari [\#390](https://github.com/youzan/vant/pull/390) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7) (2017-12-07)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.6...v0.11.7)
 
