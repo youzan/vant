@@ -10,32 +10,29 @@ Vue.component(Button.name, Button);
 ### 代码演示
 
 #### 按钮类型
-
 支持`default`、`primary`、`danger`三种类型，默认为`default`
 
 ```html
-<van-button type="default">Default</van-button>
-<van-button type="primary">Primary</van-button>
-<van-button type="danger">Danger</van-button>
+<van-button type="default">默认按钮</van-button>
+<van-button type="primary">主要按钮</van-button>
+<van-button type="danger">危险按钮</van-button>
 ```
 
 #### 按钮尺寸
-
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
 ```html 
-<van-button size="large">Large</van-button>
-<van-button size="normal">Normal</van-button>
-<van-button size="small">Small</van-button>
-<van-button size="mini">Mini</van-button>
+<van-button size="large">大号按钮</van-button>
+<van-button size="normal">普通按钮</van-button>
+<van-button size="small">小型按钮</van-button>
+<van-button size="mini">迷你按钮</van-button>
 ```
 
 #### 禁用状态
-
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
 ```html
-<van-button disabled>Diabled</van-button>
+<van-button disabled>禁用状态</van-button>
 ```
 
 #### 加载状态
