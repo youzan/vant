@@ -31,7 +31,8 @@ $van-tabs-card-height: 28px;
     background-color: $white;
 
     &--line {
-      height: $van-tabs-line-height;
+      height: 100%;
+      padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
     }
 
     &--card {
@@ -60,7 +61,7 @@ $van-tabs-card-height: 28px;
   &__nav-bar {
     z-index: 1;
     left: 0;
-    bottom: 0;
+    bottom: 15px;
     height: 2px;
     position: absolute;
     background-color: $red;
@@ -72,8 +73,9 @@ $van-tabs-card-height: 28px;
     }
 
     .van-tabs__nav {
+      overflow: hidden;
       overflow-x: auto;
-      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar {
         display: none;
@@ -83,10 +85,18 @@ $van-tabs-card-height: 28px;
 
   &--line {
     padding-top: $van-tabs-line-height;
+
+    .van-tabs__wrap {
+      height: $van-tabs-line-height;
+    }
   }
 
   &--card {
     padding-top: $van-tabs-card-height;
+
+    .van-tabs__wrap {
+      height: $van-tabs-card-height;
+    }
   }
 }
 

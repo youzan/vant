@@ -35,6 +35,7 @@ export default {
   name: 'van-tabs',
 
   props: {
+    sticky: Boolean,
     active: {
       type: [Number, String],
       default: 0
@@ -50,14 +51,10 @@ export default {
     swipeThreshold: {
       type: Number,
       default: 4
-    },
-    sticky: Boolean
+    }
   },
 
   data() {
-    /* istanbul ignore next */
-    this.winWidth = this.$isServer ? 0 : window.innerWidth;
-
     return {
       tabs: [],
       position: 'content-top',
@@ -183,19 +180,10 @@ export default {
 
       const tab = this.$refs.tabs[this.curActive];
       const { nav } = this.$refs;
-      const { winWidth } = this;
-      const { scrollLeft } = nav;
+      const { scrollLeft, offsetWidth: navWidth } = nav;
       const { offsetLeft, offsetWidth: tabWidth } = tab;
 
-      // out of right side
-      /* istanbul ignore next */
-      if ((winWidth + scrollLeft - offsetLeft - tabWidth * 1.8) < 0) {
-        this.scrollTo(nav, scrollLeft, offsetLeft + tabWidth * 1.8 - winWidth);
-      }
-      // out of left side
-      else if (offsetLeft < (scrollLeft + tabWidth * 0.8)) {
-        this.scrollTo(nav, scrollLeft, offsetLeft - tabWidth * 0.8);
-      }
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
     },
 
     // animate the scrollLeft of nav
