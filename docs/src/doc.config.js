@@ -520,7 +520,7 @@ module.exports = {
             list: [
               {
                 path: '/address-edit',
-                title: 'AddressEdit (In translation)'
+                title: 'AddressEdit'
               },
               {
                 path: '/address-list',

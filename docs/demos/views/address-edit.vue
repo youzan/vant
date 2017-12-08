@@ -21,10 +21,26 @@ import areaList from '../mock/area.json';
 export default {
   i18n: {
     'zh-CN': {
-
+      searchResult: [{
+        name: '黄龙万科中心',
+        address: '杭州市西湖区'
+      }, {
+        name: '黄龙万科中心H座'
+      }, {
+        name: '黄龙万科中心H座',
+        address: '杭州市西湖区'
+      }]
     },
     'en-US': {
-
+      searchResult: [{
+        name: 'Name',
+        address: 'Address'
+      }, {
+        name: 'Name'
+      }, {
+        name: 'Name',
+        address: 'Address'
+      }]
     }
   },
 
@@ -45,25 +61,8 @@ export default {
     },
 
     onChangeDetail(val) {
-      if (val) {
-        this.searchResult = [{
-          name: '黄龙万科中心',
-          address: '杭州市西湖区'
-        }, {
-          name: '黄龙万科中心H座'
-        }, {
-          name: '黄龙万科中心H座',
-          address: '杭州市西湖区'
-        }];
-      } else {
-        this.searchResult = [];
-      }
+      this.searchResult = val ? this.$t('searchResult') : [];
     }
   }
 };
 </script>
-
-
-<style lang="postcss">
-
-</style>
