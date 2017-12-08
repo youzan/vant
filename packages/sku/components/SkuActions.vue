@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import Button from '../../button';
+import VanButton from '../../button';
 
 export default {
   name: 'van-sku-actions',
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   props: {

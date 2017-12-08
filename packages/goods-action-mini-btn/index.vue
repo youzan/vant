@@ -1,6 +1,6 @@
 <template>
   <a :href="url" class="van-goods-action__mini-btn van-hairline" @click="$emit('click', $event);">
-    <van-icon class="van-goods-action__mini-btn-icon" :class="iconClass" :name="icon" />
+    <icon class="van-goods-action__mini-btn-icon" :class="iconClass" :name="icon" />
     <slot></slot>
   </a>
 </template>
@@ -12,7 +12,7 @@ export default {
   name: 'van-goods-action-mini-btn',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

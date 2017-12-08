@@ -17,11 +17,11 @@
         :class="{ 'van-tree-select__item--active': activeId === item.id }"
         @click="onItemSelect(item)">
         {{ item.text }}
-        <van-icon
+        <icon
           v-if="activeId === item.id"
           name="success"
           class="van-tree-select__selected"
-        ></van-icon>
+        />
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@ export default {
   name: 'van-tree-select',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

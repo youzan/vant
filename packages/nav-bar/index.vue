@@ -2,7 +2,7 @@
   <div class="van-nav-bar van-hairline--top-bottom" :class="{ 'van-nav-bar--fixed': fixed }">
     <div class="van-nav-bar__left" @click="$emit('click-left')">
       <slot name="left">
-        <van-icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
+        <icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
         <span v-if="leftText" v-text="leftText" class="van-nav-bar__text" />
       </slot>
     </div>
@@ -24,7 +24,7 @@ export default {
   name: 'van-nav-bar',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

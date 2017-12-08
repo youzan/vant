@@ -3,7 +3,7 @@
     <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <div v-text="title" />
-        <van-icon name="close" @click.stop="$emit('input', false)" />
+        <icon name="close" @click.stop="$emit('input', false)" />
       </div>
       <ul v-if="!title" class="van-actionsheet__list">
         <li
@@ -17,7 +17,7 @@
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <van-loading v-else class="van-actionsheet__loading" type="circle" />
+          <loading v-else class="van-actionsheet__loading" type="circle" />
         </li>
       </ul>
       <div
@@ -44,8 +44,8 @@ export default {
   mixins: [Popup],
 
   components: {
-    [Icon.name]: Icon,
-    [Loading.name]: Loading
+    Icon,
+    Loading
   },
 
   props: {

@@ -1,23 +1,23 @@
 <template>
   <div class="van-contact-edit">
-    <van-cell-group>
-      <van-field
+    <cell-group>
+      <field
         v-model="currentInfo.name"
         maxlength="30"
         :label="$t('name')"
         :placeholder="$t('namePlaceholder')"
         :error="errorInfo.name"
         @focus="onFocus('name')">
-      </van-field>
-      <van-field
+      </field>
+      <field
         v-model="currentInfo.tel"
         type="tel"
         :label="$t('tel')"
         :placeholder="$t('telPlaceholder')"
         :error="errorInfo.tel"
         @focus="onFocus('tel')">
-      </van-field>
-    </van-cell-group>
+      </field>
+    </cell-group>
     <div class="van-contact-edit__buttons">
       <van-button block :loading="isSaving" @click="onSaveContact" type="primary">{{ $t('save') }}</van-button>
       <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">{{ $t('delete') }}</van-button>
@@ -27,7 +27,7 @@
 
 <script>
 import Field from '../field';
-import Button from '../button';
+import VanButton from '../button';
 import CellGroup from '../cell-group';
 import Dialog from '../dialog';
 import Toast from '../toast';
@@ -40,9 +40,9 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Field.name]: Field,
-    [Button.name]: Button,
-    [CellGroup.name]: CellGroup
+    Field,
+    VanButton,
+    CellGroup
   },
 
   props: {

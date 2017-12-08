@@ -12,7 +12,7 @@
       <span>{{ validPeriod }}</span>
       <p v-if="disabled && data.reason">{{ data.reason }}</p>
       <div class="van-coupon-item__corner" v-if="chosen">
-        <van-icon name="success" />
+        <icon name="success" />
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@ export default {
   name: 'van-coupon-item',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

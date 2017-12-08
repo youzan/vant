@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Button from '../button';
+import VanButton from '../button';
 import { i18n } from '../locale';
 
 export default {
@@ -29,7 +29,7 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   props: {

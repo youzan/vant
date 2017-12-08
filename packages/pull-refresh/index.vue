@@ -17,7 +17,7 @@
       </slot>
       <slot name="loading" v-if="status === 'loading'">
         <div class="van-pull-refresh__loading">
-          <van-loading />
+          <loading />
           <span>{{ loadingText || $t('loadingText') }}</span>
         </div>
       </slot>
@@ -55,7 +55,7 @@ export default {
   },
 
   components: {
-    [Loading.name]: Loading
+    Loading
   },
 
   data() {

@@ -1,6 +1,6 @@
 <template>
   <div ref="root">
-    <van-field
+    <field
       :label="$t('label.address')"
       :placeholder="$t('placeholder.address')"
       maxlength="200"
@@ -16,23 +16,23 @@
     >
       <div slot="icon">
         <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">{{ $t('complete') }}</span>
-        <van-icon v-else-if="showIcon" name="clear"  />
+        <icon v-else-if="showIcon" name="clear"  />
       </div>
-    </van-field>
+    </field>
 
-    <van-cell-group class="van-address-edit-detail__suggest-list" v-if="showSearchList">
-      <van-cell
+    <cell-group class="van-address-edit-detail__suggest-list" v-if="showSearchList">
+      <cell
         v-for="express in searchResult"
         :key="express.name + express.address"
         class="van-address-edit-detail__suggest-item"
         @click="onSuggestSelect(express)">
-        <van-icon name="location" class="van-address-edit-detail__location" />
+        <icon name="location" class="van-address-edit-detail__location" />
         <div class="van-address-edit-detail__item-info">
           <p class="van-address-edit-detail__title">{{ express.name }}</p>
           <p class="van-address-edit-detail__subtitle">{{ express.address }}</p>
         </div>
-      </van-cell>
-    </van-cell-group>
+      </cell>
+    </cell-group>
   </div>
 </template>
 
@@ -50,10 +50,10 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Field.name]: Field,
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
+    Field,
+    Icon,
+    Cell,
+    CellGroup
   },
 
   props: {
