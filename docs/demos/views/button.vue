@@ -1,20 +1,20 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button type="default">Default</van-button>
-      <van-button type="primary">Primary</van-button>
-      <van-button type="danger">Danger</van-button>
+      <van-button type="default">{{ $t('default') }}</van-button>
+      <van-button type="primary">{{ $t('primary') }}</van-button>
+      <van-button type="danger">{{ $t('danger') }}</van-button>
     </demo-block>
     
     <demo-block :title="$t('title2')">
-      <van-button size="large">Large</van-button>
-      <van-button size="normal">Normal</van-button>
-      <van-button size="small">Small</van-button>
-      <van-button size="mini">Mini</van-button>
+      <van-button size="large">{{ $t('large') }}</van-button>
+      <van-button size="normal">{{ $t('normal') }}</van-button>
+      <van-button size="small">{{ $t('small') }}</van-button>
+      <van-button size="mini">{{ $t('mini') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-button disabled>Diabled</van-button>
+      <van-button disabled>{{ $t('disabled') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -51,14 +51,28 @@ export default {
       title2: '按钮尺寸',
       title3: '加载状态',
       title4: '自定义按钮标签',
-      title5: '页面底部操作按钮'
+      title5: '页面底部操作按钮',
+      default: '默认按钮',
+      primary: '主要按钮',
+      danger: '危险按钮',
+      large: '大号按钮',
+      normal: '普通按钮',
+      small: '小型按钮',
+      mini: '迷你按钮'
     },
     'en-US': {
       title1: 'Type',
       title2: 'Size',
       title3: 'Loading',
       title4: 'Custom Tag',
-      title5: 'Action Button'
+      title5: 'Action Button',
+      default: 'Default',
+      primary: 'Primary',
+      danger: 'Danger',
+      large: 'Large',
+      normal: 'Normal',
+      small: 'Small',
+      mini: 'Mini'
     }
   }
 }

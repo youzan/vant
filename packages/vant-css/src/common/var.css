@@ -17,19 +17,19 @@ $active-color: #e8e8e8;
 $background-color: #f8f8f8;
 
 /* button */
+$button-default-color: $text-color;
+$button-default-background-color: $white;
+$button-default-border-color: $gray-light;
 $button-primary-color: $white;
 $button-primary-background-color: #4b0;
 $button-primary-border-color: #0a0;
-$button-default-color: $text-color;
-$button-default-background-color: $white;
-$button-default-border-color: $border-color;
 $button-danger-color: $white;
 $button-danger-background-color: $red;
 $button-danger-border-color: #e33;
 $button-disabled-color: $gray-dark;
 $button-disabled-background-color: $gray-light;
-$button-disabled-border-color: #cacaca;
-$bottom-action-button-default-color: $white;
-$bottom-action-button-default-background-color: #f85;
-$bottom-action-button-primary-color: $white;
-$bottom-action-button-primary-background-color: $red;
+$button-disabled-border-color: $border-color;
+$button-bottom-action-default-color: $white;
+$button-bottom-action-default-background-color: #f85;
+$button-bottom-action-primary-color: $white;
+$button-bottom-action-primary-background-color: $red;
