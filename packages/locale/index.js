@@ -1,4 +1,4 @@
-mport Vue from 'vue';
+import Vue from 'vue';
 import { get, camelize } from '../utils';
 import deepAssign from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
