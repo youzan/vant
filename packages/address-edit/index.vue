@@ -22,7 +22,7 @@
         <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
         <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
       </cell>
-      <detail
+      <address-edit-detail
         :value="currentInfo.address_detail"
         :isError="errorInfo.address_detail"
         :showSearchResult="showSearchResult"
@@ -78,7 +78,7 @@ import Popup from '../popup';
 import Toast from '../toast';
 import Dialog from '../dialog';
 import VanArea from '../area';
-import Detail from './Detail';
+import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
 import { i18n } from '../locale';
@@ -96,7 +96,7 @@ export default {
     VanButton,
     Popup,
     VanArea,
-    Detail
+    AddressEditDetail
   },
 
   props: {

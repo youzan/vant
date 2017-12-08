@@ -1,25 +1,25 @@
 <template>
-  <van-cell-group class="van-sku-messages">
+  <cell-group class="van-sku-messages">
     <template v-for="(message, index) in internalMessages">
       <template v-if="message.type === 'image'"></template>
-      <van-field v-else-if="message.multiple == '1'"
+      <field v-else-if="message.multiple == '1'"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="placeholderMap.textarea"
         type="textarea"
         v-model="messageValues[index]">
-      </van-field>
-      <van-field v-else
+      </field>
+      <field v-else
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="placeholderMap[message.type]"
         :type="getType(message)"
         v-model="messageValues[index]">
-      </van-field>
+      </field>
     </template>
-  </van-cell-group>
+  </cell-group>
 </template>
 
 <script>
@@ -33,8 +33,8 @@ export default {
   name: 'van-sku-messages',
 
   components: {
-    [Field.name]: Field,
-    [CellGroup.name]: CellGroup
+    Field,
+    CellGroup
   },
 
   props: {
