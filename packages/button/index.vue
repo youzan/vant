@@ -17,7 +17,7 @@
     ]"
       @click="onClick"
     >
-    <van-loading
+    <loading
       v-if="loading"
       class="van-button__icon-loading"
       type="circle"
@@ -36,7 +36,7 @@ export default {
   name: 'van-button',
 
   components: {
-    [Loading.name]: Loading
+    Loading
   },
 
   props: {

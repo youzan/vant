@@ -7,11 +7,11 @@
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <van-swipe :initialSwipe="startPosition">
-      <van-swipe-item v-for="(item, index) in images" :key="index">
+    <swipe :initialSwipe="startPosition">
+      <swipe-item v-for="(item, index) in images" :key="index">
         <img class="van-image-preview__image" :src="item" >
-      </van-swipe-item>
-    </van-swipe>
+      </swipe-item>
+    </swipe>
   </div>  
 </template>
 
@@ -26,8 +26,8 @@ export default {
   mixins: [Popup],
 
   components: {
-    [Swipe.name]: Swipe,
-    [SwipeItem.name]: SwipeItem
+    Swipe,
+    SwipeItem
   },
 
   props: {

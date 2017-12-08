@@ -4,7 +4,7 @@
     :class="{ 'van-search--show-action': showAction }"
     :style="{ 'background-color': background }">
     <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
-      <van-icon name="search" />
+      <icon name="search" />
       <input
         type="search"
         class="van-search__input"
@@ -15,7 +15,7 @@
         @focus="onFocus"
         @keypress.enter.prevent="onSearch"
       >
-      <van-icon name="clear" @click="onClean" v-show="isFocus" />
+      <icon name="clear" @click="onClean" v-show="isFocus" />
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
@@ -36,7 +36,7 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

@@ -8,7 +8,7 @@
       </slot>
     </div>
     <div class="van-picker__columns">
-      <van-picker-column
+      <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
         :valueKey="valueKey"
@@ -25,7 +25,7 @@
 
 <script>
 import { i18n } from '../locale';
-import Column from './PickerColumn';
+import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
 
 export default {
@@ -34,7 +34,7 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Column.name]: Column
+    PickerColumn
   },
 
   props: {

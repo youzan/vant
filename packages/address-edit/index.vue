@@ -1,7 +1,7 @@
 <template>
   <div class="van-address-edit">
-    <van-cell-group>
-      <van-field
+    <cell-group>
+      <field
         maxlength="15"
         :placeholder="$t('placeholder.name')"
         :label="$t('label.name', computedAddressText)"
@@ -9,7 +9,7 @@
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
-      <van-field
+      <field
         type="tel"
         :label="$t('label.tel')"
         :placeholder="$t('placeholder.tel')"
@@ -17,12 +17,12 @@
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <van-cell class="van-address-edit__area" :title="$t('areaTitle')" @click="showAreaSelect = true">
+      <cell class="van-address-edit__area" :title="$t('areaTitle')" @click="showAreaSelect = true">
         <span>{{ currentInfo.province || $t('placeholder.province') }}</span>
         <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
         <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
-      </van-cell>
-      <van-address-edit-detail
+      </cell>
+      <detail
         :value="currentInfo.address_detail"
         :isError="errorInfo.address_detail"
         :showSearchResult="showSearchResult"
@@ -31,7 +31,7 @@
         @blur="onDetailBlur"
         @input="onChangeDetail"
       />
-      <van-field
+      <field
         v-if="showPostal"
         v-show="!hideBottomFields"
         type="tel"
@@ -42,14 +42,14 @@
         class="van-hairline--top"
         :error="errorInfo.postal_code"
         @focus="onFocus('postal_code')">
-      </van-field>
-      <van-switch-cell 
+      </field>
+      <switch-cell 
         v-if="showSetDefault"
         v-show="!hideBottomFields"
         v-model="currentInfo.is_default"
         :title="$t('defaultAddress', computedAddressText)"
       />
-    </van-cell-group>
+    </cell-group>
     <div v-show="!hideBottomFields" class="van-address-edit__buttons">
       <van-button block :loading="isSaving" @click="onSaveAddress" type="primary">
         {{ $t('save') }}
@@ -58,14 +58,14 @@
         {{ $t('deleteAddress', computedAddressText) }}
       </van-button>
     </div>
-    <van-popup v-model="showAreaSelect" position="bottom">
+    <popup v-model="showAreaSelect" position="bottom">
       <van-area
         :value="currentInfo.area_code"
         :areaList="areaList"
         @confirm="onAreaConfirm"
         @cancel="showAreaSelect = false"
       />
-    </van-popup>
+    </popup>
   </div>
 </template>
 
@@ -73,11 +73,11 @@
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import Button from '../button';
+import VanButton from '../button';
 import Popup from '../popup';
 import Toast from '../toast';
 import Dialog from '../dialog';
-import Area from '../area';
+import VanArea from '../area';
 import Detail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
@@ -89,14 +89,14 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Field.name]: Field,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
-    [SwitchCell.name]: SwitchCell,
-    [Button.name]: Button,
-    [Popup.name]: Popup,
-    [Area.name]: Area,
-    [Detail.name]: Detail
+    Field,
+    Cell,
+    CellGroup,
+    SwitchCell,
+    VanButton,
+    Popup,
+    VanArea,
+    Detail
   },
 
   props: {

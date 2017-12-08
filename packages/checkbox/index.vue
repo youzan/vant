@@ -12,7 +12,7 @@
         class="van-checkbox__control"
         :disabled="isDisabled"
       />
-      <van-icon name="success" />
+      <icon name="success" />
     </span>
     <span class="van-checkbox__label" @click="onClickLabel">
       <slot></slot>
@@ -28,7 +28,7 @@ export default {
   name: 'van-checkbox',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   mixins: [findParent],

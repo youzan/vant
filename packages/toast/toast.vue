@@ -8,8 +8,8 @@
 
         <!-- with icon -->
         <template v-if="displayStyle === 'default'">
-          <van-loading v-if="type === 'loading'" color="white" />
-          <van-icon v-else class="van-toast__icon" :name="type" />
+          <loading v-if="type === 'loading'" color="white" />
+          <icon v-else class="van-toast__icon" :name="type" />
           <div v-if="message !== undefined" class="van-toast__text">{{ message }}</div>
         </template>
       </div>
@@ -28,8 +28,8 @@ export default {
   name: 'van-toast',
 
   components: {
-    [Icon.name]: Icon,
-    [Loading.name]: Loading
+    Icon,
+    Loading
   },
 
   props: {

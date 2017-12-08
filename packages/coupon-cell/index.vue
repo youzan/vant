@@ -1,7 +1,7 @@
 <template>
-  <van-cell-group class="van-coupon-cell">
-    <van-cell :title="title || '优惠券码'" :value="value" :isLink="editable" @click="$emit('click')" />
-  </van-cell-group>
+  <cell-group class="van-coupon-cell">
+    <cell :title="title || '优惠券码'" :value="value" :isLink="editable" @click="$emit('click')" />
+  </cell-group>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
   name: 'van-coupon-cell',
 
   components: {
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
+    Cell,
+    CellGroup
   },
 
   model: {

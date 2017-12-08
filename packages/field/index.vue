@@ -1,5 +1,5 @@
 <template>
-  <van-cell
+  <cell
     :title="label"
     :required="required"
     class="van-field"
@@ -41,10 +41,10 @@
       @touchstart.prevent="onClickIcon"
     >
       <slot name="icon">
-        <van-icon :name="icon" />
+        <icon :name="icon" />
       </slot>
     </div>
-  </van-cell>
+  </cell>
 </template>
 
 <script>
@@ -55,8 +55,8 @@ export default {
   name: 'van-field',
 
   components: {
-    [Cell.name]: Cell,
-    [Icon.name]: Icon
+    Cell,
+    Icon
   },
 
   props: {

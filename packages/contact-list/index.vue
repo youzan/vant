@@ -1,17 +1,17 @@
 <template>
   <div class="van-contact-list">
-    <van-radio-group :value="value" @input="$emit('input', $event)">
-      <van-cell-group>
-        <van-cell v-for="(item, index) in list" :key="item.id">
-          <van-radio :name="item.id" @click="$emit('select', item, index)">
+    <radio-group :value="value" @input="$emit('input', $event)">
+      <cell-group>
+        <cell v-for="(item, index) in list" :key="item.id">
+          <radio :name="item.id" @click="$emit('select', item, index)">
             <p class="van-contact-list__text">{{ $t('name') }}：{{ item.name }}</p>
             <p class="van-contact-list__text">{{ $t('tel') }}：{{ item.tel }}</p>
-          </van-radio>
-          <van-icon name="edit" class="van-contact-list__edit" @click="$emit('edit', item, index)" />
-        </van-cell>
-      </van-cell-group>
-    </van-radio-group>
-    <van-cell icon="add" class="van-contact-list__add van-hairline--top" @click="$emit('add')" :title="addText || $t('addText')" isLink />
+          </radio>
+          <icon name="edit" class="van-contact-list__edit" @click="$emit('edit', item, index)" />
+        </cell>
+      </cell-group>
+    </radio-group>
+    <cell icon="add" class="van-contact-list__add van-hairline--top" @click="$emit('add')" :title="addText || $t('addText')" isLink />
   </div>
 </template>
 
@@ -29,11 +29,11 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [Radio.name]: Radio,
-    [CellGroup.name]: CellGroup,
-    [RadioGroup.name]: RadioGroup
+    Icon,
+    Cell,
+    Radio,
+    CellGroup,
+    RadioGroup
   },
 
   props: {
