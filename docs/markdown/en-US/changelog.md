@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
+`2017-12-08`
+
+**Improvements**
+- Icon: add two new icon [\#396](https://github.com/youzan/vant/pull/396) [@chenjiahan](https://github.com/chenjiahan)
+- Button: adjust default button border color [\#392](https://github.com/youzan/vant/pull/392) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Tab: hide scrollbar in mobile safari [\#390](https://github.com/youzan/vant/pull/390) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: active tab should keep center when scrollable [\#394](https://github.com/youzan/vant/pull/394) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
 `2017-12-07`
 
