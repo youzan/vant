@@ -16,6 +16,7 @@
         :class="animationClass"
         :style="contentStyle"
         @animationend="onAnimationEnd"
+        @webkitAnimationEnd="onAnimationEnd"
       >
         <slot>{{ text }}</slot>
       </div>
