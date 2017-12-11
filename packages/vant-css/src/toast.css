@@ -17,10 +17,6 @@
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(39, 39, 39, .7);
 
-  &-wrapper {
-    transition: opacity .2s;
-  }
-
   &__overlay {
     position: fixed;
     top: 0;
@@ -67,8 +63,4 @@
     top: auto;
     bottom: 50px;
   }
-}
-
-.van-toast-fade-enter, .van-toast-fade-leave-to {
-  opacity: 0;
 }
