@@ -51,11 +51,11 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.1",
+    "autoprefixer": "^7.2.2",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-helper-vue-jsx-merge-props": "^2.0.2",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -116,9 +116,9 @@
     "vue-style-loader": "^3.0.0",
     "vue-template-compiler": "^2.5.9",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^3.9.1",
+    "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-dev-server": "^2.9.4",
+    "webpack-dev-server": "^2.9.7",
     "webpack-merge": "^4.1.1"
   }
 }
