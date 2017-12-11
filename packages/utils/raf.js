@@ -16,24 +16,24 @@ function fallback(fn) {
 }
 
 /* istanbul ignore next */
-const global = isServer ? global : window;
+const _global = isServer ? global : window;
 
 /* istanbul ignore next */
 const iRaf =
-  global.requestAnimationFrame ||
-  global.webkitRequestAnimationFrame ||
+  _global.requestAnimationFrame ||
+  _global.webkitRequestAnimationFrame ||
   fallback;
 
 /* istanbul ignore next */
 const iCancel =
-  global.cancelAnimationFrame ||
-  global.webkitCancelAnimationFrame ||
-  global.clearTimeout;
+  _global.cancelAnimationFrame ||
+  _global.webkitCancelAnimationFrame ||
+  _global.clearTimeout;
 
 export function raf(fn) {
-  return iRaf.call(global, fn);
+  return iRaf.call(_global, fn);
 }
 
 export function cancel(id) {
-  iCancel.call(global, id);
+  iCancel.call(_global, id);
 }
