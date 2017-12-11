@@ -1,6 +1,6 @@
 <template>
   <div class="van-area">
-    <van-picker
+    <picker
       ref="picker"
       showToolbar
       valueKey="name"
@@ -38,7 +38,7 @@ export default {
   name: 'van-area',
 
   components: {
-    [Picker.name]: Picker
+    Picker
   },
 
   props: {

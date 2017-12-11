@@ -1,15 +1,15 @@
 <template>
-  <van-popup v-model="show" v-if="!isSkuEmpty" position="bottom" lockOnScroll preventScroll>
+  <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lockOnScroll preventScroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
-          <van-sku-header
+          <sku-header
             :skuEventBus="skuEventBus"
             :selectedSku="selectedSku"
             :selectedSkuComb="selectedSkuComb"
             :goods="goods"
             :sku="sku">
-          </van-sku-header>
+          </sku-header>
         </slot>
         <div class="van-sku-body scroller" :style="bodyStyle">
           <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
@@ -17,10 +17,10 @@
               <div v-for="(skuTreeItem, index) in skuTree"
                 class="van-sku-row-group"
                 :key="index">
-                <van-sku-row
+                <sku-row
                   :skuEventBus="skuEventBus"
                   :skuRow="skuTreeItem">
-                  <van-sku-row-item
+                  <sku-row-item
                     v-for="(skuValue, index) in skuTreeItem.v"
                     :key="index"
                     :skuKeyStr="skuTreeItem.k_s"
@@ -28,14 +28,14 @@
                     :skuEventBus="skuEventBus"
                     :selectedSku="selectedSku"
                     :skuList="sku.list">
-                  </van-sku-row-item>
-                </van-sku-row>
+                  </sku-row-item>
+                </sku-row>
               </div>
             </div>
           </slot>
           <slot name="extra-sku-group" :skuEventBus="skuEventBus"></slot>
           <slot name="sku-stepper" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
-            <van-sku-stepper
+            <sku-stepper
               ref="skuStepper"
               :skuEventBus="skuEventBus"
               :selectedSku="selectedSku"
@@ -47,27 +47,27 @@
               :quotaUsed="quotaUsed"
               :disableStepperInput="disableStepperInput"
               :hideStock="hideStock">
-            </van-sku-stepper>
+            </sku-stepper>
           </slot>
          <slot name="sku-messages">
-            <van-sku-messages
+            <sku-messages
               ref="skuMessages"
               :goodsId="goodsId"
               :messagePlaceholderMap="messagePlaceholderMap"
               :messages="sku.messages">
-            </van-sku-messages>
+            </sku-messages>
           </slot>
         </div>
         <slot name="sku-actions" :skuEventBus="skuEventBus">
-          <van-sku-actions
+          <sku-actions
             :skuEventBus="skuEventBus"
             :buyText="buyText"
             :showAddCartBtn="showAddCartBtn">
-          </van-sku-actions>
+          </sku-actions>
         </slot>
       </div>
     </div>
-  </van-popup>
+  </popup>
 </template>
 
 <script>
@@ -89,13 +89,13 @@ export default {
   name: 'van-sku',
 
   components: {
-    [Popup.name]: Popup,
-    [SkuHeader.name]: SkuHeader,
-    [SkuRow.name]: SkuRow,
-    [SkuRowItem.name]: SkuRowItem,
-    [SkuStepper.name]: SkuStepper,
-    [SkuMessages.name]: SkuMessages,
-    [SkuActions.name]: SkuActions
+    Popup,
+    SkuHeader,
+    SkuRow,
+    SkuRowItem,
+    SkuStepper,
+    SkuMessages,
+    SkuActions
   },
 
   props: {

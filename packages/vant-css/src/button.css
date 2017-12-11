@@ -102,11 +102,11 @@
     border: 0;
     border-radius: 0;
     font-size: 16px;
-    color: $bottom-action-button-default-color;
-    background-color: $bottom-action-button-default-background-color;
+    color: $button-bottom-action-default-color;
+    background-color: $button-bottom-action-default-background-color;
 
     &.van-button--primary {
-      background-color: $bottom-action-button-primary-background-color;
+      background-color: $button-bottom-action-primary-background-color;
     }
   }
 

@@ -11,7 +11,7 @@
         class="van-radio__control"
         :disabled="isDisabled"
       >
-      <van-icon :name="currentValue === name ? 'checked' : 'check'" />
+      <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
     <span class="van-radio__label" @click="handleLabelClick">
       <slot></slot>
@@ -27,7 +27,7 @@ export default {
   name: 'van-radio',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   mixins: [findParent],

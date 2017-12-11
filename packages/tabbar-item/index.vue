@@ -2,7 +2,7 @@
   <div class="van-tabbar-item" :class="{ 'van-tabbar-item--active': active }" @click="onClick">
     <div class="van-tabbar-item__icon" :class="{ 'van-tabbar-item__icon-dot': dot }">
       <slot name="icon" :active="active">
-        <van-icon v-if="icon" :name="icon" />
+        <icon v-if="icon" :name="icon" />
       </slot>
       <div v-if="info" class="van-tabbar-item__info">{{ info }}</div>
     </div>
@@ -22,7 +22,7 @@ export default {
   mixins: [RouterLink],
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

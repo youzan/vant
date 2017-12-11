@@ -1,19 +1,19 @@
 <template>
-  <van-cell :title="title" class="van-switch-cell">
+  <cell :title="title" class="van-switch-cell">
     <van-switch v-bind="$props" @input="$emit('input', $event)" />
-  </van-cell>
+  </cell>
 </template>
 
 <script>
 import Cell from '../cell';
-import Switch from '../switch';
+import VanSwitch from '../switch';
 
 export default {
   name: 'van-switch-cell',
 
   components: {
-    [Cell.name]: Cell,
-    [Switch.name]: Switch
+    Cell,
+    VanSwitch
   },
 
   props: {

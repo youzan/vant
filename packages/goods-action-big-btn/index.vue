@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import Button from '../button';
+import VanButton from '../button';
 
 export default {
   name: 'van-goods-action-big-btn',
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   props: {

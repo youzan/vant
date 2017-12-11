@@ -2,72 +2,60 @@ module.exports = {
   name: 'vant-icon',
   glyphs: [
     {
-      src: '二维码失效.svg',
-      css: 'qr-invalid'
-    },
-    {
-      src: '二维码.svg',
-      css: 'qr'
-    },
-    {
-      src: '兑换.svg',
-      css: 'exchange'
-    },
-    {
       src: '关闭.svg',
       css: 'close'
-    },
-    {
-      src: '其他分店.svg',
-      css: 'location'
     },
     {
       src: '升级地址.svg',
       css: 'upgrade'
     },
     {
-      src: '单选.svg',
-      css: 'check'
+      src: '加购.svg',
+      css: 'add-o'
     },
     {
-      src: '选中.svg',
-      css: 'checked'
-    },
-    {
-      src: '喜欢.svg',
-      css: 'like-o'
-    },
-    {
-      src: '喜欢2.svg',
-      css: 'like'
+      src: '认证通过.svg',
+      css: 'passed'
     },
     {
       src: '客服.svg',
       css: 'chat'
     },
     {
-      src: '店铺.svg',
-      css: 'shop'
+      src: '答疑.svg',
+      css: 'question'
     },
     {
-      src: '拍照.svg',
-      css: 'photograph'
+      src: '时钟.svg',
+      css: 'clock'
     },
     {
-      src: '新增地址.svg',
-      css: 'add'
+      src: '金币.svg',
+      css: 'gold-coin'
     },
     {
-      src: '添加.svg',
-      css: 'add2'
+      src: '播放.svg',
+      css: 'play'
     },
     {
-      src: '加购.svg',
-      css: 'add-o'
+      src: '暂停.svg',
+      css: 'pause'
     },
     {
-      src: '照片.svg',
-      css: 'photo'
+      src: '停止.svg',
+      css: 'stop'
+    },
+    {
+      src: 'more-o.svg',
+      css: 'more-o'
+    },
+    {
+      src: 'share.svg',
+      css: 'share'
+    },
+    {
+      src: '喜欢.svg',
+      css: 'like-o'
     },
     {
       src: '物流.svg',
@@ -78,48 +66,124 @@ module.exports = {
       css: 'edit'
     },
     {
-      src: '认证通过.svg',
-      css: 'passed'
+      src: '兑换.svg',
+      css: 'exchange'
+    },
+    {
+      src: '其他分店.svg',
+      css: 'location'
     },
     {
       src: '购物车2.svg',
       css: 'cart'
     },
     {
-      src: '进入箭头.svg',
-      css: 'arrow'
+      src: '店铺.svg',
+      css: 'shop'
     },
     {
       src: '送礼.svg',
       css: 'gift'
     },
     {
-      src: '搜索.svg',
-      css: 'search'
-    },
-    {
-      src: '清除搜索.svg',
-      css: 'clear'
-    },
-    {
-      src: '成功.svg',
-      css: 'success'
-    },
-    {
-      src: '失败.svg',
-      css: 'fail'
-    },
-    {
       src: '联系人.svg',
       css: 'contact'
     },
     {
-      src: '微信支付.svg',
-      css: 'wechat'
+      src: 'wap首页.svg',
+      css: 'wap-home'
     },
     {
-      src: '支付宝支付.svg',
-      css: 'alipay'
+      src: '积分.svg',
+      css: 'points'
+    },
+    {
+      src: '折扣.svg',
+      css: 'discount'
+    },
+    {
+      src: '积分礼包.svg',
+      css: 'point-gift'
+    },
+    {
+      src: '售后.svg',
+      css: 'after-sale'
+    },
+    {
+      src: '编辑资料.svg',
+      css: 'edit-data'
+    },
+    {
+      src: '删除.svg',
+      css: 'delete'
+    },
+    {
+      src: '记录.svg',
+      css: 'records'
+    },
+    {
+      src: '已完成.svg',
+      css: 'completed'
+    },
+    {
+      src: '认证.svg',
+      css: 'certificate'
+    },
+    {
+      src: '待发货2.svg',
+      css: 'tosend'
+    },
+    {
+      src: '已完成2.svg',
+      css: 'sign'
+    },
+    {
+      src: '首页.svg',
+      css: 'home'
+    },
+    {
+      src: '包邮.svg',
+      css: 'free-postage'
+    },
+    {
+      src: '生日特权.svg',
+      css: 'birthday-privilege'
+    },
+    {
+      src: '会员日特权.svg',
+      css: 'member-day-privilege'
+    },
+    {
+      src: '余额明细.svg',
+      css: 'balance-details'
+    },
+    {
+      src: '返现记录.svg',
+      css: 'cash-back-record'
+    },
+    {
+      src: '积分商城.svg',
+      css: 'points-mall'
+    },
+    {
+      src: '兑换记录.svg',
+      css: 'exchange-record'
+    },
+    {
+      src: '待付款.svg',
+      css: 'pending-payment'
+    },
+    {
+      src: '待接单.svg',
+      css: 'pending-orders'
+    },
+    {
+      src: '待发货.svg',
+      css: 'pending-deliver'
+    },
+    {
+      src: '待评价.svg',
+      css: 'pending-evaluate'
     },
     {
       src: '密码可见.svg',
@@ -130,12 +194,76 @@ module.exports = {
       css: 'password-not-view'
     },
     {
-      src: 'wap导航.svg',
-      css: 'wap-nav'
+      src: '单选.svg',
+      css: 'check'
     },
     {
-      src: 'wap首页.svg',
-      css: 'wap-home'
+      src: '进入箭头.svg',
+      css: 'arrow'
+    },
+    {
+      src: 'arrow-left.svg',
+      css: 'arrow-left'
+    },
+    {
+      src: '成功.svg',
+      css: 'success'
+    },
+    {
+      src: '失败.svg',
+      css: 'fail'
+    },
+    {
+      src: '新增地址.svg',
+      css: 'add'
+    },
+    {
+      src: '选中.svg',
+      css: 'checked'
+    },
+    {
+      src: '喜欢2.svg',
+      css: 'like'
+    },
+    {
+      src: '拍照.svg',
+      css: 'photograph'
+    },
+    {
+      src: '二维码失效.svg',
+      css: 'qr-invalid'
+    },
+    {
+      src: '二维码.svg',
+      css: 'qr'
+    },
+    {
+      src: '添加.svg',
+      css: 'add2'
+    },
+    {
+      src: '照片.svg',
+      css: 'photo'
+    },
+    {
+      src: '搜索.svg',
+      css: 'search'
+    },
+    {
+      src: '清除搜索.svg',
+      css: 'clear'
+    },
+    {
+      src: '微信支付.svg',
+      css: 'wechat'
+    },
+    {
+      src: '支付宝支付.svg',
+      css: 'alipay'
+    },
+    {
+      src: 'wap导航.svg',
+      css: 'wap-nav'
     },
     {
       src: '有赞E卡.svg',
@@ -190,60 +318,8 @@ module.exports = {
       css: 'setting'
     },
     {
-      src: '积分.svg',
-      css: 'points'
-    },
-    {
       src: '优惠券.svg',
       css: 'coupon'
-    },
-    {
-      src: '包邮.svg',
-      css: 'free-postage'
-    },
-    {
-      src: '折扣.svg',
-      css: 'discount'
-    },
-    {
-      src: '生日特权.svg',
-      css: 'birthday-privilege'
-    },
-    {
-      src: '会员日特权.svg',
-      css: 'member-day-privilege'
-    },
-    {
-      src: '余额明细.svg',
-      css: 'balance-details'
-    },
-    {
-      src: '返现记录.svg',
-      css: 'cash-back-record'
-    },
-    {
-      src: '积分商城.svg',
-      css: 'points-mall'
-    },
-    {
-      src: '兑换记录.svg',
-      css: 'exchange-record'
-    },
-    {
-      src: '待付款.svg',
-      css: 'pending-payment'
-    },
-    {
-      src: '待接单.svg',
-      css: 'pending-orders'
-    },
-    {
-      src: '待发货.svg',
-      css: 'pending-deliver'
-    },
-    {
-      src: '待评价.svg',
-      css: 'pending-evaluate'
     },
     {
       src: '礼品卡支付.svg',
@@ -258,28 +334,8 @@ module.exports = {
       css: 'underway'
     },
     {
-      src: '积分礼包.svg',
-      css: 'point-gift'
-    },
-    {
-      src: '售后.svg',
-      css: 'after-sale'
-    },
-    {
-      src: '编辑资料.svg',
-      css: 'edit-data'
-    },
-    {
-      src: '答疑.svg',
-      css: 'question'
-    },
-    {
-      src: '删除.svg',
-      css: 'delete'
-    },
-    {
-      src: '记录.svg',
-      css: 'records'
+      src: '电话.svg',
+      css: 'phone'
     },
     {
       src: '描述.svg',
@@ -290,56 +346,12 @@ module.exports = {
       css: 'card'
     },
     {
-      src: '礼卡.svg',
-      css: 'gift-card'
-    },
-    {
-      src: '时钟.svg',
-      css: 'clock'
-    },
-    {
-      src: '金币.svg',
-      css: 'gold-coin'
-    },
-    {
-      src: '已完成.svg',
-      css: 'completed'
-    },
-    {
       src: '会员余额.svg',
       css: 'value-card'
     },
     {
-      src: '认证.svg',
-      css: 'certificate'
-    },
-    {
-      src: '待发货2.svg',
-      css: 'tosend'
-    },
-    {
-      src: '已完成2.svg',
-      css: 'sign'
-    },
-    {
-      src: '首页.svg',
-      css: 'home'
-    },
-    {
-      src: '电话.svg',
-      css: 'phone'
-    },
-    {
-      src: '播放.svg',
-      css: 'play'
-    },
-    {
-      src: '暂停.svg',
-      css: 'pause'
-    },
-    {
-      src: '停止.svg',
-      css: 'stop'
+      src: '礼卡.svg',
+      css: 'gift-card'
     },
     {
       src: 'HOT.svg',
@@ -356,6 +368,10 @@ module.exports = {
     {
       src: '热卖.svg',
       css: 'hot-sale'
+    },
+    {
+      src: 'more.svg',
+      css: 'more'
     }
   ]
 };

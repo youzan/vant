@@ -16,11 +16,12 @@
         :class="animationClass"
         :style="contentStyle"
         @animationend="onAnimationEnd"
+        @webkitAnimationEnd="onAnimationEnd"
       >
         <slot>{{ text }}</slot>
       </div>
     </div>
-    <van-icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
+    <icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default {
   name: 'van-notice-bar',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

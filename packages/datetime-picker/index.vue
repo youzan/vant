@@ -1,5 +1,5 @@
 <template>
-  <van-picker
+  <picker
     ref="picker"
     showToolbar
     :columns="columns"
@@ -19,7 +19,7 @@ export default {
   name: 'van-datetime-picker',
 
   components: {
-    [Picker.name]: Picker
+    Picker
   },
 
   props: {

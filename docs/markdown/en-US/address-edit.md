@@ -60,45 +60,44 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| areaList | 地区列表 | `Object` | - | - |
-| addressInfo | 收货人信息 | `Object` | `{}` | - |
-| searchResult | 详细地址搜索结果 | `Array` | `[]` | - |
-| addressText | "地址"文案前缀 | `String` | `收货` | - |
-| showPostal | 是否显示邮政编码 | `Boolean` | `false` | - |
-| showSetDefault | 是否显示默认地址栏 | `Boolean` | `false` | - |
-| showSearchResult | 是否显示搜索结果 | `Boolean` | `false` | - |
-| isSaving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
-| isDeleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| areaList | Area List | `Object` | - | - |
+| addressInfo | Address Info | `Object` | `{}` | - |
+| searchResult | Address search result | `Array` | `[]` | - |
+| showPostal | Whether to show postal field | `Boolean` | `false` | - |
+| showSetDefault | Whether to show default address switch | `Boolean` | `false` | - |
+| showSearchResult | Whether to show address search result | `Boolean` | `false` | - |
+| isSaving | Whether to show save button loading status | `Boolean` | `false` | - |
+| isDeleting | Whether to show delete button loading status | `Boolean` | `false` | - |
 
 ### Event
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| save | 点击保存按钮时触发 | content：表单内容 |
-| delete | 点击删除按钮时触发 | content：表单内容 |
-| change-detail | 修改详细地址时触发 | value: 详细地址内容 |
+| save | Triggered when click save button | content：Form content |
+| delete | Triggered when click delete | content：Form content |
+| change-detail | Triggered when address detail changed | value: address detail |
 
 ### Data Structure
 
 #### addressInfo Data Structure
 | key | Description | Type |
 |-----------|-----------|-----------|
-| id | 每条地址的唯一标识 | `String | Number` |
-| name | 收货人姓名 | `String` |
-| tel | 收货人手机号 | `String` |
-| province | 省份 | `String` |
-| city | 城市 | `String` |
-| county | 区县 | `String` |
-| address_detail | 详细地址 | `String` |
-| area_code | 地区编码，通过省市区选择获取 | `String` |
-| postal_code | 邮政编码 | `String` |
-| is_default | 是否为默认地址 | `String` |
+| id | Address Id | `String | Number` |
+| name | Name | `String` |
+| tel | Phone | `String` |
+| province | Province | `String` |
+| city | City | `String` |
+| county | County | `String` |
+| address_detail | Detailed Address | `String` |
+| area_code | Area code | `String` |
+| postal_code | Postal code | `String` |
+| is_default | Is default address | `String` |
 
 #### searchResult Data Structure
 | key | Description | Type |
 |-----------|-----------|-----------|
-| name | 地名 | `String` |
-| address | 详细地址 | `String` |
+| name | Name | `String` |
+| address | Address | `String` |
 
-#### 省市县列表Data Structure
-请参考 [Area](#/zh-CN/component/area) 组件。
+#### Area Data Structure
+Please refer to [Area](#/en-US/component/area) component。

@@ -2,7 +2,7 @@
 @import './mixins/ellipsis.css';
 
 $van-tabs-line-height: 44px;
-$van-tabs-card-height: 28px;
+$van-tabs-card-height: 30px;
 
 .van-tabs {
   position: relative;
@@ -11,7 +11,8 @@ $van-tabs-card-height: 28px;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 99;
+    overflow: hidden;
     position: absolute;
 
     &--page-top {
@@ -31,19 +32,22 @@ $van-tabs-card-height: 28px;
     background-color: $white;
 
     &--line {
-      height: $van-tabs-line-height;
+      height: 100%;
+      padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
+      box-sizing: content-box;
     }
 
     &--card {
       margin: 0 15px;
       border-radius: 2px;
+      box-sizing: border-box;
       height: $van-tabs-card-height;
       border: 1px solid $gray-darker;
 
       .van-tab {
         color: $gray-darker;
-        line-height: $van-tabs-card-height;
         border-right: 1px solid $gray-darker;
+        line-height: calc($van-tabs-card-height - 2px);
 
         &:last-child {
           border-right: none;
@@ -60,7 +64,7 @@ $van-tabs-card-height: 28px;
   &__nav-bar {
     z-index: 1;
     left: 0;
-    bottom: 0;
+    bottom: 15px;
     height: 2px;
     position: absolute;
     background-color: $red;
@@ -72,8 +76,9 @@ $van-tabs-card-height: 28px;
     }
 
     .van-tabs__nav {
+      overflow: hidden;
       overflow-x: auto;
-      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
 
       &::-webkit-scrollbar {
         display: none;
@@ -83,10 +88,18 @@ $van-tabs-card-height: 28px;
 
   &--line {
     padding-top: $van-tabs-line-height;
+
+    .van-tabs__wrap {
+      height: $van-tabs-line-height;
+    }
   }
 
   &--card {
     padding-top: $van-tabs-card-height;
+
+    .van-tabs__wrap {
+      height: $van-tabs-card-height;
+    }
   }
 }
 

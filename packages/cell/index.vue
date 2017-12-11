@@ -2,7 +2,7 @@
   <div class="van-cell van-hairline" :class="{ 'van-cell--required': required }" @click="onClick">
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
-        <van-icon v-if="icon" :name="icon" />
+        <icon v-if="icon" :name="icon" />
       </slot>
       <slot name="title">
         <span class="van-cell__text" v-text="title" />
@@ -22,7 +22,7 @@
       </slot>
     </div>
     <slot name="right-icon">
-      <van-icon name="arrow" class="van-cell__right-icon" v-if="isLink" />
+      <icon name="arrow" class="van-cell__right-icon" v-if="isLink" />
     </slot>
     <slot name="extra" />
   </div>
@@ -38,7 +38,7 @@ export default {
   mixins: [RouterLink],
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Button from '../button';
+import VanButton from '../button';
 import Popup from '../mixins/popup';
 import { i18n } from '../locale';
 
@@ -39,7 +39,7 @@ export default {
   name: 'van-dialog',
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   mixins: [Popup, i18n],

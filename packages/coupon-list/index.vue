@@ -1,11 +1,11 @@
 <template>
   <div class="van-coupon-list">
-    <van-cell-group class="van-coupon-list__top" v-if="showExchangeBar">
-      <van-field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
+    <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
+      <field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
       <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
-    </van-cell-group>
+    </cell-group>
     <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
-      <van-coupon-item
+      <coupon-item
         ref="card"
         v-for="(item, index) in coupons"
         :key="item.id || item.name"
@@ -14,7 +14,7 @@
         @click.native="onClickCoupon(index)"
       />
       <h3 v-if="disabledCoupons.length">{{ disabledListTitle }}</h3>
-      <van-coupon-item
+      <coupon-item
         disabled
         v-for="item in disabledCoupons"
         :key="item.id || item.name"
@@ -38,21 +38,21 @@
 <script>
 import Cell from '../cell';
 import CellGroup from '../cell-group';
-import Item from './Item';
+import CouponItem from './Item';
 import Field from '../field';
 import Popup from '../popup';
-import Button from '../button';
+import VanButton from '../button';
 
 export default {
   name: 'van-coupon-list',
 
   components: {
-    [Button.name]: Button,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
-    [Field.name]: Field,
-    [Popup.name]: Popup,
-    [Item.name]: Item
+    VanButton,
+    Cell,
+    CellGroup,
+    Field,
+    Popup,
+    CouponItem
   },
 
   props: {

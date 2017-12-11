@@ -2,14 +2,14 @@
   <div class="van-sku-stepper-stock">
     <div class="van-sku-stepper-container">
       <div class="van-sku__stepper-title">{{ stepperTitle }}：</div>
-      <van-stepper
+      <stepper
         class="van-sku__stepper"
         v-model="currentNum"
         :min="1"
         :max="stepperLimit"
         :disableInput="disableStepperInput"
         @overlimit="handleOverLimit">
-      </van-stepper>
+      </stepper>
     </div>
     <div v-if="!hideStock" class="van-sku__stock">剩余{{ stock }}件</div>
     <div v-if="quota > 0" class="van-sku__quota">每人限购{{ quota }}件</div>
@@ -26,7 +26,7 @@ export default {
   name: 'van-sku-stepper',
 
   components: {
-    [Stepper.name]: Stepper
+    Stepper
   },
 
   props: {

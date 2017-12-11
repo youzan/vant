@@ -3,7 +3,7 @@
     <div class="van-steps__status" v-if="title || description">
       <div class="van-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">
-          <van-icon :name="icon" :class="iconClass" />
+          <icon :name="icon" :class="iconClass" />
         </slot>
       </div>
       <div class="van-steps__message">
@@ -25,7 +25,7 @@ export default {
   name: 'van-steps',
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {

@@ -2,18 +2,18 @@
   <div class="van-contact-card" :class="`van-contact-card--${type}`" v-on="$listeners">
     <div class="van-contact-card__content">
       <template v-if="type === 'add'">
-        <van-icon class="van-contact-card__icon" name="add2" />
+        <icon class="van-contact-card__icon" name="add2" />
         <div class="van-contact-card__text">{{ addText || $t('addText') }}</div>
       </template>
       <template v-else-if="type === 'edit'">
-        <van-icon class="van-contact-card__icon" name="contact" />
+        <icon class="van-contact-card__icon" name="contact" />
         <div class="van-contact-card__text">
           <div>{{ $t('name') }}：{{ name }}</div>
           <div>{{ $t('tel') }}：{{ tel }}</div>
         </div>
       </template>
     </div>
-    <van-icon class="van-contact-card__arrow" name="arrow" />
+    <icon class="van-contact-card__arrow" name="arrow" />
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
   mixins: [i18n],
 
   components: {
-    [Icon.name]: Icon
+    Icon
   },
 
   props: {
