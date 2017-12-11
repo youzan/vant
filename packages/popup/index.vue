@@ -32,7 +32,7 @@ export default {
   },
 
   data() {
-    const transition = this.transition || (this.position === '' ? 'popup-fade' : `popup-slide-${this.position}`);
+    const transition = this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
     return {
       currentValue: false,
       currentTransition: transition

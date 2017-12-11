@@ -1,5 +1,5 @@
 <template>
-  <transition name="van-toast-fade">
+  <transition name="van-fade">
     <div class="van-toast-wrapper" v-show="visible">
       <div class="van-toast" :class="[`van-toast--${displayStyle}`, `van-toast--${position}`]">
         <!-- text only -->
