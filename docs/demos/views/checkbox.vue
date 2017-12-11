@@ -75,6 +75,15 @@ export default {
     .van-checkbox {
       margin: 0;
     }
+
+    .van-checkbox__input {
+      float: right;
+      position: static;
+    }
+
+    span {
+      margin: 0;
+    }
   }
 }
 </style>

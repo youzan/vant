@@ -75,5 +75,16 @@ export default {
       margin: 10px 0;
     }
   }
+
+  .van-cell {
+    .van-radio__input {
+      float: right;
+      position: static;
+    }
+    
+    .van-radio__label {
+      margin: 0;
+    }
+  }
 }
 </style>
