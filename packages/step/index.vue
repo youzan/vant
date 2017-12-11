@@ -2,7 +2,7 @@
   <div class="van-step van-hairline" :class="[`van-step--${$parent.direction}`, { [`van-step--${status}`]: status }]">
     <div class="van-step__circle-container">
       <i class="van-step__circle" v-if="status !== 'process'" />
-      <i class="van-icon van-icon-checked" :style="{ color: $parent.activeColor }" v-else />
+      <icon v-else name="checked" :style="{ color: $parent.activeColor }" />
     </div>
     <div class="van-step__title" :style="titleStyle">
       <slot></slot>
