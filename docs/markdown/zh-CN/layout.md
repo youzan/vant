@@ -6,8 +6,8 @@
 ``` javascript
 import { Row, Col } from 'vant';
 
-Vue.component(Row.name, Row);
-Vue.component(Col.name, Col);
+Vue.use(Row);
+Vue.use(Col);
 ```
 
 ### 代码演示

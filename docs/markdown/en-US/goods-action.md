@@ -8,9 +8,9 @@ import {
   GoodsActionMiniBtn
 } from 'vant';
 
-Vue.component(GoodsAction.name, GoodsAction);
-Vue.component(GoodsActionBigBtn.name, GoodsActionBigBtn);
-Vue.component(GoodsActionMiniBtn.name, GoodsActionMiniBtn);
+Vue.use(GoodsAction);
+Vue.use(GoodsActionBigBtn);
+Vue.use(GoodsActionMiniBtn);
 ```
 
 ### Usage

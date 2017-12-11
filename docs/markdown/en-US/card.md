@@ -4,7 +4,7 @@
 ``` javascript
 import { Card } from 'vant';
 
-Vue.component(Card.name, Card);
+Vue.use(Card);
 ```
 
 ### Usage

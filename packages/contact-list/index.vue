@@ -16,20 +16,16 @@
 </template>
 
 <script>
-import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
 import CellGroup from '../cell-group';
 import RadioGroup from '../radio-group';
-import { i18n } from '../locale';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-contact-list',
 
-  mixins: [i18n],
-
   components: {
-    Icon,
     Cell,
     Radio,
     CellGroup,
@@ -44,5 +40,5 @@ export default {
       default: () => []
     }
   }
-};
+});
 </script>

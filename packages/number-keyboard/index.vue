@@ -28,7 +28,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-number-keyboard',
 
   props: {
@@ -131,5 +133,5 @@ export default {
       this.$emit(this.show ? 'show' : 'hide');
     }
   }
-};
+});
 </script>

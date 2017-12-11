@@ -4,7 +4,7 @@
 ```javascript
 import { Sku } from 'vant';
 
-Vue.component(Sku.name, Sku);
+Vue.use(Sku);
 ```
 
 ### Usage

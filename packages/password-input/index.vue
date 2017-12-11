@@ -14,7 +14,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-password-input',
 
   props: {
@@ -39,5 +41,5 @@ export default {
       return arr;
     }
   }
-};
+});
 </script>

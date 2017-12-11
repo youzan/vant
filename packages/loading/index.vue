@@ -7,9 +7,11 @@
 </template>
 
 <script>
-export default {
-  name: 'van-loading',
+import install from '../utils/install';
 
+export default {
+  install,
+  name: 'van-loading',
   props: {
     type: {
       type: String,

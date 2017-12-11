@@ -4,7 +4,7 @@
 ``` javascript
 import { NumberKeyboard } from 'vant';
 
-Vue.component(NumberKeyboard.name, NumberKeyboard);
+Vue.use(NumberKeyboard);
 ```
 
 ### 代码演示

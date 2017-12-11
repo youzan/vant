@@ -6,7 +6,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-badge',
 
   props: {
@@ -30,5 +32,5 @@ export default {
       this.$emit('click', this.$parent.badges.indexOf(this));
     }
   }
-};
+});
 </script>

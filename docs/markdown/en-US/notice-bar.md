@@ -4,7 +4,7 @@
 ``` javascript
 import { NoticeBar } from 'vant';
 
-Vue.component(NoticeBar.name, NoticeBar);
+Vue.use(NoticeBar);
 ```
 
 ### Usage

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Picker from '../picker';
 
 const DEFAULT_PROVINCE = {
@@ -34,7 +35,7 @@ const PROVINCE_TYPE = 'provice';
 const CITY_TYPE = 'city';
 const COUNTY_TYPE = 'county';
 
-export default {
+export default create({
   name: 'van-area',
 
   components: {
@@ -146,5 +147,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

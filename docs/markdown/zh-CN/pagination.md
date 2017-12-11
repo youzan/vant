@@ -5,7 +5,7 @@
 ``` javascript
 import { Pagination } from 'vant';
 
-Vue.component(Pagination.name, Pagination);
+Vue.use(Pagination);
 ```
 
 ### 代码演示

@@ -5,7 +5,7 @@
 ``` javascript
 import { SwitchCell } from 'vant';
 
-Vue.component(SwitchCell.name, SwitchCell);
+Vue.use(SwitchCell);
 ```
 
 ### Usage

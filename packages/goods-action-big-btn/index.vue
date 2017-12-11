@@ -4,17 +4,18 @@
     :href="url"
     class="van-goods-action__big-btn"
     :type="primary ? 'primary' : 'default'"
-    @click="$emit('click', $event)"
     bottomAction
+    @click="$emit('click', $event)"
   >
     <slot></slot>
   </van-button>
 </template>
 
 <script>
+import { create } from '../utils';
 import VanButton from '../button';
 
-export default {
+export default create({
   name: 'van-goods-action-big-btn',
 
   components: {
@@ -25,5 +26,5 @@ export default {
     url: String,
     primary: Boolean
   }
-};
+});
 </script>

@@ -5,7 +5,7 @@
 ``` javascript
 import { Area } from 'vant';
 
-Vue.component(Area.name, Area);
+Vue.use(Area);
 ```
 
 ### Usage

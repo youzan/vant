@@ -4,7 +4,7 @@
 ``` javascript
 import { Uploader } from 'vant';
 
-Vue.component(Uploader.name, Uploader);
+Vue.use(Uploader);
 ```
 
 ### 代码演示

@@ -19,14 +19,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-steps',
-
-  components: {
-    Icon
-  },
 
   props: {
     icon: String,
@@ -49,5 +45,5 @@ export default {
       steps: []
     };
   }
-};
+});
 </script>

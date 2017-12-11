@@ -4,7 +4,7 @@
 ``` javascript
 import { Button } from 'vant';
 
-Vue.component(Button.name, Button);
+Vue.use(Button);
 ```
 
 ### Usage

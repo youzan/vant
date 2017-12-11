@@ -48,15 +48,14 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Cell from '../cell';
-import Icon from '../icon';
 
-export default {
+export default create({
   name: 'van-field',
 
   components: {
-    Cell,
-    Icon
+    Cell
   },
 
   props: {
@@ -129,5 +128,5 @@ export default {
       el.style.height = el.scrollHeight + 'px';
     }
   }
-};
+});
 </script>

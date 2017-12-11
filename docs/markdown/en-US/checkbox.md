@@ -4,8 +4,8 @@
 ``` javascript
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.component(Checkbox.name, Checkbox);
-Vue.component(CheckboxGroup.name, CheckboxGroup);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 ```
 
 ### Usage

@@ -4,7 +4,7 @@
 ``` javascript
 import { Icon } from 'vant';
 
-Vue.component(Icon.name, Icon);
+Vue.use(Icon);
 ```
 
 ### 代码演示

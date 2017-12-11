@@ -4,7 +4,7 @@
 ``` javascript
 import { SubmitBar } from 'vant';
 
-Vue.component(SubmitBar.name, SubmitBar);
+Vue.use(SubmitBar);
 ```
 
 ### Usage

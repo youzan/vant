@@ -4,8 +4,8 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.component(Cell.name, Cell);
-Vue.component(CellGroup.name, CellGroup);
+Vue.use(Cell);
+Vue.use(CellGroup);
 ```
 
 ### Usage

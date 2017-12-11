@@ -5,9 +5,9 @@
 ``` javascript
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue.component(ContactCard.name, ContactCard);
-Vue.component(ContactList.name, ContactList);
-Vue.component(ContactEdit.name, ContactEdit);
+Vue.use(ContactCard);
+Vue.use(ContactList);
+Vue.use(ContactEdit);
 ```
 
 ### 代码演示

@@ -4,7 +4,7 @@
 ``` javascript
 import { Search } from 'vant';
 
-Vue.component(Search.name, Search);
+Vue.use(Search);
 ```
 
 ### Usage

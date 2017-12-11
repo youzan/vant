@@ -6,19 +6,15 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-goods-action-mini-btn',
-
-  components: {
-    Icon
-  },
 
   props: {
     url: String,
     icon: String,
     iconClass: String
   }
-};
+});
 </script>

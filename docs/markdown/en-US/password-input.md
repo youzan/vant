@@ -1,23 +1,3 @@
-<script>
-export default {
-  data() {
-    return {
-      value: '',
-      showKeyboard: true
-    }
-  },
-
-  methods: {
-    onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
-    },
-    onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
-    }
-  }
-}
-</script>
-
 ## PasswordInput
 The PasswordInput component is usually used with [NumberKeyboard](#/en-US/component/number-keyboard) Component.
 
@@ -25,8 +5,8 @@ The PasswordInput component is usually used with [NumberKeyboard](#/en-US/compon
 ``` javascript
 import { PasswordInput, NumberKeyBoard } from 'vant';
 
-Vue.component(PasswordInput.name, PasswordInput);
-Vue.component(NumberKeyBoard.name, NumberKeyBoard);
+Vue.use(PasswordInput);
+Vue.use(NumberKeyBoard);
 ```
 
 ### Usage

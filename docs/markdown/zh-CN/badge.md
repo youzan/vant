@@ -4,7 +4,7 @@
 ``` javascript
 import { Badge } from 'vant';
 
-Vue.component(Badge.name, Badge);
+Vue.use(Badge);
 ```
 
 ### 代码演示

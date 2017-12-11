@@ -18,17 +18,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
-import { i18n } from '../locale';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-contact-card',
-
-  mixins: [i18n],
-
-  components: {
-    Icon
-  },
 
   props: {
     tel: String,
@@ -39,5 +32,5 @@ export default {
       default: 'add'
     }
   }
-};
+});
 </script>

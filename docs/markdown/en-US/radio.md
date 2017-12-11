@@ -4,7 +4,7 @@
 ``` javascript
 import { Radio } from 'vant';
 
-Vue.component(Radio.name, Radio);
+Vue.use(Radio);
 ```
 
 ### Usage

@@ -21,9 +21,10 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Clickoutside from '../utils/clickoutside';
 
-export default {
+export default create({
   name: 'van-cell-swipe',
 
   props: {
@@ -134,5 +135,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

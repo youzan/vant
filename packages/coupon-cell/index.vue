@@ -5,10 +5,11 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 
-export default {
+export default create({
   name: 'van-coupon-cell',
 
   components: {
@@ -46,5 +47,5 @@ export default {
       return coupons.length === 0 ? '使用优惠' : `您有 ${coupons.length} 个可用优惠`;
     }
   }
-};
+});
 </script>

@@ -4,7 +4,7 @@
 ``` javascript
 import { Tag } from 'vant';
 
-Vue.component(Tag.name, Tag);
+Vue.use(Tag);
 ```
 
 ### 代码演示

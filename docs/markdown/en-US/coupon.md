@@ -4,8 +4,8 @@
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
-Vue.component(CouponCell.name, CouponCell);
-Vue.component(CouponList.name, CouponList);
+Vue.use(CouponCell);
+Vue.use(CouponList);
 ```
 
 ### Usage

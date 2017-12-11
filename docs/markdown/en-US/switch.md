@@ -4,7 +4,7 @@
 ``` javascript
 import { Switch } from 'vant';
 
-Vue.component(Switch.name, Switch);
+Vue.use(Switch);
 ```
 
 ### Usage

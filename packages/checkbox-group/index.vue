@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-checkbox-group',
 
   props: {
@@ -18,5 +20,5 @@ export default {
       this.$emit('change', val);
     }
   }
-};
+});
 </script>
