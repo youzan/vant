@@ -30,6 +30,7 @@ function isAndroid() {
 
 export {
   get,
+  isDef,
   create,
   isServer,
   camelize,

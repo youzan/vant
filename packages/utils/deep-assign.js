@@ -1,3 +1,5 @@
+import { isDef } from './';
+
 const { hasOwnProperty } = Object.prototype;
 
 function isObj(x) {
@@ -8,12 +10,7 @@ function isObj(x) {
 function assignKey(to, from, key) {
   const val = from[key];
 
-  if (
-    val === undefined ||
-    val === null ||
-    (hasOwnProperty.call(to, key) &&
-      (to[key] === undefined || to[key] === null))
-  ) {
+  if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {
     return;
   }
 
