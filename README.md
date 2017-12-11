@@ -95,7 +95,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 ## Links
 - [Documentation](https://www.youzanyun.com/zanui/vant)
-- [Change log](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
+- [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
 - [React UI Zent](https://www.youzanyun.com/zanui/zent)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
 - [vant-demo](https://github.com/youzan/vant-demo)

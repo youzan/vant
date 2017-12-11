@@ -1,5 +1,28 @@
 ## 更新日志
 
+### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
+`2017-12-11`
+
+**Improvements**
+- Icon: 新增 share & arrow-left 图标 [\#407](https://github.com/youzan/vant/pull/407) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 支持使用本地字体文件 [\#408](https://github.com/youzan/vant/pull/408) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 raf SSR 报错的问题 [\#405](https://github.com/youzan/vant/pull/405) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 NoticeBar animationend 事件兼容问题 [\#402](https://github.com/youzan/vant/pull/402) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
+`2017-12-08`
+
+**Improvements**
+- Icon: 新增两个图标 [\#396](https://github.com/youzan/vant/pull/396) [@chenjiahan](https://github.com/chenjiahan)
+- Button: 调整默认按钮边框颜色 [\#392](https://github.com/youzan/vant/pull/392) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Tab: 修复 safari 下的滚动条问题 [\#390](https://github.com/youzan/vant/pull/390) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: 修复 active 标签不能自动居中的问题 [\#394](https://github.com/youzan/vant/pull/394) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
 `2017-12-07`
 
