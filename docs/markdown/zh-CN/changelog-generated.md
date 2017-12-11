@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v0.11.9](https://github.com/youzan/vant/tree/v0.11.9) (2017-12-11)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.8...v0.11.9)
+
+**Issue**
+
+- picker Components without methods getIndexes、setIndexes、getColumnIndex、setColumnIndex that in documents [\#404](https://github.com/youzan/vant/issues/404)
+- vant非常好用，如何支持ssr，比如nuxtjs？多谢 [\#400](https://github.com/youzan/vant/issues/400)
+- 尝试定制主题遇到的问题 [\#397](https://github.com/youzan/vant/issues/397)
+- 0.11.7版Tabs 标签页在移动端问题 [\#393](https://github.com/youzan/vant/issues/393)
+
+**Improvements**
+
+- \[Improvement\] Support local font file [\#408](https://github.com/youzan/vant/pull/408) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add share & arrow-left icons [\#407](https://github.com/youzan/vant/pull/407) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] update checkbox & radio demo [\#406](https://github.com/youzan/vant/pull/406) ([chenjiahan](https://github.com/chenjiahan))
+- \[hotfix\] raf error in SSR [\#405](https://github.com/youzan/vant/pull/405) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] NoticeBar webkitAnimationEnd [\#402](https://github.com/youzan/vant/pull/402) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.8](https://github.com/youzan/vant/tree/v0.11.8) (2017-12-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.7...v0.11.8)
 

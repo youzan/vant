@@ -1,5 +1,17 @@
 ## Changelog
 
+### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
+`2017-12-11`
+
+**Improvements**
+- Icon: add share & arrow-left icons [\#407](https://github.com/youzan/vant/pull/407) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: support local font file [\#408](https://github.com/youzan/vant/pull/408) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix raf error in SSR [\#405](https://github.com/youzan/vant/pull/405) [@chenjiahan](https://github.com/chenjiahan)
+- fix NoticeBar animationend event in old browser [\#402](https://github.com/youzan/vant/pull/402) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
 `2017-12-08`
 
