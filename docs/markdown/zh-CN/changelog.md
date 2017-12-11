@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
+`2017-12-11`
+
+**Improvements**
+- Icon: 新增 share & arrow-left 图标 [\#407](https://github.com/youzan/vant/pull/407) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 支持使用本地字体文件 [\#408](https://github.com/youzan/vant/pull/408) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 raf SSR 报错的问题 [\#405](https://github.com/youzan/vant/pull/405) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 NoticeBar animationend 事件兼容问题 [\#402](https://github.com/youzan/vant/pull/402) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
 `2017-12-08`
 
