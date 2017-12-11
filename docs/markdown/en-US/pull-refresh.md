@@ -4,7 +4,7 @@
 ``` javascript
 import { PullRefresh } from 'vant';
 
-Vue.component(PullRefresh.name, PullRefresh);
+Vue.use(PullRefresh);
 ```
 
 ### Usage

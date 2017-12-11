@@ -4,7 +4,7 @@
 ``` javascript
 import { Panel } from 'vant';
 
-Vue.component(Panel.name, Panel);
+Vue.use(Panel);
 ```
 
 ### 代码演示

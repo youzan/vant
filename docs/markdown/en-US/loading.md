@@ -4,7 +4,7 @@
 ``` javascript
 import { Loading } from 'vant';
 
-Vue.component(Loading.name, Loading);
+Vue.use(Loading);
 ```
 
 ### Usage

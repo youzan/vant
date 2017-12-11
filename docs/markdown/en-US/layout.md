@@ -6,8 +6,8 @@ Quickly and easily create layouts with `van-row` and `van-col`
 ``` javascript
 import { Row, Col } from 'vant';
 
-Vue.component(Row.name, Row);
-Vue.component(Col.name, Col);
+Vue.use(Row);
+Vue.use(Col);
 ```
 
 ### Usage

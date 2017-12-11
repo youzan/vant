@@ -4,7 +4,7 @@
 ``` javascript
 import { Progress } from 'vant';
 
-Vue.component(Progress.name, Progress);
+Vue.use(Progress);
 ```
 
 ### 代码演示

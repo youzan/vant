@@ -4,7 +4,7 @@
 ``` javascript
 import { TreeSelect } from 'vant';
 
-Vue.component(TreeSelect.name, TreeSelect);
+Vue.use(TreeSelect);
 ```
 
 ### 代码演示

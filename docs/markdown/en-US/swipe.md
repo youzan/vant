@@ -4,8 +4,8 @@
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
 ```
 
 ### Usage

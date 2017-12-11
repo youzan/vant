@@ -4,8 +4,8 @@
 ``` javascript
 import { Tab, Tabs } from 'vant';
 
-Vue.component(Tab.name, Tab);
-Vue.component(Tabs.name, Tabs);
+Vue.use(Tab);
+Vue.use(Tabs);
 ```
 
 ### Usage
