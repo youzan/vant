@@ -11,11 +11,6 @@ import docConfig from './doc.config';
 
 export default {
   data() {
-    if (window.location.host === 'www.youzanyun.com') {
-      const group = docConfig['zh-CN'].nav[0].groups[0];
-      group.list = group.list.filter(item => item.title !== '业务组件');
-    }
-
     return {
       simulators: [`/zanui/vant/examples${location.hash}`],
       demoURL: ''
