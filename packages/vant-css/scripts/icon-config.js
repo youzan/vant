@@ -50,6 +50,10 @@ module.exports = {
       css: 'more-o'
     },
     {
+      src: 'share.svg',
+      css: 'share'
+    },
+    {
       src: '喜欢.svg',
       css: 'like-o'
     },
@@ -196,6 +200,10 @@ module.exports = {
     {
       src: '进入箭头.svg',
       css: 'arrow'
+    },
+    {
+      src: 'arrow-left.svg',
+      css: 'arrow-left'
     },
     {
       src: '成功.svg',
