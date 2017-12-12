@@ -63,7 +63,13 @@ Vue.use(CellGroup);
 </van-cell-group>
 ```
 
-### API
+### CellGroup API
+
+| Attribute | Description | Type | Default | Accepted Values |
+|-----------|-----------|-----------|-------------|-------------|
+| border | Whether to show outer border | `Boolean` | `true` | - |
+
+### Cell API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
