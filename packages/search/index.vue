@@ -8,14 +8,14 @@
       <input
         type="search"
         class="van-search__input"
+        v-bind="$attrs"
         v-refocus="focusStatus"
         :value="value"
-        :placeholder="placeholder"
         @input="onInput"
         @focus="onFocus"
         @keypress.enter.prevent="onSearch"
       >
-      <icon name="clear" @click="onClean" v-show="isFocus" />
+      <icon name="clear" v-show="isFocus && value" @click="onClean" />
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
@@ -35,7 +35,6 @@ export default create({
   props: {
     value: String,
     showAction: Boolean,
-    placeholder: String,
     background: {
       type: String,
       default: '#f2f2f2'

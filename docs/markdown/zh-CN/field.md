@@ -79,7 +79,7 @@ Vue.use(Field);
 ```
 
 ### API
-Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly` 等
+Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly`、`autofocus` 等
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
