@@ -6,11 +6,12 @@
     <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
       <icon name="search" />
       <input
+        ref="input"
         type="search"
         class="van-search__input"
+        v-bind="$attrs"
         v-refocus="focusStatus"
         :value="value"
-        :placeholder="placeholder"
         @input="onInput"
         @focus="onFocus"
         @keypress.enter.prevent="onSearch"
@@ -35,7 +36,6 @@ export default create({
   props: {
     value: String,
     showAction: Boolean,
-    placeholder: String,
     background: {
       type: String,
       default: '#f2f2f2'

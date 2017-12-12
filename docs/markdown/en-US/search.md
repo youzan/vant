@@ -55,6 +55,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 ```
 
 ### API
+Search support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
