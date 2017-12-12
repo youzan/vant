@@ -4,7 +4,7 @@
 ``` javascript
 import { CellSwipe } from 'vant';
 
-Vue.component(CellSwipe.name, CellSwipe);
+Vue.use(CellSwipe);
 ```
 
 ### Usage

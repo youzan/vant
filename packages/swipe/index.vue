@@ -22,7 +22,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-swipe',
 
   props: {
@@ -191,5 +193,5 @@ export default {
       return Math.min(Math.max(num, arr[0]), arr[1]);
     }
   }
-};
+});
 </script>

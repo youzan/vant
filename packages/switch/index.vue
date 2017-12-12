@@ -8,14 +8,10 @@
 </template>
 
 <script>
-import Loading from '../loading';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-switch',
-
-  components: {
-    Loading
-  },
 
   props: {
     value: Boolean,
@@ -31,5 +27,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

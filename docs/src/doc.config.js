@@ -31,10 +31,6 @@ module.exports = {
                 noExample: true
               },
               {
-                title: '业务组件',
-                link: '/zanui/captain'
-              },
-              {
                 path: '/changelog',
                 title: '更新日志',
                 noExample: true

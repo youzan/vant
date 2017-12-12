@@ -5,6 +5,7 @@ import routes from './router.config';
 import Vant, { Lazyload } from 'packages';
 import VantDoc from 'vant-doc';
 import 'packages/vant-css/src/index.css';
+import 'packages/vant-css/src/icon-local.css';
 import 'vant-doc/src/helper/touch-simulator';
 
 Vue.use(Vant);

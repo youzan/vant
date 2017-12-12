@@ -1,5 +1,5 @@
 <template>
-  <transition name="van-toast-fade">
+  <transition name="van-fade">
     <div class="van-toast-wrapper" v-show="visible">
       <div class="van-toast" :class="[`van-toast--${displayStyle}`, `van-toast--${position}`]">
         <!-- text only -->
@@ -19,18 +19,12 @@
 </template>
 
 <script>
-import Icon from '../icon';
-import Loading from '../loading';
+import { create } from '../utils';
 
 const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
 
-export default {
+export default create({
   name: 'van-toast',
-
-  components: {
-    Icon,
-    Loading
-  },
 
   props: {
     mask: Boolean,
@@ -57,5 +51,5 @@ export default {
       return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
     }
   }
-};
+});
 </script>

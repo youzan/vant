@@ -4,7 +4,7 @@
 ``` javascript
 import { TreeSelect } from 'vant';
 
-Vue.component(TreeSelect.name, TreeSelect);
+Vue.use(TreeSelect);
 ```
 
 ### Usage
@@ -62,7 +62,7 @@ export default {
 ### Data Structure
 `items` should be an array contains specified tree objects.
 
-In every tree object, `text` property defines the name, `id` stands for the unique key while the `children` contains sub-tree objects.
+In every tree object, `text` property defines `id` stands for the unique key while the `children` contains sub-tree objects.
 
 ```javascript
 [

@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-tabbar',
 
   data() {
@@ -42,5 +44,5 @@ export default {
       this.$emit('change', active);
     }
   }
-};
+});
 </script>

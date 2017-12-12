@@ -19,6 +19,25 @@
   }
 }
 
+@keyframes van-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.van-fade {
+  &-enter-active {
+    animation: .3s van-fade-in;
+  }
+
+  &-leave-active {
+    animation: .3s van-fade-out;
+  }
+}
+
 .van-slide-bottom {
   &-enter-active {
     animation: van-slide-bottom-enter .3s both ease;

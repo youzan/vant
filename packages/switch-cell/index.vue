@@ -7,8 +7,9 @@
 <script>
 import Cell from '../cell';
 import VanSwitch from '../switch';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-switch-cell',
 
   components: {
@@ -28,5 +29,5 @@ export default {
       this.$emit('change', this.value);
     }
   }
-};
+});
 </script>

@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 import CouponItem from './Item';
@@ -43,7 +44,7 @@ import Field from '../field';
 import Popup from '../popup';
 import VanButton from '../button';
 
-export default {
+export default create({
   name: 'van-coupon-list',
 
   components: {
@@ -144,5 +145,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

@@ -38,6 +38,7 @@ export default {
     height: 100px;
     float: none;
     display: inline-block;
+    vertical-align: middle;
   }
 
   .van-icon {

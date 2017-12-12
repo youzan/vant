@@ -23,7 +23,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-stepper',
 
   props: {
@@ -119,5 +121,5 @@ export default {
       this.$emit(type);
     }
   }
-};
+});
 </script>

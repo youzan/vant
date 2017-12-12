@@ -28,14 +28,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-tree-select',
-
-  components: {
-    Icon
-  },
 
   props: {
     items: {
@@ -75,5 +71,5 @@ export default {
       this.$emit('itemclick', { ...data });
     }
   }
-};
+});
 </script>

@@ -4,8 +4,8 @@
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
 
-Vue.component(Tabbar.name, Tabbar);
-Vue.component(TabbarItem.name, TabbarItem);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
 ```
 
 ### Usage

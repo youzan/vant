@@ -4,7 +4,7 @@
 ``` javascript
 import { Actionsheet } from 'vant';
 
-Vue.component(Actionsheet.name, Actionsheet);
+Vue.use(Actionsheet);
 ```
 
 ### Usage

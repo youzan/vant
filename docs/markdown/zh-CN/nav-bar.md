@@ -4,7 +4,7 @@
 ``` javascript
 import { NavBar } from 'vant';
 
-Vue.component(NavBar.name, NavBar);
+Vue.use(NavBar);
 ```
 
 ### 代码演示

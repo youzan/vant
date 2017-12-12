@@ -19,14 +19,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-coupon-item',
-
-  components: {
-    Icon
-  },
 
   props: {
     data: Object,
@@ -67,5 +63,5 @@ export default {
       return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
     }
   }
-};
+});
 </script>

@@ -7,9 +7,10 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Popup from '../mixins/popup';
 
-export default {
+export default create({
   name: 'van-popup',
 
   mixins: [Popup],
@@ -32,7 +33,7 @@ export default {
   },
 
   data() {
-    const transition = this.transition || (this.position === '' ? 'popup-fade' : `popup-slide-${this.position}`);
+    const transition = this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
     return {
       currentValue: false,
       currentTransition: transition
@@ -44,5 +45,5 @@ export default {
       this.open();
     }
   }
-};
+});
 </script>

@@ -62,7 +62,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.11.8';
+const version = '0.11.9';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -123,8 +123,8 @@ const components = [
 ];
 
 const install = Vue => {
-  components.forEach(component => {
-    Vue.component(component.name, component);
+  components.forEach(Component => {
+    Vue.use(Component);
   });
 };
 

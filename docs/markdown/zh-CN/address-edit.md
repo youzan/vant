@@ -4,7 +4,7 @@
 ``` javascript
 import { AddressEdit } from 'vant';
 
-Vue.component(AddressEdit.name, AddressEdit);
+Vue.use(AddressEdit);
 ```
 
 ### 代码演示

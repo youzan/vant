@@ -18,14 +18,10 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-nav-bar',
-
-  components: {
-    Icon
-  },
 
   props: {
     title: String,
@@ -34,5 +30,5 @@ export default {
     leftArrow: Boolean,
     fixed: Boolean
   }
-};
+});
 </script>

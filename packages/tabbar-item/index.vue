@@ -13,17 +13,13 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import { create } from '../utils';
 import RouterLink from '../mixins/router-link';
 
-export default {
+export default create({
   name: 'van-tabbar-item',
 
   mixins: [RouterLink],
-
-  components: {
-    Icon
-  },
 
   props: {
     icon: String,
@@ -51,5 +47,5 @@ export default {
       this.routerLink();
     }
   }
-};
+});
 </script>

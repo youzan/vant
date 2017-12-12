@@ -66,7 +66,7 @@ const PopupManager = {
     const el = modal.$el;
 
     if (el.parentNode) {
-      el.parentNode.removeChild(el);
+      modal.visible = false;
     }
 
     if (context.top) {
@@ -75,7 +75,8 @@ const PopupManager = {
       targetNode.appendChild(el);
       Object.assign(modal, {
         ...modalDefaultConfig,
-        ...config
+        ...config,
+        visible: true
       });
     }
   }

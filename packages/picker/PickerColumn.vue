@@ -23,10 +23,12 @@
 </template>
 
 <script>
+import { create } from '../utils';
+
 const DEFAULT_DURATION = 200;
 const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
-export default {
+export default create({
   name: 'van-picker-column',
 
   props: {
@@ -175,5 +177,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

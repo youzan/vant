@@ -4,7 +4,7 @@
 ``` javascript
 import { Stepper } from 'vant';
 
-Vue.component(Stepper.name, Stepper);
+Vue.use(Stepper);
 ```
 
 ### 代码演示

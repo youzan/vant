@@ -4,7 +4,7 @@
 ``` javascript
 import { Popup } from 'vant';
 
-Vue.component(Popup.name, Popup);
+Vue.use(Popup);
 ```
 
 ### Usage

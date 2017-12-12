@@ -4,7 +4,7 @@
 ``` javascript
 import { Icon } from 'vant';
 
-Vue.component(Icon.name, Icon);
+Vue.use(Icon);
 ```
 
 ### 代码演示
@@ -15,6 +15,14 @@ Vue.component(Icon.name, Icon);
 ```html
 <van-icon name="success" />
 ```
+
+#### 使用本地字体文件
+Icon 组件默认引用 `yzcdn.cn` 域名下的字体文件，如果想要使用本地字体文件，请引入下面的 css 文件
+
+```js
+import 'vant/lib/vant-css/icon-local.css';
+```
+
 
 ### API
 

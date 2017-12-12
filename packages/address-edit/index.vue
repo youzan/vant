@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import { create } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
@@ -81,12 +82,9 @@ import VanArea from '../area';
 import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
-import { i18n } from '../locale';
 
-export default {
+export default create({
   name: 'van-address-edit',
-
-  mixins: [i18n],
 
   components: {
     Field,
@@ -246,5 +244,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

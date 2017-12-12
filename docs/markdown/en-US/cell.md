@@ -4,8 +4,8 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.component(Cell.name, Cell);
-Vue.component(CellGroup.name, CellGroup);
+Vue.use(Cell);
+Vue.use(CellGroup);
 ```
 
 ### Usage
@@ -14,8 +14,8 @@ Vue.component(CellGroup.name, CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" value="Content"></van-cell>
-  <van-cell title="Cell title" value="Content" label="Description"></van-cell>
+  <van-cell title="Cell title" value="Content" />
+  <van-cell title="Cell title" value="Content" label="Description" />
 </van-cell-group>
 ```
 
@@ -23,7 +23,7 @@ Vue.component(CellGroup.name, CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="Content"></van-cell>
+  <van-cell value="Content" />
 </van-cell-group>
 ```
 
@@ -31,7 +31,7 @@ Vue.component(CellGroup.name, CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" icon="location"></van-cell>
+  <van-cell title="Cell title" icon="location" />
 </van-cell-group>
 ```
 
@@ -39,8 +39,8 @@ Vue.component(CellGroup.name, CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" is-link></van-cell>
-  <van-cell title="Cell title" is-link value="Content"></van-cell>
+  <van-cell title="Cell title" isLink />
+  <van-cell title="Cell title" isLink value="Content" />
 </van-cell-group>
 ```
 
@@ -48,16 +48,16 @@ Vue.component(CellGroup.name, CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="Content" icon="shop" is-link>
+  <van-cell value="Content" icon="shop" isLink>
     <template slot="title">
       <span class="van-cell-text">Cell title</span>
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
-  <van-cell title="Cell title" icon="location" is-link></van-cell>
+  <van-cell title="Cell title" icon="location" isLink />
   <van-cell title="Cell title">
     <template slot="right-icon">
-      <van-icon name="search" class="van-cell__right-icon"></van-icon>
+      <van-icon name="search" class="van-cell__right-icon" />
     </template>
   </van-cell>
 </van-cell-group>

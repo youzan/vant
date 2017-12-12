@@ -24,14 +24,12 @@
 </template>
 
 <script>
-import { i18n } from '../locale';
+import { create } from '../utils';
 import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
 
-export default {
+export default create({
   name: 'van-picker',
-
-  mixins: [i18n],
 
   components: {
     PickerColumn
@@ -156,5 +154,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

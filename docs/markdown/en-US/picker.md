@@ -4,7 +4,7 @@
 ``` javascript
 import { Picker } from 'vant';
 
-Vue.component(Picker.name, Picker);
+Vue.use(Picker);
 ```
 
 ### Usage

@@ -4,7 +4,7 @@
 ``` javascript
 import { AddressList } from 'vant';
 
-Vue.component(AddressList.name, AddressList);
+Vue.use(AddressList);
 ```
 
 ### Usage

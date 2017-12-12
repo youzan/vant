@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-goods-action'
-};
+});
 </script>

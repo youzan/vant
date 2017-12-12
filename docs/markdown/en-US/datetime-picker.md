@@ -4,7 +4,7 @@
 ``` javascript
 import { DatetimePicker } from 'vant';
 
-Vue.component(DatetimePicker.name, DatetimePicker);
+Vue.use(DatetimePicker);
 ```
 
 ### Usage

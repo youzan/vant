@@ -4,7 +4,7 @@
 ``` javascript
 import { Pagination } from 'vant';
 
-Vue.component(Pagination.name, Pagination);
+Vue.use(Pagination);
 ```
 
 ### Usage

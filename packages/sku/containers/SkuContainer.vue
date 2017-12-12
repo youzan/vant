@@ -82,10 +82,11 @@ import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
 import { isAllSelected, getSkuComb, getSelectedSkuValues } from '../utils/skuHelper';
 import { LIMIT_TYPE, DEFAULT_STEPPER_TITLE } from '../constants';
+import { create } from '../../utils';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
-export default {
+export default create({
   name: 'van-sku',
 
   components: {
@@ -103,9 +104,7 @@ export default {
     goodsId: [Number, String],
     initialSku: {
       type: Object,
-      default() {
-        return {};
-      }
+      default: () => ({})
     },
     sku: Object,
     quota: {
@@ -134,9 +133,7 @@ export default {
     disableStepperInput: Boolean,
     messagePlaceholderMap: {
       type: Object,
-      default() {
-        return {};
-      }
+      default: () => ({})
     },
     value: Boolean
   },
@@ -326,5 +323,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

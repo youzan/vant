@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../utils';
+
+export default create({
   name: 'van-swipe-item',
 
   data() {
@@ -30,5 +32,5 @@ export default {
   destroyed() {
     this.$parent.swipes.splice(this.$parent.swipes.indexOf(this), 1);
   }
-};
+});
 </script>

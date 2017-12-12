@@ -1,4 +1,3 @@
-
 <template>
   <component
     :is="tag"
@@ -30,14 +29,10 @@
 </template>
 
 <script>
-import Loading from '../loading';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-button',
-
-  components: {
-    Loading
-  },
 
   props: {
     block: Boolean,
@@ -66,5 +61,5 @@ export default {
       }
     }
   }
-};
+});
 </script>

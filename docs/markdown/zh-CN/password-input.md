@@ -5,8 +5,8 @@
 ``` javascript
 import { PasswordInput, NumberKeyBoard } from 'vant';
 
-Vue.component(PasswordInput.name, PasswordInput);
-Vue.component(NumberKeyBoard.name, NumberKeyBoard);
+Vue.use(PasswordInput);
+Vue.use(NumberKeyBoard);
 ```
 
 ### 代码演示

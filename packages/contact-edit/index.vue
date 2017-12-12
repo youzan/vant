@@ -32,12 +32,10 @@ import CellGroup from '../cell-group';
 import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
-import { i18n } from '../locale';
+import { create } from '../utils';
 
-export default {
+export default create({
   name: 'van-contact-edit',
-
-  mixins: [i18n],
 
   components: {
     Field,
@@ -122,5 +120,5 @@ export default {
       });
     }
   }
-};
+});
 </script>

@@ -97,7 +97,7 @@ describe('Toast', () => {
     setTimeout(() => {
       expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.true;
       done();
-    }, 300);
+    }, 500);
   });
 
   it('toast duration 0', (done) => {
