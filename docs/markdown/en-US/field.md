@@ -90,6 +90,7 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | icon | Right side Icon name | `String` | - | - |
 
 ### Event
+Filed support all native events of input tag，such as `keypress`、`keyup`
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|

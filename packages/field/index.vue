@@ -16,23 +16,18 @@
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
+      v-on="listeners"
       ref="textarea"
       class="van-field__control"
       :value="value"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
     />
     <input
       v-else
       v-bind="$attrs"  
+      v-on="listeners"
       class="van-field__control"
       :type="type"
       :value="value"
-      @keypress="onKeypress"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
     />
     <div
       v-if="hasIcon"
@@ -98,6 +93,14 @@ export default create({
   computed: {
     hasIcon() {
       return this.$slots.icon || this.icon;
+    },
+
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
     }
   },
 
@@ -120,6 +123,7 @@ export default create({
           event.preventDefault();
         }
       }
+      this.$emit('keypress', event);
     },
 
     adjustSize() {
