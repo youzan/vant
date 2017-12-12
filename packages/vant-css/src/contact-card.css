@@ -4,6 +4,10 @@
   position: relative;
   background-color: $white;
 
+  &:active {
+    background-color: $active-color;
+  }
+
   &--add {
     line-height: 40px;
 
