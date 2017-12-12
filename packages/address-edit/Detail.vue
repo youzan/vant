@@ -28,8 +28,8 @@
         @click="onSuggestSelect(express)">
         <icon name="location" class="van-address-edit-detail__location" />
         <div class="van-address-edit-detail__item-info">
-          <p class="van-address-edit-detail__title">{{ express.name }}</p>
-          <p class="van-address-edit-detail__subtitle">{{ express.address }}</p>
+          <p class="van-address-edit-detail__title" v-if="isString(express.name)">{{ express.name }}</p>
+          <p class="van-address-edit-detail__subtitle" v-if="isString(express.address)">{{ express.address }}</p>
         </div>
       </cell>
     </cell-group>
@@ -101,6 +101,10 @@ export default create({
 
     onSuggestSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+    },
+
+    isString(str) {
+      return typeof str === 'string';
     }
   }
 });
