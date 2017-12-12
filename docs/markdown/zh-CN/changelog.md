@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
+`2017-12-12`
+
+**Improvements**
+- 支持通过 Vue.use 来全局注册组件 [\#401](https://github.com/youzan/vant/pull/401) [@chenjiahan](https://github.com/chenjiahan)
+- 统一组件间的 fade 动画，优化过渡效果 [\#410](https://github.com/youzan/vant/pull/410) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Icon: 修复 'shopping-cart' 图标高度不居中的问题 [\#415](https://github.com/youzan/vant/pull/415) [@cookfront](https://github.com/cookfront)
+
+
 ### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
 `2017-12-11`
 
