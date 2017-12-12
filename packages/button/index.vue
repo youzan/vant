@@ -1,4 +1,3 @@
-
 <template>
   <component
     :is="tag"

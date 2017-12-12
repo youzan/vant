@@ -16,8 +16,8 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" value="内容"></van-cell>
-  <van-cell title="单元格" value="内容" label="描述信息"></van-cell>
+  <van-cell title="单元格" value="内容" />
+  <van-cell title="单元格" value="内容" label="描述信息" />
 </van-cell-group>
 ```
 
@@ -26,7 +26,7 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="内容"></van-cell>
+  <van-cell value="内容" />
 </van-cell-group>
 ```
 
@@ -35,7 +35,7 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" icon="location"></van-cell>
+  <van-cell title="单元格" icon="location" />
 </van-cell-group>
 ```
 
@@ -45,8 +45,8 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" is-link></van-cell>
-  <van-cell title="单元格" is-link value="内容"></van-cell>
+  <van-cell title="单元格" isLink />
+  <van-cell title="单元格" isLink value="内容" />
 </van-cell-group>
 ```
 
@@ -55,16 +55,16 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
+  <van-cell value="内容" icon="shop" isLink>
     <template slot="title">
       <span class="van-cell-text">单元格</span>
       <van-tag type="danger">标签</van-tag>
     </template>
   </van-cell>
-  <van-cell title="单元格" icon="location" is-link></van-cell>
+  <van-cell title="单元格" icon="location" isLink />
   <van-cell title="单元格">
     <template slot="right-icon">
-      <van-icon name="search" class="van-cell__right-icon"></van-icon>
+      <van-icon name="search" class="van-cell__right-icon" />
     </template>
   </van-cell>
 </van-cell-group>
