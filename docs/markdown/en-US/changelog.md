@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
+`2017-12-12`
+
+**Improvements**
+- Support Vue.use to register a component [\#401](https://github.com/youzan/vant/pull/401) [@chenjiahan](https://github.com/chenjiahan)
+- Uniform fade animation [\#410](https://github.com/youzan/vant/pull/410) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- Icon: fix 'shopping-cart' icon not align center [\#415](https://github.com/youzan/vant/pull/415) [@cookfront](https://github.com/cookfront)
+
+
 ### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
 `2017-12-11`
 

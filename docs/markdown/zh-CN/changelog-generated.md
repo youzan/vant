@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v0.11.10](https://github.com/youzan/vant/tree/v0.11.10) (2017-12-12)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.9...v0.11.10)
+
+**Issue**
+
+- 请问支持WEEX不？ [\#411](https://github.com/youzan/vant/issues/411)
+- nuxtjs 引入出现错误 [\#403](https://github.com/youzan/vant/issues/403)
+- NoticeBar 滚动动画animationend事件兼容性问题 [\#399](https://github.com/youzan/vant/issues/399)
+- Radio 组 展示效果建议 [\#398](https://github.com/youzan/vant/issues/398)
+- 建议增加分享图标 [\#385](https://github.com/youzan/vant/issues/385)
+- vant-icon建议把字体放到本地，不用外链的方式 [\#263](https://github.com/youzan/vant/issues/263)
+
+**Improvements**
+
+- \[bug fix\] Icon: fix `shopping-cart` icon not align center [\#415](https://github.com/youzan/vant/pull/415) ([cookfront](https://github.com/cookfront))
+- \[Doc\] optimzie doc detail [\#413](https://github.com/youzan/vant/pull/413) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] uniform fade animation [\#410](https://github.com/youzan/vant/pull/410) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Support Vue.use to register a component [\#401](https://github.com/youzan/vant/pull/401) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.9](https://github.com/youzan/vant/tree/v0.11.9) (2017-12-11)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.8...v0.11.9)
 
