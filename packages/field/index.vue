@@ -20,7 +20,6 @@
       ref="textarea"
       class="van-field__control"
       :value="value"
-      @input="onInput"
     />
     <input
       v-else
@@ -29,8 +28,6 @@
       class="van-field__control"
       :type="type"
       :value="value"
-      @keypress="onKeypress"
-      @input="onInput"
     />
     <div
       v-if="hasIcon"
@@ -97,10 +94,13 @@ export default create({
     hasIcon() {
       return this.$slots.icon || this.icon;
     },
+
     listeners() {
-      const listeners = { ...this.$listeners };
-      delete listeners.input;
-      return listeners;
+      return {
+        ...this.$listeners,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
     }
   },
 
@@ -123,6 +123,7 @@ export default create({
           event.preventDefault();
         }
       }
+      this.$emit('keypress', event);
     },
 
     adjustSize() {
