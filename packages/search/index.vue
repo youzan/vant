@@ -6,7 +6,6 @@
     <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
       <icon name="search" />
       <input
-        ref="input"
         type="search"
         class="van-search__input"
         v-bind="$attrs"
@@ -16,7 +15,7 @@
         @focus="onFocus"
         @keypress.enter.prevent="onSearch"
       >
-      <icon name="clear" @click="onClean" v-show="isFocus" />
+      <icon name="clear" v-show="isFocus && value" @click="onClean" />
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
