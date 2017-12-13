@@ -15,9 +15,15 @@ describe('AddressEdit', () => {
     expect(wrapper.find('.van-field__control')[0].element.value).to.equal('');
     expect(wrapper.find('.van-field__control')[1].element.value).to.equal('');
     expect(wrapper.find('.van-field__control')[2].element.value).to.equal('');
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[0].text()).to.equal('选择省');
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[1].text()).to.equal('选择市');
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[2].text()).to.equal('选择区');
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[0].text()
+    ).to.equal('选择省');
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[1].text()
+    ).to.equal('选择市');
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[2].text()
+    ).to.equal('选择区');
   });
 
   it('create a AddressEdit with props', () => {
@@ -43,13 +49,27 @@ describe('AddressEdit', () => {
       }
     });
 
-    expect(wrapper.find('.van-field__control')[0].element.value).to.equal(addressInfo.name);
-    expect(wrapper.find('.van-field__control')[1].element.value).to.equal(addressInfo.tel);
-    expect(wrapper.find('.van-field__control')[2].element.value).to.equal(addressInfo.address_detail);
-    expect(wrapper.find('.van-field__control')[3].element.value).to.equal(addressInfo.postal_code);
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[0].text()).to.equal(addressInfo.province);
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[1].text()).to.equal(addressInfo.city);
-    expect(wrapper.find('.van-address-edit__area .van-cell__value span')[2].text()).to.equal(addressInfo.county);
+    expect(wrapper.find('.van-field__control')[0].element.value).to.equal(
+      addressInfo.name
+    );
+    expect(wrapper.find('.van-field__control')[1].element.value).to.equal(
+      addressInfo.tel
+    );
+    expect(wrapper.find('.van-field__control')[2].element.value).to.equal(
+      addressInfo.address_detail
+    );
+    expect(wrapper.find('.van-field__control')[3].element.value).to.equal(
+      addressInfo.postal_code
+    );
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[0].text()
+    ).to.equal(addressInfo.province);
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[1].text()
+    ).to.equal(addressInfo.city);
+    expect(
+      wrapper.find('.van-address-edit__area .van-cell__value span')[2].text()
+    ).to.equal(addressInfo.county);
     expect(wrapper.find('.van-switch-cell').length).to.equal(1);
   });
 
@@ -155,14 +175,18 @@ describe('AddressEdit', () => {
       propsData: {
         addressInfo: {},
         showSearchResult: true,
-        searchResult: [{
-          name: '黄龙万科中心',
-          address: '杭州市西湖区'
-        }, {
-          name: '黄龙万科中心H座'
-        }, {
-          address: '杭州市西湖区'
-        }]
+        searchResult: [
+          {
+            name: '黄龙万科中心',
+            address: '杭州市西湖区'
+          },
+          {
+            name: '黄龙万科中心H座'
+          },
+          {
+            address: '杭州市西湖区'
+          }
+        ]
       }
     });
 
@@ -173,15 +197,21 @@ describe('AddressEdit', () => {
 
       items[0].trigger('click');
       wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.van-field__control')[2].element.value).to.equal('杭州市西湖区 黄龙万科中心');
+        expect(wrapper.find('.van-field__control')[2].element.value).to.equal(
+          '杭州市西湖区 黄龙万科中心'
+        );
 
         items[1].trigger('click');
         wrapper.vm.$nextTick(() => {
-          expect(wrapper.find('.van-field__control')[2].element.value).to.equal('黄龙万科中心H座');
+          expect(wrapper.find('.van-field__control')[2].element.value).to.equal(
+            '黄龙万科中心H座'
+          );
           items[2].trigger('click');
 
           wrapper.vm.$nextTick(() => {
-            expect(wrapper.find('.van-field__control')[2].element.value).to.equal('杭州市西湖区');
+            expect(
+              wrapper.find('.van-field__control')[2].element.value
+            ).to.equal('杭州市西湖区');
 
             wrapper.find('.van-field__control')[2].trigger('blur');
             setTimeout(() => {
@@ -207,7 +237,11 @@ describe('AddressEdit', () => {
     wrapper.vm.onAreaConfirm([{ code: 1 }, { code: 1 }, { code: -1 }]);
     expect(wrapper.vm.addressInfo['area_code']).to.equal(undefined);
 
-    wrapper.vm.onAreaConfirm([{ name: '浙江省' }, { name: '杭州市' }, { name: '西湖区', code: '123456' }]);
+    wrapper.vm.onAreaConfirm([
+      { name: '浙江省' },
+      { name: '杭州市' },
+      { name: '西湖区', code: '123456' }
+    ]);
     expect(wrapper.vm.addressInfo['province']).to.equal('浙江省');
     expect(wrapper.vm.addressInfo['city']).to.equal('杭州市');
     expect(wrapper.vm.addressInfo['county']).to.equal('西湖区');
@@ -249,7 +283,7 @@ describe('AddressEdit', () => {
   it('on change detail', done => {
     wrapper = mount(AddressEdit);
 
-    wrapper.vm.$on('change-detail', (val) => {
+    wrapper.vm.$on('change-detail', val => {
       expect(val).to.equal('123');
       done();
     });
@@ -321,5 +355,37 @@ describe('AddressEdit', () => {
       expect(wrapper.vm.currentInfo.name).to.equal('123');
       done();
     });
+  });
+
+  it('set/get area code', done => {
+    wrapper = mount(AddressEdit, {
+      propsData: {
+        areaList,
+        addressInfo: {
+          area_code: ''
+        }
+      }
+    });
+
+    expect(wrapper.vm.getArea()).to.eql([
+      { code: '-1', name: '选择省份' },
+      { code: '-1', name: '选择城市' },
+      { code: '-1', name: '选择地区' }
+    ]);
+
+    wrapper.vm.setAreaCode('110101');
+    setTimeout(() => {
+      expect(wrapper.vm.currentInfo.area_code).to.eql('110101');
+      expect(wrapper.vm.getArea()).to.eql([
+        { code: '110000', name: '北京市' },
+        { code: '110100', name: '北京市' },
+        { code: '110101', name: '东城区' }
+      ]);
+
+      wrapper.vm.$refs = [];
+      wrapper.vm.setAreaCode('110102');
+      expect(wrapper.vm.getArea()).to.eql([]);
+      done();
+    }, 50);
   });
 });

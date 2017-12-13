@@ -30,6 +30,7 @@
         @focus="onFocus('address_detail')"
         @blur="onDetailBlur"
         @input="onChangeDetail"
+        @select-search="$emit('select-search', $event)"
       />
       <field
         v-if="showPostal"
@@ -41,8 +42,8 @@
         maxlength="6"
         class="van-hairline--top"
         :error="errorInfo.postal_code"
-        @focus="onFocus('postal_code')">
-      </field>
+        @focus="onFocus('postal_code')"
+      />
       <switch-cell 
         v-if="showSetDefault"
         v-show="!hideBottomFields"
@@ -60,6 +61,7 @@
     </div>
     <popup v-model="showAreaSelect" position="bottom">
       <van-area
+        ref="area"
         :value="currentInfo.area_code"
         :areaList="areaList"
         @confirm="onAreaConfirm"
@@ -164,6 +166,7 @@ export default create({
     onFocus(key) {
       this.errorInfo[key] = false;
       this.detailFocused = key === 'address_detail';
+      this.$emit('focus', key);
     },
 
     onDetailBlur() {
@@ -179,13 +182,18 @@ export default create({
       if (values.length !== 3 || +values[0].code === -1 || +values[1].code === -1 || +values[2].code === -1) {
         return Toast(this.$t('areaWrong'));
       }
+      this.assignAreaValues(values);
+      this.showAreaSelect = false;
+      this.$emit('change-area', values);
+    },
+
+    assignAreaValues(values) {
       Object.assign(this.currentInfo, {
         province: values[0].name,
         city: values[1].name,
         county: values[2].name,
         area_code: values[2].code
       });
-      this.showAreaSelect = false;
     },
 
     onSaveAddress() {
@@ -241,6 +249,23 @@ export default create({
         message: this.$t('confirmDelete', this.computedAddressText)
       }).then(() => {
         this.$emit('delete', this.currentInfo);
+      });
+    },
+
+    // get values of area component
+    getArea() {
+      const { area } = this.$refs;
+      return area ? area.getValues() : [];
+    },
+
+    // set area code to area component
+    setAreaCode(code) {
+      this.currentInfo.area_code = code;
+      this.$nextTick(() => {
+        const { area } = this.$refs;
+        if (area) {
+          this.assignAreaValues(area.getValues());
+        }
       });
     }
   }
