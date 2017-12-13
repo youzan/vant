@@ -89,7 +89,7 @@ export default create({
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup && this.parentGroup.disabled || this.disabled;
+      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled;
     }
   },
 
