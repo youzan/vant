@@ -60,6 +60,7 @@
     </div>
     <popup v-model="showAreaSelect" position="bottom">
       <van-area
+        ref="area"
         :value="currentInfo.area_code"
         :areaList="areaList"
         @confirm="onAreaConfirm"
@@ -244,6 +245,11 @@ export default create({
       }).then(() => {
         this.$emit('delete', this.currentInfo);
       });
+    },
+
+    getArea() {
+      const { area } = this.$refs;
+      return area ? area.getValues() : [];
     }
   }
 });
