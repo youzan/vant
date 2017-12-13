@@ -66,6 +66,22 @@ describe('CheckboxGroup', () => {
       done();
     });
   });
+
+  it('click on disabled item', (done) => {
+    wrapper = mount(CheckboxTestComponent);
+
+    const eventStub = sinon.stub(wrapper.vNode.child, '$emit');
+
+    const disabledLabel = wrapper.find('.van-checkbox')[2].find('.van-checkbox__label')[0];
+    disabledLabel.trigger('click');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.calledOnce).to.be.false;
+      expect(wrapper.vm.result.indexOf('c')).to.equal(-1);
+      done();
+    });
+  });
 });
 
 describe('Checkbox', () => {
