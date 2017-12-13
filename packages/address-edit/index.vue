@@ -164,6 +164,7 @@ export default create({
     onFocus(key) {
       this.errorInfo[key] = false;
       this.detailFocused = key === 'address_detail';
+      this.$emit('focus', key);
     },
 
     onDetailBlur() {
@@ -186,6 +187,7 @@ export default create({
         area_code: values[2].code
       });
       this.showAreaSelect = false;
+      this.$emit('change-area', values);
     },
 
     onSaveAddress() {
