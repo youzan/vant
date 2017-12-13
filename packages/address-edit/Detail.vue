@@ -16,7 +16,7 @@
     >
       <div slot="icon">
         <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">{{ $t('complete') }}</span>
-        <icon v-else-if="showIcon" name="clear"  />
+        <icon v-else-if="showIcon" name="clear" />
       </div>
     </field>
 
@@ -101,6 +101,7 @@ export default create({
 
     onSuggestSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+      this.$emit('select-search', express);
     },
 
     isString(str) {

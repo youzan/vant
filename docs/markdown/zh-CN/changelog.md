@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
+`2017-12-13`
+
+**Improvements**
+- Field: 支持 input 标签原生事件 [\#421](https://github.com/youzan/vant/pull/421) [@chenjiahan](https://github.com/chenjiahan)
+- Search: 支持 input 标签原生属性 [\#418](https://github.com/youzan/vant/pull/418) [@chenjiahan](https://github.com/chenjiahan)
+- CellGroup: 新增 'border' 属性 [\#420](https://github.com/youzan/vant/pull/420) [@chenjiahan](https://github.com/chenjiahan)
+- AddressEdit: 新增 focus、change-area、select-search 事件 [\#426](https://github.com/youzan/vant/pull/426) [@chenjiahan](https://github.com/chenjiahan)
+- Badge、CouponList、ContactCard: 增加点击反馈 [\#419](https://github.com/youzan/vant/pull/419) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Checkbox 在 CheckboxGroup 内时 disabled 属性无法生效的问题 [\#425](https://github.com/youzan/vant/pull/425) [@Tinysymphony](https://github.com/Tinysymphony)
+- 修复 AddressEdit 搜索结果展示错误 [\#417](https://github.com/youzan/vant/pull/417) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
 `2017-12-12`
 

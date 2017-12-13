@@ -145,6 +145,11 @@ export default create({
           [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
         );
       }
+    },
+
+    getValues() {
+      const { picker } = this.$refs;
+      return picker ? picker.getValues() : [];
     }
   }
 });
