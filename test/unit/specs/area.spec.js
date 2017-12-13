@@ -18,7 +18,7 @@ describe('Area', () => {
     expect(wrapper.hasClass('van-area')).to.be.true;
   });
 
-  it('create an area with default value', (done) => {
+  it('create an area with default value', done => {
     wrapper = mount(Area, {
       propsData: {
         areaList: AreaList,
@@ -38,7 +38,7 @@ describe('Area', () => {
     });
   });
 
-  it('create an area and set value', (done) => {
+  it('create an area and set value', done => {
     wrapper = mount(Area, {
       propsData: {
         areaList: AreaList,
@@ -89,7 +89,7 @@ describe('Area', () => {
     expect(wrapper.vm.areaColumns.length).to.equal(1);
   });
 
-  it('create an area and click cancel', (done) => {
+  it('create an area and click cancel', done => {
     wrapper = mount(Area, {
       propsData: {
         areaList: AreaList
@@ -124,5 +124,23 @@ describe('Area', () => {
     wrapper.vm.onChange({ setColumnValues }, [code, code], 1);
 
     expect(list.length).to.equal(33);
+  });
+
+  it('getValues method', () => {
+    wrapper = mount(Area, {
+      propsData: {
+        value: '110101',
+        areaList: AreaList
+      }
+    });
+
+    expect(wrapper.vm.getValues()).to.eql([
+      { code: '110000', name: '北京市' },
+      { code: '110100', name: '北京市' },
+      { code: '110101', name: '东城区' }
+    ]);
+
+    wrapper.vm.$refs = [];
+    expect(wrapper.vm.getValues()).to.eql([]);
   });
 });
