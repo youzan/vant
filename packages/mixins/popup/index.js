@@ -53,12 +53,24 @@ export default {
       };
     },
 
+    findScrollableElement(ele) {
+      let currentNode = ele;
+      while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1) {
+        const overflowY = window.getComputedStyle(currentNode, null).overflowY;
+        if (overflowY === 'scroll' || overflowY === 'auto' || currentNode === this.$el) {
+          return currentNode;
+        }
+        currentNode = currentNode.parentNode;
+      }
+      return window;
+    },
+
     watchTouchMove(e) {
       const pos = this.pos;
       const dx = e.touches[0].clientX - pos.x;
       const dy = e.touches[0].clientY - pos.y;
       const direction = dy > 0 ? '10' : '01';
-      const el = this.$el.querySelector('.scroller') || this.$el;
+      const el = this.findScrollableElement(e.target);
       const scrollTop = el.scrollTop;
       const scrollHeight = el.scrollHeight;
       const offsetHeight = el.offsetHeight;
