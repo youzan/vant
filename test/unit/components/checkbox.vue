@@ -1,6 +1,6 @@
 <template>
   <van-checkbox-group v-model="result">
-    <van-checkbox v-for="(item, index) in list" :key="index" :name="item">复选框{{item}}</van-checkbox>
+    <van-checkbox v-for="(item, index) in list" :key="index" :name="item" :disabled="index === 2">复选框{{item}}</van-checkbox>
   </van-checkbox-group>
 </template>
 
