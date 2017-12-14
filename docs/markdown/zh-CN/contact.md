@@ -118,6 +118,17 @@ export default {
 };
 ```
 
+#### 不可编辑
+
+```html
+<van-contact-card
+  type="edit"
+  name="张三"
+  tel="13000000000"
+  :editable="false"
+/>
+```
+
 
 ### ContactCard API
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
