@@ -1,5 +1,6 @@
 import manager from './popup-manager';
 import context from './popup-context';
+import scrollUtils from '../../utils/scroll';
 
 export default {
   props: {
@@ -58,7 +59,7 @@ export default {
       const dx = e.touches[0].clientX - pos.x;
       const dy = e.touches[0].clientY - pos.y;
       const direction = dy > 0 ? '10' : '01';
-      const el = this.$el.querySelector('.scroller') || this.$el;
+      const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
       const scrollTop = el.scrollTop;
       const scrollHeight = el.scrollHeight;
       const offsetHeight = el.offsetHeight;
