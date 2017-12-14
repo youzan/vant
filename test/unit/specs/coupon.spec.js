@@ -4,6 +4,7 @@ import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
 
 const coupon = {
+  id: 1,
   available: 1,
   discount: 0,
   denominations: 150,
@@ -18,6 +19,7 @@ const coupon = {
 
 const discountCoupon = {
   ...coupon,
+  id: 2,
   discount: 88,
   denominations: 0,
   origin_condition: 50,
@@ -26,18 +28,21 @@ const discountCoupon = {
 };
 
 const emptyCoupon = {
+  id: 3,
   denominations: 0,
   discount: 0
 };
 
 const disabledCoupon = {
   ...coupon,
+  id: 4,
   avaliable: 0,
   reason: '未满足使用门槛'
 };
 
 const disabledDiscountCoupon = {
   ...discountCoupon,
+  id: 5,
   avaliable: 0,
   reason: '未满足使用门槛'
 };
@@ -204,15 +209,19 @@ describe('CouponList', () => {
       propsData: {
         coupons: [coupon, {
           ...coupon,
+          id: 10,
           denominations: 10
         }, {
           ...coupon,
+          id: 11,
           denominations: 100
         }, {
           ...coupon,
+          id: 12,
           denominations: 135
         }, {
           ...coupon,
+          id: 13,
           denominations: 0
         }]
       }
@@ -231,9 +240,11 @@ describe('CouponList', () => {
       propsData: {
         coupons: [discountCoupon, {
           ...discountCoupon,
+          id: 10,
           discount: 10
         }, {
           ...discountCoupon,
+          id: 11,
           discount: 0
         }]
       }
@@ -258,7 +269,10 @@ describe('CouponList', () => {
 
     wrapper.vm.$on('exchange', (code) => {
       expect(code).to.equal(code);
-      wrapper.vm.coupons.push(coupon);
+      wrapper.vm.coupons.push({
+        ...coupon,
+        id: 15
+      });
     });
 
     setTimeout(() => {
