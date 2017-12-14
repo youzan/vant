@@ -49,13 +49,6 @@ export default {
     };
   },
 
-  // for debug
-  // watch: {
-  //   messageValues() {
-  //     console.log(this.messageValues);
-  //   }
-  // },
-
   computed: {
     internalMessages() {
       if (Object.prototype.toString.call(this.messages) === '[object Array]') {
@@ -115,7 +108,6 @@ export default {
           if (message.required == '1') { // eslint-disable-line
             if (message.type === 'image') {
               continue;
-              // return `请上传${message.name}`;
             } else {
               return `请填写${message.name}`;
             }

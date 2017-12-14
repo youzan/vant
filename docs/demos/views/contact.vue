@@ -43,10 +43,10 @@
 export default {
   i18n: {
     'zh-CN': {
-
+      name: '张三'
     },
     'en-US': {
-
+      name: 'John Snow'
     }
   },
 
@@ -57,12 +57,16 @@ export default {
       showList: false,
       showEdit: false,
       isEdit: false,
-      list: [{
-        name: '张三',
-        tel: '13000000000',
-        id: 0
-      }]
+      list: []
     };
+  },
+
+  created() {
+    this.list.push({
+      name: this.$t('name'),
+      tel: '13000000000',
+      id: 0
+    });
   },
 
   computed: {
