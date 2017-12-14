@@ -57,6 +57,7 @@ export default {
 
     coupon() {
       return {
+        id: 1,
         available: 1,
         discount: 0,
         denominations: 150,
@@ -72,6 +73,7 @@ export default {
     discountCoupon() {
       return {
         ...this.coupon,
+        id: 2,
         discount: 88,
         denominations: 0,
         origin_condition: 50,
@@ -82,6 +84,7 @@ export default {
     disabledCoupon() {
       return {
         ...this.coupon,
+        id: 3,
         avaliable: 0,
         reason: this.$t('coupon.reason')
       }
@@ -90,6 +93,7 @@ export default {
     disabledDiscountCoupon() {
       return {
         ...this.discountCoupon,
+        id: 4,
         avaliable: 0,
         reason: this.$t('coupon.reason')
       }
