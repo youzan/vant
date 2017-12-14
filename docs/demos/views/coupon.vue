@@ -21,57 +21,79 @@
 </template>
 
 <script>
-const coupon = {
-  available: 1,
-  discount: 0,
-  denominations: 150,
-  origin_condition: 0,
-  reason: '',
-  value: 150,
-  condition: '下单立减 1.50 元',
-  name: '新手专用优惠券',
-  start_at: 1489104000,
-  end_at: 1514592000
-};
-
-const discountCoupon = {
-  ...coupon,
-  discount: 88,
-  denominations: 0,
-  origin_condition: 50,
-  value: 12,
-  condition: '下单即享 8.8 折'
-};
-
-const disabledCoupon = {
-  ...coupon,
-  avaliable: 0,
-  reason: '未满足使用门槛'
-};
-
-const disabledDiscountCoupon = {
-  ...discountCoupon,
-  avaliable: 0,
-  reason: '未满足使用门槛'
-};
-
 export default {
   i18n: {
     'zh-CN': {
-
+      coupon: {
+        name: '优惠券名称',
+        reason: '优惠券不可用原因'
+      },
+      exchange: '兑换成功'
     },
     'en-US': {
-
+      coupon: {
+        name: 'Coupon name',
+        reason: 'Coupon unavailable reason'
+      },
+      exchange: 'Success'
     }
   },
 
   data() {
     return {
       showList: false,
-      chosenCoupon: -1,
-      coupons: [coupon, discountCoupon],
-      disabledCoupons: [disabledCoupon, disabledDiscountCoupon]
+      chosenCoupon: -1
     };
+  },
+
+  computed: {
+    coupons() {
+      return [this.coupon, this.discountCoupon];
+    },
+
+    disabledCoupons() {
+      return [this.disabledCoupon, this.disabledDiscountCoupon];
+    },
+
+    coupon() {
+      return {
+        available: 1,
+        discount: 0,
+        denominations: 150,
+        origin_condition: 0,
+        reason: '',
+        value: 150,
+        name: this.$t('coupon.name'),
+        start_at: 1489104000,
+        end_at: 1514592000
+      }
+    },
+
+    discountCoupon() {
+      return {
+        ...this.coupon,
+        discount: 88,
+        denominations: 0,
+        origin_condition: 50,
+        value: 12
+      }
+    },
+
+    disabledCoupon() {
+      return {
+        ...this.coupon,
+        avaliable: 0,
+        reason: this.$t('coupon.reason')
+      }
+    },
+
+    disabledDiscountCoupon() {
+      return {
+        ...this.discountCoupon,
+        avaliable: 0,
+        reason: this.$t('coupon.reason')
+      }
+    }
   },
 
   methods: {
@@ -80,7 +102,7 @@ export default {
       this.chosenCoupon = index;
     },
     onExchange(code) {
-      Toast('兑换成功');
+      Toast(this.$t('exchange'));
       this.coupons.push(coupon);
     }
   }

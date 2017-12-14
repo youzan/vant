@@ -75,5 +75,23 @@ export default {
   },
   vanSubmitBar: {
     label: '合计：'
+  },
+  vanCouponCell: {
+    title: '优惠券码',
+    tips: '使用优惠',
+    reduce: '省',
+    count: count => `您有 ${count} 个可用优惠`
+  },
+  vanCouponList: {
+    empty: '暂无优惠券',
+    exchange: '兑换',
+    close: '不使用优惠',
+    disabled: '不可用优惠',
+    placeholder: '请输入优惠码'
+  },
+  vanCouponItem: {
+    unlimited: '无使用门槛',
+    discount: discount => `${discount}折`,
+    condition: (condition) => `满${condition}元可用`
   }
 };
