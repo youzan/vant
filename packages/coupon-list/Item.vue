@@ -44,7 +44,7 @@ export default create({
     conditionMessage() {
       let condition = this.data.origin_condition;
       condition = condition % 100 === 0 ? Math.round(condition / 100) : (condition / 100).toFixed(2);
-      return this.data.origin_condition === 0 ? '无使用门槛' : `满${condition}元可用`;
+      return this.data.origin_condition === 0 ? this.$t('unlimited') : this.$t('condition', condition);
     }
   },
 
@@ -57,7 +57,7 @@ export default create({
       return (num < 10 ? '0' : '') + num;
     },
     formatDiscount(discount) {
-      return `${(discount / 10).toFixed(discount % 10 === 0 ? 0 : 1)}折`;
+      return this.$t('discount', `${(discount / 10).toFixed(discount % 10 === 0 ? 0 : 1)}`);
     },
     formatAmount(amount) {
       return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);

@@ -40,8 +40,7 @@ const coupon = {
   origin_condition: 0,
   reason: '',
   value: 150,
-  condition: '下单立减 1.50 元',
-  name: '新手专用优惠券',
+  name: '优惠券名称',
   start_at: 1489104000,
   end_at: 1514592000
 };
@@ -72,7 +71,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 单元格标题 | `String` | `优惠` | - |
+| title | 单元格标题 | `String` | `优惠券码` | - |
 | chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
@@ -81,7 +80,6 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否展示优惠券列表 | `Boolean` | `false` | - |
 | chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | disabledCoupons | 不可用优惠券列表 | `Array` | `[]` | - |
@@ -89,9 +87,9 @@ export default {
 | exchangeButtonDisabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
 | displayedCouponIndex | 滚动至特定优惠券位置 | `Number` | - | - |
 | showCloseButton | 是否显示列表底部按钮 | `Boolean` | `true` | - |
-| closeButtonText | 列表底部按钮文字 | `String` | 不使用优惠 | - |
-| disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
-| inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
+| closeButtonText | 列表底部按钮文字 | `String` | `不使用优惠` | - |
+| disabledListTitle | 不可用券列表标题 | `String` | `不可用优惠` | - |
+| inputPlaceholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
 | showExchangeBar | 是否展示兑换栏 | `Boolean` | `true` | - |
 
 ### CouponList Event
@@ -107,12 +105,11 @@ export default {
 |-----------|-----------|-----------|
 | id | 优惠券 id | `String` |
 | name | 优惠券名称 | `String` |
-| available | 是否可用, 1:可用,0:不可用 | `Number` |
 | discount | 折扣（0为满减券）88=>8.8折 | `Number` |
 | denominations | 面值（0为折扣券）单位分 | `Number` |
 | origin_condition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
-| start_at | 	卡有效开始时间 | `Number` |
+| start_at | 卡有效开始时间 | `Number` |
 | end_at | 卡失效日期 | `Number` |
 | reason | 不可用原因 | `String` |
 | value | 订单优惠金额，单位分 | `Number` |
-| condition | 格式化输出 value | `String` |
+

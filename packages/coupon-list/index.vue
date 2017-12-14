@@ -1,8 +1,21 @@
 <template>
   <div class="van-coupon-list">
     <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
-      <field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
-      <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
+      <field
+        class="van-coupon-list__filed van-hairline--surround"
+        v-model="exchangeCode"
+        :placeholder="inputPlaceholder || $t('placeholder')"
+        :maxlength="20"
+      />
+      <van-button
+        size="small"
+        type="danger"
+        class="van-coupon-list__exchange"
+        :disabled="exchangeButtonDisabled || !exchangeCode.length"
+        @click="onClickExchangeButton"
+      >
+        {{ exchangeButtonText || $t('exchange') }}
+      </van-button>
     </cell-group>
     <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
       <coupon-item
@@ -13,7 +26,7 @@
         :chosen="index === chosenCoupon"
         @click.native="onClickCoupon(index)"
       />
-      <h3 v-if="disabledCoupons.length">{{ disabledListTitle }}</h3>
+      <h3 v-if="disabledCoupons.length">{{ disabledListTitle || $t('disabled') }}</h3>
       <coupon-item
         disabled
         v-for="item in disabledCoupons"
@@ -22,7 +35,7 @@
       />
       <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
         <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
-        <p>暂无优惠券</p>
+        <p>{{ $t('empty') }}</p>
       </div>
     </div>
     <div
@@ -30,7 +43,7 @@
       class="van-coupon-list__close van-hairline--top"
       @click="onClickNotUse"
     >
-      {{ closeButtonText }}
+      {{ closeButtonText || $t('close') }}
     </div>
   </div>
 </template>
@@ -57,6 +70,10 @@ export default create({
   },
 
   props: {
+    closeButtonText: String,
+    inputPlaceholder: String,
+    disabledListTitle: String,
+    exchangeButtonText: String,
     chosenCoupon: {
       type: Number,
       default: -1
@@ -69,10 +86,6 @@ export default create({
       type: Array,
       default: () => []
     },
-    exchangeButtonText: {
-      type: String,
-      default: '兑换'
-    },
     exchangeButtonDisabled: {
       type: Boolean,
       default: false
@@ -80,18 +93,6 @@ export default create({
     displayedCouponIndex: {
       type: Number,
       default: -1
-    },
-    closeButtonText: {
-      type: String,
-      default: '不使用优惠'
-    },
-    disabledListTitle: {
-      type: String,
-      default: '不可用优惠'
-    },
-    inputPlaceholder: {
-      type: String,
-      default: '请输入优惠码'
     },
     showExchangeBar: {
       type: Boolean,

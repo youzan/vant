@@ -71,5 +71,23 @@ export default {
   },
   vanSubmitBar: {
     label: 'Total：'
+  },
+  vanCouponCell: {
+    title: 'Coupon',
+    tips: 'Select coupon',
+    reduce: 'Reduce',
+    count: count => `You have ${count} offers`
+  },
+  vanCouponList: {
+    empty: 'No coupons',
+    exchange: 'Exchange',
+    close: 'Close',
+    disabled: 'Unavailable',
+    placeholder: 'Coupon code'
+  },
+  vanCouponItem: {
+    unlimited: 'Unlimited',
+    discount: discount => `${discount * 10}% off`,
+    condition: condition => `At least ${condition}`
   }
 };

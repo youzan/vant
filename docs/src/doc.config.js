@@ -532,7 +532,7 @@ module.exports = {
               },
               {
                 path: '/coupon',
-                title: 'Coupon (In translation)'
+                title: 'Coupon'
               },
               {
                 path: '/goods-action',
