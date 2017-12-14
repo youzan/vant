@@ -3,6 +3,7 @@
 .van-pull-refresh {
   user-select: none;
   position: relative;
+  overflow: hidden;
 
   &__head {
     width: 100%;
