@@ -1,5 +1,5 @@
 <template>
-  <div class="van-contact-card" :class="`van-contact-card--${type}`" v-on="$listeners">
+  <div class="van-contact-card" :class="[`van-contact-card--${type}`, { 'van-contact-card--uneditable': !editable }]" @click="onClick">
     <div class="van-contact-card__content">
       <template v-if="type === 'add'">
         <icon class="van-contact-card__icon" name="add2" />
@@ -13,7 +13,7 @@
         </div>
       </template>
     </div>
-    <icon class="van-contact-card__arrow" name="arrow" />
+    <icon v-if="editable" class="van-contact-card__arrow" name="arrow" />
   </div>
 </template>
 
@@ -27,9 +27,21 @@ export default create({
     tel: String,
     name: String,
     addText: String,
+    editable: {
+      type: Boolean,
+      default: true
+    },
     type: {
       type: String,
       default: 'add'
+    }
+  },
+
+  methods: {
+    onClick(event) {
+      if (this.editable) {
+        this.$emit('click', event);
+      }
     }
   }
 });

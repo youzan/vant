@@ -27,6 +27,15 @@
         />
       </van-popup>
     </demo-block>
+
+    <demo-block :title="$t('uneditable')">
+      <van-contact-card
+        type="edit"
+        :name="list[0].name"
+        :tel="list[0].tel"
+        :editable="false"
+      />
+    </demo-block>
   </demo-section>
 </template>
 

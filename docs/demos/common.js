@@ -47,6 +47,7 @@ Locale.add({
     custom: '自定义',
     loading: '加载状态',
     disabled: '禁用状态',
+    uneditable: '不可编辑',
     basicUsage: '基础用法',
     advancedUsage: '高级用法'
   },
@@ -67,6 +68,7 @@ Locale.add({
     custom: 'Custom',
     loading: 'Loading',
     disabled: 'Disabled',
+    uneditable: 'Uneditable',
     basicUsage: 'Basic Usage',
     advancedUsage: 'Advanced Usage'
   }
