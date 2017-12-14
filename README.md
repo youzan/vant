@@ -81,7 +81,7 @@ Vue.use(Vant);
 <!-- import style -->
 <link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
 
-<!-- import script --><script></script>
+<!-- import script -->
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
