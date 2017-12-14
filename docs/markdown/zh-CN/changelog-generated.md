@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v0.11.11](https://github.com/youzan/vant/tree/v0.11.11) (2017-12-13)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.10...v0.11.11)
+
+**Issue**
+
+- Cannot disable the checkbox if it's nested in the checkbox-group [\#424](https://github.com/youzan/vant/issues/424)
+- 是否支持ssr [\#422](https://github.com/youzan/vant/issues/422)
+- 搜索的v-model无效果 [\#412](https://github.com/youzan/vant/issues/412)
+
+**Improvements**
+
+- \[Improvement\] AddressEdit: add focus、change-area、select-search events [\#426](https://github.com/youzan/vant/pull/426) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] disabled property in checkbox [\#425](https://github.com/youzan/vant/pull/425) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[Improvement\] Field: support native events [\#421](https://github.com/youzan/vant/pull/421) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CellGroup add 'border' prop [\#420](https://github.com/youzan/vant/pull/420) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add active color for Badge、CouponList、ContactCard [\#419](https://github.com/youzan/vant/pull/419) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Search: support native input attrs [\#418](https://github.com/youzan/vant/pull/418) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit searchResult type validate [\#417](https://github.com/youzan/vant/pull/417) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.10](https://github.com/youzan/vant/tree/v0.11.10) (2017-12-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.9...v0.11.10)
 

@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
+`2017-12-13`
+
+**Improvements**
+- Field: support native events [\#421](https://github.com/youzan/vant/pull/421) [@chenjiahan](https://github.com/chenjiahan)
+- Search: support native input attrs [\#418](https://github.com/youzan/vant/pull/418) [@chenjiahan](https://github.com/chenjiahan)
+- CellGroup: add 'border' prop [\#420](https://github.com/youzan/vant/pull/420) [@chenjiahan](https://github.com/chenjiahan)
+- AddressEdit: add focus、change-area、select-search events [\#426](https://github.com/youzan/vant/pull/426) [@chenjiahan](https://github.com/chenjiahan)
+- Badge、CouponList、ContactCard: add active color [\#419](https://github.com/youzan/vant/pull/419) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Checkbox disabled not work when inside CheckboxGroup [\#425](https://github.com/youzan/vant/pull/425) [@Tinysymphony](https://github.com/Tinysymphony)
+- fix AddressEdit searchResult type validate [\#417](https://github.com/youzan/vant/pull/417) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
 `2017-12-12`
 
