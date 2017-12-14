@@ -1,6 +1,6 @@
 
 <template>
-  <div class="van-picker-column" :class="className">
+  <div class="van-picker-column" :class="className" :style="columnStyle">
     <div class="van-picker-column__frame van-hairline--top-bottom" :style="frameStyle" />
     <ul
       :style="wrapperStyle"
@@ -95,21 +95,25 @@ export default create({
       return this.options.length;
     },
 
+    columnStyle() {
+      return {
+        height: (this.itemHeight * this.visibileColumnCount) + 'px'
+      };
+    },
+
     wrapperStyle() {
-      const { itemHeight, visibileColumnCount } = this;
       return {
         transition: `${this.duration}ms`,
         transform: `translate3d(0, ${this.offset}px, 0)`,
-        lineHeight: itemHeight + 'px',
-        height: itemHeight * visibileColumnCount + 'px',
-        paddingTop: itemHeight * (visibileColumnCount - 1) / 2 + 'px'
+        lineHeight: this.itemHeight + 'px',
+        padding: `${this.itemHeight * (this.visibileColumnCount - 1) / 2}px 0`
       };
     },
 
     frameStyle() {
       return {
         height: this.itemHeight + 'px'
-      }
+      };
     },
 
     currentValue() {
@@ -168,7 +172,7 @@ export default create({
     },
 
     setValue(value) {
-      const { options, valueKey } = this;
+      const { options } = this;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
           this.setIndex(i);
