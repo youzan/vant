@@ -28,15 +28,15 @@ export default {
       list: [
         {
           id: '1',
-          name: '张三',
+          name: 'John Snow',
           tel: '13000000000',
-          address: '浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室'
+          address: 'Somewhere'
         },
         {
           id: '2',
-          name: '李四',
+          name: 'Ned Stark',
           tel: '1310000000',
-          address: '浙江省杭州市拱墅区莫干山路 50 号'
+          address: 'Somewhere'
         }
       ]
     }
@@ -44,10 +44,10 @@ export default {
 
   methods: {
     onAdd() {
-      Toast('新增收货地址');
+      Toast('Add');
     },
     onEdit(item, index) {
-      Toast('编辑收货地址:' + index);
+      Toast('Edit:' + index);
     }
   }
 }
@@ -57,23 +57,23 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中地址的 id | String | - | - |
-| list | 地址列表 | Array | `[]` | - |
-| addButtonText | 底部按钮文字 | String | `新增收货地址` | - |
+| v-model | Id of chosen address | String | - | - |
+| list | Address list | Array | `[]` | - |
+| addButtonText | Add button text | String | `Add new address` | - |
 
 ### Event
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|
-| add | 点击新增按钮时触发 | - |
-| edit | 点击编辑按钮时触发 | item: 当前地址对象，index: 索引 |
-| select | 切换选中的地址时触发 | item: 当前地址对象，index: 索引 |
+| add | Triggered when click add button | - |
+| edit | Triggered when click edit button | item: address object，index |
+| select | Triggered when select address | item: address object，index |
 
-### Data Structure
-#### 地址列表字段说明
+### Address Data Structure
+
 | key | Description | Type |
 |-----------|-----------|-----------|
-| id | 每条地址的唯一标识 | `String | Number` |
-| name | 收货人姓名 | `String` |
-| tel | 收货人手机号 | `String` |
-| address | 收货地址 | `String` |
+| id | Id | `String | Number` |
+| name | Name | `String` |
+| tel | Phone | `String` |
+| address | Address | `String` |

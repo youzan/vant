@@ -520,7 +520,7 @@ module.exports = {
               },
               {
                 path: '/address-list',
-                title: 'AddressList (In translation)'
+                title: 'AddressList'
               },
               {
                 path: '/area',
@@ -528,7 +528,7 @@ module.exports = {
               },
               {
                 path: '/contact',
-                title: 'Contact (In translation)'
+                title: 'Contact'
               },
               {
                 path: '/coupon',
