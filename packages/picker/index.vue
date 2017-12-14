@@ -7,7 +7,7 @@
         <div class="van-picker__title" v-if="title" v-text="title" />
       </slot>
     </div>
-    <div class="van-picker__columns">
+    <div class="van-picker__columns" @touchmove.prevent>
       <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
@@ -47,7 +47,7 @@ export default create({
     columns: {
       type: Array,
       default: () => []
-    },
+    }
   },
 
   data() {
@@ -64,7 +64,7 @@ export default create({
   watch: {
     columns() {
       this.initColumns();
-    },
+    }
   },
 
   methods: {

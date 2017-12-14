@@ -109,7 +109,7 @@ export default create({
     frameStyle() {
       return {
         height: this.itemHeight + 'px'
-      }
+      };
     },
 
     currentValue() {
@@ -168,7 +168,7 @@ export default create({
     },
 
     setValue(value) {
-      const { options, valueKey } = this;
+      const { options } = this;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
           this.setIndex(i);
