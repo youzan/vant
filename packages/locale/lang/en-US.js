@@ -93,5 +93,38 @@ export default {
   vanAddressList: {
     address: 'Address',
     add: 'Add new address'
+  },
+  vanSku: {
+    unavailable: 'The product is no longer available for purchase',
+    spec: 'Please select the full specification',
+    least: 'Choose at least one',
+    quota: quota => `Buy up to ${quota} items`,
+    inventory: 'Inventory shortage',
+    purchase: count => `You have purchased ${count} items`
+  },
+  vanSkuActions: {
+    cart: 'Add to cart',
+    buy: 'Buy'
+  },
+  vanSkuMessages: {
+    fill: 'Please fill',
+    number: 'Please fill in the correct number format message',
+    email: 'Please fill in the correct email message',
+    idcard: 'Please fill in the correct ID number message',
+    overlimit: 'not more than 200 words',
+    placeholder: {
+      'id_no': 'Idcard Number',
+      text: 'Text',
+      tel: 'Number',
+      email: 'Email',
+      date: 'Date',
+      time: 'Time',
+      textarea: 'Text'
+    }
+  },
+  vanSkuStepper: {
+    title: 'Quantity',
+    remain: count => `Remain ${count} items`,
+    quota: quota => `Buy up to ${quota} items`
   }
 };

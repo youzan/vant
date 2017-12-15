@@ -6,7 +6,7 @@
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
-        :placeholder="placeholderMap.textarea"
+        :placeholder="getPlaceholder('textarea')"
         type="textarea"
         v-model="messageValues[index]">
       </field>
@@ -14,7 +14,7 @@
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
-        :placeholder="placeholderMap[message.type]"
+        :placeholder="getPlaceholder(message.type)"
         :type="getType(message)"
         v-model="messageValues[index]">
       </field>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
+import { create } from '../../utils';
 import Field from '../../field';
 import CellGroup from '../../cell-group';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
-import { DEFAULT_PLACEHOLDER_MAP } from '../constants';
 
-export default {
+export default create({
   name: 'van-sku-messages',
 
   components: {
@@ -43,12 +43,6 @@ export default {
     goodsId: [Number, String]
   },
 
-  data() {
-    return {
-      placeholderMap: Object.assign({}, DEFAULT_PLACEHOLDER_MAP, this.messagePlaceholderMap)
-    };
-  },
-
   computed: {
     internalMessages() {
       if (Object.prototype.toString.call(this.messages) === '[object Array]') {
@@ -56,6 +50,7 @@ export default {
       }
       return [];
     },
+
     messageValues() {
       const messageValues = [];
       this.internalMessages.forEach((message, index) => {
@@ -71,6 +66,7 @@ export default {
       if (type === 'id_no') return 'text';
       return datetime > 0 ? 'datetime-local' : type;
     },
+
     getMessages() {
       const messages = {};
 
@@ -83,6 +79,7 @@ export default {
 
       return messages;
     },
+
     getCartMessages() {
       const messages = {};
 
@@ -96,6 +93,11 @@ export default {
 
       return messages;
     },
+
+    getPlaceholder(key) {
+      return this.messagePlaceholderMap[key] || this.$t(`placeholder.${key}`);
+    },
+
     validateMessages() {
       const values = this.messageValues;
 
@@ -109,27 +111,26 @@ export default {
             if (message.type === 'image') {
               continue;
             } else {
-              return `请填写${message.name}`;
+              return this.$t('fill') + message.name;
             }
           }
         } else {
           if (message.type === 'tel' && !validateNumber(value)) {
-            return '请填写正确的数字格式留言';
+            return this.$t('number');
           }
           if (message.type === 'email' && !validateEmail(value)) {
-            return '请填写正确的邮箱';
+            return this.$t('email');
           }
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
-            return '请填写正确的身份证号码';
+            return this.$t('id_no');
           }
         }
 
         if (value.length > 200) {
-          return `${message.name} 写的太多了<br/>不要超过200字`;
+          return `${message.name} ${this.$t('overlimit')}`;
         }
       }
     }
   }
-
-};
+});
 </script>
