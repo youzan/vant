@@ -84,7 +84,7 @@ Example of `AreaList`
 
 All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.json)
 
-#### argument of callback function `confirm`
+#### argument of callback function confirm
 An array contains selected area objects.
 
 `code` - code of selected area, `name` - name of selected area

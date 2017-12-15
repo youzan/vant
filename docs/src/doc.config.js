@@ -524,7 +524,7 @@ module.exports = {
               },
               {
                 path: '/area',
-                title: 'Area (In translation)'
+                title: 'Area'
               },
               {
                 path: '/contact',
@@ -544,7 +544,7 @@ module.exports = {
               },
               {
                 path: '/sku',
-                title: 'Sku (In translation)'
+                title: 'Sku'
               }
             ]
           }
