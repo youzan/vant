@@ -16,21 +16,6 @@
 import { create } from '../utils';
 import Picker from '../picker';
 
-const DEFAULT_PROVINCE = {
-  code: '-1',
-  name: '选择省份'
-};
-
-const DEFAULT_CITY = {
-  code: '-1',
-  name: '选择城市'
-};
-
-const DEFAULT_COUNTY = {
-  code: '-1',
-  name: '选择地区'
-};
-
 const PROVINCE_TYPE = 'provice';
 const CITY_TYPE = 'city';
 const COUNTY_TYPE = 'county';
@@ -53,6 +38,24 @@ export default create({
   },
 
   computed: {
+    DEFAULT_PROVINCE() {
+      return {
+        code: '-1',
+        name: this.$t('province')
+      };
+    },
+    DEFAULT_CITY() {
+      return {
+        code: '-1',
+        name: this.$t('city')
+      };
+    },
+    DEFAULT_COUNTY() {
+      return {
+        code: '-1',
+        name: this.$t('district')
+      };
+    },
     areaColumns() {
       const areaList = this.areaList;
 
@@ -63,14 +66,14 @@ export default create({
       const { columnsNum } = this;
 
       columns.push({
-        values: [DEFAULT_PROVINCE].concat(this.computedAreaList(PROVINCE_TYPE)),
+        values: [this.DEFAULT_PROVINCE].concat(this.computedAreaList(PROVINCE_TYPE)),
         className: 'van-area__province',
         defaultIndex: this.getAreaIndex(PROVINCE_TYPE, curValue)
       });
 
       if (+columnsNum > 1) {
         columns.push({
-          values: [DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, curValue.slice(0, 2))),
+          values: [this.DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, curValue.slice(0, 2))),
           className: 'van-area__city',
           defaultIndex: this.getAreaIndex(CITY_TYPE, curValue)
         });
@@ -78,7 +81,7 @@ export default create({
 
       if (+columnsNum > 2) {
         columns.push({
-          values: [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, curValue.slice(0, 4))),
+          values: [this.DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, curValue.slice(0, 4))),
           className: 'van-area__county',
           defaultIndex: this.getAreaIndex(COUNTY_TYPE, curValue)
         });
@@ -133,16 +136,16 @@ export default create({
       if (index === 0) {
         picker.setColumnValues(
           1,
-          [DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, code.slice(0, 2)))
+          [this.DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, code.slice(0, 2)))
         );
         picker.setColumnValues(
           2,
-          [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
+          [this.DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
         );
       } else if (index === 1) {
         picker.setColumnValues(
           2,
-          [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
+          [this.DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
         );
       }
     },
