@@ -55,6 +55,11 @@ export default {
     discount: discount => `${discount * 10}% off`,
     condition: condition => `At least ${condition}`
   },
+  vanArea: {
+    province: 'Province',
+    city: 'City',
+    district: 'District'
+  },
   vanAddressEdit: {
     areaTitle: 'Area',
     areaWrong: 'Please select the correct receiving area',
