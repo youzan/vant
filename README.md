@@ -23,6 +23,7 @@
 - Extensive documentation and demos
 - Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - Support TypeScript
+- Support SSR
 
 <p align="center">
   <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
@@ -96,9 +97,9 @@ Modern browsers and Android 4.0+, iOS 6+.
 ## Links
 - [Documentation](https://www.youzanyun.com/zanui/vant)
 - [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
-- [React UI Zent](https://www.youzanyun.com/zanui/zent)
+- [Weapp UI](https://github.com/youzan/zanui-weapp)
+- [Vant Demo](https://github.com/youzan/vant-demo)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
-- [vant-demo](https://github.com/youzan/vant-demo)
  
 ## Preview
 You can scan the following QR code to access the demo：

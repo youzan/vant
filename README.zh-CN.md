@@ -20,6 +20,7 @@
 - 完善的文档和示例
 - 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 - 支持 TypeScript
+- 支持 SSR
 
 <p align="center">
   <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
@@ -102,9 +103,9 @@ Vue.use(Vant);
 ## 链接
 - [详细文档](https://www.youzanyun.com/zanui/vant)
 - [更新日志](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
-- [React 组件库 Zent](https://www.youzanyun.com/zanui/zent)
-- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
+- [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 - [vant-demo](https://github.com/youzan/vant-demo)
+- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
  
 ## 开源协议
 
