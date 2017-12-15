@@ -1,5 +1,19 @@
 ## 更新日志
 
+### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
+`2017-12-15`
+
+**Improvements**
+- ContactCard: 新增 'editable' 属性 [\#435](https://github.com/youzan/vant/pull/435) [@chenjiahan](https://github.com/chenjiahan)
+- Coupon: 支持英文语言 [\#431](https://github.com/youzan/vant/pull/431) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Popup preventScroll 属性失效的问题 [\#429](https://github.com/youzan/vant/pull/429) [@Tinysymphony](https://github.com/Tinysymphony)
+- 修复 Picker 滑动时未禁止页面滚动的问题 [\#432](https://github.com/youzan/vant/pull/432) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Picker 底部区域无法滑动的问题 [\#433](https://github.com/youzan/vant/pull/433) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 PullRefresh 顶部内容遮挡的问题 [\#436](https://github.com/youzan/vant/pull/436) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
 `2017-12-13`
 
