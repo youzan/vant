@@ -1,5 +1,19 @@
 ## Changelog
 
+### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
+`2017-12-15`
+
+**Improvements**
+- ContactCard: add 'editable' prop [\#435](https://github.com/youzan/vant/pull/435) [@chenjiahan](https://github.com/chenjiahan)
+- Coupon: support i18n [\#431](https://github.com/youzan/vant/pull/431) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Popup preventScroll not work in some cases [\#429](https://github.com/youzan/vant/pull/429) [@Tinysymphony](https://github.com/Tinysymphony)
+- fix Picker should prevent default touchmove [\#432](https://github.com/youzan/vant/pull/432) [@chenjiahan](https://github.com/chenjiahan)
+- fix Picker bottom area not dragable [\#433](https://github.com/youzan/vant/pull/433) [@chenjiahan](https://github.com/chenjiahan)
+- fix PullRefresh head display error [\#436](https://github.com/youzan/vant/pull/436) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
 `2017-12-13`
 

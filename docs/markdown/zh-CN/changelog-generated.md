@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12) (2017-12-15)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.11...v0.11.12)
+
+**Issue**
+
+- 引入图片懒加载组件时报错 [\#438](https://github.com/youzan/vant/issues/438)
+- 自定义tabbar选中颜色 [\#428](https://github.com/youzan/vant/issues/428)
+- 请教一下，如何使van-field得到焦点 [\#427](https://github.com/youzan/vant/issues/427)
+- iOS（任何版本）下Popup的preventScroll属性会禁止掉弹层内部的内容滚动 [\#423](https://github.com/youzan/vant/issues/423)
+- Search 组件的 focusStatus 是否可以增加到API选项, 进页面自动聚焦 [\#416](https://github.com/youzan/vant/issues/416)
+
+**Improvements**
+
+- \[Doc\] translate AddressList & Contact [\#437](https://github.com/youzan/vant/pull/437) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] PullRefresh head overflow [\#436](https://github.com/youzan/vant/pull/436) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] ContactCard add 'editable' prop [\#435](https://github.com/youzan/vant/pull/435) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker bottom area not dragable [\#433](https://github.com/youzan/vant/pull/433) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker should prevent default touchmove [\#432](https://github.com/youzan/vant/pull/432) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Coupon i18n [\#431](https://github.com/youzan/vant/pull/431) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] popup scrollable element [\#429](https://github.com/youzan/vant/pull/429) ([Tinysymphony](https://github.com/Tinysymphony))
+
 ## [v0.11.11](https://github.com/youzan/vant/tree/v0.11.11) (2017-12-13)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.10...v0.11.11)
 
