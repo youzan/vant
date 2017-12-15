@@ -3,7 +3,7 @@
 .van-cell {
   width: 100%;
   display: table;
-  padding: 10px 15px 10px 0;
+  padding: 10px 15px;
   box-sizing: border-box;
   line-height: 24px;
   background-color: $white;
@@ -12,11 +12,11 @@
   overflow: hidden;
 
   &:not(:last-child)::after {
+    left: 15px;
     border-bottom-width: 1px;
   }
 
   &-group {
-    padding-left: 15px;
     background-color: $white;
   }
 
@@ -47,12 +47,18 @@
     vertical-align: middle;
     overflow: hidden;
 
-    &--link {
-      padding-right: 20px;
-    }
-
     &--alone {
       text-align: left;
+    }
+  }
+
+  &--link {
+    &:active {
+      background-color: $active-color;
+    }
+
+    .van-cell__value {
+      padding-right: 20px;
     }
   }
 

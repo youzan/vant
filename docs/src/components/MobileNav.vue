@@ -80,6 +80,10 @@ export default {
     position: relative;
     user-select: none;
 
+    &:active {
+      background-color: $active-color;
+    }
+
     &--open {
       color: #999;
     }

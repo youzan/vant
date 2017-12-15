@@ -1,5 +1,9 @@
 <template>
-  <div class="van-cell van-hairline" :class="{ 'van-cell--required': required }" @click="onClick">
+  <div
+    class="van-cell van-hairline"
+    :class="{ 'van-cell--required': required, 'van-cell--link': isLink, }"
+    @click="onClick"
+  >
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
         <icon v-if="icon" :name="icon" />
@@ -13,7 +17,6 @@
       class="van-cell__value"
       v-if="value || $slots.default"
       :class="{
-        'van-cell__value--link': isLink,
         'van-cell__value--alone': !$slots.title && !title && !label
       }"
     >
