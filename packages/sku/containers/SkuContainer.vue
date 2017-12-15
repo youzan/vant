@@ -81,7 +81,7 @@ import SkuStepper from '../components/SkuStepper';
 import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
 import { isAllSelected, getSkuComb, getSelectedSkuValues } from '../utils/skuHelper';
-import { LIMIT_TYPE, DEFAULT_STEPPER_TITLE } from '../constants';
+import { LIMIT_TYPE } from '../constants';
 import { create } from '../../utils';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
@@ -121,10 +121,7 @@ export default create({
       default: true
     },
     buyText: String,
-    stepperTitle: {
-      type: String,
-      default: DEFAULT_STEPPER_TITLE
-    },
+    stepperTitle: String,
     bodyOffsetTop: {
       type: Number,
       default: 200
@@ -260,7 +257,7 @@ export default create({
     },
     validateSku() {
       if (this.selectedNum === 0) {
-        return '商品已经无法购买啦';
+        return this.$t('unavailable');
       }
 
       if (this.isSkuCombSelected) {
@@ -268,7 +265,7 @@ export default create({
         // sku留言没有错误则校验通过
         return error;
       } else {
-        return '请选择完整的规格';
+        return this.$t('spec');
       }
     },
     handleCloseClicked() {
@@ -291,14 +288,14 @@ export default create({
     },
     handleOverLimit({ action, limitType, quota, quotaUsed }) {
       if (action === 'minus') {
-        Toast('至少选择一件');
+        Toast(this.$t('lease'));
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
-          let msg = `限购${quota}件`;
-          if (quotaUsed > 0) msg += `，您已购买${quotaUsed}件`;
+          let msg = this.$t('quota', quota);
+          if (quotaUsed > 0) msg += `，${this.$t('purchase', quotaUsed)}`;
           Toast(msg);
         } else {
-          Toast('库存不足');
+          Toast(this.$t('inventory'));
         }
       }
     },

@@ -4,19 +4,19 @@
       <div class="sku-container">
         <van-sku
           v-model="showBase"
-          :sku="sku"
-          :goods="goods"
-          :goodsId="goodsId"
-          :hideStock="sku.hide_stock"
-          :quota="quota"
-          :quotaUsed="quotaUsed"
-          :resetStepperOnHide="resetStepperOnHide"
-          :disableStepperInput="disableStepperInput"
+          :sku="$t('sku').sku"
+          :goods="$t('sku').goods_info"
+          :goodsId="$t('sku').goods_id"
+          :hideStock="$t('sku').sku.hide_stock"
+          :quota="$t('sku').quota"
+          :quotaUsed="$t('sku').quota_used"
+          :resetStepperOnHide="true"
+          :disableStepperInput="true"
           @buy-clicked="handleBuyClicked"
           @add-cart="handleAddCartClicked"
         >
         </van-sku>
-        <van-button type="primary" @click="showBase = true" block>基础用法</van-button>
+        <van-button type="primary" @click="showBase = true" block>{{ $t('basicUsage') }}</van-button>
       </div>
     </demo-block>
 
@@ -24,31 +24,28 @@
       <div class="sku-container">
         <van-sku
           v-model="showCustomAction"
-          stepperTitle="我要买"
-          :sku="sku"
-          :goods="goods"
-          :goodsId="goodsId"
-          :hideStock="sku.hide_stock"
+          :stepperTitle="$t('stepperTitle')"
+          :sku="$t('sku').sku"
+          :goods="$t('sku').goods_info"
+          :goodsId="$t('sku').goods_id"
+          :hideStock="$t('sku').sku.hide_stock"
           :showAddCartBtn="true"
-          :quota="quota"
-          :quotaUsed="quotaUsed"
+          :quota="$t('sku').quota"
+          :quotaUsed="$t('sku').quota_used"
           :resetStepperOnHide="true"
           :initialSku="initialSku"
           @buy-clicked="handleBuyClicked"
           @add-cart="handleAddCartClicked"
         >
-          <!-- 隐藏sku messages -->
           <template slot="sku-messages"></template>
-          <!-- 自定义sku actions -->
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
-              <van-button bottomAction @click="handlePointClicked">积分兑换</van-button>
-              <!-- 直接触发sku内部事件，通过内部事件执行handleBuyClicked回调 -->
-              <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
+              <van-button bottomAction @click="handlePointClicked">{{ $t('button1') }}</van-button>
+              <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">{{ $t('button2') }}</van-button>
             </div>
           </template>
         </van-sku>
-        <van-button type="primary" @click="showCustomAction = true" block>自定义sku actions</van-button>
+        <van-button type="primary" @click="showCustomAction = true" block>{{ $t('advancedUsage') }}</van-button>
       </div>
     </demo-block>
   </demo-section>
@@ -57,16 +54,19 @@
 <script>
 import data from '../mock/sku';
 
-const goods = data.goods_info;
-goods.picture = goods.picture[0];
-
 export default {
   i18n: {
     'zh-CN': {
-
+      sku: data['zh-CN'],
+      stepperTitle: '我要买',
+      button1: '积分兑换',
+      button2: '买买买'
     },
     'en-US': {
-
+      sku: data['en-US'],
+      stepperTitle: 'Stepper title',
+      button1: 'Button',
+      button2: 'Button'
     }
   },
 
@@ -74,13 +74,6 @@ export default {
     return {
       showBase: false,
       showCustomAction: false,
-      sku: data.sku,
-      goods: goods,
-      goodsId: data.goods_id,
-      quota: data.quota,
-      quotaUsed: data.quota_used,
-      disableStepperInput: true,
-      resetStepperOnHide: true,
       initialSku: {
         s1: '30349',
         s2: '1193'

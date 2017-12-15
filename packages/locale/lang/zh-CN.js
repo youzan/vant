@@ -97,5 +97,38 @@ export default {
   vanAddressList: {
     address: '收货地址',
     add: '新增收货地址'
+  },
+  vanSku: {
+    unavailable: '商品已经无法购买啦',
+    spec: '请选择完整的规格',
+    least: '至少选择一件',
+    quota: quota => `限购${quota}件`,
+    inventory: '库存不足',
+    purchase: count => `您已购买${count}件`
+  },
+  vanSkuActions: {
+    cart: '加入购物车',
+    buy: '立即购买'
+  },
+  vanSkuMessages: {
+    fill: '请填写',
+    number: '请填写正确的数字格式留言',
+    email: '请填写正确的邮箱',
+    'id_no': '请填写正确的身份证号码',
+    overlimit: '写的太多了，不要超过200字',
+    placeholder: {
+      'id_no': '输入18位身份证号码',
+      text: '输入文本',
+      tel: '输入数字',
+      email: '输入邮箱',
+      date: '点击选择日期',
+      time: '点击选择时间',
+      textarea: '点击填写段落文本'
+    }
+  },
+  vanSkuStepper: {
+    title: '购买数量',
+    remain: count => `剩余${count}件`,
+    quota: quota => `每人限购${quota}件`
   }
 };

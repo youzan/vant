@@ -1,7 +1,7 @@
 <template>
   <div class="van-sku-stepper-stock">
     <div class="van-sku-stepper-container">
-      <div class="van-sku__stepper-title">{{ stepperTitle }}：</div>
+      <div class="van-sku__stepper-title">{{ stepperTitle || $t('title') }}：</div>
       <stepper
         class="van-sku__stepper"
         v-model="currentNum"
@@ -11,14 +11,14 @@
         @overlimit="handleOverLimit">
       </stepper>
     </div>
-    <div v-if="!hideStock" class="van-sku__stock">剩余{{ stock }}件</div>
-    <div v-if="quota > 0" class="van-sku__quota">每人限购{{ quota }}件</div>
+    <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
+    <div v-if="quota > 0" class="van-sku__quota">{{ $t('quota', quota) }}</div>
   </div>
 </template>
 
 <script>
 import Stepper from '../../stepper';
-import { LIMIT_TYPE, DEFAULT_BUY_TEXT } from '../constants';
+import { LIMIT_TYPE } from '../constants';
 
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
@@ -35,6 +35,7 @@ export default {
     selectedSku: Object,
     selectedSkuComb: Object,
     selectedNum: Number,
+    stepperTitle: String,
     quota: Number,
     quotaUsed: Number,
     hideStock: {
@@ -44,10 +45,6 @@ export default {
     disableStepperInput: {
       type: Boolean,
       default: false
-    },
-    stepperTitle: {
-      type: String,
-      default: DEFAULT_BUY_TEXT
     }
   },
 
