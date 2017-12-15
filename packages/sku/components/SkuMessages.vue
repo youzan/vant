@@ -23,12 +23,13 @@
 </template>
 
 <script>
+import { create } from '../../utils';
 import Field from '../../field';
 import CellGroup from '../../cell-group';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
 
-export default {
+export default create({
   name: 'van-sku-messages',
 
   components: {
@@ -131,6 +132,5 @@ export default {
       }
     }
   }
-
-};
+});
 </script>

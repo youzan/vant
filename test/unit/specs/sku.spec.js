@@ -216,7 +216,7 @@ describe('Sku', (done) => {
           buyBtn.trigger('click');
 
           wrapper.vm.$nextTick(() => {
-            expect(toastText.textContent).to.equal('留言4 写的太多了<br/>不要超过200字');
+            expect(toastText.textContent).to.equal('留言4 写的太多了，不要超过200字');
 
             textarea.element.value = '';
             // 测试数字留言

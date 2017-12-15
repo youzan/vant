@@ -7,8 +7,9 @@
 
 <script>
 import VanButton from '../../button';
+import { create } from '../../utils';
 
-export default {
+export default create({
   name: 'van-sku-actions',
 
   components: {
@@ -29,5 +30,5 @@ export default {
       this.skuEventBus.$emit('sku:buy');
     }
   }
-};
+});
 </script>

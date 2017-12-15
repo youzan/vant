@@ -288,7 +288,7 @@ export default create({
     },
     handleOverLimit({ action, limitType, quota, quotaUsed }) {
       if (action === 'minus') {
-        Toast(this.$t('lease'));
+        Toast(this.$t('least'));
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
           let msg = this.$t('quota', quota);
