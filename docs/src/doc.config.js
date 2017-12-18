@@ -2,12 +2,19 @@
 module.exports = {
   'zh-CN': {
     header: {
-      lang: {
-        text: 'En',
-        from: 'zh-CN',
-        to: 'en-US'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'ZanUI',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
+      nav: {
+        lang: {
+          text: 'En',
+          from: 'zh-CN',
+          to: 'en-US'
+        },
+        github: 'https://github.com/youzan/vant'
+      }
     },
     footer: {
       github: 'https://github.com/youzan/vant',
@@ -278,12 +285,19 @@ module.exports = {
   },
   'en-US': {
     header: {
-      lang: {
-        text: '中文',
-        from: 'en-US',
-        to: 'zh-CN'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'ZanUI',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
+      nav: {
+        lang: {
+          text: '中文',
+          from: 'en-US',
+          to: 'zh-CN'
+        },
+        github: 'https://github.com/youzan/vant'
+      }
     },
     footer: {
       github: 'https://github.com/youzan/vant',
