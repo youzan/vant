@@ -39,10 +39,10 @@
     &:active {
       background-color: $active-color;
     }
-  }
 
-  &__mini-btn-icon {
-    font-size: 20px;
-    margin-bottom: 5px;
+    &-icon {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
   }
 }

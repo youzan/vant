@@ -14,22 +14,14 @@ Vue.use(GoodsActionMiniBtn);
 ```
 
 ### Usage
-
+#### Basic Usage
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn icon="chat" @click="onClickMiniBtn">
-    Icon1
-  </van-goods-action-mini-btn>
-  <van-goods-action-mini-btn icon="cart" @click="onClickMiniBtn">
-    Icon2
-  </van-goods-action-mini-btn>
-  <van-goods-action-big-btn @click="onClickBigBtn">
-    Button1
-  </van-goods-action-big-btn>
-  <van-goods-action-big-btn @click="onClickBigBtn" primary>
-    Button2
-  </van-goods-action-big-btn>
+  <van-goods-action-mini-btn icon="chat" text="Icon1" @click="onClickMiniBtn" />
+  <van-goods-action-mini-btn icon="cart" text="Icon2" @click="onClickMiniBtn" />
+  <van-goods-action-big-btn text="Button1" @click="onClickBigBtn" />
+  <van-goods-action-big-btn text="Button2" @click="onClickBigBtn" primary />
 </van-goods-action>
 ```
 
@@ -46,19 +38,40 @@ export default {
 }
 ```
 
+#### Icon info
+Use `info` prop to show messages in upper right corner of icon
+
+```html
+<van-goods-action>
+  <van-goods-action-mini-btn icon="chat" text="Icon1" />
+  <van-goods-action-mini-btn icon="cart" text="Icon2" info="5" />
+  <van-goods-action-mini-btn icon="shop" text="Icon3" />
+  <van-goods-action-big-btn text="Button1" />
+  <van-goods-action-big-btn text="Button2" primary />
+</van-goods-action>
+```
+
 ### API
 
 #### GoodsActionMiniBtn
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| icon | Icon | `String` | - | Icon 组件支持的所有图标 |
+| text | Button text | `String` | - | - |
+| icon | Icon | `String` | - | - |
 | iconClass | Icon class name | `String` | `''` | - |
-| url | Link URL | `String` | `javascript:;` | - |
+| info | Info message | `String` | - | - |
+| url | Link | `String` | - | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
+
 
 #### GoodsActionBigBtn
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| url | Link URL | `String` | `javascript:;` | - |
+| text | Button text | `String` | - | - |
 | primary | Is primary button (red color) | `Boolean` | `false` | - |
+| url | Link | `String` | - | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
