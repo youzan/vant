@@ -1,6 +1,7 @@
 <template>
   <i class="van-icon" :class="`van-icon-${name}`" v-on="$listeners">
     <slot></slot>
+    <div v-if="info" class="van-icon__info">{{ info }}</div>
   </i>
 </template>
 
@@ -11,7 +12,8 @@ export default {
   install,
   name: 'van-icon',
   props: {
-    name: String
+    name: String,
+    info: String
   }
 };
 </script>
