@@ -9,7 +9,6 @@
   &__toolbar {
     height: 40px;
     line-height: 40px;
-    overflow: hidden;
   }
 
   &__cancel,
@@ -54,12 +53,7 @@
     flex: 1;
     overflow: hidden;
     font-size: 18px;
-    position: relative;
     text-align: center;
-
-    ul {
-      box-sizing: border-box;
-    }
 
     li {
       padding: 0 10px;
