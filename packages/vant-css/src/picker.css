@@ -39,6 +39,16 @@
     display: flex;
     position: relative;
   }
+  
+  &__frame {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
 
   &-column {
     flex: 1;
@@ -63,16 +73,6 @@
 
     li&--disabled {
       opacity: .3;
-    }
-
-    &__frame {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      position: absolute;
-      pointer-events: none;
-      transform: translateY(-50%);
     }
   }
 }
