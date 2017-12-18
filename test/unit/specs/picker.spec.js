@@ -299,12 +299,13 @@ describe('PickerColumn', () => {
   it('drag options', () => {
     wrapper = mount(PickerColumn, {
       propsData: {
-        options: columns[1].values
+        options: columns[1].values,
+        itemHeight: 50
       }
     });
     expect(wrapper.vm.currentIndex).to.equal(0);
 
-    const column = wrapper.find('.van-picker-column ul')[0];
+    const column = wrapper.find('.van-picker-column')[0];
     dragHelper(column, 0);
     expect(wrapper.vm.currentIndex).to.equal(0);
 
