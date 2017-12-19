@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+`2017-12-19`
+
+**Improvements**
+- Area: add 'title' prop [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add 'info' prop [\#447](https://github.com/youzan/vant/pull/447) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: optimzie performance [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Search: support input native events [\#451](https://github.com/youzan/vant/pull/451) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: add 'info' prop, support router link [\#448](https://github.com/youzan/vant/pull/448) [@chenjiahan](https://github.com/chenjiahan)
+- Area & Sku: support i18n [\#439](https://github.com/youzan/vant/pull/439) [\#440](https://github.com/youzan/vant/pull/440) [@chenjiahan](https://github.com/chenjiahan) [@Tinysymphony](https://github.com/Tinysymphony)
+
+**Bug Fixes**
+- fix GoodsAction display error in small screen [\#446](https://github.com/youzan/vant/pull/446) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 `2017-12-15`
 

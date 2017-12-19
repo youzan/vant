@@ -1,5 +1,29 @@
 ## 更新日志
 
+## [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13) (2017-12-19)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.12...v0.11.13)
+
+**Issue**
+
+- dialog在component之外的显示问题 [\#449](https://github.com/youzan/vant/issues/449)
+- Waterfall无限加载 [\#445](https://github.com/youzan/vant/issues/445)
+- van-switch-cell 使用v-for循环 :v-model 如何使用？ [\#444](https://github.com/youzan/vant/issues/444)
+- popup组件zIndex层级问题 [\#443](https://github.com/youzan/vant/issues/443)
+- uploader没有反应 [\#434](https://github.com/youzan/vant/issues/434)
+- PullRefresh  组件 与 Popup  一起使用时的问题 [\#414](https://github.com/youzan/vant/issues/414)
+- popup 在ios下显示异常 [\#409](https://github.com/youzan/vant/issues/409)
+
+**Improvements**
+
+- \[Doc\] add introduction page [\#452](https://github.com/youzan/vant/pull/452) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Search: support input native events [\#451](https://github.com/youzan/vant/pull/451) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Area add 'title' prop & optimzie Picker performance [\#450](https://github.com/youzan/vant/pull/450) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] GoodsAction: support  routerLink & info [\#448](https://github.com/youzan/vant/pull/448) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon add 'info' prop [\#447](https://github.com/youzan/vant/pull/447) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] GoodsAction fit small screen [\#446](https://github.com/youzan/vant/pull/446) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] English document of area component. [\#440](https://github.com/youzan/vant/pull/440) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[Improvement\] Sku: support i18n [\#439](https://github.com/youzan/vant/pull/439) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12) (2017-12-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.11...v0.11.12)
 
