@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+`2017-12-19`
+
+**Improvements**
+- Area: 新增 'title' prop [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 新增 'info' prop [\#447](https://github.com/youzan/vant/pull/447) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: 优化性能 [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Search: 支持 input 原生事件 [\#451](https://github.com/youzan/vant/pull/451) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: 新增 'info' 属性，支持路由跳转 [\#448](https://github.com/youzan/vant/pull/448) [@chenjiahan](https://github.com/chenjiahan)
+- Area & Sku: 支持多语言切换 [\#439](https://github.com/youzan/vant/pull/439) [\#440](https://github.com/youzan/vant/pull/440) [@chenjiahan](https://github.com/chenjiahan) [@Tinysymphony](https://github.com/Tinysymphony)
+
+**Bug Fixes**
+- 修复 GoodsAction 在小屏下文字显示不全的问题 [\#446](https://github.com/youzan/vant/pull/446) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 `2017-12-15`
 
