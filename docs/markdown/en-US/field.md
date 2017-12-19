@@ -90,12 +90,10 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | icon | Right side Icon name | `String` | - | - |
 
 ### Event
-Filed support all native events of input tag，such as `keypress`、`keyup`
+Filed support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
-| focus | Triggered when filed get focused | - |
-| blur | Triggered when blur filed | - |
 | click-icon | Triggered when click the icon of filed | - |
 
 ### Slot

@@ -11,8 +11,8 @@
           :placeholder="$t('placeholder')"
           :showAction="true"
           @search="onSearch"
-          @cancel="onCancel">
-        </van-search>
+          @cancel="onCancel"
+        />
       </form>
     </demo-block>
 

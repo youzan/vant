@@ -54,6 +54,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | showAction | 是否在搜索框右侧显示取消按钮 | `Boolean` | false | - |
 
 ### Event
+Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
