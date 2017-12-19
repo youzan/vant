@@ -22,7 +22,7 @@ const registerRoute = (isExample) => {
     } else {
       route.push({
         path: `/${lang}`,
-        redirect: `/${lang}/component/quickstart`
+        redirect: `/${lang}/component/intro`
       });
     }
 
