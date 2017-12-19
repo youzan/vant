@@ -6,7 +6,10 @@
   "style": "lib/vant-css/index.css",
   "unpkg": "lib/index.js",
   "typings": "types/index.d.ts",
-  "files": ["lib", "packages"],
+  "files": [
+    "lib",
+    "packages"
+  ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
@@ -20,6 +23,7 @@
     "deploy:cdn": "superman cdn /zanui/vant docs/dist/*.js docs/dist/*.css && superman cdn /zanui/vant/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vant/async_zh-CN docs/dist/async_zh-CN/*.js",
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "dist": "node build/bin/build-lib.js",
+    "lint": "./node_modules/.bin/eslint ./packages --ext .js --ext .vue",
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:coverage": "open test/unit/coverage/lcov-report/index.html",
     "test:watch": "karma start test/unit/karma.conf.js",
@@ -30,7 +34,11 @@
     "type": "git",
     "url": "git@github.com:youzan/vant.git"
   },
-  "keywords": ["youzan", "vue", "component"],
+  "keywords": [
+    "youzan",
+    "vue",
+    "component"
+  ],
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
@@ -56,6 +64,7 @@
     "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "dependency-tree": "^5.12.0",
+    "eslint": "^4.13.1",
     "eslint-plugin-vue": "^2.1.0",
     "extract-text-webpack-plugin": "3.0.2",
     "fast-vue-md-loader": "^1.0.3",
@@ -79,6 +88,7 @@
     "precss": "2.0.0",
     "progress-bar-webpack-plugin": "^1.10.0",
     "rimraf": "^2.5.4",
+    "shelljs": "^0.7.8",
     "sinon": "^2.4.1",
     "sinon-chai": "^2.12.0",
     "style-loader": "^0.19.1",

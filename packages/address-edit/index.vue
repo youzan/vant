@@ -72,6 +72,7 @@
 </template>
 
 <script>
+/* eslint-disable camelcase */
 import { create } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
@@ -149,7 +150,7 @@ export default create({
         this.isEdit = !!val.id;
       },
       deep: true
-    },
+    }
   },
 
   computed: {

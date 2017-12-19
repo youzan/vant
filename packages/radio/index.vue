@@ -41,7 +41,9 @@ export default create({
 
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
+        return this.isGroup && this.parentGroup
+          ? this.parentGroup.value
+          : this.value;
       },
 
       set(val) {
@@ -55,8 +57,8 @@ export default create({
 
     isDisabled() {
       return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled || this.disabled
-          : this.disabled;
+        ? this.parentGroup.disabled || this.disabled
+        : this.disabled;
     }
   },
 
