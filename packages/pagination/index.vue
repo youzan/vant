@@ -79,7 +79,8 @@ export default create({
       const pageCount = this.computedPageCount;
 
       // Default page limits
-      let startPage = 1, endPage = pageCount;
+      let startPage = 1;
+      let endPage = pageCount;
       const isMaxSized = this.showPageSize !== undefined && this.showPageSize < pageCount;
 
       // recompute if showPageSize
@@ -97,19 +98,19 @@ export default create({
 
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
-        let page = this.makePage(number, number, number === this.value);
+        const page = this.makePage(number, number, number === this.value);
         pages.push(page);
       }
 
       // Add links to move between page sets
       if (isMaxSized && this.showPageSize > 0 && this.forceEllipses) {
         if (startPage > 1) {
-          let previousPageSet = this.makePage(startPage - 1, '...', false);
+          const previousPageSet = this.makePage(startPage - 1, '...', false);
           pages.unshift(previousPageSet);
         }
 
         if (endPage < pageCount) {
-          let nextPageSet = this.makePage(endPage + 1, '...', false);
+          const nextPageSet = this.makePage(endPage + 1, '...', false);
           pages.push(nextPageSet);
         }
       }
