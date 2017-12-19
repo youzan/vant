@@ -33,6 +33,11 @@ module.exports = {
           {
             list: [
               {
+                path: '/intro',
+                title: '介绍',
+                noExample: true
+              },
+              {
                 path: '/quickstart',
                 title: '快速上手',
                 noExample: true
@@ -315,6 +320,11 @@ module.exports = {
         groups: [
           {
             list: [
+              {
+                path: '/intro',
+                title: 'Introduction',
+                noExample: true
+              },
               {
                 path: '/quickstart',
                 title: 'Getting Started',

@@ -15,7 +15,7 @@
  
 ## 特性
 
-- 48 个经过有赞线上业务检验的组件
+- 48+ 个经过有赞线上业务检验的组件
 - 单元测试覆盖率超过90%
 - 完善的文档和示例
 - 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
@@ -102,7 +102,7 @@ Vue.use(Vant);
 
 ## 链接
 - [详细文档](https://www.youzanyun.com/zanui/vant)
-- [更新日志](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
+- [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/component/changelog)
 - [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 - [vant-demo](https://github.com/youzan/vant-demo)
 - [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
