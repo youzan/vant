@@ -6,11 +6,7 @@
   "style": "lib/vant-css/index.css",
   "unpkg": "lib/index.js",
   "typings": "types/index.d.ts",
-  "files": [
-    "lib",
-    "src",
-    "packages"
-  ],
+  "files": ["lib", "packages"],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
@@ -34,11 +30,7 @@
     "type": "git",
     "url": "git@github.com:youzan/vant.git"
   },
-  "keywords": [
-    "youzan",
-    "vue",
-    "component"
-  ],
+  "keywords": ["youzan", "vue", "component"],
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
