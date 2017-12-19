@@ -9,7 +9,6 @@
   &__toolbar {
     height: 40px;
     line-height: 40px;
-    overflow: hidden;
   }
 
   &__cancel,
@@ -39,17 +38,22 @@
     display: flex;
     position: relative;
   }
+  
+  &__frame {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
 
   &-column {
     flex: 1;
     overflow: hidden;
     font-size: 18px;
-    position: relative;
     text-align: center;
-
-    ul {
-      box-sizing: border-box;
-    }
 
     li {
       padding: 0 10px;
@@ -63,16 +67,6 @@
 
     li&--disabled {
       opacity: .3;
-    }
-
-    &__frame {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      position: absolute;
-      pointer-events: none;
-      transform: translateY(-50%);
     }
   }
 }

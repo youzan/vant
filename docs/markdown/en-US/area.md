@@ -32,7 +32,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 Set `columnsNum` with 2, you'll have a 2 level picker.
 
 ```html
-<van-area :areaList="areaList" :columnsNum="2" />
+<van-area :areaList="areaList" :columnsNum="2" title="Title" />
 ```
 
 
@@ -41,6 +41,7 @@ Set `columnsNum` with 2, you'll have a 2 level picker.
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | value | the `code` of selected area | `String` | - | - |
+| title | Toolbar title | `String` | `''` | - |
 | areaList | an object contains these properties: `province_list`, `city_list` and `county_list`  | `Object` | - | - |
 | columnsNum | level of picker | `String`,`Number` | 3 | - |
 

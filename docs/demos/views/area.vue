@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-area :areaList="$t('areaList')" :columnsNum="2" />
+      <van-area :areaList="$t('areaList')" :columnsNum="2" :title="$t('title')" />
     </demo-block>
   </demo-section>
 </template>
@@ -34,7 +34,6 @@ export default {
 
   data() {
     return {
-      areaList: AreaList,
       value: '110101'
     };
   }

@@ -3,11 +3,12 @@
     <picker
       ref="picker"
       showToolbar
+      :title="title"
       valueKey="name"
       :columns="areaColumns"
       @change="onChange"
       @confirm="$emit('confirm', $event)"
-      @cancel="$emit('cancel')"
+      @cancel="$emit('cancel', $event)"
     />
   </div>
 </template>
@@ -29,6 +30,7 @@ export default create({
 
   props: {
     value: {},
+    title: String,
     areaList: Object,
     // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {

@@ -33,7 +33,7 @@ Vue.use(Area);
 可以通过`columnsNum`属性配置省市县显示的列数，默认情况下会显示省市县，当你设置为`2`，则只会显示省市选择。
 
 ```html
-<van-area :areaList="areaList" :columnsNum="2" />
+<van-area :areaList="areaList" :columnsNum="2" title="标题" />
 ```
 
 ### API
@@ -41,6 +41,7 @@ Vue.use(Area);
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | value | 当前选中的省市区`code` | `String` | - | - |
+| title | 顶部栏标题 | `String` | `''` | - |
 | areaList | 省市县数据，必须与`province_list`、`city_list`和`county_list`为key | `Object` | - | - |
 | columnsNum | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | 3 | - |
 
