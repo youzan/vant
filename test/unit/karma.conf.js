@@ -14,7 +14,7 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap'],
+      './index.js': ['webpack'],
       'test/unit/!(components)/**/*.vue': ['coverage']
     },
     webpack: getWebpackConfig(getTestFileName()),
