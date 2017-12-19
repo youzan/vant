@@ -64,6 +64,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | showAction | Whether to show right button | `Boolean` | false | - |
 
 ### Event
+Search support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Attribute |
 |-----------|-----------|-----------|

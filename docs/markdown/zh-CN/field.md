@@ -92,12 +92,10 @@ Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | icon | 输入框尾部图标 | `String` | - |  Icon 组件支持的类型 |
 
 ### Event
-Filed 默认支持 Input 标签所有的原生事件，比如 `keypress`、`keyup` 等
+Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| focus | 输入框聚焦时触发 | - |
-| blur | 输入框失焦时触发 | - |
 | click-icon | 点击尾部图标时触发 | - |
 
 ### Slot
