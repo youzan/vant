@@ -13,7 +13,7 @@ install:
     yarn install
 script:
 - |
-    npm run lint && npm run test
+    npm run test
 after_success:
 - |
     cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov
