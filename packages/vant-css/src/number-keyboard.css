@@ -14,7 +14,21 @@
     text-align: center;
     color: $gray-dark;
     font-size: 12px;
-    line-height: 25px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+  }
+
+  &__close {
+    right: 0;
+    color: $blue;
+    font-size: 14px;
+    padding: 0 15px;
+    position: absolute;
+
+    &:active {
+      background-color: $active-color;
+    }
   }
 
   i {

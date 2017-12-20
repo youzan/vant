@@ -9,12 +9,18 @@
       @touchend="blurKey"
       @touchcancel="blurKey"
       @animationend="onAnimationEnd"
+      @webkitAnimationEnd="onAnimationEnd"
     >
-      <div class="van-number-keyboard__title van-hairline--top" v-if="title">
+      <div class="van-number-keyboard__title van-hairline--top" v-if="title || closeButtonText">
         <span>{{ title }}</span>
+        <span
+          class="van-number-keyboard__close"
+          v-text="closeButtonText"
+          @click="blurKeyboard"
+        />
       </div>
-      <i 
-        v-for="(key, index) in keys" 
+      <i
+        v-for="(key, index) in keys"
         v-text="key"
         :data-key="index"
         class="van-hairline"
@@ -35,6 +41,11 @@ export default create({
 
   props: {
     show: Boolean,
+    closeButtonText: String,
+    theme: {
+      type: String,
+      default: 'default'
+    },
     extraKey: {
       type: String,
       default: ''
@@ -49,6 +60,10 @@ export default create({
       default: true
     },
     showDeleteKey: {
+      type: Boolean,
+      default: true
+    },
+    hideOnClickOutside: {
       type: Boolean,
       default: true
     }
@@ -103,7 +118,7 @@ export default create({
 
   methods: {
     handler(action) {
-      if (action !== this.handlerStatus) {
+      if (action !== this.handlerStatus && this.hideOnClickOutside) {
         this.handlerStatus = action;
         document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.blurKeyboard);
       }

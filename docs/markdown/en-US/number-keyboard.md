@@ -16,12 +16,10 @@ Vue.use(NumberKeyboard);
   Show Keyboard
 </van-button>
 
-<van-button @touchstart.native.stop="showKeyboard = false">
-  Hide Keyboard
-</van-button>
-
 <van-number-keyboard
+  extraKey="."
   :show="showKeyboard"
+  closeButtonText="Close"
   @blur="showKeyboard = false"
   @input="onInput"
   @delete="onDelete"
@@ -53,10 +51,12 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | show | Whether to show keyboard | `Boolean` | - | - |
 | title | Keyboard title | `String` | - | - |
-| extraKey | Content of bottom left key | `String` | `''` | - |
 | zIndex | Keyboard z-index | `Number` | `100` | - |
+| extraKey | Content of bottom left key | `String` | `''` | - |
+| closeButtonText | Close button text | `String` | `-` | - |
 | transition | Whether to show transition animation | `Boolean` | `true` | - |
 | showDeleteKey | Whether to show delete button | `Boolean` | `true` | - |
+| hideOnClickOutside | Whether to hide keyboard when click outside | `Boolean` | `true` | - |
 
 ### Event
 

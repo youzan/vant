@@ -16,12 +16,10 @@ Vue.use(NumberKeyboard);
   弹出键盘
 </van-button>
 
-<van-button @touchstart.native.stop="showKeyboard = false">
-  收起键盘
-</van-button>
-
 <van-number-keyboard
+  extraKey="."
   :show="showKeyboard"
+  closeButtonText="完成"
   @blur="showKeyboard = false"
   @input="onInput"
   @delete="onDelete"
@@ -53,10 +51,12 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示键盘 | `Boolean` | - | - |
 | title | 键盘标题 | `String` | - | - |
-| extraKey | 左下角按键内容 | `String` | `''` | - |
 | zIndex | 键盘 z-index | `Number` | `100` | - |
+| extraKey | 左下角按键内容 | `String` | `''` | - |
+| closeButtonText | 关闭按钮文字，空则不展示 | `String` | `-` | - |
 | transition | 是否开启过场动画 | `Boolean` | `true` | - |
 | showDeleteKey | 是否展示删除按钮 | `Boolean` | `true` | - |
+| hideOnClickOutside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 
 ### Event
 

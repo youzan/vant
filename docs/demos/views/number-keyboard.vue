@@ -5,12 +5,10 @@
         {{ $t('button1') }}
       </van-button>
 
-      <van-button @touchstart.native.stop="showKeyboard = false">
-        {{ $t('button2') }}
-      </van-button>
-
       <van-number-keyboard
         :show="showKeyboard"
+        :closeButtonText="$t('close')"
+        extraKey="."
         @blur="showKeyboard = false"
         @input="onInput"
         @delete="onDelete"
@@ -24,11 +22,13 @@ export default {
   i18n: {
     'zh-CN': {
       button1: '弹出键盘',
-      button2: '收起键盘'
+      button2: '收起键盘',
+      close: '完成'
     },
     'en-US': {
       button1: 'Show Keyboard',
-      button2: 'Hide Keyboard'
+      button2: 'Hide Keyboard',
+      close: 'Close'
     }
   },
 
