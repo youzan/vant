@@ -64,7 +64,7 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.vm.areaColumns.length).to.equal(0);
+    expect(wrapper.vm.columns.length).to.equal(0);
   });
 
   it('create an area with columnsNum equal 2', () => {
@@ -75,7 +75,7 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.vm.areaColumns.length).to.equal(2);
+    expect(wrapper.vm.columns.length).to.equal(2);
   });
 
   it('create an area with columnsNum equal 1', () => {
@@ -86,7 +86,7 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.vm.areaColumns.length).to.equal(1);
+    expect(wrapper.vm.columns.length).to.equal(1);
   });
 
   it('create an area and click cancel', done => {
