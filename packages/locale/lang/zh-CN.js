@@ -61,7 +61,7 @@ export default {
   vanArea: {
     province: '选择省份',
     city: '选择城市',
-    district: '选择地区'
+    county: '选择地区'
   },
   vanAddressEdit: {
     areaTitle: '收件地区',
