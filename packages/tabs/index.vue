@@ -151,7 +151,7 @@ export default create({
           width: `${tab.offsetWidth || 0}px`,
           transform: `translate3d(${tab.offsetLeft || 0}px, 0, 0)`,
           transitionDuration: `${this.duration}s`
-        }
+        };
       });
     },
 
@@ -197,7 +197,7 @@ export default create({
         if (++count < frames) {
           raf(animate);
         }
-      }
+      };
       animate();
     }
   }

@@ -58,7 +58,7 @@ export default {
   vanArea: {
     province: 'Province',
     city: 'City',
-    district: 'District'
+    county: 'District'
   },
   vanAddressEdit: {
     areaTitle: 'Area',
