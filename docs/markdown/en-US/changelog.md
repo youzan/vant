@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+`2017-12-21`
+
+**Improvements**
+- NumberKeyboard: add hideOnClickOutside & closeButtonText props [\#458](https://github.com/youzan/vant/pull/458) [@chenjiahan](https://github.com/chenjiahan)
+- Area: optimize performance [\#457](https://github.com/youzan/vant/pull/457) [@chenjiahan](https://github.com/chenjiahan)
+- auto run eslint before build dist [\#455](https://github.com/youzan/vant/pull/455) [\#453](https://github.com/youzan/vant/pull/453)  [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix cell arrow style error [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
 `2017-12-19`
 

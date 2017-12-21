@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+`2017-12-21`
+
+**Improvements**
+- NumberKeyboard: 新增 hideOnClickOutside & closeButtonText 属性 [\#458](https://github.com/youzan/vant/pull/458) [@chenjiahan](https://github.com/chenjiahan)
+- Area: 优化性能 [\#457](https://github.com/youzan/vant/pull/457) [@chenjiahan](https://github.com/chenjiahan)
+- 优化代码格式检查命令 [\#455](https://github.com/youzan/vant/pull/455) [\#453](https://github.com/youzan/vant/pull/453)  [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复全局引入样式时 Cell 箭头错位的问题 [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
 `2017-12-19`
 
