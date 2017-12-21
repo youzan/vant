@@ -85,7 +85,7 @@ export default {
       return {
         ...this.coupon,
         id: 3,
-        avaliable: 0,
+        available: 0,
         reason: this.$t('coupon.reason')
       }
     },
@@ -94,7 +94,7 @@ export default {
       return {
         ...this.discountCoupon,
         id: 4,
-        avaliable: 0,
+        available: 0,
         reason: this.$t('coupon.reason')
       }
     }
