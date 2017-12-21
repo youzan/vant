@@ -8,7 +8,8 @@
   "typings": "types/index.d.ts",
   "files": [
     "lib",
-    "packages"
+    "packages",
+    "types"
   ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
