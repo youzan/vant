@@ -8,6 +8,7 @@
       <van-number-keyboard
         :show="showKeyboard"
         :closeButtonText="$t('close')"
+        theme="custom"
         extraKey="."
         @blur="showKeyboard = false"
         @input="onInput"

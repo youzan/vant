@@ -12,7 +12,7 @@
       @webkitAnimationEnd="onAnimationEnd"
     >
       <div class="van-number-keyboard__title van-hairline--top" v-if="title || closeButtonText">
-        <span>{{ title }}</span>
+        <span v-text="title" />
         <span
           class="van-number-keyboard__close"
           v-text="closeButtonText"
@@ -21,7 +21,7 @@
       </div>
       <i
         v-for="(key, index) in keys"
-        v-text="key"
+        v-text="key.text"
         :data-key="index"
         class="van-hairline"
         :class="{
@@ -41,6 +41,7 @@ export default create({
 
   props: {
     show: Boolean,
+    title: String,
     closeButtonText: String,
     theme: {
       type: String,
@@ -50,7 +51,6 @@ export default create({
       type: String,
       default: ''
     },
-    title: String,
     zIndex: {
       type: Number,
       default: 100
@@ -102,9 +102,18 @@ export default create({
   computed: {
     keys() {
       const keys = [];
-      for (let i = 0; i < 12; i++) {
-        const key = i === 10 ? 0 : i < 9 ? i + 1 : i === 9 ? this.extraKey : '';
-        keys.push(key);
+      for (let i = 1; i <= 9; i++) {
+        keys.push({ text: i });
+      }
+
+      if (this.theme === 'default') {
+        keys.push(
+          { text: this.extraKey },
+          { text: 0 },
+          { text: '', class: 'close' }
+        );
+      } else {
+        
       }
       return keys;
     },
