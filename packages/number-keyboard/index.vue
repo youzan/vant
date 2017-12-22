@@ -4,43 +4,48 @@
       v-show="show"
       :style="style"
       class="van-number-keyboard"
-      @touchstart.stop.prevent="focus"
-      @touchmove="blurKey"
-      @touchend="blurKey"
-      @touchcancel="blurKey"
+      :class="`van-number-keyboard--${theme}`"
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
-      <div class="van-number-keyboard__title van-hairline--top" v-if="title || closeButtonText">
-        <span>{{ title }}</span>
+      <div class="van-number-keyboard__title van-hairline--top" v-if="title || showTitleClose">
+        <span v-text="title" />
         <span
           class="van-number-keyboard__close"
+          v-if="showTitleClose"
           v-text="closeButtonText"
-          @click="blurKeyboard"
+          @click="onBlur"
         />
       </div>
-      <i
-        v-for="(key, index) in keys"
-        v-text="key"
-        :data-key="index"
-        class="van-hairline"
-        :class="{
-          'van-number-keyboard--active': index === active,
-          'van-number-keyboard__delete': index === 11 && showDeleteKey
-        }"
-      />
+      <div class="van-number-keyboard__body">
+        <key
+          v-for="(key, index) in keys"
+          :key="index"
+          :text="key.text"
+          :type="key.type"
+          @press="onPressKey"
+        />
+      </div>
+      <div class="van-number-keyboard__sidebar" v-if="theme === 'custom'">
+        <key :text="'delete'" :type="['delete', 'big']" @press="onPressKey" />
+        <key :text="closeButtonText" :type="['green', 'big']" @press="onPressKey" />
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
 import { create } from '../utils';
+import Key from './Key';
 
 export default create({
   name: 'van-number-keyboard',
 
+  components: { Key },
+
   props: {
     show: Boolean,
+    title: String,
     closeButtonText: String,
     theme: {
       type: String,
@@ -50,7 +55,6 @@ export default create({
       type: String,
       default: ''
     },
-    title: String,
     zIndex: {
       type: Number,
       default: 100
@@ -85,12 +89,6 @@ export default create({
     this.handler(false);
   },
 
-  data() {
-    return {
-      active: -1
-    };
-  },
-
   watch: {
     show() {
       if (!this.transition) {
@@ -102,10 +100,26 @@ export default create({
   computed: {
     keys() {
       const keys = [];
-      for (let i = 0; i < 12; i++) {
-        const key = i === 10 ? 0 : i < 9 ? i + 1 : i === 9 ? this.extraKey : '';
-        keys.push(key);
+      for (let i = 1; i <= 9; i++) {
+        keys.push({ text: i });
       }
+
+      switch (this.theme) {
+        case 'default':
+          keys.push(
+            { text: this.extraKey, type: ['gray'] },
+            { text: 0 },
+            { text: 'delete', type: ['gray', 'delete'] }
+          );
+          break;
+        case 'custom':
+          keys.push(
+            { text: 0, type: ['middle'] },
+            { text: this.extraKey }
+          );
+          break;
+      }
+
       return keys;
     },
 
@@ -113,6 +127,10 @@ export default create({
       return {
         zIndex: this.zIndex
       };
+    },
+
+    showTitleClose() {
+      return this.closeButtonText && this.theme === 'default';
     }
   },
 
@@ -120,32 +138,30 @@ export default create({
     handler(action) {
       if (action !== this.handlerStatus && this.hideOnClickOutside) {
         this.handlerStatus = action;
-        document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.blurKeyboard);
+        document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.onBlur);
       }
     },
 
-    focus(event) {
-      this.active = parseInt(event.target.dataset.key);
-      if (this.active === 11) {
-        this.$emit('delete');
-      } else if (!isNaN(this.active)) {
-        const key = this.keys[this.active];
-        if (key !== '') {
-          this.$emit('input', key);
-        }
-      }
-    },
-
-    blurKey() {
-      this.active = -1;
-    },
-
-    blurKeyboard() {
+    onBlur() {
       this.$emit('blur');
     },
 
     onAnimationEnd() {
       this.$emit(this.show ? 'show' : 'hide');
+    },
+
+    onPressKey(text) {
+      if (text === '') {
+        return;
+      }
+
+      if (text === 'delete') {
+        this.$emit('delete');
+      } else if (text === this.closeButtonText) {
+        this.onBlur();
+      } else {
+        this.$emit('input', text);
+      }
     }
   }
 });
