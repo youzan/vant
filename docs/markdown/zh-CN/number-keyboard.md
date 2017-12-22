@@ -9,11 +9,11 @@ Vue.use(NumberKeyboard);
 
 ### 代码演示
 
-#### 基础用法
+#### 默认样式
 
 ```html
 <van-button @touchstart.native.stop="showKeyboard = true">
-  弹出键盘
+  弹出默认键盘
 </van-button>
 
 <van-number-keyboard
@@ -45,11 +45,26 @@ export default {
 }
 ```
 
+#### 自定义样式
+
+```html
+<van-number-keyboard
+  theme="custom"
+  extraKey="."
+  :show="showKeyboard"
+  closeButtonText="完成"
+  @blur="showKeyboard = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示键盘 | `Boolean` | - | - |
+| theme | 键盘样式风格 | `String` | `Default` | `Custom` |
 | title | 键盘标题 | `String` | - | - |
 | zIndex | 键盘 z-index | `Number` | `100` | - |
 | extraKey | 左下角按键内容 | `String` | `''` | - |
