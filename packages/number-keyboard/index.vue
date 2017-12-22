@@ -104,17 +104,20 @@ export default create({
         keys.push({ text: i });
       }
 
-      if (this.theme === 'default') {
-        keys.push(
-          { text: this.extraKey, type: ['gray'] },
-          { text: 0 },
-          { text: 'delete', type: ['gray', 'delete'] }
-        );
-      } else if (this.theme === 'custom') {
-        keys.push(
-          { text: 0, type: ['middle'] },
-          { text: this.extraKey }
-        );
+      switch (this.theme) {
+        case 'default':
+          keys.push(
+            { text: this.extraKey, type: ['gray'] },
+            { text: 0 },
+            { text: 'delete', type: ['gray', 'delete'] }
+          );
+          break;
+        case 'custom':
+          keys.push(
+            { text: 0, type: ['middle'] },
+            { text: this.extraKey }
+          );
+          break;
       }
 
       return keys;
@@ -148,7 +151,7 @@ export default create({
     },
 
     onPressKey(text) {
-      if (!text) {
+      if (text === '') {
         return;
       }
 

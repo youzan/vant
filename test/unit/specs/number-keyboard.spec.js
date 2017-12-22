@@ -4,10 +4,17 @@ import { mount } from 'avoriaz';
 import { triggerTouch } from '../utils';
 
 function mockKeyDown(wrapper, keyIndex) {
-  const customEvent = document.createEvent('CustomEvent');
-  customEvent.initCustomEvent('touchstart', true, true, {});
-  wrapper.element.dataset.key = keyIndex;
-  wrapper.element.dispatchEvent(customEvent);
+  const key = wrapper.element.querySelectorAll('.van-key')[keyIndex];
+  const touchStart = document.createEvent('CustomEvent');
+  touchStart.initCustomEvent('touchstart', true, true, {});
+  key.dispatchEvent(touchStart);
+}
+
+function mockKeyUp(wrapper, keyIndex) {
+  const key = wrapper.element.querySelectorAll('.van-key')[keyIndex];
+  const touchEnd = document.createEvent('CustomEvent');
+  touchEnd.initCustomEvent('touchend', true, true, {});
+  key.dispatchEvent(touchEnd);
 }
 
 describe('NumberKeyboard', () => {
@@ -22,23 +29,25 @@ describe('NumberKeyboard', () => {
   });
 
   it('click a keyboard key', (done) => {
-    wrapper = mount(NumberKeyboard, {});
+    wrapper = mount(NumberKeyboard, {
+      propsData: {
+        theme: 'custom',
+        closeButtonText: 'close'
+      }
+    });
 
     // just for coverage
     wrapper.vm.handler(true);
 
     wrapper.vm.$on('input', value => {
+      mockKeyUp(wrapper, 0);
       expect(value).to.equal(1);
-      expect(wrapper.vm.active).to.equal(0);
-
-      triggerTouch(wrapper, 'touchend');
-      expect(wrapper.vm.active).to.equal(-1);
       done();
     });
 
-    mockKeyDown(wrapper, 9);
-    mockKeyDown(wrapper, NaN);
-    mockKeyDown(wrapper, 0);
+    mockKeyDown(wrapper, 12); // close
+    mockKeyDown(wrapper, 10); // empty
+    mockKeyDown(wrapper, 0); // 1
   });
 
   it('click delete key', (done) => {
