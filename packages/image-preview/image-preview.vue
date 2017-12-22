@@ -12,7 +12,7 @@
         <img class="van-image-preview__image" :src="item" >
       </swipe-item>
     </swipe>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -33,9 +33,11 @@ export default create({
 
   props: {
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     }
   },

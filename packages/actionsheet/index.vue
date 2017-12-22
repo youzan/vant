@@ -51,9 +51,11 @@ export default create({
       default: () => []
     },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     }
   },
