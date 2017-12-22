@@ -4,11 +4,10 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-743c0e.ttf') format('truetype');
+  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-42d621.ttf') format('truetype');
 }
 
 .van-icon {
-  position: relative;
   display: inline-block;
   font: normal normal normal 14px/1 "vant-icon";
   font-size: inherit;
