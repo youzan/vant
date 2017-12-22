@@ -18,12 +18,15 @@ export default create({
   props: {
     transition: String,
     overlay: {
+      type: Boolean,
       default: true
     },
     lockOnScroll: {
+      type: Boolean,
       default: false
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     },
     position: {
