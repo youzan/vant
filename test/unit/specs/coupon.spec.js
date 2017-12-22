@@ -36,14 +36,14 @@ const emptyCoupon = {
 const disabledCoupon = {
   ...coupon,
   id: 4,
-  avaliable: 0,
+  available: 0,
   reason: '未满足使用门槛'
 };
 
 const disabledDiscountCoupon = {
   ...discountCoupon,
   id: 5,
-  avaliable: 0,
+  available: 0,
   reason: '未满足使用门槛'
 };
 

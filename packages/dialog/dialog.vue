@@ -59,12 +59,15 @@ export default create({
       default: false
     },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: false
     },
     lockOnScroll: {
+      type: Boolean,
       default: true
     }
   },

@@ -113,4 +113,16 @@ describe('Popup', () => {
       }, 300);
     }, 300);
   });
+
+  it('treat empty string as true for boolean props', () => {
+    wrapper = mount(Popup, {
+      propsData: {
+        overlay: '',
+        lockOnScroll: '',
+        closeOnClickOverlay: ''
+      }
+    });
+
+    expect(wrapper.vm.lockOnScroll).to.be.true;
+  });
 });

@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14) (2017-12-21)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.13...v0.11.14)
+
+**Issue**
+
+- 最新版本的cell箭头错位 [\#459](https://github.com/youzan/vant/issues/459)
+- 请问一下CellSwipe组件的回调函数怎么传入当前cell的业务数据？ [\#454](https://github.com/youzan/vant/issues/454)
+- GoodsAction 组件, 当有三个mini-btn和两个big-btn的时候,big-btn文字显示不全 [\#442](https://github.com/youzan/vant/issues/442)
+- search的获取焦点以及失去焦点事件 [\#441](https://github.com/youzan/vant/issues/441)
+- 在IOS环境下 Area插件只能滑动一次 [\#430](https://github.com/youzan/vant/issues/430)
+
+**Improvements**
+
+- \[new feature\] NumberKeyboard: add hideOnClickOutside & closeButtonText props [\#458](https://github.com/youzan/vant/pull/458) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize area performance [\#457](https://github.com/youzan/vant/pull/457) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] eslint before build [\#455](https://github.com/youzan/vant/pull/455) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] remove unused dependencies & fix eslint [\#453](https://github.com/youzan/vant/pull/453) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13) (2017-12-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.12...v0.11.13)
 
