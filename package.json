@@ -24,7 +24,7 @@
     "deploy:cdn": "superman cdn /zanui/vant docs/dist/*.js docs/dist/*.css && superman cdn /zanui/vant/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vant/async_zh-CN docs/dist/async_zh-CN/*.js",
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "dist": "node build/bin/build-lib.js",
-    "lint": "./node_modules/.bin/eslint ./packages --ext .js --ext .vue",
+    "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
     "test": "karma start test/unit/karma.conf.js --single-run",
     "test:coverage": "open test/unit/coverage/lcov-report/index.html",
     "test:watch": "karma start test/unit/karma.conf.js",
