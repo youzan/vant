@@ -30,6 +30,7 @@
 <script>
 import { create } from '../utils';
 import { raf } from '../utils/raf';
+import { on, off } from '../utils/event';
 import scrollUtils from '../utils/scroll';
 
 export default create({
@@ -119,7 +120,7 @@ export default create({
     // whether to bind sticky listener
     scrollHandler(init) {
       this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
-      this.scrollEl[init ? 'addEventListener' : 'removeEventListener']('scroll', this.onScroll);
+      (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
       if (init) {
         this.onScroll();
       }
