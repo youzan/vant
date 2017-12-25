@@ -1,8 +1,10 @@
 import Uploader from 'packages/uploader';
 import { mount } from 'avoriaz';
+
 window.File = function() {
   this.name = 'test';
 };
+
 window.FileReader = function() {
   this.readAsDataURL = this.readAsText = function() {
     this.onload && this.onload({
@@ -12,97 +14,91 @@ window.FileReader = function() {
     });
   };
 };
+
+const mockFile = new File([], '/Users');
+
 describe('Uploader', () => {
   let wrapper;
   afterEach(() => {
     wrapper && wrapper.destroy();
   });
 
-  it('enabled', () => {
-    wrapper = mount(Uploader, {
-      propsData: {
-        disabled: false
-      }
-    });
-
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
-  });
-
   it('disabled', () => {
+    const afterRead = sinon.spy();
     wrapper = mount(Uploader, {
       propsData: {
-        disabled: true
+        disabled: true,
+        afterRead
       }
     });
 
     expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [] }})).to.equal(undefined);
+    wrapper.vm.onChange({ target: { files: [] }});
+    expect(afterRead.calledOnce).to.be.false;
   });
 
   it('before read', () => {
+    const afterRead = sinon.spy();
     wrapper = mount(Uploader, {
       propsData: {
-        disabled: false,
-        beforeRead: () => {
-          return false;
-        }
+        beforeRead: () => false,
+        afterRead
       }
     });
 
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '')] }})).to.equal(undefined);
+    wrapper.vm.onChange({ target: { files: [mockFile] }});
+    expect(afterRead.calledOnce).to.be.false;
   });
 
-  it('read text', () => {
+  it('read text', done => {
     wrapper = mount(Uploader, {
       propsData: {
-        disabled: false,
         resultType: 'text',
         afterRead: (file) => {
+          expect(file.content).to.equal('test');
+          done();
         }
       }
     });
 
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    wrapper.vm.onChange({ target: { files: [mockFile] }});
   });
 
-  it('read text no after hook', () => {
+  it('read dataUrl', done => {
     wrapper = mount(Uploader, {
       propsData: {
-        disabled: false,
-        resultType: 'text'
-      }
-    });
-
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
-  });
-
-  it('read dataUrl', () => {
-    wrapper = mount(Uploader, {
-      propsData: {
-        disabled: false,
-        resultType: 'dataUrl',
         afterRead: (file) => {
+          expect(file.content).to.equal('test');
+          done();
         }
       }
     });
 
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    wrapper.vm.onChange({ target: { files: [mockFile] }});
   });
 
   it('unknown resultType', () => {
+    const afterRead = sinon.spy();
     wrapper = mount(Uploader, {
       propsData: {
-        disabled: false,
-        resultType: 'xxxx'
+        resultType: 'xxxx',
+        afterRead
+      }
+    });
+    wrapper.vm.onChange({ target: { files: [mockFile] }});
+    expect(afterRead.calledOnce).to.be.false;
+  });
+
+  it('read multiple files', done => {
+    wrapper = mount(Uploader, {
+      propsData: {
+        afterRead: (file) => {
+          expect(file.length).to.equal(2);
+          done();
+        }
       }
     });
 
-    expect(wrapper.contains('input')).to.equal(true);
-    expect(wrapper.vm.onValueChange({ target: { files: [new File([], '/Users')] }})).to.equal(undefined);
+    wrapper.vm.onChange({ target: { files: [mockFile, mockFile] }});
   });
 });

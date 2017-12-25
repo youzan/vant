@@ -30,10 +30,10 @@ export default {
 ```
 
 #### Set input attr
-You can set native properties such as `accpet` on Uploader, and the input will automatically inherits the attribute.
+You can set native properties such as `accpet`、`multiple` on Uploader, and the input will automatically inherits the attribute.
 
 ```html
-<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg">
+<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg" multiple>
   <van-icon name="photograph" />
 </van-uploader>
 ```
