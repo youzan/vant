@@ -6,7 +6,7 @@
  * ```
  */
 
-import { isServer } from './index';
+import { on, off } from './event';
 
 const context = '@@clickoutsideContext';
 
@@ -24,7 +24,7 @@ export default {
       arg: binding.arg || 'click'
     };
 
-    !isServer && document.addEventListener(el[context].arg, handler);
+    on(document, el[context].arg, handler);
   },
 
   update(el, binding) {
@@ -32,7 +32,7 @@ export default {
   },
 
   unbind(el) {
-    !isServer && document.removeEventListener(el[context].arg, el[context].handler);
+    off(document, el[context].arg, el[context].handler);
   },
 
   install(Vue) {

@@ -1,6 +1,7 @@
 import manager from './manager';
 import context from './context';
 import scrollUtils from '../../utils/scroll';
+import { on, off } from '../../utils/event';
 
 export default {
   props: {
@@ -70,7 +71,11 @@ export default {
         status = '10';
       }
 
-      if (status !== '11' && isVertical && !(parseInt(status, 2) & parseInt(direction, 2))) {
+      if (
+        status !== '11' &&
+        isVertical &&
+        !(parseInt(status, 2) & parseInt(direction, 2))
+      ) {
         e.preventDefault();
         e.stopPropagation();
       }
@@ -106,8 +111,8 @@ export default {
       this.opened = true;
 
       if (this.preventScroll) {
-        document.addEventListener('touchstart', this.recordPosition);
-        document.addEventListener('touchmove', this.watchTouchMove);
+        on(document, 'touchstart', this.recordPosition);
+        on(document, 'touchmove', this.watchTouchMove);
       }
     },
 
@@ -129,8 +134,8 @@ export default {
       }
 
       if (this.preventScroll) {
-        document.removeEventListener('touchstart', this.recordPosition);
-        document.removeEventListener('touchmove', this.watchTouchMove);
+        off(document, 'touchstart', this.recordPosition);
+        off(document, 'touchmove', this.watchTouchMove);
       }
     }
   },
