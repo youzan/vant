@@ -28,10 +28,10 @@ export default {
 ```
 
 #### 设置 Input 属性
-可以直接在 Uploader 上设置 accpet 等原生属性，input 会自动继承该属性
+可以直接在 Uploader 上设置 accpet、multiple 等原生属性，input 会自动继承该属性
 
 ```html
-<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg">
+<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg" multiple>
   <van-icon name="photograph" />
 </van-uploader>
 ```

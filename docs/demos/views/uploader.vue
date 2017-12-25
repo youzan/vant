@@ -10,7 +10,7 @@
 
     <demo-block :title="$t('title2')">
       <div class="demo-uploader-container">
-        <van-uploader :after-read="logContent" accept="image/gif, image/jpeg">
+        <van-uploader :after-read="logContent" accept="image/gif, image/jpeg" multiple>
           <van-icon name="photograph" />
         </van-uploader>
       </div>
