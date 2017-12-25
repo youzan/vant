@@ -12,6 +12,7 @@
   font: normal normal normal 14px/1 "vant-icon";
   font-size: inherit;
   text-rendering: auto;
+  vertical-align: -0.18em;
 
   &__info {
     color: #fff;
