@@ -1,5 +1,19 @@
 ## 更新日志
 
+### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+`2017-12-25`
+
+**Improvements**
+- Uploader: 支持多文件上传 [\#480](https://github.com/youzan/vant/pull/480) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: 增加一种键盘样式 [\#472](https://github.com/youzan/vant/pull/472) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 更新 search 图标样式 [\#474](https://github.com/youzan/vant/pull/474) [@chenjiahan](https://github.com/chenjiahan)
+- 支持 passive 事件 [\#478](https://github.com/youzan/vant/pull/478) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 popup 销毁时未解绑事件的问题 [\#477](https://github.com/youzan/vant/pull/477) [@chenjiahan](https://github.com/chenjiahan)
+- 修复使用 popup mixin 的组件未设定 props 类型的问题  [\#468](https://github.com/youzan/vant/pull/468) [@chuangbo](https://github.com/chuangbo)
+- 修复 package.json 配置中未包含 types 目录的问题 [\#462](https://github.com/youzan/vant/pull/462) [@wuyiw](https://github.com/wuyiw)
+
 ### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
 `2017-12-21`
 
