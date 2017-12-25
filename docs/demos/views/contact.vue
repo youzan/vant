@@ -31,8 +31,8 @@
     <demo-block :title="$t('uneditable')">
       <van-contact-card
         type="edit"
-        :name="list[0].name"
-        :tel="list[0].tel"
+        :name="mockContact.name"
+        :tel="mockContact.tel"
         :editable="false"
       />
     </demo-block>
@@ -62,14 +62,18 @@ export default {
   },
 
   created() {
-    this.list.push({
-      name: this.$t('name'),
-      tel: '13000000000',
-      id: 0
-    });
+    this.list.push(this.mockContact);
   },
 
   computed: {
+    mockContact() {
+      return {
+        name: this.$t('name'),
+        tel: '13000000000',
+        id: 0
+      };
+    },
+
     cardType() {
       return this.chosenContactId !== null ? 'edit' : 'add';
     },
@@ -102,7 +106,7 @@ export default {
       this.showList = false;
 
       if (this.isEdit) {
-        this.list = this.list.map(item => item.id === info.id ? info : item);
+        this.list = this.list.map(item => (item.id === info.id ? info : item));
       } else {
         this.list.push(info);
       }
