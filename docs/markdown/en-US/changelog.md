@@ -1,5 +1,19 @@
 ## Changelog
 
+### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+`2017-12-25`
+
+**Improvements**
+- Uploader: support multiple files [\#480](https://github.com/youzan/vant/pull/480) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: add new theme [\#472](https://github.com/youzan/vant/pull/472) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: update search icon [\#474](https://github.com/youzan/vant/pull/474) [@chenjiahan](https://github.com/chenjiahan)
+- Support passive events [\#478](https://github.com/youzan/vant/pull/478) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix popup should remove event handler when destroyed [\#477](https://github.com/youzan/vant/pull/477) [@chenjiahan](https://github.com/chenjiahan)
+- fix popup mixin should treat empty string as true for boolean props [\#468](https://github.com/youzan/vant/pull/468) [@chuangbo](https://github.com/chuangbo)
+- fix package.json should include 'types' in 'files' field [\#462](https://github.com/youzan/vant/pull/462) [@wuyiw](https://github.com/wuyiw)
+
 ### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
 `2017-12-21`
 

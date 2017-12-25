@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15) (2017-12-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.14...v0.11.15)
+
+**Issue**
+
+- Icon does not align middle when use inline with text [\#469](https://github.com/youzan/vant/issues/469)
+- \[Proposal\] Should extends mixin's props with type [\#466](https://github.com/youzan/vant/issues/466)
+- search 在ios下不支持autofoucus属性，必须手动触发 [\#464](https://github.com/youzan/vant/issues/464)
+- Picker 选择器问题 [\#463](https://github.com/youzan/vant/issues/463)
+- 按官网实例本地测试 单元格显示嵌套问题 [\#461](https://github.com/youzan/vant/issues/461)
+- 0.11.14的card排版有问题 [\#460](https://github.com/youzan/vant/issues/460)
+- submitBar无法使用，其他组件正常 [\#456](https://github.com/youzan/vant/issues/456)
+
+**Improvements**
+
+- \[new feature\] Uploader: support multiple files [\#480](https://github.com/youzan/vant/pull/480) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize passive events [\#478](https://github.com/youzan/vant/pull/478) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup should remove event handler when destroyed [\#477](https://github.com/youzan/vant/pull/477) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update search icon [\#474](https://github.com/youzan/vant/pull/474) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add vue-cli english guide [\#473](https://github.com/youzan/vant/pull/473) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] NumberKeyboard add custom theme [\#472](https://github.com/youzan/vant/pull/472) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Mixins: treat empty string as true for boolean props [\#468](https://github.com/youzan/vant/pull/468) ([chuangbo](https://github.com/chuangbo))
+- \[improvement\] fix typo [\#465](https://github.com/youzan/vant/pull/465) ([chuangbo](https://github.com/chuangbo))
+- \[Improvement\] package.json: include "types" in "files" field [\#462](https://github.com/youzan/vant/pull/462) ([wuyiw](https://github.com/wuyiw))
+
 ## [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14) (2017-12-21)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.13...v0.11.14)
 
