@@ -2,20 +2,21 @@
   <div
     class="van-checkbox"
     :class="[
-      `van-checkbox--${shape}`, {
-      'van-checkbox--disabled': isDisabled
-    }]">
+      `van-checkbox--${shape}`,
+      { 'van-checkbox--disabled': isDisabled }
+    ]"
+  >
     <span class="van-checkbox__input">
       <input
         v-model="currentValue"
         type="checkbox"
         class="van-checkbox__control"
         :disabled="isDisabled"
-      />
+      >
       <icon name="success" />
     </span>
     <span class="van-checkbox__label" @click="onClickLabel">
-      <slot></slot>
+      <slot />
     </span>
   </div>
 </template>

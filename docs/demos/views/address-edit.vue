@@ -2,11 +2,11 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-address-edit
-        :areaList="areaList"
-        :showPostal="true"
-        :showSetDefault="true"
-        :showSearchResult="true"
-        :searchResult="searchResult"
+        :area-list="areaList"
+        :show-postal="true"
+        :show-set-default="true"
+        :show-search-result="true"
+        :search-result="searchResult"
         @save="onSave"
         @delete="onDelete"
         @change-detail="onChangeDetail"

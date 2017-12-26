@@ -7,7 +7,7 @@
     @click="$emit('click')"
   >
     <div class="van-notice-bar__left-icon" v-if="leftIcon">
-      <img :src="leftIcon" />
+      <img :src="leftIcon" >
     </div>
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
       <div

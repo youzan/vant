@@ -6,7 +6,7 @@
     <div class="van-sku-header__goods-info">
       <div class="van-sku__goods-name">{{ goods.title }}</div>
       <div class="van-sku__goods-price"><span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span></div>
-      <span class="van-sku__close-icon" @click="onCloseClicked"></span>
+      <span class="van-sku__close-icon" @click="onCloseClicked" />
     </div>
   </div>
 </template>

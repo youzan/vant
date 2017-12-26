@@ -3,15 +3,15 @@
     <demo-block :title="$t('basicUsage')">
       <van-coupon-cell
         :coupons="coupons"
-        :chosenCoupon="chosenCoupon"
+        :chosen-coupon="chosenCoupon"
         @click="showList = true"
       />
 
       <van-popup v-model="showList" position="bottom">
         <van-coupon-list
           :coupons="coupons"
-          :chosenCoupon="chosenCoupon"
-          :disabledCoupons="disabledCoupons"
+          :chosen-coupon="chosenCoupon"
+          :disabled-coupons="disabledCoupons"
           @change="onChange"
           @exchange="onExchange"
         />
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable camelcase */
 export default {
   i18n: {
     'zh-CN': {
@@ -67,7 +68,7 @@ export default {
         name: this.$t('coupon.name'),
         start_at: 1489104000,
         end_at: 1514592000
-      }
+      };
     },
 
     discountCoupon() {
@@ -78,7 +79,7 @@ export default {
         denominations: 0,
         origin_condition: 50,
         value: 12
-      }
+      };
     },
 
     disabledCoupon() {
@@ -87,7 +88,7 @@ export default {
         id: 3,
         available: 0,
         reason: this.$t('coupon.reason')
-      }
+      };
     },
 
     disabledDiscountCoupon() {
@@ -96,13 +97,13 @@ export default {
         id: 4,
         available: 0,
         reason: this.$t('coupon.reason')
-      }
+      };
     }
   },
 
   methods: {
     onChange(index) {
-      this.showList = false;      
+      this.showList = false;
       this.chosenCoupon = index;
     },
     onExchange(code) {

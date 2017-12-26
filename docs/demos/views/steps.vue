@@ -9,7 +9,7 @@
       </van-steps>
 
       <van-button @click="nextStep">{{ $t('nextStep') }}</van-button>
-    </demo-block> 
+    </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-steps
@@ -28,19 +28,19 @@
 
     <demo-block :title="$t('title3')">
       <van-steps direction="vertical" :active="0" active-color="#f60">
-      <van-step>
-        <h3>{{ $t('status1') }}</h3>
-        <p>2016-07-12 12:40</p>
-      </van-step>
-      <van-step>
-        <h3>{{ $t('status2') }}</h3>
-        <p>2016-07-11 10:00</p>
-      </van-step>
-      <van-step>
-        <h3>{{ $t('status3') }}</h3>
-        <p>2016-07-10 09:30</p>
-      </van-step>
-    </van-steps>
+        <van-step>
+          <h3>{{ $t('status1') }}</h3>
+          <p>2016-07-12 12:40</p>
+        </van-step>
+        <van-step>
+          <h3>{{ $t('status2') }}</h3>
+          <p>2016-07-11 10:00</p>
+        </van-step>
+        <van-step>
+          <h3>{{ $t('status3') }}</h3>
+          <p>2016-07-10 09:30</p>
+        </van-step>
+      </van-steps>
     </demo-block>
   </demo-section>
 </template>
@@ -85,7 +85,7 @@ export default {
       this.active = ++this.active % 4;
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">

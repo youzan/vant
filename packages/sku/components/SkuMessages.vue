@@ -1,23 +1,25 @@
 <template>
   <cell-group class="van-sku-messages">
     <template v-for="(message, index) in internalMessages">
-      <template v-if="message.type === 'image'"></template>
-      <field v-else-if="message.multiple == '1'"
+      <template v-if="message.type === 'image'" />
+      <field
+        v-else-if="message.multiple == '1'"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="getPlaceholder('textarea')"
         type="textarea"
-        v-model="messageValues[index]">
-      </field>
-      <field v-else
+        v-model="messageValues[index]"
+      />
+      <field
+        v-else
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
         :placeholder="getPlaceholder(message.type)"
         :type="getType(message)"
-        v-model="messageValues[index]">
-      </field>
+        v-model="messageValues[index]"
+      />
     </template>
   </cell-group>
 </template>

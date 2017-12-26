@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <van-doc :simulators="simulators" :currentSimulator="currentSimulator" :config="config" :base="base">
-      <router-view @changeDemoURL="onChangeDemoURL"></router-view>
+    <van-doc :simulators="simulators" :current-simulator="currentSimulator" :config="config" :base="base">
+      <router-view @changeDemoURL="onChangeDemoURL" />
     </van-doc>
   </div>
 </template>

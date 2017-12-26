@@ -1,9 +1,9 @@
 <template>
   <picker
     ref="picker"
-    showToolbar
+    show-toolbar
     :columns="columns"
-    :visibleItemCount="visibleItemCount"
+    :visible-item-count="visibleItemCount"
     @change="onChange"
     @confirm="onConfirm"
     @cancel="$emit('cancel')"

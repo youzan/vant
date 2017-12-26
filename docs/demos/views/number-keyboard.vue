@@ -7,8 +7,8 @@
 
       <van-number-keyboard
         :show="keyboard === 'default'"
-        :closeButtonText="$t('close')"
-        extraKey="."
+        :close-button-text="$t('close')"
+        extra-key="."
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"
@@ -22,9 +22,9 @@
 
       <van-number-keyboard
         :show="keyboard === 'custom'"
-        :closeButtonText="$t('close')"
+        :close-button-text="$t('close')"
         theme="custom"
-        extraKey="."
+        extra-key="."
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"

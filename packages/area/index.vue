@@ -2,8 +2,8 @@
   <picker
     class="van-area"
     ref="picker"
-    showToolbar
-    valueKey="name"
+    show-toolbar
+    value-key="name"
     :title="title"
     :columns="columns"
     @change="onChange"

@@ -58,7 +58,6 @@ export default {
 };
 </script>
 
-
 <style lang="postcss">
 .demo-goods-action {
   .van-goods-action {

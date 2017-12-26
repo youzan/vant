@@ -7,16 +7,16 @@
         :label="$t('name')"
         :placeholder="$t('namePlaceholder')"
         :error="errorInfo.name"
-        @focus="onFocus('name')">
-      </field>
+        @focus="onFocus('name')"
+      />
       <field
         v-model="currentInfo.tel"
         type="tel"
         :label="$t('tel')"
         :placeholder="$t('telPlaceholder')"
         :error="errorInfo.tel"
-        @focus="onFocus('tel')">
-      </field>
+        @focus="onFocus('tel')"
+      />
     </cell-group>
     <div class="van-contact-edit__buttons">
       <van-button block :loading="isSaving" @click="onSaveContact" type="primary">{{ $t('save') }}</van-button>

@@ -1,6 +1,6 @@
 <template>
   <cell-group class="van-coupon-cell">
-    <cell :title="title || $t('title')" :value="value" :isLink="editable" @click="$emit('click')" />
+    <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
   </cell-group>
 </template>
 

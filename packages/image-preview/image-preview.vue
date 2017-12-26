@@ -7,7 +7,7 @@
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <swipe :initialSwipe="startPosition">
+    <swipe :initial-swipe="startPosition">
       <swipe-item v-for="(item, index) in images" :key="index">
         <img class="van-image-preview__image" :src="item" >
       </swipe-item>

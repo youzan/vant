@@ -44,12 +44,11 @@ export default {
       Dialog.confirm({
         title: this.$t('title'),
         message: this.$t('content')
-      })
+      });
     }
   }
 };
 </script>
-
 
 <style lang="postcss">
 .demo-dialog {

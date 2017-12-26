@@ -7,9 +7,9 @@
         v-model="currentNum"
         :min="1"
         :max="stepperLimit"
-        :disableInput="disableStepperInput"
-        @overlimit="handleOverLimit">
-      </stepper>
+        :disable-input="disableStepperInput"
+        @overlimit="handleOverLimit"
+      />
     </div>
     <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
     <div v-if="quota > 0" class="van-sku__quota">{{ $t('quota', quota) }}</div>

@@ -14,8 +14,8 @@
         'van-button--bottom-action': bottomAction
       }
     ]"
-      @click="onClick"
-    >
+    @click="onClick"
+  >
     <loading
       v-if="loading"
       class="van-button__icon-loading"
@@ -23,7 +23,7 @@
       :color="type === 'default' ? 'black' : 'white'"
     />
     <span class="van-button__text">
-      <slot></slot>
+      <slot />
     </span>
   </component>
 </template>

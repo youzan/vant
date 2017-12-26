@@ -9,7 +9,7 @@
       @touchcancel="onTouchEnd"
     >
       <div class="van-pull-refresh__head">
-        <slot name="normal" v-if="status === 'normal'"></slot>
+        <slot name="normal" v-if="status === 'normal'"/>
         <slot name="pulling" v-if="status === 'pulling'">
           <span class="van-pull-refresh__text">{{ pullingText || $t('pullingText') }}</span>
         </slot>
@@ -23,7 +23,7 @@
           </div>
         </slot>
       </div>
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

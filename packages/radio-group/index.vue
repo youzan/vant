@@ -1,6 +1,6 @@
 <template>
   <div class="van-radio-group">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

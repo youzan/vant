@@ -7,7 +7,7 @@
       <div v-if="info" class="van-icon__info">{{ info }}</div>
     </div>
     <div class="van-tabbar-item__text">
-      <slot :active="active"></slot>
+      <slot :active="active"/>
     </div>
   </div>
 </template>

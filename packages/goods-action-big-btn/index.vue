@@ -4,7 +4,7 @@
     :href="url"
     class="van-goods-action__big-btn"
     :type="primary ? 'primary' : 'default'"
-    bottomAction
+    bottom-action
     @click="onClick"
   >
     <slot>{{ text }}</slot>

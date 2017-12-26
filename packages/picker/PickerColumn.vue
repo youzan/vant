@@ -11,7 +11,7 @@
   >
     <ul :style="wrapperStyle">
       <li
-        v-for="(option, index) in options" 
+        v-for="(option, index) in options"
         v-text="getOptionText(option)"
         :class="{
           'van-picker-column--disabled': isDisabled(option),

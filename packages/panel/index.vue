@@ -8,10 +8,10 @@
       </slot>
     </div>
     <div class="van-panel__content">
-      <slot></slot>
+      <slot />
     </div>
     <div class="van-panel__footer van-hairline--top" v-if="$slots.footer">
-      <slot name="footer"></slot>
+      <slot name="footer" />
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <van-submit-bar
         :price="3050"
-        :buttonText="$t('submit')"
+        :button-text="$t('submit')"
         @submit="onClickButton"
       />
     </demo-block>
@@ -12,7 +12,7 @@
       <van-submit-bar
         disabled
         :price="3050"
-        :buttonText="$t('submit')"
+        :button-text="$t('submit')"
         :tip="$t('tip1')"
         @submit="onClickButton"
       />
@@ -22,7 +22,7 @@
       <van-submit-bar
         loading
         :price="3050"
-        :buttonText="$t('submit')"
+        :button-text="$t('submit')"
         @submit="onClickButton"
       />
     </demo-block>
@@ -30,7 +30,7 @@
     <demo-block :title="$t('advancedUsage')">
       <van-submit-bar
         :price="3050"
-        :buttonText="$t('submit')"
+        :button-text="$t('submit')"
         @submit="onClickButton"
       >
         <van-checkbox v-model="checked">{{ $t('check') }}</van-checkbox>

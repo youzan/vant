@@ -26,7 +26,7 @@ export default {
     this.icons = icons.glyphs.map(icon => icon.css);
     return {};
   }
-}
+};
 </script>
 
 <style lang="postcss">

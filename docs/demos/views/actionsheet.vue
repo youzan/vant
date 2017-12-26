@@ -7,7 +7,7 @@
 
     <demo-block :title="$t('title2')">
       <van-button @click="show2 = true">{{ $t('button2') }}</van-button>
-      <van-actionsheet v-model="show2" :actions="actions" :cancelText="$t('cancel')" />
+      <van-actionsheet v-model="show2" :actions="actions" :cancel-text="$t('cancel')" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
