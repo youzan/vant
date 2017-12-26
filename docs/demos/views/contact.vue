@@ -20,8 +20,8 @@
 
       <van-popup v-model="showEdit" position="bottom">
         <van-contact-edit
-          :contactInfo="editingContact"
-          :isEdit="isEdit"
+          :contact-info="editingContact"
+          :is-edit="isEdit"
           @save="onSave"
           @delete="onDelete"
         />

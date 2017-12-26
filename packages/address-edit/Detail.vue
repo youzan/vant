@@ -9,7 +9,7 @@
       rows="1"
       :value="value"
       :error="isError"
-      :onIconClick="onIconClick"
+      :on-icon-click="onIconClick"
       @input="$emit('input', $event)"
       @focus="handleFocus"
       @blur="handleBlur"

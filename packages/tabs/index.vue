@@ -1,9 +1,12 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
-    <div class="van-tabs__wrap" :class="[`van-tabs__wrap--${position}`, {
-      'van-tabs--scrollable': scrollable,
-      'van-hairline--top-bottom': type === 'line'
-    }]">
+    <div
+      class="van-tabs__wrap"
+      :class="[`van-tabs__wrap--${position}`, {
+        'van-tabs--scrollable': scrollable,
+        'van-hairline--top-bottom': type === 'line'
+      }]"
+    >
       <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
@@ -22,7 +25,7 @@
       </div>
     </div>
     <div class="van-tabs__content">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

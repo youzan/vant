@@ -37,7 +37,7 @@ export default {
       title2: 'Column Spacing'
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">

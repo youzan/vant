@@ -1,6 +1,6 @@
 <template>
   <transition :name="transition ? 'van-slide-bottom' : ''">
-    <div 
+    <div
       v-show="show"
       :style="style"
       class="van-number-keyboard"

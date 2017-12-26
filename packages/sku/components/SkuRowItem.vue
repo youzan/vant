@@ -1,5 +1,6 @@
 <template>
-  <span v-if="isChoosable"
+  <span
+    v-if="isChoosable"
     @click="onSkuSelected"
     class="van-sku-row__item"
     :class="{ 'van-sku-row__item--active': isChoosed }">

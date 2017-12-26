@@ -2,7 +2,7 @@
   <div class="van-card" :class="{ 'van-card--center': centered }">
     <div class="van-card__thumb">
       <slot name="thumb">
-        <img :src="thumb" class="van-card__img" />
+        <img :src="thumb" class="van-card__img" >
       </slot>
     </div>
     <div class="van-card__content">
@@ -18,10 +18,10 @@
           <div v-if="num !== undefined" class="van-card__num">x {{ num }}</div>
         </div>
       </slot>
-      <slot name="tags"></slot>
+      <slot name="tags" />
     </div>
     <div class="van-card__footer" v-if="$slots.footer">
-      <slot name="footer"></slot>      
+      <slot name="footer" />
     </div>
   </div>
 </template>

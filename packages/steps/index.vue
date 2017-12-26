@@ -13,7 +13,7 @@
       <slot name="message-extra" />
     </div>
     <div class="van-steps__items" :class="{ 'van-steps__items--alone': !title && !description }">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>

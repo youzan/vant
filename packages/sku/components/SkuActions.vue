@@ -1,7 +1,7 @@
 <template>
   <div class="van-sku-actions">
-    <van-button v-if="showAddCartBtn" bottomAction @click="onAddCartClicked">{{ $t('cart') }}</van-button>
-    <van-button type="primary" bottomAction @click="onBuyClicked">{{ buyText || $t('buy') }}</van-button>
+    <van-button v-if="showAddCartBtn" bottom-action @click="onAddCartClicked">{{ $t('cart') }}</van-button>
+    <van-button type="primary" bottom-action @click="onBuyClicked">{{ buyText || $t('buy') }}</van-button>
   </div>
 </template>
 

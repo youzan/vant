@@ -1,7 +1,7 @@
 <template>
   <transition :name="currentTransition">
     <div v-show="value" class="van-popup" :class="{ [`van-popup--${position}`]: position }">
-      <slot></slot>
+      <slot />
     </div>
   </transition>
 </template>

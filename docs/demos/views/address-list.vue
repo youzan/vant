@@ -67,7 +67,7 @@ export default {
   data() {
     return {
       chosenAddressId: '1'
-    }
+    };
   },
 
   methods: {

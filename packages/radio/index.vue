@@ -14,7 +14,7 @@
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
     <span class="van-radio__label" @click="handleLabelClick">
-      <slot></slot>
+      <slot />
     </span>
   </div>
 </template>

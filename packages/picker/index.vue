@@ -11,12 +11,12 @@
       <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
-        :valueKey="valueKey"
+        :value-key="valueKey"
         :options="item.values"
-        :className="item.className"
-        :defaultIndex="item.defaultIndex"
-        :itemHeight="itemHeight"
-        :visibileColumnCount="visibileColumnCount"
+        :class-name="item.className"
+        :default-index="item.defaultIndex"
+        :item-height="itemHeight"
+        :visibile-column-count="visibileColumnCount"
         @change="onChange(index)"
       />
       <div class="van-picker__frame van-hairline--top-bottom" :style="frameStyle" />

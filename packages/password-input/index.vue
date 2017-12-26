@@ -5,12 +5,12 @@
         <i :style="`visibility: ${visibility}`" />
       </li>
     </ul>
-    <div 
-      v-if="errorInfo || info" 
-      v-text="errorInfo || info" 
+    <div
+      v-if="errorInfo || info"
+      v-text="errorInfo || info"
       :class="errorInfo ? 'van-password-input__error-info' : 'van-password-input__info'"
     />
-</div>
+  </div>
 </template>
 
 <script>

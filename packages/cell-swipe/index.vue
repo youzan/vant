@@ -1,5 +1,5 @@
 <template>
-  <div 
+  <div
     v-clickoutside:touchstart="onClick"
     class="van-cell-swipe"
     @click="onClick('cell')"
@@ -10,11 +10,11 @@
   >
     <div class="van-cell-swipe__wrapper" :style="wrapperStyle" @transitionend="swipe = false">
       <div class="van-cell-swipe__left" @click.stop="onClick('left')" v-if="leftWidth">
-        <slot name="left"></slot>
+        <slot name="left" />
       </div>
-      <slot></slot>
+      <slot />
       <div class="van-cell-swipe__right" @click.stop="onClick('right')" v-if="rightWidth">
-        <slot name="right"></slot>
+        <slot name="right" />
       </div>
     </div>
   </div>

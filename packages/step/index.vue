@@ -5,7 +5,7 @@
       <icon v-else name="checked" :style="{ color: $parent.activeColor }" />
     </div>
     <div class="van-step__title" :style="titleStyle">
-      <slot></slot>
+      <slot />
     </div>
     <div class="van-step__line" />
   </div>

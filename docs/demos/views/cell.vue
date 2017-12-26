@@ -37,12 +37,12 @@
         <van-cell :title="$t('cell')" icon="location" is-link />
         <van-cell :title="$t('cell')">
           <template slot="right-icon">
-            <van-icon name="search" class="van-cell__right-icon"></van-icon>
+            <van-icon name="search" class="van-cell__right-icon" />
           </template>
         </van-cell>
       </van-cell-group>
     </demo-block>
-  </demo-section>  
+  </demo-section>
 </template>
 
 <script>

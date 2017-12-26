@@ -4,7 +4,7 @@
     :class="{ [`van-col-${span}`]: span, [`van-col-offset-${offset}`]: offset}"
     :style="style"
   >
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

@@ -31,7 +31,7 @@
         <van-button @click="show4 = false">{{ $t('button6') }}</van-button>
       </van-popup>
     </demo-block>
-  </demo-section> 
+  </demo-section>
 </template>
 
 <script>
@@ -63,7 +63,7 @@ export default {
       show2: false,
       show3: false,
       show4: false
-    }
+    };
   },
 
   watch: {
@@ -81,7 +81,7 @@ export default {
       Dialog.confirm({
         title: 'confirm标题',
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      })
+      });
     }
   }
 };

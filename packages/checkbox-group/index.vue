@@ -1,6 +1,6 @@
 <template>
   <div class="van-checkbox-group">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

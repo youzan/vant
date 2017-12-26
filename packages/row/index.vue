@@ -1,6 +1,6 @@
 <template>
   <div class="van-row" :style="style">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

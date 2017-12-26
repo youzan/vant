@@ -22,15 +22,6 @@
 
 <script>
 export default {
-  i18n: {
-    'zh-CN': {
-
-    },
-    'en-US': {
-      
-    }
-  },
-
   data() {
     return {
       checked: true
@@ -38,8 +29,3 @@ export default {
   }
 };
 </script>
-
-
-<style lang="postcss">
-
-</style>

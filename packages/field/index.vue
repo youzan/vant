@@ -12,7 +12,8 @@
       'van-field--autosize': autosize,
       'van-field--has-icon': hasIcon,
       'van-hairline--surround': border
-    }">
+    }"
+  >
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
@@ -23,12 +24,12 @@
     />
     <input
       v-else
-      v-bind="$attrs"  
+      v-bind="$attrs"
       v-on="listeners"
       class="van-field__control"
       :type="type"
       :value="value"
-    />
+    >
     <div
       v-if="hasIcon"
       v-show="$slots.icon || value"

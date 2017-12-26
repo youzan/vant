@@ -1,6 +1,6 @@
 <template>
   <div class="van-uploader">
-    <slot></slot>
+    <slot />
     <input
       ref="input"
       type="file"
@@ -8,7 +8,7 @@
       v-bind="$attrs"
       :disabled="disabled"
       @change="onChange"
-    />
+    >
   </div>
 </template>
 

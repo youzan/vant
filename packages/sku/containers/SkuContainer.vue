@@ -1,69 +1,71 @@
 <template>
-  <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lockOnScroll preventScroll>
+  <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
           <sku-header
-            :skuEventBus="skuEventBus"
-            :selectedSku="selectedSku"
-            :selectedSkuComb="selectedSkuComb"
+            :sku-event-bus="skuEventBus"
+            :selected-sku="selectedSku"
+            :selected-sku-comb="selectedSkuComb"
             :goods="goods"
-            :sku="sku">
-          </sku-header>
+            :sku="sku"
+          />
         </slot>
         <div class="van-sku-body scroller" :style="bodyStyle">
           <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
-              <div v-for="(skuTreeItem, index) in skuTree"
+              <div
+                v-for="(skuTreeItem, index) in skuTree"
                 class="van-sku-row-group"
                 :key="index">
                 <sku-row
-                  :skuEventBus="skuEventBus"
-                  :skuRow="skuTreeItem">
+                  :sku-event-bus="skuEventBus"
+                  :sku-row="skuTreeItem"
+                >
                   <sku-row-item
                     v-for="(skuValue, index) in skuTreeItem.v"
                     :key="index"
-                    :skuKeyStr="skuTreeItem.k_s"
-                    :skuValue="skuValue"
-                    :skuEventBus="skuEventBus"
-                    :selectedSku="selectedSku"
-                    :skuList="sku.list">
-                  </sku-row-item>
+                    :sku-key-str="skuTreeItem.k_s"
+                    :sku-value="skuValue"
+                    :sku-event-bus="skuEventBus"
+                    :selected-sku="selectedSku"
+                    :sku-list="sku.list"
+                  />
                 </sku-row>
               </div>
             </div>
           </slot>
-          <slot name="extra-sku-group" :skuEventBus="skuEventBus"></slot>
+          <slot name="extra-sku-group" :skuEventBus="skuEventBus"/>
           <slot name="sku-stepper" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
             <sku-stepper
               ref="skuStepper"
-              :skuEventBus="skuEventBus"
-              :selectedSku="selectedSku"
-              :selectedSkuComb="selectedSkuComb"
-              :selectedNum="selectedNum"
-              :stepperTitle="stepperTitle"
-              :skuStockNum="sku.stock_num"
+              :sku-event-bus="skuEventBus"
+              :selected-sku="selectedSku"
+              :selected-sku-comb="selectedSkuComb"
+              :selected-num="selectedNum"
+              :stepper-title="stepperTitle"
+              :sku-stock-num="sku.stock_num"
               :quota="quota"
-              :quotaUsed="quotaUsed"
-              :disableStepperInput="disableStepperInput"
-              :hideStock="hideStock">
-            </sku-stepper>
+              :quota-used="quotaUsed"
+              :disable-stepper-input="disableStepperInput"
+              :hide-stock="hideStock"
+            />
           </slot>
-         <slot name="sku-messages">
+          <slot name="sku-messages">
             <sku-messages
               ref="skuMessages"
-              :goodsId="goodsId"
-              :messagePlaceholderMap="messagePlaceholderMap"
-              :messages="sku.messages">
-            </sku-messages>
+              :goods-id="goodsId"
+              :message-placeholder-map="messagePlaceholderMap"
+              :messages="sku.messages"
+            />
           </slot>
         </div>
         <slot name="sku-actions" :skuEventBus="skuEventBus">
           <sku-actions
-            :skuEventBus="skuEventBus"
-            :buyText="buyText"
-            :showAddCartBtn="showAddCartBtn">
-          </sku-actions>
+            :sku-event-bus="skuEventBus"
+            :buy-text="buyText"
+            :show-add-cart-btn="showAddCartBtn"
+          />
         </slot>
       </div>
     </div>
@@ -71,6 +73,7 @@
 </template>
 
 <script>
+/* eslint-disable camelcase */
 import Vue from 'vue';
 import Popup from '../../popup';
 import Toast from '../../toast';
@@ -80,7 +83,11 @@ import SkuRowItem from '../components/SkuRowItem';
 import SkuStepper from '../components/SkuStepper';
 import SkuMessages from '../components/SkuMessages';
 import SkuActions from '../components/SkuActions';
-import { isAllSelected, getSkuComb, getSelectedSkuValues } from '../utils/skuHelper';
+import {
+  isAllSelected,
+  getSkuComb,
+  getSelectedSkuValues
+} from '../utils/skuHelper';
 import { LIMIT_TYPE } from '../constants';
 import { create } from '../../utils';
 
@@ -147,7 +154,10 @@ export default create({
     show(val) {
       this.$emit('input', val);
       if (!val) {
-        const selectedSkuValues = getSelectedSkuValues(this.sku.tree, this.selectedSku);
+        const selectedSkuValues = getSelectedSkuValues(
+          this.sku.tree,
+          this.selectedSku
+        );
 
         this.$emit('sku-close', {
           selectedSkuValues,
@@ -200,7 +210,7 @@ export default create({
         return {
           id: this.sku.collection_id,
           price: Math.round(this.sku.price * 100),
-          'stock_num': this.sku.stock_num
+          stock_num: this.sku.stock_num
         };
       } else if (this.isSkuCombSelected) {
         return getSkuComb(this.sku.list, this.selectedSku);
@@ -231,7 +241,7 @@ export default create({
   methods: {
     resetSelectedSku(skuTree) {
       this.selectedSku = {};
-      skuTree.forEach((item) => {
+      skuTree.forEach(item => {
         // 只有一个sku规格值时默认选中
         if (item.v.length === 1) {
           this.selectedSku[item.k_s] = item.v[0].id;
@@ -241,9 +251,7 @@ export default create({
       });
     },
     getSkuMessages() {
-      return this.$refs.skuMessages
-        ? this.$refs.skuMessages.getMessages()
-        : {};
+      return this.$refs.skuMessages ? this.$refs.skuMessages.getMessages() : {};
     },
     getSkuCartMessages() {
       return this.$refs.skuMessages
@@ -273,9 +281,10 @@ export default create({
     },
     handleSkuSelected(skuValue) {
       // 点击已选中的sku时则取消选中
-      this.selectedSku = this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-        ? { ...this.selectedSku, [skuValue.skuKeyStr]: '' }
-        : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
+      this.selectedSku =
+        this.selectedSku[skuValue.skuKeyStr] === skuValue.id
+          ? { ...this.selectedSku, [skuValue.skuKeyStr]: '' }
+          : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {
         skuValue,

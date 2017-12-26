@@ -3,8 +3,8 @@
     <demo-block :title="$t('basicUsage')">
       <van-tree-select
         :items="items"
-        :mainActiveIndex="mainActiveIndex"
-        :activeId="activeId"
+        :main-active-index="mainActiveIndex"
+        :active-id="activeId"
         @navclick="onNavClick"
         @itemclick="onItemClick"
       />
@@ -110,10 +110,5 @@ export default {
       this.activeId = data.id;
     }
   }
-}
+};
 </script>
-
-
-<style lang="postcss">
-
-</style>

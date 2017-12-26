@@ -27,7 +27,7 @@
         @click.stop="$emit('input', false)"
       />
       <div v-else class="van-actionsheet__content">
-        <slot></slot>
+        <slot />
       </div>
     </div>
   </transition>

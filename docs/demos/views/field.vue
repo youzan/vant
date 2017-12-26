@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-field v-model="value" :placeholder="$t('usernamePlaceholder')"></van-field>
+        <van-field v-model="value" :placeholder="$t('usernamePlaceholder')" />
       </van-cell-group>
     </demo-block>
 
@@ -15,28 +15,27 @@
           :placeholder="$t('usernamePlaceholder')"
           required
           @click-icon="username = ''"
-        >
-        </van-field>
+        />
 
         <van-field
           v-model="password"
           type="password"
           :label="$t('password')"
           :placeholder="$t('passwordPlaceholder')"
-          required>
-        </van-field>
+          required
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title3')">
       <van-cell-group>
-        <van-field :value="$t('inputDisabled')" :label="$t('username')" disabled></van-field>
+        <van-field :value="$t('inputDisabled')" :label="$t('username')" disabled />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title4')">
       <van-cell-group>
-        <van-field :label="$t('username')" :placeholder="$t('usernamePlaceholder')" error></van-field>
+        <van-field :label="$t('username')" :placeholder="$t('usernamePlaceholder')" error />
       </van-cell-group>
     </demo-block>
 
@@ -49,8 +48,7 @@
           :placeholder="$t('messagePlaceholder')"
           rows="1"
           autosize
-        >
-        </van-field>
+        />
       </van-cell-group>
     </demo-block>
   </demo-section>
