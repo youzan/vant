@@ -50,7 +50,7 @@ export default {
 如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" cancelText="取消" />
+<van-actionsheet v-model="show" :actions="actions" cancel-text="取消" />
 ```
 
 #### 带标题的 Actionsheet
@@ -69,9 +69,9 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | actions | 行动按钮数组 | `Array` | `[]` | - |
 | title | 标题 | `String` | - | - |
-| cancelText | 取消按钮文案 | `String` | - | - |
+| cancel-text | 取消按钮文案 | `String` | - | - |
 | overlay | 是否显示遮罩 | `Boolean` | - | - |
-| closeOnClickOverlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
+| close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
 
 ### actions
 

@@ -26,10 +26,10 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   <van-search
     v-model="value"
     placeholder="请输入商品名称"
-    :showAction="true"
+    show-action
     @search="onSearch"
-    @cancel="onCancel">
-  </van-search>
+    @cancel="onCancel"
+  />
 </form>
 ```
 
@@ -39,8 +39,9 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 ```html
 <van-search
   v-model="value"
-  :showAction="true"
-  @search="onSearch">
+  show-action
+  @search="onSearch"
+>
   <div slot="action" @click="onSearch">搜索</div>
 </van-search>
 ```
@@ -51,7 +52,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | background | 搜索框背景色 | `String` | `#f2f2f2` |  所有浏览器支持的颜色描述 |
-| showAction | 是否在搜索框右侧显示取消按钮 | `Boolean` | false | - |
+| show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | false | - |
 
 ### Event
 Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等

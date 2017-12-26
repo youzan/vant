@@ -15,10 +15,10 @@ Vue.use(DatetimePicker);
 <van-datetime-picker
   v-model="currentDate"
   type="datetime"
-  :minHour="minHour"
-  :maxHour="maxHour"
-  :minDate="minDate"
-  :maxDate="maxDate"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
+  :max-date="maxDate"
 />
 ```
 
@@ -42,9 +42,9 @@ export default {
 <van-datetime-picker
   v-model="currentDate"
   type="date"
-  :minHour="minHour"
-  :maxHour="maxHour"
-  :minDate="minDate"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
 />
 ```
 
@@ -54,9 +54,9 @@ export default {
 <van-datetime-picker
   v-model="currentDate"
   type="time"
-  :minHour="minHour"
-  :maxHour="maxHour"
-  :minDate="minDate"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
 />
 ```
 
@@ -65,11 +65,11 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 组件类型 | `String` | 'datetime' |  'date', 'time' |
-| minDate | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
-| maxDate | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
-| minHour | 可选的最小小时 | `Number` | `0` | - |
-| maxHour | 可选的最大小时 | `Number` | `23` | - |
-| visibileColumnCount | 每一列可见备选元素的个数 | `Number` | `5` | - |
+| min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
+| max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
+| min-hour | 可选的最小小时 | `Number` | `0` | - |
+| max-hour | 可选的最大小时 | `Number` | `23` | - |
+| visibile-column-count | 每一列可见备选元素的个数 | `Number` | `5` | - |
 
 ### Event
 

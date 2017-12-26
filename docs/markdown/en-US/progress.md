@@ -29,12 +29,12 @@ Use 'percentage' prop to set current progress
 
 
 #### Custom Style
-Use `pivotText` to custom text，use `color` to custom bar color
+Use `pivot-text` to custom text，use `color` to custom bar color
 
 ```html
-<van-progress pivotText="Red" color="#ed5050" :percentage="26" />
-<van-progress pivotText="Orange" color="#f60" :percentage="46" />
-<van-progress pivotText="Yellow" color="#f09000" :percentage="66" />
+<van-progress pivot-text="Red" color="#ed5050" :percentage="26" />
+<van-progress pivot-text="Orange" color="#f60" :percentage="46" />
+<van-progress pivot-text="Yellow" color="#f09000" :percentage="66" />
 ```
 
 ### API
@@ -43,7 +43,7 @@ Use `pivotText` to custom text，use `color` to custom bar color
 |-----------|-----------|-----------|-------------|-------------|
 | inactive | Whether to be gray | `Boolean` | `false` | - |
 | percentage | Percentage | `Number` | `false` | `0-100` |
-| showPivot | Whether to show text | `Boolean` | `true` | - |
-| pivotText | Text | `String` | percentage | - |
+| show-pivot | Whether to show text | `Boolean` | `true` | - |
+| pivot-text | Text | `String` | percentage | - |
 | color | Color | `String` | `#38f` | hexvalue |
-| textColor | Text color | `String` | `#fff` | hexvalue |
+| text-color | Text color | `String` | `#fff` | hexvalue |

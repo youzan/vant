@@ -37,8 +37,8 @@ Vue.use(ContactEdit);
 <!-- 联系人编辑 -->
 <van-popup v-model="showEdit" position="bottom">
   <van-contact-edit
-    :contactInfo="editingContact"
-    :isEdit="isEdit"
+    :contact-info="editingContact"
+    :is-edit="isEdit"
     @save="onSave"
     @delete="onDelete"
   />
@@ -134,16 +134,16 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | type | 类型，分为添加和编辑两种样式 | `String` | `add` | `edit` |
-| addText | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
 | name | 联系人姓名 | `String` | - | - |
 | tel | 联系人手机号 | `String` | - | - |
+| add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
 
 ### ContactList API
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | 当前选中联系人的 id | `String | Number` | - | - |
-| addText | 新建按钮文案 | `String` | `新建联系人` | - |
 | list | 联系人列表 | `Array` | `[]` | - |
+| add-text | 新建按钮文案 | `String` | `新建联系人` | - |
 
 ### ContactList Event
 
@@ -157,10 +157,10 @@ export default {
 ### ContactEdit API
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| contactInfo | 联系人信息 | `Object` | `[]` | - |
-| isEdit | 是否为编辑联系人 | `Boolean` | `false` | - |
-| isSaving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
-| isDeleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| contact-info | 联系人信息 | `Object` | `[]` | - |
+| is-edit | 是否为编辑联系人 | `Boolean` | `false` | - |
+| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
+| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
 
 ### ContactEdit Event
 

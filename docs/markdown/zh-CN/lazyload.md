@@ -17,7 +17,7 @@ Vue.use(Lazyload, options);
 将`v-lazy`指令的值设置为你需要懒加载的图片
 
 ```html
-<img v-for="img in imageList" v-lazy="img">
+<img v-for="img in imageList" v-lazy="img" >
 ```
 
 ```javascript
@@ -47,7 +47,7 @@ export default {
 
 ```html
 <lazy-component>
-  <img v-for="img in imageList" v-lazy="img">
+  <img v-for="img in imageList" v-lazy="img" >
 </lazy-component>
 ```
 
@@ -64,4 +64,4 @@ export default {
 | filter | 图片url过滤 | `Object` | - | - |
 | lazyComponent | 是否能懒加载模块 | `Boolean` | `false` | - |
 
-更多内容请参照：[ vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)
+更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)

@@ -16,7 +16,7 @@ Vue.use(CouponList);
 <!-- 优惠券单元格 -->
 <van-coupon-cell
   :coupons="coupons"
-  :chosenCoupon="chosenCoupon"
+  :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
 
@@ -24,8 +24,8 @@ Vue.use(CouponList);
 <van-popup v-model="showList" position="bottom">
   <van-coupon-list
     :coupons="coupons"
-    :chosenCoupon="chosenCoupon"
-    :disabledCoupons="disabledCoupons"
+    :chosen-coupon="chosenCoupon"
+    :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
   />
@@ -72,7 +72,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 单元格标题 | `String` | `优惠券码` | - |
-| chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
+| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
 
@@ -80,17 +80,17 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 必须 |
 |-----------|-----------|-----------|-------------|-------------|
-| chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
+| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| disabledCoupons | 不可用优惠券列表 | `Array` | `[]` | - |
-| exchangeButtonText | 兑换按钮文字 | `String` | `兑换` | - |
-| exchangeButtonDisabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
-| displayedCouponIndex | 滚动至特定优惠券位置 | `Number` | - | - |
-| showCloseButton | 是否显示列表底部按钮 | `Boolean` | `true` | - |
-| closeButtonText | 列表底部按钮文字 | `String` | `不使用优惠` | - |
-| disabledListTitle | 不可用券列表标题 | `String` | `不可用优惠` | - |
-| inputPlaceholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
-| showExchangeBar | 是否展示兑换栏 | `Boolean` | `true` | - |
+| disabled-doupons | 不可用优惠券列表 | `Array` | `[]` | - |
+| exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
+| exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
+| displayed-coupon-index | 滚动至特定优惠券位置 | `Number` | - | - |
+| show-close-button | 是否显示列表底部按钮 | `Boolean` | `true` | - |
+| close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
+| disabled-list-title | 不可用券列表标题 | `String` | `不可用优惠` | - |
+| input-placeholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
+| show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
 
 ### CouponList Event
 

@@ -12,15 +12,15 @@ Vue.use(NumberKeyboard);
 #### Default Style
 
 ```html
-<van-button @touchstart.native.stop="showKeyboard = true">
+<van-button @touchstart.native.stop="show = true">
   Show Keyboard
 </van-button>
 
 <van-number-keyboard
-  extraKey="."
-  :show="showKeyboard"
-  closeButtonText="Close"
-  @blur="showKeyboard = false"
+  :show="show"
+  extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -30,7 +30,7 @@ Vue.use(NumberKeyboard);
 export default {
   data() {
     return {
-      showKeyboard: true
+      show: true
     }
   },
 
@@ -49,11 +49,11 @@ export default {
 
 ```html
 <van-number-keyboard
+  :show="show"
   theme="custom"
-  extraKey="."
-  :show="showKeyboard"
-  closeButtonText="Close"
-  @blur="showKeyboard = false"
+  extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -66,12 +66,12 @@ export default {
 | show | Whether to show keyboard | `Boolean` | - | - |
 | theme | Keyboard theme | `String` | `Default` | `Custom` |
 | title | Keyboard title | `String` | - | - |
-| zIndex | Keyboard z-index | `Number` | `100` | - |
-| extraKey | Content of bottom left key | `String` | `''` | - |
-| closeButtonText | Close button text | `String` | `-` | - |
 | transition | Whether to show transition animation | `Boolean` | `true` | - |
-| showDeleteKey | Whether to show delete button | `Boolean` | `true` | - |
-| hideOnClickOutside | Whether to hide keyboard when click outside | `Boolean` | `true` | - |
+| z-index | Keyboard z-index | `Number` | `100` | - |
+| extra-key | Content of bottom left key | `String` | `''` | - |
+| close-button-text | Close button text | `String` | `-` | - |
+| show-delete-key | Whether to show delete button | `Boolean` | `true` | - |
+| hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` | - |
 
 ### Event
 

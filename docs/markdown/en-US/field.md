@@ -14,7 +14,7 @@ The value of filed is bound with v-model.
 
 ```html
 <van-cell-group>
-  <van-field v-model="value" placeholder="Username"></van-field>
+  <van-field v-model="value" placeholder="Username" />
 </van-cell-group>
 ```
 
@@ -30,16 +30,15 @@ Use `type` prop to custom diffrent type fileds.
     placeholder="Username"
     required
     @click-icon="username = ''"
-  >
-  </van-field>
+  />
 
   <van-field
     v-model="password"
     type="password"
     label="Password"
     placeholder="Password"
-    required>
-  </van-field>
+    required
+  />
 </van-cell-group>
 ```
 
@@ -47,7 +46,7 @@ Use `type` prop to custom diffrent type fileds.
 
 ```html
 <van-cell-group>
-  <van-field value="Disabled" label="Username" disabled></van-field>
+  <van-field value="Disabled" label="Username" disabled />
 </van-cell-group>
 ```
 
@@ -55,7 +54,7 @@ Use `type` prop to custom diffrent type fileds.
 
 ```html
 <van-cell-group>
-  <van-field label="Username" placeholder="Username" error></van-field>
+  <van-field label="Username" placeholder="Username" error />
 </van-cell-group>
 ```
 
@@ -71,8 +70,7 @@ Textarea Filed can be auto resize when has `autosize` prop
     placeholder="Message"
     rows="1"
     autosize
-  >
-  </van-field>
+  />
 </van-cell-group>
 ```
 

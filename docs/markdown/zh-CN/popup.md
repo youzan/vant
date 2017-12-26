@@ -41,10 +41,10 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | 当前组件是否显示 | `Boolean` | `false` | - |
 | overlay | 是否显示背景蒙层 | `Boolean` | `true` | - |
-| lockOnScroll | 背景是否跟随滚动 | `Boolean` | `false` | - |
+| lock-on-scroll | 背景是否跟随滚动 | `Boolean` | `false` | - |
 | position | Popup 位置 | `String` | - | `top` `bottom` `right` `left` |
-| overlayClass | 自定义蒙层 class | `String` | `` | - |
-| overlayStyle | 自定义蒙层样式 | `Object` | `` | - |
-| closeOnClickOverlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` | - |
+| overlay-class | 自定义蒙层 class | `String` | `` | - |
+| overlay-style | 自定义蒙层样式 | `Object` | `` | - |
+| close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` | - |
 | transition | transition 名称 | `String` | `popup-slide` | - |
-| preventScroll | 是否防止滚动穿透 | `Boolean` | `false` | - |
+| prevent-scroll | 是否防止滚动穿透 | `Boolean` | `false` | - |

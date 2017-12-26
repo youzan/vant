@@ -3,9 +3,9 @@
     <demo-block :title="$t('basicUsage')">
       <van-address-edit
         :area-list="areaList"
-        :show-postal="true"
-        :show-set-default="true"
-        :show-search-result="true"
+        show-postal
+        show-set-default
+        show-search-result
         :search-result="searchResult"
         @save="onSave"
         @delete="onDelete"
