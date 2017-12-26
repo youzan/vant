@@ -15,12 +15,12 @@ Vue.use(Sku);
   v-model="showBase"
   :sku="sku"
   :goods="goods"
-  :goodsId="goodsId"
-  :hideStock="sku.hide_stock"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
   :quota="quota"
-  :quotaUsed="quotaUsed"
-  :resetStepperOnHide="resetStepperOnHide"
-  :disableStepperInput="disableStepperInput"
+  :quota-used="quotaUsed"
+  :reset-stepper-on-hide="resetStepperOnHide"
+  :disable-stepper-input="disableStepperInput"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
 />
@@ -31,16 +31,16 @@ Vue.use(Sku);
 ```html
 <van-sku
   v-model="showCustomAction"
-  stepperTitle="我要买"
+  stepper-title="我要买"
   :sku="sku"
   :goods="goods"
-  :goodsId="goodsId"
-  :hideStock="sku.hide_stock"
-  :showAddCartBtn="true"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :show-add-cart-btn="true"
   :quota="quota"
-  :quotaUsed="quotaUsed"
-  :resetStepperOnHide="true"
-  :initialSku="initialSku"
+  :quota-used="quotaUsed"
+  :reset-stepper-on-hide="true"
+  :initial-sku="initialSku"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
 >
@@ -49,9 +49,9 @@ Vue.use(Sku);
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottomAction @click="handlePointClicked">积分兑换</van-button>
+      <van-button bottom-action @click="handlePointClicked">积分兑换</van-button>
       <!-- 直接触发 sku 内部事件，通过内部事件执行 handleBuyClicked 回调 -->
-      <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
+      <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
     </div>
   </template>
 </van-sku>
@@ -65,14 +65,14 @@ Vue.use(Sku);
 | v-model | 是否显示sku | `Boolean` | `false` | - |
 | sku | 商品sku数据 | `Object` | - | - |
 | goods | 商品信息 | `Object` | - | - |
-| goodsId | 商品id | `String | Number` | - | - |
-| hideStock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
-| showAddCartBtn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
+| goods-id | 商品id | `String | Number` | - | - |
+| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
+| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
 | quota | 限购数(0表示不限购) | `Number` | `0` | - |
-| quotaUsed | 已经购买过的数量 | `Number` | `0` | - |
-| resetStepperOnHide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
-| disableStepperInput | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
-| stepperTitle | 数量选择组件左侧文案 | `String` | `购买数量` | - |
+| quota-used | 已经购买过的数量 | `Number` | `0` | - |
+| reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
+| disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
+| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 
 ### Event
 

@@ -12,10 +12,10 @@ Vue.use(Area);
 
 #### Basic Usage
 
-To initailize `Area` component, `areaList` property is required. Data structure of `areaList` will be introduced later. 
+To initailize `Area` component, `area-list` property is required. Data structure will be introduced later. 
 
 ```html
-<van-area :areaList="areaList" />
+<van-area :area-list="areaList" />
 ```
 
 #### Initial Value
@@ -23,16 +23,16 @@ To initailize `Area` component, `areaList` property is required. Data structure 
 To have a selected value，simply pass the `code` of target area to `value` property.
 
 ```html
-<van-area :areaList="areaList" value="110101" />
+<van-area :area-list="areaList" value="110101" />
 ```
 
 #### Columns Number
 
-`columnsNum` property is able to config number of columns to be displayed. This component has 3 columns corresponding to a 3 level picker by default.
-Set `columnsNum` with 2, you'll have a 2 level picker.
+`columns-num` property is used to config number of columns to be displayed. This component has 3 columns corresponding to a 3 level picker by default.
+Set `columns-num` with 2, you'll have a 2 level picker.
 
 ```html
-<van-area :areaList="areaList" :columnsNum="2" title="Title" />
+<van-area :area-list="areaList" :columns-num="2" title="Title" />
 ```
 
 
@@ -42,8 +42,8 @@ Set `columnsNum` with 2, you'll have a 2 level picker.
 |-----------|-----------|-----------|-------------|-------------|
 | value | the `code` of selected area | `String` | - | - |
 | title | Toolbar title | `String` | `''` | - |
-| areaList | an object contains these properties: `province_list`, `city_list` and `county_list`  | `Object` | - | - |
-| columnsNum | level of picker | `String`,`Number` | 3 | - |
+| area-list | an object contains these properties: `province_list`, `city_list` and `county_list`  | `Object` | - | - |
+| columns-num | level of picker | `String`,`Number` | 3 | - |
 
 ### Event
 

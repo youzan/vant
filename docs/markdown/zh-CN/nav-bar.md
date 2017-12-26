@@ -14,9 +14,9 @@ Vue.use(NavBar);
 ```html
 <van-nav-bar
   title="标题"
-  leftText="返回"
-  rightText="按钮"
-  leftArrow
+  left-text="返回"
+  right-text="按钮"
+  left-arrow
   @click-left="onClickLeft"
   @click-right="onClickRight"
 />
@@ -39,7 +39,7 @@ export default {
 通过 slot 定制内容
 
 ```html
-<van-nav-bar title="标题" leftText="返回" leftArrow>
+<van-nav-bar title="标题" left-text="返回" left-arrow>
   <van-icon name="search" slot="right" />
 </van-nav-bar>
 ```
@@ -49,9 +49,9 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 标题 | `String` | `''` | - |
-| leftText | 左侧文案 | `String` | `''` | - |
-| rightText | 右侧文案 | `String` | `''` | - |
-| leftArrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
+| left-text | 左侧文案 | `String` | `''` | - |
+| right-text | 右侧文案 | `String` | `''` | - |
+| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
 | fixed | 是否固定在顶部 | `Boolean` | `false` | - |
 
 ### Slot

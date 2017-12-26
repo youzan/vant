@@ -12,15 +12,15 @@ Vue.use(NumberKeyboard);
 #### 默认样式
 
 ```html
-<van-button @touchstart.native.stop="showKeyboard = true">
+<van-button @touchstart.native.stop="show = true">
   弹出默认键盘
 </van-button>
 
 <van-number-keyboard
-  extraKey="."
-  :show="showKeyboard"
-  closeButtonText="完成"
-  @blur="showKeyboard = false"
+  :show="show"
+  extra-key="."
+  close-button-text="完成"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -30,7 +30,7 @@ Vue.use(NumberKeyboard);
 export default {
   data() {
     return {
-      showKeyboard: true
+      show: true
     }
   },
 
@@ -49,11 +49,11 @@ export default {
 
 ```html
 <van-number-keyboard
+  :show="show"
   theme="custom"
-  extraKey="."
-  :show="showKeyboard"
-  closeButtonText="完成"
-  @blur="showKeyboard = false"
+  extra-key="."
+  close-button-text="完成"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -66,12 +66,12 @@ export default {
 | show | 是否显示键盘 | `Boolean` | - | - |
 | theme | 键盘样式风格 | `String` | `Default` | `Custom` |
 | title | 键盘标题 | `String` | - | - |
-| zIndex | 键盘 z-index | `Number` | `100` | - |
-| extraKey | 左下角按键内容 | `String` | `''` | - |
-| closeButtonText | 关闭按钮文字，空则不展示 | `String` | `-` | - |
 | transition | 是否开启过场动画 | `Boolean` | `true` | - |
-| showDeleteKey | 是否展示删除按钮 | `Boolean` | `true` | - |
-| hideOnClickOutside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
+| z-index | 键盘 z-index | `Number` | `100` | - |
+| extra-key | 左下角按键内容 | `String` | `''` | - |
+| close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` | - |
+| show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
+| hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 
 ### Event
 

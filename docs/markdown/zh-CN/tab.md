@@ -34,7 +34,7 @@ export default {
 
 #### 横向滚动
 
-默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipeThreshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
+默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipe-threshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
 
 ```html
 <van-tabs>
@@ -118,7 +118,7 @@ export default {
 | type | Tab 样式类型 | `String` | `line` | `card` |
 | active | 默认激活的 tab | `String` `Number` | `0` | - |
 | duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
-| swipeThreshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 
 ### Tab API

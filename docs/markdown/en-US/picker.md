@@ -52,7 +52,7 @@ export default {
 
 ```html
 <van-picker
-  showToolbar
+  show-toolbar
   :title="Title"
   :columns="columns"
   @cancel="onCancel"
@@ -119,11 +119,11 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | columns | Columns data | `Array` | `[]` | - |
-| showToolbar | Whether to show toolbar | `Boolean` | `false` | - |
+| show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
 | title | Toolbar title | `String` | `''` | - |
-| itemHeight | Option height | `Number` | `44` | - |
-| visibileColumnCount | Count of visible columns | `Number` | `5` | - |
-| valueKey | Key of option text | `String` | `text` | - |
+| item-height | Option height | `Number` | `44` | - |
+| visibile-column-count | Count of visible columns | `Number` | `5` | - |
+| value-key | Key of option text | `String` | `text` | - |
 
 ### Data struct of columns
 

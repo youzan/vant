@@ -59,7 +59,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Id of chosen address | String | - | - |
 | list | Address list | Array | `[]` | - |
-| addButtonText | Add button text | String | `Add new address` | - |
+| add-button-text | Add button text | String | `Add new address` | - |
 
 ### Event
 

@@ -35,10 +35,10 @@ Tips: There will be a search button on the keyboard when Search is inside a form
   <van-search
     v-model="value"
     placeholder="Placeholder"
-    :showAction="true"
+    show-action
     @search="onSearch"
-    @cancel="onCancel">
-  </van-search>
+    @cancel="onCancel"
+  />
 </form>
 ```
 
@@ -48,8 +48,9 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 ```html
 <van-search
   v-model="value"
-  :showAction="true"
-  @search="onSearch">
+  show-action
+  @search="onSearch"
+>
   <div slot="action" @click="onSearch">Search</div>
 </van-search>
 ```
@@ -61,7 +62,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 |-----------|-----------|-----------|-------------|-------------|
 | placeholder | Input placeholder | `String` | - | - |
 | background | Background color | `String` | `#f2f2f2` | - |
-| showAction | Whether to show right button | `Boolean` | false | - |
+| show-action | Whether to show right button | `Boolean` | false | - |
 
 ### Event
 Search support all native events of input tag，such as `focus`、`blur`、`keypress`

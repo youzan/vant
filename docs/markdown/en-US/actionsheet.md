@@ -40,7 +40,7 @@ export default {
 #### Actionsheet with cancel button
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" cancelText="Cancel" />
+<van-actionsheet v-model="show" :actions="actions" cancel-text="Cancel" />
 ```
 
 #### Actionsheet with title
@@ -58,9 +58,9 @@ Actionsheet will get another style if there is a `title` prop.
 |-----------|-----------|-----------|-------------|-------------|
 | actions | Options | `Array` | `[]` | - |
 | title | Title | `String` | - | - |
-| cancelText | Text of cancel button | `String` | - | - |
+| cancel-text | Text of cancel button | `String` | - | - |
 | overlay | Whether to show overlay | `Boolean` | - | - |
-| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | - | - |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | - | - |
 
 ### Data struct of actions
 

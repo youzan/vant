@@ -15,12 +15,12 @@ Vue.use(Sku);
   v-model="showBase"
   :sku="sku"
   :goods="goods"
-  :goodsId="goodsId"
-  :hideStock="sku.hide_stock"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
   :quota="quota"
-  :quotaUsed="quotaUsed"
-  :resetStepperOnHide="resetStepperOnHide"
-  :disableStepperInput="disableStepperInput"
+  :quota-used="quotaUsed"
+  :reset-stepper-on-hide="resetStepperOnHide"
+  :disable-stepper-input="disableStepperInput"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
 />
@@ -31,16 +31,16 @@ Vue.use(Sku);
 ```html
 <van-sku
   v-model="showCustomAction"
-  stepperTitle="Stepper title"
+  stepper-title="Stepper title"
   :sku="sku"
   :goods="goods"
-  :goodsId="goodsId"
-  :hideStock="sku.hide_stock"
-  :showAddCartBtn="true"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :show-add-cart-btn="true"
   :quota="quota"
-  :quotaUsed="quotaUsed"
-  :resetStepperOnHide="true"
-  :initialSku="initialSku"
+  :quota-used="quotaUsed"
+  :reset-stepper-on-hide="true"
+  :initial-sku="initialSku"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
 >
@@ -49,9 +49,9 @@ Vue.use(Sku);
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottomAction @click="handlePointClicked">Button</van-button>
+      <van-button bottom-action @click="handlePointClicked">Button</van-button>
       <!-- trigger sku inner event -->
-      <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">Button</van-button>
+      <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">Button</van-button>
     </div>
   </template>
 </van-sku>
@@ -64,14 +64,14 @@ Vue.use(Sku);
 | v-model | Whether to show sku | `Boolean` | `false` | - |
 | sku | Sku data | `Object` | - | - |
 | goods | Goods info | `Object` | - | - |
-| goodsId | Goods id | `String | Number` | - | - |
-| hideStock | Whether to hide stock | `Boolean` | `false` | - |
-| showAddCartBtn | Whether to show cart button | `Boolean` | `true` | - |
+| goods-id | Goods id | `String | Number` | - | - |
+| hide-stock | Whether to hide stock | `Boolean` | `false` | - |
+| show-add-cart-btn | Whether to show cart button | `Boolean` | `true` | - |
 | quota | Quota (0 as no limit) | `Number` | `0` | - |
-| quotaUsed | Used quota | `Number` | `0` | - |
-| resetStepperOnHide | Whether to reset stepper when hide | `Boolean` | `false` | - |
-| disableStepperInput | Whether to disable stepper input | `Boolean` | `false` | - |
-| stepperTitle | Quantity title | `String` | `Quantity` | - |
+| quota-used | Used quota | `Number` | `0` | - |
+| reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
+| disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
+| stepper-title | Quantity title | `String` | `Quantity` | - |
 
 ### Event
 

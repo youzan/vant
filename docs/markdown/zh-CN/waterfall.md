@@ -37,7 +37,8 @@ export default {
 <ul
   v-waterfall-lower="loadMore"
   waterfall-disabled="disabled"
-  waterfall-offset="400">
+  waterfall-offset="400"
+>
   <li v-for="item in list">{{ item }}</li>
 </ul>
 ```
@@ -59,7 +60,7 @@ export default {
     loadMore() {
       this.disabled = true;
       setTimeout(() => {
-        for (let i = 0; i < 5; i ++) {
+        for (let i = 0; i < 5; i++) {
           this.list.push(this.list.length);
         }
         this.disabled = false;

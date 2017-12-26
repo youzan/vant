@@ -16,7 +16,7 @@ Vue.use(Field);
 
 ```html
 <van-cell-group>
-  <van-field v-model="value" placeholder="请输入用户名"></van-field>
+  <van-field v-model="value" placeholder="请输入用户名" />
 </van-cell-group>
 ```
 
@@ -32,16 +32,15 @@ Vue.use(Field);
     placeholder="请输入用户名"
     required
     @click-icon="username = ''"
-  >
-  </van-field>
+  />
 
   <van-field
     v-model="password"
     type="password"
     label="密码"
     placeholder="请输入密码"
-    required>
-  </van-field>
+    required
+  />
 </van-cell-group>
 ```
 
@@ -49,7 +48,7 @@ Vue.use(Field);
 
 ```html
 <van-cell-group>
-  <van-field value="输入框已禁用" label="用户名" disabled></van-field>
+  <van-field value="输入框已禁用" label="用户名" disabled />
 </van-cell-group>
 ```
 
@@ -57,7 +56,7 @@ Vue.use(Field);
 
 ```html
 <van-cell-group>
-  <van-field label="用户名" placeholder="请输入用户名" error></van-field>
+  <van-field label="用户名" placeholder="请输入用户名" error />
 </van-cell-group>
 ```
 
@@ -73,8 +72,7 @@ Vue.use(Field);
     placeholder="请输入留言"
     rows="1"
     autosize
-  >
-  </van-field>
+/>
 </van-cell-group>
 ```
 

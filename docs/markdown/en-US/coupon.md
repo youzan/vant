@@ -16,7 +16,7 @@ Vue.use(CouponList);
 <!-- Coupon Cell -->
 <van-coupon-cell
   :coupons="coupons"
-  :chosenCoupon="chosenCoupon"
+  :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
 
@@ -24,8 +24,8 @@ Vue.use(CouponList);
 <van-popup v-model="showList" position="bottom">
   <van-coupon-list
     :coupons="coupons"
-    :chosenCoupon="chosenCoupon"
-    :disabledCoupons="disabledCoupons"
+    :chosen-coupon="chosenCoupon"
+    :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
   />
@@ -71,7 +71,7 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | title | Cell title | `String` | `Coupon` | - |
-| chosenCoupon | Index of chosen coupon | `Number` | `-1` | - |
+| chosen-coupon | Index of chosen coupon | `Number` | `-1` | - |
 | coupons | Coupon list | `Array` | `[]` | - |
 | editable | Cell editable | `Boolean` | `true` | - |
 
@@ -79,15 +79,15 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| chosenCoupon | Index of chosen coupon | `Number` | `-1` | - |
+| chosen-coupon | Index of chosen coupon | `Number` | `-1` | - |
 | coupons | Coupon list | `Array` | `[]` | - |
-| disabledCoupons | Disabled voupon list | `Array` | `[]` | - |
-| exchangeButtonText | Exchange button text | `String` | `Exchange` | - |
-| exchangeButtonDisabled | Whether to disable exchange button | `Boolean` | `false` | - |
-| displayedCouponIndex | Index of displayed coupon | `Number` | - | - |
-| closeButtonText | Close button text | `String` | `Close` | - |
-| disabledListTitle | Disabled list title | `String` | `Unavailable` | - |
-| inputPlaceholder | Input placeholder | `String` | `Coupon code` | - |
+| disabled-coupons | Disabled voupon list | `Array` | `[]` | - |
+| exchange-button-text | Exchange button text | `String` | `Exchange` | - |
+| exchange-button-disabled | Whether to disable exchange button | `Boolean` | `false` | - |
+| displayed-coupon-index | Index of displayed coupon | `Number` | - | - |
+| close-button-text | Close button text | `String` | `Close` | - |
+| disabled-list-title | Disabled list title | `String` | `Unavailable` | - |
+| input-placeholder | Input placeholder | `String` | `Coupon code` | - |
 
 ### CouponList Event
 

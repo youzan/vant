@@ -34,7 +34,7 @@ export default {
 
 #### Swipe Tabs
 
-By default more than 4 tabs, you can scroll through the tabs. You can set `swipeThreshold` attribute to customize threshold number.
+By default more than 4 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
 
 ```html
 <van-tabs>
@@ -118,7 +118,7 @@ In sticky mode, the tab will be fixed to top when scroll to top
 | type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
 | active | Index of active tab | `String` `Number` | `0` | - |
 | duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
-| swipeThreshold | Set swipe tabs threshold | `Number` | `4` | - | - |
+| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
 
 ### Tab API
 

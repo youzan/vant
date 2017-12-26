@@ -53,7 +53,7 @@ export default {
 可以通过设置`direction`属性来改变步骤条的显示方式
 
 ```html
-<van-steps direction="vertical" :active="0" activeColor="#f60">
+<van-steps direction="vertical" :active="0" active-color="#f60">
   <van-step>
     <h3>【城市】物流状态1</h3>
     <p>2016-07-12 12:40</p>
@@ -75,11 +75,11 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | active | 当前步骤，起始值为0 | `Number` | - | - |
 | icon | 当前步骤的icon | `String` | - | - |
-| iconClass | 当前步骤栏为icon添加的类 | `String` | - | - |
+| icon-class | 当前步骤栏为icon添加的类 | `String` | - | - |
 | title | 当前步骤标题 | `String` | - | - |
 | description | 当前步骤描述 | `String` | - | - |
 | direction | 显示方向 | `String` | `horizontal` | `vertical` |
-| activeColor | active状态颜色 | `String` | `#06bf04` | - |
+| active-color | active状态颜色 | `String` | `#06bf04` | - |
 
 ### Steps Slot
 

@@ -49,11 +49,11 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Loading status | `Boolean` | - | - |
-| pullingText | Text to show when pulling | `String` | `下拉即可刷新...` | - |
-| loosingText | Text to show when loosing | `String` | `释放即可刷新...` | - |
-| loadingText | Text to show when loading | `String` | `加载中...` | - |
-| animationDuration | Animation duration | `Number` | `300` | - |
-| headHeight | Height of head | `Number` | `50` | - |
+| pulling-text | Text to show when pulling | `String` | `下拉即可刷新...` | - |
+| loosing-text | Text to show when loosing | `String` | `释放即可刷新...` | - |
+| loading-text | Text to show when loading | `String` | `加载中...` | - |
+| animation-duration | Animation duration | `Number` | `300` | - |
+| head-height | Height of head | `Number` | `50` | - |
 
 ### Slot
 
