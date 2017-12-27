@@ -43,13 +43,14 @@ export default {
   data() {
     return {
       showList: false,
-      chosenCoupon: -1
+      chosenCoupon: -1,
+      exchangedCoupons: []
     };
   },
 
   computed: {
     coupons() {
-      return [this.coupon, this.discountCoupon];
+      return [this.coupon, this.discountCoupon, ...this.exchangedCoupons];
     },
 
     disabledCoupons() {
@@ -108,7 +109,13 @@ export default {
     },
     onExchange(code) {
       Toast(this.$t('exchange'));
-      this.coupons.push(coupon);
+      this.exchangedCoupons.push({
+        ...this.coupon,
+        id: this.randomId()
+      });
+    },
+    randomId(max = 999999) {
+      return Math.floor(Math.random() * max) + 1
     }
   }
 };
