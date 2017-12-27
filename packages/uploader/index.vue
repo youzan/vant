@@ -18,6 +18,8 @@ import { create } from '../utils';
 export default create({
   name: 'van-uploader',
 
+  inheritAttrs: false,
+
   props: {
     disabled: Boolean,
     beforeRead: Function,

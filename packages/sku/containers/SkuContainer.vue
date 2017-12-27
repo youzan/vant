@@ -11,7 +11,7 @@
             :sku="sku"
           />
         </slot>
-        <div class="van-sku-body scroller" :style="bodyStyle">
+        <div class="van-sku-body" :style="bodyStyle">
           <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
               <div
