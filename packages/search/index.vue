@@ -30,6 +30,8 @@ import Clickoutside from '../utils/clickoutside';
 export default create({
   name: 'van-search',
 
+  inheritAttrs: false,
+
   props: {
     value: String,
     showAction: Boolean,

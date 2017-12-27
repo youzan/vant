@@ -50,6 +50,8 @@ import Cell from '../cell';
 export default create({
   name: 'van-field',
 
+  inheritAttrs: false,
+
   components: {
     Cell
   },
