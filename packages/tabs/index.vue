@@ -8,7 +8,7 @@
         'van-hairline--top-bottom': type === 'line'
       }]"
     >
-      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`">
+      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
           v-for="(tab, index) in tabs"
