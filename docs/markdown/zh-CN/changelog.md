@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
+
+`2017-12-29`
+
+**Breaking changes**
+
+* Cell: CellGroup 左内边距移至 Cell 内, 新增 'border'、'clickable' 属性 [\#497](https://github.com/youzan/vant/pull/497) [@chenjiahan](https://github.com/chenjiahan)
+* 调整编码规范, 使用官方推荐的 kebab-case 属性命名 [\#482](https://github.com/youzan/vant/pull/482) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+
+* Field: 新增 error-message 属性 [\#492](https://github.com/youzan/vant/pull/492) [@chenjiahan](https://github.com/chenjiahan)
+* Document: 更新到新版文档样式 [\#490](https://github.com/youzan/vant/pull/490) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Tab 使用 sticky 时高度计算错误的问题 [\#493](https://github.com/youzan/vant/pull/493) [@chenjiahan](https://github.com/chenjiahan)
+* 修复组件使用 $attrs 时继承属性的问题 [\#488](https://github.com/youzan/vant/pull/488) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
 `2017-12-25`
 
