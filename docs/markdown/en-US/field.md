@@ -46,15 +46,29 @@ Use `type` prop to custom diffrent type fileds.
 
 ```html
 <van-cell-group>
-  <van-field value="Disabled" label="Username" disabled />
+  <van-field
+    value="Disabled"
+    label="Username"
+    disabled
+  />
 </van-cell-group>
 ```
 
 #### Error info
+Use `error` or `error-message` to show error info
 
 ```html
 <van-cell-group>
-  <van-field label="Username" placeholder="Username" error />
+  <van-field
+    label="Username"
+    placeholder="Username"
+    error
+  />
+  <van-field
+    label="Phone"
+    placeholder="Phone"
+    error-message="Invalid phone"
+  />
 </van-cell-group>
 ```
 
@@ -84,6 +98,7 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | label | Filed label | `String` | - | - |
 | disabled | Disable field | `Boolean` | `false` | - |
 | error | Whether to show error info | `Boolean` | `false` | - |
+| error-message | Error message | `String` | `''` | - |
 | autosize | Textarea auto resize | `Boolean` | `false` | - |
 | icon | Right side Icon name | `String` | - | - |
 

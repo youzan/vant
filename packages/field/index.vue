@@ -31,6 +31,11 @@
       :value="value"
     >
     <div
+      v-if="errorMessage"
+      v-text="errorMessage"
+      class="van-field__error-message"
+    />
+    <div
       v-if="hasIcon"
       v-show="$slots.icon || value"
       class="van-field__icon"
@@ -68,6 +73,7 @@ export default create({
     border: Boolean,
     required: Boolean,
     autosize: Boolean,
+    errorMessage: String,
     onIconClick: {
       type: Function,
       default: () => {}

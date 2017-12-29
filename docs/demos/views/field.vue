@@ -36,6 +36,12 @@
     <demo-block :title="$t('title4')">
       <van-cell-group>
         <van-field :label="$t('username')" :placeholder="$t('usernamePlaceholder')" error />
+        <van-field
+          v-model="phone"
+          :label="$t('phone')"
+          :placeholder="$t('phonePlaceholder')"
+          :error-message="$t('phoneError')"
+        />
       </van-cell-group>
     </demo-block>
 
@@ -65,10 +71,13 @@ export default {
       username: '用户名',
       password: '密码',
       message: '留言',
+      phone: '手机号',
+      phonePlaceholder: '请输入手机号',
       usernamePlaceholder: '请输入用户名',
       passwordPlaceholder: '请输入密码',
       messagePlaceholder: '请输入留言',
-      inputDisabled: '输入框已禁用'
+      inputDisabled: '输入框已禁用',
+      phoneError: '手机号格式错误'
     },
     'en-US': {
       title2: 'Custom type',
@@ -78,10 +87,13 @@ export default {
       username: 'Username',
       password: 'Password',
       message: 'Message',
+      phone: 'Phone',
+      phonePlaceholder: 'Phone',
       usernamePlaceholder: 'Username',
       passwordPlaceholder: 'Password',
       messagePlaceholder: 'Message',
-      inputDisabled: 'Disabled'
+      inputDisabled: 'Disabled',
+      phoneError: 'Invalid phone'
     }
   },
 
@@ -90,7 +102,8 @@ export default {
       value: '',
       password: '',
       username: '',
-      message: ''
+      message: '',
+      phone: '1365577'
     };
   }
 };

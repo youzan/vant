@@ -48,15 +48,29 @@ Vue.use(Field);
 
 ```html
 <van-cell-group>
-  <van-field value="输入框已禁用" label="用户名" disabled />
+  <van-field
+    value="输入框已禁用"
+    label="用户名"
+    disabled
+  />
 </van-cell-group>
 ```
 
 #### 错误提示
+通过`error`或者`error-message`属性增加对应的错误提示
 
 ```html
 <van-cell-group>
-  <van-field label="用户名" placeholder="请输入用户名" error />
+  <van-field
+    label="用户名"
+    placeholder="请输入用户名"
+    error
+  />
+  <van-field
+    label="手机号"
+    placeholder="请输入手机号"
+    error-message="手机号格式错误"
+  />
 </van-cell-group>
 ```
 
@@ -86,6 +100,7 @@ Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | label | 输入框标签 | `String` | - | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | error | 输入框是否有错误 | `Boolean` | `false` | - |
+| error-message | 输入框底部错误提示文案 | `String` | `''` | - |
 | autosize | 高度自适应(仅支持textarea) | `Boolean` | `false` | - |
 | icon | 输入框尾部图标 | `String` | - |  Icon 组件支持的类型 |
 
