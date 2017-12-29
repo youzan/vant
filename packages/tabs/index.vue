@@ -1,6 +1,7 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
     <div
+      ref="wrap"
       class="van-tabs__wrap"
       :class="[`van-tabs__wrap--${position}`, {
         'van-tabs--scrollable': scrollable,
@@ -133,7 +134,7 @@ export default create({
     onScroll() {
       const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
-      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.nav.offsetHeight;
+      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
         this.position = 'content-bottom';
       } else if (scrollTop > elTopToPageTop) {
