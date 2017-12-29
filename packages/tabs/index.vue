@@ -1,13 +1,14 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
     <div
+      ref="wrap"
       class="van-tabs__wrap"
       :class="[`van-tabs__wrap--${position}`, {
         'van-tabs--scrollable': scrollable,
         'van-hairline--top-bottom': type === 'line'
       }]"
     >
-      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
+      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
           v-for="(tab, index) in tabs"
@@ -133,7 +134,7 @@ export default create({
     onScroll() {
       const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
-      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.nav.offsetHeight;
+      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
         this.position = 'content-bottom';
       } else if (scrollTop > elTopToPageTop) {
