@@ -16,7 +16,7 @@
       class="van-address-list__add van-hairline--top"
       @click="$emit('add')"
       :title="addButtonText || $t('add')"
-      isLink
+      is-link
     />
   </div>
 </template>

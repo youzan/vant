@@ -1,16 +1,17 @@
 
 <template>
-  <div class="van-picker-column" :class="className" :style="columnStyle">
-    <div class="van-picker-column__frame van-hairline--top-bottom" :style="frameStyle" />
-    <ul
-      :style="wrapperStyle"
-      @touchstart="onTouchStart"
-      @touchmove.prevent="onTouchMove"
-      @touchend="onTouchEnd"
-      @touchcancel="onTouchEnd"
-    >
+  <div
+    class="van-picker-column"
+    :class="className"
+    :style="columnStyle"
+    @touchstart="onTouchStart"
+    @touchmove.prevent="onTouchMove"
+    @touchend="onTouchEnd"
+    @touchcancel="onTouchEnd"
+  >
+    <ul :style="wrapperStyle">
       <li
-        v-for="(option, index) in options" 
+        v-for="(option, index) in options"
         v-text="getOptionText(option)"
         :class="{
           'van-picker-column--disabled': isDisabled(option),
@@ -34,13 +35,10 @@ export default create({
   props: {
     valueKey: String,
     className: String,
+    itemHeight: Number,
     options: {
       type: Array,
       default: () => []
-    },
-    itemHeight: {
-      type: Number,
-      default: 44
     },
     visibileColumnCount: {
       type: Number,
@@ -95,6 +93,10 @@ export default create({
       return this.options.length;
     },
 
+    baseOffset() {
+      return this.itemHeight * (this.visibileColumnCount - 1) / 2;
+    },
+
     columnStyle() {
       return {
         height: (this.itemHeight * this.visibileColumnCount) + 'px'
@@ -104,15 +106,8 @@ export default create({
     wrapperStyle() {
       return {
         transition: `${this.duration}ms`,
-        transform: `translate3d(0, ${this.offset}px, 0)`,
-        lineHeight: this.itemHeight + 'px',
-        padding: `${this.itemHeight * (this.visibileColumnCount - 1) / 2}px 0`
-      };
-    },
-
-    frameStyle() {
-      return {
-        height: this.itemHeight + 'px'
+        transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
+        lineHeight: this.itemHeight + 'px'
       };
     },
 

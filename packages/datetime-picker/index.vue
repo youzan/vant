@@ -1,9 +1,9 @@
 <template>
   <picker
     ref="picker"
-    showToolbar
+    show-toolbar
     :columns="columns"
-    :visibleItemCount="visibleItemCount"
+    :visible-item-count="visibleItemCount"
     @change="onChange"
     @confirm="onConfirm"
     @cancel="$emit('cancel')"
@@ -14,7 +14,7 @@
 import { create } from '../utils';
 import Picker from '../picker';
 
-const isValidDate = date => Object.prototype.toString.call(date) === "[object Date]" && !isNaN(date.getTime());
+const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
 
 export default create({
   name: 'van-datetime-picker',

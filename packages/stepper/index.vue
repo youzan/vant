@@ -4,8 +4,7 @@
       class="van-stepper__stepper van-stepper__minus"
       :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
       @click="onChange('minus')"
-    >
-    </button>
+    />
     <input
       type="number"
       class="van-stepper__input"
@@ -17,8 +16,7 @@
       class="van-stepper__stepper van-stepper__plus"
       :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
       @click="onChange('plus')"
-    >
-    </button>
+    />
   </div>
 </template>
 

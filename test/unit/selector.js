@@ -13,7 +13,9 @@ inquirer.prompt([{
   name: 'select',
   message: '请选择要运行的测试文件：',
   choices: files
-}], (result) => {
+}]).then(result => {
   const file = result.select.replace('.spec.js', '');
   shell.exec('karma start test/unit/karma.conf.js --color alway --file ' + file);
+}).catch(error => {
+  console.log(error);
 });

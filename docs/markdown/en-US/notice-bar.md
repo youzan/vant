@@ -14,7 +14,7 @@ Vue.use(NoticeBar);
 ```html
 <van-notice-bar
   text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily."
-  leftIcon="https://img.yzcdn.cn/1.png"
+  left-icon="https://img.yzcdn.cn/1.png"
 />
 ```
 
@@ -46,7 +46,7 @@ Vue.use(NoticeBar);
 | delay | Animation delay (s) | Number | `1` | - |
 | speed | Scroll speed (px) | Number | `50` | - |
 | scrollable | Whether to scroll content | Boolean | `true` | - |
-| leftIcon | Image url of left icon | String | - | - |
+| left-icon | Image url of left icon | String | - | - |
 | color | Text color | String | `#f60` | - |
 | background | Background color | String | `#fff7cc` | - |
 

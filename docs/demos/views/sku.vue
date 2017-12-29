@@ -6,16 +6,15 @@
           v-model="showBase"
           :sku="$t('sku').sku"
           :goods="$t('sku').goods_info"
-          :goodsId="$t('sku').goods_id"
-          :hideStock="$t('sku').sku.hide_stock"
+          :goods-id="$t('sku').goods_id"
+          :hide-stock="$t('sku').sku.hide_stock"
           :quota="$t('sku').quota"
-          :quotaUsed="$t('sku').quota_used"
-          :resetStepperOnHide="true"
-          :disableStepperInput="true"
+          :quota-used="$t('sku').quota_used"
+          :reset-stepper-on-hide="true"
+          :disable-stepper-input="true"
           @buy-clicked="handleBuyClicked"
           @add-cart="handleAddCartClicked"
-        >
-        </van-sku>
+        />
         <van-button type="primary" @click="showBase = true" block>{{ $t('basicUsage') }}</van-button>
       </div>
     </demo-block>
@@ -24,24 +23,24 @@
       <div class="sku-container">
         <van-sku
           v-model="showCustomAction"
-          :stepperTitle="$t('stepperTitle')"
+          :stepper-title="$t('stepperTitle')"
           :sku="$t('sku').sku"
           :goods="$t('sku').goods_info"
-          :goodsId="$t('sku').goods_id"
-          :hideStock="$t('sku').sku.hide_stock"
-          :showAddCartBtn="true"
+          :goods-id="$t('sku').goods_id"
+          :hide-stock="$t('sku').sku.hide_stock"
+          :show-add-cart-btn="true"
           :quota="$t('sku').quota"
-          :quotaUsed="$t('sku').quota_used"
-          :resetStepperOnHide="true"
-          :initialSku="initialSku"
+          :quota-used="$t('sku').quota_used"
+          :reset-stepper-on-hide="true"
+          :initial-sku="initialSku"
           @buy-clicked="handleBuyClicked"
           @add-cart="handleAddCartClicked"
         >
-          <template slot="sku-messages"></template>
+          <template slot="sku-messages" />
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
-              <van-button bottomAction @click="handlePointClicked">{{ $t('button1') }}</van-button>
-              <van-button type="primary" bottomAction @click="props.skuEventBus.$emit('sku:buy')">{{ $t('button2') }}</van-button>
+              <van-button bottom-action @click="handlePointClicked">{{ $t('button1') }}</van-button>
+              <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">{{ $t('button2') }}</van-button>
             </div>
           </template>
         </van-sku>

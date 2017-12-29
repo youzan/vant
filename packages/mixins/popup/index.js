@@ -1,6 +1,7 @@
-import manager from './popup-manager';
-import context from './popup-context';
+import manager from './manager';
+import context from './context';
 import scrollUtils from '../../utils/scroll';
+import { on, off } from '../../utils/event';
 
 export default {
   props: {
@@ -32,8 +33,7 @@ export default {
   },
 
   beforeMount() {
-    this._popupId = 'popup-' + context.plusKeyByOne('idSeed');
-    context.instances[this._popupId] = this;
+    this._popupId = 'popup-' + context.plusKey('idSeed');
   },
 
   data() {
@@ -55,14 +55,12 @@ export default {
     },
 
     watchTouchMove(e) {
-      const pos = this.pos;
+      const { pos } = this;
       const dx = e.touches[0].clientX - pos.x;
       const dy = e.touches[0].clientY - pos.y;
       const direction = dy > 0 ? '10' : '01';
       const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
-      const scrollTop = el.scrollTop;
-      const scrollHeight = el.scrollHeight;
-      const offsetHeight = el.offsetHeight;
+      const { scrollHeight, offsetHeight, scrollTop } = el;
       const isVertical = Math.abs(dx) < Math.abs(dy);
 
       let status = '11';
@@ -73,7 +71,11 @@ export default {
         status = '10';
       }
 
-      if (status !== '11' && isVertical && !(parseInt(status, 2) & parseInt(direction, 2))) {
+      if (
+        status !== '11' &&
+        isVertical &&
+        !(parseInt(status, 2) & parseInt(direction, 2))
+      ) {
         e.preventDefault();
         e.stopPropagation();
       }
@@ -92,10 +94,10 @@ export default {
       }
 
       if (this.overlay) {
-        manager.openModal({
+        manager.openModal(this, {
           id: this._popupId,
-          zIndex: context.plusKeyByOne('zIndex'),
           dom: this.$el,
+          zIndex: context.plusKey('zIndex'),
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
@@ -105,12 +107,12 @@ export default {
         }
       }
 
-      this.$el.style.zIndex = context.plusKeyByOne('zIndex');
+      this.$el.style.zIndex = context.plusKey('zIndex');
       this.opened = true;
 
       if (this.preventScroll) {
-        document.addEventListener('touchstart', this.recordPosition, false);
-        document.addEventListener('touchmove', this.watchTouchMove, false);
+        on(document, 'touchstart', this.recordPosition);
+        on(document, 'touchmove', this.watchTouchMove);
       }
     },
 
@@ -120,11 +122,6 @@ export default {
       }
 
       this.$emit('input', false);
-
-      if (this.lockOnScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-      }
-
       this.opened = false;
       this.doAfterClose();
     },
@@ -132,18 +129,18 @@ export default {
     doAfterClose() {
       manager.closeModal(this._popupId);
 
+      if (this.lockOnScroll) {
+        document.body.classList.remove('van-overflow-hidden');
+      }
+
       if (this.preventScroll) {
-        document.removeEventListener('touchstart', this.recordPosition, false);
-        document.removeEventListener('touchmove', this.watchTouchMove, false);
+        off(document, 'touchstart', this.recordPosition);
+        off(document, 'touchmove', this.watchTouchMove);
       }
     }
   },
 
   beforeDestroy() {
-    context.instances[this._popupId] = null;
-    manager.closeModal(this._popupId);
-    if (this.lockOnScroll) {
-      document.body.classList.remove('van-overflow-hidden');
-    }
+    this.doAfterClose();
   }
 };

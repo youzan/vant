@@ -15,6 +15,12 @@
     padding-left: 90px;
   }
 
+  &__error-message {
+    color: $red;
+    font-size: 12px;
+    text-align: left;
+  }
+
   &--has-textarea {
     .van-field__control {
       min-height: 60px;

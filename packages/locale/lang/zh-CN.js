@@ -58,6 +58,11 @@ export default {
     discount: discount => `${discount}折`,
     condition: (condition) => `满${condition}元可用`
   },
+  vanArea: {
+    province: '选择省份',
+    city: '选择城市',
+    county: '选择地区'
+  },
   vanAddressEdit: {
     areaTitle: '收件地区',
     addressText: '收货',

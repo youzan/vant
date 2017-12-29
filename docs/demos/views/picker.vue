@@ -10,7 +10,7 @@
 
     <demo-block :title="$t('title3')">
       <van-picker
-        showToolbar
+        show-toolbar
         :title="$t('area')"
         :columns="$t('column1')"
         @cancel="onCancel"
@@ -49,7 +49,6 @@ export default {
       title2: 'Disable Option',
       title3: 'Show Toolbar',
       title4: 'Multi Columns',
-      title2: 'Picker with toolbar',
       column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       column2: [
         { text: 'Delaware', disabled: true },

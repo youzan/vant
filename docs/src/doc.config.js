@@ -2,21 +2,18 @@
 module.exports = {
   'zh-CN': {
     header: {
-      lang: {
-        text: 'En',
-        from: 'zh-CN',
-        to: 'en-US'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'Zan UI',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
-    },
-    footer: {
-      github: 'https://github.com/youzan/vant',
       nav: {
-        'React 组件库': 'https://www.youzanyun.com/zanui/zent',
-        小程序组件库: 'https://github.com/youzan/zanui-weapp',
-        意见反馈: 'https://github.com/youzan/vant/issues',
-        开发指南: 'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.zh-CN.md',
-        加入我们: 'https://job.youzan.com'
+        lang: {
+          text: 'En',
+          from: 'zh-CN',
+          to: 'en-US'
+        },
+        github: 'https://github.com/youzan/vant'
       }
     },
     nav: [
@@ -25,6 +22,11 @@ module.exports = {
         groups: [
           {
             list: [
+              {
+                path: '/intro',
+                title: '介绍',
+                noExample: true
+              },
               {
                 path: '/quickstart',
                 title: '快速上手',
@@ -73,10 +75,6 @@ module.exports = {
               {
                 path: '/button',
                 title: 'Button - 按钮'
-              },
-              {
-                path: '/card',
-                title: 'Card - 卡片'
               },
               {
                 path: '/cell',
@@ -251,6 +249,10 @@ module.exports = {
                 title: 'Area - 省市区选择'
               },
               {
+                path: '/card',
+                title: 'Card - 卡片'
+              },
+              {
                 path: '/contact',
                 title: 'Contact - 联系人'
               },
@@ -278,21 +280,18 @@ module.exports = {
   },
   'en-US': {
     header: {
-      lang: {
-        text: '中文',
-        from: 'en-US',
-        to: 'zh-CN'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'Zan UI',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
-    },
-    footer: {
-      github: 'https://github.com/youzan/vant',
       nav: {
-        'React UI': 'https://www.youzanyun.com/zanui/zent',
-        'Weapp UI': 'https://github.com/youzan/zanui-weapp',
-        Feedback: 'https://github.com/youzan/vant/issues',
-        Contribute:
-          'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.md'
+        lang: {
+          text: '中文',
+          from: 'en-US',
+          to: 'zh-CN'
+        },
+        github: 'https://github.com/youzan/vant'
       }
     },
     nav: [
@@ -301,6 +300,11 @@ module.exports = {
         groups: [
           {
             list: [
+              {
+                path: '/intro',
+                title: 'Introduction',
+                noExample: true
+              },
               {
                 path: '/quickstart',
                 title: 'Getting Started',
@@ -349,10 +353,6 @@ module.exports = {
               {
                 path: '/button',
                 title: 'Button'
-              },
-              {
-                path: '/card',
-                title: 'Card'
               },
               {
                 path: '/cell',
@@ -524,7 +524,11 @@ module.exports = {
               },
               {
                 path: '/area',
-                title: 'Area (In translation)'
+                title: 'Area'
+              },
+              {
+                path: '/card',
+                title: 'Card'
               },
               {
                 path: '/contact',
@@ -544,7 +548,7 @@ module.exports = {
               },
               {
                 path: '/sku',
-                title: 'Sku (In translation)'
+                title: 'Sku'
               }
             ]
           }

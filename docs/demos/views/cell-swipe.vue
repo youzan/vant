@@ -6,7 +6,7 @@
         <van-cell-swipe :right-width="65" :left-width="65">
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')"></van-cell>
+            <van-cell :title="$t('title')" :value="$t('content')" />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-cell-swipe>
@@ -16,7 +16,7 @@
         <van-cell-swipe :right-width="65" :left-width="65" :on-close="onClose">
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')"></van-cell>
+            <van-cell :title="$t('title')" :value="$t('content')" />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-cell-swipe>
@@ -82,7 +82,7 @@ export default {
       line-height: 44px;
   }
   .van-cell-swipe__left {
-    background-color: #FF4444;  
+    background-color: #FF4444;
   }
   .van-cell-swipe__right {
     background-color: #84c483;

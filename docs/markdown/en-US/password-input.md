@@ -57,7 +57,7 @@ export default {
 | value | Password value | `String` | `''` | - |
 | length | Maxlength of password | `Number` | `6` | - |
 | info | Bottom info | `String` | - | - |
-| errorInfo | Bottom error info | `String` | - | - |
+| error-info | Bottom error info | `String` | - | - |
 
 ### Event
 

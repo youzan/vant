@@ -1,6 +1,6 @@
 <template>
   <div class="van-goods-action">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

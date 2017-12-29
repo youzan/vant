@@ -11,7 +11,13 @@
         </cell>
       </cell-group>
     </radio-group>
-    <cell icon="add" class="van-contact-list__add van-hairline--top" @click="$emit('add')" :title="addText || $t('addText')" isLink />
+    <cell
+      icon="add"
+      class="van-contact-list__add van-hairline--top"
+      @click="$emit('add')"
+      :title="addText || $t('addText')"
+      is-link
+    />
   </div>
 </template>
 

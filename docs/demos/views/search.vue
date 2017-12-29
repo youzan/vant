@@ -9,18 +9,19 @@
         <van-search
           v-model="value"
           :placeholder="$t('placeholder')"
-          :showAction="true"
+          show-action
           @search="onSearch"
-          @cancel="onCancel">
-        </van-search>
+          @cancel="onCancel"
+        />
       </form>
     </demo-block>
 
     <demo-block :title="$t('title3')">
       <van-search
         v-model="value"
-        :showAction="true"
-        @search="onSearch">
+        show-action
+        @search="onSearch"
+      >
         <div slot="action" @click="onSearch">{{ $t('search') }}</div>
       </van-search>
     </demo-block>
@@ -44,7 +45,7 @@ export default {
 
   data() {
     return {
-      value: '',
+      value: ''
     };
   },
 

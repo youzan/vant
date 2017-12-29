@@ -34,10 +34,16 @@ export default {
 
 #### 高级用法
 
-默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`defaultValue`属性
+默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`default-value`属性
 
 ```html
-<van-stepper v-model="value" min="5" max="40" step="2" defaultValue="9" />
+<van-stepper
+  v-model="value"
+  :min="5"
+  :max="40"
+  :step="2"
+  :default-value="9"
+/>
 ```
 
 ### API
@@ -46,10 +52,10 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | min | 最小值 | `String | Number` | `1` | - |
 | max | 最大值 | `String | Number` | - | - |
-| defaultValue | 默认值 | `String | Number` | `1` | - |
+| default-value | 默认值 | `String | Number` | `1` | - |
 | step | 步数 | `String | Number` | `1` | - |
 | disabled | 是否禁用 | `Boolean` | `false` | - | 
-| disableInput | 是否禁用input框 | `Boolean` | `false` | - |
+| disable-input | 是否禁用input框 | `Boolean` | `false` | - |
 
 ### Event
 

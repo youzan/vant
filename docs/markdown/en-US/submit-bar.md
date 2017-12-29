@@ -14,7 +14,7 @@ Vue.use(SubmitBar);
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="Submit"
+  button-text="Submit"
   @submit="onSubmit"
 />
 ```
@@ -26,7 +26,7 @@ Vue.use(SubmitBar);
 <van-submit-bar
   disabled
   :price="3050"
-  buttonText="Submit"
+  button-text="Submit"
   tip="Some tips"
   @submit="onSubmit"
 />
@@ -39,7 +39,7 @@ Vue.use(SubmitBar);
 <van-submit-bar
   loading
   :price="3050"
-  buttonText="Submit"
+  button-text="Submit"
   @submit="onSubmit"
 />
 ```
@@ -50,7 +50,7 @@ Use slot to add custom contents.
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="Submit"
+  button-text="Submit"
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">Check</van-checkbox>
@@ -66,8 +66,8 @@ Use slot to add custom contents.
 |-----------|-----------|-----------|-------------|-------------|
 | price | Price |  `Number` | - | - |
 | label | Price label |  `String` | `合计：` | - |
-| buttonText | Button text | `String` | - | - |
-| buttonType | Button type |  `String` | `danger` | - |
+| button-text | Button text | `String` | - | - |
+| button-type | Button type |  `String` | `danger` | - |
 | tip | Tip |  `String` | - | - |
 | disabled | Whether to disable button |  `Boolean` | `false` | - |
 | loading | Whether to show loading icon |  `Boolean` | `false` | - |

@@ -13,11 +13,11 @@ Vue.use(AddressEdit);
 
 ```html
 <van-address-edit
-  :areaList="areaList"
-  :showPostal="true"
-  :showSetDefault="true"
-  :showSearchResult="true"
-  :searchResult="searchResult"
+  :area-list="areaList"
+  show-postal
+  show-set-default
+  show-search-result
+  :search-result="searchResult"
   @save="onSave"
   @delete="onDelete"
   @change-detail="onChangeDetail"
@@ -58,15 +58,15 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| areaList | 地区列表 | `Object` | - | - |
-| addressInfo | 收货人信息 | `Object` | `{}` | - |
-| searchResult | 详细地址搜索结果 | `Array` | `[]` | - |
-| addressText | "地址"文案前缀 | `String` | `收货` | - |
-| showPostal | 是否显示邮政编码 | `Boolean` | `false` | - |
-| showSetDefault | 是否显示默认地址栏 | `Boolean` | `false` | - |
-| showSearchResult | 是否显示搜索结果 | `Boolean` | `false` | - |
-| isSaving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
-| isDeleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| area-list | 地区列表 | `Object` | - | - |
+| address-info | 收货人信息 | `Object` | `{}` | - |
+| search-result | 详细地址搜索结果 | `Array` | `[]` | - |
+| address-text | "地址"文案前缀 | `String` | `收货` | - |
+| show-postal | 是否显示邮政编码 | `Boolean` | `false` | - |
+| show-set-default | 是否显示默认地址栏 | `Boolean` | `false` | - |
+| show-search-result | 是否显示搜索结果 | `Boolean` | `false` | - |
+| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
+| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
 
 ### Event
 

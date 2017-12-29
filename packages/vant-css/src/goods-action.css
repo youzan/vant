@@ -9,6 +9,11 @@
 
   &__big-btn {
     flex: 1;
+    padding: 0;
+
+    @media(max-width: 321px) {
+      font-size: 15px;
+    }
   }
 
   &__mini-btn {
@@ -34,10 +39,10 @@
     &:active {
       background-color: $active-color;
     }
-  }
 
-  &__mini-btn-icon {
-    font-size: 20px;
-    margin-bottom: 5px;
+    &-icon {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
   }
 }

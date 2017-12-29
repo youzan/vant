@@ -1,5 +1,72 @@
 ## 更新日志
 
+## [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15) (2017-12-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.14...v0.11.15)
+
+**Issue**
+
+- Icon does not align middle when use inline with text [\#469](https://github.com/youzan/vant/issues/469)
+- \[Proposal\] Should extends mixin's props with type [\#466](https://github.com/youzan/vant/issues/466)
+- search 在ios下不支持autofoucus属性，必须手动触发 [\#464](https://github.com/youzan/vant/issues/464)
+- Picker 选择器问题 [\#463](https://github.com/youzan/vant/issues/463)
+- 按官网实例本地测试 单元格显示嵌套问题 [\#461](https://github.com/youzan/vant/issues/461)
+- 0.11.14的card排版有问题 [\#460](https://github.com/youzan/vant/issues/460)
+- submitBar无法使用，其他组件正常 [\#456](https://github.com/youzan/vant/issues/456)
+
+**Improvements**
+
+- \[new feature\] Uploader: support multiple files [\#480](https://github.com/youzan/vant/pull/480) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize passive events [\#478](https://github.com/youzan/vant/pull/478) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup should remove event handler when destroyed [\#477](https://github.com/youzan/vant/pull/477) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update search icon [\#474](https://github.com/youzan/vant/pull/474) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add vue-cli english guide [\#473](https://github.com/youzan/vant/pull/473) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] NumberKeyboard add custom theme [\#472](https://github.com/youzan/vant/pull/472) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Mixins: treat empty string as true for boolean props [\#468](https://github.com/youzan/vant/pull/468) ([chuangbo](https://github.com/chuangbo))
+- \[improvement\] fix typo [\#465](https://github.com/youzan/vant/pull/465) ([chuangbo](https://github.com/chuangbo))
+- \[Improvement\] package.json: include "types" in "files" field [\#462](https://github.com/youzan/vant/pull/462) ([wuyiw](https://github.com/wuyiw))
+
+## [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14) (2017-12-21)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.13...v0.11.14)
+
+**Issue**
+
+- 最新版本的cell箭头错位 [\#459](https://github.com/youzan/vant/issues/459)
+- 请问一下CellSwipe组件的回调函数怎么传入当前cell的业务数据？ [\#454](https://github.com/youzan/vant/issues/454)
+- GoodsAction 组件, 当有三个mini-btn和两个big-btn的时候,big-btn文字显示不全 [\#442](https://github.com/youzan/vant/issues/442)
+- search的获取焦点以及失去焦点事件 [\#441](https://github.com/youzan/vant/issues/441)
+- 在IOS环境下 Area插件只能滑动一次 [\#430](https://github.com/youzan/vant/issues/430)
+
+**Improvements**
+
+- \[new feature\] NumberKeyboard: add hideOnClickOutside & closeButtonText props [\#458](https://github.com/youzan/vant/pull/458) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize area performance [\#457](https://github.com/youzan/vant/pull/457) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] eslint before build [\#455](https://github.com/youzan/vant/pull/455) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] remove unused dependencies & fix eslint [\#453](https://github.com/youzan/vant/pull/453) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13) (2017-12-19)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.12...v0.11.13)
+
+**Issue**
+
+- dialog在component之外的显示问题 [\#449](https://github.com/youzan/vant/issues/449)
+- Waterfall无限加载 [\#445](https://github.com/youzan/vant/issues/445)
+- van-switch-cell 使用v-for循环 :v-model 如何使用？ [\#444](https://github.com/youzan/vant/issues/444)
+- popup组件zIndex层级问题 [\#443](https://github.com/youzan/vant/issues/443)
+- uploader没有反应 [\#434](https://github.com/youzan/vant/issues/434)
+- PullRefresh  组件 与 Popup  一起使用时的问题 [\#414](https://github.com/youzan/vant/issues/414)
+- popup 在ios下显示异常 [\#409](https://github.com/youzan/vant/issues/409)
+
+**Improvements**
+
+- \[Doc\] add introduction page [\#452](https://github.com/youzan/vant/pull/452) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Search: support input native events [\#451](https://github.com/youzan/vant/pull/451) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Area add 'title' prop & optimzie Picker performance [\#450](https://github.com/youzan/vant/pull/450) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] GoodsAction: support  routerLink & info [\#448](https://github.com/youzan/vant/pull/448) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon add 'info' prop [\#447](https://github.com/youzan/vant/pull/447) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] GoodsAction fit small screen [\#446](https://github.com/youzan/vant/pull/446) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] English document of area component. [\#440](https://github.com/youzan/vant/pull/440) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[Improvement\] Sku: support i18n [\#439](https://github.com/youzan/vant/pull/439) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12) (2017-12-15)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.11...v0.11.12)
 

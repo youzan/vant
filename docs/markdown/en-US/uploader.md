@@ -13,7 +13,7 @@ Vue.use(Uploader);
 
 ```html
 <div class="uploader-container">
-  <van-uploader :afterRead="logContent">
+  <van-uploader :after-read="onRead">
     <van-icon name="photograph" />
   </van-uploader>
 </div>
@@ -22,7 +22,7 @@ Vue.use(Uploader);
 ```javascript
 export default {
   methods: {
-    logContent(file) {
+    onRead(file) {
       console.log(file)
     }
   }
@@ -30,10 +30,10 @@ export default {
 ```
 
 #### Set input attr
-You can set native properties such as `accpet` on Uploader, and the input will automatically inherits the attribute.
+You can set native properties such as `accpet`、`multiple` on Uploader, and the input will automatically inherits the attribute.
 
 ```html
-<van-uploader :afterRead="logContent" accept="image/gif, image/jpeg">
+<van-uploader :after-read="onRead" accept="image/gif, image/jpeg" multiple>
   <van-icon name="photograph" />
 </van-uploader>
 ```
@@ -42,10 +42,10 @@ You can set native properties such as `accpet` on Uploader, and the input will a
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| resultType | The way to read the file, read as base64; read as text | `String` | `dataUrl` | `text` |
+| result-type | The way to read the file, read as base64; read as text | `String` | `dataUrl` | `text` |
 | disable | Whether to disable the upload, set to true during the image upload to prevent users from clicking this component to upload pictures | `Boolean` | `false` | - |
-| beforeRead | Hook before reading the file, the first parameter is the selected file, return false to stop reading the file | `Function` | - | - |
-| afterRead | Hook after reading the file, parameter format: { file ,content } | `Function` | - | - |
+| before-read | Hook before reading the file, the first parameter is the selected file, return false to stop reading the file | `Function` | - | - |
+| after-read | Hook after reading the file, parameter format: { file ,content } | `Function` | - | - |
 
 ### Slot
 

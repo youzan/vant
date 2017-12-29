@@ -1,5 +1,46 @@
 ## 更新日志
 
+### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+`2017-12-25`
+
+**Improvements**
+- Uploader: 支持多文件上传 [\#480](https://github.com/youzan/vant/pull/480) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: 增加一种键盘样式 [\#472](https://github.com/youzan/vant/pull/472) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 更新 search 图标样式 [\#474](https://github.com/youzan/vant/pull/474) [@chenjiahan](https://github.com/chenjiahan)
+- 支持 passive 事件 [\#478](https://github.com/youzan/vant/pull/478) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 popup 销毁时未解绑事件的问题 [\#477](https://github.com/youzan/vant/pull/477) [@chenjiahan](https://github.com/chenjiahan)
+- 修复使用 popup mixin 的组件未设定 props 类型的问题  [\#468](https://github.com/youzan/vant/pull/468) [@chuangbo](https://github.com/chuangbo)
+- 修复 package.json 配置中未包含 types 目录的问题 [\#462](https://github.com/youzan/vant/pull/462) [@wuyiw](https://github.com/wuyiw)
+
+### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+`2017-12-21`
+
+**Improvements**
+- NumberKeyboard: 新增 hideOnClickOutside & closeButtonText 属性 [\#458](https://github.com/youzan/vant/pull/458) [@chenjiahan](https://github.com/chenjiahan)
+- Area: 优化性能 [\#457](https://github.com/youzan/vant/pull/457) [@chenjiahan](https://github.com/chenjiahan)
+- 优化代码格式检查命令 [\#455](https://github.com/youzan/vant/pull/455) [\#453](https://github.com/youzan/vant/pull/453)  [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复全局引入样式时 Cell 箭头错位的问题 [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+`2017-12-19`
+
+**Improvements**
+- Area: 新增 'title' prop [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 新增 'info' prop [\#447](https://github.com/youzan/vant/pull/447) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: 优化性能 [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Search: 支持 input 原生事件 [\#451](https://github.com/youzan/vant/pull/451) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: 新增 'info' 属性，支持路由跳转 [\#448](https://github.com/youzan/vant/pull/448) [@chenjiahan](https://github.com/chenjiahan)
+- Area & Sku: 支持多语言切换 [\#439](https://github.com/youzan/vant/pull/439) [\#440](https://github.com/youzan/vant/pull/440) [@chenjiahan](https://github.com/chenjiahan) [@Tinysymphony](https://github.com/Tinysymphony)
+
+**Bug Fixes**
+- 修复 GoodsAction 在小屏下文字显示不全的问题 [\#446](https://github.com/youzan/vant/pull/446) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 `2017-12-15`
 

@@ -24,9 +24,9 @@
       </cell>
       <address-edit-detail
         :value="currentInfo.address_detail"
-        :isError="errorInfo.address_detail"
-        :showSearchResult="showSearchResult"
-        :searchResult="searchResult"
+        :is-error="errorInfo.address_detail"
+        :show-search-result="showSearchResult"
+        :search-result="searchResult"
         @focus="onFocus('address_detail')"
         @blur="onDetailBlur"
         @input="onChangeDetail"
@@ -44,7 +44,7 @@
         :error="errorInfo.postal_code"
         @focus="onFocus('postal_code')"
       />
-      <switch-cell 
+      <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
         v-model="currentInfo.is_default"
@@ -63,7 +63,7 @@
       <van-area
         ref="area"
         :value="currentInfo.area_code"
-        :areaList="areaList"
+        :area-list="areaList"
         @confirm="onAreaConfirm"
         @cancel="showAreaSelect = false"
       />
@@ -72,6 +72,7 @@
 </template>
 
 <script>
+/* eslint-disable camelcase */
 import { create } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
@@ -149,7 +150,7 @@ export default create({
         this.isEdit = !!val.id;
       },
       deep: true
-    },
+    }
   },
 
   computed: {

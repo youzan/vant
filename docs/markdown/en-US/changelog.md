@@ -1,5 +1,45 @@
 ## Changelog
 
+### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+`2017-12-25`
+
+**Improvements**
+- Uploader: support multiple files [\#480](https://github.com/youzan/vant/pull/480) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: add new theme [\#472](https://github.com/youzan/vant/pull/472) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: update search icon [\#474](https://github.com/youzan/vant/pull/474) [@chenjiahan](https://github.com/chenjiahan)
+- Support passive events [\#478](https://github.com/youzan/vant/pull/478) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix popup should remove event handler when destroyed [\#477](https://github.com/youzan/vant/pull/477) [@chenjiahan](https://github.com/chenjiahan)
+- fix popup mixin should treat empty string as true for boolean props [\#468](https://github.com/youzan/vant/pull/468) [@chuangbo](https://github.com/chuangbo)
+- fix package.json should include 'types' in 'files' field [\#462](https://github.com/youzan/vant/pull/462) [@wuyiw](https://github.com/wuyiw)
+
+### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+`2017-12-21`
+
+**Improvements**
+- NumberKeyboard: add hideOnClickOutside & closeButtonText props [\#458](https://github.com/youzan/vant/pull/458) [@chenjiahan](https://github.com/chenjiahan)
+- Area: optimize performance [\#457](https://github.com/youzan/vant/pull/457) [@chenjiahan](https://github.com/chenjiahan)
+- auto run eslint before build dist [\#455](https://github.com/youzan/vant/pull/455) [\#453](https://github.com/youzan/vant/pull/453)  [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix cell arrow style error [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+`2017-12-19`
+
+**Improvements**
+- Area: add 'title' prop [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: add 'info' prop [\#447](https://github.com/youzan/vant/pull/447) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: optimzie performance [\#450](https://github.com/youzan/vant/pull/450) [@chenjiahan](https://github.com/chenjiahan)
+- Search: support input native events [\#451](https://github.com/youzan/vant/pull/451) [@chenjiahan](https://github.com/chenjiahan)
+- GoodsAction: add 'info' prop, support router link [\#448](https://github.com/youzan/vant/pull/448) [@chenjiahan](https://github.com/chenjiahan)
+- Area & Sku: support i18n [\#439](https://github.com/youzan/vant/pull/439) [\#440](https://github.com/youzan/vant/pull/440) [@chenjiahan](https://github.com/chenjiahan) [@Tinysymphony](https://github.com/Tinysymphony)
+
+**Bug Fixes**
+- fix GoodsAction display error in small screen [\#446](https://github.com/youzan/vant/pull/446) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 `2017-12-15`
 

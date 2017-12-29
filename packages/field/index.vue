@@ -12,7 +12,8 @@
       'van-field--autosize': autosize,
       'van-field--has-icon': hasIcon,
       'van-hairline--surround': border
-    }">
+    }"
+  >
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
@@ -23,11 +24,16 @@
     />
     <input
       v-else
-      v-bind="$attrs"  
+      v-bind="$attrs"
       v-on="listeners"
       class="van-field__control"
       :type="type"
       :value="value"
+    >
+    <div
+      v-if="errorMessage"
+      v-text="errorMessage"
+      class="van-field__error-message"
     />
     <div
       v-if="hasIcon"
@@ -49,6 +55,8 @@ import Cell from '../cell';
 export default create({
   name: 'van-field',
 
+  inheritAttrs: false,
+
   components: {
     Cell
   },
@@ -65,6 +73,7 @@ export default create({
     border: Boolean,
     required: Boolean,
     autosize: Boolean,
+    errorMessage: String,
     onIconClick: {
       type: Function,
       default: () => {}

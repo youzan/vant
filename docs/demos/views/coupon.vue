@@ -3,15 +3,15 @@
     <demo-block :title="$t('basicUsage')">
       <van-coupon-cell
         :coupons="coupons"
-        :chosenCoupon="chosenCoupon"
+        :chosen-coupon="chosenCoupon"
         @click="showList = true"
       />
 
       <van-popup v-model="showList" position="bottom">
         <van-coupon-list
           :coupons="coupons"
-          :chosenCoupon="chosenCoupon"
-          :disabledCoupons="disabledCoupons"
+          :chosen-coupon="chosenCoupon"
+          :disabled-coupons="disabledCoupons"
           @change="onChange"
           @exchange="onExchange"
         />
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+/* eslint-disable camelcase */
 export default {
   i18n: {
     'zh-CN': {
@@ -42,13 +43,14 @@ export default {
   data() {
     return {
       showList: false,
-      chosenCoupon: -1
+      chosenCoupon: -1,
+      exchangedCoupons: []
     };
   },
 
   computed: {
     coupons() {
-      return [this.coupon, this.discountCoupon];
+      return [this.coupon, this.discountCoupon, ...this.exchangedCoupons];
     },
 
     disabledCoupons() {
@@ -67,7 +69,7 @@ export default {
         name: this.$t('coupon.name'),
         start_at: 1489104000,
         end_at: 1514592000
-      }
+      };
     },
 
     discountCoupon() {
@@ -78,36 +80,42 @@ export default {
         denominations: 0,
         origin_condition: 50,
         value: 12
-      }
+      };
     },
 
     disabledCoupon() {
       return {
         ...this.coupon,
         id: 3,
-        avaliable: 0,
+        available: 0,
         reason: this.$t('coupon.reason')
-      }
+      };
     },
 
     disabledDiscountCoupon() {
       return {
         ...this.discountCoupon,
         id: 4,
-        avaliable: 0,
+        available: 0,
         reason: this.$t('coupon.reason')
-      }
+      };
     }
   },
 
   methods: {
     onChange(index) {
-      this.showList = false;      
+      this.showList = false;
       this.chosenCoupon = index;
     },
     onExchange(code) {
       Toast(this.$t('exchange'));
-      this.coupons.push(coupon);
+      this.exchangedCoupons.push({
+        ...this.coupon,
+        id: this.randomId()
+      });
+    },
+    randomId(max = 999999) {
+      return Math.floor(Math.random() * max) + 1
     }
   }
 };

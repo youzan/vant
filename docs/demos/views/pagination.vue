@@ -1,34 +1,34 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-pagination 
-        v-model="currentPage1" 
-        :totalItems="24" 
-        :itemsPerPage="5"
-        :previousText= "$t('prevText')" 
-        :nextText= "$t('nextText')" 
+      <van-pagination
+        v-model="currentPage1"
+        :total-items="24"
+        :items-per-page="5"
+        :previous-text= "$t('prevText')"
+        :next-text= "$t('nextText')"
       />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-pagination 
+      <van-pagination
         v-model="currentPage2"
-        :pageCount="12"
-        :previousText= "$t('prevText')" 
-        :nextText= "$t('nextText')" 
-        mode="simple" 
-        size="small" 
+        :page-count="12"
+        :previous-text= "$t('prevText')"
+        :next-text= "$t('nextText')"
+        mode="simple"
+        size="small"
       />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-pagination 
-        forceEllipses
-        v-model="currentPage3" 
-        :totalItems="125" 
-        :showPageSize="3" 
-        :previousText= "$t('prevText')" 
-        :nextText= "$t('nextText')" 
+      <van-pagination
+        force-ellipses
+        v-model="currentPage3"
+        :total-items="125"
+        :show-page-size="3"
+        :previous-text= "$t('prevText')"
+        :next-text= "$t('nextText')"
       />
     </demo-block>
   </demo-section>
@@ -55,7 +55,7 @@ export default {
     return {
       currentPage1: 1,
       currentPage2: 1,
-      currentPage3: 1,
+      currentPage3: 1
     };
   }
 };

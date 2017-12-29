@@ -31,7 +31,7 @@ export default {
       title3: 'Spinner'
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">

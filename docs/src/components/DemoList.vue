@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <h1 class="zanui-title">
-      <img src="https://img.yzcdn.cn/public_files/2017/10/25/c2e074cd97d4d9e9b14a87b2fcb29430.png" />
+      <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
       <span>Vant</span>
     </h1>
     <div class="mobile-switch-lang">
@@ -84,7 +84,7 @@ export default {
     }
 
     img {
-      width: 30px;
+      width: 36px;
     }
 
     span {

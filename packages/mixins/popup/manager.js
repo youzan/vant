@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Modal from './Modal';
-import context from './popup-context';
+import context from './context';
 
 const modalDefaultConfig = {
   className: '',
   customStyle: {}
 };
 
-const PopupManager = {
+const manager = {
   getModal() {
     let { modal } = context;
 
@@ -17,7 +17,7 @@ const PopupManager = {
         el: document.createElement('div')
       });
       modal.$on('click', () => {
-        PopupManager.handleOverlayClick();
+        manager.onClickOverlay();
       });
 
       context.modal = modal;
@@ -27,23 +27,23 @@ const PopupManager = {
   },
 
   // close popup when click modal && closeOnClickOverlay is true
-  handleOverlayClick() {
+  onClickOverlay() {
     const { top } = context;
     if (top) {
-      const instance = context.instances[top.id];
+      const { instance } = top;
       if (instance && instance.closeOnClickOverlay) {
         instance.close();
       }
     }
   },
 
-  openModal(config) {
+  openModal(instance, config) {
     const { id, dom } = config;
     const exist = context.stack.some(item => item.id === id);
 
     if (!exist) {
       const targetNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
-      context.stack.push({ id, config, targetNode });
+      context.stack.push({ instance, id, config, targetNode });
       this.updateModal();
     };
   },
@@ -63,16 +63,15 @@ const PopupManager = {
 
   updateModal() {
     const modal = this.getModal();
-    const el = modal.$el;
 
-    if (el.parentNode) {
+    if (modal.$el.parentNode) {
       modal.visible = false;
     }
 
     if (context.top) {
       const { targetNode, config } = context.top;
 
-      targetNode.appendChild(el);
+      targetNode.appendChild(modal.$el);
       Object.assign(modal, {
         ...modalDefaultConfig,
         ...config,
@@ -82,4 +81,4 @@ const PopupManager = {
   }
 };
 
-export default PopupManager;
+export default manager;

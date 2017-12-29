@@ -1,6 +1,6 @@
 <template>
   <div class="van-cell-group" :class="{ 'van-hairline--top-bottom': border }">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

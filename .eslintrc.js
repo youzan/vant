@@ -16,6 +16,10 @@ module.exports = {
 
   plugins: ['vue'],
 
+  extends: [
+    'plugin:vue/strongly-recommended'
+  ],
+
   globals: {
     expect: true,
     sinon: true,
@@ -142,6 +146,17 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [2, 'always', { objectsInObjects: false }],
     'array-bracket-spacing': [2, 'never'],
-    'vue/jsx-uses-vars': 2
+    'vue/jsx-uses-vars': 2,
+    'vue/require-v-for-key': 0,
+    "vue/require-default-prop": 0,
+    "vue/name-property-casing": 0,
+    "vue/no-unused-vars": 0,
+    'vue/max-attributes-per-line': [2, {
+      "singleline": 5,
+      "multiline": {
+        "max": 5,
+        "allowFirstLine": false
+      }
+    }]
   }
 }

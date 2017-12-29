@@ -3,7 +3,7 @@
  * Steps:
  * 1. 代码格式校验
  * 2. 构建 JS 入口文件
- * 4. 构建每个组件对应的 [component].js
+ * 3. 构建每个组件对应的 [component].js
  * 4. 构建 vant-css
  * 5. 打包 JS 文件：vant.js && vant.min.js
  * 6. 生成每个组件目录下的 style 入口
@@ -12,9 +12,9 @@
 const chalk = require('chalk');
 require('shelljs/global');
 
-// 1. lint 
-log('Starting', 'lint');
-exec('npm run lint --silent');
+// 1. lint
+log('Starting', 'lint');		
+exec('npm run lint --silent');		
 log('Finished', 'lint');
 
 // 2. build entry

@@ -54,7 +54,7 @@ export default {
 
 ```html
 <van-picker
-  showToolbar
+  show-toolbar
   :title="标题"
   :columns="columns"
   @cancel="onCancel"
@@ -121,11 +121,11 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| showToolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
 | title | 顶部栏标题 | `String` | `''` | - |
-| itemHeight | 选项高度 | `Number` | `44` | - |
-| visibileColumnCount | 可见的选项个数 | `Number` | `5` | - |
-| valueKey | 选项对象中，文字对应的 key | `String` | `text` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
+| visibile-column-count | 可见的选项个数 | `Number` | `5` | - |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
 
 ### Columns 数据结构
 当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`

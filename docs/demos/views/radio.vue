@@ -81,7 +81,7 @@ export default {
       float: right;
       position: static;
     }
-    
+
     .van-radio__label {
       margin: 0;
     }

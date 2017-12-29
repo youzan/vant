@@ -37,8 +37,8 @@ Vue.use(ContactEdit);
 <!-- Contact Edit -->
 <van-popup v-model="showEdit" position="bottom">
   <van-contact-edit
-    :contactInfo="editingContact"
-    :isEdit="isEdit"
+    :contact-info="editingContact"
+    :is-edit="isEdit"
     @save="onSave"
     @delete="onDelete"
   />
@@ -134,16 +134,16 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | type | Type | `String` | `add` | `edit` |
-| addText | Add card text | `String` | `Add contact info` | - |
 | name | Name | `String` | - | - |
 | tel | Phone | `String` | - | - |
+| add-text | Add card text | `String` | `Add contact info` | - |
 
 ### ContactList API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Id of chosen contact | `String | Number` | - | - |
-| addText | Add button text | `String` | `Add new contact` | - |
 | list | Contact list | `Array` | `[]` | - |
+| add-text | Add button text | `String` | `Add new contact` | - |
 
 ### ContactList Event
 
@@ -156,10 +156,10 @@ export default {
 ### ContactEdit API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| contactInfo | Contact Info | `Object` | `[]` | - |
-| isEdit | Whether is editing | `Boolean` | `false` | - |
-| isSaving | Whether to show save button loading status | `Boolean` | `false` | - |
-| isDeleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| contact-info | Contact Info | `Object` | `[]` | - |
+| is-edit | Whether is editing | `Boolean` | `false` | - |
+| is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
+| is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
 
 ### ContactEdit Event
 

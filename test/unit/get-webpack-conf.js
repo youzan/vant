@@ -18,7 +18,7 @@ function getWebpackConfig(testFileName) {
         options: {
           babel: {
             presets: ['env'],
-            plugins: ['transform-runtime', 'transform-vue-jsx']
+            plugins: ['transform-runtime']
           },
           vue: {
             autoprefixer: false,

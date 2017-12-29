@@ -1,9 +1,13 @@
 <template>
   <div class="van-tabs" :class="[`van-tabs--${type}`]">
-    <div class="van-tabs__wrap" :class="[`van-tabs__wrap--${position}`, {
-      'van-tabs--scrollable': scrollable,
-      'van-hairline--top-bottom': type === 'line'
-    }]">
+    <div
+      ref="wrap"
+      class="van-tabs__wrap"
+      :class="[`van-tabs__wrap--${position}`, {
+        'van-tabs--scrollable': scrollable,
+        'van-hairline--top-bottom': type === 'line'
+      }]"
+    >
       <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
@@ -22,7 +26,7 @@
       </div>
     </div>
     <div class="van-tabs__content">
-      <slot></slot>
+      <slot />
     </div>
   </div>
 </template>
@@ -30,6 +34,7 @@
 <script>
 import { create } from '../utils';
 import { raf } from '../utils/raf';
+import { on, off } from '../utils/event';
 import scrollUtils from '../utils/scroll';
 
 export default create({
@@ -119,7 +124,7 @@ export default create({
     // whether to bind sticky listener
     scrollHandler(init) {
       this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
-      this.scrollEl[init ? 'addEventListener' : 'removeEventListener']('scroll', this.onScroll);
+      (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
       if (init) {
         this.onScroll();
       }
@@ -129,7 +134,7 @@ export default create({
     onScroll() {
       const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
-      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.nav.offsetHeight;
+      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
         this.position = 'content-bottom';
       } else if (scrollTop > elTopToPageTop) {
@@ -151,7 +156,7 @@ export default create({
           width: `${tab.offsetWidth || 0}px`,
           transform: `translate3d(${tab.offsetLeft || 0}px, 0, 0)`,
           transitionDuration: `${this.duration}s`
-        }
+        };
       });
     },
 
@@ -197,7 +202,7 @@ export default create({
         if (++count < frames) {
           raf(animate);
         }
-      }
+      };
       animate();
     }
   }

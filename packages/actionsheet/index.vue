@@ -27,7 +27,7 @@
         @click.stop="$emit('input', false)"
       />
       <div v-else class="van-actionsheet__content">
-        <slot></slot>
+        <slot />
       </div>
     </div>
   </transition>
@@ -51,9 +51,11 @@ export default create({
       default: () => []
     },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     }
   },

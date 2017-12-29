@@ -40,7 +40,7 @@ export default {
     loadMore() {
       this.disabled = true;
       setTimeout(() => {
-        for (let i = 0; i < 5; i ++) {
+        for (let i = 0; i < 5; i++) {
           this.list.push(this.list.length);
         }
         this.disabled = false;
@@ -49,7 +49,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="postcss">
 .demo-waterfall {
