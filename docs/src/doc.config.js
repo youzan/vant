@@ -77,10 +77,6 @@ module.exports = {
                 title: 'Button - 按钮'
               },
               {
-                path: '/card',
-                title: 'Card - 卡片'
-              },
-              {
                 path: '/cell',
                 title: 'Cell - 单元格'
               },
@@ -253,6 +249,10 @@ module.exports = {
                 title: 'Area - 省市区选择'
               },
               {
+                path: '/card',
+                title: 'Card - 卡片'
+              },
+              {
                 path: '/contact',
                 title: 'Contact - 联系人'
               },
@@ -353,10 +353,6 @@ module.exports = {
               {
                 path: '/button',
                 title: 'Button'
-              },
-              {
-                path: '/card',
-                title: 'Card'
               },
               {
                 path: '/cell',
@@ -529,6 +525,10 @@ module.exports = {
               {
                 path: '/area',
                 title: 'Area'
+              },
+              {
+                path: '/card',
+                title: 'Card'
               },
               {
                 path: '/contact',
