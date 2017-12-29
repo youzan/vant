@@ -1,20 +1,13 @@
 @import './common/var.css';
 
 .van-field {
-
   width: 100%;
-
-  .van-cell__title,
-  .van-cell__value {
-    float: none;
-    box-sizing: border-box;
-  }
 
   .van-cell__title {
     width: 90px;
     position: absolute;
     top: 10px;
-    left: 0;
+    left: 15px;
   }
 
   .van-cell__value {

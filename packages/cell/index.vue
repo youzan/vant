@@ -1,5 +1,13 @@
 <template>
-  <div class="van-cell van-hairline" :class="{ 'van-cell--required': required }" @click="onClick">
+  <div
+    class="van-cell"
+    :class="{
+      'van-hairline': border,
+      'van-cell--required': required,
+      'van-cell--clickable': isLink || clickable
+    }"
+    @click="onClick"
+  >
     <div class="van-cell__title" v-if="$slots.title || title">
       <slot name="icon">
         <icon v-if="icon" :name="icon" />
@@ -43,7 +51,12 @@ export default create({
     label: String,
     isLink: Boolean,
     required: Boolean,
-    value: [String, Number]
+    clickable: Boolean,
+    value: [String, Number],
+    border: {
+      type: Boolean,
+      default: true
+    }
   },
 
   methods: {

@@ -2,12 +2,12 @@
   <div class="van-address-list">
     <radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
       <cell-group>
-        <cell v-for="(item, index) in list" :key="item.id">
+        <cell v-for="(item, index) in list" :key="item.id" is-link>
           <radio :name="item.id" @click="$emit('select', item, index)">
             <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
             <div class="van-address-list__address">{{ $t('address') }}：{{ item.address }}</div>
           </radio>
-          <icon name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
+          <icon slot="right-icon" name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
         </cell>
       </cell-group>
     </radio-group>
