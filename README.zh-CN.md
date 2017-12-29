@@ -7,20 +7,20 @@
 </p>
 <p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
 
-[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant) 
-[![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant) 
+[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
+[![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
 [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
-[![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant) 
+[![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)
 [![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
- 
+
 ## 特性
 
-- 48+ 个经过有赞线上业务检验的组件
-- 单元测试覆盖率超过90%
-- 完善的文档和示例
-- 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-- 支持 TypeScript
-- 支持 SSR
+* 48+ 个经过有赞线上业务检验的组件
+* 单元测试覆盖率超过 90%
+* 完善的文档和示例
+* 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+* 支持 TypeScript
+* 支持 SSR
 
 <p align="center">
   <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
@@ -31,10 +31,11 @@
 ```shell
 npm i -S vant
 ```
- 
+
 ## 快速上手
 
-#### 方式一. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+#### 方式一. 使用  [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+
 ```bash
 # 安装 babel-plugin-import 插件
 npm i babel-plugin-import -D
@@ -62,7 +63,7 @@ import { Button } from 'vant/lib/button';
 import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
- 
+
 #### 方式三. 导入所有组件
 
 ```js
@@ -92,21 +93,24 @@ Vue.use(Vant);
 使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
 ## 浏览器支持
+
 现代浏览器以及 Android 4.0+, iOS 6+.
 
 ## 手机预览
 
-可以手机扫码以下二维码访问手机端demo：
+可以手机扫码以下二维码访问手机端 demo：
 
 ![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
 
 ## 链接
-- [详细文档](https://www.youzanyun.com/zanui/vant)
-- [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/component/changelog)
-- [微信小程序组件库](https://github.com/youzan/zanui-weapp)
-- [vant-demo](https://github.com/youzan/vant-demo)
-- [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant) 
- 
+
+* [详细文档](https://www.youzanyun.com/zanui/vant)
+* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/component/changelog)
+* [React 组件库](https://www.youzanyun.com/zanui/zent)
+* [微信小程序组件库](https://github.com/youzan/zanui-weapp)
+* [vant-demo](https://github.com/youzan/vant-demo)
+* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+
 ## 开源协议
 
 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
