@@ -58,7 +58,7 @@ describe('CouponCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__value--link': '使用优惠'
+        '.van-cell__value': '使用优惠'
       }
     });
   });
@@ -72,7 +72,7 @@ describe('CouponCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__value--link': '您有 2 个可用优惠'
+        '.van-cell__value': '您有 2 个可用优惠'
       }
     });
   });
@@ -87,7 +87,7 @@ describe('CouponCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__value--link span': '省￥1.50'
+        '.van-cell__value span': '省￥1.50'
       },
       count: {
         '.van-cell__right-icon': 1
