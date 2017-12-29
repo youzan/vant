@@ -1,7 +1,7 @@
 <template>
   <div
     class="van-cell van-hairline"
-    :class="{ 'van-cell--required': required, 'van-cell--link': isLink, }"
+    :class="{ 'van-cell--required': required, 'van-cell--clickable': isLink || clickable }"
     @click="onClick"
   >
     <div class="van-cell__title" v-if="$slots.title || title">
@@ -17,6 +17,7 @@
       class="van-cell__value"
       v-if="value || $slots.default"
       :class="{
+        'van-cell__value--link': isLink,
         'van-cell__value--alone': !$slots.title && !title && !label
       }"
     >
@@ -46,6 +47,7 @@ export default create({
     label: String,
     isLink: Boolean,
     required: Boolean,
+    clickable: Boolean,
     value: [String, Number]
   },
 

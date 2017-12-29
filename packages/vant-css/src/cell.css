@@ -50,15 +50,15 @@
     &--alone {
       text-align: left;
     }
+
+    &--link {
+      padding-right: 20px;
+    }
   }
 
-  &--link {
+  &--clickable {
     &:active {
       background-color: $active-color;
-    }
-
-    .van-cell__value {
-      padding-right: 20px;
     }
   }
 
