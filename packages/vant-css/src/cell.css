@@ -6,6 +6,7 @@
   padding: 10px 15px;
   box-sizing: border-box;
   line-height: 24px;
+  position: relative;
   background-color: $white;
   color: $text-color;
   font-size: 14px;
