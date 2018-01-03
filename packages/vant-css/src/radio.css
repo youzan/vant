@@ -33,6 +33,7 @@ $van-radio-size: 20px;
   }
 
   .van-icon {
+    pointer-events: none;
     font-size: $van-radio-size;
   }
 

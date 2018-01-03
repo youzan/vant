@@ -1,8 +1,9 @@
 <template>
   <div
-    @click="handleRadioClick"
     class="van-radio"
-    :class="{ 'van-radio--disabled': isDisabled }">
+    :class="{ 'van-radio--disabled': isDisabled }"
+    @click="$emit('click')"
+  >
     <span class="van-radio__input">
       <input
         :value="name"
@@ -13,7 +14,7 @@
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span class="van-radio__label" @click="handleLabelClick">
+    <span class="van-radio__label" @click="onClickLabel">
       <slot />
     </span>
   </div>
@@ -63,15 +64,11 @@ export default create({
   },
 
   methods: {
-    handleLabelClick() {
+    onClickLabel() {
       if (this.isDisabled) {
         return;
       }
       this.currentValue = this.name;
-    },
-
-    handleRadioClick() {
-      this.$emit('click');
     }
   }
 });
