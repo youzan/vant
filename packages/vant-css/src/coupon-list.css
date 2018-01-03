@@ -22,7 +22,6 @@
       padding: 4px 10px 4px 25px;
 
       &::after {
-        left: 0;
         border-radius: 6px;
         border-color: #cacaca;
       }
