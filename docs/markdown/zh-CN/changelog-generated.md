@@ -1,5 +1,36 @@
 ## 更新日志
 
+## [v0.12.0](https://github.com/youzan/vant/tree/v0.12.0) (2017-12-29)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.11.15...v0.12.0)
+
+**Issue**
+
+- Vant里的AddressEdit地址编辑控件change-area的事件不触发 [\#496](https://github.com/youzan/vant/issues/496)
+- run dev/build 无法在低版本 Chrome 内核浏览器显示 [\#491](https://github.com/youzan/vant/issues/491)
+- Tabs 标签页不能自定义颜色吗？ [\#489](https://github.com/youzan/vant/issues/489)
+- Uploader 图片上传 安卓的浏览器，多选模式只能上传一张图片 [\#487](https://github.com/youzan/vant/issues/487)
+- 没有单独组件的安装方法吗 [\#485](https://github.com/youzan/vant/issues/485)
+- 用cdn的方式引入怎么解析出来的样式不对？ [\#483](https://github.com/youzan/vant/issues/483)
+- Error in render function: "ReferenceError: Toast is not defined" [\#481](https://github.com/youzan/vant/issues/481)
+- picker 联动 change 事件 索引可能越界 [\#479](https://github.com/youzan/vant/issues/479)
+- popup 控件引起的滚动异常 [\#476](https://github.com/youzan/vant/issues/476)
+- 引入失败 [\#475](https://github.com/youzan/vant/issues/475)
+- 多张图片上传不支持吗？返回值只有一个file [\#471](https://github.com/youzan/vant/issues/471)
+- \[Proposal\] Should use kebab-case props name in templates. [\#467](https://github.com/youzan/vant/issues/467)
+- van-actionsheet 在移动端IOS 11.1.1中光标向上偏移 [\#314](https://github.com/youzan/vant/issues/314)
+
+**Improvements**
+
+- \[breaking change\] Cell: show active color when clicked [\#497](https://github.com/youzan/vant/pull/497) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] move Card to business components [\#495](https://github.com/youzan/vant/pull/495) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: height calc error when use sticky [\#493](https://github.com/youzan/vant/pull/493) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Field: add error-message prop [\#492](https://github.com/youzan/vant/pull/492) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] update site UI [\#490](https://github.com/youzan/vant/pull/490) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Component should not inheritAttrs when use $attrs [\#488](https://github.com/youzan/vant/pull/488) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Coupon docs: fix exchange coupons [\#486](https://github.com/youzan/vant/pull/486) ([chuangbo](https://github.com/chuangbo))
+- \[Doc\] update code style [\#484](https://github.com/youzan/vant/pull/484) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] follow eslint-plugin-vue strongly-recommended code style [\#482](https://github.com/youzan/vant/pull/482) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15) (2017-12-25)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.14...v0.11.15)
 
