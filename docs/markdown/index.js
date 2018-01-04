@@ -1,6 +1,5 @@
 // This file is auto gererated by build/bin/build-entry.js
 import progress from 'nprogress';
-import 'nprogress/nprogress.css';
 
 function wrapper(component) {
   return function(r) {

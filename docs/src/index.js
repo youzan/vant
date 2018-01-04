@@ -4,6 +4,7 @@ import App from './DocsApp';
 import routes from './router.config';
 import VantDoc from 'vant-doc';
 import isMobile from './utils/is-mobile';
+import './components/nprogress.css';
 
 Vue.use(VueRouter);
 Vue.use(VantDoc);

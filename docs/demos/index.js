@@ -1,58 +1,71 @@
 // This file is auto gererated by build/bin/build-entry.js
 import './common';
 
-function wrapper(component, name) {
+import progress from 'nprogress';
+
+function asyncWrapper(component) {
+  return function(r) {
+    progress.start();
+    component(r).then(() => {
+      progress.done();
+    }).catch(() => {
+      progress.done();
+    });
+  };
+}
+
+function componentWrapper(component, name) {
   component = component.default;
   component.name = 'demo-' + name;
   return component;
 }
 
 export default {
-  'actionsheet': r => require.ensure([], () => r(wrapper(require('./views/actionsheet'), 'actionsheet')), 'actionsheet'),
-  'address-edit': r => require.ensure([], () => r(wrapper(require('./views/address-edit'), 'address-edit')), 'address-edit'),
-  'address-list': r => require.ensure([], () => r(wrapper(require('./views/address-list'), 'address-list')), 'address-list'),
-  'area': r => require.ensure([], () => r(wrapper(require('./views/area'), 'area')), 'area'),
-  'badge': r => require.ensure([], () => r(wrapper(require('./views/badge'), 'badge')), 'badge'),
-  'button': r => require.ensure([], () => r(wrapper(require('./views/button'), 'button')), 'button'),
-  'card': r => require.ensure([], () => r(wrapper(require('./views/card'), 'card')), 'card'),
-  'cell-swipe': r => require.ensure([], () => r(wrapper(require('./views/cell-swipe'), 'cell-swipe')), 'cell-swipe'),
-  'cell': r => require.ensure([], () => r(wrapper(require('./views/cell'), 'cell')), 'cell'),
-  'checkbox': r => require.ensure([], () => r(wrapper(require('./views/checkbox'), 'checkbox')), 'checkbox'),
-  'contact': r => require.ensure([], () => r(wrapper(require('./views/contact'), 'contact')), 'contact'),
-  'coupon': r => require.ensure([], () => r(wrapper(require('./views/coupon'), 'coupon')), 'coupon'),
-  'datetime-picker': r => require.ensure([], () => r(wrapper(require('./views/datetime-picker'), 'datetime-picker')), 'datetime-picker'),
-  'dialog': r => require.ensure([], () => r(wrapper(require('./views/dialog'), 'dialog')), 'dialog'),
-  'field': r => require.ensure([], () => r(wrapper(require('./views/field'), 'field')), 'field'),
-  'goods-action': r => require.ensure([], () => r(wrapper(require('./views/goods-action'), 'goods-action')), 'goods-action'),
-  'icon': r => require.ensure([], () => r(wrapper(require('./views/icon'), 'icon')), 'icon'),
-  'image-preview': r => require.ensure([], () => r(wrapper(require('./views/image-preview'), 'image-preview')), 'image-preview'),
-  'layout': r => require.ensure([], () => r(wrapper(require('./views/layout'), 'layout')), 'layout'),
-  'lazyload': r => require.ensure([], () => r(wrapper(require('./views/lazyload'), 'lazyload')), 'lazyload'),
-  'loading': r => require.ensure([], () => r(wrapper(require('./views/loading'), 'loading')), 'loading'),
-  'nav-bar': r => require.ensure([], () => r(wrapper(require('./views/nav-bar'), 'nav-bar')), 'nav-bar'),
-  'notice-bar': r => require.ensure([], () => r(wrapper(require('./views/notice-bar'), 'notice-bar')), 'notice-bar'),
-  'number-keyboard': r => require.ensure([], () => r(wrapper(require('./views/number-keyboard'), 'number-keyboard')), 'number-keyboard'),
-  'pagination': r => require.ensure([], () => r(wrapper(require('./views/pagination'), 'pagination')), 'pagination'),
-  'panel': r => require.ensure([], () => r(wrapper(require('./views/panel'), 'panel')), 'panel'),
-  'password-input': r => require.ensure([], () => r(wrapper(require('./views/password-input'), 'password-input')), 'password-input'),
-  'picker': r => require.ensure([], () => r(wrapper(require('./views/picker'), 'picker')), 'picker'),
-  'popup': r => require.ensure([], () => r(wrapper(require('./views/popup'), 'popup')), 'popup'),
-  'progress': r => require.ensure([], () => r(wrapper(require('./views/progress'), 'progress')), 'progress'),
-  'pull-refresh': r => require.ensure([], () => r(wrapper(require('./views/pull-refresh'), 'pull-refresh')), 'pull-refresh'),
-  'radio': r => require.ensure([], () => r(wrapper(require('./views/radio'), 'radio')), 'radio'),
-  'search': r => require.ensure([], () => r(wrapper(require('./views/search'), 'search')), 'search'),
-  'sku': r => require.ensure([], () => r(wrapper(require('./views/sku'), 'sku')), 'sku'),
-  'stepper': r => require.ensure([], () => r(wrapper(require('./views/stepper'), 'stepper')), 'stepper'),
-  'steps': r => require.ensure([], () => r(wrapper(require('./views/steps'), 'steps')), 'steps'),
-  'submit-bar': r => require.ensure([], () => r(wrapper(require('./views/submit-bar'), 'submit-bar')), 'submit-bar'),
-  'swipe': r => require.ensure([], () => r(wrapper(require('./views/swipe'), 'swipe')), 'swipe'),
-  'switch-cell': r => require.ensure([], () => r(wrapper(require('./views/switch-cell'), 'switch-cell')), 'switch-cell'),
-  'switch': r => require.ensure([], () => r(wrapper(require('./views/switch'), 'switch')), 'switch'),
-  'tab': r => require.ensure([], () => r(wrapper(require('./views/tab'), 'tab')), 'tab'),
-  'tabbar': r => require.ensure([], () => r(wrapper(require('./views/tabbar'), 'tabbar')), 'tabbar'),
-  'tag': r => require.ensure([], () => r(wrapper(require('./views/tag'), 'tag')), 'tag'),
-  'toast': r => require.ensure([], () => r(wrapper(require('./views/toast'), 'toast')), 'toast'),
-  'tree-select': r => require.ensure([], () => r(wrapper(require('./views/tree-select'), 'tree-select')), 'tree-select'),
-  'uploader': r => require.ensure([], () => r(wrapper(require('./views/uploader'), 'uploader')), 'uploader'),
-  'waterfall': r => require.ensure([], () => r(wrapper(require('./views/waterfall'), 'waterfall')), 'waterfall')
+  'actionsheet': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/actionsheet'), 'actionsheet')), 'actionsheet')),
+  'address-edit': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/address-edit'), 'address-edit')), 'address-edit')),
+  'address-list': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/address-list'), 'address-list')), 'address-list')),
+  'area': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/area'), 'area')), 'area')),
+  'badge': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/badge'), 'badge')), 'badge')),
+  'button': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/button'), 'button')), 'button')),
+  'card': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/card'), 'card')), 'card')),
+  'cell-swipe': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/cell-swipe'), 'cell-swipe')), 'cell-swipe')),
+  'cell': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/cell'), 'cell')), 'cell')),
+  'checkbox': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/checkbox'), 'checkbox')), 'checkbox')),
+  'contact': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/contact'), 'contact')), 'contact')),
+  'coupon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/coupon'), 'coupon')), 'coupon')),
+  'datetime-picker': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/datetime-picker'), 'datetime-picker')), 'datetime-picker')),
+  'dialog': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/dialog'), 'dialog')), 'dialog')),
+  'field': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/field'), 'field')), 'field')),
+  'goods-action': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/goods-action'), 'goods-action')), 'goods-action')),
+  'icon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/icon'), 'icon')), 'icon')),
+  'image-preview': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/image-preview'), 'image-preview')), 'image-preview')),
+  'layout': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/layout'), 'layout')), 'layout')),
+  'lazyload': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/lazyload'), 'lazyload')), 'lazyload')),
+  'loading': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/loading'), 'loading')), 'loading')),
+  'nav-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/nav-bar'), 'nav-bar')), 'nav-bar')),
+  'notice-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/notice-bar'), 'notice-bar')), 'notice-bar')),
+  'number-keyboard': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/number-keyboard'), 'number-keyboard')), 'number-keyboard')),
+  'pagination': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/pagination'), 'pagination')), 'pagination')),
+  'panel': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/panel'), 'panel')), 'panel')),
+  'password-input': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/password-input'), 'password-input')), 'password-input')),
+  'picker': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/picker'), 'picker')), 'picker')),
+  'popup': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/popup'), 'popup')), 'popup')),
+  'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress')),
+  'pull-refresh': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/pull-refresh'), 'pull-refresh')), 'pull-refresh')),
+  'radio': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/radio'), 'radio')), 'radio')),
+  'search': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/search'), 'search')), 'search')),
+  'sku': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/sku'), 'sku')), 'sku')),
+  'stepper': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/stepper'), 'stepper')), 'stepper')),
+  'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps')),
+  'submit-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/submit-bar'), 'submit-bar')), 'submit-bar')),
+  'swipe': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/swipe'), 'swipe')), 'swipe')),
+  'switch-cell': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/switch-cell'), 'switch-cell')), 'switch-cell')),
+  'switch': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/switch'), 'switch')), 'switch')),
+  'tab': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tab'), 'tab')), 'tab')),
+  'tabbar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tabbar'), 'tabbar')), 'tabbar')),
+  'tag': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tag'), 'tag')), 'tag')),
+  'toast': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/toast'), 'toast')), 'toast')),
+  'tree-select': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/tree-select'), 'tree-select')), 'tree-select')),
+  'uploader': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/uploader'), 'uploader')), 'uploader')),
+  'waterfall': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/waterfall'), 'waterfall')), 'waterfall'))
 };
