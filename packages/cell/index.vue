@@ -8,7 +8,7 @@
     }"
     @click="onClick"
   >
-    <div class="van-cell__title" v-if="$slots.title || title || icon">
+    <div class="van-cell__title" v-if="$slots.title || title || icon || $slots.icon">
       <slot name="icon">
         <icon v-if="icon" :name="icon" />
       </slot>
