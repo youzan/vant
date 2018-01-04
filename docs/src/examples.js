@@ -7,6 +7,7 @@ import VantDoc from 'vant-doc';
 import 'packages/vant-css/src/index.css';
 import 'packages/vant-css/src/icon-local.css';
 import 'vant-doc/src/helper/touch-simulator';
+import './components/nprogress.css';
 
 Vue.use(Vant);
 Vue.use(VantDoc);
