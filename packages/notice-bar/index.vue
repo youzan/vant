@@ -85,8 +85,10 @@ export default create({
     this.initAnimation();
   },
 
-  updated() {
-    this.initAnimation();
+  watch: {
+    text: function() {
+      this.$nextTick(this.initAnimation);
+    }
   },
 
   methods: {
