@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
+
+`2018-01-05`
+
+**Improvements**
+
+* Button: 调整 small 按钮内边距 [\#511](https://github.com/youzan/vant/pull/511) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Cell 标题为空时 icon 属性无法生效的问题 [\#508](https://github.com/youzan/vant/pull/508) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Cell 内边框宽度错误的问题 [\#506](https://github.com/youzan/vant/pull/506) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 CouponList 行高错误的问题 [\#507](https://github.com/youzan/vant/pull/507) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 CouponList 输入框样式错误 [\#502](https://github.com/youzan/vant/pull/502) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Radio 图标无法点击的问题 [\#505](https://github.com/youzan/vant/pull/505) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
 
 `2017-12-29`
