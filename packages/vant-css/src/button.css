@@ -65,10 +65,11 @@
   }
 
   &--small {
-    min-width: 60px;
     height: 30px;
-    line-height: 28px;
+    padding: 0 8px;
+    min-width: 60px;
     font-size: 12px;
+    line-height: 28px;
   }
 
   &--loading {
