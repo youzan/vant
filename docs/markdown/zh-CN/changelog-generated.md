@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.12.1](https://github.com/youzan/vant/tree/v0.12.1) (2018-01-05)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.0...v0.12.1)
+
+**Issue**
+
+- 更最新版本后， ImagePreview使用报错 [\#504](https://github.com/youzan/vant/issues/504)
+- 源码field组件中45行 \<icon :name="icon" /\>为什么不是\<van-icon :name="icon" /\> [\#501](https://github.com/youzan/vant/issues/501)
+- DatetimePicker组件，初始化时VanPicker内visibileColumnCount为undefined  [\#500](https://github.com/youzan/vant/issues/500)
+- tab标签栏如何修改active时的颜色的 [\#499](https://github.com/youzan/vant/issues/499)
+- DateTimePicker可以设置列数吗? [\#498](https://github.com/youzan/vant/issues/498)
+- vant怎么做rem自适应,覆盖框架内的样式吗 [\#494](https://github.com/youzan/vant/issues/494)
+
+**Improvements**
+
+- \[Improvement\] Button: adjust padding of small button [\#511](https://github.com/youzan/vant/pull/511) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] optimize loading animation [\#509](https://github.com/youzan/vant/pull/509) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: icon can't render when no title [\#508](https://github.com/youzan/vant/pull/508) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] CouponList line height [\#507](https://github.com/youzan/vant/pull/507) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: inner border width [\#506](https://github.com/youzan/vant/pull/506) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Radio: icon not clickable [\#505](https://github.com/youzan/vant/pull/505) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] CouponList: input style [\#502](https://github.com/youzan/vant/pull/502) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.0](https://github.com/youzan/vant/tree/v0.12.0) (2017-12-29)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.11.15...v0.12.0)
 

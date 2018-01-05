@@ -1,5 +1,21 @@
 ## Changelog
 
+### [0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
+
+`2018-01-05`
+
+**Improvements**
+
+* Button: adjust padding of small button [\#511](https://github.com/youzan/vant/pull/511) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Cell icon can't render when no title [\#508](https://github.com/youzan/vant/pull/508) [@chenjiahan](https://github.com/chenjiahan)
+* fix Cell inner border width [\#506](https://github.com/youzan/vant/pull/506) [@chenjiahan](https://github.com/chenjiahan)
+* fix CouponList line height [\#507](https://github.com/youzan/vant/pull/507) [@chenjiahan](https://github.com/chenjiahan)
+* fix CouponList input style [\#502](https://github.com/youzan/vant/pull/502) [@chenjiahan](https://github.com/chenjiahan)
+* fix Radio icon not clickable [\#505](https://github.com/youzan/vant/pull/505) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
 
 `2017-12-29`
