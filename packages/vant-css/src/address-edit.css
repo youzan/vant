@@ -34,8 +34,6 @@
     }
 
     &__suggest-list {
-      margin-left: -15px;
-
       &::after {
         border-top-width: 0;
       }
