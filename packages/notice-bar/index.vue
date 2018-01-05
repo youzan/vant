@@ -82,14 +82,11 @@ export default create({
   },
 
   mounted() {
-    const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-    const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
-    if (this.scrollable && offsetWidth > wrapWidth) {
-      this.wrapWidth = wrapWidth;
-      this.offsetWidth = offsetWidth;
-      this.duration = offsetWidth / this.speed;
-      this.animationClass = 'van-notice-bar__play';
-    }
+    this.initAnimation();
+  },
+
+  updated() {
+    this.initAnimation();
   },
 
   methods: {
@@ -102,6 +99,16 @@ export default create({
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = 'van-notice-bar__play--infinite';
       });
+    },
+    initAnimation() {
+      const offsetWidth = this.$refs.content.getBoundingClientRect().width;
+      const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
+      if (this.scrollable && offsetWidth > wrapWidth) {
+        this.wrapWidth = wrapWidth;
+        this.offsetWidth = offsetWidth;
+        this.duration = offsetWidth / this.speed;
+        this.animationClass = 'van-notice-bar__play';
+      }
     }
   }
 });
