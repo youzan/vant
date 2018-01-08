@@ -20,7 +20,7 @@ export default create({
     style() {
       return {
         width: this.$parent.width + 'px',
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate(${this.offset}px, 0)`
       };
     }
   },
