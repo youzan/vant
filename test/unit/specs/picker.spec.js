@@ -114,38 +114,6 @@ describe('Picker', () => {
     expect(wrapper.vm.getColumnValue(3)).to.equal(undefined);
   });
 
-  it('emit a change event when column change', (done) => {
-    wrapper = mount(Picker, {
-      propsData: {
-        columns: columns
-      }
-    });
-
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.vm.setColumnValue(0, 'normal');
-    wrapper.vm.$nextTick(() => {
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('change'));
-      done();
-    });
-  });
-
-  it('simple column emit a change event when column change', (done) => {
-    wrapper = mount(Picker, {
-      propsData: {
-        columns: simpleColumn
-      }
-    });
-
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-    wrapper.vm.setColumnValue(0, '1993');
-    wrapper.vm.$nextTick(() => {
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('change'));
-      done();
-    });
-  });
-
   it('create a empty picker and emit a cencel event', (done) => {
     wrapper = mount(Picker, {
       propsData: {

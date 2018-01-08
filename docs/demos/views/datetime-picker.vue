@@ -54,7 +54,7 @@ export default {
       maxDate: new Date(2019, 10, 1),
       currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
-      currentDate3: null
+      currentDate3: '12:00'
     };
   }
 };

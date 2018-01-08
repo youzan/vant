@@ -25,7 +25,9 @@
         v-for="express in searchResult"
         :key="express.name + express.address"
         class="van-address-edit-detail__suggest-item"
-        @click="onSuggestSelect(express)">
+        clickable
+        @click="onSuggestSelect(express)"
+      >
         <icon name="location" class="van-address-edit-detail__location" />
         <div class="van-address-edit-detail__item-info">
           <p class="van-address-edit-detail__title" v-if="isString(express.name)">{{ express.name }}</p>

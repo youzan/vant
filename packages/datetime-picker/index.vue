@@ -271,6 +271,7 @@ export default create({
           );
         }
       }
+
       this.$nextTick(() => {
         this.setColumnByValues(values);
       });

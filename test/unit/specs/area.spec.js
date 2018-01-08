@@ -46,14 +46,16 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110101');
-
-    wrapper.setProps({
-      value: '110102'
-    });
     setTimeout(() => {
-      expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110102');
-      done();
+      expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110101');
+      wrapper.setProps({
+        value: '110102'
+      });
+
+      setTimeout(() => {
+        expect(wrapper.vm.$refs.picker.getColumnValue(2).code).to.equal('110102');
+        done();
+      }, 50);
     }, 50);
   });
 
@@ -126,7 +128,7 @@ describe('Area', () => {
     expect(list.length).to.equal(33);
   });
 
-  it('getValues method', () => {
+  it('getValues method', done => {
     wrapper = mount(Area, {
       propsData: {
         value: '110101',
@@ -134,13 +136,18 @@ describe('Area', () => {
       }
     });
 
-    expect(wrapper.vm.getValues()).to.eql([
-      { code: '110000', name: '北京市' },
-      { code: '110100', name: '北京市' },
-      { code: '110101', name: '东城区' }
-    ]);
+    setTimeout(() => {
+      expect(wrapper.vm.getValues()).to.eql([
+        { code: '110000', name: '北京市' },
+        { code: '110100', name: '北京市' },
+        { code: '110101', name: '东城区' }
+      ]);
 
-    wrapper.vm.$refs = [];
-    expect(wrapper.vm.getValues()).to.eql([]);
+      setTimeout(() => {
+        wrapper.vm.$refs = [];
+        expect(wrapper.vm.getValues()).to.eql([]);
+        done();
+      }, 50);
+    }, 50);
   });
 });

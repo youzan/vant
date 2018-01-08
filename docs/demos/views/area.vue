@@ -34,7 +34,7 @@ export default {
 
   data() {
     return {
-      value: '110101'
+      value: '330302'
     };
   }
 };
