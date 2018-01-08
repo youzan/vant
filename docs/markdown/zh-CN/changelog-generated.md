@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v0.12.2](https://github.com/youzan/vant/tree/v0.12.2) (2018-01-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.1...v0.12.2)
+
+**Issue**
+
+- 希望tabbar的title支持badge 或自定义slot 或者navbar一样的info属性 [\#516](https://github.com/youzan/vant/issues/516)
+- 表单 的upload 功能太简陋 暂时没看到支持 ajax上传 [\#512](https://github.com/youzan/vant/issues/512)
+- Cell 单元格貌似没有select 实例 [\#510](https://github.com/youzan/vant/issues/510)
+- radio组件只能点击label才能确认点击，点击小圆圈不可以 [\#503](https://github.com/youzan/vant/issues/503)
+
+**Improvements**
+
+- \[bugfix\] Swipe: use translate2d to aviod iOS11 crash bug [\#518](https://github.com/youzan/vant/pull/518) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker: should not emit change event after init [\#517](https://github.com/youzan/vant/pull/517) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] NoticeBar: 属性text为动态数据且使用:text方式使用时，添加自动滚动 [\#515](https://github.com/youzan/vant/pull/515) ([xliez](https://github.com/xliez))
+- \[bugfix\] AddressEdit: search result style [\#514](https://github.com/youzan/vant/pull/514) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.1](https://github.com/youzan/vant/tree/v0.12.1) (2018-01-05)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.0...v0.12.1)
 

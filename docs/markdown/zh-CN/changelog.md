@@ -1,5 +1,16 @@
 ## 更新日志
 
+### [0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
+
+`2018-01-08`
+
+**Bug Fixes**
+
+* Swipe: 使用 translate2d 代替 translate3d, 避免 iOS11 下的 crash 问题 [\#518](https://github.com/youzan/vant/pull/518) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: change 事件只在用户操作后触发 [\#517](https://github.com/youzan/vant/pull/517) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: 修复 text 属性变化时未重新计算的问题 [\#515](https://github.com/youzan/vant/pull/515) [@xliez](https://github.com/xliez)
+* AddressEdit: 修复搜索结果样式错误 [\#514](https://github.com/youzan/vant/pull/514) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
 
 `2018-01-05`
