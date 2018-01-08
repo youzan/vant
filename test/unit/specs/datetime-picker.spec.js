@@ -51,7 +51,7 @@ describe('DatetimePicker', () => {
       attachToDocument: true,
       propsData: {
         type: 'time',
-        value: testTime
+        value: '12:00'
       }
     });
 
@@ -60,9 +60,9 @@ describe('DatetimePicker', () => {
     dragHelper(minute, -50);
 
     setTimeout(() => {
-      expect(wrapper.vm.innerValue).to.equal('10:01');
+      expect(wrapper.vm.innerValue).to.equal('1:01');
       done();
-    }, 10);
+    }, 50);
   });
 
   it('drag date picker', (done) => {
@@ -87,7 +87,7 @@ describe('DatetimePicker', () => {
         const newDay = wrapper.vm.innerValue.getDate();
         expect(newYear).to.equal(2018);
         expect(newMonth).to.equal(4);
-        expect(newDay).to.equal(1);
+        expect(newDay).to.equal(11);
         done();
       }, 10);
     }, 10);
@@ -119,7 +119,7 @@ describe('DatetimePicker', () => {
         const newMinute = wrapper.vm.innerValue.getMinutes();
         expect(newYear).to.equal(2018);
         expect(newMonth).to.equal(4);
-        expect(newDay).to.equal(1);
+        expect(newDay).to.equal(11);
         expect(newHour).to.equal(11);
         expect(newMinute).to.equal(1);
         done();
