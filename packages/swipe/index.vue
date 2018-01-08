@@ -85,7 +85,7 @@ export default create({
         paddingLeft: this.width + 'px',
         width: (this.count + 2) * this.width + 'px',
         transitionDuration: `${this.currentDuration}ms`,
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate(${this.offset}px, 0)`
       };
     },
 

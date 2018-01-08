@@ -154,7 +154,7 @@ export default create({
         const tab = this.$refs.tabs[this.curActive];
         this.navBarStyle = {
           width: `${tab.offsetWidth || 0}px`,
-          transform: `translate3d(${tab.offsetLeft || 0}px, 0, 0)`,
+          transform: `translate(${tab.offsetLeft || 0}px, 0)`,
           transitionDuration: `${this.duration}s`
         };
       });
