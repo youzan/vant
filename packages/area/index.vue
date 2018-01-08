@@ -80,7 +80,8 @@ export default create({
     setIndex() {
       this.$nextTick(() => {
         const code = this.value || '';
-        this.$refs.picker.setIndexes([
+        const { picker } = this.$refs;
+        picker && picker.setIndexes([
           this.getIndex('province', code),
           this.getIndex('city', code),
           this.getIndex('county', code)
