@@ -47,21 +47,18 @@ export default create({
       const columnsNum = +this.columnsNum;
 
       columns.push({
-        values: this.getList('province'),
-        defaultIndex: this.getIndex('province', code)
+        values: this.getList('province')
       });
 
       if (columnsNum > 1) {
         columns.push({
-          values: this.getList('city', code.slice(0, 2)),
-          defaultIndex: this.getIndex('city', code)
+          values: this.getList('city', code.slice(0, 2))
         });
       }
 
       if (columnsNum > 2) {
         columns.push({
-          values: this.getList('county', code.slice(0, 4)),
-          defaultIndex: this.getIndex('county', code)
+          values: this.getList('county', code.slice(0, 4))
         });
       }
 
@@ -69,7 +66,28 @@ export default create({
     }
   },
 
+  mounted() {
+    this.setIndex();
+  },
+
+  watch: {
+    value() {
+      this.setIndex();
+    }
+  },
+
   methods: {
+    setIndex() {
+      this.$nextTick(() => {
+        const code = this.value || '';
+        this.$refs.picker.setIndexes([
+          this.getIndex('province', code),
+          this.getIndex('city', code),
+          this.getIndex('county', code)
+        ]);
+      });
+    },
+
     // 根据省市县类型和对应的`code`获取对应列表
     getList(type, code) {
       const { areaList } = this;
