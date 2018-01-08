@@ -79,12 +79,8 @@ export default create({
 
     options(next, prev) {
       if (JSON.stringify(next) !== JSON.stringify(prev)) {
-        this.setIndex(this.defaultIndex);
+        this.setIndex(0);
       }
-    },
-
-    currentIndex(index) {
-      this.$emit('change', index);
     }
   },
 
@@ -139,6 +135,7 @@ export default create({
           this.count - 1
         ]);
         this.setIndex(index);
+        this.$emit('change', index);
       }
     },
 
