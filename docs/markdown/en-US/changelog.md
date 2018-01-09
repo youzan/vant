@@ -1,5 +1,16 @@
 ## Changelog
 
+### [0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
+
+`2018-01-08`
+
+**Bug Fixes**
+
+* Swipe: use translate2d to aviod iOS11 crash bug [\#518](https://github.com/youzan/vant/pull/518) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: should not emit change event after init [\#517](https://github.com/youzan/vant/pull/517) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: should reinitialize when text changed [\#515](https://github.com/youzan/vant/pull/515) [@xliez](https://github.com/xliez)
+* AddressEdit: fix search result style error [\#514](https://github.com/youzan/vant/pull/514) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
 
 `2018-01-05`
