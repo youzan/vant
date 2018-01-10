@@ -86,9 +86,9 @@ export default {
       name: '名字',
       tel: '手机或固定电话',
       postal: '邮政编码(选填)',
-      province: '选择省',
-      city: '选择市',
-      county: '选择区'
+      province: '选择省份',
+      city: '选择城市',
+      county: '选择地区'
     }
   },
   vanAddressEditDetail: {
