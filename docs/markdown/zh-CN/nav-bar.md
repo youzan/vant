@@ -53,6 +53,7 @@ export default {
 | right-text | 右侧文案 | `String` | `''` | - |
 | left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
 | fixed | 是否固定在顶部 | `Boolean` | `false` | - |
+| z-index | 元素 z-index | `Number` | `1` | - |
 
 ### Slot
 

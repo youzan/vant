@@ -1,5 +1,9 @@
 <template>
-  <div class="van-nav-bar van-hairline--top-bottom" :class="{ 'van-nav-bar--fixed': fixed }">
+  <div
+    class="van-nav-bar van-hairline--top-bottom"
+    :class="{ 'van-nav-bar--fixed': fixed }"
+    :style="style"
+  >
     <div class="van-nav-bar__left" @click="$emit('click-left')">
       <slot name="left">
         <icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
@@ -28,7 +32,19 @@ export default create({
     leftText: String,
     rightText: String,
     leftArrow: Boolean,
-    fixed: Boolean
+    fixed: Boolean,
+    zIndex: {
+      type: Number,
+      default: 1
+    }
+  },
+
+  computed: {
+    style() {
+      return {
+        zIndex: this.zIndex
+      };
+    }
   }
 });
 </script>
