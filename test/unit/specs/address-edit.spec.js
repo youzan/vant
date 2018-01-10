@@ -17,13 +17,13 @@ describe('AddressEdit', () => {
     expect(wrapper.find('.van-field__control')[2].element.value).to.equal('');
     expect(
       wrapper.find('.van-address-edit__area .van-cell__value span')[0].text()
-    ).to.equal('选择省');
+    ).to.equal('选择省份');
     expect(
       wrapper.find('.van-address-edit__area .van-cell__value span')[1].text()
-    ).to.equal('选择市');
+    ).to.equal('选择城市');
     expect(
       wrapper.find('.van-address-edit__area .van-cell__value span')[2].text()
-    ).to.equal('选择区');
+    ).to.equal('选择地区');
   });
 
   it('create a AddressEdit with props', () => {
