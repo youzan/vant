@@ -52,6 +52,7 @@ export default {
 | right-text | Right Text | `String` | `''` | - |
 | left-arrow | Whether to show left arrow | `Boolean` | `false` | - |
 | fixed | Whether to fixed top | `Boolean` | `false` | - |
+| z-index | Z-index | `Number` | `1` | - |
 
 ### Slot
 
