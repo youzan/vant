@@ -263,10 +263,12 @@ export default create({
     setAreaCode(code) {
       this.currentInfo.area_code = code;
       this.$nextTick(() => {
-        const { area } = this.$refs;
-        if (area) {
-          this.assignAreaValues(area.getValues());
-        }
+        this.$nextTick(() => {
+          const { area } = this.$refs;
+          if (area) {
+            this.assignAreaValues(area.getValues());
+          }
+        });
       });
     }
   }
