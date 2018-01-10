@@ -43,7 +43,7 @@ export default create({
     style() {
       return {
         zIndex: this.zIndex
-      }
+      };
     }
   }
 });
