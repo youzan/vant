@@ -17,7 +17,7 @@
           'van-picker-column--disabled': isDisabled(option),
           'van-picker-column--selected': index === currentIndex
         }"
-        @click="setIndex(index)"
+        @click="setIndex(index, true)"
       />
     </ul>
   </div>
@@ -134,8 +134,7 @@ export default create({
           0,
           this.count - 1
         ]);
-        this.setIndex(index);
-        this.$emit('change', index);
+        this.setIndex(index, true);
       }
     },
 
@@ -157,10 +156,14 @@ export default create({
       return typeof option === 'object' && this.valueKey in option ? option[this.valueKey] : option;
     },
 
-    setIndex(index) {
+    setIndex(index, userAction) {
       index = this.adjustIndex(index);
       this.offset = -index * this.itemHeight;
-      this.currentIndex = index;
+
+      if (index !== this.currentIndex) {
+        this.currentIndex = index;
+        userAction && this.$emit('change', index);
+      }
     },
 
     setValue(value) {
