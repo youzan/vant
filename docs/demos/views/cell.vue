@@ -73,9 +73,7 @@ export default {
   .van-cell-text {
     margin-right: 5px;
   }
-  .van-cell__right-icon {
-    font-size: 16px;
-  }
+
   .van-cell-text,
   .van-tag--danger {
     vertical-align: middle;
