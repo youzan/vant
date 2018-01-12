@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3) (2018-01-12)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.2...v0.12.3)
+
+**Issue**
+
+- van-datetime-picker confirm返回值不对 [\#530](https://github.com/youzan/vant/issues/530)
+- 样式覆盖不生效的问题 和 AddressEdit 组件中的小问题 [\#529](https://github.com/youzan/vant/issues/529)
+- Lazyload did you register the component correctly [\#528](https://github.com/youzan/vant/issues/528)
+- 图片上传组件微信内置浏览器无效 [\#527](https://github.com/youzan/vant/issues/527)
+- 集中反馈几个小问题 [\#523](https://github.com/youzan/vant/issues/523)
+- Tabbar当我添加 to=""跳转的时候，active样式并没有添加到我所点击的那个地方，而是要再次点击才会添加 [\#522](https://github.com/youzan/vant/issues/522)
+- default button 类名拼写错误 [\#519](https://github.com/youzan/vant/issues/519)
+
+**Improvements**
+
+- \[bugfix\] Picker: change event not triggered when click option [\#532](https://github.com/youzan/vant/pull/532) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Cell: adjust right padding of arrow [\#531](https://github.com/youzan/vant/pull/531) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] NavBar: add zIndex prop [\#525](https://github.com/youzan/vant/pull/525) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit: setAreaCode now work [\#524](https://github.com/youzan/vant/pull/524) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] PullRefresh: 水平滑动时避免触发下拉刷新 [\#521](https://github.com/youzan/vant/pull/521) ([ZhiRuYan](https://github.com/ZhiRuYan))
+- \[bugfix\] Area: should valid data before get area list [\#520](https://github.com/youzan/vant/pull/520) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.2](https://github.com/youzan/vant/tree/v0.12.2) (2018-01-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.1...v0.12.2)
 
