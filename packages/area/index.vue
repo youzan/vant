@@ -35,11 +35,14 @@ export default create({
   },
 
   computed: {
+    listValid() {
+      return this.areaList && typeof this.areaList.province_list === 'object';
+    },
+
     columns() {
       const columns = [];
-      const { areaList } = this;
 
-      if (!areaList || typeof areaList.province_list !== 'object') {
+      if (!this.listValid) {
         return columns;
       }
 
@@ -91,6 +94,10 @@ export default create({
 
     // 根据省市县类型和对应的`code`获取对应列表
     getList(type, code) {
+      if (!this.listValid) {
+        return [];
+      }
+
       const { areaList } = this;
       const list =
         type === 'province'
@@ -118,11 +125,10 @@ export default create({
     getIndex(type, code) {
       const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
       const areaList = this.getList(type, code.slice(0, compareNum - 2));
+      code = code.slice(0, compareNum);
 
       for (let i = 0; i < areaList.length; i++) {
-        if (
-          +areaList[i].code.slice(0, compareNum) === +code.slice(0, compareNum)
-        ) {
+        if (areaList[i].code.slice(0, compareNum) === code) {
           return i;
         }
       }
