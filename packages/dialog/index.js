@@ -3,7 +3,7 @@ import DialogComponent from './dialog';
 
 let instance;
 
-const defaultConfig = {
+const defaultOptions = {
   value: true,
   title: '',
   message: '',
@@ -17,6 +17,10 @@ const defaultConfig = {
   callback: action => {
     instance[action === 'confirm' ? 'resolve' : 'reject'](action);
   }
+};
+
+let currentDefaultOptions = {
+  ...defaultOptions
 };
 
 const initInstance = () => {
@@ -47,18 +51,31 @@ const Dialog = options => {
 };
 
 Dialog.alert = options => Dialog({
-  ...defaultConfig,
+  ...currentDefaultOptions,
   ...options
 });
 
 Dialog.confirm = options => Dialog({
-  ...defaultConfig,
+  ...currentDefaultOptions,
   showCancelButton: true,
   ...options
 });
 
 Dialog.close = () => {
   instance.value = false;
+};
+
+Dialog.setDefaultOptions = (options = {}) => {
+  currentDefaultOptions = {
+    ...currentDefaultOptions,
+    ...options
+  };
+};
+
+Dialog.resetDefaultOptions = () => {
+  currentDefaultOptions = {
+    ...defaultOptions
+  };
 };
 
 Vue.prototype.$dialog = Dialog;
