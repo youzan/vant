@@ -57,9 +57,10 @@ export default {
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
-| Dialog.alert | options | `Promise` | 展示消息提示弹窗 |
-| Dialog.confirm | options | `Promise` | 展示消息确认弹窗 |
-| Dialog.setDefaultOptions | options | `void` | 修改默认配置，对所有 Dialog 生效 |
+| Dialog | `options` | `Promise` | 展示弹窗 |
+| Dialog.alert | `options` | `Promise` | 展示消息提示弹窗 |
+| Dialog.confirm | `options` | `Promise` | 展示消息确认弹窗 |
+| Dialog.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Dialog 生效 |
 | Dialog.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Dialog 生效 |
 | Dialog.close | - | `void` | 关闭弹窗 |
 

@@ -70,6 +70,8 @@ export default {
 | Toast.loading | `options | message` | toast instance | Show loading toast |
 | Toast.success | `options | message` | toast instance | Show success toast |
 | Toast.fail | `options | message` | toast instance | Show fail toast |
+| Toast.setDefaultOptions | `options` | `void` | Set default options of all toasts |
+| Toast.resetDefaultOptions | - | `void` | Reset default options of all toasts |
 | Toast.clear | - | `void` | Close  |
 
 ### Options

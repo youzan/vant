@@ -57,9 +57,10 @@ export default {
 
 | Name | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
-| Dialog.alert | options | `Promise` | Show alert dialog |
-| Dialog.confirm | options | `Promise` | Show confim dialog |
-| Dialog.setDefaultOptions | options | `void` | Set default options of all dialogs |
+| Dialog | `options` | `Promise` | Show dialog |
+| Dialog.alert | `options` | `Promise` | Show alert dialog |
+| Dialog.confirm | `options` | `Promise` | Show confim dialog |
+| Dialog.setDefaultOptions | `options` | `void` | Set default options of all dialogs |
 | Dialog.resetDefaultOptions | - | `void` | Reset default options of all dialogs |
 | Dialog.close | - | `void` | Close dialog |
 
