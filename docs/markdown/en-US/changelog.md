@@ -1,5 +1,21 @@
 ## Changelog
 
+### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
+
+`2018-01-12`
+
+**Improvements**
+
+* NavBar: add zIndex prop [\#525](https://github.com/youzan/vant/pull/525) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: adjust right padding of arrow [\#531](https://github.com/youzan/vant/pull/531) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* Area: should valid data before get area list [\#520](https://github.com/youzan/vant/pull/520) [@chenjiahan](https://github.com/chenjiahan)
+* AddressEdit: setAreaCode now work [\#524](https://github.com/youzan/vant/pull/524) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: change event not triggered when click option [\#532](https://github.com/youzan/vant/pull/532) [@chenjiahan](https://github.com/chenjiahan)
+* PullRefresh: only triggered when drag in vertical direction [\#521](https://github.com/youzan/vant/pull/521) [@ZhiRuYan](https://github.com/ZhiRuYan)
+
 ### [0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
 
 `2018-01-08`

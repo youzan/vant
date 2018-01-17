@@ -71,7 +71,7 @@ Use `tag` prop to custom button tag
 | size | Size | `String` | `normal` | `large` `small` `mini` |
 | tag | Tag | `String` | `button` | - |
 | native-type | Native Type Attribute | `String` | `''` | - |
-| diabled | Whether disable button | `Boolean` | `false` | - |
+| disabled | Whether disable button | `Boolean` | `false` | - |
 | loading | Whether show loading status | `Boolean` | `false` | - |
 | block | Whether to set display block | `Boolean` | `false` | - |
 | bottom-action | Whether to be action button | `Boolean` | `false` | - |

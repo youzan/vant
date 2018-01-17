@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
+
+`2018-01-12`
+
+**Improvements**
+
+* NavBar: 新增 zIndex 属性 [\#525](https://github.com/youzan/vant/pull/525) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: 调整右侧箭头位置 [\#531](https://github.com/youzan/vant/pull/531) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Area 传空 AreaList 时报错的问题 [\#520](https://github.com/youzan/vant/pull/520) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 AddressEdit 的 setAreaCode 方法失效的问题 [\#524](https://github.com/youzan/vant/pull/524) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Picker 点击选项时无法触发 change 事件的问题 [\#532](https://github.com/youzan/vant/pull/532) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 PullRefresh 在横向滑动时也会触发的问题 [\#521](https://github.com/youzan/vant/pull/521) [@ZhiRuYan](https://github.com/ZhiRuYan)
+
 ### [0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
 
 `2018-01-08`
