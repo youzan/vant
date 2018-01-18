@@ -15,6 +15,10 @@ const defaultOptions = {
   }
 };
 
+let currentDefaultOptions = {
+  ...defaultOptions
+};
+
 const createInstance = () => {
   if (!instance) {
     const ToastConstructor = Vue.extend(VueToast);
@@ -29,7 +33,7 @@ const Toast = (options = {}) => {
   createInstance();
 
   options = typeof options === 'object' ? options : { message: options };
-  options = { ...defaultOptions, ...options };
+  options = { ...currentDefaultOptions, ...options };
   Object.assign(instance, options);
 
   clearTimeout(instance.timer);
@@ -52,8 +56,22 @@ const createMethod = type => (options = {}) => Toast({
 Toast.loading = createMethod('loading');
 Toast.success = createMethod('success');
 Toast.fail = createMethod('fail');
+
 Toast.clear = () => {
   instance && instance.clear();
+};
+
+Toast.setDefaultOptions = (options = {}) => {
+  currentDefaultOptions = {
+    ...currentDefaultOptions,
+    ...options
+  };
+};
+
+Toast.resetDefaultOptions = () => {
+  currentDefaultOptions = {
+    ...defaultOptions
+  };
 };
 
 Vue.prototype.$toast = Toast;
