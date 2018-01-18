@@ -3,10 +3,10 @@
 
 ### 使用指南
 ``` javascript
-import { PasswordInput, NumberKeyBoard } from 'vant';
+import { PasswordInput, NumberKeyboard } from 'vant';
 
 Vue.use(PasswordInput);
-Vue.use(NumberKeyBoard);
+Vue.use(NumberKeyboard);
 ```
 
 ### 代码演示
