@@ -79,13 +79,11 @@ describe('Stepper', () => {
     });
 
     expect(wrapper.hasClass('van-stepper')).to.be.true;
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
 
     wrapper.vm.value = 2;
     wrapper.update();
     wrapper.vm.$nextTick(() => {
-      expect(eventStub.calledWith('input'));
-      expect(eventStub.calledWith('change'));
+      expect(wrapper.vm.currentValue).to.equal(2);
       done();
     });
   });
@@ -132,6 +130,22 @@ describe('Stepper', () => {
     wrapper.update();
     wrapper.vm.$nextTick(() => {
       expect(wrapper.data().currentValue).to.equal(2);
+      done();
+    });
+  });
+
+  it('should not fire any event on props changed', (done) => {
+    wrapper = mount(Stepper, {
+      propsData: {
+        value: 1
+      }
+    });
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+
+    wrapper.vm.value = 2;
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.called).to.be.false;
       done();
     });
   });
