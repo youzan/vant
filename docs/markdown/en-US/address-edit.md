@@ -71,7 +71,7 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | save | Triggered when click save button | content：Form content |
 | delete | Triggered when click delete | content：Form content |

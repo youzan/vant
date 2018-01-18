@@ -57,6 +57,6 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when current swipe change | index: index of current swipe |

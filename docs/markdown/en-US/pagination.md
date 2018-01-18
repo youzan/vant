@@ -64,6 +64,6 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered on page change | - |

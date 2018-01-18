@@ -59,6 +59,6 @@ use `loading` property to keep component in loading state
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | triggered when the on-off state is changed | checked: switch is on or not |

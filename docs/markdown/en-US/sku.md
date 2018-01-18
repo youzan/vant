@@ -75,7 +75,7 @@ Vue.use(Sku);
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |

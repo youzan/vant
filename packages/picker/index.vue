@@ -2,8 +2,8 @@
   <div class="van-picker">
     <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
       <slot>
-        <div class="van-picker__cancel" @click="emit('cancel')">{{ $t('cancel') }}</div>
-        <div class="van-picker__confirm" @click="emit('confirm')">{{ $t('confirm') }}</div>
+        <div class="van-picker__cancel" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
+        <div class="van-picker__confirm" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
         <div class="van-picker__title" v-if="title" v-text="title" />
       </slot>
     </div>
@@ -38,6 +38,10 @@ export default create({
 
   props: {
     title: String,
+    showToolbar: Boolean,
+    confirmButtonText: String,
+    cancelButtonText: String,
+    visibileColumnCount: Number,
     valueKey: {
       type: String,
       default: 'text'
@@ -46,8 +50,6 @@ export default create({
       type: Number,
       default: 44
     },
-    showToolbar: Boolean,
-    visibileColumnCount: Number,
     columns: {
       type: Array,
       default: () => []

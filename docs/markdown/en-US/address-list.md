@@ -63,7 +63,7 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | add | Triggered when click add button | - |
 | edit | Triggered when click edit button | item: address object，index |

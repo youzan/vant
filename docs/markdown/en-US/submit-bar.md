@@ -74,7 +74,7 @@ Use slot to add custom contents.
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | submit | Triggerd when click submit button | - |
 
