@@ -69,7 +69,7 @@ export default {
 | max-date | Max date | `Date` | Ten years later on December 31 | - |
 | min-hour | Min hour | `Number` | `0` | - |
 | max-hour | Max hour | `Number` | `23` | - |
-| visibile-column-count | Count of columns to show | `Number` | `5` | - |
+| visible-item-count | Count of columns to show | `Number` | `5` | - |
 
 ### Event
 

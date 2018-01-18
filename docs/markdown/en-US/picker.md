@@ -124,7 +124,7 @@ export default {
 | confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
 | cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
 | item-height | Option height | `Number` | `44` | - |
-| visibile-column-count | Count of visible columns | `Number` | `5` | - |
+| visible-item-count | Count of visible columns | `Number` | `5` | - |
 | value-key | Key of option text | `String` | `text` | - |
 
 ### Event

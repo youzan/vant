@@ -126,7 +126,7 @@ export default {
 | confirm-button-text | 确认按钮文字 | `String` | `完成` | - |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
 | item-height | 选项高度 | `Number` | `44` | - |
-| visibile-column-count | 可见的选项个数 | `Number` | `5` | - |
+| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
 | value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
 
 ### Event
