@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4) (2018-01-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.3...v0.12.4)
+
+**Issue**
+
+- \[Stepper\]: should not fire the events on changing the value prop [\#545](https://github.com/youzan/vant/issues/545)
+- 有关vant导入所有组件用法示例异常 [\#543](https://github.com/youzan/vant/issues/543)
+- 密码输入框组件与数字键盘组件报错 [\#542](https://github.com/youzan/vant/issues/542)
+- ImagePreview 组件文档 [\#540](https://github.com/youzan/vant/issues/540)
+- 官网文档 Button组件API   "disabled" 拼写错误 [\#536](https://github.com/youzan/vant/issues/536)
+- TabBar切换颜色没有加深 [\#535](https://github.com/youzan/vant/issues/535)
+- 问一个swipe的问题？为什么写了img 写上了v-lazy 没效果 [\#534](https://github.com/youzan/vant/issues/534)
+- checkbox的全选取消的问题 [\#533](https://github.com/youzan/vant/issues/533)
+
+**Improvements**
+
+- \[bugfix\] Picker: misspelling of visibleItemCount [\#549](https://github.com/youzan/vant/pull/549) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Picker: add props to custom button text [\#548](https://github.com/youzan/vant/pull/548) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Stepper: not fire event on changing the value prop [\#546](https://github.com/youzan/vant/pull/546) ([chuangbo](https://github.com/chuangbo))
+- \[Doc\] fix misspelling of NumberKeyboard [\#544](https://github.com/youzan/vant/pull/544) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: add setDefaultOptions method [\#541](https://github.com/youzan/vant/pull/541) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Dialog: add setDefaultOptions method [\#539](https://github.com/youzan/vant/pull/539) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3) (2018-01-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.2...v0.12.3)
 

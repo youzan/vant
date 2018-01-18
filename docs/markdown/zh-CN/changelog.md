@@ -1,5 +1,19 @@
 ## 更新日志
 
+### [0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+`2018-01-18`
+
+**Improvements**
+
+* Picker: 新增 confirmButtonText、cancelButtonText 属性 [\#548](https://github.com/youzan/vant/pull/548) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 新增 setDefaultOptions 方法 [\#541](https://github.com/youzan/vant/pull/541) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: 新增 setDefaultOptions 方法 [\#539](https://github.com/youzan/vant/pull/539) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* Stepper: 修改 value 值时不触发 change 事件 [\#546](https://github.com/youzan/vant/pull/546) [@chuangbo](https://github.com/chuangbo)
+* Picker: 修复 visibleItemCount 属性拼写错误 [\#549](https://github.com/youzan/vant/pull/549) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`
