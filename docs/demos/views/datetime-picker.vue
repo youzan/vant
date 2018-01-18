@@ -25,6 +25,7 @@
       <van-datetime-picker
         v-model="currentDate3"
         type="time"
+        :visibleItemCount="3"
         :min-hour="minHour"
         :max-hour="maxHour"
         :min-date="minDate"

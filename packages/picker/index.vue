@@ -16,7 +16,7 @@
         :class-name="item.className"
         :default-index="item.defaultIndex"
         :item-height="itemHeight"
-        :visibile-column-count="visibileColumnCount"
+        :visible-item-count="visibleItemCount"
         @change="onChange(index)"
       />
       <div class="van-picker__frame van-hairline--top-bottom" :style="frameStyle" />
@@ -41,7 +41,7 @@ export default create({
     showToolbar: Boolean,
     confirmButtonText: String,
     cancelButtonText: String,
-    visibileColumnCount: Number,
+    visibleItemCount: Number,
     valueKey: {
       type: String,
       default: 'text'

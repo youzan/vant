@@ -69,7 +69,7 @@ export default {
 | max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
 | min-hour | 可选的最小小时 | `Number` | `0` | - |
 | max-hour | 可选的最大小时 | `Number` | `23` | - |
-| visibile-column-count | 每一列可见备选元素的个数 | `Number` | `5` | - |
+| visible-item-count | 每一列可见备选元素的个数 | `Number` | `5` | - |
 
 ### Event
 

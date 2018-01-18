@@ -40,7 +40,7 @@ export default create({
       type: Array,
       default: () => []
     },
-    visibileColumnCount: {
+    visibleItemCount: {
       type: Number,
       default: 5
     },
@@ -90,12 +90,12 @@ export default create({
     },
 
     baseOffset() {
-      return this.itemHeight * (this.visibileColumnCount - 1) / 2;
+      return this.itemHeight * (this.visibleItemCount - 1) / 2;
     },
 
     columnStyle() {
       return {
-        height: (this.itemHeight * this.visibileColumnCount) + 'px'
+        height: (this.itemHeight * this.visibleItemCount) + 'px'
       };
     },
 
