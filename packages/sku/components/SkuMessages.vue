@@ -1,26 +1,14 @@
 <template>
   <cell-group class="van-sku-messages">
-    <template v-for="(message, index) in internalMessages">
-      <template v-if="message.type === 'image'" />
-      <field
-        v-else-if="message.multiple == '1'"
-        :key="`${goodsId}-${index}`"
-        :required="message.required == '1'"
-        :label="message.name"
-        :placeholder="getPlaceholder('textarea')"
-        type="textarea"
-        v-model="messageValues[index]"
-      />
-      <field
-        v-else
-        :key="`${goodsId}-${index}`"
-        :required="message.required == '1'"
-        :label="message.name"
-        :placeholder="getPlaceholder(message.type)"
-        :type="getType(message)"
-        v-model="messageValues[index]"
-      />
-    </template>
+    <field
+      v-for="(message, index) in internalMessages"
+      v-model="messageValues[index]"
+      :key="`${goodsId}-${index}`"
+      :required="message.required == '1'"
+      :label="message.name"
+      :placeholder="getPlaceholder(message)"
+      :type="getType(message)"
+    />
   </cell-group>
 </template>
 
@@ -47,26 +35,23 @@ export default create({
 
   computed: {
     internalMessages() {
-      if (Object.prototype.toString.call(this.messages) === '[object Array]') {
-        return this.messages;
-      }
-      return [];
+      return Array.isArray(this.messages) ? this.messages.filter(message => message.type !== 'image') : [];
     },
 
     messageValues() {
-      const messageValues = [];
-      this.internalMessages.forEach((message, index) => {
-        messageValues[index] = '';
-      });
-
-      return messageValues;
+      return this.internalMessages.map(() => '');
     }
   },
 
   methods: {
-    getType({ type, datetime }) {
-      if (type === 'id_no') return 'text';
-      return datetime > 0 ? 'datetime-local' : type;
+    getType(message) {
+      if (+message.multiple === 1) {
+        return 'textarea';
+      }
+      if (message.type === 'id_no') {
+        return 'text';
+      }
+      return message.datetime > 0 ? 'datetime-local' : message.type;
     },
 
     getMessages() {
@@ -96,8 +81,9 @@ export default create({
       return messages;
     },
 
-    getPlaceholder(key) {
-      return this.messagePlaceholderMap[key] || this.$t(`placeholder.${key}`);
+    getPlaceholder(message) {
+      const type = +message.multiple === 1 ? 'textarea' : message.type;
+      return this.messagePlaceholderMap[type] || this.$t(`placeholder.${type}`);
     },
 
     validateMessages() {
