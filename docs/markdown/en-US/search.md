@@ -67,7 +67,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 ### Event
 Search support all native events of input tag，such as `focus`、`blur`、`keypress`
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | cancel | Triggered when click cancel button | - |
 | search | Triggered when confirm search | - |

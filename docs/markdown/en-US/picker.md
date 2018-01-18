@@ -121,9 +121,21 @@ export default {
 | columns | Columns data | `Array` | `[]` | - |
 | show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
 | title | Toolbar title | `String` | `''` | - |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
 | item-height | Option height | `Number` | `44` | - |
 | visibile-column-count | Count of visible columns | `Number` | `5` | - |
 | value-key | Key of option text | `String` | `text` | - |
+
+### Event
+Picker events will pass different parameters according to the columns are single or multiple
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| confirm | Triggered when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| change | Triggered when current option changed | Single column：current value，current index<br>Multiple columns：current values，column index |
+
 
 ### Data struct of columns
 

@@ -91,7 +91,7 @@ export default {
 
 ### CouponList Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when change chosen coupon | index: index of chosen coupon |
 | exchange | Triggered when exchange coupon | code: exchange code |

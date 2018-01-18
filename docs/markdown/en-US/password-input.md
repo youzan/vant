@@ -61,6 +61,6 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | focus | Triggered when input get focused | - |

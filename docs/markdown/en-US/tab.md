@@ -129,7 +129,7 @@ In sticky mode, the tab will be fixed to top when scroll to top
 
 ### Tabs Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | click | Triggered when click tab | index：index of current tab |
 | disabled | Triggered when click disabled tab | index：index of current tab |

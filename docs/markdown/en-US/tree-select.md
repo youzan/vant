@@ -54,7 +54,7 @@ export default {
 | active-id | Id of selected item | `Number` | `0` | - |
 
 #### Event
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | navclick | triggered when parent node is selected |  index: index of selected parent |
 | itemclick | triggered when item is selected | data: selected item |

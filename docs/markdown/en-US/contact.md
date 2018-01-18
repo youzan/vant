@@ -147,7 +147,7 @@ export default {
 
 ### ContactList Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | add | Triggered when click add button | - |
 | edit | Triggered when click edit button | item: contact object，index |
@@ -163,7 +163,7 @@ export default {
 
 ### ContactEdit Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | save | Triggered when click save button | content：contact info |
 | delete | Triggered when click delete button | content：contact info |

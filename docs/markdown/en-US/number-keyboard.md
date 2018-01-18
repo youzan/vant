@@ -75,7 +75,7 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |

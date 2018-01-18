@@ -69,7 +69,7 @@ export default {
 
 ### Tabbar Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when change active tab | active: index of current tab |
 

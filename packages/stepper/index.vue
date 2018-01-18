@@ -68,6 +68,7 @@ export default create({
       const currentValue = +this.currentValue;
       return min === currentValue || (currentValue - step) < min || this.disabled;
     },
+
     isPlusDisabled() {
       const max = +this.max;
       const step = +this.step;

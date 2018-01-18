@@ -53,6 +53,6 @@ Vue.use(NoticeBar);
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | click | Triggered when click notice bar | - |
