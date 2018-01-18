@@ -77,11 +77,6 @@ export default create({
   },
 
   watch: {
-    currentValue(val) {
-      this.$emit('input', val);
-      this.$emit('change', val);
-    },
-
     value(val) {
       val = this.correctValue(+val);
       if (val !== this.currentValue) {
@@ -105,6 +100,7 @@ export default create({
     onInput(event) {
       const val = +event.target.value;
       this.currentValue = this.correctValue(val);
+      this.emitInput();
     },
 
     onChange(type) {
@@ -116,7 +112,13 @@ export default create({
       const step = +this.step;
       const currentValue = +this.currentValue;
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
+      this.emitInput();
       this.$emit(type);
+    },
+
+    emitInput() {
+      this.$emit('input', this.currentValue);
+      this.$emit('change', this.currentValue);
     }
   }
 });
