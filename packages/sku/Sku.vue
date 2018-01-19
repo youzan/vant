@@ -2,7 +2,12 @@
   <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
-        <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
+        <slot
+          name="sku-header"
+          :sku-event-bus="skuEventBus"
+          :selected-sku="selectedSku"
+          :selected-sku-comb="selectedSkuComb"
+        >
           <sku-header
             :sku-event-bus="skuEventBus"
             :selected-sku="selectedSku"
@@ -12,7 +17,7 @@
           />
         </slot>
         <div class="van-sku-body" :style="bodyStyle">
-          <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
+          <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
               <div
                 v-for="(skuTreeItem, index) in skuTree"
@@ -35,8 +40,14 @@
               </div>
             </div>
           </slot>
-          <slot name="extra-sku-group" :skuEventBus="skuEventBus"/>
-          <slot name="sku-stepper" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
+          <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
+          <slot
+            name="sku-stepper"
+            :sku-event-bus="skuEventBus"
+            :selected-sku="selectedSku"
+            :selected-sku-comb="selectedSkuComb"
+            :selected-num="selectedNum"
+          >
             <sku-stepper
               ref="skuStepper"
               :sku-event-bus="skuEventBus"
@@ -60,7 +71,7 @@
             />
           </slot>
         </div>
-        <slot name="sku-actions" :skuEventBus="skuEventBus">
+        <slot name="sku-actions" :sku-event-bus="skuEventBus">
           <sku-actions
             :sku-event-bus="skuEventBus"
             :buy-text="buyText"
@@ -75,21 +86,21 @@
 <script>
 /* eslint-disable camelcase */
 import Vue from 'vue';
-import Popup from '../../popup';
-import Toast from '../../toast';
-import SkuHeader from '../components/SkuHeader';
-import SkuRow from '../components/SkuRow';
-import SkuRowItem from '../components/SkuRowItem';
-import SkuStepper from '../components/SkuStepper';
-import SkuMessages from '../components/SkuMessages';
-import SkuActions from '../components/SkuActions';
+import Popup from '../popup';
+import Toast from '../toast';
+import SkuHeader from './components/SkuHeader';
+import SkuRow from './components/SkuRow';
+import SkuRowItem from './components/SkuRowItem';
+import SkuStepper from './components/SkuStepper';
+import SkuMessages from './components/SkuMessages';
+import SkuActions from './components/SkuActions';
 import {
   isAllSelected,
   getSkuComb,
   getSelectedSkuValues
-} from '../utils/skuHelper';
-import { LIMIT_TYPE } from '../constants';
-import { create } from '../../utils';
+} from './utils/skuHelper';
+import { LIMIT_TYPE } from './constants';
+import { create } from '../utils';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
@@ -107,13 +118,19 @@ export default create({
   },
 
   props: {
+    sku: Object,
     goods: Object,
+    value: Boolean,
+    buyText: String,
     goodsId: [Number, String],
+    stepperTitle: String,
+    hideStock: Boolean,
+    resetStepperOnHide: Boolean,
+    disableStepperInput: Boolean,
     initialSku: {
       type: Object,
       default: () => ({})
     },
-    sku: Object,
     quota: {
       type: Number,
       default: 0
@@ -122,24 +139,18 @@ export default create({
       type: Number,
       default: 0
     },
-    hideStock: Boolean,
     showAddCartBtn: {
       type: Boolean,
       default: true
     },
-    buyText: String,
-    stepperTitle: String,
     bodyOffsetTop: {
       type: Number,
       default: 200
     },
-    resetStepperOnHide: Boolean,
-    disableStepperInput: Boolean,
     messagePlaceholderMap: {
       type: Object,
       default: () => ({})
-    },
-    value: Boolean
+    }
   },
 
   data() {
@@ -192,19 +203,19 @@ export default create({
         maxHeight: maxHeight + 'px'
       };
     },
+
     isSkuCombSelected() {
       return isAllSelected(this.sku.tree, this.selectedSku);
     },
-    // sku数据不存在时不渲染模板
+
     isSkuEmpty() {
-      for (var key in this.sku) {
-        if (Object.prototype.hasOwnProperty.call(this.sku, key)) return false;
-      }
-      return true;
+      return Object.keys(this.sku).length === 0;
     },
+
     hasSku() {
       return !this.sku.none_sku;
     },
+
     selectedSkuComb() {
       if (!this.hasSku) {
         return {
@@ -217,13 +228,14 @@ export default create({
       }
       return null;
     },
+
     skuTree() {
       return this.sku.tree || [];
     }
   },
 
   created() {
-    var skuEventBus = new Vue();
+    const skuEventBus = new Vue();
     this.skuEventBus = skuEventBus;
 
     skuEventBus.$on('sku:close', this.handleCloseClicked);
@@ -250,19 +262,23 @@ export default create({
         }
       });
     },
+
     getSkuMessages() {
       return this.$refs.skuMessages ? this.$refs.skuMessages.getMessages() : {};
     },
+
     getSkuCartMessages() {
       return this.$refs.skuMessages
         ? this.$refs.skuMessages.getCartMessages()
         : {};
     },
+
     validateSkuMessages() {
       return this.$refs.skuMessages
         ? this.$refs.skuMessages.validateMessages()
         : '';
     },
+
     validateSku() {
       if (this.selectedNum === 0) {
         return this.$t('unavailable');
@@ -276,9 +292,11 @@ export default create({
         return this.$t('spec');
       }
     },
+
     handleCloseClicked() {
       this.show = false;
     },
+
     handleSkuSelected(skuValue) {
       // 点击已选中的sku时则取消选中
       this.selectedSku =
@@ -292,9 +310,11 @@ export default create({
         selectedSkuComb: this.selectedSkuComb
       });
     },
+
     handleNumChange(num) {
       this.selectedNum = num;
     },
+
     handleOverLimit({ action, limitType, quota, quotaUsed }) {
       if (action === 'minus') {
         Toast(this.$t('least'));
@@ -308,12 +328,15 @@ export default create({
         }
       }
     },
+
     handleAddCartClicked() {
       this.handleBuyOrAddCart('add-cart');
     },
+
     handleBuyClicked() {
       this.handleBuyOrAddCart('buy-clicked');
     },
+
     handleBuyOrAddCart(type) {
       const error = this.validateSku();
       if (error) {
