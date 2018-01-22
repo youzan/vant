@@ -11,11 +11,10 @@
         size="small"
         type="danger"
         class="van-coupon-list__exchange"
-        :disabled="exchangeButtonDisabled || !exchangeCode.length"
+        :text="exchangeButtonText || $t('exchange')"
+        :disabled="buttonDisabled"
         @click="onClickExchangeButton"
-      >
-        {{ exchangeButtonText || $t('exchange') }}
-      </van-button>
+      />
     </cell-group>
     <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
       <coupon-item
@@ -40,11 +39,10 @@
     </div>
     <div
       v-show="showCloseButton"
+      v-text="closeButtonText || $t('close')"
       class="van-coupon-list__close van-hairline--top"
       @click="onClickNotUse"
-    >
-      {{ closeButtonText || $t('close') }}
-    </div>
+    />
   </div>
 </template>
 
@@ -74,6 +72,11 @@ export default create({
     inputPlaceholder: String,
     disabledListTitle: String,
     exchangeButtonText: String,
+    exchangeButtonDisabled: Boolean,
+    exchangeMinLength: {
+      type: Number,
+      default: 1
+    },
     chosenCoupon: {
       type: Number,
       default: -1
@@ -85,10 +88,6 @@ export default create({
     disabledCoupons: {
       type: Array,
       default: () => []
-    },
-    exchangeButtonDisabled: {
-      type: Boolean,
-      default: false
     },
     displayedCouponIndex: {
       type: Number,
@@ -104,16 +103,22 @@ export default create({
     }
   },
 
-  watch: {
-    displayedCouponIndex(val) {
-      this.scrollToShowCoupon(val);
-    }
-  },
-
   data() {
     return {
       exchangeCode: ''
     };
+  },
+
+  computed: {
+    buttonDisabled() {
+      return this.exchangeButtonDisabled || this.exchangeCode.length < this.exchangeMinLength;
+    }
+  },
+
+  watch: {
+    displayedCouponIndex(val) {
+      this.scrollToShowCoupon(val);
+    }
   },
 
   mounted() {

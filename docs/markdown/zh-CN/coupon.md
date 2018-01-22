@@ -85,6 +85,7 @@ export default {
 | disabled-doupons | 不可用优惠券列表 | `Array` | `[]` | - |
 | exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
 | exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
+| exchange-min-length | 兑换码最小长度 | `Number` | `1` | - |
 | displayed-coupon-index | 滚动至特定优惠券位置 | `Number` | - | - |
 | show-close-button | 是否显示列表底部按钮 | `Boolean` | `true` | - |
 | close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
