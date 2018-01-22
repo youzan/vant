@@ -84,6 +84,7 @@ export default {
 | disabled-coupons | Disabled voupon list | `Array` | `[]` | - |
 | exchange-button-text | Exchange button text | `String` | `Exchange` | - |
 | exchange-button-disabled | Whether to disable exchange button | `Boolean` | `false` | - |
+| exchange-min-length | Min length to enable exchange button | `Number` | `1` | - |
 | displayed-coupon-index | Index of displayed coupon | `Number` | - | - |
 | close-button-text | Close button text | `String` | `Close` | - |
 | disabled-list-title | Disabled list title | `String` | `Unavailable` | - |
