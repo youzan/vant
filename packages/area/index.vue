@@ -94,23 +94,23 @@ export default create({
 
     // 根据省市县类型和对应的`code`获取对应列表
     getList(type, code) {
-      if (!this.listValid) {
-        return [];
-      }
+      let result = [];
 
-      const { areaList } = this;
-      const list =
-        type === 'province'
-          ? areaList.province_list
-          : type === 'city' ? areaList.city_list : areaList.county_list;
+      if (this.listValid && (type === 'province' || code)) {
+        const { areaList } = this;
+        const list =
+          type === 'province'
+            ? areaList.province_list
+            : type === 'city' ? areaList.city_list : areaList.county_list;
 
-      let result = Object.keys(list).map(code => ({
-        code,
-        name: list[code]
-      }));
+        result = Object.keys(list).map(code => ({
+          code,
+          name: list[code]
+        }));
 
-      if (type !== 'province' && code) {
-        result = result.filter(item => item.code.indexOf(code) === 0);
+        if (type !== 'province' && code) {
+          result = result.filter(item => item.code.indexOf(code) === 0);
+        }
       }
 
       result.unshift({
