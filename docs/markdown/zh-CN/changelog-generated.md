@@ -1,5 +1,32 @@
 ## 更新日志
 
+## [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5) (2018-01-23)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.4...v0.12.5)
+
+**Issue**
+
+- ssr项目使用时css加载错误 [\#561](https://github.com/youzan/vant/issues/561)
+- css加载报错 [\#559](https://github.com/youzan/vant/issues/559)
+- tabbar的active手动设置不生效 [\#558](https://github.com/youzan/vant/issues/558)
+- 页面手动刷新 tabbar 会 回到起始路由页面对应的 active icon [\#557](https://github.com/youzan/vant/issues/557)
+- 轮播图van-swipe 懒加载图片v-lazy 使用报错Failed to resolve directive: lazy [\#554](https://github.com/youzan/vant/issues/554)
+- ssr 使用 babel-plugin-import报错 [\#552](https://github.com/youzan/vant/issues/552)
+- stepper如何放到cell里面？ [\#551](https://github.com/youzan/vant/issues/551)
+- DatetimePicker设置每一列可见元素个数visibile-column-count失效 [\#547](https://github.com/youzan/vant/issues/547)
+- Toast 和 Dialog 增加全局参数配置 [\#538](https://github.com/youzan/vant/issues/538)
+- picker 组件文档 [\#537](https://github.com/youzan/vant/issues/537)
+
+**Improvements**
+
+- \[Improvement\] CouponList: support v-model & exchangeButtonLoading [\#566](https://github.com/youzan/vant/pull/566) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update dependencies [\#565](https://github.com/youzan/vant/pull/565) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: add text prop [\#563](https://github.com/youzan/vant/pull/563) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: update share icon [\#562](https://github.com/youzan/vant/pull/562) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: should not display city & county list when not select province [\#560](https://github.com/youzan/vant/pull/560) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CouponList: add exchangeMinLength prop [\#556](https://github.com/youzan/vant/pull/556) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: fix required style [\#553](https://github.com/youzan/vant/pull/553) ([qianzhaoy](https://github.com/qianzhaoy))
+- \[Improvement\] Sku: improve render performance [\#550](https://github.com/youzan/vant/pull/550) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4) (2018-01-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.3...v0.12.4)
 
