@@ -3,7 +3,7 @@
     <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
       <field
         class="van-coupon-list__filed van-hairline--surround"
-        v-model="exchangeCode"
+        v-model="currentCode"
         :placeholder="inputPlaceholder || $t('placeholder')"
         :maxlength="20"
       />
@@ -12,6 +12,7 @@
         type="danger"
         class="van-coupon-list__exchange"
         :text="exchangeButtonText || $t('exchange')"
+        :loading="exchangeButtonLoading"
         :disabled="buttonDisabled"
         @click="onClickExchangeButton"
       />
@@ -23,7 +24,7 @@
         :key="item.id || item.name"
         :data="item"
         :chosen="index === chosenCoupon"
-        @click.native="onClickCoupon(index)"
+        @click.native="$emit('change', index)"
       />
       <h3 v-if="disabledCoupons.length">{{ disabledListTitle || $t('disabled') }}</h3>
       <coupon-item
@@ -41,7 +42,7 @@
       v-show="showCloseButton"
       v-text="closeButtonText || $t('close')"
       class="van-coupon-list__close van-hairline--top"
-      @click="onClickNotUse"
+      @click="$emit('change', -1)"
     />
   </div>
 </template>
@@ -67,11 +68,17 @@ export default create({
     CouponItem
   },
 
+  model: {
+    prop: 'code'
+  },
+
   props: {
+    code: String,
     closeButtonText: String,
     inputPlaceholder: String,
     disabledListTitle: String,
     exchangeButtonText: String,
+    exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
     exchangeMinLength: {
       type: Number,
@@ -105,17 +112,29 @@ export default create({
 
   data() {
     return {
-      exchangeCode: ''
+      currentCode: this.code || ''
     };
   },
 
   computed: {
     buttonDisabled() {
-      return this.exchangeButtonDisabled || this.exchangeCode.length < this.exchangeMinLength;
+      return (
+        !this.exchangeButtonLoading &&
+        (this.exchangeButtonDisabled ||
+          this.currentCode.length < this.exchangeMinLength)
+      );
     }
   },
 
   watch: {
+    code(code) {
+      this.currentCode = code;
+    },
+
+    currentCode(code) {
+      this.$emit('input', code);
+    },
+
     displayedCouponIndex(val) {
       this.scrollToShowCoupon(val);
     }
@@ -126,17 +145,16 @@ export default create({
   },
 
   methods: {
-    onClickNotUse() {
-      this.$emit('change', -1);
-    },
-    onClickCoupon(index) {
-      this.$emit('change', index);
-    },
     onClickExchangeButton() {
-      this.$emit('exchange', this.exchangeCode);
-      this.exchangeCode = '';
+      this.$emit('exchange', this.currentCode);
+
+      // auto clear currentCode when not use v-model
+      if (!this.code) {
+        this.currentCode = '';
+      }
     },
-    // 滚动到特定优惠券的位置
+
+    // scroll to show specific coupon
     scrollToShowCoupon(index) {
       if (index === -1) {
         return;
