@@ -1,12 +1,12 @@
 <template>
   <div class="van-sku-header van-hairline--bottom">
     <div class="van-sku-header__img-wrap">
-      <img class="van-sku__goods-img" :src="goodsImg">
+      <img class="van-sku__goods-img" :src="goodsImg" >
     </div>
     <div class="van-sku-header__goods-info">
       <div class="van-sku__goods-name">{{ goods.title }}</div>
       <div class="van-sku__goods-price"><span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span></div>
-      <span class="van-sku__close-icon" @click="onCloseClicked" />
+      <span class="van-sku__close-icon" @click="skuEventBus.$emit('sku:close')" />
     </div>
   </div>
 </template>
@@ -26,9 +26,6 @@ export default create({
   },
 
   computed: {
-    skuTree() {
-      return this.sku.tree;
-    },
     goodsImg() {
       const s1Id = this.selectedSku.s1;
       const skuImg = this.getSkuImg(s1Id);
@@ -45,14 +42,11 @@ export default create({
   },
 
   methods: {
-    onCloseClicked() {
-      this.skuEventBus.$emit('sku:close');
-    },
     getSkuImg(id) {
       if (!id) return;
 
       // 目前skuImg都挂载在skuTree中s1那类sku上
-      const treeItem = this.skuTree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
+      const treeItem = this.sku.tree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
 
       if (!treeItem.v) {
         return;

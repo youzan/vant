@@ -1,7 +1,17 @@
 <template>
   <div class="van-sku-actions">
-    <van-button v-if="showAddCartBtn" bottom-action @click="onAddCartClicked">{{ $t('cart') }}</van-button>
-    <van-button type="primary" bottom-action @click="onBuyClicked">{{ buyText || $t('buy') }}</van-button>
+    <van-button
+      v-if="showAddCartBtn"
+      bottom-action
+      :text="$t('cart')"
+      @click="skuEventBus.$emit('sku:addCart')"
+    />
+    <van-button
+      type="primary"
+      bottom-action
+      :text="buyText || $t('buy')"
+      @click="skuEventBus.$emit('sku:buy')"
+    />
   </div>
 </template>
 
@@ -20,15 +30,6 @@ export default create({
     buyText: String,
     skuEventBus: Object,
     showAddCartBtn: Boolean
-  },
-
-  methods: {
-    onAddCartClicked() {
-      this.skuEventBus.$emit('sku:addCart');
-    },
-    onBuyClicked() {
-      this.skuEventBus.$emit('sku:buy');
-    }
   }
 });
 </script>

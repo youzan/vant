@@ -73,8 +73,9 @@ Vue.use(Button);
 |-----------|-----------|-----------|-------------|-------------|
 | type | 按钮类型 | `String` | `default` | `primary` `danger` |
 | size | 按钮尺寸 | `String` | `normal` | `large` `small` `mini` |
+| text | 按钮文字 | `String` | - | - |
 | tag | 按钮标签 | `String` | `button` | 任意`HTML`标签 |
-| native-type | 按钮类型（原生） | `String` | `''` | - |
+| native-type | 按钮类型（原生） | `String` | - | - |
 | disabled | 是否禁用 | `Boolean` |  `false` | - |
 | loading | 是否显示为加载状态 | `Boolean` |  `false` | - |
 | block | 是否为块级元素 | `Boolean` |   `false` | - |

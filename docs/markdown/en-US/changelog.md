@@ -1,5 +1,35 @@
 ## Changelog
 
+
+### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
+`2018-01-23`
+
+**Improvements**
+
+* Button: add text prop [\#563](https://github.com/youzan/vant/pull/563) [@chenjiahan](https://github.com/chenjiahan)
+* CouponList: support v-model、exchangeButtonLoading、exchangeMinLength [\#556](https://github.com/youzan/vant/pull/556) [\#566](https://github.com/youzan/vant/pull/566) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: update share icon [\#562](https://github.com/youzan/vant/pull/562) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: improve render performance [\#550](https://github.com/youzan/vant/pull/550) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* Area: should not display city & county list when not select province [\#560](https://github.com/youzan/vant/pull/560) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: fix required style [\#553](https://github.com/youzan/vant/pull/553) [@qianzhaoy](https://github.com/qianzhaoy)
+
+
+### [0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+`2018-01-18`
+
+**Improvements**
+
+* Picker: add props to custom button text [\#548](https://github.com/youzan/vant/pull/548) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: add setDefaultOptions method [\#541](https://github.com/youzan/vant/pull/541) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: add setDefaultOptions method [\#539](https://github.com/youzan/vant/pull/539) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* Stepper: not fire event on changing the value prop [\#546](https://github.com/youzan/vant/pull/546) [@chuangbo](https://github.com/chuangbo)
+* Picker: fix misspelling of visibleItemCount prop [\#549](https://github.com/youzan/vant/pull/549) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`

@@ -69,7 +69,7 @@ export default {
 
 ### CouponCell API
 
-| 参数 | 说明 | 类型 | 默认值 | 必须 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | title | 单元格标题 | `String` | `优惠券码` | - |
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
@@ -78,13 +78,16 @@ export default {
 
 ### CouponList API
 
-| 参数 | 说明 | 类型 | 默认值 | 必须 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
+| v-model | 当前输入的兑换码 | `String` | - | - |
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | disabled-doupons | 不可用优惠券列表 | `Array` | `[]` | - |
 | exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
+| exchange-button-loading | 是否在兑换按钮上显示加载动画 | `Boolean` | `false` | - |
 | exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
+| exchange-min-length | 兑换码最小长度 | `Number` | `1` | - |
 | displayed-coupon-index | 滚动至特定优惠券位置 | `Number` | - | - |
 | show-close-button | 是否显示列表底部按钮 | `Boolean` | `true` | - |
 | close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |

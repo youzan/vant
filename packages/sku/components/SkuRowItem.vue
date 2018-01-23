@@ -1,12 +1,14 @@
 <template>
   <span
-    v-if="isChoosable"
-    @click="onSkuSelected"
     class="van-sku-row__item"
-    :class="{ 'van-sku-row__item--active': isChoosed }">
+    :class="{
+      'van-sku-row__item--active': isChoosed,
+      'van-sku-row__item--disabled': !isChoosable
+    }"
+    @click="onSkuSelected"
+  >
     {{ skuValue.name }}
   </span>
-  <span v-else class="van-sku-row__item van-sku-row__item--disabled">{{ skuValue.name }}</span>
 </template>
 
 <script>
@@ -25,6 +27,7 @@ export default {
     isChoosed() {
       return this.skuValue.id === this.selectedSku[this.skuKeyStr];
     },
+
     isChoosable() {
       const matchedSku = Object.assign({}, this.selectedSku, {
         [this.skuKeyStr]: this.skuValue.id
@@ -44,7 +47,12 @@ export default {
 
   methods: {
     onSkuSelected() {
-      this.skuEventBus.$emit('sku:select', Object.assign({}, this.skuValue, { skuKeyStr: this.skuKeyStr }));
+      if (this.isChoosable) {
+        this.skuEventBus.$emit('sku:select', {
+          ...this.skuValue,
+          skuKeyStr: this.skuKeyStr
+        });
+      }
     }
   }
 };

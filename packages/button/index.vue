@@ -23,7 +23,7 @@
       :color="type === 'default' ? 'black' : 'white'"
     />
     <span class="van-button__text">
-      <slot />
+      <slot>{{ text }}</slot>
     </span>
   </component>
 </template>
@@ -35,6 +35,7 @@ export default create({
   name: 'van-button',
 
   props: {
+    text: String,
     block: Boolean,
     loading: Boolean,
     disabled: Boolean,
