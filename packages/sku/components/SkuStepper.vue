@@ -86,6 +86,7 @@ export default create({
         this.limitType = QUOTA_LIMIT;
       } else {
         limit = this.stock;
+        this.limitType = STOCK_LIMIT;
       }
 
       return limit;

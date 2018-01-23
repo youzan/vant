@@ -2,6 +2,7 @@
   <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
+        <!-- sku-header -->
         <slot name="sku-header" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb">
           <sku-header
             :sku-event-bus="skuEventBus"
@@ -12,6 +13,9 @@
           />
         </slot>
         <div class="van-sku-body" :style="bodyStyle">
+          <!-- sku-body-top -->
+          <slot name="sku-body-top" :selectedSku="selectedSku" :skuEventBus="skuEventBus" />
+          <!-- sku-group -->
           <slot name="sku-group" :selectedSku="selectedSku" :skuEventBus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
               <div
@@ -35,7 +39,9 @@
               </div>
             </div>
           </slot>
+          <!-- extra-sku-group -->
           <slot name="extra-sku-group" :skuEventBus="skuEventBus"/>
+          <!-- sku-stepper -->
           <slot name="sku-stepper" :skuEventBus="skuEventBus" :selectedSku="selectedSku" :selectedSkuComb="selectedSkuComb" :selectedNum="selectedNum">
             <sku-stepper
               ref="skuStepper"
@@ -51,6 +57,7 @@
               :hide-stock="hideStock"
             />
           </slot>
+          <!-- sku-messages -->
           <slot name="sku-messages">
             <sku-messages
               ref="skuMessages"
@@ -60,6 +67,7 @@
             />
           </slot>
         </div>
+        <!-- sku-actions -->
         <slot name="sku-actions" :skuEventBus="skuEventBus">
           <sku-actions
             :sku-event-bus="skuEventBus"
@@ -134,6 +142,7 @@ export default create({
       default: 200
     },
     resetStepperOnHide: Boolean,
+    resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
     messagePlaceholderMap: {
       type: Object,
@@ -167,6 +176,10 @@ export default create({
 
         if (this.resetStepperOnHide) {
           this.$refs.skuStepper && this.$refs.skuStepper.setCurrentNum(1);
+        }
+
+        if (this.resetSelectedSkuOnHide) {
+          this.resetSelectedSku(this.skuTree);
         }
       }
     },

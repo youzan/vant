@@ -20,6 +20,7 @@ Vue.use(Sku);
   :quota="quota"
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
+  :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
@@ -71,6 +72,7 @@ Vue.use(Sku);
 | quota | 限购数(0表示不限购) | `Number` | `0` | - |
 | quota-used | 已经购买过的数量 | `Number` | `0` | - |
 | reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
+| reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 
@@ -88,6 +90,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，�
 | 名称 | 说明 | 
 |-----------|-----------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
+| sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
 | sku-group | 商品sku展示区 |
 | extra-sku-group | 额外商品sku展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
