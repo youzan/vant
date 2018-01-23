@@ -26,7 +26,8 @@ describe('Sku', (done) => {
         sku: data.sku,
         goodsId: data.goods_id,
         goods: goods,
-        resetStepperOnHide: true
+        resetStepperOnHide: true,
+        resetSelectedSkuOnHide: true
       }
     });
 

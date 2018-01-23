@@ -366,7 +366,7 @@ export default {
           extend: null,
           kdt_id: 55,
           discount_price: 0,
-          stock_num: 6,
+          stock_num: 4,
           stock_mode: 0,
           is_sell: null,
           combin_sku: false,
@@ -506,7 +506,7 @@ export default {
     alias: '2oml0r0n5vytj',
     quota: 15,
     is_virtual: '0',
-    quota_used: 0,
+    quota_used: 1,
     goods_info: {
       title: 'Goods Name',
       picture: 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg',
