@@ -75,7 +75,7 @@ export default create({
     },
 
     tabs(tabs) {
-      this.correctActive(this.curActive);
+      this.correctActive(this.curActive || this.active);
       this.setNavBar();
     },
 
