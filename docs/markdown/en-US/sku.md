@@ -20,6 +20,7 @@ Vue.use(Sku);
   :quota="quota"
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
+  :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
   @buy-clicked="handleBuyClicked"
   @add-cart="handleAddCartClicked"
@@ -70,6 +71,7 @@ Vue.use(Sku);
 | quota | Quota (0 as no limit) | `Number` | `0` | - |
 | quota-used | Used quota | `Number` | `0` | - |
 | reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
 
@@ -85,6 +87,7 @@ Vue.use(Sku);
 | Name | Description | 
 |-----------|-----------|
 | sku-header | Custom header |
+| sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |
 | sku-stepper | Custom stepper |

@@ -2,6 +2,7 @@
   <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
     <div class="van-sku-container">
       <div class="van-sku-layout">
+        <!-- sku-header -->
         <slot
           name="sku-header"
           :sku-event-bus="skuEventBus"
@@ -17,6 +18,9 @@
           />
         </slot>
         <div class="van-sku-body" :style="bodyStyle">
+          <!-- sku-body-top -->
+          <slot name="sku-body-top" :selected-sku="selectedSku" :sku-event-bus="skuEventBus" />
+          <!-- sku-group -->
           <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
             <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
               <div
@@ -40,7 +44,9 @@
               </div>
             </div>
           </slot>
+          <!-- extra-sku-group -->
           <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
+          <!-- sku-stepper -->
           <slot
             name="sku-stepper"
             :sku-event-bus="skuEventBus"
@@ -62,6 +68,7 @@
               :hide-stock="hideStock"
             />
           </slot>
+          <!-- sku-messages -->
           <slot name="sku-messages">
             <sku-messages
               ref="skuMessages"
@@ -71,6 +78,7 @@
             />
           </slot>
         </div>
+        <!-- sku-actions -->
         <slot name="sku-actions" :sku-event-bus="skuEventBus">
           <sku-actions
             :sku-event-bus="skuEventBus"
@@ -126,6 +134,7 @@ export default create({
     stepperTitle: String,
     hideStock: Boolean,
     resetStepperOnHide: Boolean,
+    resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
     initialSku: {
       type: Object,
@@ -178,6 +187,10 @@ export default create({
 
         if (this.resetStepperOnHide) {
           this.$refs.skuStepper && this.$refs.skuStepper.setCurrentNum(1);
+        }
+
+        if (this.resetSelectedSkuOnHide) {
+          this.resetSelectedSku(this.skuTree);
         }
       }
     },

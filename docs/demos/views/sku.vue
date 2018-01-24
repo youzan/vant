@@ -11,6 +11,7 @@
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
           :reset-stepper-on-hide="true"
+          :reset-selected-sku-on-hide="true"
           :disable-stepper-input="true"
           @buy-clicked="handleBuyClicked"
           @add-cart="handleAddCartClicked"
