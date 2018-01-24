@@ -40,13 +40,26 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| result-type | 读取文件的方式，以base64的方式读取；以文本的方式读取 | `String` | `dataUrl` | `text` |
-| disable | 是否禁用上传,在图片上传期间设置为true，禁止用户点击此组件上传图片 | `Boolean` | `false` | - |
-| before-read | 读文件之前的钩子，参数为选择的文件，若返回 false 则停止读取文件 | `Function` | - | - |
-| after-read | 文件读完之后回调此函数，参数为 { file:'选择的文件',content:'读的内容' } | `Function` | - | - |
+| result-type | 文件读取结果类型 | `String` | `dataUrl` | `text` |
+| disable | 是否禁用图片上传 | `Boolean` | `false` | - |
+| before-read | 读取前的回调函数，返回 false 可终止文件读取 | `Function` | - | - |
+| after-read | 读取完成后的回调函数 | `Function` | - | - |
+| max-size | 文件大小限制，单位为 byte | `Number` | - | - |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| oversize | 文件大小超过限制时触发 | 同 after-read |
 
 ### Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
-| - | 自定义上传显示图标 |
+| - | 自定义 uploader 内容 |
+
+### afterRead 回调参数
+| key | 说明 | 类型 |
+|-----------|-----------|-----------|
+| file | 文件解析后的 file 对象 | `Object` |
+| content | 文件内容 | `String` |

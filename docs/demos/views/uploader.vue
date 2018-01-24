@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <div class="demo-uploader-container">
-        <van-uploader :after-read="logContent">
+        <van-uploader :max-size="102400" @oversize="logContent('oversize')">
           <van-icon name="photograph" />
         </van-uploader>
       </div>
@@ -10,7 +10,7 @@
 
     <demo-block :title="$t('title2')">
       <div class="demo-uploader-container">
-        <van-uploader :after-read="logContent" accept="image/gif, image/jpeg" multiple>
+        <van-uploader accept="image/gif, image/jpeg" multiple :max-size="36000" @oversize="logContent">
           <van-icon name="photograph" />
         </van-uploader>
       </div>
