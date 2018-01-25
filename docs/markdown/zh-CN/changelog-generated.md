@@ -1,5 +1,21 @@
 ## 更新日志
 
+## [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6) (2018-01-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.5...v0.12.6)
+
+**Issue**
+
+- 能否去除cell的下边框线 [\#576](https://github.com/youzan/vant/issues/576)
+- 地址编辑 areaList 请求后 赋值不可以？ [\#570](https://github.com/youzan/vant/issues/570)
+
+**Improvements**
+
+- \[new feature\] Uploader: support maxSize prop [\#575](https://github.com/youzan/vant/pull/575) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] AddressEdit: add default slot [\#573](https://github.com/youzan/vant/pull/573) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: active not work [\#572](https://github.com/youzan/vant/pull/572) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] 修复限购情况下，未超出限购数时的错误文案显示；\[new feature\] 增加sku-body-top slot；\[new feature\] 增加resetSelectedSkuOnHide参数 [\#568](https://github.com/youzan/vant/pull/568) ([w91](https://github.com/w91))
+- \[bugfix\] Toast: work break [\#567](https://github.com/youzan/vant/pull/567) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5) (2018-01-23)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.4...v0.12.5)
 
