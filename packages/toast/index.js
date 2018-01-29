@@ -4,6 +4,7 @@ import VueToast from './toast';
 const defaultOptions = {
   type: 'text',
   mask: false,
+  message: '',
   visible: true,
   duration: 3000,
   position: 'middle',
