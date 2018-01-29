@@ -10,7 +10,7 @@ const defaultOptions = {
   position: 'middle',
   forbidClick: false
 };
-const parseOptions = options => typeof options === 'object' ? options : { message: options };
+const parseOptions = message => typeof message === 'object' ? message : { message };
 
 let queue = [];
 let singleton = true;
