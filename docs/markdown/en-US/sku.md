@@ -22,8 +22,8 @@ Vue.use(Sku);
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 />
 ```
 
@@ -42,15 +42,13 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="true"
   :initial-sku="initialSku"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 >
-  <!-- hide sku messages -->
-  <template slot="sku-messages"></template>
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="handlePointClicked">Button</van-button>
+      <van-button bottom-action @click="onPointClicked">Button</van-button>
       <!-- trigger sku inner event -->
       <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">Button</van-button>
     </div>
@@ -81,6 +79,12 @@ Vue.use(Sku);
 |-----------|-----------|-----------|
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |
+
+### Methods
+
+| Method | Description |
+|-----------|-----------|
+| getSkuData() | Get current sku data |
 
 ### Slot
 
