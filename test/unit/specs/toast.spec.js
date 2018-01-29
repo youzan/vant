@@ -2,7 +2,7 @@ import Toast from 'packages/toast';
 
 describe('Toast', () => {
   afterEach(() => {
-    Toast.clear();
+    Toast.clear(true);
   });
 
   it('create a empty toast', () => {
@@ -87,28 +87,49 @@ describe('Toast', () => {
   });
 
   it('toast disappeared after duration', (done) => {
-    Toast({
+    const toast = Toast({
       message: 'toast',
       duration: 10
     });
 
-    expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.false;
-
     setTimeout(() => {
-      expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.true;
+      expect(toast.$el.style.display === 'none').to.be.true;
+      Toast.clear();
       done();
     }, 500);
   });
 
-  it('toast duration 0', (done) => {
-    Toast({
+  it('toast duration 0', () => {
+    Toast.allowMultiple();
+    const toast = Toast({
       message: 'toast',
       duration: 0
     });
+    expect(toast.timer).to.equal(undefined);
+    Toast.allowMultiple(false);
+  });
 
-    setTimeout(() => {
-      expect(document.querySelector('.van-toast-wrapper').style.display === 'none').to.be.false;
-      done();
-    }, 500);
+  it('multiple toast', () => {
+    Toast.allowMultiple();
+    Toast.clear(true);
+    const toast1 = Toast.success('1');
+    const toast2 = Toast.success('2');
+    Toast.clear();
+    expect(toast1.visible).to.be.false;
+    expect(toast2.visible).to.be.true;
+    Toast.clear();
+    Toast.clear();
+    expect(toast2.visible).to.be.false;
+    Toast.allowMultiple(false);
+  });
+
+  it('set default options', () => {
+    Toast.setDefaultOptions({ duration: 1000 });
+    const toast1 = Toast(1);
+    expect(toast1.duration).to.equal(1000);
+
+    Toast.resetDefaultOptions();
+    const toast2 = Toast(1);
+    expect(toast2.duration).to.equal(3000);
   });
 });

@@ -21,7 +21,7 @@
 <script>
 import { create } from '../utils';
 
-const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
+const STYLE_LIST = ['success', 'fail', 'loading'];
 
 export default create({
   name: 'van-toast',
@@ -48,7 +48,7 @@ export default create({
 
   computed: {
     displayStyle() {
-      return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
+      return STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
     }
   }
 });
