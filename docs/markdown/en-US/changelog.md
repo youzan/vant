@@ -1,5 +1,19 @@
 ## Changelog
 
+### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+`2018-01-25`
+
+**Improvements**
+
+* AddressEdit: add default slot [\#573](https://github.com/youzan/vant/pull/573) [@chenjiahan](https://github.com/chenjiahan)
+* Uploader: support maxSize prop [\#575](https://github.com/youzan/vant/pull/575) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add sku-body-top slot and resetSelectedSkuOnHide prop [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+
+* fix Sku message error when overlimit [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+* fix Toast work break [\#567](https://github.com/youzan/vant/pull/567) [@chenjiahan](https://github.com/chenjiahan)
+* fix Tab active not work [\#572](https://github.com/youzan/vant/pull/572) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
 `2018-01-23`

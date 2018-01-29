@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+`2018-01-25`
+
+**Improvements**
+
+- AddressEdit: 增加默认 slot [\#573](https://github.com/youzan/vant/pull/573) [@chenjiahan](https://github.com/chenjiahan)
+- Uploader: 新增 maxSize 属性 [\#575](https://github.com/youzan/vant/pull/575) [@chenjiahan](https://github.com/chenjiahan)
+- Sku: 新增 sku-body-top slot、resetSelectedSkuOnHide 属性 [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+
+- 修复 Toast 文案换行 [\#567](https://github.com/youzan/vant/pull/567) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Sku 限购情况下，未超出限购数时的错误文案显示 [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+- 修复 Tab active 在初始化时未生效的问题 [\#572](https://github.com/youzan/vant/pull/572) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
 `2018-01-23`
 
