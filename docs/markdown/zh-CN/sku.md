@@ -22,8 +22,8 @@ Vue.use(Sku);
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 />
 ```
 
@@ -42,16 +42,14 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="true"
   :initial-sku="initialSku"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 >
-  <!-- 隐藏 sku messages -->
-  <template slot="sku-messages"></template>
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="handlePointClicked">积分兑换</van-button>
-      <!-- 直接触发 sku 内部事件，通过内部事件执行 handleBuyClicked 回调 -->
+      <van-button bottom-action @click="onPointClicked">积分兑换</van-button>
+      <!-- 直接触发 sku 内部事件，通过内部事件执行 onBuyClicked 回调 -->
       <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
     </div>
   </template>
@@ -83,6 +81,11 @@ Vue.use(Sku);
 | add-cart | 点击添加购物车回调 | skuData: Object |
 | buy-clicked | 点击购买回调 | skuData: Object |
 
+### 方法
+
+| 函数 | 说明 |
+|-----------|-----------|
+| getSkuData() | 获取当前 skuData |
 
 ### Slot
 Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，可以按需进行替换。区块顺序见下表：

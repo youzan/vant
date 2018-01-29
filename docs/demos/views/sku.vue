@@ -13,8 +13,8 @@
           :reset-stepper-on-hide="true"
           :reset-selected-sku-on-hide="true"
           :disable-stepper-input="true"
-          @buy-clicked="handleBuyClicked"
-          @add-cart="handleAddCartClicked"
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
         />
         <van-button type="primary" @click="showBase = true" block>{{ $t('basicUsage') }}</van-button>
       </div>
@@ -23,7 +23,7 @@
     <demo-block :title="$t('advancedUsage')">
       <div class="sku-container">
         <van-sku
-          v-model="showCustomAction"
+          v-model="showCustom"
           :stepper-title="$t('stepperTitle')"
           :sku="$t('sku').sku"
           :goods="$t('sku').goods_info"
@@ -34,18 +34,17 @@
           :quota-used="$t('sku').quota_used"
           :reset-stepper-on-hide="true"
           :initial-sku="initialSku"
-          @buy-clicked="handleBuyClicked"
-          @add-cart="handleAddCartClicked"
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
         >
-          <template slot="sku-messages" />
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
-              <van-button bottom-action @click="handlePointClicked">{{ $t('button1') }}</van-button>
+              <van-button bottom-action @click="onPointClicked">{{ $t('button1') }}</van-button>
               <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">{{ $t('button2') }}</van-button>
             </div>
           </template>
         </van-sku>
-        <van-button type="primary" @click="showCustomAction = true" block>{{ $t('advancedUsage') }}</van-button>
+        <van-button type="primary" @click="showCustom = true" block>{{ $t('advancedUsage') }}</van-button>
       </div>
     </demo-block>
   </demo-section>
@@ -73,7 +72,7 @@ export default {
   data() {
     return {
       showBase: false,
-      showCustomAction: false,
+      showCustom: false,
       initialSku: {
         s1: '30349',
         s2: '1193'
@@ -82,13 +81,15 @@ export default {
   },
 
   methods: {
-    handleBuyClicked(data) {
+    onBuyClicked(data) {
       Toast(JSON.stringify(data));
     },
-    handleAddCartClicked(data) {
+
+    onAddCartClicked(data) {
       Toast(JSON.stringify(data));
     },
-    handlePointClicked() {
+
+    onPointClicked() {
       Toast('积分兑换');
     }
   }

@@ -251,12 +251,12 @@ export default create({
     const skuEventBus = new Vue();
     this.skuEventBus = skuEventBus;
 
-    skuEventBus.$on('sku:close', this.handleCloseClicked);
-    skuEventBus.$on('sku:select', this.handleSkuSelected);
-    skuEventBus.$on('sku:numChange', this.handleNumChange);
-    skuEventBus.$on('sku:overLimit', this.handleOverLimit);
-    skuEventBus.$on('sku:addCart', this.handleAddCartClicked);
-    skuEventBus.$on('sku:buy', this.handleBuyClicked);
+    skuEventBus.$on('sku:close', this.onCloseClicked);
+    skuEventBus.$on('sku:select', this.onSkuSelected);
+    skuEventBus.$on('sku:numChange', this.onNumChange);
+    skuEventBus.$on('sku:overLimit', this.onOverLimit);
+    skuEventBus.$on('sku:addCart', this.onAddCartClicked);
+    skuEventBus.$on('sku:buy', this.onBuyClicked);
 
     this.resetSelectedSku(this.skuTree);
     // 组件初始化后的钩子，抛出skuEventBus
@@ -306,11 +306,11 @@ export default create({
       }
     },
 
-    handleCloseClicked() {
+    onCloseClicked() {
       this.show = false;
     },
 
-    handleSkuSelected(skuValue) {
+    onSkuSelected(skuValue) {
       // 点击已选中的sku时则取消选中
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
@@ -324,11 +324,11 @@ export default create({
       });
     },
 
-    handleNumChange(num) {
+    onNumChange(num) {
       this.selectedNum = num;
     },
 
-    handleOverLimit({ action, limitType, quota, quotaUsed }) {
+    onOverLimit({ action, limitType, quota, quotaUsed }) {
       if (action === 'minus') {
         Toast(this.$t('least'));
       } else if (action === 'plus') {
@@ -342,27 +342,31 @@ export default create({
       }
     },
 
-    handleAddCartClicked() {
-      this.handleBuyOrAddCart('add-cart');
+    onAddCartClicked() {
+      this.onBuyOrAddCart('add-cart');
     },
 
-    handleBuyClicked() {
-      this.handleBuyOrAddCart('buy-clicked');
+    onBuyClicked() {
+      this.onBuyOrAddCart('buy-clicked');
     },
 
-    handleBuyOrAddCart(type) {
+    onBuyOrAddCart(type) {
       const error = this.validateSku();
       if (error) {
         Toast(error);
-        return;
+      } else {
+        this.$emit(type, this.getSkuData());
       }
-      this.$emit(type, {
+    },
+
+    getSkuData() {
+      return {
         goodsId: this.goodsId,
         selectedNum: this.selectedNum,
         selectedSkuComb: this.selectedSkuComb,
         messages: this.getSkuMessages(),
         cartMessages: this.getSkuCartMessages()
-      });
+      };
     }
   }
 });
