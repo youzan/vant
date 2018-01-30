@@ -42,6 +42,8 @@ Vue.use(Area);
 | title | 顶部栏标题 | `String` | `''`   | - |
 | area-list | 省市县数据，格式见下方 | `Object` | - | - |
 | columns-num | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | `3` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
+| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
 
 ### Event
 
