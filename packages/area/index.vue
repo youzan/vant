@@ -6,6 +6,8 @@
     value-key="name"
     :title="title"
     :columns="columns"
+    :item-height="itemHeight"
+    :visible-item-count="visibleItemCount"
     @change="onChange"
     @confirm="$emit('confirm', $event)"
     @cancel="$emit('cancel', $event)"
@@ -27,6 +29,8 @@ export default create({
     value: {},
     title: String,
     areaList: Object,
+    itemHeight: Number,
+    visibleItemCount: Number,
     // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {
       type: [String, Number],
