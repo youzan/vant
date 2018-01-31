@@ -84,6 +84,7 @@ const components = [
   CouponCell,
   CouponList,
   DatetimePicker,
+  Dialog,
   Field,
   GoodsAction,
   GoodsActionBigBtn,

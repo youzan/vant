@@ -107,7 +107,7 @@ Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 ### Event
 Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | click-icon | 点击尾部图标时触发 | - |
 
