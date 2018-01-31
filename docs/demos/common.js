@@ -45,11 +45,15 @@ Locale.add({
     search: '搜索',
     content: '内容',
     custom: '自定义',
+    username: '用户名',
+    password: '密码',
     loading: '加载状态',
     disabled: '禁用状态',
     uneditable: '不可编辑',
     basicUsage: '基础用法',
-    advancedUsage: '高级用法'
+    advancedUsage: '高级用法',
+    usernamePlaceholder: '请输入用户名',
+    passwordPlaceholder: '请输入密码'
   },
   'en-US': {
     red: 'Red',
@@ -66,10 +70,14 @@ Locale.add({
     search: 'Search',
     content: 'Content',
     custom: 'Custom',
+    username: 'Username',
+    password: 'Password',
     loading: 'Loading',
     disabled: 'Disabled',
     uneditable: 'Uneditable',
     basicUsage: 'Basic Usage',
-    advancedUsage: 'Advanced Usage'
+    advancedUsage: 'Advanced Usage',
+    usernamePlaceholder: 'Username',
+    passwordPlaceholder: 'Password'
   }
 });

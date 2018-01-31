@@ -9,7 +9,6 @@ function buildVantEntry() {
   const uninstallComponents = [
     'Lazyload',
     'Waterfall',
-    'Dialog',
     'Toast',
     'ImagePreview',
     'Locale'

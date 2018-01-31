@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import Dialog from 'packages/dialog';
 
 describe('Dialog', () => {
@@ -48,5 +49,19 @@ describe('Dialog', () => {
     setTimeout(() => {
       document.querySelector('.van-dialog__cancel').click();
     }, 500);
+  });
+
+  it('set default options', () => {
+    Dialog.setDefaultOptions({
+      title: 'default title'
+    });
+    expect(Dialog.currentOptions.title).to.equal('default title');
+    Dialog.resetDefaultOptions();
+    expect(Dialog.currentOptions.title).to.equal('');
+  });
+
+  it('register dialog component', () => {
+    Vue.use(Dialog);
+    expect(!!Vue.component('van-dialog')).to.be.true;
   });
 });
