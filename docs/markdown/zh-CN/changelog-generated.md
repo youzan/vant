@@ -1,5 +1,32 @@
 ## 更新日志
 
+## [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7) (2018-01-31)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.6...v0.12.7)
+
+**Breaking changes**
+
+-  关于上传组件的一些功能扩展 [\#526](https://github.com/youzan/vant/issues/526)
+
+**Issue**
+
+- 业务组件比如地址编辑，按钮文本支持修改吗？（比如保存改成提交） [\#590](https://github.com/youzan/vant/issues/590)
+- \[求教\] Dialog.alert 的message可以是tab组件吗? [\#587](https://github.com/youzan/vant/issues/587)
+- 社区能活跃点吗？ [\#582](https://github.com/youzan/vant/issues/582)
+- 页面初始化后Toast自动弹出 [\#581](https://github.com/youzan/vant/issues/581)
+- \</van-cell-group\>组件嵌套不正确 [\#578](https://github.com/youzan/vant/issues/578)
+- Dialog需求prompt功能 [\#577](https://github.com/youzan/vant/issues/577)
+- 遍历对象数组动态生成tab，active不起效 [\#569](https://github.com/youzan/vant/issues/569)
+- 没有重置Sku下的规格选项 [\#564](https://github.com/youzan/vant/issues/564)
+- 地址编辑 如何新增表单项？ [\#555](https://github.com/youzan/vant/issues/555)
+
+**Improvements**
+
+- \[new feature\] Dialog: support component call [\#593](https://github.com/youzan/vant/pull/593) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Area: add item-height & visible-item-count props [\#591](https://github.com/youzan/vant/pull/591) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Toast: support multiple instance [\#586](https://github.com/youzan/vant/pull/586) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Sku: add getSkuData method [\#585](https://github.com/youzan/vant/pull/585) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: multi line label stye error [\#583](https://github.com/youzan/vant/pull/583) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6) (2018-01-25)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.5...v0.12.6)
 

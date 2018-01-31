@@ -1,5 +1,18 @@
 ## 更新日志
 
+### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+`2018-01-31`
+
+**Improvements**
+* Area: 新增 item-height、visible-item-count 属性 [\#591](https://github.com/youzan/vant/pull/591) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: 支持以组件形式调用 [\#593](https://github.com/youzan/vant/pull/593) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 支持同时弹出多个 Toast [\#586](https://github.com/youzan/vant/pull/586) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 新增 getSkuData 方法 [\#585](https://github.com/youzan/vant/pull/585) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 Field label 多行时样式错误的问题 [\#583](https://github.com/youzan/vant/pull/583) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
 `2018-01-25`
 
