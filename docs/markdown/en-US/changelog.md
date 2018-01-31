@@ -1,5 +1,17 @@
 ## Changelog
 
+### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+`2018-01-31`
+
+**Improvements**
+* Area: add item-height & visible-item-count props [\#591](https://github.com/youzan/vant/pull/591) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: support component call [\#593](https://github.com/youzan/vant/pull/593) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: support multiple instance [\#586](https://github.com/youzan/vant/pull/586) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add getSkuData method [\#585](https://github.com/youzan/vant/pull/585) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix Field multi line label style error [\#583](https://github.com/youzan/vant/pull/583) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
 `2018-01-25`
 
