@@ -20,6 +20,24 @@
       </div>
     </demo-block>
 
+    <demo-block :title="$t('title2')">
+      <div class="sku-container">
+        <van-sku
+          v-model="showBase"
+          :sku="$t('sku').sku"
+          :goods="$t('sku').goods_info"
+          :goods-id="$t('sku').goods_id"
+          :hide-stock="$t('sku').sku.hide_stock"
+          :quota="$t('sku').quota"
+          :quota-used="$t('sku').quota_used"
+          :custom-stepper-config="customStepperConfig"
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        />
+        <van-button type="primary" @click="showBase = true" block>{{ $t('title2') }}</van-button>
+      </div>
+    </demo-block>
+
     <demo-block :title="$t('advancedUsage')">
       <div class="sku-container">
         <van-sku
@@ -52,17 +70,20 @@
 
 <script>
 import data from '../mock/sku';
+import { LIMIT_TYPE } from '../../../packages/sku/constants';
 
 export default {
   i18n: {
     'zh-CN': {
       sku: data['zh-CN'],
+      title2: '自定义步进器相关配置',
       stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买'
     },
     'en-US': {
       sku: data['en-US'],
+      title2: 'Custom Stepper Related Config',
       stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button'
@@ -76,6 +97,22 @@ export default {
       initialSku: {
         s1: '30349',
         s2: '1193'
+      },
+      customStepperConfig: {
+        quotaText: '单次限购100件',
+        handleOverLimit: (data) => {
+          const { action, limitType, quota } = data;
+
+          if (action === 'minus') {
+            Toast('至少选择一件商品');
+          } else if (action === 'plus') {
+            if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
+              Toast(`限购${quota}件`);
+            } else {
+              Toast('库存不够了~~');
+            }
+          }
+        }
       }
     };
   },
