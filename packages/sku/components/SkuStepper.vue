@@ -12,7 +12,7 @@
       />
     </div>
     <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
-    <div v-if="quota > 0" class="van-sku__quota">{{ $t('quota', quota) }}</div>
+    <div v-if="quotaText" class="van-sku__quota">{{ quotaText }}</div>
   </div>
 </template>
 
@@ -40,7 +40,8 @@ export default create({
     quota: Number,
     quotaUsed: Number,
     hideStock: Boolean,
-    disableStepperInput: Boolean
+    disableStepperInput: Boolean,
+    customStepperConfig: Object
   },
 
   data() {
@@ -68,6 +69,18 @@ export default create({
         return this.selectedSkuComb.stock_num;
       }
       return this.skuStockNum;
+    },
+    quotaText() {
+      const { quotaText } = this.customStepperConfig;
+      let text = '';
+
+      if (quotaText) {
+        text = quotaText;
+      } else if (this.quota > 0) {
+        text = this.$t('quota', this.quota);
+      }
+
+      return text;
     },
     stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;

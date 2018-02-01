@@ -6,6 +6,7 @@ import SkuStepper from './components/SkuStepper';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
 import skuHelper from './utils/skuHelper';
+import constants from './constants';
 
 Sku.SkuActions = SkuActions;
 Sku.SkuHeader = SkuHeader;
@@ -14,5 +15,6 @@ Sku.SkuStepper = SkuStepper;
 Sku.SkuRow = SkuRow;
 Sku.SkuRowItem = SkuRowItem;
 Sku.skuHelper = skuHelper;
+Sku.skuConstants = constants;
 
 export default Sku;

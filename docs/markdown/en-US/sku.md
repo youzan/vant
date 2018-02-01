@@ -27,6 +27,23 @@ Vue.use(Sku);
 />
 ```
 
+#### Custom Stepper Config
+
+```html
+<van-sku
+  v-model="showBase"
+  :sku="sku"
+  :goods="goods"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :quota="quota"
+  :quota-used="quotaUsed"
+  :custom-stepper-config="customStepperConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
+/>
+```
+
 #### Advanced Usage
 
 ```html
@@ -72,6 +89,7 @@ Vue.use(Sku);
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
+| custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
 
 ### Event
 
@@ -153,6 +171,32 @@ sku: {
 goods: {
   title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
+}
+```
+
+
+#### customStepperConfig Data Structure
+```javascript
+customStepperConfig: {
+  // custom quota text
+  quotaText: 'only 5 can buy',
+  // custom callback when over limit
+  handleOverLimit: (data) => {
+    const { action, limitType, quota, quotaUsed } = data;
+
+    if (action === 'minus') {
+      Toast('at least select one');
+    } else if (action === 'plus') {
+      // const { LIMIT_TYPE } = Sku.skuConstants;
+      if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
+        let msg = `Buy up to ${quota}`;
+        if (quotaUsed > 0) msg += `，you already buy ${quotaUsed}`;
+        Toast(msg);
+      } else {
+        Toast('not enough stock');
+      }
+    }
+  }
 }
 ```
 
