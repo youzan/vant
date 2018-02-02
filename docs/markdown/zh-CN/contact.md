@@ -5,9 +5,10 @@
 ``` javascript
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue.use(ContactCard);
-Vue.use(ContactList);
-Vue.use(ContactEdit);
+Vue
+  .use(ContactCard)
+  .use(ContactList)
+  .use(ContactEdit);
 ```
 
 ### 代码演示
