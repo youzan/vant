@@ -105,8 +105,22 @@ In sticky mode, the tab will be fixed to top when scroll to top
 
 ```html
 <van-tabs :active="active" sticky>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
-    内容 {{ index }}
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+#### Custom title
+Use title slot to custom tab title
+
+```html
+<van-tabs :active="active">
+  <van-tab v-for="index in 2">
+    <div slot="title">
+      <van-icon name="more-o" />tab
+    </div>
+    content {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -126,6 +140,13 @@ In sticky mode, the tab will be fixed to top when scroll to top
 |-----------|-----------|-----------|-------------|-------------|
 | title | Tab title | `String` | - | - |
 | disabled | Whether disabled current tab | `Boolean` | `false` | - |
+
+### Tab Slot
+
+| name | Description |
+|-----------|-----------|
+| - | Content |
+| title | Custom tab |
 
 ### Tabs Event
 
