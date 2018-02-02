@@ -54,5 +54,6 @@
     right: 0;
     top: 0;
     bottom: 0;
+    line-height: inherit;
   }
 }
