@@ -4,8 +4,7 @@
 ``` javascript
 import { Checkbox, CheckboxGroup } from 'vant';
 
-Vue.use(Checkbox);
-Vue.use(CheckboxGroup);
+Vue.use(Checkbox).use(CheckboxGroup);
 ```
 
 ### 代码演示

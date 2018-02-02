@@ -6,8 +6,7 @@ import VantDoc from 'vant-doc';
 import isMobile from './utils/is-mobile';
 import './components/nprogress.css';
 
-Vue.use(VueRouter);
-Vue.use(VantDoc);
+Vue.use(VueRouter).use(VantDoc);
 
 const routesConfig = routes();
 

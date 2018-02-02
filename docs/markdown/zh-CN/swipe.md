@@ -4,8 +4,7 @@
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+Vue.use(Swipe).use(SwipeItem);
 ```
 
 ### 代码演示
