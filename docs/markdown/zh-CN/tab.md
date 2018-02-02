@@ -110,6 +110,20 @@ export default {
 </van-tabs>
 ```
 
+#### 自定义标签
+通过 title slot 可以自定义标签内容
+
+```html
+<van-tabs :active="active">
+  <van-tab v-for="index in 2">
+    <div slot="title">
+      <van-icon name="more-o" />选项
+    </div>
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
@@ -126,6 +140,13 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | title | tab的标题 | `String` | - | - |
 | disabled | 是否禁用这个tab | `Boolean` | `false` | - |
+
+### Tab Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 标签页内容 |
+| title | 自定义标签 |
 
 ### Tabs Event
 

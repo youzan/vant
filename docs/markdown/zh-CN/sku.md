@@ -27,6 +27,23 @@ Vue.use(Sku);
 />
 ```
 
+#### 自定义步进器相关配置
+
+```html
+<van-sku
+  v-model="showBase"
+  :sku="sku"
+  :goods="goods"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :quota="quota"
+  :quota-used="quotaUsed"
+  :custom-stepper-config="customStepperConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
+/>
+```
+
 #### 高级用法
 
 ```html
@@ -73,6 +90,7 @@ Vue.use(Sku);
 | reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
+| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 
 ### Event
 
@@ -160,6 +178,31 @@ goods: {
   title: '测试商品',
   // 默认商品 sku 缩略图
   picture: 'https://img.yzcdn.cn/1.jpg'
+}
+```
+
+#### customStepperConfig 对象结构
+```javascript
+customStepperConfig: {
+  // 自定义限购文案
+  quotaText: '每次限购xxx件',
+  // 自定义步进器超过限制时的回调
+  handleOverLimit: (data) => {
+    const { action, limitType, quota, quotaUsed } = data;
+
+    if (action === 'minus') {
+      Toast('至少选择一件商品');
+    } else if (action === 'plus') {
+      // const { LIMIT_TYPE } = Sku.skuConstants;
+      if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
+        let msg = `单次限购${quota}件`;
+        if (quotaUsed > 0) msg += `，您已购买${quotaUsed}`;
+        Toast(msg);
+      } else {
+        Toast('库存不够了~~');
+      }
+    }
+  }
 }
 ```
 
