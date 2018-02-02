@@ -66,6 +66,7 @@
               :quota-used="quotaUsed"
               :disable-stepper-input="disableStepperInput"
               :hide-stock="hideStock"
+              :custom-stepper-config="customStepperConfig"
             />
           </slot>
           <!-- sku-messages -->
@@ -157,6 +158,10 @@ export default create({
       default: 200
     },
     messagePlaceholderMap: {
+      type: Object,
+      default: () => ({})
+    },
+    customStepperConfig: {
       type: Object,
       default: () => ({})
     }
@@ -328,7 +333,15 @@ export default create({
       this.selectedNum = num;
     },
 
-    onOverLimit({ action, limitType, quota, quotaUsed }) {
+    onOverLimit(data) {
+      const { action, limitType, quota, quotaUsed } = data;
+      const { handleOverLimit } = this.customStepperConfig;
+
+      if (handleOverLimit) {
+        handleOverLimit(data);
+        return;
+      }
+
       if (action === 'minus') {
         Toast(this.$t('least'));
       } else if (action === 'plus') {
