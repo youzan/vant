@@ -81,6 +81,10 @@ module.exports = {
                 title: 'Cell - 单元格'
               },
               {
+                path: '/circle',
+                title: 'Circle - 环形进度条'
+              },
+              {
                 path: '/icon',
                 title: 'Icon - 图标'
               },
@@ -357,6 +361,10 @@ module.exports = {
               {
                 path: '/cell',
                 title: 'Cell'
+              },
+              {
+                path: '/circle',
+                title: 'Circle'
               },
               {
                 path: '/icon',
