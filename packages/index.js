@@ -12,6 +12,7 @@ import CellGroup from './cell-group';
 import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
+import Circle from './circle';
 import Col from './col';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
@@ -77,6 +78,7 @@ const components = [
   CellSwipe,
   Checkbox,
   CheckboxGroup,
+  Circle,
   Col,
   ContactCard,
   ContactEdit,
@@ -149,6 +151,7 @@ export {
   CellSwipe,
   Checkbox,
   CheckboxGroup,
+  Circle,
   Col,
   ContactCard,
   ContactEdit,
