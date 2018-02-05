@@ -12,7 +12,7 @@
 @import './badge.css';
 @import './button.css';
 @import './cell.css';
-@import './card.css';
+@import './circle.css';
 @import './loading.css';
 @import './nav-bar.css';
 @import './notice-bar.css';
@@ -53,6 +53,7 @@
 /* business components */
 @import './address-edit.css';
 @import './address-list.css';
+@import './card.css';
 @import './contact-card.css';
 @import './contact-list.css';
 @import './contact-edit.css';
