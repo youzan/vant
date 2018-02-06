@@ -74,7 +74,7 @@
             <sku-messages
               ref="skuMessages"
               :goods-id="goodsId"
-              :message-placeholder-map="messagePlaceholderMap"
+              :message-config="messageConfig"
               :messages="sku.messages"
             />
           </slot>
@@ -157,9 +157,13 @@ export default create({
       type: Number,
       default: 200
     },
-    messagePlaceholderMap: {
+    messageConfig: {
       type: Object,
-      default: () => ({})
+      default: () => ({
+        placeholderMap: {},
+        uploadImg: () => Promise.resolve(),
+        uploadMaxSize: 5
+      })
     },
     customStepperConfig: {
       type: Object,

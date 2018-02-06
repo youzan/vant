@@ -22,6 +22,7 @@ Vue.use(Sku);
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
+  :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 />
@@ -91,6 +92,7 @@ Vue.use(Sku);
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
+| message-config | 留言相关配置 | `Object` | `{}` | - |
 
 ### Event
 
@@ -202,6 +204,26 @@ customStepperConfig: {
         Toast('库存不够了~~');
       }
     }
+  }
+}
+```
+
+#### messageConfig Data Structure
+```javascript
+messageConfig: {
+  // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
+  uploadImg: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+    });
+  },
+  // 最大上传体积 (MB)
+  uploadMaxSize: 3,
+  // placehold配置
+  placeholderMap: {
+    text: 'xxx',
+    tel: 'xxx',
+    ...
   }
 }
 ```

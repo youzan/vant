@@ -1,14 +1,27 @@
 <template>
   <cell-group class="van-sku-messages">
-    <field
-      v-for="(message, index) in internalMessages"
-      v-model="messageValues[index]"
-      :key="`${goodsId}-${index}`"
-      :required="message.required == '1'"
-      :label="message.name"
-      :placeholder="getPlaceholder(message)"
-      :type="getType(message)"
-    />
+    <template v-for="(message, index) in messages">
+      <cell v-if="message.type === 'image'"
+        class="van-sku-messages__image-cell"
+        :label="$t('onePic')"
+        :key="`${goodsId}-${index}`"
+        :required="message.required == '1'"
+        :title="message.name">
+        <sku-img-uploader
+          v-model="messageValues[index].value"
+          :uploadImg="messageConfig.uploadImg"
+          :maxSize="messageConfig.uploadMaxSize">
+        </sku-img-uploader>
+      </cell>
+      <field v-else
+        v-model="messageValues[index].value"
+        :key="`${goodsId}-${index}`"
+        :required="message.required == '1'"
+        :label="message.name"
+        :placeholder="getPlaceholder(message)"
+        :type="getType(message)"
+      />
+    </template>
   </cell-group>
 </template>
 
@@ -16,30 +29,36 @@
 import { create } from '../../utils';
 import Field from '../../field';
 import CellGroup from '../../cell-group';
+import Cell from '../../cell';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
+import SkuImgUploader from './SkuImgUploader';
 
 export default create({
   name: 'van-sku-messages',
 
   components: {
+    SkuImgUploader,
     Field,
+    Cell,
     CellGroup
   },
 
   props: {
     messages: Array,
-    messagePlaceholderMap: Object,
+    messageConfig: Object,
     goodsId: [Number, String]
   },
 
-  computed: {
-    internalMessages() {
-      return Array.isArray(this.messages) ? this.messages.filter(message => message.type !== 'image') : [];
-    },
+  data() {
+    return {
+      messageValues: this.messages.map(() => ({ value: '' }))
+    };
+  },
 
-    messageValues() {
-      return this.internalMessages.map(() => '');
+  computed: {
+    messagePlaceholderMap() {
+      return this.messageConfig.placeholderMap || {};
     }
   },
 
@@ -57,8 +76,9 @@ export default create({
     getMessages() {
       const messages = {};
 
-      this.messageValues.forEach((value, index) => {
-        if (this.internalMessages[index].datetime > 0) {
+      this.messageValues.forEach((item, index) => {
+        let value = item.value;
+        if (this.messages[index].datetime > 0) {
           value = value.replace(/T/g, ' ');
         }
         messages[`message_${index}`] = value;
@@ -70,8 +90,9 @@ export default create({
     getCartMessages() {
       const messages = {};
 
-      this.messageValues.forEach((value, index) => {
-        const message = this.internalMessages[index];
+      this.messageValues.forEach((item, index) => {
+        let value = item.value;
+        const message = this.messages[index];
         if (message.datetime > 0) {
           value = value.replace(/T/g, ' ');
         }
@@ -90,8 +111,8 @@ export default create({
       const values = this.messageValues;
 
       for (let i = 0; i < values.length; i++) {
-        const value = values[i];
-        const message = this.internalMessages[i];
+        const value = values[i].value;
+        const message = this.messages[i];
 
         if (value === '') {
           // 必填字段的校验
