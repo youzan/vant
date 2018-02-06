@@ -60,10 +60,6 @@ export default create({
     }
   },
 
-  mounted() {
-    this.value && this.open();
-  },
-
   methods: {
     onClickItem(item) {
       if (typeof item.callback === 'function') {

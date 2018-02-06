@@ -3,7 +3,7 @@
     <div class="van-tree-select__nav">
       <div
         v-for="(item, index) in items"
-        class="van-tree-select__nitem"
+        class="van-tree-select__nitem van-ellipsis"
         :class="{ 'van-tree-select__nitem--active': mainActiveIndex === index }"
         @click="$emit('navclick', index)">
         {{ item.text }}
@@ -13,7 +13,7 @@
       <div
         v-for="item in subItems"
         :key="item.id"
-        class="van-tree-select__item"
+        class="van-tree-select__item van-ellipsis"
         :class="{ 'van-tree-select__item--active': activeId === item.id }"
         @click="onItemSelect(item)">
         {{ item.text }}

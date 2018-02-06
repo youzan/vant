@@ -91,6 +91,7 @@ Vue.use(Sku);
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
+| get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
 
 ### Event
 

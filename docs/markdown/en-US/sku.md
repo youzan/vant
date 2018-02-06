@@ -90,6 +90,7 @@ Vue.use(Sku);
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
 | custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
+| get-container | Return the mount node for sku | `Function` | - | `() => HTMLElement` |
 
 ### Event
 

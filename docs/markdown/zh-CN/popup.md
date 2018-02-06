@@ -48,3 +48,4 @@ export default {
 | close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` | - |
 | transition | transition 名称 | `String` | `popup-slide` | - |
 | prevent-scroll | 是否防止滚动穿透 | `Boolean` | `false` | - |
+| get-container | 指定弹出层挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |

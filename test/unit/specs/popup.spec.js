@@ -22,7 +22,10 @@ describe('Popup', () => {
   it('create a show popup', (done) => {
     wrapper = mount(Popup, {
       propsData: {
-        value: false
+        value: false,
+        zIndex: 100,
+        overlay: false,
+        lockOnScroll: true
       }
     });
 
@@ -124,5 +127,24 @@ describe('Popup', () => {
     });
 
     expect(wrapper.vm.lockOnScroll).to.be.true;
+  });
+
+  it('get container prop', done => {
+    const testNode = document.createElement('div');
+    document.body.appendChild(testNode);
+
+    wrapper = mount(Popup, {
+      propsData: {
+        getContainer: () => testNode
+      }
+    });
+
+    expect(wrapper.vm.$el.parentNode === testNode).to.be.true;
+    wrapper.vm.getContainer = () => document.body;
+
+    setTimeout(() => {
+      expect(wrapper.vm.$el.parentNode === document.body).to.be.true;
+      done();
+    }, 100);
   });
 });
