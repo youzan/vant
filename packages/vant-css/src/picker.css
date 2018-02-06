@@ -7,8 +7,10 @@
   background-color: $white;
 
   &__toolbar {
+    display: flex;
     height: 40px;
     line-height: 40px;
+    justify-content: space-between;
   }
 
   &__cancel,
@@ -19,14 +21,6 @@
     &:active {
       background-color: $active-color;
     }
-  }
-
-  &__cancel {
-    float: left;
-  }
-
-  &__confirm {
-    float: right;
   }
 
   &__title {
@@ -52,11 +46,11 @@
   &-column {
     flex: 1;
     overflow: hidden;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 
     li {
-      padding: 0 10px;
+      padding: 0 5px;
       color: $gray-darker;
       @mixin ellipsis;
     }
