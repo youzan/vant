@@ -113,6 +113,7 @@ export default {
   },
   vanSkuMessages: {
     fill: 'Please fill',
+    upload: 'Please upload',
     number: 'Please fill in the correct number format message',
     email: 'Please fill in the correct email message',
     idcard: 'Please fill in the correct ID number message',

@@ -117,11 +117,10 @@ export default create({
         if (value === '') {
           // 必填字段的校验
           if (message.required == '1') { // eslint-disable-line
-            if (message.type === 'image') {
-              continue;
-            } else {
-              return this.$t('fill') + message.name;
-            }
+            const textType = message.type === 'image'
+              ? 'upload'
+              : 'fill';
+            return this.$t(textType) + message.name;
           }
         } else {
           if (message.type === 'tel' && !validateNumber(value)) {

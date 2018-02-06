@@ -106,6 +106,8 @@ export default create({
         this.$nextTick(() => {
           this.paddingImg = '';
         });
+      }).catch(() => {
+        this.paddingImg = '';
       });
     },
     deleteImg(index) {

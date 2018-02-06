@@ -117,6 +117,7 @@ export default {
   },
   vanSkuMessages: {
     fill: '请填写',
+    upload: '请上传',
     number: '请填写正确的数字格式留言',
     email: '请填写正确的邮箱',
     'id_no': '请填写正确的身份证号码',
