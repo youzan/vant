@@ -1,5 +1,12 @@
 <template>
-  <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
+  <popup
+    v-if="!isSkuEmpty"
+    v-model="show"
+    position="bottom"
+    lock-on-scroll
+    prevent-scroll
+    :get-container="getContainer"
+  >
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <!-- sku-header -->
@@ -134,6 +141,7 @@ export default create({
     goodsId: [Number, String],
     stepperTitle: String,
     hideStock: Boolean,
+    getContainer: Function,
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
