@@ -19,6 +19,8 @@ export default {
     zIndex: [String, Number],
     // prevent touchmove scroll
     preventScroll: Boolean,
+    // return the mount node for popup
+    getContainer: Function,
     // prevent body scroll
     lockOnScroll: {
       type: Boolean,
@@ -26,17 +28,8 @@ export default {
     }
   },
 
-  watch: {
-    value(val) {
-      this[val ? 'open' : 'close']();
-    }
-  },
-
-  beforeMount() {
-    this._popupId = 'popup-' + context.plusKey('idSeed');
-  },
-
   data() {
+    this._popupId = 'popup-' + context.plusKey('idSeed');
     return {
       opened: false,
       pos: {
@@ -44,6 +37,29 @@ export default {
         y: 0
       }
     };
+  },
+
+  watch: {
+    value(val) {
+      this[val ? 'open' : 'close']();
+    },
+
+    getContainer() {
+      this.move();
+    }
+  },
+
+  mounted() {
+    if (this.getContainer) {
+      this.move();
+    }
+    if (this.value) {
+      this.open();
+    }
+  },
+
+  beforeDestroy() {
+    this.doAfterClose();
   },
 
   methods: {
@@ -65,12 +81,14 @@ export default {
 
       let status = '11';
 
+      /* istanbul ignore next */
       if (scrollTop === 0) {
         status = offsetHeight >= scrollHeight ? '00' : '01';
       } else if (scrollTop + offsetHeight >= scrollHeight) {
         status = '10';
       }
 
+      /* istanbul ignore next */
       if (
         status !== '11' &&
         isVertical &&
@@ -82,6 +100,7 @@ export default {
     },
 
     open() {
+      /* istanbul ignore next */
       if (this.opened || this.$isServer) {
         return;
       }
@@ -137,10 +156,14 @@ export default {
         off(document, 'touchstart', this.recordPosition);
         off(document, 'touchmove', this.watchTouchMove);
       }
-    }
-  },
+    },
 
-  beforeDestroy() {
-    this.doAfterClose();
+    move() {
+      if (this.getContainer) {
+        this.getContainer().appendChild(this.$el);
+      } else if (this.$parent) {
+        this.$parent.$el.appendChild(this.$el);
+      }
+    }
   }
 };

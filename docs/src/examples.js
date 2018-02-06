@@ -9,12 +9,13 @@ import 'packages/vant-css/src/icon-local.css';
 import 'vant-doc/src/helper/touch-simulator';
 import './components/nprogress.css';
 
-Vue.use(Vant);
-Vue.use(VantDoc);
-Vue.use(Lazyload, {
-  lazyComponent: true
-});
-Vue.use(VueRouter);
+Vue
+  .use(Vant)
+  .use(VantDoc)
+  .use(VueRouter)
+  .use(Lazyload, {
+    lazyComponent: true
+  });
 
 const routesConfig = routes(true);
 const router = new VueRouter({

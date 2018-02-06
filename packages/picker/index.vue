@@ -3,8 +3,8 @@
     <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
       <slot>
         <div class="van-picker__cancel" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
+        <div class="van-picker__title van-ellipsis" v-if="title" v-text="title" />
         <div class="van-picker__confirm" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
-        <div class="van-picker__title" v-if="title" v-text="title" />
       </slot>
     </div>
     <div class="van-picker__columns" @touchmove.prevent>

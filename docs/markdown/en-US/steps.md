@@ -4,8 +4,7 @@
 ``` javascript
 import { Step, Steps } from 'vant';
 
-Vue.use(Step);
-Vue.use(Steps);
+Vue.use(Step).use(Steps);
 ```
 
 ### Usage

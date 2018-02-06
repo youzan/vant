@@ -31,6 +31,7 @@ export default {
   'cell-swipe': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/cell-swipe'), 'cell-swipe')), 'cell-swipe')),
   'cell': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/cell'), 'cell')), 'cell')),
   'checkbox': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/checkbox'), 'checkbox')), 'checkbox')),
+  'circle': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/circle'), 'circle')), 'circle')),
   'contact': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/contact'), 'contact')), 'contact')),
   'coupon': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/coupon'), 'coupon')), 'coupon')),
   'datetime-picker': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/datetime-picker'), 'datetime-picker')), 'datetime-picker')),

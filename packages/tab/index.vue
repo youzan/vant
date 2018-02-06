@@ -14,10 +14,7 @@ export default create({
   mixins: [findParent],
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
+    title: String,
     disabled: Boolean
   },
 

@@ -1,5 +1,4 @@
 @import './common/var.css';
-@import './mixins/ellipsis.css';
 
 .van-steps {
   overflow: hidden;
@@ -49,7 +48,6 @@
     font-size: 12px;
     line-height: 1.5;
     color: $gray-dark;
-    @mixin ellipsis;
   }
 }
 

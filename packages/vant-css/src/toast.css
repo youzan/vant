@@ -16,7 +16,7 @@
   flex-direction: column;
   box-sizing: border-box;
   transform: translate3d(-50%, -50%, 0);
-  background-color: rgba(39, 39, 39, .7);
+  background-color: rgba(0, 0, 0, .7);
 
   &__overlay {
     position: fixed;

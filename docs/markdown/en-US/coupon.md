@@ -4,8 +4,7 @@
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell);
-Vue.use(CouponList);
+Vue.use(CouponCell).use(CouponList);
 ```
 
 ### Usage

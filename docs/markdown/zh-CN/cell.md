@@ -4,8 +4,7 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell);
-Vue.use(CellGroup);
+Vue.use(Cell).use(CellGroup);
 ```
 
 ### 代码演示

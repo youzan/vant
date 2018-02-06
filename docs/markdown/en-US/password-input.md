@@ -5,8 +5,7 @@ The PasswordInput component is usually used with [NumberKeyboard](#/en-US/compon
 ``` javascript
 import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput);
-Vue.use(NumberKeyboard);
+Vue.use(PasswordInput).use(NumberKeyboard);
 ```
 
 ### Usage

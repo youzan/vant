@@ -41,6 +41,7 @@ const manager = {
     const { id, dom } = config;
     const exist = context.stack.some(item => item.id === id);
 
+    /* istanbul ignore next */
     if (!exist) {
       const targetNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
       context.stack.push({ instance, id, config, targetNode });
