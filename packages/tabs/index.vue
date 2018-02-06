@@ -22,7 +22,7 @@
           @click="onClick(index)"
         >
           <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
-          <span v-else>{{ tab.title }}</span>
+          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
         </div>
       </div>
     </div>

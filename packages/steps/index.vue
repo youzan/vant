@@ -8,7 +8,7 @@
       </div>
       <div class="van-steps__message">
         <div class="van-steps__title" v-text="title" />
-        <div class="van-steps__desc" v-text="description" />
+        <div class="van-steps__desc van-ellipsis" v-text="description" />
       </div>
       <slot name="message-extra" />
     </div>
