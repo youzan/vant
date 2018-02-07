@@ -116,11 +116,11 @@
   }
   50% {
     stroke-dasharray: 90, 150;
-    stroke-dashoffset: -40px;
+    stroke-dashoffset: -40;
   }
   100% {
     stroke-dasharray: 90, 150;
-    stroke-dashoffset: -120px;
+    stroke-dashoffset: -120;
   }
 }
 
