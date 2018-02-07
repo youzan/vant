@@ -28,6 +28,7 @@
 @import './stepper.css';
 @import './progress.css';
 @import './swipe.css';
+@import './waterfall.css';
 
 /* form components */
 @import './checkbox.css';

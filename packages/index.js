@@ -122,7 +122,8 @@ const components = [
   Tabs,
   Tag,
   TreeSelect,
-  Uploader
+  Uploader,
+  Waterfall
 ];
 
 const install = Vue => {

@@ -8,7 +8,6 @@ const tips = '// This file is auto gererated by build/bin/build-entry.js';
 function buildVantEntry() {
   const uninstallComponents = [
     'Lazyload',
-    'Waterfall',
     'Toast',
     'ImagePreview',
     'Locale'
