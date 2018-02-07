@@ -43,3 +43,4 @@ Vue.use(Loading);
 |-----------|-----------|-----------|-------------|-------------|
 | color | Color | `String` | `black` | `black` `white` |
 | type | Type | `String` | `gradient-circle` | `spinner` `circle` |
+| size | Size | `String` | `30px` | - |
