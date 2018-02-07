@@ -60,4 +60,14 @@ describe('Loading', () => {
 
     expect(spinner.hasClass('van-loading__spinner--circle')).to.be.true;
   });
+
+  it('loading size', () => {
+    wrapper = mount(Loading, {
+      propsData: {
+        size: '100px'
+      }
+    });
+    expect(wrapper.vm.$el.style.width).to.equal('100px');
+    expect(wrapper.vm.$el.style.height).to.equal('100px');
+  });
 });
