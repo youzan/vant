@@ -1,5 +1,22 @@
 ## Changelog
 
+
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* add Circle component [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: add title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: adjust background color [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: support getContaienr [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: support imgage upload [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: support custom stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* fix Picker style error in some andriod devices [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* fix TreeSelect arrow position error [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 
