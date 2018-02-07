@@ -84,7 +84,11 @@
       color: $gray;
     }
 
+<<<<<<< HEAD
     circle {
+=======
+    .van-loading__circular circle {
+>>>>>>> main/dev
       stroke: $gray;
     }
   }
@@ -103,7 +107,11 @@
       color: #fff;
     }
 
+<<<<<<< HEAD
     circle {
+=======
+    .van-loading__circular circle {
+>>>>>>> main/dev
       stroke: $white;
     }
   }
