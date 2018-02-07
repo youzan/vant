@@ -9,6 +9,7 @@
         :max="stepperLimit"
         :disable-input="disableStepperInput"
         @overlimit="onOverLimit"
+        @change="onChange"
       />
     </div>
     <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
@@ -104,7 +105,6 @@ export default create({
     setCurrentNum(num) {
       this.currentNum = num;
     },
-
     onOverLimit(action) {
       this.skuEventBus.$emit('sku:overLimit', {
         action,
@@ -112,6 +112,10 @@ export default create({
         quota: this.quota,
         quotaUsed: this.quotaUsed
       });
+    },
+    onChange(currentValue) {
+      const { handleStepperChange } = this.customStepperConfig;
+      handleStepperChange && handleStepperChange(currentValue);
     }
   }
 });

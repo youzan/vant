@@ -117,10 +117,12 @@ export default {
   },
   vanSkuMessages: {
     fill: '请填写',
+    upload: '请上传',
     number: '请填写正确的数字格式留言',
     email: '请填写正确的邮箱',
     'id_no': '请填写正确的身份证号码',
     overlimit: '写的太多了，不要超过200字',
+    onePic: '仅限一张',
     placeholder: {
       'id_no': '输入18位身份证号码',
       text: '输入文本',
@@ -130,6 +132,15 @@ export default {
       time: '点击选择时间',
       textarea: '点击填写段落文本'
     }
+  },
+  vanSkuImgUploader: {
+    or: '或',
+    uploading: '正在上传...',
+    rephoto: '重拍',
+    photo: '拍照',
+    reselect: '重新选择照片',
+    select: '选择照片',
+    maxSize: maxSize => `最大可上传图片为${maxSize}MB，请尝试压缩图片尺寸`
   },
   vanSkuStepper: {
     title: '购买数量',
