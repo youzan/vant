@@ -1,4 +1,5 @@
 import Sku from 'packages/sku';
+import Uploader from 'packages/uploader';
 import Toast from 'packages/toast';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
@@ -12,6 +13,13 @@ const initialSku = {
   s2: '1193'
 };
 goods.picture = goods.picture[0];
+
+const File = function() {
+  this.name = 'test';
+  this.size = 10000;
+};
+
+const mockFile = new File([], '/Users');
 
 describe('Sku', (done) => {
   let wrapper;
@@ -239,7 +247,15 @@ describe('Sku', (done) => {
         value: true,
         sku: data.sku,
         goodsId: data.goods_id,
-        goods: goods
+        goods: goods,
+        messageConfig: {
+          uploadImg: () => {
+            return new Promise((resolve) => {
+              setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+            });
+          },
+          uploadMaxSize: 3
+        }
       }
     });
 
@@ -247,12 +263,15 @@ describe('Sku', (done) => {
     const skuMessages = wrapper.find('.van-sku-messages')[0];
     const inputs = skuMessages.find('input');
     const textarea = skuMessages.find('textarea')[0];
+    const uploader = wrapper.find(Uploader)[0];
     // 修改留言内容
     inputs[0].element.value = 123;
     // 测试身份证号
     inputs[1].element.value = 234;
     inputs[0].trigger('input');
     inputs[1].trigger('input');
+    // 测试图片
+    uploader.vm.onChange({ target: { files: [mockFile] }});
 
     wrapper.vm.$nextTick(() => {
       // 点击购买

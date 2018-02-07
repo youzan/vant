@@ -111,7 +111,7 @@ export default create({
         this.paddingImg = '';
       });
     },
-    deleteImg(index) {
+    deleteImg() {
       this.$emit('input', '');
     },
     updateImg(img) {
