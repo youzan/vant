@@ -16,12 +16,7 @@
     ]"
     @click="onClick"
   >
-    <loading
-      v-if="loading"
-      size="20px"
-      type="circular"
-      :color="type === 'default' ? 'black' : 'white'"
-    />
+    <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />
     <span class="van-button__text">
       <slot>{{ text }}</slot>
     </span>

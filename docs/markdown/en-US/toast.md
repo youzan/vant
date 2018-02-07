@@ -18,7 +18,10 @@ Toast('Some messages');
 #### Loading
 
 ```javascript
-Toast.loading({ mask: true });
+Toast.loading({
+  mask: true,
+  message: 'Loading...'
+});
 ```
 
 
