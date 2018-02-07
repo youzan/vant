@@ -18,8 +18,8 @@
   >
     <loading
       v-if="loading"
-      class="van-button__icon-loading"
-      type="circle"
+      size="20px"
+      type="circular"
       :color="type === 'default' ? 'black' : 'white'"
     />
     <span class="van-button__text">

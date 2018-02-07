@@ -92,6 +92,10 @@ export default {
     &--normal {
       margin-right: 10px;
     }
+
+    .van-loading {
+      margin: 0 18px;
+    }
   }
 
   .van-doc-demo-block {
