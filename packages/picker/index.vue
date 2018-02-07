@@ -7,7 +7,10 @@
         <div class="van-picker__confirm" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
       </slot>
     </div>
-    <div class="van-picker__columns" @touchmove.prevent>
+    <div v-if="loading" class="van-picker__loading">
+      <loading type="circular" />
+    </div>
+    <div class="van-picker__columns" :style="columnsStyle" @touchmove.prevent>
       <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
@@ -38,10 +41,14 @@ export default create({
 
   props: {
     title: String,
+    loading: Boolean,
     showToolbar: Boolean,
     confirmButtonText: String,
     cancelButtonText: String,
-    visibleItemCount: Number,
+    visibleItemCount: {
+      type: Number,
+      default: 5
+    },
     valueKey: {
       type: String,
       default: 'text'
@@ -77,6 +84,12 @@ export default create({
     frameStyle() {
       return {
         height: this.itemHeight + 'px'
+      };
+    },
+
+    columnsStyle() {
+      return {
+        height: this.itemHeight * this.visibleItemCount + 'px'
       };
     }
   },

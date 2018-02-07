@@ -3,6 +3,7 @@
 .van-picker {
   overflow: hidden;
   user-select: none;
+  position: relative;
   background-color: $white;
 
   &__toolbar {
@@ -31,7 +32,22 @@
     display: flex;
     position: relative;
   }
-  
+
+  &__loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(255,255,255,.9);
+
+    circle {
+      stroke: $blue;
+    }
+  }
+
+  &__loading .van-loading,
   &__frame {
     top: 50%;
     left: 0;

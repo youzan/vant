@@ -37,13 +37,10 @@ export default create({
     valueKey: String,
     className: String,
     itemHeight: Number,
+    visibleItemCount: Number,
     options: {
       type: Array,
       default: () => []
-    },
-    visibleItemCount: {
-      type: Number,
-      default: 5
     },
     defaultIndex: {
       type: Number,
