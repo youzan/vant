@@ -5,6 +5,7 @@
     show-toolbar
     value-key="name"
     :title="title"
+    :loading="loading"
     :columns="columns"
     :item-height="itemHeight"
     :visible-item-count="visibleItemCount"
@@ -28,6 +29,7 @@ export default create({
   props: {
     value: {},
     title: String,
+    loading: Boolean,
     areaList: Object,
     itemHeight: Number,
     visibleItemCount: Number,

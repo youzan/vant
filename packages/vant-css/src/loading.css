@@ -84,7 +84,7 @@
       color: $gray;
     }
 
-    .van-loading__circular circle {
+    circle {
       stroke: $gray;
     }
   }
@@ -103,7 +103,7 @@
       color: #fff;
     }
 
-    .van-loading__circular circle {
+    circle {
       stroke: $white;
     }
   }
