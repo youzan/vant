@@ -1,7 +1,8 @@
 <template>
   <cell-group class="van-sku-messages">
     <template v-for="(message, index) in messages">
-      <cell v-if="message.type === 'image'"
+      <cell
+        v-if="message.type === 'image'"
         class="van-sku-messages__image-cell"
         :label="$t('onePic')"
         :key="`${goodsId}-${index}`"
@@ -9,11 +10,12 @@
         :title="message.name">
         <sku-img-uploader
           v-model="messageValues[index].value"
-          :uploadImg="messageConfig.uploadImg"
-          :maxSize="messageConfig.uploadMaxSize">
-        </sku-img-uploader>
+          :upload-img="messageConfig.uploadImg"
+          :max-size="messageConfig.uploadMaxSize"
+        />
       </cell>
-      <field v-else
+      <field
+        v-else
         v-model="messageValues[index].value"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"

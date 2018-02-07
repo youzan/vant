@@ -3,15 +3,15 @@
     <!-- 头部 -->
     <van-uploader
       :disabled="!canUpload"
-      :beforeRead="beforeReadFile"
-      :afterRead="afterReadFile"
+      :before-read="beforeReadFile"
+      :after-read="afterReadFile"
       accept="image/*">
       <div class="van-sku-img-uploader__header">
         <div v-if="paddingImg">{{ $t('uploading') }}</div>
         <template v-else>
-          <van-icon name="photograph"></van-icon>
+          <van-icon name="photograph" />
           <span class="label">{{ getPhotoText(value) }}</span> {{ $t('or') }}
-          <van-icon name="photo"></van-icon>
+          <van-icon name="photo" />
           <span class="label">{{ getPicText(value) }}</span>
         </template>
       </div>
@@ -19,21 +19,22 @@
     <!-- 图片列表区域 -->
     <div class="van-sku-img-uploader__imglist" v-if="paddingImg || imgList.length > 0">
       <!-- 已有的图片,图片右上角显示删除按钮 -->
-      <template v-for="img, index in imgList">
-        <div class="van-sku-img-uploader__img-container" :key="index">
-          <span class="van-sku-img-uploader__delete-picture" @click="deleteImg(index)">
-            <van-icon name="clear"></van-icon>
-          </span>
-          <img :src="img"/>
-        </div>
-      </template>
+      <div
+        v-for="(img, index) in imgList"
+        :key="index"
+        class="van-sku-img-uploader__img-container">
+        <span class="van-sku-img-uploader__delete-picture" @click="deleteImg(index)">
+          <van-icon name="clear" />
+        </span>
+        <img :src="img">
+      </div>
       <!-- 正在上传的图片,有上传等待提示 -->
-      <template v-if="paddingImg">
-        <div class="van-sku-img-uploader__img-container">
-          <img :src="paddingImg"/>
-          <van-loading class="van-sku-img-uploader__uploading" type="spinner" color="black" />
-        </div>
-      </template>
+      <div
+        v-if="paddingImg"
+        class="van-sku-img-uploader__img-container">
+        <img :src="paddingImg">
+        <van-loading class="van-sku-img-uploader__uploading" type="spinner" color="black" />
+      </div>
     </div>
   </div>
 </template>
