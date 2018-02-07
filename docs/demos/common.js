@@ -31,6 +31,8 @@ Vue.component('demo-section', DemoSection);
 
 Locale.add({
   'zh-CN': {
+    add: '增加',
+    decrease: '减少',
     red: '红色',
     orange: '橙色',
     yellow: '黄色',
@@ -56,6 +58,8 @@ Locale.add({
     passwordPlaceholder: '请输入密码'
   },
   'en-US': {
+    add: 'Add',
+    decrease: 'Decrease',
     red: 'Red',
     orange: 'Orange',
     yellow: 'Yellow',

@@ -48,3 +48,4 @@ Use `position` prop to set popup display position
 | close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` | - |
 | transition | Transition | `String` | `popup-slide` | - |
 | prevent-scroll | Prevent background scroll | `Boolean` | `false` | - |
+| get-container | Return the mount node for Popup | `Function` | - | `() => HTMLElement` |

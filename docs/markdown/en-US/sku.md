@@ -22,6 +22,7 @@ Vue.use(Sku);
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
+  :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 />
@@ -90,6 +91,8 @@ Vue.use(Sku);
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
 | custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
+| message-config | Message related config | `Object` | `{}` | - |
+| get-container | Return the mount node for sku | `Function` | - | `() => HTMLElement` |
 
 ### Event
 
@@ -196,6 +199,26 @@ customStepperConfig: {
         Toast('not enough stock');
       }
     }
+  }
+}
+```
+
+#### messageConfig Data Structure
+```javascript
+messageConfig: {
+  // the upload image callback
+  uploadImg: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+    });
+  },
+  // max file size (MB)
+  uploadMaxSize: 3,
+  // placehold config
+  placeholderMap: {
+    text: 'xxx',
+    tel: 'xxx',
+    ...
   }
 }
 ```

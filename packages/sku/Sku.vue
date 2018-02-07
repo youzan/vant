@@ -1,5 +1,12 @@
 <template>
-  <popup v-model="show" v-if="!isSkuEmpty" position="bottom" lock-on-scroll prevent-scroll>
+  <popup
+    v-if="!isSkuEmpty"
+    v-model="show"
+    position="bottom"
+    lock-on-scroll
+    prevent-scroll
+    :get-container="getContainer"
+  >
     <div class="van-sku-container">
       <div class="van-sku-layout">
         <!-- sku-header -->
@@ -74,7 +81,7 @@
             <sku-messages
               ref="skuMessages"
               :goods-id="goodsId"
-              :message-placeholder-map="messagePlaceholderMap"
+              :message-config="messageConfig"
               :messages="sku.messages"
             />
           </slot>
@@ -134,6 +141,7 @@ export default create({
     goodsId: [Number, String],
     stepperTitle: String,
     hideStock: Boolean,
+    getContainer: Function,
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
@@ -157,9 +165,13 @@ export default create({
       type: Number,
       default: 200
     },
-    messagePlaceholderMap: {
+    messageConfig: {
       type: Object,
-      default: () => ({})
+      default: () => ({
+        placeholderMap: {},
+        uploadImg: () => Promise.resolve(),
+        uploadMaxSize: 5
+      })
     },
     customStepperConfig: {
       type: Object,
