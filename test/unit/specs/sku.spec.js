@@ -276,9 +276,9 @@ describe('Sku', (done) => {
 
             textarea.element.value = '';
             // 测试数字留言
-            inputs[2].element.value = 'abc';
+            inputs[3].element.value = 'abc';
             textarea.trigger('input');
-            inputs[2].trigger('input');
+            inputs[3].trigger('input');
 
             wrapper.vm.$nextTick(() => {
               buyBtn.trigger('click');
@@ -286,10 +286,10 @@ describe('Sku', (done) => {
               wrapper.vm.$nextTick(() => {
                 expect(toastText.textContent).to.equal('请填写正确的数字格式留言');
 
-                inputs[2].element.value = 0;
-                inputs[3].element.value = 345;
-                inputs[2].trigger('input');
+                inputs[3].element.value = 0;
+                inputs[4].element.value = 345;
                 inputs[3].trigger('input');
+                inputs[4].trigger('input');
 
                 wrapper.vm.$nextTick(() => {
                   buyBtn.trigger('click');
