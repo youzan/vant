@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* 新增 Circle 组件 [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 新增 title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 加深背景色 [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: 新增 getContaienr 属性 [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 支持图片上传 [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: 支持自定义 Stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* 修复 Picker 在部分设备下的样式问题 [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 TreeSelect 箭头位置错误 [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 

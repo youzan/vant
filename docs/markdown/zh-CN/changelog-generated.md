@@ -1,5 +1,39 @@
 ## 更新日志
 
+## [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8) (2018-02-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.7...v0.12.8)
+
+**Issue**
+
+- 一些小小提议 [\#616](https://github.com/youzan/vant/issues/616)
+- Toast提示显示时间的问题 [\#613](https://github.com/youzan/vant/issues/613)
+- CheckboxGroup 里面的chekBox的prop, name的类型效验 [\#610](https://github.com/youzan/vant/issues/610)
+- Waterfall 跳转路由触发 [\#607](https://github.com/youzan/vant/issues/607)
+- van-tabs 组件 @click事件 只能传入Index吗。是否可把van-tab绑定的item 传入处理。 [\#606](https://github.com/youzan/vant/issues/606)
+- Cell 组件，title 属性传递数字 0时，不显示内容 [\#604](https://github.com/youzan/vant/issues/604)
+- QA: questions for your builds-tools  [\#602](https://github.com/youzan/vant/issues/602)
+- vue开发中报t.\_g is not a function，是版本原因？ [\#598](https://github.com/youzan/vant/issues/598)
+- 使用PostCSS 插件定制主题报错，找不到$poses变量 [\#597](https://github.com/youzan/vant/issues/597)
+- 为什么引用的插件在微信编辑器里可以正常使用，在手机上Toast的提示成功的对号图片就不显示了？ [\#595](https://github.com/youzan/vant/issues/595)
+- android\_23 save事件里获取到的中文，get请求显示乱码？需要转码？这个问题我也再看看，先看看大家有遇到过没？ [\#594](https://github.com/youzan/vant/issues/594)
+- 关于Icon图标组件使用本地字体的问题 [\#592](https://github.com/youzan/vant/issues/592)
+- tabs组件问题 [\#589](https://github.com/youzan/vant/issues/589)
+- 请问Area组件，能否定义item-height [\#588](https://github.com/youzan/vant/issues/588)
+- waterfall waterfall-offset  瀑布流 阀值 [\#584](https://github.com/youzan/vant/issues/584)
+- 关闭sku层后，无法获取到skuData？ [\#580](https://github.com/youzan/vant/issues/580)
+- Toast组件能否触发多个 [\#571](https://github.com/youzan/vant/issues/571)
+
+**Improvements**
+
+- \[new feature\] sku组件增加图片上传功能 [\#612](https://github.com/youzan/vant/pull/612) ([w91](https://github.com/w91))
+- \[new feature\] Popup: support getContaienr [\#611](https://github.com/youzan/vant/pull/611) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker: style error in some andriod devices [\#609](https://github.com/youzan/vant/pull/609) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add Circle component [\#608](https://github.com/youzan/vant/pull/608) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] TreeSelect: arrow position error [\#605](https://github.com/youzan/vant/pull/605) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: add title slot [\#603](https://github.com/youzan/vant/pull/603) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: adjust background color [\#601](https://github.com/youzan/vant/pull/601) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] sku组件增加步进器相关自定义配置 [\#600](https://github.com/youzan/vant/pull/600) ([w91](https://github.com/w91))
+
 ## [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7) (2018-01-31)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.6...v0.12.7)
 
