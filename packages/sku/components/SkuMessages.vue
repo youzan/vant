@@ -54,8 +54,14 @@ export default create({
 
   data() {
     return {
-      messageValues: this.messages.map(() => ({ value: '' }))
+      messageValues: this.resetMessageValues(this.messages)
     };
+  },
+
+  watch: {
+    messages(val) {
+      this.messageValues = this.resetMessageValues(val);
+    }
   },
 
   computed: {
@@ -65,6 +71,9 @@ export default create({
   },
 
   methods: {
+    resetMessageValues(messages) {
+      return (messages || []).map(() => ({ value: '' }));
+    },
     getType(message) {
       if (+message.multiple === 1) {
         return 'textarea';
