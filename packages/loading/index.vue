@@ -21,7 +21,7 @@ export default {
     size: String,
     type: {
       type: String,
-      default: 'gradient-circle'
+      default: 'circular'
     },
     color: {
       type: String,

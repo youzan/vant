@@ -8,7 +8,7 @@
       </slot>
     </div>
     <div v-if="loading" class="van-picker__loading">
-      <loading type="circular" />
+      <loading />
     </div>
     <div class="van-picker__columns" :style="columnsStyle" @touchmove.prevent>
       <picker-column

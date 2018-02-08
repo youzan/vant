@@ -10,7 +10,7 @@
         <template v-if="displayStyle === 'default'">
           <loading v-if="type === 'loading'" color="white" />
           <icon v-else class="van-toast__icon" :name="type" />
-          <div v-if="message !== undefined" class="van-toast__text">{{ message }}</div>
+          <div v-if="hasMessage" class="van-toast__text">{{ message }}</div>
         </template>
       </div>
       <div class="van-toast__overlay" :class="{ 'van-toast__overlay--mask': mask }" v-if="forbidClick || mask" />
@@ -49,6 +49,10 @@ export default create({
   computed: {
     displayStyle() {
       return STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
+    },
+
+    hasMessage() {
+      return this.message || this.message === 0;
     }
   }
 });

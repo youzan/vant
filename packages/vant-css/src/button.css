@@ -31,10 +31,6 @@
     opacity: .3;
   }
 
-  &__icon-loading {
-    display: inline-block;
-  }
-
   &--default {
     color: $button-default-color;
     background-color: $button-default-background-color;
