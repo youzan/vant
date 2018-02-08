@@ -12,6 +12,7 @@ const langMap = {
     messages: zhCN
   }
 };
+let currentLang = '';
 
 setLang(getDefaultLang());
 
@@ -30,6 +31,11 @@ function getDefaultLang() {
 }
 
 export function setLang(lang) {
+  if (currentLang === lang) {
+    return;
+  }
+
+  currentLang = lang;
   if (window.localStorage) {
     localStorage.setItem('VANT_LANGUAGE', lang);
   }

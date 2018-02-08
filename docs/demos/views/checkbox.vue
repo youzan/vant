@@ -65,8 +65,6 @@ export default {
 
 <style lang="postcss">
 .demo-checkbox {
-  background: #fff;
-
   .van-checkbox {
     margin: 10px 0 0 20px;
   }

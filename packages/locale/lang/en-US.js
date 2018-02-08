@@ -113,10 +113,12 @@ export default {
   },
   vanSkuMessages: {
     fill: 'Please fill',
+    upload: 'Please upload',
     number: 'Please fill in the correct number format message',
     email: 'Please fill in the correct email message',
     idcard: 'Please fill in the correct ID number message',
     overlimit: 'not more than 200 words',
+    onePic: 'only one picture',
     placeholder: {
       'id_no': 'Idcard Number',
       text: 'Text',
@@ -126,6 +128,15 @@ export default {
       time: 'Time',
       textarea: 'Text'
     }
+  },
+  vanSkuImgUploader: {
+    or: 'Or',
+    uploading: 'Uploading...',
+    rephoto: 'Take Again',
+    photo: 'Take',
+    reselect: 'Reselect',
+    select: 'Select Photo',
+    maxSize: maxSize => `The upload limit is up to ${maxSize}MB，please try to compress the photo`
   },
   vanSkuStepper: {
     title: 'Quantity',

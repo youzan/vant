@@ -20,9 +20,28 @@ Vue.use(Sku);
   :quota="quota"
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
+  :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  :message-config="messageConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
+/>
+```
+
+#### Custom Stepper Config
+
+```html
+<van-sku
+  v-model="showBase"
+  :sku="sku"
+  :goods="goods"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :quota="quota"
+  :quota-used="quotaUsed"
+  :custom-stepper-config="customStepperConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 />
 ```
 
@@ -41,15 +60,13 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="true"
   :initial-sku="initialSku"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 >
-  <!-- hide sku messages -->
-  <template slot="sku-messages"></template>
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="handlePointClicked">Button</van-button>
+      <van-button bottom-action @click="onPointClicked">Button</van-button>
       <!-- trigger sku inner event -->
       <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">Button</van-button>
     </div>
@@ -70,8 +87,12 @@ Vue.use(Sku);
 | quota | Quota (0 as no limit) | `Number` | `0` | - |
 | quota-used | Used quota | `Number` | `0` | - |
 | reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
+| custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
+| message-config | Message related config | `Object` | `{}` | - |
+| get-container | Return the mount node for sku | `Function` | - | `() => HTMLElement` |
 
 ### Event
 
@@ -80,11 +101,18 @@ Vue.use(Sku);
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |
 
+### Methods
+
+| Method | Description |
+|-----------|-----------|
+| getSkuData() | Get current sku data |
+
 ### Slot
 
 | Name | Description | 
 |-----------|-----------|
 | sku-header | Custom header |
+| sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |
 | sku-stepper | Custom stepper |
@@ -146,6 +174,52 @@ sku: {
 goods: {
   title: 'Title',
   picture: 'https://img.yzcdn.cn/1.jpg'
+}
+```
+
+
+#### customStepperConfig Data Structure
+```javascript
+customStepperConfig: {
+  // custom quota text
+  quotaText: 'only 5 can buy',
+  // custom callback when over limit
+  handleOverLimit: (data) => {
+    const { action, limitType, quota, quotaUsed } = data;
+
+    if (action === 'minus') {
+      Toast('at least select one');
+    } else if (action === 'plus') {
+      // const { LIMIT_TYPE } = Sku.skuConstants;
+      if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
+        let msg = `Buy up to ${quota}`;
+        if (quotaUsed > 0) msg += `，you already buy ${quotaUsed}`;
+        Toast(msg);
+      } else {
+        Toast('not enough stock');
+      }
+    }
+  }
+}
+```
+
+#### messageConfig Data Structure
+```javascript
+messageConfig: {
+  // the upload image callback
+  uploadImg: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+    });
+  },
+  // max file size (MB)
+  uploadMaxSize: 3,
+  // placehold config
+  placeholderMap: {
+    text: 'xxx',
+    tel: 'xxx',
+    ...
+  }
 }
 ```
 

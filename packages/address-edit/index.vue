@@ -44,6 +44,7 @@
         :error="errorInfo.postal_code"
         @focus="onFocus('postal_code')"
       />
+      <slot />
       <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
@@ -158,6 +159,7 @@ export default create({
     hideBottomFields() {
       return this.searchResult.length && this.detailFocused;
     },
+
     computedAddressText() {
       return this.addressText || this.$t('addressText');
     }

@@ -18,7 +18,10 @@ Toast('Some messages');
 #### Loading
 
 ```javascript
-Toast.loading({ mask: true });
+Toast.loading({
+  mask: true,
+  message: 'Loading...'
+});
 ```
 
 
@@ -62,6 +65,19 @@ export default {
 }
 ```
 
+#### Singleton
+Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example
+
+```js
+Toast.allowMultiple();
+
+const toast1 = Toast('First Toast');
+const toast2 = Toast.success('Second Toast');
+
+toast1.clear();
+toast2.clear();
+```
+
 ### Methods
 
 | Methods | Attribute | Return value | Description |
@@ -70,9 +86,10 @@ export default {
 | Toast.loading | `options | message` | toast instance | Show loading toast |
 | Toast.success | `options | message` | toast instance | Show success toast |
 | Toast.fail | `options | message` | toast instance | Show fail toast |
+| Toast.clear | `clearAll` | `void` | Close  |
+| Toast.allowMultiple | - | `void` | Allow multlple toast at the same time |
 | Toast.setDefaultOptions | `options` | `void` | Set default options of all toasts |
 | Toast.resetDefaultOptions | - | `void` | Reset default options of all toasts |
-| Toast.clear | - | `void` | Close  |
 
 ### Options
 

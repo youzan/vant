@@ -42,13 +42,26 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| result-type | The way to read the file, read as base64; read as text | `String` | `dataUrl` | `text` |
-| disable | Whether to disable the upload, set to true during the image upload to prevent users from clicking this component to upload pictures | `Boolean` | `false` | - |
-| before-read | Hook before reading the file, the first parameter is the selected file, return false to stop reading the file | `Function` | - | - |
-| after-read | Hook after reading the file, parameter format: { file ,content } | `Function` | - | - |
+| result-type | Type of file read result | `String` | `dataUrl` | `text` |
+| disable | Whether to disable the upload | `Boolean` | `false` | - |
+| before-read | Hook before reading the file, return false to stop reading the file | `Function` | - | - |
+| after-read | Hook after reading the file | `Function` | - | - |
+| max-size | Max size of file | `Number` | - | - |
+
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| oversize | Triggered when file size over limit | Same as after-read |
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |-----------|-----------|
 | - | Custom icon |
+
+### afterRead parematers
+| Key | Description | Type |
+|-----------|-----------|-----------|
+| file | file object | `Object` |
+| content | file content | `String` |

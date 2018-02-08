@@ -1,5 +1,78 @@
 ## Changelog
 
+
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* add Circle component [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: add title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: adjust background color [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: support getContaienr [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: support imgage upload [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: support custom stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* fix Picker style error in some andriod devices [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* fix TreeSelect arrow position error [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+`2018-01-31`
+
+**Improvements**
+* Area: add item-height & visible-item-count props [\#591](https://github.com/youzan/vant/pull/591) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: support component call [\#593](https://github.com/youzan/vant/pull/593) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: support multiple instance [\#586](https://github.com/youzan/vant/pull/586) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add getSkuData method [\#585](https://github.com/youzan/vant/pull/585) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix Field multi line label style error [\#583](https://github.com/youzan/vant/pull/583) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+`2018-01-25`
+
+**Improvements**
+
+* AddressEdit: add default slot [\#573](https://github.com/youzan/vant/pull/573) [@chenjiahan](https://github.com/chenjiahan)
+* Uploader: support maxSize prop [\#575](https://github.com/youzan/vant/pull/575) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add sku-body-top slot and resetSelectedSkuOnHide prop [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+
+* fix Sku message error when overlimit [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+* fix Toast work break [\#567](https://github.com/youzan/vant/pull/567) [@chenjiahan](https://github.com/chenjiahan)
+* fix Tab active not work [\#572](https://github.com/youzan/vant/pull/572) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
+`2018-01-23`
+
+**Improvements**
+
+* Button: add text prop [\#563](https://github.com/youzan/vant/pull/563) [@chenjiahan](https://github.com/chenjiahan)
+* CouponList: support v-model、exchangeButtonLoading、exchangeMinLength [\#556](https://github.com/youzan/vant/pull/556) [\#566](https://github.com/youzan/vant/pull/566) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: update share icon [\#562](https://github.com/youzan/vant/pull/562) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: improve render performance [\#550](https://github.com/youzan/vant/pull/550) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* Area: should not display city & county list when not select province [\#560](https://github.com/youzan/vant/pull/560) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: fix required style [\#553](https://github.com/youzan/vant/pull/553) [@qianzhaoy](https://github.com/qianzhaoy)
+
+
+### [0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+`2018-01-18`
+
+**Improvements**
+
+* Picker: add props to custom button text [\#548](https://github.com/youzan/vant/pull/548) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: add setDefaultOptions method [\#541](https://github.com/youzan/vant/pull/541) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: add setDefaultOptions method [\#539](https://github.com/youzan/vant/pull/539) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* Stepper: not fire event on changing the value prop [\#546](https://github.com/youzan/vant/pull/546) [@chuangbo](https://github.com/chuangbo)
+* Picker: fix misspelling of visibleItemCount prop [\#549](https://github.com/youzan/vant/pull/549) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`

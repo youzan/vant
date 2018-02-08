@@ -79,6 +79,13 @@ export default {
 | change-area | 修改收件地区时触发 | values: 地区信息 |
 | change-detail | 修改详细地址时触发 | value: 详细地址内容 |
 
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 在邮政编码下方插入内容 |
+
+
 ### 数据格式
 
 #### addressInfo 数据格式

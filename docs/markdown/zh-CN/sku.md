@@ -20,9 +20,28 @@ Vue.use(Sku);
   :quota="quota"
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
+  :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
   :disable-stepper-input="disableStepperInput"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  :message-config="messageConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
+/>
+```
+
+#### 自定义步进器相关配置
+
+```html
+<van-sku
+  v-model="showBase"
+  :sku="sku"
+  :goods="goods"
+  :goods-id="goodsId"
+  :hide-stock="sku.hide_stock"
+  :quota="quota"
+  :quota-used="quotaUsed"
+  :custom-stepper-config="customStepperConfig"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 />
 ```
 
@@ -41,16 +60,14 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="true"
   :initial-sku="initialSku"
-  @buy-clicked="handleBuyClicked"
-  @add-cart="handleAddCartClicked"
+  @buy-clicked="onBuyClicked"
+  @add-cart="onAddCartClicked"
 >
-  <!-- 隐藏 sku messages -->
-  <template slot="sku-messages"></template>
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="handlePointClicked">积分兑换</van-button>
-      <!-- 直接触发 sku 内部事件，通过内部事件执行 handleBuyClicked 回调 -->
+      <van-button bottom-action @click="onPointClicked">积分兑换</van-button>
+      <!-- 直接触发 sku 内部事件，通过内部事件执行 onBuyClicked 回调 -->
       <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
     </div>
   </template>
@@ -71,8 +88,12 @@ Vue.use(Sku);
 | quota | 限购数(0表示不限购) | `Number` | `0` | - |
 | quota-used | 已经购买过的数量 | `Number` | `0` | - |
 | reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
+| reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
+| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
+| message-config | 留言相关配置 | `Object` | `{}` | - |
+| get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
 
 ### Event
 
@@ -81,6 +102,11 @@ Vue.use(Sku);
 | add-cart | 点击添加购物车回调 | skuData: Object |
 | buy-clicked | 点击购买回调 | skuData: Object |
 
+### 方法
+
+| 函数 | 说明 |
+|-----------|-----------|
+| getSkuData() | 获取当前 skuData |
 
 ### Slot
 Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，可以按需进行替换。区块顺序见下表：
@@ -88,6 +114,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，�
 | 名称 | 说明 | 
 |-----------|-----------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
+| sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
 | sku-group | 商品sku展示区 |
 | extra-sku-group | 额外商品sku展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
@@ -154,6 +181,51 @@ goods: {
   title: '测试商品',
   // 默认商品 sku 缩略图
   picture: 'https://img.yzcdn.cn/1.jpg'
+}
+```
+
+#### customStepperConfig 对象结构
+```javascript
+customStepperConfig: {
+  // 自定义限购文案
+  quotaText: '每次限购xxx件',
+  // 自定义步进器超过限制时的回调
+  handleOverLimit: (data) => {
+    const { action, limitType, quota, quotaUsed } = data;
+
+    if (action === 'minus') {
+      Toast('至少选择一件商品');
+    } else if (action === 'plus') {
+      // const { LIMIT_TYPE } = Sku.skuConstants;
+      if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
+        let msg = `单次限购${quota}件`;
+        if (quotaUsed > 0) msg += `，您已购买${quotaUsed}`;
+        Toast(msg);
+      } else {
+        Toast('库存不够了~~');
+      }
+    }
+  }
+}
+```
+
+#### messageConfig Data Structure
+```javascript
+messageConfig: {
+  // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
+  uploadImg: () => {
+    return new Promise((resolve) => {
+      setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+    });
+  },
+  // 最大上传体积 (MB)
+  uploadMaxSize: 3,
+  // placehold配置
+  placeholderMap: {
+    text: 'xxx',
+    tel: 'xxx',
+    ...
+  }
 }
 ```
 

@@ -21,6 +21,10 @@
     <demo-block :title="$t('title4')">
       <van-picker :columns="columns" @change="onChange2" />
     </demo-block>
+
+    <demo-block :title="$t('loading')">
+      <van-picker :columns="columns" loading />
+    </demo-block>
   </demo-section>
 </template>
 

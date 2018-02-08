@@ -3,6 +3,7 @@ import { mount } from 'avoriaz';
 
 window.File = function() {
   this.name = 'test';
+  this.size = 10000;
 };
 
 window.FileReader = function() {
@@ -100,5 +101,37 @@ describe('Uploader', () => {
     });
 
     wrapper.vm.onChange({ target: { files: [mockFile, mockFile] }});
+  });
+
+  it('size overlimit', done => {
+    const spy = sinon.spy();
+    wrapper = mount(Uploader, {
+      propsData: {
+        maxSize: 1
+      }
+    });
+    wrapper.vm.$on('oversize', spy);
+    wrapper.vm.onChange({ target: { files: [mockFile] }});
+
+    setTimeout(() => {
+      expect(spy.calledOnce).to.be.true;
+      done();
+    }, 50);
+  });
+
+  it('multi file size overlimit', done => {
+    const spy = sinon.spy();
+    wrapper = mount(Uploader, {
+      propsData: {
+        maxSize: 1
+      }
+    });
+    wrapper.vm.$on('oversize', spy);
+    wrapper.vm.onChange({ target: { files: [mockFile, mockFile] }});
+
+    setTimeout(() => {
+      expect(spy.calledOnce).to.be.true;
+      done();
+    }, 50);
   });
 });

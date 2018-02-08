@@ -5,8 +5,7 @@
 ``` javascript
 import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput);
-Vue.use(NumberKeyboard);
+Vue.use(PasswordInput).use(NumberKeyboard);
 ```
 
 ### 代码演示

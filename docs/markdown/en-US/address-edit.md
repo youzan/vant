@@ -77,6 +77,12 @@ export default {
 | delete | Triggered when click delete | content：Form content |
 | change-detail | Triggered when address detail changed | value: address detail |
 
+### Slot
+
+| Name | Description |
+|-----------|-----------|
+| - | Custom content below postal |
+
 ### Data Structure
 
 #### addressInfo Data Structure

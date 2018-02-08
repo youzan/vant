@@ -41,12 +41,6 @@ export default create({
       currentValue: false,
       currentTransition: transition
     };
-  },
-
-  mounted() {
-    if (this.value) {
-      this.open();
-    }
   }
 });
 </script>

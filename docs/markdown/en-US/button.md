@@ -69,6 +69,7 @@ Use `tag` prop to custom button tag
 |-----------|-----------|-----------|-------------|-------------|
 | type | Type | `String` | `default` | `primary` `danger` |
 | size | Size | `String` | `normal` | `large` `small` `mini` |
+| text | Text | `String` | - | - |
 | tag | Tag | `String` | `button` | - |
 | native-type | Native Type Attribute | `String` | `''` | - |
 | disabled | Whether disable button | `Boolean` | `false` | - |

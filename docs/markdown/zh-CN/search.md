@@ -64,6 +64,6 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 
 ### Slot
 
-| name | 描述 |
+| 名称 | 说明 |
 |-----------|-----------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |

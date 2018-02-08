@@ -4,8 +4,7 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell);
-Vue.use(CellGroup);
+Vue.use(Cell).use(CellGroup);
 ```
 
 ### 代码演示
@@ -92,7 +91,7 @@ Vue.use(CellGroup);
 
 ### Slot
 
-| name | 描述 |
+| 名称 | 说明 |
 |-----------|-----------|
 | - | 自定义显示内容 |
 | icon | 自定义`icon` |

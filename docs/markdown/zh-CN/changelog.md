@@ -1,5 +1,79 @@
 ## 更新日志
 
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* 新增 Circle 组件 [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 新增 title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 加深背景色 [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: 新增 getContaienr 属性 [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 支持图片上传 [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: 支持自定义 Stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* 修复 Picker 在部分设备下的样式问题 [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 TreeSelect 箭头位置错误 [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+`2018-01-31`
+
+**Improvements**
+* Area: 新增 item-height、visible-item-count 属性 [\#591](https://github.com/youzan/vant/pull/591) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: 支持以组件形式调用 [\#593](https://github.com/youzan/vant/pull/593) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 支持同时弹出多个 Toast [\#586](https://github.com/youzan/vant/pull/586) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 新增 getSkuData 方法 [\#585](https://github.com/youzan/vant/pull/585) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 Field label 多行时样式错误的问题 [\#583](https://github.com/youzan/vant/pull/583) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+`2018-01-25`
+
+**Improvements**
+
+- AddressEdit: 增加默认 slot [\#573](https://github.com/youzan/vant/pull/573) [@chenjiahan](https://github.com/chenjiahan)
+- Uploader: 新增 maxSize 属性 [\#575](https://github.com/youzan/vant/pull/575) [@chenjiahan](https://github.com/chenjiahan)
+- Sku: 新增 sku-body-top slot、resetSelectedSkuOnHide 属性 [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+
+- 修复 Toast 文案换行 [\#567](https://github.com/youzan/vant/pull/567) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Sku 限购情况下，未超出限购数时的错误文案显示 [\#568](https://github.com/youzan/vant/pull/568) [@w91](https://github.com/w91)
+- 修复 Tab active 在初始化时未生效的问题 [\#572](https://github.com/youzan/vant/pull/572) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
+`2018-01-23`
+
+**Improvements**
+
+* Button: 新增 text 属性 [\#563](https://github.com/youzan/vant/pull/563) [@chenjiahan](https://github.com/chenjiahan)
+* CouponList: 支持 v-model、exchangeButtonLoading、exchangeMinLength [\#556](https://github.com/youzan/vant/pull/556) [\#566](https://github.com/youzan/vant/pull/566) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: 更新 share 图标 [\#562](https://github.com/youzan/vant/pull/562) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 优化渲染性能 [\#550](https://github.com/youzan/vant/pull/550) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* Area: 修复未选中省份时市区展示错误的问题 [\#560](https://github.com/youzan/vant/pull/560) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: 修复 required 样式错误的问题 [\#553](https://github.com/youzan/vant/pull/553) [@qianzhaoy](https://github.com/qianzhaoy)
+
+
+### [0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+`2018-01-18`
+
+**Improvements**
+
+* Picker: 新增 confirmButtonText、cancelButtonText 属性 [\#548](https://github.com/youzan/vant/pull/548) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 新增 setDefaultOptions 方法 [\#541](https://github.com/youzan/vant/pull/541) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: 新增 setDefaultOptions 方法 [\#539](https://github.com/youzan/vant/pull/539) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* Stepper: 修改 value 值时不触发 change 事件 [\#546](https://github.com/youzan/vant/pull/546) [@chuangbo](https://github.com/chuangbo)
+* Picker: 修复 visibleItemCount 属性拼写错误 [\#549](https://github.com/youzan/vant/pull/549) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`

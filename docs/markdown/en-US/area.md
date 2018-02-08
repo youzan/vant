@@ -44,6 +44,9 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | title | Toolbar title | `String` | `''` | - |
 | area-list | an object contains these properties: `province_list`, `city_list` and `county_list`  | `Object` | - | - |
 | columns-num | level of picker | `String`,`Number` | 3 | - |
+| item-height | Option height | `Number` | `44` | - |
+| loading | Whether to show loading prompt | `Boolean` | `false` | - |
+| visible-item-count | Count of visible columns | `Number` | `5` | - |
 
 ### Event
 

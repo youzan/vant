@@ -9,9 +9,11 @@ Vue.use(PullRefresh);
 
 ### 代码演示
 
+#### 基础用法
+下拉刷新时会触发 `refresh` 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 `v-model` 设置为 `false`，表示加载完成。
+
 ```html
-<!-- 通过 v-model 控制加载状态 -->
-<van-pull-refresh v-model="isLoading">
+<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
   <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>
 ```
@@ -25,15 +27,13 @@ export default {
     }
   },
 
-  watch: {
-    isLoading() {
-      if (this.isLoading) {
-        setTimeout(() => {
-          Toast('刷新成功');
-          this.isLoading = false;
-          this.count++;
-        }, 500);
-      }
+  methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast('刷新成功');
+        this.isLoading = false;
+        this.count++;
+      }, 500);
     }
   }
 }
@@ -50,9 +50,15 @@ export default {
 | animation-duration | 动画时长 | `Number` | `300` | - |
 | head-height | 顶部内容高度 | `Number` | `50` | - |
 
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| refresh | 下拉刷新时触发 | - |
+
 ### Slot
 
-| name | 描述 |
+| 名称 | 说明 |
 |-----------|-----------|
 | - | 自定义内容 |
 | normal | 非下拉状态时顶部内容 |

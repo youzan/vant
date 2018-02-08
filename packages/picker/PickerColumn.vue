@@ -13,6 +13,7 @@
       <li
         v-for="(option, index) in options"
         v-text="getOptionText(option)"
+        class="van-ellipsis"
         :class="{
           'van-picker-column--disabled': isDisabled(option),
           'van-picker-column--selected': index === currentIndex
@@ -36,13 +37,10 @@ export default create({
     valueKey: String,
     className: String,
     itemHeight: Number,
+    visibleItemCount: Number,
     options: {
       type: Array,
       default: () => []
-    },
-    visibleItemCount: {
-      type: Number,
-      default: 5
     },
     defaultIndex: {
       type: Number,

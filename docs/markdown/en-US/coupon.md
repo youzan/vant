@@ -4,8 +4,7 @@
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell);
-Vue.use(CouponList);
+Vue.use(CouponCell).use(CouponList);
 ```
 
 ### Usage
@@ -79,11 +78,14 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
+| v-model | Current exchange code | `String` | - | - |
 | chosen-coupon | Index of chosen coupon | `Number` | `-1` | - |
 | coupons | Coupon list | `Array` | `[]` | - |
 | disabled-coupons | Disabled voupon list | `Array` | `[]` | - |
 | exchange-button-text | Exchange button text | `String` | `Exchange` | - |
+| exchange-button-loading | Whether to show loading in exchange button | `Boolean` | `false` | - |
 | exchange-button-disabled | Whether to disable exchange button | `Boolean` | `false` | - |
+| exchange-min-length | Min length to enable exchange button | `Number` | `1` | - |
 | displayed-coupon-index | Index of displayed coupon | `Number` | - | - |
 | close-button-text | Close button text | `String` | `Close` | - |
 | disabled-list-title | Disabled list title | `String` | `Unavailable` | - |

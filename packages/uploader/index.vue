@@ -27,6 +27,10 @@ export default create({
     resultType: {
       type: String,
       default: 'dataUrl'
+    },
+    maxSize: {
+      type: Number,
+      default: Number.MAX_VALUE
     }
   },
 
@@ -44,16 +48,26 @@ export default create({
 
       if (Array.isArray(files)) {
         Promise.all(files.map(this.readFile)).then(contents => {
-          this.onAfterRead(
-            files.map((file, index) => ({
+          let oversize = false;
+          const payload = files.map((file, index) => {
+            if (file.size > this.maxSize) {
+              oversize = true;
+            }
+
+            return {
               file: files[index],
               content: contents[index]
-            }))
-          );
+            };
+          });
+
+          this.onAfterRead(payload, oversize);
         });
       } else {
         this.readFile(files).then(content => {
-          this.onAfterRead({ file: files, content });
+          this.onAfterRead(
+            { file: files, content },
+            files.size > this.maxSize
+          );
         });
       }
     },
@@ -74,9 +88,13 @@ export default create({
       });
     },
 
-    onAfterRead(file) {
-      this.afterRead && this.afterRead(file);
-      this.$refs.input && (this.$refs.input.value = '');
+    onAfterRead(files, oversize) {
+      if (oversize) {
+        this.$emit('oversize', files);
+      } else {
+        this.afterRead && this.afterRead(files);
+        this.$refs.input && (this.$refs.input.value = '');
+      }
     }
   }
 });

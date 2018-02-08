@@ -10,19 +10,21 @@ window.syncPath = function(dir) {
   const router = window.vueRouter;
   const isInIframe = window !== window.top;
   const currentDir = router.history.current.path;
-  const iframe = document.querySelector('iframe');
+  const pathParts = currentDir.split('/');
+  let lang = pathParts[0];
+  if (currentDir[0] === '/') {
+    lang = pathParts[1];
+  }
 
-  if (!isInIframe && !isMobile && iframe) {
-    const pathParts = currentDir.split('/');
-    let lang = pathParts[0];
-    if (currentDir[0] === '/') {
-      lang = pathParts[1];
+  if (!isInIframe && !isMobile) {
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+      iframeReady(iframe, () => {
+        iframe.contentWindow.changePath(lang, currentDir);
+      });
     }
-    setLang(lang);
-
-    iframeReady(iframe, () => {
-      iframe.contentWindow.changePath(lang, currentDir);
-    });
+  } else if (isInIframe) {
+    window.top.changePath(lang, currentDir);
   }
 };
 

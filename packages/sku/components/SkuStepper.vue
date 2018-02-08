@@ -8,11 +8,12 @@
         :min="1"
         :max="stepperLimit"
         :disable-input="disableStepperInput"
-        @overlimit="handleOverLimit"
+        @overlimit="onOverLimit"
+        @change="onChange"
       />
     </div>
     <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
-    <div v-if="quota > 0" class="van-sku__quota">{{ $t('quota', quota) }}</div>
+    <div v-if="quotaText" class="van-sku__quota">{{ quotaText }}</div>
   </div>
 </template>
 
@@ -39,14 +40,9 @@ export default create({
     stepperTitle: String,
     quota: Number,
     quotaUsed: Number,
-    hideStock: {
-      type: Boolean,
-      default: false
-    },
-    disableStepperInput: {
-      type: Boolean,
-      default: false
-    }
+    hideStock: Boolean,
+    disableStepperInput: Boolean,
+    customStepperConfig: Object
   },
 
   data() {
@@ -75,6 +71,18 @@ export default create({
       }
       return this.skuStockNum;
     },
+    quotaText() {
+      const { quotaText } = this.customStepperConfig;
+      let text = '';
+
+      if (quotaText) {
+        text = quotaText;
+      } else if (this.quota > 0) {
+        text = this.$t('quota', this.quota);
+      }
+
+      return text;
+    },
     stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;
       let limit;
@@ -86,6 +94,7 @@ export default create({
         this.limitType = QUOTA_LIMIT;
       } else {
         limit = this.stock;
+        this.limitType = STOCK_LIMIT;
       }
 
       return limit;
@@ -96,13 +105,17 @@ export default create({
     setCurrentNum(num) {
       this.currentNum = num;
     },
-    handleOverLimit(action) {
+    onOverLimit(action) {
       this.skuEventBus.$emit('sku:overLimit', {
         action,
         limitType: this.limitType,
         quota: this.quota,
         quotaUsed: this.quotaUsed
       });
+    },
+    onChange(currentValue) {
+      const { handleStepperChange } = this.customStepperConfig;
+      handleStepperChange && handleStepperChange(currentValue);
     }
   }
 });

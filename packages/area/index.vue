@@ -5,7 +5,10 @@
     show-toolbar
     value-key="name"
     :title="title"
+    :loading="loading"
     :columns="columns"
+    :item-height="itemHeight"
+    :visible-item-count="visibleItemCount"
     @change="onChange"
     @confirm="$emit('confirm', $event)"
     @cancel="$emit('cancel', $event)"
@@ -26,7 +29,10 @@ export default create({
   props: {
     value: {},
     title: String,
+    loading: Boolean,
     areaList: Object,
+    itemHeight: Number,
+    visibleItemCount: Number,
     // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {
       type: [String, Number],
@@ -94,23 +100,23 @@ export default create({
 
     // 根据省市县类型和对应的`code`获取对应列表
     getList(type, code) {
-      if (!this.listValid) {
-        return [];
-      }
+      let result = [];
 
-      const { areaList } = this;
-      const list =
-        type === 'province'
-          ? areaList.province_list
-          : type === 'city' ? areaList.city_list : areaList.county_list;
+      if (this.listValid && (type === 'province' || code)) {
+        const { areaList } = this;
+        const list =
+          type === 'province'
+            ? areaList.province_list
+            : type === 'city' ? areaList.city_list : areaList.county_list;
 
-      let result = Object.keys(list).map(code => ({
-        code,
-        name: list[code]
-      }));
+        result = Object.keys(list).map(code => ({
+          code,
+          name: list[code]
+        }));
 
-      if (type !== 'province' && code) {
-        result = result.filter(item => item.code.indexOf(code) === 0);
+        if (type !== 'province' && code) {
+          result = result.filter(item => item.code.indexOf(code) === 0);
+        }
       }
 
       result.unshift({

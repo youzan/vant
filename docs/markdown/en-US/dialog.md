@@ -77,3 +77,64 @@ export default {
 | overlay | Whether to show overlay | `Boolean` | `true` | - |
 | closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` | - |
 | lockOnScroll | Whether to lock body scroll | `Boolean` | `true` | - |
+
+#### Advanced Usage
+If you need to render vue components within a dialog, you can use dialog component.
+
+```html
+<van-dialog v-model="show" @confirm="onConfirm">
+  <van-field
+    v-model="username"
+    label="Username"
+    placeholder="Username"
+  />
+  <van-field
+    v-model="password"
+    type="password"
+    :label="Password"
+    :placeholder="Password"
+  />
+</van-dialog>
+```
+
+```js
+Vue.use(Dialog);
+
+export default {
+  data() {
+    return {
+      show: false,
+      username: '',
+      password: ''
+    };
+  },
+  
+  methods: {
+    onConfirm() {
+      this.show = false;
+    }
+  }
+}
+```
+
+### API
+
+| Attribute | Description | Type | Default | Accepted Values |
+|-----------|-----------|-----------|-------------|-------------|
+| v-model | Whether to show dialog | `Boolean` | - | - |
+| title | Title | `String` | - | - |
+| message | Message | `String` | - | - |
+| show-confirm-button | Whether to show confirm button | `Boolean` |  `true` | - |
+| show-cancel-button | Whether to show cancel button | `Boolean` |  `false` | - |
+| confirm-button-text | Confirm button text | `String` |  `Confirm` | - |
+| cancel-button-text | Cancel button test | `String` | `Cancel` | - |
+| overlay | Whether to show overlay | `Boolean` | `true` | - |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` | - |
+| lock-on-scroll | Whether to lock body scroll | `Boolean` | `true` | - |
+
+### Event
+
+| Event | Description | Parameters |
+|-----------|-----------|-----------|
+| confirm | Triggered when click confirm button | - |
+| cancel | Triggered when click cancel button | - |

@@ -72,7 +72,7 @@
     &::before {
       content: '*';
       position: absolute;
-      left: -7px;
+      left: 7px;
       font-size: 14px;
       color: $red;
     }

@@ -1,5 +1,132 @@
 ## 更新日志
 
+## [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8) (2018-02-07)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.7...v0.12.8)
+
+**Issue**
+
+- 一些小小提议 [\#616](https://github.com/youzan/vant/issues/616)
+- Toast提示显示时间的问题 [\#613](https://github.com/youzan/vant/issues/613)
+- CheckboxGroup 里面的chekBox的prop, name的类型效验 [\#610](https://github.com/youzan/vant/issues/610)
+- Waterfall 跳转路由触发 [\#607](https://github.com/youzan/vant/issues/607)
+- van-tabs 组件 @click事件 只能传入Index吗。是否可把van-tab绑定的item 传入处理。 [\#606](https://github.com/youzan/vant/issues/606)
+- Cell 组件，title 属性传递数字 0时，不显示内容 [\#604](https://github.com/youzan/vant/issues/604)
+- QA: questions for your builds-tools  [\#602](https://github.com/youzan/vant/issues/602)
+- vue开发中报t.\_g is not a function，是版本原因？ [\#598](https://github.com/youzan/vant/issues/598)
+- 使用PostCSS 插件定制主题报错，找不到$poses变量 [\#597](https://github.com/youzan/vant/issues/597)
+- 为什么引用的插件在微信编辑器里可以正常使用，在手机上Toast的提示成功的对号图片就不显示了？ [\#595](https://github.com/youzan/vant/issues/595)
+- android\_23 save事件里获取到的中文，get请求显示乱码？需要转码？这个问题我也再看看，先看看大家有遇到过没？ [\#594](https://github.com/youzan/vant/issues/594)
+- 关于Icon图标组件使用本地字体的问题 [\#592](https://github.com/youzan/vant/issues/592)
+- tabs组件问题 [\#589](https://github.com/youzan/vant/issues/589)
+- 请问Area组件，能否定义item-height [\#588](https://github.com/youzan/vant/issues/588)
+- waterfall waterfall-offset  瀑布流 阀值 [\#584](https://github.com/youzan/vant/issues/584)
+- 关闭sku层后，无法获取到skuData？ [\#580](https://github.com/youzan/vant/issues/580)
+- Toast组件能否触发多个 [\#571](https://github.com/youzan/vant/issues/571)
+
+**Improvements**
+
+- \[new feature\] sku组件增加图片上传功能 [\#612](https://github.com/youzan/vant/pull/612) ([w91](https://github.com/w91))
+- \[new feature\] Popup: support getContaienr [\#611](https://github.com/youzan/vant/pull/611) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker: style error in some andriod devices [\#609](https://github.com/youzan/vant/pull/609) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add Circle component [\#608](https://github.com/youzan/vant/pull/608) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] TreeSelect: arrow position error [\#605](https://github.com/youzan/vant/pull/605) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: add title slot [\#603](https://github.com/youzan/vant/pull/603) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: adjust background color [\#601](https://github.com/youzan/vant/pull/601) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] sku组件增加步进器相关自定义配置 [\#600](https://github.com/youzan/vant/pull/600) ([w91](https://github.com/w91))
+
+## [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7) (2018-01-31)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.6...v0.12.7)
+
+**Breaking changes**
+
+-  关于上传组件的一些功能扩展 [\#526](https://github.com/youzan/vant/issues/526)
+
+**Issue**
+
+- 业务组件比如地址编辑，按钮文本支持修改吗？（比如保存改成提交） [\#590](https://github.com/youzan/vant/issues/590)
+- \[求教\] Dialog.alert 的message可以是tab组件吗? [\#587](https://github.com/youzan/vant/issues/587)
+- 社区能活跃点吗？ [\#582](https://github.com/youzan/vant/issues/582)
+- 页面初始化后Toast自动弹出 [\#581](https://github.com/youzan/vant/issues/581)
+- \</van-cell-group\>组件嵌套不正确 [\#578](https://github.com/youzan/vant/issues/578)
+- Dialog需求prompt功能 [\#577](https://github.com/youzan/vant/issues/577)
+- 遍历对象数组动态生成tab，active不起效 [\#569](https://github.com/youzan/vant/issues/569)
+- 没有重置Sku下的规格选项 [\#564](https://github.com/youzan/vant/issues/564)
+- 地址编辑 如何新增表单项？ [\#555](https://github.com/youzan/vant/issues/555)
+
+**Improvements**
+
+- \[new feature\] Dialog: support component call [\#593](https://github.com/youzan/vant/pull/593) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Area: add item-height & visible-item-count props [\#591](https://github.com/youzan/vant/pull/591) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Toast: support multiple instance [\#586](https://github.com/youzan/vant/pull/586) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Sku: add getSkuData method [\#585](https://github.com/youzan/vant/pull/585) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: multi line label stye error [\#583](https://github.com/youzan/vant/pull/583) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6) (2018-01-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.5...v0.12.6)
+
+**Issue**
+
+- 能否去除cell的下边框线 [\#576](https://github.com/youzan/vant/issues/576)
+- 地址编辑 areaList 请求后 赋值不可以？ [\#570](https://github.com/youzan/vant/issues/570)
+
+**Improvements**
+
+- \[new feature\] Uploader: support maxSize prop [\#575](https://github.com/youzan/vant/pull/575) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] AddressEdit: add default slot [\#573](https://github.com/youzan/vant/pull/573) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: active not work [\#572](https://github.com/youzan/vant/pull/572) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] 修复限购情况下，未超出限购数时的错误文案显示；\[new feature\] 增加sku-body-top slot；\[new feature\] 增加resetSelectedSkuOnHide参数 [\#568](https://github.com/youzan/vant/pull/568) ([w91](https://github.com/w91))
+- \[bugfix\] Toast: work break [\#567](https://github.com/youzan/vant/pull/567) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5) (2018-01-23)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.4...v0.12.5)
+
+**Issue**
+
+- ssr项目使用时css加载错误 [\#561](https://github.com/youzan/vant/issues/561)
+- css加载报错 [\#559](https://github.com/youzan/vant/issues/559)
+- tabbar的active手动设置不生效 [\#558](https://github.com/youzan/vant/issues/558)
+- 页面手动刷新 tabbar 会 回到起始路由页面对应的 active icon [\#557](https://github.com/youzan/vant/issues/557)
+- 轮播图van-swipe 懒加载图片v-lazy 使用报错Failed to resolve directive: lazy [\#554](https://github.com/youzan/vant/issues/554)
+- ssr 使用 babel-plugin-import报错 [\#552](https://github.com/youzan/vant/issues/552)
+- stepper如何放到cell里面？ [\#551](https://github.com/youzan/vant/issues/551)
+- DatetimePicker设置每一列可见元素个数visibile-column-count失效 [\#547](https://github.com/youzan/vant/issues/547)
+- Toast 和 Dialog 增加全局参数配置 [\#538](https://github.com/youzan/vant/issues/538)
+- picker 组件文档 [\#537](https://github.com/youzan/vant/issues/537)
+
+**Improvements**
+
+- \[Improvement\] CouponList: support v-model & exchangeButtonLoading [\#566](https://github.com/youzan/vant/pull/566) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update dependencies [\#565](https://github.com/youzan/vant/pull/565) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: add text prop [\#563](https://github.com/youzan/vant/pull/563) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: update share icon [\#562](https://github.com/youzan/vant/pull/562) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: should not display city & county list when not select province [\#560](https://github.com/youzan/vant/pull/560) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CouponList: add exchangeMinLength prop [\#556](https://github.com/youzan/vant/pull/556) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell: fix required style [\#553](https://github.com/youzan/vant/pull/553) ([qianzhaoy](https://github.com/qianzhaoy))
+- \[Improvement\] Sku: improve render performance [\#550](https://github.com/youzan/vant/pull/550) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4) (2018-01-18)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.3...v0.12.4)
+
+**Issue**
+
+- \[Stepper\]: should not fire the events on changing the value prop [\#545](https://github.com/youzan/vant/issues/545)
+- 有关vant导入所有组件用法示例异常 [\#543](https://github.com/youzan/vant/issues/543)
+- 密码输入框组件与数字键盘组件报错 [\#542](https://github.com/youzan/vant/issues/542)
+- ImagePreview 组件文档 [\#540](https://github.com/youzan/vant/issues/540)
+- 官网文档 Button组件API   "disabled" 拼写错误 [\#536](https://github.com/youzan/vant/issues/536)
+- TabBar切换颜色没有加深 [\#535](https://github.com/youzan/vant/issues/535)
+- 问一个swipe的问题？为什么写了img 写上了v-lazy 没效果 [\#534](https://github.com/youzan/vant/issues/534)
+- checkbox的全选取消的问题 [\#533](https://github.com/youzan/vant/issues/533)
+
+**Improvements**
+
+- \[bugfix\] Picker: misspelling of visibleItemCount [\#549](https://github.com/youzan/vant/pull/549) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Picker: add props to custom button text [\#548](https://github.com/youzan/vant/pull/548) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Stepper: not fire event on changing the value prop [\#546](https://github.com/youzan/vant/pull/546) ([chuangbo](https://github.com/chuangbo))
+- \[Doc\] fix misspelling of NumberKeyboard [\#544](https://github.com/youzan/vant/pull/544) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: add setDefaultOptions method [\#541](https://github.com/youzan/vant/pull/541) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Dialog: add setDefaultOptions method [\#539](https://github.com/youzan/vant/pull/539) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3) (2018-01-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.2...v0.12.3)
 

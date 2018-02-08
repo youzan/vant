@@ -1,5 +1,5 @@
 <template>
-  <div class="van-tabs" :class="[`van-tabs--${type}`]">
+  <div class="van-tabs" :class="`van-tabs--${type}`">
     <div
       ref="wrap"
       class="van-tabs__wrap"
@@ -21,7 +21,8 @@
           }"
           @click="onClick(index)"
         >
-          <span>{{ tab.title }}</span>
+          <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
+          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
         </div>
       </div>
     </div>
@@ -35,10 +36,15 @@
 import { create } from '../utils';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
+import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 
 export default create({
   name: 'van-tabs',
+
+  components: {
+    VanNode
+  },
 
   props: {
     sticky: Boolean,
@@ -69,13 +75,20 @@ export default create({
     };
   },
 
+  computed: {
+    // whether the nav is scrollable
+    scrollable() {
+      return this.tabs.length > this.swipeThreshold;
+    }
+  },
+
   watch: {
     active(val) {
       this.correctActive(val);
     },
 
     tabs(tabs) {
-      this.correctActive(this.curActive);
+      this.correctActive(this.curActive || this.active);
       this.setNavBar();
     },
 
@@ -110,13 +123,6 @@ export default create({
     /* istanbul ignore next */
     if (this.sticky) {
       this.scrollHandler(false);
-    }
-  },
-
-  computed: {
-    // whether the nav is scrollable
-    scrollable() {
-      return this.tabs.length > this.swipeThreshold;
     }
   },
 

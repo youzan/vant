@@ -56,11 +56,15 @@ describe('PullRefresh', () => {
       }
     });
 
+    const refreshSpy = sinon.spy();
+    wrapper.vm.$on('refresh', refreshSpy);
+
     wrapper.vm.$on('input', value => {
       wrapper.vm.value = value;
 
       setTimeout(() => {
         wrapper.vm.value = false;
+        expect(refreshSpy.calledOnce).to.be.true;
         setTimeout(() => {
           expect(wrapper.vm.status).to.equal('normal');
           done();

@@ -8,9 +8,10 @@ import {
   GoodsActionMiniBtn
 } from 'vant';
 
-Vue.use(GoodsAction);
-Vue.use(GoodsActionBigBtn);
-Vue.use(GoodsActionMiniBtn);
+Vue
+  .use(GoodsAction)
+  .use(GoodsActionBigBtn)
+  .use(GoodsActionMiniBtn);
 ```
 
 ### 代码演示

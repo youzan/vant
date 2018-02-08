@@ -72,6 +72,7 @@ export default {
 | cancel-text | 取消按钮文案 | `String` | - | - |
 | overlay | 是否显示遮罩 | `Boolean` | - | - |
 | close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
+| get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
 
 ### actions
 
