@@ -52,7 +52,7 @@ export default create({
   },
 
   beforeCreate() {
-    this.perimeter = Math.PI * 1000;
+    this.perimeter = 3140;
     this.path = 'M 530 530 m -500, 0 a 500, 500 0 1, 1 1000, 0 a 500, 500 0 1, 1 -1000, 0';
   },
 
