@@ -1,11 +1,11 @@
 <template>
-  <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-    <demo-section name="pull-refresh" background="#fff">
+  <demo-section name="pull-refresh">
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
       <demo-block :title="$t('basicUsage')">
         <p>{{ $t('text') }}: {{ count }}</p>
       </demo-block>
-    </demo-section>
-  </van-pull-refresh>
+    </van-pull-refresh>
+  </demo-section>
 </template>
 
 <script>
@@ -42,6 +42,13 @@ export default {
 
 <style lang="postcss">
 .demo-pull-refresh {
+  .van-pull-refresh {
+    &,
+    &__track {
+      height: 100%;
+    }
+  }
+
   p {
     margin: 10px 0 0 15px;
   }

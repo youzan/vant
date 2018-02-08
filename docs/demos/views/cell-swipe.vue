@@ -1,7 +1,7 @@
 <template>
   <div>
-    <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
     <demo-section>
+      <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
         <van-cell-swipe :right-width="65" :left-width="65">
           <span slot="left">{{ $t('button1') }}</span>
