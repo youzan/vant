@@ -1,5 +1,5 @@
 <template>
-  <van-pull-refresh v-model="isLoading">
+  <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
     <demo-section name="pull-refresh" background="#fff">
       <demo-block :title="$t('basicUsage')">
         <p>{{ $t('text') }}: {{ count }}</p>
@@ -12,10 +12,12 @@
 export default {
   i18n: {
     'zh-CN': {
-      text: '刷新次数'
+      text: '刷新次数',
+      success: '刷新成功'
     },
     'en-US': {
-      text: 'Refresh Count'
+      text: 'Refresh Count',
+      success: 'Refresh success'
     }
   },
 
@@ -26,15 +28,13 @@ export default {
     };
   },
 
-  watch: {
-    isLoading() {
-      if (this.isLoading) {
-        setTimeout(() => {
-          Toast('刷新成功');
-          this.isLoading = false;
-          this.count++;
-        }, 500);
-      }
+  methods: {
+    onRefresh() {
+      setTimeout(() => {
+        Toast(this.$t('success'));
+        this.isLoading = false;
+        this.count++;
+      }, 500);
     }
   }
 };

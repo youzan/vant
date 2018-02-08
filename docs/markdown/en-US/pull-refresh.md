@@ -9,14 +9,11 @@ Vue.use(PullRefresh);
 
 ### Usage
 
+#### Basic Usage
+The `refresh` event will be triggered when pull refresh, you should set `v-model` to `false` to reset loading status after process refresh event.
+
 ```html
-<!-- use v-model to control loading status -->
-<van-pull-refresh
-  v-model="isLoading"
-  pulling-text="Pull to refresh..."
-  loosing-text="Loose to refresh..."
-  loading-text="Loading..."
->
+<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
   <p>Refresh Count: {{ count }}</p>
 </van-pull-refresh>
 ```
@@ -30,15 +27,13 @@ export default {
     }
   },
 
-  watch: {
-    isLoading() {
-      if (this.isLoading) {
-        setTimeout(() => {
-          Toast('Refresh Success');
-          this.isLoading = false;
-          this.count++;
-        }, 500);
-      }
+  methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast('Refresh Success');
+        this.isLoading = false;
+        this.count++;
+      }, 500);
     }
   }
 }
@@ -49,11 +44,18 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Loading status | `Boolean` | - | - |
-| pulling-text | Text to show when pulling | `String` | `下拉即可刷新...` | - |
-| loosing-text | Text to show when loosing | `String` | `释放即可刷新...` | - |
-| loading-text | Text to show when loading | `String` | `加载中...` | - |
+| pulling-text | Text to show when pulling | `String` | `Pull to refresh...` | - |
+| loosing-text | Text to show when loosing | `String` | `Loose to refresh...` | - |
+| loading-text | Text to show when loading | `String` | `Loading...` | - |
 | animation-duration | Animation duration | `Number` | `300` | - |
 | head-height | Height of head | `Number` | `50` | - |
+
+### Event
+
+| Event | Description | Parameters |
+|-----------|-----------|-----------|
+| refresh | Triggered when pull refresh | - |
+
 
 ### Slot
 
