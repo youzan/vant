@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v0.12.9](https://github.com/youzan/vant/tree/v0.12.9) (2018-02-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.8...v0.12.9)
+
+**Breaking changes**
+
+- 能否增加一个进度环组件Circle [\#599](https://github.com/youzan/vant/issues/599)
+
+**Issue**
+
+- PullRefresh 下拉刷新?没有下拉加载。。。社区怎么没人啊？ [\#614](https://github.com/youzan/vant/issues/614)
+- tabs 的title能否加个slot? [\#574](https://github.com/youzan/vant/issues/574)
+
+**Improvements**
+
+- \[bugfix\] 修复sku数据改变后skuMessages没有更新的bug [\#627](https://github.com/youzan/vant/pull/627) ([w91](https://github.com/w91))
+- \[Doc\] optimzie demo display [\#626](https://github.com/youzan/vant/pull/626) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] PullRefresh: add refersh event [\#625](https://github.com/youzan/vant/pull/625) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Circle: optimzie linecap [\#624](https://github.com/youzan/vant/pull/624) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Loading: change default type to circular [\#623](https://github.com/youzan/vant/pull/623) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Loading: add size prop [\#620](https://github.com/youzan/vant/pull/620) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Picker: add loading prop [\#619](https://github.com/youzan/vant/pull/619) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Loading: add circular type [\#618](https://github.com/youzan/vant/pull/618) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8) (2018-02-07)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.7...v0.12.8)
 
