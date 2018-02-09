@@ -28,7 +28,9 @@ router.afterEach(() => {
   if (router.currentRoute.name) {
     window.scrollTo(0, 0);
   }
-  Vue.nextTick(() => window.syncPath());
+  if (!router.currentRoute.redirectedFrom) {
+    Vue.nextTick(() => window.syncPath());
+  }
 });
 
 window.vueRouter = router;
