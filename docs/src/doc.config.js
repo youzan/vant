@@ -38,6 +38,10 @@ module.exports = {
                 noExample: true
               },
               {
+                path: '/built-in-style',
+                title: '内置样式'
+              },
+              {
                 path: '/theme',
                 title: '定制主题',
                 noExample: true
@@ -318,6 +322,10 @@ module.exports = {
                 path: '/changelog',
                 title: 'Changelog',
                 noExample: true
+              },
+              {
+                path: '/built-in-style',
+                title: 'Built-in style'
               },
               {
                 path: '/theme',

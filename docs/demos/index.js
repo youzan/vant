@@ -26,6 +26,7 @@ export default {
   'address-list': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/address-list'), 'address-list')), 'address-list')),
   'area': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/area'), 'area')), 'area')),
   'badge': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/badge'), 'badge')), 'badge')),
+  'built-in-style': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/built-in-style'), 'built-in-style')), 'built-in-style')),
   'button': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/button'), 'button')), 'button')),
   'card': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/card'), 'card')), 'card')),
   'cell-swipe': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/cell-swipe'), 'cell-swipe')), 'cell-swipe')),

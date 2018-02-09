@@ -28,22 +28,20 @@ const registerRoute = (isExample) => {
 
     const navs = docConfig[lang].nav || [];
     navs.forEach(nav => {
-      if (isExample && !nav.showInMobile) {
-        return;
-      }
-
       if (nav.groups) {
         nav.groups.forEach(group => {
           group.list.forEach(page => addRoute(page, lang));
         });
-      } else if (nav.children) {
-        nav.children.forEach(page => addRoute(page, lang));
       } else {
         addRoute(nav, lang);
       }
     });
 
     function addRoute(page, lang) {
+      if (isExample && page.noExample) {
+        return;
+      }
+
       const { path } = page;
       if (path) {
         const name = lang + '/' + path.replace('/', '');
@@ -59,7 +57,10 @@ const registerRoute = (isExample) => {
           name,
           component,
           path: `/${lang}/component${path}`,
-          meta: { lang }
+          meta: {
+            lang,
+            name: page.title
+          }
         });
       }
     }
