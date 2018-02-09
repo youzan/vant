@@ -6,7 +6,6 @@
       class="van-doc-nav-bar"
       :title="title"
       left-arrow
-      :left-text="$t('back')"
       @click-left="onBack"
     />
     <router-view />
@@ -14,13 +13,11 @@
 </template>
 
 <script>
-import { camelize } from 'packages/utils';
-
 export default {
   computed: {
     title() {
-      const name = this.$route.name;
-      return name ? camelize(name.split('/').pop()) : '';
+      const { name } = this.$route.meta;
+      return name ? name.replace(/-/g, '') : '';
     }
   },
 

@@ -107,8 +107,8 @@ export default {
 | discount | Discount | `Number` |
 | denominations | Denominations | `Number` |
 | origin_condition | Condition | `Number` |
-| start_at | Start time | `Number` |
-| end_at | End time | `Number` |
+| start_at | Start time (Timestmap, unit second) | `Number` |
+| end_at | End time (Timestmap, unit second) | `Number` |
 | reason | Unavailable reason | `String` |
 | value | Value | `Number` |
 

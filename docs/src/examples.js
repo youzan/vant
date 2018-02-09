@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
-import routes from './router.config';
+import routes from './router';
 import Vant, { Lazyload } from 'packages';
 import VantDoc from 'vant-doc';
 import 'packages/vant-css/src/index.css';
