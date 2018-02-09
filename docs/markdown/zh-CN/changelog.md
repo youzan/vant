@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+`2018-02-08`
+
+**Improvements**
+
+* PullRefresh: 新增 refersh 事件 [\#625](https://github.com/youzan/vant/pull/625) [@chenjiahan](https://github.com/chenjiahan)
+* Circle: 优化线条圆角 [\#624](https://github.com/youzan/vant/pull/624) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: 新增 loading 属性 [\#619](https://github.com/youzan/vant/pull/619) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 size 属性 [\#620](https://github.com/youzan/vant/pull/620) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 circular 类型 [\#618](https://github.com/youzan/vant/pull/618) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 默认类型调整为 circular [\#623](https://github.com/youzan/vant/pull/623) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 Sku message 更新时未重新渲染的问题 [\#627](https://github.com/youzan/vant/pull/627) [@w91](https://github.com/w91)
+
+
 ### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
 `2018-02-07`
 

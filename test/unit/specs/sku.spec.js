@@ -219,15 +219,17 @@ describe('Sku', (done) => {
   });
 
   it('should not render sku group when none_sku is true', (done) => {
-    const newData = Object.assign({}, data);
-    newData.sku.none_sku = true; // eslint-disable-line
+    const newSku = {
+      ...data.sku,
+      none_sku: true
+    };
 
     wrapper = mount(Sku, {
       attachToDocument: true,
       propsData: {
         value: false,
-        sku: newData.sku,
-        goodsId: newData.goods_id,
+        sku: newSku,
+        goodsId: data.goods_id,
         goods: goods
       }
     });
@@ -362,6 +364,37 @@ describe('Sku', (done) => {
           done();
         });
       });
+    });
+  });
+
+  it('should reset values when sku change', (done) => {
+    wrapper = mount(Sku, {
+      attachToDocument: true,
+      propsData: {
+        value: true,
+        sku: data.sku,
+        goodsId: data.goods_id,
+        goods: goods,
+        resetStepperOnHide: true,
+        resetSelectedSkuOnHide: true
+      }
+    });
+
+    const newSku = {
+      ...data.sku,
+      tree: [],
+      list: [],
+      messages: [],
+      none_sku: true
+    };
+
+    wrapper.vm.sku = newSku;
+    const skuMessages = wrapper.find(Sku.SkuMessages)[0];
+
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.selectedSku).to.be.empty;
+      expect(skuMessages.vm.messageValues).to.be.empty;
+      done();
     });
   });
 });

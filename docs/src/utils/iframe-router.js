@@ -23,6 +23,7 @@ window.syncPath = function(dir) {
         iframe.contentWindow.changePath(lang, currentDir);
       });
     }
+    setLang(lang);
   } else if (isInIframe) {
     window.top.changePath(lang, currentDir);
   }

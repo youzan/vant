@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+`2018-02-08`
+
+**Improvements**
+
+* PullRefresh: add refersh event [\#625](https://github.com/youzan/vant/pull/625) [@chenjiahan](https://github.com/chenjiahan)
+* Circle: optimzie linecap [\#624](https://github.com/youzan/vant/pull/624) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: add loading prop [\#619](https://github.com/youzan/vant/pull/619) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: add size prop [\#620](https://github.com/youzan/vant/pull/620) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: add circular type [\#618](https://github.com/youzan/vant/pull/618) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: change default type to circular [\#623](https://github.com/youzan/vant/pull/623) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix Sku message observation [\#627](https://github.com/youzan/vant/pull/627) [@w91](https://github.com/w91)
+
 
 ### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
 `2018-02-07`
