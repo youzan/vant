@@ -90,7 +90,7 @@ export default create({
     },
 
     isDisabled() {
-      return (this.isGroup && this.parentGroup && this.parentGroup.disabled)|| this.disabled ||
+      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled ||
           (this.isGroup && this.parentGroup && this.parentGroup.max > 0 && this.parentGroup.max <= this.parentGroup.value.length && !this.isChecked);
     },
 
