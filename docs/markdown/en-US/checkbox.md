@@ -69,6 +69,30 @@ export default {
 </van-checkbox-group>
 ```
 
+#### Configure the maximum amount of checked options
+
+```html
+<van-checkbox-group v-model="result" :max="max">
+  <van-cell-group>
+    <van-cell v-for="(item, index) in list" :key="index">
+      <van-checkbox :name="item">Checkbox {{ item }}</van-checkbox>
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>
+```
+
+```
+export default {
+  data() {
+    return {
+      list: ['a', 'b', 'c'],
+      result: ['a', 'b'],
+      max: 2
+    };
+  }
+};
+```
+
 ### Checkbox API
 
 | Attribute | Description | Type | Default | Accepted Values |
@@ -82,6 +106,7 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | disabled | Disable all checkboxes | `Boolean` | `false` | - |
+| max | the maximum amount of checked options | `Number` | `0`(Unlimited) | - |
 
 ### Checkbox Event
 
