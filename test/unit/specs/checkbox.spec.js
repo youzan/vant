@@ -67,6 +67,23 @@ describe('CheckboxGroup', () => {
     });
   });
 
+  it('click on unchecked item and checked options num beyond max', (done) => {
+    wrapper = mount(CheckboxTestComponent);
+
+    wrapper.setData({
+      'max': 2
+    });
+
+    const lastCheckboxLabel = wrapper.find('.van-checkbox')[3].find('.van-checkbox__label')[0];
+    lastCheckboxLabel.trigger('click');
+
+    wrapper.update();
+    wrapper.vm.$nextTick(() => {
+      expect(wrapper.vm.result.indexOf('d')).to.equal(-1);
+      done();
+    });
+  });
+
   it('click on disabled item', (done) => {
     wrapper = mount(CheckboxTestComponent);
 

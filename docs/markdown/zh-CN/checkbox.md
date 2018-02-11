@@ -73,6 +73,33 @@ export default {
 </van-checkbox-group>
 ```
 
+#### 设置最大可选数
+
+此时你需要引入`CellGroup`组件，`Cell`组件非必须
+
+```html
+<van-checkbox-group v-model="result" :max="max">
+  <van-cell-group>
+    <van-cell v-for="(item, index) in list" :key="index">
+      <van-checkbox :name="item">复选框 {{ item }}</van-checkbox>
+    </van-cell>
+  </van-cell-group>
+</van-checkbox-group>
+```
+
+```
+export default {
+  data() {
+    return {
+      list: ['a', 'b', 'c'],
+      result: ['a', 'b'],
+      max: 2
+    };
+  }
+};
+```
+
+
 ### Checkbox API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
@@ -86,6 +113,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| max | 设置最大可选数 | `Number` | `0`（无限制） | - |
 
 ### Checkbox Event
 

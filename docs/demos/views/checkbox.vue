@@ -30,6 +30,16 @@
         </van-cell-group>
       </van-checkbox-group>
     </demo-block>
+
+    <demo-block :title="$t('title5')">
+      <van-checkbox-group v-model="result" :max="max">
+        <van-cell-group>
+          <van-cell v-for="(item, index) in list" :key="index">
+            <van-checkbox :name="item">{{ $t('checkbox') }} {{ item }}</van-checkbox>
+          </van-cell>
+        </van-cell-group>
+      </van-checkbox-group>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -39,12 +49,14 @@ export default {
     'zh-CN': {
       checkbox: '复选框',
       title3: 'Checkbox 组',
-      title4: '与 Cell 组件一起使用'
+      title4: '与 Cell 组件一起使用',
+      title5: '设置最大可选数',
     },
     'en-US': {
       checkbox: 'Checkbox',
       title3: 'Checkbox Group',
-      title4: 'Inside a Cell'
+      title4: 'Inside a Cell',
+      title5: 'Configure the maximum amount of checked options'
     }
   },
 
@@ -57,7 +69,8 @@ export default {
         'b',
         'c'
       ],
-      result: ['a', 'b']
+      result: ['a', 'b'],
+      max: 2
     };
   }
 };
