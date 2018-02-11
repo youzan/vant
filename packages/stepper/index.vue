@@ -79,9 +79,11 @@ export default create({
 
   watch: {
     value(val) {
-      val = this.correctValue(+val);
-      if (val !== this.currentValue) {
-        this.currentValue = val;
+      if (val !== '') {
+        val = this.correctValue(+val);
+        if (val !== this.currentValue) {
+          this.currentValue = val;
+        }
       }
     }
   },
@@ -99,8 +101,8 @@ export default create({
     },
 
     onInput(event) {
-      const val = +event.target.value;
-      this.currentValue = this.correctValue(val);
+      const { value } = event.target;
+      this.currentValue = value ? this.correctValue(+value) : value;
       this.emitInput();
     },
 
