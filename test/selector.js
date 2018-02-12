@@ -15,7 +15,7 @@ inquirer.prompt([{
   choices: files
 }]).then(result => {
   const file = result.select.replace('.spec.js', '');
-  shell.exec('karma start test/unit/karma.conf.js --color alway --file ' + file);
+  shell.exec('karma start test/karma.conf.js --color alway --file ' + file);
 }).catch(error => {
   console.log(error);
 });

@@ -15,7 +15,7 @@ module.exports = function(config) {
     files: ['./index.js'],
     preprocessors: {
       './index.js': ['webpack'],
-      'test/unit/!(components)/**/*.vue': ['coverage']
+      'test/!(components)/**/*.vue': ['coverage']
     },
     webpack: getWebpackConfig(getTestFileName()),
     webpackMiddleware: {

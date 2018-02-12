@@ -1,6 +1,6 @@
 import Area from 'packages/area';
 import { mount } from 'avoriaz';
-import AreaList from '../mock/area.json';
+import areaList from '../../docs/demos/mock/area.json';
 
 describe('Area', () => {
   let wrapper;
@@ -11,7 +11,7 @@ describe('Area', () => {
   it('create an area', () => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList
+        areaList: areaList
       }
     });
 
@@ -21,7 +21,7 @@ describe('Area', () => {
   it('create an area with default value', done => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList,
+        areaList: areaList,
         value: '110101'
       }
     });
@@ -41,7 +41,7 @@ describe('Area', () => {
   it('create an area and set value', done => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList,
+        areaList: areaList,
         value: '110101'
       }
     });
@@ -72,7 +72,7 @@ describe('Area', () => {
   it('create an area with columnsNum equal 2', () => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList,
+        areaList: areaList,
         columnsNum: 2
       }
     });
@@ -83,7 +83,7 @@ describe('Area', () => {
   it('create an area with columnsNum equal 1', () => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList,
+        areaList: areaList,
         columnsNum: 1
       }
     });
@@ -94,7 +94,7 @@ describe('Area', () => {
   it('create an area and click cancel', done => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList
+        areaList: areaList
       }
     });
 
@@ -112,7 +112,7 @@ describe('Area', () => {
   it('onChange method', () => {
     wrapper = mount(Area, {
       propsData: {
-        areaList: AreaList
+        areaList: areaList
       }
     });
 
@@ -132,7 +132,7 @@ describe('Area', () => {
     wrapper = mount(Area, {
       propsData: {
         value: '110101',
-        areaList: AreaList
+        areaList: areaList
       }
     });
 

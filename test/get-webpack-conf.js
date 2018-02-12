@@ -78,7 +78,7 @@ function getWebpackConfig(testFileName) {
           ]
         },
         {
-          test: /test\/unit\/components\/.*\.vue$|packages\/swipe.*\.vue$/,
+          test: /test\/components\/.*\.vue$|packages\/swipe.*\.vue$/,
           use: [
             {
               loader: 'vue-loader',
