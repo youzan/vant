@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10) (2018-02-12)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.9...v0.12.10)
+
+**Issue**
+
+- 这个参数到底是毫秒还是秒，还是分钟呀？！ [\#632](https://github.com/youzan/vant/issues/632)
+- 建议Toast.loading 增加一个 loading关闭api [\#629](https://github.com/youzan/vant/issues/629)
+- 修改地址时，怎么设置默认值  [\#628](https://github.com/youzan/vant/issues/628)
+- pull-refresh [\#622](https://github.com/youzan/vant/issues/622)
+- Actionsheet 没有设置默认选中的啊 [\#621](https://github.com/youzan/vant/issues/621)
+
+**Improvements**
+
+- \[Doc\] optimzie router & remove unused code [\#640](https://github.com/youzan/vant/pull/640) ([chenjiahan](https://github.com/chenjiahan))
+- simplify test config [\#639](https://github.com/youzan/vant/pull/639) ([chenjiahan](https://github.com/chenjiahan))
+- simplify build config [\#638](https://github.com/youzan/vant/pull/638) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Checkbox: remove unnecessary DOM [\#636](https://github.com/youzan/vant/pull/636) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Stepper: change event error when clear input [\#635](https://github.com/youzan/vant/pull/635) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add build-in style document [\#633](https://github.com/youzan/vant/pull/633) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] Checkbox: support config the maximum amount of checked options [\#631](https://github.com/youzan/vant/pull/631) ([mpandar](https://github.com/mpandar))
+
 ## [v0.12.9](https://github.com/youzan/vant/tree/v0.12.9) (2018-02-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.8...v0.12.9)
 
