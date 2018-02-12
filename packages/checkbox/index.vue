@@ -1,28 +1,23 @@
 <template>
-  <div
-    class="van-checkbox"
-    :class="[
-      `van-checkbox--${shape}`,
-      { 'van-checkbox--disabled': isDisabled || isLimit }
-    ]"
-  >
-    <span class="van-checkbox__input">
-      <input
-        v-model="currentValue"
-        type="checkbox"
-        class="van-checkbox__control"
-        :disabled="isDisabled"
-      >
-      <icon name="success" />
-    </span>
-    <span class="van-checkbox__label" @click="onClickLabel">
+  <div class="van-checkbox">
+    <icon
+      name="success"
+      class="van-checkbox__icon"
+      :class="[
+        `van-checkbox--${shape}`,
+        { 'van-checkbox--disabled': isDisabled },
+        { 'van-checkbox--checked': isChecked }
+      ]"
+      @click="onClick"
+    />
+    <span class="van-checkbox__label" @click="onClick">
       <slot />
     </span>
   </div>
 </template>
 
 <script>
-import { create } from '../utils';
+import { create, isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
@@ -46,32 +41,38 @@ export default create({
     }
   },
 
-  computed: {
-    // whether is in van-checkbox-group
-    isGroup() {
-      return !!this.findParentByName('van-checkbox-group');
-    },
+  data() {
+    this.findParentByName('van-checkbox-group');
+    return {};
+  },
 
+  computed: {
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
+        return this.parentGroup
+          ? this.parentGroup.value.indexOf(this.name) !== -1
+          : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
+        const { parentGroup } = this;
+        if (parentGroup) {
           const parentValue = this.parentGroup.value.slice();
           if (val) {
+            if (parentGroup.max && parentValue.length >= parentGroup.max) {
+              return;
+            }
             /* istanbul ignore else */
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
-              this.parentGroup.$emit('input', parentValue);
+              parentGroup.$emit('input', parentValue);
             }
           } else {
             const index = parentValue.indexOf(this.name);
             /* istanbul ignore else */
             if (index !== -1) {
               parentValue.splice(index, 1);
-              this.parentGroup.$emit('input', parentValue);
+              parentGroup.$emit('input', parentValue);
             }
           }
         } else {
@@ -84,23 +85,18 @@ export default create({
       const { currentValue } = this;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
         return currentValue;
-      } else if (currentValue !== null && currentValue !== undefined) {
+      } else if (isDef(currentValue)) {
         return currentValue === this.name;
       }
     },
 
     isDisabled() {
-      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled ||
-          (this.isGroup && this.parentGroup && this.parentGroup.max > 0 && this.parentGroup.max <= this.parentGroup.value.length && !this.isChecked);
-    },
-
-    isLimit() {
-      return this.isGroup && this.parentGroup && this.parentGroup.max > 0 && this.parentGroup.max <= this.parentGroup.value.length;
+      return (this.parentGroup && this.parentGroup.disabled) || this.disabled;
     }
   },
 
   methods: {
-    onClickLabel() {
+    onClick() {
       if (!this.isDisabled) {
         this.currentValue = !this.currentValue;
       }

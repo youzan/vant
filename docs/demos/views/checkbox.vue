@@ -32,7 +32,7 @@
     </demo-block>
 
     <demo-block :title="$t('title5')">
-      <van-checkbox-group v-model="result" :max="max">
+      <van-checkbox-group v-model="result2" :max="max">
         <van-cell-group>
           <van-cell v-for="(item, index) in list" :key="index">
             <van-checkbox :name="item">{{ $t('checkbox') }} {{ item }}</van-checkbox>
@@ -56,7 +56,7 @@ export default {
       checkbox: 'Checkbox',
       title3: 'Checkbox Group',
       title4: 'Inside a Cell',
-      title5: 'Configure the maximum amount of checked options'
+      title5: 'Maximum amount of checked options'
     }
   },
 
@@ -70,6 +70,7 @@ export default {
         'c'
       ],
       result: ['a', 'b'],
+      result2: [],
       max: 2
     };
   }
@@ -85,15 +86,13 @@ export default {
   .van-cell {
     .van-checkbox {
       margin: 0;
-    }
+      display: flex;
+      flex-direction: row-reverse;
 
-    .van-checkbox__input {
-      float: right;
-      position: static;
-    }
-
-    span {
-      margin: 0;
+      &__label {
+        margin: 0;
+        flex: 1;
+      }
     }
   }
 }
