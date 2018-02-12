@@ -3,7 +3,7 @@
     class="van-checkbox"
     :class="[
       `van-checkbox--${shape}`,
-      { 'van-checkbox--disabled': isDisabled }
+      { 'van-checkbox--disabled': isDisabled || isLimit }
     ]"
   >
     <span class="van-checkbox__input">
@@ -90,7 +90,12 @@ export default create({
     },
 
     isDisabled() {
-      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled;
+      return (this.isGroup && this.parentGroup && this.parentGroup.disabled) || this.disabled ||
+          (this.isGroup && this.parentGroup && this.parentGroup.max > 0 && this.parentGroup.max <= this.parentGroup.value.length && !this.isChecked);
+    },
+
+    isLimit() {
+      return this.isGroup && this.parentGroup && this.parentGroup.max > 0 && this.parentGroup.max <= this.parentGroup.value.length;
     }
   },
 
