@@ -33,13 +33,11 @@ function compile(dir) {
     // 移除 vant-css
     if (file.indexOf('vant-css') !== -1) {
       fs.removeSync(absolutePath);
-    }
-    // 遍历文件夹
-    else if (isDir(absolutePath)) {
+      // 遍历文件夹
+    } else if (isDir(absolutePath)) {
       return compile(absolutePath);
-    }
-    // 编译 .vue 文件
-    else if (/\.vue$/.test(file)) {
+      // 编译 .vue 文件
+    } else if (/\.vue$/.test(file)) {
       const source = fs.readFileSync(absolutePath, 'utf-8');
       fs.removeSync(absolutePath);
 
@@ -49,9 +47,13 @@ function compile(dir) {
 
       fs.outputFileSync(output, compiler(source, compilerOption).js);
     } else if (/\.js$/.test(file)) {
-      babel.transformFile(absolutePath, compilerOption.babel, (err, { code }) => {
-        fs.outputFileSync(absolutePath, code);
-      });
+      babel.transformFile(
+        absolutePath,
+        compilerOption.babel,
+        (err, { code }) => {
+          fs.outputFileSync(absolutePath, code);
+        }
+      );
     }
   });
 }

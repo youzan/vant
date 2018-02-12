@@ -11,22 +11,12 @@ module.exports = merge(devConfig, {
     umdNamedDefine: true,
     chunkFilename: 'async_[name].[chunkhash:8].js'
   },
-  devtool: false,
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true
-      },
-      output: {
-        comments: false
-      },
-      sourceMap: false
-    })
+    new webpack.optimize.UglifyJsPlugin()
   ]
 });

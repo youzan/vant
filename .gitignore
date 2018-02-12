@@ -5,13 +5,9 @@
 .vscode
 packages/**/lib
 lib/
-lib/*
-!lib/index.js
-!lib/style.css
 node_modules
 example/dist
 /docs/dist
 test/unit/coverage
 packages/vant-css/build
 packages/vant-css/icons
-docs/examples-dist
