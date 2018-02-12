@@ -12,7 +12,7 @@ import docConfig from './doc.config';
 export default {
   data() {
     return {
-      simulators: [`/zanui/vant/mobile${location.hash}`],
+      simulators: [`/zanui/vant/examples${location.hash}`],
       demoURL: ''
     };
   },
