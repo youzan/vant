@@ -12,9 +12,7 @@
 </head>
 <body ontouchstart>
 
-  <div id="app-container">
-    <app></app>
-  </div>
+<div id="app"></div>
 
 </body>
 </html>

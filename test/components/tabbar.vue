@@ -2,7 +2,7 @@
   <van-tabbar v-model="active" @change="onChange">
     <van-tabbar-item icon="shop">
       <span>自定义</span>
-      <img slot="icon" :src="active === 0 ? icon.active : icon.normal" />
+      <img slot="icon" :src="active === 0 ? icon.active : icon.normal" >
     </van-tabbar-item>
     <van-tabbar-item icon="chat">标签</van-tabbar-item>
     <van-tabbar-item icon="chat">标签</van-tabbar-item>
@@ -11,15 +11,7 @@
 </template>
 
 <script>
-import Tabbar from 'packages/tabbar';
-import TabbarItem from 'packages/tabbar-item';
-
 export default {
-  components: {
-    [Tabbar.name]: Tabbar,
-    [TabbarItem.name]: TabbarItem
-  },
-
   data() {
     return {
       active: 0,

@@ -1,18 +1,16 @@
 <template>
-  <van-field :onIconClick="onIconClick" @blur="$emit('blur')">
+  <van-field @click-icon="onIconClick" @blur="$emit('blur')">
     <div slot="icon">icon</div>
   </van-field>
 </template>
 
 <script>
-import Field from 'packages/field';
-
 export default {
-  components: {
-    [Field.name]: Field
-  },
-
-  props: ['onIconClick']
+  props: {
+    onIconClick: {
+      type: Function,
+      default: () => {}
+    }
+  }
 };
 </script>
-

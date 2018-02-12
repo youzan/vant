@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import NoticeBar from 'packages/notice-bar';
 export default {
-  components: {
-    [NoticeBar.name]: NoticeBar
-  },
-  props: ['speed', 'text', 'mode', 'delay']
+  props: {
+    speed: Number,
+    text: String,
+    mode: String,
+    delay: Number
+  }
 };
 </script>
-

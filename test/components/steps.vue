@@ -8,15 +8,7 @@
 </template>
 
 <script>
-import Steps from 'packages/steps';
-import Step from 'packages/step';
-
 export default {
-  components: {
-    'van-step': Step,
-    'van-steps': Steps
-  },
-
   data() {
     return {
       active: 1

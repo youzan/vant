@@ -4,17 +4,9 @@
     <van-radio name="2">单选框2</van-radio>
   </van-radio-group>
 </template>
-  
+
 <script>
-import Radio from 'packages/radio';
-import RadioGroup from 'packages/radio-group';
-
 export default {
-  components: {
-    'van-radio': Radio,
-    'van-radio-group': RadioGroup
-  },
-
   data() {
     return {
       radio: '1'

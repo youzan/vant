@@ -8,15 +8,7 @@
 </template>
 
 <script>
-import Tab from 'packages/tab';
-import Tabs from 'packages/tabs';
-
 export default {
-  components: {
-    'van-tab': Tab,
-    'van-tabs': Tabs
-  },
-
   props: {
     firstTabTitle: {
       type: String,

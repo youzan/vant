@@ -121,6 +121,33 @@ describe('Field', () => {
     expect(wrapper.find('.van-field__icon').length).to.equal(1);
   });
 
+  it('keypress event', () => {
+    wrapper = mount(Field, {
+      propsData: {
+        value: '',
+        type: 'number'
+      }
+    });
+
+    const spy1 = sinon.spy();
+    wrapper.vm.onKeypress({ keyCode: 0, preventDefault: spy1 });
+    expect(spy1.calledOnce).to.be.true;
+
+    const spy2 = sinon.spy();
+    wrapper.vm.onKeypress({ keyCode: 50, preventDefault: spy2 });
+    expect(spy2.calledOnce).to.be.false;
+
+    const spy3 = sinon.spy();
+    wrapper.vm.value = '0.1';
+    wrapper.vm.onKeypress({ keyCode: 46, preventDefault: spy3 });
+    expect(spy3.calledOnce).to.be.true;
+
+    wrapper.vm.type = 'text';
+    const spy4 = sinon.spy();
+    wrapper.vm.onKeypress({ keyCode: 0, preventDefault: spy4 });
+    expect(spy4.calledOnce).to.be.false;
+  });
+
   it('create a field with icon slot', () => {
     const fn = sinon.spy();
 

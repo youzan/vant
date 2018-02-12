@@ -1,28 +1,3 @@
-<script>
-  import Waterfall from 'packages/waterfall';
-
-  export default {
-    props: {
-      disabled: Boolean,
-      list: Array,
-      onWaterfallLower: {
-        type: Function,
-        default() {
-          return function() {};
-        }
-      }
-    },
-    directives: {
-      WaterfallLower: Waterfall('lower')
-    },
-    methods: {
-      triggerWaterfallLower() {
-        this.onWaterfallLower();
-      }
-    }
-  };
-</script>
-
 <template>
   <div
     v-waterfall-lower="triggerWaterfallLower"
@@ -35,6 +10,31 @@
     >{{ item.id }}</div>
   </div>
 </template>
+
+<script>
+import Waterfall from 'packages/waterfall';
+
+export default {
+  props: {
+    disabled: Boolean,
+    list: Array,
+    onWaterfallLower: {
+      type: Function,
+      default() {
+        return function() {};
+      }
+    }
+  },
+  directives: {
+    WaterfallLower: Waterfall('lower')
+  },
+  methods: {
+    triggerWaterfallLower() {
+      this.onWaterfallLower();
+    }
+  }
+};
+</script>
 
 <style>
 .waterfall--hidden {

@@ -1,4 +1,8 @@
+import Vue from 'vue';
+import Vant from 'packages';
 require('packages/vant-css/src/index.css');
+
+Vue.use(Vant);
 
 // hack for test touch event
 window.ontouchstart = {};
