@@ -25,10 +25,10 @@
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "dist": "npm run bootstrap && node build/bin/build-lib.js",
     "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
-    "test": "karma start test/unit/karma.conf.js --single-run",
-    "test:coverage": "open test/unit/coverage/lcov-report/index.html",
-    "test:watch": "karma start test/unit/karma.conf.js",
-    "test:single": "node ./test/unit/selector.js",
+    "test": "karma start test/karma.conf.js --single-run",
+    "test:coverage": "open test/coverage/lcov-report/index.html",
+    "test:watch": "karma start test/karma.conf.js",
+    "test:single": "node ./test/selector.js",
     "release": "sh build/release.sh"
   },
   "repository": {

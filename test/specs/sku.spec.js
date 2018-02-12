@@ -3,16 +3,16 @@ import Uploader from 'packages/uploader';
 import Toast from 'packages/toast';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
-import data from '../mock/sku';
+import skuMockData from '../../docs/demos/mock/sku';
 import repeat from 'lodash/repeat';
 
+const data = skuMockData['zh-CN'];
 const { skuHelper } = Sku;
 const goods = data.goods_info;
 const initialSku = {
   s1: '30349',
   s2: '1193'
 };
-goods.picture = goods.picture[0];
 
 const File = function() {
   this.name = 'test';
@@ -157,7 +157,7 @@ describe('Sku', (done) => {
         const plusBtn = wrapper.find('.van-stepper__plus')[0];
         plusBtn.trigger('click');
         wrapper.vm.$nextTick(() => {
-          expect(toastText.textContent).to.equal(`限购${data.quota}件，您已购买${data.quota_used}件`);
+          expect(toastText.textContent).to.equal(`限购${data.quota}件`);
           done();
         });
       });
