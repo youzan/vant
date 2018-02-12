@@ -185,7 +185,7 @@ describe('Checkbox', () => {
     });
 
     expect(wrapper.hasClass('van-checkbox')).to.be.true;
-    expect(wrapper.hasClass('van-checkbox--disabled')).to.be.true;
+    expect(wrapper.find('.van-checkbox--disabled').length).to.equal(1);
     expect(wrapper.vm.currentValue).to.be.false;
     expect(wrapper.vm.isDisabled).to.be.true;
 
