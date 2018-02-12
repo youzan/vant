@@ -2,9 +2,8 @@
  * 同步父窗口和 iframe 的 vue-router 状态
  */
 
-import isMobile from './is-mobile';
 import { setLang } from './lang';
-import { iframeReady } from './iframe';
+import { iframeReady, isMobile } from './';
 
 window.syncPath = function(dir) {
   const router = window.vueRouter;

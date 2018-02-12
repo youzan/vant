@@ -39,7 +39,6 @@ function getWebpackConfig(testFileName) {
       alias: {
         src: path.resolve(process.cwd(), 'src'),
         packages: path.resolve(process.cwd(), 'packages'),
-        examples: path.resolve(process.cwd(), 'examples'),
         vue$: 'vue/dist/vue.common.js'
       }
     },

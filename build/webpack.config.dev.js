@@ -14,9 +14,8 @@ const cache = {
 
 module.exports = {
   entry: {
-    vendor: ['packages'],
     'vant-docs': './docs/src/index.js',
-    'vant-examples': './docs/src/examples.js'
+    'vant-mobile': './docs/src/mobile.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -28,7 +27,7 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
+        { from: /^\/zanui\/vant\/mobile/, to: '/mobile.html' },
         { from: /^\/zanui\/vant/, to: '/index.html' }
       ]
     },
@@ -99,9 +98,9 @@ module.exports = {
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-examples'],
+      chunks: ['vendor', 'vant-mobile'],
       template: 'docs/src/index.tpl',
-      filename: 'examples.html',
+      filename: 'mobile.html',
       inject: true
     }),
     new webpack.optimize.CommonsChunkPlugin({

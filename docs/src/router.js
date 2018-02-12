@@ -22,7 +22,7 @@ const registerRoute = (isExample) => {
     } else {
       route.push({
         path: `/${lang}`,
-        redirect: `/${lang}/component/intro`
+        redirect: `/${lang}/intro`
       });
     }
 
@@ -56,7 +56,7 @@ const registerRoute = (isExample) => {
         route.push({
           name,
           component,
-          path: `/${lang}/component${path}`,
+          path: `/${lang}${path}`,
           meta: {
             lang,
             name: page.title

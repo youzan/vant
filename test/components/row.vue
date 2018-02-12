@@ -11,15 +11,3 @@
     </van-col>
   </van-row>
 </template>
-
-<script>
-import Row from 'packages/row';
-import Col from 'packages/col';
-
-export default {
-  components: {
-    'van-row': Row,
-    'van-col': Col
-  }
-};
-</script>

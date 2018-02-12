@@ -5,15 +5,9 @@
 </template>
 
 <script>
-import NumberKeyboard from 'packages/number-keyboard';
-
 export default {
-  name: 'number-keyboard-test',
-
-  components: {
-    [NumberKeyboard.name]: NumberKeyboard
-  },
-
-  props: ['showKeyboard']
+  props: {
+    showKeyboard: Boolean
+  }
 };
 </script>

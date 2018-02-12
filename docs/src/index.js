@@ -3,22 +3,20 @@ import VueRouter from 'vue-router';
 import App from './DocsApp';
 import routes from './router';
 import VantDoc from 'vant-doc';
-import isMobile from './utils/is-mobile';
+import { isMobile } from './utils';
 import './components/nprogress.css';
 
 Vue.use(VueRouter).use(VantDoc);
 
-const routesConfig = routes();
-
 const router = new VueRouter({
   mode: 'hash',
   base: '/zanui/vant/',
-  routes: routesConfig
+  routes: routes()
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    location.replace('/zanui/vant/examples' + location.hash);
+    location.replace('/zanui/vant/mobile' + location.hash);
   }
   document.title = route.meta.title || document.title;
   next();
@@ -34,5 +32,5 @@ window.vueRouter = router;
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router,
-  el: '#app-container'
+  el: '#app'
 });

@@ -17,11 +17,10 @@ Vue
     lazyComponent: true
   });
 
-const routesConfig = routes(true);
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vant/examples',
-  routes: routesConfig
+  base: '/zanui/vant/mobile',
+  routes: routes(true)
 });
 
 router.afterEach(() => {
@@ -38,5 +37,5 @@ window.vueRouter = router;
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router,
-  el: '#app-container'
+  el: '#app'
 });
