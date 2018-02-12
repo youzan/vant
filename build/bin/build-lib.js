@@ -13,8 +13,8 @@ const chalk = require('chalk');
 require('shelljs/global');
 
 // 1. lint
-log('Starting', 'lint');		
-exec('npm run lint --silent');		
+log('Starting', 'lint');
+exec('npm run lint --silent');
 log('Finished', 'lint');
 
 // 2. build entry
@@ -32,7 +32,7 @@ log('Starting', 'build:vant-css');
 exec('npm run build:vant-css --silent');
 log('Finished', 'build:vant-css');
 
-// 5. build vant.js 
+// 5. build vant.js
 log('Starting', 'build:vant');
 exec('npm run build:vant --silent');
 log('Finished', 'build:vant');
@@ -46,7 +46,7 @@ log('Finished', 'build:style-entries');
 function log(status, action, breakLine) {
   const now = new Date();
   const clock = `${breakLine ? '\n' : ''}[${padZero(now.getHours())}:${padZero(now.getMinutes())}:${padZero(now.getSeconds())}]`;
-  console.log(`${chalk.gray(clock)} ${status} '${action ? chalk.cyan.bold(action ) : ''}'`);
+  console.log(`${chalk.gray(clock)} ${status} '${action ? chalk.cyan.bold(action) : ''}'`);
 }
 
 function padZero(num) {

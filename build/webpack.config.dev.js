@@ -90,7 +90,6 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
   plugins: [
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({

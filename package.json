@@ -104,7 +104,6 @@
     "vue-template-compiler": "^2.5.13",
     "vue-template-es2015-compiler": "^1.6.0",
     "webpack": "^3.10.0",
-    "webpack-bundle-analyzer": "^2.10.0",
     "webpack-dev-server": "2.11.1",
     "webpack-merge": "^4.1.1"
   }
