@@ -1,5 +1,18 @@
 ## 更新日志
 
+### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+`2018-02-12`
+
+**Improvements**
+
+* 新增内置样式文档 [\#633](https://github.com/youzan/vant/pull/633) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 优化 DOM 结构 [\#636](https://github.com/youzan/vant/pull/636) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 支持设置最大可选数 [\#631](https://github.com/youzan/vant/pull/631) [@mpandar](https://github.com/mpandar)
+
+**Bug Fixes**
+
+*  Stepper: 修复清空输入框时 change 事件未正确触发的问题 [\#635](https://github.com/youzan/vant/pull/635) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
 `2018-02-08`
 

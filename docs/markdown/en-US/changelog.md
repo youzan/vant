@@ -1,5 +1,19 @@
 ## Changelog
 
+### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+`2018-02-12`
+
+**Improvements**
+
+* add build-in style document [\#633](https://github.com/youzan/vant/pull/633) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: optimzie DOM struct [\#636](https://github.com/youzan/vant/pull/636) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: support config the maximum amount of checked options [\#631](https://github.com/youzan/vant/pull/631) [@mpandar](https://github.com/mpandar)
+
+**Bug Fixes**
+
+*  Stepper: change event error when clear input [\#635](https://github.com/youzan/vant/pull/635) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
 `2018-02-08`
 

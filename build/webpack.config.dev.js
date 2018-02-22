@@ -27,7 +27,7 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vant\/mobile/, to: '/mobile.html' },
+        { from: /^\/zanui\/vant\/examples/, to: '/mobile.html' },
         { from: /^\/zanui\/vant/, to: '/index.html' }
       ]
     },
