@@ -27,7 +27,7 @@ module.exports = {
     host: '0.0.0.0',
     historyApiFallback: {
       rewrites: [
-        { from: /^\/zanui\/vant\/examples/, to: '/mobile.html' },
+        { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
         { from: /^\/zanui\/vant/, to: '/index.html' }
       ]
     },
@@ -100,7 +100,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'vant-mobile'],
       template: 'docs/src/index.tpl',
-      filename: 'mobile.html',
+      filename: 'examples.html',
       inject: true
     }),
     new webpack.optimize.CommonsChunkPlugin({
