@@ -19,7 +19,7 @@ Vue
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vant/mobile',
+  base: '/zanui/vant/examples',
   routes: routes(true)
 });
 
