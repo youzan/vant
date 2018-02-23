@@ -69,6 +69,10 @@
   }
 
   &--loading {
+    .van-loading {
+      margin: 0 auto;
+    }
+
     .van-button__text {
       display: none;
     }
