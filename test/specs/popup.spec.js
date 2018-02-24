@@ -100,9 +100,8 @@ describe('Popup', () => {
 
     expect(wrapper.hasClass('van-popup')).to.be.true;
 
-    const modal = document.querySelector('.van-modal');
-
     setTimeout(() => {
+      const modal = document.querySelector('.van-modal');
       triggerTouch(modal, 'touchstart', 0, 0);
       triggerTouch(modal, 'touchmove', 0, 10);
       triggerTouch(modal, 'touchmove', 0, 30);
