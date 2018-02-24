@@ -110,8 +110,7 @@ export default {
 | discount | 折扣（0为满减券）88=>8.8折 | `Number` |
 | denominations | 面值（0为折扣券）单位分 | `Number` |
 | origin_condition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
-| start_at | 卡有效开始时间 | `Number` |
-| end_at | 卡失效日期 | `Number` |
+| start_at | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
+| end_at | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
 | value | 订单优惠金额，单位分 | `Number` |
-

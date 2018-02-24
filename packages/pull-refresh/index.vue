@@ -127,6 +127,7 @@ export default create({
         if (this.status === 'loosing') {
           this.getStatus(this.headHeight, true);
           this.$emit('input', true);
+          this.$emit('refresh');
         } else {
           this.getStatus(0);
         }

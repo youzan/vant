@@ -13,6 +13,7 @@
           :reset-stepper-on-hide="true"
           :reset-selected-sku-on-hide="true"
           :disable-stepper-input="true"
+          :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -23,7 +24,7 @@
     <demo-block :title="$t('title2')">
       <div class="sku-container">
         <van-sku
-          v-model="showBase"
+          v-model="showStepper"
           :sku="$t('sku').sku"
           :goods="$t('sku').goods_info"
           :goods-id="$t('sku').goods_id"
@@ -34,7 +35,7 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button type="primary" @click="showBase = true" block>{{ $t('title2') }}</van-button>
+        <van-button type="primary" @click="showStepper = true" block>{{ $t('title2') }}</van-button>
       </div>
     </demo-block>
 
@@ -94,6 +95,7 @@ export default {
     return {
       showBase: false,
       showCustom: false,
+      showStepper: false,
       initialSku: {
         s1: '30349',
         s2: '1193'
@@ -113,6 +115,14 @@ export default {
             }
           }
         }
+      },
+      messageConfig: {
+        uploadImg: () => {
+          return new Promise((resolve) => {
+            setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+          });
+        },
+        uploadMaxSize: 3
       }
     };
   },

@@ -17,7 +17,7 @@
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <loading v-else class="van-actionsheet__loading" type="circle" />
+          <loading v-else class="van-actionsheet__loading" size="20px" />
         </li>
       </ul>
       <div

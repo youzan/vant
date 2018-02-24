@@ -30,6 +30,16 @@
         </van-cell-group>
       </van-checkbox-group>
     </demo-block>
+
+    <demo-block :title="$t('title5')">
+      <van-checkbox-group v-model="result2" :max="max">
+        <van-cell-group>
+          <van-cell v-for="(item, index) in list" :key="index">
+            <van-checkbox :name="item">{{ $t('checkbox') }} {{ item }}</van-checkbox>
+          </van-cell>
+        </van-cell-group>
+      </van-checkbox-group>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -39,12 +49,14 @@ export default {
     'zh-CN': {
       checkbox: '复选框',
       title3: 'Checkbox 组',
-      title4: '与 Cell 组件一起使用'
+      title4: '与 Cell 组件一起使用',
+      title5: '设置最大可选数',
     },
     'en-US': {
       checkbox: 'Checkbox',
       title3: 'Checkbox Group',
-      title4: 'Inside a Cell'
+      title4: 'Inside a Cell',
+      title5: 'Maximum amount of checked options'
     }
   },
 
@@ -57,7 +69,9 @@ export default {
         'b',
         'c'
       ],
-      result: ['a', 'b']
+      result: ['a', 'b'],
+      result2: [],
+      max: 2
     };
   }
 };
@@ -65,8 +79,6 @@ export default {
 
 <style lang="postcss">
 .demo-checkbox {
-  background: #fff;
-
   .van-checkbox {
     margin: 10px 0 0 20px;
   }
@@ -74,15 +86,13 @@ export default {
   .van-cell {
     .van-checkbox {
       margin: 0;
-    }
+      display: flex;
+      flex-direction: row-reverse;
 
-    .van-checkbox__input {
-      float: right;
-      position: static;
-    }
-
-    span {
-      margin: 0;
+      &__label {
+        margin: 0;
+        flex: 1;
+      }
     }
   }
 }

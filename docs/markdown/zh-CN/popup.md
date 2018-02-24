@@ -49,3 +49,9 @@ export default {
 | transition | transition 名称 | `String` | `popup-slide` | - |
 | prevent-scroll | 是否防止滚动穿透 | `Boolean` | `false` | - |
 | get-container | 指定弹出层挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click-overlay | 点击蒙层时触发 | - |

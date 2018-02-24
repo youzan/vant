@@ -1,5 +1,50 @@
 ## 更新日志
 
+### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+`2018-02-12`
+
+**Improvements**
+
+* 新增内置样式文档 [\#633](https://github.com/youzan/vant/pull/633) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 优化 DOM 结构 [\#636](https://github.com/youzan/vant/pull/636) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 支持设置最大可选数 [\#631](https://github.com/youzan/vant/pull/631) [@mpandar](https://github.com/mpandar)
+
+**Bug Fixes**
+
+*  Stepper: 修复清空输入框时 change 事件未正确触发的问题 [\#635](https://github.com/youzan/vant/pull/635) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+`2018-02-08`
+
+**Improvements**
+
+* PullRefresh: 新增 refersh 事件 [\#625](https://github.com/youzan/vant/pull/625) [@chenjiahan](https://github.com/chenjiahan)
+* Circle: 优化线条圆角 [\#624](https://github.com/youzan/vant/pull/624) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: 新增 loading 属性 [\#619](https://github.com/youzan/vant/pull/619) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 size 属性 [\#620](https://github.com/youzan/vant/pull/620) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 circular 类型 [\#618](https://github.com/youzan/vant/pull/618) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 默认类型调整为 circular [\#623](https://github.com/youzan/vant/pull/623) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 Sku message 更新时未重新渲染的问题 [\#627](https://github.com/youzan/vant/pull/627) [@w91](https://github.com/w91)
+
+
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* 新增 Circle 组件 [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 新增 title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 加深背景色 [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: 新增 getContaienr 属性 [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 支持图片上传 [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: 支持自定义 Stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* 修复 Picker 在部分设备下的样式问题 [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 TreeSelect 箭头位置错误 [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 

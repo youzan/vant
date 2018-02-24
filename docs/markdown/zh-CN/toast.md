@@ -18,7 +18,10 @@ Toast('我是提示文案，建议不超过十五字~');
 #### 加载提示
 
 ```javascript
-Toast.loading({ mask: true });
+Toast.loading({
+  mask: true,
+  message: '加载中...'
+});
 ```
 
 

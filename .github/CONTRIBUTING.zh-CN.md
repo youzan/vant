@@ -62,7 +62,7 @@ vant
 
 - 添加测试代码
 
-需要在 `test/unit/specs` 目录下增加对应组件的测试文件，以 .spec.js 结尾，如：`button.spec.js`。测试框架使用了 karma + mocha + sinon + chai，vue 相关的操作使用了 [avoriaz](https://github.com/eddyerburgh/avoriaz)
+需要在 `test/specs` 目录下增加对应组件的测试文件，以 .spec.js 结尾，如：`button.spec.js`。测试框架使用了 karma + mocha + sinon + chai，vue 相关的操作使用了 [avoriaz](https://github.com/eddyerburgh/avoriaz)
 
 
 ## 组件文档如何编写

@@ -66,8 +66,6 @@ export default {
 
 <style lang="postcss">
 .demo-radio {
-  background: #fff;
-
   .van-radios {
     padding: 0 20px;
 

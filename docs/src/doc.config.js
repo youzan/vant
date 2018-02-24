@@ -4,7 +4,7 @@ module.exports = {
     header: {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
-        title: 'Zan UI',
+        title: 'Vant',
         href: 'http://www.youzanyun.com/zanui'
       },
       nav: {
@@ -36,6 +36,10 @@ module.exports = {
                 path: '/changelog',
                 title: '更新日志',
                 noExample: true
+              },
+              {
+                path: '/built-in-style',
+                title: '内置样式'
               },
               {
                 path: '/theme',
@@ -286,7 +290,7 @@ module.exports = {
     header: {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
-        title: 'Zan UI',
+        title: 'Vant',
         href: 'http://www.youzanyun.com/zanui'
       },
       nav: {
@@ -318,6 +322,10 @@ module.exports = {
                 path: '/changelog',
                 title: 'Changelog',
                 noExample: true
+              },
+              {
+                path: '/built-in-style',
+                title: 'Built-in style'
               },
               {
                 path: '/theme',

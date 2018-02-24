@@ -114,6 +114,13 @@ export default {
 };
 ```
 
+#### Loading
+When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
+
+```html
+<van-picker :columns="columns" loading />
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
@@ -121,6 +128,7 @@ export default {
 | columns | Columns data | `Array` | `[]` | - |
 | show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
 | title | Toolbar title | `String` | `''` | - |
+| loading | Whether to show loading prompt | `Boolean` | `false` | - |
 | confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
 | cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
 | item-height | Option height | `Number` | `44` | - |

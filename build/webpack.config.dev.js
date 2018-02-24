@@ -14,9 +14,8 @@ const cache = {
 
 module.exports = {
   entry: {
-    vendor: ['packages'],
     'vant-docs': './docs/src/index.js',
-    'vant-examples': './docs/src/examples.js'
+    'vant-mobile': './docs/src/mobile.js'
   },
   output: {
     path: path.join(__dirname, '../docs/dist'),
@@ -90,7 +89,6 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
   plugins: [
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
@@ -100,7 +98,7 @@ module.exports = {
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-examples'],
+      chunks: ['vendor', 'vant-mobile'],
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true

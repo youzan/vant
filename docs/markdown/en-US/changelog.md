@@ -1,5 +1,51 @@
 ## Changelog
 
+### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+`2018-02-12`
+
+**Improvements**
+
+* add build-in style document [\#633](https://github.com/youzan/vant/pull/633) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: optimzie DOM struct [\#636](https://github.com/youzan/vant/pull/636) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: support config the maximum amount of checked options [\#631](https://github.com/youzan/vant/pull/631) [@mpandar](https://github.com/mpandar)
+
+**Bug Fixes**
+
+*  Stepper: change event error when clear input [\#635](https://github.com/youzan/vant/pull/635) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+`2018-02-08`
+
+**Improvements**
+
+* PullRefresh: add refersh event [\#625](https://github.com/youzan/vant/pull/625) [@chenjiahan](https://github.com/chenjiahan)
+* Circle: optimzie linecap [\#624](https://github.com/youzan/vant/pull/624) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: add loading prop [\#619](https://github.com/youzan/vant/pull/619) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: add size prop [\#620](https://github.com/youzan/vant/pull/620) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: add circular type [\#618](https://github.com/youzan/vant/pull/618) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: change default type to circular [\#623](https://github.com/youzan/vant/pull/623) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix Sku message observation [\#627](https://github.com/youzan/vant/pull/627) [@w91](https://github.com/w91)
+
+
+### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+`2018-02-07`
+
+**Improvements**
+* add Circle component [\#608](https://github.com/youzan/vant/pull/608) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: add title slot [\#603](https://github.com/youzan/vant/pull/603) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: adjust background color [\#601](https://github.com/youzan/vant/pull/601) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: support getContaienr [\#611](https://github.com/youzan/vant/pull/611) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: support imgage upload [\#612](https://github.com/youzan/vant/pull/612) [@w91](https://github.com/w91)
+* Sku: support custom stepper [\#600](https://github.com/youzan/vant/pull/600) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* fix Picker style error in some andriod devices [\#609](https://github.com/youzan/vant/pull/609) [@chenjiahan](https://github.com/chenjiahan)
+* fix TreeSelect arrow position error [\#605](https://github.com/youzan/vant/pull/605) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 
