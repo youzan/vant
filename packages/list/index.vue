@@ -1,10 +1,10 @@
 <template>
-  <div class="van-waterfall">
+  <div class="van-list">
     <slot />
-    <div class="van-waterfall__loading" v-show="loading">
+    <div class="van-list__loading" v-show="loading">
       <slot name="loading">
         <loading type="spinner" />
-        <span class="van-waterfall__loading-text">加载中</span>
+        <span class="van-list__loading-text">加载中</span>
       </slot>
     </div>
   </div>
@@ -16,7 +16,7 @@ import utils from '../utils/scroll';
 import { on, off } from '../utils/event';
 
 export default create({
-  name: 'van-waterfall',
+  name: 'van-list',
 
   model: {
     prop: 'loading'

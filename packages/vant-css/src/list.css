@@ -1,6 +1,6 @@
 @import './common/var.css';
 
-.van-waterfall {
+.van-list {
   &__loading {
     text-align: center;
 

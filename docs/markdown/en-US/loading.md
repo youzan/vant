@@ -30,13 +30,6 @@ Vue.use(Loading);
 <van-loading type="circle" color="white" />
 ```
 
-#### Circular
-
-```html
-<van-loading type="circular" color="black" />
-<van-loading type="circular" color="white" />
-```
-
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |

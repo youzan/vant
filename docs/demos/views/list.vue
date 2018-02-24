@@ -2,19 +2,14 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
-      <ul
-        v-waterfall-lower="loadMore"
-        waterfall-disabled="disabled"
-        waterfall-offset="400">
-        <li v-for="item in list">{{ item }}</li>
-      </ul>
+      <van-waterfall v-model="loading" :disabled="disabled" immediate-check @reach-bottom="onReachBottom">
+        <van-cell v-for="item in list" :key="item" :title="item + ''" />
+      </van-waterfall>
     </demo-block>
   </demo-section>
 </template>
 
 <script>
-import { Waterfall } from 'packages';
-
 export default {
   i18n: {
     'zh-CN': {
@@ -27,24 +22,24 @@ export default {
 
   data() {
     return {
-      list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+      list: [],
+      loading: false,
       disabled: false
     };
   },
 
-  directives: {
-    WaterfallLower: Waterfall('lower')
-  },
-
   methods: {
-    loadMore() {
-      this.disabled = true;
+    onReachBottom() {
       setTimeout(() => {
-        for (let i = 0; i < 5; i++) {
-          this.list.push(this.list.length);
+        for (let i = 0; i < 10; i++) {
+          this.list.push(this.list.length + 1);
         }
-        this.disabled = false;
-      }, 200);
+        this.loading = false;
+
+        if (this.list.length >= 40) {
+          this.disabled = true;
+        }
+      }, 1000);
     }
   }
 };
@@ -52,16 +47,7 @@ export default {
 
 <style lang="postcss">
 .demo-waterfall {
-  ul {
-    max-height: 360px;
-    overflow: scroll;
-    border-top: 1px solid #e5e5e5;
-  }
-
-  li {
-    line-height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
+  .van-cell {
     text-align: center;
   }
 
