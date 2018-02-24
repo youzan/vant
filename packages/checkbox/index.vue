@@ -101,10 +101,7 @@ export default create({
 
   methods: {
     onClick(flag) {
-      if (flag!=='label'&&!this.isDisabled) {
-        this.currentValue = !this.currentValue;
-      }
-      if (flag==='label'&&!this.isDisabled&&!this.labelDisabled){
+      if (!this.isDisabled && (flag !== 'label' || (flag === 'label' && !this.labelDisabled))) {
         this.currentValue = !this.currentValue;
       }
     }
