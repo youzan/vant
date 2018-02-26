@@ -101,6 +101,10 @@ module.exports = {
                 title: 'Lazyload - 图片懒加载'
               },
               {
+                path: '/list',
+                title: 'List - 列表'
+              },
+              {
                 path: '/loading',
                 title: 'Loading - 加载'
               },
@@ -385,6 +389,10 @@ module.exports = {
               {
                 path: '/lazyload',
                 title: 'Lazyload'
+              },
+              {
+                path: '/list',
+                title: 'List'
               },
               {
                 path: '/loading',

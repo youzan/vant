@@ -24,8 +24,11 @@ export default create({
 
   props: {
     loading: Boolean,
-    disabled: Boolean,
-    immediateCheck: Boolean,
+    finished: Boolean,
+    immediateCheck: {
+      type: Boolean,
+      default: true
+    },
     offset: {
       type: Number,
       default: 300
@@ -37,7 +40,7 @@ export default create({
     this.handler(true);
 
     if (this.immediateCheck) {
-      this.onScroll();
+      this.$nextTick(this.onScroll);
     }
   },
 
@@ -58,14 +61,14 @@ export default create({
       this.$nextTick(this.onScroll);
     },
 
-    disabled() {
+    finished() {
       this.$nextTick(this.onScroll);
     }
   },
 
   methods: {
     onScroll() {
-      if (this.loading || this.disabled) {
+      if (this.loading || this.finished) {
         return;
       }
 
@@ -92,7 +95,7 @@ export default create({
 
       if (reachBottom) {
         this.$emit('input', true);
-        this.$emit('reach-bottom', { target: scroller, top: scrollTop });
+        this.$emit('load');
       }
     },
 

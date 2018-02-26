@@ -2,9 +2,13 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
-      <van-waterfall v-model="loading" :disabled="disabled" immediate-check @reach-bottom="onReachBottom">
+      <van-list 
+        v-model="loading"
+        :finished="finished"
+        @load="onLoad"
+      >
         <van-cell v-for="item in list" :key="item" :title="item + ''" />
-      </van-waterfall>
+      </van-list>
     </demo-block>
   </demo-section>
 </template>
@@ -24,12 +28,12 @@ export default {
     return {
       list: [],
       loading: false,
-      disabled: false
+      finished: false
     };
   },
 
   methods: {
-    onReachBottom() {
+    onLoad() {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
           this.list.push(this.list.length + 1);
@@ -37,16 +41,16 @@ export default {
         this.loading = false;
 
         if (this.list.length >= 40) {
-          this.disabled = true;
+          this.finished = true;
         }
-      }, 1000);
+      }, 500);
     }
   }
 };
 </script>
 
 <style lang="postcss">
-.demo-waterfall {
+.demo-list {
   .van-cell {
     text-align: center;
   }
