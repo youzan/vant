@@ -44,7 +44,7 @@ module.exports = {
     }
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
         use: [
@@ -103,11 +103,11 @@ module.exports = {
       filename: 'examples.html',
       inject: true
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: 2,
-      filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
-    }),
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor',
+    //   minChunks: 2,
+    //   filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
+    // }),
     new ExtractTextPlugin({
       filename: isProduction ? '[name].[hash:8].css' : '[name].css',
       allChunks: true
