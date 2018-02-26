@@ -50,6 +50,10 @@ module.exports = {
       css: 'more-o'
     },
     {
+      src: 'info-o.svg',
+      css: 'info-o'
+    },
+    {
       src: 'share.svg',
       css: 'share'
     },
@@ -206,6 +210,10 @@ module.exports = {
       css: 'arrow-left'
     },
     {
+      src: '搜索.svg',
+      css: 'search'
+    },
+    {
       src: '成功.svg',
       css: 'success'
     },
@@ -218,7 +226,7 @@ module.exports = {
       css: 'add'
     },
     {
-      src: '选中.svg',
+      src: 'checked.svg',
       css: 'checked'
     },
     {
@@ -244,10 +252,6 @@ module.exports = {
     {
       src: '照片.svg',
       css: 'photo'
-    },
-    {
-      src: '搜索.svg',
-      css: 'search'
     },
     {
       src: '清除搜索.svg',
@@ -330,7 +334,7 @@ module.exports = {
       css: 'cash-on-deliver'
     },
     {
-      src: '进行中.svg',
+      src: 'underway.svg',
       css: 'underway'
     },
     {
