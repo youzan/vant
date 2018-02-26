@@ -9,6 +9,11 @@
       <van-checkbox :value="true" disabled>{{ $t('checkbox') }} 2</van-checkbox>
     </demo-block>
 
+    <demo-block :title="$t('labelDisabled')">
+      <van-checkbox v-model="checkbox3" label-disabled>{{ $t('checkbox') }} 2</van-checkbox>
+      <van-checkbox v-model="checkbox4" label-disabled>{{ $t('checkbox') }} 2</van-checkbox>
+    </demo-block>
+
     <demo-block :title="$t('title3')">
       <van-checkbox-group v-model="result">
         <van-checkbox
@@ -48,12 +53,14 @@ export default {
   i18n: {
     'zh-CN': {
       checkbox: '复选框',
+      labelDisabled: '禁用 Checkbox 内容部分点击事件',
       title3: 'Checkbox 组',
       title4: '与 Cell 组件一起使用',
       title5: '设置最大可选数',
     },
     'en-US': {
       checkbox: 'Checkbox',
+      labelDisabled: 'Disable Checkbox Label click event',
       title3: 'Checkbox Group',
       title4: 'Inside a Cell',
       title5: 'Maximum amount of checked options'
@@ -64,6 +71,8 @@ export default {
     return {
       checkbox1: true,
       checkbox2: true,
+      checkbox3: false,
+      checkbox4: true,
       list: [
         'a',
         'b',

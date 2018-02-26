@@ -31,7 +31,11 @@ export default {
 ```html
 <van-checkbox v-model="checked" disabled>复选框 2</van-checkbox>
 ```
+#### 禁用内容部分点击事件
 
+```html
+<van-checkbox v-model="checked" label-disabled>复选框 3</van-checkbox>
+```
 #### Checkbox 组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
@@ -93,6 +97,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | name | 标识 Checkbox 名称 | `Boolean` | `false` | - |
 | disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` | - |
 | shape | 形状 | `String` | `round` | `square` |
 
 ### CheckboxGroup API
