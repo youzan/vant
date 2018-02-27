@@ -55,10 +55,10 @@ Vue.use(Sku);
   :goods="goods"
   :goods-id="goodsId"
   :hide-stock="sku.hide_stock"
-  :show-add-cart-btn="true"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="true"
+  show-add-cart-btn
+  reset-stepper-on-hide
   :initial-sku="initialSku"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
