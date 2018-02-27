@@ -230,6 +230,22 @@ module.exports = {
       css: 'checked'
     },
     {
+      src: 'warn.svg',
+      css: 'warn'
+    },
+    {
+      src: '清除搜索.svg',
+      css: 'clear'
+    },
+    {
+      src: 'underway.svg',
+      css: 'underway'
+    },
+    {
+      src: 'more.svg',
+      css: 'more'
+    },
+    {
       src: '喜欢2.svg',
       css: 'like'
     },
@@ -252,10 +268,6 @@ module.exports = {
     {
       src: '照片.svg',
       css: 'photo'
-    },
-    {
-      src: '清除搜索.svg',
-      css: 'clear'
     },
     {
       src: '微信支付.svg',
@@ -334,10 +346,6 @@ module.exports = {
       css: 'cash-on-deliver'
     },
     {
-      src: 'underway.svg',
-      css: 'underway'
-    },
-    {
       src: '电话.svg',
       css: 'phone'
     },
@@ -372,10 +380,6 @@ module.exports = {
     {
       src: '热卖.svg',
       css: 'hot-sale'
-    },
-    {
-      src: 'more.svg',
-      css: 'more'
     }
   ]
 };
