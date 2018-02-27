@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11) (2018-02-27)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.10...v0.12.11)
+
+**Issue**
+
+- picker如何设置初始选中默认值？ [\#649](https://github.com/youzan/vant/issues/649)
+- 官方可以在release里面提供编译后的js文件吗，可以直接用在html里面那种 [\#642](https://github.com/youzan/vant/issues/642)
+- Vue.prototype.$toast = Toast [\#641](https://github.com/youzan/vant/issues/641)
+- ImagePreview鼠标单击图片外的黑色背景部分，无法关闭 [\#637](https://github.com/youzan/vant/issues/637)
+- van-stepper  的异常 [\#634](https://github.com/youzan/vant/issues/634)
+- 期待checkbox支持最大选择数量功能 [\#617](https://github.com/youzan/vant/issues/617)
+
+**Improvements**
+
+- \[Improvement\] Icon: add warn icon [\#651](https://github.com/youzan/vant/pull/651) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add checkbox labelDisabled test case [\#650](https://github.com/youzan/vant/pull/650) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: add info-o icon [\#648](https://github.com/youzan/vant/pull/648) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Popup: add click-overlay event [\#647](https://github.com/youzan/vant/pull/647) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Button loading horizontal align [\#645](https://github.com/youzan/vant/pull/645) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\]Checkbox: support disabled label [\#644](https://github.com/youzan/vant/pull/644) ([ddchef](https://github.com/ddchef))
+
 ## [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10) (2018-02-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.9...v0.12.10)
 
