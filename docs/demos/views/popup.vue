@@ -2,13 +2,13 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
-      <van-popup v-model="show1" :prevent-scroll="true">{{ $t('content') }}</van-popup>
+      <van-popup v-model="show1" prevent-scroll>{{ $t('content') }}</van-popup>
     </demo-block>
 
     <demo-block :title="$t('position')">
       <van-button @click="show2 = true;">{{ $t('button2') }}</van-button>
 
-      <van-popup v-model="show2" position="bottom" :prevent-scroll="true">
+      <van-popup v-model="show2" position="bottom" prevent-scroll>
         <van-tabs>
           <van-tab class="custom-pane" title="Tab1">
             <ul class="scroller">
