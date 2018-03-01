@@ -72,6 +72,12 @@ export default create({
 
     initialSwipe() {
       this.initialize();
+    },
+
+    autoplay(autoplay) {
+      if (!autoplay) {
+        clearTimeout(this.timer);
+      }
     }
   },
 
