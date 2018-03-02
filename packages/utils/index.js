@@ -7,6 +7,11 @@ function isDef(value) {
   return value !== undefined && value !== null;
 }
 
+function isObj(x) {
+  const type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
+}
+
 function get(object, path) {
   const keys = path.split('.');
   let result = object;
@@ -30,6 +35,7 @@ function isAndroid() {
 
 export {
   get,
+  isObj,
   isDef,
   create,
   isServer,
