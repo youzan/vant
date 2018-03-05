@@ -45,6 +45,27 @@ export default {
 }
 ```
 
+#### 监听 change 事件
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    onChange(index) {
+      Toast('当前 Swipe 索引：' + index);
+    }
+  }
+}
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
