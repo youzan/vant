@@ -4,7 +4,6 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
-      fixed
       left-arrow
       @click-left="onBack"
     />
@@ -43,9 +42,5 @@ body {
     font-size: 15px;
     text-transform: capitalize;
   }
-}
-
-.van-doc-demo-section {
-  padding-top: 46px;
 }
 </style>
