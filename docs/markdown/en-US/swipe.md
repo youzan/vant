@@ -45,6 +45,27 @@ export default {
 }
 ```
 
+#### change event
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    onChange(index) {
+      Toast('Current Swipe index:' + index);
+    }
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
