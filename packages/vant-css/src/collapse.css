@@ -1,0 +1,14 @@
+@import './common/var.css';
+
+.van-collapse-item {
+  &__title {
+    .van-cell__right-icon::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__content {
+    padding: 15px;
+    background-color: #fff;
+  }
+}
