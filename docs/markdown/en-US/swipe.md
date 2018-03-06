@@ -72,6 +72,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | autoplay | Autoplay interval (ms) | `Number` | - | - |
 | duration | Animation duration (ms) | `Number` | `500` | - |
+| loop | Whether to enable loop | `Boolean` | `true` | - |
 | show-indicators | Whether to show indocators | `Boolean` | `true` | - |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
 
