@@ -72,6 +72,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | autoplay | 自动轮播间隔，单位为 ms | `Number` | - | - |
 | duration | 动画时长，单位为 ms | `Number` | `500` | - |
+| loop | 是否开启循环播放 | `Boolean` | `true` | - |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
 | initial-swipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
 
