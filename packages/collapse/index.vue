@@ -1,5 +1,5 @@
 <template>
-  <div class="van-collapse van-hairline--bottom">
+  <div class="van-collapse van-hairline--top-bottom">
     <slot />
   </div>
 </template>
@@ -15,7 +15,8 @@ export default create({
   },
 
   props: {
-    activeNames: [String, Array]
+    accordion: Boolean,
+    activeNames: [String, Number, Array]
   },
 
   data() {
@@ -27,12 +28,13 @@ export default create({
   methods: {
     switch(name, expanded) {
       let { activeNames } = this;
-      if (Array.isArray(activeNames)) {
-        activeNames = expanded
-          ? [...activeNames, name]
+      if (!this.accordion) {
+        name = expanded
+          ? activeNames.concat(name)
           : activeNames.filter(activeName => activeName !== name);
       }
-      this.$emit('input', activeNames);
+      this.$emit('input', name);
+      this.$emit('change', name);
     }
   }
 });

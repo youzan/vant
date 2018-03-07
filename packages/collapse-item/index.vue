@@ -1,5 +1,8 @@
 <template>
-  <div class="van-collapse-item van-hairline--top">
+  <div class="van-collapse-item" :class="{
+    'van-hairline--top': index,
+    'van-collapse-item--expanded': expanded
+  }">
     <cell class="van-collapse-item__title" is-link @click="onClick">
       <slot name="title">{{ title }}</slot>
     </cell>
@@ -12,7 +15,7 @@
 <script>
 import Cell from '../cell';
 import findParent from '../mixins/find-parent';
-import { create } from '../utils';
+import { create, isDef } from '../utils';
 
 export default create({
   name: 'van-collapse-item',
@@ -24,31 +27,45 @@ export default create({
   },
 
   props: {
-    name: String,
+    name: [String, Number],
     title: String
   },
 
   computed: {
+    items() {
+      return this.parentGroup.items
+    },
+
+    index() {
+      return this.items.indexOf(this);
+    },
+
+    currentName() {
+      return isDef(this.name) ? this.name : this.index;
+    },
+
     expanded() {
       const { activeNames } = this.parentGroup;
-      return Array.isArray(activeNames)
-        ? activeNames.some(name => name === this.name)
-        : activeNames === this.name;
+      return this.parentGroup.accordion
+        ? activeNames === this.currentName
+        : activeNames.some(name => name === this.currentName);
     }
   },
 
   created() {
     this.findParentByName('van-collapse');
-    this.parentGroup.items.push(this);
+    this.items.push(this);
   },
 
   destroyed() {
-    this.parentGroup.items.splice(this.index, 1);
+    this.items.splice(this.index, 1);
   },
 
   methods: {
     onClick() {
-      this.parentGroup.switch(this.name, !this.expanded);
+      const { parentGroup } = this;
+      const name = parentGroup.accordion && this.currentName === parentGroup.activeNames ? '' : this.currentName;
+      this.parentGroup.switch(name, !this.expanded);
     }
   }
 });
