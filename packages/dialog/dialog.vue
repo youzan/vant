@@ -71,8 +71,7 @@ export default create({
 
   methods: {
     handleAction(action) {
-      this.$emit('input', false);
-      this.$emit(action);
+      this.$emit('input', false).$emit(action);
       this.callback && this.callback(action);
     }
   }

@@ -102,8 +102,9 @@ export default create({
     },
 
     onSuggestSelect(express) {
-      this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
-      this.$emit('select-search', express);
+      this
+        .$emit('input', `${express.address || ''} ${express.name || ''}`.trim())
+        .$emit('select-search', express);
     },
 
     isString(str) {

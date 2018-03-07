@@ -40,8 +40,7 @@ export default create({
       });
     },
     onChange(active) {
-      this.$emit('input', active);
-      this.$emit('change', active);
+      this.$emit('input', active).$emit('change', active);
     }
   }
 });

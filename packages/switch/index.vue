@@ -22,8 +22,7 @@ export default create({
   methods: {
     toggleState() {
       if (!this.disabled && !this.loading) {
-        this.$emit('input', !this.value);
-        this.$emit('change', !this.value);
+        this.$emit('input', !this.value).$emit('change', !this.value);
       }
     }
   }

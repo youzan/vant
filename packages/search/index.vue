@@ -101,8 +101,7 @@ export default create({
     },
 
     onBack() {
-      this.$emit('input', '');
-      this.$emit('cancel');
+      this.$emit('input', '').$emit('cancel');
     },
 
     onClickoutside() {
