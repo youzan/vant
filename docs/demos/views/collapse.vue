@@ -15,6 +15,16 @@
         <van-collapse-item :title="$t('title3')">{{ $t('content3') }}</van-collapse-item>
       </van-collapse>
     </demo-block>
+
+    <demo-block :title="$t('titleSlot')">
+      <van-collapse v-model="active3">
+        <van-collapse-item>
+          <div slot="title">{{ $t('title1') }}<van-icon name="question" /></div>
+          {{ $t('content1') }}
+        </van-collapse-item>
+        <van-collapse-item :title="$t('title2')">{{ $t('content2') }}</van-collapse-item>
+      </van-collapse>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -23,6 +33,7 @@ export default {
   i18n: {
     'zh-CN': {
       accordion: '手风琴',
+      titleSlot: '自定义标题内容',
       title1: '有赞微商城',
       title2: '有赞零售',
       title3: '有赞美业',
@@ -31,7 +42,8 @@ export default {
       content3: '线上拓客，随时预约，贴心顺手的开单收银'
     },
     'en-US': {
-      title2: 'Accordion',
+      accordion: 'Accordion',
+      titleSlot: 'Custom title',
       title1: 'Title1',
       title2: 'Title2',
       title3: 'Title3',
@@ -44,18 +56,28 @@ export default {
   data() {
     return {
       active1: [0],
-      active2: 0
+      active2: 0,
+      active3: []
     };
   }
 };
 </script>
 
 <style lang="postcss">
+@import "../../../packages/vant-css/src/common/var.css";
+
 .demo-collapse {
   .van-collapse-item__content {
-    color: #666;
     font-size: 13px;
     line-height: 1.5;
+    color: $gray-darker;
+  }
+
+  .van-icon-question {
+    color: $blue;
+    vertical-align: -3px;
+    margin-left: 5px;
+    font-size: 15px;
   }
 }
 </style>
