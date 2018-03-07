@@ -67,6 +67,7 @@ export default {
 | show-search-result | 是否显示搜索结果 | `Boolean` | `false` | - |
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
 
 ### Event
 

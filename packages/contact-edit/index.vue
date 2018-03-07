@@ -54,6 +54,10 @@ export default create({
         tel: '',
         name: ''
       })
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
@@ -84,7 +88,7 @@ export default create({
         case 'name':
           return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : this.$t('telInvalid');
+          return this.telValidator(value) ? '' : this.$t('telInvalid');
       }
     },
 
