@@ -1,5 +1,20 @@
 ## Changelog
 
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: support disable loop [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: add swipe change event demo [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* update static source CDN domain [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Field disabled color in safari [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* fix Swipe autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
 `2018-02-27`
 
