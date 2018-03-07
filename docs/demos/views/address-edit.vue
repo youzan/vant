@@ -7,7 +7,6 @@
         show-set-default
         show-search-result
         :search-result="searchResult"
-        :tel-validator="valid"
         @save="onSave"
         @delete="onDelete"
         @change-detail="onChangeDetail"
@@ -63,10 +62,6 @@ export default {
 
     onChangeDetail(val) {
       this.searchResult = val ? this.$t('searchResult') : [];
-    },
-
-    valid(val) {
-      return val.length < 10;
     }
   }
 };
