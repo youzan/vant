@@ -161,6 +161,7 @@ export default {
 | is-edit | Whether is editing | `Boolean` | `false` | - |
 | is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
 
 ### ContactEdit Event
 
