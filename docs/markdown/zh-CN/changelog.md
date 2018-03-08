@@ -1,5 +1,19 @@
 ## 更新日志
 
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: 新增 loop 属性，支持禁用循环滚动 [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: 新增 change 事件示例 [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* 更新静态资源 CDN 域名 [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Field 在 safari 下禁用态颜色过浅的问题 [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Swipe autoplay 设置为 0 时不会立刻取消的问题 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
 `2018-02-27`
 

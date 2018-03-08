@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12) (2018-03-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.11...v0.12.12)
+
+**Issue**
+
+- Tabs 组件的sticky设置 [\#662](https://github.com/youzan/vant/issues/662)
+- Sku组件有问题 [\#659](https://github.com/youzan/vant/issues/659)
+- checkbox/radio选项不支持溢出文本 [\#658](https://github.com/youzan/vant/issues/658)
+- Search组件输入内容在 iphone 内显示不完整 [\#657](https://github.com/youzan/vant/issues/657)
+- van-button组件在loading时，loading图标不居中 [\#655](https://github.com/youzan/vant/issues/655)
+- 建议增加Scroller组件，能够无限加载，下拉刷新 [\#654](https://github.com/youzan/vant/issues/654)
+- Icon 浏览器兼容 [\#653](https://github.com/youzan/vant/issues/653)
+- Popup以及Picker同时使用时存在的一个问题，是否能考虑在Popup点击遮罩层关闭时提供相应的事件 [\#646](https://github.com/youzan/vant/issues/646)
+- 新增加的功能 [\#643](https://github.com/youzan/vant/issues/643)
+
+**Improvements**
+
+- \[new feature\] Swipe: support disable loop [\#670](https://github.com/youzan/vant/pull/670) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: disabled color in safari [\#669](https://github.com/youzan/vant/pull/669) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] swipe: add change event demo [\#666](https://github.com/youzan/vant/pull/666) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix Tab demo & update dependencies [\#665](https://github.com/youzan/vant/pull/665) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize utils [\#661](https://github.com/youzan/vant/pull/661) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Swipe: autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update CDN domain [\#652](https://github.com/youzan/vant/pull/652) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11) (2018-02-27)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.10...v0.12.11)
 
