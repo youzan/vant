@@ -162,6 +162,7 @@ export default {
 | is-edit | 是否为编辑联系人 | `Boolean` | `false` | - |
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
 
 ### ContactEdit Event
 

@@ -10,9 +10,10 @@
           :hide-stock="$t('sku').sku.hide_stock"
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
-          :reset-stepper-on-hide="true"
-          :reset-selected-sku-on-hide="true"
-          :disable-stepper-input="true"
+          reset-stepper-on-hide
+          reset-selected-sku-on-hide
+          disable-stepper-input
+          :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
@@ -48,10 +49,10 @@
           :goods="$t('sku').goods_info"
           :goods-id="$t('sku').goods_id"
           :hide-stock="$t('sku').sku.hide_stock"
-          :show-add-cart-btn="true"
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
-          :reset-stepper-on-hide="true"
+          show-add-cart-btn
+          reset-stepper-on-hide
           :initial-sku="initialSku"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
@@ -96,6 +97,7 @@ export default {
       showBase: false,
       showCustom: false,
       showStepper: false,
+      closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',
         s2: '1193'

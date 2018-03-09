@@ -126,6 +126,10 @@ export default create({
     searchResult: {
       type: Array,
       default: () => []
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
@@ -233,7 +237,7 @@ export default create({
         case 'name':
           return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : $t('telWrong');
+          return this.telValidator(value) ? '' : $t('telWrong');
         case 'area_code':
           return value ? +value !== -1 ? '' : $t('areaWrong') : $t('areaEmpty');
         case 'address_detail':

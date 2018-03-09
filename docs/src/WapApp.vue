@@ -2,11 +2,9 @@
   <div>
     <van-nav-bar
       v-show="title"
-      fixed
       class="van-doc-nav-bar"
       :title="title"
       left-arrow
-      :left-text="$t('back')"
       @click-left="onBack"
     />
     <router-view />
@@ -14,13 +12,11 @@
 </template>
 
 <script>
-import { camelize } from 'packages/utils';
-
 export default {
   computed: {
     title() {
-      const name = this.$route.name;
-      return name ? camelize(name.split('/').pop()) : '';
+      const { name } = this.$route.meta;
+      return name ? name.replace(/-/g, '') : '';
     }
   },
 
@@ -43,11 +39,8 @@ body {
 
 .van-doc-nav-bar {
   .van-nav-bar__title {
+    font-size: 15px;
     text-transform: capitalize;
   }
-}
-
-.van-doc-demo-section {
-  padding-top: 46px;
 }
 </style>

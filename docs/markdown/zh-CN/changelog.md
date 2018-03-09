@@ -1,5 +1,62 @@
 ## 更新日志
 
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: 新增 loop 属性，支持禁用循环滚动 [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: 新增 change 事件示例 [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* 更新静态资源 CDN 域名 [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Field 在 safari 下禁用态颜色过浅的问题 [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Swipe autoplay 设置为 0 时不会立刻取消的问题 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+`2018-02-27`
+
+**Improvements**
+
+* Checkbox: 新增 label-disabled 属性，支持禁用 label 点击 [\#644](https://github.com/youzan/vant/pull/644) [@ddchef](https://github.com/ddchef)
+* Popup: 新增 click-overlay 事件 [\#647](https://github.com/youzan/vant/pull/647) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: 新增 warn 图标 [\#651](https://github.com/youzan/vant/pull/651) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: 新增 info-o 图标, 优化 checked & underway 图标 [\#648](https://github.com/youzan/vant/pull/648) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Button loading 样式未居中的问题 [\#645](https://github.com/youzan/vant/pull/645) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+`2018-02-12`
+
+**Improvements**
+
+* 新增内置样式文档 [\#633](https://github.com/youzan/vant/pull/633) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 优化 DOM 结构 [\#636](https://github.com/youzan/vant/pull/636) [@chenjiahan](https://github.com/chenjiahan)
+* Checkbox: 支持设置最大可选数 [\#631](https://github.com/youzan/vant/pull/631) [@mpandar](https://github.com/mpandar)
+
+**Bug Fixes**
+
+*  Stepper: 修复清空输入框时 change 事件未正确触发的问题 [\#635](https://github.com/youzan/vant/pull/635) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+`2018-02-08`
+
+**Improvements**
+
+* PullRefresh: 新增 refersh 事件 [\#625](https://github.com/youzan/vant/pull/625) [@chenjiahan](https://github.com/chenjiahan)
+* Circle: 优化线条圆角 [\#624](https://github.com/youzan/vant/pull/624) [@chenjiahan](https://github.com/chenjiahan)
+* Picker: 新增 loading 属性 [\#619](https://github.com/youzan/vant/pull/619) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 size 属性 [\#620](https://github.com/youzan/vant/pull/620) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 新增 circular 类型 [\#618](https://github.com/youzan/vant/pull/618) [@chenjiahan](https://github.com/chenjiahan)
+* Loading: 默认类型调整为 circular [\#623](https://github.com/youzan/vant/pull/623) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 Sku message 更新时未重新渲染的问题 [\#627](https://github.com/youzan/vant/pull/627) [@w91](https://github.com/w91)
+
+
 ### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
 `2018-02-07`
 

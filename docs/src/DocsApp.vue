@@ -19,7 +19,7 @@ export default {
 
   computed: {
     base() {
-      return `/${this.$vantLang}/component`;
+      return `/${this.$vantLang}`;
     },
 
     config() {

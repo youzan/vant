@@ -38,7 +38,7 @@ When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an 
 <van-checkbox-group v-model="result">
   <van-checkbox
     v-for="(item, index) in list"
-    :key="index"
+    :key="item"
     :name="item"
   >
     Checkbox {{ item }}
@@ -57,17 +57,32 @@ export default {
 };
 ```
 
+#### Maximum amount of checked options
+
+```html
+<van-checkbox-group v-model="result" :max="2">
+  <van-checkbox
+    v-for="(item, index) in list"
+    :name="item"
+    :key="item"
+  >
+    Checkbox {{ item }}
+  </van-checkbox>
+</van-checkbox-group>
+```
+
 #### Inside a Cell
 
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="(item, index) in list" :key="index">
+    <van-cell v-for="(item, index) in list" :key="item">
       <van-checkbox :name="item">Checkbox {{ item }}</van-checkbox>
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
 ```
+
 
 ### Checkbox API
 
@@ -75,6 +90,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | name | Checkbox name | `Boolean` | `false` | - |
 | disabled | Diable checkbox | `Boolean` | `false` | - |
+| label-disabled | Whether to disable label click | `Boolean` | `false` | - |
 | shape | Checkbox shape | `String` | `round` | `square` |
 
 ### CheckboxGroup API
@@ -82,6 +98,7 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | disabled | Disable all checkboxes | `Boolean` | `false` | - |
+| max | Maximum amount of checked options | `Number` | `0`(Unlimited) | - |
 
 ### Checkbox Event
 

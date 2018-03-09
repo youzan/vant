@@ -21,6 +21,7 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
+  :close-on-click-overlay="closeOnClickOverlay"
   :disable-stepper-input="disableStepperInput"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
@@ -55,10 +56,10 @@ Vue.use(Sku);
   :goods="goods"
   :goods-id="goodsId"
   :hide-stock="sku.hide_stock"
-  :show-add-cart-btn="true"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="true"
+  show-add-cart-btn
+  reset-stepper-on-hide
   :initial-sku="initialSku"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
@@ -90,6 +91,7 @@ Vue.use(Sku);
 | reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
 | reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
+| close-on-click-overlay | 点击popup的overlay后是否关闭弹窗 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |

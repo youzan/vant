@@ -6,7 +6,6 @@ const fs = require('fs-extra');
 const path = require('path');
 const components = require('./get-components')();
 const dependencyTree = require('dependency-tree');
-
 const SEP = path.sep;
 
 components.forEach(componentName => {

@@ -38,6 +38,10 @@ module.exports = {
                 noExample: true
               },
               {
+                path: '/built-in-style',
+                title: '内置样式'
+              },
+              {
                 path: '/theme',
                 title: '定制主题',
                 noExample: true
@@ -125,10 +129,6 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
-                path: '/search',
-                title: 'Search - 搜索'
-              },
-              {
                 path: '/stepper',
                 title: 'Stepper - 步进器'
               },
@@ -180,6 +180,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio - 单选框'
+              },
+              {
+                path: '/search',
+                title: 'Search - 搜索'
               },
               {
                 path: '/switch',
@@ -320,6 +324,10 @@ module.exports = {
                 noExample: true
               },
               {
+                path: '/built-in-style',
+                title: 'Built-in style'
+              },
+              {
                 path: '/theme',
                 title: 'Custom Theme',
                 noExample: true
@@ -407,10 +415,6 @@ module.exports = {
                 title: 'Progress'
               },
               {
-                path: '/search',
-                title: 'Search'
-              },
-              {
                 path: '/stepper',
                 title: 'Stepper'
               },
@@ -462,6 +466,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio'
+              },
+              {
+                path: '/search',
+                title: 'Search'
               },
               {
                 path: '/switch',

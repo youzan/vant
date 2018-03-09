@@ -32,7 +32,7 @@ import { Button } from 'vant';
 #### 方式二. 按需引入组件
 
 ```js
-import { Button } from 'vant/lib/button';
+import Button from 'vant/lib/button';
 import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```

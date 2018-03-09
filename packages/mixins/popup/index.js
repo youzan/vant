@@ -113,7 +113,7 @@ export default {
       }
 
       if (this.overlay) {
-        manager.openModal(this, {
+        manager.open(this, {
           id: this._popupId,
           dom: this.$el,
           zIndex: context.plusKey('zIndex'),
@@ -146,7 +146,7 @@ export default {
     },
 
     doAfterClose() {
-      manager.closeModal(this._popupId);
+      manager.close(this._popupId);
 
       if (this.lockOnScroll) {
         document.body.classList.remove('van-overflow-hidden');
