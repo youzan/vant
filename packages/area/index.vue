@@ -82,6 +82,10 @@ export default create({
   watch: {
     value() {
       this.setIndex();
+    },
+
+    areaList() {
+      this.setIndex();
     }
   },
 
