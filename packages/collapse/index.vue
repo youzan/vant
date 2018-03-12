@@ -27,7 +27,7 @@ export default create({
 
   methods: {
     switch(name, expanded) {
-      let { activeNames } = this;
+      const { activeNames } = this;
       if (!this.accordion) {
         name = expanded
           ? activeNames.concat(name)

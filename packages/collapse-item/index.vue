@@ -1,8 +1,11 @@
 <template>
-  <div class="van-collapse-item" :class="{
-    'van-hairline--top': index,
-    'van-collapse-item--expanded': expanded
-  }">
+  <div
+    class="van-collapse-item"
+    :class="{
+      'van-hairline--top': index,
+      'van-collapse-item--expanded': expanded
+    }"
+  >
     <cell class="van-collapse-item__title" is-link @click="onClick">
       <slot name="title">{{ title }}</slot>
     </cell>
@@ -33,7 +36,7 @@ export default create({
 
   computed: {
     items() {
-      return this.parentGroup.items
+      return this.parentGroup.items;
     },
 
     index() {
