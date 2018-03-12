@@ -33,7 +33,8 @@ export default create({
           ? activeNames.concat(name)
           : activeNames.filter(activeName => activeName !== name);
       }
-      this.$emit('change', name).$emit('input', name);
+      this.$emit('change', name);
+      this.$emit('input', name);
     }
   }
 });

@@ -120,7 +120,8 @@ export default create({
     },
 
     emitInput() {
-      this.$emit('input', this.currentValue).$emit('change', this.currentValue);
+      this.$emit('input', this.currentValue);
+      this.$emit('change', this.currentValue);
     }
   }
 });
