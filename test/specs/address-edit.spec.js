@@ -388,4 +388,36 @@ describe('AddressEdit', () => {
       done();
     }, 50);
   });
+
+  it('watch area code', done => {
+    wrapper = mount(AddressEdit, {
+      propsData: {
+        areaList: {},
+        addressInfo: {
+          area_code: '330304'
+        }
+      }
+    });
+
+    expect(wrapper.vm.currentInfo.city).to.equal('');
+    wrapper.vm.areaList = areaList;
+
+    setTimeout(() => {
+      expect(wrapper.vm.currentInfo.city).to.equal('温州市');
+
+      wrapper.vm.addressInfo = { area_code: '' };
+      wrapper.vm.areaList = {};
+
+      setTimeout(() => {
+        expect(wrapper.vm.currentInfo.city).to.equal('');
+        wrapper.vm.areaList = areaList;
+        wrapper.vm.addressInfo = { area_code: '330304' };
+
+        setTimeout(() => {
+          expect(wrapper.vm.currentInfo.city).to.equal('温州市');
+          done();
+        }, 50);
+      });
+    }, 50);
+  });
 });
