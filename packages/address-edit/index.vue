@@ -80,7 +80,7 @@
 
 <script>
 /* eslint-disable camelcase */
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
@@ -193,7 +193,7 @@ export default create({
     },
 
     areaListLoaded() {
-      return !!Object.keys(this.areaList).length;
+      return isObj(this.areaList) && Object.keys(this.areaList).length;
     }
   },
 
