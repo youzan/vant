@@ -134,7 +134,6 @@ export default create({
       page = Math.max(1, page);
       page = Math.min(this.computedPageCount, page);
       if (this.value !== page) {
-        console.log(this.$emit);
         this.$emit('input', page);
         this.$emit('change', page);
       }
