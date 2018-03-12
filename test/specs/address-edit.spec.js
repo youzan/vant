@@ -99,42 +99,42 @@ describe('AddressEdit', () => {
     const saveButton = wrapper.find('.van-button')[0];
 
     // name empty
-    wrapper.vm.addressInfo.name = '';
+    wrapper.vm.currentInfo.name = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // name too long
-    wrapper.vm.addressInfo.name = '111111111111111111111111111';
+    wrapper.vm.currentInfo.name = '111111111111111111111111111';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // tel empty
-    wrapper.vm.addressInfo.name = '123';
-    wrapper.vm.addressInfo.tel = '';
+    wrapper.vm.currentInfo.name = '123';
+    wrapper.vm.currentInfo.tel = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['tel']).to.be.true;
     wrapper.find('.van-field__control')[1].trigger('focus');
     expect(wrapper.vm.errorInfo['tel']).to.be.false;
 
     // area_code empty
-    wrapper.vm.addressInfo.tel = '13000000000';
-    wrapper.vm.addressInfo.area_code = '';
+    wrapper.vm.currentInfo.tel = '13000000000';
+    wrapper.vm.currentInfo.area_code = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['area_code']).to.be.true;
 
     // area_code invalid
-    wrapper.vm.addressInfo.tel = '13000000000';
-    wrapper.vm.addressInfo.area_code = '-1';
+    wrapper.vm.currentInfo.tel = '13000000000';
+    wrapper.vm.currentInfo.area_code = '-1';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['area_code']).to.be.true;
 
     // address_detail empty
-    wrapper.vm.addressInfo.area_code = '100000';
-    wrapper.vm.addressInfo.address_detail = '';
+    wrapper.vm.currentInfo.area_code = '100000';
+    wrapper.vm.currentInfo.address_detail = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.true;
     wrapper.find('.van-field__control')[2].trigger('focus');
@@ -145,26 +145,26 @@ describe('AddressEdit', () => {
     for (let i = 0; i < 300; i++) {
       longAddress += '1';
     }
-    wrapper.vm.addressInfo.address_detail = longAddress;
+    wrapper.vm.currentInfo.address_detail = longAddress;
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.true;
     wrapper.find('.van-field__control')[2].trigger('focus');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.false;
 
     // postal_code invalid
-    wrapper.vm.addressInfo.address_detail = '123';
-    wrapper.vm.addressInfo.postal_code = '123';
+    wrapper.vm.currentInfo.address_detail = '123';
+    wrapper.vm.currentInfo.postal_code = '123';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.true;
     wrapper.find('.van-field__control')[3].trigger('focus');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.false;
 
     // valid result
-    wrapper.vm.addressInfo.postal_code = '123456';
+    wrapper.vm.currentInfo.postal_code = '123456';
     saveButton.trigger('click');
 
     // not show postal_code
-    wrapper.vm.addressInfo.postal_code = '156';
+    wrapper.vm.currentInfo.postal_code = '156';
     wrapper.vm.showPostal = false;
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.false;
@@ -235,17 +235,17 @@ describe('AddressEdit', () => {
     wrapper.vm.onAreaConfirm([{ code: -1 }]);
     wrapper.vm.onAreaConfirm([{ code: 1 }, { code: -1 }]);
     wrapper.vm.onAreaConfirm([{ code: 1 }, { code: 1 }, { code: -1 }]);
-    expect(wrapper.vm.addressInfo['area_code']).to.equal(undefined);
+    expect(wrapper.vm.currentInfo['area_code']).to.equal('');
 
     wrapper.vm.onAreaConfirm([
       { name: '浙江省' },
       { name: '杭州市' },
       { name: '西湖区', code: '123456' }
     ]);
-    expect(wrapper.vm.addressInfo['province']).to.equal('浙江省');
-    expect(wrapper.vm.addressInfo['city']).to.equal('杭州市');
-    expect(wrapper.vm.addressInfo['county']).to.equal('西湖区');
-    expect(wrapper.vm.addressInfo['area_code']).to.equal('123456');
+    expect(wrapper.vm.currentInfo['province']).to.equal('浙江省');
+    expect(wrapper.vm.currentInfo['city']).to.equal('杭州市');
+    expect(wrapper.vm.currentInfo['county']).to.equal('西湖区');
+    expect(wrapper.vm.currentInfo['area_code']).to.equal('123456');
   });
 
   it('delete address', done => {
@@ -308,7 +308,7 @@ describe('AddressEdit', () => {
     wrapper.vm.$nextTick(() => {
       wrapper.find('.van-field__icon')[0].trigger('touchstart');
       wrapper.vm.$nextTick(() => {
-        expect(wrapper.vm.addressInfo.address_detail).to.equal('');
+        expect(wrapper.vm.currentInfo.address_detail).to.equal('');
         done();
       });
     });
