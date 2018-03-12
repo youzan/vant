@@ -3,6 +3,7 @@ export default {
   cancel: 'Cancel',
   save: 'Save',
   complete: 'Complete',
+  loading: 'Loading',
   vanContactCard: {
     name: 'Name',
     tel: 'Phone',

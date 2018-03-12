@@ -3,6 +3,7 @@ export default {
   cancel: '取消',
   save: '保存',
   complete: '完成',
+  loading: '加载中',
   vanContactCard: {
     name: '联系人',
     tel: '联系电话',

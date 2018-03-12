@@ -4,7 +4,7 @@
     <div class="van-list__loading" v-show="loading">
       <slot name="loading">
         <loading type="spinner" />
-        <span class="van-list__loading-text">加载中</span>
+        <span class="van-list__loading-text">{{ $t('loading') }}</span>
       </slot>
     </div>
   </div>
