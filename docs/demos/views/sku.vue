@@ -13,6 +13,7 @@
           reset-stepper-on-hide
           reset-selected-sku-on-hide
           disable-stepper-input
+          :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
@@ -96,6 +97,7 @@ export default {
       showBase: false,
       showCustom: false,
       showStepper: false,
+      closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',
         s2: '1193'
