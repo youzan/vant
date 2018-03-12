@@ -11,8 +11,8 @@
       :error="isError"
       :on-icon-click="onIconClick"
       @input="$emit('input', $event)"
-      @focus="handleFocus"
-      @blur="handleBlur"
+      @focus="onFocus"
+      @blur="onBlur"
     >
       <div slot="icon">
         <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">{{ $t('complete') }}</span>
@@ -79,13 +79,13 @@ export default create({
   },
 
   methods: {
-    handleFocus(e) {
+    onFocus(e) {
       this.isFocused = true;
       this.$emit('focus', e);
       this.$refs.root.scrollIntoView();
     },
 
-    handleBlur(e) {
+    onBlur(e) {
       // wait for click event finished
       setTimeout(() => {
         this.isFocused = false;

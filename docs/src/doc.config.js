@@ -89,6 +89,10 @@ module.exports = {
                 title: 'Circle - 环形进度条'
               },
               {
+                path: '/collapse',
+                title: 'Collapse - 折叠面板'
+              },
+              {
                 path: '/icon',
                 title: 'Icon - 图标'
               },
@@ -377,6 +381,10 @@ module.exports = {
               {
                 path: '/circle',
                 title: 'Circle'
+              },
+              {
+                path: '/collapse',
+                title: 'Collapse'
               },
               {
                 path: '/icon',

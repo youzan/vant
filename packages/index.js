@@ -14,6 +14,8 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Circle from './circle';
 import Col from './col';
+import Collapse from './collapse';
+import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
@@ -81,6 +83,8 @@ const components = [
   CheckboxGroup,
   Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
@@ -155,6 +159,8 @@ export {
   CheckboxGroup,
   Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
