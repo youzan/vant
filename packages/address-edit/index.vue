@@ -129,7 +129,7 @@ export default create({
     addressText: String,
     addressInfo: {
       type: Object,
-      default: () => defaultAddress
+      default: () => ({ ...defaultAddress })
     },
     searchResult: {
       type: Array,
