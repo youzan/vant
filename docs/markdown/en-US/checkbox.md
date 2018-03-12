@@ -90,6 +90,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | name | Checkbox name | `Boolean` | `false` | - |
 | disabled | Diable checkbox | `Boolean` | `false` | - |
+| label-disabled | Whether to disable label click | `Boolean` | `false` | - |
 | shape | Checkbox shape | `String` | `round` | `square` |
 
 ### CheckboxGroup API

@@ -45,12 +45,34 @@ export default {
 }
 ```
 
+#### change event
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    onChange(index) {
+      Toast('Current Swipe index:' + index);
+    }
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | autoplay | Autoplay interval (ms) | `Number` | - | - |
 | duration | Animation duration (ms) | `Number` | `500` | - |
+| loop | Whether to enable loop | `Boolean` | `true` | - |
 | show-indicators | Whether to show indocators | `Boolean` | `true` | - |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
 

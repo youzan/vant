@@ -17,7 +17,12 @@
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <cell class="van-address-edit__area" :title="$t('areaTitle')" @click="showAreaSelect = true">
+      <cell
+        clickable
+        class="van-address-edit__area"
+        :title="$t('areaTitle')"
+        @click="showAreaSelect = true"
+      >
         <span>{{ currentInfo.province || $t('placeholder.province') }}</span>
         <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
         <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
@@ -63,6 +68,7 @@
     <popup v-model="showAreaSelect" position="bottom">
       <van-area
         ref="area"
+        :loading="!areaListLoaded"
         :value="currentInfo.area_code"
         :area-list="areaList"
         @confirm="onAreaConfirm"
@@ -74,7 +80,7 @@
 
 <script>
 /* eslint-disable camelcase */
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
@@ -86,6 +92,18 @@ import VanArea from '../area';
 import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
+
+const defaultAddress = {
+  name: '',
+  tel: '',
+  province: '',
+  city: '',
+  county: '',
+  area_code: '',
+  postal_code: '',
+  address_detail: '',
+  is_default: false
+};
 
 export default create({
   name: 'van-address-edit',
@@ -111,28 +129,25 @@ export default create({
     addressText: String,
     addressInfo: {
       type: Object,
-      default: () => ({
-        name: '',
-        tel: '',
-        province: '',
-        city: '',
-        county: '',
-        area_code: '',
-        postal_code: '',
-        address_detail: '',
-        is_default: false
-      })
+      default: () => ({ ...defaultAddress })
     },
     searchResult: {
       type: Array,
       default: () => []
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
   data() {
     return {
       showAreaSelect: false,
-      currentInfo: this.addressInfo,
+      currentInfo: {
+        ...defaultAddress,
+        ...this.addressInfo
+      },
       isEdit: !!this.addressInfo.id,
       detailFocused: false,
       errorInfo: {
@@ -147,10 +162,23 @@ export default create({
   watch: {
     addressInfo: {
       handler(val) {
-        this.currentInfo = val;
+        this.currentInfo = {
+          ...defaultAddress,
+          ...val
+        };
         this.isEdit = !!val.id;
+
+        if (val.area_code) {
+          this.setAreaCode(val.area_code);
+        }
       },
       deep: true
+    },
+
+    areaList() {
+      if (this.currentInfo.area_code) {
+        this.setAreaCode(this.currentInfo.area_code);
+      }
     }
   },
 
@@ -162,6 +190,10 @@ export default create({
 
     computedAddressText() {
       return this.addressText || this.$t('addressText');
+    },
+
+    areaListLoaded() {
+      return isObj(this.areaList) && Object.keys(this.areaList).length;
     }
   },
 
@@ -233,7 +265,7 @@ export default create({
         case 'name':
           return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : $t('telWrong');
+          return this.telValidator(value) ? '' : $t('telWrong');
         case 'area_code':
           return value ? +value !== -1 ? '' : $t('areaWrong') : $t('areaEmpty');
         case 'address_detail':

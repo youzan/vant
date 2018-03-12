@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueToast from './toast';
+import { isObj } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -10,7 +11,7 @@ const defaultOptions = {
   position: 'middle',
   forbidClick: false
 };
-const parseOptions = message => typeof message === 'object' ? message : { message };
+const parseOptions = message => isObj(message) ? message : { message };
 
 let queue = [];
 let singleton = true;

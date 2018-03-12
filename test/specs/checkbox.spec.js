@@ -194,4 +194,21 @@ describe('Checkbox', () => {
 
     expect(wrapper.vm.currentValue).to.be.false;
   });
+
+  it('click on a disabled checkbox label', () => {
+    wrapper = mount(Checkbox, {
+      propsData: {
+        value: false,
+        labelDisabled: true
+      }
+    });
+
+    expect(wrapper.hasClass('van-checkbox')).to.be.true;
+    expect(wrapper.vm.currentValue).to.be.false;
+
+    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
+    checkboxLabel.trigger('click');
+
+    expect(wrapper.vm.currentValue).to.be.false;
+  });
 });

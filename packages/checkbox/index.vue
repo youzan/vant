@@ -10,7 +10,7 @@
       ]"
       @click="onClick"
     />
-    <span class="van-checkbox__label" @click="onClick">
+    <span class="van-checkbox__label" @click="onClick('label')">
       <slot />
     </span>
   </div>
@@ -28,6 +28,10 @@ export default create({
   props: {
     value: {},
     disabled: Boolean,
+    labelDisabled: {
+      type: Boolean,
+      default: false
+    },
     name: [String, Number],
     shape: {
       type: String,
@@ -96,8 +100,8 @@ export default create({
   },
 
   methods: {
-    onClick() {
-      if (!this.isDisabled) {
+    onClick(target) {
+      if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
         this.currentValue = !this.currentValue;
       }
     }

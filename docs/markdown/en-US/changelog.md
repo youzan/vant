@@ -1,5 +1,35 @@
 ## Changelog
 
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: support disable loop [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: add swipe change event demo [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* update static source CDN domain [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Field disabled color in safari [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* fix Swipe autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+`2018-02-27`
+
+**Improvements**
+
+* Checkbox: add label-disabled prop [\#644](https://github.com/youzan/vant/pull/644) [@ddchef](https://github.com/ddchef)
+* Popup: add click-overlay event [\#647](https://github.com/youzan/vant/pull/647) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: add warn icon [\#651](https://github.com/youzan/vant/pull/651) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: add info-o icon, optimize checked & underway icon [\#648](https://github.com/youzan/vant/pull/648) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Button loading horizontal align [\#645](https://github.com/youzan/vant/pull/645) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
 `2018-02-12`
 

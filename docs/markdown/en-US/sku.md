@@ -21,6 +21,7 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
+  :close-on-click-overlay="closeOnClickOverlay"
   :disable-stepper-input="disableStepperInput"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
@@ -55,10 +56,10 @@ Vue.use(Sku);
   :goods="goods"
   :goods-id="goodsId"
   :hide-stock="sku.hide_stock"
-  :show-add-cart-btn="true"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="true"
+  show-add-cart-btn
+  reset-stepper-on-hide
   :initial-sku="initialSku"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
@@ -89,6 +90,7 @@ Vue.use(Sku);
 | reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
+| close-on-click-overlay | Whether to close sku popup when click overlay | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
 | custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
 | message-config | Message related config | `Object` | `{}` | - |

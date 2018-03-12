@@ -29,6 +29,10 @@ export default create({
 
   props: {
     autoplay: Number,
+    loop: {
+      type: Boolean,
+      default: true
+    },
     initialSwipe: {
       type: Number,
       default: 0
@@ -72,6 +76,12 @@ export default create({
 
     initialSwipe() {
       this.initialize();
+    },
+
+    autoplay(autoplay) {
+      if (!autoplay) {
+        clearTimeout(this.timer);
+      }
     }
   },
 
@@ -146,6 +156,14 @@ export default create({
     move(move = 0, offset = 0) {
       const { active, count, swipes, deltaX, width } = this;
 
+      if (
+        !this.loop &&
+        ((active === 0 && (offset > 0 || move < 0)) ||
+          (active === count - 1 && (offset < 0 || move > 0)))
+      ) {
+        return;
+      }
+
       if (move) {
         if (active === -1) {
           swipes[count - 1].offset = 0;
@@ -184,9 +202,9 @@ export default create({
     },
 
     getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
+      const offsetX = Math.abs(touch.clientX - this.startX);
+      const offsetY = Math.abs(touch.clientY - this.startY);
+      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
     },
 
     range(num, arr) {

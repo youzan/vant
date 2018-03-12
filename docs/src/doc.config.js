@@ -133,10 +133,6 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
-                path: '/search',
-                title: 'Search - 搜索'
-              },
-              {
                 path: '/stepper',
                 title: 'Stepper - 步进器'
               },
@@ -188,6 +184,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio - 单选框'
+              },
+              {
+                path: '/search',
+                title: 'Search - 搜索'
               },
               {
                 path: '/switch',
@@ -423,10 +423,6 @@ module.exports = {
                 title: 'Progress'
               },
               {
-                path: '/search',
-                title: 'Search'
-              },
-              {
                 path: '/stepper',
                 title: 'Stepper'
               },
@@ -478,6 +474,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio'
+              },
+              {
+                path: '/search',
+                title: 'Search'
               },
               {
                 path: '/switch',

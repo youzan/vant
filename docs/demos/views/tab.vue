@@ -106,7 +106,7 @@ export default {
 
 <style lang="postcss">
 .demo-tab {
-  margin-bottom: 700px;
+  margin-bottom: 500px;
 
   .van-tab .van-icon {
     margin-right: 5px;
