@@ -76,10 +76,8 @@ export default create({
 
   watch: {
     value(val) {
-      if (!val) {
-        this.duration = this.animationDuration;
-        this.getStatus(0);
-      }
+      this.duration = this.animationDuration;
+      this.getStatus(val ? this.headHeight : 0, val);
     }
   },
 
