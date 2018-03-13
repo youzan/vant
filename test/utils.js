@@ -74,11 +74,11 @@ export function triggerTouch(wrapper, eventName, x, y) {
   el.dispatchEvent(event);
 }
 
-export function dragHelper(el, position) {
+export function dragHelper(el, x = 0, y = 0) {
   triggerTouch(el, 'touchstart', 0, 0);
-  triggerTouch(el, 'touchmove', 0, position / 4);
-  triggerTouch(el, 'touchmove', 0, position / 3);
-  triggerTouch(el, 'touchmove', 0, position / 2);
-  triggerTouch(el, 'touchmove', 0, position);
-  triggerTouch(el, 'touchend', 0, position);
+  triggerTouch(el, 'touchmove', x / 4, y / 4);
+  triggerTouch(el, 'touchmove', x / 3, y / 3);
+  triggerTouch(el, 'touchmove', x / 2, y / 2);
+  triggerTouch(el, 'touchmove', x, y);
+  triggerTouch(el, 'touchend', x, y);
 }

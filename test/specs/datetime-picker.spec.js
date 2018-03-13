@@ -56,8 +56,8 @@ describe('DatetimePicker', () => {
     });
 
     const [hour, minute] = wrapper.find('.van-picker-column ul');
-    dragHelper(hour, -50);
-    dragHelper(minute, -50);
+    dragHelper(hour, 0, -50);
+    dragHelper(minute, 0, -50);
 
     setTimeout(() => {
       expect(wrapper.vm.innerValue).to.equal('1:01');
@@ -78,9 +78,9 @@ describe('DatetimePicker', () => {
 
     setTimeout(() => {
       const [year, month, day] = wrapper.find('.van-picker-column ul');
-      dragHelper(year, -50);
-      dragHelper(month, -50);
-      dragHelper(day, -50);
+      dragHelper(year, 0, -50);
+      dragHelper(month, 0, -50);
+      dragHelper(day, 0, -50);
       setTimeout(() => {
         const newYear = wrapper.vm.innerValue.getFullYear();
         const newMonth = wrapper.vm.innerValue.getMonth() + 1;
@@ -106,11 +106,11 @@ describe('DatetimePicker', () => {
 
     setTimeout(() => {
       const [year, month, day, hour, minute] = wrapper.find('.van-picker-column ul');
-      dragHelper(year, -50);
-      dragHelper(month, -50);
-      dragHelper(day, -50);
-      dragHelper(hour, -50);
-      dragHelper(minute, -50);
+      dragHelper(year, 0, -50);
+      dragHelper(month, 0, -50);
+      dragHelper(day, 0, -50);
+      dragHelper(hour, 0, -50);
+      dragHelper(minute, 0, -50);
       setTimeout(() => {
         const newYear = wrapper.vm.innerValue.getFullYear();
         const newMonth = wrapper.vm.innerValue.getMonth() + 1;
