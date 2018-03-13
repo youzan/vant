@@ -3,7 +3,7 @@ export default {
   cancel: 'Cancel',
   save: 'Save',
   complete: 'Complete',
-  loading: 'Loading',
+  loadingTip: 'Loading...',
   vanContactCard: {
     name: 'Name',
     tel: 'Phone',
@@ -32,8 +32,7 @@ export default {
   },
   vanPullRefresh: {
     pullingText: 'Pull to refresh...',
-    loosingText: 'Loose to refresh...',
-    loadingText: 'Loading...'
+    loosingText: 'Loose to refresh...'
   },
   vanSubmitBar: {
     label: 'Total：'
@@ -143,5 +142,8 @@ export default {
     title: 'Quantity',
     remain: count => `Remain ${count} items`,
     quota: quota => `Buy up to ${quota} items`
+  },
+  vanList: {
+    loading: 'Loading',
   }
 };

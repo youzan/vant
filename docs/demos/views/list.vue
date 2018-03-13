@@ -2,13 +2,15 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
-      <van-list 
-        v-model="loading"
-        :finished="finished"
-        @load="onLoad"
-      >
-        <van-cell v-for="item in list" :key="item" :title="item + ''" />
-      </van-list>
+      <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+        <van-list 
+          v-model="loading"
+          :finished="finished"
+          @load="onLoad"
+        >
+          <van-cell v-for="item in list" :key="item" :title="item + ''" />
+        </van-list>
+      </van-pull-refresh>
     </demo-block>
   </demo-section>
 </template>
@@ -27,6 +29,7 @@ export default {
   data() {
     return {
       list: [],
+      refreshing: false,
       loading: false,
       finished: false
     };
@@ -36,7 +39,8 @@ export default {
     onLoad() {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          this.list.push(this.list.length + 1);
+          let text = this.list.length + 1;
+          this.list.push(text < 10 ? '0' + text : text);
         }
         this.loading = false;
 
@@ -44,6 +48,15 @@ export default {
           this.finished = true;
         }
       }, 500);
+    },
+
+    onRefresh() {
+      setTimeout(() => {
+        this.list = [];
+        this.finished = false;
+        this.refreshing = false;
+        window.scrollTo(0, 10);
+      }, 1000);
     }
   }
 };

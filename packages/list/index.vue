@@ -3,8 +3,8 @@
     <slot />
     <div class="van-list__loading" v-show="loading">
       <slot name="loading">
-        <loading type="spinner" />
-        <span class="van-list__loading-text">{{ $t('loading') }}</span>
+        <loading />
+        <span class="van-list__loading-text">{{ $t('loadingTip') }}</span>
       </slot>
     </div>
   </div>

@@ -3,7 +3,7 @@ export default {
   cancel: '取消',
   save: '保存',
   complete: '完成',
-  loading: '加载中',
+  loadingTip: '加载中...',
   vanContactCard: {
     name: '联系人',
     tel: '联系电话',
@@ -35,8 +35,7 @@ export default {
   },
   vanPullRefresh: {
     pullingText: '下拉即可刷新...',
-    loosingText: '释放即可刷新...',
-    loadingText: '加载中...'
+    loosingText: '释放即可刷新...'
   },
   vanSubmitBar: {
     label: '合计：'
