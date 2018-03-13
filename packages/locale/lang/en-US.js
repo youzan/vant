@@ -142,8 +142,5 @@ export default {
     title: 'Quantity',
     remain: count => `Remain ${count} items`,
     quota: quota => `Buy up to ${quota} items`
-  },
-  vanList: {
-    loading: 'Loading',
   }
 };
