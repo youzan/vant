@@ -7,7 +7,9 @@
       left-arrow
       @click-left="onBack"
     />
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 

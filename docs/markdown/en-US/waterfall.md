@@ -1,4 +1,5 @@
 ## Waterfall
+Note: Waterfall is deprecated and no longer maintained, please use the [List](#/zh-CN/list) component instead.
 
 ### Install
 

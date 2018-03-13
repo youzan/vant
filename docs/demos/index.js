@@ -44,6 +44,7 @@ export default {
   'image-preview': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/image-preview'), 'image-preview')), 'image-preview')),
   'layout': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/layout'), 'layout')), 'layout')),
   'lazyload': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/lazyload'), 'lazyload')), 'lazyload')),
+  'list': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/list'), 'list')), 'list')),
   'loading': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/loading'), 'loading')), 'loading')),
   'nav-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/nav-bar'), 'nav-bar')), 'nav-bar')),
   'notice-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/notice-bar'), 'notice-bar')), 'notice-bar')),
