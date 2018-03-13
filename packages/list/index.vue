@@ -49,10 +49,12 @@ export default create({
   },
 
   activated() {
+    /* istanbul ignore next */
     this.handler(true);
   },
 
   deactivated() {
+    /* istanbul ignore next */
     this.handler(false);
   },
 
@@ -75,6 +77,8 @@ export default create({
       const el = this.$el;
       const { scroller } = this;
       const scrollerHeight = utils.getVisibleHeight(scroller);
+
+      /* istanbul ignore next */
       if (!scrollerHeight) {
         return;
       }
@@ -83,6 +87,8 @@ export default create({
       const targetBottom = scrollTop + scrollerHeight;
 
       let reachBottom = false;
+
+      /* istanbul ignore next */
       if (el === scroller) {
         reachBottom = scroller.scrollHeight - targetBottom < this.offset;
       } else {
@@ -93,6 +99,7 @@ export default create({
         reachBottom = elBottom - scrollerHeight < this.offset;
       }
 
+      /* istanbul ignore else */
       if (reachBottom) {
         this.$emit('input', true);
         this.$emit('load');
@@ -100,6 +107,7 @@ export default create({
     },
 
     handler(bind) {
+      /* istanbul ignore else */
       if (this.binded !== bind) {
         this.binded = bind;
         (bind ? on : off)(this.scroller, 'scroll', this.onScroll);
