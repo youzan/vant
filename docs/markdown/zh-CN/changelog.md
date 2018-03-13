@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+`2018-03-09`
+
+**Bug Fixes**
+* Area: 修复 area-list 更新时未正确选中省市区的问题 [\#678](https://github.com/youzan/vant/pull/678) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+`2018-03-09`
+
+**Improvements**
+
+* AddressEdit: 支持自定义手机号校验函数 [\#673](https://github.com/youzan/vant/pull/673) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 新增 close-on-click-overlay 属性 [\#676](https://github.com/youzan/vant/pull/676) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* 修复 CouponList 文字截断的问题 [\#675](https://github.com/youzan/vant/pull/675) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
 `2018-03-06`
 

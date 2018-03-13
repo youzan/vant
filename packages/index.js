@@ -30,6 +30,7 @@ import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
+import List from './list';
 import Loading from './loading';
 import Locale from './locale';
 import NavBar from './nav-bar';
@@ -96,6 +97,7 @@ const components = [
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
+  List,
   Loading,
   NavBar,
   NoticeBar,
@@ -173,6 +175,7 @@ export {
   Icon,
   ImagePreview,
   Lazyload,
+  List,
   Loading,
   Locale,
   NavBar,

@@ -1,5 +1,6 @@
 <template>
   <demo-section>
+    <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
       <ul
@@ -18,10 +19,12 @@ import { Waterfall } from 'packages';
 export default {
   i18n: {
     'zh-CN': {
-      text: '当即将滚动到元素底部时，会自动加载更多'
+      text: '当即将滚动到元素底部时，会自动加载更多',
+      tips: '注意：Waterfall 已被废弃，请使用 List 组件代替'
     },
     'en-US': {
-      text: 'This list will load items will scroll to bottom.'
+      text: 'This list will load items will scroll to bottom.',
+      tips: 'Waterfall is deprecated and no longer maintained, please use the List component instead.'
     }
   },
 

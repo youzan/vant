@@ -1,5 +1,31 @@
 ## 更新日志
 
+## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14) (2018-03-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.13...v0.12.14)
+
+**Improvements**
+
+- \[bugfix\] Area: should reset index when area list changed [\#678](https://github.com/youzan/vant/pull/678) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.13](https://github.com/youzan/vant/tree/v0.12.13) (2018-03-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.12...v0.12.13)
+
+**Issue**
+
+- 请问什么时候可以想vue.ydui.org里面那样弄个rem 版的 [\#672](https://github.com/youzan/vant/issues/672)
+- 使用babel-plugin-import 出错 [\#671](https://github.com/youzan/vant/issues/671)
+- undefined is not an object \(evaluating 't.offsetWidth'\) [\#668](https://github.com/youzan/vant/issues/668)
+- 关于输入框禁用样式 [\#667](https://github.com/youzan/vant/issues/667)
+- Swipe - 'change event' - Documentation  [\#664](https://github.com/youzan/vant/issues/664)
+- Swipe - 'no-wrap' - Enhancement [\#663](https://github.com/youzan/vant/issues/663)
+- Swipe 组件希望能增加禁止自动播放的功能 [\#656](https://github.com/youzan/vant/issues/656)
+
+**Improvements**
+
+- \[new feature\] add close-on-click-overlay config for sku popup [\#676](https://github.com/youzan/vant/pull/676) ([w91](https://github.com/w91))
+- \[bugfix\] CouponList text max-width [\#675](https://github.com/youzan/vant/pull/675) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] AddressEdit support custom tel validator [\#673](https://github.com/youzan/vant/pull/673) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12) (2018-03-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.11...v0.12.12)
 
