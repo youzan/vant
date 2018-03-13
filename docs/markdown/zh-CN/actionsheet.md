@@ -27,7 +27,8 @@ export default {
           callback: this.onClick
         },
         {
-          name: '信用卡支付'
+          name: '选项',
+          subname: '描述信息'
         },
         {
           name: '选项',
