@@ -1,4 +1,5 @@
 ## Waterfall 瀑布流
+注意：Waterfall 组件已被废弃且不再维护，请使用 [List](#/zh-CN/list) 组件代替
 
 ### 使用指南
 
