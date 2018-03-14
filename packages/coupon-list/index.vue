@@ -34,7 +34,7 @@
         :data="item"
       />
       <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
-        <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+        <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
         <p>{{ $t('empty') }}</p>
       </div>
     </div>

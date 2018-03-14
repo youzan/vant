@@ -89,6 +89,10 @@ module.exports = {
                 title: 'Circle - 环形进度条'
               },
               {
+                path: '/collapse',
+                title: 'Collapse - 折叠面板'
+              },
+              {
                 path: '/icon',
                 title: 'Icon - 图标'
               },
@@ -99,6 +103,10 @@ module.exports = {
               {
                 path: '/lazyload',
                 title: 'Lazyload - 图片懒加载'
+              },
+              {
+                path: '/list',
+                title: 'List - 列表'
               },
               {
                 path: '/loading',
@@ -127,10 +135,6 @@ module.exports = {
               {
                 path: '/progress',
                 title: 'Progress - 进度条'
-              },
-              {
-                path: '/search',
-                title: 'Search - 搜索'
               },
               {
                 path: '/stepper',
@@ -184,6 +188,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio - 单选框'
+              },
+              {
+                path: '/search',
+                title: 'Search - 搜索'
               },
               {
                 path: '/switch',
@@ -375,6 +383,10 @@ module.exports = {
                 title: 'Circle'
               },
               {
+                path: '/collapse',
+                title: 'Collapse'
+              },
+              {
                 path: '/icon',
                 title: 'Icon'
               },
@@ -385,6 +397,10 @@ module.exports = {
               {
                 path: '/lazyload',
                 title: 'Lazyload'
+              },
+              {
+                path: '/list',
+                title: 'List'
               },
               {
                 path: '/loading',
@@ -413,10 +429,6 @@ module.exports = {
               {
                 path: '/progress',
                 title: 'Progress'
-              },
-              {
-                path: '/search',
-                title: 'Search'
               },
               {
                 path: '/stepper',
@@ -470,6 +482,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio'
+              },
+              {
+                path: '/search',
+                title: 'Search'
               },
               {
                 path: '/switch',

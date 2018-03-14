@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 import Picker from '../picker';
 
 export default create({
@@ -42,7 +42,7 @@ export default create({
 
   computed: {
     listValid() {
-      return this.areaList && typeof this.areaList.province_list === 'object';
+      return this.areaList && isObj(this.areaList.province_list);
     },
 
     columns() {
@@ -81,6 +81,10 @@ export default create({
 
   watch: {
     value() {
+      this.setIndex();
+    },
+
+    areaList() {
       this.setIndex();
     }
   },

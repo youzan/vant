@@ -3,6 +3,7 @@ export default {
   cancel: 'Cancel',
   save: 'Save',
   complete: 'Complete',
+  loadingTip: 'Loading...',
   vanContactCard: {
     name: 'Name',
     tel: 'Phone',
@@ -31,8 +32,7 @@ export default {
   },
   vanPullRefresh: {
     pullingText: 'Pull to refresh...',
-    loosingText: 'Loose to refresh...',
-    loadingText: 'Loading...'
+    loosingText: 'Loose to refresh...'
   },
   vanSubmitBar: {
     label: 'Total：'

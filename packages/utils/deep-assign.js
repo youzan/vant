@@ -1,11 +1,6 @@
-import { isDef } from './';
+import { isDef, isObj } from './';
 
 const { hasOwnProperty } = Object.prototype;
-
-function isObj(x) {
-  const type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
 
 function assignKey(to, from, key) {
   const val = from[key];

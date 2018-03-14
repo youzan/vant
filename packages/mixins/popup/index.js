@@ -17,12 +17,10 @@ export default {
     closeOnClickOverlay: Boolean,
     // z-index
     zIndex: [String, Number],
-    // prevent touchmove scroll
-    preventScroll: Boolean,
     // return the mount node for popup
     getContainer: Function,
     // prevent body scroll
-    lockOnScroll: {
+    lockScroll: {
       type: Boolean,
       default: true
     }
@@ -105,8 +103,6 @@ export default {
         return;
       }
 
-      this.$emit('input', true);
-
       // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
       if (this.zIndex !== undefined) {
         context.zIndex = this.zIndex;
@@ -120,19 +116,17 @@ export default {
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
-
-        if (this.lockOnScroll) {
-          document.body.classList.add('van-overflow-hidden');
-        }
       }
 
-      this.$el.style.zIndex = context.plusKey('zIndex');
-      this.opened = true;
-
-      if (this.preventScroll) {
+      if (this.lockScroll) {
+        document.body.classList.add('van-overflow-hidden');
         on(document, 'touchstart', this.recordPosition);
         on(document, 'touchmove', this.watchTouchMove);
       }
+
+      this.$el.style.zIndex = context.plusKey('zIndex');
+      this.$emit('input', true);
+      this.opened = true;
     },
 
     close() {
@@ -148,11 +142,8 @@ export default {
     doAfterClose() {
       manager.close(this._popupId);
 
-      if (this.lockOnScroll) {
+      if (this.lockScroll) {
         document.body.classList.remove('van-overflow-hidden');
-      }
-
-      if (this.preventScroll) {
         off(document, 'touchstart', this.recordPosition);
         off(document, 'touchmove', this.watchTouchMove);
       }

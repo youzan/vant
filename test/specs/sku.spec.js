@@ -4,7 +4,6 @@ import Toast from 'packages/toast';
 import { mount } from 'avoriaz';
 import { DOMChecker } from '../utils';
 import skuMockData from '../../docs/demos/mock/sku';
-import repeat from 'lodash/repeat';
 
 const data = skuMockData['zh-CN'];
 const { skuHelper } = Sku;
@@ -12,6 +11,13 @@ const goods = data.goods_info;
 const initialSku = {
   s1: '30349',
   s2: '1193'
+};
+const repeat = (str, count) => {
+  let result = '';
+  for (let i = 0; i < count; i++) {
+    result += str;
+  }
+  return result;
 };
 
 const File = function() {

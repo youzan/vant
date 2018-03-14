@@ -4,11 +4,12 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
-      fixed
       left-arrow
       @click-left="onBack"
     />
-    <router-view />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
@@ -46,6 +47,7 @@ body {
 }
 
 .van-doc-demo-section {
+  margin-top: -46px;
   padding-top: 46px;
 }
 </style>

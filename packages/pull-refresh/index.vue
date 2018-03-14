@@ -19,7 +19,7 @@
         <slot name="loading" v-if="status === 'loading'">
           <div class="van-pull-refresh__loading">
             <loading />
-            <span>{{ loadingText || $t('loadingText') }}</span>
+            <span>{{ loadingText || $t('loadingTip') }}</span>
           </div>
         </slot>
       </div>
@@ -76,10 +76,8 @@ export default create({
 
   watch: {
     value(val) {
-      if (!val) {
-        this.duration = this.animationDuration;
-        this.getStatus(0);
-      }
+      this.duration = this.animationDuration;
+      this.getStatus(val ? this.headHeight : 0, val);
     }
   },
 

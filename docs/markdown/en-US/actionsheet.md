@@ -22,9 +22,18 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option1', callback: this.onClick },
-        { name: 'Option2' },
-        { name: 'Option3', loading: true }
+        {
+          name: 'Option',
+          callback: this.onClick
+        },
+        {
+          name: 'Option',
+          description: 'Description'
+        },
+        {
+          name: 'Option',
+          loading: true
+        }
       ]
     };
   },

@@ -16,6 +16,15 @@
         </van-swipe-item>
       </van-swipe>
     </demo-block>
+
+    <demo-block :title="$t('title3')">
+      <van-swipe @change="onChange">
+        <van-swipe-item>1</van-swipe-item>
+        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>3</van-swipe-item>
+        <van-swipe-item>4</van-swipe-item>
+      </van-swipe>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -23,10 +32,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '图片懒加载'
+      title2: '图片懒加载',
+      title3: '监听 change 事件',
+      message: '当前 Swipe 索引：'
     },
     'en-US': {
-      title2: 'Image Lazyload'
+      title2: 'Image Lazyload',
+      title3: 'Change Event',
+      message: 'Current Swipe index:'
     }
   },
 
@@ -39,6 +52,12 @@ export default {
         'https://img.yzcdn.cn/public_files/2017/09/05/fd08f07665ed67d50e11b32a21ce0682.jpg'
       ]
     };
+  },
+
+  methods: {
+    onChange(index) {
+      this.$toast(this.$t('message') + index);
+    }
   }
 };
 </script>

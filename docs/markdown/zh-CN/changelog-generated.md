@@ -1,5 +1,77 @@
 ## 更新日志
 
+## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14) (2018-03-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.13...v0.12.14)
+
+**Improvements**
+
+- \[bugfix\] Area: should reset index when area list changed [\#678](https://github.com/youzan/vant/pull/678) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.13](https://github.com/youzan/vant/tree/v0.12.13) (2018-03-09)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.12...v0.12.13)
+
+**Issue**
+
+- 请问什么时候可以想vue.ydui.org里面那样弄个rem 版的 [\#672](https://github.com/youzan/vant/issues/672)
+- 使用babel-plugin-import 出错 [\#671](https://github.com/youzan/vant/issues/671)
+- undefined is not an object \(evaluating 't.offsetWidth'\) [\#668](https://github.com/youzan/vant/issues/668)
+- 关于输入框禁用样式 [\#667](https://github.com/youzan/vant/issues/667)
+- Swipe - 'change event' - Documentation  [\#664](https://github.com/youzan/vant/issues/664)
+- Swipe - 'no-wrap' - Enhancement [\#663](https://github.com/youzan/vant/issues/663)
+- Swipe 组件希望能增加禁止自动播放的功能 [\#656](https://github.com/youzan/vant/issues/656)
+
+**Improvements**
+
+- \[new feature\] add close-on-click-overlay config for sku popup [\#676](https://github.com/youzan/vant/pull/676) ([w91](https://github.com/w91))
+- \[bugfix\] CouponList text max-width [\#675](https://github.com/youzan/vant/pull/675) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] AddressEdit support custom tel validator [\#673](https://github.com/youzan/vant/pull/673) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12) (2018-03-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.11...v0.12.12)
+
+**Issue**
+
+- Tabs 组件的sticky设置 [\#662](https://github.com/youzan/vant/issues/662)
+- Sku组件有问题 [\#659](https://github.com/youzan/vant/issues/659)
+- checkbox/radio选项不支持溢出文本 [\#658](https://github.com/youzan/vant/issues/658)
+- Search组件输入内容在 iphone 内显示不完整 [\#657](https://github.com/youzan/vant/issues/657)
+- van-button组件在loading时，loading图标不居中 [\#655](https://github.com/youzan/vant/issues/655)
+- 建议增加Scroller组件，能够无限加载，下拉刷新 [\#654](https://github.com/youzan/vant/issues/654)
+- Icon 浏览器兼容 [\#653](https://github.com/youzan/vant/issues/653)
+- Popup以及Picker同时使用时存在的一个问题，是否能考虑在Popup点击遮罩层关闭时提供相应的事件 [\#646](https://github.com/youzan/vant/issues/646)
+- 新增加的功能 [\#643](https://github.com/youzan/vant/issues/643)
+
+**Improvements**
+
+- \[new feature\] Swipe: support disable loop [\#670](https://github.com/youzan/vant/pull/670) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: disabled color in safari [\#669](https://github.com/youzan/vant/pull/669) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] swipe: add change event demo [\#666](https://github.com/youzan/vant/pull/666) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix Tab demo & update dependencies [\#665](https://github.com/youzan/vant/pull/665) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize utils [\#661](https://github.com/youzan/vant/pull/661) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Swipe: autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] update CDN domain [\#652](https://github.com/youzan/vant/pull/652) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11) (2018-02-27)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.10...v0.12.11)
+
+**Issue**
+
+- picker如何设置初始选中默认值？ [\#649](https://github.com/youzan/vant/issues/649)
+- 官方可以在release里面提供编译后的js文件吗，可以直接用在html里面那种 [\#642](https://github.com/youzan/vant/issues/642)
+- Vue.prototype.$toast = Toast [\#641](https://github.com/youzan/vant/issues/641)
+- ImagePreview鼠标单击图片外的黑色背景部分，无法关闭 [\#637](https://github.com/youzan/vant/issues/637)
+- van-stepper  的异常 [\#634](https://github.com/youzan/vant/issues/634)
+- 期待checkbox支持最大选择数量功能 [\#617](https://github.com/youzan/vant/issues/617)
+
+**Improvements**
+
+- \[Improvement\] Icon: add warn icon [\#651](https://github.com/youzan/vant/pull/651) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add checkbox labelDisabled test case [\#650](https://github.com/youzan/vant/pull/650) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: add info-o icon [\#648](https://github.com/youzan/vant/pull/648) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Popup: add click-overlay event [\#647](https://github.com/youzan/vant/pull/647) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Button loading horizontal align [\#645](https://github.com/youzan/vant/pull/645) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\]Checkbox: support disabled label [\#644](https://github.com/youzan/vant/pull/644) ([ddchef](https://github.com/ddchef))
+
 ## [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10) (2018-02-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.9...v0.12.10)
 

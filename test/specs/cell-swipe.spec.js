@@ -1,6 +1,6 @@
 import CellSwipe from 'packages/cell-swipe';
 import { mount } from 'avoriaz';
-import { triggerTouch } from '../utils';
+import { triggerTouch, dragHelper } from '../utils';
 
 const defaultProps = {
   propsData: {
@@ -60,48 +60,40 @@ describe('CellSwipe', () => {
     });
   });
 
-  it('drag and reset left part', () => {
+  it('drag and show left part', () => {
     wrapper = mount(CellSwipe, defaultProps);
-
-    triggerTouch(wrapper, 'touchstart', 0, 0);
-    triggerTouch(wrapper, 'touchmove', 10, 0);
-    triggerTouch(wrapper, 'touchmove', 30, 0);
-    triggerTouch(wrapper, 'touchend', 30, 0);
-    expect(wrapper.vm.offset).to.equal(0);
+    dragHelper(wrapper, 50);
+    expect(wrapper.vm.offset).to.equal(100);
   });
 
-  it('drag and reset right part', () => {
+  it('drag and show right part', () => {
     wrapper = mount(CellSwipe, defaultProps);
 
-    triggerTouch(wrapper, 'touchstart', 0, 0);
-    triggerTouch(wrapper, 'touchmove', -10, 0);
-    triggerTouch(wrapper, 'touchmove', -30, 0);
-    triggerTouch(wrapper, 'touchend', -30, 0);
-    expect(wrapper.vm.offset).to.equal(0);
+    dragHelper(wrapper, -50);
+    expect(wrapper.vm.offset).to.equal(-100);
   });
 
-  it('drag distance out of ranges', () => {
+  it('drag distance out of ranges', done => {
     wrapper = mount(CellSwipe, defaultProps);
 
     triggerTouch(wrapper, 'touchstart', 0, 0);
     triggerTouch(wrapper, 'touchmove', 1000, 0);
-    expect(wrapper.vm.offset).to.equal(0);
+    
+    setTimeout(() => {
+      expect(wrapper.vm.offset).to.equal(0);
+      done();
+    });
   });
 
   it('drag and hide left part', (done) => {
     wrapper = mount(CellSwipe, defaultProps);
 
-    triggerTouch(wrapper, 'touchstart', 0, 0);
-    triggerTouch(wrapper, 'touchmove', 20, 0);
-    triggerTouch(wrapper, 'touchmove', 50, 0);
-    triggerTouch(wrapper, 'touchend', 50, 0);
+    dragHelper(wrapper, 50);
     expect(wrapper.vm.offset).to.equal(100);
     wrapper.vm.$nextTick(() => {
       expect(wrapper.vm.opened).to.be.true;
 
-      triggerTouch(wrapper, 'touchstart', 0, 0);
-      triggerTouch(wrapper, 'touchmove', 1, 0);
-
+      dragHelper(wrapper, -50);
       wrapper.vm.$nextTick(() => {
         expect(wrapper.vm.offset).to.equal(0);
         expect(wrapper.vm.opened).to.be.false;
@@ -113,9 +105,7 @@ describe('CellSwipe', () => {
   it('drag vertical', () => {
     wrapper = mount(CellSwipe, defaultProps);
 
-    triggerTouch(wrapper, 'touchstart', 0, 0);
-    triggerTouch(wrapper, 'touchmove', 0, 100);
-    triggerTouch(wrapper, 'touchend', 0, 100);
+    dragHelper(wrapper, 0, 100);
     expect(wrapper.vm.offset).to.equal(0);
   });
 

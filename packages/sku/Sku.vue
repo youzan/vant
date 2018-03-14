@@ -3,8 +3,7 @@
     v-if="!isSkuEmpty"
     v-model="show"
     position="bottom"
-    lock-on-scroll
-    prevent-scroll
+    :close-on-click-overlay="closeOnClickOverlay"
     :get-container="getContainer"
   >
     <div class="van-sku-container">
@@ -145,6 +144,7 @@ export default create({
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
+    closeOnClickOverlay: Boolean,
     initialSku: {
       type: Object,
       default: () => ({})

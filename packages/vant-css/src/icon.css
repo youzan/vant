@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://b.yzcdn.cn/zanui/icon/vant-icon-1a68df.ttf') format('truetype');
+  src: url('https://img.yzcdn.cn/zanui/icon/vant-icon-4c3245.ttf') format('truetype');
 }
 
 .van-icon {
@@ -315,6 +315,9 @@
 .van-icon-wap-nav:before {
   content: "\F05C";
 }
-.van-icon-wechat:before {
+.van-icon-warn:before {
   content: "\F05D";
+}
+.van-icon-wechat:before {
+  content: "\F05E";
 }

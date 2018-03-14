@@ -54,4 +54,9 @@ describe('ImagePreview', () => {
       done();
     });
   });
+
+  it('register component', () => {
+    Vue.use(ImagePreview);
+    expect(!!Vue.component('van-image-preview')).to.be.true;
+  });
 });
