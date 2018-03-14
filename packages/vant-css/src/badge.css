@@ -44,8 +44,9 @@
     position: absolute;
     top: 2px;
     right: 2px;
+    color: $white;
     font-size: 10px;
-    color: $white;    
+    font-weight: normal;
     transform: scale(0.8);
     text-align: center;
     box-sizing: border-box;

@@ -105,8 +105,6 @@ export default {
         return;
       }
 
-      this.$emit('input', true);
-
       // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
       if (this.zIndex !== undefined) {
         context.zIndex = this.zIndex;
@@ -127,6 +125,7 @@ export default {
       }
 
       this.$el.style.zIndex = context.plusKey('zIndex');
+      this.$emit('input', true);
       this.opened = true;
 
       if (this.preventScroll) {
