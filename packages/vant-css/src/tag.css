@@ -2,9 +2,9 @@
 
 .van-tag {
   display: inline-block;
-  line-height: 14px;
-  padding: 1px 5px;
-  border-radius: 2px;
+  padding: 0 5px;
+  line-height: 18px;
+  border-radius: 3px;
   font-size: 10px;
   background: $gray;
   color: $white;
@@ -15,6 +15,7 @@
   }
 
   &--mark {
+    padding-right: 7px;
     border-radius: 0 8px 8px 0;
 
     &::after {
