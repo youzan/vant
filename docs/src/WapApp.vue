@@ -45,4 +45,9 @@ body {
     text-transform: capitalize;
   }
 }
+
+.van-doc-demo-section {
+  margin-top: -46px;
+  padding-top: 46px;
+}
 </style>
