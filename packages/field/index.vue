@@ -12,27 +12,28 @@
       'van-field--autosize': autosize,
       'van-field--has-icon': hasIcon,
       'van-hairline--surround': border
-    }">
+    }"
+  >
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
+      v-on="listeners"
       ref="textarea"
       class="van-field__control"
       :value="value"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
     />
     <input
       v-else
-      v-bind="$attrs"  
+      v-bind="$attrs"
+      v-on="listeners"
       class="van-field__control"
       :type="type"
       :value="value"
-      @keypress="onKeypress"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
+    >
+    <div
+      v-if="errorMessage"
+      v-text="errorMessage"
+      class="van-field__error-message"
     />
     <div
       v-if="hasIcon"
@@ -54,6 +55,8 @@ import Cell from '../cell';
 export default create({
   name: 'van-field',
 
+  inheritAttrs: false,
+
   components: {
     Cell
   },
@@ -70,6 +73,7 @@ export default create({
     border: Boolean,
     required: Boolean,
     autosize: Boolean,
+    errorMessage: String,
     onIconClick: {
       type: Function,
       default: () => {}
@@ -98,6 +102,14 @@ export default create({
   computed: {
     hasIcon() {
       return this.$slots.icon || this.icon;
+    },
+
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
     }
   },
 
@@ -120,6 +132,7 @@ export default create({
           event.preventDefault();
         }
       }
+      this.$emit('keypress', event);
     },
 
     adjustSize() {

@@ -47,6 +47,17 @@
         </van-tab>
       </van-tabs>
     </demo-block>
+
+    <demo-block :title="$t('title7')">
+      <van-tabs :active="active">
+        <van-tab v-for="index in 2" :key="index">
+          <div slot="title">
+            <van-icon name="more-o" />{{ $t('tab') }}
+          </div>
+          {{ $t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -59,7 +70,8 @@ export default {
       title3: '禁用标签',
       title4: '样式风格',
       title5: '点击事件',
-      title6: '粘性布局'
+      title6: '粘性布局',
+      title7: '自定义标签'
     },
     'en-US': {
       tab: 'Tab ',
@@ -68,7 +80,8 @@ export default {
       title3: 'Disabled Tab',
       title4: 'Card Style',
       title5: 'Click Event',
-      title6: 'Sticky'
+      title6: 'Sticky',
+      title7: 'Custom Tab'
     }
   },
 
@@ -77,12 +90,6 @@ export default {
       active: 2,
       tabs: [1, 2, 3, 4]
     };
-  },
-
-  mounted() {
-    setTimeout(() => {
-      this.active = 3;
-    }, 1000);
   },
 
   methods: {
@@ -99,7 +106,12 @@ export default {
 
 <style lang="postcss">
 .demo-tab {
-  margin-bottom: 700px;
+  margin-bottom: 500px;
+
+  .van-tab .van-icon {
+    margin-right: 5px;
+    vertical-align: -2px;
+  }
 
   .van-tab__pane {
     background-color: #fff;

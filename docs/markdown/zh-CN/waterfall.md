@@ -1,4 +1,5 @@
 ## Waterfall 瀑布流
+注意：Waterfall 组件已被废弃且不再维护，请使用 [List](#/zh-CN/list) 组件代替
 
 ### 使用指南
 
@@ -37,7 +38,8 @@ export default {
 <ul
   v-waterfall-lower="loadMore"
   waterfall-disabled="disabled"
-  waterfall-offset="400">
+  waterfall-offset="400"
+>
   <li v-for="item in list">{{ item }}</li>
 </ul>
 ```
@@ -59,7 +61,7 @@ export default {
     loadMore() {
       this.disabled = true;
       setTimeout(() => {
-        for (let i = 0; i < 5; i ++) {
+        for (let i = 0; i < 5; i++) {
           this.list.push(this.list.length);
         }
         this.disabled = false;
@@ -77,4 +79,3 @@ export default {
 | v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - | - |
 | waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - | - |
 | waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` | - |
-

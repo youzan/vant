@@ -1,25 +1,16 @@
 @import './common/var.css';
 
 .van-field {
-
   width: 100%;
-
-  .van-cell__title,
-  .van-cell__value {
-    float: none;
-    box-sizing: border-box;
-  }
 
   .van-cell__title {
     width: 90px;
-    position: absolute;
-    top: 10px;
-    left: 0;
   }
 
-  .van-cell__value {
-    width: 100%;
-    padding-left: 90px;
+  &__error-message {
+    color: $red;
+    font-size: 12px;
+    text-align: left;
   }
 
   &--has-textarea {
@@ -86,7 +77,9 @@
     width: 100%;
     resize: none;
 
-    &[disabled] {
+    &:disabled {
+      opacity: 1;
+      color: $gray-darker;
       background-color: transparent;
     }
   }

@@ -60,7 +60,7 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | 当前选中地址的 id | String | - | - |
 | list | 地址列表 | Array | `[]` | - |
-| addButtonText | 底部按钮文字 | String | `新增收货地址` | - |
+| add-button-text | 底部按钮文字 | String | `新增收货地址` | - |
 
 ### Event
 

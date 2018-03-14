@@ -50,21 +50,21 @@ export default create({
     callback: Function,
     confirmButtonText: String,
     cancelButtonText: String,
+    showCancelButton: Boolean,
     showConfirmButton: {
       type: Boolean,
       default: true
     },
-    showCancelButton: {
-      type: Boolean,
-      default: false
-    },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: false
     },
     lockOnScroll: {
+      type: Boolean,
       default: true
     }
   },

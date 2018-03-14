@@ -1,7 +1,7 @@
 <template>
   <div class="side-nav">
     <h1 class="zanui-title">
-      <img src="https://img.yzcdn.cn/public_files/2017/10/25/c2e074cd97d4d9e9b14a87b2fcb29430.png" />
+      <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
       <span>Vant</span>
     </h1>
     <div class="mobile-switch-lang">
@@ -11,7 +11,7 @@
     <h2 class="zanui-desc">{{ description }}</h2>
     <div class="mobile-navs">
       <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
-        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="base" :nav-key="index" :key="index" />
+        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="$vantLang" :nav-key="index" :key="index" />
       </div>
     </div>
   </div>
@@ -34,10 +34,6 @@ export default {
   },
 
   computed: {
-    base() {
-      return `${this.$vantLang}/component`;
-    },
-
     navList() {
       return this.docConfig[this.$vantLang].nav || [];
     },
@@ -64,8 +60,6 @@ export default {
   width: 100%;
   box-sizing: border-box;
   padding: 60px 15px 20px;
-  position: relative;
-  z-index: 1;
 
   .zanui-title,
   .zanui-desc {
@@ -84,7 +78,7 @@ export default {
     }
 
     img {
-      width: 30px;
+      width: 36px;
     }
 
     span {

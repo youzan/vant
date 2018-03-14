@@ -4,8 +4,7 @@
 ``` javascript
 import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab);
-Vue.use(Tabs);
+Vue.use(Tab).use(Tabs);
 ```
 
 ### Usage
@@ -34,7 +33,7 @@ export default {
 
 #### Swipe Tabs
 
-By default more than 4 tabs, you can scroll through the tabs. You can set `swipeThreshold` attribute to customize threshold number.
+By default more than 4 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
 
 ```html
 <van-tabs>
@@ -105,8 +104,22 @@ In sticky mode, the tab will be fixed to top when scroll to top
 
 ```html
 <van-tabs :active="active" sticky>
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
-    内容 {{ index }}
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
+#### Custom title
+Use title slot to custom tab title
+
+```html
+<van-tabs :active="active">
+  <van-tab v-for="index in 2">
+    <div slot="title">
+      <van-icon name="more-o" />tab
+    </div>
+    content {{ index }}
   </van-tab>
 </van-tabs>
 ```
@@ -118,7 +131,7 @@ In sticky mode, the tab will be fixed to top when scroll to top
 | type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
 | active | Index of active tab | `String` `Number` | `0` | - |
 | duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
-| swipeThreshold | Set swipe tabs threshold | `Number` | `4` | - | - |
+| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
 
 ### Tab API
 
@@ -127,9 +140,16 @@ In sticky mode, the tab will be fixed to top when scroll to top
 | title | Tab title | `String` | - | - |
 | disabled | Whether disabled current tab | `Boolean` | `false` | - |
 
+### Tab Slot
+
+| name | Description |
+|-----------|-----------|
+| - | Content |
+| title | Custom tab |
+
 ### Tabs Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | click | Triggered when click tab | index：index of current tab |
 | disabled | Triggered when click disabled tab | index：index of current tab |

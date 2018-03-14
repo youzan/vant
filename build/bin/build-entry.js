@@ -9,7 +9,6 @@ function buildVantEntry() {
   const uninstallComponents = [
     'Lazyload',
     'Waterfall',
-    'Dialog',
     'Toast',
     'ImagePreview',
     'Locale'
@@ -56,12 +55,25 @@ function buildDemoEntry() {
   const demos = fs.readdirSync(dir)
     .filter(name => ~name.indexOf('.vue'))
     .map(name => name.replace('.vue', ''))
-    .map(name => `'${name}': r => require.ensure([], () => r(wrapper(require('./views/${name}'), '${name}')), '${name}')`);
+    .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/${name}'), '${name}')), '${name}'))`);
 
   const content = `${tips}
 import './common';
 
-function wrapper(component, name) {
+import progress from 'nprogress';
+
+function asyncWrapper(component) {
+  return function(r) {
+    progress.start();
+    component(r).then(() => {
+      progress.done();
+    }).catch(() => {
+      progress.done();
+    });
+  };
+}
+
+function componentWrapper(component, name) {
   component = component.default;
   component.name = 'demo-' + name;
   return component;
@@ -85,7 +97,6 @@ function buildDocsEntry() {
 
   const content = `${tips}
 import progress from 'nprogress';
-import 'nprogress/nprogress.css';
 
 function wrapper(component) {
   return function(r) {

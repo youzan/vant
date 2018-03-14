@@ -22,7 +22,6 @@
     line-height: 44px;
     padding: 0 15px;
     background-color: $white;
-    @mixin ellipsis;
 
     &--active {
       background-color: $background-color;
@@ -41,7 +40,6 @@
     line-height: 44px;
     padding-left: 5px;
     padding-right: 18px;
-    @mixin ellipsis;
     
     &--active {
       color: $button-danger-background-color;
@@ -54,5 +52,6 @@
     right: 0;
     top: 0;
     bottom: 0;
+    line-height: inherit;
   }
 }

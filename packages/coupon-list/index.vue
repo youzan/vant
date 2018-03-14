@@ -1,8 +1,21 @@
 <template>
   <div class="van-coupon-list">
     <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
-      <field class="van-coupon-list__filed van-hairline--surround" v-model="exchangeCode" :placeholder="inputPlaceholder" :maxlength="20" />
-      <van-button size="small" type="danger" class="van-coupon-list__exchange" :disabled="exchangeButtonDisabled || !exchangeCode.length" @click="onClickExchangeButton">{{ exchangeButtonText }}</van-button>
+      <field
+        class="van-coupon-list__filed van-hairline--surround"
+        v-model="currentCode"
+        :placeholder="inputPlaceholder || $t('placeholder')"
+        :maxlength="20"
+      />
+      <van-button
+        size="small"
+        type="danger"
+        class="van-coupon-list__exchange"
+        :text="exchangeButtonText || $t('exchange')"
+        :loading="exchangeButtonLoading"
+        :disabled="buttonDisabled"
+        @click="onClickExchangeButton"
+      />
     </cell-group>
     <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
       <coupon-item
@@ -11,9 +24,9 @@
         :key="item.id || item.name"
         :data="item"
         :chosen="index === chosenCoupon"
-        @click.native="onClickCoupon(index)"
+        @click.native="$emit('change', index)"
       />
-      <h3 v-if="disabledCoupons.length">{{ disabledListTitle }}</h3>
+      <h3 v-if="disabledCoupons.length">{{ disabledListTitle || $t('disabled') }}</h3>
       <coupon-item
         disabled
         v-for="item in disabledCoupons"
@@ -21,17 +34,16 @@
         :data="item"
       />
       <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
-        <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
-        <p>暂无优惠券</p>
+        <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+        <p>{{ $t('empty') }}</p>
       </div>
     </div>
     <div
       v-show="showCloseButton"
+      v-text="closeButtonText || $t('close')"
       class="van-coupon-list__close van-hairline--top"
-      @click="onClickNotUse"
-    >
-      {{ closeButtonText }}
-    </div>
+      @click="$emit('change', -1)"
+    />
   </div>
 </template>
 
@@ -41,7 +53,6 @@ import Cell from '../cell';
 import CellGroup from '../cell-group';
 import CouponItem from './Item';
 import Field from '../field';
-import Popup from '../popup';
 import VanButton from '../button';
 
 export default create({
@@ -52,11 +63,25 @@ export default create({
     Cell,
     CellGroup,
     Field,
-    Popup,
     CouponItem
   },
 
+  model: {
+    prop: 'code'
+  },
+
   props: {
+    code: String,
+    closeButtonText: String,
+    inputPlaceholder: String,
+    disabledListTitle: String,
+    exchangeButtonText: String,
+    exchangeButtonLoading: Boolean,
+    exchangeButtonDisabled: Boolean,
+    exchangeMinLength: {
+      type: Number,
+      default: 1
+    },
     chosenCoupon: {
       type: Number,
       default: -1
@@ -69,29 +94,9 @@ export default create({
       type: Array,
       default: () => []
     },
-    exchangeButtonText: {
-      type: String,
-      default: '兑换'
-    },
-    exchangeButtonDisabled: {
-      type: Boolean,
-      default: false
-    },
     displayedCouponIndex: {
       type: Number,
       default: -1
-    },
-    closeButtonText: {
-      type: String,
-      default: '不使用优惠'
-    },
-    disabledListTitle: {
-      type: String,
-      default: '不可用优惠'
-    },
-    inputPlaceholder: {
-      type: String,
-      default: '请输入优惠码'
     },
     showExchangeBar: {
       type: Boolean,
@@ -103,16 +108,34 @@ export default create({
     }
   },
 
-  watch: {
-    displayedCouponIndex(val) {
-      this.scrollToShowCoupon(val);
+  data() {
+    return {
+      currentCode: this.code || ''
+    };
+  },
+
+  computed: {
+    buttonDisabled() {
+      return (
+        !this.exchangeButtonLoading &&
+        (this.exchangeButtonDisabled ||
+          this.currentCode.length < this.exchangeMinLength)
+      );
     }
   },
 
-  data() {
-    return {
-      exchangeCode: ''
-    };
+  watch: {
+    code(code) {
+      this.currentCode = code;
+    },
+
+    currentCode(code) {
+      this.$emit('input', code);
+    },
+
+    displayedCouponIndex(val) {
+      this.scrollToShowCoupon(val);
+    }
   },
 
   mounted() {
@@ -120,17 +143,16 @@ export default create({
   },
 
   methods: {
-    onClickNotUse() {
-      this.$emit('change', -1);
-    },
-    onClickCoupon(index) {
-      this.$emit('change', index);
-    },
     onClickExchangeButton() {
-      this.$emit('exchange', this.exchangeCode);
-      this.exchangeCode = '';
+      this.$emit('exchange', this.currentCode);
+
+      // auto clear currentCode when not use v-model
+      if (!this.code) {
+        this.currentCode = '';
+      }
     },
-    // 滚动到特定优惠券的位置
+
+    // scroll to show specific coupon
     scrollToShowCoupon(index) {
       if (index === -1) {
         return;

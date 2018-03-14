@@ -1,88 +1,95 @@
 <template>
   <cell-group class="van-sku-messages">
-    <template v-for="(message, index) in internalMessages">
-      <template v-if="message.type === 'image'"></template>
-      <field v-else-if="message.multiple == '1'"
+    <template v-for="(message, index) in messages">
+      <cell
+        v-if="message.type === 'image'"
+        class="van-sku-messages__image-cell"
+        :label="$t('onePic')"
+        :key="`${goodsId}-${index}`"
+        :required="message.required == '1'"
+        :title="message.name">
+        <sku-img-uploader
+          v-model="messageValues[index].value"
+          :upload-img="messageConfig.uploadImg"
+          :max-size="messageConfig.uploadMaxSize"
+        />
+      </cell>
+      <field
+        v-else
+        v-model="messageValues[index].value"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
-        :placeholder="placeholderMap.textarea"
-        type="textarea"
-        v-model="messageValues[index]">
-      </field>
-      <field v-else
-        :key="`${goodsId}-${index}`"
-        :required="message.required == '1'"
-        :label="message.name"
-        :placeholder="placeholderMap[message.type]"
+        :placeholder="getPlaceholder(message)"
         :type="getType(message)"
-        v-model="messageValues[index]">
-      </field>
+      />
     </template>
   </cell-group>
 </template>
 
 <script>
+import { create } from '../../utils';
 import Field from '../../field';
 import CellGroup from '../../cell-group';
+import Cell from '../../cell';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
-import { DEFAULT_PLACEHOLDER_MAP } from '../constants';
+import SkuImgUploader from './SkuImgUploader';
 
-export default {
+export default create({
   name: 'van-sku-messages',
 
   components: {
+    SkuImgUploader,
     Field,
+    Cell,
     CellGroup
   },
 
   props: {
     messages: Array,
-    messagePlaceholderMap: Object,
+    messageConfig: Object,
     goodsId: [Number, String]
   },
 
   data() {
     return {
-      placeholderMap: Object.assign({}, DEFAULT_PLACEHOLDER_MAP, this.messagePlaceholderMap)
+      messageValues: this.resetMessageValues(this.messages)
     };
   },
 
-  // for debug
-  // watch: {
-  //   messageValues() {
-  //     console.log(this.messageValues);
-  //   }
-  // },
+  watch: {
+    messages(val) {
+      this.messageValues = this.resetMessageValues(val);
+    }
+  },
 
   computed: {
-    internalMessages() {
-      if (Object.prototype.toString.call(this.messages) === '[object Array]') {
-        return this.messages;
-      }
-      return [];
-    },
-    messageValues() {
-      const messageValues = [];
-      this.internalMessages.forEach((message, index) => {
-        messageValues[index] = '';
-      });
-
-      return messageValues;
+    messagePlaceholderMap() {
+      return this.messageConfig.placeholderMap || {};
     }
   },
 
   methods: {
-    getType({ type, datetime }) {
-      if (type === 'id_no') return 'text';
-      return datetime > 0 ? 'datetime-local' : type;
+    resetMessageValues(messages) {
+      return (messages || []).map(() => ({ value: '' }));
     },
+    getType(message) {
+      if (+message.multiple === 1) {
+        return 'textarea';
+      }
+      if (message.type === 'id_no') {
+        return 'text';
+      }
+      return message.datetime > 0 ? 'datetime-local' : message.type;
+    },
+
     getMessages() {
       const messages = {};
 
-      this.messageValues.forEach((value, index) => {
-        if (this.internalMessages[index].datetime > 0) {
+      this.messageValues.forEach((item, index) => {
+        let value = item.value;
+        if (this.messages[index].datetime > 0) {
           value = value.replace(/T/g, ' ');
         }
         messages[`message_${index}`] = value;
@@ -90,11 +97,13 @@ export default {
 
       return messages;
     },
+
     getCartMessages() {
       const messages = {};
 
-      this.messageValues.forEach((value, index) => {
-        const message = this.internalMessages[index];
+      this.messageValues.forEach((item, index) => {
+        let value = item.value;
+        const message = this.messages[index];
         if (message.datetime > 0) {
           value = value.replace(/T/g, ' ');
         }
@@ -103,41 +112,44 @@ export default {
 
       return messages;
     },
+
+    getPlaceholder(message) {
+      const type = +message.multiple === 1 ? 'textarea' : message.type;
+      return this.messagePlaceholderMap[type] || this.$t(`placeholder.${type}`);
+    },
+
     validateMessages() {
       const values = this.messageValues;
 
       for (let i = 0; i < values.length; i++) {
-        const value = values[i];
-        const message = this.internalMessages[i];
+        const value = values[i].value;
+        const message = this.messages[i];
 
         if (value === '') {
           // 必填字段的校验
           if (message.required == '1') { // eslint-disable-line
-            if (message.type === 'image') {
-              continue;
-              // return `请上传${message.name}`;
-            } else {
-              return `请填写${message.name}`;
-            }
+            const textType = message.type === 'image'
+              ? 'upload'
+              : 'fill';
+            return this.$t(textType) + message.name;
           }
         } else {
           if (message.type === 'tel' && !validateNumber(value)) {
-            return '请填写正确的数字格式留言';
+            return this.$t('number');
           }
           if (message.type === 'email' && !validateEmail(value)) {
-            return '请填写正确的邮箱';
+            return this.$t('email');
           }
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
-            return '请填写正确的身份证号码';
+            return this.$t('id_no');
           }
         }
 
         if (value.length > 200) {
-          return `${message.name} 写的太多了<br/>不要超过200字`;
+          return `${message.name} ${this.$t('overlimit')}`;
         }
       }
     }
   }
-
-};
+});
 </script>

@@ -49,22 +49,6 @@
       }
     }
 
-    &__info {
-      color: #fff;
-      top: -5px;
-      right: -100%;
-      font-size: 12px;
-      transform: scale(.8);
-      box-sizing: border-box;
-      padding: 0 3px;
-      text-align: center;
-      min-width: 18px;
-      line-height: 18px;
-      border-radius: 9px;
-      background-color: $red;
-      position: absolute;
-    }
-
     &--active {
       color: $blue;
     }

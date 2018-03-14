@@ -1,39 +1,23 @@
 <template>
-  <div class="van-area">
-    <picker
-      ref="picker"
-      showToolbar
-      valueKey="name"
-      :columns="areaColumns"
-      @change="onChange"
-      @confirm="$emit('confirm', $event)"
-      @cancel="$emit('cancel')"
-    />
-  </div>
+  <picker
+    class="van-area"
+    ref="picker"
+    show-toolbar
+    value-key="name"
+    :title="title"
+    :loading="loading"
+    :columns="columns"
+    :item-height="itemHeight"
+    :visible-item-count="visibleItemCount"
+    @change="onChange"
+    @confirm="$emit('confirm', $event)"
+    @cancel="$emit('cancel', $event)"
+  />
 </template>
 
 <script>
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 import Picker from '../picker';
-
-const DEFAULT_PROVINCE = {
-  code: '-1',
-  name: '选择省份'
-};
-
-const DEFAULT_CITY = {
-  code: '-1',
-  name: '选择城市'
-};
-
-const DEFAULT_COUNTY = {
-  code: '-1',
-  name: '选择地区'
-};
-
-const PROVINCE_TYPE = 'provice';
-const CITY_TYPE = 'city';
-const COUNTY_TYPE = 'county';
 
 export default create({
   name: 'van-area',
@@ -44,7 +28,11 @@ export default create({
 
   props: {
     value: {},
+    title: String,
+    loading: Boolean,
     areaList: Object,
+    itemHeight: Number,
+    visibleItemCount: Number,
     // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {
       type: [String, Number],
@@ -53,34 +41,33 @@ export default create({
   },
 
   computed: {
-    areaColumns() {
-      const areaList = this.areaList;
+    listValid() {
+      return this.areaList && isObj(this.areaList.province_list);
+    },
 
-      if (!areaList || (areaList && typeof areaList.province_list !== 'object')) return [];
-
+    columns() {
       const columns = [];
-      const curValue = this.value || '';
-      const { columnsNum } = this;
+
+      if (!this.listValid) {
+        return columns;
+      }
+
+      const code = this.value || '';
+      const columnsNum = +this.columnsNum;
 
       columns.push({
-        values: [DEFAULT_PROVINCE].concat(this.computedAreaList(PROVINCE_TYPE)),
-        className: 'van-area__province',
-        defaultIndex: this.getAreaIndex(PROVINCE_TYPE, curValue)
+        values: this.getList('province')
       });
 
-      if (+columnsNum > 1) {
+      if (columnsNum > 1) {
         columns.push({
-          values: [DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, curValue.slice(0, 2))),
-          className: 'van-area__city',
-          defaultIndex: this.getAreaIndex(CITY_TYPE, curValue)
+          values: this.getList('city', code.slice(0, 2))
         });
       }
 
-      if (+columnsNum > 2) {
+      if (columnsNum > 2) {
         columns.push({
-          values: [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, curValue.slice(0, 4))),
-          className: 'van-area__county',
-          defaultIndex: this.getAreaIndex(COUNTY_TYPE, curValue)
+          values: this.getList('county', code.slice(0, 4))
         });
       }
 
@@ -88,39 +75,71 @@ export default create({
     }
   },
 
-  methods: {
-    // 根据省市县类型和对应的`code`获取对应列表
-    computedAreaList(type, code) {
-      const result = [];
-      const curAreaList = this.areaList;
-      const areaList = type === PROVINCE_TYPE
-        ? curAreaList.province_list
-        : (type === CITY_TYPE ? curAreaList.city_list : curAreaList.county_list);
+  mounted() {
+    this.setIndex();
+  },
 
-      for (const i in areaList) {
-        // 如果为省类型直接插入，因为省那一列是全部显示的
-        // 其他类型需要找到前缀相同的
-        if (type === PROVINCE_TYPE || (code && i.slice(0, code.length) === code)) {
-          result.push({
-            code: i,
-            name: areaList[i]
-          });
+  watch: {
+    value() {
+      this.setIndex();
+    },
+
+    areaList() {
+      this.setIndex();
+    }
+  },
+
+  methods: {
+    setIndex() {
+      this.$nextTick(() => {
+        const code = this.value || '';
+        const { picker } = this.$refs;
+        picker && picker.setIndexes([
+          this.getIndex('province', code),
+          this.getIndex('city', code),
+          this.getIndex('county', code)
+        ]);
+      });
+    },
+
+    // 根据省市县类型和对应的`code`获取对应列表
+    getList(type, code) {
+      let result = [];
+
+      if (this.listValid && (type === 'province' || code)) {
+        const { areaList } = this;
+        const list =
+          type === 'province'
+            ? areaList.province_list
+            : type === 'city' ? areaList.city_list : areaList.county_list;
+
+        result = Object.keys(list).map(code => ({
+          code,
+          name: list[code]
+        }));
+
+        if (type !== 'province' && code) {
+          result = result.filter(item => item.code.indexOf(code) === 0);
         }
       }
+
+      result.unshift({
+        code: '-1',
+        name: this.$t(type)
+      });
 
       return result;
     },
 
     // 获取对应省市县在列表中的索引
-    getAreaIndex(type, code) {
-      const compareNum = type === PROVINCE_TYPE
-        ? 2
-        : (type === CITY_TYPE ? 4 : 6);
-      const areaList = this.computedAreaList(type, code.slice(0, compareNum - 2));
+    getIndex(type, code) {
+      const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
+      const areaList = this.getList(type, code.slice(0, compareNum - 2));
+      code = code.slice(0, compareNum);
 
       for (let i = 0; i < areaList.length; i++) {
-        if (+areaList[i].code.slice(0, compareNum) === +code.slice(0, compareNum)) {
-          return i + 1;
+        if (areaList[i].code.slice(0, compareNum) === code) {
+          return i;
         }
       }
 
@@ -131,20 +150,15 @@ export default create({
       const code = values[index].code;
       // 处理省变化
       if (index === 0) {
-        picker.setColumnValues(
-          1,
-          [DEFAULT_CITY].concat(this.computedAreaList(CITY_TYPE, code.slice(0, 2)))
-        );
-        picker.setColumnValues(
-          2,
-          [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
-        );
+        picker.setColumnValues(1, this.getList('city', code.slice(0, 2)));
+        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
       } else if (index === 1) {
-        picker.setColumnValues(
-          2,
-          [DEFAULT_COUNTY].concat(this.computedAreaList(COUNTY_TYPE, code.slice(0, 4)))
-        );
+        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
       }
+    },
+
+    getValues() {
+      return this.$refs.picker ? this.$refs.picker.getValues() : [];
     }
   }
 });

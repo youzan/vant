@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('title')">
       <van-col span="8" v-for="icon in icons" :key="icon">
-        <van-icon :name="icon"></van-icon>
+        <van-icon :name="icon" />
         <span>{{ icon }}</span>
       </van-col>
     </demo-block>
@@ -26,7 +26,7 @@ export default {
     this.icons = icons.glyphs.map(icon => icon.css);
     return {};
   }
-}
+};
 </script>
 
 <style lang="postcss">

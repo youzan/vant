@@ -9,20 +9,18 @@ Vue.use(NumberKeyboard);
 
 ### 代码演示
 
-#### 基础用法
+#### 默认样式
 
 ```html
-<van-button @touchstart.native.stop="showKeyboard = true">
-  弹出键盘
-</van-button>
-
-<van-button @touchstart.native.stop="showKeyboard = false">
-  收起键盘
+<van-button @touchstart.native.stop="show = true">
+  弹出默认键盘
 </van-button>
 
 <van-number-keyboard
-  :show="showKeyboard"
-  @blur="showKeyboard = false"
+  :show="show"
+  extra-key="."
+  close-button-text="完成"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -32,7 +30,7 @@ Vue.use(NumberKeyboard);
 export default {
   data() {
     return {
-      showKeyboard: true
+      show: true
     }
   },
 
@@ -47,16 +45,33 @@ export default {
 }
 ```
 
+#### 自定义样式
+
+```html
+<van-number-keyboard
+  :show="show"
+  theme="custom"
+  extra-key="."
+  close-button-text="完成"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | show | 是否显示键盘 | `Boolean` | - | - |
+| theme | 键盘样式风格 | `String` | `Default` | `Custom` |
 | title | 键盘标题 | `String` | - | - |
-| extraKey | 左下角按键内容 | `String` | `''` | - |
-| zIndex | 键盘 z-index | `Number` | `100` | - |
 | transition | 是否开启过场动画 | `Boolean` | `true` | - |
-| showDeleteKey | 是否展示删除按钮 | `Boolean` | `true` | - |
+| z-index | 键盘 z-index | `Number` | `100` | - |
+| extra-key | 左下角按键内容 | `String` | `''` | - |
+| close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` | - |
+| show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
+| hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 
 ### Event
 

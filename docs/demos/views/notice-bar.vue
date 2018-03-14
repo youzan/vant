@@ -3,7 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <van-notice-bar
         :text="$t('text')"
-        leftIcon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
+        left-icon="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png"
       />
     </demo-block>
 
@@ -32,7 +32,7 @@ export default {
       text: 'Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.'
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">

@@ -20,12 +20,21 @@
 
       <van-popup v-model="showEdit" position="bottom">
         <van-contact-edit
-          :contactInfo="editingContact"
-          :isEdit="isEdit"
+          :contact-info="editingContact"
+          :is-edit="isEdit"
           @save="onSave"
           @delete="onDelete"
         />
       </van-popup>
+    </demo-block>
+
+    <demo-block :title="$t('uneditable')">
+      <van-contact-card
+        type="edit"
+        :name="mockContact.name"
+        :tel="mockContact.tel"
+        :editable="false"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -34,10 +43,10 @@
 export default {
   i18n: {
     'zh-CN': {
-
+      name: '张三'
     },
     'en-US': {
-
+      name: 'John Snow'
     }
   },
 
@@ -48,15 +57,23 @@ export default {
       showList: false,
       showEdit: false,
       isEdit: false,
-      list: [{
-        name: '张三',
-        tel: '13000000000',
-        id: 0
-      }]
+      list: []
     };
   },
 
+  created() {
+    this.list.push(this.mockContact);
+  },
+
   computed: {
+    mockContact() {
+      return {
+        name: this.$t('name'),
+        tel: '13000000000',
+        id: 0
+      };
+    },
+
     cardType() {
       return this.chosenContactId !== null ? 'edit' : 'add';
     },
@@ -89,7 +106,7 @@ export default {
       this.showList = false;
 
       if (this.isEdit) {
-        this.list = this.list.map(item => item.id === info.id ? info : item);
+        this.list = this.list.map(item => (item.id === info.id ? info : item));
       } else {
         this.list.push(info);
       }

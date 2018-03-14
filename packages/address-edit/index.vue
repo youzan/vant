@@ -17,19 +17,25 @@
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <cell class="van-address-edit__area" :title="$t('areaTitle')" @click="showAreaSelect = true">
+      <cell
+        clickable
+        class="van-address-edit__area"
+        :title="$t('areaTitle')"
+        @click="showAreaSelect = true"
+      >
         <span>{{ currentInfo.province || $t('placeholder.province') }}</span>
         <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
         <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
       </cell>
       <address-edit-detail
         :value="currentInfo.address_detail"
-        :isError="errorInfo.address_detail"
-        :showSearchResult="showSearchResult"
-        :searchResult="searchResult"
+        :is-error="errorInfo.address_detail"
+        :show-search-result="showSearchResult"
+        :search-result="searchResult"
         @focus="onFocus('address_detail')"
         @blur="onDetailBlur"
         @input="onChangeDetail"
+        @select-search="$emit('select-search', $event)"
       />
       <field
         v-if="showPostal"
@@ -41,9 +47,10 @@
         maxlength="6"
         class="van-hairline--top"
         :error="errorInfo.postal_code"
-        @focus="onFocus('postal_code')">
-      </field>
-      <switch-cell 
+        @focus="onFocus('postal_code')"
+      />
+      <slot />
+      <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
         v-model="currentInfo.is_default"
@@ -60,8 +67,10 @@
     </div>
     <popup v-model="showAreaSelect" position="bottom">
       <van-area
+        ref="area"
+        :loading="!areaListLoaded"
         :value="currentInfo.area_code"
-        :areaList="areaList"
+        :area-list="areaList"
         @confirm="onAreaConfirm"
         @cancel="showAreaSelect = false"
       />
@@ -70,7 +79,8 @@
 </template>
 
 <script>
-import { create } from '../utils';
+/* eslint-disable camelcase */
+import { create, isObj } from '../utils';
 import Field from '../field';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
@@ -82,6 +92,18 @@ import VanArea from '../area';
 import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
+
+const defaultAddress = {
+  name: '',
+  tel: '',
+  province: '',
+  city: '',
+  county: '',
+  area_code: '',
+  postal_code: '',
+  address_detail: '',
+  is_default: false
+};
 
 export default create({
   name: 'van-address-edit',
@@ -107,28 +129,25 @@ export default create({
     addressText: String,
     addressInfo: {
       type: Object,
-      default: () => ({
-        name: '',
-        tel: '',
-        province: '',
-        city: '',
-        county: '',
-        area_code: '',
-        postal_code: '',
-        address_detail: '',
-        is_default: false
-      })
+      default: () => ({ ...defaultAddress })
     },
     searchResult: {
       type: Array,
       default: () => []
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
   data() {
     return {
       showAreaSelect: false,
-      currentInfo: this.addressInfo,
+      currentInfo: {
+        ...defaultAddress,
+        ...this.addressInfo
+      },
       isEdit: !!this.addressInfo.id,
       detailFocused: false,
       errorInfo: {
@@ -143,11 +162,24 @@ export default create({
   watch: {
     addressInfo: {
       handler(val) {
-        this.currentInfo = val;
+        this.currentInfo = {
+          ...defaultAddress,
+          ...val
+        };
         this.isEdit = !!val.id;
+
+        if (val.area_code) {
+          this.setAreaCode(val.area_code);
+        }
       },
       deep: true
     },
+
+    areaList() {
+      if (this.currentInfo.area_code) {
+        this.setAreaCode(this.currentInfo.area_code);
+      }
+    }
   },
 
   computed: {
@@ -155,8 +187,13 @@ export default create({
     hideBottomFields() {
       return this.searchResult.length && this.detailFocused;
     },
+
     computedAddressText() {
       return this.addressText || this.$t('addressText');
+    },
+
+    areaListLoaded() {
+      return isObj(this.areaList) && Object.keys(this.areaList).length;
     }
   },
 
@@ -164,6 +201,7 @@ export default create({
     onFocus(key) {
       this.errorInfo[key] = false;
       this.detailFocused = key === 'address_detail';
+      this.$emit('focus', key);
     },
 
     onDetailBlur() {
@@ -179,13 +217,18 @@ export default create({
       if (values.length !== 3 || +values[0].code === -1 || +values[1].code === -1 || +values[2].code === -1) {
         return Toast(this.$t('areaWrong'));
       }
+      this.assignAreaValues(values);
+      this.showAreaSelect = false;
+      this.$emit('change-area', values);
+    },
+
+    assignAreaValues(values) {
       Object.assign(this.currentInfo, {
         province: values[0].name,
         city: values[1].name,
         county: values[2].name,
         area_code: values[2].code
       });
-      this.showAreaSelect = false;
     },
 
     onSaveAddress() {
@@ -222,7 +265,7 @@ export default create({
         case 'name':
           return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : $t('telWrong');
+          return this.telValidator(value) ? '' : $t('telWrong');
         case 'area_code':
           return value ? +value !== -1 ? '' : $t('areaWrong') : $t('areaEmpty');
         case 'address_detail':
@@ -241,6 +284,25 @@ export default create({
         message: this.$t('confirmDelete', this.computedAddressText)
       }).then(() => {
         this.$emit('delete', this.currentInfo);
+      });
+    },
+
+    // get values of area component
+    getArea() {
+      const { area } = this.$refs;
+      return area ? area.getValues() : [];
+    },
+
+    // set area code to area component
+    setAreaCode(code) {
+      this.currentInfo.area_code = code;
+      this.$nextTick(() => {
+        this.$nextTick(() => {
+          const { area } = this.$refs;
+          if (area) {
+            this.assignAreaValues(area.getValues());
+          }
+        });
       });
     }
   }

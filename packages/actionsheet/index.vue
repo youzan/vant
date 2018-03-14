@@ -5,7 +5,7 @@
         <div v-text="title" />
         <icon name="close" @click.stop="$emit('input', false)" />
       </div>
-      <ul v-if="!title" class="van-actionsheet__list">
+      <ul v-if="!title" class="van-actionsheet__list van-hairline--bottom">
         <li
           v-for="(item, index) in actions"
           :key="index"
@@ -17,7 +17,7 @@
             <span class="van-actionsheet__name">{{ item.name }}</span>
             <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <loading v-else class="van-actionsheet__loading" type="circle" />
+          <loading v-else class="van-actionsheet__loading" size="20px" />
         </li>
       </ul>
       <div
@@ -27,7 +27,7 @@
         @click.stop="$emit('input', false)"
       />
       <div v-else class="van-actionsheet__content">
-        <slot></slot>
+        <slot />
       </div>
     </div>
   </transition>
@@ -51,15 +51,13 @@ export default create({
       default: () => []
     },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     }
-  },
-
-  mounted() {
-    this.value && this.open();
   },
 
   methods: {

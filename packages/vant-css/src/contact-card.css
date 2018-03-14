@@ -4,6 +4,16 @@
   position: relative;
   background-color: $white;
 
+  &:active {
+    background-color: $active-color;
+  }
+
+  &--uneditable {
+    &:active {
+      background-color: $white;
+    }
+  }
+
   &--add {
     line-height: 40px;
 

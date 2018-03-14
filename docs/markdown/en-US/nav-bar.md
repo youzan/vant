@@ -14,9 +14,9 @@ Vue.use(NavBar);
 ```html
 <van-nav-bar
   title="Title"
-  leftText="Back"
-  rightText="Button"
-  leftArrow
+  left-text="Back"
+  right-text="Button"
+  left-arrow
   @click-left="onClickLeft"
   @click-right="onClickRight"
 />
@@ -38,7 +38,7 @@ export default {
 #### Advanced Usage
 
 ```html
-<van-nav-bar title="Title" leftText="Back" leftArrow>
+<van-nav-bar title="Title" left-text="Back" left-arrow>
   <van-icon name="search" slot="right" />
 </van-nav-bar>
 ```
@@ -48,10 +48,11 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | title | Title | `String` | `''` | - |
-| leftText | Left Text | `String` | `''` | - |
-| rightText | Right Text | `String` | `''` | - |
-| leftArrow | Whether to show left arrow | `Boolean` | `false` | - |
+| left-text | Left Text | `String` | `''` | - |
+| right-text | Right Text | `String` | `''` | - |
+| left-arrow | Whether to show left arrow | `Boolean` | `false` | - |
 | fixed | Whether to fixed top | `Boolean` | `false` | - |
+| z-index | Z-index | `Number` | `1` | - |
 
 ### Slot
 
@@ -63,7 +64,7 @@ export default {
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | click-left | Triggered when click left button | - |
 | click-right | Triggered when click right button | - |

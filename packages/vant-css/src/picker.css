@@ -1,15 +1,16 @@
 @import './common/var.css';
-@import './mixins/ellipsis.css';
 
 .van-picker {
   overflow: hidden;
   user-select: none;
+  position: relative;
   background-color: $white;
 
   &__toolbar {
+    display: flex;
     height: 40px;
     line-height: 40px;
-    overflow: hidden;
+    justify-content: space-between;
   }
 
   &__cancel,
@@ -22,17 +23,9 @@
     }
   }
 
-  &__cancel {
-    float: left;
-  }
-
-  &__confirm {
-    float: right;
-  }
-
   &__title {
+    max-width: 50%;
     text-align: center;
-    @mixin ellipsis;
   }
 
   &__columns {
@@ -40,21 +33,40 @@
     position: relative;
   }
 
+  &__loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    position: absolute;
+    background-color: rgba(255,255,255,.9);
+
+    circle {
+      stroke: $blue;
+    }
+  }
+
+  &__loading .van-loading,
+  &__frame {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
   &-column {
     flex: 1;
     overflow: hidden;
-    font-size: 18px;
-    position: relative;
+    font-size: 17px;
     text-align: center;
 
-    ul {
-      box-sizing: border-box;
-    }
-
     li {
-      padding: 0 10px;
+      padding: 0 5px;
       color: $gray-darker;
-      @mixin ellipsis;
     }
 
     li&--selected {
@@ -63,16 +75,6 @@
 
     li&--disabled {
       opacity: .3;
-    }
-
-    &__frame {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      position: absolute;
-      pointer-events: none;
-      transform: translateY(-50%);
     }
   }
 }

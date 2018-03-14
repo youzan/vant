@@ -4,8 +4,7 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell);
-Vue.use(CellGroup);
+Vue.use(Cell).use(CellGroup);
 ```
 
 ### 代码演示
@@ -41,12 +40,12 @@ Vue.use(CellGroup);
 
 
 #### 展示箭头
-传入`isLink`属性则会在右侧显示箭头
+传入`is-link`属性则会在右侧显示箭头
 
 ```html
 <van-cell-group>
-  <van-cell title="单元格" isLink />
-  <van-cell title="单元格" isLink value="内容" />
+  <van-cell title="单元格" is-link />
+  <van-cell title="单元格" is-link value="内容" />
 </van-cell-group>
 ```
 
@@ -55,22 +54,26 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="内容" icon="shop" isLink>
+  <van-cell value="内容" icon="shop" is-link>
     <template slot="title">
       <span class="van-cell-text">单元格</span>
       <van-tag type="danger">标签</van-tag>
     </template>
   </van-cell>
-  <van-cell title="单元格" icon="location" isLink />
+  <van-cell title="单元格" icon="location" is-link />
   <van-cell title="单元格">
-    <template slot="right-icon">
-      <van-icon name="search" class="van-cell__right-icon" />
-    </template>
+    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
   </van-cell>
 </van-cell-group>
 ```
 
-### API
+### CellGroup API
+
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+|-----------|-----------|-----------|-------------|-------------|
+| border | 是否显示外边框 | `Boolean` | `true` | - |
+
+### Cell API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -81,12 +84,14 @@ Vue.use(CellGroup);
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前 history | `String` | `false` | - |
-| isLink | 是否展示右侧箭头 | `Boolean` | `false` | - |
+| border | 是否显示内边框 | `Boolean` | `true` | - |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
 | required | 是否显示表单必填符号 | `Boolean` | `false` | - |
 
 ### Slot
 
-| name | 描述 |
+| 名称 | 说明 |
 |-----------|-----------|
 | - | 自定义显示内容 |
 | icon | 自定义`icon` |

@@ -14,11 +14,11 @@ Vue.use(AddressEdit);
 
 ```html
 <van-address-edit
-  :areaList="areaList"
-  :showPostal="true"
-  :showSetDefault="true"
-  :showSearchResult="true"
-  :searchResult="searchResult"
+  :area-list="areaList"
+  show-postal
+  show-set-default
+  show-search-result
+  :search-result="searchResult"
   @save="onSave"
   @delete="onDelete"
   @change-detail="onChangeDetail"
@@ -60,22 +60,29 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| areaList | Area List | `Object` | - | - |
-| addressInfo | Address Info | `Object` | `{}` | - |
-| searchResult | Address search result | `Array` | `[]` | - |
-| showPostal | Whether to show postal field | `Boolean` | `false` | - |
-| showSetDefault | Whether to show default address switch | `Boolean` | `false` | - |
-| showSearchResult | Whether to show address search result | `Boolean` | `false` | - |
-| isSaving | Whether to show save button loading status | `Boolean` | `false` | - |
-| isDeleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| area-list | Area List | `Object` | - | - |
+| address-info | Address Info | `Object` | `{}` | - |
+| search-result | Address search result | `Array` | `[]` | - |
+| show-postal | Whether to show postal field | `Boolean` | `false` | - |
+| show-set-default | Whether to show default address switch | `Boolean` | `false` | - |
+| show-search-result | Whether to show address search result | `Boolean` | `false` | - |
+| is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
+| is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | save | Triggered when click save button | content：Form content |
 | delete | Triggered when click delete | content：Form content |
 | change-detail | Triggered when address detail changed | value: address detail |
+
+### Slot
+
+| Name | Description |
+|-----------|-----------|
+| - | Custom content below postal |
 
 ### Data Structure
 

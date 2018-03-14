@@ -6,8 +6,7 @@
 ``` javascript
 import { Row, Col } from 'vant';
 
-Vue.use(Row);
-Vue.use(Col);
+Vue.use(Row).use(Col);
 ```
 
 ### 代码演示

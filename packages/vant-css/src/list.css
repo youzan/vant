@@ -1,0 +1,25 @@
+@import './common/var.css';
+
+.van-list {
+  &__loading {
+    text-align: center;
+
+    .van-loading,
+    &-text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .van-loading {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+    }
+
+    &-text {
+      font-size: 13px;
+      color: $gray-dark;
+      line-height: 50px;
+    }
+  }
+}

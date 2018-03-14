@@ -15,10 +15,10 @@ Vue.use(DatetimePicker);
 <van-datetime-picker
   v-model="currentDate"
   type="datetime"
-  :minHour="minHour"
-  :maxHour="maxHour"
-  :minDate="minDate"
-  :maxDate="maxDate"
+  :min-hour="minHour"
+  :max-hour="maxHour"
+  :min-date="minDate"
+  :max-date="maxDate"
 />
 ```
 
@@ -65,11 +65,11 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | type | Picker type | `String` | 'datetime' |  'date', 'time' |
-| minDate | Min date | `Date` | Ten years ago on January 1 | - |
-| maxDate | Max date | `Date` | Ten years later on December 31 | - |
-| minHour | Min hour | `Number` | `0` | - |
-| maxHour | Max hour | `Number` | `23` | - |
-| visibileColumnCount | Count of columns to show | `Number` | `5` | - |
+| min-date | Min date | `Date` | Ten years ago on January 1 | - |
+| max-date | Max date | `Date` | Ten years later on December 31 | - |
+| min-hour | Min hour | `Number` | `0` | - |
+| max-hour | Max hour | `Number` | `23` | - |
+| visible-item-count | Count of columns to show | `Number` | `5` | - |
 
 ### Event
 

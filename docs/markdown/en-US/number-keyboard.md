@@ -9,20 +9,18 @@ Vue.use(NumberKeyboard);
 
 ### Usage
 
-#### Basic Usage
+#### Default Style
 
 ```html
-<van-button @touchstart.native.stop="showKeyboard = true">
+<van-button @touchstart.native.stop="show = true">
   Show Keyboard
 </van-button>
 
-<van-button @touchstart.native.stop="showKeyboard = false">
-  Hide Keyboard
-</van-button>
-
 <van-number-keyboard
-  :show="showKeyboard"
-  @blur="showKeyboard = false"
+  :show="show"
+  extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
   @input="onInput"
   @delete="onDelete"
 />
@@ -32,7 +30,7 @@ Vue.use(NumberKeyboard);
 export default {
   data() {
     return {
-      showKeyboard: true
+      show: true
     }
   },
 
@@ -47,20 +45,37 @@ export default {
 }
 ```
 
+#### Custom Style
+
+```html
+<van-number-keyboard
+  :show="show"
+  theme="custom"
+  extra-key="."
+  close-button-text="Close"
+  @blur="show = false"
+  @input="onInput"
+  @delete="onDelete"
+/>
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | show | Whether to show keyboard | `Boolean` | - | - |
+| theme | Keyboard theme | `String` | `Default` | `Custom` |
 | title | Keyboard title | `String` | - | - |
-| extraKey | Content of bottom left key | `String` | `''` | - |
-| zIndex | Keyboard z-index | `Number` | `100` | - |
 | transition | Whether to show transition animation | `Boolean` | `true` | - |
-| showDeleteKey | Whether to show delete button | `Boolean` | `true` | - |
+| z-index | Keyboard z-index | `Number` | `100` | - |
+| extra-key | Content of bottom left key | `String` | `''` | - |
+| close-button-text | Close button text | `String` | `-` | - |
+| show-delete-key | Whether to show delete button | `Boolean` | `true` | - |
+| hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` | - |
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |

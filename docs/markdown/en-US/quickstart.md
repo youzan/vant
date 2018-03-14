@@ -34,7 +34,7 @@ import { Button } from 'vant';
 #### 2. Manually import
 
 ```js
-import { Button } from 'vant/lib/button';
+import Button from 'vant/lib/button';
 import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
@@ -57,6 +57,12 @@ Vue.use(Vant);
 
 <!-- import script -->
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+```
+
+### vue-cli template
+
+```shell
+vue init youzan/vue-cli-template-vant projectName
 ```
 
 ### Props Named Style

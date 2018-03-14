@@ -3,7 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <van-address-list
         v-model="chosenAddressId"
-        :list="list"
+        :list="$t('list')"
         @add="onAdd"
         @edit="onEdit"
       />
@@ -15,16 +15,6 @@
 export default {
   i18n: {
     'zh-CN': {
-
-    },
-    'en-US': {
-
-    }
-  },
-
-  data() {
-    return {
-      chosenAddressId: '1',
       list: [
         {
           id: '1',
@@ -44,16 +34,48 @@ export default {
           tel: '1320000000',
           address: '浙江省杭州市滨江区江南大道 15 号'
         }
-      ]
+      ],
+      add: '新增收货地址',
+      edit: '编辑收货地址'
+    },
+    'en-US': {
+      list: [
+        {
+          id: '1',
+          name: 'John Snow',
+          tel: '13000000000',
+          address: 'Somewhere'
+        },
+        {
+          id: '2',
+          name: 'Ned Stark',
+          tel: '1310000000',
+          address: 'Somewhere'
+        },
+        {
+          id: '3',
+          name: 'Tywin',
+          tel: '1320000000',
+          address: 'Somewhere'
+        }
+      ],
+      add: 'Add',
+      edit: 'Edit'
     }
+  },
+
+  data() {
+    return {
+      chosenAddressId: '1'
+    };
   },
 
   methods: {
     onAdd() {
-      Toast('新增收货地址');
+      Toast(this.$t('add'));
     },
     onEdit(item, index) {
-      Toast('编辑收货地址:' + index);
+      Toast(this.$t('edit') + ':' + index);
     }
   }
 };

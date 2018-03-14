@@ -14,8 +14,8 @@ Vue.use(Pagination);
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :totalItems="24" 
-  :itemsPerPage="5"
+  :total-items="24" 
+  :items-per-page="5"
 />
 ```
 
@@ -34,7 +34,7 @@ export default {
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :pageCount="12"
+  :page-count="12"
   mode="simple" 
 />
 ```
@@ -44,9 +44,9 @@ export default {
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :totalItems="125" 
-  :showPageSize="3" 
-  :forceEllipses="true"
+  :total-items="125" 
+  :show-page-size="3" 
+  force-ellipses
 />
 ```
 
@@ -54,16 +54,16 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | pageModel | `Object` | - | - |
-| mode | mode | `String` | `multi` | `simple`  |
-| itemsPerPage | itemsPerPage | `Number` | `10` | - |
-| prevText | previousText | `String` | `Previous` | - |
-| nextText | nextText | `String` | `Next` | - |
-| showPageSize | showPageSize | `Number` | `5` | - |
-| forceEllipses | ellipses | `Boolean` | `false` | - |
+| v-model | Current page number | `Number` | - | - |
+| mode | Mode | `String` | `multi` | `simple`  |
+| items-per-page | Item number per page | `Number` | `10` | - |
+| prev-text | Previous text | `String` | `Previous` | - |
+| next-text | Next text | `String` | `Next` | - |
+| show-page-size | Count of page size to show | `Number` | `5` | - |
+| force-ellipses | Whether to show ellipses | `Boolean` | `false` | - |
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered on page change | - |

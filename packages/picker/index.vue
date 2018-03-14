@@ -2,23 +2,27 @@
   <div class="van-picker">
     <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
       <slot>
-        <div class="van-picker__cancel" @click="emit('cancel')">{{ $t('cancel') }}</div>
-        <div class="van-picker__confirm" @click="emit('confirm')">{{ $t('confirm') }}</div>
-        <div class="van-picker__title" v-if="title" v-text="title" />
+        <div class="van-picker__cancel" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
+        <div class="van-picker__title van-ellipsis" v-if="title" v-text="title" />
+        <div class="van-picker__confirm" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
       </slot>
     </div>
-    <div class="van-picker__columns">
+    <div v-if="loading" class="van-picker__loading">
+      <loading />
+    </div>
+    <div class="van-picker__columns" :style="columnsStyle" @touchmove.prevent>
       <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
-        :valueKey="valueKey"
+        :value-key="valueKey"
         :options="item.values"
-        :className="item.className"
-        :defaultIndex="item.defaultIndex"
-        :itemHeight="itemHeight"
-        :visibileColumnCount="visibileColumnCount"
+        :class-name="item.className"
+        :default-index="item.defaultIndex"
+        :item-height="itemHeight"
+        :visible-item-count="visibleItemCount"
         @change="onChange(index)"
       />
+      <div class="van-picker__frame van-hairline--top-bottom" :style="frameStyle" />
     </div>
   </div>
 </template>
@@ -37,17 +41,26 @@ export default create({
 
   props: {
     title: String,
+    loading: Boolean,
+    showToolbar: Boolean,
+    confirmButtonText: String,
+    cancelButtonText: String,
+    visibleItemCount: {
+      type: Number,
+      default: 5
+    },
     valueKey: {
       type: String,
       default: 'text'
     },
-    itemHeight: Number,
-    showToolbar: Boolean,
-    visibileColumnCount: Number,
+    itemHeight: {
+      type: Number,
+      default: 44
+    },
     columns: {
       type: Array,
       default: () => []
-    },
+    }
   },
 
   data() {
@@ -64,7 +77,21 @@ export default create({
   watch: {
     columns() {
       this.initColumns();
+    }
+  },
+
+  computed: {
+    frameStyle() {
+      return {
+        height: this.itemHeight + 'px'
+      };
     },
+
+    columnsStyle() {
+      return {
+        height: this.itemHeight * this.visibleItemCount + 'px'
+      };
+    }
   },
 
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div class="van-swipe">
-    <div 
+    <div
       v-if="count > 1"
       :style="trackStyle"
       class="van-swipe__track"
@@ -10,15 +10,15 @@
       @touchcancel="onTouchEnd"
       @transitionend="$emit('change', activeIndicator)"
     >
-      <slot></slot>
+      <slot />
     </div>
     <div v-else class="van-swipe__track">
-      <slot></slot>
+      <slot />
     </div>
     <div class="van-swipe__indicators" v-if="showIndicators && count > 1">
       <i v-for="index in count" :class="{ 'van-swipe__indicator--active': index - 1 === activeIndicator }" />
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -29,6 +29,10 @@ export default create({
 
   props: {
     autoplay: Number,
+    loop: {
+      type: Boolean,
+      default: true
+    },
     initialSwipe: {
       type: Number,
       default: 0
@@ -72,6 +76,12 @@ export default create({
 
     initialSwipe() {
       this.initialize();
+    },
+
+    autoplay(autoplay) {
+      if (!autoplay) {
+        clearTimeout(this.timer);
+      }
     }
   },
 
@@ -85,7 +95,7 @@ export default create({
         paddingLeft: this.width + 'px',
         width: (this.count + 2) * this.width + 'px',
         transitionDuration: `${this.currentDuration}ms`,
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate(${this.offset}px, 0)`
       };
     },
 
@@ -146,6 +156,14 @@ export default create({
     move(move = 0, offset = 0) {
       const { active, count, swipes, deltaX, width } = this;
 
+      if (
+        !this.loop &&
+        ((active === 0 && (offset > 0 || move < 0)) ||
+          (active === count - 1 && (offset < 0 || move > 0)))
+      ) {
+        return;
+      }
+
       if (move) {
         if (active === -1) {
           swipes[count - 1].offset = 0;
@@ -184,9 +202,9 @@ export default create({
     },
 
     getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
+      const offsetX = Math.abs(touch.clientX - this.startX);
+      const offsetY = Math.abs(touch.clientY - this.startY);
+      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
     },
 
     range(num, arr) {

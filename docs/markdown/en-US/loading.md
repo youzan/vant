@@ -9,18 +9,11 @@ Vue.use(Loading);
 
 ### Usage
 
-#### Solid Circle
+#### Circular
 
 ```html
-<van-loading type="circle" color="black" />
-<van-loading type="circle" color="white" />
-```
-
-#### Gradient Circle
-
-```html
-<van-loading type="gradient-circle" color="black" />
-<van-loading type="gradient-circle" color="white" />
+<van-loading color="black" />
+<van-loading color="white" />
 ```
 
 #### Spinner
@@ -30,9 +23,17 @@ Vue.use(Loading);
 <van-loading type="spinner" color="white" />
 ```
 
+#### Circle
+
+```html
+<van-loading type="circle" color="black" />
+<van-loading type="circle" color="white" />
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | color | Color | `String` | `black` | `black` `white` |
-| type | Type | `String` | `gradient-circle` | `spinner` `circle` |
+| type | Type | `String` | `circular` | `spinner` `circle` |
+| size | Size | `String` | `30px` | - |

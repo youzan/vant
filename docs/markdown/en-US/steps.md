@@ -4,8 +4,7 @@
 ``` javascript
 import { Step, Steps } from 'vant';
 
-Vue.use(Step);
-Vue.use(Steps);
+Vue.use(Step).use(Steps);
 ```
 
 ### Usage
@@ -50,7 +49,7 @@ export default {
 #### Vertical Steps
 
 ```html
-<van-steps direction="vertical" :active="0" activeColor="#f60">
+<van-steps direction="vertical" :active="0" active-color="#f60">
   <van-step>
     <h3>【City】Status1</h3>
     <p>2016-07-12 12:40</p>
@@ -72,11 +71,11 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | active | Active step | `Number` | 0 | - |
 | icon | Action step icon | `String` | - | - |
-| iconClass | Icon class | `String` | - | - |
+| icon-class | Icon class | `String` | - | - |
 | title | Title | `String` | - | - |
 | description | Description | `String` | - | - |
 | direction | Direction | `String` | `horizontal` | `vertical` |
-| activeColor | Active step color | `String` | `#06bf04` | - |
+| active-color | Active step color | `String` | `#06bf04` | - |
 
 ### Steps Slot
 

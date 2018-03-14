@@ -1,29 +1,31 @@
 
 <template>
-  <div class="van-picker-column" :class="className">
-    <div class="van-picker-column__frame van-hairline--top-bottom" :style="frameStyle" />
-    <ul
-      :style="wrapperStyle"
-      @touchstart="onTouchStart"
-      @touchmove.prevent="onTouchMove"
-      @touchend="onTouchEnd"
-      @touchcancel="onTouchEnd"
-    >
+  <div
+    class="van-picker-column"
+    :class="className"
+    :style="columnStyle"
+    @touchstart="onTouchStart"
+    @touchmove.prevent="onTouchMove"
+    @touchend="onTouchEnd"
+    @touchcancel="onTouchEnd"
+  >
+    <ul :style="wrapperStyle">
       <li
-        v-for="(option, index) in options" 
+        v-for="(option, index) in options"
         v-text="getOptionText(option)"
+        class="van-ellipsis"
         :class="{
           'van-picker-column--disabled': isDisabled(option),
           'van-picker-column--selected': index === currentIndex
         }"
-        @click="setIndex(index)"
+        @click="setIndex(index, true)"
       />
     </ul>
   </div>
 </template>
 
 <script>
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 
 const DEFAULT_DURATION = 200;
 const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
@@ -34,17 +36,11 @@ export default create({
   props: {
     valueKey: String,
     className: String,
+    itemHeight: Number,
+    visibleItemCount: Number,
     options: {
       type: Array,
       default: () => []
-    },
-    itemHeight: {
-      type: Number,
-      default: 44
-    },
-    visibileColumnCount: {
-      type: Number,
-      default: 5
     },
     defaultIndex: {
       type: Number,
@@ -81,12 +77,8 @@ export default create({
 
     options(next, prev) {
       if (JSON.stringify(next) !== JSON.stringify(prev)) {
-        this.setIndex(this.defaultIndex);
+        this.setIndex(0);
       }
-    },
-
-    currentIndex(index) {
-      this.$emit('change', index);
     }
   },
 
@@ -95,21 +87,22 @@ export default create({
       return this.options.length;
     },
 
-    wrapperStyle() {
-      const { itemHeight, visibileColumnCount } = this;
+    baseOffset() {
+      return this.itemHeight * (this.visibleItemCount - 1) / 2;
+    },
+
+    columnStyle() {
       return {
-        transition: `${this.duration}ms`,
-        transform: `translate3d(0, ${this.offset}px, 0)`,
-        lineHeight: itemHeight + 'px',
-        height: itemHeight * visibileColumnCount + 'px',
-        paddingTop: itemHeight * (visibileColumnCount - 1) / 2 + 'px'
+        height: (this.itemHeight * this.visibleItemCount) + 'px'
       };
     },
 
-    frameStyle() {
+    wrapperStyle() {
       return {
-        height: this.itemHeight + 'px'
-      }
+        transition: `${this.duration}ms`,
+        transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
+        lineHeight: this.itemHeight + 'px'
+      };
     },
 
     currentValue() {
@@ -139,7 +132,7 @@ export default create({
           0,
           this.count - 1
         ]);
-        this.setIndex(index);
+        this.setIndex(index, true);
       }
     },
 
@@ -154,21 +147,25 @@ export default create({
     },
 
     isDisabled(option) {
-      return typeof option === 'object' && option.disabled;
+      return isObj(option) && option.disabled;
     },
 
     getOptionText(option) {
-      return typeof option === 'object' && this.valueKey in option ? option[this.valueKey] : option;
+      return isObj(option) && this.valueKey in option ? option[this.valueKey] : option;
     },
 
-    setIndex(index) {
+    setIndex(index, userAction) {
       index = this.adjustIndex(index);
       this.offset = -index * this.itemHeight;
-      this.currentIndex = index;
+
+      if (index !== this.currentIndex) {
+        this.currentIndex = index;
+        userAction && this.$emit('change', index);
+      }
     },
 
     setValue(value) {
-      const { options, valueKey } = this;
+      const { options } = this;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
           this.setIndex(i);

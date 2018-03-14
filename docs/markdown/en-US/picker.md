@@ -52,7 +52,7 @@ export default {
 
 ```html
 <van-picker
-  showToolbar
+  show-toolbar
   :title="Title"
   :columns="columns"
   @cancel="onCancel"
@@ -114,16 +114,36 @@ export default {
 };
 ```
 
+#### Loading
+When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
+
+```html
+<van-picker :columns="columns" loading />
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | columns | Columns data | `Array` | `[]` | - |
-| showToolbar | Whether to show toolbar | `Boolean` | `false` | - |
+| show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
 | title | Toolbar title | `String` | `''` | - |
-| itemHeight | Option height | `Number` | `44` | - |
-| visibileColumnCount | Count of visible columns | `Number` | `5` | - |
-| valueKey | Key of option text | `String` | `text` | - |
+| loading | Whether to show loading prompt | `Boolean` | `false` | - |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
+| item-height | Option height | `Number` | `44` | - |
+| visible-item-count | Count of visible columns | `Number` | `5` | - |
+| value-key | Key of option text | `String` | `text` | - |
+
+### Event
+Picker events will pass different parameters according to the columns are single or multiple
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| confirm | Triggered when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
+| change | Triggered when current option changed | Single column：current value，current index<br>Multiple columns：current values，column index |
+
 
 ### Data struct of columns
 

@@ -1,6 +1,6 @@
 <template>
   <div class="van-tab__pane" :class="{ 'van-tab__pane--select': index === parentGroup.curActive }">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
@@ -14,10 +14,7 @@ export default create({
   mixins: [findParent],
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
+    title: String,
     disabled: Boolean
   },
 

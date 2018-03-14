@@ -66,8 +66,6 @@ export default {
 
 <style lang="postcss">
 .demo-radio {
-  background: #fff;
-
   .van-radios {
     padding: 0 20px;
 
@@ -81,7 +79,7 @@ export default {
       float: right;
       position: static;
     }
-    
+
     .van-radio__label {
       margin: 0;
     }

@@ -1,14 +1,25 @@
 <template>
   <div class="van-sku-actions">
-    <van-button v-if="showAddCartBtn" bottomAction @click="onAddCartClicked">加入购物车</van-button>
-    <van-button type="primary" bottomAction @click="onBuyClicked">{{ buyText }}</van-button>
+    <van-button
+      v-if="showAddCartBtn"
+      bottom-action
+      :text="$t('cart')"
+      @click="skuEventBus.$emit('sku:addCart')"
+    />
+    <van-button
+      type="primary"
+      bottom-action
+      :text="buyText || $t('buy')"
+      @click="skuEventBus.$emit('sku:buy')"
+    />
   </div>
 </template>
 
 <script>
 import VanButton from '../../button';
+import { create } from '../../utils';
 
-export default {
+export default create({
   name: 'van-sku-actions',
 
   components: {
@@ -16,21 +27,9 @@ export default {
   },
 
   props: {
+    buyText: String,
     skuEventBus: Object,
-    showAddCartBtn: Boolean,
-    buyText: {
-      type: String,
-      default: '立即购买'
-    }
-  },
-
-  methods: {
-    onAddCartClicked() {
-      this.skuEventBus.$emit('sku:addCart');
-    },
-    onBuyClicked() {
-      this.skuEventBus.$emit('sku:buy');
-    }
+    showAddCartBtn: Boolean
   }
-};
+});
 </script>

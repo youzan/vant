@@ -14,7 +14,7 @@ Vue.use(Lazyload, options);
 #### Basic Usage
 
 ```html
-<img v-for="img in imageList" v-lazy="img">
+<img v-for="img in imageList" v-lazy="img" >
 ```
 
 ```javascript
@@ -41,7 +41,7 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 
 ```html
 <lazy-component>
-  <img v-for="img in imageList" v-lazy="img">
+  <img v-for="img in imageList" v-lazy="img" >
 </lazy-component>
 ```
 

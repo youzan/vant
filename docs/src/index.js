@@ -1,19 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './DocsApp';
-import routes from './router.config';
+import routes from './router';
 import VantDoc from 'vant-doc';
-import isMobile from './utils/is-mobile';
+import { isMobile } from './utils';
+import './components/nprogress.css';
 
-Vue.use(VueRouter);
-Vue.use(VantDoc);
-
-const routesConfig = routes();
+Vue.use(VueRouter).use(VantDoc);
 
 const router = new VueRouter({
   mode: 'hash',
   base: '/zanui/vant/',
-  routes: routesConfig
+  routes: routes()
 });
 
 router.beforeEach((route, redirect, next) => {
@@ -34,5 +32,5 @@ window.vueRouter = router;
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router,
-  el: '#app-container'
+  el: '#app'
 });

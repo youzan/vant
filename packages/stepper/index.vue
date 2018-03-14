@@ -4,8 +4,7 @@
       class="van-stepper__stepper van-stepper__minus"
       :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
       @click="onChange('minus')"
-    >
-    </button>
+    />
     <input
       type="number"
       class="van-stepper__input"
@@ -17,8 +16,7 @@
       class="van-stepper__stepper van-stepper__plus"
       :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
       @click="onChange('plus')"
-    >
-    </button>
+    />
   </div>
 </template>
 
@@ -70,6 +68,7 @@ export default create({
       const currentValue = +this.currentValue;
       return min === currentValue || (currentValue - step) < min || this.disabled;
     },
+
     isPlusDisabled() {
       const max = +this.max;
       const step = +this.step;
@@ -79,15 +78,12 @@ export default create({
   },
 
   watch: {
-    currentValue(val) {
-      this.$emit('input', val);
-      this.$emit('change', val);
-    },
-
     value(val) {
-      val = this.correctValue(+val);
-      if (val !== this.currentValue) {
-        this.currentValue = val;
+      if (val !== '') {
+        val = this.correctValue(+val);
+        if (val !== this.currentValue) {
+          this.currentValue = val;
+        }
       }
     }
   },
@@ -105,8 +101,9 @@ export default create({
     },
 
     onInput(event) {
-      const val = +event.target.value;
-      this.currentValue = this.correctValue(val);
+      const { value } = event.target;
+      this.currentValue = value ? this.correctValue(+value) : value;
+      this.emitInput();
     },
 
     onChange(type) {
@@ -118,7 +115,13 @@ export default create({
       const step = +this.step;
       const currentValue = +this.currentValue;
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
+      this.emitInput();
       this.$emit(type);
+    },
+
+    emitInput() {
+      this.$emit('input', this.currentValue);
+      this.$emit('change', this.currentValue);
     }
   }
 });

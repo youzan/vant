@@ -51,14 +51,14 @@ Use `tag` prop to custom button tag
 #### Action Button
 
 ```html 
-<van-button type="primary" bottomAction>Button</van-button>
+<van-button type="primary" bottom-action>Button</van-button>
 
 <van-row>
   <van-col span="12">
-    <van-button bottomAction>Button</van-button>
+    <van-button bottom-action>Button</van-button>
   </van-col>
   <van-col span="12">
-    <van-button type="primary" bottomAction>Button</van-button>
+    <van-button type="primary" bottom-action>Button</van-button>
   </van-col>
 </van-row>
 ```
@@ -69,9 +69,10 @@ Use `tag` prop to custom button tag
 |-----------|-----------|-----------|-------------|-------------|
 | type | Type | `String` | `default` | `primary` `danger` |
 | size | Size | `String` | `normal` | `large` `small` `mini` |
+| text | Text | `String` | - | - |
 | tag | Tag | `String` | `button` | - |
-| nativeType | Native Type Attribute | `String` | `''` | - |
-| diabled | Whether disable button | `Boolean` | `false` | - |
+| native-type | Native Type Attribute | `String` | `''` | - |
+| disabled | Whether disable button | `Boolean` | `false` | - |
 | loading | Whether show loading status | `Boolean` | `false` | - |
 | block | Whether to set display block | `Boolean` | `false` | - |
-| bottomAction | Whether to be action button | `Boolean` | `false` | - |
+| bottom-action | Whether to be action button | `Boolean` | `false` | - |

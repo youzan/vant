@@ -1,4 +1,5 @@
 import Utils from '../utils/scroll';
+import { on, off } from '../utils/event';
 
 const CONTEXT = '@@Waterfall';
 const OFFSET = 300;
@@ -14,8 +15,8 @@ function doBindEvent() {
   this.scrollEventListener = Utils.debounce(handleScrollEvent.bind(this), 200);
   this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
 
-  var disabledExpr = this.el.getAttribute('waterfall-disabled');
-  var disabled = false;
+  const disabledExpr = this.el.getAttribute('waterfall-disabled');
+  let disabled = false;
   if (disabledExpr) {
     this.vm.$watch(disabledExpr, (value) => {
       this.disabled = value;
@@ -25,10 +26,10 @@ function doBindEvent() {
   }
   this.disabled = disabled;
 
-  var offset = this.el.getAttribute('waterfall-offset');
+  const offset = this.el.getAttribute('waterfall-offset');
   this.offset = Number(offset) || OFFSET;
 
-  this.scrollEventTarget.addEventListener('scroll', this.scrollEventListener);
+  on(this.scrollEventTarget, 'scroll', this.scrollEventListener, true);
 
   this.scrollEventListener();
 }
@@ -119,7 +120,9 @@ export default function(type) {
 
     unbind(el) {
       const context = el[CONTEXT];
-      context.scrollEventTarget && context.scrollEventTarget.removeEventListener('scroll', context.scrollEventListener);
+      if (context.scrollEventTarget) {
+        off(context.scrollEventTarget, 'scroll', context.scrollEventListener);
+      }
     }
   };
 };

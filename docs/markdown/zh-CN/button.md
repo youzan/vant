@@ -55,14 +55,14 @@ Vue.use(Button);
 #### 页面底部操作按钮
 
 ```html 
-<van-button type="primary" bottomAction>按钮</van-button>
+<van-button type="primary" bottom-action>按钮</van-button>
 
 <van-row>
   <van-col span="12">
-    <van-button bottomAction>按钮</van-button>
+    <van-button bottom-action>按钮</van-button>
   </van-col>
   <van-col span="12">
-    <van-button type="primary" bottomAction>按钮</van-button>
+    <van-button type="primary" bottom-action>按钮</van-button>
   </van-col>
 </van-row>
 ```
@@ -73,9 +73,10 @@ Vue.use(Button);
 |-----------|-----------|-----------|-------------|-------------|
 | type | 按钮类型 | `String` | `default` | `primary` `danger` |
 | size | 按钮尺寸 | `String` | `normal` | `large` `small` `mini` |
+| text | 按钮文字 | `String` | - | - |
 | tag | 按钮标签 | `String` | `button` | 任意`HTML`标签 |
-| nativeType | 按钮类型（原生） | `String` | `''` | - |
-| diabled | 是否禁用 | `Boolean` |  `false` | - |
+| native-type | 按钮类型（原生） | `String` | - | - |
+| disabled | 是否禁用 | `Boolean` |  `false` | - |
 | loading | 是否显示为加载状态 | `Boolean` |  `false` | - |
 | block | 是否为块级元素 | `Boolean` |   `false` | - |
-| bottomAction | 是否为底部行动按钮 | `Boolean` | `false` | - |
+| bottom-action | 是否为底部行动按钮 | `Boolean` | `false` | - |

@@ -3,6 +3,63 @@ export default {
   cancel: 'Cancel',
   save: 'Save',
   complete: 'Complete',
+  loadingTip: 'Loading...',
+  vanContactCard: {
+    name: 'Name',
+    tel: 'Phone',
+    addText: 'Add contact info'
+  },
+  vanContactList: {
+    name: 'Name',
+    tel: 'Phone',
+    addText: 'Add new contact'
+  },
+  vanContactEdit: {
+    name: 'Name',
+    namePlaceholder: 'Name',
+    nameEmpty: 'Name can not be empty',
+    nameOverlimit: 'Name length exceeds limit',
+    tel: 'Phone',
+    telPlaceholder: 'Phone',
+    telInvalid: 'Malformed phone number',
+    save: 'Save',
+    delete: 'Delete',
+    confirmDelete: 'Are you sure you want to delete this contact?'
+  },
+  vanPagination: {
+    prev: 'Previous',
+    next: 'Next'
+  },
+  vanPullRefresh: {
+    pullingText: 'Pull to refresh...',
+    loosingText: 'Loose to refresh...'
+  },
+  vanSubmitBar: {
+    label: 'Total：'
+  },
+  vanCouponCell: {
+    title: 'Coupon',
+    tips: 'Select coupon',
+    reduce: 'Reduce',
+    count: count => `You have ${count} offers`
+  },
+  vanCouponList: {
+    empty: 'No coupons',
+    exchange: 'Exchange',
+    close: 'Close',
+    disabled: 'Unavailable',
+    placeholder: 'Coupon code'
+  },
+  vanCouponItem: {
+    unlimited: 'Unlimited',
+    discount: discount => `${discount * 10}% off`,
+    condition: condition => `At least ${condition}`
+  },
+  vanArea: {
+    province: 'Province',
+    city: 'City',
+    county: 'District'
+  },
   vanAddressEdit: {
     areaTitle: 'Area',
     areaWrong: 'Please select the correct receiving area',
@@ -38,38 +95,52 @@ export default {
       address: 'Address'
     }
   },
-  vanContactCard: {
-    name: 'Name',
-    tel: 'Phone',
-    addText: 'Add contact info'
+  vanAddressList: {
+    address: 'Address',
+    add: 'Add new address'
   },
-  vanContactList: {
-    name: 'Name',
-    tel: 'Phone',
-    addText: 'Add new contact'
+  vanSku: {
+    unavailable: 'The product is no longer available for purchase',
+    spec: 'Please select the full specification',
+    least: 'Choose at least one',
+    quota: quota => `Buy up to ${quota} items`,
+    inventory: 'Inventory shortage',
+    purchase: count => `You have purchased ${count} items`
   },
-  vanContactEdit: {
-    name: 'Name',
-    namePlaceholder: 'Name',
-    nameEmpty: 'Name can not be empty',
-    nameOverlimit: 'Name length exceeds limit',
-    tel: 'Phone',
-    telPlaceholder: 'Phone',
-    telInvalid: 'Malformed phone number',
-    save: 'Save',
-    delete: 'Delete',
-    confirmDelete: 'Are you sure you want to delete this contact?'
+  vanSkuActions: {
+    cart: 'Add to cart',
+    buy: 'Buy'
   },
-  vanPagination: {
-    prev: 'Previous',
-    next: 'Next'
+  vanSkuMessages: {
+    fill: 'Please fill',
+    upload: 'Please upload',
+    number: 'Please fill in the correct number format message',
+    email: 'Please fill in the correct email message',
+    idcard: 'Please fill in the correct ID number message',
+    overlimit: 'not more than 200 words',
+    onePic: 'only one picture',
+    placeholder: {
+      'id_no': 'Idcard Number',
+      text: 'Text',
+      tel: 'Number',
+      email: 'Email',
+      date: 'Date',
+      time: 'Time',
+      textarea: 'Text'
+    }
   },
-  vanPullRefresh: {
-    pullingText: 'Pull to refresh...',
-    loosingText: 'Loose to refresh...',
-    loadingText: 'Loading...'
+  vanSkuImgUploader: {
+    or: 'Or',
+    uploading: 'Uploading...',
+    rephoto: 'Take Again',
+    photo: 'Take',
+    reselect: 'Reselect',
+    select: 'Select Photo',
+    maxSize: maxSize => `The upload limit is up to ${maxSize}MB，please try to compress the photo`
   },
-  vanSubmitBar: {
-    label: 'Total：'
+  vanSkuStepper: {
+    title: 'Quantity',
+    remain: count => `Remain ${count} items`,
+    quota: quota => `Buy up to ${quota} items`
   }
 };

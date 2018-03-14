@@ -31,6 +31,8 @@ Vue.component('demo-section', DemoSection);
 
 Locale.add({
   'zh-CN': {
+    add: '增加',
+    decrease: '减少',
     red: '红色',
     orange: '橙色',
     yellow: '黄色',
@@ -45,12 +47,19 @@ Locale.add({
     search: '搜索',
     content: '内容',
     custom: '自定义',
+    username: '用户名',
+    password: '密码',
     loading: '加载状态',
     disabled: '禁用状态',
+    uneditable: '不可编辑',
     basicUsage: '基础用法',
-    advancedUsage: '高级用法'
+    advancedUsage: '高级用法',
+    usernamePlaceholder: '请输入用户名',
+    passwordPlaceholder: '请输入密码'
   },
   'en-US': {
+    add: 'Add',
+    decrease: 'Decrease',
     red: 'Red',
     orange: 'Orange',
     yellow: 'Yellow',
@@ -65,9 +74,14 @@ Locale.add({
     search: 'Search',
     content: 'Content',
     custom: 'Custom',
+    username: 'Username',
+    password: 'Password',
     loading: 'Loading',
     disabled: 'Disabled',
+    uneditable: 'Uneditable',
     basicUsage: 'Basic Usage',
-    advancedUsage: 'Advanced Usage'
+    advancedUsage: 'Advanced Usage',
+    usernamePlaceholder: 'Username',
+    passwordPlaceholder: 'Password'
   }
 });

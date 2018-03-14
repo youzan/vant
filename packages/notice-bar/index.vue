@@ -7,7 +7,7 @@
     @click="$emit('click')"
   >
     <div class="van-notice-bar__left-icon" v-if="leftIcon">
-      <img :src="leftIcon" />
+      <img :src="leftIcon" >
     </div>
     <div class="van-notice-bar__content-wrap" ref="contentWrap">
       <div
@@ -82,13 +82,12 @@ export default create({
   },
 
   mounted() {
-    const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-    const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
-    if (this.scrollable && offsetWidth > wrapWidth) {
-      this.wrapWidth = wrapWidth;
-      this.offsetWidth = offsetWidth;
-      this.duration = offsetWidth / this.speed;
-      this.animationClass = 'van-notice-bar__play';
+    this.initAnimation();
+  },
+
+  watch: {
+    text: function() {
+      this.$nextTick(this.initAnimation);
     }
   },
 
@@ -102,6 +101,16 @@ export default create({
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = 'van-notice-bar__play--infinite';
       });
+    },
+    initAnimation() {
+      const offsetWidth = this.$refs.content.getBoundingClientRect().width;
+      const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
+      if (this.scrollable && offsetWidth > wrapWidth) {
+        this.wrapWidth = wrapWidth;
+        this.offsetWidth = offsetWidth;
+        this.duration = offsetWidth / this.speed;
+        this.animationClass = 'van-notice-bar__play';
+      }
     }
   }
 });

@@ -2,16 +2,22 @@
   <div class="van-address-list">
     <radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
       <cell-group>
-        <cell v-for="(item, index) in list" :key="item.id">
+        <cell v-for="(item, index) in list" :key="item.id" is-link>
           <radio :name="item.id" @click="$emit('select', item, index)">
             <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
-            <div class="van-address-list__address">收货地址：{{ item.address }}</div>
+            <div class="van-address-list__address">{{ $t('address') }}：{{ item.address }}</div>
           </radio>
-          <icon name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
+          <icon slot="right-icon" name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
         </cell>
       </cell-group>
     </radio-group>
-    <cell icon="add" class="van-address-list__add van-hairline--top" @click="$emit('add')" :title="addButtonText" isLink />
+    <cell
+      icon="add"
+      class="van-address-list__add van-hairline--top"
+      @click="$emit('add')"
+      :title="addButtonText || $t('add')"
+      is-link
+    />
   </div>
 </template>
 
@@ -33,14 +39,11 @@ export default create({
   },
 
   props: {
+    addButtonText: String,
     value: [String, Number],
     list: {
       type: Array,
       default: () => []
-    },
-    addButtonText: {
-      type: String,
-      default: '新增收货地址'
     }
   }
 });

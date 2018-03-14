@@ -14,7 +14,7 @@ Vue.use(SubmitBar);
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="提交订单"
+  button-text="提交订单"
   @submit="onSubmit"
 />
 ```
@@ -26,7 +26,7 @@ Vue.use(SubmitBar);
 <van-submit-bar
   disabled
   :price="3050"
-  buttonText="提交订单"
+  button-text="提交订单"
   tip="您的收货地址不支持同城送, 我们已为您推荐快递"
   @submit="onSubmit"
 />
@@ -39,7 +39,7 @@ Vue.use(SubmitBar);
 <van-submit-bar
   loading
   :price="3050"
-  buttonText="提交订单"
+  button-text="提交订单"
   @submit="onSubmit"
 />
 ```
@@ -50,7 +50,7 @@ Vue.use(SubmitBar);
 ```html
 <van-submit-bar
   :price="3050"
-  buttonText="提交订单"
+  button-text="提交订单"
   @submit="onSubmit"
 >
   <van-checkbox v-model="checked">全选</van-checkbox>
@@ -66,8 +66,8 @@ Vue.use(SubmitBar);
 |-----------|-----------|-----------|-------------|-------------|
 | price | 价格（单位分） |  `Number` | - | - |
 | label | 价格文案 |  `String` | `合计：` | - |
-| buttonText | 按钮文字 | `String` | - | - |
-| buttonType | 按钮类型 |  `String` | `danger` | - |
+| button-text | 按钮文字 | `String` | - | - |
+| button-type | 按钮类型 |  `String` | `danger` | - |
 | tip | 提示文案 |  `String` | - | - |
 | disabled | 是否禁用按钮 |  `Boolean` | `false` | - |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
@@ -80,7 +80,7 @@ Vue.use(SubmitBar);
 
 ### Slot
 
-| Name | 说明 |
+| 名称 | 说明 |
 |-----------|-----------|
 | default | 自定义订单栏左侧内容 |
 | tip | 提示文案中的额外操作和说明 |

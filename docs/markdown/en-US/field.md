@@ -14,7 +14,7 @@ The value of filed is bound with v-model.
 
 ```html
 <van-cell-group>
-  <van-field v-model="value" placeholder="Username"></van-field>
+  <van-field v-model="value" placeholder="Username" />
 </van-cell-group>
 ```
 
@@ -30,16 +30,15 @@ Use `type` prop to custom diffrent type fileds.
     placeholder="Username"
     required
     @click-icon="username = ''"
-  >
-  </van-field>
+  />
 
   <van-field
     v-model="password"
     type="password"
     label="Password"
     placeholder="Password"
-    required>
-  </van-field>
+    required
+  />
 </van-cell-group>
 ```
 
@@ -47,15 +46,29 @@ Use `type` prop to custom diffrent type fileds.
 
 ```html
 <van-cell-group>
-  <van-field value="Disabled" label="Username" disabled></van-field>
+  <van-field
+    value="Disabled"
+    label="Username"
+    disabled
+  />
 </van-cell-group>
 ```
 
 #### Error info
+Use `error` or `error-message` to show error info
 
 ```html
 <van-cell-group>
-  <van-field label="Username" placeholder="Username" error></van-field>
+  <van-field
+    label="Username"
+    placeholder="Username"
+    error
+  />
+  <van-field
+    label="Phone"
+    placeholder="Phone"
+    error-message="Invalid phone"
+  />
 </van-cell-group>
 ```
 
@@ -71,13 +84,12 @@ Textarea Filed can be auto resize when has `autosize` prop
     placeholder="Message"
     rows="1"
     autosize
-  >
-  </van-field>
+  />
 </van-cell-group>
 ```
 
 ### API
-Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`
+Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
@@ -86,15 +98,15 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | label | Filed label | `String` | - | - |
 | disabled | Disable field | `Boolean` | `false` | - |
 | error | Whether to show error info | `Boolean` | `false` | - |
+| error-message | Error message | `String` | `''` | - |
 | autosize | Textarea auto resize | `Boolean` | `false` | - |
 | icon | Right side Icon name | `String` | - | - |
 
 ### Event
+Filed support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
-| focus | Triggered when filed get focused | - |
-| blur | Triggered when blur filed | - |
 | click-icon | Triggered when click the icon of filed | - |
 
 ### Slot

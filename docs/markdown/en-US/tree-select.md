@@ -45,16 +45,16 @@ export default {
 
 ### API
 
-#### Properties
+#### API
 
-| Attribute | Description | Type | Default | 必须 |
+| Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | items | Required datasets for the component, see Data Structure for detail. | `Array` | `[]` | - |
-| mainActiveIndex | The index of selected parent node | `Number` | `0` | - |
-| activeId | Id of selected item | `Number` | `0` | - |
+| main-Active-index | The index of selected parent node | `Number` | `0` | - |
+| active-id | Id of selected item | `Number` | `0` | - |
 
 #### Event
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | navclick | triggered when parent node is selected |  index: index of selected parent |
 | itemclick | triggered when item is selected | data: selected item |

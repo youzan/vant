@@ -4,10 +4,10 @@
       <slot name="icon" :active="active">
         <icon v-if="icon" :name="icon" />
       </slot>
-      <div v-if="info" class="van-tabbar-item__info">{{ info }}</div>
+      <div v-if="info" class="van-icon__info">{{ info }}</div>
     </div>
     <div class="van-tabbar-item__text">
-      <slot :active="active"></slot>
+      <slot :active="active"/>
     </div>
   </div>
 </template>
@@ -42,8 +42,9 @@ export default create({
   },
 
   methods: {
-    onClick() {
+    onClick(event) {
       this.$parent.onChange(this.$parent.items.indexOf(this));
+      this.$emit('click', event);
       this.routerLink();
     }
   }

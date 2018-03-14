@@ -4,8 +4,7 @@
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
-Vue.use(CouponCell);
-Vue.use(CouponList);
+Vue.use(CouponCell).use(CouponList);
 ```
 
 ### 代码演示
@@ -16,7 +15,7 @@ Vue.use(CouponList);
 <!-- 优惠券单元格 -->
 <van-coupon-cell
   :coupons="coupons"
-  :chosenCoupon="chosenCoupon"
+  :chosen-coupon="chosenCoupon"
   @click="showList = true"
 />
 
@@ -24,8 +23,8 @@ Vue.use(CouponList);
 <van-popup v-model="showList" position="bottom">
   <van-coupon-list
     :coupons="coupons"
-    :chosenCoupon="chosenCoupon"
-    :disabledCoupons="disabledCoupons"
+    :chosen-coupon="chosenCoupon"
+    :disabled-coupons="disabledCoupons"
     @change="onChange"
     @exchange="onExchange"
   />
@@ -40,8 +39,7 @@ const coupon = {
   origin_condition: 0,
   reason: '',
   value: 150,
-  condition: '下单立减 1.50 元',
-  name: '新手专用优惠券',
+  name: '优惠券名称',
   start_at: 1489104000,
   end_at: 1514592000
 };
@@ -70,29 +68,31 @@ export default {
 
 ### CouponCell API
 
-| 参数 | 说明 | 类型 | 默认值 | 必须 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | 单元格标题 | `String` | `优惠` | - |
-| chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
+| title | 单元格标题 | `String` | `优惠券码` | - |
+| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
 
 ### CouponList API
 
-| 参数 | 说明 | 类型 | 默认值 | 必须 |
+| 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否展示优惠券列表 | `Boolean` | `false` | - |
-| chosenCoupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
+| v-model | 当前输入的兑换码 | `String` | - | - |
+| chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| disabledCoupons | 不可用优惠券列表 | `Array` | `[]` | - |
-| exchangeButtonText | 兑换按钮文字 | `String` | `兑换` | - |
-| exchangeButtonDisabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
-| displayedCouponIndex | 滚动至特定优惠券位置 | `Number` | - | - |
-| showCloseButton | 是否显示列表底部按钮 | `Boolean` | `true` | - |
-| closeButtonText | 列表底部按钮文字 | `String` | 不使用优惠 | - |
-| disabledListTitle | 不可用券列表标题 | `String` | 不可用优惠 | - |
-| inputPlaceholder | 输入框文字提示 | `String` | 请输入优惠码 | - |
-| showExchangeBar | 是否展示兑换栏 | `Boolean` | `true` | - |
+| disabled-doupons | 不可用优惠券列表 | `Array` | `[]` | - |
+| exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
+| exchange-button-loading | 是否在兑换按钮上显示加载动画 | `Boolean` | `false` | - |
+| exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
+| exchange-min-length | 兑换码最小长度 | `Number` | `1` | - |
+| displayed-coupon-index | 滚动至特定优惠券位置 | `Number` | - | - |
+| show-close-button | 是否显示列表底部按钮 | `Boolean` | `true` | - |
+| close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
+| disabled-list-title | 不可用券列表标题 | `String` | `不可用优惠` | - |
+| input-placeholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
+| show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
 
 ### CouponList Event
 
@@ -107,12 +107,10 @@ export default {
 |-----------|-----------|-----------|
 | id | 优惠券 id | `String` |
 | name | 优惠券名称 | `String` |
-| available | 是否可用, 1:可用,0:不可用 | `Number` |
 | discount | 折扣（0为满减券）88=>8.8折 | `Number` |
 | denominations | 面值（0为折扣券）单位分 | `Number` |
 | origin_condition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
-| start_at | 	卡有效开始时间 | `Number` |
-| end_at | 卡失效日期 | `Number` |
+| start_at | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
+| end_at | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
 | value | 订单优惠金额，单位分 | `Number` |
-| condition | 格式化输出 value | `String` |

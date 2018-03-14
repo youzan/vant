@@ -1,6 +1,6 @@
 <template>
   <div class="van-tabbar van-hairline--top-bottom" :class="{ 'van-tabbar--fixed': fixed }">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

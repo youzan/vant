@@ -4,8 +4,7 @@
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
-Vue.use(Cell);
-Vue.use(CellGroup);
+Vue.use(Cell).use(CellGroup);
 ```
 
 ### Usage
@@ -39,8 +38,8 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" isLink />
-  <van-cell title="Cell title" isLink value="Content" />
+  <van-cell title="Cell title" is-link />
+  <van-cell title="Cell title" is-link value="Content" />
 </van-cell-group>
 ```
 
@@ -48,22 +47,26 @@ Vue.use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="Content" icon="shop" isLink>
+  <van-cell value="Content" icon="shop" is-link>
     <template slot="title">
       <span class="van-cell-text">Cell title</span>
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
-  <van-cell title="Cell title" icon="location" isLink />
+  <van-cell title="Cell title" icon="location" is-link />
   <van-cell title="Cell title">
-    <template slot="right-icon">
-      <van-icon name="search" class="van-cell__right-icon" />
-    </template>
+    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
   </van-cell>
 </van-cell-group>
 ```
 
-### API
+### CellGroup API
+
+| Attribute | Description | Type | Default | Accepted Values |
+|-----------|-----------|-----------|-------------|-------------|
+| border | Whether to show outer border | `Boolean` | `true` | - |
+
+### Cell API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
@@ -74,7 +77,9 @@ Vue.use(CellGroup);
 | url | Link | `String` | - | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
 | replace | If true, the navigation will not leave a history record | `String` | `false` | - |
-| isLink | Whether to show link icon | `Boolean` | `false` | - |
+| border | Whether to show inner border | `Boolean` | `true` | - |
+| clickable | Whether to show click feedback when clicked | `Boolean` | `false` | - |
+| is-link | Whether to show link icon | `Boolean` | `false` | - |
 | required | Whether to show required mark | `Boolean` | `false` | - |
 
 ### Slot

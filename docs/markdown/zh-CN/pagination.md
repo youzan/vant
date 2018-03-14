@@ -16,8 +16,8 @@ Vue.use(Pagination);
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :totalItems="24" 
-  :itemsPerPage="5"
+  :total-items="24" 
+  :items-per-page="5"
 />
 ```
 
@@ -36,7 +36,7 @@ export default {
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :pageCount="12"
+  :page-count="12"
   mode="simple" 
 />
 ```
@@ -46,9 +46,9 @@ export default {
 ```html
 <van-pagination 
   v-model="currentPage" 
-  :totalItems="125" 
-  :showPageSize="3" 
-  :forceEllipses="true"
+  :total-items="125" 
+  :show-page-size="3" 
+  force-ellipses
 />
 ```
 
@@ -56,13 +56,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前页码 | `Object` | - | - |
+| v-model | 当前页码 | `Number` | - | - |
 | mode | 显示模式 | `String` | `multi` | `simple`  |
-| itemsPerPage | 每页记录数 | `Number` | `10` | - |
-| previousText | 上一页 | `String` | `上一页` | - |
-| nextText | 下一页 | `String` | `下一页` | - |
-| showPageSize | 显示的页码个数 | `Number` | `5` | - |
-| forceEllipses | 显示省略号 | `Boolean` | `false` | - |
+| items-per-page | 每页记录数 | `Number` | `10` | - |
+| previous-text | 上一页 | `String` | `上一页` | - |
+| next-text | 下一页 | `String` | `下一页` | - |
+| show-page-size | 显示的页码个数 | `Number` | `5` | - |
+| force-ellipses | 显示省略号 | `Boolean` | `false` | - |
 
 ### Event
 

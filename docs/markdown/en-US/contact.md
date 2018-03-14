@@ -1,13 +1,13 @@
 ## Contact
-通过 Contact 组件可以实现联系人的展示、选择、编辑等功能。
 
 ### Install
 ``` javascript
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
-Vue.use(ContactCard);
-Vue.use(ContactList);
-Vue.use(ContactEdit);
+Vue
+  .use(ContactCard)
+  .use(ContactList)
+  .use(ContactEdit);
 ```
 
 ### Usage
@@ -16,7 +16,7 @@ Vue.use(ContactEdit);
 
 
 ```html
-<!-- 联系人卡片 -->
+<!-- Contact Card -->
 <van-contact-card
   :type="cardType"
   :name="currentContact.name"
@@ -24,7 +24,7 @@ Vue.use(ContactEdit);
   @click="showList = true"
 />
 
-<!-- 联系人列表 -->
+<!-- Contact List -->
 <van-popup v-model="showList" position="bottom">
   <van-contact-list
     v-model="chosenContactId"
@@ -35,11 +35,11 @@ Vue.use(ContactEdit);
   />
 </van-popup>
 
-<!-- 联系人编辑 -->
+<!-- Contact Edit -->
 <van-popup v-model="showEdit" position="bottom">
   <van-contact-edit
-    :contactInfo="editingContact"
-    :isEdit="isEdit"
+    :contact-info="editingContact"
+    :is-edit="isEdit"
     @save="onSave"
     @delete="onDelete"
   />
@@ -56,7 +56,7 @@ export default {
       showEdit: false,
       isEdit: false,
       list: [{
-        name: '张三',
+        name: 'John Snow',
         tel: '13000000000',
         id: 0
       }]
@@ -75,26 +75,26 @@ export default {
   },
 
   methods: {
-    // 添加联系人
+    // add contact
     onAdd() {
       this.editingContact = { id: this.list.length };
       this.isEdit = false;
       this.showEdit = true;
     },
 
-    // 编辑联系人
+    // edit contact
     onEdit(item) {
       this.isEdit = true;      
       this.showEdit = true;
       this.editingContact = item;
     },
 
-    // 选中联系人
+    // select contact
     onSelect() {
       this.showList = false;
     },
 
-    // 保存联系人
+    // save contact
     onSave(info) {
       this.showEdit = false;
       this.showList = false;
@@ -107,7 +107,7 @@ export default {
       this.chosenContactId = info.id;
     },
 
-    // 删除联系人
+    // delete contact
     onDelete(info) {
       this.showEdit = false;
       this.list = this.list.filter(item => item.id !== info.id);
@@ -119,51 +119,60 @@ export default {
 };
 ```
 
+#### Uneditable
+
+```html
+<van-contact-card
+  type="edit"
+  name="John Snow"
+  tel="13000000000"
+  :editable="false"
+/>
+```
+
 
 ### ContactCard API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Type，分为添加和编辑两种样式 | `String` | `add` | `edit` |
-| addText | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
-| name | 联系人姓名 | `String` | - | - |
-| tel | 联系人手机号 | `String` | - | - |
+| type | Type | `String` | `add` | `edit` |
+| name | Name | `String` | - | - |
+| tel | Phone | `String` | - | - |
+| add-text | Add card text | `String` | `Add contact info` | - |
 
 ### ContactList API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中联系人的 id | `String | Number` | - | - |
-| addText | 新建按钮文案 | `String` | `新建联系人` | - |
-| list | 联系人列表 | `Array` | `[]` | - |
+| v-model | Id of chosen contact | `String | Number` | - | - |
+| list | Contact list | `Array` | `[]` | - |
+| add-text | Add button text | `String` | `Add new contact` | - |
 
 ### ContactList Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
-| add | 点击新增按钮时触发 | - |
-| edit | 点击编辑按钮时触发 | item: 当前联系人对象，index: 索引 |
-| select | 切换选中的联系人时触发 | item: 当前联系人对象，index: 索引 |
-
+| add | Triggered when click add button | - |
+| edit | Triggered when click edit button | item: contact object，index |
+| select | Triggered when select contact | item: contact object |
 
 ### ContactEdit API
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| contactInfo | 联系人信息 | `Object` | `[]` | - |
-| isEdit | 是否为编辑联系人 | `Boolean` | `false` | - |
-| isSaving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
-| isDeleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| contact-info | Contact Info | `Object` | `[]` | - |
+| is-edit | Whether is editing | `Boolean` | `false` | - |
+| is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
+| is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
 
 ### ContactEdit Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
-| save | 点击保存按钮时触发 | content：表单内容 |
-| delete | 点击删除按钮时触发 | content：表单内容 |
+| save | Triggered when click save button | content：contact info |
+| delete | Triggered when click delete button | content：contact info |
 
-### Data Structure
-
-#### 联系人Data Structure
+### Contact Data Structure
 | key | Description | Type |
 |-----------|-----------|-----------|
-| id | 每位联系人的唯一标识 | `String | Number` |
-| name | 联系人姓名 | `String` |
-| tel | 联系人手机号 | `String` |
+| id | ID | `String | Number` |
+| name | Name | `String` |
+| tel | Phone | `String` |

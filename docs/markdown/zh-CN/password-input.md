@@ -3,10 +3,9 @@
 
 ### 使用指南
 ``` javascript
-import { PasswordInput, NumberKeyBoard } from 'vant';
+import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput);
-Vue.use(NumberKeyBoard);
+Vue.use(PasswordInput).use(NumberKeyboard);
 ```
 
 ### 代码演示
@@ -57,7 +56,7 @@ export default {
 | value | 密码值 | `String` | `''` | - |
 | length | 密码最大长度 | `Number` | `6` | - |
 | info | 输入框下方提示 | `String` | - | - |
-| errorInfo | 输入框下方错误提示 | `String` | - | - |
+| error-info | 输入框下方错误提示 | `String` | - | - |
 
 ### Event
 

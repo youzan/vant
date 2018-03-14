@@ -22,9 +22,18 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option1', callback: this.onClick },
-        { name: 'Option2' },
-        { name: 'Option3', loading: true }
+        {
+          name: 'Option',
+          callback: this.onClick
+        },
+        {
+          name: 'Option',
+          description: 'Description'
+        },
+        {
+          name: 'Option',
+          loading: true
+        }
       ]
     };
   },
@@ -40,7 +49,7 @@ export default {
 #### Actionsheet with cancel button
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" cancelText="Cancel" />
+<van-actionsheet v-model="show" :actions="actions" cancel-text="Cancel" />
 ```
 
 #### Actionsheet with title
@@ -58,9 +67,10 @@ Actionsheet will get another style if there is a `title` prop.
 |-----------|-----------|-----------|-------------|-------------|
 | actions | Options | `Array` | `[]` | - |
 | title | Title | `String` | - | - |
-| cancelText | Text of cancel button | `String` | - | - |
+| cancel-text | Text of cancel button | `String` | - | - |
 | overlay | Whether to show overlay | `Boolean` | - | - |
-| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | - | - |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | - | - |
+| get-container | Return the mount node for actionsheet | `Function` | - | `() => HTMLElement` |
 
 ### Data struct of actions
 

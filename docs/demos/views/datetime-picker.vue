@@ -4,10 +4,10 @@
       <van-datetime-picker
         v-model="currentDate1"
         type="datetime"
-        :minHour="minHour"
-        :maxHour="maxHour"
-        :minDate="minDate"
-        :maxDate="maxDate"
+        :min-hour="minHour"
+        :max-hour="maxHour"
+        :min-date="minDate"
+        :max-date="maxDate"
       />
     </demo-block>
 
@@ -15,9 +15,9 @@
       <van-datetime-picker
         v-model="currentDate2"
         type="date"
-        :minHour="minHour"
-        :maxHour="maxHour"
-        :minDate="minDate"
+        :min-hour="minHour"
+        :max-hour="maxHour"
+        :min-date="minDate"
       />
     </demo-block>
 
@@ -25,9 +25,10 @@
       <van-datetime-picker
         v-model="currentDate3"
         type="time"
-        :minHour="minHour"
-        :maxHour="maxHour"
-        :minDate="minDate"
+        :visibleItemCount="3"
+        :min-hour="minHour"
+        :max-hour="maxHour"
+        :min-date="minDate"
       />
     </demo-block>
   </demo-section>
@@ -54,7 +55,7 @@ export default {
       maxDate: new Date(2019, 10, 1),
       currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
-      currentDate3: null
+      currentDate3: '12:00'
     };
   }
 };

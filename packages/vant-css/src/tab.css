@@ -1,5 +1,4 @@
 @import './common/var.css';
-@import './mixins/ellipsis.css';
 
 $van-tabs-line-height: 44px;
 $van-tabs-card-height: 30px;
@@ -118,7 +117,6 @@ $van-tabs-card-height: 30px;
 
   span {
     display: block;
-    @mixin ellipsis;
   }
 
   &:active {

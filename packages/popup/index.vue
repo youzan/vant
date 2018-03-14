@@ -1,7 +1,7 @@
 <template>
   <transition :name="currentTransition">
     <div v-show="value" class="van-popup" :class="{ [`van-popup--${position}`]: position }">
-      <slot></slot>
+      <slot />
     </div>
   </transition>
 </template>
@@ -18,12 +18,15 @@ export default create({
   props: {
     transition: String,
     overlay: {
+      type: Boolean,
       default: true
     },
     lockOnScroll: {
+      type: Boolean,
       default: false
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     },
     position: {
@@ -38,12 +41,6 @@ export default create({
       currentValue: false,
       currentTransition: transition
     };
-  },
-
-  mounted() {
-    if (this.value) {
-      this.open();
-    }
   }
 });
 </script>

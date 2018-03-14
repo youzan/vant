@@ -1,28 +1,30 @@
 <template>
-  <div
-    class="van-pull-refresh"
-    :style="style"
-    @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
-    @touchend="onTouchEnd"
-    @touchcancel="onTouchEnd"
-  >
-    <div class="van-pull-refresh__head">
-      <slot name="normal" v-if="status === 'normal'"></slot>
-      <slot name="pulling" v-if="status === 'pulling'">
-        <span class="van-pull-refresh__text">{{ pullingText || $t('pullingText') }}</span>
-      </slot>
-      <slot name="loosing" v-if="status === 'loosing'">
-        <span class="van-pull-refresh__text">{{ loosingText || $t('loosingText') }}</span>
-      </slot>
-      <slot name="loading" v-if="status === 'loading'">
-        <div class="van-pull-refresh__loading">
-          <loading />
-          <span>{{ loadingText || $t('loadingText') }}</span>
-        </div>
-      </slot>
+  <div class="van-pull-refresh">
+    <div
+      class="van-pull-refresh__track"
+      :style="style"
+      @touchstart="onTouchStart"
+      @touchmove="onTouchMove"
+      @touchend="onTouchEnd"
+      @touchcancel="onTouchEnd"
+    >
+      <div class="van-pull-refresh__head">
+        <slot name="normal" v-if="status === 'normal'"/>
+        <slot name="pulling" v-if="status === 'pulling'">
+          <span class="van-pull-refresh__text">{{ pullingText || $t('pullingText') }}</span>
+        </slot>
+        <slot name="loosing" v-if="status === 'loosing'">
+          <span class="van-pull-refresh__text">{{ loosingText || $t('loosingText') }}</span>
+        </slot>
+        <slot name="loading" v-if="status === 'loading'">
+          <div class="van-pull-refresh__loading">
+            <loading />
+            <span>{{ loadingText || $t('loadingTip') }}</span>
+          </div>
+        </slot>
+      </div>
+      <slot />
     </div>
-    <slot></slot>
   </div>
 </template>
 
@@ -74,10 +76,8 @@ export default create({
 
   watch: {
     value(val) {
-      if (!val) {
-        this.duration = this.animationDuration;
-        this.getStatus(0);
-      }
+      this.duration = this.animationDuration;
+      this.getStatus(val ? this.headHeight : 0, val);
     }
   },
 
@@ -109,9 +109,9 @@ export default create({
 
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
+          this.getStatus(this.ease(this.deltaY));
           event.preventDefault();
         }
-        this.getStatus(this.ease(this.deltaY));
       }
     },
 
@@ -125,6 +125,7 @@ export default create({
         if (this.status === 'loosing') {
           this.getStatus(this.headHeight, true);
           this.$emit('input', true);
+          this.$emit('refresh');
         } else {
           this.getStatus(0);
         }

@@ -1,5 +1,7 @@
-import manager from './popup-manager';
-import context from './popup-context';
+import manager from './manager';
+import context from './context';
+import scrollUtils from '../../utils/scroll';
+import { on, off } from '../../utils/event';
 
 export default {
   props: {
@@ -17,6 +19,8 @@ export default {
     zIndex: [String, Number],
     // prevent touchmove scroll
     preventScroll: Boolean,
+    // return the mount node for popup
+    getContainer: Function,
     // prevent body scroll
     lockOnScroll: {
       type: Boolean,
@@ -24,18 +28,8 @@ export default {
     }
   },
 
-  watch: {
-    value(val) {
-      this[val ? 'open' : 'close']();
-    }
-  },
-
-  beforeMount() {
-    this._popupId = 'popup-' + context.plusKeyByOne('idSeed');
-    context.instances[this._popupId] = this;
-  },
-
   data() {
+    this._popupId = 'popup-' + context.plusKey('idSeed');
     return {
       opened: false,
       pos: {
@@ -43,6 +37,29 @@ export default {
         y: 0
       }
     };
+  },
+
+  watch: {
+    value(val) {
+      this[val ? 'open' : 'close']();
+    },
+
+    getContainer() {
+      this.move();
+    }
+  },
+
+  mounted() {
+    if (this.getContainer) {
+      this.move();
+    }
+    if (this.value) {
+      this.open();
+    }
+  },
+
+  beforeDestroy() {
+    this.doAfterClose();
   },
 
   methods: {
@@ -54,36 +71,39 @@ export default {
     },
 
     watchTouchMove(e) {
-      const pos = this.pos;
+      const { pos } = this;
       const dx = e.touches[0].clientX - pos.x;
       const dy = e.touches[0].clientY - pos.y;
       const direction = dy > 0 ? '10' : '01';
-      const el = this.$el.querySelector('.scroller') || this.$el;
-      const scrollTop = el.scrollTop;
-      const scrollHeight = el.scrollHeight;
-      const offsetHeight = el.offsetHeight;
+      const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
+      const { scrollHeight, offsetHeight, scrollTop } = el;
       const isVertical = Math.abs(dx) < Math.abs(dy);
 
       let status = '11';
 
+      /* istanbul ignore next */
       if (scrollTop === 0) {
         status = offsetHeight >= scrollHeight ? '00' : '01';
       } else if (scrollTop + offsetHeight >= scrollHeight) {
         status = '10';
       }
 
-      if (status !== '11' && isVertical && !(parseInt(status, 2) & parseInt(direction, 2))) {
+      /* istanbul ignore next */
+      if (
+        status !== '11' &&
+        isVertical &&
+        !(parseInt(status, 2) & parseInt(direction, 2))
+      ) {
         e.preventDefault();
         e.stopPropagation();
       }
     },
 
     open() {
+      /* istanbul ignore next */
       if (this.opened || this.$isServer) {
         return;
       }
-
-      this.$emit('input', true);
 
       // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
       if (this.zIndex !== undefined) {
@@ -91,10 +111,10 @@ export default {
       }
 
       if (this.overlay) {
-        manager.openModal({
+        manager.open(this, {
           id: this._popupId,
-          zIndex: context.plusKeyByOne('zIndex'),
           dom: this.$el,
+          zIndex: context.plusKey('zIndex'),
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
@@ -104,12 +124,13 @@ export default {
         }
       }
 
-      this.$el.style.zIndex = context.plusKeyByOne('zIndex');
+      this.$el.style.zIndex = context.plusKey('zIndex');
+      this.$emit('input', true);
       this.opened = true;
 
       if (this.preventScroll) {
-        document.addEventListener('touchstart', this.recordPosition, false);
-        document.addEventListener('touchmove', this.watchTouchMove, false);
+        on(document, 'touchstart', this.recordPosition);
+        on(document, 'touchmove', this.watchTouchMove);
       }
     },
 
@@ -119,30 +140,29 @@ export default {
       }
 
       this.$emit('input', false);
-
-      if (this.lockOnScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-      }
-
       this.opened = false;
       this.doAfterClose();
     },
 
     doAfterClose() {
-      manager.closeModal(this._popupId);
+      manager.close(this._popupId);
+
+      if (this.lockOnScroll) {
+        document.body.classList.remove('van-overflow-hidden');
+      }
 
       if (this.preventScroll) {
-        document.removeEventListener('touchstart', this.recordPosition, false);
-        document.removeEventListener('touchmove', this.watchTouchMove, false);
+        off(document, 'touchstart', this.recordPosition);
+        off(document, 'touchmove', this.watchTouchMove);
       }
-    }
-  },
+    },
 
-  beforeDestroy() {
-    context.instances[this._popupId] = null;
-    manager.closeModal(this._popupId);
-    if (this.lockOnScroll) {
-      document.body.classList.remove('van-overflow-hidden');
+    move() {
+      if (this.getContainer) {
+        this.getContainer().appendChild(this.$el);
+      } else if (this.$parent) {
+        this.$parent.$el.appendChild(this.$el);
+      }
     }
   }
 };

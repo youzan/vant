@@ -4,8 +4,7 @@
 ``` javascript
 import { Tab, Tabs } from 'vant';
 
-Vue.use(Tab);
-Vue.use(Tabs);
+Vue.use(Tab).use(Tabs);
 ```
 
 ### 代码演示
@@ -34,7 +33,7 @@ export default {
 
 #### 横向滚动
 
-默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipeThreshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
+默认情况下多于4个tab时，可以横向滚动tab。可以通过设置`swipe-threshold`这个阙值，多于这个阙值时，tab就会支持横向滚动。
 
 ```html
 <van-tabs>
@@ -111,6 +110,20 @@ export default {
 </van-tabs>
 ```
 
+#### 自定义标签
+通过 title slot 可以自定义标签内容
+
+```html
+<van-tabs :active="active">
+  <van-tab v-for="index in 2">
+    <div slot="title">
+      <van-icon name="more-o" />选项
+    </div>
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
@@ -118,7 +131,7 @@ export default {
 | type | Tab 样式类型 | `String` | `line` | `card` |
 | active | 默认激活的 tab | `String` `Number` | `0` | - |
 | duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
-| swipeThreshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 
 ### Tab API
@@ -127,6 +140,13 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | title | tab的标题 | `String` | - | - |
 | disabled | 是否禁用这个tab | `Boolean` | `false` | - |
+
+### Tab Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 标签页内容 |
+| title | 自定义标签 |
 
 ### Tabs Event
 

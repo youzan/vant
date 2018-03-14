@@ -30,13 +30,11 @@
   }
 
   &__loading {
+    top: 50%;
+    left: 50%;
     width: 16px;
     height: 16px;
-    position: relative;
-    left: 50%;
-    top: 50%;
     transform: translate3d(-50%, -50%, 0);
-    margin: 0;
   }
 
   &--on {

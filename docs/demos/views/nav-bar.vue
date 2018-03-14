@@ -3,16 +3,16 @@
     <demo-block :title="$t('basicUsage')">
       <van-nav-bar
         :title="$t('title')"
-        :leftText="$t('back')"
-        :rightText="$t('button')"
-        leftArrow
+        :left-text="$t('back')"
+        :right-text="$t('button')"
+        left-arrow
         @click-left="onClickLeft"
         @click-right="onClickRight"
       />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-nav-bar :title="$t('title')" :leftText="$t('back')" leftArrow>
+      <van-nav-bar :title="$t('title')" :left-text="$t('back')" left-arrow>
         <van-icon name="search" slot="right" />
       </van-nav-bar>
     </demo-block>
@@ -29,5 +29,5 @@ export default {
       Toast(this.$t('button'));
     }
   }
-}
+};
 </script>

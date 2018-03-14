@@ -1,18 +1,18 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-loading type="circle" color="black" />
-      <van-loading type="circle" color="white" />
+      <van-loading color="black" />
+      <van-loading color="white" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-loading type="gradient-circle" color="black" />
-      <van-loading type="gradient-circle" color="white" />
+      <van-loading type="spinner" color="black" />
+      <van-loading type="spinner" color="white" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-loading type="spinner" color="black" />
-      <van-loading type="spinner" color="white" />
+      <van-loading type="circle" color="black" />
+      <van-loading type="circle" color="white" />
     </demo-block>
   </demo-section>
 </template>
@@ -21,24 +21,30 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: '单色圆环',
-      title2: '渐变色圆环',
-      title3: 'Spinner'
+      title1: 'Circular',
+      title2: 'Spinner',
+      title3: 'Circle'
     },
     'en-US': {
-      title1: 'Solid Circle',
-      title2: 'Gradient Circle',
-      title3: 'Spinner'
+      title1: 'Circular',
+      title2: 'Spinner',
+      title3: 'Circle'
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">
 .demo-loading {
   .van-loading {
     display: inline-block;
-    margin: 10px 0 10px 20px;
+    margin: 5px 0 5px 20px;
+  }
+
+  .van-loading--white {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, .5);
   }
 }
 </style>

@@ -14,16 +14,11 @@
         'van-button--bottom-action': bottomAction
       }
     ]"
-      @click="onClick"
-    >
-    <loading
-      v-if="loading"
-      class="van-button__icon-loading"
-      type="circle"
-      :color="type === 'default' ? 'black' : 'white'"
-    />
+    @click="onClick"
+  >
+    <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />
     <span class="van-button__text">
-      <slot></slot>
+      <slot>{{ text }}</slot>
     </span>
   </component>
 </template>
@@ -35,6 +30,7 @@ export default create({
   name: 'van-button',
 
   props: {
+    text: String,
     block: Boolean,
     loading: Boolean,
     disabled: Boolean,

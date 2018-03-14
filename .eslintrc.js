@@ -16,6 +16,10 @@ module.exports = {
 
   plugins: ['vue'],
 
+  extends: [
+    'plugin:vue/strongly-recommended'
+  ],
+
   globals: {
     expect: true,
     sinon: true,
@@ -42,7 +46,6 @@ module.exports = {
     'eol-last': 2,
     'eqeqeq': [2, 'allow-null'],
     'generator-star-spacing': [2, { 'before': true, 'after': true }],
-    'handle-callback-err': [2, '^(err|error)$' ],
     'indent': [2, 2, { 'SwitchCase': 1 }],
     'jsx-quotes': [2, 'prefer-double'],
     'key-spacing': [2, { 'beforeColon': false, 'afterColon': true }],
@@ -142,6 +145,17 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [2, 'always', { objectsInObjects: false }],
     'array-bracket-spacing': [2, 'never'],
-    'vue/jsx-uses-vars': 2
+    'vue/jsx-uses-vars': 2,
+    'vue/require-v-for-key': 0,
+    "vue/require-default-prop": 0,
+    "vue/name-property-casing": 0,
+    "vue/no-unused-vars": 0,
+    'vue/max-attributes-per-line': [2, {
+      "singleline": 5,
+      "multiline": {
+        "max": 5,
+        "allowFirstLine": false
+      }
+    }]
   }
 }

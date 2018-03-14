@@ -7,7 +7,7 @@
 
     <demo-block :title="$t('title2')">
       <van-button @click="show2 = true">{{ $t('button2') }}</van-button>
-      <van-actionsheet v-model="show2" :actions="actions" :cancelText="$t('cancel')" />
+      <van-actionsheet v-model="show2" :actions="actions" :cancel-text="$t('cancel')" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -27,14 +27,16 @@ export default {
       button2: '弹出带取消按钮的 Actionsheet',
       button3: '弹出带标题的 Actionsheet',
       title2: '带取消按钮的 Actionsheet',
-      title3: '带标题的 Actionsheet'
+      title3: '带标题的 Actionsheet',
+      description: '描述信息'
     },
     'en-US': {
       button1: 'Show Actionsheet',
       button2: 'Show Actionsheet with cancel button',
       button3: 'Show Actionsheet with title',
       title2: 'Actionsheet with cancel button',
-      title3: 'Actionsheet with title'
+      title3: 'Actionsheet with title',
+      description: 'Description'
     }
   },
 
@@ -50,7 +52,7 @@ export default {
     actions() {
       return [
         { name: this.$t('option'), callback: this.onClick },
-        { name: this.$t('option') },
+        { name: this.$t('option'), subname: this.$t('description') },
         { name: this.$t('option'), loading: true }
       ];
     }

@@ -51,7 +51,6 @@ export default {
 };
 </script>
 
-
 <style lang="postcss">
 .demo-switch {
   .van-switch {

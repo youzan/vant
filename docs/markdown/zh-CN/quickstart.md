@@ -1,6 +1,4 @@
-## Vant
-
-基于`Vue 2.0`的 Mobile 组件库
+## 快速上手
 
 ### 安装
 
@@ -34,7 +32,7 @@ import { Button } from 'vant';
 #### 方式二. 按需引入组件
 
 ```js
-import { Button } from 'vant/lib/button';
+import Button from 'vant/lib/button';
 import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```

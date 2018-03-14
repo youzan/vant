@@ -2,13 +2,23 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
-      <van-popup v-model="show1">{{ $t('content') }}</van-popup>
+      <van-popup v-model="show1" prevent-scroll>{{ $t('content') }}</van-popup>
     </demo-block>
 
     <demo-block :title="$t('position')">
       <van-button @click="show2 = true;">{{ $t('button2') }}</van-button>
-      <van-popup v-model="show2" position="bottom">
-        <van-button @click="showDialog">{{ $t('button3') }}</van-button>
+
+      <van-popup v-model="show2" position="bottom" prevent-scroll>
+        <van-tabs>
+          <van-tab class="custom-pane" title="Tab1">
+            <ul class="scroller">
+              <li v-for="i in 30" :key="i" class="list-item">{{ i }} item item item</li>
+            </ul>
+          </van-tab>
+          <van-tab class="custom-pane" title="Tab2">
+            <p class="long-text">Lorem ipsum dolor sit amet, quis interdum et sollicitudin consectetuer scelerisque, gravida nulla consequatur dis mauris non morbi, dictum leo enim elementum ac wisi nullam, nam orci erat. Ultrices est. Nunc penatibus vel varius odio. Ullamcorper placerat amet amet sed, urna tempor, elit elit at. Eget congue. Sed proin metus sapien libero, pulvinar ut, ut aenean fermentum magna placerat dapibus voluptas, sed at lacinia pede fermentum rutrum et. Vitae nulla sapien vel in hac felis, montes in donec nulla eu volutpat augue.</p>
+          </van-tab>
+        </van-tabs>
       </van-popup>
 
       <van-button @click="show3 = true">{{ $t('button4') }}</van-button>
@@ -21,7 +31,7 @@
         <van-button @click="show4 = false">{{ $t('button6') }}</van-button>
       </van-popup>
     </demo-block>
-  </demo-section> 
+  </demo-section>
 </template>
 
 <script>
@@ -53,7 +63,7 @@ export default {
       show2: false,
       show3: false,
       show4: false
-    }
+    };
   },
 
   watch: {
@@ -71,7 +81,7 @@ export default {
       Dialog.confirm({
         title: 'confirm标题',
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      })
+      });
     }
   }
 };
@@ -92,6 +102,25 @@ export default {
     &--bottom {
       width: 100%;
       height: 200px;
+      padding: 0;
+      border-radius: 0;
+    }
+
+    .van-tabs__content {
+      height: 166px;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      .list-item {
+        padding: 10px 10px;
+        &:not(:last-child) {
+          border-bottom: 1px solid #f9f9f9;
+        }
+      }
+      .long-text {
+        padding: 10px;
+        line-height: 1.4;
+        color: #666;
+      }
     }
 
     &--top {

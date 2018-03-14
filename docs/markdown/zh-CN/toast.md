@@ -18,7 +18,10 @@ Toast('我是提示文案，建议不超过十五字~');
 #### 加载提示
 
 ```javascript
-Toast.loading({ mask: true });
+Toast.loading({
+  mask: true,
+  message: '加载中...'
+});
 ```
 
 
@@ -62,6 +65,18 @@ export default {
 }
 ```
 
+#### 单例模式
+Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例
+
+```js
+Toast.allowMultiple();
+
+const toast1 = Toast('第一个 Toast');
+const toast2 = Toast.success('第二个 Toast');
+
+toast1.clear();
+toast2.clear();
+```
 
 
 ### 方法
@@ -72,7 +87,10 @@ export default {
 | Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
 | Toast.success | `options | message` | toast 实例 | 展示成功提示 |
 | Toast.fail | `options | message` | toast 实例 | 展示失败提示 |
-| Toast.clear | - | `void` | 关闭提示 |
+| Toast.clear | `clearAll` | `void` | 关闭提示 |
+| Toast.allowMultiple | - | `void` | 允许同时存在多个 Toast |
+| Toast.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Toast 生效 |
+| Toast.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Toast 生效 |
 
 ### Options
 

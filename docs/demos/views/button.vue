@@ -5,7 +5,7 @@
       <van-button type="primary">{{ $t('primary') }}</van-button>
       <van-button type="danger">{{ $t('danger') }}</van-button>
     </demo-block>
-    
+
     <demo-block :title="$t('title2')">
       <van-button size="large">{{ $t('large') }}</van-button>
       <van-button size="normal">{{ $t('normal') }}</van-button>
@@ -18,8 +18,8 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button loading></van-button>
-      <van-button loading type="primary"></van-button>
+      <van-button loading />
+      <van-button loading type="primary" />
     </demo-block>
 
     <demo-block :title="$t('title4')">
@@ -29,14 +29,14 @@
     </demo-block>
 
     <demo-block :title="$t('title5')">
-      <van-button type="primary" bottomAction>{{ $t('button') }}</van-button>
+      <van-button type="primary" bottom-action>{{ $t('button') }}</van-button>
 
       <van-row>
         <van-col span="12">
-          <van-button bottomAction>{{ $t('button') }}</van-button>
+          <van-button bottom-action>{{ $t('button') }}</van-button>
         </van-col>
         <van-col span="12">
-          <van-button type="primary" bottomAction>{{ $t('button') }}</van-button>
+          <van-button type="primary" bottom-action>{{ $t('button') }}</van-button>
         </van-col>
       </van-row>
     </demo-block>
@@ -75,9 +75,8 @@ export default {
       mini: 'Mini'
     }
   }
-}
+};
 </script>
-
 
 <style lang="postcss">
 .demo-button {
@@ -92,6 +91,10 @@ export default {
     &--small,
     &--normal {
       margin-right: 10px;
+    }
+
+    .van-loading {
+      margin: 0 18px;
     }
   }
 

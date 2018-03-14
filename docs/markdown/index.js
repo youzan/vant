@@ -1,6 +1,5 @@
 // This file is auto gererated by build/bin/build-entry.js
 import progress from 'nprogress';
-import 'nprogress/nprogress.css';
 
 function wrapper(component) {
   return function(r) {
@@ -19,6 +18,7 @@ export default {
   'zh-CN/address-list': wrapper(r => require.ensure([], () => r(require('./zh-CN/address-list.md')), 'zh-CN/address-list')),
   'zh-CN/area': wrapper(r => require.ensure([], () => r(require('./zh-CN/area.md')), 'zh-CN/area')),
   'zh-CN/badge': wrapper(r => require.ensure([], () => r(require('./zh-CN/badge.md')), 'zh-CN/badge')),
+  'zh-CN/built-in-style': wrapper(r => require.ensure([], () => r(require('./zh-CN/built-in-style.md')), 'zh-CN/built-in-style')),
   'zh-CN/button': wrapper(r => require.ensure([], () => r(require('./zh-CN/button.md')), 'zh-CN/button')),
   'zh-CN/card': wrapper(r => require.ensure([], () => r(require('./zh-CN/card.md')), 'zh-CN/card')),
   'zh-CN/cell-swipe': wrapper(r => require.ensure([], () => r(require('./zh-CN/cell-swipe.md')), 'zh-CN/cell-swipe')),
@@ -26,6 +26,8 @@ export default {
   'zh-CN/changelog-generated': wrapper(r => require.ensure([], () => r(require('./zh-CN/changelog-generated.md')), 'zh-CN/changelog-generated')),
   'zh-CN/changelog': wrapper(r => require.ensure([], () => r(require('./zh-CN/changelog.md')), 'zh-CN/changelog')),
   'zh-CN/checkbox': wrapper(r => require.ensure([], () => r(require('./zh-CN/checkbox.md')), 'zh-CN/checkbox')),
+  'zh-CN/circle': wrapper(r => require.ensure([], () => r(require('./zh-CN/circle.md')), 'zh-CN/circle')),
+  'zh-CN/collapse': wrapper(r => require.ensure([], () => r(require('./zh-CN/collapse.md')), 'zh-CN/collapse')),
   'zh-CN/contact': wrapper(r => require.ensure([], () => r(require('./zh-CN/contact.md')), 'zh-CN/contact')),
   'zh-CN/coupon': wrapper(r => require.ensure([], () => r(require('./zh-CN/coupon.md')), 'zh-CN/coupon')),
   'zh-CN/datetime-picker': wrapper(r => require.ensure([], () => r(require('./zh-CN/datetime-picker.md')), 'zh-CN/datetime-picker')),
@@ -35,8 +37,10 @@ export default {
   'zh-CN/i18n': wrapper(r => require.ensure([], () => r(require('./zh-CN/i18n.md')), 'zh-CN/i18n')),
   'zh-CN/icon': wrapper(r => require.ensure([], () => r(require('./zh-CN/icon.md')), 'zh-CN/icon')),
   'zh-CN/image-preview': wrapper(r => require.ensure([], () => r(require('./zh-CN/image-preview.md')), 'zh-CN/image-preview')),
+  'zh-CN/intro': wrapper(r => require.ensure([], () => r(require('./zh-CN/intro.md')), 'zh-CN/intro')),
   'zh-CN/layout': wrapper(r => require.ensure([], () => r(require('./zh-CN/layout.md')), 'zh-CN/layout')),
   'zh-CN/lazyload': wrapper(r => require.ensure([], () => r(require('./zh-CN/lazyload.md')), 'zh-CN/lazyload')),
+  'zh-CN/list': wrapper(r => require.ensure([], () => r(require('./zh-CN/list.md')), 'zh-CN/list')),
   'zh-CN/loading': wrapper(r => require.ensure([], () => r(require('./zh-CN/loading.md')), 'zh-CN/loading')),
   'zh-CN/nav-bar': wrapper(r => require.ensure([], () => r(require('./zh-CN/nav-bar.md')), 'zh-CN/nav-bar')),
   'zh-CN/notice-bar': wrapper(r => require.ensure([], () => r(require('./zh-CN/notice-bar.md')), 'zh-CN/notice-bar')),
@@ -71,12 +75,15 @@ export default {
   'en-US/address-list': wrapper(r => require.ensure([], () => r(require('./en-US/address-list.md')), 'en-US/address-list')),
   'en-US/area': wrapper(r => require.ensure([], () => r(require('./en-US/area.md')), 'en-US/area')),
   'en-US/badge': wrapper(r => require.ensure([], () => r(require('./en-US/badge.md')), 'en-US/badge')),
+  'en-US/built-in-style': wrapper(r => require.ensure([], () => r(require('./en-US/built-in-style.md')), 'en-US/built-in-style')),
   'en-US/button': wrapper(r => require.ensure([], () => r(require('./en-US/button.md')), 'en-US/button')),
   'en-US/card': wrapper(r => require.ensure([], () => r(require('./en-US/card.md')), 'en-US/card')),
   'en-US/cell-swipe': wrapper(r => require.ensure([], () => r(require('./en-US/cell-swipe.md')), 'en-US/cell-swipe')),
   'en-US/cell': wrapper(r => require.ensure([], () => r(require('./en-US/cell.md')), 'en-US/cell')),
   'en-US/changelog': wrapper(r => require.ensure([], () => r(require('./en-US/changelog.md')), 'en-US/changelog')),
   'en-US/checkbox': wrapper(r => require.ensure([], () => r(require('./en-US/checkbox.md')), 'en-US/checkbox')),
+  'en-US/circle': wrapper(r => require.ensure([], () => r(require('./en-US/circle.md')), 'en-US/circle')),
+  'en-US/collapse': wrapper(r => require.ensure([], () => r(require('./en-US/collapse.md')), 'en-US/collapse')),
   'en-US/contact': wrapper(r => require.ensure([], () => r(require('./en-US/contact.md')), 'en-US/contact')),
   'en-US/coupon': wrapper(r => require.ensure([], () => r(require('./en-US/coupon.md')), 'en-US/coupon')),
   'en-US/datetime-picker': wrapper(r => require.ensure([], () => r(require('./en-US/datetime-picker.md')), 'en-US/datetime-picker')),
@@ -86,8 +93,10 @@ export default {
   'en-US/i18n': wrapper(r => require.ensure([], () => r(require('./en-US/i18n.md')), 'en-US/i18n')),
   'en-US/icon': wrapper(r => require.ensure([], () => r(require('./en-US/icon.md')), 'en-US/icon')),
   'en-US/image-preview': wrapper(r => require.ensure([], () => r(require('./en-US/image-preview.md')), 'en-US/image-preview')),
+  'en-US/intro': wrapper(r => require.ensure([], () => r(require('./en-US/intro.md')), 'en-US/intro')),
   'en-US/layout': wrapper(r => require.ensure([], () => r(require('./en-US/layout.md')), 'en-US/layout')),
   'en-US/lazyload': wrapper(r => require.ensure([], () => r(require('./en-US/lazyload.md')), 'en-US/lazyload')),
+  'en-US/list': wrapper(r => require.ensure([], () => r(require('./en-US/list.md')), 'en-US/list')),
   'en-US/loading': wrapper(r => require.ensure([], () => r(require('./en-US/loading.md')), 'en-US/loading')),
   'en-US/nav-bar': wrapper(r => require.ensure([], () => r(require('./en-US/nav-bar.md')), 'en-US/nav-bar')),
   'en-US/notice-bar': wrapper(r => require.ensure([], () => r(require('./en-US/notice-bar.md')), 'en-US/notice-bar')),

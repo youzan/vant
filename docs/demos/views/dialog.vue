@@ -8,6 +8,26 @@
     <demo-block :title="$t('title2')">
       <van-button @click="onClickConfirm">Confirm</van-button>
     </demo-block>
+
+    <demo-block :title="$t('advancedUsage')">
+      <van-button @click="show = true">{{ $t('advancedUsage') }}</van-button>
+      <van-dialog
+        v-model="show"
+        @confirm="show = false"
+      >
+        <van-field
+          v-model="username"
+          :label="$t('username')"
+          :placeholder="$t('usernamePlaceholder')"
+        />
+        <van-field
+          v-model="password"
+          type="password"
+          :label="$t('password')"
+          :placeholder="$t('passwordPlaceholder')"
+        />
+      </van-dialog>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -24,6 +44,14 @@ export default {
       title2: 'Confirm dialog',
       alert2: 'Alert without title'
     }
+  },
+
+  data() {
+    return {
+      show: false,
+      username: '',
+      password: ''
+    };
   },
 
   methods: {
@@ -44,16 +72,15 @@ export default {
       Dialog.confirm({
         title: this.$t('title'),
         message: this.$t('content')
-      })
+      });
     }
   }
 };
 </script>
 
-
 <style lang="postcss">
 .demo-dialog {
-  .van-button {
+  .van-doc-demo-block > .van-button {
     margin: 15px;
   }
 }

@@ -4,8 +4,7 @@
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+Vue.use(Swipe).use(SwipeItem);
 ```
 
 ### Usage
@@ -46,17 +45,39 @@ export default {
 }
 ```
 
+#### change event
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    onChange(index) {
+      Toast('Current Swipe index:' + index);
+    }
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | autoplay | Autoplay interval (ms) | `Number` | - | - |
 | duration | Animation duration (ms) | `Number` | `500` | - |
-| showIndicators | Whether to show indocators | `Boolean` | `true` | - |
-| initialSwipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
+| loop | Whether to enable loop | `Boolean` | `true` | - |
+| show-indicators | Whether to show indocators | `Boolean` | `true` | - |
+| initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when current swipe change | index: index of current swipe |

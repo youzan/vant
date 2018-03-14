@@ -6,7 +6,7 @@
         'mobile-nav-group__title--open': isOpen
       }"
       @click="handleNavTitleClick">
-      {{group.groupName}}
+      {{ group.groupName }}
     </div>
     <div class="mobile-nav-group__list-wrapper" :class="{ 'mobile-nav-group__list-wrapper--open': isOpen }">
       <ul class="mobile-nav-group__list" :class="{ 'mobile-nav-group__list--open': isOpen }">
@@ -22,7 +22,7 @@
                 {{ navItem.title }}
               </p>
             </router-link>
-            <van-icon name="arrow"></van-icon>
+            <van-icon name="arrow" />
           </li>
         </template>
       </ul>
@@ -79,6 +79,10 @@ export default {
     line-height: 56px;
     position: relative;
     user-select: none;
+
+    &:active {
+      background-color: $active-color;
+    }
 
     &--open {
       color: #999;

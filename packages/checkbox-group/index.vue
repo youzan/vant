@@ -1,6 +1,6 @@
 <template>
   <div class="van-checkbox-group">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
@@ -12,7 +12,11 @@ export default create({
 
   props: {
     value: {},
-    disabled: Boolean
+    disabled: Boolean,
+    max: {
+      default: 0,
+      type: Number
+    }
   },
 
   watch: {

@@ -54,7 +54,7 @@ export default {
 
 ```html
 <van-picker
-  showToolbar
+  show-toolbar
   :title="标题"
   :columns="columns"
   @cancel="onCancel"
@@ -116,16 +116,36 @@ export default {
 };
 ```
 
+#### 加载状态
+当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示
+
+```html
+<van-picker :columns="columns" loading />
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| showToolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
 | title | 顶部栏标题 | `String` | `''` | - |
-| itemHeight | 选项高度 | `Number` | `44` | - |
-| visibileColumnCount | 可见的选项个数 | `Number` | `5` | - |
-| valueKey | 选项对象中，文字对应的 key | `String` | `text` | - |
+| loading | 是否显示加载状态 | `Boolean` | `false` | - |
+| confirm-button-text | 确认按钮文字 | `String` | `完成` | - |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
+| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
+
+### Event
+Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| confirm | 点击完成按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
+| cancel | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
+| change | 选项改变时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，当前列对应的索引 |
+
 
 ### Columns 数据结构
 当传入多列数据时，`columns`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`

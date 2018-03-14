@@ -13,9 +13,9 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-progress :pivotText="$t('red')" color="#ed5050" :percentage="26" />
-      <van-progress :pivotText="$t('orange')" color="#f60" :percentage="46" />
-      <van-progress :pivotText="$t('yellow')" color="#f09000" :percentage="66" />
+      <van-progress :pivot-text="$t('red')" color="#ed5050" :percentage="26" />
+      <van-progress :pivot-text="$t('orange')" color="#f60" :percentage="46" />
+      <van-progress :pivot-text="$t('yellow')" color="#f09000" :percentage="66" />
     </demo-block>
   </demo-section>
 </template>
@@ -32,7 +32,7 @@ export default {
       title3: 'Custom Style'
     }
   }
-}
+};
 </script>
 
 <style lang="postcss">
@@ -44,5 +44,5 @@ export default {
       margin-top: 10px;
     }
   }
-} 
+}
 </style>

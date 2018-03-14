@@ -3,10 +3,9 @@ The PasswordInput component is usually used with [NumberKeyboard](#/en-US/compon
 
 ### Install
 ``` javascript
-import { PasswordInput, NumberKeyBoard } from 'vant';
+import { PasswordInput, NumberKeyboard } from 'vant';
 
-Vue.use(PasswordInput);
-Vue.use(NumberKeyBoard);
+Vue.use(PasswordInput).use(NumberKeyboard);
 ```
 
 ### Usage
@@ -57,10 +56,10 @@ export default {
 | value | Password value | `String` | `''` | - |
 | length | Maxlength of password | `Number` | `6` | - |
 | info | Bottom info | `String` | - | - |
-| errorInfo | Bottom error info | `String` | - | - |
+| error-info | Bottom error info | `String` | - | - |
 
 ### Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | focus | Triggered when input get focused | - |

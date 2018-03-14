@@ -9,14 +9,14 @@
       rows="1"
       :value="value"
       :error="isError"
-      :onIconClick="onIconClick"
+      :on-icon-click="onIconClick"
       @input="$emit('input', $event)"
-      @focus="handleFocus"
-      @blur="handleBlur"
+      @focus="onFocus"
+      @blur="onBlur"
     >
       <div slot="icon">
         <span v-if="showIcon && isAndroid" class="van-address-edit-detail__finish-edit">{{ $t('complete') }}</span>
-        <icon v-else-if="showIcon" name="clear"  />
+        <icon v-else-if="showIcon" name="clear" />
       </div>
     </field>
 
@@ -25,11 +25,13 @@
         v-for="express in searchResult"
         :key="express.name + express.address"
         class="van-address-edit-detail__suggest-item"
-        @click="onSuggestSelect(express)">
+        clickable
+        @click="onSuggestSelect(express)"
+      >
         <icon name="location" class="van-address-edit-detail__location" />
         <div class="van-address-edit-detail__item-info">
-          <p class="van-address-edit-detail__title">{{ express.name }}</p>
-          <p class="van-address-edit-detail__subtitle">{{ express.address }}</p>
+          <p class="van-address-edit-detail__title" v-if="isString(express.name)">{{ express.name }}</p>
+          <p class="van-address-edit-detail__subtitle" v-if="isString(express.address)">{{ express.address }}</p>
         </div>
       </cell>
     </cell-group>
@@ -77,13 +79,13 @@ export default create({
   },
 
   methods: {
-    handleFocus(e) {
+    onFocus(e) {
       this.isFocused = true;
       this.$emit('focus', e);
       this.$refs.root.scrollIntoView();
     },
 
-    handleBlur(e) {
+    onBlur(e) {
       // wait for click event finished
       setTimeout(() => {
         this.isFocused = false;
@@ -101,6 +103,11 @@ export default create({
 
     onSuggestSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+      this.$emit('select-search', express);
+    },
+
+    isString(str) {
+      return typeof str === 'string';
     }
   }
 });

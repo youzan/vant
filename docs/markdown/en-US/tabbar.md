@@ -4,8 +4,7 @@
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
 
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
+Vue.use(Tabbar).use(TabbarItem);
 ```
 
 ### Usage
@@ -69,7 +68,7 @@ export default {
 
 ### Tabbar Event
 
-| Event | Description | Attribute |
+| Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when change active tab | active: index of current tab |
 

@@ -4,8 +4,7 @@
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
-Vue.use(Swipe);
-Vue.use(SwipeItem);
+Vue.use(Swipe).use(SwipeItem);
 ```
 
 ### 代码演示
@@ -46,14 +45,36 @@ export default {
 }
 ```
 
+#### 监听 change 事件
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    onChange(index) {
+      Toast('当前 Swipe 索引：' + index);
+    }
+  }
+}
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
 | autoplay | 自动轮播间隔，单位为 ms | `Number` | - | - |
 | duration | 动画时长，单位为 ms | `Number` | `500` | - |
-| showIndicators | 是否显示指示器 | `Boolean` | `true` | - |
-| initialSwipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
+| loop | 是否开启循环播放 | `Boolean` | `true` | - |
+| show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
+| initial-swipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
 
 ### 事件
 

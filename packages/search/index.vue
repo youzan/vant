@@ -6,16 +6,14 @@
     <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
       <icon name="search" />
       <input
+        v-bind="$attrs"
+        v-on="listeners"
+        v-refocus="focusStatus"
         type="search"
         class="van-search__input"
-        v-refocus="focusStatus"
         :value="value"
-        :placeholder="placeholder"
-        @input="onInput"
-        @focus="onFocus"
-        @keypress.enter.prevent="onSearch"
       >
-      <icon name="clear" @click="onClean" v-show="isFocus" />
+      <icon name="clear" v-show="isFocus && value" @click="onClean" />
     </div>
     <div class="van-search__action" v-if="showAction">
       <slot name="action">
@@ -32,10 +30,11 @@ import Clickoutside from '../utils/clickoutside';
 export default create({
   name: 'van-search',
 
+  inheritAttrs: false,
+
   props: {
     value: String,
     showAction: Boolean,
-    placeholder: String,
     background: {
       type: String,
       default: '#f2f2f2'
@@ -60,13 +59,34 @@ export default create({
     }
   },
 
+  computed: {
+    listeners() {
+      return {
+        ...this.$listeners,
+        focus: this.onFocus,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
+    }
+  },
+
   methods: {
     onFocus() {
       this.isFocus = true;
+      this.$emit('focus');
     },
 
     onInput(event) {
       this.$emit('input', event.target.value);
+    },
+
+    onKeypress(event) {
+      // press enter
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        this.$emit('search', this.value);
+      }
+      this.$emit('keypress', event);
     },
 
     // refocus after click close icon
@@ -83,12 +103,6 @@ export default create({
     onBack() {
       this.$emit('input', '');
       this.$emit('cancel');
-    },
-
-    onSearch(e) {
-      e.preventDefault();
-      this.$emit('search', this.value);
-      return false;
     },
 
     onClickoutside() {
