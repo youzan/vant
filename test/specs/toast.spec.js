@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import Toast from 'packages/toast';
 
 describe('Toast', () => {
@@ -131,5 +132,10 @@ describe('Toast', () => {
     Toast.resetDefaultOptions();
     const toast2 = Toast(1);
     expect(toast2.duration).to.equal(3000);
+  });
+
+  it('register component', () => {
+    Vue.use(Toast);
+    expect(!!Vue.component('van-toast')).to.be.true;
   });
 });

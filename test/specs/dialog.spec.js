@@ -60,7 +60,7 @@ describe('Dialog', () => {
     expect(Dialog.currentOptions.title).to.equal('');
   });
 
-  it('register dialog component', () => {
+  it('register component', () => {
     Vue.use(Dialog);
     expect(!!Vue.component('van-dialog')).to.be.true;
   });

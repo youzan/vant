@@ -97,8 +97,10 @@ const components = [
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
+  ImagePreview,
   List,
   Loading,
+  Locale,
   NavBar,
   NoticeBar,
   NumberKeyboard,
@@ -127,6 +129,7 @@ const components = [
   TabbarItem,
   Tabs,
   Tag,
+  Toast,
   TreeSelect,
   Uploader
 ];

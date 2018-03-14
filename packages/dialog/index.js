@@ -69,7 +69,7 @@ Dialog.resetDefaultOptions = () => {
 };
 
 Dialog.install = () => {
-  Vue.component(VanDialog.name, VanDialog);
+  Vue.use(VanDialog);
 };
 
 Vue.prototype.$dialog = Dialog;

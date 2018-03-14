@@ -86,6 +86,10 @@ Toast.allowMultiple = (allow = true) => {
   singleton = !allow;
 };
 
+Toast.install = () => {
+  Vue.use(VueToast);
+};
+
 Vue.prototype.$toast = Toast;
 
 export default Toast;
