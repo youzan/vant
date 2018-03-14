@@ -62,10 +62,6 @@ export default create({
     closeOnClickOverlay: {
       type: Boolean,
       default: false
-    },
-    lockOnScroll: {
-      type: Boolean,
-      default: true
     }
   },
 

@@ -77,7 +77,7 @@ export default {
 | cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` | - |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
-| lockOnScroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
+| lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 
 
 #### 高级用法
@@ -132,7 +132,7 @@ export default {
 | cancel-button-text | 取消按钮的文案 | `String` | `取消` | - |
 | overlay | 是否展示蒙层 | `Boolean` | `true` | - |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
-| lock-on-scroll | 是否禁用背景滚动 | `Boolean` | `true` | - |
+| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 
 ### Event
 

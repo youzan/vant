@@ -41,13 +41,12 @@ Use `position` prop to set popup display position
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Whether to show popup | `Boolean` | `false` | - |
 | overlay | Whether to show overlay | `Boolean` | `true` | - |
-| lock-on-scroll | Lock body scroll | `Boolean` | `false` | - |
 | position | Position | `String` | - | `top` `bottom` `right` `left` |
 | overlay-class | Custom overlay class | `String` | `` | - |
 | overlay-style | Custom overlay style | `Object` | - | - |
 | close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` | - |
 | transition | Transition | `String` | `popup-slide` | - |
-| prevent-scroll | Prevent background scroll | `Boolean` | `false` | - |
+| lock-scroll | Whether to lock background scroll | `Boolean` | `true` | - |
 | get-container | Return the mount node for Popup | `Function` | - | `() => HTMLElement` |
 
 ### Event
