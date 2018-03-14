@@ -13,7 +13,8 @@ module.exports = Object.assign({}, config, {
     library: 'vant',
     libraryTarget: 'umd',
     filename: isMinify ? '[name].min.js' : '[name].js',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   externals: {
     vue: {
