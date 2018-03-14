@@ -87,8 +87,6 @@ export default {
 
 <style lang="postcss">
 .demo-popup {
-  height: 10000px;
-
   .van-button {
     margin: 10px 0 10px 15px;
   }
