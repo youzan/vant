@@ -5,14 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
-const cache = {
-  loader: 'cache-loader',
-  options: {
-    cacheDirectory: path.resolve(__dirname, '../node_modules/.cache-loader')
-  }
-};
 
 module.exports = {
+  mode: 'development',
   entry: {
     'vant-docs': './docs/src/index.js',
     'vant-mobile': './docs/src/mobile.js'
@@ -34,7 +29,6 @@ module.exports = {
     stats: 'errors-only'
   },
   resolve: {
-    modules: [path.join(__dirname, '../node_modules'), 'node_modules'],
     extensions: ['.js', '.vue', '.css'],
     alias: {
       vue: 'vue/dist/vue.runtime.esm.js',
@@ -48,7 +42,6 @@ module.exports = {
       {
         test: /\.vue$/,
         use: [
-          cache,
           {
             loader: 'vue-loader',
             options: {
@@ -62,7 +55,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules|vue-router\/|vue-loader\//,
         use: [
-          cache,
           'babel-loader'
         ]
       },
@@ -78,7 +70,6 @@ module.exports = {
       {
         test: /\.md/,
         use: [
-          cache,
           'vue-loader',
           'fast-vue-md-loader'
         ]
@@ -103,11 +94,6 @@ module.exports = {
       filename: 'examples.html',
       inject: true
     }),
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor',
-    //   minChunks: 2,
-    //   filename: isProduction ? 'vendor.[hash:8].js' : 'vendor.js'
-    // }),
     new ExtractTextPlugin({
       filename: isProduction ? '[name].[hash:8].css' : '[name].css',
       allChunks: true

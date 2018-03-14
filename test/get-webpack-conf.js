@@ -4,6 +4,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 function getWebpackConfig(testFileName) {
   return {
+    mode: 'development',
     output: {
       path: path.resolve(process.cwd(), 'dist'),
       publicPath: '/dist/',
