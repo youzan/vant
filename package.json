@@ -68,7 +68,6 @@
     "eslint-plugin-vue": "^4.3.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "fast-vue-md-loader": "^1.0.3",
-    "friendly-errors-webpack-plugin": "^1.6.1",
     "gh-pages": "^1.0.0",
     "html-webpack-plugin": "3.0.6",
     "isparta-loader": "^2.0.0",

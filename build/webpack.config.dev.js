@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
@@ -97,7 +96,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: isProduction ? '[name].[hash:8].css' : '[name].css',
       allChunks: true
-    }),
-    new FriendlyErrorsPlugin()
+    })
   ]
 };
