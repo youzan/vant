@@ -3,8 +3,6 @@
     v-if="!isSkuEmpty"
     v-model="show"
     position="bottom"
-    lock-on-scroll
-    prevent-scroll
     :close-on-click-overlay="closeOnClickOverlay"
     :get-container="getContainer"
   >
