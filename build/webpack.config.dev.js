@@ -14,7 +14,6 @@ module.exports = {
   output: {
     path: path.join(__dirname, '../docs/dist'),
     publicPath: '/',
-    filename: '[name].js',
     chunkFilename: 'async_[name].js'
   },
   devServer: {
@@ -31,9 +30,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.css'],
     alias: {
       vue: 'vue/dist/vue.runtime.esm.js',
-      packages: path.join(__dirname, '../packages'),
-      lib: path.join(__dirname, '../lib'),
-      components: path.join(__dirname, '../docs/src/components')
+      packages: path.join(__dirname, '../packages')
     }
   },
   module: {
@@ -53,9 +50,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules|vue-router\/|vue-loader\//,
-        use: [
-          'babel-loader'
-        ]
+        use: 'babel-loader'
       },
       {
         test: /\.css$/,

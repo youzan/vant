@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const config = require('./webpack.config.dev.js');
+const isMinify = process.argv.indexOf('-p') !== -1;
 
 module.exports = Object.assign({}, config, {
   mode: 'production',
@@ -9,9 +10,9 @@ module.exports = Object.assign({}, config, {
   },
   output: {
     path: path.join(__dirname, '../lib'),
-    filename: '[name].js',
     library: 'vant',
     libraryTarget: 'umd',
+    filename: isMinify ? '[name].min.js' : '[name].js',
     umdNamedDefine: true
   },
   externals: {
@@ -22,5 +23,9 @@ module.exports = Object.assign({}, config, {
       amd: 'vue'
     }
   },
-  plugins: []
+  plugins: [],
+  performance: false,
+  optimization: {
+    minimize: isMinify
+  }
 });
