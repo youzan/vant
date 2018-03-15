@@ -1,7 +1,7 @@
 import { mount } from 'avoriaz';
 import AddressEdit from 'packages/address-edit';
 import AddressDetail from 'packages/address-edit/Detail';
-import areaList from '../../docs/demos/mock/area.json';
+import areaList from '../../docs/demos/mock/area';
 
 describe('AddressEdit', () => {
   let wrapper;

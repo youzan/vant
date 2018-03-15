@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import areaList from '../mock/area.json';
+import areaList from '../mock/area';
 
 export default {
   i18n: {

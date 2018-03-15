@@ -34,7 +34,7 @@ Dialog.defaultOptions = {
   title: '',
   message: '',
   overlay: true,
-  lockOnScroll: true,
+  lockScroll: true,
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,
@@ -69,7 +69,7 @@ Dialog.resetDefaultOptions = () => {
 };
 
 Dialog.install = () => {
-  Vue.component(VanDialog.name, VanDialog);
+  Vue.use(VanDialog);
 };
 
 Vue.prototype.$dialog = Dialog;

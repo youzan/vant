@@ -24,8 +24,7 @@ describe('Popup', () => {
       propsData: {
         value: false,
         zIndex: 100,
-        overlay: false,
-        lockOnScroll: true
+        overlay: false
       }
     });
 
@@ -64,7 +63,6 @@ describe('Popup', () => {
   it('popup prevent scroll', (done) => {
     wrapper = mount(Popup, {
       propsData: {
-        preventScroll: true,
         value: true
       }
     });
@@ -89,7 +87,6 @@ describe('Popup', () => {
   it('popup modal', (done) => {
     wrapper = mount(Popup, {
       propsData: {
-        preventScroll: true,
         value: true
       }
     });
@@ -120,12 +117,12 @@ describe('Popup', () => {
     wrapper = mount(Popup, {
       propsData: {
         overlay: '',
-        lockOnScroll: '',
+        lockScroll: '',
         closeOnClickOverlay: ''
       }
     });
 
-    expect(wrapper.vm.lockOnScroll).to.be.true;
+    expect(wrapper.vm.lockScroll).to.be.true;
   });
 
   it('get container prop', done => {

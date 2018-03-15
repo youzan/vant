@@ -49,7 +49,7 @@ describe('Utils', () => {
     raf(spy);
 
     setTimeout(() => {
-      expect(spy.calledOnce).to.be.true;
+      expect(spy.called).to.be.true;
       cancel(1);
       done();
     }, 50);

@@ -21,10 +21,6 @@ export default create({
       type: Boolean,
       default: true
     },
-    lockOnScroll: {
-      type: Boolean,
-      default: false
-    },
     closeOnClickOverlay: {
       type: Boolean,
       default: true
