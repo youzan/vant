@@ -2,6 +2,7 @@ import Tabs from 'packages/tabs';
 import { mount } from 'avoriaz';
 import TabsTestComponent from '../components/tabs';
 import MoreTabsTestComponent from '../components/more-tabs';
+import { triggerTouch } from '../utils';
 
 describe('Tabs', () => {
   let wrapper;
@@ -114,7 +115,7 @@ describe('Tabs', () => {
     });
   });
 
-  it('sticky', (done) => {
+  it('create a sticky tabs', (done) => {
     wrapper = mount(TabsTestComponent, {
       attachToDocument: true,
       propsData: {
@@ -128,5 +129,35 @@ describe('Tabs', () => {
       expect(wrapper.vm.$children[0].position).to.equal('content-top');
       done();
     }, 30);
+  });
+
+  it('create a swipeable tabs', (done) => {
+    wrapper = mount(TabsTestComponent, {
+      attachToDocument: true,
+      propsData: {
+        swipeable: true
+      }      
+    });
+
+    const tabsContainer = wrapper.find('.van-tabs')[0];
+    const tabContent = wrapper.find('.van-tabs__content')[0];
+
+    expect(tabsContainer.vNode.child.curActive).to.equal(0);
+
+    wrapper.vm.$nextTick(() => {
+      triggerTouch(tabContent, 'touchstart', 0, 0);
+      triggerTouch(tabContent, 'touchmove', -100, 0);
+  
+      setTimeout(() => {
+        expect(tabsContainer.vNode.child.curActive).to.equal(1);
+  
+        triggerTouch(tabContent, 'touchstart', 0, 0);
+        triggerTouch(tabContent, 'touchmove', 100, 0);
+        setTimeout(() => {
+          expect(tabsContainer.vNode.child.curActive).to.equal(0);
+          done();      
+        }, 500);
+      }, 500);
+    })
   });
 });
