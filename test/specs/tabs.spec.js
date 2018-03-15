@@ -147,12 +147,15 @@ describe('Tabs', () => {
     wrapper.vm.$nextTick(() => {
       triggerTouch(tabContent, 'touchstart', 0, 0);
       triggerTouch(tabContent, 'touchmove', -100, 0);
+      triggerTouch(tabContent, 'touchend', 0, 0);
   
       setTimeout(() => {
         expect(tabsContainer.vNode.child.curActive).to.equal(1);
   
         triggerTouch(tabContent, 'touchstart', 0, 0);
         triggerTouch(tabContent, 'touchmove', 100, 0);
+        triggerTouch(tabContent, 'touchend', 0, 0);
+        
         setTimeout(() => {
           expect(tabsContainer.vNode.child.curActive).to.equal(0);
           done();      

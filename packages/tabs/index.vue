@@ -72,11 +72,7 @@ export default create({
       tabs: [],
       position: 'content-top',
       curActive: 0,
-      navBarStyle: {},
-      pos: {
-        x: 0,
-        y: 0
-      }
+      navBarStyle: {}
     };
   },
 
@@ -152,40 +148,46 @@ export default create({
     swipeableHandler(init) {
       const swipeableEl = this.$refs.content;
 
-      this.touchMoveHandler = scrollUtils.debounce(this.watchTouchMove.bind(this), 500);
-
-      (init ? on : off)(swipeableEl, 'touchstart', this.recordTouchStartPosition, true);
-      (init ? on : off)(swipeableEl, 'touchmove', this.touchMoveHandler, true);
+      (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
+      (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
+      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
     },
 
     // record swipe touch start position
-    recordTouchStartPosition(e) {
-      this.pos = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY
-      };
+    onTouchStart(event) {
+      this.startX = event.touches[0].clientX;
+      this.startY = event.touches[0].clientY;
     },
 
     // watch swipe touch move
-    watchTouchMove(e) {
-      const { pos } = this;
-      const dx = e.touches[0].clientX - pos.x;
-      const dy = e.touches[0].clientY - pos.y;
-      const isForward = dx > 0;
-      const isHorizontal = Math.abs(dy) < Math.abs(dx);
+    onTouchMove(event) {
+      event.preventDefault();
+      this.deltaX = event.touches[0].clientX - this.startX;
+      this.direction = this.getDirection(event.touches[0]);
+    },
+
+    // watch swipe touch end
+    onTouchEnd(event) {
+      event.preventDefault();
+      const { direction, deltaX, curActive } = this;
       const minSwipeDistance = 50;
 
       /* istanbul ignore else */
-      if (isHorizontal && Math.abs(dx) >= minSwipeDistance) {
-        const active = +this.curActive;
-
+      if (direction === 'horizontal' && Math.abs(deltaX) >= minSwipeDistance) {
         /* istanbul ignore else */
-        if (isForward && active !== 0) {
-          this.curActive = active - 1;
-        } else if (!isForward && active !== this.tabs.length - 1) {
-          this.curActive = active + 1;
+        if (deltaX > 0 && curActive !== 0) {
+          this.curActive = curActive - 1;
+        } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
+          this.curActive = curActive + 1;
         }
       }
+    },
+
+    // get swipe direction
+    getDirection(touch) {
+      const distanceX = Math.abs(touch.clientX - this.startX);
+      const distanceY = Math.abs(touch.clientY - this.startY);
+      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     },
 
     // adjust tab position
