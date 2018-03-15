@@ -4,6 +4,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 function getWebpackConfig(testFileName) {
   return {
+    mode: 'development',
     output: {
       path: path.resolve(process.cwd(), 'dist'),
       publicPath: '/dist/',
@@ -18,7 +19,7 @@ function getWebpackConfig(testFileName) {
         options: {
           babel: {
             presets: ['env'],
-            plugins: ['transform-runtime']
+            plugins: ['transform-runtime', 'transform-object-rest-spread']
           },
           vue: {
             autoprefixer: false,
@@ -35,7 +36,7 @@ function getWebpackConfig(testFileName) {
     stats: 'errors-only',
     resolve: {
       modules: [path.resolve(process.cwd(), 'node_modules'), 'node_modules'],
-      extensions: ['.js', '.json', '.vue', '.css'],
+      extensions: ['.js', '.vue', '.css'],
       alias: {
         src: path.resolve(process.cwd(), 'src'),
         packages: path.resolve(process.cwd(), 'packages'),
@@ -48,12 +49,12 @@ function getWebpackConfig(testFileName) {
           enforce: 'pre',
           test: /\.js$/,
           exclude: /node_modules|vue-router\/|vue-loader\/|docs|test|src\/index|src\/utils|src\/mixins|packages\/swipe/,
-          use: ['isparta-loader']
+          use: 'isparta-loader'
         },
         {
           test: /\.js$/,
           exclude: /node_modules|vue-router\/|vue-loader\//,
-          use: ['babel-loader']
+          use: 'babel-loader'
         },
         {
           test: /\.(css|pcss)$/,
@@ -111,8 +112,7 @@ function getWebpackConfig(testFileName) {
           ]
         }
       ]
-    },
-    devtool: '#inline-source-map'
+    }
   };
 }
 
