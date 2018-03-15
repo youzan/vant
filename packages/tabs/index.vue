@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="van-tabs__content">
+    <div class="van-tabs__content" ref="content">
       <slot />
     </div>
   </div>
@@ -63,7 +63,8 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
-    }
+    },
+    swipeable: Boolean
   },
 
   data() {
@@ -71,7 +72,11 @@ export default create({
       tabs: [],
       position: 'content-top',
       curActive: 0,
-      navBarStyle: {}
+      navBarStyle: {},
+      pos: {
+        x: 0,
+        y: 0
+      }
     };
   },
 
@@ -115,6 +120,9 @@ export default create({
       if (this.sticky) {
         this.scrollHandler(true);
       }
+      if (this.swipeable) {
+        this.swipeableHandler(true);
+      }
       this.scrollIntoView();
     });
   },
@@ -123,6 +131,10 @@ export default create({
     /* istanbul ignore next */
     if (this.sticky) {
       this.scrollHandler(false);
+    }
+    /* istanbul ignore next */
+    if (this.swipeable) {
+      this.swipeableHandler(false);
     }
   },
 
@@ -133,6 +145,46 @@ export default create({
       (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
       if (init) {
         this.onScroll();
+      }
+    },
+
+    // whether to bind content swipe listener
+    swipeableHandler(init) {
+      const swipeableEl = this.$refs.content;
+
+      this.touchMoveHandler = scrollUtils.debounce(this.watchTouchMove.bind(this), 500);
+
+      (init ? on : off)(swipeableEl, 'touchstart', this.recordTouchStartPosition, true);
+      (init ? on : off)(swipeableEl, 'touchmove', this.touchMoveHandler, true);
+    },
+
+    // record swipe touch start position
+    recordTouchStartPosition(e) {
+      this.pos = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY
+      };
+    },
+
+    // watch swipe touch move
+    watchTouchMove(e) {
+      const { pos } = this;
+      const dx = e.touches[0].clientX - pos.x;
+      const dy = e.touches[0].clientY - pos.y;
+      const isForward = dx > 0;
+      const isHorizontal = Math.abs(dy) < Math.abs(dx);
+      const minSwipeDistance = 50;
+
+      /* istanbul ignore else */
+      if (isHorizontal && Math.abs(dx) >= minSwipeDistance) {
+        const active = +this.curActive;
+
+        /* istanbul ignore else */
+        if (isForward && active !== 0) {
+          this.curActive = active - 1;
+        } else if (!isForward && active !== this.tabs.length - 1) {
+          this.curActive = active + 1;
+        }
       }
     },
 

@@ -124,6 +124,18 @@ export default {
 </van-tabs>
 ```
 
+#### 滑动切换
+
+通过`swipeable`属性可以开启滑动切换tab
+
+```html
+<van-tabs :active="active" swipeable>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
@@ -133,6 +145,7 @@ export default {
 | duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
 | swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
+| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` | - |
 
 ### Tab API
 

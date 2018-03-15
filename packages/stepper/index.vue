@@ -103,6 +103,7 @@ export default create({
     onInput(event) {
       const { value } = event.target;
       this.currentValue = value ? this.correctValue(+value) : value;
+      event.target.value = this.currentValue;
       this.emitInput();
     },
 

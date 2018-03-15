@@ -124,6 +124,18 @@ Use title slot to custom tab title
 </van-tabs>
 ```
 
+#### Swipeable
+
+In swipeable mode, you can switch tabs with swipe gestrue in the content
+
+```html
+<van-tabs :active="active" swipeable>
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | Attribute | Description | Type | Default | Accepted Values |
@@ -132,6 +144,8 @@ Use title slot to custom tab title
 | active | Index of active tab | `String` `Number` | `0` | - |
 | duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
+| sticky | Whether to use sticky mode | `Boolean` | `false` | - |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` | - |
 
 ### Tab API
 
