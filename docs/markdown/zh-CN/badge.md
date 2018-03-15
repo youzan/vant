@@ -15,10 +15,10 @@ Vue.use(Badge);
 
 ```html
 <van-badge-group :active-key="activeKey">
-  <van-badge title="热销榜" @click="onClick" />
-  <van-badge title="花式寿司" @click="onClick" info="8" />
-  <van-badge title="火炽寿司" @click="onClick" info="99" />
-  <van-badge title="手握寿司" @click="onClick" info="199" />
+  <van-badge title="标签名称" @click="onClick" />
+  <van-badge title="标签名称" @click="onClick" info="8" />
+  <van-badge title="标签名称" @click="onClick" info="99" />
+  <van-badge title="标签名称" @click="onClick" info="199" />
 </van-badge-group>
 ```
 

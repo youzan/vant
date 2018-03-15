@@ -54,7 +54,7 @@ export default {
       step2: '商家接单',
       step3: '买家提货',
       step4: '交易完成',
-      title2: '物流描述',
+      title2: '描述信息',
       title3: '竖向步骤条',
       status1: '【城市】物流状态1',
       status2: '【城市】物流状态',

@@ -151,6 +151,7 @@ export default create({
       (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
       (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
       (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
+      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
     },
 
     // record swipe touch start position

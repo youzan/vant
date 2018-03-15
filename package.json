@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
-    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
+    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js",
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color",
