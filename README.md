@@ -6,7 +6,7 @@
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
+<p align="center" style="margin: 30px 0 35px;">A Vue.js 2.0 Mobile UI at YouZan</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
 [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
@@ -18,16 +18,12 @@
 
 ## Features
 
-* 48+ Reusable components
+* 50+ Reusable components
 * 90%+ Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * Support TypeScript
 * Support SSR
-
-<p align="center">
-  <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
-</p >
 
 ## Install
 
@@ -100,7 +96,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 ## Links
 
 * [Documentation](https://www.youzanyun.com/zanui/vant)
-* [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/component/changelog)
+* [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/changelog)
 * [React UI](https://www.youzanyun.com/zanui/zent)
 * [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [Vant Demo](https://github.com/youzan/vant-demo)
