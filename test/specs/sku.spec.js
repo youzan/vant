@@ -55,7 +55,7 @@ describe('Sku', (done) => {
         '.van-stepper__input': '1'
       },
       src: {
-        '.van-sku__goods-img': 'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
+        '.van-sku-header__img-wrap img': 'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
       }
     });
 
@@ -69,7 +69,7 @@ describe('Sku', (done) => {
     wrapper.vm.$nextTick(() => {
       DOMChecker(wrapper, {
         src: {
-          '.van-sku__goods-img': 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg'
+          '.van-sku-header__img-wrap img': 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg'
         }
       });
 
@@ -111,7 +111,7 @@ describe('Sku', (done) => {
       expect(buyCallback.calledOnce).to.be.false;
 
       // 选择完整规格时，未填留言时，弹出toast提示。
-      wrapper.find('.van-sku-row-group')[1].find('.van-sku-row__item')[0].trigger('click');
+      wrapper.find('.van-sku-row')[1].find('.van-sku-row__item')[0].trigger('click');
       buyBtn.trigger('click');
       wrapper.vm.$nextTick(() => {
         expect(toastText.textContent).to.equal('请填写留言1');

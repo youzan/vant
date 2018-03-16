@@ -3,10 +3,6 @@
 
 .van-sku {
   &-container {
-    background: $background-color;
-  }
-
-  &-layout {
     background: $white;
   }
 
@@ -25,14 +21,6 @@
     padding: 12px 0 2px;
   }
 
-  &-row-group {
-    margin: 0 15px 10px 0;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   /* sku header */
   &-header {
     margin-left: 15px;
@@ -46,7 +34,7 @@
       background: $background-color;
       border-radius: 2px;
 
-      .van-sku__goods-img {
+      img {
         position: absolute;
         margin: auto;
         top: 0;
@@ -87,19 +75,22 @@
   }
 
   &__close-icon {
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    color: $gray-dark;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 44px;
-    height: 44px;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAAUVBMVEUAAACfn5+bm5uampqZmZmoqKiampqampqZmZmampqampqbm5ubm5uZmZmqqqqampqampqZmZmampqampqampqbm5ubm5uampqdnZ2ampqZmZkjZXmqAAAAGnRSTlMAFYBC5wm+rdPv1Ckl8wzZxKWicm9eUjoN8nSyS9UAAAFVSURBVDjLvZXbrsIgEEWhtAUU6M1a3f//oSeHWKfuVhv7IC+TkJVhz4UZ9bsThq5uYmzqbgifSV04LI4r9Fs0FRHw/WhCugUz9h6IRdpmryVgzfLGWKC8brEF0E58ObVAsUIrC1y2fFwAW9GdhTfb6oyHZQ3+/C7us39VcgXE79o3sIgylayXdZdpIaJVH08rQnTE9BmeEPXsWMK1rV6m01Xz/dO1g5H3nH6yNcoZNnCPPoOXTjplemYlnR4h2wG9YppZ1WPItsOomGZWjeiyrWEU08wqgzrbBkERfWJWBTTZRiTFNLMqIWZ7x43atQYa+lA33EmG5KyB0yyDApT8/uvWFCCnTvIrtKRuLgqzQktRpNzMCi3l5kaymZXqiGS3blGX2Zl2ftGi6+avqtcsUvN/8a2++LCHRsH+kDkwvg4Mxt2Re3yY85pIsiaOLKD91faz8wcoUxux/aS9awAAAABJRU5ErkJggg==);
-    background-size: 22px 22px;
-    background-repeat: no-repeat;
-    background-position: 7px 10px;
+    text-align: center;
   }
 
   /* sku row */
   &-row {
+    margin: 0 15px 10px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
     &__title {
       font-size: 14px;
       padding-bottom: 10px;
@@ -119,13 +110,13 @@
       border-radius: 3px;
       box-sizing: border-box;
 
-      &.van-sku-row__item--active {
+      &--active {
         color: $white;
         border-color: $red;
         background: $red;
       }
 
-      &.van-sku-row__item--disabled {
+      &--disabled {
         background: $active-color;
         border-color: $gray-light;
         color: $gray;
@@ -147,8 +138,6 @@
   }
 
   &__stepper {
-    top: 7px;
-    left: 4px;
     float: right;
 
     &-title {
@@ -172,6 +161,9 @@
   }
 
   &-messages {
+    padding-bottom: 10px;
+    background: $background-color;
+
     &__image-cell {
       .van-cell__title {
         width: 90px;
@@ -187,7 +179,7 @@
 
     &__header {
       padding: 0 10px;
-      border: 1px solid #e5e5e5;
+      border: 1px solid $gray-light;
       line-height: 24px;
       border-radius: 3px;
       font-size: 12px;
@@ -199,18 +191,13 @@
       }
     }
 
-    &__imglist {
-      @mixin clearfix;
-    }
-
-    &__img-container {
+    &__img {
       height: 60px;
       width: 60px;
-      margin-top: 10px;
-      margin-right: 10px;
       float: left;
+      margin: 10px 10px 0 0;
       position: relative;
-      border: #e5e5e5 1px solid;
+      border: $gray-light 1px solid;
 
       img {
         max-width: 100%;
@@ -221,14 +208,19 @@
       }
     }
 
-    &__delete-picture {
+    &__delete {
       position: absolute;
       color: $red;
-      top: -10px;
-      right: -17px;
+      top: -12px;
+      right: -14px;
       z-index: 1;
-      width: 22px;
-      height: 22px;
+      padding: 6px;
+
+      &::before {
+        font-size: 14px;
+        border-radius: 14px;
+        background-color: $white;
+      }
     }
 
     &__uploading {
@@ -246,6 +238,5 @@
   /* sku actions */
   &-actions {
     display: flex;
-    margin-top: 10px;
   }
 }

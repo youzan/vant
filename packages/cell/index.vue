@@ -38,12 +38,10 @@
 
 <script>
 import Icon from '../icon';
-import install from '../utils/install';
 import RouterLink from '../mixins/router-link';
+import create from '../utils/create-basic';
 
-export default {
-  install,
-
+export default create({
   name: 'cell',
 
   components: {
@@ -72,5 +70,5 @@ export default {
       this.routerLink();
     }
   }
-};
+});
 </script>

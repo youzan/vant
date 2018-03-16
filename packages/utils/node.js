@@ -1,3 +1,6 @@
+/**
+ * VNode helper
+ */
 export default {
   name: 'van-node',
   functional: true,
