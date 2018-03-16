@@ -22,7 +22,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-steps',
+  name: 'steps',
 
   props: {
     icon: String,

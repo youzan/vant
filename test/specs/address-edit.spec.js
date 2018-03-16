@@ -99,42 +99,42 @@ describe('AddressEdit', () => {
     const saveButton = wrapper.find('.van-button')[0];
 
     // name empty
-    wrapper.vm.currentInfo.name = '';
+    wrapper.vm.data.name = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // name too long
-    wrapper.vm.currentInfo.name = '111111111111111111111111111';
+    wrapper.vm.data.name = '111111111111111111111111111';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // tel empty
-    wrapper.vm.currentInfo.name = '123';
-    wrapper.vm.currentInfo.tel = '';
+    wrapper.vm.data.name = '123';
+    wrapper.vm.data.tel = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['tel']).to.be.true;
     wrapper.find('.van-field__control')[1].trigger('focus');
     expect(wrapper.vm.errorInfo['tel']).to.be.false;
 
     // area_code empty
-    wrapper.vm.currentInfo.tel = '13000000000';
-    wrapper.vm.currentInfo.area_code = '';
+    wrapper.vm.data.tel = '13000000000';
+    wrapper.vm.data.area_code = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['area_code']).to.be.true;
 
     // area_code invalid
-    wrapper.vm.currentInfo.tel = '13000000000';
-    wrapper.vm.currentInfo.area_code = '-1';
+    wrapper.vm.data.tel = '13000000000';
+    wrapper.vm.data.area_code = '-1';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['area_code']).to.be.true;
 
     // address_detail empty
-    wrapper.vm.currentInfo.area_code = '100000';
-    wrapper.vm.currentInfo.address_detail = '';
+    wrapper.vm.data.area_code = '100000';
+    wrapper.vm.data.address_detail = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.true;
     wrapper.find('.van-field__control')[2].trigger('focus');
@@ -145,26 +145,26 @@ describe('AddressEdit', () => {
     for (let i = 0; i < 300; i++) {
       longAddress += '1';
     }
-    wrapper.vm.currentInfo.address_detail = longAddress;
+    wrapper.vm.data.address_detail = longAddress;
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.true;
     wrapper.find('.van-field__control')[2].trigger('focus');
     expect(wrapper.vm.errorInfo['address_detail']).to.be.false;
 
     // postal_code invalid
-    wrapper.vm.currentInfo.address_detail = '123';
-    wrapper.vm.currentInfo.postal_code = '123';
+    wrapper.vm.data.address_detail = '123';
+    wrapper.vm.data.postal_code = '123';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.true;
     wrapper.find('.van-field__control')[3].trigger('focus');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.false;
 
     // valid result
-    wrapper.vm.currentInfo.postal_code = '123456';
+    wrapper.vm.data.postal_code = '123456';
     saveButton.trigger('click');
 
     // not show postal_code
-    wrapper.vm.currentInfo.postal_code = '156';
+    wrapper.vm.data.postal_code = '156';
     wrapper.vm.showPostal = false;
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['postal_code']).to.be.false;
@@ -235,17 +235,17 @@ describe('AddressEdit', () => {
     wrapper.vm.onAreaConfirm([{ code: -1 }]);
     wrapper.vm.onAreaConfirm([{ code: 1 }, { code: -1 }]);
     wrapper.vm.onAreaConfirm([{ code: 1 }, { code: 1 }, { code: -1 }]);
-    expect(wrapper.vm.currentInfo['area_code']).to.equal('');
+    expect(wrapper.vm.data['area_code']).to.equal('');
 
     wrapper.vm.onAreaConfirm([
       { name: '浙江省' },
       { name: '杭州市' },
       { name: '西湖区', code: '123456' }
     ]);
-    expect(wrapper.vm.currentInfo['province']).to.equal('浙江省');
-    expect(wrapper.vm.currentInfo['city']).to.equal('杭州市');
-    expect(wrapper.vm.currentInfo['county']).to.equal('西湖区');
-    expect(wrapper.vm.currentInfo['area_code']).to.equal('123456');
+    expect(wrapper.vm.data['province']).to.equal('浙江省');
+    expect(wrapper.vm.data['city']).to.equal('杭州市');
+    expect(wrapper.vm.data['county']).to.equal('西湖区');
+    expect(wrapper.vm.data['area_code']).to.equal('123456');
   });
 
   it('delete address', done => {
@@ -308,7 +308,7 @@ describe('AddressEdit', () => {
     wrapper.vm.$nextTick(() => {
       wrapper.find('.van-field__icon')[0].trigger('touchstart');
       wrapper.vm.$nextTick(() => {
-        expect(wrapper.vm.currentInfo.address_detail).to.equal('');
+        expect(wrapper.vm.data.address_detail).to.equal('');
         done();
       });
     });
@@ -352,7 +352,7 @@ describe('AddressEdit', () => {
 
     wrapper.setProps({ addressInfo });
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.currentInfo.name).to.equal('123');
+      expect(wrapper.vm.data.name).to.equal('123');
       done();
     });
   });
@@ -375,7 +375,7 @@ describe('AddressEdit', () => {
 
     wrapper.vm.setAreaCode('110101');
     setTimeout(() => {
-      expect(wrapper.vm.currentInfo.area_code).to.eql('110101');
+      expect(wrapper.vm.data.area_code).to.eql('110101');
       expect(wrapper.vm.getArea()).to.eql([
         { code: '110000', name: '北京市' },
         { code: '110100', name: '北京市' },
@@ -399,22 +399,22 @@ describe('AddressEdit', () => {
       }
     });
 
-    expect(wrapper.vm.currentInfo.city).to.equal('');
+    expect(wrapper.vm.data.city).to.equal('');
     wrapper.vm.areaList = areaList;
 
     setTimeout(() => {
-      expect(wrapper.vm.currentInfo.city).to.equal('温州市');
+      expect(wrapper.vm.data.city).to.equal('温州市');
 
       wrapper.vm.addressInfo = { area_code: '' };
       wrapper.vm.areaList = {};
 
       setTimeout(() => {
-        expect(wrapper.vm.currentInfo.city).to.equal('');
+        expect(wrapper.vm.data.city).to.equal('');
         wrapper.vm.areaList = areaList;
         wrapper.vm.addressInfo = { area_code: '330304' };
 
         setTimeout(() => {
-          expect(wrapper.vm.currentInfo.city).to.equal('温州市');
+          expect(wrapper.vm.data.city).to.equal('温州市');
           done();
         }, 50);
       });

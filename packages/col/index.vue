@@ -12,7 +12,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-col',
+  name: 'col',
 
   props: {
     span: [Number, String],

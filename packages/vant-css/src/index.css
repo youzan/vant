@@ -4,10 +4,6 @@
 
 /* base */
 @import './base.css';
-@import './icon.css';
-@import './loading.css';
-@import './button.css';
-@import './cell.css';
 
 /* common components */
 @import './col.css';

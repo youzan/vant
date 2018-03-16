@@ -20,7 +20,7 @@ import VanButton from '../../button';
 import { create } from '../../utils';
 
 export default create({
-  name: 'van-sku-actions',
+  name: 'sku-actions',
 
   components: {
     VanButton

@@ -22,7 +22,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-coupon-item',
+  name: 'coupon-item',
 
   props: {
     data: Object,

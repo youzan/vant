@@ -11,7 +11,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-switch',
+  name: 'switch',
 
   props: {
     value: Boolean,

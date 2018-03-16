@@ -36,7 +36,7 @@ import VanButton from '../button';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-dialog',
+  name: 'dialog',
 
   components: {
     VanButton

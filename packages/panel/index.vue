@@ -20,7 +20,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-panel',
+  name: 'panel',
   props: {
     desc: String,
     title: String,

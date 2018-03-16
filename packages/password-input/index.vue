@@ -17,7 +17,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-password-input',
+  name: 'password-input',
 
   props: {
     info: String,

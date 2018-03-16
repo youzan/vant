@@ -27,7 +27,7 @@ import Clickoutside from '../utils/clickoutside';
 const THRESHOLD = 0.15;
 
 export default create({
-  name: 'van-cell-swipe',
+  name: 'cell-swipe',
 
   props: {
     onClose: Function,

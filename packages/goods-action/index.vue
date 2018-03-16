@@ -8,6 +8,6 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-goods-action'
+  name: 'goods-action'
 });
 </script>

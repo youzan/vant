@@ -23,18 +23,14 @@
 
 <script>
 import { create } from '../utils';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
 
 export default create({
-  name: 'van-address-list',
+  name: 'address-list',
 
   components: {
-    Cell,
     Radio,
-    CellGroup,
     RadioGroup
   },
 

@@ -46,7 +46,7 @@ import Loading from '../../loading';
 import { create } from '../../utils';
 
 export default create({
-  name: 'van-sku-img-uploader',
+  name: 'sku-img-uploader',
 
   components: {
     'van-uploader': Uploader,

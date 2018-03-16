@@ -8,7 +8,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-checkbox-group',
+  name: 'checkbox-group',
 
   props: {
     value: {},

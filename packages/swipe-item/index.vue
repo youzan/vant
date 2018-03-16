@@ -8,7 +8,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-swipe-item',
+  name: 'swipe-item',
 
   data() {
     return {

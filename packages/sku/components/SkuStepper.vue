@@ -25,7 +25,7 @@ import { LIMIT_TYPE } from '../constants';
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default create({
-  name: 'van-sku-stepper',
+  name: 'sku-stepper',
 
   components: {
     Stepper

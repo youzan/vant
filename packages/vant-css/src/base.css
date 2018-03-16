@@ -7,3 +7,7 @@
 @import "./common/ellipsis.css";
 @import "./common/hairline.css";
 @import "./common/animation.css";
+@import './icon.css';
+@import './loading.css';
+@import './button.css';
+@import './cell.css';

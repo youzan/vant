@@ -24,7 +24,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-stepper',
+  name: 'stepper',
 
   props: {
     value: {},

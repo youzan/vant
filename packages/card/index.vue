@@ -30,7 +30,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-card',
+  name: 'card',
 
   props: {
     thumb: String,

@@ -30,20 +30,16 @@
 <script>
 import { create } from '../../utils';
 import Field from '../../field';
-import CellGroup from '../../cell-group';
-import Cell from '../../cell';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
 export default create({
-  name: 'van-sku-messages',
+  name: 'sku-messages',
 
   components: {
     SkuImgUploader,
-    Field,
-    Cell,
-    CellGroup
+    Field
   },
 
   props: {

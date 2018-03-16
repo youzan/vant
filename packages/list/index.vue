@@ -16,7 +16,7 @@ import utils from '../utils/scroll';
 import { on, off } from '../utils/event';
 
 export default create({
-  name: 'van-list',
+  name: 'list',
 
   model: {
     prop: 'loading'

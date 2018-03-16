@@ -31,7 +31,7 @@ const DEFAULT_DURATION = 200;
 const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
 export default create({
-  name: 'van-picker-column',
+  name: 'picker-column',
 
   props: {
     valueKey: String,

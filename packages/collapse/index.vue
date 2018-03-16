@@ -8,7 +8,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-collapse',
+  name: 'collapse',
 
   model: {
     prop: 'activeNames'

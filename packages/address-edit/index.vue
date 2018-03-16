@@ -5,7 +5,7 @@
         maxlength="15"
         :placeholder="$t('name')"
         :label="$t('label.name', computedAddressText)"
-        v-model="currentInfo.name"
+        v-model="data.name"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
@@ -13,7 +13,7 @@
         type="tel"
         :label="$t('tel')"
         :placeholder="$t('telPlaceholder')"
-        v-model="currentInfo.tel"
+        v-model="data.tel"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
@@ -23,17 +23,17 @@
         :title="$t('area')"
         @click="showArea = true"
       >
-        <span>{{ currentInfo.province || $t('province') }}</span>
-        <span>{{ currentInfo.city || $t('city') }}</span>
-        <span>{{ currentInfo.county || $t('county') }}</span>
+        <span>{{ data.province || $t('province') }}</span>
+        <span>{{ data.city || $t('city') }}</span>
+        <span>{{ data.county || $t('county') }}</span>
       </cell>
       <address-edit-detail
-        :value="currentInfo.address_detail"
+        :value="data.address_detail"
         :is-error="errorInfo.address_detail"
         :show-search-result="showSearchResult"
         :search-result="searchResult"
         @focus="onFocus('address_detail')"
-        @blur="onDetailBlur"
+        @blur="detailFocused = false"
         @input="onChangeDetail"
         @select-search="$emit('select-search', $event)"
       />
@@ -43,7 +43,7 @@
         type="tel"
         :label="$t('label.postal')"
         :placeholder="$t('placeholder.postal')"
-        v-model="currentInfo.postal_code"
+        v-model="data.postal_code"
         maxlength="6"
         class="van-hairline--top"
         :error="errorInfo.postal_code"
@@ -53,7 +53,7 @@
       <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
-        v-model="currentInfo.is_default"
+        v-model="data.is_default"
         :title="$t('defaultAddress', computedAddressText)"
       />
     </cell-group>
@@ -69,7 +69,7 @@
       <van-area
         ref="area"
         :loading="!areaListLoaded"
-        :value="currentInfo.area_code"
+        :value="data.area_code"
         :area-list="areaList"
         @confirm="onAreaConfirm"
         @cancel="showArea = false"
@@ -82,8 +82,6 @@
 /* eslint-disable camelcase */
 import { create, isObj } from '../utils';
 import Field from '../field';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
 import VanButton from '../button';
 import Popup from '../popup';
 import Toast from '../toast';
@@ -106,12 +104,10 @@ const defaultAddress = {
 };
 
 export default create({
-  name: 'van-address-edit',
+  name: 'address-edit',
 
   components: {
     Field,
-    Cell,
-    CellGroup,
     SwitchCell,
     VanButton,
     Popup,
@@ -144,7 +140,7 @@ export default create({
   data() {
     return {
       showArea: false,
-      currentInfo: {
+      data: {
         ...defaultAddress,
         ...this.addressInfo
       },
@@ -162,7 +158,7 @@ export default create({
   watch: {
     addressInfo: {
       handler(val) {
-        this.currentInfo = {
+        this.data = {
           ...defaultAddress,
           ...val
         };
@@ -176,8 +172,8 @@ export default create({
     },
 
     areaList() {
-      if (this.currentInfo.area_code) {
-        this.setAreaCode(this.currentInfo.area_code);
+      if (this.data.area_code) {
+        this.setAreaCode(this.data.area_code);
       }
     }
   },
@@ -204,12 +200,8 @@ export default create({
       this.$emit('focus', key);
     },
 
-    onDetailBlur() {
-      this.detailFocused = false;
-    },
-
     onChangeDetail(val) {
-      this.currentInfo.address_detail = val;
+      this.data.address_detail = val;
       this.$emit('change-detail', val);
     },
 
@@ -223,7 +215,7 @@ export default create({
     },
 
     assignAreaValues(values) {
-      Object.assign(this.currentInfo, {
+      Object.assign(this.data, {
         province: values[0].name,
         city: values[1].name,
         county: values[2].name,
@@ -253,12 +245,12 @@ export default create({
       });
 
       if (isValid && !this.isSaving) {
-        this.$emit('save', this.currentInfo);
+        this.$emit('save', this.data);
       }
     },
 
     getErrorMessageByKey(key) {
-      const value = this.currentInfo[key];
+      const value = this.data[key];
       const { $t } = this;
 
       switch (key) {
@@ -283,7 +275,7 @@ export default create({
       Dialog.confirm({
         message: this.$t('confirmDelete', this.computedAddressText)
       }).then(() => {
-        this.$emit('delete', this.currentInfo);
+        this.$emit('delete', this.data);
       });
     },
 
@@ -295,7 +287,7 @@ export default create({
 
     // set area code to area component
     setAreaCode(code) {
-      this.currentInfo.area_code = code;
+      this.data.area_code = code;
       this.$nextTick(() => {
         this.$nextTick(() => {
           const { area } = this.$refs;

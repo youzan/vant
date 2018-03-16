@@ -21,7 +21,7 @@ import { create, isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
-  name: 'van-checkbox',
+  name: 'checkbox',
 
   mixins: [findParent],
 

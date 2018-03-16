@@ -15,7 +15,7 @@ import { create } from '../utils';
 import { raf, cancel } from '../utils/raf';
 
 export default create({
-  name: 'van-circle',
+  name: 'circle',
 
   props: {
     text: String,

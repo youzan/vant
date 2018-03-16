@@ -24,7 +24,7 @@ import { create } from '../utils';
 const STYLE_LIST = ['success', 'fail', 'loading'];
 
 export default create({
-  name: 'van-toast',
+  name: 'toast',
 
   props: {
     mask: Boolean,

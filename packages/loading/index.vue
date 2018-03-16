@@ -15,7 +15,7 @@ import install from '../utils/install';
 export default {
   install,
 
-  name: 'van-loading',
+  name: 'loading',
 
   props: {
     size: String,

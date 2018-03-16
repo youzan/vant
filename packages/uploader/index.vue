@@ -16,7 +16,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-uploader',
+  name: 'uploader',
 
   inheritAttrs: false,
 

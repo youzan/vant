@@ -28,7 +28,7 @@ import { create } from '../utils';
 import Clickoutside from '../utils/clickoutside';
 
 export default create({
-  name: 'van-search',
+  name: 'search',
 
   inheritAttrs: false,
 

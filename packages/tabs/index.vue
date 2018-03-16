@@ -40,7 +40,7 @@ import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 
 export default create({
-  name: 'van-tabs',
+  name: 'tabs',
 
   components: {
     VanNode
