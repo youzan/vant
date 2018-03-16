@@ -214,7 +214,7 @@ export default create({
     },
 
     onAreaConfirm(values) {
-      if (values.some(value => +value.code === -1)) {
+      if (values.length !== 3 || values.some(value => +value.code === -1)) {
         return Toast(this.$t('areaEmpty'));
       }
       this.assignAreaValues(values);
