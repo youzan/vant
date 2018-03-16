@@ -15,7 +15,7 @@
 import { create } from '../../utils';
 
 export default create({
-  name: 'van-sku-row-item',
+  name: 'sku-row-item',
 
   props: {
     skuEventBus: Object,

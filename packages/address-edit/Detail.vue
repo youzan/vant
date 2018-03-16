@@ -41,17 +41,13 @@
 <script>
 import { create } from '../utils';
 import Field from '../field';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
 import { isAndroid } from '../utils';
 
 export default create({
-  name: 'van-address-edit-detail',
+  name: 'address-edit-detail',
 
   components: {
-    Field,
-    Cell,
-    CellGroup
+    Field
   },
 
   props: {

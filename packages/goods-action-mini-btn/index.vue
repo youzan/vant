@@ -10,7 +10,7 @@ import { create } from '../utils';
 import RouterLink from '../mixins/router-link';
 
 export default create({
-  name: 'van-goods-action-mini-btn',
+  name: 'goods-action-mini-btn',
 
   mixins: [RouterLink],
 

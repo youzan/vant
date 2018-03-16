@@ -8,7 +8,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-row',
+  name: 'row',
 
   props: {
     gutter: {

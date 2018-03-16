@@ -31,7 +31,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-tree-select',
+  name: 'tree-select',
 
   props: {
     items: {

@@ -9,7 +9,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-badge',
+  name: 'badge',
 
   props: {
     url: String,

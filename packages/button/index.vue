@@ -27,7 +27,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-button',
+  name: 'button',
 
   props: {
     text: String,

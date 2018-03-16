@@ -38,7 +38,7 @@ import { create } from '../utils';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-actionsheet',
+  name: 'actionsheet',
 
   mixins: [Popup],
 

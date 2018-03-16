@@ -50,16 +50,11 @@
 
 <script>
 import { create } from '../utils';
-import Cell from '../cell';
 
 export default create({
-  name: 'van-field',
+  name: 'field',
 
   inheritAttrs: false,
-
-  components: {
-    Cell
-  },
 
   props: {
     type: {

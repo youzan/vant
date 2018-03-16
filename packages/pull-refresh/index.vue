@@ -33,7 +33,7 @@ import { create } from '../utils';
 import scrollUtils from '../utils/scroll';
 
 export default create({
-  name: 'van-pull-refresh',
+  name: 'pull-refresh',
 
   props: {
     pullingText: String,

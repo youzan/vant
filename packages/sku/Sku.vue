@@ -120,7 +120,7 @@ import { create } from '../utils';
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
 export default create({
-  name: 'van-sku',
+  name: 'sku',
 
   components: {
     Popup,

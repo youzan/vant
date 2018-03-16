@@ -29,7 +29,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-notice-bar',
+  name: 'notice-bar',
 
   props: {
     text: String,

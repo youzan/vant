@@ -25,7 +25,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-swipe',
+  name: 'swipe',
 
   props: {
     autoplay: Number,

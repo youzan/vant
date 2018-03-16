@@ -17,7 +17,7 @@ import Picker from '../picker';
 const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
 
 export default create({
-  name: 'van-datetime-picker',
+  name: 'datetime-picker',
 
   components: {
     Picker

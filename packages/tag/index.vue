@@ -15,7 +15,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-tag',
+  name: 'tag',
   props: {
     type: String,
     mark: Boolean,

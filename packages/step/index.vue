@@ -15,7 +15,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-step',
+  name: 'step',
 
   beforeCreate() {
     this.$parent.steps.push(this);

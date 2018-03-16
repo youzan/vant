@@ -22,19 +22,15 @@
 </template>
 
 <script>
-import Cell from '../cell';
 import Radio from '../radio';
-import CellGroup from '../cell-group';
 import RadioGroup from '../radio-group';
 import { create } from '../utils';
 
 export default create({
-  name: 'van-contact-list',
+  name: 'contact-list',
 
   components: {
-    Cell,
     Radio,
-    CellGroup,
     RadioGroup
   },
 

@@ -11,7 +11,7 @@ import { create } from '../utils';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-popup',
+  name: 'popup',
 
   mixins: [Popup],
 

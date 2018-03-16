@@ -39,7 +39,7 @@ import { create } from '../utils';
 import Key from './Key';
 
 export default create({
-  name: 'van-number-keyboard',
+  name: 'number-keyboard',
 
   components: { Key },
 

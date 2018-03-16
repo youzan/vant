@@ -5,10 +5,12 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import install from '../utils/install';
 
-export default create({
-  name: 'van-cell-group',
+export default {
+  install,
+
+  name: 'cell-group',
 
   props: {
     border: {
@@ -16,5 +18,5 @@ export default create({
       default: true
     }
   }
-});
+};
 </script>

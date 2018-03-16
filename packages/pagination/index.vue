@@ -34,7 +34,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-pagination',
+  name: 'pagination',
 
   props: {
     value: Number,

@@ -33,7 +33,7 @@ import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
 
 export default create({
-  name: 'van-picker',
+  name: 'picker',
 
   components: {
     PickerColumn

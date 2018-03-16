@@ -24,7 +24,7 @@ import VanButton from '../button';
 import { create } from '../utils';
 
 export default create({
-  name: 'van-submit-bar',
+  name: 'submit-bar',
 
   components: {
     VanButton

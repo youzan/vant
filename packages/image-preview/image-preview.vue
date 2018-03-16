@@ -22,7 +22,7 @@ import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
 export default create({
-  name: 'van-image-preview',
+  name: 'image-preview',
 
   mixins: [Popup],
 

@@ -11,7 +11,7 @@ import install from '../utils/install';
 export default {
   install,
 
-  name: 'van-icon',
+  name: 'icon',
 
   props: {
     name: String,

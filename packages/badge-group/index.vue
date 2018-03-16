@@ -8,7 +8,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-badge-group',
+  name: 'badge-group',
 
   props: {
     activeKey: {

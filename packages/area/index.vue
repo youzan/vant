@@ -20,7 +20,7 @@ import { create, isObj } from '../utils';
 import Picker from '../picker';
 
 export default create({
-  name: 'van-area',
+  name: 'area',
 
   components: {
     Picker

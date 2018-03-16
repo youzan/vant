@@ -21,7 +21,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-contact-card',
+  name: 'contact-card',
 
   props: {
     tel: String,

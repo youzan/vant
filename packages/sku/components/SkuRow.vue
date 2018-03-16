@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'van-sku-row',
+  name: 'sku-row',
 
   props: {
     skuRow: Object

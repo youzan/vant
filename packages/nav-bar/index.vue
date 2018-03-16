@@ -25,7 +25,7 @@
 import { create } from '../utils';
 
 export default create({
-  name: 'van-nav-bar',
+  name: 'nav-bar',
 
   props: {
     title: String,
