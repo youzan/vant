@@ -24,16 +24,13 @@
       <div
         v-for="(img, index) in imgList"
         :key="index"
-        class="van-sku-img-uploader__img-container">
-        <span class="van-sku-img-uploader__delete-picture" @click="$emit('input', '')">
-          <icon name="clear" />
-        </span>
+        class="van-sku-img-uploader__img"
+      >
         <img :src="img">
+        <icon name="clear" class="van-sku-img-uploader__delete" @click="$emit('input', '')" />
       </div>
       <!-- 正在上传的图片,有上传等待提示 -->
-      <div
-        v-if="paddingImg"
-        class="van-sku-img-uploader__img-container">
+      <div v-if="paddingImg" class="van-sku-img-uploader__img">
         <img :src="paddingImg">
         <loading class="van-sku-img-uploader__uploading" type="spinner" color="black" />
       </div>
@@ -81,7 +78,7 @@ export default create({
     afterReadFile(file) {
       // 上传文件
       this.paddingImg = file.content;
-      this.uploadImg(file.file).then(img => {
+      this.uploadImg(file.file, file.content).then(img => {
         this.$emit('input', img);
         this.$nextTick(() => {
           this.paddingImg = '';

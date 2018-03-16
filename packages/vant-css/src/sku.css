@@ -191,12 +191,11 @@
       }
     }
 
-    &__img-container {
+    &__img {
       height: 60px;
       width: 60px;
-      margin-top: 10px;
-      margin-right: 10px;
       float: left;
+      margin: 10px 10px 0 0;
       position: relative;
       border: $gray-light 1px solid;
 
@@ -209,14 +208,19 @@
       }
     }
 
-    &__delete-picture {
+    &__delete {
       position: absolute;
       color: $red;
-      top: -10px;
-      right: -17px;
+      top: -12px;
+      right: -14px;
       z-index: 1;
-      width: 22px;
-      height: 22px;
+      padding: 6px;
+
+      &::before {
+        font-size: 14px;
+        border-radius: 14px;
+        background-color: $white;
+      }
     }
 
     &__uploading {
