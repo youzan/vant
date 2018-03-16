@@ -43,7 +43,7 @@ export const normalizeSkuTree = (skuTree) => {
 // 判断是否所有的sku都已经选中
 export const isAllSelected = (skuTree, selectedSku) => {
   // 筛选selectedSku对象中key值不为空的值
-  const selected = Object.keys(selectedSku).filter(skuKeyStr => selectedSku[skuKeyStr] !== '');
+  const selected = Object.keys(selectedSku).filter(skuKeyStr => selectedSku[skuKeyStr]);
   return skuTree.length === selected.length;
 };
 
@@ -53,8 +53,8 @@ export const getSkuComb = (skuList, selectedSku) => {
     return Object.keys(selectedSku).every(skuKeyStr => {
       return String(skuComb[skuKeyStr]) === String(selectedSku[skuKeyStr]); // eslint-disable-line
     });
-  })[0];
-  return skuComb;
+  });
+  return skuComb[0];
 };
 
 // 获取已选择的sku名称
@@ -72,10 +72,9 @@ export const getSelectedSkuValues = (skuTree, selectedSku) => {
   }, []);
 };
 
-const SkuHelper = {
+export default {
   normalizeSkuTree,
   isAllSelected,
   getSkuComb,
   getSelectedSkuValues
 };
-export default SkuHelper;

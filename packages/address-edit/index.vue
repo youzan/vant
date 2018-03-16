@@ -58,10 +58,10 @@
       />
     </cell-group>
     <div v-show="!hideBottomFields" class="van-address-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveAddress" type="primary">
+      <van-button block :loading="isSaving" @click="onSave" type="primary">
         {{ $t('save') }}
       </van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteAddress" v-if="isEdit">
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
         {{ $t('deleteAddress', computedAddressText) }}
       </van-button>
     </div>
@@ -108,10 +108,10 @@ export default create({
 
   components: {
     Field,
-    SwitchCell,
-    VanButton,
     Popup,
+    SwitchCell,
     VanArea,
+    VanButton,
     AddressEditDetail
   },
 
@@ -223,7 +223,7 @@ export default create({
       });
     },
 
-    onSaveAddress() {
+    onSave() {
       const items = [
         'name',
         'tel',
@@ -267,7 +267,7 @@ export default create({
       }
     },
 
-    onDeleteAddress() {
+    onDelete() {
       if (this.isDeleting) {
         return;
       }

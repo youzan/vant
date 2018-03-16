@@ -7,7 +7,8 @@
         :label="$t('onePic')"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
-        :title="message.name">
+        :title="message.name"
+      >
         <sku-img-uploader
           v-model="messageValues[index].value"
           :upload-img="messageConfig.uploadImg"
@@ -70,6 +71,7 @@ export default create({
     resetMessageValues(messages) {
       return (messages || []).map(() => ({ value: '' }));
     },
+
     getType(message) {
       if (+message.multiple === 1) {
         return 'textarea';
