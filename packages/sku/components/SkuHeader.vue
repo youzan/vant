@@ -6,7 +6,7 @@
     <div class="van-sku-header__goods-info">
       <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
       <!-- price display area -->
-      <slot></slot>
+      <slot />
       <icon name="close" class="van-sku__close-icon" @click="skuEventBus.$emit('sku:close')" />
     </div>
   </div>
