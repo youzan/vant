@@ -1,6 +1,6 @@
 import Area from 'packages/area';
 import { mount } from 'avoriaz';
-import areaList from '../../docs/demos/mock/area.json';
+import areaList from '../../docs/demos/mock/area';
 
 describe('Area', () => {
   let wrapper;

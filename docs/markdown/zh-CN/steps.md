@@ -30,9 +30,9 @@ export default {
 }
 ```
 
-#### 物流描述
+#### 描述信息
 
-通过`title`和`description`属性来定义物流描述信息
+通过`title`和`description`属性来定义描述信息信息
 
 ```html
 <van-steps

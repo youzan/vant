@@ -86,7 +86,7 @@ Vue.use(Field);
     placeholder="请输入留言"
     rows="1"
     autosize
-/>
+  />
 </van-cell-group>
 ```
 
