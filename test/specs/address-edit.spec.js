@@ -262,7 +262,7 @@ describe('AddressEdit', () => {
 
     const deleteButton = wrapper.find('.van-button')[1];
     deleteButton.trigger('click');
-    wrapper.vm.onDeleteAddress();
+    wrapper.vm.onDelete();
 
     setTimeout(() => {
       wrapper.vm.isDeleting = false;

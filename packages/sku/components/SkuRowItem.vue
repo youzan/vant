@@ -5,7 +5,7 @@
       'van-sku-row__item--active': isChoosed,
       'van-sku-row__item--disabled': !isChoosable
     }"
-    @click="onSkuSelected"
+    @click="onSelect"
   >
     {{ skuValue.name }}
   </span>
@@ -41,14 +41,14 @@ export default create({
           return matchedSku[skuKey] == sku[skuKey]; // eslint-disable-line
         });
       });
-      const stock = filteredSku.reduce((total, sku) => (total += sku.stock_num), 0);
 
+      const stock = filteredSku.reduce((total, sku) => (total += sku.stock_num), 0);
       return stock > 0;
     }
   },
 
   methods: {
-    onSkuSelected() {
+    onSelect() {
       if (this.isChoosable) {
         this.skuEventBus.$emit('sku:select', {
           ...this.skuValue,
