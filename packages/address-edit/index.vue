@@ -109,9 +109,9 @@ export default create({
   components: {
     Field,
     Popup,
-    SwitchCell,
     VanArea,
     VanButton,
+    SwitchCell,
     AddressEditDetail
   },
 

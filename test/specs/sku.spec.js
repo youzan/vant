@@ -55,7 +55,7 @@ describe('Sku', (done) => {
         '.van-stepper__input': '1'
       },
       src: {
-        '.van-sku__goods-img': 'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
+        '.van-sku-header__img-wrap img': 'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
       }
     });
 
@@ -69,7 +69,7 @@ describe('Sku', (done) => {
     wrapper.vm.$nextTick(() => {
       DOMChecker(wrapper, {
         src: {
-          '.van-sku__goods-img': 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg'
+          '.van-sku-header__img-wrap img': 'https://img.yzcdn.cn/upload_files/2017/03/16/Fs_OMbSFPa183sBwvG_94llUYiLa.jpeg?imageView2/2/w/100/h/100/q/75/format/jpg'
         }
       });
 
