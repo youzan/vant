@@ -5,7 +5,7 @@
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" style="margin-bottom: 10px;">
 </p>
-<p align="center">A Vue.js 2.0 Mobile UI at YouZan</p>
+<p align="center" style="margin: 30px 0 35px;">A Vue.js 2.0 Mobile UI at YouZan</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
 [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
@@ -15,16 +15,13 @@
 
 ## 特性
 
-* 48+ 个经过有赞线上业务检验的组件
+* 50+ 个经过有赞线上业务检验的组件
 * 单元测试覆盖率超过 90%
-* 完善的文档和示例
+* 完善的中英文文档和示例
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
 * 支持 SSR
-
-<p align="center">
-  <img alt="components preview" src="https://img.yzcdn.cn/public_files/2017/12/05/95f5ee7524b7845abb2f51803a01d65e.png">
-</p >
+* 
  
 ## 安装
 
@@ -105,7 +102,7 @@ Vue.use(Vant);
 ## 链接
 
 * [详细文档](https://www.youzanyun.com/zanui/vant)
-* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/component/changelog)
+* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/changelog)
 * [React 组件库](https://www.youzanyun.com/zanui/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [vant-demo](https://github.com/youzan/vant-demo)
