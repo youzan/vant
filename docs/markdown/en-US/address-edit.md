@@ -98,7 +98,7 @@ export default {
 | address_detail | Detailed Address | `String` |
 | area_code | Area code | `String` |
 | postal_code | Postal code | `String` |
-| is_default | Is default address | `String` |
+| is_default | Is default address | `Boolean` |
 
 #### searchResult Data Structure
 | key | Description | Type |

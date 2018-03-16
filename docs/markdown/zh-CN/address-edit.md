@@ -101,7 +101,7 @@ export default {
 | address_detail | 详细地址 | `String` |
 | area_code | 地区编码，通过省市区选择获取 | `String` |
 | postal_code | 邮政编码 | `String` |
-| is_default | 是否为默认地址 | `String` |
+| is_default | 是否为默认地址 | `Boolean` |
 
 #### searchResult 数据格式
 | key | 说明 | 类型 |
