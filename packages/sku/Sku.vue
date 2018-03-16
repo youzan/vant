@@ -18,10 +18,19 @@
           <sku-header
             :sku-event-bus="skuEventBus"
             :selected-sku="selectedSku"
-            :selected-sku-comb="selectedSkuComb"
             :goods="goods"
             :sku="sku"
-          />
+          >
+            <slot
+              name="sku-header-price"
+              :price="price"
+              :selected-sku-comb="selectedSkuComb"
+            >
+              <div class="van-sku__goods-price">
+                <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
+              </div>
+            </slot>
+          </sku-header>
         </slot>
         <div class="van-sku-body" :style="bodyStyle">
           <!-- sku-body-top -->
@@ -257,6 +266,14 @@ export default create({
         return getSkuComb(this.sku.list, this.selectedSku);
       }
       return null;
+    },
+
+    price() {
+      if (this.selectedSkuComb) {
+        return (this.selectedSkuComb.price / 100).toFixed(2);
+      }
+      // sku.price是一个格式化好的价格区间
+      return this.sku.price;
     },
 
     skuTree() {

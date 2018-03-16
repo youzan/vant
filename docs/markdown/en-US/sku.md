@@ -64,6 +64,12 @@ Vue.use(Sku);
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 >
+  <!-- custom sku-header-price -->
+  <template slot="sku-header-price" slot-scope="props">
+    <div class="van-sku__goods-price">
+      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+    </div>
+  </template>
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
@@ -114,6 +120,7 @@ Vue.use(Sku);
 | Name | Description | 
 |-----------|-----------|
 | sku-header | Custom header |
+| sku-header-price | Custom header price area |
 | sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |

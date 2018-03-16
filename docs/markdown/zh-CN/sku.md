@@ -64,6 +64,12 @@ Vue.use(Sku);
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 >
+  <!-- 自定义 sku-header-price -->
+  <template slot="sku-header-price" slot-scope="props">
+    <div class="van-sku__goods-price">
+      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+    </div>
+  </template>
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
@@ -116,6 +122,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，�
 | 名称 | 说明 | 
 |-----------|-----------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
+| sku-header-price | 自定义sku头部价格展示 |
 | sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
 | sku-group | 商品sku展示区 |
 | extra-sku-group | 额外商品sku展示区，一般用不到 |
