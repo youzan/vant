@@ -4,8 +4,8 @@
       <field
         v-model="currentInfo.name"
         maxlength="30"
-        :label="$t('name')"
-        :placeholder="$t('namePlaceholder')"
+        :label="$t('contact')"
+        :placeholder="$t('name')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />

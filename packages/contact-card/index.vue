@@ -8,7 +8,7 @@
       <template v-else-if="type === 'edit'">
         <icon class="van-contact-card__icon" name="contact" />
         <div class="van-contact-card__text">
-          <div>{{ $t('name') }}：{{ name }}</div>
+          <div>{{ $t('contact') }}：{{ name }}</div>
           <div>{{ $t('tel') }}：{{ tel }}</div>
         </div>
       </template>

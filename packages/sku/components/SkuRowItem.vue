@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {
+import { create } from '../../utils';
+
+export default create({
   name: 'van-sku-row-item',
 
   props: {
@@ -55,5 +57,5 @@ export default {
       }
     }
   }
-};
+});
 </script>
