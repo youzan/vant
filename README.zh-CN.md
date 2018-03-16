@@ -21,7 +21,6 @@
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
 * 支持 SSR
-* 
  
 ## 安装
 
