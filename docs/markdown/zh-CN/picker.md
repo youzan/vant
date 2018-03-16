@@ -131,7 +131,7 @@ export default {
 | show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
 | title | 顶部栏标题 | `String` | `''` | - |
 | loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `完成` | - |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
 | item-height | 选项高度 | `Number` | `44` | - |
 | visible-item-count | 可见的选项个数 | `Number` | `5` | - |

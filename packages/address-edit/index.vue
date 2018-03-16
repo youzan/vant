@@ -3,7 +3,7 @@
     <cell-group>
       <field
         maxlength="15"
-        :placeholder="$t('placeholder.name')"
+        :placeholder="$t('name')"
         :label="$t('label.name', computedAddressText)"
         v-model="currentInfo.name"
         :error="errorInfo.name"
@@ -11,8 +11,8 @@
       />
       <field
         type="tel"
-        :label="$t('label.tel')"
-        :placeholder="$t('placeholder.tel')"
+        :label="$t('tel')"
+        :placeholder="$t('telPlaceholder')"
         v-model="currentInfo.tel"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
@@ -20,12 +20,12 @@
       <cell
         clickable
         class="van-address-edit__area"
-        :title="$t('areaTitle')"
-        @click="showAreaSelect = true"
+        :title="$t('area')"
+        @click="showArea = true"
       >
-        <span>{{ currentInfo.province || $t('placeholder.province') }}</span>
-        <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
-        <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
+        <span>{{ currentInfo.province || $t('province') }}</span>
+        <span>{{ currentInfo.city || $t('city') }}</span>
+        <span>{{ currentInfo.county || $t('county') }}</span>
       </cell>
       <address-edit-detail
         :value="currentInfo.address_detail"
@@ -65,14 +65,14 @@
         {{ $t('deleteAddress', computedAddressText) }}
       </van-button>
     </div>
-    <popup v-model="showAreaSelect" position="bottom">
+    <popup v-model="showArea" position="bottom">
       <van-area
         ref="area"
         :loading="!areaListLoaded"
         :value="currentInfo.area_code"
         :area-list="areaList"
         @confirm="onAreaConfirm"
-        @cancel="showAreaSelect = false"
+        @cancel="showArea = false"
       />
     </popup>
   </div>
@@ -143,7 +143,7 @@ export default create({
 
   data() {
     return {
-      showAreaSelect: false,
+      showArea: false,
       currentInfo: {
         ...defaultAddress,
         ...this.addressInfo
@@ -214,11 +214,11 @@ export default create({
     },
 
     onAreaConfirm(values) {
-      if (values.length !== 3 || +values[0].code === -1 || +values[1].code === -1 || +values[2].code === -1) {
-        return Toast(this.$t('areaWrong'));
+      if (values.length !== 3 || values.some(value => +value.code === -1)) {
+        return Toast(this.$t('areaEmpty'));
       }
       this.assignAreaValues(values);
-      this.showAreaSelect = false;
+      this.showArea = false;
       this.$emit('change-area', values);
     },
 
@@ -265,9 +265,9 @@ export default create({
         case 'name':
           return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return this.telValidator(value) ? '' : $t('telWrong');
+          return this.telValidator(value) ? '' : $t('telInvalid');
         case 'area_code':
-          return value ? +value !== -1 ? '' : $t('areaWrong') : $t('areaEmpty');
+          return value && +value !== -1 ? '' : $t('areaEmpty');
         case 'address_detail':
           return value ? value.length <= 200 ? '' : $t('addressOverlimit') : $t('addressEmpty');
         case 'postal_code':
