@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import { create, isObj } from '../utils';
 
 export default create({
   name: 'field',
@@ -67,7 +67,7 @@ export default create({
     error: Boolean,
     border: Boolean,
     required: Boolean,
-    autosize: Boolean,
+    autosize: [Boolean, Object],
     errorMessage: String,
     onIconClick: {
       type: Function,
@@ -77,21 +77,12 @@ export default create({
 
   watch: {
     value() {
-      if (this.autosize && this.type === 'textarea') {
-        this.$nextTick(this.adjustSize);
-      }
+      this.$nextTick(this.adjustSize);
     }
   },
 
   mounted() {
-    if (this.autosize && this.type === 'textarea') {
-      const el = this.$refs.textarea;
-      const scrollHeight = el.scrollHeight;
-      if (scrollHeight !== 0) {
-        el.style.height = scrollHeight + 'px';
-      }
-      el.style.overflowY = 'hidden';
-    }
+    this.$nextTick(this.adjustSize);
   },
 
   computed: {
@@ -131,9 +122,25 @@ export default create({
     },
 
     adjustSize() {
+      if (!(this.type === 'textarea' && this.autosize)) {
+        return;
+      }
+
       const el = this.$refs.textarea;
       el.style.height = 'auto';
-      el.style.height = el.scrollHeight + 'px';
+
+      let height = el.scrollHeight;
+      if (isObj(this.autosize)) {
+        const { maxHeight, minHeight } = this.autosize;
+        if (maxHeight) {
+          height = Math.min(height, maxHeight);
+        }
+        if (minHeight) {
+          height = Math.max(height, minHeight);
+        }
+      }
+
+      el.style.height = height + 'px';
     }
   }
 });

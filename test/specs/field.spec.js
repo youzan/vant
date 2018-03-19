@@ -66,23 +66,26 @@ describe('Field', () => {
     });
   });
 
-  it('create a textarea field', () => {
+  it('create a textarea field', (done) => {
     wrapper = mount(Field, {
       propsData: {
         type: 'textarea',
-        autosize: false
+        autosize: true
       }
     });
 
-    expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.hasClass('van-field--has-textarea')).to.be.true;
+    setTimeout(() => {
+      expect(wrapper.hasClass('van-field')).to.be.true;
+      expect(wrapper.hasClass('van-field--has-textarea')).to.be.true;
+      done();
+    }, 50);
   });
 
   it('create a autosize textarea field', (done) => {
     wrapper = mount(Field, {
       propsData: {
         type: 'textarea',
-        autosize: true
+        autosize: {}
       }
     });
 
@@ -98,15 +101,49 @@ describe('Field', () => {
     const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
           parseInt(textareaElement.style.paddingTop, 10)) || 0;
 
-    textareaElement.value = 'test';
+    const longText = 'testtesttesttesttesttesttest';
+    textareaElement.value = longText;
     textarea.trigger('input');
 
     wrapper.update();
     setTimeout(() => {
-      expect(wrapper.find('.van-field__control')[0].element.value).to.equal('test');
+      expect(wrapper.find('.van-field__control')[0].element.value).to.equal(longText);
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
       done();
-    }, 500);
+    }, 50);
+  });
+
+  it('autosize object', (done) => {
+    wrapper = mount(Field, {
+      propsData: {
+        type: 'textarea',
+        autosize: {
+          maxHeight: 100,
+          minHeight: 50
+        }
+      }
+    });
+
+    wrapper.vm.$on('input', val => {
+      wrapper.vm.value = val;
+    });
+
+    expect(wrapper.hasClass('van-field')).to.be.true;
+    expect(wrapper.hasClass('van-field--autosize')).to.be.true;
+
+    const textarea = wrapper.find('.van-field__control')[0];
+    const textareaElement = textarea.element;
+
+    const longText = 'testtesttesttesttesttesttest';
+    textareaElement.value = longText;
+    textarea.trigger('input');
+
+    wrapper.update();
+    setTimeout(() => {
+      expect(wrapper.find('.van-field__control')[0].element.value).to.equal(longText);
+      expect(textareaElement.style.height).to.equal(('50px'));
+      done();
+    }, 50);
   });
 
   it('show icon when has value and icon props', () => {
