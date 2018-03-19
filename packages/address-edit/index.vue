@@ -80,7 +80,8 @@
 
 <script>
 /* eslint-disable camelcase */
-import { create, isObj } from '../utils';
+import create from '../utils/create';
+import { isObj } from '../utils';
 import Field from '../field';
 import VanButton from '../button';
 import Popup from '../popup';

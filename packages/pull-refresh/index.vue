@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import scrollUtils from '../utils/scroll';
 
 export default create({

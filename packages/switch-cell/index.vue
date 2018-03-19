@@ -6,7 +6,7 @@
 
 <script>
 import VanSwitch from '../switch';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
   name: 'switch-cell',

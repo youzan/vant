@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import CouponItem from './Item';
 import Field from '../field';
 import VanButton from '../button';

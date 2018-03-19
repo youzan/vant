@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Key from './Key';
 
 export default create({

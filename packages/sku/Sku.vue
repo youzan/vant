@@ -117,7 +117,7 @@ import {
   getSelectedSkuValues
 } from './utils/skuHelper';
 import { LIMIT_TYPE } from './constants';
-import { create } from '../utils';
+import create from '../utils/create';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import VanNode from '../utils/node';

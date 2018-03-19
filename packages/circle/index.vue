@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import { raf, cancel } from '../utils/raf';
 
 export default create({

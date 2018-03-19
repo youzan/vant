@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Clickoutside from '../utils/clickoutside';
 
 export default create({

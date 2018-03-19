@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
   name: 'nav-bar',

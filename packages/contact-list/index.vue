@@ -24,7 +24,7 @@
 <script>
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
   name: 'contact-list',

@@ -49,7 +49,8 @@
 </template>
 
 <script>
-import { create, isObj } from '../utils';
+import create from '../utils/create';
+import { isObj } from '../utils';
 
 export default create({
   name: 'field',
