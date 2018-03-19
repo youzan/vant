@@ -1,5 +1,55 @@
 ## 更新日志
 
+## [v1.0.0](https://github.com/youzan/vant/tree/v1.0.0) (2018-03-19)
+[Full Changelog](https://github.com/youzan/vant/compare/v0.12.14...v1.0.0)
+
+**Breaking changes**
+
+- tab切换应该加上左右切换的操作 [\#208](https://github.com/youzan/vant/issues/208)
+
+**Issue**
+
+- stype scoped无法覆盖部分样式例如dialog的.van-dialog\_\_cancel [\#720](https://github.com/youzan/vant/issues/720)
+- Area组件的Event怎么使用api文档上没有说明 [\#719](https://github.com/youzan/vant/issues/719)
+- 搜索框的用了:show-action="true",会报错，显示不出来 [\#713](https://github.com/youzan/vant/issues/713)
+- 如何改变checkBox 选中状态van-checkbox--checked：background-color呢 已经做了样式覆盖,确未生效 [\#712](https://github.com/youzan/vant/issues/712)
+- Popup的method: click-overlay 无效invalid [\#711](https://github.com/youzan/vant/issues/711)
+- Dialog作为子组件如何关闭 [\#709](https://github.com/youzan/vant/issues/709)
+- checkbox, switch开关等能否通过css或者属性绑定设置尺寸 [\#708](https://github.com/youzan/vant/issues/708)
+- 【文档】关于Radio组件描述残缺 [\#706](https://github.com/youzan/vant/issues/706)
+- 请问一下能自己添加语言吗？ [\#700](https://github.com/youzan/vant/issues/700)
+- van-radio-group样式不一致 [\#697](https://github.com/youzan/vant/issues/697)
+- van-nav-bar  通过 slot 定制内容时 触发click-left 或者 click-right事件出现错误 [\#696](https://github.com/youzan/vant/issues/696)
+- stepper 输入达到最大值，如10，后面输入0变为100，value值正确，但是input显示100很尴尬 [\#691](https://github.com/youzan/vant/issues/691)
+- build 之后 文件应用路径没有引号包裹 [\#679](https://github.com/youzan/vant/issues/679)
+- 关于card组件问题 [\#677](https://github.com/youzan/vant/issues/677)
+
+**Improvements**
+
+- \[Improvement\] Switch: support custom size [\#723](https://github.com/youzan/vant/pull/723) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add click event document [\#722](https://github.com/youzan/vant/pull/722) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: support autosize maxHeight & minHeight [\#718](https://github.com/youzan/vant/pull/718) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] AddressEdit: add show-delete prop [\#716](https://github.com/youzan/vant/pull/716) ([chenjiahan](https://github.com/chenjiahan))
+- Sku header price slot [\#705](https://github.com/youzan/vant/pull/705) ([w91](https://github.com/w91))
+- \[Improvement\] Sku: optimize DOM [\#704](https://github.com/youzan/vant/pull/704) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] extract component common part [\#703](https://github.com/youzan/vant/pull/703) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Locale: optimize i18 config [\#701](https://github.com/youzan/vant/pull/701) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] improve document detail [\#698](https://github.com/youzan/vant/pull/698) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tabs: use touchend event to handle swipe [\#695](https://github.com/youzan/vant/pull/695) ([cookfront](https://github.com/cookfront))
+- \[new feature\] Tabs: support switch tabs with swipe gestrue in the content [\#694](https://github.com/youzan/vant/pull/694) ([cookfront](https://github.com/cookfront))
+- \[Improvement\] upgrade to webpack 4 [\#693](https://github.com/youzan/vant/pull/693) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: support Vue.use to register [\#690](https://github.com/youzan/vant/pull/690) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tag: adjust style [\#689](https://github.com/youzan/vant/pull/689) ([chenjiahan](https://github.com/chenjiahan))
+- \[breaking change\] Popup: add lockScroll instead of lockOnScroll & preventScroll [\#688](https://github.com/youzan/vant/pull/688) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Badge info font weight [\#687](https://github.com/youzan/vant/pull/687) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Actionsheet: border display error [\#686](https://github.com/youzan/vant/pull/686) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CellSwipe: optimzie animation fluency [\#685](https://github.com/youzan/vant/pull/685) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] PullRefresh: support trigger loading animation [\#684](https://github.com/youzan/vant/pull/684) ([chenjiahan](https://github.com/chenjiahan))
+- \[Deprecate\] add Waterfall deprecate tip [\#683](https://github.com/youzan/vant/pull/683) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add List component [\#682](https://github.com/youzan/vant/pull/682) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit: area code observer [\#680](https://github.com/youzan/vant/pull/680) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] add Collapse component [\#674](https://github.com/youzan/vant/pull/674) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14) (2018-03-09)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.13...v0.12.14)
 
