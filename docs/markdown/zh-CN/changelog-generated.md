@@ -1,5 +1,31 @@
 ## 更新日志
 
+## [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1) (2018-03-19)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.0...v1.0.1)
+
+**Breaking changes**
+
+- Waterfall 瀑布流 可以添加一个API不 [\#309](https://github.com/youzan/vant/issues/309)
+
+**Issue**
+
+- Tabs 标签组件 滑动切换问题 [\#725](https://github.com/youzan/vant/issues/725)
+- 在引入Toast后没使用会页面上会出现一个黑块 [\#724](https://github.com/youzan/vant/issues/724)
+- 在使用vant时,首次加载页面时组件尺寸大小正常,再次刷新后组件尺寸缩小 [\#717](https://github.com/youzan/vant/issues/717)
+- 请问AddressEdit 地址编辑 里如何显示删除操作呢？ [\#715](https://github.com/youzan/vant/issues/715)
+- \[共享\]贴出城市数据放置位置，方便大家寻找 \(https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.js\)   [\#714](https://github.com/youzan/vant/issues/714)
+- 为什么Collapse报错了 [\#710](https://github.com/youzan/vant/issues/710)
+- 按照官方文档写show-action为什么会报错 [\#707](https://github.com/youzan/vant/issues/707)
+- Field 组件高度自适应建议加入一个限制最高高度 [\#702](https://github.com/youzan/vant/issues/702)
+- 文档有一处错误，建议修改 [\#699](https://github.com/youzan/vant/issues/699)
+- feature request： PullRefresh 的效果支持手动触发 [\#681](https://github.com/youzan/vant/issues/681)
+- vant组件非常不错,已应用到公司项目中了,还支持ssr.但是能否加一个list组件\(带可以展开和收起那种\) [\#615](https://github.com/youzan/vant/issues/615)
+- Waterfall 和 PullRefresh 在同个页面时，会有冲突 [\#596](https://github.com/youzan/vant/issues/596)
+
+**Improvements**
+
+- \[bugfix\] module circular dependency [\#728](https://github.com/youzan/vant/pull/728) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.0.0](https://github.com/youzan/vant/tree/v1.0.0) (2018-03-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v0.12.14...v1.0.0)
 
