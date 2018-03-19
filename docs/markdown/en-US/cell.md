@@ -82,7 +82,13 @@ Vue.use(Cell).use(CellGroup);
 | is-link | Whether to show link icon | `Boolean` | `false` | - |
 | required | Whether to show required mark | `Boolean` | `false` | - |
 
-### Slot
+### Cell Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when click cell | - |
+
+### Cell Slot
 
 | name | Description |
 |-----------|-----------|
