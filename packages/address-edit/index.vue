@@ -119,6 +119,7 @@ export default create({
     isSaving: Boolean,
     isDeleting: Boolean,
     areaList: Object,
+    showDelete: Boolean,
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
@@ -144,7 +145,6 @@ export default create({
         ...defaultAddress,
         ...this.addressInfo
       },
-      isEdit: !!this.addressInfo.id,
       detailFocused: false,
       errorInfo: {
         name: false,
@@ -162,7 +162,6 @@ export default create({
           ...defaultAddress,
           ...val
         };
-        this.isEdit = !!val.id;
 
         if (val.area_code) {
           this.setAreaCode(val.area_code);
@@ -190,6 +189,10 @@ export default create({
 
     areaListLoaded() {
       return isObj(this.areaList) && Object.keys(this.areaList).length;
+    },
+
+    isEdit() {
+      return this.showDelete || !!this.data.id;
     }
   },
 

@@ -15,6 +15,7 @@ Vue.use(AddressEdit);
 <van-address-edit
   :area-list="areaList"
   show-postal
+  show-delete
   show-set-default
   show-search-result
   :search-result="searchResult"
@@ -63,6 +64,7 @@ export default {
 | search-result | 详细地址搜索结果 | `Array` | `[]` | - |
 | address-text | "地址"文案前缀 | `String` | `收货` | - |
 | show-postal | 是否显示邮政编码 | `Boolean` | `false` | - |
+| show-delete | 是否显示删除按钮 | `Boolean` | `false` | - |
 | show-set-default | 是否显示默认地址栏 | `Boolean` | `false` | - |
 | show-search-result | 是否显示搜索结果 | `Boolean` | `false` | - |
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |

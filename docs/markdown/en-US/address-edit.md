@@ -16,6 +16,7 @@ Vue.use(AddressEdit);
 <van-address-edit
   :area-list="areaList"
   show-postal
+  show-delete
   show-set-default
   show-search-result
   :search-result="searchResult"
@@ -64,6 +65,7 @@ export default {
 | address-info | Address Info | `Object` | `{}` | - |
 | search-result | Address search result | `Array` | `[]` | - |
 | show-postal | Whether to show postal field | `Boolean` | `false` | - |
+| show-delete | Whether to show delete button | `Boolean` | `false` | - |
 | show-set-default | Whether to show default address switch | `Boolean` | `false` | - |
 | show-search-result | Whether to show address search result | `Boolean` | `false` | - |
 | is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
