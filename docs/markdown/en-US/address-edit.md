@@ -16,6 +16,7 @@ Vue.use(AddressEdit);
 <van-address-edit
   :area-list="areaList"
   show-postal
+  show-delete
   show-set-default
   show-search-result
   :search-result="searchResult"
