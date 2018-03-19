@@ -6,11 +6,13 @@
 </template>
 
 <script>
-export default {
+import create from '../../utils/create';
+
+export default create({
   name: 'sku-row',
 
   props: {
     skuRow: Object
   }
-};
+});
 </script>

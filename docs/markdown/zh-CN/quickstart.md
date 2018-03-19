@@ -63,15 +63,3 @@ Vue.use(Vant);
 ```shell
 vue init youzan/vue-cli-template-vant projectName
 ```
-
-### Props 命名风格
-Vant 文档中的 props 默认采用驼峰式命名 (camelCase)。由于 HTML 特性是不区分大小写的，如果在 HTML 中直接书写 Vue 模板，需要使用短横线分割式 (kebab-case) 的命名来传递 props
-
-``` html
-<!-- 在 JavaScript 中使用 camelCase -->
-<van-cell isLink />
-
-<!-- 在 HTML 中使用 kebab-case-->
-<van-cell is-link />
-```
-

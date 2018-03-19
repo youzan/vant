@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { create } from '../../utils';
+import create from '../../utils/create';
 import Field from '../../field';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';

@@ -64,15 +64,3 @@ Vue.use(Vant);
 ```shell
 vue init youzan/vue-cli-template-vant projectName
 ```
-
-### Props Named Style
-HTML attributes are case-insensitive, so when using non-string templates, camelCased prop names need to use their kebab-case (hyphen-delimited) equivalents.
-
-``` html
-<!-- camelCase in JavaScript -->
-<van-cell isLink />
-
-<!-- kebab-case in HTML -->
-<van-cell is-link />
-```
-

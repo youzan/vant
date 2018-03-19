@@ -40,7 +40,7 @@
 
 <script>
 import VanUploader from '../../uploader';
-import { create } from '../../utils';
+import create from '../../utils/create';
 
 export default create({
   name: 'sku-img-uploader',

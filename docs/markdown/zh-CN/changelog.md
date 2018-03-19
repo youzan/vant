@@ -9,7 +9,7 @@
 * 新增 Collapse 组件 [\#674](https://github.com/youzan/vant/pull/674) [@chenjiahan](https://github.com/chenjiahan)
 * 构建: 升级至 webpack 4，优化构建配置 [\#693](https://github.com/youzan/vant/pull/693) [@chenjiahan](https://github.com/chenjiahan)
 * Popup: 新增 lock-scroll 属性，废弃 lock-on-scroll、prevent-scroll 属性 [\#688](https://github.com/youzan/vant/pull/688) [@chenjiahan](https://github.com/chenjiahan)
-* 废弃 Waterfall 组件，推荐使用 List 组件代替 [\#683](https://github.com/youzan/vant/pull/683) [@chenjiahan](https://github.com/chenjiahan)
+* Waterfall 组件不再维护，推荐使用 List 组件代替 [\#683](https://github.com/youzan/vant/pull/683) [@chenjiahan](https://github.com/chenjiahan)
 
 **Improvements**
 
@@ -22,7 +22,7 @@
 * Sku: 新增头部金额 slot [\#705](https://github.com/youzan/vant/pull/705) [@w91](https://github.com/w91)
 * Sku: 优化 DOM 结构 [\#704](https://github.com/youzan/vant/pull/704) [@chenjiahan](https://github.com/chenjiahan)
 * Tab: 支持通过滑动手势进行切换 [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695) [@cookfront](https://github.com/cookfront)
-* Tag: 跳转标签样式 [\#689](https://github.com/youzan/vant/pull/689) [@chenjiahan](https://github.com/chenjiahan)
+* Tag: 调整标签样式 [\#689](https://github.com/youzan/vant/pull/689) [@chenjiahan](https://github.com/chenjiahan)
 * Toast: 支持通过 Vue.use 注册 [\#690](https://github.com/youzan/vant/pull/690) [@chenjiahan](https://github.com/chenjiahan)
 
 

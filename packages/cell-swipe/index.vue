@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Clickoutside from '../utils/clickoutside';
 
 const THRESHOLD = 0.15;

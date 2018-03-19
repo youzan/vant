@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
 

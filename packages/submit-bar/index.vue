@@ -21,7 +21,7 @@
 
 <script>
 import VanButton from '../button';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
   name: 'submit-bar',

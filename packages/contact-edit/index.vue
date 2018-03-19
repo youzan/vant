@@ -31,7 +31,7 @@ import VanButton from '../button';
 import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
   name: 'contact-edit',

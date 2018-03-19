@@ -17,7 +17,8 @@
 
 <script>
 import findParent from '../mixins/find-parent';
-import { create, isDef } from '../utils';
+import create from '../utils/create';
+import { isDef } from '../utils';
 
 export default create({
   name: 'collapse-item',

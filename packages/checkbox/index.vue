@@ -17,7 +17,8 @@
 </template>
 
 <script>
-import { create, isDef } from '../utils';
+import create from '../utils/create';
+import { isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
