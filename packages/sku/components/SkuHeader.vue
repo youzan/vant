@@ -5,9 +5,8 @@
     </div>
     <div class="van-sku-header__goods-info">
       <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
-      <div class="van-sku__goods-price">
-        <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
-      </div>
+      <!-- price display area -->
+      <slot />
       <icon name="close" class="van-sku__close-icon" @click="skuEventBus.$emit('sku:close')" />
     </div>
   </div>
@@ -23,8 +22,7 @@ export default create({
     sku: Object,
     goods: Object,
     skuEventBus: Object,
-    selectedSku: Object,
-    selectedSkuComb: Object
+    selectedSku: Object
   },
 
   computed: {
@@ -33,14 +31,6 @@ export default create({
       const skuImg = this.getSkuImg(s1Id);
       // 优先使用选中sku的图片
       return skuImg || this.goods.picture;
-    },
-
-    price() {
-      if (this.selectedSkuComb) {
-        return (this.selectedSkuComb.price / 100).toFixed(2);
-      }
-      // sku.price是一个格式化好的价格区间
-      return this.sku.price;
     }
   },
 
