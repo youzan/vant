@@ -1,5 +1,13 @@
 ## 更新日志
 
+### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+`2018-03-19`
+
+**Bug Fixes**
+
+- 修复 create 模块循环引用导致某些情况下编译错误的问题 [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
 `2018-03-19`
 

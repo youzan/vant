@@ -1,5 +1,13 @@
 ## Changelog
 
+### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+`2018-03-19`
+
+**Bug Fixes**
+
+- fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
 `2018-03-19`
 
