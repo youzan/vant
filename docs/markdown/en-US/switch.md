@@ -41,7 +41,7 @@ export default {
 #### Advanced usage
 
 ```html
-<van-switch :value="checked" @input="onInput" />
+<van-switch :value="checked" size="36px" @input="onInput" />
 ```
 
 ```js
@@ -71,7 +71,8 @@ export default {
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Check status of Switch | `Boolean` | `false` | - |
 | loading | Whether to show loading icon | `Boolean` | `false` | - |
-| disabled | Disable switch | `Boolean` | `false` | - |
+| disabled | Whether to disable switch | `Boolean` | `false` | - |
+| size | Size of switch | `String` | `30px` | - |
 
 ### Event
 

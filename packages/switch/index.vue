@@ -1,9 +1,16 @@
 <template>
-  <div class="van-switch" :class="[`van-switch--${value ? 'on' : 'off'}`, { 'van-switch--disabled': disabled }]" @click="toggleState">
-    <div class="van-switch__node van-hairline-surround">
+  <div
+    class="van-switch"
+    :class="[{
+      'van-switch--on': value,
+      'van-switch--disabled': disabled
+    }]"
+    :style="style"
+    @click="onClick"
+  >
+    <div class="van-switch__node">
       <loading v-if="loading" class="van-switch__loading" />
     </div>
-    <div class="van-switch__bg" />
   </div>
 </template>
 
@@ -16,11 +23,23 @@ export default create({
   props: {
     value: Boolean,
     loading: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    size: {
+      type: String,
+      default: '30px'
+    }
+  },
+
+  computed: {
+    style() {
+      return {
+        fontSize: this.size
+      };
+    }
   },
 
   methods: {
-    toggleState() {
+    onClick() {
       if (!this.disabled && !this.loading) {
         this.$emit('input', !this.value);
         this.$emit('change', !this.value);

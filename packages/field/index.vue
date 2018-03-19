@@ -127,6 +127,10 @@ export default create({
       }
 
       const el = this.$refs.textarea;
+      if (!el) {
+        return;
+      }
+
       el.style.height = 'auto';
 
       let height = el.scrollHeight;

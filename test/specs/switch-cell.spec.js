@@ -15,7 +15,7 @@ describe('SwitchCell', () => {
 
     DOMChecker(wrapper, {
       count: {
-        '.van-switch--off': 1,
+        '.van-switch--on': 0,
         '.van-switch--disabled': 0
       }
     });
@@ -34,7 +34,7 @@ describe('SwitchCell', () => {
         '.van-cell__text': '测试标题'
       },
       count: {
-        '.van-switch--off': 1,
+        '.van-switch--on': 0,
         '.van-switch--disabled': 0
       }
     });
@@ -66,7 +66,7 @@ describe('SwitchCell', () => {
 
     DOMChecker(wrapper, {
       count: {
-        '.van-switch--off': 1,
+        '.van-switch--on': 0,
         '.van-switch--disabled': 1
       }
     });
