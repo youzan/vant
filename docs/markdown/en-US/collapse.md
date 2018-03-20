@@ -2,9 +2,9 @@
 
 ### Install
 ``` javascript
-import { Collapse } from 'vant';
+import { Collapse, CollapseItem } from 'vant';
 
-Vue.use(Collapse);
+Vue.use(Collapse).use(CollapseItem);
 ```
 
 ### Usage
