@@ -255,7 +255,6 @@ export default create({
       }
       value = this.correctValue(value);
       this.innerValue = value;
-      console.log('value: ', picker.getValues());
       this.$emit('change', picker);
     },
 
