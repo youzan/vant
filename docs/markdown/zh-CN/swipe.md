@@ -22,7 +22,7 @@ Vue.use(Swipe).use(SwipeItem);
 ```
 
 #### 图片懒加载
-配合 [Lazyload](#/zh-CN/component/lazyload) 组件实现图片懒加载
+配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载
 
 ```html
 <van-swipe :autoplay="3000">
