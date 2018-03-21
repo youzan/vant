@@ -1,6 +1,6 @@
 <template>
   <div
-    class="van-nav-bar van-hairline--top-bottom"
+    class="van-nav-bar van-hairline--bottom"
     :class="{ 'van-nav-bar--fixed': fixed }"
     :style="style"
   >
