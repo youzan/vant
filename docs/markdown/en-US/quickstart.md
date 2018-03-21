@@ -1,6 +1,4 @@
-## Vant
-
-Mobile UI Component based on `Vue 2.0`
+## Quickstart
 
 ### Install
 

@@ -112,4 +112,4 @@ export default {
 | address | 详细地址 | `String` |
 
 #### 省市县列表数据格式
-请参考 [Area](#/zh-CN/component/area) 组件。
+请参考 [Area](#/zh-CN/area) 组件。

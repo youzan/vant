@@ -22,7 +22,7 @@ Use `autoplay` prop to set autoplay interval
 ```
 
 #### Image Lazyload
-Use [Lazyload](#/zh-CN/component/lazyload) component to lazyload image
+Use [Lazyload](#/en-US/lazyload) component to lazyload image
 
 ```html
 <van-swipe>

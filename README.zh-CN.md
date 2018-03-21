@@ -80,7 +80,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/component/quickstart).
+更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/quickstart).
 
 ## 贡献代码
 
