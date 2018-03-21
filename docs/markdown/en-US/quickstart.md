@@ -38,6 +38,7 @@ import 'vant/lib/vant-css/button.css';
 ```
  
 #### 3. Import all components
+If you configured babel-plugin-import, you won't be allowed to import all components.
 
 ```js
 import Vue from 'vue';

@@ -1,7 +1,7 @@
 <template>
   <picker
     ref="picker"
-    show-toolbar
+    :show-toolbar="showToolbar"
     :columns="columns"
     :visible-item-count="visibleItemCount"
     @change="onChange"
@@ -27,6 +27,10 @@ export default create({
     type: {
       type: String,
       default: 'datetime'
+    },
+    showToolbar: {
+      type: Boolean,
+      default: true
     },
     format: {
       type: String,
@@ -100,6 +104,7 @@ export default create({
       ];
 
       if (this.type === 'date') result.splice(3, 2);
+      if (this.type === 'date-year-month') result.splice(2, 3);
       return result;
     },
     columns() {
@@ -236,6 +241,9 @@ export default create({
         const month = this.getTrueValue(values[1]);
         const maxDate = this.getMonthEndDay(year, month);
         let date = this.getTrueValue(values[2]);
+        if (this.type === 'date-year-month') {
+          date = 1;
+        }
         date = date > maxDate ? maxDate : date;
         let hour = 0;
         let minute = 0;
@@ -269,6 +277,9 @@ export default create({
             `0${value.getHours()}`.slice(-2),
             `0${value.getMinutes()}`.slice(-2)
           );
+        }
+        if (this.type === 'date-year-month') {
+          values = values.slice(0, 2);
         }
       }
 
