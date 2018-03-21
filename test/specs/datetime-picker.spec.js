@@ -35,6 +35,17 @@ describe('DatetimePicker', () => {
     expect(wrapper.vm.innerValue.getTime()).to.equal(testDate.getTime());
   });
 
+  it('create a date-year-month', () => {
+    wrapper = mount(DatetimePicker, {
+      attachToDocument: true,
+      propsData: {
+        type: 'date-year-month',
+        value: testDate
+      }
+    });
+    expect(wrapper.vm.innerValue.getTime()).to.equal(testDate.getTime());
+  });
+
   it('create a datetime picker', () => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
@@ -88,6 +99,31 @@ describe('DatetimePicker', () => {
         expect(newYear).to.equal(2018);
         expect(newMonth).to.equal(4);
         expect(newDay).to.equal(11);
+        done();
+      }, 10);
+    }, 10);
+  });
+
+  it('drag date-year-month picker', (done) => {
+    wrapper = mount(DatetimePicker, {
+      attachToDocument: true,
+      propsData: {
+        type: 'date-year-month',
+        value: testDate,
+        minDate,
+        maxDate
+      }
+    });
+
+    setTimeout(() => {
+      const [year, month] = wrapper.find('.van-picker-column ul');
+      dragHelper(year, 0, -50);
+      dragHelper(month, 0, -50);
+      setTimeout(() => {
+        const newYear = wrapper.vm.innerValue.getFullYear();
+        const newMonth = wrapper.vm.innerValue.getMonth() + 1;
+        expect(newYear).to.equal(2018);
+        expect(newMonth).to.equal(4);
         done();
       }, 10);
     }, 10);
