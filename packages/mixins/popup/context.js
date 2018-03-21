@@ -1,5 +1,5 @@
-const PopupContext = {
-  idSeed: 1,
+export default {
+  id: 1,
   zIndex: 2000,
   stack: [],
 
@@ -11,5 +11,3 @@ const PopupContext = {
     return this.stack[this.stack.length - 1];
   }
 };
-
-export default PopupContext;

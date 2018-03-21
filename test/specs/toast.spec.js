@@ -8,13 +8,13 @@ describe('Toast', () => {
 
   it('create a empty toast', () => {
     Toast();
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
   });
 
   it('create a toast', () => {
     const toast = Toast('toast');
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.message).to.equal('toast');
     expect(toast.type).to.equal('text');
     expect(toast.displayStyle).to.equal('text');
@@ -24,7 +24,7 @@ describe('Toast', () => {
   it('create a loading toast', () => {
     const toast = Toast.loading();
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.type).to.equal('loading');
   });
 
@@ -33,7 +33,7 @@ describe('Toast', () => {
       message: 'toast'
     });
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.message).to.equal('toast');
     expect(toast.type).to.equal('loading');
   });
@@ -41,7 +41,7 @@ describe('Toast', () => {
   it('create a success toast', () => {
     const toast = Toast.success('success');
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.displayStyle).to.equal('default');
     expect(toast.type).to.equal('success');
   });
@@ -51,7 +51,7 @@ describe('Toast', () => {
       message: 'toast'
     });
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.message).to.equal('toast');
     expect(toast.type).to.equal('success');
   });
@@ -59,7 +59,7 @@ describe('Toast', () => {
   it('create a fail toast', () => {
     const toast = Toast.fail('fail');
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.displayStyle).to.equal('default');
     expect(toast.type).to.equal('fail');
   });
@@ -69,7 +69,7 @@ describe('Toast', () => {
       message: 'toast'
     });
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     expect(toast.message).to.equal('toast');
     expect(toast.type).to.equal('fail');
   });
@@ -80,9 +80,9 @@ describe('Toast', () => {
       forbidClick: true
     });
 
-    expect(document.querySelector('.van-toast-wrapper')).to.exist;
+    expect(document.querySelector('.van-toast')).to.exist;
     setTimeout(() => {
-      expect(document.querySelector('.van-toast__overlay')).to.exist;
+      expect(document.querySelector('.van-modal')).to.exist;
       done();
     }, 50);
   });
@@ -116,11 +116,11 @@ describe('Toast', () => {
     const toast1 = Toast.success('1');
     const toast2 = Toast.success('2');
     Toast.clear();
-    expect(toast1.visible).to.be.false;
-    expect(toast2.visible).to.be.true;
+    expect(toast1.value).to.be.false;
+    expect(toast2.value).to.be.true;
     Toast.clear();
     Toast.clear();
-    expect(toast2.visible).to.be.false;
+    expect(toast2.value).to.be.false;
     Toast.allowMultiple(false);
   });
 

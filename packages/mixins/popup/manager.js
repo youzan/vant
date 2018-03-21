@@ -9,13 +9,13 @@ const defaultConfig = {
 
 export default {
   open(vm, config) {
-    const { id, dom } = config;
-    const exist = context.stack.some(item => item.id === id);
+    const exist = context.stack.some(item => item.id === vm._popupId);
 
     /* istanbul ignore next */
     if (!exist) {
-      const targetNode = dom && dom.parentNode && dom.parentNode.nodeType !== 11 ? dom.parentNode : document.body;
-      context.stack.push({ vm, id, config, targetNode });
+      const el = vm.$el;
+      const targetNode = el && el.parentNode && el.parentNode.nodeType !== 11 ? el.parentNode : document.body;
+      context.stack.push({ vm, config, targetNode });
       this.update();
     };
   },
@@ -24,11 +24,11 @@ export default {
     const { stack } = context;
 
     if (stack.length) {
-      if (context.top.id === id) {
+      if (context.top.vm._popupId === id) {
         stack.pop();
         this.update();
       } else {
-        context.stack = stack.filter(item => item.id !== id);
+        context.stack = stack.filter(item => item.vm._popupId !== id);
       }
     }
   },
@@ -65,10 +65,8 @@ export default {
   onClick() {
     if (context.top) {
       const { vm } = context.top;
-      if (vm) {
-        vm.$emit('click-overlay');
-        vm.closeOnClickOverlay && vm.close();
-      }
+      vm.$emit('click-overlay');
+      vm.closeOnClickOverlay && vm.close();
     }
   }
 };
