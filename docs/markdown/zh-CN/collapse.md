@@ -2,9 +2,9 @@
 
 ### 使用指南
 ``` javascript
-import { Collapse } from 'vant';
+import { Collapse, CollapseItem } from 'vant';
 
-Vue.use(Collapse);
+Vue.use(Collapse).use(CollapseItem);
 ```
 
 ### 代码演示

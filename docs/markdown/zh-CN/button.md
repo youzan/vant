@@ -80,3 +80,9 @@ Vue.use(Button);
 | loading | 是否显示为加载状态 | `Boolean` |  `false` | - |
 | block | 是否为块级元素 | `Boolean` |   `false` | - |
 | bottom-action | 是否为底部行动按钮 | `Boolean` | `false` | - |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 点击按钮且按钮状态不为加载或禁用时触发 | - |

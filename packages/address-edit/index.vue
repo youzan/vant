@@ -3,37 +3,37 @@
     <cell-group>
       <field
         maxlength="15"
-        :placeholder="$t('placeholder.name')"
+        :placeholder="$t('name')"
         :label="$t('label.name', computedAddressText)"
-        v-model="currentInfo.name"
+        v-model="data.name"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
       <field
         type="tel"
-        :label="$t('label.tel')"
-        :placeholder="$t('placeholder.tel')"
-        v-model="currentInfo.tel"
+        :label="$t('tel')"
+        :placeholder="$t('telPlaceholder')"
+        v-model="data.tel"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
       <cell
         clickable
         class="van-address-edit__area"
-        :title="$t('areaTitle')"
-        @click="showAreaSelect = true"
+        :title="$t('area')"
+        @click="showArea = true"
       >
-        <span>{{ currentInfo.province || $t('placeholder.province') }}</span>
-        <span>{{ currentInfo.city || $t('placeholder.city') }}</span>
-        <span>{{ currentInfo.county || $t('placeholder.county') }}</span>
+        <span>{{ data.province || $t('province') }}</span>
+        <span>{{ data.city || $t('city') }}</span>
+        <span>{{ data.county || $t('county') }}</span>
       </cell>
       <address-edit-detail
-        :value="currentInfo.address_detail"
+        :value="data.address_detail"
         :is-error="errorInfo.address_detail"
         :show-search-result="showSearchResult"
         :search-result="searchResult"
         @focus="onFocus('address_detail')"
-        @blur="onDetailBlur"
+        @blur="detailFocused = false"
         @input="onChangeDetail"
         @select-search="$emit('select-search', $event)"
       />
@@ -43,7 +43,7 @@
         type="tel"
         :label="$t('label.postal')"
         :placeholder="$t('placeholder.postal')"
-        v-model="currentInfo.postal_code"
+        v-model="data.postal_code"
         maxlength="6"
         class="van-hairline--top"
         :error="errorInfo.postal_code"
@@ -53,26 +53,26 @@
       <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
-        v-model="currentInfo.is_default"
+        v-model="data.is_default"
         :title="$t('defaultAddress', computedAddressText)"
       />
     </cell-group>
     <div v-show="!hideBottomFields" class="van-address-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveAddress" type="primary">
+      <van-button block :loading="isSaving" @click="onSave" type="primary">
         {{ $t('save') }}
       </van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteAddress" v-if="isEdit">
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
         {{ $t('deleteAddress', computedAddressText) }}
       </van-button>
     </div>
-    <popup v-model="showAreaSelect" position="bottom">
+    <popup v-model="showArea" position="bottom">
       <van-area
         ref="area"
         :loading="!areaListLoaded"
-        :value="currentInfo.area_code"
+        :value="data.area_code"
         :area-list="areaList"
         @confirm="onAreaConfirm"
-        @cancel="showAreaSelect = false"
+        @cancel="showArea = false"
       />
     </popup>
   </div>
@@ -80,10 +80,9 @@
 
 <script>
 /* eslint-disable camelcase */
-import { create, isObj } from '../utils';
+import create from '../utils/create';
+import { isObj } from '../utils';
 import Field from '../field';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
 import VanButton from '../button';
 import Popup from '../popup';
 import Toast from '../toast';
@@ -106,16 +105,14 @@ const defaultAddress = {
 };
 
 export default create({
-  name: 'van-address-edit',
+  name: 'address-edit',
 
   components: {
     Field,
-    Cell,
-    CellGroup,
-    SwitchCell,
-    VanButton,
     Popup,
     VanArea,
+    VanButton,
+    SwitchCell,
     AddressEditDetail
   },
 
@@ -123,6 +120,7 @@ export default create({
     isSaving: Boolean,
     isDeleting: Boolean,
     areaList: Object,
+    showDelete: Boolean,
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
@@ -143,12 +141,11 @@ export default create({
 
   data() {
     return {
-      showAreaSelect: false,
-      currentInfo: {
+      showArea: false,
+      data: {
         ...defaultAddress,
         ...this.addressInfo
       },
-      isEdit: !!this.addressInfo.id,
       detailFocused: false,
       errorInfo: {
         name: false,
@@ -162,11 +159,10 @@ export default create({
   watch: {
     addressInfo: {
       handler(val) {
-        this.currentInfo = {
+        this.data = {
           ...defaultAddress,
           ...val
         };
-        this.isEdit = !!val.id;
 
         if (val.area_code) {
           this.setAreaCode(val.area_code);
@@ -176,8 +172,8 @@ export default create({
     },
 
     areaList() {
-      if (this.currentInfo.area_code) {
-        this.setAreaCode(this.currentInfo.area_code);
+      if (this.data.area_code) {
+        this.setAreaCode(this.data.area_code);
       }
     }
   },
@@ -194,6 +190,10 @@ export default create({
 
     areaListLoaded() {
       return isObj(this.areaList) && Object.keys(this.areaList).length;
+    },
+
+    isEdit() {
+      return this.showDelete || !!this.data.id;
     }
   },
 
@@ -204,26 +204,22 @@ export default create({
       this.$emit('focus', key);
     },
 
-    onDetailBlur() {
-      this.detailFocused = false;
-    },
-
     onChangeDetail(val) {
-      this.currentInfo.address_detail = val;
+      this.data.address_detail = val;
       this.$emit('change-detail', val);
     },
 
     onAreaConfirm(values) {
-      if (values.length !== 3 || +values[0].code === -1 || +values[1].code === -1 || +values[2].code === -1) {
-        return Toast(this.$t('areaWrong'));
+      if (values.length !== 3 || values.some(value => +value.code === -1)) {
+        return Toast(this.$t('areaEmpty'));
       }
       this.assignAreaValues(values);
-      this.showAreaSelect = false;
+      this.showArea = false;
       this.$emit('change-area', values);
     },
 
     assignAreaValues(values) {
-      Object.assign(this.currentInfo, {
+      Object.assign(this.data, {
         province: values[0].name,
         city: values[1].name,
         county: values[2].name,
@@ -231,7 +227,7 @@ export default create({
       });
     },
 
-    onSaveAddress() {
+    onSave() {
       const items = [
         'name',
         'tel',
@@ -253,21 +249,21 @@ export default create({
       });
 
       if (isValid && !this.isSaving) {
-        this.$emit('save', this.currentInfo);
+        this.$emit('save', this.data);
       }
     },
 
     getErrorMessageByKey(key) {
-      const value = this.currentInfo[key];
+      const value = this.data[key];
       const { $t } = this;
 
       switch (key) {
         case 'name':
           return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return this.telValidator(value) ? '' : $t('telWrong');
+          return this.telValidator(value) ? '' : $t('telInvalid');
         case 'area_code':
-          return value ? +value !== -1 ? '' : $t('areaWrong') : $t('areaEmpty');
+          return value && +value !== -1 ? '' : $t('areaEmpty');
         case 'address_detail':
           return value ? value.length <= 200 ? '' : $t('addressOverlimit') : $t('addressEmpty');
         case 'postal_code':
@@ -275,7 +271,7 @@ export default create({
       }
     },
 
-    onDeleteAddress() {
+    onDelete() {
       if (this.isDeleting) {
         return;
       }
@@ -283,7 +279,7 @@ export default create({
       Dialog.confirm({
         message: this.$t('confirmDelete', this.computedAddressText)
       }).then(() => {
-        this.$emit('delete', this.currentInfo);
+        this.$emit('delete', this.data);
       });
     },
 
@@ -295,7 +291,7 @@ export default create({
 
     // set area code to area component
     setAreaCode(code) {
-      this.currentInfo.area_code = code;
+      this.data.area_code = code;
       this.$nextTick(() => {
         this.$nextTick(() => {
           const { area } = this.$refs;

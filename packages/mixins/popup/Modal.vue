@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'van-modal',
+  name: 'modal',
 
   props: {
     visible: Boolean,

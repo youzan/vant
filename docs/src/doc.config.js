@@ -323,7 +323,7 @@ module.exports = {
               },
               {
                 path: '/quickstart',
-                title: 'Getting Started',
+                title: 'Quickstart',
                 noExample: true
               },
               {

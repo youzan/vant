@@ -76,3 +76,9 @@ Use `tag` prop to custom button tag
 | loading | Whether show loading status | `Boolean` | `false` | - |
 | block | Whether to set display block | `Boolean` | `false` | - |
 | bottom-action | Whether to be action button | `Boolean` | `false` | - |
+
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when click button and not disabled or loading | - |

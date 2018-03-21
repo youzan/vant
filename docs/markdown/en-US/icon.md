@@ -29,3 +29,9 @@ import 'vant/lib/vant-css/icon-local.css';
 |-----------|-----------|-----------|-------------|-------------|
 | name | Icon name | `String` | `''` | - |
 | info | Info message | `String` | `''` | - |
+
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when click icon | - |

@@ -33,6 +33,7 @@
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
           :custom-stepper-config="customStepperConfig"
+          :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -54,9 +55,15 @@
           show-add-cart-btn
           reset-stepper-on-hide
           :initial-sku="initialSku"
+          :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         >
+          <template slot="sku-header-price" slot-scope="props">
+            <div class="van-sku__goods-price">
+              <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+            </div>
+          </template>
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
               <van-button bottom-action @click="onPointClicked">{{ $t('button1') }}</van-button>
@@ -119,9 +126,9 @@ export default {
         }
       },
       messageConfig: {
-        uploadImg: () => {
-          return new Promise((resolve) => {
-            setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+        uploadImg: (file, img) => {
+          return new Promise(resolve => {
+            setTimeout(() => resolve(img), 1000);
           });
         },
         uploadMaxSize: 3

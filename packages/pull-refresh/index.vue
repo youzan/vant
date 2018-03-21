@@ -11,10 +11,10 @@
       <div class="van-pull-refresh__head">
         <slot name="normal" v-if="status === 'normal'"/>
         <slot name="pulling" v-if="status === 'pulling'">
-          <span class="van-pull-refresh__text">{{ pullingText || $t('pullingText') }}</span>
+          <span class="van-pull-refresh__text">{{ pullingText || $t('pulling') }}</span>
         </slot>
         <slot name="loosing" v-if="status === 'loosing'">
-          <span class="van-pull-refresh__text">{{ loosingText || $t('loosingText') }}</span>
+          <span class="van-pull-refresh__text">{{ loosingText || $t('loosing') }}</span>
         </slot>
         <slot name="loading" v-if="status === 'loading'">
           <div class="van-pull-refresh__loading">
@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import scrollUtils from '../utils/scroll';
 
 export default create({
-  name: 'van-pull-refresh',
+  name: 'pull-refresh',
 
   props: {
     pullingText: String,

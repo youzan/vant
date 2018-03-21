@@ -1,8 +1,8 @@
 <template>
   <div ref="root">
     <field
-      :label="$t('label.address')"
-      :placeholder="$t('placeholder.address')"
+      :label="$t('label')"
+      :placeholder="$t('placeholder')"
       maxlength="200"
       type="textarea"
       autosize
@@ -39,19 +39,15 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Field from '../field';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
 import { isAndroid } from '../utils';
 
 export default create({
-  name: 'van-address-edit-detail',
+  name: 'address-edit-detail',
 
   components: {
-    Field,
-    Cell,
-    CellGroup
+    Field
   },
 
   props: {

@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import VanButton from '../button';
 import RouterLink from '../mixins/router-link';
 
 export default create({
-  name: 'van-goods-action-big-btn',
+  name: 'goods-action-big-btn',
 
   mixins: [RouterLink],
 

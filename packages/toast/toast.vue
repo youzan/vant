@@ -1,35 +1,33 @@
 <template>
   <transition name="van-fade">
-    <div class="van-toast-wrapper" v-show="visible">
-      <div class="van-toast" :class="[`van-toast--${displayStyle}`, `van-toast--${position}`]">
-        <!-- text only -->
-        <div v-if="displayStyle === 'text'">{{ message }}</div>
-        <div v-if="displayStyle === 'html'" v-html="message" />
+    <div class="van-toast" :class="[`van-toast--${displayStyle}`, `van-toast--${position}`]" v-show="value">
+      <!-- text only -->
+      <div v-if="displayStyle === 'text'">{{ message }}</div>
+      <div v-if="displayStyle === 'html'" v-html="message" />
 
-        <!-- with icon -->
-        <template v-if="displayStyle === 'default'">
-          <loading v-if="type === 'loading'" color="white" />
-          <icon v-else class="van-toast__icon" :name="type" />
-          <div v-if="hasMessage" class="van-toast__text">{{ message }}</div>
-        </template>
-      </div>
-      <div class="van-toast__overlay" :class="{ 'van-toast__overlay--mask': mask }" v-if="forbidClick || mask" />
+      <!-- with icon -->
+      <template v-if="displayStyle === 'default'">
+        <loading v-if="type === 'loading'" color="white" />
+        <icon v-else class="van-toast__icon" :name="type" />
+        <div v-if="hasMessage" class="van-toast__text">{{ message }}</div>
+      </template>
     </div>
   </transition>
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
+import Popup from '../mixins/popup';
 
 const STYLE_LIST = ['success', 'fail', 'loading'];
 
 export default create({
-  name: 'van-toast',
+  name: 'toast',
+
+  mixins: [Popup],
 
   props: {
-    mask: Boolean,
     message: [String, Number],
-    forbidClick: Boolean,
     type: {
       type: String,
       default: 'text'
@@ -37,13 +35,11 @@ export default create({
     position: {
       type: String,
       default: 'middle'
+    },
+    lockScroll: {
+      type: Boolean,
+      default: false
     }
-  },
-
-  data() {
-    return {
-      visible: false
-    };
   },
 
   computed: {

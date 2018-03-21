@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-radio-group',
+  name: 'radio-group',
 
   props: {
     value: {},

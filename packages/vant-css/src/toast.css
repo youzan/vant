@@ -6,7 +6,6 @@
   left: 50%;
   display: flex;  
   color: $white;
-  z-index: 3001;
   font-size: 12px;
   line-height: 1.2;
   border-radius: 5px;
@@ -17,20 +16,6 @@
   box-sizing: border-box;
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(0, 0, 0, .7);
-
-  &__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3000;
-    background-color: transparent;
-
-    &--mask {
-      background-color: rgba(0, 0, 0, .5);
-    }
-  }
 
   &--text {
     padding: 12px;

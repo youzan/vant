@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-stepper',
+  name: 'stepper',
 
   props: {
     value: {},

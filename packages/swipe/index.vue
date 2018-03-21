@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-swipe',
+  name: 'swipe',
 
   props: {
     autoplay: Number,

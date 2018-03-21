@@ -16,11 +16,12 @@
 </template>
 
 <script>
-import { create, isObj } from '../utils';
+import create from '../utils/create';
 import Picker from '../picker';
+import { isObj } from '../utils';
 
 export default create({
-  name: 'van-area',
+  name: 'area',
 
   components: {
     Picker

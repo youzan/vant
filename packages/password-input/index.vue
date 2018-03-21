@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-password-input',
+  name: 'password-input',
 
   props: {
     info: String,

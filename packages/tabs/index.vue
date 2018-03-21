@@ -33,14 +33,14 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 
 export default create({
-  name: 'van-tabs',
+  name: 'tabs',
 
   components: {
     VanNode
@@ -151,6 +151,7 @@ export default create({
       (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
       (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
       (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
+      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
     },
 
     // record swipe touch start position

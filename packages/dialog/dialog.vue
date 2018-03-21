@@ -31,12 +31,12 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import VanButton from '../button';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-dialog',
+  name: 'dialog',
 
   components: {
     VanButton

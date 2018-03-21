@@ -4,6 +4,7 @@
       <van-address-edit
         :area-list="areaList"
         show-postal
+        show-delete
         show-set-default
         show-search-result
         :search-result="searchResult"
@@ -25,7 +26,7 @@ export default {
         name: '黄龙万科中心',
         address: '杭州市西湖区'
       }, {
-        name: '黄龙万科中心H座'
+        name: '黄龙万科中心G座'
       }, {
         name: '黄龙万科中心H座',
         address: '杭州市西湖区'
@@ -33,12 +34,12 @@ export default {
     },
     'en-US': {
       searchResult: [{
-        name: 'Name',
+        name: 'Name1',
         address: 'Address'
       }, {
-        name: 'Name'
+        name: 'Name2'
       }, {
-        name: 'Name',
+        name: 'Name3',
         address: 'Address'
       }]
     }

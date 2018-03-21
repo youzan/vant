@@ -48,20 +48,16 @@
 </template>
 
 <script>
-import { create } from '../utils';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 import CouponItem from './Item';
 import Field from '../field';
 import VanButton from '../button';
 
 export default create({
-  name: 'van-coupon-list',
+  name: 'coupon-list',
 
   components: {
     VanButton,
-    Cell,
-    CellGroup,
     Field,
     CouponItem
   },
