@@ -15,8 +15,6 @@ Vue.use(DatetimePicker);
 <van-datetime-picker
   v-model="currentDate"
   type="datetime"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
   :max-date="maxDate"
 />
@@ -84,7 +82,6 @@ export default {
   type="time"
   :min-hour="minHour"
   :max-hour="maxHour"
-  :min-date="minDate"
 />
 ```
 
@@ -102,11 +99,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 组件类型 | `String` | `datetime` |  `date` `time` `year-month` |
+| type | 组件类型 | `String` | `datetime` |  `date` `time` <br> `year-month` |
 | min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
 | max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
-| min-hour | 可选的最小小时 | `Number` | `0` | - |
-| max-hour | 可选的最大小时 | `Number` | `23` | - |
+| min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` | - |
+| max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` | - |
 | visible-item-count | 每一列可见备选元素的个数 | `Number` | `5` | - |
 
 ### Event

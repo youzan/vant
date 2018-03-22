@@ -4,8 +4,6 @@
       <van-datetime-picker
         v-model="currentDate1"
         type="datetime"
-        :min-hour="minHour"
-        :max-hour="maxHour"
         :min-date="minDate"
         :max-date="maxDate"
       />
@@ -33,7 +31,6 @@
         type="time"
         :min-hour="minHour"
         :max-hour="maxHour"
-        :min-date="minDate"
       />
     </demo-block>
   </demo-section>

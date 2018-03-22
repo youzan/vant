@@ -257,7 +257,6 @@ export default create({
     },
 
     updateColumnValue(value) {
-      console.log(value, this.type);
       let values = [];
       if (this.type === 'time') {
         const currentValue = value.split(':');
