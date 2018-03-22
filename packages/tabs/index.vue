@@ -162,14 +162,12 @@ export default create({
 
     // watch swipe touch move
     onTouchMove(event) {
-      event.preventDefault();
       this.deltaX = event.touches[0].clientX - this.startX;
       this.direction = this.getDirection(event.touches[0]);
     },
 
     // watch swipe touch end
-    onTouchEnd(event) {
-      event.preventDefault();
+    onTouchEnd() {
       const { direction, deltaX, curActive } = this;
       const minSwipeDistance = 50;
 
