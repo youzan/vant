@@ -79,7 +79,7 @@ export default {
         on(document, 'touchmove', this.onTouchMove);
       }
 
-      // this.renderOverlay();
+      this.renderOverlay();
       this.$emit('input', true);
     },
 
