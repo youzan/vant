@@ -3,6 +3,9 @@ export const LIMIT_TYPE = {
   STOCK_LIMIT: 1
 };
 
+export const UNSELECTED_SKU_VALUE_ID = '';
+
 export default {
-  LIMIT_TYPE
+  LIMIT_TYPE,
+  UNSELECTED_SKU_VALUE_ID
 };
