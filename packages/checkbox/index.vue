@@ -5,8 +5,8 @@
       class="van-checkbox__icon"
       :class="[
         `van-checkbox--${shape}`, {
-        'van-checkbox--disabled': isDisabled,
-        'van-checkbox--checked': isChecked
+          'van-checkbox--disabled': isDisabled,
+          'van-checkbox--checked': isChecked
       }]"
       @click="onClick"
     />
