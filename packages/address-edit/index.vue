@@ -4,7 +4,7 @@
       <field
         maxlength="15"
         :placeholder="$t('name')"
-        :label="$t('label.name', computedAddressText)"
+        :label="$t('label.name')"
         v-model="data.name"
         :error="errorInfo.name"
         @focus="onFocus('name')"
@@ -54,7 +54,7 @@
         v-if="showSetDefault"
         v-show="!hideBottomFields"
         v-model="data.is_default"
-        :title="$t('defaultAddress', computedAddressText)"
+        :title="$t('defaultAddress')"
       />
     </cell-group>
     <div v-show="!hideBottomFields" class="van-address-edit__buttons">
@@ -62,7 +62,7 @@
         {{ $t('save') }}
       </van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
-        {{ $t('deleteAddress', computedAddressText) }}
+        {{ $t('deleteAddress') }}
       </van-button>
     </div>
     <popup v-model="showArea" position="bottom">
@@ -124,7 +124,6 @@ export default create({
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
-    addressText: String,
     addressInfo: {
       type: Object,
       default: () => ({ ...defaultAddress })
@@ -156,36 +155,10 @@ export default create({
     };
   },
 
-  watch: {
-    addressInfo: {
-      handler(val) {
-        this.data = {
-          ...defaultAddress,
-          ...val
-        };
-
-        if (val.area_code) {
-          this.setAreaCode(val.area_code);
-        }
-      },
-      deep: true
-    },
-
-    areaList() {
-      if (this.data.area_code) {
-        this.setAreaCode(this.data.area_code);
-      }
-    }
-  },
-
   computed: {
     // hide bottom field when use search && detail get focused
     hideBottomFields() {
       return this.searchResult.length && this.detailFocused;
-    },
-
-    computedAddressText() {
-      return this.addressText || this.$t('addressText');
     },
 
     areaListLoaded() {
@@ -195,6 +168,28 @@ export default create({
     isEdit() {
       return this.showDelete || !!this.data.id;
     }
+  },
+
+  watch: {
+    addressInfo: {
+      handler(val) {
+        this.data = {
+          ...defaultAddress,
+          ...val
+        };
+
+        this.setAreaCode(val.area_code);
+      },
+      deep: true
+    },
+
+    areaList() {
+      this.setAreaCode(this.data.area_code);
+    }
+  },
+
+  created() {
+    this.setAreaCode(this.data.area_code);
   },
 
   methods: {
@@ -277,7 +272,7 @@ export default create({
       }
 
       Dialog.confirm({
-        message: this.$t('confirmDelete', this.computedAddressText)
+        message: this.$t('confirmDelete')
       }).then(() => {
         this.$emit('delete', this.data);
       });
@@ -291,7 +286,7 @@ export default create({
 
     // set area code to area component
     setAreaCode(code) {
-      this.data.area_code = code;
+      this.data.area_code = code || '';
       this.$nextTick(() => {
         this.$nextTick(() => {
           const { area } = this.$refs;

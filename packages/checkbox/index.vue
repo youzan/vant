@@ -4,10 +4,10 @@
       name="success"
       class="van-checkbox__icon"
       :class="[
-        `van-checkbox--${shape}`,
-        { 'van-checkbox--disabled': isDisabled },
-        { 'van-checkbox--checked': isChecked }
-      ]"
+        `van-checkbox--${shape}`, {
+        'van-checkbox--disabled': isDisabled,
+        'van-checkbox--checked': isChecked
+      }]"
       @click="onClick"
     />
     <span class="van-checkbox__label" @click="onClick('label')">

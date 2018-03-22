@@ -60,11 +60,11 @@ export default {
     addressOverlimit: '详细地址不能超过200个字符',
     addressEmpty: '请填写详细地址',
     postalEmpty: '邮政编码格式不正确',
-    defaultAddress: text => `设为默认${text}地址`,
-    deleteAddress: text => `删除${text}地址`,
-    confirmDelete: text => `确定要删除这个${text}地址么`,
+    defaultAddress: '设为默认收货地址',
+    deleteAddress: '删除收货地址',
+    confirmDelete: '确定要删除这个收货地址么',
     label: {
-      name: text => `${text}人`,
+      name: '收货人',
       postal: '邮政编码'
     },
     placeholder: {
