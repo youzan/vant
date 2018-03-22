@@ -1,18 +1,16 @@
 import Vue from 'vue';
-import ImagePreview from './image-preview';
+import VueImagePreview from './image-preview';
 
 let instance;
 
-const ImagePreviewConstructor = Vue.extend(ImagePreview);
-
 const initInstance = () => {
-  instance = new ImagePreviewConstructor({
+  instance = new (Vue.extend(VueImagePreview))({
     el: document.createElement('div')
   });
   document.body.appendChild(instance.$el);
 };
 
-const ImagePreviewBox = (images, startPosition = 0) => {
+const ImagePreview = (images, startPosition = 0) => {
   if (!instance) {
     initInstance();
   }
@@ -27,4 +25,8 @@ const ImagePreviewBox = (images, startPosition = 0) => {
   return instance;
 };
 
-export default ImagePreviewBox;
+ImagePreview.install = () => {
+  Vue.use(VueImagePreview);
+};
+
+export default ImagePreview;

@@ -90,7 +90,7 @@ Vue.use(Area);
 }
 ```
 
-完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.json)
+完整数据见 [Area.json](https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.js)
 
 #### 点击完成时返回的数据格式
 

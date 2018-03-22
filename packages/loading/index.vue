@@ -10,12 +10,10 @@
 </template>
 
 <script>
-import install from '../utils/install';
+import create from '../utils/create-basic';
 
-export default {
-  install,
-
-  name: 'van-loading',
+export default create({
+  name: 'loading',
 
   props: {
     size: String,
@@ -37,5 +35,5 @@ export default {
       } : {};
     }
   }
-};
+});
 </script>

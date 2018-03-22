@@ -1,28 +1,28 @@
 <template>
   <div class="van-sku-header van-hairline--bottom">
     <div class="van-sku-header__img-wrap">
-      <img class="van-sku__goods-img" :src="goodsImg" >
+      <img :src="goodsImg" >
     </div>
     <div class="van-sku-header__goods-info">
       <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
-      <div class="van-sku__goods-price"><span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span></div>
-      <span class="van-sku__close-icon" @click="skuEventBus.$emit('sku:close')" />
+      <!-- price display area -->
+      <slot />
+      <icon name="close" class="van-sku__close-icon" @click="skuEventBus.$emit('sku:close')" />
     </div>
   </div>
 </template>
 
 <script>
-import { create } from '../../utils';
+import create from '../../utils/create';
 
 export default create({
-  name: 'van-sku-header',
+  name: 'sku-header',
 
   props: {
-    skuEventBus: Object,
     sku: Object,
-    selectedSku: Object,
-    selectedSkuComb: Object,
-    goods: Object
+    goods: Object,
+    skuEventBus: Object,
+    selectedSku: Object
   },
 
   computed: {
@@ -31,13 +31,6 @@ export default create({
       const skuImg = this.getSkuImg(s1Id);
       // 优先使用选中sku的图片
       return skuImg || this.goods.picture;
-    },
-    price() {
-      if (this.selectedSkuComb) {
-        return (this.selectedSkuComb.price / 100).toFixed(2);
-      }
-      // sku.price是一个格式化好的价格区间
-      return this.sku.price;
     }
   },
 

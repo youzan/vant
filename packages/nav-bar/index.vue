@@ -1,6 +1,6 @@
 <template>
   <div
-    class="van-nav-bar van-hairline--top-bottom"
+    class="van-nav-bar van-hairline--bottom"
     :class="{ 'van-nav-bar--fixed': fixed }"
     :style="style"
   >
@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-nav-bar',
+  name: 'nav-bar',
 
   props: {
     title: String,

@@ -89,7 +89,13 @@ Vue.use(Cell).use(CellGroup);
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
 | required | 是否显示表单必填符号 | `Boolean` | `false` | - |
 
-### Slot
+### Cell Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 点击 cell 时触发 | - |
+
+### Cell Slot
 
 | 名称 | 说明 |
 |-----------|-----------|

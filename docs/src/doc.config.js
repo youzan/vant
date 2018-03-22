@@ -89,6 +89,10 @@ module.exports = {
                 title: 'Circle - 环形进度条'
               },
               {
+                path: '/collapse',
+                title: 'Collapse - 折叠面板'
+              },
+              {
                 path: '/icon',
                 title: 'Icon - 图标'
               },
@@ -99,6 +103,10 @@ module.exports = {
               {
                 path: '/lazyload',
                 title: 'Lazyload - 图片懒加载'
+              },
+              {
+                path: '/list',
+                title: 'List - 列表'
               },
               {
                 path: '/loading',
@@ -315,7 +323,7 @@ module.exports = {
               },
               {
                 path: '/quickstart',
-                title: 'Getting Started',
+                title: 'Quickstart',
                 noExample: true
               },
               {
@@ -375,6 +383,10 @@ module.exports = {
                 title: 'Circle'
               },
               {
+                path: '/collapse',
+                title: 'Collapse'
+              },
+              {
                 path: '/icon',
                 title: 'Icon'
               },
@@ -385,6 +397,10 @@ module.exports = {
               {
                 path: '/lazyload',
                 title: 'Lazyload'
+              },
+              {
+                path: '/list',
+                title: 'List'
               },
               {
                 path: '/loading',

@@ -16,13 +16,13 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
 export default create({
-  name: 'van-image-preview',
+  name: 'image-preview',
 
   mixins: [Popup],
 

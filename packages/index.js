@@ -14,6 +14,8 @@ import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Circle from './circle';
 import Col from './col';
+import Collapse from './collapse';
+import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
@@ -28,6 +30,7 @@ import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
+import List from './list';
 import Loading from './loading';
 import Locale from './locale';
 import NavBar from './nav-bar';
@@ -63,7 +66,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.12.13';
+const version = '1.0.1';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -80,6 +83,8 @@ const components = [
   CheckboxGroup,
   Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
@@ -92,7 +97,10 @@ const components = [
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
+  ImagePreview,
+  List,
   Loading,
+  Locale,
   NavBar,
   NoticeBar,
   NumberKeyboard,
@@ -121,6 +129,7 @@ const components = [
   TabbarItem,
   Tabs,
   Tag,
+  Toast,
   TreeSelect,
   Uploader
 ];
@@ -153,6 +162,8 @@ export {
   CheckboxGroup,
   Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
@@ -167,6 +178,7 @@ export {
   Icon,
   ImagePreview,
   Lazyload,
+  List,
   Loading,
   Locale,
   NavBar,

@@ -17,19 +17,20 @@ components.forEach(componentName => {
 // Analyze component dependencies
 function analyzeDependencies(componentName, libDir) {
   const checkList = ['base'];
+  const whiteList = ['icon', 'loading', 'cell', 'button'];
   search(dependencyTree({
     directory: libDir,
     filename: path.resolve(libDir, componentName, 'index.js'),
     filter: path => path.indexOf(`vant${SEP}lib${SEP}`) !== -1
-  }), checkList);
+  }), checkList, whiteList);
   return checkList.filter(component => checkComponentHasStyle(component));
 }
 
-function search(tree, checkList) {
+function search(tree, checkList, whiteList) {
   tree && Object.keys(tree).forEach(key => {
-    search(tree[key], checkList);
+    search(tree[key], checkList, whiteList);
     const component = key.split(`${SEP}vant${SEP}lib${SEP}`)[1].replace(`${SEP}index.js`, '').replace(`mixins${SEP}`, '');
-    if (checkList.indexOf(component) === -1) {
+    if (checkList.indexOf(component) === -1 && whiteList.indexOf(component) === -1) {
       checkList.push(component);
     }
   });

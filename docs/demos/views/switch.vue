@@ -13,7 +13,7 @@
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-switch :value="checked2" @input="onInput" />
+      <van-switch :value="checked2" size="36px" @input="onInput" />
     </demo-block>
   </demo-section>
 </template>

@@ -99,7 +99,7 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | disabled | Disable field | `Boolean` | `false` | - |
 | error | Whether to show error info | `Boolean` | `false` | - |
 | error-message | Error message | `String` | `''` | - |
-| autosize | Textarea auto resize | `Boolean` | `false` | - |
+| autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` | - |
 | icon | Right side Icon name | `String` | - | - |
 
 ### Event

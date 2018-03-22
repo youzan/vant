@@ -1,3 +1,5 @@
+import { UNSELECTED_SKU_VALUE_ID } from '../constants';
+
 /*
   normalize sku tree
 
@@ -43,7 +45,7 @@ export const normalizeSkuTree = (skuTree) => {
 // 判断是否所有的sku都已经选中
 export const isAllSelected = (skuTree, selectedSku) => {
   // 筛选selectedSku对象中key值不为空的值
-  const selected = Object.keys(selectedSku).filter(skuKeyStr => selectedSku[skuKeyStr] !== '');
+  const selected = Object.keys(selectedSku).filter(skuKeyStr => selectedSku[skuKeyStr] !== UNSELECTED_SKU_VALUE_ID);
   return skuTree.length === selected.length;
 };
 
@@ -53,8 +55,8 @@ export const getSkuComb = (skuList, selectedSku) => {
     return Object.keys(selectedSku).every(skuKeyStr => {
       return String(skuComb[skuKeyStr]) === String(selectedSku[skuKeyStr]); // eslint-disable-line
     });
-  })[0];
-  return skuComb;
+  });
+  return skuComb[0];
 };
 
 // 获取已选择的sku名称
@@ -64,7 +66,7 @@ export const getSelectedSkuValues = (skuTree, selectedSku) => {
     const skuValues = normalizedTree[skuKeyStr];
     const skuValueId = selectedSku[skuKeyStr];
 
-    if (skuValueId) {
+    if (skuValueId !== UNSELECTED_SKU_VALUE_ID) {
       const skuValue = skuValues.filter(skuValue => skuValue.id === skuValueId)[0];
       skuValue && selectedValues.push(skuValue);
     }
@@ -72,10 +74,29 @@ export const getSelectedSkuValues = (skuTree, selectedSku) => {
   }, []);
 };
 
-const SkuHelper = {
-  normalizeSkuTree,
-  isAllSelected,
-  getSkuComb,
-  getSelectedSkuValues
+// 判断sku是否可选
+export const isSkuChoosable = (skuList, selectedSku, skuToChoose) => {
+  const { key, valueId } = skuToChoose;
+  // 先假设sku已选中，拼入已选中sku对象中
+  const matchedSku = Object.assign({}, selectedSku, {
+    [key]: valueId
+  });
+  // 再判断剩余sku是否全部不可选，若不可选则当前sku不可选中
+  const skusToCheck = Object.keys(matchedSku).filter(skuKey => matchedSku[skuKey] !== UNSELECTED_SKU_VALUE_ID);
+  const filteredSku = skuList.filter(sku => {
+    return skusToCheck.every(skuKey => {
+      return String(matchedSku[skuKey]) === String(sku[skuKey]);
+    });
+  });
+
+  const stock = filteredSku.reduce((total, sku) => (total += sku.stock_num), 0);
+  return stock > 0;
 };
-export default SkuHelper;
+
+export default {
+  normalizeSkuTree,
+  getSkuComb,
+  getSelectedSkuValues,
+  isAllSelected,
+  isSkuChoosable
+};

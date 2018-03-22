@@ -45,7 +45,7 @@ export default {
   .van-pull-refresh {
     &,
     &__track {
-      height: 100%;
+      height: calc(100vh - 50px);
     }
   }
 

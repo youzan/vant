@@ -28,6 +28,7 @@
   &__subname {
     font-size: 12px;
     color: $gray-darker;
+    margin-left: 5px;
   }
 
   &__loading {

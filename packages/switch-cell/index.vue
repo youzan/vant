@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import Cell from '../cell';
 import VanSwitch from '../switch';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-switch-cell',
+  name: 'switch-cell',
 
   components: {
-    Cell,
     VanSwitch
   },
 

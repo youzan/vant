@@ -71,21 +71,18 @@ export default {
 .demo-cell-swipe {
   user-select: none;
 
-  .van-cell-swipe__left,
-  .van-cell-swipe__right {
+  .van-cell-swipe {
+    &__left,
+    &__right {
       color: #FFFFFF;
-      font-size: 16px;
+      font-size: 15px;
       width: 65px;
       height: 44px;
       display: inline-block;
       text-align: center;
       line-height: 44px;
-  }
-  .van-cell-swipe__left {
-    background-color: #FF4444;
-  }
-  .van-cell-swipe__right {
-    background-color: #84c483;
+      background-color: #F44;
+    }
   }
 }
 </style>

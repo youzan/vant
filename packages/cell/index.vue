@@ -37,11 +37,16 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import Icon from '../icon';
 import RouterLink from '../mixins/router-link';
+import create from '../utils/create-basic';
 
 export default create({
-  name: 'van-cell',
+  name: 'cell',
+
+  components: {
+    Icon
+  },
 
   mixins: [RouterLink],
 

@@ -1,7 +1,7 @@
 <template>
   <picker
     ref="picker"
-    show-toolbar
+    :show-toolbar="showToolbar"
     :columns="columns"
     :visible-item-count="visibleItemCount"
     @change="onChange"
@@ -11,13 +11,14 @@
 </template>
 
 <script>
-import { create } from '../utils';
 import Picker from '../picker';
+import create from '../utils/create';
 
+const currentYear = new Date().getFullYear();
 const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
 
 export default create({
-  name: 'van-datetime-picker',
+  name: 'datetime-picker',
 
   components: {
     Picker
@@ -27,6 +28,10 @@ export default create({
     type: {
       type: String,
       default: 'datetime'
+    },
+    showToolbar: {
+      type: Boolean,
+      default: true
     },
     format: {
       type: String,
@@ -38,16 +43,12 @@ export default create({
     },
     minDate: {
       type: Date,
-      default() {
-        return new Date(new Date().getFullYear() - 10, 0, 1);
-      },
+      default: () => new Date(currentYear - 10, 0, 1),
       validator: isValidDate
     },
     maxDate: {
       type: Date,
-      default() {
-        return new Date(new Date().getFullYear() + 10, 11, 31);
-      },
+      default: () => new Date(currentYear + 10, 11, 31),
       validator: isValidDate
     },
     minHour: {
@@ -73,6 +74,7 @@ export default create({
       const isEqual = this.type === 'time' ? val === this.innerValue : val.valueOf() === this.innerValue.valueOf();
       if (!isEqual) this.innerValue = val;
     },
+
     innerValue(val) {
       this.updateColumnValue(val);
       this.$emit('input', val);
@@ -100,6 +102,7 @@ export default create({
       ];
 
       if (this.type === 'date') result.splice(3, 2);
+      if (this.type === 'year-month') result.splice(2, 3);
       return result;
     },
     columns() {
@@ -120,7 +123,7 @@ export default create({
   methods: {
     correctValue(value) {
       // validate value
-      const isDateType = this.type.indexOf('date') > -1;
+      const isDateType = this.type !== 'time';
       if (isDateType && !isValidDate(value)) {
         value = this.minDate;
       } else if (!value) {
@@ -236,6 +239,9 @@ export default create({
         const month = this.getTrueValue(values[1]);
         const maxDate = this.getMonthEndDay(year, month);
         let date = this.getTrueValue(values[2]);
+        if (this.type === 'year-month') {
+          date = 1;
+        }
         date = date > maxDate ? maxDate : date;
         let hour = 0;
         let minute = 0;
@@ -251,6 +257,7 @@ export default create({
     },
 
     updateColumnValue(value) {
+      console.log(value, this.type);
       let values = [];
       if (this.type === 'time') {
         const currentValue = value.split(':');
@@ -269,6 +276,9 @@ export default create({
             `0${value.getHours()}`.slice(-2),
             `0${value.getMinutes()}`.slice(-2)
           );
+        }
+        if (this.type === 'year-month') {
+          values = values.slice(0, 2);
         }
       }
 

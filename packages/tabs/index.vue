@@ -26,21 +26,21 @@
         </div>
       </div>
     </div>
-    <div class="van-tabs__content">
+    <div class="van-tabs__content" ref="content">
       <slot />
     </div>
   </div>
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 
 export default create({
-  name: 'van-tabs',
+  name: 'tabs',
 
   components: {
     VanNode
@@ -63,7 +63,8 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
-    }
+    },
+    swipeable: Boolean
   },
 
   data() {
@@ -115,6 +116,9 @@ export default create({
       if (this.sticky) {
         this.scrollHandler(true);
       }
+      if (this.swipeable) {
+        this.swipeableHandler(true);
+      }
       this.scrollIntoView();
     });
   },
@@ -123,6 +127,10 @@ export default create({
     /* istanbul ignore next */
     if (this.sticky) {
       this.scrollHandler(false);
+    }
+    /* istanbul ignore next */
+    if (this.swipeable) {
+      this.swipeableHandler(false);
     }
   },
 
@@ -134,6 +142,51 @@ export default create({
       if (init) {
         this.onScroll();
       }
+    },
+
+    // whether to bind content swipe listener
+    swipeableHandler(init) {
+      const swipeableEl = this.$refs.content;
+
+      (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
+      (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
+      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
+      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
+    },
+
+    // record swipe touch start position
+    onTouchStart(event) {
+      this.startX = event.touches[0].clientX;
+      this.startY = event.touches[0].clientY;
+    },
+
+    // watch swipe touch move
+    onTouchMove(event) {
+      this.deltaX = event.touches[0].clientX - this.startX;
+      this.direction = this.getDirection(event.touches[0]);
+    },
+
+    // watch swipe touch end
+    onTouchEnd() {
+      const { direction, deltaX, curActive } = this;
+      const minSwipeDistance = 50;
+
+      /* istanbul ignore else */
+      if (direction === 'horizontal' && Math.abs(deltaX) >= minSwipeDistance) {
+        /* istanbul ignore else */
+        if (deltaX > 0 && curActive !== 0) {
+          this.curActive = curActive - 1;
+        } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
+          this.curActive = curActive + 1;
+        }
+      }
+    },
+
+    // get swipe direction
+    getDirection(touch) {
+      const distanceX = Math.abs(touch.clientX - this.startX);
+      const distanceY = Math.abs(touch.clientY - this.startY);
+      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     },
 
     // adjust tab position

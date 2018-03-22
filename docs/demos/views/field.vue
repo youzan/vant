@@ -53,7 +53,7 @@
           type="textarea"
           :placeholder="$t('messagePlaceholder')"
           rows="1"
-          autosize
+          :autosize="{ maxHeight: 100, minHeight: 40 }"
         />
       </van-cell-group>
     </demo-block>

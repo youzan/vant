@@ -17,26 +17,13 @@ export default {
     closeOnClickOverlay: Boolean,
     // z-index
     zIndex: [String, Number],
-    // prevent touchmove scroll
-    preventScroll: Boolean,
     // return the mount node for popup
     getContainer: Function,
     // prevent body scroll
-    lockOnScroll: {
+    lockScroll: {
       type: Boolean,
       default: true
     }
-  },
-
-  data() {
-    this._popupId = 'popup-' + context.plusKey('idSeed');
-    return {
-      opened: false,
-      pos: {
-        x: 0,
-        y: 0
-      }
-    };
   },
 
   watch: {
@@ -46,7 +33,19 @@ export default {
 
     getContainer() {
       this.move();
+    },
+
+    overlay() {
+      this.renderOverlay();
     }
+  },
+
+  created() {
+    this._popupId = 'popup-' + context.plusKey('id');
+    this.pos = {
+      x: 0,
+      y: 0
+    };
   },
 
   mounted() {
@@ -59,18 +58,58 @@ export default {
   },
 
   beforeDestroy() {
-    this.doAfterClose();
+    this.close();
   },
 
   methods: {
-    recordPosition(e) {
+    open() {
+      /* istanbul ignore next */
+      if (this.$isServer) {
+        return;
+      }
+
+      // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
+      if (this.zIndex !== undefined) {
+        context.zIndex = this.zIndex;
+      }
+
+      if (this.lockScroll) {
+        document.body.classList.add('van-overflow-hidden');
+        on(document, 'touchstart', this.onTouchStart);
+        on(document, 'touchmove', this.onTouchMove);
+      }
+
+      this.renderOverlay();
+      this.$emit('input', true);
+    },
+
+    close() {
+      if (this.lockScroll) {
+        document.body.classList.remove('van-overflow-hidden');
+        off(document, 'touchstart', this.onTouchStart);
+        off(document, 'touchmove', this.onTouchMove);
+      }
+
+      manager.close(this._popupId);
+      this.$emit('input', false);
+    },
+
+    move() {
+      if (this.getContainer) {
+        this.getContainer().appendChild(this.$el);
+      } else if (this.$parent) {
+        this.$parent.$el.appendChild(this.$el);
+      }
+    },
+
+    onTouchStart(e) {
       this.pos = {
         x: e.touches[0].clientX,
         y: e.touches[0].clientY
       };
     },
 
-    watchTouchMove(e) {
+    onTouchMove(e) {
       const { pos } = this;
       const dx = e.touches[0].clientX - pos.x;
       const dy = e.touches[0].clientY - pos.y;
@@ -99,71 +138,17 @@ export default {
       }
     },
 
-    open() {
-      /* istanbul ignore next */
-      if (this.opened || this.$isServer) {
-        return;
-      }
-
-      this.$emit('input', true);
-
-      // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
-      if (this.zIndex !== undefined) {
-        context.zIndex = this.zIndex;
-      }
-
+    renderOverlay() {
       if (this.overlay) {
         manager.open(this, {
-          id: this._popupId,
-          dom: this.$el,
           zIndex: context.plusKey('zIndex'),
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
-
-        if (this.lockOnScroll) {
-          document.body.classList.add('van-overflow-hidden');
-        }
+      } else {
+        manager.close(this._popupId);
       }
-
       this.$el.style.zIndex = context.plusKey('zIndex');
-      this.opened = true;
-
-      if (this.preventScroll) {
-        on(document, 'touchstart', this.recordPosition);
-        on(document, 'touchmove', this.watchTouchMove);
-      }
-    },
-
-    close() {
-      if (!this.opened || this.$isServer) {
-        return;
-      }
-
-      this.$emit('input', false);
-      this.opened = false;
-      this.doAfterClose();
-    },
-
-    doAfterClose() {
-      manager.close(this._popupId);
-
-      if (this.lockOnScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-      }
-
-      if (this.preventScroll) {
-        off(document, 'touchstart', this.recordPosition);
-        off(document, 'touchmove', this.watchTouchMove);
-      }
-    },
-
-    move() {
-      if (this.getContainer) {
-        this.getContainer().appendChild(this.$el);
-      } else if (this.$parent) {
-        this.$parent.$el.appendChild(this.$el);
-      }
     }
   }
 };

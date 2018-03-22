@@ -1,0 +1,31 @@
+@import './common/var.css';
+
+.van-collapse-item {
+  &__title {
+    .van-cell__right-icon::before {
+      transition: .3s;
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      visibility: hidden;
+    }
+  }
+
+  &__content {
+    padding: 15px;
+    background-color: #fff;
+  }
+
+  &--expanded {
+    .van-collapse-item__title {
+      .van-cell__right-icon::before {
+        transform: rotate(-90deg);
+      }
+
+      &::after {
+        visibility: visible;
+      }
+    }
+  }
+}

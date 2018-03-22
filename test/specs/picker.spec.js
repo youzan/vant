@@ -274,10 +274,10 @@ describe('PickerColumn', () => {
     expect(wrapper.vm.currentIndex).to.equal(0);
 
     const column = wrapper.find('.van-picker-column')[0];
-    dragHelper(column, 0);
+    dragHelper(column, 0, 0);
     expect(wrapper.vm.currentIndex).to.equal(0);
 
-    dragHelper(column, -100);
+    dragHelper(column, 0, -100);
     expect(wrapper.vm.currentIndex).to.equal(2);
   });
 });

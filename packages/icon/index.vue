@@ -6,16 +6,14 @@
 </template>
 
 <script>
-import install from '../utils/install';
+import create from '../utils/create-basic';
 
-export default {
-  install,
-
-  name: 'van-icon',
+export default create({
+  name: 'icon',
 
   props: {
     name: String,
     info: String
   }
-};
+});
 </script>

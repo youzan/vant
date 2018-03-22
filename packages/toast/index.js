@@ -6,10 +6,11 @@ const defaultOptions = {
   type: 'text',
   mask: false,
   message: '',
-  visible: true,
+  value: true,
   duration: 3000,
   position: 'middle',
-  forbidClick: false
+  forbidClick: false,
+  overlayStyle: {}
 };
 const parseOptions = message => isObj(message) ? message : { message };
 
@@ -28,6 +29,16 @@ function createInstance() {
   return queue[queue.length - 1];
 };
 
+// transform toast options to popup props
+function transformer(options) {
+  options.overlay = options.mask;
+  if (options.forbidClick && !options.overlay) {
+    options.overlay = true;
+    options.overlayStyle = { background: 'transparent' };
+  }
+  return options;
+}
+
 function Toast(options = {}) {
   const toast = createInstance();
 
@@ -35,11 +46,11 @@ function Toast(options = {}) {
     ...currentOptions,
     ...parseOptions(options),
     clear() {
-      toast.visible = false;
+      toast.value = false;
     }
   };
 
-  Object.assign(toast, options);
+  Object.assign(toast, transformer(options));
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {
@@ -84,6 +95,10 @@ Toast.resetDefaultOptions = () => {
 
 Toast.allowMultiple = (allow = true) => {
   singleton = !allow;
+};
+
+Toast.install = () => {
+  Vue.use(VueToast);
 };
 
 Vue.prototype.$toast = Toast;

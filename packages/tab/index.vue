@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import findParent from '../mixins/find-parent';
 
 export default create({
-  name: 'van-tab',
+  name: 'tab',
 
   mixins: [findParent],
 

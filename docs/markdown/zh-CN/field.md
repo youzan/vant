@@ -86,7 +86,7 @@ Vue.use(Field);
     placeholder="请输入留言"
     rows="1"
     autosize
-/>
+  />
 </van-cell-group>
 ```
 
@@ -101,7 +101,7 @@ Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | error | 输入框是否有错误 | `Boolean` | `false` | - |
 | error-message | 输入框底部错误提示文案 | `String` | `''` | - |
-| autosize | 高度自适应(仅支持textarea) | `Boolean` | `false` | - |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | - |
 | icon | 输入框尾部图标 | `String` | - |  Icon 组件支持的类型 |
 
 ### Event

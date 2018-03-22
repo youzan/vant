@@ -1,5 +1,66 @@
 ## Changelog
 
+### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+`2018-03-19`
+
+**Bug Fixes**
+
+- fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
+`2018-03-19`
+
+**Breaking changes**
+
+* add List component [\#682](https://github.com/youzan/vant/pull/682) [@chenjiahan](https://github.com/chenjiahan)
+* add Collapse component [\#674](https://github.com/youzan/vant/pull/674) [@chenjiahan](https://github.com/chenjiahan)
+* Build: upgrade to webpack 4 [\#693](https://github.com/youzan/vant/pull/693) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: add lock-scroll instead of lock-on-scroll & prevent-scroll [\#688](https://github.com/youzan/vant/pull/688) [@chenjiahan](https://github.com/chenjiahan)
+* Deprecate Waterfall component and add deprecate tips [\#683](https://github.com/youzan/vant/pull/683) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+
+* AddressEdit: add show-delete prop [\#716](https://github.com/youzan/vant/pull/716) [@chenjiahan](https://github.com/chenjiahan)
+* CellSwipe: optimzie animation fluency [\#685](https://github.com/youzan/vant/pull/685) [@chenjiahan](https://github.com/chenjiahan)
+* Field: support autosize maxHeight & minHeight [\#718](https://github.com/youzan/vant/pull/718) [@chenjiahan](https://github.com/chenjiahan)
+* Locale: optimize i18n config [\#701](https://github.com/youzan/vant/pull/701) [@chenjiahan](https://github.com/chenjiahan)
+* PullRefresh: support trigger loading animation [\#684](https://github.com/youzan/vant/pull/684) [@chenjiahan](https://github.com/chenjiahan)
+* Switch: support custom size [\#723](https://github.com/youzan/vant/pull/723) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add header price slot [\#705](https://github.com/youzan/vant/pull/705) [@w91](https://github.com/w91)
+* Sku: optimize DOM [\#704](https://github.com/youzan/vant/pull/704) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: support switch tabs with swipe gestrue in the content [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695) [@cookfront](https://github.com/cookfront)
+* Tag: adjust style [\#689](https://github.com/youzan/vant/pull/689) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: support Vue.use to register [\#690](https://github.com/youzan/vant/pull/690) [@chenjiahan](https://github.com/chenjiahan)
+
+
+**Bug Fixes**
+
+* fix Actionsheet bottom border missing [\#686](https://github.com/youzan/vant/pull/686) [@chenjiahan](https://github.com/chenjiahan)
+* fix AddressEdit area not selected when area_code changed [\#680](https://github.com/youzan/vant/pull/680) [@chenjiahan](https://github.com/chenjiahan)
+* fix Stepper value overlimit [\#691](https://github.com/youzan/vant/issues/691)
+* fix Badge info font weight when selected [\#687](https://github.com/youzan/vant/pull/687) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+`2018-03-09`
+
+**Bug Fixes**
+* Area: should reset index when area list changed [\#678](https://github.com/youzan/vant/pull/678) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+`2018-03-09`
+
+**Improvements**
+
+* AddressEdit: support custom tel validator [\#673](https://github.com/youzan/vant/pull/673) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add close-on-click-overlay config for sku popup [\#676](https://github.com/youzan/vant/pull/676) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* fix CouponList text max-width [\#675](https://github.com/youzan/vant/pull/675) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
 `2018-03-06`
 

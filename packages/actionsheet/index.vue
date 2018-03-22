@@ -5,7 +5,7 @@
         <div v-text="title" />
         <icon name="close" @click.stop="$emit('input', false)" />
       </div>
-      <ul v-if="!title" class="van-actionsheet__list">
+      <ul v-if="!title" class="van-actionsheet__list van-hairline--bottom">
         <li
           v-for="(item, index) in actions"
           :key="index"
@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-actionsheet',
+  name: 'actionsheet',
 
   mixins: [Popup],
 

@@ -36,7 +36,7 @@ export default {
 
 #### 高级用法
 ```html
-<van-switch :value="checked" @input="onInput" />
+<van-switch :value="checked" size="36px" @input="onInput" />
 ```
 
 ```js
@@ -68,6 +68,7 @@ export default {
 | v-model | 开关选中状态 | `Boolean` | `false` | - |
 | loading | 是否为加载状态 | `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
+| size | 开关尺寸 | `String` | `30px` | - |
 
 ### Event
 
