@@ -208,18 +208,20 @@ export default create({
       if (values.length !== 3 || values.some(value => +value.code === -1)) {
         return Toast(this.$t('areaEmpty'));
       }
+      this.data.area_code = values[2].code;
       this.assignAreaValues(values);
       this.showArea = false;
       this.$emit('change-area', values);
     },
 
     assignAreaValues(values) {
-      Object.assign(this.data, {
-        province: values[0].name,
-        city: values[1].name,
-        county: values[2].name,
-        area_code: values[2].code
-      });
+      if (values.length >= 3) {
+        Object.assign(this.data, {
+          province: values[0].name,
+          city: values[1].name,
+          county: values[2].name
+        });
+      }
     },
 
     onSave() {
