@@ -1,5 +1,31 @@
 ## 更新日志
 
+## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2) (2018-03-22)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.1...v1.0.2)
+
+**Issue**
+
+- Checkbox组件change事件触发不了 [\#745](https://github.com/youzan/vant/issues/745)
+- Tabs组件，swipeable属性问题 [\#741](https://github.com/youzan/vant/issues/741)
+- List 列表加载更多问题 [\#735](https://github.com/youzan/vant/issues/735)
+- 按照文档中的来，图标引入出错 [\#731](https://github.com/youzan/vant/issues/731)
+- Collapse 还是不能用 [\#730](https://github.com/youzan/vant/issues/730)
+- 使用Tabbar组件时自定义图标，通过webpack工具如何使用本地路径？ [\#727](https://github.com/youzan/vant/issues/727)
+
+**Improvements**
+
+- \[Doc\] add custom Icon directions [\#754](https://github.com/youzan/vant/pull/754) ([qianzhaoy](https://github.com/qianzhaoy))
+- \[bugfix\] 修复sku默认选中逻辑与sku是否选中的判断逻辑 [\#752](https://github.com/youzan/vant/pull/752) ([w91](https://github.com/w91))
+- \[bugfix\] List: should not trigger load event when hidden [\#751](https://github.com/youzan/vant/pull/751) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] Tabs: fix tab content not trigger click event [\#749](https://github.com/youzan/vant/pull/749) ([cookfront](https://github.com/cookfront))
+- \[bugfix\] AddressEdit: should auto select area when created [\#748](https://github.com/youzan/vant/pull/748) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] DatetimePicker: improve documentation [\#747](https://github.com/youzan/vant/pull/747) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] NavBar: remove top border [\#744](https://github.com/youzan/vant/pull/744) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Toast: overlay blocked by other element [\#740](https://github.com/youzan/vant/pull/740) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix component link URL [\#739](https://github.com/youzan/vant/pull/739) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] NoticeBar:Adjust padding [\#737](https://github.com/youzan/vant/pull/737) ([skylinety](https://github.com/skylinety))
+- Feature/new type and show toolbar timepicker [\#736](https://github.com/youzan/vant/pull/736) ([zz1211](https://github.com/zz1211))
+
 ## [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1) (2018-03-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.0...v1.0.1)
 

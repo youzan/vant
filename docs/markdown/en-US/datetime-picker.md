@@ -15,8 +15,6 @@ Vue.use(DatetimePicker);
 <van-datetime-picker
   v-model="currentDate"
   type="datetime"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
   :max-date="maxDate"
 />
@@ -84,7 +82,6 @@ export default {
   type="time"
   :min-hour="minHour"
   :max-hour="maxHour"
-  :min-date="minDate"
 />
 ```
 

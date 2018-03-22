@@ -113,10 +113,11 @@ import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
 import {
   isAllSelected,
+  isSkuChoosable,
   getSkuComb,
   getSelectedSkuValues
 } from './utils/skuHelper';
-import { LIMIT_TYPE } from './constants';
+import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 import create from '../utils/create';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
@@ -292,12 +293,19 @@ export default create({
   methods: {
     resetSelectedSku(skuTree) {
       this.selectedSku = {};
+      // 重置selectedSku
       skuTree.forEach(item => {
-        // 只有一个sku规格值时默认选中
-        if (item.v.length === 1) {
-          this.selectedSku[item.k_s] = item.v[0].id;
-        } else {
-          this.selectedSku[item.k_s] = this.initialSku[item.k_s] || '';
+        this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+      });
+      // 只有一个sku规格值时默认选中
+      skuTree.forEach(item => {
+        const key = item.k_s;
+        const valueId = item.v[0].id;
+        if (
+          item.v.length === 1 &&
+          isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
+        ) {
+          this.selectedSku[key] = valueId;
         }
       });
     },
@@ -338,7 +346,7 @@ export default create({
       // 点击已选中的sku时则取消选中
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? { ...this.selectedSku, [skuValue.skuKeyStr]: '' }
+          ? { ...this.selectedSku, [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {

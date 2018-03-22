@@ -1,11 +1,29 @@
 ## Changelog
 
+### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+`2018-03-22`
+
+**Improvements**
+
+* DatetimePicker: add show-toolbar prop & month-year type [\#736](https://github.com/youzan/vant/pull/736) [@zz1211](https://github.com/zz1211)
+* NavBar: remove top border [\#744](https://github.com/youzan/vant/pull/744) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: adjust padding [\#737](https://github.com/youzan/vant/pull/737) [@skylinety](https://github.com/skylinety)
+* Doc: add guide of custom iconfont [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
+
+**Bug Fixes**
+* fix AddressEdit not auto select area when created [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
+* fix List trigger load event when hidden [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
+* fix Sku default selection not work [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)
+* fix Toast overlay blocked by other element [\#740](https://github.com/youzan/vant/pull/740) [@chenjiahan](https://github.com/chenjiahan)
+* fix Tab content not clickable [\#749](https://github.com/youzan/vant/pull/749) [@cookfront](https://github.com/cookfront)
+
+
 ### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
 `2018-03-19`
 
 **Bug Fixes**
 
-- fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+* fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
 
 
 ### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
