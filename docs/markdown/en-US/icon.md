@@ -23,34 +23,25 @@ Icon uses font file in `yzcdn.cn` by default，if you want to use the local font
 import 'vant/lib/vant-css/icon-local.css';
 ```
 
-#### Use custom font
-Add more custom icon
-
-[Demo](https://github.com/qianzhaoy/vant--mobile-mall/blob/master/src/assets/scss/iconfont/iconfont.css)
+#### Add custom iconfont
 
 ```css
 @font-face {
-	font-family: "iconfont";
-	src: url('./iconfont.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: "vanIcon";
-	src: url(https://b.yzcdn.cn/zanui/icon/vant-icon-4c3245.ttf) format('truetype');
+  font-family: 'custom-iconfont';
+  src: url('./iconfont.ttf') format('truetype');
 }
 
 .van-icon {
-	position: relative;
-	font-family: "iconfont", "vanIcon" !important;
-	font-size: 14px;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'vant-icon', 'custom-iconfont' !important;
 }
 
-.van-icon-success:before {
-	content: "\e626";
+.van-icon-extra:before {
+  content: '\e626';
 }
+```
+
+```html
+<van-icon name="extra" />
 ```
 
 ### API

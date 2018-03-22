@@ -23,33 +23,26 @@ Icon 组件默认引用 `yzcdn.cn` 域名下的字体文件，如果想要使用
 import 'vant/lib/vant-css/icon-local.css';
 ```
 
-#### 自定义字体
-如果我们的Icon数量无法满足你的需求，可以用以下方法，保留原本Icon的情况下，增加更多你想要的Icon
+#### 自定义图标
+如果需要在现有 Icon 的基础上使用更多图标，可以引入你需要的 iconfont 对应的 ttf 文件和样式，之后就可以在 Icon 组件中直接使用
 
-[Demo地址](https://github.com/qianzhaoy/vant--mobile-mall/blob/master/src/assets/scss/iconfont/iconfont.css)
 ```css
 @font-face {
-	font-family: "iconfont";
-	src: url('./iconfont.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: "vanIcon";
-	src: url(https://b.yzcdn.cn/zanui/icon/vant-icon-4c3245.ttf) format('truetype');
+  font-family: 'custom-iconfont';
+  src: url('./iconfont.ttf') format('truetype');
 }
 
 .van-icon {
-	position: relative;
-	font-family: "iconfont", "vanIcon" !important;
-	font-size: 14px;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'vant-icon', 'custom-iconfont' !important;
 }
 
-.van-icon-success:before {
-	content: "\e626";
+.van-icon-extra:before {
+  content: '\e626';
 }
+```
+
+```html
+<van-icon name="extra" />
 ```
 
 ### API
