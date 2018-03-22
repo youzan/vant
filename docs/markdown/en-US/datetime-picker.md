@@ -9,7 +9,7 @@ Vue.use(DatetimePicker);
 
 ### Usage
 
-#### Basic Usage
+#### Choose DateTime
 
 ```html
 <van-datetime-picker
@@ -30,29 +30,57 @@ export default {
       maxHour: 20,
       minDate: new Date(),
       maxDate: new Date(2019, 10, 1),
-      currentDate: new Date(2018, 0, 1)
+      currentDate: new Date()
     };
   }
 };
 ```
 
-#### Date Picker
+#### Choose Date
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="date"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
 />
 ```
 
-#### Time Picker
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+```
+
+#### Choose Year-Month
 
 ```html
 <van-datetime-picker
-  v-model="currentDate3"
+  v-model="currentDate"
+  type="year-month"
+  :min-date="minDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+```
+
+#### Choose Time
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
   type="time"
   :min-hour="minHour"
   :max-hour="maxHour"
@@ -60,11 +88,21 @@ export default {
 />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      currentDate: '12:00'
+    };
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Picker type | `String` | 'datetime' |  'date', 'time' |
+| type | Picker type | `String` | `datetime` |  `date` `time` `year-month` |
 | min-date | Min date | `Date` | Ten years ago on January 1 | - |
 | max-date | Max date | `Date` | Ten years later on December 31 | - |
 | min-hour | Min hour | `Number` | `0` | - |
