@@ -46,14 +46,14 @@ export default {
       x: 0,
       y: 0
     };
-    if (this.value) {
-      this.open();
-    }
   },
 
   mounted() {
     if (this.getContainer) {
       this.move();
+    }
+    if (this.value) {
+      this.open();
     }
   },
 
