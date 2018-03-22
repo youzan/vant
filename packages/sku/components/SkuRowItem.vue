@@ -13,6 +13,7 @@
 
 <script>
 import create from '../../utils/create';
+import { isSkuChoosable } from '../utils/skuHelper';
 
 export default create({
   name: 'sku-row-item',
@@ -31,19 +32,10 @@ export default create({
     },
 
     isChoosable() {
-      const matchedSku = Object.assign({}, this.selectedSku, {
-        [this.skuKeyStr]: this.skuValue.id
+      return isSkuChoosable(this.skuList, this.selectedSku, {
+        key: this.skuKeyStr,
+        valueId: this.skuValue.id
       });
-      const skusToCheck = Object.keys(matchedSku).filter(skuKey => matchedSku[skuKey] !== '');
-      const filteredSku = this.skuList.filter(sku => {
-        return skusToCheck.every(skuKey => {
-          // 后端给的skuValue.id有时候是数字有时候是字符串，全等会匹配不上
-          return matchedSku[skuKey] == sku[skuKey]; // eslint-disable-line
-        });
-      });
-
-      const stock = filteredSku.reduce((total, sku) => (total += sku.stock_num), 0);
-      return stock > 0;
     }
   },
 
