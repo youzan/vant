@@ -1,6 +1,6 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
+    <demo-block :title="$t('title1')">
       <van-datetime-picker
         v-model="currentDate1"
         type="datetime"
@@ -15,8 +15,6 @@
       <van-datetime-picker
         v-model="currentDate2"
         type="date"
-        :min-hour="minHour"
-        :max-hour="maxHour"
         :min-date="minDate"
       />
     </demo-block>
@@ -24,8 +22,15 @@
     <demo-block :title="$t('title3')">
       <van-datetime-picker
         v-model="currentDate3"
+        type="year-month"
+        :min-date="minDate"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('title4')">
+      <van-datetime-picker
+        v-model="currentDate4"
         type="time"
-        :visibleItemCount="3"
         :min-hour="minHour"
         :max-hour="maxHour"
         :min-date="minDate"
@@ -38,12 +43,16 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '选择日期',
-      title3: '选择时间'
+      title1: '选择完整时间',
+      title2: '选择日期（年月日）',
+      title3: '选择日期（年月）',
+      title4: '选择时间'
     },
     'en-US': {
-      title2: 'Date Picker',
-      title3: 'Time Picker'
+      title1: 'Choose DateTime',
+      title2: 'Choose Date',
+      title3: 'Choose Year-Month',
+      title4: 'Choose Time'
     }
   },
 
@@ -55,7 +64,8 @@ export default {
       maxDate: new Date(2019, 10, 1),
       currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
-      currentDate3: '12:00'
+      currentDate3: new Date(2018, 0, 1),
+      currentDate4: '12:00'
     };
   }
 };

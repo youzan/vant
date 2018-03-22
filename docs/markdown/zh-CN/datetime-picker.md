@@ -9,7 +9,7 @@ Vue.use(DatetimePicker);
 
 ### 代码演示
 
-#### 基础用法
+#### 选择完整时间
 
 ```html
 <van-datetime-picker
@@ -30,22 +30,50 @@ export default {
       maxHour: 20,
       minDate: new Date(),
       maxDate: new Date(2019, 10, 1),
-      currentDate: new Date(2018, 0, 1)
+      currentDate: new Date()
     };
   }
 };
 ```
 
-#### 选择日期
+#### 选择日期（年月日）
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="date"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
 />
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+```
+
+#### 选择日期（年月）
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
+  type="year-month"
+  :min-date="minDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
 ```
 
 #### 选择时间
@@ -60,11 +88,21 @@ export default {
 />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      currentDate: '12:00'
+    };
+  }
+}
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 组件类型 | `String` | 'datetime' |  'date', 'time' |
+| type | 组件类型 | `String` | `datetime` |  `date` `time` `year-month` |
 | min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
 | max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
 | min-hour | 可选的最小小时 | `Number` | `0` | - |

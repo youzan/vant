@@ -35,11 +35,11 @@ describe('DatetimePicker', () => {
     expect(wrapper.vm.innerValue.getTime()).to.equal(testDate.getTime());
   });
 
-  it('create a date-year-month', () => {
+  it('create a year-month', () => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
-        type: 'date-year-month',
+        type: 'year-month',
         value: testDate
       }
     });
@@ -104,11 +104,11 @@ describe('DatetimePicker', () => {
     }, 10);
   });
 
-  it('drag date-year-month picker', (done) => {
+  it('drag year-month picker', (done) => {
     wrapper = mount(DatetimePicker, {
       attachToDocument: true,
       propsData: {
-        type: 'date-year-month',
+        type: 'year-month',
         value: testDate,
         minDate,
         maxDate
