@@ -1,4 +1,5 @@
 ## Picker 选择器
+选择器组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 使用指南
 ``` javascript

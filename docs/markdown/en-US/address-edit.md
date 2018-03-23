@@ -109,4 +109,4 @@ export default {
 | address | Address | `String` |
 
 #### Area Data Structure
-Please refer to [Area](#/en-US/component/area) component。
+Please refer to [Area](#/en-US/area) component。

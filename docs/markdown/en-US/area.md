@@ -1,4 +1,5 @@
 ## Area
+The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 
