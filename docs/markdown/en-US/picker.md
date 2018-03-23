@@ -23,8 +23,10 @@ export default {
       columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
     };
   },
-  onChange(picker, value, index) {
-    Toast(`Value: ${value}, Index: ${index}`);
+  methods: {
+    onChange(picker, value, index) {
+      Toast(`Value: ${value}, Index: ${index}`);
+    }
   }
 };
 ```
