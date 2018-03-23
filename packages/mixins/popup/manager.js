@@ -9,7 +9,7 @@ const defaultConfig = {
 
 export default {
   open(vm, config) {
-    const exist = context.stack.some(item => item.id === vm._popupId);
+    const exist = context.stack.some(item => item.vm._popupId === vm._popupId);
 
     /* istanbul ignore next */
     if (!exist) {
