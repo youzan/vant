@@ -3,6 +3,7 @@
     class="van-cell"
     :class="{
       'van-hairline': border,
+      'van-cell--center': center,
       'van-cell--required': required,
       'van-cell--clickable': isLink || clickable
     }"
@@ -54,6 +55,7 @@ export default create({
     icon: String,
     title: String,
     label: String,
+    center: Boolean,
     isLink: Boolean,
     required: Boolean,
     clickable: Boolean,
