@@ -2,7 +2,7 @@
 
 .van-cell {
   width: 100%;
-  display: table;
+  display: flex;
   padding: 10px 15px;
   box-sizing: border-box;
   line-height: 24px;
@@ -25,8 +25,6 @@
   }
 
   &__title {
-    display: table-cell;
-
     .van-icon {
       font-size: 16px;
       margin-right: 5px;
@@ -39,14 +37,13 @@
   }
 
   &__label {
-    display: block;
     font-size: 12px;
     line-height: 1.2;
     color: $gray-darker;
   }
 
   &__value {
-    display: table-cell;
+    flex: 1;
     text-align: right;
     vertical-align: middle;
     overflow: hidden;

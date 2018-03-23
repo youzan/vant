@@ -14,7 +14,7 @@
       </slot>
       <slot name="title">
         <span class="van-cell__text" v-text="title" />
-        <span class="van-cell__label" v-if="label" v-text="label" />
+        <div class="van-cell__label" v-if="label" v-text="label" />
       </slot>
     </div>
     <div
