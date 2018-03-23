@@ -24,8 +24,10 @@ export default {
       columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
     };
   },
-  onChange(picker, value, index) {
-    Toast(`当前值：${value}, 当前索引：${index}`);
+  methods: {
+    onChange(picker, value, index) {
+      Toast(`当前值：${value}, 当前索引：${index}`);
+    }
   }
 };
 ```
