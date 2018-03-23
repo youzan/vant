@@ -229,10 +229,11 @@ export default create({
 
     // emit event when clicked
     onClick(index) {
-      if (this.tabs[index].disabled) {
-        this.$emit('disabled', index);
+      const { title, disabled } = this.tabs[index];
+      if (disabled) {
+        this.$emit('disabled', index, title);
       } else {
-        this.$emit('click', index);
+        this.$emit('click', index, title);
         this.curActive = index;
       }
     },

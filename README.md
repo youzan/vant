@@ -83,7 +83,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/component/quickstart).
+See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/quickstart).
 
 ## Contribution
 
