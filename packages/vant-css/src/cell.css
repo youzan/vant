@@ -75,6 +75,10 @@
     }
   }
 
+  &--center {
+    align-items: center;
+  }
+
   &__right-icon {
     position: absolute;
     top: 50%;

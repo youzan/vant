@@ -35,7 +35,12 @@
 
     <demo-block :title="$t('title4')">
       <van-cell-group>
-        <van-field :label="$t('username')" :placeholder="$t('usernamePlaceholder')" error />
+        <van-field
+          v-model="username2"
+          :label="$t('username')"
+          :placeholder="$t('usernamePlaceholder')"
+          error
+        />
         <van-field
           v-model="phone"
           :label="$t('phone')"
@@ -53,8 +58,23 @@
           type="textarea"
           :placeholder="$t('messagePlaceholder')"
           rows="1"
-          :autosize="{ maxHeight: 100, minHeight: 40 }"
+          autosize
         />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title6')">
+      <van-cell-group>
+        <van-field
+          center
+          v-model="sms"
+          :label="$t('sms')"
+          :placeholder="$t('smsPlaceholder')"
+          icon="clear"
+          @click-icon="sms = ''"
+        >
+          <van-button slot="button" size="small" type="primary">{{ $t('sendSMS') }}</van-button>
+        </van-field>
       </van-cell-group>
     </demo-block>
   </demo-section>
@@ -68,8 +88,12 @@ export default {
       title3: '禁用输入框',
       title4: '错误提示',
       title5: '高度自适应',
+      title6: '插入按钮',
       message: '留言',
       phone: '手机号',
+      sms: '短信验证码',
+      sendSMS: '发送验证码',
+      smsPlaceholder: '请输入短信验证码',
       phonePlaceholder: '请输入手机号',
       messagePlaceholder: '请输入留言',
       inputDisabled: '输入框已禁用',
@@ -80,8 +104,12 @@ export default {
       title3: 'Disabled',
       title4: 'Error info',
       title5: 'Auto resize',
+      title6: 'Insert button',
       message: 'Message',
       phone: 'Phone',
+      sms: 'SMS',
+      sendSMS: 'Send SMS',
+      smsPlaceholder: 'SMS',
       phonePlaceholder: 'Phone',
       messagePlaceholder: 'Message',
       inputDisabled: 'Disabled',
@@ -91,9 +119,11 @@ export default {
 
   data() {
     return {
+      sms: '',
       value: '',
       password: '',
       username: '',
+      username2: '',
       message: '',
       phone: '1365577'
     };

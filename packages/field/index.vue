@@ -1,17 +1,14 @@
 <template>
   <cell
     :title="label"
+    :center="center"
     :required="required"
     class="van-field"
     :class="{
-      'van-field--has-textarea': type === 'textarea',
-      'van-field--nolabel': !label,
       'van-field--disabled': $attrs.disabled,
       'van-field--error': error,
-      'van-field--border': border,
-      'van-field--autosize': autosize,
-      'van-field--has-icon': hasIcon,
-      'van-hairline--surround': border
+      'van-field--min-height': type === 'textarea' && !autosize,
+      'van-field--has-icon': hasIcon
     }"
   >
     <textarea
@@ -45,6 +42,9 @@
         <icon :name="icon" />
       </slot>
     </div>
+    <div class="van-field__button" v-if="$slots.button" slot="extra">
+      <slot name="button" />
+    </div>
   </cell>
 </template>
 
@@ -66,6 +66,7 @@ export default create({
     icon: String,
     label: String,
     error: Boolean,
+    center: Boolean,
     border: Boolean,
     required: Boolean,
     autosize: [Boolean, Object],
