@@ -1,33 +1,49 @@
 @import './common/var.css';
 
 .van-field {
-  width: 100%;
-
   .van-cell__title {
-    width: 90px;
+    min-width: 90px;
+  }
+
+  .van-cell__value {
+    position: relative;
+  }
+
+  &__control {
+    border: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+
+    &:disabled {
+      opacity: 1;
+      color: $gray-darker;
+      background-color: transparent;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 10px 0 10px 10px;
+    transform: translate3d(0, -50%, 0);
+
+    .van-icon {
+      display: block;
+    }
+  }
+
+  &__button {
+    padding-left: 10px;
   }
 
   &__error-message {
     color: $red;
     font-size: 12px;
     text-align: left;
-  }
-
-  &--has-textarea {
-    .van-field__control {
-      min-height: 60px;
-    }
-  }
-
-  &--nolabel {
-    .van-cell__title {
-      display: none;
-    }
-
-    .van-cell__value {
-      width: 100%;
-      padding-left: 0;
-    }
   }
 
   &--disabled {
@@ -45,54 +61,15 @@
     }
   }
 
-  &--border {
+  &--min-height {
     .van-field__control {
-      padding-left: 10px;
-    }
-
-    &::after {
-      border-radius: 2px;
-    }
-  }
-
-  &--autosize {
-    .van-field__control {
-      min-height: 0;
+      min-height: 60px;
     }
   }
 
   &--has-icon {
     .van-field__control {
-      width: 90%;
-    }
-  }
-
-  &__control {
-    border: 0;
-    font-size: 14px;
-    line-height: 24px;
-    height: 24px;
-    padding: 0;
-    display: block;
-    width: 100%;
-    resize: none;
-
-    &:disabled {
-      opacity: 1;
-      color: $gray-darker;
-      background-color: transparent;
-    }
-  }
-
-  &__icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate3d(0, -50%, 0);
-    padding: 10px;
-
-    .van-icon {
-      display: block;
+      padding-right: 20px;
     }
   }
 }

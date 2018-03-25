@@ -62,11 +62,13 @@ Vue.use(Field);
 ```html
 <van-cell-group>
   <van-field
+    v-model="username"
     label="用户名"
     placeholder="请输入用户名"
     error
   />
   <van-field
+    v-model="phone"
     label="手机号"
     placeholder="请输入手机号"
     error-message="手机号格式错误"
@@ -87,6 +89,24 @@ Vue.use(Field);
     rows="1"
     autosize
   />
+</van-cell-group>
+```
+
+#### 插入按钮
+通过 button slot 可以在输入框尾部插入按钮
+
+```html
+<van-cell-group>
+  <van-field
+    center
+    v-model="sms"
+    label="短信验证码"
+    placeholder="请输入短信验证码"
+    icon="clear"
+    @click-icon="sms = ''"
+  >
+    <van-button slot="button" size="small" type="primary">发送验证码</van-button>
+  </van-field>
 </van-cell-group>
 ```
 
@@ -115,4 +135,5 @@ Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 | 名称 | 说明 |
 |-----------|-----------|
-| icon | 自定义icon |
+| icon | 自定义输入框尾部图标 |
+| button | 自定义输入框尾部按钮 |
