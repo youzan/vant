@@ -1,5 +1,20 @@
 ## Changelog
 
+### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+`2018-03-26`
+
+**Improvements**
+
+- Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+- Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tag text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+- fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
 `2018-03-22`
 
@@ -11,6 +26,7 @@
 * Doc: add guide of custom iconfont [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
 
 **Bug Fixes**
+
 * fix AddressEdit not auto select area when created [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
 * fix List trigger load event when hidden [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
 * fix Sku default selection not work [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)
