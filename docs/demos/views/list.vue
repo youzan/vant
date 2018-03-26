@@ -65,7 +65,7 @@ export default {
 <style lang="postcss">
 .demo-list {
   .van-cell {
-    text-align: center;
+    justify-content: center;
   }
 
   .page-desc {
