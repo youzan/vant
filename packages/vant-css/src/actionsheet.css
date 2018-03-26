@@ -9,7 +9,7 @@
   transition: .2s ease-out;
   background-color: $background-color;
   max-height: 90%;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
   &--withtitle {
