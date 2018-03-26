@@ -1,6 +1,6 @@
 {
   "name": "vant-css",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "vant css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
