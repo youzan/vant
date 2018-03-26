@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vue.js 2.0 Mobile UI at YouZan",
   "main": "lib/vant.js",
   "style": "lib/vant-css/index.css",
