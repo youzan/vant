@@ -36,39 +36,32 @@ export default create({
   },
 
   computed: {
-    isGroup() {
-      return !!this.findParentByName('van-radio-group');
-    },
-
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup
-          ? this.parentGroup.value
-          : this.value;
+        return this.parent ? this.parent.value : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
-          this.parentGroup.$emit('input', val);
-        } else {
-          this.$emit('input', val);
-        }
+        (this.parent || this).$emit('input', val);
       }
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup
-        ? this.parentGroup.disabled || this.disabled
+      return this.parent
+        ? this.parent.disabled || this.disabled
         : this.disabled;
     }
   },
 
+  created() {
+    this.findParent('van-radio-group');
+  },
+
   methods: {
     onClickLabel() {
-      if (this.isDisabled) {
-        return;
+      if (!this.isDisabled) {
+        this.currentValue = this.name;
       }
-      this.currentValue = this.name;
     }
   }
 });

@@ -32,7 +32,7 @@ export default create({
 
   computed: {
     items() {
-      return this.parentGroup.items;
+      return this.parent.items;
     },
 
     index() {
@@ -44,15 +44,15 @@ export default create({
     },
 
     expanded() {
-      const { activeNames } = this.parentGroup;
-      return this.parentGroup.accordion
-        ? activeNames === this.currentName
-        : activeNames.some(name => name === this.currentName);
+      const { value } = this.parent;
+      return this.parent.accordion
+        ? value === this.currentName
+        : value.some(name => name === this.currentName);
     }
   },
 
   created() {
-    this.findParentByName('van-collapse');
+    this.findParent('van-collapse');
     this.items.push(this);
   },
 
@@ -62,9 +62,9 @@ export default create({
 
   methods: {
     onClick() {
-      const { parentGroup } = this;
-      const name = parentGroup.accordion && this.currentName === parentGroup.activeNames ? '' : this.currentName;
-      this.parentGroup.switch(name, !this.expanded);
+      const { parent } = this;
+      const name = parent.accordion && this.currentName === parent.value ? '' : this.currentName;
+      this.parent.switch(name, !this.expanded);
     }
   }
 });

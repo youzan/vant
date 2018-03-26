@@ -69,6 +69,7 @@ describe('Field', () => {
 
   it('create a autosize textarea field', (done) => {
     wrapper = mount(Field, {
+      attachToDocument: true,
       propsData: {
         type: 'textarea',
         autosize: {}
@@ -88,7 +89,6 @@ describe('Field', () => {
     textareaElement.value = longText;
     textarea.trigger('input');
 
-    wrapper.update();
     setTimeout(() => {
       expect(wrapper.find('.van-field__control')[0].element.value).to.equal(longText);
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');

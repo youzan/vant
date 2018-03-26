@@ -146,7 +146,9 @@ export default create({
         }
       }
 
-      el.style.height = height + 'px';
+      if (height) {
+        el.style.height = height + 'px';
+      }
     }
   }
 });
