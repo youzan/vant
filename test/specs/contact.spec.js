@@ -229,7 +229,7 @@ describe('ContactEdit', () => {
 
     const deleteButton = wrapper.find('.van-button')[1];
     deleteButton.trigger('click');
-    wrapper.vm.onDeleteContact();
+    wrapper.vm.onDelete();
 
     setTimeout(() => {
       wrapper.vm.isDeleting = false;

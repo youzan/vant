@@ -14,7 +14,6 @@ describe('ActionSheet', () => {
     });
 
     expect(wrapper.hasClass('van-actionsheet')).to.be.true;
-    expect(wrapper.contains('.van-actionsheet__list')).to.be.true;
     expect(wrapper.instance().actions.length).to.equal(0);
     expect(wrapper.instance().overlay).to.be.true;
     expect(wrapper.instance().closeOnClickOverlay).to.be.true;
