@@ -27,8 +27,12 @@
     transform: translate(-50%, -50%); 
   }
 
-  &:not([disabled]):active::before {
+  &:active::before {
     opacity: .3;
+  }
+
+  &--unclickable:before {
+    display: none;
   }
 
   &--default {
