@@ -2,8 +2,8 @@
 
 .van-tag {
   display: inline-block;
-  padding: 0 5px;
-  line-height: 18px;
+  padding: 2px 5px;
+  line-height: normal;
   border-radius: 3px;
   font-size: 10px;
   background: $gray;
