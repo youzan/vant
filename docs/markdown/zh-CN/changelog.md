@@ -1,5 +1,19 @@
 ## 更新日志
 
+### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+`2018-03-26`
+
+**Improvements**
+
+- Cell: 新增 center 属性 [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: 布局方式由 table 升级为 flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+- Field: 新增 button slot，支持插入按钮 [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: click 事件回调新增 title 参数 [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tag 文字在部分安卓手机上未垂直居中的问题 [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Toast 蒙层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
 `2018-03-22`
 
@@ -11,6 +25,7 @@
 * Doc: 新增自定义图标指引 [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
 
 **Bug Fixes**
+
 * 修复 AddressEdit 初始化时省市区未正确选中的问题 [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
 * 修复 List 隐藏时依然会触发 load 事件的问题 [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
 * 修复 Sku 默认选中不生效的问题 [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)

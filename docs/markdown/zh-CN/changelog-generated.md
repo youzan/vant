@@ -1,5 +1,34 @@
 ## 更新日志
 
+## [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3) (2018-03-26)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.2...v1.0.3)
+
+**Issue**
+
+- 优惠券选择器，优惠券多的话，超出屏幕无法拖动 [\#769](https://github.com/youzan/vant/issues/769)
+- sku组件，在ios上面输入购买数量软键盘抬起的时候，有横向滚动条，希望给个解决思路 [\#768](https://github.com/youzan/vant/issues/768)
+- 能否增加表单校验？ [\#764](https://github.com/youzan/vant/issues/764)
+- 希望加个滚动组件，类似于iscroll [\#763](https://github.com/youzan/vant/issues/763)
+- 关于Tab组件的点击事件 [\#758](https://github.com/youzan/vant/issues/758)
+- 定制主题  本地编译的时候报错 [\#755](https://github.com/youzan/vant/issues/755)
+- area 组件导入官方给mock的城市列表报错 [\#753](https://github.com/youzan/vant/issues/753)
+- Use babel-plugin-import报错 [\#750](https://github.com/youzan/vant/issues/750)
+- 只有下拉加载 有没有上拉加载组件呢？ [\#746](https://github.com/youzan/vant/issues/746)
+- 编辑地址时，不能默认地址v1.0.1，上个版本还是可以的 [\#743](https://github.com/youzan/vant/issues/743)
+- 「只有一个sku规格值时默认选中」逻辑问题 [\#738](https://github.com/youzan/vant/issues/738)
+- 我想进微信交流群 [\#729](https://github.com/youzan/vant/issues/729)
+- Toast组件实例化时mask先是显示header下面 然后再覆盖整个屏幕 [\#726](https://github.com/youzan/vant/issues/726)
+
+**Improvements**
+
+- \[bugfix\] Tag: text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) ([chenjiahan](https://github.com/chenjiahan))
+-  \[Improvement\] Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix picker demo [\#766](https://github.com/youzan/vant/pull/766) ([erniu](https://github.com/erniu))
+- \[bugfix\] Toast: mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2) (2018-03-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.1...v1.0.2)
 
