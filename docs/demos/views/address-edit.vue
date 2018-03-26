@@ -2,7 +2,6 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-address-edit
-        v-show="show"
         :area-list="areaList"
         show-postal
         show-delete
@@ -47,11 +46,7 @@ export default {
   },
 
   data() {
-    setTimeout(() => {
-      this.show = true;
-    }, 3000);
     return {
-      show: false,
       areaList,
       searchResult: []
     };
