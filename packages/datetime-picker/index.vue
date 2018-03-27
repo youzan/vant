@@ -1,9 +1,13 @@
 <template>
   <picker
     ref="picker"
-    :show-toolbar="showToolbar"
+    :title="title"
     :columns="columns"
-    :visible-item-count="visibleItemCount"
+    :item-height="itemHeight"
+    :show-toolbar="showToolbar"
+    :visibie-item-height="visibleItemCount"
+    :confirm-button-text="confirmButtonText"
+    :cancel-button-text="cancelButtonText"
     @change="onChange"
     @confirm="onConfirm"
     @cancel="$emit('cancel')"
@@ -25,6 +29,12 @@ export default create({
   },
 
   props: {
+    value: {},
+    title: String,
+    itemHeight: Number,
+    visibleItemCount: Number,
+    confirmButtonText: String,
+    cancelButtonText: String,
     type: {
       type: String,
       default: 'datetime'
@@ -36,10 +46,6 @@ export default create({
     format: {
       type: String,
       default: 'YYYY.MM.DD HH时 mm分'
-    },
-    visibleItemCount: {
-      type: Number,
-      default: 5
     },
     minDate: {
       type: Date,
@@ -58,8 +64,7 @@ export default create({
     maxHour: {
       type: Number,
       default: 23
-    },
-    value: {}
+    }
   },
 
   data() {
