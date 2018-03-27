@@ -1,8 +1,13 @@
 <template>
   <picker
     ref="picker"
-    v-bind="$props"
+    :title="title"
     :columns="columns"
+    :item-height="itemHeight"
+    :show-toolbar="showToolbar"
+    :visibie-item-height="visibleItemCount"
+    :confirm-button-text="confirmButtonText"
+    :cancel-button-text="cancelButtonText"
     @change="onChange"
     @confirm="onConfirm"
     @cancel="$emit('cancel')"
