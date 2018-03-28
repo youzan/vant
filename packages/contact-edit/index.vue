@@ -19,8 +19,8 @@
       />
     </cell-group>
     <div class="van-contact-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveContact" type="primary">{{ $t('save') }}</van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">{{ $t('delete') }}</van-button>
+      <van-button block :loading="isSaving" @click="onSave" type="primary">{{ $t('save') }}</van-button>
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>
   </div>
 </template>
@@ -90,13 +90,8 @@ export default create({
       }
     },
 
-    onSaveContact() {
-      const items = [
-        'name',
-        'tel'
-      ];
-
-      const isValid = items.every(item => {
+    onSave() {
+      const isValid = ['name', 'tel'].every(item => {
         const msg = this.getErrorMessageByKey(item);
         if (msg) {
           this.errorInfo[item] = true;
@@ -110,16 +105,14 @@ export default create({
       }
     },
 
-    onDeleteContact() {
-      if (this.isDeleting) {
-        return;
+    onDelete() {
+      if (!this.isDeleting) {
+        Dialog.confirm({
+          message: this.$t('confirmDelete')
+        }).then(() => {
+          this.$emit('delete', this.data);
+        });
       }
-
-      Dialog.confirm({
-        message: this.$t('confirmDelete')
-      }).then(() => {
-        this.$emit('delete', this.data);
-      });
     }
   }
 });

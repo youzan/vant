@@ -1,5 +1,5 @@
 ## PasswordInput
-The PasswordInput component is usually used with [NumberKeyboard](#/en-US/component/number-keyboard) Component.
+The PasswordInput component is usually used with [NumberKeyboard](#/en-US/number-keyboard) Component.
 
 ### Install
 ``` javascript

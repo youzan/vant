@@ -62,7 +62,6 @@ export default {
 | area-list | 地区列表 | `Object` | - | - |
 | address-info | 收货人信息 | `Object` | `{}` | - |
 | search-result | 详细地址搜索结果 | `Array` | `[]` | - |
-| address-text | "地址"文案前缀 | `String` | `收货` | - |
 | show-postal | 是否显示邮政编码 | `Boolean` | `false` | - |
 | show-delete | 是否显示删除按钮 | `Boolean` | `false` | - |
 | show-set-default | 是否显示默认地址栏 | `Boolean` | `false` | - |

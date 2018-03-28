@@ -19,18 +19,6 @@ describe('Field', () => {
     expect(wrapper.hasClass('van-field')).to.be.true;
   });
 
-  it('create a border field', () => {
-    wrapper = mount(Field, {
-      propsData: {
-        type: 'text',
-        border: true
-      }
-    });
-
-    expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.hasClass('van-field--border')).to.be.true;
-  });
-
   it('create a text field with initialize value', (done) => {
     wrapper = mount(Field, {
       propsData: {
@@ -69,20 +57,19 @@ describe('Field', () => {
   it('create a textarea field', (done) => {
     wrapper = mount(Field, {
       propsData: {
-        type: 'textarea',
-        autosize: true
+        type: 'textarea'
       }
     });
 
     setTimeout(() => {
-      expect(wrapper.hasClass('van-field')).to.be.true;
-      expect(wrapper.hasClass('van-field--has-textarea')).to.be.true;
+      expect(wrapper.hasClass('van-field--min-height')).to.be.true;
       done();
     }, 50);
   });
 
   it('create a autosize textarea field', (done) => {
     wrapper = mount(Field, {
+      attachToDocument: true,
       propsData: {
         type: 'textarea',
         autosize: {}
@@ -93,9 +80,6 @@ describe('Field', () => {
       wrapper.vm.value = val;
     });
 
-    expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.hasClass('van-field--autosize')).to.be.true;
-
     const textarea = wrapper.find('.van-field__control')[0];
     const textareaElement = textarea.element;
     const textAreaDiff = (parseInt(textareaElement.style.paddingBottom, 10) +
@@ -105,7 +89,6 @@ describe('Field', () => {
     textareaElement.value = longText;
     textarea.trigger('input');
 
-    wrapper.update();
     setTimeout(() => {
       expect(wrapper.find('.van-field__control')[0].element.value).to.equal(longText);
       expect(textareaElement.style.height).to.equal((textareaElement.scrollHeight - textAreaDiff) + 'px');
@@ -127,9 +110,6 @@ describe('Field', () => {
     wrapper.vm.$on('input', val => {
       wrapper.vm.value = val;
     });
-
-    expect(wrapper.hasClass('van-field')).to.be.true;
-    expect(wrapper.hasClass('van-field--autosize')).to.be.true;
 
     const textarea = wrapper.find('.van-field__control')[0];
     const textareaElement = textarea.element;

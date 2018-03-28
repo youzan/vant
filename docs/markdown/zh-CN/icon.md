@@ -23,6 +23,27 @@ Icon 组件默认引用 `yzcdn.cn` 域名下的字体文件，如果想要使用
 import 'vant/lib/vant-css/icon-local.css';
 ```
 
+#### 自定义图标
+如果需要在现有 Icon 的基础上使用更多图标，可以引入你需要的 iconfont 对应的 ttf 文件和样式，之后就可以在 Icon 组件中直接使用
+
+```css
+@font-face {
+  font-family: 'custom-iconfont';
+  src: url('./iconfont.ttf') format('truetype');
+}
+
+.van-icon {
+  font-family: 'vant-icon', 'custom-iconfont' !important;
+}
+
+.van-icon-extra:before {
+  content: '\e626';
+}
+```
+
+```html
+<van-icon name="extra" />
+```
 
 ### API
 

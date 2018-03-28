@@ -60,11 +60,13 @@ Use `error` or `error-message` to show error info
 ```html
 <van-cell-group>
   <van-field
+    v-model="username"
     label="Username"
     placeholder="Username"
     error
   />
   <van-field
+    v-model="phone"
     label="Phone"
     placeholder="Phone"
     error-message="Invalid phone"
@@ -85,6 +87,24 @@ Textarea Filed can be auto resize when has `autosize` prop
     rows="1"
     autosize
   />
+</van-cell-group>
+```
+
+#### Insert button
+Use button slot to insert button
+
+```html
+<van-cell-group>
+  <van-field
+    center
+    v-model="sms"
+    label="SMS"
+    placeholder="SMS"
+    icon="clear"
+    @click-icon="sms = ''"
+  >
+    <van-button slot="button" size="small" type="primary">Send SMS</van-button>
+  </van-field>
 </van-cell-group>
 ```
 
@@ -114,3 +134,4 @@ Filed support all native events of input tag，such as `focus`、`blur`、`keypr
 | name | Description |
 |-----------|-----------|
 | icon | Custom icon |
+| button | Insert button |

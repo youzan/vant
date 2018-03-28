@@ -1,11 +1,11 @@
 <template>
-  <transition name="van-actionsheet-float">
+  <transition name="van-slide-bottom">
     <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <div v-text="title" />
-        <icon name="close" @click.stop="$emit('input', false)" />
+        <icon name="close" @click="$emit('input', false)" />
       </div>
-      <ul v-if="!title" class="van-actionsheet__list van-hairline--bottom">
+      <ul v-else class="van-hairline--bottom">
         <li
           v-for="(item, index) in actions"
           :key="index"
@@ -24,7 +24,7 @@
         v-if="cancelText"
         v-text="cancelText"
         class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
-        @click.stop="$emit('input', false)"
+        @click="$emit('input', false)"
       />
       <div v-else class="van-actionsheet__content">
         <slot />

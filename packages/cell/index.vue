@@ -3,6 +3,7 @@
     class="van-cell"
     :class="{
       'van-hairline': border,
+      'van-cell--center': center,
       'van-cell--required': required,
       'van-cell--clickable': isLink || clickable
     }"
@@ -14,7 +15,7 @@
       </slot>
       <slot name="title">
         <span class="van-cell__text" v-text="title" />
-        <span class="van-cell__label" v-if="label" v-text="label" />
+        <div class="van-cell__label" v-if="label" v-text="label" />
       </slot>
     </div>
     <div
@@ -54,6 +55,7 @@ export default create({
     icon: String,
     title: String,
     label: String,
+    center: Boolean,
     isLink: Boolean,
     required: Boolean,
     clickable: Boolean,

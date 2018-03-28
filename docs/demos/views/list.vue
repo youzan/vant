@@ -3,7 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
       <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-        <van-list 
+        <van-list
           v-model="loading"
           :finished="finished"
           @load="onLoad"
@@ -39,7 +39,7 @@ export default {
     onLoad() {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          let text = this.list.length + 1;
+          const text = this.list.length + 1;
           this.list.push(text < 10 ? '0' + text : text);
         }
         this.loading = false;
@@ -65,7 +65,7 @@ export default {
 <style lang="postcss">
 .demo-list {
   .van-cell {
-    text-align: center;
+    justify-content: center;
   }
 
   .page-desc {

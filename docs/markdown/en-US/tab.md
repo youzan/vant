@@ -1,4 +1,4 @@
-## Tabs
+## Tab
 
 ### Install
 ``` javascript
@@ -58,8 +58,8 @@ You can set `disabled` attribute on the corresponding `van-tab`.
 ```javascript
 export default {
   methods: {
-    onClickDisabled() {
-      Toast('Disabled!');
+    onClickDisabled(index, title) {
+      this.$toast(title + ' is disabled');
     }
   }
 };
@@ -79,10 +79,8 @@ Tabs styled as cards.
 
 #### Click Event
 
-You can bind `click` event on `van-tabs`, the event handler function has one parameters: index of click tab.
-
 ```html
-<van-tabs @click="handleTabClick">
+<van-tabs @click="onClick">
   <van-tab v-for="index in 4" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -92,8 +90,8 @@ You can bind `click` event on `van-tabs`, the event handler function has one par
 ```javascript
 export default {
   methods: {
-    handleTabClick(index) {
-      Toast(index);
+    onClick(index, title) {
+      this.$toast(title);
     }
   }
 };
@@ -151,8 +149,8 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| title | Tab title | `String` | - | - |
-| disabled | Whether disabled current tab | `Boolean` | `false` | - |
+| title | Title | `String` | - | - |
+| disabled | Whether to disable tab | `Boolean` | `false` | - |
 
 ### Tab Slot
 
@@ -165,6 +163,5 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
-| click | Triggered when click tab | index：index of current tab |
-| disabled | Triggered when click disabled tab | index：index of current tab |
-
+| click | Triggered when click tab | index：index of current tab，title: tab title |
+| disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |

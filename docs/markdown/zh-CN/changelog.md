@@ -1,11 +1,44 @@
 ## 更新日志
 
+### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+`2018-03-26`
+
+**Improvements**
+
+- Cell: 新增 center 属性 [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: 布局方式由 table 升级为 flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+- Field: 新增 button slot，支持插入按钮 [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: click 事件回调新增 title 参数 [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tag 文字在部分安卓手机上未垂直居中的问题 [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Toast 蒙层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
+### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+`2018-03-22`
+
+**Improvements**
+
+* DatetimePicker: 新增 show-toolbar 属性以及 month-year 类型 [\#736](https://github.com/youzan/vant/pull/736) [@zz1211](https://github.com/zz1211)
+* NavBar: 移除顶部 border [\#744](https://github.com/youzan/vant/pull/744) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: 修正内边距 [\#737](https://github.com/youzan/vant/pull/737) [@skylinety](https://github.com/skylinety)
+* Doc: 新增自定义图标指引 [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
+
+**Bug Fixes**
+
+* 修复 AddressEdit 初始化时省市区未正确选中的问题 [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 List 隐藏时依然会触发 load 事件的问题 [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Sku 默认选中不生效的问题 [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)
+* 修复 Toast 蒙层被其他元素遮挡的问题 [\#740](https://github.com/youzan/vant/pull/740) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Tab 内容无法点击的问题 [\#749](https://github.com/youzan/vant/pull/749) [@cookfront](https://github.com/cookfront)
+
+
 ### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
 `2018-03-19`
 
 **Bug Fixes**
 
-- 修复 create 模块循环引用导致某些情况下编译错误的问题 [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 create 模块循环引用导致某些情况下编译错误的问题 [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
 
 
 ### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)

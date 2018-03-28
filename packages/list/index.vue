@@ -79,7 +79,7 @@ export default create({
       const scrollerHeight = utils.getVisibleHeight(scroller);
 
       /* istanbul ignore next */
-      if (!scrollerHeight) {
+      if (!scrollerHeight || utils.getComputedStyle(el).display === 'none') {
         return;
       }
 

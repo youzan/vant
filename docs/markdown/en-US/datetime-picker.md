@@ -9,14 +9,12 @@ Vue.use(DatetimePicker);
 
 ### Usage
 
-#### Basic Usage
+#### Choose DateTime
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="datetime"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
   :max-date="maxDate"
 />
@@ -30,46 +28,88 @@ export default {
       maxHour: 20,
       minDate: new Date(),
       maxDate: new Date(2019, 10, 1),
-      currentDate: new Date(2018, 0, 1)
+      currentDate: new Date()
     };
   }
 };
 ```
 
-#### Date Picker
+#### Choose Date
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="date"
-  :min-hour="minHour"
-  :max-hour="maxHour"
   :min-date="minDate"
 />
 ```
 
-#### Time Picker
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+```
+
+#### Choose Year-Month
 
 ```html
 <van-datetime-picker
-  v-model="currentDate3"
+  v-model="currentDate"
+  type="year-month"
+  :min-date="minDate"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  }
+}
+```
+
+#### Choose Time
+
+```html
+<van-datetime-picker
+  v-model="currentDate"
   type="time"
   :min-hour="minHour"
   :max-hour="maxHour"
-  :min-date="minDate"
 />
+```
+
+```js
+export default {
+  data() {
+    return {
+      currentDate: '12:00'
+    };
+  }
+}
 ```
 
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Picker type | `String` | 'datetime' |  'date', 'time' |
+| type | Picker type | `String` | `datetime` |  `date` `time` <br> `year-month` |
 | min-date | Min date | `Date` | Ten years ago on January 1 | - |
 | max-date | Max date | `Date` | Ten years later on December 31 | - |
 | min-hour | Min hour | `Number` | `0` | - |
 | max-hour | Max hour | `Number` | `23` | - |
-| visible-item-count | Count of columns to show | `Number` | `5` | - |
+| title | Toolbar title | `String` | `''` | - |
+| loading | Whether to show loading prompt | `Boolean` | `false` | - |
+| item-height | Option height | `Number` | `44` | - |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
+| visible-item-count | Count of visible columns | `Number` | `5` | - |
 
 ### Event
 

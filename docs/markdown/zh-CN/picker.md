@@ -1,4 +1,5 @@
 ## Picker 选择器
+选择器组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 使用指南
 ``` javascript
@@ -23,8 +24,10 @@ export default {
       columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
     };
   },
-  onChange(picker, value, index) {
-    Toast(`当前值：${value}, 当前索引：${index}`);
+  methods: {
+    onChange(picker, value, index) {
+      Toast(`当前值：${value}, 当前索引：${index}`);
+    }
   }
 };
 ```
@@ -131,11 +134,11 @@ export default {
 | show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
 | title | 顶部栏标题 | `String` | `''` | - |
 | loading | 是否显示加载状态 | `Boolean` | `false` | - |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
 | confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
 | visible-item-count | 可见的选项个数 | `Number` | `5` | - |
-| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
 
 ### Event
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数

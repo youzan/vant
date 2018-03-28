@@ -6,7 +6,9 @@
   right: 0;
   bottom: 0;
   color: $text-color;
-  transition: .2s ease-out;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: $background-color;
 
   &--withtitle {
@@ -52,10 +54,5 @@
       position: absolute;
       line-height: inherit;
     }
-  }
-
-  &-float-enter,
-  &-float-leave-active {
-    transform: translate3d(0, 100%, 0);
   }
 }

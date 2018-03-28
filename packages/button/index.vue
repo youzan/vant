@@ -11,7 +11,8 @@
         'van-button--disabled': disabled,
         'van-button--loading': loading,
         'van-button--block': block,
-        'van-button--bottom-action': bottomAction
+        'van-button--bottom-action': bottomAction,
+        'van-button--unclickable': disabled || loading
       }
     ]"
     @click="onClick"
