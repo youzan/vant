@@ -2,9 +2,10 @@
 
 ### Install
 ``` javascript
-import { Badge } from 'vant';
+import { Badge, BadgeGroup } from 'vant';
 
 Vue.use(Badge);
+Vue.use(BadgeGroup);
 ```
 
 ### Usage
