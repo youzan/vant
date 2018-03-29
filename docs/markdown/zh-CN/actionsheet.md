@@ -75,6 +75,12 @@ export default {
 | close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
 | get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
 
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| cancel | 取消按钮点击时触发 | - |
+
 ### actions
 
 `API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
