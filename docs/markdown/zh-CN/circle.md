@@ -68,3 +68,9 @@ export default {
 | text | 文字 | `String` | - | - |
 | stroke-width | 进度条宽度 | `Number` | `40` | - |
 | clockwise | 是否顺时针增加 | `Boolean` | `true` | - |
+
+### Circle Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 自定义文字内容 |
