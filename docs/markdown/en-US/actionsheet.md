@@ -72,6 +72,12 @@ Actionsheet will get another style if there is a `title` prop.
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | - | - |
 | get-container | Return the mount node for actionsheet | `Function` | - | `() => HTMLElement` |
 
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| cancel | Triggered when cancel click | - |
+
 ### Data struct of actions
 
 | key | Description |
