@@ -52,7 +52,7 @@ export default create({
       return Math.floor(this.price / 100);
     },
     priceDecimal() {
-      const decimal = this.price % 100;
+      const decimal = Math.floor(this.price % 100);
       return (decimal < 10 ? '0' : '') + decimal;
     }
   },
