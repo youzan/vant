@@ -43,7 +43,7 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | result-type | Type of file read result | `String` | `dataUrl` | `text` |
-| disable | Whether to disable the upload | `Boolean` | `false` | - |
+| disabled | Whether to disabled the upload | `Boolean` | `false` | - |
 | before-read | Hook before reading the file, return false to stop reading the file | `Function` | - | - |
 | after-read | Hook after reading the file | `Function` | - | - |
 | max-size | Max size of file | `Number` | - | - |
