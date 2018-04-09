@@ -139,7 +139,7 @@
       display: flex;
       margin-left: -1px; /* hack for flex space */
       text-align: center;
-      padding-right: 16px;
+      margin-left: -16px;
       flex-direction: column;
       justify-content: center;
       background-image: linear-gradient(45deg, #ff6868, #ff8c8c);
@@ -158,7 +158,6 @@
         margin: 0;
         font-size: 14px;
         font-weight: 300;
-        max-width: 90px;
         @mixin ellipsis;
       }
     }

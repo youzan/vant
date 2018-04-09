@@ -1,5 +1,130 @@
 ## Changelog
 
+### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+`2018-03-26`
+
+**Improvements**
+
+- Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+- Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- fix Tag text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+- fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+`2018-03-22`
+
+**Improvements**
+
+* DatetimePicker: add show-toolbar prop & month-year type [\#736](https://github.com/youzan/vant/pull/736) [@zz1211](https://github.com/zz1211)
+* NavBar: remove top border [\#744](https://github.com/youzan/vant/pull/744) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: adjust padding [\#737](https://github.com/youzan/vant/pull/737) [@skylinety](https://github.com/skylinety)
+* Doc: add guide of custom iconfont [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
+
+**Bug Fixes**
+
+* fix AddressEdit not auto select area when created [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
+* fix List trigger load event when hidden [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
+* fix Sku default selection not work [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)
+* fix Toast overlay blocked by other element [\#740](https://github.com/youzan/vant/pull/740) [@chenjiahan](https://github.com/chenjiahan)
+* fix Tab content not clickable [\#749](https://github.com/youzan/vant/pull/749) [@cookfront](https://github.com/cookfront)
+
+
+### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+`2018-03-19`
+
+**Bug Fixes**
+
+* fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
+`2018-03-19`
+
+**Breaking changes**
+
+* add List component [\#682](https://github.com/youzan/vant/pull/682) [@chenjiahan](https://github.com/chenjiahan)
+* add Collapse component [\#674](https://github.com/youzan/vant/pull/674) [@chenjiahan](https://github.com/chenjiahan)
+* Build: upgrade to webpack 4 [\#693](https://github.com/youzan/vant/pull/693) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: add lock-scroll instead of lock-on-scroll & prevent-scroll [\#688](https://github.com/youzan/vant/pull/688) [@chenjiahan](https://github.com/chenjiahan)
+* Deprecate Waterfall component and add deprecate tips [\#683](https://github.com/youzan/vant/pull/683) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+
+* AddressEdit: add show-delete prop [\#716](https://github.com/youzan/vant/pull/716) [@chenjiahan](https://github.com/chenjiahan)
+* CellSwipe: optimzie animation fluency [\#685](https://github.com/youzan/vant/pull/685) [@chenjiahan](https://github.com/chenjiahan)
+* Field: support autosize maxHeight & minHeight [\#718](https://github.com/youzan/vant/pull/718) [@chenjiahan](https://github.com/chenjiahan)
+* Locale: optimize i18n config [\#701](https://github.com/youzan/vant/pull/701) [@chenjiahan](https://github.com/chenjiahan)
+* PullRefresh: support trigger loading animation [\#684](https://github.com/youzan/vant/pull/684) [@chenjiahan](https://github.com/chenjiahan)
+* Switch: support custom size [\#723](https://github.com/youzan/vant/pull/723) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add header price slot [\#705](https://github.com/youzan/vant/pull/705) [@w91](https://github.com/w91)
+* Sku: optimize DOM [\#704](https://github.com/youzan/vant/pull/704) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: support switch tabs with swipe gestrue in the content [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695) [@cookfront](https://github.com/cookfront)
+* Tag: adjust style [\#689](https://github.com/youzan/vant/pull/689) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: support Vue.use to register [\#690](https://github.com/youzan/vant/pull/690) [@chenjiahan](https://github.com/chenjiahan)
+
+
+**Bug Fixes**
+
+* fix Actionsheet bottom border missing [\#686](https://github.com/youzan/vant/pull/686) [@chenjiahan](https://github.com/chenjiahan)
+* fix AddressEdit area not selected when area_code changed [\#680](https://github.com/youzan/vant/pull/680) [@chenjiahan](https://github.com/chenjiahan)
+* fix Stepper value overlimit [\#691](https://github.com/youzan/vant/issues/691)
+* fix Badge info font weight when selected [\#687](https://github.com/youzan/vant/pull/687) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+`2018-03-09`
+
+**Bug Fixes**
+* Area: should reset index when area list changed [\#678](https://github.com/youzan/vant/pull/678) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+`2018-03-09`
+
+**Improvements**
+
+* AddressEdit: support custom tel validator [\#673](https://github.com/youzan/vant/pull/673) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: add close-on-click-overlay config for sku popup [\#676](https://github.com/youzan/vant/pull/676) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* fix CouponList text max-width [\#675](https://github.com/youzan/vant/pull/675) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: support disable loop [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: add swipe change event demo [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* update static source CDN domain [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Field disabled color in safari [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* fix Swipe autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+`2018-02-27`
+
+**Improvements**
+
+* Checkbox: add label-disabled prop [\#644](https://github.com/youzan/vant/pull/644) [@ddchef](https://github.com/ddchef)
+* Popup: add click-overlay event [\#647](https://github.com/youzan/vant/pull/647) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: add warn icon [\#651](https://github.com/youzan/vant/pull/651) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: add info-o icon, optimize checked & underway icon [\#648](https://github.com/youzan/vant/pull/648) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Button loading horizontal align [\#645](https://github.com/youzan/vant/pull/645) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
 `2018-02-12`
 

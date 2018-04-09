@@ -1,11 +1,8 @@
-@import "./mixins/ellipsis.css";
-@import "./mixins/clearfix.css";
 @import './common/var.css';
 
 .van-tree-select {
   user-select: none;
   position: relative;
-  @mixin clearfix;
 
   &__nav {
     width: 143px;

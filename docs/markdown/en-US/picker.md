@@ -1,4 +1,5 @@
 ## Picker
+The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
 ``` javascript
@@ -22,8 +23,10 @@ export default {
       columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
     };
   },
-  onChange(picker, value, index) {
-    Toast(`Value: ${value}, Index: ${index}`);
+  methods: {
+    onChange(picker, value, index) {
+      Toast(`Value: ${value}, Index: ${index}`);
+    }
   }
 };
 ```
@@ -129,11 +132,11 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
 | title | Toolbar title | `String` | `''` | - |
 | loading | Whether to show loading prompt | `Boolean` | `false` | - |
+| value-key | Key of option text | `String` | `text` | - |
+| item-height | Option height | `Number` | `44` | - |
 | confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
 | cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
-| item-height | Option height | `Number` | `44` | - |
 | visible-item-count | Count of visible columns | `Number` | `5` | - |
-| value-key | Key of option text | `String` | `text` | - |
 
 ### Event
 Picker events will pass different parameters according to the columns are single or multiple

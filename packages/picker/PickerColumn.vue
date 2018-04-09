@@ -25,13 +25,14 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
+import { isObj } from '../utils';
 
 const DEFAULT_DURATION = 200;
 const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
 export default create({
-  name: 'van-picker-column',
+  name: 'picker-column',
 
   props: {
     valueKey: String,
@@ -147,11 +148,11 @@ export default create({
     },
 
     isDisabled(option) {
-      return typeof option === 'object' && option.disabled;
+      return isObj(option) && option.disabled;
     },
 
     getOptionText(option) {
-      return typeof option === 'object' && this.valueKey in option ? option[this.valueKey] : option;
+      return isObj(option) && this.valueKey in option ? option[this.valueKey] : option;
     },
 
     setIndex(index, userAction) {

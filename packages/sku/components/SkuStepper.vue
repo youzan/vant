@@ -18,14 +18,14 @@
 </template>
 
 <script>
-import { create } from '../../utils';
+import create from '../../utils/create';
 import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
 
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
 export default create({
-  name: 'van-sku-stepper',
+  name: 'sku-stepper',
 
   components: {
     Stepper
@@ -57,6 +57,7 @@ export default create({
     currentNum(num) {
       this.skuEventBus.$emit('sku:numChange', num);
     },
+
     stepperLimit(limit) {
       if (limit < this.currentNum) {
         this.currentNum = limit;
@@ -71,6 +72,7 @@ export default create({
       }
       return this.skuStockNum;
     },
+
     quotaText() {
       const { quotaText } = this.customStepperConfig;
       let text = '';
@@ -83,6 +85,7 @@ export default create({
 
       return text;
     },
+
     stepperLimit() {
       const quotaLimit = this.quota - this.quotaUsed;
       let limit;
@@ -105,6 +108,7 @@ export default create({
     setCurrentNum(num) {
       this.currentNum = num;
     },
+
     onOverLimit(action) {
       this.skuEventBus.$emit('sku:overLimit', {
         action,
@@ -113,6 +117,7 @@ export default create({
         quotaUsed: this.quotaUsed
       });
     },
+
     onChange(currentValue) {
       const { handleStepperChange } = this.customStepperConfig;
       handleStepperChange && handleStepperChange(currentValue);

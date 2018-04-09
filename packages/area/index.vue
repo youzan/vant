@@ -16,11 +16,12 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Picker from '../picker';
+import { isObj } from '../utils';
 
 export default create({
-  name: 'van-area',
+  name: 'area',
 
   components: {
     Picker
@@ -42,7 +43,7 @@ export default create({
 
   computed: {
     listValid() {
-      return this.areaList && typeof this.areaList.province_list === 'object';
+      return this.areaList && isObj(this.areaList.province_list);
     },
 
     columns() {
@@ -81,6 +82,10 @@ export default create({
 
   watch: {
     value() {
+      this.setIndex();
+    },
+
+    areaList() {
       this.setIndex();
     }
   },

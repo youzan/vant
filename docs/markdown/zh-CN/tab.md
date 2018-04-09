@@ -1,4 +1,4 @@
-## Tabs 标签页
+## Tab 标签页
 
 ### 使用指南
 ``` javascript
@@ -58,8 +58,8 @@ export default {
 ```javascript
 export default {
   methods: {
-    onClickDisabled() {
-      Toast('Disabled!')
+    onClickDisabled(index, title) {
+      this.$toast(title + '已被禁用');
     }
   }
 };
@@ -79,10 +79,10 @@ export default {
 
 #### 点击事件
 
-可以在`van-tabs`上绑定一个`click`事件，事件处理函数有一个参数，参数为对应`tab`在`tabs`中的索引。
+可以在`van-tabs`上绑定`click`事件，事件传参为标签对应的索引和标题
 
 ```html
-<van-tabs @click="handleTabClick">
+<van-tabs @click="onClick">
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -92,8 +92,8 @@ export default {
 ```javascript
 export default {
   methods: {
-    handleTabClick(index) {
-      Toast(index);
+    onClick(index, title) {
+      this.$toast(title);
     }
   }
 };
@@ -124,6 +124,18 @@ export default {
 </van-tabs>
 ```
 
+#### 滑动切换
+
+通过`swipeable`属性可以开启滑动切换tab
+
+```html
+<van-tabs :active="active" swipeable>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
@@ -133,13 +145,14 @@ export default {
 | duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
 | swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
+| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` | - |
 
 ### Tab API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选 |
 |-----------|-----------|-----------|-------------|-------------|
-| title | tab的标题 | `String` | - | - |
-| disabled | 是否禁用这个tab | `Boolean` | `false` | - |
+| title | 标题 | `String` | - | - |
+| disabled | 是否禁用标签 | `Boolean` | `false` | - |
 
 ### Tab Slot
 
@@ -152,6 +165,6 @@ export default {
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
-| click | 某个tab点击事件 | index：点击的`tab`的索引 |
-| disabled | 某个tab禁用时点击事件 | index：点击的`tab`的索引 |
+| click | 点击标签时触发 | index：标签索引，title：标题 |
+| disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
 

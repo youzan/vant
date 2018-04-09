@@ -11,7 +11,8 @@
         'van-button--disabled': disabled,
         'van-button--loading': loading,
         'van-button--block': block,
-        'van-button--bottom-action': bottomAction
+        'van-button--bottom-action': bottomAction,
+        'van-button--unclickable': disabled || loading
       }
     ]"
     @click="onClick"
@@ -24,10 +25,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-button',
+  name: 'button',
 
   props: {
     text: String,

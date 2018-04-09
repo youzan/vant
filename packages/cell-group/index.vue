@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create-basic';
 
 export default create({
-  name: 'van-cell-group',
+  name: 'cell-group',
 
   props: {
     border: {

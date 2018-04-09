@@ -1,5 +1,12 @@
 <template>
-  <van-tabs :active="active" :duration="duration" @click="handleTabClick" @disabled="handleTabDisabledClick" :sticky="sticky">
+  <van-tabs
+    :active="active"
+    :duration="duration"
+    :sticky="sticky"
+    :swipeable="swipeable"
+    @click="$emit('click')"
+    @disabled="$emit('disabled')"
+  >
     <van-tab :title="firstTabTitle" :disabled="firstTabDisabled">内容一</van-tab>
     <van-tab title="选项二">内容二</van-tab>
     <van-tab title="选项三" disabled>内容三</van-tab>
@@ -17,7 +24,8 @@ export default {
     firstTabDisabled: {
       type: Boolean
     },
-    sticky: Boolean
+    sticky: Boolean,
+    swipeable: Boolean
   },
 
   data() {
@@ -25,15 +33,6 @@ export default {
       active: 0,
       duration: 0.5
     };
-  },
-
-  methods: {
-    handleTabClick(index) {
-      this.$emit('click');
-    },
-    handleTabDisabledClick(index) {
-      this.$emit('disabled');
-    }
   }
 };
 </script>

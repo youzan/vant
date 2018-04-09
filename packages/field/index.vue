@@ -1,17 +1,14 @@
 <template>
   <cell
     :title="label"
+    :center="center"
     :required="required"
     class="van-field"
     :class="{
-      'van-field--has-textarea': type === 'textarea',
-      'van-field--nolabel': !label,
       'van-field--disabled': $attrs.disabled,
       'van-field--error': error,
-      'van-field--border': border,
-      'van-field--autosize': autosize,
-      'van-field--has-icon': hasIcon,
-      'van-hairline--surround': border
+      'van-field--min-height': type === 'textarea' && !autosize,
+      'van-field--has-icon': hasIcon
     }"
   >
     <textarea
@@ -45,21 +42,20 @@
         <icon :name="icon" />
       </slot>
     </div>
+    <div class="van-field__button" v-if="$slots.button" slot="extra">
+      <slot name="button" />
+    </div>
   </cell>
 </template>
 
 <script>
-import { create } from '../utils';
-import Cell from '../cell';
+import create from '../utils/create';
+import { isObj } from '../utils';
 
 export default create({
-  name: 'van-field',
+  name: 'field',
 
   inheritAttrs: false,
-
-  components: {
-    Cell
-  },
 
   props: {
     type: {
@@ -70,9 +66,10 @@ export default create({
     icon: String,
     label: String,
     error: Boolean,
+    center: Boolean,
     border: Boolean,
     required: Boolean,
-    autosize: Boolean,
+    autosize: [Boolean, Object],
     errorMessage: String,
     onIconClick: {
       type: Function,
@@ -82,21 +79,12 @@ export default create({
 
   watch: {
     value() {
-      if (this.autosize && this.type === 'textarea') {
-        this.$nextTick(this.adjustSize);
-      }
+      this.$nextTick(this.adjustSize);
     }
   },
 
   mounted() {
-    if (this.autosize && this.type === 'textarea') {
-      const el = this.$refs.textarea;
-      const scrollHeight = el.scrollHeight;
-      if (scrollHeight !== 0) {
-        el.style.height = scrollHeight + 'px';
-      }
-      el.style.overflowY = 'hidden';
-    }
+    this.$nextTick(this.adjustSize);
   },
 
   computed: {
@@ -136,9 +124,31 @@ export default create({
     },
 
     adjustSize() {
+      if (!(this.type === 'textarea' && this.autosize)) {
+        return;
+      }
+
       const el = this.$refs.textarea;
+      if (!el) {
+        return;
+      }
+
       el.style.height = 'auto';
-      el.style.height = el.scrollHeight + 'px';
+
+      let height = el.scrollHeight;
+      if (isObj(this.autosize)) {
+        const { maxHeight, minHeight } = this.autosize;
+        if (maxHeight) {
+          height = Math.min(height, maxHeight);
+        }
+        if (minHeight) {
+          height = Math.max(height, minHeight);
+        }
+      }
+
+      if (height) {
+        el.style.height = height + 'px';
+      }
     }
   }
 });

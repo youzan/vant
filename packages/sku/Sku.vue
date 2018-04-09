@@ -3,99 +3,100 @@
     v-if="!isSkuEmpty"
     v-model="show"
     position="bottom"
-    lock-on-scroll
-    prevent-scroll
+    class="van-sku-container"
+    :close-on-click-overlay="closeOnClickOverlay"
     :get-container="getContainer"
   >
-    <div class="van-sku-container">
-      <div class="van-sku-layout">
-        <!-- sku-header -->
+    <!-- sku-header -->
+    <slot
+      name="sku-header"
+      :sku-event-bus="skuEventBus"
+      :selected-sku="selectedSku"
+      :selected-sku-comb="selectedSkuComb"
+    >
+      <sku-header
+        :sku-event-bus="skuEventBus"
+        :selected-sku="selectedSku"
+        :goods="goods"
+        :sku="sku"
+      >
         <slot
-          name="sku-header"
+          name="sku-header-price"
+          :price="price"
+          :selected-sku-comb="selectedSkuComb"
+        >
+          <div class="van-sku__goods-price">
+            <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
+          </div>
+        </slot>
+      </sku-header>
+    </slot>
+    <div class="van-sku-body" :style="bodyStyle">
+      <!-- sku-body-top -->
+      <slot name="sku-body-top" :selected-sku="selectedSku" :sku-event-bus="skuEventBus" />
+      <!-- sku-group -->
+      <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
+        <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
+          <sku-row
+            v-for="(skuTreeItem, index) in skuTree"
+            :key="index"
+            :sku-row="skuTreeItem"
+          >
+            <sku-row-item
+              v-for="(skuValue, index) in skuTreeItem.v"
+              :key="index"
+              :sku-key-str="skuTreeItem.k_s"
+              :sku-value="skuValue"
+              :sku-event-bus="skuEventBus"
+              :selected-sku="selectedSku"
+              :sku-list="sku.list"
+            />
+          </sku-row>
+        </div>
+      </slot>
+      <!-- extra-sku-group -->
+      <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
+      <!-- sku-stepper -->
+      <slot
+        name="sku-stepper"
+        :sku-event-bus="skuEventBus"
+        :selected-sku="selectedSku"
+        :selected-sku-comb="selectedSkuComb"
+        :selected-num="selectedNum"
+      >
+        <sku-stepper
+          ref="skuStepper"
           :sku-event-bus="skuEventBus"
           :selected-sku="selectedSku"
           :selected-sku-comb="selectedSkuComb"
-        >
-          <sku-header
-            :sku-event-bus="skuEventBus"
-            :selected-sku="selectedSku"
-            :selected-sku-comb="selectedSkuComb"
-            :goods="goods"
-            :sku="sku"
-          />
-        </slot>
-        <div class="van-sku-body" :style="bodyStyle">
-          <!-- sku-body-top -->
-          <slot name="sku-body-top" :selected-sku="selectedSku" :sku-event-bus="skuEventBus" />
-          <!-- sku-group -->
-          <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
-            <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
-              <div
-                v-for="(skuTreeItem, index) in skuTree"
-                class="van-sku-row-group"
-                :key="index">
-                <sku-row
-                  :sku-event-bus="skuEventBus"
-                  :sku-row="skuTreeItem"
-                >
-                  <sku-row-item
-                    v-for="(skuValue, index) in skuTreeItem.v"
-                    :key="index"
-                    :sku-key-str="skuTreeItem.k_s"
-                    :sku-value="skuValue"
-                    :sku-event-bus="skuEventBus"
-                    :selected-sku="selectedSku"
-                    :sku-list="sku.list"
-                  />
-                </sku-row>
-              </div>
-            </div>
-          </slot>
-          <!-- extra-sku-group -->
-          <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
-          <!-- sku-stepper -->
-          <slot
-            name="sku-stepper"
-            :sku-event-bus="skuEventBus"
-            :selected-sku="selectedSku"
-            :selected-sku-comb="selectedSkuComb"
-            :selected-num="selectedNum"
-          >
-            <sku-stepper
-              ref="skuStepper"
-              :sku-event-bus="skuEventBus"
-              :selected-sku="selectedSku"
-              :selected-sku-comb="selectedSkuComb"
-              :selected-num="selectedNum"
-              :stepper-title="stepperTitle"
-              :sku-stock-num="sku.stock_num"
-              :quota="quota"
-              :quota-used="quotaUsed"
-              :disable-stepper-input="disableStepperInput"
-              :hide-stock="hideStock"
-              :custom-stepper-config="customStepperConfig"
-            />
-          </slot>
-          <!-- sku-messages -->
-          <slot name="sku-messages">
-            <sku-messages
-              ref="skuMessages"
-              :goods-id="goodsId"
-              :message-config="messageConfig"
-              :messages="sku.messages"
-            />
-          </slot>
-        </div>
-        <!-- sku-actions -->
-        <slot name="sku-actions" :sku-event-bus="skuEventBus">
-          <sku-actions
-            :sku-event-bus="skuEventBus"
-            :buy-text="buyText"
-            :show-add-cart-btn="showAddCartBtn"
-          />
-        </slot>
-      </div>
+          :selected-num="selectedNum"
+          :stepper-title="stepperTitle"
+          :sku-stock-num="sku.stock_num"
+          :quota="quota"
+          :quota-used="quotaUsed"
+          :disable-stepper-input="disableStepperInput"
+          :hide-stock="hideStock"
+          :custom-stepper-config="customStepperConfig"
+        />
+      </slot>
+      <!-- sku-messages -->
+      <slot name="sku-messages">
+        <sku-messages
+          ref="skuMessages"
+          :goods-id="goodsId"
+          :message-config="messageConfig"
+          :messages="sku.messages"
+        />
+      </slot>
     </div>
+    <!-- sku-actions -->
+    <slot name="sku-actions" :sku-event-bus="skuEventBus">
+      <sku-actions
+        :sku-event-bus="skuEventBus"
+        :buy-text="buyText"
+        :show-add-cart-btn="showAddCartBtn"
+      />
+    </slot>
   </popup>
 </template>
 
@@ -112,16 +113,17 @@ import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
 import {
   isAllSelected,
+  isSkuChoosable,
   getSkuComb,
   getSelectedSkuValues
 } from './utils/skuHelper';
-import { LIMIT_TYPE } from './constants';
-import { create } from '../utils';
+import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
+import create from '../utils/create';
 
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
 export default create({
-  name: 'van-sku',
+  name: 'sku',
 
   components: {
     Popup,
@@ -145,6 +147,7 @@ export default create({
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
     disableStepperInput: Boolean,
+    closeOnClickOverlay: Boolean,
     initialSku: {
       type: Object,
       default: () => ({})
@@ -225,9 +228,8 @@ export default create({
         return;
       }
 
-      const windowHeight = window.innerHeight;
       // header高度82px, sku actions高度50px，如果改动了样式自己传下bodyOffsetTop调整下
-      const maxHeight = windowHeight - this.bodyOffsetTop;
+      const maxHeight = window.innerHeight - this.bodyOffsetTop;
 
       return {
         maxHeight: maxHeight + 'px'
@@ -259,6 +261,14 @@ export default create({
       return null;
     },
 
+    price() {
+      if (this.selectedSkuComb) {
+        return (this.selectedSkuComb.price / 100).toFixed(2);
+      }
+      // sku.price是一个格式化好的价格区间
+      return this.sku.price;
+    },
+
     skuTree() {
       return this.sku.tree || [];
     }
@@ -268,12 +278,12 @@ export default create({
     const skuEventBus = new Vue();
     this.skuEventBus = skuEventBus;
 
-    skuEventBus.$on('sku:close', this.onCloseClicked);
-    skuEventBus.$on('sku:select', this.onSkuSelected);
+    skuEventBus.$on('sku:close', this.onClose);
+    skuEventBus.$on('sku:select', this.onSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
     skuEventBus.$on('sku:overLimit', this.onOverLimit);
-    skuEventBus.$on('sku:addCart', this.onAddCartClicked);
-    skuEventBus.$on('sku:buy', this.onBuyClicked);
+    skuEventBus.$on('sku:addCart', this.onAddCart);
+    skuEventBus.$on('sku:buy', this.onBuy);
 
     this.resetSelectedSku(this.skuTree);
     // 组件初始化后的钩子，抛出skuEventBus
@@ -283,12 +293,19 @@ export default create({
   methods: {
     resetSelectedSku(skuTree) {
       this.selectedSku = {};
+      // 重置selectedSku
       skuTree.forEach(item => {
-        // 只有一个sku规格值时默认选中
-        if (item.v.length === 1) {
-          this.selectedSku[item.k_s] = item.v[0].id;
-        } else {
-          this.selectedSku[item.k_s] = this.initialSku[item.k_s] || '';
+        this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
+      });
+      // 只有一个sku规格值时默认选中
+      skuTree.forEach(item => {
+        const key = item.k_s;
+        const valueId = item.v[0].id;
+        if (
+          item.v.length === 1 &&
+          isSkuChoosable(this.sku.list, this.selectedSku, { key, valueId })
+        ) {
+          this.selectedSku[key] = valueId;
         }
       });
     },
@@ -315,23 +332,21 @@ export default create({
       }
 
       if (this.isSkuCombSelected) {
-        const error = this.validateSkuMessages();
-        // sku留言没有错误则校验通过
-        return error;
-      } else {
-        return this.$t('spec');
+        return this.validateSkuMessages();
       }
+
+      return this.$t('spec');
     },
 
-    onCloseClicked() {
+    onClose() {
       this.show = false;
     },
 
-    onSkuSelected(skuValue) {
+    onSelect(skuValue) {
       // 点击已选中的sku时则取消选中
       this.selectedSku =
         this.selectedSku[skuValue.skuKeyStr] === skuValue.id
-          ? { ...this.selectedSku, [skuValue.skuKeyStr]: '' }
+          ? { ...this.selectedSku, [skuValue.skuKeyStr]: UNSELECTED_SKU_VALUE_ID }
           : { ...this.selectedSku, [skuValue.skuKeyStr]: skuValue.id };
 
       this.$emit('sku-selected', {
@@ -367,11 +382,11 @@ export default create({
       }
     },
 
-    onAddCartClicked() {
+    onAddCart() {
       this.onBuyOrAddCart('add-cart');
     },
 
-    onBuyClicked() {
+    onBuy() {
       this.onBuyOrAddCart('buy-clicked');
     },
 

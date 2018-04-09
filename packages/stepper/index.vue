@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-stepper',
+  name: 'stepper',
 
   props: {
     value: {},
@@ -103,6 +103,7 @@ export default create({
     onInput(event) {
       const { value } = event.target;
       this.currentValue = value ? this.correctValue(+value) : value;
+      event.target.value = this.currentValue;
       this.emitInput();
     },
 

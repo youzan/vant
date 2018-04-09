@@ -14,7 +14,6 @@ describe('ActionSheet', () => {
     });
 
     expect(wrapper.hasClass('van-actionsheet')).to.be.true;
-    expect(wrapper.contains('.van-actionsheet__list')).to.be.true;
     expect(wrapper.instance().actions.length).to.equal(0);
     expect(wrapper.instance().overlay).to.be.true;
     expect(wrapper.instance().closeOnClickOverlay).to.be.true;
@@ -108,6 +107,11 @@ describe('ActionSheet', () => {
     const cancelButton = wrapper.find('.van-actionsheet__cancel')[0];
     expect(wrapper.contains('.van-actionsheet__cancel')).to.be.true;
     expect(cancelButton.text()).to.equal('cancel');
+    
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    cancelButton.trigger('click');
+
+    expect(eventStub.calledWith('cancel'));
   });
 
   it('toggle actionsheet value from v-model', (done) => {

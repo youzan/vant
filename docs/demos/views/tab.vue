@@ -33,7 +33,7 @@
     </demo-block>
 
     <demo-block :title="$t('title5')">
-      <van-tabs @click="handleTabClick">
+      <van-tabs @click="onClick">
         <van-tab v-for="index in 4" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
@@ -58,6 +58,14 @@
         </van-tab>
       </van-tabs>
     </demo-block>
+
+    <demo-block :title="$t('title8')">
+      <van-tabs :active="active" swipeable>
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
+          {{ $t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -71,7 +79,9 @@ export default {
       title4: '样式风格',
       title5: '点击事件',
       title6: '粘性布局',
-      title7: '自定义标签'
+      title7: '自定义标签',
+      title8: '滑动切换',
+      disabled: ' 已被禁用'
     },
     'en-US': {
       tab: 'Tab ',
@@ -81,7 +91,9 @@ export default {
       title4: 'Card Style',
       title5: 'Click Event',
       title6: 'Sticky',
-      title7: 'Custom Tab'
+      title7: 'Custom Tab',
+      title8: 'Swipeable',
+      disabled: ' is disabled'
     }
   },
 
@@ -93,12 +105,12 @@ export default {
   },
 
   methods: {
-    onClickDisabled() {
-      Toast('Disabled!');
+    onClickDisabled(index, title) {
+      this.$toast(title + this.$t('disabled'));
     },
 
-    handleTabClick(index) {
-      Toast(index);
+    onClick(index, title) {
+      this.$toast(title);
     }
   }
 };
@@ -106,7 +118,7 @@ export default {
 
 <style lang="postcss">
 .demo-tab {
-  margin-bottom: 700px;
+  margin-bottom: 300px;
 
   .van-tab .van-icon {
     margin-right: 5px;

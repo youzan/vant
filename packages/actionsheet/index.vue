@@ -1,11 +1,11 @@
 <template>
-  <transition name="van-actionsheet-float">
+  <transition name="van-slide-bottom">
     <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <div v-text="title" />
-        <icon name="close" @click.stop="$emit('input', false)" />
+        <icon name="close" @click="handleCancel" />
       </div>
-      <ul v-if="!title" class="van-actionsheet__list">
+      <ul v-else class="van-hairline--bottom">
         <li
           v-for="(item, index) in actions"
           :key="index"
@@ -24,7 +24,7 @@
         v-if="cancelText"
         v-text="cancelText"
         class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
-        @click.stop="$emit('input', false)"
+        @click="handleCancel"
       />
       <div v-else class="van-actionsheet__content">
         <slot />
@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import Popup from '../mixins/popup';
 
 export default create({
-  name: 'van-actionsheet',
+  name: 'actionsheet',
 
   mixins: [Popup],
 
@@ -65,6 +65,11 @@ export default create({
       if (typeof item.callback === 'function') {
         item.callback(item);
       }
+    },
+
+    handleCancel() {
+      this.$emit('input', false);
+      this.$emit('cancel');
     }
   }
 });

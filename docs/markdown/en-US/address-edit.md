@@ -16,6 +16,7 @@ Vue.use(AddressEdit);
 <van-address-edit
   :area-list="areaList"
   show-postal
+  show-delete
   show-set-default
   show-search-result
   :search-result="searchResult"
@@ -64,10 +65,12 @@ export default {
 | address-info | Address Info | `Object` | `{}` | - |
 | search-result | Address search result | `Array` | `[]` | - |
 | show-postal | Whether to show postal field | `Boolean` | `false` | - |
+| show-delete | Whether to show delete button | `Boolean` | `false` | - |
 | show-set-default | Whether to show default address switch | `Boolean` | `false` | - |
 | show-search-result | Whether to show address search result | `Boolean` | `false` | - |
 | is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
 
 ### Event
 
@@ -97,7 +100,7 @@ export default {
 | address_detail | Detailed Address | `String` |
 | area_code | Area code | `String` |
 | postal_code | Postal code | `String` |
-| is_default | Is default address | `String` |
+| is_default | Is default address | `Boolean` |
 
 #### searchResult Data Structure
 | key | Description | Type |
@@ -106,4 +109,4 @@ export default {
 | address | Address | `String` |
 
 #### Area Data Structure
-Please refer to [Area](#/en-US/component/area) component。
+Please refer to [Area](#/en-US/area) component。

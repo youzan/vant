@@ -5,7 +5,10 @@ import defaultMessages from './lang/zh-CN';
 const proto = Vue.prototype;
 const defaultLang = 'zh-CN';
 const locale = {
-  init() {
+  install() {
+    if (proto.$vantLang) {
+      return;
+    }
     Vue.util.defineReactive(proto, '$vantLang', defaultLang);
     Vue.util.defineReactive(proto, '$vantMessages', { [defaultLang]: defaultMessages });
   },
@@ -20,5 +23,6 @@ const locale = {
   }
 };
 
-locale.init();
+locale.install();
+
 export default locale;

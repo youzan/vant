@@ -34,6 +34,6 @@ Vue.use(Loading);
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
 |-----------|-----------|-----------|-------------|-------------|
-| color | 颜色 | `String` | `black` | `black` `white` |
+| color | 颜色 | `String` | `black` | `white` |
 | type | 类型 | `String` | `circular` | `spinner` `circle` |
 | size | 大小 | `String` | `30px` | - |

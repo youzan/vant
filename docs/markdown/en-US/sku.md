@@ -21,6 +21,7 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
+  :close-on-click-overlay="closeOnClickOverlay"
   :disable-stepper-input="disableStepperInput"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
@@ -55,14 +56,20 @@ Vue.use(Sku);
   :goods="goods"
   :goods-id="goodsId"
   :hide-stock="sku.hide_stock"
-  :show-add-cart-btn="true"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="true"
+  show-add-cart-btn
+  reset-stepper-on-hide
   :initial-sku="initialSku"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 >
+  <!-- custom sku-header-price -->
+  <template slot="sku-header-price" slot-scope="props">
+    <div class="van-sku__goods-price">
+      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+    </div>
+  </template>
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
@@ -89,6 +96,7 @@ Vue.use(Sku);
 | reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
 | reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
 | disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
+| close-on-click-overlay | Whether to close sku popup when click overlay | `Boolean` | `false` | - |
 | stepper-title | Quantity title | `String` | `Quantity` | - |
 | custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
 | message-config | Message related config | `Object` | `{}` | - |
@@ -112,6 +120,7 @@ Vue.use(Sku);
 | Name | Description | 
 |-----------|-----------|
 | sku-header | Custom header |
+| sku-header-price | Custom header price area |
 | sku-body-top | Custom content before sku-group |
 | sku-group | Custom sku |
 | extra-sku-group | Extra custom content |

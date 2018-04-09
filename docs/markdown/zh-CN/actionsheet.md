@@ -27,7 +27,8 @@ export default {
           callback: this.onClick
         },
         {
-          name: '信用卡支付'
+          name: '选项',
+          subname: '描述信息'
         },
         {
           name: '选项',
@@ -73,6 +74,12 @@ export default {
 | overlay | 是否显示遮罩 | `Boolean` | - | - |
 | close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
 | get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| cancel | 取消按钮点击时触发 | - |
 
 ### actions
 

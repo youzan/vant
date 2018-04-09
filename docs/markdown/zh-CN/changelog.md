@@ -1,5 +1,126 @@
 ## 更新日志
 
+### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+`2018-03-26`
+
+**Improvements**
+
+- Cell: 新增 center 属性 [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: 布局方式由 table 升级为 flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+- Field: 新增 button slot，支持插入按钮 [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+- Tab: click 事件回调新增 title 参数 [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+- 修复 Tag 文字在部分安卓手机上未垂直居中的问题 [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Toast 蒙层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
+### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+`2018-03-22`
+
+**Improvements**
+
+* DatetimePicker: 新增 show-toolbar 属性以及 month-year 类型 [\#736](https://github.com/youzan/vant/pull/736) [@zz1211](https://github.com/zz1211)
+* NavBar: 移除顶部 border [\#744](https://github.com/youzan/vant/pull/744) [@chenjiahan](https://github.com/chenjiahan)
+* NoticeBar: 修正内边距 [\#737](https://github.com/youzan/vant/pull/737) [@skylinety](https://github.com/skylinety)
+* Doc: 新增自定义图标指引 [\#754](https://github.com/youzan/vant/pull/754) [@qianzhaoy](https://github.com/qianzhaoy)
+
+**Bug Fixes**
+
+* 修复 AddressEdit 初始化时省市区未正确选中的问题 [\#748](https://github.com/youzan/vant/pull/748) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 List 隐藏时依然会触发 load 事件的问题 [\#751](https://github.com/youzan/vant/pull/751) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Sku 默认选中不生效的问题 [\#752](https://github.com/youzan/vant/pull/752) [@w91](https://github.com/w91)
+* 修复 Toast 蒙层被其他元素遮挡的问题 [\#740](https://github.com/youzan/vant/pull/740) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Tab 内容无法点击的问题 [\#749](https://github.com/youzan/vant/pull/749) [@cookfront](https://github.com/cookfront)
+
+
+### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+`2018-03-19`
+
+**Bug Fixes**
+
+* 修复 create 模块循环引用导致某些情况下编译错误的问题 [\#728](https://github.com/youzan/vant/pull/728) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
+`2018-03-19`
+
+**Breaking changes**
+
+* 新增 List 组件 [\#682](https://github.com/youzan/vant/pull/682) [@chenjiahan](https://github.com/chenjiahan)
+* 新增 Collapse 组件 [\#674](https://github.com/youzan/vant/pull/674) [@chenjiahan](https://github.com/chenjiahan)
+* 构建: 升级至 webpack 4，优化构建配置 [\#693](https://github.com/youzan/vant/pull/693) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: 新增 lock-scroll 属性，废弃 lock-on-scroll、prevent-scroll 属性 [\#688](https://github.com/youzan/vant/pull/688) [@chenjiahan](https://github.com/chenjiahan)
+* Waterfall 组件不再维护，推荐使用 List 组件代替 [\#683](https://github.com/youzan/vant/pull/683) [@chenjiahan](https://github.com/chenjiahan)
+
+**Improvements**
+
+* AddressEdit: 新增 show-delete 属性 [\#716](https://github.com/youzan/vant/pull/716) [@chenjiahan](https://github.com/chenjiahan)
+* CellSwipe: 优化 Swipe 动画流畅度 [\#685](https://github.com/youzan/vant/pull/685) [@chenjiahan](https://github.com/chenjiahan)
+* Field: 支持配置 autosize 最大/最小高度 [\#718](https://github.com/youzan/vant/pull/718) [@chenjiahan](https://github.com/chenjiahan)
+* Locale: 精简 i18n 配置文档 [\#701](https://github.com/youzan/vant/pull/701) [@chenjiahan](https://github.com/chenjiahan)
+* PullRefresh: 支持手动触发 loading 动画 [\#684](https://github.com/youzan/vant/pull/684) [@chenjiahan](https://github.com/chenjiahan)
+* Switch: 新增 size 数组，支持自定义尺寸 [\#723](https://github.com/youzan/vant/pull/723) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 新增头部金额 slot [\#705](https://github.com/youzan/vant/pull/705) [@w91](https://github.com/w91)
+* Sku: 优化 DOM 结构 [\#704](https://github.com/youzan/vant/pull/704) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 支持通过滑动手势进行切换 [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695) [@cookfront](https://github.com/cookfront)
+* Tag: 调整标签样式 [\#689](https://github.com/youzan/vant/pull/689) [@chenjiahan](https://github.com/chenjiahan)
+* Toast: 支持通过 Vue.use 注册 [\#690](https://github.com/youzan/vant/pull/690) [@chenjiahan](https://github.com/chenjiahan)
+
+
+**Bug Fixes**
+
+* 修复 Actionsheet 下边框未展示的问题 [\#686](https://github.com/youzan/vant/pull/686) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 AddressEdit 在数据变更时未正确选中省市区的问题 [\#680](https://github.com/youzan/vant/pull/680) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Stepper value 溢出的问题 [\#691](https://github.com/youzan/vant/issues/691)
+* 修复 Badge 选中时字体粗细 [\#687](https://github.com/youzan/vant/pull/687) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+`2018-03-09`
+
+**Bug Fixes**
+* Area: 修复 area-list 更新时未正确选中省市区的问题 [\#678](https://github.com/youzan/vant/pull/678) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+`2018-03-09`
+
+**Improvements**
+
+* AddressEdit: 支持自定义手机号校验函数 [\#673](https://github.com/youzan/vant/pull/673) [@chenjiahan](https://github.com/chenjiahan)
+* Sku: 新增 close-on-click-overlay 属性 [\#676](https://github.com/youzan/vant/pull/676) [@w91](https://github.com/w91)
+
+**Bug Fixes**
+* 修复 CouponList 文字截断的问题 [\#675](https://github.com/youzan/vant/pull/675) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+`2018-03-06`
+
+**Improvements**
+
+* Swipe: 新增 loop 属性，支持禁用循环滚动 [\#670](https://github.com/youzan/vant/pull/670) [@chenjiahan](https://github.com/chenjiahan)
+* Document: 新增 change 事件示例 [\#666](https://github.com/youzan/vant/pull/666) [@chenjiahan](https://github.com/chenjiahan)
+* 更新静态资源 CDN 域名 [\#652](https://github.com/youzan/vant/pull/652) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Field 在 safari 下禁用态颜色过浅的问题 [\#669](https://github.com/youzan/vant/pull/669) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Swipe autoplay 设置为 0 时不会立刻取消的问题 [\#660](https://github.com/youzan/vant/pull/660) [@chenjiahan](https://github.com/chenjiahan)
+
+### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+`2018-02-27`
+
+**Improvements**
+
+* Checkbox: 新增 label-disabled 属性，支持禁用 label 点击 [\#644](https://github.com/youzan/vant/pull/644) [@ddchef](https://github.com/ddchef)
+* Popup: 新增 click-overlay 事件 [\#647](https://github.com/youzan/vant/pull/647) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: 新增 warn 图标 [\#651](https://github.com/youzan/vant/pull/651) [@chenjiahan](https://github.com/chenjiahan)
+* Icon: 新增 info-o 图标, 优化 checked & underway 图标 [\#648](https://github.com/youzan/vant/pull/648) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Button loading 样式未居中的问题 [\#645](https://github.com/youzan/vant/pull/645) [@chenjiahan](https://github.com/chenjiahan)
+
 ### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
 `2018-02-12`
 

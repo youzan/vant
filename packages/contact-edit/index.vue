@@ -2,15 +2,15 @@
   <div class="van-contact-edit">
     <cell-group>
       <field
-        v-model="currentInfo.name"
+        v-model="data.name"
         maxlength="30"
-        :label="$t('name')"
-        :placeholder="$t('namePlaceholder')"
+        :label="$t('contact')"
+        :placeholder="$t('name')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
       <field
-        v-model="currentInfo.tel"
+        v-model="data.tel"
         type="tel"
         :label="$t('tel')"
         :placeholder="$t('telPlaceholder')"
@@ -19,8 +19,8 @@
       />
     </cell-group>
     <div class="van-contact-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveContact" type="primary">{{ $t('save') }}</van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">{{ $t('delete') }}</van-button>
+      <van-button block :loading="isSaving" @click="onSave" type="primary">{{ $t('save') }}</van-button>
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>
   </div>
 </template>
@@ -28,19 +28,17 @@
 <script>
 import Field from '../field';
 import VanButton from '../button';
-import CellGroup from '../cell-group';
 import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-contact-edit',
+  name: 'contact-edit',
 
   components: {
     Field,
-    VanButton,
-    CellGroup
+    VanButton
   },
 
   props: {
@@ -54,12 +52,16 @@ export default create({
         tel: '',
         name: ''
       })
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
   data() {
     return {
-      currentInfo: this.contactInfo,
+      data: this.contactInfo,
       errorInfo: {
         name: false,
         tel: false
@@ -69,7 +71,7 @@ export default create({
 
   watch: {
     contactInfo(val) {
-      this.currentInfo = val;
+      this.data = val;
     }
   },
 
@@ -79,22 +81,17 @@ export default create({
     },
 
     getErrorMessageByKey(key) {
-      const value = this.currentInfo[key];
+      const value = this.data[key];
       switch (key) {
         case 'name':
           return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : this.$t('telInvalid');
+          return this.telValidator(value) ? '' : this.$t('telInvalid');
       }
     },
 
-    onSaveContact() {
-      const items = [
-        'name',
-        'tel'
-      ];
-
-      const isValid = items.every(item => {
+    onSave() {
+      const isValid = ['name', 'tel'].every(item => {
         const msg = this.getErrorMessageByKey(item);
         if (msg) {
           this.errorInfo[item] = true;
@@ -104,20 +101,18 @@ export default create({
       });
 
       if (isValid && !this.isSaving) {
-        this.$emit('save', this.currentInfo);
+        this.$emit('save', this.data);
       }
     },
 
-    onDeleteContact() {
-      if (this.isDeleting) {
-        return;
+    onDelete() {
+      if (!this.isDeleting) {
+        Dialog.confirm({
+          message: this.$t('confirmDelete')
+        }).then(() => {
+          this.$emit('delete', this.data);
+        });
       }
-
-      Dialog.confirm({
-        message: this.$t('confirmDelete')
-      }).then(() => {
-        this.$emit('delete', this.currentInfo);
-      });
     }
   }
 });

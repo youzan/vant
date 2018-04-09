@@ -28,12 +28,12 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
 
 export default create({
-  name: 'van-picker',
+  name: 'picker',
 
   components: {
     PickerColumn

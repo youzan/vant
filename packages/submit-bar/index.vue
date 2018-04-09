@@ -21,10 +21,10 @@
 
 <script>
 import VanButton from '../button';
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-submit-bar',
+  name: 'submit-bar',
 
   components: {
     VanButton

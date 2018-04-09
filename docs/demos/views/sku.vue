@@ -10,9 +10,10 @@
           :hide-stock="$t('sku').sku.hide_stock"
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
-          :reset-stepper-on-hide="true"
-          :reset-selected-sku-on-hide="true"
-          :disable-stepper-input="true"
+          reset-stepper-on-hide
+          reset-selected-sku-on-hide
+          disable-stepper-input
+          :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
@@ -32,6 +33,7 @@
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
           :custom-stepper-config="customStepperConfig"
+          :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -48,14 +50,20 @@
           :goods="$t('sku').goods_info"
           :goods-id="$t('sku').goods_id"
           :hide-stock="$t('sku').sku.hide_stock"
-          :show-add-cart-btn="true"
           :quota="$t('sku').quota"
           :quota-used="$t('sku').quota_used"
-          :reset-stepper-on-hide="true"
+          show-add-cart-btn
+          reset-stepper-on-hide
           :initial-sku="initialSku"
+          :message-config="messageConfig"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         >
+          <template slot="sku-header-price" slot-scope="props">
+            <div class="van-sku__goods-price">
+              <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+            </div>
+          </template>
           <template slot="sku-actions" slot-scope="props">
             <div class="van-sku-actions">
               <van-button bottom-action @click="onPointClicked">{{ $t('button1') }}</van-button>
@@ -96,6 +104,7 @@ export default {
       showBase: false,
       showCustom: false,
       showStepper: false,
+      closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',
         s2: '1193'
@@ -117,9 +126,9 @@ export default {
         }
       },
       messageConfig: {
-        uploadImg: () => {
-          return new Promise((resolve) => {
-            setTimeout(() => resolve('https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'), 1000);
+        uploadImg: (file, img) => {
+          return new Promise(resolve => {
+            setTimeout(() => resolve(img), 1000);
           });
         },
         uploadMaxSize: 3

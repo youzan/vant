@@ -13,28 +13,24 @@
     </radio-group>
     <cell
       icon="add"
-      class="van-address-list__add van-hairline--top"
-      @click="$emit('add')"
-      :title="addButtonText || $t('add')"
       is-link
+      class="van-address-list__add van-hairline--top"
+      :title="addButtonText || $t('add')"
+      @click="$emit('add')"
     />
   </div>
 </template>
 
 <script>
-import { create } from '../utils';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
 
 export default create({
-  name: 'van-address-list',
+  name: 'address-list',
 
   components: {
-    Cell,
     Radio,
-    CellGroup,
     RadioGroup
   },
 

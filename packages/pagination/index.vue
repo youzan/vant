@@ -31,10 +31,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-pagination',
+  name: 'pagination',
 
   props: {
     value: Number,

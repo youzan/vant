@@ -179,36 +179,36 @@ describe('ContactEdit', () => {
     const saveButton = wrapper.find('.van-button')[0];
 
     // name empty
-    wrapper.vm.contactInfo.name = '';
+    wrapper.vm.data.name = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // name too long
-    wrapper.vm.contactInfo.name = '111111111111111111111111111';
+    wrapper.vm.data.name = '111111111111111111111111111';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['name']).to.be.true;
     wrapper.find('.van-field__control')[0].trigger('focus');
     expect(wrapper.vm.errorInfo['name']).to.be.false;
 
     // tel empty
-    wrapper.vm.contactInfo.name = '123';
-    wrapper.vm.contactInfo.tel = '';
+    wrapper.vm.data.name = '123';
+    wrapper.vm.data.tel = '';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['tel']).to.be.true;
     wrapper.find('.van-field__control')[1].trigger('focus');
     expect(wrapper.vm.errorInfo['tel']).to.be.false;
 
     // tel invalid
-    wrapper.vm.contactInfo.tel = 'abc';
+    wrapper.vm.data.tel = 'abc';
     saveButton.trigger('click');
     expect(wrapper.vm.errorInfo['tel']).to.be.true;
     wrapper.find('.van-field__control')[1].trigger('focus');
     expect(wrapper.vm.errorInfo['tel']).to.be.false;
 
     // saving
-    wrapper.vm.contactInfo.tel = '13000000000';
+    wrapper.vm.data.tel = '13000000000';
     saveButton.trigger('click');
     wrapper.vm.isSaving = true;
     saveButton.trigger('click');
@@ -229,7 +229,7 @@ describe('ContactEdit', () => {
 
     const deleteButton = wrapper.find('.van-button')[1];
     deleteButton.trigger('click');
-    wrapper.vm.onDeleteContact();
+    wrapper.vm.onDelete();
 
     setTimeout(() => {
       wrapper.vm.isDeleting = false;
@@ -260,7 +260,7 @@ describe('ContactEdit', () => {
 
     wrapper.setProps({ contactInfo });
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.currentInfo.name).to.equal('123');
+      expect(wrapper.vm.data.name).to.equal('123');
       done();
     });
   });

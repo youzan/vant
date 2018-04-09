@@ -7,7 +7,7 @@
  
 ### 特性
 
-* 48+ 个经过有赞线上业务检验的组件
+* 50+ 个经过有赞线上业务检验的组件
 * 单元测试覆盖率超过 90%
 * 完善的文档和示例
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
@@ -16,7 +16,7 @@
 
 ### 快速上手
 
-请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/component/quickstart).
+请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/quickstart).
 
 ### 贡献代码
 
@@ -32,7 +32,7 @@
 
 * [意见反馈](https://github.com/youzan/vant/issues)
 * [加入我们](https://job.youzan.com)
-* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/component/changelog)
+* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/changelog)
 * [React 组件库](https://www.youzanyun.com/zanui/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [vant-demo](https://github.com/youzan/vant-demo)

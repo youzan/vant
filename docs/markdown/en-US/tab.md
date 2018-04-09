@@ -1,4 +1,4 @@
-## Tabs
+## Tab
 
 ### Install
 ``` javascript
@@ -58,8 +58,8 @@ You can set `disabled` attribute on the corresponding `van-tab`.
 ```javascript
 export default {
   methods: {
-    onClickDisabled() {
-      Toast('Disabled!');
+    onClickDisabled(index, title) {
+      this.$toast(title + ' is disabled');
     }
   }
 };
@@ -79,10 +79,8 @@ Tabs styled as cards.
 
 #### Click Event
 
-You can bind `click` event on `van-tabs`, the event handler function has one parameters: index of click tab.
-
 ```html
-<van-tabs @click="handleTabClick">
+<van-tabs @click="onClick">
   <van-tab v-for="index in 4" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -92,8 +90,8 @@ You can bind `click` event on `van-tabs`, the event handler function has one par
 ```javascript
 export default {
   methods: {
-    handleTabClick(index) {
-      Toast(index);
+    onClick(index, title) {
+      this.$toast(title);
     }
   }
 };
@@ -124,6 +122,18 @@ Use title slot to custom tab title
 </van-tabs>
 ```
 
+#### Swipeable
+
+In swipeable mode, you can switch tabs with swipe gestrue in the content
+
+```html
+<van-tabs :active="active" swipeable>
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 ### Tabs API
 
 | Attribute | Description | Type | Default | Accepted Values |
@@ -132,13 +142,15 @@ Use title slot to custom tab title
 | active | Index of active tab | `String` `Number` | `0` | - |
 | duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
+| sticky | Whether to use sticky mode | `Boolean` | `false` | - |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` | - |
 
 ### Tab API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| title | Tab title | `String` | - | - |
-| disabled | Whether disabled current tab | `Boolean` | `false` | - |
+| title | Title | `String` | - | - |
+| disabled | Whether to disable tab | `Boolean` | `false` | - |
 
 ### Tab Slot
 
@@ -151,6 +163,5 @@ Use title slot to custom tab title
 
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
-| click | Triggered when click tab | index：index of current tab |
-| disabled | Triggered when click disabled tab | index：index of current tab |
-
+| click | Triggered when click tab | index：index of current tab，title: tab title |
+| disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |

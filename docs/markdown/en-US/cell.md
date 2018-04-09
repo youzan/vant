@@ -74,15 +74,22 @@ Vue.use(Cell).use(CellGroup);
 | title | Title | `String` | - | - |
 | value | Right text | `String` | - | - |
 | label | Description below the title | `String` | - | - |
+| border | Whether to show inner border | `Boolean` | `true` | - |
+| center | Whether to center content vertically | `Boolean` | `true` | - |
 | url | Link | `String` | - | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
 | replace | If true, the navigation will not leave a history record | `String` | `false` | - |
-| border | Whether to show inner border | `Boolean` | `true` | - |
 | clickable | Whether to show click feedback when clicked | `Boolean` | `false` | - |
 | is-link | Whether to show link icon | `Boolean` | `false` | - |
 | required | Whether to show required mark | `Boolean` | `false` | - |
 
-### Slot
+### Cell Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when click cell | - |
+
+### Cell Slot
 
 | name | Description |
 |-----------|-----------|

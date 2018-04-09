@@ -23,9 +23,36 @@ Icon uses font file in `yzcdn.cn` by default，if you want to use the local font
 import 'vant/lib/vant-css/icon-local.css';
 ```
 
+#### Add custom iconfont
+
+```css
+@font-face {
+  font-family: 'custom-iconfont';
+  src: url('./iconfont.ttf') format('truetype');
+}
+
+.van-icon {
+  font-family: 'vant-icon', 'custom-iconfont' !important;
+}
+
+.van-icon-extra:before {
+  content: '\e626';
+}
+```
+
+```html
+<van-icon name="extra" />
+```
+
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | name | Icon name | `String` | `''` | - |
 | info | Info message | `String` | `''` | - |
+
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when click icon | - |

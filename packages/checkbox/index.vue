@@ -4,10 +4,10 @@
       name="success"
       class="van-checkbox__icon"
       :class="[
-        `van-checkbox--${shape}`,
-        { 'van-checkbox--disabled': isDisabled },
-        { 'van-checkbox--checked': isChecked }
-      ]"
+        `van-checkbox--${shape}`, {
+          'van-checkbox--disabled': isDisabled,
+          'van-checkbox--checked': isChecked
+      }]"
       @click="onClick"
     />
     <span class="van-checkbox__label" @click="onClick('label')">
@@ -17,11 +17,12 @@
 </template>
 
 <script>
-import { create, isDef } from '../utils';
+import create from '../utils/create';
+import { isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
-  name: 'van-checkbox',
+  name: 'checkbox',
 
   mixins: [findParent],
 
@@ -39,44 +40,33 @@ export default create({
     }
   },
 
-  watch: {
-    value(val) {
-      this.$emit('change', val);
-    }
-  },
-
-  data() {
-    this.findParentByName('van-checkbox-group');
-    return {};
-  },
-
   computed: {
     currentValue: {
       get() {
-        return this.parentGroup
-          ? this.parentGroup.value.indexOf(this.name) !== -1
+        return this.parent
+          ? this.parent.value.indexOf(this.name) !== -1
           : this.value;
       },
 
       set(val) {
-        const { parentGroup } = this;
-        if (parentGroup) {
-          const parentValue = this.parentGroup.value.slice();
+        const { parent } = this;
+        if (parent) {
+          const parentValue = this.parent.value.slice();
           if (val) {
-            if (parentGroup.max && parentValue.length >= parentGroup.max) {
+            if (parent.max && parentValue.length >= parent.max) {
               return;
             }
             /* istanbul ignore else */
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
-              parentGroup.$emit('input', parentValue);
+              parent.$emit('input', parentValue);
             }
           } else {
             const index = parentValue.indexOf(this.name);
             /* istanbul ignore else */
             if (index !== -1) {
               parentValue.splice(index, 1);
-              parentGroup.$emit('input', parentValue);
+              parent.$emit('input', parentValue);
             }
           }
         } else {
@@ -95,13 +85,23 @@ export default create({
     },
 
     isDisabled() {
-      return (this.parentGroup && this.parentGroup.disabled) || this.disabled;
+      return (this.parent && this.parent.disabled) || this.disabled;
     }
   },
 
+  watch: {
+    value(val) {
+      this.$emit('change', val);
+    }
+  },
+
+  created() {
+    this.findParent('van-checkbox-group');
+  },
+
   methods: {
-    onClick(flag) {
-      if (!this.isDisabled && (flag !== 'label' || (flag === 'label' && !this.labelDisabled))) {
+    onClick(target) {
+      if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
         this.currentValue = !this.currentValue;
       }
     }

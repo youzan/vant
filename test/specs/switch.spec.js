@@ -20,17 +20,6 @@ describe('Switch', () => {
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });
 
-  it('create off switch', () => {
-    wrapper = mount(Switch, {
-      propsData: {
-        value: false
-      }
-    });
-
-    expect(wrapper.hasClass('van-switch')).to.be.true;
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
-  });
-
   it('create loading switch', () => {
     wrapper = mount(Switch, {
       propsData: {
@@ -75,9 +64,9 @@ describe('Switch', () => {
       }
     });
 
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.false;
     wrapper.trigger('click');
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.false;
   });
 
   it('click should toggle the switch', () => {
@@ -91,7 +80,7 @@ describe('Switch', () => {
       wrapper.vm.value = val;
     });
 
-    expect(wrapper.hasClass('van-switch--off')).to.be.true;
+    expect(wrapper.hasClass('van-switch--on')).to.be.false;
     wrapper.trigger('click');
     expect(wrapper.hasClass('van-switch--on')).to.be.true;
   });

@@ -30,8 +30,8 @@
   }
 
   &__price-text {
+    font-size: 15px;
     color: $gray-darker;
-    font-size: 16px;
   }
 
   &__price-interger {
@@ -48,14 +48,10 @@
     width: 110px;
     height: 100%;
     border-radius: 0;
+    font-size: 15px;
 
     &--disabled {
       border: none;
-    }
-
-    .van-loading__spinner--white {
-      border-color: rgba(255,255,255, .8);
-      border-top-color: transparent;
     }
   }
 }

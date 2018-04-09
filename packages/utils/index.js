@@ -1,10 +1,14 @@
 import Vue from 'vue';
-import create from './create';
 
 const isServer = Vue.prototype.$isServer;
 
 function isDef(value) {
   return value !== undefined && value !== null;
+}
+
+function isObj(x) {
+  const type = typeof x;
+  return x !== null && (type === 'object' || type === 'function');
 }
 
 function get(object, path) {
@@ -30,8 +34,8 @@ function isAndroid() {
 
 export {
   get,
+  isObj,
   isDef,
-  create,
   isServer,
   camelize,
   isAndroid

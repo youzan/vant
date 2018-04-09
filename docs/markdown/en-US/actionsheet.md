@@ -22,9 +22,18 @@ export default {
     return {
       show: false,
       actions: [
-        { name: 'Option1', callback: this.onClick },
-        { name: 'Option2' },
-        { name: 'Option3', loading: true }
+        {
+          name: 'Option',
+          callback: this.onClick
+        },
+        {
+          name: 'Option',
+          description: 'Description'
+        },
+        {
+          name: 'Option',
+          loading: true
+        }
       ]
     };
   },
@@ -62,6 +71,12 @@ Actionsheet will get another style if there is a `title` prop.
 | overlay | Whether to show overlay | `Boolean` | - | - |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | - | - |
 | get-container | Return the mount node for actionsheet | `Function` | - | `() => HTMLElement` |
+
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| cancel | Triggered when cancel click | - |
 
 ### Data struct of actions
 

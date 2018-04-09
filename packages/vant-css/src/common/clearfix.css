@@ -1,0 +1,5 @@
+@import '../mixins/clearfix.css';
+
+.van-clearfix {
+  @mixin ellipsis;
+}

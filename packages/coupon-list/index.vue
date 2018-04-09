@@ -34,7 +34,7 @@
         :data="item"
       />
       <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
-        <img src="https://b.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+        <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
         <p>{{ $t('empty') }}</p>
       </div>
     </div>
@@ -48,20 +48,16 @@
 </template>
 
 <script>
-import { create } from '../utils';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 import CouponItem from './Item';
 import Field from '../field';
 import VanButton from '../button';
 
 export default create({
-  name: 'van-coupon-list',
+  name: 'coupon-list',
 
   components: {
     VanButton,
-    Cell,
-    CellGroup,
     Field,
     CouponItem
   },

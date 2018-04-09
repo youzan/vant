@@ -67,3 +67,9 @@ export default {
 | text | Text | `String` | - | - |
 | stroke-width | Stroke width | `Number` | `40` | - |
 | clockwise | Is clockwise | `Boolean` | `true` | - |
+
+### Cell Slot
+
+| name | Description |
+|-----------|-----------|
+| - | custom text content |

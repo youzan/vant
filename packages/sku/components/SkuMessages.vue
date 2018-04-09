@@ -7,7 +7,8 @@
         :label="$t('onePic')"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
-        :title="message.name">
+        :title="message.name"
+      >
         <sku-img-uploader
           v-model="messageValues[index].value"
           :upload-img="messageConfig.uploadImg"
@@ -28,22 +29,18 @@
 </template>
 
 <script>
-import { create } from '../../utils';
+import create from '../../utils/create';
 import Field from '../../field';
-import CellGroup from '../../cell-group';
-import Cell from '../../cell';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
 export default create({
-  name: 'van-sku-messages',
+  name: 'sku-messages',
 
   components: {
     SkuImgUploader,
-    Field,
-    Cell,
-    CellGroup
+    Field
   },
 
   props: {
@@ -74,6 +71,7 @@ export default create({
     resetMessageValues(messages) {
       return (messages || []).map(() => ({ value: '' }));
     },
+
     getType(message) {
       if (+message.multiple === 1) {
         return 'textarea';

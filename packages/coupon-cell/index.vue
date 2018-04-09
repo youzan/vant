@@ -5,17 +5,10 @@
 </template>
 
 <script>
-import { create } from '../utils';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 
 export default create({
-  name: 'van-coupon-cell',
-
-  components: {
-    Cell,
-    CellGroup
-  },
+  name: 'coupon-cell',
 
   model: {
     prop: 'chosenCoupon'

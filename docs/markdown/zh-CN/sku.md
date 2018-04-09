@@ -21,6 +21,7 @@ Vue.use(Sku);
   :quota-used="quotaUsed"
   :reset-stepper-on-hide="resetStepperOnHide"
   :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
+  :close-on-click-overlay="closeOnClickOverlay"
   :disable-stepper-input="disableStepperInput"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
@@ -55,14 +56,20 @@ Vue.use(Sku);
   :goods="goods"
   :goods-id="goodsId"
   :hide-stock="sku.hide_stock"
-  :show-add-cart-btn="true"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="true"
+  show-add-cart-btn
+  reset-stepper-on-hide
   :initial-sku="initialSku"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 >
+  <!-- 自定义 sku-header-price -->
+  <template slot="sku-header-price" slot-scope="props">
+    <div class="van-sku__goods-price">
+      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+    </div>
+  </template>
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
@@ -90,6 +97,7 @@ Vue.use(Sku);
 | reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
 | reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
+| close-on-click-overlay | 点击popup的overlay后是否关闭弹窗 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |
@@ -114,6 +122,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，�
 | 名称 | 说明 | 
 |-----------|-----------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
+| sku-header-price | 自定义sku头部价格展示 |
 | sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
 | sku-group | 商品sku展示区 |
 | extra-sku-group | 额外商品sku展示区，一般用不到 |
