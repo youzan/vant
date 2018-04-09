@@ -74,9 +74,12 @@ export default {
       }
 
       if (this.lockScroll) {
-        document.body.classList.add('van-overflow-hidden');
-        on(document, 'touchstart', this.onTouchStart);
-        on(document, 'touchmove', this.onTouchMove);
+        if (!context.lockCount) {
+          document.body.classList.add('van-overflow-hidden');
+          on(document, 'touchstart', this.onTouchStart);
+          on(document, 'touchmove', this.onTouchMove);
+        }
+        context.lockCount++;
       }
 
       this.renderOverlay();
@@ -85,9 +88,12 @@ export default {
 
     close() {
       if (this.lockScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-        off(document, 'touchstart', this.onTouchStart);
-        off(document, 'touchmove', this.onTouchMove);
+        context.lockCount--;
+        if (!context.lockCount) {
+          document.body.classList.remove('van-overflow-hidden');
+          off(document, 'touchstart', this.onTouchStart);
+          off(document, 'touchmove', this.onTouchMove);
+        }
       }
 
       manager.close(this._popupId);
