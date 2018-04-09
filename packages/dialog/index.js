@@ -57,7 +57,9 @@ Dialog.confirm = options => Dialog({
 });
 
 Dialog.close = () => {
-  instance.value = false;
+  if (instance) {
+    instance.value = false;
+  }
 };
 
 Dialog.setDefaultOptions = options => {
