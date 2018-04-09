@@ -7,7 +7,7 @@
 
     <demo-block :title="$t('title2')">
       <van-button @click="show2 = true">{{ $t('button2') }}</van-button>
-      <van-actionsheet v-model="show2" :actions="actions" :cancel-text="$t('cancel')" />
+      <van-actionsheet v-model="show2" :actions="actions" :cancel-text="$t('cancel')" @cancel="handleCancel" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -61,6 +61,10 @@ export default {
   methods: {
     onClick(item) {
       Toast(item.name);
+    },
+    
+    handleCancel() {
+      Toast('cancel');
     }
   }
 };

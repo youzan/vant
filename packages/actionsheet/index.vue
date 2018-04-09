@@ -3,7 +3,7 @@
     <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
       <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
         <div v-text="title" />
-        <icon name="close" @click="$emit('input', false)" />
+        <icon name="close" @click="handleCancel" />
       </div>
       <ul v-else class="van-hairline--bottom">
         <li
@@ -24,7 +24,7 @@
         v-if="cancelText"
         v-text="cancelText"
         class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
-        @click="$emit('input', false)"
+        @click="handleCancel"
       />
       <div v-else class="van-actionsheet__content">
         <slot />
@@ -65,6 +65,11 @@ export default create({
       if (typeof item.callback === 'function') {
         item.callback(item);
       }
+    },
+
+    handleCancel() {
+      this.$emit('input', false);
+      this.$emit('cancel');
     }
   }
 });

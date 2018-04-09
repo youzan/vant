@@ -2,9 +2,10 @@
 
 ### 使用指南
 ``` javascript
-import { Badge } from 'vant';
+import { Badge, BadgeGroup } from 'vant';
 
 Vue.use(Badge);
+Vue.use(BadgeGroup);
 ```
 
 ### 代码演示
