@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
+`2018-04-10`
+
+**Improvements**
+
+- Actionsheet: 新增 cancel 事件 [\#796](https://github.com/youzan/vant/pull/796) [@cookfront](https://github.com/cookfront)
+- Actionsheet: 增加最大高度限制 [\#777](https://github.com/youzan/vant/pull/777) [@iscarecrow](https://github.com/iscarecrow)
+- DatetimePicker: 支持所有 picker 组件配置 [\#788](https://github.com/youzan/vant/pull/788) [@chenjiahan](https://github.com/chenjiahan)
+- SubmitBar: 统一文字大小 [\#774](https://github.com/youzan/vant/pull/774) [@chenjiahan](https://github.com/chenjiahan)
+- i18n: 支持 zh-HK 语言 [\#812](https://github.com/youzan/vant/pull/812) [@jasonc08](https://github.com/jasonc08)
+
+**Bug Fixes**
+
+- 修复 Button 加载状态下可点击的问题 [\#779](https://github.com/youzan/vant/pull/779) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Dialog 未初始化时 close 方法报错的问题 [\#841](https://github.com/youzan/vant/pull/841) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Popup 多层弹出时 lockScroll 失效的问题 [\#842](https://github.com/youzan/vant/pull/842) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 SubmitBar 金额保留位数错误的问题 [\#820](https://github.com/youzan/vant/pull/820) [@ddchef](https://github.com/ddchef)
+- 修复 Sku row 行高错误 [\#840](https://github.com/youzan/vant/pull/840) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
 `2018-03-26`
 
