@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
+`2018-04-10`
+
+**Improvements**
+
+- Actionsheet: add cancel event [\#796](https://github.com/youzan/vant/pull/796) [@cookfront](https://github.com/cookfront)
+- Actionsheet: support maxHeight [\#777](https://github.com/youzan/vant/pull/777) [@iscarecrow](https://github.com/iscarecrow)
+- DatetimePicker: support all picker props [\#788](https://github.com/youzan/vant/pull/788) [@chenjiahan](https://github.com/chenjiahan)
+- SubmitBar: unite font-size [\#774](https://github.com/youzan/vant/pull/774) [@chenjiahan](https://github.com/chenjiahan)
+- i18n: support zh-HK language [\#812](https://github.com/youzan/vant/pull/812) [@jasonc08](https://github.com/jasonc08)
+
+**Bug Fixes**
+
+- fix Button should be unclickable when loading [\#779](https://github.com/youzan/vant/pull/779) [@chenjiahan](https://github.com/chenjiahan)
+- fix Dialog close method may cause error [\#841](https://github.com/youzan/vant/pull/841) [@chenjiahan](https://github.com/chenjiahan)
+- fix Popup lock-scroll not work when open multi popup [\#842](https://github.com/youzan/vant/pull/842) [@chenjiahan](https://github.com/chenjiahan)
+- fix SubmitBar price decimal rounding [\#820](https://github.com/youzan/vant/pull/820) [@ddchef](https://github.com/ddchef)
+- fix Sku row font-size [\#840](https://github.com/youzan/vant/pull/840) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
 `2018-03-26`
 
@@ -11,6 +31,7 @@
 - Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
 
 **Bug Fixes**
+
 - fix Tag text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
 - fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
 
