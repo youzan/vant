@@ -140,6 +140,7 @@ export default create({
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
+        event.stopPropagation();
         this.deltaX = event.touches[0].clientX - this.startX;
         this.move(0, this.range(this.deltaX, [-this.width, this.width]));
       }
