@@ -4,7 +4,7 @@
       <slot name="icon" :active="active">
         <icon v-if="icon" :name="icon" />
       </slot>
-      <div v-if="info" class="van-icon__info">{{ info }}</div>
+      <div v-if="isDef(info)" class="van-icon__info">{{ info }}</div>
     </div>
     <div class="van-tabbar-item__text">
       <slot :active="active"/>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { isDef } from '../utils';
 import create from '../utils/create';
 import RouterLink from '../mixins/router-link';
 
@@ -24,7 +25,7 @@ export default create({
   props: {
     icon: String,
     dot: Boolean,
-    info: String
+    info: [String, Number]
   },
 
   data() {
@@ -42,6 +43,8 @@ export default create({
   },
 
   methods: {
+    isDef,
+
     onClick(event) {
       this.$parent.onChange(this.$parent.items.indexOf(this));
       this.$emit('click', event);

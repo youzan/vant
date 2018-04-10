@@ -17,7 +17,7 @@ export default create({
   props: {
     url: String,
     text: String,
-    info: String,
+    info: [String, Number],
     icon: String,
     iconClass: String
   },
