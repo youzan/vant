@@ -25,8 +25,12 @@
       </van-popup>
 
       <van-button @click="show4 = true">{{ $t('button5') }}</van-button>
-      <van-popup v-model="show4" position="right" :overlay="false">
+      <van-popup v-model="show4" position="right">
         <van-button @click="show4 = false">{{ $t('button6') }}</van-button>
+        <van-button @click="show5 = true">{{ $t('button5') }}</van-button>
+        <van-popup v-model="show5" position="right">
+          <van-button @click="show5 = false">{{ $t('button6') }}</van-button>
+        </van-popup>
       </van-popup>
     </demo-block>
   </demo-section>
@@ -60,7 +64,8 @@ export default {
       show1: false,
       show2: false,
       show3: false,
-      show4: false
+      show4: false,
+      show5: false
     };
   },
 
@@ -94,7 +99,6 @@ export default {
   .van-popup {
     width: 60%;
     padding: 20px;
-    border-radius: 5px;
     box-sizing: border-box;
 
     &--bottom {
@@ -109,7 +113,7 @@ export default {
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
     }
-  
+
     .van-tab__pane:not(:first-child) {
       padding: 10px;
       line-height: 1.4;

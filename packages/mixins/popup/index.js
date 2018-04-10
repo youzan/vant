@@ -57,14 +57,26 @@ export default {
     }
   },
 
+  activated() {
+    /* istanbul ignore next */
+    if (this.value) {
+      this.open();
+    }
+  },
+
   beforeDestroy() {
+    this.close();
+  },
+
+  deactivated() {
+    /* istanbul ignore next */
     this.close();
   },
 
   methods: {
     open() {
       /* istanbul ignore next */
-      if (this.$isServer) {
+      if (this.$isServer || this.opened) {
         return;
       }
 
@@ -73,30 +85,41 @@ export default {
         context.zIndex = this.zIndex;
       }
 
-      if (this.lockScroll) {
-        document.body.classList.add('van-overflow-hidden');
-        on(document, 'touchstart', this.onTouchStart);
-        on(document, 'touchmove', this.onTouchMove);
-      }
-
+      this.opened = true;
       this.renderOverlay();
-      this.$emit('input', true);
+
+      if (this.lockScroll) {
+        if (!context.lockCount) {
+          document.body.classList.add('van-overflow-hidden');
+          on(document, 'touchstart', this.onTouchStart);
+          on(document, 'touchmove', this.onTouchMove);
+        }
+        context.lockCount++;
+      }
     },
 
     close() {
-      if (this.lockScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-        off(document, 'touchstart', this.onTouchStart);
-        off(document, 'touchmove', this.onTouchMove);
+      if (!this.opened) {
+        return;
       }
 
+      if (this.lockScroll) {
+        context.lockCount--;
+        if (!context.lockCount) {
+          document.body.classList.remove('van-overflow-hidden');
+          off(document, 'touchstart', this.onTouchStart);
+          off(document, 'touchmove', this.onTouchMove);
+        }
+      }
+
+      this.opened = false;
       manager.close(this._popupId);
-      this.$emit('input', false);
     },
 
     move() {
       if (this.getContainer) {
         this.getContainer().appendChild(this.$el);
+      /* istanbul ignore if */
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
