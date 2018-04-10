@@ -9,10 +9,8 @@ const defaultConfig = {
 
 export default {
   open(vm, config) {
-    const exist = context.stack.some(item => item.vm._popupId === vm._popupId);
-
     /* istanbul ignore next */
-    if (!exist) {
+    if (!context.stack.some(item => item.vm._popupId === vm._popupId)) {
       const el = vm.$el;
       const targetNode = el && el.parentNode && el.parentNode.nodeType !== 11 ? el.parentNode : document.body;
       context.stack.push({ vm, config, targetNode });
@@ -66,7 +64,7 @@ export default {
     if (context.top) {
       const { vm } = context.top;
       vm.$emit('click-overlay');
-      vm.closeOnClickOverlay && vm.close();
+      vm.closeOnClickOverlay && vm.$emit('input', false);
     }
   }
 };

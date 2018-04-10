@@ -57,14 +57,26 @@ export default {
     }
   },
 
+  activated() {
+    /* istanbul ignore next */
+    if (this.value) {
+      this.open();
+    }
+  },
+
   beforeDestroy() {
+    this.close();
+  },
+
+  deactivated() {
+    /* istanbul ignore next */
     this.close();
   },
 
   methods: {
     open() {
       /* istanbul ignore next */
-      if (this.$isServer) {
+      if (this.$isServer || this.opened) {
         return;
       }
 
@@ -72,6 +84,9 @@ export default {
       if (this.zIndex !== undefined) {
         context.zIndex = this.zIndex;
       }
+
+      this.opened = true;
+      this.renderOverlay();
 
       if (this.lockScroll) {
         if (!context.lockCount) {
@@ -81,12 +96,13 @@ export default {
         }
         context.lockCount++;
       }
-
-      this.renderOverlay();
-      this.$emit('input', true);
     },
 
     close() {
+      if (!this.opened) {
+        return;
+      }
+
       if (this.lockScroll) {
         context.lockCount--;
         if (!context.lockCount) {
@@ -96,13 +112,14 @@ export default {
         }
       }
 
+      this.opened = false;
       manager.close(this._popupId);
-      this.$emit('input', false);
     },
 
     move() {
       if (this.getContainer) {
         this.getContainer().appendChild(this.$el);
+      /* istanbul ignore if */
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
