@@ -63,6 +63,12 @@
       <van-tabs :active="active" swipeable>
         <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
+          <van-swipe :autoplay="3000">
+            <van-swipe-item>1</van-swipe-item>
+            <van-swipe-item>2</van-swipe-item>
+            <van-swipe-item>3</van-swipe-item>
+            <van-swipe-item>4</van-swipe-item>
+          </van-swipe>
         </van-tab>
       </van-tabs>
     </demo-block>

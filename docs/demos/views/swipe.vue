@@ -63,7 +63,8 @@ export default {
 </script>
 
 <style lang="postcss">
-.demo-swipe {
+.demo-swipe,
+.demo-tab {
   padding-bottom: 30px;
 
   .van-swipe {
