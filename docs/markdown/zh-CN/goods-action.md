@@ -61,7 +61,7 @@ export default {
 | text | 按钮文字 | `String` | - | - |
 | icon | 图标 | `String` | - | Icon 组件支持的所有图标 |
 | icon-class | 图标额外类名 | `String` | `''` | - |
-| info | 图标右上角提示信息 | `String` | - | - |
+| info | 图标右上角提示信息 | `String | Number` | - | - |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前 history | `String` | `false` | - |
