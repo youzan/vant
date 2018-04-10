@@ -47,5 +47,5 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | title | Content | `String` | `''` | - |
-| info | Info Message | `String` | `''` | - |
+| info | Info Message | `String | Number` | `''` | - |
 | url | Link | `String` | - | - |

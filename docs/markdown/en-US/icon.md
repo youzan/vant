@@ -49,7 +49,7 @@ import 'vant/lib/vant-css/icon-local.css';
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | name | Icon name | `String` | `''` | - |
-| info | Info message | `String` | `''` | - |
+| info | Info message | `String | Number` | `''` | - |
 
 ### Event
 
