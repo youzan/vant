@@ -82,7 +82,7 @@ export default {
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog v-model="show" @confirm="onConfirm">
+<van-dialog v-model="show" :asyncConfirm="onClickConfirmAsync">
   <van-field
     v-model="username"
     label="Username"
@@ -110,8 +110,12 @@ export default {
   },
   
   methods: {
-    onConfirm() {
-      this.show = false;
+    onClickConfirmAsync() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve()
+        }, 1000)
+      })
     }
   }
 }
@@ -124,6 +128,7 @@ export default {
 | v-model | Whether to show dialog | `Boolean` | - | - |
 | title | Title | `String` | - | - |
 | message | Message | `String` | - | - |
+| async-confirm | Whether to close async，The incoming function is triggered when you click confirm. | `Function` | - | - |
 | show-confirm-button | Whether to show confirm button | `Boolean` |  `true` | - |
 | show-cancel-button | Whether to show cancel button | `Boolean` |  `false` | - |
 | confirm-button-text | Confirm button text | `String` |  `Confirm` | - |
