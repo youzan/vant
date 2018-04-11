@@ -1,8 +1,8 @@
 @import './common/var.css';
 
 .van-switch-cell {
-  .van-cell__title {
-    vertical-align: middle;
+  .van-cell__text {
+    vertical-align: baseline;;
   }
 
   .van-switch {
