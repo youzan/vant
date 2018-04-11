@@ -19,6 +19,7 @@
         <van-button
           size="large"
           class="van-dialog__confirm"
+          :loading="confirmButtonLoading"
           :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
           v-show="showConfirmButton"
           @click="handleAction('confirm')"
@@ -38,6 +39,18 @@ import Popup from '../mixins/popup';
 export default create({
   name: 'dialog',
 
+  data() {
+    return {
+      confirmButtonLoading: false
+    };
+  },
+
+  watch: {
+    value(val) {
+      this.confirmButtonLoading = !val && false;
+    }
+  },
+
   components: {
     VanButton
   },
@@ -48,6 +61,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
+    asyncConfirm: Function,
     confirmButtonText: String,
     cancelButtonText: String,
     showCancelButton: Boolean,
@@ -67,8 +81,17 @@ export default create({
 
   methods: {
     handleAction(action) {
-      this.$emit('input', false);
-      this.$emit(action);
+      if ((action !== 'confirm') || !this.asyncConfirm ) {
+        this.$emit('input', false);
+        this.$emit(action);
+      } else {
+        this.confirmButtonLoading = true;
+        this.asyncConfirm(action).then(res => {
+          this.$emit('input', false);
+        }).catch(err => {
+          this.confirmButtonLoading = false;
+        })
+      }
       this.callback && this.callback(action);
     }
   }
