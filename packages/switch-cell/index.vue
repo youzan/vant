@@ -1,5 +1,5 @@
 <template>
-  <cell :title="title" :border="border" class="van-switch-cell">
+  <cell center :title="title" :border="border" class="van-switch-cell">
     <van-switch v-bind="$props" @input="$emit('input', $event)" />
   </cell>
 </template>
