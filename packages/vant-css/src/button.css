@@ -11,6 +11,7 @@
   font-size: 16px;
   text-align: center;
   -webkit-appearance: none;
+  vertical-align: middle;
 
   &::before {
     content: " ";
@@ -74,7 +75,7 @@
 
   &--loading {
     .van-loading {
-      display: inline-block;
+      margin: 0 auto;
     }
 
     .van-button__text {
