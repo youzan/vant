@@ -7,7 +7,7 @@
       <slot />
       <div class="van-submit-bar__price">
         <template v-if="hasPrice">
-          <span class="van-submit-bar__price-text">{{ label || $t('label') }}</span>
+          <span>{{ label || $t('label') }}</span>
           <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
           <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
         </template>
