@@ -11,7 +11,7 @@ export default create({
   name: 'checkbox-group',
 
   props: {
-    value: {},
+    value: null,
     disabled: Boolean,
     max: {
       default: 0,

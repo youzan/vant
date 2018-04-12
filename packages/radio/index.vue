@@ -30,9 +30,9 @@ export default create({
   mixins: [findParent],
 
   props: {
-    value: {},
-    disabled: Boolean,
-    name: [String, Number]
+    name: null,
+    value: null,
+    disabled: Boolean
   },
 
   computed: {
