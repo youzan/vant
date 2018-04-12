@@ -10,11 +10,13 @@ Vue.use(Radio);
 ### Usage
 
 #### Basic Usage
-Use `v-model` to bind check status of radio. The value will be set to the name of radio when radio get checked.
+Use `v-model` to bind the name of checked radio
 
 ```html
-<van-radio name="1" v-model="radio">Radio 1</van-radio>
-<van-radio name="2" v-model="radio">Radio 2</van-radio>
+<van-radio-group v-model="radio">
+  <van-radio name="1">Radio 1</van-radio>
+  <van-radio name="2">Radio 2</van-radio>
+</van-radio-group>
 ```
 
 ```javascript
@@ -30,16 +32,7 @@ export default {
 #### Disabled
 
 ```html
-<van-radio name="1" v-model="radio" disabled>Disabled</van-radio>
-<van-radio name="2" v-model="radio" disabled>Disabled and checked</van-radio>
-```
-
-
-#### Radio Group
-When Radios are inside a RadioGroup, the checked radio's name is bound with CheckboxGroup by `v-model`.
-
-```html
-<van-radio-group v-model="radio">
+<van-radio-group v-model="radio" disabled>
   <van-radio name="1">Radio 1</van-radio>
   <van-radio name="2">Radio 2</van-radio>
 </van-radio-group>
@@ -60,13 +53,14 @@ When Radios are inside a RadioGroup, the checked radio's name is bound with Chec
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| disabled | Diable radio | `Boolean` | `false` | - |
-| name | Radio name | `Boolean` | `false` | - |
+| name | Radio name | `any` | - | - |
+| disabled | Whether to disable radio | `Boolean` | `false` | - |
 
 ### RadioGroup API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
+| v-model | Name of checked radio | `any` | - | - |
 | disabled | Diable all radios | `Boolean` | `false` | - |
 
 ### RadioGroup Event

@@ -83,12 +83,12 @@ export default {
 </van-checkbox-group>
 ```
 
-
 ### Checkbox API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
-| name | Checkbox name | `Boolean` | `false` | - |
+| v-model | Check status | `Boolean` | `false` | - |
+| name | Checkbox name | `any` | - | - |
 | disabled | Diable checkbox | `Boolean` | `false` | - |
 | label-disabled | Whether to disable label click | `Boolean` | `false` | - |
 | shape | Checkbox shape | `String` | `round` | `square` |
@@ -97,6 +97,7 @@ export default {
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
+| v-model | Names of all checked checkboxes | `Array` | - | - |
 | disabled | Disable all checkboxes | `Boolean` | `false` | - |
 | max | Maximum amount of checked options | `Number` | `0`(Unlimited) | - |
 

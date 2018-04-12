@@ -11,7 +11,7 @@ export default create({
   name: 'radio-group',
 
   props: {
-    value: {},
+    value: null,
     disabled: Boolean
   },
 

@@ -27,13 +27,13 @@ export default create({
   mixins: [findParent],
 
   props: {
-    value: {},
+    name: null,
+    value: null,
     disabled: Boolean,
     labelDisabled: {
       type: Boolean,
       default: false
     },
-    name: [String, Number],
     shape: {
       type: String,
       default: 'round'
