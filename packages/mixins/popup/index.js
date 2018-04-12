@@ -114,6 +114,7 @@ export default {
 
       this.opened = false;
       manager.close(this._popupId);
+      this.$emit('input', false);
     },
 
     move() {
