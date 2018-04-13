@@ -23,11 +23,14 @@
 <script>
 import create from '../utils/create';
 import Clickoutside from '../utils/clickoutside';
+import Touch from '../mixins/touch';
 
 const THRESHOLD = 0.15;
 
 export default create({
   name: 'cell-swipe',
+
+  mixins: [Touch],
 
   props: {
     onClose: Function,
@@ -96,9 +99,7 @@ export default create({
 
     startDrag(event) {
       this.draging = true;
-      this.direction = '';
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
+      this.touchStart(event);
 
       if (this.opened) {
         this.startX -= this.offset;
@@ -106,24 +107,17 @@ export default create({
     },
 
     onDrag(event) {
-      const offsetTop = event.touches[0].clientY - this.startY;
-      const offsetLeft = event.touches[0].clientX - this.startX;
+      this.touchMove(event);
+      const { deltaX, deltaY } = this;
 
-      if ((offsetLeft < 0 && -offsetLeft > this.rightWidth) ||
-        (offsetLeft > 0 && offsetLeft > this.leftWidth) ||
-        (offsetLeft > 0 && !this.leftWidth) ||
-        (offsetLeft < 0 && !this.rightWidth)) {
+      if ((deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
+        (deltaX > 0 && (deltaX > this.leftWidth || deltaX > 0 && !this.leftWidth))) {
         return;
       }
 
-      const y = Math.abs(offsetTop);
-      const x = Math.abs(offsetLeft);
-      const swiping = !(x < 5 || (x >= 5 && y >= x * 1.73));
-      this.direction = this.direction || this.getDirection(event.touches[0]);
-
-      if (swiping && this.direction === 'horizontal') {
+      if (this.direction === 'horizontal') {
         event.preventDefault();
-        this.swipeMove(offsetLeft);
+        this.swipeMove(deltaX);
       };
     },
 
@@ -132,12 +126,6 @@ export default create({
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       };
-    },
-
-    getDirection(touch) {
-      const offsetX = Math.abs(touch.clientX - this.startX);
-      const offsetY = Math.abs(touch.clientY - this.startY);
-      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
     },
 
     onClick(position = 'outside') {

@@ -31,9 +31,12 @@
 <script>
 import create from '../utils/create';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'pull-refresh',
+
+  mixins: [Touch],
 
   props: {
     pullingText: String,
@@ -88,8 +91,7 @@ export default create({
       }
       if (this.getCeiling()) {
         this.duration = 0;
-        this.startX = event.touches[0].clientX;
-        this.startY = event.touches[0].clientY;
+        this.touchStart(event);
       }
     },
 
@@ -98,8 +100,7 @@ export default create({
         return;
       }
 
-      this.deltaY = event.touches[0].clientY - this.startY;
-      this.direction = this.getDirection(event.touches[0]);
+      this.touchMove(event);
 
       if (!this.ceiling && this.getCeiling()) {
         this.duration = 0;
@@ -157,12 +158,6 @@ export default create({
       if (status !== this.status) {
         this.status = status;
       }
-    },
-
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     }
   }
 });

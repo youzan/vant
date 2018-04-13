@@ -3,7 +3,7 @@
     v-show="value"
     class="van-image-preview"
     @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
+    @touchmove.prevent="touchMove"
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
@@ -20,11 +20,12 @@ import create from '../utils/create';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'image-preview',
 
-  mixins: [Popup],
+  mixins: [Popup, Touch],
 
   components: {
     Swipe,
@@ -52,23 +53,14 @@ export default create({
   methods: {
     onTouchStart(event) {
       this.touchStartTime = new Date();
-      this.touchStartX = event.touches[0].clientX;
-      this.touchStartY = event.touches[0].clientY;
-      this.deltaX = 0;
-      this.deltaY = 0;
-    },
-
-    onTouchMove(event) {
-      event.preventDefault();
-      this.deltaX = event.touches[0].clientX - this.touchStartX;
-      this.deltaY = event.touches[0].clientY - this.touchStartY;
+      this.touchStart(event);
     },
 
     onTouchEnd(event) {
       event.preventDefault();
       // prevent long tap to close component
       const deltaTime = new Date() - this.touchStartTime;
-      if (deltaTime < 100 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {
+      if (deltaTime < 100 && this.offsetX < 20 && this.offsetY < 20) {
         this.$emit('input', false);
       }
     }

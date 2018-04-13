@@ -23,9 +23,12 @@
 
 <script>
 import create from '../utils/create';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'swipe',
+
+  mixins: [Touch],
 
   props: {
     autoplay: Number,
@@ -121,11 +124,8 @@ export default create({
     onTouchStart(event) {
       clearTimeout(this.timer);
 
-      this.deltaX = 0;
-      this.direction = '';
       this.currentDuration = 0;
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
+      this.touchStart(event);
 
       if (this.active <= -1) {
         this.move(this.count);
@@ -136,19 +136,18 @@ export default create({
     },
 
     onTouchMove(event) {
-      this.direction = this.direction || this.getDirection(event.touches[0]);
+      this.touchMove(event);
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
         event.stopPropagation();
-        this.deltaX = event.touches[0].clientX - this.startX;
         this.move(0, this.range(this.deltaX, [-this.width, this.width]));
       }
     },
 
     onTouchEnd() {
       if (this.deltaX) {
-        this.move(Math.abs(this.deltaX) > 50 ? (this.deltaX > 0 ? -1 : 1) : 0);
+        this.move(this.offsetX > 50 ? (this.deltaX > 0 ? -1 : 1) : 0);
         this.currentDuration = this.duration;
       }
       this.autoPlay();
@@ -200,12 +199,6 @@ export default create({
           }, 30);
         }, autoplay);
       }
-    },
-
-    getDirection(touch) {
-      const offsetX = Math.abs(touch.clientX - this.startX);
-      const offsetY = Math.abs(touch.clientY - this.startY);
-      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
     },
 
     range(num, arr) {
