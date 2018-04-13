@@ -2,8 +2,11 @@ import manager from './manager';
 import context from './context';
 import scrollUtils from '../../utils/scroll';
 import { on, off } from '../../utils/event';
+import Touch from '../touch';
 
 export default {
+  mixins: [Touch],
+
   props: {
     // whether to show popup
     value: Boolean,
@@ -42,10 +45,6 @@ export default {
 
   created() {
     this._popupId = 'popup-' + context.plusKey('id');
-    this.pos = {
-      x: 0,
-      y: 0
-    };
   },
 
   mounted() {
@@ -107,7 +106,7 @@ export default {
         context.lockCount--;
         if (!context.lockCount) {
           document.body.classList.remove('van-overflow-hidden');
-          off(document, 'touchstart', this.onTouchStart);
+          off(document, 'touchstart', this.touchStart);
           off(document, 'touchmove', this.onTouchMove);
         }
       }
@@ -126,21 +125,11 @@ export default {
       }
     },
 
-    onTouchStart(e) {
-      this.pos = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY
-      };
-    },
-
     onTouchMove(e) {
-      const { pos } = this;
-      const dx = e.touches[0].clientX - pos.x;
-      const dy = e.touches[0].clientY - pos.y;
-      const direction = dy > 0 ? '10' : '01';
+      this.touchMove(e);
+      const direction = this.deltaY > 0 ? '10' : '01';
       const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
-      const isVertical = Math.abs(dx) < Math.abs(dy);
 
       let status = '11';
 
@@ -154,7 +143,7 @@ export default {
       /* istanbul ignore next */
       if (
         status !== '11' &&
-        isVertical &&
+        this.direction === 'vertical' &&
         !(parseInt(status, 2) & parseInt(direction, 2))
       ) {
         e.preventDefault();

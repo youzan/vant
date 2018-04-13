@@ -38,9 +38,12 @@ import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'tabs',
+
+  mixins: [Touch],
 
   components: {
     VanNode
@@ -148,22 +151,10 @@ export default create({
     swipeableHandler(init) {
       const swipeableEl = this.$refs.content;
 
-      (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
-      (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
-      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
-      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
-    },
-
-    // record swipe touch start position
-    onTouchStart(event) {
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
-    },
-
-    // watch swipe touch move
-    onTouchMove(event) {
-      this.deltaX = event.touches[0].clientX - this.startX;
-      this.direction = this.getDirection(event.touches[0]);
+      (init ? on : off)(swipeableEl, 'touchstart', this.touchStart);
+      (init ? on : off)(swipeableEl, 'touchmove', this.touchMove);
+      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd);
+      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd);
     },
 
     // watch swipe touch end
@@ -172,7 +163,7 @@ export default create({
       const minSwipeDistance = 50;
 
       /* istanbul ignore else */
-      if (direction === 'horizontal' && Math.abs(deltaX) >= minSwipeDistance) {
+      if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
         /* istanbul ignore else */
         if (deltaX > 0 && curActive !== 0) {
           this.curActive = curActive - 1;
@@ -180,13 +171,6 @@ export default create({
           this.curActive = curActive + 1;
         }
       }
-    },
-
-    // get swipe direction
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     },
 
     // adjust tab position
