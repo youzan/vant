@@ -108,7 +108,7 @@ export default create({
 
     onDrag(event) {
       this.touchMove(event);
-      const { deltaX, deltaY } = this;
+      const { deltaX } = this;
 
       if ((deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
         (deltaX > 0 && (deltaX > this.leftWidth || deltaX > 0 && !this.leftWidth))) {
