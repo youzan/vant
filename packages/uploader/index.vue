@@ -14,6 +14,7 @@
 
 <script>
 import create from '../utils/create';
+import { isAndroid } from '../utils';
 
 export default create({
   name: 'uploader',
@@ -35,6 +36,11 @@ export default create({
   },
 
   methods: {
+    created() {
+      if (isAndroid) {
+        this.$refs.input.setAttribute('capture', 'camera');
+      }
+    },
     onChange(event) {
       let { files } = event.target;
       if (this.disabled || !files.length) {
