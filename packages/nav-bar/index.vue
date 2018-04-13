@@ -10,7 +10,7 @@
         <span v-if="leftText" v-text="leftText" class="van-nav-bar__text" />
       </slot>
     </div>
-    <div class="van-nav-bar__title">
+    <div class="van-nav-bar__title van-ellipsis">
       <slot name="title">{{ title }}</slot>
     </div>
     <div class="van-nav-bar__right" @click="$emit('click-right')">
