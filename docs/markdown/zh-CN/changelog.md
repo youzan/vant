@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
+`2018-04-13`
+
+**Improvements**
+
+- 抽象 touch 通用 mixin [\#869](https://github.com/youzan/vant/pull/869) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: 支持 Number 类型的 info [\#845](https://github.com/youzan/vant/pull/845) [@chenjiahan](https://github.com/chenjiahan)
+- Radio: name 属性支持任意类型 [\#863](https://github.com/youzan/vant/pull/863) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复 NavBar 标题长度未限制的问题 [\#867](https://github.com/youzan/vant/pull/867) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Button loading 状态下无法水平对齐的问题 [\#858](https://github.com/youzan/vant/pull/858) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 CellSwipe 在垂直滑动时也会触发 Swipe 的问题 [\#866](https://github.com/youzan/vant/pull/866) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 ImagePreview close 方法失效的问题 [\#864](https://github.com/youzan/vant/pull/864) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 SubmitBar 字体大小继承错误的问题 [\#857](https://github.com/youzan/vant/pull/857) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 SwitchCell 文字未垂直居中的问题 [\#852](https://github.com/youzan/vant/pull/852) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Swipe touch 事件冒泡问题 [\#846](https://github.com/youzan/vant/pull/846) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
 `2018-04-10`
 

@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
+`2018-04-13`
+
+**Improvements**
+
+- add touch mixin [\#869](https://github.com/youzan/vant/pull/869) [@chenjiahan](https://github.com/chenjiahan)
+- Tabbar: support Number type info [\#845](https://github.com/youzan/vant/pull/845) [@chenjiahan](https://github.com/chenjiahan)
+- Radio: name support any types [\#863](https://github.com/youzan/vant/pull/863) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- fix NavBar title max width limitation [\#867](https://github.com/youzan/vant/pull/867) [@chenjiahan](https://github.com/chenjiahan)
+- fix Button vertical align incorrect when loading [\#858](https://github.com/youzan/vant/pull/858) [@chenjiahan](https://github.com/chenjiahan)
+- fix CellSwipe should only trigger swipe when drag horizontally [\#866](https://github.com/youzan/vant/pull/866) [@chenjiahan](https://github.com/chenjiahan)
+- fix ImagePreview manually close not work [\#864](https://github.com/youzan/vant/pull/864) [@chenjiahan](https://github.com/chenjiahan)
+- fix SubmitBar inherit wrong font size [\#857](https://github.com/youzan/vant/pull/857) [@chenjiahan](https://github.com/chenjiahan)
+- fix SwitchCell text vertical align [\#852](https://github.com/youzan/vant/pull/852) [@chenjiahan](https://github.com/chenjiahan)
+- fix Swipe not stop touch event propagation [\#846](https://github.com/youzan/vant/pull/846) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
 `2018-04-10`
 
