@@ -96,8 +96,9 @@ export default create({
 
     startDrag(event) {
       this.draging = true;
-      this.startX = event.touches[0].pageX;
-      this.startY = event.touches[0].pageY;
+      this.direction = '';
+      this.startX = event.touches[0].clientX;
+      this.startY = event.touches[0].clientY;
 
       if (this.opened) {
         this.startX -= this.offset;
@@ -105,8 +106,9 @@ export default create({
     },
 
     onDrag(event) {
-      const offsetTop = event.touches[0].pageY - this.startY;
-      const offsetLeft = event.touches[0].pageX - this.startX;
+      const offsetTop = event.touches[0].clientY - this.startY;
+      const offsetLeft = event.touches[0].clientX - this.startX;
+
       if ((offsetLeft < 0 && -offsetLeft > this.rightWidth) ||
         (offsetLeft > 0 && offsetLeft > this.leftWidth) ||
         (offsetLeft > 0 && !this.leftWidth) ||
@@ -117,7 +119,9 @@ export default create({
       const y = Math.abs(offsetTop);
       const x = Math.abs(offsetLeft);
       const swiping = !(x < 5 || (x >= 5 && y >= x * 1.73));
-      if (swiping) {
+      this.direction = this.direction || this.getDirection(event.touches[0]);
+
+      if (swiping && this.direction === 'horizontal') {
         event.preventDefault();
         this.swipeMove(offsetLeft);
       };
@@ -128,6 +132,12 @@ export default create({
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       };
+    },
+
+    getDirection(touch) {
+      const offsetX = Math.abs(touch.clientX - this.startX);
+      const offsetY = Math.abs(touch.clientY - this.startY);
+      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
     },
 
     onClick(position = 'outside') {
