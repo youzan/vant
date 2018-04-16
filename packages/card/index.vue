@@ -9,7 +9,7 @@
       <slot name="title">
         <div class="van-card__row" v-if="title || price !== undefined">
           <div v-if="title" class="van-card__title">{{ title }}</div>
-          <div v-if="price !== undefined" class="van-card__price">¥ {{ price }}</div>
+          <div v-if="price !== undefined" class="van-card__price">{{ currency }} {{ price }}</div>
         </div>
       </slot>
       <slot name="desc">
@@ -38,7 +38,11 @@ export default create({
     desc: String,
     centered: Boolean,
     num: [Number, String],
-    price: [Number, String]
+    price: [Number, String],
+    currency: {
+      type: String,
+      default: '¥'
+    }
   }
 });
 </script>
