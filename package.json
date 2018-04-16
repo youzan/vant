@@ -8,6 +8,7 @@
   "typings": "types/index.d.ts",
   "files": [
     "lib",
+    "es",
     "packages",
     "types"
   ],
