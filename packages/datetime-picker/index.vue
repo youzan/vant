@@ -258,7 +258,9 @@ export default create({
       }
       value = this.correctValue(value);
       this.innerValue = value;
-      this.$emit('change', picker);
+      this.$nextTick(() => {
+        this.$emit('change', picker);
+      })
     },
 
     updateColumnValue(value) {
