@@ -49,6 +49,10 @@ export default create({
     VanNode
   },
 
+  model: {
+    prop: 'active'
+  },
+
   props: {
     sticky: Boolean,
     active: {
@@ -88,7 +92,9 @@ export default create({
 
   watch: {
     active(val) {
-      this.correctActive(val);
+      if (val !== this.curActive) {
+        this.correctActive(val);
+      }
     },
 
     tabs(tabs) {
@@ -166,9 +172,9 @@ export default create({
       if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
         /* istanbul ignore else */
         if (deltaX > 0 && curActive !== 0) {
-          this.curActive = curActive - 1;
+          this.setCurActive(curActive - 1);
         } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
-          this.curActive = curActive + 1;
+          this.setCurActive(curActive + 1);
         }
       }
     },
@@ -208,7 +214,12 @@ export default create({
       active = +active;
       const exist = this.tabs.some(tab => tab.index === active);
       const defaultActive = (this.tabs[0] || {}).index || 0;
-      this.curActive = exist ? active : defaultActive;
+      this.setCurActive(exist ? active : defaultActive);
+    },
+
+    setCurActive(active) {
+      this.curActive = active;
+      this.$emit('input', active);
     },
 
     // emit event when clicked
@@ -218,7 +229,7 @@ export default create({
         this.$emit('disabled', index, title);
       } else {
         this.$emit('click', index, title);
-        this.curActive = index;
+        this.setCurActive(index);
       }
     },
 
