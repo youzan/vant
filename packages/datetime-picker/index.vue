@@ -260,7 +260,7 @@ export default create({
       this.innerValue = value;
       this.$nextTick(() => {
         this.$emit('change', picker);
-      })
+      });
     },
 
     updateColumnValue(value) {
