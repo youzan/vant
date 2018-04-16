@@ -49,6 +49,7 @@ Vue.use(Card);
 | num | 商品数量 | `String | Number` | - | - |
 | price | 商品价格 | `String | Number` | - | - |
 | centered | 内容是否垂直居中 | `String` | `false` | - |
+| currency | 货币符号 |  `String` | `¥` | - |
 
 ### Slot
 
