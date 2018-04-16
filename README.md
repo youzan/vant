@@ -42,9 +42,14 @@ npm i babel-plugin-import -D
 
 ```js
 // set babel config in .babelrc or babel-loader
+// Note: Don't set libraryDirectory if you are using webpack 1.
 {
   "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
