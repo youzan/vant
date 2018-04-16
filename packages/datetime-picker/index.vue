@@ -258,7 +258,9 @@ export default create({
       }
       value = this.correctValue(value);
       this.innerValue = value;
-      this.$emit('change', picker);
+      setTimeout(() => {
+        this.$emit('change', picker);
+      }, 0);
     },
 
     updateColumnValue(value) {
