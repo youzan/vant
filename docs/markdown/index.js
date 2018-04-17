@@ -56,6 +56,7 @@ export default {
   'zh-CN/radio': wrapper(r => require.ensure([], () => r(require('./zh-CN/radio.md')), 'zh-CN/radio')),
   'zh-CN/search': wrapper(r => require.ensure([], () => r(require('./zh-CN/search.md')), 'zh-CN/search')),
   'zh-CN/sku': wrapper(r => require.ensure([], () => r(require('./zh-CN/sku.md')), 'zh-CN/sku')),
+  'zh-CN/slider': wrapper(r => require.ensure([], () => r(require('./zh-CN/slider.md')), 'zh-CN/slider')),
   'zh-CN/stepper': wrapper(r => require.ensure([], () => r(require('./zh-CN/stepper.md')), 'zh-CN/stepper')),
   'zh-CN/steps': wrapper(r => require.ensure([], () => r(require('./zh-CN/steps.md')), 'zh-CN/steps')),
   'zh-CN/submit-bar': wrapper(r => require.ensure([], () => r(require('./zh-CN/submit-bar.md')), 'zh-CN/submit-bar')),
