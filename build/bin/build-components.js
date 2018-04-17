@@ -46,13 +46,8 @@ function compile(dir, jsOnly = false) {
 
       fs.outputFileSync(output, compiler(source, compilerOption).js);
     } else if (/\.js$/.test(file)) {
-      babel.transformFile(
-        absolutePath,
-        compilerOption.babel,
-        (err, { code }) => {
-          fs.outputFileSync(absolutePath, code);
-        }
-      );
+      const { code } = babel.transformFileSync(absolutePath, compilerOption.babel);
+      fs.outputFileSync(absolutePath, code);
     }
   });
 }

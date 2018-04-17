@@ -14,6 +14,7 @@ const resolve = relativePath => path.resolve(__dirname, relativePath);
 
 // compile component css
 gulp.task('compile', () => {
+  fs.emptyDirSync('./lib');
   return gulp
     .src('./src/*.css')
     .pipe(postcss())
@@ -25,6 +26,7 @@ gulp.task('compile', () => {
 gulp.task('lib', ['compile'], () => {
   const ttf = glob.sync(resolve('./src/*.ttf'));
   ttf.forEach(ttf => fs.copy(ttf, './lib/' + path.parse(ttf).base));
+  fs.copy('./lib', '../../lib/vant-css');
   fs.copy('./lib', '../../es/vant-css');
 });
 

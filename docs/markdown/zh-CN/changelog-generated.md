@@ -1,5 +1,40 @@
 ## 更新日志
 
+## [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7) (2018-04-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.6...v1.0.7)
+
+## [v1.0.6](https://github.com/youzan/vant/tree/v1.0.6) (2018-04-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.5...v1.0.6)
+
+**Breaking changes**
+
+- tabs 的 click 希望多传回一个 e 对象 [\#873](https://github.com/youzan/vant/issues/873)
+- \<van-tabbar-item info="5"\>标签\</van-tabbar-item\>中info应该要支持Number类型 [\#844](https://github.com/youzan/vant/issues/844)
+
+**Bug Fixes**
+
+- NavBar标题栏文字过长会重叠左右按键空间 [\#865](https://github.com/youzan/vant/issues/865)
+- CellSwipe  和 list 在一起使用，往下滑动的时候，很容易就触发了CellSwipe 的左滑或者右滑事件， [\#856](https://github.com/youzan/vant/issues/856)
+- Collapse 的 title 以 slot 方式包含按钮，按钮在loading状态下不对齐 [\#850](https://github.com/youzan/vant/issues/850)
+- 实例页面购物车 van-submit-bar\_\_bar里的van-submit-bar\_\_price文字会被设置的rem影响不能居中 [\#848](https://github.com/youzan/vant/issues/848)
+- 滑动tabs 和Swipe同时使用滑动优先级问题怎么处理 [\#817](https://github.com/youzan/vant/issues/817)
+
+**Issue**
+
+- Uploader 小米5S的微信浏览器上传回调不成功 [\#872](https://github.com/youzan/vant/issues/872)
+- 请问NoticeBar支持多条text内容滚动么？ [\#868](https://github.com/youzan/vant/issues/868)
+- 引用toast组件会出现警告信息 [\#861](https://github.com/youzan/vant/issues/861)
+- van-field的 type为 textarea 设置 高度自适应，高度被设置为0 [\#818](https://github.com/youzan/vant/issues/818)
+
+**Improvements**
+
+- \[Improvement\] Dialog: add before-close prop [\#881](https://github.com/youzan/vant/pull/881) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: support v-model bind active tab [\#879](https://github.com/youzan/vant/pull/879) ([chenjiahan](https://github.com/chenjiahan))
+- \[bug fix\] \#742 datetime-picker：时间选取错误 [\#878](https://github.com/youzan/vant/pull/878) ([jerryni](https://github.com/jerryni))
+- \[Improvement\] SubmitBar: support custom currency symbol [\#876](https://github.com/youzan/vant/pull/876) ([chenjiahan](https://github.com/chenjiahan))
+- \[new feature\] support es module [\#875](https://github.com/youzan/vant/pull/875) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Dialog: support async close [\#854](https://github.com/youzan/vant/pull/854) ([qianzhaoy](https://github.com/qianzhaoy))
+
 ## [v1.0.5](https://github.com/youzan/vant/tree/v1.0.5) (2018-04-13)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.4...v1.0.5)
 
