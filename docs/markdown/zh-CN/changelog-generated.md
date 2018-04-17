@@ -1,5 +1,8 @@
 ## 更新日志
 
+## [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7) (2018-04-17)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.6...v1.0.7)
+
 ## [v1.0.6](https://github.com/youzan/vant/tree/v1.0.6) (2018-04-17)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.5...v1.0.6)
 
