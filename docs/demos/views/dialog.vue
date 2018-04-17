@@ -13,7 +13,7 @@
       <van-button @click="show = true">{{ $t('advancedUsage') }}</van-button>
       <van-dialog
         v-model="show"
-        @confirm="show = false"
+        :asyncConfirm="onClickConfirmAsync"
       >
         <van-field
           v-model="username"
@@ -59,7 +59,7 @@ export default {
       Dialog.alert({
         title: this.$t('title'),
         message: this.$t('content')
-      });
+      })
     },
 
     onClickAlert2() {
@@ -73,6 +73,14 @@ export default {
         title: this.$t('title'),
         message: this.$t('content')
       });
+    },
+
+    onClickConfirmAsync() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve()
+        }, 1000)
+      })
     }
   }
 };
