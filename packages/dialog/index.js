@@ -35,6 +35,7 @@ Dialog.defaultOptions = {
   message: '',
   overlay: true,
   lockScroll: true,
+  beforeClose: null,
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,

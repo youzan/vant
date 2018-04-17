@@ -9,19 +9,20 @@
       </div>
       <div class="van-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
         <van-button
+          v-show="showCancelButton"
+          :loading="loading.cancel"
           size="large"
           class="van-dialog__cancel"
-          v-show="showCancelButton"
           @click="handleAction('cancel')"
         >
           {{ cancelButtonText || $t('cancel') }}
         </van-button>
         <van-button
-          size="large"
-          class="van-dialog__confirm"
-          :loading="confirmButtonLoading"
-          :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
           v-show="showConfirmButton"
+          size="large"
+          :loading="loading.confirm"
+          class="van-dialog__confirm"
+          :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
           @click="handleAction('confirm')"
         >
           {{ confirmButtonText || $t('confirm') }}
@@ -39,18 +40,6 @@ import Popup from '../mixins/popup';
 export default create({
   name: 'dialog',
 
-  data() {
-    return {
-      confirmButtonLoading: false
-    };
-  },
-
-  watch: {
-    value(val) {
-      this.confirmButtonLoading = !val && false;
-    }
-  },
-
   components: {
     VanButton
   },
@@ -61,7 +50,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
-    asyncConfirm: Function,
+    beforeClose: Function,
     confirmButtonText: String,
     cancelButtonText: String,
     showCancelButton: Boolean,
@@ -79,19 +68,31 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      loading: {
+        confirm: false,
+        cancel: false
+      }
+    };
+  },
+
   methods: {
     handleAction(action) {
-      if ((action === 'confirm') && this.asyncConfirm) {
-        this.confirmButtonLoading = true;
-        this.asyncConfirm(action).then(res => {
-          this.$emit('input', false);
-        }).catch(err => {
-          this.confirmButtonLoading = false;
+      if (this.beforeClose) {
+        this.loading[action] = true;
+        this.beforeClose(action, () => {
+          this.onClose(action);
+          this.loading[action] = false;
         });
       } else {
-        this.$emit('input', false);
-        this.$emit(action);
+        this.onClose(action);
       }
+    },
+
+    onClose(action) {
+      this.$emit('input', false);
+      this.$emit(action);
       this.callback && this.callback(action);
     }
   }
