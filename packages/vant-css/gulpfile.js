@@ -14,6 +14,7 @@ const resolve = relativePath => path.resolve(__dirname, relativePath);
 
 // compile component css
 gulp.task('compile', () => {
+  fs.emptyDirSync('./lib');
   return gulp
     .src('./src/*.css')
     .pipe(postcss())
