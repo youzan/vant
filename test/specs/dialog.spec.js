@@ -7,6 +7,7 @@ describe('Dialog', () => {
   });
 
   it('create a alert dialog', (done) => {
+    Dialog.close();
     Dialog.alert({
       title: 'title',
       message: 'message'
@@ -19,7 +20,7 @@ describe('Dialog', () => {
       expect(document.querySelector('.van-dialog')).to.exist;
       expect(document.querySelector('.van-dialog__cancel').style.display).to.equal('none');
       document.querySelector('.van-dialog__confirm').click();
-    }, 500);
+    }, 300);
   });
 
   it('create a confirm dialog', (done) => {
@@ -35,7 +36,7 @@ describe('Dialog', () => {
 
     setTimeout(() => {
       document.querySelector('.van-dialog__cancel').click();
-    }, 500);
+    }, 300);
   });
 
   it('create a confirm dialog with callback', (done) => {
@@ -48,7 +49,7 @@ describe('Dialog', () => {
 
     setTimeout(() => {
       document.querySelector('.van-dialog__cancel').click();
-    }, 500);
+    }, 300);
   });
 
   it('set default options', () => {
@@ -63,5 +64,24 @@ describe('Dialog', () => {
   it('register component', () => {
     Vue.use(Dialog);
     expect(!!Vue.component('van-dialog')).to.be.true;
+  });
+
+  it('before close', (done) => {
+    Dialog.confirm({
+      beforeClose(action, dialogDone) {
+        setTimeout(() => {
+          dialogDone();
+          setTimeout(() => {
+            expect(document.querySelector('.van-dialog').style.display).to.equal('none');
+            done();
+          }, 300);
+        });
+      }
+    });
+
+    setTimeout(() => {
+      document.querySelector('.van-dialog__confirm').click();
+      expect(document.querySelector('.van-dialog').style.display).to.equal('');
+    }, 300);
   });
 });
