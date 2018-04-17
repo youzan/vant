@@ -1,34 +1,33 @@
 /**
- * 编译 components 到 lib 目录
+ * Compile components
  */
 const fs = require('fs-extra');
 const path = require('path');
 const compiler = require('vue-sfc-compiler');
-const libDir = path.resolve(__dirname, '../../lib');
-const srcDir = path.resolve(__dirname, '../../packages');
+const esDir = path.join(__dirname, '../../es');
+const libDir = path.join(__dirname, '../../lib');
+const srcDir = path.join(__dirname, '../../packages');
 const babel = require('babel-core');
 const compilerOption = {
   babel: {
-    extends: path.resolve(__dirname, '../../.babelrc')
+    extends: path.join(__dirname, '../../.babelrc')
   }
 };
 
-process.env.BABEL_ENV = 'commonjs';
-
-// clear lib
+// clear dir
+fs.emptyDirSync(esDir);
 fs.emptyDirSync(libDir);
 
 // copy packages
-fs.copySync(srcDir, libDir);
+fs.copySync(srcDir, esDir);
 
-// 编译所有 .vue 文件到 .js
-compile(libDir);
+compile(esDir);
 
-function compile(dir) {
+function compile(dir, jsOnly = false) {
   const files = fs.readdirSync(dir);
 
   files.forEach(file => {
-    const absolutePath = path.resolve(dir, file);
+    const absolutePath = path.join(dir, file);
 
     // 移除 vant-css
     if (file.indexOf('vant-css') !== -1) {
@@ -37,7 +36,7 @@ function compile(dir) {
     } else if (isDir(absolutePath)) {
       return compile(absolutePath);
       // 编译 .vue 文件
-    } else if (/\.vue$/.test(file)) {
+    } else if (/\.vue$/.test(file) && !jsOnly) {
       const source = fs.readFileSync(absolutePath, 'utf-8');
       fs.removeSync(absolutePath);
 
@@ -57,6 +56,10 @@ function compile(dir) {
     }
   });
 }
+
+process.env.BABEL_ENV = 'commonjs';
+fs.copySync(esDir, libDir);
+compile(libDir);
 
 function isDir(dir) {
   return fs.lstatSync(dir).isDirectory();

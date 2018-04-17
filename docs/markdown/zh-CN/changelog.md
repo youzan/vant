@@ -1,5 +1,26 @@
 ## 更新日志
 
+### [1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
+`2018-04-17`
+
+**Bug Fixes**
+
+* 修复构建结果 lib 目录下样式丢失的问题 [@chenjiahan](https://github.com/chenjiahan)
+
+### [1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
+`2018-04-17`
+
+**Improvements**
+
+* 支持 ES module 引入 [\#875](https://github.com/youzan/vant/pull/875) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: 新增 before-close 属性, 支持异步关闭 [\#854](https://github.com/youzan/vant/pull/854)  [\#881](https://github.com/youzan/vant/pull/881) [@chenjiahan](https://github.com/chenjiahan) [@qianzhaoy](https://github.com/qianzhaoy)
+* SubmitBar: 支持自定义金额符号 [\#876](https://github.com/youzan/vant/pull/876) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 支持 v-model 绑定当前 active 标签 [\#879](https://github.com/youzan/vant/pull/879) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 DatetimePicker change 事件参数错误 [\#878](https://github.com/youzan/vant/pull/878) [@jerryni](https://github.com/jerryni)
+
 ### [1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
 `2018-04-13`
 
