@@ -9,7 +9,7 @@ module.exports = Object.assign({}, config, {
     'vant': './packages/index.js'
   },
   output: {
-    path: path.join(__dirname, '../lib'),
+    path: path.join(__dirname, '../es'),
     library: 'vant',
     libraryTarget: 'umd',
     filename: isMinify ? '[name].min.js' : '[name].js',

@@ -16,9 +16,14 @@ npm i babel-plugin-import -D
 
 ```js
 // 在 .babelrc 或 babel-loader 中添加插件配置
+// 注意：webpack 1 无需设置 libraryDirectory。
 {
   "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
