@@ -71,6 +71,7 @@ Vue.use(SubmitBar);
 | tip | 提示文案 |  `String` | - | - |
 | disabled | 是否禁用按钮 |  `Boolean` | `false` | - |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
+| currency | 货币符号 |  `String` | `¥` | - |
 
 ### Event
 

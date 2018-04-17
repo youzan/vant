@@ -9,18 +9,20 @@
       </div>
       <div class="van-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
         <van-button
+          v-show="showCancelButton"
+          :loading="loading.cancel"
           size="large"
           class="van-dialog__cancel"
-          v-show="showCancelButton"
           @click="handleAction('cancel')"
         >
           {{ cancelButtonText || $t('cancel') }}
         </van-button>
         <van-button
+          v-show="showConfirmButton"
           size="large"
+          :loading="loading.confirm"
           class="van-dialog__confirm"
           :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
-          v-show="showConfirmButton"
           @click="handleAction('confirm')"
         >
           {{ confirmButtonText || $t('confirm') }}
@@ -48,6 +50,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
+    beforeClose: Function,
     confirmButtonText: String,
     cancelButtonText: String,
     showCancelButton: Boolean,
@@ -65,8 +68,29 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      loading: {
+        confirm: false,
+        cancel: false
+      }
+    };
+  },
+
   methods: {
     handleAction(action) {
+      if (this.beforeClose) {
+        this.loading[action] = true;
+        this.beforeClose(action, () => {
+          this.onClose(action);
+          this.loading[action] = false;
+        });
+      } else {
+        this.onClose(action);
+      }
+    },
+
+    onClose(action) {
       this.$emit('input', false);
       this.$emit(action);
       this.callback && this.callback(action);

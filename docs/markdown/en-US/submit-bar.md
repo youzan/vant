@@ -71,6 +71,7 @@ Use slot to add custom contents.
 | tip | Tip |  `String` | - | - |
 | disabled | Whether to disable button |  `Boolean` | `false` | - |
 | loading | Whether to show loading icon |  `Boolean` | `false` | - |
+| currency | Currency symbol |  `String` | `¥` | - |
 
 ### Event
 

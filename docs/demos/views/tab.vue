@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-tabs :active="active">
+      <van-tabs v-model="active">
         <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>

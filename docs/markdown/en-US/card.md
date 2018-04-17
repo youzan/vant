@@ -49,6 +49,7 @@ Use `slot` to custom content.
 | num | Number of goods | `String | Number` | - | - |
 | price | Price of goods | `String | Number` | - | - |
 | centered | Whether content vertical centered | `String` | `false` | - |
+| currency | Currency symbol |  `String` | `¥` | - |
 
 ### Slot
 

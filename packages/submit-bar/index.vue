@@ -8,7 +8,7 @@
       <div class="van-submit-bar__price">
         <template v-if="hasPrice">
           <span>{{ label || $t('label') }}</span>
-          <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
+          <span class="van-submit-bar__price-interger">{{ currency }}{{ priceInterger }}.</span>
           <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
         </template>
       </div>
@@ -38,6 +38,10 @@ export default create({
     loading: Boolean,
     disabled: Boolean,
     buttonText: String,
+    currency: {
+      type: String,
+      default: '¥'
+    },
     buttonType: {
       type: String,
       default: 'danger'
