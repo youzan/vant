@@ -115,7 +115,7 @@ export default create({
       if (this.type === 'number') {
         const { keyCode } = event;
         const allowPoint = this.value.indexOf('.') === -1;
-        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint);
+        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
         if (!isValidKey) {
           event.preventDefault();
         }
@@ -129,6 +129,7 @@ export default create({
       }
 
       const el = this.$refs.textarea;
+      /* istanbul ignore if */
       if (!el) {
         return;
       }
