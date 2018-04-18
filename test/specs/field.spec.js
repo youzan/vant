@@ -57,12 +57,13 @@ describe('Field', () => {
   it('create a textarea field', (done) => {
     wrapper = mount(Field, {
       propsData: {
-        type: 'textarea'
+        type: 'textarea',
+        autosize: true
       }
     });
 
     setTimeout(() => {
-      expect(wrapper.hasClass('van-field--min-height')).to.be.true;
+      expect(wrapper.hasClass('van-field')).to.be.true;
       done();
     }, 50);
   });
