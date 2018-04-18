@@ -116,7 +116,7 @@ export default create({
         setTimeout(() => {
           this.draging = false;
           this.updateValue(this.newValue, true);
-          this.$emit('afterChange', this.newValue);
+          this.$emit('after-change', this.newValue);
         }, 0);
       }
     },
