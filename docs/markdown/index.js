@@ -113,6 +113,7 @@ export default {
   'en-US/radio': wrapper(r => require.ensure([], () => r(require('./en-US/radio.md')), 'en-US/radio')),
   'en-US/search': wrapper(r => require.ensure([], () => r(require('./en-US/search.md')), 'en-US/search')),
   'en-US/sku': wrapper(r => require.ensure([], () => r(require('./en-US/sku.md')), 'en-US/sku')),
+  'en-US/slider': wrapper(r => require.ensure([], () => r(require('./en-US/slider.md')), 'en-US/slider')),
   'en-US/stepper': wrapper(r => require.ensure([], () => r(require('./en-US/stepper.md')), 'en-US/stepper')),
   'en-US/steps': wrapper(r => require.ensure([], () => r(require('./en-US/steps.md')), 'en-US/steps')),
   'en-US/submit-bar': wrapper(r => require.ensure([], () => r(require('./en-US/submit-bar.md')), 'en-US/submit-bar')),
