@@ -82,13 +82,11 @@ export default create({
       };
     },
     pivotStyle() {
-      const pivotStyle = {
+      return {
         backgroundColor: this.pivotColor,
         left: this.innerValue + '%',
         marginLeft: `-${this.pivotOffset}px`
       };
-
-      return pivotStyle;
     }
   },
 
@@ -105,7 +103,7 @@ export default create({
       if (this.draging) {
         this.touchMove(event);
         const diff = this.deltaX / this.sliderWidth * 100;
-        this.newValue = this.startValue + diff;
+        this.newValue = Math.round(this.startValue + diff);
         this.updateValue(this.newValue);
         this.$emit('change', this.newValue);
       }
@@ -124,14 +122,12 @@ export default create({
       if (this.disabled || this.draging) return;
       const sliderRect = this.$refs.bar.getBoundingClientRect();
       const sliderOffset = sliderRect.left;
-      this.updateValue((e.clientX - sliderOffset) / this.sliderWidth * 100, true);
+      this.newValue = Math.round((e.clientX - sliderOffset) / this.sliderWidth * 100);
+      this.updateValue(this.newValue, true);
     },
     updateValue(value, triggerEvent) {
       value = this.setRange(value);
       this.innerValue = value;
-      if (triggerEvent) {
-        this.$emit('valueUpdate', value);
-      }
     },
 
     setRange(value) {
