@@ -125,12 +125,15 @@ export default {
       }
     },
 
+    onTouchStart(e) {
+      this.touchStart(e);
+    },
+
     onTouchMove(e) {
       this.touchMove(e);
       const direction = this.deltaY > 0 ? '10' : '01';
       const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
-
       let status = '11';
 
       /* istanbul ignore next */
