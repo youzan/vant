@@ -33,14 +33,6 @@ describe('Slider', () => {
     });
   });
 
-  // it('test disabled', () => {
-  //   wrapper = mount(Slider, {
-  //     propsData: {
-  //       disabled: true
-  //     }
-  //   });
-  // })
-
   it('test click bar', () => {
     wrapper = mount(Slider);
     const eventStub = sinon.stub(wrapper.vm, 'onSliderClicked');

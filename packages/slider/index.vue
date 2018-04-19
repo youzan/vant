@@ -90,8 +90,15 @@ export default create({
     }
   },
 
-  methods: {
+  created() {
+    this.innerValue = this.setRange(this.value);
+  },
 
+  mounted() {
+    this.pivotOffset = this.$refs.pivot.getBoundingClientRect().width / 2;
+  },
+
+  methods: {
     onTouchStart(event) {
       if (this.disabled) return;
       this.draging = true;
@@ -133,14 +140,6 @@ export default create({
     setRange(value) {
       return Math.max(0, Math.min(value, 100));
     }
-  },
-
-  created() {
-    this.innerValue = this.setRange(this.value);
-  },
-
-  mounted() {
-    this.pivotOffset = this.$refs.pivot.getBoundingClientRect().width / 2;
   }
 });
 </script>
