@@ -31,7 +31,7 @@ describe('SwitchCell', () => {
 
     DOMChecker(wrapper, {
       text: {
-        '.van-cell__text': '测试标题'
+        '.van-cell__title span': '测试标题'
       },
       count: {
         '.van-switch--on': 0,
