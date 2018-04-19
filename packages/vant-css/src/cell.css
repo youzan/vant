@@ -24,16 +24,10 @@
     background-color: $white;
   }
 
-  &__title {
-    .van-icon {
-      font-size: 16px;
-      margin-right: 5px;
-      vertical-align: middle;
-    }
-  }
-
-  &__text {
-    vertical-align: middle;
+  &__left-icon {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-right: 5px;
   }
 
   &__label {

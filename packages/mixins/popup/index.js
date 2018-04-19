@@ -90,7 +90,7 @@ export default {
       if (this.lockScroll) {
         if (!context.lockCount) {
           document.body.classList.add('van-overflow-hidden');
-          on(document, 'touchstart', this.onTouchStart);
+          on(document, 'touchstart', this.touchStart);
           on(document, 'touchmove', this.onTouchMove);
         }
         context.lockCount++;
@@ -123,10 +123,6 @@ export default {
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
-    },
-
-    onTouchStart(e) {
-      this.touchStart(e);
     },
 
     onTouchMove(e) {
