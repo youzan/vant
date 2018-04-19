@@ -379,10 +379,6 @@ module.exports = {
                 title: 'Button'
               },
               {
-                path: '/slider',
-                title: 'Slider'
-              },
-              {
                 path: '/cell',
                 title: 'Cell'
               },
@@ -449,6 +445,10 @@ module.exports = {
               {
                 path: '/swipe',
                 title: 'Swipe'
+              },
+              {
+                path: '/slider',
+                title: 'Slider'
               },
               {
                 path: '/tab',
