@@ -15,7 +15,8 @@
     background-color: $white;
   }
 
-  &__item {
+  &__item,
+  &__cancel {
     height: 50px;
     line-height: 50px;
     font-size: 16px;

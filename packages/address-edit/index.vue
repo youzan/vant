@@ -1,11 +1,11 @@
 <template>
-  <div class="van-address-edit">
+  <div :class="b()">
     <cell-group>
       <field
+        v-model="data.name"
         maxlength="15"
         :placeholder="$t('name')"
         :label="$t('label.name')"
-        v-model="data.name"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
@@ -19,7 +19,7 @@
       />
       <cell
         clickable
-        class="van-address-edit__area"
+        :class="b('area')"
         :title="$t('area')"
         @click="showArea = true"
       >
@@ -57,7 +57,7 @@
         :title="$t('defaultAddress')"
       />
     </cell-group>
-    <div v-show="!hideBottomFields" class="van-address-edit__buttons">
+    <div v-show="!hideBottomFields" :class="b('buttons')">
       <van-button block :loading="isSaving" @click="onSave" type="primary">
         {{ $t('save') }}
       </van-button>

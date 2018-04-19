@@ -1,7 +1,7 @@
 <template>
   <transition name="van-slide-bottom">
-    <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
-      <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
+    <div :class="b('', { 'withtitle': title })" v-show="value">
+      <div class="van-hairline--top-bottom" :class="b('header')" v-if="title">
         <div v-text="title" />
         <icon name="close" @click="handleCancel" />
       </div>
@@ -9,24 +9,25 @@
         <li
           v-for="(item, index) in actions"
           :key="index"
-          class="van-actionsheet__item van-hairline--top"
-          :class="[item.className, { 'van-actionsheet__item--loading': item.loading }]"
+          class="van-hairline--top"
+          :class="[b('item'), item.className]"
           @click.stop="onClickItem(item)"
         >
           <template v-if="!item.loading">
-            <span class="van-actionsheet__name">{{ item.name }}</span>
-            <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+            <span :class="b('name')">{{ item.name }}</span>
+            <span :class="b('subname')" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <loading v-else class="van-actionsheet__loading" size="20px" />
+          <loading v-else :class="b('loading')" size="20px" />
         </li>
       </ul>
       <div
         v-if="cancelText"
         v-text="cancelText"
-        class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
+        class="van-hairline--top"
+        :class="b('cancel')"
         @click="handleCancel"
       />
-      <div v-else class="van-actionsheet__content">
+      <div v-else :class="b('content')">
         <slot />
       </div>
     </div>
