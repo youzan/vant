@@ -58,12 +58,6 @@ export default {
       title3: 'Left Icon',
       title4: 'Link'
     }
-  },
-
-  methods: {
-    handleClick() {
-      console.log('cell click');
-    }
   }
 };
 </script>

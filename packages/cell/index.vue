@@ -9,12 +9,12 @@
     }"
     @click="onClick"
   >
-    <div class="van-cell__title" v-if="title || icon || $slots.title || $slots.icon">
-      <slot name="icon">
-        <icon v-if="icon" :name="icon" />
-      </slot>
+    <slot name="icon">
+      <icon v-if="icon" class="van-cell__left-icon" :name="icon" />
+    </slot>
+    <div class="van-cell__title" v-if="title || $slots.title">
       <slot name="title">
-        <span class="van-cell__text" v-text="title" />
+        <span v-text="title" />
         <div class="van-cell__label" v-if="label" v-text="label" />
       </slot>
     </div>
