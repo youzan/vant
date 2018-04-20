@@ -54,7 +54,7 @@ acorn-dynamic-import@^3.0.0:
 
 acorn-globals@^4.1.0:
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/acorn-globals/-/acorn-globals-4.1.0.tgz#ab716025dbe17c54d3ef81d32ece2b2d99fe2538"
+  resolved "http://registry.npm.qima-inc.com/acorn-globals/download/acorn-globals-4.1.0.tgz#ab716025dbe17c54d3ef81d32ece2b2d99fe2538"
   dependencies:
     acorn "^5.0.0"
 
@@ -224,7 +224,7 @@ app-module-path@^1.1.0:
 
 app-root-path@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/app-root-path/-/app-root-path-2.0.1.tgz#cd62dcf8e4fd5a417efc664d2e5b10653c651b46"
+  resolved "http://registry.npm.qima-inc.com/app-root-path/download/app-root-path-2.0.1.tgz#cd62dcf8e4fd5a417efc664d2e5b10653c651b46"
 
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
@@ -271,7 +271,7 @@ array-differ@^1.0.0:
 
 array-equal@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/array-equal/-/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
+  resolved "http://registry.npm.qima-inc.com/array-equal/download/array-equal-1.0.0.tgz#8c2a5ef2472fd9ea742b04c77a75093ba2757c93"
 
 array-filter@~0.0.0:
   version "0.0.1"
@@ -1609,7 +1609,7 @@ callsites@^0.2.0:
 
 callsites@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/callsites/-/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
+  resolved "http://registry.npm.qima-inc.com/callsites/download/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
 
 camel-case@3.0.x:
   version "3.0.0"
@@ -1708,7 +1708,7 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0:
 
 chalk@^2.3.1:
   version "2.4.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
+  resolved "http://registry.npm.qima-inc.com/chalk/download/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -1820,7 +1820,7 @@ chrome-trace-event@^0.1.1:
 
 ci-info@^1.0.0:
   version "1.1.3"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-1.1.3.tgz#710193264bb05c77b8c90d02f5aaf22216a667b2"
+  resolved "http://registry.npm.qima-inc.com/ci-info/download/ci-info-1.1.3.tgz#710193264bb05c77b8c90d02f5aaf22216a667b2"
 
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
@@ -2054,7 +2054,7 @@ commander@2.14.x, commander@^2.11.0, commander@^2.6.0, commander@^2.8.1, command
 
 commander@^2.14.1:
   version "2.15.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
+  resolved "http://registry.npm.qima-inc.com/commander/download/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
 
 commander@^2.9.0:
   version "2.15.0"
@@ -2214,7 +2214,7 @@ cosmiconfig@^2.1.0, cosmiconfig@^2.1.1:
 
 cosmiconfig@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-4.0.0.tgz#760391549580bbd2df1e562bc177b13c290972dc"
+  resolved "http://registry.npm.qima-inc.com/cosmiconfig/download/cosmiconfig-4.0.0.tgz#760391549580bbd2df1e562bc177b13c290972dc"
   dependencies:
     is-directory "^0.3.1"
     js-yaml "^3.9.0"
@@ -2408,11 +2408,11 @@ csso@~2.3.1:
 
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.2"
-  resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
+  resolved "http://registry.npm.qima-inc.com/cssom/download/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
 
 "cssstyle@>= 0.2.37 < 0.3.0":
   version "0.2.37"
-  resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
+  resolved "http://registry.npm.qima-inc.com/cssstyle/download/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
   dependencies:
     cssom "0.3.x"
 
@@ -2446,7 +2446,7 @@ data-uri-to-buffer@1:
 
 data-urls@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/data-urls/-/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
+  resolved "http://registry.npm.qima-inc.com/data-urls/download/data-urls-1.0.0.tgz#24802de4e81c298ea8a9388bb0d8e461c774684f"
   dependencies:
     abab "^1.0.4"
     whatwg-mimetype "^2.0.0"
@@ -2513,7 +2513,7 @@ decompress-response@^3.2.0, decompress-response@^3.3.0:
 
 dedent@^0.7.0:
   version "0.7.0"
-  resolved "https://registry.yarnpkg.com/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
+  resolved "http://registry.npm.qima-inc.com/dedent/download/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
 
 deep-eql@^3.0.0:
   version "3.0.1"
@@ -2737,7 +2737,7 @@ di@^0.0.1:
 
 diff@3.5.0, diff@^3.2.0, diff@^3.5.0:
   version "3.5.0"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
+  resolved "http://registry.npm.qima-inc.com/diff/download/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
 diff@^3.1.0, diff@^3.3.1:
   version "3.4.0"
@@ -2814,7 +2814,7 @@ domelementtype@~1.1.1:
 
 domexception@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/domexception/-/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
+  resolved "http://registry.npm.qima-inc.com/domexception/download/domexception-1.0.1.tgz#937442644ca6a31261ef36e3ec677fe805582c90"
   dependencies:
     webidl-conversions "^4.0.2"
 
@@ -3239,7 +3239,7 @@ execa@^0.7.0:
 
 execa@^0.9.0:
   version "0.9.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
+  resolved "http://registry.npm.qima-inc.com/execa/download/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -3300,7 +3300,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
 
 expect@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/expect/-/expect-22.4.3.tgz#d5a29d0a0e1fb2153557caef2674d4547e914674"
+  resolved "http://registry.npm.qima-inc.com/expect/download/expect-22.4.3.tgz#d5a29d0a0e1fb2153557caef2674d4547e914674"
   dependencies:
     ansi-styles "^3.2.0"
     jest-diff "^22.4.3"
@@ -3557,7 +3557,7 @@ find-cache-dir@^1.0.0:
 
 find-parent-dir@^0.3.0:
   version "0.3.0"
-  resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+  resolved "http://registry.npm.qima-inc.com/find-parent-dir/download/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
 
 find-up@^1.0.0:
   version "1.1.2"
@@ -3810,7 +3810,7 @@ get-func-name@^2.0.0:
 
 get-own-enumerable-property-symbols@^2.0.1:
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/get-own-enumerable-property-symbols/-/get-own-enumerable-property-symbols-2.0.1.tgz#5c4ad87f2834c4b9b4e84549dc1e0650fb38c24b"
+  resolved "http://registry.npm.qima-inc.com/get-own-enumerable-property-symbols/download/get-own-enumerable-property-symbols-2.0.1.tgz#5c4ad87f2834c4b9b4e84549dc1e0650fb38c24b"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -4266,7 +4266,7 @@ html-comment-regex@^1.1.0:
 
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.yarnpkg.com/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
+  resolved "http://registry.npm.qima-inc.com/html-encoding-sniffer/download/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
   dependencies:
     whatwg-encoding "^1.0.1"
 
@@ -4409,7 +4409,7 @@ https-proxy-agent@1:
 
 husky@^0.14.3:
   version "0.14.3"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
+  resolved "http://registry.npm.qima-inc.com/husky/download/husky-0.14.3.tgz#c69ed74e2d2779769a17ba8399b54ce0b63c12c3"
   dependencies:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
@@ -4638,7 +4638,7 @@ is-callable@^1.1.1, is-callable@^1.1.3:
 
 is-ci@^1.0.10:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/is-ci/-/is-ci-1.1.0.tgz#247e4162e7860cebbdaf30b774d6b0ac7dcfe7a5"
+  resolved "http://registry.npm.qima-inc.com/is-ci/download/is-ci-1.1.0.tgz#247e4162e7860cebbdaf30b774d6b0ac7dcfe7a5"
   dependencies:
     ci-info "^1.0.0"
 
@@ -4724,7 +4724,7 @@ is-fullwidth-code-point@^2.0.0:
 
 is-generator-fn@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-generator-fn/-/is-generator-fn-1.0.0.tgz#969d49e1bb3329f6bb7f09089be26578b2ddd46a"
+  resolved "http://registry.npm.qima-inc.com/is-generator-fn/download/is-generator-fn-1.0.0.tgz#969d49e1bb3329f6bb7f09089be26578b2ddd46a"
 
 is-glob@^2.0.0, is-glob@^2.0.1:
   version "2.0.1"
@@ -4780,7 +4780,7 @@ is-number@^4.0.0:
 
 is-obj@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
+  resolved "http://registry.npm.qima-inc.com/is-obj/download/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
 
 is-object@^1.0.1:
   version "1.0.1"
@@ -4854,7 +4854,7 @@ is-regex@^1.0.4:
 
 is-regexp@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-regexp/-/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
+  resolved "http://registry.npm.qima-inc.com/is-regexp/download/is-regexp-1.0.0.tgz#fd2d883545c46bac5a633e7b9a09e87fa2cb5069"
 
 is-relative-path@^1.0.1, is-relative-path@~1.0.0:
   version "1.0.2"
@@ -5002,7 +5002,7 @@ isurl@^1.0.0-alpha5:
 
 jest-config@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-config/-/jest-config-22.4.3.tgz#0e9d57db267839ea31309119b41dc2fa31b76403"
+  resolved "http://registry.npm.qima-inc.com/jest-config/download/jest-config-22.4.3.tgz#0e9d57db267839ea31309119b41dc2fa31b76403"
   dependencies:
     chalk "^2.0.1"
     glob "^7.1.1"
@@ -5018,7 +5018,7 @@ jest-config@^22.4.3:
 
 jest-diff@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-22.4.3.tgz#e18cc3feff0aeef159d02310f2686d4065378030"
+  resolved "http://registry.npm.qima-inc.com/jest-diff/download/jest-diff-22.4.3.tgz#e18cc3feff0aeef159d02310f2686d4065378030"
   dependencies:
     chalk "^2.0.1"
     diff "^3.2.0"
@@ -5027,7 +5027,7 @@ jest-diff@^22.4.3:
 
 jest-environment-jsdom@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-environment-jsdom/-/jest-environment-jsdom-22.4.3.tgz#d67daa4155e33516aecdd35afd82d4abf0fa8a1e"
+  resolved "http://registry.npm.qima-inc.com/jest-environment-jsdom/download/jest-environment-jsdom-22.4.3.tgz#d67daa4155e33516aecdd35afd82d4abf0fa8a1e"
   dependencies:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
@@ -5035,18 +5035,18 @@ jest-environment-jsdom@^22.4.3:
 
 jest-environment-node@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-environment-node/-/jest-environment-node-22.4.3.tgz#54c4eaa374c83dd52a9da8759be14ebe1d0b9129"
+  resolved "http://registry.npm.qima-inc.com/jest-environment-node/download/jest-environment-node-22.4.3.tgz#54c4eaa374c83dd52a9da8759be14ebe1d0b9129"
   dependencies:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
 
 jest-get-type@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-22.4.3.tgz#e3a8504d8479342dd4420236b322869f18900ce4"
+  resolved "http://registry.npm.qima-inc.com/jest-get-type/download/jest-get-type-22.4.3.tgz#e3a8504d8479342dd4420236b322869f18900ce4"
 
 jest-jasmine2@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-jasmine2/-/jest-jasmine2-22.4.3.tgz#4daf64cd14c793da9db34a7c7b8dcfe52a745965"
+  resolved "http://registry.npm.qima-inc.com/jest-jasmine2/download/jest-jasmine2-22.4.3.tgz#4daf64cd14c793da9db34a7c7b8dcfe52a745965"
   dependencies:
     chalk "^2.0.1"
     co "^4.6.0"
@@ -5062,7 +5062,7 @@ jest-jasmine2@^22.4.3:
 
 jest-matcher-utils@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-22.4.3.tgz#4632fe428ebc73ebc194d3c7b65d37b161f710ff"
+  resolved "http://registry.npm.qima-inc.com/jest-matcher-utils/download/jest-matcher-utils-22.4.3.tgz#4632fe428ebc73ebc194d3c7b65d37b161f710ff"
   dependencies:
     chalk "^2.0.1"
     jest-get-type "^22.4.3"
@@ -5070,7 +5070,7 @@ jest-matcher-utils@^22.4.3:
 
 jest-message-util@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-message-util/-/jest-message-util-22.4.3.tgz#cf3d38aafe4befddbfc455e57d65d5239e399eb7"
+  resolved "http://registry.npm.qima-inc.com/jest-message-util/download/jest-message-util-22.4.3.tgz#cf3d38aafe4befddbfc455e57d65d5239e399eb7"
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.35"
     chalk "^2.0.1"
@@ -5080,22 +5080,22 @@ jest-message-util@^22.4.3:
 
 jest-mock@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
+  resolved "http://registry.npm.qima-inc.com/jest-mock/download/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
 
 jest-regex-util@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-regex-util/-/jest-regex-util-22.4.3.tgz#a826eb191cdf22502198c5401a1fc04de9cef5af"
+  resolved "http://registry.npm.qima-inc.com/jest-regex-util/download/jest-regex-util-22.4.3.tgz#a826eb191cdf22502198c5401a1fc04de9cef5af"
 
 jest-resolve@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-resolve/-/jest-resolve-22.4.3.tgz#0ce9d438c8438229aa9b916968ec6b05c1abb4ea"
+  resolved "http://registry.npm.qima-inc.com/jest-resolve/download/jest-resolve-22.4.3.tgz#0ce9d438c8438229aa9b916968ec6b05c1abb4ea"
   dependencies:
     browser-resolve "^1.11.2"
     chalk "^2.0.1"
 
 jest-snapshot@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-22.4.3.tgz#b5c9b42846ffb9faccb76b841315ba67887362d2"
+  resolved "http://registry.npm.qima-inc.com/jest-snapshot/download/jest-snapshot-22.4.3.tgz#b5c9b42846ffb9faccb76b841315ba67887362d2"
   dependencies:
     chalk "^2.0.1"
     jest-diff "^22.4.3"
@@ -5106,7 +5106,7 @@ jest-snapshot@^22.4.3:
 
 jest-util@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-util/-/jest-util-22.4.3.tgz#c70fec8eec487c37b10b0809dc064a7ecf6aafac"
+  resolved "http://registry.npm.qima-inc.com/jest-util/download/jest-util-22.4.3.tgz#c70fec8eec487c37b10b0809dc064a7ecf6aafac"
   dependencies:
     callsites "^2.0.0"
     chalk "^2.0.1"
@@ -5118,7 +5118,7 @@ jest-util@^22.4.3:
 
 jest-validate@^22.4.0, jest-validate@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/jest-validate/-/jest-validate-22.4.3.tgz#0780954a5a7daaeec8d3c10834b9280865976b30"
+  resolved "http://registry.npm.qima-inc.com/jest-validate/download/jest-validate-22.4.3.tgz#0780954a5a7daaeec8d3c10834b9280865976b30"
   dependencies:
     chalk "^2.0.1"
     jest-config "^22.4.3"
@@ -5143,7 +5143,7 @@ js-yaml@3.x, js-yaml@^3.4.3, js-yaml@^3.9.1:
 
 js-yaml@^3.9.0:
   version "3.11.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
+  resolved "http://registry.npm.qima-inc.com/js-yaml/download/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -5201,7 +5201,7 @@ jscodeshift@^0.5.0:
 
 jsdom@^11.5.1:
   version "11.8.0"
-  resolved "https://registry.yarnpkg.com/jsdom/-/jsdom-11.8.0.tgz#a52e9a7d2b931284f62c80dad5f17d7390499d8b"
+  resolved "http://registry.npm.qima-inc.com/jsdom/download/jsdom-11.8.0.tgz#a52e9a7d2b931284f62c80dad5f17d7390499d8b"
   dependencies:
     abab "^1.0.4"
     acorn "^5.3.0"
@@ -5471,11 +5471,11 @@ lcid@^1.0.0:
 
 left-pad@^1.2.0:
   version "1.3.0"
-  resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
+  resolved "http://registry.npm.qima-inc.com/left-pad/download/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
 
 leven@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
+  resolved "http://registry.npm.qima-inc.com/leven/download/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
 
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
@@ -5514,7 +5514,7 @@ linkify-it@^2.0.0:
 
 lint-staged@^7.0.4:
   version "7.0.4"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-7.0.4.tgz#1aa7f27427e4c4c85d4d6524ac98aac10cbaf1b8"
+  resolved "http://registry.npm.qima-inc.com/lint-staged/download/lint-staged-7.0.4.tgz#1aa7f27427e4c4c85d4d6524ac98aac10cbaf1b8"
   dependencies:
     app-root-path "^2.0.1"
     chalk "^2.3.1"
@@ -5696,7 +5696,7 @@ lodash.some@^4.4.0:
 
 lodash.sortby@^4.7.0:
   version "4.7.0"
-  resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
+  resolved "http://registry.npm.qima-inc.com/lodash.sortby/download/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
 lodash.unescape@4.0.1:
   version "4.0.1"
@@ -6479,7 +6479,7 @@ normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
 
 normalize-path@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
+  resolved "http://registry.npm.qima-inc.com/normalize-path/download/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
 
 normalize-path@^2.0.0, normalize-path@^2.0.1, normalize-path@^2.1.1:
   version "2.1.1"
@@ -6510,7 +6510,7 @@ normalize-url@^1.4.0:
 
 npm-path@^2.0.2:
   version "2.0.4"
-  resolved "https://registry.yarnpkg.com/npm-path/-/npm-path-2.0.4.tgz#c641347a5ff9d6a09e4d9bce5580c4f505278e64"
+  resolved "http://registry.npm.qima-inc.com/npm-path/download/npm-path-2.0.4.tgz#c641347a5ff9d6a09e4d9bce5580c4f505278e64"
   dependencies:
     which "^1.2.10"
 
@@ -6522,7 +6522,7 @@ npm-run-path@^2.0.0:
 
 npm-which@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/npm-which/-/npm-which-3.0.1.tgz#9225f26ec3a285c209cae67c3b11a6b4ab7140aa"
+  resolved "http://registry.npm.qima-inc.com/npm-which/download/npm-which-3.0.1.tgz#9225f26ec3a285c209cae67c3b11a6b4ab7140aa"
   dependencies:
     commander "^2.9.0"
     npm-path "^2.0.2"
@@ -6561,7 +6561,7 @@ number-is-nan@^1.0.0:
 
 nwmatcher@^1.4.3:
   version "1.4.4"
-  resolved "https://registry.yarnpkg.com/nwmatcher/-/nwmatcher-1.4.4.tgz#2285631f34a95f0d0395cd900c96ed39b58f346e"
+  resolved "http://registry.npm.qima-inc.com/nwmatcher/download/nwmatcher-1.4.4.tgz#2285631f34a95f0d0395cd900c96ed39b58f346e"
 
 oauth-sign@~0.8.1, oauth-sign@~0.8.2:
   version "0.8.2"
@@ -6874,7 +6874,7 @@ parse-passwd@^1.0.0:
 
 parse5@4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+  resolved "http://registry.npm.qima-inc.com/parse5/download/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
 parseqs@0.0.5:
   version "0.0.5"
@@ -7030,7 +7030,7 @@ pkg-dir@^2.0.0:
 
 please-upgrade-node@^3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/please-upgrade-node/-/please-upgrade-node-3.0.1.tgz#0a681f2c18915e5433a5ca2cd94e0b8206a782db"
+  resolved "http://registry.npm.qima-inc.com/please-upgrade-node/download/please-upgrade-node-3.0.1.tgz#0a681f2c18915e5433a5ca2cd94e0b8206a782db"
 
 pluralize@^7.0.0:
   version "7.0.0"
@@ -7038,7 +7038,7 @@ pluralize@^7.0.0:
 
 pn@^1.1.0:
   version "1.1.0"
-  resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
+  resolved "http://registry.npm.qima-inc.com/pn/download/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
 portfinder@^1.0.9:
   version "1.0.13"
@@ -7568,7 +7568,7 @@ pretty-error@^2.0.2:
 
 pretty-format@^22.4.3:
   version "22.4.3"
-  resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
+  resolved "http://registry.npm.qima-inc.com/pretty-format/download/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
   dependencies:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
@@ -7672,7 +7672,7 @@ punycode@1.4.1, punycode@^1.2.4, punycode@^1.3.2, punycode@^1.4.1:
 
 punycode@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
+  resolved "http://registry.npm.qima-inc.com/punycode/download/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
 
 q@^1.1.2:
   version "1.5.1"
@@ -8072,13 +8072,13 @@ request-progress@^2.0.1:
 
 request-promise-core@1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.1.tgz#3eee00b2c5aa83239cfb04c5700da36f81cd08b6"
+  resolved "http://registry.npm.qima-inc.com/request-promise-core/download/request-promise-core-1.1.1.tgz#3eee00b2c5aa83239cfb04c5700da36f81cd08b6"
   dependencies:
     lodash "^4.13.1"
 
 request-promise-native@^1.0.5:
   version "1.0.5"
-  resolved "https://registry.yarnpkg.com/request-promise-native/-/request-promise-native-1.0.5.tgz#5281770f68e0c9719e5163fd3fab482215f4fda5"
+  resolved "http://registry.npm.qima-inc.com/request-promise-native/download/request-promise-native-1.0.5.tgz#5281770f68e0c9719e5163fd3fab482215f4fda5"
   dependencies:
     request-promise-core "1.1.1"
     stealthy-require "^1.1.0"
@@ -8210,7 +8210,7 @@ require-from-string@^1.1.0:
 
 require-from-string@^2.0.1:
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
+  resolved "http://registry.npm.qima-inc.com/require-from-string/download/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
 
 require-main-filename@^1.0.1:
   version "1.0.1"
@@ -8760,7 +8760,7 @@ source-map-support@^0.4.15:
 
 source-map-support@^0.5.0:
   version "0.5.4"
-  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.4.tgz#54456efa89caa9270af7cd624cc2f123e51fbae8"
+  resolved "http://registry.npm.qima-inc.com/source-map-support/download/source-map-support-0.5.4.tgz#54456efa89caa9270af7cd624cc2f123e51fbae8"
   dependencies:
     source-map "^0.6.0"
 
@@ -8857,11 +8857,11 @@ ssri@^5.2.4:
 
 stack-utils@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-1.0.1.tgz#d4f33ab54e8e38778b0ca5cfd3b3afb12db68620"
+  resolved "http://registry.npm.qima-inc.com/stack-utils/download/stack-utils-1.0.1.tgz#d4f33ab54e8e38778b0ca5cfd3b3afb12db68620"
 
 staged-git-files@1.1.1:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/staged-git-files/-/staged-git-files-1.1.1.tgz#37c2218ef0d6d26178b1310719309a16a59f8f7b"
+  resolved "http://registry.npm.qima-inc.com/staged-git-files/download/staged-git-files-1.1.1.tgz#37c2218ef0d6d26178b1310719309a16a59f8f7b"
 
 static-extend@^0.1.1:
   version "0.1.2"
@@ -8880,7 +8880,7 @@ statuses@~1.3.1:
 
 stealthy-require@^1.1.0:
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
+  resolved "http://registry.npm.qima-inc.com/stealthy-require/download/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
 
 stream-browserify@^2.0.0, stream-browserify@^2.0.1:
   version "2.0.1"
@@ -8945,7 +8945,7 @@ strict-uri-encode@^1.0.0:
 
 string-argv@^0.0.2:
   version "0.0.2"
-  resolved "https://registry.yarnpkg.com/string-argv/-/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
+  resolved "http://registry.npm.qima-inc.com/string-argv/download/string-argv-0.0.2.tgz#dac30408690c21f3c3630a3ff3a05877bdcbd736"
 
 string-template@~0.2.1:
   version "0.2.1"
@@ -8978,7 +8978,7 @@ string_decoder@~0.10.x:
 
 stringify-object@^3.2.2:
   version "3.2.2"
-  resolved "https://registry.yarnpkg.com/stringify-object/-/stringify-object-3.2.2.tgz#9853052e5a88fb605a44cd27445aa257ad7ffbcd"
+  resolved "http://registry.npm.qima-inc.com/stringify-object/download/stringify-object-3.2.2.tgz#9853052e5a88fb605a44cd27445aa257ad7ffbcd"
   dependencies:
     get-own-enumerable-property-symbols "^2.0.1"
     is-obj "^1.0.1"
@@ -9037,7 +9037,7 @@ strip-indent@^1.0.1:
 
 strip-indent@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/strip-indent/-/strip-indent-2.0.0.tgz#5ef8db295d01e6ed6cbf7aab96998d7822527b68"
+  resolved "http://registry.npm.qima-inc.com/strip-indent/download/strip-indent-2.0.0.tgz#5ef8db295d01e6ed6cbf7aab96998d7822527b68"
 
 strip-json-comments@~2.0.1:
   version "2.0.1"
@@ -9120,7 +9120,7 @@ symbol-observable@^0.2.2:
 
 symbol-tree@^3.2.2:
   version "3.2.2"
-  resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
+  resolved "http://registry.npm.qima-inc.com/symbol-tree/download/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
 
 syntax-error@^1.1.1:
   version "1.4.0"
@@ -9292,7 +9292,7 @@ toposort@^1.0.0:
 
 tough-cookie@>=2.3.3, tough-cookie@^2.3.3:
   version "2.3.4"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
+  resolved "http://registry.npm.qima-inc.com/tough-cookie/download/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
 
@@ -9304,7 +9304,7 @@ tough-cookie@~2.3.0, tough-cookie@~2.3.3:
 
 tr46@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tr46/-/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
+  resolved "http://registry.npm.qima-inc.com/tr46/download/tr46-1.0.1.tgz#a8b13fd6bfd2489519674ccde55ba3693b706d09"
   dependencies:
     punycode "^2.1.0"
 
@@ -9801,7 +9801,7 @@ vue@2.5.16:
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/w3c-hr-time/-/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
+  resolved "http://registry.npm.qima-inc.com/w3c-hr-time/download/w3c-hr-time-1.0.1.tgz#82ac2bff63d950ea9e3189a58a65625fedf19045"
   dependencies:
     browser-process-hrtime "^0.1.2"
 
@@ -9821,7 +9821,7 @@ wbuf@^1.1.0, wbuf@^1.7.2:
 
 webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
-  resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+  resolved "http://registry.npm.qima-inc.com/webidl-conversions/download/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
 webpack-addons@^1.1.5:
   version "1.1.5"
@@ -9974,17 +9974,17 @@ websocket-extensions@>=0.1.1:
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3:
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/whatwg-encoding/-/whatwg-encoding-1.0.3.tgz#57c235bc8657e914d24e1a397d3c82daee0a6ba3"
+  resolved "http://registry.npm.qima-inc.com/whatwg-encoding/download/whatwg-encoding-1.0.3.tgz#57c235bc8657e914d24e1a397d3c82daee0a6ba3"
   dependencies:
     iconv-lite "0.4.19"
 
 whatwg-mimetype@^2.0.0, whatwg-mimetype@^2.1.0:
   version "2.1.0"
-  resolved "https://registry.yarnpkg.com/whatwg-mimetype/-/whatwg-mimetype-2.1.0.tgz#f0f21d76cbba72362eb609dbed2a30cd17fcc7d4"
+  resolved "http://registry.npm.qima-inc.com/whatwg-mimetype/download/whatwg-mimetype-2.1.0.tgz#f0f21d76cbba72362eb609dbed2a30cd17fcc7d4"
 
 whatwg-url@^6.4.0:
   version "6.4.0"
-  resolved "https://registry.yarnpkg.com/whatwg-url/-/whatwg-url-6.4.0.tgz#08fdf2b9e872783a7a1f6216260a1d66cc722e08"
+  resolved "http://registry.npm.qima-inc.com/whatwg-url/download/whatwg-url-6.4.0.tgz#08fdf2b9e872783a7a1f6216260a1d66cc722e08"
   dependencies:
     lodash.sortby "^4.7.0"
     tr46 "^1.0.0"
@@ -10064,7 +10064,7 @@ write@^0.2.1:
 
 ws@^4.0.0:
   version "4.1.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
+  resolved "http://registry.npm.qima-inc.com/ws/download/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
@@ -10083,7 +10083,7 @@ xml-char-classes@^1.0.0:
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
+  resolved "http://registry.npm.qima-inc.com/xml-name-validator/download/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
 
 xmlhttprequest-ssl@~1.5.4:
   version "1.5.5"

@@ -90,7 +90,7 @@ export default {
       if (this.lockScroll) {
         if (!context.lockCount) {
           document.body.classList.add('van-overflow-hidden');
-          on(document, 'touchstart', this.onTouchStart);
+          on(document, 'touchstart', this.touchStart);
           on(document, 'touchmove', this.onTouchMove);
         }
         context.lockCount++;
@@ -130,7 +130,6 @@ export default {
       const direction = this.deltaY > 0 ? '10' : '01';
       const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
-
       let status = '11';
 
       /* istanbul ignore next */
