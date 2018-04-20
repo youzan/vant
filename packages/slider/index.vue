@@ -57,8 +57,13 @@ export default create({
   },
 
   computed: {
-    innerValue() {
-      return Math.round(this.value);
+    innerValue: {
+      get: function() {
+        return this.value;
+      },
+      set: function(newValue) {
+        this.value = newValue;
+      }
     },
 
     sliderWidth() {
