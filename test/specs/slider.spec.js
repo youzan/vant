@@ -35,16 +35,21 @@ describe('Slider', () => {
 
   it('test click bar', () => {
     wrapper = mount(Slider);
-    const eventStub = sinon.stub(wrapper.vm, 'onSliderClicked');
-    wrapper.find('.van-slider__bar')[0].trigger('click');
+    const eventStub = sinon.stub(wrapper.vm, '$emit');
+    const $bar = wrapper.find('.van-slider__bar')[0];
+    $bar.trigger('click');
+
     expect(eventStub.called).to.equal(true);
 
     wrapper.setData({
       disabled: true
     });
 
-    wrapper.find('.van-slider__bar')[0].trigger('click');
-    expect(eventStub.called).to.equal(true);
+    $bar.trigger('click');
+    wrapper.vm.$nextTick(() => {
+      expect(eventStub.called).to.equal(false);
+      done();
+    });
   });
 
   it('Customized style', () => {
