@@ -131,6 +131,7 @@ export default create({
       const sliderOffset = sliderRect.left;
       this.newValue = Math.round((e.clientX - sliderOffset) / this.sliderWidth * 100);
       this.updateValue(this.newValue, true);
+      this.$emit('change', this.newValue);
     },
     updateValue(value, triggerEvent) {
       value = this.setRange(value);
