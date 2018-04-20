@@ -34,7 +34,8 @@ describe('Slider', () => {
   it('test click bar', () => {
     wrapper = mount(Slider, {
       propsData: {
-        disabled: true
+        disabled: true,
+        value: 50
       }
     });
 
@@ -60,7 +61,8 @@ describe('Slider', () => {
       propsData: {
         pivotColor: COLOR,
         barColor: COLOR,
-        loadedBarColor: COLOR
+        loadedBarColor: COLOR,
+        value: 50
       }
     });
 
@@ -70,7 +72,11 @@ describe('Slider', () => {
   });
 
   it('drag pivot', () => {
-    wrapper = mount(Slider);
+    wrapper = mount(Slider, {
+      propsData: {
+        value: 50
+      }
+    });
 
     const pivot = wrapper.find('.van-slider__pivot')[0];
     triggerTouch(pivot, 'touchstart', 0, 0);
