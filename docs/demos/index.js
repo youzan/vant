@@ -59,6 +59,7 @@ export default {
   'radio': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/radio'), 'radio')), 'radio')),
   'search': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/search'), 'search')), 'search')),
   'sku': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/sku'), 'sku')), 'sku')),
+  'star-rate': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/star-rate'), 'star-rate')), 'star-rate')),
   'stepper': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/stepper'), 'stepper')), 'stepper')),
   'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps')),
   'submit-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/submit-bar'), 'submit-bar')), 'submit-bar')),

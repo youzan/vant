@@ -137,6 +137,10 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
+                path: '/star-rate',
+                title: 'StarRate - 评分'
+              },
+              {
                 path: '/stepper',
                 title: 'Stepper - 步进器'
               },
