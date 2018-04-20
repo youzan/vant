@@ -52,16 +52,9 @@ export default create({
 
   data() {
     return {
-      innerValue: 0,
+      innerValue: this.value || 0,
       pivotOffset: 0
     };
-  },
-
-  watch: {
-    value(val) {
-      if (this.draging) return;
-      this.innerValue = val;
-    }
   },
 
   computed: {
