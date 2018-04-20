@@ -20,8 +20,8 @@ describe('Slider', () => {
     expect(wrapper.hasClass('van-slider')).to.be.true;
     expect(wrapper.find('.van-slider__bar').length).to.equal(1);
     expect(wrapper.find('.van-slider__finished-portion').length).to.equal(1);
-    expect(wrapper.vm.innerValue).to.equal(50);
-    expect(wrapper.hasClass('disabled')).to.equal(true);
+    expect(wrapper.vm.value).to.equal(50);
+    expect(wrapper.hasClass('van-slider--disabled')).to.equal(true);
 
     wrapper.setProps({
       value: 100
@@ -31,12 +31,13 @@ describe('Slider', () => {
     expect(wrapper.vm.value).to.equal(100);
   });
 
-  it('test click bar', done => {
+  it('test click bar', () => {
     wrapper = mount(Slider, {
       propsData: {
         disabled: true
       }
     });
+
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     const $bar = wrapper.find('.van-slider__bar')[0];
     $bar.trigger('click');
@@ -48,11 +49,9 @@ describe('Slider', () => {
     });
     wrapper.update();
     $bar.trigger('click');
-    wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.disabled).to.equal(false);
-      expect(eventStub.calledOnce).to.equal(true);
-      done();
-    });
+
+    expect(wrapper.vm.disabled).to.equal(false);
+    expect(eventStub.called).to.equal(true);
   });
 
   it('Customized style', () => {

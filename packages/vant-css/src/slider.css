@@ -4,7 +4,7 @@ $c-slider-background: #cacaca;
 $c-pivot-border: #fff;
 
 .van-slider {
-  &.disabled {
+  &--disabled {
     opacity: .3;
     .van-slider__pivot {
       cursor: not-allowed;
@@ -15,13 +15,13 @@ $c-pivot-border: #fff;
     position: relative;
     margin: 0 15px;
     height: 4px;
-    border-radius: 4.5px;
+    border-radius: 5px;
     background: $c-slider-background;
   }
 
   &__loaded-portion,
   &__finished-portion {
-    border-radius: 4.5px;
+    border-radius: 5px;
     height: 100%;
     position: absolute;
     left: 0;
