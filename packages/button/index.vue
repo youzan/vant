@@ -3,22 +3,21 @@
     :is="tag"
     :type="nativeType"
     :disabled="disabled"
-    class="van-button"
-    :class="[
-      'van-button--' + type,
-      'van-button--' + size,
+    :class="[b(), m([
+      type,
+      size,
       {
-        'van-button--disabled': disabled,
-        'van-button--loading': loading,
-        'van-button--block': block,
-        'van-button--bottom-action': bottomAction,
-        'van-button--unclickable': disabled || loading
+        block,
+        loading,
+        disabled,
+        unclickable: disabled || loading,
+        'bottom-action': bottomAction
       }
-    ]"
+    ])]"
     @click="onClick"
   >
     <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />
-    <span class="van-button__text">
+    <span :class="b('text')">
       <slot>{{ text }}</slot>
     </span>
   </component>

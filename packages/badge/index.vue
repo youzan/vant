@@ -1,6 +1,10 @@
 <template>
-  <a class="van-badge van-hairline" :class="{ 'van-badge--select': isSelect }" :href="url" @click="onClick">
-    <div v-if="isDef(info)" class="van-badge__info">{{ info }}</div>
+  <a
+    :class="[b(), m({ select }), 'van-hairline']"
+    :href="url"
+    @click="onClick"
+  >
+    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
     {{ title }}
   </a>
 </template>
@@ -23,7 +27,7 @@ export default create({
   },
 
   computed: {
-    isSelect() {
+    select() {
       return this.$parent.badges.indexOf(this) === this.$parent.activeKey;
     }
   },

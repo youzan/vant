@@ -1,16 +1,14 @@
 <template>
   <transition name="van-slide-bottom">
-    <div :class="b('', { 'withtitle': title })" v-show="value">
-      <div class="van-hairline--top-bottom" :class="b('header')" v-if="title">
+    <div v-show="value" :class="[b(), m({ 'withtitle': title })]">
+      <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
         <div v-text="title" />
-        <icon name="close" @click="handleCancel" />
+        <icon name="close" @click="onCancel" />
       </div>
       <ul v-else class="van-hairline--bottom">
         <li
-          v-for="(item, index) in actions"
-          :key="index"
-          class="van-hairline--top"
-          :class="[b('item'), item.className]"
+          v-for="item in actions"
+          :class="[b('item'), item.className, 'van-hairline--top']"
           @click.stop="onClickItem(item)"
         >
           <template v-if="!item.loading">
@@ -23,9 +21,8 @@
       <div
         v-if="cancelText"
         v-text="cancelText"
-        class="van-hairline--top"
-        :class="b('cancel')"
-        @click="handleCancel"
+        :class="[b('cancel'), 'van-hairline--top']"
+        @click="onCancel"
       />
       <div v-else :class="b('content')">
         <slot />
@@ -68,7 +65,7 @@ export default create({
       }
     },
 
-    handleCancel() {
+    onCancel() {
       this.$emit('input', false);
       this.$emit('cancel');
     }

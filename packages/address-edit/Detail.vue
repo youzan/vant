@@ -27,7 +27,7 @@
         :label="express.address"
         icon="location"
         clickable
-        @click="onSuggestSelect(express)"
+        @click="onSelect(express)"
       />
     </cell-group>
   </div>
@@ -92,7 +92,7 @@ export default create({
       }
     },
 
-    onSuggestSelect(express) {
+    onSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
       this.$emit('select-search', express);
     },

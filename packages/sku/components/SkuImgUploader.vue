@@ -23,7 +23,6 @@
       <!-- 已有的图片,图片右上角显示删除按钮 -->
       <div
         v-for="(img, index) in imgList"
-        :key="index"
         class="van-sku-img-uploader__img"
       >
         <img :src="img">

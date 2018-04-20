@@ -1,31 +1,39 @@
+/**
+ * bem helper
+ */
+
 import { isObj } from '../utils';
 
-const EL = '__';
-const MOD = '--';
+const prefix = (name, join, val) => {
+  if (!val) {
+    return name;
+  }
+
+  if (typeof val === 'string') {
+    return name + join + val;
+  }
+
+  if (Array.isArray(val)) {
+    return val.map(item => prefix(name, join, item));
+  }
+
+  if (isObj(val)) {
+    const ret = {};
+    Object.keys(val).forEach(key => {
+      ret[name + join + key] = val[key];
+    });
+    return ret;
+  }
+};
 
 export default {
   methods: {
-    b(block, mods) {
-      const { name } = this.$options;
-      const classnames = [];
+    b(block) {
+      return prefix(this.$options.name, '__', block);
+    },
 
-      if (!arguments.length) {
-        return name;
-      }
-
-      classnames.push(block ? (name + EL + block) : name);
-
-      if (mods) {
-        if (isObj(mods)) {
-          const prefixedMods = {};
-          Object.keys(mods).forEach(key => {
-            prefixedMods[name + MOD + key] = mods[key];
-          });
-          classnames.push(prefixedMods);
-        }
-      }
-
-      return classnames;
+    m(mods) {
+      return prefix(this.$options.name, '--', mods);
     }
   }
 };
