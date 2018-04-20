@@ -52,12 +52,15 @@ export default create({
 
   data() {
     return {
-      innerValue: this.value || 0,
       pivotOffset: 0
     };
   },
 
   computed: {
+    innerValue() {
+      return Math.round(this.value);
+    },
+
     sliderWidth() {
       const rect = this.$refs.bar.getBoundingClientRect();
       return rect['width'];
@@ -81,10 +84,6 @@ export default create({
         marginLeft: `-${this.pivotOffset}px`
       };
     }
-  },
-
-  created() {
-    this.innerValue = this.setRange(this.value);
   },
 
   mounted() {
