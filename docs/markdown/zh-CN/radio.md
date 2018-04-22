@@ -2,8 +2,9 @@
 
 ### 使用指南
 ``` javascript
-import { Radio } from 'vant';
+import { RadioGroup, Radio } from 'vant';
 
+Vue.use(RadioGroup);
 Vue.use(Radio);
 ```
 

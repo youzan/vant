@@ -1,5 +1,18 @@
 ## Changelog
 
+### [1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
+`2018-04-20`
+
+**Improvements**
+- add git hook, optimize dev process [\#883](https://github.com/youzan/vant/pull/883) [@jerryni](https://github.com/jerryni)
+
+**Bug Fixes**
+- Cell: optimize left icon [\#893](https://github.com/youzan/vant/pull/893) [@chenjiahan](https://github.com/chenjiahan)
+- Build: should use babel sync compile [\#885](https://github.com/youzan/vant/pull/885) [@chenjiahan](https://github.com/chenjiahan)
+- Field: allow negative number when type is number [\#889](https://github.com/youzan/vant/pull/889) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: fix lock scroll [\#891](https://github.com/youzan/vant/pull/891) [@Tinysymphony](https://github.com/Tinysymphony)
+
+
 ### [1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
 `2018-04-17`
 

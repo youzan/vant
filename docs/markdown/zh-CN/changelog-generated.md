@@ -1,5 +1,38 @@
 ## 更新日志
 
+## [v1.0.8](https://github.com/youzan/vant/tree/v1.0.8) (2018-04-20)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.7...v1.0.8)
+
+**Breaking changes**
+
+- SubmitBar 组件的人民币符号建议可配置  [\#871](https://github.com/youzan/vant/issues/871)
+- Tabs active 希望标签页改变也跟随改变 [\#849](https://github.com/youzan/vant/issues/849)
+
+**Bug Fixes**
+
+- Bug：Popup弹出层 滚动穿透至父层 [\#833](https://github.com/youzan/vant/issues/833)
+- The value that is returned by change event of Datetime-picker is somtimes wrong. [\#742](https://github.com/youzan/vant/issues/742)
+
+**Issue**
+
+- Uploader 图片上传组件存在BUG，同时使用:before-read，:after-read参数，后者不触发 [\#898](https://github.com/youzan/vant/issues/898)
+- sku 组件 sku数据key值只能是tree，list，k，v么？ [\#894](https://github.com/youzan/vant/issues/894)
+- 希望form里面增加一个select的组件 [\#892](https://github.com/youzan/vant/issues/892)
+- 通过script方式引入，如何调用类似于图片预览的方法？ [\#890](https://github.com/youzan/vant/issues/890)
+- tab的v-model无效? [\#888](https://github.com/youzan/vant/issues/888)
+- 2级联动 Picker，Columns 数据是 key-value 格式的可以支持吗 [\#887](https://github.com/youzan/vant/issues/887)
+- Contact 联系人组件是否有考虑增加一个  地址 类型？ [\#886](https://github.com/youzan/vant/issues/886)
+- PopUp click-overlay 事件无效 [\#880](https://github.com/youzan/vant/issues/880)
+- 日期选择组件会出现和webview的下拉刷新冲突 [\#855](https://github.com/youzan/vant/issues/855)
+
+**Improvements**
+
+- \[Improvement\] Cell: optimize left icon [\#893](https://github.com/youzan/vant/pull/893) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup: fix lock scroll [\#891](https://github.com/youzan/vant/pull/891) ([Tinysymphony](https://github.com/Tinysymphony))
+- \[bugfix\] Field: allow negative number when type is number [\#889](https://github.com/youzan/vant/pull/889) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Build: should use babel sync compile [\#885](https://github.com/youzan/vant/pull/885) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add git hook, optimize dev process [\#883](https://github.com/youzan/vant/pull/883) ([jerryni](https://github.com/jerryni))
+
 ## [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7) (2018-04-17)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.6...v1.0.7)
 
@@ -46,7 +79,6 @@
 - 标签页切换后导致左边tab标签页的分页方法失效，求大神解答。 [\#843](https://github.com/youzan/vant/issues/843)
 - 在使用sku弹层的时候  van-sku-row的高度会被设置的rem影响 [\#839](https://github.com/youzan/vant/issues/839)
 - List 列表 瀑布流滚动加载 [\#834](https://github.com/youzan/vant/issues/834)
-- Bug：Popup弹出层 滚动穿透至父层 [\#833](https://github.com/youzan/vant/issues/833)
 
 **Improvements**
 
@@ -203,7 +235,6 @@
 - 按照官方文档写show-action为什么会报错 [\#707](https://github.com/youzan/vant/issues/707)
 - Field 组件高度自适应建议加入一个限制最高高度 [\#702](https://github.com/youzan/vant/issues/702)
 - 文档有一处错误，建议修改 [\#699](https://github.com/youzan/vant/issues/699)
-- feature request： PullRefresh 的效果支持手动触发 [\#681](https://github.com/youzan/vant/issues/681)
 
 **Improvements**
 
