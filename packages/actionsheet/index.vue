@@ -1,6 +1,6 @@
 <template>
   <transition name="van-slide-bottom">
-    <div v-show="value" :class="[b(), m({ 'withtitle': title })]">
+    <div v-show="value" :class="b({ 'withtitle': title })">
       <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
         <div v-text="title" />
         <icon name="close" @click="onCancel" />

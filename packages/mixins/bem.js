@@ -1,39 +1,45 @@
 /**
  * bem helper
+ * b() // 'button'
+ * b('text') // 'button__text'
+ * b({ disabled }) // 'button button--disabled'
+ * b('text', { disabled }) // 'button__text button__text--disabled'
+ * b(['disabled', 'primary']) // 'button button--disabled button--primary'
  */
 
-import { isObj } from '../utils';
+const ELEMENT = '__';
+const MODS = '--';
 
-const prefix = (name, join, val) => {
-  if (!val) {
-    return name;
+const join = (name, el, symbol) => el ? name + symbol + el : name;
+
+const prefix = (name, mods) => {
+  if (typeof mods === 'string') {
+    return join(name, mods, MODS);
   }
 
-  if (typeof val === 'string') {
-    return name + join + val;
+  if (Array.isArray(mods)) {
+    return mods.map(item => prefix(name, item));
   }
 
-  if (Array.isArray(val)) {
-    return val.map(item => prefix(name, join, item));
-  }
-
-  if (isObj(val)) {
-    const ret = {};
-    Object.keys(val).forEach(key => {
-      ret[name + join + key] = val[key];
-    });
-    return ret;
-  }
+  const ret = {};
+  Object.keys(mods).forEach(key => {
+    ret[name + MODS + key] = mods[key];
+  });
+  return ret;
 };
 
 export default {
   methods: {
-    b(block) {
-      return prefix(this.$options.name, '__', block);
-    },
+    b(el, mods) {
+      const { name } = this.$options;
 
-    m(mods) {
-      return prefix(this.$options.name, '--', mods);
+      if (el && typeof el !== 'string') {
+        mods = el;
+        el = '';
+      }
+      el = join(name, el, ELEMENT);
+
+      return mods ? [el, prefix(name, mods)] : el;
     }
   }
 };

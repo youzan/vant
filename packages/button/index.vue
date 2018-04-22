@@ -3,7 +3,7 @@
     :is="tag"
     :type="nativeType"
     :disabled="disabled"
-    :class="[b(), m([
+    :class="b([
       type,
       size,
       {
@@ -13,7 +13,7 @@
         unclickable: disabled || loading,
         'bottom-action': bottomAction
       }
-    ])]"
+    ])"
     @click="onClick"
   >
     <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />

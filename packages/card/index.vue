@@ -1,5 +1,5 @@
 <template>
-  <div :class="[b(), m({ center: centered })]">
+  <div :class="b({ center: centered })">
     <div :class="b('thumb')">
       <slot name="thumb">
         <img :src="thumb" :class="b('img')" >

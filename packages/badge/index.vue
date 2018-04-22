@@ -1,6 +1,6 @@
 <template>
   <a
-    :class="[b(), m({ select }), 'van-hairline']"
+    :class="[b({ select }), 'van-hairline']"
     :href="url"
     @click="onClick"
   >
