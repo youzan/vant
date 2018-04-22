@@ -12,7 +12,6 @@
         <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
         <div
           v-for="(tab, index) in tabs"
-          :key="index"
           ref="tabs"
           class="van-tab"
           :class="{

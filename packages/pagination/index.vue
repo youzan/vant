@@ -10,7 +10,6 @@
     <li
       v-if="isMultiMode"
       v-for="(page, index) in pages"
-      :key="index"
       class="van-pagination__item van-pagination__page van-hairline"
       :class="{ 'van-pagination--active': page.active }"
       @click="selectPage(page.number)"
