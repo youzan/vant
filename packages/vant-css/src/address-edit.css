@@ -3,6 +3,10 @@
 .van-address-edit {
   &__buttons {
     padding: 20px 10px;
+
+    .van-button {
+      margin-bottom: 10px;
+    }
   }
 
   &__area {
@@ -19,46 +23,12 @@
     }
   }
 
-  .van-button {
-    margin-bottom: 10px;
-  }
-
   .van-icon-clear {
     color: $gray-dark;
   }
 
-  &-detail {
-    &__finish-edit {
-      color: $blue;
-      font-size: 12px;
-    }
-
-    &__suggest-list {
-      &::after {
-        border-top-width: 0;
-      }
-    }
-
-    &__location {
-      float: left;
-      font-size: 18px;
-      color: $gray-darker;
-    }
-
-    &__item-info {
-      margin-left: 26px;
-      line-height: 1.6;
-    }
-
-    &__title {
-      font-size: 14px;
-      margin: 0 0 4px;
-    }
-
-    &__subtitle {
-      margin: 0;
-      font-size: 12px;
-      color: $gray-darker;
-    }
+  &-detail__finish {
+    color: $blue;
+    font-size: 12px;
   }
 }
