@@ -32,27 +32,19 @@ export default {
 #### 指定选择范围
 
 ```html
-<van-slider 
-  v-model="value"
-  :min="10"
-  :max="90"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      value: 50
-    };
-  }
-};
+<van-slider v-model="value" :min="10" :max="90" />
 ```
 
 #### 禁用
 
 ```html
-<van-slider v-model="value" bar-height="4px" disabled />
+<van-slider v-model="value" disabled />
+```
+
+#### 指定步长
+
+```html
+<van-slider v-model="value" :step="10" bar-height="4px" />
 ```
 
 ### API
@@ -63,6 +55,7 @@ export default {
 | disabled | 是否禁用滑块 | `Boolean` | `false` |
 | max | 最大值 | `Number` | `100` |
 | min | 最小值 | `Number` | `0` |
+| step | 步长 | `Number` | `1` |
 | bar-height | 进度条高度 | `String` | `2px` |
 
 ### Event

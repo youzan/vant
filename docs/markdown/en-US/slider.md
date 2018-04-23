@@ -33,21 +33,7 @@ export default {
 #### Range
 
 ```html
-<van-slider 
-  v-model="value"
-  :min="10"
-  :max="90"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      value: 50
-    };
-  }
-};
+<van-slider v-model="value" :min="10" :max="90" />
 ```
 
 #### Disabled
@@ -56,33 +42,10 @@ export default {
 <van-slider v-model="value" disabled />
 ```
 
-#### Event
+#### Step size
 
 ```html
-<van-slider
-  v-model="value"
-  @change="onChange"
-  @after-change="onAfterChange"
-/>
-```
-
-```js
-export default {
-  data() {
-    return {
-      value: 50
-    }
-  },
-
-  methods: {
-    onChange(value) {
-      console.log('onChange:', value)
-    },
-    onAfterChange(value) {
-      console.log('onAfterChange:', value)
-    }
-  }
-};
+<van-slider v-model="value" :step="10" bar-height="4px" />
 ```
 
 ### API
@@ -93,6 +56,7 @@ export default {
 | disabled | Whether to disable slider | `Boolean` | `false` |
 | max | Max value | `Number` | `100` |
 | min | Min value | `Number` | `0` |
+| step | Step size | `Number` | `1` |
 | bar-height | Height of bar | `String` | `2px` |
 
 ### Event

@@ -1,9 +1,5 @@
 <template>
-  <div
-    :class="b({ disabled })"
-    :style="style"
-    @click.stop="onClick"
-  >
+  <div :class="b({ disabled })" @click.stop="onClick">
     <div :class="b('bar')" :style="barStyle">
       <span
         :class="b('button')"
@@ -35,6 +31,10 @@ export default create({
       type: Number,
       default: 0
     },
+    step: {
+      type: Number,
+      default: 1
+    },
     value: {
       type: Number,
       default: 0
@@ -46,20 +46,10 @@ export default create({
   },
 
   computed: {
-    sliderWidth() {
-      const rect = this.$el.getBoundingClientRect();
-      return rect['width'];
-    },
-
-    style() {
-      return {
-        height: this.barHeight
-      };
-    },
-
     barStyle() {
       return {
-        width: this.format(this.value) + '%'
+        width: this.format(this.value) + '%',
+        height: this.barHeight
       };
     }
   },
@@ -68,55 +58,43 @@ export default create({
     onTouchStart(event) {
       if (this.disabled) return;
 
-      this.draging = true;
       this.touchStart(event);
       this.startValue = this.format(this.value);
     },
 
     onTouchMove(event) {
-      if (this.draging) {
-        this.touchMove(event);
-        const diff = this.deltaX / this.sliderWidth * 100;
-        this.newValue = this.startValue + diff;
-        this.updateValue(this.newValue);
-      }
+      if (this.disabled) return;
+
+      this.touchMove(event);
+      const rect = this.$el.getBoundingClientRect();
+      const diff = this.deltaX / rect.width * 100;
+      this.updateValue(this.startValue + diff);
     },
 
     onTouchEnd() {
-      if (this.draging) {
-        this.$nextTick(() => {
-          this.draging = false;
-          this.updateValue(this.newValue, true);
-        });
-      }
+      if (this.disabled) return;
+      this.updateValue(this.value, true);
     },
 
-    onClick(e) {
-      if (this.disabled || this.draging) return;
-
-      const sliderRect = this.$el.getBoundingClientRect();
-      const sliderOffset = sliderRect.left;
-      this.newValue = Math.round((e.clientX - sliderOffset) / this.sliderWidth * 100);
-      this.updateValue(this.newValue, true);
-    },
-
-    updateValue(value, isFinished) {
+    onClick(event) {
       if (this.disabled) return;
 
+      const rect = this.$el.getBoundingClientRect();
+      const value = (event.clientX - rect.left) / rect.width * 100;
+      this.updateValue(value, true);
+    },
+
+    updateValue(value, end) {
       value = this.format(value);
       this.$emit('input', value);
 
-      if (isFinished) {
+      if (end) {
         this.$emit('change', value);
       }
     },
 
     format(value) {
-      return Math.round(this.range(value));
-    },
-
-    range(value) {
-      return Math.max(this.min, Math.min(value, this.max));
+      return (Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step);
     }
   }
 });
