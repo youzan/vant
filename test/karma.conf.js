@@ -5,11 +5,10 @@ require('babel-core/register')({
 });
 
 var getWebpackConfig = require('./get-webpack-conf');
-var travis = process.env.TRAVIS;
 
 module.exports = function(config) {
   config.set({
-    browsers: travis ? ['PhantomJS'] : ['PhantomJS', 'Chrome'],
+    browsers: ['Chrome'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
