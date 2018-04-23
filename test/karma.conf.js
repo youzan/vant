@@ -9,6 +9,12 @@ var getWebpackConfig = require('./get-webpack-conf');
 module.exports = function(config) {
   config.set({
     browsers: ['Chrome'],
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    },
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
