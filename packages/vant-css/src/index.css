@@ -26,6 +26,7 @@
 @import './stepper.css';
 @import './progress.css';
 @import './swipe.css';
+@import './slider.css';
 
 /* form components */
 @import './checkbox.css';
