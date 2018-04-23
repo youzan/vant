@@ -5,6 +5,7 @@
   user-select: none;
   position: relative;
   background-color: $white;
+  -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
 
   &__toolbar {
     display: flex;
