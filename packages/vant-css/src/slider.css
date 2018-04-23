@@ -1,41 +1,29 @@
 @import './common/var.css';
 
-$c-slider-background: #cacaca;
-$c-pivot-border: #fff;
-
 .van-slider {
-  &--disabled {
-    opacity: .3;
-    .van-slider__pivot {
-      cursor: not-allowed;
-    }
-  }
+  position: relative;
+  border-radius: 999px;
+  background-color: $border-color;
 
   &__bar {
     position: relative;
-    margin: 0 15px;
-    height: 4px;
-    border-radius: 5px;
-    background: $c-slider-background;
+    border-radius: inherit;
+    background-color: $blue;
   }
 
-  &__loaded-portion,
-  &__finished-portion {
-    border-radius: 5px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-  }
-
-  &__pivot {
+  &__button {
     position: absolute;
     top: 50%;
-    width: 16px;
-    height: 16px;
-    border: 3px solid $c-pivot-border;
-    box-shadow: 0 1px 4px;
+    right: 0;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: $c-slider-background;
-    transform: translate3d(0, -50%, 0);
+    background-color: $white;
+    transform: translate3d(50%, -50%, 0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+  }
+
+  &--disabled {
+    opacity: .3;
   }
 }
