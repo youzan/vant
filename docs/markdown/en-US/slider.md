@@ -11,99 +11,92 @@ Vue.use(Slider);
 #### Basic Usage
 
 ```html
-<van-slider v-model="value1"/>
-<van-row>
-  <van-col span="12">
-    <van-stepper v-model="value1" />
-  </van-col>
-</van-row>
+<van-slider v-model="value" @change="onChange" />
 ```
 
 ```js
-data() {
-  return {
-    value1: 50
+export default {
+  data() {
+    return {
+      value: 50
+    };
+  },
+
+  methods: {
+    onChange(value) {
+      this.$toast('Current value：' + value);
+    }
   }
-}
+};
 ```
 
-#### Max && Min
+#### Range
 
 ```html
 <van-slider 
-  v-model="value2"
-  :min="min"
-  :max="max"
+  v-model="value"
+  :min="10"
+  :max="90"
 />
 ```
+
 ```js
-data() {
-  return {
-    value2: 50,
-    min: 10,
-    max: 90
+export default {
+  data() {
+    return {
+      value: 50
+    };
   }
-}
+};
 ```
 
-#### Disabed
+#### Disabled
 
 ```html
-<van-slider v-model="value3" disabled />
+<van-slider v-model="value" disabled />
 ```
 
-#### Customized style
+#### Event
 
 ```html
 <van-slider
-    v-model="value4"
-    @change="handleChange"
-    @after-change="handleAfterChange"
-  />
+  v-model="value"
+  @change="onChange"
+  @after-change="onAfterChange"
+/>
 ```
 
 ```js
-data() {
-  return {
-    value4: 50
-  }
-},
-methods: {
-  handleChange(value) {
-    console.log('handleChange:', value)
+export default {
+  data() {
+    return {
+      value: 50
+    }
   },
-  handleAfterChange(value) {
-    console.log('handleAfterChange:', value)
+
+  methods: {
+    onChange(value) {
+      console.log('onChange:', value)
+    },
+    onAfterChange(value) {
+      console.log('onAfterChange:', value)
+    }
   }
-}
-```
-
-### Customized style
-
-```html
-<van-slider
-  v-model="value5"
-  pivot-color="#333"
-  loaded-bar-color="red"
-  bar-color="blue"
-/>
+};
 ```
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
+| Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
-| value | current value | Number  | 0 |  - |
-| disabled | disabled | Boolean  | false |  - |
-| bar-color | bar-color | string | `#cacaca` | - |
-| loaded-bar-color | loaded-bar-color | string | `#4b0` | - |
-| pivot-color | pivot-color | string  | `#4b0` |  - |
-| max | max | Number | 100 | - |
-| min | min | Number | 0 | - |
+| value | Current value | `Number` | `0` |
+| disabled | Whether to disable slider | `Boolean` | `false` |
+| max | Max value | `Number` | `100` |
+| min | Min value | `Number` | `0` |
+| bar-height | Height of bar | `String` | `2px` |
 
 ### Event
 
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
-| change | touchmove emit | value |
-| after-change | touchend emit | value |
+| change | Triggered after value change | value: current rate |

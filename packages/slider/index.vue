@@ -1,22 +1,12 @@
 <template>
   <div
-    class="van-slider"
-    :class="{ 'van-slider--disabled': disabled }"
+    :class="b({ disabled })"
+    :style="style"
+    @click.stop="onClick"
   >
-    <div
-      class="van-slider__bar"
-      ref="bar"
-      :style="barStyle"
-      @click.stop="onSliderClicked"
-    >
+    <div :class="b('bar')" :style="barStyle">
       <span
-        class="van-slider__finished-portion"
-        :style="finishedStyle"
-      />
-      <span
-        class="van-slider__pivot"
-        ref="pivot"
-        :style="pivotStyle"
+        :class="b('button')"
         @touchstart="onTouchStart"
         @touchmove.prevent.stop="onTouchMove"
         @touchend="onTouchEnd"
@@ -25,89 +15,53 @@
     </div>
   </div>
 </template>
-<script>
 
+<script>
 import create from '../utils/create';
 import Touch from '../mixins/touch';
 
-const DEFAULT_COLOR = '#4b0';
-const DEFAULT_BG = '#cacaca';
-
 export default create({
   name: 'slider',
+
   mixins: [Touch],
 
   props: {
+    disabled: Boolean,
     max: {
       type: Number,
       default: 100
     },
-
     min: {
       type: Number,
       default: 0
     },
-
     value: {
       type: Number,
-      default: 0,
-      required: true
+      default: 0
     },
-
-    disabled: Boolean,
-
-    pivotColor: {
+    barHeight: {
       type: String,
-      default: DEFAULT_COLOR
-    },
-
-    barColor: {
-      type: String,
-      default: DEFAULT_BG
-    },
-
-    loadedBarColor: {
-      type: String,
-      default: DEFAULT_COLOR
+      default: '2px'
     }
-  },
-
-  data() {
-    return {
-      pivotOffset: 0
-    };
   },
 
   computed: {
     sliderWidth() {
-      const rect = this.$refs.bar.getBoundingClientRect();
+      const rect = this.$el.getBoundingClientRect();
       return rect['width'];
+    },
+
+    style() {
+      return {
+        height: this.barHeight
+      };
     },
 
     barStyle() {
       return {
-        backgroundColor: this.barColor
-      };
-    },
-
-    finishedStyle() {
-      return {
-        backgroundColor: this.loadedBarColor,
         width: this.format(this.value) + '%'
       };
-    },
-
-    pivotStyle() {
-      return {
-        backgroundColor: this.pivotColor,
-        left: this.format(this.value) + '%',
-        marginLeft: `-${this.pivotOffset}px`
-      };
     }
-  },
-
-  mounted() {
-    this.pivotOffset = parseInt(this.$refs.pivot.getBoundingClientRect().width / 2);
   },
 
   methods: {
@@ -137,10 +91,10 @@ export default create({
       }
     },
 
-    onSliderClicked(e) {
+    onClick(e) {
       if (this.disabled || this.draging) return;
 
-      const sliderRect = this.$refs.bar.getBoundingClientRect();
+      const sliderRect = this.$el.getBoundingClientRect();
       const sliderOffset = sliderRect.left;
       this.newValue = Math.round((e.clientX - sliderOffset) / this.sliderWidth * 100);
       this.updateValue(this.newValue, true);
@@ -150,11 +104,10 @@ export default create({
       if (this.disabled) return;
 
       value = this.format(value);
-      this.$emit('change', value);
       this.$emit('input', value);
 
       if (isFinished) {
-        this.$emit('after-change', value);
+        this.$emit('change', value);
       }
     },
 
