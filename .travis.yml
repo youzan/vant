@@ -1,4 +1,6 @@
 language: node_js
+addons:
+    chrome: stable
 node_js:
 - 6
 os: linux
