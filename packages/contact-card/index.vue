@@ -1,19 +1,19 @@
 <template>
-  <div class="van-contact-card" :class="[`van-contact-card--${type}`, { 'van-contact-card--uneditable': !editable }]" @click="onClick">
-    <div class="van-contact-card__content">
+  <div :class="b([type, { uneditable: !editable }])" @click="onClick">
+    <div :class="b('content')">
       <template v-if="type === 'add'">
-        <icon class="van-contact-card__icon" name="add2" />
-        <div class="van-contact-card__text">{{ addText || $t('addText') }}</div>
+        <icon :class="b('icon')" name="add2" />
+        <div :class="b('text')">{{ addText || $t('addText') }}</div>
       </template>
       <template v-else-if="type === 'edit'">
-        <icon class="van-contact-card__icon" name="contact" />
-        <div class="van-contact-card__text">
+        <icon :class="b('icon')" name="contact" />
+        <div :class="b('text')">
           <div>{{ $t('contact') }}：{{ name }}</div>
           <div>{{ $t('tel') }}：{{ tel }}</div>
         </div>
       </template>
     </div>
-    <icon v-if="editable" class="van-contact-card__arrow" name="arrow" />
+    <icon v-if="editable" :class="b('arrow')" name="arrow" />
   </div>
 </template>
 
