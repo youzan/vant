@@ -1,20 +1,26 @@
 <template>
-  <div class="van-address-list">
-    <radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
+  <div :class="b()">
+    <radio-group :value="value" :class="b('group')" @input="$emit('input', $event)">
       <cell-group>
         <cell v-for="(item, index) in list" :key="item.id" is-link>
           <radio :name="item.id" @click="$emit('select', item, index)">
-            <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
-            <div class="van-address-list__address">{{ $t('address') }}：{{ item.address }}</div>
+            <div :class="b('name')">{{ item.name }}，{{ item.tel }}</div>
+            <div :class="b('address')">{{ $t('address') }}：{{ item.address }}</div>
           </radio>
-          <icon slot="right-icon" name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
+          <icon
+            slot="right-icon"
+            name="edit"
+            :class="b('edit')"
+            @click="$emit('edit', item, index)"
+          />
         </cell>
       </cell-group>
     </radio-group>
     <cell
       icon="add"
       is-link
-      class="van-address-list__add van-hairline--top"
+      :class="b('add')"
+      class="van-hairline--top"
       :title="addButtonText || $t('add')"
       @click="$emit('add')"
     />

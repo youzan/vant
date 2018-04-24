@@ -94,29 +94,6 @@ describe('Radio', () => {
     });
   });
 
-  it('click on a radio label', (done) => {
-    wrapper = mount(Radio, {
-      propsData: {
-        value: '1',
-        name: '1',
-        disabled: false
-      }
-    });
-
-    expect(wrapper.hasClass('van-radio')).to.be.true;
-    const eventStub = sinon.stub(wrapper.vm, '$emit');
-
-    const checkboxLabel = wrapper.find('.van-radio__label')[0];
-    checkboxLabel.trigger('click');
-
-    wrapper.update();
-    wrapper.vm.$nextTick(() => {
-      expect(eventStub.calledOnce).to.be.true;
-      expect(eventStub.calledWith('input'));
-      done();
-    });
-  });
-
   it('click on a disabled radio', () => {
     wrapper = mount(Radio, {
       propsData: {
@@ -131,8 +108,7 @@ describe('Radio', () => {
     expect(wrapper.instance().currentValue).to.equal('1');
     expect(wrapper.instance().isDisabled).to.be.true;
 
-    const checkboxLabel = wrapper.find('.van-radio__label')[0];
-    checkboxLabel.trigger('click');
+    wrapper.trigger('click');
 
     expect(wrapper.instance().currentValue).to.equal('1');
   });

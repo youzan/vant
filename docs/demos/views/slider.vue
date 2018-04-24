@@ -1,19 +1,15 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-slider v-model="value1"/>
-      <van-row>
-        <van-col span="24">
-          <van-stepper v-model="value1" />
-        </van-col>
-      </van-row>
+      <van-slider v-model="value1" @change="onChange" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-slider
         v-model="value2"
-        :min="min"
-        :max="max"
+        :min="10"
+        :max="90"
+        @change="onChange"
       />
     </demo-block>
 
@@ -24,17 +20,9 @@
     <demo-block :title="$t('title4')">
       <van-slider
         v-model="value4"
-        @change="handleChange"
-        @after-change="handleAfterChange"
-      />
-    </demo-block>
-
-    <demo-block :title="$t('title5')">
-      <van-slider
-        v-model="value5"
-        pivot-color="#333"
-        loaded-bar-color="red"
-        bar-color="blue"
+        :step="10"
+        bar-height="4px"
+        @change="onChange"
       />
     </demo-block>
   </demo-section>
@@ -45,46 +33,43 @@ export default {
   i18n: {
     'zh-CN': {
       title1: '基本用法',
-      title2: '最大最小值',
+      title2: '指定选择范围',
       title3: '禁用',
-      title4: '事件',
-      title5: '自定义样式'
+      title4: '指定步长',
+      text: '当前值：'
     },
     'en-US': {
       title1: 'Basic Usage',
-      title2: 'Max && Min',
-      title3: 'Disabed',
-      title4: 'Event',
-      title5: 'Customized style'
+      title2: 'Range',
+      title3: 'Disabled',
+      title4: 'Step size',
+      text: 'Current value: '
     }
   },
+
   data() {
     return {
       value1: 50,
       value2: 50,
       value3: 50,
-      value4: 50,
-      value5: 50,
-      min: 10,
-      max: 90
-    }
+      value4: 50
+    };
   },
+
   methods: {
-    handleChange(value) {
-      console.log('handleChange:', value)
-    },
-    handleAfterChange(value) {
-      console.log('handleAfterChange:', value)
+    onChange(value) {
+      this.$toast(this.$t('text') + value);
     }
   }
 };
 </script>
 
 <style lang="postcss">
-  .van-row {
-    padding-top: 20px;
-    .van-col {
-      text-align: center;
-    }
+.demo-slider {
+  user-select: none;
+
+  .van-slider {
+    margin: 0 15px 30px;
   }
+}
 </style>

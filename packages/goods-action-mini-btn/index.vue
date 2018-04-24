@@ -1,6 +1,6 @@
 <template>
-  <a :href="url" class="van-goods-action__mini-btn van-hairline" @click="onClick">
-    <icon class="van-goods-action__mini-btn-icon" :class="iconClass" :info="info" :name="icon" />
+  <a :href="url" :class="b()" class="van-hairline" @click="onClick">
+    <icon :class="[b('icon'), iconClass]" :info="info" :name="icon" />
     <slot>{{ text }}</slot>
   </a>
 </template>

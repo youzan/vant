@@ -2,7 +2,7 @@
 
 .van-field {
   .van-cell__title {
-    min-width: 90px;
+    max-width: 90px;
   }
 
   .van-cell__value {

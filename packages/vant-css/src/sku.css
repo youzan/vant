@@ -164,7 +164,7 @@
 
     &__image-cell {
       .van-cell__title {
-        width: 90px;
+        max-width: 90px;
       }
       .van-cell__value {
         text-align: left;

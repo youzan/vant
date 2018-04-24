@@ -3,30 +3,29 @@
     <div
       v-show="show"
       :style="style"
-      class="van-number-keyboard"
-      :class="`van-number-keyboard--${theme}`"
+      :class="b([theme])"
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
-      <div class="van-number-keyboard__title van-hairline--top" v-if="title || showTitleClose">
+      <div :class="b('title')" class="van-hairline--top" v-if="title || showTitleClose">
         <span v-text="title" />
         <span
-          class="van-number-keyboard__close"
+          :class="b('close')"
           v-if="showTitleClose"
           v-text="closeButtonText"
           @click="onBlur"
         />
       </div>
-      <div class="van-number-keyboard__body">
+      <div :class="b('body')">
         <key
           v-for="(key, index) in keys"
-          :key="index"
+          :key="key.text"
           :text="key.text"
           :type="key.type"
           @press="onPressKey"
         />
       </div>
-      <div class="van-number-keyboard__sidebar" v-if="theme === 'custom'">
+      <div v-if="theme === 'custom'" :class="b('sidebar')">
         <key :text="'delete'" :type="['delete', 'big']" @press="onPressKey" />
         <key :text="closeButtonText" :type="['green', 'big']" @press="onPressKey" />
       </div>

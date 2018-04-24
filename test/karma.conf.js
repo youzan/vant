@@ -4,12 +4,11 @@ require('babel-core/register')({
   presets: [require('babel-preset-env')]
 });
 
-var getWebpackConfig = require('./get-webpack-conf');
-var travis = process.env.TRAVIS;
+const getWebpackConfig = require('./get-webpack-conf');
 
 module.exports = function(config) {
   config.set({
-    browsers: travis ? ['PhantomJS'] : ['PhantomJS', 'Chrome'],
+    browsers: ['ChromeHeadless'],
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],

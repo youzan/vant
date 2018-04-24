@@ -88,10 +88,10 @@ export default {
       this.renderOverlay();
 
       if (this.lockScroll) {
+        on(document, 'touchstart', this.touchStart);
+        on(document, 'touchmove', this.onTouchMove);
         if (!context.lockCount) {
           document.body.classList.add('van-overflow-hidden');
-          on(document, 'touchstart', this.touchStart);
-          on(document, 'touchmove', this.onTouchMove);
         }
         context.lockCount++;
       }
@@ -104,10 +104,10 @@ export default {
 
       if (this.lockScroll) {
         context.lockCount--;
+        off(document, 'touchstart', this.touchStart);
+        off(document, 'touchmove', this.onTouchMove);
         if (!context.lockCount) {
           document.body.classList.remove('van-overflow-hidden');
-          off(document, 'touchstart', this.touchStart);
-          off(document, 'touchmove', this.onTouchMove);
         }
       }
 

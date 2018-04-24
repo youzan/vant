@@ -34,7 +34,7 @@
     line-height: 1;
   }
 
-  &__content-wrap {
+  &__wrap {
     flex: 1;
     height: 18px;
     overflow: hidden;
