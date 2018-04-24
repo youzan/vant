@@ -1,7 +1,6 @@
 @import './common/var.css';
 
 .van-cell {
-  width: 100%;
   display: flex;
   padding: 10px 15px;
   box-sizing: border-box;
@@ -24,31 +23,38 @@
     background-color: $white;
   }
 
-  &__left-icon {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-right: 5px;
-  }
-
   &__label {
     font-size: 12px;
     line-height: 1.2;
     color: $gray-darker;
   }
 
+  &__title,
   &__value {
     flex: 1;
+  }
+
+  &__value {
+    overflow: hidden;
     text-align: right;
     vertical-align: middle;
-    overflow: hidden;
 
     &--alone {
       text-align: left;
     }
+  }
+  
+  &__left-icon {
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 5px;
+  }
 
-    &--link {
-      padding-right: 15px;
-    }
+  &__right-icon {
+    color: $gray-dark;
+    font-size: 12px;
+    line-height: 24px;
+    margin-left: 5px;
   }
 
   &--clickable {
@@ -71,14 +77,5 @@
 
   &--center {
     align-items: center;
-  }
-
-  &__right-icon {
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translateY(-50%);
-    color: $gray-dark;
-    font-size: 12px;
   }
 }
