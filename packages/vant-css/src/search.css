@@ -10,7 +10,7 @@
     padding-right: 0;
   }
 
-  &__input-wrap {
+  &__wrap {
     position: relative;
     flex: 1;
     height: 34px;
@@ -49,7 +49,7 @@
     letter-spacing: 1px;
   }
 
-  &__action-text {
+  &__cancel {
     padding: 0 10px;
     color: $green;
 

@@ -1,20 +1,16 @@
 <template>
-  <div
-    class="van-radio"
-    :class="{ 'van-radio--disabled': isDisabled }"
-    @click="$emit('click')"
-  >
+  <div :class="b({ disabled: isDisabled })" @click="$emit('click')">
     <span class="van-radio__input">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
-        class="van-radio__control"
+        :class="b('control')"
         :disabled="isDisabled"
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span v-if="$slots.default" class="van-radio__label" @click="onClickLabel">
+    <span v-if="$slots.default" :class="b('label')" @click="onClickLabel">
       <slot />
     </span>
   </div>
