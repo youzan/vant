@@ -1,15 +1,15 @@
 <template>
-  <div class="van-submit-bar">
-    <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
+  <div :class="b()">
+    <div :class="b('tip')" v-show="tip || $slots.tip">
       {{ tip }}<slot name="tip" />
     </div>
-    <div class="van-submit-bar__bar">
+    <div :class="b('bar')">
       <slot />
-      <div class="van-submit-bar__price">
+      <div :class="b('price')">
         <template v-if="hasPrice">
           <span>{{ label || $t('label') }}</span>
-          <span class="van-submit-bar__price-interger">{{ currency }}{{ priceInterger }}.</span>
-          <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
+          <span :class="b('price-interger')">{{ currency }}{{ priceInterger }}.</span>
+          <span :class="b('price-decimal')">{{ priceDecimal }}</span>
         </template>
       </div>
       <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">

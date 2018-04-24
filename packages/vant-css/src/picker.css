@@ -65,17 +65,17 @@
     font-size: 17px;
     text-align: center;
 
-    li {
+    &__item {
       padding: 0 5px;
       color: $gray-darker;
-    }
 
-    li&--selected {
-      color: $black;
-    }
+      &--selected {
+        color: $black;
+      }
 
-    li&--disabled {
-      opacity: .3;
+      &--disabled {
+        opacity: .3;
+      }
     }
   }
 }

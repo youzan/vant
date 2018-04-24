@@ -1,7 +1,7 @@
 <template>
-  <div class="van-progress">
-    <span class="van-progress__portion" :style="portionStyle" />
-    <span class="van-progress__pivot" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
+  <div :class="b()">
+    <span :class="b('portion')" :style="portionStyle" />
+    <span :class="b('pivot')" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
   </div>
 </template>
 

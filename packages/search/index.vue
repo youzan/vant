@@ -1,23 +1,23 @@
 <template>
   <div
-    class="van-search"
-    :class="{ 'van-search--show-action': showAction }"
-    :style="{ 'background-color': background }">
-    <div class="van-search__input-wrap" v-clickoutside="onClickoutside">
+    :class="b({ 'show-action': showAction })"
+    :style="{ 'background-color': background }"
+  >
+    <div :class="b('wrap')" v-clickoutside="onClickoutside">
       <icon name="search" />
       <input
         v-bind="$attrs"
         v-on="listeners"
         v-refocus="focusStatus"
         type="search"
-        class="van-search__input"
+        :class="b('input')"
         :value="value"
       >
       <icon name="clear" v-show="isFocus && value" @click="onClean" />
     </div>
-    <div class="van-search__action" v-if="showAction">
+    <div v-if="showAction" :class="b('action')" >
       <slot name="action">
-        <div class="van-search__action-text" @click="onBack">{{ $t('cancel') }}</div>
+        <div :class="b('cancel')" @click="onBack">{{ $t('cancel') }}</div>
       </slot>
     </div>
   </div>

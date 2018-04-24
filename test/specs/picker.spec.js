@@ -260,7 +260,7 @@ describe('PickerColumn', () => {
       }
     });
 
-    expect(wrapper.find('.van-picker-column--disabled').length).to.equal(1);
+    expect(wrapper.find('.van-picker-column__item--disabled').length).to.equal(1);
     expect(wrapper.vm.currentIndex).to.equal(undefined);
   });
 

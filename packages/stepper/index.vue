@@ -1,20 +1,18 @@
 <template>
-  <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled }">
+  <div :class="b({ disabled })">
     <button
-      class="van-stepper__stepper van-stepper__minus"
-      :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
+      :class="b('minus', { disabled: minusDisabled })"
       @click="onChange('minus')"
     />
     <input
       type="number"
-      class="van-stepper__input"
+      :class="b('input')"
       :value="currentValue"
       :disabled="disabled || disableInput"
       @input="onInput"
     >
     <button
-      class="van-stepper__stepper van-stepper__plus"
-      :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
+      :class="b('plus', { disabled: plusDisabled })"
       @click="onChange('plus')"
     />
   </div>
@@ -62,14 +60,14 @@ export default create({
   },
 
   computed: {
-    isMinusDisabled() {
+    minusDisabled() {
       const min = +this.min;
       const step = +this.step;
       const currentValue = +this.currentValue;
       return min === currentValue || (currentValue - step) < min || this.disabled;
     },
 
-    isPlusDisabled() {
+    plusDisabled() {
       const max = +this.max;
       const step = +this.step;
       const currentValue = +this.currentValue;
@@ -108,7 +106,7 @@ export default create({
     },
 
     onChange(type) {
-      if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
+      if ((this.minusDisabled && type === 'minus') || (this.plusDisabled && type === 'plus')) {
         this.$emit('overlimit', type);
         return;
       }
