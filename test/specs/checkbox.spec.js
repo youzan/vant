@@ -165,7 +165,7 @@ describe('Checkbox', () => {
     expect(wrapper.hasClass('van-checkbox')).to.be.true;
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
+    const checkboxLabel = wrapper.find('.van-checkbox__icon')[0];
     checkboxLabel.trigger('click');
 
     wrapper.update();
@@ -189,7 +189,7 @@ describe('Checkbox', () => {
     expect(wrapper.vm.currentValue).to.be.false;
     expect(wrapper.vm.isDisabled).to.be.true;
 
-    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
+    const checkboxLabel = wrapper.find('.van-checkbox__icon')[0];
     checkboxLabel.trigger('click');
 
     expect(wrapper.vm.currentValue).to.be.false;
@@ -206,7 +206,7 @@ describe('Checkbox', () => {
     expect(wrapper.hasClass('van-checkbox')).to.be.true;
     expect(wrapper.vm.currentValue).to.be.false;
 
-    const checkboxLabel = wrapper.find('.van-checkbox__label')[0];
+    const checkboxLabel = wrapper.find('.van-checkbox__icon')[0];
     checkboxLabel.trigger('click');
 
     expect(wrapper.vm.currentValue).to.be.false;
