@@ -84,7 +84,7 @@ describe('Popup', () => {
 
       modal.click();
       setTimeout(() => {
-        expect(wrapper.data().currentValue).to.be.false;
+        expect(wrapper.vm.value).to.be.false;
         done();
       }, 300);
     }, 300);

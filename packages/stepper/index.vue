@@ -106,7 +106,7 @@ export default create({
     },
 
     onChange(type) {
-      if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
+      if ((this.minusDisabled && type === 'minus') || (this.plusDisabled && type === 'plus')) {
         this.$emit('overlimit', type);
         return;
       }
