@@ -5,13 +5,17 @@
     @touchmove="onBlur"
     @touchend="onBlur"
     @touchcancel="onBlur"
-    class="van-hairline van-key"
-    :class="className"
+    class="van-hairline"
+    :class="[b(), className]"
   />
 </template>
 
 <script>
-export default {
+import create from '../utils/create';
+
+export default create({
+  name: 'key',
+
   props: {
     text: [String, Number],
     type: {
@@ -31,7 +35,7 @@ export default {
       const types = this.type.slice(0);
       this.active && types.push('active');
 
-      return types.map(type => `van-key--${type}`);
+      return types.map(type => this.b([type]));
     }
   },
 
@@ -45,5 +49,5 @@ export default {
       this.active = false;
     }
   }
-};
+});
 </script>
