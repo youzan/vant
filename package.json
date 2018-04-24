@@ -12,6 +12,10 @@
     "packages",
     "types"
   ],
+  "sideEffects": [
+    "es/**/style/*",
+    "lib/**/style/*"
+  ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
     "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js",
