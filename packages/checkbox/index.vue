@@ -10,7 +10,7 @@
       }]"
       @click="onClick"
     />
-    <span class="van-checkbox__label" @click="onClick('label')">
+    <span v-if="$slots.default" class="van-checkbox__label" @click="onClick('label')">
       <slot />
     </span>
   </div>

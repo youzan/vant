@@ -14,7 +14,7 @@
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span class="van-radio__label" @click="onClickLabel">
+    <span v-if="$slots.default" class="van-radio__label" @click="onClickLabel">
       <slot />
     </span>
   </div>
