@@ -1,5 +1,5 @@
 <template>
-  <div class="van-checkbox-group">
+  <div :class="b()">
     <slot />
   </div>
 </template>
