@@ -13,7 +13,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 通过`v-model`绑定 checkbox 的勾选状态
 
 ```html
-<van-checkbox v-model="checked">复选框 1</van-checkbox>
+<van-checkbox v-model="checked">复选框</van-checkbox>
 ```
 
 ```javascript
@@ -29,13 +29,15 @@ export default {
 #### 禁用状态
 
 ```html
-<van-checkbox v-model="checked" disabled>复选框 2</van-checkbox>
+<van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
+
 #### 禁用内容部分点击事件
 
 ```html
-<van-checkbox v-model="checked" label-disabled>复选框 3</van-checkbox>
+<van-checkbox v-model="checked" label-disabled>复选框</van-checkbox>
 ```
+
 #### Checkbox 组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
@@ -84,8 +86,8 @@ export default {
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="(item, index) in list" :key="item">
-      <van-checkbox :name="item">复选框 {{ item }}</van-checkbox>
+    <van-cell v-for="item in list" :title="`复选框 ${item}`" :key="item">
+      <van-checkbox :name="item" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
