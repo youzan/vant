@@ -2,7 +2,7 @@
   <van-button
     tag="a"
     :href="url"
-    class="van-goods-action__big-btn"
+    :class="b()"
     :type="primary ? 'primary' : 'default'"
     bottom-action
     @click="onClick"

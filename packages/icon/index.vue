@@ -1,7 +1,7 @@
 <template>
-  <i class="van-icon" :class="`van-icon-${name}`" v-on="$listeners">
+  <i :class="[b(), `van-icon-${name}`]" v-on="$listeners">
     <slot />
-    <div v-if="isDef(info)" class="van-icon__info">{{ info }}</div>
+    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
   </i>
 </template>
 
