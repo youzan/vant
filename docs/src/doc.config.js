@@ -138,7 +138,7 @@ module.exports = {
               },
               {
                 path: '/slider',
-                title: 'Slider - 滑块'
+                title: 'Slider -   滑块'
               },
               {
                 path: '/stepper',
@@ -151,10 +151,6 @@ module.exports = {
               {
                 path: '/swipe',
                 title: 'Swipe - 轮播'
-              },
-              {
-                path: '/slider',
-                title: 'Slider - 滑块'
               },
               {
                 path: '/tab',
@@ -453,10 +449,6 @@ module.exports = {
               {
                 path: '/swipe',
                 title: 'Swipe'
-              },
-              {
-                path: '/slider',
-                title: 'Slider'
               },
               {
                 path: '/tab',
