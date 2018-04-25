@@ -23,17 +23,10 @@ Vue.use(Loading);
 <van-loading type="spinner" color="white" />
 ```
 
-#### Circle
-
-```html
-<van-loading type="circle" color="black" />
-<van-loading type="circle" color="white" />
-```
-
 ### API
 
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | color | Color | `String` | `black` | `black` `white` |
-| type | Type | `String` | `circular` | `spinner` `circle` |
+| type | Type | `String` | `circular` | `spinner` |
 | size | Size | `String` | `30px` | - |
