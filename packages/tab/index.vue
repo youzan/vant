@@ -1,5 +1,5 @@
 <template>
-  <div class="van-tab__pane" :class="{ 'van-tab__pane--select': index === parent.curActive }">
+  <div :class="b('pane', { select: index === parent.curActive })">
     <slot />
   </div>
 </template>

@@ -31,7 +31,7 @@
         display: block;
       }
 
-      &-dot {
+      &--dot {
         &::after {
           top: 0;
           right: -8px;
