@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const config = require('./webpack.config.dev.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 
@@ -24,7 +23,6 @@ module.exports = Object.assign({}, config, {
       amd: 'vue'
     }
   },
-  plugins: [],
   performance: false,
   optimization: {
     minimize: isMinify
