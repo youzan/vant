@@ -1,6 +1,6 @@
 <template>
   <div :class="b({ disabled: isDisabled })" @click="$emit('click')">
-    <span class="van-radio__input">
+    <span :class="b('input')">
       <input
         :value="name"
         v-model="currentValue"

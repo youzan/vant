@@ -28,31 +28,27 @@
     &:last-child::after {
       border-right-width: 1px;
     }
-  }
 
-  &__prev,
-  &__next {
-    &.van-pagination__item {
-      padding: 0 5px;
-    }
-  }
-
-  &__page {
-    flex-grow: 0;
-
-    &.van-pagination--active {
-      background-color: $blue;
-      color: $white;
-    }
-  }
-
-  &--disabled {
-
-    &.van-pagination__item {
+    &--disabled,
+    &--disabled:active {
       background-color: $background-color;
       color: $gray-darker;
       opacity: 0.6;
     }
+
+    &--active {
+      color: $white;
+      background-color: $blue;
+    }
+  }
+
+  &__prev,
+  &__next {
+    padding: 0 5px;
+  }
+
+  &__page {
+    flex-grow: 0;
   }
 
   &__page-desc {
@@ -60,15 +56,13 @@
     height: 40px;
     color: $gray-darker;
   }
-}
 
-.van-pagination-simple {
-
-  .van-pagination__prev,
-  .van-pagination__next {
-
-    &.van-pagination__item::after {
-      border-width: 1px;
+  &--simple {
+    .van-pagination__prev,
+    .van-pagination__next {
+      &::after {
+        border-width: 1px;
+      }
     }
   }
 }

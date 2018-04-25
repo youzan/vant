@@ -1,6 +1,6 @@
 <template>
-  <div class="van-sku-row">
-    <div class="van-sku-row__title">{{ skuRow.k }}：</div>
+  <div :class="b()">
+    <div :class="b('title')">{{ skuRow.k }}：</div>
     <slot />
   </div>
 </template>

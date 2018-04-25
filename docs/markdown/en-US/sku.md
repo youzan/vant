@@ -67,7 +67,7 @@ Vue.use(Sku);
   <!-- custom sku-header-price -->
   <template slot="sku-header-price" slot-scope="props">
     <div class="van-sku__goods-price">
-      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span> only!!!
+      <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
   <!-- custom sku actions -->
