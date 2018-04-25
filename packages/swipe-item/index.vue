@@ -18,6 +18,14 @@ export default create({
 
   computed: {
     style() {
+      if (this.$parent.vertical) {
+        return {
+          width: this.$parent.width + 'px',
+          height: this.$parent.height + 'px',
+          transform: `translate(0, ${this.offset}px)`
+        };
+      }
+
       return {
         width: this.$parent.width + 'px',
         transform: `translate(${this.offset}px, 0)`

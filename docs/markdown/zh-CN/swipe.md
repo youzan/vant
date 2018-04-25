@@ -66,6 +66,17 @@ export default {
 }
 ```
 
+#### 纵向滚动
+
+```html
+<van-swipe :autoplay="3000" vertical>
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 可选值 |
@@ -75,6 +86,7 @@ export default {
 | loop | 是否开启循环播放 | `Boolean` | `true` | - |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
 | initial-swipe | 初始位置，从 0 开始算 | `Number` | `0` | - |
+| vertical | 纵向滚动 | `Boolean` | false | - |
 
 ### 事件
 
