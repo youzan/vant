@@ -14,13 +14,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^8.3.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
     "gulp-iconfont": "^9.0.2",
     "gulp-iconfont-css": "^2.1.0",
     "gulp-postcss": "^7.0.0",
-    "md5-file": "^3.2.3",
+    "md5-file": "^4.0.0",
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0"
   }
