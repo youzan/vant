@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
@@ -41,25 +41,25 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
-              preserveWhitespace: false,
-              extractCSS: true
+              compilerOptions: {
+                preserveWhitespace: false
+              }
             }
           }
         ]
       },
       {
         test: /\.js$/,
-        exclude: /node_modules|vue-router\/|vue-loader\//,
+        exclude: /node_modules/,
         use: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader',
-            'postcss-loader'
-          ]
-        })
+        test: /\.(css|postcss)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.md/,
@@ -69,12 +69,13 @@ module.exports = {
         ]
       },
       {
-        test: /\.(woff2?|eot|ttf|otf|svg)(\?.*)?$/,
+        test: /\.(woff2?|eot|ttf|svg)(\?.*)?$/,
         loader: 'url-loader'
       }
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'vant-docs'],
@@ -88,9 +89,8 @@ module.exports = {
       filename: 'examples.html',
       inject: true
     }),
-    new ExtractTextPlugin({
-      filename: isProduction ? '[name].[hash:8].css' : '[name].css',
-      allChunks: true
+    new MiniCssExtractPlugin({
+      filename: isProduction ? '[name].[hash:8].css' : '[name].css'
     })
   ]
 };

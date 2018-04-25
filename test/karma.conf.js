@@ -1,9 +1,3 @@
-require('babel-polyfill');
-
-require('babel-core/register')({
-  presets: [require('babel-preset-env')]
-});
-
 const getWebpackConfig = require('./get-webpack-conf');
 
 module.exports = function(config) {
@@ -13,13 +7,9 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
-      './index.js': ['webpack'],
-      'test/!(components)/**/*.vue': ['coverage']
+      './index.js': ['webpack']
     },
     webpack: getWebpackConfig(getTestFileName()),
-    webpackMiddleware: {
-      noInfo: true
-    },
     coverageReporter: {
       dir: './coverage',
       reporters: [

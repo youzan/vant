@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+const webpackDevConfig = require('../build/webpack.config.dev');
 
 function getWebpackConfig(testFileName) {
   return {
@@ -12,100 +14,51 @@ function getWebpackConfig(testFileName) {
       chunkFilename: '[id].js',
       libraryTarget: 'umd'
     },
+    resolve: webpackDevConfig.resolve,
     plugins: [
+      new VueLoaderPlugin(),
       new ProgressBarPlugin(),
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        options: {
-          babel: {
-            presets: ['env'],
-            plugins: ['transform-runtime', 'transform-object-rest-spread']
-          },
-          vue: {
-            autoprefixer: false,
-            preserveWhitespace: false
-          }
-        }
-      }),
       new webpack.DefinePlugin({
         'process.env': {
           TEST_FILE: `"${testFileName}"`
         }
       })
     ],
-    stats: 'errors-only',
-    resolve: {
-      modules: [path.resolve(process.cwd(), 'node_modules'), 'node_modules'],
-      extensions: ['.js', '.vue', '.css'],
-      alias: {
-        src: path.resolve(process.cwd(), 'src'),
-        packages: path.resolve(process.cwd(), 'packages'),
-        vue$: 'vue/dist/vue.common.js'
-      }
-    },
     module: {
       rules: [
         {
-          enforce: 'pre',
           test: /\.js$/,
-          exclude: /node_modules|vue-router\/|vue-loader\/|docs|test|src\/index|src\/utils|src\/mixins|packages\/swipe/,
-          use: 'isparta-loader'
+          exclude: /node_modules|test|mock|swipe|locale|waterfall/,
+          use: [
+            {
+              loader: 'istanbul-instrumenter-loader',
+              options: { esModules: true }
+            },
+            'babel-loader'
+          ]
         },
         {
           test: /\.js$/,
-          exclude: /node_modules|vue-router\/|vue-loader\//,
-          use: 'babel-loader'
+          exclude: /node_modules/,
+          use: [
+            'babel-loader'
+          ]
         },
         {
-          test: /\.(css|pcss)$/,
+          test: /\.(css|postcss)$/,
           use: ['style-loader', 'css-loader', {
             loader: 'postcss-loader',
             options: { sourceMap: true }
           }]
         },
         {
-          test: /\.(gif|png|jpe?g)(\?\S*)?$/,
-          use: [
-            {
-              loader: 'url-loader',
-              options: {
-                query: {
-                  limit: 10000,
-                  name: 'static/[name].[hash:7].[ext]'
-                }
-              }
-            }
-          ]
-        },
-        {
-          test: /test\/components\/.*\.vue$|packages\/swipe.*\.vue$/,
+          test: /\.vue$/,
           use: [
             {
               loader: 'vue-loader',
               options: {
-                loaders: {
-                  css: ['style-loader', 'css-loader', {
-                    loader: 'postcss-loader',
-                    options: { sourceMap: true }
-                  }]
-                }
-              }
-            }
-          ]
-        },
-        {
-          test: /packages\/.*\.vue$/,
-          exclude: /packages\/swipe.*\.vue$/,
-          use: [
-            {
-              loader: 'vue-loader',
-              options: {
-                loaders: {
-                  css: ['style-loader', 'css-loader', {
-                    loader: 'postcss-loader',
-                    options: { sourceMap: true }
-                  }],
-                  js: ['isparta-loader']
+                compilerOptions: {
+                  preserveWhitespace: false
                 }
               }
             }
