@@ -137,6 +137,10 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
+                path: '/slider',
+                title: 'Slider - 滑块'
+              },
+              {
                 path: '/stepper',
                 title: 'Stepper - 步进器'
               },
@@ -147,10 +151,6 @@ module.exports = {
               {
                 path: '/swipe',
                 title: 'Swipe - 轮播'
-              },
-              {
-                path: '/slider',
-                title: 'Slider - 滑块'
               },
               {
                 path: '/tab',
@@ -435,6 +435,10 @@ module.exports = {
                 title: 'Progress'
               },
               {
+                path: '/slider',
+                title: 'Slider'
+              },
+              {
                 path: '/stepper',
                 title: 'Stepper'
               },
@@ -445,10 +449,6 @@ module.exports = {
               {
                 path: '/swipe',
                 title: 'Swipe'
-              },
-              {
-                path: '/slider',
-                title: 'Slider'
               },
               {
                 path: '/tab',

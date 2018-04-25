@@ -1,10 +1,10 @@
 <template>
-  <div class="van-list">
+  <div :class="b()">
     <slot />
-    <div class="van-list__loading" v-show="loading">
+    <div v-show="loading" :class="b('loading')">
       <slot name="loading">
         <loading />
-        <span class="van-list__loading-text">{{ $t('loadingTip') }}</span>
+        <span :class="b('loading-text')">{{ $t('loadingTip') }}</span>
       </slot>
     </div>
   </div>

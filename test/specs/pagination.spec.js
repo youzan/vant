@@ -38,7 +38,7 @@ describe('Pagination', () => {
         expect(
           wrapper
             .find('.van-pagination__next')[0]
-            .hasClass('van-pagination--disabled')
+            .hasClass('van-pagination__item--disabled')
         ).to.be.true;
         done();
       });

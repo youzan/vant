@@ -1,19 +1,23 @@
 <template>
   <div
     v-clickoutside:touchstart="onClick"
-    class="van-cell-swipe"
+    :class="b()"
     @click="onClick('cell')"
     @touchstart="startDrag"
     @touchmove="onDrag"
     @touchend="endDrag"
     @touchcancel="endDrag"
   >
-    <div class="van-cell-swipe__wrapper" :style="wrapperStyle" @transitionend="swipe = false">
-      <div class="van-cell-swipe__left" @click.stop="onClick('left')" v-if="leftWidth">
+    <div
+      :class="b('wrapper')"
+      :style="wrapperStyle"
+      @transitionend="swipe = false"
+    >
+      <div v-if="leftWidth" :class="b('left')" @click.stop="onClick('left')">
         <slot name="left" />
       </div>
       <slot />
-      <div class="van-cell-swipe__right" @click.stop="onClick('right')" v-if="rightWidth">
+      <div v-if="rightWidth" :class="b('right')" @click.stop="onClick('right')">
         <slot name="right" />
       </div>
     </div>

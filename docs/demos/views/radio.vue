@@ -17,8 +17,12 @@
     <demo-block :title="$t('title3')">
       <van-radio-group v-model="radio3">
         <van-cell-group>
-          <van-cell><van-radio name="1">{{ $t('radio') }}1</van-radio></van-cell>
-          <van-cell><van-radio name="2">{{ $t('radio') }}2</van-radio></van-cell>
+          <van-cell :title="$t('radio') + 1" clickable @click="radio3 = '1'">
+            <van-radio name="1" />
+          </van-cell>
+          <van-cell :title="$t('radio') + 2" clickable @click="radio3 = '2'">
+            <van-radio name="2" />
+          </van-cell>
         </van-cell-group>
       </van-radio-group>
     </demo-block>
@@ -59,17 +63,6 @@ export default {
 
     .van-radio {
       margin-bottom: 10px;
-    }
-  }
-
-  .van-cell {
-    .van-radio__input {
-      float: right;
-      position: static;
-    }
-
-    .van-radio__label {
-      margin: 0;
     }
   }
 }

@@ -3,7 +3,7 @@ export type DialogOptions = {
   message?: string;
   overlay?: boolean;
   lockScroll?: boolean;
-  beforeClose?: (action: string, done: function) => void;
+  beforeClose?: (action: string, done: Function) => void;
   confirmButtonText?: string;
   cancelButtonText?: string;
   showConfirmButton?: boolean;
