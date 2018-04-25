@@ -1,8 +1,7 @@
 
 <template>
   <div
-    class="van-picker-column"
-    :class="className"
+    :class="[b(), className]"
     :style="columnStyle"
     @touchstart="onTouchStart"
     @touchmove.prevent="onTouchMove"
@@ -14,10 +13,10 @@
         v-for="(option, index) in options"
         v-text="getOptionText(option)"
         class="van-ellipsis"
-        :class="{
-          'van-picker-column--disabled': isDisabled(option),
-          'van-picker-column--selected': index === currentIndex
-        }"
+        :class="b('item', {
+          disabled: isDisabled(option),
+          selected: index === currentIndex
+        })"
         @click="setIndex(index, true)"
       />
     </ul>

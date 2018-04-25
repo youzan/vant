@@ -1,9 +1,9 @@
 <template>
-  <div class="van-swipe">
+  <div :class="b()">
     <div
       v-if="count > 1"
       :style="trackStyle"
-      class="van-swipe__track"
+      :class="b('track')"
       @touchstart="onTouchStart"
       @touchmove="onTouchMove"
       @touchend="onTouchEnd"
@@ -12,11 +12,14 @@
     >
       <slot />
     </div>
-    <div v-else class="van-swipe__track">
+    <div v-else :class="b('track')">
       <slot />
     </div>
-    <div class="van-swipe__indicators" v-if="showIndicators && count > 1">
-      <i v-for="index in count" :class="{ 'van-swipe__indicator--active': index - 1 === activeIndicator }" />
+    <div
+      v-if="showIndicators && count > 1"
+      :class="b('indicators')"
+    >
+      <i v-for="index in count" :class="b('indicator', { active: index - 1 === activeIndicator })" />
     </div>
   </div>
 </template>

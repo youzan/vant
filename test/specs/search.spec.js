@@ -87,7 +87,7 @@ describe('Search', () => {
 
     const eventStub = sinon.stub(wrapper.vm, '$emit');
 
-    const cancelBtn = wrapper.find('.van-search__action-text')[0];
+    const cancelBtn = wrapper.find('.van-search__cancel')[0];
     cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {

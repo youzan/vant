@@ -1,5 +1,5 @@
 <template>
-  <div class="van-row" :style="style">
+  <div :class="b()" :style="style">
     <slot />
   </div>
 </template>

@@ -1,11 +1,12 @@
 <template>
-  <div class="van-uploader">
+  <div :class="b()">
     <slot />
     <input
+      v-bind="$attrs"
       ref="input"
       type="file"
-      class="van-uploader__input"
-      v-bind="$attrs"
+      :class="b('input')"
+      :accept="accept"
       :disabled="disabled"
       @change="onChange"
     >
@@ -24,6 +25,10 @@ export default create({
     disabled: Boolean,
     beforeRead: Function,
     afterRead: Function,
+    accept: {
+      type: String,
+      default: 'image/*'
+    },
     resultType: {
       type: String,
       default: 'dataUrl'

@@ -5,7 +5,7 @@
       <path :class="b('layer')" :style="layerStyle" :d="path" />
     </svg>
     <slot>
-      <div :class="b('text')" class="van-circle__text">{{ text }}</div>
+      <div :class="b('text')">{{ text }}</div>
     </slot>
   </div>
 </template>

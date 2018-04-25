@@ -1,16 +1,16 @@
 <template>
-  <div class="van-picker">
-    <div class="van-picker__toolbar van-hairline--top-bottom" v-if="showToolbar">
+  <div :class="b()">
+    <div :class="b('toolbar')" class="van-hairline--top-bottom" v-if="showToolbar">
       <slot>
-        <div class="van-picker__cancel" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
-        <div class="van-picker__title van-ellipsis" v-if="title" v-text="title" />
-        <div class="van-picker__confirm" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
+        <div :class="b('cancel')" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
+        <div :class="b('title')" class="van-ellipsis" v-if="title" v-text="title" />
+        <div :class="b('confirm')" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
       </slot>
     </div>
-    <div v-if="loading" class="van-picker__loading">
+    <div v-if="loading" :class="b('loading')">
       <loading />
     </div>
-    <div class="van-picker__columns" :style="columnsStyle" @touchmove.prevent>
+    <div :class="b('columns')" :style="columnsStyle" @touchmove.prevent>
       <picker-column
         v-for="(item, index) in currentColumns"
         :key="index"
@@ -22,7 +22,7 @@
         :visible-item-count="visibleItemCount"
         @change="onChange(index)"
       />
-      <div class="van-picker__frame van-hairline--top-bottom" :style="frameStyle" />
+      <div :class="b('frame')" class="van-hairline--top-bottom" :style="frameStyle" />
     </div>
   </div>
 </template>

@@ -22,23 +22,22 @@ $van-swipe-indicator: 6px;
     position: absolute;
     height: $van-swipe-indicator;
     transform: translate3d(-50%, 0, 0);
+  }
 
-    > i {
-      border-radius: 100%;
-      vertical-align: top;
-      display: inline-block;
-      background-color: $gray-dark;
-      width: $van-swipe-indicator;
-      height: $van-swipe-indicator;
-      &:not(:last-child) {
-        margin-right: $van-swipe-indicator;
-      }
+  &__indicator {
+    border-radius: 100%;
+    vertical-align: top;
+    display: inline-block;
+    background-color: $gray-dark;
+    width: $van-swipe-indicator;
+    height: $van-swipe-indicator;
+
+    &:not(:last-child) {
+      margin-right: $van-swipe-indicator;
     }
-
-    .van-swipe__indicator {
-      &--active {
-        background-color: $orange;
-      }
+  
+    &--active {
+      background-color: $orange;
     }
   }
 }

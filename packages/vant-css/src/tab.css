@@ -22,6 +22,22 @@ $van-tabs-card-height: 30px;
       top: auto;
       bottom: 0;
     }
+
+    &--scrollable {
+      .van-tab {
+        flex: 0 0 22%;
+      }
+
+      .van-tabs__nav {
+        overflow: hidden;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
   }
 
   &__nav {
@@ -67,22 +83,6 @@ $van-tabs-card-height: 30px;
     height: 2px;
     position: absolute;
     background-color: $red;
-  }
-
-  &--scrollable {
-    .van-tab {
-      flex: 0 0 22%;
-    }
-
-    .van-tabs__nav {
-      overflow: hidden;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
   }
 
   &--line {
