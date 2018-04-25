@@ -1,5 +1,30 @@
 ## 更新日志
 
+### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
+`2018-04-25`
+
+**Improvements**
+
+* 新增 Slider 滑块组件 [\#897](https://github.com/youzan/vant/pull/897) [\#915](https://github.com/youzan/vant/pull/915)  [jerryni](https://github.com/jerryni) [@chenjiahan](https://github.com/chenjiahan)
+* 新增 BEM mixin，规范 BEM 命名格式 [\#921](https://github.com/youzan/vant/pull/921) [\#924](https://github.com/youzan/vant/pull/924) [\#932](https://github.com/youzan/vant/pull/932) [\#934](https://github.com/youzan/vant/pull/934) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: 优化 flex 结构 [\#919](https://github.com/youzan/vant/pull/919) [@chenjiahan](https://github.com/chenjiahan)
+* Panel: 优化结构，使用 Cell 代替部分样式 [\#927](https://github.com/youzan/vant/pull/927) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 升级至 vue-loader@15 [\#937](https://github.com/youzan/vant/pull/937) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 使用 ChromeHeadless 代替 PhantomJS 作为测试运行环境 [\#913](https://github.com/youzan/vant/pull/913) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 使用 MiniCssExtractPlugin 代替 ExtractTextPlugin [\#936](https://github.com/youzan/vant/pull/936) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 增加针对 webpack4 优化的 sideEffects 配置 [\#926](https://github.com/youzan/vant/pull/926) [@chenjiahan](https://github.com/chenjiahan)
+* 文档: 新增 rem 指引 [\#928](https://github.com/youzan/vant/pull/928) [@chenjiahan](https://github.com/chenjiahan)
+* 文档: 移除 Loading circle 类型，不推荐使用 [\#941](https://github.com/youzan/vant/pull/941) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Uploader 在安卓下无法上传图片的问题 [\#929](https://github.com/youzan/vant/pull/929) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Checkbox 内容为空时渲染了空 label 元素的问题 [\#920](https://github.com/youzan/vant/pull/920) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Dialog TS 类型定义错误 [\#918](https://github.com/youzan/vant/pull/918) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Popup 多层级关闭时未正确移除 lock-scroll 导致无法滚动的问题 [\#912](https://github.com/youzan/vant/pull/912) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Picker 在系统字体大小缩放时布局错乱的问题 [\#916](https://github.com/youzan/vant/pull/916) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
 `2018-04-20`
 
