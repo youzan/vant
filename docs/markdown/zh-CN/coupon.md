@@ -82,7 +82,7 @@ export default {
 | v-model | 当前输入的兑换码 | `String` | - | - |
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
-| disabled-doupons | 不可用优惠券列表 | `Array` | `[]` | - |
+| disabled-coupons | 不可用优惠券列表 | `Array` | `[]` | - |
 | exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
 | exchange-button-loading | 是否在兑换按钮上显示加载动画 | `Boolean` | `false` | - |
 | exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
