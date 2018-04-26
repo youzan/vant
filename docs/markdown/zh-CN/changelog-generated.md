@@ -1,5 +1,55 @@
 ## 更新日志
 
+## [v1.1.0](https://github.com/youzan/vant/tree/v1.1.0) (2018-04-25)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.0.8...v1.1.0)
+
+**Bug Fixes**
+
+- Field组件不支持负数 [\#884](https://github.com/youzan/vant/issues/884)
+- 上传组件在部分安卓机型点击没有任何反应 无法弹出选择文件弹框 [\#860](https://github.com/youzan/vant/issues/860)
+
+**Issue**
+
+- swiper-item 加了页面跳转事件或者a 标签，swiper 组件中含 swipe-item 滑动时，会触发页面跳转，在ios 中会出现 [\#940](https://github.com/youzan/vant/issues/940)
+- van-datetime-picker选项高度item-height设置不生效 [\#935](https://github.com/youzan/vant/issues/935)
+- rem还没解决方案吗，可以提供些思路怎么快速解决 [\#931](https://github.com/youzan/vant/issues/931)
+- 按需引入DatetimePicker组件时出现错误 [\#925](https://github.com/youzan/vant/issues/925)
+- col not work [\#923](https://github.com/youzan/vant/issues/923)
+- 可以实现夜间模式嘛？能不能给个思路吗？ [\#914](https://github.com/youzan/vant/issues/914)
+- 在Google Chrome 67.0.3396.10版本（32位）下Button按钮没有点击效果 [\#908](https://github.com/youzan/vant/issues/908)
+- 运行 npm run test 或 npm run test:watch 报错 [\#906](https://github.com/youzan/vant/issues/906)
+- 本地开发vant 需要清空yarn.lock 再yarn  [\#905](https://github.com/youzan/vant/issues/905)
+- radio组件没有挂载 [\#900](https://github.com/youzan/vant/issues/900)
+- 请问怎么监听sku 规格选项发生变化 [\#899](https://github.com/youzan/vant/issues/899)
+- 请问PopUP overlay-style 如何赋值。 [\#896](https://github.com/youzan/vant/issues/896)
+- sku在部分手机出现了两遍 [\#895](https://github.com/youzan/vant/issues/895)
+- sku组件提供的getSkuData\(\)方法，应该如何使用，希望能在文档上加个例子 [\#882](https://github.com/youzan/vant/issues/882)
+- tab默认加载active延伸全部拉通了1.0.3版本 [\#836](https://github.com/youzan/vant/issues/836)
+
+**Improvements**
+
+- \[Doc\] Loading: remove circle type from document [\#941](https://github.com/youzan/vant/pull/941) ([chenjiahan](https://github.com/chenjiahan))
+- \[build\] upgrade vue-loader@15 [\#937](https://github.com/youzan/vant/pull/937) ([chenjiahan](https://github.com/chenjiahan))
+- \[Build\] use MiniCssExtractPlugin instead of ExtractTextPlugin [\#936](https://github.com/youzan/vant/pull/936) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] use bem mixin [\#934](https://github.com/youzan/vant/pull/934) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] more component use bem mixin [\#932](https://github.com/youzan/vant/pull/932) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Uploader: can not upload pic in android [\#929](https://github.com/youzan/vant/pull/929) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add rem guide [\#928](https://github.com/youzan/vant/pull/928) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Panel: use cell instead of extra style [\#927](https://github.com/youzan/vant/pull/927) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add sideEffects config for webpack 4 [\#926](https://github.com/youzan/vant/pull/926) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] more component use bem mixin [\#924](https://github.com/youzan/vant/pull/924) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] component use bem mixin [\#921](https://github.com/youzan/vant/pull/921) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Checkbox: should not render label when label is empty [\#920](https://github.com/youzan/vant/pull/920) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Cell: optimize flex layout [\#919](https://github.com/youzan/vant/pull/919) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Dialog: type define error [\#918](https://github.com/youzan/vant/pull/918) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker: text adjust may cause option wrong offset [\#916](https://github.com/youzan/vant/pull/916) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Slider: add step & bar-height prop [\#915](https://github.com/youzan/vant/pull/915) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] use ChromeHeadless instead of PhantomJS to run test cases [\#913](https://github.com/youzan/vant/pull/913) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Popup: should remove touch event listener when distroyed [\#912](https://github.com/youzan/vant/pull/912) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add BEM helper mixin [\#904](https://github.com/youzan/vant/pull/904) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix Radio document [\#903](https://github.com/youzan/vant/pull/903) ([jerryni](https://github.com/jerryni))
+- \[new component\] add Slider component  \#721 [\#897](https://github.com/youzan/vant/pull/897) ([jerryni](https://github.com/jerryni))
+
 ## [v1.0.8](https://github.com/youzan/vant/tree/v1.0.8) (2018-04-20)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.7...v1.0.8)
 
@@ -228,13 +278,6 @@
 
 - Tabs 标签组件 滑动切换问题 [\#725](https://github.com/youzan/vant/issues/725)
 - 在引入Toast后没使用会页面上会出现一个黑块 [\#724](https://github.com/youzan/vant/issues/724)
-- 在使用vant时,首次加载页面时组件尺寸大小正常,再次刷新后组件尺寸缩小 [\#717](https://github.com/youzan/vant/issues/717)
-- 请问AddressEdit 地址编辑 里如何显示删除操作呢？ [\#715](https://github.com/youzan/vant/issues/715)
-- \[共享\]贴出城市数据放置位置，方便大家寻找 \(https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.js\)   [\#714](https://github.com/youzan/vant/issues/714)
-- 为什么Collapse报错了 [\#710](https://github.com/youzan/vant/issues/710)
-- 按照官方文档写show-action为什么会报错 [\#707](https://github.com/youzan/vant/issues/707)
-- Field 组件高度自适应建议加入一个限制最高高度 [\#702](https://github.com/youzan/vant/issues/702)
-- 文档有一处错误，建议修改 [\#699](https://github.com/youzan/vant/issues/699)
 
 **Improvements**
 

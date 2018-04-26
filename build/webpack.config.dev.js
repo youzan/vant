@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
@@ -41,7 +41,9 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
-              preserveWhitespace: false
+              compilerOptions: {
+                preserveWhitespace: false
+              }
             }
           }
         ]
@@ -52,7 +54,7 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.(css|postcss)$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
@@ -73,6 +75,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
       chunks: ['vendor', 'vant-docs'],
