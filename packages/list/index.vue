@@ -4,7 +4,7 @@
     <div v-show="loading" :class="b('loading')">
       <slot name="loading">
         <loading />
-        <span :class="b('loading-text')">{{ $t('loadingTip') }}</span>
+        <span :class="b('loading-text')">{{ loadingText || $t('loadingTip') }}</span>
       </slot>
     </div>
   </div>
@@ -32,7 +32,8 @@ export default create({
     offset: {
       type: Number,
       default: 300
-    }
+    },
+    loadingText: String
   },
 
   mounted() {
