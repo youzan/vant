@@ -18,17 +18,11 @@ export default create({
 
   computed: {
     style() {
-      if (this.$parent.vertical) {
-        return {
-          width: this.$parent.width + 'px',
-          height: this.$parent.height + 'px',
-          transform: `translate(0, ${this.offset}px)`
-        };
-      }
-
+      const { vertical, width, height } = this.$parent;
       return {
-        width: this.$parent.width + 'px',
-        transform: `translate(${this.offset}px, 0)`
+        width: width + 'px',
+        height: vertical ? height + 'px' : '100%',
+        transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
       };
     }
   },

@@ -86,7 +86,7 @@ export default {
 | loop | Whether to enable loop | `Boolean` | `true` | - |
 | show-indicators | Whether to show indocators | `Boolean` | `true` | - |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
-| vertical | Vertical Scrolling | `Boolean` | false | - |
+| vertical | Vertical Scrolling | `Boolean` | `false` | - |
 
 ### Event
 

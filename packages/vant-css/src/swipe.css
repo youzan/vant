@@ -22,14 +22,14 @@ $van-swipe-indicator: 6px;
     bottom: 10px;
     height: $van-swipe-indicator;
     transform: translate3d(-50%, 0, 0);
-  }
 
-  &__indicators-vertical {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    width: $van-swipe-indicator;
-    transform: translate3d(0, -50%, 0);
+    &--vertical {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      width: $van-swipe-indicator;
+      transform: translate3d(0, -50%, 0);
+    }
   }
 
   &__indicator {

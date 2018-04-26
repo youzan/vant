@@ -17,12 +17,13 @@
     </div>
     <div
       v-if="showIndicators && count > 1"
-      :class="b(indicatorsStyle)"
+      :class="b(indicatorsClass)"
     >
       <i
         v-for="index in count"
         :key="index"
-        :class="b('indicator', { active: index - 1 === activeIndicator })" />
+        :class="b('indicator', { active: index - 1 === activeIndicator })"
+      />
     </div>
   </div>
 </template>
@@ -120,12 +121,16 @@ export default create({
       return style;
     },
 
-    indicatorsStyle() {
-      return this.vertical ? 'indicators-vertical' : 'indicators';
+    indicatorsClass() {
+      return this.vertical ? 'indicators--vertical' : 'indicators';
     },
 
     activeIndicator() {
       return (this.active + this.count) % this.count;
+    },
+
+    size() {
+      return this.vertical ? this.height : this.width;
     }
   },
 
@@ -133,11 +138,10 @@ export default create({
     initialize() {
       // reset offset when children changes
       clearTimeout(this.timer);
-      this.width = this.$el.getBoundingClientRect().width;
-      this.height = this.$el.getBoundingClientRect().height;
+      ({ width: this.width, height: this.height } = this.$el.getBoundingClientRect());
       this.active = this.initialSwipe;
       this.currentDuration = 0;
-      this.offset = this.count > 1 ? -this.size() * (this.active + 1) : 0;
+      this.offset = this.count > 1 ? -this.size * (this.active + 1) : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });
@@ -162,10 +166,17 @@ export default create({
       const delta = this.vertical ? this.deltaY : this.deltaX;
 
       this.touchMove(event);
-      event.preventDefault();
-      event.stopPropagation();
 
-      this.move(0, this.range(delta, [-this.size(), this.size()]));
+      if (this.vertical && this.direction === 'vertical') {
+        event.preventDefault();
+        event.stopPropagation();
+      } else if (this.direction === 'horizontal') {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      this.move(0, this.range(delta, [-this.size, this.size]));
+      this.move(0, this.range(delta, [-this.size, this.size]));
     },
 
     onTouchEnd() {
@@ -200,17 +211,17 @@ export default create({
         if (active === -1) {
           swipes[count - 1].offset = 0;
         }
-        swipes[0].offset = active === count - 1 && move > 0 ? count * this.size() : 0;
+        swipes[0].offset = active === count - 1 && move > 0 ? count * this.size : 0;
 
         this.active += move;
       } else {
         if (active === 0) {
-          swipes[count - 1].offset = delta > 0 ? -count * this.size() : 0;
+          swipes[count - 1].offset = delta > 0 ? -count * this.size : 0;
         } else if (active === count - 1) {
-          swipes[0].offset = delta < 0 ? count * this.size() : 0;
+          swipes[0].offset = delta < 0 ? count * this.size : 0;
         }
       }
-      this.offset = offset - (this.active + 1) * this.size();
+      this.offset = offset - (this.active + 1) * this.size;
     },
 
     autoPlay() {
@@ -235,10 +246,6 @@ export default create({
 
     range(num, arr) {
       return Math.min(Math.max(num, arr[0]), arr[1]);
-    },
-
-    size() {
-      return this.vertical ? this.height : this.width;
     }
   }
 });
