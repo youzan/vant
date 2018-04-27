@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Demo Test renders ./docs/demos/views/actionsheet.vue correctly 1`] = `undefined`;
+
+exports[`Demo Test renders ./docs/demos/views/address-edit.vue correctly 1`] = `undefined`;

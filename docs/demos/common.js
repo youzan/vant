@@ -3,10 +3,20 @@
  */
 
 import Vue from 'vue';
-import i18n from 'packages/mixins/i18n';
-import { Locale, Toast, Dialog } from 'packages';
-import { DemoBlock, DemoSection } from 'vant-doc';
-import { camelize } from 'packages/utils';
+import i18n from '../../packages/mixins/i18n';
+import Vant, { Lazyload } from '../../packages';
+import VantDoc from 'vant-doc';
+import VueRouter from 'vue-router';
+import { camelize } from '../../packages/utils';
+import { Locale, Toast, Dialog } from '../../packages';
+
+Vue
+  .use(Vant)
+  .use(VantDoc)
+  .use(VueRouter)
+  .use(Lazyload, {
+    lazyComponent: true
+  });
 
 const demoBaseMixin = {
   beforeCreate() {
@@ -26,8 +36,6 @@ window.Toast = Toast;
 window.Dialog = Dialog;
 Vue.mixin(i18n);
 Vue.mixin(demoBaseMixin);
-Vue.component('demo-block', DemoBlock);
-Vue.component('demo-section', DemoSection);
 
 Locale.add({
   'zh-CN': {

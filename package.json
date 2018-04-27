@@ -30,7 +30,7 @@
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.prod.js",
     "dist": "npm run bootstrap && node build/bin/build-lib.js",
     "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
-    "test": "karma start test/karma.conf.js --single-run",
+    "test": "jest",
     "test:coverage": "open test/coverage/lcov-report/index.html",
     "test:watch": "karma start test/karma.conf.js",
     "test:single": "node ./test/selector.js",
@@ -62,10 +62,13 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
+    "@vue/server-test-utils": "^1.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.15",
     "autoprefixer": "^8.3.0",
     "avoriaz": "2.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.15.0",
@@ -82,6 +85,8 @@
     "html-webpack-plugin": "3.2.0",
     "husky": "^0.14.3",
     "istanbul-instrumenter-loader": "^3.0.1",
+    "jest": "^22.4.3",
+    "jest-serializer-vue": "^1.0.0",
     "karma": "^2.0.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
@@ -92,6 +97,8 @@
     "lint-staged": "^7.0.4",
     "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.1.1",
+    "mockdate": "^2.0.2",
+    "moment": "^2.22.1",
     "postcss": "^6.0.21",
     "postcss-calc": "^6.0.0",
     "postcss-easy-import": "^3.0.0",
@@ -107,8 +114,10 @@
     "url-loader": "^1.0.1",
     "vant-doc": "1.0.4",
     "vue": "2.5.16",
+    "vue-jest": "^2.5.0",
     "vue-loader": "^15.0.0",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16",
     "vue-sfc-compiler": "^0.0.8",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "2.5.16",
@@ -117,5 +126,30 @@
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "3.1.3",
     "webpack-merge": "^4.1.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "^packages/(.*)$": "<rootDir>/packages/$1"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "collectCoverageFrom": [
+      "packages/**/*.{js,vue}"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ],
+    "coverageDirectory": "./test/coverage"
   }
 }

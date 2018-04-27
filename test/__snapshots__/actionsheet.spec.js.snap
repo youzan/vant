@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actionsheet create a Actionsheet 1`] = `
+<div class="van-actionsheet" style="display: none;" name="van-slide-bottom">
+  <ul class="van-hairline--bottom"></ul>
+  <div class="van-actionsheet__content"></div>
+</div>
+`;
