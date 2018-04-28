@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders search correctly 1`] = `
+<section class="van-doc-demo-section demo-search" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-search" style="background-color:#f2f2f2;">
+      <div class="van-search__wrap">
+        <i class="van-icon van-icon-search">
+          <!---->
+        </i>
+        <input type="search" placeholder="请输入商品名称" value="" class="van-search__input">
+        <i class="van-icon van-icon-clear" style="display:none;">
+          <!---->
+        </i>
+      </div>
+      <!---->
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">监听对应事件</h2>
+    <form action="/">
+      <div class="van-search van-search--show-action" style="background-color:#f2f2f2;">
+        <div class="van-search__wrap">
+          <i class="van-icon van-icon-search">
+            <!---->
+          </i>
+          <input type="search" placeholder="请输入商品名称" value="" class="van-search__input">
+          <i class="van-icon van-icon-clear" style="display:none;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-search__action">
+          <div class="van-search__cancel">取消</div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">自定义行动按钮</h2>
+    <div class="van-search van-search--show-action" style="background-color:#f2f2f2;">
+      <div class="van-search__wrap">
+        <i class="van-icon van-icon-search">
+          <!---->
+        </i>
+        <input type="search" value="" class="van-search__input">
+        <i class="van-icon van-icon-clear" style="display:none;">
+          <!---->
+        </i>
+      </div>
+      <div class="van-search__action">
+        <div>搜索</div>
+      </div>
+    </div>
+  </section>
+</section>
+`;

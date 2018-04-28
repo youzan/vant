@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders tabbar correctly 1`] = `
+<section class="van-doc-demo-section demo-tabbar" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <i class="van-icon van-icon-shop">
+            <!---->
+          </i>
+          <!---->
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon van-tabbar-item__icon--dot">
+          <i class="van-icon van-icon-chat">
+            <!---->
+          </i>
+          <!---->
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <i class="van-icon van-icon-records">
+            <!---->
+          </i>
+          <div class="van-icon__info">5</div>
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <i class="van-icon van-icon-gold-coin">
+            <!---->
+          </i>
+          <div class="van-icon__info">20</div>
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">自定义图标</h2>
+    <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <img src="https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png">
+          <!---->
+        </div>
+        <div class="van-tabbar-item__text"><span>自定义</span></div>
+      </div>
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <i class="van-icon van-icon-chat">
+            <!---->
+          </i>
+          <!---->
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+      <div class="van-tabbar-item">
+        <div class="van-tabbar-item__icon">
+          <i class="van-icon van-icon-records">
+            <!---->
+          </i>
+          <!---->
+        </div>
+        <div class="van-tabbar-item__text">标签</div>
+      </div>
+    </div>
+  </section>
+</section>
+`;

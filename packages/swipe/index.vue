@@ -138,7 +138,11 @@ export default create({
     initialize() {
       // reset offset when children changes
       clearTimeout(this.timer);
-      ({ width: this.width, height: this.height } = this.$el.getBoundingClientRect());
+      if (this.$el) {
+        const rect = this.$el.getBoundingClientRect();
+        this.width = rect.width;
+        this.height = rect.height;
+      }
       this.active = this.initialSwipe;
       this.currentDuration = 0;
       this.offset = this.count > 1 ? -this.size * (this.active + 1) : 0;

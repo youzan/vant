@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders goods-action correctly 1`] = `
+<section class="van-doc-demo-section demo-goods-action" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-goods-action">
+      <a class="van-hairline van-goods-action-mini-btn">
+        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon">
+          <!---->
+        </i> 客服</a>
+      <a class="van-hairline van-goods-action-mini-btn">
+        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon">
+          <!---->
+        </i> 购物车</a>
+      <a class="van-button van-button--default van-button--normal van-button--bottom-action van-goods-action-big-btn">
+        <!----><span class="van-button__text">加入购物车</span></a>
+      <a class="van-button van-button--primary van-button--normal van-button--bottom-action van-goods-action-big-btn">
+        <!----><span class="van-button__text">立即购买</span></a>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">图标提示</h2>
+    <div class="van-goods-action">
+      <a class="van-hairline van-goods-action-mini-btn">
+        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon">
+          <!---->
+        </i> 客服</a>
+      <a class="van-hairline van-goods-action-mini-btn">
+        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon">
+          <div class="van-icon__info">5</div>
+        </i> 购物车</a>
+      <a class="van-hairline van-goods-action-mini-btn">
+        <i class="van-icon van-icon-shop van-goods-action-mini-btn__icon">
+          <!---->
+        </i> 店铺</a>
+      <a class="van-button van-button--default van-button--normal van-button--bottom-action van-goods-action-big-btn">
+        <!----><span class="van-button__text">加入购物车</span></a>
+      <a class="van-button van-button--primary van-button--normal van-button--bottom-action van-goods-action-big-btn">
+        <!----><span class="van-button__text">立即购买</span></a>
+    </div>
+  </section>
+</section>
+`;

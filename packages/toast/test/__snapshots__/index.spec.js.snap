@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Toast correctly 1`] = `
+<section class="van-doc-demo-section demo-Toast" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">文字提示</h2>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">文字提示</span></button>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">加载提示</h2>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">加载提示</span></button>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">成功/失败提示</h2>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">成功提示</span></button>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">失败提示</span></button>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">高级用法</h2>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">高级用法</span></button>
+  </section>
+</section>
+`;

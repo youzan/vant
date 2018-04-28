@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const isProduction = process.env.NODE_ENV === 'production';
 const { VueLoaderPlugin } = require('vue-loader')
@@ -56,7 +55,7 @@ module.exports = {
       {
         test: /\.(css|postcss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'postcss-loader'
         ]
@@ -88,9 +87,6 @@ module.exports = {
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true
-    }),
-    new MiniCssExtractPlugin({
-      filename: isProduction ? '[name].[hash:8].css' : '[name].css'
     })
   ]
 };

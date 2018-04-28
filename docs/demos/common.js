@@ -3,12 +3,13 @@
  */
 
 import Vue from 'vue';
+import progress from 'nprogress';
 import i18n from '../../packages/mixins/i18n';
 import Vant, { Lazyload } from '../../packages';
-import VantDoc from 'vant-doc';
+import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
 import VueRouter from 'vue-router';
-import { camelize } from '../../packages/utils';
 import { Locale, Toast, Dialog } from '../../packages';
+import { camelize } from '../../packages/utils';
 
 Vue
   .use(Vant)
@@ -18,24 +19,12 @@ Vue
     lazyComponent: true
   });
 
-const demoBaseMixin = {
-  beforeCreate() {
-    const { name, i18n } = this.$options;
-    if (name && i18n) {
-      const formattedI18n = {};
-      const camelizedName = camelize(name);
-      Object.keys(i18n).forEach(key => {
-        formattedI18n[key] = { [camelizedName]: i18n[key] };
-      });
-      Locale.add(formattedI18n);
-    }
-  }
-};
+Vue.component('demo-block', DemoBlock);
+Vue.component('demo-section', DemoSection);
 
 window.Toast = Toast;
 window.Dialog = Dialog;
 Vue.mixin(i18n);
-Vue.mixin(demoBaseMixin);
 
 Locale.add({
   'zh-CN': {
@@ -93,3 +82,30 @@ Locale.add({
     passwordPlaceholder: 'Password'
   }
 });
+
+export function asyncWrapper(component) {
+  return function(r) {
+    progress.start();
+    component(r).then(() => {
+      progress.done();
+    }).catch(() => {
+      progress.done();
+    });
+  };
+}
+
+export function componentWrapper(component, name) {
+  component = component.default;
+  name = 'demo-' + name;
+  component.name = name;
+  const { i18n } = component;
+  if (i18n) {
+    const formattedI18n = {};
+    const camelizedName = camelize(name);
+    Object.keys(i18n).forEach(key => {
+      formattedI18n[key] = { [camelizedName]: i18n[key] };
+    });
+    Locale.add(formattedI18n);
+  }
+  return component;
+}

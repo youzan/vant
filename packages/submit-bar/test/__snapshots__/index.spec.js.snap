@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders submit-bar correctly 1`] = `
+<section class="van-doc-demo-section demo-submit-bar" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip" style="display:none;">
+      </div>
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-interger">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
+        <button class="van-button van-button--danger van-button--normal">
+          <!----><span class="van-button__text">
+      提交订单
+    </span></button>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">禁用状态</h2>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip">
+        您的收货地址不支持同城送, 我们已为您推荐快递</div>
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-interger">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
+        <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--unclickable">
+          <!----><span class="van-button__text">
+      提交订单
+    </span></button>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">加载状态</h2>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip" style="display:none;">
+      </div>
+      <div class="van-submit-bar__bar">
+        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-interger">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
+        <button class="van-button van-button--danger van-button--normal van-button--loading van-button--unclickable">
+          <div class="van-loading van-loading--circular van-loading--white" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span class="van-button__text">
+      
+    </span></button>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">高级用法</h2>
+    <div class="van-submit-bar">
+      <div class="van-submit-bar__tip">
+        <span>
+        您的收货地址不支持同城送, <span class="van-edit-address">修改地址</span></span>
+      </div>
+      <div class="van-submit-bar__bar">
+        <div class="van-checkbox">
+          <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked">
+            <!---->
+          </i> <span class="van-checkbox__label">全选</span></div>
+        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-interger">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
+        <button class="van-button van-button--danger van-button--normal">
+          <!----><span class="van-button__text">
+      提交订单
+    </span></button>
+      </div>
+    </div>
+  </section>
+</section>
+`;

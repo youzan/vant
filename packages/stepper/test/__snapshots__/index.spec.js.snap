@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders stepper correctly 1`] = `
+<section class="van-doc-demo-section demo-stepper" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-stepper">
+      <button class="van-stepper__minus van-stepper__minus--disabled"></button>
+      <input type="number" value="1" class="van-stepper__input">
+      <button class="van-stepper__plus"></button>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">禁用状态</h2>
+    <div class="van-stepper van-stepper--disabled">
+      <button class="van-stepper__minus van-stepper__minus--disabled"></button>
+      <input type="number" disabled="disabled" value="1" class="van-stepper__input">
+      <button class="van-stepper__plus van-stepper__plus--disabled"></button>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">高级用法</h2>
+    <div class="van-stepper">
+      <button class="van-stepper__minus"></button>
+      <input type="number" value="9" class="van-stepper__input">
+      <button class="van-stepper__plus"></button>
+    </div>
+  </section>
+</section>
+`;

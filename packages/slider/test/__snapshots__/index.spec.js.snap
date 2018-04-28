@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders slider correctly 1`] = `
+<section class="van-doc-demo-section demo-slider" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基本用法</h2>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">指定选择范围</h2>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">禁用</h2>
+    <div class="van-slider van-slider--disabled">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">指定步长</h2>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:4px;"><span class="van-slider__button"></span></div>
+    </div>
+  </section>
+</section>
+`;

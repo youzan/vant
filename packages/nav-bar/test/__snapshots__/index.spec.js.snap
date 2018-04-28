@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders nav-bar correctly 1`] = `
+<section class="van-doc-demo-section demo-nav-bar" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-hairline--bottom van-nav-bar" style="z-index:1;">
+      <div class="van-nav-bar__left">
+        <i class="van-icon van-icon-arrow van-nav-bar__arrow">
+          <!---->
+        </i> <span class="van-nav-bar__text">返回</span></div>
+      <div class="van-ellipsis van-nav-bar__title">标题</div>
+      <div class="van-nav-bar__right"><span class="van-nav-bar__text">按钮</span></div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">高级用法</h2>
+    <div class="van-hairline--bottom van-nav-bar" style="z-index:1;">
+      <div class="van-nav-bar__left">
+        <i class="van-icon van-icon-arrow van-nav-bar__arrow">
+          <!---->
+        </i> <span class="van-nav-bar__text">返回</span></div>
+      <div class="van-ellipsis van-nav-bar__title">标题</div>
+      <div class="van-nav-bar__right">
+        <i class="van-icon van-icon-search">
+          <!---->
+        </i>
+      </div>
+    </div>
+  </section>
+</section>
+`;

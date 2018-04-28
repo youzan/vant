@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders tab correctly 1`] = `
+<section class="van-doc-demo-section demo-tab" style="background:undefined;">
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">横向滚动</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+        <div class="van-tab__pane">
+          内容 5
+        </div>
+        <div class="van-tab__pane">
+          内容 6
+        </div>
+        <div class="van-tab__pane">
+          内容 7
+        </div>
+        <div class="van-tab__pane">
+          内容 8
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">禁用标签</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">样式风格</h2>
+    <div class="van-tabs van-tabs--card">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top">
+        <div class="van-tabs__nav van-tabs__nav--card">
+          <!---->
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">点击事件</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">粘性布局</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">自定义标签</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="van-doc-demo-block">
+    <h2 class="van-doc-demo-block__title">滑动切换</h2>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__nav-bar"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane van-tab__pane--select">
+          内容 1
+        </div>
+        <div class="van-tab__pane">
+          内容 2
+        </div>
+        <div class="van-tab__pane">
+          内容 3
+        </div>
+        <div class="van-tab__pane">
+          内容 4
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+`;
