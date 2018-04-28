@@ -10,6 +10,7 @@
       :value="currentValue"
       :disabled="disabled || disableInput"
       @input="onInput"
+      @keypress="onKeypress"
     >
     <button
       :class="b('plus', { disabled: plusDisabled })"
@@ -26,6 +27,7 @@ export default create({
 
   props: {
     value: {},
+    interger: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
     min: {
@@ -88,14 +90,9 @@ export default create({
 
   methods: {
     correctValue(value) {
-      if (Number.isNaN(value)) {
-        value = this.min;
-      } else {
-        value = Math.max(this.min, value);
-        value = Math.min(this.max, value);
-      }
-
-      return value;
+      return Number.isNaN(value)
+        ? this.min
+        : Math.max(this.min, Math.min(this.max, value));
     },
 
     onInput(event) {
@@ -116,6 +113,12 @@ export default create({
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
       this.emitInput();
       this.$emit(type);
+    },
+
+    onKeypress(event) {
+      if (this.interger && event.keyCode === 46) {
+        event.preventDefault();
+      }
     },
 
     emitInput() {

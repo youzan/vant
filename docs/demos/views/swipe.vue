@@ -25,6 +25,15 @@
         <van-swipe-item>4</van-swipe-item>
       </van-swipe>
     </demo-block>
+
+    <demo-block :title="$t('title4')">
+      <van-swipe :autoplay="3000" vertical>
+        <van-swipe-item>1</van-swipe-item>
+        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>3</van-swipe-item>
+        <van-swipe-item>4</van-swipe-item>
+      </van-swipe>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -34,11 +43,13 @@ export default {
     'zh-CN': {
       title2: '图片懒加载',
       title3: '监听 change 事件',
+      title4: '纵向滚动',
       message: '当前 Swipe 索引：'
     },
     'en-US': {
       title2: 'Image Lazyload',
       title3: 'Change Event',
+      title4: 'Vertical Scrolling',
       message: 'Current Swipe index:'
     }
   },
@@ -68,6 +79,7 @@ export default {
 
   .van-swipe {
     cursor: pointer;
+    height: 140px;
 
     &-item {
       color: #fff;
