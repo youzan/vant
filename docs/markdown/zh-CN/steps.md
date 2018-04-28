@@ -24,7 +24,7 @@ Vue.use(Step).use(Steps);
 export default {
   data() {
     return {
-      active: 0
+      active: 1
     };
   }
 }

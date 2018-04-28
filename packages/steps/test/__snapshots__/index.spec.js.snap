@@ -7,19 +7,19 @@ exports[`renders steps correctly 1`] = `
     <div class="van-steps van-steps--horizontal">
       <!---->
       <div class="van-steps__items van-steps__items--alone">
+        <div class="van-hairline van-step van-step--horizontal van-step--finish">
+          <div class="van-step__title">买家下单</div>
+          <div class="van-step__circle-container">
+            <i class="van-step__circle"></i>
+          </div>
+          <div class="van-step__line"></div>
+        </div>
         <div class="van-hairline van-step van-step--horizontal van-step--process">
-          <div class="van-step__title" style="color:#06bf04;">买家下单</div>
+          <div class="van-step__title" style="color:#06bf04;">商家接单</div>
           <div class="van-step__circle-container">
             <i class="van-icon van-icon-checked" style="color:#06bf04;">
               <!---->
             </i>
-          </div>
-          <div class="van-step__line"></div>
-        </div>
-        <div class="van-hairline van-step van-step--horizontal">
-          <div class="van-step__title">商家接单</div>
-          <div class="van-step__circle-container">
-            <i class="van-step__circle"></i>
           </div>
           <div class="van-step__line"></div>
         </div>
@@ -57,19 +57,19 @@ exports[`renders steps correctly 1`] = `
         </div>
       </div>
       <div class="van-steps__items">
+        <div class="van-hairline van-step van-step--horizontal van-step--finish">
+          <div class="van-step__title">买家下单</div>
+          <div class="van-step__circle-container">
+            <i class="van-step__circle"></i>
+          </div>
+          <div class="van-step__line"></div>
+        </div>
         <div class="van-hairline van-step van-step--horizontal van-step--process">
-          <div class="van-step__title" style="color:#06bf04;">买家下单</div>
+          <div class="van-step__title" style="color:#06bf04;">商家接单</div>
           <div class="van-step__circle-container">
             <i class="van-icon van-icon-checked" style="color:#06bf04;">
               <!---->
             </i>
-          </div>
-          <div class="van-step__line"></div>
-        </div>
-        <div class="van-hairline van-step van-step--horizontal">
-          <div class="van-step__title">商家接单</div>
-          <div class="van-step__circle-container">
-            <i class="van-step__circle"></i>
           </div>
           <div class="van-step__line"></div>
         </div>
