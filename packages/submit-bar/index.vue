@@ -12,7 +12,7 @@
           <span :class="b('price-decimal')">{{ priceDecimal }}</span>
         </template>
       </div>
-      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">
+      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="$emit('submit')">
         {{ loading ? '' : buttonText }}
       </van-button>
     </div>
@@ -58,14 +58,6 @@ export default create({
     priceDecimal() {
       const decimal = Math.floor(this.price % 100);
       return (decimal < 10 ? '0' : '') + decimal;
-    }
-  },
-
-  methods: {
-    onSubmit() {
-      if (!this.disabled && !this.loading) {
-        this.$emit('submit');
-      }
     }
   }
 });
