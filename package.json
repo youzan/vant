@@ -127,7 +127,11 @@
       "<rootDir>/node_modules/jest-serializer-vue"
     ],
     "collectCoverageFrom": [
-      "packages/**/*.{js,vue}"
+      "packages/**/*.{js,vue}",
+      "!**/vant-css/**",
+      "!**/locale/lang/**",
+      "!**/waterfall/**",
+      "!**/lazyload/**"
     ],
     "collectCoverage": true,
     "coverageReporters": [
