@@ -33,8 +33,7 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">28</li>
-            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">29</li>
             <li class="van-ellipsis van-picker-column__item">30</li>
           </ul>
         </div>
@@ -174,8 +173,7 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">28</li>
-            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">29</li>
             <li class="van-ellipsis van-picker-column__item">30</li>
           </ul>
         </div>

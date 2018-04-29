@@ -21,5 +21,6 @@ test('callback events', () => {
 
   expect(callback.mock.calls.length).toBe(1);
   expect(wrapper.emitted('cancel')).toBeTruthy();
+  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
   expect(wrapper.html()).toMatchSnapshot();
 });

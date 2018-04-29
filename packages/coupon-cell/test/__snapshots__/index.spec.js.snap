@@ -81,7 +81,7 @@ exports[`renders coupon correctly 1`] = `
             <div class="van-coupon-item__head">
               <div class="van-coupon-item__lines"></div>
               <div class="van-coupon-item__gradient">
-                <h2>8.8折</h2>
+                <h2>1折</h2>
                 <p>满0.50元可用</p>
               </div>
             </div>
