@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`empty list 1`] = `
+<div class="van-tree-select" style="height: 0px;">
+  <div class="van-tree-select__nav"></div>
+  <div class="van-tree-select__content" style="height: 0px;"></div>
+</div>
+`;
+
 exports[`renders tree-select correctly 1`] = `
 <section class="van-doc-demo-section demo-tree-select" style="background:undefined;">
   <section class="van-doc-demo-block">
