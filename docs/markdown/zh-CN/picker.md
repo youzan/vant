@@ -58,7 +58,7 @@ export default {
 ```html
 <van-picker
   show-toolbar
-  :title="标题"
+  title="标题"
   :columns="columns"
   @cancel="onCancel"
   @confirm="onConfirm"
