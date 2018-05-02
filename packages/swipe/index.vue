@@ -17,9 +17,13 @@
     </div>
     <div
       v-if="showIndicators && count > 1"
-      :class="b('indicators')"
+      :class="b(indicatorsClass)"
     >
-      <i v-for="index in count" :class="b('indicator', { active: index - 1 === activeIndicator })" />
+      <i
+        v-for="index in count"
+        :key="index"
+        :class="b('indicator', { active: index - 1 === activeIndicator })"
+      />
     </div>
   </div>
 </template>
@@ -35,6 +39,7 @@ export default create({
 
   props: {
     autoplay: Number,
+    vertical: Boolean,
     loop: {
       type: Boolean,
       default: true
@@ -56,11 +61,13 @@ export default create({
   data() {
     return {
       width: 0,
+      height: 0,
       offset: 0,
       startX: 0,
       startY: 0,
       active: 0,
       deltaX: 0,
+      deltaY: 0,
       swipes: [],
       direction: '',
       currentDuration: 0
@@ -97,16 +104,33 @@ export default create({
     },
 
     trackStyle() {
-      return {
-        paddingLeft: this.width + 'px',
-        width: (this.count + 2) * this.width + 'px',
-        transitionDuration: `${this.currentDuration}ms`,
-        transform: `translate(${this.offset}px, 0)`
+      const sizeKey = this.vertical ? 'height' : 'width';
+
+      const style = {
+        [this.vertical ? 'paddingTop' : 'paddingLeft']: `${this[sizeKey]}px`,
+        [sizeKey]: `${(this.count + 2) * this[sizeKey]}px`,
+        transitionDuration: `${this.currentDuration}ms`
       };
+
+      if (this.vertical) {
+        style.transform = `translate(0, ${this.offset}px)`;
+      } else {
+        style.transform = `translate(${this.offset}px, 0)`;
+      }
+
+      return style;
+    },
+
+    indicatorsClass() {
+      return this.vertical ? 'indicators--vertical' : 'indicators';
     },
 
     activeIndicator() {
       return (this.active + this.count) % this.count;
+    },
+
+    size() {
+      return this.vertical ? this.height : this.width;
     }
   },
 
@@ -114,10 +138,10 @@ export default create({
     initialize() {
       // reset offset when children changes
       clearTimeout(this.timer);
-      this.width = this.$el.getBoundingClientRect().width;
+      ({ width: this.width, height: this.height } = this.$el.getBoundingClientRect());
       this.active = this.initialSwipe;
       this.currentDuration = 0;
-      this.offset = this.count > 1 ? -this.width * (this.active + 1) : 0;
+      this.offset = this.count > 1 ? -this.size * (this.active + 1) : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });
@@ -139,25 +163,41 @@ export default create({
     },
 
     onTouchMove(event) {
+      const delta = this.vertical ? this.deltaY : this.deltaX;
+
       this.touchMove(event);
 
-      if (this.direction === 'horizontal') {
+      if (this.vertical && this.direction === 'vertical') {
         event.preventDefault();
         event.stopPropagation();
-        this.move(0, this.range(this.deltaX, [-this.width, this.width]));
+      } else if (this.direction === 'horizontal') {
+        event.preventDefault();
+        event.stopPropagation();
       }
+
+      this.move(0, this.range(delta, [-this.size, this.size]));
+      this.move(0, this.range(delta, [-this.size, this.size]));
     },
 
     onTouchEnd() {
-      if (this.deltaX) {
-        this.move(this.offsetX > 50 ? (this.deltaX > 0 ? -1 : 1) : 0);
+      const { deltaX, deltaY } = this;
+
+      if (deltaX) {
+        this.move(this.offsetX > 50 ? (deltaX > 0 ? -1 : 1) : 0);
         this.currentDuration = this.duration;
       }
+
+      if (deltaY) {
+        this.move(this.offsetY > 50 ? (deltaY > 0 ? -1 : 1) : 0);
+        this.currentDuration = this.duration;
+      }
+
       this.autoPlay();
     },
 
     move(move = 0, offset = 0) {
-      const { active, count, swipes, deltaX, width } = this;
+      const { active, count, swipes } = this;
+      const delta = this.vertical ? this.deltaY : this.deltaX;
 
       if (
         !this.loop &&
@@ -171,17 +211,17 @@ export default create({
         if (active === -1) {
           swipes[count - 1].offset = 0;
         }
-        swipes[0].offset = active === count - 1 && move > 0 ? count * width : 0;
+        swipes[0].offset = active === count - 1 && move > 0 ? count * this.size : 0;
 
         this.active += move;
       } else {
         if (active === 0) {
-          swipes[count - 1].offset = deltaX > 0 ? -count * width : 0;
+          swipes[count - 1].offset = delta > 0 ? -count * this.size : 0;
         } else if (active === count - 1) {
-          swipes[0].offset = deltaX < 0 ? count * width : 0;
+          swipes[0].offset = delta < 0 ? count * this.size : 0;
         }
       }
-      this.offset = offset - (this.active + 1) * this.width;
+      this.offset = offset - (this.active + 1) * this.size;
     },
 
     autoPlay() {

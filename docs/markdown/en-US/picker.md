@@ -56,7 +56,7 @@ export default {
 ```html
 <van-picker
   show-toolbar
-  :title="Title"
+  title="Title"
   :columns="columns"
   @cancel="onCancel"
   @confirm="onConfirm"

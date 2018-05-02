@@ -138,7 +138,7 @@ module.exports = {
               },
               {
                 path: '/slider',
-                title: 'Slider - 滑块'
+                title: 'Slider -   滑块'
               },
               {
                 path: '/stepper',
