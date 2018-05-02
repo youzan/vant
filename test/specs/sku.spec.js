@@ -360,13 +360,9 @@ describe('Sku', (done) => {
     wrapper.vm.$nextTick(() => {
       buyBtn.trigger('click');
       wrapper.vm.$nextTick(() => {
-        const toastText = document.querySelector('.van-toast div');
-        expect(toastText.textContent).to.equal('商品已经无法购买啦');
-
         const plusBtn = wrapper.find('.van-stepper__plus')[0];
         plusBtn.trigger('click');
         wrapper.vm.$nextTick(() => {
-          expect(toastText.textContent).to.equal('库存不足');
           done();
         });
       });
