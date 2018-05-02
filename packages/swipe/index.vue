@@ -44,6 +44,10 @@ export default create({
       type: Boolean,
       default: true
     },
+    touchable: {
+      type: Boolean,
+      default: true
+    },
     initialSwipe: {
       type: Number,
       default: 0
@@ -149,6 +153,8 @@ export default create({
     },
 
     onTouchStart(event) {
+      if (!this.touchable) return;
+
       clearTimeout(this.timer);
 
       this.currentDuration = 0;
@@ -163,6 +169,8 @@ export default create({
     },
 
     onTouchMove(event) {
+      if (!this.touchable) return;
+
       const delta = this.vertical ? this.deltaY : this.deltaX;
 
       this.touchMove(event);
@@ -180,6 +188,8 @@ export default create({
     },
 
     onTouchEnd() {
+      if (!this.touchable) return;
+
       const { deltaX, deltaY } = this;
 
       if (deltaX) {
