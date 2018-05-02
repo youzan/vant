@@ -12,17 +12,6 @@ describe('Search', () => {
     wrapper = mount(Search);
 
     expect(wrapper.hasClass('van-search')).to.be.true;
-    expect(wrapper.data().focusStatus).to.be.false;
-    expect(wrapper.data().isFocus).to.be.false;
-  });
-
-  it('focus on input', () => {
-    wrapper = mount(Search);
-
-    const input = wrapper.find('.van-search__input')[0];
-    input.trigger('focus');
-
-    expect(wrapper.data().isFocus).to.be.true;
   });
 
   it('create a search with searchText', (done) => {
@@ -33,7 +22,7 @@ describe('Search', () => {
     });
 
     wrapper.vm.$nextTick(() => {
-      const input = wrapper.find('.van-search__input')[0];
+      const input = wrapper.find('input')[0];
       expect(input.element.value === 'search text').to.be.true;
       done();
     });
@@ -42,7 +31,7 @@ describe('Search', () => {
   it('emit input event', () => {
     wrapper = mount(Search);
 
-    const input = wrapper.find('.van-search__input')[0];
+    const input = wrapper.find('input')[0];
     const eventStub = sinon.stub(wrapper.vm, '$emit');
     input.trigger('input', { target: { value: 'search' }});
 
@@ -65,14 +54,13 @@ describe('Search', () => {
       inputSpy();
     });
 
-    const input = wrapper.find('.van-search__input')[0];
+    const input = wrapper.find('input')[0];
     input.trigger('focus');
 
-    const cleanBtn = wrapper.find('.van-icon-clear')[0];
-    cleanBtn.trigger('click');
+    const cleanBtn = wrapper.find('.van-field__icon')[0];
+    cleanBtn.trigger('touchstart');
 
     wrapper.vm.$nextTick(() => {
-      expect(focusSpy.calledOnce).to.be.true;
       expect(inputSpy.calledOnce).to.be.true;
       expect(value).to.equal('');
       done();
@@ -91,8 +79,6 @@ describe('Search', () => {
     cancelBtn.trigger('click');
 
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.vm.focusStatus).to.be.false;
-      expect(wrapper.vm.isFocus).to.be.false;
       expect(eventStub.calledTwice).to.be.true;
       expect(eventStub.calledWith('input'));
       expect(eventStub.calledWith('change'));
@@ -106,7 +92,7 @@ describe('Search', () => {
     const searchSpy = sinon.spy();
     wrapper.vm.$on('search', searchSpy);
 
-    const input = wrapper.find('.van-search__input')[0];
+    const input = wrapper.find('input')[0];
     input.trigger('keypress.enter');
     expect(searchSpy.calledOnce).to.be.true;
 
@@ -114,19 +100,5 @@ describe('Search', () => {
     wrapper.vm.$on('keypress', keypressSpy);
     input.trigger('keypress.a');
     expect(keypressSpy.calledOnce).to.be.true;
-  });
-
-  it('blur after click outside', () => {
-    wrapper = mount(Search);
-
-    const input = wrapper.find('.van-search__input')[0];
-    input.trigger('focus');
-
-    expect(wrapper.vm.isFocus).to.be.true;
-
-    const body = document.body;
-    body.click();
-    expect(wrapper.vm.isFocus).to.be.false;
-    expect(wrapper.vm.focusStatus).to.be.false;
   });
 });
