@@ -1,6 +1,6 @@
 <template>
   <div :class="b('pane', { select: index === parent.curActive })">
-    <slot />
+    <slot v-if="index === parent.curActive" />
   </div>
 </template>
 
