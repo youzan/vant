@@ -7,7 +7,7 @@
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <swipe :initial-swipe="startPosition">
+    <swipe :initial-swipe="startPosition" ref="swipe">
       <swipe-item v-for="(item, index) in images" :key="index">
         <img :class="b('image')" :src="item" >
       </swipe-item>
@@ -58,9 +58,12 @@ export default create({
 
     onTouchEnd(event) {
       event.preventDefault();
-      // prevent long tap to close component
+
       const deltaTime = new Date() - this.touchStartTime;
-      if (deltaTime < 100 && this.offsetX < 20 && this.offsetY < 20) {
+      const { offsetX, offsetY } = this.$refs.swipe;
+
+      // prevent long tap to close component
+      if (deltaTime < 100 && offsetX < 20 && offsetY < 20) {
         this.$emit('input', false);
       }
     }
