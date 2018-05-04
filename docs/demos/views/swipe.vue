@@ -27,7 +27,7 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-swipe :autoplay="3000" vertical>
+      <van-swipe :autoplay="3000" vertical class="demo-swipe--vertical">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -79,11 +79,9 @@ export default {
 
   .van-swipe {
     cursor: pointer;
-    height: 140px;
 
     &-item {
       color: #fff;
-      min-height: 140px;
       font-size: 20px;
       text-align: center;
       line-height: 150px;
@@ -105,6 +103,14 @@ export default {
       box-sizing: border-box;
       background-color: #fff;
       pointer-events: none;
+    }
+  }
+
+  &--vertical {
+    height: 200px;
+
+    .van-swipe-item {
+      line-height: 200px;
     }
   }
 }
