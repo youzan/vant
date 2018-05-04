@@ -3,7 +3,6 @@
     v-show="value"
     :class="b()"
     @touchstart="onTouchStart"
-    @touchmove.prevent="touchMove"
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
@@ -20,12 +19,11 @@ import create from '../utils/create';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
-import Touch from '../mixins/touch';
 
 export default create({
   name: 'image-preview',
 
-  mixins: [Popup, Touch],
+  mixins: [Popup],
 
   components: {
     Swipe,
@@ -51,9 +49,8 @@ export default create({
   },
 
   methods: {
-    onTouchStart(event) {
+    onTouchStart() {
       this.touchStartTime = new Date();
-      this.touchStart(event);
     },
 
     onTouchEnd(event) {
