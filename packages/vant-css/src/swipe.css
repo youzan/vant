@@ -13,29 +13,30 @@ $van-swipe-indicator: 6px;
 
   &__track {
     height: 100%;
-    overflow: hidden;
   }
 
   &__indicators {
+    display: flex;
     position: absolute;
     left: 50%;
     bottom: 10px;
-    height: $van-swipe-indicator;
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-50%);
 
     &--vertical {
-      position: absolute;
       left: 10px;
       top: 50%;
-      width: $van-swipe-indicator;
-      transform: translate3d(0, -50%, 0);
+      bottom: auto;
+      flex-direction: column;
+      transform: translateY(-50%);
+
+      .van-swipe__indicator:not(:last-child) {
+        margin-bottom: $van-swipe-indicator;
+      }
     }
   }
 
   &__indicator {
     border-radius: 100%;
-    vertical-align: top;
-    display: inline-block;
     background-color: $gray-dark;
     width: $van-swipe-indicator;
     height: $van-swipe-indicator;
