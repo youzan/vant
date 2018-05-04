@@ -1,5 +1,24 @@
 ## Changelog
 
+### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+`2018-05-04`
+
+**Improvements**
+
+* Contact: optimize background image [\#972](https://github.com/youzan/vant/pull/972) [@chenjiahan](https://github.com/chenjiahan)
+* List: add loading-text prop [\#948](https://github.com/youzan/vant/pull/948) [@rex-zsd](https://github.com/rex-zsd)
+* Swipe: optimzie performance [\#985](https://github.com/youzan/vant/pull/985) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: add touchable prop [\#975](https://github.com/youzan/vant/pull/975) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: support vertical mode [\#938](https://github.com/youzan/vant/pull/938) [@jerryni](https://github.com/jerryni)
+* Slider: expand touch area [\#977](https://github.com/youzan/vant/pull/977) [@chenjiahan](https://github.com/chenjiahan)
+* Stepper: add interger prop [\#951](https://github.com/youzan/vant/pull/951) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: add line-width prop [\#988](https://github.com/youzan/vant/pull/988) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix ImagePreview offset calc error [\#980](https://github.com/youzan/vant/pull/980) [@jerryni](https://github.com/jerryni)
+* fix Search incomplete text display in iOS [\#974](https://github.com/youzan/vant/pull/974) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
 `2018-04-25`
 
