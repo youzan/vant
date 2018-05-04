@@ -1,5 +1,57 @@
 ## 更新日志
 
+## [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1) (2018-05-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.0...v1.1.1)
+
+**Bug Fixes**
+
+- dialog ts error [\#917](https://github.com/youzan/vant/issues/917)
+- popup 重大bug [\#911](https://github.com/youzan/vant/issues/911)
+- van-uploader弹出选择图片，点击完图片没有反应 [\#910](https://github.com/youzan/vant/issues/910)
+- picker 选择器在IOS设备上选中偏移 [\#907](https://github.com/youzan/vant/issues/907)
+
+**Issue**
+
+- dialog的高级用法能不能给一个完整的实例,文档看的一脸懵逼 [\#987](https://github.com/youzan/vant/issues/987)
+- mpvue 中引入 vant 不生效 [\#983](https://github.com/youzan/vant/issues/983)
+- AddressEdit 地址编辑 默认收件地区 [\#982](https://github.com/youzan/vant/issues/982)
+- List组件的一个BUG [\#976](https://github.com/youzan/vant/issues/976)
+- tab标签页，滑动切换 怎么监听滑动切换的事件 ， 比如滑动到了第几个模块， 有没有相应的事件？ [\#973](https://github.com/youzan/vant/issues/973)
+- GoodsAction 商品页行动点 bug问题 [\#964](https://github.com/youzan/vant/issues/964)
+- iPhoneX路由带参跳转需要按两遍以上才能跳转 [\#962](https://github.com/youzan/vant/issues/962)
+- van-address-edit 里的省市区不能绑定值，每次都要重选 [\#961](https://github.com/youzan/vant/issues/961)
+- List 选项卡切换后 无法加载 [\#959](https://github.com/youzan/vant/issues/959)
+- 请问是否可以自定义swiper的宽度？ [\#958](https://github.com/youzan/vant/issues/958)
+- 为什的组件的css不能写在.vue文件里面？ [\#957](https://github.com/youzan/vant/issues/957)
+- 你好，我打算用这个也淘宝的flexible，做适配，vue项目，但是这个应该怎么适配呢 [\#955](https://github.com/youzan/vant/issues/955)
+- 打包和按需加载的实现 [\#953](https://github.com/youzan/vant/issues/953)
+- 请问search组件打开键盘的时候如何默认数字键 [\#952](https://github.com/youzan/vant/issues/952)
+- 建议加入下拉组件 [\#950](https://github.com/youzan/vant/issues/950)
+- 与vw适配不兼容 [\#949](https://github.com/youzan/vant/issues/949)
+- list 的loading text 加载中 文字如何设置 ？ [\#947](https://github.com/youzan/vant/issues/947)
+- 希望增加一个类似微信朋友圈的“全文、收起”的组件 [\#946](https://github.com/youzan/vant/issues/946)
+- picker多列联动，获取数据后再绑定出错 [\#945](https://github.com/youzan/vant/issues/945)
+- Coupon组件超过屏幕高度的时候不会出现滚动条 [\#943](https://github.com/youzan/vant/issues/943)
+- slider 2个重大BUG。 [\#942](https://github.com/youzan/vant/issues/942)
+-  CouponList组件disabled-doupons参数无效 [\#939](https://github.com/youzan/vant/issues/939)
+- list组件load重复加载问题 [\#933](https://github.com/youzan/vant/issues/933)
+- PullRefresh 触发机制 [\#922](https://github.com/youzan/vant/issues/922)
+
+**Improvements**
+
+- \[Improvement\] Tab: add line-width prop [\#988](https://github.com/youzan/vant/pull/988) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] ImagePreview: remove unused code [\#986](https://github.com/youzan/vant/pull/986) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Swipe: optimzie performance [\#985](https://github.com/youzan/vant/pull/985) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] ImagePreview offset empty [\#980](https://github.com/youzan/vant/pull/980) ([jerryni](https://github.com/jerryni))
+- \[Improvement\] Slider: expand touch area [\#977](https://github.com/youzan/vant/pull/977) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Swipe: add touchable prop [\#975](https://github.com/youzan/vant/pull/975) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Search: incomplete text display in iOS [\#974](https://github.com/youzan/vant/pull/974) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Contact: optimize background image [\#972](https://github.com/youzan/vant/pull/972) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fixed a bug in picker doc [\#970](https://github.com/youzan/vant/pull/970) ([Plortinus](https://github.com/Plortinus))
+- \[Improvement\] Stepper: add interger prop [\#951](https://github.com/youzan/vant/pull/951) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] List: loading-text support [\#948](https://github.com/youzan/vant/pull/948) ([rex-zsd](https://github.com/rex-zsd))
+- \[new feature\] \#734 swipe组件支持垂直滚动 [\#938](https://github.com/youzan/vant/pull/938) ([jerryni](https://github.com/jerryni))
+
 ## [v1.1.0](https://github.com/youzan/vant/tree/v1.1.0) (2018-04-25)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.8...v1.1.0)
 
@@ -61,7 +113,6 @@
 **Bug Fixes**
 
 - Bug：Popup弹出层 滚动穿透至父层 [\#833](https://github.com/youzan/vant/issues/833)
-- The value that is returned by change event of Datetime-picker is somtimes wrong. [\#742](https://github.com/youzan/vant/issues/742)
 
 **Issue**
 
@@ -195,9 +246,6 @@
 - Error in render: "TypeError: Cannot read property 'undefined' of undefined" [\#776](https://github.com/youzan/vant/issues/776)
 - collapse的一些问题，vant版本是0.12.3 [\#775](https://github.com/youzan/vant/issues/775)
 - Toast.clear\(\); 后背景蒙层依然存在 [\#767](https://github.com/youzan/vant/issues/767)
-- nuxt配置base.css引入报错 [\#765](https://github.com/youzan/vant/issues/765)
-- 希望Field组件能像mint-ui里面的Field直接在innerHtml里面加组件来显示验证码或者发送验证码的按钮 [\#760](https://github.com/youzan/vant/issues/760)
-- picker和area建议 [\#756](https://github.com/youzan/vant/issues/756)
 
 **Improvements**
 
@@ -223,17 +271,6 @@
 
 - 优惠券选择器，优惠券多的话，超出屏幕无法拖动 [\#769](https://github.com/youzan/vant/issues/769)
 - sku组件，在ios上面输入购买数量软键盘抬起的时候，有横向滚动条，希望给个解决思路 [\#768](https://github.com/youzan/vant/issues/768)
-- 能否增加表单校验？ [\#764](https://github.com/youzan/vant/issues/764)
-- 希望加个滚动组件，类似于iscroll [\#763](https://github.com/youzan/vant/issues/763)
-- 关于Tab组件的点击事件 [\#758](https://github.com/youzan/vant/issues/758)
-- 定制主题  本地编译的时候报错 [\#755](https://github.com/youzan/vant/issues/755)
-- area 组件导入官方给mock的城市列表报错 [\#753](https://github.com/youzan/vant/issues/753)
-- Use babel-plugin-import报错 [\#750](https://github.com/youzan/vant/issues/750)
-- 只有下拉加载 有没有上拉加载组件呢？ [\#746](https://github.com/youzan/vant/issues/746)
-- 编辑地址时，不能默认地址v1.0.1，上个版本还是可以的 [\#743](https://github.com/youzan/vant/issues/743)
-- 「只有一个sku规格值时默认选中」逻辑问题 [\#738](https://github.com/youzan/vant/issues/738)
-- 我想进微信交流群 [\#729](https://github.com/youzan/vant/issues/729)
-- Toast组件实例化时mask先是显示header下面 然后再覆盖整个屏幕 [\#726](https://github.com/youzan/vant/issues/726)
 
 **Improvements**
 
@@ -242,46 +279,12 @@
 - \[Improvement\] Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) ([chenjiahan](https://github.com/chenjiahan))
 -  \[Improvement\] Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) ([chenjiahan](https://github.com/chenjiahan))
 - \[Doc\] fix picker demo [\#766](https://github.com/youzan/vant/pull/766) ([erniu](https://github.com/erniu))
-- \[bugfix\] Toast: mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2) (2018-03-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.1...v1.0.2)
 
-**Issue**
-
-- Checkbox组件change事件触发不了 [\#745](https://github.com/youzan/vant/issues/745)
-- Tabs组件，swipeable属性问题 [\#741](https://github.com/youzan/vant/issues/741)
-- List 列表加载更多问题 [\#735](https://github.com/youzan/vant/issues/735)
-- 按照文档中的来，图标引入出错 [\#731](https://github.com/youzan/vant/issues/731)
-- Collapse 还是不能用 [\#730](https://github.com/youzan/vant/issues/730)
-- 使用Tabbar组件时自定义图标，通过webpack工具如何使用本地路径？ [\#727](https://github.com/youzan/vant/issues/727)
-
-**Improvements**
-
-- \[Doc\] add custom Icon directions [\#754](https://github.com/youzan/vant/pull/754) ([qianzhaoy](https://github.com/qianzhaoy))
-- \[bugfix\] 修复sku默认选中逻辑与sku是否选中的判断逻辑 [\#752](https://github.com/youzan/vant/pull/752) ([w91](https://github.com/w91))
-- \[bugfix\] List: should not trigger load event when hidden [\#751](https://github.com/youzan/vant/pull/751) ([chenjiahan](https://github.com/chenjiahan))
-- \[bug fix\] Tabs: fix tab content not trigger click event [\#749](https://github.com/youzan/vant/pull/749) ([cookfront](https://github.com/cookfront))
-- \[bugfix\] AddressEdit: should auto select area when created [\#748](https://github.com/youzan/vant/pull/748) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] DatetimePicker: improve documentation [\#747](https://github.com/youzan/vant/pull/747) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] NavBar: remove top border [\#744](https://github.com/youzan/vant/pull/744) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Toast: overlay blocked by other element [\#740](https://github.com/youzan/vant/pull/740) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix component link URL [\#739](https://github.com/youzan/vant/pull/739) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] NoticeBar:Adjust padding [\#737](https://github.com/youzan/vant/pull/737) ([skylinety](https://github.com/skylinety))
-- Feature/new type and show toolbar timepicker [\#736](https://github.com/youzan/vant/pull/736) ([zz1211](https://github.com/zz1211))
-
 ## [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1) (2018-03-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.0...v1.0.1)
-
-**Issue**
-
-- Tabs 标签组件 滑动切换问题 [\#725](https://github.com/youzan/vant/issues/725)
-- 在引入Toast后没使用会页面上会出现一个黑块 [\#724](https://github.com/youzan/vant/issues/724)
-
-**Improvements**
-
-- \[bugfix\] module circular dependency [\#728](https://github.com/youzan/vant/pull/728) ([chenjiahan](https://github.com/chenjiahan))
 
 
 
