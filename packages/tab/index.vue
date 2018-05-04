@@ -20,6 +20,12 @@ export default create({
     disabled: Boolean
   },
 
+  data() {
+    return {
+      slotInited: false
+    };
+  },
+
   computed: {
     index() {
       return this.parent.tabs.indexOf(this);
@@ -30,15 +36,11 @@ export default create({
     }
   },
 
-  data() {
-    return {
-      slotInited: false
-    };
-  },
-
-  updated() {
-    if (this.isSelected) {
-      this.slotInited = true;
+  watch: {
+    'parent.curActive'() {
+      if (this.isSelected) {
+        this.slotInited = true;
+      }
     }
   },
 
