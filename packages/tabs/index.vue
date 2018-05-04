@@ -205,7 +205,7 @@ export default create({
 
         this.lineStyle = {
           width: `${width}px`,
-          transform: `translate(${left}px, 0)`,
+          transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
       });
