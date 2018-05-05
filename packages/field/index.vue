@@ -2,6 +2,7 @@
   <cell
     :title="label"
     :center="center"
+    :border="border"
     :required="required"
     :class="b({
       error,

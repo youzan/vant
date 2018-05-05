@@ -7,6 +7,7 @@
       :value="value"
       type="search"
       icon="clear"
+      :border="false"
       @click-icon="$emit('input', '')"
     />
     <div v-if="showAction" :class="b('action')" >
