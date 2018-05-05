@@ -1,5 +1,5 @@
 <template>
-  <div :class="b({ disabled })">
+  <div :class="b()">
     <button
       :class="b('minus', { disabled: minusDisabled })"
       @click="onChange('minus')"
