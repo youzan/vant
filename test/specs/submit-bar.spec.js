@@ -22,7 +22,7 @@ describe('SubmitBar', () => {
     DOMChecker(wrapper, {
       text: {
         '.van-button__text': props.buttonText,
-        '.van-submit-bar__price-interger': '¥30.',
+        '.van-submit-bar__price-integer': '¥30.',
         '.van-submit-bar__price-decimal': '50',
         '.van-submit-bar__tip': props.tip
       }
@@ -41,7 +41,7 @@ describe('SubmitBar', () => {
     DOMChecker(wrapper, {
       text: {
         '.van-button__text': '提交订单',
-        '.van-submit-bar__price-interger': '¥30.',
+        '.van-submit-bar__price-integer': '¥30.',
         '.van-submit-bar__price-decimal': '05',
         '.van-submit-bar__tip': ''
       }

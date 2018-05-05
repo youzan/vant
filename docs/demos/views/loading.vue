@@ -9,11 +9,6 @@
       <van-loading type="spinner" color="black" />
       <van-loading type="spinner" color="white" />
     </demo-block>
-
-    <demo-block :title="$t('title3')">
-      <van-loading type="circle" color="black" />
-      <van-loading type="circle" color="white" />
-    </demo-block>
   </demo-section>
 </template>
 
@@ -22,13 +17,11 @@ export default {
   i18n: {
     'zh-CN': {
       title1: 'Circular',
-      title2: 'Spinner',
-      title3: 'Circle'
+      title2: 'Spinner'
     },
     'en-US': {
       title1: 'Circular',
-      title2: 'Spinner',
-      title3: 'Circle'
+      title2: 'Spinner'
     }
   }
 };

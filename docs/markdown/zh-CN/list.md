@@ -51,13 +51,13 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| loading | 是否显示加载中提示，加载过程中不触发`load`事件 | `Boolean` | `false` | - |
-| finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` | - |
-| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
-| loading-text | 加载中提示文案 | `String` | `加载中...` | - |
-| immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| loading | 是否显示加载中提示，加载过程中不触发`load`事件 | `Boolean` | `false` |
+| finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` |
+| offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` |
+| loading-text | 加载中提示文案 | `String` | `加载中...` |
+| immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` |
 
 ### Event
 

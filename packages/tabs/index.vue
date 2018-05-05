@@ -1,18 +1,16 @@
 <template>
-  <div class="van-tabs" :class="`van-tabs--${type}`">
+  <div :class="b([type])">
     <div
       ref="wrap"
-      class="van-tabs__wrap"
-      :class="[`van-tabs__wrap--${position}`, {
-        'van-tabs--scrollable': scrollable,
-        'van-hairline--top-bottom': type === 'line'
-      }]"
+      :class="[
+        b('wrap', [position, { scrollable }]),
+        { 'van-hairline--top-bottom': type === 'line' }
+      ]"
     >
-      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
-        <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
+      <div :class="b('nav', [type])" ref="nav">
+        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
         <div
           v-for="(tab, index) in tabs"
-          :key="index"
           ref="tabs"
           class="van-tab"
           :class="{
@@ -26,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="van-tabs__content" ref="content">
+    <div :class="b('content')" ref="content">
       <slot />
     </div>
   </div>
@@ -55,6 +53,8 @@ export default create({
 
   props: {
     sticky: Boolean,
+    lineWidth: Number,
+    swipeable: Boolean,
     active: {
       type: [Number, String],
       default: 0
@@ -70,8 +70,7 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
-    },
-    swipeable: Boolean
+    }
   },
 
   data() {
@@ -79,7 +78,7 @@ export default create({
       tabs: [],
       position: 'content-top',
       curActive: 0,
-      navBarStyle: {}
+      lineStyle: {}
     };
   },
 
@@ -99,12 +98,12 @@ export default create({
 
     tabs(tabs) {
       this.correctActive(this.curActive || this.active);
-      this.setNavBar();
+      this.setLine();
     },
 
     curActive() {
       this.scrollIntoView();
-      this.setNavBar();
+      this.setLine();
 
       // scroll to correct position
       if (this.position === 'page-top' || this.position === 'content-bottom') {
@@ -119,7 +118,7 @@ export default create({
 
   mounted() {
     this.correctActive(this.active);
-    this.setNavBar();
+    this.setLine();
 
     this.$nextTick(() => {
       if (this.sticky) {
@@ -155,12 +154,12 @@ export default create({
 
     // whether to bind content swipe listener
     swipeableHandler(init) {
-      const swipeableEl = this.$refs.content;
-
-      (init ? on : off)(swipeableEl, 'touchstart', this.touchStart);
-      (init ? on : off)(swipeableEl, 'touchmove', this.touchMove);
-      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd);
-      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd);
+      const { content } = this.$refs;
+      const action = init ? on : off;
+      action(content, 'touchstart', this.touchStart);
+      action(content, 'touchmove', this.touchMove);
+      action(content, 'touchend', this.onTouchEnd);
+      action(content, 'touchcancel', this.onTouchEnd);
     },
 
     // watch swipe touch end
@@ -194,16 +193,19 @@ export default create({
     },
 
     // update nav bar style
-    setNavBar() {
+    setLine() {
       this.$nextTick(() => {
         if (!this.$refs.tabs) {
           return;
         }
 
         const tab = this.$refs.tabs[this.curActive];
-        this.navBarStyle = {
-          width: `${tab.offsetWidth || 0}px`,
-          transform: `translate(${tab.offsetLeft || 0}px, 0)`,
+        const width = this.lineWidth || tab.offsetWidth;
+        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+
+        this.lineStyle = {
+          width: `${width}px`,
+          transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
       });

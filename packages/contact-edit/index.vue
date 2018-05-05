@@ -1,5 +1,5 @@
 <template>
-  <div class="van-contact-edit">
+  <div :class="b()">
     <cell-group>
       <field
         v-model="data.name"
@@ -18,7 +18,7 @@
         @focus="onFocus('tel')"
       />
     </cell-group>
-    <div class="van-contact-edit__buttons">
+    <div :class="b('buttons')">
       <van-button block :loading="isSaving" @click="onSave" type="primary">{{ $t('save') }}</van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>

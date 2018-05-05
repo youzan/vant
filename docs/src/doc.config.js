@@ -141,6 +141,10 @@ module.exports = {
                 title: 'StarRate - 评分'
               },
               {
+                path: '/slider',
+                title: 'Slider -   滑块'
+              },
+              {
                 path: '/stepper',
                 title: 'Stepper - 步进器'
               },
@@ -433,6 +437,10 @@ module.exports = {
               {
                 path: '/progress',
                 title: 'Progress'
+              },
+              {
+                path: '/slider',
+                title: 'Slider'
               },
               {
                 path: '/stepper',

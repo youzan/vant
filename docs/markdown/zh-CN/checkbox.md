@@ -13,7 +13,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 通过`v-model`绑定 checkbox 的勾选状态
 
 ```html
-<van-checkbox v-model="checked">复选框 1</van-checkbox>
+<van-checkbox v-model="checked">复选框</van-checkbox>
 ```
 
 ```javascript
@@ -29,13 +29,15 @@ export default {
 #### 禁用状态
 
 ```html
-<van-checkbox v-model="checked" disabled>复选框 2</van-checkbox>
+<van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
+
 #### 禁用内容部分点击事件
 
 ```html
-<van-checkbox v-model="checked" label-disabled>复选框 3</van-checkbox>
+<van-checkbox v-model="checked" label-disabled>复选框</van-checkbox>
 ```
+
 #### Checkbox 组
 
 需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
@@ -84,8 +86,8 @@ export default {
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="(item, index) in list" :key="item">
-      <van-checkbox :name="item">复选框 {{ item }}</van-checkbox>
+    <van-cell v-for="item in list" :title="`复选框 ${item}`" :key="item">
+      <van-checkbox :name="item" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -93,21 +95,21 @@ export default {
 
 ### Checkbox API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否为选中状态 | `Boolean` | `false` | - |
-| name | 标识 Checkbox 名称 | 任意类型 | - | - |
-| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
-| label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` | - |
-| shape | 形状 | `String` | `round` | `square` |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 是否为选中状态 | `Boolean` | `false` |
+| name | 标识 Checkbox 名称 | `any` | - |
+| disabled | 是否禁用单选框 | `Boolean` | `false` |
+| label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` |
+| shape | 形状，可选值为 `round` `square` | `String` | `round` |
 
 ### CheckboxGroup API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 所有选中项的 name | `Array` | - | - |
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
-| max | 设置最大可选数 | `Number` | `0`（无限制） | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 所有选中项的 name | `Array` | - |
+| disabled | 是否禁用所有单选框 | `Boolean` | `false` |
+| max | 设置最大可选数 | `Number` | `0`（无限制） |
 
 ### Checkbox Event
 

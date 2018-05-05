@@ -1,5 +1,5 @@
 <template>
-  <cell-group class="van-coupon-cell">
+  <cell-group :class="b()">
     <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
   </cell-group>
 </template>

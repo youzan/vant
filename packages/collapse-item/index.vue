@@ -1,15 +1,14 @@
 <template>
   <div
-    class="van-collapse-item"
-    :class="{
-      'van-hairline--top': index,
-      'van-collapse-item--expanded': expanded
-    }"
+    :class="[
+      b({ expanded }),
+      { 'van-hairline--top': index }
+    ]"
   >
-    <cell class="van-collapse-item__title" is-link @click="onClick">
+    <cell :class="b('title')" is-link @click="onClick">
       <slot name="title">{{ title }}</slot>
     </cell>
-    <div class="van-collapse-item__content" v-show="expanded">
+    <div v-show="expanded" :class="b('content')">
       <slot />
     </div>
   </div>

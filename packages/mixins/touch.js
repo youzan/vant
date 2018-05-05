@@ -16,10 +16,7 @@ export default {
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);
-
-      if (!this.direction) {
-        this.direction = this.offsetX > this.offsetY ? 'horizontal' : this.offsetX < this.offsetY ? 'vertical' : '';
-      }
+      this.direction = this.offsetX > this.offsetY ? 'horizontal' : this.offsetX < this.offsetY ? 'vertical' : '';
     }
   }
 };

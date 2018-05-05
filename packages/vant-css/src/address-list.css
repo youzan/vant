@@ -59,14 +59,12 @@
     bottom: 0;
     z-index: 9999;
     padding-left: 15px;
-
-    .van-cell__text {
-      font-size: 16px;
-    }
+    font-size: 16px;
 
     .van-icon-add {
       color: $blue;
       font-size: 20px;
+      line-height: 1.2;
     }
   }
 }

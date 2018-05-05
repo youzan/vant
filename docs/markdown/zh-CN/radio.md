@@ -2,8 +2,9 @@
 
 ### 使用指南
 ``` javascript
-import { Radio } from 'vant';
+import { RadioGroup, Radio } from 'vant';
 
+Vue.use(RadioGroup);
 Vue.use(Radio);
 ```
 
@@ -45,25 +46,29 @@ export default {
 ```html
 <van-radio-group v-model="radio">
   <van-cell-group>
-    <van-cell><van-radio name="1">单选框 1</van-radio></van-cell>
-    <van-cell><van-radio name="2">单选框 2</van-radio></van-cell>
+    <van-cell :title="单选框 1" clickable @click="radio = '1'">
+      <van-radio name="1" />
+    </van-cell>
+    <van-cell :title="单选框 2" clickable @click="radio = '2'">
+      <van-radio name="2" />
+    </van-cell>
   </van-cell-group>
 </van-radio-group>
 ```
 
 ### Radio API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| name | 唯一标识符 | 任意类型 | - | - |
-| disabled | 是否为禁用状态 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| name | 唯一标识符 | 任意类型 | - |
+| disabled | 是否为禁用状态 | `Boolean` | `false` |
 
 ### RadioGroup API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中项的 name | 任意类型 | - | - |
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 当前选中项的 name | 任意类型 | - |
+| disabled | 是否禁用所有单选框 | `Boolean` | `false` |
 
 ### RadioGroup Event
 

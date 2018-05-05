@@ -37,17 +37,17 @@ Use `position` prop to set popup display position
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Whether to show popup | `Boolean` | `false` | - |
-| overlay | Whether to show overlay | `Boolean` | `true` | - |
-| position | Position | `String` | - | `top` `bottom` `right` `left` |
-| overlay-class | Custom overlay class | `String` | `` | - |
-| overlay-style | Custom overlay style | `Object` | - | - |
-| close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` | - |
-| transition | Transition | `String` | `popup-slide` | - |
-| lock-scroll | Whether to lock background scroll | `Boolean` | `true` | - |
-| get-container | Return the mount node for Popup | `Function` | - | `() => HTMLElement` |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Whether to show popup | `Boolean` | `false` |
+| overlay | Whether to show overlay | `Boolean` | `true` |
+| position | Can be set to `top` `bottom` `right` `left` | `String` | - |
+| overlay-class | Custom overlay class | `String` | `` |
+| overlay-style | Custom overlay style | `Object` | - |
+| close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` |
+| transition | Transition | `String` | `popup-slide` |
+| lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
+| get-container | Return the mount node for Popup | `() => HTMLElement` | - |
 
 ### Event
 

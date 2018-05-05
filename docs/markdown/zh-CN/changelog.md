@@ -1,5 +1,62 @@
 ## 更新日志
 
+### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+`2018-05-04`
+
+**Improvements**
+
+* Contact: 优化背景图 [\#972](https://github.com/youzan/vant/pull/972) [@chenjiahan](https://github.com/chenjiahan)
+* List: 新增 loading-text 属性 [\#948](https://github.com/youzan/vant/pull/948) [@rex-zsd](https://github.com/rex-zsd)
+* Swipe: 优化轮播性能 [\#985](https://github.com/youzan/vant/pull/985) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: 新增 touchable 属性 [\#975](https://github.com/youzan/vant/pull/975) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: 新增 vertical 属性，支持垂直布局 [\#938](https://github.com/youzan/vant/pull/938) [@jerryni](https://github.com/jerryni)
+* Slider: 增加滑动触摸区域 [\#977](https://github.com/youzan/vant/pull/977) [@chenjiahan](https://github.com/chenjiahan)
+* Stepper: 新增 interger 属性 [\#951](https://github.com/youzan/vant/pull/951) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 新增 line-width 属性 [\#988](https://github.com/youzan/vant/pull/988) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 ImagePreview offset 计算错误[\#980](https://github.com/youzan/vant/pull/980) [@jerryni](https://github.com/jerryni)
+* 修复 Search 在 iOS 下文字被遮挡的问题 [\#974](https://github.com/youzan/vant/pull/974) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
+`2018-04-25`
+
+**Improvements**
+
+* 新增 Slider 滑块组件 [\#897](https://github.com/youzan/vant/pull/897) [\#915](https://github.com/youzan/vant/pull/915)  [jerryni](https://github.com/jerryni) [@chenjiahan](https://github.com/chenjiahan)
+* 新增 BEM mixin，规范 BEM 命名格式 [\#921](https://github.com/youzan/vant/pull/921) [\#924](https://github.com/youzan/vant/pull/924) [\#932](https://github.com/youzan/vant/pull/932) [\#934](https://github.com/youzan/vant/pull/934) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: 优化 flex 结构 [\#919](https://github.com/youzan/vant/pull/919) [@chenjiahan](https://github.com/chenjiahan)
+* Panel: 优化结构，使用 Cell 代替部分样式 [\#927](https://github.com/youzan/vant/pull/927) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 升级至 vue-loader@15 [\#937](https://github.com/youzan/vant/pull/937) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 使用 ChromeHeadless 代替 PhantomJS 作为测试运行环境 [\#913](https://github.com/youzan/vant/pull/913) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 使用 MiniCssExtractPlugin 代替 ExtractTextPlugin [\#936](https://github.com/youzan/vant/pull/936) [@chenjiahan](https://github.com/chenjiahan)
+* Build: 增加针对 webpack4 优化的 sideEffects 配置 [\#926](https://github.com/youzan/vant/pull/926) [@chenjiahan](https://github.com/chenjiahan)
+* 文档: 新增 rem 指引 [\#928](https://github.com/youzan/vant/pull/928) [@chenjiahan](https://github.com/chenjiahan)
+* 文档: 移除 Loading circle 类型，不推荐使用 [\#941](https://github.com/youzan/vant/pull/941) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* 修复 Uploader 在安卓下无法上传图片的问题 [\#929](https://github.com/youzan/vant/pull/929) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Checkbox 内容为空时渲染了空 label 元素的问题 [\#920](https://github.com/youzan/vant/pull/920) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Dialog TS 类型定义错误 [\#918](https://github.com/youzan/vant/pull/918) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Popup 多层级关闭时未正确移除 lock-scroll 导致无法滚动的问题 [\#912](https://github.com/youzan/vant/pull/912) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Picker 在系统字体大小缩放时布局错乱的问题 [\#916](https://github.com/youzan/vant/pull/916) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
+`2018-04-20`
+
+**Improvements**
+- 新增 git hook, 提交代码时进行格式校验 [\#883](https://github.com/youzan/vant/pull/883) [@jerryni](https://github.com/jerryni)
+
+**Bug Fixes**
+- 修复构建结果中未完全使用 es module 的问题 [\#885](https://github.com/youzan/vant/pull/885) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Cell 文字垂直不对齐的问题 [\#893](https://github.com/youzan/vant/pull/893) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Field number 类型无法输入负数的问题 [\#889](https://github.com/youzan/vant/pull/889) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Popup lock-scroll 属性在 iOS 下无效的问题 [\#891](https://github.com/youzan/vant/pull/891) [@Tinysymphony](https://github.com/Tinysymphony)
+
+
 ### [1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
 `2018-04-17`
 

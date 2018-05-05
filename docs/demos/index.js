@@ -60,6 +60,7 @@ export default {
   'search': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/search'), 'search')), 'search')),
   'sku': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/sku'), 'sku')), 'sku')),
   'star-rate': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/star-rate'), 'star-rate')), 'star-rate')),
+  'slider': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/slider'), 'slider')), 'slider')),
   'stepper': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/stepper'), 'stepper')), 'stepper')),
   'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps')),
   'submit-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/submit-bar'), 'submit-bar')), 'submit-bar')),

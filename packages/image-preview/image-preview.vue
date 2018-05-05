@@ -1,15 +1,14 @@
 <template>
   <div
     v-show="value"
-    class="van-image-preview"
+    :class="b()"
     @touchstart="onTouchStart"
-    @touchmove.prevent="touchMove"
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <swipe :initial-swipe="startPosition">
+    <swipe :initial-swipe="startPosition" ref="swipe">
       <swipe-item v-for="(item, index) in images" :key="index">
-        <img class="van-image-preview__image" :src="item" >
+        <img :class="b('image')" :src="item" >
       </swipe-item>
     </swipe>
   </div>
@@ -20,12 +19,11 @@ import create from '../utils/create';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
-import Touch from '../mixins/touch';
 
 export default create({
   name: 'image-preview',
 
-  mixins: [Popup, Touch],
+  mixins: [Popup],
 
   components: {
     Swipe,
@@ -51,16 +49,18 @@ export default create({
   },
 
   methods: {
-    onTouchStart(event) {
+    onTouchStart() {
       this.touchStartTime = new Date();
-      this.touchStart(event);
     },
 
     onTouchEnd(event) {
       event.preventDefault();
-      // prevent long tap to close component
+
       const deltaTime = new Date() - this.touchStartTime;
-      if (deltaTime < 100 && this.offsetX < 20 && this.offsetY < 20) {
+      const { offsetX, offsetY } = this.$refs.swipe;
+
+      // prevent long tap to close component
+      if (deltaTime < 100 && offsetX < 20 && offsetY < 20) {
         this.$emit('input', false);
       }
     }

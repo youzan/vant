@@ -12,7 +12,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 #### Basic Usage
 
 ```html
-<van-checkbox v-model="checked">Checkbox 1</van-checkbox>
+<van-checkbox v-model="checked">Checkbox</van-checkbox>
 ```
 
 ```javascript
@@ -28,7 +28,13 @@ export default {
 #### Disabled
 
 ```html
-<van-checkbox v-model="checked" disabled>Checkbox 2</van-checkbox>
+<van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
+```
+
+#### Disable Label click event
+
+```html
+<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
 ```
 
 #### Checkbox Group
@@ -76,8 +82,8 @@ export default {
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="(item, index) in list" :key="item">
-      <van-checkbox :name="item">Checkbox {{ item }}</van-checkbox>
+    <van-cell v-for="item in list" :title="`Checkbox ${item}`" :key="item">
+      <van-checkbox :name="item" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
@@ -85,21 +91,21 @@ export default {
 
 ### Checkbox API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Check status | `Boolean` | `false` | - |
-| name | Checkbox name | `any` | - | - |
-| disabled | Diable checkbox | `Boolean` | `false` | - |
-| label-disabled | Whether to disable label click | `Boolean` | `false` | - |
-| shape | Checkbox shape | `String` | `round` | `square` |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Check status | `Boolean` | `false` |
+| name | Checkbox name | `any` | - |
+| disabled | Diable checkbox | `Boolean` | `false` |
+| label-disabled | Whether to disable label click | `Boolean` | `false` |
+| shape | Can be set to `round` `square` | `String` | `round` |
 
 ### CheckboxGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Names of all checked checkboxes | `Array` | - | - |
-| disabled | Disable all checkboxes | `Boolean` | `false` | - |
-| max | Maximum amount of checked options | `Number` | `0`(Unlimited) | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Names of all checked checkboxes | `Array` | - |
+| disabled | Disable all checkboxes | `Boolean` | `false` |
+| max | Maximum amount of checked options | `Number` | `0`(Unlimited) |
 
 ### Checkbox Event
 

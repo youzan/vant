@@ -13,32 +13,40 @@ $van-swipe-indicator: 6px;
 
   &__track {
     height: 100%;
-    overflow: hidden;
   }
 
   &__indicators {
+    display: flex;
+    position: absolute;
     left: 50%;
     bottom: 10px;
-    position: absolute;
-    height: $van-swipe-indicator;
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-50%);
 
-    > i {
-      border-radius: 100%;
-      vertical-align: top;
-      display: inline-block;
-      background-color: $gray-dark;
-      width: $van-swipe-indicator;
-      height: $van-swipe-indicator;
-      &:not(:last-child) {
-        margin-right: $van-swipe-indicator;
+    &--vertical {
+      left: 10px;
+      top: 50%;
+      bottom: auto;
+      flex-direction: column;
+      transform: translateY(-50%);
+
+      .van-swipe__indicator:not(:last-child) {
+        margin-bottom: $van-swipe-indicator;
       }
     }
+  }
 
-    .van-swipe__indicator {
-      &--active {
-        background-color: $orange;
-      }
+  &__indicator {
+    border-radius: 100%;
+    background-color: $gray-dark;
+    width: $van-swipe-indicator;
+    height: $van-swipe-indicator;
+
+    &:not(:last-child) {
+      margin-right: $van-swipe-indicator;
+    }
+
+    &--active {
+      background-color: $orange;
     }
   }
 }

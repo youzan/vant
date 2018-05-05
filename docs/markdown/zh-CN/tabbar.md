@@ -66,9 +66,9 @@ export default {
 
 ### Tabbar API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中标签的索引 | `Number` | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 当前选中标签的索引 | `Number` | - |
 
 ### Tabbar Event
 
@@ -78,14 +78,14 @@ export default {
 
 ### TabbarItem API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| icon | 图标名称 | `String` | - | Icon 组件中可用的类型 |
-| dot | 是否显示小红点 | `Boolean` | - | - |
-| info | 图标右上角提示信息 | `String | Number` | - | - |
-| url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-----------|
+| icon | 图标名称 (可选值见 Icon 组件) | `String` | - |
+| dot | 是否显示小红点 | `Boolean` | - |
+| info | 图标右上角提示信息 | `String | Number` | - |
+| url | 跳转链接 | `String` | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` |
 
 ### TabbarItem Slot
 

@@ -66,15 +66,28 @@ export default {
 }
 ```
 
+#### Vertical Scrolling
+
+```html
+<van-swipe :autoplay="3000" vertical>
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| autoplay | Autoplay interval (ms) | `Number` | - | - |
-| duration | Animation duration (ms) | `Number` | `500` | - |
-| loop | Whether to enable loop | `Boolean` | `true` | - |
-| show-indicators | Whether to show indocators | `Boolean` | `true` | - |
-| initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| autoplay | Autoplay interval (ms) | `Number` | - |
+| duration | Animation duration (ms) | `Number` | `500` |
+| loop | Whether to enable loop | `Boolean` | `true` |
+| vertical | Vertical Scrolling | `Boolean` | `false` |
+| touchable | Whether touchable | `Boolean` | `true` |
+| show-indicators | Whether to show indocators | `Boolean` | `true` |
+| initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` |
 
 ### Event
 

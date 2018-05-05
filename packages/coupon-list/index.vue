@@ -1,8 +1,9 @@
 <template>
-  <div class="van-coupon-list">
-    <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
+  <div :class="b()">
+    <cell-group v-if="showExchangeBar" :class="b('top')">
       <field
-        class="van-coupon-list__filed van-hairline--surround"
+        :class="b('field')"
+        class="van-hairline--surround"
         v-model="currentCode"
         :placeholder="inputPlaceholder || $t('placeholder')"
         :maxlength="20"
@@ -10,14 +11,14 @@
       <van-button
         size="small"
         type="danger"
-        class="van-coupon-list__exchange"
+        :class="b('exchange')"
         :text="exchangeButtonText || $t('exchange')"
         :loading="exchangeButtonLoading"
         :disabled="buttonDisabled"
         @click="onClickExchangeButton"
       />
     </cell-group>
-    <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
+    <div :class="b('list', { 'with-exchange': showExchangeBar })" ref="list">
       <coupon-item
         ref="card"
         v-for="(item, index) in coupons"
@@ -33,7 +34,7 @@
         :key="item.id || item.name"
         :data="item"
       />
-      <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
+      <div v-if="!coupons.length && !disabledCoupons.length" :class="b('empty')">
         <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
         <p>{{ $t('empty') }}</p>
       </div>
@@ -41,7 +42,8 @@
     <div
       v-show="showCloseButton"
       v-text="closeButtonText || $t('close')"
-      class="van-coupon-list__close van-hairline--top"
+      :class="b('close')"
+      class="van-hairline--top"
       @click="$emit('change', -1)"
     />
   </div>

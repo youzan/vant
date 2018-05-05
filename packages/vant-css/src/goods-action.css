@@ -7,7 +7,7 @@
   display: flex;
   position: fixed;
 
-  &__big-btn {
+  &-big-btn {
     flex: 1;
     padding: 0;
 
@@ -16,7 +16,7 @@
     }
   }
 
-  &__mini-btn {
+  &-mini-btn {
     color: $gray-darker;
     display: flex;
     height: 50px;
@@ -40,7 +40,7 @@
       background-color: $active-color;
     }
 
-    &-icon {
+    &__icon {
       font-size: 20px;
       margin-bottom: 5px;
     }

@@ -1,15 +1,14 @@
 <template>
   <div
-    class="van-switch"
-    :class="[{
-      'van-switch--on': value,
-      'van-switch--disabled': disabled
-    }]"
+    :class="b({
+      on: value,
+      disabled
+    })"
     :style="style"
     @click="onClick"
   >
-    <div class="van-switch__node">
-      <loading v-if="loading" class="van-switch__loading" />
+    <div :class="b('node')">
+      <loading v-if="loading" :class="b('loading')" />
     </div>
   </div>
 </template>

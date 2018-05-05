@@ -16,8 +16,8 @@ describe('GoodsAction', () => {
 
     DOMChecker(wrapper, {
       count: {
-        '.van-goods-action__mini-btn': 2,
-        '.van-goods-action__big-btn': 2,
+        '.van-goods-action-mini-btn': 2,
+        '.van-goods-action-big-btn': 2,
         '.van-icon-chat': 1
       }
     });

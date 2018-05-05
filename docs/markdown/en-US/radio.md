@@ -2,8 +2,9 @@
 
 ### Install
 ``` javascript
-import { Radio } from 'vant';
+import { RadioGroup, Radio } from 'vant';
 
+Vue.use(RadioGroup);
 Vue.use(Radio);
 ```
 
@@ -43,25 +44,29 @@ export default {
 ```html
 <van-radio-group v-model="radio">
   <van-cell-group>
-    <van-cell><van-radio name="1">Radio 1</van-radio></van-cell>
-    <van-cell><van-radio name="2">Radio 2</van-radio></van-cell>
+    <van-cell :title="Radio 1" clickable @click="radio = '1'">
+      <van-radio name="1" />
+    </van-cell>
+    <van-cell :title="Radio 2" clickable @click="radio = '2'">
+      <van-radio name="2" />
+    </van-cell>
   </van-cell-group>
 </van-radio-group>
 ```
 
 ### Radio API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| name | Radio name | `any` | - | - |
-| disabled | Whether to disable radio | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| name | Radio name | `any` | - |
+| disabled | Whether to disable radio | `Boolean` | `false` |
 
 ### RadioGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Name of checked radio | `any` | - | - |
-| disabled | Diable all radios | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Name of checked radio | `any` | - |
+| disabled | Diable all radios | `Boolean` | `false` |
 
 ### RadioGroup Event
 

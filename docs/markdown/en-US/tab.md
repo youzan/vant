@@ -136,21 +136,22 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ### Tabs API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Index of active tab | `String` `Number` | `0` | - |
-| type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
-| duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
-| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
-| sticky | Whether to use sticky mode | `Boolean` | `false` | - |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Index of active tab | `String` `Number` | `0` |
+| type | Can be set to `line` `card` | `String` | `line` |
+| duration | Toggle tab's animation time | `Number` | `0.2` | - |
+| line-width | Width of tab line (px) | `Number` | Width of active tab |
+| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
+| sticky | Whether to use sticky mode | `Boolean` | `false` |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 
 ### Tab API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Title | `String` | - | - |
-| disabled | Whether to disable tab | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Title | `String` | - |
+| disabled | Whether to disable tab | `Boolean` | `false` |
 
 ### Tab Slot
 

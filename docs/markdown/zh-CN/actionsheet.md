@@ -66,14 +66,14 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| actions | 行动按钮数组 | `Array` | `[]` | - |
-| title | 标题 | `String` | - | - |
-| cancel-text | 取消按钮文案 | `String` | - | - |
-| overlay | 是否显示遮罩 | `Boolean` | - | - |
-| close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - | - |
-| get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| actions | 行动按钮数组 | `Array` | `[]` |
+| title | 标题 | `String` | - |
+| cancel-text | 取消按钮文案 | `String` | - |
+| overlay | 是否显示遮罩 | `Boolean` | - |
+| close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - |
+| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
 
 ### Event
 

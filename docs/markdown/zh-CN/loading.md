@@ -23,17 +23,10 @@ Vue.use(Loading);
 <van-loading type="spinner" color="white" />
 ```
 
-#### Circle
-
-```html
-<van-loading type="circle" color="black" />
-<van-loading type="circle" color="white" />
-```
-
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| color | 颜色 | `String` | `black` | `white` |
-| type | 类型 | `String` | `circular` | `spinner` `circle` |
-| size | 大小 | `String` | `30px` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| color | 颜色，可选值为 `block` `white` | `String` | `black` |
+| type | 类型，可选值为 `circular` `spinner` | `String` | `circular` |
+| size | 大小 | `String` | `30px` |

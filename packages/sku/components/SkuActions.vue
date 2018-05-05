@@ -1,5 +1,5 @@
 <template>
-  <div class="van-sku-actions">
+  <div :class="b()">
     <van-button
       v-if="showAddCartBtn"
       bottom-action

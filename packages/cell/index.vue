@@ -1,37 +1,34 @@
 <template>
   <div
-    class="van-cell"
-    :class="{
-      'van-hairline': border,
-      'van-cell--center': center,
-      'van-cell--required': required,
-      'van-cell--clickable': isLink || clickable
-    }"
+    :class="[
+      b({
+        center,
+        required,
+        clickable: isLink || clickable
+      }),
+      { 'van-hairline': border }
+    ]"
     @click="onClick"
   >
-    <div class="van-cell__title" v-if="title || icon || $slots.title || $slots.icon">
-      <slot name="icon">
-        <icon v-if="icon" :name="icon" />
-      </slot>
+    <slot name="icon">
+      <icon v-if="icon" :class="b('left-icon')" :name="icon" />
+    </slot>
+    <div v-if="title || $slots.title" :class="b('title')">
       <slot name="title">
-        <span class="van-cell__text" v-text="title" />
-        <div class="van-cell__label" v-if="label" v-text="label" />
+        <span v-text="title" />
+        <div v-if="label" v-text="label" :class="b('label')" />
       </slot>
     </div>
     <div
-      class="van-cell__value"
       v-if="value || $slots.default"
-      :class="{
-        'van-cell__value--link': isLink,
-        'van-cell__value--alone': !$slots.title && !title && !label
-      }"
+      :class="b('value', { alone: !$slots.title && !title })"
     >
       <slot>
         <span v-text="value" />
       </slot>
     </div>
     <slot name="right-icon">
-      <icon name="arrow" class="van-cell__right-icon" v-if="isLink" />
+      <icon v-if="isLink" :class="b('right-icon')" name="arrow" />
     </slot>
     <slot name="extra" />
   </div>
