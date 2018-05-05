@@ -70,15 +70,15 @@ export default {
 
 ### Steps API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| active | 当前步骤，起始值为0 | `Number` | - | - |
-| icon | 当前步骤的icon | `String` | - | - |
-| icon-class | 当前步骤栏为icon添加的类 | `String` | - | - |
-| title | 当前步骤标题 | `String` | - | - |
-| description | 当前步骤描述 | `String` | - | - |
-| direction | 显示方向 | `String` | `horizontal` | `vertical` |
-| active-color | active状态颜色 | `String` | `#06bf04` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| active | 当前步骤 | `Number` | 0 |
+| title | 描述栏标题 | `String` | - |
+| description | 描述栏文字 | `String` | - |
+| icon | 描述栏图标 | `String` | - |
+| icon-class | 图标额外类名 | `String` | - |
+| direction | 显示方向，可选值为 `horizontal` `vertical` | `String` | `horizontal` |
+| active-color | 激活状态颜色 | `String` | `#06bf04` |
 
 ### Steps Slot
 

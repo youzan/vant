@@ -138,22 +138,22 @@ export default {
 
 ### Tabs API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前激活的 tab | `String` `Number` | `0` | - |
-| type | Tab 样式类型 | `String` | `line` | `card` |
-| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
-| line-width | 底部条宽度（px） | `Number` | 与当前 Tab 等宽 | - |
-| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
-| sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
-| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 当前激活标签的索引 | `String` `Number` | `0` |
+| type | 样式类型，可选值为 `line` `card` | `String` | `line` |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` |
+| line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
+| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` |
 
 ### Tab API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选 |
-|-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | - | - |
-| disabled | 是否禁用标签 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 标题 | `String` | - |
+| disabled | 是否禁用标签 | `Boolean` | `false` |
 
 ### Tab Slot
 

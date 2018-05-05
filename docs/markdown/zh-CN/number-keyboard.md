@@ -61,17 +61,17 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| show | 是否显示键盘 | `Boolean` | - | - |
-| theme | 键盘样式风格 | `String` | `Default` | `Custom` |
-| title | 键盘标题 | `String` | - | - |
-| transition | 是否开启过场动画 | `Boolean` | `true` | - |
-| z-index | 键盘 z-index | `Number` | `100` | - |
-| extra-key | 左下角按键内容 | `String` | `''` | - |
-| close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` | - |
-| show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
-| hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| show | 是否显示键盘 | `Boolean` | - |
+| theme | 样式风格，可选值为 `default` `custom` | `String` | `default` |
+| title | 键盘标题 | `String` | - |
+| transition | 是否开启过场动画 | `Boolean` | `true` |
+| z-index | 键盘 z-index | `Number` | `100` |
+| extra-key | 左下角按键内容 | `String` | `''` |
+| close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` |
+| show-delete-key | 是否展示删除按钮 | `Boolean` | `true` |
+| hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` |
 
 ### Event
 

@@ -76,7 +76,7 @@ Vue.use(Cell).use(CellGroup);
 | label | Description below the title | `String` | - |
 | border | Whether to show inner border | `Boolean` | `true` |
 | center | Whether to center content vertically | `Boolean` | `true` |
-| url | Link | `String` | - |
+| url | Link URL | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `String` | `false` |
 | clickable | Whether to show click feedback when clicked | `Boolean` | `false` |

@@ -132,14 +132,16 @@ export default {
 
 
 ### ContactCard API
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| type | Type | `String` | `add` | `edit` |
-| name | Name | `String` | - | - |
-| tel | Phone | `String` | - | - |
-| add-text | Add card text | `String` | `Add contact info` | - |
+
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| type | Can be set to `add` `edit` | `String` | `add` |
+| name | Name | `String` | - |
+| tel | Phone | `String` | - |
+| add-text | Add card text | `String` | `Add contact info` |
 
 ### ContactList API
+
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Id of chosen contact | `String | Number` | - |
@@ -171,6 +173,7 @@ export default {
 | delete | Triggered when click delete button | content：contact info |
 
 ### Contact Data Structure
+
 | key | Description | Type |
 |-----------|-----------|-----------|
 | id | ID | `String | Number` |

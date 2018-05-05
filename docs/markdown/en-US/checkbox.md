@@ -91,21 +91,21 @@ export default {
 
 ### Checkbox API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Check status | `Boolean` | `false` | - |
-| name | Checkbox name | `any` | - | - |
-| disabled | Diable checkbox | `Boolean` | `false` | - |
-| label-disabled | Whether to disable label click | `Boolean` | `false` | - |
-| shape | Checkbox shape | `String` | `round` | `square` |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Check status | `Boolean` | `false` |
+| name | Checkbox name | `any` | - |
+| disabled | Diable checkbox | `Boolean` | `false` |
+| label-disabled | Whether to disable label click | `Boolean` | `false` |
+| shape | Can be set to `round` `square` | `String` | `round` |
 
 ### CheckboxGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Names of all checked checkboxes | `Array` | - | - |
-| disabled | Disable all checkboxes | `Boolean` | `false` | - |
-| max | Maximum amount of checked options | `Number` | `0`(Unlimited) | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Names of all checked checkboxes | `Array` | - |
+| disabled | Disable all checkboxes | `Boolean` | `false` |
+| max | Maximum amount of checked options | `Number` | `0`(Unlimited) |
 
 ### Checkbox Event
 
