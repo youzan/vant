@@ -134,12 +134,4 @@ $van-tabs-card-height: 30px;
       background-color: $white;
     }
   }
-
-  &__pane {
-    display: none;
-
-    &--select {
-      display: block;
-    }
-  }
 }
