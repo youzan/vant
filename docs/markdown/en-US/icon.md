@@ -46,10 +46,10 @@ import 'vant/lib/vant-css/icon-local.css';
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| name | Icon name | `String` | `''` | - |
-| info | Info message | `String | Number` | `''` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| name | Icon name | `String` | `''` |
+| info | Info message | `String | Number` | `''` |
 
 ### Event
 

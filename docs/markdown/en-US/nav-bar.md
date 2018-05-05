@@ -45,14 +45,15 @@ export default {
 
 
 ### API
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Title | `String` | `''` | - |
-| left-text | Left Text | `String` | `''` | - |
-| right-text | Right Text | `String` | `''` | - |
-| left-arrow | Whether to show left arrow | `Boolean` | `false` | - |
-| fixed | Whether to fixed top | `Boolean` | `false` | - |
-| z-index | Z-index | `Number` | `1` | - |
+
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Title | `String` | `''` |
+| left-text | Left Text | `String` | `''` |
+| right-text | Right Text | `String` | `''` |
+| left-arrow | Whether to show left arrow | `Boolean` | `false` |
+| fixed | Whether to fixed top | `Boolean` | `false` |
+| z-index | Z-index | `Number` | `1` |
 
 ### Slot
 

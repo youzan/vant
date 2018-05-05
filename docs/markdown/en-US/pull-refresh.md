@@ -41,14 +41,14 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Loading status | `Boolean` | - | - |
-| pulling-text | Text to show when pulling | `String` | `Pull to refresh...` | - |
-| loosing-text | Text to show when loosing | `String` | `Loose to refresh...` | - |
-| loading-text | Text to show when loading | `String` | `Loading...` | - |
-| animation-duration | Animation duration | `Number` | `300` | - |
-| head-height | Height of head | `Number` | `50` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Loading status | `Boolean` | - |
+| pulling-text | Text to show when pulling | `String` | `Pull to refresh...` |
+| loosing-text | Text to show when loosing | `String` | `Loose to refresh...` |
+| loading-text | Text to show when loading | `String` | `Loading...` |
+| animation-duration | Animation duration | `Number` | `300` |
+| head-height | Height of head | `Number` | `50` |
 
 ### Event
 

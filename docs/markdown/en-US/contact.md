@@ -140,11 +140,11 @@ export default {
 | add-text | Add card text | `String` | `Add contact info` | - |
 
 ### ContactList API
-| Attribute | Description | Type | Default | Accepted Values |
+| Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | Id of chosen contact | `String | Number` | - | - |
-| list | Contact list | `Array` | `[]` | - |
-| add-text | Add button text | `String` | `Add new contact` | - |
+| v-model | Id of chosen contact | `String | Number` | - |
+| list | Contact list | `Array` | `[]` |
+| add-text | Add button text | `String` | `Add new contact` |
 
 ### ContactList Event
 
@@ -155,13 +155,13 @@ export default {
 | select | Triggered when select contact | item: contact object |
 
 ### ContactEdit API
-| Attribute | Description | Type | Default | Accepted Values |
+| Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
-| contact-info | Contact Info | `Object` | `[]` | - |
-| is-edit | Whether is editing | `Boolean` | `false` | - |
-| is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
-| is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
-| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
+| contact-info | Contact Info | `Object` | `[]` |
+| is-edit | Whether is editing | `Boolean` | `false` |
+| is-saving | Whether to show save button loading status | `Boolean` | `false` |
+| is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 
 ### ContactEdit Event
 

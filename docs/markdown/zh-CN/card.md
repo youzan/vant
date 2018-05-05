@@ -41,15 +41,15 @@ Vue.use(Card);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| thumb | 左侧图片 | `String` | - | - |
-| title | 标题 | `String` | - | - |
-| desc | 描述 | `String` | - | - |
-| num | 商品数量 | `String | Number` | - | - |
-| price | 商品价格 | `String | Number` | - | - |
-| centered | 内容是否垂直居中 | `String` | `false` | - |
-| currency | 货币符号 |  `String` | `¥` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| thumb | 左侧图片 | `String` | - |
+| title | 标题 | `String` | - |
+| desc | 描述 | `String` | - |
+| num | 商品数量 | `String | Number` | - |
+| price | 商品价格 | `String | Number` | - |
+| centered | 内容是否垂直居中 | `String` | `false` |
+| currency | 货币符号 |  `String` | `¥` |
 
 ### Slot
 

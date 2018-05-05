@@ -31,11 +31,11 @@ Vue.use(Panel);
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Title | `String` | - | - |
-| desc | Description | `String` | - | - |
-| status | Status | `String` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Title | `String` | - |
+| desc | Description | `String` | - |
+| status | Status | `String` | - |
 
 
 ### Slot

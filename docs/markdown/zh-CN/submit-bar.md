@@ -62,16 +62,16 @@ Vue.use(SubmitBar);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| price | 价格（单位分） |  `Number` | - | - |
-| label | 价格文案 |  `String` | `合计：` | - |
-| button-text | 按钮文字 | `String` | - | - |
-| button-type | 按钮类型 |  `String` | `danger` | - |
-| tip | 提示文案 |  `String` | - | - |
-| disabled | 是否禁用按钮 |  `Boolean` | `false` | - |
-| loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
-| currency | 货币符号 |  `String` | `¥` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| price | 价格（单位分） |  `Number` | - |
+| label | 价格文案 |  `String` | `合计：` |
+| button-text | 按钮文字 | `String` | - |
+| button-type | 按钮类型 |  `String` | `danger` |
+| tip | 提示文案 |  `String` | - |
+| disabled | 是否禁用按钮 |  `Boolean` | `false` |
+| loading | 是否显示加载中的按钮 |  `Boolean` | `false` |
+| currency | 货币符号 |  `String` | `¥` |
 
 ### Event
 

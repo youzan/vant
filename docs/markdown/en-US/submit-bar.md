@@ -62,16 +62,16 @@ Use slot to add custom contents.
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| price | Price |  `Number` | - | - |
-| label | Price label |  `String` | `合计：` | - |
-| button-text | Button text | `String` | - | - |
-| button-type | Button type |  `String` | `danger` | - |
-| tip | Tip |  `String` | - | - |
-| disabled | Whether to disable button |  `Boolean` | `false` | - |
-| loading | Whether to show loading icon |  `Boolean` | `false` | - |
-| currency | Currency symbol |  `String` | `¥` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| price | Price |  `Number` | - |
+| label | Price label |  `String` | `合计：` |
+| button-text | Button text | `String` | - |
+| button-type | Button type |  `String` | `danger` |
+| tip | Tip |  `String` | - |
+| disabled | Whether to disable button |  `Boolean` | `false` |
+| loading | Whether to show loading icon |  `Boolean` | `false` |
+| currency | Currency symbol |  `String` | `¥` |
 
 ### Event
 

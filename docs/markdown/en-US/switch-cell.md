@@ -50,12 +50,12 @@ use `loading` property to keep component in loading state
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | on-off state of the switch | `Boolean` | - | - |
-| title | the leftside title |  `String` | `''` | - |
-| loading | whether the component is in loading state |  `Boolean` | `false` | - |
-| disabled | whether to disable the component |  `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | on-off state of the switch | `Boolean` | - |
+| title | the leftside title |  `String` | `''` |
+| loading | whether the component is in loading state |  `Boolean` | `false` |
+| disabled | whether to disable the component |  `Boolean` | `false` |
 
 ### Event
 

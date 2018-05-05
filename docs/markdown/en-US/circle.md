@@ -55,18 +55,18 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Current rate | `Number` | - | - |
-| rate | Target rate | `Number` | `100` | - |
-| size | Circle size | `String` | `100px` | - |
-| color | Progress bar color | `String` | `#38f` | - |
-| layer-color | Layer color | `String` | `#fff` | - |
-| fill | Fill color | `String` | `none` | - |
-| speed | Animate speed（rate/s）| `Number` | - | - |
-| text | Text | `String` | - | - |
-| stroke-width | Stroke width | `Number` | `40` | - |
-| clockwise | Is clockwise | `Boolean` | `true` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Current rate | `Number` | - |
+| rate | Target rate | `Number` | `100` |
+| size | Circle size | `String` | `100px` |
+| color | Progress bar color | `String` | `#38f` |
+| layer-color | Layer color | `String` | `#fff` |
+| fill | Fill color | `String` | `none` |
+| speed | Animate speed（rate/s）| `Number` | - |
+| text | Text | `String` | - |
+| stroke-width | Stroke width | `Number` | `40` |
+| clockwise | Is clockwise | `Boolean` | `true` |
 
 ### Cell Slot
 

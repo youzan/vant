@@ -55,7 +55,7 @@ export default {
 | Attribute | Description | Type | Default | Accepted Values |
 |-----------|-----------|-----------|-------------|-------------|
 | v-model | Current page number | `Number` | - | - |
-| mode | Mode | `String` | `multi` | `simple`  |
+| mode | Mode | `String` | `multi` | `simple` |
 | items-per-page | Item number per page | `Number` | `10` | - |
 | prev-text | Previous text | `String` | `Previous` | - |
 | next-text | Next text | `String` | `Next` | - |

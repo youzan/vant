@@ -56,23 +56,23 @@ Use `info` prop to show messages in upper right corner of icon
 
 #### GoodsActionMiniBtn
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| text | Button text | `String` | - | - |
-| icon | Icon | `String` | - | - |
-| icon-class | Icon class name | `String` | `''` | - |
-| info | Info message | `String | Number` | - | - |
-| url | Link | `String` | - | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| text | Button text | `String` | - |
+| icon | Icon | `String` | - |
+| icon-class | Icon class name | `String` | `''` |
+| info | Info message | `String | Number` | - |
+| url | Link | `String` | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` |
 
 
 #### GoodsActionBigBtn
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| text | Button text | `String` | - | - |
-| primary | Is primary button (red color) | `Boolean` | `false` | - |
-| url | Link | `String` | - | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| text | Button text | `String` | - |
+| primary | Is primary button (red color) | `Boolean` | `false` |
+| url | Link | `String` | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` |

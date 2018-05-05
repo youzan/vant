@@ -128,17 +128,17 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` | - |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
-| title | 顶部栏标题 | `String` | `''` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| value-key | 选项对象中，文字对应的 key | `String` | `text` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| columns | 对象数组，配置每一列显示的数据 | `Array` | `[]` |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` |
+| title | 顶部栏标题 | `String` | `''` |
+| loading | 是否显示加载状态 | `Boolean` | `false` |
+| value-key | 选项对象中，文字对应的 key | `String` | `text` |
+| item-height | 选项高度 | `Number` | `44` |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` |
+| visible-item-count | 可见的选项个数 | `Number` | `5` |
 
 ### Event
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
