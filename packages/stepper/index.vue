@@ -27,7 +27,7 @@ export default create({
 
   props: {
     value: {},
-    interger: Boolean,
+    integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
     min: {
@@ -116,7 +116,7 @@ export default create({
     },
 
     onKeypress(event) {
-      if (this.interger && event.keyCode === 46) {
+      if (this.integer && event.keyCode === 46) {
         event.preventDefault();
       }
     },
