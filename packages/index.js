@@ -48,6 +48,7 @@ import RadioGroup from './radio-group';
 import Row from './row';
 import Search from './search';
 import Sku from './sku';
+import StarRate from './star-rate';
 import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
@@ -117,6 +118,7 @@ const components = [
   Row,
   Search,
   Sku,
+  StarRate,
   Slider,
   Step,
   Stepper,
@@ -198,6 +200,7 @@ export {
   Row,
   Search,
   Sku,
+  StarRate,
   Slider,
   Step,
   Stepper,
