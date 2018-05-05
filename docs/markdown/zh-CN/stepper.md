@@ -39,7 +39,7 @@ export default {
 ```html
 <van-stepper
   v-model="value"
-  interger
+  integer
   :min="5"
   :max="40"
   :step="2"
@@ -55,7 +55,7 @@ export default {
 | max | 最大值 | `String | Number` | - |
 | default-value | 默认值 | `String | Number` | `1` |
 | step | 步数 | `String | Number` | `1` |
-| interger | 是否只允许输入整数 | `Boolean` | `false` |
+| integer | 是否只允许输入整数 | `Boolean` | `false` |
 | disabled | 是否禁用 | `Boolean` | `false` |
 | disable-input | 是否禁用input框 | `Boolean` | `false` |
 
