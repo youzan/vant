@@ -3,7 +3,7 @@
 .van-slider {
   position: relative;
   border-radius: 999px;
-  background-color: $border-color;
+  background-color: $gray-light;
 
   &__bar {
     position: relative;
