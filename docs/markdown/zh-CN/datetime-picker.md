@@ -97,19 +97,19 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 组件类型 | `String` | `datetime` |  `date` `time` <br> `year-month` |
-| min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 | - |
-| max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 | - |
-| min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` | - |
-| max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` | - |
-| title | 顶部栏标题 | `String` | `''` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| type | 类型，可选值为 `date` `time` `year-month` | `String` | `datetime` |
+| min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 |
+| max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 |
+| min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` |
+| max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` |
+| title | 顶部栏标题 | `String` | `''` |
+| loading | 是否显示加载状态 | `Boolean` | `false` |
+| item-height | 选项高度 | `Number` | `44` |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` |
+| visible-item-count | 可见的选项个数 | `Number` | `5` |
 
 ### Event
 

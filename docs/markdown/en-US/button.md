@@ -65,17 +65,17 @@ Use `tag` prop to custom button tag
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| type | Type | `String` | `default` | `primary` `danger` |
-| size | Size | `String` | `normal` | `large` `small` `mini` |
-| text | Text | `String` | - | - |
-| tag | Tag | `String` | `button` | - |
-| native-type | Native Type Attribute | `String` | `''` | - |
-| disabled | Whether disable button | `Boolean` | `false` | - |
-| loading | Whether show loading status | `Boolean` | `false` | - |
-| block | Whether to set display block | `Boolean` | `false` | - |
-| bottom-action | Whether to be action button | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| type | Can be set to `default` `primary` `danger` | `String` | `default` |
+| size | Can be set to `normal` `large` `small` `mini` | `String` | `normal` |
+| text | Text | `String` | - |
+| tag | Tag | `String` | `button` |
+| native-type | Native Type Attribute | `String` | `''` |
+| disabled | Whether disable button | `Boolean` | `false` |
+| loading | Whether show loading status | `Boolean` | `false` |
+| block | Whether to set display block | `Boolean` | `false` |
+| bottom-action | Whether to be action button | `Boolean` | `false` |
 
 ### Event
 

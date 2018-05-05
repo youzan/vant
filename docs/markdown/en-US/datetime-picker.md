@@ -97,19 +97,19 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
+| Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Picker type | `String` | `datetime` |  `date` `time` <br> `year-month` |
-| min-date | Min date | `Date` | Ten years ago on January 1 | - |
-| max-date | Max date | `Date` | Ten years later on December 31 | - |
-| min-hour | Min hour | `Number` | `0` | - |
-| max-hour | Max hour | `Number` | `23` | - |
-| title | Toolbar title | `String` | `''` | - |
-| loading | Whether to show loading prompt | `Boolean` | `false` | - |
-| item-height | Option height | `Number` | `44` | - |
-| confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
-| cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
-| visible-item-count | Count of visible columns | `Number` | `5` | - |
+| type | Can be set to `date` `time` `year-month` | `String` | `datetime` |
+| min-date | Min date | `Date` | Ten years ago on January 1 |
+| max-date | Max date | `Date` | Ten years later on December 31 |
+| min-hour | Min hour | `Number` | `0` |
+| max-hour | Max hour | `Number` | `23` |
+| title | Toolbar title | `String` | `''` |
+| loading | Whether to show loading prompt | `Boolean` | `false` |
+| item-height | Option height | `Number` | `44` |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` |
+| visible-item-count | Count of visible columns | `Number` | `5` |
 
 ### Event
 

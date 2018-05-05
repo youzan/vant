@@ -113,16 +113,16 @@ Vue.use(Field);
 ### API
 Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly`、`autofocus` 等
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 输入框类型 | `String` | `text` | `number` `email` `textarea` `tel` `datetime` `date` `password` `url` |
-| value | 输入框的值 | `String` | - | - |
-| label | 输入框标签 | `String` | - | - |
-| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
-| error | 输入框是否有错误 | `Boolean` | `false` | - |
-| error-message | 输入框底部错误提示文案 | `String` | `''` | - |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | - |
-| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |  - |
+| type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
+| value | 输入框的值 | `String` | - |
+| label | 输入框标签 | `String` | - |
+| disabled | 是否禁用输入框 | `Boolean` | `false` |
+| error | 输入框是否有错误 | `Boolean` | `false` |
+| error-message | 输入框底部错误提示文案 | `String` | `''` |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
+| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
 
 ### Event
 Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等

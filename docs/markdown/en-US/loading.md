@@ -25,8 +25,8 @@ Vue.use(Loading);
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| color | Color | `String` | `black` | `black` `white` |
-| type | Type | `String` | `circular` | `spinner` |
-| size | Size | `String` | `30px` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| color | Can be set to `black` `white` | `String` | `black` |  |
+| type | Can be set to `circular` `spinner` | `String` | `circular` |
+| size | Size | `String` | `30px` |

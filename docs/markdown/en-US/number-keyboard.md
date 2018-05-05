@@ -61,17 +61,17 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| show | Whether to show keyboard | `Boolean` | - | - |
-| theme | Keyboard theme | `String` | `Default` | `Custom` |
-| title | Keyboard title | `String` | - | - |
-| transition | Whether to show transition animation | `Boolean` | `true` | - |
-| z-index | Keyboard z-index | `Number` | `100` | - |
-| extra-key | Content of bottom left key | `String` | `''` | - |
-| close-button-text | Close button text | `String` | `-` | - |
-| show-delete-key | Whether to show delete button | `Boolean` | `true` | - |
-| hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| show | Whether to show keyboard | `Boolean` | - |
+| theme | Keyboard theme，can be set to `default` `custom` | `String` | `default` |
+| title | Keyboard title | `String` | - |
+| transition | Whether to show transition animation | `Boolean` | `true` |
+| z-index | Keyboard z-index | `Number` | `100` |
+| extra-key | Content of bottom left key | `String` | `''` |
+| close-button-text | Close button text | `String` | `-` |
+| show-delete-key | Whether to show delete button | `Boolean` | `true` |
+| hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` |
 
 ### Event
 
