@@ -39,7 +39,7 @@ export default {
     },
 
     description() {
-      return this.$vantLang === 'zh-CN' ? '有赞移动端 Vue 组件库' : 'A Vue.js 2.0 Mobile UI at YouZan';
+      return this.$vantLang === 'zh-CN' ? '轻量、可靠的移动端 Vue 组件库' : 'Lightweight Mobile UI Components built on Vue';
     }
   },
 
