@@ -39,11 +39,11 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| inactive | Whether to be gray | `Boolean` | `false` | - |
-| percentage | Percentage | `Number` | `false` | `0-100` |
-| show-pivot | Whether to show text | `Boolean` | `true` | - |
-| pivot-text | Text | `String` | percentage | - |
-| color | Color | `String` | `#38f` | hexvalue |
-| text-color | Text color | `String` | `#fff` | hexvalue |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| inactive | Whether to be gray | `Boolean` | `false` |
+| percentage | Percentage | `Number` | `false` |
+| show-pivot | Whether to show text | `Boolean` | `true` |
+| pivot-text | Text | `String` | percentage |
+| color | Color | `String` | `#38f` |
+| text-color | Text color | `String` | `#fff` |

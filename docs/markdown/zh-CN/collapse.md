@@ -81,10 +81,10 @@ export default {
 
 ### Collapse API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前展开面板的 name | `Array | String | Number` | - | - |
-| accordion | 是否开启手风琴模式 | `Boolean` | `false` | - |
+| v-model | 当前展开面板的 name | `Array | String | Number` | - |
+| accordion | 是否开启手风琴模式 | `Boolean` | `false` |
 
 ### Collapse Event
 
@@ -94,10 +94,10 @@ export default {
 
 ### CollapseItem API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| name | 面板唯一标识符，默认为索引值 | `String | Number` | `index` | - |
-| title | 标题 | `String` | - | - |
+| name | 面板唯一标识符，默认为索引值 | `String | Number` | `index` |
+| title | 标题 | `String` | - |
 
 
 ### CollapseItem Slot

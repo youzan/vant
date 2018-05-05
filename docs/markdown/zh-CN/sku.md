@@ -84,24 +84,24 @@ Vue.use(Sku);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否显示sku | `Boolean` | `false` | - |
-| sku | 商品sku数据 | `Object` | - | - |
-| goods | 商品信息 | `Object` | - | - |
-| goods-id | 商品id | `String | Number` | - | - |
-| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
-| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
-| quota | 限购数(0表示不限购) | `Number` | `0` | - |
-| quota-used | 已经购买过的数量 | `Number` | `0` | - |
-| reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
-| reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` | - |
-| disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` | - |
-| close-on-click-overlay | 点击popup的overlay后是否关闭弹窗 | `Boolean` | `false` | - |
-| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
-| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
-| message-config | 留言相关配置 | `Object` | `{}` | - |
-| get-container | 指定挂载的 HTML 节点 | `Function` | - | `() => HTMLElement` |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 是否显示sku | `Boolean` | `false` |
+| sku | 商品sku数据 | `Object` | - |
+| goods | 商品信息 | `Object` | - |
+| goods-id | 商品id | `String | Number` | - |
+| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` |
+| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` |
+| quota | 限购数(0表示不限购) | `Number` | `0` |
+| quota-used | 已经购买过的数量 | `Number` | `0` |
+| reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` |
+| reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` |
+| disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` |
+| close-on-click-overlay | 点击popup的overlay后是否关闭弹窗 | `Boolean` | `false` |
+| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` |
+| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` |
+| message-config | 留言相关配置 | `Object` | `{}` |
+| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
 
 ### Event
 

@@ -28,7 +28,7 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '空心样式',
-      title3: '标记样式'
+      title3: '圆角样式'
     },
     'en-US': {
       title2: 'Plain style',

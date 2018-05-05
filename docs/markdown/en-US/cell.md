@@ -62,26 +62,26 @@ Vue.use(Cell).use(CellGroup);
 
 ### CellGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| border | Whether to show outer border | `Boolean` | `true` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| border | Whether to show outer border | `Boolean` | `true` |
 
 ### Cell API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| icon | Left Icon | `String` | - | - |
-| title | Title | `String` | - | - |
-| value | Right text | `String` | - | - |
-| label | Description below the title | `String` | - | - |
-| border | Whether to show inner border | `Boolean` | `true` | - |
-| center | Whether to center content vertically | `Boolean` | `true` | - |
-| url | Link | `String` | - | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
-| clickable | Whether to show click feedback when clicked | `Boolean` | `false` | - |
-| is-link | Whether to show link icon | `Boolean` | `false` | - |
-| required | Whether to show required mark | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| icon | Left Icon | `String` | - |
+| title | Title | `String` | - |
+| value | Right text | `String` | - |
+| label | Description below the title | `String` | - |
+| border | Whether to show inner border | `Boolean` | `true` |
+| center | Whether to center content vertically | `Boolean` | `true` |
+| url | Link | `String` | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` |
+| clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
+| is-link | Whether to show link icon | `Boolean` | `false` |
+| required | Whether to show required mark | `Boolean` | `false` |
 
 ### Cell Event
 

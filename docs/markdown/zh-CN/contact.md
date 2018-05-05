@@ -140,11 +140,11 @@ export default {
 | add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
 
 ### ContactList API
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中联系人的 id | `String | Number` | - | - |
-| list | 联系人列表 | `Array` | `[]` | - |
-| add-text | 新建按钮文案 | `String` | `新建联系人` | - |
+| v-model | 当前选中联系人的 id | `String | Number` | - |
+| list | 联系人列表 | `Array` | `[]` |
+| add-text | 新建按钮文案 | `String` | `新建联系人` |
 
 ### ContactList Event
 
@@ -156,13 +156,13 @@ export default {
 
 
 ### ContactEdit API
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
+| 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| contact-info | 联系人信息 | `Object` | `[]` | - |
-| is-edit | 是否为编辑联系人 | `Boolean` | `false` | - |
-| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
-| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
-| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
+| contact-info | 联系人信息 | `Object` | `[]` |
+| is-edit | 是否为编辑联系人 | `Boolean` | `false` |
+| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` |
+| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` |
+| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - |
 
 ### ContactEdit Event
 

@@ -59,18 +59,18 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| area-list | Area List | `Object` | - | - |
-| address-info | Address Info | `Object` | `{}` | - |
-| search-result | Address search result | `Array` | `[]` | - |
-| show-postal | Whether to show postal field | `Boolean` | `false` | - |
-| show-delete | Whether to show delete button | `Boolean` | `false` | - |
-| show-set-default | Whether to show default address switch | `Boolean` | `false` | - |
-| show-search-result | Whether to show address search result | `Boolean` | `false` | - |
-| is-saving | Whether to show save button loading status | `Boolean` | `false` | - |
-| is-deleting | Whether to show delete button loading status | `Boolean` | `false` | - |
-| tel-validator | The method to validate tel | `(tel: string) => boolean` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| area-list | Area List | `Object` | - |
+| address-info | Address Info | `Object` | `{}` |
+| search-result | Address search result | `Array` | `[]` |
+| show-postal | Whether to show postal field | `Boolean` | `false` |
+| show-delete | Whether to show delete button | `Boolean` | `false` |
+| show-set-default | Whether to show default address switch | `Boolean` | `false` |
+| show-search-result | Whether to show address search result | `Boolean` | `false` |
+| is-saving | Whether to show save button loading status | `Boolean` | `false` |
+| is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
+| tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 
 ### Event
 

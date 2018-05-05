@@ -69,10 +69,10 @@ export default {
 
 ### Collapse API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | names of current active panels | `Array | String | Number` | - | - |
-| accordion | Whether to be accordion mode | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | names of current active panels | `Array | String | Number` | - |
+| accordion | Whether to be accordion mode | `Boolean` | `false` |
 
 ### Collapse Event
 
@@ -82,10 +82,10 @@ export default {
 
 ### CollapseItem API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| name | Name | `String | Number` | `index` | - |
-| title | Title | `String` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| name | Name | `String | Number` | `index` |
+| title | Title | `String` | - |
 
 ### CollapseItem Slot
 

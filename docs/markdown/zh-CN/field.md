@@ -122,7 +122,7 @@ Filed 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | error | 输入框是否有错误 | `Boolean` | `false` | - |
 | error-message | 输入框底部错误提示文案 | `String` | `''` | - |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | - |
-| icon | 输入框尾部图标 | `String` | - |  Icon 组件支持的类型 |
+| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |  - |
 
 ### Event
 Filed 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
