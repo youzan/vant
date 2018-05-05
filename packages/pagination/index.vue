@@ -118,13 +118,12 @@ export default create({
     }
   },
 
-  created() {
-    this.selectPage(this.value);
-  },
-
   watch: {
-    value(page) {
-      this.selectPage(page);
+    value: {
+      handler(page) {
+        this.selectPage(page || this.value);
+      },
+      immediate: true
     }
   },
 

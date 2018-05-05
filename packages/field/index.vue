@@ -58,19 +58,22 @@ export default create({
   inheritAttrs: false,
 
   props: {
-    type: {
-      type: String,
-      default: 'text'
-    },
-    value: {},
+    value: null,
     icon: String,
     label: String,
     error: Boolean,
     center: Boolean,
-    border: Boolean,
     required: Boolean,
     autosize: [Boolean, Object],
     errorMessage: String,
+    type: {
+      type: String,
+      default: 'text'
+    },
+    border: {
+      type: Boolean,
+      default: true
+    },
     onIconClick: {
       type: Function,
       default: () => {}
