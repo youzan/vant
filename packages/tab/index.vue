@@ -1,8 +1,6 @@
 <template>
   <div :class="b('pane')" v-show="isSelected">
-    <keep-alive>
-      <slot v-if="isSelected || slotInited" />
-    </keep-alive>
+    <slot v-if="slotInited" />
   </div>
 </template>
 
