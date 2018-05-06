@@ -111,7 +111,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 You can scan the following QR code to access the demo：
 
-![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
+<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
 
 ## LICENSE
 

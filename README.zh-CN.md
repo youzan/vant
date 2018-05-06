@@ -101,7 +101,7 @@ Vue.use(Vant);
 
 可以手机扫码以下二维码访问手机端 demo：
 
-![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
+<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
 
 ## 链接
 
