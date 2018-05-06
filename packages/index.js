@@ -45,10 +45,10 @@ import Progress from './progress';
 import PullRefresh from './pull-refresh';
 import Radio from './radio';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
 import Search from './search';
 import Sku from './sku';
-import StarRate from './star-rate';
 import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
@@ -115,10 +115,10 @@ const components = [
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
-  StarRate,
   Slider,
   Step,
   Stepper,
@@ -197,10 +197,10 @@ export {
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
-  StarRate,
   Slider,
   Step,
   Stepper,

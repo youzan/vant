@@ -54,6 +54,7 @@ export default {
   'zh-CN/pull-refresh': wrapper(r => require.ensure([], () => r(require('./zh-CN/pull-refresh.md')), 'zh-CN/pull-refresh')),
   'zh-CN/quickstart': wrapper(r => require.ensure([], () => r(require('./zh-CN/quickstart.md')), 'zh-CN/quickstart')),
   'zh-CN/radio': wrapper(r => require.ensure([], () => r(require('./zh-CN/radio.md')), 'zh-CN/radio')),
+  'zh-CN/rate': wrapper(r => require.ensure([], () => r(require('./zh-CN/rate.md')), 'zh-CN/rate')),
   'zh-CN/search': wrapper(r => require.ensure([], () => r(require('./zh-CN/search.md')), 'zh-CN/search')),
   'zh-CN/sku': wrapper(r => require.ensure([], () => r(require('./zh-CN/sku.md')), 'zh-CN/sku')),
   'zh-CN/slider': wrapper(r => require.ensure([], () => r(require('./zh-CN/slider.md')), 'zh-CN/slider')),
