@@ -439,6 +439,10 @@ module.exports = {
                 title: 'Progress'
               },
               {
+                path: '/rate',
+                title: 'Rate'
+              },
+              {
                 path: '/slider',
                 title: 'Slider'
               },

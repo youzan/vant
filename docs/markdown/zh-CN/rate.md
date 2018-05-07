@@ -31,9 +31,9 @@ export default {
 <van-rate
   v-model="value"
   :size="25"
-  :todal="6"
-  :color="color",
-  :defaultColor="defaultColor"
+  :count="6"
+  color="#2ba"
+  void-color="#ceefe8"
 />
 ```
 
@@ -47,10 +47,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| v-model | 当前分数 | `Number` | - |
-| size | 星标大小，单位为`px` | `Number` | `20` |
-| total | 总分 | `Number` | `5` |
-| color | 选中时的星标颜色 | `String` | `#ffd21e`  |
-| default-color | 未选中时的星标颜色 | `String` | `#c7c7c7` |
-| disabled-color | 不可选时的星标颜色 | `String` | `#bdbdbd` | 
+| v-model | 当前分值 | `Number` | - |
+| count | 图标总数 | `Number` | `5` |
+| size | 图标大小 (px) | `Number` | `20` |
+| color | 选中时的颜色 | `String` | `#ffd21e`  |
+| void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
+| disabled-color | 不可选时的颜色 | `String` | `#bdbdbd` | 
 | disabled | 是否禁用评分 | `Boolean` | `false` |

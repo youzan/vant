@@ -4,7 +4,8 @@
   user-select: none;
 
   &__item {
-    margin: 0 2px;
+    padding: 0 2px;
     display: inline-block;
+    box-sizing: content-box;
   }
 }

@@ -112,6 +112,7 @@ export default {
   'en-US/pull-refresh': wrapper(r => require.ensure([], () => r(require('./en-US/pull-refresh.md')), 'en-US/pull-refresh')),
   'en-US/quickstart': wrapper(r => require.ensure([], () => r(require('./en-US/quickstart.md')), 'en-US/quickstart')),
   'en-US/radio': wrapper(r => require.ensure([], () => r(require('./en-US/radio.md')), 'en-US/radio')),
+  'en-US/rate': wrapper(r => require.ensure([], () => r(require('./en-US/rate.md')), 'en-US/rate')),
   'en-US/search': wrapper(r => require.ensure([], () => r(require('./en-US/search.md')), 'en-US/search')),
   'en-US/sku': wrapper(r => require.ensure([], () => r(require('./en-US/sku.md')), 'en-US/sku')),
   'en-US/slider': wrapper(r => require.ensure([], () => r(require('./en-US/slider.md')), 'en-US/slider')),
