@@ -58,7 +58,7 @@ export default create({
     },
 
     list() {
-      return new Array(this.count).fill(false).map((value, index) => index < this.value);
+      return Array.apply(null, { length: this.count }).map((value, index) => index < this.value);
     }
   },
 
