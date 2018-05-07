@@ -63,7 +63,7 @@ export default create({
   },
 
   methods: {
-    onlect(index) {
+    onSelect(index) {
       if (!this.disabled) {
         this.$emit('input', index + 1);
       }
