@@ -1,21 +1,21 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-rate v-model="valueA" />
+      <van-rate v-model="value1" />
     </demo-block>
 
     <demo-block :title="$t('customColor')">
       <van-rate
-        v-model="valueB"
+        v-model="value2"
         :size="25"
-        :todal="6"
-        :color="'#2ba'"
-        :default-color="'#ceefe8'"
+        :count="6"
+        color="#2ba"
+        void-color="#ceefe8"
       />
     </demo-block>
 
-     <demo-block :title="$t('disabled')">
-      <van-rate disabled v-model="valueC" />
+    <demo-block :title="$t('disabled')">
+      <van-rate disabled v-model="value3" />
     </demo-block>
   </demo-section>
 </template>
@@ -35,9 +35,9 @@ export default {
 
   data() {
     return {
-      valueA: 3,
-      valueB: 4,
-      valueC: 2
+      value1: 3,
+      value2: 4,
+      value3: 2
     };
   }
 };
