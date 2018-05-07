@@ -90,7 +90,6 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-webpack": "3.0.0",
     "lint-staged": "^7.0.4",
-    "mini-css-extract-plugin": "^0.4.0",
     "mocha": "^5.1.1",
     "postcss": "^6.0.21",
     "postcss-calc": "^6.0.0",

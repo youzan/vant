@@ -144,6 +144,7 @@ const install = Vue => {
   });
 };
 
+/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
