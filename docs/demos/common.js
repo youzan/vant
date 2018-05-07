@@ -24,6 +24,7 @@ const demoBaseMixin = {
 
 window.Toast = Toast;
 window.Dialog = Dialog;
+Vue.use(Locale);
 Vue.mixin(i18n);
 Vue.mixin(demoBaseMixin);
 Vue.component('demo-block', DemoBlock);

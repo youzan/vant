@@ -1,28 +1,39 @@
-import Vue from 'vue';
 import deepAssign from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
-const proto = Vue.prototype;
-const defaultLang = 'zh-CN';
+const defaults = {
+  root: null,
+  lang: 'zh-CN'
+};
+
 const locale = {
-  install() {
-    if (proto.$vantLang) {
+  install(Vue) {
+    const { root, lang } = defaults;
+
+    if (root && root.$vantLang) {
       return;
     }
-    Vue.util.defineReactive(proto, '$vantLang', defaultLang);
-    Vue.util.defineReactive(proto, '$vantMessages', { [defaultLang]: defaultMessages });
+    defaults.root = Vue.prototype;
+    Vue.util.defineReactive(defaults.root, '$vantLang', lang);
+    Vue.util.defineReactive(defaults.root, '$vantMessages', { [lang]: defaultMessages });
   },
 
   use(lang, messages) {
-    proto.$vantLang = lang;
-    this.add({ [lang]: messages });
+    const { root } = defaults;
+
+    if (root) {
+      root.$vantLang = lang;
+      this.add({ [lang]: messages });
+    }
   },
 
   add(messages = {}) {
-    deepAssign(proto.$vantMessages, messages);
+    const { root } = defaults;
+
+    if (root) {
+      deepAssign(root.$vantMessages, messages);
+    }
   }
 };
-
-locale.install();
 
 export default locale;
