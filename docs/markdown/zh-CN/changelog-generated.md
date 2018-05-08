@@ -1,5 +1,53 @@
 ## 更新日志
 
+## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2) (2018-05-08)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.1...v1.1.2)
+
+**Breaking changes**
+
+- Swipe 如何禁止用户滑动 [\#967](https://github.com/youzan/vant/issues/967)
+- 关于组件事件的设计思路 [\#960](https://github.com/youzan/vant/issues/960)
+- 请问可以自定义tab line模式下滑动条的宽度并使其居中吗 [\#954](https://github.com/youzan/vant/issues/954)
+
+**Bug Fixes**
+
+- Search 搜索组件 首字显示不全 [\#969](https://github.com/youzan/vant/issues/969)
+
+**Issue**
+
+- 怎么用Checkbox组件实现全选功能 [\#1015](https://github.com/youzan/vant/issues/1015)
+- 建议增加属性筛选器 [\#1009](https://github.com/youzan/vant/issues/1009)
+- fonts本地化，不起作用啊！ [\#1008](https://github.com/youzan/vant/issues/1008)
+- 关于form标签 [\#1006](https://github.com/youzan/vant/issues/1006)
+- Cell单元格里面value字段的颜色什么的都不能自定义的吗 [\#1004](https://github.com/youzan/vant/issues/1004)
+- Field type=number 报错 Cannot read property 'indexOf' of null [\#1003](https://github.com/youzan/vant/issues/1003)
+- Picker多级联动，初始化无法绑定 [\#996](https://github.com/youzan/vant/issues/996)
+- type check failed for prop "swipeThreshold" [\#995](https://github.com/youzan/vant/issues/995)
+- AddressList默认地址 [\#989](https://github.com/youzan/vant/issues/989)
+- swipe组件在nuxt generate下无效果 [\#984](https://github.com/youzan/vant/issues/984)
+- 本地构建主题的问题 [\#981](https://github.com/youzan/vant/issues/981)
+- 当picker组件和popup组件一起使用的时候,picker的toolbar的bug [\#971](https://github.com/youzan/vant/issues/971)
+- list 组件快速划到底部 多次加载 有点问题吧？ [\#963](https://github.com/youzan/vant/issues/963)
+
+**Improvements**
+
+- \[Improvement\] Area: add change event [\#1019](https://github.com/youzan/vant/pull/1019) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] optimize document site [\#1013](https://github.com/youzan/vant/pull/1013) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Locale: add warning when not correctly registered [\#1012](https://github.com/youzan/vant/pull/1012) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Rate: remove dependencie of Array.fill [\#1011](https://github.com/youzan/vant/pull/1011) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Rate: add english document [\#1010](https://github.com/youzan/vant/pull/1010) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Rate: rename component [\#1002](https://github.com/youzan/vant/pull/1002) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] optimize watcher [\#1001](https://github.com/youzan/vant/pull/1001) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Search: should not have cell border [\#1000](https://github.com/youzan/vant/pull/1000) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: update border color [\#998](https://github.com/youzan/vant/pull/998) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Stepper: update disabled style [\#997](https://github.com/youzan/vant/pull/997) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] update slogan [\#993](https://github.com/youzan/vant/pull/993) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Stepper: integer wrong spelling [\#992](https://github.com/youzan/vant/pull/992) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] remove Accepted Values [\#991](https://github.com/youzan/vant/pull/991) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] remove Accepted Values [\#990](https://github.com/youzan/vant/pull/990) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: should lazy render tab-pane [\#978](https://github.com/youzan/vant/pull/978) ([jerryni](https://github.com/jerryni))
+- \[new feature\] add StarRate component [\#901](https://github.com/youzan/vant/pull/901) ([Tinysymphony](https://github.com/Tinysymphony))
+
 ## [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1) (2018-05-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.0...v1.1.1)
 
@@ -227,25 +275,6 @@
 - Tab 标签页  里面添加sticky属性页面滑到一半切换不见了 [\#804](https://github.com/youzan/vant/issues/804)
 - 布局都是PX，没有用rem。 [\#803](https://github.com/youzan/vant/issues/803)
 - NumberKeyboard组件能给一个配合输入框使用的demo吗？考虑到阻止虚拟键盘之类的 [\#802](https://github.com/youzan/vant/issues/802)
-- tab 标签页 [\#801](https://github.com/youzan/vant/issues/801)
-- 外联引用vant，\<van-cell-group\>组件渲染出错 [\#800](https://github.com/youzan/vant/issues/800)
-- 关于文档中 Badge 与 Cell 的引入问题 [\#797](https://github.com/youzan/vant/issues/797)
-- Actionsheet组件应有一个取消按钮事件，以便于处理一些额外逻辑 [\#795](https://github.com/youzan/vant/issues/795)
-- area 控件设置value会出现问题，我设置了350104 [\#794](https://github.com/youzan/vant/issues/794)
-- 关于 vant 样式适配 [\#793](https://github.com/youzan/vant/issues/793)
-- vant 的标签 \<van-button/\> 的click属性不好用 [\#792](https://github.com/youzan/vant/issues/792)
-- Circle 组件能否对中间内容提供slot支持 [\#791](https://github.com/youzan/vant/issues/791)
-- Dont import base css when use babel-plugin-import [\#790](https://github.com/youzan/vant/issues/790)
-- collapse折叠面板不设置accordion时报错Error in render: "TypeError: activeNames.some is not a function" [\#789](https://github.com/youzan/vant/issues/789)
-- 为什么无法修改 tabs的样式 [\#787](https://github.com/youzan/vant/issues/787)
-- 定制主题几点疑惑 [\#786](https://github.com/youzan/vant/issues/786)
-- 移动端适配 [\#785](https://github.com/youzan/vant/issues/785)
-- Icon组件在iphone6：Safari 无法看见,希望改善一下兼容性 [\#784](https://github.com/youzan/vant/issues/784)
-- lazyload里面的options是什么？ [\#780](https://github.com/youzan/vant/issues/780)
-- 省市区选择组件，点击确认后我咋能拿到选中的城市啊？谁知道赛？ [\#778](https://github.com/youzan/vant/issues/778)
-- Error in render: "TypeError: Cannot read property 'undefined' of undefined" [\#776](https://github.com/youzan/vant/issues/776)
-- collapse的一些问题，vant版本是0.12.3 [\#775](https://github.com/youzan/vant/issues/775)
-- Toast.clear\(\); 后背景蒙层依然存在 [\#767](https://github.com/youzan/vant/issues/767)
 
 **Improvements**
 
@@ -255,30 +284,9 @@
 - \[Doc\] fix documentation error [\#828](https://github.com/youzan/vant/pull/828) ([cookfront](https://github.com/cookfront))
 -  \[bug fix\]submit-bar: Decimal rounding [\#820](https://github.com/youzan/vant/pull/820) ([ddchef](https://github.com/ddchef))
 - \[locate\] add zh-HK [\#812](https://github.com/youzan/vant/pull/812) ([jasonc08](https://github.com/jasonc08))
-- \[Doc\] Circle [\#799](https://github.com/youzan/vant/pull/799) ([cookfront](https://github.com/cookfront))
-- \[Doc\] Badge [\#798](https://github.com/youzan/vant/pull/798) ([cookfront](https://github.com/cookfront))
-- \[improvement\] Actionsheet: add cancel event [\#796](https://github.com/youzan/vant/pull/796) ([cookfront](https://github.com/cookfront))
-- \[Improvement\] DatetimePicker: support all picker props [\#788](https://github.com/youzan/vant/pull/788) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] optimize find parent mixin [\#781](https://github.com/youzan/vant/pull/781) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Button: should be unclickavble when loading [\#779](https://github.com/youzan/vant/pull/779) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] Actionsheet: support maxHeight [\#777](https://github.com/youzan/vant/pull/777) ([iscarecrow](https://github.com/iscarecrow))
-- \[Improvement\] SubmitBar: adjsut font-size [\#774](https://github.com/youzan/vant/pull/774) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3) (2018-03-26)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.2...v1.0.3)
-
-**Issue**
-
-- 优惠券选择器，优惠券多的话，超出屏幕无法拖动 [\#769](https://github.com/youzan/vant/issues/769)
-- sku组件，在ios上面输入购买数量软键盘抬起的时候，有横向滚动条，希望给个解决思路 [\#768](https://github.com/youzan/vant/issues/768)
-
-**Improvements**
-
-- \[bugfix\] Tag: text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) ([chenjiahan](https://github.com/chenjiahan))
--  \[Improvement\] Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix picker demo [\#766](https://github.com/youzan/vant/pull/766) ([erniu](https://github.com/erniu))
 
 ## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2) (2018-03-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.1...v1.0.2)
