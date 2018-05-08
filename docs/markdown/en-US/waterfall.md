@@ -69,9 +69,9 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-waterfall-lower | Function to trigger when scroll to bottom | `Function` | - | - |
-| v-waterfall-upper | Function to trigger when scroll to top | `Function` | - | - |
-| waterfall-disabled | Key of the property to control disable status in instance | `String` | - | - |
-| waterfall-offset | Offset to trigger callback function | `Number` | `300` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-waterfall-lower | Function to trigger when scroll to bottom | `Function` | - |
+| v-waterfall-upper | Function to trigger when scroll to top | `Function` | - |
+| waterfall-disabled | Key of the property to control disable status in instance | `String` | - |
+| waterfall-offset | Offset to trigger callback function | `Number` | `300` |

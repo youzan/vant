@@ -1,6 +1,6 @@
 <template>
-  <div :class="b('pane', { select: index === parent.curActive })">
-    <slot />
+  <div :class="b('pane')" v-show="isSelected">
+    <slot v-if="slotInited" />
   </div>
 </template>
 
@@ -18,9 +18,27 @@ export default create({
     disabled: Boolean
   },
 
+  data() {
+    return {
+      slotInited: false
+    };
+  },
+
   computed: {
     index() {
       return this.parent.tabs.indexOf(this);
+    },
+
+    isSelected() {
+      return this.index === this.parent.curActive;
+    }
+  },
+
+  watch: {
+    'parent.curActive'() {
+      if (this.isSelected) {
+        this.slotInited = true;
+      }
     }
   },
 

@@ -47,15 +47,15 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 
 ### Options
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| loading | Src of the image while loading | `String` | - | - |
-| error | Src of the image upon load fail | `String` | - | - |
-| preload | Proportion of pre-loading height | `String` | - | - |
-| attempt | Attempts count | `Number` | `3` | - |
-| listenEvents | Events that you want vue listen for | `Array` | `scroll`... | - |
-| adapter | Dynamically modify the attribute of element | `Object` | - | - |
-| filter | The image's listener filter | `Object` | - | - |
-| lazyComponent | Lazyload component | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| loading | Src of the image while loading | `String` | - |
+| error | Src of the image upon load fail | `String` | - |
+| preload | Proportion of pre-loading height | `String` | - |
+| attempt | Attempts count | `Number` | `3` |
+| listenEvents | Events that you want vue listen for | `Array` | `scroll`... |
+| adapter | Dynamically modify the attribute of element | `Object` | - |
+| filter | The image's listener filter | `Object` | - |
+| lazyComponent | Lazyload component | `Boolean` | `false` |
 
 See more：[ vue-lazyload ](https://github.com/hilongjw/vue-lazyload)

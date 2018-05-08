@@ -137,6 +137,10 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
+                path: '/rate',
+                title: 'Rate - 评分'
+              },
+              {
                 path: '/slider',
                 title: 'Slider -   滑块'
               },
@@ -433,6 +437,10 @@ module.exports = {
               {
                 path: '/progress',
                 title: 'Progress'
+              },
+              {
+                path: '/rate',
+                title: 'Rate'
               },
               {
                 path: '/slider',

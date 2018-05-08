@@ -11,7 +11,7 @@
     <demo-block :title="$t('advancedUsage')">
       <van-stepper
         v-model="stepper2"
-        interger
+        integer
         :min="5"
         :max="40"
         :step="2"

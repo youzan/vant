@@ -83,31 +83,26 @@ export default create({
     }
   },
 
-  mounted() {
-    this.render();
-  },
-
   watch: {
-    rate() {
-      this.render();
+    rate: {
+      handler() {
+        this.startTime = Date.now();
+        this.startRate = this.value;
+        this.endRate = this.format(this.rate);
+        this.increase = this.endRate > this.startRate;
+        this.duration = Math.abs((this.startRate - this.endRate) * 1000 / this.speed);
+        if (this.speed) {
+          cancel(this.rafId);
+          this.rafId = raf(this.animate);
+        } else {
+          this.$emit('input', this.endRate);
+        }
+      },
+      immediate: true
     }
   },
 
   methods: {
-    render() {
-      this.startTime = Date.now();
-      this.startRate = this.value;
-      this.endRate = this.format(this.rate);
-      this.increase = this.endRate > this.startRate;
-      this.duration = Math.abs((this.startRate - this.endRate) * 1000 / this.speed);
-      if (this.speed) {
-        cancel(this.rafId);
-        this.rafId = raf(this.animate);
-      } else {
-        this.$emit('input', this.endRate);
-      }
-    },
-
     animate() {
       const now = Date.now();
       const progress = Math.min((now - this.startTime) / this.duration, 1);

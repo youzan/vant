@@ -3,14 +3,6 @@
 .van-stepper {
   font-size: 0;
 
-  &--disabled {
-    .van-stepper__input,
-    .van-stepper__minus,
-    .van-stepper__plus {
-      border-color: $active-color;
-    }
-  }
-
   &__minus,
   &__plus {
     width: 40px;
@@ -48,6 +40,15 @@
       background-color: $active-color;
     }
 
+    &--disabled {
+      background-color: $background-color;
+
+      &::before,
+      &::after {
+        background-color: $gray;
+      }
+    }
+
     &--disabled:active {
       background-color: $background-color;
     }
@@ -59,20 +60,10 @@
     &::after {
       display: none;
     }
-
-    &--disabled {
-      background-color: $background-color;
-      border-color: $active-color $border-color $active-color $active-color;
-    }
   }
 
   &__plus {
     border-radius: 0 2px 2px 0;
-
-    &--disabled {
-      background-color: $background-color;
-      border-color: $active-color $active-color $active-color $border-color;
-    }
   }
 
   &__input {
@@ -88,10 +79,14 @@
     vertical-align: middle;
     text-align: center;
     -webkit-appearance: none;
+
+    &[disabled] {
+      color: $gray;
+    }
   }
 
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }

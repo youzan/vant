@@ -67,15 +67,15 @@ export default {
 
 ### Steps API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| active | Active step | `Number` | 0 | - |
-| icon | Action step icon | `String` | - | - |
-| icon-class | Icon class | `String` | - | - |
-| title | Title | `String` | - | - |
-| description | Description | `String` | - | - |
-| direction | Direction | `String` | `horizontal` | `vertical` |
-| active-color | Active step color | `String` | `#06bf04` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| active | Active step | `Number` | 0 |
+| icon | Action step icon | `String` | - |
+| icon-class | Icon class | `String` | - |
+| title | Title | `String` | - |
+| description | Description | `String` | - |
+| direction | Can be set to `horizontal` `vertical` | `String` | `horizontal` |
+| active-color | Active step color | `String` | `#06bf04` |
 
 ### Steps Slot
 

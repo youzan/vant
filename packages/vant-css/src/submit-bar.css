@@ -35,7 +35,7 @@
     }
   }
 
-  &__price-interger {
+  &__price-integer {
     color: $red;
   }
 

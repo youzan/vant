@@ -83,24 +83,24 @@ Vue.use(Sku);
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Whether to show sku | `Boolean` | `false` | - |
-| sku | Sku data | `Object` | - | - |
-| goods | Goods info | `Object` | - | - |
-| goods-id | Goods id | `String | Number` | - | - |
-| hide-stock | Whether to hide stock | `Boolean` | `false` | - |
-| show-add-cart-btn | Whether to show cart button | `Boolean` | `true` | - |
-| quota | Quota (0 as no limit) | `Number` | `0` | - |
-| quota-used | Used quota | `Number` | `0` | - |
-| reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` | - |
-| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` | - |
-| disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` | - |
-| close-on-click-overlay | Whether to close sku popup when click overlay | `Boolean` | `false` | - |
-| stepper-title | Quantity title | `String` | `Quantity` | - |
-| custom-stepper-config | Custom stepper related config | `Object` | `{}` | - |
-| message-config | Message related config | `Object` | `{}` | - |
-| get-container | Return the mount node for sku | `Function` | - | `() => HTMLElement` |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Whether to show sku | `Boolean` | `false` |
+| sku | Sku data | `Object` | - |
+| goods | Goods info | `Object` | - |
+| goods-id | Goods id | `String | Number` | - |
+| hide-stock | Whether to hide stock | `Boolean` | `false` |
+| show-add-cart-btn | Whether to show cart button | `Boolean` | `true` |
+| quota | Quota (0 as no limit) | `Number` | `0` |
+| quota-used | Used quota | `Number` | `0` |
+| reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` |
+| reset-selected-sku-on-hide | Whether to reset selected sku when hide | `Boolean` | `false` |
+| disable-stepper-input | Whether to disable stepper input | `Boolean` | `false` |
+| close-on-click-overlay | Whether to close sku popup when click overlay | `Boolean` | `false` |
+| stepper-title | Quantity title | `String` | `Quantity` |
+| custom-stepper-config | Custom stepper related config | `Object` | `{}` |
+| message-config | Message related config | `Object` | `{}` |
+| get-container | Return the mount node for sku | `() => HTMLElement` | - |
 
 ### Event
 

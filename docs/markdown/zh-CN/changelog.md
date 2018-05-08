@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+`2018-05-04`
+
+**Improvements**
+
+* Contact: 优化背景图 [\#972](https://github.com/youzan/vant/pull/972) [@chenjiahan](https://github.com/chenjiahan)
+* List: 新增 loading-text 属性 [\#948](https://github.com/youzan/vant/pull/948) [@rex-zsd](https://github.com/rex-zsd)
+* Swipe: 优化轮播性能 [\#985](https://github.com/youzan/vant/pull/985) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: 新增 touchable 属性 [\#975](https://github.com/youzan/vant/pull/975) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: 新增 vertical 属性，支持垂直布局 [\#938](https://github.com/youzan/vant/pull/938) [@jerryni](https://github.com/jerryni)
+* Slider: 增加滑动触摸区域 [\#977](https://github.com/youzan/vant/pull/977) [@chenjiahan](https://github.com/chenjiahan)
+* Stepper: 新增 interger 属性 [\#951](https://github.com/youzan/vant/pull/951) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: 新增 line-width 属性 [\#988](https://github.com/youzan/vant/pull/988) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* 修复 ImagePreview offset 计算错误[\#980](https://github.com/youzan/vant/pull/980) [@jerryni](https://github.com/jerryni)
+* 修复 Search 在 iOS 下文字被遮挡的问题 [\#974](https://github.com/youzan/vant/pull/974) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
 `2018-04-25`
 

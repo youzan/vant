@@ -76,7 +76,7 @@ $van-tabs-card-height: 30px;
     }
   }
 
-  &__nav-bar {
+  &__line {
     z-index: 1;
     left: 0;
     bottom: 15px;
@@ -132,14 +132,6 @@ $van-tabs-card-height: 30px;
 
     &:active {
       background-color: $white;
-    }
-  }
-
-  &__pane {
-    display: none;
-
-    &--select {
-      display: block;
     }
   }
 }

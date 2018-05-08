@@ -38,6 +38,7 @@ export default {
   'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress')),
   'pull-refresh': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/pull-refresh'), 'pull-refresh')), 'pull-refresh')),
   'radio': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/radio'), 'radio')), 'radio')),
+  'rate': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/rate'), 'rate')), 'rate')),
   'search': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/search'), 'search')), 'search')),
   'sku': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/sku'), 'sku')), 'sku')),
   'slider': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/slider'), 'slider')), 'slider')),

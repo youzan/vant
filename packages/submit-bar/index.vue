@@ -8,7 +8,7 @@
       <div :class="b('price')">
         <template v-if="hasPrice">
           <span>{{ label || $t('label') }}</span>
-          <span :class="b('price-interger')">{{ currency }}{{ priceInterger }}.</span>
+          <span :class="b('price-integer')">{{ currency }}{{ priceInterger }}.</span>
           <span :class="b('price-decimal')">{{ priceDecimal }}</span>
         </template>
       </div>

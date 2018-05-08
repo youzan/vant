@@ -56,17 +56,17 @@ export default {
 
 ### Radio API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| name | Radio name | `any` | - | - |
-| disabled | Whether to disable radio | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| name | Radio name | `any` | - |
+| disabled | Whether to disable radio | `Boolean` | `false` |
 
 ### RadioGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Name of checked radio | `any` | - | - |
-| disabled | Diable all radios | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Name of checked radio | `any` | - |
+| disabled | Diable all radios | `Boolean` | `false` |
 
 ### RadioGroup Event
 

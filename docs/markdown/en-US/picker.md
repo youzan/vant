@@ -56,7 +56,7 @@ export default {
 ```html
 <van-picker
   show-toolbar
-  :title="Title"
+  title="Title"
   :columns="columns"
   @cancel="onCancel"
   @confirm="onConfirm"
@@ -126,17 +126,17 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| columns | Columns data | `Array` | `[]` | - |
-| show-toolbar | Whether to show toolbar | `Boolean` | `false` | - |
-| title | Toolbar title | `String` | `''` | - |
-| loading | Whether to show loading prompt | `Boolean` | `false` | - |
-| value-key | Key of option text | `String` | `text` | - |
-| item-height | Option height | `Number` | `44` | - |
-| confirm-button-text | Text of confirm button | `String` | `Confirm` | - |
-| cancel-button-text | Text of cancel button | `String` | `Cancel` | - |
-| visible-item-count | Count of visible columns | `Number` | `5` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| columns | Columns data | `Array` | `[]` |
+| show-toolbar | Whether to show toolbar | `Boolean` | `false` |
+| title | Toolbar title | `String` | `''` |
+| loading | Whether to show loading prompt | `Boolean` | `false` |
+| value-key | Key of option text | `String` | `text` |
+| item-height | Option height | `Number` | `44` |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` |
+| visible-item-count | Count of visible columns | `Number` | `5` |
 
 ### Event
 Picker events will pass different parameters according to the columns are single or multiple

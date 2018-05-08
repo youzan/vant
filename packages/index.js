@@ -45,6 +45,7 @@ import Progress from './progress';
 import PullRefresh from './pull-refresh';
 import Radio from './radio';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
 import Search from './search';
 import Sku from './sku';
@@ -67,7 +68,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.1.0';
+const version = '1.1.1';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -114,6 +115,7 @@ const components = [
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
@@ -196,6 +198,7 @@ export {
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,

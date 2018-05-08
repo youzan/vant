@@ -69,12 +69,14 @@ export default create({
     iconName() {
       return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
     },
+
     barStyle() {
       return {
         color: this.color,
         background: this.background
       };
     },
+
     contentStyle() {
       return {
         paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
@@ -84,13 +86,21 @@ export default create({
     }
   },
 
-  mounted() {
-    this.initAnimation();
-  },
-
   watch: {
-    text: function() {
-      this.$nextTick(this.initAnimation);
+    text: {
+      handler() {
+        this.$nextTick(() => {
+          const offsetWidth = this.$refs.content.getBoundingClientRect().width;
+          const wrapWidth = this.$refs.wrap.getBoundingClientRect().width;
+          if (this.scrollable && offsetWidth > wrapWidth) {
+            this.wrapWidth = wrapWidth;
+            this.offsetWidth = offsetWidth;
+            this.duration = offsetWidth / this.speed;
+            this.animationClass = this.b('play');
+          }
+        });
+      },
+      immediate: true
     }
   },
 
@@ -105,17 +115,6 @@ export default create({
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
         this.animationClass = this.b('play--infinite');
       });
-    },
-
-    initAnimation() {
-      const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-      const wrapWidth = this.$refs.wrap.getBoundingClientRect().width;
-      if (this.scrollable && offsetWidth > wrapWidth) {
-        this.wrapWidth = wrapWidth;
-        this.offsetWidth = offsetWidth;
-        this.duration = offsetWidth / this.speed;
-        this.animationClass = this.b('play');
-      }
     }
   }
 });

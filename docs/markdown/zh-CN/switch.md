@@ -63,12 +63,12 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 开关选中状态 | `Boolean` | `false` | - |
-| loading | 是否为加载状态 | `Boolean` | `false` | - |
-| disabled | 是否为禁用状态 | `Boolean` | `false` | - |
-| size | 开关尺寸 | `String` | `30px` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 开关选中状态 | `Boolean` | `false` |
+| loading | 是否为加载状态 | `Boolean` | `false` |
+| disabled | 是否为禁用状态 | `Boolean` | `false` |
+| size | 开关尺寸 | `String` | `30px` |
 
 ### Event
 

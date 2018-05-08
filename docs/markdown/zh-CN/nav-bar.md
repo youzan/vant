@@ -46,14 +46,15 @@ export default {
 
 
 ### API
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | `''` | - |
-| left-text | 左侧文案 | `String` | `''` | - |
-| right-text | 右侧文案 | `String` | `''` | - |
-| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
-| fixed | 是否固定在顶部 | `Boolean` | `false` | - |
-| z-index | 元素 z-index | `Number` | `1` | - |
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 标题 | `String` | `''` |
+| left-text | 左侧文案 | `String` | `''` |
+| right-text | 右侧文案 | `String` | `''` |
+| left-arrow | 是否显示左侧箭头 | `Boolean` | `false` |
+| fixed | 是否固定在顶部 | `Boolean` | `false` |
+| z-index | 元素 z-index | `Number` | `1` |
 
 ### Slot
 

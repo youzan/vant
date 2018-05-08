@@ -94,11 +94,11 @@ toast2.clear();
 
 ### Options
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| type | 提示类型 | `String` | `text` | `loading` `success` `fail` `html` |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | `String` | `text` |
+| position | 位置，可选值为 `top` `middle` `bottom` | `String` | `middle` |
 | message | 内容 | `String` | `''` | - |
-| position | 位置 | `String` | `middle` | `top` `bottom` |
-| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
-| forbidClick | 禁止背景点击 | `Boolean` | `false` | - |
-| duration | 时长(ms) | `Number` | `3000` | 值为 0 时，toast 不会消失 |
+| mask | 是否显示背景蒙层 | `Boolean` | `false` |
+| forbidClick | 是否禁止背景点击 | `Boolean` | `false` |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |

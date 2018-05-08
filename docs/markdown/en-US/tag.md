@@ -38,11 +38,11 @@ Vue.use(Tag);
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| type | Type | `String` | `''`| `primary` `success` `danger` |
-| plain | Whether to be plain style | `Boolean` | `false` | - |
-| mark | Wtether to be mark style | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| type | Type, can be set to `primary` `success` `danger` | `String` | `''`|
+| plain | Whether to be plain style | `Boolean` | `false` |
+| mark | Wtether to be mark style | `Boolean` | `false` |
 
 ### Slot
 

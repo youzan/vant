@@ -9,14 +9,12 @@
       <van-button @click="show2 = true;">{{ $t('button2') }}</van-button>
 
       <van-popup v-model="show2" position="bottom">
-        <van-tabs>
-          <van-tab title="Tab1">
-            <van-cell v-for="i in 20" :key="i" :title="`Item ${ i }`" />
-          </van-tab>
-          <van-tab title="Tab2">
-            Lorem ipsum dolor sit amet, quis interdum et sollicitudin consectetuer scelerisque, gravida nulla consequatur dis mauris non morbi, dictum leo enim elementum ac wisi nullam, nam orci erat. Ultrices est. Nunc penatibus vel varius odio. Ullamcorper placerat amet amet sed, urna tempor, elit elit at. Eget congue. Sed proin metus sapien libero, pulvinar ut, ut aenean fermentum magna placerat dapibus voluptas, sed at lacinia pede fermentum rutrum et. Vitae nulla sapien vel in hac felis, montes in donec nulla eu volutpat augue.
-          </van-tab>
-        </van-tabs>
+        <van-picker
+          show-toolbar
+          :columns="$t('columns')"
+          @confirm="show2 = false"
+          @cancel="show2 = false"
+        />
       </van-popup>
 
       <van-button @click="show3 = true">{{ $t('button4') }}</van-button>
@@ -46,7 +44,8 @@ export default {
       button3: '弹出 Dialog',
       button4: '顶部弹出',
       button5: '右侧弹出',
-      button6: '关闭弹层'
+      button6: '关闭弹层',
+      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
     },
     'en-US': {
       position: 'Position',
@@ -55,7 +54,8 @@ export default {
       button3: 'Show Dialog',
       button4: 'From Top',
       button5: 'From Right',
-      button6: 'Close Popup'
+      button6: 'Close Popup',
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
     }
   },
 
@@ -103,7 +103,6 @@ export default {
 
     &--bottom {
       width: 100%;
-      height: 200px;
       padding: 0;
       border-radius: 0;
     }

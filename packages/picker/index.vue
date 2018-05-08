@@ -70,13 +70,14 @@ export default create({
     };
   },
 
-  created() {
-    this.initColumns();
-  },
-
   watch: {
-    columns() {
-      this.initColumns();
+    columns: {
+      handler() {
+        const columns = this.columns.map(deepClone);
+        this.isSimpleColumn = columns.length && !columns[0].values;
+        this.currentColumns = this.isSimpleColumn ? [{ values: columns }] : columns;
+      },
+      immediate: true
     }
   },
 
@@ -95,12 +96,6 @@ export default create({
   },
 
   methods: {
-    initColumns() {
-      const columns = this.columns.map(deepClone);
-      this.isSimpleColumn = columns.length && !columns[0].values;
-      this.currentColumns = this.isSimpleColumn ? [{ values: columns }] : columns;
-    },
-
     emit(event) {
       if (this.isSimpleColumn) {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
