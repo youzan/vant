@@ -5,19 +5,19 @@
 
 **Improvements**
 
-- 新增 Rate 评分组件 [\#901](https://github.com/youzan/vant/pull/901) [\#1002](https://github.com/youzan/vant/pull/1002) [\#1010](https://github.com/youzan/vant/pull/1010) [\#1011](https://github.com/youzan/vant/pull/1011) [@Tinysymphony](https://github.com/Tinysymphony) [@chenjiahan](https://github.com/chenjiahan)
-- Area: 新增 change 事件 [\#1019](https://github.com/youzan/vant/pull/1019) [@chenjiahan](https://github.com/chenjiahan)
-- Button: 更新边框样式 [\#998](https://github.com/youzan/vant/pull/998) [@chenjiahan](https://github.com/chenjiahan)
-- Locale: 新增错误提示 [\#1012](https://github.com/youzan/vant/pull/1012) [@chenjiahan](https://github.com/chenjiahan)
-- Stepper: 更新禁用状态样式 [\#997](https://github.com/youzan/vant/pull/997) [@chenjiahan](https://github.com/chenjiahan)
-- 优化组件 watch 写法 [\#1001](https://github.com/youzan/vant/pull/1001) [@chenjiahan](https://github.com/chenjiahan)
-- 优化文档 API 展示 [\#990](https://github.com/youzan/vant/pull/990) [\#991](https://github.com/youzan/vant/pull/991) [@chenjiahan](https://github.com/chenjiahan)
+- add Rate component [\#901](https://github.com/youzan/vant/pull/901) [\#1002](https://github.com/youzan/vant/pull/1002) [\#1010](https://github.com/youzan/vant/pull/1010) [\#1011](https://github.com/youzan/vant/pull/1011) [@Tinysymphony](https://github.com/Tinysymphony) [@chenjiahan](https://github.com/chenjiahan)
+- Area: add change event [\#1019](https://github.com/youzan/vant/pull/1019) [@chenjiahan](https://github.com/chenjiahan)
+- Button: update border color [\#998](https://github.com/youzan/vant/pull/998) [@chenjiahan](https://github.com/chenjiahan)
+- Locale: add warning when not correctly registered [\#1012](https://github.com/youzan/vant/pull/1012) [@chenjiahan](https://github.com/chenjiahan)
+- Stepper: update disabled style [\#997](https://github.com/youzan/vant/pull/997) [@chenjiahan](https://github.com/chenjiahan)
+- optimize component watcher [\#1001](https://github.com/youzan/vant/pull/1001) [@chenjiahan](https://github.com/chenjiahan)
+- Document: optimize API table [\#990](https://github.com/youzan/vant/pull/990) [\#991](https://github.com/youzan/vant/pull/991) [@chenjiahan](https://github.com/chenjiahan)
 
 **Bug Fixes**
 
-- 修复 Search 错误展示边框的问题 [\#1000](https://github.com/youzan/vant/pull/1000) [@chenjiahan](https://github.com/chenjiahan)
-- 修复 Tab 初始化时的渲染问题 [\#978](https://github.com/youzan/vant/pull/978) ([jerryni](https://github.com/jerryni))
-- 修复 Stepper integer 属性拼写错误 [\#992](https://github.com/youzan/vant/pull/992) [@chenjiahan](https://github.com/chenjiahan)
+- fix Search should not have cell border [\#1000](https://github.com/youzan/vant/pull/1000) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab should lazy render tab-pane [\#978](https://github.com/youzan/vant/pull/978) ([jerryni](https://github.com/jerryni))
+- fix Stepper integer wrong spelling [\#992](https://github.com/youzan/vant/pull/992) [@chenjiahan](https://github.com/chenjiahan)
 
 
 ### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
