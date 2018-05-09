@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
-const webpackDevConfig = require('../build/webpack.config.dev');
+const webpackDevConfig = require('../build/webpack.dev');
 
 function getWebpackConfig(testFileName) {
   return {

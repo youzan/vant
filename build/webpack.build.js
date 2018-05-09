@@ -1,5 +1,5 @@
 const path = require('path');
-const config = require('./webpack.config.dev.js');
+const config = require('./webpack.dev.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 
 module.exports = Object.assign({}, config, {

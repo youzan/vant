@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
-    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js",
+    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.dev.js",
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color",
@@ -23,7 +23,7 @@
     "build:changelog": "sh build/bin/build-changelog.sh",
     "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan",
     "deploy:cdn": "superman cdn /zanui/vant docs/dist/*.js && superman cdn /zanui/vant/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vant/async_zh-CN docs/dist/async_zh-CN/*.js",
-    "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.prod.js",
+    "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.doc.js",
     "dist": "npm run bootstrap && node build/bin/build-lib.js",
     "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
     "test": "karma start test/karma.conf.js --single-run",
@@ -110,7 +110,6 @@
     "vue-template-es2015-compiler": "^1.6.0",
     "webpack": "^4.8.1",
     "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-dev-server": "3.1.4"
   }
 }
