@@ -1,10 +1,10 @@
 module.exports = {
-  plugins: [
-    require('postcss-easy-import')(),
-    require('precss')(),
-    require('postcss-calc')(),
-    require('autoprefixer')({
+  plugins: {
+    'postcss-easy-import': {},
+    'precss': {},
+    'postcss-calc': {},
+    'autoprefixer': {
       browsers: ['Android >= 4.0', 'iOS >= 7']
-    })
-  ]
+    }
+  }
 };
