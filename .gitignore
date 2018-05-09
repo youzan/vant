@@ -4,7 +4,8 @@
 .idea
 .vscode
 packages/**/lib
-lib/
+es
+lib
 node_modules
 example/dist
 /docs/dist

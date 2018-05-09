@@ -192,21 +192,21 @@ describe('AddressEdit', () => {
 
     wrapper.find('.van-field__control')[2].trigger('focus');
     wrapper.vm.$nextTick(() => {
-      const items = wrapper.find('.van-address-edit-detail__suggest-item');
+      const items = wrapper.find('.van-icon-location');
       expect(items.length).to.equal(3);
 
-      items[0].trigger('click');
+      items[0].element.parentNode.click();
       wrapper.vm.$nextTick(() => {
         expect(wrapper.find('.van-field__control')[2].element.value).to.equal(
           '杭州市西湖区 黄龙万科中心'
         );
 
-        items[1].trigger('click');
+        items[1].element.parentNode.click();
         wrapper.vm.$nextTick(() => {
           expect(wrapper.find('.van-field__control')[2].element.value).to.equal(
             '黄龙万科中心H座'
           );
-          items[2].trigger('click');
+          items[2].element.parentNode.click();
 
           wrapper.vm.$nextTick(() => {
             expect(

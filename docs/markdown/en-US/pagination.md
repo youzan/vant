@@ -52,15 +52,15 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Current page number | `Number` | - | - |
-| mode | Mode | `String` | `multi` | `simple`  |
-| items-per-page | Item number per page | `Number` | `10` | - |
-| prev-text | Previous text | `String` | `Previous` | - |
-| next-text | Next text | `String` | `Next` | - |
-| show-page-size | Count of page size to show | `Number` | `5` | - |
-| force-ellipses | Whether to show ellipses | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Current page number | `Number` | - |
+| mode | Mode, can be set to `simple` `multi` | `String` | `multi` |
+| items-per-page | Item number per page | `Number` | `10` |
+| prev-text | Previous text | `String` | `Previous` |
+| next-text | Next text | `String` | `Next` |
+| show-page-size | Count of page size to show | `Number` | `5` |
+| force-ellipses | Whether to show ellipses | `Boolean` | `false` |
 
 ### Event
 

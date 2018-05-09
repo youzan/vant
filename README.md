@@ -6,7 +6,7 @@
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<p align="center" style="margin: 30px 0 35px;">A Vue.js 2.0 Mobile UI at YouZan</p>
+<p align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
 [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
@@ -42,9 +42,14 @@ npm i babel-plugin-import -D
 
 ```js
 // set babel config in .babelrc or babel-loader
+// Note: Don't set libraryDirectory if you are using webpack 1.
 {
   "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
@@ -106,7 +111,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 You can scan the following QR code to access the demo：
 
-![qrcode](https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png)
+<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
 
 ## LICENSE
 

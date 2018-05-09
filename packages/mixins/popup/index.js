@@ -2,8 +2,11 @@ import manager from './manager';
 import context from './context';
 import scrollUtils from '../../utils/scroll';
 import { on, off } from '../../utils/event';
+import Touch from '../touch';
 
 export default {
+  mixins: [Touch],
+
   props: {
     // whether to show popup
     value: Boolean,
@@ -42,10 +45,6 @@ export default {
 
   created() {
     this._popupId = 'popup-' + context.plusKey('id');
-    this.pos = {
-      x: 0,
-      y: 0
-    };
   },
 
   mounted() {
@@ -57,14 +56,26 @@ export default {
     }
   },
 
+  activated() {
+    /* istanbul ignore next */
+    if (this.value) {
+      this.open();
+    }
+  },
+
   beforeDestroy() {
+    this.close();
+  },
+
+  deactivated() {
+    /* istanbul ignore next */
     this.close();
   },
 
   methods: {
     open() {
       /* istanbul ignore next */
-      if (this.$isServer) {
+      if (this.$isServer || this.opened) {
         return;
       }
 
@@ -73,23 +84,34 @@ export default {
         context.zIndex = this.zIndex;
       }
 
-      if (this.lockScroll) {
-        document.body.classList.add('van-overflow-hidden');
-        on(document, 'touchstart', this.onTouchStart);
-        on(document, 'touchmove', this.onTouchMove);
-      }
-
+      this.opened = true;
       this.renderOverlay();
-      this.$emit('input', true);
+
+      if (this.lockScroll) {
+        on(document, 'touchstart', this.touchStart);
+        on(document, 'touchmove', this.onTouchMove);
+        if (!context.lockCount) {
+          document.body.classList.add('van-overflow-hidden');
+        }
+        context.lockCount++;
+      }
     },
 
     close() {
-      if (this.lockScroll) {
-        document.body.classList.remove('van-overflow-hidden');
-        off(document, 'touchstart', this.onTouchStart);
-        off(document, 'touchmove', this.onTouchMove);
+      if (!this.opened) {
+        return;
       }
 
+      if (this.lockScroll) {
+        context.lockCount--;
+        off(document, 'touchstart', this.touchStart);
+        off(document, 'touchmove', this.onTouchMove);
+        if (!context.lockCount) {
+          document.body.classList.remove('van-overflow-hidden');
+        }
+      }
+
+      this.opened = false;
       manager.close(this._popupId);
       this.$emit('input', false);
     },
@@ -97,27 +119,17 @@ export default {
     move() {
       if (this.getContainer) {
         this.getContainer().appendChild(this.$el);
+      /* istanbul ignore if */
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
     },
 
-    onTouchStart(e) {
-      this.pos = {
-        x: e.touches[0].clientX,
-        y: e.touches[0].clientY
-      };
-    },
-
     onTouchMove(e) {
-      const { pos } = this;
-      const dx = e.touches[0].clientX - pos.x;
-      const dy = e.touches[0].clientY - pos.y;
-      const direction = dy > 0 ? '10' : '01';
+      this.touchMove(e);
+      const direction = this.deltaY > 0 ? '10' : '01';
       const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
-      const isVertical = Math.abs(dx) < Math.abs(dy);
-
       let status = '11';
 
       /* istanbul ignore next */
@@ -130,7 +142,7 @@ export default {
       /* istanbul ignore next */
       if (
         status !== '11' &&
-        isVertical &&
+        this.direction === 'vertical' &&
         !(parseInt(status, 2) & parseInt(direction, 2))
       ) {
         e.preventDefault();

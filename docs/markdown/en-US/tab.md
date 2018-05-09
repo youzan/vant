@@ -11,10 +11,10 @@ Vue.use(Tab).use(Tabs);
 
 #### Basic Usage
 
-By default, the first tab is actived. You can set `active` attribute on `van-tabs` to active specified tab.
+The first tab is actived by default, you can set `v-model` to active specified tab.
 
 ```html
-<van-tabs :active="active">
+<van-tabs v-model="active">
   <van-tab v-for="index in 4" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
@@ -101,7 +101,7 @@ export default {
 In sticky mode, the tab will be fixed to top when scroll to top
 
 ```html
-<van-tabs :active="active" sticky>
+<van-tabs v-model="active" sticky>
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -112,7 +112,7 @@ In sticky mode, the tab will be fixed to top when scroll to top
 Use title slot to custom tab title
 
 ```html
-<van-tabs :active="active">
+<van-tabs v-model="active">
   <van-tab v-for="index in 2">
     <div slot="title">
       <van-icon name="more-o" />tab
@@ -127,7 +127,7 @@ Use title slot to custom tab title
 In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ```html
-<van-tabs :active="active" swipeable>
+<van-tabs v-model="active" swipeable>
   <van-tab v-for="index in 4" :title="'tab ' + index">
     content {{ index }}
   </van-tab>
@@ -136,21 +136,22 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 ### Tabs API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| type | There are two style tabs, set this attribute to change tab style | `String` | `line` | `card` |
-| active | Index of active tab | `String` `Number` | `0` | - |
-| duration | Toggle tab's animation time | `Number` | `0.2` | - | - |
-| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - | - |
-| sticky | Whether to use sticky mode | `Boolean` | `false` | - |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Index of active tab | `String` `Number` | `0` |
+| type | Can be set to `line` `card` | `String` | `line` |
+| duration | Toggle tab's animation time | `Number` | `0.2` | - |
+| line-width | Width of tab line (px) | `Number` | Width of active tab |
+| swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
+| sticky | Whether to use sticky mode | `Boolean` | `false` |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 
 ### Tab API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Title | `String` | - | - |
-| disabled | Whether to disable tab | `Boolean` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Title | `String` | - |
+| disabled | Whether to disable tab | `Boolean` | `false` |
 
 ### Tab Slot
 

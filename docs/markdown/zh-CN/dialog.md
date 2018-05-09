@@ -67,24 +67,29 @@ export default {
 
 ### Options
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | - | - |
-| message | 内容 | `String` | - | - |
-| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` | - |
-| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` | - |
-| confirmButtonText | 确认按钮的文案 | `String` |  `确认` | - |
-| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
-| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
-| lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 标题 | `String` | - |
+| message | 内容 | `String` | - |
+| showConfirmButton | 是否展示确认按钮 | `Boolean` |  `true` |
+| showCancelButton | 是否展示取消按钮 | `Boolean` |  `false` |
+| confirmButtonText | 确认按钮的文案 | `String` |  `确认` |
+| cancelButtonText | 取消按钮的文案 | `String` | `取消` |
+| overlay | 是否展示蒙层 | `Boolean` | `true` |
+| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
+| lockScroll | 是否锁定背景滚动 | `Boolean` | `true` |
+| beforeClose | 关闭前的回调函数，调用 done 后关闭弹窗 | (action: string, done: function) => void | - |
 
 
 #### 高级用法
 如果需要在弹窗内实现更复杂的交互，可以通过组件形式来调用 Dialog
 
 ```html
-<van-dialog v-model="show" @confirm="onConfirm">
+<van-dialog
+  v-model="show"
+  show-cancel-button
+  :before-close="beforeClose"
+>
   <van-field
     v-model="username"
     label="用户名"
@@ -112,8 +117,12 @@ export default {
   },
   
   methods: {
-    onConfirm() {
-      this.show = false;
+    beforeClose() {
+      if (action === 'confirm') {
+        setTimeout(done, 1000);
+      } else {
+        done();
+      }
     }
   }
 }
@@ -121,18 +130,19 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 是否显示弹窗 | `Boolean` | - | - |
-| title | 标题 | `String` | - | - |
-| message | 内容 | `String` | - | - |
-| show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` | - |
-| show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` | - |
-| confirm-button-text | 确认按钮的文案 | `String` |  `确认` | - |
-| cancel-button-text | 取消按钮的文案 | `String` | `取消` | - |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
-| close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
-| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 是否显示弹窗 | `Boolean` | - |
+| title | 标题 | `String` | - |
+| message | 内容 | `String` | - |
+| show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` |
+| show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` |
+| confirm-button-text | 确认按钮的文案 | `String` |  `确认` |
+| cancel-button-text | 取消按钮的文案 | `String` | `取消` |
+| overlay | 是否展示蒙层 | `Boolean` | `true` |
+| close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
+| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` |
+| before-close | 关闭前的回调函数，调用 done 后关闭弹窗 | (action: string, done: function) => void | - |
 
 ### Event
 

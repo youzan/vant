@@ -1,18 +1,16 @@
 <template>
-  <div class="van-tabs" :class="`van-tabs--${type}`">
+  <div :class="b([type])">
     <div
       ref="wrap"
-      class="van-tabs__wrap"
-      :class="[`van-tabs__wrap--${position}`, {
-        'van-tabs--scrollable': scrollable,
-        'van-hairline--top-bottom': type === 'line'
-      }]"
+      :class="[
+        b('wrap', [position, { scrollable }]),
+        { 'van-hairline--top-bottom': type === 'line' }
+      ]"
     >
-      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
-        <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
+      <div :class="b('nav', [type])" ref="nav">
+        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
         <div
           v-for="(tab, index) in tabs"
-          :key="index"
           ref="tabs"
           class="van-tab"
           :class="{
@@ -26,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="van-tabs__content" ref="content">
+    <div :class="b('content')" ref="content">
       <slot />
     </div>
   </div>
@@ -38,16 +36,25 @@ import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'tabs',
+
+  mixins: [Touch],
 
   components: {
     VanNode
   },
 
+  model: {
+    prop: 'active'
+  },
+
   props: {
     sticky: Boolean,
+    lineWidth: Number,
+    swipeable: Boolean,
     active: {
       type: [Number, String],
       default: 0
@@ -63,8 +70,7 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
-    },
-    swipeable: Boolean
+    }
   },
 
   data() {
@@ -72,7 +78,7 @@ export default create({
       tabs: [],
       position: 'content-top',
       curActive: 0,
-      navBarStyle: {}
+      lineStyle: {}
     };
   },
 
@@ -85,17 +91,19 @@ export default create({
 
   watch: {
     active(val) {
-      this.correctActive(val);
+      if (val !== this.curActive) {
+        this.correctActive(val);
+      }
     },
 
     tabs(tabs) {
       this.correctActive(this.curActive || this.active);
-      this.setNavBar();
+      this.setLine();
     },
 
     curActive() {
       this.scrollIntoView();
-      this.setNavBar();
+      this.setLine();
 
       // scroll to correct position
       if (this.position === 'page-top' || this.position === 'content-bottom') {
@@ -110,7 +118,7 @@ export default create({
 
   mounted() {
     this.correctActive(this.active);
-    this.setNavBar();
+    this.setLine();
 
     this.$nextTick(() => {
       if (this.sticky) {
@@ -146,24 +154,12 @@ export default create({
 
     // whether to bind content swipe listener
     swipeableHandler(init) {
-      const swipeableEl = this.$refs.content;
-
-      (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
-      (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
-      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
-      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
-    },
-
-    // record swipe touch start position
-    onTouchStart(event) {
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
-    },
-
-    // watch swipe touch move
-    onTouchMove(event) {
-      this.deltaX = event.touches[0].clientX - this.startX;
-      this.direction = this.getDirection(event.touches[0]);
+      const { content } = this.$refs;
+      const action = init ? on : off;
+      action(content, 'touchstart', this.touchStart);
+      action(content, 'touchmove', this.touchMove);
+      action(content, 'touchend', this.onTouchEnd);
+      action(content, 'touchcancel', this.onTouchEnd);
     },
 
     // watch swipe touch end
@@ -172,21 +168,14 @@ export default create({
       const minSwipeDistance = 50;
 
       /* istanbul ignore else */
-      if (direction === 'horizontal' && Math.abs(deltaX) >= minSwipeDistance) {
+      if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
         /* istanbul ignore else */
         if (deltaX > 0 && curActive !== 0) {
-          this.curActive = curActive - 1;
+          this.setCurActive(curActive - 1);
         } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
-          this.curActive = curActive + 1;
+          this.setCurActive(curActive + 1);
         }
       }
-    },
-
-    // get swipe direction
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     },
 
     // adjust tab position
@@ -204,16 +193,19 @@ export default create({
     },
 
     // update nav bar style
-    setNavBar() {
+    setLine() {
       this.$nextTick(() => {
         if (!this.$refs.tabs) {
           return;
         }
 
         const tab = this.$refs.tabs[this.curActive];
-        this.navBarStyle = {
-          width: `${tab.offsetWidth || 0}px`,
-          transform: `translate(${tab.offsetLeft || 0}px, 0)`,
+        const width = this.lineWidth || tab.offsetWidth;
+        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+
+        this.lineStyle = {
+          width: `${width}px`,
+          transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
       });
@@ -224,7 +216,12 @@ export default create({
       active = +active;
       const exist = this.tabs.some(tab => tab.index === active);
       const defaultActive = (this.tabs[0] || {}).index || 0;
-      this.curActive = exist ? active : defaultActive;
+      this.setCurActive(exist ? active : defaultActive);
+    },
+
+    setCurActive(active) {
+      this.curActive = active;
+      this.$emit('input', active);
     },
 
     // emit event when clicked
@@ -234,7 +231,7 @@ export default create({
         this.$emit('disabled', index, title);
       } else {
         this.$emit('click', index, title);
-        this.curActive = index;
+        this.setCurActive(index);
       }
     },
 

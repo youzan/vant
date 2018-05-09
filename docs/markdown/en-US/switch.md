@@ -67,12 +67,12 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Check status of Switch | `Boolean` | `false` | - |
-| loading | Whether to show loading icon | `Boolean` | `false` | - |
-| disabled | Whether to disable switch | `Boolean` | `false` | - |
-| size | Size of switch | `String` | `30px` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Check status of Switch | `Boolean` | `false` |
+| loading | Whether to show loading icon | `Boolean` | `false` |
+| disabled | Whether to disable switch | `Boolean` | `false` |
+| size | Size of switch | `String` | `30px` |
 
 ### Event
 

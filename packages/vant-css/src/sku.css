@@ -3,6 +3,7 @@
 
 .van-sku {
   &-container {
+    font-size: 14px;
     background: $white;
   }
 
@@ -59,18 +60,17 @@
   }
 
   &__price-symbol {
-    font-size: 14px;
     vertical-align: middle;
   }
 
   &__price-num {
+    font-size: 16px;
     vertical-align: middle;
   }
 
   &__goods-price {
     color: $red;
     margin-top: 10px;
-    font-size: 16px;
     vertical-align: middle;
   }
 
@@ -92,7 +92,6 @@
     }
 
     &__title {
-      font-size: 14px;
       padding-bottom: 10px;
     }
 
@@ -143,7 +142,6 @@
     &-title {
       float: left;
       line-height: 30px;
-      font-size: 14px;
     }
   }
 
@@ -166,7 +164,7 @@
 
     &__image-cell {
       .van-cell__title {
-        width: 90px;
+        max-width: 90px;
       }
       .van-cell__value {
         text-align: left;
@@ -217,7 +215,6 @@
       padding: 6px;
 
       &::before {
-        font-size: 14px;
         border-radius: 14px;
         background-color: $white;
       }

@@ -1,9 +1,9 @@
 <template>
-  <cell-group class="van-sku-messages">
+  <cell-group :class="b()">
     <template v-for="(message, index) in messages">
       <cell
         v-if="message.type === 'image'"
-        class="van-sku-messages__image-cell"
+        :class="b('image-cell')"
         :label="$t('onePic')"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"

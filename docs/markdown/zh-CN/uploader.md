@@ -38,13 +38,14 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| result-type | 文件读取结果类型 | `String` | `dataUrl` | `text` |
-| disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
-| before-read | 读取前的回调函数，返回 false 可终止文件读取 | `Function` | - | - |
-| after-read | 读取完成后的回调函数 | `Function` | - | - |
-| max-size | 文件大小限制，单位为 byte | `Number` | - | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| result-type | 文件读取结果类型，可选值为 `dataUrl` `test` | `String` | `dataUrl` |
+| accept | 接受的文件类型 | `String` | `image/*` |
+| disabled | 是否禁用图片上传 | `Boolean` | `false` |
+| before-read | 读取前的回调函数，返回 false 可终止文件读取 | `Function` | - |
+| after-read | 读取完成后的回调函数 | `Function` | - |
+| max-size | 文件大小限制，单位为 byte | `Number` | - |
 
 ### Event
 

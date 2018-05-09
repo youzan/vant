@@ -37,15 +37,15 @@ Vue.use(Area);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-| --- | --- | --- | --- | --- |
-| value | 当前选中的省市区`code` | `String` | - | - |
-| title | 顶部栏标题 | `String` | `''`   | - |
-| area-list | 省市县数据，格式见下方 | `Object` | - | - |
-| columns-num | 省市县显示列数，3-省市县，2-省市，1-省 | `String`,`Number` | `3` | - |
-| loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| item-height | 选项高度 | `Number` | `44` | - |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| value | 当前选中的省市区`code` | `String` | - |
+| title | 顶部栏标题 | `String` | - |
+| area-list | 省市县数据，格式见下方 | `Object` | - |
+| columns-num | 省市县显示列数，3-省市县，2-省市，1-省 | `String | Number` | `3` |
+| loading | 是否显示加载状态 | `Boolean` | `false` |
+| item-height | 选项高度 | `Number` | `44` |
+| visible-item-count | 可见的选项个数 | `Number` | `5` |
 
 ### Event
 
@@ -53,6 +53,7 @@ Vue.use(Area);
 | --- | --- | --- |
 | confirm | 点击右上方完成按钮 | 一个数组参数，具体格式看下方数据格式章节 |
 | cancel | 点击取消按钮时 | - |
+| change | 选项改变时触发 | Picker 实例，所有列选中值，当前列对应的索引 |
 
 ### 数据格式
 

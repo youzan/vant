@@ -1,26 +1,27 @@
 <template>
   <transition name="van-dialog-bounce">
-    <div class="van-dialog" v-show="value">
-      <div class="van-dialog__header" v-if="title" v-text="title" />
-      <div class="van-dialog__content van-hairline">
+    <div v-show="value" :class="b()">
+      <div v-if="title" v-text="title" :class="b('header')" />
+      <div :class="b('content')" class="van-hairline">
         <slot>
-          <div class="van-dialog__message" v-if="message" :class="{ 'van-dialog__message--withtitle': title }" v-html="message" />
+          <div v-if="message" v-html="message" :class="b('message', { withtitle: title })" />
         </slot>
       </div>
-      <div class="van-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
+      <div :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })">
         <van-button
-          size="large"
-          class="van-dialog__cancel"
           v-show="showCancelButton"
+          :loading="loading.cancel"
+          size="large"
+          :class="b('cancel')"
           @click="handleAction('cancel')"
         >
           {{ cancelButtonText || $t('cancel') }}
         </van-button>
         <van-button
-          size="large"
-          class="van-dialog__confirm"
-          :class="{ 'van-hairline--left': showCancelButton && showConfirmButton }"
           v-show="showConfirmButton"
+          size="large"
+          :loading="loading.confirm"
+          :class="[b('confirm'), { 'van-hairline--left': showCancelButton && showConfirmButton }]"
           @click="handleAction('confirm')"
         >
           {{ confirmButtonText || $t('confirm') }}
@@ -48,6 +49,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
+    beforeClose: Function,
     confirmButtonText: String,
     cancelButtonText: String,
     showCancelButton: Boolean,
@@ -65,8 +67,29 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      loading: {
+        confirm: false,
+        cancel: false
+      }
+    };
+  },
+
   methods: {
     handleAction(action) {
+      if (this.beforeClose) {
+        this.loading[action] = true;
+        this.beforeClose(action, () => {
+          this.onClose(action);
+          this.loading[action] = false;
+        });
+      } else {
+        this.onClose(action);
+      }
+    },
+
+    onClose(action) {
       this.$emit('input', false);
       this.$emit(action);
       this.callback && this.callback(action);

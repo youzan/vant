@@ -1,5 +1,5 @@
 <template>
-  <div class="van-badge-group van-hairline--top-bottom">
+  <div :class="b()" class="van-hairline--top-bottom">
     <slot />
   </div>
 </template>

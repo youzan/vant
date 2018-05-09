@@ -41,11 +41,11 @@ Vue.use(Progress);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| inactive | 是否置灰 | `Boolean` | `false` | - |
-| percentage | 进度百分比 | `Number` | `false` | `0-100` |
-| show-pivot | 是否显示进度文字 | `Boolean` | `true` | - |
-| pivot-text | 文字显示 | `String` | 百分比文字 | - |
-| color | 进度条颜色 | `String` | `#38f` | hexvalue |
-| text-color | 进度条文字颜色 | `String` | `#fff` | hexvalue |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| inactive | 是否置灰 | `Boolean` | `false` |
+| percentage | 进度百分比 | `Number` | `false` |
+| show-pivot | 是否显示进度文字 | `Boolean` | `true` |
+| pivot-text | 文字显示 | `String` | 百分比文字 |
+| color | 进度条颜色 | `String` | `#38f` |
+| text-color | 进度条文字颜色 | `String` | `#fff` |

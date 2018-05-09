@@ -45,9 +45,11 @@ import Progress from './progress';
 import PullRefresh from './pull-refresh';
 import Radio from './radio';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
 import Search from './search';
 import Sku from './sku';
+import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
@@ -66,7 +68,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.0.3';
+const version = '1.1.2';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -113,9 +115,11 @@ const components = [
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
+  Slider,
   Step,
   Stepper,
   Steps,
@@ -140,6 +144,7 @@ const install = Vue => {
   });
 };
 
+/* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
@@ -193,9 +198,11 @@ export {
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
+  Slider,
   Step,
   Stepper,
   Steps,

@@ -1,11 +1,11 @@
 <template>
   <span
-    class="van-tag van-hairline--surround"
-    :class="{
-      [`van-tag--${type}`]: type,
-      'van-tag--plain': plain,
-      'van-tag--mark': mark
-    }"
+    class="van-hairline--surround"
+    :class="b({
+      mark,
+      plain,
+      [type]: type
+    })"
   >
     <slot />
   </span>

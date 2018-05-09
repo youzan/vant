@@ -1,16 +1,16 @@
 <template>
-  <div class="van-checkbox">
+  <div :class="b()">
     <icon
       name="success"
-      class="van-checkbox__icon"
       :class="[
+        b('icon'),
         `van-checkbox--${shape}`, {
           'van-checkbox--disabled': isDisabled,
           'van-checkbox--checked': isChecked
       }]"
       @click="onClick"
     />
-    <span class="van-checkbox__label" @click="onClick('label')">
+    <span v-if="$slots.default" :class="b('label')" @click="onClick('label')">
       <slot />
     </span>
   </div>
@@ -27,13 +27,13 @@ export default create({
   mixins: [findParent],
 
   props: {
-    value: {},
+    name: null,
+    value: null,
     disabled: Boolean,
     labelDisabled: {
       type: Boolean,
       default: false
     },
-    name: [String, Number],
     shape: {
       type: String,
       default: 'round'

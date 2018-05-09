@@ -11,10 +11,10 @@ Vue.use(Tab).use(Tabs);
 
 #### 基础用法
 
-默认情况下启用第一个 tab，可以通过`active`属性激活对应特定索引的 tab
+默认情况下启用第一个 tab，可以通过`v-model`绑定当前激活的标签索引
 
 ```html
-<van-tabs :active="active">
+<van-tabs v-model="active">
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -103,7 +103,7 @@ export default {
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
 ```html
-<van-tabs :active="active" sticky>
+<van-tabs v-model="active" sticky>
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -114,7 +114,7 @@ export default {
 通过 title slot 可以自定义标签内容
 
 ```html
-<van-tabs :active="active">
+<van-tabs v-model="active">
   <van-tab v-for="index in 2">
     <div slot="title">
       <van-icon name="more-o" />选项
@@ -129,7 +129,7 @@ export default {
 通过`swipeable`属性可以开启滑动切换tab
 
 ```html
-<van-tabs :active="active" swipeable>
+<van-tabs v-model="active" swipeable>
   <van-tab v-for="index in 4" :title="'选项 ' + index">
     内容 {{ index }}
   </van-tab>
@@ -138,21 +138,22 @@ export default {
 
 ### Tabs API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选 |
-|-----------|-----------|-----------|-------------|-------------|
-| type | Tab 样式类型 | `String` | `line` | `card` |
-| active | 默认激活的 tab | `String` `Number` | `0` | - |
-| duration | 切换 tab 的动画时间 | `Number` | `0.2` | - |
-| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` | - |
-| sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
-| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 当前激活标签的索引 | `String` `Number` | `0` |
+| type | 样式类型，可选值为 `line` `card` | `String` | `line` |
+| duration | 切换 tab 的动画时间 | `Number` | `0.2` |
+| line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
+| swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` |
+| sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
+| swipeable | 是否可以滑动内容切换 | `Boolean` | `false` |
 
 ### Tab API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选 |
-|-----------|-----------|-----------|-------------|-------------|
-| title | 标题 | `String` | - | - |
-| disabled | 是否禁用标签 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| title | 标题 | `String` | - |
+| disabled | 是否禁用标签 | `Boolean` | `false` |
 
 ### Tab Slot
 

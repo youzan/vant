@@ -18,6 +18,7 @@
 @import './search.css';
 @import './pagination.css';
 @import './panel.css';
+@import './rate.css';
 @import './steps.css';
 @import './tag.css';
 @import './tab.css';
@@ -26,6 +27,7 @@
 @import './stepper.css';
 @import './progress.css';
 @import './swipe.css';
+@import './slider.css';
 
 /* form components */
 @import './checkbox.css';

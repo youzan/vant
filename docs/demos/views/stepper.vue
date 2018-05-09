@@ -9,7 +9,14 @@
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-stepper v-model="stepper2" :min="5" :max="40" :step="2" :default-value="9" />
+      <van-stepper
+        v-model="stepper2"
+        integer
+        :min="5"
+        :max="40"
+        :step="2"
+        :default-value="9"
+      />
     </demo-block>
   </demo-section>
 </template>

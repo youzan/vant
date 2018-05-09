@@ -17,4 +17,6 @@ github_changelog_generator \
   --issues-label "**Issue**" \
   --pr-label "**Improvements**" \
   --no-unreleased \
+  --max-issues 200 \
+  --since-tag v1.0.0 \
   -o $basepath/../../docs/markdown/zh-CN/changelog-generated.md

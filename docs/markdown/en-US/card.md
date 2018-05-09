@@ -41,14 +41,15 @@ Use `slot` to custom content.
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| thumb | Left thumb | `String` | - | - |
-| title | Title | `String` | - | - |
-| desc | Description | `String` | - | - |
-| num | Number of goods | `String | Number` | - | - |
-| price | Price of goods | `String | Number` | - | - |
-| centered | Whether content vertical centered | `String` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| thumb | Left thumb | `String` | - |
+| title | Title | `String` | - |
+| desc | Description | `String` | - |
+| num | Number of goods | `String | Number` | - |
+| price | Price of goods | `String | Number` | - |
+| centered | Whether content vertical centered | `String` | `false` |
+| currency | Currency symbol |  `String` | `¥` |
 
 ### Slot
 

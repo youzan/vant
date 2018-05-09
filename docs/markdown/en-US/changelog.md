@@ -1,18 +1,159 @@
 ## Changelog
 
+### [1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
+`2018-05-08`
+
+**Improvements**
+
+- 新增 Rate 评分组件 [\#901](https://github.com/youzan/vant/pull/901) [\#1002](https://github.com/youzan/vant/pull/1002) [\#1010](https://github.com/youzan/vant/pull/1010) [\#1011](https://github.com/youzan/vant/pull/1011) [@Tinysymphony](https://github.com/Tinysymphony) [@chenjiahan](https://github.com/chenjiahan)
+- Area: 新增 change 事件 [\#1019](https://github.com/youzan/vant/pull/1019) [@chenjiahan](https://github.com/chenjiahan)
+- Button: 更新边框样式 [\#998](https://github.com/youzan/vant/pull/998) [@chenjiahan](https://github.com/chenjiahan)
+- Locale: 新增错误提示 [\#1012](https://github.com/youzan/vant/pull/1012) [@chenjiahan](https://github.com/chenjiahan)
+- Stepper: 更新禁用状态样式 [\#997](https://github.com/youzan/vant/pull/997) [@chenjiahan](https://github.com/chenjiahan)
+- 优化组件 watch 写法 [\#1001](https://github.com/youzan/vant/pull/1001) [@chenjiahan](https://github.com/chenjiahan)
+- 优化文档 API 展示 [\#990](https://github.com/youzan/vant/pull/990) [\#991](https://github.com/youzan/vant/pull/991) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复 Search 错误展示边框的问题 [\#1000](https://github.com/youzan/vant/pull/1000) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Tab 初始化时的渲染问题 [\#978](https://github.com/youzan/vant/pull/978) ([jerryni](https://github.com/jerryni))
+- 修复 Stepper integer 属性拼写错误 [\#992](https://github.com/youzan/vant/pull/992) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+`2018-05-04`
+
+**Improvements**
+
+* Contact: optimize background image [\#972](https://github.com/youzan/vant/pull/972) [@chenjiahan](https://github.com/chenjiahan)
+* List: add loading-text prop [\#948](https://github.com/youzan/vant/pull/948) [@rex-zsd](https://github.com/rex-zsd)
+* Swipe: optimzie performance [\#985](https://github.com/youzan/vant/pull/985) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: add touchable prop [\#975](https://github.com/youzan/vant/pull/975) [@chenjiahan](https://github.com/chenjiahan)
+* Swipe: support vertical mode [\#938](https://github.com/youzan/vant/pull/938) [@jerryni](https://github.com/jerryni)
+* Slider: expand touch area [\#977](https://github.com/youzan/vant/pull/977) [@chenjiahan](https://github.com/chenjiahan)
+* Stepper: add interger prop [\#951](https://github.com/youzan/vant/pull/951) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: add line-width prop [\#988](https://github.com/youzan/vant/pull/988) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+* fix ImagePreview offset calc error [\#980](https://github.com/youzan/vant/pull/980) [@jerryni](https://github.com/jerryni)
+* fix Search incomplete text display in iOS [\#974](https://github.com/youzan/vant/pull/974) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
+`2018-04-25`
+
+**Improvements**
+
+* add Slider component [\#897](https://github.com/youzan/vant/pull/897) [\#915](https://github.com/youzan/vant/pull/915)  [jerryni](https://github.com/jerryni) [@chenjiahan](https://github.com/chenjiahan)
+* add bem mixin and format bem style [\#921](https://github.com/youzan/vant/pull/921) [\#924](https://github.com/youzan/vant/pull/924) [\#932](https://github.com/youzan/vant/pull/932) [\#934](https://github.com/youzan/vant/pull/934) [@chenjiahan](https://github.com/chenjiahan)
+* Panel: use cell instead of extra style [\#927](https://github.com/youzan/vant/pull/927) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: optimize flex layout [\#919](https://github.com/youzan/vant/pull/919) [@chenjiahan](https://github.com/chenjiahan)
+* Slider: add step & bar-height prop [\#915](https://github.com/youzan/vant/pull/915) [@chenjiahan](https://github.com/chenjiahan)
+* Build: upgrade vue-loader@15 [\#937](https://github.com/youzan/vant/pull/937) [@chenjiahan](https://github.com/chenjiahan)
+* Build: use ChromeHeadless instead of PhantomJS to run test cases [\#913](https://github.com/youzan/vant/pull/913) [@chenjiahan](https://github.com/chenjiahan)
+* Build: use MiniCssExtractPlugin instead of ExtractTextPlugin [\#936](https://github.com/youzan/vant/pull/936) [@chenjiahan](https://github.com/chenjiahan)
+* Build: add sideEffects config for webpack 4 [\#926](https://github.com/youzan/vant/pull/926) [@chenjiahan](https://github.com/chenjiahan)
+* Document: add rem guide [\#928](https://github.com/youzan/vant/pull/928) [@chenjiahan](https://github.com/chenjiahan)
+* Document: remove Loading circle type [\#941](https://github.com/youzan/vant/pull/941) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix Uploader can not upload pic in android [\#929](https://github.com/youzan/vant/pull/929) [@chenjiahan](https://github.com/chenjiahan)
+* fix Checkbox should not render label when label is empty [\#920](https://github.com/youzan/vant/pull/920) [@chenjiahan](https://github.com/chenjiahan)
+* fix Dialog type define error [\#918](https://github.com/youzan/vant/pull/918) [@chenjiahan](https://github.com/chenjiahan)
+* fix Popup should remove touch event listener when distroyed [\#912](https://github.com/youzan/vant/pull/912) [@chenjiahan](https://github.com/chenjiahan)
+* fix Picker text adjust may cause option wrong offset [\#916](https://github.com/youzan/vant/pull/916) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
+`2018-04-20`
+
+**Improvements**
+* add git hook, optimize dev process [\#883](https://github.com/youzan/vant/pull/883) [@jerryni](https://github.com/jerryni)
+
+**Bug Fixes**
+* Cell: optimize left icon [\#893](https://github.com/youzan/vant/pull/893) [@chenjiahan](https://github.com/chenjiahan)
+* Build: should use babel sync compile [\#885](https://github.com/youzan/vant/pull/885) [@chenjiahan](https://github.com/chenjiahan)
+* Field: allow negative number when type is number [\#889](https://github.com/youzan/vant/pull/889) [@chenjiahan](https://github.com/chenjiahan)
+* Popup: fix lock scroll [\#891](https://github.com/youzan/vant/pull/891) [@Tinysymphony](https://github.com/Tinysymphony)
+
+
+### [1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
+`2018-04-17`
+
+**Bug Fixes**
+
+* fix missing style entry in build result [@chenjiahan](https://github.com/chenjiahan)
+
+### [1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
+`2018-04-17`
+
+**Improvements**
+
+* support es module [\#875](https://github.com/youzan/vant/pull/875) [@chenjiahan](https://github.com/chenjiahan)
+* Dialog: add before-close prop, support async close [\#854](https://github.com/youzan/vant/pull/854)  [\#881](https://github.com/youzan/vant/pull/881) [@chenjiahan](https://github.com/chenjiahan) [@qianzhaoy](https://github.com/qianzhaoy)
+* SubmitBar: support custom currency symbol [\#876](https://github.com/youzan/vant/pull/876) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: support v-model bind active tab [\#879](https://github.com/youzan/vant/pull/879) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix DatetimePicker change event params not correct [\#878](https://github.com/youzan/vant/pull/878) [@jerryni](https://github.com/jerryni)
+
+
+### [1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
+`2018-04-13`
+
+**Improvements**
+
+* add touch mixin [\#869](https://github.com/youzan/vant/pull/869) [@chenjiahan](https://github.com/chenjiahan)
+* Tabbar: support Number type info [\#845](https://github.com/youzan/vant/pull/845) [@chenjiahan](https://github.com/chenjiahan)
+* Radio: name support any types [\#863](https://github.com/youzan/vant/pull/863) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+* fix NavBar title max width limitation [\#867](https://github.com/youzan/vant/pull/867) [@chenjiahan](https://github.com/chenjiahan)
+* fix Button vertical align incorrect when loading [\#858](https://github.com/youzan/vant/pull/858) [@chenjiahan](https://github.com/chenjiahan)
+* fix CellSwipe should only trigger swipe when drag horizontally [\#866](https://github.com/youzan/vant/pull/866) [@chenjiahan](https://github.com/chenjiahan)
+* fix ImagePreview manually close not work [\#864](https://github.com/youzan/vant/pull/864) [@chenjiahan](https://github.com/chenjiahan)
+* fix SubmitBar inherit wrong font size [\#857](https://github.com/youzan/vant/pull/857) [@chenjiahan](https://github.com/chenjiahan)
+* fix SwitchCell text vertical align [\#852](https://github.com/youzan/vant/pull/852) [@chenjiahan](https://github.com/chenjiahan)
+* fix Swipe not stop touch event propagation [\#846](https://github.com/youzan/vant/pull/846) [@chenjiahan](https://github.com/chenjiahan)
+
+
+### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
+`2018-04-10`
+
+**Improvements**
+
+* Actionsheet: add cancel event [\#796](https://github.com/youzan/vant/pull/796) [@cookfront](https://github.com/cookfront)
+* Actionsheet: support maxHeight [\#777](https://github.com/youzan/vant/pull/777) [@iscarecrow](https://github.com/iscarecrow)
+* DatetimePicker: support all picker props [\#788](https://github.com/youzan/vant/pull/788) [@chenjiahan](https://github.com/chenjiahan)
+* SubmitBar: unite font-size [\#774](https://github.com/youzan/vant/pull/774) [@chenjiahan](https://github.com/chenjiahan)
+* i18n: support zh-HK language [\#812](https://github.com/youzan/vant/pull/812) [@jasonc08](https://github.com/jasonc08)
+
+**Bug Fixes**
+
+* fix Button should be unclickable when loading [\#779](https://github.com/youzan/vant/pull/779) [@chenjiahan](https://github.com/chenjiahan)
+* fix Dialog close method may cause error [\#841](https://github.com/youzan/vant/pull/841) [@chenjiahan](https://github.com/chenjiahan)
+* fix Popup lock-scroll not work when open multi popup [\#842](https://github.com/youzan/vant/pull/842) [@chenjiahan](https://github.com/chenjiahan)
+* fix SubmitBar price decimal rounding [\#820](https://github.com/youzan/vant/pull/820) [@ddchef](https://github.com/ddchef)
+* fix Sku row font-size [\#840](https://github.com/youzan/vant/pull/840) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
 `2018-03-26`
 
 **Improvements**
 
-- Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
-- Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
-- Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
-- Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: add center prop [\#771](https://github.com/youzan/vant/pull/771) [@chenjiahan](https://github.com/chenjiahan)
+* Cell: update to flex-box [\#770](https://github.com/youzan/vant/pull/770) [@chenjiahan](https://github.com/chenjiahan)
+* Field: add button slot [\#772](https://github.com/youzan/vant/pull/772) [@chenjiahan](https://github.com/chenjiahan)
+* Tab: click event add title param [\#761](https://github.com/youzan/vant/pull/761) [@chenjiahan](https://github.com/chenjiahan)
 
 **Bug Fixes**
-- fix Tag text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
-- fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
+
+* fix Tag text line height in android browser [\#773](https://github.com/youzan/vant/pull/773) [@chenjiahan](https://github.com/chenjiahan)
+* fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762) [@chenjiahan](https://github.com/chenjiahan)
 
 
 ### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)

@@ -39,13 +39,13 @@ export default {
 
 ### BadgeGroup API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| active-key | Index of chosen badge | `String | Number` | `0` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| active-key | Index of chosen badge | `String | Number` | `0` |
 
 ### Badge API
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Content | `String` | `''` | - |
-| info | Info Message | `String` | `''` | - |
-| url | Link | `String` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Content | `String` | `''` |
+| info | Info Message | `String | Number` | `''` |
+| url | Link | `String` | - |

@@ -62,9 +62,9 @@ export default {
 
 ### Tabbar API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Index of current tab | `Number` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Index of current tab | `Number` | - |
 
 ### Tabbar Event
 
@@ -74,14 +74,14 @@ export default {
 
 ### TabbarItem API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| icon | Icon name | `String` | - | Names from Icon Component |
-| dot | Whether to show red dot | `Boolean` | - | - |
-| info | Info message | `String` | - | - |
-| url | Link | `String` | - | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| icon | Icon name | `String` | - |
+| dot | Whether to show red dot | `Boolean` | - |
+| info | Info message | `String | Number` | - |
+| url | Link | `String` | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` |
 
 ### TabbarItem Slot
 

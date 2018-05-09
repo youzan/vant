@@ -111,16 +111,16 @@ Use button slot to insert button
 ### API
 Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| type | Filed type | `String` | `text` | `number` `email` `textarea` `tel` `datetime` `date` `password` `url` |
-| value | Filed value | `String` | - | - |
-| label | Filed label | `String` | - | - |
-| disabled | Disable field | `Boolean` | `false` | - |
-| error | Whether to show error info | `Boolean` | `false` | - |
-| error-message | Error message | `String` | `''` | - |
-| autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` | - |
-| icon | Right side Icon name | `String` | - | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| type | Input type | `String` | `text` |
+| value | Filed value | `String` | - |
+| label | Filed label | `String` | - |
+| disabled | Disable field | `Boolean` | `false` |
+| error | Whether to show error info | `Boolean` | `false` |
+| error-message | Error message | `String` | `''` |
+| autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
+| icon | Right side Icon name | `String` | - |
 
 ### Event
 Filed support all native events of input tag，such as `focus`、`blur`、`keypress`

@@ -1,7 +1,7 @@
 <template>
   <picker
-    class="van-area"
     ref="picker"
+    :class="b()"
     show-toolbar
     value-key="name"
     :title="title"
@@ -156,6 +156,7 @@ export default create({
       } else if (index === 1) {
         picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
       }
+      this.$emit('change', picker, values, index);
     },
 
     getValues() {

@@ -29,8 +29,8 @@ Vue.use(Tag);
 <van-tag plain type="success">标签</van-tag>
 ```
 
-#### 标记样式
-通过`mark`设置为标记样式
+#### 圆角样式
+通过`mark`设置为圆角样式
 
 ```html
 <van-tag mark>标签</van-tag>
@@ -41,14 +41,14 @@ Vue.use(Tag);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| type | 类型 | `String` | `''`| `primary` `success` `danger` |
-| plain | 是否为空心样式 | `Boolean` | `false` | - |
-| mark | 是否为标记样式 | `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| type | 类型，可选值为`primary` `success` `danger` | `String` | `''`|
+| plain | 是否为空心样式 | `Boolean` | `false` |
+| mark | 是否为圆角样式 | `Boolean` | `false` |
 
 ### Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
-| - | 自定义 Tag 显示内容 |
+| default | 自定义 Tag 显示内容 |

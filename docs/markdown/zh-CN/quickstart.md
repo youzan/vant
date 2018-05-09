@@ -16,9 +16,14 @@ npm i babel-plugin-import -D
 
 ```js
 // 在 .babelrc 或 babel-loader 中添加插件配置
+// 注意：webpack 1 无需设置 libraryDirectory。
 {
   "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
@@ -64,3 +69,9 @@ Vue.use(Vant);
 ```shell
 vue init youzan/vue-cli-template-vant projectName
 ```
+
+### rem 适配
+Vant 中的组件样式默认使用`px`作为单位，如果需要使用`rem`作为单位，推荐使用以下两个工具
+
+- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 用于将单位转化为 rem
+- [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值

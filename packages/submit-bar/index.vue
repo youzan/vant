@@ -1,15 +1,15 @@
 <template>
-  <div class="van-submit-bar">
-    <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
+  <div :class="b()">
+    <div :class="b('tip')" v-show="tip || $slots.tip">
       {{ tip }}<slot name="tip" />
     </div>
-    <div class="van-submit-bar__bar">
+    <div :class="b('bar')">
       <slot />
-      <div class="van-submit-bar__price">
+      <div :class="b('price')">
         <template v-if="hasPrice">
-          <span class="van-submit-bar__price-text">{{ label || $t('label') }}</span>
-          <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
-          <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
+          <span>{{ label || $t('label') }}</span>
+          <span :class="b('price-integer')">{{ currency }}{{ priceInterger }}.</span>
+          <span :class="b('price-decimal')">{{ priceDecimal }}</span>
         </template>
       </div>
       <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">
@@ -38,6 +38,10 @@ export default create({
     loading: Boolean,
     disabled: Boolean,
     buttonText: String,
+    currency: {
+      type: String,
+      default: '¥'
+    },
     buttonType: {
       type: String,
       default: 'danger'
@@ -52,7 +56,7 @@ export default create({
       return Math.floor(this.price / 100);
     },
     priceDecimal() {
-      const decimal = this.price % 100;
+      const decimal = Math.floor(this.price % 100);
       return (decimal < 10 ? '0' : '') + decimal;
     }
   },

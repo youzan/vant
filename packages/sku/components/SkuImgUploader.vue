@@ -1,14 +1,13 @@
 <template>
-  <div class="van-sku-img-uploader">
+  <div :class="b()">
     <!-- 头部 -->
     <van-uploader
       :disabled="!!paddingImg"
       :after-read="afterReadFile"
       :max-size="maxSize * 1024 * 1024"
-      accept="image/*"
       @oversize="$toast($t('maxSize', maxSize))"
     >
-      <div class="van-sku-img-uploader__header">
+      <div :class="b('header')">
         <div v-if="paddingImg">{{ $t('uploading') }}</div>
         <template v-else>
           <icon name="photograph" />
@@ -23,16 +22,15 @@
       <!-- 已有的图片,图片右上角显示删除按钮 -->
       <div
         v-for="(img, index) in imgList"
-        :key="index"
-        class="van-sku-img-uploader__img"
+        :class="b('img')"
       >
         <img :src="img">
-        <icon name="clear" class="van-sku-img-uploader__delete" @click="$emit('input', '')" />
+        <icon name="clear" :class="b('delete')" @click="$emit('input', '')" />
       </div>
       <!-- 正在上传的图片,有上传等待提示 -->
-      <div v-if="paddingImg" class="van-sku-img-uploader__img">
+      <div v-if="paddingImg" :class="b('img')">
         <img :src="paddingImg">
-        <loading class="van-sku-img-uploader__uploading" type="spinner" color="black" />
+        <loading :class="b('uploading')" type="spinner" color="black" />
       </div>
     </div>
   </div>

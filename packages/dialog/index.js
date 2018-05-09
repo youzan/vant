@@ -35,6 +35,7 @@ Dialog.defaultOptions = {
   message: '',
   overlay: true,
   lockScroll: true,
+  beforeClose: null,
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,
@@ -57,7 +58,9 @@ Dialog.confirm = options => Dialog({
 });
 
 Dialog.close = () => {
-  instance.value = false;
+  if (instance) {
+    instance.value = false;
+  }
 };
 
 Dialog.setDefaultOptions = options => {

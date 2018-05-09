@@ -1,24 +1,5 @@
 // This file is auto gererated by build/bin/build-entry.js
-import './common';
-
-import progress from 'nprogress';
-
-function asyncWrapper(component) {
-  return function(r) {
-    progress.start();
-    component(r).then(() => {
-      progress.done();
-    }).catch(() => {
-      progress.done();
-    });
-  };
-}
-
-function componentWrapper(component, name) {
-  component = component.default;
-  component.name = 'demo-' + name;
-  return component;
-}
+import { asyncWrapper, componentWrapper } from './common';
 
 export default {
   'actionsheet': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/actionsheet'), 'actionsheet')), 'actionsheet')),
@@ -57,8 +38,10 @@ export default {
   'progress': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/progress'), 'progress')), 'progress')),
   'pull-refresh': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/pull-refresh'), 'pull-refresh')), 'pull-refresh')),
   'radio': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/radio'), 'radio')), 'radio')),
+  'rate': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/rate'), 'rate')), 'rate')),
   'search': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/search'), 'search')), 'search')),
   'sku': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/sku'), 'sku')), 'sku')),
+  'slider': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/slider'), 'slider')), 'slider')),
   'stepper': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/stepper'), 'stepper')), 'stepper')),
   'steps': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/steps'), 'steps')), 'steps')),
   'submit-bar': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/submit-bar'), 'submit-bar')), 'submit-bar')),

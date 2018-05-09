@@ -47,11 +47,11 @@ export default {
 
 #### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| items | Required datasets for the component, see Data Structure for detail. | `Array` | `[]` | - |
-| main-Active-index | The index of selected parent node | `Number` | `0` | - |
-| active-id | Id of selected item | `Number` | `0` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| items | Required datasets for the component, see Data Structure for detail. | `Array` | `[]` |
+| main-Active-index | The index of selected parent node | `Number` | `0` |
+| active-id | Id of selected item | `Number` | `0` |
 
 #### Event
 | Event | Description | Arguments |

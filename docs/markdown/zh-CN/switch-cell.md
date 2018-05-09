@@ -50,12 +50,12 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 | 可选值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 开关状态 | `Boolean` | - | - |
-| title | 左侧标题 |  `String` | `''` | - |
-| loading | 是否为加载状态 |  `Boolean` | `false` | - |
-| disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| v-model | 开关状态 | `Boolean` | - |
+| title | 左侧标题 |  `String` | `''` |
+| loading | 是否为加载状态 |  `Boolean` | `false` |
+| disabled | 是否为禁用状态 |  `Boolean` | `false` |
 
 ### Event
 

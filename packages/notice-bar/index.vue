@@ -1,19 +1,17 @@
 <template>
   <div
     v-show="showNoticeBar"
-    class="van-notice-bar"
-    :class="{ 'van-notice-bar--withicon': mode }"
+    :class="b({ withicon: mode })"
     :style="barStyle"
     @click="$emit('click')"
   >
-    <div class="van-notice-bar__left-icon" v-if="leftIcon">
+    <div v-if="leftIcon" :class="b('left-icon')">
       <img :src="leftIcon" >
     </div>
-    <div class="van-notice-bar__content-wrap" ref="contentWrap">
+    <div :class="b('wrap')" ref="wrap">
       <div
         ref="content"
-        class="van-notice-bar__content"
-        :class="animationClass"
+        :class="[b('content'), animationClass]"
         :style="contentStyle"
         @animationend="onAnimationEnd"
         @webkitAnimationEnd="onAnimationEnd"
@@ -21,7 +19,12 @@
         <slot>{{ text }}</slot>
       </div>
     </div>
-    <icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
+    <icon
+      v-if="iconName"
+      :class="b('right-icon')"
+      :name="iconName"
+      @click="onClickIcon"
+    />
   </div>
 </template>
 
@@ -66,12 +69,14 @@ export default create({
     iconName() {
       return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
     },
+
     barStyle() {
       return {
         color: this.color,
         background: this.background
       };
     },
+
     contentStyle() {
       return {
         paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
@@ -81,13 +86,21 @@ export default create({
     }
   },
 
-  mounted() {
-    this.initAnimation();
-  },
-
   watch: {
-    text: function() {
-      this.$nextTick(this.initAnimation);
+    text: {
+      handler() {
+        this.$nextTick(() => {
+          const offsetWidth = this.$refs.content.getBoundingClientRect().width;
+          const wrapWidth = this.$refs.wrap.getBoundingClientRect().width;
+          if (this.scrollable && offsetWidth > wrapWidth) {
+            this.wrapWidth = wrapWidth;
+            this.offsetWidth = offsetWidth;
+            this.duration = offsetWidth / this.speed;
+            this.animationClass = this.b('play');
+          }
+        });
+      },
+      immediate: true
     }
   },
 
@@ -95,22 +108,13 @@ export default create({
     onClickIcon() {
       this.showNoticeBar = this.mode !== 'closeable';
     },
+
     onAnimationEnd() {
       this.firstRound = false;
       this.$nextTick(() => {
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
-        this.animationClass = 'van-notice-bar__play--infinite';
+        this.animationClass = this.b('play--infinite');
       });
-    },
-    initAnimation() {
-      const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-      const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
-      if (this.scrollable && offsetWidth > wrapWidth) {
-        this.wrapWidth = wrapWidth;
-        this.offsetWidth = offsetWidth;
-        this.duration = offsetWidth / this.speed;
-        this.animationClass = 'van-notice-bar__play';
-      }
     }
   }
 });

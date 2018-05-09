@@ -55,11 +55,11 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Id of chosen address | String | - | - |
-| list | Address list | Array | `[]` | - |
-| add-button-text | Add button text | String | `Add new address` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Id of chosen address | String | - |
+| list | Address list | Array | `[]` |
+| add-button-text | Add button text | String | `Add new address` |
 
 ### Event
 

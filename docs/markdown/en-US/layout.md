@@ -52,12 +52,14 @@ Set grid spacing using `gutter` attribute. The default value is 0
 ### API
 
 #### Row
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| gutter | grid spacing（px） | `String | Number` | - | - |
+
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| gutter | grid spacing（px） | `String | Number` | - |
 
 #### Column
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| span | number of column the grid spans | `String | Number` | - | - |
-| offset | number of spacing on the left side of the grid | `String | Number` | - | - |
+
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| span | number of column the grid spans | `String | Number` | - |
+| offset | number of spacing on the left side of the grid | `String | Number` | - |

@@ -17,7 +17,7 @@
       box-sizing: border-box;
     }
 
-    &__filed {
+    &__field {
       margin: 10px 0;
       padding: 4px 10px 4px 25px;
 
@@ -77,7 +77,7 @@
       }
     }
 
-    &--with-exchange {
+    &__list--with-exchange {
       padding-top: 60px;
     }
 

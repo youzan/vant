@@ -16,9 +16,14 @@ npm i babel-plugin-import -D
 
 ```js
 // set babel config in .babelrc or babel-loader
+// Note: Don't set libraryDirectory if you are using webpack 1.
 {
   "plugins": [
-    ["import", { "libraryName": "vant", "style": true }]
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }]
   ]
 }
 ```
@@ -63,3 +68,9 @@ Vue.use(Vant);
 ```shell
 vue init youzan/vue-cli-template-vant projectName
 ```
+
+### rem units
+Vant use `px` as size units by default，you can use tools such as `postcss-pxtorem` to transform units to `rem`.
+
+- [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem)
+- [lib-flexible](https://github.com/amfe/lib-flexible)

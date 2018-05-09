@@ -13,7 +13,8 @@
       <van-button @click="show = true">{{ $t('advancedUsage') }}</van-button>
       <van-dialog
         v-model="show"
-        @confirm="show = false"
+        show-cancel-button
+        :before-close="beforeClose"
       >
         <van-field
           v-model="username"
@@ -73,6 +74,14 @@ export default {
         title: this.$t('title'),
         message: this.$t('content')
       });
+    },
+
+    beforeClose(action, done) {
+      if (action === 'confirm') {
+        setTimeout(done, 1000);
+      } else {
+        done();
+      }
     }
   }
 };

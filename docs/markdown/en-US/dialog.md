@@ -66,23 +66,24 @@ export default {
 
 ### Options
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| title | Title | `String` | - | - |
-| message | Message | `String` | - | - |
-| showConfirmButton | Whether to show confirm button | `Boolean` |  `true` | - |
-| showCancelButton | Whether to show cancel button | `Boolean` |  `false` | - |
-| confirmButtonText | Confirm button text | `String` |  `Confirm` | - |
-| cancelButtonText | Cancel button test | `String` | `Cancel` | - |
-| overlay | Whether to show overlay | `Boolean` | `true` | - |
-| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` | - |
-| lockScroll | Whether to lock body scroll | `Boolean` | `true` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| title | Title | `String` | - |
+| message | Message | `String` | - |
+| showConfirmButton | Whether to show confirm button | `Boolean` |  `true` |
+| showCancelButton | Whether to show cancel button | `Boolean` |  `false` |
+| confirmButtonText | Confirm button text | `String` |  `Confirm` |
+| cancelButtonText | Cancel button test | `String` | `Cancel` |
+| overlay | Whether to show overlay | `Boolean` | `true` |
+| closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |
+| lockScroll | Whether to lock body scroll | `Boolean` | `true` |
+| beforeClose | Callback before close，call done to close dialog | (action: string, done: function) => void | - |
 
 #### Advanced Usage
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
-<van-dialog v-model="show" @confirm="onConfirm">
+<van-dialog v-model="show" :asyncConfirm="onClickConfirmAsync">
   <van-field
     v-model="username"
     label="Username"
@@ -110,8 +111,12 @@ export default {
   },
   
   methods: {
-    onConfirm() {
-      this.show = false;
+    beforeClose() {
+      if (action === 'confirm') {
+        setTimeout(done, 1000);
+      } else {
+        done();
+      }
     }
   }
 }
@@ -119,18 +124,20 @@ export default {
 
 ### API
 
-| Attribute | Description | Type | Default | Accepted Values |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | Whether to show dialog | `Boolean` | - | - |
-| title | Title | `String` | - | - |
-| message | Message | `String` | - | - |
-| show-confirm-button | Whether to show confirm button | `Boolean` |  `true` | - |
-| show-cancel-button | Whether to show cancel button | `Boolean` |  `false` | - |
-| confirm-button-text | Confirm button text | `String` |  `Confirm` | - |
-| cancel-button-text | Cancel button test | `String` | `Cancel` | - |
-| overlay | Whether to show overlay | `Boolean` | `true` | - |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` | - |
-| lock-scroll | Whether to lock background scroll | `Boolean` | `true` | - |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-------------|
+| v-model | Whether to show dialog | `Boolean` | - |
+| title | Title | `String` | - |
+| message | Message | `String` | - |
+| async-confirm | Whether to close async，The incoming function is triggered when you click confirm. | `Function` | - |
+| show-confirm-button | Whether to show confirm button | `Boolean` |  `true` |
+| show-cancel-button | Whether to show cancel button | `Boolean` |  `false` |
+| confirm-button-text | Confirm button text | `String` |  `Confirm` |
+| cancel-button-text | Cancel button test | `String` | `Cancel` |
+| overlay | Whether to show overlay | `Boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` |
+| lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
+| before-close | Callback before close，call done to close dialog | (action: string, done: function) => void | - |
 
 ### Event
 
