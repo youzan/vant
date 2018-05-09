@@ -1,8 +1,7 @@
-const merge = require('webpack-merge');
 const path = require('path');
-const devConfig = require('./webpack.config.dev.js');
+const devConfig = require('./webpack.dev.js');
 
-module.exports = merge(devConfig, {
+module.exports = Object.assign({}, devConfig, {
   mode: 'production',
   output: {
     path: path.join(__dirname, '../docs/dist'),

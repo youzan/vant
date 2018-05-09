@@ -2,7 +2,7 @@ const Components = require('./get-components')();
 const fs = require('fs');
 const path = require('path');
 const uppercamelize = require('uppercamelcase');
-const version = process.env.VERSION || require('../../package.json').version;
+const version = require('../../package.json').version;
 const tips = '// This file is auto gererated by build/bin/build-entry.js';
 
 function buildVantEntry() {
