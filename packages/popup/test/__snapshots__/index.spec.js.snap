@@ -13,180 +13,24 @@ exports[`renders popup correctly 1`] = `
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">底部弹出</span></button>
     <div class="van-popup van-popup--bottom" style="display:none;">
-      <div class="van-tabs van-tabs--line">
-        <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
-          <div class="van-tabs__nav van-tabs__nav--line">
-            <div class="van-tabs__nav-bar"></div>
-          </div>
+      <div class="van-picker">
+        <div class="van-hairline--top-bottom van-picker__toolbar">
+          <div class="van-picker__cancel">取消</div>
+          <!---->
+          <div class="van-picker__confirm">确认</div>
         </div>
-        <div class="van-tabs__content">
-          <div class="van-tab__pane van-tab__pane--select">
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 1</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 2</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 3</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 4</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 5</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 6</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 7</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 8</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 9</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 10</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 11</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 12</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 13</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 14</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 15</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 16</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 17</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 18</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 19</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
-            <div class="van-cell van-hairline">
-              <!---->
-              <div class="van-cell__title"><span>Item 20</span>
-                <!---->
-              </div>
-              <!---->
-              <!---->
-            </div>
+        <!---->
+        <div class="van-picker__columns" style="height:220px;">
+          <div class="van-picker-column" style="height:220px;">
+            <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+              <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">杭州</li>
+              <li class="van-ellipsis van-picker-column__item">宁波</li>
+              <li class="van-ellipsis van-picker-column__item">温州</li>
+              <li class="van-ellipsis van-picker-column__item">嘉兴</li>
+              <li class="van-ellipsis van-picker-column__item">湖州</li>
+            </ul>
           </div>
-          <div class="van-tab__pane">
-            Lorem ipsum dolor sit amet, quis interdum et sollicitudin consectetuer scelerisque, gravida nulla consequatur dis mauris non morbi, dictum leo enim elementum ac wisi nullam, nam orci erat. Ultrices est. Nunc penatibus vel varius odio. Ullamcorper placerat
-            amet amet sed, urna tempor, elit elit at. Eget congue. Sed proin metus sapien libero, pulvinar ut, ut aenean fermentum magna placerat dapibus voluptas, sed at lacinia pede fermentum rutrum et. Vitae nulla sapien vel in hac felis, montes in
-            donec nulla eu volutpat augue.
-          </div>
+          <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
         </div>
       </div>
     </div>

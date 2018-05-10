@@ -12,7 +12,7 @@ exports[`renders stepper correctly 1`] = `
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">禁用状态</h2>
-    <div class="van-stepper van-stepper--disabled">
+    <div class="van-stepper">
       <button class="van-stepper__minus van-stepper__minus--disabled"></button>
       <input type="number" disabled="disabled" value="1" class="van-stepper__input">
       <button class="van-stepper__plus van-stepper__plus--disabled"></button>

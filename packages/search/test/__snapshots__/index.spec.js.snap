@@ -4,15 +4,24 @@ exports[`renders search correctly 1`] = `
 <section class="van-doc-demo-section demo-search" style="background:undefined;">
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">基础用法</h2>
-    <div class="van-search" style="background-color:#f2f2f2;">
-      <div class="van-search__wrap">
-        <i class="van-icon van-icon-search">
+    <div class="van-search" style="background:#f2f2f2;">
+      <i class="van-icon van-icon-search" style="color:undefined;">
+        <!---->
+      </i>
+      <div placeholder="请输入商品名称" class="van-cell van-field van-field--has-icon">
+        <!---->
+        <!---->
+        <div class="van-cell__value van-cell__value--alone">
+          <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
           <!---->
-        </i>
-        <input type="search" placeholder="请输入商品名称" value="" class="van-search__input">
-        <i class="van-icon van-icon-clear" style="display:none;">
+          <div class="van-field__icon" style="display:none;">
+            <i class="van-icon van-icon-clear" style="color:undefined;">
+              <!---->
+            </i>
+          </div>
           <!---->
-        </i>
+        </div>
+        <!---->
       </div>
       <!---->
     </div>
@@ -20,15 +29,24 @@ exports[`renders search correctly 1`] = `
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">监听对应事件</h2>
     <form action="/">
-      <div class="van-search van-search--show-action" style="background-color:#f2f2f2;">
-        <div class="van-search__wrap">
-          <i class="van-icon van-icon-search">
+      <div class="van-search van-search--show-action" style="background:#f2f2f2;">
+        <i class="van-icon van-icon-search" style="color:undefined;">
+          <!---->
+        </i>
+        <div placeholder="请输入商品名称" class="van-cell van-field van-field--has-icon">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">
+            <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
             <!---->
-          </i>
-          <input type="search" placeholder="请输入商品名称" value="" class="van-search__input">
-          <i class="van-icon van-icon-clear" style="display:none;">
+            <div class="van-field__icon" style="display:none;">
+              <i class="van-icon van-icon-clear" style="color:undefined;">
+                <!---->
+              </i>
+            </div>
             <!---->
-          </i>
+          </div>
+          <!---->
         </div>
         <div class="van-search__action">
           <div class="van-search__cancel">取消</div>
@@ -38,15 +56,24 @@ exports[`renders search correctly 1`] = `
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">自定义行动按钮</h2>
-    <div class="van-search van-search--show-action" style="background-color:#f2f2f2;">
-      <div class="van-search__wrap">
-        <i class="van-icon van-icon-search">
+    <div class="van-search van-search--show-action" style="background:#f2f2f2;">
+      <i class="van-icon van-icon-search" style="color:undefined;">
+        <!---->
+      </i>
+      <div class="van-cell van-field van-field--has-icon">
+        <!---->
+        <!---->
+        <div class="van-cell__value van-cell__value--alone">
+          <input type="search" value="" class="van-field__control">
           <!---->
-        </i>
-        <input type="search" value="" class="van-search__input">
-        <i class="van-icon van-icon-clear" style="display:none;">
+          <div class="van-field__icon" style="display:none;">
+            <i class="van-icon van-icon-clear" style="color:undefined;">
+              <!---->
+            </i>
+          </div>
           <!---->
-        </i>
+        </div>
+        <!---->
       </div>
       <div class="van-search__action">
         <div>搜索</div>

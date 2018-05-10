@@ -7,7 +7,7 @@ exports[`renders tabbar correctly 1`] = `
     <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-shop">
+          <i class="van-icon van-icon-shop" style="color:undefined;">
             <!---->
           </i>
           <!---->
@@ -16,7 +16,7 @@ exports[`renders tabbar correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon van-tabbar-item__icon--dot">
-          <i class="van-icon van-icon-chat">
+          <i class="van-icon van-icon-chat" style="color:undefined;">
             <!---->
           </i>
           <!---->
@@ -25,7 +25,7 @@ exports[`renders tabbar correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-records">
+          <i class="van-icon van-icon-records" style="color:undefined;">
             <!---->
           </i>
           <div class="van-icon__info">5</div>
@@ -34,7 +34,7 @@ exports[`renders tabbar correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-gold-coin">
+          <i class="van-icon van-icon-gold-coin" style="color:undefined;">
             <!---->
           </i>
           <div class="van-icon__info">20</div>
@@ -55,7 +55,7 @@ exports[`renders tabbar correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-chat">
+          <i class="van-icon van-icon-chat" style="color:undefined;">
             <!---->
           </i>
           <!---->
@@ -64,7 +64,7 @@ exports[`renders tabbar correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-records">
+          <i class="van-icon van-icon-records" style="color:undefined;">
             <!---->
           </i>
           <!---->

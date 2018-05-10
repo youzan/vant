@@ -5,25 +5,25 @@ exports[`renders checkbox correctly 1`] = `
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">基础用法</h2>
     <div class="van-checkbox">
-      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
         <!---->
       </i> <span class="van-checkbox__label">复选框</span></div>
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">禁用状态</h2>
     <div class="van-checkbox">
-      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled" style="color:undefined;">
         <!---->
       </i> <span class="van-checkbox__label">复选框</span></div>
     <div class="van-checkbox">
-      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled van-checkbox--checked">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled van-checkbox--checked" style="color:undefined;">
         <!---->
       </i> <span class="van-checkbox__label">复选框</span></div>
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">禁用内容部分点击事件</h2>
     <div class="van-checkbox">
-      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
         <!---->
       </i> <span class="van-checkbox__label">复选框</span></div>
   </section>
@@ -31,19 +31,19 @@ exports[`renders checkbox correctly 1`] = `
     <h2 class="van-doc-demo-block__title">Checkbox 组</h2>
     <div class="van-checkbox-group">
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 a
       </span></div>
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 b
       </span></div>
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 c
@@ -54,19 +54,19 @@ exports[`renders checkbox correctly 1`] = `
     <h2 class="van-doc-demo-block__title">设置最大可选数</h2>
     <div class="van-checkbox-group">
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 a
       </span></div>
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 b
       </span></div>
       <div class="van-checkbox">
-        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
           <!---->
         </i> <span class="van-checkbox__label">
         复选框 c
@@ -84,7 +84,7 @@ exports[`renders checkbox correctly 1`] = `
           </div>
           <div class="van-cell__value">
             <div class="van-checkbox">
-              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
                 <!---->
               </i>
               <!---->
@@ -99,7 +99,7 @@ exports[`renders checkbox correctly 1`] = `
           </div>
           <div class="van-cell__value">
             <div class="van-checkbox">
-              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
                 <!---->
               </i>
               <!---->
@@ -114,7 +114,7 @@ exports[`renders checkbox correctly 1`] = `
           </div>
           <div class="van-cell__value">
             <div class="van-checkbox">
-              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
                 <!---->
               </i>
               <!---->

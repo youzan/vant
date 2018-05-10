@@ -20,8 +20,7 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">04</li>
-            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">05</li>
             <li class="van-ellipsis van-picker-column__item">06</li>
             <li class="van-ellipsis van-picker-column__item">07</li>
             <li class="van-ellipsis van-picker-column__item">08</li>
@@ -33,8 +32,28 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">29</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
             <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
           </ul>
         </div>
         <div class="van-picker-column" style="height:220px;">
@@ -160,8 +179,7 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">04</li>
-            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">05</li>
             <li class="van-ellipsis van-picker-column__item">06</li>
             <li class="van-ellipsis van-picker-column__item">07</li>
             <li class="van-ellipsis van-picker-column__item">08</li>
@@ -173,8 +191,28 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">29</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
             <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
           </ul>
         </div>
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
@@ -208,8 +246,7 @@ exports[`renders datetime-picker correctly 1`] = `
         </div>
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">04</li>
-            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">05</li>
             <li class="van-ellipsis van-picker-column__item">06</li>
             <li class="van-ellipsis van-picker-column__item">07</li>
             <li class="van-ellipsis van-picker-column__item">08</li>

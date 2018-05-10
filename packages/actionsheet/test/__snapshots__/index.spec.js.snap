@@ -57,7 +57,7 @@ exports[`renders actionsheet correctly 1`] = `
     <div class="van-actionsheet van-actionsheet--withtitle" style="display:none;">
       <div class="van-hairline--top-bottom van-actionsheet__header">
         <div>标题</div>
-        <i class="van-icon van-icon-close">
+        <i class="van-icon van-icon-close" style="color:undefined;">
           <!---->
         </i>
       </div>

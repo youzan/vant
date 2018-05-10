@@ -38,7 +38,7 @@ exports[`renders cell correctly 1`] = `
     <h2 class="van-doc-demo-block__title">展示图标</h2>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-hairline">
-        <i class="van-icon van-icon-location van-cell__left-icon">
+        <i class="van-icon van-icon-location van-cell__left-icon" style="color:undefined;">
           <!---->
         </i>
         <div class="van-cell__title"><span>单元格</span>
@@ -58,7 +58,7 @@ exports[`renders cell correctly 1`] = `
           <!---->
         </div>
         <!---->
-        <i class="van-icon van-icon-arrow van-cell__right-icon">
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
           <!---->
         </i>
       </div>
@@ -68,7 +68,7 @@ exports[`renders cell correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value"><span>内容</span></div>
-        <i class="van-icon van-icon-arrow van-cell__right-icon">
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
           <!---->
         </i>
       </div>
@@ -78,24 +78,24 @@ exports[`renders cell correctly 1`] = `
     <h2 class="van-doc-demo-block__title">高级用法</h2>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--clickable van-hairline">
-        <i class="van-icon van-icon-shop van-cell__left-icon">
+        <i class="van-icon van-icon-shop van-cell__left-icon" style="color:undefined;">
           <!---->
         </i>
         <div class="van-cell__title"><span class="van-cell-text">单元格</span> <span class="van-hairline--surround van-tag van-tag--danger">标签</span></div>
         <div class="van-cell__value"><span>内容</span></div>
-        <i class="van-icon van-icon-arrow van-cell__right-icon">
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
           <!---->
         </i>
       </div>
       <div class="van-cell van-cell--clickable van-hairline">
-        <i class="van-icon van-icon-location van-cell__left-icon">
+        <i class="van-icon van-icon-location van-cell__left-icon" style="color:undefined;">
           <!---->
         </i>
         <div class="van-cell__title"><span>单元格</span>
           <!---->
         </div>
         <!---->
-        <i class="van-icon van-icon-arrow van-cell__right-icon">
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
           <!---->
         </i>
       </div>
@@ -105,7 +105,7 @@ exports[`renders cell correctly 1`] = `
           <!---->
         </div>
         <!---->
-        <i class="van-cell__right-icon van-icon van-icon-search">
+        <i class="van-cell__right-icon van-icon van-icon-search" style="color:undefined;">
           <!---->
         </i>
       </div>

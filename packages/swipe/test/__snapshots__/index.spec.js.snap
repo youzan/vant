@@ -48,7 +48,7 @@ exports[`renders swipe correctly 1`] = `
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">纵向滚动</h2>
-    <div class="van-swipe">
+    <div class="demo-swipe--vertical van-swipe">
       <div class="van-swipe__track">
         <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">1</div>
         <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">2</div>

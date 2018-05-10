@@ -31,7 +31,7 @@ exports[`renders notice-bar correctly 1`] = `
       <div class="van-notice-bar__wrap">
         <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
       </div>
-      <i class="van-icon van-icon-close van-notice-bar__right-icon">
+      <i class="van-icon van-icon-close van-notice-bar__right-icon" style="color:undefined;">
         <!---->
       </i>
     </div>
@@ -40,7 +40,7 @@ exports[`renders notice-bar correctly 1`] = `
       <div class="van-notice-bar__wrap">
         <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
       </div>
-      <i class="van-icon van-icon-arrow van-notice-bar__right-icon">
+      <i class="van-icon van-icon-arrow van-notice-bar__right-icon" style="color:undefined;">
         <!---->
       </i>
     </div>

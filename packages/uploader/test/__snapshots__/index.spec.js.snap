@@ -6,7 +6,7 @@ exports[`renders uploader correctly 1`] = `
     <h2 class="van-doc-demo-block__title">基础用法</h2>
     <div class="demo-uploader-container">
       <div class="van-uploader">
-        <i class="van-icon van-icon-photograph">
+        <i class="van-icon van-icon-photograph" style="color:undefined;">
           <!---->
         </i>
         <input type="file" accept="image/*" class="van-uploader__input">
@@ -17,7 +17,7 @@ exports[`renders uploader correctly 1`] = `
     <h2 class="van-doc-demo-block__title">设置 input 属性</h2>
     <div class="demo-uploader-container">
       <div class="van-uploader">
-        <i class="van-icon van-icon-photograph">
+        <i class="van-icon van-icon-photograph" style="color:undefined;">
           <!---->
         </i>
         <input type="file" accept="image/gif, image/jpeg" multiple="multiple" class="van-uploader__input">

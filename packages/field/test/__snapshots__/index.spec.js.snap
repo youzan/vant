@@ -30,7 +30,7 @@ exports[`renders field correctly 1`] = `
           <input type="text" placeholder="请输入用户名" value="" class="van-field__control">
           <!---->
           <div class="van-field__icon" style="display:none;">
-            <i class="van-icon van-icon-clear">
+            <i class="van-icon van-icon-clear" style="color:undefined;">
               <!---->
             </i>
           </div>
@@ -132,7 +132,7 @@ exports[`renders field correctly 1`] = `
           <input type="text" placeholder="请输入短信验证码" value="" class="van-field__control">
           <!---->
           <div class="van-field__icon" style="display:none;">
-            <i class="van-icon van-icon-clear">
+            <i class="van-icon van-icon-clear" style="color:undefined;">
               <!---->
             </i>
           </div>

@@ -5,15 +5,15 @@ exports[`renders radio correctly 1`] = `
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">基础用法</h2>
     <div class="demo-radio-group van-radio-group">
-      <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked"> <!----></i></span> <span class="van-radio__label">单选框 1</span></div>
-      <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-check"> <!----></i></span> <span class="van-radio__label">单选框 2</span></div>
+      <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;"> <!----></i></span> <span class="van-radio__label">单选框 1</span></div>
+      <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label">单选框 2</span></div>
     </div>
   </section>
   <section class="van-doc-demo-block">
     <h2 class="van-doc-demo-block__title">禁用状态</h2>
     <div class="demo-radio-group van-radio-group">
-      <div class="van-radio van-radio--disabled"><span class="van-radio__input"><input type="radio" disabled="disabled" value="1" class="van-radio__control"> <i class="van-icon van-icon-check"> <!----></i></span> <span class="van-radio__label">单选框 1</span></div>
-      <div class="van-radio van-radio--disabled"><span class="van-radio__input"><input type="radio" disabled="disabled" value="2" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked"> <!----></i></span> <span class="van-radio__label">单选框 2</span></div>
+      <div class="van-radio van-radio--disabled"><span class="van-radio__input"><input type="radio" disabled="disabled" value="1" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label">单选框 1</span></div>
+      <div class="van-radio van-radio--disabled"><span class="van-radio__input"><input type="radio" disabled="disabled" value="2" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;"> <!----></i></span> <span class="van-radio__label">单选框 2</span></div>
     </div>
   </section>
   <section class="van-doc-demo-block">
@@ -26,7 +26,7 @@ exports[`renders radio correctly 1`] = `
             <!---->
           </div>
           <div class="van-cell__value">
-            <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked"> <!----></i></span>
+            <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;"> <!----></i></span>
               <!---->
             </div>
           </div>
@@ -38,7 +38,7 @@ exports[`renders radio correctly 1`] = `
             <!---->
           </div>
           <div class="van-cell__value">
-            <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-check"> <!----></i></span>
+            <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span>
               <!---->
             </div>
           </div>

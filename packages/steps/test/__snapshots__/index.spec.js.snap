@@ -47,7 +47,7 @@ exports[`renders steps correctly 1`] = `
     <div class="van-steps van-steps--horizontal">
       <div class="van-steps__status">
         <div class="van-steps__icon">
-          <i class="van-icon van-icon-logistics steps-success">
+          <i class="van-icon van-icon-logistics steps-success" style="color:undefined;">
             <!---->
           </i>
         </div>
