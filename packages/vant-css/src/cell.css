@@ -1,6 +1,7 @@
 @import './common/var.css';
 
 .van-cell {
+  width: 100%;
   display: flex;
   padding: 10px 15px;
   box-sizing: border-box;

@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Lightweight Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,22 +12,18 @@
     "packages",
     "types"
   ],
-  "sideEffects": [
-    "es/**/style/*",
-    "lib/**/style/*"
-  ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
-    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js",
+    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.dev.js",
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color",
     "build:vant": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
     "build:style-entry": "node build/bin/build-style-entry.js",
     "build:changelog": "sh build/bin/build-changelog.sh",
-    "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan && rimraf docs/dist",
-    "deploy:cdn": "superman cdn /zanui/vant docs/dist/*.js docs/dist/*.css && superman cdn /zanui/vant/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vant/async_zh-CN docs/dist/async_zh-CN/*.js",
-    "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.prod.js",
+    "deploy": "npm run deploy:docs && npm run deploy:cdn && gh-pages -d docs/dist --remote youzan",
+    "deploy:cdn": "superman cdn /zanui/vant docs/dist/*.js && superman cdn /zanui/vant/async_en-US docs/dist/async_en-US/*.js && superman cdn /zanui/vant/async_zh-CN docs/dist/async_zh-CN/*.js",
+    "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.doc.js",
     "dist": "npm run bootstrap && node build/bin/build-lib.js",
     "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
     "test": "jest",
@@ -88,7 +84,7 @@
     "postcss": "^6.0.21",
     "postcss-calc": "^6.0.0",
     "postcss-easy-import": "^3.0.0",
-    "postcss-loader": "^2.1.4",
+    "postcss-loader": "^2.1.5",
     "precss": "2.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^2.5.4",

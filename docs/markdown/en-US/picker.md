@@ -145,7 +145,7 @@ Picker events will pass different parameters according to the columns are single
 |-----------|-----------|-----------|
 | confirm | Triggered when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
 | cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
-| change | Triggered when current option changed | Single column：current value，current index<br>Multiple columns：current values，column index |
+| change | Triggered when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
 
 
 ### Data struct of columns

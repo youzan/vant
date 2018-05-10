@@ -1,8 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const isProduction = process.env.NODE_ENV === 'production';
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'development',
@@ -17,13 +16,13 @@ module.exports = {
   },
   devServer: {
     host: '0.0.0.0',
+    stats: 'errors-only',
     historyApiFallback: {
       rewrites: [
         { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
         { from: /^\/zanui\/vant/, to: '/index.html' }
       ]
-    },
-    stats: 'errors-only'
+    }
   },
   resolve: {
     extensions: ['.js', '.vue', '.css'],

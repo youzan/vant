@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 4px 15px;
+  padding: 6px 15px;
   position: relative;
 
   &--show-action {
@@ -14,7 +14,7 @@
   .van-cell {
     flex: 1;
     border-radius: 4px;
-    padding: 5px 10px 5px 35px;
+    padding: 3px 10px 3px 35px;
   }
 
   input {
@@ -45,13 +45,13 @@
     top: 50%;
     left: 25px;
     z-index: 1;
-    color: $gray-darker;
+    color: $gray-dark;
     position: absolute;
     font-size: 16px;
     transform: translateY(-50%);
   }
 
   .van-icon-clear {
-    color: $gray-dark;
+    color: #BBB;
   }
 }

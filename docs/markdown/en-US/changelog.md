@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
+`2018-05-08`
+
+**Improvements**
+
+- add Rate component [\#901](https://github.com/youzan/vant/pull/901) [\#1002](https://github.com/youzan/vant/pull/1002) [\#1010](https://github.com/youzan/vant/pull/1010) [\#1011](https://github.com/youzan/vant/pull/1011) [@Tinysymphony](https://github.com/Tinysymphony) [@chenjiahan](https://github.com/chenjiahan)
+- Area: add change event [\#1019](https://github.com/youzan/vant/pull/1019) [@chenjiahan](https://github.com/chenjiahan)
+- Button: update border color [\#998](https://github.com/youzan/vant/pull/998) [@chenjiahan](https://github.com/chenjiahan)
+- Locale: add warning when not correctly registered [\#1012](https://github.com/youzan/vant/pull/1012) [@chenjiahan](https://github.com/chenjiahan)
+- Stepper: update disabled style [\#997](https://github.com/youzan/vant/pull/997) [@chenjiahan](https://github.com/chenjiahan)
+- optimize component watcher [\#1001](https://github.com/youzan/vant/pull/1001) [@chenjiahan](https://github.com/chenjiahan)
+- Document: optimize API table [\#990](https://github.com/youzan/vant/pull/990) [\#991](https://github.com/youzan/vant/pull/991) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- fix Search should not have cell border [\#1000](https://github.com/youzan/vant/pull/1000) [@chenjiahan](https://github.com/chenjiahan)
+- fix Tab should lazy render tab-pane [\#978](https://github.com/youzan/vant/pull/978) ([jerryni](https://github.com/jerryni))
+- fix Stepper integer wrong spelling [\#992](https://github.com/youzan/vant/pull/992) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
 `2018-05-04`
 
