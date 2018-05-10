@@ -95,8 +95,8 @@ export default create({
             return;
           }
 
-          const offsetWidth = content.getBoundingClientRect().width;
           const wrapWidth = wrap.getBoundingClientRect().width;
+          const offsetWidth = content.getBoundingClientRect().width;
           if (this.scrollable && offsetWidth > wrapWidth) {
             this.wrapWidth = wrapWidth;
             this.offsetWidth = offsetWidth;
