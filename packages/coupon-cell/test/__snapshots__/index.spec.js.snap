@@ -31,9 +31,8 @@ exports[`coupon cell 2`] = `
 `;
 
 exports[`renders coupon correctly 1`] = `
-<section class="van-doc-demo-section demo-coupon" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
       <div class="van-cell van-cell--clickable van-hairline">
         <!---->
@@ -126,6 +125,6 @@ exports[`renders coupon correctly 1`] = `
         <div class="van-hairline--top van-coupon-list__close">不使用优惠</div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

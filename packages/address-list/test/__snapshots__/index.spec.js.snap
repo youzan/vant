@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders address-list correctly 1`] = `
-<section class="van-doc-demo-section demo-address-list" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-address-list">
       <div class="van-radio-group van-address-list__group">
         <div class="van-cell-group van-hairline--top-bottom">
@@ -52,6 +51,6 @@ exports[`renders address-list correctly 1`] = `
         </i>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders number-keyboard correctly 1`] = `
-<section class="van-doc-demo-section demo-number-keyboard" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">默认样式</h2>
+<div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">
       弹出默认键盘
@@ -26,9 +25,8 @@ exports[`renders number-keyboard correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义样式</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">
       弹出自定义键盘
@@ -53,6 +51,6 @@ exports[`renders number-keyboard correctly 1`] = `
         <i class="van-hairline van-key van-key van-key--green van-key van-key--big">完成</i>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

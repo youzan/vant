@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders tabbar correctly 1`] = `
-<section class="van-doc-demo-section demo-tabbar" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
@@ -42,9 +41,8 @@ exports[`renders tabbar correctly 1`] = `
         <div class="van-tabbar-item__text">标签</div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义图标</h2>
+  </div>
+  <div>
     <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed">
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
@@ -72,6 +70,6 @@ exports[`renders tabbar correctly 1`] = `
         <div class="van-tabbar-item__text">标签</div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

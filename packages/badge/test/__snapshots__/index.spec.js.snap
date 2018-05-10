@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders badge correctly 1`] = `
-<section class="van-doc-demo-section demo-badge" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-hairline--top-bottom van-badge-group">
       <a class="van-badge van-badge--select van-hairline">
         <!---->
@@ -22,6 +21,6 @@ exports[`renders badge correctly 1`] = `
         标签名称
       </a>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

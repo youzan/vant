@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders notice-bar correctly 1`] = `
-<section class="van-doc-demo-section demo-notice-bar" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-notice-bar" style="color:undefined;background:undefined;">
       <div class="van-notice-bar__left-icon">
         <img src="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png">
@@ -13,9 +12,8 @@ exports[`renders notice-bar correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用滚动</h2>
+  </div>
+  <div>
     <div class="van-notice-bar" style="color:undefined;background:undefined;">
       <!---->
       <div class="van-notice-bar__wrap">
@@ -23,9 +21,8 @@ exports[`renders notice-bar correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">通告栏模式</h2>
+  </div>
+  <div>
     <div class="van-notice-bar van-notice-bar--withicon" style="color:undefined;background:undefined;">
       <!---->
       <div class="van-notice-bar__wrap">
@@ -44,6 +41,6 @@ exports[`renders notice-bar correctly 1`] = `
         <!---->
       </i>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

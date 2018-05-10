@@ -15,9 +15,8 @@ exports[`callback events 1`] = `
 `;
 
 exports[`renders actionsheet correctly 1`] = `
-<section class="van-doc-demo-section demo-actionsheet" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">弹出 Actionsheet</span></button>
     <div class="van-actionsheet" style="display:none;">
@@ -32,9 +31,8 @@ exports[`renders actionsheet correctly 1`] = `
       </ul>
       <div class="van-actionsheet__content"></div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">带取消按钮的 Actionsheet</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">弹出带取消按钮的 Actionsheet</span></button>
     <div class="van-actionsheet" style="display:none;">
@@ -49,9 +47,8 @@ exports[`renders actionsheet correctly 1`] = `
       </ul>
       <div class="van-actionsheet__cancel van-hairline--top">取消</div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">带标题的 Actionsheet</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">弹出带标题的 Actionsheet</span></button>
     <div class="van-actionsheet van-actionsheet--withtitle" style="display:none;">
@@ -65,6 +62,6 @@ exports[`renders actionsheet correctly 1`] = `
         <p>内容</p>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

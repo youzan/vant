@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders contact correctly 1`] = `
-<section class="van-doc-demo-section demo-contact" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-contact-card van-contact-card--add">
       <div class="van-contact-card__content">
         <i class="van-icon van-icon-add2 van-contact-card__icon" style="color:undefined;">
@@ -82,9 +81,8 @@ exports[`renders contact correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">不可编辑</h2>
+  </div>
+  <div>
     <div class="van-contact-card van-contact-card--edit van-contact-card--uneditable">
       <div class="van-contact-card__content">
         <i class="van-icon van-icon-contact van-contact-card__icon" style="color:undefined;">
@@ -97,6 +95,6 @@ exports[`renders contact correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

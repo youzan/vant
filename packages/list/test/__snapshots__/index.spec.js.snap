@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders list correctly 1`] = `
-<section class="van-doc-demo-section demo-list" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
     <div class="van-pull-refresh">
       <div class="van-pull-refresh__track" style="transition:0ms;transform:translate3d(0,0px, 0);">
@@ -18,6 +17,6 @@ exports[`renders list correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

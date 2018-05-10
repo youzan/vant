@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders switch-cell correctly 1`] = `
-<section class="van-doc-demo-section demo-switch-cell" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-switch-cell">
         <!---->
@@ -20,9 +19,8 @@ exports[`renders switch-cell correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用状态</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-switch-cell">
         <!---->
@@ -39,9 +37,8 @@ exports[`renders switch-cell correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">加载状态</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-switch-cell">
         <!---->
@@ -58,6 +55,6 @@ exports[`renders switch-cell correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

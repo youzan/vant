@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders panel correctly 1`] = `
-<section class="van-doc-demo-section demo-panel" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
       <div class="van-cell van-hairline van-panel__header">
         <!---->
@@ -18,9 +17,8 @@ exports[`renders panel correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">高级用法</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
       <div class="van-cell van-hairline van-panel__header">
         <!---->
@@ -42,6 +40,6 @@ exports[`renders panel correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

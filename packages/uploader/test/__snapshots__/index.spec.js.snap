@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders uploader correctly 1`] = `
-<section class="van-doc-demo-section demo-uploader" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="demo-uploader-container">
       <div class="van-uploader">
         <i class="van-icon van-icon-photograph" style="color:undefined;">
@@ -12,9 +11,8 @@ exports[`renders uploader correctly 1`] = `
         <input type="file" accept="image/*" class="van-uploader__input">
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">设置 input 属性</h2>
+  </div>
+  <div>
     <div class="demo-uploader-container">
       <div class="van-uploader">
         <i class="van-icon van-icon-photograph" style="color:undefined;">
@@ -23,6 +21,6 @@ exports[`renders uploader correctly 1`] = `
         <input type="file" accept="image/gif, image/jpeg" multiple="multiple" class="van-uploader__input">
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

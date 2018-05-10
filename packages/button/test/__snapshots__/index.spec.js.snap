@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders button correctly 1`] = `
-<section class="van-doc-demo-section demo-button" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">按钮类型</h2>
+<div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">默认按钮</span></button>
     <button class="van-button van-button--primary van-button--normal">
       <!----><span class="van-button__text">主要按钮</span></button>
     <button class="van-button van-button--danger van-button--normal">
       <!----><span class="van-button__text">危险按钮</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">按钮尺寸</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--large">
       <!----><span class="van-button__text">大号按钮</span></button>
     <button class="van-button van-button--default van-button--normal">
@@ -21,29 +19,25 @@ exports[`renders button correctly 1`] = `
       <!----><span class="van-button__text">小型按钮</span></button>
     <button class="van-button van-button--default van-button--mini">
       <!----><span class="van-button__text">迷你按钮</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用状态</h2>
+  </div>
+  <div>
     <button disabled="disabled" class="van-button van-button--default van-button--normal van-button--disabled van-button--unclickable">
       <!----><span class="van-button__text">禁用状态</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">加载状态</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal van-button--loading van-button--unclickable">
       <div class="van-loading van-loading--circular van-loading--black" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span class="van-button__text"></span></button>
     <button
       class="van-button van-button--primary van-button--normal van-button--loading van-button--unclickable">
       <div class="van-loading van-loading--circular van-loading--white" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span class="van-button__text"></span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义按钮标签</h2>
+  </div>
+  <div>
     <a href="https://www.youzan.com" target="_blank" class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">
       按钮
     </span></a>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">页面底部操作按钮</h2>
+  </div>
+  <div>
     <button class="van-button van-button--primary van-button--normal van-button--bottom-action">
       <!----><span class="van-button__text">按钮</span></button>
     <div class="van-row">
@@ -56,6 +50,6 @@ exports[`renders button correctly 1`] = `
           <!----><span class="van-button__text">按钮</span></button>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

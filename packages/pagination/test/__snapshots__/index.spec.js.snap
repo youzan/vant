@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders pagination correctly 1`] = `
-<section class="van-doc-demo-section demo-pagination" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <ul previous-text="上一页" class="van-pagination">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
@@ -28,9 +27,8 @@ exports[`renders pagination correctly 1`] = `
         下一页
       </li>
     </ul>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">简单模式</h2>
+  </div>
+  <div>
     <ul previous-text="上一页" size="small" class="van-pagination van-pagination--simple">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
@@ -45,9 +43,8 @@ exports[`renders pagination correctly 1`] = `
         下一页
       </li>
     </ul>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title"></h2>
+  </div>
+  <div>
     <ul previous-text="上一页" class="van-pagination">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
@@ -69,6 +66,6 @@ exports[`renders pagination correctly 1`] = `
         下一页
       </li>
     </ul>
-  </section>
-</section>
+  </div>
+</div>
 `;

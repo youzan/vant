@@ -1,15 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders popup correctly 1`] = `
-<section class="van-doc-demo-section demo-popup" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">弹出 Popup</span></button>
     <div class="van-popup" style="display:none;">内容</div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">弹出位置</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">底部弹出</span></button>
     <div class="van-popup van-popup--bottom" style="display:none;">
@@ -51,6 +49,6 @@ exports[`renders popup correctly 1`] = `
           <!----><span class="van-button__text">关闭弹层</span></button>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

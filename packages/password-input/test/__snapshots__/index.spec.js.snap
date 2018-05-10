@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders password-input correctly 1`] = `
-<section class="van-doc-demo-section demo-password-input" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-password-input">
       <ul class="van-hairline--surround van-password-input__security">
         <li class="van-hairline">
@@ -45,6 +44,6 @@ exports[`renders password-input correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders card correctly 1`] = `
-<section class="van-doc-demo-section demo-card" style="background:#fff;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-card">
       <div class="van-card__thumb">
         <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
@@ -20,9 +19,8 @@ exports[`renders card correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">高级用法</h2>
+  </div>
+  <div>
     <div class="van-card">
       <div class="van-card__thumb">
         <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
@@ -46,6 +44,6 @@ exports[`renders card correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

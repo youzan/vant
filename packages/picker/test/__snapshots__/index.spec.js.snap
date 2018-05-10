@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders picker correctly 1`] = `
-<section class="van-doc-demo-section demo-picker" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-picker">
       <!---->
       <!---->
@@ -20,9 +19,8 @@ exports[`renders picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用选项</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <!---->
       <!---->
@@ -37,9 +35,8 @@ exports[`renders picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">展示顶部栏</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -60,9 +57,8 @@ exports[`renders picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">多列联动</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <!---->
       <!---->
@@ -85,9 +81,8 @@ exports[`renders picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">加载状态</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <!---->
       <div class="van-picker__loading">
@@ -112,6 +107,6 @@ exports[`renders picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

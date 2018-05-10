@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders tag correctly 1`] = `
-<section class="van-doc-demo-section demo-tag" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2> <span class="van-hairline--surround van-tag">标签</span> <span class="van-hairline--surround van-tag van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--success">标签</span> <span class="van-hairline--surround van-tag van-tag--primary">标签</span></section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">空心样式</h2> <span class="van-hairline--surround van-tag van-tag--plain">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--primary">标签</span>    <span class="van-hairline--surround van-tag van-tag--plain van-tag--success">标签</span></section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">圆角样式</h2> <span class="van-hairline--surround van-tag van-tag--mark">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--primary">标签</span>    <span class="van-hairline--surround van-tag van-tag--mark van-tag--success">标签</span></section>
-</section>
+<div>
+  <div><span class="van-hairline--surround van-tag">标签</span> <span class="van-hairline--surround van-tag van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--success">标签</span> <span class="van-hairline--surround van-tag van-tag--primary">标签</span></div>
+  <div><span class="van-hairline--surround van-tag van-tag--plain">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--primary">标签</span>
+    <span
+      class="van-hairline--surround van-tag van-tag--plain van-tag--success">标签</span>
+  </div>
+  <div><span class="van-hairline--surround van-tag van-tag--mark">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--primary">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--success">标签</span></div>
+</div>
 `;

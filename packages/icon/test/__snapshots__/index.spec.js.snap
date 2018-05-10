@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders icon correctly 1`] = `
-<section class="van-doc-demo-section demo-icon" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">图标列表</h2>
+<div>
+  <div>
     <div class="van-col van-col-8">
       <i class="van-icon van-icon-close" style="color:undefined;">
         <!---->
@@ -384,6 +383,6 @@ exports[`renders icon correctly 1`] = `
       <i class="van-icon van-icon-hot-sale" style="color:undefined;">
         <!---->
       </i> <span>hot-sale</span></div>
-  </section>
-</section>
+  </div>
+</div>
 `;

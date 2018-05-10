@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders search correctly 1`] = `
-<section class="van-doc-demo-section demo-search" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-search" style="background:#f2f2f2;">
       <i class="van-icon van-icon-search" style="color:undefined;">
         <!---->
@@ -25,9 +24,8 @@ exports[`renders search correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">监听对应事件</h2>
+  </div>
+  <div>
     <form action="/">
       <div class="van-search van-search--show-action" style="background:#f2f2f2;">
         <i class="van-icon van-icon-search" style="color:undefined;">
@@ -53,9 +51,8 @@ exports[`renders search correctly 1`] = `
         </div>
       </div>
     </form>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义行动按钮</h2>
+  </div>
+  <div>
     <div class="van-search van-search--show-action" style="background:#f2f2f2;">
       <i class="van-icon van-icon-search" style="color:undefined;">
         <!---->
@@ -79,6 +76,6 @@ exports[`renders search correctly 1`] = `
         <div>搜索</div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

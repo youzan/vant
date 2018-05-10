@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders field correctly 1`] = `
-<section class="van-doc-demo-section demo-field" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-hairline van-field">
         <!---->
@@ -17,9 +16,8 @@ exports[`renders field correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义类型</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-cell--required van-hairline van-field van-field--has-icon">
         <!---->
@@ -52,9 +50,8 @@ exports[`renders field correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用输入框</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div disabled="disabled" class="van-cell van-hairline van-field">
         <!---->
@@ -70,9 +67,8 @@ exports[`renders field correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">错误提示</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-hairline van-field van-field--error">
         <!---->
@@ -101,9 +97,8 @@ exports[`renders field correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">高度自适应</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入留言" rows="1" class="van-cell van-hairline van-field">
         <!---->
@@ -119,9 +114,8 @@ exports[`renders field correctly 1`] = `
         <!---->
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">插入按钮</h2>
+  </div>
+  <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入短信验证码" class="van-cell van-cell--center van-hairline van-field van-field--has-icon">
         <!---->
@@ -144,6 +138,6 @@ exports[`renders field correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

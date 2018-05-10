@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders steps correctly 1`] = `
-<section class="van-doc-demo-section demo-steps" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-steps van-steps--horizontal">
       <!---->
       <div class="van-steps__items van-steps__items--alone">
@@ -41,9 +40,8 @@ exports[`renders steps correctly 1`] = `
     </div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">下一步</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">描述信息</h2>
+  </div>
+  <div>
     <div class="van-steps van-steps--horizontal">
       <div class="van-steps__status">
         <div class="van-steps__icon">
@@ -89,9 +87,8 @@ exports[`renders steps correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">竖向步骤条</h2>
+  </div>
+  <div>
     <div class="van-steps van-steps--vertical">
       <!---->
       <div class="van-steps__items van-steps__items--alone">
@@ -129,6 +126,6 @@ exports[`renders steps correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

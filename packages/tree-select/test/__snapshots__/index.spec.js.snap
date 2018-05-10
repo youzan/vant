@@ -8,9 +8,8 @@ exports[`empty list 1`] = `
 `;
 
 exports[`renders tree-select correctly 1`] = `
-<section class="van-doc-demo-section demo-tree-select" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-tree-select" style="height:300px;">
       <div class="van-tree-select__nav">
         <div class="van-ellipsis van-tree-select__nitem van-tree-select__nitem--active">
@@ -60,6 +59,6 @@ exports[`renders tree-select correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders pull-refresh correctly 1`] = `
-<section class="van-doc-demo-section demo-pull-refresh" style="background:undefined;">
+<div>
   <div class="van-pull-refresh">
     <div class="van-pull-refresh__track" style="transition:0ms;transform:translate3d(0,0px, 0);">
       <div class="van-pull-refresh__head">
@@ -9,11 +9,10 @@ exports[`renders pull-refresh correctly 1`] = `
         <!---->
         <!---->
       </div>
-      <section class="van-doc-demo-block">
-        <h2 class="van-doc-demo-block__title">基础用法</h2>
+      <div>
         <p>刷新次数: 0</p>
-      </section>
+      </div>
     </div>
   </div>
-</section>
+</div>
 `;

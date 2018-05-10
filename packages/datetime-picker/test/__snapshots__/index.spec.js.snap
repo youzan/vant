@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders datetime-picker correctly 1`] = `
-<section class="van-doc-demo-section demo-datetime-picker" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">选择完整时间</h2>
+<div>
+  <div>
     <div class="van-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -151,9 +150,8 @@ exports[`renders datetime-picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">选择日期（年月日）</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -218,9 +216,8 @@ exports[`renders datetime-picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">选择日期（年月）</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -259,9 +256,8 @@ exports[`renders datetime-picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">选择时间</h2>
+  </div>
+  <div>
     <div class="van-picker">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -352,6 +348,6 @@ exports[`renders datetime-picker correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

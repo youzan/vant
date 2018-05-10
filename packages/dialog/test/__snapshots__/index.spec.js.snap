@@ -1,21 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Dialog correctly 1`] = `
-<section class="van-doc-demo-section demo-Dialog" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">消息提示</h2>
+<div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">Alert</span></button>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">无标题 Alert</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">消息确认</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">Confirm</span></button>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">高级用法</h2>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">高级用法</span></button>
     <div class="van-dialog" style="display:none;">
@@ -59,6 +56,6 @@ exports[`renders Dialog correctly 1`] = `
       </span></button>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

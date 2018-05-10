@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders swipe correctly 1`] = `
-<section class="van-doc-demo-section demo-swipe" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-swipe">
       <div class="van-swipe__track">
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">1</div>
@@ -13,9 +12,8 @@ exports[`renders swipe correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">图片懒加载</h2>
+  </div>
+  <div>
     <div class="van-swipe">
       <div class="van-swipe__track">
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">
@@ -33,9 +31,8 @@ exports[`renders swipe correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">监听 change 事件</h2>
+  </div>
+  <div>
     <div class="van-swipe">
       <div class="van-swipe__track">
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">1</div>
@@ -45,9 +42,8 @@ exports[`renders swipe correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">纵向滚动</h2>
+  </div>
+  <div>
     <div class="demo-swipe--vertical van-swipe">
       <div class="van-swipe__track">
         <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">1</div>
@@ -57,6 +53,6 @@ exports[`renders swipe correctly 1`] = `
       </div>
       <!---->
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

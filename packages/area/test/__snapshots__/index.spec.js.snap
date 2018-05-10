@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders area correctly 1`] = `
-<section class="van-doc-demo-section demo-area" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-picker van-area">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -64,9 +63,8 @@ exports[`renders area correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">选中省市县</h2>
+  </div>
+  <div>
     <div class="van-picker van-area">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -149,9 +147,8 @@ exports[`renders area correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">配置显示列</h2>
+  </div>
+  <div>
     <div class="van-picker van-area">
       <div class="van-hairline--top-bottom van-picker__toolbar">
         <div class="van-picker__cancel">取消</div>
@@ -207,6 +204,6 @@ exports[`renders area correctly 1`] = `
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

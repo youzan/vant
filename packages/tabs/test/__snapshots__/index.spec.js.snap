@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders tab correctly 1`] = `
-<section class="van-doc-demo-section demo-tab" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -25,9 +24,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">横向滚动</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -61,9 +59,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">禁用标签</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -85,9 +82,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">样式风格</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--card">
       <div class="van-tabs__wrap van-tabs__wrap--content-top">
         <div class="van-tabs__nav van-tabs__nav--card">
@@ -109,9 +105,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">点击事件</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -133,9 +128,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">粘性布局</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -157,9 +151,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">自定义标签</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -175,9 +168,8 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">滑动切换</h2>
+  </div>
+  <div>
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
@@ -199,6 +191,6 @@ exports[`renders tab correctly 1`] = `
         </div>
       </div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

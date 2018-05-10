@@ -1,9 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders layout correctly 1`] = `
-<section class="van-doc-demo-section demo-layout" style="background:undefined;">
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">基础用法</h2>
+<div>
+  <div>
     <div class="van-row">
       <div class="van-col van-col-8">span: 8</div>
       <div class="van-col van-col-8">span: 8</div>
@@ -16,14 +15,13 @@ exports[`renders layout correctly 1`] = `
     <div class="van-row">
       <div class="van-col van-col-12 van-col-offset-12">offset: 12, span: 12</div>
     </div>
-  </section>
-  <section class="van-doc-demo-block">
-    <h2 class="van-doc-demo-block__title">在列元素之间增加间距</h2>
+  </div>
+  <div>
     <div class="van-row" style="margin-left:-10px;margin-right:-10px;">
       <div class="van-col van-col-8" style="padding-left:10px;padding-right:10px;">span: 8</div>
       <div class="van-col van-col-8" style="padding-left:10px;padding-right:10px;">span: 8</div>
       <div class="van-col van-col-8" style="padding-left:10px;padding-right:10px;">span: 8</div>
     </div>
-  </section>
-</section>
+  </div>
+</div>
 `;

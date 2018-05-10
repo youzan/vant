@@ -2,7 +2,7 @@
 
 exports[`renders cell-swipe correctly 1`] = `
 <div>
-  <section class="van-doc-demo-section demo-cell-swipe" style="background:undefined;">
+  <div>
     <div class="van-notice-bar" style="color:undefined;background:undefined;">
       <!---->
       <div class="van-notice-bar__wrap">
@@ -10,8 +10,7 @@ exports[`renders cell-swipe correctly 1`] = `
       </div>
       <!---->
     </div>
-    <section class="van-doc-demo-block">
-      <h2 class="van-doc-demo-block__title">基础用法</h2>
+    <div>
       <div class="van-cell-swipe">
         <div class="van-cell-swipe__wrapper" style="transform:translate3d(0px, 0, 0);transition:.6s cubic-bezier(0.18, 0.89, 0.32, 1);">
           <div class="van-cell-swipe__left"><span>选择</span></div>
@@ -28,9 +27,8 @@ exports[`renders cell-swipe correctly 1`] = `
           <div class="van-cell-swipe__right"><span>删除</span></div>
         </div>
       </div>
-    </section>
-    <section class="van-doc-demo-block">
-      <h2 class="van-doc-demo-block__title">异步关闭</h2>
+    </div>
+    <div>
       <div class="van-cell-swipe">
         <div class="van-cell-swipe__wrapper" style="transform:translate3d(0px, 0, 0);transition:.6s cubic-bezier(0.18, 0.89, 0.32, 1);">
           <div class="van-cell-swipe__left"><span>选择</span></div>
@@ -47,7 +45,7 @@ exports[`renders cell-swipe correctly 1`] = `
           <div class="van-cell-swipe__right"><span>删除</span></div>
         </div>
       </div>
-    </section>
-  </section>
+    </div>
+  </div>
 </div>
 `;
