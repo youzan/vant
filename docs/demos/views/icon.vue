@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('title')">
       <van-col span="8" v-for="icon in icons" :key="icon">
-        <van-icon color="#f00" :name="icon" />
+        <van-icon :name="icon" />
         <span>{{ icon }}</span>
       </van-col>
     </demo-block>

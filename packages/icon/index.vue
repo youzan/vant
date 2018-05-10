@@ -15,7 +15,7 @@ export default create({
   props: {
     name: String,
     info: [String, Number],
-    color: String    
+    color: String
   },
 
   methods: {
