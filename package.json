@@ -132,6 +132,7 @@
     "collectCoverage": true,
     "coverageReporters": [
       "html",
+      "lcov",
       "text-summary"
     ],
     "coverageDirectory": "./test/coverage"
