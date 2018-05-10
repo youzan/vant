@@ -90,8 +90,13 @@ export default create({
     text: {
       handler() {
         this.$nextTick(() => {
-          const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-          const wrapWidth = this.$refs.wrap.getBoundingClientRect().width;
+          const { wrap, content } = this.$refs;
+          if (!wrap || !content) {
+            return;
+          }
+
+          const wrapWidth = wrap.getBoundingClientRect().width;
+          const offsetWidth = content.getBoundingClientRect().width;
           if (this.scrollable && offsetWidth > wrapWidth) {
             this.wrapWidth = wrapWidth;
             this.offsetWidth = offsetWidth;
