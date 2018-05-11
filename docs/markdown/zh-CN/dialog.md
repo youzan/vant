@@ -117,7 +117,7 @@ export default {
   },
   
   methods: {
-    beforeClose() {
+    beforeClose(action, done) {
       if (action === 'confirm') {
         setTimeout(done, 1000);
       } else {
