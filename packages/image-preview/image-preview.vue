@@ -60,7 +60,7 @@ export default create({
       const { offsetX, offsetY } = this.$refs.swipe;
 
       // prevent long tap to close component
-      if (deltaTime < 100 && offsetX < 20 && offsetY < 20) {
+      if (deltaTime < 500 && offsetX < 10 && offsetY < 10) {
         this.$emit('input', false);
       }
     }
