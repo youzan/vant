@@ -1,8 +1,5 @@
 import { shallow } from '@vue/test-utils';
 import Actionsheet from '../';
-import demoTest from '../../../test/demo-test';
-
-demoTest(Actionsheet);
 
 test('callback events', () => {
   const callback = jest.fn();

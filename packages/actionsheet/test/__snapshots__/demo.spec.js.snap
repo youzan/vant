@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">弹出 Actionsheet</span></button>
+    <div class="van-actionsheet" style="display:none;">
+      <ul class="van-hairline--bottom">
+        <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">选项</span>
+          <!---->
+        </li>
+        <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">选项</span> <span class="van-actionsheet__subname">描述信息</span></li>
+        <li class="van-actionsheet__item van-hairline--top">
+          <div class="van-loading van-loading--circular van-loading--black van-actionsheet__loading" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+        </li>
+      </ul>
+      <div class="van-actionsheet__content"></div>
+    </div>
+  </div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">弹出带取消按钮的 Actionsheet</span></button>
+    <div class="van-actionsheet" style="display:none;">
+      <ul class="van-hairline--bottom">
+        <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">选项</span>
+          <!---->
+        </li>
+        <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">选项</span> <span class="van-actionsheet__subname">描述信息</span></li>
+        <li class="van-actionsheet__item van-hairline--top">
+          <div class="van-loading van-loading--circular van-loading--black van-actionsheet__loading" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+        </li>
+      </ul>
+      <div class="van-actionsheet__cancel van-hairline--top">取消</div>
+    </div>
+  </div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">弹出带标题的 Actionsheet</span></button>
+    <div class="van-actionsheet van-actionsheet--withtitle" style="display:none;">
+      <div class="van-hairline--top-bottom van-actionsheet__header">
+        <div>标题</div>
+        <i class="van-icon van-icon-close" style="color:undefined;">
+          <!---->
+        </i>
+      </div>
+      <div class="van-actionsheet__content">
+        <p>内容</p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

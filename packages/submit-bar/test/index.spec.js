@@ -1,8 +1,5 @@
 import SubmitBar from '../';
-import demoTest from '../../../test/demo-test';
 import { mount } from '@vue/test-utils';
-
-demoTest(SubmitBar);
 
 test('submit', () => {
   const wrapper = mount(SubmitBar, {

@@ -1,9 +1,6 @@
-import demoTest from '../../../test/demo-test';
 import CouponList from '../../coupon-list';
 import CouponCell from '../../coupon-cell';
 import { mount } from '@vue/test-utils';
-
-demoTest(CouponList);
 
 test('exchange coupon', () => {
   const wrapper = mount(CouponList);

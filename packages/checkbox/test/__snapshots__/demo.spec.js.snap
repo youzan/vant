@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-checkbox">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
+        <!---->
+      </i> <span class="van-checkbox__label">复选框</span></div>
+  </div>
+  <div>
+    <div class="van-checkbox">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled" style="color:undefined;">
+        <!---->
+      </i> <span class="van-checkbox__label">复选框</span></div>
+    <div class="van-checkbox">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--disabled van-checkbox--checked" style="color:undefined;">
+        <!---->
+      </i> <span class="van-checkbox__label">复选框</span></div>
+  </div>
+  <div>
+    <div class="van-checkbox">
+      <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
+        <!---->
+      </i> <span class="van-checkbox__label">复选框</span></div>
+  </div>
+  <div>
+    <div class="van-checkbox-group">
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 a
+      </span></div>
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 b
+      </span></div>
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 c
+      </span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-checkbox-group">
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 a
+      </span></div>
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 b
+      </span></div>
+      <div class="van-checkbox">
+        <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+          <!---->
+        </i> <span class="van-checkbox__label">
+        复选框 c
+      </span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-checkbox-group">
+      <div class="van-cell-group van-hairline--top-bottom">
+        <div class="van-cell van-hairline">
+          <!---->
+          <div class="van-cell__title"><span>复选框a</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div class="van-checkbox">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+                <!---->
+              </i>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="van-cell van-hairline">
+          <!---->
+          <div class="van-cell__title"><span>复选框b</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div class="van-checkbox">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+                <!---->
+              </i>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="van-cell van-hairline">
+          <!---->
+          <div class="van-cell__title"><span>复选框c</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div class="van-checkbox">
+              <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round" style="color:undefined;">
+                <!---->
+              </i>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

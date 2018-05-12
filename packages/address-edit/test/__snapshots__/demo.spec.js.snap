@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-address-edit">
+      <div class="van-cell-group van-hairline--top-bottom">
+        <div maxlength="15" placeholder="名字" class="van-cell van-hairline van-field">
+          <!---->
+          <div class="van-cell__title"><span>收货人</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <input type="text" maxlength="15" placeholder="名字" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div placeholder="手机或固定电话" class="van-cell van-hairline van-field">
+          <!---->
+          <div class="van-cell__title"><span>联系电话</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <input type="tel" placeholder="手机或固定电话" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="van-cell van-cell--clickable van-hairline van-address-edit__area">
+          <!---->
+          <div class="van-cell__title"><span>收件地区</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"><span>选择省份</span> <span>选择城市</span> <span>选择地区</span></div>
+          <!---->
+        </div>
+        <div>
+          <div placeholder="如街道、楼层、门牌号等" maxlength="200" rows="1" class="van-cell van-hairline van-field van-field--has-icon">
+            <!---->
+            <div class="van-cell__title"><span>详细地址</span>
+              <!---->
+            </div>
+            <div class="van-cell__value">
+              <textarea placeholder="如街道、楼层、门牌号等" maxlength="200" rows="1" class="van-field__control"></textarea>
+              <!---->
+              <div class="van-field__icon">
+                <div>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div placeholder="邮政编码(选填)" maxlength="6" class="van-hairline--top van-cell van-hairline van-field">
+          <!---->
+          <div class="van-cell__title"><span>邮政编码</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <input type="tel" placeholder="邮政编码(选填)" maxlength="6" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="van-cell van-cell--center van-switch-cell">
+          <!---->
+          <div class="van-cell__title"><span>设为默认收货地址</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div title="设为默认收货地址" class="van-switch" style="font-size:30px;">
+              <div class="van-switch__node">
+                <!---->
+              </div>
+            </div>
+          </div>
+          <!---->
+        </div>
+      </div>
+      <div class="van-address-edit__buttons">
+        <button class="van-button van-button--primary van-button--normal van-button--block">
+          <!----><span class="van-button__text">
+      保存
+    </span></button>
+        <button class="van-button van-button--default van-button--normal van-button--block">
+          <!----><span class="van-button__text">
+      删除收货地址
+    </span></button>
+      </div>
+      <div class="van-popup van-popup--bottom" style="display:none;">
+        <div class="van-picker van-area">
+          <div class="van-hairline--top-bottom van-picker__toolbar">
+            <div class="van-picker__cancel">取消</div>
+            <!---->
+            <div class="van-picker__confirm">确认</div>
+          </div>
+          <!---->
+          <div class="van-picker__columns" style="height:220px;">
+            <div class="van-picker-column" style="height:220px;">
+              <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+                <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">选择省份</li>
+                <li class="van-ellipsis van-picker-column__item">北京市</li>
+                <li class="van-ellipsis van-picker-column__item">天津市</li>
+                <li class="van-ellipsis van-picker-column__item">河北省</li>
+                <li class="van-ellipsis van-picker-column__item">山西省</li>
+                <li class="van-ellipsis van-picker-column__item">内蒙古自治区</li>
+                <li class="van-ellipsis van-picker-column__item">辽宁省</li>
+                <li class="van-ellipsis van-picker-column__item">吉林省</li>
+                <li class="van-ellipsis van-picker-column__item">黑龙江省</li>
+                <li class="van-ellipsis van-picker-column__item">上海市</li>
+                <li class="van-ellipsis van-picker-column__item">江苏省</li>
+                <li class="van-ellipsis van-picker-column__item">浙江省</li>
+                <li class="van-ellipsis van-picker-column__item">安徽省</li>
+                <li class="van-ellipsis van-picker-column__item">福建省</li>
+                <li class="van-ellipsis van-picker-column__item">江西省</li>
+                <li class="van-ellipsis van-picker-column__item">山东省</li>
+                <li class="van-ellipsis van-picker-column__item">河南省</li>
+                <li class="van-ellipsis van-picker-column__item">湖北省</li>
+                <li class="van-ellipsis van-picker-column__item">湖南省</li>
+                <li class="van-ellipsis van-picker-column__item">广东省</li>
+                <li class="van-ellipsis van-picker-column__item">广西壮族自治区</li>
+                <li class="van-ellipsis van-picker-column__item">海南省</li>
+                <li class="van-ellipsis van-picker-column__item">重庆市</li>
+                <li class="van-ellipsis van-picker-column__item">四川省</li>
+                <li class="van-ellipsis van-picker-column__item">贵州省</li>
+                <li class="van-ellipsis van-picker-column__item">云南省</li>
+                <li class="van-ellipsis van-picker-column__item">西藏自治区</li>
+                <li class="van-ellipsis van-picker-column__item">陕西省</li>
+                <li class="van-ellipsis van-picker-column__item">甘肃省</li>
+                <li class="van-ellipsis van-picker-column__item">青海省</li>
+                <li class="van-ellipsis van-picker-column__item">宁夏回族自治区</li>
+                <li class="van-ellipsis van-picker-column__item">新疆维吾尔自治区</li>
+                <li class="van-ellipsis van-picker-column__item">台湾省</li>
+                <li class="van-ellipsis van-picker-column__item">香港特别行政区</li>
+                <li class="van-ellipsis van-picker-column__item">澳门特别行政区</li>
+              </ul>
+            </div>
+            <div class="van-picker-column" style="height:220px;">
+              <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+                <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">选择城市</li>
+              </ul>
+            </div>
+            <div class="van-picker-column" style="height:220px;">
+              <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+                <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">选择地区</li>
+              </ul>
+            </div>
+            <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

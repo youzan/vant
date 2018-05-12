@@ -1,9 +1,6 @@
 import { mount } from '@vue/test-utils';
 import Badge from '../';
 import BadgeGroup from '../../badge-group';
-import demoTest from '../../../test/demo-test';
-
-demoTest(Badge);
 
 test('click', () => {
   const onClick = jest.fn();

@@ -1,0 +1,388 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-close" style="color:undefined;">
+        <!---->
+      </i> <span>close</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-upgrade" style="color:undefined;">
+        <!---->
+      </i> <span>upgrade</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-add-o" style="color:undefined;">
+        <!---->
+      </i> <span>add-o</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-passed" style="color:undefined;">
+        <!---->
+      </i> <span>passed</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-chat" style="color:undefined;">
+        <!---->
+      </i> <span>chat</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-question" style="color:undefined;">
+        <!---->
+      </i> <span>question</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-clock" style="color:undefined;">
+        <!---->
+      </i> <span>clock</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-gold-coin" style="color:undefined;">
+        <!---->
+      </i> <span>gold-coin</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-play" style="color:undefined;">
+        <!---->
+      </i> <span>play</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-pause" style="color:undefined;">
+        <!---->
+      </i> <span>pause</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-stop" style="color:undefined;">
+        <!---->
+      </i> <span>stop</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-more-o" style="color:undefined;">
+        <!---->
+      </i> <span>more-o</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-info-o" style="color:undefined;">
+        <!---->
+      </i> <span>info-o</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-share" style="color:undefined;">
+        <!---->
+      </i> <span>share</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-like-o" style="color:undefined;">
+        <!---->
+      </i> <span>like-o</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-logistics" style="color:undefined;">
+        <!---->
+      </i> <span>logistics</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-edit" style="color:undefined;">
+        <!---->
+      </i> <span>edit</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-exchange" style="color:undefined;">
+        <!---->
+      </i> <span>exchange</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-location" style="color:undefined;">
+        <!---->
+      </i> <span>location</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-cart" style="color:undefined;">
+        <!---->
+      </i> <span>cart</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-shop" style="color:undefined;">
+        <!---->
+      </i> <span>shop</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-gift" style="color:undefined;">
+        <!---->
+      </i> <span>gift</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-contact" style="color:undefined;">
+        <!---->
+      </i> <span>contact</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-wap-home" style="color:undefined;">
+        <!---->
+      </i> <span>wap-home</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-points" style="color:undefined;">
+        <!---->
+      </i> <span>points</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-discount" style="color:undefined;">
+        <!---->
+      </i> <span>discount</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-point-gift" style="color:undefined;">
+        <!---->
+      </i> <span>point-gift</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-after-sale" style="color:undefined;">
+        <!---->
+      </i> <span>after-sale</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-edit-data" style="color:undefined;">
+        <!---->
+      </i> <span>edit-data</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-delete" style="color:undefined;">
+        <!---->
+      </i> <span>delete</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-records" style="color:undefined;">
+        <!---->
+      </i> <span>records</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-completed" style="color:undefined;">
+        <!---->
+      </i> <span>completed</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-certificate" style="color:undefined;">
+        <!---->
+      </i> <span>certificate</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-tosend" style="color:undefined;">
+        <!---->
+      </i> <span>tosend</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-sign" style="color:undefined;">
+        <!---->
+      </i> <span>sign</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-home" style="color:undefined;">
+        <!---->
+      </i> <span>home</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-free-postage" style="color:undefined;">
+        <!---->
+      </i> <span>free-postage</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-birthday-privilege" style="color:undefined;">
+        <!---->
+      </i> <span>birthday-privilege</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-member-day-privilege" style="color:undefined;">
+        <!---->
+      </i> <span>member-day-privilege</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-balance-details" style="color:undefined;">
+        <!---->
+      </i> <span>balance-details</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-cash-back-record" style="color:undefined;">
+        <!---->
+      </i> <span>cash-back-record</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-points-mall" style="color:undefined;">
+        <!---->
+      </i> <span>points-mall</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-exchange-record" style="color:undefined;">
+        <!---->
+      </i> <span>exchange-record</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-pending-payment" style="color:undefined;">
+        <!---->
+      </i> <span>pending-payment</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-pending-orders" style="color:undefined;">
+        <!---->
+      </i> <span>pending-orders</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-pending-deliver" style="color:undefined;">
+        <!---->
+      </i> <span>pending-deliver</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-pending-evaluate" style="color:undefined;">
+        <!---->
+      </i> <span>pending-evaluate</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-password-view" style="color:undefined;">
+        <!---->
+      </i> <span>password-view</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-password-not-view" style="color:undefined;">
+        <!---->
+      </i> <span>password-not-view</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-check" style="color:undefined;">
+        <!---->
+      </i> <span>check</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-arrow" style="color:undefined;">
+        <!---->
+      </i> <span>arrow</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-arrow-left" style="color:undefined;">
+        <!---->
+      </i> <span>arrow-left</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-search" style="color:undefined;">
+        <!---->
+      </i> <span>search</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-success" style="color:undefined;">
+        <!---->
+      </i> <span>success</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-fail" style="color:undefined;">
+        <!---->
+      </i> <span>fail</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-add" style="color:undefined;">
+        <!---->
+      </i> <span>add</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-checked" style="color:undefined;">
+        <!---->
+      </i> <span>checked</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-warn" style="color:undefined;">
+        <!---->
+      </i> <span>warn</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-clear" style="color:undefined;">
+        <!---->
+      </i> <span>clear</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-underway" style="color:undefined;">
+        <!---->
+      </i> <span>underway</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-more" style="color:undefined;">
+        <!---->
+      </i> <span>more</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-like" style="color:undefined;">
+        <!---->
+      </i> <span>like</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-photograph" style="color:undefined;">
+        <!---->
+      </i> <span>photograph</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-qr-invalid" style="color:undefined;">
+        <!---->
+      </i> <span>qr-invalid</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-qr" style="color:undefined;">
+        <!---->
+      </i> <span>qr</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-add2" style="color:undefined;">
+        <!---->
+      </i> <span>add2</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-photo" style="color:undefined;">
+        <!---->
+      </i> <span>photo</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-wechat" style="color:undefined;">
+        <!---->
+      </i> <span>wechat</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-alipay" style="color:undefined;">
+        <!---->
+      </i> <span>alipay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-wap-nav" style="color:undefined;">
+        <!---->
+      </i> <span>wap-nav</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-ecard-pay" style="color:undefined;">
+        <!---->
+      </i> <span>ecard-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-balance-pay" style="color:undefined;">
+        <!---->
+      </i> <span>balance-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-peer-pay" style="color:undefined;">
+        <!---->
+      </i> <span>peer-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-credit-pay" style="color:undefined;">
+        <!---->
+      </i> <span>credit-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-debit-pay" style="color:undefined;">
+        <!---->
+      </i> <span>debit-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-other-pay" style="color:undefined;">
+        <!---->
+      </i> <span>other-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-shopping-cart" style="color:undefined;">
+        <!---->
+      </i> <span>shopping-cart</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-browsing-history" style="color:undefined;">
+        <!---->
+      </i> <span>browsing-history</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-goods-collect" style="color:undefined;">
+        <!---->
+      </i> <span>goods-collect</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-shop-collect" style="color:undefined;">
+        <!---->
+      </i> <span>shop-collect</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-receive-gift" style="color:undefined;">
+        <!---->
+      </i> <span>receive-gift</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-send-gift" style="color:undefined;">
+        <!---->
+      </i> <span>send-gift</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-setting" style="color:undefined;">
+        <!---->
+      </i> <span>setting</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-coupon" style="color:undefined;">
+        <!---->
+      </i> <span>coupon</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-gift-card-pay" style="color:undefined;">
+        <!---->
+      </i> <span>gift-card-pay</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-cash-on-deliver" style="color:undefined;">
+        <!---->
+      </i> <span>cash-on-deliver</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-phone" style="color:undefined;">
+        <!---->
+      </i> <span>phone</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-description" style="color:undefined;">
+        <!---->
+      </i> <span>description</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-card" style="color:undefined;">
+        <!---->
+      </i> <span>card</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-value-card" style="color:undefined;">
+        <!---->
+      </i> <span>value-card</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-gift-card" style="color:undefined;">
+        <!---->
+      </i> <span>gift-card</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-hot" style="color:undefined;">
+        <!---->
+      </i> <span>hot</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-new" style="color:undefined;">
+        <!---->
+      </i> <span>new</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-new-arrival" style="color:undefined;">
+        <!---->
+      </i> <span>new-arrival</span></div>
+    <div class="van-col van-col-8">
+      <i class="van-icon van-icon-hot-sale" style="color:undefined;">
+        <!---->
+      </i> <span>hot-sale</span></div>
+  </div>
+</div>
+`;
