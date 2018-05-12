@@ -3,7 +3,7 @@ import CouponList from '../../coupon-list';
 import CouponCell from '../../coupon-cell';
 import { mount } from '@vue/test-utils';
 
-demoTest('coupon');
+demoTest(CouponList);
 
 test('exchange coupon', () => {
   const wrapper = mount(CouponList);

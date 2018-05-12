@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders contact correctly 1`] = `
+exports[`renders contact-card correctly 1`] = `
 <div>
   <div>
     <div class="van-contact-card van-contact-card--add">

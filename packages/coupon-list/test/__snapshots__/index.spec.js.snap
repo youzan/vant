@@ -30,7 +30,7 @@ exports[`coupon cell 2`] = `
 </div>
 `;
 
-exports[`renders coupon correctly 1`] = `
+exports[`renders coupon-list correctly 1`] = `
 <div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom van-coupon-cell">

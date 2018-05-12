@@ -15,7 +15,7 @@ export default function(component) {
   const name = typeof component === 'string' ? component : component.name.replace('van-', '');
 
   test(`renders ${name} correctly`, () => {
-    const demo = require(`../docs/demos/views/${name}.vue`).default;
+    const demo = require(`../packages/${name}/demo`).default;
     const { i18n } = demo;
     demo.name = 'demo-' + name;
 
