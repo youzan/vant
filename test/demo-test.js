@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import '../docs/src/demo-common';
-import { Locale } from '../packages/locale';
+import Locale from '../packages/locale';
 import { renderToString } from '@vue/server-test-utils';
 
 const empty = {
