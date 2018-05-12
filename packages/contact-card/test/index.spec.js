@@ -1,3 +1,4 @@
+import ContactCard from '../';
 import demoTest from '../../../test/demo-test';
 
-demoTest('contact');
+demoTest(ContactCard);

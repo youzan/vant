@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders layout correctly 1`] = `
+exports[`renders col correctly 1`] = `
 <div>
   <div>
     <div class="van-row">

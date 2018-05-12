@@ -1,5 +1,5 @@
 const Components = require('./get-components')();
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const uppercamelize = require('uppercamelcase');
 const version = process.env.VERSION || require('../../package.json').version;
@@ -49,20 +49,19 @@ export default {
 }
 
 function buildDemoEntry() {
-  const dir = path.join(__dirname, '../../docs/demos/views');
+  const dir = path.join(__dirname, '../../packages');
   const demos = fs.readdirSync(dir)
-    .filter(name => ~name.indexOf('.vue'))
-    .map(name => name.replace('.vue', ''))
-    .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('./views/${name}'), '${name}')), '${name}'))`);
+    .filter(name => fs.existsSync(path.join(dir, `${name}/demo/index.vue`)))
+    .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/${name}/demo'), '${name}')), '${name}'))`);
 
   const content = `${tips}
-import { asyncWrapper, componentWrapper } from './common';
+import { asyncWrapper, componentWrapper } from './demo-common';
 
 export default {
   ${demos.join(',\n  ')}
 };
 `;
-  fs.writeFileSync(path.join(dir, '../index.js'), content);
+  fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
 }
 
 function buildDocsEntry() {
