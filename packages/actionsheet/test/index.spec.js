@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import Actionsheet from '../';
 
 test('callback events', () => {
   const callback = jest.fn();
-  const wrapper = shallow(Actionsheet, {
+  const wrapper = shallowMount(Actionsheet, {
     propsData: {
       actions: [
         { name: 'Option', callback },

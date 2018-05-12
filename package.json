@@ -57,8 +57,8 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "@vue/server-test-utils": "^1.0.0-beta.15",
-    "@vue/test-utils": "^1.0.0-beta.15",
+    "@vue/server-test-utils": "^1.0.0-beta.16",
+    "@vue/test-utils": "^1.0.0-beta.16",
     "autoprefixer": "^8.3.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -66,7 +66,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "codecov": "^3.0.0",
     "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
@@ -79,7 +79,6 @@
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
-    "karma-spec-reporter": "^0.0.32",
     "lint-staged": "^7.0.4",
     "postcss": "^6.0.22",
     "postcss-calc": "^6.0.0",
@@ -95,17 +94,15 @@
     "vant-doc": "1.0.4",
     "vue": "2.5.16",
     "vue-jest": "^2.5.0",
-    "vue-loader": "^15.0.0",
+    "vue-loader": "^15.0.10",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-sfc-compiler": "^0.0.8",
-    "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "2.5.16",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^4.6.0",
+    "webpack": "^4.8.2",
     "webpack-cli": "^2.0.15",
-    "webpack-dev-server": "3.1.4",
-    "webpack-merge": "^4.1.2"
+    "webpack-dev-server": "3.1.4"
   },
   "jest": {
     "moduleFileExtensions": [
