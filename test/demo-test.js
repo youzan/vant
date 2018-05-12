@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import { renderToString } from '@vue/server-test-utils';
 import '../docs/src/demo-common';
-import { Locale } from '../packages';
+import { Locale } from '../packages/locale';
+import { renderToString } from '@vue/server-test-utils';
 
 const empty = {
   template: '<div><slot></slot></div>',
