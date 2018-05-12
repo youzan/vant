@@ -7,7 +7,7 @@
 
       <!-- with icon -->
       <template v-if="displayStyle === 'default'">
-        <loading v-if="type === 'loading'" color="white" />
+        <loading v-if="type === 'loading'" color="white" :type="loadingType" />
         <icon v-else :class="b('icon')" :name="type" />
         <div v-if="hasMessage" :class="b('text')">{{ message }}</div>
       </template>
@@ -31,6 +31,10 @@ export default create({
     type: {
       type: String,
       default: 'text'
+    },
+    loadingType: {
+      type: String,
+      default: 'circular'
     },
     position: {
       type: String,

@@ -39,6 +39,7 @@ Toast.fail('失败文案');
 const toast = Toast.loading({
   duration: 0,       // 持续展示 toast
   forbidClick: true, // 禁用背景点击
+  loadingType: 'spinner',
   message: '倒计时 3 秒'
 });
 
@@ -101,4 +102,5 @@ toast2.clear();
 | message | 内容 | `String` | `''` | - |
 | mask | 是否显示背景蒙层 | `Boolean` | `false` |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` |
+| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
