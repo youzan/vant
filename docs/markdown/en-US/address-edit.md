@@ -76,8 +76,12 @@ export default {
 
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
-| save | Triggered when click save button | content：Form content |
-| delete | Triggered when click delete | content：Form content |
+| save | Triggered when click save button | content：form content |
+| focus | Triggered when focus field | key: filed name |
+| delete | Triggered when confirm delete | content：form content |
+| cancel-delete | Triggered when cancel delete | content：form content |
+| select-search | Triggered when select search result | value: search content |
+| change-area | Triggered when change area | values: area values |
 | change-detail | Triggered when address detail changed | value: address detail |
 
 ### Slot

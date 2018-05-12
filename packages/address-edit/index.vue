@@ -277,6 +277,8 @@ export default create({
         message: this.$t('confirmDelete')
       }).then(() => {
         this.$emit('delete', this.data);
+      }).catch(() => {
+        this.$emit('cancel-delete', this.data);
       });
     },
 

@@ -75,8 +75,9 @@ export default {
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | save | 点击保存按钮时触发 | content：表单内容 |
-| delete | 点击删除按钮时触发 | content：表单内容 |
 | focus | 输入框聚焦时触发 | key: 聚焦的输入框对应的 key |
+| delete | 确认删除地址时触发 | content：表单内容 |
+| cancel-delete | 取消删除地址时触发 | content：表单内容 |
 | select-search | 选中搜索结果时触发 | value: 搜索结果 |
 | change-area | 修改收件地区时触发 | values: 地区信息 |
 | change-detail | 修改详细地址时触发 | value: 详细地址内容 |
