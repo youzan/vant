@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ImagePreview } from 'packages';
+import { ImagePreview } from '../../../packages';
 
 export default {
   i18n: {

@@ -13,6 +13,7 @@ const compilerOption = {
     extends: path.join(__dirname, '../../.babelrc')
   }
 };
+const whiteList = ['vant-css', 'test'];
 
 // clear dir
 fs.emptyDirSync(esDir);
@@ -29,8 +30,8 @@ function compile(dir, jsOnly = false) {
   files.forEach(file => {
     const absolutePath = path.join(dir, file);
 
-    // 移除 vant-css
-    if (file.indexOf('vant-css') !== -1) {
+    // 移除不需要的文件
+    if (whiteList.indexOf(file) !== -1) {
       fs.removeSync(absolutePath);
       // 遍历文件夹
     } else if (isDir(absolutePath)) {

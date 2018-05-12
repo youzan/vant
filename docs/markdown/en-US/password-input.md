@@ -33,7 +33,7 @@ Vue.use(PasswordInput).use(NumberKeyboard);
 export default {
   data() {
     return {
-      value: '',
+      value: '123',
       showKeyboard: true
     };
   },
