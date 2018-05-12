@@ -11,6 +11,7 @@
       'min-height': type === 'textarea' && !autosize
     })"
   >
+    <slot name="label" slot="title" />
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
