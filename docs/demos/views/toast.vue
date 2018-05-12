@@ -68,6 +68,7 @@ export default {
       const toast = Toast.loading({
         duration: 0,
         forbidClick: true,
+        loadingType: 'spinner',
         message: this.$t('text4', 3)
       });
 

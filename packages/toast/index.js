@@ -9,6 +9,7 @@ const defaultOptions = {
   value: true,
   duration: 3000,
   position: 'middle',
+  loadingType: 'circular',
   forbidClick: false,
   overlayStyle: {}
 };

@@ -39,6 +39,7 @@ Toast.fail('Fail');
 const toast = Toast.loading({
   duration: 0,       // continuous display toast
   forbidClick: true, // forbid click background
+  loadingType: 'spinner',
   message: '3 seconds'
 });
 
@@ -100,4 +101,5 @@ toast2.clear();
 | message | Message | `String` | `''` |
 | mask | Whether to show mask | `Boolean` | `false` |
 | forbidClick | Whether to forbid click background | `Boolean` | `false` |
+| loadingType | Loading icon type, can be set to `spinner` | `String` | `circular` |
 | duration | Toast duration(ms), won't disappear if value is 0 | `Number` | `3000` |
