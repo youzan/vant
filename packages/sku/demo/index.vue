@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import data from '../mock/sku';
+import data from './data';
 import { LIMIT_TYPE } from '../../../packages/sku/constants';
 
 export default {

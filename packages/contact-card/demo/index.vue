@@ -125,7 +125,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.demo-contact {
+.demo-contact-card {
   .van-popup {
     height: 100%;
   }

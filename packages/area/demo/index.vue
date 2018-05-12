@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import AreaList from '../mock/area';
-import AreaListEn from '../mock/areaEn';
+import AreaList from './area';
+import AreaListEn from './area-en';
 
 export default {
   i18n: {

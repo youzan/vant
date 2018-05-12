@@ -62,7 +62,7 @@ export default {
     onClick(item) {
       Toast(item.name);
     },
-    
+
     handleCancel() {
       Toast('cancel');
     }

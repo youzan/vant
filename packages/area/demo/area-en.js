@@ -68,4 +68,4 @@ export default {
     '810307': 'Tsuen Wan',
     '810309': 'Lantau Island'
   }
-}
+};

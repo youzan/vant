@@ -123,7 +123,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.demo-coupon {
+.demo-coupon-list {
   .van-popup {
     height: 100%;
   }

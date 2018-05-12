@@ -69,7 +69,7 @@ module.exports = {
             groupName: '基础组件',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout - 布局'
               },
               {
@@ -277,12 +277,12 @@ module.exports = {
                 title: 'Card - 卡片'
               },
               {
-                path: '/contact',
+                path: '/contact-card',
                 title: 'Contact - 联系人'
               },
               {
-                path: '/coupon',
-                title: 'Coupon - 优惠券选择器'
+                path: '/coupon-list',
+                title: 'Coupon - 优惠券'
               },
               {
                 path: '/goods-action',
@@ -371,7 +371,7 @@ module.exports = {
             groupName: 'Basic Components',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout'
               },
               {
@@ -579,11 +579,11 @@ module.exports = {
                 title: 'Card'
               },
               {
-                path: '/contact',
+                path: '/contact-card',
                 title: 'Contact'
               },
               {
-                path: '/coupon',
+                path: '/coupon-list',
                 title: 'Coupon'
               },
               {
