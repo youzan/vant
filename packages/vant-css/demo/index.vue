@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="postcss">
-.demo-built-in-style {
+.demo-vant-css {
   .van-ellipsis {
     font-size: 13px;
     margin-left: 15px;

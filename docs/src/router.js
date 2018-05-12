@@ -1,7 +1,7 @@
 import docConfig from './doc.config';
 import DemoList from './components/DemoList';
 import componentDocs from '../markdown';
-import componentDemos from '../demos';
+import componentDemos from './demo-entry';
 import DemoPages from './components/DemoPages';
 import Vue from 'vue';
 import './utils/iframe-router';

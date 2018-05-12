@@ -19,12 +19,12 @@ Vue
     lazyComponent: true
   });
 
+Vue.mixin(i18n);
 Vue.component('demo-block', DemoBlock);
 Vue.component('demo-section', DemoSection);
 
 window.Toast = Toast;
 window.Dialog = Dialog;
-Vue.mixin(i18n);
 
 Locale.add({
   'zh-CN': {

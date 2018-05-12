@@ -1,5 +1,5 @@
 import { renderToString } from '@vue/server-test-utils';
-import '../docs/demos/common';
+import '../docs/src/demo-common';
 import { Locale } from '../packages';
 import { camelize } from '../packages/utils';
 import Vue from 'vue';

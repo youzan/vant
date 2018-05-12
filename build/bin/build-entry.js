@@ -55,13 +55,13 @@ function buildDemoEntry() {
     .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/${name}/demo'), '${name}')), '${name}'))`);
 
   const content = `${tips}
-import { asyncWrapper, componentWrapper } from './common';
+import { asyncWrapper, componentWrapper } from './demo-common';
 
 export default {
   ${demos.join(',\n  ')}
 };
 `;
-  fs.writeFileSync(path.join(dir, '../docs/demos/index.js'), content);
+  fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
 }
 
 function buildDocsEntry() {

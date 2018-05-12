@@ -1,5 +1,5 @@
 // This file is auto gererated by build/bin/build-entry.js
-import { asyncWrapper, componentWrapper } from './common';
+import { asyncWrapper, componentWrapper } from './demo-common';
 
 export default {
   'actionsheet': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/actionsheet/demo'), 'actionsheet')), 'actionsheet')),
@@ -53,5 +53,6 @@ export default {
   'toast': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/toast/demo'), 'toast')), 'toast')),
   'tree-select': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/tree-select/demo'), 'tree-select')), 'tree-select')),
   'uploader': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/uploader/demo'), 'uploader')), 'uploader')),
+  'vant-css': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/vant-css/demo'), 'vant-css')), 'vant-css')),
   'waterfall': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/waterfall/demo'), 'waterfall')), 'waterfall'))
 };

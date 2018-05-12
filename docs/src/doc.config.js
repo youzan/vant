@@ -38,7 +38,7 @@ module.exports = {
                 noExample: true
               },
               {
-                path: '/built-in-style',
+                path: '/vant-css',
                 title: '内置样式'
               },
               {
@@ -340,7 +340,7 @@ module.exports = {
                 noExample: true
               },
               {
-                path: '/built-in-style',
+                path: '/vant-css',
                 title: 'Built-in style'
               },
               {
