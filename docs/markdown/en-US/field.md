@@ -113,9 +113,9 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| type | Input type | `String` | `text` |
 | value | Filed value | `String` | - |
 | label | Filed label | `String` | - |
+| type | Input type | `String` | `text` |
 | disabled | Disable field | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
@@ -133,5 +133,6 @@ Filed support all native events of input tag，such as `focus`、`blur`、`keypr
 
 | name | Description |
 |-----------|-----------|
+| label | Custom label |
 | icon | Custom icon |
 | button | Insert button |
