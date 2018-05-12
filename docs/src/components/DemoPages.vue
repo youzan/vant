@@ -16,19 +16,21 @@
 </template>
 
 <script>
-export default {
-  name: 'van-doc-demo-pages',
+import { Locale } from '../../../packages';
 
-  i18n: {
-    'zh-CN': {
+Locale.add({
+  'zh-CN': {
+    vanDocDemoPages: {
       title: '示例',
       source: '源代码',
       description: '下面是一些使用 Vant 搭建的示例页面，点击图片切换至对应示例。',
       goodsDetail: '商品详情',
       userCenter: '会员中心',
       shoppingCart: '购物车'
-    },
-    'en-US': {
+    }
+  },
+  'en-US': {
+    vanDocDemoPages: {
       title: 'Demo Pages',
       source: 'Source code',
       description: 'Here are some of the demo pages built using Vant, click on the picture to switch to the corresponding demo.',
@@ -36,7 +38,11 @@ export default {
       userCenter: 'User Center',
       shoppingCart: 'Shopping Cart'
     }
-  },
+  }
+});
+
+export default {
+  name: 'van-doc-demo-pages',
 
   data() {
     return {
