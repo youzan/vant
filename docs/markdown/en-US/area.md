@@ -88,7 +88,7 @@ Example of `AreaList`
 }
 ```
 
-All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/docs/demos/mock/area.js)
+All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/packages/area/demo/area-en.js)
 
 #### argument of callback function confirm
 An array contains selected area objects.

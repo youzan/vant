@@ -13,7 +13,7 @@ const compilerOption = {
     extends: path.join(__dirname, '../../.babelrc')
   }
 };
-const whiteList = ['vant-css', 'test'];
+const whiteList = ['vant-css', 'test', 'demo'];
 
 // clear dir
 fs.emptyDirSync(esDir);
