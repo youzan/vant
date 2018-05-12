@@ -18,6 +18,10 @@
   </demo-section>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style lang="postcss">
 .demo-panel {
   .van-panel__footer {

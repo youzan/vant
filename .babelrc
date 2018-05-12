@@ -4,6 +4,11 @@
   "env": {
     "commonjs": {
       "presets": [["env", { "modules": "commonjs", "loose": true }]]
+    },
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": 8 }}]
+      ]
     }
   }
 }

@@ -159,6 +159,7 @@ export default create({
       this.$nextTick(() => {
         const { card, list } = this.$refs;
 
+        /* istanbul ignore next */
         if (list && card && card[index]) {
           list.scrollTop = card[index].$el.offsetTop - 100;
         }

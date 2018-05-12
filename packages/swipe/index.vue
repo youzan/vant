@@ -128,10 +128,12 @@ export default create({
     // initialize swipe position
     initialize() {
       clearTimeout(this.timer);
-      const rect = this.$el.getBoundingClientRect();
+      if (this.$el) {
+        const rect = this.$el.getBoundingClientRect();
+        this.width = rect.width;
+        this.height = rect.height;
+      }
       this.swiping = true;
-      this.width = rect.width;
-      this.height = rect.height;
       this.active = this.initialSwipe;
       this.offset = this.count > 1 ? -this.size * this.active : 0;
       this.swipes.forEach(swipe => {

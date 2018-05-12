@@ -26,10 +26,9 @@
     "deploy:docs": "rimraf docs/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.doc.js",
     "dist": "npm run bootstrap && node build/bin/build-lib.js",
     "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
-    "test": "karma start test/karma.conf.js --single-run",
-    "test:coverage": "open test/coverage/lcov-report/index.html",
-    "test:watch": "karma start test/karma.conf.js",
-    "test:single": "node ./test/selector.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh",
     "precommit": "lint-staged"
   },
@@ -58,17 +57,18 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^8.4.1",
-    "avoriaz": "2.0.0",
+    "@vue/server-test-utils": "^1.0.0-beta.15",
+    "@vue/test-utils": "^1.0.0-beta.15",
+    "autoprefixer": "^8.3.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-preset-env": "^1.6.1",
-    "chai": "^4.1.2",
-    "codecov": "^3.0.1",
-    "cross-env": "^5.1.4",
+    "codecov": "^3.0.0",
+    "cross-env": "^5.1.5",
     "css-loader": "^0.28.11",
     "dependency-tree": "^6.1.0",
     "eslint": "^4.19.1",
@@ -77,16 +77,10 @@
     "gh-pages": "^1.0.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "^0.14.3",
-    "istanbul-instrumenter-loader": "^3.0.1",
-    "karma": "^2.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-coverage": "^1.1.2",
-    "karma-mocha": "^1.3.0",
-    "karma-sinon-chai": "^1.3.4",
+    "jest": "^22.4.3",
+    "jest-serializer-vue": "^1.0.0",
     "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "3.0.0",
-    "lint-staged": "^7.1.0",
-    "mocha": "^5.1.1",
+    "lint-staged": "^7.0.4",
     "postcss": "^6.0.22",
     "postcss-calc": "^6.0.0",
     "postcss-easy-import": "^3.0.0",
@@ -94,22 +88,53 @@
     "precss": "2.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^2.5.4",
-    "shelljs": "^0.8.2",
-    "sinon": "^2.4.1",
-    "sinon-chai": "^2.12.0",
+    "shelljs": "^0.8.1",
     "style-loader": "^0.21.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.0.1",
     "vant-doc": "1.0.4",
     "vue": "2.5.16",
-    "vue-loader": "^15.0.9",
+    "vue-jest": "^2.5.0",
+    "vue-loader": "^15.0.0",
     "vue-router": "^3.0.1",
+    "vue-server-renderer": "^2.5.16",
     "vue-sfc-compiler": "^0.0.8",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "2.5.16",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "3.1.4"
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "^4.1.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "^packages/(.*)$": "<rootDir>/packages/$1"
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "collectCoverageFrom": [
+      "packages/**/*.{js,vue}",
+      "!**/vant-css/**",
+      "!**/locale/lang/**",
+      "!**/waterfall/**",
+      "!**/lazyload/**"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html",
+      "lcov",
+      "text-summary"
+    ],
+    "coverageDirectory": "./test/coverage"
   }
 }
