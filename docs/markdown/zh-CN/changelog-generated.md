@@ -1,5 +1,54 @@
 ## 更新日志
 
+## [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3) (2018-05-12)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.2...v1.1.3)
+
+**Breaking changes**
+
+- Area  [\#1017](https://github.com/youzan/vant/issues/1017)
+- Stepper 步进器可以输入小数 [\#944](https://github.com/youzan/vant/issues/944)
+
+**Bug Fixes**
+
+- 在 tab组件中 不同tab下面的内容盒子里面加入轮播组件  第二个轮播脚本出现bug [\#930](https://github.com/youzan/vant/issues/930)
+- ImagePreview 组件的问题 [\#853](https://github.com/youzan/vant/issues/853)
+
+**Issue**
+
+- 优惠券插件 引用后报警告 [\#1044](https://github.com/youzan/vant/issues/1044)
+- field 的自定义按钮不能显示 [\#1039](https://github.com/youzan/vant/issues/1039)
+- 新人 学习一波 [\#1038](https://github.com/youzan/vant/issues/1038)
+- swipe没有点击事件啊 [\#1036](https://github.com/youzan/vant/issues/1036)
+- 使用日期组件，type=year-month时，出现异常 [\#1034](https://github.com/youzan/vant/issues/1034)
+- 使用日期组件 type=year-month时报错误 Error in mounted hook: "TypeError: Cannot read property 'getFullYear' of undefined" [\#1033](https://github.com/youzan/vant/issues/1033)
+-  请问\<icon v-if="icon" :class="b\('left-icon'\)" :name="icon" /\> 这里面的:class="b\('left-icon'\)"是什么用法？哪里有资料可以看 [\#1030](https://github.com/youzan/vant/issues/1030)
+- area  [\#1028](https://github.com/youzan/vant/issues/1028)
+- \<van-nav-bar title="'标题'"\> [\#1026](https://github.com/youzan/vant/issues/1026)
+- 官网文档中关于 “List 列表“ 例子引用缺失。 [\#1024](https://github.com/youzan/vant/issues/1024)
+- cell-swipe样式问题 [\#1023](https://github.com/youzan/vant/issues/1023)
+- 没有生效 fix Tab should lazy render tab-pane \#978 \(jerryni\) [\#1021](https://github.com/youzan/vant/issues/1021)
+- 遍历checkbox之后，点击一个checkbox操作其他的checkbox的true或false 均触发change事件，然后其他checkbox点击没反应 [\#1020](https://github.com/youzan/vant/issues/1020)
+- Swipe 轮播 怎么实现点击跳转? [\#1016](https://github.com/youzan/vant/issues/1016)
+- slider组件拖拽的时候需要实时获取value的值 [\#1014](https://github.com/youzan/vant/issues/1014)
+- Stepper 步进器出现错位 [\#979](https://github.com/youzan/vant/issues/979)
+- Sku 商品购买组件中如何添加spu属性\(不会影响到库存和价格的属性\)？ [\#966](https://github.com/youzan/vant/issues/966)
+
+**Improvements**
+
+- \[Doc\] fix demo page [\#1050](https://github.com/youzan/vant/pull/1050) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: add loadingType option [\#1049](https://github.com/youzan/vant/pull/1049) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: add label slot [\#1048](https://github.com/youzan/vant/pull/1048) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] AddressEdit: add cancel-delete event [\#1047](https://github.com/youzan/vant/pull/1047) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] ImagePreview: can't be closed when contain single image [\#1046](https://github.com/youzan/vant/pull/1046) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix dialog document [\#1045](https://github.com/youzan/vant/pull/1045) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] ImagePreview: optimize click detect [\#1042](https://github.com/youzan/vant/pull/1042) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] NoticeBar: add ref check [\#1037](https://github.com/youzan/vant/pull/1037) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Icon: support color property [\#1031](https://github.com/youzan/vant/pull/1031) ([realywithoutname](https://github.com/realywithoutname))
+- \[bugfix\] Cell: default width [\#1029](https://github.com/youzan/vant/pull/1029) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Search: update style [\#1027](https://github.com/youzan/vant/pull/1027) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: update search icon [\#1025](https://github.com/youzan/vant/pull/1025) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Changelog: fix changelog error [\#1022](https://github.com/youzan/vant/pull/1022) ([cookfront](https://github.com/cookfront))
+
 ## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2) (2018-05-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.1...v1.1.2)
 
@@ -158,10 +207,6 @@
 - SubmitBar 组件的人民币符号建议可配置  [\#871](https://github.com/youzan/vant/issues/871)
 - Tabs active 希望标签页改变也跟随改变 [\#849](https://github.com/youzan/vant/issues/849)
 
-**Bug Fixes**
-
-- Bug：Popup弹出层 滚动穿透至父层 [\#833](https://github.com/youzan/vant/issues/833)
-
 **Issue**
 
 - Uploader 图片上传组件存在BUG，同时使用:before-read，:after-read参数，后者不触发 [\#898](https://github.com/youzan/vant/issues/898)
@@ -199,14 +244,12 @@
 - CellSwipe  和 list 在一起使用，往下滑动的时候，很容易就触发了CellSwipe 的左滑或者右滑事件， [\#856](https://github.com/youzan/vant/issues/856)
 - Collapse 的 title 以 slot 方式包含按钮，按钮在loading状态下不对齐 [\#850](https://github.com/youzan/vant/issues/850)
 - 实例页面购物车 van-submit-bar\_\_bar里的van-submit-bar\_\_price文字会被设置的rem影响不能居中 [\#848](https://github.com/youzan/vant/issues/848)
-- 滑动tabs 和Swipe同时使用滑动优先级问题怎么处理 [\#817](https://github.com/youzan/vant/issues/817)
 
 **Issue**
 
 - Uploader 小米5S的微信浏览器上传回调不成功 [\#872](https://github.com/youzan/vant/issues/872)
 - 请问NoticeBar支持多条text内容滚动么？ [\#868](https://github.com/youzan/vant/issues/868)
 - 引用toast组件会出现警告信息 [\#861](https://github.com/youzan/vant/issues/861)
-- van-field的 type为 textarea 设置 高度自适应，高度被设置为0 [\#818](https://github.com/youzan/vant/issues/818)
 
 **Improvements**
 
@@ -227,7 +270,6 @@
 - 部分样式无法覆盖 ，现项目中有些细节需要修改样式表 我是在vue文件里覆盖修改的 但是有些可以覆盖有效 有些覆盖无效 [\#847](https://github.com/youzan/vant/issues/847)
 - 标签页切换后导致左边tab标签页的分页方法失效，求大神解答。 [\#843](https://github.com/youzan/vant/issues/843)
 - 在使用sku弹层的时候  van-sku-row的高度会被设置的rem影响 [\#839](https://github.com/youzan/vant/issues/839)
-- List 列表 瀑布流滚动加载 [\#834](https://github.com/youzan/vant/issues/834)
 
 **Improvements**
 
@@ -248,42 +290,12 @@
 **Issue**
 
 - 单独调用Dialog.close\(\)或者在vue里调用this.$dialog.close\(\)方法会报错 [\#837](https://github.com/youzan/vant/issues/837)
-- waterfall异步加载问题 [\#835](https://github.com/youzan/vant/issues/835)
-- picker组件 在单列情况下 如何设置默认值？ [\#832](https://github.com/youzan/vant/issues/832)
-- AddressEdit 地址编辑 cdn引用方式使用有问题 [\#831](https://github.com/youzan/vant/issues/831)
-- 通过cdn形式使用时，bug太多 [\#830](https://github.com/youzan/vant/issues/830)
-- Stepper 按钮怎么阻止冒泡 [\#829](https://github.com/youzan/vant/issues/829)
-- area.json 数据  215090 没有父节点 [\#827](https://github.com/youzan/vant/issues/827)
-- van-filed 组件的 button slot 无效。 [\#826](https://github.com/youzan/vant/issues/826)
-- picker 组件 单列情况下 defaultIndex 参数不生效 [\#825](https://github.com/youzan/vant/issues/825)
-- 希望DatetimePicker的type能够更灵活一点 [\#824](https://github.com/youzan/vant/issues/824)
-- van-field中使用type="date"无效 [\#823](https://github.com/youzan/vant/issues/823)
-- Uploader 图片上传  的属性disable  资料有误！ [\#822](https://github.com/youzan/vant/issues/822)
-- used vue-lazyload? [\#821](https://github.com/youzan/vant/issues/821)
-- Dialog使用中产生的问题 [\#819](https://github.com/youzan/vant/issues/819)
-- 关于修改控件默认样式及尺寸的问题 [\#816](https://github.com/youzan/vant/issues/816)
-- 急急急！！Popup在安卓手机上出现严重问题 [\#815](https://github.com/youzan/vant/issues/815)
-- 当有一个van-popup组件弹出时，如果再触发toast组件 弹出提示 [\#814](https://github.com/youzan/vant/issues/814)
-- van-tabs 组件点击事件第二个title参数显示undefined [\#813](https://github.com/youzan/vant/issues/813)
-- Radio与Cell组件一起使用时和示例的样式不一样，不知道时候需要手动重新设置样式？ [\#811](https://github.com/youzan/vant/issues/811)
-- 使用CDN时cell组件的bug [\#810](https://github.com/youzan/vant/issues/810)
-- 希望能出一个视频播放组件 [\#809](https://github.com/youzan/vant/issues/809)
-- 地址编辑 收取不到地区数据 [\#808](https://github.com/youzan/vant/issues/808)
-- 关于checkbox [\#807](https://github.com/youzan/vant/issues/807)
-- 如何点击tab时如何更换title旁的小图标 使当前点击状态的小图标与非点击时小图标不一样   [\#806](https://github.com/youzan/vant/issues/806)
-- Cell组件为什么不开放value的slot？ [\#805](https://github.com/youzan/vant/issues/805)
-- Tab 标签页  里面添加sticky属性页面滑到一半切换不见了 [\#804](https://github.com/youzan/vant/issues/804)
-- 布局都是PX，没有用rem。 [\#803](https://github.com/youzan/vant/issues/803)
-- NumberKeyboard组件能给一个配合输入框使用的demo吗？考虑到阻止虚拟键盘之类的 [\#802](https://github.com/youzan/vant/issues/802)
 
 **Improvements**
 
 - \[bugfix\] Popup: lock-scroll not work when open multi popup [\#842](https://github.com/youzan/vant/pull/842) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Dialog: close method may cause error [\#841](https://github.com/youzan/vant/pull/841) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Sku: van-sku-row font-size [\#840](https://github.com/youzan/vant/pull/840) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix documentation error [\#828](https://github.com/youzan/vant/pull/828) ([cookfront](https://github.com/cookfront))
--  \[bug fix\]submit-bar: Decimal rounding [\#820](https://github.com/youzan/vant/pull/820) ([ddchef](https://github.com/ddchef))
-- \[locate\] add zh-HK [\#812](https://github.com/youzan/vant/pull/812) ([jasonc08](https://github.com/jasonc08))
 
 ## [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3) (2018-03-26)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.0.2...v1.0.3)

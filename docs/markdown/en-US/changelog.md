@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
+`2018-05-12`
+
+**Improvements**
+
+- AddressEdit: add cancel-delete event [\#1047](https://github.com/youzan/vant/pull/1047) [@chenjiahan](https://github.com/chenjiahan)
+- Field: add label slot [\#1048](https://github.com/youzan/vant/pull/1048) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: update search icon [\#1025](https://github.com/youzan/vant/pull/1025) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: support color property [\#1031](https://github.com/youzan/vant/pull/1031) [@realywithoutname](https://github.com/realywithoutname)
+- ImagePreview: optimize click detect [\#1042](https://github.com/youzan/vant/pull/1042) [@chenjiahan](https://github.com/chenjiahan)
+- NoticeBar: add ref check [\#1037](https://github.com/youzan/vant/pull/1037) [@chenjiahan](https://github.com/chenjiahan)
+- Search: update style [\#1027](https://github.com/youzan/vant/pull/1027) [@chenjiahan](https://github.com/chenjiahan)
+- Toast: add loadingType option [\#1049](https://github.com/youzan/vant/pull/1049) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- fix Cell default width [\#1029](https://github.com/youzan/vant/pull/1029) [@chenjiahan](https://github.com/chenjiahan)
+- fix ImagePreview can't be closed when contain single image [\#1046](https://github.com/youzan/vant/pull/1046) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
 `2018-05-08`
 

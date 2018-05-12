@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
+`2018-05-12`
+
+**Improvements**
+
+- AddressEdit: 新增 cancel-delete 事件 [\#1047](https://github.com/youzan/vant/pull/1047) [@chenjiahan](https://github.com/chenjiahan)
+- Field: 新增 label slot [\#1048](https://github.com/youzan/vant/pull/1048) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 更新 search 图标 [\#1025](https://github.com/youzan/vant/pull/1025) [@chenjiahan](https://github.com/chenjiahan)
+- Icon: 新增 color 属性 [\#1031](https://github.com/youzan/vant/pull/1031) [@realywithoutname](https://github.com/realywithoutname)
+- ImagePreview: 优化点击检测 [\#1042](https://github.com/youzan/vant/pull/1042) [@chenjiahan](https://github.com/chenjiahan)
+- NoticeBar: 优化 ref 检测 [\#1037](https://github.com/youzan/vant/pull/1037) [@chenjiahan](https://github.com/chenjiahan)
+- Search: 样式更新 [\#1027](https://github.com/youzan/vant/pull/1027) [@chenjiahan](https://github.com/chenjiahan)
+- Toast: 新增 loadingType 选项 [\#1049](https://github.com/youzan/vant/pull/1049) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复 Cell 默认宽度 [\#1029](https://github.com/youzan/vant/pull/1029) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 ImagePreview 只有一张图片时无法关闭的问题 [\#1046](https://github.com/youzan/vant/pull/1046) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
 `2018-05-08`
 
