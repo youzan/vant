@@ -1,7 +1,6 @@
 <template>
   <div :class="b()">
     <div
-      v-if="count > 1"
       :style="trackStyle"
       :class="b('track')"
       @touchstart="onTouchStart"
@@ -10,9 +9,6 @@
       @touchcancel="onTouchEnd"
       @transitionend="$emit('change', activeIndicator)"
     >
-      <slot />
-    </div>
-    <div v-else :class="b('track')">
       <slot />
     </div>
     <div
@@ -185,12 +181,9 @@ export default create({
       const { delta, active, count, swipes, trackSize } = this;
       const atFirst = active === 0;
       const atLast = active === count - 1;
+      const outOfBounds = !this.loop && ((atFirst && (offset > 0 || move < 0)) || (atLast && (offset < 0 || move > 0)));
 
-      if (
-        !this.loop &&
-        ((atFirst && (offset > 0 || move < 0)) ||
-          (atLast && (offset < 0 || move > 0)))
-      ) {
+      if (outOfBounds || count <= 1) {
         return;
       }
 
