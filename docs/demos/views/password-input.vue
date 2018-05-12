@@ -30,7 +30,7 @@ export default {
 
   data() {
     return {
-      value: '',
+      value: '123',
       showKeyboard: true
     };
   },

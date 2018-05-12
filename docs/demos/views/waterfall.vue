@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { Waterfall } from 'packages';
+import { Waterfall } from '../../../packages';
 
 export default {
   i18n: {

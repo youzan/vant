@@ -95,6 +95,7 @@ export default {
     disabledDiscountCoupon() {
       return {
         ...this.discountCoupon,
+        discount: 10,
         id: 4,
         available: 0,
         reason: this.$t('coupon.reason')
