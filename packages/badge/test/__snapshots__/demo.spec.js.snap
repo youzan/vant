@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-hairline--top-bottom van-badge-group">
+      <a class="van-badge van-badge--select van-hairline">
+        <!---->
+        标签名称
+      </a>
+      <a class="van-badge van-hairline">
+        <div class="van-badge__info">8</div>
+        标签名称
+      </a>
+      <a class="van-badge van-hairline">
+        <div class="van-badge__info">99</div>
+        标签名称
+      </a>
+      <a class="van-badge van-hairline">
+        <div class="van-badge__info">199</div>
+        标签名称
+      </a>
+    </div>
+  </div>
+</div>
+`;

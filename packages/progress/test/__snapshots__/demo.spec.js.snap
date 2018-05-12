@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:0%;background-color:#38f;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#38f;left:0%;margin-left:0;">0%</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:46%;background-color:#38f;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#38f;left:46%;margin-left:-14px;">46%</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:100%;background-color:#38f;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#38f;left:100%;margin-left:-28px;">100%</span></div>
+  </div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:0%;background-color:#cacaca;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#cacaca;left:0%;margin-left:0;">0%</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:46%;background-color:#cacaca;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#cacaca;left:46%;margin-left:-14px;">46%</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:100%;background-color:#cacaca;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#cacaca;left:100%;margin-left:-28px;">100%</span></div>
+  </div>
+  <div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:26%;background-color:#ed5050;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#ed5050;left:26%;margin-left:-14px;">红色</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:46%;background-color:#f60;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#f60;left:46%;margin-left:-14px;">橙色</span></div>
+    <div class="van-progress"><span class="van-progress__portion" style="width:66%;background-color:#f09000;"></span> <span class="van-progress__pivot" style="color:#fff;background-color:#f09000;left:66%;margin-left:-14px;">黄色</span></div>
+  </div>
+</div>
+`;

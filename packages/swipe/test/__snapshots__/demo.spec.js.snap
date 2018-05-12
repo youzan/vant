@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-swipe">
+      <div class="van-swipe__track" style="width:0px;transition-duration:500ms;transform:translateX(0px);">
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">1</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">2</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-swipe">
+      <div class="van-swipe__track" style="width:0px;transition-duration:500ms;transform:translateX(0px);">
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">
+          <img>
+        </div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">
+          <img>
+        </div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">
+          <img>
+        </div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">
+          <img>
+        </div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-swipe">
+      <div class="van-swipe__track" style="width:0px;transition-duration:500ms;transform:translateX(0px);">
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">1</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">2</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="demo-swipe--vertical van-swipe">
+      <div class="van-swipe__track" style="height:0px;transition-duration:500ms;transform:translateY(0px);">
+        <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">1</div>
+        <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">2</div>
+        <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">3</div>
+        <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">4</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+</div>
+`;

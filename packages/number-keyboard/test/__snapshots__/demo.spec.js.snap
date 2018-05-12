@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">
+      弹出默认键盘
+    </span></button>
+    <div class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
+      <div class="van-hairline--top van-number-keyboard__title"><span></span> <span class="van-number-keyboard__close">完成</span></div>
+      <div class="van-number-keyboard__body">
+        <i class="van-hairline van-key">1</i>
+        <i class="van-hairline van-key">2</i>
+        <i class="van-hairline van-key">3</i>
+        <i class="van-hairline van-key">4</i>
+        <i class="van-hairline van-key">5</i>
+        <i class="van-hairline van-key">6</i>
+        <i class="van-hairline van-key">7</i>
+        <i class="van-hairline van-key">8</i>
+        <i class="van-hairline van-key">9</i>
+        <i class="van-hairline van-key van-key van-key--gray">.</i>
+        <i class="van-hairline van-key">0</i>
+        <i class="van-hairline van-key van-key van-key--gray van-key van-key--delete">delete</i>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">
+      弹出自定义键盘
+    </span></button>
+    <div class="van-number-keyboard van-number-keyboard--custom" style="z-index:100;display:none;">
+      <!---->
+      <div class="van-number-keyboard__body">
+        <i class="van-hairline van-key">1</i>
+        <i class="van-hairline van-key">2</i>
+        <i class="van-hairline van-key">3</i>
+        <i class="van-hairline van-key">4</i>
+        <i class="van-hairline van-key">5</i>
+        <i class="van-hairline van-key">6</i>
+        <i class="van-hairline van-key">7</i>
+        <i class="van-hairline van-key">8</i>
+        <i class="van-hairline van-key">9</i>
+        <i class="van-hairline van-key van-key van-key--middle">0</i>
+        <i class="van-hairline van-key">.</i>
+      </div>
+      <div class="van-number-keyboard__sidebar">
+        <i class="van-hairline van-key van-key van-key--delete van-key van-key--big">delete</i>
+        <i class="van-hairline van-key van-key van-key--green van-key van-key--big">完成</i>
+      </div>
+    </div>
+  </div>
+</div>
+`;
