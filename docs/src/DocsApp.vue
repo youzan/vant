@@ -11,8 +11,9 @@ import docConfig from './doc.config';
 
 export default {
   data() {
+    const path = location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples';
     return {
-      simulators: [`/zanui/vant/examples${location.hash}`],
+      simulators: [`${path}${location.hash}`],
       demoURL: ''
     };
   },
