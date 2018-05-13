@@ -14,14 +14,11 @@ module.exports = {
     publicPath: '/',
     chunkFilename: 'async_[name].js'
   },
-  devServer: {
+  serve: {
+    open: true,
     host: '0.0.0.0',
-    stats: 'errors-only',
-    historyApiFallback: {
-      rewrites: [
-        { from: /^\/zanui\/vant\/examples/, to: '/examples.html' },
-        { from: /^\/zanui\/vant/, to: '/index.html' }
-      ]
+    dev: {
+      logLevel: 'warn'
     }
   },
   resolve: {

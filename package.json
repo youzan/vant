@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
-    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.dev.js",
+    "dev": "npm run build:file && webpack-serve --config build/webpack.dev.js",
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color",
@@ -102,7 +102,7 @@
     "vue-template-es2015-compiler": "^1.6.0",
     "webpack": "^4.8.2",
     "webpack-cli": "^2.0.15",
-    "webpack-dev-server": "3.1.4"
+    "webpack-serve": "^0.3.2"
   },
   "jest": {
     "moduleFileExtensions": [
