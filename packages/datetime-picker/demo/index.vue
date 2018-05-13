@@ -57,7 +57,7 @@ export default {
     return {
       minHour: 10,
       maxHour: 20,
-      minDate: new Date(),
+      minDate: new Date(2018, 0, 1),
       maxDate: new Date(2019, 10, 1),
       currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
