@@ -19,6 +19,9 @@ module.exports = {
     host: '0.0.0.0',
     dev: {
       logLevel: 'warn'
+    },
+    hot: {
+      logLevel: 'warn'
     }
   },
   resolve: {
