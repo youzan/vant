@@ -19,4 +19,4 @@ github_changelog_generator \
   --no-unreleased \
   --max-issues 200 \
   --since-tag v1.0.0 \
-  -o $basepath/../../docs/markdown/zh-CN/changelog-generated.md
+  -o $basepath/../../docs/markdown/changelog.generated.md
