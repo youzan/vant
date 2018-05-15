@@ -1,9 +1,12 @@
 const Components = require('./get-components')();
 const fs = require('fs-extra');
+const glob = require('fast-glob');
 const path = require('path');
 const uppercamelize = require('uppercamelcase');
 const version = process.env.VERSION || require('../../package.json').version;
 const tips = '// This file is auto gererated by build/bin/build-entry.js';
+const root = path.join(__dirname, '../../');
+const join = dir => path.join(root, dir);
 
 function buildVantEntry() {
   const uninstallComponents = [
@@ -64,14 +67,20 @@ export default {
   fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
 }
 
+// generate webpack entry file for markdown docs
 function buildDocsEntry() {
-  const dir = path.join(__dirname, '../../docs/markdown');
-  const cnDocs = fs.readdirSync(path.join(dir, 'zh-CN')).map(name => 'zh-CN/' + name);
-  const enDocs = fs.readdirSync(path.join(dir, 'en-US')).map(name => 'en-US/' + name);
-  const docs = [...cnDocs, ...enDocs]
-    .filter(name => name.indexOf('.md') !== -1)
-    .map(name => name.replace('.md', ''))
-    .map(name => `'${name}': wrapper(r => require.ensure([], () => r(require('./${name}.md')), '${name}'))`);
+  const output = join('docs/src/docs-entry.js');
+  const getName = fullPath => fullPath.replace(/\/(en|zh)/, '.$1').split('/').pop().replace('.md', '');
+  const docs = glob
+    .sync([
+      join('docs/**/*.md'),
+      join('packages/**/*.md'),
+      '!**/node_modules/**'
+    ])
+    .map(fullPath => {
+      const name = getName(fullPath);
+      return `'${name}': wrapper(r => require.ensure([], () => r(require('${path.relative(join('docs/src'), fullPath)}')), '${name}'))`;
+    });
 
   const content = `${tips}
 import progress from 'nprogress';
@@ -91,7 +100,7 @@ export default {
   ${docs.join(',\n  ')}
 };
 `;
-  fs.writeFileSync(path.join(dir, './index.js'), content);
+  fs.writeFileSync(output, content);
 }
 
 buildVantEntry();

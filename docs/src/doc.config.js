@@ -24,18 +24,15 @@ module.exports = {
             list: [
               {
                 path: '/intro',
-                title: '介绍',
-                noExample: true
+                title: '介绍'
               },
               {
                 path: '/quickstart',
-                title: '快速上手',
-                noExample: true
+                title: '快速上手'
               },
               {
                 path: '/changelog',
-                title: '更新日志',
-                noExample: true
+                title: '更新日志'
               },
               {
                 path: '/vant-css',
@@ -43,19 +40,15 @@ module.exports = {
               },
               {
                 path: '/theme',
-                title: '定制主题',
-                noExample: true
+                title: '定制主题'
               },
               {
                 path: '/demo',
-                title: '示例页面',
-                noDocument: true,
-                noExample: true
+                title: '示例页面'
               },
               {
-                path: '/i18n',
-                title: '国际化',
-                noExample: true
+                path: '/locale',
+                title: '国际化'
               }
             ]
           }
@@ -326,18 +319,15 @@ module.exports = {
             list: [
               {
                 path: '/intro',
-                title: 'Introduction',
-                noExample: true
+                title: 'Introduction'
               },
               {
                 path: '/quickstart',
-                title: 'Quickstart',
-                noExample: true
+                title: 'Quickstart'
               },
               {
                 path: '/changelog',
-                title: 'Changelog',
-                noExample: true
+                title: 'Changelog'
               },
               {
                 path: '/vant-css',
@@ -345,19 +335,15 @@ module.exports = {
               },
               {
                 path: '/theme',
-                title: 'Custom Theme',
-                noExample: true
+                title: 'Custom Theme'
               },
               {
                 path: '/demo',
-                title: 'Demo pages',
-                noDocument: true,
-                noExample: true
+                title: 'Demo pages'
               },
               {
-                path: '/i18n',
-                title: 'Internationalization',
-                noExample: true
+                path: '/locale',
+                title: 'Internationalization'
               }
             ]
           }
