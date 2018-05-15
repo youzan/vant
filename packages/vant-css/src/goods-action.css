@@ -41,8 +41,9 @@
     }
 
     &__icon {
+      width: 1em;
       font-size: 20px;
-      margin-bottom: 5px;
+      margin: 0 auto 5px;
     }
   }
 }
