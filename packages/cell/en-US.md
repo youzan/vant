@@ -71,8 +71,8 @@ Vue.use(Cell).use(CellGroup);
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | icon | Left Icon | `String` | - |
-| title | Title | `String` | - |
-| value | Right text | `String` | - |
+| title | Title | `String | Number` | - |
+| value | Right text | `String | Number` | - |
 | label | Description below the title | `String` | - |
 | border | Whether to show inner border | `Boolean` | `true` |
 | center | Whether to center content vertically | `Boolean` | `true` |

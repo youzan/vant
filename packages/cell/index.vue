@@ -13,14 +13,14 @@
     <slot name="icon">
       <icon v-if="icon" :class="b('left-icon')" :name="icon" />
     </slot>
-    <div v-if="title || $slots.title" :class="b('title')">
+    <div v-if="isDef(title) || $slots.title" :class="b('title')">
       <slot name="title">
         <span v-text="title" />
         <div v-if="label" v-text="label" :class="b('label')" />
       </slot>
     </div>
     <div
-      v-if="value || $slots.default"
+      v-if="isDef(value) || $slots.default"
       :class="b('value', { alone: !$slots.title && !title })"
     >
       <slot>
@@ -36,6 +36,7 @@
 
 <script>
 import Icon from '../icon';
+import { isDef } from '../utils';
 import RouterLink from '../mixins/router-link';
 import create from '../utils/create-basic';
 
@@ -50,12 +51,12 @@ export default create({
 
   props: {
     icon: String,
-    title: String,
     label: String,
     center: Boolean,
     isLink: Boolean,
     required: Boolean,
     clickable: Boolean,
+    title: [String, Number],
     value: [String, Number],
     border: {
       type: Boolean,
@@ -64,6 +65,8 @@ export default create({
   },
 
   methods: {
+    isDef,
+
     onClick() {
       this.$emit('click');
       this.routerLink();
