@@ -75,6 +75,7 @@ export default create({
       this.$emit('focus', e);
 
       const { root } = this.$refs;
+      /* istanbul ignore if */
       if (root && root.scrollIntoView) {
         root.scrollIntoView();
       }
@@ -99,10 +100,6 @@ export default create({
     onSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
       this.$emit('select-search', express);
-    },
-
-    isString(str) {
-      return typeof str === 'string';
     }
   }
 });
