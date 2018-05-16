@@ -122,6 +122,7 @@
     "collectCoverageFrom": [
       "packages/**/*.{js,vue}",
       "!**/vant-css/**",
+      "!**/demo/**",
       "!**/locale/lang/**",
       "!**/waterfall/**",
       "!**/lazyload/**"
