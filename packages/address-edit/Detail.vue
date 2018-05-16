@@ -73,7 +73,11 @@ export default create({
     onFocus(e) {
       this.isFocused = true;
       this.$emit('focus', e);
-      this.$refs.root.scrollIntoView();
+
+      const { root } = this.$refs;
+      if (root && root.scrollIntoView) {
+        root.scrollIntoView();
+      }
     },
 
     onBlur(e) {
