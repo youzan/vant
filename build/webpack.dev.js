@@ -27,7 +27,6 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.css'],
     alias: {
-      vue: 'vue/dist/vue.runtime.esm.js',
       packages: path.join(__dirname, '../packages')
     }
   },
@@ -76,13 +75,13 @@ module.exports = {
     new VueLoaderPlugin(),
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-docs'],
+      chunks: ['vant-docs'],
       template: 'docs/src/index.tpl',
       filename: 'index.html',
       inject: true
     }),
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vant-mobile'],
+      chunks: ['vant-mobile'],
       template: 'docs/src/index.tpl',
       filename: 'examples.html',
       inject: true

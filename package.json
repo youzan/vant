@@ -59,7 +59,7 @@
   "devDependencies": {
     "@vue/server-test-utils": "^1.0.0-beta.16",
     "@vue/test-utils": "^1.0.0-beta.16",
-    "autoprefixer": "^8.3.0",
+    "autoprefixer": "^8.5.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^22.4.3",
@@ -94,15 +94,15 @@
     "vant-doc": "1.0.4",
     "vue": "2.5.16",
     "vue-jest": "^2.5.0",
-    "vue-loader": "^15.0.10",
+    "vue-loader": "^15.0.11",
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.16",
     "vue-sfc-compiler": "^0.0.8",
     "vue-template-compiler": "2.5.16",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^4.8.2",
+    "webpack": "^4.8.3",
     "webpack-cli": "^2.0.15",
-    "webpack-serve": "^0.3.2"
+    "webpack-serve": "^1.0.2"
   },
   "jest": {
     "moduleFileExtensions": [
