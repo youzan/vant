@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import Vue from 'vue';
 import { mount, TransitionStub } from '@vue/test-utils';
 import { renderToString } from '@vue/server-test-utils';

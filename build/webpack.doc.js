@@ -1,7 +1,9 @@
 const path = require('path');
-const devConfig = require('./webpack.dev.js');
+const config = require('./webpack.dev.js');
 
-module.exports = Object.assign({}, devConfig, {
+delete config.serve;
+
+module.exports = Object.assign(config, {
   mode: 'production',
   output: {
     path: path.join(__dirname, '../docs/dist'),
