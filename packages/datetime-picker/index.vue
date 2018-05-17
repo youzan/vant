@@ -141,6 +141,7 @@ export default create({
         const [hour, minute] = value.split(':');
         let correctedHour = Math.max(hour, this.minHour);
         correctedHour = Math.min(correctedHour, this.maxHour);
+        correctedHour = `00${correctedHour}`.slice(-2);
 
         return `${correctedHour}:${minute}`;
       }
