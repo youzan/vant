@@ -16,10 +16,9 @@
 
   &__info {
     color: #fff;
-    left: 50%;
+    left: 100%;
     top: -.5em;
     font-size: .5em;
-    margin-left: .8em;
     padding: 0 .3em;
     text-align: center;
     min-width: 1.2em;
@@ -28,6 +27,7 @@
     border-radius: .6em;
     box-sizing: border-box;
     background-color: $red;
+    transform: translateX(-50%);
     font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
   }
 
