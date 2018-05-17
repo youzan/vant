@@ -1,8 +1,11 @@
-import { mount } from '@vue/test-utils';
+import Vue from 'vue';
+import { mount, TransitionStub } from '@vue/test-utils';
 import { renderToString } from '@vue/server-test-utils';
 import AddressEdit from '../';
 import AddressDetail from '../Detail';
 import areaList from '../../area/demo/area.simple';
+
+Vue.component('transition', TransitionStub);
 
 const addressInfo = {
   name: '测试',
