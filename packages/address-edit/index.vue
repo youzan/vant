@@ -269,10 +269,6 @@ export default create({
     },
 
     onDelete() {
-      if (this.isDeleting) {
-        return;
-      }
-
       Dialog.confirm({
         message: this.$t('confirmDelete')
       }).then(() => {

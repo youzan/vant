@@ -119,7 +119,7 @@ exports[`create a AddressEdit with props 1`] = `
       <div class="van-cell__title"><span>收件地区</span>
         <!---->
       </div>
-      <div class="van-cell__value"><span>浙江省</span> <span>杭州市</span> <span>西湖区</span></div>
+      <div class="van-cell__value"><span>北京市</span> <span>北京市</span> <span>朝阳区</span></div>
       <!---->
     </div>
     <div>
