@@ -120,7 +120,8 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
 | autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
-| icon | Right side Icon name | `String` | - |
+| icon | Right side icon name | `String` | - |
+| left-icon | Left side icon name | `String` | - |
 
 ### Event
 Filed support all native events of input tag，such as `focus`、`blur`、`keypress`
