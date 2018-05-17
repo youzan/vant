@@ -1,5 +1,6 @@
 <template>
   <cell
+    :icon="leftIcon"
     :title="label"
     :center="center"
     :border="border"
@@ -64,7 +65,9 @@ export default create({
     label: String,
     error: Boolean,
     center: Boolean,
+    leftIcon: String,
     required: Boolean,
+    onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
     type: {
@@ -74,10 +77,6 @@ export default create({
     border: {
       type: Boolean,
       default: true
-    },
-    onIconClick: {
-      type: Function,
-      default: () => {}
     }
   },
 
@@ -112,7 +111,7 @@ export default create({
 
     onClickIcon() {
       this.$emit('click-icon');
-      this.onIconClick();
+      this.onIconClick && this.onIconClick();
     },
 
     onKeypress(event) {
