@@ -16,7 +16,7 @@ const router = new VueRouter({
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    location.replace('/zanui/vant/examples' + location.hash);
+    location.replace(location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples' + location.hash);
   }
   document.title = route.meta.title || document.title;
   next();

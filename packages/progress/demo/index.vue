@@ -1,21 +1,22 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-progress :percentage="0" />
-      <van-progress :percentage="46" />
-      <van-progress :percentage="100" />
+      <van-progress :percentage="50" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-progress inactive :percentage="0" />
-      <van-progress inactive :percentage="46" />
-      <van-progress inactive :percentage="100" />
+      <van-progress inactive :percentage="50" />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-progress :pivot-text="$t('red')" color="#ed5050" :percentage="26" />
-      <van-progress :pivot-text="$t('orange')" color="#f60" :percentage="46" />
-      <van-progress :pivot-text="$t('yellow')" color="#f09000" :percentage="66" />
+      <van-progress :pivot-text="$t('orange')" color="#f2826a" :percentage="25" />
+      <van-progress :pivot-text="$t('red')" color="#f3594b" :percentage="50" />
+      <van-progress
+        :percentage="75"
+        :pivot-text="$t('purple')"
+        pivot-color="#7232dd"
+        color="linear-gradient(to right, #be99ff, #7232dd)"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -24,7 +25,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      title2: '进度条置灰',
+      title2: '置灰',
       title3: '样式定制'
     },
     'en-US': {
@@ -38,10 +39,10 @@ export default {
 <style lang="postcss">
 .demo-progress {
   .van-progress {
-    margin: 20px 10px;
+    margin: 20px;
 
     &:first-of-type {
-      margin-top: 10px;
+      margin-top: 5px;
     }
   }
 }

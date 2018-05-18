@@ -13,18 +13,14 @@ Vue.use(Progress);
 Use 'percentage' prop to set current progress
 
 ```html
-<van-progress :percentage="0" />
-<van-progress :percentage="46" />
-<van-progress :percentage="100" />
+<van-progress :percentage="50" />
 ```
 
 
 #### Inactive
 
 ```html
-<van-progress inactive :percentage="0" />
-<van-progress inactive :percentage="46" />
-<van-progress inactive :percentage="100" />
+<van-progress inactive :percentage="50" />
 ```
 
 
@@ -32,9 +28,24 @@ Use 'percentage' prop to set current progress
 Use `pivot-text` to custom text，use `color` to custom bar color
 
 ```html
-<van-progress pivot-text="Red" color="#ed5050" :percentage="26" />
-<van-progress pivot-text="Orange" color="#f60" :percentage="46" />
-<van-progress pivot-text="Yellow" color="#f09000" :percentage="66" />
+<van-progress
+  pivot-text="Orange"
+  color="#f2826a"
+  :percentage="25"
+/>
+
+<van-progress
+  pivot-text="Red"
+  color="#f3594b"
+  :percentage="50"
+/>
+
+<van-progress
+  :percentage="75"
+  pivot-text="Purple"
+  pivot-color="#7232dd"
+  color="linear-gradient(to right, #be99ff, #7232dd)"
+/>
 ```
 
 ### API
@@ -44,6 +55,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 | inactive | Whether to be gray | `Boolean` | `false` |
 | percentage | Percentage | `Number` | `false` |
 | show-pivot | Whether to show text | `Boolean` | `true` |
-| pivot-text | Text | `String` | percentage |
 | color | Color | `String` | `#38f` |
+| pivot-text | Text | `String` | percentage |
+| pivot-color | Text background color | `String` | inherit progress color |
 | text-color | Text color | `String` | `#fff` |

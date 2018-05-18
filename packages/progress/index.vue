@@ -1,7 +1,8 @@
 <template>
   <div :class="b()">
-    <span :class="b('portion')" :style="portionStyle" />
-    <span :class="b('pivot')" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
+    <span :class="b('portion')" :style="portionStyle">
+      <span :class="b('pivot')" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
+    </span>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ export default create({
 
   props: {
     inactive: Boolean,
+    pivotColor: String,
     percentage: {
       type: Number,
       required: true,
@@ -42,19 +44,18 @@ export default create({
     componentColor() {
       return this.inactive ? '#cacaca' : this.color;
     },
+
     pivotStyle() {
-      const { percentage } = this;
       return {
         color: this.textColor,
-        backgroundColor: this.componentColor,
-        left: percentage <= 5 ? '0%' : percentage >= 95 ? '100%' : percentage + '%',
-        marginLeft: percentage <= 5 ? '0' : percentage >= 95 ? '-28px' : '-14px'
+        background: this.pivotColor || this.componentColor
       };
     },
+
     portionStyle() {
       return {
         width: this.percentage + '%',
-        backgroundColor: this.componentColor
+        background: this.componentColor
       };
     }
   }
