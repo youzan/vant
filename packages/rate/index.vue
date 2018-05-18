@@ -66,6 +66,7 @@ export default create({
     onSelect(index) {
       if (!this.disabled) {
         this.$emit('input', index + 1);
+        this.$emit('change', index + 1);
       }
     }
   }

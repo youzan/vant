@@ -43,7 +43,7 @@ export default {
  <van-rate v-model="value" disabled />
 ```
 
-### Rate API
+### API
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
@@ -54,3 +54,9 @@ export default {
 | void-color | Void color | `String` | `#c7c7c7` |
 | disabled-color | Disabled color | `String` | `#bdbdbd` | 
 | disabled | Whether to disable rate | `Boolean` | `false` |
+
+### Event
+
+| Event | Description | Parameters |
+|-----------|-----------|-----------|
+| change | Triggered when rate changed | current rate |

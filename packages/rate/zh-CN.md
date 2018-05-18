@@ -43,7 +43,7 @@ export default {
  <van-rate v-model="value" disabled />
 ```
 
-### Rate API
+### API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
@@ -54,3 +54,9 @@ export default {
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
 | disabled-color | 不可选时的颜色 | `String` | `#bdbdbd` | 
 | disabled | 是否禁用评分 | `Boolean` | `false` |
+
+### Event
+
+| 事件名称 | 说明 | 回调参数 |
+|-----------|-----------|-----------|
+| change | 当前分值变化时触发的事件 | 当前分值 |
