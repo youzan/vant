@@ -1,5 +1,26 @@
 ## 更新日志
 
+### [1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
+`2018-05-18`
+
+**Improvements**
+
+- AddressEdit: 适配小屏手机 [\#1082](https://github.com/youzan/vant/pull/1082) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: 支持 number 类型的 title、value [\#1073](https://github.com/youzan/vant/pull/1073) [@chenjiahan](https://github.com/chenjiahan)
+- Field: 新增 left-icon 属性 [\#1092](https://github.com/youzan/vant/pull/1092) [@chenjiahan](https://github.com/chenjiahan)
+- Progress: 支持渐变色 [\#1098](https://github.com/youzan/vant/pull/1098) [@chenjiahan](https://github.com/chenjiahan)
+- Build: 升级 webpack-serve [\#1056](https://github.com/youzan/vant/pull/1056) [@chenjiahan](https://github.com/chenjiahan)
+- 调整示例的目录结构 [\#1052](https://github.com/youzan/vant/pull/1052) [@chenjiahan](https://github.com/chenjiahan)
+- 调整文档的目录结构 [\#1066](https://github.com/youzan/vant/pull/1066) [@chenjiahan](https://github.com/chenjiahan)
+- 使用 Jest 重构单元测试 [\#1051](https://github.com/youzan/vant/pull/1051) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复 DatetimePicker 初始值错误的问题 [\#1093](https://github.com/youzan/vant/pull/1093) [@rex-zsd](https://github.com/rex-zsd)
+- 修复 GoodsAction info 长度超过三位数时显示错误 [\#1074](https://github.com/youzan/vant/pull/1074) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 icon 样式模板错误 [\#1091](https://github.com/youzan/vant/pull/1091) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
 `2018-05-12`
 

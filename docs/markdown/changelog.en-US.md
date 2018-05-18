@@ -1,5 +1,26 @@
 ## Changelog
 
+### [1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
+`2018-05-18`
+
+**Improvements**
+
+- AddressEdit: fit in small screen [\#1082](https://github.com/youzan/vant/pull/1082) [@chenjiahan](https://github.com/chenjiahan)
+- Cell: support number type title & value [\#1073](https://github.com/youzan/vant/pull/1073) [@chenjiahan](https://github.com/chenjiahan)
+- Field: add left-icon prop [\#1092](https://github.com/youzan/vant/pull/1092) [@chenjiahan](https://github.com/chenjiahan)
+- Progress: support gradient color [\#1098](https://github.com/youzan/vant/pull/1098) [@chenjiahan](https://github.com/chenjiahan)
+- Build: upgrade to webpack-serve [\#1056](https://github.com/youzan/vant/pull/1056) [@chenjiahan](https://github.com/chenjiahan)
+- Reorganize demos [\#1052](https://github.com/youzan/vant/pull/1052) [@chenjiahan](https://github.com/chenjiahan)
+- Reorganize document [\#1066](https://github.com/youzan/vant/pull/1066) [@chenjiahan](https://github.com/chenjiahan)
+- Rebuild test system [\#1051](https://github.com/youzan/vant/pull/1051) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- fix DatetimePicker initial value error [\#1093](https://github.com/youzan/vant/pull/1093) [@rex-zsd](https://github.com/rex-zsd)
+- fix GoodsAction info position [\#1074](https://github.com/youzan/vant/pull/1074) [@chenjiahan](https://github.com/chenjiahan)
+- fix icon style template [\#1091](https://github.com/youzan/vant/pull/1091) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
 `2018-05-12`
 
