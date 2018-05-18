@@ -18,7 +18,7 @@ Vue.use(Progress);
 ```
 
 
-#### 进度条置灰
+#### 置灰
 
 ```html
 <van-progress inactive :percentage="50" />
