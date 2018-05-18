@@ -81,7 +81,7 @@ export default {
   },
   vanSku: {
     unavailable: '商品已经无法购买啦',
-    spec: '请选择完整的规格',
+    spec: '请先选择商品规格',
     least: '至少选择一件',
     quota: quota => `限购${quota}件`,
     inventory: '库存不足',

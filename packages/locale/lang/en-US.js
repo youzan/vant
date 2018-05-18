@@ -80,7 +80,7 @@ export default {
   },
   vanSku: {
     unavailable: 'The product is no longer available for purchase',
-    spec: 'Please select the full specification',
+    spec: 'Please select the goods specification',
     least: 'Choose at least one',
     quota: quota => `Buy up to ${quota} items`,
     inventory: 'Inventory shortage',
