@@ -22,6 +22,7 @@ then
 
   # commit
   npm version $VERSION --no-git-tag-version
+  git tag v$VERSION
   git commit -am "[release] $VERSION"
 
   # publish

@@ -25,9 +25,9 @@ gulp.task('compile', () => {
 // copy lib files
 gulp.task('lib', ['compile'], () => {
   const ttf = glob.sync(resolve('./src/*.ttf'));
-  ttf.forEach(ttf => fs.copy(ttf, './lib/' + path.parse(ttf).base));
-  fs.copy('./lib', '../../lib/vant-css');
-  fs.copy('./lib', '../../es/vant-css');
+  ttf.forEach(ttf => fs.copySync(ttf, './lib/' + path.parse(ttf).base));
+  fs.copySync('./lib', '../../lib/vant-css');
+  fs.copySync('./lib', '../../es/vant-css');
 });
 
 // extract svg from sketch
