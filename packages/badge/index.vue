@@ -11,7 +11,6 @@
 
 <script>
 import create from '../utils/create';
-import { isDef } from '../utils';
 
 export default create({
   name: 'badge',
@@ -33,8 +32,6 @@ export default create({
   },
 
   methods: {
-    isDef,
-
     onClick() {
       this.$emit('click', this.$parent.badges.indexOf(this));
     }

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import { isDef } from '../utils';
 import create from '../utils/create-basic';
 
 export default create({
@@ -16,10 +15,6 @@ export default create({
     name: String,
     info: [String, Number],
     color: String
-  },
-
-  methods: {
-    isDef
   }
 });
 </script>

@@ -36,7 +36,6 @@
 
 <script>
 import Icon from '../icon';
-import { isDef } from '../utils';
 import RouterLink from '../mixins/router-link';
 import create from '../utils/create-basic';
 
@@ -65,8 +64,6 @@ export default create({
   },
 
   methods: {
-    isDef,
-
     onClick() {
       this.$emit('click');
       this.routerLink();
