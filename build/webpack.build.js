@@ -7,7 +7,7 @@ delete config.serve;
 module.exports = Object.assign(config, {
   mode: 'production',
   entry: {
-    'vant': './packages/index.js'
+    'vant': './es/index.js'
   },
   output: {
     path: path.join(__dirname, '../lib'),
