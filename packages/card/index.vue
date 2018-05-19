@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { isDef } from '../utils';
 import create from '../utils/create';
 
 export default create({
@@ -44,10 +43,6 @@ export default create({
       type: String,
       default: '¥'
     }
-  },
-
-  methods: {
-    isDef
   }
 });
 </script>

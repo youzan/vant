@@ -18,7 +18,6 @@
 
 <script>
 import create from '../utils/create';
-import { isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
@@ -79,7 +78,7 @@ export default create({
       const { currentValue } = this;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
         return currentValue;
-      } else if (isDef(currentValue)) {
+      } else if (this.isDef(currentValue)) {
         return currentValue === this.name;
       }
     },

@@ -18,7 +18,6 @@
 <script>
 import create from '../utils/create';
 import Popup from '../mixins/popup';
-import { isDef } from '../utils';
 
 const STYLE_LIST = ['success', 'fail', 'loading'];
 
@@ -51,10 +50,6 @@ export default create({
     displayStyle() {
       return STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
     }
-  },
-
-  methods: {
-    isDef
   }
 });
 </script>
