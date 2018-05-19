@@ -13,6 +13,8 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
 [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)
 [![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
+[![JS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size)](https://unpkg.com/vant/lib/vant.min.js)
+[![CSS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size)](https://unpkg.com/vant/lib/vant-css/index.css)
 
 [访问中文版](./README.zh-CN.md)
 
