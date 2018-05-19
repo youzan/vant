@@ -12,7 +12,7 @@ function doBindEvent() {
   }
   this.el[CONTEXT].binded = true;
 
-  this.scrollEventListener = Utils.debounce(handleScrollEvent.bind(this), 200);
+  this.scrollEventListener = handleScrollEvent.bind(this);
   this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
 
   const disabledExpr = this.el.getAttribute('waterfall-disabled');
@@ -78,10 +78,8 @@ function handleScrollEvent() {
 function startBind(el) {
   const context = el[CONTEXT];
 
-  context.vm.$nextTick(function() {
-    if (Utils.isAttached(el)) {
-      doBindEvent.call(el[CONTEXT]);
-    }
+  context.vm.$nextTick(() => {
+    doBindEvent.call(el[CONTEXT]);
   });
 }
 
