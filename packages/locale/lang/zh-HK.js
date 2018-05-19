@@ -1,4 +1,4 @@
-﻿export default {
+export default {
   name: '姓名',
   tel: '聯絡電話',
   save: '儲存',
@@ -81,7 +81,7 @@
   },
   vanSku: {
     unavailable: '商品已經無法購買啦',
-    spec: '請選擇完整的規格',
+    spec: '請先選擇商品規格',
     least: '至少選擇一件',
     quota: quota => `限購${quota}件`,
     inventory: '庫存不足',
