@@ -9,7 +9,7 @@
       <template v-if="displayStyle === 'default'">
         <loading v-if="type === 'loading'" color="white" :type="loadingType" />
         <icon v-else :class="b('icon')" :name="type" />
-        <div v-if="hasMessage" :class="b('text')">{{ message }}</div>
+        <div v-if="isDef(message)" :class="b('text')">{{ message }}</div>
       </template>
     </div>
   </transition>
@@ -18,6 +18,7 @@
 <script>
 import create from '../utils/create';
 import Popup from '../mixins/popup';
+import { isDef } from '../utils';
 
 const STYLE_LIST = ['success', 'fail', 'loading'];
 
@@ -49,11 +50,11 @@ export default create({
   computed: {
     displayStyle() {
       return STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
-    },
-
-    hasMessage() {
-      return this.message || this.message === 0;
     }
+  },
+
+  methods: {
+    isDef
   }
 });
 </script>
