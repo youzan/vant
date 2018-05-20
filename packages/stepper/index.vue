@@ -90,7 +90,7 @@ export default create({
 
   methods: {
     correctValue(value) {
-      return Number.isNaN(value)
+      return isNaN(value)
         ? this.min
         : Math.max(this.min, Math.min(this.max, value));
     },
