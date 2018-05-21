@@ -98,8 +98,8 @@ export default {
   <van-field
     v-model="password"
     type="password"
-    :label="密码"
-    :placeholder="请输入密码"
+    label="密码"
+    placeholder="请输入密码"
   />
 </van-dialog>
 ```
