@@ -43,7 +43,7 @@ export default create({
       default: 0
     },
     activeId: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     maxHeight: {
