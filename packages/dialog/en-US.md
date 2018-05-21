@@ -92,8 +92,8 @@ If you need to render vue components within a dialog, you can use dialog compone
   <van-field
     v-model="password"
     type="password"
-    :label="Password"
-    :placeholder="Password"
+    label="Password"
+    placeholder="Password"
   />
 </van-dialog>
 ```
