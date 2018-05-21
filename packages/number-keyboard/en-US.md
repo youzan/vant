@@ -79,6 +79,7 @@ export default {
 |-----------|-----------|-----------|
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |
-| blur | Triggered when blur keyboard | - |
+| blur | Triggered when click close button | - |
+| blur | Triggered when click close button or blur keyboard | - |
 | show | Triggered when keyboard is fully displayed. | - |
 | hide | Triggered when keyboard is fully hidden. | - |
