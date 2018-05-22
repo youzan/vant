@@ -1,7 +1,7 @@
 <template>
   <div :class="b()">
-    <span :class="b('portion')" :style="portionStyle">
-      <span :class="b('pivot')" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
+    <span :class="b('portion', { 'with-pivot': showPivot })" :style="portionStyle">
+      <span v-if="showPivot" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ pivotText }}</span>
     </span>
   </div>
 </template>
@@ -40,23 +40,51 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      pivotWidth: 0,
+      progressWidth: 0
+    };
+  },
+
   computed: {
-    componentColor() {
+    currentColor() {
       return this.inactive ? '#cacaca' : this.color;
     },
 
     pivotStyle() {
       return {
         color: this.textColor,
-        background: this.pivotColor || this.componentColor
+        background: this.pivotColor || this.currentColor
       };
     },
 
     portionStyle() {
       return {
-        width: this.percentage + '%',
-        background: this.componentColor
+        width: (this.progressWidth - this.pivotWidth) * this.percentage / 100 + 'px',
+        background: this.currentColor
       };
+    }
+  },
+
+  mounted() {
+    this.getWidth();
+  },
+
+  watch: {
+    showPivot() {
+      this.getWidth();
+    },
+
+    pivotText() {
+      this.getWidth();
+    }
+  },
+
+  methods: {
+    getWidth() {
+      this.progressWidth = this.$el.offsetWidth;
+      this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
     }
   }
 });
