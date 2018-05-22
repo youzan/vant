@@ -11,6 +11,11 @@
     height: 100%;
     position: absolute;
     border-radius: inherit;
+
+    &--with-pivot {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &__pivot {
@@ -26,6 +31,6 @@
     word-break: keep-all;
     box-sizing: border-box;
     background-color: $gray-light;
-    transform: translate(50%, -50%);
+    transform: translate(100%, -50%);
   }
 }
