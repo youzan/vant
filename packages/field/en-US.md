@@ -10,7 +10,7 @@ Vue.use(Field);
 ### Usage
 
 #### Basic Usage
-The value of filed is bound with v-model.
+The value of field is bound with v-model.
 
 ```html
 <van-cell-group>
@@ -19,7 +19,7 @@ The value of filed is bound with v-model.
 ```
 
 #### Custom type
-Use `type` prop to custom diffrent type fileds.
+Use `type` prop to custom diffrent type fields.
 
 ```html
 <van-cell-group>
@@ -75,7 +75,7 @@ Use `error` or `error-message` to show error info
 ```
 
 #### Auto resize
-Textarea Filed can be auto resize when has `autosize` prop
+Textarea Field can be auto resize when has `autosize` prop
 
 ```html
 <van-cell-group>
@@ -109,12 +109,12 @@ Use button slot to insert button
 ```
 
 ### API
-Filed support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
+Field support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| value | Filed value | `String` | - |
-| label | Filed label | `String` | - |
+| value | Field value | `String` | - |
+| label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
 | disabled | Disable field | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
@@ -124,11 +124,11 @@ Filed support all native properties of input tag，such as `maxlength`、`placeh
 | left-icon | Left side icon name | `String` | - |
 
 ### Event
-Filed support all native events of input tag，such as `focus`、`blur`、`keypress`
+Field support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
-| click-icon | Triggered when click the icon of filed | - |
+| click-icon | Triggered when click the icon of Field | - |
 
 ### Slot
 

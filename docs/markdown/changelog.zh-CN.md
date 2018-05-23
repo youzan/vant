@@ -612,11 +612,11 @@
 **Bug Fixes**
 
 * 修复 Popup overlayClass 类型错误 [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
-* 修复 Filed number 类型输入值过滤 [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Field number 类型输入值过滤 [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
 * 修复 Icon 'new' 显示问题 [\#381](https://github.com/youzan/vant/pull/381) [@pangxie1991](https://github.com/pangxie1991)
 * 修复 Sku 按钮圆角问题 [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
 * 修复 Radio & Checkbox 禁用态样式 [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
-* 修复 Filed disabled 在安卓下的显示问题 [\#388](https://github.com/youzan/vant/pull/388) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Field disabled 在安卓下的显示问题 [\#388](https://github.com/youzan/vant/pull/388) [@chenjiahan](https://github.com/chenjiahan)
 
 ### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
 
@@ -877,7 +877,7 @@
 **Bug Fixes**
 
 * 修正 AddressEdit 组件姓名字段的键名为 name [\#187](https://github.com/youzan/vant/pull/187) [@chenjiahan](https://github.com/chenjiahan)
-* 修复 Filed type 为 textarea 且 display none 时高度计算错误的问题 [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
+* 修复 Field type 为 textarea 且 display none 时高度计算错误的问题 [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
 * 修复 windows 下项目编译失败的问题 [\#185](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
 
 ### [0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
@@ -1127,7 +1127,7 @@
 
 **Improvements**
 
-* Filed 组件：支持 time 类型 [\#43](https://github.com/youzan/vant/pull/43) [@cookfront](https://github.com/cookfront)
+* Field 组件：支持 time 类型 [\#43](https://github.com/youzan/vant/pull/43) [@cookfront](https://github.com/cookfront)
 
 **Bug Fixes**
 
