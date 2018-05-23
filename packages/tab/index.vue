@@ -1,6 +1,6 @@
 <template>
   <div :class="b('pane')" v-show="isSelected">
-    <slot v-if="slotInited" />
+    <slot v-if="inited" />
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default create({
 
   data() {
     return {
-      slotInited: false
+      inited: false
     };
   },
 
@@ -36,9 +36,7 @@ export default create({
 
   watch: {
     'parent.curActive'() {
-      if (this.isSelected) {
-        this.slotInited = true;
-      }
+      this.inited = this.inited || this.isSelected;
     }
   },
 
