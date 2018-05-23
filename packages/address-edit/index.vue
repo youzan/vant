@@ -65,7 +65,7 @@
         {{ $t('deleteAddress') }}
       </van-button>
     </div>
-    <popup v-model="showArea" position="bottom">
+    <popup v-model="showArea" position="bottom" :lazy-render="false">
       <van-area
         ref="area"
         :loading="!areaListLoaded"

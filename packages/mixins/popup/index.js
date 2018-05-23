@@ -119,7 +119,6 @@ export default {
     move() {
       if (this.getContainer) {
         this.getContainer().appendChild(this.$el);
-      /* istanbul ignore if */
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
@@ -160,7 +159,10 @@ export default {
       } else {
         manager.close(this._popupId);
       }
-      this.$el.style.zIndex = context.plusKey('zIndex');
+
+      this.$nextTick(() => {
+        this.$el.style.zIndex = context.plusKey('zIndex');
+      });
     }
   }
 };

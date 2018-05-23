@@ -1,6 +1,6 @@
 <template>
   <transition :name="currentTransition">
-    <div v-show="value" :class="b({ [position]: position })">
+    <div v-if="inited || !lazyRender" v-show="value" :class="b({ [position]: position })">
       <slot />
     </div>
   </transition>
@@ -17,6 +17,10 @@ export default create({
 
   props: {
     transition: String,
+    lazyRender: {
+      type: Boolean,
+      default: true
+    },
     overlay: {
       type: Boolean,
       default: true
@@ -31,9 +35,21 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      inited: this.value
+    };
+  },
+
   computed: {
     currentTransition() {
       return this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
+    }
+  },
+
+  watch: {
+    value() {
+      this.inited = this.inited || this.value;
     }
   }
 });
