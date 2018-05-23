@@ -618,7 +618,7 @@
 **Bug Fixes**
 
 * fix Popup overlayClass type [\#374](https://github.com/youzan/vant/pull/374) [@chenjiahan](https://github.com/chenjiahan)
-* fix Filed number type value filter [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
+* fix Field number type value filter [\#386](https://github.com/youzan/vant/pull/386) [@chenjiahan](https://github.com/chenjiahan)
 * fix Icon 'new' display [\#381](https://github.com/youzan/vant/pull/381) ([@pangxie1991](https://github.com/pangxie1991))
 * fix Sku button border radius [\#378](https://github.com/youzan/vant/pull/378) [@chenjiahan](https://github.com/chenjiahan)
 * fix Radio & Checkbox disabled color [\#383](https://github.com/youzan/vant/pull/383) [@chenjiahan](https://github.com/chenjiahan)
@@ -882,7 +882,7 @@
 **Bug Fixes**
 
 * fix AddressEdit name key [\#187](https://github.com/youzan/vant/pull/187) [@chenjiahan](https://github.com/chenjiahan)
-* fix Filed textarea wrong height when display none [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
+* fix Field textarea wrong height when display none [\#188](https://github.com/youzan/vant/pull/188) [@chenjiahan](https://github.com/chenjiahan)
 * fix compile error in windows [\#185](https://github.com/youzan/vant/pull/182) [@pangxie1991](https://github.com/pangxie1991)
 
 ### [0.9.10](https://github.com/youzan/vant/tree/v0.9.10)

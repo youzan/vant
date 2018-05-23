@@ -264,9 +264,9 @@ test('show search result', done => {
     }
   });
 
-  const filed = wrapper.findAll('.van-field__control').at(2);
-  const input = filed.element;
-  filed.trigger('focus');
+  const field = wrapper.findAll('.van-field__control').at(2);
+  const input = field.element;
+  field.trigger('focus');
 
   const items = wrapper.findAll('.van-icon-location');
   items.at(0).element.parentNode.click();
@@ -276,7 +276,7 @@ test('show search result', done => {
   items.at(2).element.parentNode.click();
   expect(input.value).toEqual('address2');
 
-  filed.trigger('blur');
+  field.trigger('blur');
   setTimeout(() => {
     done();
   }, 150);
