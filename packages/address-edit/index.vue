@@ -251,7 +251,7 @@ export default create({
     },
 
     getErrorMessageByKey(key) {
-      const value = this.data[key];
+      const value = this.data[key].trim();
       const { $t } = this;
 
       switch (key) {

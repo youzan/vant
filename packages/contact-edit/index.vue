@@ -81,7 +81,7 @@ export default create({
     },
 
     getErrorMessageByKey(key) {
-      const value = this.data[key];
+      const value = this.data[key].trim();
       switch (key) {
         case 'name':
           return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
