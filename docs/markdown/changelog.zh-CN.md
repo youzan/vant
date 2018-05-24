@@ -1,5 +1,27 @@
 ## 更新日志
 
+### [1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
+`2018-05-24`
+
+**Improvements**
+
+- Rate: 新增 change 事件 [\#1102](https://github.com/youzan/vant/pull/1102) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: 新增 lazyRender 属性 [\#1138](https://github.com/youzan/vant/pull/1138) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: 新增 close 事件 [\#1127](https://github.com/youzan/vant/pull/1127) [@chenjiahan](https://github.com/chenjiahan)
+- Sku: 优化错误提示 [\#1100](https://github.com/youzan/vantpull/1100) [@w91](https://github.com/w91)
+- Dialog: 优化按钮文字选中 [\#1148](https://github.com/youzan/vant/pull/1148) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: 优化未选中项的颜色 [\#1142](https://github.com/youzan/vant/pull/1142) [@chenjiahan](https://github.com/chenjiahan)
+- AddressEdit: 优化空值校验 [\#1150](https://github.com/youzan/vant/pull/1150) [@chenjiahan](https://github.com/chenjiahan)
+- TreeSelect: 支持 string 类型 id [\#1126](https://github.com/youzan/vant/pull/1126) [@chenjiahan](https://github.com/chenjiahan)
+- Utils: 移除未使用的 scroll 方法 [\#1112](https://github.com/youzan/vant/pull/1112) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- 修复 Toast 使用 forbidClick 属性时导致其他弹层的蒙层失效的问题 [\#1154](https://github.com/youzan/vant/pull/1154) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Field 在 safari 上不正确的 margin [\#1147](https://github.com/youzan/vant/pull/1147) [@chenjiahan](https://github.com/chenjiahan)
+- 修复 Progress 文字超出边界的问题 [\#1135](https://github.com/youzan/vant/pull/1135) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
 `2018-05-18`
 
