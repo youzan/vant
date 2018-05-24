@@ -4,12 +4,20 @@ import { TransitionStub } from '@vue/test-utils';
 
 Vue.component('transition', TransitionStub);
 
-test('create a forbidClick toast', () => {
+test('create a forbidClick toast', done => {
   const toast = Toast({
     forbidClick: true
   });
 
   expect(toast.$el.outerHTML).toMatchSnapshot();
+  setTimeout(() => {
+    expect(document.body.classList.contains('van-toast--unclickable')).toBeTruthy();
+    toast.forbidClick = false;
+    setTimeout(() => {
+      expect(document.body.classList.contains('van-toast--unclickable')).toBeFalsy();
+      done();
+    });
+  });
 });
 
 it('toast disappeared after duration', (done) => {
@@ -20,7 +28,7 @@ it('toast disappeared after duration', (done) => {
   setTimeout(() => {
     expect(toast.$el.style.display).toEqual('none');
     done();
-  }, 500);
+  }, 50);
 });
 
 test('clear toast', () => {
