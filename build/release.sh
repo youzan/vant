@@ -10,22 +10,20 @@ read -p "Releasing $VERSION - are you sure? (y/n)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  echo "Releasing $VERSION ..."
-
   # build
   VERSION=$VERSION npm run dist
 
   # publish vant-css
   echo "Releasing vant-css $VERSION ..."
   cd packages/vant-css
-  npm version $VERSION --message "[release] $VERSION"
+  npm version $VERSION
   npm publish
   cd ../..
 
   # commit
-  git add -A
-  git commit -m "[build] $VERSION"
-  npm version $VERSION --message "[release] $VERSION"
+  npm version $VERSION --no-git-tag-version
+  git tag v$VERSION
+  git commit -am "[release] $VERSION"
 
   # publish
   git push origin master

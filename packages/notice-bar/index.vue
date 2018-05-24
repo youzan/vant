@@ -1,49 +1,45 @@
 <template>
   <div
     v-show="showNoticeBar"
-    :class="['van-notice-bar', { 'van-notice-bar--withicon': mode }]"
+    :class="b({ withicon: mode })"
     :style="barStyle"
     @click="$emit('click')"
   >
-    <div class="van-notice-bar__left-icon" v-if="leftIcon">
-      <img :src="leftIcon" />
+    <div v-if="leftIcon" :class="b('left-icon')">
+      <img :src="leftIcon" >
     </div>
-    <div class="van-notice-bar__content-wrap" ref="contentWrap">
+    <div :class="b('wrap')" ref="wrap">
       <div
         ref="content"
-        :class="['van-notice-bar__content', animationClass]"
+        :class="[b('content'), animationClass]"
         :style="contentStyle"
         @animationend="onAnimationEnd"
+        @webkitAnimationEnd="onAnimationEnd"
       >
         <slot>{{ text }}</slot>
       </div>
     </div>
-    <van-icon class="van-notice-bar__right-icon" :name="iconName" v-if="iconName" @click="onClickIcon" />
+    <icon
+      v-if="iconName"
+      :class="b('right-icon')"
+      :name="iconName"
+      @click="onClickIcon"
+    />
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
+import create from '../utils/create';
 
-const NOTICE_BAR_MODE = ['', 'closeable', 'link'];
-
-export default {
-  name: 'van-notice-bar',
-
-  components: {
-    [Icon.name]: Icon
-  },
+export default create({
+  name: 'notice-bar',
 
   props: {
     text: String,
-    leftIcon: String,
+    mode: String,
     color: String,
+    leftIcon: String,
     background: String,
-    mode: {
-      type: String,
-      default: '',
-      validator: val => NOTICE_BAR_MODE.indexOf(val) !== -1
-    },
     delay: {
       type: [String, Number],
       default: 1
@@ -73,12 +69,14 @@ export default {
     iconName() {
       return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
     },
+
     barStyle() {
       return {
         color: this.color,
         background: this.background
       };
     },
+
     contentStyle() {
       return {
         paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
@@ -88,14 +86,26 @@ export default {
     }
   },
 
-  mounted() {
-    const offsetWidth = this.$refs.content.getBoundingClientRect().width;
-    const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
-    if (this.scrollable && offsetWidth > wrapWidth) {
-      this.wrapWidth = wrapWidth;
-      this.offsetWidth = offsetWidth;
-      this.duration = offsetWidth / this.speed;
-      this.animationClass = 'van-notice-bar__play';
+  watch: {
+    text: {
+      handler() {
+        this.$nextTick(() => {
+          const { wrap, content } = this.$refs;
+          if (!wrap || !content) {
+            return;
+          }
+
+          const wrapWidth = wrap.getBoundingClientRect().width;
+          const offsetWidth = content.getBoundingClientRect().width;
+          if (this.scrollable && offsetWidth > wrapWidth) {
+            this.wrapWidth = wrapWidth;
+            this.offsetWidth = offsetWidth;
+            this.duration = offsetWidth / this.speed;
+            this.animationClass = this.b('play');
+          }
+        });
+      },
+      immediate: true
     }
   },
 
@@ -103,13 +113,14 @@ export default {
     onClickIcon() {
       this.showNoticeBar = this.mode !== 'closeable';
     },
+
     onAnimationEnd() {
       this.firstRound = false;
       this.$nextTick(() => {
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
-        this.animationClass = 'van-notice-bar__play--infinite';
+        this.animationClass = this.b('play--infinite');
       });
     }
   }
-};
+});
 </script>

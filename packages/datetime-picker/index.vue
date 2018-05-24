@@ -1,54 +1,61 @@
 <template>
-  <van-picker
+  <picker
     ref="picker"
+    :title="title"
     :columns="columns"
-    :visible-item-count="visibleItemCount"
-    @change="handlePickerChange"
-    @confirm="handlePickerConfirm"
+    :item-height="itemHeight"
+    :show-toolbar="showToolbar"
+    :visibie-item-height="visibleItemCount"
+    :confirm-button-text="confirmButtonText"
+    :cancel-button-text="cancelButtonText"
+    @change="onChange"
+    @confirm="onConfirm"
     @cancel="$emit('cancel')"
-    showToolbar>
-  </van-picker>
+  />
 </template>
 
 <script>
 import Picker from '../picker';
+import create from '../utils/create';
 
-const allowedType = ['time', 'date', 'datetime'];
+const currentYear = new Date().getFullYear();
+const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
 
-export default {
-  name: 'van-datetime-picker',
+export default create({
+  name: 'datetime-picker',
 
   components: {
-    [Picker.name]: Picker
+    Picker
   },
 
   props: {
+    value: {},
+    title: String,
+    itemHeight: Number,
+    visibleItemCount: Number,
+    confirmButtonText: String,
+    cancelButtonText: String,
     type: {
       type: String,
-      default: 'datetime',
-      validator(value) {
-        return allowedType.indexOf(value) > -1;
-      }
+      default: 'datetime'
+    },
+    showToolbar: {
+      type: Boolean,
+      default: true
     },
     format: {
       type: String,
       default: 'YYYY.MM.DD HH时 mm分'
     },
-    visibleItemCount: {
-      type: Number,
-      default: 5
-    },
     minDate: {
       type: Date,
-      default() {
-        return new Date(new Date().getFullYear() - 10, 0, 1);
-      }
+      default: () => new Date(currentYear - 10, 0, 1),
+      validator: isValidDate
     },
     maxDate: {
       type: Date,
-      default() {
-        return new Date(new Date().getFullYear() + 10, 11, 31);
-      }
+      default: () => new Date(currentYear + 10, 11, 31),
+      validator: isValidDate
     },
     minHour: {
       type: Number,
@@ -57,25 +64,12 @@ export default {
     maxHour: {
       type: Number,
       default: 23
-    },
-    value: null
+    }
   },
 
   data() {
-    let value = this.value;
-    if (!value) {
-      if (this.type.indexOf('date') > -1) {
-        value = this.minDate;
-      } else {
-        const minHour = this.minHour;
-        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
-      }
-    } else {
-      value = this.correctValue(value);
-    }
-
     return {
-      innerValue: value
+      innerValue: this.correctValue(this.value)
     };
   },
 
@@ -85,6 +79,7 @@ export default {
       const isEqual = this.type === 'time' ? val === this.innerValue : val.valueOf() === this.innerValue.valueOf();
       if (!isEqual) this.innerValue = val;
     },
+
     innerValue(val) {
       this.updateColumnValue(val);
       this.$emit('input', val);
@@ -112,6 +107,7 @@ export default {
       ];
 
       if (this.type === 'date') result.splice(3, 2);
+      if (this.type === 'year-month') result.splice(2, 3);
       return result;
     },
     columns() {
@@ -131,16 +127,26 @@ export default {
 
   methods: {
     correctValue(value) {
-      // 仅时间
-      if (this.type === 'time') {
+      // validate value
+      const isDateType = this.type !== 'time';
+      if (isDateType && !isValidDate(value)) {
+        value = this.minDate;
+      } else if (!value) {
+        const { minHour } = this;
+        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
+      }
+
+      // time type
+      if (!isDateType) {
         const [hour, minute] = value.split(':');
         let correctedHour = Math.max(hour, this.minHour);
         correctedHour = Math.min(correctedHour, this.maxHour);
+        correctedHour = `00${correctedHour}`.slice(-2);
 
         return `${correctedHour}:${minute}`;
       }
 
-      // 含有日期的情况
+      // date type
       const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', value);
       const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', value);
       const minDay = new Date(minYear, minMonth - 1, minDate, minHour, minMinute);
@@ -150,6 +156,7 @@ export default {
 
       return new Date(value);
     },
+
     times(n, iteratee) {
       let index = -1;
       const result = Array(n);
@@ -159,6 +166,7 @@ export default {
       }
       return result;
     },
+
     getBoundary(type, value) {
       const boundary = this[`${type}Date`];
       const year = boundary.getFullYear();
@@ -195,6 +203,7 @@ export default {
         [`${type}Minute`]: minute
       };
     },
+
     getTrueValue(formattedValue) {
       if (!formattedValue) return;
       while (isNaN(parseInt(formattedValue, 10))) {
@@ -202,6 +211,7 @@ export default {
       }
       return parseInt(formattedValue, 10);
     },
+
     getMonthEndDay(year, month) {
       if (this.isShortMonth(month)) {
         return 30;
@@ -211,17 +221,21 @@ export default {
         return 31;
       }
     },
+
     isLeapYear(year) {
-      return (year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0);
+      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
     },
+
     isShortMonth(month) {
       return [4, 6, 9, 11].indexOf(month) > -1;
     },
-    handlePickerConfirm() {
+
+    onConfirm() {
       this.$emit('confirm', this.innerValue);
     },
-    handlePickerChange(picker) {
-      const values = picker.$children.filter(child => child.currentValue !== undefined).map(child => child.currentValue);
+
+    onChange(picker) {
+      const values = picker.getValues();
       let value;
 
       if (this.type === 'time') {
@@ -231,6 +245,9 @@ export default {
         const month = this.getTrueValue(values[1]);
         const maxDate = this.getMonthEndDay(year, month);
         let date = this.getTrueValue(values[2]);
+        if (this.type === 'year-month') {
+          date = 1;
+        }
         date = date > maxDate ? maxDate : date;
         let hour = 0;
         let minute = 0;
@@ -242,8 +259,11 @@ export default {
       }
       value = this.correctValue(value);
       this.innerValue = value;
-      this.$emit('change', picker);
+      this.$nextTick(() => {
+        this.$emit('change', picker);
+      });
     },
+
     updateColumnValue(value) {
       let values = [];
       if (this.type === 'time') {
@@ -264,34 +284,26 @@ export default {
             `0${value.getMinutes()}`.slice(-2)
           );
         }
+        if (this.type === 'year-month') {
+          values = values.slice(0, 2);
+        }
       }
+
       this.$nextTick(() => {
         this.setColumnByValues(values);
       });
     },
+
     setColumnByValues(values) {
       if (!this.$refs.picker) {
         return;
       }
-      const setColumnValue = this.$refs.picker.setColumnValue;
-      if (this.type === 'time') {
-        setColumnValue(0, values[0]);
-        setColumnValue(1, values[1]);
-      } else {
-        setColumnValue(0, values[0]);
-        setColumnValue(1, values[1]);
-        setColumnValue(2, values[2]);
-        if (this.type === 'datetime') {
-          setColumnValue(3, values[3]);
-          setColumnValue(4, values[4]);
-        }
-      }
-      [].forEach.call(this.$refs.picker.$children, child => child.doOnValueChange());
+      this.$refs.picker.setValues(values);
     }
   },
 
   mounted() {
     this.updateColumnValue(this.innerValue);
   }
-};
+});
 </script>

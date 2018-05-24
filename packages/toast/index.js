@@ -1,59 +1,103 @@
 import Vue from 'vue';
 import VueToast from './toast';
-
-let instance;
+import { isObj } from '../utils';
 
 const defaultOptions = {
-  visible: true,
   type: 'text',
-  position: 'middle',
-  duration: 3000,
   mask: false,
+  message: '',
+  value: true,
+  duration: 3000,
+  position: 'middle',
+  loadingType: 'circular',
   forbidClick: false,
-  clear: () => {
-    instance.visible = false;
-  }
+  overlayStyle: {}
 };
+const parseOptions = message => isObj(message) ? message : { message };
 
-const createInstance = () => {
-  if (!instance) {
-    const ToastConstructor = Vue.extend(VueToast);
-    instance = new ToastConstructor({
+let queue = [];
+let singleton = true;
+let currentOptions = { ...defaultOptions };
+
+function createInstance() {
+  if (!queue.length || !singleton) {
+    const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
-    document.body.appendChild(instance.$el);
+    document.body.appendChild(toast.$el);
+    queue.push(toast);
   }
+  return queue[queue.length - 1];
 };
 
-const Toast = (options = {}) => {
-  createInstance();
+// transform toast options to popup props
+function transformer(options) {
+  options.overlay = options.mask;
+  return options;
+}
 
-  options = typeof options === 'string' ? { message: options } : options;
-  options = { ...defaultOptions, ...options };
-  Object.assign(instance, options);
+function Toast(options = {}) {
+  const toast = createInstance();
 
-  clearTimeout(instance.timer);
+  options = {
+    ...currentOptions,
+    ...parseOptions(options),
+    clear() {
+      toast.value = false;
+    }
+  };
 
-  if (options.duration !== 0) {
-    instance.timer = setTimeout(() => {
-      instance.clear();
+  Object.assign(toast, transformer(options));
+  clearTimeout(toast.timer);
+
+  if (options.duration > 0) {
+    toast.timer = setTimeout(() => {
+      toast.clear();
     }, options.duration);
   }
 
-  return instance;
+  return toast;
 };
 
-const createMethod = type => (options = {}) => Toast({
-  type,
-  message: typeof options === 'string' ? options : options.message,
-  ...options
+const createMethod = type => options => Toast({
+  type, ...parseOptions(options)
 });
 
-Toast.loading = createMethod('loading');
-Toast.success = createMethod('success');
-Toast.fail = createMethod('fail');
-Toast.clear = () => {
-  instance && instance.clear();
+['loading', 'success', 'fail'].forEach(method => {
+  Toast[method] = createMethod(method);
+});
+
+Toast.clear = all => {
+  if (queue.length) {
+    if (all) {
+      queue.forEach(toast => {
+        toast.clear();
+      });
+      queue = [];
+    } else if (singleton) {
+      queue[0].clear();
+    } else {
+      queue.shift().clear();
+    }
+  }
 };
+
+Toast.setDefaultOptions = options => {
+  Object.assign(currentOptions, options);
+};
+
+Toast.resetDefaultOptions = () => {
+  currentOptions = { ...defaultOptions };
+};
+
+Toast.allowMultiple = (allow = true) => {
+  singleton = !allow;
+};
+
+Toast.install = () => {
+  Vue.use(VueToast);
+};
+
+Vue.prototype.$toast = Toast;
 
 export default Toast;

@@ -1,117 +1,73 @@
 <template>
-  <div
-    class="van-search"
-    :class="{ 'van-search--show-action': showAction }"
-    :style="{ 'background-color': background }">
-    <div class="van-search__input-wrap" v-clickoutside="handleClickoutside">
-      <van-icon name="search"></van-icon>
-      <input
-        type="search"
-        class="van-search__input"
-        v-refocus="focusStatus"
-        :value="value"
-        :placeholder="placeholder"
-        @input="handleInput"
-        @focus="handleFocus"
-        @keypress.enter.prevent="handleSearch">
-      <van-icon name="clear" @click="handleClean" v-show="isFocus"></van-icon>
-    </div>
-    <div class="van-search__action" v-if="showAction">
+  <div :class="b({ 'show-action': showAction })" :style="{ background }">
+    <icon name="search" />
+    <field
+      v-bind="$attrs"
+      v-on="listeners"
+      :value="value"
+      type="search"
+      icon="clear"
+      :border="false"
+      @click-icon="$emit('input', '')"
+    />
+    <div v-if="showAction" :class="b('action')" >
       <slot name="action">
-        <div class="van-search__action-text" @click="handleBack">取消</div>
+        <div :class="b('cancel')" @click="onBack">{{ $t('cancel') }}</div>
       </slot>
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
-import Clickoutside from '../utils/clickoutside';
+import Field from '../field';
+import create from '../utils/create';
 
-export default {
-  name: 'van-search',
+export default create({
+  name: 'search',
+
+  inheritAttrs: false,
 
   components: {
-    [Icon.name]: Icon
+    Field
   },
 
   props: {
-    placeholder: String,
     value: String,
-    showAction: {
-      type: Boolean,
-      default: false
-    },
+    showAction: Boolean,
     background: {
       type: String,
       default: '#f2f2f2'
     }
   },
 
-  data() {
-    return {
-      focusStatus: false,
-      isFocus: false
-    };
-  },
-
-  directives: {
-    Clickoutside,
-    refocus: {
-      update: function(el, state) {
-        if (state.value) {
-          el.focus();
-        }
-      }
+  computed: {
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
     }
   },
 
   methods: {
-    /**
-     * 进入input焦点，出现close和取消
-     */
-    handleFocus() {
-      this.isFocus = true;
+    onInput(value) {
+      this.$emit('input', value);
     },
 
-    handleInput(event) {
-      this.$emit('input', event.target.value);
+    onKeypress(event) {
+      // press enter
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        this.$emit('search', this.value);
+      }
+      this.$emit('keypress', event);
     },
 
-    /**
-     * 点击close后清空value后，再聚焦input框
-     */
-    handleClean() {
-      this.$emit('input', '');
-      this.focusStatus = true;
-
-      // 保证多次点击 clean 后，仍能触发 refocus
-      this.$nextTick(() => {
-        this.focusStatus = false;
-      });
-    },
-
-    /**
-     * 点击取消后，清空所有回复最初状态
-     */
-    handleBack() {
+    onBack() {
       this.$emit('input', '');
       this.$emit('cancel');
-    },
-
-    /**
-     * input输入回车后，发送回调
-     */
-    handleSearch(e) {
-      e.preventDefault();
-      this.$emit('search', this.value);
-      return false;
-    },
-
-    handleClickoutside() {
-      this.isFocus = false;
-      this.focusStatus = false;
     }
   }
-};
+});
 </script>

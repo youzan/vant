@@ -1,46 +1,34 @@
 <template>
-  <div :class="['van-steps', `van-steps--${direction}`]">
-    <div class="van-steps__status" v-if="title || description">
-      <div class="van-steps__icon" v-if="icon || $slots.icon">
+  <div :class="b([direction])">
+    <div v-if="title || description" :class="b('status')">
+      <div v-if="icon || $slots.icon" :class="b('icon')">
         <slot name="icon">
-          <van-icon :name="icon" :class="iconClass"></van-icon>
+          <icon :name="icon" :class="iconClass" />
         </slot>
       </div>
-      <div class="van-steps__message">
-        <div class="van-steps__message-wrapper">
-          <div class="van-steps__title" v-text="title"></div>
-          <div class="van-steps__desc" v-text="description"></div>
-        </div>
+      <div :class="b('message')">
+        <div :class="b('title')" v-text="title" />
+        <div :class="b('desc')" class="van-ellipsis" v-text="description" />
       </div>
-      <slot name="message-extra">
-      </slot>
+      <slot name="message-extra" />
     </div>
-    <div class="van-steps__items" :class="{
-        'van-steps__items--alone': !title && !description
-      }">
-      <slot></slot>
+    <div :class="b('items', { alone: !title && !description })">
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
+import create from '../utils/create';
 
-export default {
-  name: 'van-steps',
-
-  components: {
-    [Icon.name]: Icon
-  },
+export default create({
+  name: 'steps',
 
   props: {
-    active: Number,
     icon: String,
-    iconClass: {
-      type: String,
-      default: ''
-    },
     title: String,
+    active: Number,
+    iconClass: String,
     description: String,
     direction: {
       type: String,
@@ -57,5 +45,5 @@ export default {
       steps: []
     };
   }
-};
+});
 </script>

@@ -1,24 +1,33 @@
-var Components = require('./get-components')();
-var fs = require('fs');
-var render = require('json-templater/string');
-var uppercamelcase = require('uppercamelcase');
-var path = require('path');
+const Components = require('./get-components')();
+const fs = require('fs-extra');
+const glob = require('fast-glob');
+const path = require('path');
+const uppercamelize = require('uppercamelcase');
+const version = process.env.VERSION || require('../../package.json').version;
+const tips = '// This file is auto gererated by build/bin/build-entry.js';
+const root = path.join(__dirname, '../../');
+const join = dir => path.join(root, dir);
 
-var OUTPUT_PATH = path.join(__dirname, '../../packages/index.js');
-var IMPORT_TEMPLATE = 'import {{name}} from \'./{{package}}\';';
-var ISNTALL_COMPONENT_TEMPLATE = '  {{name}}';
-var MAIN_TEMPLATE = `{{include}}
+function buildVantEntry() {
+  const uninstallComponents = [
+    'Lazyload',
+    'Waterfall'
+  ];
 
-const version = '{{version}}';
+  const importList = Components.map(name => `import ${uppercamelize(name)} from './${name}';`);
+  const exportList = Components.map(name => `${uppercamelize(name)}`);
+  const intallList = exportList.filter(name => !~uninstallComponents.indexOf(uppercamelize(name)));
+  const content = `${tips}
+${importList.join('\n')}
+
+const version = '${version}';
 const components = [
-{{components}}
+  ${intallList.join(',\n  ')}
 ];
 
-const install = function(Vue) {
-  if (install.installed) return;
-
-  components.forEach(component => {
-    Vue.component(component.name, component);
+const install = Vue => {
+  components.forEach(Component => {
+    Vue.use(Component);
   });
 };
 
@@ -30,54 +39,70 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-{{list}}
+  ${exportList.join(',\n  ')}
 };
+
 export default {
   install,
   version
 };
 `;
 
-delete Components.font;
+  fs.writeFileSync(path.join(__dirname, '../../packages/index.js'), content);
+}
 
-var includeComponentTemplate = [];
-var installTemplate = [];
-var listTemplate = [];
+function buildDemoEntry() {
+  const dir = path.join(__dirname, '../../packages');
+  const demos = fs.readdirSync(dir)
+    .filter(name => fs.existsSync(path.join(dir, `${name}/demo/index.vue`)))
+    .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/${name}/demo'), '${name}')), '${name}'))`);
 
-Components.forEach(name => {
-  var componentName = uppercamelcase(name);
+  const content = `${tips}
+import { asyncWrapper, componentWrapper } from './demo-common';
 
-  includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
-    name: componentName,
-    package: name
-  }));
+export default {
+  ${demos.join(',\n  ')}
+};
+`;
+  fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
+}
 
-  if ([
-    // directives
-    'Lazyload',
-    'Waterfall',
+// generate webpack entry file for markdown docs
+function buildDocsEntry() {
+  const output = join('docs/src/docs-entry.js');
+  const getName = fullPath => fullPath.replace(/\/(en|zh)/, '.$1').split('/').pop().replace('.md', '');
+  const docs = glob
+    .sync([
+      join('docs/**/*.md'),
+      join('packages/**/*.md'),
+      '!**/node_modules/**'
+    ])
+    .map(fullPath => {
+      const name = getName(fullPath);
+      return `'${name}': wrapper(r => require.ensure([], () => r(require('${path.relative(join('docs/src'), fullPath)}')), '${name}'))`;
+    });
 
-    // services
-    'Dialog',
-    'Toast',
-    'ImagePreview'
-  ].indexOf(componentName) === -1) {
-    installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
-      name: componentName,
-      component: name
-    }));
-  }
+  const content = `${tips}
+import progress from 'nprogress';
 
-  listTemplate.push(`  ${componentName}`);
-});
+function wrapper(component) {
+  return function(r) {
+    progress.start();
+    component(r).then(() => {
+      progress.done();
+    }).catch(() => {
+      progress.done();
+    });
+  };
+}
 
-var template = render(MAIN_TEMPLATE, {
-  include: includeComponentTemplate.join('\n'),
-  list: listTemplate.join(',\n'),
-  components: installTemplate.join(',\n') || ' ',
-  version: process.env.VERSION || require('../../package.json').version
-});
+export default {
+  ${docs.join(',\n  ')}
+};
+`;
+  fs.writeFileSync(output, content);
+}
 
-fs.writeFileSync(OUTPUT_PATH, template);
-console.log('[build entry] DONE:' + OUTPUT_PATH);
-
+buildVantEntry();
+buildDemoEntry();
+buildDocsEntry();

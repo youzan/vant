@@ -1,46 +1,35 @@
 <template>
   <div class="app">
-    <zan-doc :simulators="simulators" :currentSimulator="currentSimulator" :config="config" :base="base">
-      <router-view @changeDemoURL="onChangeDemoURL"></router-view>
-    </zan-doc>
+    <van-doc :simulators="simulators" :current-simulator="currentSimulator" :config="config" :base="base">
+      <router-view @changeDemoURL="onChangeDemoURL" />
+    </van-doc>
   </div>
 </template>
 
 <script>
 import docConfig from './doc.config';
-import { getLang } from './utils/lang';
 
 export default {
   data() {
-    if (window.location.host === 'www.youzanyun.com') {
-      const group = docConfig['zh-CN'].nav[0].groups[0];
-      group.list = group.list.filter(item => item.title !== '业务组件');
-    }
-
+    const path = location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples';
     return {
-      simulators: [`/zanui/vant/examples${location.hash}`],
-      demoURL: '',
-      lang: getLang()
+      simulators: [`${path}${location.hash}`],
+      demoURL: ''
     };
   },
 
   computed: {
     base() {
-      return `/${this.lang}/component`;
+      return `/${this.$vantLang}`;
     },
 
     config() {
-      return docConfig[this.lang];
+      return docConfig[this.$vantLang];
     },
 
     currentSimulator() {
-      return this.$route.name === 'zh-CN/demo' ? 1 : 0;
-    }
-  },
-
-  watch: {
-    '$route'(to) {
-      this.lang = to.meta.lang;
+      const { name } = this.$route;
+      return name && name.indexOf('demo') !== -1 ? 1 : 0;
     }
   },
 
@@ -51,3 +40,33 @@ export default {
   }
 };
 </script>
+
+<style lang="postcss">
+.van-doc-intro {
+  text-align: center;
+  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+
+  &__youzan {
+    width: 32px;
+    height: 32px;
+    display: block;
+    margin: 25px 0 0;
+  }
+
+  &__logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 60px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 15px;
+    color: #455a64;
+  }
+}
+</style>

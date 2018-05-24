@@ -1,17 +1,18 @@
 <template>
-  <div class="van-submit-bar">
-    <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
-      {{ tip }}<slot name="tip"></slot>
+  <div :class="b()">
+    <div :class="b('tip')" v-show="tip || $slots.tip">
+      {{ tip }}<slot name="tip" />
     </div>
-    <div class="van-submit-bar__bar">
-      <div class="van-submit-bar__price">
+    <div :class="b('bar')">
+      <slot />
+      <div :class="b('price')">
         <template v-if="hasPrice">
-          <span class="van-submit-bar__price-text">合计：</span>
-          <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
-          <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
+          <span>{{ label || $t('label') }}</span>
+          <span :class="b('price-integer')">{{ currency }}{{ priceInterger }}.</span>
+          <span :class="b('price-decimal')">{{ priceDecimal }}</span>
         </template>
       </div>
-      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">
+      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="$emit('submit')">
         {{ loading ? '' : buttonText }}
       </van-button>
     </div>
@@ -19,22 +20,28 @@
 </template>
 
 <script>
-import Button from '../button';
+import VanButton from '../button';
+import create from '../utils/create';
 
-export default {
-  name: 'van-submit-bar',
+export default create({
+  name: 'submit-bar',
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   props: {
     tip: String,
     type: Number,
     price: Number,
+    label: String,
     loading: Boolean,
     disabled: Boolean,
     buttonText: String,
+    currency: {
+      type: String,
+      default: '¥'
+    },
     buttonType: {
       type: String,
       default: 'danger'
@@ -49,17 +56,9 @@ export default {
       return Math.floor(this.price / 100);
     },
     priceDecimal() {
-      const decimal = this.price % 100;
+      const decimal = Math.floor(this.price % 100);
       return (decimal < 10 ? '0' : '') + decimal;
     }
-  },
-
-  methods: {
-    onSubmit() {
-      if (!this.disabled && !this.loading) {
-        this.$emit('submit');
-      }
-    }
   }
-};
+});
 </script>

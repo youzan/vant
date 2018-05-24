@@ -1,11 +1,13 @@
 <template>
-  <div class="van-goods-action">
-    <slot></slot>
+  <div :class="b()">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-goods-action'
-};
+import create from '../utils/create';
+
+export default create({
+  name: 'goods-action'
+});
 </script>

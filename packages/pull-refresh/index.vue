@@ -1,54 +1,50 @@
 <template>
-  <div
-    class="van-pull-refresh"
-    :style="style"
-    @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
-    @touchend="onTouchEnd"
-    @touchcancel="onTouchEnd"
-  >
-    <div class="van-pull-refresh__head">
-      <slot name="normal" v-if="status === 'normal'"></slot>
-      <slot name="pulling" v-if="status === 'pulling'">
-        <span class="van-pull-refresh__text">{{ pullingText }}</span>
-      </slot>
-      <slot name="loosing" v-if="status === 'loosing'">
-        <span class="van-pull-refresh__text">{{ loosingText }}</span>
-      </slot>
-      <slot name="loading" v-if="status === 'loading'">
-        <div class="van-pull-refresh__loading">
-          <van-loading />
-          <span>{{ loadingText }}</span>
-        </div>
-      </slot>
+  <div :class="b()">
+    <div
+      :class="b('track')"
+      :style="style"
+      @touchstart="onTouchStart"
+      @touchmove="onTouchMove"
+      @touchend="onTouchEnd"
+      @touchcancel="onTouchEnd"
+    >
+      <div :class="b('head')">
+        <slot v-if="status === 'normal'" name="normal" />
+        <slot v-if="status === 'pulling'" name="pulling">
+          <span :class="b('text')">{{ pullingText || $t('pulling') }}</span>
+        </slot>
+        <slot v-if="status === 'loosing'" name="loosing">
+          <span :class="b('text')">{{ loosingText || $t('loosing') }}</span>
+        </slot>
+        <slot v-if="status === 'loading'" name="loading">
+          <div :class="b('loading')">
+            <loading />
+            <span>{{ loadingText || $t('loadingTip') }}</span>
+          </div>
+        </slot>
+      </div>
+      <slot />
     </div>
-    <slot></slot>
   </div>
 </template>
 
 <script>
-import Loading from '../loading';
+import create from '../utils/create';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
-export default {
-  name: 'van-pull-refresh',
+export default create({
+  name: 'pull-refresh',
+
+  mixins: [Touch],
 
   props: {
+    pullingText: String,
+    loosingText: String,
+    loadingText: String,
     value: {
       type: Boolean,
       required: true
-    },
-    pullingText: {
-      type: String,
-      default: '下拉即可刷新...'
-    },
-    loosingText: {
-      type: String,
-      default: '释放即可刷新...'
-    },
-    loadingText: {
-      type: String,
-      default: '加载中...'
     },
     animationDuration: {
       type: Number,
@@ -58,10 +54,6 @@ export default {
       type: Number,
       default: 50
     }
-  },
-
-  components: {
-    [Loading.name]: Loading
   },
 
   data() {
@@ -87,10 +79,8 @@ export default {
 
   watch: {
     value(val) {
-      if (!val) {
-        this.duration = this.animationDuration;
-        this.getStatus(0);
-      }
+      this.duration = this.animationDuration;
+      this.getStatus(val ? this.headHeight : 0, val);
     }
   },
 
@@ -101,8 +91,7 @@ export default {
       }
       if (this.getCeiling()) {
         this.duration = 0;
-        this.startX = event.touches[0].clientX;
-        this.startY = event.touches[0].clientY;
+        this.touchStart(event);
       }
     },
 
@@ -111,8 +100,7 @@ export default {
         return;
       }
 
-      this.deltaY = event.touches[0].clientY - this.startY;
-      this.direction = this.getDirection(event.touches[0]);
+      this.touchMove(event);
 
       if (!this.ceiling && this.getCeiling()) {
         this.duration = 0;
@@ -122,9 +110,9 @@ export default {
 
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
+          this.getStatus(this.ease(this.deltaY));
           event.preventDefault();
         }
-        this.getStatus(this.ease(this.deltaY));
       }
     },
 
@@ -138,6 +126,7 @@ export default {
         if (this.status === 'loosing') {
           this.getStatus(this.headHeight, true);
           this.$emit('input', true);
+          this.$emit('refresh');
         } else {
           this.getStatus(0);
         }
@@ -169,13 +158,7 @@ export default {
       if (status !== this.status) {
         this.status = status;
       }
-    },
-
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     }
   }
-};
+});
 </script>

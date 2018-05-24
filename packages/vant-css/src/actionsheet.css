@@ -6,14 +6,17 @@
   right: 0;
   bottom: 0;
   color: $text-color;
-  transition: .2s ease-out;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background-color: $background-color;
 
   &--withtitle {
     background-color: $white;
   }
 
-  &__item {
+  &__item,
+  &__cancel {
     height: 50px;
     line-height: 50px;
     font-size: 16px;
@@ -28,6 +31,7 @@
   &__subname {
     font-size: 12px;
     color: $gray-darker;
+    margin-left: 5px;
   }
 
   &__loading {
@@ -43,16 +47,13 @@
     text-align: center;
 
     .van-icon-close {
-      top: 11px;
-      right: 15px;
+      top: 0;
+      right: 0;
+      padding: 0 15px;
+      font-size: 18px;
+      color: $gray-dark;
       position: absolute;
-      font-size: 22px;
-      line-height: 22px;
+      line-height: inherit;
     }
-  }
-
-  &-float-enter,
-  &-float-leave-active {
-    transform: translate3d(0, 100%, 0);
   }
 }

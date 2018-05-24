@@ -1,12 +1,14 @@
 <template>
-  <div :class="['van-tabbar', 'van-hairline--top-bottom', { 'van-tabbar--fixed': fixed }]">
-    <slot></slot>
+  <div class="van-hairline--top-bottom" :class="b({ fixed })">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-tabbar',
+import create from '../utils/create';
+
+export default create({
+  name: 'tabbar',
 
   data() {
     return {
@@ -42,5 +44,5 @@ export default {
       this.$emit('change', active);
     }
   }
-};
+});
 </script>

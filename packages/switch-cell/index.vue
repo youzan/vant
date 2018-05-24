@@ -1,24 +1,24 @@
 <template>
-  <van-cell :title="title" class="van-switch-cell">
-    <van-switch :value="value" @input="$emit('input', $event)" :disabled="disabled" :loading="loading" />
-  </van-cell>
+  <cell center :title="title" :border="border" :class="b()">
+    <van-switch v-bind="$props" @input="$emit('input', $event)" />
+  </cell>
 </template>
 
 <script>
-import Cell from '../cell';
-import Switch from '../switch';
+import VanSwitch from '../switch';
+import create from '../utils/create';
 
-export default {
-  name: 'van-switch-cell',
+export default create({
+  name: 'switch-cell',
 
   components: {
-    [Cell.name]: Cell,
-    [Switch.name]: Switch
+    VanSwitch
   },
 
   props: {
     title: String,
     value: Boolean,
+    border: Boolean,
     loading: Boolean,
     disabled: Boolean
   },
@@ -28,5 +28,5 @@ export default {
       this.$emit('change', this.value);
     }
   }
-};
+});
 </script>

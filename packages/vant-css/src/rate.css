@@ -1,0 +1,11 @@
+@import "./common/var.css";
+
+.van-rate {
+  user-select: none;
+
+  &__item {
+    padding: 0 2px;
+    display: inline-block;
+    box-sizing: content-box;
+  }
+}

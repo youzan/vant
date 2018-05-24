@@ -1,28 +1,30 @@
 <template>
   <transition name="van-dialog-bounce">
-    <div class="van-dialog" v-show="value">
-      <div class="van-dialog__header" v-if="title" v-text="title" />
-      <div class="van-dialog__content van-hairline">
+    <div v-show="value" :class="b()">
+      <div v-if="title" v-text="title" :class="b('header')" />
+      <div :class="b('content')" class="van-hairline">
         <slot>
-          <div class="van-dialog__message" v-if="message" :class="{ 'van-dialog__message--withtitle': title }" v-html="message" />
+          <div v-if="message" v-html="message" :class="b('message', { withtitle: title })" />
         </slot>
       </div>
-      <div class="van-dialog__footer" :class="{ 'is-twobtn': showCancelButton && showConfirmButton }">
+      <div :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })">
         <van-button
-          size="large"
-          class="van-dialog__cancel"
           v-show="showCancelButton"
+          :loading="loading.cancel"
+          size="large"
+          :class="b('cancel')"
           @click="handleAction('cancel')"
         >
-          {{ cancelButtonText }}
+          {{ cancelButtonText || $t('cancel') }}
         </van-button>
         <van-button
-          size="large"
-          :class="['van-dialog__confirm', { 'van-hairline--left': showCancelButton && showConfirmButton }]"
           v-show="showConfirmButton"
+          size="large"
+          :loading="loading.confirm"
+          :class="[b('confirm'), { 'van-hairline--left': showCancelButton && showConfirmButton }]"
           @click="handleAction('confirm')"
         >
-          {{ confirmButtonText }}
+          {{ confirmButtonText || $t('confirm') }}
         </van-button>
       </div>
     </div>
@@ -30,63 +32,68 @@
 </template>
 
 <script>
-import Button from '../button';
+import create from '../utils/create';
+import VanButton from '../button';
 import Popup from '../mixins/popup';
 
-export default {
-  name: 'van-dialog',
+export default create({
+  name: 'dialog',
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   mixins: [Popup],
 
   props: {
-    title: {
-      type: String,
-      default: ''
-    },
-    message: {
-      type: String,
-      default: ''
-    },
+    title: String,
+    message: String,
+    callback: Function,
+    beforeClose: Function,
+    confirmButtonText: String,
+    cancelButtonText: String,
+    showCancelButton: Boolean,
     showConfirmButton: {
       type: Boolean,
       default: true
     },
-    showCancelButton: {
-      type: Boolean,
-      default: false
-    },
-    confirmButtonText: {
-      type: String,
-      default: '确认'
-    },
-    cancelButtonText: {
-      type: String,
-      default: '取消'
-    },
-    callback: {
-      type: Function
-    },
     overlay: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: false
-    },
-    lockOnScroll: {
-      default: true
     }
+  },
+
+  data() {
+    return {
+      loading: {
+        confirm: false,
+        cancel: false
+      }
+    };
   },
 
   methods: {
     handleAction(action) {
+      if (this.beforeClose) {
+        this.loading[action] = true;
+        this.beforeClose(action, () => {
+          this.onClose(action);
+          this.loading[action] = false;
+        });
+      } else {
+        this.onClose(action);
+      }
+    },
+
+    onClose(action) {
       this.$emit('input', false);
       this.$emit(action);
       this.callback && this.callback(action);
     }
   }
-};
+});
 </script>

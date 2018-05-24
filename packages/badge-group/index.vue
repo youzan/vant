@@ -1,15 +1,16 @@
 <template>
-  <div class="van-badge-group van-hairline--top-bottom">
-    <slot></slot>
+  <div :class="b()" class="van-hairline--top-bottom">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-badge-group',
+import create from '../utils/create';
+
+export default create({
+  name: 'badge-group',
 
   props: {
-    // 当前激活 tab 面板的 key
     activeKey: {
       type: [Number, String],
       default: 0
@@ -21,5 +22,5 @@ export default {
       badges: []
     };
   }
-};
+});
 </script>

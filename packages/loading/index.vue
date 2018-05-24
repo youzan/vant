@@ -1,29 +1,39 @@
 <template>
-  <div :class="['van-loading', 'van-loading--' + type, 'van-loading--' + color]">
-    <span :class="['van-loading__spinner', 'van-loading__spinner--' + type, 'van-loading__spinner--' + color]">
-      <i v-if="type === 'spinner'" v-for="item in 12"></i>
+  <div :class="b([type, color])" :style="style">
+    <span :class="b('spinner', type)">
+      <i v-for="item in (type === 'spinner' ? 12 : 0)" />
+      <svg v-if="type === 'circular'" :class="b('circular')" viewBox="25 25 50 50">
+        <circle cx="50" cy="50" r="20" fill="none"/>
+      </svg>
     </span>
   </div>
 </template>
 
 <script>
-const VALID_TYPES = ['gradient-circle', 'circle', 'spinner'];
-const VALID_COLORS = ['black', 'white'];
+import create from '../utils/create-basic';
 
-export default {
-  name: 'van-loading',
+export default create({
+  name: 'loading',
 
   props: {
+    size: String,
     type: {
       type: String,
-      default: 'gradient-circle',
-      validator: value => VALID_TYPES.indexOf(value) > -1
+      default: 'circular'
     },
     color: {
       type: String,
-      default: 'black',
-      validator: value => VALID_COLORS.indexOf(value) > -1
+      default: 'black'
+    }
+  },
+
+  computed: {
+    style() {
+      return this.size ? {
+        width: this.size,
+        height: this.size
+      } : {};
     }
   }
-};
+});
 </script>

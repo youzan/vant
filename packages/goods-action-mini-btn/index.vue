@@ -1,30 +1,32 @@
 <template>
-  <a :href="url" class="van-goods-action__mini-btn van-hairline" @click="$emit('click', $event);">
-    <van-icon :class="['van-goods-action__mini-btn-icon', iconClass]" :name="icon" />
-    <slot></slot>
+  <a :href="url" :class="b()" class="van-hairline" @click="onClick">
+    <icon :class="[b('icon'), iconClass]" :info="info" :name="icon" />
+    <slot>{{ text }}</slot>
   </a>
 </template>
 
 <script>
-import Icon from '../icon';
+import create from '../utils/create';
+import RouterLink from '../mixins/router-link';
 
-export default {
-  name: 'van-goods-action-mini-btn',
+export default create({
+  name: 'goods-action-mini-btn',
 
-  components: {
-    [Icon.name]: Icon
-  },
+  mixins: [RouterLink],
 
   props: {
+    url: String,
+    text: String,
+    info: [String, Number],
     icon: String,
-    iconClass: {
-      type: String,
-      default: ''
-    },
-    url: {
-      type: String,
-      default: 'javascript:;'
+    iconClass: String
+  },
+
+  methods: {
+    onClick(event) {
+      this.$emit('click', event);
+      this.routerLink();
     }
   }
-};
+});
 </script>

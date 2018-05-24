@@ -1,18 +1,20 @@
 <template>
-  <i :class="['van-icon', 'van-icon-' + name]" @click="$emit('click', $event)">
-    <slot></slot>
+  <i :class="[b(), `van-icon-${name}`]" :style="{ color }" v-on="$listeners">
+    <slot />
+    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
   </i>
 </template>
 
 <script>
-export default {
-  name: 'van-icon',
+import create from '../utils/create-basic';
+
+export default create({
+  name: 'icon',
 
   props: {
-    name: {
-      type: String,
-      required: true
-    }
+    name: String,
+    info: [String, Number],
+    color: String
   }
-};
+});
 </script>

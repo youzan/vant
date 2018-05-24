@@ -1,33 +1,33 @@
 <template>
-  <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled }">
+  <div :class="b()">
     <button
-      class="van-stepper__stepper van-stepper__minus"
-      :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
+      :class="b('minus', { disabled: minusDisabled })"
       @click="onChange('minus')"
-    >
-    </button>
+    />
     <input
       type="number"
-      class="van-stepper__input"
+      :class="b('input')"
       :value="currentValue"
       :disabled="disabled || disableInput"
       @input="onInput"
+      @keypress="onKeypress"
     >
     <button
-      class="van-stepper__stepper van-stepper__plus"
-      :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
+      :class="b('plus', { disabled: plusDisabled })"
       @click="onChange('plus')"
-    >
-    </button>
+    />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-stepper',
+import create from '../utils/create';
+
+export default create({
+  name: 'stepper',
 
   props: {
     value: {},
+    integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
     min: {
@@ -62,13 +62,14 @@ export default {
   },
 
   computed: {
-    isMinusDisabled() {
+    minusDisabled() {
       const min = +this.min;
       const step = +this.step;
       const currentValue = +this.currentValue;
       return min === currentValue || (currentValue - step) < min || this.disabled;
     },
-    isPlusDisabled() {
+
+    plusDisabled() {
       const max = +this.max;
       const step = +this.step;
       const currentValue = +this.currentValue;
@@ -77,38 +78,32 @@ export default {
   },
 
   watch: {
-    currentValue(val) {
-      this.$emit('input', val);
-      this.$emit('change', val);
-    },
-
     value(val) {
-      val = this.correctValue(+val);
-      if (val !== this.currentValue) {
-        this.currentValue = val;
+      if (val !== '') {
+        val = this.correctValue(+val);
+        if (val !== this.currentValue) {
+          this.currentValue = val;
+        }
       }
     }
   },
 
   methods: {
     correctValue(value) {
-      if (Number.isNaN(value)) {
-        value = this.min;
-      } else {
-        value = Math.max(this.min, value);
-        value = Math.min(this.max, value);
-      }
-
-      return value;
+      return isNaN(value)
+        ? this.min
+        : Math.max(this.min, Math.min(this.max, value));
     },
 
     onInput(event) {
-      const val = +event.target.value;
-      this.currentValue = this.correctValue(val);
+      const { value } = event.target;
+      this.currentValue = value ? this.correctValue(+value) : value;
+      event.target.value = this.currentValue;
+      this.emitInput();
     },
 
     onChange(type) {
-      if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
+      if ((this.minusDisabled && type === 'minus') || (this.plusDisabled && type === 'plus')) {
         this.$emit('overlimit', type);
         return;
       }
@@ -116,8 +111,20 @@ export default {
       const step = +this.step;
       const currentValue = +this.currentValue;
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
+      this.emitInput();
       this.$emit(type);
+    },
+
+    onKeypress(event) {
+      if (this.integer && event.keyCode === 46) {
+        event.preventDefault();
+      }
+    },
+
+    emitInput() {
+      this.$emit('input', this.currentValue);
+      this.$emit('change', this.currentValue);
     }
   }
-};
+});
 </script>

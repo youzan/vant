@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-address-list">
+      <div class="van-radio-group van-address-list__group">
+        <div class="van-cell-group van-hairline--top-bottom">
+          <div class="van-cell van-cell--clickable van-hairline">
+            <!---->
+            <!---->
+            <div class="van-cell__value van-cell__value--alone">
+              <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;"> <!----></i></span> <span class="van-radio__label"><div class="van-address-list__name">张三，13000000000</div> <div class="van-address-list__address">收货地址：浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室</div></span></div>
+            </div>
+            <i class="van-icon van-icon-edit van-address-list__edit" style="color:undefined;">
+              <!---->
+            </i>
+          </div>
+          <div class="van-cell van-cell--clickable van-hairline">
+            <!---->
+            <!---->
+            <div class="van-cell__value van-cell__value--alone">
+              <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label"><div class="van-address-list__name">李四，1310000000</div> <div class="van-address-list__address">收货地址：浙江省杭州市拱墅区莫干山路 50 号</div></span></div>
+            </div>
+            <i class="van-icon van-icon-edit van-address-list__edit" style="color:undefined;">
+              <!---->
+            </i>
+          </div>
+          <div class="van-cell van-cell--clickable van-hairline">
+            <!---->
+            <!---->
+            <div class="van-cell__value van-cell__value--alone">
+              <div class="van-radio"><span class="van-radio__input"><input type="radio" value="3" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label"><div class="van-address-list__name">王五，1320000000</div> <div class="van-address-list__address">收货地址：浙江省杭州市滨江区江南大道 15 号</div></span></div>
+            </div>
+            <i class="van-icon van-icon-edit van-address-list__edit" style="color:undefined;">
+              <!---->
+            </i>
+          </div>
+        </div>
+      </div>
+      <div class="van-hairline--top van-cell van-cell--clickable van-hairline van-address-list__add">
+        <i class="van-icon van-icon-add van-cell__left-icon" style="color:undefined;">
+          <!---->
+        </i>
+        <div class="van-cell__title"><span>新增收货地址</span>
+          <!---->
+        </div>
+        <!---->
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+          <!---->
+        </i>
+      </div>
+    </div>
+  </div>
+</div>
+`;

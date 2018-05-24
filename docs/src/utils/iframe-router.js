@@ -2,30 +2,33 @@
  * 同步父窗口和 iframe 的 vue-router 状态
  */
 
-import isMobile from './is-mobile';
 import { setLang } from './lang';
-import { iframeReady } from './iframe';
+import { iframeReady, isMobile } from './';
 
 window.syncPath = function(dir) {
   const router = window.vueRouter;
   const isInIframe = window !== window.top;
   const currentDir = router.history.current.path;
-  const iframe = document.querySelector('iframe');
-
-  if (!isInIframe && !isMobile && iframe) {
-    iframeReady(iframe, () => {
-      iframe.contentWindow.changePath(currentDir);
-    });
-  }
-};
-
-window.changePath = function(path = '') {
-  const pathParts = path.split('/');
+  const pathParts = currentDir.split('/');
   let lang = pathParts[0];
-  if (path[0] === '/') {
+  if (currentDir[0] === '/') {
     lang = pathParts[1];
   }
 
+  if (!isInIframe && !isMobile) {
+    const iframe = document.querySelector('iframe');
+    if (iframe) {
+      iframeReady(iframe, () => {
+        iframe.contentWindow.changePath(lang, currentDir);
+      });
+    }
+    setLang(lang);
+  } else if (isInIframe) {
+    window.top.changePath(lang, currentDir);
+  }
+};
+
+window.changePath = function(lang, path = '') {
   setLang(lang);
   window.vueRouter.replace(path);
 };

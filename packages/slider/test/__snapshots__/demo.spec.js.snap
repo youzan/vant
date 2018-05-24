@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-slider van-slider--disabled">
+      <div class="van-slider__bar" style="width:50%;height:2px;"><span class="van-slider__button"></span></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-slider">
+      <div class="van-slider__bar" style="width:50%;height:4px;"><span class="van-slider__button"></span></div>
+    </div>
+  </div>
+</div>
+`;

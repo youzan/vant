@@ -4,12 +4,6 @@
   overflow: hidden;
   position: relative;
 
-  &__wrapper,
-  &__left,
-  &__right {
-    transition: transform .15s ease-in-out;
-  }
-
   &__left,
   &__right {
     top: 0;

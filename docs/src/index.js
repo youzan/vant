@@ -1,24 +1,22 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './DocsApp';
-import routes from './router.config';
-import ZanDoc from 'zan-doc';
-import isMobile from './utils/is-mobile';
+import routes from './router';
+import VantDoc from 'vant-doc';
+import { isMobile } from './utils';
+import './components/nprogress.css';
 
-Vue.use(VueRouter);
-Vue.use(ZanDoc);
-
-const routesConfig = routes();
+Vue.use(VueRouter).use(VantDoc);
 
 const router = new VueRouter({
   mode: 'hash',
   base: '/zanui/vant/',
-  routes: routesConfig
+  routes: routes()
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    window.location.replace('/zanui/vant/examples');
+    location.replace(location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples' + location.hash);
   }
   document.title = route.meta.title || document.title;
   next();
@@ -38,5 +36,5 @@ if (process.env.NODE_ENV !== 'production') {
 new Vue({ // eslint-disable-line
   render: h => h(App),
   router,
-  el: '#app-container'
+  el: '#app'
 });

@@ -1,0 +1,94 @@
+## Actionsheet 行动按钮
+
+### 使用指南
+``` javascript
+import { Actionsheet } from 'vant';
+
+Vue.use(Actionsheet);
+```
+
+### 代码演示
+
+#### 基础用法
+需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
+
+```html
+<van-actionsheet v-model="show" :actions="actions" />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        {
+          name: '选项',
+          callback: this.onClick
+        },
+        {
+          name: '选项',
+          subname: '描述信息'
+        },
+        {
+          name: '选项',
+          loading: true
+        }
+      ]
+    };
+  },
+
+  methods: {
+    onClick(item) {
+      Toast(item.name);
+    }
+  }
+}
+```
+
+#### 带取消按钮的 Actionsheet
+
+如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
+
+```html
+<van-actionsheet v-model="show" :actions="actions" cancel-text="取消" />
+```
+
+#### 带标题的 Actionsheet
+
+如果传入了`title`属性，且不为空，则另外一种样式的`Actionsheet`，里面内容需要自定义。
+
+```html
+<van-actionsheet v-model="show" title="支持以下配送方式">
+  <p>一些内容</p>
+</van-actionsheet>
+```
+
+### API
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----------|-----------|-----------|-------------|
+| actions | 行动按钮数组 | `Array` | `[]` |
+| title | 标题 | `String` | - |
+| cancel-text | 取消按钮文案 | `String` | - |
+| overlay | 是否显示遮罩 | `Boolean` | - |
+| close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - |
+| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
+
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| cancel | 取消按钮点击时触发 | - |
+
+### actions
+
+`API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+
+| key | 说明 |
+|-----------|-----------|
+| name | 标题 |
+| subname | 二级标题 |
+| className | 为对应列添加特殊的`class` |
+| loading | 是否是`loading`状态 |
+| callback | 点击时的回调。该回调接受一个参数，参数为当前点击`action`的对象信息 |

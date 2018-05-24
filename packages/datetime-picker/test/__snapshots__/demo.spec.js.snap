@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">2018</li>
+            <li class="van-ellipsis van-picker-column__item">2019</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">00</li>
+            <li class="van-ellipsis van-picker-column__item">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">00</li>
+            <li class="van-ellipsis van-picker-column__item">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
+            <li class="van-ellipsis van-picker-column__item">32</li>
+            <li class="van-ellipsis van-picker-column__item">33</li>
+            <li class="van-ellipsis van-picker-column__item">34</li>
+            <li class="van-ellipsis van-picker-column__item">35</li>
+            <li class="van-ellipsis van-picker-column__item">36</li>
+            <li class="van-ellipsis van-picker-column__item">37</li>
+            <li class="van-ellipsis van-picker-column__item">38</li>
+            <li class="van-ellipsis van-picker-column__item">39</li>
+            <li class="van-ellipsis van-picker-column__item">40</li>
+            <li class="van-ellipsis van-picker-column__item">41</li>
+            <li class="van-ellipsis van-picker-column__item">42</li>
+            <li class="van-ellipsis van-picker-column__item">43</li>
+            <li class="van-ellipsis van-picker-column__item">44</li>
+            <li class="van-ellipsis van-picker-column__item">45</li>
+            <li class="van-ellipsis van-picker-column__item">46</li>
+            <li class="van-ellipsis van-picker-column__item">47</li>
+            <li class="van-ellipsis van-picker-column__item">48</li>
+            <li class="van-ellipsis van-picker-column__item">49</li>
+            <li class="van-ellipsis van-picker-column__item">50</li>
+            <li class="van-ellipsis van-picker-column__item">51</li>
+            <li class="van-ellipsis van-picker-column__item">52</li>
+            <li class="van-ellipsis van-picker-column__item">53</li>
+            <li class="van-ellipsis van-picker-column__item">54</li>
+            <li class="van-ellipsis van-picker-column__item">55</li>
+            <li class="van-ellipsis van-picker-column__item">56</li>
+            <li class="van-ellipsis van-picker-column__item">57</li>
+            <li class="van-ellipsis van-picker-column__item">58</li>
+            <li class="van-ellipsis van-picker-column__item">59</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">2018</li>
+            <li class="van-ellipsis van-picker-column__item">2019</li>
+            <li class="van-ellipsis van-picker-column__item">2020</li>
+            <li class="van-ellipsis van-picker-column__item">2021</li>
+            <li class="van-ellipsis van-picker-column__item">2022</li>
+            <li class="van-ellipsis van-picker-column__item">2023</li>
+            <li class="van-ellipsis van-picker-column__item">2024</li>
+            <li class="van-ellipsis van-picker-column__item">2025</li>
+            <li class="van-ellipsis van-picker-column__item">2026</li>
+            <li class="van-ellipsis van-picker-column__item">2027</li>
+            <li class="van-ellipsis van-picker-column__item">2028</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">2018</li>
+            <li class="van-ellipsis van-picker-column__item">2019</li>
+            <li class="van-ellipsis van-picker-column__item">2020</li>
+            <li class="van-ellipsis van-picker-column__item">2021</li>
+            <li class="van-ellipsis van-picker-column__item">2022</li>
+            <li class="van-ellipsis van-picker-column__item">2023</li>
+            <li class="van-ellipsis van-picker-column__item">2024</li>
+            <li class="van-ellipsis van-picker-column__item">2025</li>
+            <li class="van-ellipsis van-picker-column__item">2026</li>
+            <li class="van-ellipsis van-picker-column__item">2027</li>
+            <li class="van-ellipsis van-picker-column__item">2028</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">00</li>
+            <li class="van-ellipsis van-picker-column__item">01</li>
+            <li class="van-ellipsis van-picker-column__item">02</li>
+            <li class="van-ellipsis van-picker-column__item">03</li>
+            <li class="van-ellipsis van-picker-column__item">04</li>
+            <li class="van-ellipsis van-picker-column__item">05</li>
+            <li class="van-ellipsis van-picker-column__item">06</li>
+            <li class="van-ellipsis van-picker-column__item">07</li>
+            <li class="van-ellipsis van-picker-column__item">08</li>
+            <li class="van-ellipsis van-picker-column__item">09</li>
+            <li class="van-ellipsis van-picker-column__item">10</li>
+            <li class="van-ellipsis van-picker-column__item">11</li>
+            <li class="van-ellipsis van-picker-column__item">12</li>
+            <li class="van-ellipsis van-picker-column__item">13</li>
+            <li class="van-ellipsis van-picker-column__item">14</li>
+            <li class="van-ellipsis van-picker-column__item">15</li>
+            <li class="van-ellipsis van-picker-column__item">16</li>
+            <li class="van-ellipsis van-picker-column__item">17</li>
+            <li class="van-ellipsis van-picker-column__item">18</li>
+            <li class="van-ellipsis van-picker-column__item">19</li>
+            <li class="van-ellipsis van-picker-column__item">20</li>
+            <li class="van-ellipsis van-picker-column__item">21</li>
+            <li class="van-ellipsis van-picker-column__item">22</li>
+            <li class="van-ellipsis van-picker-column__item">23</li>
+            <li class="van-ellipsis van-picker-column__item">24</li>
+            <li class="van-ellipsis van-picker-column__item">25</li>
+            <li class="van-ellipsis van-picker-column__item">26</li>
+            <li class="van-ellipsis van-picker-column__item">27</li>
+            <li class="van-ellipsis van-picker-column__item">28</li>
+            <li class="van-ellipsis van-picker-column__item">29</li>
+            <li class="van-ellipsis van-picker-column__item">30</li>
+            <li class="van-ellipsis van-picker-column__item">31</li>
+            <li class="van-ellipsis van-picker-column__item">32</li>
+            <li class="van-ellipsis van-picker-column__item">33</li>
+            <li class="van-ellipsis van-picker-column__item">34</li>
+            <li class="van-ellipsis van-picker-column__item">35</li>
+            <li class="van-ellipsis van-picker-column__item">36</li>
+            <li class="van-ellipsis van-picker-column__item">37</li>
+            <li class="van-ellipsis van-picker-column__item">38</li>
+            <li class="van-ellipsis van-picker-column__item">39</li>
+            <li class="van-ellipsis van-picker-column__item">40</li>
+            <li class="van-ellipsis van-picker-column__item">41</li>
+            <li class="van-ellipsis van-picker-column__item">42</li>
+            <li class="van-ellipsis van-picker-column__item">43</li>
+            <li class="van-ellipsis van-picker-column__item">44</li>
+            <li class="van-ellipsis van-picker-column__item">45</li>
+            <li class="van-ellipsis van-picker-column__item">46</li>
+            <li class="van-ellipsis van-picker-column__item">47</li>
+            <li class="van-ellipsis van-picker-column__item">48</li>
+            <li class="van-ellipsis van-picker-column__item">49</li>
+            <li class="van-ellipsis van-picker-column__item">50</li>
+            <li class="van-ellipsis van-picker-column__item">51</li>
+            <li class="van-ellipsis van-picker-column__item">52</li>
+            <li class="van-ellipsis van-picker-column__item">53</li>
+            <li class="van-ellipsis van-picker-column__item">54</li>
+            <li class="van-ellipsis van-picker-column__item">55</li>
+            <li class="van-ellipsis van-picker-column__item">56</li>
+            <li class="van-ellipsis van-picker-column__item">57</li>
+            <li class="van-ellipsis van-picker-column__item">58</li>
+            <li class="van-ellipsis van-picker-column__item">59</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

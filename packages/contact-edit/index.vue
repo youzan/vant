@@ -1,45 +1,44 @@
 <template>
-  <div class="van-contact-edit">
-    <van-cell-group>
-      <van-field
-        label="联系人"
+  <div :class="b()">
+    <cell-group>
+      <field
+        v-model="data.name"
         maxlength="30"
-        placeholder="名字"
-        v-model="currentInfo.name"
+        :label="$t('contact')"
+        :placeholder="$t('name')"
         :error="errorInfo.name"
-        @focus="onFocus('name')">
-      </van-field>
-      <van-field
+        @focus="onFocus('name')"
+      />
+      <field
+        v-model="data.tel"
         type="tel"
-        label="联系电话"
-        placeholder="手机或固定电话"
-        v-model="currentInfo.tel"
+        :label="$t('tel')"
+        :placeholder="$t('telPlaceholder')"
         :error="errorInfo.tel"
-        @focus="onFocus('tel')">
-      </van-field>
-    </van-cell-group>
-    <div class="van-contact-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveContact" type="primary">保存</van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteContact" v-if="isEdit">删除联系人</van-button>
+        @focus="onFocus('tel')"
+      />
+    </cell-group>
+    <div :class="b('buttons')">
+      <van-button block :loading="isSaving" @click="onSave" type="primary">{{ $t('save') }}</van-button>
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>
   </div>
 </template>
 
 <script>
 import Field from '../field';
-import Button from '../button';
-import CellGroup from '../cell-group';
+import VanButton from '../button';
 import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
+import create from '../utils/create';
 
-export default {
-  name: 'van-contact-edit',
+export default create({
+  name: 'contact-edit',
 
   components: {
-    [Field.name]: Field,
-    [Button.name]: Button,
-    [CellGroup.name]: CellGroup
+    Field,
+    VanButton
   },
 
   props: {
@@ -53,12 +52,16 @@ export default {
         tel: '',
         name: ''
       })
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
   data() {
     return {
-      currentInfo: this.contactInfo,
+      data: this.contactInfo,
       errorInfo: {
         name: false,
         tel: false
@@ -68,7 +71,7 @@ export default {
 
   watch: {
     contactInfo(val) {
-      this.currentInfo = val;
+      this.data = val;
     }
   },
 
@@ -78,22 +81,17 @@ export default {
     },
 
     getErrorMessageByKey(key) {
-      const value = this.currentInfo[key];
+      const value = this.data[key].trim();
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : '名字过长，请重新输入' : '请填写名字';
+          return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : '请填写正确的手机号码或电话号码';
+          return this.telValidator(value) ? '' : this.$t('telInvalid');
       }
     },
 
-    onSaveContact() {
-      const items = [
-        'name',
-        'tel'
-      ];
-
-      const isValid = items.every(item => {
+    onSave() {
+      const isValid = ['name', 'tel'].every(item => {
         const msg = this.getErrorMessageByKey(item);
         if (msg) {
           this.errorInfo[item] = true;
@@ -103,21 +101,19 @@ export default {
       });
 
       if (isValid && !this.isSaving) {
-        this.$emit('save', this.currentInfo);
+        this.$emit('save', this.data);
       }
     },
 
-    onDeleteContact() {
-      if (this.isDeleting) {
-        return;
+    onDelete() {
+      if (!this.isDeleting) {
+        Dialog.confirm({
+          message: this.$t('confirmDelete')
+        }).then(() => {
+          this.$emit('delete', this.data);
+        });
       }
-
-      Dialog.confirm({
-        message: `确定要删除这个联系人么`
-      }).then(() => {
-        this.$emit('delete', this.currentInfo);
-      });
     }
   }
-};
+});
 </script>

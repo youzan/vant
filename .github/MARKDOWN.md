@@ -2,7 +2,7 @@
 
 #### 文件格式
 
-组件文档采用 markdown 格式，和普通 markdown 最大的区别是示例代码是直接写在 markdown 文件里面，所以请确保你写的示例代码是可以正确运行的。
+组件文档采用 markdown 格式编写
 
 #### 文档内的标题规范
 
@@ -18,30 +18,25 @@
 
 #### 代码演示
 
-另起一个二级标题，正文可以是 markdown 和示例的混合。示例的结构如下:
+另起一个二级标题，示例的结构如下:
 
-    // 在 demo 端之外放置的 script 会直接运行
-    // 在 script 中声明的 vue 变量，在 demo 中都可以直接使用
-    <script>
-      export default {
-        data() {
-          return {
-            size: 'large'
-          };
-        }
-      };
-    </script>
+  ```javascript
+    export default {
+      data() {
+        return {
+          size: 'large'
+        };
+      }
+    };
+  ```
+
+  ```html
+    <van-button :size="size">
+      Large
+    </van-button>
+  ```
     
-    :::demo 基础用法（必须以:::demo开头，后面的描述可选，如果有的话控制在一两句话，不要过长）
-    ```html                             // :::demo后面必须接代码段，否则不会识别为示例
-      <van-button :size="size">         // 在内容区直接写 vue 中 template 段代码即可
-        Large
-      </van-button>
-    ```
-    :::                                 // 示例结束的标记，必须接在代码段之后，否则不会识别为示例
-
 代码演示的几个书写原则：
 
 - 从简单用法开始介绍，不要上来就同时使用一大堆 API，会让人觉得难以上手
 - 正交性原则，一个示例只演示一个（或者一类）API 的使用方法，如无特殊需求不要在一个示例中同时演示多个 API 混合使用
-- 如果示例的一句话描述无法完整描述整个场景，可以在 `:::demo` 之前写一段详细的说明性文字

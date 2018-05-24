@@ -1,21 +1,25 @@
 <template>
-  <span :class="['van-tag', 'van-hairline--surround', { [`van-tag--${type}`]: type, 'is-plain': plain, 'is-mark': mark }]">
-    <slot></slot>
+  <span
+    class="van-hairline--surround"
+    :class="b({
+      mark,
+      plain,
+      [type]: type
+    })"
+  >
+    <slot />
   </span>
 </template>
 
 <script>
-const ALLOW_TYPE = ['danger', 'success', 'primary'];
+import create from '../utils/create';
 
-export default {
-  name: 'van-tag',
+export default create({
+  name: 'tag',
   props: {
-    type: {
-      type: String,
-      validator: val => ~ALLOW_TYPE.indexOf(val)
-    },
+    type: String,
     mark: Boolean,
     plain: Boolean
   }
-};
+});
 </script>

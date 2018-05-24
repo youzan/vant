@@ -1,24 +1,10 @@
 import Vue from 'vue';
-import DialogComponent from './dialog';
+import VanDialog from './dialog';
 
 let instance;
 
-const defaultConfig = {
-  value: true,
-  title: '',
-  message: '',
-  confirmButtonText: '确认',
-  cancelButtonText: '取消',
-  showCancelButton: false,
-  closeOnClickOverlay: false,
-  callback: action => {
-    instance[action === 'confirm' ? 'resolve' : 'reject'](action);
-  }
-};
-
 const initInstance = () => {
-  const DialogConstructor = Vue.extend(DialogComponent);
-  instance = new DialogConstructor({
+  instance = new (Vue.extend(VanDialog))({
     el: document.createElement('div')
   });
 
@@ -43,22 +29,53 @@ const Dialog = options => {
   });
 };
 
+Dialog.defaultOptions = {
+  value: true,
+  title: '',
+  message: '',
+  overlay: true,
+  lockScroll: true,
+  beforeClose: null,
+  confirmButtonText: '',
+  cancelButtonText: '',
+  showConfirmButton: true,
+  showCancelButton: false,
+  closeOnClickOverlay: false,
+  callback: action => {
+    instance[action === 'confirm' ? 'resolve' : 'reject'](action);
+  }
+};
+
 Dialog.alert = options => Dialog({
-  ...defaultConfig,
+  ...Dialog.currentOptions,
   ...options
 });
 
 Dialog.confirm = options => Dialog({
-  ...defaultConfig,
+  ...Dialog.currentOptions,
   showCancelButton: true,
   ...options
 });
 
 Dialog.close = () => {
-  instance.value = false;
+  if (instance) {
+    instance.value = false;
+  }
 };
 
-export default Dialog;
-export {
-  DialogComponent as Dialog
+Dialog.setDefaultOptions = options => {
+  Object.assign(Dialog.currentOptions, options);
 };
+
+Dialog.resetDefaultOptions = () => {
+  Dialog.currentOptions = { ...Dialog.defaultOptions };
+};
+
+Dialog.install = () => {
+  Vue.use(VanDialog);
+};
+
+Vue.prototype.$dialog = Dialog;
+Dialog.resetDefaultOptions();
+
+export default Dialog;

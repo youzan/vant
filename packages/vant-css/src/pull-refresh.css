@@ -2,7 +2,11 @@
 
 .van-pull-refresh {
   user-select: none;
-  position: relative;
+  overflow: hidden;
+
+  &__track {
+    position: relative;
+  }
 
   &__head {
     width: 100%;
@@ -21,13 +25,13 @@
     .van-loading {
       width: 16px;
       height: 16px;
-      display: inline-block;
-      margin-right: 10px;
+      margin-right: 5px;
     }
 
     span,
     .van-loading {
       vertical-align: middle;
+      display: inline-block;
     }
   }
 

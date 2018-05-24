@@ -1,26 +1,24 @@
 <template>
-  <a :class="['van-badge van-hairline', { 'van-badge--select': isSelect }]" :href="url" @click="onClick">
-    <div v-if="info" class="van-badge__info">{{ info }}</div>
+  <a
+    :class="[b({ select }), 'van-hairline']"
+    :href="url"
+    @click="onClick"
+  >
+    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
     {{ title }}
   </a>
 </template>
 
 <script>
-export default {
-  name: 'van-badge',
+import create from '../utils/create';
+
+export default create({
+  name: 'badge',
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
-    url: {
-      type: String,
-      default: 'javascript:;'
-    },
-    info: {
-      type: String
-    }
+    url: String,
+    info: [String, Number],
+    title: String
   },
 
   beforeCreate() {
@@ -28,9 +26,8 @@ export default {
   },
 
   computed: {
-    isSelect() {
-      const parent = this.$parent;
-      return parent.badges.indexOf(this) === parent.activeKey;
+    select() {
+      return this.$parent.badges.indexOf(this) === this.$parent.activeKey;
     }
   },
 
@@ -39,5 +36,5 @@ export default {
       this.$emit('click', this.$parent.badges.indexOf(this));
     }
   }
-};
+});
 </script>

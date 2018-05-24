@@ -1,48 +1,52 @@
 <template>
-  <div class="van-address-list">
-    <van-radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
-      <van-cell-group>
-        <van-cell v-for="(item, index) in list" :key="item.id">
-          <van-radio :name="item.id" @click="$emit('select', item, index)">
-            <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
-            <div class="van-address-list__address">收货地址：{{ item.address }}</div>
-          </van-radio>
-          <van-icon name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
-        </van-cell>
-      </van-cell-group>
-    </van-radio-group>
-    <van-cell icon="add" class="van-address-list__add van-hairline--top" @click="$emit('add')" :title="addButtonText" isLink />
+  <div :class="b()">
+    <radio-group :value="value" :class="b('group')" @input="$emit('input', $event)">
+      <cell-group>
+        <cell v-for="(item, index) in list" :key="item.id" is-link>
+          <radio :name="item.id" @click="$emit('select', item, index)">
+            <div :class="b('name')">{{ item.name }}，{{ item.tel }}</div>
+            <div :class="b('address')">{{ $t('address') }}：{{ item.address }}</div>
+          </radio>
+          <icon
+            slot="right-icon"
+            name="edit"
+            :class="b('edit')"
+            @click="$emit('edit', item, index)"
+          />
+        </cell>
+      </cell-group>
+    </radio-group>
+    <cell
+      icon="add"
+      is-link
+      :class="b('add')"
+      class="van-hairline--top"
+      :title="addButtonText || $t('add')"
+      @click="$emit('add')"
+    />
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
 
-export default {
-  name: 'van-address-list',
+export default create({
+  name: 'address-list',
 
   components: {
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [Radio.name]: Radio,
-    [CellGroup.name]: CellGroup,
-    [RadioGroup.name]: RadioGroup
+    Radio,
+    RadioGroup
   },
 
   props: {
+    addButtonText: String,
     value: [String, Number],
     list: {
       type: Array,
       default: () => []
-    },
-    addButtonText: {
-      type: String,
-      default: '新增收货地址'
     }
   }
-};
+});
 </script>

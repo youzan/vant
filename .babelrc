@@ -1,9 +1,30 @@
 {
-  "presets": [["env", { "modules": false, "loose": true }]],
-  "plugins": ["transform-vue-jsx", "transform-runtime", "transform-object-rest-spread"],
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "loose": true,
+        "exclude": ["transform-es2015-typeof-symbol"]
+      }
+    ]
+  ],
+  "plugins": ["transform-runtime", "transform-object-rest-spread"],
   "env": {
     "commonjs": {
-      "presets": [["env", { "modules": "commonjs", "loose": true }]]
+      "presets": [
+        [
+          "env",
+          {
+            "modules": "commonjs",
+            "loose": true,
+            "exclude": ["transform-es2015-typeof-symbol"]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [["env", { "targets": { "node": 8 } }]]
     }
   }
 }

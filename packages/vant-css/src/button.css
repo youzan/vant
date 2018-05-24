@@ -6,7 +6,7 @@
   display: inline-block;
   height: 45px;
   line-height: 43px;
-  border-radius: 4px;
+  border-radius: 3px;
   box-sizing: border-box;
   font-size: 16px;
   text-align: center;
@@ -24,15 +24,15 @@
     border-color: $black;
     background-color: $black;
     border-radius: inherit;/* inherit parent's border radius */
-    transform: translate3d(-50%, -50%, 0); 
+    transform: translate(-50%, -50%); 
   }
 
-  &:not([disabled]):active::before {
+  &:active::before {
     opacity: .3;
   }
 
-  &__icon-loading {
-    display: inline-block;
+  &--unclickable:before {
+    display: none;
   }
 
   &--default {
@@ -65,13 +65,18 @@
   }
 
   &--small {
-    min-width: 60px;
     height: 30px;
-    line-height: 28px;
+    padding: 0 8px;
+    min-width: 60px;
     font-size: 12px;
+    line-height: 28px;
   }
 
   &--loading {
+    .van-loading {
+      display: inline-block;
+    }
+
     .van-button__text {
       display: none;
     }
@@ -102,11 +107,11 @@
     border: 0;
     border-radius: 0;
     font-size: 16px;
-    color: $bottom-action-button-default-color;
-    background-color: $bottom-action-button-default-background-color;
+    color: $button-bottom-action-default-color;
+    background-color: $button-bottom-action-default-background-color;
 
     &.van-button--primary {
-      background-color: $bottom-action-button-primary-background-color;
+      background-color: $button-bottom-action-primary-background-color;
     }
   }
 

@@ -1,133 +1,150 @@
 <template>
-  <div class="van-address-edit">
-    <van-cell-group>
-      <van-field
+  <div :class="b()">
+    <cell-group>
+      <field
+        v-model="data.name"
         maxlength="15"
-        placeholder="名字"
-        :label="addressText + '人'"
-        v-model="currentInfo.name"
+        :placeholder="$t('name')"
+        :label="$t('label.name')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
-      <van-field
+      <field
         type="tel"
-        label="联系电话"
-        placeholder="手机或固定电话"
-        v-model="currentInfo.tel"
+        :label="$t('tel')"
+        :placeholder="$t('telPlaceholder')"
+        v-model="data.tel"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <van-cell class="van-address-edit__area" title="收件地区" @click="showAreaSelect = true">
-        <span>{{ currentInfo.province || '选择省' }}</span>
-        <span>{{ currentInfo.city || '选择市' }}</span>
-        <span>{{ currentInfo.county || '选择区' }}</span>
-      </van-cell>
-      <van-address-edit-detail
-        :value="currentInfo.address_detail"
-        :isError="errorInfo.address_detail"
-        :showSearchResult="showSearchResult"
-        :searchResult="searchResult"
+      <cell
+        clickable
+        :class="b('area')"
+        :title="$t('area')"
+        @click="showArea = true"
+      >
+        <span>{{ data.province || $t('province') }}</span>
+        <span>{{ data.city || $t('city') }}</span>
+        <span>{{ data.county || $t('county') }}</span>
+      </cell>
+      <address-edit-detail
+        :value="data.address_detail"
+        :is-error="errorInfo.address_detail"
+        :show-search-result="showSearchResult"
+        :search-result="searchResult"
         @focus="onFocus('address_detail')"
-        @blur="onDetailBlur"
+        @blur="detailFocused = false"
         @input="onChangeDetail"
+        @select-search="$emit('select-search', $event)"
       />
-      <van-field
+      <field
         v-if="showPostal"
         v-show="!hideBottomFields"
         type="tel"
-        label="邮政编码"
-        placeholder="邮政编码(选填)"
-        v-model="currentInfo.postal_code"
+        :label="$t('label.postal')"
+        :placeholder="$t('placeholder.postal')"
+        v-model="data.postal_code"
         maxlength="6"
         class="van-hairline--top"
         :error="errorInfo.postal_code"
-        @focus="onFocus('postal_code')">
-      </van-field>
-      <van-switch-cell 
+        @focus="onFocus('postal_code')"
+      />
+      <slot />
+      <switch-cell
         v-if="showSetDefault"
         v-show="!hideBottomFields"
-        v-model="currentInfo.is_default"
-        :title="`设为默认${addressText}地址`"
+        v-model="data.is_default"
+        :title="$t('defaultAddress')"
       />
-    </van-cell-group>
-    <div v-show="!hideBottomFields" class="van-address-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSaveAddress" type="primary">保存</van-button>
-      <van-button block :loading="isDeleting" @click="onDeleteAddress" v-if="isEdit">删除{{ addressText }}地址</van-button>
+    </cell-group>
+    <div v-show="!hideBottomFields" :class="b('buttons')">
+      <van-button block :loading="isSaving" @click="onSave" type="primary">
+        {{ $t('save') }}
+      </van-button>
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
+        {{ $t('deleteAddress') }}
+      </van-button>
     </div>
-    <van-popup v-model="showAreaSelect" position="bottom">
+    <popup v-model="showArea" position="bottom" :lazy-render="false">
       <van-area
-        :value="currentInfo.area_code"
-        :areaList="areaList"
+        ref="area"
+        :loading="!areaListLoaded"
+        :value="data.area_code"
+        :area-list="areaList"
         @confirm="onAreaConfirm"
-        @cancel="showAreaSelect = false"
+        @cancel="showArea = false"
       />
-    </van-popup>
+    </popup>
   </div>
 </template>
 
 <script>
+/* eslint-disable camelcase */
+import create from '../utils/create';
+import { isObj } from '../utils';
 import Field from '../field';
-import Cell from '../cell';
-import CellGroup from '../cell-group';
-import Button from '../button';
+import VanButton from '../button';
 import Popup from '../popup';
 import Toast from '../toast';
 import Dialog from '../dialog';
-import Area from '../area';
-import Detail from './Detail';
+import VanArea from '../area';
+import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
 
-export default {
-  name: 'van-address-edit',
+const defaultAddress = {
+  name: '',
+  tel: '',
+  province: '',
+  city: '',
+  county: '',
+  area_code: '',
+  postal_code: '',
+  address_detail: '',
+  is_default: false
+};
+
+export default create({
+  name: 'address-edit',
 
   components: {
-    [Field.name]: Field,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
-    [SwitchCell.name]: SwitchCell,
-    [Button.name]: Button,
-    [Popup.name]: Popup,
-    [Area.name]: Area,
-    [Detail.name]: Detail
+    Field,
+    Popup,
+    VanArea,
+    VanButton,
+    SwitchCell,
+    AddressEditDetail
   },
 
   props: {
     isSaving: Boolean,
     isDeleting: Boolean,
     areaList: Object,
+    showDelete: Boolean,
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
-    addressText: {
-      type: String,
-      default: '收货'
-    },
     addressInfo: {
       type: Object,
-      default: () => ({
-        name: '',
-        tel: '',
-        province: '',
-        city: '',
-        county: '',
-        area_code: '',
-        postal_code: '',
-        address_detail: '',
-        is_default: false
-      })
+      default: () => ({ ...defaultAddress })
     },
     searchResult: {
       type: Array,
       default: () => []
+    },
+    telValidator: {
+      type: Function,
+      default: validateMobile
     }
   },
 
   data() {
     return {
-      showAreaSelect: false,
-      currentInfo: this.addressInfo,
-      isEdit: !!this.addressInfo.id,
+      showArea: false,
+      data: {
+        ...defaultAddress,
+        ...this.addressInfo
+      },
       detailFocused: false,
       errorInfo: {
         name: false,
@@ -138,52 +155,76 @@ export default {
     };
   },
 
-  watch: {
-    addressInfo: {
-      handler(val) {
-        this.currentInfo = val;
-        this.isEdit = !!val.id;
-      },
-      deep: true
+  computed: {
+    // hide bottom field when use search && detail get focused
+    hideBottomFields() {
+      return this.searchResult.length && this.detailFocused;
+    },
+
+    areaListLoaded() {
+      return isObj(this.areaList) && Object.keys(this.areaList).length;
+    },
+
+    isEdit() {
+      return this.showDelete || !!this.data.id;
     }
   },
 
-  computed: {
-    // 当地址输入框开启了搜索，并且开始搜索后，隐藏所有地址详情以外的输入框
-    hideBottomFields() {
-      return this.searchResult.length && this.detailFocused;
+  watch: {
+    addressInfo: {
+      handler(val) {
+        this.data = {
+          ...defaultAddress,
+          ...val
+        };
+
+        this.setAreaCode(val.area_code);
+      },
+      deep: true
+    },
+
+    areaList() {
+      this.setAreaCode(this.data.area_code);
     }
+  },
+
+  created() {
+    this.setAreaCode(this.data.area_code);
   },
 
   methods: {
     onFocus(key) {
       this.errorInfo[key] = false;
       this.detailFocused = key === 'address_detail';
-    },
-
-    onDetailBlur() {
-      this.detailFocused = false;
+      this.$emit('focus', key);
     },
 
     onChangeDetail(val) {
-      this.currentInfo.address_detail = val;
+      this.data.address_detail = val;
       this.$emit('change-detail', val);
     },
 
     onAreaConfirm(values) {
-      if (values.length !== 3 || +values[0].code === -1 || +values[1].code === -1 || +values[2].code === -1) {
-        return Toast('请选择正确的收件地区');
+      if (values.length !== 3 || values.some(value => +value.code === -1)) {
+        return Toast(this.$t('areaEmpty'));
       }
-      Object.assign(this.currentInfo, {
-        province: values[0].name,
-        city: values[1].name,
-        county: values[2].name,
-        'area_code': values[2].code
-      });
-      this.showAreaSelect = false;
+      this.data.area_code = values[2].code;
+      this.assignAreaValues(values);
+      this.showArea = false;
+      this.$emit('change-area', values);
     },
 
-    onSaveAddress() {
+    assignAreaValues(values) {
+      if (values.length >= 3) {
+        Object.assign(this.data, {
+          province: values[0].name,
+          city: values[1].name,
+          county: values[2].name
+        });
+      }
+    },
+
+    onSave() {
       const items = [
         'name',
         'tel',
@@ -205,38 +246,56 @@ export default {
       });
 
       if (isValid && !this.isSaving) {
-        this.$emit('save', this.currentInfo);
+        this.$emit('save', this.data);
       }
     },
 
     getErrorMessageByKey(key) {
-      const value = this.currentInfo[key];
+      const value = this.data[key].trim();
+      const { $t } = this;
 
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : '名字过长，请重新输入' : '请填写名字';
+          return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
         case 'tel':
-          return validateMobile(value) ? '' : '请填写正确的手机号码或电话号码';
+          return this.telValidator(value) ? '' : $t('telInvalid');
         case 'area_code':
-          return value ? +value !== -1 ? '' : '请选择正确的收件地区' : '请选择收件地区';
+          return value && +value !== -1 ? '' : $t('areaEmpty');
         case 'address_detail':
-          return value ? value.length <= 200 ? '' : '详细地址不能超过200个字符' : '请填写详细地址';
+          return value ? value.length <= 200 ? '' : $t('addressOverlimit') : $t('addressEmpty');
         case 'postal_code':
-          return value && !/^\d{6}$/.test(value) ? '邮政编码格式不正确' : '';
+          return value && !/^\d{6}$/.test(value) ? $t('postalEmpty') : '';
       }
     },
 
-    onDeleteAddress() {
-      if (this.isDeleting) {
-        return;
-      }
-
+    onDelete() {
       Dialog.confirm({
-        message: `确定要删除这个${this.addressText}地址么`
+        message: this.$t('confirmDelete')
       }).then(() => {
-        this.$emit('delete', this.currentInfo);
+        this.$emit('delete', this.data);
+      }).catch(() => {
+        this.$emit('cancel-delete', this.data);
+      });
+    },
+
+    // get values of area component
+    getArea() {
+      const { area } = this.$refs;
+      return area ? area.getValues() : [];
+    },
+
+    // set area code to area component
+    setAreaCode(code) {
+      this.data.area_code = code || '';
+      this.$nextTick(() => {
+        this.$nextTick(() => {
+          const { area } = this.$refs;
+          if (area) {
+            this.assignAreaValues(area.getValues());
+          }
+        });
       });
     }
   }
-};
+});
 </script>

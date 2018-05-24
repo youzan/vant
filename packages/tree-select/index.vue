@@ -1,41 +1,37 @@
 <template>
-  <div class="van-tree-select" :style="{ height: mainHeight + 'px' }">
-    <div class="van-tree-select__nav">
+  <div :class="b()" :style="{ height: mainHeight + 'px' }">
+    <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
-        class="van-tree-select__nitem"
-        :class="{ 'van-tree-select__nitem--active': mainActiveIndex === index }"
+        class="van-ellipsis"
+        :class="b('nitem', { active: mainActiveIndex === index })"
         @click="$emit('navclick', index)">
         {{ item.text }}
       </div>
     </div>
-    <div class="van-tree-select__content" :style="{ height: itemHeight + 'px' }">
+    <div :class="b('content')" :style="{ height: itemHeight + 'px' }">
       <div
         v-for="item in subItems"
         :key="item.id"
-        class="van-tree-select__item"
-        :class="{ 'van-tree-select__item--active': activeId === item.id }"
+        class="van-ellipsis"
+        :class="b('item', { active: activeId === item.id })"
         @click="onItemSelect(item)">
         {{ item.text }}
-        <van-icon
+        <icon
           v-if="activeId === item.id"
           name="success"
-          class="van-tree-select__selected"
-        ></van-icon>
+          :class="b('selected')"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
+import create from '../utils/create';
 
-export default {
-  name: 'van-tree-select',
-
-  components: {
-    [Icon.name]: Icon
-  },
+export default create({
+  name: 'tree-select',
 
   props: {
     items: {
@@ -47,7 +43,7 @@ export default {
       default: 0
     },
     activeId: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     maxHeight: {
@@ -75,5 +71,5 @@ export default {
       this.$emit('itemclick', { ...data });
     }
   }
-};
+});
 </script>

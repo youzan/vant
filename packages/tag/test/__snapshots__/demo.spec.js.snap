@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div><span class="van-hairline--surround van-tag">标签</span> <span class="van-hairline--surround van-tag van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--success">标签</span> <span class="van-hairline--surround van-tag van-tag--primary">标签</span></div>
+  <div><span class="van-hairline--surround van-tag van-tag--plain">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--plain van-tag--primary">标签</span>
+    <span
+      class="van-hairline--surround van-tag van-tag--plain van-tag--success">标签</span>
+  </div>
+  <div><span class="van-hairline--surround van-tag van-tag--mark">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--danger">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--primary">标签</span> <span class="van-hairline--surround van-tag van-tag--mark van-tag--success">标签</span></div>
+</div>
+`;

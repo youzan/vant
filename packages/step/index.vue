@@ -1,19 +1,21 @@
 <template>
-  <div class="van-step van-hairline" :class="stepClass">
-    <div class="van-step__circle-container">
-      <i class="van-step__circle" v-if="status !== 'process'"></i>
-      <i class="van-icon van-icon-checked" :style="{ color: $parent.activeColor }" v-else></i>
+  <div class="van-hairline" :class="b([$parent.direction, { [status]: status }])">
+    <div :class="b('title')" :style="titleStyle">
+      <slot />
     </div>
-    <div class="van-step__title" :style="titleStyle">
-      <slot></slot>
+    <div :class="b('circle-container')">
+      <i :class="b('circle')" v-if="status !== 'process'" />
+      <icon v-else name="checked" :style="{ color: $parent.activeColor }" />
     </div>
-    <div class="van-step__line"></div>
+    <div :class="b('line')" />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-step',
+import create from '../utils/create';
+
+export default create({
+  name: 'step',
 
   beforeCreate() {
     this.$parent.steps.push(this);
@@ -30,19 +32,12 @@ export default {
         return 'process';
       }
     },
-    stepClass() {
-      const status = this.status;
-      const statusClass = status ? 'van-step--' + status : '';
-      const directionClass = `van-step--${this.$parent.direction}`;
-      return [directionClass, statusClass];
-    },
+
     titleStyle() {
-      if (this.status === 'process') {
-        return {
-          color: this.$parent.activeColor
-        };
-      }
+      return this.status === 'process' ? {
+        color: this.$parent.activeColor
+      } : {};
     }
   }
-};
+});
 </script>

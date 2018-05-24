@@ -1,59 +1,42 @@
 @import './common/var.css';
 
 .van-switch {
-  height: 33px;
-  width: 53px;
+  height: 1em;
+  width: 1.6em;
   display: inline-block;
   position: relative;
   background: $white;
   border-radius: 16px;
-  box-sizing: border-box;
+  box-sizing: content-box;
   border: 1px solid rgba(0, 0, 0, .1);
-  border-radius: 32px;
+  border-radius: 1em;
 
   &__node {
-    width: 30px;
-    height: 30px;
-    border-radius: 13.5px;
-    background-color: $white;
-    position: absolute;
-    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
-    left: 0;
     top: 0;
-    z-index: 2;
-    transition: transform .3s;
-
-    &::after {
-      border-color: rgba(0, 0, 0, .1);
-      border-radius: 27px;
-    }
+    left: 0;
+    z-index: 1;
+    width: 1em;
+    height: 1em;
+    transition: .3s;
+    position: absolute;
+    border-radius: 100%;
+    background-color: $white;
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
   }
 
   &__loading {
-    width: 16px;
-    height: 16px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    margin: 0;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
   }
 
   &--on {
     background-color: #44db5e;
 
-    &::after {
-      border-color: #44db5e;
-    }
-
     .van-switch__node {
-      transform: translateX(21px);
+      transform: translateX(.6em);
     }
-  }
-
-  &--off {
-    background-color: $white;
-    border-color: rgba(0, 0, 0, .1);
   }
 
   &--disabled {

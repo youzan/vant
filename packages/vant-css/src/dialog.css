@@ -18,8 +18,6 @@
   }
 
   &__content {
-    padding: 15px 20px;
-
     &::after {
       border-bottom-width: 1px;
     }
@@ -27,6 +25,7 @@
 
   &__message {
     line-height: 1.5;
+    padding: 15px 20px;
 
     &--withtitle {
       color: $gray-dark;
@@ -36,8 +35,9 @@
 
   &__footer {
     overflow: hidden;
+    user-select: none;
 
-    &.is-twobtn {
+    &--buttons {
       display: flex;
 
       .van-button {

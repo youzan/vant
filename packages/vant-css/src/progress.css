@@ -10,18 +10,27 @@
     left: 0;
     height: 100%;
     position: absolute;
-    border-radius: 4px;
+    border-radius: inherit;
+
+    &--with-pivot {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 
   &__pivot {
     top: 50%;
-    width: 28px;
-    font-size: 8px;
-    margin-top: -6px;
+    right: 0;
+    min-width: 2em;
+    padding: 0 5px;
+    font-size: 10px;
     position: absolute;
-    border-radius: 6px;
-    line-height: 12px;
+    line-height: 1.6;
     text-align: center;
+    border-radius: 1em;
+    word-break: keep-all;
+    box-sizing: border-box;
     background-color: $gray-light;
+    transform: translate(100%, -50%);
   }
 }

@@ -1,16 +1,44 @@
-const userLang = window.localStorage.getItem('VANT_LANGUAGE') || window.navigator.language || 'en-US';
-let defaultLang = 'en-US';
-if (userLang.indexOf('zh-') !== -1) {
-  defaultLang = 'zh-CN';
-}
+import Locale from '../../../packages/locale';
+import zhCN from '../../../packages/locale/lang/zh-CN';
+import enUS from '../../../packages/locale/lang/en-US';
 
-let currentLang = defaultLang;
+const langMap = {
+  'en-US': {
+    title: 'Vant - Lightweight Mobile UI Components built on Vue',
+    messages: enUS
+  },
+  'zh-CN': {
+    title: 'Vant - 轻量、可靠的移动端 Vue 组件库',
+    messages: zhCN
+  }
+};
+let currentLang = '';
 
-export function getLang() {
-  return currentLang;
+setLang(getDefaultLang());
+
+function getDefaultLang() {
+  const langs = Object.keys(langMap);
+  const hash = location.hash;
+
+  for (let i = 0; i < langs.length; i++) {
+    if (hash.indexOf(langs[i]) !== -1) {
+      return langs[i];
+    }
+  }
+
+  const userLang = localStorage.getItem('VANT_LANGUAGE') || navigator.language || 'en-US';
+  return userLang.indexOf('zh-') !== -1 ? 'zh-CN' : 'en-US';
 }
 
 export function setLang(lang) {
-  window.localStorage.setItem('VANT_LANGUAGE', lang);
+  if (currentLang === lang) {
+    return;
+  }
+
   currentLang = lang;
+  if (window.localStorage) {
+    localStorage.setItem('VANT_LANGUAGE', lang);
+  }
+  Locale.use(lang, langMap[lang].messages);
+  document.title = langMap[lang].title;
 }

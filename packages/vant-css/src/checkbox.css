@@ -4,68 +4,47 @@ $van-checkbox-size: 20px;
 
 .van-checkbox {
   overflow: hidden;
+  user-select: none;
 
-  .van-icon-success {
-    color: $white;
-    display: block;
-    line-height: 1;
+  &__icon,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: $van-checkbox-size;
+  }
+
+  &__icon {
     font-size: 12px;
+    color: transparent;
     text-align: center;
-    pointer-events: none;
     border: 1px solid #aaa;
     width: $van-checkbox-size;
     height: $van-checkbox-size;
     box-sizing: border-box;
-
-    &::before {
-      margin: 0 auto;
-      line-height: $van-checkbox-size;
-    }
-  }
-
-  &__input {
-    position: relative;
-    height: $van-checkbox-size;
-    margin-right: 15px;
-    float: left;
-  }
-
-  &__control {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    margin: 0;
-    width: $van-checkbox-size;
-    height: $van-checkbox-size;
   }
 
   &__label {
-    display: block; 
-    margin-left: 37px;
-    line-height: $van-checkbox-size;
+    margin-left: 10px;
   }
 
   &--round {
-    .van-icon-success {
-      border-radius: 100%;
-    }
+    border-radius: 100%;
   }
 
-  &__control:checked + .van-icon-success {
+  &--checked {
+    color: #fff;
     border-color: $green;
     background-color: $green;
   }
 
   &--disabled {
-    .van-icon-success {
-      border-color: #d1dbe5;
-      background-color: transparent;
-    }
+    color: $background-color;
+    border-color: $gray-light;
+    background-color: currentColor;
+  }
 
-    .van-checkbox__control:checked + .van-icon-success {
-      border-color: #d1dbe5;
-      background-color: #d1dbe5;      
-    }
+  &--disabled&--checked {
+    border-color: $gray-light;
+    background-color: $gray-light;
   }
 }

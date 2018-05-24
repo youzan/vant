@@ -1,16 +1,22 @@
 <template>
-  <div class="van-checkbox-group">
-    <slot></slot>
+  <div :class="b()">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-checkbox-group',
+import create from '../utils/create';
+
+export default create({
+  name: 'checkbox-group',
 
   props: {
-    value: {},
-    disabled: Boolean
+    value: null,
+    disabled: Boolean,
+    max: {
+      default: 0,
+      type: Number
+    }
   },
 
   watch: {
@@ -18,5 +24,5 @@ export default {
       this.$emit('change', val);
     }
   }
-};
+});
 </script>

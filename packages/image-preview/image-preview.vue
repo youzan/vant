@@ -1,43 +1,42 @@
 <template>
   <div
     v-show="value"
-    class="van-image-preview"
+    :class="b()"
     @touchstart="onTouchStart"
-    @touchmove="onTouchMove"
     @touchend="onTouchEnd"
     @touchcancel="onTouchEnd"
   >
-    <van-swipe :initialSwipe="startPosition">
-      <van-swipe-item v-for="(item, index) in images" :key="index">
-        <img class="van-image-preview__image" :src="item" >
-      </van-swipe-item>
-    </van-swipe>
-  </div>  
+    <swipe :initial-swipe="startPosition" ref="swipe">
+      <swipe-item v-for="(item, index) in images" :key="index">
+        <img :class="b('image')" :src="item" >
+      </swipe-item>
+    </swipe>
+  </div>
 </template>
 
 <script>
+import create from '../utils/create';
 import Popup from '../mixins/popup';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
-export default {
-  name: 'van-image-preview',
+export default create({
+  name: 'image-preview',
 
   mixins: [Popup],
 
   components: {
-    [Swipe.name]: Swipe,
-    [SwipeItem.name]: SwipeItem
+    Swipe,
+    SwipeItem
   },
 
   props: {
     overlay: {
-      default: true
-    },
-    lockOnScroll: {
+      type: Boolean,
       default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     }
   },
@@ -50,28 +49,21 @@ export default {
   },
 
   methods: {
-    onTouchStart(event) {
+    onTouchStart() {
       this.touchStartTime = new Date();
-      this.touchStartX = event.touches[0].clientX;
-      this.touchStartY = event.touches[0].clientY;
-      this.deltaX = 0;
-      this.deltaY = 0;
-    },
-
-    onTouchMove(event) {
-      event.preventDefault();
-      this.deltaX = event.touches[0].clientX - this.touchStartX;
-      this.deltaY = event.touches[0].clientY - this.touchStartY;
     },
 
     onTouchEnd(event) {
       event.preventDefault();
-      // prevent long tap to close component
+
       const deltaTime = new Date() - this.touchStartTime;
-      if (deltaTime < 100 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {
-        this.value = false;
+      const { offsetX, offsetY } = this.$refs.swipe;
+
+      // prevent long tap to close component
+      if (deltaTime < 500 && offsetX < 10 && offsetY < 10) {
+        this.$emit('input', false);
       }
     }
   }
-};
+});
 </script>

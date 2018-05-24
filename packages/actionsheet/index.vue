@@ -1,54 +1,53 @@
 <template>
-  <transition name="van-actionsheet-float">
-    <div :class="['van-actionsheet', { 'van-actionsheet--withtitle': title }]" v-show="value">
-      <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
+  <transition name="van-slide-bottom">
+    <div v-show="value" :class="b({ 'withtitle': title })">
+      <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
         <div v-text="title" />
-        <van-icon name="close" @click.stop="$emit('input', false)" />
+        <icon name="close" @click="onCancel" />
       </div>
-      <ul v-if="!title" class="van-actionsheet__list">
+      <ul v-else class="van-hairline--bottom">
         <li
-          v-for="(item, index) in actions"
-          :key="index"
-          :class="['van-actionsheet__item', 'van-hairline--top', item.className, { 'van-actionsheet__item--loading': item.loading }]"
-          @click.stop="onClickItem(item)">
+          v-for="item in actions"
+          :class="[b('item'), item.className, 'van-hairline--top']"
+          @click.stop="onClickItem(item)"
+        >
           <template v-if="!item.loading">
-            <span class="van-actionsheet__name">{{ item.name }}</span>
-            <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+            <span :class="b('name')">{{ item.name }}</span>
+            <span :class="b('subname')" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <van-loading v-else class="van-actionsheet__loading" type="circle" color="black" />
+          <loading v-else :class="b('loading')" size="20px" />
         </li>
       </ul>
-      <div class="van-actionsheet__item van-actionsheet__cancel van-hairline--top" @click.stop="$emit('input', false)" v-if="cancelText">{{ cancelText }}</div>
-      <div class="van-actionsheet__content" v-else>
-        <slot></slot>
+      <div
+        v-if="cancelText"
+        v-text="cancelText"
+        :class="[b('cancel'), 'van-hairline--top']"
+        @click="onCancel"
+      />
+      <div v-else :class="b('content')">
+        <slot />
       </div>
     </div>
   </transition>
 </template>
 
 <script>
+import create from '../utils/create';
 import Popup from '../mixins/popup';
-import Icon from '../icon';
-import Loading from '../loading';
 
-export default {
-  name: 'van-actionsheet',
+export default create({
+  name: 'actionsheet',
 
   mixins: [Popup],
 
-  components: {
-    [Icon.name]: Icon,
-    [Loading.name]: Loading
-  },
-
   props: {
     value: Boolean,
+    title: String,
+    cancelText: String,
     actions: {
       type: Array,
       default: () => []
     },
-    title: String,
-    cancelText: String,
     overlay: {
       type: Boolean,
       default: true
@@ -59,16 +58,17 @@ export default {
     }
   },
 
-  mounted() {
-    this.value && this.open();
-  },
-
   methods: {
     onClickItem(item) {
       if (typeof item.callback === 'function') {
         item.callback(item);
       }
+    },
+
+    onCancel() {
+      this.$emit('input', false);
+      this.$emit('cancel');
     }
   }
-};
+});
 </script>

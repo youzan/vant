@@ -1,57 +1,47 @@
 <template>
-  <transition name="van-toast-fade">
-    <div class="van-toast-wrapper" v-show="visible">
-      <div :class="['van-toast', `van-toast--${displayStyle}`, `van-toast--${position}`]">
-        <!-- text only -->
-        <div v-if="displayStyle === 'text'">{{ message }}</div>
-        <div v-if="displayStyle === 'html'" v-html="message" />
+  <transition name="van-fade">
+    <div v-show="value" :class="b([style, position])">
+      <!-- text only -->
+      <div v-if="style === 'text'">{{ message }}</div>
+      <div v-if="style === 'html'" v-html="message" />
 
-        <!-- with icon -->
-        <template v-if="displayStyle === 'default'">
-          <van-loading v-if="type === 'loading'" color="white" />
-          <van-icon v-else class="van-toast__icon" :name="type" />
-          <div v-if="message" class="van-toast__text">{{ message }}</div>
-        </template>
-      </div>
-      <div :class="['van-toast__overlay', { 'van-toast__overlay--mask': mask }]" v-if="forbidClick || mask" />
+      <!-- with icon -->
+      <template v-if="style === 'default'">
+        <loading v-if="type === 'loading'" color="white" :type="loadingType" />
+        <icon v-else :class="b('icon')" :name="type" />
+        <div v-if="isDef(message)" :class="b('text')">{{ message }}</div>
+      </template>
     </div>
   </transition>
 </template>
 
 <script>
-import Icon from '../icon';
-import Loading from '../loading';
+import create from '../utils/create';
+import Popup from '../mixins/popup';
 
-const TOAST_TYPES = ['text', 'html', 'loading', 'success', 'fail'];
-const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading'];
+const STYLE_LIST = ['success', 'fail', 'loading'];
 
-export default {
-  name: 'van-toast',
+export default create({
+  name: 'toast',
 
-  components: {
-    [Icon.name]: Icon,
-    [Loading.name]: Loading
-  },
+  mixins: [Popup],
 
   props: {
+    forbidClick: Boolean,
+    message: [String, Number],
     type: {
       type: String,
-      default: 'text',
-      validator: value => TOAST_TYPES.indexOf(value) > -1
+      default: 'text'
     },
-    message: {
+    loadingType: {
       type: String,
-      default: ''
-    },
-    forbidClick: {
-      type: Boolean,
-      default: false
+      default: 'circular'
     },
     position: {
       type: String,
       default: 'middle'
     },
-    mask: {
+    lockScroll: {
       type: Boolean,
       default: false
     }
@@ -59,14 +49,39 @@ export default {
 
   data() {
     return {
-      visible: false
+      clickable: false
     };
   },
 
   computed: {
-    displayStyle() {
-      return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
+    style() {
+      return STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
+    }
+  },
+
+  mounted() {
+    this.toggleClickale();
+  },
+
+  watch: {
+    value() {
+      this.toggleClickale();
+    },
+
+    forbidClick() {
+      this.toggleClickale();
+    }
+  },
+
+  methods: {
+    toggleClickale() {
+      const clickable = this.value && this.forbidClick;
+      if (this.clickable !== clickable) {
+        this.clickable = clickable;
+        const action = clickable ? 'add' : 'remove';
+        document.body.classList[action]('van-toast--unclickable');
+      }
     }
   }
-};
+});
 </script>

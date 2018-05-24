@@ -1,18 +1,16 @@
 <template>
-  <div :class="`${prefix}-row`" :style="style">
-    <slot></slot>
+  <div :class="b()" :style="style">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-row',
+import create from '../utils/create';
+
+export default create({
+  name: 'row',
 
   props: {
-    prefix: {
-      type: String,
-      default: 'van'
-    },
     gutter: {
       type: [Number, String],
       default: 0
@@ -27,5 +25,5 @@ export default {
         : {};
     }
   }
-};
+});
 </script>

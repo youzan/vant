@@ -1,38 +1,21 @@
 <template>
-  <div class="van-coupon-cell">
-    <van-cell-group>
-      <van-cell :title="title" :isLink="editable" @click="$emit('click')">
-        <div v-if="coupons[chosenCoupon]">
-          <div>{{ amount }}</div>
-          <div>{{ coupons[chosenCoupon].condition }}</div>
-        </div>
-        <template v-else>{{ guide }}</template>
-      </van-cell>
-    </van-cell-group>
-  </div>
+  <cell-group :class="b()">
+    <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
+  </cell-group>
 </template>
 
 <script>
-import Cell from '../cell';
-import CellGroup from '../cell-group';
+import create from '../utils/create';
 
-export default {
-  name: 'van-coupon-cell',
-
-  components: {
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
-  },
+export default create({
+  name: 'coupon-cell',
 
   model: {
     prop: 'chosenCoupon'
   },
 
   props: {
-    title: {
-      type: String,
-      default: '优惠'
-    },
+    title: String,
     coupons: {
       type: Array,
       default: () => []
@@ -48,13 +31,14 @@ export default {
   },
 
   computed: {
-    guide() {
-      return this.coupons.length === 0 ? '使用优惠' : `您有 ${this.coupons.length} 个可用优惠`;
-    },
-    amount() {
-      const coupon = this.coupons[this.chosenCoupon];
-      return `${coupon.name} 省￥${(coupon.value / 100).toFixed(2)}`;
+    value() {
+      const { coupons } = this;
+      const coupon = coupons[this.chosenCoupon];
+      if (coupon) {
+        return `${this.$t('reduce')}￥${(coupon.value / 100).toFixed(2)}`;
+      }
+      return coupons.length === 0 ? this.$t('tips') : this.$t('count', coupons.length);
     }
   }
-};
+});
 </script>

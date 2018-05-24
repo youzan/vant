@@ -1,11 +1,20 @@
 <template>
-  <div class="van-cell-group van-hairline--top-bottom">
-    <slot></slot>
+  <div :class="[b(), { 'van-hairline--top-bottom': border }]">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-cell-group'
-};
+import create from '../utils/create-basic';
+
+export default create({
+  name: 'cell-group',
+
+  props: {
+    border: {
+      type: Boolean,
+      default: true
+    }
+  }
+});
 </script>

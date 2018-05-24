@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
+      <div class="van-cell van-cell--clickable van-hairline">
+        <!---->
+        <div class="van-cell__title"><span>优惠券码</span>
+          <!---->
+        </div>
+        <div class="van-cell__value"><span>您有 2 个可用优惠</span></div>
+        <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+          <!---->
+        </i>
+      </div>
+    </div>
+    <div class="van-popup van-popup--bottom" style="display:none;">
+      <div class="van-coupon-list">
+        <div class="van-cell-group van-hairline--top-bottom van-coupon-list__top">
+          <div placeholder="请输入优惠码" maxlength="20" class="van-hairline--surround van-cell van-hairline van-field van-coupon-list__field">
+            <!---->
+            <!---->
+            <div class="van-cell__value van-cell__value--alone">
+              <input type="text" placeholder="请输入优惠码" maxlength="20" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
+            <!---->
+          </div>
+          <button disabled="disabled" class="van-button van-button--danger van-button--small van-button--disabled van-button--unclickable van-coupon-list__exchange">
+            <!----><span class="van-button__text">兑换</span></button>
+        </div>
+        <div class="van-coupon-list__list van-coupon-list__list--with-exchange">
+          <div class="van-coupon-item">
+            <div class="van-coupon-item__head">
+              <div class="van-coupon-item__lines"></div>
+              <div class="van-coupon-item__gradient">
+                <h2><span>¥</span> 1.5</h2>
+                <p>无使用门槛</p>
+              </div>
+            </div>
+            <div class="van-coupon-item__body">
+              <h2>优惠券名称</h2> <span>2017.03.10-2017.12.30</span>
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <div class="van-coupon-item">
+            <div class="van-coupon-item__head">
+              <div class="van-coupon-item__lines"></div>
+              <div class="van-coupon-item__gradient">
+                <h2>8.8折</h2>
+                <p>满0.50元可用</p>
+              </div>
+            </div>
+            <div class="van-coupon-item__body">
+              <h2>优惠券名称</h2> <span>2017.03.10-2017.12.30</span>
+              <!---->
+              <!---->
+            </div>
+          </div>
+          <h3>不可用优惠</h3>
+          <div class="van-coupon-item van-coupon-item--disabled">
+            <div class="van-coupon-item__head">
+              <div class="van-coupon-item__lines"></div>
+              <div class="van-coupon-item__gradient">
+                <h2><span>¥</span> 1.5</h2>
+                <p>无使用门槛</p>
+              </div>
+            </div>
+            <div class="van-coupon-item__body">
+              <h2>优惠券名称</h2> <span>2017.03.10-2017.12.30</span>
+              <p>优惠券不可用原因</p>
+              <!---->
+            </div>
+          </div>
+          <div class="van-coupon-item van-coupon-item--disabled">
+            <div class="van-coupon-item__head">
+              <div class="van-coupon-item__lines"></div>
+              <div class="van-coupon-item__gradient">
+                <h2>1折</h2>
+                <p>满0.50元可用</p>
+              </div>
+            </div>
+            <div class="van-coupon-item__body">
+              <h2>优惠券名称</h2> <span>2017.03.10-2017.12.30</span>
+              <p>优惠券不可用原因</p>
+              <!---->
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="van-hairline--top van-coupon-list__close">不使用优惠</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,15 +1,17 @@
 <template>
-  <div class="van-radio-group">
-    <slot></slot>
+  <div :class="b()">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-radio-group',
+import create from '../utils/create';
+
+export default create({
+  name: 'radio-group',
 
   props: {
-    value: {},
+    value: null,
     disabled: Boolean
   },
 
@@ -18,5 +20,5 @@ export default {
       this.$emit('change', value);
     }
   }
-};
+});
 </script>

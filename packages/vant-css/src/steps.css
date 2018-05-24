@@ -1,5 +1,4 @@
 @import './common/var.css';
-@import './mixins/ellipsis.css';
 
 .van-steps {
   overflow: hidden;
@@ -32,31 +31,23 @@
 
   .van-icon {
     font-size: 40px;
-    line-height: 1;
   }
 
   &__message {
-    display: table;
     height: 40px;
     margin: 15px 0;
-
-    .van-steps__message-wrapper {
-      display: table-cell;
-      vertical-align: middle;
-    }
   }
 
   &__title {
     font-size: 14px;
     color: $text-color;
+    padding-top: 4px;
   }
 
   &__desc {
     font-size: 12px;
     line-height: 1.5;
     color: $gray-dark;
-    max-height: 18px;
-    @mixin multi-ellipsis 1;
   }
 }
 
@@ -140,7 +131,6 @@
       .van-icon {
         font-size: 12px;
         color: $green;
-        line-height: 1;
         display: block;
       }
     }

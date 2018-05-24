@@ -8,7 +8,29 @@ const config = require('./scripts/icon-config');
 const path = require('path');
 const shelljs = require('shelljs');
 const md5File = require('md5-file');
+const glob = require('glob');
+const iconLocalTemplate = require('./scripts/icon-local-template');
+const resolve = relativePath => path.resolve(__dirname, relativePath);
 
+// compile component css
+gulp.task('compile', () => {
+  fs.emptyDirSync('./lib');
+  return gulp
+    .src('./src/*.css')
+    .pipe(postcss())
+    .pipe(cssmin())
+    .pipe(gulp.dest('./lib'));
+});
+
+// copy lib files
+gulp.task('lib', ['compile'], () => {
+  const ttf = glob.sync(resolve('./src/*.ttf'));
+  ttf.forEach(ttf => fs.copySync(ttf, './lib/' + path.parse(ttf).base));
+  fs.copySync('./lib', '../../lib/vant-css');
+  fs.copySync('./lib', '../../es/vant-css');
+});
+
+// extract svg from sketch
 function extractSvg() {
   shelljs.exec('./scripts/extract-icons.sh');
   fs.mkdirsSync(path.join(__dirname, './icons'));
@@ -20,25 +42,18 @@ function extractSvg() {
   });
 }
 
+// get icon unicode
 function getCodePoints() {
   const codePoints = {};
   config.glyphs.forEach((icon, index) => {
     const svgPath = path.join(__dirname, './icons/', icon.css + '.svg');
     if (fs.existsSync(svgPath)) {
-      codePoints[icon.css] = 0xe800 + index;
+      codePoints[icon.css] = 0xf000 + index;
     }
   });
 }
 
-gulp.task('compile', () => {
-  return gulp
-    .src('./src/*.css')
-    .pipe(postcss())
-    .pipe(cssmin())
-    .pipe(gulp.dest('./lib'))
-    .pipe(gulp.dest('../../lib/vant-css/'));
-});
-
+// generate ttf from sketch && build icon.css
 gulp.task('icon-font-ttf', () => {
   extractSvg();
   return gulp
@@ -49,7 +64,7 @@ gulp.task('icon-font-ttf', () => {
         path: 'scripts/icon-template.css',
         targetPath: './icon.css',
         normalize: true,
-        firstGlyph: 0xe800,
+        firstGlyph: 0xf000,
         fixedCodepoints: getCodePoints()
       })
     )
@@ -64,15 +79,26 @@ gulp.task('icon-font-ttf', () => {
 });
 
 gulp.task('icon-font', ['icon-font-ttf'], () => {
-  const fontPath = path.resolve(__dirname, './icons/vant-icon.ttf');
-  const hash = md5File.sync(fontPath).slice(0, 8);
-  fs.renameSync(fontPath, path.resolve(__dirname, `./icons/vant-icon-${hash}.ttf`));
+  // remove previous ttf
+  const prevTTFs = glob.sync(resolve('./src/*.ttf'));
+  prevTTFs.forEach(ttf => fs.removeSync(ttf));
 
-  let source = fs.readFileSync(path.resolve(__dirname, './icons/icon.css'), 'utf-8');
+  // generate ttf hash
+  const fontPath = resolve('./icons/vant-icon.ttf');
+  const hash = md5File.sync(fontPath).slice(0, 6);
+  fs.renameSync(fontPath, resolve(`./src/vant-icon-${hash}.ttf`));
+
+  // copy icon.css to src
+  let source = fs.readFileSync(resolve('./icons/icon.css'), 'utf-8');
   source = source.replace('vant-icon.ttf', `vant-icon-${hash}.ttf`);
+  fs.writeFileSync(resolve('./src/icon.css'), source);
 
-  fs.writeFileSync(path.resolve(__dirname, './src/icon.css'), source);
-  shelljs.exec(`superman cdn /zanui/icon ./icons/vant-icon-${hash}.ttf`);
+  // generate icon-local.css
+  const localIconSource = iconLocalTemplate(config.name, hash);
+  fs.writeFileSync(resolve('./src/icon-local.css'), localIconSource);
+
+  // upload ttf to cdn
+  shelljs.exec(`superman cdn /zanui/icon ./src/vant-icon-${hash}.ttf`);
 });
 
-gulp.task('build', ['compile']);
+gulp.task('build', ['lib']);

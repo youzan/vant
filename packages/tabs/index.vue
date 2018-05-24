@@ -1,227 +1,267 @@
 <template>
-  <div class="van-tabs" :class="[`van-tabs--${type}`]">
-    <div class="van-tabs__nav-wrap" v-if="type === 'line' && tabs.length > swipeThreshold">
-      <div class="van-tabs__swipe" ref="swipe">
-        <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__nav-bar" :style="navBarStyle"></div>
-          <div
-            v-for="(tab, index) in tabs"
-            :key="index"
-            class="van-tab van-hairline"
-            :class="{ 'van-tab--active': index === curActive }"
-            ref="tabkey"
-            @click="handleTabClick(index)"
-          >
-            <span>{{ tab.title }}</span>
-          </div>
+  <div :class="b([type])">
+    <div
+      ref="wrap"
+      :class="[
+        b('wrap', [position, { scrollable }]),
+        { 'van-hairline--top-bottom': type === 'line' }
+      ]"
+    >
+      <div :class="b('nav', [type])" ref="nav">
+        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
+        <div
+          v-for="(tab, index) in tabs"
+          ref="tabs"
+          class="van-tab"
+          :class="{
+            'van-tab--active': index === curActive,
+            'van-tab--disabled': tab.disabled
+          }"
+          @click="onClick(index)"
+        >
+          <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
+          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
         </div>
       </div>
     </div>
-    <div
-      v-else
-      class="van-tabs__nav"
-      :class="[`van-tabs__nav--${this.type}`]"
-    >
-      <div class="van-tabs__nav-bar" :style="navBarStyle" v-if="type === 'line'"></div>
-      <div
-        v-for="(tab, index) in tabs"
-        :key="index"
-        class="van-tab van-hairline"
-        :class="{ 'van-tab--active': index === curActive }"
-        ref="tabkey"
-        @click="handleTabClick(index)"
-      >
-        <span>{{ tab.title }}</span>
-      </div>
-    </div>
-    <div class="van-tabs__content">
-      <slot></slot>
+    <div :class="b('content')" ref="content">
+      <slot />
     </div>
   </div>
 </template>
 
 <script>
-  import swipe from './swipe';
-  import translateUtil from '../utils/transition';
+import create from '../utils/create';
+import { raf } from '../utils/raf';
+import { on, off } from '../utils/event';
+import VanNode from '../utils/node';
+import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
-  export default {
-    name: 'van-tabs',
+export default create({
+  name: 'tabs',
 
-    props: {
-      // 外部传入的激活的tab标签
-      active: {
-        type: [Number, String],
-        default: 0
-      },
-      // 是默认的line还是card
-      type: {
-        type: String,
-        default: 'line'
-      },
-      // 切换tab的动画时间
-      duration: {
-        type: Number,
-        default: 0.3
-      },
-      swipeThreshold: {
-        type: Number,
-        default: 4
+  mixins: [Touch],
+
+  components: {
+    VanNode
+  },
+
+  model: {
+    prop: 'active'
+  },
+
+  props: {
+    sticky: Boolean,
+    lineWidth: Number,
+    swipeable: Boolean,
+    active: {
+      type: [Number, String],
+      default: 0
+    },
+    type: {
+      type: String,
+      default: 'line'
+    },
+    duration: {
+      type: Number,
+      default: 0.2
+    },
+    swipeThreshold: {
+      type: Number,
+      default: 4
+    }
+  },
+
+  data() {
+    return {
+      tabs: [],
+      position: 'content-top',
+      curActive: 0,
+      lineStyle: {}
+    };
+  },
+
+  computed: {
+    // whether the nav is scrollable
+    scrollable() {
+      return this.tabs.length > this.swipeThreshold;
+    }
+  },
+
+  watch: {
+    active(val) {
+      if (val !== this.curActive) {
+        this.correctActive(val);
       }
     },
 
-    data() {
-      return {
-        tabs: [],
-        curActive: +this.active,
-        isSwiping: false,
-        isInitEvents: false,
-        navBarStyle: {}
-      };
+    tabs(tabs) {
+      this.correctActive(this.curActive || this.active);
+      this.setLine();
     },
 
-    watch: {
-      active(val) {
-        this.curActive = +val;
-      },
+    curActive() {
+      this.scrollIntoView();
+      this.setLine();
 
-      curActive() {
-        this.setNavBarStyle();
+      // scroll to correct position
+      if (this.position === 'page-top' || this.position === 'content-bottom') {
+        scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
+      }
+    },
+
+    sticky(isSticky) {
+      this.scrollHandler(isSticky);
+    }
+  },
+
+  mounted() {
+    this.correctActive(this.active);
+    this.setLine();
+
+    this.$nextTick(() => {
+      if (this.sticky) {
+        this.scrollHandler(true);
+      }
+      if (this.swipeable) {
+        this.swipeableHandler(true);
+      }
+      this.scrollIntoView();
+    });
+  },
+
+  beforeDestroy() {
+    /* istanbul ignore next */
+    if (this.sticky) {
+      this.scrollHandler(false);
+    }
+    /* istanbul ignore next */
+    if (this.swipeable) {
+      this.swipeableHandler(false);
+    }
+  },
+
+  methods: {
+    // whether to bind sticky listener
+    scrollHandler(init) {
+      this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
+      (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
+      if (init) {
+        this.onScroll();
+      }
+    },
+
+    // whether to bind content swipe listener
+    swipeableHandler(init) {
+      const { content } = this.$refs;
+      const action = init ? on : off;
+      action(content, 'touchstart', this.touchStart);
+      action(content, 'touchmove', this.touchMove);
+      action(content, 'touchend', this.onTouchEnd);
+      action(content, 'touchcancel', this.onTouchEnd);
+    },
+
+    // watch swipe touch end
+    onTouchEnd() {
+      const { direction, deltaX, curActive } = this;
+      const minSwipeDistance = 50;
+
+      /* istanbul ignore else */
+      if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
         /* istanbul ignore else */
-        if (this.tabs.length > this.swipeThreshold) {
-          this.doOnValueChange();
+        if (deltaX > 0 && curActive !== 0) {
+          this.setCurActive(curActive - 1);
+        } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
+          this.setCurActive(curActive + 1);
         }
-      },
-      
-      tabs(val) {
-        this.$nextTick(() => {
-          this.setNavBarStyle();
-          if (val.length > this.swipeThreshold) {
-            this.initEvents();
-            this.doOnValueChange();
-          } else {
-            this.isInitEvents = false;
-          }
-        });
       }
     },
 
-    computed: {
-      swipeWidth() {
-        return this.$refs.swipe && this.$refs.swipe.getBoundingClientRect().width;
-      },
-      maxTranslate() {
-        /* istanbul ignore if */
-        if (!this.$refs.tabkey) return;
-
-        const lastTab = this.$refs.tabkey[this.tabs.length - 1];
-        const lastTabWidth = lastTab.offsetWidth;
-        const lastTabOffsetLeft = lastTab.offsetLeft;
-
-        return (lastTabOffsetLeft + lastTabWidth) - this.swipeWidth;
+    // adjust tab position
+    onScroll() {
+      const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
+      const elTopToPageTop = scrollUtils.getElementTop(this.$el);
+      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
+      if (scrollTop > elBottomToPageTop) {
+        this.position = 'content-bottom';
+      } else if (scrollTop > elTopToPageTop) {
+        this.position = 'page-top';
+      } else {
+        this.position = 'content-top';
       }
     },
 
-    mounted() {
-      // 页面载入完成
+    // update nav bar style
+    setLine() {
       this.$nextTick(() => {
-        this.setNavBarStyle();
-  
-        if (this.tabs.length > this.swipeThreshold) {
-          this.initEvents();
-          this.doOnValueChange();
-        }
-      });
-    },
-
-    methods: {
-      /**
-       * `type`为`line`时，tab下方的横线的样式
-       */
-      setNavBarStyle() {
-        if (this.type !== 'line' || !this.$refs.tabkey) return {};
-
-        const tabKey = this.curActive;
-        const elem = this.$refs.tabkey[tabKey];
-        const offsetWidth = `${elem.offsetWidth || 0}px`;
-        const offsetLeft = `${elem.offsetLeft || 0}px`;
-
-        this.navBarStyle = {
-          width: offsetWidth,
-          transform: `translate3d(${offsetLeft}, 0, 0)`,
-          transitionDuration: `${this.duration}s`
-        };
-      },
-
-      handleTabClick(index) {
-        if (this.tabs[index].disabled) {
-          this.$emit('disabled', index);
+        if (!this.$refs.tabs) {
           return;
         }
 
-        this.$emit('click', index);
-        this.curActive = index;
-      },
+        const tab = this.$refs.tabs[this.curActive];
+        const width = this.lineWidth || tab.offsetWidth;
+        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
-      /**
-       * 将当前value值转换为需要translate的值
-       */
-      value2Translate(value) {
-        /* istanbul ignore if */
-        if (!this.$refs.tabkey) return 0;
+        this.lineStyle = {
+          width: `${width}px`,
+          transform: `translateX(${left}px)`,
+          transitionDuration: `${this.duration}s`
+        };
+      });
+    },
 
-        const tab = this.$refs.tabkey[value];
-        const maxTranslate = this.maxTranslate;
-        const tabWidth = tab.offsetWidth;
-        const tabOffsetLeft = tab.offsetLeft;
-        let translate = tabOffsetLeft + (tabWidth * 2.7) - this.swipeWidth;
-        if (translate < 0) {
-          translate = 0;
-        }
+    // correct the value of active
+    correctActive(active) {
+      active = +active;
+      const exist = this.tabs.some(tab => tab.index === active);
+      const defaultActive = (this.tabs[0] || {}).index || 0;
+      this.setCurActive(exist ? active : defaultActive);
+    },
 
-        return -1 * (translate > maxTranslate ? maxTranslate : translate);
-      },
+    setCurActive(active) {
+      this.curActive = active;
+      this.$emit('input', active);
+    },
 
-      initEvents() {
-        const el = this.$refs.swipe;
-        if (!el || this.isInitEvents) return;
-
-        this.isInitEvents = true;
-        let swipeState = {};
-
-        swipe(el, {
-          start: event => {
-            swipeState = {
-              start: new Date(),
-              startLeft: event.pageX,
-              startTranslateLeft: translateUtil.getElementTranslate(el).left
-            };
-          },
-
-          drag: event => {
-            this.isSwiping = true;
-
-            swipeState.left = event.pageX;
-            const deltaX = swipeState.left - swipeState.startLeft;
-            const translate = swipeState.startTranslateLeft + deltaX;
-
-            /* istanbul ignore else */
-            if (translate > 0 || (translate * -1) > this.maxTranslate) return;
-
-            translateUtil.translateElement(el, translate, null);
-          },
-
-          end: () => {
-            this.isSwiping = false;
-          }
-        });
-      },
-
-      doOnValueChange() {
-        const value = +this.curActive;
-        const swipe = this.$refs.swipe;
-
-        translateUtil.translateElement(swipe, this.value2Translate(value), null);
+    // emit event when clicked
+    onClick(index) {
+      const { title, disabled } = this.tabs[index];
+      if (disabled) {
+        this.$emit('disabled', index, title);
+      } else {
+        this.$emit('click', index, title);
+        this.setCurActive(index);
       }
+    },
+
+    // scroll active tab into view
+    scrollIntoView() {
+      if (!this.scrollable || !this.$refs.tabs) {
+        return;
+      }
+
+      const tab = this.$refs.tabs[this.curActive];
+      const { nav } = this.$refs;
+      const { scrollLeft, offsetWidth: navWidth } = nav;
+      const { offsetLeft, offsetWidth: tabWidth } = tab;
+
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
+    },
+
+    // animate the scrollLeft of nav
+    scrollTo(el, from, to) {
+      let count = 0;
+      const frames = Math.round(this.duration * 1000 / 16);
+      const animate = () => {
+        el.scrollLeft += (to - from) / frames;
+        /* istanbul ignore next */
+        if (++count < frames) {
+          raf(animate);
+        }
+      };
+      animate();
     }
-  };
+  }
+});
 </script>

@@ -1,80 +1,64 @@
 <template>
-  <div
-    @click="handleRadioClick"
-    class="van-radio"
-    :class="{
-      'van-radio--disabled': isDisabled
-    }">
-    <span class="van-radio__input">
+  <div :class="b({ disabled: isDisabled })" @click="$emit('click')">
+    <span :class="b('input')">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
-        class="van-radio__control"
-        :disabled="isDisabled">
-      <span class="van-icon" :class="{
-        'van-icon-checked': currentValue === name,
-        'van-icon-check': currentValue !== name
-      }">
-      </span>
+        :class="b('control')"
+        :disabled="isDisabled"
+      >
+      <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span class="van-radio__label" @click="handleLabelClick">
-      <slot></slot>
+    <span v-if="$slots.default" :class="b('label')" @click="onClickLabel">
+      <slot />
     </span>
   </div>
 </template>
 
 <script>
-import findParent from '../mixins/findParent';
+import create from '../utils/create';
+import findParent from '../mixins/find-parent';
 
-export default {
-  name: 'van-radio',
+export default create({
+  name: 'radio',
 
   mixins: [findParent],
 
   props: {
-    disabled: Boolean,
-    value: {},
-    name: [String, Number]
+    name: null,
+    value: null,
+    disabled: Boolean
   },
 
   computed: {
-    isGroup() {
-      return !!this.findParentByComponentName('van-radio-group');
-    },
-
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value : this.value;
+        return this.parent ? this.parent.value : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
-          this.parentGroup.$emit('input', val);
-        } else {
-          this.$emit('input', val);
-        }
+        (this.parent || this).$emit('input', val);
       }
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled || this.disabled
-          : this.disabled;
+      return this.parent
+        ? this.parent.disabled || this.disabled
+        : this.disabled;
     }
   },
 
-  methods: {
-    handleLabelClick() {
-      if (this.isDisabled) {
-        return;
-      }
-      this.currentValue = this.name;
-    },
+  created() {
+    this.findParent('van-radio-group');
+  },
 
-    handleRadioClick() {
-      this.$emit('click');
+  methods: {
+    onClickLabel() {
+      if (!this.isDisabled) {
+        this.currentValue = this.name;
+      }
     }
   }
-};
+});
 </script>

@@ -1,16 +1,20 @@
 <template>
-  <div class="van-progress">
-    <span class="van-progress__portion" :style="portionStyle"></span>
-    <span class="van-progress__pivot" v-show="showPivot" :style="pivotStyle">{{ pivotText }}</span>
+  <div :class="b()">
+    <span :class="b('portion', { 'with-pivot': showPivot })" :style="portionStyle">
+      <span v-if="showPivot" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ pivotText }}</span>
+    </span>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-progress',
+import create from '../utils/create';
+
+export default create({
+  name: 'progress',
 
   props: {
     inactive: Boolean,
+    pivotColor: String,
     percentage: {
       type: Number,
       required: true,
@@ -36,25 +40,52 @@ export default {
     }
   },
 
+  data() {
+    return {
+      pivotWidth: 0,
+      progressWidth: 0
+    };
+  },
+
   computed: {
-    componentColor() {
+    currentColor() {
       return this.inactive ? '#cacaca' : this.color;
     },
+
     pivotStyle() {
-      const { percentage } = this;
       return {
         color: this.textColor,
-        backgroundColor: this.componentColor,
-        left: percentage <= 5 ? '0%' : percentage >= 95 ? '100%' : percentage + '%',
-        marginLeft: percentage <= 5 ? '0' : percentage >= 95 ? '-28px' : '-14px'
+        background: this.pivotColor || this.currentColor
       };
     },
+
     portionStyle() {
       return {
-        width: this.percentage + '%',
-        backgroundColor: this.componentColor
+        width: (this.progressWidth - this.pivotWidth) * this.percentage / 100 + 'px',
+        background: this.currentColor
       };
     }
+  },
+
+  mounted() {
+    this.getWidth();
+  },
+
+  watch: {
+    showPivot() {
+      this.getWidth();
+    },
+
+    pivotText() {
+      this.getWidth();
+    }
+  },
+
+  methods: {
+    getWidth() {
+      this.progressWidth = this.$el.offsetWidth;
+      this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
+    }
   }
-};
+});
 </script>

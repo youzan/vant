@@ -6,33 +6,19 @@
   left: 50%;
   display: flex;  
   color: $white;
-  z-index: 3001;
   font-size: 12px;
   line-height: 1.2;
   border-radius: 5px;
+  word-break: break-all;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   box-sizing: border-box;
   transform: translate3d(-50%, -50%, 0);
-  background-color: rgba(39, 39, 39, .7);
+  background-color: rgba(0, 0, 0, .7);
 
-  &-wrapper {
-    transition: opacity .2s;
-  }
-
-  &__overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 3000;
-    background-color: transparent;
-
-    &--mask {
-      background-color: rgba(0, 0, 0, .5);
-    }
+  &--unclickable {
+    pointer-events: none;
   }
 
   &--text {
@@ -67,8 +53,4 @@
     top: auto;
     bottom: 50px;
   }
-}
-
-.van-toast-fade-enter, .van-toast-fade-leave-to {
-  opacity: 0;
 }

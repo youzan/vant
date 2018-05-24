@@ -1,12 +1,14 @@
 <template>
-  <div class="van-swipe-item" :style="style">
-    <slot></slot>
+  <div :class="b()" :style="style">
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-swipe-item',
+import create from '../utils/create';
+
+export default create({
+  name: 'swipe-item',
 
   data() {
     return {
@@ -16,9 +18,11 @@ export default {
 
   computed: {
     style() {
+      const { vertical, width, height } = this.$parent;
       return {
-        width: this.$parent.width + 'px',
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        width: width + 'px',
+        height: vertical ? height + 'px' : '100%',
+        transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
       };
     }
   },
@@ -30,5 +34,5 @@ export default {
   destroyed() {
     this.$parent.swipes.splice(this.$parent.swipes.indexOf(this), 1);
   }
-};
+});
 </script>

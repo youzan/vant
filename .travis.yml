@@ -1,4 +1,7 @@
 language: node_js
+sudo: required
+addons:
+    chrome: stable
 node_js:
 - 6
 os: linux
@@ -16,4 +19,4 @@ script:
     npm run lint && npm run test
 after_success:
 - |
-    cat ./test/unit/coverage/lcov.info | ./node_modules/.bin/codecov
+    cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov

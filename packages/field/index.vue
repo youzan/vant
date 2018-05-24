@@ -1,105 +1,106 @@
 <template>
-  <van-cell
+  <cell
+    :icon="leftIcon"
     :title="label"
+    :center="center"
+    :border="border"
     :required="required"
-    :class="['van-field', {
-      'van-field--has-textarea': type === 'textarea',
-      'van-field--nolabel': !label,
-      'van-field--disabled': $attrs.disabled,
-      'van-field--error': error,
-      'van-field--border': border,
-      'van-field--autosize': autosize,
-      'van-field--has-icon': hasIcon,
-      'van-hairline--surround': border
-    }]">
+    :class="b({
+      error,
+      disabled: $attrs.disabled,
+      'has-icon': hasIcon,
+      'min-height': type === 'textarea' && !autosize
+    })"
+  >
+    <slot name="label" slot="title" />
     <textarea
       v-if="type === 'textarea'"
       v-bind="$attrs"
+      v-on="listeners"
       ref="textarea"
-      class="van-field__control"
+      :class="b('control')"
       :value="value"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
     />
     <input
       v-else
-      v-bind="$attrs"  
-      class="van-field__control"
+      v-bind="$attrs"
+      v-on="listeners"
+      :class="b('control')"
       :type="type"
       :value="value"
-      @input="onInput"
-      @focus="$emit('focus')"
-      @blur="$emit('blur')"
+    >
+    <div
+      v-if="errorMessage"
+      v-text="errorMessage"
+      :class="b('error-message')"
     />
     <div
       v-if="hasIcon"
       v-show="$slots.icon || value"
-      class="van-field__icon"
+      :class="b('icon')"
       @touchstart.prevent="onClickIcon"
     >
       <slot name="icon">
-        <van-icon :name="icon" />
+        <icon :name="icon" />
       </slot>
     </div>
-  </van-cell>
+    <div v-if="$slots.button" :class="b('button')" slot="extra">
+      <slot name="button" />
+    </div>
+  </cell>
 </template>
 
 <script>
-import Cell from '../cell';
-import Icon from '../icon';
+import create from '../utils/create';
+import { isObj } from '../utils';
 
-const VALID_TYPES = ['text', 'number', 'email', 'url', 'tel', 'date', 'time', 'datetime', 'password', 'textarea'];
+export default create({
+  name: 'field',
 
-export default {
-  name: 'van-field',
-
-  components: {
-    [Cell.name]: Cell,
-    [Icon.name]: Icon
-  },
+  inheritAttrs: false,
 
   props: {
-    type: {
-      type: String,
-      default: 'text',
-      validator: value => VALID_TYPES.indexOf(value) > -1
-    },
-    value: {},
+    value: null,
     icon: String,
     label: String,
     error: Boolean,
+    center: Boolean,
+    leftIcon: String,
     required: Boolean,
-    border: Boolean,
-    autosize: Boolean,
-    onIconClick: {
-      type: Function,
-      default: () => {}
+    onIconClick: Function,
+    autosize: [Boolean, Object],
+    errorMessage: String,
+    type: {
+      type: String,
+      default: 'text'
+    },
+    border: {
+      type: Boolean,
+      default: true
     }
   },
 
   watch: {
     value() {
-      if (this.autosize && this.type === 'textarea') {
-        this.$nextTick(this.adjustSize);
-      }
+      this.$nextTick(this.adjustSize);
     }
   },
 
   mounted() {
-    if (this.autosize && this.type === 'textarea') {
-      const el = this.$refs.textarea;
-      const scrollHeight = el.scrollHeight;
-      if (scrollHeight !== 0) {
-        el.style.height = scrollHeight + 'px';
-      }
-      el.style.overflowY = 'hidden';
-    }
+    this.$nextTick(this.adjustSize);
   },
 
   computed: {
     hasIcon() {
       return this.$slots.icon || this.icon;
+    },
+
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.onInput,
+        keypress: this.onKeypress
+      };
     }
   },
 
@@ -110,14 +111,49 @@ export default {
 
     onClickIcon() {
       this.$emit('click-icon');
-      this.onIconClick();
+      this.onIconClick && this.onIconClick();
+    },
+
+    onKeypress(event) {
+      if (this.type === 'number') {
+        const { keyCode } = event;
+        const allowPoint = this.value.indexOf('.') === -1;
+        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
+        if (!isValidKey) {
+          event.preventDefault();
+        }
+      }
+      this.$emit('keypress', event);
     },
 
     adjustSize() {
+      if (!(this.type === 'textarea' && this.autosize)) {
+        return;
+      }
+
       const el = this.$refs.textarea;
+      /* istanbul ignore if */
+      if (!el) {
+        return;
+      }
+
       el.style.height = 'auto';
-      el.style.height = el.scrollHeight + 'px';
+
+      let height = el.scrollHeight;
+      if (isObj(this.autosize)) {
+        const { maxHeight, minHeight } = this.autosize;
+        if (maxHeight) {
+          height = Math.min(height, maxHeight);
+        }
+        if (minHeight) {
+          height = Math.max(height, minHeight);
+        }
+      }
+
+      if (height) {
+        el.style.height = height + 'px';
+      }
     }
   }
-};
+});
 </script>

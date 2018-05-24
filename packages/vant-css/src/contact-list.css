@@ -38,8 +38,8 @@
   &__edit {
     position: absolute;
     top: 50%;
-    right: 4px;
-    font-size: 24px;
+    right: 15px;
+    font-size: 20px;
     color: $gray-dark;
     transform: translate(0, -50%);
   }
@@ -50,18 +50,12 @@
     bottom: 0;
     z-index: 9999;
     padding-left: 15px;
-
-    .van-cell__text {
-      font-size: 16px;
-    }
+    font-size: 16px;
 
     .van-icon-add {
       color: $blue;
       font-size: 20px;
-    }
-
-    &:active {
-      background-color: $active-color;
+      line-height: 1.2;
     }
   }
 }

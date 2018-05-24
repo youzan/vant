@@ -1,32 +1,43 @@
 <template>
-  <div 
-    v-clickoutside:touchstart="swipeMove"
-    class="van-cell-swipe"
-    @click="swipeMove()"
+  <div
+    v-clickoutside:touchstart="onClick"
+    :class="b()"
+    @click="onClick('cell')"
     @touchstart="startDrag"
     @touchmove="onDrag"
     @touchend="endDrag"
     @touchcancel="endDrag"
   >
-    <div class="van-cell-swipe__wrapper" :style="wrapperStyle" @transitionend="swipe = false">
-      <div class="van-cell-swipe__left" v-if="leftWidth">
-        <slot name="left"></slot>
+    <div
+      :class="b('wrapper')"
+      :style="wrapperStyle"
+      @transitionend="swipe = false"
+    >
+      <div v-if="leftWidth" :class="b('left')" @click.stop="onClick('left')">
+        <slot name="left" />
       </div>
-      <slot></slot>
-      <div class="van-cell-swipe__right" v-if="rightWidth">
-        <slot name="right"></slot>
+      <slot />
+      <div v-if="rightWidth" :class="b('right')" @click.stop="onClick('right')">
+        <slot name="right" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import create from '../utils/create';
 import Clickoutside from '../utils/clickoutside';
+import Touch from '../mixins/touch';
 
-export default {
-  name: 'van-cell-swipe',
+const THRESHOLD = 0.15;
+
+export default create({
+  name: 'cell-swipe',
+
+  mixins: [Touch],
 
   props: {
+    onClose: Function,
     leftWidth: {
       type: Number,
       default: 0
@@ -43,37 +54,46 @@ export default {
 
   data() {
     return {
-      offset: 0
+      offset: 0,
+      draging: false
     };
   },
 
   computed: {
     wrapperStyle() {
       return {
-        transform: `translate3d(${this.offset}px, 0, 0)`
+        transform: `translate3d(${this.offset}px, 0, 0)`,
+        transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
       };
     }
   },
 
   methods: {
+    close() {
+      this.offset = 0;
+    },
+
     resetSwipeStatus() {
-      this.swiping = false; // 是否正在拖动
-      this.opened = true; // 记录是否滑动左右 或者 注册
+      this.swiping = false;
+      this.opened = true;
     },
 
     swipeMove(offset = 0) {
       this.offset = offset;
       offset && (this.swiping = true);
+      !offset && (this.opened = false);
     },
 
     swipeLeaveTransition(direction) {
       const { offset, leftWidth, rightWidth } = this;
+      const threshold = this.opened ? (1 - THRESHOLD) : THRESHOLD;
+
       // right
-      if (direction > 0 && -offset > rightWidth * 0.4 && rightWidth > 0) {
+      if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
         this.swipeMove(-rightWidth);
         this.resetSwipeStatus();
       // left
-      } else if (direction < 0 && offset > leftWidth * 0.4 && leftWidth > 0) {
+      } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
         this.swipeMove(leftWidth);
         this.resetSwipeStatus();
       } else {
@@ -82,40 +102,47 @@ export default {
     },
 
     startDrag(event) {
-      this.startX = event.changedTouches[0].pageX;
-      this.startY = event.changedTouches[0].pageY;
+      this.draging = true;
+      this.touchStart(event);
+
+      if (this.opened) {
+        this.startX -= this.offset;
+      }
     },
 
     onDrag(event) {
-      if (this.opened) {
-        !this.swiping && this.swipeMove();
-        this.opened = false;
+      this.touchMove(event);
+      const { deltaX } = this;
+
+      if ((deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
+        (deltaX > 0 && (deltaX > this.leftWidth || deltaX > 0 && !this.leftWidth))) {
         return;
       }
 
-      const offsetTop = event.changedTouches[0].pageY - this.startY;
-      const offsetLeft = event.changedTouches[0].pageX - this.startX;
-      if ((offsetLeft < 0 && -offsetLeft > this.rightWidth) ||
-        (offsetLeft > 0 && offsetLeft > this.leftWidth) ||
-        (offsetLeft > 0 && !this.leftWidth) ||
-        (offsetLeft < 0 && !this.rightWidth)) {
-        return;
-      }
-
-      const y = Math.abs(offsetTop);
-      const x = Math.abs(offsetLeft);
-      const swiping = !(x < 5 || (x >= 5 && y >= x * 1.73));
-      if (swiping) {
+      if (this.direction === 'horizontal') {
         event.preventDefault();
-        this.swipeMove(offsetLeft);
+        this.swipeMove(deltaX);
       };
     },
 
     endDrag() {
+      this.draging = false;
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       };
+    },
+
+    onClick(position = 'outside') {
+      if (!this.offset) {
+        return;
+      }
+
+      if (this.onClose) {
+        this.onClose(position, this);
+      } else {
+        this.swipeMove(0);
+      }
     }
   }
-};
+});
 </script>

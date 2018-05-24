@@ -2,21 +2,18 @@
 module.exports = {
   'zh-CN': {
     header: {
-      lang: {
-        text: 'En',
-        from: 'zh-CN',
-        to: 'en-US'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'Vant',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
-    },
-    footer: {
-      github: 'https://github.com/youzan/vant',
       nav: {
-        'React 组件库': 'https://www.youzanyun.com/zanui/zent',
-        小程序组件库: 'https://github.com/youzan/zanui-weapp',
-        意见反馈: 'https://github.com/youzan/vant/issues',
-        开发指南: 'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.zh-CN.md',
-        加入我们: 'https://job.youzan.com'
+        lang: {
+          text: 'En',
+          from: 'zh-CN',
+          to: 'en-US'
+        },
+        github: 'https://github.com/youzan/vant'
       }
     },
     nav: [
@@ -26,29 +23,32 @@ module.exports = {
           {
             list: [
               {
-                path: '/quickstart',
-                title: '快速上手',
-                noExample: true
+                path: '/intro',
+                title: '介绍'
               },
               {
-                title: '业务组件',
-                link: '/zanui/captain'
+                path: '/quickstart',
+                title: '快速上手'
               },
               {
                 path: '/changelog',
-                title: '更新日志',
-                noExample: true
+                title: '更新日志'
+              },
+              {
+                path: '/vant-css',
+                title: '内置样式'
               },
               {
                 path: '/theme',
-                title: '定制主题',
-                noExample: true
+                title: '定制主题'
               },
               {
                 path: '/demo',
-                title: '示例页面',
-                noDocument: true,
-                noExample: true
+                title: '示例页面'
+              },
+              {
+                path: '/locale',
+                title: '国际化'
               }
             ]
           }
@@ -62,7 +62,7 @@ module.exports = {
             groupName: '基础组件',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout - 布局'
               },
               {
@@ -74,12 +74,16 @@ module.exports = {
                 title: 'Button - 按钮'
               },
               {
-                path: '/card',
-                title: 'Card - 卡片'
-              },
-              {
                 path: '/cell',
                 title: 'Cell - 单元格'
+              },
+              {
+                path: '/circle',
+                title: 'Circle - 环形进度条'
+              },
+              {
+                path: '/collapse',
+                title: 'Collapse - 折叠面板'
               },
               {
                 path: '/icon',
@@ -94,6 +98,10 @@ module.exports = {
                 title: 'Lazyload - 图片懒加载'
               },
               {
+                path: '/list',
+                title: 'List - 列表'
+              },
+              {
                 path: '/loading',
                 title: 'Loading - 加载'
               },
@@ -104,6 +112,10 @@ module.exports = {
               {
                 path: '/notice-bar',
                 title: 'NoticeBar - 通告栏'
+              },
+              {
+                path: '/pagination',
+                title: 'Pagination - 分页'
               },
               {
                 path: '/panel',
@@ -118,8 +130,12 @@ module.exports = {
                 title: 'Progress - 进度条'
               },
               {
-                path: '/search',
-                title: 'Search - 搜索'
+                path: '/rate',
+                title: 'Rate - 评分'
+              },
+              {
+                path: '/slider',
+                title: 'Slider -   滑块'
               },
               {
                 path: '/stepper',
@@ -173,6 +189,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio - 单选框'
+              },
+              {
+                path: '/search',
+                title: 'Search - 搜索'
               },
               {
                 path: '/switch',
@@ -246,12 +266,16 @@ module.exports = {
                 title: 'Area - 省市区选择'
               },
               {
-                path: '/contact',
+                path: '/card',
+                title: 'Card - 卡片'
+              },
+              {
+                path: '/contact-card',
                 title: 'Contact - 联系人'
               },
               {
-                path: '/coupon',
-                title: 'Coupon - 优惠券选择器'
+                path: '/coupon-list',
+                title: 'Coupon - 优惠券'
               },
               {
                 path: '/goods-action',
@@ -273,21 +297,18 @@ module.exports = {
   },
   'en-US': {
     header: {
-      lang: {
-        text: '中文',
-        from: 'en-US',
-        to: 'zh-CN'
+      logo: {
+        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        title: 'Vant',
+        href: 'http://www.youzanyun.com/zanui'
       },
-      github: 'https://github.com/youzan/vant'
-    },
-    footer: {
-      github: 'https://github.com/youzan/vant',
       nav: {
-        'React UI': 'https://www.youzanyun.com/zanui/zent',
-        'Weapp UI': 'https://github.com/youzan/zanui-weapp',
-        Feedback: 'https://github.com/youzan/vant/issues',
-        Contribute:
-          'https://github.com/youzan/vant/blob/dev/.github/CONTRIBUTING.md'
+        lang: {
+          text: '中文',
+          from: 'en-US',
+          to: 'zh-CN'
+        },
+        github: 'https://github.com/youzan/vant'
       }
     },
     nav: [
@@ -297,14 +318,32 @@ module.exports = {
           {
             list: [
               {
+                path: '/intro',
+                title: 'Introduction'
+              },
+              {
                 path: '/quickstart',
-                title: 'Getting Started',
-                noExample: true
+                title: 'Quickstart'
               },
               {
                 path: '/changelog',
-                title: 'Changelog',
-                noExample: true
+                title: 'Changelog'
+              },
+              {
+                path: '/vant-css',
+                title: 'Built-in style'
+              },
+              {
+                path: '/theme',
+                title: 'Custom Theme'
+              },
+              {
+                path: '/demo',
+                title: 'Demo pages'
+              },
+              {
+                path: '/locale',
+                title: 'Internationalization'
               }
             ]
           }
@@ -318,7 +357,7 @@ module.exports = {
             groupName: 'Basic Components',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout'
               },
               {
@@ -330,12 +369,16 @@ module.exports = {
                 title: 'Button'
               },
               {
-                path: '/card',
-                title: 'Card'
-              },
-              {
                 path: '/cell',
                 title: 'Cell'
+              },
+              {
+                path: '/circle',
+                title: 'Circle'
+              },
+              {
+                path: '/collapse',
+                title: 'Collapse'
               },
               {
                 path: '/icon',
@@ -350,6 +393,10 @@ module.exports = {
                 title: 'Lazyload'
               },
               {
+                path: '/list',
+                title: 'List'
+              },
+              {
                 path: '/loading',
                 title: 'Loading'
               },
@@ -360,6 +407,10 @@ module.exports = {
               {
                 path: '/notice-bar',
                 title: 'NoticeBar'
+              },
+              {
+                path: '/pagination',
+                title: 'Pagination'
               },
               {
                 path: '/panel',
@@ -374,8 +425,12 @@ module.exports = {
                 title: 'Progress'
               },
               {
-                path: '/search',
-                title: 'Search'
+                path: '/rate',
+                title: 'Rate'
+              },
+              {
+                path: '/slider',
+                title: 'Slider'
               },
               {
                 path: '/stepper',
@@ -429,6 +484,10 @@ module.exports = {
               {
                 path: '/radio',
                 title: 'Radio'
+              },
+              {
+                path: '/search',
+                title: 'Search'
               },
               {
                 path: '/switch',
@@ -502,11 +561,15 @@ module.exports = {
                 title: 'Area'
               },
               {
-                path: '/contact',
+                path: '/card',
+                title: 'Card'
+              },
+              {
+                path: '/contact-card',
                 title: 'Contact'
               },
               {
-                path: '/coupon',
+                path: '/coupon-list',
                 title: 'Coupon'
               },
               {

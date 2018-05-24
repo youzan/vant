@@ -1,38 +1,50 @@
 <template>
-  <div :class="['van-nav-bar van-hairline--top-bottom', { 'van-nav-bar--fixed': fixed }]">
-    <div class="van-nav-bar__left" @click="$emit('clickLeft')">
+  <div
+    class="van-hairline--bottom"
+    :class="b({ fixed })"
+    :style="style"
+  >
+    <div :class="b('left')" @click="$emit('click-left')">
       <slot name="left">
-        <van-icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
-        <span v-if="leftText" v-text="leftText" class="van-nav-bar__text" />
+        <icon v-if="leftArrow" :class="b('arrow')" name="arrow" />
+        <span v-if="leftText" v-text="leftText" :class="b('text')" />
       </slot>
     </div>
-    <div class="van-nav-bar__title">
+    <div :class="b('title')" class="van-ellipsis">
       <slot name="title">{{ title }}</slot>
     </div>
-    <div class="van-nav-bar__right" @click="$emit('clickRight')">
+    <div :class="b('right')" @click="$emit('click-right')">
       <slot name="right">
-        <span v-if="rightText" v-text="rightText" class="van-nav-bar__text" />
+        <span v-if="rightText" v-text="rightText" :class="b('text')" />
       </slot>
     </div>
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
+import create from '../utils/create';
 
-export default {
-  name: 'van-nav-bar',
-
-  components: {
-    [Icon.name]: Icon
-  },
+export default create({
+  name: 'nav-bar',
 
   props: {
     title: String,
     leftText: String,
     rightText: String,
     leftArrow: Boolean,
-    fixed: Boolean
+    fixed: Boolean,
+    zIndex: {
+      type: Number,
+      default: 1
+    }
+  },
+
+  computed: {
+    style() {
+      return {
+        zIndex: this.zIndex
+      };
+    }
   }
-};
+});
 </script>

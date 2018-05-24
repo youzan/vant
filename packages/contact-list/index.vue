@@ -1,48 +1,47 @@
 <template>
-  <div class="van-contact-list">
-    <van-radio-group :value="value" @input="$emit('input', $event)">
-      <van-cell-group>
-        <van-cell v-for="(item, index) in list" :key="item.id">
-          <van-radio :name="item.id" @click="$emit('select', item, index)">
-            <p class="van-contact-list__text">联系人：{{ item.name }}</p>
-            <p class="van-contact-list__text">联系电话：{{ item.tel }}</p>
-          </van-radio>
-          <van-icon name="edit" class="van-contact-list__edit" @click="$emit('edit', item, index)" />
-        </van-cell>
-      </van-cell-group>
-    </van-radio-group>
-    <van-cell icon="add" class="van-contact-list__add van-hairline--top" @click="$emit('add')" :title="addText" isLink />
+  <div :class="b()">
+    <radio-group :value="value" @input="$emit('input', $event)">
+      <cell-group>
+        <cell v-for="(item, index) in list" :key="item.id" is-link>
+          <radio :name="item.id" @click="$emit('select', item, index)">
+            <p :class="b('text')">{{ $t('contact') }}：{{ item.name }}</p>
+            <p :class="b('text')">{{ $t('tel') }}：{{ item.tel }}</p>
+          </radio>
+          <icon slot="right-icon" name="edit" :class="b('edit')" @click="$emit('edit', item, index)" />
+        </cell>
+      </cell-group>
+    </radio-group>
+    <cell
+      icon="add"
+      is-link
+      :class="b('add')"
+      class="van-hairline--top"
+      :title="addText || $t('addText')"
+      @click="$emit('add')"
+    />
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
-import Cell from '../cell';
 import Radio from '../radio';
-import CellGroup from '../cell-group';
 import RadioGroup from '../radio-group';
+import create from '../utils/create';
 
-export default {
-  name: 'van-contact-list',
+export default create({
+  name: 'contact-list',
 
   components: {
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [Radio.name]: Radio,
-    [CellGroup.name]: CellGroup,
-    [RadioGroup.name]: RadioGroup
+    Radio,
+    RadioGroup
   },
 
   props: {
     value: {},
-    addText: {
-      type: String,
-      default: '新建联系人'
-    },
+    addText: String,
     list: {
       type: Array,
       default: () => []
     }
   }
-};
+});
 </script>

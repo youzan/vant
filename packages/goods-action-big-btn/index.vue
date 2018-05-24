@@ -2,31 +2,40 @@
   <van-button
     tag="a"
     :href="url"
-    class="van-goods-action__big-btn"
+    :class="b()"
     :type="primary ? 'primary' : 'default'"
-    @click="$emit('click', $event)"
-    bottomAction
+    bottom-action
+    @click="onClick"
   >
-    <slot></slot>
+    <slot>{{ text }}</slot>
   </van-button>
 </template>
 
 <script>
-import Button from '../button';
+import create from '../utils/create';
+import VanButton from '../button';
+import RouterLink from '../mixins/router-link';
 
-export default {
-  name: 'van-goods-action-big-btn',
+export default create({
+  name: 'goods-action-big-btn',
+
+  mixins: [RouterLink],
 
   components: {
-    [Button.name]: Button
+    VanButton
   },
 
   props: {
-    primary: Boolean,
-    url: {
-      type: String,
-      default: 'javascript:;'
+    url: String,
+    text: String,
+    primary: Boolean
+  },
+
+  methods: {
+    onClick(event) {
+      this.$emit('click', event);
+      this.routerLink();
     }
   }
-};
+});
 </script>

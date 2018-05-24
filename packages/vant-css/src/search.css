@@ -4,37 +4,20 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 4px 15px;
+  padding: 6px 15px;
+  position: relative;
 
   &--show-action {
     padding-right: 0;
   }
 
-  &__input-wrap {
-    position: relative;
+  .van-cell {
     flex: 1;
-    height: 34px;
-    box-sizing: border-box;
-    padding: 8px 24px 8px 35px;
-    border: 1px solid $gray-light;
     border-radius: 4px;
-    background-color: $white;
+    padding: 3px 10px 3px 35px;
   }
 
-  &__input {
-    display: block;
-    width: 100%;
-    height: 16px;
-    line-height: 16px;
-    padding: 0;
-    font-size: 14px;
-    color: $gray-darker;
-    border: none;
-
-    &::placeholder {
-      color: $gray-dark;
-    }
-
+  input {
     &::-webkit-search-decoration,
     &::-webkit-search-cancel-button,
     &::-webkit-search-results-button,
@@ -49,7 +32,7 @@
     letter-spacing: 1px;
   }
 
-  &__action-text {
+  &__cancel {
     padding: 0 10px;
     color: $green;
 
@@ -59,24 +42,16 @@
   }
 
   .van-icon-search {
-    color: $gray-darker;
-    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    left: 10px;
+    left: 25px;
+    z-index: 1;
+    color: $gray-dark;
+    position: absolute;
     font-size: 16px;
-    line-height: 1;
+    transform: translateY(-50%);
   }
 
   .van-icon-clear {
-    font-size: 14px;
-    line-height: 16px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    /* 增加 clear 点击区域 */
-    padding: 5px;
-    color: #888;
+    color: #BBB;
   }
 }

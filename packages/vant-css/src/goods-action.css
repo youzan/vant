@@ -7,11 +7,16 @@
   display: flex;
   position: fixed;
 
-  &__big-btn {
+  &-big-btn {
     flex: 1;
+    padding: 0;
+
+    @media(max-width: 321px) {
+      font-size: 15px;
+    }
   }
 
-  &__mini-btn {
+  &-mini-btn {
     color: $gray-darker;
     display: flex;
     height: 50px;
@@ -34,10 +39,11 @@
     &:active {
       background-color: $active-color;
     }
-  }
 
-  &__mini-btn-icon {
-    font-size: 20px;
-    margin-bottom: 5px;
+    &__icon {
+      width: 1em;
+      font-size: 20px;
+      margin: 0 auto 5px;
+    }
   }
 }

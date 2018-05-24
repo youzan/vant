@@ -1,38 +1,38 @@
 /**
  * v-clickoutside
- * @desc 点击元素外面才会触发的事件
- * @example
+ *
  * ```vue
- * <div v-clickoutside="handleClose">
+ * <div v-clickoutside="onClose">
  * ```
  */
-import Vue from 'vue';
-const isServer = Vue.prototype.$isServer;
-const clickoutsideContext = '@@clickoutsideContext';
+
+import { on, off } from './event';
+
+const context = '@@clickoutsideContext';
 
 export default {
-  bind(el, binding, vnode) {
-    const documentHandler = function(e) {
-      if (vnode.context && !el.contains(e.target)) {
-        vnode.context[el[clickoutsideContext].methodName]();
+  bind(el, binding) {
+    const handler = event => {
+      if (!el.contains(event.target)) {
+        el[context].callback();
       }
     };
-    el[clickoutsideContext] = {
-      documentHandler,
-      methodName: binding.expression,
+
+    el[context] = {
+      handler,
+      callback: binding.value,
       arg: binding.arg || 'click'
     };
-    !isServer && document.addEventListener(el[clickoutsideContext].arg, documentHandler);
+
+    on(document, el[context].arg, handler);
   },
 
   update(el, binding) {
-    el[clickoutsideContext].methodName = binding.expression;
+    el[context].callback = binding.value;
   },
 
   unbind(el) {
-    !isServer && document.removeEventListener(
-      el[clickoutsideContext].arg,
-      el[clickoutsideContext].documentHandler);
+    off(document, el[context].arg, el[context].handler);
   },
 
   install(Vue) {

@@ -1,65 +1,52 @@
 <template>
-  <div :class="['van-tab__pane', { 'van-tab__pane--select': key === $parent.curActive }]">
-    <slot></slot>
+  <div :class="b('pane')" v-show="isSelected">
+    <slot v-if="inited" />
   </div>
 </template>
 
 <script>
-import findParent from '../mixins/findParent';
+import create from '../utils/create';
+import findParent from '../mixins/find-parent';
 
-export default {
-  name: 'van-tab',
+export default create({
+  name: 'tab',
 
   mixins: [findParent],
 
   props: {
-    title: {
-      type: String,
-      required: true
-    },
+    title: String,
     disabled: Boolean
   },
 
   data() {
-    this.findParentByComponentName('van-tabs');
-    const nextIndex = this.parentGroup.tabs.length;
-    this.updateParentData(nextIndex);
     return {
-      key: nextIndex
+      inited: false
     };
   },
 
-  watch: {
-    title() {
-      this.updateParentData();
+  computed: {
+    index() {
+      return this.parent.tabs.indexOf(this);
     },
-    disabled() {
-      this.updateParentData();
+
+    isSelected() {
+      return this.index === this.parent.curActive;
     }
   },
 
-  methods: {
-    updateParentData(nextIndex) {
-      const index = arguments.length ? nextIndex : this.key;
-      this.parentGroup.tabs.splice(index, 1, {
-        title: this.title,
-        disabled: this.disabled,
-        index
-      });
+  watch: {
+    'parent.curActive'() {
+      this.inited = this.inited || this.isSelected;
     }
+  },
+
+  created() {
+    this.findParent('van-tabs');
+    this.parent.tabs.push(this);
   },
 
   destroyed() {
-    const key = this.key;
-    const tabs = this.parentGroup.tabs;
-
-    for (let i = 0; i < tabs.length; i++) {
-      /* istanbul ignore else */
-      if (tabs[i].index === key) {
-        this.parentGroup.tabs.splice(i, 1);
-        return;
-      }
-    }
+    this.parent.tabs.splice(this.index, 1);
   }
-};
+});
 </script>

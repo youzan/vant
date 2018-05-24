@@ -1,80 +1,71 @@
 <template>
-  <div
-    :class="[
-      'van-checkbox',
-      `van-checkbox--${shape}`, {
-      'van-checkbox--disabled': isDisabled
-    }]">
-    <span class="van-checkbox__input">
-      <input
-        v-model="currentValue"
-        type="checkbox"
-        class="van-checkbox__control"
-        :disabled="isDisabled"
-      />
-      <van-icon name="success" />
-    </span>
-    <span class="van-checkbox__label" @click="onClickLabel">
-      <slot></slot>
+  <div :class="b()">
+    <icon
+      name="success"
+      :class="[
+        b('icon'),
+        `van-checkbox--${shape}`, {
+          'van-checkbox--disabled': isDisabled,
+          'van-checkbox--checked': isChecked
+      }]"
+      @click="onClick"
+    />
+    <span v-if="$slots.default" :class="b('label')" @click="onClick('label')">
+      <slot />
     </span>
   </div>
 </template>
 
 <script>
-import Icon from '../icon';
-import findParent from '../mixins/findParent';
+import create from '../utils/create';
+import findParent from '../mixins/find-parent';
 
-export default {
-  name: 'van-checkbox',
-
-  components: {
-    [Icon.name]: Icon
-  },
+export default create({
+  name: 'checkbox',
 
   mixins: [findParent],
 
   props: {
-    value: {},
+    name: null,
+    value: null,
     disabled: Boolean,
-    name: [String, Number],
+    labelDisabled: {
+      type: Boolean,
+      default: false
+    },
     shape: {
       type: String,
       default: 'round'
     }
   },
 
-  watch: {
-    value(val) {
-      this.$emit('change', val);
-    }
-  },
-
   computed: {
-    // checkbox 是否在 van-checkbox-group 中
-    isGroup() {
-      return !!this.findParentByComponentName('van-checkbox-group');
-    },
-
     currentValue: {
       get() {
-        return this.isGroup && this.parentGroup ? this.parentGroup.value.indexOf(this.name) !== -1 : this.value;
+        return this.parent
+          ? this.parent.value.indexOf(this.name) !== -1
+          : this.value;
       },
 
       set(val) {
-        if (this.isGroup && this.parentGroup) {
-          const parentValue = this.parentGroup.value.slice();
+        const { parent } = this;
+        if (parent) {
+          const parentValue = this.parent.value.slice();
           if (val) {
+            if (parent.max && parentValue.length >= parent.max) {
+              return;
+            }
             /* istanbul ignore else */
             if (parentValue.indexOf(this.name) === -1) {
               parentValue.push(this.name);
-              this.parentGroup.$emit('input', parentValue);
+              parent.$emit('input', parentValue);
             }
           } else {
             const index = parentValue.indexOf(this.name);
             /* istanbul ignore else */
             if (index !== -1) {
               parentValue.splice(index, 1);
-              this.parentGroup.$emit('input', parentValue);
+              parent.$emit('input', parentValue);
             }
           }
         } else {
@@ -87,25 +78,32 @@ export default {
       const { currentValue } = this;
       if ({}.toString.call(currentValue) === '[object Boolean]') {
         return currentValue;
-      } else if (currentValue !== null && currentValue !== undefined) {
+      } else if (this.isDef(currentValue)) {
         return currentValue === this.name;
       }
     },
 
     isDisabled() {
-      return this.isGroup && this.parentGroup
-          ? this.parentGroup.disabled
-          : this.disabled;
+      return (this.parent && this.parent.disabled) || this.disabled;
     }
   },
 
+  watch: {
+    value(val) {
+      this.$emit('change', val);
+    }
+  },
+
+  created() {
+    this.findParent('van-checkbox-group');
+  },
+
   methods: {
-    onClickLabel() {
-      if (this.isDisabled) {
-        return;
+    onClick(target) {
+      if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
+        this.currentValue = !this.currentValue;
       }
-      this.currentValue = !this.currentValue;
     }
   }
-};
+});
 </script>

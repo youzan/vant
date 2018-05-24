@@ -1,18 +1,18 @@
 <template>
-  <div class="van-sku-row">
-    <div class="van-sku-row__title">{{ skuRow.k }}：</div>
-    <div class="van-sku-row__items">
-      <slot></slot>
-    </div>
+  <div :class="b()">
+    <div :class="b('title')">{{ skuRow.k }}：</div>
+    <slot />
   </div>
 </template>
 
 <script>
-export default {
-  name: 'van-sku-row',
+import create from '../../utils/create';
+
+export default create({
+  name: 'sku-row',
 
   props: {
     skuRow: Object
   }
-};
+});
 </script>

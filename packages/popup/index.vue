@@ -1,28 +1,32 @@
 <template>
   <transition :name="currentTransition">
-    <div v-show="value" class="van-popup" :class="[position ? 'van-popup--' + position : '']">
-      <slot></slot>
+    <div v-if="inited || !lazyRender" v-show="value" :class="b({ [position]: position })">
+      <slot />
     </div>
   </transition>
 </template>
 
 <script>
+import create from '../utils/create';
 import Popup from '../mixins/popup';
 
-export default {
-  name: 'van-popup',
+export default create({
+  name: 'popup',
 
   mixins: [Popup],
 
   props: {
     transition: String,
-    overlay: {
+    lazyRender: {
+      type: Boolean,
       default: true
     },
-    lockOnScroll: {
-      default: false
+    overlay: {
+      type: Boolean,
+      default: true
     },
     closeOnClickOverlay: {
+      type: Boolean,
       default: true
     },
     position: {
@@ -32,17 +36,21 @@ export default {
   },
 
   data() {
-    const transition = this.transition || (this.position === '' ? 'popup-fade' : `popup-slide-${this.position}`);
     return {
-      currentValue: false,
-      currentTransition: transition
+      inited: this.value
     };
   },
 
-  mounted() {
-    if (this.value) {
-      this.open();
+  computed: {
+    currentTransition() {
+      return this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
+    }
+  },
+
+  watch: {
+    value() {
+      this.inited = this.inited || this.value;
     }
   }
-};
+});
 </script>

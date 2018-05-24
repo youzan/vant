@@ -1,3 +1,4 @@
+// This file is auto gererated by build/bin/build-entry.js
 import Actionsheet from './actionsheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
@@ -11,7 +12,10 @@ import CellGroup from './cell-group';
 import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
+import Circle from './circle';
 import Col from './col';
+import Collapse from './collapse';
+import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
@@ -26,10 +30,13 @@ import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import Lazyload from './lazyload';
+import List from './list';
 import Loading from './loading';
+import Locale from './locale';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import NumberKeyboard from './number-keyboard';
+import Pagination from './pagination';
 import Panel from './panel';
 import PasswordInput from './password-input';
 import Picker from './picker';
@@ -38,9 +45,11 @@ import Progress from './progress';
 import PullRefresh from './pull-refresh';
 import Radio from './radio';
 import RadioGroup from './radio-group';
+import Rate from './rate';
 import Row from './row';
 import Search from './search';
 import Sku from './sku';
+import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
@@ -59,7 +68,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '0.10.9';
+const version = '1.1.5';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -74,22 +83,30 @@ const components = [
   CellSwipe,
   Checkbox,
   CheckboxGroup,
+  Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
   CouponCell,
   CouponList,
   DatetimePicker,
+  Dialog,
   Field,
   GoodsAction,
   GoodsActionBigBtn,
   GoodsActionMiniBtn,
   Icon,
+  ImagePreview,
+  List,
   Loading,
+  Locale,
   NavBar,
   NoticeBar,
   NumberKeyboard,
+  Pagination,
   Panel,
   PasswordInput,
   Picker,
@@ -98,9 +115,11 @@ const components = [
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
+  Slider,
   Step,
   Stepper,
   Steps,
@@ -114,15 +133,14 @@ const components = [
   TabbarItem,
   Tabs,
   Tag,
+  Toast,
   TreeSelect,
   Uploader
 ];
 
-const install = function(Vue) {
-  if (install.installed) return;
-
-  components.forEach(component => {
-    Vue.component(component.name, component);
+const install = Vue => {
+  components.forEach(Component => {
+    Vue.use(Component);
   });
 };
 
@@ -147,7 +165,10 @@ export {
   CellSwipe,
   Checkbox,
   CheckboxGroup,
+  Circle,
   Col,
+  Collapse,
+  CollapseItem,
   ContactCard,
   ContactEdit,
   ContactList,
@@ -162,10 +183,13 @@ export {
   Icon,
   ImagePreview,
   Lazyload,
+  List,
   Loading,
+  Locale,
   NavBar,
   NoticeBar,
   NumberKeyboard,
+  Pagination,
   Panel,
   PasswordInput,
   Picker,
@@ -174,9 +198,11 @@ export {
   PullRefresh,
   Radio,
   RadioGroup,
+  Rate,
   Row,
   Search,
   Sku,
+  Slider,
   Step,
   Stepper,
   Steps,
@@ -195,6 +221,7 @@ export {
   Uploader,
   Waterfall
 };
+
 export default {
   install,
   version
