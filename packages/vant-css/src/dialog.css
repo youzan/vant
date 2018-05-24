@@ -35,6 +35,7 @@
 
   &__footer {
     overflow: hidden;
+    user-select: none;
 
     &--buttons {
       display: flex;
