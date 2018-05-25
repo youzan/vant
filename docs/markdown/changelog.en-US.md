@@ -1,5 +1,27 @@
 ## Changelog
 
+### [1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
+`2018-05-24`
+
+**Improvements**
+
+- AddressEdit: trim empty value [\#1150](https://github.com/youzan/vant/pull/1150) [@chenjiahan](https://github.com/chenjiahan)
+- Dialog: prevent button text select [\#1148](https://github.com/youzan/vant/pull/1148) [@chenjiahan](https://github.com/chenjiahan)
+- NumberKeyboard: add close event [\#1127](https://github.com/youzan/vant/pull/1127) [@chenjiahan](https://github.com/chenjiahan)
+- Rate: add change event [\#1102](https://github.com/youzan/vant/pull/1102) [@chenjiahan](https://github.com/chenjiahan)
+- Picker: update unselected option color [\#1142](https://github.com/youzan/vant/pull/1142) [@chenjiahan](https://github.com/chenjiahan)
+- Popup: support lazy render [\#1138](https://github.com/youzan/vant/pull/1138) [@chenjiahan](https://github.com/chenjiahan)
+- Sku: update error info [\#1100](https://github.com/youzan/vantpull/1100) [@w91](https://github.com/w91)
+- TreeSelect: support string type id [\#1126](https://github.com/youzan/vant/pull/1126) [@chenjiahan](https://github.com/chenjiahan)
+- Utils: remove unused scroll utils [\#1112](https://github.com/youzan/vant/pull/1112) [@chenjiahan](https://github.com/chenjiahan)
+
+**Bug Fixes**
+
+- fix Toast mask render uncorrectly when forbidClick [\#1154](https://github.com/youzan/vant/pull/1154) [@chenjiahan](https://github.com/chenjiahan)
+- fix Field input margin in safari [\#1147](https://github.com/youzan/vant/pull/1147) [@chenjiahan](https://github.com/chenjiahan)
+- fix Progress pivot cross border [\#1135](https://github.com/youzan/vant/pull/1135) [@chenjiahan](https://github.com/chenjiahan)
+
+
 ### [1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
 `2018-05-18`
 
