@@ -1,9 +1,8 @@
 /**
  * Build npm lib
  */
-const signale = require('signale');
 require('shelljs/global');
-
+const signale = require('signale');
 const tasks = [
   'lint',
   'build:entry',
