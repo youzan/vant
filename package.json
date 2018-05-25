@@ -88,6 +88,7 @@
     "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^2.5.4",
     "shelljs": "^0.8.1",
+    "signale": "^1.1.0",
     "style-loader": "^0.21.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.0.1",
