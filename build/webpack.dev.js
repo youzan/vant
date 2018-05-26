@@ -59,14 +59,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.md/,
+        test: /\.md$/,
         use: [
           'vue-loader',
           'fast-vue-md-loader'
         ]
       },
       {
-        test: /\.(ttf|svg)(\?.*)?$/,
+        test: /\.(ttf|svg)$/,
         loader: 'url-loader'
       }
     ]
