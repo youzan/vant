@@ -80,8 +80,10 @@ export default create({
     handleAction(action) {
       if (this.beforeClose) {
         this.loading[action] = true;
-        this.beforeClose(action, () => {
-          this.onClose(action);
+        this.beforeClose(action, state => {
+          if (state !== false) {
+            this.onClose(action);
+          }
           this.loading[action] = false;
         });
       } else {
