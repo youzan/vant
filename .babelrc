@@ -1,5 +1,6 @@
 {
   "presets": [
+    "stage-0",
     [
       "env",
       {
@@ -9,10 +10,11 @@
       }
     ]
   ],
-  "plugins": ["transform-runtime", "transform-object-rest-spread"],
+  "plugins": ["transform-runtime"],
   "env": {
     "commonjs": {
       "presets": [
+        "stage-0",
         [
           "env",
           {
