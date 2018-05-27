@@ -1,6 +1,6 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 7,
+    ecmaVersion: 6,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
       jsx: true
