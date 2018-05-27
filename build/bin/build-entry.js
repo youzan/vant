@@ -55,10 +55,10 @@ function buildDemoEntry() {
   const dir = path.join(__dirname, '../../packages');
   const demos = fs.readdirSync(dir)
     .filter(name => fs.existsSync(path.join(dir, `${name}/demo/index.vue`)))
-    .map(name => `'${name}': asyncWrapper(r => require.ensure([], () => r(componentWrapper(require('../../packages/${name}/demo'), '${name}')), '${name}'))`);
+    .map(name => `'${name}': () => wrapper(import('../../packages/${name}/demo'), '${name}')`);
 
   const content = `${tips}
-import { asyncWrapper, componentWrapper } from './demo-common';
+import { wrapper } from './demo-common';
 
 export default {
   ${demos.join(',\n  ')}
@@ -79,23 +79,10 @@ function buildDocsEntry() {
     ])
     .map(fullPath => {
       const name = getName(fullPath);
-      return `'${name}': wrapper(r => require.ensure([], () => r(require('${path.relative(join('docs/src'), fullPath)}')), '${name}'))`;
+      return `'${name}': () => import('${path.relative(join('docs/src'), fullPath)}')`;
     });
 
   const content = `${tips}
-import progress from 'nprogress';
-
-function wrapper(component) {
-  return function(r) {
-    progress.start();
-    component(r).then(() => {
-      progress.done();
-    }).catch(() => {
-      progress.done();
-    });
-  };
-}
-
 export default {
   ${docs.join(',\n  ')}
 };

@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import App from './DocsApp';
 import routes from './router';
 import VantDoc from 'vant-doc';
+import progress from 'nprogress';
 import { isMobile } from './utils';
 import './components/nprogress.css';
 
@@ -18,11 +19,13 @@ router.beforeEach((route, redirect, next) => {
   if (isMobile) {
     location.replace(location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples' + location.hash);
   }
+  progress.start();
   document.title = route.meta.title || document.title;
   next();
 });
 
 router.afterEach(() => {
+  progress.done();
   window.scrollTo(0, 0);
   Vue.nextTick(() => window.syncPath());
 });

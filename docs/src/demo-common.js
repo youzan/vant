@@ -3,7 +3,6 @@
  */
 
 import Vue from 'vue';
-import progress from 'nprogress';
 import i18n from '../../packages/mixins/i18n';
 import Vant, { Lazyload } from '../../packages';
 import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
@@ -85,29 +84,20 @@ Locale.add({
   }
 });
 
-export function asyncWrapper(component) {
-  return function(r) {
-    progress.start();
-    component(r).then(() => {
-      progress.done();
-    }).catch(() => {
-      progress.done();
-    });
-  };
-}
-
-export function componentWrapper(component, name) {
-  component = component.default;
-  name = 'demo-' + name;
-  component.name = name;
-  const { i18n } = component;
-  if (i18n) {
-    const formattedI18n = {};
-    const camelizedName = camelize(name);
-    Object.keys(i18n).forEach(key => {
-      formattedI18n[key] = { [camelizedName]: i18n[key] };
-    });
-    Locale.add(formattedI18n);
-  }
-  return component;
+export function wrapper(promise, name) {
+  return promise.then(component => {
+    component = component.default;
+    name = 'demo-' + name;
+    component.name = name;
+    const { i18n } = component;
+    if (i18n) {
+      const formattedI18n = {};
+      const camelizedName = camelize(name);
+      Object.keys(i18n).forEach(key => {
+        formattedI18n[key] = { [camelizedName]: i18n[key] };
+      });
+      Locale.add(formattedI18n);
+    }
+    return component;
+  });
 }

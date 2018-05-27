@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
 import routes from './router';
+import progress from 'nprogress';
 import '../../packages/vant-css/src/index.css';
 import '../../packages/vant-css/src/icon-local.css';
 import 'vant-doc/src/helper/touch-simulator';
@@ -13,7 +14,13 @@ const router = new VueRouter({
   routes: routes(true)
 });
 
+router.beforeEach((route, redirect, next) => {
+  progress.start();
+  next();
+});
+
 router.afterEach(() => {
+  progress.done();
   if (router.currentRoute.name) {
     window.scrollTo(0, 0);
   }
