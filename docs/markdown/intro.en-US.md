@@ -16,7 +16,7 @@
 
 ### Quickstart
 
-See in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/quickstart).
+See in [Quickstart](#/en-US/quickstart).
 
 ### Contribution
 
@@ -29,7 +29,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 ### Links
 
 * [Feedback](https://github.com/youzan/vant/issues)
-* [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/changelog)
+* [Changelog](#/en-US/changelog)
 * [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [React UI](https://www.youzanyun.com/zanui/zent)
 * [Vant Demo](https://github.com/youzan/vant-demo)

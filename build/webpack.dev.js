@@ -14,6 +14,10 @@ module.exports = {
     publicPath: '/',
     chunkFilename: 'async_[name].js'
   },
+  stats: {
+    modules: false,
+    children: false
+  },
   serve: {
     open: true,
     host: '0.0.0.0',
@@ -83,7 +87,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       chunks: ['vant-mobile'],
       template: 'docs/src/index.tpl',
-      filename: 'examples.html',
+      filename: 'mobile.html',
       inject: true
     })
   ]
