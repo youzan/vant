@@ -51,6 +51,7 @@ Vue.use(Field);
   <van-field
     value="输入框已禁用"
     label="用户名"
+    left-icon="contact"
     disabled
   />
 </van-cell-group>

@@ -49,6 +49,7 @@ Use `type` prop to custom diffrent type fields.
   <van-field
     value="Disabled"
     label="Username"
+    left-icon="contact"
     disabled
   />
 </van-cell-group>
