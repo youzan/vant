@@ -29,7 +29,12 @@
 
     <demo-block :title="$t('title3')">
       <van-cell-group>
-        <van-field :value="$t('inputDisabled')" :label="$t('username')" disabled />
+        <van-field
+          :value="$t('inputDisabled')"
+          :label="$t('username')"
+          left-icon="contact"
+          disabled
+        />
       </van-cell-group>
     </demo-block>
 
