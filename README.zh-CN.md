@@ -87,7 +87,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/quickstart).
+更多内容请参考 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
 
 ## 贡献代码
 
@@ -103,12 +103,12 @@ Vue.use(Vant);
 
 可以手机扫码以下二维码访问手机端 demo：
 
-<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="200" height="200" >
 
 ## 链接
 
-* [详细文档](https://www.youzanyun.com/zanui/vant)
-* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/changelog)
+* [详细文档](https://youzan.github.io/vant)
+* [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
 * [React 组件库](https://www.youzanyun.com/zanui/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [vant-demo](https://github.com/youzan/vant-demo)

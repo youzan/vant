@@ -90,7 +90,7 @@ Vue.use(Vant);
 <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
-See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/quickstart).
+See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
 ## Contribution
 
@@ -102,8 +102,8 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 ## Links
 
-* [Documentation](https://www.youzanyun.com/zanui/vant)
-* [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/changelog)
+* [Documentation](https://youzan.github.io/vant)
+* [Changelog](https://youzan.github.io/vant#/en-US/changelog)
 * [React UI](https://www.youzanyun.com/zanui/zent)
 * [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [Vant Demo](https://github.com/youzan/vant-demo)
@@ -113,7 +113,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 You can scan the following QR code to access the demo：
 
-<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="200" height="200" >
 
 ## LICENSE
 
