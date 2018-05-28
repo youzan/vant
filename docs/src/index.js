@@ -11,13 +11,12 @@ Vue.use(VueRouter).use(VantDoc);
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vant/',
   routes: routes()
 });
 
 router.beforeEach((route, redirect, next) => {
   if (isMobile) {
-    location.replace(location.pathname === '/' ? 'examples.html' : '/zanui/vant/examples' + location.hash);
+    location.replace('mobile.html' + location.hash);
   }
   progress.start();
   document.title = route.meta.title || document.title;

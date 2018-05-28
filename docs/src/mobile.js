@@ -10,7 +10,6 @@ import './components/nprogress.css';
 
 const router = new VueRouter({
   mode: 'hash',
-  base: '/zanui/vant/examples',
   routes: routes(true)
 });
 
