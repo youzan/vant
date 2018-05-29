@@ -23,16 +23,39 @@
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
 * 支持 SSR
- 
+
 ## 安装
 
+#### NPM
+
 ```shell
-npm i -S vant
+npm i vant -S
+```
+
+#### YARN
+
+```shell
+yarn add vant
+```
+
+#### CDN
+
+访问下面的文件 URL，会自动重定向至最新版本的 CDN 链接，建议使用固定版本的 CDN 链接，避免升级时受到非兼容性更新的影响。
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+
+<!-- 引入组件 -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
 ## 快速上手
 
 #### 方式一. 使用  [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+
+`babel-plugin-import` 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
 
 ```bash
 # 安装 babel-plugin-import 插件
@@ -61,6 +84,8 @@ import { Button } from 'vant';
 
 #### 方式二. 按需引入组件
 
+在不使用插件的情况下，可以手动引入需要的组件
+
 ```js
 import Button from 'vant/lib/button';
 import 'vant/lib/vant-css/base.css';
@@ -77,15 +102,7 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
-### CDN
-
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
-
-<!-- 引入组件 -->
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
-```
+> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
 
 更多内容请参考 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
 

@@ -90,10 +90,6 @@ module.exports = {
                 title: 'Icon - 图标'
               },
               {
-                path: '/image-preview',
-                title: 'ImagePreview - 图片预览'
-              },
-              {
                 path: '/lazyload',
                 title: 'Lazyload - 图片懒加载'
               },
@@ -168,7 +164,7 @@ module.exports = {
             ]
           },
           {
-            groupName: '表单',
+            groupName: '表单组件',
             list: [
               {
                 path: '/checkbox',
@@ -239,6 +235,10 @@ module.exports = {
               {
                 path: '/cell-swipe',
                 title: 'CellSwipe - 滑动单元格'
+              },
+              {
+                path: '/image-preview',
+                title: 'ImagePreview - 图片预览'
               },
               {
                 path: '/switch-cell',
@@ -383,10 +383,6 @@ module.exports = {
               {
                 path: '/icon',
                 title: 'Icon'
-              },
-              {
-                path: '/image-preview',
-                title: 'ImagePreview'
               },
               {
                 path: '/lazyload',
@@ -534,6 +530,10 @@ module.exports = {
               {
                 path: '/cell-swipe',
                 title: 'CellSwipe'
+              },
+              {
+                path: '/image-preview',
+                title: 'ImagePreview'
               },
               {
                 path: '/switch-cell',
