@@ -1,6 +1,6 @@
 <template>
   <div :class="b()">
-    <div :class="b('tip')" v-show="tip || $slots.tip">
+    <div :class="b('tip')" v-if="tip || $slots.tip">
       {{ tip }}<slot name="tip" />
     </div>
     <div :class="b('bar')">

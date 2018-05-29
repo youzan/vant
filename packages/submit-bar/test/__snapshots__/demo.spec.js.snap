@@ -4,8 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-submit-bar">
-      <div class="van-submit-bar__tip" style="display:none;">
-      </div>
+      <!---->
       <div class="van-submit-bar__bar">
         <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
         <button class="van-button van-button--danger van-button--normal">
@@ -30,8 +29,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-submit-bar">
-      <div class="van-submit-bar__tip" style="display:none;">
-      </div>
+      <!---->
       <div class="van-submit-bar__bar">
         <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
         <button class="van-button van-button--danger van-button--normal van-button--loading van-button--unclickable">
