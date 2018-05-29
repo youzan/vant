@@ -58,7 +58,7 @@ export default {
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 60px;
     font-weight: normal;
   }

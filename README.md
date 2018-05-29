@@ -29,8 +29,27 @@
 
 ## Install
 
+#### NPM
+
 ```shell
-npm i -S vant
+npm i vant -S
+```
+
+#### YARN
+
+```shell
+yarn add vant
+```
+
+#### CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+
+<!-- import script -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
 ## Quickstart
@@ -80,15 +99,7 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
-### CDN
-
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
-
-<!-- import script -->
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
-```
+> If you configured babel-plugin-import, you won't be allowed to import all components.
 
 See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
