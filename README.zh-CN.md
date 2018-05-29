@@ -67,7 +67,7 @@ import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
 
-#### 方式三. 导入所有组件
+#### 方式三. 导入所有组件（配置 babel-plugin-import 插件后将不允许导入所有组件的方式，会报错Vant is not defined）
 
 ```js
 import Vue from 'vue';
