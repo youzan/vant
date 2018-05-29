@@ -89,7 +89,7 @@ import 'vant/lib/vant-css/base.css';
 import 'vant/lib/vant-css/button.css';
 ```
 
-#### 3. Import all components
+#### 3. Import all components(if you use babel-plugin-import plungin,you can't do this)
 
 ```js
 import Vue from 'vue';
