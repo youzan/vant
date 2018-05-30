@@ -12,9 +12,7 @@ const images = [
 
 test('render image', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: {
-      images
-    }
+    propsData: { images }
   });
 
   expect(wrapper.html()).toMatchSnapshot();
