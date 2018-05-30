@@ -46,7 +46,7 @@ test('checkbox group', () => {
   const wrapper = mount({
     template: `
       <checkbox-group v-model="result" :max="2">
-        <checkbox v-for="item in list" :key="item" :name="item" :disabled="item === 'd'"></checkbox>
+        <checkbox v-for="item in list" :key="item" :name="item"></checkbox>
       </checkbox-group>
     `,
     components: {
@@ -56,7 +56,7 @@ test('checkbox group', () => {
     data() {
       return {
         result: [],
-        list: ['a', 'b', 'c', 'd']
+        list: ['a', 'b', 'c']
       };
     }
   });
