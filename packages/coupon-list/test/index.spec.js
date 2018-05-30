@@ -6,10 +6,12 @@ test('exchange coupon', () => {
   const wrapper = mount(CouponList);
   const exchange = wrapper.find('.van-coupon-list__exchange');
 
-  wrapper.vm.displayedCouponIndex = 1;
-  wrapper.vm.currentCode = '1';
+  wrapper.setData({
+    currentCode: '1',
+    displayedCouponIndex: 1
+  });
   exchange.trigger('click');
-  wrapper.vm.code = '2';
+  wrapper.setProps({ code: '2' });
   exchange.trigger('click');
 
   expect(wrapper.emitted('exchange')[0][0]).toBe('1');

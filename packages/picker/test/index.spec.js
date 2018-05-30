@@ -1,7 +1,7 @@
 import Picker from '../';
 import PickerColumn from '../PickerColumn';
 import { mount } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/touch-utils';
+import { triggerDrag } from '../../../test/utils';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
 const columns = [
@@ -27,7 +27,7 @@ test('simple columns confirm & cancel event', () => {
   wrapper.find('.van-picker__cancel').trigger('click');
   expect(wrapper.emitted('confirm')[0]).toEqual(['1990', 0]);
   expect(wrapper.emitted('cancel')[0]).toEqual(['1990', 0]);
-  wrapper.vm.$destroy();
+  wrapper.destroy();
 });
 
 test('multiple columns confirm & cancel event', () => {
