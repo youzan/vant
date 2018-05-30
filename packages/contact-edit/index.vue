@@ -33,6 +33,12 @@ import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
 import create from '../utils/create';
 
+const defaultContact = {
+  id: '',
+  tel: '',
+  name: ''
+};
+
 export default create({
   name: 'contact-edit',
 
@@ -47,11 +53,7 @@ export default create({
     isDeleting: Boolean,
     contactInfo: {
       type: Object,
-      default: () => ({
-        id: '',
-        tel: '',
-        name: ''
-      })
+      default: () => ({ ...defaultContact })
     },
     telValidator: {
       type: Function,
@@ -61,7 +63,10 @@ export default create({
 
   data() {
     return {
-      data: this.contactInfo,
+      data: {
+        ...this.defaultContact,
+        ...this.contactInfo
+      },
       errorInfo: {
         name: false,
         tel: false
@@ -106,13 +111,11 @@ export default create({
     },
 
     onDelete() {
-      if (!this.isDeleting) {
-        Dialog.confirm({
-          message: this.$t('confirmDelete')
-        }).then(() => {
-          this.$emit('delete', this.data);
-        });
-      }
+      Dialog.confirm({
+        message: this.$t('confirmDelete')
+      }).then(() => {
+        this.$emit('delete', this.data);
+      });
     }
   }
 });
