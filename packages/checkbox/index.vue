@@ -6,7 +6,7 @@
         b('icon'),
         `van-checkbox--${shape}`, {
           'van-checkbox--disabled': isDisabled,
-          'van-checkbox--checked': isChecked
+          'van-checkbox--checked': checked
       }]"
       @click="onClick"
     />
@@ -40,7 +40,7 @@ export default create({
   },
 
   computed: {
-    currentValue: {
+    checked: {
       get() {
         return this.parent
           ? this.parent.value.indexOf(this.name) !== -1
@@ -74,15 +74,6 @@ export default create({
       }
     },
 
-    isChecked() {
-      const { currentValue } = this;
-      if ({}.toString.call(currentValue) === '[object Boolean]') {
-        return currentValue;
-      } else if (this.isDef(currentValue)) {
-        return currentValue === this.name;
-      }
-    },
-
     isDisabled() {
       return (this.parent && this.parent.disabled) || this.disabled;
     }
@@ -101,7 +92,7 @@ export default create({
   methods: {
     onClick(target) {
       if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
-        this.currentValue = !this.currentValue;
+        this.checked = !this.checked;
       }
     }
   }
