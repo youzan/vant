@@ -1,7 +1,7 @@
 import Stepper from '..';
 import { mount } from '@vue/test-utils';
 
-it('disabled stepper', () => {
+test('disabled stepper', () => {
   const wrapper = mount(Stepper, {
     propsData: {
       disabled: true
