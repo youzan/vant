@@ -19,7 +19,7 @@ test('click number key', () => {
   mockTouch(wrapper, 'touchstart', 10);
   mockTouch(wrapper, 'touchstart', 0);
   mockTouch(wrapper, 'touchend', 0);
-  wrapper.vm.$destroy();
+  wrapper.destroy();
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
 });
 

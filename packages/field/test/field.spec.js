@@ -45,11 +45,11 @@ test('keypress event', () => {
   press(50);
   expect(calls.length).toBe(1);
 
-  wrapper.vm.value = '0.1';
+  wrapper.setProps({ value: '0.1' });
   press(46);
   expect(calls.length).toBe(2);
 
-  wrapper.vm.type = 'text';
+  wrapper.setProps({ type: 'text' });
   press(0);
   expect(calls.length).toBe(2);
 });
@@ -75,11 +75,11 @@ test('autosize textarea field', () => {
     }
   });
 
-  const longText = '1'.repeat(20);
+  const value = '1'.repeat(20);
   const textarea = wrapper.find('.van-field__control');
 
-  wrapper.vm.value = longText;
-  expect(textarea.element.value).toEqual(longText);
+  wrapper.setProps({ value });
+  expect(textarea.element.value).toEqual(value);
 });
 
 test('autosize object', done => {

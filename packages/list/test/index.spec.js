@@ -16,7 +16,7 @@ test('load event', done => {
 
     setTimeout(() => {
       expect(wrapper.emitted('input')[1]).toBeTruthy();
-      wrapper.vm.$destroy();
+      wrapper.destroy();
       done();
     });
   });

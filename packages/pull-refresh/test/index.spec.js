@@ -1,6 +1,6 @@
 import PullRefresh from '..';
 import { mount } from '@vue/test-utils';
-import { triggerTouch, triggerDrag } from '../../../test/touch-utils';
+import { trigger, triggerDrag } from '../../../test/utils';
 
 test('change head content when pulling down', () => {
   const wrapper = mount(PullRefresh, {
@@ -16,16 +16,16 @@ test('change head content when pulling down', () => {
   const track = wrapper.find('.van-pull-refresh__track');
 
   // pulling
-  triggerTouch(track, 'touchstart', 0, 0);
-  triggerTouch(track, 'touchmove', 0, 10);
+  trigger(track, 'touchstart', 0, 0);
+  trigger(track, 'touchmove', 0, 10);
   expect(wrapper.html()).toMatchSnapshot();
 
   // loosing
-  triggerTouch(track, 'touchmove', 0, 100);
+  trigger(track, 'touchmove', 0, 100);
   expect(wrapper.html()).toMatchSnapshot();
 
   // loading
-  triggerTouch(track, 'touchend', 0, 100);
+  trigger(track, 'touchend', 0, 100);
   expect(wrapper.html()).toMatchSnapshot();
 
   // still loading
@@ -65,7 +65,7 @@ test('not in page top', () => {
   // ignore touch event when not at page top
   triggerDrag(track, 0, 100);
   window.scrollTop = 0;
-  triggerTouch(track, 'touchmove', 0, 100);
+  trigger(track, 'touchmove', 0, 100);
 
   expect(wrapper.html()).toMatchSnapshot();
 });

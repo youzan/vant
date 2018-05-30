@@ -1,13 +1,13 @@
 import Vue from 'vue';
 import Popup from '../';
 import { mount, TransitionStub } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/touch-utils';
+import { triggerDrag } from '../../../test/utils';
 
 Vue.component('transition', TransitionStub);
 
 let wrapper;
 afterEach(() => {
-  wrapper.vm.$destroy();
+  wrapper.destroy();
 });
 
 test('lazy render', () => {
