@@ -31,6 +31,14 @@ export default create({
   },
 
   props: {
+    images: {
+      type: Array,
+      default: () => []
+    },
+    startPosition: {
+      type: Number,
+      default: 0
+    },
     overlay: {
       type: Boolean,
       default: true
@@ -39,13 +47,6 @@ export default create({
       type: Boolean,
       default: true
     }
-  },
-
-  data() {
-    return {
-      images: [],
-      startPosition: 0
-    };
   },
 
   methods: {
