@@ -19,8 +19,7 @@
           }"
           @click="onClick(index)"
         >
-          <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
-          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
+          <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
         </div>
       </div>
     </div>
@@ -34,7 +33,6 @@
 import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
-import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 import Touch from '../mixins/touch';
 
@@ -42,10 +40,6 @@ export default create({
   name: 'tabs',
 
   mixins: [Touch],
-
-  components: {
-    VanNode
-  },
 
   model: {
     prop: 'active'
@@ -261,6 +255,14 @@ export default create({
         }
       };
       animate();
+    },
+
+    // render title slot of child tab
+    renderTitle(el, index) {
+      this.$nextTick(() => {
+        const title = this.$refs.title[index];
+        title.parentNode.replaceChild(el, title);
+      });
     }
   }
 });
