@@ -11,7 +11,7 @@
     <ul :style="wrapperStyle">
       <li
         v-for="(option, index) in options"
-        v-text="getOptionText(option)"
+        v-html="getOptionText(option)"
         class="van-ellipsis"
         :class="b('item', {
           disabled: isDisabled(option),
