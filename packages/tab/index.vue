@@ -1,6 +1,9 @@
 <template>
   <div :class="b('pane')" v-show="isSelected">
     <slot v-if="inited" />
+    <div v-if="$slots.title" ref="title">
+      <slot name="title" />
+    </div>
   </div>
 </template>
 
@@ -43,6 +46,12 @@ export default create({
   created() {
     this.findParent('van-tabs');
     this.parent.tabs.push(this);
+  },
+
+  mounted() {
+    if (this.$slots.title) {
+      this.parent.renderTitle(this.$refs.title, this.index);
+    }
   },
 
   destroyed() {
