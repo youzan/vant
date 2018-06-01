@@ -15,7 +15,7 @@ test('render image', () => {
     propsData: { images }
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   const swipe = wrapper.find('.van-swipe__track');
   triggerDrag(swipe, 500, 0);

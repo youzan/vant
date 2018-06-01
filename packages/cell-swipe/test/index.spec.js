@@ -13,23 +13,23 @@ it('drag and show left part', () => {
   const wrapper = mount(CellSwipe, defaultProps);
 
   triggerDrag(wrapper, 10, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   triggerDrag(wrapper, 50, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   triggerDrag(wrapper, 500, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   triggerDrag(wrapper, 0, 100);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('drag and show left part', () => {
   const wrapper = mount(CellSwipe, defaultProps);
 
   triggerDrag(wrapper, -50, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('on close prop', () => {

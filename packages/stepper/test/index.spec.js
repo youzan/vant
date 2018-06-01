@@ -7,7 +7,7 @@ test('disabled stepper', () => {
       disabled: true
     }
   });
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('disable stepper input', () => {
@@ -16,7 +16,7 @@ test('disable stepper input', () => {
       disableInput: true
     }
   });
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('click button', () => {

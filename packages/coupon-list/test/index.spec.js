@@ -23,11 +23,11 @@ test('exchange coupon', () => {
 
 test('coupon cell', () => {
   const wrapper = mount(CouponCell);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.setProps({
     coupons: [{ value: 100 }],
     chosenCoupon: 0
   });
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

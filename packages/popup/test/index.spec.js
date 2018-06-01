@@ -26,7 +26,7 @@ test('reset z-index', () => {
     }
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('popup lock scroll', () => {

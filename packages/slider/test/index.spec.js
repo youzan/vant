@@ -19,11 +19,11 @@ test('drag button', () => {
 
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 50, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.setData({ disabled: false });
   triggerDrag(button, 50, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('click bar', () => {
@@ -39,9 +39,9 @@ it('click bar', () => {
   });
 
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.setData({ disabled: false });
   trigger(wrapper, 'click', 100, 0);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
