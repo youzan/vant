@@ -57,7 +57,7 @@
   "devDependencies": {
     "@vue/server-test-utils": "^1.0.0-beta.16",
     "@vue/test-utils": "^1.0.0-beta.16",
-    "autoprefixer": "^8.5.1",
+    "autoprefixer": "^8.5.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^23.0.1",
@@ -75,8 +75,8 @@
     "gh-pages": "^1.0.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "^0.14.3",
-    "jest": "^23.0.1",
-    "jest-serializer-vue": "^1.0.0",
+    "jest": "^23.1.0",
+    "jest-serializer-vue": "^2.0.0",
     "lint-staged": "^7.1.2",
     "postcss": "^6.0.22",
     "postcss-calc": "^6.0.0",
@@ -99,7 +99,7 @@
     "vue-sfc-compiler": "^0.0.8",
     "vue-template-compiler": "2.5.16",
     "vue-template-es2015-compiler": "^1.6.0",
-    "webpack": "^4.10.0",
+    "webpack": "^4.10.2",
     "webpack-cli": "^2.1.4",
     "webpack-serve": "^1.0.2"
   },

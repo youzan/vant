@@ -62,7 +62,7 @@ test('render textarea', done => {
     }
   });
   setTimeout(() => {
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
     done();
   });
 });

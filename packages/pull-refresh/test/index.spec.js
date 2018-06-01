@@ -18,26 +18,26 @@ test('change head content when pulling down', () => {
   // pulling
   trigger(track, 'touchstart', 0, 0);
   trigger(track, 'touchmove', 0, 10);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   // loosing
   trigger(track, 'touchmove', 0, 100);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   // loading
   trigger(track, 'touchend', 0, 100);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   // still loading
   triggerDrag(track, 0, 100);
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   expect(wrapper.emitted('input')).toBeTruthy();
   expect(wrapper.emitted('refresh')).toBeTruthy();
 
   // end loading
   wrapper.vm.value = false;
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('pull a short distance', () => {
@@ -67,5 +67,5 @@ test('not in page top', () => {
   window.scrollTop = 0;
   trigger(track, 'touchmove', 0, 100);
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

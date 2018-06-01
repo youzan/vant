@@ -28,7 +28,7 @@ describe('ContactCard', () => {
 describe('ContactList', () => {
   test('render', () => {
     const wrapper = mount(ContactList);
-    expect(wrapper.html()).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   });
 });
 

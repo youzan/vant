@@ -8,9 +8,9 @@ test('calc width', () => {
       percentage: 100
     }
   });
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.vm.showPivot = true;
   wrapper.vm.pivotText = 'test';
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

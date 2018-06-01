@@ -111,12 +111,12 @@ test('column watch default index', () => {
     }
   });
   wrapper.vm.options = [disabled, ...simpleColumn];
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.vm.options = [disabled, ...simpleColumn];
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   wrapper.vm.options = [1, disabled, disabled, disabled];
   wrapper.vm.defaultIndex = 2;
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 });

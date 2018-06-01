@@ -2,7 +2,7 @@ import TreeSelect from '../';
 import { mount } from '@vue/test-utils';
 
 test('empty list', () => {
-  expect(mount(TreeSelect).html()).toMatchSnapshot();
+  expect(mount(TreeSelect)).toMatchSnapshot();
 });
 
 test('select item', () => {

@@ -9,7 +9,7 @@ test('submit', () => {
     }
   });
 
-  expect(wrapper.html()).toMatchSnapshot();
+  expect(wrapper).toMatchSnapshot();
 
   // disabled
   const button = wrapper.find('.van-button');
