@@ -27,7 +27,9 @@ It's welcomed to pull request, And there are some tips about that:
 ```bash
 git clone git@github.com:youzan/vant.git
 
-yarn
+cd vant
+
+npm run bootstrap
 
 npm run dev
 
