@@ -1,3 +1,24 @@
+## 更新日志
+
+### [1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
+`2018-06-01`
+
+**Improvements**
+
+- Dialog: add get-container prop [\#1176](https://github.com/youzan/vant/pull/1176)
+- Dialog: beforeClose add callback parameters [\#1166](https://github.com/youzan/vant/pull/1166)
+- Icon: update wechat icon [\#1156](https://github.com/youzan/vant/pull/1156)
+- Picker: support html option [\#1213](https://github.com/youzan/vant/pull/1213)
+- SubmitBar: optimize render [\#1184](https://github.com/youzan/vant/pull/1184)
+- Test: add more test cases [\#1202](https://github.com/youzan/vant/pull/1202)
+- Doc: improve quickstart [\#1187](https://github.com/youzan/vant/pull/1187)
+
+**Bug Fixes**
+
+- fix Tab title slot render [\#1212](https://github.com/youzan/vant/pull/1212)
+- fix AddressEdit area popup should mount in document root [\#1211](https://github.com/youzan/vant/pull/1211)
+
+
 ## Changelog
 
 ### [1.1.5](https://github.com/youzan/vant/tree/v1.1.5)

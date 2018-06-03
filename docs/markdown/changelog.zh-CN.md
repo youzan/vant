@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
+`2018-06-01`
+
+**Improvements**
+
+- Dialog: 新增 get-container 属性 [\#1176](https://github.com/youzan/vant/pull/1176)
+- Dialog: beforeClose 支持通过回调参数控制关闭动作 [\#1166](https://github.com/youzan/vant/pull/1166)
+- Icon: 更新 wechat 图标 [\#1156](https://github.com/youzan/vant/pull/1156)
+- Picker: 支持 html 类型的选项 [\#1213](https://github.com/youzan/vant/pull/1213)
+- SubmitBar: 优化渲染结构 [\#1184](https://github.com/youzan/vant/pull/1184)
+- Test: 增加大量单元测试用例 [\#1202](https://github.com/youzan/vant/pull/1202)
+- Doc: 完善快速上手文档 [\#1187](https://github.com/youzan/vant/pull/1187)
+
+**Bug Fixes**
+
+- 修复 Tab title slot 渲染无法更新的问题 [\#1212](https://github.com/youzan/vant/pull/1212)
+- 修复 AddressEdit 省市区弹层样式错误的问题 [\#1211](https://github.com/youzan/vant/pull/1211)
+
+
 ### [1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
 `2018-05-24`
 
