@@ -8,7 +8,7 @@
     :class="b({
       error,
       disabled: $attrs.disabled,
-      'has-icon': hasIcon,
+      'has-icon': showIcon,
       'min-height': type === 'textarea' && !autosize
     })"
   >
@@ -35,8 +35,7 @@
       :class="b('error-message')"
     />
     <div
-      v-if="hasIcon"
-      v-show="$slots.icon || value"
+      v-if="showIcon"
       :class="b('icon')"
       @touchstart.prevent="onClickIcon"
     >
@@ -60,7 +59,7 @@ export default create({
   inheritAttrs: false,
 
   props: {
-    value: null,
+    value: [String, Number],
     icon: String,
     label: String,
     error: Boolean,
@@ -91,8 +90,8 @@ export default create({
   },
 
   computed: {
-    hasIcon() {
-      return this.$slots.icon || this.icon;
+    showIcon() {
+      return this.$slots.icon || (this.icon && this.value !== '' && this.isDef(this.value));
     },
 
     listeners() {
@@ -117,7 +116,7 @@ export default create({
     onKeypress(event) {
       if (this.type === 'number') {
         const { keyCode } = event;
-        const allowPoint = this.value.indexOf('.') === -1;
+        const allowPoint = String(this.value).indexOf('.') === -1;
         const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
         if (!isValidKey) {
           event.preventDefault();

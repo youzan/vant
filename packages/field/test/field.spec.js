@@ -14,6 +14,7 @@ test('click icon event', () => {
   const onIconClick = jest.fn();
   const wrapper = mount(Field, {
     propsData: {
+      value: 'a',
       icon: 'search',
       onIconClick
     }
