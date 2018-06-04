@@ -90,6 +90,8 @@ export default create({
     autoplay(autoplay) {
       if (!autoplay) {
         this.clear();
+      } else {
+        this.autoPlay();
       }
     }
   },
@@ -230,6 +232,7 @@ export default create({
 
     autoPlay() {
       const { autoplay } = this;
+
       if (autoplay && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {
