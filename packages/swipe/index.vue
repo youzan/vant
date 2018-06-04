@@ -206,6 +206,15 @@ export default create({
       this.offset = offset - this.active * this.size;
     },
 
+    swipeTo(index) {
+      this.swiping = true;
+      this.correctPosition();
+      setTimeout(() => {
+        this.swiping = false;
+        this.move(index % this.count - this.active);
+      }, 30);
+    },
+
     correctPosition() {
       if (this.active <= -1) {
         this.move(this.count);

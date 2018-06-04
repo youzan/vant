@@ -156,18 +156,19 @@ Picker events will pass different parameters according to the columns are single
 | defaultIndex | Default value index |
 | className | ClassName for this column |
 
-### Picker instance
-You can get the picker instance in 'change' event, and 
+### Methods
 
-| Method | Description |
-|-----------|-----------|
-| getValues() | Get current values of all columns |
-| setValues(values) | Set current values of all columns |
-| getIndexes() | Get current indexes of all columns |
-| setIndexes(indexes) | Set current indexes of all columns |
-| getColumnValue(columnIndex) | Get current value of the column |
-| setColumnValue(columnIndex, value) | Set current value of the column |
-| getColumnIndex(columnIndex) | Get current index of the column |
-| setColumnIndex(columnIndex, optionIndex) | Set current index of the column |
-| getColumnValues(columnIndex) | Get columns data of the column |
-| setColumnValues(columnIndex, values) | Set columns data of the column |
+Use ref to get picker instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| getValues | - | values | Get current values of all columns |
+| setValues | values | - |  Set current values of all columns |
+| getIndexes | - | indexes | Get current indexes of all columns |
+| setIndexes | indexes | - | Set current indexes of all columns |
+| getColumnValue | columnIndex | value | Get current value of the column |
+| setColumnValue | columnIndex, value | - | Set current value of the column |
+| getColumnIndex | columnIndex | optionIndex | Get current index of the column |
+| setColumnIndex | columnIndex, optionIndex | - | Set current index of the column |
+| getColumnValues | columnIndex | values | Get columns data of the column |
+| setColumnValue | columnIndex, values | - | Set columns data of the column |
