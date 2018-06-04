@@ -114,7 +114,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| value | Field value | `String` | - |
+| value | Field value | `String | Number` | - |
 | label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
 | disabled | Disable field | `Boolean` | `false` |

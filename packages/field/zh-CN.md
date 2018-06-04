@@ -117,7 +117,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
 | label | 标签 | `String` | - |
-| value | 当前输入的值 | `String` | - |
+| value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
