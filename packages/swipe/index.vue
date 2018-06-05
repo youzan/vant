@@ -90,6 +90,8 @@ export default create({
     autoplay(autoplay) {
       if (!autoplay) {
         this.clear();
+      } else {
+        this.autoPlay();
       }
     }
   },
@@ -206,6 +208,15 @@ export default create({
       this.offset = offset - this.active * this.size;
     },
 
+    swipeTo(index) {
+      this.swiping = true;
+      this.correctPosition();
+      setTimeout(() => {
+        this.swiping = false;
+        this.move(index % this.count - this.active);
+      }, 30);
+    },
+
     correctPosition() {
       if (this.active <= -1) {
         this.move(this.count);
@@ -221,6 +232,7 @@ export default create({
 
     autoPlay() {
       const { autoplay } = this;
+
       if (autoplay && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {

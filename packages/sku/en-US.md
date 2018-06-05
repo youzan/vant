@@ -111,9 +111,11 @@ Vue.use(Sku);
 
 ### Methods
 
-| Method | Description |
-|-----------|-----------|
-| getSkuData() | Get current sku data |
+Use ref to get sku instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| getSkuData | - | skuData | Get current skuData |
 
 ### Slot
 

@@ -94,3 +94,11 @@ export default {
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | change | Triggered when current swipe change | index: index of current swipe |
+
+### Methods
+
+Use ref to get swipe instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
