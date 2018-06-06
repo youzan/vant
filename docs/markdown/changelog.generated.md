@@ -1,5 +1,37 @@
 ## 更新日志
 
+## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7) (2018-06-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.6...v1.1.7)
+
+**Breaking changes**
+
+- 可以将picker中的v-text改为v-html吗 [\#1155](https://github.com/youzan/vant/issues/1155)
+
+**Bug Fixes**
+
+- Popup 嵌套 AddressEdit 背景蒙层问题 [\#1203](https://github.com/youzan/vant/issues/1203)
+- van-tab title slot 绑定数据更新异常 [\#1170](https://github.com/youzan/vant/issues/1170)
+
+**Issue**
+
+- \[eslint-plugin-vue\] \[vue/require-v-for-key\] Elements in iteration expect to have 'v-bind:key' directives. [\#1228](https://github.com/youzan/vant/issues/1228)
+- image-preview不能直接用吗？ carousel 走马灯的效果 [\#1225](https://github.com/youzan/vant/issues/1225)
+- Tab与List一起使用时，点击Tab后， list 会一直执行load事件 [\#1217](https://github.com/youzan/vant/issues/1217)
+- Stepper 如果存在于checkbox中 会存在click事件冒泡 [\#1216](https://github.com/youzan/vant/issues/1216)
+- Sku是否可以自定义数据格式 [\#1152](https://github.com/youzan/vant/issues/1152)
+
+**Improvements**
+
+- \[Improvement\] Dialog: optimize style without content [\#1233](https://github.com/youzan/vant/pull/1233) ([chenjiahan](https://github.com/chenjiahan))
+- \[Test\] optimize async cases [\#1232](https://github.com/youzan/vant/pull/1232) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] add babel-eslint [\#1231](https://github.com/youzan/vant/pull/1231) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] ts import plugin [\#1230](https://github.com/youzan/vant/pull/1230) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Dialog: support custom className [\#1224](https://github.com/youzan/vant/pull/1224) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Swipe: add swipeTo method [\#1222](https://github.com/youzan/vant/pull/1222) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: support v-model.number [\#1221](https://github.com/youzan/vant/pull/1221) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add version tip [\#1219](https://github.com/youzan/vant/pull/1219) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Test: separate jest config from packages.json [\#1218](https://github.com/youzan/vant/pull/1218) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6) (2018-06-01)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.5...v1.1.6)
 
@@ -153,7 +185,6 @@
 
 - van-field 组件添加 label slot [\#1041](https://github.com/youzan/vant/issues/1041)
 - AddressEdit组件 点击删除收货地址时弹出的Dialog.confirm只有confirm事件cancel貌似没有ww [\#1035](https://github.com/youzan/vant/issues/1035)
-- Toast.loading没有传loading组件的type进去，导致Toast.loading只能用loading的默认样式 [\#1018](https://github.com/youzan/vant/issues/1018)
 
 **Bug Fixes**
 
@@ -207,10 +238,6 @@
 ## [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3) (2018-05-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.2...v1.1.3)
 
-**Breaking changes**
-
-- Area  [\#1017](https://github.com/youzan/vant/issues/1017)
-
 **Issue**
 
 - 优惠券插件 引用后报警告 [\#1044](https://github.com/youzan/vant/issues/1044)
@@ -223,11 +250,6 @@
 - area  [\#1028](https://github.com/youzan/vant/issues/1028)
 - \<van-nav-bar title="'标题'"\> [\#1026](https://github.com/youzan/vant/issues/1026)
 - 官网文档中关于 “List 列表“ 例子引用缺失。 [\#1024](https://github.com/youzan/vant/issues/1024)
-- cell-swipe样式问题 [\#1023](https://github.com/youzan/vant/issues/1023)
-- 没有生效 fix Tab should lazy render tab-pane \#978 \(jerryni\) [\#1021](https://github.com/youzan/vant/issues/1021)
-- 遍历checkbox之后，点击一个checkbox操作其他的checkbox的true或false 均触发change事件，然后其他checkbox点击没反应 [\#1020](https://github.com/youzan/vant/issues/1020)
-- Swipe 轮播 怎么实现点击跳转? [\#1016](https://github.com/youzan/vant/issues/1016)
-- slider组件拖拽的时候需要实时获取value的值 [\#1014](https://github.com/youzan/vant/issues/1014)
 
 **Improvements**
 
@@ -243,25 +265,9 @@
 - \[bugfix\] Cell: default width [\#1029](https://github.com/youzan/vant/pull/1029) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Search: update style [\#1027](https://github.com/youzan/vant/pull/1027) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Icon: update search icon [\#1025](https://github.com/youzan/vant/pull/1025) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Changelog: fix changelog error [\#1022](https://github.com/youzan/vant/pull/1022) ([cookfront](https://github.com/cookfront))
 
 ## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2) (2018-05-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.1...v1.1.2)
-
-**Issue**
-
-- 怎么用Checkbox组件实现全选功能 [\#1015](https://github.com/youzan/vant/issues/1015)
-- 建议增加属性筛选器 [\#1009](https://github.com/youzan/vant/issues/1009)
-- fonts本地化，不起作用啊！ [\#1008](https://github.com/youzan/vant/issues/1008)
-- 关于form标签 [\#1006](https://github.com/youzan/vant/issues/1006)
-
-**Improvements**
-
-- \[Improvement\] Area: add change event [\#1019](https://github.com/youzan/vant/pull/1019) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] optimize document site [\#1013](https://github.com/youzan/vant/pull/1013) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Locale: add warning when not correctly registered [\#1012](https://github.com/youzan/vant/pull/1012) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Rate: remove dependencie of Array.fill [\#1011](https://github.com/youzan/vant/pull/1011) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Rate: add english document [\#1010](https://github.com/youzan/vant/pull/1010) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1) (2018-05-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.0...v1.1.1)
