@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
-import Vue from 'vue';
-import { mount, TransitionStub } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import { renderToString } from '@vue/server-test-utils';
 import AddressEdit from '../';
 import AddressDetail from '../Detail';
 import areaList from '../../area/demo/area.simple';
+import { later, transitionStub } from '../../../test/utils';
 
-Vue.component('transition', TransitionStub);
+transitionStub();
 
 const addressInfo = {
   name: '测试',
@@ -207,7 +207,7 @@ test('watch address info', () => {
   expect(wrapper.vm.data.name).toEqual('123');
 });
 
-test('set/get area code', done => {
+test('set/get area code', async() => {
   const wrapper = mount(AddressEdit, {
     propsData: { areaList }
   });
@@ -219,22 +219,21 @@ test('set/get area code', done => {
   ]);
 
   wrapper.vm.setAreaCode('110101');
-  setTimeout(() => {
-    expect(wrapper.vm.data.area_code).toEqual('110101');
-    expect(wrapper.vm.getArea()).toEqual([
-      { code: '110000', name: '北京市' },
-      { code: '110100', name: '北京市' },
-      { code: '110101', name: '东城区' }
-    ]);
 
-    wrapper.vm.$refs = [];
-    wrapper.vm.setAreaCode('110102');
-    expect(wrapper.vm.getArea()).toEqual([]);
-    done();
-  }, 50);
+  await later(50);
+  expect(wrapper.vm.data.area_code).toEqual('110101');
+  expect(wrapper.vm.getArea()).toEqual([
+    { code: '110000', name: '北京市' },
+    { code: '110100', name: '北京市' },
+    { code: '110101', name: '东城区' }
+  ]);
+
+  wrapper.vm.$refs = [];
+  wrapper.vm.setAreaCode('110102');
+  expect(wrapper.vm.getArea()).toEqual([]);
 });
 
-test('watch area code', done => {
+test('watch area code', async() => {
   const wrapper = mount(AddressEdit, {
     propsData: {
       addressInfo: {
@@ -246,13 +245,11 @@ test('watch area code', done => {
   expect(wrapper.vm.data.city).toEqual('');
   wrapper.vm.areaList = areaList;
 
-  setTimeout(() => {
-    expect(wrapper.vm.data.city).toEqual('北京市');
-    done();
-  }, 50);
+  await later(50);
+  expect(wrapper.vm.data.city).toEqual('北京市');
 });
 
-test('show search result', done => {
+test('show search result', async() => {
   const wrapper = mount(AddressEdit, {
     propsData: {
       showSearchResult: true,
@@ -277,12 +274,11 @@ test('show search result', done => {
   expect(input.value).toEqual('address2');
 
   field.trigger('blur');
-  setTimeout(() => {
-    done();
-  }, 150);
+  await later(150);
+  expect(wrapper.vm.detailFocused).toBeFalsy();
 });
 
-test('delete address', done => {
+test('delete address', async() => {
   const wrapper = mount(AddressEdit, {
     attachToDocument: true,
     propsData: {
@@ -298,9 +294,7 @@ test('delete address', done => {
   deleteButton.trigger('click');
   document.querySelector('.van-dialog__confirm').click();
 
-  setTimeout(() => {
-    expect(wrapper.emitted('delete')).toBeTruthy();
-    expect(wrapper.emitted('cancel-delete')).toBeTruthy();
-    done();
-  });
+  await later();
+  expect(wrapper.emitted('delete')).toBeTruthy();
+  expect(wrapper.emitted('cancel-delete')).toBeTruthy();
 });

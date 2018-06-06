@@ -1,7 +1,7 @@
 import Swipe from '..';
 import SwipeItem from '../../swipe-item';
 import { mount } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/utils';
+import { triggerDrag, later } from '../../../test/utils';
 
 const Component = {
   template: `
@@ -44,7 +44,7 @@ const Component = {
   }
 };
 
-test('autoplay', done => {
+test('autoplay', async() => {
   const wrapper = mount(Component, {
     propsData: {
       autoplay: 20
@@ -52,32 +52,26 @@ test('autoplay', done => {
   });
   const { swipe } = wrapper.vm.$refs;
 
-  setTimeout(() => {
-    expect(swipe.active).toEqual(1);
-    wrapper.setData({ autoplay: 0 });
+  await later(60);
+  expect(swipe.active).toEqual(1);
+  wrapper.setData({ autoplay: 0 });
 
-    setTimeout(() => {
-      expect(swipe.active).toEqual(1);
-      wrapper.setData({ autoplay: 20 });
+  await later(60);
+  expect(swipe.active).toEqual(1);
+  wrapper.setData({ autoplay: 20 });
 
-      setTimeout(() => {
-        expect(swipe.active).toEqual(2);
-        wrapper.destroy();
-        done();
-      }, 60);
-    }, 60);
-  }, 60);
+  await later(60);
+  expect(swipe.active).toEqual(2);
+  wrapper.destroy();
 });
 
-test('swipeTo', done => {
+test('swipeTo', async() => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);
 
-  setTimeout(() => {
-    expect(swipe.active).toEqual(2);
-    done();
-  }, 30);
+  await later(30);
+  expect(swipe.active).toEqual(2);
 });
 
 test('initial swipe', () => {

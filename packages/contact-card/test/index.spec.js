@@ -2,6 +2,7 @@ import ContactCard from '..';
 import ContactList from '../../contact-list';
 import ContactEdit from '../../contact-edit';
 import { mount } from '@vue/test-utils';
+import { later } from '../../../test/utils';
 
 const contactInfo = {
   name: 'test',
@@ -93,7 +94,7 @@ describe('ContactEdit', () => {
     expect(wrapper.vm.data.name).toEqual('123');
   });
 
-  test('delete contact', done => {
+  test('delete contact', async() => {
     const wrapper = mount(ContactEdit, {
       propsData: {
         isEdit: true
@@ -104,9 +105,7 @@ describe('ContactEdit', () => {
     deleteButton.trigger('click');
     document.querySelector('.van-dialog__confirm').click();
 
-    setTimeout(() => {
-      expect(wrapper.emitted('delete')).toBeTruthy();
-      done();
-    });
+    await later();
+    expect(wrapper.emitted('delete')).toBeTruthy();
   });
 });

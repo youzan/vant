@@ -1,6 +1,7 @@
 import deepClone from '../deep-clone';
 import { isAndroid, isDef, camelize, get } from '..';
 import { raf, cancel } from '../raf';
+import { later } from '../../../test/utils';
 
 test('deepClone', () => {
   const a = { foo: 0 };
@@ -43,13 +44,11 @@ test('isAndroid', () => {
   expect(isAndroid()).toBeFalsy();
 });
 
-test('raf', (done) => {
+test('raf', async() => {
   const spy = jest.fn();
   raf(spy);
 
-  setTimeout(() => {
-    expect(spy.mock.calls.length).toBe(1);
-    cancel(1);
-    done();
-  }, 50);
+  await later(50);
+  expect(spy.mock.calls.length).toBe(1);
+  cancel(1);
 });

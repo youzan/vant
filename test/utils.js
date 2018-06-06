@@ -1,3 +1,6 @@
+import Vue from 'vue';
+import { TransitionStub } from '@vue/test-utils';
+
 // Trigger pointer/touch event
 export function trigger(wrapper, eventName, x = 0, y = 0) {
   const el = wrapper.element ? wrapper.element : wrapper;
@@ -33,4 +36,15 @@ export function triggerDrag(el, x = 0, y = 0) {
   trigger(el, 'touchmove', x / 2, y / 2);
   trigger(el, 'touchmove', x, y);
   trigger(el, 'touchend', x, y);
+}
+
+// promisify setTimeout
+export function later(delay) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, delay);
+  });
+}
+
+export function transitionStub() {
+  Vue.component('transition', TransitionStub);
 }

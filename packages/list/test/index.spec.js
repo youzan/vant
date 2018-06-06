@@ -1,75 +1,71 @@
 import List from '..';
 import { mount } from '@vue/test-utils';
+import { later } from '../../../test/utils';
 
-test('load event', done => {
+test('load event', async() => {
   const wrapper = mount(List);
 
   wrapper.vm.$on('input', value => {
     wrapper.vm.loading = value;
   });
 
-  setTimeout(() => {
-    expect(wrapper.emitted('load')).toBeTruthy();
-    expect(wrapper.emitted('input')).toBeTruthy();
+  await later();
+  expect(wrapper.emitted('load')).toBeTruthy();
+  expect(wrapper.emitted('input')).toBeTruthy();
 
-    wrapper.vm.loading = false;
+  wrapper.vm.loading = false;
 
-    setTimeout(() => {
-      expect(wrapper.emitted('input')[1]).toBeTruthy();
-      wrapper.destroy();
-      done();
-    });
-  });
+  await later();
+  expect(wrapper.emitted('input')[1]).toBeTruthy();
+  wrapper.destroy();
 });
 
-test('finished', done => {
+test('finished', async() => {
   const wrapper = mount(List, {
     propsData: {
       finished: true
     }
   });
 
-  setTimeout(() => {
-    expect(wrapper.emitted('load')).toBeFalsy();
-    expect(wrapper.emitted('input')).toBeFalsy();
-    wrapper.vm.finished = false;
+  await later();
+  expect(wrapper.emitted('load')).toBeFalsy();
+  expect(wrapper.emitted('input')).toBeFalsy();
+  wrapper.vm.finished = false;
 
-    setTimeout(() => {
-      expect(wrapper.emitted('load')).toBeTruthy();
-      expect(wrapper.emitted('input')).toBeTruthy();
-      done();
-    });
-  });
+  await later();
+  expect(wrapper.emitted('load')).toBeTruthy();
+  expect(wrapper.emitted('input')).toBeTruthy();
 });
 
-test('immediate check false', done => {
+test('immediate check false', async() => {
   const wrapper = mount(List, {
     propsData: {
       immediateCheck: false
     }
   });
 
-  setTimeout(() => {
-    expect(wrapper.emitted('load')).toBeFalsy();
-    expect(wrapper.emitted('input')).toBeFalsy();
-    done();
-  });
+  await later();
+  expect(wrapper.emitted('load')).toBeFalsy();
+  expect(wrapper.emitted('input')).toBeFalsy();
 });
 
 test('keey-alive live cycle', () => {
-  const wrapper = mount({
-    template: `
+  const wrapper = mount(
+    {
+      template: `
       <keep-alive>
         <list v-if="show" />
       </keep-alive>
     `,
-    props: ['show'],
-    components: { List }
-  }, {
-    propsData: {
-      show: true
+      props: ['show'],
+      components: { List }
+    },
+    {
+      propsData: {
+        show: true
+      }
     }
-  });
+  );
 
   expect(wrapper.vm.$el).toBeTruthy();
   wrapper.vm.show = false;
