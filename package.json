@@ -60,6 +60,7 @@
     "autoprefixer": "^8.6.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.1",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.15.0",
