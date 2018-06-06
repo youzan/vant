@@ -116,12 +116,6 @@ Vue.use(Vant);
 
 现代浏览器以及 Android 4.0+, iOS 6+.
 
-## 手机预览
-
-可以手机扫码以下二维码访问手机端 demo：
-
-<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="200" height="200" >
-
 ## 链接
 
 * [详细文档](https://youzan.github.io/vant)
@@ -130,6 +124,18 @@ Vue.use(Vant);
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [vant-demo](https://github.com/youzan/vant-demo)
 * [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+
+## 手机预览
+
+可以手机扫码以下二维码访问手机端 demo：
+
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+
+## 微信讨论群
+
+欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
 
