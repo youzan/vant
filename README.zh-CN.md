@@ -133,9 +133,9 @@ Vue.use(Vant);
 
 ## 微信讨论群
 
-欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
+欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
 
-<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" >
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
 
