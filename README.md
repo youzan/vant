@@ -124,7 +124,13 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 You can scan the following QR code to access the demo：
 
-<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="200" height="200" >
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="250" height="250" >
+
+## Wechat Group
+
+Scan the qrcode to join our wechat discussion group, please note that you want to join Vant discussion group.
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="250" >
 
 ## LICENSE
 
