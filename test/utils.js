@@ -40,7 +40,7 @@ export function triggerDrag(el, x = 0, y = 0) {
 
 // promisify setTimeout
 export function later(delay) {
-  return new Promise(function(resolve) {
+  return new Promise(resolve => {
     setTimeout(resolve, delay);
   });
 }
