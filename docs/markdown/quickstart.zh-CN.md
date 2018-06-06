@@ -66,6 +66,8 @@ npm i babel-plugin-import -D
 import { Button, Cell } from 'vant';
 ```
 
+> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
+
 #### 方式二. 按需引入组件
 
 在不使用插件的情况下，可以手动引入需要的组件
@@ -86,7 +88,7 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
->注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
 
 
 ### Rem 适配
