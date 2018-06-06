@@ -70,9 +70,10 @@ export default {
 |-----------|-----------|-----------|-------------|
 | title | Title | `String` | - |
 | message | Message | `String` | - |
-| showConfirmButton | Whether to show confirm button | `Boolean` |  `true` |
-| showCancelButton | Whether to show cancel button | `Boolean` |  `false` |
-| confirmButtonText | Confirm button text | `String` |  `Confirm` |
+| className | Custom className | `String | Array | Object` | - |
+| showConfirmButton | Whether to show confirm button | `Boolean` | `true` |
+| showCancelButton | Whether to show cancel button | `Boolean` | `false` |
+| confirmButtonText | Confirm button text | `String` | `Confirm` |
 | cancelButtonText | Cancel button test | `String` | `Cancel` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |

@@ -1,6 +1,6 @@
 <template>
   <transition name="van-dialog-bounce">
-    <div v-show="value" :class="b()">
+    <div v-show="value" :class="[b(), className]">
       <div v-if="title" v-text="title" :class="b('header')" />
       <div :class="b('content')" class="van-hairline">
         <slot>
@@ -49,6 +49,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
+    className: [String, Object, Array],
     beforeClose: Function,
     confirmButtonText: String,
     cancelButtonText: String,
