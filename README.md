@@ -81,6 +81,8 @@ Then you can import components from vant, equivalent to import manually below.
 import { Button } from 'vant';
 ```
 
+> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead
+
 #### 2. Manually import
 
 ```js
