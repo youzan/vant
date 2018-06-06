@@ -1,5 +1,6 @@
 import Uploader from '..';
 import { mount } from '@vue/test-utils';
+import { later } from '../../../test/utils';
 
 window.File = function() {
   this.size = 10000;
@@ -72,7 +73,7 @@ it('before read return false', () => {
   expect(afterRead.mock.calls.length).toBeFalsy();
 });
 
-test('file size overlimit', done => {
+test('file size overlimit', async() => {
   const wrapper = mount(Uploader, {
     propsData: {
       maxSize: 1
@@ -81,15 +82,13 @@ test('file size overlimit', done => {
   wrapper.vm.onChange(file);
   wrapper.vm.onChange(multiFile);
 
-  setTimeout(() => {
-    expect(wrapper.emitted('oversize')[0]).toBeTruthy();
-    expect(wrapper.emitted('oversize')[1]).toBeTruthy();
+  await later();
+  expect(wrapper.emitted('oversize')[0]).toBeTruthy();
+  expect(wrapper.emitted('oversize')[1]).toBeTruthy();
 
-    wrapper.vm.maxSize = 100000;
-    wrapper.vm.onChange(multiFile);
-    setTimeout(() => {
-      expect(wrapper.emitted('oversize')[2]).toBeFalsy();
-      done();
-    });
-  });
+  wrapper.vm.maxSize = 100000;
+  wrapper.vm.onChange(multiFile);
+
+  await later();
+  expect(wrapper.emitted('oversize')[2]).toBeFalsy();
 });

@@ -1,5 +1,6 @@
 import Field from '../';
 import { mount } from '@vue/test-utils';
+import { later } from '../../../test/utils';
 
 test('input event', () => {
   const wrapper = mount(Field);
@@ -55,17 +56,16 @@ test('keypress event', () => {
   expect(calls.length).toBe(2);
 });
 
-test('render textarea', done => {
+test('render textarea', async() => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
       autosize: true
     }
   });
-  setTimeout(() => {
-    expect(wrapper).toMatchSnapshot();
-    done();
-  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('autosize textarea field', () => {
@@ -83,7 +83,7 @@ test('autosize textarea field', () => {
   expect(textarea.element.value).toEqual(value);
 });
 
-test('autosize object', done => {
+test('autosize object', async() => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
@@ -95,8 +95,7 @@ test('autosize object', done => {
   });
 
   const textarea = wrapper.find('.van-field__control');
-  setTimeout(() => {
-    expect(textarea.element.style.height).toEqual(('50px'));
-    done();
-  });
+
+  await later();
+  expect(textarea.element.style.height).toEqual(('50px'));
 });

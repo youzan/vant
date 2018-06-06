@@ -43,5 +43,5 @@ test('function call', (done) => {
 
 test('register component', () => {
   Vue.use(ImagePreview);
-  expect(Vue.component('van-image-preview')).toBeTruthy();
+  expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
 });

@@ -1,34 +1,30 @@
 import Toast from '../';
-import Vue from 'vue';
-import { TransitionStub } from '@vue/test-utils';
+import { transitionStub, later } from '../../../test/utils';
 
-Vue.component('transition', TransitionStub);
+transitionStub();
 
-test('create a forbidClick toast', done => {
+test('create a forbidClick toast', async() => {
   const toast = Toast({
     forbidClick: true
   });
 
   expect(toast.$el.outerHTML).toMatchSnapshot();
-  setTimeout(() => {
-    expect(document.body.classList.contains('van-toast--unclickable')).toBeTruthy();
-    toast.forbidClick = false;
-    setTimeout(() => {
-      expect(document.body.classList.contains('van-toast--unclickable')).toBeFalsy();
-      done();
-    });
-  });
+
+  await later();
+  expect(document.body.classList.contains('van-toast--unclickable')).toBeTruthy();
+  toast.forbidClick = false;
+
+  await later();
+  expect(document.body.classList.contains('van-toast--unclickable')).toBeFalsy();
 });
 
-it('toast disappeared after duration', (done) => {
+it('toast disappeared after duration', async() => {
   const toast = Toast({
     duration: 10
   });
 
-  setTimeout(() => {
-    expect(toast.$el.style.display).toEqual('none');
-    done();
-  }, 50);
+  await later(50);
+  expect(toast.$el.style.display).toEqual('none');
 });
 
 test('clear toast', () => {
