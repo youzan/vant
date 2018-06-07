@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: '<%= fontName %>';
-  src: url('https://img.yzcdn.cn/vant/<%= fontName %>.ttf') format('truetype');
+  src: url('https://img.yzcdn.cn/vant/<%= cssClass %>') format('truetype');
 }
 
 .van-icon {
@@ -36,7 +36,7 @@
   }
 }
 
-<% _.each(glyphs, function(glyph) { %>.van-<%= cssClass %>-<%= glyph.fileName %>:before {
+<% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>:before {
   content: "\<%= glyph.codePoint %>";
 }
 <% }); %>

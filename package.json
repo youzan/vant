@@ -22,7 +22,7 @@
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
     "build:style-entry": "node build/bin/build-style-entry.js",
     "build:changelog": "sh build/bin/build-changelog.sh",
-    "build:iconfont": "gulp --gulpfile ./build/bin/build-iconfont.js",
+    "build:iconfont": "gulp --gulpfile ./build/build-iconfont.js",
     "build:lib": "npm run bootstrap && node build/bin/build-lib.js",
     "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
     "test": "jest",
