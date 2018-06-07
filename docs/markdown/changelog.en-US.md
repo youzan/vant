@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
+`2018-06-06`
+
+**Improvements**
+
+- Dialog: support custom className [\#1224](https://github.com/youzan/vant/pull/1224)
+- Dialog: optimize style without content [\#1233](https://github.com/youzan/vant/pull/1233)
+- Field: support v-model.number [\#1221](https://github.com/youzan/vant/pull/1221)
+- Swipe: add swipeTo method [\#1222](https://github.com/youzan/vant/pull/1222)
+- Document: add ts-import-plugin guide [\#1230](https://github.com/youzan/vant/pull/1230)
+
+
 ### [1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
 `2018-06-01`
 
