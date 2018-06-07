@@ -9,4 +9,4 @@ node_modules
 docs/dist
 test/coverage
 packages/vant-css/build
-packages/vant-css/icons
+packages/icon/svg

@@ -1,7 +1,7 @@
 {
   "name": "vant-css",
   "version": "1.1.6",
-  "description": "vant css.",
+  "description": "vant css",
   "main": "lib/index.css",
   "style": "lib/index.css",
   "files": [
@@ -9,18 +9,14 @@
     "src"
   ],
   "scripts": {
-    "build": "gulp build",
-    "build:icons": "gulp icon-font"
+    "build": "gulp build"
   },
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^8.3.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.0",
-    "gulp-iconfont": "^9.0.2",
-    "gulp-iconfont-css": "^2.1.0",
     "gulp-postcss": "^7.0.0",
-    "md5-file": "^4.0.0",
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0"
   }

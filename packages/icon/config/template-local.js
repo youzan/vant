@@ -3,6 +3,6 @@ module.exports = (fontName, hash) => {
   font-style: normal;
   font-weight: normal;
   font-family: '${fontName}';
-  src: url('./${fontName}-${hash}.ttf') format('truetype');
+  src: url('../icon/${fontName}-${hash}.ttf') format('truetype');
 }`;
 };

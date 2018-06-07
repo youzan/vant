@@ -4,7 +4,6 @@ import App from './WapApp';
 import routes from './router';
 import progress from 'nprogress';
 import '../../packages/vant-css/src/index.css';
-import '../../packages/vant-css/src/icon-local.css';
 import 'vant-doc/src/helper/touch-simulator';
 import './components/nprogress.css';
 
