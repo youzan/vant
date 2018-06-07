@@ -81,7 +81,7 @@ export default {
 
   methods: {
     showDialog() {
-      Dialog.confirm({
+      this.$dialog.confirm({
         title: 'confirm标题',
         message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
       });

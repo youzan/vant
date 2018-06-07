@@ -40,7 +40,7 @@ export default {
 
   methods: {
     onInput(checked) {
-      Dialog.confirm({
+      this.$dialog.confirm({
         title: this.$t('title'),
         message: this.$t('message')
       }).then(() => {

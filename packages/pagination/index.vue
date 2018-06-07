@@ -9,7 +9,7 @@
     </li>
     <li
       v-if="isMultiMode"
-      v-for="(page, index) in pages"
+      v-for="page in pages"
       class="van-hairline"
       :class="[b('item', { active: page.active }), b('page')]"
       @click="selectPage(page.number)"

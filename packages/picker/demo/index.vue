@@ -86,16 +86,16 @@ export default {
 
   methods: {
     onChange1(picker, value, index) {
-      Toast(this.$t('toastContent', value, index));
+      this.$toast(this.$t('toastContent', value, index));
     },
     onChange2(picker, values) {
       picker.setColumnValues(1, this.$t('column3')[values[0]]);
     },
     onConfirm(value, index) {
-      Toast(this.$t('toastContent', value, index));
+      this.$toast(this.$t('toastContent', value, index));
     },
     onCancel() {
-      Toast(this.$t('cancel'));
+      this.$toast(this.$t('cancel'));
     }
   }
 };

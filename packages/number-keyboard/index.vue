@@ -19,7 +19,7 @@
       </div>
       <div :class="b('body')">
         <key
-          v-for="(key, index) in keys"
+          v-for="key in keys"
           :key="key.text"
           :text="key.text"
           :type="key.type"

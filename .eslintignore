@@ -1,5 +1,4 @@
-es/
-lib/
-dist/
-node_modules/
-
+es
+lib
+dist
+node_modules

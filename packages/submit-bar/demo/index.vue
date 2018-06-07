@@ -73,10 +73,10 @@ export default {
 
   methods: {
     onClickButton() {
-      Toast(this.$t('clickButton'));
+      this.$toast(this.$t('clickButton'));
     },
     onClickLink() {
-      Toast(this.$t('clickLink'));
+      this.$toast(this.$t('clickLink'));
     }
   }
 };

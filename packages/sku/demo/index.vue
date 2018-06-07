@@ -115,12 +115,12 @@ export default {
           const { action, limitType, quota } = data;
 
           if (action === 'minus') {
-            Toast('至少选择一件商品');
+            this.$toast('至少选择一件商品');
           } else if (action === 'plus') {
             if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
-              Toast(`限购${quota}件`);
+              this.$toast(`限购${quota}件`);
             } else {
-              Toast('库存不够了~~');
+              this.$toast('库存不够了~~');
             }
           }
         }
@@ -138,15 +138,15 @@ export default {
 
   methods: {
     onBuyClicked(data) {
-      Toast(JSON.stringify(data));
+      this.$toast(JSON.stringify(data));
     },
 
     onAddCartClicked(data) {
-      Toast(JSON.stringify(data));
+      this.$toast(JSON.stringify(data));
     },
 
     onPointClicked() {
-      Toast('积分兑换');
+      this.$toast('积分兑换');
     }
   }
 };

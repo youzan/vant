@@ -49,23 +49,23 @@ export default {
 
   methods: {
     showToast() {
-      Toast(this.$t('text1'));
+      this.$toast(this.$t('text1'));
     },
 
     showLoadingToast() {
-      Toast.loading({ mask: true, message: this.$t('loading') + '...' });
+      this.$toast.loading({ mask: true, message: this.$t('loading') + '...' });
     },
 
     showSuccessToast() {
-      Toast.success(this.$t('text2'));
+      this.$toast.success(this.$t('text2'));
     },
 
     showFailToast() {
-      Toast.fail(this.$t('text3'));
+      this.$toast.fail(this.$t('text3'));
     },
 
     showCustomizedToast(duration) {
-      const toast = Toast.loading({
+      const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,
         loadingType: 'spinner',
@@ -79,7 +79,7 @@ export default {
           toast.message = this.$t('text4', second);
         } else {
           clearInterval(timer);
-          Toast.clear();
+          this.$toast.clear();
         }
       }, 1000);
     }
