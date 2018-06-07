@@ -38,6 +38,46 @@ module.exports = {
   ]
 };
 ```
+接着配置`webpack.base.conf.js` 和 `build/utils.js ` 中使用postcss
+
+```javascript
+{
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: 'style-loader',
+            },
+            {
+                loader: 'css-loader',
+                options: {
+                    importLoaders: 1,
+                }
+            },
+            {
+                loader: 'postcss-loader'
+            }
+        ]
+ }
+ 
+```
+
+
+```javascript
+return {
+    css: generateLoaders('postcss'),
+    postcss: generateLoaders(),
+    less: generateLoaders('less'),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('sass'),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
+}
+ 
+```
+
+
+> 注意: precss2 和 3 版本不兼容, 请将precss的版本改为2.0.0
 
 ### 方案二. 本地构建
 可以通过在本地构建 vant-css 的方式生成所需的主题
