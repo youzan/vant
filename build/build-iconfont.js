@@ -33,13 +33,11 @@ shell.exec(
 const prevTTFs = glob.sync(path.join(iconDir, '*.ttf'));
 prevTTFs.forEach(ttf => fs.removeSync(ttf));
 
-// get icon unicode
-const codePoints = {};
+// rename svg
 config.glyphs.forEach((icon, index) => {
   const src = path.join(svgDir, icon.src);
   if (fs.existsSync(src)) {
     fs.renameSync(src, path.join(svgDir, icon.css + '.svg'));
-    codePoints[icon.css] = 0xf000 + index;
   }
 });
 
@@ -53,7 +51,7 @@ gulp.task('ttf', () => {
         path: template,
         targetPath: '../vant-css/src/icon.css',
         normalize: true,
-        fixedCodepoints: codePoints,
+        firstGlyph: 0xf000,
         cssClass: ttf // this is a trick to pass ttf to template
       })
     )
