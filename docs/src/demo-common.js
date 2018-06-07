@@ -7,7 +7,7 @@ import i18n from '../../packages/mixins/i18n';
 import Vant, { Lazyload } from '../../packages';
 import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
 import VueRouter from 'vue-router';
-import { Locale, Toast, Dialog } from '../../packages';
+import { Locale } from '../../packages';
 import { camelize } from '../../packages/utils';
 
 Vue
@@ -21,9 +21,6 @@ Vue
 Vue.mixin(i18n);
 Vue.component('demo-block', DemoBlock);
 Vue.component('demo-section', DemoSection);
-
-window.Toast = Toast;
-window.Dialog = Dialog;
 
 Locale.add({
   'zh-CN': {

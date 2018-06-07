@@ -57,20 +57,20 @@ export default {
 
   methods: {
     onClickAlert() {
-      Dialog.alert({
+      this.$dialog.alert({
         title: this.$t('title'),
         message: this.$t('content')
       });
     },
 
     onClickAlert2() {
-      Dialog.alert({
+      this.$dialog.alert({
         message: this.$t('content')
       });
     },
 
     onClickConfirm() {
-      Dialog.confirm({
+      this.$dialog.confirm({
         title: this.$t('title'),
         message: this.$t('content')
       });

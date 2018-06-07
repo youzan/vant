@@ -23,10 +23,10 @@
 export default {
   methods: {
     onClickLeft() {
-      Toast(this.$t('back'));
+      this.$toast(this.$t('back'));
     },
     onClickRight() {
-      Toast(this.$t('button'));
+      this.$toast(this.$t('button'));
     }
   }
 };

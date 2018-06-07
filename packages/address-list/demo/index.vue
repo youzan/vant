@@ -72,10 +72,10 @@ export default {
 
   methods: {
     onAdd() {
-      Toast(this.$t('add'));
+      this.$toast(this.$t('add'));
     },
     onEdit(item, index) {
-      Toast(this.$t('edit') + ':' + index);
+      this.$toast(this.$t('edit') + ':' + index);
     }
   }
 };

@@ -60,10 +60,10 @@ export default {
 
   methods: {
     onInput(value) {
-      Toast('Input: ' + value);
+      this.$toast('Input: ' + value);
     },
     onDelete() {
-      Toast('Delete');
+      this.$toast('Delete');
     }
   }
 };

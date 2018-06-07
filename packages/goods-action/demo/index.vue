@@ -48,11 +48,11 @@ export default {
 
   methods: {
     onClickMiniBtn() {
-      Toast(this.$t('clickIcon'));
+      this.$toast(this.$t('clickIcon'));
     },
 
     onClickBigBtn() {
-      Toast(this.$t('clickButton'));
+      this.$toast(this.$t('clickButton'));
     }
   }
 };

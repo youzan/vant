@@ -21,7 +21,7 @@
     <div class="van-clearfix" v-if="paddingImg || imgList.length > 0">
       <!-- 已有的图片,图片右上角显示删除按钮 -->
       <div
-        v-for="(img, index) in imgList"
+        v-for="img in imgList"
         :class="b('img')"
       >
         <img :src="img">

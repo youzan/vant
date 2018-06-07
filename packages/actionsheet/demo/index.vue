@@ -60,11 +60,11 @@ export default {
 
   methods: {
     onClick(item) {
-      Toast(item.name);
+      this.$toast(item.name);
     },
 
     handleCancel() {
-      Toast('cancel');
+      this.$toast('cancel');
     }
   }
 };

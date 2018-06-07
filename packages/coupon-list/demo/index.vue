@@ -109,7 +109,7 @@ export default {
       this.chosenCoupon = index;
     },
     onExchange(code) {
-      Toast(this.$t('exchange'));
+      this.$toast(this.$t('exchange'));
       this.exchangedCoupons.push({
         ...this.coupon,
         id: this.randomId()
