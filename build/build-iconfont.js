@@ -51,7 +51,7 @@ gulp.task('ttf', () => {
       iconfontCss({
         fontName: config.name,
         path: template,
-        targetPath: '../packages/vant-css/src/icon.css',
+        targetPath: '../vant-css/src/icon.css',
         normalize: true,
         fixedCodepoints: codePoints,
         cssClass: ttf // this is a trick to pass ttf to template
