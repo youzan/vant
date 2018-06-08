@@ -1,4 +1,4 @@
-# 风格指南
+## 风格指南
 
 在参与 Vant 开发时，请遵守约定的单文件组件风格指南，指南内容节选自 [Vue 官方风格指南](https://cn.vuejs.org/v2/style-guide)
 
@@ -47,13 +47,13 @@ MyComponent.vue
 components/
 |- TodoList.vue
 |- TodoItem.vue
-|- TodoButton.vue
+└─ TodoButton.vue
 
 // good
 components/
 |- TodoList.vue
 |- TodoListItem.vue
-|- TodoListItemButton.vue
+└─ TodoListItemButton.vue
 ```
 
 ### 自闭合组件
