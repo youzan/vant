@@ -46,6 +46,14 @@ module.exports = {
                 title: '定制主题'
               },
               {
+                path: '/contribution',
+                title: '开发指南'
+              },
+              {
+                path: '/style-guide',
+                title: '风格指南'
+              },
+              {
                 path: '/demo',
                 title: '示例页面'
               },
