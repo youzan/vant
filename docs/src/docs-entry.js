@@ -1,4 +1,4 @@
-// This file is auto gererated by build/bin/build-entry.js
+// This file is auto gererated by build/build-entry.js
 export default {
   'changelog.en-US': () => import('../markdown/changelog.en-US.md'),
   'changelog.generated': () => import('../markdown/changelog.generated.md'),

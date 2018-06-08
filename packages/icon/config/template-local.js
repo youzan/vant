@@ -1,8 +1,8 @@
-module.exports = (fontName, hash) => {
+module.exports = (fontName, ttf) => {
   return `@font-face {
   font-style: normal;
   font-weight: normal;
   font-family: '${fontName}';
-  src: url('./${fontName}-${hash}.ttf') format('truetype');
+  src: url('../icon/${ttf}') format('truetype');
 }`;
 };

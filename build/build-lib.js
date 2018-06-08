@@ -1,7 +1,7 @@
 /**
  * Build npm lib
  */
-require('shelljs/global');
+const shell = require('shelljs');
 const signale = require('signale');
 const tasks = [
   'lint',
@@ -14,6 +14,6 @@ const tasks = [
 
 tasks.forEach(task => {
   signale.pending(task);
-  exec(`npm run ${task} --silent`);
+  shell.exec(`npm run ${task} --silent`);
   signale.success(task);
 });

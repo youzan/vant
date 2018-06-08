@@ -3,17 +3,19 @@
  */
 const fs = require('fs-extra');
 const path = require('path');
-const compiler = require('vue-sfc-compiler');
-const esDir = path.join(__dirname, '../../es');
-const libDir = path.join(__dirname, '../../lib');
-const srcDir = path.join(__dirname, '../../packages');
 const babel = require('babel-core');
+const compiler = require('vue-sfc-compiler');
+
+const esDir = path.join(__dirname, '../es');
+const libDir = path.join(__dirname, '../lib');
+const srcDir = path.join(__dirname, '../packages');
 const compilerOption = {
   babel: {
-    extends: path.join(__dirname, '../../.babelrc')
+    extends: path.join(__dirname, '../.babelrc')
   }
 };
-const whiteList = ['vant-css', 'test', 'demo'];
+
+const whiteList = /(demo|vant-css|test|\.md)$/;
 
 // clear dir
 fs.emptyDirSync(esDir);
@@ -30,13 +32,13 @@ function compile(dir, jsOnly = false) {
   files.forEach(file => {
     const absolutePath = path.join(dir, file);
 
-    // 移除不需要的文件
-    if (whiteList.indexOf(file) !== -1) {
+    // reomve unnecessary files
+    if (whiteList.test(file)) {
       fs.removeSync(absolutePath);
-      // 遍历文件夹
+      // scan dir
     } else if (isDir(absolutePath)) {
       return compile(absolutePath);
-      // 编译 .vue 文件
+      // compile sfc
     } else if (/\.vue$/.test(file) && !jsOnly) {
       const source = fs.readFileSync(absolutePath, 'utf-8');
       fs.removeSync(absolutePath);
@@ -54,6 +56,7 @@ function compile(dir, jsOnly = false) {
 }
 
 process.env.BABEL_ENV = 'commonjs';
+
 fs.copySync(esDir, libDir);
 compile(libDir);
 
