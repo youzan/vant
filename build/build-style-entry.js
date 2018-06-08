@@ -9,7 +9,7 @@ const dependencyTree = require('dependency-tree');
 const SEP = path.sep;
 
 function build(folder, isESModule) {
-  const dir = path.resolve(__dirname, '../../', folder);
+  const dir = path.resolve(__dirname, '../', folder);
   components.forEach(componentName => {
     const content = analyzeDependencies(componentName, dir)
       .map(component => isESModule ? `import '../../vant-css/${component}.css';` : `require('../../vant-css/${component}.css');`);
@@ -39,7 +39,7 @@ function build(folder, isESModule) {
   }
 
   function checkComponentHasStyle(componentName) {
-    return fs.existsSync(path.join(__dirname, `../../${folder}/vant-css/`, `${componentName}.css`));
+    return fs.existsSync(path.join(__dirname, `../${folder}/vant-css/`, `${componentName}.css`));
   }
 }
 

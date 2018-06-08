@@ -1,11 +1,11 @@
-const Components = require('./get-components')();
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const path = require('path');
 const uppercamelize = require('uppercamelcase');
-const version = process.env.VERSION || require('../../package.json').version;
-const tips = '// This file is auto gererated by build/bin/build-entry.js';
-const root = path.join(__dirname, '../../');
+const Components = require('./get-components')();
+const version = process.env.VERSION || require('../package.json').version;
+const tips = '// This file is auto gererated by build/build-entry.js';
+const root = path.join(__dirname, '../');
 const join = dir => path.join(root, dir);
 
 function buildVantEntry() {
@@ -48,11 +48,11 @@ export default {
 };
 `;
 
-  fs.writeFileSync(path.join(__dirname, '../../packages/index.js'), content);
+  fs.writeFileSync(path.join(__dirname, '../packages/index.js'), content);
 }
 
 function buildDemoEntry() {
-  const dir = path.join(__dirname, '../../packages');
+  const dir = path.join(__dirname, '../packages');
   const demos = fs.readdirSync(dir)
     .filter(name => fs.existsSync(path.join(dir, `${name}/demo/index.vue`)))
     .map(name => `'${name}': () => wrapper(import('../../packages/${name}/demo'), '${name}')`);
