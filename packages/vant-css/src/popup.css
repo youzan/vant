@@ -16,11 +16,14 @@
 
   &-popup {
     position: fixed;
-    background-color: $white;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: $white;
     transition: .2s ease-out;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(-50%, -50%, 0);
 
     &--top {
       width: 100%;
