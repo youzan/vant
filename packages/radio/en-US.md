@@ -44,10 +44,10 @@ export default {
 ```html
 <van-radio-group v-model="radio">
   <van-cell-group>
-    <van-cell :title="Radio 1" clickable @click="radio = '1'">
+    <van-cell title="Radio 1" clickable @click="radio = '1'">
       <van-radio name="1" />
     </van-cell>
-    <van-cell :title="Radio 2" clickable @click="radio = '2'">
+    <van-cell title="Radio 2" clickable @click="radio = '2'">
       <van-radio name="2" />
     </van-cell>
   </van-cell-group>
