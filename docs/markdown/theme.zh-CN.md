@@ -37,6 +37,7 @@ module.exports = {
     })
   ]
 };
+```
 
 > 注意: precss2 和 3 版本不兼容, 请将precss的版本改为2.0.0
 
