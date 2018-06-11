@@ -99,3 +99,16 @@ test('autosize object', async() => {
   await later();
   expect(textarea.element.style.height).toEqual(('50px'));
 });
+
+test('blur method', () => {
+  const fn = jest.fn();
+  const wrapper = mount(Field, {
+    listeners: {
+      blur: fn
+    }
+  });
+  wrapper.find('input').element.focus();
+  wrapper.vm.blur();
+
+  expect(fn.mock.calls.length).toEqual(1);
+});

@@ -1,4 +1,4 @@
-## 更新日志
+## Changelog
 
 ### [1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
 `2018-06-06`

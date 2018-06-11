@@ -112,6 +112,7 @@ Vue.use(Field);
 ```
 
 ### API
+
 Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly`、`autofocus` 等
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -127,11 +128,20 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
 
 ### Event
+
 Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| click-icon | 点击尾部图标时触发 | - |
+| click-icon | 点击尾部图标时触发 | -
+
+### 方法
+
+通过 ref 可以获取到 field 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| blur | - | - | 取消输入框焦点 |
 
 ### Slot
 
