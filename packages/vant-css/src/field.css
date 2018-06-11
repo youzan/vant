@@ -29,6 +29,7 @@
     position: absolute;
     right: 0;
     top: 50%;
+    color: $gray-dark;
     padding: 10px 0 10px 10px;
     transform: translate3d(0, -50%, 0);
 
