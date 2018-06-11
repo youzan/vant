@@ -40,6 +40,10 @@ export default create({
   watch: {
     'parent.curActive'() {
       this.inited = this.inited || this.isSelected;
+    },
+
+    title() {
+      this.parent.setLine();
     }
   },
 
