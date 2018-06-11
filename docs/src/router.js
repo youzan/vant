@@ -59,6 +59,7 @@ const registerRoute = (isDemo) => {
           path: `/${lang}/${path}`,
           meta: {
             lang,
+            path,
             name: page.title
           }
         });
