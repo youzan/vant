@@ -110,6 +110,7 @@ Use button slot to insert button
 ```
 
 ### API
+
 Field support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
 | Attribute | Description | Type | Default |
@@ -125,11 +126,20 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | left-icon | Left side icon name | `String` | - |
 
 ### Event
+
 Field support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
 | click-icon | Triggered when click the icon of Field | - |
+
+### Methods
+
+Use ref to get field instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| blur | - | - | Trigger input blur |
 
 ### Slot
 

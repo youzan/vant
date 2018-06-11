@@ -17,7 +17,7 @@
       v-if="type === 'textarea'"
       v-bind="$attrs"
       v-on="listeners"
-      ref="textarea"
+      ref="input"
       :class="b('control')"
       :value="value"
     />
@@ -25,6 +25,7 @@
       v-else
       v-bind="$attrs"
       v-on="listeners"
+      ref="input"
       :class="b('control')"
       :type="type"
       :value="value"
@@ -104,6 +105,10 @@ export default create({
   },
 
   methods: {
+    blur() {
+      this.$refs.input && this.$refs.input.blur();
+    },
+
     onInput(event) {
       this.$emit('input', event.target.value);
     },
@@ -126,19 +131,14 @@ export default create({
     },
 
     adjustSize() {
-      if (!(this.type === 'textarea' && this.autosize)) {
+      const { input } = this.$refs;
+      if (!(this.type === 'textarea' && this.autosize) || !input) {
         return;
       }
 
-      const el = this.$refs.textarea;
-      /* istanbul ignore if */
-      if (!el) {
-        return;
-      }
+      input.style.height = 'auto';
 
-      el.style.height = 'auto';
-
-      let height = el.scrollHeight;
+      let height = input.scrollHeight;
       if (isObj(this.autosize)) {
         const { maxHeight, minHeight } = this.autosize;
         if (maxHeight) {
@@ -150,7 +150,7 @@ export default create({
       }
 
       if (height) {
-        el.style.height = height + 'px';
+        input.style.height = height + 'px';
       }
     }
   }
