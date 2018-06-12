@@ -18,6 +18,7 @@
       <field
         v-else
         v-model="messageValues[index].value"
+        maxlength="200"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :label="message.name"
@@ -141,10 +142,6 @@ export default create({
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
             return this.$t('id_no');
           }
-        }
-
-        if (value.length > 200) {
-          return `${message.name} ${this.$t('overlimit')}`;
         }
       }
     }
