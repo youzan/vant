@@ -5,7 +5,7 @@
         v-model="data.name"
         maxlength="15"
         :placeholder="$t('name')"
-        :label="$t('label.name')"
+        :label="$t('receiver')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
@@ -17,16 +17,13 @@
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
-      <cell
-        clickable
-        :class="b('area')"
-        :title="$t('area')"
+      <field
+        readonly
+        :label="$t('area')"
+        :placeholder="$t('area')"
+        :value="areaText"
         @click="showArea = true"
-      >
-        <span>{{ data.province || $t('province') }}</span>
-        <span>{{ data.city || $t('city') }}</span>
-        <span>{{ data.county || $t('county') }}</span>
-      </cell>
+      />
       <address-edit-detail
         :value="data.address_detail"
         :is-error="errorInfo.address_detail"
@@ -41,8 +38,8 @@
         v-if="showPostal"
         v-show="!hideBottomFields"
         type="tel"
-        :label="$t('label.postal')"
-        :placeholder="$t('placeholder.postal')"
+        :label="$t('postal')"
+        :placeholder="$t('postal')"
         v-model="data.postal_code"
         maxlength="6"
         class="van-hairline--top"
@@ -62,7 +59,7 @@
         {{ $t('save') }}
       </van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
-        {{ $t('deleteAddress') }}
+        {{ $t('delete') }}
       </van-button>
     </div>
     <popup v-model="showArea" position="bottom" :lazy-render="false" :get-container="getAreaContainer">
@@ -167,6 +164,14 @@ export default create({
 
     isEdit() {
       return this.showDelete || !!this.data.id;
+    },
+
+    areaText() {
+      const { province, city, county, area_code } = this.data;
+      if (province && city && county && area_code) {
+        return `${province} ${city} ${county}`;
+      }
+      return '';
     }
   },
 
@@ -205,9 +210,6 @@ export default create({
     },
 
     onAreaConfirm(values) {
-      if (values.length !== 3 || values.some(value => +value.code === -1)) {
-        return Toast(this.$t('areaEmpty'));
-      }
       this.data.area_code = values[2].code;
       this.assignAreaValues(values);
       this.showArea = false;
@@ -237,7 +239,7 @@ export default create({
       }
 
       const isValid = items.every(item => {
-        const msg = this.getErrorMessageByKey(item);
+        const msg = this.getErrorMessage(item);
         if (msg) {
           this.errorInfo[item] = true;
           Toast(msg);
@@ -250,19 +252,19 @@ export default create({
       }
     },
 
-    getErrorMessageByKey(key) {
+    getErrorMessage(key) {
       const value = this.data[key].trim();
       const { $t } = this;
 
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
+          return value ? '' : $t('nameEmpty');
         case 'tel':
           return this.telValidator(value) ? '' : $t('telInvalid');
         case 'area_code':
-          return value && +value !== -1 ? '' : $t('areaEmpty');
+          return value ? '' : $t('areaEmpty');
         case 'address_detail':
-          return value ? value.length <= 200 ? '' : $t('addressOverlimit') : $t('addressEmpty');
+          return value ? '' : $t('addressEmpty');
         case 'postal_code':
           return value && !/^\d{6}$/.test(value) ? $t('postalEmpty') : '';
       }
@@ -270,7 +272,7 @@ export default create({
 
     onDelete() {
       Dialog.confirm({
-        message: this.$t('confirmDelete')
+        title: this.$t('confirmDelete')
       }).then(() => {
         this.$emit('delete', this.data);
       }).catch(() => {
@@ -280,8 +282,7 @@ export default create({
 
     // get values of area component
     getArea() {
-      const { area } = this.$refs;
-      return area ? area.getValues() : [];
+      return this.$refs.area ? this.$refs.area.getValues() : [];
     },
 
     // set area code to area component

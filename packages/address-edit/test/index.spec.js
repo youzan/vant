@@ -68,13 +68,6 @@ test('valid name', () => {
   expect(errorInfo.name).toBeTruthy();
   field.at(0).trigger('focus');
   expect(errorInfo.name).toBeFalsy();
-
-  // name too long
-  data.name = '1'.repeat(30);
-  button.trigger('click');
-  expect(errorInfo.name).toBeTruthy();
-  field.at(0).trigger('focus');
-  expect(errorInfo.name).toBeFalsy();
 });
 
 it('valid tel', () => {
@@ -104,13 +97,8 @@ it('valid address_detail', () => {
   data.address_detail = '';
   button.trigger('click');
   expect(errorInfo.address_detail).toBeTruthy();
-  field.at(2).trigger('focus');
+  field.at(3).trigger('focus');
   expect(errorInfo.address_detail).toBeFalsy();
-
-  // // address_detail too long
-  data.address_detail = '1'.repeat(300);
-  button.trigger('click');
-  expect(errorInfo.address_detail).toBeTruthy();
 });
 
 test('valid postal code', () => {
@@ -120,7 +108,7 @@ test('valid postal code', () => {
   data.postal_code = '123';
   button.trigger('click');
   expect(errorInfo.postal_code).toBeTruthy();
-  field.at(3).trigger('focus');
+  field.at(4).trigger('focus');
   expect(errorInfo.postal_code).toBeFalsy();
 
   // valid result
@@ -143,12 +131,6 @@ test('select area', () => {
   const { vm } = wrapper;
   const { data } = vm;
 
-  vm.onAreaConfirm([]);
-  vm.onAreaConfirm([{ code: -1 }]);
-  vm.onAreaConfirm([{ code: 1 }, { code: -1 }]);
-  vm.onAreaConfirm([{ code: 1 }, { code: 1 }, { code: -1 }]);
-  expect(data['area_code']).toEqual('');
-
   vm.onAreaConfirm([
     { name: '北京市' },
     { name: '北京市' },
@@ -162,7 +144,7 @@ test('select area', () => {
 
 test('on change detail', () => {
   const wrapper = mount(AddressEdit);
-  const field = wrapper.findAll('.van-field__control').at(2);
+  const field = wrapper.findAll('.van-field__control').at(3);
 
   field.element.value = '123';
   field.trigger('input');
@@ -261,7 +243,7 @@ test('show search result', async() => {
     }
   });
 
-  const field = wrapper.findAll('.van-field__control').at(2);
+  const field = wrapper.findAll('.van-field__control').at(3);
   const input = field.element;
   field.trigger('focus');
 
