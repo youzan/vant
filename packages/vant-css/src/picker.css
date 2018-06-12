@@ -62,7 +62,7 @@
   &-column {
     flex: 1;
     overflow: hidden;
-    font-size: 17px;
+    font-size: 16px;
     text-align: center;
 
     &__item {

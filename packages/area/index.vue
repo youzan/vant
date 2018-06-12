@@ -28,13 +28,12 @@ export default create({
   },
 
   props: {
-    value: {},
+    value: String,
     title: String,
     loading: Boolean,
     areaList: Object,
     itemHeight: Number,
     visibleItemCount: Number,
-    // 省市县显示列数，3-省市县，2-省市，1-省
     columnsNum: {
       type: [String, Number],
       default: 3
@@ -47,99 +46,74 @@ export default create({
     },
 
     columns() {
-      const columns = [];
-
       if (!this.listValid) {
-        return columns;
+        return [];
       }
 
-      const code = this.value || '';
-      const columnsNum = +this.columnsNum;
-
-      columns.push({
-        values: this.getList('province')
-      });
-
-      if (columnsNum > 1) {
-        columns.push({
-          values: this.getList('city', code.slice(0, 2))
-        });
-      }
-
-      if (columnsNum > 2) {
-        columns.push({
-          values: this.getList('county', code.slice(0, 4))
-        });
-      }
-
-      return columns;
+      const code = this.getCode();
+      return [
+        { values: this.getList('province') },
+        { values: this.getList('city', code.slice(0, 2)) },
+        { values: this.getList('county', code.slice(0, 4)) }
+      ].slice(0, +this.columnsNum);
     }
   },
 
-  mounted() {
-    this.setIndex();
-  },
-
   watch: {
-    value() {
-      this.setIndex();
-    },
-
-    areaList() {
-      this.setIndex();
+    columns: {
+      handler() {
+        this.$nextTick(this.setIndex);
+      },
+      immediate: true
     }
   },
 
   methods: {
     setIndex() {
-      this.$nextTick(() => {
-        const code = this.value || '';
-        const { picker } = this.$refs;
-        picker && picker.setIndexes([
-          this.getIndex('province', code),
-          this.getIndex('city', code),
-          this.getIndex('county', code)
-        ]);
-      });
+      const code = this.getCode();
+      this.$refs.picker && this.$refs.picker.setIndexes([
+        this.getIndex('province', code),
+        this.getIndex('city', code),
+        this.getIndex('county', code)
+      ]);
     },
 
-    // 根据省市县类型和对应的`code`获取对应列表
+    getCode() {
+      return (
+        this.value ||
+        (this.listValid && Object.keys(this.areaList.county_list)[0]) ||
+        ''
+      );
+    },
+
+    // get list by code
     getList(type, code) {
       let result = [];
-
-      if (this.listValid && (type === 'province' || code)) {
-        const { areaList } = this;
-        const list =
-          type === 'province'
-            ? areaList.province_list
-            : type === 'city' ? areaList.city_list : areaList.county_list;
-
-        result = Object.keys(list).map(code => ({
-          code,
-          name: list[code]
-        }));
-
-        if (type !== 'province' && code) {
-          result = result.filter(item => item.code.indexOf(code) === 0);
-        }
+      if (!this.listValid || (type !== 'province' && !code)) {
+        return result;
       }
 
-      result.unshift({
-        code: '-1',
-        name: this.$t(type)
-      });
+      const list = this.areaList[`${type}_list`];
+      result = Object.keys(list).map(code => ({
+        code,
+        name: list[code]
+      }));
+
+      if (code) {
+        result = result.filter(item => item.code.indexOf(code) === 0);
+      }
 
       return result;
     },
 
-    // 获取对应省市县在列表中的索引
+    // get index by code
     getIndex(type, code) {
       const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
-      const areaList = this.getList(type, code.slice(0, compareNum - 2));
+      const list = this.getList(type, code.slice(0, compareNum - 2));
       code = code.slice(0, compareNum);
 
-      for (let i = 0; i < areaList.length; i++) {
-        if (areaList[i].code.slice(0, compareNum) === code) {
+      for (let i = 0; i < list.length; i++) {
+        if (list[i].code.slice(0, compareNum) === code) {
           return i;
         }
       }
@@ -148,14 +122,15 @@ export default create({
     },
 
     onChange(picker, values, index) {
-      const code = values[index].code;
-      // 处理省变化
+      let code = values[index].code;
+
       if (index === 0) {
-        picker.setColumnValues(1, this.getList('city', code.slice(0, 2)));
-        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
-      } else if (index === 1) {
-        picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
+        const cityList = this.getList('city', code.slice(0, 2));
+        picker.setColumnValues(1, cityList);
+        code = cityList[0].code;
       }
+
+      picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
       this.$emit('change', picker, values, index);
     },
 

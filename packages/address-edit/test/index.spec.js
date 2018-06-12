@@ -213,19 +213,19 @@ test('set/get area code', async() => {
   });
 
   expect(wrapper.vm.getArea()).toEqual([
-    { code: '-1', name: '选择省份' },
-    { code: '-1', name: '选择城市' },
-    { code: '-1', name: '选择地区' }
-  ]);
-
-  wrapper.vm.setAreaCode('110101');
-
-  await later(50);
-  expect(wrapper.vm.data.area_code).toEqual('110101');
-  expect(wrapper.vm.getArea()).toEqual([
     { code: '110000', name: '北京市' },
     { code: '110100', name: '北京市' },
     { code: '110101', name: '东城区' }
+  ]);
+
+  wrapper.vm.setAreaCode('110102');
+
+  await later(50);
+  expect(wrapper.vm.data.area_code).toEqual('110102');
+  expect(wrapper.vm.getArea()).toEqual([
+    { code: '110000', name: '北京市' },
+    { code: '110100', name: '北京市' },
+    { code: '110102', name: '西城区' }
   ]);
 
   wrapper.vm.$refs = [];

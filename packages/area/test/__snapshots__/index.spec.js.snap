@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`change option 1`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">东城区</li>
+        <li class="van-ellipsis van-picker-column__item">西城区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`change option 2`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item">北京市</li>
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">天津市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">和平区</li>
+        <li class="van-ellipsis van-picker-column__item">河东区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`change option 3`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item">北京市</li>
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">天津市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item">和平区</li>
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">河东区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`watch areaList & code 1`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`watch areaList & code 2`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">东城区</li>
+        <li class="van-ellipsis van-picker-column__item">西城区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`watch areaList & code 3`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">东城区</li>
+        <li class="van-ellipsis van-picker-column__item">西城区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
+
+exports[`watch areaList & code 4`] = `
+<div class="van-picker van-area">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>
+    <!---->
+    <div class="van-picker__confirm">确认</div>
+  </div>
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">天津市</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">北京市</li>
+        <li class="van-ellipsis van-picker-column__item">县</li>
+      </ul>
+    </div>
+    <div class="van-picker-column" style="height: 220px;">
+      <ul style="line-height: 44px;">
+        <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">东城区</li>
+        <li class="van-ellipsis van-picker-column__item">西城区</li>
+      </ul>
+    </div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
