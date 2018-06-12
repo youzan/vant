@@ -29,12 +29,17 @@ exports[`create a AddressEdit 1`] = `
       </div>
       <!---->
     </div>
-    <div class="van-cell van-cell--clickable van-hairline van-address-edit__area">
+    <div readonly="readonly" placeholder="收件地区" class="van-cell van-hairline van-field">
       <!---->
       <div class="van-cell__title"><span>收件地区</span>
         <!---->
       </div>
-      <div class="van-cell__value"><span>选择省份</span> <span>选择城市</span> <span>选择地区</span></div>
+      <div class="van-cell__value">
+        <input type="text" readonly="readonly" placeholder="收件地区" value="" class="van-field__control">
+        <!---->
+        <!---->
+        <!---->
+      </div>
       <!---->
     </div>
     <div>
@@ -114,12 +119,17 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
       <!---->
     </div>
-    <div class="van-cell van-cell--clickable van-hairline van-address-edit__area">
+    <div readonly="readonly" placeholder="收件地区" class="van-cell van-hairline van-field">
       <!---->
       <div class="van-cell__title"><span>收件地区</span>
         <!---->
       </div>
-      <div class="van-cell__value"><span>北京市</span> <span>北京市</span> <span>朝阳区</span></div>
+      <div class="van-cell__value">
+        <input type="text" readonly="readonly" placeholder="收件地区" value="北京市 北京市 朝阳区" class="van-field__control">
+        <!---->
+        <!---->
+        <!---->
+      </div>
       <!---->
     </div>
     <div>
@@ -142,13 +152,13 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
       <!---->
     </div>
-    <div placeholder="邮政编码(选填)" maxlength="6" class="van-hairline--top van-cell van-hairline van-field">
+    <div placeholder="邮政编码" maxlength="6" class="van-hairline--top van-cell van-hairline van-field">
       <!---->
       <div class="van-cell__title"><span>邮政编码</span>
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="tel" placeholder="邮政编码(选填)" maxlength="6" value="10000" class="van-field__control">
+        <input type="tel" placeholder="邮政编码" maxlength="6" value="10000" class="van-field__control">
         <!---->
         <!---->
         <!---->

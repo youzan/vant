@@ -62,13 +62,6 @@ describe('ContactEdit', () => {
     expect(errorInfo.name).toBeTruthy();
     field.at(0).trigger('focus');
     expect(errorInfo.name).toBeFalsy();
-
-    // name too long
-    data.name = '1'.repeat(30);
-    button.trigger('click');
-    expect(errorInfo.name).toBeTruthy();
-    field.at(0).trigger('focus');
-    expect(errorInfo.name).toBeFalsy();
   });
 
   it('valid tel', () => {

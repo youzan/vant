@@ -89,7 +89,7 @@ export default create({
       const value = this.data[key].trim();
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
+          return value ? '' : this.$t('nameEmpty');
         case 'tel':
           return this.telValidator(value) ? '' : this.$t('telInvalid');
       }
