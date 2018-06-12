@@ -45,7 +45,9 @@
   &__header {
     line-height: 44px;
     text-align: center;
-
+		div{
+			font-size:16px;
+		}
     .van-icon-close {
       top: 0;
       right: 0;
