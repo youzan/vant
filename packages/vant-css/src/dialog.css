@@ -15,6 +15,10 @@
   &__header {
     padding: 15px 0 0;
     text-align: center;
+
+    &--isolated {
+      padding: 25px 0;
+    }
   }
 
   &__message {
@@ -38,10 +42,6 @@
         flex: 1;
       }
     }
-  }
-
-  &__header + &__footer {
-    margin-top: 15px;
   }
 
   .van-button {
