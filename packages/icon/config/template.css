@@ -31,12 +31,13 @@
     font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
   }
 
-  &:before {
+  &::before {
     display: inline-block;
   }
 }
 
-<% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>:before {
+<% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>::before {
   content: "\<%= glyph.codePoint %>";
 }
+
 <% }); %>

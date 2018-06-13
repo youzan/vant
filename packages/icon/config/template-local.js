@@ -4,5 +4,6 @@ module.exports = (fontName, ttf) => {
   font-weight: normal;
   font-family: '${fontName}';
   src: url('../icon/${ttf}') format('truetype');
-}`;
+}
+`;
 };

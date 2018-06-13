@@ -15,7 +15,7 @@
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
     "dev": "npm run build:file && webpack-serve --config build/webpack.dev.js",
-    "lint": "./node_modules/.bin/eslint ./packages --ext .js,.vue",
+    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/vant-css/src/*.css\"",
     "build:file": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color",
@@ -94,6 +94,8 @@
     "shelljs": "^0.8.1",
     "signale": "^1.1.0",
     "style-loader": "^0.21.0",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.0.1",
     "vant-doc": "1.0.7",
