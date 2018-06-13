@@ -56,7 +56,7 @@
   font-size: 14px;
   position: relative;
   color: $gray-dark;
-  
+
   &--horizontal {
     float: left;
 
@@ -105,7 +105,7 @@
 
     .van-step__line {
       position: absolute;
-      left: 0px;
+      left: 0;
       top: 30px;
       width: 100%;
       height: 1px;

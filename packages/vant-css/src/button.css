@@ -23,15 +23,15 @@
     border: inherit;
     border-color: $black;
     background-color: $black;
-    border-radius: inherit;/* inherit parent's border radius */
-    transform: translate(-50%, -50%); 
+    border-radius: inherit; /* inherit parent's border radius */
+    transform: translate(-50%, -50%);
   }
 
   &:active::before {
     opacity: .3;
   }
 
-  &--unclickable:before {
+  &--unclickable::before {
     display: none;
   }
 

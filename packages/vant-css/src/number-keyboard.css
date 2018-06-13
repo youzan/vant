@@ -52,7 +52,7 @@ $van-number-keyboard-key-height: 54px;
 }
 
 .van-key {
-  width: calc(100%/3);
+  width: calc(100% / 3);
   font-size: 24px;
   font-style: normal;
   text-align: center;
@@ -66,7 +66,7 @@ $van-number-keyboard-key-height: 54px;
   }
 
   &--middle {
-    width: calc(200%/3);
+    width: calc(200% / 3);
   }
 
   &--big {
@@ -96,7 +96,7 @@ $van-number-keyboard-key-height: 54px;
   }
 
   &--gray {
-    background-color: #F3F3F6;
+    background-color: #f3f3f6;
   }
 
   &--active {
