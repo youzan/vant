@@ -6,42 +6,56 @@ const fs = require('fs-extra');
 const path = require('path');
 const components = require('./get-components')();
 const dependencyTree = require('dependency-tree');
-const SEP = path.sep;
+const whiteList = ['icon', 'loading', 'cell', 'button'];
+const dir = path.join(__dirname, '../es');
 
-function build(folder, isESModule) {
-  const dir = path.resolve(__dirname, '../', folder);
-  components.forEach(componentName => {
-    const content = analyzeDependencies(componentName, dir)
-      .map(component => isESModule ? `import '../../vant-css/${component}.css';` : `require('../../vant-css/${component}.css');`);
-    fs.outputFileSync(path.join(dir, componentName, './style/index.js'), content.join('\n'));
-  });
+components.forEach(component => {
+  const deps = analyzeDependencies(component);
+  const esEntry = path.join(dir, component, 'style/index.js');
+  const libEntry = path.join(__dirname, '../lib', component, 'style/index.js');
+  const esContent = deps.map(dep => `import '../../vant-css/${dep}.css';`).join('\n');
+  const libContent = deps.map(dep => `require('../../vant-css/${dep}.css');`).join('\n');
 
-  // Analyze component dependencies
-  function analyzeDependencies(componentName, dir) {
-    const checkList = ['base'];
-    const whiteList = ['icon', 'loading', 'cell', 'button'];
-    search(dependencyTree({
+  fs.outputFileSync(esEntry, esContent);
+  fs.outputFileSync(libEntry, libContent);
+});
+
+// analyze component dependencies
+function analyzeDependencies(component) {
+  const checkList = ['base'];
+
+  search(
+    dependencyTree({
       directory: dir,
-      filename: path.resolve(dir, componentName, 'index.js'),
-      filter: path => path.indexOf(`vant${SEP}${folder}${SEP}`) !== -1
-    }), checkList, whiteList);
-    return checkList.filter(component => checkComponentHasStyle(component));
+      filename: path.join(dir, component, 'index.js'),
+      filter: path => !~path.indexOf('node_modules')
+    }),
+    component,
+    checkList
+  );
+
+  if (!whiteList.includes(component)) {
+    checkList.push(component);
   }
 
-  function search(tree, checkList, whiteList) {
-    tree && Object.keys(tree).forEach(key => {
-      search(tree[key], checkList, whiteList);
-      const component = key.split(`${SEP}vant${SEP}${folder}${SEP}`)[1].replace(`${SEP}index.js`, '').replace(`mixins${SEP}`, '');
-      if (checkList.indexOf(component) === -1 && whiteList.indexOf(component) === -1) {
-        checkList.push(component);
-      }
-    });
-  }
-
-  function checkComponentHasStyle(componentName) {
-    return fs.existsSync(path.join(__dirname, `../${folder}/vant-css/`, `${componentName}.css`));
-  }
+  return checkList.filter(item => checkComponentHasStyle(item));
 }
 
-build('es', true);
-build('lib');
+function search(tree, component, checkList) {
+  Object.keys(tree).forEach(key => {
+    search(tree[key], component, checkList);
+    components
+      .filter(item => key.replace(dir, '').split('/').includes(item))
+      .forEach(item => {
+        if (!checkList.includes(item) && !whiteList.includes(item) && item !== component) {
+          checkList.push(item);
+        }
+      });
+  });
+}
+
+function checkComponentHasStyle(component) {
+  return fs.existsSync(
+    path.join(__dirname, `../es/vant-css/`, `${component}.css`)
+  );
+}
