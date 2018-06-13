@@ -1,5 +1,5 @@
 <template>
-  <div :class="b()">
+  <div :class="b()" v-on="isInCell ? { click: onClick } : {}">
     <icon
       name="success"
       :class="[
@@ -37,6 +37,12 @@ export default create({
       type: String,
       default: 'round'
     }
+  },
+
+  data() {
+    return {
+      isInCell: false
+    };
   },
 
   computed: {
@@ -87,6 +93,11 @@ export default create({
 
   created() {
     this.findParent('van-checkbox-group');
+
+    // 检测是否在van-cell中
+    if (this.$parent && this.$parent.$options._componentTag === 'van-cell') {
+      this.isInCell = true;
+    }
   },
 
   methods: {
