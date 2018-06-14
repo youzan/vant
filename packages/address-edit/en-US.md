@@ -68,6 +68,8 @@ export default {
 | show-delete | Whether to show delete button | `Boolean` | `false` |
 | show-set-default | Whether to show default address switch | `Boolean` | `false` |
 | show-search-result | Whether to show address search result | `Boolean` | `false` |
+| save-button-text | Save button text | `String` | `Save` |
+| delete-button-text | Delete button text | `String` | `Delete` |
 | is-saving | Whether to show save button loading status | `Boolean` | `false` |
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |

@@ -56,10 +56,10 @@
     </cell-group>
     <div v-show="!hideBottomFields" :class="b('buttons')">
       <van-button block :loading="isSaving" @click="onSave" type="primary">
-        {{ $t('save') }}
+        {{ saveButtonText || $t('save') }}
       </van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
-        {{ $t('delete') }}
+        {{ deleteButtonText || $t('delete') }}
       </van-button>
     </div>
     <popup v-model="showArea" position="bottom" :lazy-render="false" :get-container="getAreaContainer">
@@ -121,6 +121,8 @@ export default create({
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
+    saveButtonText: String,
+    deleteButtonText: String,
     addressInfo: {
       type: Object,
       default: () => ({ ...defaultAddress })
