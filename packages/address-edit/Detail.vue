@@ -8,8 +8,8 @@
       autosize
       rows="1"
       :value="value"
-      :error="isError"
-      @click-icon="onIconClick"
+      :error="error"
+      @click-icon="onClickIcon"
       @input="$emit('input', $event)"
       @focus="onFocus"
       @blur="onBlur"
@@ -46,8 +46,8 @@ export default create({
   },
 
   props: {
-    value: {},
-    isError: Boolean,
+    value: String,
+    error: Boolean,
     searchResult: Array,
     showSearchResult: Boolean
   },
@@ -61,7 +61,7 @@ export default create({
 
   computed: {
     showSearchList() {
-      return this.showSearchResult && this.isFocused && this.searchResult.length > 0;
+      return this.showSearchResult && this.isFocused && this.searchResult.length;
     },
 
     showIcon() {
@@ -70,26 +70,22 @@ export default create({
   },
 
   methods: {
-    onFocus(e) {
+    onFocus() {
       this.isFocused = true;
-      this.$emit('focus', e);
+      this.$emit('focus');
 
-      const { root } = this.$refs;
       /* istanbul ignore if */
-      if (root && root.scrollIntoView) {
-        root.scrollIntoView();
+      if (this.$refs.root.scrollIntoView) {
+        this.$refs.root.scrollIntoView();
       }
     },
 
-    onBlur(e) {
-      // wait for click event finished
-      setTimeout(() => {
-        this.isFocused = false;
-        this.$emit('blur', e);
-      }, 100);
+    onBlur() {
+      this.isFocused = false;
+      this.$emit('blur');
     },
 
-    onIconClick() {
+    onClickIcon() {
       if (this.isAndroid) {
         this.$refs.root.querySelector('.van-field__control').blur();
       } else {

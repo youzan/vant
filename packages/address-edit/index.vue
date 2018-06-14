@@ -26,7 +26,7 @@
       />
       <address-edit-detail
         :value="data.address_detail"
-        :is-error="errorInfo.address_detail"
+        :error="errorInfo.address_detail"
         :show-search-result="showSearchResult"
         :search-result="searchResult"
         @focus="onFocus('address_detail')"
@@ -37,12 +37,12 @@
       <field
         v-if="showPostal"
         v-show="!hideBottomFields"
-        type="tel"
-        :label="$t('postal')"
-        :placeholder="$t('postal')"
         v-model="data.postal_code"
+        type="tel"
         maxlength="6"
         class="van-hairline--top"
+        :label="$t('postal')"
+        :placeholder="$t('postal')"
         :error="errorInfo.postal_code"
         @focus="onFocus('postal_code')"
       />

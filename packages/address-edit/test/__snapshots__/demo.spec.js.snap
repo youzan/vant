@@ -64,13 +64,13 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div placeholder="邮政编码" maxlength="6" class="van-hairline--top van-cell van-hairline van-field">
+        <div maxlength="6" placeholder="邮政编码" class="van-hairline--top van-cell van-hairline van-field">
           <!---->
           <div class="van-cell__title"><span>邮政编码</span>
             <!---->
           </div>
           <div class="van-cell__value">
-            <input type="tel" placeholder="邮政编码" maxlength="6" value="" class="van-field__control">
+            <input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
