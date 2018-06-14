@@ -1,35 +1,33 @@
 <template>
-  <div ref="root">
+  <div>
     <field
+      v-on="$listeners"
+      ref="field"
+      rows="1"
+      autosize
+      type="textarea"
+      maxlength="200"
+      :value="value"
+      :error="error"
       :label="$t('label')"
       :placeholder="$t('placeholder')"
-      maxlength="200"
-      type="textarea"
-      autosize
-      rows="1"
-      :value="value"
-      :error="isError"
-      @click-icon="onIconClick"
-      @input="$emit('input', $event)"
-      @focus="onFocus"
-      @blur="onBlur"
+      @click-icon="onClickIcon"
     >
       <div slot="icon">
         <span v-if="showIcon && isAndroid" :class="b('finish')">{{ $t('complete') }}</span>
         <icon v-else-if="showIcon" name="clear" />
       </div>
     </field>
-    <cell-group :border="false" v-if="showSearchList">
-      <cell
-        v-for="express in searchResult"
-        :key="express.name + express.address"
-        :title="express.name"
-        :label="express.address"
-        icon="location"
-        clickable
-        @click="onSelect(express)"
-      />
-    </cell-group>
+    <cell
+      v-if="showSearchList"
+      v-for="express in searchResult"
+      :key="express.name + express.address"
+      :title="express.name"
+      :label="express.address"
+      icon="location"
+      clickable
+      @click="onSelect(express)"
+    />
   </div>
 </template>
 
@@ -46,52 +44,31 @@ export default create({
   },
 
   props: {
-    value: {},
-    isError: Boolean,
+    value: String,
+    error: Boolean,
+    focused: Boolean,
     searchResult: Array,
     showSearchResult: Boolean
   },
 
-  data() {
-    return {
-      isAndroid: isAndroid(),
-      isFocused: false
-    };
+  created() {
+    this.isAndroid = isAndroid();
   },
 
   computed: {
     showSearchList() {
-      return this.showSearchResult && this.isFocused && this.searchResult.length > 0;
+      return this.showSearchResult && this.focused && this.searchResult.length;
     },
 
     showIcon() {
-      return this.value && this.isFocused;
+      return this.value && this.focused;
     }
   },
 
   methods: {
-    onFocus(e) {
-      this.isFocused = true;
-      this.$emit('focus', e);
-
-      const { root } = this.$refs;
-      /* istanbul ignore if */
-      if (root && root.scrollIntoView) {
-        root.scrollIntoView();
-      }
-    },
-
-    onBlur(e) {
-      // wait for click event finished
-      setTimeout(() => {
-        this.isFocused = false;
-        this.$emit('blur', e);
-      }, 100);
-    },
-
-    onIconClick() {
+    onClickIcon() {
       if (this.isAndroid) {
-        this.$refs.root.querySelector('.van-field__control').blur();
+        this.$refs.field.blur();
       } else {
         this.$emit('input', '');
       }

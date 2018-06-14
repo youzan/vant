@@ -66,6 +66,8 @@ export default {
 | show-delete | 是否显示删除按钮 | `Boolean` | `false` |
 | show-set-default | 是否显示默认地址栏 | `Boolean` | `false` |
 | show-search-result | 是否显示搜索结果 | `Boolean` | `false` |
+| save-button-text | 保存按钮文字 | `String` | `保存` |
+| delete-button-text | 删除按钮文字 | `String` | `删除` |
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` |
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` |
 | tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - |

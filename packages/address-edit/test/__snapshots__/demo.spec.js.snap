@@ -45,13 +45,13 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div>
-          <div placeholder="如街道、楼层、门牌号等" maxlength="200" rows="1" class="van-cell van-hairline van-field van-field--has-icon">
+          <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field van-field--has-icon">
             <!---->
             <div class="van-cell__title"><span>详细地址</span>
               <!---->
             </div>
             <div class="van-cell__value">
-              <textarea placeholder="如街道、楼层、门牌号等" maxlength="200" rows="1" class="van-field__control"></textarea>
+              <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control"></textarea>
               <!---->
               <div class="van-field__icon">
                 <div>
@@ -62,15 +62,14 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <!---->
         </div>
-        <div placeholder="邮政编码" maxlength="6" class="van-hairline--top van-cell van-hairline van-field">
+        <div maxlength="6" placeholder="邮政编码" class="van-hairline--top van-cell van-hairline van-field">
           <!---->
           <div class="van-cell__title"><span>邮政编码</span>
             <!---->
           </div>
           <div class="van-cell__value">
-            <input type="tel" placeholder="邮政编码" maxlength="6" value="" class="van-field__control">
+            <input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
