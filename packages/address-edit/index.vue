@@ -92,7 +92,7 @@ import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
 
-const defaultAddress = {
+const defaultData = {
   name: '',
   tel: '',
   province: '',
@@ -128,7 +128,7 @@ export default create({
     deleteButtonText: String,
     addressInfo: {
       type: Object,
-      default: () => ({ ...defaultAddress })
+      default: () => ({ ...defaultData })
     },
     searchResult: {
       type: Array,
@@ -146,10 +146,10 @@ export default create({
       showArea: false,
       detailFocused: false,
       errorInfo: {
-        name: false,
         tel: false,
-        address_detail: false,
-        postal_code: false
+        name: false,
+        postal_code: false,
+        address_detail: false
       }
     };
   },
@@ -180,7 +180,7 @@ export default create({
     addressInfo: {
       handler(val) {
         this.data = {
-          ...defaultAddress,
+          ...defaultData,
           ...val
         };
 
@@ -215,13 +215,11 @@ export default create({
     },
 
     assignAreaValues(values) {
-      if (values.length >= 3) {
-        Object.assign(this.data, {
-          province: values[0].name,
-          city: values[1].name,
-          county: values[2].name
-        });
-      }
+      Object.assign(this.data, {
+        province: values[0].name,
+        city: values[1].name,
+        county: values[2].name
+      });
     },
 
     onSave() {
