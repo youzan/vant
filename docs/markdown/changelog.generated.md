@@ -1,5 +1,70 @@
 ## 更新日志
 
+## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8) (2018-06-14)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.7...v1.1.8)
+
+**Breaking changes**
+
+- van-field type=“number”时 会报错 [\#1220](https://github.com/youzan/vant/issues/1220)
+- van-swipe 没有提供自定义滑动到指定slider的方法，即常见的slideTo\(index\) [\#1214](https://github.com/youzan/vant/issues/1214)
+
+**Issue**
+
+- 功能需求 [\#1286](https://github.com/youzan/vant/issues/1286)
+- AddressEdit组件addressInfo数据格式的key值自定义 [\#1284](https://github.com/youzan/vant/issues/1284)
+- picker是否支持多选 [\#1283](https://github.com/youzan/vant/issues/1283)
+- 动态绑定 field 的Error 属性不生效 [\#1279](https://github.com/youzan/vant/issues/1279)
+- 这套强大的UI不知可否支持小程序呢 [\#1277](https://github.com/youzan/vant/issues/1277)
+- Swipe 轮播 通过 ref 可以获取到 swipe 实例并调用实例方法无效 [\#1275](https://github.com/youzan/vant/issues/1275)
+- npm run build:lib编译错误 [\#1273](https://github.com/youzan/vant/issues/1273)
+- Badge 徽章达不到想要的效果 [\#1269](https://github.com/youzan/vant/issues/1269)
+- 请求新增表单校验 [\#1268](https://github.com/youzan/vant/issues/1268)
+- 使用AddressEdit的时，输入的 addressInfo 的数据无法获取。 [\#1265](https://github.com/youzan/vant/issues/1265)
+- 紧急：优惠券列表超出一屏时，不能上下翻页划动！ [\#1263](https://github.com/youzan/vant/issues/1263)
+- 在vue-ssr（非nuxt）下组件使用出现问题 [\#1261](https://github.com/youzan/vant/issues/1261)
+- 在vue-ssr（非nuxt）下组件使用出现bug [\#1259](https://github.com/youzan/vant/issues/1259)
+- 能否增加如flex，transform等css属性的厂商前缀，以兼容如ios8等系统 [\#1257](https://github.com/youzan/vant/issues/1257)
+- van-list loading 设为false还是显示加载中,如果数据为空直接finished=false还是继续显示加载中 [\#1253](https://github.com/youzan/vant/issues/1253)
+- 在使用AddressEdit的时候,地址无法显示 [\#1252](https://github.com/youzan/vant/issues/1252)
+- van-list 从其他页面返回时van-list页面，:immediate-check=“false”属性无效？ [\#1248](https://github.com/youzan/vant/issues/1248)
+- van-list    从其他页面返回时van-list页面，:immediate-check=“false”属性无效？ [\#1247](https://github.com/youzan/vant/issues/1247)
+- API文档页面嵌套手机模型怎么实现？ [\#1246](https://github.com/youzan/vant/issues/1246)
+- passwordinput的value值无法重置或清空 [\#1244](https://github.com/youzan/vant/issues/1244)
+- 打包后，在安卓4.4系统打开空白 混合app+vant [\#1243](https://github.com/youzan/vant/issues/1243)
+- checkbox 和cell一起使用 [\#1241](https://github.com/youzan/vant/issues/1241)
+- 请问AddressEdit收件地区选择如何做到反选？因为我做的是编辑页面 [\#1240](https://github.com/youzan/vant/issues/1240)
+- 文档radio组件，示例代码问题-与 Cell 组件一起使用 [\#1238](https://github.com/youzan/vant/issues/1238)
+- Popup或Dialog弹出层显示的列表不能滚动 [\#1236](https://github.com/youzan/vant/issues/1236)
+- 图片上传组件图片旋转问题 [\#1235](https://github.com/youzan/vant/issues/1235)
+- 定制主题无法显示效果 [\#1234](https://github.com/youzan/vant/issues/1234)
+- Popup弹出层配合日期选择使用，ios端日期选择窗不显示 [\#1229](https://github.com/youzan/vant/issues/1229)
+- Slider 滑块 [\#1226](https://github.com/youzan/vant/issues/1226)
+- 文档无法访问问题反馈 [\#1223](https://github.com/youzan/vant/issues/1223)
+
+**Improvements**
+
+- \[Improvement\] AddressEdit: configure button text [\#1287](https://github.com/youzan/vant/pull/1287) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] build style entry failed [\#1282](https://github.com/youzan/vant/pull/1282) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] stylelint [\#1280](https://github.com/youzan/vant/pull/1280) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] AddressEdit: simplify [\#1274](https://github.com/youzan/vant/pull/1274) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Area: default option [\#1272](https://github.com/youzan/vant/pull/1272) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Sku: message maxlength [\#1271](https://github.com/youzan/vant/pull/1271) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Dialog: isolated title [\#1270](https://github.com/youzan/vant/pull/1270) ([chenjiahan](https://github.com/chenjiahan))
+- fix:actionsheet的标题div没有值设置具体值导致rem布局不自适应 [\#1267](https://github.com/youzan/vant/pull/1267) ([nmxiaowei](https://github.com/nmxiaowei))
+- \[Doc\] add demo link [\#1266](https://github.com/youzan/vant/pull/1266) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: add blur method [\#1264](https://github.com/youzan/vant/pull/1264) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: icon color [\#1262](https://github.com/youzan/vant/pull/1262) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: resize line when title changed [\#1260](https://github.com/youzan/vant/pull/1260) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Popup: limit max height [\#1256](https://github.com/youzan/vant/pull/1256) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] fix radio doc [\#1255](https://github.com/youzan/vant/pull/1255) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] CheckboxGroup: v-model type check [\#1254](https://github.com/youzan/vant/pull/1254) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Update document format [\#1251](https://github.com/youzan/vant/pull/1251) ([tudoubang](https://github.com/tudoubang))
+- \[Doc\] update contribution guide [\#1250](https://github.com/youzan/vant/pull/1250) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] add style guide [\#1245](https://github.com/youzan/vant/pull/1245) ([chenjiahan](https://github.com/chenjiahan))
+- \[Build\] extract build iconfont [\#1242](https://github.com/youzan/vant/pull/1242) ([chenjiahan](https://github.com/chenjiahan))
+- docs\(doc\): postcss tips [\#1239](https://github.com/youzan/vant/pull/1239) ([tudoubang](https://github.com/tudoubang))
+- \[Improvement\] eslint: use vue-libs [\#1237](https://github.com/youzan/vant/pull/1237) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7) (2018-06-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.6...v1.1.7)
 
@@ -123,12 +188,6 @@
 
 - progress进度条的颜色，可以设置成渐变色吗？ [\#1094](https://github.com/youzan/vant/issues/1094)
 - van-field有计划出一个类似label位置的图标参数吗？登录框很常用，用户名密码输入框之前经常会有 [\#1084](https://github.com/youzan/vant/issues/1084)
-- Cell value=0无法显示 [\#1055](https://github.com/youzan/vant/issues/1055)
-
-**Bug Fixes**
-
-- Icon图标组件使用本地字体文件无效,还是引用 yzcdn.cn 域名下的字体文件 [\#1077](https://github.com/youzan/vant/issues/1077)
-- GoodsActionMiniBtn中info属性在数字过大时会被遮挡 [\#1068](https://github.com/youzan/vant/issues/1068)
 
 **Issue**
 
@@ -181,16 +240,6 @@
 ## [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4) (2018-05-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.3...v1.1.4)
 
-**Breaking changes**
-
-- van-field 组件添加 label slot [\#1041](https://github.com/youzan/vant/issues/1041)
-- AddressEdit组件 点击删除收货地址时弹出的Dialog.confirm只有confirm事件cancel貌似没有ww [\#1035](https://github.com/youzan/vant/issues/1035)
-
-**Bug Fixes**
-
-- 时间组件默认值初始化不正确 [\#1072](https://github.com/youzan/vant/issues/1072)
-- ImagePreview 图片预览组件点击关闭不了bug [\#1043](https://github.com/youzan/vant/issues/1043)
-
 **Issue**
 
 - toast找不到 [\#1096](https://github.com/youzan/vant/issues/1096)
@@ -200,21 +249,6 @@
 - \<van-nav-bar 没有做一个attr实现顶部固定的效果嘛？ [\#1081](https://github.com/youzan/vant/issues/1081)
 - Tab 标签页并不能通过v-modal来设置选中项，不知道文档是否有问题 [\#1080](https://github.com/youzan/vant/issues/1080)
 - 竖向文字轮播 [\#1079](https://github.com/youzan/vant/issues/1079)
-- Tab组件中van-tab的宽度问题 [\#1078](https://github.com/youzan/vant/issues/1078)
-- Uploader 组件 after-read 无法取得 上传文件名。 [\#1076](https://github.com/youzan/vant/issues/1076)
-- 输入框如何自定义icon  [\#1071](https://github.com/youzan/vant/issues/1071)
-- vant-doc 里面使用better-scoroll 无法滚动 [\#1070](https://github.com/youzan/vant/issues/1070)
-- 时间控件，maxDate和设置的不一致 [\#1069](https://github.com/youzan/vant/issues/1069)
-- vue项目中我想调用sku业务逻辑组件的getSkuData\(\)获取当前 skuData怎么调用 [\#1067](https://github.com/youzan/vant/issues/1067)
-- \<van-icon 标签color属性设置无效果 [\#1065](https://github.com/youzan/vant/issues/1065)
-- sku 商品规格层隐藏后不重置所选参数 [\#1062](https://github.com/youzan/vant/issues/1062)
-- 图片预览有没有手势缩放？ [\#1061](https://github.com/youzan/vant/issues/1061)
-- 为什么vant 的竖向轮播图没用 [\#1060](https://github.com/youzan/vant/issues/1060)
-- sku商品规格怎么修改默认选中？？ [\#1059](https://github.com/youzan/vant/issues/1059)
-- 微信中使用van-tabbar，to不起作用 [\#1058](https://github.com/youzan/vant/issues/1058)
-- 下拉刷新问题，不知道是不是就是这样的设计？ [\#1057](https://github.com/youzan/vant/issues/1057)
-- Sku组件的none\_sku无效 [\#1040](https://github.com/youzan/vant/issues/1040)
-- Sku的demo中，initialSku为什么没效果？ [\#1032](https://github.com/youzan/vant/issues/1032)
 
 **Improvements**
 
@@ -224,47 +258,9 @@
 - \[bugfix\] Icon template [\#1091](https://github.com/youzan/vant/pull/1091) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] add AddressEdit test cases [\#1083](https://github.com/youzan/vant/pull/1083) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] AddressEdit: fit in small screen [\#1082](https://github.com/youzan/vant/pull/1082) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] test coverage should exclude demo [\#1075](https://github.com/youzan/vant/pull/1075) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] GoodsAction: info position [\#1074](https://github.com/youzan/vant/pull/1074) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Cell: support number type title & value [\#1073](https://github.com/youzan/vant/pull/1073) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Reorganize document [\#1066](https://github.com/youzan/vant/pull/1066) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] reduce dev log [\#1063](https://github.com/youzan/vant/pull/1063) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] upgrade to webpack-serve [\#1056](https://github.com/youzan/vant/pull/1056) ([chenjiahan](https://github.com/chenjiahan))
-- update dependencies [\#1054](https://github.com/youzan/vant/pull/1054) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Optimize demo test [\#1053](https://github.com/youzan/vant/pull/1053) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Reorganize demos [\#1052](https://github.com/youzan/vant/pull/1052) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Rebuild test system [\#1051](https://github.com/youzan/vant/pull/1051) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3) (2018-05-12)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.2...v1.1.3)
-
-**Issue**
-
-- 优惠券插件 引用后报警告 [\#1044](https://github.com/youzan/vant/issues/1044)
-- field 的自定义按钮不能显示 [\#1039](https://github.com/youzan/vant/issues/1039)
-- 新人 学习一波 [\#1038](https://github.com/youzan/vant/issues/1038)
-- swipe没有点击事件啊 [\#1036](https://github.com/youzan/vant/issues/1036)
-- 使用日期组件，type=year-month时，出现异常 [\#1034](https://github.com/youzan/vant/issues/1034)
-- 使用日期组件 type=year-month时报错误 Error in mounted hook: "TypeError: Cannot read property 'getFullYear' of undefined" [\#1033](https://github.com/youzan/vant/issues/1033)
--  请问\<icon v-if="icon" :class="b\('left-icon'\)" :name="icon" /\> 这里面的:class="b\('left-icon'\)"是什么用法？哪里有资料可以看 [\#1030](https://github.com/youzan/vant/issues/1030)
-- area  [\#1028](https://github.com/youzan/vant/issues/1028)
-- \<van-nav-bar title="'标题'"\> [\#1026](https://github.com/youzan/vant/issues/1026)
-- 官网文档中关于 “List 列表“ 例子引用缺失。 [\#1024](https://github.com/youzan/vant/issues/1024)
-
-**Improvements**
-
-- \[Doc\] fix demo page [\#1050](https://github.com/youzan/vant/pull/1050) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Toast: add loadingType option [\#1049](https://github.com/youzan/vant/pull/1049) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: add label slot [\#1048](https://github.com/youzan/vant/pull/1048) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] AddressEdit: add cancel-delete event [\#1047](https://github.com/youzan/vant/pull/1047) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] ImagePreview: can't be closed when contain single image [\#1046](https://github.com/youzan/vant/pull/1046) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix dialog document [\#1045](https://github.com/youzan/vant/pull/1045) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] ImagePreview: optimize click detect [\#1042](https://github.com/youzan/vant/pull/1042) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] NoticeBar: add ref check [\#1037](https://github.com/youzan/vant/pull/1037) ([chenjiahan](https://github.com/chenjiahan))
-- \[improvement\] Icon: support color property [\#1031](https://github.com/youzan/vant/pull/1031) ([realywithoutname](https://github.com/realywithoutname))
-- \[bugfix\] Cell: default width [\#1029](https://github.com/youzan/vant/pull/1029) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Search: update style [\#1027](https://github.com/youzan/vant/pull/1027) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Icon: update search icon [\#1025](https://github.com/youzan/vant/pull/1025) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2) (2018-05-08)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.1...v1.1.2)
