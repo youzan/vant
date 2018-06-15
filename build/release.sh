@@ -11,7 +11,7 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # build
-  VERSION=$VERSION npm run dist
+  VERSION=$VERSION npm run build:lib
 
   # publish vant-css
   echo "Releasing vant-css $VERSION ..."
