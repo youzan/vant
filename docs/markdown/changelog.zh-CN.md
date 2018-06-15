@@ -1,5 +1,29 @@
 ## 更新日志
 
+### [1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
+`2018-06-14`
+
+**Improvements**
+
+- AddressEdit: 支持配置按钮文字 [\#1287](https://github.com/youzan/vant/pull/1287)
+- AddressEdit: 简化内部代码结构 [\#1274](https://github.com/youzan/vant/pull/1274)
+- Area: 优化默认选项 [\#1272](https://github.com/youzan/vant/pull/1272)
+- Dialog: 支持单独传入 title 属性 [\#1270](https://github.com/youzan/vant/pull/1270)
+- Field: 新增 blur 方法 [\#1264](https://github.com/youzan/vant/pull/1264)
+- Field: 更新右侧按钮默认颜色 [\#1262](https://github.com/youzan/vant/pull/1262)
+- Sku: 限制留言最大长度 [\#1271](https://github.com/youzan/vant/pull/1271)
+- Build: 新增 stylelint 格式校验 [\#1280](https://github.com/youzan/vant/pull/1280)
+- Document: 新增示例源码链接 [\#1266](https://github.com/youzan/vant/pull/1266)
+- Document: 新增代码风格指引 [\#1245](https://github.com/youzan/vant/pull/1245)
+
+**Bug Fixes**
+
+- 修复 Actionsheet 在 rem 布局下标题文字大小错误的问题 [\#1267](https://github.com/youzan/vant/pull/1267)
+- 修复 CheckboxGroup v-model 类型检查错误 [\#1254](https://github.com/youzan/vant/pull/1254)
+- 修复 Tab 标题长度变化时底部条未重新渲染的问题 [\#1260](https://github.com/youzan/vant/pull/1260)
+- 修复 Popup 内容过高时超出屏幕可视范围的问题 [\#1256](https://github.com/youzan/vant/pull/1256)
+
+
 ### [1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
 `2018-06-06`
 

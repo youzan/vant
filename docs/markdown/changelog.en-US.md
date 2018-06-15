@@ -1,5 +1,29 @@
 ## Changelog
 
+### [1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
+`2018-06-14`
+
+**Improvements**
+
+- AddressEdit: support configure button text [\#1287](https://github.com/youzan/vant/pull/1287)
+- AddressEdit: simplify struct [\#1274](https://github.com/youzan/vant/pull/1274)
+- Area: optimize default option [\#1272](https://github.com/youzan/vant/pull/1272)
+- Dialog: support isolated title [\#1270](https://github.com/youzan/vant/pull/1270)
+- Field: add blur method [\#1264](https://github.com/youzan/vant/pull/1264)
+- Field: update right icon color [\#1262](https://github.com/youzan/vant/pull/1262)
+- Sku: message limit maxlength [\#1271](https://github.com/youzan/vant/pull/1271)
+- Build: add stylelint [\#1280](https://github.com/youzan/vant/pull/1280)
+- Document: add demo source file link [\#1266](https://github.com/youzan/vant/pull/1266)
+- Document: add code style guide [\#1245](https://github.com/youzan/vant/pull/1245)
+
+**Bug Fixes**
+
+- fix Actionsheet title font size [\#1267](https://github.com/youzan/vant/pull/1267)
+- fix CheckboxGroup v-model type check [\#1254](https://github.com/youzan/vant/pull/1254)
+- fix Popup max height [\#1256](https://github.com/youzan/vant/pull/1256)
+- fix Tab resize line when title changed [\#1260](https://github.com/youzan/vant/pull/1260)
+
+
 ### [1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
 `2018-06-06`
 
