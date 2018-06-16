@@ -16,6 +16,9 @@ export interface Dialog {
   alert(options: DialogOptions): Promise<any>;
   confirm(options: DialogOptions): Promise<any>;
   close(): void;
+  install(): void;
+  setDefaultOptions(options: DialogOptions): void;
+  resetDefaultOptions(): void;
 }
 
 declare module 'vue/types/vue' {
