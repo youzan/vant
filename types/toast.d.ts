@@ -13,6 +13,10 @@ export interface Toast {
   success(options?: ToastOptions): void;
   fail(options?: ToastOptions): void;
   clear(): void;
+  install(): void;
+  setDefaultOptions(options: ToastOptions): void;
+  resetDefaultOptions(): void;
+  allowMultiple(allow: boolean): void
 }
 
 declare module 'vue/types/vue' {
