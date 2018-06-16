@@ -28,6 +28,14 @@
     }
   }
 
+  &__item--disabled {
+    color: $gray;
+
+    &:active {
+      background-color: $white;
+    }
+  }
+
   &__subname {
     font-size: 12px;
     color: $gray-darker;

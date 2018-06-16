@@ -216,7 +216,7 @@ module.exports = {
             list: [
               {
                 path: '/actionsheet',
-                title: 'Actionsheet - 行动按钮'
+                title: 'Actionsheet - 上拉菜单'
               },
               {
                 path: '/datetime-picker',

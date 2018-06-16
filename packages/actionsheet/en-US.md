@@ -33,6 +33,10 @@ export default {
         {
           name: 'Option',
           loading: true
+        },
+        {
+          name: 'Disabled Option',
+          disabled: true
         }
       ]
     };
@@ -86,4 +90,5 @@ Actionsheet will get another style if there is a `title` prop.
 | subname | Subtitle |
 | className | className for the option |
 | loading | Whether to be loading status |
+| disabled | Whether to be disabled |
 | callback | Triggered when click option |
