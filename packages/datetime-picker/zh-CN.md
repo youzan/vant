@@ -1,4 +1,5 @@
 ## DatetimePicker 时间选择
+时间选择组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 使用指南
 ``` javascript
