@@ -28,7 +28,8 @@ export default {
       button3: '弹出带标题的 Actionsheet',
       title2: '带取消按钮的 Actionsheet',
       title3: '带标题的 Actionsheet',
-      description: '描述信息'
+      description: '描述信息',
+      disabledOption: '禁用选项'
     },
     'en-US': {
       button1: 'Show Actionsheet',
@@ -36,7 +37,8 @@ export default {
       button3: 'Show Actionsheet with title',
       title2: 'Actionsheet with cancel button',
       title3: 'Actionsheet with title',
-      description: 'Description'
+      description: 'Description',
+      disabledOption: 'Disabled Option'
     }
   },
 
@@ -53,7 +55,8 @@ export default {
       return [
         { name: this.$t('option'), callback: this.onClick },
         { name: this.$t('option'), subname: this.$t('description') },
-        { name: this.$t('option'), loading: true }
+        { name: this.$t('option'), loading: true },
+        { name: this.$t('disabledOption'), disabled: true }
       ];
     }
   },

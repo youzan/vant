@@ -1,4 +1,4 @@
-## Actionsheet 行动按钮
+## Actionsheet 上拉菜单
 
 ### 使用指南
 ``` javascript
@@ -33,6 +33,10 @@ export default {
         {
           name: '选项',
           loading: true
+        },
+        {
+          name: '禁用选项',
+          disabled: true
         }
       ]
     };
@@ -68,11 +72,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| actions | 行动按钮数组 | `Array` | `[]` |
+| actions | 菜单选项 | `Array` | `[]` |
 | title | 标题 | `String` | - |
-| cancel-text | 取消按钮文案 | `String` | - |
-| overlay | 是否显示遮罩 | `Boolean` | - |
-| close-on-click-overlay | 点击遮罩是否关闭`Actionsheet` | `Boolean` | - |
+| cancel-text | 取消按钮文字 | `String` | - |
+| overlay | 是否显示遮罩层 | `Boolean` | - |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
 | get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
 
 ### Event
@@ -89,6 +93,7 @@ export default {
 |-----------|-----------|
 | name | 标题 |
 | subname | 二级标题 |
-| className | 为对应列添加特殊的`class` |
-| loading | 是否是`loading`状态 |
-| callback | 点击时的回调。该回调接受一个参数，参数为当前点击`action`的对象信息 |
+| className | 为对应列添加额外的 class |
+| loading | 是否为加载状态 |
+| disabled | 是否为禁用状态 |
+| callback | 点击时的回调。该回调接受一个参数，参数为当前点击 action 的对象信息 |
