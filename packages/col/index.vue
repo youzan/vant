@@ -1,8 +1,7 @@
 <template>
   <component
     :is="tag"
-    class="van-col"
-    :class="{ [`van-col-${span}`]: span, [`van-col-offset-${offset}`]: offset}"
+    :class="b({ [span]: span, [`offset-${offset}`]: offset })"
     :style="style"
   >
     <slot />

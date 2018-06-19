@@ -6,6 +6,6 @@
 }
 
 @for $i from 1 to 24 {
-  .van-col-$i { width: calc($i * 100% / 24); }
-  .van-col-offset-$i { margin-left: calc($i * 100% / 24); }
+  .van-col--$i { width: calc($i * 100% / 24); }
+  .van-col--offset-$i { margin-left: calc($i * 100% / 24); }
 }
