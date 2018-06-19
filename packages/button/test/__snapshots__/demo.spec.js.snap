@@ -41,11 +41,11 @@ exports[`renders demo correctly 1`] = `
     <button class="van-button van-button--primary van-button--normal van-button--bottom-action">
       <!----><span class="van-button__text">按钮</span></button>
     <div class="van-row">
-      <div class="van-col van-col-12">
+      <div class="van-col van-col--12">
         <button class="van-button van-button--default van-button--normal van-button--bottom-action">
           <!----><span class="van-button__text">按钮</span></button>
       </div>
-      <div class="van-col van-col-12">
+      <div class="van-col van-col--12">
         <button class="van-button van-button--primary van-button--normal van-button--bottom-action">
           <!----><span class="van-button__text">按钮</span></button>
       </div>

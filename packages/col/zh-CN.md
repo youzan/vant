@@ -45,6 +45,47 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 </van-row>
 ```
 
+#### Flex 布局
+
+将 `type` 属性设置为 flex 可以启用 flex 布局，便于进行灵活的对齐
+
+```html
+<!-- 左对齐 -->
+<van-row type="flex">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<!-- 居中 -->
+<van-row type="flex" justify="center">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<!-- 右对齐 -->
+<van-row type="flex" justify="end">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<!-- 两端对齐 -->
+<van-row type="flex" justify="space-between">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<!-- 每个元素的两侧间隔相等 -->
+<van-row type="flex" justify="space-around">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+```
+
 ### API
 
 #### Row
@@ -52,6 +93,9 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | gutter | 列元素之间的间距（单位为px） | `String | Number` | - |
+| tag | 自定义元素标签 | `String` | `div` |
+| justify | Flex 主轴对齐方式，可选值为 end/center/space-around/space-between | `String` | `start` |
+| align | Flex 交叉轴对齐方式，可选值为 center/bottom | `String` | `top` |
 
 #### Column
 
@@ -59,3 +103,4 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 |-----------|-----------|-----------|-------------|
 | span | 列元素宽度 | `String | Number` | - |
 | offset | 列元素偏移距离 | `String | Number` | - |
+| tag | 自定义元素标签 | `String` | `div` |
