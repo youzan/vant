@@ -48,6 +48,42 @@ Set grid spacing using `gutter` attribute. The default value is 0
 </van-row>
 ```
 
+#### Flex Layout
+
+Setting `type` to `flex` to enable flex layout
+
+```html
+<van-row type="flex">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<van-row type="flex" justify="center">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<van-row type="flex" justify="end">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<van-row type="flex" justify="space-between">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+
+<van-row type="flex" justify="space-around">
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+  <van-col span="6">span: 6</van-col>
+</van-row>
+```
+
 
 ### API
 
@@ -55,11 +91,15 @@ Set grid spacing using `gutter` attribute. The default value is 0
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| gutter | grid spacing（px） | `String | Number` | - |
+| gutter | Grid spacing（px） | `String | Number` | - |
+| tag | Custom element tag | `String` | `div` |
+| justify | Flex main axis，can be set to  end/center/space-around/space-between | `String` | `start` |
+| align | Flex cross axis, be set to  center/bottom | `String` | `top` |
 
 #### Column
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| span | number of column the grid spans | `String | Number` | - |
-| offset | number of spacing on the left side of the grid | `String | Number` | - |
+| span | Number of column the grid spans | `String | Number` | - |
+| offset | Number of spacing on the left side of the grid | `String | Number` | - |
+| tag | Custom element tag | `String` | `div` |

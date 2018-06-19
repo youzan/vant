@@ -1,11 +1,12 @@
 <template>
-  <div
+  <component
+    :is="tag"
     class="van-col"
     :class="{ [`van-col-${span}`]: span, [`van-col-offset-${offset}`]: offset}"
     :style="style"
   >
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
@@ -16,7 +17,11 @@ export default create({
 
   props: {
     span: [Number, String],
-    offset: [Number, String]
+    offset: [Number, String],
+    tag: {
+      type: String,
+      default: 'div'
+    }
   },
 
   computed: {
