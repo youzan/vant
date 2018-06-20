@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <div class="demo-uploader-container">
-        <van-uploader :max-size="102400" @oversize="logContent('oversize')">
+        <van-uploader :max-size="102400" @oversize="logContent('oversize')" :before-read="beforeRead(1)">
           <van-icon name="photograph" />
         </van-uploader>
       </div>
@@ -32,6 +32,12 @@ export default {
   methods: {
     logContent(file) {
       console.log(file);
+    },
+
+    beforeRead(index) {
+      return file => {
+        console.log(index, file);
+      };
     }
   }
 };

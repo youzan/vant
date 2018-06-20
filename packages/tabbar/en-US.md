@@ -65,6 +65,8 @@ export default {
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | v-model | Index of current tab | `Number` | - |
+| fixed | Whether to fixed bottom | `Boolean` | `true` |
+| z-index | Z-index | `Number` | `1` |
 
 ### Tabbar Event
 

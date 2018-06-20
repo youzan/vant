@@ -69,6 +69,8 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | v-model | 当前选中标签的索引 | `Number` | - |
+| fixed | 是否固定在底部 | `Boolean` | `true` |
+| z-index | 元素 z-index | `Number` | `1` |
 
 ### Tabbar Event
 
