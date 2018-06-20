@@ -11,9 +11,12 @@ exports[`renders demo correctly 1`] = `
         <!---->
         <!---->
         <div class="van-cell__value van-cell__value--alone">
-          <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
-          <!---->
-          <!---->
+          <div class="van-field__body">
+            <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
           <!---->
         </div>
         <!---->
@@ -31,9 +34,12 @@ exports[`renders demo correctly 1`] = `
           <!---->
           <!---->
           <div class="van-cell__value van-cell__value--alone">
-            <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
-            <!---->
-            <!---->
+            <div class="van-field__body">
+              <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
             <!---->
           </div>
           <!---->
@@ -53,9 +59,12 @@ exports[`renders demo correctly 1`] = `
         <!---->
         <!---->
         <div class="van-cell__value van-cell__value--alone">
-          <input type="search" value="" class="van-field__control">
-          <!---->
-          <!---->
+          <div class="van-field__body">
+            <input type="search" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
           <!---->
         </div>
         <!---->

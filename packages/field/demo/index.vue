@@ -11,10 +11,11 @@
         <van-field
           v-model="username"
           :label="$t('username')"
-          icon="clear"
           :placeholder="$t('usernamePlaceholder')"
+          clearable
+          icon="question"
           required
-          @click-icon="username = ''"
+          @click-icon="$toast('question')"
         />
 
         <van-field
@@ -72,11 +73,10 @@
       <van-cell-group>
         <van-field
           center
+          clearable
           v-model="sms"
           :label="$t('sms')"
           :placeholder="$t('smsPlaceholder')"
-          icon="clear"
-          @click-icon="sms = ''"
         >
           <van-button slot="button" size="small" type="primary">{{ $t('sendSMS') }}</van-button>
         </van-field>
@@ -139,5 +139,9 @@ export default {
 <style lang="postcss">
 .demo-field {
   padding-bottom: 30px;
+
+  .van-field__icon {
+    color: #38f;
+  }
 }
 </style>

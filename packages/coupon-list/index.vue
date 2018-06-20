@@ -2,9 +2,10 @@
   <div :class="b()">
     <cell-group v-if="showExchangeBar" :class="b('top')">
       <field
+        v-model="currentCode"
+        clearable
         :class="b('field')"
         class="van-hairline--surround"
-        v-model="currentCode"
         :placeholder="inputPlaceholder || $t('placeholder')"
         :maxlength="20"
       />

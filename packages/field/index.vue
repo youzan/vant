@@ -8,45 +8,48 @@
     :class="b({
       error,
       disabled: $attrs.disabled,
-      'has-icon': showIcon,
       'min-height': type === 'textarea' && !autosize
     })"
   >
     <slot name="label" slot="title" />
-    <textarea
-      v-if="type === 'textarea'"
-      v-bind="$attrs"
-      v-on="listeners"
-      ref="input"
-      :class="b('control')"
-      :value="value"
-    />
-    <input
-      v-else
-      v-bind="$attrs"
-      v-on="listeners"
-      ref="input"
-      :class="b('control')"
-      :type="type"
-      :value="value"
-    >
+    <div :class="b('body')">
+      <textarea
+        v-if="type === 'textarea'"
+        v-bind="$attrs"
+        v-on="listeners"
+        ref="input"
+        :class="b('control')"
+        :value="value"
+      />
+      <input
+        v-else
+        v-bind="$attrs"
+        v-on="listeners"
+        ref="input"
+        :class="b('control')"
+        :type="type"
+        :value="value"
+      >
+      <icon
+        v-if="showClear"
+        name="clear"
+        :class="b('clear')"
+        @touchstart.prevent="$emit('input', '')"
+      />
+      <div v-if="$slots.icon || icon" :class="b('icon')" @click="onClickIcon">
+        <slot name="icon">
+          <icon :name="icon" />
+        </slot>
+      </div>
+      <div v-if="$slots.button" :class="b('button')">
+        <slot name="button" />
+      </div>
+    </div>
     <div
       v-if="errorMessage"
       v-text="errorMessage"
       :class="b('error-message')"
     />
-    <div
-      v-if="showIcon"
-      :class="b('icon')"
-      @touchstart.prevent="onClickIcon"
-    >
-      <slot name="icon">
-        <icon :name="icon" />
-      </slot>
-    </div>
-    <div v-if="$slots.button" :class="b('button')" slot="extra">
-      <slot name="button" />
-    </div>
   </cell>
 </template>
 
@@ -67,6 +70,7 @@ export default create({
     center: Boolean,
     leftIcon: String,
     required: Boolean,
+    clearable: Boolean,
     onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
@@ -80,6 +84,12 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      focused: false
+    };
+  },
+
   watch: {
     value() {
       this.$nextTick(this.adjustSize);
@@ -91,15 +101,17 @@ export default create({
   },
 
   computed: {
-    showIcon() {
-      return this.$slots.icon || (this.icon && this.value !== '' && this.isDef(this.value));
+    showClear() {
+      return this.clearable && this.focused && this.value !== '' && this.isDef(this.value);
     },
 
     listeners() {
       return {
         ...this.$listeners,
         input: this.onInput,
-        keypress: this.onKeypress
+        keypress: this.onKeypress,
+        focus: this.onFocus,
+        blur: this.onBlur
       };
     }
   },
@@ -111,6 +123,16 @@ export default create({
 
     onInput(event) {
       this.$emit('input', event.target.value);
+    },
+
+    onFocus(event) {
+      this.focused = true;
+      this.$emit('focus', event);
+    },
+
+    onBlur(event) {
+      this.focused = false;
+      this.$emit('blur', event);
     },
 
     onClickIcon() {

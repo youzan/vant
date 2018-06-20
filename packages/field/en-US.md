@@ -25,11 +25,12 @@ Use `type` prop to custom diffrent type fields.
 <van-cell-group>
   <van-field
     v-model="username"
-    label="Username"
-    icon="clear"
-    placeholder="Username"
     required
-    @click-icon="username = ''"
+    clearable
+    label="Username"
+    icon="question"
+    placeholder="Username"
+    @click-icon="$toast('question')"
   />
 
   <van-field
@@ -97,12 +98,11 @@ Use button slot to insert button
 ```html
 <van-cell-group>
   <van-field
-    center
     v-model="sms"
+    center
+    clearable
     label="SMS"
     placeholder="SMS"
-    icon="clear"
-    @click-icon="sms = ''"
   >
     <van-button slot="button" size="small" type="primary">Send SMS</van-button>
   </van-field>
@@ -119,6 +119,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
 | disabled | Disable field | `Boolean` | `false` |
+| clearable | Whether to be clearable | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
 | autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |

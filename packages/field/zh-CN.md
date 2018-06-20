@@ -27,11 +27,12 @@ Vue.use(Field);
 <van-cell-group>
   <van-field
     v-model="username"
-    label="用户名"
-    icon="clear"
-    placeholder="请输入用户名"
     required
-    @click-icon="username = ''"
+    clearable
+    label="用户名"
+    icon="question"
+    placeholder="请输入用户名"
+    @click-icon="$toast('question')"
   />
 
   <van-field
@@ -99,12 +100,11 @@ Vue.use(Field);
 ```html
 <van-cell-group>
   <van-field
-    center
     v-model="sms"
+    center
+    clearable
     label="短信验证码"
     placeholder="请输入短信验证码"
-    icon="clear"
-    @click-icon="sms = ''"
   >
     <van-button slot="button" size="small" type="primary">发送验证码</van-button>
   </van-field>
@@ -121,6 +121,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
+| clearable | 输入框内容是否可清除 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案 | `String` | `''` |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
