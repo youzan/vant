@@ -9,9 +9,12 @@ exports[`create a AddressEdit 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="text" maxlength="15" placeholder="名字" value="" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="text" maxlength="15" placeholder="名字" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
@@ -22,9 +25,12 @@ exports[`create a AddressEdit 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="tel" placeholder="手机或固定电话" value="" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="tel" placeholder="手机或固定电话" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
@@ -35,26 +41,28 @@ exports[`create a AddressEdit 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="text" readonly="readonly" placeholder="收件地区" value="" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="text" readonly="readonly" placeholder="收件地区" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
     </div>
     <div>
-      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field van-field--has-icon">
+      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field">
         <!---->
         <div class="van-cell__title"><span>详细地址</span>
           <!---->
         </div>
         <div class="van-cell__value">
-          <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control"></textarea>
-          <!---->
-          <div class="van-field__icon">
-            <div>
-              <!---->
-            </div>
+          <div class="van-field__body">
+            <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control"></textarea>
+            <!---->
+            <!---->
+            <!---->
           </div>
           <!---->
         </div>
@@ -98,9 +106,12 @@ exports[`create a AddressEdit with props 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="text" maxlength="15" placeholder="名字" value="测试" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="text" maxlength="15" placeholder="名字" value="测试" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
@@ -111,9 +122,12 @@ exports[`create a AddressEdit with props 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="tel" placeholder="手机或固定电话" value="13000000000" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="tel" placeholder="手机或固定电话" value="13000000000" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
@@ -124,26 +138,28 @@ exports[`create a AddressEdit with props 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="text" readonly="readonly" placeholder="收件地区" value="北京市 北京市 朝阳区" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="text" readonly="readonly" placeholder="收件地区" value="北京市 北京市 朝阳区" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->
     </div>
     <div>
-      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field van-field--has-icon">
+      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field">
         <!---->
         <div class="van-cell__title"><span>详细地址</span>
           <!---->
         </div>
         <div class="van-cell__value">
-          <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control">详细地址</textarea>
-          <!---->
-          <div class="van-field__icon">
-            <div>
-              <!---->
-            </div>
+          <div class="van-field__body">
+            <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control">详细地址</textarea>
+            <!---->
+            <!---->
+            <!---->
           </div>
           <!---->
         </div>
@@ -156,9 +172,12 @@ exports[`create a AddressEdit with props 1`] = `
         <!---->
       </div>
       <div class="van-cell__value">
-        <input type="tel" maxlength="6" placeholder="邮政编码" value="10000" class="van-field__control">
-        <!---->
-        <!---->
+        <div class="van-field__body">
+          <input type="tel" maxlength="6" placeholder="邮政编码" value="10000" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
         <!---->
       </div>
       <!---->

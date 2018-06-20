@@ -22,9 +22,12 @@ exports[`renders demo correctly 1`] = `
             <!---->
             <!---->
             <div class="van-cell__value van-cell__value--alone">
-              <input type="text" placeholder="请输入优惠码" maxlength="20" value="" class="van-field__control">
-              <!---->
-              <!---->
+              <div class="van-field__body">
+                <input type="text" placeholder="请输入优惠码" maxlength="20" value="" class="van-field__control">
+                <!---->
+                <!---->
+                <!---->
+              </div>
               <!---->
             </div>
             <!---->

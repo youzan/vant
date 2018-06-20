@@ -24,9 +24,12 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </div>
           <div class="van-cell__value">
-            <input type="text" placeholder="请输入用户名" value="" class="van-field__control">
-            <!---->
-            <!---->
+            <div class="van-field__body">
+              <input type="text" placeholder="请输入用户名" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
             <!---->
           </div>
           <!---->
@@ -37,9 +40,12 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </div>
           <div class="van-cell__value">
-            <input type="password" placeholder="请输入密码" value="" class="van-field__control">
-            <!---->
-            <!---->
+            <div class="van-field__body">
+              <input type="password" placeholder="请输入密码" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
             <!---->
           </div>
           <!---->

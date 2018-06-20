@@ -5,18 +5,22 @@
       ref="field"
       rows="1"
       autosize
+      :clearable="!isAndroid"
       type="textarea"
       maxlength="200"
       :value="value"
       :error="error"
       :label="$t('label')"
       :placeholder="$t('placeholder')"
-      @click-icon="onClickIcon"
     >
-      <div slot="icon">
-        <span v-if="showIcon && isAndroid" :class="b('finish')">{{ $t('complete') }}</span>
-        <icon v-else-if="showIcon" name="clear" />
-      </div>
+      <span
+        v-if="showIcon && isAndroid"
+        slot="icon"
+        :class="b('finish')"
+        @click="$refs.field.blur()"
+      >
+        {{ $t('complete') }}
+      </span>
     </field>
     <cell
       v-if="showSearchList"
@@ -66,14 +70,6 @@ export default create({
   },
 
   methods: {
-    onClickIcon() {
-      if (this.isAndroid) {
-        this.$refs.field.blur();
-      } else {
-        this.$emit('input', '');
-      }
-    },
-
     onSelect(express) {
       this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
       this.$emit('select-search', express);

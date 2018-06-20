@@ -9,6 +9,11 @@
     position: relative;
   }
 
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
   &__control {
     border: 0;
     margin: 0;
@@ -25,17 +30,24 @@
     }
   }
 
-  &__icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    color: $gray-dark;
-    padding: 10px 0 10px 10px;
-    transform: translate3d(0, -50%, 0);
+  &__clear,
+  &__icon,
+  &__button {
+    flex-shrink: 0;
+  }
 
-    .van-icon {
-      display: block;
-    }
+  &__clear,
+  &__icon {
+    padding: 0 10px;
+    color: $gray-dark;
+    line-height: inherit;
+    margin-right: -10px;
+  }
+
+  &__icon .van-icon {
+    display: block;
+    font-size: 16px;
+    line-height: inherit;
   }
 
   &__button {
@@ -66,12 +78,6 @@
   &--min-height {
     .van-field__control {
       min-height: 60px;
-    }
-  }
-
-  &--has-icon {
-    .van-field__control {
-      padding-right: 20px;
     }
   }
 }

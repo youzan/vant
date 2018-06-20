@@ -5,9 +5,12 @@ exports[`render textarea 1`] = `
   <!---->
   <!---->
   <div class="van-cell__value van-cell__value--alone">
-    <textarea class="van-field__control" style="height: auto;"></textarea>
-    <!---->
-    <!---->
+    <div class="van-field__body">
+      <textarea class="van-field__control" style="height: auto;"></textarea>
+      <!---->
+      <!---->
+      <!---->
+    </div>
     <!---->
   </div>
   <!---->

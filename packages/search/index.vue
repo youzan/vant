@@ -4,11 +4,10 @@
     <field
       v-bind="$attrs"
       v-on="listeners"
-      :value="value"
+      clearable
       type="search"
-      icon="clear"
+      :value="value"
       :border="false"
-      @click-icon="$emit('input', '')"
     />
     <div v-if="showAction" :class="b('action')" >
       <slot name="action">

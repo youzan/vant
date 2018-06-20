@@ -21,7 +21,7 @@ test('click icon event', () => {
     }
   });
 
-  wrapper.find('.van-field__icon').trigger('touchstart');
+  wrapper.find('.van-field__icon').trigger('click');
   expect(wrapper.emitted('click-icon')).toBeTruthy();
   expect(onIconClick.mock.calls.length).toBe(1);
 });
@@ -102,11 +102,9 @@ test('autosize object', async() => {
 
 test('blur method', () => {
   const fn = jest.fn();
-  const wrapper = mount(Field, {
-    listeners: {
-      blur: fn
-    }
-  });
+  const wrapper = mount(Field);
+
+  wrapper.vm.$on('blur', fn);
   wrapper.find('input').element.focus();
   wrapper.vm.blur();
 

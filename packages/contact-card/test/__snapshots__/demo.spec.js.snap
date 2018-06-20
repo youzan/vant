@@ -53,9 +53,12 @@ exports[`renders demo correctly 1`] = `
               <!---->
             </div>
             <div class="van-cell__value">
-              <input type="text" maxlength="30" placeholder="张三" class="van-field__control">
-              <!---->
-              <!---->
+              <div class="van-field__body">
+                <input type="text" maxlength="30" placeholder="张三" class="van-field__control">
+                <!---->
+                <!---->
+                <!---->
+              </div>
               <!---->
             </div>
             <!---->
@@ -66,9 +69,12 @@ exports[`renders demo correctly 1`] = `
               <!---->
             </div>
             <div class="van-cell__value">
-              <input type="tel" placeholder="手机或固定电话" class="van-field__control">
-              <!---->
-              <!---->
+              <div class="van-field__body">
+                <input type="tel" placeholder="手机或固定电话" class="van-field__control">
+                <!---->
+                <!---->
+                <!---->
+              </div>
               <!---->
             </div>
             <!---->
