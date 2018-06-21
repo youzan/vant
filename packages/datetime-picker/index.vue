@@ -5,7 +5,7 @@
     :columns="columns"
     :item-height="itemHeight"
     :show-toolbar="showToolbar"
-    :visibie-item-height="visibleItemCount"
+    :visible-item-count="visibleItemCount"
     :confirm-button-text="confirmButtonText"
     :cancel-button-text="cancelButtonText"
     @change="onChange"
