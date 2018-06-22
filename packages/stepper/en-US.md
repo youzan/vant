@@ -64,3 +64,4 @@ export default {
 | overlimit | Triggered when click disabled button | - |
 | plus | Triggered when click plus button | - |
 | minus | Triggered when click minus button | - |
+| blur | Triggered when input blured | - |

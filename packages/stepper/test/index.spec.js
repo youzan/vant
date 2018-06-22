@@ -92,3 +92,25 @@ test('only allow interger', () => {
 
   expect(fn.mock.calls.length).toEqual(1);
 });
+
+test('stepper blur', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 5,
+      min: 3
+    }
+  });
+
+  wrapper.vm.$on('input', value => {
+    wrapper.setProps({ value });
+  });
+
+  const input = wrapper.find('input');
+  input.trigger('blur');
+  input.element.value = '';
+  input.trigger('input');
+  input.trigger('blur');
+
+  expect(wrapper.emitted('input')).toEqual([[''], [3]]);
+  expect(wrapper.emitted('blur')).toBeTruthy();
+});
