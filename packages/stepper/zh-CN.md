@@ -67,3 +67,4 @@ export default {
 | overlimit | 点击不可用的按钮时触发 | - |
 | plus | 点击增加按钮时触发 | - |
 | minus | 点击减少按钮时触发 | - |
+| blur | 输入框失焦时触发 | - |
