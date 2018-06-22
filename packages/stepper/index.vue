@@ -122,12 +122,12 @@ export default create({
       }
     },
 
-    onBlur() {
+    onBlur(event) {
       if (!this.value) {
         this.currentValue = +this.min;
         this.emitInput();
       }
-      this.$emit('blur');
+      this.$emit('blur', event);
     },
 
     emitInput() {
