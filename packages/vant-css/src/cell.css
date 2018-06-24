@@ -58,6 +58,20 @@
     margin-left: 5px;
   }
 
+  &__arrow {
+    &-left::before {
+      transform: rotate(180deg);
+    }
+
+    &-up::before {
+      transform: rotate(-90deg);
+    }
+
+    &-down::before {
+      transform: rotate(90deg);
+    }
+  }
+
   &--clickable {
     &:active {
       background-color: $active-color;
