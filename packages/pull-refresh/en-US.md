@@ -49,6 +49,8 @@ export default {
 | loading-text | Text to show when loading | `String` | `Loading...` |
 | animation-duration | Animation duration | `Number` | `300` |
 | head-height | Height of head | `Number` | `50` |
+| disabled | Whether to disable | `Boolean` | `false` |
+
 
 ### Event
 

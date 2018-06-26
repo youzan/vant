@@ -49,6 +49,7 @@ export default {
 | loading-text | 加载过程中顶部文案 | `String` | `加载中...` |
 | animation-duration | 动画时长 | `Number` | `300` |
 | head-height | 顶部内容高度 | `Number` | `50` |
+| disabled | 是否禁用 | `Boolean` | `false` |
 
 ### Event
 
