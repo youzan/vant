@@ -144,6 +144,14 @@ exports[`renders demo correctly 1`] = `
         <!---->
       </i> <span>sign</span></div>
     <div class="van-col van-col--8">
+      <i class="van-icon van-icon-photo" style="color:undefined;">
+        <!---->
+      </i> <span>photo</span></div>
+    <div class="van-col van-col--8">
+      <i class="van-icon van-icon-idcard" style="color:undefined;">
+        <!---->
+      </i> <span>idcard</span></div>
+    <div class="van-col van-col--8">
       <i class="van-icon van-icon-home" style="color:undefined;">
         <!---->
       </i> <span>home</span></div>
@@ -151,18 +159,6 @@ exports[`renders demo correctly 1`] = `
       <i class="van-icon van-icon-free-postage" style="color:undefined;">
         <!---->
       </i> <span>free-postage</span></div>
-    <div class="van-col van-col--8">
-      <i class="van-icon van-icon-birthday-privilege" style="color:undefined;">
-        <!---->
-      </i> <span>birthday-privilege</span></div>
-    <div class="van-col van-col--8">
-      <i class="van-icon van-icon-member-day-privilege" style="color:undefined;">
-        <!---->
-      </i> <span>member-day-privilege</span></div>
-    <div class="van-col van-col--8">
-      <i class="van-icon van-icon-balance-details" style="color:undefined;">
-        <!---->
-      </i> <span>balance-details</span></div>
     <div class="van-col van-col--8">
       <i class="van-icon van-icon-cash-back-record" style="color:undefined;">
         <!---->
@@ -267,10 +263,6 @@ exports[`renders demo correctly 1`] = `
       <i class="van-icon van-icon-add2" style="color:undefined;">
         <!---->
       </i> <span>add2</span></div>
-    <div class="van-col van-col--8">
-      <i class="van-icon van-icon-photo" style="color:undefined;">
-        <!---->
-      </i> <span>photo</span></div>
     <div class="van-col van-col--8">
       <i class="van-icon van-icon-wechat" style="color:undefined;">
         <!---->
