@@ -1,5 +1,23 @@
 ## 更新日志
 
+### [1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
+`2018-06-22`
+
+**Improvements**
+
+- Actionsheet: 支持禁用选项 [\#1293](https://github.com/youzan/vant/pull/1293)
+- Field: 支持展示清除控件 [\#1309](https://github.com/youzan/vant/pull/1309)
+- Layout: 支持 Flex 布局 [\#1305](https://github.com/youzan/vant/pull/1305)
+- Locale: 新增 TS 类型定义 [\#1294](https://github.com/youzan/vant/pull/1294)
+- Tabbar: 新增 z-index 属性 [\#1310](https://github.com/youzan/vant/pull/1310)
+- Stepper: 输入框失焦且内容为空时，自动补全为最小值 [\#1316](https://github.com/youzan/vant/pull/1316)
+
+**Bug Fixes**
+
+- 修复 DatetimePicker visible-item-count 属性拼写错误 [\#1312](https://github.com/youzan/vant/pull/1312)
+- 修复 Tab 在屏幕尺寸变化时未重新渲染的问题 [\#1304](https://github.com/youzan/vant/pull/1304)
+
+
 ### [1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
 `2018-06-14`
 

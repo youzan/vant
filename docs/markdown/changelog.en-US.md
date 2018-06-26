@@ -1,5 +1,23 @@
 ## Changelog
 
+### [1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
+`2018-06-22`
+
+**Improvements**
+
+- Actionsheet: support disable option [\#1293](https://github.com/youzan/vant/pull/1293)
+- Field: support clearable [\#1309](https://github.com/youzan/vant/pull/1309)
+- Layout: support flex layout [\#1305](https://github.com/youzan/vant/pull/1305)
+- Locale: add type definition [\#1294](https://github.com/youzan/vant/pull/1294)
+- Tabbar: add z-index prop [\#1310](https://github.com/youzan/vant/pull/1310)
+- Stepper: improve blur behavior [\#1316](https://github.com/youzan/vant/pull/1316)
+
+**Bug Fixes**
+
+- fix DatetimePicker visible-item-count prop [\#1312](https://github.com/youzan/vant/pull/1312)
+- fix Tab line resize [\#1304](https://github.com/youzan/vant/pull/1304)
+
+
 ### [1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
 `2018-06-14`
 
