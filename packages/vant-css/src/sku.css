@@ -5,6 +5,7 @@
   &-container {
     font-size: 14px;
     background: $white;
+    overflow-y: visible;
   }
 
   &-body {
