@@ -26,7 +26,7 @@ const ttf = `${config.name}-${md5}.ttf`;
 // should install sketchtool first
 // install guide: https://developer.sketchapp.com/guides/sketchtool/
 shell.exec(
-  `sketchtool export slices --formats=svg --overwriting=YES --save-for-web=YES --output=${svgDir} ${sketch}`
+  `/Applications/Sketch.app/Contents/Resources/sketchtool/bin/sketchtool export slices --formats=svg --overwriting=YES --save-for-web=YES --output=${svgDir} ${sketch}`
 );
 
 // remove previous ttf

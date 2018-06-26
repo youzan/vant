@@ -2,7 +2,7 @@ module.exports = {
   name: 'vant-icon',
   glyphs: [
     {
-      src: '关闭.svg',
+      src: 'close.svg',
       css: 'close'
     },
     {
@@ -26,7 +26,7 @@ module.exports = {
       css: 'question'
     },
     {
-      src: '时钟.svg',
+      src: 'clock.svg',
       css: 'clock'
     },
     {
@@ -74,7 +74,7 @@ module.exports = {
       css: 'exchange'
     },
     {
-      src: '其他分店.svg',
+      src: 'location.svg',
       css: 'location'
     },
     {
@@ -142,24 +142,20 @@ module.exports = {
       css: 'sign'
     },
     {
+      src: 'photo.svg',
+      css: 'photo'
+    },
+    {
+      src: 'idcard.svg',
+      css: 'idcard'
+    },
+    {
       src: '首页.svg',
       css: 'home'
     },
     {
       src: '包邮.svg',
       css: 'free-postage'
-    },
-    {
-      src: '生日特权.svg',
-      css: 'birthday-privilege'
-    },
-    {
-      src: '会员日特权.svg',
-      css: 'member-day-privilege'
-    },
-    {
-      src: '余额明细.svg',
-      css: 'balance-details'
     },
     {
       src: '返现记录.svg',
@@ -264,10 +260,6 @@ module.exports = {
     {
       src: '添加.svg',
       css: 'add2'
-    },
-    {
-      src: '照片.svg',
-      css: 'photo'
     },
     {
       src: '微信支付.svg',
