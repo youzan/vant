@@ -1,8 +1,7 @@
 import ContactCard from '..';
 import ContactList from '../../contact-list';
 import ContactEdit from '../../contact-edit';
-import { mount } from '@vue/test-utils';
-import { later } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 
 const contactInfo = {
   name: 'test',

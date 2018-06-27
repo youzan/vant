@@ -1,6 +1,6 @@
 import Collapse from '..';
 import CollapseItem from '../../collapse-item';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 const component = {
   template: `

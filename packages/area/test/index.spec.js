@@ -1,7 +1,6 @@
 import Area from '..';
-import { mount } from '@vue/test-utils';
 import areaList from '../demo/area.simple';
-import { later, triggerDrag } from '../../../test/utils';
+import { mount, later, triggerDrag } from '../../../test/utils';
 
 const firstOption = [
   { code: '110000', name: '北京市' },

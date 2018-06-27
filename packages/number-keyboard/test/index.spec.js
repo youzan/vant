@@ -1,5 +1,5 @@
 import NumberKeyboard from '../';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 function mockTouch(wrapper, event, keyIndex) {
   const key = wrapper.element.querySelectorAll('.van-key')[keyIndex];

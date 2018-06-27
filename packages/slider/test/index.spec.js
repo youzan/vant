@@ -1,6 +1,5 @@
 import Slider from '..';
-import { mount } from '@vue/test-utils';
-import { triggerDrag, trigger } from '../../../test/utils';
+import { mount, triggerDrag, trigger } from '../../../test/utils';
 
 Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100, left: 0 }));
 

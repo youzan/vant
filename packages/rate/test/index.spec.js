@@ -1,5 +1,5 @@
 import Rate from '../';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('change event', () => {
   const wrapper = mount(Rate, {

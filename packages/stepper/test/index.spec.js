@@ -1,5 +1,5 @@
 import Stepper from '..';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('disabled stepper', () => {
   const wrapper = mount(Stepper, {

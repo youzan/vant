@@ -1,6 +1,5 @@
 import PullRefresh from '..';
-import { mount } from '@vue/test-utils';
-import { trigger, triggerDrag } from '../../../test/utils';
+import { mount, trigger, triggerDrag } from '../../../test/utils';
 
 test('change head content when pulling down', () => {
   const wrapper = mount(PullRefresh, {

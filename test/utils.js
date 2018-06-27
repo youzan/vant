@@ -1,5 +1,12 @@
 import Vue from 'vue';
-import { TransitionStub } from '@vue/test-utils';
+import { mount, TransitionStub } from '@vue/test-utils';
+
+// prevent vue warning log
+Vue.config.silent = true;
+
+export {
+  mount
+};
 
 // Trigger pointer/touch event
 export function trigger(wrapper, eventName, x = 0, y = 0) {

@@ -1,9 +1,7 @@
-import Vue from 'vue';
 import Popup from '../';
-import { mount, TransitionStub } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag, transitionStub } from '../../../test/utils';
 
-Vue.component('transition', TransitionStub);
+transitionStub();
 
 let wrapper;
 afterEach(() => {

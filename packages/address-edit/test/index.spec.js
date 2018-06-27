@@ -1,9 +1,8 @@
 /* eslint-disable camelcase */
-import { mount } from '@vue/test-utils';
 import { renderToString } from '@vue/server-test-utils';
 import AddressEdit from '../';
 import areaList from '../../area/demo/area.simple';
-import { later, transitionStub } from '../../../test/utils';
+import { mount, later, transitionStub } from '../../../test/utils';
 
 transitionStub();
 
