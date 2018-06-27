@@ -39,6 +39,7 @@ export default create({
   mixins: [Touch],
 
   props: {
+    disabled: Boolean,
     pullingText: String,
     loosingText: String,
     loadingText: String,
@@ -70,6 +71,10 @@ export default create({
         transition: `${this.duration}ms`,
         transform: `translate3d(0,${this.height}px, 0)`
       };
+    },
+
+    untouchable() {
+      return this.status === 'loading' || this.disabled;
     }
   },
 
@@ -86,7 +91,7 @@ export default create({
 
   methods: {
     onTouchStart(event) {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
       if (this.getCeiling()) {
@@ -96,7 +101,7 @@ export default create({
     },
 
     onTouchMove(event) {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
 
@@ -117,7 +122,7 @@ export default create({
     },
 
     onTouchEnd() {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
 
