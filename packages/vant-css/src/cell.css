@@ -43,6 +43,12 @@
     &--alone {
       text-align: left;
     }
+
+    .van-checkbox {
+      position: absolute;
+      right: 15px;
+      width: 100%;
+    }
   }
 
   &__left-icon {
