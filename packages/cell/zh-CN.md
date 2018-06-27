@@ -90,7 +90,7 @@ Vue.use(Cell).use(CellGroup);
 | clickable | 是否开启点击反馈 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `right` `up` `down` | `String` | `right` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
 
 ### Cell Event
 

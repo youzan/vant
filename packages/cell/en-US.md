@@ -83,7 +83,7 @@ Vue.use(Cell).use(CellGroup);
 | clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | required | Whether to show required mark | `Boolean` | `false` |
-| arrow-direction | Can be set to `left` `right` `up` `down` | `String` | `right` |
+| arrow-direction | Can be set to `left` `up` `down` | `String` | - |
 
 ### Cell Event
 

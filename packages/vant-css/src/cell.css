@@ -59,15 +59,15 @@
   }
 
   &__arrow {
-    &-left::before {
+    &--left::before {
       transform: rotate(180deg);
     }
 
-    &-up::before {
+    &--up::before {
       transform: rotate(-90deg);
     }
 
-    &-down::before {
+    &--down::before {
       transform: rotate(90deg);
     }
   }
