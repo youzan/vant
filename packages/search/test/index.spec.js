@@ -1,5 +1,5 @@
 import Search from '..';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('listen input event', () => {
   const wrapper = mount(Search);

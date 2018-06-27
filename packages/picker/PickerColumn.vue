@@ -59,7 +59,7 @@ export default create({
   },
 
   created() {
-    this.$parent && this.$parent.children.push(this);
+    this.$parent.children && this.$parent.children.push(this);
   },
 
   mounted() {
@@ -67,7 +67,7 @@ export default create({
   },
 
   destroyed() {
-    this.$parent && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
+    this.$parent.children && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
   },
 
   watch: {

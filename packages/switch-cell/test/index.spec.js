@@ -1,5 +1,5 @@
 import SwitchCell from '..';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('emit event', () => {
   const wrapper = mount(SwitchCell);

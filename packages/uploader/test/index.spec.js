@@ -1,6 +1,5 @@
 import Uploader from '..';
-import { mount } from '@vue/test-utils';
-import { later } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 
 window.File = function() {
   this.size = 10000;

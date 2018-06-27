@@ -1,6 +1,5 @@
 import CellSwipe from '..';
-import { mount } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag } from '../../../test/utils';
 
 const defaultProps = {
   propsData: {

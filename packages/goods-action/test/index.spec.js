@@ -1,6 +1,6 @@
 import BigBtn from '../../goods-action-big-btn';
 import SmallBtn from '../../goods-action-mini-btn';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('big btn click event', () => {
   const wrapper = mount(BigBtn);

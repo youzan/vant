@@ -56,8 +56,8 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "@vue/server-test-utils": "^1.0.0-beta.16",
-    "@vue/test-utils": "^1.0.0-beta.16",
+    "@vue/server-test-utils": "^1.0.0-beta.20",
+    "@vue/test-utils": "^1.0.0-beta.20",
     "autoprefixer": "^8.6.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",

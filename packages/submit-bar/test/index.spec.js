@@ -1,5 +1,5 @@
 import SubmitBar from '../';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('submit', () => {
   const wrapper = mount(SubmitBar, {

@@ -1,7 +1,6 @@
 import Swipe from '..';
 import SwipeItem from '../../swipe-item';
-import { mount } from '@vue/test-utils';
-import { triggerDrag, later } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test/utils';
 
 const Component = {
   template: `

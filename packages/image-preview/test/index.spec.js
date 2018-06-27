@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../image-preview';
-import { mount } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag } from '../../../test/utils';
 
 const images = [
   'https://img.yzcdn.cn/1.png',

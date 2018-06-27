@@ -216,9 +216,9 @@ export default create({
 
     assignAreaValues(values) {
       Object.assign(this.data, {
-        province: values[0].name,
-        city: values[1].name,
-        county: values[2].name
+        province: values[0] ? values[0].name : '',
+        city: values[1] ? values[1].name : '',
+        county: values[2] ? values[2].name : ''
       });
     },
 

@@ -1,6 +1,6 @@
 import Checkbox from '..';
 import CheckboxGroup from '../../checkbox-group';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('switch checkbox', () => {
   const wrapper = mount(Checkbox);

@@ -1,6 +1,5 @@
 import List from '..';
-import { mount } from '@vue/test-utils';
-import { later } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 
 test('load event', async() => {
   const wrapper = mount(List);

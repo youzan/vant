@@ -1,5 +1,5 @@
 import Progress from '../';
-import { mount } from '@vue/test-utils';
+import { mount } from '../../../test/utils';
 
 test('calc width', () => {
   const wrapper = mount(Progress, {

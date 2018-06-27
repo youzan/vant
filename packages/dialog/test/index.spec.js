@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Dialog from '..';
 import DialogVue from '../dialog';
-import { mount } from '@vue/test-utils';
-import { later, transitionStub } from '../../../test/utils';
+import { mount, later, transitionStub } from '../../../test/utils';
 
 transitionStub();
 

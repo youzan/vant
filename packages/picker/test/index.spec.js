@@ -1,7 +1,6 @@
 import Picker from '../';
 import PickerColumn from '../PickerColumn';
-import { mount } from '@vue/test-utils';
-import { triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag } from '../../../test/utils';
 
 const simpleColumn = ['1990', '1991', '1992', '1993', '1994', '1995'];
 const columns = [
