@@ -9,6 +9,7 @@
     :class="b({
       error,
       disabled: $attrs.disabled,
+      [labelAlign]: labelAlign,
       'min-height': type === 'textarea' && !autosize
     })"
   >
@@ -73,6 +74,7 @@ export default create({
     leftIcon: String,
     required: Boolean,
     clearable: Boolean,
+    labelAlign: String,
     inputAlign: String,
     onIconClick: Function,
     autosize: [Boolean, Object],
