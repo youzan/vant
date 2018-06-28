@@ -4,6 +4,7 @@
     :title="label"
     :center="center"
     :border="border"
+    :is-link="isLink"
     :required="required"
     :class="b({
       error,
@@ -68,6 +69,7 @@ export default create({
     label: String,
     error: Boolean,
     center: Boolean,
+    isLink: Boolean,
     leftIcon: String,
     required: Boolean,
     clearable: Boolean,

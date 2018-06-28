@@ -125,6 +125,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
 | icon | Right side icon name | `String` | - |
 | left-icon | Left side icon name | `String` | - |
+| is-link | Whether to show link icon | `Boolean` | `false` |
 
 ### Event
 
