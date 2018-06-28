@@ -9,6 +9,7 @@
     :class="b({
       error,
       disabled: $attrs.disabled,
+      [labelAlign]: labelAlign,
       'min-height': type === 'textarea' && !autosize
     })"
   >
@@ -19,7 +20,7 @@
         v-bind="$attrs"
         v-on="listeners"
         ref="input"
-        :class="b('control')"
+        :class="b('control', inputAlign)"
         :value="value"
       />
       <input
@@ -27,7 +28,7 @@
         v-bind="$attrs"
         v-on="listeners"
         ref="input"
-        :class="b('control')"
+        :class="b('control', inputAlign)"
         :type="type"
         :value="value"
       >
@@ -73,6 +74,8 @@ export default create({
     leftIcon: String,
     required: Boolean,
     clearable: Boolean,
+    labelAlign: String,
+    inputAlign: String,
     onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
