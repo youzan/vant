@@ -121,6 +121,7 @@ export default create({
     onChange(currentValue) {
       const { handleStepperChange } = this.customStepperConfig;
       handleStepperChange && handleStepperChange(currentValue);
+      this.$emit('change', currentValue);
     }
   }
 });

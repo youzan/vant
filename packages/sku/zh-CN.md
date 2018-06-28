@@ -109,6 +109,7 @@ Vue.use(Sku);
 |-----------|-----------|-----------|
 | add-cart | 点击添加购物车回调 | skuData: Object |
 | buy-clicked | 点击购买回调 | skuData: Object |
+| stepper-change | 购买数量变化时触发 | value: number |
 
 ### 方法
 
