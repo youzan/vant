@@ -28,7 +28,7 @@
       </slot>
     </div>
     <slot name="right-icon">
-      <icon v-if="isLink" :class="b('right-icon')" name="arrow" />
+      <icon v-if="isLink" :class="`${b('right-icon')} ${arrowDirection ? b(`arrow--${arrowDirection}`) : ''}`" name="arrow" />
     </slot>
     <slot name="extra" />
   </div>
@@ -60,7 +60,8 @@ export default create({
     border: {
       type: Boolean,
       default: true
-    }
+    },
+    arrowDirection: String
   },
 
   methods: {
