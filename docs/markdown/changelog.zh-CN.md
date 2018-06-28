@@ -1,5 +1,28 @@
 ## 更新日志
 
+### [1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
+`2018-06-28`
+
+**Breaking changes**
+
+- Icon: 移除 birthday-privilege、member-day-privilege、balance-details [\#1331](https://github.com/youzan/vant/pull/1331)
+
+**Improvements**
+
+- Cell: 新增 arrow-direction 属性 [\#1323](https://github.com/youzan/vant/pull/1323)
+- Field: 新增 is-link 属性 [\#1347](https://github.com/youzan/vant/pull/1347)
+- Field: 新增 input-align 属性 [\#1352](https://github.com/youzan/vant/pull/1352)
+- Field: 新增 label-align 属性 [\#1353](https://github.com/youzan/vant/pull/1353)
+- Icon: 新增 idcard 图标 [\#1331](https://github.com/youzan/vant/pull/1331)
+- Sku: 新增 stepper-change 事件 [\#1349](https://github.com/youzan/vant/pull/1349)
+- PullRefresh: 新增 disabled 属性 [\#1336](https://github.com/youzan/vant/pull/1336)
+
+**Bug Fixes**
+
+- 修复 List 不可见时依旧会触发 load 事件的问题 [\#1345](https://github.com/youzan/vant/pull/1345)
+- 修复 Sku 图片截断问题 [\#1334](https://github.com/youzan/vant/pull/1334)
+
+
 ### [1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
 `2018-06-22`
 
