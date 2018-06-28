@@ -125,6 +125,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
+| label-align | Label text align, can be set to `center` `right` | `String` | `left` |
 | input-align | Input text align, can be set to `center` `right` | `String` | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
 | icon | Right side icon name | `String` | - |

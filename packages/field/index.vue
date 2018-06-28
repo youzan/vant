@@ -9,7 +9,7 @@
     :class="b({
       error,
       disabled: $attrs.disabled,
-      [labelAlign]: labelAlign,
+      [`label-${labelAlign}`]: labelAlign,
       'min-height': type === 'textarea' && !autosize
     })"
   >
