@@ -108,6 +108,8 @@ Vue.use(Sku);
 |-----------|-----------|-----------|
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |
+| stepper-change | Triggered when stepper value changed | value: number |
+
 
 ### Methods
 
