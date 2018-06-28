@@ -118,14 +118,16 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | value | Field value | `String | Number` | - |
 | label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
-| disabled | Disable field | `Boolean` | `false` |
+| border | Whether to show inner border | `Boolean` | `true` |
+| disabled | Whether to disable field | `Boolean` | `false` |
 | clearable | Whether to be clearable | `Boolean` | `false` |
+| required | Whether to show required mark | `Boolean` | `false` 
+| is-link | Whether to show link icon | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
 | autosize | Textarea auto resize，can accpet an object, e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
 | icon | Right side icon name | `String` | - |
 | left-icon | Left side icon name | `String` | - |
-| is-link | Whether to show link icon | `Boolean` | `false` |
 
 ### Event
 
