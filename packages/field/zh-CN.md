@@ -117,7 +117,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| label | 标签 | `String` | - |
+| label | 输入框左侧文本 | `String` | - |
 | value | 当前输入的值 | `String | Number` | - |
 | type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
 | border | 是否显示内边框 | `Boolean` | `true` |
@@ -127,6 +127,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
+| label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
 | icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |

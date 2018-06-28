@@ -89,4 +89,18 @@
       min-height: 60px;
     }
   }
+
+  &--label {
+    &-center {
+      .van-cell__title {
+        text-align: center;
+      }
+    }
+
+    &-right {
+      .van-cell__title {
+        text-align: right;
+      }
+    }
+  }
 }
