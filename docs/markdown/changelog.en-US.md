@@ -1,5 +1,28 @@
 ## Changelog
 
+### [1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
+`2018-06-28`
+
+**Breaking changes**
+
+- Icon: remove birthday-privilege、member-day-privilege、balance-details [\#1331](https://github.com/youzan/vant/pull/1331)
+
+**Improvements**
+
+- Cell: add arrow-direction prop [\#1323](https://github.com/youzan/vant/pull/1323)
+- Field: add is-link prop [\#1347](https://github.com/youzan/vant/pull/1347)
+- Field: add input-align prop [\#1352](https://github.com/youzan/vant/pull/1352)
+- Field: add label-align prop [\#1353](https://github.com/youzan/vant/pull/1353)
+- Icon: add idcard icon [\#1331](https://github.com/youzan/vant/pull/1331)
+- Sku: add stepper-change event [\#1349](https://github.com/youzan/vant/pull/1349)
+- PullRefresh: add disabled prop [\#1336](https://github.com/youzan/vant/pull/1336)
+
+**Bug Fixes**
+
+- fix List visibility check [\#1345](https://github.com/youzan/vant/pull/1345)
+- fix Sku image clip [\#1334](https://github.com/youzan/vant/pull/1334)
+
+
 ### [1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
 `2018-06-22`
 

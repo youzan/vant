@@ -1,5 +1,52 @@
 ## 更新日志
 
+## [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10) (2018-06-28)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.9...v1.1.10)
+
+**Breaking changes**
+
+- Stepper 步进器 [\#1315](https://github.com/youzan/vant/issues/1315)
+- 头部底部无法固定、底部被内容遮挡 [\#1300](https://github.com/youzan/vant/issues/1300)
+- Tab 标签页在视窗宽度变化后，没有自适应地  重新计算  底部条的位置 [\#1299](https://github.com/youzan/vant/issues/1299)
+- Field 里面的 slot 如果是 van-icon的话，点击触发区域偏离 [\#1249](https://github.com/youzan/vant/issues/1249)
+
+**Issue**
+
+- Stepper 的事件如何传递参数？ [\#1346](https://github.com/youzan/vant/issues/1346)
+- Area地址可以不可以更新到最新版的？ [\#1341](https://github.com/youzan/vant/issues/1341)
+- line-width支持根据标题宽度自适应 [\#1339](https://github.com/youzan/vant/issues/1339)
+- 折叠面板问题不能动态循环数据后指定打开某一项面板 [\#1335](https://github.com/youzan/vant/issues/1335)
+- van-row type="flex"  设置为flex布局，没有效果 [\#1333](https://github.com/youzan/vant/issues/1333)
+- Vant is not defined [\#1330](https://github.com/youzan/vant/issues/1330)
+- AddressEdit组件show-delete设置false也无法阻止按钮显示 版本1.1.9 [\#1329](https://github.com/youzan/vant/issues/1329)
+- Android Chrome里绝对定位组件\(van-goods-action,van-tabbar\)触摸位置发生偏移 [\#1328](https://github.com/youzan/vant/issues/1328)
+- 每次升级后之前的组件都会遇到问题 [\#1325](https://github.com/youzan/vant/issues/1325)
+- Dialog 无法使用组件的高级用法，方法调用正常 [\#1324](https://github.com/youzan/vant/issues/1324)
+- CDN 引入 list 控件异步加载数据后不能控制状态 [\#1322](https://github.com/youzan/vant/issues/1322)
+- 请问picker打开时的默认值是怎么设置的呢？ [\#1321](https://github.com/youzan/vant/issues/1321)
+- nuxt框架用List滚动底部load失效 [\#1320](https://github.com/youzan/vant/issues/1320)
+- 使用vue-cli 3.0 构建项目 定制主题 [\#1319](https://github.com/youzan/vant/issues/1319)
+- toast clear mask [\#1318](https://github.com/youzan/vant/issues/1318)
+- 1.1.9版本，直接使用http导入js和css文件，在大部分浏览器上（iphone/android/PC）,按钮无法显示。在mac上正常 [\#1317](https://github.com/youzan/vant/issues/1317)
+- 自定义 ICON 和自带 ICON 加载错误 [\#1298](https://github.com/youzan/vant/issues/1298)
+
+**Improvements**
+
+- \[Improvement\] Field label align [\#1353](https://github.com/youzan/vant/pull/1353) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: input text align [\#1352](https://github.com/youzan/vant/pull/1352) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Field: props doc [\#1350](https://github.com/youzan/vant/pull/1350) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Sku: add stepper-change event [\#1349](https://github.com/youzan/vant/pull/1349) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Field: add is-link prop [\#1347](https://github.com/youzan/vant/pull/1347) ([chenjiahan](https://github.com/chenjiahan))
+-  \[bugfix\] List: visibility check [\#1345](https://github.com/youzan/vant/pull/1345) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Lazyload register [\#1344](https://github.com/youzan/vant/pull/1344) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Cell arrow [\#1343](https://github.com/youzan/vant/pull/1343) ([chenjiahan](https://github.com/chenjiahan))
+- bump vue-test-utils [\#1338](https://github.com/youzan/vant/pull/1338) ([chenjiahan](https://github.com/chenjiahan))
+- update dependencies [\#1337](https://github.com/youzan/vant/pull/1337) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] PullRefresh: add disabled prop [\#1336](https://github.com/youzan/vant/pull/1336) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Sku: image clip [\#1334](https://github.com/youzan/vant/pull/1334) ([chenjiahan](https://github.com/chenjiahan))
+- \[Imprvement\] Icon: add idcard icon and remove three icon [\#1331](https://github.com/youzan/vant/pull/1331) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Cell: add arrow-direction prop [\#1323](https://github.com/youzan/vant/pull/1323) ([Fyerl](https://github.com/Fyerl))
+
 ## [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9) (2018-06-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.8...v1.1.9)
 
@@ -143,13 +190,6 @@
 **Breaking changes**
 
 - 在van-pull-refresh内通过组件形式来调用 Dialog，dialog内容显示异常 [\#1171](https://github.com/youzan/vant/issues/1171)
-- treeSelect的active-id参数类型校验建议不要限制为Number [\#1120](https://github.com/youzan/vant/issues/1120)
-- 是否可以再优化下van-progress组件，谢谢 [\#1111](https://github.com/youzan/vant/issues/1111)
-- 自定义数字键盘没有完成按钮的点击事件 [\#1110](https://github.com/youzan/vant/issues/1110)
-
-**Bug Fixes**
-
-- 行动按钮 弹出层上面  使用请提示toast，在禁止背景点击的时候会出现 遮罩层关闭 [\#1116](https://github.com/youzan/vant/issues/1116)
 
 **Issue**
 
@@ -183,11 +223,6 @@
 - Tab 和 List 组件一起使用时，List 组件 onscroll 事件同时触发 [\#1151](https://github.com/youzan/vant/issues/1151)
 - vant添加下拉刷新组件后Tab组件无法吸顶 [\#1146](https://github.com/youzan/vant/issues/1146)
 - AddressList 地址列表 组件 前面的radio是否设置可以选？ [\#1144](https://github.com/youzan/vant/issues/1144)
-- vant-list 计算高度的公式有歧义. [\#1140](https://github.com/youzan/vant/issues/1140)
-- van-swipe bug [\#1132](https://github.com/youzan/vant/issues/1132)
-- 添加“点赞”图标，实心和空心 [\#1121](https://github.com/youzan/vant/issues/1121)
-- rem布局很多组建样式都乱了 [\#1118](https://github.com/youzan/vant/issues/1118)
-- AddressEdit 没有onChange事件，希望能尽快增加上， [\#1114](https://github.com/youzan/vant/issues/1114)
 
 **Improvements**
 
@@ -224,21 +259,6 @@
 **Issue**
 
 - PC端打开页面时，无法滑动日期控件 [\#1145](https://github.com/youzan/vant/issues/1145)
-- https://www.youzanyun.com/zanui/vant/examples\#/zh-CN/ [\#1143](https://github.com/youzan/vant/issues/1143)
-- hello vant，这不是一个issues 这是一个吐槽- [\#1139](https://github.com/youzan/vant/issues/1139)
-- 有没有供设计参考的psd文件和规范呢 [\#1137](https://github.com/youzan/vant/issues/1137)
-- 请问 源码中  :class="b\(\)"  这个b 是怎么导入的? [\#1134](https://github.com/youzan/vant/issues/1134)
-- 使用全部导入组件方式，轮播图组件用懒加载报错 [\#1133](https://github.com/youzan/vant/issues/1133)
-- 建议area组件添加pc鼠标事件 [\#1131](https://github.com/youzan/vant/issues/1131)
-- Rate组件使用出错 [\#1130](https://github.com/youzan/vant/issues/1130)
-- 内置图标在手机浏览器上正常显示，PC浏览器部分无法显示 [\#1129](https://github.com/youzan/vant/issues/1129)
-- 自定义图标在哪里添加ttf文件 [\#1128](https://github.com/youzan/vant/issues/1128)
-- List能否增加一个初始化位置的设置~ [\#1125](https://github.com/youzan/vant/issues/1125)
-- 优惠券组件是否支持多选? [\#1123](https://github.com/youzan/vant/issues/1123)
-- Uploader 图片上传，有图片压缩功能吗 [\#1122](https://github.com/youzan/vant/issues/1122)
-- cell在某些分辨率边框显示不全。 两个框的高度显示一条border [\#1119](https://github.com/youzan/vant/issues/1119)
-- cellswiper样式丢失 [\#1115](https://github.com/youzan/vant/issues/1115)
-- van-radio组件，文字多了之后会使radio错位 [\#1113](https://github.com/youzan/vant/issues/1113)
 
 **Improvements**
 
@@ -247,18 +267,6 @@
 - update dependencies [\#1149](https://github.com/youzan/vant/pull/1149) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Dialog: prevent button text select [\#1148](https://github.com/youzan/vant/pull/1148) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Field: normalize input margin in safari [\#1147](https://github.com/youzan/vant/pull/1147) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Picker: update unselected option color [\#1142](https://github.com/youzan/vant/pull/1142) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix field wrong spelling [\#1141](https://github.com/youzan/vant/pull/1141) ([chenjiahan](https://github.com/chenjiahan))
--  \[Improvement\] Popup: support lazy render [\#1138](https://github.com/youzan/vant/pull/1138) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Progress: pivot shouldn't cross border [\#1135](https://github.com/youzan/vant/pull/1135) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] NumberKeyboard: add close event [\#1127](https://github.com/youzan/vant/pull/1127) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] TreeSelect: support string type id [\#1126](https://github.com/youzan/vant/pull/1126) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix dialog document [\#1124](https://github.com/youzan/vant/pull/1124) ([zhangxiaoshang](https://github.com/zhangxiaoshang))
-- \[Improvement\] optimize babel plugin [\#1117](https://github.com/youzan/vant/pull/1117) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] reduce scroll utils [\#1112](https://github.com/youzan/vant/pull/1112) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] optimize isDef [\#1109](https://github.com/youzan/vant/pull/1109) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] use es entry file [\#1108](https://github.com/youzan/vant/pull/1108) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] add gzip size badge [\#1107](https://github.com/youzan/vant/pull/1107) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4) (2018-05-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.3...v1.1.4)
