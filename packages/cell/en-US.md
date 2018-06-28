@@ -40,6 +40,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell-group>
   <van-cell title="Cell title" is-link />
   <van-cell title="Cell title" is-link value="Content" />
+  <van-cell title="Cell title" is-link arrow-direction="down" value="Content" />
 </van-cell-group>
 ```
 
@@ -82,6 +83,7 @@ Vue.use(Cell).use(CellGroup);
 | clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | required | Whether to show required mark | `Boolean` | `false` |
+| arrow-direction | Can be set to `left` `up` `down` | `String` | - |
 
 ### Cell Event
 

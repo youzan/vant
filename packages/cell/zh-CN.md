@@ -40,12 +40,13 @@ Vue.use(Cell).use(CellGroup);
 
 
 #### 展示箭头
-传入`is-link`属性则会在右侧显示箭头
+传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
 
 ```html
 <van-cell-group>
   <van-cell title="单元格" is-link />
   <van-cell title="单元格" is-link value="内容" />
+  <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
 </van-cell-group>
 ```
 
@@ -89,6 +90,7 @@ Vue.use(Cell).use(CellGroup);
 | clickable | 是否开启点击反馈 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
 
 ### Cell Event
 

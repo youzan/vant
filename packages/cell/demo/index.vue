@@ -23,6 +23,7 @@
       <van-cell-group>
         <van-cell :title="$t('cell')" is-link />
         <van-cell :title="$t('cell')" is-link :value="$t('content')" />
+        <van-cell :title="$t('cell')" is-link arrow-direction="down" :value="$t('content')" />
       </van-cell-group>
     </demo-block>
 
