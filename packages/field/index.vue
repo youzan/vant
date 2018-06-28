@@ -19,7 +19,7 @@
         v-bind="$attrs"
         v-on="listeners"
         ref="input"
-        :class="b('control')"
+        :class="b('control', inputAlign)"
         :value="value"
       />
       <input
@@ -27,7 +27,7 @@
         v-bind="$attrs"
         v-on="listeners"
         ref="input"
-        :class="b('control')"
+        :class="b('control', inputAlign)"
         :type="type"
         :value="value"
       >
@@ -73,6 +73,7 @@ export default create({
     leftIcon: String,
     required: Boolean,
     clearable: Boolean,
+    inputAlign: String,
     onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,

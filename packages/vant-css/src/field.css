@@ -29,6 +29,14 @@
       color: $gray-darker;
       background-color: transparent;
     }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 
   &__clear,

@@ -15,6 +15,7 @@
           clearable
           icon="question"
           required
+          input-align="center"
           @click-icon="$toast('question')"
         />
 

@@ -127,7 +127,8 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
 | error | 是否将输入内容标红 | `Boolean` | `false` |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象，如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
 | icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
 | left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
 
