@@ -28,7 +28,7 @@
       </slot>
     </div>
     <slot name="right-icon">
-      <icon v-if="isLink" :class="`${b('right-icon')} ${arrowDirection ? b(`arrow--${arrowDirection}`) : ''}`" name="arrow" />
+      <icon v-if="isLink" :class="[b('right-icon', arrowDirection)]" name="arrow" />
     </slot>
     <slot name="extra" />
   </div>
@@ -57,11 +57,11 @@ export default create({
     clickable: Boolean,
     title: [String, Number],
     value: [String, Number],
+    arrowDirection: String,
     border: {
       type: Boolean,
       default: true
-    },
-    arrowDirection: String
+    }
   },
 
   methods: {

@@ -56,9 +56,7 @@
     font-size: 12px;
     line-height: 24px;
     margin-left: 5px;
-  }
 
-  &__arrow {
     &--left::before {
       transform: rotate(180deg);
     }
