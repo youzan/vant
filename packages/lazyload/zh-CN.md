@@ -2,12 +2,13 @@
 
 ### 使用指南
 
-`Lazyload`是`Vue`指令，所以需要使用它必须将它注册到`Vue`的指令中。
+`Lazyload` 是 `Vue` 指令，使用前需要对指令进行注册
 
 ```js
 import Vue from 'vue';
 import { Lazyload } from 'vant';
 
+// options 为可选参数，无则不传
 Vue.use(Lazyload, options);
 ```
 
