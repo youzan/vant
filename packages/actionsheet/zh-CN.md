@@ -77,6 +77,7 @@ export default {
 | cancel-text | 取消按钮文字 | `String` | - |
 | overlay | 是否显示遮罩层 | `Boolean` | - |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
+| lazy-render | 是否在首次显示弹层时才渲染 DOM 节点 | `Boolean` | `true` |
 | get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
 
 ### Event
