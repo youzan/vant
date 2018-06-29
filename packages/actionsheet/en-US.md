@@ -74,6 +74,7 @@ Actionsheet will get another style if there is a `title` prop.
 | cancel-text | Text of cancel button | `String` | - |
 | overlay | Whether to show overlay | `Boolean` | - |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | - |
+| lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
 | get-container | Return the mount node for actionsheet | `() => HTMLElement` | - |
 
 ### Event

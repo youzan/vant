@@ -5,6 +5,7 @@ test('callback events', () => {
   const callback = jest.fn();
   const wrapper = mount(Actionsheet, {
     propsData: {
+      value: true,
       actions: [
         { name: 'Option', callback },
         { name: 'Option' }

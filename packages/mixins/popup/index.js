@@ -26,11 +26,29 @@ export default {
     lockScroll: {
       type: Boolean,
       default: true
+    },
+    // whether to lazy render
+    lazyRender: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      inited: this.value
+    };
+  },
+
+  computed: {
+    shouldRender() {
+      return this.inited || !this.lazyRender;
     }
   },
 
   watch: {
     value(val) {
+      this.inited = this.inited || this.value;
       this[val ? 'open' : 'close']();
     },
 
