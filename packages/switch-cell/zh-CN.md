@@ -56,6 +56,7 @@ export default {
 | title | 左侧标题 |  `String` | `''` |
 | loading | 是否为加载状态 |  `Boolean` | `false` |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` |
+| size | 开关尺寸 | `String` | `26px` |
 
 ### Event
 
