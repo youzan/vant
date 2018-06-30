@@ -54,8 +54,9 @@ use `loading` property to keep component in loading state
 |-----------|-----------|-----------|-------------|
 | v-model | on-off state of the switch | `Boolean` | - |
 | title | the leftside title |  `String` | `''` |
-| loading | whether the component is in loading state |  `Boolean` | `false` |
-| disabled | whether to disable the component |  `Boolean` | `false` |
+| loading | whether switch is loading |  `Boolean` | `false` |
+| disabled | whether to disable switch |  `Boolean` | `false` |
+| size | Size of switch | `String` | `26px` |
 
 ### Event
 
