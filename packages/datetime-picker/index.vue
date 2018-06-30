@@ -259,8 +259,11 @@ export default create({
       }
       value = this.correctValue(value);
       this.innerValue = value;
+
       this.$nextTick(() => {
-        this.$emit('change', picker);
+        this.$nextTick(() => {
+          this.$emit('change', picker);
+        });
       });
     },
 
@@ -290,15 +293,8 @@ export default create({
       }
 
       this.$nextTick(() => {
-        this.setColumnByValues(values);
+        this.$refs.picker.setValues(values);
       });
-    },
-
-    setColumnByValues(values) {
-      if (!this.$refs.picker) {
-        return;
-      }
-      this.$refs.picker.setValues(values);
     }
   },
 
