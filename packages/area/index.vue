@@ -127,7 +127,9 @@ export default create({
       if (index === 0) {
         const cityList = this.getList('city', code.slice(0, 2));
         picker.setColumnValues(1, cityList);
-        code = cityList[0].code;
+        if (cityList.length) {
+          code = cityList[0].code;
+        }
       }
 
       picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
