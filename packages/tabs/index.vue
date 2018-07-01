@@ -97,6 +97,7 @@ export default create({
 
     tabs(tabs) {
       this.correctActive(this.curActive || this.active);
+      this.scrollIntoView();
       this.setLine();
     },
 
