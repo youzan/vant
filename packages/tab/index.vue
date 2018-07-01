@@ -49,7 +49,10 @@ export default create({
 
   created() {
     this.findParent('van-tabs');
-    this.parent.tabs.push(this);
+
+    const { tabs } = this.parent;
+    const index = this.parent.$slots.default.indexOf(this.$vnode);
+    tabs.splice(index === -1 ? tabs.length : index, 0, this);
   },
 
   mounted() {
