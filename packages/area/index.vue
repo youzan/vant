@@ -6,7 +6,7 @@
     value-key="name"
     :title="title"
     :loading="loading"
-    :columns="columns"
+    :columns="displayColumns"
     :item-height="itemHeight"
     :visible-item-count="visibleItemCount"
     @change="onChange"
@@ -18,7 +18,6 @@
 <script>
 import create from '../utils/create';
 import Picker from '../picker';
-import { isObj } from '../utils';
 
 export default create({
   name: 'area',
@@ -40,60 +39,58 @@ export default create({
     }
   },
 
+  data() {
+    return {
+      code: this.value,
+      columns: [{ values: [] }, { values: [] }, { values: [] }]
+    };
+  },
+
   computed: {
-    listValid() {
-      return this.areaList && isObj(this.areaList.province_list);
+    province() {
+      return this.areaList.province_list || {};
     },
 
-    columns() {
-      if (!this.listValid) {
-        return [];
-      }
+    city() {
+      return this.areaList.city_list || {};
+    },
 
-      const code = this.getCode();
-      return [
-        { values: this.getList('province') },
-        { values: this.getList('city', code.slice(0, 2)) },
-        { values: this.getList('county', code.slice(0, 4)) }
-      ].slice(0, +this.columnsNum);
+    county() {
+      return this.areaList.county_list || {};
+    },
+
+    displayColumns() {
+      return this.columns.slice(0, +this.columnsNum);
     }
   },
 
   watch: {
-    columns: {
+    value() {
+      this.code = this.value;
+    },
+
+    code() {
+      this.setValues();
+    },
+
+    areaList: {
+      deep: true,
+      immediate: true,
       handler() {
-        this.$nextTick(this.setIndex);
-      },
-      immediate: true
+        this.$nextTick(this.setValues);
+      }
     }
   },
 
   methods: {
-    setIndex() {
-      const code = this.getCode();
-      this.$refs.picker && this.$refs.picker.setIndexes([
-        this.getIndex('province', code),
-        this.getIndex('city', code),
-        this.getIndex('county', code)
-      ]);
-    },
-
-    getCode() {
-      return (
-        this.value ||
-        (this.listValid && Object.keys(this.areaList.county_list)[0]) ||
-        ''
-      );
-    },
-
     // get list by code
     getList(type, code) {
       let result = [];
-      if (!this.listValid || (type !== 'province' && !code)) {
+      if (type !== 'province' && !code) {
         return result;
       }
 
-      const list = this.areaList[`${type}_list`];
+      const list = this[type];
       result = Object.keys(list).map(code => ({
         code,
         name: list[code]
@@ -122,18 +119,37 @@ export default create({
     },
 
     onChange(picker, values, index) {
-      let code = values[index].code;
+      this.code = values[index].code;
+      this.$nextTick(() => {
+        this.$emit('change', picker, values, index);
+      });
+    },
 
-      if (index === 0) {
-        const cityList = this.getList('city', code.slice(0, 2));
-        picker.setColumnValues(1, cityList);
-        if (cityList.length) {
-          code = cityList[0].code;
-        }
+    setValues() {
+      let code = this.code || Object.keys(this.county)[0] || '';
+      const { picker } = this.$refs;
+      const province = this.getList('province');
+      const city = this.getList('city', code.slice(0, 2));
+
+      if (!picker) {
+        return;
+      }
+
+      picker.setColumnValues(0, province);
+      picker.setColumnValues(1, city);
+
+      if (city.length && code.slice(2, 4) === '00') {
+        code = city[0].code;
       }
 
       picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
-      this.$emit('change', picker, values, index);
+      this.$nextTick(() => {
+        picker.setIndexes([
+          this.getIndex('province', code),
+          this.getIndex('city', code),
+          this.getIndex('county', code)
+        ]);
+      });
     },
 
     getValues() {
