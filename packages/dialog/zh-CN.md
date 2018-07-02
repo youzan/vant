@@ -79,7 +79,7 @@ export default {
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | lockScroll | 是否锁定背景滚动 | `Boolean` | `true` |
-| beforeClose | 关闭前的回调函数，调用 done 后关闭弹窗 | (action: string, done: function) => void | - |
+| beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 可以阻止弹窗关闭 | (action: string, done: function) => void | - |
 
 
 #### 高级用法
@@ -143,7 +143,7 @@ export default {
 | overlay | 是否展示蒙层 | `Boolean` | `true` |
 | close-on-click-overlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` |
-| before-close | 关闭前的回调函数，调用 done 后关闭弹窗 | (action: string, done: function) => void | - |
+| before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 可以阻止弹窗关闭 | (action: string, done: function) => void | - |
 | get-container | 指定弹窗挂载的 HTML 节点 | `() => HTMLElement` | - |
 
 ### Event
