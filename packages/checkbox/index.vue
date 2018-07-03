@@ -10,7 +10,7 @@
       }]"
       @click="onClick"
     />
-    <span v-if="$slots.default" :class="b('label')" @click="onClick('label')">
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClick('label')">
       <slot />
     </span>
   </div>
@@ -29,6 +29,7 @@ export default create({
     name: null,
     value: null,
     disabled: Boolean,
+    labelPosition: String,
     labelDisabled: {
       type: Boolean,
       default: false
