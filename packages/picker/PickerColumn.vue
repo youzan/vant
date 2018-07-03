@@ -25,6 +25,7 @@
 
 <script>
 import create from '../utils/create';
+import deepClone from '../utils/deep-clone';
 import { isObj } from '../utils';
 
 const DEFAULT_DURATION = 200;
@@ -38,7 +39,7 @@ export default create({
     className: String,
     itemHeight: Number,
     visibleItemCount: Number,
-    options: {
+    initialOptions: {
       type: Array,
       default: () => []
     },
@@ -54,15 +55,13 @@ export default create({
       offset: 0,
       duration: 0,
       startOffset: 0,
+      options: deepClone(this.initialOptions),
       currentIndex: this.defaultIndex
     };
   },
 
   created() {
     this.$parent.children && this.$parent.children.push(this);
-  },
-
-  mounted() {
     this.setIndex(this.currentIndex);
   },
 
@@ -73,12 +72,6 @@ export default create({
   watch: {
     defaultIndex() {
       this.setIndex(this.defaultIndex);
-    },
-
-    options(next, prev) {
-      if (JSON.stringify(next) !== JSON.stringify(prev)) {
-        this.setIndex(0);
-      }
     }
   },
 
@@ -103,10 +96,6 @@ export default create({
         transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
         lineHeight: this.itemHeight + 'px'
       };
-    },
-
-    currentValue() {
-      return this.options[this.currentIndex];
     }
   },
 
@@ -168,10 +157,13 @@ export default create({
       const { options } = this;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
-          this.setIndex(i);
-          return;
+          return this.setIndex(i);
         }
       }
+    },
+
+    getValue() {
+      return this.options[this.currentIndex];
     }
   }
 });

@@ -26,9 +26,9 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column" style="height:220px;">
-          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
-            <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled van-picker-column__item--selected">杭州</li>
-            <li class="van-ellipsis van-picker-column__item">宁波</li>
+          <ul style="transition:0ms;transform:translate3d(0, 44px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled">杭州</li>
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">宁波</li>
             <li class="van-ellipsis van-picker-column__item">温州</li>
           </ul>
         </div>
@@ -70,7 +70,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column column2" style="height:220px;">
-          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+          <ul style="transition:0ms;transform:translate3d(0, 0px, 0);line-height:44px;">
             <li class="van-ellipsis van-picker-column__item">杭州</li>
             <li class="van-ellipsis van-picker-column__item">宁波</li>
             <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">温州</li>
@@ -96,7 +96,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column column2" style="height:220px;">
-          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+          <ul style="transition:0ms;transform:translate3d(0, 0px, 0);line-height:44px;">
             <li class="van-ellipsis van-picker-column__item">杭州</li>
             <li class="van-ellipsis van-picker-column__item">宁波</li>
             <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected">温州</li>
