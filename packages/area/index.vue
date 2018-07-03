@@ -30,9 +30,12 @@ export default create({
     value: String,
     title: String,
     loading: Boolean,
-    areaList: Object,
     itemHeight: Number,
     visibleItemCount: Number,
+    areaList: {
+      type: Object,
+      default: () => ({})
+    },
     columnsNum: {
       type: [String, Number],
       default: 3
@@ -67,19 +70,19 @@ export default create({
   watch: {
     value() {
       this.code = this.value;
-    },
-
-    code() {
       this.setValues();
     },
 
     areaList: {
       deep: true,
-      immediate: true,
       handler() {
-        this.$nextTick(this.setValues);
+        this.setValues();
       }
     }
+  },
+
+  mounted() {
+    this.setValues();
   },
 
   methods: {
@@ -120,9 +123,8 @@ export default create({
 
     onChange(picker, values, index) {
       this.code = values[index].code;
-      this.$nextTick(() => {
-        this.$emit('change', picker, values, index);
-      });
+      this.setValues();
+      this.$emit('change', picker, values, index);
     },
 
     setValues() {
@@ -143,13 +145,11 @@ export default create({
       }
 
       picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));
-      this.$nextTick(() => {
-        picker.setIndexes([
-          this.getIndex('province', code),
-          this.getIndex('city', code),
-          this.getIndex('county', code)
-        ]);
-      });
+      picker.setIndexes([
+        this.getIndex('province', code),
+        this.getIndex('city', code),
+        this.getIndex('county', code)
+      ]);
     },
 
     getValues() {
