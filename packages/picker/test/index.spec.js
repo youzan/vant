@@ -50,6 +50,7 @@ test('set picker values', () => {
   });
   const { vm } = wrapper;
 
+  expect(vm.getColumnValues(-1)).toEqual(undefined);
   expect(vm.getColumnValues(1).length).toEqual(6);
   expect(vm.getColumnValue(1)).toEqual('1990');
 
@@ -66,6 +67,9 @@ test('set picker values', () => {
   expect(vm.getColumnValues(0).length).toEqual(3);
   expect(vm.getValues().length).toEqual(2);
 
+  vm.setColumnValues(-1, []);
+  expect(vm.getValues().length).toEqual(2);
+
   vm.setValues(['vip', '1992']);
   expect(vm.getColumnIndex(1)).toEqual(2);
   expect(vm.getColumnIndex(2)).toEqual(undefined);
@@ -73,6 +77,7 @@ test('set picker values', () => {
 
   vm.setIndexes([1, 4]);
   expect(vm.getColumnValue(1)).toEqual('1994');
+  expect(vm.getColumnValue(2)).toEqual(undefined);
 });
 
 test('drag columns', () => {
