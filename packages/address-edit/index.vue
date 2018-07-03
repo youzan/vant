@@ -282,12 +282,10 @@ export default create({
     setAreaCode(code) {
       this.data.area_code = code || '';
       this.$nextTick(() => {
-        this.$nextTick(() => {
-          const { area } = this.$refs;
-          if (area) {
-            this.assignAreaValues(area.getValues());
-          }
-        });
+        const { area } = this.$refs;
+        if (area) {
+          this.assignAreaValues(area.getValues());
+        }
       });
     },
 
