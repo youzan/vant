@@ -51,28 +51,28 @@ test('set picker values', () => {
   const { vm } = wrapper;
 
   expect(vm.getColumnValues(1).length).toEqual(6);
-  // expect(vm.getColumnValue(1)).toEqual('1990');
+  expect(vm.getColumnValue(1)).toEqual('1990');
 
-  // vm.setColumnValue(0, 'normal');
-  // expect(vm.getColumnValue(0)).toEqual('normal');
+  vm.setColumnValue(0, 'normal');
+  expect(vm.getColumnValue(0)).toEqual('normal');
 
-  // vm.setColumnIndex(0, 0);
-  // expect(vm.getColumnValue(0)).toEqual('vip');
+  vm.setColumnIndex(0, 0);
+  expect(vm.getColumnValue(0)).toEqual('vip');
 
-  // vm.setColumnValue(1, '1991');
-  // expect(vm.getColumnValue(1)).toEqual('1991');
+  vm.setColumnValue(1, '1991');
+  expect(vm.getColumnValue(1)).toEqual('1991');
 
-  // vm.setColumnValues(0, ['vip', 'normal', 'other']);
-  // expect(vm.getColumnValues(0).length).toEqual(3);
-  // expect(vm.getValues().length).toEqual(2);
+  vm.setColumnValues(0, ['vip', 'normal', 'other']);
+  expect(vm.getColumnValues(0).length).toEqual(3);
+  expect(vm.getValues().length).toEqual(2);
 
-  // vm.setValues(['vip', '1992']);
-  // expect(vm.getColumnIndex(1)).toEqual(2);
-  // expect(vm.getColumnIndex(2)).toEqual(undefined);
-  // expect(vm.getIndexes(2)).toEqual([0, 2]);
+  vm.setValues(['vip', '1992']);
+  expect(vm.getColumnIndex(1)).toEqual(2);
+  expect(vm.getColumnIndex(2)).toEqual(undefined);
+  expect(vm.getIndexes(2)).toEqual([0, 2]);
 
-  // vm.setIndexes([1, 4]);
-  // expect(vm.getColumnValue(1)).toEqual('1994');
+  vm.setIndexes([1, 4]);
+  expect(vm.getColumnValue(1)).toEqual('1994');
 });
 
 test('drag columns', () => {
