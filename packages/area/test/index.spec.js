@@ -2,6 +2,12 @@ import Area from '..';
 import areaList from '../demo/area.simple';
 import { mount, later, triggerDrag } from '../../../test/utils';
 
+const firstOption = [
+  { code: '110000', name: '北京市' },
+  { code: '110100', name: '北京市' },
+  { code: '110101', name: '东城区' }
+];
+
 test('confirm & cancel event', async() => {
   const wrapper = mount(Area, {
     propsData: {
@@ -14,11 +20,11 @@ test('confirm & cancel event', async() => {
   wrapper.find('.van-picker__confirm').trigger('click');
   wrapper.find('.van-picker__cancel').trigger('click');
 
-  expect(wrapper.emitted('confirm')).toBeTruthy();
-  expect(wrapper.emitted('cancel')[0][0]).toBeTruthy();
+  expect(wrapper.emitted('confirm')[0][0]).toEqual(firstOption);
+  expect(wrapper.emitted('cancel')[0][0]).toEqual(firstOption);
 });
 
-test('watch code', async() => {
+test('watch areaList & code', async() => {
   const wrapper = mount(Area, {
     propsData: {
       areaList
@@ -57,9 +63,9 @@ test('change option', () => {
 test('getValues method', () => {
   const wrapper = mount(Area, {
     propsData: {
-      areaList: {}
+      areaList
     }
   });
 
-  expect(wrapper.vm.getValues()).toBeTruthy();
+  expect(wrapper.vm.getValues()).toEqual(firstOption);
 });

@@ -144,7 +144,7 @@ export default create({
     },
 
     setIndex(index, userAction) {
-      index = this.adjustIndex(index);
+      index = this.adjustIndex(index) || 0;
       this.offset = -index * this.itemHeight;
 
       if (index !== this.currentIndex) {
