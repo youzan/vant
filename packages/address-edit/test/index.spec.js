@@ -155,36 +155,36 @@ test('watch address info', () => {
   expect(wrapper.vm.data.name).toEqual('123');
 });
 
-// temporarily removed util vue-test-utils upgrated
-// test('set/get area code', async() => {
-//   const wrapper = mount(AddressEdit, {
-//     propsData: { areaList }
-//   });
+test('set/get area code', async() => {
+  const wrapper = mount(AddressEdit, {
+    propsData: { areaList }
+  });
 
-//   expect(wrapper.vm.getArea()).toEqual([
-//     { code: '110000', name: '北京市' },
-//     { code: '110100', name: '北京市' },
-//     { code: '110101', name: '东城区' }
-//   ]);
+  expect(wrapper.vm.getArea()).toEqual([
+    { code: '110000', name: '北京市' },
+    { code: '110100', name: '北京市' },
+    { code: '110101', name: '东城区' }
+  ]);
 
-//   wrapper.vm.setAreaCode('110102');
+  wrapper.vm.setAreaCode('110102');
 
-//   await later(50);
-//   expect(wrapper.vm.data.area_code).toEqual('110102');
-//   expect(wrapper.vm.getArea()).toEqual([
-//     { code: '110000', name: '北京市' },
-//     { code: '110100', name: '北京市' },
-//     { code: '110102', name: '西城区' }
-//   ]);
+  await later(50);
+  expect(wrapper.vm.data.area_code).toEqual('110102');
+  expect(wrapper.vm.getArea()).toEqual([
+    { code: '110000', name: '北京市' },
+    { code: '110100', name: '北京市' },
+    { code: '110102', name: '西城区' }
+  ]);
 
-//   wrapper.vm.$refs = [];
-//   wrapper.vm.setAreaCode('110102');
-//   expect(wrapper.vm.getArea()).toEqual([]);
-// });
+  wrapper.vm.$refs = [];
+  wrapper.vm.setAreaCode('110102');
+  expect(wrapper.vm.getArea()).toEqual([]);
+});
 
 test('watch area code', async() => {
   const wrapper = mount(AddressEdit, {
     propsData: {
+      areaList: {},
       addressInfo: {
         area_code: '110101'
       }
@@ -192,10 +192,10 @@ test('watch area code', async() => {
   });
 
   expect(wrapper.vm.data.city).toEqual('');
-  // wrapper.vm.areaList = areaList;
+  wrapper.vm.areaList = areaList;
 
-  // await later(50);
-  // expect(wrapper.vm.data.city).toEqual('北京市');
+  await later(50);
+  expect(wrapper.vm.data.city).toEqual('北京市');
 });
 
 test('show search result', async() => {
