@@ -111,7 +111,7 @@ Use button slot to insert button
 
 ### API
 
-Field support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
+Field support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
@@ -120,6 +120,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | type | Input type | `String` | `text` |
 | border | Whether to show inner border | `Boolean` | `true` |
 | disabled | Whether to disable field | `Boolean` | `false` |
+| readonly | Whether to be readonly | `Boolean` | `false` |
 | clearable | Whether to be clearable | `Boolean` | `false` |
 | required | Whether to show required mark | `Boolean` | `false` 
 | is-link | Whether to show link icon | `Boolean` | `false` |
