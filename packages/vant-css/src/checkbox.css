@@ -25,6 +25,11 @@ $van-checkbox-size: 20px;
 
   &__label {
     margin-left: 10px;
+
+    &--left {
+      float: left;
+      margin: 0 10px 0 0;
+    }
   }
 
   &--round {

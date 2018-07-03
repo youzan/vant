@@ -97,10 +97,11 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| v-model | 是否为选中状态 | `Boolean` | `false` |
 | name | 标识 Checkbox 名称 | `any` | - |
+| v-model | 是否为选中状态 | `Boolean` | `false` |
 | disabled | 是否禁用单选框 | `Boolean` | `false` |
 | label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` |
+| label-position | 文本位置，可选值为 `left` | `String` | `right` |
 | shape | 形状，可选值为 `round` `square` | `String` | `round` |
 
 ### CheckboxGroup API

@@ -93,10 +93,11 @@ export default {
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| v-model | Check status | `Boolean` | `false` |
 | name | Checkbox name | `any` | - |
+| v-model | Check status | `Boolean` | `false` |
 | disabled | Diable checkbox | `Boolean` | `false` |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
+| label-position | Can be set to `left` | `String` | `right` |
 | shape | Can be set to `round` `square` | `String` | `round` |
 
 ### CheckboxGroup API
