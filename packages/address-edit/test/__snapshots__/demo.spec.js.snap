@@ -37,7 +37,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div readonly="readonly" placeholder="收件地区" class="van-cell van-hairline van-field">
+        <div placeholder="收件地区" class="van-cell van-hairline van-field">
           <!---->
           <div class="van-cell__title"><span>收件地区</span>
             <!---->

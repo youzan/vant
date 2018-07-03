@@ -22,6 +22,7 @@
         ref="input"
         :class="b('control', inputAlign)"
         :value="value"
+        :readonly="readonly"
       />
       <input
         v-else
@@ -31,6 +32,7 @@
         :class="b('control', inputAlign)"
         :type="type"
         :value="value"
+        :readonly="readonly"
       >
       <icon
         v-if="showClear"
@@ -72,6 +74,7 @@ export default create({
     center: Boolean,
     isLink: Boolean,
     leftIcon: String,
+    readonly: Boolean,
     required: Boolean,
     clearable: Boolean,
     labelAlign: String,
@@ -107,7 +110,7 @@ export default create({
 
   computed: {
     showClear() {
-      return this.clearable && this.focused && this.value !== '' && this.isDef(this.value);
+      return this.clearable && this.focused && this.value !== '' && this.isDef(this.value) && !this.readonly;
     },
 
     listeners() {

@@ -113,7 +113,7 @@ Vue.use(Field);
 
 ### API
 
-Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readonly`、`autofocus` 等
+Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
@@ -122,6 +122,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
 | border | 是否显示内边框 | `Boolean` | `true` |
 | disabled | 是否禁用输入框 | `Boolean` | `false` |
+| readonly | 是否只读 | `Boolean` | `false` |
 | clearable | 是否启用清除控件 | `Boolean` | `false` |
 | required | 是否显示表单必填星号 | `Boolean` | `false` |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
