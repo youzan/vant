@@ -136,6 +136,10 @@ export default create({
     onFocus(event) {
       this.focused = true;
       this.$emit('focus', event);
+
+      if (this.readonly) {
+        this.blur();
+      }
     },
 
     onBlur(event) {
