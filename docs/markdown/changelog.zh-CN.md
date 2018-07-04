@@ -1,5 +1,27 @@
 ## 更新日志
 
+### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
+`2018-07-04`
+
+**Improvements**
+
+- Actionsheet: 支持 lazy-render [\#1365](https://github.com/youzan/vant/pull/1365)
+- AddressEdit: 优化事件触发顺序 [\#1402](https://github.com/youzan/vant/pull/1402)
+- SwitchCell: 新增 size 属性 [\#1371](https://github.com/youzan/vant/pull/1371)
+- Checkbox: 新增 label-position 属性 [\#1394](https://github.com/youzan/vant/pull/1394)
+- Picker: 优化渲染性能 [\#1391](https://github.com/youzan/vant/pull/1391)
+- Tab: 更新 card 风格样式 [\#1364](https://github.com/youzan/vant/pull/1364)
+- Document: 完善 Dialog before-close 用法 [\#1383](https://github.com/youzan/vant/pull/1383)
+
+**Bug Fixes**
+
+- 修复 Area city_list 为空时报错的问题 [\#1374](https://github.com/youzan/vant/pull/1374)
+- 修复 DatetimePicker change 事件回调参数不正确的问题 [\#1370](https://github.com/youzan/vant/pull/1370)
+- 修复 Field readonly 状态下在 safari 上出现光标的问题 [\#1399](https://github.com/youzan/vant/pull/1399)
+- 修复 Field readonly 状态下仍然会显示清除按钮的问题 [\#1395](https://github.com/youzan/vant/pull/1395)
+- 修复 Tab 动态渲染时顺序错误的问题 [\#1372](https://github.com/youzan/vant/pull/1372)
+
+
 ### [1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
 `2018-06-28`
 
