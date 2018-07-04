@@ -71,8 +71,8 @@ export default create({
 
   methods: {
     onSelect(express) {
-      this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
       this.$emit('select-search', express);
+      this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
     }
   }
 });
