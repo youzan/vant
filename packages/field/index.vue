@@ -137,6 +137,7 @@ export default create({
       this.focused = true;
       this.$emit('focus', event);
 
+      // hack for safari
       if (this.readonly) {
         this.blur();
       }
