@@ -1,7 +1,7 @@
 <template>
   <div :class="b()">
-    <span :class="b('portion', { 'with-pivot': showPivot })" :style="portionStyle">
-      <span v-if="showPivot" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ pivotText }}</span>
+    <span :class="b('portion', { 'with-pivot': showPivot && text })" :style="portionStyle">
+      <span v-if="showPivot && text" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ text }}</span>
     </span>
   </div>
 </template>
@@ -14,6 +14,7 @@ export default create({
 
   props: {
     inactive: Boolean,
+    pivotText: String,
     pivotColor: String,
     percentage: {
       type: Number,
@@ -23,12 +24,6 @@ export default create({
     showPivot: {
       type: Boolean,
       default: true
-    },
-    pivotText: {
-      type: String,
-      default() {
-        return this.percentage + '%';
-      }
     },
     color: {
       type: String,
@@ -48,6 +43,12 @@ export default create({
   },
 
   computed: {
+    text() {
+      return this.isDef(this.pivotText)
+        ? this.pivotText
+        : this.percentage + '%';
+    },
+
     currentColor() {
       return this.inactive ? '#cacaca' : this.color;
     },
