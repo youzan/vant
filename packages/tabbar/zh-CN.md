@@ -33,16 +33,17 @@ export default {
 
 
 #### 自定义图标
-通过 icon slot 自定义图标
-
+通过 icon slot 自定义图标，可以通过 `slot-scope` 判断标签是否选中
 
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>自定义</span>
-    <template slot="icon" slot-scope="props">
-      <img :src="props.active ? icon.active : icon.normal" />
-    </template>
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.active ? icon.active : icon.normal"
+    >
   </van-tabbar-item>
   <van-tabbar-item icon="chat">标签</van-tabbar-item>
   <van-tabbar-item icon="records">标签</van-tabbar-item>
@@ -55,8 +56,8 @@ export default {
     return {
       active: 0,
       icon: {
-        normal: '//img.yzcdn.cn/1.png',
-        active: '//img.yzcdn.cn/2.png'
+        normal: '//img.yzcdn.cn/icon-normal.png',
+        active: '//img.yzcdn.cn/icon-active.png'
       }
     }
   }
@@ -91,6 +92,6 @@ export default {
 
 ### TabbarItem Slot
 
-| Name | 描述 | Scope |
+| 名称 | 说明 | slot-scope |
 |-----------|-----------|-----------|
-| icon | 自定义icon | active |
+| icon | 自定义图标 | active: 是否为选中标签 |
