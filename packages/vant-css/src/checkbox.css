@@ -44,12 +44,12 @@ $van-checkbox-size: 20px;
 
   &--disabled {
     color: $background-color;
-    border-color: $gray-light;
+    border-color: $border-color;
     background-color: currentColor;
   }
 
   &--disabled&--checked {
-    border-color: $gray-light;
-    background-color: $gray-light;
+    border-color: $border-color;
+    background-color: $border-color;
   }
 }

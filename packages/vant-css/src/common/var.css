@@ -12,7 +12,7 @@ $gray-dark: #999;
 
 /* default colors */
 $text-color: #333;
-$border-color: #eee;
+$border-color: $gray-light;
 $active-color: #e8e8e8;
 $background-color: #f8f8f8;
 
@@ -27,8 +27,8 @@ $button-danger-color: $white;
 $button-danger-background-color: $red;
 $button-danger-border-color: $red;
 $button-disabled-color: $gray-dark;
-$button-disabled-background-color: $border-color;
-$button-disabled-border-color: $gray-light;
+$button-disabled-background-color: $active-color;
+$button-disabled-border-color: $border-color;
 $button-bottom-action-default-color: $white;
 $button-bottom-action-default-background-color: #f85;
 $button-bottom-action-primary-color: $white;
