@@ -9,8 +9,15 @@
       <van-checkbox :value="true" disabled>{{ $t('checkbox') }}</van-checkbox>
     </demo-block>
 
-    <demo-block :title="$t('labelDisabled')">
-      <van-checkbox v-model="checkbox2" label-disabled>{{ $t('checkbox') }}</van-checkbox>
+    <demo-block :title="$t('customIcon')">
+      <van-checkbox v-model="checkbox2">
+        {{ $t('customIcon') }}
+        <img
+          slot="icon"
+          slot-scope="props"
+          :src="props.checked ? icon.active : icon.normal"
+        >
+      </van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -54,14 +61,14 @@ export default {
   i18n: {
     'zh-CN': {
       checkbox: '复选框',
-      labelDisabled: '禁用内容部分点击事件',
+      customIcon: '自定义图标',
       title3: 'Checkbox 组',
       title4: '设置最大可选数',
       title5: '与 Cell 组件一起使用'
     },
     'en-US': {
       checkbox: 'Checkbox',
-      labelDisabled: 'Disable Label click event',
+      customIcon: 'Custom Icon',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
       title5: 'Inside a Cell'
@@ -79,7 +86,11 @@ export default {
       ],
       result: ['a', 'b'],
       result2: [],
-      result3: []
+      result3: [],
+      icon: {
+        normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
+        active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
+      }
     };
   }
 };
@@ -95,6 +106,11 @@ export default {
     .van-checkbox {
       margin: 0;
     }
+  }
+
+  img {
+    width: 20px;
+    display: block;
   }
 }
 </style>

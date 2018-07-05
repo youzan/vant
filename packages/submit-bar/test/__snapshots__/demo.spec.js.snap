@@ -47,9 +47,11 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-submit-bar__bar">
         <div class="van-checkbox">
-          <i class="van-icon van-icon-success van-checkbox__icon van-checkbox--round van-checkbox--checked" style="color:undefined;">
-            <!---->
-          </i> <span class="van-checkbox__label">全选</span></div>
+          <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
+            <i class="van-icon van-icon-success" style="color:undefined;">
+              <!---->
+            </i>
+          </div> <span class="van-checkbox__label">全选</span></div>
         <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
         <button class="van-button van-button--danger van-button--normal">
           <!----><span class="van-button__text">

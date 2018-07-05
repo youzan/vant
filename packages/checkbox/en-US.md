@@ -31,10 +31,30 @@ export default {
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
-#### Disable Label click event
+#### Custom Icon
+Use icon slot to custom icon
 
 ```html
-<van-checkbox v-model="checked" label-disabled>Checkbox</van-checkbox>
+<van-checkbox v-model="checked">
+  Custom Icon
+  <img
+    slot="icon"
+    slot-scope="props"
+    :src="props.checked ? icon.active : icon.normal"
+  >
+</van-checkbox>
+```
+
+```js
+export default {
+  data() {
+    checked: true,
+    icon: {
+      normal: '//img.yzcdn.cn/icon-normal.png',
+      active: '//img.yzcdn.cn/icon-active.png'
+    }
+  }
+}
 ```
 
 #### Checkbox Group
@@ -119,3 +139,10 @@ export default {
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
 | change | Triggered when value changed | current value |
+
+### Checkbox Slot
+
+| Name | Description | slot-scope |
+|-----------|-----------|-----------|
+| default | Custom label | - |
+| icon | Custom icon | checked: whether to be checked |

@@ -32,10 +32,30 @@ export default {
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
 
-#### 禁用内容部分点击事件
+#### 自定义图标
+通过 icon slot 自定义图标，可以通过 `slot-scope` 判断是否为选中状态
 
 ```html
-<van-checkbox v-model="checked" label-disabled>复选框</van-checkbox>
+<van-checkbox v-model="checked">
+  自定义图标
+  <img
+    slot="icon"
+    slot-scope="props"
+    :src="props.checked ? icon.active : icon.normal"
+  >
+</van-checkbox>
+```
+
+```js
+export default {
+  data() {
+    checked: true,
+    icon: {
+      normal: '//img.yzcdn.cn/icon-normal.png',
+      active: '//img.yzcdn.cn/icon-active.png'
+    }
+  }
+}
 ```
 
 #### Checkbox 组
@@ -123,3 +143,10 @@ export default {
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
+
+### Checkbox Slot
+
+| 名称 | 说明 | slot-scope |
+|-----------|-----------|-----------|
+| default | 自定义文本 | - |
+| icon | 自定义图标 | checked: 是否为选中状态 |
