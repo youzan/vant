@@ -58,7 +58,7 @@
           height: 1px;
           top: 50%;
           position: absolute;
-          background-color: $gray-light;
+          background-color: $border-color;
         }
 
         &::before {
