@@ -32,8 +32,12 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "./packages/**/*.{js,vue}": [
-      "eslint --fix",
+    "*.{js,vue}": [
+      "eslint",
+      "git add"
+    ],
+    "*.{vue,css}": [
+      "stylelint",
       "git add"
     ]
   },
