@@ -68,6 +68,7 @@
     &__item {
       padding: 0 5px;
       color: $gray-dark;
+      height: 44px;
 
       &--selected {
         color: $black;
