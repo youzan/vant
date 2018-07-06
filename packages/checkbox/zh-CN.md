@@ -101,16 +101,32 @@ export default {
 
 #### 与 Cell 组件一起使用
 
-此时你需要再引入`Cell`和`CellGroup`组件
+此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="item in list" :title="`复选框 ${item}`" :key="item">
-      <van-checkbox :name="item" />
+    <van-cell
+      v-for="item in list"
+      clickable
+      :key="item"
+      :title="`复选框 ${item}`"
+      @click="toggle(index)"
+    >
+      <van-checkbox :name="item" ref="checkboxes" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
+```
+
+```js
+export default {
+  methods: {
+    toggle(index) {
+      this.$refs.checkboxes[index].toggle();
+    }
+  }
+}
 ```
 
 ### Checkbox API
@@ -150,3 +166,11 @@ export default {
 |-----------|-----------|-----------|
 | default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
+
+### Checkbox 方法
+
+通过 ref 可以获取到 checkbox 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| toggle | - | - | 切换选中状态 |
