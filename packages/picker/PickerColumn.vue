@@ -18,6 +18,7 @@
           selected: index === currentIndex
         })"
         @click="setIndex(index, true)"
+        :style="itemStyle"
       />
     </ul>
   </div>
@@ -95,6 +96,11 @@ export default create({
         transition: `${this.duration}ms`,
         transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
         lineHeight: this.itemHeight + 'px'
+      };
+    },
+    itemStyle() {
+      return {
+        height: this.itemHeight + 'px'
       };
     }
   },
