@@ -57,6 +57,14 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | cancel | triggers when clicking the cancel button | - |
 | change | Triggered when current option changed | Picker instance, current values，column index |
 
+### Methods
+
+Use ref to get area instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| reset | - | - | Reset all options |
+
 ### Data Structure
 
 #### areaList
