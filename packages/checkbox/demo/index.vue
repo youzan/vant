@@ -46,9 +46,15 @@
 
     <demo-block :title="$t('title5')">
       <van-checkbox-group v-model="result3">
-        <van-cell-group>
-          <van-cell v-for="(item, index) in list" :title="$t('checkbox') + item" :key="index">
-            <van-checkbox :name="item" />
+        <van-cell-group >
+          <van-cell
+            v-for="(item, index) in list"
+            clickable
+            :key="index"
+            :title="$t('checkbox') + item"
+            @click="toggle(index)"
+          >
+            <van-checkbox ref="checkboxes" :name="item" />
           </van-cell>
         </van-cell-group>
       </van-checkbox-group>
@@ -92,6 +98,12 @@ export default {
         active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
       }
     };
+  },
+
+  methods: {
+    toggle(index) {
+      this.$refs.checkboxes[index].toggle();
+    }
   }
 };
 </script>

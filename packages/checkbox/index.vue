@@ -1,11 +1,11 @@
 <template>
   <div :class="b()">
-    <div :class="[b('icon', [shape, { disabled: isDisabled, checked }])]" @click="onClick">
+    <div :class="[b('icon', [shape, { disabled: isDisabled, checked }])]" @click="toggle">
       <slot name="icon" :checked="checked">
         <icon name="success" />
       </slot>
     </div>
-    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClick('label')">
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="toggle('label')">
       <slot />
     </span>
   </div>
@@ -86,7 +86,7 @@ export default create({
   },
 
   methods: {
-    onClick(target) {
+    toggle(target) {
       if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
         this.checked = !this.checked;
       }
