@@ -89,6 +89,7 @@ export default create({
         height: (this.itemHeight * this.visibleItemCount) + 'px'
       };
     },
+
     wrapperStyle() {
       return {
         transition: `${this.duration}ms`,
