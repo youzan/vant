@@ -10,7 +10,7 @@
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span v-if="$slots.default" :class="b('label')" @click="onClickLabel">
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClickLabel">
       <slot />
     </span>
   </div>
@@ -29,7 +29,8 @@ export default create({
     name: null,
     value: null,
     disabled: Boolean,
-    labelDisabled: Boolean
+    labelDisabled: Boolean,
+    labelPosition: Boolean
   },
 
   computed: {

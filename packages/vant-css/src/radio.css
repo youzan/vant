@@ -30,9 +30,15 @@ $van-radio-size: 20px;
   &__label {
     line-height: $van-radio-size;
     margin-left: 10px;
+
+    &--left {
+      float: left;
+      margin: 0 10px 0 0;
+    }
   }
 
   .van-icon {
+    width: 1em;
     pointer-events: none;
     font-size: $van-radio-size;
   }
