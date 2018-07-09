@@ -28,7 +28,8 @@ export default create({
   props: {
     name: null,
     value: null,
-    disabled: Boolean
+    disabled: Boolean,
+    labelDisabled: Boolean
   },
 
   computed: {
@@ -55,7 +56,7 @@ export default create({
 
   methods: {
     onClickLabel() {
-      if (!this.isDisabled) {
+      if (!this.isDisabled && !this.labelDisabled) {
         this.currentValue = this.name;
       }
     }
