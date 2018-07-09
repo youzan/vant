@@ -4,8 +4,8 @@
     :type="nativeType"
     :disabled="disabled"
     :class="b([
-      size,
       type,
+      size,
       {
         block,
         plain,
