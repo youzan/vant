@@ -4,10 +4,11 @@
     :type="nativeType"
     :disabled="disabled"
     :class="b([
-      type,
       size,
+      type,
       {
         block,
+        plain,
         loading,
         disabled,
         unclickable: disabled || loading,
@@ -32,6 +33,7 @@ export default create({
   props: {
     text: String,
     block: Boolean,
+    plain: Boolean,
     loading: Boolean,
     disabled: Boolean,
     nativeType: String,
