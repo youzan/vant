@@ -18,6 +18,14 @@ Vue.use(Button);
 <van-button type="danger">危险按钮</van-button>
 ```
 
+#### 朴素按钮
+
+```html
+<van-button type="default" plain>默认按钮</van-button>
+<van-button type="primary" plain>主要按钮</van-button>
+<van-button type="danger" plain>危险按钮</van-button>
+```
+
 #### 按钮尺寸
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
@@ -52,20 +60,6 @@ Vue.use(Button);
 </van-button>
 ```
 
-#### 页面底部操作按钮
-
-```html 
-<van-button type="primary" bottom-action>按钮</van-button>
-
-<van-row>
-  <van-col span="12">
-    <van-button bottom-action>按钮</van-button>
-  </van-col>
-  <van-col span="12">
-    <van-button type="primary" bottom-action>按钮</van-button>
-  </van-col>
-</van-row>
-```
 
 ### API
 
@@ -76,10 +70,10 @@ Vue.use(Button);
 | text | 按钮文字 | `String` | - |
 | tag | 按钮 HTML 标签 | `String` | `button` |
 | native-type | 按钮类型（原生） | `String` | - |
+| plain | 是否为朴素按钮 | `Boolean` | `false` |
 | disabled | 是否禁用 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
-| bottom-action | 是否为底部行动按钮 | `Boolean` | `false` |
 
 ### Event
 

@@ -11,6 +11,14 @@ exports[`renders demo correctly 1`] = `
       <!----><span class="van-button__text">危险按钮</span></button>
   </div>
   <div>
+    <button class="van-button van-button--default van-button--normal van-button--plain">
+      <!----><span class="van-button__text">默认按钮</span></button>
+    <button class="van-button van-button--primary van-button--normal van-button--plain">
+      <!----><span class="van-button__text">主要按钮</span></button>
+    <button class="van-button van-button--danger van-button--normal van-button--plain">
+      <!----><span class="van-button__text">危险按钮</span></button>
+  </div>
+  <div>
     <button class="van-button van-button--default van-button--large">
       <!----><span class="van-button__text">大号按钮</span></button>
     <button class="van-button van-button--default van-button--normal">
@@ -36,20 +44,6 @@ exports[`renders demo correctly 1`] = `
       <!----><span class="van-button__text">
       按钮
     </span></a>
-  </div>
-  <div>
-    <button class="van-button van-button--primary van-button--normal van-button--bottom-action">
-      <!----><span class="van-button__text">按钮</span></button>
-    <div class="van-row">
-      <div class="van-col van-col--12">
-        <button class="van-button van-button--default van-button--normal van-button--bottom-action">
-          <!----><span class="van-button__text">按钮</span></button>
-      </div>
-      <div class="van-col van-col--12">
-        <button class="van-button van-button--primary van-button--normal van-button--bottom-action">
-          <!----><span class="van-button__text">按钮</span></button>
-      </div>
-    </div>
   </div>
 </div>
 `;

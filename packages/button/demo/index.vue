@@ -6,6 +6,12 @@
       <van-button type="danger">{{ $t('danger') }}</van-button>
     </demo-block>
 
+    <demo-block :title="$t('plain')">
+      <van-button type="default" plain>{{ $t('default') }}</van-button>
+      <van-button type="primary" plain>{{ $t('primary') }}</van-button>
+      <van-button type="danger" plain>{{ $t('danger') }}</van-button>
+    </demo-block>
+
     <demo-block :title="$t('title2')">
       <van-button size="large">{{ $t('large') }}</van-button>
       <van-button size="normal">{{ $t('normal') }}</van-button>
@@ -27,19 +33,6 @@
         {{ $t('button') }}
       </van-button>
     </demo-block>
-
-    <demo-block :title="$t('title5')">
-      <van-button type="primary" bottom-action>{{ $t('button') }}</van-button>
-
-      <van-row>
-        <van-col span="12">
-          <van-button bottom-action>{{ $t('button') }}</van-button>
-        </van-col>
-        <van-col span="12">
-          <van-button type="primary" bottom-action>{{ $t('button') }}</van-button>
-        </van-col>
-      </van-row>
-    </demo-block>
   </demo-section>
 </template>
 
@@ -58,7 +51,8 @@ export default {
       large: '大号按钮',
       normal: '普通按钮',
       small: '小型按钮',
-      mini: '迷你按钮'
+      mini: '迷你按钮',
+      plain: '朴素按钮'
     },
     'en-US': {
       title1: 'Type',
@@ -72,7 +66,8 @@ export default {
       large: 'Large',
       normal: 'Normal',
       small: 'Small',
-      mini: 'Mini'
+      mini: 'Mini',
+      plain: 'Plain'
     }
   }
 };
@@ -83,8 +78,7 @@ export default {
   .van-button {
     user-select: none;
 
-    &--large,
-    &--bottom-action {
+    &--large {
       margin-bottom: 15px;
     }
 
