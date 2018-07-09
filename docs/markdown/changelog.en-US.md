@@ -1,5 +1,24 @@
 ## Changelog
 
+### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+`2018-07-06`
+
+**Improvements**
+
+- Area: add reset method [\#1427](https://github.com/youzan/vant/pull/1427)
+- Checkbox: support custom icon [\#1414](https://github.com/youzan/vant/pull/1414)
+- Checkbox: with cell [\#1430](https://github.com/youzan/vant/pull/1430)
+- Swipe: not swipeable when page scrolling [\#1425](https://github.com/youzan/vant/pull/1425)
+- Swipe: window resize [\#1413](https://github.com/youzan/vant/pull/1413)
+
+**Bug Fixes**
+
+- fix Progress text empty [\#1411](https://github.com/youzan/vant/pull/1411)
+- fix Tab random insert order [\#1429](https://github.com/youzan/vant/pull/1429)
+- fix error when use Vue.use in typescript [\#1410](https://github.com/youzan/vant/pull/1410)
+- fix vant-css missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
+
+
 ### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 

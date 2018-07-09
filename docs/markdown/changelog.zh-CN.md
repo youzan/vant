@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+`2018-07-06`
+
+**Improvements**
+
+- Area: 新增 reset 方法 [\#1427](https://github.com/youzan/vant/pull/1427)
+- Checkbox: 支持自定义图标 [\#1414](https://github.com/youzan/vant/pull/1414)
+- Checkbox: 优化与 Cell 搭配使用的方式 [\#1430](https://github.com/youzan/vant/pull/1430)
+- Swipe: 屏幕滚动时不会左右滑动 [\#1425](https://github.com/youzan/vant/pull/1425)
+- Swipe: 屏幕大小变化时自动调整宽度 [\#1413](https://github.com/youzan/vant/pull/1413)
+
+**Bug Fixes**
+
+- 修复 Progress 文字为空时样式错误的问题 [\#1411](https://github.com/youzan/vant/pull/1411)
+- 修复 Tab 同时进行插入和删除时顺序错误的问题 [\#1429](https://github.com/youzan/vant/pull/1429)
+- 修复 Vue.use 方法 TypeScript 类型错误 [\#1410](https://github.com/youzan/vant/pull/1410)
+- 修复 vant-css 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
+
+
 ### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 
