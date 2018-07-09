@@ -162,9 +162,6 @@ export default create({
           event.preventDefault();
         }
       }
-      if (this.type === 'search' && event.keyCode === 13) {
-        this.blur();
-      }
       this.$emit('keypress', event);
     },
 

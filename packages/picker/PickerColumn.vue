@@ -11,6 +11,7 @@
     <ul :style="wrapperStyle">
       <li
         v-for="(option, index) in options"
+        :key="index"
         v-html="getOptionText(option)"
         class="van-ellipsis"
         :class="b('item', {
