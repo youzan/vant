@@ -11,7 +11,7 @@ const images = [
 
 test('render image', () => {
   const wrapper = mount(ImagePreviewVue, {
-    propsData: { images }
+    propsData: { images, value: true }
   });
 
   expect(wrapper).toMatchSnapshot();
@@ -23,7 +23,7 @@ test('render image', () => {
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
 });
 
-test('function call', (done) => {
+test('function call', done => {
   ImagePreview(images);
   ImagePreview(images.slice(0, 1));
   Vue.nextTick(() => {
