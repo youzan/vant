@@ -11,15 +11,14 @@
     <ul :style="wrapperStyle">
       <li
         v-for="(option, index) in options"
-        :key="index"
         v-html="getOptionText(option)"
+        :style="optionStyle"
         class="van-ellipsis"
         :class="b('item', {
           disabled: isDisabled(option),
           selected: index === currentIndex
         })"
         @click="setIndex(index, true)"
-        :style="itemStyle"
       />
     </ul>
   </div>
@@ -99,7 +98,8 @@ export default create({
         lineHeight: this.itemHeight + 'px'
       };
     },
-    itemStyle() {
+
+    optionStyle() {
       return {
         height: this.itemHeight + 'px'
       };
