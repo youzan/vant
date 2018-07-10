@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="value"
+    v-if="value"
     :class="b()"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"

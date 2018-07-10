@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render image 1`] = `
-<div class="van-image-preview" style="display: none;">
+<div class="van-image-preview">
   <div class="van-swipe">
     <div class="van-swipe__track" style="width: 0px;">
       <div class="van-swipe-item" style="width: 0px; height: 100%;">
