@@ -32,11 +32,7 @@ test('function call', done => {
     triggerDrag(swipe, 0, 0);
 
     expect(wrapper.querySelectorAll('img').length).toEqual(1);
-
-    Vue.nextTick(() => {
-      expect(wrapper.style.display).toEqual('none');
-      done();
-    });
+    done();
   });
 });
 
