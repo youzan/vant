@@ -60,7 +60,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | area-list | 地区列表 | `Object` | - |
-| address-info | 收货人信息 | `Object` | `{}` |
+| address-info | 收货人信息初始值 | `Object` | `{}` |
 | search-result | 详细地址搜索结果 | `Array` | `[]` |
 | show-postal | 是否显示邮政编码 | `Boolean` | `false` |
 | show-delete | 是否显示删除按钮 | `Boolean` | `false` |
@@ -94,6 +94,9 @@ export default {
 ### 数据格式
 
 #### addressInfo 数据格式
+
+注意：addressInfo 仅作为初始值传入，表单最终内容可以在 save 事件中获取
+
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | id | 每条地址的唯一标识 | `String | Number` |
