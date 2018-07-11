@@ -1,5 +1,5 @@
 type DialogAction = 'confirm' | 'cancel';
-type DialogDone = (close: boolean) => void;
+type DialogDone = (close?: boolean) => void;
 
 export type DialogOptions = {
   title?: string;
