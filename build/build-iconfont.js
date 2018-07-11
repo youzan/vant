@@ -15,7 +15,7 @@ const local = require('../packages/icon/config/template-local');
 const iconDir = path.join(__dirname, '../packages/icon');
 const cssDir = path.join(__dirname, '../packages/vant-css/src');
 const svgDir = path.join(iconDir, 'svg');
-const sketch = path.join(iconDir, 'assert/icons.sketch');
+const sketch = path.join(iconDir, 'assets/icons.sketch');
 const template = path.join(iconDir, 'config/template.css');
 
 // get md5 from sketch
