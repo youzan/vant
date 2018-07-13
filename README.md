@@ -13,6 +13,8 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
 [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)
 [![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
+[![JS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size)](https://unpkg.com/vant/lib/vant.min.js)
+[![CSS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size)](https://unpkg.com/vant/lib/vant-css/index.css)
 
 [访问中文版](./README.zh-CN.md)
 
@@ -27,8 +29,27 @@
 
 ## Install
 
+#### NPM
+
 ```shell
-npm i -S vant
+npm i vant -S
+```
+
+#### YARN
+
+```shell
+yarn add vant
+```
+
+#### CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
+
+<!-- import script -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
 ## Quickstart
@@ -60,6 +81,8 @@ Then you can import components from vant, equivalent to import manually below.
 import { Button } from 'vant';
 ```
 
+> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead
+
 #### 2. Manually import
 
 ```js
@@ -78,17 +101,9 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
-### CDN
+> If you configured babel-plugin-import, you won't be allowed to import all components.
 
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css" />
-
-<!-- import script -->
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
-```
-
-See more in [Quickstart](https://www.youzanyun.com/zanui/vant#/en-US/quickstart).
+See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
 ## Contribution
 
@@ -100,8 +115,8 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 ## Links
 
-* [Documentation](https://www.youzanyun.com/zanui/vant)
-* [Changelog](https://www.youzanyun.com/zanui/vant#/en-US/changelog)
+* [Documentation](https://youzan.github.io/vant)
+* [Changelog](https://youzan.github.io/vant#/en-US/changelog)
 * [React UI](https://www.youzanyun.com/zanui/zent)
 * [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [Vant Demo](https://github.com/youzan/vant-demo)
@@ -111,7 +126,13 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 You can scan the following QR code to access the demo：
 
-<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+
+## Wechat Group
+
+Scan the qrcode to join our wechat discussion group, please note that you want to join Vant discussion group.
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## LICENSE
 

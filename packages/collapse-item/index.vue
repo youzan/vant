@@ -17,7 +17,6 @@
 <script>
 import findParent from '../mixins/find-parent';
 import create from '../utils/create';
-import { isDef } from '../utils';
 
 export default create({
   name: 'collapse-item',
@@ -39,7 +38,7 @@ export default create({
     },
 
     currentName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.isDef(this.name) ? this.name : this.index;
     },
 
     expanded() {

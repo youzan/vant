@@ -18,7 +18,7 @@
       text-align: left;
 
       span {
-        margin-right: 20px;
+        margin-right: 15px;
       }
     }
   }
@@ -30,5 +30,6 @@
   &-detail__finish {
     color: $blue;
     font-size: 12px;
+    display: block;
   }
 }

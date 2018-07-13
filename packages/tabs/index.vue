@@ -19,8 +19,7 @@
           }"
           @click="onClick(index)"
         >
-          <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
-          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
+          <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
         </div>
       </div>
     </div>
@@ -34,7 +33,6 @@
 import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
-import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
 import Touch from '../mixins/touch';
 
@@ -42,10 +40,6 @@ export default create({
   name: 'tabs',
 
   mixins: [Touch],
-
-  components: {
-    VanNode
-  },
 
   model: {
     prop: 'active'
@@ -78,7 +72,12 @@ export default create({
       tabs: [],
       position: 'content-top',
       curActive: 0,
-      lineStyle: {}
+      lineStyle: {},
+      events: {
+        resize: false,
+        sticky: false,
+        swipeable: false
+      }
     };
   },
 
@@ -98,6 +97,7 @@ export default create({
 
     tabs(tabs) {
       this.correctActive(this.curActive || this.active);
+      this.scrollIntoView();
       this.setLine();
     },
 
@@ -111,8 +111,12 @@ export default create({
       }
     },
 
-    sticky(isSticky) {
-      this.scrollHandler(isSticky);
+    sticky() {
+      this.handlers(true);
+    },
+
+    swipeable() {
+      this.handlers(true);
     }
   },
 
@@ -121,45 +125,57 @@ export default create({
     this.setLine();
 
     this.$nextTick(() => {
-      if (this.sticky) {
-        this.scrollHandler(true);
-      }
-      if (this.swipeable) {
-        this.swipeableHandler(true);
-      }
+      this.handlers(true);
       this.scrollIntoView();
     });
   },
 
+  activated() {
+    this.$nextTick(() => {
+      this.handlers(true);
+    });
+  },
+
+  deactivated() {
+    this.handlers(false);
+  },
+
   beforeDestroy() {
-    /* istanbul ignore next */
-    if (this.sticky) {
-      this.scrollHandler(false);
-    }
-    /* istanbul ignore next */
-    if (this.swipeable) {
-      this.swipeableHandler(false);
-    }
+    this.handlers(false);
   },
 
   methods: {
     // whether to bind sticky listener
-    scrollHandler(init) {
-      this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
-      (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
-      if (init) {
+    handlers(bind) {
+      const { events } = this;
+      const sticky = this.sticky && bind;
+      const swipeable = this.swipeable && bind;
+
+      // listen to window resize event
+      if (events.resize !== bind) {
+        events.resize = bind;
+        (bind ? on : off)(window, 'resize', this.setLine, true);
+      }
+
+      // listen to scroll event
+      if (events.sticky !== sticky) {
+        events.sticky = sticky;
+        this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
+        (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
         this.onScroll();
       }
-    },
 
-    // whether to bind content swipe listener
-    swipeableHandler(init) {
-      const { content } = this.$refs;
-      const action = init ? on : off;
-      action(content, 'touchstart', this.touchStart);
-      action(content, 'touchmove', this.touchMove);
-      action(content, 'touchend', this.onTouchEnd);
-      action(content, 'touchcancel', this.onTouchEnd);
+      // listen to touch event
+      if (events.swipeable !== swipeable) {
+        events.swipeable = swipeable;
+        const { content } = this.$refs;
+        const action = swipeable ? on : off;
+
+        action(content, 'touchstart', this.touchStart);
+        action(content, 'touchmove', this.touchMove);
+        action(content, 'touchend', this.onTouchEnd);
+        action(content, 'touchcancel', this.onTouchEnd);
+      }
     },
 
     // watch swipe touch end
@@ -195,7 +211,7 @@ export default create({
     // update nav bar style
     setLine() {
       this.$nextTick(() => {
-        if (!this.$refs.tabs) {
+        if (!this.$refs.tabs || this.type !== 'line') {
           return;
         }
 
@@ -261,6 +277,14 @@ export default create({
         }
       };
       animate();
+    },
+
+    // render title slot of child tab
+    renderTitle(el, index) {
+      this.$nextTick(() => {
+        const title = this.$refs.title[index];
+        title.parentNode.replaceChild(el, title);
+      });
     }
   }
 });

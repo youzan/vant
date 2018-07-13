@@ -1,5 +1,9 @@
 <template>
-  <div class="van-hairline--top-bottom" :class="b({ fixed })">
+  <div
+    class="van-hairline--top-bottom"
+    :class="b({ fixed })"
+    :style="style"
+  >
     <slot />
   </div>
 </template>
@@ -21,6 +25,18 @@ export default create({
     fixed: {
       type: Boolean,
       default: true
+    },
+    zIndex: {
+      type: Number,
+      default: 1
+    }
+  },
+
+  computed: {
+    style() {
+      return {
+        zIndex: this.zIndex
+      };
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <transition name="van-slide-bottom">
-    <div v-show="value" :class="b({ 'withtitle': title })">
+    <div v-if="shouldRender" v-show="value" :class="b({ 'withtitle': title })">
       <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
         <div v-text="title" />
         <icon name="close" @click="onCancel" />
@@ -8,7 +8,7 @@
       <ul v-else class="van-hairline--bottom">
         <li
           v-for="item in actions"
-          :class="[b('item'), item.className, 'van-hairline--top']"
+          :class="[b('item', { disabled: item.disabled }), item.className, 'van-hairline--top']"
           @click.stop="onClickItem(item)"
         >
           <template v-if="!item.loading">
@@ -60,7 +60,7 @@ export default create({
 
   methods: {
     onClickItem(item) {
-      if (typeof item.callback === 'function') {
+      if (item.callback && !item.disabled) {
         item.callback(item);
       }
     },

@@ -1,0 +1,43 @@
+@import './common/var.css';
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: '<%= fontName %>';
+  src: url('https://img.yzcdn.cn/vant/<%= cssClass %>') format('truetype');
+}
+
+.van-icon {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 14px/1 "<%= fontName %>";
+  font-size: inherit;
+  text-rendering: auto;
+
+  &__info {
+    color: #fff;
+    left: 100%;
+    top: -.5em;
+    font-size: .5em;
+    padding: 0 .3em;
+    text-align: center;
+    min-width: 1.2em;
+    line-height: 1.2;
+    position: absolute;
+    border-radius: .6em;
+    box-sizing: border-box;
+    background-color: $red;
+    transform: translateX(-50%);
+    font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
+  }
+
+  &::before {
+    display: inline-block;
+  }
+}
+
+<% _.each(glyphs, function(glyph) { %>.van-icon-<%= glyph.fileName %>::before {
+  content: "\<%= glyph.codePoint %>";
+}
+
+<% }); %>

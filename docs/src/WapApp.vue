@@ -6,7 +6,11 @@
       :title="title"
       left-arrow
       @click-left="onBack"
-    />
+    >
+      <a slot="right" :href="demoLink" target="_blank">
+        <van-icon name="edit" />
+      </a>
+    </van-nav-bar>
     <keep-alive>
       <router-view />
     </keep-alive>
@@ -19,6 +23,10 @@ export default {
     title() {
       const { name } = this.$route.meta;
       return name ? name.replace(/-/g, '') : '';
+    },
+
+    demoLink() {
+      return `https://github.com/youzan/vant/blob/dev/packages/${this.$route.meta.path}/demo/index.vue`;
     }
   },
 
@@ -43,6 +51,19 @@ body {
   .van-nav-bar__title {
     font-size: 15px;
     text-transform: capitalize;
+  }
+
+  .van-nav-bar__left,
+  .van-nav-bar__right {
+    cursor: pointer;
+  }
+
+  .van-nav-bar__right {
+    font-size: 16px;
+
+    .van-icon {
+      vertical-align: -3px;
+    }
   }
 }
 

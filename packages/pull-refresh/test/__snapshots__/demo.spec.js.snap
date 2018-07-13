@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div class="van-pull-refresh">
+    <div class="van-pull-refresh__track" style="transition:0ms;transform:translate3d(0,0px, 0);">
+      <div class="van-pull-refresh__head">
+        <!---->
+        <!---->
+        <!---->
+      </div>
+      <div>
+        <p>刷新次数: 0</p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

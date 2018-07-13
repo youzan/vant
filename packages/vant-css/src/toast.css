@@ -4,7 +4,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  display: flex;  
+  display: flex;
   color: $white;
   font-size: 12px;
   line-height: 1.2;
@@ -16,6 +16,10 @@
   box-sizing: border-box;
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(0, 0, 0, .7);
+
+  &--unclickable {
+    pointer-events: none;
+  }
 
   &--text {
     padding: 12px;

@@ -20,7 +20,11 @@ export default create({
     value: Boolean,
     border: Boolean,
     loading: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    size: {
+      type: String,
+      default: '26px'
+    }
   },
 
   watch: {

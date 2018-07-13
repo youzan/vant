@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="value"
+    v-if="value"
     :class="b()"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
@@ -31,6 +31,14 @@ export default create({
   },
 
   props: {
+    images: {
+      type: Array,
+      default: () => []
+    },
+    startPosition: {
+      type: Number,
+      default: 0
+    },
     overlay: {
       type: Boolean,
       default: true
@@ -39,13 +47,6 @@ export default create({
       type: Boolean,
       default: true
     }
-  },
-
-  data() {
-    return {
-      images: [],
-      startPosition: 0
-    };
   },
 
   methods: {
@@ -60,7 +61,7 @@ export default create({
       const { offsetX, offsetY } = this.$refs.swipe;
 
       // prevent long tap to close component
-      if (deltaTime < 100 && offsetX < 20 && offsetY < 20) {
+      if (deltaTime < 500 && offsetX < 10 && offsetY < 10) {
         this.$emit('input', false);
       }
     }

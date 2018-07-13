@@ -1,11 +1,14 @@
 /* eslint-disable */
+const version = require('../../package.json').version;
+
 module.exports = {
   'zh-CN': {
     header: {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
         title: 'Vant',
-        href: 'http://www.youzanyun.com/zanui'
+        version,
+        href: '#/'
       },
       nav: {
         lang: {
@@ -24,38 +27,39 @@ module.exports = {
             list: [
               {
                 path: '/intro',
-                title: '介绍',
-                noExample: true
+                title: '介绍'
               },
               {
                 path: '/quickstart',
-                title: '快速上手',
-                noExample: true
+                title: '快速上手'
               },
               {
                 path: '/changelog',
-                title: '更新日志',
-                noExample: true
+                title: '更新日志'
               },
               {
-                path: '/built-in-style',
+                path: '/vant-css',
                 title: '内置样式'
               },
               {
                 path: '/theme',
-                title: '定制主题',
-                noExample: true
+                title: '定制主题'
+              },
+              {
+                path: '/contribution',
+                title: '开发指南'
+              },
+              {
+                path: '/style-guide',
+                title: '风格指南'
               },
               {
                 path: '/demo',
-                title: '示例页面',
-                noDocument: true,
-                noExample: true
+                title: '示例页面'
               },
               {
-                path: '/i18n',
-                title: '国际化',
-                noExample: true
+                path: '/locale',
+                title: '国际化'
               }
             ]
           }
@@ -69,7 +73,7 @@ module.exports = {
             groupName: '基础组件',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout - 布局'
               },
               {
@@ -95,10 +99,6 @@ module.exports = {
               {
                 path: '/icon',
                 title: 'Icon - 图标'
-              },
-              {
-                path: '/image-preview',
-                title: 'ImagePreview - 图片预览'
               },
               {
                 path: '/lazyload',
@@ -175,7 +175,7 @@ module.exports = {
             ]
           },
           {
-            groupName: '表单',
+            groupName: '表单组件',
             list: [
               {
                 path: '/checkbox',
@@ -216,7 +216,7 @@ module.exports = {
             list: [
               {
                 path: '/actionsheet',
-                title: 'Actionsheet - 行动按钮'
+                title: 'Actionsheet - 上拉菜单'
               },
               {
                 path: '/datetime-picker',
@@ -248,6 +248,10 @@ module.exports = {
                 title: 'CellSwipe - 滑动单元格'
               },
               {
+                path: '/image-preview',
+                title: 'ImagePreview - 图片预览'
+              },
+              {
                 path: '/switch-cell',
                 title: 'SwitchCell - 开关单元格'
               },
@@ -277,12 +281,12 @@ module.exports = {
                 title: 'Card - 卡片'
               },
               {
-                path: '/contact',
+                path: '/contact-card',
                 title: 'Contact - 联系人'
               },
               {
-                path: '/coupon',
-                title: 'Coupon - 优惠券选择器'
+                path: '/coupon-list',
+                title: 'Coupon - 优惠券'
               },
               {
                 path: '/goods-action',
@@ -307,7 +311,8 @@ module.exports = {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
         title: 'Vant',
-        href: 'http://www.youzanyun.com/zanui'
+        version,
+        href: '#/'
       },
       nav: {
         lang: {
@@ -326,38 +331,31 @@ module.exports = {
             list: [
               {
                 path: '/intro',
-                title: 'Introduction',
-                noExample: true
+                title: 'Introduction'
               },
               {
                 path: '/quickstart',
-                title: 'Quickstart',
-                noExample: true
+                title: 'Quickstart'
               },
               {
                 path: '/changelog',
-                title: 'Changelog',
-                noExample: true
+                title: 'Changelog'
               },
               {
-                path: '/built-in-style',
+                path: '/vant-css',
                 title: 'Built-in style'
               },
               {
                 path: '/theme',
-                title: 'Custom Theme',
-                noExample: true
+                title: 'Custom Theme'
               },
               {
                 path: '/demo',
-                title: 'Demo pages',
-                noDocument: true,
-                noExample: true
+                title: 'Demo pages'
               },
               {
-                path: '/i18n',
-                title: 'Internationalization',
-                noExample: true
+                path: '/locale',
+                title: 'Internationalization'
               }
             ]
           }
@@ -371,7 +369,7 @@ module.exports = {
             groupName: 'Basic Components',
             list: [
               {
-                path: '/layout',
+                path: '/col',
                 title: 'Layout'
               },
               {
@@ -397,10 +395,6 @@ module.exports = {
               {
                 path: '/icon',
                 title: 'Icon'
-              },
-              {
-                path: '/image-preview',
-                title: 'ImagePreview'
               },
               {
                 path: '/lazyload',
@@ -550,6 +544,10 @@ module.exports = {
                 title: 'CellSwipe'
               },
               {
+                path: '/image-preview',
+                title: 'ImagePreview'
+              },
+              {
                 path: '/switch-cell',
                 title: 'SwitchCell'
               },
@@ -579,11 +577,11 @@ module.exports = {
                 title: 'Card'
               },
               {
-                path: '/contact',
+                path: '/contact-card',
                 title: 'Contact'
               },
               {
-                path: '/coupon',
+                path: '/coupon-list',
                 title: 'Coupon'
               },
               {

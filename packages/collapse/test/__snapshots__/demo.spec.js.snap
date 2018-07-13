@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item van-collapse-item--expanded">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞微商城</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞美业</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">线上拓客，随时预约，贴心顺手的开单收银</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item van-collapse-item--expanded">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞微商城</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞美业</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">线上拓客，随时预约，贴心顺手的开单收银</div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">
+            <div>有赞微商城
+              <i class="van-icon van-icon-question" style="color:undefined;">
+                <!---->
+              </i>
+            </div>
+          </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">
+          提供多样店铺模板，快速搭建网上商城
+        </div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

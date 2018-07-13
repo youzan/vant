@@ -9,31 +9,55 @@
     position: relative;
   }
 
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
   &__control {
     border: 0;
+    margin: 0;
     padding: 0;
-    display: block;
     width: 100%;
     resize: none;
+    display: block;
+    line-height: normal;
     box-sizing: border-box;
+    background-color: transparent;
 
     &:disabled {
       opacity: 1;
       color: $gray-darker;
       background-color: transparent;
     }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 
-  &__icon {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    padding: 10px 0 10px 10px;
-    transform: translate3d(0, -50%, 0);
+  &__clear,
+  &__icon,
+  &__button {
+    flex-shrink: 0;
+  }
 
-    .van-icon {
-      display: block;
-    }
+  &__clear,
+  &__icon {
+    padding: 0 10px;
+    color: $gray-dark;
+    line-height: inherit;
+    margin-right: -10px;
+  }
+
+  &__icon .van-icon {
+    display: block;
+    font-size: 16px;
+    line-height: inherit;
   }
 
   &__button {
@@ -67,9 +91,17 @@
     }
   }
 
-  &--has-icon {
-    .van-field__control {
-      padding-right: 20px;
+  &--label {
+    &-center {
+      .van-cell__title {
+        text-align: center;
+      }
+    }
+
+    &-right {
+      .van-cell__title {
+        text-align: right;
+      }
     }
   }
 }

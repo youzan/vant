@@ -5,7 +5,7 @@
     :columns="columns"
     :item-height="itemHeight"
     :show-toolbar="showToolbar"
-    :visibie-item-height="visibleItemCount"
+    :visible-item-count="visibleItemCount"
     :confirm-button-text="confirmButtonText"
     :cancel-button-text="cancelButtonText"
     @change="onChange"
@@ -141,6 +141,7 @@ export default create({
         const [hour, minute] = value.split(':');
         let correctedHour = Math.max(hour, this.minHour);
         correctedHour = Math.min(correctedHour, this.maxHour);
+        correctedHour = `00${correctedHour}`.slice(-2);
 
         return `${correctedHour}:${minute}`;
       }
@@ -222,7 +223,7 @@ export default create({
     },
 
     isLeapYear(year) {
-      return (year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0);
+      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
     },
 
     isShortMonth(month) {
@@ -258,8 +259,11 @@ export default create({
       }
       value = this.correctValue(value);
       this.innerValue = value;
+
       this.$nextTick(() => {
-        this.$emit('change', picker);
+        this.$nextTick(() => {
+          this.$emit('change', picker);
+        });
       });
     },
 
@@ -289,15 +293,8 @@ export default create({
       }
 
       this.$nextTick(() => {
-        this.setColumnByValues(values);
+        this.$refs.picker.setValues(values);
       });
-    },
-
-    setColumnByValues(values) {
-      if (!this.$refs.picker) {
-        return;
-      }
-      this.$refs.picker.setValues(values);
     }
   },
 

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`column watch default index 1`] = `
+<div class="van-picker-column">
+  <ul style="line-height: 50px;">
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1990</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  </ul>
+</div>
+`;
+
+exports[`column watch default index 2`] = `
+<div class="van-picker-column">
+  <ul style="line-height: 50px;">
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
+    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  </ul>
+</div>
+`;

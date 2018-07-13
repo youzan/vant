@@ -2,9 +2,10 @@
   <div :class="b()">
     <cell-group v-if="showExchangeBar" :class="b('top')">
       <field
+        v-model="currentCode"
+        clearable
         :class="b('field')"
         class="van-hairline--surround"
-        v-model="currentCode"
         :placeholder="inputPlaceholder || $t('placeholder')"
         :maxlength="20"
       />
@@ -159,6 +160,7 @@ export default create({
       this.$nextTick(() => {
         const { card, list } = this.$refs;
 
+        /* istanbul ignore next */
         if (list && card && card[index]) {
           list.scrollTop = card[index].$el.offsetTop - 100;
         }

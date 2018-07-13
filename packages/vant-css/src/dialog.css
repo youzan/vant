@@ -11,15 +11,13 @@
   border-radius: 4px;
   background-color: $white;
   transform: translate3d(-50%, -50%, 0);
-  
+
   &__header {
     padding: 15px 0 0;
     text-align: center;
-  }
 
-  &__content {
-    &::after {
-      border-bottom-width: 1px;
+    &--isolated {
+      padding: 25px 0;
     }
   }
 
@@ -27,7 +25,7 @@
     line-height: 1.5;
     padding: 15px 20px;
 
-    &--withtitle {
+    &--has-title {
       color: $gray-dark;
       font-size: 14px;
     }
@@ -35,6 +33,7 @@
 
   &__footer {
     overflow: hidden;
+    user-select: none;
 
     &--buttons {
       display: flex;
@@ -52,7 +51,7 @@
   &__confirm {
     &,
     &:active {
-      color: #00C000;
+      color: #00c000;
     }
   }
 

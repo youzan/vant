@@ -1,6 +1,7 @@
 @import './common/var.css';
 
 .van-cell {
+  width: 100%;
   display: flex;
   padding: 10px 15px;
   box-sizing: border-box;
@@ -43,7 +44,7 @@
       text-align: left;
     }
   }
-  
+
   &__left-icon {
     font-size: 16px;
     line-height: 24px;
@@ -55,6 +56,18 @@
     font-size: 12px;
     line-height: 24px;
     margin-left: 5px;
+
+    &--left::before {
+      transform: rotate(180deg);
+    }
+
+    &--up::before {
+      transform: rotate(-90deg);
+    }
+
+    &--down::before {
+      transform: rotate(90deg);
+    }
   }
 
   &--clickable {

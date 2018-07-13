@@ -9,6 +9,7 @@ const defaultOptions = {
   value: true,
   duration: 3000,
   position: 'middle',
+  loadingType: 'circular',
   forbidClick: false,
   overlayStyle: {}
 };
@@ -32,10 +33,6 @@ function createInstance() {
 // transform toast options to popup props
 function transformer(options) {
   options.overlay = options.mask;
-  if (options.forbidClick && !options.overlay) {
-    options.overlay = true;
-    options.overlayStyle = { background: 'transparent' };
-  }
   return options;
 }
 

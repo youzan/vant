@@ -11,6 +11,7 @@
       :disabled="disabled || disableInput"
       @input="onInput"
       @keypress="onKeypress"
+      @blur="onBlur"
     >
     <button
       :class="b('plus', { disabled: plusDisabled })"
@@ -90,7 +91,7 @@ export default create({
 
   methods: {
     correctValue(value) {
-      return Number.isNaN(value)
+      return isNaN(value)
         ? this.min
         : Math.max(this.min, Math.min(this.max, value));
     },
@@ -119,6 +120,14 @@ export default create({
       if (this.integer && event.keyCode === 46) {
         event.preventDefault();
       }
+    },
+
+    onBlur(event) {
+      if (!this.value) {
+        this.currentValue = +this.min;
+        this.emitInput();
+      }
+      this.$emit('blur', event);
     },
 
     emitInput() {

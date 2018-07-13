@@ -11,7 +11,8 @@
     <ul :style="wrapperStyle">
       <li
         v-for="(option, index) in options"
-        v-text="getOptionText(option)"
+        v-html="getOptionText(option)"
+        :style="optionStyle"
         class="van-ellipsis"
         :class="b('item', {
           disabled: isDisabled(option),
@@ -25,6 +26,7 @@
 
 <script>
 import create from '../utils/create';
+import deepClone from '../utils/deep-clone';
 import { isObj } from '../utils';
 
 const DEFAULT_DURATION = 200;
@@ -38,7 +40,7 @@ export default create({
     className: String,
     itemHeight: Number,
     visibleItemCount: Number,
-    options: {
+    initialOptions: {
       type: Array,
       default: () => []
     },
@@ -54,31 +56,23 @@ export default create({
       offset: 0,
       duration: 0,
       startOffset: 0,
+      options: deepClone(this.initialOptions),
       currentIndex: this.defaultIndex
     };
   },
 
   created() {
-    this.$parent && this.$parent.children.push(this);
-  },
-
-  mounted() {
+    this.$parent.children && this.$parent.children.push(this);
     this.setIndex(this.currentIndex);
   },
 
   destroyed() {
-    this.$parent && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
+    this.$parent.children && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
   },
 
   watch: {
     defaultIndex() {
       this.setIndex(this.defaultIndex);
-    },
-
-    options(next, prev) {
-      if (JSON.stringify(next) !== JSON.stringify(prev)) {
-        this.setIndex(0);
-      }
     }
   },
 
@@ -105,8 +99,10 @@ export default create({
       };
     },
 
-    currentValue() {
-      return this.options[this.currentIndex];
+    optionStyle() {
+      return {
+        height: this.itemHeight + 'px'
+      };
     }
   },
 
@@ -155,7 +151,7 @@ export default create({
     },
 
     setIndex(index, userAction) {
-      index = this.adjustIndex(index);
+      index = this.adjustIndex(index) || 0;
       this.offset = -index * this.itemHeight;
 
       if (index !== this.currentIndex) {
@@ -168,10 +164,13 @@ export default create({
       const { options } = this;
       for (let i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
-          this.setIndex(i);
-          return;
+          return this.setIndex(i);
         }
       }
+    },
+
+    getValue() {
+      return this.options[this.currentIndex];
     }
   }
 });

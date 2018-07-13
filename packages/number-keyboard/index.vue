@@ -4,6 +4,7 @@
       v-show="show"
       :style="style"
       :class="b([theme])"
+      @touchstart.stop
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
@@ -13,12 +14,12 @@
           :class="b('close')"
           v-if="showTitleClose"
           v-text="closeButtonText"
-          @click="onBlur"
+          @click="onClose"
         />
       </div>
       <div :class="b('body')">
         <key
-          v-for="(key, index) in keys"
+          v-for="key in keys"
           :key="key.text"
           :text="key.text"
           :type="key.type"
@@ -145,6 +146,11 @@ export default create({
       this.$emit('blur');
     },
 
+    onClose() {
+      this.$emit('close');
+      this.onBlur();
+    },
+
     onAnimationEnd() {
       this.$emit(this.show ? 'show' : 'hide');
     },
@@ -157,7 +163,7 @@ export default create({
       if (text === 'delete') {
         this.$emit('delete');
       } else if (text === this.closeButtonText) {
-        this.onBlur();
+        this.onClose();
       } else {
         this.$emit('input', text);
       }

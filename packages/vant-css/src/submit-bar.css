@@ -10,9 +10,9 @@
 
   &__tip {
     color: $orange;
+    padding: 10px;
     font-size: 12px;
     line-height: 18px;
-    padding: 10px 10px;
     background-color: #fff7cc;
   }
 

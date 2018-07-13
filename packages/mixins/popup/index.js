@@ -26,11 +26,29 @@ export default {
     lockScroll: {
       type: Boolean,
       default: true
+    },
+    // whether to lazy render
+    lazyRender: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      inited: this.value
+    };
+  },
+
+  computed: {
+    shouldRender() {
+      return this.inited || !this.lazyRender;
     }
   },
 
   watch: {
     value(val) {
+      this.inited = this.inited || this.value;
       this[val ? 'open' : 'close']();
     },
 
@@ -119,7 +137,6 @@ export default {
     move() {
       if (this.getContainer) {
         this.getContainer().appendChild(this.$el);
-      /* istanbul ignore if */
       } else if (this.$parent) {
         this.$parent.$el.appendChild(this.$el);
       }
@@ -160,7 +177,10 @@ export default {
       } else {
         manager.close(this._popupId);
       }
-      this.$el.style.zIndex = context.plusKey('zIndex');
+
+      this.$nextTick(() => {
+        this.$el.style.zIndex = context.plusKey('zIndex');
+      });
     }
   }
 };

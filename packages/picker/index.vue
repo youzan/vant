@@ -12,10 +12,10 @@
     </div>
     <div :class="b('columns')" :style="columnsStyle" @touchmove.prevent>
       <picker-column
-        v-for="(item, index) in currentColumns"
+        v-for="(item, index) in (simple ? [columns] : columns)"
         :key="index"
         :value-key="valueKey"
-        :options="item.values"
+        :initial-options="simple ? item : item.values"
         :class-name="item.className"
         :default-index="item.defaultIndex"
         :item-height="itemHeight"
@@ -65,20 +65,8 @@ export default create({
 
   data() {
     return {
-      children: [],
-      currentColumns: []
+      children: []
     };
-  },
-
-  watch: {
-    columns: {
-      handler() {
-        const columns = this.columns.map(deepClone);
-        this.isSimpleColumn = columns.length && !columns[0].values;
-        this.currentColumns = this.isSimpleColumn ? [{ values: columns }] : columns;
-      },
-      immediate: true
-    }
   },
 
   computed: {
@@ -92,12 +80,29 @@ export default create({
       return {
         height: this.itemHeight * this.visibleItemCount + 'px'
       };
+    },
+
+    simple() {
+      return this.columns.length && !this.columns[0].values;
+    }
+  },
+
+  watch: {
+    columns() {
+      this.setColumns();
     }
   },
 
   methods: {
+    setColumns() {
+      const columns = this.simple ? [{ values: this.columns }] : this.columns;
+      columns.forEach((columns, index) => {
+        this.setColumnValues(index, deepClone(columns.values));
+      });
+    },
+
     emit(event) {
-      if (this.isSimpleColumn) {
+      if (this.simple) {
         this.$emit(event, this.getColumnValue(0), this.getColumnIndex(0));
       } else {
         this.$emit(event, this.getValues(), this.getIndexes());
@@ -105,7 +110,7 @@ export default create({
     },
 
     onChange(columnIndex) {
-      if (this.isSimpleColumn) {
+      if (this.simple) {
         this.$emit('change', this, this.getColumnValue(0), this.getColumnIndex(0));
       } else {
         this.$emit('change', this, this.getValues(), columnIndex);
@@ -119,7 +124,8 @@ export default create({
 
     // get column value by index
     getColumnValue(index) {
-      return (this.getColumn(index) || {}).currentValue;
+      const column = this.getColumn(index);
+      return column && column.getValue();
     },
 
     // set column value by index
@@ -141,20 +147,21 @@ export default create({
 
     // get options of column by index
     getColumnValues(index) {
-      return (this.currentColumns[index] || {}).values;
+      return (this.children[index] || {}).options;
     },
 
     // set options of column by index
     setColumnValues(index, options) {
-      const column = this.currentColumns[index];
-      if (column) {
-        column.values = options;
+      const column = this.children[index];
+      if (column && JSON.stringify(column.options) !== JSON.stringify(options)) {
+        column.options = options;
+        column.setIndex(0);
       }
     },
 
     // get values of all columns
     getValues() {
-      return this.children.map(child => child.currentValue);
+      return this.children.map(child => child.getValue());
     },
 
     // set values of all columns

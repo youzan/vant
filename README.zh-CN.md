@@ -12,6 +12,8 @@
 [![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
 [![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)
 [![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
+[![JS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size)](https://unpkg.com/vant/lib/vant.min.js)
+[![CSS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size)](https://unpkg.com/vant/lib/vant-css/index.css)
 
 ## 特性
 
@@ -21,16 +23,39 @@
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
 * 支持 SSR
- 
+
 ## 安装
 
+#### NPM
+
 ```shell
-npm i -S vant
+npm i vant -S
+```
+
+#### YARN
+
+```shell
+yarn add vant
+```
+
+#### CDN
+
+访问下面的文件 URL，会自动重定向至最新版本的 CDN 链接，建议使用固定版本的 CDN 链接，避免升级时受到非兼容性更新的影响。
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+
+<!-- 引入组件 -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
 ```
 
 ## 快速上手
 
 #### 方式一. 使用  [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (推荐)
+
+`babel-plugin-import` 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
 
 ```bash
 # 安装 babel-plugin-import 插件
@@ -57,7 +82,11 @@ npm i babel-plugin-import -D
 import { Button } from 'vant';
 ```
 
+> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
+
 #### 方式二. 按需引入组件
+
+在不使用插件的情况下，可以手动引入需要的组件
 
 ```js
 import Button from 'vant/lib/button';
@@ -75,21 +104,13 @@ import 'vant/lib/vant-css/index.css';
 Vue.use(Vant);
 ```
 
-### CDN
+> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
 
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
-
-<!-- 引入组件 -->
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
-```
-
-更多内容请参考 [快速上手](https://www.youzanyun.com/zanui/vant#/zh-CN/quickstart).
+更多内容请参考 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
 
 ## 贡献代码
 
-修改代码请阅读我们的 [开发指南](./.github/CONTRIBUTING.zh-CN.md)。
+修改代码请阅读我们的 [开发指南](https://www.youzanyun.com/zanui/vant#/zh-CN/contribution)。
 
 使用过程中发现任何问题都可以提 [Issue](https://github.com/youzan/vant/issues) 给我们，当然，我们也非常欢迎你给我们发 [PR](https://github.com/youzan/vant/pulls)。
 
@@ -97,20 +118,26 @@ Vue.use(Vant);
 
 现代浏览器以及 Android 4.0+, iOS 6+.
 
-## 手机预览
-
-可以手机扫码以下二维码访问手机端 demo：
-
-<img src="https://img.yzcdn.cn/v2/image/youzanyun/zanui/pc/zanui_vue_mobile_preview_03.png" width="200" height="200" >
-
 ## 链接
 
-* [详细文档](https://www.youzanyun.com/zanui/vant)
-* [更新日志](https://www.youzanyun.com/zanui/vant#/zh-CN/changelog)
+* [详细文档](https://youzan.github.io/vant)
+* [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
 * [React 组件库](https://www.youzanyun.com/zanui/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [vant-demo](https://github.com/youzan/vant-demo)
 * [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+
+## 手机预览
+
+可以手机扫码以下二维码访问手机端 demo：
+
+<img src="https://img.yzcdn.cn/vant/preview_qrcode_20180528.png" width="220" height="220" >
+
+## 微信讨论群
+
+欢迎大家加入 Vant 交流群一起讨论，添加下方微信并注明『加入 Vant 交流群』即可
+
+<img src="https://img.yzcdn.cn/vant/wechat_20180606.png" width="220" height="292" >
 
 ## 开源协议
 

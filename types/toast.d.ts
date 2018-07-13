@@ -1,18 +1,35 @@
+import Vue from 'vue';
+import { VanPopupMixin } from './mixins/popup';
+
+type ToastMessage = string | number;
+
 export type ToastOptions = {
   type?: string;
   mask?: boolean;
-  message?: string;
   position?: string;
   duration?: number;
   forbidClick?: boolean;
+  message?: ToastMessage;
+}
+
+export interface VanToast extends Vue, VanPopupMixin {
+  type: string;
+  position: string;
+  loadingType: string;
+  forbidClick: boolean;
+  message: ToastMessage;
 }
 
 export interface Toast {
-  (message: ToastOptions | string, options?: ToastOptions): void;
-  loading(options?: ToastOptions): void;
-  success(options?: ToastOptions): void;
-  fail(options?: ToastOptions): void;
+  (message: ToastOptions | ToastMessage, options?: ToastOptions): VanToast;
+  loading(options?: ToastOptions | ToastMessage): VanToast;
+  success(options?: ToastOptions | ToastMessage): VanToast;
+  fail(options?: ToastOptions | ToastMessage): VanToast;
   clear(): void;
+  install(): void;
+  setDefaultOptions(options: ToastOptions): void;
+  resetDefaultOptions(): void;
+  allowMultiple(allow: boolean): void
 }
 
 declare module 'vue/types/vue' {

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-search" style="background:#f2f2f2;">
+      <i class="van-icon van-icon-search" style="color:undefined;">
+        <!---->
+      </i>
+      <div placeholder="请输入商品名称" class="van-cell van-field">
+        <!---->
+        <!---->
+        <div class="van-cell__value van-cell__value--alone">
+          <div class="van-field__body">
+            <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <form action="/">
+      <div class="van-search van-search--show-action" style="background:#f2f2f2;">
+        <i class="van-icon van-icon-search" style="color:undefined;">
+          <!---->
+        </i>
+        <div placeholder="请输入商品名称" class="van-cell van-field">
+          <!---->
+          <!---->
+          <div class="van-cell__value van-cell__value--alone">
+            <div class="van-field__body">
+              <input type="search" placeholder="请输入商品名称" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div class="van-search__action">
+          <div class="van-search__cancel">取消</div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <div class="van-search van-search--show-action" style="background:#f2f2f2;">
+      <i class="van-icon van-icon-search" style="color:undefined;">
+        <!---->
+      </i>
+      <div class="van-cell van-field">
+        <!---->
+        <!---->
+        <div class="van-cell__value van-cell__value--alone">
+          <div class="van-field__body">
+            <input type="search" value="" class="van-field__control">
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <div class="van-search__action">
+        <div>搜索</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

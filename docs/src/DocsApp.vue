@@ -12,7 +12,7 @@ import docConfig from './doc.config';
 export default {
   data() {
     return {
-      simulators: [`/zanui/vant/examples${location.hash}`],
+      simulators: [`mobile.html${location.hash}`],
       demoURL: ''
     };
   },
@@ -58,7 +58,7 @@ export default {
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 36px;
     line-height: 60px;
     font-weight: normal;
   }

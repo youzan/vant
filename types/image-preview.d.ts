@@ -7,6 +7,7 @@ export class VanImagePreview extends VanPopupMixin {
 
 export interface ImagePreview {
   (images: string[], startPosition?: number): VanImagePreview;
+  install(): void;
 }
 
 export const ImagePreview: ImagePreview;

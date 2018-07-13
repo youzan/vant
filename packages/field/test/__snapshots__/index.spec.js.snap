@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render textarea 1`] = `
+<div class="van-cell van-hairline van-field">
+  <!---->
+  <!---->
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body">
+      <textarea class="van-field__control" style="height: auto;"></textarea>
+      <!---->
+      <!---->
+      <!---->
+    </div>
+    <!---->
+  </div>
+  <!---->
+</div>
+`;

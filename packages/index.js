@@ -1,4 +1,4 @@
-// This file is auto gererated by build/bin/build-entry.js
+// This file is auto gererated by build/build-entry.js
 import Actionsheet from './actionsheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
@@ -68,7 +68,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.1.2';
+const version = '1.1.12';
 const components = [
   Actionsheet,
   AddressEdit,

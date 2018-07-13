@@ -1,6 +1,9 @@
 <template>
   <div :class="b('pane')" v-show="isSelected">
-    <slot v-if="slotInited" />
+    <slot v-if="inited" />
+    <div v-if="$slots.title" ref="title">
+      <slot name="title" />
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,7 @@ export default create({
 
   data() {
     return {
-      slotInited: false
+      inited: false
     };
   },
 
@@ -36,18 +39,29 @@ export default create({
 
   watch: {
     'parent.curActive'() {
-      if (this.isSelected) {
-        this.slotInited = true;
-      }
+      this.inited = this.inited || this.isSelected;
+    },
+
+    title() {
+      this.parent.setLine();
     }
   },
 
   created() {
     this.findParent('van-tabs');
-    this.parent.tabs.push(this);
   },
 
-  destroyed() {
+  mounted() {
+    const { tabs } = this.parent;
+    const index = this.parent.$slots.default.indexOf(this.$vnode);
+    tabs.splice(index === -1 ? tabs.length : index, 0, this);
+
+    if (this.$slots.title) {
+      this.parent.renderTitle(this.$refs.title, this.index);
+    }
+  },
+
+  beforeDestroy() {
     this.parent.tabs.splice(this.index, 1);
   }
 });

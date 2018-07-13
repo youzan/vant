@@ -1,7 +1,6 @@
 <template>
   <div :class="b()">
     <div
-      v-if="count > 1"
       :style="trackStyle"
       :class="b('track')"
       @touchstart="onTouchStart"
@@ -10,9 +9,6 @@
       @touchcancel="onTouchEnd"
       @transitionend="$emit('change', activeIndicator)"
     >
-      <slot />
-    </div>
-    <div v-else :class="b('track')">
       <slot />
     </div>
     <div
@@ -30,6 +26,7 @@
 <script>
 import create from '../utils/create';
 import Touch from '../mixins/touch';
+import { on, off } from '../utils/event';
 
 export default create({
   name: 'swipe',
@@ -76,10 +73,18 @@ export default create({
 
   mounted() {
     this.initialize();
+
+    if (!this.$isServer) {
+      on(window, 'resize', this.onResize, true);
+    }
   },
 
   destroyed() {
     this.clear();
+
+    if (!this.$isServer) {
+      off(window, 'resize', this.onResize, true);
+    }
   },
 
   watch: {
@@ -94,6 +99,8 @@ export default create({
     autoplay(autoplay) {
       if (!autoplay) {
         this.clear();
+      } else {
+        this.autoPlay();
       }
     }
   },
@@ -130,18 +137,24 @@ export default create({
 
   methods: {
     // initialize swipe position
-    initialize() {
+    initialize(active = this.initialSwipe) {
       clearTimeout(this.timer);
-      const rect = this.$el.getBoundingClientRect();
+      if (this.$el) {
+        const rect = this.$el.getBoundingClientRect();
+        this.width = rect.width;
+        this.height = rect.height;
+      }
       this.swiping = true;
-      this.width = rect.width;
-      this.height = rect.height;
-      this.active = this.initialSwipe;
+      this.active = active;
       this.offset = this.count > 1 ? -this.size * this.active : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });
       this.autoPlay();
+    },
+
+    onResize() {
+      this.initialize(this.activeIndicator);
     },
 
     onTouchStart(event) {
@@ -164,9 +177,8 @@ export default create({
       ) {
         event.preventDefault();
         event.stopPropagation();
+        this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
       }
-
-      this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
     },
 
     onTouchEnd() {
@@ -185,12 +197,9 @@ export default create({
       const { delta, active, count, swipes, trackSize } = this;
       const atFirst = active === 0;
       const atLast = active === count - 1;
+      const outOfBounds = !this.loop && ((atFirst && (offset > 0 || move < 0)) || (atLast && (offset < 0 || move > 0)));
 
-      if (
-        !this.loop &&
-        ((atFirst && (offset > 0 || move < 0)) ||
-          (atLast && (offset < 0 || move > 0)))
-      ) {
+      if (outOfBounds || count <= 1) {
         return;
       }
 
@@ -211,6 +220,15 @@ export default create({
       this.offset = offset - this.active * this.size;
     },
 
+    swipeTo(index) {
+      this.swiping = true;
+      this.correctPosition();
+      setTimeout(() => {
+        this.swiping = false;
+        this.move(index % this.count - this.active);
+      }, 30);
+    },
+
     correctPosition() {
       if (this.active <= -1) {
         this.move(this.count);
@@ -226,6 +244,7 @@ export default create({
 
     autoPlay() {
       const { autoplay } = this;
+
       if (autoplay && this.count > 1) {
         this.clear();
         this.timer = setTimeout(() => {

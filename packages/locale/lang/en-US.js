@@ -4,14 +4,11 @@ export default {
   save: 'Save',
   confirm: 'Confirm',
   cancel: 'Cancel',
+  delete: 'Delete',
   complete: 'Complete',
   contact: 'Name',
-  province: 'Province',
-  city: 'City',
-  county: 'District',
   loadingTip: 'Loading...',
   nameEmpty: 'Name can not be empty',
-  nameOverlimit: 'Name length exceeds limit',
   telInvalid: 'Malformed phone number',
   telPlaceholder: 'Phone',
   vanContactCard: {
@@ -21,7 +18,6 @@ export default {
     addText: 'Add new contact'
   },
   vanContactEdit: {
-    delete: 'Delete',
     confirmDelete: 'Are you sure you want to delete this contact?'
   },
   vanPagination: {
@@ -55,20 +51,13 @@ export default {
   },
   vanAddressEdit: {
     area: 'Area',
+    receiver: 'Receiver',
+    postal: 'Postal',
     areaEmpty: 'Please select a receiving area',
-    addressOverlimit: 'The length of the address can not exceed 200 characters',
     addressEmpty: 'Address can not be empty',
     postalEmpty: 'Wrong postal code',
     defaultAddress: 'Set as the default address',
-    deleteAddress: 'Delete the address',
-    confirmDelete: 'Are you sure you want to delete this address?',
-    label: {
-      name: 'Receiver',
-      postal: 'Postal'
-    },
-    placeholder: {
-      postal: 'Postal code (optional)'
-    }
+    confirmDelete: 'Are you sure you want to delete this address?'
   },
   vanAddressEditDetail: {
     label: 'Address',
@@ -80,7 +69,7 @@ export default {
   },
   vanSku: {
     unavailable: 'The product is no longer available for purchase',
-    spec: 'Please select the full specification',
+    spec: 'Please select the goods specification',
     least: 'Choose at least one',
     quota: quota => `Buy up to ${quota} items`,
     inventory: 'Inventory shortage',
@@ -95,11 +84,10 @@ export default {
     upload: 'Please upload',
     number: 'Please fill in the correct number format message',
     email: 'Please fill in the correct email message',
-    idcard: 'Please fill in the correct ID number message',
-    overlimit: 'not more than 200 words',
+    id_no: 'Please fill in the correct ID number message',
     onePic: 'only one picture',
     placeholder: {
-      'id_no': 'Idcard Number',
+      id_no: 'Idcard Number',
       text: 'Text',
       tel: 'Number',
       email: 'Email',

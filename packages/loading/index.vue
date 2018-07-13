@@ -1,7 +1,7 @@
 <template>
   <div :class="b([type, color])" :style="style">
     <span :class="b('spinner', type)">
-      <i v-for="item in (type === 'spinner' ? 12 : 0)" />
+      <i v-for="(item, index) in (type === 'spinner' ? 12 : 0)" :key="index" />
       <svg v-if="type === 'circular'" :class="b('circular')" viewBox="25 25 50 50">
         <circle cx="50" cy="50" r="20" fill="none"/>
       </svg>

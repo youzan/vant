@@ -61,6 +61,7 @@ export default {
 
   // close popup when click modal && closeOnClickOverlay is true
   onClick() {
+    /* istanbul ignore else */
     if (context.top) {
       const { vm } = context.top;
       vm.$emit('click-overlay');

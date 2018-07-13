@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import { isDef } from '../utils';
 import create from '../utils/create';
 import RouterLink from '../mixins/router-link';
 
@@ -43,8 +42,6 @@ export default create({
   },
 
   methods: {
-    isDef,
-
     onClick(event) {
       this.$parent.onChange(this.$parent.items.indexOf(this));
       this.$emit('click', event);

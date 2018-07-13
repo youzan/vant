@@ -3,7 +3,7 @@ sudo: required
 addons:
     chrome: stable
 node_js:
-- 6
+- 8
 os: linux
 cache:
   yarn: true

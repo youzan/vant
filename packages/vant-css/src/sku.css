@@ -5,6 +5,7 @@
   &-container {
     font-size: 14px;
     background: $white;
+    overflow-y: visible;
   }
 
   &-body {
@@ -117,7 +118,7 @@
 
       &--disabled {
         background: $active-color;
-        border-color: $gray-light;
+        border-color: $border-color;
         color: $gray;
       }
     }
@@ -166,6 +167,7 @@
       .van-cell__title {
         max-width: 90px;
       }
+
       .van-cell__value {
         text-align: left;
       }
@@ -177,7 +179,7 @@
 
     &__header {
       padding: 0 10px;
-      border: 1px solid $gray-light;
+      border: 1px solid $border-color;
       line-height: 24px;
       border-radius: 3px;
       font-size: 12px;
@@ -195,7 +197,7 @@
       float: left;
       margin: 10px 10px 0 0;
       position: relative;
-      border: $gray-light 1px solid;
+      border: 1px solid $border-color;
 
       img {
         max-width: 100%;

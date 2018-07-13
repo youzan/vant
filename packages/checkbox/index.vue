@@ -1,16 +1,11 @@
 <template>
   <div :class="b()">
-    <icon
-      name="success"
-      :class="[
-        b('icon'),
-        `van-checkbox--${shape}`, {
-          'van-checkbox--disabled': isDisabled,
-          'van-checkbox--checked': isChecked
-      }]"
-      @click="onClick"
-    />
-    <span v-if="$slots.default" :class="b('label')" @click="onClick('label')">
+    <div :class="[b('icon', [shape, { disabled: isDisabled, checked }])]" @click="toggle">
+      <slot name="icon" :checked="checked">
+        <icon name="success" />
+      </slot>
+    </div>
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="toggle('label')">
       <slot />
     </span>
   </div>
@@ -18,7 +13,6 @@
 
 <script>
 import create from '../utils/create';
-import { isDef } from '../utils';
 import findParent from '../mixins/find-parent';
 
 export default create({
@@ -30,6 +24,7 @@ export default create({
     name: null,
     value: null,
     disabled: Boolean,
+    labelPosition: String,
     labelDisabled: {
       type: Boolean,
       default: false
@@ -41,7 +36,7 @@ export default create({
   },
 
   computed: {
-    currentValue: {
+    checked: {
       get() {
         return this.parent
           ? this.parent.value.indexOf(this.name) !== -1
@@ -75,15 +70,6 @@ export default create({
       }
     },
 
-    isChecked() {
-      const { currentValue } = this;
-      if ({}.toString.call(currentValue) === '[object Boolean]') {
-        return currentValue;
-      } else if (isDef(currentValue)) {
-        return currentValue === this.name;
-      }
-    },
-
     isDisabled() {
       return (this.parent && this.parent.disabled) || this.disabled;
     }
@@ -100,9 +86,9 @@ export default create({
   },
 
   methods: {
-    onClick(target) {
+    toggle(target) {
       if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
-        this.currentValue = !this.currentValue;
+        this.checked = !this.checked;
       }
     }
   }

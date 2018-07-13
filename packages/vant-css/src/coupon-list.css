@@ -58,7 +58,7 @@
           height: 1px;
           top: 50%;
           position: absolute;
-          background-color: $gray-light;
+          background-color: $border-color;
         }
 
         &::before {
@@ -137,7 +137,6 @@
       flex: 1;
       color: $white;
       display: flex;
-      margin-left: -1px; /* hack for flex space */
       text-align: center;
       margin-left: -16px;
       flex-direction: column;
@@ -158,6 +157,7 @@
         margin: 0;
         font-size: 14px;
         font-weight: 300;
+
         @mixin ellipsis;
       }
     }
@@ -192,6 +192,7 @@
       h2,
       span {
         line-height: 1.4;
+
         @mixin ellipsis;
       }
     }
@@ -213,7 +214,7 @@
         right: -13px;
         color: $white;
         font-size: 12px;
-        
+
         &::before {
           font-weight: bold;
         }

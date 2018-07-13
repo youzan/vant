@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">Alert</span></button>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">无标题 Alert</span></button>
+  </div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">Confirm</span></button>
+  </div>
+  <div>
+    <button class="van-button van-button--default van-button--normal">
+      <!----><span class="van-button__text">高级用法</span></button>
+    <div class="van-dialog" style="display:none;">
+      <!---->
+      <div class="van-dialog__content">
+        <div placeholder="请输入用户名" class="van-cell van-hairline van-field">
+          <!---->
+          <div class="van-cell__title"><span>用户名</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div class="van-field__body">
+              <input type="text" placeholder="请输入用户名" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <div placeholder="请输入密码" class="van-cell van-hairline van-field">
+          <!---->
+          <div class="van-cell__title"><span>密码</span>
+            <!---->
+          </div>
+          <div class="van-cell__value">
+            <div class="van-field__body">
+              <input type="password" placeholder="请输入密码" value="" class="van-field__control">
+              <!---->
+              <!---->
+              <!---->
+            </div>
+            <!---->
+          </div>
+          <!---->
+        </div>
+      </div>
+      <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons">
+        <button class="van-button van-button--default van-button--large van-dialog__cancel">
+          <!----><span class="van-button__text">
+        取消
+      </span></button>
+        <button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left">
+          <!----><span class="van-button__text">
+        确认
+      </span></button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

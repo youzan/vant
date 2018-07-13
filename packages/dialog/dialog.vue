@@ -1,13 +1,13 @@
 <template>
   <transition name="van-dialog-bounce">
-    <div v-show="value" :class="b()">
-      <div v-if="title" v-text="title" :class="b('header')" />
-      <div :class="b('content')" class="van-hairline">
+    <div v-show="value" :class="[b(), className]">
+      <div v-if="title" v-text="title" :class="b('header', { isolated: !message && !$slots.default })" />
+      <div :class="b('content')" v-if="message || $slots.default">
         <slot>
-          <div v-if="message" v-html="message" :class="b('message', { withtitle: title })" />
+          <div v-if="message" v-html="message" :class="b('message', { 'has-title': title })" />
         </slot>
       </div>
-      <div :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })">
+      <div class="van-hairline--top" :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })">
         <van-button
           v-show="showCancelButton"
           :loading="loading.cancel"
@@ -49,6 +49,7 @@ export default create({
     title: String,
     message: String,
     callback: Function,
+    className: [String, Object, Array],
     beforeClose: Function,
     confirmButtonText: String,
     cancelButtonText: String,
@@ -80,8 +81,10 @@ export default create({
     handleAction(action) {
       if (this.beforeClose) {
         this.loading[action] = true;
-        this.beforeClose(action, () => {
-          this.onClose(action);
+        this.beforeClose(action, state => {
+          if (state !== false) {
+            this.onClose(action);
+          }
           this.loading[action] = false;
         });
       } else {

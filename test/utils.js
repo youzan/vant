@@ -1,56 +1,15 @@
-/**
- * 按照一定的规则进行匹配
- */
-export function DOMChecker(wrapper, rules) {
-  const { text, count, src, style, noStyle, value } = rules;
+import Vue from 'vue';
+import { mount, TransitionStub } from '@vue/test-utils';
 
-  if (text) {
-    Object.keys(text).forEach(key => {
-      expect(wrapper.find(key)[0].text().trim()).to.equal(text[key]);
-    });
-  }
+// prevent vue warning log
+Vue.config.silent = true;
 
-  if (count) {
-    Object.keys(count).forEach(key => {
-      expect(wrapper.find(key).length).to.equal(count[key]);
-    });
-  }
+export {
+  mount
+};
 
-  if (src) {
-    Object.keys(src).forEach(key => {
-      expect(wrapper.find(key)[0].element.src).to.equal(src[key]);
-    });
-  }
-
-  if (value) {
-    Object.keys(value).forEach(key => {
-      expect(wrapper.find(key)[0].element.value).to.equal(value[key]);
-    });
-  }
-
-  if (style) {
-    Object.keys(style).forEach(key => {
-      Object.keys(style[key]).forEach(prop => {
-        expect(wrapper.find(key)[0].hasStyle(prop, style[key][prop])).to.equal(
-          true
-        );
-      });
-    });
-  }
-
-  if (noStyle) {
-    Object.keys(noStyle).forEach(key => {
-      Object.keys(noStyle[key]).forEach(prop => {
-        expect(
-          wrapper.find(key)[0].hasStyle(prop, noStyle[key][prop])
-        ).to.equal(false);
-      });
-    });
-  }
-}
-
-// 触发一个 touch 事件
-export function triggerTouch(wrapper, eventName, x, y) {
+// Trigger pointer/touch event
+export function trigger(wrapper, eventName, x = 0, y = 0) {
   const el = wrapper.element ? wrapper.element : wrapper;
   const touch = {
     identifier: Date.now(),
@@ -70,15 +29,29 @@ export function triggerTouch(wrapper, eventName, x, y) {
   event.touches = [touch];
   event.targetTouches = [touch];
   event.changedTouches = [touch];
+  event.clientX = x;
+  event.clientY = y;
 
   el.dispatchEvent(event);
 }
 
-export function dragHelper(el, x = 0, y = 0) {
-  triggerTouch(el, 'touchstart', 0, 0);
-  triggerTouch(el, 'touchmove', x / 4, y / 4);
-  triggerTouch(el, 'touchmove', x / 3, y / 3);
-  triggerTouch(el, 'touchmove', x / 2, y / 2);
-  triggerTouch(el, 'touchmove', x, y);
-  triggerTouch(el, 'touchend', x, y);
+// simulate drag gesture
+export function triggerDrag(el, x = 0, y = 0) {
+  trigger(el, 'touchstart', 0, 0);
+  trigger(el, 'touchmove', x / 4, y / 4);
+  trigger(el, 'touchmove', x / 3, y / 3);
+  trigger(el, 'touchmove', x / 2, y / 2);
+  trigger(el, 'touchmove', x, y);
+  trigger(el, 'touchend', x, y);
+}
+
+// promisify setTimeout
+export function later(delay) {
+  return new Promise(resolve => {
+    setTimeout(resolve, delay);
+  });
+}
+
+export function transitionStub() {
+  Vue.component('transition', TransitionStub);
 }

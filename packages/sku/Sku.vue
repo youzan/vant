@@ -77,6 +77,7 @@
           :disable-stepper-input="disableStepperInput"
           :hide-stock="hideStock"
           :custom-stepper-config="customStepperConfig"
+          @change="$emit('stepper-change', $event)"
         />
       </slot>
       <!-- sku-messages -->

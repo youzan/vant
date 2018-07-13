@@ -1,9 +1,32 @@
 {
-  "presets": [["env", { "modules": false, "loose": true }]],
-  "plugins": ["transform-runtime", "transform-object-rest-spread"],
+  "presets": [
+    "stage-0",
+    [
+      "env",
+      {
+        "modules": false,
+        "loose": true,
+        "exclude": ["transform-es2015-typeof-symbol"]
+      }
+    ]
+  ],
+  "plugins": ["transform-runtime"],
   "env": {
     "commonjs": {
-      "presets": [["env", { "modules": "commonjs", "loose": true }]]
+      "presets": [
+        "stage-0",
+        [
+          "env",
+          {
+            "modules": "commonjs",
+            "loose": true,
+            "exclude": ["transform-es2015-typeof-symbol"]
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [["env", { "targets": { "node": 8 } }]]
     }
   }
 }

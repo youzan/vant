@@ -57,6 +57,7 @@
 
   &__title {
     max-height: 40px;
+
     @mixin multi-ellipsis 2;
   }
 
@@ -64,6 +65,7 @@
     color: $gray-darker;
     font-size: 12px;
     max-height: 20px;
+
     @mixin ellipsis;
   }
 

@@ -1,0 +1,239 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a AddressEdit 1`] = `
+<div class="van-address-edit">
+  <div class="van-cell-group van-hairline--top-bottom">
+    <div maxlength="15" placeholder="名字" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>收货人</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="text" maxlength="15" placeholder="名字" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div placeholder="手机或固定电话" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>联系电话</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="tel" placeholder="手机或固定电话" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div placeholder="收件地区" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>收件地区</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="text" readonly="readonly" placeholder="收件地区" value="" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div>
+      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field">
+        <!---->
+        <div class="van-cell__title"><span>详细地址</span>
+          <!---->
+        </div>
+        <div class="van-cell__value">
+          <div class="van-field__body">
+            <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control"></textarea>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <!---->
+    <!---->
+  </div>
+  <div class="van-address-edit__buttons">
+    <button class="van-button van-button--primary van-button--normal van-button--block">
+      <!----><span class="van-button__text">
+      保存
+    </span></button>
+    <!---->
+  </div>
+  <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
+    <div class="van-picker van-area">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <div class="van-picker__loading">
+        <div class="van-loading van-loading--circular van-loading--black"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+      </div>
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`create a AddressEdit with props 1`] = `
+<div class="van-address-edit">
+  <div class="van-cell-group van-hairline--top-bottom">
+    <div maxlength="15" placeholder="名字" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>收货人</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="text" maxlength="15" placeholder="名字" value="测试" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div placeholder="手机或固定电话" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>联系电话</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="tel" placeholder="手机或固定电话" value="13000000000" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div placeholder="收件地区" class="van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>收件地区</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="text" readonly="readonly" placeholder="收件地区" value="北京市 北京市 朝阳区" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div>
+      <div rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-cell van-hairline van-field">
+        <!---->
+        <div class="van-cell__title"><span>详细地址</span>
+          <!---->
+        </div>
+        <div class="van-cell__value">
+          <div class="van-field__body">
+            <textarea rows="1" maxlength="200" placeholder="如街道、楼层、门牌号等" class="van-field__control">详细地址</textarea>
+            <!---->
+            <!---->
+            <!---->
+          </div>
+          <!---->
+        </div>
+        <!---->
+      </div>
+    </div>
+    <div maxlength="6" placeholder="邮政编码" class="van-hairline--top van-cell van-hairline van-field">
+      <!---->
+      <div class="van-cell__title"><span>邮政编码</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div class="van-field__body">
+          <input type="tel" maxlength="6" placeholder="邮政编码" value="10000" class="van-field__control">
+          <!---->
+          <!---->
+          <!---->
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+    <div class="van-cell van-cell--center van-switch-cell">
+      <!---->
+      <div class="van-cell__title"><span>设为默认收货地址</span>
+        <!---->
+      </div>
+      <div class="van-cell__value">
+        <div title="设为默认收货地址" class="van-switch van-switch--on" style="font-size:26px;">
+          <div class="van-switch__node">
+            <!---->
+          </div>
+        </div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div class="van-address-edit__buttons">
+    <button class="van-button van-button--primary van-button--normal van-button--block">
+      <!----><span class="van-button__text">
+      保存
+    </span></button>
+    <!---->
+  </div>
+  <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
+    <div class="van-picker van-area">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
