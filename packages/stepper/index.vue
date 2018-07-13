@@ -81,7 +81,6 @@ export default create({
   watch: {
     value(val) {
       if (val !== '') {
-        // val = this.correctValue(+val);
         if (val !== this.currentValue) {
           this.currentValue = val;
         }
