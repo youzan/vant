@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+`2018-07-13`
+
+**Improvements**
+
+- Button: 新增 plain 属性 [\#1444](https://github.com/youzan/vant/pull/1444)
+- Toast: 完善 TS 类型定义 [\#1468](https://github.com/youzan/vant/pull/1468)
+- Dialog: 完善 TS 类型定义 [\#1467](https://github.com/youzan/vant/pull/1467)
+- Radio: 新增 label-position 属性 [\#1446](https://github.com/youzan/vant/pull/1446)
+- Radio: 新增 label-disabled 属性 [\#1445](https://github.com/youzan/vant/pull/1445)
+- Search: 点击搜索按钮后收起键盘 [\#1448](https://github.com/youzan/vant/pull/1448)
+
+**Bug Fixes**
+
+- 修复 Swipe 多指触控时导致空白的问题 [\#1478](https://github.com/youzan/vant/pull/1478)
+- 修复 ImagePreview startPosition 属性不生效的问题 [\#1456](https://github.com/youzan/vant/pull/1456)
+- 修复 Picker 在部分安卓机型下选项高度错误的问题 [\#1449](https://github.com/youzan/vant/pull/1449)
+- 修复 vue-lazyload 1.2.6 版本出现不兼容更新的问题，暂时降级至 1.2.3 版本 [\#1481](https://github.com/youzan/vant/pull/1481)
+
+
 ### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
 `2018-07-06`
 

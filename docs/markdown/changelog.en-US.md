@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+`2018-07-13`
+
+**Improvements**
+
+- Button: add plain prop [\#1444](https://github.com/youzan/vant/pull/1444)
+- Toast: improve type definition [\#1468](https://github.com/youzan/vant/pull/1468)
+- Dialog: improve type definition [\#1467](https://github.com/youzan/vant/pull/1467)
+- Radio: add label-position prop [\#1446](https://github.com/youzan/vant/pull/1446)
+- Radio: add label-disabled prop [\#1445](https://github.com/youzan/vant/pull/1445)
+- Search: should trigger blur after click search button [\#1448](https://github.com/youzan/vant/pull/1448)
+
+**Bug Fixes**
+
+- fix Swipe multi finger touch [\#1478](https://github.com/youzan/vant/pull/1478)
+- fix ImagePreview start position [\#1456](https://github.com/youzan/vant/pull/1456)
+- fix Picker incorrect option height in some android devices [\#1449](https://github.com/youzan/vant/pull/1449)
+- fix vue-lazyload version [\#1481](https://github.com/youzan/vant/pull/1481)
+
+
 ### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
 `2018-07-06`
 
