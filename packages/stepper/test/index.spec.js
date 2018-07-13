@@ -80,17 +80,11 @@ test('only allow interger', () => {
     }
   });
 
-  const fn = jest.fn();
-  wrapper.vm.onKeypress({
-    keyCode: 46,
-    preventDefault: fn
-  });
-  wrapper.vm.onKeypress({
-    keyCode: 45,
-    preventDefault: fn
-  });
+  const input = wrapper.find('input');
+  input.element.value = '1.2';
+  input.trigger('input');
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(wrapper.emitted('input')).toEqual([[1]]);
 });
 
 test('stepper blur', () => {
