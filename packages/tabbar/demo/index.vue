@@ -13,9 +13,11 @@
       <van-tabbar v-model="active2">
         <van-tabbar-item icon="shop">
           <span>{{ $t('custom') }}</span>
-          <template slot="icon" slot-scope="props">
-            <img :src="props.active ? icon.active : icon.normal" >
-          </template>
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="props.active ? icon.active : icon.normal"
+          >
         </van-tabbar-item>
         <van-tabbar-item icon="chat">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="records">{{ $t('tab') }}</van-tabbar-item>

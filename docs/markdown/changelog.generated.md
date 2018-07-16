@@ -1,5 +1,62 @@
 ## 更新日志
 
+## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11) (2018-07-04)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.10...v1.1.11)
+
+**Breaking changes**
+
+- \<van-field label="用户名" v-model="value" placeholder="请输入用户名" /\> 怎么设置input内容右对齐 [\#1351](https://github.com/youzan/vant/issues/1351)
+- 下拉刷新需要禁用功能 [\#1332](https://github.com/youzan/vant/issues/1332)
+
+**Bug Fixes**
+
+- tabs+list的BUG [\#1342](https://github.com/youzan/vant/issues/1342)
+- Sku 样式出现bug [\#1327](https://github.com/youzan/vant/issues/1327)
+
+**Issue**
+
+- 上拉菜单无法显示 [\#1390](https://github.com/youzan/vant/issues/1390)
+- Field组件type设置为number，ios中文全键盘，联想的中文可以输入 [\#1389](https://github.com/youzan/vant/issues/1389)
+- CellSwipe 滑动单元格 on-close 函数如何传参 [\#1388](https://github.com/youzan/vant/issues/1388)
+- 关于 picker 选择器的建议 [\#1387](https://github.com/youzan/vant/issues/1387)
+- 更新版本1.1.10后lazyLoad报错 [\#1386](https://github.com/youzan/vant/issues/1386)
+- Picker配合Field使用弹出键盘 [\#1385](https://github.com/youzan/vant/issues/1385)
+- 使用Field组件报莫名其妙的错，无法处理，是与其他ui冲突了吗？ [\#1382](https://github.com/youzan/vant/issues/1382)
+- 如何将Uploader图片上传的返回值转成formdata格式？ [\#1380](https://github.com/youzan/vant/issues/1380)
+- 希望添加一个是否现在底部显示按钮的属性与bottom-action 属性区分开 [\#1379](https://github.com/youzan/vant/issues/1379)
+- area组件现在省市二级选择时，无法只选择省了，之前选择省份不选择市会返回省份 现在怎么就默认直接返回默认市了 [\#1378](https://github.com/youzan/vant/issues/1378)
+- 1.1.10版本Area组件遇到的问题 [\#1376](https://github.com/youzan/vant/issues/1376)
+- 命名规则一致性 [\#1375](https://github.com/youzan/vant/issues/1375)
+- 希望Field组件添加验证码图片 [\#1369](https://github.com/youzan/vant/issues/1369)
+- List组件 [\#1367](https://github.com/youzan/vant/issues/1367)
+- Area 组件在未给定初始value时 首次弹出地址信息正常 当滑动省列右侧数据乱码 [\#1363](https://github.com/youzan/vant/issues/1363)
+- \<van-list\> \</van-list\> 组件下拉释放后，顶部展示“加载中”，当数据列表不满屏的时候，列表底部也会再展示一次“加载中” [\#1360](https://github.com/youzan/vant/issues/1360)
+- 滚动出现顶部返回调的功能 [\#1358](https://github.com/youzan/vant/issues/1358)
+- van-row APi里能增加一个行间距的参数 [\#1357](https://github.com/youzan/vant/issues/1357)
+- 动态添加属性 [\#1356](https://github.com/youzan/vant/issues/1356)
+- Toast success / fail / loading 没有图标显示 [\#1355](https://github.com/youzan/vant/issues/1355)
+- 还是关于tabs+list的使用上 [\#1354](https://github.com/youzan/vant/issues/1354)
+- 建议丰富form表单控件和布局 [\#1348](https://github.com/youzan/vant/issues/1348)
+- 关于Lazyload的使用文档是否有不恰当的地方 [\#1340](https://github.com/youzan/vant/issues/1340)
+
+**Improvements**
+
+- \[Improvement\] AddressEdit: event order [\#1402](https://github.com/youzan/vant/pull/1402) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: readonly in safari [\#1399](https://github.com/youzan/vant/pull/1399) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: hide clear icon when readonly [\#1395](https://github.com/youzan/vant/pull/1395) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Checkbox: add label-position prop [\#1394](https://github.com/youzan/vant/pull/1394) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit: fix test cases [\#1393](https://github.com/youzan/vant/pull/1393) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: fix test cases [\#1392](https://github.com/youzan/vant/pull/1392) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Picker: optimize render performance [\#1391](https://github.com/youzan/vant/pull/1391) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] dialog before-close [\#1383](https://github.com/youzan/vant/pull/1383) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Area: watch area list [\#1381](https://github.com/youzan/vant/pull/1381) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: city list empty [\#1374](https://github.com/youzan/vant/pull/1374) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: insert order [\#1372](https://github.com/youzan/vant/pull/1372) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] SwitchCell: add size prop [\#1371](https://github.com/youzan/vant/pull/1371) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] DatetimePicker: change event trigger timing [\#1370](https://github.com/youzan/vant/pull/1370) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Actionsheet: support lazy render [\#1365](https://github.com/youzan/vant/pull/1365) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: update card style [\#1364](https://github.com/youzan/vant/pull/1364) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10) (2018-06-28)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.9...v1.1.10)
 
@@ -155,14 +212,9 @@
 ## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7) (2018-06-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.6...v1.1.7)
 
-**Breaking changes**
-
-- 可以将picker中的v-text改为v-html吗 [\#1155](https://github.com/youzan/vant/issues/1155)
-
 **Bug Fixes**
 
 - Popup 嵌套 AddressEdit 背景蒙层问题 [\#1203](https://github.com/youzan/vant/issues/1203)
-- van-tab title slot 绑定数据更新异常 [\#1170](https://github.com/youzan/vant/issues/1170)
 
 **Issue**
 
@@ -170,7 +222,6 @@
 - image-preview不能直接用吗？ carousel 走马灯的效果 [\#1225](https://github.com/youzan/vant/issues/1225)
 - Tab与List一起使用时，点击Tab后， list 会一直执行load事件 [\#1217](https://github.com/youzan/vant/issues/1217)
 - Stepper 如果存在于checkbox中 会存在click事件冒泡 [\#1216](https://github.com/youzan/vant/issues/1216)
-- Sku是否可以自定义数据格式 [\#1152](https://github.com/youzan/vant/issues/1152)
 
 **Improvements**
 
@@ -187,10 +238,6 @@
 ## [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6) (2018-06-01)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.5...v1.1.6)
 
-**Breaking changes**
-
-- 在van-pull-refresh内通过组件形式来调用 Dialog，dialog内容显示异常 [\#1171](https://github.com/youzan/vant/issues/1171)
-
 **Issue**
 
 - NoticeBar 通告栏能不能上下滚动? [\#1210](https://github.com/youzan/vant/issues/1210)
@@ -203,26 +250,6 @@
 - radio 单选，在safari浏览器\(包含苹果手机微信\)下显示不正常 [\#1199](https://github.com/youzan/vant/issues/1199)
 - van-pull-refresh下拉刷新标签有个问题 [\#1196](https://github.com/youzan/vant/issues/1196)
 - Stepper 步进器 多次触发事件 [\#1190](https://github.com/youzan/vant/issues/1190)
-- swipe组件滑动时会触发item内的点击事件 [\#1186](https://github.com/youzan/vant/issues/1186)
-- 为什么用在iphone5和ipad上 样式就崩了 [\#1185](https://github.com/youzan/vant/issues/1185)
-- 设计稿是750px，根元素应该设置75，但是vant转换后好小，要改成35才行 [\#1181](https://github.com/youzan/vant/issues/1181)
-- Stepper 组件不能输入后直接变成最大值默认值 [\#1180](https://github.com/youzan/vant/issues/1180)
-- List组件按照官方的示例，初始化的时候就默认把所有页都加载了 [\#1179](https://github.com/youzan/vant/issues/1179)
-- 下拉组件与浏览器页面滚动有冲突 [\#1178](https://github.com/youzan/vant/issues/1178)
-- Vant-demo 404 [\#1175](https://github.com/youzan/vant/issues/1175)
-- vant tab active 绑定无效 [\#1173](https://github.com/youzan/vant/issues/1173)
-- rate 评分组件 [\#1172](https://github.com/youzan/vant/issues/1172)
-- vant  checkbox 能否有多个触发机制 [\#1165](https://github.com/youzan/vant/issues/1165)
-- Field  输入框左边怎样加图标 [\#1164](https://github.com/youzan/vant/issues/1164)
-- \[Feature Request\] Popup组件右滑关闭 [\#1162](https://github.com/youzan/vant/issues/1162)
-- 我是直接CDN引入开发。 [\#1161](https://github.com/youzan/vant/issues/1161)
-- List组件在滚动到中间区域时，重置数据源时会触发两次load事件 [\#1160](https://github.com/youzan/vant/issues/1160)
-- 复选框和步进器共用问题 [\#1159](https://github.com/youzan/vant/issues/1159)
-- 步进器输入框大小偏小 [\#1158](https://github.com/youzan/vant/issues/1158)
-- swipe item内的点击事件会在滑动时触发 [\#1153](https://github.com/youzan/vant/issues/1153)
-- Tab 和 List 组件一起使用时，List 组件 onscroll 事件同时触发 [\#1151](https://github.com/youzan/vant/issues/1151)
-- vant添加下拉刷新组件后Tab组件无法吸顶 [\#1146](https://github.com/youzan/vant/issues/1146)
-- AddressList 地址列表 组件 前面的radio是否设置可以选？ [\#1144](https://github.com/youzan/vant/issues/1144)
 
 **Improvements**
 
@@ -242,31 +269,9 @@
 - \[Improvement\] List: add test cases [\#1191](https://github.com/youzan/vant/pull/1191) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] PullRefresh: add test cases [\#1189](https://github.com/youzan/vant/pull/1189) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Uploader add test cases [\#1188](https://github.com/youzan/vant/pull/1188) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] improve quickstart [\#1187](https://github.com/youzan/vant/pull/1187) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] SubmitBar: optimize render [\#1184](https://github.com/youzan/vant/pull/1184) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Field: add left-icon demo [\#1177](https://github.com/youzan/vant/pull/1177) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Dialog: add get-container prop [\#1176](https://github.com/youzan/vant/pull/1176) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] travis: use node8 [\#1169](https://github.com/youzan/vant/pull/1169) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] dynamic import [\#1168](https://github.com/youzan/vant/pull/1168) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] optimize config [\#1167](https://github.com/youzan/vant/pull/1167) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] Dialog: beforeClose Add callback parameters [\#1166](https://github.com/youzan/vant/pull/1166) ([akebe](https://github.com/akebe))
-- \[Build\] optimize build lib script [\#1163](https://github.com/youzan/vant/pull/1163) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] update wechat icon [\#1156](https://github.com/youzan/vant/pull/1156) ([zgrong](https://github.com/zgrong))
 
 ## [v1.1.5](https://github.com/youzan/vant/tree/v1.1.5) (2018-05-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.4...v1.1.5)
-
-**Issue**
-
-- PC端打开页面时，无法滑动日期控件 [\#1145](https://github.com/youzan/vant/issues/1145)
-
-**Improvements**
-
-- \[bugfix\] Toast: mask render uncorrectly when forbidClick [\#1154](https://github.com/youzan/vant/pull/1154) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] AddressEdit: trim empty value [\#1150](https://github.com/youzan/vant/pull/1150) ([chenjiahan](https://github.com/chenjiahan))
-- update dependencies [\#1149](https://github.com/youzan/vant/pull/1149) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Dialog: prevent button text select [\#1148](https://github.com/youzan/vant/pull/1148) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Field: normalize input margin in safari [\#1147](https://github.com/youzan/vant/pull/1147) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4) (2018-05-18)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.3...v1.1.4)

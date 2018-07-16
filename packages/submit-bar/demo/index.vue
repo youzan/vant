@@ -89,7 +89,7 @@ export default {
   }
 
   .van-edit-address {
-    color: #38F;
+    color: #38f;
   }
 
   .van-checkbox {

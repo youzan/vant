@@ -1,5 +1,27 @@
 ## Changelog
 
+### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
+`2018-07-04`
+
+**Improvements**
+
+- Actionsheet: support lazy render [\#1365](https://github.com/youzan/vant/pull/1365)
+- AddressEdit: adjust event order [\#1402](https://github.com/youzan/vant/pull/1402)
+- SwitchCell: add size prop [\#1371](https://github.com/youzan/vant/pull/1371)
+- Checkbox: add label-position prop [\#1394](https://github.com/youzan/vant/pull/1394)
+- Picker: optimize render performance [\#1391](https://github.com/youzan/vant/pull/1391)
+- Tab: update card style [\#1364](https://github.com/youzan/vant/pull/1364)
+- Document: dialog before-close usage [\#1383](https://github.com/youzan/vant/pull/1383)
+
+**Bug Fixes**
+
+- fix Area error when city list empty [\#1374](https://github.com/youzan/vant/pull/1374)
+- fix DatetimePicker change event params [\#1370](https://github.com/youzan/vant/pull/1370)
+- fix Field readonly in safari [\#1399](https://github.com/youzan/vant/pull/1399)
+- fix Field should hide clear icon when readonly [\#1395](https://github.com/youzan/vant/pull/1395)
+- fix Tab insert order [\#1372](https://github.com/youzan/vant/pull/1372)
+
+
 ### [1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
 `2018-06-28`
 

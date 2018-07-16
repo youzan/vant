@@ -1,15 +1,10 @@
 <template>
   <div :class="b()">
-    <icon
-      name="success"
-      :class="[
-        b('icon'),
-        `van-checkbox--${shape}`, {
-          'van-checkbox--disabled': isDisabled,
-          'van-checkbox--checked': checked
-      }]"
-      @click="onClick"
-    />
+    <div :class="[b('icon', [shape, { disabled: isDisabled, checked }])]" @click="onClick">
+      <slot name="icon" :checked="checked">
+        <icon name="success" />
+      </slot>
+    </div>
     <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClick('label')">
       <slot />
     </span>

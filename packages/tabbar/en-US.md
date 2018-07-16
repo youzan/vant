@@ -37,9 +37,11 @@ Use `icon` slot to custom icon
 <van-tabbar v-model="active">
   <van-tabbar-item icon="shop">
     <span>Custom</span>
-    <template slot="icon" slot-scope="props">
-      <img :src="props.active ? icon.active : icon.normal" />
-    </template>
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.active ? icon.active : icon.normal"
+    >
   </van-tabbar-item>
   <van-tabbar-item icon="chat">Tab</van-tabbar-item>
   <van-tabbar-item icon="records">Tab</van-tabbar-item>
@@ -52,8 +54,8 @@ export default {
     return {
       active: 0,
       icon: {
-        normal: '//img.yzcdn.cn/1.png',
-        active: '//img.yzcdn.cn/2.png'
+        normal: '//img.yzcdn.cn/icon-normal.png',
+        active: '//img.yzcdn.cn/icon-active.png'
       }
     }
   }
@@ -87,6 +89,6 @@ export default {
 
 ### TabbarItem Slot
 
-| Name | Description | Scope |
+| Name | Description | slot-scope |
 |-----------|-----------|-----------|
 | icon | Custom icon | active |
