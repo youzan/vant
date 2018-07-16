@@ -44,7 +44,15 @@ export default create({
     },
     type: {
       type: String,
-      default: 'default'
+      default: 'default',
+      validator(value) {
+        return [
+          'default',
+          'primary',
+          'danger'
+        ].indexOf(value) > -1;
+      }
+    }
     },
     size: {
       type: String,
