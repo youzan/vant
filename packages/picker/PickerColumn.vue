@@ -12,6 +12,7 @@
       <li
         v-for="(option, index) in options"
         v-html="getOptionText(option)"
+        :style="optionStyle"
         class="van-ellipsis"
         :class="b('item', {
           disabled: isDisabled(option),
@@ -95,6 +96,12 @@ export default create({
         transition: `${this.duration}ms`,
         transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
         lineHeight: this.itemHeight + 'px'
+      };
+    },
+
+    optionStyle() {
+      return {
+        height: this.itemHeight + 'px'
       };
     }
   },

@@ -21,10 +21,10 @@ module.exports = {
   serve: {
     open: true,
     host: '0.0.0.0',
-    dev: {
+    devMiddleware: {
       logLevel: 'warn'
     },
-    hot: {
+    hotClient: {
       logLevel: 'warn'
     }
   },

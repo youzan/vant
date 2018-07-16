@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-area :area-list="$t('areaList')" />
+      <van-area ref="area" :area-list="$t('areaList')" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -33,6 +33,9 @@ export default {
   },
 
   data() {
+    setTimeout(() => {
+      this.$refs.area.reset();
+    }, 3000);
     return {
       value: '330302'
     };

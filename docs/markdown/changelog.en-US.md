@@ -1,5 +1,44 @@
 ## Changelog
 
+### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+`2018-07-13`
+
+**Improvements**
+
+- Button: add plain prop [\#1444](https://github.com/youzan/vant/pull/1444)
+- Toast: improve type definition [\#1468](https://github.com/youzan/vant/pull/1468)
+- Dialog: improve type definition [\#1467](https://github.com/youzan/vant/pull/1467)
+- Radio: add label-position prop [\#1446](https://github.com/youzan/vant/pull/1446)
+- Radio: add label-disabled prop [\#1445](https://github.com/youzan/vant/pull/1445)
+- Search: should trigger blur after click search button [\#1448](https://github.com/youzan/vant/pull/1448)
+
+**Bug Fixes**
+
+- fix Swipe multi finger touch [\#1478](https://github.com/youzan/vant/pull/1478)
+- fix ImagePreview start position [\#1456](https://github.com/youzan/vant/pull/1456)
+- fix Picker incorrect option height in some android devices [\#1449](https://github.com/youzan/vant/pull/1449)
+- fix vue-lazyload version [\#1481](https://github.com/youzan/vant/pull/1481)
+
+
+### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+`2018-07-06`
+
+**Improvements**
+
+- Area: add reset method [\#1427](https://github.com/youzan/vant/pull/1427)
+- Checkbox: support custom icon [\#1414](https://github.com/youzan/vant/pull/1414)
+- Checkbox: with cell [\#1430](https://github.com/youzan/vant/pull/1430)
+- Swipe: not swipeable when page scrolling [\#1425](https://github.com/youzan/vant/pull/1425)
+- Swipe: window resize [\#1413](https://github.com/youzan/vant/pull/1413)
+
+**Bug Fixes**
+
+- fix Progress text empty [\#1411](https://github.com/youzan/vant/pull/1411)
+- fix Tab random insert order [\#1429](https://github.com/youzan/vant/pull/1429)
+- fix error when use Vue.use in typescript [\#1410](https://github.com/youzan/vant/pull/1410)
+- fix vant-css missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
+
+
 ### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 

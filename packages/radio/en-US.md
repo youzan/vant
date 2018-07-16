@@ -60,6 +60,8 @@ export default {
 |-----------|-----------|-----------|-------------|
 | name | Radio name | `any` | - |
 | disabled | Whether to disable radio | `Boolean` | `false` |
+| label-disabled | Whether to disable label click | `Boolean` | `false` |
+| label-position | Can be set to `left` | `String` | `right` |
 
 ### RadioGroup API
 

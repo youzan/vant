@@ -60,8 +60,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| name | 唯一标识符 | 任意类型 | - |
+| name | 标识 Radio 名称 | 任意类型 | - |
 | disabled | 是否为禁用状态 | `Boolean` | `false` |
+| label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` |
+| label-position | 文本位置，可选值为 `left` | `String` | `right` |
 
 ### RadioGroup API
 

@@ -154,6 +154,11 @@ export default create({
 
     getValues() {
       return this.$refs.picker ? this.$refs.picker.getValues() : [];
+    },
+
+    reset() {
+      this.code = '';
+      this.setValues();
     }
   }
 });
