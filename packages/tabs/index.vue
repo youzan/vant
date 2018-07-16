@@ -107,7 +107,7 @@ export default create({
 
       // scroll to correct position
       if (this.position === 'page-top' || this.position === 'content-bottom') {
-        scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
+        scrollUtils.setScrollTop(window, scrollUtils.getElementTop(this.$el));
       }
     },
 
@@ -196,7 +196,7 @@ export default create({
 
     // adjust tab position
     onScroll() {
-      const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
+      const scrollTop = scrollUtils.getScrollTop(window);
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
       const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
