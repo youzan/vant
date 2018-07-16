@@ -10,7 +10,6 @@
       :value="currentValue"
       :disabled="disabled || disableInput"
       @input="onInput"
-      @keypress="onKeypress"
       @blur="onBlur"
     >
     <button
@@ -90,9 +89,13 @@ export default create({
 
   methods: {
     correctValue(value) {
-      return isNaN(value)
-        ? this.min
-        : Math.max(this.min, Math.min(this.max, value));
+      if (isNaN(value)) {
+        return this.min;
+      }
+
+      value = Math.max(this.min, Math.min(this.max, value));
+
+      return this.integer ? Math.floor(value) : value;
     },
 
     onInput(event) {
@@ -113,12 +116,6 @@ export default create({
       this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
       this.emitInput();
       this.$emit(type);
-    },
-
-    onKeypress(event) {
-      if (this.integer && event.keyCode === 46) {
-        event.preventDefault();
-      }
     },
 
     onBlur(event) {

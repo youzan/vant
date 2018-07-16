@@ -56,12 +56,14 @@ export default {
 ```
 
 #### 选择日期（年月）
+通过传入 `formatter` 函数对选项文字进行处理
 
 ```html
 <van-datetime-picker
   v-model="currentDate"
   type="year-month"
   :min-date="minDate"
+  :formatter="formatter"
 />
 ```
 
@@ -71,6 +73,17 @@ export default {
     return {
       currentDate: new Date()
     };
+  },
+
+  methods: {
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value}年`;
+      } else if (type === 'month') {
+        return `${value}月`
+      }
+      return value;
+    }
   }
 }
 ```
@@ -100,11 +113,12 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
-| type | 类型，可选值为 `date` `time` `year-month` | `String` | `datetime` |
+| type | 类型，可选值为 `date` `time`<br> `year-month` | `String` | `datetime` |
 | min-date | 可选的最小日期 | `Date` | 十年前的 1 月 1 日 |
 | max-date | 可选的最大日期 | `Date` | 十年后的 12 月 31 日 |
 | min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` |
 | max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` |
+| formatter | 选项格式化函数 | `(type, value) => value` | - |
 | title | 顶部栏标题 | `String` | `''` |
 | loading | 是否显示加载状态 | `Boolean` | `false` |
 | item-height | 选项高度 | `Number` | `44` |

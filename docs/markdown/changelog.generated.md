@@ -1,5 +1,115 @@
 ## 更新日志
 
+## [v1.1.13](https://github.com/youzan/vant/tree/v1.1.13) (2018-07-13)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.12...v1.1.13)
+
+**Breaking changes**
+
+- Area组件默认第一个选中，再次选择也是第一个选中， [\#1421](https://github.com/youzan/vant/issues/1421)
+- van-swipe和van-swipe-item使用，页面内容比较多的情况，可以滚动，当触发了滚动事件的同时也触发左滑或者右滑事件 [\#1417](https://github.com/youzan/vant/issues/1417)
+- 定制主题的边框色，修改的应当是$border-color，而不是$gray-light [\#1401](https://github.com/youzan/vant/issues/1401)
+- 关于单、复选框组件API的小建议 [\#1373](https://github.com/youzan/vant/issues/1373)
+- ImagePreview 能支持手势操作吗,放大与缩小 [\#1359](https://github.com/youzan/vant/issues/1359)
+
+**Bug Fixes**
+
+- progress当pivot-text设置为空的时候，进度条长度有问题 [\#1407](https://github.com/youzan/vant/issues/1407)
+- 在 typescript 下使用遇到 vscode 提示类型不正确 [\#1397](https://github.com/youzan/vant/issues/1397)
+- Tabs rendered from dynamic array resulting tab sorts error [\#1361](https://github.com/youzan/vant/issues/1361)
+
+**Issue**
+
+- \<van-tabbar 在 有的 ios 6 手机上 在底部样式变形了  [\#1480](https://github.com/youzan/vant/issues/1480)
+- list中load无限执行 [\#1479](https://github.com/youzan/vant/issues/1479)
+- picker 多列联动如何修改整个columns数据 [\#1477](https://github.com/youzan/vant/issues/1477)
+- list组件load方法执行多次 [\#1475](https://github.com/youzan/vant/issues/1475)
+- 在ios钉钉环境中，field有时不能点击到，聚焦不了，并且键盘不跳出。 [\#1474](https://github.com/youzan/vant/issues/1474)
+- van-uploader  该组件会把 width 撑大，怎么控制？ [\#1473](https://github.com/youzan/vant/issues/1473)
+- 用了swiper切换图片和懒加载很大几率不会加载一直在loading [\#1472](https://github.com/youzan/vant/issues/1472)
+- 使用lib-flexible样式问题 [\#1471](https://github.com/youzan/vant/issues/1471)
+- 怎么在 style为scope 中修改 vant 的 样式？ [\#1464](https://github.com/youzan/vant/issues/1464)
+- DatetimePicker选择时间后显示在cell单元格 的value值不正确 [\#1463](https://github.com/youzan/vant/issues/1463)
+- icon组件目录下文件夹名称assert -\> assets [\#1462](https://github.com/youzan/vant/issues/1462)
+- area [\#1460](https://github.com/youzan/vant/issues/1460)
+- 可以添加一个全局的滑动事件吗 [\#1458](https://github.com/youzan/vant/issues/1458)
+- Area丢失数据 [\#1454](https://github.com/youzan/vant/issues/1454)
+- 关于 area 组件选中北京、天津、上海、重庆等直辖市的问题 [\#1453](https://github.com/youzan/vant/issues/1453)
+- .van-field .van-cell\_\_title {     max-width: 90px; }   这个 max-width的值是否可以由自己配置？ [\#1442](https://github.com/youzan/vant/issues/1442)
+- Popup 弹出层与DatetimePicker 时间选择结合使用， 有时候会卡死，时间弹出框出来了，但是页面全部卡死了，复现不太稳定。 [\#1441](https://github.com/youzan/vant/issues/1441)
+- 时间选择器change事件，getValues\(\)获取返回的数组有错误 [\#1440](https://github.com/youzan/vant/issues/1440)
+- 在使用popup然后在使用list组件，load事件可以触发，但是loading-text提示文字不触发。 [\#1439](https://github.com/youzan/vant/issues/1439)
+- Tab功能如何自定义每一个tab栏对应的content内容 [\#1438](https://github.com/youzan/vant/issues/1438)
+- list组件如果一次请求数据不够一屏不会继续触发load [\#1437](https://github.com/youzan/vant/issues/1437)
+- 提供自动注册所导入组件的插件 [\#1436](https://github.com/youzan/vant/issues/1436)
+- vant  如何先加载下一页面后，再跳转？ [\#1435](https://github.com/youzan/vant/issues/1435)
+- button-primary颜色无法定制 [\#1434](https://github.com/youzan/vant/issues/1434)
+- col里沒辦法v-model [\#1433](https://github.com/youzan/vant/issues/1433)
+- List组件 滑动顶部或底部 是否可以加上 bounce 回弹的效果？这样体验是否会更好？ [\#1432](https://github.com/youzan/vant/issues/1432)
+- DatetimePicker有坑 [\#1431](https://github.com/youzan/vant/issues/1431)
+- List列表，手动触发onload事件时，当首页数据高度低于屏幕高度时不能继续加载 [\#1423](https://github.com/youzan/vant/issues/1423)
+- 希望内置样式添加左右滑动 [\#1384](https://github.com/youzan/vant/issues/1384)
+
+**Improvements**
+
+- \[bugfix\] vue-lazyload version [\#1481](https://github.com/youzan/vant/pull/1481) ([killerlayup](https://github.com/killerlayup))
+- \[bugfix\] Swipe: multi finger touch [\#1478](https://github.com/youzan/vant/pull/1478) ([chenjiahan](https://github.com/chenjiahan))
+- update dependencies [\#1476](https://github.com/youzan/vant/pull/1476) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Toast: type definition [\#1468](https://github.com/youzan/vant/pull/1468) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Dialog: type definition [\#1467](https://github.com/youzan/vant/pull/1467) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] AddressEdit: data tips [\#1466](https://github.com/youzan/vant/pull/1466) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Icon: assets spelling [\#1465](https://github.com/youzan/vant/pull/1465) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Toast: type defination [\#1457](https://github.com/youzan/vant/pull/1457) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] ImagePreview: start position [\#1456](https://github.com/youzan/vant/pull/1456) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Area: fix test cases [\#1451](https://github.com/youzan/vant/pull/1451) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Picker：incorrect option height in some android devices [\#1449](https://github.com/youzan/vant/pull/1449) ([SnowZhangXl](https://github.com/SnowZhangXl))
+- \[bugfix\] Search: trigger blur after click search button [\#1448](https://github.com/youzan/vant/pull/1448) ([SnowZhangXl](https://github.com/SnowZhangXl))
+- \[Improvement\] Radio: add label-position prop [\#1446](https://github.com/youzan/vant/pull/1446) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Radio: add label-disabled prop [\#1445](https://github.com/youzan/vant/pull/1445) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: add plain prop [\#1444](https://github.com/youzan/vant/pull/1444) ([chenjiahan](https://github.com/chenjiahan))
+
+## [v1.1.12](https://github.com/youzan/vant/tree/v1.1.12) (2018-07-06)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.11...v1.1.12)
+
+**Breaking changes**
+
+- 希望SwitchCell组件可以自定义size [\#1368](https://github.com/youzan/vant/issues/1368)
+
+**Bug Fixes**
+
+- change 获取 picker 时间值错误 [\#1366](https://github.com/youzan/vant/issues/1366)
+- Area 使用change 获取Picker 实例错误 [\#1362](https://github.com/youzan/vant/issues/1362)
+
+**Issue**
+
+- swiper纵向滚动不能使用 [\#1424](https://github.com/youzan/vant/issues/1424)
+- Vant is not defined [\#1420](https://github.com/youzan/vant/issues/1420)
+- vant-css缺少依赖配置 [\#1416](https://github.com/youzan/vant/issues/1416)
+- Tab组件切换时active值不等于当前标签的索引 [\#1409](https://github.com/youzan/vant/issues/1409)
+- stepper设置最小值后，输入的时候会直接把第一个数变成最小值 [\#1408](https://github.com/youzan/vant/issues/1408)
+- 想要一个刷新形状的icon [\#1406](https://github.com/youzan/vant/issues/1406)
+- tab组件的sticky属性在ios上会出现短暂消失 [\#1405](https://github.com/youzan/vant/issues/1405)
+- vant Area 组件遇到的问题 [\#1404](https://github.com/youzan/vant/issues/1404)
+- 请问DatetimePicker的类型为datetime的时候，如何设置默认时间？ [\#1403](https://github.com/youzan/vant/issues/1403)
+- Field标签输入框 全局注册后 在子组件里显示van-cell-group未注册 [\#1400](https://github.com/youzan/vant/issues/1400)
+- stepper blur触发失效 [\#1398](https://github.com/youzan/vant/issues/1398)
+- 图片上传 多选问题 [\#1396](https://github.com/youzan/vant/issues/1396)
+- 建议 Dialog 高级用法中增加 api 点击按钮不关闭弹窗 [\#1377](https://github.com/youzan/vant/issues/1377)
+
+**Improvements**
+
+- \[Improvement\] Checkbox: with cell [\#1430](https://github.com/youzan/vant/pull/1430) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: random insert order [\#1429](https://github.com/youzan/vant/pull/1429) ([chenjiahan](https://github.com/chenjiahan))
+- update dependencies [\#1428](https://github.com/youzan/vant/pull/1428) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Area: add reset method [\#1427](https://github.com/youzan/vant/pull/1427) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] vant-css: missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Swipe: not swipeable when page scrolling [\#1425](https://github.com/youzan/vant/pull/1425) ([chenjiahan](https://github.com/chenjiahan))
+- \[Build\] update lint-staged [\#1415](https://github.com/youzan/vant/pull/1415) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Checkbox: support custom icon [\#1414](https://github.com/youzan/vant/pull/1414) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Swipe: window resize [\#1413](https://github.com/youzan/vant/pull/1413) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] border color variable [\#1412](https://github.com/youzan/vant/pull/1412) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Progress: text empty [\#1411](https://github.com/youzan/vant/pull/1411) ([chenjiahan](https://github.com/chenjiahan))
+- \[ bug fix \] fix error when use Vue.use in typescript [\#1410](https://github.com/youzan/vant/pull/1410) ([SilenceM](https://github.com/SilenceM))
+
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11) (2018-07-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.10...v1.1.11)
 
@@ -65,7 +175,6 @@
 - Stepper 步进器 [\#1315](https://github.com/youzan/vant/issues/1315)
 - 头部底部无法固定、底部被内容遮挡 [\#1300](https://github.com/youzan/vant/issues/1300)
 - Tab 标签页在视窗宽度变化后，没有自适应地  重新计算  底部条的位置 [\#1299](https://github.com/youzan/vant/issues/1299)
-- Field 里面的 slot 如果是 van-icon的话，点击触发区域偏离 [\#1249](https://github.com/youzan/vant/issues/1249)
 
 **Issue**
 
@@ -107,10 +216,6 @@
 ## [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9) (2018-06-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.8...v1.1.9)
 
-**Breaking changes**
-
-- van-tab 底部条在title变化时的宽度问题 [\#1258](https://github.com/youzan/vant/issues/1258)
-
 **Issue**
 
 - rate评分组件只能一整个一整个星的显示，不能有半颗星么！ [\#1314](https://github.com/youzan/vant/issues/1314)
@@ -147,11 +252,6 @@
 ## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8) (2018-06-14)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.7...v1.1.8)
 
-**Breaking changes**
-
-- van-field type=“number”时 会报错 [\#1220](https://github.com/youzan/vant/issues/1220)
-- van-swipe 没有提供自定义滑动到指定slider的方法，即常见的slideTo\(index\) [\#1214](https://github.com/youzan/vant/issues/1214)
-
 **Issue**
 
 - 功能需求 [\#1286](https://github.com/youzan/vant/issues/1286)
@@ -161,29 +261,6 @@
 - 这套强大的UI不知可否支持小程序呢 [\#1277](https://github.com/youzan/vant/issues/1277)
 - Swipe 轮播 通过 ref 可以获取到 swipe 实例并调用实例方法无效 [\#1275](https://github.com/youzan/vant/issues/1275)
 - npm run build:lib编译错误 [\#1273](https://github.com/youzan/vant/issues/1273)
-- Badge 徽章达不到想要的效果 [\#1269](https://github.com/youzan/vant/issues/1269)
-- 请求新增表单校验 [\#1268](https://github.com/youzan/vant/issues/1268)
-- 使用AddressEdit的时，输入的 addressInfo 的数据无法获取。 [\#1265](https://github.com/youzan/vant/issues/1265)
-- 紧急：优惠券列表超出一屏时，不能上下翻页划动！ [\#1263](https://github.com/youzan/vant/issues/1263)
-- 在vue-ssr（非nuxt）下组件使用出现问题 [\#1261](https://github.com/youzan/vant/issues/1261)
-- 在vue-ssr（非nuxt）下组件使用出现bug [\#1259](https://github.com/youzan/vant/issues/1259)
-- 能否增加如flex，transform等css属性的厂商前缀，以兼容如ios8等系统 [\#1257](https://github.com/youzan/vant/issues/1257)
-- van-list loading 设为false还是显示加载中,如果数据为空直接finished=false还是继续显示加载中 [\#1253](https://github.com/youzan/vant/issues/1253)
-- 在使用AddressEdit的时候,地址无法显示 [\#1252](https://github.com/youzan/vant/issues/1252)
-- van-list 从其他页面返回时van-list页面，:immediate-check=“false”属性无效？ [\#1248](https://github.com/youzan/vant/issues/1248)
-- van-list    从其他页面返回时van-list页面，:immediate-check=“false”属性无效？ [\#1247](https://github.com/youzan/vant/issues/1247)
-- API文档页面嵌套手机模型怎么实现？ [\#1246](https://github.com/youzan/vant/issues/1246)
-- passwordinput的value值无法重置或清空 [\#1244](https://github.com/youzan/vant/issues/1244)
-- 打包后，在安卓4.4系统打开空白 混合app+vant [\#1243](https://github.com/youzan/vant/issues/1243)
-- checkbox 和cell一起使用 [\#1241](https://github.com/youzan/vant/issues/1241)
-- 请问AddressEdit收件地区选择如何做到反选？因为我做的是编辑页面 [\#1240](https://github.com/youzan/vant/issues/1240)
-- 文档radio组件，示例代码问题-与 Cell 组件一起使用 [\#1238](https://github.com/youzan/vant/issues/1238)
-- Popup或Dialog弹出层显示的列表不能滚动 [\#1236](https://github.com/youzan/vant/issues/1236)
-- 图片上传组件图片旋转问题 [\#1235](https://github.com/youzan/vant/issues/1235)
-- 定制主题无法显示效果 [\#1234](https://github.com/youzan/vant/issues/1234)
-- Popup弹出层配合日期选择使用，ios端日期选择窗不显示 [\#1229](https://github.com/youzan/vant/issues/1229)
-- Slider 滑块 [\#1226](https://github.com/youzan/vant/issues/1226)
-- 文档无法访问问题反馈 [\#1223](https://github.com/youzan/vant/issues/1223)
 
 **Improvements**
 
@@ -194,81 +271,12 @@
 - \[Improvement\] Area: default option [\#1272](https://github.com/youzan/vant/pull/1272) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Sku: message maxlength [\#1271](https://github.com/youzan/vant/pull/1271) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Dialog: isolated title [\#1270](https://github.com/youzan/vant/pull/1270) ([chenjiahan](https://github.com/chenjiahan))
-- fix:actionsheet的标题div没有值设置具体值导致rem布局不自适应 [\#1267](https://github.com/youzan/vant/pull/1267) ([nmxiaowei](https://github.com/nmxiaowei))
-- \[Doc\] add demo link [\#1266](https://github.com/youzan/vant/pull/1266) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: add blur method [\#1264](https://github.com/youzan/vant/pull/1264) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: icon color [\#1262](https://github.com/youzan/vant/pull/1262) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Tab: resize line when title changed [\#1260](https://github.com/youzan/vant/pull/1260) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Popup: limit max height [\#1256](https://github.com/youzan/vant/pull/1256) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] fix radio doc [\#1255](https://github.com/youzan/vant/pull/1255) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] CheckboxGroup: v-model type check [\#1254](https://github.com/youzan/vant/pull/1254) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Update document format [\#1251](https://github.com/youzan/vant/pull/1251) ([tudoubang](https://github.com/tudoubang))
-- \[Doc\] update contribution guide [\#1250](https://github.com/youzan/vant/pull/1250) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] add style guide [\#1245](https://github.com/youzan/vant/pull/1245) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] extract build iconfont [\#1242](https://github.com/youzan/vant/pull/1242) ([chenjiahan](https://github.com/chenjiahan))
-- docs\(doc\): postcss tips [\#1239](https://github.com/youzan/vant/pull/1239) ([tudoubang](https://github.com/tudoubang))
-- \[Improvement\] eslint: use vue-libs [\#1237](https://github.com/youzan/vant/pull/1237) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7) (2018-06-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.6...v1.1.7)
 
-**Bug Fixes**
-
-- Popup 嵌套 AddressEdit 背景蒙层问题 [\#1203](https://github.com/youzan/vant/issues/1203)
-
-**Issue**
-
-- \[eslint-plugin-vue\] \[vue/require-v-for-key\] Elements in iteration expect to have 'v-bind:key' directives. [\#1228](https://github.com/youzan/vant/issues/1228)
-- image-preview不能直接用吗？ carousel 走马灯的效果 [\#1225](https://github.com/youzan/vant/issues/1225)
-- Tab与List一起使用时，点击Tab后， list 会一直执行load事件 [\#1217](https://github.com/youzan/vant/issues/1217)
-- Stepper 如果存在于checkbox中 会存在click事件冒泡 [\#1216](https://github.com/youzan/vant/issues/1216)
-
-**Improvements**
-
-- \[Improvement\] Dialog: optimize style without content [\#1233](https://github.com/youzan/vant/pull/1233) ([chenjiahan](https://github.com/chenjiahan))
-- \[Test\] optimize async cases [\#1232](https://github.com/youzan/vant/pull/1232) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] add babel-eslint [\#1231](https://github.com/youzan/vant/pull/1231) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] ts import plugin [\#1230](https://github.com/youzan/vant/pull/1230) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Dialog: support custom className [\#1224](https://github.com/youzan/vant/pull/1224) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Swipe: add swipeTo method [\#1222](https://github.com/youzan/vant/pull/1222) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: support v-model.number [\#1221](https://github.com/youzan/vant/pull/1221) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] add version tip [\#1219](https://github.com/youzan/vant/pull/1219) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Test: separate jest config from packages.json [\#1218](https://github.com/youzan/vant/pull/1218) ([chenjiahan](https://github.com/chenjiahan))
-
 ## [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6) (2018-06-01)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.5...v1.1.6)
-
-**Issue**
-
-- NoticeBar 通告栏能不能上下滚动? [\#1210](https://github.com/youzan/vant/issues/1210)
-- Dialog确认按钮无法弹出,只有挂载在原型链的可以用 [\#1209](https://github.com/youzan/vant/issues/1209)
-- rate的change事件 [\#1208](https://github.com/youzan/vant/issues/1208)
-- Dialog注册不正确的报错提示 [\#1207](https://github.com/youzan/vant/issues/1207)
-- TreeSelect 分类选择  [\#1206](https://github.com/youzan/vant/issues/1206)
-- 轮播图不能纵向轮播 [\#1205](https://github.com/youzan/vant/issues/1205)
-- 将vant引入mpvue框架，组件并没有渲染出来 [\#1204](https://github.com/youzan/vant/issues/1204)
-- radio 单选，在safari浏览器\(包含苹果手机微信\)下显示不正常 [\#1199](https://github.com/youzan/vant/issues/1199)
-- van-pull-refresh下拉刷新标签有个问题 [\#1196](https://github.com/youzan/vant/issues/1196)
-- Stepper 步进器 多次触发事件 [\#1190](https://github.com/youzan/vant/issues/1190)
-
-**Improvements**
-
-- \[Improvement\] upgrade to jest-serializer-vue@2.0 [\#1215](https://github.com/youzan/vant/pull/1215) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Picker: suppot html option [\#1213](https://github.com/youzan/vant/pull/1213) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Tab: title slot render [\#1212](https://github.com/youzan/vant/pull/1212) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] AddressEdit: area popup should mount in document root [\#1211](https://github.com/youzan/vant/pull/1211) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Switch: add test cases [\#1202](https://github.com/youzan/vant/pull/1202) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Checkbox: add test cases [\#1201](https://github.com/youzan/vant/pull/1201) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Search: add test cases [\#1200](https://github.com/youzan/vant/pull/1200) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] ImagePreview: add test cases [\#1198](https://github.com/youzan/vant/pull/1198) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Stepper: add test cases [\#1197](https://github.com/youzan/vant/pull/1197) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Contact: add test cases [\#1195](https://github.com/youzan/vant/pull/1195) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Collapse: add test cases [\#1194](https://github.com/youzan/vant/pull/1194) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] CellSwipe: add test cases [\#1193](https://github.com/youzan/vant/pull/1193) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Slider: add test cases [\#1192](https://github.com/youzan/vant/pull/1192) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] List: add test cases [\#1191](https://github.com/youzan/vant/pull/1191) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] PullRefresh: add test cases [\#1189](https://github.com/youzan/vant/pull/1189) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Uploader add test cases [\#1188](https://github.com/youzan/vant/pull/1188) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.5](https://github.com/youzan/vant/tree/v1.1.5) (2018-05-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.4...v1.1.5)

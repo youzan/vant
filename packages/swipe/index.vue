@@ -177,9 +177,8 @@ export default create({
       ) {
         event.preventDefault();
         event.stopPropagation();
+        this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
       }
-
-      this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
     },
 
     onTouchEnd() {
@@ -204,20 +203,21 @@ export default create({
         return;
       }
 
-      if (move) {
+      if (move && active + move >= -1 && active + move <= count) {
         if (active === -1) {
           swipes[count - 1].offset = 0;
         }
         swipes[0].offset = atLast && move > 0 ? trackSize : 0;
 
         this.active += move;
-      } else {
-        if (atFirst) {
-          swipes[count - 1].offset = delta > 0 ? -trackSize : 0;
-        } else if (atLast) {
-          swipes[0].offset = delta < 0 ? trackSize : 0;
-        }
       }
+
+      if (atFirst) {
+        swipes[count - 1].offset = delta > 0 || move < 0 ? -trackSize : 0;
+      } else if (atLast) {
+        swipes[0].offset = delta < 0 || move > 0 ? trackSize : 0;
+      }
+
       this.offset = offset - this.active * this.size;
     },
 

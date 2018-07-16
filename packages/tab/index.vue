@@ -49,19 +49,19 @@ export default create({
 
   created() {
     this.findParent('van-tabs');
-
-    const { tabs } = this.parent;
-    const index = this.parent.$slots.default.indexOf(this.$vnode);
-    tabs.splice(index === -1 ? tabs.length : index, 0, this);
   },
 
   mounted() {
+    const { tabs } = this.parent;
+    const index = this.parent.$slots.default.indexOf(this.$vnode);
+    tabs.splice(index === -1 ? tabs.length : index, 0, this);
+
     if (this.$slots.title) {
       this.parent.renderTitle(this.$refs.title, this.index);
     }
   },
 
-  destroyed() {
+  beforeDestroy() {
     this.parent.tabs.splice(this.index, 1);
   }
 });

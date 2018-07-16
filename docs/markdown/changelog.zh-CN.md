@@ -1,5 +1,44 @@
 ## 更新日志
 
+### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+`2018-07-13`
+
+**Improvements**
+
+- Button: 新增 plain 属性 [\#1444](https://github.com/youzan/vant/pull/1444)
+- Toast: 完善 TS 类型定义 [\#1468](https://github.com/youzan/vant/pull/1468)
+- Dialog: 完善 TS 类型定义 [\#1467](https://github.com/youzan/vant/pull/1467)
+- Radio: 新增 label-position 属性 [\#1446](https://github.com/youzan/vant/pull/1446)
+- Radio: 新增 label-disabled 属性 [\#1445](https://github.com/youzan/vant/pull/1445)
+- Search: 点击搜索按钮后收起键盘 [\#1448](https://github.com/youzan/vant/pull/1448)
+
+**Bug Fixes**
+
+- 修复 Swipe 多指触控时导致空白的问题 [\#1478](https://github.com/youzan/vant/pull/1478)
+- 修复 ImagePreview startPosition 属性不生效的问题 [\#1456](https://github.com/youzan/vant/pull/1456)
+- 修复 Picker 在部分安卓机型下选项高度错误的问题 [\#1449](https://github.com/youzan/vant/pull/1449)
+- 修复 vue-lazyload 1.2.6 版本出现不兼容更新的问题，暂时降级至 1.2.3 版本 [\#1481](https://github.com/youzan/vant/pull/1481)
+
+
+### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+`2018-07-06`
+
+**Improvements**
+
+- Area: 新增 reset 方法 [\#1427](https://github.com/youzan/vant/pull/1427)
+- Checkbox: 支持自定义图标 [\#1414](https://github.com/youzan/vant/pull/1414)
+- Checkbox: 优化与 Cell 搭配使用的方式 [\#1430](https://github.com/youzan/vant/pull/1430)
+- Swipe: 屏幕滚动时不会左右滑动 [\#1425](https://github.com/youzan/vant/pull/1425)
+- Swipe: 屏幕大小变化时自动调整宽度 [\#1413](https://github.com/youzan/vant/pull/1413)
+
+**Bug Fixes**
+
+- 修复 Progress 文字为空时样式错误的问题 [\#1411](https://github.com/youzan/vant/pull/1411)
+- 修复 Tab 同时进行插入和删除时顺序错误的问题 [\#1429](https://github.com/youzan/vant/pull/1429)
+- 修复 Vue.use 方法 TypeScript 类型错误 [\#1410](https://github.com/youzan/vant/pull/1410)
+- 修复 vant-css 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
+
+
 ### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 

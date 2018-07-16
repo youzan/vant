@@ -62,6 +62,7 @@ export default {
   v-model="currentDate"
   type="year-month"
   :min-date="minDate"
+  :formatter="formatter"
 />
 ```
 
@@ -71,6 +72,17 @@ export default {
     return {
       currentDate: new Date()
     };
+  },
+
+  methods: {
+    formatter(type, value) {
+      if (type === 'year') {
+        return `${value} Year`;
+      } else if (type === 'month') {
+        return `${value} Month`
+      }
+      return value;
+    }
   }
 }
 ```
@@ -100,11 +112,12 @@ export default {
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|-------------|
-| type | Can be set to `date` `time` `year-month` | `String` | `datetime` |
+| type | Can be set to `date` `time`<br> `year-month` | `String` | `datetime` |
 | min-date | Min date | `Date` | Ten years ago on January 1 |
 | max-date | Max date | `Date` | Ten years later on December 31 |
 | min-hour | Min hour | `Number` | `0` |
 | max-hour | Max hour | `Number` | `23` |
+| formatter | Option text formatter | `(type, value) => value` | - |
 | title | Toolbar title | `String` | `''` |
 | loading | Whether to show loading prompt | `Boolean` | `false` |
 | item-height | Option height | `Number` | `44` |

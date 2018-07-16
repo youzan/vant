@@ -10,7 +10,7 @@
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span v-if="$slots.default" :class="b('label')" @click="onClickLabel">
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClickLabel">
       <slot />
     </span>
   </div>
@@ -28,7 +28,9 @@ export default create({
   props: {
     name: null,
     value: null,
-    disabled: Boolean
+    disabled: Boolean,
+    labelDisabled: Boolean,
+    labelPosition: Boolean
   },
 
   computed: {
@@ -55,7 +57,7 @@ export default create({
 
   methods: {
     onClickLabel() {
-      if (!this.isDisabled) {
+      if (!this.isDisabled && !this.labelDisabled) {
         this.currentValue = this.name;
       }
     }

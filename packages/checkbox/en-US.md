@@ -102,12 +102,29 @@ export default {
 ```html
 <van-checkbox-group v-model="result">
   <van-cell-group>
-    <van-cell v-for="item in list" :title="`Checkbox ${item}`" :key="item">
-      <van-checkbox :name="item" />
+    <van-cell
+      v-for="item in list"
+      clickable
+      :key="item"
+      :title="`Checkbox ${item}`"
+      @click="toggle(index)"
+    >
+      <van-checkbox :name="item" ref="checkboxes" />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
 ```
+
+```js
+export default {
+  methods: {
+    toggle(index) {
+      this.$refs.checkboxes[index].toggle();
+    }
+  }
+}
+```
+
 
 ### Checkbox API
 
@@ -146,3 +163,11 @@ export default {
 |-----------|-----------|-----------|
 | default | Custom label | - |
 | icon | Custom icon | checked: whether to be checked |
+
+### Checkbox Methods
+
+Use ref to get checkbox instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| toggle | - | - | Toggle check status |

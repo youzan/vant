@@ -22,6 +22,7 @@
         v-model="currentDate3"
         type="year-month"
         :min-date="minDate"
+        :formatter="formatter"
       />
     </demo-block>
 
@@ -43,13 +44,17 @@ export default {
       title1: '选择完整时间',
       title2: '选择日期（年月日）',
       title3: '选择日期（年月）',
-      title4: '选择时间'
+      title4: '选择时间',
+      year: '年',
+      month: '月'
     },
     'en-US': {
       title1: 'Choose DateTime',
       title2: 'Choose Date',
       title3: 'Choose Year-Month',
-      title4: 'Choose Time'
+      title4: 'Choose Time',
+      year: ' Year',
+      month: ' Month'
     }
   },
 
@@ -64,6 +69,17 @@ export default {
       currentDate3: new Date(2018, 0, 1),
       currentDate4: '12:00'
     };
+  },
+
+  methods: {
+    formatter(type, value) {
+      if (type === 'year') {
+        return value + this.$t('year');
+      } else if (type === 'month') {
+        return value + this.$t('month');
+      }
+      return value;
+    }
   }
 };
 </script>

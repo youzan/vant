@@ -64,8 +64,25 @@ test('getValues method', () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList
+    },
+    created() {
+      expect(this.getValues()).toEqual([]);
     }
   });
 
   expect(wrapper.vm.getValues()).toEqual(firstOption);
+});
+
+test('reset method', async() => {
+  const wrapper = mount(Area, {
+    propsData: {
+      areaList,
+      value: '120225'
+    }
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+  wrapper.vm.reset();
+  expect(wrapper).toMatchSnapshot();
 });
