@@ -32,6 +32,7 @@ export default create({
     value: {},
     title: String,
     itemHeight: Number,
+    formatter: Function,
     visibleItemCount: Number,
     confirmButtonText: String,
     cancelButtonText: String,
@@ -90,8 +91,14 @@ export default create({
     ranges() {
       if (this.type === 'time') {
         return [
-          [this.minHour, this.maxHour],
-          [0, 59]
+          {
+            type: 'hour',
+            range: [this.minHour, this.maxHour]
+          },
+          {
+            type: 'minute',
+            range: [0, 59]
+          }
         ];
       }
 
@@ -99,28 +106,46 @@ export default create({
       const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', this.innerValue);
 
       const result = [
-        [minYear, maxYear],
-        [minMonth, maxMonth],
-        [minDate, maxDate],
-        [minHour, maxHour],
-        [minMinute, maxMinute]
+        {
+          type: 'year',
+          range: [minYear, maxYear]
+        },
+        {
+          type: 'month',
+          range: [minMonth, maxMonth]
+        },
+        {
+          type: 'day',
+          range: [minDate, maxDate]
+        },
+        {
+          type: 'hour',
+          range: [minHour, maxHour]
+        },
+        {
+          type: 'minute',
+          range: [minMinute, maxMinute]
+        }
       ];
 
       if (this.type === 'date') result.splice(3, 2);
       if (this.type === 'year-month') result.splice(2, 3);
       return result;
     },
+
     columns() {
-      const results = this.ranges.map(range => {
+      const results = this.ranges.map(({ type, range }) => {
         const values = this.times(range[1] - range[0] + 1, index => {
-          const value = range[0] + index;
-          return value < 10 ? `0${value}` : `${value}`;
+          let value = range[0] + index;
+          value = value < 10 ? `0${value}` : `${value}`;
+          return this.formatter ? this.formatter(type, value) : value;
         });
 
         return {
           values
         };
       });
+
       return results;
     }
   },
