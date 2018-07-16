@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <ul previous-text="上一页" class="van-pagination">
+    <ul class="van-pagination">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
       </li>
@@ -29,7 +29,7 @@ exports[`renders demo correctly 1`] = `
     </ul>
   </div>
   <div>
-    <ul previous-text="上一页" size="small" class="van-pagination van-pagination--simple">
+    <ul size="small" class="van-pagination van-pagination--simple">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
       </li>
@@ -45,7 +45,7 @@ exports[`renders demo correctly 1`] = `
     </ul>
   </div>
   <div>
-    <ul previous-text="上一页" class="van-pagination">
+    <ul class="van-pagination">
       <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
         上一页
       </li>
