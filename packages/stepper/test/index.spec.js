@@ -64,10 +64,10 @@ test('correct value when value is not correct', () => {
 
   expect(wrapper.emitted('input')).toEqual([
     [30],
-    [10],
-    [''],
-    [10],
-    [10],
+    [1],
+    [0],
+    [0],
+    [0],
     [30],
     [30]
   ]);
@@ -83,8 +83,9 @@ test('only allow interger', () => {
   const input = wrapper.find('input');
   input.element.value = '1.2';
   input.trigger('input');
+  input.trigger('blur');
 
-  expect(wrapper.emitted('input')).toEqual([[1]]);
+  expect(wrapper.emitted('input')).toEqual([[1.2], [1]]);
 });
 
 test('stepper blur', () => {
@@ -105,6 +106,6 @@ test('stepper blur', () => {
   input.trigger('input');
   input.trigger('blur');
 
-  expect(wrapper.emitted('input')).toEqual([[''], [3]]);
+  expect(wrapper.emitted('input')).toEqual([[5], [0], [3]]);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });

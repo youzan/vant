@@ -80,7 +80,6 @@ export default create({
   watch: {
     value(val) {
       if (val !== '') {
-        val = this.correctValue(+val);
         if (val !== this.currentValue) {
           this.currentValue = val;
         }
@@ -101,7 +100,7 @@ export default create({
 
     onInput(event) {
       const { value } = event.target;
-      this.currentValue = value ? this.correctValue(+value) : value;
+      this.currentValue = Math.min(this.max, value);
       event.target.value = this.currentValue;
       this.emitInput();
     },
@@ -122,8 +121,10 @@ export default create({
     onBlur(event) {
       if (!this.value) {
         this.currentValue = +this.min;
-        this.emitInput();
+      } else {
+        this.currentValue = this.correctValue(+this.currentValue);
       }
+      this.emitInput();
       this.$emit('blur', event);
     },
 
