@@ -71,7 +71,7 @@ export default create({
     return {
       tabs: [],
       position: 'content-top',
-      curActive: 0,
+      curActive: null,
       lineStyle: {},
       events: {
         resize: false,
@@ -236,8 +236,14 @@ export default create({
     },
 
     setCurActive(active) {
-      this.curActive = active;
-      this.$emit('input', active);
+      if (active !== this.curActive) {
+        this.$emit('input', active);
+
+        if (this.curActive !== null) {
+          this.$emit('change', active, this.tabs[active].title);
+        }
+        this.curActive = active;
+      }
     },
 
     // emit event when clicked
