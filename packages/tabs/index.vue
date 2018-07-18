@@ -252,8 +252,8 @@ export default create({
       if (disabled) {
         this.$emit('disabled', index, title);
       } else {
-        this.$emit('click', index, title);
         this.setCurActive(index);
+        this.$emit('click', index, title);
       }
     },
 
