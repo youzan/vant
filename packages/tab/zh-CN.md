@@ -167,5 +167,5 @@ export default {
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 点击标签时触发 | index：标签索引，title：标题 |
+| change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
 | disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
-
