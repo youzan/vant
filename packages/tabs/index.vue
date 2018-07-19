@@ -126,13 +126,14 @@ export default create({
 
     this.$nextTick(() => {
       this.handlers(true);
-      this.scrollIntoView();
+      this.scrollIntoView(true);
     });
   },
 
   activated() {
     this.$nextTick(() => {
       this.handlers(true);
+      this.scrollIntoView(true);
     });
   },
 
@@ -258,7 +259,7 @@ export default create({
     },
 
     // scroll active tab into view
-    scrollIntoView() {
+    scrollIntoView(immediate) {
       if (!this.scrollable || !this.$refs.tabs) {
         return;
       }
@@ -268,11 +269,16 @@ export default create({
       const { scrollLeft, offsetWidth: navWidth } = nav;
       const { offsetLeft, offsetWidth: tabWidth } = tab;
 
-      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
     },
 
     // animate the scrollLeft of nav
-    scrollTo(el, from, to) {
+    scrollTo(el, from, to, immediate) {
+      if (immediate) {
+        el.scrollLeft += to - from;
+        return;
+      }
+
       let count = 0;
       const frames = Math.round(this.duration * 1000 / 16);
       const animate = () => {
