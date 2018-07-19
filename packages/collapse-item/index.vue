@@ -8,7 +8,7 @@
     <cell :class="b('title')" is-link @click="onClick">
       <slot name="title">{{ title }}</slot>
     </cell>
-    <div v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
+    <div v-if="inited" v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
       <div ref="content" :class="b('content')">
         <slot />
       </div>
@@ -33,7 +33,8 @@ export default create({
 
   data() {
     return {
-      show: null
+      show: null,
+      inited: null
     };
   },
 
@@ -66,6 +67,7 @@ export default create({
     this.findParent('van-collapse');
     this.items.push(this);
     this.show = this.expanded;
+    this.inited = this.expanded;
   },
 
   destroyed() {
@@ -80,6 +82,7 @@ export default create({
 
       if (expanded) {
         this.show = true;
+        this.inited = true;
       }
 
       this.$nextTick(() => {
