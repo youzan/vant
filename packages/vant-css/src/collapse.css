@@ -12,6 +12,12 @@
     }
   }
 
+  &__wrapper {
+    overflow: hidden;
+    will-change: height;
+    transition: height .3s ease-in-out;
+  }
+
   &__content {
     padding: 15px;
     background-color: #fff;

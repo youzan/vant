@@ -32,9 +32,8 @@ export default {
     label: '合計：'
   },
   vanCouponCell: {
-    title: '優惠券碼',
+    title: '優惠券',
     tips: '使用優惠',
-    reduce: '省',
     count: count => `您有 ${count} 個可用優惠`
   },
   vanCouponList: {

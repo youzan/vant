@@ -13,7 +13,9 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        <div class="van-collapse-item__wrapper">
+          <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
@@ -24,7 +26,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+        <!---->
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
@@ -35,7 +37,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">线上拓客，随时预约，贴心顺手的开单收银</div>
+        <!---->
       </div>
     </div>
   </div>
@@ -50,7 +52,9 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        <div class="van-collapse-item__wrapper">
+          <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
@@ -61,7 +65,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+        <!---->
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
@@ -72,7 +76,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">线上拓客，随时预约，贴心顺手的开单收银</div>
+        <!---->
       </div>
     </div>
   </div>
@@ -93,9 +97,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">
-          提供多样店铺模板，快速搭建网上商城
-        </div>
+        <!---->
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
@@ -106,7 +108,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
           </i>
         </div>
-        <div class="van-collapse-item__content" style="display:none;">网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失</div>
+        <!---->
       </div>
     </div>
   </div>
