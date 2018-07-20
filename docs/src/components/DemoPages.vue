@@ -6,6 +6,7 @@
       <div
         :class="['van-doc-demo-pages__item', { 'van-doc-demo-pages__item--active': index === currentDemo }]"
         v-for="(demo, index) in demos"
+        :key="index"
       >
         <h4>{{ demo.title }}</h4>
         <a :href="demo.source" target="_blank">{{ $t('source') }}</a>
