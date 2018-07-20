@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
+`2018-07-19`
+
+**Improvements**
+
+- Collapse: 增加切换动画 [\#1500](https://github.com/youzan/vant/pull/1500)
+- CouponCell: 优化文案 [\#1499](https://github.com/youzan/vant/pull/1499)
+- Stepper: 优化输入体验  [\#1484](https://github.com/youzan/vant/pull/1484)
+- Tab: 新增 change 事件 [\#1503](https://github.com/youzan/vant/pull/1503)
+- DatetimePicker: 支持自定义选项文字 [\#1497](https://github.com/youzan/vant/pull/1497)
+
+**Bug Fixes**
+- 修复 Field 行高错误 [\#1486](https://github.com/youzan/vant/pull/1486)
+- 修复 AddressEdit 格式化字符串时报错的问题 [\#1487](https://github.com/youzan/vant/pull/1487)
+- 修复 Progress 与 Collapse 嵌套使用时无法正确渲染的问题 [\#1513](https://github.com/youzan/vant/pull/1513)
+- 修复 Stepper integer 属性在 Android 上无法生效的问题 [\#1482](https://github.com/youzan/vant/pull/1482)
+- 修复 Tab 在路由切换时标签位置错误的问题 [\#1512](https://github.com/youzan/vant/pull/1512)
+- 修复 Tab sticky 属性在局部滚动元素下无法生效的问题 [\#1496](https://github.com/youzan/vant/pull/1496)
+
+
 ### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
 `2018-07-13`
 

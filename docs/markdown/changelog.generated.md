@@ -1,5 +1,45 @@
 ## 更新日志
 
+## [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14) (2018-07-19)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.13...v1.1.14)
+
+**Bug Fixes**
+
+- ImagePreview 预览指定下标图片有错误 [\#1455](https://github.com/youzan/vant/issues/1455)
+- Toast 声明文件中 loading,success,fail 声明缺少对 string 类型的支持 [\#1450](https://github.com/youzan/vant/issues/1450)
+- \[bug report\] Swipe 多指触控问题 [\#1422](https://github.com/youzan/vant/issues/1422)
+- Area 组件显示问题 [\#1419](https://github.com/youzan/vant/issues/1419)
+
+**Issue**
+
+- htc 手机  andrio 6.5  [\#1510](https://github.com/youzan/vant/issues/1510)
+- 点击 RadioGroup 选项不会改变 v-model 的绑定值，并且不会触发 change 事件 [\#1509](https://github.com/youzan/vant/issues/1509)
+- 请问会开源Design组件嘛 [\#1508](https://github.com/youzan/vant/issues/1508)
+- 图片预览组建ImagePreview 返回不销毁问题 [\#1506](https://github.com/youzan/vant/issues/1506)
+- 请问移动端300ms延迟怎么解决? [\#1501](https://github.com/youzan/vant/issues/1501)
+- 没有Scroll滚动组件???? [\#1498](https://github.com/youzan/vant/issues/1498)
+- 希望给下拉刷新组件添加一个 上拉 加载更多功能 [\#1494](https://github.com/youzan/vant/issues/1494)
+- Checkbox 复选框自定义图标不生效 [\#1493](https://github.com/youzan/vant/issues/1493)
+- address\_edit trim is not a function [\#1485](https://github.com/youzan/vant/issues/1485)
+- field清除按钮在PC端点击无效 [\#1483](https://github.com/youzan/vant/issues/1483)
+- AddressEdit收件地区没有显示 [\#1469](https://github.com/youzan/vant/issues/1469)
+- 关于AddressEdit部分数据绑定的文档说明 [\#1459](https://github.com/youzan/vant/issues/1459)
+
+**Improvements**
+
+- \[Improvement\] Collapse: lazy render [\#1513](https://github.com/youzan/vant/pull/1513) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: scroll position after activated [\#1512](https://github.com/youzan/vant/pull/1512) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: add change event [\#1503](https://github.com/youzan/vant/pull/1503) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Collapse: add transition animation [\#1500](https://github.com/youzan/vant/pull/1500) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CouponCell: optimize text [\#1499](https://github.com/youzan/vant/pull/1499) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] DatetimePicker: support text formatter [\#1497](https://github.com/youzan/vant/pull/1497) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tab: sticky in scroll element [\#1496](https://github.com/youzan/vant/pull/1496) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Pagination: fix prev-text prop [\#1495](https://github.com/youzan/vant/pull/1495) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit: string trim [\#1487](https://github.com/youzan/vant/pull/1487) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Field: inline height [\#1486](https://github.com/youzan/vant/pull/1486) ([chenjiahan](https://github.com/chenjiahan))
+- enhanced stepper [\#1484](https://github.com/youzan/vant/pull/1484) ([SnowZhangXl](https://github.com/SnowZhangXl))
+- \[bugfix\] Stepper: integer in android [\#1482](https://github.com/youzan/vant/pull/1482) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.1.13](https://github.com/youzan/vant/tree/v1.1.13) (2018-07-13)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.12...v1.1.13)
 
@@ -173,8 +213,6 @@
 **Breaking changes**
 
 - Stepper 步进器 [\#1315](https://github.com/youzan/vant/issues/1315)
-- 头部底部无法固定、底部被内容遮挡 [\#1300](https://github.com/youzan/vant/issues/1300)
-- Tab 标签页在视窗宽度变化后，没有自适应地  重新计算  底部条的位置 [\#1299](https://github.com/youzan/vant/issues/1299)
 
 **Issue**
 
@@ -194,7 +232,6 @@
 - 使用vue-cli 3.0 构建项目 定制主题 [\#1319](https://github.com/youzan/vant/issues/1319)
 - toast clear mask [\#1318](https://github.com/youzan/vant/issues/1318)
 - 1.1.9版本，直接使用http导入js和css文件，在大部分浏览器上（iphone/android/PC）,按钮无法显示。在mac上正常 [\#1317](https://github.com/youzan/vant/issues/1317)
-- 自定义 ICON 和自带 ICON 加载错误 [\#1298](https://github.com/youzan/vant/issues/1298)
 
 **Improvements**
 
@@ -225,18 +262,6 @@
 - v-lazy 里的options [\#1307](https://github.com/youzan/vant/issues/1307)
 - 上传组件被套在v-for循环中，会自动重复触发 [\#1306](https://github.com/youzan/vant/issues/1306)
 - 关于picker的问题 [\#1303](https://github.com/youzan/vant/issues/1303)
-- 希望能在picker里面添加props设置高亮的index [\#1302](https://github.com/youzan/vant/issues/1302)
-- swipe里面如果img包含上a标签跳转滑动过程中直接出发a标签的跳转事件 [\#1301](https://github.com/youzan/vant/issues/1301)
-- Switch能否支持0和1 [\#1297](https://github.com/youzan/vant/issues/1297)
-- 业务组件 带过滤条件 商品列表组件实现计划吗 [\#1296](https://github.com/youzan/vant/issues/1296)
-- List组件在ios的webview中，上拉加载不起作用，因为ios不支持scroll事件 [\#1295](https://github.com/youzan/vant/issues/1295)
-- swiper 组件，一个页面中，多次使用，出现不显示问题，应该怎么解决？ [\#1292](https://github.com/youzan/vant/issues/1292)
-- van-list 无法隐藏 van-loading [\#1291](https://github.com/youzan/vant/issues/1291)
-- area组件数据格式能否加个配置选项？通用的地址json数据格式都是嵌套的 [\#1290](https://github.com/youzan/vant/issues/1290)
-- dialog 无蒙层  完全相同的代码结果一个有蒙层一个没有 [\#1288](https://github.com/youzan/vant/issues/1288)
-- van-list在firefox上报错 [\#1285](https://github.com/youzan/vant/issues/1285)
-- swiper+lazyload只显示第一张图片？？ [\#1278](https://github.com/youzan/vant/issues/1278)
-- van-swipe @change function trigger repeatedly [\#1276](https://github.com/youzan/vant/issues/1276)
 
 **Improvements**
 
@@ -246,31 +271,9 @@
 - \[Improvement\] Field: support clearable [\#1309](https://github.com/youzan/vant/pull/1309) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Layout: support flex [\#1305](https://github.com/youzan/vant/pull/1305) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Tab: line resize [\#1304](https://github.com/youzan/vant/pull/1304) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] update type definition [\#1294](https://github.com/youzan/vant/pull/1294) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Actionsheet: support disable option [\#1293](https://github.com/youzan/vant/pull/1293) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8) (2018-06-14)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.7...v1.1.8)
-
-**Issue**
-
-- 功能需求 [\#1286](https://github.com/youzan/vant/issues/1286)
-- AddressEdit组件addressInfo数据格式的key值自定义 [\#1284](https://github.com/youzan/vant/issues/1284)
-- picker是否支持多选 [\#1283](https://github.com/youzan/vant/issues/1283)
-- 动态绑定 field 的Error 属性不生效 [\#1279](https://github.com/youzan/vant/issues/1279)
-- 这套强大的UI不知可否支持小程序呢 [\#1277](https://github.com/youzan/vant/issues/1277)
-- Swipe 轮播 通过 ref 可以获取到 swipe 实例并调用实例方法无效 [\#1275](https://github.com/youzan/vant/issues/1275)
-- npm run build:lib编译错误 [\#1273](https://github.com/youzan/vant/issues/1273)
-
-**Improvements**
-
-- \[Improvement\] AddressEdit: configure button text [\#1287](https://github.com/youzan/vant/pull/1287) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] build style entry failed [\#1282](https://github.com/youzan/vant/pull/1282) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] stylelint [\#1280](https://github.com/youzan/vant/pull/1280) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] AddressEdit: simplify [\#1274](https://github.com/youzan/vant/pull/1274) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Area: default option [\#1272](https://github.com/youzan/vant/pull/1272) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Sku: message maxlength [\#1271](https://github.com/youzan/vant/pull/1271) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Dialog: isolated title [\#1270](https://github.com/youzan/vant/pull/1270) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7) (2018-06-06)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.6...v1.1.7)
