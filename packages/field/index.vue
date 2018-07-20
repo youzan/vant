@@ -30,7 +30,7 @@
         v-on="listeners"
         ref="input"
         :class="b('control', inputAlign)"
-        :type="type"
+        :type="type==='number'?'':type"
         :value="value"
         :readonly="readonly"
       >
@@ -99,7 +99,12 @@ export default create({
   },
 
   watch: {
-    value() {
+    value(val, oldVal) {
+      // hack for safari
+      if (this.type === 'number' && String(val).split('.').length > 2) {
+        this.$emit('input', oldVal);
+        return;
+      }
       this.$nextTick(this.adjustSize);
     }
   },
@@ -166,7 +171,6 @@ export default create({
       if (this.type === 'search' && event.keyCode === 13) {
         this.blur();
       }
-
       this.$emit('keypress', event);
     },
 
