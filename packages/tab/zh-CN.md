@@ -146,6 +146,7 @@ export default {
 | line-width | 底部条宽度 (px) | `Number` | 与当前标签等宽 |
 | swipe-threshold | 滚动阀值，设置 Tab 超过多少个可滚动 | `Number` | `4` |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
+| offset-top | 粘性定位布局下与顶部的最小距离 (px) | `Number` | `0` |
 | swipeable | 是否可以滑动内容切换 | `Boolean` | `false` |
 
 ### Tab API
