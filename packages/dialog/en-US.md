@@ -4,6 +4,8 @@
 
 ```js
 import { Dialog } from 'vant';
+
+Vue.use(Dialog);
 ```
 
 ### Usage
