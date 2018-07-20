@@ -165,4 +165,5 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | click | Triggered when click tab | index：index of current tab，title: tab title |
+| change | Triggered when active tab changed | index：index of current tab，title: tab title |
 | disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |

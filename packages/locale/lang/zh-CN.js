@@ -30,9 +30,8 @@ export default {
     label: '合计：'
   },
   vanCouponCell: {
-    title: '优惠券码',
+    title: '优惠券',
     tips: '使用优惠',
-    reduce: '省',
     count: count => `您有 ${count} 个可用优惠`
   },
   vanCouponList: {

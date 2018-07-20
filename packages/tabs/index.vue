@@ -71,7 +71,7 @@ export default create({
     return {
       tabs: [],
       position: 'content-top',
-      curActive: 0,
+      curActive: null,
       lineStyle: {},
       events: {
         resize: false,
@@ -126,13 +126,14 @@ export default create({
 
     this.$nextTick(() => {
       this.handlers(true);
-      this.scrollIntoView();
+      this.scrollIntoView(true);
     });
   },
 
   activated() {
     this.$nextTick(() => {
       this.handlers(true);
+      this.scrollIntoView(true);
     });
   },
 
@@ -236,8 +237,14 @@ export default create({
     },
 
     setCurActive(active) {
-      this.curActive = active;
-      this.$emit('input', active);
+      if (active !== this.curActive) {
+        this.$emit('input', active);
+
+        if (this.curActive !== null) {
+          this.$emit('change', active, this.tabs[active].title);
+        }
+        this.curActive = active;
+      }
     },
 
     // emit event when clicked
@@ -246,13 +253,13 @@ export default create({
       if (disabled) {
         this.$emit('disabled', index, title);
       } else {
-        this.$emit('click', index, title);
         this.setCurActive(index);
+        this.$emit('click', index, title);
       }
     },
 
     // scroll active tab into view
-    scrollIntoView() {
+    scrollIntoView(immediate) {
       if (!this.scrollable || !this.$refs.tabs) {
         return;
       }
@@ -262,11 +269,16 @@ export default create({
       const { scrollLeft, offsetWidth: navWidth } = nav;
       const { offsetLeft, offsetWidth: tabWidth } = tab;
 
-      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
     },
 
     // animate the scrollLeft of nav
-    scrollTo(el, from, to) {
+    scrollTo(el, from, to, immediate) {
+      if (immediate) {
+        el.scrollLeft += to - from;
+        return;
+      }
+
       let count = 0;
       const frames = Math.round(this.duration * 1000 / 16);
       const animate = () => {
