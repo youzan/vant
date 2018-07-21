@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
+`2018-07-19`
+
+**Improvements**
+
+- Collapse: add transition animation [\#1500](https://github.com/youzan/vant/pull/1500)
+- CouponCell: optimize text [\#1499](https://github.com/youzan/vant/pull/1499)
+- Stepper: improve input experience  [\#1484](https://github.com/youzan/vant/pull/1484)
+- Tab: add change event [\#1503](https://github.com/youzan/vant/pull/1503)
+- DatetimePicker: support text formatter [\#1497](https://github.com/youzan/vant/pull/1497)
+
+**Bug Fixes**
+- fix Field inline-height [\#1486](https://github.com/youzan/vant/pull/1486)
+- fix AddressEdit string trim [\#1487](https://github.com/youzan/vant/pull/1487)
+- fix Progress nesting in Collapse [\#1513](https://github.com/youzan/vant/pull/1513)
+- fix Stepper integer in android [\#1482](https://github.com/youzan/vant/pull/1482)
+- fix Tab scroll position after activated [\#1512](https://github.com/youzan/vant/pull/1512)
+- fix Tab sticky in scroll element [\#1496](https://github.com/youzan/vant/pull/1496)
+
+
 ### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
 `2018-07-13`
 
