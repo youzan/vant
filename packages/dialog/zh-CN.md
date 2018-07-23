@@ -5,6 +5,8 @@ Dialog 组件支持函数调用和组件调用两种形式
 
 ```js
 import { Dialog } from 'vant';
+
+Vue.use(Dialog);
 ```
 
 ### 代码演示
@@ -83,7 +85,7 @@ export default {
 
 
 #### 高级用法
-如果需要在弹窗内实现更复杂的交互，可以通过组件形式来调用 Dialog
+如果需要在弹窗内实现更复杂的交互，可以通过组件形式来调用 Dialog，调用前需要通过 Vue.use 注册组件
 
 ```html
 <van-dialog
@@ -106,8 +108,6 @@ export default {
 ```
 
 ```js
-Vue.use(Dialog);
-
 export default {
   data() {
     return {

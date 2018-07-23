@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -31,7 +31,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -74,7 +74,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -101,7 +101,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--card">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top">
+      <div class="van-tabs__wrap">
         <div class="van-tabs__nav van-tabs__nav--card">
           <!---->
         </div>
@@ -128,7 +128,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -155,7 +155,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -182,7 +182,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>
@@ -213,7 +213,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-tabs__wrap--content-top van-hairline--top-bottom">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
           <div class="van-tabs__line"></div>
         </div>

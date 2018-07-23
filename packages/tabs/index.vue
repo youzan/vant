@@ -2,8 +2,9 @@
   <div :class="b([type])">
     <div
       ref="wrap"
+      :style="wrapStyle"
       :class="[
-        b('wrap', [position, { scrollable }]),
+        b('wrap', { scrollable }),
         { 'van-hairline--top-bottom': type === 'line' }
       ]"
     >
@@ -64,13 +65,17 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
+    },
+    offsetTop: {
+      type: Number,
+      default: 0
     }
   },
 
   data() {
     return {
       tabs: [],
-      position: 'content-top',
+      position: '',
       curActive: null,
       lineStyle: {},
       events: {
@@ -85,6 +90,23 @@ export default create({
     // whether the nav is scrollable
     scrollable() {
       return this.tabs.length > this.swipeThreshold;
+    },
+
+    wrapStyle() {
+      switch (this.position) {
+        case 'top':
+          return {
+            top: this.offsetTop + 'px',
+            position: 'fixed'
+          };
+        case 'bottom':
+          return {
+            top: 'auto',
+            bottom: 0
+          };
+        default:
+          return null;
+      }
     }
   },
 
@@ -197,15 +219,15 @@ export default create({
 
     // adjust tab position
     onScroll() {
-      const scrollTop = scrollUtils.getScrollTop(window);
+      const scrollTop = scrollUtils.getScrollTop(window) + this.offsetTop;
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
       const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
-        this.position = 'content-bottom';
+        this.position = 'bottom';
       } else if (scrollTop > elTopToPageTop) {
-        this.position = 'page-top';
+        this.position = 'top';
       } else {
-        this.position = 'content-top';
+        this.position = '';
       }
     },
 
