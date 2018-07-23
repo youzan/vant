@@ -99,9 +99,14 @@ export default create({
     },
 
     onInput(event) {
-      const { value } = event.target;
-      this.currentValue = Math.min(this.max, value);
-      event.target.value = this.currentValue;
+      const { value: _value } = event.target;
+      const value = +this.max > +_value ? _value : this.max;
+      if (typeof value === 'string' && value.endsWith('.')) {
+        event.target.value = value;
+      } else {
+        event.target.value = +value;
+      }
+      this.currentValue = +value;
       this.emitInput();
     },
 
