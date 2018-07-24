@@ -26,7 +26,7 @@ export default create({
   name: 'stepper',
 
   props: {
-    value: {},
+    value: null,
     integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
@@ -49,10 +49,8 @@ export default create({
   },
 
   data() {
-    let value = this.value ? +this.value : +this.defaultValue;
-    const correctedValue = this.correctValue(value);
-    if (value !== correctedValue) {
-      value = correctedValue;
+    const value = this.range(this.value || this.defaultValue);
+    if (value !== +this.value) {
       this.$emit('input', value);
     }
 
@@ -63,74 +61,65 @@ export default create({
 
   computed: {
     minusDisabled() {
-      const min = +this.min;
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      return min === currentValue || (currentValue - step) < min || this.disabled;
+      return this.disabled || this.currentValue <= this.min;
     },
 
     plusDisabled() {
-      const max = +this.max;
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      return max === currentValue || (currentValue + step) > max || this.disabled;
+      return this.disabled || this.currentValue >= this.max;
     }
   },
 
   watch: {
     value(val) {
-      if (val !== '') {
-        if (val !== this.currentValue) {
-          this.currentValue = val;
-        }
+      if (val !== this.currentValue) {
+        this.currentValue = this.format(val);
       }
+    },
+
+    currentValue(val) {
+      this.$emit('input', val);
+      this.$emit('change', val);
     }
   },
 
   methods: {
-    correctValue(value) {
-      if (isNaN(value)) {
-        return this.min;
-      }
+    // filter illegal characters
+    format(value) {
+      value = String(value).replace(/[^0-9\.-]/g, '');
+      return value === '' ? 0 : this.integer ? Math.floor(value) : +value;
+    },
 
-      value = Math.max(this.min, Math.min(this.max, value));
-
-      return this.integer ? Math.floor(value) : value;
+    // limit value range
+    range(value) {
+      return Math.max(Math.min(this.max, this.format(value)), this.min);
     },
 
     onInput(event) {
       const { value } = event.target;
-      this.currentValue = Math.min(this.max, value);
-      event.target.value = this.currentValue;
-      this.emitInput();
+      const formatted = this.format(value);
+
+      if (+value !== formatted) {
+        event.target.value = formatted;
+      }
+
+      this.currentValue = formatted;
     },
 
     onChange(type) {
-      if ((this.minusDisabled && type === 'minus') || (this.plusDisabled && type === 'plus')) {
+      if (this[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
       }
 
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
-      this.emitInput();
+      const diff = type === 'minus' ? -this.step : +this.step;
+      const value = Math.round((this.currentValue + diff) * 100) / 100;
+      this.currentValue = this.range(value);
       this.$emit(type);
     },
 
     onBlur(event) {
-      if (!this.value) {
-        this.currentValue = +this.min;
-      } else {
-        this.currentValue = this.correctValue(+this.currentValue);
-      }
-      this.emitInput();
+      this.currentValue = this.range(this.currentValue);
       this.$emit('blur', event);
-    },
-
-    emitInput() {
-      this.$emit('input', this.currentValue);
-      this.$emit('change', this.currentValue);
     }
   }
 });

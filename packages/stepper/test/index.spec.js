@@ -62,15 +62,7 @@ test('correct value when value is not correct', () => {
   wrapper.setData({ value: 30 });
   input.trigger('input');
 
-  expect(wrapper.emitted('input')).toEqual([
-    [30],
-    [1],
-    [0],
-    [0],
-    [0],
-    [30],
-    [30]
-  ]);
+  expect(wrapper.emitted('input')).toEqual([[30], [1], [0], [40], [30]]);
 });
 
 test('only allow interger', () => {
@@ -85,7 +77,7 @@ test('only allow interger', () => {
   input.trigger('input');
   input.trigger('blur');
 
-  expect(wrapper.emitted('input')).toEqual([[1.2], [1]]);
+  expect(wrapper.emitted('input')).toEqual([[1]]);
 });
 
 test('stepper blur', () => {
@@ -106,6 +98,6 @@ test('stepper blur', () => {
   input.trigger('input');
   input.trigger('blur');
 
-  expect(wrapper.emitted('input')).toEqual([[5], [0], [3]]);
+  expect(wrapper.emitted('input')).toEqual([[0], [3]]);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
