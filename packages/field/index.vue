@@ -30,7 +30,7 @@
         v-on="listeners"
         ref="input"
         :class="b('control', inputAlign)"
-        :type="type"
+        :type="type==='number'?'':type"
         :value="value"
         :readonly="readonly"
       >
@@ -99,7 +99,13 @@ export default create({
   },
 
   watch: {
-    value() {
+    value(val, oldVal) {
+      // hack for safari
+      const templateVal = String(val).toLowerCase();
+      if (this.type === 'number' && (templateVal.split('.').length > 2 || templateVal.split('e').length > 2)) {
+        this.$emit('input', oldVal);
+        return;
+      }
       this.$nextTick(this.adjustSize);
     }
   },
@@ -155,9 +161,9 @@ export default create({
 
     onKeypress(event) {
       if (this.type === 'number') {
-        const { keyCode } = event;
+        const { keyCode, code = '' } = event;
         const allowPoint = String(this.value).indexOf('.') === -1;
-        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
+        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45 || code.toLocaleLowerCase() === 'keye';
         if (!isValidKey) {
           event.preventDefault();
         }
@@ -166,7 +172,6 @@ export default create({
       if (this.type === 'search' && event.keyCode === 13) {
         this.blur();
       }
-
       this.$emit('keypress', event);
     },
 
