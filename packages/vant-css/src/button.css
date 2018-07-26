@@ -4,13 +4,14 @@
   position: relative;
   padding: 0;
   display: inline-block;
-  height: 45px;
-  line-height: 43px;
+  height: 44px;
+  line-height: 42px;
   border-radius: 3px;
   box-sizing: border-box;
   font-size: 16px;
   text-align: center;
   -webkit-appearance: none;
+  -webkit-text-size-adjust: 100%;
 
   &::before {
     content: " ";
