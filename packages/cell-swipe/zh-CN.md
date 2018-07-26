@@ -73,7 +73,17 @@ export default {
 | right | 右侧滑动内容 |
 
 ### onClose 参数
+
 | 参数 | 类型 | 说明 |
 |-----------|-----------|-----------|
 | clickPosition | `String` | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | `Object` | CellSwipe 实例，挂载有 close 方法 |
+| instance | `Object` | CellSwipe 实例 |
+
+### 方法
+
+通过 ref 可以获取到 CellSwipe 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| open | position: 'left' \| 'right' | - | 打开单元格侧边栏 |
+| close | - | - | 收起单元格侧边栏 |

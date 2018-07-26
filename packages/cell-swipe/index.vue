@@ -69,6 +69,12 @@ export default create({
   },
 
   methods: {
+    open(position) {
+      const offset = position === 'left' ? this.leftWidth : -this.rightWidth;
+      this.swipeMove(offset);
+      this.resetSwipeStatus();
+    },
+
     close() {
       this.offset = 0;
     },
@@ -90,12 +96,10 @@ export default create({
 
       // right
       if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
-        this.swipeMove(-rightWidth);
-        this.resetSwipeStatus();
+        this.open('right');
       // left
       } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
-        this.swipeMove(leftWidth);
-        this.resetSwipeStatus();
+        this.open('left');
       } else {
         this.swipeMove();
       }

@@ -73,7 +73,17 @@ export default {
 | right | content of right scrollabe area |
 
 ### onClose Params
+
 | Argument | Type | Description |
 |-----------|-----------|-----------|
 | clickPosition | `String` | Click positon (`left` `right` `cell` `outside`) |
-| instance | `Object` | CellSwipe instance with a close method |
+| instance | `Object` | CellSwipe instance |
+
+### Methods
+
+Use ref to get CellSwipe instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| open | position: 'left' \| 'right' | - | open CellSwipe |
+| close | - | - | close CellSwipe |
