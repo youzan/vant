@@ -27,6 +27,6 @@ Vue.use(Loading);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| color | 颜色，可选值为 `block` `white` | `String` | `black` |
-| type | 类型，可选值为 `circular` `spinner` | `String` | `circular` |
+| color | 颜色，可选值为 `white` | `String` | `black` |
+| type | 类型，可选值为 `spinner` | `String` | `circular` |
 | size | 大小 | `String` | `30px` |

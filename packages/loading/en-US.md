@@ -27,6 +27,6 @@ Vue.use(Loading);
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| color | Can be set to `black` `white` | `String` | `black` |  |
-| type | Can be set to `circular` `spinner` | `String` | `circular` |
+| color | Can be set to `white` | `String` | `black` |  |
+| type | Can be set to `spinner` | `String` | `circular` |
 | size | Size | `String` | `30px` |
