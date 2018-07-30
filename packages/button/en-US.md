@@ -14,6 +14,7 @@ Vue.use(Button);
 ```html
 <van-button type="default">Default</van-button>
 <van-button type="primary">Primary</van-button>
+<van-button type="warning">Warning</van-button>
 <van-button type="danger">Danger</van-button>
 ```
 
@@ -22,6 +23,7 @@ Vue.use(Button);
 ```html
 <van-button type="default" plain>Default</van-button>
 <van-button type="primary" plain>Primary</van-button>
+<van-button type="warning" plain>Warning</van-button>
 <van-button type="danger" plain>Danger</van-button>
 ```
 
@@ -60,7 +62,7 @@ Use `tag` prop to custom button tag
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| type | Can be set to `default` `primary` `danger` | `String` | `default` |
+| type | Can be set to `primary` `warning` `danger` | `String` | `default` |
 | size | Can be set to `normal` `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
 | tag | Tag | `String` | `button` |
