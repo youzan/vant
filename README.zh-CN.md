@@ -5,7 +5,7 @@
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" style="margin-bottom: 10px;">
 </p>
-<p align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</p>
+<p align="center" style="margin: 30px 0 35px;">轻量、可靠的移动端 Vue 组件库</p>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
 [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
