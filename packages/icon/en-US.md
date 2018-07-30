@@ -50,7 +50,8 @@ import 'vant/lib/vant-css/icon-local.css';
 |-----------|-----------|-----------|-------------|
 | name | Icon name | `String` | `''` |
 | info | Info message | `String | Number` | `''` |
-| color | Icon color | `String` | `''` | - |
+| color | Icon color | `String` | `inherit` |
+| size | Icon size | `String` | `inherit` |
 
 
 ### Event
