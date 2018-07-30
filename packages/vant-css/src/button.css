@@ -54,6 +54,12 @@
     border: 1px solid $button-danger-border-color;
   }
 
+  &--warning {
+    color: $button-warning-color;
+    background-color: $button-warning-background-color;
+    border: 1px solid $button-warning-border-color;
+  }
+
   &--plain {
     background-color: $white;
 
@@ -63,6 +69,10 @@
 
     &.van-button--danger {
       color: $button-danger-background-color;
+    }
+
+    &.van-button--warning {
+      color: $button-warning-background-color;
     }
   }
 

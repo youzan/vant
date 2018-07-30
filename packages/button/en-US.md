@@ -14,6 +14,7 @@ Vue.use(Button);
 ```html
 <van-button type="default">Default</van-button>
 <van-button type="primary">Primary</van-button>
+<van-button type="warning">Warning</van-button>
 <van-button type="danger">Danger</van-button>
 ```
 
@@ -22,6 +23,7 @@ Vue.use(Button);
 ```html
 <van-button type="default" plain>Default</van-button>
 <van-button type="primary" plain>Primary</van-button>
+<van-button type="warning" plain>Warning</van-button>
 <van-button type="danger" plain>Danger</van-button>
 ```
 
