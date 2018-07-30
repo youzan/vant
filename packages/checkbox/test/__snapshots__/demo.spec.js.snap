@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-checkbox">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-        <i class="van-icon van-icon-success" style="color:undefined;">
+        <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
           <!---->
         </i>
       </div> <span class="van-checkbox__label">复选框</span></div>
@@ -13,13 +13,13 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-checkbox">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled">
-        <i class="van-icon van-icon-success" style="color:undefined;">
+        <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
           <!---->
         </i>
       </div> <span class="van-checkbox__label">复选框</span></div>
     <div class="van-checkbox">
       <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--disabled van-checkbox__icon--checked">
-        <i class="van-icon van-icon-success" style="color:undefined;">
+        <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
           <!---->
         </i>
       </div> <span class="van-checkbox__label">复选框</span></div>
@@ -36,7 +36,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-checkbox-group">
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -44,7 +44,7 @@ exports[`renders demo correctly 1`] = `
       </span></div>
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -52,7 +52,7 @@ exports[`renders demo correctly 1`] = `
       </span></div>
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -64,7 +64,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-checkbox-group">
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -72,7 +72,7 @@ exports[`renders demo correctly 1`] = `
       </span></div>
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -80,7 +80,7 @@ exports[`renders demo correctly 1`] = `
       </span></div>
       <div class="van-checkbox">
         <div class="van-checkbox__icon van-checkbox__icon--round">
-          <i class="van-icon van-icon-success" style="color:undefined;">
+          <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div> <span class="van-checkbox__label">
@@ -99,7 +99,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-cell__value">
             <div class="van-checkbox">
               <div class="van-checkbox__icon van-checkbox__icon--round">
-                <i class="van-icon van-icon-success" style="color:undefined;">
+                <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
                   <!---->
                 </i>
               </div>
@@ -116,7 +116,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-cell__value">
             <div class="van-checkbox">
               <div class="van-checkbox__icon van-checkbox__icon--round">
-                <i class="van-icon van-icon-success" style="color:undefined;">
+                <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
                   <!---->
                 </i>
               </div>
@@ -133,7 +133,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-cell__value">
             <div class="van-checkbox">
               <div class="van-checkbox__icon van-checkbox__icon--round">
-                <i class="van-icon van-icon-success" style="color:undefined;">
+                <i class="van-icon van-icon-success" style="color:undefined;size:undefined;">
                   <!---->
                 </i>
               </div>

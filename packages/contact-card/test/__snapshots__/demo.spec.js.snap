@@ -5,12 +5,12 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-contact-card van-contact-card--add">
       <div class="van-contact-card__content">
-        <i class="van-icon van-icon-add2 van-contact-card__icon" style="color:undefined;">
+        <i class="van-icon van-icon-add2 van-contact-card__icon" style="color:undefined;size:undefined;">
           <!---->
         </i>
         <div class="van-contact-card__text">添加订单联系人信息</div>
       </div>
-      <i class="van-icon van-icon-arrow van-contact-card__arrow" style="color:undefined;">
+      <i class="van-icon van-icon-arrow van-contact-card__arrow" style="color:undefined;size:undefined;">
         <!---->
       </i>
     </div>
@@ -22,23 +22,23 @@ exports[`renders demo correctly 1`] = `
               <!---->
               <!---->
               <div class="van-cell__value van-cell__value--alone">
-                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label"><p class="van-contact-list__text">联系人：张三</p> <p class="van-contact-list__text">联系电话：13000000000</p></span></div>
+                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;size:undefined;"> <!----></i></span> <span class="van-radio__label"><p class="van-contact-list__text">联系人：张三</p> <p class="van-contact-list__text">联系电话：13000000000</p></span></div>
               </div>
-              <i class="van-icon van-icon-edit van-contact-list__edit" style="color:undefined;">
+              <i class="van-icon van-icon-edit van-contact-list__edit" style="color:undefined;size:undefined;">
                 <!---->
               </i>
             </div>
           </div>
         </div>
         <div class="van-hairline--top van-cell van-cell--clickable van-hairline van-contact-list__add">
-          <i class="van-icon van-icon-add van-cell__left-icon" style="color:undefined;">
+          <i class="van-icon van-icon-add van-cell__left-icon" style="color:undefined;size:undefined;">
             <!---->
           </i>
           <div class="van-cell__title"><span>新建联系人</span>
             <!---->
           </div>
           <!---->
-          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;size:undefined;">
             <!---->
           </i>
         </div>
@@ -91,7 +91,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-contact-card van-contact-card--edit van-contact-card--uneditable">
       <div class="van-contact-card__content">
-        <i class="van-icon van-icon-contact van-contact-card__icon" style="color:undefined;">
+        <i class="van-icon van-icon-contact van-contact-card__icon" style="color:undefined;size:undefined;">
           <!---->
         </i>
         <div class="van-contact-card__text">
