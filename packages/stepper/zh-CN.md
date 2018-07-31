@@ -34,7 +34,7 @@ export default {
 
 #### 高级用法
 
-默认是每次加减为1，可以对组件设置`step`、`min`、`max`、`default-value`属性
+可以对组件设置`step`、`min`、`max`属性
 
 ```html
 <van-stepper
@@ -43,7 +43,6 @@ export default {
   :min="5"
   :max="40"
   :step="2"
-  :default-value="9"
 />
 ```
 
@@ -51,9 +50,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
+| v-model | 当前输入值 | `String | Number` | 最小值 |
 | min | 最小值 | `String | Number` | `1` |
 | max | 最大值 | `String | Number` | - |
-| default-value | 默认值 | `String | Number` | `1` |
 | step | 步数 | `String | Number` | `1` |
 | integer | 是否只允许输入整数 | `Boolean` | `false` |
 | disabled | 是否禁用 | `Boolean` | `false` |
