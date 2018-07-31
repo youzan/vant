@@ -6,7 +6,7 @@
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<p align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</p>
+<h3 align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</h3>
 
 [![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
 [![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
@@ -16,12 +16,14 @@
 [![JS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size)](https://unpkg.com/vant/lib/vant.min.js)
 [![CSS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size)](https://unpkg.com/vant/lib/vant-css/index.css)
 
-[访问中文版](./README.zh-CN.md)
+<p align="center"><a href="./README.zh-CN.md">🇨🇳访问中文版</a></p>
+
+---
 
 ## Features
 
 * 50+ Reusable components
-* 90%+ Unit test coverage
+* 80%+ Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * Support TypeScript
