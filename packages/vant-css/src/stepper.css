@@ -82,6 +82,7 @@
 
     &[disabled] {
       color: $gray;
+      background-color: $background-color;
     }
   }
 
