@@ -44,6 +44,7 @@ export default create({
     items() {
       this.setActiveItem();
     },
+
     value() {
       this.setActiveItem();
     }
@@ -55,9 +56,12 @@ export default create({
         item.active = index === this.value;
       });
     },
+
     onChange(active) {
-      this.$emit('input', active);
-      this.$emit('change', active);
+      if (active !== this.value) {
+        this.$emit('input', active);
+        this.$emit('change', active);
+      }
     }
   }
 });
