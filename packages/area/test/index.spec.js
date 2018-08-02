@@ -32,8 +32,6 @@ test('watch areaList & code', async() => {
   });
 
   expect(wrapper).toMatchSnapshot();
-  wrapper.setProps({ areaList });
-  expect(wrapper).toMatchSnapshot();
   wrapper.setProps({ value: '110117' });
 
   await later();

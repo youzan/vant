@@ -14,7 +14,7 @@ exports[`renders demo correctly 1`] = `
         <!---->
       </i>
     </div>
-    <div class="van-popup van-popup--bottom" style="display:none;">
+    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-list">
         <div class="van-radio-group">
           <div class="van-cell-group van-hairline--top-bottom">
@@ -44,7 +44,7 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
     </div>
-    <div class="van-popup van-popup--bottom" style="display:none;">
+    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-edit">
         <div class="van-cell-group van-hairline--top-bottom">
           <div maxlength="30" placeholder="张三" class="van-cell van-hairline van-field">
