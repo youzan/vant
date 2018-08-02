@@ -6048,11 +6048,7 @@ markdown-escapes@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/markdown-escapes/-/markdown-escapes-1.0.2.tgz#e639cbde7b99c841c0bacc8a07982873b46d2122"
 
-markdown-it-container@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-container/-/markdown-it-container-2.0.0.tgz#0019b43fd02eefece2f1960a2895fba81a404695"
-
-markdown-it@^8.3.2, markdown-it@^8.4.0:
+markdown-it@^8.4.0:
   version "8.4.1"
   resolved "https://registry.yarnpkg.com/markdown-it/-/markdown-it-8.4.1.tgz#206fe59b0e4e1b78a7c73250af9b34a4ad0aaf44"
   dependencies:
@@ -6578,10 +6574,6 @@ node-source-walk@^3.0.0, node-source-walk@^3.2.0, node-source-walk@^3.3.0:
 node-version@^1.1.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/node-version/-/node-version-1.2.0.tgz#34fde3ffa8e1149bd323983479dda620e1b5060d"
-
-node-watch@^0.5.5:
-  version "0.5.8"
-  resolved "https://registry.yarnpkg.com/node-watch/-/node-watch-0.5.8.tgz#208d10f93afe2f24b3701c254f54c7552f90c905"
 
 "nopt@2 || 3", nopt@~3.0.1:
   version "3.0.6"
@@ -9494,16 +9486,13 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vant-doc@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.7.tgz#31023f6533e246e9dc388004df03b870591f0687"
+vant-doc@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.8.tgz#5cf253733ad93f26e501034f45b945b6c9bdd2bd"
   dependencies:
     cheerio "0.22.0"
     decamelize "^1.2.0"
     fs-extra "^4.0.2"
-    markdown-it "^8.3.2"
-    markdown-it-container "^2.0.0"
-    node-watch "^0.5.5"
     nprogress "^0.2.0"
 
 varstream@^0.3.2:
