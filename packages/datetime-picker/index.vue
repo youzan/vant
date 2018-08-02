@@ -65,6 +65,14 @@ export default create({
     maxHour: {
       type: Number,
       default: 23
+    },
+    minMinute: {
+      type: Number,
+      default: 0
+    },
+    maxMinute: {
+      type: Number,
+      default: 59
     }
   },
 
@@ -97,7 +105,7 @@ export default create({
           },
           {
             type: 'minute',
-            range: [0, 59]
+            range: [this.minMinute, this.maxMinute]
           }
         ];
       }
