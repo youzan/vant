@@ -102,7 +102,7 @@
     "stylelint-config-standard": "^18.2.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.0.1",
-    "vant-doc": "1.0.7",
+    "vant-doc": "1.0.8",
     "vue": "2.5.16",
     "vue-jest": "^2.6.0",
     "vue-loader": "^15.2.4",
