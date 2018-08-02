@@ -115,8 +115,10 @@ export default {
 | type | Can be set to `date` `time`<br> `year-month` | `String` | `datetime` |
 | min-date | Min date | `Date` | Ten years ago on January 1 |
 | max-date | Max date | `Date` | Ten years later on December 31 |
-| min-hour | Min hour | `Number` | `0` |
-| max-hour | Max hour | `Number` | `23` |
+| min-hour | Min hour for `time` type | `Number` | `0` |
+| max-hour | Max hour for `time` type | `Number` | `23` |
+| min-minute | Max minute for `time` type | `Number` | `0` |
+| max-minute | Max minute for `time` type | `Number` | `59` |
 | formatter | Option text formatter | `(type, value) => value` | - |
 | title | Toolbar title | `String` | `''` |
 | loading | Whether to show loading prompt | `Boolean` | `false` |
