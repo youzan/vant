@@ -1,15 +1,18 @@
+import '../../packages/vant-css/src/index.css';
+import './components/nprogress.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
 import routes from './router';
 import progress from 'nprogress';
-import '../../packages/vant-css/src/index.css';
 import 'vant-doc/src/helper/touch-simulator';
-import './components/nprogress.css';
 
 const router = new VueRouter({
   mode: 'hash',
-  routes: routes(true)
+  routes: routes(true),
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 };
+  }
 });
 
 router.beforeEach((route, redirect, next) => {
@@ -19,9 +22,6 @@ router.beforeEach((route, redirect, next) => {
 
 router.afterEach(() => {
   progress.done();
-  if (router.currentRoute.name) {
-    window.scrollTo(0, 0);
-  }
   if (!router.currentRoute.redirectedFrom) {
     Vue.nextTick(() => window.syncPath());
   }
