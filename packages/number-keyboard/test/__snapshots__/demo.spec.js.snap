@@ -7,7 +7,7 @@ exports[`renders demo correctly 1`] = `
       <!----><span class="van-button__text">
       弹出默认键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
+    <div name="van-slide-bottom" class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
       <div class="van-hairline--top van-number-keyboard__title"><span></span> <span class="van-number-keyboard__close">完成</span></div>
       <div class="van-number-keyboard__body">
         <i class="van-hairline van-key">1</i>
@@ -31,7 +31,7 @@ exports[`renders demo correctly 1`] = `
       <!----><span class="van-button__text">
       弹出自定义键盘
     </span></button>
-    <div class="van-number-keyboard van-number-keyboard--custom" style="z-index:100;display:none;">
+    <div name="van-slide-bottom" class="van-number-keyboard van-number-keyboard--custom" style="z-index:100;display:none;">
       <!---->
       <div class="van-number-keyboard__body">
         <i class="van-hairline van-key">1</i>

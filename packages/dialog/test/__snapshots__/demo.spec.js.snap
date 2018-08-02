@@ -15,7 +15,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <button class="van-button van-button--default van-button--normal">
       <!----><span class="van-button__text">高级用法</span></button>
-    <div class="van-dialog" style="display:none;">
+    <div name="van-dialog-bounce" class="van-dialog" style="display:none;">
       <!---->
       <div class="van-dialog__content">
         <div placeholder="请输入用户名" class="van-cell van-hairline van-field">
