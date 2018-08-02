@@ -9,11 +9,14 @@
       <span :class="{ active: $vantLang === 'zh-CN' }" @click="switchLang('zh-CN')">中文</span>
     </div>
     <h2 class="zanui-desc">{{ description }}</h2>
-    <div class="mobile-navs">
-      <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
-        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="$vantLang" :nav-key="index" :key="index" />
-      </div>
-    </div>
+    <template v-for="item in navList" v-if="item.showInMobile">
+      <mobile-nav
+        v-for="(group, index) in item.groups"
+        :group="group"
+        :base="$vantLang"
+        :key="index"
+      />
+    </template>
   </div>
 </template>
 
