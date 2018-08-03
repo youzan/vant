@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
+`2018-08-03`
+
+**Improvements**
+
+- Button: 新增 warning 类型 [\#1558](https://github.com/youzan/vant/pull/1558)
+- CellSwipe: 新增 open 方法 [\#1546](https://github.com/youzan/vant/pull/1546)
+- DatetimePicker: 支持限制分钟范围 [\#1583](https://github.com/youzan/vant/pull/1583)
+- Icon: 新增 size 属性 [\#1555](https://github.com/youzan/vant/pull/1555)
+- Stepper: 优化禁用态样式 [\#1560](https://github.com/youzan/vant/pull/1560)
+- Stepper: 优化输入体验 [\#1534](https://github.com/youzan/vant/pull/1534)
+- Tab: 支持定义 sticky 时距离顶部的高度 [\#1519](https://github.com/youzan/vant/pull/1519)
+
+**Bug Fixes**
+
+- 修复 Button 在浏览器文字缩放时样式错误的问题 [\#1545](https://github.com/youzan/vant/pull/1545)
+- 修复 Field date 类型在 iOS 设备下显示错误的问题 [\#1586](https://github.com/youzan/vant/pull/1586)
+- 修复 van-clearfix 样式类未生效的问题 [\#1559](https://github.com/youzan/vant/pull/1559)
+- 修复 Tabbar 点击当前标签时依然会触发 change 事件的问题 [\#1571](https://github.com/youzan/vant/pull/1571)
+
 ### [1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
 `2018-07-19`
 

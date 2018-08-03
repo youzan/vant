@@ -1,5 +1,82 @@
 ## 更新日志
 
+## [v1.1.15](https://github.com/youzan/vant/tree/v1.1.15) (2018-08-03)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.1.14...v1.1.15)
+
+**Breaking changes**
+
+- Tab 标签页 的滑动切换 [\#1502](https://github.com/youzan/vant/issues/1502)
+- 希望能对日期控件中的年月日等能自定义展示 [\#1452](https://github.com/youzan/vant/issues/1452)
+- Collapse 折叠面板 组件 [\#1443](https://github.com/youzan/vant/issues/1443)
+
+**Bug Fixes**
+
+- tab页面用到了keep-alive, 返回位置问题 [\#1505](https://github.com/youzan/vant/issues/1505)
+- collapse 和 progress 结合使用的时候 progress 不生效 [\#1489](https://github.com/youzan/vant/issues/1489)
+- Tabs 的Sticky属性位置问题 [\#1470](https://github.com/youzan/vant/issues/1470)
+- Stepper 步进器 Android手机上，integer无效 [\#1461](https://github.com/youzan/vant/issues/1461)
+
+**Issue**
+
+- CellGroup无法显示 [\#1577](https://github.com/youzan/vant/issues/1577)
+- 打包vant UI组件没有自动添加-webkie兼容前缀，导致ios8版本ui排版以及加载框和弹窗出现了问题 [\#1573](https://github.com/youzan/vant/issues/1573)
+- Tab组件type为card时，sticky属性设置无效 [\#1570](https://github.com/youzan/vant/issues/1570)
+- 建议upload组件多增加几种样式 [\#1566](https://github.com/youzan/vant/issues/1566)
+- search无法隐藏右边的× [\#1565](https://github.com/youzan/vant/issues/1565)
+- 建议给TAB组件增加一个功能把tab和content分开 [\#1564](https://github.com/youzan/vant/issues/1564)
+- 全局导入组件，使用Lazyload 图片懒加载时，lazy指令无法解析 [\#1563](https://github.com/youzan/vant/issues/1563)
+- 能否分享icon 字体库的图标原始文件或iconfont  [\#1561](https://github.com/youzan/vant/issues/1561)
+- 使用van-datetime-picker时，提示TypeError: value.split is not a function [\#1557](https://github.com/youzan/vant/issues/1557)
+- TypeError: value.split is not a function [\#1556](https://github.com/youzan/vant/issues/1556)
+- slider props's max=900时，slider的width=900%，宽度超出父级元素 [\#1553](https://github.com/youzan/vant/issues/1553)
+- npm install 下来的css，里边有的icon font文件，是cdn引用的，而不是本地的。 [\#1552](https://github.com/youzan/vant/issues/1552)
+- DatetimePicker 中能否加上年月日上午/下午 [\#1551](https://github.com/youzan/vant/issues/1551)
+- 手机滚动不流畅啊？没有个scroll-content? [\#1549](https://github.com/youzan/vant/issues/1549)
+- CellSwipe 滑动单元格如何确定当前数据条目？ [\#1548](https://github.com/youzan/vant/issues/1548)
+- 怎么修改弹出层样式 [\#1547](https://github.com/youzan/vant/issues/1547)
+- popup 组件中 lock-scroll 功能 在 ios 中失效 [\#1544](https://github.com/youzan/vant/issues/1544)
+- 以$toast、$dialog 形式调用 toast和dialog在prod环境莫名undefined  [\#1542](https://github.com/youzan/vant/issues/1542)
+- 在钉钉的内置浏览器中，Tabbar 标签栏中使用router-link无法使用 [\#1541](https://github.com/youzan/vant/issues/1541)
+- ImagePreview 图片预览安卓真机会弹出两层预览界面 [\#1540](https://github.com/youzan/vant/issues/1540)
+- Slider 滑块在PC端不能滑动，只支持touch事件 [\#1537](https://github.com/youzan/vant/issues/1537)
+- 轮播图swipe设置为垂直滚动的时候整个轮播图不显示 [\#1535](https://github.com/youzan/vant/issues/1535)
+- Radio 单选框组建 可否横向排列 [\#1533](https://github.com/youzan/vant/issues/1533)
+- Sku中颜色分类下的第一个按钮默认禁用怎么改为普通状态? [\#1532](https://github.com/youzan/vant/issues/1532)
+- webpack版本不一致导致每人页面结构不一致 [\#1530](https://github.com/youzan/vant/issues/1530)
+- vant的官方demo中是如何实现PC端对touch事件的支持？ [\#1529](https://github.com/youzan/vant/issues/1529)
+- vuex保存着vue-list的值，滚动加载的时候报错 [\#1524](https://github.com/youzan/vant/issues/1524)
+- 可以设置是否使用同一个van-modal？ [\#1522](https://github.com/youzan/vant/issues/1522)
+- collapse（手风琴） 支持嵌套使用吗？ [\#1518](https://github.com/youzan/vant/issues/1518)
+- Tabbar和Navbar固定定位后，高度问题 [\#1517](https://github.com/youzan/vant/issues/1517)
+- 建议AddressEdit 组件可以修改前面的label名字 [\#1516](https://github.com/youzan/vant/issues/1516)
+- 评论组件不能用？显示-您是否正确注册了组件?对于递归组件，请确保提供“name”选项。 [\#1515](https://github.com/youzan/vant/issues/1515)
+- van-checkbox的颜色自定义 [\#1514](https://github.com/youzan/vant/issues/1514)
+- 按需加载的时候怎么配置主题以及覆盖默认样式 [\#1511](https://github.com/youzan/vant/issues/1511)
+- popup和picker一起使用的时候，css样式冲突，弹出层显示不了选择器 [\#1507](https://github.com/youzan/vant/issues/1507)
+- 用了懒加载和swpier这两个组件，后面的几个图片都一直lazy="loading"出不来 [\#1491](https://github.com/youzan/vant/issues/1491)
+- 弹层中用滚动报错 [\#1490](https://github.com/youzan/vant/issues/1490)
+- Pagination 组件文档的一处描述错误 [\#1488](https://github.com/youzan/vant/issues/1488)
+
+**Improvements**
+
+- \[bugfix\] Field: date type not work in iOS [\#1586](https://github.com/youzan/vant/pull/1586) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] DatetimePicker: support minute range [\#1583](https://github.com/youzan/vant/pull/1583) ([chenjiahan](https://github.com/chenjiahan))
+- update dependencies [\#1581](https://github.com/youzan/vant/pull/1581) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] adjust component nav [\#1579](https://github.com/youzan/vant/pull/1579) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] update mobile nav [\#1578](https://github.com/youzan/vant/pull/1578) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Tabbar: change event [\#1571](https://github.com/youzan/vant/pull/1571) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Stepper: update api doc [\#1562](https://github.com/youzan/vant/pull/1562) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Stepper: update disabled color [\#1560](https://github.com/youzan/vant/pull/1560) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] fix van-clearfix [\#1559](https://github.com/youzan/vant/pull/1559) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Button: add warning type [\#1558](https://github.com/youzan/vant/pull/1558) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Icon: add size prop [\#1555](https://github.com/youzan/vant/pull/1555) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] update detail [\#1554](https://github.com/youzan/vant/pull/1554) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] CellSwipe: add open method [\#1546](https://github.com/youzan/vant/pull/1546) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Button: text-size-adjust [\#1545](https://github.com/youzan/vant/pull/1545) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Stepper: optimize input strategy [\#1534](https://github.com/youzan/vant/pull/1534) ([chenjiahan](https://github.com/chenjiahan))
+- \[Doc\] Dialog: update usage [\#1520](https://github.com/youzan/vant/pull/1520) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] Tab: support custom sticky offset top [\#1519](https://github.com/youzan/vant/pull/1519) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14) (2018-07-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.13...v1.1.14)
 
@@ -49,13 +126,11 @@
 - van-swipe和van-swipe-item使用，页面内容比较多的情况，可以滚动，当触发了滚动事件的同时也触发左滑或者右滑事件 [\#1417](https://github.com/youzan/vant/issues/1417)
 - 定制主题的边框色，修改的应当是$border-color，而不是$gray-light [\#1401](https://github.com/youzan/vant/issues/1401)
 - 关于单、复选框组件API的小建议 [\#1373](https://github.com/youzan/vant/issues/1373)
-- ImagePreview 能支持手势操作吗,放大与缩小 [\#1359](https://github.com/youzan/vant/issues/1359)
 
 **Bug Fixes**
 
 - progress当pivot-text设置为空的时候，进度条长度有问题 [\#1407](https://github.com/youzan/vant/issues/1407)
 - 在 typescript 下使用遇到 vscode 提示类型不正确 [\#1397](https://github.com/youzan/vant/issues/1397)
-- Tabs rendered from dynamic array resulting tab sorts error [\#1361](https://github.com/youzan/vant/issues/1361)
 
 **Issue**
 
@@ -117,7 +192,6 @@
 **Bug Fixes**
 
 - change 获取 picker 时间值错误 [\#1366](https://github.com/youzan/vant/issues/1366)
-- Area 使用change 获取Picker 实例错误 [\#1362](https://github.com/youzan/vant/issues/1362)
 
 **Issue**
 
@@ -153,16 +227,6 @@
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11) (2018-07-04)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.10...v1.1.11)
 
-**Breaking changes**
-
-- \<van-field label="用户名" v-model="value" placeholder="请输入用户名" /\> 怎么设置input内容右对齐 [\#1351](https://github.com/youzan/vant/issues/1351)
-- 下拉刷新需要禁用功能 [\#1332](https://github.com/youzan/vant/issues/1332)
-
-**Bug Fixes**
-
-- tabs+list的BUG [\#1342](https://github.com/youzan/vant/issues/1342)
-- Sku 样式出现bug [\#1327](https://github.com/youzan/vant/issues/1327)
-
 **Issue**
 
 - 上拉菜单无法显示 [\#1390](https://github.com/youzan/vant/issues/1390)
@@ -179,15 +243,6 @@
 - 命名规则一致性 [\#1375](https://github.com/youzan/vant/issues/1375)
 - 希望Field组件添加验证码图片 [\#1369](https://github.com/youzan/vant/issues/1369)
 - List组件 [\#1367](https://github.com/youzan/vant/issues/1367)
-- Area 组件在未给定初始value时 首次弹出地址信息正常 当滑动省列右侧数据乱码 [\#1363](https://github.com/youzan/vant/issues/1363)
-- \<van-list\> \</van-list\> 组件下拉释放后，顶部展示“加载中”，当数据列表不满屏的时候，列表底部也会再展示一次“加载中” [\#1360](https://github.com/youzan/vant/issues/1360)
-- 滚动出现顶部返回调的功能 [\#1358](https://github.com/youzan/vant/issues/1358)
-- van-row APi里能增加一个行间距的参数 [\#1357](https://github.com/youzan/vant/issues/1357)
-- 动态添加属性 [\#1356](https://github.com/youzan/vant/issues/1356)
-- Toast success / fail / loading 没有图标显示 [\#1355](https://github.com/youzan/vant/issues/1355)
-- 还是关于tabs+list的使用上 [\#1354](https://github.com/youzan/vant/issues/1354)
-- 建议丰富form表单控件和布局 [\#1348](https://github.com/youzan/vant/issues/1348)
-- 关于Lazyload的使用文档是否有不恰当的地方 [\#1340](https://github.com/youzan/vant/issues/1340)
 
 **Improvements**
 
@@ -205,72 +260,12 @@
 - \[Improvement\] SwitchCell: add size prop [\#1371](https://github.com/youzan/vant/pull/1371) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] DatetimePicker: change event trigger timing [\#1370](https://github.com/youzan/vant/pull/1370) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Actionsheet: support lazy render [\#1365](https://github.com/youzan/vant/pull/1365) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Tab: update card style [\#1364](https://github.com/youzan/vant/pull/1364) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10) (2018-06-28)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.9...v1.1.10)
 
-**Breaking changes**
-
-- Stepper 步进器 [\#1315](https://github.com/youzan/vant/issues/1315)
-
-**Issue**
-
-- Stepper 的事件如何传递参数？ [\#1346](https://github.com/youzan/vant/issues/1346)
-- Area地址可以不可以更新到最新版的？ [\#1341](https://github.com/youzan/vant/issues/1341)
-- line-width支持根据标题宽度自适应 [\#1339](https://github.com/youzan/vant/issues/1339)
-- 折叠面板问题不能动态循环数据后指定打开某一项面板 [\#1335](https://github.com/youzan/vant/issues/1335)
-- van-row type="flex"  设置为flex布局，没有效果 [\#1333](https://github.com/youzan/vant/issues/1333)
-- Vant is not defined [\#1330](https://github.com/youzan/vant/issues/1330)
-- AddressEdit组件show-delete设置false也无法阻止按钮显示 版本1.1.9 [\#1329](https://github.com/youzan/vant/issues/1329)
-- Android Chrome里绝对定位组件\(van-goods-action,van-tabbar\)触摸位置发生偏移 [\#1328](https://github.com/youzan/vant/issues/1328)
-- 每次升级后之前的组件都会遇到问题 [\#1325](https://github.com/youzan/vant/issues/1325)
-- Dialog 无法使用组件的高级用法，方法调用正常 [\#1324](https://github.com/youzan/vant/issues/1324)
-- CDN 引入 list 控件异步加载数据后不能控制状态 [\#1322](https://github.com/youzan/vant/issues/1322)
-- 请问picker打开时的默认值是怎么设置的呢？ [\#1321](https://github.com/youzan/vant/issues/1321)
-- nuxt框架用List滚动底部load失效 [\#1320](https://github.com/youzan/vant/issues/1320)
-- 使用vue-cli 3.0 构建项目 定制主题 [\#1319](https://github.com/youzan/vant/issues/1319)
-- toast clear mask [\#1318](https://github.com/youzan/vant/issues/1318)
-- 1.1.9版本，直接使用http导入js和css文件，在大部分浏览器上（iphone/android/PC）,按钮无法显示。在mac上正常 [\#1317](https://github.com/youzan/vant/issues/1317)
-
-**Improvements**
-
-- \[Improvement\] Field label align [\#1353](https://github.com/youzan/vant/pull/1353) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: input text align [\#1352](https://github.com/youzan/vant/pull/1352) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Field: props doc [\#1350](https://github.com/youzan/vant/pull/1350) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Sku: add stepper-change event [\#1349](https://github.com/youzan/vant/pull/1349) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: add is-link prop [\#1347](https://github.com/youzan/vant/pull/1347) ([chenjiahan](https://github.com/chenjiahan))
--  \[bugfix\] List: visibility check [\#1345](https://github.com/youzan/vant/pull/1345) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Lazyload register [\#1344](https://github.com/youzan/vant/pull/1344) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Cell arrow [\#1343](https://github.com/youzan/vant/pull/1343) ([chenjiahan](https://github.com/chenjiahan))
-- bump vue-test-utils [\#1338](https://github.com/youzan/vant/pull/1338) ([chenjiahan](https://github.com/chenjiahan))
-- update dependencies [\#1337](https://github.com/youzan/vant/pull/1337) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] PullRefresh: add disabled prop [\#1336](https://github.com/youzan/vant/pull/1336) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Sku: image clip [\#1334](https://github.com/youzan/vant/pull/1334) ([chenjiahan](https://github.com/chenjiahan))
-- \[Imprvement\] Icon: add idcard icon and remove three icon [\#1331](https://github.com/youzan/vant/pull/1331) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Cell: add arrow-direction prop [\#1323](https://github.com/youzan/vant/pull/1323) ([Fyerl](https://github.com/Fyerl))
-
 ## [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9) (2018-06-22)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.8...v1.1.9)
-
-**Issue**
-
-- rate评分组件只能一整个一整个星的显示，不能有半颗星么！ [\#1314](https://github.com/youzan/vant/issues/1314)
-- van-pull-refresh 滚动条不在最顶端时下拉也会刷新。  [\#1313](https://github.com/youzan/vant/issues/1313)
-- Stepper 值为空 [\#1311](https://github.com/youzan/vant/issues/1311)
-- dialog组件高级用法无法正常使用 [\#1308](https://github.com/youzan/vant/issues/1308)
-- v-lazy 里的options [\#1307](https://github.com/youzan/vant/issues/1307)
-- 上传组件被套在v-for循环中，会自动重复触发 [\#1306](https://github.com/youzan/vant/issues/1306)
-- 关于picker的问题 [\#1303](https://github.com/youzan/vant/issues/1303)
-
-**Improvements**
-
-- \[Improvement\] Stepper blur [\#1316](https://github.com/youzan/vant/pull/1316) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\]Datetime-picker:fix typo [\#1312](https://github.com/youzan/vant/pull/1312) ([HowardTangHw](https://github.com/HowardTangHw))
-- \[Improvement\] Tabbar: add z-index prop [\#1310](https://github.com/youzan/vant/pull/1310) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Field: support clearable [\#1309](https://github.com/youzan/vant/pull/1309) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Layout: support flex [\#1305](https://github.com/youzan/vant/pull/1305) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Tab: line resize [\#1304](https://github.com/youzan/vant/pull/1304) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8) (2018-06-14)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.7...v1.1.8)
