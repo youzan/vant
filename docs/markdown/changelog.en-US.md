@@ -1,5 +1,26 @@
 ## Changelog
 
+### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
+`2018-08-03`
+
+**Improvements**
+
+- Button: add warning type [\#1558](https://github.com/youzan/vant/pull/1558)
+- CellSwipe: add open method [\#1546](https://github.com/youzan/vant/pull/1546)
+- DatetimePicker: support minute range [\#1583](https://github.com/youzan/vant/pull/1583)
+- Icon: add size prop [\#1555](https://github.com/youzan/vant/pull/1555)
+- Stepper: update disabled color [\#1560](https://github.com/youzan/vant/pull/1560)
+- Stepper: optimize input strategy [\#1534](https://github.com/youzan/vant/pull/1534)
+- Tab: support custom sticky offset top [\#1519](https://github.com/youzan/vant/pull/1519)
+
+**Bug Fixes**
+
+- fix Button text-size-adjust [\#1545](https://github.com/youzan/vant/pull/1545)
+- fix Field date type not work in iOS [\#1586](https://github.com/youzan/vant/pull/1586)
+- fix van-clearfix not work [\#1559](https://github.com/youzan/vant/pull/1559)
+- fix Tabbar should not trigger change event when active not change [\#1571](https://github.com/youzan/vant/pull/1571)
+
+
 ### [1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
 `2018-07-19`
 
@@ -12,6 +33,7 @@
 - DatetimePicker: support text formatter [\#1497](https://github.com/youzan/vant/pull/1497)
 
 **Bug Fixes**
+
 - fix Field inline-height [\#1486](https://github.com/youzan/vant/pull/1486)
 - fix AddressEdit string trim [\#1487](https://github.com/youzan/vant/pull/1487)
 - fix Progress nesting in Collapse [\#1513](https://github.com/youzan/vant/pull/1513)
