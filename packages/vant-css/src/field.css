@@ -37,6 +37,12 @@
     &--right {
       text-align: right;
     }
+
+    /* for ios wechat */
+    &[type="date"],
+    &[type="time"] {
+      min-height: 24px;
+    }
   }
 
   &__clear,
