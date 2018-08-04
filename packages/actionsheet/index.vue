@@ -8,7 +8,7 @@
       <ul v-else class="van-hairline--bottom">
         <li
           v-for="item in actions"
-          :class="[b('item', { disabled: item.disabled }), item.className, 'van-hairline--top']"
+          :class="[b('item', { disabled: item.disabled || item.loading }), item.className, 'van-hairline--top']"
           @click.stop="onClickItem(item)"
         >
           <template v-if="!item.loading">
@@ -60,7 +60,7 @@ export default create({
 
   methods: {
     onClickItem(item) {
-      if (item.callback && !item.disabled) {
+      if (item.callback && !item.disabled && !item.loading) {
         item.callback(item);
       }
     },
