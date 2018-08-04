@@ -60,7 +60,7 @@ export default create({
 
   methods: {
     onClickItem(item) {
-      if (item.callback && !item.disabled || !item.loading) {
+      if (item.callback && !item.disabled && !item.loading) {
         item.callback(item);
       }
     },
