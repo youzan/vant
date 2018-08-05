@@ -32,7 +32,6 @@ export default create({
     value: {},
     title: String,
     itemHeight: Number,
-    formatter: Function,
     visibleItemCount: Number,
     confirmButtonText: String,
     cancelButtonText: String,
@@ -47,6 +46,10 @@ export default create({
     format: {
       type: String,
       default: 'YYYY.MM.DD HH时 mm分'
+    },
+    formatter: {
+      type: Function,
+      default: (type, value) => value
     },
     minDate: {
       type: Date,
@@ -146,7 +149,7 @@ export default create({
         const values = this.times(range[1] - range[0] + 1, index => {
           let value = range[0] + index;
           value = value < 10 ? `0${value}` : `${value}`;
-          return this.formatter ? this.formatter(type, value) : value;
+          return this.formatter(type, value);
         });
 
         return {
@@ -159,6 +162,10 @@ export default create({
   },
 
   methods: {
+    pad(val) {
+      return `00${val}`.slice(-2);
+    },
+
     correctValue(value) {
       // validate value
       const isDateType = this.type !== 'time';
@@ -173,8 +180,7 @@ export default create({
       if (!isDateType) {
         const [hour, minute] = value.split(':');
         let correctedHour = Math.max(hour, this.minHour);
-        correctedHour = Math.min(correctedHour, this.maxHour);
-        correctedHour = `00${correctedHour}`.slice(-2);
+        correctedHour = this.pad(Math.min(correctedHour, this.maxHour));
 
         return `${correctedHour}:${minute}`;
       }
@@ -302,22 +308,24 @@ export default create({
 
     updateColumnValue(value) {
       let values = [];
+      const { formatter, pad } = this;
+
       if (this.type === 'time') {
         const currentValue = value.split(':');
         values = [
-          currentValue[0],
-          currentValue[1]
+          formatter('hour', currentValue[0]),
+          formatter('minute', currentValue[1])
         ];
       } else {
         values = [
-          `${value.getFullYear()}`,
-          `0${value.getMonth() + 1}`.slice(-2),
-          `0${value.getDate()}`.slice(-2)
+          formatter('year', `${value.getFullYear()}`),
+          formatter('month', pad(value.getMonth() + 1)),
+          formatter('day', pad(value.getDate()))
         ];
         if (this.type === 'datetime') {
           values.push(
-            `0${value.getHours()}`.slice(-2),
-            `0${value.getMinutes()}`.slice(-2)
+            formatter('hour', pad(value.getHours())),
+            formatter('minute', pad(value.getMinutes()))
           );
         }
         if (this.type === 'year-month') {
