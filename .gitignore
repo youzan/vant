@@ -8,5 +8,6 @@ lib
 node_modules
 docs/dist
 test/coverage
+package-lock.json
 packages/vant-css/build
 packages/icon/svg
