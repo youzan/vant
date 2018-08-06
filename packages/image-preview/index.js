@@ -10,16 +10,22 @@ const initInstance = () => {
   document.body.appendChild(instance.$el);
 };
 
-const ImagePreview = (images, startPosition = 0) => {
+const ImagePreview = (images, startPosition) => {
   if (!instance) {
     initInstance();
   }
 
-  instance.images = images;
-  instance.startPosition = startPosition;
+  const config = Array.isArray(images) ? { images, startPosition } : images;
+
+  instance.images = config.images;
+  instance.startPosition = config.startPosition || 0;
   instance.value = true;
   instance.$on('input', show => {
     instance.value = show;
+    if (!show) {
+      instance.$off('input');
+      config.onClose && config.onClose();
+    }
   });
 
   return instance;

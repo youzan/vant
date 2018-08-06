@@ -36,6 +36,26 @@ test('function call', done => {
   });
 });
 
+test('function call options', done => {
+  const onClose = jest.fn();
+  const instance = ImagePreview({
+    images,
+    startPostion: 1,
+    onClose
+  });
+
+  instance.$emit('input', true);
+  expect(onClose.mock.calls.length).toEqual(0);
+
+  Vue.nextTick(() => {
+    const wrapper = document.querySelector('.van-image-preview');
+    const swipe = wrapper.querySelector('.van-swipe__track');
+    triggerDrag(swipe, 0, 0);
+    expect(onClose.mock.calls.length).toEqual(1);
+    done();
+  });
+});
+
 test('register component', () => {
   Vue.use(ImagePreview);
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();

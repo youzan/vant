@@ -64,3 +64,11 @@ export default {
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | load | Triggered when the distance between the scrollbar and the bottom is less than offset | - |
+
+### Methods
+
+Use ref to get list instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| check | - | - | Check scroll position |
