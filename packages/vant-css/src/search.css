@@ -2,19 +2,22 @@
 
 .van-search {
   display: flex;
+  padding: 7px 15px;
   align-items: center;
   box-sizing: border-box;
-  padding: 6px 15px;
-  position: relative;
-
-  &--show-action {
-    padding-right: 0;
-  }
 
   .van-cell {
     flex: 1;
+    padding: 3px 10px;
     border-radius: 4px;
-    padding: 3px 10px 3px 35px;
+
+    &__left-icon {
+      color: $gray-dark;
+    }
+  }
+
+  &--show-action {
+    padding-right: 0;
   }
 
   input {
@@ -27,31 +30,13 @@
   }
 
   &__action {
-    line-height: 34px;
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-
-  &__cancel {
     padding: 0 10px;
-    color: $green;
+    font-size: 14px;
+    line-height: 30px;
+    color: $gray-darker;
 
     &:active {
       background-color: $active-color;
     }
-  }
-
-  .van-icon-search {
-    top: 50%;
-    left: 25px;
-    z-index: 1;
-    color: $gray-dark;
-    position: absolute;
-    font-size: 16px;
-    transform: translateY(-50%);
-  }
-
-  .van-icon-clear {
-    color: #bbb;
   }
 }

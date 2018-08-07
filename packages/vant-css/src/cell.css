@@ -38,6 +38,7 @@
   &__value {
     overflow: hidden;
     text-align: right;
+    position: relative;
     vertical-align: middle;
 
     &--alone {
@@ -46,6 +47,7 @@
   }
 
   &__left-icon {
+    min-width: 1em;
     font-size: 16px;
     line-height: 24px;
     margin-right: 5px;

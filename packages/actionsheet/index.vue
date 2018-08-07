@@ -9,7 +9,7 @@
         <li
           v-for="item in actions"
           :class="[b('item', { disabled: item.disabled || item.loading }), item.className, 'van-hairline--top']"
-          @click.stop="onClickItem(item)"
+          @click.stop="onSelect(item)"
         >
           <template v-if="!item.loading">
             <span :class="b('name')">{{ item.name }}</span>
@@ -59,9 +59,10 @@ export default create({
   },
 
   methods: {
-    onClickItem(item) {
-      if (item.callback && !item.disabled && !item.loading) {
-        item.callback(item);
+    onSelect(item) {
+      if (!item.disabled && !item.loading) {
+        item.callback && item.callback(item);
+        this.$emit('select', item);
       }
     },
 
