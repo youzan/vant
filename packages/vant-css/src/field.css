@@ -5,10 +5,6 @@
     max-width: 90px;
   }
 
-  .van-cell__value {
-    position: relative;
-  }
-
   &__body {
     display: flex;
     align-items: center;

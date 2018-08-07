@@ -18,7 +18,7 @@ test('cancel search', () => {
     }
   });
 
-  const cancel = wrapper.find('.van-search__cancel');
+  const cancel = wrapper.find('.van-search__action div');
   cancel.trigger('click');
   expect(wrapper.emitted('input')[0][0]).toEqual('');
   expect(wrapper.emitted('cancel')).toBeTruthy();
