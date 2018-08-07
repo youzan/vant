@@ -13,7 +13,7 @@ Vue.use(Search);
 `van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
-<van-search placeholder="请输入商品名称" v-model="value" />
+<van-search placeholder="请输入搜索关键词" v-model="value" />
 ```
 
 #### 监听对应事件
@@ -25,7 +25,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 <form action="/">
   <van-search
     v-model="value"
-    placeholder="请输入商品名称"
+    placeholder="请输入搜索关键词"
     show-action
     @search="onSearch"
     @cancel="onCancel"
@@ -39,6 +39,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 ```html
 <van-search
   v-model="value"
+  placeholder="请输入搜索关键词"
   show-action
   @search="onSearch"
 >
