@@ -1,11 +1,10 @@
 import '../../packages/vant-css/src/index.css';
-import './components/nprogress.css';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
 import routes from './router';
-import progress from 'nprogress';
-import 'vant-doc/src/helper/touch-simulator';
+import { progress } from 'vant-doc';
+import 'vant-doc/helper/touch-simulator';
 
 const router = new VueRouter({
   mode: 'hash',
