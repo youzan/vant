@@ -2156,6 +2156,10 @@ commander@^2.16.0:
   version "2.16.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
 
+commander@^2.17.1:
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+
 commander@~2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
@@ -9516,11 +9520,12 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vant-doc@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.8.tgz#5cf253733ad93f26e501034f45b945b6c9bdd2bd"
+vant-doc@1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.11.tgz#b53b8bae343dfad42d1b0b640e0fdc12cac1fb50"
   dependencies:
     cheerio "0.22.0"
+    commander "^2.17.1"
     decamelize "^1.2.0"
     fs-extra "^4.0.2"
     nprogress "^0.2.0"
