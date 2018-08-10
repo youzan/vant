@@ -42,7 +42,7 @@ export default {
 body {
   color: #333;
   line-height: 1;
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
