@@ -1,5 +1,21 @@
 ## 更新日志
 
+### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
+`2018-08-10`
+
+**Improvements**
+
+- Actionsheet: 新增 select 事件 [\#1594](https://github.com/youzan/vant/pull/1594)
+- ImagePreview: 支持传入 onClose 回调函数 [\#1589](https://github.com/youzan/vant/pull/1589)
+- List: 新增 check 方法 [\#1590](https://github.com/youzan/vant/pull/1590)
+- Search: 优化样式结构 [\#1603](https://github.com/youzan/vant/pull/1603)
+
+**Bug Fixes**
+
+- 修复 Actionsheet 选项加载中时仍然有点击态的问题 [\#1587](https://github.com/youzan/vant/pull/1587)
+- 修复 DatetimePicker 使用 formatter 时默认值错误的问题 [\#1591](https://github.com/youzan/vant/pull/1591)
+
+
 ### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
 `2018-08-03`
 

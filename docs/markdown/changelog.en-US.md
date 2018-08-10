@@ -1,5 +1,21 @@
 ## Changelog
 
+### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
+`2018-08-10`
+
+**Improvements**
+
+- Actionsheet: add select event [\#1594](https://github.com/youzan/vant/pull/1594)
+- ImagePreview: suppot onClose callback [\#1589](https://github.com/youzan/vant/pull/1589)
+- List: add check method [\#1590](https://github.com/youzan/vant/pull/1590)
+- Search: update style [\#1603](https://github.com/youzan/vant/pull/1603)
+
+**Bug Fixes**
+
+- fix Actionsheet item unclickable when loading [\#1587](https://github.com/youzan/vant/pull/1587)
+- fix DatetimePicker value uncorrect when use formatter [\#1591](https://github.com/youzan/vant/pull/1591)
+
+
 ### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
 `2018-08-03`
 
