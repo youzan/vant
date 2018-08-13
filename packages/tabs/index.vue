@@ -18,6 +18,7 @@
             'van-tab--active': index === curActive,
             'van-tab--disabled': tab.disabled
           }"
+          :style="{ color }"
           @click="onClick(index)"
         >
           <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
@@ -69,7 +70,8 @@ export default create({
     offsetTop: {
       type: Number,
       default: 0
-    }
+    },
+    color: String
   },
 
   data() {
