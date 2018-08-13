@@ -148,6 +148,7 @@ export default {
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` |
 | offset-top | 粘性定位布局下与顶部的最小距离 (px) | `Number` | `0` |
 | swipeable | 是否可以滑动内容切换 | `Boolean` | `false` |
+| color | 设置 tab 标题的颜色 | `String` | - |
 
 ### Tab API
 
