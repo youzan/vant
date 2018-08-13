@@ -71,9 +71,7 @@ export default create({
       type: Number,
       default: 0
     },
-    color: {
-      type: String
-    }
+    color: String
   },
 
   data() {
