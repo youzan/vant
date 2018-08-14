@@ -23,7 +23,7 @@
       size="large"
       type="danger"
       :class="b('add')"
-      :text="$t('add')"
+      :text="addButtonText || $t('add')"
       @click="$emit('add')"
     />
   </div>
