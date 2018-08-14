@@ -35,8 +35,8 @@ export default {
           address: '浙江省杭州市滨江区江南大道 15 号'
         }
       ],
-      add: '新增收货地址',
-      edit: '编辑收货地址'
+      add: '新增地址',
+      edit: '编辑地址'
     },
     'en-US': {
       list: [

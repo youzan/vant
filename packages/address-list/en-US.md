@@ -77,3 +77,10 @@ export default {
 | name | Name | `String` |
 | tel | Phone | `String` |
 | address | Address | `String` |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | Custom content after list |
+| top | Custom content before list |
