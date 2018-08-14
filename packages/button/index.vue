@@ -9,6 +9,7 @@
       {
         block,
         plain,
+        square,
         loading,
         disabled,
         unclickable: disabled || loading,
@@ -34,6 +35,7 @@ export default create({
     text: String,
     block: Boolean,
     plain: Boolean,
+    square: Boolean,
     loading: Boolean,
     disabled: Boolean,
     nativeType: String,

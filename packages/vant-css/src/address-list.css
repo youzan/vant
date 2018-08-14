@@ -3,6 +3,10 @@
 .van-address-list {
   height: 100%;
 
+  .van-cell {
+    padding: 15px;
+  }
+
   .van-cell__value {
     color: $text-color;
     padding-right: 34px;
@@ -10,18 +14,19 @@
   }
 
   .van-radio__label {
-    margin-left: 32px;
+    margin-left: 27px;
   }
 
   .van-radio__input {
     top: 50%;
     left: 0;
+    font-size: 16px;
     position: absolute;
     transform: translate(0, -50%);
   }
 
   .van-icon-checked {
-    color: $blue;
+    color: $red;
   }
 
   &__group {
@@ -35,12 +40,14 @@
 
   &__name {
     font-size: 14px;
-    line-height: 1.5;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 5px;
   }
 
   &__address {
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 16px;
     color: $gray-darker;
   }
 
@@ -48,8 +55,7 @@
     position: absolute;
     top: 50%;
     right: 15px;
-    font-size: 20px;
-    color: $gray-dark;
+    font-size: 16px;
     transform: translate(0, -50%);
   }
 
@@ -58,13 +64,5 @@
     left: 0;
     bottom: 0;
     z-index: 9999;
-    padding-left: 15px;
-    font-size: 16px;
-
-    .van-icon-add {
-      color: $blue;
-      font-size: 20px;
-      line-height: 1.2;
-    }
   }
 }

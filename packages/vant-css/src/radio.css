@@ -13,8 +13,9 @@ $van-radio-size: 20px;
   }
 
   &__input {
+    height: 1em;
     position: relative;
-    height: $van-radio-size;
+    font-size: $van-radio-size;
   }
 
   &__control {
@@ -40,7 +41,6 @@ $van-radio-size: 20px;
   .van-icon {
     width: 1em;
     pointer-events: none;
-    font-size: $van-radio-size;
   }
 
   .van-icon-checked {

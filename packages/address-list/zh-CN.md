@@ -44,10 +44,10 @@ export default {
 
   methods: {
     onAdd() {
-      Toast('新增收货地址');
+      Toast('新增地址');
     },
     onEdit(item, index) {
-      Toast('编辑收货地址:' + index);
+      Toast('编辑地址:' + index);
     }
   }
 }
@@ -60,7 +60,7 @@ export default {
 |-----------|-----------|-----------|-------------|
 | v-model | 当前选中地址的 id | String | - |
 | list | 地址列表 | Array | `[]` |
-| add-button-text | 底部按钮文字 | String | `新增收货地址` |
+| add-button-text | 底部按钮文字 | String | `新增地址` |
 
 ### Event
 
@@ -71,6 +71,7 @@ export default {
 | select | 切换选中的地址时触发 | item: 当前地址对象，index: 索引 |
 
 ### 数据格式
+
 #### 地址列表字段说明
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
@@ -78,3 +79,10 @@ export default {
 | name | 收货人姓名 | `String` |
 | tel | 收货人手机号 | `String` |
 | address | 收货地址 | `String` |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 在列表下方插入内容 |
+| top | 在顶部插入内容 |

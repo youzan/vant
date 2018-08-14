@@ -61,7 +61,7 @@ export default {
   },
   vanAddressList: {
     address: '收货地址',
-    add: '新增收货地址'
+    add: '新增地址'
   },
   vanSku: {
     unavailable: '商品已经无法购买啦',

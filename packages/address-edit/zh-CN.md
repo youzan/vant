@@ -111,6 +111,7 @@ export default {
 | is_default | 是否为默认地址 | `Boolean` |
 
 #### searchResult 数据格式
+
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | name | 地名 | `String` |
