@@ -19,15 +19,16 @@
   &__bar {
     height: 50px;
     display: flex;
-    font-size: 16px;
+    font-size: 14px;
     align-items: center;
     background-color: $white;
   }
 
-  &__price {
+  &__text {
     flex: 1;
+    font-weight: bold;
     text-align: right;
-    color: $gray-darker;
+    color: $text-color;
     padding-right: 12px;
 
     span {
@@ -35,13 +36,8 @@
     }
   }
 
-  &__price-integer {
+  &__price {
     color: $red;
-  }
-
-  &__price-decimal {
-    color: $red;
-    font-size: 12px;
   }
 
   .van-button {
