@@ -143,4 +143,8 @@
     background-color: $button-disabled-background-color;
     border: 1px solid $button-disabled-border-color;
   }
+
+  &--square {
+    border-radius: 0;
+  }
 }

@@ -71,6 +71,7 @@ Use `tag` prop to custom button tag
 | disabled | Whether to disable button | `Boolean` | `false` |
 | loading | Whether show loading status | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |
+| square | Whether to be square button | `Boolean` | `false` |
 
 ### Event
 
