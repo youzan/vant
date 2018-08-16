@@ -6,7 +6,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index:1;">
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-shop" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-shop" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <!---->
@@ -15,7 +15,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon van-tabbar-item__icon--dot">
-          <i class="van-icon van-icon-chat" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-chat" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <!---->
@@ -24,7 +24,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-records" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-records" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <div class="van-icon__info">5</div>
@@ -33,7 +33,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-gold-coin" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-gold-coin" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <div class="van-icon__info">20</div>
@@ -53,7 +53,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-chat" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-chat" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <!---->
@@ -62,7 +62,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
-          <i class="van-icon van-icon-records" style="color:undefined;size:undefined;">
+          <i class="van-icon van-icon-records" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
           <!---->

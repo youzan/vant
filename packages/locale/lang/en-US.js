@@ -40,10 +40,12 @@ export default {
     empty: 'No coupons',
     exchange: 'Exchange',
     close: 'Close',
+    enable: 'Available',
     disabled: 'Unavailable',
     placeholder: 'Coupon code'
   },
   vanCouponItem: {
+    valid: 'Valid',
     unlimited: 'Unlimited',
     discount: discount => `${discount * 10}% off`,
     condition: condition => `At least ${condition}`

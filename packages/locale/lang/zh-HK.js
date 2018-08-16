@@ -39,11 +39,12 @@ export default {
   vanCouponList: {
     empty: '暫無優惠券',
     exchange: '兌換',
-    close: '不使用優惠',
-    disabled: '不可用優惠',
+    enable: '可使用優惠券',
+    disabled: '不可使用優惠券',
     placeholder: '請輸入優惠碼'
   },
   vanCouponItem: {
+    valid: '有效期',
     unlimited: '無使用門檻',
     discount: discount => `${discount}折`,
     condition: (condition) => `滿${condition}元可用`
