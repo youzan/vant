@@ -66,7 +66,7 @@ module.exports = {
       css: 'logistics'
     },
     {
-      src: '编辑地址.svg',
+      src: 'edit.svg',
       css: 'edit'
     },
     {
