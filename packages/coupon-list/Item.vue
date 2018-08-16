@@ -1,25 +1,23 @@
 <template>
   <div :class="b({ disabled })">
-    <div :class="b('head')">
-      <div :class="b('lines')" />
-      <div :class="b('gradient')">
+    <div :class="b('content')">
+      <div :class="b('head')">
         <h2 v-html="faceAmount" />
         <p>{{ conditionMessage }}</p>
       </div>
-    </div>
-    <div :class="b('body')">
-      <h2>{{ data.name }}</h2>
-      <span>{{ validPeriod }}</span>
-      <p v-if="disabled && data.reason">{{ data.reason }}</p>
-      <div v-if="chosen" :class="b('corner')" >
-        <icon name="success" />
+      <div :class="b('body')">
+        <h2>{{ data.name }}</h2>
+        <p>{{ validPeriod }}</p>
+        <checkbox v-if="chosen" :class="b('corner')" :value="true" />
       </div>
     </div>
+    <p v-if="disabled && data.reason" :class="b('reason')">{{ data.reason }}</p>
   </div>
 </template>
 
 <script>
 import create from '../utils/create';
+import Checkbox from '../checkbox';
 
 export default create({
   name: 'coupon-item',
@@ -30,9 +28,13 @@ export default create({
     disabled: Boolean
   },
 
+  components: {
+    Checkbox
+  },
+
   computed: {
     validPeriod() {
-      return `${this.getDate(this.data.start_at)}-${this.getDate(this.data.end_at)}`;
+      return `${this.$t('valid')}：${this.getDate(this.data.start_at)} - ${this.getDate(this.data.end_at)}`;
     },
 
     faceAmount() {

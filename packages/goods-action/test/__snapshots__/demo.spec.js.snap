@@ -5,11 +5,11 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-goods-action">
       <a class="van-hairline van-goods-action-mini-btn">
-        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon" style="color:undefined;size:undefined;">
+        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->
         </i> 客服</a>
       <a class="van-hairline van-goods-action-mini-btn">
-        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon" style="color:undefined;size:undefined;">
+        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->
         </i> 购物车</a>
       <a class="van-button van-button--default van-button--normal van-button--bottom-action van-goods-action-big-btn">
@@ -21,15 +21,15 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-goods-action">
       <a class="van-hairline van-goods-action-mini-btn">
-        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon" style="color:undefined;size:undefined;">
+        <i class="van-icon van-icon-chat van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->
         </i> 客服</a>
       <a class="van-hairline van-goods-action-mini-btn">
-        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon" style="color:undefined;size:undefined;">
+        <i class="van-icon van-icon-cart van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <div class="van-icon__info">5</div>
         </i> 购物车</a>
       <a class="van-hairline van-goods-action-mini-btn">
-        <i class="van-icon van-icon-shop van-goods-action-mini-btn__icon" style="color:undefined;size:undefined;">
+        <i class="van-icon van-icon-shop van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->
         </i> 店铺</a>
       <a class="van-button van-button--default van-button--normal van-button--bottom-action van-goods-action-big-btn">
