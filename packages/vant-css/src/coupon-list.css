@@ -18,7 +18,7 @@
 
     &__list {
       overflow-y: auto;
-      padding: 15px 0 60px;
+      padding: 15px 0;
       box-sizing: border-box;
       -webkit-overflow-scrolling: touch;
     }

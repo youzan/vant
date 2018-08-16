@@ -45,6 +45,10 @@
             :key="item.id || item.name"
             :data="item"
           />
+          <div v-if="!disabledCoupons.length" :class="b('empty')">
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <p>{{ $t('empty') }}</p>
+          </div>
         </div>
       </tab>
     </tabs>
@@ -146,7 +150,7 @@ export default create({
 
     listStyle() {
       return {
-        height: this.winHeight - 140 + 'px'
+        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px'
       };
     }
   },
