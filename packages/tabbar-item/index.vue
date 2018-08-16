@@ -2,9 +2,8 @@
   <div :class="b({ active })" @click="onClick">
     <div :class="b('icon', { dot })">
       <slot name="icon" :active="active">
-        <icon v-if="icon" :name="icon" />
+        <icon v-if="icon" :name="icon" :info="info" />
       </slot>
-      <div v-if="isDef(info)" class="van-icon__info">{{ info }}</div>
     </div>
     <div :class="b('text')">
       <slot :active="active"/>
