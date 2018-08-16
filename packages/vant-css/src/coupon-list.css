@@ -69,6 +69,7 @@
     p,
     h2 {
       margin: 0;
+
       @mixin ellipsis;
     }
 
@@ -120,7 +121,7 @@
 
     &__reason {
       padding: 7px 15px;
-      background-color: #FBFBFB;
+      background-color: #fbfbfb;
       border-top: 1px dashed $border-color;
     }
 
