@@ -34,7 +34,7 @@ export default create({
 
   computed: {
     validPeriod() {
-      return `${this.$t('valid')}：${this.getDate(this.data.start_at)} - ${this.getDate(this.data.end_at)}`;
+      return `${this.$t('valid')}：${this.getDate(this.data.startAt)} - ${this.getDate(this.data.endAt)}`;
     },
 
     faceAmount() {
@@ -46,9 +46,9 @@ export default create({
     },
 
     conditionMessage() {
-      let condition = this.data.origin_condition;
+      let condition = this.data.originCondition;
       condition = condition % 100 === 0 ? Math.round(condition / 100) : (condition / 100).toFixed(2);
-      return this.data.origin_condition === 0 ? this.$t('unlimited') : this.$t('condition', condition);
+      return this.data.originCondition === 0 ? this.$t('unlimited') : this.$t('condition', condition);
     }
   },
 
