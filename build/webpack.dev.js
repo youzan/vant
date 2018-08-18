@@ -43,7 +43,6 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
-              hotReload: true,
               compilerOptions: {
                 preserveWhitespace: false
               }
