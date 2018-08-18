@@ -60,7 +60,7 @@
       <van-button block :loading="isSaving" @click="onSave" type="primary">
         {{ saveButtonText || $t('save') }}
       </van-button>
-      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="showDelete">
         {{ deleteButtonText || $t('delete') }}
       </van-button>
     </div>
@@ -162,10 +162,6 @@ export default create({
 
     areaListLoaded() {
       return isObj(this.areaList) && Object.keys(this.areaList).length;
-    },
-
-    isEdit() {
-      return this.showDelete || !!this.data.id;
     },
 
     areaText() {
