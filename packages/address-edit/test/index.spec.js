@@ -231,9 +231,7 @@ test('delete address', async() => {
   const wrapper = mount(AddressEdit, {
     attachToDocument: true,
     propsData: {
-      addressInfo: {
-        id: '123'
-      }
+      showDelete: true
     }
   });
 
