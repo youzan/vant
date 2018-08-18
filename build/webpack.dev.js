@@ -25,7 +25,8 @@ module.exports = {
       logLevel: 'warn'
     },
     hotClient: {
-      logLevel: 'warn'
+      logLevel: 'warn',
+      allEntries: true
     }
   },
   resolve: {
@@ -42,6 +43,7 @@ module.exports = {
           {
             loader: 'vue-loader',
             options: {
+              hotReload: true,
               compilerOptions: {
                 preserveWhitespace: false
               }
