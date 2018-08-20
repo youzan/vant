@@ -58,6 +58,10 @@ module.exports = {
       css: 'share'
     },
     {
+      src: 'aim.svg',
+      css: 'aim'
+    },
+    {
       src: '喜欢.svg',
       css: 'like-o'
     },
