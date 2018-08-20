@@ -36,12 +36,12 @@ const coupon = {
   available: 1,
   discount: 0,
   denominations: 150,
-  origin_condition: 0,
+  originCondition: 0,
   reason: '',
   value: 150,
   name: '优惠券名称',
-  start_at: 1489104000,
-  end_at: 1514592000
+  startAt: 1489104000,
+  endAt: 1514592000
 };
 
 export default {
@@ -109,8 +109,8 @@ export default {
 | name | 优惠券名称 | `String` |
 | discount | 折扣（0为满减券）88=>8.8折 | `Number` |
 | denominations | 面值（0为折扣券）单位分 | `Number` |
-| origin_condition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
-| start_at | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
-| end_at | 卡失效日期 (时间戳, 单位秒) | `Number` |
+| originCondition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
+| startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
+| endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
 | value | 订单优惠金额，单位分 | `Number` |

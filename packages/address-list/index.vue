@@ -1,5 +1,6 @@
 <template>
   <div :class="b()">
+    <slot name="top" />
     <radio-group :value="value" :class="b('group')" @input="$emit('input', $event)">
       <cell-group>
         <cell v-for="(item, index) in list" :key="item.id" is-link>
@@ -16,12 +17,13 @@
         </cell>
       </cell-group>
     </radio-group>
-    <cell
-      icon="add"
-      is-link
+    <slot />
+    <van-button
+      square
+      size="large"
+      type="danger"
       :class="b('add')"
-      class="van-hairline--top"
-      :title="addButtonText || $t('add')"
+      :text="addButtonText || $t('add')"
       @click="$emit('add')"
     />
   </div>
@@ -31,13 +33,15 @@
 import create from '../utils/create';
 import Radio from '../radio';
 import RadioGroup from '../radio-group';
+import VanButton from '../button';
 
 export default create({
   name: 'address-list',
 
   components: {
     Radio,
-    RadioGroup
+    RadioGroup,
+    VanButton
   },
 
   props: {

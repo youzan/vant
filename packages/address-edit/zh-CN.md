@@ -105,12 +105,13 @@ export default {
 | province | 省份 | `String` |
 | city | 城市 | `String` |
 | county | 区县 | `String` |
-| address_detail | 详细地址 | `String` |
-| area_code | 地区编码，通过省市区选择获取 | `String` |
-| postal_code | 邮政编码 | `String` |
-| is_default | 是否为默认地址 | `Boolean` |
+| addressDetail | 详细地址 | `String` |
+| areaCode | 地区编码，通过省市区选择获取 | `String` |
+| postalCode | 邮政编码 | `String` |
+| isDefault | 是否为默认地址 | `Boolean` |
 
 #### searchResult 数据格式
+
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | name | 地名 | `String` |

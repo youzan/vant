@@ -32,7 +32,7 @@ import Touch from '../mixins/touch';
 const THRESHOLD = 0.15;
 
 export default create({
-  name: 'cell-swipe',
+  name: 'swipe-cell',
 
   mixins: [Touch],
 

@@ -1,12 +1,28 @@
 ## 更新日志
 
+### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
+`2018-08-10`
+
+**Improvements**
+
+- Actionsheet: 新增 select 事件 [\#1594](https://github.com/youzan/vant/pull/1594)
+- ImagePreview: 支持传入 onClose 回调函数 [\#1589](https://github.com/youzan/vant/pull/1589)
+- List: 新增 check 方法 [\#1590](https://github.com/youzan/vant/pull/1590)
+- Search: 优化样式结构 [\#1603](https://github.com/youzan/vant/pull/1603)
+
+**Bug Fixes**
+
+- 修复 Actionsheet 选项加载中时仍然有点击态的问题 [\#1587](https://github.com/youzan/vant/pull/1587)
+- 修复 DatetimePicker 使用 formatter 时默认值错误的问题 [\#1591](https://github.com/youzan/vant/pull/1591)
+
+
 ### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
 `2018-08-03`
 
 **Improvements**
 
 - Button: 新增 warning 类型 [\#1558](https://github.com/youzan/vant/pull/1558)
-- CellSwipe: 新增 open 方法 [\#1546](https://github.com/youzan/vant/pull/1546)
+- SwipeCell: 新增 open 方法 [\#1546](https://github.com/youzan/vant/pull/1546)
 - DatetimePicker: 支持限制分钟范围 [\#1583](https://github.com/youzan/vant/pull/1583)
 - Icon: 新增 size 属性 [\#1555](https://github.com/youzan/vant/pull/1555)
 - Stepper: 优化禁用态样式 [\#1560](https://github.com/youzan/vant/pull/1560)
@@ -371,7 +387,7 @@
 
 - 修复 NavBar 标题长度未限制的问题 [\#867](https://github.com/youzan/vant/pull/867)
 - 修复 Button loading 状态下无法水平对齐的问题 [\#858](https://github.com/youzan/vant/pull/858)
-- 修复 CellSwipe 在垂直滑动时也会触发 Swipe 的问题 [\#866](https://github.com/youzan/vant/pull/866)
+- 修复 SwipeCell 在垂直滑动时也会触发 Swipe 的问题 [\#866](https://github.com/youzan/vant/pull/866)
 - 修复 ImagePreview close 方法失效的问题 [\#864](https://github.com/youzan/vant/pull/864)
 - 修复 SubmitBar 字体大小继承错误的问题 [\#857](https://github.com/youzan/vant/pull/857)
 - 修复 SwitchCell 文字未垂直居中的问题 [\#852](https://github.com/youzan/vant/pull/852)
@@ -453,7 +469,7 @@
 **Improvements**
 
 * AddressEdit: 新增 show-delete 属性 [\#716](https://github.com/youzan/vant/pull/716)
-* CellSwipe: 优化 Swipe 动画流畅度 [\#685](https://github.com/youzan/vant/pull/685)
+* SwipeCell: 优化 Swipe 动画流畅度 [\#685](https://github.com/youzan/vant/pull/685)
 * Field: 支持配置 autosize 最大/最小高度 [\#718](https://github.com/youzan/vant/pull/718)
 * Locale: 精简 i18n 配置文档 [\#701](https://github.com/youzan/vant/pull/701)
 * PullRefresh: 支持手动触发 loading 动画 [\#684](https://github.com/youzan/vant/pull/684)
@@ -870,7 +886,7 @@
 
 **Improvements**
 
-* CellSwipe: 新增 onClose 属性，支持异步控制 [\#356](https://github.com/youzan/vant/pull/356)
+* SwipeCell: 新增 onClose 属性，支持异步控制 [\#356](https://github.com/youzan/vant/pull/356)
 * Uploader: 支持继承原生属性 [\#357](https://github.com/youzan/vant/pull/357)
 * 优化本地构建速度 [\#355](https://github.com/youzan/vant/pull/355)
 
@@ -1257,7 +1273,7 @@
 * 新增 CellSwitch 组件 [\#95](https://github.com/youzan/vant/pull/95)
 * Dialog: 支持通过组件的方式进行调用 [\#93](https://github.com/youzan/vant/pull/93)
 * Progress: 简化 DOM 结构 [\#90](https://github.com/youzan/vant/pull/90)
-* CellSwipe: 性能优化，补充单元测试 [\#91](https://github.com/youzan/vant/pull/91)
+* SwipeCell: 性能优化，补充单元测试 [\#91](https://github.com/youzan/vant/pull/91)
 
 ### [0.8.6](https://github.com/youzan/vant/tree/v0.8.6)
 
@@ -1361,7 +1377,7 @@
 
 * 支持 SSR [\#40](https://github.com/youzan/vant/pull/40)
 * 新增多个 Icon 类型 [\#40](https://github.com/youzan/vant/pull/40)
-* 新增 CellSwipe 组件 [\#39](https://github.com/youzan/vant/pull/39)
+* 新增 SwipeCell 组件 [\#39](https://github.com/youzan/vant/pull/39)
 * 新增 Search 组件微杂志样式 [\#38](https://github.com/youzan/vant/pull/38)
 
 ### [0.5.8](https://github.com/youzan/vant/tree/v0.5.8)

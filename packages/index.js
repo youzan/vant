@@ -9,7 +9,6 @@ import Button from './button';
 import Card from './card';
 import Cell from './cell';
 import CellGroup from './cell-group';
-import CellSwipe from './cell-swipe';
 import Checkbox from './checkbox';
 import CheckboxGroup from './checkbox-group';
 import Circle from './circle';
@@ -55,6 +54,7 @@ import Stepper from './stepper';
 import Steps from './steps';
 import SubmitBar from './submit-bar';
 import Swipe from './swipe';
+import SwipeCell from './swipe-cell';
 import SwipeItem from './swipe-item';
 import Switch from './switch';
 import SwitchCell from './switch-cell';
@@ -68,7 +68,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.1.15';
+const version = '1.1.16';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -80,7 +80,6 @@ const components = [
   Card,
   Cell,
   CellGroup,
-  CellSwipe,
   Checkbox,
   CheckboxGroup,
   Circle,
@@ -125,6 +124,7 @@ const components = [
   Steps,
   SubmitBar,
   Swipe,
+  SwipeCell,
   SwipeItem,
   Switch,
   SwitchCell,
@@ -162,7 +162,6 @@ export {
   Card,
   Cell,
   CellGroup,
-  CellSwipe,
   Checkbox,
   CheckboxGroup,
   Circle,
@@ -208,6 +207,7 @@ export {
   Steps,
   SubmitBar,
   Swipe,
+  SwipeCell,
   SwipeItem,
   Switch,
   SwitchCell,
