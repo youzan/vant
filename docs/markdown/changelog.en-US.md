@@ -22,7 +22,7 @@
 **Improvements**
 
 - Button: add warning type [\#1558](https://github.com/youzan/vant/pull/1558)
-- CellSwipe: add open method [\#1546](https://github.com/youzan/vant/pull/1546)
+- SwipeCell: add open method [\#1546](https://github.com/youzan/vant/pull/1546)
 - DatetimePicker: support minute range [\#1583](https://github.com/youzan/vant/pull/1583)
 - Icon: add size prop [\#1555](https://github.com/youzan/vant/pull/1555)
 - Stepper: update disabled color [\#1560](https://github.com/youzan/vant/pull/1560)
@@ -393,7 +393,7 @@
 
 * fix NavBar title max width limitation [\#867](https://github.com/youzan/vant/pull/867)
 * fix Button vertical align incorrect when loading [\#858](https://github.com/youzan/vant/pull/858)
-* fix CellSwipe should only trigger swipe when drag horizontally [\#866](https://github.com/youzan/vant/pull/866)
+* fix SwipeCell should only trigger swipe when drag horizontally [\#866](https://github.com/youzan/vant/pull/866)
 * fix ImagePreview manually close not work [\#864](https://github.com/youzan/vant/pull/864)
 * fix SubmitBar inherit wrong font size [\#857](https://github.com/youzan/vant/pull/857)
 * fix SwitchCell text vertical align [\#852](https://github.com/youzan/vant/pull/852)
@@ -477,7 +477,7 @@
 **Improvements**
 
 * AddressEdit: add show-delete prop [\#716](https://github.com/youzan/vant/pull/716)
-* CellSwipe: optimzie animation fluency [\#685](https://github.com/youzan/vant/pull/685)
+* SwipeCell: optimzie animation fluency [\#685](https://github.com/youzan/vant/pull/685)
 * Field: support autosize maxHeight & minHeight [\#718](https://github.com/youzan/vant/pull/718)
 * Locale: optimize i18n config [\#701](https://github.com/youzan/vant/pull/701)
 * PullRefresh: support trigger loading animation [\#684](https://github.com/youzan/vant/pull/684)
@@ -895,7 +895,7 @@
 
 **Improvements**
 
-* CellSwipe: add onClose prop, support async controll [\#356](https://github.com/youzan/vant/pull/356)
+* SwipeCell: add onClose prop, support async controll [\#356](https://github.com/youzan/vant/pull/356)
 * Uploader: support inherit attrs [\#357](https://github.com/youzan/vant/pull/357)
 * optimize local compile speed [\#355](https://github.com/youzan/vant/pull/355)
 
