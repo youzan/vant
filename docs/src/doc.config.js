@@ -246,12 +246,12 @@ module.exports = {
             groupName: '高阶组件',
             list: [
               {
-                path: '/cell-swipe',
-                title: 'CellSwipe 滑动单元格'
-              },
-              {
                 path: '/image-preview',
                 title: 'ImagePreview 图片预览'
+              },
+              {
+                path: '/swipe-cell',
+                title: 'SwipeCell 滑动单元格'
               },
               {
                 path: '/switch-cell',
@@ -542,8 +542,8 @@ module.exports = {
             groupName: 'Advanced Components',
             list: [
               {
-                path: '/cell-swipe',
-                title: 'CellSwipe'
+                path: '/swipe-cell',
+                title: 'SwipeCell'
               },
               {
                 path: '/image-preview',

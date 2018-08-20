@@ -5,7 +5,7 @@
 
 **Breaking changes**
 
-- CellSwipe 滑动单元格 可以实现点击一个按钮,多个cellswip向右滑动吗? [\#1538](https://github.com/youzan/vant/issues/1538)
+- SwipeCell 滑动单元格 可以实现点击一个按钮,多个cellswip向右滑动吗? [\#1538](https://github.com/youzan/vant/issues/1538)
 - 日期控件（datetimepicker）可以对时分设置范围 [\#1531](https://github.com/youzan/vant/issues/1531)
 - Tab 组件 sticky 增加一个 距离顶部的高度功能 [\#1504](https://github.com/youzan/vant/issues/1504)
 
@@ -28,7 +28,7 @@
 - stepper  步进器 点击加号 减号也有点击反馈 [\#1599](https://github.com/youzan/vant/issues/1599)
 - upload到底怎么使用啊,怎么把得到的参数替换掉默认图片的路径呢? [\#1596](https://github.com/youzan/vant/issues/1596)
 - ImagePreview最新版本预览图片报错 [\#1595](https://github.com/youzan/vant/issues/1595)
-- CellSwipe 左滑，right 有 edit delete 两个按钮的时候，如何判断点击的是哪个呢？ [\#1593](https://github.com/youzan/vant/issues/1593)
+- SwipeCell 左滑，right 有 edit delete 两个按钮的时候，如何判断点击的是哪个呢？ [\#1593](https://github.com/youzan/vant/issues/1593)
 - 商品规格弹层控件中如果设置none\_sku: true,加入购物车时还提示“选择规格” [\#1588](https://github.com/youzan/vant/issues/1588)
 - Low android version compatibility issues [\#1585](https://github.com/youzan/vant/issues/1585)
 - vant  collapse使用报错 [\#1584](https://github.com/youzan/vant/issues/1584)
@@ -80,7 +80,7 @@
 - npm install 下来的css，里边有的icon font文件，是cdn引用的，而不是本地的。 [\#1552](https://github.com/youzan/vant/issues/1552)
 - DatetimePicker 中能否加上年月日上午/下午 [\#1551](https://github.com/youzan/vant/issues/1551)
 - 手机滚动不流畅啊？没有个scroll-content? [\#1549](https://github.com/youzan/vant/issues/1549)
-- CellSwipe 滑动单元格如何确定当前数据条目？ [\#1548](https://github.com/youzan/vant/issues/1548)
+- SwipeCell 滑动单元格如何确定当前数据条目？ [\#1548](https://github.com/youzan/vant/issues/1548)
 - 怎么修改弹出层样式 [\#1547](https://github.com/youzan/vant/issues/1547)
 - popup 组件中 lock-scroll 功能 在 ios 中失效 [\#1544](https://github.com/youzan/vant/issues/1544)
 - 以$toast、$dialog 形式调用 toast和dialog在prod环境莫名undefined  [\#1542](https://github.com/youzan/vant/issues/1542)
@@ -119,7 +119,7 @@
 - \[Improvement\] Button: add warning type [\#1558](https://github.com/youzan/vant/pull/1558) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Icon: add size prop [\#1555](https://github.com/youzan/vant/pull/1555) ([chenjiahan](https://github.com/chenjiahan))
 - \[Doc\] update detail [\#1554](https://github.com/youzan/vant/pull/1554) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] CellSwipe: add open method [\#1546](https://github.com/youzan/vant/pull/1546) ([chenjiahan](https://github.com/chenjiahan))
+- \[Improvement\] SwipeCell: add open method [\#1546](https://github.com/youzan/vant/pull/1546) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Button: text-size-adjust [\#1545](https://github.com/youzan/vant/pull/1545) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Stepper: optimize input strategy [\#1534](https://github.com/youzan/vant/pull/1534) ([chenjiahan](https://github.com/chenjiahan))
 - \[Doc\] Dialog: update usage [\#1520](https://github.com/youzan/vant/pull/1520) ([chenjiahan](https://github.com/chenjiahan))

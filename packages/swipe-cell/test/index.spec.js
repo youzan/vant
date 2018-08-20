@@ -1,4 +1,4 @@
-import CellSwipe from '..';
+import SwipeCell from '..';
 import { mount, triggerDrag } from '../../../test/utils';
 
 const defaultProps = {
@@ -9,7 +9,7 @@ const defaultProps = {
 };
 
 it('drag and show left part', () => {
-  const wrapper = mount(CellSwipe, defaultProps);
+  const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, 10, 0);
   expect(wrapper).toMatchSnapshot();
@@ -25,7 +25,7 @@ it('drag and show left part', () => {
 });
 
 it('drag and show left part', () => {
-  const wrapper = mount(CellSwipe, defaultProps);
+  const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, -50, 0);
   expect(wrapper).toMatchSnapshot();
@@ -35,7 +35,7 @@ test('on close prop', () => {
   let position;
   let instance;
 
-  const wrapper = mount(CellSwipe, {
+  const wrapper = mount(SwipeCell, {
     propsData: {
       ...defaultProps.propsData,
       onClose(pos, ins) {
@@ -51,10 +51,10 @@ test('on close prop', () => {
   wrapper.trigger('click');
   expect(position).toEqual('cell');
 
-  wrapper.find('.van-cell-swipe__left').trigger('click');
+  wrapper.find('.van-swipe-cell__left').trigger('click');
   expect(position).toEqual('left');
 
-  wrapper.find('.van-cell-swipe__right').trigger('click');
+  wrapper.find('.van-swipe-cell__right').trigger('click');
   expect(position).toEqual('right');
 
   instance.close();

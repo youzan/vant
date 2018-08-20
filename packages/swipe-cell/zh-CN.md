@@ -1,10 +1,10 @@
-## CellSwipe 滑动单元格
+## SwipeCell 滑动单元格
 
 ### 使用指南
 ``` javascript
-import { CellSwipe } from 'vant';
+import { SwipeCell } from 'vant';
 
-Vue.use(CellSwipe);
+Vue.use(SwipeCell);
 ```
 
 ### 代码演示
@@ -12,25 +12,25 @@ Vue.use(CellSwipe);
 #### 基础用法
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65">
+<van-swipe-cell :right-width="65" :left-width="65">
   <span slot="left">选择</span>
   <van-cell-group>
     <van-cell title="单元格" value="内容" />
   </van-cell-group>
   <span slot="right">删除</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 #### 异步关闭
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65" :on-close="onClose">
+<van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
   <span slot="left">选择</span>
   <van-cell-group>
     <van-cell title="单元格" value="内容" />
   </van-cell-group>
   <span slot="right">删除</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 ```js
@@ -77,11 +77,11 @@ export default {
 | 参数 | 类型 | 说明 |
 |-----------|-----------|-----------|
 | clickPosition | `String` | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | `Object` | CellSwipe 实例 |
+| instance | `Object` | SwipeCell 实例 |
 
 ### 方法
 
-通过 ref 可以获取到 CellSwipe 实例并调用实例方法
+通过 ref 可以获取到 SwipeCell 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
