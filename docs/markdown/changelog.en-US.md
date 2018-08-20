@@ -1,5 +1,32 @@
 ## Changelog
 
+### [1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
+`2018-08-20`
+
+**Breaking changes**
+
+- AddressEdit: use camelcase data [\#1644](https://github.com/youzan/vant/pull/1644)
+- Coupon: use camelcase data [\#1643](https://github.com/youzan/vant/pull/1643)
+- CellSwipe: rename to SwipeCell [\#1652](https://github.com/youzan/vant/pull/1652)
+
+**Improvements**
+
+- Area: update province data [\#1653](https://github.com/youzan/vant/pull/1653)
+- AddressList: upgrade style, add slot [\#1628](https://github.com/youzan/vant/pull/1628)
+- Button: add square prop [\#1627](https://github.com/youzan/vant/pull/1627)
+- Coupon: upgrade style [\#1636](https://github.com/youzan/vant/pull/1636)
+- Icon: add aim icon [\#1655](https://github.com/youzan/vant/pull/1655)
+- Icon: update edit icon [\#1635](https://github.com/youzan/vant/pull/1635)
+- Radio: optimize style [\#1626](https://github.com/youzan/vant/pull/1626)
+- SubmitBar: upgrade style [\#1631](https://github.com/youzan/vant/pull/1631)
+- Tab : support custom color [\#1622](https://github.com/youzan/vant/pull/1622)
+- Tabbar: optimize DOM [\#1640](https://github.com/youzan/vant/pull/1640)
+
+**Bug Fixes**
+
+- fix AddressEdit show delete [\#1648](https://github.com/youzan/vant/pull/1648)
+- fix Icon size prop not work [\#1634](https://github.com/youzan/vant/pull/1634)
+
 ### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
 `2018-08-10`
 
