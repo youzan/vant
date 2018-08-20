@@ -1,5 +1,33 @@
 ## 更新日志
 
+### [1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
+`2018-08-20`
+
+**Breaking changes**
+
+- AddressEdit: 采用驼峰命名的数据结构 [\#1644](https://github.com/youzan/vant/pull/1644)
+- Coupon: 采用驼峰命名的数据结构 [\#1643](https://github.com/youzan/vant/pull/1643)
+- CellSwipe: 规范命名为 SwipeCell [\#1652](https://github.com/youzan/vant/pull/1652)
+
+**Improvements**
+
+- Area: 更新省市区数据 [\#1653](https://github.com/youzan/vant/pull/1653)
+- AddressList: 样式优化升级 [\#1628](https://github.com/youzan/vant/pull/1628)
+- Coupon: 样式优化升级 [\#1636](https://github.com/youzan/vant/pull/1636)
+- SubmitBar: 样式优化升级 [\#1631](https://github.com/youzan/vant/pull/1631)
+- Button: 新增 square 属性 [\#1627](https://github.com/youzan/vant/pull/1627)
+- Icon: 新增 aim 图标 [\#1655](https://github.com/youzan/vant/pull/1655)
+- Icon: 更新 edit 图标 [\#1635](https://github.com/youzan/vant/pull/1635)
+- Radio: 优化样式 [\#1626](https://github.com/youzan/vant/pull/1626)
+- Tab : 支持自定义颜色 [\#1622](https://github.com/youzan/vant/pull/1622)
+- Tabbar: 优化 DOM 结构 [\#1640](https://github.com/youzan/vant/pull/1640)
+
+**Bug Fixes**
+
+- 修复 AddressEdit 删除按钮展示逻辑 [\#1648](https://github.com/youzan/vant/pull/1648)
+- 修复 Icon size 属性不生效的问题 [\#1634](https://github.com/youzan/vant/pull/1634)
+
+
 ### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
 `2018-08-10`
 
