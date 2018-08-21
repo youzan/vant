@@ -52,7 +52,7 @@ test('autoplay', async() => {
   const { swipe } = wrapper.vm.$refs;
 
   await later(60);
-  expect(swipe.active).toEqual(1);
+  expect(swipe.active).toEqual(0);
   wrapper.setData({ autoplay: 0 });
 
   await later(60);
