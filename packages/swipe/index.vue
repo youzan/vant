@@ -36,6 +36,14 @@ export default create({
   props: {
     autoplay: Number,
     vertical: Boolean,
+    width: {
+      type: Number,
+      default: 0
+    },
+    height: {
+      type: Number,
+      default: 0
+    },
     loop: {
       type: Boolean,
       default: true
@@ -60,8 +68,8 @@ export default create({
 
   data() {
     return {
-      width: 0,
-      height: 0,
+      computedWidth: 0,
+      computedHeight: 0,
       offset: 0,
       active: 0,
       deltaX: 0,
@@ -115,7 +123,7 @@ export default create({
     },
 
     size() {
-      return this[this.vertical ? 'height' : 'width'];
+      return this[this.vertical ? 'computedHeight' : 'computedWidth'];
     },
 
     trackSize() {
@@ -141,8 +149,10 @@ export default create({
       clearTimeout(this.timer);
       if (this.$el) {
         const rect = this.$el.getBoundingClientRect();
-        this.width = rect.width;
-        this.height = rect.height;
+        console.log(rect);
+
+        this.computedWidth = this.width || rect.width;
+        this.computedHeight = this.height || rect.height;
       }
       this.swiping = true;
       this.active = active;

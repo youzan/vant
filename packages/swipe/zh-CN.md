@@ -77,6 +77,17 @@ export default {
 </van-swipe>
 ```
 
+#### 控制滑块大小
+
+```html
+<van-swipe :autoplay="3000" :width="300">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -88,6 +99,8 @@ export default {
 | touchable | 是否可以通过手势滑动 | `Boolean` | `true` |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` |
 | initial-swipe | 初始位置，从 0 开始算 | `Number` | `0` |
+| width | 设置滑块宽度 | `Number` | `0` |
+| height | 设置滑块高度 | `Number` | `0` |
 
 ### 事件
 
