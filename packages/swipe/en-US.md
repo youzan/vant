@@ -77,6 +77,17 @@ export default {
 </van-swipe>
 ```
 
+#### Set Swiper Item Size
+
+```html
+<van-swipe :autoplay="3000" :width="300">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
@@ -88,6 +99,8 @@ export default {
 | touchable | Whether touchable | `Boolean` | `true` |
 | show-indicators | Whether to show indocators | `Boolean` | `true` |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` |
+| width | Set Swiper Item Width | `Number` | `0` |
+| height | Set Swiper Item Height | `Number` | `0` |
 
 ### Event
 
