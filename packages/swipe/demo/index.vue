@@ -34,6 +34,15 @@
         <van-swipe-item>4</van-swipe-item>
       </van-swipe>
     </demo-block>
+
+    <demo-block :title="$t('title5')">
+      <van-swipe :autoplay="3000" :width="300" :loop="false">
+        <van-swipe-item>1</van-swipe-item>
+        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>3</van-swipe-item>
+        <van-swipe-item>4</van-swipe-item>
+      </van-swipe>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -44,12 +53,14 @@ export default {
       title2: '图片懒加载',
       title3: '监听 change 事件',
       title4: '纵向滚动',
+      title5: '设置滑块大小',
       message: '当前 Swipe 索引：'
     },
     'en-US': {
       title2: 'Image Lazyload',
       title3: 'Change Event',
       title4: 'Vertical Scrolling',
+      title5: 'Set Swiper Item Size',
       message: 'Current Swipe index:'
     }
   },
