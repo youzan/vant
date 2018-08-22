@@ -7,7 +7,7 @@
         @click="showList = true"
       />
 
-      <van-popup v-model="showList" position="bottom" :lazy-render="false">
+      <van-popup v-model="showList" position="bottom">
         <van-coupon-list
           :coupons="coupons"
           :chosen-coupon="chosenCoupon"
@@ -63,12 +63,12 @@ export default {
         available: 1,
         discount: 0,
         denominations: 150,
-        origin_condition: 0,
+        originCondition: 0,
         reason: '',
         value: 150,
         name: this.$t('coupon.name'),
-        start_at: 1489104000,
-        end_at: 1514592000
+        startAt: 1489104000,
+        endAt: 1514592000
       };
     },
 
@@ -78,7 +78,7 @@ export default {
         id: 2,
         discount: 88,
         denominations: 0,
-        origin_condition: 50,
+        originCondition: 50,
         value: 12
       };
     },

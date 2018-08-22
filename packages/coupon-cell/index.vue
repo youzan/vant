@@ -1,6 +1,11 @@
 <template>
   <cell-group :class="b()">
-    <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
+    <cell
+      :title="title || $t('title')"
+      :value="value"
+      :is-link="editable"
+      @click="$emit('click')"
+    />
   </cell-group>
 </template>
 

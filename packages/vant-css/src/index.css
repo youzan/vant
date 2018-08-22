@@ -46,7 +46,7 @@
 @import './toast.css';
 
 /* high order components */
-@import './cell-swipe.css';
+@import './swipe-cell.css';
 @import './switch-cell.css';
 @import './tree-select.css';
 

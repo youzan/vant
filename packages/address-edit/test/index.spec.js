@@ -12,10 +12,10 @@ const addressInfo = {
   province: '北京市',
   city: '北京市',
   county: '朝阳区',
-  address_detail: '详细地址',
-  area_code: '110101',
-  postal_code: '10000',
-  is_default: true
+  addressDetail: '详细地址',
+  areaCode: '110101',
+  postalCode: '10000',
+  isDefault: true
 };
 
 const createComponent = () => {
@@ -77,47 +77,47 @@ it('valid tel', () => {
   expect(errorInfo.tel).toBeFalsy();
 });
 
-it('valid area_code', () => {
+it('valid areaCode', () => {
   const { data, button, errorInfo } = createComponent();
-  // area_code empty
-  data.area_code = '';
+  // areaCode empty
+  data.areaCode = '';
   button.trigger('click');
-  expect(errorInfo.area_code).toBeTruthy();
+  expect(errorInfo.areaCode).toBeTruthy();
 
-  // area_code invalid
-  data.area_code = '-1';
+  // areaCode invalid
+  data.areaCode = '-1';
   button.trigger('click');
-  expect(errorInfo.area_code).toBeTruthy();
+  expect(errorInfo.areaCode).toBeTruthy();
 });
 
-it('valid address_detail', () => {
+it('valid addressDetail', () => {
   const { data, field, button, errorInfo } = createComponent();
-  data.address_detail = '';
+  data.addressDetail = '';
   button.trigger('click');
-  expect(errorInfo.address_detail).toBeTruthy();
+  expect(errorInfo.addressDetail).toBeTruthy();
   field.at(3).trigger('focus');
-  expect(errorInfo.address_detail).toBeFalsy();
+  expect(errorInfo.addressDetail).toBeFalsy();
 });
 
 test('valid postal code', () => {
   const { vm, data, field, button, errorInfo } = createComponent();
 
-  // postal_code invalid
-  data.postal_code = '123';
+  // postalCode invalid
+  data.postalCode = '123';
   button.trigger('click');
-  expect(errorInfo.postal_code).toBeTruthy();
+  expect(errorInfo.postalCode).toBeTruthy();
   field.at(4).trigger('focus');
-  expect(errorInfo.postal_code).toBeFalsy();
+  expect(errorInfo.postalCode).toBeFalsy();
 
   // valid result
-  data.postal_code = '123456';
+  data.postalCode = '123456';
   button.trigger('click');
 
-  // not show postal_code
-  data.postal_code = '156';
+  // not show postalCode
+  data.postalCode = '156';
   vm.showPostal = false;
   button.trigger('click');
-  expect(errorInfo.postal_code).toBeFalsy();
+  expect(errorInfo.postalCode).toBeFalsy();
 });
 
 test('select area', () => {
@@ -137,7 +137,7 @@ test('select area', () => {
   expect(data.province).toEqual('北京市');
   expect(data.city).toEqual('北京市');
   expect(data.county).toEqual('朝阳区');
-  expect(data.area_code).toEqual('123456');
+  expect(data.areaCode).toEqual('123456');
 });
 
 test('on change detail', () => {
@@ -169,7 +169,7 @@ test('set/get area code', async() => {
   wrapper.vm.setAreaCode('110102');
 
   await later(50);
-  expect(wrapper.vm.data.area_code).toEqual('110102');
+  expect(wrapper.vm.data.areaCode).toEqual('110102');
   expect(wrapper.vm.getArea()).toEqual([
     { code: '110000', name: '北京市' },
     { code: '110100', name: '北京市' },
@@ -186,7 +186,7 @@ test('watch area code', async() => {
     propsData: {
       areaList: {},
       addressInfo: {
-        area_code: '110101'
+        areaCode: '110101'
       }
     }
   });
@@ -231,9 +231,7 @@ test('delete address', async() => {
   const wrapper = mount(AddressEdit, {
     attachToDocument: true,
     propsData: {
-      addressInfo: {
-        id: '123'
-      }
+      showDelete: true
     }
   });
 
