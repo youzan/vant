@@ -7,8 +7,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-collapse-item--expanded">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞微商城</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞微商城</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -20,8 +22,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -31,8 +35,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞美业</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞美业</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -46,8 +52,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-collapse-item--expanded">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞微商城</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞微商城</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -59,8 +67,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -70,8 +80,10 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
+          <div class="van-cell__title"><span>有赞美业</span>
+            <!---->
+          </div>
           <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞美业</div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -85,14 +97,14 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
           <!---->
-          <!---->
-          <div class="van-cell__value van-cell__value--alone">
+          <div class="van-cell__title">
             <div>有赞微商城
               <i class="van-icon van-icon-question" style="color:undefined;font-size:undefined;">
                 <!---->
               </i>
             </div>
           </div>
+          <!---->
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
@@ -101,9 +113,13 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-collapse-item van-hairline--top">
         <div class="van-cell van-cell--clickable van-hairline van-collapse-item__title">
-          <!---->
-          <!---->
-          <div class="van-cell__value van-cell__value--alone">有赞零售</div>
+          <i class="van-icon van-icon-shop van-cell__left-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"><span>内容</span></div>
           <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
