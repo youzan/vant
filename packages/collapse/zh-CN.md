@@ -97,12 +97,26 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
 | name | 面板唯一标识符，默认为索引值 | `String | Number` | `index` |
-| title | 标题 | `String` | - |
-
+| icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
+| title | 左侧标题 | `String | Number` | - |
+| value | 右侧内容 | `String | Number` | - |
+| label | 标题下方的描述信息 | `String` | - |
+| border | 是否显示内边框 | `Boolean` | `true` |
+| center | 是否使内容垂直居中 | `Boolean` | `false` |
+| url | 跳转链接 | `String` | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
+| required | 是否显示表单必填星号 | `Boolean` | `false` |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
 
 ### CollapseItem Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
 | default | 面板内容 |
-| title | 自定义标题内容 |
+| value | 自定义显示内容 |
+| icon | 自定义`icon` |
+| title | 自定义`title` |
+| right-icon | 自定义右侧按钮，默认是`arrow` |
