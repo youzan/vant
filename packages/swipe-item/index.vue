@@ -18,10 +18,11 @@ export default create({
 
   computed: {
     style() {
-      const { vertical, width, height } = this.$parent;
+      const { vertical, computedWidth, computedHeight } = this.$parent;
+
       return {
-        width: width + 'px',
-        height: vertical ? height + 'px' : '100%',
+        width: computedWidth + 'px',
+        height: vertical ? computedHeight + 'px' : '100%',
         transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
       };
     }
