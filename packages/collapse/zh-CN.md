@@ -97,12 +97,19 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|-------------|
 | name | 面板唯一标识符，默认为索引值 | `String | Number` | `index` |
-| title | 标题 | `String` | - |
-
+| icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
+| title | 左侧标题 | `String | Number` | - |
+| value | 右侧内容 | `String | Number` | - |
+| label | 标题下方的描述信息 | `String` | - |
+| border | 是否显示内边框 | `Boolean` | `true` |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `true` |
 
 ### CollapseItem Slot
 
 | 名称 | 说明 |
 |-----------|-----------|
 | default | 面板内容 |
-| title | 自定义标题内容 |
+| value | 自定义显示内容 |
+| icon | 自定义`icon` |
+| title | 自定义`title` |
+| right-icon | 自定义右侧按钮，默认是`arrow` |

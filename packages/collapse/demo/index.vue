@@ -22,7 +22,9 @@
           <div slot="title">{{ $t('title1') }}<van-icon name="question" /></div>
           {{ $t('content1') }}
         </van-collapse-item>
-        <van-collapse-item :title="$t('title2')">{{ $t('content2') }}</van-collapse-item>
+        <van-collapse-item :title="$t('title2')" :value="$t('content')" icon="shop">
+          {{ $t('content2') }}
+        </van-collapse-item>
       </van-collapse>
     </demo-block>
   </demo-section>
