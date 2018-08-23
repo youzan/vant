@@ -83,7 +83,10 @@ export default {
 
   beforeDestroy() {
     this.close();
-    this.$el.remove();
+    
+    if (this.getContainer) {
+      this.$parent.$el.appendChild(this.$el);
+    }
   },
 
   deactivated() {
