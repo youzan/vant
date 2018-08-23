@@ -90,14 +90,7 @@ export default {
 | value | Right text | `String | Number` | - |
 | label | Description below the title | `String` | - |
 | border | Whether to show inner border | `Boolean` | `true` |
-| center | Whether to center content vertically | `Boolean` | `true` |
-| url | Link URL | `String` | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` |
-| clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
-| is-link | Whether to show link icon | `Boolean` | `false` |
-| required | Whether to show required mark | `Boolean` | `false` |
-| arrow-direction | Can be set to `left` `up` `down` | `String` | - |
+| is-link | Whether to show link icon | `Boolean` | `true` |
 
 ### CollapseItem Slot
 

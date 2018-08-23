@@ -6,10 +6,10 @@
     ]"
   >
     <cell :class="b('title')" @click="onClick" v-bind="$props">
-      <slot name="title" slot="title" v-if="$slots.title">{{ title }}</slot>
-      <slot name="icon" slot="icon" v-if="$slots.icon" />
-      <slot name="value" v-if="$slots.value" />
-      <slot name="right-icon" slot="right-icon" v-if="$slots['right-icon']" />
+      <slot name="title" slot="title" />
+      <slot name="icon" slot="icon" />
+      <slot name="value" />
+      <slot name="right-icon" slot="right-icon" />
     </cell>
     <div v-if="inited" v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
       <div ref="content" :class="b('content')">
@@ -23,7 +23,6 @@
 import { raf } from '../utils/raf';
 import create from '../utils/create';
 import findParent from '../mixins/find-parent';
-import Cell from '../cell';
 
 export default create({
   name: 'collapse-item',
@@ -31,8 +30,15 @@ export default create({
   mixins: [findParent],
 
   props: {
-    ...Cell.props,
     name: [String, Number],
+    icon: String,
+    label: String,
+    title: [String, Number],
+    value: [String, Number],
+    border: {
+      type: Boolean,
+      default: true
+    },
     isLink: {
       type: Boolean,
       default: true
