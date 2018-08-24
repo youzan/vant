@@ -33,9 +33,6 @@ export default {
   },
 
   data() {
-    setTimeout(() => {
-      this.$refs.area.reset();
-    }, 3000);
     return {
       value: '330302'
     };

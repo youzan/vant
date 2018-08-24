@@ -146,6 +146,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | sticky | Whether to use sticky mode | `Boolean` | `false` |
 | offset-top | Offset top when use sticky mode | `Number` | `0` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
+| color | Set tab's title color | `String` | - |
 
 ### Tab API
 

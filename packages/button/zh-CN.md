@@ -76,6 +76,7 @@ Vue.use(Button);
 | disabled | 是否禁用 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
+| square | 是否为方形按钮 | `Boolean` | `false` |
 
 ### Event
 

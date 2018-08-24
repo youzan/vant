@@ -38,10 +38,12 @@ export default {
     empty: '暂无优惠券',
     exchange: '兑换',
     close: '不使用优惠',
-    disabled: '不可用优惠',
+    enable: '可使用优惠券',
+    disabled: '不可使用优惠券',
     placeholder: '请输入优惠码'
   },
   vanCouponItem: {
+    valid: '有效期',
     unlimited: '无使用门槛',
     discount: discount => `${discount}折`,
     condition: (condition) => `满${condition}元可用`
@@ -61,7 +63,7 @@ export default {
   },
   vanAddressList: {
     address: '收货地址',
-    add: '新增收货地址'
+    add: '新增地址'
   },
   vanSku: {
     unavailable: '商品已经无法购买啦',

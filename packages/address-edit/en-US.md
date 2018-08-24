@@ -103,10 +103,10 @@ export default {
 | province | Province | `String` |
 | city | City | `String` |
 | county | County | `String` |
-| address_detail | Detailed Address | `String` |
-| area_code | Area code | `String` |
-| postal_code | Postal code | `String` |
-| is_default | Is default address | `Boolean` |
+| addressDetail | Detailed Address | `String` |
+| areaCode | Area code | `String` |
+| postalCode | Postal code | `String` |
+| isDefault | Is default address | `Boolean` |
 
 #### searchResult Data Structure
 | key | Description | Type |

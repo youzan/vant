@@ -1,6 +1,6 @@
 @import './common/var.css';
 
-.van-cell-swipe {
+.van-swipe-cell {
   overflow: hidden;
   position: relative;
 

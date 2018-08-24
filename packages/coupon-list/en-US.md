@@ -36,12 +36,12 @@ const coupon = {
   available: 1,
   discount: 0,
   denominations: 150,
-  origin_condition: 0,
+  originCondition: 0,
   reason: '',
   value: 150,
   name: 'Coupon name',
-  start_at: 1489104000,
-  end_at: 1514592000
+  startAt: 1489104000,
+  endAt: 1514592000
 };
 
 export default {
@@ -106,9 +106,8 @@ export default {
 | name | Name | `String` |
 | discount | Discount | `Number` |
 | denominations | Denominations | `Number` |
-| origin_condition | Condition | `Number` |
-| start_at | Start time (Timestmap, unit second) | `Number` |
-| end_at | End time (Timestmap, unit second) | `Number` |
+| originCondition | Condition | `Number` |
+| startAt | Start time (Timestmap, unit second) | `Number` |
+| endAt | End time (Timestmap, unit second) | `Number` |
 | reason | Unavailable reason | `String` |
 | value | Value | `Number` |
-
