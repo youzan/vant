@@ -9,6 +9,7 @@ export default {
   contact: 'Name',
   loadingTip: 'Loading...',
   nameEmpty: 'Name can not be empty',
+  confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
   telPlaceholder: 'Phone',
   vanContactCard: {
@@ -16,9 +17,6 @@ export default {
   },
   vanContactList: {
     addText: 'Add new contact'
-  },
-  vanContactEdit: {
-    confirmDelete: 'Are you sure you want to delete this contact?'
   },
   vanPagination: {
     prev: 'Previous',
@@ -52,13 +50,14 @@ export default {
   },
   vanAddressEdit: {
     area: 'Area',
-    receiver: 'Receiver',
     postal: 'Postal',
     areaEmpty: 'Please select a receiving area',
     addressEmpty: 'Address can not be empty',
     postalEmpty: 'Wrong postal code',
     defaultAddress: 'Set as the default address',
-    confirmDelete: 'Are you sure you want to delete this address?'
+    telPlaceholder: 'Phone',
+    namePlaceholder: 'Name',
+    areaPlaceholder: 'Area'
   },
   vanAddressEditDetail: {
     label: 'Address',

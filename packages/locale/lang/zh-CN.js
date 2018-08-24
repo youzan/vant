@@ -1,6 +1,6 @@
 export default {
-  name: '名字',
-  tel: '联系电话',
+  name: '姓名',
+  tel: '电话',
   save: '保存',
   confirm: '确认',
   cancel: '取消',
@@ -8,9 +8,9 @@ export default {
   complete: '完成',
   contact: '联系人',
   loadingTip: '加载中...',
-  nameEmpty: '请填写名字',
+  nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除么',
-  telInvalid: '请填写正确的联系电话',
+  telInvalid: '请填写正确的电话',
   telPlaceholder: '手机或固定电话',
   vanContactCard: {
     addText: '添加订单联系人信息'
@@ -49,17 +49,19 @@ export default {
     condition: (condition) => `满${condition}元可用`
   },
   vanAddressEdit: {
-    area: '收件地区',
-    receiver: '收货人',
+    area: '地区',
     postal: '邮政编码',
-    areaEmpty: '请选择收件地区',
+    areaEmpty: '请选择地区',
     addressEmpty: '请填写详细地址',
     postalEmpty: '邮政编码格式不正确',
-    defaultAddress: '设为默认收货地址'
+    defaultAddress: '设为默认收货地址',
+    telPlaceholder: '收货人手机号',
+    namePlaceholder: '收货人姓名',
+    areaPlaceholder: '选择省 / 市 / 区'
   },
   vanAddressEditDetail: {
     label: '详细地址',
-    placeholder: '如街道、楼层、门牌号等'
+    placeholder: '街道门牌、楼层房间号等信息'
   },
   vanAddressList: {
     address: '收货地址',
