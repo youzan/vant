@@ -76,45 +76,44 @@ test('get container with parent', () => {
   expect(popup.parentNode).toEqual(wrapper.element);
 });
 
-test('get container without parent', () => {
-  const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      getContainer: () => div
-    }
-  });
-  const popup = wrapper.element;
-  expect(popup.parentNode).toEqual(div);
-  wrapper.vm.getContainer = null;
-  expect(popup.parentNode).toEqual(div);
-});
-
 test('render overlay', () => {
   const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      value: true,
-      overlay: false,
-      getContainer: () => div
+  wrapper = mount({
+    template: `
+      <div>
+        <popup :value="true" :get-container="getContainer" />
+      </div>
+    `,
+    components: {
+      Popup
+    },
+    data() {
+      return {
+        getContainer: () => div
+      };
     }
   });
 
-  expect(div.querySelector('.van-modal')).toBeFalsy();
-  wrapper.vm.overlay = true;
   expect(div.querySelector('.van-modal')).toBeTruthy();
 });
 
 test('close on click modal', () => {
   const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      value: true,
-      getContainer: () => div
+  wrapper = mount({
+    template: `
+      <div>
+        <popup v-model="value" :get-container="getContainer" />
+      </div>
+    `,
+    components: {
+      Popup
+    },
+    data() {
+      return {
+        value: true,
+        getContainer: () => div
+      };
     }
-  });
-
-  wrapper.vm.$on('input', val => {
-    wrapper.vm.value = val;
   });
 
   const modal = div.querySelector('.van-modal');

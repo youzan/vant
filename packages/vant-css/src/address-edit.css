@@ -2,10 +2,10 @@
 
 .van-address-edit {
   &__buttons {
-    padding: 20px 10px;
+    padding: 30px 15px;
 
     .van-button {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
   }
 

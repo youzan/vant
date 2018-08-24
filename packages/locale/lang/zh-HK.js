@@ -8,10 +8,10 @@ export default {
   complete: '完成',
   contact: '聯系人',
   loadingTip: '加載中...',
+  telEmpty: '請填寫電話',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除麽',
   telInvalid: '請填寫正確的電話',
-  telPlaceholder: '手機或固定電話',
   vanContactCard: {
     addText: '添加訂單聯系人信息'
   },

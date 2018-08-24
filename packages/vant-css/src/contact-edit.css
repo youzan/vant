@@ -2,20 +2,14 @@
 
 .van-contact-edit {
   &__buttons {
-    padding: 20px 10px;
+    padding: 30px 15px;
   }
 
-  &__default {
-    .van-cell__title {
-      line-height: 31px;
-    }
-
-    .van-cell__value {
-      height: 31px;
-    }
+  .van-cell__title {
+    max-width: 65px;
   }
 
   .van-button {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }
