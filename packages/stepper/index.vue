@@ -49,7 +49,7 @@ export default create({
   },
 
   data() {
-    const value = this.range(this.value || this.defaultValue);
+    const value = this.range(this.isDef(this.value) ? this.value : this.defaultValue);
     if (value !== +this.value) {
       this.$emit('input', value);
     }
