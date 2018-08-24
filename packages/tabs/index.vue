@@ -246,6 +246,7 @@ export default create({
 
         this.lineStyle = {
           width: `${width}px`,
+          backgroundColor: this.color,
           transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
