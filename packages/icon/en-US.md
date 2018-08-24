@@ -52,6 +52,7 @@ import 'vant/lib/vant-css/icon-local.css';
 | info | Info message | `String | Number` | `''` |
 | color | Icon color | `String` | `inherit` |
 | size | Icon size | `String` | `inherit` |
+| class-prefix | ClassName prefix | `String` | `van-icon` |
 
 
 ### Event

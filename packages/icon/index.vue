@@ -1,5 +1,5 @@
 <template>
-  <i :class="[b(), `van-icon-${name}`]" :style="style" v-on="$listeners">
+  <i :class="[classPrefix, `${classPrefix}-${name}`]" :style="style" v-on="$listeners">
     <slot />
     <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
   </i>
@@ -15,7 +15,11 @@ export default create({
     name: String,
     info: [String, Number],
     color: String,
-    size: String
+    size: String,
+    classPrefix: {
+      type: String,
+      default: 'van-icon'
+    }
   },
 
   computed: {

@@ -56,6 +56,7 @@ import 'vant/lib/vant-css/icon-local.css';
 | info | 图标右上角文字提示 | `String | Number` | - |
 | color | 图标颜色 | `String` | `inherit` |
 | size | 图标大小，如 `20px`，`2em` | `String` | `inherit` |
+| class-prefix | 类名前缀 | `String` | `van-icon` |
 
 ### Event
 
