@@ -4,8 +4,8 @@
       <field
         v-model="data.name"
         maxlength="15"
-        :placeholder="$t('name')"
-        :label="$t('receiver')"
+        :label="$t('name')"
+        :placeholder="$t('namePlaceholder')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
@@ -20,7 +20,7 @@
       <field
         readonly
         :label="$t('area')"
-        :placeholder="$t('area')"
+        :placeholder="$t('areaPlaceholder')"
         :value="areaText"
         @click="showArea = true"
       />
@@ -57,7 +57,7 @@
     </cell-group>
 
     <div v-show="!hideBottomFields" :class="b('buttons')">
-      <van-button block :loading="isSaving" @click="onSave" type="primary">
+      <van-button block :loading="isSaving" @click="onSave" type="danger">
         {{ saveButtonText || $t('save') }}
       </van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="showDelete">
