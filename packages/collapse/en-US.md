@@ -85,11 +85,19 @@ export default {
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | name | Name | `String | Number` | `index` |
-| title | Title | `String` | - |
+| icon | Left Icon | `String` | - |
+| title | Title | `String | Number` | - |
+| value | Right text | `String | Number` | - |
+| label | Description below the title | `String` | - |
+| border | Whether to show inner border | `Boolean` | `true` |
+| is-link | Whether to show link icon | `Boolean` | `true` |
 
 ### CollapseItem Slot
 
 | name | Description |
 |-----------|-----------|
 | default | Content |
+| value | Custom value |
+| icon | Custom icon |
 | title | Custom title |
+| right-icon | Custom right icon |

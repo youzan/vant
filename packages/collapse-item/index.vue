@@ -5,8 +5,11 @@
       { 'van-hairline--top': index }
     ]"
   >
-    <cell :class="b('title')" is-link @click="onClick">
-      <slot name="title">{{ title }}</slot>
+    <cell :class="b('title')" @click="onClick" v-bind="$props">
+      <slot name="title" slot="title" />
+      <slot name="icon" slot="icon" />
+      <slot name="value" />
+      <slot name="right-icon" slot="right-icon" />
     </cell>
     <div v-if="inited" v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
       <div ref="content" :class="b('content')">
@@ -28,7 +31,18 @@ export default create({
 
   props: {
     name: [String, Number],
-    title: String
+    icon: String,
+    label: String,
+    title: [String, Number],
+    value: [String, Number],
+    border: {
+      type: Boolean,
+      default: true
+    },
+    isLink: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
