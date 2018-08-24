@@ -8,10 +8,10 @@ export default {
   complete: 'Complete',
   contact: 'Name',
   loadingTip: 'Loading...',
-  nameEmpty: 'Name can not be empty',
+  telEmpty: 'Please fill in the tel',
+  nameEmpty: 'Please fill in the name',
   confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
-  telPlaceholder: 'Phone',
   vanContactCard: {
     addText: 'Add contact info'
   },

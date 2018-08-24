@@ -8,10 +8,10 @@ export default {
   complete: '完成',
   contact: '联系人',
   loadingTip: '加载中...',
+  telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除么',
   telInvalid: '请填写正确的电话',
-  telPlaceholder: '手机或固定电话',
   vanContactCard: {
     addText: '添加订单联系人信息'
   },
