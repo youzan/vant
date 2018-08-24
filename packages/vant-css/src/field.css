@@ -50,14 +50,18 @@
   &__clear,
   &__icon {
     padding: 0 10px;
-    color: $gray-dark;
     line-height: inherit;
     margin-right: -10px;
+  }
+
+  &__clear {
+    color: $gray;
   }
 
   &__icon .van-icon {
     display: block;
     font-size: 16px;
+    color: $gray-dark;
     line-height: inherit;
   }
 
