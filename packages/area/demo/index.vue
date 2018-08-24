@@ -21,7 +21,7 @@ import AreaListEn from './area-en';
 export default {
   i18n: {
     'zh-CN': {
-      title2: '选中省市县',
+      title2: '选中省市区',
       title3: '配置显示列',
       areaList: AreaList
     },
