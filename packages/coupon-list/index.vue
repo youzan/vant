@@ -135,7 +135,7 @@ export default create({
     buttonDisabled() {
       return (
         !this.exchangeButtonLoading &&
-        (this.exchangeButtonDisabled ||
+        (this.exchangeButtonDisabled || !this.currentCode ||
           this.currentCode.length < this.exchangeMinLength)
       );
     },
