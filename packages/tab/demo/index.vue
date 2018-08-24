@@ -41,7 +41,7 @@
     </demo-block>
 
     <demo-block :title="$t('title6')">
-      <van-tabs :active="active" sticky>
+      <van-tabs :active="active" sticky @subscribeSticky="subscribeSticky">
         <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
@@ -111,6 +111,10 @@ export default {
 
     onClick(index, title) {
       this.$toast(title);
+    },
+
+    subscribeSticky(isFixed) {
+      console.log(isFixed);
     }
   }
 };
@@ -137,9 +141,11 @@ export default {
   .custom-tabwrap .van-tab-active {
     color: #20a0ff;
   }
+
   .custom-tabwrap .van-tabs-nav-bar {
     background: #20a0ff;
   }
+
   .custom-pane {
     text-align: center;
     height: 50px;
