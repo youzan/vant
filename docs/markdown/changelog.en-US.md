@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
+`2018-08-24`
+
+**Improvements**
+
+- AddressEdit: optimize style [\#1676](https://github.com/youzan/vant/pull/1676)
+- ContactEdit: optimize style [\#1677](https://github.com/youzan/vant/pull/1677)
+- Collapse: add more props and slots [\#1671](https://github.com/youzan/vant/pull/1671)
+- Field: update clear icon color [\#1678](https://github.com/youzan/vant/pull/1678)
+- Icon: add class-prefix prop [\#1688](https://github.com/youzan/vant/pull/1688)
+- Swipe: support custom item width & height [\#1664](https://github.com/youzan/vant/pull/1664)
+
+**Bug Fixes**
+
+- fix Stepper value can not be zero [\#1687](https://github.com/youzan/vant/pull/1687)
+- fix Tab custom line color [\#1686](https://github.com/youzan/vant/pull/1686)
+- fix share icon font-weight [\#1670](https://github.com/youzan/vant/pull/1670)
+- fix Popup can not be destoryed when use get-container [\#1665](https://github.com/youzan/vant/pull/1665)
+
+
 ### [1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
 `2018-08-20`
 
