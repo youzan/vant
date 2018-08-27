@@ -262,13 +262,24 @@ export default create({
     },
 
     setCurActive(active) {
-      if (active !== this.curActive) {
+      active = this.findAvailableTab(active, active < this.curActive);
+      if (this.isDef(active) && active !== this.curActive) {
         this.$emit('input', active);
 
         if (this.curActive !== null) {
           this.$emit('change', active, this.tabs[active].title);
         }
         this.curActive = active;
+      }
+    },
+
+    findAvailableTab(index, reverse) {
+      const diff = reverse ? -1 : 1;
+      while (index >= 0 && index < this.tabs.length) {
+        if (!this.tabs[index].disabled) {
+          return index;
+        }
+        index += diff;
       }
     },
 
