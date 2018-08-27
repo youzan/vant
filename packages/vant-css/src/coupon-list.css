@@ -70,7 +70,7 @@
     h2 {
       margin: 0;
 
-      @mixin ellipsis;
+      @include ellipsis;
     }
 
     h2 {

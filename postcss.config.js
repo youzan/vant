@@ -1,6 +1,5 @@
 module.exports = {
   plugins: {
-    'postcss-easy-import': {},
     'precss': {},
     'postcss-calc': {},
     'autoprefixer': {
