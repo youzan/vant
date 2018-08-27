@@ -2,8 +2,9 @@
   <div :class="b({ active })" @click="onClick">
     <div :class="b('icon', { dot })">
       <slot name="icon" :active="active">
-        <icon v-if="icon" :name="icon" :info="info" />
+        <icon v-if="icon" :name="icon" />
       </slot>
+      <van-info :info="info" />
     </div>
     <div :class="b('text')">
       <slot :active="active"/>
@@ -12,11 +13,16 @@
 </template>
 
 <script>
+import Info from '../info';
 import create from '../utils/create';
 import RouterLink from '../mixins/router-link';
 
 export default create({
   name: 'tabbar-item',
+
+  components: {
+    [Info.name]: Info
+  },
 
   mixins: [RouterLink],
 

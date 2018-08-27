@@ -11,7 +11,7 @@
 
     <demo-block :title="$t('title2')">
       <van-tabbar v-model="active2">
-        <van-tabbar-item icon="shop">
+        <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
           <img
             slot="icon"
