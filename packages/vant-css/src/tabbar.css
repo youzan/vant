@@ -24,8 +24,8 @@
 
     &__icon {
       font-size: 18px;
-      margin-bottom: 5px;
       position: relative;
+      margin-bottom: 5px;
 
       .van-icon {
         display: block;
@@ -46,6 +46,7 @@
 
       img {
         height: 18px;
+        display: block;
       }
     }
 

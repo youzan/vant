@@ -37,7 +37,7 @@ export default {
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item icon="shop">
+  <van-tabbar-item info="3">
     <span>自定义</span>
     <img
       slot="icon"

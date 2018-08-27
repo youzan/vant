@@ -41,19 +41,12 @@
   }
 
   &__info {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    color: $white;
-    font-size: 10px;
-    font-weight: normal;
-    transform: scale(0.8);
-    text-align: center;
-    box-sizing: border-box;
-    padding: 0 6px;
-    min-width: 18px;
-    line-height: 18px;
-    border-radius: 9px;
-    background-color: $red;
+    left: auto;
+    top: 4px;
+    right: 4px;
+    font-size: 12px;
+    min-width: 1.5em;
+    line-height: 1.5em;
+    transform: scale(0.7);
   }
 }
