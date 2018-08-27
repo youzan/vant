@@ -6,7 +6,6 @@ export default {
   cancel: 'Cancel',
   delete: 'Delete',
   complete: 'Complete',
-  contact: 'Name',
   loadingTip: 'Loading...',
   telEmpty: 'Please fill in the tel',
   nameEmpty: 'Please fill in the name',

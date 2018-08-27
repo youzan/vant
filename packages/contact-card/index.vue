@@ -1,20 +1,18 @@
 <template>
-  <div :class="b([type, { uneditable: !editable }])" @click="onClick">
-    <div :class="b('content')">
-      <template v-if="type === 'add'">
-        <icon :class="b('icon')" name="add2" />
-        <div :class="b('text')">{{ addText || $t('addText') }}</div>
-      </template>
-      <template v-else-if="type === 'edit'">
-        <icon :class="b('icon')" name="contact" />
-        <div :class="b('text')">
-          <div>{{ $t('contact') }}：{{ name }}</div>
-          <div>{{ $t('tel') }}：{{ tel }}</div>
-        </div>
-      </template>
-    </div>
-    <icon v-if="editable" :class="b('arrow')" name="arrow" />
-  </div>
+  <cell
+    center
+    :border="false"
+    :class="b([type])"
+    :is-link="editable"
+    :icon="type === 'edit' ? 'contact' : 'add2'"
+    @click="onClick"
+  >
+    <template v-if="type === 'add'">{{ addText || $t('addText') }}</template>
+    <template v-else>
+      <div>{{ $t('name') }}：{{ name }}</div>
+      <div>{{ $t('tel') }}：{{ tel }}</div>
+    </template>
+  </cell>
 </template>
 
 <script>

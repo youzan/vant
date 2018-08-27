@@ -4,19 +4,23 @@
       <cell-group>
         <cell v-for="(item, index) in list" :key="item.id" is-link>
           <radio :name="item.id" @click="$emit('select', item, index)">
-            <p :class="b('text')">{{ $t('contact') }}：{{ item.name }}</p>
-            <p :class="b('text')">{{ $t('tel') }}：{{ item.tel }}</p>
+            <div :class="b('name')">{{ item.name }}，{{ item.tel }}</div>
           </radio>
-          <icon slot="right-icon" name="edit" :class="b('edit')" @click="$emit('edit', item, index)" />
+          <icon
+            slot="right-icon"
+            name="edit"
+            :class="b('edit')"
+            @click="$emit('edit', item, index)"
+          />
         </cell>
       </cell-group>
     </radio-group>
-    <cell
-      icon="add"
-      is-link
+    <van-button
+      square
+      size="large"
+      type="danger"
       :class="b('add')"
-      class="van-hairline--top"
-      :title="addText || $t('addText')"
+      :text="addText || $t('addText')"
       @click="$emit('add')"
     />
   </div>
