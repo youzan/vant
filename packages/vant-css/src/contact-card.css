@@ -1,68 +1,33 @@
 @import './common/var.css';
 
 .van-contact-card {
-  position: relative;
-  background-color: $white;
+  padding: 15px;
 
-  &:active {
-    background-color: $active-color;
-  }
-
-  &--uneditable {
-    &:active {
-      background-color: $white;
-    }
+  .van-cell__value {
+    margin-left: 5px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   &--add {
-    line-height: 40px;
+    .van-cell__value {
+      line-height: 40px;
+    }
 
-    .van-contact-card__icon {
-      width: 40px;
+    .van-cell__left-icon {
       color: $blue;
       font-size: 40px;
     }
   }
 
-  &--edit {
-    .van-contact-card__icon {
-      font-size: 18px;
-      vertical-align: top;
-    }
-  }
-
-  &__content {
-    padding: 15px 10px;
-  }
-
-  &__icon,
-  &__text {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  &__icon {
-    margin-right: 10px;
-  }
-
-  &__text {
-    line-height: 20px;
-    font-size: 14px;
-  }
-
-  &__arrow {
-    top: 50%;
-    right: 10px;
-    font-size: 12px;
-    position: absolute;
-    color: $gray-dark;
-    transform: translate3d(0, -50%, 0);
-  }
-
-  &::after {
+  &::before {
     content: '';
-    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 2px;
+    position: absolute;
     background: repeating-linear-gradient(
       -45deg,
       #ff6c6c 0,

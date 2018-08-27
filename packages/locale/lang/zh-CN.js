@@ -6,7 +6,6 @@ export default {
   cancel: '取消',
   delete: '删除',
   complete: '完成',
-  contact: '联系人',
   loadingTip: '加载中...',
   telEmpty: '请填写电话',
   nameEmpty: '请填写姓名',
