@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
+`2018-08-24`
+
+**Improvements**
+
+- AddressEdit: 样式升级 [\#1676](https://github.com/youzan/vant/pull/1676)
+- ContactEdit: 样式升级 [\#1677](https://github.com/youzan/vant/pull/1677)
+- Collapse: 增加多个 props 和 slots [\#1671](https://github.com/youzan/vant/pull/1671)
+- Field: 优化清除按钮颜色 [\#1678](https://github.com/youzan/vant/pull/1678)
+- Icon: 新增 class-prefix 属性 [\#1688](https://github.com/youzan/vant/pull/1688)
+- Swipe: 支持自定义 item 高度、宽度 [\#1664](https://github.com/youzan/vant/pull/1664)
+
+**Bug Fixes**
+
+- 修复 Stepper 初始值不能为 0 的问题 [\#1687](https://github.com/youzan/vant/pull/1687)
+- 修复 Tab 使用 color 属性时下划线样式错误的问题 [\#1686](https://github.com/youzan/vant/pull/1686)
+- 修复 share 图标加粗时样式错误的问题 [\#1670](https://github.com/youzan/vant/pull/1670)
+- 修复 Popup 使用 get-conntainer 属性时不能被正确销毁的问题 [\#1665](https://github.com/youzan/vant/pull/1665)
+
+
 ### [1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
 `2018-08-20`
 
