@@ -76,6 +76,26 @@ test('get container with parent', () => {
   expect(popup.parentNode).toEqual(wrapper.element);
 });
 
+test('get container with selector', () => {
+  wrapper = mount({
+    template: `
+      <div>
+        <popup class="get-container-selector-1" :value="true" get-container="body"></popup>
+        <popup class="get-container-selector-2" :value="true" get-container="unknown"></popup>
+      </div>
+    `,
+    components: {
+      Popup
+    }
+  });
+
+  const dom1 = document.querySelector('.get-container-selector-1');
+  const dom2 = wrapper.vm.$el.querySelector('.get-container-selector-2');
+
+  expect(dom1.parentNode).toEqual(document.body);
+  expect(dom2.parentNode).toEqual(wrapper.vm.$el);
+});
+
 test('render overlay', () => {
   const div = document.createElement('div');
   wrapper = mount({

@@ -101,7 +101,7 @@ Vue.use(Sku);
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` |
 | message-config | 留言相关配置 | `Object` | `{}` |
-| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
+| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
 
 ### Event
 
