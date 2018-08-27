@@ -1,10 +1,10 @@
-@import "../mixins/border-retina.css";
+@import "../mixins/hairline.css";
 
 [class*='van-hairline'] {
   position: relative;
 
   &::after {
-    @mixin hairline;
+    @include hairline;
   }
 }
 

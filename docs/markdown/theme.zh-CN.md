@@ -19,9 +19,6 @@ import 'vant/packages/vant-css/src/checkbox.css';
 ```javascript
 module.exports = {
   plugins: [
-    require('postcss-easy-import')({
-      extensions: ['pcss', 'css']
-    }),
     require('postcss-theme-variables')({
       vars: {
         red: '#F60',
@@ -39,8 +36,6 @@ module.exports = {
 };
 ```
 
-> 注意: precss2 和 3 版本不兼容, 请将precss的版本改为2.0.0
-
 ### 方案二. 本地构建
 可以通过在本地构建 vant-css 的方式生成所需的主题
 
@@ -54,4 +49,3 @@ cd packages/vant-css
 ```bash
 npm run build
 ```
-

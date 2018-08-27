@@ -141,4 +141,4 @@ export default create({
 
 #### 样式
 
-组件样式使用 `precss 2.0` 作为预处理器，具体语法请参考 [precss 文档](https://github.com/jonathantneal/precss).
+组件样式使用 `precss 3.0` 作为预处理器，具体语法请参考 [precss 文档](https://github.com/jonathantneal/precss).
