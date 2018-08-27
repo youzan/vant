@@ -48,7 +48,7 @@ export default {
 | close-on-click-overlay | 点击蒙层是否关闭 Popup | `Boolean` | `true` |
 | transition | transition 名称 | `String` | `popup-slide` |
 | lazy-render | 是否在首次显示弹层时才渲染 DOM 节点 | `Boolean` | `true` |
-| get-container | 指定弹出层挂载的 HTML 节点 | `() => HTMLElement` | - |
+| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
 
 ### Event
 

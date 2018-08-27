@@ -84,7 +84,7 @@ Actionsheet will get another style if there is a `title` prop.
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
 | lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
-| get-container | Return the mount node for actionsheet | `() => HTMLElement` | - |
+| get-container | Return the mount node for actionsheet | `String | () => HTMLElement` | - |
 
 ### Event
 

@@ -7,7 +7,7 @@
   width: 85%;
   font-size: 16px;
   overflow: hidden;
-  transition: .2s;
+  transition: .3s;
   border-radius: 4px;
   background-color: $white;
   transform: translate3d(-50%, -50%, 0);

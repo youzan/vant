@@ -88,7 +88,7 @@ export default {
 | overlay | 是否显示遮罩层 | `Boolean` | `true` |
 | close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | `true` |
 | lazy-render | 是否在首次显示弹层时才渲染 DOM 节点 | `Boolean` | `true` |
-| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
+| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
 
 ### Event
 
