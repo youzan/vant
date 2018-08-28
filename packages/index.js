@@ -28,6 +28,7 @@ import GoodsActionBigBtn from './goods-action-big-btn';
 import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
+import Info from './info';
 import Lazyload from './lazyload';
 import List from './list';
 import Loading from './loading';
@@ -99,6 +100,7 @@ const components = [
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
+  Info,
   List,
   Loading,
   Locale,
@@ -181,6 +183,7 @@ export {
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
+  Info,
   Lazyload,
   List,
   Loading,
