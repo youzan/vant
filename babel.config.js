@@ -1,8 +1,8 @@
 module.exports = function(api) {
-  const { BABEL_MODULE } = process.env;
-  const useESModules = BABEL_MODULE !== 'commonjs';
+  const { BABEL_MODULE, NODE_ENV } = process.env;
+  const useESModules = BABEL_MODULE !== 'commonjs' && NODE_ENV !== 'test';
 
-  api.cache(false);
+  api && api.cache(false);
 
   return {
     presets: [
@@ -10,7 +10,7 @@ module.exports = function(api) {
         '@babel/preset-env',
         {
           loose: true,
-          modules: BABEL_MODULE || false
+          modules: useESModules ? false : 'commonjs'
         }
       ]
     ],
@@ -24,7 +24,8 @@ module.exports = function(api) {
           useESModules
         }
       ],
-      '@babel/plugin-syntax-dynamic-import'
+      '@babel/plugin-syntax-dynamic-import',
+      '@babel/plugin-transform-object-assign'
     ]
   };
 };
