@@ -1,7 +1,8 @@
 module.exports = {
+  setupFiles: ['<rootDir>/test/jest.init.js'],
   moduleFileExtensions: ['js', 'vue'],
   transform: {
-    '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
+    '^.+\\.js$': '<rootDir>/test/jest.transform.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   moduleNameMapper: {
