@@ -30,7 +30,7 @@
       <!-- 正在上传的图片,有上传等待提示 -->
       <div v-if="paddingImg" :class="b('img')">
         <img :src="paddingImg">
-        <loading :class="b('uploading')" type="spinner" color="black" />
+        <loading :class="b('uploading')" type="spinner" />
       </div>
     </div>
   </div>

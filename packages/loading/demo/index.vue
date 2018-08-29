@@ -1,12 +1,12 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-loading color="black" />
+      <van-loading />
       <van-loading color="white" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-loading type="spinner" color="black" />
+      <van-loading type="spinner" />
       <van-loading type="spinner" color="white" />
     </demo-block>
   </demo-section>

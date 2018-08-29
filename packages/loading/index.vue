@@ -1,5 +1,5 @@
 <template>
-  <div :class="b([type, color])" :style="style">
+  <div :class="b([type, colorType])" :style="style">
     <span :class="b('spinner', type)">
       <i v-for="(item, index) in (type === 'spinner' ? 12 : 0)" :key="index" />
       <svg v-if="type === 'circular'" :class="b('circular')" viewBox="25 25 50 50">
@@ -12,6 +12,8 @@
 <script>
 import create from '../utils/create-basic';
 
+const DEFAULT_COLOR = '#c9c9c9';
+
 export default create({
   name: 'loading',
 
@@ -23,16 +25,22 @@ export default create({
     },
     color: {
       type: String,
-      default: 'black'
+      default: DEFAULT_COLOR
     }
   },
 
   computed: {
+    colorType() {
+      const { color } = this;
+      return color === 'white' || color === 'black' ? color : '';
+    },
+
     style() {
-      return this.size ? {
+      return {
+        color: this.color === 'black' ? DEFAULT_COLOR : this.color,
         width: this.size,
         height: this.size
-      } : {};
+      };
     }
   }
 });
