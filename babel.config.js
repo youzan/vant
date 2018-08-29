@@ -24,7 +24,8 @@ module.exports = function(api) {
           useESModules
         }
       ],
-      '@babel/plugin-syntax-dynamic-import'
+      '@babel/plugin-syntax-dynamic-import',
+      '@babel/plugin-transform-object-assign'
     ]
   };
 };
