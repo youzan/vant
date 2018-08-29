@@ -64,7 +64,7 @@ export default {
   :actions="actions"
   cancel-text="取消"
   @select="onSelect"
-  @calcel="onCancel"
+  @cancel="onCancel"
 />
 ```
 
