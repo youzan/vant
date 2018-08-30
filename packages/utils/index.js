@@ -32,8 +32,13 @@ function isAndroid() {
   return isServer ? false : /android/.test(navigator.userAgent.toLowerCase());
 }
 
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
+};
+
 export {
   get,
+  range,
   isObj,
   isDef,
   isServer,

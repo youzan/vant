@@ -17,6 +17,7 @@
 <script>
 import Picker from '../picker';
 import create from '../utils/create';
+import { range } from '../utils';
 
 const currentYear = new Date().getFullYear();
 const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
@@ -178,11 +179,11 @@ export default create({
 
       // time type
       if (!isDateType) {
-        const [hour, minute] = value.split(':');
-        let correctedHour = Math.max(hour, this.minHour);
-        correctedHour = this.pad(Math.min(correctedHour, this.maxHour));
+        let [hour, minute] = value.split(':');
+        hour = this.pad(range(hour, this.minHour, this.maxHour));
+        minute = this.pad(range(minute, this.minMinute, this.maxMinute));
 
-        return `${correctedHour}:${minute}`;
+        return `${hour}:${minute}`;
       }
 
       // date type

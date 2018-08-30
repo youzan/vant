@@ -27,10 +27,9 @@
 <script>
 import create from '../utils/create';
 import deepClone from '../utils/deep-clone';
-import { isObj } from '../utils';
+import { isObj, range } from '../utils';
 
 const DEFAULT_DURATION = 200;
-const range = (num, arr) => Math.min(Math.max(num, arr[0]), arr[1]);
 
 export default create({
   name: 'picker-column',
@@ -67,7 +66,8 @@ export default create({
   },
 
   destroyed() {
-    this.$parent.children && this.$parent.children.splice(this.$parent.children.indexOf(this), 1);
+    const { children } = this.$parent;
+    children && children.splice(children.indexOf(this), 1);
   },
 
   watch: {
@@ -87,7 +87,7 @@ export default create({
 
     columnStyle() {
       return {
-        height: (this.itemHeight * this.visibleItemCount) + 'px'
+        height: this.itemHeight * this.visibleItemCount + 'px'
       };
     },
 
@@ -115,25 +115,27 @@ export default create({
 
     onTouchMove(event) {
       const deltaY = event.touches[0].clientY - this.startY;
-      this.offset = range(this.startOffset + deltaY, [
+      this.offset = range(
+        this.startOffset + deltaY,
         -(this.count * this.itemHeight),
         this.itemHeight
-      ]);
+      );
     },
 
     onTouchEnd() {
       if (this.offset !== this.startOffset) {
         this.duration = DEFAULT_DURATION;
-        const index = range(Math.round(-this.offset / this.itemHeight), [
+        const index = range(
+          Math.round(-this.offset / this.itemHeight),
           0,
           this.count - 1
-        ]);
+        );
         this.setIndex(index, true);
       }
     },
 
     adjustIndex(index) {
-      index = range(index, [0, this.count]);
+      index = range(index, 0, this.count);
       for (let i = index; i < this.count; i++) {
         if (!this.isDisabled(this.options[i])) return i;
       }
@@ -147,7 +149,9 @@ export default create({
     },
 
     getOptionText(option) {
-      return isObj(option) && this.valueKey in option ? option[this.valueKey] : option;
+      return isObj(option) && this.valueKey in option
+        ? option[this.valueKey]
+        : option;
     },
 
     setIndex(index, userAction) {
