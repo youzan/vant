@@ -63,7 +63,6 @@ export default {
     placeholder: '街道门牌、楼层房间号等信息'
   },
   vanAddressList: {
-    address: '收货地址',
     add: '新增地址'
   },
   vanSku: {
