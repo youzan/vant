@@ -81,6 +81,7 @@ export default {
     fill: 'Please fill',
     upload: 'Please upload',
     number: 'Please fill in the correct number format message',
+    mobile: 'The length of mobile number must be 6 to 12',
     email: 'Please fill in the correct email message',
     id_no: 'Please fill in the correct ID number message',
     onePic: 'only one picture',

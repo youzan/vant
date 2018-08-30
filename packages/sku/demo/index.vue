@@ -15,6 +15,7 @@
           disable-stepper-input
           :close-on-click-overlay="closeOnClickOverlay"
           :message-config="messageConfig"
+          :custom-sku-validator="customSkuValidator"
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
@@ -109,8 +110,12 @@ export default {
         s1: '30349',
         s2: '1193'
       },
+      customSkuValidator: (component) => {
+        return '请选择xxx';
+      },
       customStepperConfig: {
         quotaText: '单次限购100件',
+        stockFormatter: (stock) => `剩余${stock}间`,
         handleOverLimit: (data) => {
           const { action, limitType, quota } = data;
 

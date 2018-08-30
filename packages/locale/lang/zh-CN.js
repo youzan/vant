@@ -81,6 +81,7 @@ export default {
     fill: '请填写',
     upload: '请上传',
     number: '请填写正确的数字格式留言',
+    mobile: '手机号长度为6-20位数字',
     email: '请填写正确的邮箱',
     id_no: '请填写正确的身份证号码',
     onePic: '仅限一张',

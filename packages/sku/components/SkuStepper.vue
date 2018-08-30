@@ -12,7 +12,7 @@
         @change="onChange"
       />
     </div>
-    <div v-if="!hideStock" class="van-sku__stock">{{ $t('remain', stock) }}</div>
+    <div v-if="!hideStock" class="van-sku__stock">{{ stockText }}</div>
     <div v-if="quotaText" class="van-sku__quota">{{ quotaText }}</div>
   </div>
 </template>
@@ -71,6 +71,13 @@ export default create({
         return this.selectedSkuComb.stock_num;
       }
       return this.skuStockNum;
+    },
+
+    stockText() {
+      const { stockFormatter } = this.customStepperConfig;
+      if (stockFormatter) return stockFormatter(this.stock);
+
+      return this.$t('remain', this.stock);
     },
 
     quotaText() {

@@ -180,7 +180,8 @@ export default create({
     customStepperConfig: {
       type: Object,
       default: () => ({})
-    }
+    },
+    customSkuValidator: Function
   },
 
   data() {
@@ -334,6 +335,12 @@ export default create({
 
       if (this.isSkuCombSelected) {
         return this.validateSkuMessages();
+      }
+
+      // 自定义sku校验
+      if (this.customSkuValidator) {
+        const err = this.customSkuValidator(this);
+        if (err) return err;
       }
 
       return this.$t('spec');

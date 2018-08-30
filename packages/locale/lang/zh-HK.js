@@ -81,6 +81,7 @@ export default {
     fill: '請填寫',
     upload: '請上傳',
     number: '請填寫正確的數字格式留言',
+    mobile: '手機號長度為6-20位數字',
     email: '請填寫正確的郵箱',
     id_no: '請填寫正確的身份證號碼',
     onePic: '僅限一張',

@@ -136,6 +136,9 @@ export default create({
           if (message.type === 'tel' && !validateNumber(value)) {
             return this.$t('number');
           }
+          if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {
+            return this.$t('mobile');
+          }
           if (message.type === 'email' && !validateEmail(value)) {
             return this.$t('email');
           }
