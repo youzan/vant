@@ -198,7 +198,6 @@ export default create({
         this.swiping = false;
       }
 
-      this.resetTouchStatus();
       this.autoPlay();
     },
 
@@ -251,6 +250,7 @@ export default create({
         this.clear();
         this.timer = setTimeout(() => {
           this.swiping = true;
+          this.resetTouchStatus();
           this.correctPosition();
 
           setTimeout(() => {
