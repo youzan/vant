@@ -171,4 +171,4 @@ export default {
 | click | 点击标签时触发 | index：标签索引，title：标题 |
 | change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
 | disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
-| subscribe-sticky | 滚动时触发 | isFixed：是否吸顶 |
+| scroll | 滚动时触发 | e：滚动参数 |
