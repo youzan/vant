@@ -5,9 +5,23 @@
   padding-bottom: 100px;
   box-sizing: border-box;
 
-  .van-cell {
-    padding: 15px;
+  &__add {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
   }
+
+  &__disabled-text {
+    color: $gray-dark;
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 30px;
+  }
+}
+
+.van-address-item {
+  padding: 15px;
 
   .van-cell__value {
     color: $text-color;
@@ -16,6 +30,7 @@
   }
 
   .van-radio__label {
+    width: 100%;
     margin-left: 27px;
   }
 
@@ -31,14 +46,6 @@
     color: $red;
   }
 
-  &__group {
-    height: 100%;
-    overflow-y: scroll;
-    padding-bottom: 100px;
-    box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
-  }
-
   &__name {
     font-size: 14px;
     font-weight: 500;
@@ -52,18 +59,26 @@
     color: $gray-darker;
   }
 
+  &--disabled {
+    .van-address-item__name,
+    .van-address-item__address {
+      color: $gray-dark;
+    }
+
+    .van-radio__input {
+      display: none;
+    }
+
+    .van-radio__label {
+      margin-left: 0;
+    }
+  }
+
   &__edit {
     position: absolute;
     top: 50%;
     right: 15px;
     font-size: 16px;
     transform: translate(0, -50%);
-  }
-
-  &__add {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 9999;
   }
 }

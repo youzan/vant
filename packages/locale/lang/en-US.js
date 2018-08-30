@@ -63,7 +63,6 @@ export default {
     placeholder: 'Address'
   },
   vanAddressList: {
-    address: 'Address',
     add: 'Add new address'
   },
   vanSku: {
