@@ -52,8 +52,9 @@ export default {
 | size | Icon size (px) | `Number` | `20` |
 | color | Selected color | `String` | `#ffd21e`  |
 | void-color | Void color | `String` | `#c7c7c7` |
-| disabled-color | Disabled color | `String` | `#bdbdbd` | 
+| readonly | Whether to be readonly | `Boolean` | `false` |
 | disabled | Whether to disable rate | `Boolean` | `false` |
+| disabled-color | Disabled color | `String` | `#bdbdbd` | 
 
 ### Event
 

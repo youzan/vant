@@ -52,8 +52,9 @@ export default {
 | size | 图标大小 (px) | `Number` | `20` |
 | color | 选中时的颜色 | `String` | `#ffd21e`  |
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
-| disabled-color | 不可选时的颜色 | `String` | `#bdbdbd` | 
+| readonly | 是否为只读状态 | `Boolean` | `false` |
 | disabled | 是否禁用评分 | `Boolean` | `false` |
+| disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` | 
 
 ### Event
 
