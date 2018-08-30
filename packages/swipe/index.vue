@@ -211,19 +211,11 @@ export default create({
         return;
       }
 
+      swipes[0].offset = (atLast && (delta < 0 || move > 0)) ? trackSize : 0;
+      swipes[count - 1].offset = (atFirst && (delta > 0 || move < 0)) ? -trackSize : 0;
+
       if (move && active + move >= -1 && active + move <= count) {
-        if (active === -1) {
-          swipes[count - 1].offset = 0;
-        }
-        swipes[0].offset = atLast && move > 0 ? trackSize : 0;
-
         this.active += move;
-      }
-
-      if (atFirst) {
-        swipes[count - 1].offset = delta > 0 || move < 0 ? -trackSize : 0;
-      } else if (atLast) {
-        swipes[0].offset = delta < 0 || move > 0 ? trackSize : 0;
       }
 
       this.offset = offset - this.active * this.size;
@@ -258,6 +250,7 @@ export default create({
         this.clear();
         this.timer = setTimeout(() => {
           this.swiping = true;
+          this.resetTouchStatus();
           this.correctPosition();
 
           setTimeout(() => {
