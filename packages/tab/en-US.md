@@ -169,4 +169,4 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | click | Triggered when click tab | index：index of current tab，title: tab title |
 | change | Triggered when active tab changed | index：index of current tab，title: tab title |
 | disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |
-| subscribeSticky | Triggered when tab scroll | isFixed：whether or not it is fixed |
+| subscribe-sticky | Triggered when tab scroll | isFixed：whether or not it is fixed |

@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-tabs sticky @subscribeSticky="subscribeSticky">
+      <van-tabs sticky @subscribe-sticky="subscribeSticky">
         <van-tab v-for="index in 8" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>

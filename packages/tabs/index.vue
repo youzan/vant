@@ -231,7 +231,7 @@ export default create({
       } else {
         this.position = '';
       }
-      this.$emit('subscribeSticky', this.position === 'top');
+      this.$emit('subscribe-sticky', this.position === 'top');
     },
 
     // update nav bar style
