@@ -4,7 +4,7 @@
       <cell
         v-if="message.type === 'image'"
         :class="b('image-cell')"
-        :label="$t('onePic')"
+        label="仅限一张"
         :key="`${goodsId}-${index}`"
         :required="message.required == '1'"
         :title="message.name"
@@ -35,6 +35,16 @@ import Field from '../../field';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
+
+const PLACEHOLDER = {
+  id_no: '输入身份证号码',
+  text: '输入文本',
+  tel: '输入数字',
+  email: '输入邮箱',
+  date: '点击选择日期',
+  time: '点击选择时间',
+  textarea: '点击填写段落文本'
+};
 
 export default create({
   name: 'sku-messages',
@@ -114,7 +124,7 @@ export default create({
 
     getPlaceholder(message) {
       const type = +message.multiple === 1 ? 'textarea' : message.type;
-      return this.messagePlaceholderMap[type] || this.$t(`placeholder.${type}`);
+      return this.messagePlaceholderMap[type] || PLACEHOLDER[type];
     },
 
     validateMessages() {
@@ -128,22 +138,22 @@ export default create({
           // 必填字段的校验
           if (message.required == '1') { // eslint-disable-line
             const textType = message.type === 'image'
-              ? 'upload'
-              : 'fill';
-            return this.$t(textType) + message.name;
+              ? '请上传'
+              : '请填写';
+            return textType + message.name;
           }
         } else {
           if (message.type === 'tel' && !validateNumber(value)) {
-            return this.$t('number');
+            return '请填写正确的数字格式留言';
           }
           if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {
-            return this.$t('mobile');
+            return '手机号长度为6-20位数字';
           }
           if (message.type === 'email' && !validateEmail(value)) {
-            return this.$t('email');
+            return '请填写正确的邮箱';
           }
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {
-            return this.$t('id_no');
+            return '请填写正确的身份证号码';
           }
         }
       }

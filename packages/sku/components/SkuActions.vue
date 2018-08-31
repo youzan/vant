@@ -3,13 +3,13 @@
     <van-button
       v-if="showAddCartBtn"
       bottom-action
-      :text="$t('cart')"
+      text="加入购物车"
       @click="skuEventBus.$emit('sku:addCart')"
     />
     <van-button
       type="primary"
       bottom-action
-      :text="buyText || $t('buy')"
+      :text="buyText || '立即购买'"
       @click="skuEventBus.$emit('sku:buy')"
     />
   </div>

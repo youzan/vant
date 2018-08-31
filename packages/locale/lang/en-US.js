@@ -64,49 +64,5 @@ export default {
   },
   vanAddressList: {
     add: 'Add new address'
-  },
-  vanSku: {
-    unavailable: 'The product is no longer available for purchase',
-    spec: 'Please select the goods specification',
-    least: 'Choose at least one',
-    quota: quota => `Buy up to ${quota} items`,
-    inventory: 'Inventory shortage',
-    purchase: count => `You have purchased ${count} items`
-  },
-  vanSkuActions: {
-    cart: 'Add to cart',
-    buy: 'Buy'
-  },
-  vanSkuMessages: {
-    fill: 'Please fill',
-    upload: 'Please upload',
-    number: 'Please fill in the correct number format message',
-    mobile: 'The length of mobile number must be 6 to 12',
-    email: 'Please fill in the correct email message',
-    id_no: 'Please fill in the correct ID number message',
-    onePic: 'only one picture',
-    placeholder: {
-      id_no: 'Idcard Number',
-      text: 'Text',
-      tel: 'Number',
-      email: 'Email',
-      date: 'Date',
-      time: 'Time',
-      textarea: 'Text'
-    }
-  },
-  vanSkuImgUploader: {
-    or: 'Or',
-    uploading: 'Uploading...',
-    rephoto: 'Take Again',
-    photo: 'Take',
-    reselect: 'Reselect',
-    select: 'Select Photo',
-    maxSize: maxSize => `The upload limit is up to ${maxSize}MB，please try to compress the photo`
-  },
-  vanSkuStepper: {
-    title: 'Quantity',
-    remain: count => `Remain ${count} items`,
-    quota: quota => `Buy up to ${quota} items`
   }
 };
