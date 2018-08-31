@@ -231,6 +231,11 @@ export default create({
       } else {
         this.position = '';
       }
+      const scrollParams = {
+        scrollTop,
+        isFixed: this.position === 'top'
+      };
+      this.$emit('scroll', scrollParams);
     },
 
     // update nav bar style
