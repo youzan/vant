@@ -1,7 +1,7 @@
 <template>
   <div class="van-sku-stepper-stock">
     <div class="van-sku-stepper-container">
-      <div class="van-sku__stepper-title">{{ stepperTitle || $t('title') }}：</div>
+      <div class="van-sku__stepper-title">{{ stepperTitle || '购买数量' }}：</div>
       <stepper
         class="van-sku__stepper"
         v-model="currentNum"
@@ -77,7 +77,7 @@ export default create({
       const { stockFormatter } = this.customStepperConfig;
       if (stockFormatter) return stockFormatter(this.stock);
 
-      return this.$t('remain', this.stock);
+      return `剩余${this.stock}件`;
     },
 
     quotaText() {
@@ -87,7 +87,7 @@ export default create({
       if (quotaText) {
         text = quotaText;
       } else if (this.quota > 0) {
-        text = this.$t('quota', this.quota);
+        text = `每人限购${this.quota}件`;
       }
 
       return text;

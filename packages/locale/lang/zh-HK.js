@@ -12,7 +12,7 @@ export default {
   confirmDelete: '確定要刪除麽',
   telInvalid: '請填寫正確的電話',
   vanContactCard: {
-    addText: '添加訂單聯系人信息'
+    addText: '添加聯系人'
   },
   vanContactList: {
     addText: '新建聯系人'
@@ -64,49 +64,5 @@ export default {
   },
   vanAddressList: {
     add: '新增地址'
-  },
-  vanSku: {
-    unavailable: '商品已經無法購買啦',
-    spec: '請先選擇商品規格',
-    least: '至少選擇一件',
-    quota: quota => `限購${quota}件`,
-    inventory: '庫存不足',
-    purchase: count => `您已購買${count}件`
-  },
-  vanSkuActions: {
-    cart: '加入購物車',
-    buy: '立即購買'
-  },
-  vanSkuMessages: {
-    fill: '請填寫',
-    upload: '請上傳',
-    number: '請填寫正確的數字格式留言',
-    mobile: '手機號長度為6-20位數字',
-    email: '請填寫正確的郵箱',
-    id_no: '請填寫正確的身份證號碼',
-    onePic: '僅限一張',
-    placeholder: {
-      id_no: '輸入身份證號碼',
-      text: '輸入文本',
-      tel: '輸入數字',
-      email: '輸入郵箱',
-      date: '點擊選擇日期',
-      time: '點擊選擇時間',
-      textarea: '點擊填寫段落文本'
-    }
-  },
-  vanSkuImgUploader: {
-    or: '或',
-    uploading: '正在上傳...',
-    rephoto: '重拍',
-    photo: '拍照',
-    reselect: '重新選擇照片',
-    select: '選擇照片',
-    maxSize: maxSize => `最大可上傳圖片為${maxSize}MB，請嘗試壓縮圖片尺寸`
-  },
-  vanSkuStepper: {
-    title: '購買數量',
-    remain: count => `剩余${count}件`,
-    quota: quota => `每人限購${quota}件`
   }
 };

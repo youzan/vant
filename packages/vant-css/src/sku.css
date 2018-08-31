@@ -16,14 +16,6 @@
     &::-webkit-scrollbar {
       display: none;
     }
-
-    /* 修复ios下点击没反应的问题 */
-    .van-field {
-      input[type*=date],
-      input[type*=time] {
-        height: 26px;
-      }
-    }
   }
 
   &-group-container {

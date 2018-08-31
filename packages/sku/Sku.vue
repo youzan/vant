@@ -330,7 +330,7 @@ export default create({
 
     validateSku() {
       if (this.selectedNum === 0) {
-        return this.$t('unavailable');
+        return '商品已经无法购买啦';
       }
 
       if (this.isSkuCombSelected) {
@@ -343,7 +343,7 @@ export default create({
         if (err) return err;
       }
 
-      return this.$t('spec');
+      return '请先选择商品规格';
     },
 
     onClose() {
@@ -378,14 +378,14 @@ export default create({
       }
 
       if (action === 'minus') {
-        Toast(this.$t('least'));
+        Toast('至少选择一件');
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
-          let msg = this.$t('quota', quota);
-          if (quotaUsed > 0) msg += `，${this.$t('purchase', quotaUsed)}`;
+          let msg = `限购${quota}件`;
+          if (quotaUsed > 0) msg += `，${`您已购买${quotaUsed}件`}`;
           Toast(msg);
         } else {
-          Toast(this.$t('inventory'));
+          Toast('库存不足');
         }
       }
     },
