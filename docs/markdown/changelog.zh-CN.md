@@ -6,7 +6,7 @@
 **Breaking changes**
 
 - 升级至 babel 7, 同时组件库不再默认内置 Promise 兼容库 [\#1712](https://github.com/youzan/vant/pull/1712)
-- 考虑到可维护行和实际需求，Sku 组件不再支持 i18n 国际化 [\#1734](https://github.com/youzan/vant/pull/1734)
+- 考虑到可维护性和实际需求，Sku 组件不再支持 i18n 国际化 [\#1734](https://github.com/youzan/vant/pull/1734)
 
 **Improvements**
 
