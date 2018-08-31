@@ -1,5 +1,34 @@
 ## Changelog
 
+### [1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
+`2018-08-31`
+
+**Breaking changes**
+
+- upgrade to babel 7, remove promise polyfill [\#1712](https://github.com/youzan/vant/pull/1712)
+- Sku: no longer support i18n [\#1734](https://github.com/youzan/vant/pull/1734)
+
+**Improvements**
+
+- upgrade to precss 3.0 [\#1696](https://github.com/youzan/vant/pull/1696)
+- AddressList: support disabled list [\#1729](https://github.com/youzan/vant/pull/1729)
+- Contact: upgrade style [\#1693](https://github.com/youzan/vant/pull/1693)
+- Popup: get-container support selector [\#1699](https://github.com/youzan/vant/pull/1699)
+- Popup: optimize animation duration [\#1694](https://github.com/youzan/vant/pull/1694)
+- Rate: add readonly prop [\#1731](https://github.com/youzan/vant/pull/1731)
+- Sku: support custom validator [\#1732](https://github.com/youzan/vant/pull/1732)
+- Tab: add scroll event [\#1730](https://github.com/youzan/vant/pull/1730)
+- Loading: support any color [\#1717](https://github.com/youzan/vant/pull/1717)
+
+**Bug Fixes**
+
+- fix bundle version wrong [\#1703](https://github.com/youzan/vant/pull/1703)
+- fix DatetimePicker incorrect value when use minMinute [\#1724](https://github.com/youzan/vant/pull/1724)
+- fix Swipe wrong position [\#1723](https://github.com/youzan/vant/pull/1723)
+- fix Tab should not swipe to disabled tab [\#1704](https://github.com/youzan/vant/pull/1704)
+- fix Tabbar: info not work when use icon slot [\#1705](https://github.com/youzan/vant/pull/1705)
+
+
 ### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
 `2018-08-24`
 

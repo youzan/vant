@@ -1,5 +1,35 @@
 ## 更新日志
 
+### [1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
+`2018-08-31`
+
+**Breaking changes**
+
+- 升级至 babel 7, 同时组件库不再默认内置 Promise 兼容库 [\#1712](https://github.com/youzan/vant/pull/1712)
+- 考虑到可维护行和实际需求，Sku 组件不再支持 i18n 国际化 [\#1734](https://github.com/youzan/vant/pull/1734)
+
+**Improvements**
+
+- 升级至 precss 3.0 [\#1696](https://github.com/youzan/vant/pull/1696)
+- AddressList: 支持禁用地址 [\#1729](https://github.com/youzan/vant/pull/1729)
+- Contact: 样式升级 [\#1693](https://github.com/youzan/vant/pull/1693)
+- Popup: 优化动画时长 [\#1694](https://github.com/youzan/vant/pull/1694)
+- Popup: get-container 属性支持传入 CSS 选择器 [\#1699](https://github.com/youzan/vant/pull/1699)
+- Rate: 新增 readonly 属性 [\#1731](https://github.com/youzan/vant/pull/1731)
+- Sku: 支持自定义 validator [\#1732](https://github.com/youzan/vant/pull/1732)
+- Sku: 增加对手机号留言的格式校验 [\#1732](https://github.com/youzan/vant/pull/1732)
+- Tab: 新增 scroll 事件 [\#1730](https://github.com/youzan/vant/pull/1730)
+- Loading: 支持配置为任意颜色 [\#1717](https://github.com/youzan/vant/pull/1717)
+
+**Bug Fixes**
+
+- 修复打包后版本号错误的问题 [\#1703](https://github.com/youzan/vant/pull/1703)
+- 修复 DatetimePicker 使用 minMinute 属性时初始值错误的问题 [\#1724](https://github.com/youzan/vant/pull/1724)
+- 修复 Swipe 在特定手势下可能出现位置错误的问题 [\#1723](https://github.com/youzan/vant/pull/1723)
+- 修复 Tab 能通过手势滑动至禁用标签的问题 [\#1704](https://github.com/youzan/vant/pull/1704)
+- 修复 Tabbar 使用 icon slot 时 info 属性不生效的问题 [\#1705](https://github.com/youzan/vant/pull/1705)
+
+
 ### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
 `2018-08-24`
 
