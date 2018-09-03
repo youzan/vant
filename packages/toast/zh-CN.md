@@ -4,6 +4,8 @@
 
 ```javascript
 import { Toast } from 'vant';
+
+Vue.use(Toast);
 ```
 
 ### 代码演示
