@@ -57,7 +57,7 @@ function compile(dir, jsOnly = false) {
 
 process.env.BABEL_MODULE = 'commonjs';
 
-fs.copySync(esDir, libDir);
+fs.copySync(srcDir, libDir);
 compile(libDir);
 
 function isDir(dir) {
