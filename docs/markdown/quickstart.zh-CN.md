@@ -23,6 +23,10 @@ vue ui
 
 <img width="100%" style="box-shadow: 0 1px 1px rgba(0, 0, 0, .1); border-radius: 3px;" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png" >
 
+### 示例工程
+
+我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)
+
 ### 安装
 
 #### NPM
