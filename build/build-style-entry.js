@@ -6,7 +6,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const components = require('./get-components')();
 const dependencyTree = require('dependency-tree');
-const whiteList = ['icon', 'loading', 'cell', 'button'];
+const whiteList = ['info', 'icon', 'loading', 'cell', 'button'];
 const dir = path.join(__dirname, '../es');
 
 components.forEach(component => {
