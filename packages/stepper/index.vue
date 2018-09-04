@@ -85,7 +85,7 @@ export default create({
   methods: {
     // filter illegal characters
     format(value) {
-      value = String(value).replace(/[^0-9\.-]/g, '');
+      value = String(value).replace(/[^0-9\.]/g, '');
       return value === '' ? 0 : this.integer ? Math.floor(value) : +value;
     },
 
