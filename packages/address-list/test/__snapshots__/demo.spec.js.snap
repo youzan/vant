@@ -41,8 +41,7 @@ exports[`renders demo correctly 1`] = `
           </i>
         </div>
       </div>
-      <button class="van-button van-button--danger van-button--large van-button--square van-address-list__add">
-        <!----><span class="van-button__text">新增地址</span></button>
+      <button class="van-button van-button--danger van-button--large van-button--square van-address-list__add"><span class="van-button__text">新增地址</span></button>
     </div>
   </div>
 </div>

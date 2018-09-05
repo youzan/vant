@@ -19,7 +19,7 @@
     @click="onClick"
   >
     <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />
-    <span :class="b('text')">
+    <span v-else :class="b('text')">
       <slot>{{ text }}</slot>
     </span>
   </component>

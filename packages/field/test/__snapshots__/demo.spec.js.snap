@@ -151,8 +151,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
             <!---->
             <div class="van-field__button">
-              <button class="van-button van-button--primary van-button--small">
-                <!----><span class="van-button__text">发送验证码</span></button>
+              <button class="van-button van-button--primary van-button--small"><span class="van-button__text">发送验证码</span></button>
             </div>
           </div>
           <!---->

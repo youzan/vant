@@ -3,8 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <button class="van-button van-button--default van-button--normal">
-      <!----><span class="van-button__text">
+    <button class="van-button van-button--default van-button--normal"><span class="van-button__text">
       弹出默认键盘
     </span></button>
     <div name="van-slide-bottom" class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
@@ -27,8 +26,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <button class="van-button van-button--default van-button--normal">
-      <!----><span class="van-button__text">
+    <button class="van-button van-button--default van-button--normal"><span class="van-button__text">
       弹出自定义键盘
     </span></button>
     <div name="van-slide-bottom" class="van-number-keyboard van-number-keyboard--custom" style="z-index:100;display:none;">
