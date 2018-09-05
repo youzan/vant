@@ -99,10 +99,6 @@
     .van-loading {
       display: inline-block;
     }
-
-    .van-button__text {
-      display: none;
-    }
   }
 
   /* mini图标默认宽度50px，文字不能超过4个 */
