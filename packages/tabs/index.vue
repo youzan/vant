@@ -48,6 +48,7 @@ export default create({
   },
 
   props: {
+    color: String,
     sticky: Boolean,
     lineWidth: Number,
     swipeable: Boolean,
@@ -70,8 +71,7 @@ export default create({
     offsetTop: {
       type: Number,
       default: 0
-    },
-    color: String
+    }
   },
 
   data() {

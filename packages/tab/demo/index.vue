@@ -9,7 +9,7 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-tabs sticky @scroll="subscribeSticky">
+      <van-tabs @scroll="onScroll">
         <van-tab v-for="index in 8" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
@@ -113,7 +113,7 @@ export default {
       this.$toast(title);
     },
 
-    subscribeSticky(e) {
+    onScroll(e) {
       console.log(e);
     }
   }
