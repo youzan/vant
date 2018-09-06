@@ -72,6 +72,10 @@ $van-tabs-card-height: 30px;
           color: $white;
           background-color: $red;
         }
+
+        &--disabled {
+          color: $gray;
+        }
       }
     }
   }

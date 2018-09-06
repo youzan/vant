@@ -8,7 +8,7 @@
         { 'van-hairline--top-bottom': type === 'line' }
       ]"
     >
-      <div :class="b('nav', [type])" ref="nav">
+      <div :class="b('nav', [type])" ref="nav" :style="navStyle">
         <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
         <div
           v-for="(tab, index) in tabs"
@@ -18,7 +18,7 @@
             'van-tab--active': index === curActive,
             'van-tab--disabled': tab.disabled
           }"
-          :style="{ color }"
+          :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
           <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
@@ -109,6 +109,12 @@ export default create({
         default:
           return null;
       }
+    },
+
+    navStyle() {
+      return {
+        borderColor: this.color
+      };
     }
   },
 
@@ -117,6 +123,10 @@ export default create({
       if (val !== this.curActive) {
         this.correctActive(val);
       }
+    },
+
+    color() {
+      this.setLine();
     },
 
     tabs(tabs) {
@@ -338,6 +348,27 @@ export default create({
         const title = this.$refs.title[index];
         title.parentNode.replaceChild(el, title);
       });
+    },
+
+    getTabStyle(item, index) {
+      const style = {};
+      const { color } = this;
+      const active = index === this.curActive;
+      const isCard = this.type === 'card';
+
+      if (color) {
+        if (!item.disabled && isCard !== active) {
+          style.color = color;
+        }
+        if (!item.disabled && isCard && active) {
+          style.backgroundColor = color;
+        }
+        if (isCard) {
+          style.borderColor = color;
+        }
+      }
+
+      return style;
     }
   }
 });
