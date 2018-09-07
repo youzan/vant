@@ -1,5 +1,20 @@
 ## Changelog
 
+### [1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
+`2018-09-07`
+
+**Improvements**
+
+- Document: add vue-cli 3 guide [\#1754](https://github.com/youzan/vant/pull/1754)
+
+**Bug Fixes**
+
+- fix Button loading color [\#1768](https://github.com/youzan/vant/pull/1768)
+- fix ImagePreview type definition [\#1767](https://github.com/youzan/vant/pull/1767)
+- fix Tab color not work in card type [\#1763](https://github.com/youzan/vant/pull/1763)
+- fix lib dir babel runtime module [\#1753](https://github.com/youzan/vant/pull/1753)
+
+
 ### [1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
 `2018-08-31`
 

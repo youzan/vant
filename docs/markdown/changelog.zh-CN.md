@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
+`2018-09-07`
+
+**Improvements**
+
+- 增加 vue-cli 3 使用介绍 [\#1754](https://github.com/youzan/vant/pull/1754)
+
+**Bug Fixes**
+
+- 修复 Button 加载图标颜色错误的问题 [\#1768](https://github.com/youzan/vant/pull/1768)
+- 修复 ImagePreview 类型定义错误 [\#1767](https://github.com/youzan/vant/pull/1767)
+- 修复 Tab 使用 card 主题时 color 属性不生效的问题 [\#1763](https://github.com/youzan/vant/pull/1763)
+- 修复 webpack 1 无法引入 babel-runtime 的问题 [\#1753](https://github.com/youzan/vant/pull/1753)
+
+
 ### [1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
 `2018-08-31`
 
