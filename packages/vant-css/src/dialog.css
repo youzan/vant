@@ -22,11 +22,11 @@
   }
 
   &__message {
+    padding: 20px;
     line-height: 1.5;
-    padding: 15px 20px;
 
     &--has-title {
-      color: $gray-dark;
+      color: $gray-darker;
       font-size: 14px;
     }
   }
@@ -51,7 +51,7 @@
   &__confirm {
     &,
     &:active {
-      color: #00c000;
+      color: $red;
     }
   }
 
