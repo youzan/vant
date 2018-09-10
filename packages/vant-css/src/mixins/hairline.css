@@ -1,4 +1,4 @@
-@mixin hairline($border-color: #e5e5e5) {
+@mixin hairline($border-color: #eee) {
   content: '';
   position: absolute;
   top: 0;
