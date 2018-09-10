@@ -3,8 +3,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200%;
-  height: 200%;
+  width: 199%;
+  height: 199%;
   transform: scale(0.5);
   transform-origin: 0 0;
   pointer-events: none;
