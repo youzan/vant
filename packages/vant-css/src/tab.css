@@ -123,19 +123,11 @@ $van-tabs-card-height: 30px;
     display: block;
   }
 
-  &:active {
-    background-color: $active-color;
-  }
-
   &--active {
     color: $red;
   }
 
   &--disabled {
     color: $gray;
-
-    &:active {
-      background-color: $white;
-    }
   }
 }
