@@ -12,7 +12,7 @@ $gray-dark: #999;
 
 /* default colors */
 $text-color: #333;
-$border-color: $gray-light;
+$border-color: #eee;
 $active-color: #e8e8e8;
 $background-color: #f8f8f8;
 
