@@ -3,7 +3,7 @@
     <field
       v-on="$listeners"
       ref="field"
-      rows="1"
+      rows="2"
       autosize
       :clearable="!isAndroid"
       type="textarea"
@@ -32,6 +32,7 @@
       clickable
       @click="onSelect(express)"
     />
+    <slot />
   </div>
 </template>
 

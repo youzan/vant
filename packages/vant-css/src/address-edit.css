@@ -27,9 +27,11 @@
     color: $gray-dark;
   }
 
-  &-detail__finish {
-    color: $blue;
-    font-size: 12px;
-    display: block;
+  &-detail {
+    &__finish {
+      color: $blue;
+      font-size: 12px;
+      display: block;
+    }
   }
 }

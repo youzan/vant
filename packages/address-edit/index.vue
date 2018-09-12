@@ -18,13 +18,15 @@
         @focus="onFocus('tel')"
       />
       <field
+        v-show="showArea"
         readonly
         :label="$t('area')"
         :placeholder="$t('areaPlaceholder')"
         :value="areaText"
-        @click="showArea = true"
+        @click="showAreaPopup = true"
       />
       <address-edit-detail
+        v-show="showDetail"
         :focused="detailFocused"
         :value="data.addressDetail"
         :error="errorInfo.addressDetail"
@@ -34,7 +36,9 @@
         @blur="detailFocused = false"
         @input="onChangeDetail"
         @select-search="$emit('select-search', $event)"
-      />
+      >
+        <slot name="detail" />
+      </address-edit-detail>
       <field
         v-if="showPostal"
         v-show="!hideBottomFields"
@@ -65,14 +69,14 @@
       </van-button>
     </div>
 
-    <popup v-model="showArea" position="bottom" :lazy-render="false" :get-container="getAreaContainer">
+    <popup v-model="showAreaPopup" position="bottom" :lazy-render="false" :get-container="getAreaContainer">
       <van-area
         ref="area"
         :loading="!areaListLoaded"
         :value="data.areaCode"
         :area-list="areaList"
         @confirm="onAreaConfirm"
-        @cancel="showArea = false"
+        @cancel="showAreaPopup = false"
       />
     </popup>
   </div>
@@ -126,6 +130,14 @@ export default create({
     showSearchResult: Boolean,
     saveButtonText: String,
     deleteButtonText: String,
+    showArea: {
+      type: Boolean,
+      default: true
+    },
+    showDetail: {
+      type: Boolean,
+      default: true
+    },
     addressInfo: {
       type: Object,
       default: () => ({ ...defaultData })
@@ -143,7 +155,7 @@ export default create({
   data() {
     return {
       data: {},
-      showArea: false,
+      showAreaPopup: false,
       detailFocused: false,
       errorInfo: {
         tel: false,
@@ -209,7 +221,7 @@ export default create({
     },
 
     onAreaConfirm(values) {
-      this.showArea = false;
+      this.showAreaPopup = false;
       this.data.areaCode = values[2].code;
       this.assignAreaValues(values);
       this.$emit('change-area', values);
@@ -288,6 +300,10 @@ export default create({
           this.assignAreaValues(area.getValues());
         }
       });
+    },
+
+    setAddressDetail(value) {
+      this.data.addressDetail = value;
     },
 
     getAreaContainer() {
