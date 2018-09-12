@@ -17,6 +17,11 @@
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg" alt="Coverage Status" />
 </p>
 
+<p align="center">
+  <a href="./README.md">🇨🇳 访问英文版</a>
+  <a href="https://github.com/youzan/vant-weapp" target="_blank" style="margin-left: 5px;">🚀 Vant Weapp - 小程序版</a>
+</p>
+
 ## 特性
 
 * 50+ 个经过有赞线上业务检验的组件
@@ -124,10 +129,9 @@ Vue.use(Vant);
 
 * [详细文档](https://youzan.github.io/vant)
 * [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
-* [React 组件库](https://www.youzanyun.com/zanui/zent)
-* [微信小程序组件库](https://github.com/youzan/zanui-weapp)
-* [vant-demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant Demo](https://github.com/youzan/vant-demo)
+* [Vant Weapp: 小程序 UI](https://github.com/youzan/vant-weapp)
+* [Zent: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
 
 ## 手机预览
 
