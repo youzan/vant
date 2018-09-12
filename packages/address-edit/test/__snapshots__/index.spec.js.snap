@@ -147,7 +147,7 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
       <div class="van-cell__value">
         <div class="van-field__body">
-          <input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" value="北京市 北京市 朝阳区" class="van-field__control">
+          <input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" value="北京市/朝阳区" class="van-field__control">
           <!---->
           <!---->
           <!---->
