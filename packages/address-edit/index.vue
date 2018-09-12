@@ -32,6 +32,7 @@
         :focused="detailFocused"
         :value="data.addressDetail"
         :error="errorInfo.addressDetail"
+        :detail-rows="detailRows"
         :search-result="searchResult"
         :show-search-result="showSearchResult"
         @focus="onFocus('addressDetail')"
@@ -137,6 +138,10 @@ export default create({
     showDetail: {
       type: Boolean,
       default: true
+    },
+    detailRows: {
+      type: Number,
+      default: 1
     },
     addressInfo: {
       type: Object,
