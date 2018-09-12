@@ -23,6 +23,8 @@
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
 </p>
 
+---
+
 ## 特性
 
 * 50+ 个经过有赞线上业务检验的组件
