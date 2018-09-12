@@ -20,7 +20,8 @@
 
 <p align="center">
   <a href="./README.zh-CN.md">🇨🇳 访问中文版</a>
-  <a href="https://github.com/youzan/vant-weapp" target="_blank" style="margin-left: 5px;">🚀 Vant Weapp - 小程序版</a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/youzan/vant-weapp" target="_blank">🚀 Vant Weapp - 小程序版</a>
 </p>
 
 ---
