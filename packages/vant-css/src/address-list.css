@@ -31,7 +31,9 @@
 
   .van-radio__label {
     width: 100%;
-    margin-left: 27px;
+    margin-left: 0;
+    padding-left: 27px;
+    box-sizing: border-box;
   }
 
   .van-radio__input {
