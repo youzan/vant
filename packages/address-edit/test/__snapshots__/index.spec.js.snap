@@ -51,15 +51,15 @@ exports[`create a AddressEdit 1`] = `
       </div>
       <!---->
     </div>
-    <div>
-      <div rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-hairline van-field">
+    <div class="van-address-edit-detail">
+      <div rows="2" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-hairline van-field">
         <!---->
         <div class="van-cell__title"><span>详细地址</span>
           <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body">
-            <textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea>
+            <textarea rows="2" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea>
             <!---->
             <!---->
             <!---->
@@ -156,15 +156,15 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
       <!---->
     </div>
-    <div>
-      <div rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-hairline van-field">
+    <div class="van-address-edit-detail">
+      <div rows="2" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-hairline van-field">
         <!---->
         <div class="van-cell__title"><span>详细地址</span>
           <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body">
-            <textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control">详细地址</textarea>
+            <textarea rows="2" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control">详细地址</textarea>
             <!---->
             <!---->
             <!---->
