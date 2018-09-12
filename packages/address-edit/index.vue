@@ -166,9 +166,14 @@ export default create({
 
     areaText() {
       const { province, city, county, areaCode } = this.data;
-      return province && city && county && areaCode
-        ? `${province} ${city} ${county}`
-        : '';
+      if (province && city && county && areaCode) {
+        const arr = [province, city, county];
+        if (province === city) {
+          arr.shift();
+        }
+        return arr.join('/');
+      }
+      return '';
     }
   },
 
