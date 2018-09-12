@@ -3,6 +3,7 @@
     <cell-group>
       <field
         v-model="data.name"
+        clearable
         maxlength="15"
         :label="$t('name')"
         :placeholder="$t('namePlaceholder')"
@@ -11,6 +12,7 @@
       />
       <field
         v-model="data.tel"
+        clearable
         type="tel"
         :label="$t('tel')"
         :placeholder="$t('telPlaceholder')"
@@ -36,9 +38,7 @@
         @blur="detailFocused = false"
         @input="onChangeDetail"
         @select-search="$emit('select-search', $event)"
-      >
-        <slot name="detail" />
-      </address-edit-detail>
+      />
       <field
         v-if="showPostal"
         v-show="!hideBottomFields"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="b()">
     <field
       v-on="$listeners"
       ref="field"
@@ -32,7 +32,6 @@
       clickable
       @click="onSelect(express)"
     />
-    <slot />
   </div>
 </template>
 
