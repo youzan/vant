@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div :class="b()">
     <field
       v-on="$listeners"
-      ref="field"
-      rows="1"
       autosize
+      ref="field"
+      :rows="detailRows"
       :clearable="!isAndroid"
       type="textarea"
       maxlength="200"
@@ -51,6 +51,7 @@ export default create({
     value: String,
     error: Boolean,
     focused: Boolean,
+    detailRows: Number,
     searchResult: Array,
     showSearchResult: Boolean
   },
