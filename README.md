@@ -18,7 +18,11 @@
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg" alt="Coverage Status" />
 </p>
 
-<p align="center"><a href="./README.zh-CN.md">🇨🇳访问中文版</a></p>
+<p align="center">
+  🇨🇳 <a href="./README.zh-CN.md">访问中文版</a>
+  &nbsp;
+  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
+</p>
 
 ---
 
@@ -121,10 +125,10 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 * [Documentation](https://youzan.github.io/vant)
 * [Changelog](https://youzan.github.io/vant#/en-US/changelog)
-* [React UI](https://www.youzanyun.com/zanui/zent)
-* [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [Vant Demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
+* [Zent: PC UI base on React](https://www.youzanyun.com/zanui/zent)
+
 
 ## Preview
 
