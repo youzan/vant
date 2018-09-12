@@ -132,7 +132,7 @@ Vue.use(Vant);
 
 * [详细文档](https://youzan.github.io/vant)
 * [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
-* [Vant Demo](https://github.com/youzan/vant-demo)
+* [Vant Demo: 示例工程](https://github.com/youzan/vant-demo)
 * [Vant Weapp: 小程序 UI](https://github.com/youzan/vant-weapp)
 * [Zent: PC 端 React UI](https://www.youzanyun.com/zanui/zent)
 
