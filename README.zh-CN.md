@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  🇨🇳 <a href="./README.md">访问英文版</a>
+  🇬🇧 <a href="./README.md">访问英文版</a>
   &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
 </p>
