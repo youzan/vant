@@ -46,7 +46,6 @@
         v-model="data.postalCode"
         type="tel"
         maxlength="6"
-        class="van-hairline--top"
         :label="$t('postal')"
         :placeholder="$t('postal')"
         :error="errorInfo.postalCode"
