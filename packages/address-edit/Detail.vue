@@ -1,5 +1,5 @@
 <template>
-  <div :class="b()">
+  <cell :class="b()">
     <field
       v-on="$listeners"
       autosize
@@ -32,7 +32,7 @@
       clickable
       @click="onSelect(express)"
     />
-  </div>
+  </cell>
 </template>
 
 <script>
