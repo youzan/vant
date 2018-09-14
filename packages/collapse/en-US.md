@@ -96,7 +96,7 @@ export default {
 
 | name | Description |
 |-----------|-----------|
-| default | Content |
+| - | Content |
 | value | Custom value |
 | icon | Custom icon |
 | title | Custom title |

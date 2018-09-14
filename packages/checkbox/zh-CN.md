@@ -164,7 +164,7 @@ export default {
 
 | 名称 | 说明 | slot-scope |
 |-----------|-----------|-----------|
-| default | 自定义文本 | - |
+| - | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
 
 ### Checkbox 方法

@@ -7,7 +7,7 @@
       <van-info :info="info" />
     </div>
     <div :class="b('text')">
-      <slot :active="active"/>
+      <slot :active="active" />
     </div>
   </div>
 </template>

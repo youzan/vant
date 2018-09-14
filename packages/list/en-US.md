@@ -72,3 +72,10 @@ Use ref to get list instance and call instance methods
 | Name | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
 | check | - | - | Check scroll position |
+
+### Slot
+
+| Name | Description |
+|-----------|-----------|
+| - | List content |
+| loading | Custom loading tips |
