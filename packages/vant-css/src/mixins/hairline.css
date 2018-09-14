@@ -1,12 +1,11 @@
 @mixin hairline($border-color: #eee) {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 199%;
-  height: 199%;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
   transform: scale(0.5);
-  transform-origin: 0 0;
   pointer-events: none;
   box-sizing: border-box;
   border: 0 solid $border-color;
