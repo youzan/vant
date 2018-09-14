@@ -3,11 +3,14 @@
 .DS_Store
 .idea
 .vscode
+
+# npm
+node_modules
+package-lock.json
+
+# dist file
 es
 lib
-node_modules
 docs/dist
 test/coverage
-package-lock.json
-packages/vant-css/build
 packages/icon/svg
