@@ -108,7 +108,7 @@ export default {
 
 | 名称 | 说明 |
 |-----------|-----------|
-| default | 面板内容 |
+| - | 面板内容 |
 | value | 自定义显示内容 |
 | icon | 自定义`icon` |
 | title | 自定义`title` |

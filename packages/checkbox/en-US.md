@@ -161,7 +161,7 @@ export default {
 
 | Name | Description | slot-scope |
 |-----------|-----------|-----------|
-| default | Custom label | - |
+| - | Custom label | - |
 | icon | Custom icon | checked: whether to be checked |
 
 ### Checkbox Methods
