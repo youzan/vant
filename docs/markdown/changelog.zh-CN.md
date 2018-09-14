@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
+`2018-09-14`
+
+**Improvements**
+
+- AddressEdit: 优化地区展示 [\#1785](https://github.com/youzan/vant/pull/1785)
+- Dialog: 更新按钮颜色 [\#1774](https://github.com/youzan/vant/pull/1774)
+- List: 新增 loading slot [\#1804](https://github.com/youzan/vant/pull/1804)
+- Tab: 优化点击反馈 [\#1775](https://github.com/youzan/vant/pull/1775)
+- 更新组件边框色值 [\#1773](https://github.com/youzan/vant/pull/1773)
+
+**Bug Fixes**
+
+- 修复 hairline 在 Chrome 69 下有时无法展示的问题 [\#1776](https://github.com/youzan/vant/pull/1776) [\#1805](https://github.com/youzan/vant/pull/1805)
+- 修复 AddressEdit 详细地址下边框未展示的问题 [\#1800](https://github.com/youzan/vant/pull/1800)
+- 修复 AddressList 详细地址未完全展示的问题 [\#1786](https://github.com/youzan/vant/pull/1786)
+- 修复 Dialog 缺少 className 类型定义的问题 [\#1799](https://github.com/youzan/vant/pull/1799)
+
+
 ### [1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
 `2018-09-07`
 

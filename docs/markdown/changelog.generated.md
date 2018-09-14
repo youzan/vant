@@ -1,5 +1,50 @@
 ## 更新日志
 
+## [v1.3.2](https://github.com/youzan/vant/tree/v1.3.2) (2018-09-14)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.3.1...v1.3.2)
+
+**Bug Fixes**
+
+- 最新的vant 升级了 babel 7 如果在nuxt 项目用编译不报错 运行的时候就会报错 这个问题是要怎么解决？ [\#1748](https://github.com/youzan/vant/issues/1748)
+
+**Issue**
+
+- Field组件中Clearable属性问题 [\#1796](https://github.com/youzan/vant/issues/1796)
+- tabs粘性吸顶条在ios系统下会出现延迟吸顶的情况 [\#1795](https://github.com/youzan/vant/issues/1795)
+- van-actionsheet 选中事件select无效 [\#1794](https://github.com/youzan/vant/issues/1794)
+- 能否添加tabbar多个自定义图标的示例 [\#1792](https://github.com/youzan/vant/issues/1792)
+- field组件clearable问题 [\#1791](https://github.com/youzan/vant/issues/1791)
+- Toast 文字换行~ [\#1789](https://github.com/youzan/vant/issues/1789)
+- 图片预览组件切换图片的过程中,下面的分页器会抖动 [\#1788](https://github.com/youzan/vant/issues/1788)
+- 时间选择器，为什么不能单独展示年份列？加个type='year'可好？ [\#1783](https://github.com/youzan/vant/issues/1783)
+- AddressEdit 组件中 slot 的位置如何调整？ [\#1782](https://github.com/youzan/vant/issues/1782)
+- AddressEdit 组件 label 字段只能通过更改源码实现吗？ [\#1781](https://github.com/youzan/vant/issues/1781)
+- 滑块Slider 一个小需求 [\#1780](https://github.com/youzan/vant/issues/1780)
+- Add countdown component.建议增加倒计时组件 [\#1779](https://github.com/youzan/vant/issues/1779)
+- 时间选择器，选择年份带动月日滑动后，点击确定，获取的时间有误 [\#1772](https://github.com/youzan/vant/issues/1772)
+- Swipe 轮播图怎么添加点击进入详情的功能,绑定点击事件的话,滑动就不好用了 [\#1771](https://github.com/youzan/vant/issues/1771)
+- PullRefresh 和 List 组件配合使用的问题 [\#1770](https://github.com/youzan/vant/issues/1770)
+- Picker是否可实现单级多选功能 [\#1769](https://github.com/youzan/vant/issues/1769)
+- van-button 的 loading 状态颜色错误 [\#1765](https://github.com/youzan/vant/issues/1765)
+- ImagePreview types 错误 [\#1761](https://github.com/youzan/vant/issues/1761)
+- vue-cli 3.x 求一套开箱即用的配置 [\#1760](https://github.com/youzan/vant/issues/1760)
+
+**Improvements**
+
+- \[bugfix\] hairline [\#1805](https://github.com/youzan/vant/pull/1805) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] List: add loading slot [\#1804](https://github.com/youzan/vant/pull/1804) ([chenjiahan](https://github.com/chenjiahan))
+- update gitignore [\#1802](https://github.com/youzan/vant/pull/1802) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressEdit: missing border [\#1800](https://github.com/youzan/vant/pull/1800) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Dialog: fix type definition [\#1799](https://github.com/youzan/vant/pull/1799) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] AddressEdit: add more props [\#1790](https://github.com/youzan/vant/pull/1790) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] AddressList: address not fully displayed [\#1786](https://github.com/youzan/vant/pull/1786) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] AddressEdit: optimize area label [\#1785](https://github.com/youzan/vant/pull/1785) ([chenjiahan](https://github.com/chenjiahan))
+- update README.md [\#1784](https://github.com/youzan/vant/pull/1784) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] hairline in chrome 69 [\#1776](https://github.com/youzan/vant/pull/1776) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Tab: remove active color [\#1775](https://github.com/youzan/vant/pull/1775) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Dialog: update style [\#1774](https://github.com/youzan/vant/pull/1774) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] update border-color [\#1773](https://github.com/youzan/vant/pull/1773) ([chenjiahan](https://github.com/chenjiahan))
+
 ## [v1.3.1](https://github.com/youzan/vant/tree/v1.3.1) (2018-09-07)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.3.0...v1.3.1)
 
@@ -158,11 +203,6 @@
 ## [v1.2.0](https://github.com/youzan/vant/tree/v1.2.0) (2018-08-20)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.16...v1.2.0)
 
-**Breaking changes**
-
-- ImagePreview 希望加一个点击图片关闭的回调 [\#1574](https://github.com/youzan/vant/issues/1574)
-- List 列表控件显示第一页时，删除掉其中几项后，不会自动加载第二页 [\#1568](https://github.com/youzan/vant/issues/1568)
-
 **Issue**
 
 - Vant大佬们,可否再开设几个Vant讨论群好一起交流Vant使用心得 [\#1654](https://github.com/youzan/vant/issues/1654)
@@ -186,7 +226,6 @@
 - Custom Swipe Item's width/ SwipeItem的自定义宽度支持 [\#1609](https://github.com/youzan/vant/issues/1609)
 - Area组件可否兼容父子关系类别的地址或者分类结构 [\#1607](https://github.com/youzan/vant/issues/1607)
 - ImagePreview最新版本v1.1.15 预览图片报错 [\#1598](https://github.com/youzan/vant/issues/1598)
-- css.module: true 无法引入 vant css [\#1572](https://github.com/youzan/vant/issues/1572)
 
 **Improvements**
 
@@ -211,10 +250,6 @@
 ## [v1.1.16](https://github.com/youzan/vant/tree/v1.1.16) (2018-08-10)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.15...v1.1.16)
 
-**Bug Fixes**
-
-- Tabbar 标签没有改变也会触发change事件 [\#1569](https://github.com/youzan/vant/issues/1569)
-
 **Issue**
 
 - Tabs 标签页 的change 事件不会触发 [\#1613](https://github.com/youzan/vant/issues/1613)
@@ -226,50 +261,15 @@
 - 日期组件只能选十年的范围，需要三十年的范围，例如贷款30年 [\#1601](https://github.com/youzan/vant/issues/1601)
 - 圆形进度条的slot功能能用吗  [\#1600](https://github.com/youzan/vant/issues/1600)
 - stepper  步进器 点击加号 减号也有点击反馈 [\#1599](https://github.com/youzan/vant/issues/1599)
-- upload到底怎么使用啊,怎么把得到的参数替换掉默认图片的路径呢? [\#1596](https://github.com/youzan/vant/issues/1596)
-- ImagePreview最新版本预览图片报错 [\#1595](https://github.com/youzan/vant/issues/1595)
-- CellSwipe 左滑，right 有 edit delete 两个按钮的时候，如何判断点击的是哪个呢？ [\#1593](https://github.com/youzan/vant/issues/1593)
-- 商品规格弹层控件中如果设置none\_sku: true,加入购物车时还提示“选择规格” [\#1588](https://github.com/youzan/vant/issues/1588)
-- Low android version compatibility issues [\#1585](https://github.com/youzan/vant/issues/1585)
-- vant  collapse使用报错 [\#1584](https://github.com/youzan/vant/issues/1584)
-- popup悬浮头部不生效 [\#1580](https://github.com/youzan/vant/issues/1580)
-- uploader 组件在部分安卓手机微信环境中点击不能触发上传图片功能 [\#1576](https://github.com/youzan/vant/issues/1576)
-- dialog销毁报错Error in nextTick: "TypeError: Cannot read property 'insert' of undefined" [\#1575](https://github.com/youzan/vant/issues/1575)
 
 **Improvements**
 
 - update dependencies [\#1614](https://github.com/youzan/vant/pull/1614) ([chenjiahan](https://github.com/chenjiahan))
 - \[Doc\] update vant-doc [\#1608](https://github.com/youzan/vant/pull/1608) ([chenjiahan](https://github.com/chenjiahan))
 - \[Improvement\] Search: update style [\#1603](https://github.com/youzan/vant/pull/1603) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Actionsheet: add select event [\#1594](https://github.com/youzan/vant/pull/1594) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] DatetimePicker: value uncorrect when use formatter [\#1591](https://github.com/youzan/vant/pull/1591) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] List: add check method [\#1590](https://github.com/youzan/vant/pull/1590) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] ImagePreview: suppot onClose callback [\#1589](https://github.com/youzan/vant/pull/1589) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Actionsheet: item unclickable when loading [\#1587](https://github.com/youzan/vant/pull/1587) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.15](https://github.com/youzan/vant/tree/v1.1.15) (2018-08-03)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.14...v1.1.15)
-
-**Issue**
-
-- CellGroup无法显示 [\#1577](https://github.com/youzan/vant/issues/1577)
-- 打包vant UI组件没有自动添加-webkie兼容前缀，导致ios8版本ui排版以及加载框和弹窗出现了问题 [\#1573](https://github.com/youzan/vant/issues/1573)
-- Tab组件type为card时，sticky属性设置无效 [\#1570](https://github.com/youzan/vant/issues/1570)
-- 建议upload组件多增加几种样式 [\#1566](https://github.com/youzan/vant/issues/1566)
-- search无法隐藏右边的× [\#1565](https://github.com/youzan/vant/issues/1565)
-- 建议给TAB组件增加一个功能把tab和content分开 [\#1564](https://github.com/youzan/vant/issues/1564)
-- 全局导入组件，使用Lazyload 图片懒加载时，lazy指令无法解析 [\#1563](https://github.com/youzan/vant/issues/1563)
-- 能否分享icon 字体库的图标原始文件或iconfont  [\#1561](https://github.com/youzan/vant/issues/1561)
-
-**Improvements**
-
-- \[bugfix\] Field: date type not work in iOS [\#1586](https://github.com/youzan/vant/pull/1586) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] DatetimePicker: support minute range [\#1583](https://github.com/youzan/vant/pull/1583) ([chenjiahan](https://github.com/chenjiahan))
-- update dependencies [\#1581](https://github.com/youzan/vant/pull/1581) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] adjust component nav [\#1579](https://github.com/youzan/vant/pull/1579) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] update mobile nav [\#1578](https://github.com/youzan/vant/pull/1578) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] Tabbar: change event [\#1571](https://github.com/youzan/vant/pull/1571) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] Stepper: update api doc [\#1562](https://github.com/youzan/vant/pull/1562) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14) (2018-07-19)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.13...v1.1.14)

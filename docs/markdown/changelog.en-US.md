@@ -1,5 +1,24 @@
 ## Changelog
 
+### [1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
+`2018-09-14`
+
+**Improvements**
+
+- AddressEdit: optimize area label [\#1785](https://github.com/youzan/vant/pull/1785)
+- Dialog: update button color [\#1774](https://github.com/youzan/vant/pull/1774)
+- List: add loading slot [\#1804](https://github.com/youzan/vant/pull/1804)
+- Tab: optimize active color [\#1775](https://github.com/youzan/vant/pull/1775)
+- update border-color [\#1773](https://github.com/youzan/vant/pull/1773)
+
+**Bug Fixes**
+
+- fix hairline in Chrome 69 [\#1776](https://github.com/youzan/vant/pull/1776) [\#1805](https://github.com/youzan/vant/pull/1805)
+- fix AddressEdit missing border [\#1800](https://github.com/youzan/vant/pull/1800)
+- fix AddressList address not fully displayed [\#1786](https://github.com/youzan/vant/pull/1786)
+- fix Dialog type definition [\#1799](https://github.com/youzan/vant/pull/1799)
+
+
 ### [1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
 `2018-09-07`
 
