@@ -106,3 +106,23 @@ Vue.use(Cell).use(CellGroup);
 | icon | 自定义`icon` |
 | title | 自定义`title` |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.10 | feature | 新增 arrow-direction 属性
+| 1.1.4 | feature | title 和 value 属性支持 number 类型
+| 1.1.0 | improvement | 优化 flex 结构
+| 1.0.8 | bugfix | 修复文字垂直不对齐的问题
+| 1.0.3 | feature | 新增 center 属性
+| 1.0.3 | improvement | 布局方式由 table 升级为 flex-box
+| 0.12.5 | bugfix | 修复 required 样式错误的问题
+| 0.12.3 | improvement | 调整右侧箭头位置
+| 0.12.1 | bugfix | 修复标题为空时 icon 属性无法生效的问题
+| 0.12.1 | bugfix | 修复内边框宽度错误的问题
+| 0.12.0 | feature | 新增 border、clickable 属性
+| 0.11.14 | bugfix | 修复全局引入样式时，箭头错位的问题
+| 0.10.5 | feature | 新增 to 属性，支持 vue-router 路由跳转
+| 0.5.4 | bugfix | 修复同时设置 title 和 label 时 value 不居中的问题
+| 0.5.4 | improvement | 新增 right-icon 插槽

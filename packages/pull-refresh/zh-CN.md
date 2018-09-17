@@ -66,3 +66,15 @@ export default {
 | pulling | 下拉过程中顶部内容 |
 | loosing | 释放过程中顶部内容 |
 | loading | 加载过程中顶部内容 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.10 | feature | 新增 disabled 属性 |
+| 1.0.0 | feature | 支持手动触发 loading 动画 |
+| 0.12.9 | feature | 新增 refersh 事件 |
+| 0.12.3 | bugfix | 修复横向滑动时也会触发下拉的问题 |
+| 0.11.12 | bugfix | 修复顶部内容遮挡的问题 |
+| 0.10.3 | bugfix | 修复 touchcancel 事件名拼写错误 |
+| 0.9.2 | feature | 新增组件 |

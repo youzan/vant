@@ -46,3 +46,9 @@ Vue.use(Panel);
 | - | 自定义内容 |
 | header | 自定义 header |
 | footer | 自定义 footer |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.0 | improvement | 优化 DOM 结构 |

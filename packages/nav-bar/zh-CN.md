@@ -36,7 +36,7 @@ export default {
 ```
 
 #### 高级用法
-通过 slot 定制内容
+通过插槽定制内容
 
 ```html
 <van-nav-bar title="标题" left-text="返回" left-arrow>
@@ -70,3 +70,13 @@ export default {
 |-----------|-----------|-----------|
 | click-left | 点击左侧按钮时触发 | - |
 | click-right | 点击右侧按钮时触发 | - |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.0.5 | bugfix | 修复标题长度未限制的问题 |
+| 1.0.2 | improvement | 移除顶部边框 |
+| 0.12.3 | improvement | 新增 z-index 属性 |
+| 0.11.3 | breaking change | clickLeft 事件名改为 click-left |
+| 0.9.2 | feature | 新增组件 |

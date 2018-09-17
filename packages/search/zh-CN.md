@@ -34,7 +34,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 ```
 
 #### 自定义行动按钮
-`van-search` 支持自定义右侧取消按钮，使用名字为 action 的 slot 即可。使用此 slot 以后，原有的 cancel 事件不再生效。
+`van-search` 支持自定义右侧取消按钮，使用名字为 action 的插槽即可。使用此插槽以后，原有的 cancel 事件不再生效。
 
 ```html
 <van-search
@@ -68,3 +68,17 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 | 名称 | 说明 |
 |-----------|-----------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.16 | improvement | 优化样式结构 |
+| 1.1.13 | feature | 点击搜索按钮后自动收起键盘 |
+| 1.1.3 | improvement | 样式更新 |
+| 1.1.2 | bugfix | 修复错误展示边框的问题 |
+| 1.1.1 | bugfix | 修复在 iOS 下文字被遮挡的问题 |
+| 0.11.15 | improvement | 更新 search 图标样式 |
+| 0.11.13 | feature | 支持 input 原生事件 |
+| 0.11.11 | feature | 新增 focus、change-area、select-search 事件 |
+| 0.9.12 | bugfix | 修复样式问题 |

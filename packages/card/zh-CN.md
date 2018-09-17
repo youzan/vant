@@ -60,3 +60,11 @@ Vue.use(Card);
 | tags | 自定义 tags |
 | thumb | 自定义 thumb |
 | footer | 自定义 footer |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 0.9.2 | feature | 新增 num 和 price 属性
+| 0.7.2 | feature | 新增 centered 属性
+| 0.6.6 | feature | 新增 thumb 插槽

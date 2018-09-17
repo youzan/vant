@@ -148,3 +148,20 @@ export default {
 | setColumnValues(index, values) | 设置对应列中所有的备选值 |
 | getValues() | 获取所有列中被选中的值，返回一个数组 |
 | setValues(values) | `values`为一个数组，设置所有列中被选中的值 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | bugfix | 修复使用 min-minute 属性时初始值错误的问题
+| 1.1.16 | bugfix | 修复使用 formatter 时默认值错误的问题
+| 1.1.15 | feature | 新增 max-minute、min-minute 属性
+| 1.1.14 | feature | 新增 formatter 属性
+| 1.1.11 | bugfix | 修复 change 事件回调参数不正确的问题
+| 1.1.9 | bugfix | 修复 visible-item-count 属性拼写错误
+| 1.1.4 | bugfix | 修复初始值错误的问题
+| 1.0.6 | bugfix | 修复 change 事件参数错误
+| 1.0.4 | feature | 支持 Picker 组件所有属性
+| 1.0.2 | feature | 新增 show-toolbar 属性
+| 1.0.2 | feature | 新增 month-year 类型
+| 0.7.8 | bugfix | 修复 cancel 事件无法触发的问题
