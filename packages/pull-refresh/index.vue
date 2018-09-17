@@ -116,7 +116,7 @@ export default create({
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
           this.getStatus(this.ease(this.deltaY));
-          event.preventDefault();
+          event.cancelable && event.preventDefault();
         }
       }
     },
