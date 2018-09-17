@@ -106,3 +106,21 @@ toast2.clear();
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.5 | bugfix | 修复使用 forbidClick 属性时导致其他弹层的蒙层失效的问题 |
+| 1.1.3 | feature | 新增 loadingType 属性 |
+| 1.0.3 | bugfix | 修复蒙层在某些情况下无法收起的问题 |
+| 1.0.2 | bugfix | 修复蒙层被其他元素遮挡的问题 |
+| 1.0.0 | feature | 支持通过 Vue.use 注册 |
+| 0.12.7 | feature | 新增 allowMultiple 方法，支持同时弹出多个 Toast |
+| 0.12.6 | bugfix | 修复文案换行问题 |
+| 0.12.4 | feature | 新增 setDefaultOptions 方法 |
+| 0.11.4 | feature | 支持 this.$toast 方式调用 |
+| 0.10.8 | feature | 新增 mask 属性 |
+| 0.10.3 | feature | 新增 position 属性 |
+| 0.9.2 | feature | 支持 loading 和 text 属性同时使用 |
+| 0.9.2 | improvement | 布局方式改为 Flex 布局 |

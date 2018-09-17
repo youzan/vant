@@ -79,3 +79,13 @@ export default {
 |-----------|-----------|
 | - | 列表内容 |
 | loading | 自定义底部加载中提示 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.2 | feature | 新增 loading 插槽
+| 1.1.16 | feature | 新增 check 方法
+| 1.1.10 | bugfix | 修复不可见时依旧会触发 load 事件的问题
+| 1.1.1 | feature | 新增 loading-text 属性
+| 1.0.0 | breaking change | 新增组件

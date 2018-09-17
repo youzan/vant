@@ -60,3 +60,18 @@ setTimeout(() => {
 | images | 需要预览的图片 URL 数组 | `Array` |
 | startPosition | 图片预览起始位置索引 | `Number` |
 | onClose | 关闭时的回调函数 | `Function` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.16 | feature | 支持传入 onClose 回调函数
+| 1.1.13 | bugfix | 修复 startPosition 属性不生效的问题
+| 1.1.3 | improvement | 优化点击检测
+| 1.1.3 | bugfix | 修复只有一张图片时无法关闭的问题
+| 1.1.1 | bugfix | 修复 offset 计算错误
+| 1.0.5 | bugfix | 修复 close 方法失效的问题
+| 0.11.1 | feature | 支持手动关闭
+| 0.10.7 | feature | 支持自定义初始位置
+| 0.10.0 | bugfix | 修复图片加载过程中跳动的问题
+| 0.9.6 | bugfix | 修复滑动后无法展示图片的问题

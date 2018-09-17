@@ -114,7 +114,7 @@ export default {
 
 #### 自定义标签
 
-通过 title slot 可以自定义标签内容
+通过 title 插槽可以自定义标签内容
 
 ```html
 <van-tabs v-model="active">
@@ -175,3 +175,44 @@ export default {
 | change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
 | disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
 | scroll | 滚动时触发 | Object: { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.2 | improvement | 优化点击反馈
+| 1.3.1 | bugfix | 修复使用 card 主题时 color 属性不生效的问题
+| 1.3.0 | feature | 新增 scroll 事件
+| 1.3.0 | bugfix | 修复能通过手势滑动至禁用标签的问题
+| 1.2.1 | bugfix | 修复使用 color 属性时下划线样式错误的问题
+| 1.2.0 | feature | 新增 color 属性
+| 1.1.15 | feature | 新增 offset-top 属性
+| 1.1.14 | feature | 新增 change 事件
+| 1.1.14 | bugfix | 修复路由切换时标签位置错误的问题
+| 1.1.14 | bugfix | 修复 sticky 属性在局部滚动元素下无法生效的问题
+| 1.1.12 | bugfix | 修复同时进行插入和删除时顺序错误的问题
+| 1.1.11 | improvement | 更新 card 风格样式
+| 1.1.11 | bugfix | 修复动态渲染时顺序错误的问题
+| 1.1.9 | bugfix | 修复屏幕尺寸变化时未重新渲染的问题
+| 1.1.8 | bugfix | 修复标题长度变化时底部条未重新渲染的问题
+| 1.1.6 | bugfix | 修复 title 插槽渲染无法更新的问题
+| 1.1.2 | bugfix | 修复初始化时的渲染问题
+| 1.1.1 | feature | 新增 line-width 属性
+| 1.0.6 | feature | 支持 v-model 绑定当前 active 标签
+| 1.0.3 | improvement | 布局方式由 table 升级为 flex-box
+| 1.0.3 | feature | click 事件回调新增 title 参数
+| 1.0.2 | bugfix | 修复内容无法点击的问题
+| 1.0.0 | feature | 支持通过滑动手势进行切换
+| 0.12.8 | feature | 新增 title 插槽
+| 0.12.6 | bugfix | 修复 active 在初始化时未生效的问题
+| 0.12.0 | bugfix | 修复使用 sticky 时高度计算错误的问题
+| 0.11.8 | bugfix | 修复 safari 下的滚动条问题
+| 0.11.8 | bugfix | 修复 active 标签不能自动居中的问题
+| 0.11.7 | feature | 传入 sticky 属性且切换标签时，自动滚动至顶部
+| 0.11.7 | bugfix | 修复初始标签滚动位置
+| 0.11.6 | feature | 新增 sticky 属性
+| 0.11.6 | improvement | 优化动画流畅度
+| 0.11.5 | bugfix | 修复删除时未自动切换 active 值的问题
+| 0.10.6 | bugfix | 修复动态生成问题
+| 0.10.1 | feature | 新增 swipe-threshold 属性
+| 0.9.10 | bugfix | 修复 props 修改后未同步至父组件的问题

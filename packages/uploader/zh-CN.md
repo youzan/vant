@@ -59,8 +59,17 @@ export default {
 |-----------|-----------|
 | - | 自定义 uploader 内容 |
 
-### afterRead 回调参数
+### after-read 回调参数
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | file | 文件解析后的 file 对象 | `Object` |
 | content | 文件内容 | `String` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.0 | bugfix | 修复安卓下无法上传图片的问题 |
+| 0.12.6 | improvement | 新增 max-size 属性 |
+| 0.11.3 | improvement | 支持 input 原生属性 |
+| 0.10.5 | bugfix | 修复 input 类型错误 |

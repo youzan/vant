@@ -63,3 +63,16 @@ import 'vant/lib/vant-css/icon-local.css';
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 点击图标时触发 | - |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.2.1 | feature | 新增 class-prefix 属性
+| 1.2.0 | bugfix | 修复 size 属性不生效的问题
+| 1.1.15 | feature | 新增 size 属性
+| 1.1.10 | breaking change | 移除 birthday-privilege、member-day-privilege、balance-details 图标
+| 1.1.3 | feature | 新增 color 属性
+| 0.11.13 | feature | 新增 info 属性
+| 0.11.9 | improvement | 支持使用本地字体文件
+| 0.11.1 | improvement | 调整 unicode，避免展示特殊字符

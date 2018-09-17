@@ -175,3 +175,25 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | setColumnIndex | columnIndex, optionIndex | - | 设置对应列选中项的索引 |
 | getColumnValues | columnIndex | values | 获取对应列中所有选项 |
 | setColumnValue | columnIndex, values | - | 设置对应列中所有选项 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.13 | bugfix | 修复部分安卓机型下选项高度错误的问题 |
+| 1.1.11 | improvement | 优化渲染性能 |
+| 1.1.6 | feature | 支持 html 类型的选项 |
+| 1.1.5 | improvement | 优化未选中项的颜色 |
+| 1.1.0 | bugfix | 修复系统字体大小缩放时布局错乱的问题 |
+| 1.0.4 | feature | 支持 Picker 组件所有属性 |
+| 0.12.9 | feature | 新增 loading 属性 |
+| 0.12.8 | bugfix | 修复部分设备下的样式问题 |
+| 0.12.4 | feature | 新增 confirm-text、cancel-button-text 属性 |
+| 0.12.4 | bugfix | 修复 visible-item-count 属性拼写错误 |
+| 0.12.3 | bugfix | 修复点击选项时无法触发 change 事件的问题 |
+| 0.12.2 | bugfix | 修复 change 事件触发时机 |
+| 0.11.13 | improvement | 优化性能 |
+| 0.11.12 | bugfix | 修复滑动时未禁止页面滚动的问题 |
+| 0.11.12 | bugfix | 修复底部区域无法滑动的问题 |
+| 0.11.6 | feature | 支持点击切换选项、禁用选项 |
+| 0.5.8 | feature | 新增 title 属性 |

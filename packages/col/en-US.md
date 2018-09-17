@@ -91,6 +91,7 @@ Setting `type` to `flex` to enable flex layout
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
+| type | Layout type, can be set to `flex` | `String` | - |
 | gutter | Grid spacing（px） | `String | Number` | - |
 | tag | Custom element tag | `String` | `div` |
 | justify | Flex main axis，can be set to  end/center/space-around/space-between | `String` | `start` |

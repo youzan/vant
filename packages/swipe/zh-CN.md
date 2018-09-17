@@ -115,3 +115,28 @@ export default {
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
 | swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | bugfix | 修复特定手势下可能出现位置错误的问题
+| 1.2.1 | feature | 新增 width、height 属性
+| 1.1.15 | feature | 新增 open 方法
+| 1.1.13 | bugfix | 修复多指触控时导致空白的问题
+| 1.1.12 | bugfix | 修复浏览器滚动时会触发轮播左右滚动的问题
+| 1.1.12 | feature | 屏幕大小变化时自动调整宽度
+| 1.1.7 | feature | 新增 swipeTo 方法
+| 1.1.1 | improvement | 优化轮播性能
+| 1.1.1 | feature | 新增 touchable 属性
+| 1.1.1 | feature | 新增 vertical 属性，支持垂直布局
+| 1.0.5 | bugfix | 修复 touch 事件冒泡问题
+| 0.12.12 | feature | 新增 loop 属性，支持禁用循环滚动
+| 0.12.12 | bugfix | 修复 autoplay 设置为 0 时不会立刻取消的问题
+| 0.12.2 | bugfix | 使用 translate2d 代替 translate3d, 避免 iOS11 下的 crash 问题
+| 0.10.6 | feature | 新增 initial-swipe 属性
+| 0.10.4 | bugfix | 修复某些情况下宽度计算错误的问题
+| 0.10.1 | bugfix | 修复组件 destroyed 时未清除 autoplay timer 的问题
+| 0.10.0 | breaking change | 重写组件，调整部分 API
+| 0.9.2 | bugfix | 修复页数为一时指示器未隐藏的问题
+| 0.6.0 | feature | 新增组件

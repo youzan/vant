@@ -90,7 +90,6 @@ export default {
 |-----------|-----------|
 | - | 在邮政编码下方插入内容 |
 
-
 ### 数据格式
 
 #### addressInfo 数据格式
@@ -119,3 +118,32 @@ export default {
 
 #### 省市县列表数据格式
 请参考 [Area](#/zh-CN/area) 组件。
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.2 | improvement | 优化地区展示
+| 1.3.2 | bugfix | 修复详细地址下边框未展示的问题
+| 1.2.1 | improvement | 样式升级
+| 1.2.0 | breaking change | 采用驼峰命名的数据结构
+| 1.2.0 | bugfix | 修复删除按钮展示逻辑
+| 1.1.14 | bugfix | 修复格式化字符串时报错的问题
+| 1.1.11 | improvement | 优化事件触发顺序
+| 1.1.8 | feature | 支持配置按钮文字
+| 1.1.8 | improvement | 简化内部代码结构
+| 1.1.6 | bugfix | 修复省市区弹层样式错误的问题
+| 1.1.5 | improvement | 优化空值校验
+| 1.1.4 | improvement | 适配小屏手机
+| 1.1.3 | feature | 新增 cancel-delete 事件
+| 1.0.2 | bugfix | 修复初始化时省市区未正确选中的问题
+| 1.0.0 | feature | 新增 show-delete 属性
+| 1.0.0 | bugfix | 修复在数据变更时未正确选中省市区的问题
+| 0.12.13 | feature | 支持自定义手机号校验函数
+| 0.12.6 | feature | 增加默认插槽
+| 0.12.3 | bugfix | 修复 setAreaCode 方法失效的问题
+| 0.12.2 | bugfix | 修复搜索结果样式错误
+| 0.11.11 | feature | 新增 focus、change-area、select-search 事件
+| 0.11.11 | bugfix | 修复搜索结果展示错误
+| 0.9.11 | bugfix | 修正组件姓名字段的键名为 name
+| 0.9.10 | feature | 新增组件

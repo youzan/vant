@@ -108,3 +108,17 @@ export default {
 | className | 为对应列添加额外的 class |
 | loading | 是否为加载状态 |
 | disabled | 是否为禁用状态 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.16 | feature | 新增 select 事件 |
+| 1.1.16 | bugfix | 修复选项加载中时仍然有点击态的问题 |
+| 1.1.11 | feature | 新增 lazy-render 属性 |
+| 1.1.9 | feature | 支持禁用选项 |
+| 1.1.8 | bugfix | 修复在 rem 布局下标题文字大小错误的问题 |
+| 1.0.4 | feature | 新增 cancel 事件 |
+| 1.0.4 | improvement | 增加最大高度限制 |
+| 1.0.0 | bugfix | 修复下边框未展示的问题 |
+| 0.11.1 | improvement | 更新关闭按钮样式 |

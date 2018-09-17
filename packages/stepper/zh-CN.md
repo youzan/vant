@@ -67,3 +67,22 @@ export default {
 | plus | 点击增加按钮时触发 | - |
 | minus | 点击减少按钮时触发 | - |
 | blur | 输入框失焦时触发 | - |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.2.1 | bugfix | 修复初始值不能为 0 的问题 |
+| 1.1.15 | improvement | 优化禁用态样式 |
+| 1.1.15 | improvement | 优化输入体验 |
+| 1.1.14 | bugfix | 修复 integer 属性在 Android 上无法生效的问题 |
+| 1.1.9 | improvement | 输入框失焦且内容为空时，自动补全为最小值 |
+| 1.1.2 | improvement | 优化禁用状态样式 |
+| 1.1.2 | bugfix | 修复 integer 属性拼写错误 |
+| 1.1.1 | feature | 新增 integer 属性 |
+| 1.0.0 | bugfix | 修复 value 溢出的问题 |
+| 0.12.10 | bugfix | 修复清空输入框时 change 事件未正确触发的问题 |
+| 0.12.4 | bugfix | 修改 value 值时不触发 change 事件 |
+| 0.10.8 | feature | 新增 plus、minus 事件 |
+| 0.9.10 | bugfix | 修复输入框样式错误 |
+| 0.9.2 | breaking change | 由 Quantity 重命名为 Stepper |

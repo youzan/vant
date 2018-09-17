@@ -585,7 +585,7 @@
 * Field: 支持配置 autosize 最大/最小高度 [\#718](https://github.com/youzan/vant/pull/718)
 * Locale: 精简 i18n 配置文档 [\#701](https://github.com/youzan/vant/pull/701)
 * PullRefresh: 支持手动触发 loading 动画 [\#684](https://github.com/youzan/vant/pull/684)
-* Switch: 新增 size 数组，支持自定义尺寸 [\#723](https://github.com/youzan/vant/pull/723)
+* Switch: 新增 size 属性，支持自定义尺寸 [\#723](https://github.com/youzan/vant/pull/723)
 * Sku: 新增头部金额 slot [\#705](https://github.com/youzan/vant/pull/705)
 * Sku: 优化 DOM 结构 [\#704](https://github.com/youzan/vant/pull/704)
 * Tab: 支持通过滑动手势进行切换 [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695)

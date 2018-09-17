@@ -83,3 +83,13 @@ export default {
 | blur | 点击关闭按钮或非键盘区域时触发 | - |
 | show | 键盘完全弹出时触发 | - |
 | hide | 键盘完全收起时触发 | - |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.5 | feature | 新增 close 事件 |
+| 0.11.15 | feature | 新增 theme 属性 |
+| 0.11.14 | feature | 新增 close-text 属性 |
+| 0.11.14 | feature | 新增 hide-on-click-outside 属性 |
+| 0.9.3 | feature | 新增组件 |
