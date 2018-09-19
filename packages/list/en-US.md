@@ -18,7 +18,11 @@ Vue.use(List);
   :finished="finished"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item + ''" />
+  <van-cell
+    v-for="item in list"
+    :key="item"
+    :title="item"
+  />
 </van-list>
 ```
 
