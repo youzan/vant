@@ -94,8 +94,11 @@ export default create({
     },
 
     innerValue(val) {
-      this.updateColumnValue(val);
       this.$emit('input', val);
+    },
+
+    columns() {
+      this.updateColumnValue(this.innerValue);
     }
   },
 
