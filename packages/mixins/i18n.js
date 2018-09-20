@@ -8,7 +8,9 @@ export default {
       const prefix = name ? camelize(name) + '.' : '';
 
       if (!this.$vantMessages) {
-        if(process.env.NODE_ENV !== 'production') console.warn('[Vant] Locale not correctly registered.');
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn('[Vant] Locale not correctly registered.');
+        }
         return () => '';
       }
 
