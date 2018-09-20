@@ -105,6 +105,7 @@ export default create({
   },
 
   mounted() {
+    this.format();
     this.$nextTick(this.adjustSize);
   },
 
@@ -129,8 +130,21 @@ export default create({
       this.$refs.input && this.$refs.input.blur();
     },
 
+    // native maxlength not work when type = number
+    format(target = this.$refs.input) {
+      let { value } = target;
+      const { maxlength } = this.$attrs;
+
+      if (this.isDef(maxlength) && value.length > maxlength) {
+        value = value.slice(0, maxlength);
+        target.value = value;
+      }
+
+      return value;
+    },
+
     onInput(event) {
-      this.$emit('input', event.target.value);
+      this.$emit('input', this.format(event.target));
     },
 
     onFocus(event) {
