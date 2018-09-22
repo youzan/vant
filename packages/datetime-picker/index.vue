@@ -238,21 +238,7 @@ export default create({
     },
 
     getMonthEndDay(year, month) {
-      if (this.isShortMonth(month)) {
-        return 30;
-      } else if (month === 2) {
-        return this.isLeapYear(year) ? 29 : 28;
-      } else {
-        return 31;
-      }
-    },
-
-    isLeapYear(year) {
-      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-    },
-
-    isShortMonth(month) {
-      return [4, 6, 9, 11].indexOf(month) > -1;
+      return 32 - new Date(year, month - 1, 32).getDate()
     },
 
     onConfirm() {
