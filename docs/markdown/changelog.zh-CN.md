@@ -1,5 +1,22 @@
 ## 更新日志
 
+### [1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
+`2018-09-23`
+
+**Improvements**
+
+- SwipeCell: 新增 click 事件 [\#1848](https://github.com/youzan/vant/pull/1848)
+- Locale: 优化错误处理 [\#1835](https://github.com/youzan/vant/pull/1835)
+- 文档: 增加单个组件的更新日志 [\#1816](https://github.com/youzan/vant/pull/1816)
+
+**Bug Fixes**
+
+- 修复 DatetimePicker 时间范围变化时未正确更新 value 的问题 [\#1825](https://github.com/youzan/vant/pull/1825)
+- 修复 Field 类型为 number 时 maxlength 属性不生效的问题 [\#1839](https://github.com/youzan/vant/pull/1839)
+- 修复 PullRefresh 在部分情况下提示 preventDefault 警告的问题 [\#1819](https://github.com/youzan/vant/pull/1819)
+- 修复 Tag 边框颜色错误的问题 [\#1834](https://github.com/youzan/vant/pull/1834)
+
+
 ### [1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
 `2018-09-14`
 

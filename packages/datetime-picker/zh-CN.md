@@ -153,6 +153,7 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.3 | bugfix | 修复时间范围变化时未正确更新 value 的问题 |
 | 1.3.0 | bugfix | 修复使用 min-minute 属性时初始值错误的问题
 | 1.1.16 | bugfix | 修复使用 formatter 时默认值错误的问题
 | 1.1.15 | feature | 新增 max-minute、min-minute 属性

@@ -1,5 +1,22 @@
 ## Changelog
 
+### [1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
+`2018-09-23`
+
+**Improvements**
+
+- SwipeCell: add click event [\#1848](https://github.com/youzan/vant/pull/1848)
+- Locale: optimize error handling [\#1835](https://github.com/youzan/vant/pull/1835)
+- Document: add Component changelog [\#1816](https://github.com/youzan/vant/pull/1816)
+
+**Bug Fixes**
+
+- fix DatetimePicker should update value when range changed [\#1825](https://github.com/youzan/vant/pull/1825)
+- fix Field maxlength not work when type = number [\#1839](https://github.com/youzan/vant/pull/1839)
+- fix PullRefresh preventDefault warning [\#1819](https://github.com/youzan/vant/pull/1819)
+- fix Tag white border [\#1834](https://github.com/youzan/vant/pull/1834)
+
+
 ### [1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
 `2018-09-14`
 

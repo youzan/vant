@@ -162,6 +162,7 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.3 | bugfix | 修复类型为 number 时 maxlength 属性不生效的问题 |
 | 1.2.1 | improvement | 优化清除按钮颜色
 | 1.1.15 | bugfix | 修复 date 类型在 iOS 设备下显示错误的问题
 | 1.1.14 | bugfix | 修复行高错误

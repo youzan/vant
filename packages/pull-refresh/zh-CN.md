@@ -71,6 +71,7 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.3 | bugfix | 修复在部分情况下提示 preventDefault 警告的问题 |
 | 1.1.10 | feature | 新增 disabled 属性 |
 | 1.0.0 | feature | 支持手动触发 loading 动画 |
 | 0.12.9 | feature | 新增 refersh 事件 |

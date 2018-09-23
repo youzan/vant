@@ -98,6 +98,7 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.3 | feature | 新增 click 事件 |
 | 1.2.0 | breaking change | 组件命名由 CellSwipe 修改为 SwipeCell
 | 1.1.15 | feature | 新增 open 方法 |
 | 1.0.5 | bugfix | 修复在垂直滑动时也会触发 Swipe 的问题 |
