@@ -72,6 +72,12 @@ export default {
 | left | 左侧滑动内容 |
 | right | 右侧滑动内容 |
 
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
+
 ### onClose 参数
 
 | 参数 | 类型 | 说明 |

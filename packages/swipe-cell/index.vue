@@ -137,6 +137,8 @@ export default create({
     },
 
     onClick(position = 'outside') {
+      this.$emit('click', position);
+
       if (!this.offset) {
         return;
       }
