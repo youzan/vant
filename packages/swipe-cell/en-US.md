@@ -72,6 +72,12 @@ export default {
 | left | content of left scrollable area |
 | right | content of right scrollabe area |
 
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
+
 ### onClose Params
 
 | Argument | Type | Description |
