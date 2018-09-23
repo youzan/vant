@@ -114,7 +114,7 @@ export default {
       },
       customStepperConfig: {
         quotaText: '单次限购100件',
-        stockFormatter: (stock) => `剩余${stock}间`,
+        stockFormatter: (stock) => `剩余${stock}件`,
         handleOverLimit: (data) => {
           const { action, limitType, quota } = data;
 
