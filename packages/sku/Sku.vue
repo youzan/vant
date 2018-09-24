@@ -254,7 +254,7 @@ export default create({
       if (!this.hasSku) {
         return {
           id: this.sku.collection_id,
-          price: Math.round(this.sku.price * 100),
+          price: this.sku.price,
           stock_num: this.sku.stock_num
         };
       } else if (this.isSkuCombSelected) {
@@ -265,7 +265,7 @@ export default create({
 
     price() {
       if (this.selectedSkuComb) {
-        return (this.selectedSkuComb.price / 100).toFixed(2);
+        return (this.selectedSkuComb.price).toFixed(2);
       }
       // sku.price是一个格式化好的价格区间
       return this.sku.price;

@@ -157,7 +157,7 @@ sku: {
   list: [
     {
       id: 2259,
-      price: 100,
+      price: 1,
       s1: '1215',
       s2: '1193',
       s3: '0',
@@ -251,7 +251,7 @@ skuData: {
   selectedNum: 1,
   selectedSkuComb: {
     id: 2257,
-    price: 100,
+    price: 1,
     s1: '30349',
     s2: '1193',
     s3: '0',
