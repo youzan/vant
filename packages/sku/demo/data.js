@@ -40,7 +40,7 @@ export default {
     list: [
       {
         id: 2259,
-        price: 100,
+        price: 1,
         discount: 100,
         code: '',
         s1: '1215',
@@ -59,7 +59,7 @@ export default {
       },
       {
         id: 2260,
-        price: 100,
+        price: 1,
         discount: 100,
         code: '',
         s1: '1215',
@@ -78,7 +78,7 @@ export default {
       },
       {
         id: 2257,
-        price: 100,
+        price: 1,
         discount: 100,
         code: '',
         s1: '30349',
@@ -97,7 +97,7 @@ export default {
       },
       {
         id: 2258,
-        price: 100,
+        price: 1,
         discount: 100,
         code: '',
         s1: '30349',
