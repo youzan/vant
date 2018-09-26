@@ -9,6 +9,7 @@ export type ToastOptions = {
   position?: string;
   duration?: number;
   forbidClick?: boolean;
+  loadingType?: string;
   message?: ToastMessage;
 }
 
