@@ -8,7 +8,7 @@
         v-if="tag"
         mark
         type="danger"
-        class="van-card__tag"
+        :class="b('tag')"
       >
         {{ tag }}
       </van-tag>

@@ -6,6 +6,7 @@ exports[`renders demo correctly 1`] = `
     <div class="van-card">
       <div class="van-card__thumb">
         <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
+        <!---->
       </div>
       <div class="van-card__content">
         <div class="van-card__row">
@@ -23,8 +24,9 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-card">
       <div class="van-card__thumb">
-        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
-      </div>
+        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-tag--danger van-card__tag">
+      标签
+    </span></div>
       <div class="van-card__content">
         <div class="van-card__row">
           <div class="van-card__title">标题</div>
