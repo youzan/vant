@@ -44,7 +44,8 @@ Use `slot` to custom content.
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| thumb | Left thumb | `String` | - |
+| thumb | Left thumb image URL | `String` | - |
+| thumb-link | Thumb link URL | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
 | tag | Tag | `String` | - |

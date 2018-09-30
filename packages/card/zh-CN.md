@@ -13,10 +13,10 @@ Vue.use(Card);
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"
   num="2"
   price="2.00"
+  desc="描述信息"  
+  title="商品标题"
   :thumb="imageURL"
 />
 ```
@@ -28,9 +28,9 @@ Vue.use(Card);
 <van-card
   num="2"
   tag="标签"
-  desc="描述"  
-  title="标题"
   price="2.00"
+  desc="描述信息"  
+  title="商品标题"
   :thumb="imageURL"
 >
   <div slot="footer">
@@ -44,7 +44,8 @@ Vue.use(Card);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| thumb | 左侧图片 | `String` | - |
+| thumb | 左侧图片 URL | `String` | - |
+| thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
 | tag | 标签 | `String` | - |
