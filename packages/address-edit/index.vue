@@ -182,8 +182,8 @@ export default create({
 
     areaText() {
       const { province, city, county, areaCode } = this.data;
-      if (province && city && county && areaCode) {
-        const arr = [province, city, county];
+      if (areaCode) {
+        const arr = [province, city, county].filter(text => text);
         if (province === city) {
           arr.shift();
         }
@@ -225,8 +225,9 @@ export default create({
     },
 
     onAreaConfirm(values) {
+      const areaCode = (values[2] || values[1] || values[0]).code;
       this.showAreaPopup = false;
-      this.data.areaCode = values[2].code;
+      this.data.areaCode = areaCode;
       this.assignAreaValues(values);
       this.$emit('change-area', values);
     },
