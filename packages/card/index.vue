@@ -1,6 +1,6 @@
 <template>
   <div :class="b({ center: centered })">
-    <div :class="b('thumb')">
+    <a :href="thumbLink" :class="b('thumb')">
       <slot name="thumb">
         <img :src="thumb" :class="b('img')" >
       </slot>
@@ -12,7 +12,7 @@
       >
         {{ tag }}
       </van-tag>
-    </div>
+    </a>
     <div :class="b('content')">
       <slot name="title">
         <div :class="b('row')" v-if="title || isDef(price)">
@@ -22,7 +22,7 @@
       </slot>
       <slot name="desc">
         <div :class="b('row')" v-if="desc || isDef(num)">
-          <div v-if="desc" :class="b('desc')">{{ desc }}</div>
+          <div v-if="desc" :class="[b('desc'), 'van-ellipsis']">{{ desc }}</div>
           <div v-if="isDef(num)" :class="b('num')">x {{ num }}</div>
         </div>
       </slot>
@@ -51,6 +51,10 @@ export default create({
     currency: {
       type: String,
       default: '¥'
+    },
+    thumbLink: {
+      type: String,
+      default: 'javascript:;'
     }
   }
 });

@@ -4,17 +4,17 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-card">
-      <div class="van-card__thumb">
+      <a href="javascript:;" class="van-card__thumb">
         <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
         <!---->
-      </div>
+      </a>
       <div class="van-card__content">
         <div class="van-card__row">
-          <div class="van-card__title">标题</div>
+          <div class="van-card__title">商品标题</div>
           <div class="van-card__price">¥ 2.00</div>
         </div>
         <div class="van-card__row">
-          <div class="van-card__desc">描述信息</div>
+          <div class="van-card__desc van-ellipsis">描述信息</div>
           <div class="van-card__num">x 2</div>
         </div>
       </div>
@@ -23,17 +23,17 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-card">
-      <div class="van-card__thumb">
+      <a href="javascript:;" class="van-card__thumb">
         <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-tag--danger van-card__tag">
       标签
-    </span></div>
+    </span></a>
       <div class="van-card__content">
         <div class="van-card__row">
-          <div class="van-card__title">标题</div>
+          <div class="van-card__title">商品标题</div>
           <div class="van-card__price">¥ 2.00</div>
         </div>
         <div class="van-card__row">
-          <div class="van-card__desc">描述信息</div>
+          <div class="van-card__desc van-ellipsis">描述信息</div>
           <div class="van-card__num">x 2</div>
         </div>
       </div>
