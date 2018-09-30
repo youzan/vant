@@ -26,9 +26,10 @@ Vue.use(Card);
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"  
   num="2"
+  tag="标签"
+  desc="描述"  
+  title="标题"
   price="2.00"
   :thumb="imageURL"
 >
@@ -46,6 +47,7 @@ Vue.use(Card);
 | thumb | 左侧图片 | `String` | - |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
+| tag | 标签 | `String` | - |
 | num | 商品数量 | `String | Number` | - |
 | price | 商品价格 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |

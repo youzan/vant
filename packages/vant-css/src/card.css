@@ -86,6 +86,12 @@
     font-size: 12px;
   }
 
+  &__tag {
+    position: absolute;
+    top: 2px;
+    left: 0;
+  }
+
   &__footer {
     right: 15px;
     bottom: 5px;

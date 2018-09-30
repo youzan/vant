@@ -15,6 +15,7 @@
         :title="$t('title')"
         :desc="$t('desc')"
         num="2"
+        :tag="$t('tag')"
         price="2.00"
         :thumb="imageURL"
       >

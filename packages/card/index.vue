@@ -4,6 +4,14 @@
       <slot name="thumb">
         <img :src="thumb" :class="b('img')" >
       </slot>
+      <van-tag
+        v-if="tag"
+        mark
+        type="danger"
+        class="van-card__tag"
+      >
+        {{ tag }}
+      </van-tag>
     </div>
     <div :class="b('content')">
       <slot name="title">
@@ -33,9 +41,10 @@ export default create({
   name: 'card',
 
   props: {
+    tag: String,
+    desc: String,
     thumb: String,
     title: String,
-    desc: String,
     centered: Boolean,
     num: [Number, String],
     price: [Number, String],
