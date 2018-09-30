@@ -26,9 +26,10 @@ Use `slot` to custom content.
 
 ```html
 <van-card
+  num="2"
+  tag="Tag"
   title="Title"
   desc="Description"  
-  num="2"
   price="2.00"
   :thumb="imageURL"
 >
@@ -46,6 +47,7 @@ Use `slot` to custom content.
 | thumb | Left thumb | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
+| tag | Tag | `String` | - |
 | num | Number of goods | `String | Number` | - |
 | price | Price of goods | `String | Number` | - |
 | centered | Whether content vertical centered | `String` | `false` |
