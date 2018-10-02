@@ -6,7 +6,7 @@
   display: inline-block;
   height: 44px;
   line-height: 42px;
-  border-radius: 3px;
+  border-radius: 2px;
   box-sizing: border-box;
   font-size: 16px;
   text-align: center;
@@ -135,9 +135,7 @@
   }
 
   &--disabled {
-    color: $button-disabled-color;
-    background-color: $button-disabled-background-color;
-    border: 1px solid $button-disabled-border-color;
+    opacity: .5;
   }
 
   &--round {
