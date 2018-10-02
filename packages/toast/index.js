@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueToast from './toast';
+import VueToast from './Toast';
 import { isObj } from '../utils';
 
 const defaultOptions = {

@@ -35,10 +35,15 @@
 </template>
 
 <script>
+import VanTag from '../tag';
 import create from '../utils/create';
 
 export default create({
   name: 'card',
+
+  components: {
+    VanTag
+  },
 
   props: {
     tag: String,
