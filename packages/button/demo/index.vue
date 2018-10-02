@@ -1,42 +1,39 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('title1')">
+    <demo-block :title="$t('type')">
       <div class="demo-button-row">
-        <van-button type="default">{{ $t('default') }}</van-button>
         <van-button type="primary">{{ $t('primary') }}</van-button>
+        <van-button type="danger">{{ $t('danger') }}</van-button>
       </div>
+      <van-button type="default">{{ $t('default') }}</van-button>
       <van-button type="warning">{{ $t('warning') }}</van-button>
-      <van-button type="danger">{{ $t('danger') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('plain')">
-      <div class="demo-button-row">
-        <van-button type="default" plain>{{ $t('default') }}</van-button>
-        <van-button type="primary" plain>{{ $t('primary') }}</van-button>
-      </div>
-      <van-button type="warning" plain>{{ $t('warning') }}</van-button>
-      <van-button type="danger" plain>{{ $t('danger') }}</van-button>
+      <van-button plain type="primary">{{ $t('warning') }}</van-button>
+      <van-button plain type="danger">{{ $t('danger') }}</van-button>
     </demo-block>
 
-    <demo-block :title="$t('title2')">
+    <demo-block :title="$t('disabled')">
+      <van-button disabled type="primary">{{ $t('disabled') }}</van-button>
+      <van-button disabled type="danger">{{ $t('disabled') }}</van-button>
+    </demo-block>
+
+    <demo-block :title="$t('loading')">
+      <van-button loading type="primary" />
+      <van-button loading type="danger" />
+    </demo-block>
+
+    <demo-block :title="$t('shape')">
+      <van-button type="primary" square>{{ $t('square') }}</van-button>
+      <van-button type="danger" round>{{ $t('round') }}</van-button>
+    </demo-block>
+
+    <demo-block :title="$t('size')">
       <van-button size="large">{{ $t('large') }}</van-button>
       <van-button size="normal">{{ $t('normal') }}</van-button>
       <van-button size="small">{{ $t('small') }}</van-button>
       <van-button size="mini">{{ $t('mini') }}</van-button>
-    </demo-block>
-
-    <demo-block :title="$t('disabled')">
-      <van-button disabled>{{ $t('disabled') }}</van-button>
-    </demo-block>
-
-    <demo-block :title="$t('title3')">
-      <van-button loading />
-      <van-button loading type="danger" />
-    </demo-block>
-
-    <demo-block :title="$t('title4')">
-      <van-button type="danger" square>{{ $t('square') }}</van-button>
-      <van-button type="danger" round>{{ $t('round') }}</van-button>
     </demo-block>
   </demo-section>
 </template>
@@ -45,10 +42,10 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: '按钮类型',
-      title2: '按钮尺寸',
-      title3: '加载状态',
-      title4: '按钮形状',
+      type: '按钮类型',
+      size: '按钮尺寸',
+      loading: '加载状态',
+      shape: '按钮形状',
       default: '默认按钮',
       primary: '主要按钮',
       danger: '危险按钮',
@@ -62,10 +59,10 @@ export default {
       round: '圆形按钮'
     },
     'en-US': {
-      title1: 'Type',
-      title2: 'Size',
-      title3: 'Loading',
-      title4: 'Shape',
+      type: 'Type',
+      size: 'Size',
+      loading: 'Loading',
+      shape: 'Shape',
       default: 'Default',
       primary: 'Primary',
       danger: 'Danger',

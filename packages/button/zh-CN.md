@@ -22,10 +22,31 @@ Vue.use(Button);
 #### 朴素按钮
 
 ```html
-<van-button type="default" plain>默认按钮</van-button>
-<van-button type="primary" plain>主要按钮</van-button>
-<van-button type="warning" plain>警告按钮</van-button>
-<van-button type="danger" plain>危险按钮</van-button>
+<van-button plain type="primary">主要按钮</van-button>
+<van-button plain type="danger">危险按钮</van-button>
+```
+
+#### 禁用状态
+
+通过`disabled`属性来禁用按钮，此时按钮不可点击
+
+```html
+<van-button disabled type="primary">禁用状态</van-button>
+<van-button disabled type="danger">禁用状态</van-button>
+```
+
+#### 加载状态
+
+```html 
+<van-button loading type="primary" />
+<van-button loading type="danger" />
+```
+
+#### 按钮形状
+
+```html 
+<van-button square type="primary">方形按钮</van-button>
+<van-button round type="danger">圆形按钮</van-button>
 ```
 
 #### 按钮尺寸
@@ -36,28 +57,6 @@ Vue.use(Button);
 <van-button size="normal">普通按钮</van-button>
 <van-button size="small">小型按钮</van-button>
 <van-button size="mini">迷你按钮</van-button>
-```
-
-#### 禁用状态
-
-通过`disabled`属性来禁用按钮，此时按钮不可点击
-
-```html
-<van-button disabled>禁用状态</van-button>
-```
-
-#### 加载状态
-
-```html 
-<van-button loading />
-<van-button loading type="primary" />
-```
-
-#### 按钮形状
-
-```html 
-<van-button type="danger" square>方形按钮</van-button>
-<van-button type="danger" round>圆形按钮</van-button>
 ```
 
 
