@@ -38,6 +38,7 @@ export default create({
 
   props: {
     onClose: Function,
+    disabled: Boolean,
     leftWidth: {
       type: Number,
       default: 0
@@ -106,6 +107,10 @@ export default create({
     },
 
     startDrag(event) {
+      if (this.disabled) {
+        return;
+      }
+
       this.draging = true;
       this.touchStart(event);
 
@@ -115,6 +120,10 @@ export default create({
     },
 
     onDrag(event) {
+      if (this.disabled) {
+        return;
+      }
+
       this.touchMove(event);
       const { deltaX } = this;
 
@@ -130,6 +139,10 @@ export default create({
     },
 
     endDrag() {
+      if (this.disabled) {
+        return;
+      }
+
       this.draging = false;
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
