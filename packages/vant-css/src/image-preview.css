@@ -18,6 +18,20 @@
     position: absolute;
   }
 
+  &__index {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    color: $white;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transform: translate(-50%, 0);
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, .9);
+  }
+
   .van-swipe {
     height: 100%;
   }

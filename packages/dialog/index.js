@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VanDialog from './dialog';
+import VanDialog from './Dialog';
 
 let instance;
 
