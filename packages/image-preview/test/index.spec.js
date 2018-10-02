@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import ImagePreview from '..';
-import ImagePreviewVue from '../image-preview';
+import ImagePreviewVue from '../ImagePreview';
 import { mount, triggerDrag } from '../../../test/utils';
 
 const images = [
