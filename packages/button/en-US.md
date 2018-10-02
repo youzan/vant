@@ -49,13 +49,11 @@ Vue.use(Button);
 <van-button loading type="primary" />
 ```
 
-#### Custom Tag
-Use `tag` prop to custom button tag
+#### Shape
 
 ```html 
-<van-button tag="a" href="https://www.youzan.com" target="_blank">
-  Button
-</van-button>
+<van-button type="danger" square>Square</van-button>
+<van-button type="danger" round>Round</van-button>
 ```
 
 ### API
@@ -71,6 +69,7 @@ Use `tag` prop to custom button tag
 | disabled | Whether to disable button | `Boolean` | `false` |
 | loading | Whether show loading status | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |
+| round | Whether to be round button | `Boolean` | `false` |
 | square | Whether to be square button | `Boolean` | `false` |
 
 ### Event

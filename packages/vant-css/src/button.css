@@ -140,6 +140,10 @@
     border: 1px solid $button-disabled-border-color;
   }
 
+  &--round {
+    border-radius: 10em;
+  }
+
   &--square {
     border-radius: 0;
   }
