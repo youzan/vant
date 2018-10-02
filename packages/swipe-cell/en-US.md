@@ -63,6 +63,7 @@ export default {
 | left-width | Width of the left scrollable area | `Number` | `0` |
 | right-width | Width of the right scrollable area | `Number` | `0` |
 | on-close | Callback function before close | `Function` | - |
+| disabled | Whether to disabled swipe | `Boolean` | `false` |
 
 ### Slot
 

@@ -63,6 +63,7 @@ export default {
 | left-width | 左侧滑动区域宽度 | `Number` | `0` |
 | right-width | 右侧滑动区域宽度 | `Number` | `0` |
 | on-close | 关闭时的回调函数 | `Function` | - |
+| disabled | 是否禁用滑动 | `Boolean` | `false` |
 
 ### Slot
 
