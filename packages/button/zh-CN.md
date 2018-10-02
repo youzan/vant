@@ -39,6 +39,7 @@ Vue.use(Button);
 ```
 
 #### 禁用状态
+
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
 ```html
@@ -52,14 +53,11 @@ Vue.use(Button);
 <van-button loading type="primary" />
 ```
 
-#### 自定义按钮标签
-
-按钮标签默认为`button`，可以使用`tag`属性来修改按钮标签
+#### 按钮形状
 
 ```html 
-<van-button tag="a" href="https://www.youzan.com" target="_blank">
-  按钮
-</van-button>
+<van-button type="danger" square>方形按钮</van-button>
+<van-button type="danger" round>圆形按钮</van-button>
 ```
 
 
@@ -73,9 +71,10 @@ Vue.use(Button);
 | tag | 按钮 HTML 标签 | `String` | `button` |
 | native-type | 按钮类型（原生） | `String` | - |
 | plain | 是否为朴素按钮 | `Boolean` | `false` |
-| disabled | 是否禁用 | `Boolean` | `false` |
+| disabled | 是否禁用按钮 | `Boolean` | `false` |
 | loading | 是否显示为加载状态 | `Boolean` | `false` |
 | block | 是否为块级元素 | `Boolean` | `false` |
+| round | 是否为圆形按钮 | `Boolean` | `false` |
 | square | 是否为方形按钮 | `Boolean` | `false` |
 
 ### Event
