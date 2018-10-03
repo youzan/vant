@@ -188,7 +188,3 @@ export default {
 |-----------|-----------|-----------|
 | 1.3.0 | improvement | 样式升级 |
 | 1.1.1 | improvement | 优化底部边框样式 |
-| 0.11.12 | feature | 新增 editable 属性 |
-| 0.11.11 | feature | 新增点击反馈 |
-| 0.10.3 | bugfix | 修复列表底部遮挡问题 |
-| 0.9.10 | feature | 新增组件 |

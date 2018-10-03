@@ -66,10 +66,3 @@ Vue.use(NoticeBar);
 |-----------|-----------|-----------|
 | 1.1.3 | improvement | 优化 ref 检测 |
 | 1.0.2 | improvement | 修正内边距 |
-| 0.12.2 | bugfix | 修复 text 属性变化时未重新计算的问题 |
-| 0.11.9 | bugfix | 修复 animationend 事件兼容问题 |
-| 0.10.6 | bugfix | 修复页面返回时文字消失的问题 |
-| 0.10.4 | feature | 新增 color 属性 |
-| 0.10.4 | feature | 新增 left-icon 属性 |
-| 0.10.4 | feature | 新增 background 属性 |
-| 0.8.7 | feature | 新增组件 |

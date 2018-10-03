@@ -121,4 +121,3 @@ export default {
 | 1.0.4 | feature | 新增 cancel 事件 |
 | 1.0.4 | improvement | 增加最大高度限制 |
 | 1.0.0 | bugfix | 修复下边框未展示的问题 |
-| 0.11.1 | improvement | 更新关闭按钮样式 |

@@ -70,6 +70,3 @@ export default {
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
 | 1.1.0 | bugfix | 修复安卓下无法上传图片的问题 |
-| 0.12.6 | improvement | 新增 max-size 属性 |
-| 0.11.3 | improvement | 支持 input 原生属性 |
-| 0.10.5 | bugfix | 修复 input 类型错误 |

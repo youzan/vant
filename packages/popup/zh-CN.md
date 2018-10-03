@@ -69,15 +69,3 @@ export default {
 | 1.0.8 | bugfix | 修复 lock-scroll 属性在 iOS 下无效的问题
 | 1.0.4 | bugfix | 修复多层弹出时 lock-scroll 失效的问题
 | 1.0.0 | breaking change | 新增 lock-scroll 属性，废弃 lock-on-scroll、prevent-scroll 属性
-| 0.12.11 | feature | 新增 click-overlay 事件
-| 0.12.8 | feature | 新增 get-contaienr 属性
-| 0.11.15 | bugfix | 修复 popup 销毁时未解绑事件的问题
-| 0.11.15 | bugfix | 修复使用 popup mixin 的组件未设定 props 类型的问题
-| 0.11.12 | bugfix | 修复 prevent-scroll 属性失效的问题
-| 0.11.6 | bugfix | 修复 overlay-class 类型错误
-| 0.11.1 | feature | 新增 overlay-class、overlay-style 属性
-| 0.10.3 | bugfix | 修复 popup 被依赖时未自动引入样式的问题
-| 0.10.1 | bugfix | 修复蒙层在某些情况下无法展示的问题
-| 0.8.5 | bugfix | 修复默认开启 prevent-scroll 导致无法局部滚动的问题
-| 0.7.2 | bugfix | 修复多层级时蒙层未插入到正确的位置的问题
-| 0.5.4 | bugfix | 修复 z-index 类型错误

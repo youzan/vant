@@ -109,4 +109,3 @@ export default {
 | 1.3.2 | bugfix | 修复详细地址未完全展示的问题
 | 1.3.0 | feature | 支持不可配送地址列表
 | 1.2.0 | improvement | 样式优化升级
-| 0.9.8 | feature | 新增组件

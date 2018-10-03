@@ -284,18 +284,3 @@ skuData: {
 | 1.0.4 | bugfix | 修复 row 行高错误
 | 1.0.2 | bugfix | 修复默认选中不生效的问题
 | 1.0.0 | feature | 新增 sku-header-price 插槽
-| 1.0.0 | improvement | 优化 DOM 结构
-| 0.12.13 | feature | 新增 close-on-click-overlay 属性
-| 0.12.9 | bugfix | 修复 message 更新时未重新渲染的问题
-| 0.12.8 | feature | 支持图片上传
-| 0.12.8 | feature | 新增 sku-stepper 插槽
-| 0.12.7 | feature | 新增 getSkuData 方法
-| 0.12.6 | feature | 新增 sku-body-top slot、resetSelectedSkuOnHide 属性
-| 0.12.6 | bugfix | 修复限购情况下，未超出限购数时的错误文案显示
-| 0.12.5 | improvement | 优化渲染性能
-| 0.11.6 | bugfix | 修复按钮圆角问题
-| 0.10.7 | bugfix | 修复滚动锁定问题
-| 0.10.0 | improvement | 优化样式
-| 0.9.9 | feature | 支持禁用 Stepper
-| 0.9.8 | bugfix | 修复留言渲染错误
-| 0.9.2 | feature | 新增组件

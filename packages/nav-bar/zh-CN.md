@@ -77,6 +77,3 @@ export default {
 |-----------|-----------|-----------|
 | 1.0.5 | bugfix | 修复标题长度未限制的问题 |
 | 1.0.2 | improvement | 移除顶部边框 |
-| 0.12.3 | improvement | 新增 z-index 属性 |
-| 0.11.3 | breaking change | clickLeft 事件名改为 click-left |
-| 0.9.2 | feature | 新增组件 |

@@ -133,12 +133,3 @@ Vue.use(Area);
 | 1.1.11 | bugfix | 修复 city_list 为空时报错的问题 |
 | 1.1.8 | improvement | 优化默认选项 |
 | 1.1.2 | feature | 新增 change 事件 |
-| 0.12.14 | bugfix | 修复 area-list 更新时未正确选中省市区的问题 |
-| 0.12.7 | feature | 新增 item-height、visible-item-count 属性 |
-| 0.12.5 | bugfix | 修复未选中省份时市区展示错误的问题 |
-| 0.12.3 | bugfix | 修复传空 area-list 时报错的问题 |
-| 0.12.3 | bugfix | 修复 setCode 方法失效的问题 |
-| 0.11.14 | improvement | 优化性能 |
-| 0.11.13 | feature | 新增 title 属性 |
-| 0.11.11 | feature | 新增 focus、change-area、select-search 事件 |
-| 0.9.2 | feature | 新增组件 |

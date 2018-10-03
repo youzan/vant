@@ -183,11 +183,3 @@ export default {
 | 1.1.11 | improvement | 新增 label-position 属性 |
 | 1.1.8 | bugfix | 修复 v-model 类型检查错误 |
 | 1.1.0 | bugfix | 修复内容为空时渲染了空 label 元素的问题 |
-| 0.12.11 | improvement | 新增 label-disabled 属性，支持禁用 label 点击 |
-| 0.12.10 | improvement | 优化 DOM 结构 |
-| 0.12.10 | improvement | 新增 max 属性 |
-| 0.11.11 | bugfix | 修复 disabled 属性无法生效的问题 |
-| 0.11.6 | bugfix | 修复禁用态样式 |
-| 0.10.1 | bugfix | 修复微信浏览器下的边框渲染错误 |
-| 0.9.7 | improvement | 新增 shape 属性 |
-| 0.8.8 | improvement | 新增 change 事件 |

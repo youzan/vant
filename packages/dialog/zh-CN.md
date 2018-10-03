@@ -166,8 +166,3 @@ export default {
 | 1.1.5 | improvement | 优化按钮文字选中状态
 | 1.0.6 | feature | 新增 before-close 属性, 支持异步关闭
 | 1.0.4 | bugfix | 修复未初始化时 close 方法报错的问题
-| 0.12.4 | feature | 新增 setDefaultOptions 方法
-| 0.11.4 | feature | 支持 this.$dialog 调用
-| 0.10.6 | bugfix | 修复按钮文字未重置的问题
-| 0.8.7 | feature | 支持通过组件的方式进行调用
-| 0.8.5 | bugfix | 修复 z-index 错误的问题

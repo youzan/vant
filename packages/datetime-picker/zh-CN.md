@@ -165,4 +165,3 @@ export default {
 | 1.0.4 | feature | 支持 Picker 组件所有属性
 | 1.0.2 | feature | 新增 show-toolbar 属性
 | 1.0.2 | feature | 新增 month-year 类型
-| 0.7.8 | bugfix | 修复 cancel 事件无法触发的问题

@@ -80,9 +80,3 @@ export default {
 | 1.1.2 | improvement | 优化禁用状态样式 |
 | 1.1.2 | bugfix | 修复 integer 属性拼写错误 |
 | 1.1.1 | feature | 新增 integer 属性 |
-| 1.0.0 | bugfix | 修复 value 溢出的问题 |
-| 0.12.10 | bugfix | 修复清空输入框时 change 事件未正确触发的问题 |
-| 0.12.4 | bugfix | 修改 value 值时不触发 change 事件 |
-| 0.10.8 | feature | 新增 plus、minus 事件 |
-| 0.9.10 | bugfix | 修复输入框样式错误 |
-| 0.9.2 | breaking change | 由 Quantity 重命名为 Stepper |

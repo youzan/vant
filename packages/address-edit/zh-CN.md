@@ -139,11 +139,3 @@ export default {
 | 1.0.2 | bugfix | 修复初始化时省市区未正确选中的问题
 | 1.0.0 | feature | 新增 show-delete 属性
 | 1.0.0 | bugfix | 修复在数据变更时未正确选中省市区的问题
-| 0.12.13 | feature | 支持自定义手机号校验函数
-| 0.12.6 | feature | 增加默认插槽
-| 0.12.3 | bugfix | 修复 setAreaCode 方法失效的问题
-| 0.12.2 | bugfix | 修复搜索结果样式错误
-| 0.11.11 | feature | 新增 focus、change-area、select-search 事件
-| 0.11.11 | bugfix | 修复搜索结果展示错误
-| 0.9.11 | bugfix | 修正组件姓名字段的键名为 name
-| 0.9.10 | feature | 新增组件

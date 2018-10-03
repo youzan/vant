@@ -95,5 +95,3 @@ export default {
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
 | 1.1.5 | improvement | 支持 string 类型 id |
-| 0.12.8 | bugfix | 修复箭头位置错误 |
-| 0.9.2 | breaking change | 由 DeepSelect 重命名为 TreeSelect |

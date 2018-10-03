@@ -97,5 +97,3 @@ Vue.use(SubmitBar);
 | 1.0.5 | bugfix | 修复字体大小继承错误的问题 |
 | 1.0.4 | improvement | 优化文字大小 |
 | 1.0.4 | bugfix | 修复金额保留位数错误的问题 |
-| 0.11.1 | feature | 新增默认插槽 |
-| 0.9.2 | feature | 新增组件 |

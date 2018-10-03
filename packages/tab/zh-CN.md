@@ -203,16 +203,3 @@ export default {
 | 1.0.3 | feature | click 事件回调新增 title 参数
 | 1.0.2 | bugfix | 修复内容无法点击的问题
 | 1.0.0 | feature | 支持通过滑动手势进行切换
-| 0.12.8 | feature | 新增 title 插槽
-| 0.12.6 | bugfix | 修复 active 在初始化时未生效的问题
-| 0.12.0 | bugfix | 修复使用 sticky 时高度计算错误的问题
-| 0.11.8 | bugfix | 修复 safari 下的滚动条问题
-| 0.11.8 | bugfix | 修复 active 标签不能自动居中的问题
-| 0.11.7 | feature | 传入 sticky 属性且切换标签时，自动滚动至顶部
-| 0.11.7 | bugfix | 修复初始标签滚动位置
-| 0.11.6 | feature | 新增 sticky 属性
-| 0.11.6 | improvement | 优化动画流畅度
-| 0.11.5 | bugfix | 修复删除时未自动切换 active 值的问题
-| 0.10.6 | bugfix | 修复动态生成问题
-| 0.10.1 | feature | 新增 swipe-threshold 属性
-| 0.9.10 | bugfix | 修复 props 修改后未同步至父组件的问题

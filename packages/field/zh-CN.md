@@ -181,12 +181,3 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | 1.0.8 | bugfix | 修复 number 类型无法输入负数的问题
 | 1.0.3 | feature | 新增 button 插槽，支持插入按钮
 | 1.0.0 | feature | 支持配置 autosize 最大/最小高度
-| 0.12.12 | bugfix | 修复在 safari 下禁用态颜色过浅的问题
-| 0.12.7 | bugfix | 修复 label 多行时样式错误的问题
-| 0.12.0 | feature | 新增 error-message 属性
-| 0.11.11 | feature | 支持 input 标签原生事件
-| 0.11.6 | bugfix | 修复 number 类型输入值过滤
-| 0.11.6 | bugfix | 修复 disabled 在安卓下的显示问题
-| 0.10.0 | bugfix | 修复 type 为 textarea 且 display none 时高度计算错误的问题
-| 0.8.5 | feature | 新增 icon 插槽
-| 0.8.5 | bugfix | 修复 autosize 高度错误的问题

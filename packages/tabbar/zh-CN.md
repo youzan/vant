@@ -105,8 +105,3 @@ export default {
 | 1.1.15 | bugfix | 修复点击当前标签时依然会触发 change 事件的问题 |
 | 1.1.9 | feature | 新增 z-index 属性 |
 | 1.0.5 | improvement | info 属性支持 Number 类型 |
-| 0.11.1 | feature | icon 插槽支持通过 slot-scope 判断 active 状态 |
-| 0.10.8 | feature | 新增 to、replace 属性 |
-| 0.10.5 | bugfix | 修复使用 icon slot 时 info prop 失效的问题 |
-| 0.10.3 | feature | 新增 info 属性 |
-| 0.10.0 | feature | 新增组件 |

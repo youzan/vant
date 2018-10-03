@@ -78,7 +78,3 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 | 1.1.3 | improvement | 样式更新 |
 | 1.1.2 | bugfix | 修复错误展示边框的问题 |
 | 1.1.1 | bugfix | 修复在 iOS 下文字被遮挡的问题 |
-| 0.11.15 | improvement | 更新 search 图标样式 |
-| 0.11.13 | feature | 支持 input 原生事件 |
-| 0.11.11 | feature | 新增 focus、change-area、select-search 事件 |
-| 0.9.12 | bugfix | 修复样式问题 |

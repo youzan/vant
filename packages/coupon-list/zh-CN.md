@@ -114,17 +114,3 @@ export default {
 | endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
 | value | 订单优惠金额，单位分 | `Number` |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 0.12.13 | bugfix | 修复文字截断的问题 |
-| 0.12.5 | improvement | 支持 v-model 绑定输入值 |
-| 0.12.5 | improvement | 新增 exchange-loading 属性 |
-| 0.12.5 | improvement | 新增 exchange-min-length 属性 |
-| 0.12.1 | bugfix | 修复行高错误的问题 |
-| 0.12.1 | bugfix | 修复输入框样式错误 |
-| 0.11.11 | improvement | 新增点击反馈 |
-| 0.10.4 | bugfix | 修复空列表提示展示时机错误的问题 |
-| 0.9.2 | breaking change | 拆分为 CouponCell 和 CouponList 组件 |

@@ -69,5 +69,3 @@ Vue.use(Progress);
 | 1.1.12 | bugfix | 修复文字为空时样式错误的问题 |
 | 1.1.5 | bugfix | 修复文字超出边界的问题 |
 | 1.1.4 | feature | 支持渐变色 |
-| 0.10.8 | feature | 新增 show-pivot 属性 |
-| 0.8.7 | improvement | 简化 DOM 结构 |

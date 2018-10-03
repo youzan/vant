@@ -35,8 +35,4 @@ Vue.use(Loading);
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.3.0 | feature | 支持配置为任意颜色
-| 0.12.9 | feature | 新增 size 属性
-| 0.12.9 | feature | 新增 circular 类型
-| 0.12.9 | improvement | type 默认值修改为 circular
-| 0.10.8 | feature | 新增 spinner 类型
+| 1.3.0 | feature | 支持配置为任意颜色 |
