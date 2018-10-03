@@ -1,5 +1,56 @@
 ## 更新日志
 
+## [v1.3.4](https://github.com/youzan/vant/tree/v1.3.4) (2018-10-02)
+[Full Changelog](https://github.com/youzan/vant/compare/v1.3.3...v1.3.4)
+
+**Bug Fixes**
+
+- field输入框maxlength属性无效 [\#1829](https://github.com/youzan/vant/issues/1829)
+- PullRefresh 下拉刷新 报错 [\#1809](https://github.com/youzan/vant/issues/1809)
+- DatetimePicker 动态设置min-date有bug [\#1793](https://github.com/youzan/vant/issues/1793)
+
+**Issue**
+
+- van-goods-action 和 Steps 有样式穿透的问题 [\#1883](https://github.com/youzan/vant/issues/1883)
+- 首次加载,会不停的加载数据,滚动条距离底部很远它自己就发起请求了,这是什么原因呢 [\#1882](https://github.com/youzan/vant/issues/1882)
+- vantUI移动端开发遇到的问题和bug [\#1880](https://github.com/youzan/vant/issues/1880)
+- vant-list 问题疑惑 [\#1876](https://github.com/youzan/vant/issues/1876)
+- Collapse折叠面板嵌套使用，子面板的图标展示不正确 [\#1874](https://github.com/youzan/vant/issues/1874)
+- Collapse 折叠面板是否支持多级折叠 [\#1873](https://github.com/youzan/vant/issues/1873)
+- 是否有 ts-import-plugin 的vant配置示例？ [\#1872](https://github.com/youzan/vant/issues/1872)
+- 不是模块化开发下，ImagePreview怎么使用呢？ [\#1871](https://github.com/youzan/vant/issues/1871)
+- 全部引入了但是Toast等好多一用就说找不到 [\#1868](https://github.com/youzan/vant/issues/1868)
+- 您好，我想请问下，van-actionsheet 和 van-picker 一起使用的情况下，如何通过 ref 获取 van-picker 实例呢？代码如下 [\#1867](https://github.com/youzan/vant/issues/1867)
+- vant的组件如果使用英文模式？ [\#1866](https://github.com/youzan/vant/issues/1866)
+- tab切换没有触发list的load事件 [\#1864](https://github.com/youzan/vant/issues/1864)
+- 为什么swipe组件，文档里在pc上支持鼠标滑动，实际项目中只能移动端可以滑动 [\#1863](https://github.com/youzan/vant/issues/1863)
+- 在无法连通接口的情况下，项目无法启动问题 [\#1862](https://github.com/youzan/vant/issues/1862)
+- 一些建议 [\#1860](https://github.com/youzan/vant/issues/1860)
+- HTML直接引用Vant，Swipe组件无法使用？ [\#1858](https://github.com/youzan/vant/issues/1858)
+- 提一个小小的建议,团队是否后期考虑做vw适配方案? [\#1857](https://github.com/youzan/vant/issues/1857)
+- POPUP组件无法传入内容? [\#1856](https://github.com/youzan/vant/issues/1856)
+- Tabbar iPhone x 底部冲突 [\#1855](https://github.com/youzan/vant/issues/1855)
+- 希望提供调整vant-tab样式的方法 [\#1854](https://github.com/youzan/vant/issues/1854)
+- Tabbar 标签栏打包后无法固定在页面底部 [\#1853](https://github.com/youzan/vant/issues/1853)
+- TS 类型完善 [\#1852](https://github.com/youzan/vant/issues/1852)
+- list组件设置了finished为true以后，还是请求了一次 [\#1851](https://github.com/youzan/vant/issues/1851)
+- swipe与popup组件一起使用,swipe初始化的时候,每个swipe-item获取不到宽度 [\#1843](https://github.com/youzan/vant/issues/1843)
+- \[ios\]Field 中文输入法无法输入 [\#1842](https://github.com/youzan/vant/issues/1842)
+- SwiperCell组件无法自定义点击事件 [\#1838](https://github.com/youzan/vant/issues/1838)
+
+**Improvements**
+
+- \[improvement\] ImagePreview: add show-index prop [\#1889](https://github.com/youzan/vant/pull/1889) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Picker: update style [\#1887](https://github.com/youzan/vant/pull/1887) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Button: update disabled style [\#1886](https://github.com/youzan/vant/pull/1886) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Button: add round prop [\#1885](https://github.com/youzan/vant/pull/1885) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] SwipeCell: add disabled prop [\#1884](https://github.com/youzan/vant/pull/1884) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Card: add thumb link prop [\#1879](https://github.com/youzan/vant/pull/1879) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] Card: add tag prop [\#1878](https://github.com/youzan/vant/pull/1878) ([chenjiahan](https://github.com/chenjiahan))
+- \[improvement\] AddressEdit: optimzie area select [\#1877](https://github.com/youzan/vant/pull/1877) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\] Toast: type definition [\#1859](https://github.com/youzan/vant/pull/1859) ([chenjiahan](https://github.com/chenjiahan))
+- \[bugfix\]: demo of miswriting [\#1849](https://github.com/youzan/vant/pull/1849) ([hua1995116](https://github.com/hua1995116))
+
 ## [v1.3.3](https://github.com/youzan/vant/tree/v1.3.3) (2018-09-23)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.3.2...v1.3.3)
 
@@ -116,9 +167,6 @@
 **Bug Fixes**
 
 - DatetimePicker 时间选择组件BUG [\#1700](https://github.com/youzan/vant/issues/1700)
-- Swipe 组件bug [\#1679](https://github.com/youzan/vant/issues/1679)
-- 关于Tabbar-item的info不显示 [\#1674](https://github.com/youzan/vant/issues/1674)
-- tab标签页swipeable滑动切换可以切换到禁用的标签上 [\#1656](https://github.com/youzan/vant/issues/1656)
 
 **Issue**
 
@@ -160,15 +208,6 @@
 ## [v1.3.0](https://github.com/youzan/vant/tree/v1.3.0) (2018-08-31)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.2.1...v1.3.0)
 
-**Breaking changes**
-
-- 部分自定义图标和自带图标Icon无法同时显示 [\#1661](https://github.com/youzan/vant/issues/1661)
-
-**Bug Fixes**
-
-- Stepper默认值不能为0 [\#1682](https://github.com/youzan/vant/issues/1682)
-- Tab标签页激活的底边框颜色 [\#1672](https://github.com/youzan/vant/issues/1672)
-
 **Issue**
 
 - Popup组件与vue-touch结合bug [\#1733](https://github.com/youzan/vant/issues/1733)
@@ -196,8 +235,6 @@
 - 依据开发指南的指令启动失败 [\#1691](https://github.com/youzan/vant/issues/1691)
 - DateTimePicker是否可以支持月日的选择呢? [\#1690](https://github.com/youzan/vant/issues/1690)
 - Van-field in custom component [\#1689](https://github.com/youzan/vant/issues/1689)
-- 建议Search组件，鼠标悬浮时就显示清除按钮 [\#1675](https://github.com/youzan/vant/issues/1675)
-- van-tabs滑动切换 [\#1669](https://github.com/youzan/vant/issues/1669)
 
 **Improvements**
 
@@ -222,21 +259,9 @@
 ## [v1.2.1](https://github.com/youzan/vant/tree/v1.2.1) (2018-08-24)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.2.0...v1.2.1)
 
-**Breaking changes**
-
-- AddressEdit组件show-delete设置false 和 address-info 冲突 [\#1645](https://github.com/youzan/vant/issues/1645)
-
 **Issue**
 
 - radio显示选中了两个 [\#1683](https://github.com/youzan/vant/issues/1683)
-- 请问，搭建完vue-cli项目后安装vant为什么装不了？？ [\#1673](https://github.com/youzan/vant/issues/1673)
-- 希望单选组件的选中样式加到外层父级或者给选中的label上也加一个选中类名，这样方便后期给选中字体添加样式，增加单选组件样式的可扩展性 [\#1668](https://github.com/youzan/vant/issues/1668)
-- Checkbox 组如何设置全选?? [\#1667](https://github.com/youzan/vant/issues/1667)
-- ImagePreview 图片预览中传入配置项无法预览 [\#1666](https://github.com/youzan/vant/issues/1666)
-- 一次性导入所有组件的情况下，能定制主题吗？ [\#1663](https://github.com/youzan/vant/issues/1663)
-- vant 引入SwipeCell 滑动单元格报错？ [\#1662](https://github.com/youzan/vant/issues/1662)
-- 有关vant-tabs使用better-scroll问题 [\#1658](https://github.com/youzan/vant/issues/1658)
-- dependencies were not found:  \* vant/lib/swipe-cell  [\#1657](https://github.com/youzan/vant/issues/1657)
 
 **Improvements**
 
@@ -244,36 +269,9 @@
 - \[bugfix\] Stepper: value can not be zero [\#1687](https://github.com/youzan/vant/pull/1687) ([chenjiahan](https://github.com/chenjiahan))
 - \[bugfix\] Tab: custom line color [\#1686](https://github.com/youzan/vant/pull/1686) ([chenjiahan](https://github.com/chenjiahan))
 - \[Doc\] update area document [\#1684](https://github.com/youzan/vant/pull/1684) ([chenjiahan](https://github.com/chenjiahan))
-- \[Doc\] 补全 van-pagination 组件文档中缺少的 total-items 属性和 page-count 属性的说明 [\#1681](https://github.com/youzan/vant/pull/1681) ([Rickykurt](https://github.com/Rickykurt))
-- \[Doc\] 修正文档错别字“阙值、阀值”为阈值 [\#1680](https://github.com/youzan/vant/pull/1680) ([Rickykurt](https://github.com/Rickykurt))
-- \[Improvement\] Field: update clear icon color [\#1678](https://github.com/youzan/vant/pull/1678) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] ContactEdit: optimize style [\#1677](https://github.com/youzan/vant/pull/1677) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] AddressEdit: optimize style [\#1676](https://github.com/youzan/vant/pull/1676) ([chenjiahan](https://github.com/chenjiahan))
-- \[new feature\] CollapseItem: enhancement, can use like `Cell` [\#1671](https://github.com/youzan/vant/pull/1671) ([Zenser](https://github.com/Zenser))
-- \[bugfix\] Icon: fix share icon font-weight [\#1670](https://github.com/youzan/vant/pull/1670) ([chenjiahan](https://github.com/chenjiahan))
-- \[bug fix\]Fix `Popup` of setting `getContainer` when the parent component is destroyed and the DOM object is not destroyed [\#1665](https://github.com/youzan/vant/pull/1665) ([lpreterite](https://github.com/lpreterite))
-- \[new feature\] Swipe: support custom item width & height [\#1664](https://github.com/youzan/vant/pull/1664) ([xliez](https://github.com/xliez))
 
 ## [v1.2.0](https://github.com/youzan/vant/tree/v1.2.0) (2018-08-20)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.16...v1.2.0)
-
-**Issue**
-
-- Vant大佬们,可否再开设几个Vant讨论群好一起交流Vant使用心得 [\#1654](https://github.com/youzan/vant/issues/1654)
-- 预览大图不能实现预览指定位置图片 [\#1651](https://github.com/youzan/vant/issues/1651)
-- Swipe cell right is not properly styled [\#1650](https://github.com/youzan/vant/issues/1650)
-- 需要一个可以设置Radio图标的功能 [\#1647](https://github.com/youzan/vant/issues/1647)
-- 用CDN引用vant, Toast无法使用 [\#1646](https://github.com/youzan/vant/issues/1646)
-
-**Improvements**
-
-- \[Improvement\] Icon: add aim [\#1655](https://github.com/youzan/vant/pull/1655) ([chenjiahan](https://github.com/chenjiahan))
-- \[Improvement\] Area: update province data [\#1653](https://github.com/youzan/vant/pull/1653) ([chenjiahan](https://github.com/chenjiahan))
-- \[breaking change\] CellSwipe: rename to SwipeCell [\#1652](https://github.com/youzan/vant/pull/1652) ([chenjiahan](https://github.com/chenjiahan))
-- \[Build\] fix hot reload [\#1649](https://github.com/youzan/vant/pull/1649) ([chenjiahan](https://github.com/chenjiahan))
-- \[bugfix\] AddressEdit: show delete [\#1648](https://github.com/youzan/vant/pull/1648) ([chenjiahan](https://github.com/chenjiahan))
-- \[breaking change\] AddressEdit: use camelcase data [\#1644](https://github.com/youzan/vant/pull/1644) ([chenjiahan](https://github.com/chenjiahan))
-- \[breaking change\] Coupon: use camelcase data [\#1643](https://github.com/youzan/vant/pull/1643) ([chenjiahan](https://github.com/chenjiahan))
 
 ## [v1.1.16](https://github.com/youzan/vant/tree/v1.1.16) (2018-08-10)
 [Full Changelog](https://github.com/youzan/vant/compare/v1.1.15...v1.1.16)

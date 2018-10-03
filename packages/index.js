@@ -69,7 +69,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.3.3';
+const version = '1.3.4';
 const components = [
   Actionsheet,
   AddressEdit,

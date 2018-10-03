@@ -1,5 +1,23 @@
 ## 更新日志
 
+### [1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
+`2018-10-02`
+
+**Improvements**
+
+- Button: 新增 round 属性 [\#1885](https://github.com/youzan/vant/pull/1885)
+- Button: 优化禁用态样式 [\#1886](https://github.com/youzan/vant/pull/1886)
+- Card: 新增 tag 属性 [\#1878](https://github.com/youzan/vant/pull/1878)
+- Card: 新增 thumb-link 属性 [\#1879](https://github.com/youzan/vant/pull/1879)
+- ImagePreview: 新增 show-index 属性 [\#1889](https://github.com/youzan/vant/pull/1889)
+- Picker: 优化样式 [\#1887](https://github.com/youzan/vant/pull/1887)
+- SwipeCell: 新增 disabled 属性 [\#1884](https://github.com/youzan/vant/pull/1884)
+
+**Bug Fixes**
+
+- 修复 Toast 类型定义错误 [\#1859](https://github.com/youzan/vant/pull/1859)
+
+
 ### [1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
 `2018-09-23`
 

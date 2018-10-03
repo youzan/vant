@@ -1,5 +1,23 @@
 ## Changelog
 
+### [1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
+`2018-10-02`
+
+**Improvements**
+
+- Button: add round prop [\#1885](https://github.com/youzan/vant/pull/1885)
+- Button: update disabled style [\#1886](https://github.com/youzan/vant/pull/1886)
+- Card: add tag prop [\#1878](https://github.com/youzan/vant/pull/1878)
+- Card: add thumb-link prop [\#1879](https://github.com/youzan/vant/pull/1879)
+- ImagePreview: add show-index prop [\#1889](https://github.com/youzan/vant/pull/1889)
+- Picker: update style [\#1887](https://github.com/youzan/vant/pull/1887)
+- SwipeCell: add disabled prop [\#1884](https://github.com/youzan/vant/pull/1884)
+
+**Bug Fixes**
+
+- fix Toast type definition [\#1859](https://github.com/youzan/vant/pull/1859)
+
+
 ### [1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
 `2018-09-23`
 
