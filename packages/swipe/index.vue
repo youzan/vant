@@ -175,7 +175,7 @@ export default create({
     },
 
     onTouchMove(event) {
-      if (!this.touchable) return;
+      if (!this.touchable || !this.swiping) return;
 
       this.touchMove(event);
 
@@ -190,14 +190,14 @@ export default create({
     },
 
     onTouchEnd() {
-      if (!this.touchable) return;
+      if (!this.touchable || !this.swiping) return;
 
       if (this.delta) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
         this.move(offset > 50 ? (this.delta > 0 ? -1 : 1) : 0);
-        this.swiping = false;
       }
 
+      this.swiping = false;
       this.autoPlay();
     },
 
