@@ -1,11 +1,10 @@
 <template>
-  <div
-    :class="[
-      b({ expanded }),
-      { 'van-hairline--top': index }
-    ]"
-  >
-    <cell :class="b('title')" @click="onClick" v-bind="$props">
+  <div :class="{ 'van-hairline--top': index }">
+    <cell
+      v-bind="$props"
+      :class="b('title', { disabled, expanded })"
+      @click="onClick"
+    >
       <slot name="title" slot="title" />
       <slot name="icon" slot="icon" />
       <slot name="value" />
@@ -35,6 +34,7 @@ export default create({
     label: String,
     title: [String, Number],
     value: [String, Number],
+    disabled: Boolean,
     border: {
       type: Boolean,
       default: true
@@ -116,6 +116,10 @@ export default create({
 
   methods: {
     onClick() {
+      if (this.disabled) {
+        return;
+      }
+
       const { parent } = this;
       const name = parent.accordion && this.currentName === parent.value ? '' : this.currentName;
       const expanded = !this.expanded;
