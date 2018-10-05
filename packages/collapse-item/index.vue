@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'van-hairline--top': index }">
+  <div :class="[b(), { 'van-hairline--top': index }]">
     <cell
       v-bind="$props"
       :class="b('title', { disabled, expanded })"
