@@ -11,7 +11,7 @@
     <div :class="b('wrap')" ref="wrap">
       <div
         ref="content"
-        :class="[b('content'), animationClass]"
+        :class="[b('content'), animationClass, { 'van-ellipsis': !scrollable }]"
         :style="contentStyle"
         @animationend="onAnimationEnd"
         @webkitAnimationEnd="onAnimationEnd"
