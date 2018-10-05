@@ -20,7 +20,7 @@ Vue.use(Collapse).use(CollapseItem);
   <van-collapse-item title="有赞零售" name="2">
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
   </van-collapse-item>
-  <van-collapse-item title="有赞美业" name="3">
+  <van-collapse-item title="有赞美业" name="3" disabled>
     线上拓客，随时预约，贴心顺手的开单收银
   </van-collapse-item>
 </van-collapse>
@@ -102,6 +102,7 @@ export default {
 | value | 标题栏右侧内容 | `String | Number` | - |
 | label | 标题栏描述信息 | `String` | - |
 | border | 是否显示内边框 | `Boolean` | `true` |
+| disabled | 是否禁用面板 | `Boolean` | `false` |
 | is-link | 标题栏是否展示右侧箭头并开启点击反馈 | `Boolean` | `true` |
 
 ### CollapseItem Slot
