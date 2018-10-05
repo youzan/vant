@@ -2,22 +2,23 @@
 
 .van-notice-bar {
   display: flex;
-  color: $orange;
-  padding: 9px 15px;
-  font-size: 12px;
-  line-height: 1.5;
+  color: #ed6a0c;
+  height: 40px;
+  padding: 0 15px;
+  font-size: 14px;
+  line-height: 24px;
   position: relative;
-  background-color: #fff7cc;
+  align-items: center;
+  background-color: #fffbe8;
 
   &--withicon {
     position: relative;
-    padding-right: 30px;
+    padding-right: 40px;
   }
 
   &__left-icon {
     height: 18px;
     min-width: 20px;
-    padding-top: 1px;
     box-sizing: border-box;
 
     img {
@@ -27,16 +28,15 @@
   }
 
   &__right-icon {
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 15px;
+    font-size: 16px;
     position: absolute;
-    font-size: 15px;
-    line-height: 1;
   }
 
   &__wrap {
     flex: 1;
-    height: 18px;
+    height: 24px;
     overflow: hidden;
     position: relative;
   }
@@ -44,6 +44,10 @@
   &__content {
     position: absolute;
     white-space: nowrap;
+
+    &.van-ellipsis {
+      max-width: 100%;
+    }
   }
 
   &__play {
