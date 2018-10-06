@@ -93,15 +93,14 @@ export default create({
     },
 
     imageStyle() {
+      const { scale } = this;
       const style = {
         transition: this.zooming || this.moving ? '' : '.3s all'
       };
 
-      if (this.scale !== 1) {
-        style.transform = `scale3d(${this.scale}, ${
-          this.scale
-        }, 1) translate(${this.moveX / this.scale}px, ${this.moveY /
-          this.scale}px)`;
+      if (scale !== 1) {
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this
+          .moveX / scale}px, ${this.moveY / scale}px)`;
       }
 
       return style;
