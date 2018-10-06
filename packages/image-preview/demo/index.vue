@@ -64,7 +64,7 @@ export default {
 
 .van-image-preview {
   img {
-    pointer-events: none;
+    -webkit-user-drag: none;
   }
 }
 </style>
