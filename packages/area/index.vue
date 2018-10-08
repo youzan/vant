@@ -163,7 +163,36 @@ export default create({
     },
 
     getValues() {
-      return this.$refs.picker ? this.$refs.picker.getValues() : [];
+      return this.$refs.picker ? this.$refs.picker.getValues().filter(value => !!value) : [];
+    },
+
+    getArea() {
+      const values = this.getValues();
+      const area = {
+        code: '',
+        country: '',
+        province: '',
+        city: '',
+        county: ''
+      };
+
+      if (!values.length) {
+        return area;
+      }
+
+      const names = values.map(item => item.name);
+
+      area.code = values[values.length - 1].code;
+      if (area.code[0] === '9') {
+        area.country = names[1] || '';
+        area.province = names[2] || '';
+      } else {
+        area.province = names[0] || '';
+        area.city = names[1] || '';
+        area.county = names[2] || '';
+      }
+
+      return area;
     },
 
     reset() {

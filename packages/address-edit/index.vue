@@ -99,6 +99,7 @@ import validateMobile from '../utils/validate/mobile';
 const defaultData = {
   name: '',
   tel: '',
+  country: '',
   province: '',
   city: '',
   county: '',
@@ -181,10 +182,10 @@ export default create({
     },
 
     areaText() {
-      const { province, city, county, areaCode } = this.data;
+      const { country, province, city, county, areaCode } = this.data;
       if (areaCode) {
-        const arr = [province, city, county].filter(text => text);
-        if (province === city) {
+        const arr = [country, province, city, county].filter(text => text);
+        if (province && province === city) {
           arr.shift();
         }
         return arr.join('/');
@@ -225,19 +226,19 @@ export default create({
     },
 
     onAreaConfirm(values) {
-      const areaCode = (values[2] || values[1] || values[0]).code;
       this.showAreaPopup = false;
-      this.data.areaCode = areaCode;
-      this.assignAreaValues(values);
+      this.assignAreaValues();
       this.$emit('change-area', values);
     },
 
     assignAreaValues(values) {
-      Object.assign(this.data, {
-        province: values[0] ? values[0].name : '',
-        city: values[1] ? values[1].name : '',
-        county: values[2] ? values[2].name : ''
-      });
+      const { area } = this.$refs;
+      if (area) {
+        const detail = area.getArea();
+        detail.areaCode = detail.code;
+        delete detail.code;
+        Object.assign(this.data, detail);
+      }
     },
 
     onSave() {
@@ -299,12 +300,7 @@ export default create({
     // set area code to area component
     setAreaCode(code) {
       this.data.areaCode = code || '';
-      this.$nextTick(() => {
-        const { area } = this.$refs;
-        if (area) {
-          this.assignAreaValues(area.getValues());
-        }
-      });
+      code && this.$nextTick(this.assignAreaValues);
     },
 
     setAddressDetail(value) {
