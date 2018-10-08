@@ -100,6 +100,11 @@ export default create({
       }));
 
       if (code) {
+        // oversea code
+        if (code[0] === '9' && type === 'city') {
+          code = '9';
+        }
+
         result = result.filter(item => item.code.indexOf(code) === 0);
       }
 
@@ -108,10 +113,15 @@ export default create({
 
     // get index by code
     getIndex(type, code) {
-      const compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
+      let compareNum = type === 'province' ? 2 : type === 'city' ? 4 : 6;
       const list = this.getList(type, code.slice(0, compareNum - 2));
-      code = code.slice(0, compareNum);
 
+      // oversea code
+      if (code[0] === '9' && type === 'province') {
+        compareNum = 1;
+      }
+
+      code = code.slice(0, compareNum);
       for (let i = 0; i < list.length; i++) {
         if (list[i].code.slice(0, compareNum) === code) {
           return i;

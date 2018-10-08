@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-area ref="area" :area-list="$t('areaList')" />
+      <van-area ref="area" :area-list="$t('areaList')" @confirm="onConfirm" />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -36,6 +36,12 @@ export default {
     return {
       value: '330302'
     };
+  },
+
+  methods: {
+    onConfirm(values) {
+      console.log(values);
+    }
   }
 };
 </script>
