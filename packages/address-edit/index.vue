@@ -184,11 +184,11 @@ export default create({
     areaText() {
       const { country, province, city, county, areaCode } = this.data;
       if (areaCode) {
-        const arr = [country, province, city, county].filter(text => text);
+        const arr = [country, province, city, county];
         if (province && province === city) {
-          arr.shift();
+          arr.splice(1, 1);
         }
-        return arr.join('/');
+        return arr.filter(text => text).join('/');
       }
       return '';
     }
