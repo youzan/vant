@@ -106,7 +106,6 @@ export default {
       this.mainActiveIndex = index;
     },
     onItemClick(data) {
-      console.log(data);
       this.activeId = data.id;
     }
   }
