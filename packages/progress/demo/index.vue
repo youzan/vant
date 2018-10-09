@@ -10,7 +10,7 @@
 
     <demo-block :title="$t('title3')">
       <van-progress :pivot-text="$t('orange')" color="#f2826a" :percentage="25" />
-      <van-progress :pivot-text="$t('red')" color="#f3594b" :percentage="50" />
+      <van-progress :pivot-text="$t('red')" color="#f44" :percentage="50" />
       <van-progress
         :percentage="75"
         :pivot-text="$t('purple')"

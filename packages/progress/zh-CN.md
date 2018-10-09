@@ -38,7 +38,7 @@ Vue.use(Progress);
 
 <van-progress
   pivot-text="红色"
-  color="#f3594b"
+  color="#f44"
   :percentage="50"
 />
 
