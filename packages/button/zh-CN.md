@@ -22,8 +22,8 @@ Vue.use(Button);
 #### 朴素按钮
 
 ```html
-<van-button plain type="primary">主要按钮</van-button>
-<van-button plain type="danger">危险按钮</van-button>
+<van-button plain type="primary">朴素按钮</van-button>
+<van-button plain type="danger">朴素按钮</van-button>
 ```
 
 #### 禁用状态

@@ -10,8 +10,8 @@
     </demo-block>
 
     <demo-block :title="$t('plain')">
-      <van-button plain type="primary">{{ $t('warning') }}</van-button>
-      <van-button plain type="danger">{{ $t('danger') }}</van-button>
+      <van-button plain type="primary">{{ $t('plain') }}</van-button>
+      <van-button plain type="danger">{{ $t('plain') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('disabled')">
