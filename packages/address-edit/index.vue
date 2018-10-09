@@ -69,7 +69,7 @@
       </van-button>
     </div>
 
-    <popup v-model="showAreaPopup" position="bottom" :lazy-render="false" :get-container="getAreaContainer">
+    <popup v-model="showAreaPopup" position="bottom" :lazy-render="false" get-container="body">
       <van-area
         ref="area"
         :loading="!areaListLoaded"
@@ -305,10 +305,6 @@ export default create({
 
     setAddressDetail(value) {
       this.data.addressDetail = value;
-    },
-
-    getAreaContainer() {
-      return document.body;
     }
   }
 });

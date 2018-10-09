@@ -35,6 +35,7 @@ const createComponent = () => {
     data,
     field,
     button,
+    wrapper,
     errorInfo
   };
 };
@@ -224,4 +225,16 @@ test('delete address', async() => {
   await later();
   expect(wrapper.emitted('delete')).toBeTruthy();
   expect(wrapper.emitted('cancel-delete')).toBeTruthy();
+});
+
+test('setAddressDetail method', () => {
+  const { vm, data } = createComponent();
+  vm.setAddressDetail('test');
+  expect(data.addressDetail).toEqual('test');
+});
+
+test('select area', () => {
+  const { wrapper, data } = createComponent();
+  wrapper.find('.van-picker__confirm').trigger('click');
+  expect(data.areaCode).toEqual('110101');
 });

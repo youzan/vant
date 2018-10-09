@@ -136,6 +136,11 @@ export default create({
 
   methods: {
     handler(action) {
+      /* istanbul ignore if */
+      if (this.$isServer) {
+        return;
+      }
+
       if (action !== this.handlerStatus && this.hideOnClickOutside) {
         this.handlerStatus = action;
         document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.onBlur);
