@@ -92,12 +92,12 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-steps__items van-steps__items--alone">
         <div class="van-hairline van-step van-step--vertical van-step--process">
-          <div class="van-step__title" style="color:#f60;">
+          <div class="van-step__title" style="color:#f44;">
             <h3>【城市】物流状态1</h3>
             <p>2016-07-12 12:40</p>
           </div>
           <div class="van-step__circle-container">
-            <i class="van-icon van-icon-checked" style="color:#f60;font-size:undefined;">
+            <i class="van-icon van-icon-checked" style="color:#f44;font-size:undefined;">
               <!---->
             </i>
           </div>
