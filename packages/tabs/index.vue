@@ -256,7 +256,7 @@ export default create({
         }
 
         const tab = this.$refs.tabs[this.curActive];
-        const width = this.lineWidth || tab.offsetWidth;
+        const width = this.lineWidth || (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
         this.lineStyle = {
