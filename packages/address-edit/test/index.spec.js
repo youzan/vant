@@ -120,26 +120,6 @@ test('valid postal code', () => {
   expect(errorInfo.postalCode).toBeFalsy();
 });
 
-test('select area', () => {
-  const wrapper = mount(AddressEdit, {
-    propsData: {
-      areaList
-    }
-  });
-  const { vm } = wrapper;
-  const { data } = vm;
-
-  vm.onAreaConfirm([
-    { name: '北京市' },
-    { name: '北京市' },
-    { name: '朝阳区', code: '123456' }
-  ]);
-  expect(data.province).toEqual('北京市');
-  expect(data.city).toEqual('北京市');
-  expect(data.county).toEqual('朝阳区');
-  expect(data.areaCode).toEqual('123456');
-});
-
 test('on change detail', () => {
   const wrapper = mount(AddressEdit);
   const field = wrapper.findAll('.van-field__control').at(3);
