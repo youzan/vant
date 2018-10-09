@@ -45,7 +45,6 @@ Vue.use(Card);
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | thumb | 左侧图片 URL | `String` | - |
-| thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
 | tag | 标签 | `String` | - |
@@ -53,6 +52,7 @@ Vue.use(Card);
 | price | 商品价格 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
+| thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 
 ### Slot
 
