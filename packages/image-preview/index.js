@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueImagePreview from './ImagePreview';
+import { isServer } from '../utils';
 
 let instance;
 
@@ -11,6 +12,11 @@ const initInstance = () => {
 };
 
 const ImagePreview = (images, startPosition) => {
+  /* istanbul ignore if */
+  if (isServer) {
+    return;
+  }
+
   if (!instance) {
     initInstance();
   }

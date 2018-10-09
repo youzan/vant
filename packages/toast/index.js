@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueToast from './Toast';
-import { isObj } from '../utils';
+import { isObj, isServer } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -37,6 +37,11 @@ function transformer(options) {
 }
 
 function Toast(options = {}) {
+  /* istanbul ignore if */
+  if (isServer) {
+    return;
+  }
+
   const toast = createInstance();
 
   options = {

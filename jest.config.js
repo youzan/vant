@@ -14,9 +14,9 @@ module.exports = {
     '!**/vant-css/**',
     '!**/demo/**',
     '!**/locale/lang/**',
-    '!**/waterfall/**',
     '!**/sku/**',
-    '!**/lazyload/**'
+    '!**/waterfall/**',
+    '!**/icon/config/**'
   ],
   collectCoverage: true,
   coverageReporters: ['html', 'lcov', 'text-summary'],
