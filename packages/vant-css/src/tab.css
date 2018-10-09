@@ -86,6 +86,7 @@ $van-tabs-card-height: 30px;
     bottom: 15px;
     height: 2px;
     position: absolute;
+    border-radius: 2px 0;
     background-color: $red;
   }
 
