@@ -91,7 +91,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-checkbox-group">
       <div class="van-cell-group van-hairline--top-bottom">
-        <div class="van-cell van-cell--clickable van-hairline">
+        <div class="van-cell van-cell--clickable">
           <!---->
           <div class="van-cell__title"><span>复选框a</span>
             <!---->
@@ -108,7 +108,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div class="van-cell van-cell--clickable van-hairline">
+        <div class="van-cell van-cell--clickable">
           <!---->
           <div class="van-cell__title"><span>复选框b</span>
             <!---->
@@ -125,7 +125,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div class="van-cell van-cell--clickable van-hairline">
+        <div class="van-cell van-cell--clickable">
           <!---->
           <div class="van-cell__title"><span>复选框c</span>
             <!---->

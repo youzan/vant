@@ -13,8 +13,11 @@
   overflow: hidden;
 
   &:not(:last-child)::after {
-    margin-left: 15px;
-    border-bottom-width: 1px;
+    @include hairline-bottom($border-color, 15px);
+  }
+
+  &--borderless::after {
+    display: none;
   }
 
   &-group {

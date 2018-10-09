@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-cell van-cell--center van-cell--clickable van-contact-card van-contact-card--add">
+    <div class="van-cell van-cell--center van-cell--borderless van-cell--clickable van-contact-card van-contact-card--add">
       <i class="van-icon van-icon-add2 van-cell__left-icon" style="color:undefined;font-size:undefined;">
         <!---->
       </i>
@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-contact-list">
         <div class="van-radio-group">
           <div class="van-cell-group van-hairline--top-bottom">
-            <div class="van-cell van-cell--clickable van-hairline">
+            <div class="van-cell van-cell--clickable">
               <!---->
               <!---->
               <div class="van-cell__value van-cell__value--alone">
@@ -35,7 +35,7 @@ exports[`renders demo correctly 1`] = `
     <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-edit">
         <div class="van-cell-group van-hairline--top-bottom">
-          <div maxlength="30" placeholder="请填写姓名" class="van-cell van-hairline van-field">
+          <div maxlength="30" placeholder="请填写姓名" class="van-cell van-field">
             <!---->
             <div class="van-cell__title"><span>张三</span>
               <!---->
@@ -51,7 +51,7 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <div placeholder="请填写电话" class="van-cell van-hairline van-field">
+          <div placeholder="请填写电话" class="van-cell van-field">
             <!---->
             <div class="van-cell__title"><span>电话</span>
               <!---->
@@ -76,7 +76,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-cell van-cell--center van-contact-card van-contact-card--edit">
+    <div class="van-cell van-cell--center van-cell--borderless van-contact-card van-contact-card--edit">
       <i class="van-icon van-icon-contact van-cell__left-icon" style="color:undefined;font-size:undefined;">
         <!---->
       </i>

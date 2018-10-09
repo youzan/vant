@@ -4,9 +4,9 @@
       b({
         center,
         required,
+        borderless: !border,
         clickable: isLink || clickable
-      }),
-      { 'van-hairline': border }
+      })
     ]"
     @click="onClick"
   >

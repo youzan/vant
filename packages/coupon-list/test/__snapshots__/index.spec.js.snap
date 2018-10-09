@@ -2,7 +2,7 @@
 
 exports[`coupon cell 1`] = `
 <div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
-  <div class="van-cell van-cell--clickable van-hairline">
+  <div class="van-cell van-cell--clickable">
     <!---->
     <div class="van-cell__title"><span>优惠券</span>
       <!---->
@@ -17,7 +17,7 @@ exports[`coupon cell 1`] = `
 
 exports[`coupon cell 2`] = `
 <div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
-  <div class="van-cell van-cell--clickable van-hairline">
+  <div class="van-cell van-cell--clickable">
     <!---->
     <div class="van-cell__title"><span>优惠券</span>
       <!---->
