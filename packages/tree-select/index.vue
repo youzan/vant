@@ -15,7 +15,8 @@
         :key="item.id"
         class="van-ellipsis"
         :class="b('item', { active: activeId === item.id })"
-        @click="onItemSelect(item)">
+        @click="onItemSelect(item)"
+      >
         {{ item.text }}
         <icon
           v-if="activeId === item.id"
