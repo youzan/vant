@@ -45,7 +45,6 @@ Use `slot` to custom content.
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | thumb | Left thumb image URL | `String` | - |
-| thumb-link | Thumb link URL | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
 | tag | Tag | `String` | - |
@@ -53,6 +52,7 @@ Use `slot` to custom content.
 | price | Price of goods | `String | Number` | - |
 | centered | Whether content vertical centered | `String` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
+| thumb-link | Thumb link URL | `String` | - |
 
 ### Slot
 
