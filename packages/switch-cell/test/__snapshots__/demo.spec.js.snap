@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
-      <div class="van-cell van-cell--center van-switch-cell">
+      <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
         <!---->
         <div class="van-cell__title"><span>标题</span>
           <!---->
@@ -22,7 +22,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
-      <div class="van-cell van-cell--center van-switch-cell">
+      <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
         <!---->
         <div class="van-cell__title"><span>标题</span>
           <!---->
@@ -40,7 +40,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
-      <div class="van-cell van-cell--center van-switch-cell">
+      <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
         <!---->
         <div class="van-cell__title"><span>标题</span>
           <!---->

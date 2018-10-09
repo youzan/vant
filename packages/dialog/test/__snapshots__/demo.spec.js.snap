@@ -14,7 +14,7 @@ exports[`renders demo correctly 1`] = `
     <div name="van-dialog-bounce" class="van-dialog" style="display:none;">
       <!---->
       <div class="van-dialog__content">
-        <div placeholder="请输入用户名" class="van-cell van-hairline van-field">
+        <div placeholder="请输入用户名" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>用户名</span>
             <!---->
@@ -30,7 +30,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div placeholder="请输入密码" class="van-cell van-hairline van-field">
+        <div placeholder="请输入密码" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>密码</span>
             <!---->

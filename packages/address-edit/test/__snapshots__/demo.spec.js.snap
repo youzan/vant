@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-address-edit">
       <div class="van-cell-group van-hairline--top-bottom">
-        <div maxlength="15" placeholder="收货人姓名" class="van-cell van-hairline van-field">
+        <div maxlength="15" placeholder="收货人姓名" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>姓名</span>
             <!---->
@@ -21,7 +21,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div placeholder="收货人手机号" class="van-cell van-hairline van-field">
+        <div placeholder="收货人手机号" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>电话</span>
             <!---->
@@ -37,7 +37,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div placeholder="选择省 / 市 / 区" class="van-cell van-hairline van-field">
+        <div placeholder="选择省 / 市 / 区" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>地区</span>
             <!---->
@@ -53,11 +53,11 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div class="van-cell van-hairline van-address-edit-detail">
+        <div class="van-cell van-address-edit-detail">
           <!---->
           <!---->
           <div class="van-cell__value van-cell__value--alone">
-            <div rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-hairline van-field">
+            <div rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-field">
               <!---->
               <div class="van-cell__title"><span>详细地址</span>
                 <!---->
@@ -76,7 +76,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div maxlength="6" placeholder="邮政编码" class="van-cell van-hairline van-field">
+        <div maxlength="6" placeholder="邮政编码" class="van-cell van-field">
           <!---->
           <div class="van-cell__title"><span>邮政编码</span>
             <!---->
@@ -92,7 +92,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <div class="van-cell van-cell--center van-switch-cell">
+        <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
           <!---->
           <div class="van-cell__title"><span>设为默认收货地址</span>
             <!---->
