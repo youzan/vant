@@ -13,7 +13,8 @@
   transform: translate3d(-50%, -50%, 0);
 
   &__header {
-    padding: 15px 0 0;
+    font-weight: 500;
+    padding-top: 25px;
     text-align: center;
 
     &--isolated {
@@ -22,12 +23,13 @@
   }
 
   &__message {
-    padding: 20px;
+    padding: 25px;
+    font-size: 14px;
     line-height: 1.5;
 
     &--has-title {
+      padding-top: 12px;
       color: $gray-darker;
-      font-size: 14px;
     }
   }
 
@@ -51,7 +53,7 @@
   &__confirm {
     &,
     &:active {
-      color: $red;
+      color: $blue;
     }
   }
 

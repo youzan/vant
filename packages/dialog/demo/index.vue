@@ -1,16 +1,16 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('title1')">
-      <van-button @click="onClickAlert">Alert</van-button>
-      <van-button @click="onClickAlert2">{{ $t('alert2') }}</van-button>
+    <demo-block :title="$t('alert1')">
+      <van-button type="primary" plain @click="onClickAlert">{{ $t('alert1') }}</van-button>
+      <van-button type="primary" plain @click="onClickAlert2">{{ $t('alert2') }}</van-button>
     </demo-block>
 
-    <demo-block :title="$t('title2')">
-      <van-button @click="onClickConfirm">Confirm</van-button>
+    <demo-block :title="$t('confirm')">
+      <van-button type="primary" plain @click="onClickConfirm">{{ $t('confirm') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-button @click="show = true">{{ $t('advancedUsage') }}</van-button>
+      <van-button type="danger" plain @click="show = true">{{ $t('advancedUsage') }}</van-button>
       <van-dialog
         v-model="show"
         show-cancel-button
@@ -36,14 +36,15 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: '消息提示',
-      title2: '消息确认',
-      alert2: '无标题 Alert'
+      alert1: '消息提示',
+      alert2: '无标题提示',
+      confirm: '消息确认',
+      content: '有赞是一家零售科技公司，致力于成为商家服务领域里最被信任的引领者'
     },
     'en-US': {
-      title1: 'Alert dialog',
-      title2: 'Confirm dialog',
-      alert2: 'Alert without title'
+      alert1: 'Alert',
+      alert2: 'Alert without title',
+      confirm: 'Confirm dialog'
     }
   },
 
@@ -90,7 +91,7 @@ export default {
 <style lang="postcss">
 .demo-dialog {
   .van-doc-demo-block > .van-button {
-    margin: 15px;
+    margin-left: 15px;
   }
 }
 </style>
