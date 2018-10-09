@@ -1,4 +1,5 @@
 @import './common/var.css';
+@import "./mixins/hairline.css";
 
 .van-cell {
   width: 100%;
