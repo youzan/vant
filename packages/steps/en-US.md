@@ -49,7 +49,7 @@ export default {
 #### Vertical Steps
 
 ```html
-<van-steps direction="vertical" :active="0" active-color="#f60">
+<van-steps direction="vertical" :active="0" active-color="#f44">
   <van-step>
     <h3>【City】Status1</h3>
     <p>2016-07-12 12:40</p>
