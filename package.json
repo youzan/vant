@@ -14,8 +14,9 @@
   ],
   "scripts": {
     "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
-    "dev": "node build/build-entry.js && webpack-serve --config build/webpack.dev.js",
+    "dev": "npm run build:entry && webpack-serve --config build/webpack.dev.js",
     "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/vant-css/src/*.css\"",
+    "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
     "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color --silent",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
