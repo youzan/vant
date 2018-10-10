@@ -1,5 +1,24 @@
 ## 更新日志
 
+### [1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
+`2018-10-10`
+
+**Improvements**
+
+- Tab: 样式升级 [\#1908](https://github.com/youzan/vant/pull/1908)
+- Badge: 样式升级 [\#1907](https://github.com/youzan/vant/pull/1907)
+- Dialog: 样式升级 [\#1906](https://github.com/youzan/vant/pull/1906)
+- NoticeBar: 样式升级 [\#1893](https://github.com/youzan/vant/pull/1893)
+- Collapse: 新增 disabled 属性 [\#1892](https://github.com/youzan/vant/pull/1892)
+- TreeSelect: 新增 height 属性 [\#1905](https://github.com/youzan/vant/pull/1905)
+- ImagePreview: 支持手势缩放图片 [\#1895](https://github.com/youzan/vant/pull/1895)
+
+**Bug Fixes**
+
+- 修复 Toast 在 SSR 时报错的问题 [\#1910](https://github.com/youzan/vant/pull/1910)
+- 修复 Swipe 多指触控时可能导致展示错误的问题 [\#1890](https://github.com/youzan/vant/pull/1890)
+
+
 ### [1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
 `2018-10-02`
 

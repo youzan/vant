@@ -1,5 +1,24 @@
 ## Changelog
 
+### [1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
+`2018-10-10`
+
+**Improvements**
+
+- Tab: upgrade style [\#1908](https://github.com/youzan/vant/pull/1908)
+- Badge: upgrade style [\#1907](https://github.com/youzan/vant/pull/1907)
+- Dialog: upgrade style [\#1906](https://github.com/youzan/vant/pull/1906)
+- NoticeBar: upgrade style [\#1893](https://github.com/youzan/vant/pull/1893)
+- Collapse: add disabled prop [\#1892](https://github.com/youzan/vant/pull/1892)
+- TreeSelect: add height prop [\#1905](https://github.com/youzan/vant/pull/1905)
+- ImagePreview: support finger zooming [\#1895](https://github.com/youzan/vant/pull/1895)
+
+**Bug Fixes**
+
+- fix Toast SSR error [\#1910](https://github.com/youzan/vant/pull/1910)
+- fix Swipe multi finger [\#1890](https://github.com/youzan/vant/pull/1890)
+
+
 ### [1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
 `2018-10-02`
 

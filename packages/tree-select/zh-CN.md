@@ -95,4 +95,5 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.6 | feature | 新增 height 属性 |
 | 1.1.5 | improvement | 支持 string 类型 id |

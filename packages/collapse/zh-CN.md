@@ -119,6 +119,7 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
+| 1.3.6 | feature | 新增 disabled 属性 |
 | 1.2.1 | feature | 新增 icon 属性 |
 | 1.2.1 | feature | 新增 label 属性 |
 | 1.2.1 | feature | 新增 value 属性 |
