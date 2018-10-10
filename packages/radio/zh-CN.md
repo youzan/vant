@@ -31,7 +31,7 @@ export default {
 ```
 
 #### 禁用状态
-通过`disabled`属性禁止选项切换，在`van-radio`上设置`diabled`可以禁用单个选项
+通过`disabled`属性禁止选项切换，在`van-radio`上设置`disabled`可以禁用单个选项
 
 ```html
 <van-radio-group v-model="radio" disabled>
