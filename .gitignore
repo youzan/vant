@@ -12,5 +12,6 @@ package-lock.json
 es
 lib
 docs/dist
+docs/markdown/changelog.generated.md
 test/coverage
 packages/icon/svg
