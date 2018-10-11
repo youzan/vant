@@ -1,5 +1,17 @@
 ## 更新日志
 
+### [1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
+`2018-10-11`
+
+**Improvements**
+
+- Card: 新增 origin-price 属性，优化内部结构 [\#1916](https://github.com/youzan/vant/pull/1916)
+
+**Bug Fixes**
+
+- 修复 Toast 设置 forbidClick 后出现点击高亮背景色的问题 [\#1914](https://github.com/youzan/vant/pull/1914)
+
+
 ### [1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
 `2018-10-10`
 

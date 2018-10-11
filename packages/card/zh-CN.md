@@ -72,3 +72,4 @@ Vue.use(Card);
 |-----------|-----------|-----------|
 | 1.3.4 | feature | 新增 thumb-link 属性 |
 | 1.3.4 | feature | 新增 tag 属性 |
+| 1.3.6 | feature | 新增 origin-price 属性 |

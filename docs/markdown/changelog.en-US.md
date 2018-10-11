@@ -1,5 +1,17 @@
 ## Changelog
 
+### [1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
+`2018-10-11`
+
+**Improvements**
+
+- Card: add origin-price prop [\#1916](https://github.com/youzan/vant/pull/1916)
+
+**Bug Fixes**
+
+- fix Toast tap highlight color when unclickable [\#1914](https://github.com/youzan/vant/pull/1914)
+
+
 ### [1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
 `2018-10-10`
 
