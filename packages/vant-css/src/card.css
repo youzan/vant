@@ -36,7 +36,8 @@
 
   &,
   &__thumb,
-  &__row {
+  &__row,
+  &__content {
     display: flex;
   }
 
@@ -66,12 +67,20 @@
     max-height: 20px;
   }
 
-  &__price,
-  &__num {
+  &__left {
     flex: 1;
-    min-width: 80px;
+  }
+
+  &__right {
+    flex-shrink: 0;
     line-height: 20px;
+    padding-left: 10px;
     text-align: right;
+  }
+
+  &__origin-price {
+    color: $gray-darker;
+    text-decoration: line-through;
   }
 
   &__num {
@@ -86,7 +95,7 @@
 
   &__footer {
     right: 15px;
-    bottom: 5px;
+    bottom: 8px;
     position: absolute;
 
     .van-button {

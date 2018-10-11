@@ -32,6 +32,7 @@ Use `slot` to custom content.
   desc="Description"  
   price="2.00"
   :thumb="imageURL"
+  origin-price="10.00"
 >
   <div slot="footer">
     <van-button size="mini">Button</van-button>
@@ -48,8 +49,9 @@ Use `slot` to custom content.
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
 | tag | Tag | `String` | - |
-| num | Number of goods | `String | Number` | - |
-| price | Price of goods | `String | Number` | - |
+| num | Number | `String | Number` | - |
+| price | Price | `String | Number` | - |
+| origin-price | Origin price | `String | Number` | - |
 | centered | Whether content vertical centered | `String` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
 | thumb-link | Thumb link URL | `String` | - |

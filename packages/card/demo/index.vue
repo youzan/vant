@@ -14,6 +14,7 @@
       <van-card
         num="2"
         price="2.00"
+        origin-price="10.00"
         :tag="$t('tag')"
         :desc="$t('desc')"
         :title="$t('title')"
@@ -32,7 +33,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      title: '商品标题'
+      title: '商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题'
     }
   },
 
