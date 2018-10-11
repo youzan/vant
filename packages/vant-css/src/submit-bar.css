@@ -9,7 +9,7 @@
   user-select: none;
 
   &__tip {
-    color: $orange;
+    color: #f56723;
     padding: 10px;
     font-size: 12px;
     line-height: 18px;
