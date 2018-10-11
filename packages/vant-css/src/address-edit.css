@@ -23,10 +23,6 @@
     }
   }
 
-  .van-icon-clear {
-    color: $gray-dark;
-  }
-
   &-detail {
     padding: 0;
 
