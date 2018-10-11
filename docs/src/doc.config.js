@@ -280,7 +280,7 @@ module.exports = {
               },
               {
                 path: '/card',
-                title: 'Card 卡片'
+                title: 'Card 商品卡片'
               },
               {
                 path: '/contact-card',

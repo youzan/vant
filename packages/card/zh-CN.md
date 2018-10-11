@@ -32,6 +32,7 @@ Vue.use(Card);
   desc="描述信息"  
   title="商品标题"
   :thumb="imageURL"
+  origin-price="10.00"
 >
   <div slot="footer">
     <van-button size="mini">按钮</van-button>
@@ -50,6 +51,7 @@ Vue.use(Card);
 | tag | 标签 | `String` | - |
 | num | 商品数量 | `String | Number` | - |
 | price | 商品价格 | `String | Number` | - |
+| origin-price | 商品划线原价 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
@@ -60,9 +62,9 @@ Vue.use(Card);
 |-----------|-----------|
 | title | 自定义标题 |
 | desc | 自定义描述 |
-| tags | 自定义 tags |
-| thumb | 自定义 thumb |
-| footer | 自定义 footer |
+| tags | 自定义描述下方的内容 |
+| thumb | 自定义图片 |
+| footer | 自定义右下角内容 |
 
 ### 更新日志
 
