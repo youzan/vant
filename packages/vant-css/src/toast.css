@@ -17,8 +17,14 @@
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(0, 0, 0, .7);
 
+  /**
+   * should not add pointer-events: none directly to body tag
+   * that will cause unexpected tap-highlight-color in mobile safari
+   */
   &--unclickable {
-    pointer-events: none;
+    * {
+      pointer-events: none;
+    }
   }
 
   &--text {
