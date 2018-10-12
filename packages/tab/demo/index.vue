@@ -18,7 +18,7 @@
 
     <demo-block :title="$t('title3')">
       <van-tabs @disabled="onClickDisabled">
-        <van-tab v-for="index in 4" :title="$t('tab') + index" :disabled="index === 2" :key="index">
+        <van-tab v-for="index in 3" :title="$t('tab') + index" :disabled="index === 2" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -26,7 +26,7 @@
 
     <demo-block :title="$t('title4')">
       <van-tabs type="card">
-        <van-tab v-for="index in 4" :title="$t('tab') + index" :key="index">
+        <van-tab v-for="index in 3" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -34,7 +34,7 @@
 
     <demo-block :title="$t('title5')">
       <van-tabs @click="onClick">
-        <van-tab v-for="index in 4" :title="$t('tab') + index" :key="index">
+        <van-tab v-for="index in 2" :title="$t('tab') + index" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
@@ -73,7 +73,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      tab: '选项 ',
+      tab: '标签 ',
       title2: '横向滚动',
       title3: '禁用标签',
       title4: '样式风格',

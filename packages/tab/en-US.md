@@ -49,7 +49,7 @@ You can set `disabled` attribute on the corresponding `van-tab`.
 
 ```html
 <van-tabs @disabled="onClickDisabled">
-  <van-tab v-for="index in 4" :title="'tab' + index" :disabled="index === 2">
+  <van-tab v-for="index in 3" :title="'tab' + index" :disabled="index === 2">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -71,7 +71,7 @@ Tabs styled as cards.
 
 ```html
 <van-tabs type="card">
-  <van-tab v-for="index in 4" :title="'tab' + index">
+  <van-tab v-for="index in 3" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
@@ -81,7 +81,7 @@ Tabs styled as cards.
 
 ```html
 <van-tabs @click="onClick">
-  <van-tab v-for="index in 4" :title="'tab' + index">
+  <van-tab v-for="index in 2" :title="'tab' + index">
     content of tab {{ index }}
   </van-tab>
 </van-tabs>
