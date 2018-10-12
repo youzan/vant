@@ -36,18 +36,12 @@
 
   &,
   &__thumb,
-  &__row,
   &__content {
     display: flex;
   }
 
   &__content {
     width: 100%;
-
-    &--center {
-      height: 90px;
-      align-items: center;
-    }
   }
 
   &__title,
