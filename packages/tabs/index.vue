@@ -288,14 +288,18 @@ export default create({
       }
     },
 
-    findAvailableTab(index, reverse) {
+    findAvailableTab(active, reverse) {
       const diff = reverse ? -1 : 1;
+      let index = active;
+
       while (index >= 0 && index < this.tabs.length) {
         if (!this.tabs[index].disabled) {
           return index;
         }
         index += diff;
       }
+
+      return active;
     },
 
     // emit event when clicked

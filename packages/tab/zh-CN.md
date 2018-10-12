@@ -38,7 +38,7 @@ export default {
 
 ```html
 <van-tabs>
-  <van-tab v-for="index in 8" :title="'选项 ' + index">
+  <van-tab v-for="index in 8" :title="'标签 ' + index">
     内容 {{ index }}
   </van-tab>
 </van-tabs>
@@ -50,9 +50,9 @@ export default {
 
 ```html
 <van-tabs @disabled="onClickDisabled">
-  <van-tab v-for="index in 4" :title="'选项 ' + index" :disabled="index === 2">
-    内容 {{ index }}
-  </van-tab>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2" disabled>内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
 </van-tabs>
 ```
 
@@ -72,9 +72,9 @@ export default {
 
 ```html
 <van-tabs type="card">
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
-    内容 {{ index }}
-  </van-tab>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
+  <van-tab title="标签 3">内容 3</van-tab>
 </van-tabs>
 ```
 
@@ -84,9 +84,8 @@ export default {
 
 ```html
 <van-tabs @click="onClick">
-  <van-tab v-for="index in 4" :title="'选项 ' + index">
-    内容 {{ index }}
-  </van-tab>
+  <van-tab title="标签 1">内容 1</van-tab>
+  <van-tab title="标签 2">内容 2</van-tab>
 </van-tabs>
 ```
 
