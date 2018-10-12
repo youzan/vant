@@ -105,6 +105,21 @@ export default {
 </van-swipe>
 ```
 
+```js
+export default {
+  methods: {
+    data() {
+      return {
+        current: 0
+      }
+    },
+    onChange(index) {
+      this.current = index;
+    }
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default |

@@ -74,7 +74,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
       </div>
       <div class="custom-indicator">
-        2/4
+        1/4
       </div>
     </div>
   </div>
