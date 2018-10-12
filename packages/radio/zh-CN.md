@@ -82,7 +82,6 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.2.0 | improvement | 优化样式 |
 | 1.1.13 | feature | 新增 label-position 属性 |
 | 1.1.13 | feature | 新增 label-disabled 属性 |
 | 1.0.5 | feature | name 属性支持任意类型 |

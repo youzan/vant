@@ -101,7 +101,5 @@ export default {
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
 | 1.3.0 | bugfix | 修复使用 icon 插槽时 info 属性不生效的问题 |
-| 1.2.0 | improvement | 优化 DOM 结构 |
 | 1.1.15 | bugfix | 修复点击当前标签时依然会触发 change 事件的问题 |
 | 1.1.9 | feature | 新增 z-index 属性 |
-| 1.0.5 | improvement | info 属性支持 Number 类型 |

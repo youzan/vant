@@ -279,8 +279,7 @@ skuData: {
 | 1.3.0 | feature | 增加对手机号留言的格式校验
 | 1.1.10 | feature | 新增 stepper-change 事件
 | 1.1.10 | bugfix | 修复图片截断问题
-| 1.1.8 | improvement | 限制留言最大长度
-| 1.1.5 | improvement | 优化错误提示
+| 1.1.8 | feature | 限制留言最大长度
 | 1.0.4 | bugfix | 修复 row 行高错误
 | 1.0.2 | bugfix | 修复默认选中不生效的问题
 | 1.0.0 | feature | 新增 sku-header-price 插槽

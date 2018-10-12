@@ -179,7 +179,7 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.1.12 | improvement | 新增 icon 插槽，支持自定义图标 |
-| 1.1.11 | improvement | 新增 label-position 属性 |
+| 1.1.12 | feature | 新增 icon 插槽，支持自定义图标 |
+| 1.1.11 | feature | 新增 label-position 属性 |
 | 1.1.8 | bugfix | 修复 v-model 类型检查错误 |
 | 1.1.0 | bugfix | 修复内容为空时渲染了空 label 元素的问题 |

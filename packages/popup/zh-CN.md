@@ -60,7 +60,6 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.3.0 | improvement | 优化过渡动画时长
 | 1.3.0 | feature | get-container 属性支持传入 CSS 选择器
 | 1.2.1 | bugfix | 修复使用 get-container 属性时 DOM 不能被正确销毁的问题
 | 1.1.8 | bugfix | 修复内容过高时超出屏幕可视范围的问题

@@ -73,10 +73,7 @@ export default {
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
 | 1.2.1 | bugfix | 修复初始值不能为 0 的问题 |
-| 1.1.15 | improvement | 优化禁用态样式 |
-| 1.1.15 | improvement | 优化输入体验 |
 | 1.1.14 | bugfix | 修复 integer 属性在 Android 上无法生效的问题 |
-| 1.1.9 | improvement | 输入框失焦且内容为空时，自动补全为最小值 |
-| 1.1.2 | improvement | 优化禁用状态样式 |
+| 1.1.9 | feature | 输入框失焦且内容为空时，自动补全为最小值 |
 | 1.1.2 | bugfix | 修复 integer 属性拼写错误 |
 | 1.1.1 | feature | 新增 integer 属性 |

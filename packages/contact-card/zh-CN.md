@@ -181,10 +181,3 @@ export default {
 | id | 每位联系人的唯一标识 | `String | Number` |
 | name | 联系人姓名 | `String` |
 | tel | 联系人手机号 | `String` |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.0 | improvement | 样式升级 |
-| 1.1.1 | improvement | 优化底部边框样式 |

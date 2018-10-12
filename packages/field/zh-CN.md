@@ -163,7 +163,6 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
 | 1.3.3 | bugfix | 修复类型为 number 时 maxlength 属性不生效的问题 |
-| 1.2.1 | improvement | 优化清除按钮颜色
 | 1.1.15 | bugfix | 修复 date 类型在 iOS 设备下显示错误的问题
 | 1.1.14 | bugfix | 修复行高错误
 | 1.1.11 | bugfix | 修复 readonly 状态下在 safari 上出现光标的问题
@@ -173,7 +172,6 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | 1.1.10 | feature | 新增 label-align 属性
 | 1.1.9 | feature | 新增 clearable 属性
 | 1.1.8 | feature | 新增 blur 方法
-| 1.1.8 | improvement | 更新右侧按钮默认颜色
 | 1.1.7 | feature | 支持 v-model.number
 | 1.1.5 | bugfix | 修复在 safari 上不正确的外边距
 | 1.1.4 | feature | 新增 left-icon 属性

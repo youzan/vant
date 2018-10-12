@@ -179,7 +179,6 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.3.2 | improvement | 优化点击反馈
 | 1.3.1 | bugfix | 修复使用 card 主题时 color 属性不生效的问题
 | 1.3.0 | feature | 新增 scroll 事件
 | 1.3.0 | bugfix | 修复能通过手势滑动至禁用标签的问题
@@ -190,7 +189,6 @@ export default {
 | 1.1.14 | bugfix | 修复路由切换时标签位置错误的问题
 | 1.1.14 | bugfix | 修复 sticky 属性在局部滚动元素下无法生效的问题
 | 1.1.12 | bugfix | 修复同时进行插入和删除时顺序错误的问题
-| 1.1.11 | improvement | 更新 card 风格样式
 | 1.1.11 | bugfix | 修复动态渲染时顺序错误的问题
 | 1.1.9 | bugfix | 修复屏幕尺寸变化时未重新渲染的问题
 | 1.1.8 | bugfix | 修复标题长度变化时底部条未重新渲染的问题
@@ -198,7 +196,7 @@ export default {
 | 1.1.2 | bugfix | 修复初始化时的渲染问题
 | 1.1.1 | feature | 新增 line-width 属性
 | 1.0.6 | feature | 支持 v-model 绑定当前 active 标签
-| 1.0.3 | improvement | 布局方式由 table 升级为 flex-box
+| 1.0.3 | feature | 布局方式由 table 升级为 flex-box
 | 1.0.3 | feature | click 事件回调新增 title 参数
 | 1.0.2 | bugfix | 修复内容无法点击的问题
 | 1.0.0 | feature | 支持通过滑动手势进行切换

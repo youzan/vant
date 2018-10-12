@@ -127,5 +127,4 @@ export default {
 | 1.2.1 | feature | 新增 is-link 属性 |
 | 1.2.1 | feature | 新增 icon 属性 |
 | 1.1.14 | feature | 新增过渡动画 |
-| 1.1.14 | improvement | 渲染优化 |
 | 1.0.0 | feature | 新增组件 |

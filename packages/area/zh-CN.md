@@ -131,5 +131,4 @@ Vue.use(Area);
 |-----------|-----------|-----------|
 | 1.1.12 | feature | 新增 reset 方法 |
 | 1.1.11 | bugfix | 修复 city_list 为空时报错的问题 |
-| 1.1.8 | improvement | 优化默认选项 |
 | 1.1.2 | feature | 新增 change 事件 |

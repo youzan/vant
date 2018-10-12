@@ -91,9 +91,6 @@ Vue.use(SubmitBar);
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.2.0 | improvement | 样式优化升级 |
-| 1.1.6 | improvement | 优化渲染结构 |
 | 1.0.6 | feature | 新增 currency 属性 |
 | 1.0.5 | bugfix | 修复字体大小继承错误的问题 |
-| 1.0.4 | improvement | 优化文字大小 |
 | 1.0.4 | bugfix | 修复金额保留位数错误的问题 |

@@ -157,12 +157,9 @@ export default {
 
 | 版本 | 类型 | 内容 |
 |-----------|-----------|-----------|
-| 1.3.2 | improvement | 更新按钮颜色
 | 1.1.8 | feature | 支持单独传入 title 属性
 | 1.1.7 | feature | 支持 className 属性
-| 1.1.7 | improvement | 优化内容为空时的样式
 | 1.1.6 | feature | 新增 get-container 属性
 | 1.1.6 | feature | beforeClose 支持通过回调参数控制关闭动作
-| 1.1.5 | improvement | 优化按钮文字选中状态
 | 1.0.6 | feature | 新增 before-close 属性, 支持异步关闭
 | 1.0.4 | bugfix | 修复未初始化时 close 方法报错的问题

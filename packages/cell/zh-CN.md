@@ -113,7 +113,6 @@ Vue.use(Cell).use(CellGroup);
 |-----------|-----------|-----------|
 | 1.1.10 | feature | 新增 arrow-direction 属性
 | 1.1.4 | feature | title 和 value 属性支持 number 类型
-| 1.1.0 | improvement | 优化 flex 结构
 | 1.0.8 | bugfix | 修复文字垂直不对齐的问题
 | 1.0.3 | feature | 新增 center 属性
-| 1.0.3 | improvement | 布局方式由 table 升级为 flex-box
+| 1.0.3 | feature | 布局方式由 table 升级为 flex-box

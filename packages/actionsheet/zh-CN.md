@@ -119,5 +119,4 @@ export default {
 | 1.1.9 | feature | 支持禁用选项 |
 | 1.1.8 | bugfix | 修复在 rem 布局下标题文字大小错误的问题 |
 | 1.0.4 | feature | 新增 cancel 事件 |
-| 1.0.4 | improvement | 增加最大高度限制 |
 | 1.0.0 | bugfix | 修复下边框未展示的问题 |
