@@ -1,5 +1,20 @@
 ## 更新日志
 
+### [1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
+`2018-10-12`
+
+**Improvements**
+
+- Swipe: 新增 indicator 插槽 [\#1923](https://github.com/youzan/vant/pull/1923)
+- AddressEdit: 优化清除按钮颜色 [\#1919](https://github.com/youzan/vant/pull/1919)
+
+**Bug Fixes**
+
+- 修复 Toast 在 SSR 时未返回实例的问题 [\#1927](https://github.com/youzan/vant/pull/1927)
+- 修复 Tab 所有标签禁用时默认标签错误的问题 [\#1926](https://github.com/youzan/vant/pull/1926)
+- 修复 SubmitBar 文字颜色
+
+
 ### [1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
 `2018-10-11`
 
@@ -73,7 +88,7 @@
 
 - AddressEdit: 优化地区展示 [\#1785](https://github.com/youzan/vant/pull/1785)
 - Dialog: 更新按钮颜色 [\#1774](https://github.com/youzan/vant/pull/1774)
-- List: 新增 loading slot [\#1804](https://github.com/youzan/vant/pull/1804)
+- List: 新增 loading 插槽 [\#1804](https://github.com/youzan/vant/pull/1804)
 - Tab: 优化点击反馈 [\#1775](https://github.com/youzan/vant/pull/1775)
 - 更新组件边框色值 [\#1773](https://github.com/youzan/vant/pull/1773)
 
@@ -127,7 +142,7 @@
 - 修复 DatetimePicker 使用 minMinute 属性时初始值错误的问题 [\#1724](https://github.com/youzan/vant/pull/1724)
 - 修复 Swipe 在特定手势下可能出现位置错误的问题 [\#1723](https://github.com/youzan/vant/pull/1723)
 - 修复 Tab 能通过手势滑动至禁用标签的问题 [\#1704](https://github.com/youzan/vant/pull/1704)
-- 修复 Tabbar 使用 icon slot 时 info 属性不生效的问题 [\#1705](https://github.com/youzan/vant/pull/1705)
+- 修复 Tabbar 使用 icon 插槽时 info 属性不生效的问题 [\#1705](https://github.com/youzan/vant/pull/1705)
 
 
 ### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
@@ -137,7 +152,7 @@
 
 - AddressEdit: 样式升级 [\#1676](https://github.com/youzan/vant/pull/1676)
 - ContactEdit: 样式升级 [\#1677](https://github.com/youzan/vant/pull/1677)
-- Collapse: 增加多个 props 和 slots [\#1671](https://github.com/youzan/vant/pull/1671)
+- Collapse: 增加多个 props 和插槽 [\#1671](https://github.com/youzan/vant/pull/1671)
 - Field: 优化清除按钮颜色 [\#1678](https://github.com/youzan/vant/pull/1678)
 - Icon: 新增 class-prefix 属性 [\#1688](https://github.com/youzan/vant/pull/1688)
 - Swipe: 支持自定义 item 高度、宽度 [\#1664](https://github.com/youzan/vant/pull/1664)
@@ -387,7 +402,7 @@
 
 **Bug Fixes**
 
-- 修复 Tab title slot 渲染无法更新的问题 [\#1212](https://github.com/youzan/vant/pull/1212)
+- 修复 Tab title 插槽渲染无法更新的问题 [\#1212](https://github.com/youzan/vant/pull/1212)
 - 修复 AddressEdit 省市区弹层样式错误的问题 [\#1211](https://github.com/youzan/vant/pull/1211)
 
 
@@ -440,7 +455,7 @@
 **Improvements**
 
 - AddressEdit: 新增 cancel-delete 事件 [\#1047](https://github.com/youzan/vant/pull/1047)
-- Field: 新增 label slot [\#1048](https://github.com/youzan/vant/pull/1048)
+- Field: 新增 label 插槽 [\#1048](https://github.com/youzan/vant/pull/1048)
 - Icon: 更新 search 图标 [\#1025](https://github.com/youzan/vant/pull/1025)
 - Icon: 新增 color 属性 [\#1031](https://github.com/youzan/vant/pull/1031)
 - ImagePreview: 优化点击检测 [\#1042](https://github.com/youzan/vant/pull/1042)
@@ -599,7 +614,7 @@
 
 - Cell: 新增 center 属性 [\#771](https://github.com/youzan/vant/pull/771)
 - Cell: 布局方式由 table 升级为 flex-box [\#770](https://github.com/youzan/vant/pull/770)
-- Field: 新增 button slot，支持插入按钮 [\#772](https://github.com/youzan/vant/pull/772)
+- Field: 新增 button 插槽，支持插入按钮 [\#772](https://github.com/youzan/vant/pull/772)
 - Tab: click 事件回调新增 title 参数 [\#761](https://github.com/youzan/vant/pull/761)
 
 **Bug Fixes**
@@ -652,7 +667,7 @@
 * Locale: 精简 i18n 配置文档 [\#701](https://github.com/youzan/vant/pull/701)
 * PullRefresh: 支持手动触发 loading 动画 [\#684](https://github.com/youzan/vant/pull/684)
 * Switch: 新增 size 属性，支持自定义尺寸 [\#723](https://github.com/youzan/vant/pull/723)
-* Sku: 新增头部金额 slot [\#705](https://github.com/youzan/vant/pull/705)
+* Sku: 新增头部金额插槽 [\#705](https://github.com/youzan/vant/pull/705)
 * Sku: 优化 DOM 结构 [\#704](https://github.com/youzan/vant/pull/704)
 * Tab: 支持通过滑动手势进行切换 [\#694](https://github.com/youzan/vant/pull/694) [\#695](https://github.com/youzan/vant/pull/695)
 * Tag: 调整标签样式 [\#689](https://github.com/youzan/vant/pull/689)
@@ -747,7 +762,7 @@
 
 **Improvements**
 * 新增 Circle 组件 [\#608](https://github.com/youzan/vant/pull/608)
-* Tab: 新增 title slot [\#603](https://github.com/youzan/vant/pull/603)
+* Tab: 新增 title 插槽 [\#603](https://github.com/youzan/vant/pull/603)
 * Toast: 加深背景色 [\#601](https://github.com/youzan/vant/pull/601)
 * Popup: 新增 getContaienr 属性 [\#611](https://github.com/youzan/vant/pull/611)
 * Sku: 支持图片上传 [\#612](https://github.com/youzan/vant/pull/612)
@@ -776,9 +791,9 @@
 
 **Improvements**
 
-- AddressEdit: 增加默认 slot [\#573](https://github.com/youzan/vant/pull/573)
+- AddressEdit: 增加默认插槽 [\#573](https://github.com/youzan/vant/pull/573)
 - Uploader: 新增 maxSize 属性 [\#575](https://github.com/youzan/vant/pull/575)
-- Sku: 新增 sku-body-top slot、resetSelectedSkuOnHide 属性 [\#568](https://github.com/youzan/vant/pull/568)
+- Sku: 新增 sku-body-top 插槽、resetSelectedSkuOnHide 属性 [\#568](https://github.com/youzan/vant/pull/568)
 
 **Bug Fixes**
 
@@ -1087,7 +1102,7 @@
 * Icon: 调整 unicode，避免展示特殊字符 [\#330](https://github.com/youzan/vant/pull/330)
 * ImagePreview: 支持手动关闭 [\#346](https://github.com/youzan/vant/pull/346)
 * Tabbar: 支持通过 slot-scope 判断 active 状态 [\#347](https://github.com/youzan/vant/pull/347)
-* SubmitBar: 新增左侧内容 slot [\#345](https://github.com/youzan/vant/pull/345)
+* SubmitBar: 新增左侧内容插槽 [\#345](https://github.com/youzan/vant/pull/345)
 * 优化组件 staticClass 渲染效率 [\#337](https://github.com/youzan/vant/pull/337)
 * 优化文字截取相关样式 [\#334](https://github.com/youzan/vant/pull/334)
 * 优化按钮 css layer 及 GPU 开销 [\#336](https://github.com/youzan/vant/pull/336)
@@ -1181,7 +1196,7 @@
 
 **Bug Fixes**
 
-* 修复 Tabbar 使用 icon slot 时 info prop 失效的问题 [\#269](https://github.com/youzan/vant/pull/269)
+* 修复 Tabbar 使用 icon 插槽时 info prop 失效的问题 [\#269](https://github.com/youzan/vant/pull/269)
 * 修复 Uploader input 类型错误 [\#265](https://github.com/youzan/vant/pull/265)
 
 ### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
@@ -1225,7 +1240,7 @@
 
 **Improvements**
 
-* Sku: sku-group slot 增加 event bus [\#226](https://github.com/youzan/vant/pull/226)
+* Sku: sku-group 插槽增加 event bus [\#226](https://github.com/youzan/vant/pull/226)
 * 新增基础英文文档 [\#220](https://github.com/youzan/vant/pull/220)
 
 **Bug Fixes**
@@ -1244,7 +1259,7 @@
 **Bug Fixes**
 
 * 修复 Swipe 组件 destroyed 时未清除 autoplay timer 的问题 [\#218](https://github.com/youzan/vant/pull/218)
-* 修复 Tab 组件 slot text 文本换行问题 [\#217](https://github.com/youzan/vant/pull/217)
+* 修复 Tab 组件插槽 text 文本换行问题 [\#217](https://github.com/youzan/vant/pull/217)
 * 修复 TreeSelect 依赖路径错误 [\#216](https://github.com/youzan/vant/pull/216)
 * 修复 Checkbox 在微信浏览器下的边框渲染错误 [\#214](https://github.com/youzan/vant/pull/214)
 * 修复 Popup modal 层在某些情况下无法展示的问题 [\#211](https://github.com/youzan/vant/pull/211)
@@ -1480,7 +1495,7 @@
 
 * 新增文档组件使用指南 [\#83](https://github.com/youzan/vant/pull/83)
 * 新增文档加载动效 [\#83](https://github.com/youzan/vant/pull/83)
-* Field：新增 icon slot [\#76](https://github.com/youzan/vant/pull/76)
+* Field：新增 icon 插槽 [\#76](https://github.com/youzan/vant/pull/76)
 
 **Bug Fixes**
 
@@ -1531,8 +1546,8 @@
 
 * Tabs：支持滑动 [\#52](https://github.com/youzan/vant/pull/52)
 * Steps：新增 direction 和 activeColor 属性，支持竖向展示 [\#49](https://github.com/youzan/vant/pull/49)
-* Card：支持 thumb slot [\#48](https://github.com/youzan/vant/pull/48)
-* Field：支持 blur 事件，新增 icon slot [\#53](https://github.com/youzan/vant/pull/53)
+* Card：支持 thumb 插槽 [\#48](https://github.com/youzan/vant/pull/48)
+* Field：支持 blur 事件，新增 icon 插槽 [\#53](https://github.com/youzan/vant/pull/53)
 
 ### [0.6.2](https://github.com/youzan/vant/tree/v0.6.2)
 
@@ -1586,7 +1601,7 @@
 **Improvements**
 
 * 新增 reset.css [\#27](https://github.com/youzan/vant/pull/27)
-* Cell: 新增 right-icon slot [\#27](https://github.com/youzan/vant/pull/27)
+* Cell: 新增 right-icon 插槽 [\#27](https://github.com/youzan/vant/pull/27)
 
 ### [0.5.2](https://github.com/youzan/vant/tree/v0.5.2)
 

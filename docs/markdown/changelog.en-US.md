@@ -1,5 +1,20 @@
 ## Changelog
 
+### [1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
+`2018-10-12`
+
+**Improvements**
+
+- Swipe: add indicator slot [\#1923](https://github.com/youzan/vant/pull/1923)
+- AddressEdit: update clear icon color [\#1919](https://github.com/youzan/vant/pull/1919)
+
+**Bug Fixes**
+
+- fix Toast instance when SSR [\#1927](https://github.com/youzan/vant/pull/1927)
+- fix Tab default active when all tabs disabled [\#1926](https://github.com/youzan/vant/pull/1926)
+- fix SubmitBar tip color
+
+
 ### [1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
 `2018-10-11`
 
