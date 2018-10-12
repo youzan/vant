@@ -11,15 +11,18 @@
     >
       <slot />
     </div>
-    <div
-      v-if="showIndicators && count > 1"
-      :class="b('indicators', { vertical })"
-    >
-      <i
-        v-for="index in count"
-        :class="b('indicator', { active: index - 1 === activeIndicator })"
-      />
-    </div>
+    <slot name="indicator">
+      <div
+        v-if="showIndicators && count > 1"
+        :class="b('indicators', { vertical })"
+      >
+        <i
+          v-for="index in count"
+          :class="b('indicator', { active: index - 1 === activeIndicator })"
+        />
+      </div>
+    </slot>
+
   </div>
 </template>
 

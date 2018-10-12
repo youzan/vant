@@ -65,5 +65,18 @@ exports[`renders demo correctly 1`] = `
       <!---->
     </div>
   </div>
+  <div>
+    <div class="van-swipe">
+      <div class="van-swipe__track" style="width:0px;transition-duration:500ms;transform:translateX(0px);">
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">1</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">2</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
+        <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
+      </div>
+      <div class="custom-indicator">
+        1/4
+      </div>
+    </div>
+  </div>
 </div>
 `;
