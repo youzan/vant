@@ -146,4 +146,11 @@ Use ref to get swipe instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
-| swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
+| swipeTo | index: target index | void | Swipe to target index |
+
+### Slot
+
+| name | Description |
+|-----------|-----------|
+| - | Content |
+| indicator | Custom indicator |
