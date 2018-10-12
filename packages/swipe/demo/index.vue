@@ -43,6 +43,21 @@
         <van-swipe-item>4</van-swipe-item>
       </van-swipe>
     </demo-block>
+
+    <demo-block :title="$t('title6')">
+      <van-swipe @change="onChange">
+        <van-swipe-item>1</van-swipe-item>
+        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>3</van-swipe-item>
+        <van-swipe-item>4</van-swipe-item>
+
+        <template slot="indicator">
+          <div class="custom-indicator">
+            {{ this.current + 1 }}/4
+          </div>
+        </template>
+      </van-swipe>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -54,6 +69,7 @@ export default {
       title3: '监听 change 事件',
       title4: '纵向滚动',
       title5: '设置滑块大小',
+      title6: '自定义指示器',
       message: '当前 Swipe 索引：'
     },
     'en-US': {
@@ -61,12 +77,14 @@ export default {
       title3: 'Change Event',
       title4: 'Vertical Scrolling',
       title5: 'Set Swiper Item Size',
+      title6: 'Custom indicator',
       message: 'Current Swipe index:'
     }
   },
 
   data() {
     return {
+      current: 1,
       images: [
         'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',
         'https://img.yzcdn.cn/public_files/2017/09/05/c0dab461920687911536621b345a0bc9.jpg',
@@ -78,6 +96,7 @@ export default {
 
   methods: {
     onChange(index) {
+      this.current = index;
       this.$toast(this.$t('message') + index);
     }
   }
@@ -123,6 +142,16 @@ export default {
     .van-swipe-item {
       line-height: 200px;
     }
+  }
+
+  .custom-indicator {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding: 2px 5px;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(0, 0, 0, .1);
   }
 }
 </style>

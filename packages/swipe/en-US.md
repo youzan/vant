@@ -88,6 +88,23 @@ export default {
 </van-swipe>
 ```
 
+#### Custom Indicator
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+
+  <template slot="indicator">
+    <div class="custom-indicator">
+      {{ this.current + 1 }}/4
+    </div>
+  </template>
+</van-swipe>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
