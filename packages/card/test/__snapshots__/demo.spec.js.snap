@@ -10,7 +10,7 @@ exports[`renders demo correctly 1`] = `
       </a>
       <div class="van-card__content">
         <div class="van-card__left">
-          <div class="van-card__title">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</div>
+          <div class="van-card__title">商品标题</div>
           <div class="van-card__desc van-ellipsis">描述信息</div>
         </div>
         <div class="van-card__right">
@@ -30,7 +30,7 @@ exports[`renders demo correctly 1`] = `
     </span></a>
       <div class="van-card__content">
         <div class="van-card__left">
-          <div class="van-card__title">商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题商品标题</div>
+          <div class="van-card__title">商品标题</div>
           <div class="van-card__desc van-ellipsis">描述信息</div>
         </div>
         <div class="van-card__right">
