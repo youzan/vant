@@ -24,7 +24,7 @@ function createInstance() {
   if (isServer) {
     return {};
   }
-  
+
   if (!queue.length || !singleton) {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
