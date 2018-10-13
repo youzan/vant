@@ -1,5 +1,5 @@
 <template>
-  <div :class="b()" :style="{ height: mainHeight + 'px' }">
+  <div :class="b()" :style="{ height: height + 'px' }">
     <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
@@ -9,13 +9,14 @@
         {{ item.text }}
       </div>
     </div>
-    <div :class="b('content')" :style="{ height: itemHeight + 'px' }">
+    <div :class="b('content')">
       <div
         v-for="item in subItems"
         :key="item.id"
         class="van-ellipsis"
         :class="b('item', { active: activeId === item.id })"
-        @click="onItemSelect(item)">
+        @click="onItemSelect(item)"
+      >
         {{ item.text }}
         <icon
           v-if="activeId === item.id"
@@ -46,7 +47,7 @@ export default create({
       type: [Number, String],
       default: 0
     },
-    maxHeight: {
+    height: {
       type: Number,
       default: 300
     }
@@ -56,19 +57,12 @@ export default create({
     subItems() {
       const selectedItem = this.items[this.mainActiveIndex] || {};
       return selectedItem.children || [];
-    },
-    mainHeight() {
-      const maxHeight = Math.max(this.items.length * 44, this.subItems.length * 44);
-      return Math.min(maxHeight, this.maxHeight);
-    },
-    itemHeight() {
-      return Math.min(this.subItems.length * 44, this.maxHeight);
     }
   },
 
   methods: {
     onItemSelect(data) {
-      this.$emit('itemclick', { ...data });
+      this.$emit('itemclick', data);
     }
   }
 });

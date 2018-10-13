@@ -13,10 +13,10 @@ Vue.use(Card);
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"
   num="2"
   price="2.00"
+  desc="描述信息"  
+  title="商品标题"
   :thumb="imageURL"
 />
 ```
@@ -26,11 +26,13 @@ Vue.use(Card);
 
 ```html
 <van-card
-  title="标题"
-  desc="描述"  
   num="2"
+  tag="标签"
   price="2.00"
+  desc="描述信息"  
+  title="商品标题"
   :thumb="imageURL"
+  origin-price="10.00"
 >
   <div slot="footer">
     <van-button size="mini">按钮</van-button>
@@ -43,13 +45,16 @@ Vue.use(Card);
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| thumb | 左侧图片 | `String` | - |
+| thumb | 左侧图片 URL | `String` | - |
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
+| tag | 标签 | `String` | - |
 | num | 商品数量 | `String | Number` | - |
 | price | 商品价格 | `String | Number` | - |
+| origin-price | 商品划线原价 | `String | Number` | - |
 | centered | 内容是否垂直居中 | `String` | `false` |
 | currency | 货币符号 |  `String` | `¥` |
+| thumb-link | 点击左侧图片后的跳转链接 | `String` | - |
 
 ### Slot
 
@@ -57,6 +62,14 @@ Vue.use(Card);
 |-----------|-----------|
 | title | 自定义标题 |
 | desc | 自定义描述 |
-| tags | 自定义 tags |
-| thumb | 自定义 thumb |
-| footer | 自定义 footer |
+| tags | 自定义描述下方的内容 |
+| thumb | 自定义图片 |
+| footer | 自定义右下角内容 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.4 | feature | 新增 thumb-link 属性 |
+| 1.3.4 | feature | 新增 tag 属性 |
+| 1.3.6 | feature | 新增 origin-price 属性 |

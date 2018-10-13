@@ -6,9 +6,8 @@ exports[`renders demo correctly 1`] = `
     <div class="van-submit-bar">
       <!---->
       <div class="van-submit-bar__bar">
-        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
-        <button class="van-button van-button--danger van-button--normal">
-          <!----><span class="van-button__text">
+        <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 30.50</span></div>
+        <button class="van-button van-button--danger van-button--normal"><span class="van-button__text">
       提交订单
     </span></button>
       </div>
@@ -19,9 +18,8 @@ exports[`renders demo correctly 1`] = `
       <div class="van-submit-bar__tip">
         您的收货地址不支持同城送, 我们已为您推荐快递</div>
       <div class="van-submit-bar__bar">
-        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
-        <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--unclickable">
-          <!----><span class="van-button__text">
+        <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 30.50</span></div>
+        <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--unclickable"><span class="van-button__text">
       提交订单
     </span></button>
       </div>
@@ -31,11 +29,10 @@ exports[`renders demo correctly 1`] = `
     <div class="van-submit-bar">
       <!---->
       <div class="van-submit-bar__bar">
-        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
+        <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 30.50</span></div>
         <button class="van-button van-button--danger van-button--normal van-button--loading van-button--unclickable">
-          <div class="van-loading van-loading--circular van-loading--white" style="width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span class="van-button__text">
-      
-    </span></button>
+          <div class="van-loading van-loading--circular van-loading" style="color:;width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+        </button>
       </div>
     </div>
   </div>
@@ -48,13 +45,12 @@ exports[`renders demo correctly 1`] = `
       <div class="van-submit-bar__bar">
         <div class="van-checkbox">
           <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked">
-            <i class="van-icon van-icon-success" style="color:undefined;">
+            <i class="van-icon van-icon-success" style="color:undefined;font-size:undefined;">
               <!---->
             </i>
           </div> <span class="van-checkbox__label">全选</span></div>
-        <div class="van-submit-bar__price"><span>合计：</span> <span class="van-submit-bar__price-integer">¥30.</span> <span class="van-submit-bar__price-decimal">50</span></div>
-        <button class="van-button van-button--danger van-button--normal">
-          <!----><span class="van-button__text">
+        <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 30.50</span></div>
+        <button class="van-button van-button--danger van-button--normal"><span class="van-button__text">
       提交订单
     </span></button>
       </div>

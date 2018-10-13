@@ -5,17 +5,6 @@ exports[`ContactList render 1`] = `
   <div class="van-radio-group">
     <div class="van-cell-group van-hairline--top-bottom"></div>
   </div>
-  <div class="van-hairline--top van-cell van-cell--clickable van-hairline van-contact-list__add">
-    <i class="van-icon van-icon-add van-cell__left-icon">
-      <!---->
-    </i>
-    <div class="van-cell__title"><span>新建联系人</span>
-      <!---->
-    </div>
-    <!---->
-    <i class="van-icon van-icon-arrow van-cell__right-icon">
-      <!---->
-    </i>
-  </div>
+  <van-button square="" size="large" type="danger" text="新建联系人" class="van-contact-list__add"></van-button>
 </div>
 `;

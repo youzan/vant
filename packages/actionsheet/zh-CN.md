@@ -13,7 +13,11 @@ Vue.use(Actionsheet);
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" />
+<van-actionsheet
+  v-model="show"
+  :actions="actions"
+  @select="onSelect"
+/>
 ```
 
 ```javascript
@@ -23,15 +27,13 @@ export default {
       show: false,
       actions: [
         {
-          name: '选项',
-          callback: this.onClick
+          name: '选项'
         },
         {
           name: '选项',
           subname: '描述信息'
         },
         {
-          name: '选项',
           loading: true
         },
         {
@@ -43,7 +45,9 @@ export default {
   },
 
   methods: {
-    onClick(item) {
+    onSelect(item) {
+      // 点击选项时默认不会关闭菜单，可以手动关闭
+      this.show = false;
       Toast(item.name);
     }
   }
@@ -55,7 +59,13 @@ export default {
 如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" cancel-text="取消" />
+<van-actionsheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="取消"
+  @select="onSelect"
+  @cancel="onCancel"
+/>
 ```
 
 #### 带标题的 Actionsheet
@@ -74,16 +84,17 @@ export default {
 |-----------|-----------|-----------|-------------|
 | actions | 菜单选项 | `Array` | `[]` |
 | title | 标题 | `String` | - |
-| cancel-text | 取消按钮文字 | `String` | - |
-| overlay | 是否显示遮罩层 | `Boolean` | - |
-| close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | - |
+| cancel-text | 取消按钮文字，为空时不展示取消按钮 | `String` | - |
+| overlay | 是否显示遮罩层 | `Boolean` | `true` |
+| close-on-click-overlay | 点击遮罩是否关闭菜单 | `Boolean` | `true` |
 | lazy-render | 是否在首次显示弹层时才渲染 DOM 节点 | `Boolean` | `true` |
-| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
+| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
+| select | 选中选项时触发，禁用或加载状态下不会触发 | item: 选项对应的对象 |
 | cancel | 取消按钮点击时触发 | - |
 
 ### actions
@@ -97,4 +108,15 @@ export default {
 | className | 为对应列添加额外的 class |
 | loading | 是否为加载状态 |
 | disabled | 是否为禁用状态 |
-| callback | 点击时的回调。该回调接受一个参数，参数为当前点击 action 的对象信息 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.16 | feature | 新增 select 事件 |
+| 1.1.16 | bugfix | 修复选项加载中时仍然有点击态的问题 |
+| 1.1.11 | feature | 新增 lazy-render 属性 |
+| 1.1.9 | feature | 支持禁用选项 |
+| 1.1.8 | bugfix | 修复在 rem 布局下标题文字大小错误的问题 |
+| 1.0.4 | feature | 新增 cancel 事件 |
+| 1.0.0 | bugfix | 修复下边框未展示的问题 |

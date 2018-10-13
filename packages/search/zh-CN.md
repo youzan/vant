@@ -13,7 +13,7 @@ Vue.use(Search);
 `van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
-<van-search placeholder="请输入商品名称" v-model="value" />
+<van-search placeholder="请输入搜索关键词" v-model="value" />
 ```
 
 #### 监听对应事件
@@ -25,7 +25,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 <form action="/">
   <van-search
     v-model="value"
-    placeholder="请输入商品名称"
+    placeholder="请输入搜索关键词"
     show-action
     @search="onSearch"
     @cancel="onCancel"
@@ -34,11 +34,12 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 ```
 
 #### 自定义行动按钮
-`van-search` 支持自定义右侧取消按钮，使用名字为 action 的 slot 即可。使用此 slot 以后，原有的 cancel 事件不再生效。
+`van-search` 支持自定义右侧取消按钮，使用名字为 action 的插槽即可。使用此插槽以后，原有的 cancel 事件不再生效。
 
 ```html
 <van-search
   v-model="value"
+  placeholder="请输入搜索关键词"
   show-action
   @search="onSearch"
 >
@@ -67,3 +68,11 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 | 名称 | 说明 |
 |-----------|-----------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.13 | feature | 点击搜索按钮后自动收起键盘 |
+| 1.1.2 | bugfix | 修复错误展示边框的问题 |
+| 1.1.1 | bugfix | 修复在 iOS 下文字被遮挡的问题 |

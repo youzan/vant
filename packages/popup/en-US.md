@@ -48,7 +48,7 @@ Use `position` prop to set popup display position
 | transition | Transition | `String` | `popup-slide` |
 | lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
 | lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
-| get-container | Return the mount node for Popup | `() => HTMLElement` | - |
+| get-container | Return the mount node for Popup | `String | () => HTMLElement` | - |
 
 ### Event
 

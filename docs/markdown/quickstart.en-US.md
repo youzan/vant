@@ -2,11 +2,26 @@
 
 ### Starter kit
 
-Use [vue-cli](https://github.com/vuejs/vue-cli) to create a vant project.
+We recomment to use [Vue Cli 3](https://cli.vuejs.org/zh/) to create a project.
 
-```shell
-vue init youzan/vue-cli-template-vant projectName
+```bash
+# Install Vue Cli
+npm install -g @vue/cli
+
+# Create a project
+vue create hello-world
 ```
+
+After the creation is complete, you can open the GUI by command.
+
+```bash
+# Open GUI
+vue ui
+```
+
+In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to the dependencies.
+
+<img width="100%" style="box-shadow: 0 1px 1px rgba(0, 0, 0, .1); border-radius: 3px;" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809030812.png" >
 
 ### Install
 
@@ -54,6 +69,17 @@ npm i babel-plugin-import -D
     }]
   ]
 }
+
+// For users who use babel7, that can be configured in babel.config.js
+module.exports = {
+  plugins: [
+    ['import', {
+      libraryName: 'vant',
+      libraryDirectory: 'es',
+      style: true
+    }, 'vant']
+  ]
+};
 ```
 
 Then you can import components from vant, equivalent to import manually below.

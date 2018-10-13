@@ -6,22 +6,30 @@
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<p align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</p>
+<h3 align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</h3>
 
-[![Build Status](https://travis-ci.org/youzan/vant.svg?branch=master)](https://travis-ci.org/youzan/vant)
-[![downloads](https://img.shields.io/npm/dt/vant.svg)](https://www.npmjs.com/package/vant)
-[![Coverage Status](https://img.shields.io/codecov/c/github/youzan/vant/dev.svg)](https://codecov.io/github/youzan/vant?branch=dev)
-[![npm version](https://img.shields.io/npm/v/vant.svg?style=flat)](https://www.npmjs.com/package/vant)
-[![license](https://img.shields.io/npm/l/vant.svg)](https://www.npmjs.com/package/vant)
-[![JS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size)](https://unpkg.com/vant/lib/vant.min.js)
-[![CSS Gzip Size](http://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size)](https://unpkg.com/vant/lib/vant-css/index.css)
+<p align="center">
+    <img src="https://img.shields.io/npm/v/vant.svg?style=flat" alt="npm version" />
+    <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
+    <img src="https://img.shields.io/npm/dt/vant.svg" alt="downloads" />
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
+    <img src="https://isitmaintained.com/badge/open/youzan/vant.svg" alt="issue" />
+    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg" alt="Coverage Status" />
+</p>
 
-[访问中文版](./README.zh-CN.md)
+<p align="center">
+  🇨🇳 <a href="./README.zh-CN.md">访问中文版</a>
+  &nbsp;
+  🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
+</p>
+
+---
 
 ## Features
 
 * 50+ Reusable components
-* 90%+ Unit test coverage
+* 80%+ Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * Support TypeScript
@@ -117,10 +125,10 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 * [Documentation](https://youzan.github.io/vant)
 * [Changelog](https://youzan.github.io/vant#/en-US/changelog)
-* [React UI](https://www.youzanyun.com/zanui/zent)
-* [Weapp UI](https://github.com/youzan/zanui-weapp)
 * [Vant Demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
+* [Zent: PC UI base on React](https://www.youzanyun.com/zanui/zent)
+
 
 ## Preview
 

@@ -1,20 +1,39 @@
 <template>
-  <i :class="[b(), `van-icon-${name}`]" :style="{ color }" v-on="$listeners">
+  <i :class="[classPrefix, `${classPrefix}-${name}`]" :style="style" v-on="$listeners">
     <slot />
-    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
+    <van-info :info="info" />
   </i>
 </template>
 
 <script>
+import Info from '../info';
 import create from '../utils/create-basic';
 
 export default create({
   name: 'icon',
 
+  components: {
+    [Info.name]: Info
+  },
+
   props: {
     name: String,
     info: [String, Number],
-    color: String
+    color: String,
+    size: String,
+    classPrefix: {
+      type: String,
+      default: 'van-icon'
+    }
+  },
+
+  computed: {
+    style() {
+      return {
+        color: this.color,
+        fontSize: this.size
+      };
+    }
   }
 });
 </script>

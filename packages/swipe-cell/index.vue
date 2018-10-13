@@ -32,12 +32,13 @@ import Touch from '../mixins/touch';
 const THRESHOLD = 0.15;
 
 export default create({
-  name: 'cell-swipe',
+  name: 'swipe-cell',
 
   mixins: [Touch],
 
   props: {
     onClose: Function,
+    disabled: Boolean,
     leftWidth: {
       type: Number,
       default: 0
@@ -69,6 +70,12 @@ export default create({
   },
 
   methods: {
+    open(position) {
+      const offset = position === 'left' ? this.leftWidth : -this.rightWidth;
+      this.swipeMove(offset);
+      this.resetSwipeStatus();
+    },
+
     close() {
       this.offset = 0;
     },
@@ -90,18 +97,20 @@ export default create({
 
       // right
       if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
-        this.swipeMove(-rightWidth);
-        this.resetSwipeStatus();
+        this.open('right');
       // left
       } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
-        this.swipeMove(leftWidth);
-        this.resetSwipeStatus();
+        this.open('left');
       } else {
         this.swipeMove();
       }
     },
 
     startDrag(event) {
+      if (this.disabled) {
+        return;
+      }
+
       this.draging = true;
       this.touchStart(event);
 
@@ -111,6 +120,10 @@ export default create({
     },
 
     onDrag(event) {
+      if (this.disabled) {
+        return;
+      }
+
       this.touchMove(event);
       const { deltaX } = this;
 
@@ -126,6 +139,10 @@ export default create({
     },
 
     endDrag() {
+      if (this.disabled) {
+        return;
+      }
+
       this.draging = false;
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
@@ -133,6 +150,8 @@ export default create({
     },
 
     onClick(position = 'outside') {
+      this.$emit('click', position);
+
       if (!this.offset) {
         return;
       }

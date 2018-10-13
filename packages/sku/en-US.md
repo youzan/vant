@@ -100,7 +100,7 @@ Vue.use(Sku);
 | stepper-title | Quantity title | `String` | `Quantity` |
 | custom-stepper-config | Custom stepper related config | `Object` | `{}` |
 | message-config | Message related config | `Object` | `{}` |
-| get-container | Return the mount node for sku | `() => HTMLElement` | - |
+| get-container | Return the mount node for sku | `String | () => HTMLElement` | - |
 
 ### Event
 

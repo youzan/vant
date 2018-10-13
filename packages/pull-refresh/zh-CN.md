@@ -66,3 +66,11 @@ export default {
 | pulling | 下拉过程中顶部内容 |
 | loosing | 释放过程中顶部内容 |
 | loading | 加载过程中顶部内容 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.3 | bugfix | 修复在部分情况下提示 preventDefault 警告的问题 |
+| 1.1.10 | feature | 新增 disabled 属性 |
+| 1.0.0 | feature | 支持手动触发 loading 动画 |

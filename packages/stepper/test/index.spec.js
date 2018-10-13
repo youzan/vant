@@ -62,15 +62,7 @@ test('correct value when value is not correct', () => {
   wrapper.setData({ value: 30 });
   input.trigger('input');
 
-  expect(wrapper.emitted('input')).toEqual([
-    [30],
-    [10],
-    [''],
-    [10],
-    [10],
-    [30],
-    [30]
-  ]);
+  expect(wrapper.emitted('input')).toEqual([[30], [1], [0], [40], [30]]);
 });
 
 test('only allow interger', () => {
@@ -80,17 +72,12 @@ test('only allow interger', () => {
     }
   });
 
-  const fn = jest.fn();
-  wrapper.vm.onKeypress({
-    keyCode: 46,
-    preventDefault: fn
-  });
-  wrapper.vm.onKeypress({
-    keyCode: 45,
-    preventDefault: fn
-  });
+  const input = wrapper.find('input');
+  input.element.value = '1.2';
+  input.trigger('input');
+  input.trigger('blur');
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(wrapper.emitted('input')).toEqual([[1]]);
 });
 
 test('stepper blur', () => {
@@ -111,6 +98,6 @@ test('stepper blur', () => {
   input.trigger('input');
   input.trigger('blur');
 
-  expect(wrapper.emitted('input')).toEqual([[''], [3]]);
+  expect(wrapper.emitted('input')).toEqual([[0], [3]]);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });

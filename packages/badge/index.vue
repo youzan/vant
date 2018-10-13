@@ -4,16 +4,21 @@
     :href="url"
     @click="onClick"
   >
-    <div v-if="isDef(info)" :class="b('info')">{{ info }}</div>
+    <van-info :info="info" :class="b('info')" />
     {{ title }}
   </a>
 </template>
 
 <script>
+import Info from '../info';
 import create from '../utils/create';
 
 export default create({
   name: 'badge',
+
+  components: {
+    [Info.name]: Info
+  },
 
   props: {
     url: String,

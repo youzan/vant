@@ -4,20 +4,25 @@
       <slot name="icon" :active="active">
         <icon v-if="icon" :name="icon" />
       </slot>
-      <div v-if="isDef(info)" class="van-icon__info">{{ info }}</div>
+      <van-info :info="info" />
     </div>
     <div :class="b('text')">
-      <slot :active="active"/>
+      <slot :active="active" />
     </div>
   </div>
 </template>
 
 <script>
+import Info from '../info';
 import create from '../utils/create';
 import RouterLink from '../mixins/router-link';
 
 export default create({
   name: 'tabbar-item',
+
+  components: {
+    [Info.name]: Info
+  },
 
   mixins: [RouterLink],
 

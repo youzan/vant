@@ -1,0 +1,19 @@
+@import './common/var.css';
+
+.van-info {
+  color: #fff;
+  left: 100%;
+  top: -.5em;
+  font-size: .6em;
+  font-weight: 500;
+  padding: 0 .25em;
+  text-align: center;
+  min-width: 1.4em;
+  line-height: 1.4;
+  position: absolute;
+  border-radius: .7em;
+  box-sizing: border-box;
+  background-color: $red;
+  transform: translateX(-50%);
+  font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
+}

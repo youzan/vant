@@ -26,7 +26,7 @@ exports[`renders demo correctly 1`] = `
       </ul>
       <div class="van-password-input__info">密码为 6 位数字</div>
     </div>
-    <div class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
+    <div name="van-slide-bottom" class="van-number-keyboard van-number-keyboard--default" style="z-index:100;">
       <!---->
       <div class="van-number-keyboard__body">
         <i class="van-hairline van-key">1</i>

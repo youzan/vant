@@ -16,7 +16,7 @@ Use `v-model` to control the name of active panels
 <van-collapse v-model="activeNames">
   <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
   <van-collapse-item title="Title2" name="2">Content</van-collapse-item>
-  <van-collapse-item title="Title3" name="3">Content</van-collapse-item>
+  <van-collapse-item title="Title3" name="3" disabled>Content</van-collapse-item>
 </van-collapse>
 ```
 
@@ -85,11 +85,20 @@ export default {
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | name | Name | `String | Number` | `index` |
-| title | Title | `String` | - |
+| icon | Left Icon | `String` | - |
+| title | Title | `String | Number` | - |
+| value | Right text | `String | Number` | - |
+| label | Description below the title | `String` | - |
+| border | Whether to show inner border | `Boolean` | `true` |
+| disabled | Whether to disabled collapse | `Boolean` | `false` |
+| is-link | Whether to show link icon | `Boolean` | `true` |
 
 ### CollapseItem Slot
 
 | name | Description |
 |-----------|-----------|
-| default | Content |
+| - | Content |
+| value | Custom value |
+| icon | Custom icon |
 | title | Custom title |
+| right-icon | Custom right icon |

@@ -16,7 +16,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-hairline van-step van-step--horizontal van-step--process">
           <div class="van-step__title" style="color:#06bf04;">商家接单</div>
           <div class="van-step__circle-container">
-            <i class="van-icon van-icon-checked" style="color:#06bf04;">
+            <i class="van-icon van-icon-checked" style="color:#06bf04;font-size:undefined;">
               <!---->
             </i>
           </div>
@@ -38,14 +38,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
     </div>
-    <button class="van-button van-button--default van-button--normal">
-      <!----><span class="van-button__text">下一步</span></button>
+    <button class="van-button van-button--default van-button--normal"><span class="van-button__text">下一步</span></button>
   </div>
   <div>
     <div class="van-steps van-steps--horizontal">
       <div class="van-steps__status">
         <div class="van-steps__icon">
-          <i class="van-icon van-icon-logistics steps-success" style="color:undefined;">
+          <i class="van-icon van-icon-logistics steps-success" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
         </div>
@@ -65,7 +64,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-hairline van-step van-step--horizontal van-step--process">
           <div class="van-step__title" style="color:#06bf04;">商家接单</div>
           <div class="van-step__circle-container">
-            <i class="van-icon van-icon-checked" style="color:#06bf04;">
+            <i class="van-icon van-icon-checked" style="color:#06bf04;font-size:undefined;">
               <!---->
             </i>
           </div>
@@ -93,12 +92,12 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-steps__items van-steps__items--alone">
         <div class="van-hairline van-step van-step--vertical van-step--process">
-          <div class="van-step__title" style="color:#f60;">
+          <div class="van-step__title" style="color:#f44;">
             <h3>【城市】物流状态1</h3>
             <p>2016-07-12 12:40</p>
           </div>
           <div class="van-step__circle-container">
-            <i class="van-icon van-icon-checked" style="color:#f60;">
+            <i class="van-icon van-icon-checked" style="color:#f44;font-size:undefined;">
               <!---->
             </i>
           </div>

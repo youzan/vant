@@ -13,7 +13,11 @@ Vue.use(Actionsheet);
 Use `actions` prop to set options of actionsheet. 
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" />
+<van-actionsheet
+  v-model="show"
+  :actions="actions"
+  @select="onSelect"
+/>
 ```
 
 ```javascript
@@ -23,15 +27,13 @@ export default {
       show: false,
       actions: [
         {
-          name: 'Option',
-          callback: this.onClick
+          name: 'Option'
         },
         {
           name: 'Option',
           description: 'Description'
         },
         {
-          name: 'Option',
           loading: true
         },
         {
@@ -43,7 +45,8 @@ export default {
   },
 
   methods: {
-    onClick(item) {
+    onSelect(item) {
+      this.show = false;
       Toast(item.name);
     }
   }
@@ -53,7 +56,13 @@ export default {
 #### Actionsheet with cancel button
 
 ```html
-<van-actionsheet v-model="show" :actions="actions" cancel-text="Cancel" />
+<van-actionsheet
+  v-model="show"
+  :actions="actions"
+  cancel-text="Cancel"
+  @select="onSelect"
+  @cancel="onCancel"
+/>
 ```
 
 #### Actionsheet with title
@@ -72,15 +81,16 @@ Actionsheet will get another style if there is a `title` prop.
 | actions | Options | `Array` | `[]` |
 | title | Title | `String` | - |
 | cancel-text | Text of cancel button | `String` | - |
-| overlay | Whether to show overlay | `Boolean` | - |
-| close-on-click-overlay | Whether to close when click overlay | `Boolean` | - |
+| overlay | Whether to show overlay | `Boolean` | `true` |
+| close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
 | lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
-| get-container | Return the mount node for actionsheet | `() => HTMLElement` | - |
+| get-container | Return the mount node for actionsheet | `String | () => HTMLElement` | - |
 
 ### Event
 
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
+| select | Triggered when click option | item |
 | cancel | Triggered when cancel click | - |
 
 ### Data struct of actions
@@ -92,4 +102,3 @@ Actionsheet will get another style if there is a `title` prop.
 | className | className for the option |
 | loading | Whether to be loading status |
 | disabled | Whether to be disabled |
-| callback | Triggered when click option |

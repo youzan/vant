@@ -76,45 +76,64 @@ test('get container with parent', () => {
   expect(popup.parentNode).toEqual(wrapper.element);
 });
 
-test('get container without parent', () => {
-  const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      getContainer: () => div
+test('get container with selector', () => {
+  wrapper = mount({
+    template: `
+      <div>
+        <popup class="get-container-selector-1" :value="true" get-container="body"></popup>
+        <popup class="get-container-selector-2" :value="true" get-container="unknown"></popup>
+      </div>
+    `,
+    components: {
+      Popup
     }
   });
-  const popup = wrapper.element;
-  expect(popup.parentNode).toEqual(div);
-  wrapper.vm.getContainer = null;
-  expect(popup.parentNode).toEqual(div);
+
+  const dom1 = document.querySelector('.get-container-selector-1');
+  const dom2 = wrapper.vm.$el.querySelector('.get-container-selector-2');
+
+  expect(dom1.parentNode).toEqual(document.body);
+  expect(dom2.parentNode).toEqual(wrapper.vm.$el);
 });
 
 test('render overlay', () => {
   const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      value: true,
-      overlay: false,
-      getContainer: () => div
+  wrapper = mount({
+    template: `
+      <div>
+        <popup :value="true" :get-container="getContainer" />
+      </div>
+    `,
+    components: {
+      Popup
+    },
+    data() {
+      return {
+        getContainer: () => div
+      };
     }
   });
 
-  expect(div.querySelector('.van-modal')).toBeFalsy();
-  wrapper.vm.overlay = true;
   expect(div.querySelector('.van-modal')).toBeTruthy();
 });
 
 test('close on click modal', () => {
   const div = document.createElement('div');
-  wrapper = mount(Popup, {
-    propsData: {
-      value: true,
-      getContainer: () => div
+  wrapper = mount({
+    template: `
+      <div>
+        <popup v-model="value" :get-container="getContainer" />
+      </div>
+    `,
+    components: {
+      Popup
+    },
+    data() {
+      return {
+        value: true,
+        getContainer: () => div
+      };
     }
-  });
-
-  wrapper.vm.$on('input', val => {
-    wrapper.vm.value = val;
   });
 
   const modal = div.querySelector('.van-modal');

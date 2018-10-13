@@ -33,11 +33,11 @@ export default {
 
 
 #### 自定义图标
-通过 icon slot 自定义图标，可以通过 `slot-scope` 判断标签是否选中
+通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断标签是否选中
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item icon="shop">
+  <van-tabbar-item info="3">
     <span>自定义</span>
     <img
       slot="icon"
@@ -95,3 +95,11 @@ export default {
 | 名称 | 说明 | slot-scope |
 |-----------|-----------|-----------|
 | icon | 自定义图标 | active: 是否为选中标签 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | bugfix | 修复使用 icon 插槽时 info 属性不生效的问题 |
+| 1.1.15 | bugfix | 修复点击当前标签时依然会触发 change 事件的问题 |
+| 1.1.9 | feature | 新增 z-index 属性 |

@@ -101,7 +101,7 @@ Vue.use(Sku);
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` |
 | message-config | 留言相关配置 | `Object` | `{}` |
-| get-container | 指定挂载的 HTML 节点 | `() => HTMLElement` | - |
+| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
 
 ### Event
 
@@ -121,7 +121,7 @@ Vue.use(Sku);
 
 ### Slot
 
-Sku 组件默认划分好了若干区块，这些区块都定义成了 slot，可以按需进行替换。区块顺序见下表：
+Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，可以按需进行替换。区块顺序见下表：
 
 | 名称 | 说明 | 
 |-----------|-----------|
@@ -269,3 +269,17 @@ skuData: {
   }
 }
 ```
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | breaking change | 考虑到可维护性和实际需求，组件不再支持 i18n 国际化
+| 1.3.0 | feature | 支持自定义 validator
+| 1.3.0 | feature | 增加对手机号留言的格式校验
+| 1.1.10 | feature | 新增 stepper-change 事件
+| 1.1.10 | bugfix | 修复图片截断问题
+| 1.1.8 | feature | 限制留言最大长度
+| 1.0.4 | bugfix | 修复 row 行高错误
+| 1.0.2 | bugfix | 修复默认选中不生效的问题
+| 1.0.0 | feature | 新增 sku-header-price 插槽

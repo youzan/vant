@@ -4,7 +4,7 @@
 .van-card {
   color: $text-color;
   height: 100px;
-  font-size: 16px;
+  font-size: 12px;
   background: #fafafa;
   position: relative;
   box-sizing: border-box;
@@ -36,17 +36,12 @@
 
   &,
   &__thumb,
-  &__row {
+  &__content {
     display: flex;
   }
 
   &__content {
     width: 100%;
-
-    &--center {
-      height: 90px;
-      align-items: center;
-    }
   }
 
   &__title,
@@ -58,37 +53,43 @@
   &__title {
     max-height: 40px;
 
-    @mixin multi-ellipsis 2;
+    @include multi-ellipsis(2);
   }
 
   &__desc {
     color: $gray-darker;
-    font-size: 12px;
     max-height: 20px;
-
-    @mixin ellipsis;
   }
 
-  &__price,
-  &__num {
+  &__left {
     flex: 1;
-    min-width: 80px;
+  }
+
+  &__right {
+    flex-shrink: 0;
     line-height: 20px;
+    padding-left: 10px;
     text-align: right;
   }
 
-  &__price {
-    font-size: 14px;
+  &__origin-price {
+    color: $gray-darker;
+    text-decoration: line-through;
   }
 
   &__num {
     color: $gray-darker;
-    font-size: 12px;
+  }
+
+  &__tag {
+    position: absolute;
+    top: 2px;
+    left: 0;
   }
 
   &__footer {
     right: 15px;
-    bottom: 5px;
+    bottom: 8px;
     position: absolute;
 
     .van-button {

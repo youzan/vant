@@ -11,15 +11,18 @@
     >
       <slot />
     </div>
-    <div
-      v-if="showIndicators && count > 1"
-      :class="b('indicators', { vertical })"
-    >
-      <i
-        v-for="index in count"
-        :class="b('indicator', { active: index - 1 === activeIndicator })"
-      />
-    </div>
+    <slot name="indicator">
+      <div
+        v-if="showIndicators && count > 1"
+        :class="b('indicators', { vertical })"
+      >
+        <i
+          v-for="index in count"
+          :class="b('indicator', { active: index - 1 === activeIndicator })"
+        />
+      </div>
+    </slot>
+
   </div>
 </template>
 
@@ -36,6 +39,14 @@ export default create({
   props: {
     autoplay: Number,
     vertical: Boolean,
+    width: {
+      type: Number,
+      default: 0
+    },
+    height: {
+      type: Number,
+      default: 0
+    },
     loop: {
       type: Boolean,
       default: true
@@ -60,8 +71,8 @@ export default create({
 
   data() {
     return {
-      width: 0,
-      height: 0,
+      computedWidth: 0,
+      computedHeight: 0,
       offset: 0,
       active: 0,
       deltaX: 0,
@@ -115,7 +126,7 @@ export default create({
     },
 
     size() {
-      return this[this.vertical ? 'height' : 'width'];
+      return this[this.vertical ? 'computedHeight' : 'computedWidth'];
     },
 
     trackSize() {
@@ -141,8 +152,8 @@ export default create({
       clearTimeout(this.timer);
       if (this.$el) {
         const rect = this.$el.getBoundingClientRect();
-        this.width = rect.width;
-        this.height = rect.height;
+        this.computedWidth = this.width || rect.width;
+        this.computedHeight = this.height || rect.height;
       }
       this.swiping = true;
       this.active = active;
@@ -167,7 +178,7 @@ export default create({
     },
 
     onTouchMove(event) {
-      if (!this.touchable) return;
+      if (!this.touchable || !this.swiping) return;
 
       this.touchMove(event);
 
@@ -182,14 +193,14 @@ export default create({
     },
 
     onTouchEnd() {
-      if (!this.touchable) return;
+      if (!this.touchable || !this.swiping) return;
 
       if (this.delta) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
         this.move(offset > 50 ? (this.delta > 0 ? -1 : 1) : 0);
-        this.swiping = false;
       }
 
+      this.swiping = false;
       this.autoPlay();
     },
 
@@ -203,20 +214,13 @@ export default create({
         return;
       }
 
-      if (move) {
-        if (active === -1) {
-          swipes[count - 1].offset = 0;
-        }
-        swipes[0].offset = atLast && move > 0 ? trackSize : 0;
+      swipes[0].offset = (atLast && (delta < 0 || move > 0)) ? trackSize : 0;
+      swipes[count - 1].offset = (atFirst && (delta > 0 || move < 0)) ? -trackSize : 0;
 
+      if (move && active + move >= -1 && active + move <= count) {
         this.active += move;
-      } else {
-        if (atFirst) {
-          swipes[count - 1].offset = delta > 0 ? -trackSize : 0;
-        } else if (atLast) {
-          swipes[0].offset = delta < 0 ? trackSize : 0;
-        }
       }
+
       this.offset = offset - this.active * this.size;
     },
 
@@ -249,6 +253,7 @@ export default create({
         this.clear();
         this.timer = setTimeout(() => {
           this.swiping = true;
+          this.resetTouchStatus();
           this.correctPosition();
 
           setTimeout(() => {

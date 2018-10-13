@@ -90,7 +90,6 @@ export default {
 |-----------|-----------|
 | - | 在邮政编码下方插入内容 |
 
-
 ### 数据格式
 
 #### addressInfo 数据格式
@@ -105,12 +104,13 @@ export default {
 | province | 省份 | `String` |
 | city | 城市 | `String` |
 | county | 区县 | `String` |
-| address_detail | 详细地址 | `String` |
-| area_code | 地区编码，通过省市区选择获取 | `String` |
-| postal_code | 邮政编码 | `String` |
-| is_default | 是否为默认地址 | `Boolean` |
+| addressDetail | 详细地址 | `String` |
+| areaCode | 地区编码，通过省市区选择获取 | `String` |
+| postalCode | 邮政编码 | `String` |
+| isDefault | 是否为默认地址 | `Boolean` |
 
 #### searchResult 数据格式
+
 | key | 说明 | 类型 |
 |-----------|-----------|-----------|
 | name | 地名 | `String` |
@@ -118,3 +118,18 @@ export default {
 
 #### 省市县列表数据格式
 请参考 [Area](#/zh-CN/area) 组件。
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.2 | bugfix | 修复详细地址下边框未展示的问题
+| 1.2.0 | breaking change | 采用驼峰命名的数据结构
+| 1.2.0 | bugfix | 修复删除按钮展示逻辑
+| 1.1.14 | bugfix | 修复格式化字符串时报错的问题
+| 1.1.8 | feature | 支持配置按钮文字
+| 1.1.6 | bugfix | 修复省市区弹层样式错误的问题
+| 1.1.3 | feature | 新增 cancel-delete 事件
+| 1.0.2 | bugfix | 修复初始化时省市区未正确选中的问题
+| 1.0.0 | feature | 新增 show-delete 属性
+| 1.0.0 | bugfix | 修复在数据变更时未正确选中省市区的问题

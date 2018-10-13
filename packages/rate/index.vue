@@ -20,13 +20,11 @@ export default create({
   name: 'rate',
 
   props: {
+    readonly: Boolean,
+    disabled: Boolean,
     size: {
       type: Number,
       default: 20
-    },
-    disabled: {
-      type: Boolean,
-      default: false
     },
     color: {
       type: String,
@@ -64,7 +62,7 @@ export default create({
 
   methods: {
     onSelect(index) {
-      if (!this.disabled) {
+      if (!this.disabled && !this.readonly) {
         this.$emit('input', index + 1);
         this.$emit('change', index + 1);
       }

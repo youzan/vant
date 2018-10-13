@@ -1,5 +1,5 @@
-## Area 省市县选择组件
-省市县选择组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
+## Area 省市区选择
+省市取选择组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
 ### 使用指南
 
@@ -19,9 +19,9 @@ Vue.use(Area);
 <van-area :area-list="areaList" />
 ```
 
-#### 选中省市县
+#### 选中省市区
 
-如果想选中某个省市县，需要传入一个`value`属性，绑定对应的省市县`code`
+如果想选中某个省市区，需要传入一个`value`属性，绑定对应的省市区`code`
 
 ```html
 <van-area :area-list="areaList" value="110101" />
@@ -29,7 +29,7 @@ Vue.use(Area);
 
 #### 配置显示列
 
-可以通过`columns-num`属性配置省市县显示的列数，默认情况下会显示省市县，当你设置为`2`，则只会显示省市选择
+可以通过`columns-num`属性配置省市区显示的列数，默认情况下会显示省市区，当你设置为`2`，则只会显示省市选择
 
 ```html
 <van-area :area-list="areaList" :columns-num="2" title="标题" />
@@ -41,8 +41,8 @@ Vue.use(Area);
 | --- | --- | --- | --- |
 | value | 当前选中的省市区`code` | `String` | - |
 | title | 顶部栏标题 | `String` | - |
-| area-list | 省市县数据，格式见下方 | `Object` | - |
-| columns-num | 省市县显示列数，3-省市县，2-省市，1-省 | `String | Number` | `3` |
+| area-list | 省市区数据，格式见下方 | `Object` | - |
+| columns-num | 省市区显示列数，3-省市区，2-省市，1-省 | `String | Number` | `3` |
 | loading | 是否显示加载状态 | `Boolean` | `false` |
 | item-height | 选项高度 | `Number` | `44` |
 | visible-item-count | 可见的选项个数 | `Number` | `5` |
@@ -65,7 +65,7 @@ Vue.use(Area);
 
 ### 数据格式
 
-#### 省市县列表数据格式
+#### 省市区列表数据格式
 
 整体是一个 Object，包含 `province_list`, `city_list`, `county_list` 三个 key。
 
@@ -124,3 +124,11 @@ Vue.use(Area);
   }
 ];
 ```
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.12 | feature | 新增 reset 方法 |
+| 1.1.11 | bugfix | 修复 city_list 为空时报错的问题 |
+| 1.1.2 | feature | 新增 change 事件 |

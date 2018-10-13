@@ -4,6 +4,8 @@
       <van-address-list
         v-model="chosenAddressId"
         :list="$t('list')"
+        :disabled-list="$t('disabledList')"
+        :disabled-text="$t('disabledText')"
         @add="onAdd"
         @edit="onEdit"
       />
@@ -27,7 +29,9 @@ export default {
           name: '李四',
           tel: '1310000000',
           address: '浙江省杭州市拱墅区莫干山路 50 号'
-        },
+        }
+      ],
+      disabledList: [
         {
           id: '3',
           name: '王五',
@@ -35,8 +39,9 @@ export default {
           address: '浙江省杭州市滨江区江南大道 15 号'
         }
       ],
-      add: '新增收货地址',
-      edit: '编辑收货地址'
+      add: '新增地址',
+      edit: '编辑地址',
+      disabledText: '以下地址超出配送范围'
     },
     'en-US': {
       list: [
@@ -51,7 +56,9 @@ export default {
           name: 'Ned Stark',
           tel: '1310000000',
           address: 'Somewhere'
-        },
+        }
+      ],
+      disabledList: [
         {
           id: '3',
           name: 'Tywin',
@@ -60,7 +67,8 @@ export default {
         }
       ],
       add: 'Add',
-      edit: 'Edit'
+      edit: 'Edit',
+      disabledText: 'The following address is out of range'
     }
   },
 
@@ -74,6 +82,7 @@ export default {
     onAdd() {
       this.$toast(this.$t('add'));
     },
+
     onEdit(item, index) {
       this.$toast(this.$t('edit') + ':' + index);
     }

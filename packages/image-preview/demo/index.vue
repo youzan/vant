@@ -17,6 +17,13 @@
 <script>
 import { ImagePreview } from '../../../packages';
 
+const images = [
+  'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',
+  'https://img.yzcdn.cn/public_files/2017/09/05/c0dab461920687911536621b345a0bc9.jpg',
+  'https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg',
+  'https://img.yzcdn.cn/public_files/2017/09/05/fd08f07665ed67d50e11b32a21ce0682.jpg'
+];
+
 export default {
   i18n: {
     'zh-CN': {
@@ -33,11 +40,10 @@ export default {
 
   methods: {
     showImagePreview(position, timer) {
-      const instance = ImagePreview([
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FkubrzN7AgGwLlTeb1E89-T_ZjBg.png',
-        'https://img.yzcdn.cn/upload_files/2017/03/14/FmTPs0SeyQaAOSK1rRe1sL8RcwSY.jpeg',
-        'https://img.yzcdn.cn/upload_files/2017/03/15/FvexrWlG_WxtCE9Omo5l27n_mAG_.jpeg'
-      ], typeof position === 'number' ? position : 0);
+      const instance = ImagePreview({
+        images,
+        startPosition: typeof position === 'number' ? position : 0
+      });
 
       if (timer) {
         setTimeout(() => {
@@ -55,9 +61,10 @@ export default {
     margin-left: 15px;
   }
 }
+
 .van-image-preview {
   img {
-    pointer-events: none;
+    -webkit-user-drag: none;
   }
 }
 </style>

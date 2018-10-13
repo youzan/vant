@@ -5,7 +5,7 @@
   position: relative;
 
   &__nav {
-    width: 143px;
+    width: 35%;
     position: absolute;
     left: 0;
     top: 0;
@@ -20,14 +20,20 @@
     padding: 0 15px;
     background-color: $white;
 
+    &:active,
     &--active {
       background-color: $background-color;
+    }
+
+    &--active {
+      font-weight: 500;
     }
   }
 
   &__content {
+    height: 100%;
     padding: 0 15px;
-    margin-left: 143px;
+    margin-left: 35%;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
   }
@@ -38,8 +44,9 @@
     padding-left: 5px;
     padding-right: 18px;
 
+    &:active,
     &--active {
-      color: $button-danger-background-color;
+      color: $red;
     }
   }
 

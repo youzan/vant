@@ -56,7 +56,9 @@ export default {
 |-----------|-----------|-----------|-------------|
 | v-model | Current page number | `Number` | - |
 | mode | Mode, can be set to `simple` `multi` | `String` | `multi` |
+| total-items | Total items | `Number` | `0` |
 | items-per-page | Item number per page | `Number` | `10` |
+| page-count | The total number of pages, if not set, will be calculated based on `total-items` and `items-per-page` | `Number` | `-` |
 | prev-text | Previous text | `String` | `Previous` |
 | next-text | Next text | `String` | `Next` |
 | show-page-size | Count of page size to show | `Number` | `5` |

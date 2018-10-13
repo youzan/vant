@@ -35,7 +35,7 @@ Use `icon` slot to custom icon
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item icon="shop">
+  <van-tabbar-item info="3">
     <span>Custom</span>
     <img
       slot="icon"

@@ -3,7 +3,7 @@
  */
 const fs = require('fs-extra');
 const path = require('path');
-const babel = require('babel-core');
+const babel = require('@babel/core');
 const compiler = require('vue-sfc-compiler');
 
 const esDir = path.join(__dirname, '../es');
@@ -11,7 +11,7 @@ const libDir = path.join(__dirname, '../lib');
 const srcDir = path.join(__dirname, '../packages');
 const compilerOption = {
   babel: {
-    extends: path.join(__dirname, '../.babelrc')
+    configFile: path.join(__dirname, '../babel.config.js')
   }
 };
 
@@ -55,9 +55,9 @@ function compile(dir, jsOnly = false) {
   });
 }
 
-process.env.BABEL_ENV = 'commonjs';
+process.env.BABEL_MODULE = 'commonjs';
 
-fs.copySync(esDir, libDir);
+fs.copySync(srcDir, libDir);
 compile(libDir);
 
 function isDir(dir) {

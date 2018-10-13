@@ -58,8 +58,10 @@ export default {
 |-----------|-----------|-----------|-------------|
 | v-model | 当前页码 | `Number` | - |
 | mode | 显示模式，可选值为 `simple` `multi` | `String` | `multi` |
+| total-items | 总记录数 | `Number` | `0` |
 | items-per-page | 每页记录数 | `Number` | `10` |
-| previous-text | 上一页 | `String` | `上一页` |
+| page-count | 总页数，如果不设置将以 `total-items` 和 `items-per-page` 为准进行计算 | `Number` | `-` |
+| prev-text | 上一页 | `String` | `上一页` |
 | next-text | 下一页 | `String` | `下一页` |
 | show-page-size | 显示的页码个数 | `Number` | `5` |
 | force-ellipses | 显示省略号 | `Boolean` | `false` |

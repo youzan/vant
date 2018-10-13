@@ -15,6 +15,8 @@ Vue.use(AddressList);
 <van-address-list
   v-model="chosenAddressId"
   :list="list"
+  :disabled-list="disabledList"
+  disabled-text="The following address is out of range"
   @add="onAdd"
   @edit="onEdit"
 />
@@ -38,6 +40,14 @@ export default {
           tel: '1310000000',
           address: 'Somewhere'
         }
+      ],
+      disabledList: [
+        {
+          id: '3',
+          name: 'Tywin',
+          tel: '1320000000',
+          address: 'Somewhere'
+        }
       ]
     }
   },
@@ -59,6 +69,8 @@ export default {
 |-----------|-----------|-----------|-------------|
 | v-model | Id of chosen address | String | - |
 | list | Address list | Array | `[]` |
+| disabled-list | Disabled address list | `Array` | `[]` |
+| disabled-text | Disabled text | `String` | - |
 | add-button-text | Add button text | String | `Add new address` |
 
 ### Event
@@ -66,8 +78,10 @@ export default {
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | add | Triggered when click add button | - |
-| edit | Triggered when click edit button | item: address object，index |
+| edit | Triggered when edit address | item: address object，index |
 | select | Triggered when select address | item: address object，index |
+| edit-disabled | Triggered when edit disabled address | item: address object，index |
+| select-disabled | Triggered when select disabled address | item: address object，index |
 
 ### Address Data Structure
 
@@ -77,3 +91,10 @@ export default {
 | name | Name | `String` |
 | tel | Phone | `String` |
 | address | Address | `String` |
+
+### Slot
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | Custom content after list |
+| top | Custom content before list |

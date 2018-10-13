@@ -77,6 +77,49 @@ export default {
 </van-swipe>
 ```
 
+#### 控制滑块大小
+
+```html
+<van-swipe :autoplay="3000" :width="300">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+#### 自定义指示器
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+
+  <template slot="indicator">
+    <div class="custom-indicator">
+      {{ this.current + 1 }}/4
+    </div>
+  </template>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    data() {
+      return {
+        current: 0
+      }
+    },
+    onChange(index) {
+      this.current = index;
+    }
+  }
+}
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -88,6 +131,8 @@ export default {
 | touchable | 是否可以通过手势滑动 | `Boolean` | `true` |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` |
 | initial-swipe | 初始位置，从 0 开始算 | `Number` | `0` |
+| width | 设置滑块宽度 | `Number` | `0` |
+| height | 设置滑块高度 | `Number` | `0` |
 
 ### 事件
 
@@ -102,3 +147,24 @@ export default {
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
 | swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
+
+### 插槽
+
+| 名称 | 说明 |
+|-----------|-----------|
+| - | 轮播内容 |
+| indicator | 自定义指示器 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | bugfix | 修复特定手势下可能出现位置错误的问题
+| 1.2.1 | feature | 新增 width、height 属性
+| 1.1.15 | feature | 新增 open 方法
+| 1.1.13 | bugfix | 修复多指触控时导致空白的问题
+| 1.1.12 | bugfix | 修复浏览器滚动时会触发轮播左右滚动的问题
+| 1.1.12 | feature | 屏幕大小变化时自动调整宽度
+| 1.1.7 | feature | 新增 swipeTo 方法
+| 1.1.1 | feature | 新增 touchable 属性
+| 1.1.1 | feature | 新增 vertical 属性，支持垂直布局

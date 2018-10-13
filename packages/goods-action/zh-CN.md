@@ -76,3 +76,9 @@ export default {
 | url | 跳转链接 | `String` | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
 | replace | 跳转时是否替换当前 history | `String` | `false` |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.4 | bugfix | 修复 info 长度超过三位数时显示错误 |

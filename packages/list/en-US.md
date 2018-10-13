@@ -18,7 +18,11 @@ Vue.use(List);
   :finished="finished"
   @load="onLoad"
 >
-  <van-cell v-for="item in list" :key="item" :title="item + ''" />
+  <van-cell
+    v-for="item in list"
+    :key="item"
+    :title="item"
+  />
 </van-list>
 ```
 
@@ -64,3 +68,18 @@ export default {
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | load | Triggered when the distance between the scrollbar and the bottom is less than offset | - |
+
+### Methods
+
+Use ref to get list instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| check | - | - | Check scroll position |
+
+### Slot
+
+| Name | Description |
+|-----------|-----------|
+| - | List content |
+| loading | Custom loading tips |

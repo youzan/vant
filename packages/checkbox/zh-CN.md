@@ -33,7 +33,7 @@ export default {
 ```
 
 #### 自定义图标
-通过 icon slot 自定义图标，可以通过 `slot-scope` 判断是否为选中状态
+通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
 
 ```html
 <van-checkbox v-model="checked">
@@ -164,7 +164,7 @@ export default {
 
 | 名称 | 说明 | slot-scope |
 |-----------|-----------|-----------|
-| default | 自定义文本 | - |
+| - | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
 
 ### Checkbox 方法
@@ -174,3 +174,12 @@ export default {
 | 方法名 | 参数 | 返回值 | 介绍 |
 |-----------|-----------|-----------|-------------|
 | toggle | - | - | 切换选中状态 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.12 | feature | 新增 icon 插槽，支持自定义图标 |
+| 1.1.11 | feature | 新增 label-position 属性 |
+| 1.1.8 | bugfix | 修复 v-model 类型检查错误 |
+| 1.1.0 | bugfix | 修复内容为空时渲染了空 label 元素的问题 |

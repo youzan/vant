@@ -109,3 +109,25 @@ test('blur method', () => {
 
   expect(fn.mock.calls.length).toEqual(1);
 });
+
+test('maxlength', async() => {
+  const wrapper = mount(Field, {
+    attrs: {
+      maxlength: 3
+    },
+    propsData: {
+      value: 1234,
+      type: 'number'
+    }
+  });
+
+  const input = wrapper.find('input');
+  expect(input.element.value).toEqual('123');
+
+  input.element.value = 1234;
+  await later();
+  input.trigger('input');
+
+  expect(input.element.value).toEqual('123');
+  expect(wrapper.emitted('input')[0][0]).toEqual('123');
+});

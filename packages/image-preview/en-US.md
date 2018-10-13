@@ -17,12 +17,19 @@ ImagePreview([
 ]);
 ```
 
-#### Custom Start Position
+#### Custom config
+
 ```javascript
-ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-], 1);
+ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/1.jpg',
+    'https://img.yzcdn.cn/2.jpg'
+  ],
+  startPosition: 1,
+  onClose() {
+    // do something
+  }
+});
 ```
 
 #### Close Manually
@@ -40,6 +47,9 @@ setTimeout(() => {
 
 ### Arguments
 
-| Attribute | Description | Type |
-|-----------|-----------|-----------|
-| imageUrls | Image URL list | `Array` |
+| Attribute | Description | Type | Default |
+|-----------|-----------|-----------|-----------|
+| images | Images URL list | `Array` | `[]` |
+| startPosition | Start position | `Number` | `0` |
+| showIndex | Whether to show index | `Boolean` | `true` |
+| onClose | Close callback | `Function` | - |

@@ -1,10 +1,10 @@
-## CellSwipe 滑动单元格
+## SwipeCell 滑动单元格
 
 ### 使用指南
 ``` javascript
-import { CellSwipe } from 'vant';
+import { SwipeCell } from 'vant';
 
-Vue.use(CellSwipe);
+Vue.use(SwipeCell);
 ```
 
 ### 代码演示
@@ -12,25 +12,25 @@ Vue.use(CellSwipe);
 #### 基础用法
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65">
+<van-swipe-cell :right-width="65" :left-width="65">
   <span slot="left">选择</span>
   <van-cell-group>
     <van-cell title="单元格" value="内容" />
   </van-cell-group>
   <span slot="right">删除</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 #### 异步关闭
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65" :on-close="onClose">
+<van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
   <span slot="left">选择</span>
   <van-cell-group>
     <van-cell title="单元格" value="内容" />
   </van-cell-group>
   <span slot="right">删除</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 ```js
@@ -63,6 +63,7 @@ export default {
 | left-width | 左侧滑动区域宽度 | `Number` | `0` |
 | right-width | 右侧滑动区域宽度 | `Number` | `0` |
 | on-close | 关闭时的回调函数 | `Function` | - |
+| disabled | 是否禁用滑动 | `Boolean` | `false` |
 
 ### Slot
 
@@ -72,8 +73,34 @@ export default {
 | left | 左侧滑动内容 |
 | right | 右侧滑动内容 |
 
+### Event
+
+| 事件名 | 说明 | 参数 |
+|-----------|-----------|-----------|
+| click | 点击时触发 | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
+
 ### onClose 参数
+
 | 参数 | 类型 | 说明 |
 |-----------|-----------|-----------|
 | clickPosition | `String` | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | `Object` | CellSwipe 实例，挂载有 close 方法 |
+| instance | `Object` | SwipeCell 实例 |
+
+### 方法
+
+通过 ref 可以获取到 SwipeCell 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|-----------|-----------|-----------|-------------|
+| open | position: 'left' \| 'right' | - | 打开单元格侧边栏 |
+| close | - | - | 收起单元格侧边栏 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.4 | feature | 新增 disabled 属性 |
+| 1.3.3 | feature | 新增 click 事件 |
+| 1.2.0 | breaking change | 组件命名由 CellSwipe 修改为 SwipeCell |
+| 1.1.15 | feature | 新增 open 方法 |
+| 1.0.5 | bugfix | 修复在垂直滑动时也会触发 Swipe 的问题 |

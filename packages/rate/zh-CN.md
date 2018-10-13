@@ -52,11 +52,20 @@ export default {
 | size | 图标大小 (px) | `Number` | `20` |
 | color | 选中时的颜色 | `String` | `#ffd21e`  |
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` |
-| disabled-color | 不可选时的颜色 | `String` | `#bdbdbd` | 
+| readonly | 是否为只读状态 | `Boolean` | `false` |
 | disabled | 是否禁用评分 | `Boolean` | `false` |
+| disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` | 
 
 ### Event
 
 | 事件名称 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
 | change | 当前分值变化时触发的事件 | 当前分值 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.0 | feature | 新增 readonly 属性
+| 1.1.5 | feature | 新增 change 事件
+| 1.1.2 | feature | 新增组件

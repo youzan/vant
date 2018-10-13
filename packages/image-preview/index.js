@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import VueImagePreview from './image-preview';
+import VueImagePreview from './ImagePreview';
+import { isServer } from '../utils';
 
 let instance;
 
@@ -10,16 +11,28 @@ const initInstance = () => {
   document.body.appendChild(instance.$el);
 };
 
-const ImagePreview = (images, startPosition = 0) => {
+const ImagePreview = (images, startPosition) => {
+  /* istanbul ignore if */
+  if (isServer) {
+    return;
+  }
+
   if (!instance) {
     initInstance();
   }
 
-  instance.images = images;
-  instance.startPosition = startPosition;
+  const config = Array.isArray(images) ? { images, startPosition } : images;
+
   instance.value = true;
+  instance.images = config.images;
+  instance.showIndex = config.showIndex || true;
+  instance.startPosition = config.startPosition || 0;
   instance.$on('input', show => {
     instance.value = show;
+    if (!show) {
+      instance.$off('input');
+      config.onClose && config.onClose();
+    }
   });
 
   return instance;

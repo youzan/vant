@@ -1,6 +1,11 @@
 <template>
   <cell-group :class="b()">
-    <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
+    <cell
+      :title="title || $t('title')"
+      :value="value"
+      :is-link="editable"
+      @click="$emit('click')"
+    />
   </cell-group>
 </template>
 
@@ -35,7 +40,7 @@ export default create({
       const { coupons } = this;
       const coupon = coupons[this.chosenCoupon];
       if (coupon) {
-        return `${this.$t('reduce')}￥${(coupon.value / 100).toFixed(2)}`;
+        return `-￥${(coupon.value / 100).toFixed(2)}`;
       }
       return coupons.length === 0 ? this.$t('tips') : this.$t('count', coupons.length);
     }

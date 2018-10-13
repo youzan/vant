@@ -21,7 +21,7 @@
     max-height: 100%;
     overflow-y: auto;
     background-color: $white;
-    transition: .2s ease-out;
+    transition: .3s ease-out;
     -webkit-overflow-scrolling: touch;
     transform: translate3d(-50%, -50%, 0);
 

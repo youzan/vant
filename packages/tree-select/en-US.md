@@ -50,10 +50,12 @@ export default {
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
 | items | Required datasets for the component, see Data Structure for detail. | `Array` | `[]` |
+| height | Height (px) | `Number` | `300` |
 | main-Active-index | The index of selected parent node | `Number` | `0` |
 | active-id | Id of selected item | `String | Number` | `0` |
 
 #### Event
+
 | Event | Description | Arguments |
 |-----------|-----------|-----------|
 | navclick | triggered when parent node is selected |  index: index of selected parent |

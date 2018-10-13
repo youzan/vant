@@ -11,6 +11,7 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # build
+  npm version $VERSION --no-git-tag-version
   VERSION=$VERSION npm run build:lib
 
   # publish vant-css
@@ -21,7 +22,6 @@ then
   cd ../..
 
   # commit
-  npm version $VERSION --no-git-tag-version
   git tag v$VERSION
   git commit -am "[release] $VERSION"
 

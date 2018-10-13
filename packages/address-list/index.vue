@@ -1,27 +1,35 @@
 <template>
   <div :class="b()">
-    <radio-group :value="value" :class="b('group')" @input="$emit('input', $event)">
+    <slot name="top" />
+    <radio-group :value="value" @input="$emit('input', $event)">
       <cell-group>
-        <cell v-for="(item, index) in list" :key="item.id" is-link>
-          <radio :name="item.id" @click="$emit('select', item, index)">
-            <div :class="b('name')">{{ item.name }}，{{ item.tel }}</div>
-            <div :class="b('address')">{{ $t('address') }}：{{ item.address }}</div>
-          </radio>
-          <icon
-            slot="right-icon"
-            name="edit"
-            :class="b('edit')"
-            @click="$emit('edit', item, index)"
-          />
-        </cell>
+        <address-item
+          v-for="(item, index) in list"
+          :data="item"
+          :key="item.id"
+          @select="$emit('select', item, index)"
+          @edit="$emit('edit', item, index)"
+        />
       </cell-group>
     </radio-group>
-    <cell
-      icon="add"
-      is-link
+    <div v-if="disabledText" :class="b('disabled-text')">{{ disabledText }}</div>
+    <cell-group v-if="disabledList.length">
+      <address-item
+        v-for="(item, index) in disabledList"
+        disabled
+        :data="item"
+        :key="item.id"
+        @select="$emit('select-disabled', item, index)"
+        @edit="$emit('edit-disabled', item, index)"
+      />
+    </cell-group>
+    <slot />
+    <van-button
+      square
+      size="large"
+      type="danger"
       :class="b('add')"
-      class="van-hairline--top"
-      :title="addButtonText || $t('add')"
+      :text="addButtonText || $t('add')"
       @click="$emit('add')"
     />
   </div>
@@ -29,21 +37,28 @@
 
 <script>
 import create from '../utils/create';
-import Radio from '../radio';
 import RadioGroup from '../radio-group';
+import VanButton from '../button';
+import AddressItem from './Item';
 
 export default create({
   name: 'address-list',
 
   components: {
-    Radio,
-    RadioGroup
+    RadioGroup,
+    VanButton,
+    AddressItem
   },
 
   props: {
+    disabledText: String,
     addButtonText: String,
     value: [String, Number],
     list: {
+      type: Array,
+      default: () => []
+    },
+    disabledList: {
       type: Array,
       default: () => []
     }

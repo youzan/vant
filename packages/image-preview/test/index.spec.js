@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import ImagePreview from '..';
-import ImagePreviewVue from '../image-preview';
+import ImagePreviewVue from '../ImagePreview';
 import { mount, triggerDrag } from '../../../test/utils';
 
 const images = [
@@ -32,6 +32,26 @@ test('function call', done => {
     triggerDrag(swipe, 0, 0);
 
     expect(wrapper.querySelectorAll('img').length).toEqual(1);
+    done();
+  });
+});
+
+test('function call options', done => {
+  const onClose = jest.fn();
+  const instance = ImagePreview({
+    images,
+    startPostion: 1,
+    onClose
+  });
+
+  instance.$emit('input', true);
+  expect(onClose.mock.calls.length).toEqual(0);
+
+  Vue.nextTick(() => {
+    const wrapper = document.querySelector('.van-image-preview');
+    const swipe = wrapper.querySelector('.van-swipe__track');
+    triggerDrag(swipe, 0, 0);
+    expect(onClose.mock.calls.length).toEqual(1);
     done();
   });
 });

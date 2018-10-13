@@ -10,15 +10,8 @@
     &::after {
       visibility: hidden;
     }
-  }
 
-  &__content {
-    padding: 15px;
-    background-color: #fff;
-  }
-
-  &--expanded {
-    .van-collapse-item__title {
+    &--expanded {
       .van-cell__right-icon::before {
         transform: rotate(-90deg);
       }
@@ -27,5 +20,27 @@
         visibility: visible;
       }
     }
+
+    &--disabled {
+      &,
+      & .van-cell__right-icon {
+        color: $gray;
+      }
+
+      &:active {
+        background-color: $white;
+      }
+    }
+  }
+
+  &__wrapper {
+    overflow: hidden;
+    will-change: height;
+    transition: height .3s ease-in-out;
+  }
+
+  &__content {
+    padding: 15px;
+    background-color: $white;
   }
 }

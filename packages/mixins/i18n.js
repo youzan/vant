@@ -7,8 +7,10 @@ export default {
       const { name } = this.$options;
       const prefix = name ? camelize(name) + '.' : '';
 
-      if (process.env.NODE_ENV !== 'production' && !this.$vantMessages) {
-        console.warn('[Vant] Locale not correctly registered.');
+      if (!this.$vantMessages) {
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn('[Vant] Locale not correctly registered.');
+        }
         return () => '';
       }
 

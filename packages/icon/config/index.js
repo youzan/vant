@@ -58,6 +58,10 @@ module.exports = {
       css: 'share'
     },
     {
+      src: 'aim.svg',
+      css: 'aim'
+    },
+    {
       src: '喜欢.svg',
       css: 'like-o'
     },
@@ -66,7 +70,7 @@ module.exports = {
       css: 'logistics'
     },
     {
-      src: '编辑地址.svg',
+      src: 'edit.svg',
       css: 'edit'
     },
     {

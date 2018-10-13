@@ -175,3 +175,12 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | setColumnIndex | columnIndex, optionIndex | - | 设置对应列选中项的索引 |
 | getColumnValues | columnIndex | values | 获取对应列中所有选项 |
 | setColumnValue | columnIndex, values | - | 设置对应列中所有选项 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.1.13 | bugfix | 修复部分安卓机型下选项高度错误的问题 |
+| 1.1.6 | feature | 支持 html 类型的选项 |
+| 1.1.0 | bugfix | 修复系统字体大小缩放时布局错乱的问题 |
+| 1.0.4 | feature | 支持 Picker 组件所有属性 |

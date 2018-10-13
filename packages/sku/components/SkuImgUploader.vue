@@ -5,15 +5,15 @@
       :disabled="!!paddingImg"
       :after-read="afterReadFile"
       :max-size="maxSize * 1024 * 1024"
-      @oversize="$toast($t('maxSize', maxSize))"
+      @oversize="onOversize"
     >
       <div :class="b('header')">
-        <div v-if="paddingImg">{{ $t('uploading') }}</div>
+        <div v-if="paddingImg">正在上传...</div>
         <template v-else>
           <icon name="photograph" />
-          <span class="label">{{ $t(value ? 'rephoto' : 'photo') }}</span> {{ $t('or') }}
+          <span class="label">{{ value ? '重拍' : '拍照' }}</span> 或
           <icon name="photo" />
-          <span class="label">{{ $t(value ? 'reselect' : 'select') }}</span>
+          <span class="label">{{ value ? '重新选择照片' : '选择照片' }}</span>
         </template>
       </div>
     </van-uploader>
@@ -30,7 +30,7 @@
       <!-- 正在上传的图片,有上传等待提示 -->
       <div v-if="paddingImg" :class="b('img')">
         <img :src="paddingImg">
-        <loading :class="b('uploading')" type="spinner" color="black" />
+        <loading :class="b('uploading')" type="spinner" />
       </div>
     </div>
   </div>
@@ -84,6 +84,10 @@ export default create({
       }).catch(() => {
         this.paddingImg = '';
       });
+    },
+
+    onOversize() {
+      this.$toast(`最大可上传图片为${this.maxSize}MB，请尝试压缩图片尺寸`);
     }
   }
 });

@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import VueToast from './toast';
-import { isObj } from '../utils';
+import VueToast from './Toast';
+import { isObj, isServer } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -20,6 +20,11 @@ let singleton = true;
 let currentOptions = { ...defaultOptions };
 
 function createInstance() {
+  /* istanbul ignore if */
+  if (isServer) {
+    return {};
+  }
+
   if (!queue.length || !singleton) {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')

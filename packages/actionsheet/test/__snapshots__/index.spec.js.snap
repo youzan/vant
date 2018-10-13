@@ -6,7 +6,7 @@ exports[`callback events 1`] = `
     <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">Option</span>
       <!---->
     </li>
-    <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">Option</span>
+    <li class="van-actionsheet__item van-actionsheet__item--disabled van-hairline--top"><span class="van-actionsheet__name">Option</span>
       <!---->
     </li>
   </ul>

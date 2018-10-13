@@ -140,7 +140,7 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 
 | 事件 | 说明 | 回调参数 |
 |-----------|-----------|-----------|
-| click-icon | 点击尾部图标时触发 | -
+| click-icon | 点击尾部图标时触发 | - |
 
 ### 方法
 
@@ -157,3 +157,25 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | label | 自定义输入框标签 |
 | icon | 自定义输入框尾部图标 |
 | button | 自定义输入框尾部按钮 |
+
+### 更新日志
+
+| 版本 | 类型 | 内容 |
+|-----------|-----------|-----------|
+| 1.3.3 | bugfix | 修复类型为 number 时 maxlength 属性不生效的问题 |
+| 1.1.15 | bugfix | 修复 date 类型在 iOS 设备下显示错误的问题
+| 1.1.14 | bugfix | 修复行高错误
+| 1.1.11 | bugfix | 修复 readonly 状态下在 safari 上出现光标的问题
+| 1.1.11 | bugfix | 修复 readonly 状态下仍然会显示清除按钮的问题
+| 1.1.10 | feature | 新增 is-link 属性
+| 1.1.10 | feature | 新增 input-align 属性
+| 1.1.10 | feature | 新增 label-align 属性
+| 1.1.9 | feature | 新增 clearable 属性
+| 1.1.8 | feature | 新增 blur 方法
+| 1.1.7 | feature | 支持 v-model.number
+| 1.1.5 | bugfix | 修复在 safari 上不正确的外边距
+| 1.1.4 | feature | 新增 left-icon 属性
+| 1.1.3 | feature | 新增 label 插槽
+| 1.0.8 | bugfix | 修复 number 类型无法输入负数的问题
+| 1.0.3 | feature | 新增 button 插槽，支持插入按钮
+| 1.0.0 | feature | 支持配置 autosize 最大/最小高度

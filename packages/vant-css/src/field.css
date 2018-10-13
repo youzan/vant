@@ -5,10 +5,6 @@
     max-width: 90px;
   }
 
-  .van-cell__value {
-    position: relative;
-  }
-
   &__body {
     display: flex;
     align-items: center;
@@ -21,7 +17,6 @@
     width: 100%;
     resize: none;
     display: block;
-    line-height: normal;
     box-sizing: border-box;
     background-color: transparent;
 
@@ -38,6 +33,12 @@
     &--right {
       text-align: right;
     }
+
+    /* for ios wechat */
+    &[type="date"],
+    &[type="time"] {
+      min-height: 24px;
+    }
   }
 
   &__clear,
@@ -49,14 +50,19 @@
   &__clear,
   &__icon {
     padding: 0 10px;
-    color: $gray-dark;
     line-height: inherit;
     margin-right: -10px;
+  }
+
+  &__clear {
+    color: $gray;
+    font-size: 16px;
   }
 
   &__icon .van-icon {
     display: block;
     font-size: 16px;
+    color: $gray-dark;
     line-height: inherit;
   }
 

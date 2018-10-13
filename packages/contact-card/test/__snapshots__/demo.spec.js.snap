@@ -3,58 +3,46 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-contact-card van-contact-card--add">
-      <div class="van-contact-card__content">
-        <i class="van-icon van-icon-add2 van-contact-card__icon" style="color:undefined;">
-          <!---->
-        </i>
-        <div class="van-contact-card__text">添加订单联系人信息</div>
-      </div>
-      <i class="van-icon van-icon-arrow van-contact-card__arrow" style="color:undefined;">
+    <div class="van-cell van-cell--center van-cell--borderless van-cell--clickable van-contact-card van-contact-card--add">
+      <i class="van-icon van-icon-add2 van-cell__left-icon" style="color:undefined;font-size:undefined;">
+        <!---->
+      </i>
+      <!---->
+      <div class="van-cell__value van-cell__value--alone">添加联系人</div>
+      <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
         <!---->
       </i>
     </div>
-    <div class="van-popup van-popup--bottom" style="display:none;">
+    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-list">
         <div class="van-radio-group">
           <div class="van-cell-group van-hairline--top-bottom">
-            <div class="van-cell van-cell--clickable van-hairline">
+            <div class="van-cell van-cell--clickable">
               <!---->
               <!---->
               <div class="van-cell__value van-cell__value--alone">
-                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;"> <!----></i></span> <span class="van-radio__label"><p class="van-contact-list__text">联系人：张三</p> <p class="van-contact-list__text">联系电话：13000000000</p></span></div>
+                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;font-size:undefined;"> <!----></i></span> <span class="van-radio__label"><div class="van-contact-list__name">张三，13000000000</div></span></div>
               </div>
-              <i class="van-icon van-icon-edit van-contact-list__edit" style="color:undefined;">
+              <i class="van-icon van-icon-edit van-contact-list__edit" style="color:undefined;font-size:undefined;">
                 <!---->
               </i>
             </div>
           </div>
         </div>
-        <div class="van-hairline--top van-cell van-cell--clickable van-hairline van-contact-list__add">
-          <i class="van-icon van-icon-add van-cell__left-icon" style="color:undefined;">
-            <!---->
-          </i>
-          <div class="van-cell__title"><span>新建联系人</span>
-            <!---->
-          </div>
-          <!---->
-          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;">
-            <!---->
-          </i>
-        </div>
+        <button class="van-button van-button--danger van-button--large van-button--square van-contact-list__add"><span class="van-button__text">新建联系人</span></button>
       </div>
     </div>
-    <div class="van-popup van-popup--bottom" style="display:none;">
+    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-edit">
         <div class="van-cell-group van-hairline--top-bottom">
-          <div maxlength="30" placeholder="张三" class="van-cell van-hairline van-field">
+          <div maxlength="30" placeholder="请填写姓名" class="van-cell van-field">
             <!---->
-            <div class="van-cell__title"><span>联系人</span>
+            <div class="van-cell__title"><span>张三</span>
               <!---->
             </div>
             <div class="van-cell__value">
               <div class="van-field__body">
-                <input type="text" maxlength="30" placeholder="张三" class="van-field__control">
+                <input type="text" maxlength="30" placeholder="请填写姓名" class="van-field__control">
                 <!---->
                 <!---->
                 <!---->
@@ -63,14 +51,14 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <div placeholder="手机或固定电话" class="van-cell van-hairline van-field">
+          <div placeholder="请填写电话" class="van-cell van-field">
             <!---->
-            <div class="van-cell__title"><span>联系电话</span>
+            <div class="van-cell__title"><span>电话</span>
               <!---->
             </div>
             <div class="van-cell__value">
               <div class="van-field__body">
-                <input type="tel" placeholder="手机或固定电话" class="van-field__control">
+                <input type="tel" placeholder="请填写电话" class="van-field__control">
                 <!---->
                 <!---->
                 <!---->
@@ -81,23 +69,21 @@ exports[`renders demo correctly 1`] = `
           </div>
         </div>
         <div class="van-contact-edit__buttons">
-          <button class="van-button van-button--primary van-button--normal van-button--block">
-            <!----><span class="van-button__text">保存</span></button>
+          <button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">保存</span></button>
           <!---->
         </div>
       </div>
     </div>
   </div>
   <div>
-    <div class="van-contact-card van-contact-card--edit van-contact-card--uneditable">
-      <div class="van-contact-card__content">
-        <i class="van-icon van-icon-contact van-contact-card__icon" style="color:undefined;">
-          <!---->
-        </i>
-        <div class="van-contact-card__text">
-          <div>联系人：张三</div>
-          <div>联系电话：13000000000</div>
-        </div>
+    <div class="van-cell van-cell--center van-cell--borderless van-contact-card van-contact-card--edit">
+      <i class="van-icon van-icon-contact van-cell__left-icon" style="color:undefined;font-size:undefined;">
+        <!---->
+      </i>
+      <!---->
+      <div class="van-cell__value van-cell__value--alone">
+        <div>张三：张三</div>
+        <div>电话：13000000000</div>
       </div>
       <!---->
     </div>

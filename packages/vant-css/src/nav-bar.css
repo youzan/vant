@@ -33,6 +33,7 @@
     margin: 0 auto;
     max-width: 60%;
     font-size: 16px;
+    font-weight: 500;
   }
 
   &__left,

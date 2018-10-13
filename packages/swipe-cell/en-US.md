@@ -1,10 +1,10 @@
-## CellSwipe
+## SwipeCell
 
 ### Install
 ``` javascript
-import { CellSwipe } from 'vant';
+import { SwipeCell } from 'vant';
 
-Vue.use(CellSwipe);
+Vue.use(SwipeCell);
 ```
 
 ### Usage
@@ -12,25 +12,25 @@ Vue.use(CellSwipe);
 #### Basic Usage
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65">
+<van-swipe-cell :right-width="65" :left-width="65">
   <span slot="left">Select</span>
   <van-cell-group>
     <van-cell title="Cell" value="Cell Content" />
   </van-cell-group>
   <span slot="right">Delete</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 #### Async close
 
 ```html
-<van-cell-swipe :right-width="65" :left-width="65" :on-close="onClose">
+<van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
   <span slot="left">Select</span>
   <van-cell-group>
     <van-cell title="Cell" value="Cell Content" />
   </van-cell-group>
   <span slot="right">Delete</span>
-</van-cell-swipe>
+</van-swipe-cell>
 ```
 
 ```js
@@ -63,6 +63,7 @@ export default {
 | left-width | Width of the left scrollable area | `Number` | `0` |
 | right-width | Width of the right scrollable area | `Number` | `0` |
 | on-close | Callback function before close | `Function` | - |
+| disabled | Whether to disabled swipe | `Boolean` | `false` |
 
 ### Slot
 
@@ -72,8 +73,24 @@ export default {
 | left | content of left scrollable area |
 | right | content of right scrollabe area |
 
+### Event
+
+| Event | Description | Arguments |
+|-----------|-----------|-----------|
+| click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
+
 ### onClose Params
+
 | Argument | Type | Description |
 |-----------|-----------|-----------|
 | clickPosition | `String` | Click positon (`left` `right` `cell` `outside`) |
-| instance | `Object` | CellSwipe instance with a close method |
+| instance | `Object` | SwipeCell instance |
+
+### Methods
+
+Use ref to get SwipeCell instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|-----------|-----------|-----------|-------------|
+| open | position: 'left' \| 'right' | - | open SwipeCell |
+| close | - | - | close SwipeCell |

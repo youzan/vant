@@ -1,7 +1,6 @@
 // This file is auto gererated by build/build-entry.js
 export default {
   'changelog.en-US': () => import('../markdown/changelog.en-US.md'),
-  'changelog.generated': () => import('../markdown/changelog.generated.md'),
   'changelog.zh-CN': () => import('../markdown/changelog.zh-CN.md'),
   'contribution.zh-CN': () => import('../markdown/contribution.zh-CN.md'),
   'intro.en-US': () => import('../markdown/intro.en-US.md'),
@@ -27,8 +26,6 @@ export default {
   'card.zh-CN': () => import('../../packages/card/zh-CN.md'),
   'cell.en-US': () => import('../../packages/cell/en-US.md'),
   'cell.zh-CN': () => import('../../packages/cell/zh-CN.md'),
-  'cell-swipe.en-US': () => import('../../packages/cell-swipe/en-US.md'),
-  'cell-swipe.zh-CN': () => import('../../packages/cell-swipe/zh-CN.md'),
   'checkbox.en-US': () => import('../../packages/checkbox/en-US.md'),
   'checkbox.zh-CN': () => import('../../packages/checkbox/zh-CN.md'),
   'circle.en-US': () => import('../../packages/circle/en-US.md'),
@@ -99,6 +96,8 @@ export default {
   'submit-bar.zh-CN': () => import('../../packages/submit-bar/zh-CN.md'),
   'swipe.en-US': () => import('../../packages/swipe/en-US.md'),
   'swipe.zh-CN': () => import('../../packages/swipe/zh-CN.md'),
+  'swipe-cell.en-US': () => import('../../packages/swipe-cell/en-US.md'),
+  'swipe-cell.zh-CN': () => import('../../packages/swipe-cell/zh-CN.md'),
   'switch.en-US': () => import('../../packages/switch/en-US.md'),
   'switch.zh-CN': () => import('../../packages/switch/zh-CN.md'),
   'switch-cell.en-US': () => import('../../packages/switch-cell/en-US.md'),

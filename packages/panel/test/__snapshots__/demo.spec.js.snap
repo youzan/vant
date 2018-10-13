@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
-      <div class="van-cell van-hairline van-panel__header">
+      <div class="van-cell van-panel__header">
         <!---->
         <div class="van-cell__title"><span>标题</span>
           <div class="van-cell__label">描述信息</div>
@@ -20,7 +20,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
-      <div class="van-cell van-hairline van-panel__header">
+      <div class="van-cell van-panel__header">
         <!---->
         <div class="van-cell__title"><span>标题</span>
           <div class="van-cell__label">描述信息</div>
@@ -33,10 +33,8 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-hairline--top van-panel__footer">
         <div>
-          <button class="van-button van-button--default van-button--small">
-            <!----><span class="van-button__text">按钮</span></button>
-          <button class="van-button van-button--danger van-button--small">
-            <!----><span class="van-button__text">按钮</span></button>
+          <button class="van-button van-button--default van-button--small"><span class="van-button__text">按钮</span></button>
+          <button class="van-button van-button--danger van-button--small"><span class="van-button__text">按钮</span></button>
         </div>
       </div>
     </div>

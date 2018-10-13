@@ -77,6 +77,49 @@ export default {
 </van-swipe>
 ```
 
+#### Set Swiper Item Size
+
+```html
+<van-swipe :autoplay="3000" :width="300">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+</van-swipe>
+```
+
+#### Custom Indicator
+
+```html
+<van-swipe @change="onChange">
+  <van-swipe-item>1</van-swipe-item>
+  <van-swipe-item>2</van-swipe-item>
+  <van-swipe-item>3</van-swipe-item>
+  <van-swipe-item>4</van-swipe-item>
+
+  <template slot="indicator">
+    <div class="custom-indicator">
+      {{ this.current + 1 }}/4
+    </div>
+  </template>
+</van-swipe>
+```
+
+```js
+export default {
+  methods: {
+    data() {
+      return {
+        current: 0
+      }
+    },
+    onChange(index) {
+      this.current = index;
+    }
+  }
+}
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
@@ -88,6 +131,8 @@ export default {
 | touchable | Whether touchable | `Boolean` | `true` |
 | show-indicators | Whether to show indocators | `Boolean` | `true` |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` |
+| width | Set Swiper Item Width | `Number` | `0` |
+| height | Set Swiper Item Height | `Number` | `0` |
 
 ### Event
 
@@ -101,4 +146,11 @@ Use ref to get swipe instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |-----------|-----------|-----------|-------------|
-| swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
+| swipeTo | index: target index | void | Swipe to target index |
+
+### Slot
+
+| name | Description |
+|-----------|-----------|
+| - | Content |
+| indicator | Custom indicator |
