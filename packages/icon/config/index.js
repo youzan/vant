@@ -10,7 +10,7 @@ module.exports = {
       css: 'upgrade'
     },
     {
-      src: '加购.svg',
+      src: '加购2.svg',
       css: 'add-o'
     },
     {
@@ -222,7 +222,7 @@ module.exports = {
       css: 'fail'
     },
     {
-      src: '新增地址.svg',
+      src: '加购.svg',
       css: 'add'
     },
     {
@@ -376,6 +376,10 @@ module.exports = {
     {
       src: '热卖.svg',
       css: 'hot-sale'
+    },
+    {
+      src: '购物车3.svg',
+      css: 'cart-o'
     }
   ]
 };
