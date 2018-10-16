@@ -212,7 +212,7 @@ customStepperConfig: {
       // const { LIMIT_TYPE } = Sku.skuConstants;
       if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
         let msg = `单次限购${quota}件`;
-        if (quotaUsed > 0) msg += `，您已购买${quotaUsed}`;
+        if (quotaUsed > 0) msg += `，你已购买${quotaUsed}`;
         Toast(msg);
       } else {
         Toast('库存不够了~~');
