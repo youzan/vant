@@ -61,7 +61,6 @@
     color: $gray-darker;
   }
 
-  &--disabled,
   &--unswitchable {
     .van-radio__input {
       display: none;

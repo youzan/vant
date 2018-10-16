@@ -1,6 +1,6 @@
 <template>
   <cell
-    :class="b({ disabled, unswitchable: !switchable })"
+    :class="b({ disabled, unswitchable: !switchable || disabled })"
     :is-link="!disabled && switchable"
     @click="onSelect"
   >
