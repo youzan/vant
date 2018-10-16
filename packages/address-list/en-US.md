@@ -71,6 +71,7 @@ export default {
 | list | Address list | Array | `[]` |
 | disabled-list | Disabled address list | `Array` | `[]` |
 | disabled-text | Disabled text | `String` | - |
+| switchable | Whether to allow switch address | `Boolean` | `true` |
 | add-button-text | Add button text | String | `Add new address` |
 
 ### Event

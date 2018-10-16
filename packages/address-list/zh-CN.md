@@ -73,6 +73,7 @@ export default {
 | list | 地址列表 | `Array` | `[]` |
 | disabled-list | 不可配送地址列表 | `Array` | `[]` |
 | disabled-text | 不可配送提示文案 | `String` | - |
+| switchable | 是否允许切换地址 | `Boolean` | `true` |
 | add-button-text | 底部按钮文字 | `String` | `新增地址` |
 
 ### Event
