@@ -61,18 +61,21 @@
     color: $gray-darker;
   }
 
-  &--disabled {
-    .van-address-item__name,
-    .van-address-item__address {
-      color: $gray-dark;
-    }
-
+  &--disabled,
+  &--unswitchable {
     .van-radio__input {
       display: none;
     }
 
     .van-radio__label {
       padding-left: 0;
+    }
+  }
+
+  &--disabled {
+    .van-address-item__name,
+    .van-address-item__address {
+      color: $gray-dark;
     }
   }
 
