@@ -38,6 +38,7 @@ Vue.use(Panel);
 | title | 标题 | `String` | - |
 | desc | 描述 | `String` | - |
 | status | 状态 | `String` | - |
+| icon | 标题左侧图标，可选值见 Icon 组件 | `String` | - |
 
 ### Slot
 
