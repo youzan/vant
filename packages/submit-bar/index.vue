@@ -12,7 +12,14 @@
           <span :class="b('price')">{{ currency }} {{ price | format }}</span>
         </template>
       </div>
-      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="$emit('submit')">
+      <van-button
+        square
+        size="large"
+        :type="buttonType"
+        :disabled="disabled"
+        :loading="loading"
+        @click="$emit('submit')"
+      >
         {{ loading ? '' : buttonText }}
       </van-button>
     </div>

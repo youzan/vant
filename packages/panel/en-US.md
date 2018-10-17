@@ -33,6 +33,7 @@ Vue.use(Panel);
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
+| icon | Left Icon | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
 | status | Status | `String` | - |
