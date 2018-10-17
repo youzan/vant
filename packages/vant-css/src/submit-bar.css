@@ -42,12 +42,5 @@
 
   .van-button {
     width: 110px;
-    height: 100%;
-    border-radius: 0;
-    font-size: 16px;
-
-    &--disabled {
-      border: none;
-    }
   }
 }
