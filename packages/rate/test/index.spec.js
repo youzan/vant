@@ -1,5 +1,5 @@
 import Rate from '../';
-import { mount } from '../../../test/utils';
+import { mount, triggerDrag } from '../../../test/utils';
 
 test('change event', () => {
   const wrapper = mount(Rate, {
@@ -16,4 +16,19 @@ test('change event', () => {
   item4.trigger('click');
   expect(wrapper.emitted('input')[0][0]).toEqual(4);
   expect(wrapper.emitted('change')[0][0]).toEqual(4);
+});
+
+test('touchmove', () => {
+  const wrapper = mount(Rate);
+  triggerDrag(wrapper, 100, 0);
+
+  const icons = wrapper.findAll('svg');
+  document.elementFromPoint = function(x, y) {
+    const index = Math.round(x / 20);
+    if (index < icons.length) {
+      return icons.at(index).element;
+    }
+  };
+  triggerDrag(wrapper, 100, 0);
+  expect(wrapper.emitted('change')).toEqual([[2], [3], [4]]);
 });
