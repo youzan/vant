@@ -34,6 +34,12 @@
       <van-tag color="#7232dd">{{ $t('tag') }}</van-tag>
       <van-tag color="#7232dd" plain>{{ $t('tag') }}</van-tag>
     </demo-block>
+
+    <demo-block :title="$t('customSize')">
+      <van-tag type="danger">{{ $t('tag') }}</van-tag>
+      <van-tag type="danger" size="medium">{{ $t('tag') }}</van-tag>
+      <van-tag type="danger" size="large">{{ $t('tag') }}</van-tag>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -44,13 +50,15 @@ export default {
       plain: '空心样式',
       round: '圆角样式',
       mark: '标记样式',
-      customColor: '自定义颜色'
+      customColor: '自定义颜色',
+      customSize: '标签大小'
     },
     'en-US': {
       plain: 'Plain style',
       round: 'Round style',
       mark: 'Mark style',
-      customColor: 'Custom Color'
+      customColor: 'Custom Color',
+      customSize: 'Custom Size'
     }
   }
 };
