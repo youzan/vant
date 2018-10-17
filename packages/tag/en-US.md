@@ -54,11 +54,21 @@ Vue.use(Tag);
 <van-tag color="#7232dd" plain>Tag</van-tag>
 ```
 
+#### Custom Size
+
+```html
+<van-tag>Tag</van-tag>
+<van-tag size="medium">Tag</van-tag>
+<van-tag size="large">Tag</van-tag>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
 |-----------|-----------|-----------|-------------|
-| type | Type, can be set to `primary` `success` `danger` | `String` | `''`|
+| type | Type, can be set to `primary` `success` `danger` | `String` | - |
+| size | Size, can be set to `large` `medium` | `String` | - |
+| color | Custom color | `String` | - |
 | plain | Whether to be plain style | `Boolean` | `false` |
 | round | Whether to be round style | `Boolean` | `false` |
 | mark | Wtether to be mark style | `Boolean` | `false` |

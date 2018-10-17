@@ -11,5 +11,6 @@ exports[`renders demo correctly 1`] = `
       style="background-color:#06bf04;">标签</span></div>
   <div><span class="van-tag" style="background-color:#f2826a;">标签</span> <span class="van-tag van-tag--plain van-hairline--surround" style="color:#f2826a;">标签</span> <span class="van-tag" style="background-color:#7232dd;">标签</span> <span class="van-tag van-tag--plain van-hairline--surround"
       style="color:#7232dd;">标签</span></div>
+  <div><span class="van-tag" style="background-color:#f44;">标签</span> <span class="van-tag van-tag--medium" style="background-color:#f44;">标签</span> <span class="van-tag van-tag--large" style="background-color:#f44;">标签</span></div>
 </div>
 `;

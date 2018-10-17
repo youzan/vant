@@ -29,4 +29,12 @@
       border-radius: 1.6em;
     }
   }
+
+  &--medium {
+    font-size: 12px;
+  }
+
+  &--large {
+    font-size: 14px;
+  }
 }

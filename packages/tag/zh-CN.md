@@ -58,11 +58,20 @@ Vue.use(Tag);
 <van-tag color="#7232dd" plain>标签</van-tag>
 ```
 
+#### 标签大小
+
+```html
+<van-tag>标签</van-tag>
+<van-tag size="medium">标签</van-tag>
+<van-tag size="large">标签</van-tag>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
-| type | 类型，可选值为`primary` `success` `danger` | `String` | `''`|
+| type | 类型，可选值为`primary` `success` `danger` | `String` | - |
+| size | 大小, 可选值为`large` `medium` | `String` | - |
 | color | 自定义标签颜色 | `String` | - |
 | plain | 是否为空心样式 | `Boolean` | `false` |
 | round | 是否为圆角样式 | `Boolean` | `false` |

@@ -3,7 +3,8 @@
     :class="[b({
       mark,
       plain,
-      round
+      round,
+      [size]: size
     }), {
       'van-hairline--surround': plain
     }]"
@@ -27,6 +28,7 @@ export default create({
   name: 'tag',
 
   props: {
+    size: String,
     type: String,
     mark: Boolean,
     color: String,
