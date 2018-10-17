@@ -1,5 +1,25 @@
 ## Changelog
 
+### [1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
+`2018-10-17`
+
+**Improvements**
+
+- Tag: add size prop [\#1949](https://github.com/youzan/vant/pull/1949)
+- Tag: add color prop [\#1946](https://github.com/youzan/vant/pull/1946)
+- Tag: add round prop [\#1947](https://github.com/youzan/vant/pull/1947)
+- Panel: add icon prop [\#1942](https://github.com/youzan/vant/pull/1942)
+- Icon: add cart-o icon [\#1932](https://github.com/youzan/vant/pull/1932)
+- Field: add clear event [\#1944](https://github.com/youzan/vant/pull/1944)
+- Rate: support touch move select [\#1951](https://github.com/youzan/vant/pull/1951)
+- AddressList: add switchable prop [\#1938](https://github.com/youzan/vant/pull/1938)
+
+**Bug Fixes**
+
+- fix Card desc ellipsis [\#1935](https://github.com/youzan/vant/pull/1935)
+- fix SubmitBar incomplete button text display [\#1940](https://github.com/youzan/vant/pull/1940)
+
+
 ### [1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
 `2018-10-12`
 

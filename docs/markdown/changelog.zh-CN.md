@@ -1,5 +1,25 @@
 ## 更新日志
 
+### [1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
+`2018-10-17`
+
+**Improvements**
+
+- Tag: 新增 size 属性 [\#1949](https://github.com/youzan/vant/pull/1949)
+- Tag: 新增 color 属性 [\#1946](https://github.com/youzan/vant/pull/1946)
+- Tag: 新增 round 属性 [\#1947](https://github.com/youzan/vant/pull/1947)
+- Panel: 新增 icon 属性 [\#1942](https://github.com/youzan/vant/pull/1942)
+- Field: 新增 clear 事件 [\#1944](https://github.com/youzan/vant/pull/1944)
+- Icon: 新增 cart-o 图标 [\#1932](https://github.com/youzan/vant/pull/1932)
+- Rate: 支持手势滑动修改评分 [\#1951](https://github.com/youzan/vant/pull/1951)
+- AddressList: 新增 switchable 属性 [\#1938](https://github.com/youzan/vant/pull/1938)
+
+**Bug Fixes**
+
+- 修复 Card 描述过长时文字溢出的问题 [\#1935](https://github.com/youzan/vant/pull/1935)
+- 修复 SubmitBar 按钮文字过大时显示不全的问题 [\#1940](https://github.com/youzan/vant/pull/1940)
+
+
 ### [1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
 `2018-10-12`
 
