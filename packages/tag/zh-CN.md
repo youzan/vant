@@ -39,13 +39,23 @@ Vue.use(Tag);
 <van-tag mark type="success">标签</van-tag>
 ```
 
+#### 自定义颜色
+
+```html
+<van-tag color="#f2826a">标签</van-tag>
+<van-tag color="#f2826a" plain>标签</van-tag>
+<van-tag color="#7232dd">标签</van-tag>
+<van-tag color="#7232dd" plain>标签</van-tag>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----------|-----------|-----------|-------------|
 | type | 类型，可选值为`primary` `success` `danger` | `String` | `''`|
+| color | 自定义标签颜色 | `String` | - |
 | plain | 是否为空心样式 | `Boolean` | `false` |
-| mark | 是否为圆角样式 | `Boolean` | `false` |
+| mark | 是否为标记样式 | `Boolean` | `false` |
 
 ### Slot
 

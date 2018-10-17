@@ -36,6 +36,15 @@ Vue.use(Tag);
 <van-tag mark type="success">Tag</van-tag>
 ```
 
+#### Custom Color
+
+```html
+<van-tag color="#f2826a">Tag</van-tag>
+<van-tag color="#f2826a" plain>Tag</van-tag>
+<van-tag color="#7232dd">Tag</van-tag>
+<van-tag color="#7232dd" plain>Tag</van-tag>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
