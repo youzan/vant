@@ -27,6 +27,15 @@ Vue.use(Tag);
 <van-tag plain type="success">Tag</van-tag>
 ```
 
+#### Round style
+
+```html
+<van-tag round>Tag</van-tag>
+<van-tag round type="danger">Tag</van-tag>
+<van-tag round type="primary">Tag</van-tag>
+<van-tag round type="success">Tag</van-tag>
+```
+
 #### Mark style
 
 ```html
@@ -51,6 +60,7 @@ Vue.use(Tag);
 |-----------|-----------|-----------|-------------|
 | type | Type, can be set to `primary` `success` `danger` | `String` | `''`|
 | plain | Whether to be plain style | `Boolean` | `false` |
+| round | Whether to be round style | `Boolean` | `false` |
 | mark | Wtether to be mark style | `Boolean` | `false` |
 
 ### Slot

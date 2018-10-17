@@ -30,7 +30,17 @@ Vue.use(Tag);
 ```
 
 #### 圆角样式
-通过`mark`设置为圆角样式
+通过`round`设置为圆角样式
+
+```html
+<van-tag round>标签</van-tag>
+<van-tag round type="danger">标签</van-tag>
+<van-tag round type="primary">标签</van-tag>
+<van-tag round type="success">标签</van-tag>
+```
+
+#### 标记样式
+通过`mark`设置为标记样式(半圆角)
 
 ```html
 <van-tag mark>标签</van-tag>
@@ -55,6 +65,7 @@ Vue.use(Tag);
 | type | 类型，可选值为`primary` `success` `danger` | `String` | `''`|
 | color | 自定义标签颜色 | `String` | - |
 | plain | 是否为空心样式 | `Boolean` | `false` |
+| round | 是否为圆角样式 | `Boolean` | `false` |
 | mark | 是否为标记样式 | `Boolean` | `false` |
 
 ### Slot
