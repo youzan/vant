@@ -67,10 +67,6 @@ export default {
 .demo-cell {
   .van-cell-text {
     margin-right: 5px;
-  }
-
-  .van-cell-text,
-  .van-tag--danger {
     vertical-align: middle;
   }
 }

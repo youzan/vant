@@ -9,12 +9,19 @@
 
     <demo-block :title="$t('plain')">
       <van-tag plain>{{ $t('tag') }}</van-tag>
-      <van-tag plain type="danger">{{ $t('tag') }}</van-tag>
-      <van-tag plain type="primary">{{ $t('tag') }}</van-tag>
+      <van-tag round plain type="danger">{{ $t('tag') }}</van-tag>
+      <van-tag round plain type="primary">{{ $t('tag') }}</van-tag>
       <van-tag plain type="success">{{ $t('tag') }}</van-tag>
     </demo-block>
 
     <demo-block :title="$t('round')">
+      <van-tag round>{{ $t('tag') }}</van-tag>
+      <van-tag round type="danger">{{ $t('tag') }}</van-tag>
+      <van-tag round type="primary">{{ $t('tag') }}</van-tag>
+      <van-tag round type="success">{{ $t('tag') }}</van-tag>
+    </demo-block>
+
+    <demo-block :title="$t('mark')">
       <van-tag mark>{{ $t('tag') }}</van-tag>
       <van-tag mark type="danger">{{ $t('tag') }}</van-tag>
       <van-tag mark type="primary">{{ $t('tag') }}</van-tag>
@@ -36,11 +43,13 @@ export default {
     'zh-CN': {
       plain: '空心样式',
       round: '圆角样式',
+      mark: '标记样式',
       customColor: '自定义颜色'
     },
     'en-US': {
       plain: 'Plain style',
-      round: 'Mark style',
+      round: 'Round style',
+      mark: 'Mark style',
       customColor: 'Custom Color'
     }
   }

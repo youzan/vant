@@ -25,7 +25,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-card">
       <a href="javascript:;" class="van-card__thumb">
-        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-tag--danger van-card__tag">
+        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-card__tag" style="background-color:#f44;">
       标签
     </span></a>
       <div class="van-card__content">

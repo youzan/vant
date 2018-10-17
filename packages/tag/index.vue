@@ -3,7 +3,7 @@
     :class="[b({
       mark,
       plain,
-      [type]: type
+      round
     }), {
       'van-hairline--surround': plain
     }]"
@@ -16,6 +16,13 @@
 <script>
 import create from '../utils/create';
 
+const DEFAULT_COLOR = '#999';
+const COLOR_MAP = {
+  danger: '#f44',
+  primary: '#38f',
+  success: '#06bf04'
+};
+
 export default create({
   name: 'tag',
 
@@ -23,17 +30,15 @@ export default create({
     type: String,
     mark: Boolean,
     color: String,
-    plain: Boolean
+    plain: Boolean,
+    round: Boolean
   },
 
   computed: {
     style() {
-      if (this.color) {
-        const key = this.plain ? 'color' : 'backgroundColor';
-        return {
-          [key]: this.color
-        };
-      }
+      const color = this.color || COLOR_MAP[this.type] || DEFAULT_COLOR;
+      const key = this.plain ? 'color' : 'backgroundColor';
+      return { [key]: color };
     }
   }
 });
