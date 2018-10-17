@@ -139,6 +139,7 @@ Field support all native events of input tag，such as `focus`、`blur`、`keypr
 | Event | Description | Parameters |
 |-----------|-----------|-----------|
 | click-icon | Triggered when click the icon of Field | - |
+| clear | Triggered when click clear icon | - |
 
 ### Methods
 

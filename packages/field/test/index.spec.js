@@ -131,3 +131,21 @@ test('maxlength', async() => {
   expect(input.element.value).toEqual('123');
   expect(wrapper.emitted('input')[0][0]).toEqual('123');
 });
+
+test('clearable', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      value: 'test',
+      clearable: true
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+  const input = wrapper.find('input');
+  input.trigger('focus');
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.find('.van-field__clear').trigger('touchstart');
+  expect(wrapper.emitted('input')[0][0]).toEqual('');
+  expect(wrapper.emitted('clear')).toBeTruthy();
+});
