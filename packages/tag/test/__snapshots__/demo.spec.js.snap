@@ -8,5 +8,7 @@ exports[`renders demo correctly 1`] = `
       class="van-tag van-tag--plain van-tag--success van-hairline--surround">标签</span>
   </div>
   <div><span class="van-tag van-tag--mark">标签</span> <span class="van-tag van-tag--mark van-tag--danger">标签</span> <span class="van-tag van-tag--mark van-tag--primary">标签</span> <span class="van-tag van-tag--mark van-tag--success">标签</span></div>
+  <div><span class="van-tag" style="background-color:#f2826a;">标签</span> <span class="van-tag van-tag--plain van-hairline--surround" style="color:#f2826a;">标签</span> <span class="van-tag" style="background-color:#7232dd;">标签</span> <span class="van-tag van-tag--plain van-hairline--surround"
+      style="color:#7232dd;">标签</span></div>
 </div>
 `;
