@@ -48,7 +48,7 @@ Use `v-lazy:background-image` to set background url, and declare the height of t
 ### Options
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | loading | Src of the image while loading | `String` | - |
 | error | Src of the image upon load fail | `String` | - |
 | preload | Proportion of pre-loading height | `String` | - |

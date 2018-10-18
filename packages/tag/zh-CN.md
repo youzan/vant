@@ -68,24 +68,17 @@ Vue.use(Tag);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| type | 类型，可选值为`primary` `success` `danger` | `String` | - |
-| size | 大小, 可选值为`large` `medium` | `String` | - |
-| color | 自定义标签颜色 | `String` | - |
-| plain | 是否为空心样式 | `Boolean` | `false` |
-| round | 是否为圆角样式 | `Boolean` | `false` |
-| mark | 是否为标记样式 | `Boolean` | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| type | 类型，可选值为`primary` `success` `danger` | `String` | - | - |
+| size | 大小, 可选值为`large` `medium` | `String` | - | 1.3.8 |
+| color | 自定义标签颜色 | `String` | - | 1.3.8 |
+| plain | 是否为空心样式 | `Boolean` | `false` | - |
+| round | 是否为圆角样式 | `Boolean` | `false` | 1.3.8 |
+| mark | 是否为标记样式 | `Boolean` | `false` | - |
 
 ### Slot
 
 | 名称 | 说明 |
-|-----------|-----------|
+|------|------|
 | - | 自定义 Tag 显示内容 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.3 | bugfix | 修复边框颜色错误的问题 |
-| 1.0.3 | bugfix | 修复文字在部分安卓手机上未垂直居中的问题 |

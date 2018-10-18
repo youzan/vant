@@ -56,7 +56,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Current rate | `Number` | - |
 | rate | Target rate | `Number` | `100` |
 | size | Circle size | `String` | `100px` |
@@ -71,5 +71,5 @@ export default {
 ### Cell Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | custom text content |

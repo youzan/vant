@@ -65,7 +65,7 @@ export default {
 ### Tabbar API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Index of current tab | `Number` | - |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
@@ -73,13 +73,13 @@ export default {
 ### Tabbar Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when change active tab | active: index of current tab |
 
 ### TabbarItem API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | icon | Icon name | `String` | - |
 | dot | Whether to show red dot | `Boolean` | - |
 | info | Info message | `String | Number` | - |
@@ -90,5 +90,5 @@ export default {
 ### TabbarItem Slot
 
 | Name | Description | slot-scope |
-|-----------|-----------|-----------|
+|------|------|------|
 | icon | Custom icon | active |

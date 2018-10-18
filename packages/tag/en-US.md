@@ -65,7 +65,7 @@ Vue.use(Tag);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | type | Type, can be set to `primary` `success` `danger` | `String` | - |
 | size | Size, can be set to `large` `medium` | `String` | - |
 | color | Custom color | `String` | - |
@@ -76,5 +76,5 @@ Vue.use(Tag);
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Default slot |

@@ -70,49 +70,40 @@ Vue.use(Cell).use(CellGroup);
 
 ### CellGroup API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| border | 是否显示外边框 | `Boolean` | `true` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| border | 是否显示外边框 | `Boolean` | `true` | - |
 
 ### Cell API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| icon | 左侧图标，可选值见 Icon 组件 | `String` | - |
-| title | 左侧标题 | `String | Number` | - |
-| value | 右侧内容 | `String | Number` | - |
-| label | 标题下方的描述信息 | `String` | - |
-| border | 是否显示内边框 | `Boolean` | `true` |
-| center | 是否使内容垂直居中 | `Boolean` | `false` |
-| url | 跳转链接 | `String` | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` |
-| clickable | 是否开启点击反馈 | `Boolean` | `false` |
-| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
-| required | 是否显示表单必填星号 | `Boolean` | `false` |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| icon | 左侧图标，可选值见 Icon 组件 | `String` | - | - |
+| title | 左侧标题 | `String | Number` | - | - |
+| value | 右侧内容 | `String | Number` | - | - |
+| label | 标题下方的描述信息 | `String` | - | - |
+| url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| border | 是否显示内边框 | `Boolean` | `true` | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
+| required | 是否显示表单必填星号 | `Boolean` | `false` | - |
+| center | 是否使内容垂直居中 | `Boolean` | `false` | 1.0.3 |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - | 1.1.10 |
 
 ### Cell Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | 点击 cell 时触发 | - |
 
 ### Cell Slot
 
 | 名称 | 说明 |
-|-----------|-----------|
+|------|------|
 | - | 自定义显示内容 |
 | icon | 自定义`icon` |
 | title | 自定义`title` |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
 
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.10 | feature | 新增 arrow-direction 属性
-| 1.1.4 | feature | title 和 value 属性支持 number 类型
-| 1.0.8 | bugfix | 修复文字垂直不对齐的问题
-| 1.0.3 | feature | 新增 center 属性
-| 1.0.3 | feature | 布局方式由 table 升级为 flex-box

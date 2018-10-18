@@ -53,7 +53,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Current page number | `Number` | - |
 | mode | Mode, can be set to `simple` `multi` | `String` | `multi` |
 | total-items | Total items | `Number` | `0` |
@@ -67,5 +67,5 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered on page change | - |

@@ -70,20 +70,20 @@ export default {
 ### Collapse API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | names of current active panels | `Array | String | Number` | - |
 | accordion | Whether to be accordion mode | `Boolean` | `false` |
 
 ### Collapse Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when switch panel | activeNames: `string | array` |
 
 ### CollapseItem API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | name | Name | `String | Number` | `index` |
 | icon | Left Icon | `String` | - |
 | title | Title | `String | Number` | - |
@@ -96,7 +96,7 @@ export default {
 ### CollapseItem Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Content |
 | value | Custom value |
 | icon | Custom icon |

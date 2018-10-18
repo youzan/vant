@@ -73,9 +73,9 @@ export default {
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function` | - |
-| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - |
-| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - |
-| waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| v-waterfall-lower | 滚动到底部, 触发执行的函数 | `Function` | - | - |
+| v-waterfall-upper | 滚动到顶部, 触发执行的函数 | `Function` | - | - |
+| waterfall-disabled | 在 vue 对象中表示是否禁止瀑布流触发的 key 值 | `String` | - | - |
+| waterfall-offset | 触发瀑布流加载的阈值 | `Number` | `300` | - |

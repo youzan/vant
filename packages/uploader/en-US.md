@@ -41,7 +41,7 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
 | accept | Accepted file type | `String` | `image/*` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
@@ -52,17 +52,17 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | oversize | Triggered when file size over limit | Same as after-read |
 
 ### Slot
 
 | Name | Description |
-|-----------|-----------|
+|------|------|
 | - | Custom icon |
 
 ### afterRead parematers
 | Key | Description | Type |
-|-----------|-----------|-----------|
+|------|------|------|
 | file | file object | `Object` |
 | content | file content | `String` |

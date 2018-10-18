@@ -127,7 +127,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | columns | Columns data | `Array` | `[]` |
 | show-toolbar | Whether to show toolbar | `Boolean` | `false` |
 | title | Toolbar title | `String` | `''` |
@@ -142,7 +142,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 Picker events will pass different parameters according to the columns are single or multiple
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | confirm | Triggered when click confirm button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
 | cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
 | change | Triggered when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
@@ -151,7 +151,7 @@ Picker events will pass different parameters according to the columns are single
 ### Data struct of columns
 
 | key | Description |
-|-----------|-----------|
+|------|------|
 | values | Value of column |
 | defaultIndex | Default value index |
 | className | ClassName for this column |
@@ -161,7 +161,7 @@ Picker events will pass different parameters according to the columns are single
 Use ref to get picker instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | getValues | - | values | Get current values of all columns |
 | setValues | values | - |  Set current values of all columns |
 | getIndexes | - | indexes | Get current indexes of all columns |

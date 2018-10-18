@@ -68,7 +68,7 @@ export default {
 ### Steps API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | active | Active step | `Number` | 0 |
 | icon | Action step icon | `String` | - |
 | icon-class | Icon class | `String` | - |
@@ -80,6 +80,6 @@ export default {
 ### Steps Slot
 
 | Name | Description |
-|-----------|-----------|
+|------|------|
 | icon | Custom icon |
 | message-extra | Extra content |

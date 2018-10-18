@@ -40,12 +40,12 @@ export default {
 ### BadgeGroup API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | active-key | Index of chosen badge | `String | Number` | `0` |
 
 ### Badge API
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | title | Content | `String` | `''` |
 | info | Info Message | `String | Number` | `''` |
 | url | Link | `String` | - |

@@ -60,7 +60,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | area-list | Area List | `Object` | - |
 | address-info | Address Info | `Object` | `{}` |
 | search-result | Address search result | `Array` | `[]` |
@@ -77,7 +77,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | save | Triggered when click save button | content：form content |
 | focus | Triggered when focus field | key: field name |
 | delete | Triggered when confirm delete | content：form content |
@@ -89,14 +89,14 @@ export default {
 ### Slot
 
 | Name | Description |
-|-----------|-----------|
+|------|------|
 | - | Custom content below postal |
 
 ### Data Structure
 
 #### addressInfo Data Structure
 | key | Description | Type |
-|-----------|-----------|-----------|
+|------|------|------|
 | id | Address Id | `String | Number` |
 | name | Name | `String` |
 | tel | Phone | `String` |
@@ -110,7 +110,7 @@ export default {
 
 #### searchResult Data Structure
 | key | Description | Type |
-|-----------|-----------|-----------|
+|------|------|------|
 | name | Name | `String` |
 | address | Address | `String` |
 

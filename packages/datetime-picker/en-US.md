@@ -111,7 +111,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|-------------|
+|------|------|------|------|------|
 | type | Can be set to `date` `time`<br> `year-month` | `String` | `datetime` |
 | min-date | Min date | `Date` | Ten years ago on January 1 |
 | max-date | Max date | `Date` | Ten years later on December 31 |
@@ -130,7 +130,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when value changed | picker: picker instance |
 | confirm | Triggered when click confirm button | value: current value |
 | cancel | Triggered when click cancel button | - |

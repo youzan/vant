@@ -51,7 +51,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|-------------|
+|------|------|------|------|------|
 | value | Current value | `Number` | `0` |
 | disabled | Whether to disable slider | `Boolean` | `false` |
 | max | Max value | `Number` | `100` |
@@ -62,5 +62,5 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered after value change | value: current rate |

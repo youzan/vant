@@ -41,7 +41,7 @@ Vue.use(NoticeBar);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | mode | Mode, can be set to `closeable` `link` | `String` | `''` |
 | delay | Animation delay (s) | `Number` | `1` |
 | speed | Scroll speed (px/s) | `Number` | `50` |
@@ -54,5 +54,5 @@ Vue.use(NoticeBar);
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when click notice bar | - |

@@ -59,7 +59,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | left-width | Width of the left scrollable area | `Number` | `0` |
 | right-width | Width of the right scrollable area | `Number` | `0` |
 | on-close | Callback function before close | `Function` | - |
@@ -68,7 +68,7 @@ export default {
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | custom content |
 | left | content of left scrollable area |
 | right | content of right scrollabe area |
@@ -76,13 +76,13 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when clicked | Click positon (`left` `right` `cell` `outside`) |
 
 ### onClose Params
 
 | Argument | Type | Description |
-|-----------|-----------|-----------|
+|------|------|------|
 | clickPosition | `String` | Click positon (`left` `right` `cell` `outside`) |
 | instance | `Object` | SwipeCell instance |
 
@@ -91,6 +91,6 @@ export default {
 Use ref to get SwipeCell instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | open | position: 'left' \| 'right' | - | open SwipeCell |
 | close | - | - | close SwipeCell |

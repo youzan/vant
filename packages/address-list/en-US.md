@@ -66,7 +66,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Id of chosen address | String | - |
 | list | Address list | Array | `[]` |
 | disabled-list | Disabled address list | `Array` | `[]` |
@@ -77,7 +77,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | add | Triggered when click add button | - |
 | edit | Triggered when edit address | item: address object，index |
 | select | Triggered when select address | item: address object，index |
@@ -87,7 +87,7 @@ export default {
 ### Address Data Structure
 
 | key | Description | Type |
-|-----------|-----------|-----------|
+|------|------|------|
 | id | Id | `String | Number` |
 | name | Name | `String` |
 | tel | Phone | `String` |
@@ -96,6 +96,6 @@ export default {
 ### Slot
 
 | 名称 | 说明 |
-|-----------|-----------|
+|------|------|
 | - | Custom content after list |
 | top | Custom content before list |

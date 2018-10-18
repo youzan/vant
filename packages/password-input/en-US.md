@@ -52,7 +52,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | value | Password value | `String` | `''` |
 | length | Maxlength of password | `Number` | `6` |
 | info | Bottom info | `String` | - |
@@ -61,5 +61,5 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | focus | Triggered when input get focused | - |

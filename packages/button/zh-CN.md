@@ -62,35 +62,22 @@ Vue.use(Button);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| type | 按钮类型，可选值为 `primary` `warning` `danger` | `String` | `default` |
-| size | 按钮尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` |
-| text | 按钮文字 | `String` | - |
-| tag | 按钮 HTML 标签 | `String` | `button` |
-| native-type | 按钮类型（原生） | `String` | - |
-| plain | 是否为朴素按钮 | `Boolean` | `false` |
-| disabled | 是否禁用按钮 | `Boolean` | `false` |
-| loading | 是否显示为加载状态 | `Boolean` | `false` |
-| block | 是否为块级元素 | `Boolean` | `false` |
-| round | 是否为圆形按钮 | `Boolean` | `false` |
-| square | 是否为方形按钮 | `Boolean` | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| type | 类型，可选值为 `primary` `warning` `danger` | `String` | `default` | - |
+| size | 尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` | - |
+| text | 文字 | `String` | - | - |
+| tag | HTML 标签 | `String` | `button` | - |
+| native-type | 类型（原生） | `String` | - | - |
+| disabled | 是否禁用按钮 | `Boolean` | `false` | - |
+| loading | 是否显示为加载状态 | `Boolean` | `false` | - |
+| block | 是否为块级元素 | `Boolean` | `false` | - |
+| plain | 是否为朴素按钮 | `Boolean` | `false` | 1.1.13 |
+| square | 是否为方形按钮 | `Boolean` | `false` | 1.2.0 |
+| round | 是否为圆形按钮 | `Boolean` | `false` | 1.3.4 |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.4 | feature | 新增 round 属性 |
-| 1.3.1 | bugfix | 修复加载图标颜色错误的问题
-| 1.2.0 | feature | 新增 square 属性
-| 1.1.15 | feature | 新增 warning 类型
-| 1.1.15 | bugfix | 修复浏览器文字缩放时样式错误的问题
-| 1.1.13 | feature | 新增 plain 属性
-| 1.0.5 | bugfix | 修复 loading 状态下无法水平对齐的问题
-| 1.0.4 | bugfix | 修复加载状态下可点击的问题

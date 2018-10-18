@@ -84,7 +84,7 @@ Vue.use(Sku);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Whether to show sku | `Boolean` | `false` |
 | sku | Sku data | `Object` | - |
 | goods | Goods info | `Object` | - |
@@ -105,7 +105,7 @@ Vue.use(Sku);
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |
 | stepper-change | Triggered when stepper value changed | value: number |
@@ -116,13 +116,13 @@ Vue.use(Sku);
 Use ref to get sku instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | getSkuData | - | skuData | Get current skuData |
 
 ### Slot
 
 | Name | Description | 
-|-----------|-----------|
+|------|------|
 | sku-header | Custom header |
 | sku-header-price | Custom header price area |
 | sku-body-top | Custom content before sku-group |

@@ -26,7 +26,7 @@ Vue.use(Loading);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | color | Loading color | `String` | `#c9c9c9` |  |
 | type | Can be set to `spinner` | `String` | `circular` |
 | size | Size | `String` | `30px` |

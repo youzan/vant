@@ -44,7 +44,7 @@ Use `slot` to custom content.
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | thumb | Left thumb image URL | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
@@ -59,7 +59,7 @@ Use `slot` to custom content.
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | title | Custom title |
 | desc | Custom description |
 | tags | Custom tags |

@@ -63,7 +63,7 @@ Use slot to add custom contents.
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | price | Price |  `Number` | - |
 | label | Price label |  `String` | `合计：` |
 | button-text | Button text | `String` | - |
@@ -76,13 +76,13 @@ Use slot to add custom contents.
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | submit | Triggerd when click submit button | - |
 
 ### Slot
 
 | Name | Description |
-|-----------|-----------|
+|------|------|
 | - | Custom left content |
 | top | Custom top content |
 | tip | Custom tips |

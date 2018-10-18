@@ -62,7 +62,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | show | Whether to show keyboard | `Boolean` | - |
 | theme | Keyboard theme，can be set to `default` `custom` | `String` | `default` |
 | title | Keyboard title | `String` | - |
@@ -76,7 +76,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | input | Triggered when keydown | key: Content of the key |
 | delete | Triggered when press delete key | - |
 | blur | Triggered when click close button | - |

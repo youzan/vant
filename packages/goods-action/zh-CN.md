@@ -56,29 +56,22 @@ export default {
 
 #### GoodsActionMiniBtn
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| text | 按钮文字 | `String` | - |
-| icon | 图标 | `String` | - |
-| icon-class | 图标额外类名 | `String` | `''` |
-| info | 图标右上角提示信息 | `String | Number` | - |
-| url | 跳转链接 | `String` | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` |
-
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| text | 按钮文字 | `String` | - | - |
+| icon | 图标 | `String` | - | - |
+| icon-class | 图标额外类名 | `String` | - | - |
+| info | 图标右上角提示信息 | `String | Number` | - | - |
+| url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |
 
 #### GoodsActionBigBtn
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| text | 按钮文字 | `String` | - |
-| primary | 是否主行动按钮，主行动按钮默认为红色 | `Boolean` | `false` |
-| url | 跳转链接 | `String` | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.4 | bugfix | 修复 info 长度超过三位数时显示错误 |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| text | 按钮文字 | `String` | - | - |
+| primary | 是否为红色按钮 | `Boolean` | `false` | - |
+| url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |

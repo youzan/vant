@@ -51,7 +51,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | inactive | Whether to be gray | `Boolean` | `false` |
 | percentage | Percentage | `Number` | `false` |
 | show-pivot | Whether to show text | `Boolean` | `true` |
