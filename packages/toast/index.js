@@ -49,6 +49,11 @@ function Toast(options = {}) {
     ...parseOptions(options),
     clear() {
       toast.value = false;
+
+      if (!singleton && !isServer) {
+        document.body.removeChild(toast.$el);
+        toast.$destroy();
+      }
     }
   };
 

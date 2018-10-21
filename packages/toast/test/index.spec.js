@@ -5,7 +5,8 @@ transitionStub();
 
 test('create a forbidClick toast', async() => {
   const toast = Toast({
-    forbidClick: true
+    forbidClick: true,
+    type: 'success'
   });
 
   expect(toast.$el.outerHTML).toMatchSnapshot();
