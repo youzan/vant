@@ -6,7 +6,7 @@
     font-size: 14px;
     background: $white;
     overflow-y: visible;
-    max-height: max-content;
+    max-height: max-content; /* avoid androiod keyboard cover fields */
   }
 
   &-body {
