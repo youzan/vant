@@ -83,7 +83,7 @@ export default create({
       moveY: 0,
       moving: false,
       zooming: false,
-      active: this.startPosition
+      active: 0
     };
   },
 
@@ -108,6 +108,10 @@ export default create({
   },
 
   watch: {
+    value() {
+      this.active = this.startPosition;
+    },
+
     startPosition(active) {
       this.active = active;
     }
@@ -122,7 +126,7 @@ export default create({
       event.preventDefault();
 
       const deltaTime = new Date() - this.touchStartTime;
-      const { offsetX, offsetY } = this.$refs.swipe;
+      const { offsetX = 0, offsetY = 0 } = this.$refs.swipe || {};
 
       // prevent long tap to close component
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
@@ -164,9 +168,10 @@ export default create({
     onTouchStart(event) {
       const { touches } = event;
       const { offsetX } = this.$refs.swipe;
+
       if (touches.length === 1 && this.scale !== 1) {
         this.startMove(event);
-      } else if (touches.length === 2 && !offsetX) {
+      } /* istanbul ignore else */ else if (touches.length === 2 && !offsetX) {
         this.startZoom(event);
       }
     },
@@ -194,6 +199,7 @@ export default create({
     },
 
     onTouchEnd(event) {
+      /* istanbul ignore else */
       if (this.moving || this.zooming) {
         let stopPropagation = true;
 

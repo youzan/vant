@@ -1,7 +1,18 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, triggerDrag } from '../../../test/utils';
+import { mount, trigger, triggerDrag } from '../../../test/utils';
+
+Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
+function triggerZoom(el, x, y) {
+  trigger(el, 'touchstart', 0, 0, { x, y });
+  trigger(el, 'touchmove', -x / 4, -y / 4, { x, y });
+  trigger(el, 'touchmove', -x / 3, -y / 3, { x, y });
+  trigger(el, 'touchmove', -x / 2, -y / 2, { x, y });
+  trigger(el, 'touchmove', -x, -y, { x, y });
+  trigger(el, 'touchend', 0, 0, { touchList: [] });
+}
 
 const images = [
   'https://img.yzcdn.cn/1.png',
@@ -59,4 +70,15 @@ test('function call options', done => {
 test('register component', () => {
   Vue.use(ImagePreview);
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
+});
+
+test('zoom', async() => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: { images, value: true }
+  });
+
+  const image = wrapper.find('img');
+  triggerZoom(image, 300, 300);
+  triggerDrag(image, 300, 300);
+  expect(wrapper).toMatchSnapshot();
 });
