@@ -8,10 +8,8 @@ export {
   mount
 };
 
-// Trigger pointer/touch event
-export function trigger(wrapper, eventName, x = 0, y = 0) {
-  const el = wrapper.element ? wrapper.element : wrapper;
-  const touch = {
+function getTouch(el, x, y) {
+  return {
     identifier: Date.now(),
     target: el,
     pageX: x,
@@ -23,12 +21,22 @@ export function trigger(wrapper, eventName, x = 0, y = 0) {
     rotationAngle: 10,
     force: 0.5
   };
+}
+
+// Trigger pointer/touch event
+export function trigger(wrapper, eventName, x = 0, y = 0, options = {}) {
+  const el = wrapper.element ? wrapper.element : wrapper;
+  const touchList = options.touchList || [getTouch(el, x, y)];
+
+  if (options.x || options.y) {
+    touchList.push(getTouch(el, options.x, options.y));
+  }
 
   const event = document.createEvent('CustomEvent');
   event.initCustomEvent(eventName, true, true, {});
-  event.touches = [touch];
-  event.targetTouches = [touch];
-  event.changedTouches = [touch];
+  event.touches = touchList;
+  event.targetTouches = touchList;
+  event.changedTouches = touchList;
   event.clientX = x;
   event.clientY = y;
 
