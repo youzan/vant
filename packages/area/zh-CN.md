@@ -37,15 +37,15 @@ Vue.use(Area);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| value | 当前选中的省市区`code` | `String` | - |
-| title | 顶部栏标题 | `String` | - |
-| area-list | 省市区数据，格式见下方 | `Object` | - |
-| columns-num | 省市区显示列数，3-省市区，2-省市，1-省 | `String | Number` | `3` |
-| loading | 是否显示加载状态 | `Boolean` | `false` |
-| item-height | 选项高度 | `Number` | `44` |
-| visible-item-count | 可见的选项个数 | `Number` | `5` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| value | 当前选中的省市区`code` | `String` | - | - |
+| title | 顶部栏标题 | `String` | - | - |
+| area-list | 省市区数据，格式见下方 | `Object` | - | - |
+| columns-num | 显示列数，3-省市区，2-省市，1-省 | `String | Number` | `3` | - |
+| loading | 是否显示加载状态 | `Boolean` | `false` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
+| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
 
 ### Event
 
@@ -60,7 +60,7 @@ Vue.use(Area);
 通过 ref 可以获取到 area 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | reset | - | - | 重置所有选项到第一项 |
 
 ### 数据格式
@@ -124,11 +124,3 @@ Vue.use(Area);
   }
 ];
 ```
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.12 | feature | 新增 reset 方法 |
-| 1.1.11 | bugfix | 修复 city_list 为空时报错的问题 |
-| 1.1.2 | feature | 新增 change 事件 |

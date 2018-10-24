@@ -1,54 +1,40 @@
 @import './common/var.css';
 
 .van-tag {
-  display: inline-block;
-  padding: 2px 5px;
-  line-height: normal;
-  border-radius: 3px;
-  font-size: 10px;
-  background: $gray;
   color: $white;
+  font-size: 10px;
+  padding: .2em .5em;
+  line-height: normal;
+  border-radius: .2em;
+  display: inline-block;
 
   &::after {
     border-color: currentColor;
-    border-radius: 4px;
+    border-radius: .4em;
   }
 
   &--mark {
-    padding-right: 7px;
-    border-radius: 0 8px 8px 0;
+    padding-right: .6em;
+    border-radius: 0 .8em .8em 0;
 
     &::after {
-      border-radius: 0 16px 16px 0;
+      border-radius: 0 1.6em 1.6em 0;
     }
   }
 
-  &--success {
-    background: $green;
+  &--round {
+    border-radius: .8em;
 
-    &.van-tag--plain {
-      color: $green;
+    &::after {
+      border-radius: 1.6em;
     }
   }
 
-  &--danger {
-    background: $button-danger-background-color;
-
-    &.van-tag--plain {
-      color: $button-danger-background-color;
-    }
+  &--medium {
+    font-size: 12px;
   }
 
-  &--primary {
-    background: $blue;
-
-    &.van-tag--plain {
-      color: $blue;
-    }
-  }
-
-  &--plain {
-    background: $white;
-    color: $gray;
+  &--large {
+    font-size: 14px;
   }
 }

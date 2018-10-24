@@ -51,7 +51,7 @@ use `loading` property to keep component in loading state
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | on-off state of the switch | `Boolean` | - |
 | title | the leftside title |  `String` | `''` |
 | loading | whether switch is loading |  `Boolean` | `false` |
@@ -61,5 +61,5 @@ use `loading` property to keep component in loading state
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | triggered when the on-off state is changed | checked: switch is on or not |

@@ -48,31 +48,26 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 ```
 
 ### API
-Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`readony`、`autofocus` 等
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| background | 搜索框背景色 | `String` | `#f2f2f2` |
-| show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` |
+Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| background | 搜索框背景色 | `String` | `#f2f2f2` | - |
+| show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` | - |
+| readonly | 是否只读 | `Boolean` | `false` | - |
 
 ### Event
+
 Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | cancel | 取消搜索 | - |
 | search | 确定搜索 | - |
 
 ### Slot
 
 | 名称 | 说明 |
-|-----------|-----------|
+|------|------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.13 | feature | 点击搜索按钮后自动收起键盘 |
-| 1.1.2 | bugfix | 修复错误展示边框的问题 |
-| 1.1.1 | bugfix | 修复在 iOS 下文字被遮挡的问题 |

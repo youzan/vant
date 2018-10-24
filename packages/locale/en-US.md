@@ -32,7 +32,7 @@ Locale.add(messages);
 Current supported languages:
 
 | Language | Filename |
-|-----------|-----------|
+|------|------|
 | Chinese | zh-CN |
 | English | en-US |
 | Traditional Chinese | zh-HK |

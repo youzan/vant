@@ -42,7 +42,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Loading status | `Boolean` | - |
 | pulling-text | Text to show when pulling | `String` | `Pull to refresh...` |
 | loosing-text | Text to show when loosing | `String` | `Loose to refresh...` |
@@ -55,14 +55,14 @@ export default {
 ### Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | refresh | Triggered when pull refresh | - |
 
 
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Default slot |
 | normal | Content of head when at normal status |
 | pulling | Content of head when at pulling |

@@ -47,7 +47,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Current value | `String | Number` | Min value |
 | min | Min value | `String | Number` | `1` |
 | max | Max value | `String | Number` | - |
@@ -59,7 +59,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when value change | value: current value |
 | overlimit | Triggered when click disabled button | - |
 | plus | Triggered when click plus button | - |

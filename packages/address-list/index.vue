@@ -7,6 +7,7 @@
           v-for="(item, index) in list"
           :data="item"
           :key="item.id"
+          :switchable="switchable"
           @select="$emit('select', item, index)"
           @edit="$emit('edit', item, index)"
         />
@@ -54,6 +55,10 @@ export default create({
     disabledText: String,
     addButtonText: String,
     value: [String, Number],
+    switchable: {
+      type: Boolean,
+      default: true
+    },
     list: {
       type: Array,
       default: () => []

@@ -81,32 +81,31 @@ Vue.use(Sku);
 </van-sku>
 ```
 
-
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| v-model | 是否显示sku | `Boolean` | `false` |
-| sku | 商品sku数据 | `Object` | - |
-| goods | 商品信息 | `Object` | - |
-| goods-id | 商品id | `String | Number` | - |
-| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` |
-| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` |
-| quota | 限购数(0表示不限购) | `Number` | `0` |
-| quota-used | 已经购买过的数量 | `Number` | `0` |
-| reset-stepper-on-hide | 窗口隐藏时重置选择的商品数量 | `Boolean` | `false` |
-| reset-selected-sku-on-hide | 窗口隐藏时重置已选择的sku | `Boolean` | `false` |
-| disable-stepper-input | 是否禁用sku中stepper的input框 | `Boolean` | `false` |
-| close-on-click-overlay | 点击popup的overlay后是否关闭弹窗 | `Boolean` | `false` |
-| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` |
-| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` |
-| message-config | 留言相关配置 | `Object` | `{}` |
-| get-container | 指定挂载的节点，可以传入 CSS 选择器，<br>或一个返回 DOM 节点的函数 | `String | () => HTMLElement` | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| v-model | 是否显示sku | `Boolean` | `false` | - |
+| sku | 商品sku数据 | `Object` | - | - |
+| goods | 商品信息 | `Object` | - | - |
+| goods-id | 商品 id | `String | Number` | - | - |
+| hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
+| show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
+| quota | 限购数，0 表示不限购 | `Number` | `0` | - |
+| quota-used | 已经购买过的数量 | `Number` | `0` | - |
+| reset-stepper-on-hide | 隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
+| reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | `Boolean` | `false` | - |
+| disable-stepper-input | 是否禁用步进器输入 | `Boolean` | `false` | - |
+| close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` | - |
+| stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
+| custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
+| message-config | 留言相关配置 | `Object` | `{}` | - |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | add-cart | 点击添加购物车回调 | skuData: Object |
 | buy-clicked | 点击购买回调 | skuData: Object |
 | stepper-change | 购买数量变化时触发 | value: number |
@@ -116,7 +115,7 @@ Vue.use(Sku);
 通过 ref 可以获取到 sku 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | getSkuData | - | skuData | 获取当前 skuData |
 
 ### Slot
@@ -124,7 +123,7 @@ Vue.use(Sku);
 Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，可以按需进行替换。区块顺序见下表：
 
 | 名称 | 说明 | 
-|-----------|-----------|
+|------|------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
 | sku-header-price | 自定义sku头部价格展示 |
 | sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
@@ -212,7 +211,7 @@ customStepperConfig: {
       // const { LIMIT_TYPE } = Sku.skuConstants;
       if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
         let msg = `单次限购${quota}件`;
-        if (quotaUsed > 0) msg += `，您已购买${quotaUsed}`;
+        if (quotaUsed > 0) msg += `，你已购买${quotaUsed}`;
         Toast(msg);
       } else {
         Toast('库存不够了~~');
@@ -269,17 +268,3 @@ skuData: {
   }
 }
 ```
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.0 | breaking change | 考虑到可维护性和实际需求，组件不再支持 i18n 国际化
-| 1.3.0 | feature | 支持自定义 validator
-| 1.3.0 | feature | 增加对手机号留言的格式校验
-| 1.1.10 | feature | 新增 stepper-change 事件
-| 1.1.10 | bugfix | 修复图片截断问题
-| 1.1.8 | feature | 限制留言最大长度
-| 1.0.4 | bugfix | 修复 row 行高错误
-| 1.0.2 | bugfix | 修复默认选中不生效的问题
-| 1.0.0 | feature | 新增 sku-header-price 插槽

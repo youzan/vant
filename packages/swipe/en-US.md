@@ -123,7 +123,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | autoplay | Autoplay interval (ms) | `Number` | - |
 | duration | Animation duration (ms) | `Number` | `500` |
 | loop | Whether to enable loop | `Boolean` | `true` |
@@ -137,7 +137,7 @@ export default {
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when current swipe change | index: index of current swipe |
 
 ### Methods
@@ -145,12 +145,12 @@ export default {
 Use ref to get swipe instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | swipeTo | index: target index | void | Swipe to target index |
 
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Content |
 | indicator | Custom indicator |

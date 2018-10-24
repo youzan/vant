@@ -137,7 +137,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 ### Tabs API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Index of active tab | `String` `Number` | `0` |
 | color | Tab color | `String` | `#f44` |
 | type | Can be set to `line` `card` | `String` | `line` |
@@ -151,21 +151,21 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 ### Tab API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | title | Title | `String` | - |
 | disabled | Whether to disable tab | `Boolean` | `false` |
 
 ### Tab Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Content |
 | title | Custom tab |
 
 ### Tabs Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when click tab | index：index of current tab，title: tab title |
 | change | Triggered when active tab changed | index：index of current tab，title: tab title |
 | disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |

@@ -19,7 +19,7 @@
     stroke-dasharray: 3140;
     stroke-dashoffset: 3140;
     transform: rotate(90deg);
-    transform-origin: 530px 530px;
+    transform-origin: center;
   }
 
   &__text {

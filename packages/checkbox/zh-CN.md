@@ -131,39 +131,39 @@ export default {
 
 ### Checkbox API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 标识 Checkbox 名称 | `any` | - |
-| v-model | 是否为选中状态 | `Boolean` | `false` |
-| disabled | 是否禁用单选框 | `Boolean` | `false` |
-| label-disabled | 是否禁用单选框内容点击 | `Boolean` | `false` |
-| label-position | 文本位置，可选值为 `left` | `String` | `right` |
-| shape | 形状，可选值为 `round` `square` | `String` | `round` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| name | 标识符 | `any` | - | - |
+| shape | 形状，可选值为 `square` | `String` | `round` | - |
+| v-model | 是否为选中状态 | `Boolean` | `false` | - |
+| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
+| label-disabled | 是否禁用单选框文本点击 | `Boolean` | `false` | - |
+| label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
 
 ### CheckboxGroup API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| v-model | 所有选中项的 name | `Array` | - |
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` |
-| max | 设置最大可选数 | `Number` | `0`（无限制） |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| v-model | 所有选中项的标识符 | `Array` | - | - |
+| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| max | 设置最大可选数，0 为无限制 | `Number` | `0` | - |
 
 ### Checkbox Event
 
 | 事件名称 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
 ### CheckboxGroup Event
 
 | 事件名称 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
 ### Checkbox Slot
 
 | 名称 | 说明 | slot-scope |
-|-----------|-----------|-----------|
+|------|------|------|
 | - | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
 
@@ -172,14 +172,5 @@ export default {
 通过 ref 可以获取到 checkbox 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | toggle | - | - | 切换选中状态 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.12 | feature | 新增 icon 插槽，支持自定义图标 |
-| 1.1.11 | feature | 新增 label-position 属性 |
-| 1.1.8 | bugfix | 修复 v-model 类型检查错误 |
-| 1.1.0 | bugfix | 修复内容为空时渲染了空 label 元素的问题 |

@@ -133,42 +133,43 @@ export default {
 
 ### ContactCard API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| type | 类型，可选值为 `add` `edit` | `String` | `add` |
-| name | 联系人姓名 | `String` | - |
-| tel | 联系人手机号 | `String` | - |
-| add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| type | 类型，可选值为 `add` `edit` | `String` | `add` | - |
+| name | 联系人姓名 | `String` | - | - |
+| tel | 联系人手机号 | `String` | - | - |
+| add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
 
 ### ContactList API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
-| v-model | 当前选中联系人的 id | `String | Number` | - |
-| list | 联系人列表 | `Array` | `[]` |
-| add-text | 新建按钮文案 | `String` | `新建联系人` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| v-model | 当前选中联系人的 id | `String | Number` | - | - |
+| list | 联系人列表 | `Array` | `[]` | - |
+| add-text | 新建按钮文案 | `String` | `新建联系人` | - |
 
 ### ContactList Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | add | 点击新增按钮时触发 | - |
 | edit | 点击编辑按钮时触发 | item: 当前联系人对象，index: 索引 |
 | select | 切换选中的联系人时触发 | item: 当前联系人对象，index: 索引 |
 
 ### ContactEdit API
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
-| contact-info | 联系人信息 | `Object` | `[]` |
-| is-edit | 是否为编辑联系人 | `Boolean` | `false` |
-| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` |
-| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` |
-| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - |
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| contact-info | 联系人信息 | `Object` | `[]` | - |
+| is-edit | 是否为编辑联系人 | `Boolean` | `false` | - |
+| is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
+| is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
+| tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
 
 ### ContactEdit Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
 
@@ -177,7 +178,7 @@ export default {
 #### 联系人数据格式
 
 | key | 说明 | 类型 |
-|-----------|-----------|-----------|
+|------|------|------|
 | id | 每位联系人的唯一标识 | `String | Number` |
 | name | 联系人姓名 | `String` |
 | tel | 联系人手机号 | `String` |

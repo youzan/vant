@@ -114,7 +114,7 @@ Use button slot to insert button
 Field support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | value | Field value | `String | Number` | - |
 | label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
@@ -137,21 +137,22 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 Field support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | click-icon | Triggered when click the icon of Field | - |
+| clear | Triggered when click clear icon | - |
 
 ### Methods
 
 Use ref to get field instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | blur | - | - | Trigger input blur |
 
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | label | Custom label |
 | icon | Custom icon |
 | button | Insert button |

@@ -50,26 +50,17 @@ import 'vant/lib/vant-css/icon-local.css';
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| name | 图标名称 | `String` | - |
-| info | 图标右上角文字提示 | `String | Number` | - |
-| color | 图标颜色 | `String` | `inherit` |
-| size | 图标大小，如 `20px`，`2em` | `String` | `inherit` |
-| class-prefix | 类名前缀 | `String` | `van-icon` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| name | 图标名称 | `String` | - | - |
+| info | 图标右上角文字提示 | `String | Number` | - | - |
+| color | 图标颜色 | `String` | `inherit` | 1.1.3 |
+| size | 图标大小，如 `20px` `2em` | `String` | `inherit` | 1.1.15 |
+| class-prefix | 类名前缀 | `String` | `van-icon` | 1.2.1 |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | 点击图标时触发 | - |
 
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.2.1 | feature | 新增 class-prefix 属性
-| 1.2.0 | bugfix | 修复 size 属性不生效的问题
-| 1.1.15 | feature | 新增 size 属性
-| 1.1.10 | breaking change | 移除 birthday-privilege、member-day-privilege、balance-details 图标
-| 1.1.3 | feature | 新增 color 属性

@@ -52,20 +52,12 @@ Vue.use(Progress);
 
 ### API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| inactive | 是否置灰 | `Boolean` | `false` |
-| percentage | 进度百分比 | `Number` | `false` |
-| show-pivot | 是否显示进度文字 | `Boolean` | `true` |
-| color | 进度条颜色 | `String` | `#38f` |
-| text-color | 进度条文字颜色 | `String` | `#fff` |
-| pivot-text | 文字显示 | `String` | 百分比文字 |
-| pivot-color | 文字背景色 | `String` | 与进度条颜色一致 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.12 | bugfix | 修复文字为空时样式错误的问题 |
-| 1.1.5 | bugfix | 修复文字超出边界的问题 |
-| 1.1.4 | feature | 支持渐变色 |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| inactive | 是否置灰 | `Boolean` | `false` | - |
+| percentage | 进度百分比 | `Number` | `false` | - |
+| show-pivot | 是否显示进度文字 | `Boolean` | `true` | - |
+| color | 进度条颜色 | `String` | `#38f` | - |
+| text-color | 进度条文字颜色 | `String` | `#fff` | - |
+| pivot-text | 文字显示 | `String` | 百分比文字 | - |
+| pivot-color | 文字背景色 | `String` | 与进度条颜色一致 | - |

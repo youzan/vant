@@ -89,7 +89,6 @@ export default create({
     code: String,
     closeButtonText: String,
     inputPlaceholder: String,
-    disabledListTitle: String,
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,

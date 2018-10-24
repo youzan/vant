@@ -382,7 +382,7 @@ export default create({
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
           let msg = `限购${quota}件`;
-          if (quotaUsed > 0) msg += `，${`您已购买${quotaUsed}件`}`;
+          if (quotaUsed > 0) msg += `，${`你已购买${quotaUsed}件`}`;
           Toast(msg);
         } else {
           Toast('库存不足');

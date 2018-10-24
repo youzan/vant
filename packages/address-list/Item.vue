@@ -1,5 +1,9 @@
 <template>
-  <cell :class="b({ disabled })" :is-link="!disabled" @click="$emit('select')">
+  <cell
+    :class="b({ disabled, unswitchable: !switchable })"
+    :is-link="!disabled && switchable"
+    @click="onSelect"
+  >
     <radio :name="data.id">
       <div :class="b('name')">{{ data.name }}，{{ data.tel }}</div>
       <div :class="b('address')">{{ data.address }}</div>
@@ -26,7 +30,16 @@ export default create({
 
   props: {
     data: Object,
-    disabled: Boolean
+    disabled: Boolean,
+    switchable: Boolean
+  },
+
+  methods: {
+    onSelect() {
+      if (this.switchable) {
+        this.$emit('select');
+      }
+    }
   }
 });
 </script>

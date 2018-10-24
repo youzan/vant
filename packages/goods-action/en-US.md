@@ -57,7 +57,7 @@ Use `info` prop to show messages in upper right corner of icon
 #### GoodsActionMiniBtn
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | text | Button text | `String` | - |
 | icon | Icon | `String` | - |
 | icon-class | Icon class name | `String` | `''` |
@@ -70,7 +70,7 @@ Use `info` prop to show messages in upper right corner of icon
 #### GoodsActionBigBtn
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | text | Button text | `String` | - |
 | primary | Is primary button (red color) | `Boolean` | `false` |
 | url | Link | `String` | - |

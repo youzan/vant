@@ -47,7 +47,7 @@ import 'vant/lib/vant-css/icon-local.css';
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | name | Icon name | `String` | `''` |
 | info | Info message | `String | Number` | `''` |
 | color | Icon color | `String` | `inherit` |
@@ -58,5 +58,5 @@ import 'vant/lib/vant-css/icon-local.css';
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when click icon | - |

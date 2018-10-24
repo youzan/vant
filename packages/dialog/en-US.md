@@ -58,7 +58,7 @@ export default {
 ### Methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | Dialog | `options` | `Promise` | Show dialog |
 | Dialog.alert | `options` | `Promise` | Show alert dialog |
 | Dialog.confirm | `options` | `Promise` | Show confim dialog |
@@ -69,7 +69,7 @@ export default {
 ### Options
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | title | Title | `String` | - |
 | message | Message | `String` | - |
 | className | Custom className | `String | Array | Object` | - |
@@ -128,7 +128,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Whether to show dialog | `Boolean` | - |
 | title | Title | `String` | - |
 | message | Message | `String` | - |
@@ -146,6 +146,6 @@ export default {
 ### Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | confirm | Triggered when click confirm button | - |
 | cancel | Triggered when click cancel button | - |

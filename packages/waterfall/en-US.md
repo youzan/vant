@@ -70,7 +70,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-waterfall-lower | Function to trigger when scroll to bottom | `Function` | - |
 | v-waterfall-upper | Function to trigger when scroll to top | `Function` | - |
 | waterfall-disabled | Key of the property to control disable status in instance | `String` | - |

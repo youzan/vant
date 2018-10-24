@@ -46,7 +46,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Current rate | `Number` | - |
 | count | Count | `Number` | `5` |
 | size | Icon size (px) | `Number` | `20` |
@@ -59,5 +59,5 @@ export default {
 ### Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when rate changed | current rate |

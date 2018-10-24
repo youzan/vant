@@ -84,7 +84,7 @@ toast2.clear();
 ### Methods
 
 | Methods | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | Toast | `options | message` | toast instance | Show toast |
 | Toast.loading | `options | message` | toast instance | Show loading toast |
 | Toast.success | `options | message` | toast instance | Show success toast |
@@ -97,7 +97,7 @@ toast2.clear();
 ### Options
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | type | Can be set to `loading` `success` `fail` `html` | `String` | `text` |
 | position | Can be set to `top` `middle` `bottom` | `String` | `middle` |
 | message | Message | `String` | `''` |

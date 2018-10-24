@@ -57,7 +57,7 @@ export default {
 ### Radio API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | name | Radio name | `any` | - |
 | disabled | Whether to disable radio | `Boolean` | `false` |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
@@ -66,12 +66,12 @@ export default {
 ### RadioGroup API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Name of checked radio | `any` | - |
 | disabled | Diable all radios | `Boolean` | `false` |
 
 ### RadioGroup Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when value changed | current value |

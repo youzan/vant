@@ -32,7 +32,8 @@ Vue.use(Panel);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
+| icon | Left Icon | `String` | - |
 | title | Title | `String` | - |
 | desc | Description | `String` | - |
 | status | Status | `String` | - |
@@ -41,7 +42,7 @@ Vue.use(Panel);
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Default slot |
 | header | Custom header |
 | footer | Custom footer |

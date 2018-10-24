@@ -1,5 +1,5 @@
 ---
-name: Bug report 错误报告
+name: "[Bug Report] 错误报告"
 about: Create a report to help us improve
 
 ---

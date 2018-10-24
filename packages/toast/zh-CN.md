@@ -85,7 +85,7 @@ toast2.clear();
 ### 方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | Toast | `options | message` | toast 实例 | 展示提示 |
 | Toast.loading | `options | message` | toast 实例 | 展示加载提示 |
 | Toast.success | `options | message` | toast 实例 | 展示成功提示 |
@@ -97,22 +97,12 @@ toast2.clear();
 
 ### Options
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| type | 提示类型，可选值为 `loading` `success` `fail` `html` | `String` | `text` |
-| position | 位置，可选值为 `top` `middle` `bottom` | `String` | `middle` |
-| message | 内容 | `String` | `''` | - |
-| mask | 是否显示背景蒙层 | `Boolean` | `false` |
-| forbidClick | 是否禁止背景点击 | `Boolean` | `false` |
-| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` |
-| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.1.5 | bugfix | 修复使用 forbidClick 属性时导致其他弹层的蒙层失效的问题 |
-| 1.1.3 | feature | 新增 loadingType 属性 |
-| 1.0.3 | bugfix | 修复蒙层在某些情况下无法收起的问题 |
-| 1.0.2 | bugfix | 修复蒙层被其他元素遮挡的问题 |
-| 1.0.0 | feature | 支持通过 Vue.use 注册 |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| type | 提示类型，可选值为 `loading` `success` `fail` `html` | `String` | `text` | - |
+| position | 位置，可选值为 `top` `middle` `bottom` | `String` | `middle` | - |
+| message | 内容 | `String` | `''` | - | - |
+| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
+| forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
+| loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
+| duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |

@@ -68,7 +68,7 @@ export default {
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Check status of Switch | `Boolean` | `false` |
 | loading | Whether to show loading icon | `Boolean` | `false` |
 | disabled | Whether to disable switch | `Boolean` | `false` |
@@ -77,5 +77,5 @@ export default {
 ### Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when check status changed | checked: is switch checked |

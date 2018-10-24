@@ -129,7 +129,7 @@ export default {
 ### Checkbox API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | name | Checkbox name | `any` | - |
 | v-model | Check status | `Boolean` | `false` |
 | disabled | Diable checkbox | `Boolean` | `false` |
@@ -140,7 +140,7 @@ export default {
 ### CheckboxGroup API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | v-model | Names of all checked checkboxes | `Array` | - |
 | disabled | Disable all checkboxes | `Boolean` | `false` |
 | max | Maximum amount of checked options | `Number` | `0`(Unlimited) |
@@ -148,19 +148,19 @@ export default {
 ### Checkbox Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when value changed | current value |
 
 ### CheckboxGroup Event
 
 | Event | Description | Parameters |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | Triggered when value changed | current value |
 
 ### Checkbox Slot
 
 | Name | Description | slot-scope |
-|-----------|-----------|-----------|
+|------|------|------|
 | - | Custom label | - |
 | icon | Custom icon | checked: whether to be checked |
 
@@ -169,5 +169,5 @@ export default {
 Use ref to get checkbox instance and call instance methods
 
 | Name | Attribute | Return value | Description |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | toggle | - | - | Toggle check status |

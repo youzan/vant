@@ -64,13 +64,13 @@ Vue.use(Cell).use(CellGroup);
 ### CellGroup API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | border | Whether to show outer border | `Boolean` | `true` |
 
 ### Cell API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | icon | Left Icon | `String` | - |
 | title | Title | `String | Number` | - |
 | value | Right text | `String | Number` | - |
@@ -88,13 +88,13 @@ Vue.use(Cell).use(CellGroup);
 ### Cell Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when click cell | - |
 
 ### Cell Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | - | Default slot |
 | icon | Custom icon |
 | title | Custom title |

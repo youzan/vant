@@ -54,15 +54,15 @@ export default {
 
 ### Options
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| loading | 加载时的图片 | `String` | - |
-| error | 错误时的图片 | `String` | - |
-| preload | 预加载高度的比例 | `String` | - |
-| attempt | 尝试次数 | `Number` | `3` |
-| listenEvents | 监听的事件 | `Array` | `scroll`等 |
-| adapter | 适配器 | `Object` | - |
-| filter | 图片url过滤 | `Object` | - |
-| lazyComponent | 是否能懒加载模块 | `Boolean` | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| loading | 加载时的图片 | `String` | - | - |
+| error | 错误时的图片 | `String` | - | - |
+| preload | 预加载高度的比例 | `String` | - | - |
+| attempt | 尝试次数 | `Number` | `3` | - |
+| listenEvents | 监听的事件 | `Array` | `scroll`等 | - |
+| adapter | 适配器 | `Object` | - | - |
+| filter | 图片 URL 过滤 | `Object` | - | - |
+| lazyComponent | 是否能懒加载模块 | `Boolean` | `false` | - |
 
 更多内容请参照：[vue-lazyload 官方文档](https://github.com/hilongjw/vue-lazyload)

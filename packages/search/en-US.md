@@ -59,7 +59,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 Search support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | placeholder | Input placeholder | `String` | - |
 | background | Background color | `String` | `#f2f2f2` |
 | show-action | Whether to show right button | `Boolean` | `false` |
@@ -68,12 +68,12 @@ Search support all native properties of input tag，such as `maxlength`、`place
 Search support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | cancel | Triggered when click cancel button | - |
 | search | Triggered when confirm search | - |
 
 ### Slot
 
 | name | Description |
-|-----------|-----------|
+|------|------|
 | action | Custom right button, displayed when `showAction` is true |

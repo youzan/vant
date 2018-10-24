@@ -77,7 +77,7 @@ Actionsheet will get another style if there is a `title` prop.
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | actions | Options | `Array` | `[]` |
 | title | Title | `String` | - |
 | cancel-text | Text of cancel button | `String` | - |
@@ -89,14 +89,14 @@ Actionsheet will get another style if there is a `title` prop.
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | select | Triggered when click option | item |
 | cancel | Triggered when cancel click | - |
 
 ### Data struct of actions
 
 | key | Description |
-|-----------|-----------|
+|------|------|
 | name | Title |
 | subname | Subtitle |
 | className | className for the option |

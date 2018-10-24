@@ -115,67 +115,46 @@ Vue.use(Field);
 
 Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|-------------|
-| label | 输入框左侧文本 | `String` | - |
-| value | 当前输入的值 | `String | Number` | - |
-| type | 可设置为任意原生类型, 如 `number` `tel` `textarea` | `String` | `text` |
-| border | 是否显示内边框 | `Boolean` | `true` |
-| disabled | 是否禁用输入框 | `Boolean` | `false` |
-| readonly | 是否只读 | `Boolean` | `false` |
-| clearable | 是否启用清除控件 | `Boolean` | `false` |
-| required | 是否显示表单必填星号 | `Boolean` | `false` |
-| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` |
-| error | 是否将输入内容标红 | `Boolean` | `false` |
-| error-message | 底部错误提示文案，为空时不展示 | `String` | `''` |
-| label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` |
-| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` |
-| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` |
-| icon | 输入框尾部图标 (可选值见 Icon 组件)  | `String` | - |
-| left-icon | 输入框左侧图标 (可选值见 Icon 组件)  | `String` | - |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|------|
+| label | 输入框左侧文本 | `String` | - | - |
+| value | 当前输入的值 | `String | Number` | - | - |
+| type | 可设置为原生类型, 如 `number` `tel` `textarea` | `String` | `text` | - |
+| border | 是否显示内边框 | `Boolean` | `true` | - |
+| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
+| readonly | 是否只读 | `Boolean` | `false` | - |
+| clearable | 是否启用清除控件 | `Boolean` | `false` | 1.1.9 |
+| required | 是否显示表单必填星号 | `Boolean` | `false` | - |
+| is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | 1.1.10 |
+| error | 是否将输入内容标红 | `Boolean` | `false` | - |
+| error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - |
+| label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
+| autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | 1.0.0 |
+| icon | 输入框尾部图标，可选值见 Icon 组件 | `String` | - | - |
+| left-icon | 输入框左侧图标，可选值见 Icon 组件 | `String` | - | 1.1.4 |
 
 ### Event
 
 Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
 | 事件 | 说明 | 回调参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | click-icon | 点击尾部图标时触发 | - |
+| clear | 点击清除按钮后触发 | - |
 
 ### 方法
 
 通过 ref 可以获取到 field 实例并调用实例方法
 
 | 方法名 | 参数 | 返回值 | 介绍 |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | blur | - | - | 取消输入框焦点 |
 
 ### Slot
 
 | 名称 | 说明 |
-|-----------|-----------|
+|------|------|
 | label | 自定义输入框标签 |
 | icon | 自定义输入框尾部图标 |
 | button | 自定义输入框尾部按钮 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.3 | bugfix | 修复类型为 number 时 maxlength 属性不生效的问题 |
-| 1.1.15 | bugfix | 修复 date 类型在 iOS 设备下显示错误的问题
-| 1.1.14 | bugfix | 修复行高错误
-| 1.1.11 | bugfix | 修复 readonly 状态下在 safari 上出现光标的问题
-| 1.1.11 | bugfix | 修复 readonly 状态下仍然会显示清除按钮的问题
-| 1.1.10 | feature | 新增 is-link 属性
-| 1.1.10 | feature | 新增 input-align 属性
-| 1.1.10 | feature | 新增 label-align 属性
-| 1.1.9 | feature | 新增 clearable 属性
-| 1.1.8 | feature | 新增 blur 方法
-| 1.1.7 | feature | 支持 v-model.number
-| 1.1.5 | bugfix | 修复在 safari 上不正确的外边距
-| 1.1.4 | feature | 新增 left-icon 属性
-| 1.1.3 | feature | 新增 label 插槽
-| 1.0.8 | bugfix | 修复 number 类型无法输入负数的问题
-| 1.0.3 | feature | 新增 button 插槽，支持插入按钮
-| 1.0.0 | feature | 支持配置 autosize 最大/最小高度

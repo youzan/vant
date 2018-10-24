@@ -67,39 +67,31 @@ export default {
 
 ### Tabbar API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-------------|
-| v-model | 当前选中标签的索引 | `Number` | - |
-| fixed | 是否固定在底部 | `Boolean` | `true` |
-| z-index | 元素 z-index | `Number` | `1` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| v-model | 当前选中标签的索引 | `Number` | - | - |
+| fixed | 是否固定在底部 | `Boolean` | `true` | - |
+| z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 
 ### Tabbar Event
 
 | 事件名 | 说明 | 参数 |
-|-----------|-----------|-----------|
+|------|------|------|
 | change | 切换标签时触发 | active: 当前选中标签 |
 
 ### TabbarItem API
 
-| 参数 | 说明 | 类型 | 默认值 |
-|-----------|-----------|-----------|-----------|
-| icon | 图标名称 (可选值见 Icon 组件) | `String` | - |
-| dot | 是否显示小红点 | `Boolean` | - |
-| info | 图标右上角提示信息 | `String | Number` | - |
-| url | 跳转链接 | `String` | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` |
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| icon | 图标名称 (可选值见 Icon 组件) | `String` | - | - |
+| dot | 是否显示小红点 | `Boolean` | - | - |
+| info | 图标右上角提示信息 | `String | Number` | - | - |
+| url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| replace | 跳转时是否替换当前 history | `String` | `false` | - |
 
 ### TabbarItem Slot
 
 | 名称 | 说明 | slot-scope |
-|-----------|-----------|-----------|
+|------|------|------|
 | icon | 自定义图标 | active: 是否为选中标签 |
-
-### 更新日志
-
-| 版本 | 类型 | 内容 |
-|-----------|-----------|-----------|
-| 1.3.0 | bugfix | 修复使用 icon 插槽时 info 属性不生效的问题 |
-| 1.1.15 | bugfix | 修复点击当前标签时依然会触发 change 事件的问题 |
-| 1.1.9 | feature | 新增 z-index 属性 |

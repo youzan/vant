@@ -48,7 +48,7 @@ setTimeout(() => {
 ### Arguments
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-----------|
+|------|------|------|------|
 | images | Images URL list | `Array` | `[]` |
 | startPosition | Start position | `Number` | `0` |
 | showIndex | Whether to show index | `Boolean` | `true` |

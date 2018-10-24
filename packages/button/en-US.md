@@ -58,7 +58,7 @@ Vue.use(Button);
 ### API
 
 | Attribute | Description | Type | Default |
-|-----------|-----------|-----------|-------------|
+|------|------|------|------|
 | type | Can be set to `primary` `warning` `danger` | `String` | `default` |
 | size | Can be set to `normal` `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
@@ -74,5 +74,5 @@ Vue.use(Button);
 ### Event
 
 | Event | Description | Arguments |
-|-----------|-----------|-----------|
+|------|------|------|
 | click | Triggered when click button and not disabled or loading | - |
