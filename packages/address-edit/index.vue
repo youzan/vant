@@ -4,7 +4,6 @@
       <field
         v-model="data.name"
         clearable
-        maxlength="15"
         :label="$t('name')"
         :placeholder="$t('namePlaceholder')"
         :error="errorInfo.name"
@@ -125,6 +124,7 @@ export default create({
     areaList: Object,
     isSaving: Boolean,
     isDeleting: Boolean,
+    validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
     showSetDefault: Boolean,
@@ -263,8 +263,15 @@ export default create({
     },
 
     getErrorMessage(key) {
-      const value = String(this.data[key]).trim();
+      const value = String(this.data[key] || '').trim();
       const { $t } = this;
+
+      if (this.validator) {
+        const message = this.validator(key, value);
+        if (message) {
+          return message;
+        }
+      }
 
       switch (key) {
         case 'name':
