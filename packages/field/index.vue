@@ -13,6 +13,7 @@
       'min-height': type === 'textarea' && !autosize
     })"
   >
+    <slot name="left-icon" slot="icon" />
     <slot name="label" slot="title" />
     <div :class="b('body')">
       <textarea
