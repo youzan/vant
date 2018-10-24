@@ -3,8 +3,6 @@ import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
 import { mount, trigger, triggerDrag } from '../../../test/utils';
 
-Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
-
 function triggerZoom(el, x, y) {
   trigger(el, 'touchstart', 0, 0, { x, y });
   trigger(el, 'touchmove', -x / 4, -y / 4, { x, y });
@@ -73,6 +71,9 @@ test('register component', () => {
 });
 
 test('zoom', async() => {
+  const getBoundingClientRect = Element.prototype.getBoundingClientRect;
+  Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
+
   const wrapper = mount(ImagePreviewVue, {
     propsData: { images, value: true }
   });
@@ -81,4 +82,5 @@ test('zoom', async() => {
   triggerZoom(image, 300, 300);
   triggerDrag(image, 300, 300);
   expect(wrapper).toMatchSnapshot();
+  Element.prototype.getBoundingClientRect = getBoundingClientRect;
 });
