@@ -85,6 +85,7 @@ export default {
 | select-search | Triggered when select search result | value: search content |
 | change-area | Triggered when change area | values: area values |
 | change-detail | Triggered when address detail changed | value: address detail |
+| change-default | Triggered when switch default address | value: checked |
 
 ### Slot
 

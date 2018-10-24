@@ -83,6 +83,7 @@ export default {
 | select-search | 选中搜索结果时触发 | value: 搜索结果 |
 | change-area | 修改收件地区时触发 | values: 地区信息 |
 | change-detail | 修改详细地址时触发 | value: 详细地址内容 |
+| change-default | 切换是否使用默认地址时触发 | value: 是否选中 |
 
 ### Slot
 
