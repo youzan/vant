@@ -3,14 +3,14 @@
 exports[`create a AddressEdit 1`] = `
 <div class="van-address-edit">
   <div class="van-cell-group van-hairline--top-bottom">
-    <div maxlength="15" placeholder="收货人姓名" class="van-cell van-field">
+    <div placeholder="收货人姓名" class="van-cell van-field">
       <!---->
       <div class="van-cell__title"><span>姓名</span>
         <!---->
       </div>
       <div class="van-cell__value">
         <div class="van-field__body">
-          <input type="text" maxlength="15" placeholder="收货人姓名" value="" class="van-field__control">
+          <input type="text" placeholder="收货人姓名" value="" class="van-field__control">
           <!---->
           <!---->
           <!---->
@@ -113,14 +113,14 @@ exports[`create a AddressEdit 1`] = `
 exports[`create a AddressEdit with props 1`] = `
 <div class="van-address-edit">
   <div class="van-cell-group van-hairline--top-bottom">
-    <div maxlength="15" placeholder="收货人姓名" class="van-cell van-field">
+    <div placeholder="收货人姓名" class="van-cell van-field">
       <!---->
       <div class="van-cell__title"><span>姓名</span>
         <!---->
       </div>
       <div class="van-cell__value">
         <div class="van-field__body">
-          <input type="text" maxlength="15" placeholder="收货人姓名" value="测试" class="van-field__control">
+          <input type="text" placeholder="收货人姓名" value="测试" class="van-field__control">
           <!---->
           <!---->
           <!---->
