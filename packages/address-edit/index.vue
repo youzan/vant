@@ -56,6 +56,7 @@
         v-show="!hideBottomFields"
         v-model="data.isDefault"
         :title="$t('defaultAddress')"
+        @change="$emit('change-default', $event)"
       />
     </cell-group>
 
