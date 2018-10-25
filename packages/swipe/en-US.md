@@ -97,11 +97,9 @@ export default {
   <van-swipe-item>3</van-swipe-item>
   <van-swipe-item>4</van-swipe-item>
 
-  <template slot="indicator">
-    <div class="custom-indicator">
-      {{ this.current + 1 }}/4
-    </div>
-  </template>
+  <div class="custom-indicator" slot="indicator">
+    {{ current + 1 }}/4
+  </div>
 </van-swipe>
 ```
 
@@ -113,6 +111,7 @@ export default {
         current: 0
       }
     },
+
     onChange(index) {
       this.current = index;
     }
