@@ -40,7 +40,8 @@ export default create({
       const { coupons } = this;
       const coupon = coupons[this.chosenCoupon];
       if (coupon) {
-        return `-￥${(coupon.value / 100).toFixed(2)}`;
+        const value = coupon.denominations || coupon.value;
+        return `-￥${(value / 100).toFixed(2)}`;
       }
       return coupons.length === 0 ? this.$t('tips') : this.$t('count', coupons.length);
     }
