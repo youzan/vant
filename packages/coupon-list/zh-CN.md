@@ -113,4 +113,4 @@ export default {
 | startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
 | endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
-| value | 订单优惠金额，单位分 | `Number` |
+| value | 折扣券优惠金额，单位分 | `Number` |
