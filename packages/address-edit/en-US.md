@@ -73,6 +73,7 @@ export default {
 | is-saving | Whether to show save button loading status | `Boolean` | `false` |
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
+| validator | Custom validator | `(key, value) => string` | - | 1.3.9 |
 
 ### Event
 
