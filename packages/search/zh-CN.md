@@ -71,3 +71,4 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 | 名称 | 说明 |
 |------|------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
+| left-icon | 自定义输入框头部图标 |
