@@ -77,3 +77,4 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 | name | Description |
 |------|------|
 | action | Custom right button, displayed when `showAction` is true |
+| left-icon | Custom left icon |

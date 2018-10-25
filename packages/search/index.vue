@@ -8,7 +8,9 @@
       :value="value"
       :border="false"
       left-icon="search"
-    />
+    >
+      <slot name="left-icon" slot="left-icon" />
+    </field>
     <div v-if="showAction" :class="b('action')">
       <slot name="action">
         <div @click="onBack">{{ $t('cancel') }}</div>
