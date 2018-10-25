@@ -61,10 +61,6 @@ export default {
     }
   },
 
-  created() {
-    this._popupId = 'popup-' + context.plusKey('id');
-  },
-
   mounted() {
     if (this.getContainer) {
       this.move();
@@ -101,7 +97,7 @@ export default {
         return;
       }
 
-      // 如果属性中传入了`zIndex`，则覆盖`context`中对应的`zIndex`
+      // cover default zIndex
       if (this.zIndex !== undefined) {
         context.zIndex = this.zIndex;
       }
@@ -112,6 +108,7 @@ export default {
       if (this.lockScroll) {
         on(document, 'touchstart', this.touchStart);
         on(document, 'touchmove', this.onTouchMove);
+
         if (!context.lockCount) {
           document.body.classList.add('van-overflow-hidden');
         }
@@ -128,13 +125,14 @@ export default {
         context.lockCount--;
         off(document, 'touchstart', this.touchStart);
         off(document, 'touchmove', this.onTouchMove);
+
         if (!context.lockCount) {
           document.body.classList.remove('van-overflow-hidden');
         }
       }
 
       this.opened = false;
-      manager.close(this._popupId);
+      manager.close(this);
       this.$emit('input', false);
     },
 
@@ -184,16 +182,16 @@ export default {
     renderOverlay() {
       if (this.overlay) {
         manager.open(this, {
-          zIndex: context.plusKey('zIndex'),
+          zIndex: context.zIndex++,
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
       } else {
-        manager.close(this._popupId);
+        manager.close(this);
       }
 
       this.$nextTick(() => {
-        this.$el.style.zIndex = context.plusKey('zIndex');
+        this.$el.style.zIndex = context.zIndex++;
       });
     }
   }
