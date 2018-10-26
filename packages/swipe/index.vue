@@ -36,16 +36,10 @@ export default create({
   mixins: [Touch],
 
   props: {
+    width: Number,
+    height: Number,
     autoplay: Number,
     vertical: Boolean,
-    width: {
-      type: Number,
-      default: 0
-    },
-    height: {
-      type: Number,
-      default: 0
-    },
     loop: {
       type: Boolean,
       default: true
@@ -137,8 +131,11 @@ export default create({
     },
 
     trackStyle() {
+      const mainAxis = this.vertical ? 'height' : 'width';
+      const crossAxis = this.vertical ? 'width' : 'height';
       return {
-        [this.vertical ? 'height' : 'width']: `${this.trackSize}px`,
+        [mainAxis]: `${this.trackSize}px`,
+        [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
         transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
         transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`
       };
