@@ -55,7 +55,10 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 |------|------|------|------|------|
 | background | 搜索框背景色 | `String` | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` | - |
+| disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | readonly | 是否只读 | `Boolean` | `false` | - |
+| error | 是否将输入内容标红 | `Boolean` | `false` | - |
+| input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | - |
 
 ### Event
 
