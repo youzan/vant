@@ -176,4 +176,4 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | getColumnIndex | columnIndex | optionIndex | 获取对应列选中项的索引 |
 | setColumnIndex | columnIndex, optionIndex | - | 设置对应列选中项的索引 |
 | getColumnValues | columnIndex | values | 获取对应列中所有选项 |
-| setColumnValue | columnIndex, values | - | 设置对应列中所有选项 |
+| setColumnValues | columnIndex, values | - | 设置对应列中所有选项 |

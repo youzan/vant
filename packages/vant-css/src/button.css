@@ -29,7 +29,7 @@
   }
 
   &:active::before {
-    opacity: .3;
+    opacity: .15;
   }
 
   &--unclickable::before {
