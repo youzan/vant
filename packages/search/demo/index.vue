@@ -1,7 +1,10 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-search :placeholder="$t('placeholder')" v-model="value" />
+      <van-search
+        v-model="value"
+        :placeholder="$t('placeholder')"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
