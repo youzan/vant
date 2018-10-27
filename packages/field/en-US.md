@@ -147,6 +147,7 @@ Use ref to get field instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |------|------|------|------|
+| focus | - | - | Trigger input focus |
 | blur | - | - | Trigger input blur |
 
 ### Slot

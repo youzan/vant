@@ -127,6 +127,10 @@ export default create({
   },
 
   methods: {
+    focus() {
+      this.$refs.input && this.$refs.input.focus();
+    },
+
     blur() {
       this.$refs.input && this.$refs.input.blur();
     },
