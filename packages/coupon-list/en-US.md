@@ -73,6 +73,7 @@ export default {
 | chosen-coupon | Index of chosen coupon | `Number` | `-1` |
 | coupons | Coupon list | `Array` | `[]` |
 | editable | Cell editable | `Boolean` | `true` |
+| border | Whether to show outer border | `Boolean` | `true` |
 
 ### CouponList API
 
