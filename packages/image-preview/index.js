@@ -4,6 +4,14 @@ import { isServer } from '../utils';
 
 let instance;
 
+const defaultConfig = {
+  value: true,
+  images: [],
+  showIndex: true,
+  showIndicators: false,
+  startPosition: 0
+};
+
 const initInstance = () => {
   instance = new (Vue.extend(VueImagePreview))({
     el: document.createElement('div')
@@ -21,17 +29,18 @@ const ImagePreview = (images, startPosition) => {
     initInstance();
   }
 
-  const config = Array.isArray(images) ? { images, startPosition } : images;
+  const options = Array.isArray(images) ? { images, startPosition } : images;
 
-  instance.value = true;
-  instance.images = config.images;
-  instance.showIndex = config.showIndex || true;
-  instance.startPosition = config.startPosition || 0;
+  Object.assign(instance, {
+    ...defaultConfig,
+    ...options
+  });
+
   instance.$on('input', show => {
     instance.value = show;
     if (!show) {
       instance.$off('input');
-      config.onClose && config.onClose();
+      options.onClose && options.onClose();
     }
   });
 

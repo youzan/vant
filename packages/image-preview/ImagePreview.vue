@@ -10,7 +10,7 @@
     <swipe
       ref="swipe"
       :initial-swipe="startPosition"
-      :show-indicators="false"
+      :show-indicators="showIndicators"
       @change="onChange"
     >
       <swipe-item v-for="(item, index) in images" :key="index">
@@ -50,6 +50,7 @@ export default create({
   },
 
   props: {
+    showIndicators: Boolean,
     images: {
       type: Array,
       default: () => []

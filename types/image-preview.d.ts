@@ -4,6 +4,7 @@ export type ImagePreviewOptions = string[] | {
   images: string[];
   startPosition?: number;
   showIndex?: boolean;
+  showIndicators?: boolean;
   onClose?: () => any;
 };
 

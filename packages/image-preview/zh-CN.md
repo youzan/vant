@@ -60,4 +60,5 @@ setTimeout(() => {
 | images | 需要预览的图片 URL 数组 | `Array` | `[]` | 1.1.16 |
 | startPosition | 图片预览起始位置索引 | `Number` | `0` | 1.1.16 |
 | showIndex | 是否显示页码 | `Boolean` | `true` | 1.3.4 |
+| showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |

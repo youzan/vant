@@ -42,7 +42,8 @@ export default {
     showImagePreview(position, timer) {
       const instance = ImagePreview({
         images,
-        startPosition: typeof position === 'number' ? position : 0
+        startPosition: typeof position === 'number' ? position : 0,
+        showIndicators: true
       });
 
       if (timer) {
