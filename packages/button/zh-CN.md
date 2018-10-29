@@ -65,10 +65,10 @@ Vue.use(Button);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | type | 类型，可选值为 `primary` `warning` `danger` | `String` | `default` | - |
-| size | 尺寸，可选值为 `normal` `large` `small` `mini` | `String` | `normal` | - |
+| size | 尺寸，可选值为 `large` `small` `mini` | `String` | `normal` | - |
 | text | 文字 | `String` | - | - |
 | tag | HTML 标签 | `String` | `button` | - |
-| native-type | 类型（原生） | `String` | - | - |
+| native-type | 原生 type 属性 | `String` | - | - |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - |
 | block | 是否为块级元素 | `Boolean` | `false` | - |
