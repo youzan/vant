@@ -63,6 +63,10 @@ export default create({
     this.toggleClickale();
   },
 
+  destroyed() {
+    this.toggleClickale();
+  },
+
   watch: {
     value() {
       this.toggleClickale();
