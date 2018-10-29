@@ -1,8 +1,8 @@
 <template>
-  <a :href="url" :class="b()" class="van-hairline" @click="onClick">
+  <div :class="b()" class="van-hairline" @click="onClick">
     <icon :class="[b('icon'), iconClass]" :info="info" :name="icon" />
     <slot>{{ text }}</slot>
-  </a>
+  </div>
 </template>
 
 <script>
@@ -15,7 +15,6 @@ export default create({
   mixins: [RouterLink],
 
   props: {
-    url: String,
     text: String,
     info: [String, Number],
     icon: String,

@@ -73,6 +73,8 @@ Use `info` prop to show messages in upper right corner of icon
 |------|------|------|------|
 | text | Button text | `String` | - |
 | primary | Is primary button (red color) | `Boolean` | `false` |
+| disabled | Whether to disable button | `Boolean` | `false` |
+| loading | Whether show loading status | `Boolean` | `false` |
 | url | Link | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `String` | `false` |
