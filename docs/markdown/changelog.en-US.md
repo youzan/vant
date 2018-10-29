@@ -1,5 +1,23 @@
 ## Changelog
 
+## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
+`2018-10-29`
+
+**Improvements**
+
+- Field: add focus method [\#1987](https://github.com/youzan/vant/pull/1987)
+- Search: add left-icon slot [\#1974](https://github.com/youzan/vant/pull/1974)
+- CouponCell: add border prop [\#1993](https://github.com/youzan/vant/pull/1993)
+- CouponCell: update value display rule [\#1976](https://github.com/youzan/vant/pull/1976)
+- ImagePreview: add showIndicators prop [\#1992](https://github.com/youzan/vant/pull/1992)
+- GoodsAction: add loading、disabled prop [\#1994](https://github.com/youzan/vant/pull/1994)
+
+**Bug Fixes**
+
+- fix Swipe height prop not work [\#1982](https://github.com/youzan/vant/pull/1982)
+- fix Toast remove unclickable when destroyed [\#1991](https://github.com/youzan/vant/pull/1991)
+
+
 ## [v1.3.9](https://github.com/youzan/vant/tree/v1.3.9)
 `2018-10-24`
 

@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
+`2018-10-29`
+
+**Improvements**
+
+- Field: 新增 focus 方法 [\#1987](https://github.com/youzan/vant/pull/1987)
+- Search: 新增 left-icon 插槽 [\#1974](https://github.com/youzan/vant/pull/1974)
+- CouponCell: 新增 border 属性 [\#1993](https://github.com/youzan/vant/pull/1993)
+- CouponCell: 优化优惠金额展示规则 [\#1976](https://github.com/youzan/vant/pull/1976)
+- ImagePreview: 新增 showIndicators 属性 [\#1992](https://github.com/youzan/vant/pull/1992)
+- GoodsAction: 新增 loading、disabled 属性 [\#1994](https://github.com/youzan/vant/pull/1994)
+
+**Bug Fixes**
+
+- 修复 Swipe height 属性不生效的问题 [\#1982](https://github.com/youzan/vant/pull/1982)
+- 修复 Toast 在多实例模式下未正确销毁导致无法点击的问题 [\#1991](https://github.com/youzan/vant/pull/1991)
+
+
 ## [v1.3.9](https://github.com/youzan/vant/tree/v1.3.9)
 `2018-10-24`
 
