@@ -380,6 +380,10 @@ module.exports = {
     {
       src: '购物车3.svg',
       css: 'cart-o'
+    },
+    {
+      src: '答疑-2.svg',
+      css: 'question2'
     }
   ]
 };
