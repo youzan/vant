@@ -171,4 +171,4 @@ Use ref to get picker instance and call instance methods
 | getColumnIndex | columnIndex | optionIndex | Get current index of the column |
 | setColumnIndex | columnIndex, optionIndex | - | Set current index of the column |
 | getColumnValues | columnIndex | values | Get columns data of the column |
-| setColumnValue | columnIndex, values | - | Set columns data of the column |
+| setColumnValues | columnIndex, values | - | Set columns data of the column |

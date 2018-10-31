@@ -60,7 +60,7 @@ Vue.use(Button);
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | type | Can be set to `primary` `warning` `danger` | `String` | `default` |
-| size | Can be set to `normal` `large` `small` `mini` | `String` | `normal` |
+| size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
 | tag | Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |

@@ -72,6 +72,8 @@ export default {
 |------|------|------|------|------|
 | text | 按钮文字 | `String` | - | - |
 | primary | 是否为红色按钮 | `Boolean` | `false` | - |
+| disabled | 是否禁用按钮 | `Boolean` | `false` | - | 1.3.10 |
+| loading | 是否显示为加载状态 | `Boolean` | `false` | - | 1.3.10 |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前 history | `String` | `false` | - |

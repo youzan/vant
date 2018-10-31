@@ -73,6 +73,7 @@ export default {
 | is-saving | Whether to show save button loading status | `Boolean` | `false` |
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
+| validator | Custom validator | `(key, value) => string` | - | 1.3.9 |
 
 ### Event
 
@@ -85,6 +86,7 @@ export default {
 | select-search | Triggered when select search result | value: search content |
 | change-area | Triggered when change area | values: area values |
 | change-detail | Triggered when address detail changed | value: address detail |
+| change-default | Triggered when switch default address | value: checked |
 
 ### Slot
 

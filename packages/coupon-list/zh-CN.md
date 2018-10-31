@@ -74,6 +74,7 @@ export default {
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
+| border | 是否显示外边框 | `Boolean` | `true` | 1.3.10 |
 
 ### CouponList API
 
@@ -113,4 +114,4 @@ export default {
 | startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
 | endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | reason | 不可用原因 | `String` |
-| value | 订单优惠金额，单位分 | `Number` |
+| value | 折扣券优惠金额，单位分 | `Number` |

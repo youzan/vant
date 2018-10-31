@@ -147,6 +147,7 @@ Use ref to get field instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |------|------|------|------|
+| focus | - | - | Trigger input focus |
 | blur | - | - | Trigger input blur |
 
 ### Slot
@@ -154,5 +155,6 @@ Use ref to get field instance and call instance methods
 | name | Description |
 |------|------|
 | label | Custom label |
-| icon | Custom icon |
+| left-icon | Custom left icon |
+| icon | Custom right icon |
 | button | Insert button |

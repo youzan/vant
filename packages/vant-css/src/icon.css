@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: normal;
   font-family: 'vant-icon';
-  src: url('https://img.yzcdn.cn/vant/vant-icon-f4e97b.ttf') format('truetype');
+  src: url('https://img.yzcdn.cn/vant/vant-icon-ed790e.ttf') format('truetype');
 }
 
 .van-icon {
@@ -319,82 +319,86 @@
   content: "\F04A";
 }
 
-.van-icon-receive-gift::before {
+.van-icon-question2::before {
   content: "\F04B";
 }
 
-.van-icon-records::before {
+.van-icon-receive-gift::before {
   content: "\F04C";
 }
 
-.van-icon-search::before {
+.van-icon-records::before {
   content: "\F04D";
 }
 
-.van-icon-send-gift::before {
+.van-icon-search::before {
   content: "\F04E";
 }
 
-.van-icon-setting::before {
+.van-icon-send-gift::before {
   content: "\F04F";
 }
 
-.van-icon-share::before {
+.van-icon-setting::before {
   content: "\F050";
 }
 
-.van-icon-shop-collect::before {
+.van-icon-share::before {
   content: "\F051";
 }
 
-.van-icon-shop::before {
+.van-icon-shop-collect::before {
   content: "\F052";
 }
 
-.van-icon-shopping-cart::before {
+.van-icon-shop::before {
   content: "\F053";
 }
 
-.van-icon-sign::before {
+.van-icon-shopping-cart::before {
   content: "\F054";
 }
 
-.van-icon-stop::before {
+.van-icon-sign::before {
   content: "\F055";
 }
 
-.van-icon-success::before {
+.van-icon-stop::before {
   content: "\F056";
 }
 
-.van-icon-tosend::before {
+.van-icon-success::before {
   content: "\F057";
 }
 
-.van-icon-underway::before {
+.van-icon-tosend::before {
   content: "\F058";
 }
 
-.van-icon-upgrade::before {
+.van-icon-underway::before {
   content: "\F059";
 }
 
-.van-icon-value-card::before {
+.van-icon-upgrade::before {
   content: "\F05A";
 }
 
-.van-icon-wap-home::before {
+.van-icon-value-card::before {
   content: "\F05B";
 }
 
-.van-icon-wap-nav::before {
+.van-icon-wap-home::before {
   content: "\F05C";
 }
 
-.van-icon-warn::before {
+.van-icon-wap-nav::before {
   content: "\F05D";
 }
 
-.van-icon-wechat::before {
+.van-icon-warn::before {
   content: "\F05E";
+}
+
+.van-icon-wechat::before {
+  content: "\F05F";
 }

@@ -110,6 +110,16 @@ test('blur method', () => {
   expect(fn.mock.calls.length).toEqual(1);
 });
 
+test('focus method', () => {
+  const fn = jest.fn();
+  const wrapper = mount(Field);
+
+  wrapper.vm.$on('focus', fn);
+  wrapper.vm.focus();
+
+  expect(fn.mock.calls.length).toEqual(1);
+});
+
 test('maxlength', async() => {
   const wrapper = mount(Field, {
     attrs: {

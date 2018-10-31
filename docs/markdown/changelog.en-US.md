@@ -1,6 +1,40 @@
 ## Changelog
 
-### [1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
+## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
+`2018-10-29`
+
+**Improvements**
+
+- Field: add focus method [\#1987](https://github.com/youzan/vant/pull/1987)
+- Search: add left-icon slot [\#1974](https://github.com/youzan/vant/pull/1974)
+- CouponCell: add border prop [\#1993](https://github.com/youzan/vant/pull/1993)
+- CouponCell: update value display rule [\#1976](https://github.com/youzan/vant/pull/1976)
+- ImagePreview: add showIndicators prop [\#1992](https://github.com/youzan/vant/pull/1992)
+- GoodsAction: add loading、disabled prop [\#1994](https://github.com/youzan/vant/pull/1994)
+
+**Bug Fixes**
+
+- fix Swipe height prop not work [\#1982](https://github.com/youzan/vant/pull/1982)
+- fix Toast remove unclickable when destroyed [\#1991](https://github.com/youzan/vant/pull/1991)
+
+
+## [v1.3.9](https://github.com/youzan/vant/tree/v1.3.9)
+`2018-10-24`
+
+**Improvements**
+
+- Field: add left-icon slot [\#1973](https://github.com/youzan/vant/pull/1973)
+- Toast: destroy instance in multiple mode [\#1959](https://github.com/youzan/vant/pull/1959)
+- AddressEdit: add validator prop [\#1971](https://github.com/youzan/vant/pull/1971)
+- AddressEdit: add change-default event [\#1972](https://github.com/youzan/vant/pull/1972)
+
+**Bug Fixes**
+
+- fix ImagePreview wrong index [\#1961](https://github.com/youzan/vant/pull/1961)
+- fix Sku popup max-height [\#1965](https://github.com/youzan/vant/pull/1965)
+
+
+## [v1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
 `2018-10-17`
 
 **Improvements**
@@ -20,7 +54,7 @@
 - fix SubmitBar incomplete button text display [\#1940](https://github.com/youzan/vant/pull/1940)
 
 
-### [1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
+## [v1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
 `2018-10-12`
 
 **Improvements**
@@ -35,7 +69,7 @@
 - fix SubmitBar tip color
 
 
-### [1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
+## [v1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
 `2018-10-11`
 
 **Improvements**
@@ -47,7 +81,7 @@
 - fix Toast tap highlight color when unclickable [\#1914](https://github.com/youzan/vant/pull/1914)
 
 
-### [1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
+## [v1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
 `2018-10-10`
 
 **Improvements**
@@ -66,7 +100,7 @@
 - fix Swipe multi finger [\#1890](https://github.com/youzan/vant/pull/1890)
 
 
-### [1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
+## [v1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
 `2018-10-02`
 
 **Improvements**
@@ -84,7 +118,7 @@
 - fix Toast type definition [\#1859](https://github.com/youzan/vant/pull/1859)
 
 
-### [1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
+## [v1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
 `2018-09-23`
 
 **Improvements**
@@ -101,7 +135,7 @@
 - fix Tag white border [\#1834](https://github.com/youzan/vant/pull/1834)
 
 
-### [1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
+## [v1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
 `2018-09-14`
 
 **Improvements**
@@ -120,7 +154,7 @@
 - fix Dialog type definition [\#1799](https://github.com/youzan/vant/pull/1799)
 
 
-### [1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
+## [v1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
 `2018-09-07`
 
 **Improvements**
@@ -135,7 +169,7 @@
 - fix lib dir babel runtime module [\#1753](https://github.com/youzan/vant/pull/1753)
 
 
-### [1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
+## [v1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
 `2018-08-31`
 
 **Breaking changes**
@@ -164,7 +198,7 @@
 - fix Tabbar: info not work when use icon slot [\#1705](https://github.com/youzan/vant/pull/1705)
 
 
-### [1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
+## [v1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
 `2018-08-24`
 
 **Improvements**
@@ -184,7 +218,7 @@
 - fix Popup can not be destoryed when use get-container [\#1665](https://github.com/youzan/vant/pull/1665)
 
 
-### [1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
+## [v1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
 `2018-08-20`
 
 **Breaking changes**
@@ -211,7 +245,7 @@
 - fix AddressEdit show delete [\#1648](https://github.com/youzan/vant/pull/1648)
 - fix Icon size prop not work [\#1634](https://github.com/youzan/vant/pull/1634)
 
-### [1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
+## [v1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
 `2018-08-10`
 
 **Improvements**
@@ -227,7 +261,7 @@
 - fix DatetimePicker value uncorrect when use formatter [\#1591](https://github.com/youzan/vant/pull/1591)
 
 
-### [1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
+## [v1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
 `2018-08-03`
 
 **Improvements**
@@ -248,7 +282,7 @@
 - fix Tabbar should not trigger change event when active not change [\#1571](https://github.com/youzan/vant/pull/1571)
 
 
-### [1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
+## [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
 `2018-07-19`
 
 **Improvements**
@@ -269,7 +303,7 @@
 - fix Tab sticky in scroll element [\#1496](https://github.com/youzan/vant/pull/1496)
 
 
-### [1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+## [v1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
 `2018-07-13`
 
 **Improvements**
@@ -289,7 +323,7 @@
 - fix vue-lazyload version [\#1481](https://github.com/youzan/vant/pull/1481)
 
 
-### [1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+## [v1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
 `2018-07-06`
 
 **Improvements**
@@ -308,7 +342,7 @@
 - fix vant-css missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
-### [1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
+## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 
 **Improvements**
@@ -330,7 +364,7 @@
 - fix Tab insert order [\#1372](https://github.com/youzan/vant/pull/1372)
 
 
-### [1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
+## [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
 `2018-06-28`
 
 **Breaking changes**
@@ -353,7 +387,7 @@
 - fix Sku image clip [\#1334](https://github.com/youzan/vant/pull/1334)
 
 
-### [1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
+## [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
 `2018-06-22`
 
 **Improvements**
@@ -371,7 +405,7 @@
 - fix Tab line resize [\#1304](https://github.com/youzan/vant/pull/1304)
 
 
-### [1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
+## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
 `2018-06-14`
 
 **Improvements**
@@ -395,7 +429,7 @@
 - fix Tab resize line when title changed [\#1260](https://github.com/youzan/vant/pull/1260)
 
 
-### [1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
+## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
 `2018-06-06`
 
 **Improvements**
@@ -407,7 +441,7 @@
 - Document: add ts-import-plugin guide [\#1230](https://github.com/youzan/vant/pull/1230)
 
 
-### [1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
+## [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
 `2018-06-01`
 
 **Improvements**
@@ -428,7 +462,7 @@
 
 ## Changelog
 
-### [1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
+## [v1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
 `2018-05-24`
 
 **Improvements**
@@ -450,7 +484,7 @@
 - fix Progress pivot cross border [\#1135](https://github.com/youzan/vant/pull/1135)
 
 
-### [1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
+## [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
 `2018-05-18`
 
 **Improvements**
@@ -471,7 +505,7 @@
 - fix icon style template [\#1091](https://github.com/youzan/vant/pull/1091)
 
 
-### [1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
+## [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
 `2018-05-12`
 
 **Improvements**
@@ -491,7 +525,7 @@
 - fix ImagePreview can't be closed when contain single image [\#1046](https://github.com/youzan/vant/pull/1046)
 
 
-### [1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
+## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
 `2018-05-08`
 
 **Improvements**
@@ -511,7 +545,7 @@
 - fix Stepper integer wrong spelling [\#992](https://github.com/youzan/vant/pull/992)
 
 
-### [1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+## [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
 `2018-05-04`
 
 **Improvements**
@@ -530,7 +564,7 @@
 * fix Search incomplete text display in iOS [\#974](https://github.com/youzan/vant/pull/974)
 
 
-### [1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
+## [v1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
 `2018-04-25`
 
 **Improvements**
@@ -556,7 +590,7 @@
 * fix Picker text adjust may cause option wrong offset [\#916](https://github.com/youzan/vant/pull/916)
 
 
-### [1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
+## [v1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
 `2018-04-20`
 
 **Improvements**
@@ -569,14 +603,14 @@
 * Popup: fix lock scroll [\#891](https://github.com/youzan/vant/pull/891)
 
 
-### [1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
+## [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
 `2018-04-17`
 
 **Bug Fixes**
 
 * fix missing style entry in build result
 
-### [1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
+## [v1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
 `2018-04-17`
 
 **Improvements**
@@ -591,7 +625,7 @@
 * fix DatetimePicker change event params not correct [\#878](https://github.com/youzan/vant/pull/878)
 
 
-### [1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
+## [v1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
 `2018-04-13`
 
 **Improvements**
@@ -611,7 +645,7 @@
 * fix Swipe not stop touch event propagation [\#846](https://github.com/youzan/vant/pull/846)
 
 
-### [1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
+## [v1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
 `2018-04-10`
 
 **Improvements**
@@ -631,7 +665,7 @@
 * fix Sku row font-size [\#840](https://github.com/youzan/vant/pull/840)
 
 
-### [1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+## [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
 `2018-03-26`
 
 **Improvements**
@@ -647,7 +681,7 @@
 * fix Toast mask not remove when hidden [\#762](https://github.com/youzan/vant/pull/762)
 
 
-### [1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
 `2018-03-22`
 
 **Improvements**
@@ -666,7 +700,7 @@
 * fix Tab content not clickable [\#749](https://github.com/youzan/vant/pull/749)
 
 
-### [1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+## [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
 `2018-03-19`
 
 **Bug Fixes**
@@ -674,7 +708,7 @@
 * fix module circular dependency [\#728](https://github.com/youzan/vant/pull/728)
 
 
-### [1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
+## [v1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
 `2018-03-19`
 
 **Breaking changes**
@@ -708,14 +742,14 @@
 * fix Badge info font weight when selected [\#687](https://github.com/youzan/vant/pull/687)
 
 
-### [0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
 `2018-03-09`
 
 **Bug Fixes**
 * Area: should reset index when area list changed [\#678](https://github.com/youzan/vant/pull/678)
 
 
-### [0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+## [v0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
 `2018-03-09`
 
 **Improvements**
@@ -727,7 +761,7 @@
 * fix CouponList text max-width [\#675](https://github.com/youzan/vant/pull/675)
 
 
-### [0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+## [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
 `2018-03-06`
 
 **Improvements**
@@ -742,7 +776,7 @@
 * fix Swipe autoplay not stop when value set to 0 [\#660](https://github.com/youzan/vant/pull/660)
 
 
-### [0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+## [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
 `2018-02-27`
 
 **Improvements**
@@ -757,7 +791,7 @@
 * fix Button loading horizontal align [\#645](https://github.com/youzan/vant/pull/645)
 
 
-### [0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+## [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
 `2018-02-12`
 
 **Improvements**
@@ -771,7 +805,7 @@
 *  Stepper: change event error when clear input [\#635](https://github.com/youzan/vant/pull/635)
 
 
-### [0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+## [v0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
 `2018-02-08`
 
 **Improvements**
@@ -787,7 +821,7 @@
 * fix Sku message observation [\#627](https://github.com/youzan/vant/pull/627)
 
 
-### [0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+## [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
 `2018-02-07`
 
 **Improvements**
@@ -803,7 +837,7 @@
 * fix TreeSelect arrow position error [\#605](https://github.com/youzan/vant/pull/605)
 
 
-### [0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+## [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 
 **Improvements**
@@ -815,7 +849,7 @@
 **Bug Fixes**
 * fix Field multi line label style error [\#583](https://github.com/youzan/vant/pull/583)
 
-### [0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+## [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
 `2018-01-25`
 
 **Improvements**
@@ -830,7 +864,7 @@
 * fix Toast work break [\#567](https://github.com/youzan/vant/pull/567)
 * fix Tab active not work [\#572](https://github.com/youzan/vant/pull/572)
 
-### [0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
+## [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
 `2018-01-23`
 
 **Improvements**
@@ -845,7 +879,7 @@
 * Cell: fix required style [\#553](https://github.com/youzan/vant/pull/553)
 
 
-### [0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+## [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
 `2018-01-18`
 
 **Improvements**
@@ -859,7 +893,7 @@
 * Stepper: not fire event on changing the value prop [\#546](https://github.com/youzan/vant/pull/546)
 * Picker: fix misspelling of visibleItemCount prop [\#549](https://github.com/youzan/vant/pull/549)
 
-### [0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
+## [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`
 
@@ -875,7 +909,7 @@
 * Picker: change event not triggered when click option [\#532](https://github.com/youzan/vant/pull/532)
 * PullRefresh: only triggered when drag in vertical direction [\#521](https://github.com/youzan/vant/pull/521)
 
-### [0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
+## [v0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
 
 `2018-01-08`
 
@@ -886,7 +920,7 @@
 * NoticeBar: should reinitialize when text changed [\#515](https://github.com/youzan/vant/pull/515)
 * AddressEdit: fix search result style error [\#514](https://github.com/youzan/vant/pull/514)
 
-### [0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
+## [v0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
 
 `2018-01-05`
 
@@ -902,7 +936,7 @@
 * fix CouponList input style [\#502](https://github.com/youzan/vant/pull/502)
 * fix Radio icon not clickable [\#505](https://github.com/youzan/vant/pull/505)
 
-### [0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
+## [v0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
 
 `2017-12-29`
 
@@ -921,7 +955,7 @@
 * fix Tab height calc error when use sticky [\#493](https://github.com/youzan/vant/pull/493)
 * fix Component should not inheritAttrs when use $attrs [\#488](https://github.com/youzan/vant/pull/488)
 
-### [0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+## [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
 
 `2017-12-25`
 
@@ -938,7 +972,7 @@
 * fix popup mixin should treat empty string as true for boolean props [\#468](https://github.com/youzan/vant/pull/468)
 * fix package.json should include 'types' in 'files' field [\#462](https://github.com/youzan/vant/pull/462)
 
-### [0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+## [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
 
 `2017-12-21`
 
@@ -952,7 +986,7 @@
 
 * fix cell arrow style error
 
-### [0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+## [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
 
 `2017-12-19`
 
@@ -969,7 +1003,7 @@
 
 * fix GoodsAction display error in small screen [\#446](https://github.com/youzan/vant/pull/446)
 
-### [0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
+## [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 
 `2017-12-15`
 
@@ -985,7 +1019,7 @@
 * fix Picker bottom area not dragable [\#433](https://github.com/youzan/vant/pull/433)
 * fix PullRefresh head display error [\#436](https://github.com/youzan/vant/pull/436)
 
-### [0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
+## [v0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
 
 `2017-12-13`
 
@@ -1002,7 +1036,7 @@
 * fix Checkbox disabled not work when inside CheckboxGroup [\#425](https://github.com/youzan/vant/pull/425)
 * fix AddressEdit searchResult type validate [\#417](https://github.com/youzan/vant/pull/417)
 
-### [0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
+## [v0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
 
 `2017-12-12`
 
@@ -1015,7 +1049,7 @@
 
 * Icon: fix 'shopping-cart' icon not align center [\#415](https://github.com/youzan/vant/pull/415)
 
-### [0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
+## [v0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
 
 `2017-12-11`
 
@@ -1029,7 +1063,7 @@
 * fix raf error in SSR [\#405](https://github.com/youzan/vant/pull/405)
 * fix NoticeBar animationend event in old browser [\#402](https://github.com/youzan/vant/pull/402)
 
-### [0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
+## [v0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
 
 `2017-12-08`
 
@@ -1043,7 +1077,7 @@
 * Tab: hide scrollbar in mobile safari [\#390](https://github.com/youzan/vant/pull/390)
 * Tab: active tab should keep center when scrollable [\#394](https://github.com/youzan/vant/pull/394)
 
-### [0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+## [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
 
 `2017-12-07`
 
@@ -1055,7 +1089,7 @@
 
 * fix Tab initail tab position [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
 
-### [0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
+## [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
 
 `2017-12-07`
 
@@ -1073,7 +1107,7 @@
 * fix Sku button border radius [\#378](https://github.com/youzan/vant/pull/378)
 * fix Radio & Checkbox disabled color [\#383](https://github.com/youzan/vant/pull/383)
 
-### [0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+## [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
 
 `2017-12-04`
 
@@ -1087,7 +1121,7 @@
 
 * fix Tab active block disappeared when delete tab [\#372](https://github.com/youzan/vant/pull/372)
 
-### [0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
+## [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 
 `2017-11-30`
 
@@ -1096,7 +1130,7 @@
 * add type definition files [\#361](https://github.com/youzan/vant/pull/361)
 * support use this.$toast/$dialog to call Toast/Dialog [\#363](https://github.com/youzan/vant/pull/363)
 
-### [0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
+## [v0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
 
 `2017-11-28`
 
@@ -1110,7 +1144,7 @@
 * Uploader: support inherit attrs [\#357](https://github.com/youzan/vant/pull/357)
 * optimize local compile speed [\#355](https://github.com/youzan/vant/pull/355)
 
-### [0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+## [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
 
 `2017-11-24`
 
@@ -1118,7 +1152,7 @@
 
 * Icon: add seven new icons [\#351](https://github.com/youzan/vant/pull/351)
 
-### [0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+## [v0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
 
 `2017-11-24`
 
@@ -1139,7 +1173,7 @@
 * fix some bugs in SSR [\#344](https://github.com/youzan/vant/pull/344)
 * fix DateTimePicker crashed when pass invalid props [\#333](https://github.com/youzan/vant/pull/333)
 
-### [0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+## [v0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
 
 `2017-11-17`
 
@@ -1155,7 +1189,7 @@
 * add Internationalization document [\#321](https://github.com/youzan/vant/pull/321)
 * Icon: add-o icon add radius [\#326](https://github.com/youzan/vant/pull/326)
 
-### [0.10.9](https://github.com/youzan/vant/tree/v0.10.9)
+## [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9)
 
 `2017-11-15`
 
@@ -1167,7 +1201,7 @@
 
 * Search: fix box-sizing [\#312](https://github.com/youzan/vant/pull/312)
 
-### [0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
+## [v0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 
 `2017-11-11`
 
@@ -1185,7 +1219,7 @@
 
 * fix npm run dist errors in windows [\#301](https://github.com/youzan/vant/pull/301)
 
-### [0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+## [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
 
 `2017-11-08`
 
@@ -1199,7 +1233,7 @@
 * fix Sku scroll lock [\#291](https://github.com/youzan/vant/pull/291)
 * fix Steps style error when has more than 4 items [\#287](https://github.com/youzan/vant/pull/287)
 
-### [0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+## [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
 
 `2017-11-06`
 
@@ -1213,7 +1247,7 @@
 * fix Tab dynamic generate bug [\#284](https://github.com/youzan/vant/pull/284)
 * fix NoticeBar text disappeared when page back [\#280](https://github.com/youzan/vant/pull/280)
 
-### [0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
+## [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 
 `2017-10-30`
 
@@ -1226,7 +1260,7 @@
 * fix Tabbar info display when use icon slot [\#269](https://github.com/youzan/vant/pull/269)
 * fix Uploader input type [\#265](https://github.com/youzan/vant/pull/265)
 
-### [0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+## [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
 
 `2017-10-26`
 
@@ -1243,7 +1277,7 @@
 * fix PullRefreash scroll bug when parent is scrollable [\#247](https://github.com/youzan/vant/pull/247)
 * fix CouponList empty info display bug [\#246](https://github.com/youzan/vant/pull/246)
 
-### [0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
+## [v0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
 
 `2017-10-25`
 
@@ -1261,7 +1295,7 @@
 * fix popup style missing when build style entry [\#231](https://github.com/youzan/vant/pull/231)
 * fix PullRefresh touchcancel event [\#239](https://github.com/youzan/vant/pull/239)
 
-### [0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+## [v0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
 
 `2017-10-20`
 
@@ -1274,7 +1308,7 @@
 
 * Optimize component dependency analyze when build style entry [\#224](https://github.com/youzan/vant/pull/224)
 
-### [0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
+## [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 
 `2017-10-18`
 
@@ -1292,7 +1326,7 @@
 * fix Popup modal can not display in some cases [\#211](https://github.com/youzan/vant/pull/211)
 * fix Waterfall repeated event bind
 
-### [0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
+## [v0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
 
 `2017-10-13`
 
@@ -1313,7 +1347,7 @@
 * fix ImagePreview beating bug when loading image [\#201](https://github.com/youzan/vant/pull/201)
 * fix Field height error when type is textarea and display none [\#181](https://github.com/youzan/vant/issues/181)
 
-### [0.9.12](https://github.com/youzan/vant/tree/v0.9.12)
+## [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12)
 
 `2017-10-11`
 
@@ -1321,7 +1355,7 @@
 
 * fix Search style bug [\#191](https://github.com/youzan/vant/pull/191)
 
-### [0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
+## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
 
 `2017-10-11`
 
@@ -1335,7 +1369,7 @@
 * fix Field textarea wrong height when display none [\#188](https://github.com/youzan/vant/pull/188)
 * fix compile error in windows [\#185](https://github.com/youzan/vant/pull/182)
 
-### [0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
+## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
 
 `2017-10-09`
 
@@ -1358,7 +1392,7 @@
 * fix npm run dev error in MacOS [\#152](https://github.com/youzan/vant/issues/152)
 * fix document router not work in some browsers [\#158](https://github.com/youzan/vant/pull/158)
 
-### [0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
+## [v0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
 
 `2017-09-26`
 
@@ -1371,7 +1405,7 @@
 * fix license error in packages.json [\#144](https://github.com/youzan/vant/pull/144)
 * fix Waterfall scroll bug [\#145](https://github.com/youzan/vant/pull/145)
 
-### [0.9.8](https://github.com/youzan/vant/tree/v0.9.8)
+## [v0.9.8](https://github.com/youzan/vant/tree/v0.9.8)
 
 `2017-09-24`
 
@@ -1384,7 +1418,7 @@
 
 * fix Sku message render bug [\#142](https://github.com/youzan/vant/pull/142)
 
-### [0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
+## [v0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
 
 `2017-09-21`
 

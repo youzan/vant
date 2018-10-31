@@ -56,15 +56,20 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 ```
 
 ### API
-Search support all native properties of input tag，such as `maxlength`、`placeholder`、`readonly`、`autofocus`
+
+Search support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| placeholder | Input placeholder | `String` | - |
 | background | Background color | `String` | `#f2f2f2` |
 | show-action | Whether to show right button | `Boolean` | `false` |
+| disabled | Whether to disable field | `Boolean` | `false` |
+| readonly | Whether to be readonly | `Boolean` | `false` |
+| error | Whether to show error info | `Boolean` | `false` |
+| input-align | Input text align, can be set to `center` `right` | `String` | `left` |
 
 ### Event
+
 Search support all native events of input tag，such as `focus`、`blur`、`keypress`
 
 | Event | Description | Arguments |
@@ -77,3 +82,4 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 | name | Description |
 |------|------|
 | action | Custom right button, displayed when `showAction` is true |
+| left-icon | Custom left icon |

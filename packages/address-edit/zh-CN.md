@@ -71,6 +71,7 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
 | tel-validator | 手机号格式校验函数 | `string => boolean` | - | - |
+| validator | 自定义校验函数 | `(key, value) => string` | - | 1.3.9 |
 
 ### Event
 
@@ -83,6 +84,7 @@ export default {
 | select-search | 选中搜索结果时触发 | value: 搜索结果 |
 | change-area | 修改收件地区时触发 | values: 地区信息 |
 | change-detail | 修改详细地址时触发 | value: 详细地址内容 |
+| change-default | 切换是否使用默认地址时触发 | value: 是否选中 |
 
 ### Slot
 

@@ -13,6 +13,7 @@
       'min-height': type === 'textarea' && !autosize
     })"
   >
+    <slot name="left-icon" slot="icon" />
     <slot name="label" slot="title" />
     <div :class="b('body')">
       <textarea
@@ -126,6 +127,10 @@ export default create({
   },
 
   methods: {
+    focus() {
+      this.$refs.input && this.$refs.input.focus();
+    },
+
     blur() {
       this.$refs.input && this.$refs.input.blur();
     },
