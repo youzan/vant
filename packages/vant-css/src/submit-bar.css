@@ -38,6 +38,11 @@
 
   &__price {
     color: $red;
+    font-size: 18px;
+
+    &::first-letter {
+      font-size: 14px;
+    }
   }
 
   .van-button {
