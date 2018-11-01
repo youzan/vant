@@ -23,6 +23,8 @@ export default create({
     value: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     size: {
       type: String,
       default: '30px'
@@ -32,7 +34,8 @@ export default create({
   computed: {
     style() {
       return {
-        fontSize: this.size
+        fontSize: this.size,
+        backgroundColor: this.value ? this.activeColor : this.inactiveColor
       };
     }
   },

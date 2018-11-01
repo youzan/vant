@@ -3,28 +3,28 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-switch van-switch--on" style="font-size:30px;">
+    <div class="van-switch van-switch--on" style="font-size:30px;background-color:undefined;">
       <div class="van-switch__node">
         <!---->
       </div>
     </div>
   </div>
   <div>
-    <div class="van-switch van-switch--on van-switch--disabled" style="font-size:30px;">
+    <div class="van-switch van-switch--on van-switch--disabled" style="font-size:30px;background-color:undefined;">
       <div class="van-switch__node">
         <!---->
       </div>
     </div>
   </div>
   <div>
-    <div class="van-switch van-switch--on" style="font-size:30px;">
+    <div class="van-switch van-switch--on" style="font-size:30px;background-color:undefined;">
       <div class="van-switch__node">
         <div class="van-loading van-loading--circular van-loading van-switch__loading" style="color:#c9c9c9;width:undefined;height:undefined;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
       </div>
     </div>
   </div>
   <div>
-    <div class="van-switch van-switch--on" style="font-size:36px;">
+    <div class="van-switch van-switch--on" style="font-size:36px;background-color:#4b0;">
       <div class="van-switch__node">
         <!---->
       </div>

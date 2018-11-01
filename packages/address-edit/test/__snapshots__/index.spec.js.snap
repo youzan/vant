@@ -203,7 +203,7 @@ exports[`create a AddressEdit with props 1`] = `
       <!---->
     </div>
     <div class="van-cell__value">
-      <div title="设为默认收货地址" class="van-switch van-switch--on" style="font-size:26px;">
+      <div title="设为默认收货地址" class="van-switch van-switch--on" style="font-size:26px;background-color:undefined;">
         <div class="van-switch__node">
           <!---->
         </div>
