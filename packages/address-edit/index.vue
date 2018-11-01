@@ -1,64 +1,62 @@
 <template>
   <div :class="b()">
-    <cell-group>
-      <field
-        v-model="data.name"
-        clearable
-        :label="$t('name')"
-        :placeholder="$t('namePlaceholder')"
-        :error="errorInfo.name"
-        @focus="onFocus('name')"
-      />
-      <field
-        v-model="data.tel"
-        clearable
-        type="tel"
-        :label="$t('tel')"
-        :placeholder="$t('telPlaceholder')"
-        :error="errorInfo.tel"
-        @focus="onFocus('tel')"
-      />
-      <field
-        v-show="showArea"
-        readonly
-        :label="$t('area')"
-        :placeholder="$t('areaPlaceholder')"
-        :value="areaText"
-        @click="showAreaPopup = true"
-      />
-      <address-edit-detail
-        v-show="showDetail"
-        :focused="detailFocused"
-        :value="data.addressDetail"
-        :error="errorInfo.addressDetail"
-        :detail-rows="detailRows"
-        :search-result="searchResult"
-        :show-search-result="showSearchResult"
-        @focus="onFocus('addressDetail')"
-        @blur="detailFocused = false"
-        @input="onChangeDetail"
-        @select-search="$emit('select-search', $event)"
-      />
-      <field
-        v-if="showPostal"
-        v-show="!hideBottomFields"
-        v-model="data.postalCode"
-        type="tel"
-        maxlength="6"
-        :label="$t('postal')"
-        :placeholder="$t('postal')"
-        :error="errorInfo.postalCode"
-        @focus="onFocus('postalCode')"
-      />
-      <slot />
-      <switch-cell
-        v-if="showSetDefault"
-        v-show="!hideBottomFields"
-        v-model="data.isDefault"
-        :title="$t('defaultAddress')"
-        @change="$emit('change-default', $event)"
-      />
-    </cell-group>
+    <field
+      v-model="data.name"
+      clearable
+      :label="$t('name')"
+      :placeholder="$t('namePlaceholder')"
+      :error="errorInfo.name"
+      @focus="onFocus('name')"
+    />
+    <field
+      v-model="data.tel"
+      clearable
+      type="tel"
+      :label="$t('tel')"
+      :placeholder="$t('telPlaceholder')"
+      :error="errorInfo.tel"
+      @focus="onFocus('tel')"
+    />
+    <field
+      v-show="showArea"
+      readonly
+      :label="$t('area')"
+      :placeholder="$t('areaPlaceholder')"
+      :value="areaText"
+      @click="showAreaPopup = true"
+    />
+    <address-edit-detail
+      v-show="showDetail"
+      :focused="detailFocused"
+      :value="data.addressDetail"
+      :error="errorInfo.addressDetail"
+      :detail-rows="detailRows"
+      :search-result="searchResult"
+      :show-search-result="showSearchResult"
+      @focus="onFocus('addressDetail')"
+      @blur="detailFocused = false"
+      @input="onChangeDetail"
+      @select-search="$emit('select-search', $event)"
+    />
+    <field
+      v-if="showPostal"
+      v-show="!hideBottomFields"
+      v-model="data.postalCode"
+      type="tel"
+      maxlength="6"
+      :label="$t('postal')"
+      :placeholder="$t('postal')"
+      :error="errorInfo.postalCode"
+      @focus="onFocus('postalCode')"
+    />
+    <slot />
+    <switch-cell
+      v-if="showSetDefault"
+      v-show="!hideBottomFields"
+      v-model="data.isDefault"
+      :title="$t('defaultAddress')"
+      @change="$emit('change-default', $event)"
+    />
 
     <div v-show="!hideBottomFields" :class="b('buttons')">
       <van-button block :loading="isSaving" @click="onSave" type="danger">
