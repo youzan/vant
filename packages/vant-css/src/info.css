@@ -1,9 +1,9 @@
 @import './common/var.css';
 
 .van-info {
-  color: #fff;
   left: 100%;
   top: -.5em;
+  color: $white;
   font-size: .6em;
   font-weight: 500;
   padding: 0 .25em;

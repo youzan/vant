@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="width:0px;background:#38f;"><span class="van-progress__pivot" style="color:#fff;background:#38f;">50%</span></span>
+    <div class="van-progress"><span class="van-progress__portion van-progress__portion--with-pivot" style="width:0px;background:#1989fa;"><span class="van-progress__pivot" style="color:#fff;background:#1989fa;">50%</span></span>
     </div>
   </div>
   <div>

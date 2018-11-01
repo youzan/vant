@@ -14,8 +14,8 @@ Vue.use(Tag);
 ```html
 <van-tag>Tag</van-tag>
 <van-tag type="danger">Tag</van-tag>
-<van-tag type="success">Tag</van-tag>
 <van-tag type="primary">Tag</van-tag>
+<van-tag type="success">Tag</van-tag>
 ```
 
 #### Plain style

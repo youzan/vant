@@ -55,7 +55,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 | inactive | Whether to be gray | `Boolean` | `false` |
 | percentage | Percentage | `Number` | `false` |
 | show-pivot | Whether to show text | `Boolean` | `true` |
-| color | Color | `String` | `#38f` |
+| color | Color | `String` | `#1989fa` |
 | pivot-text | Text | `String` | percentage |
 | pivot-color | Text background color | `String` | inherit progress color |
 | text-color | Text color | `String` | `#fff` |

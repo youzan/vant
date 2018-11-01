@@ -89,10 +89,12 @@ export default {
 </script>
 
 <style lang="postcss">
+@import '../../vant-css/src/common/var.css';
+
 .demo-steps {
   .steps-success,
   .van-icon-location {
-    color: #06bf04;
+    color: $green;
   }
 
   .van-button {

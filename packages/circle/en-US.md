@@ -60,7 +60,7 @@ export default {
 | v-model | Current rate | `Number` | - |
 | rate | Target rate | `Number` | `100` |
 | size | Circle size | `String` | `100px` |
-| color | Progress bar color | `String` | `#38f` |
+| color | Progress bar color | `String` | `#1989fa` |
 | layer-color | Layer color | `String` | `#fff` |
 | fill | Fill color | `String` | `none` |
 | speed | Animate speed（rate/s）| `Number` | - |

@@ -34,8 +34,8 @@
       #ff6c6c 20%,
       transparent 0,
       transparent 25%,
-      #3283fa 0,
-      #3283fa 45%,
+      $blue 0,
+      $blue 45%,
       transparent 0,
       transparent 50%
     );

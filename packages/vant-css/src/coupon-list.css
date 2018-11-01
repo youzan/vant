@@ -121,8 +121,8 @@
 
     &__reason {
       padding: 7px 15px;
-      background-color: #fbfbfb;
       border-top: 1px dashed $border-color;
+      background-color: $background-color-light;
     }
 
     &--disabled {

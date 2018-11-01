@@ -20,6 +20,7 @@
 
 <script>
 import create from '../utils/create';
+import { GREEN } from '../utils/color';
 
 export default create({
   name: 'steps',
@@ -36,7 +37,7 @@ export default create({
     },
     activeColor: {
       type: String,
-      default: '#06bf04'
+      default: GREEN
     }
   },
 

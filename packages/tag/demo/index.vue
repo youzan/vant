@@ -3,8 +3,8 @@
     <demo-block :title="$t('basicUsage')">
       <van-tag>{{ $t('tag') }}</van-tag>
       <van-tag type="danger">{{ $t('tag') }}</van-tag>
-      <van-tag type="success">{{ $t('tag') }}</van-tag>
       <van-tag type="primary">{{ $t('tag') }}</van-tag>
+      <van-tag type="success">{{ $t('tag') }}</van-tag>
     </demo-block>
 
     <demo-block :title="$t('plain')">

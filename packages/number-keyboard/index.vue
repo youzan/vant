@@ -28,7 +28,7 @@
       </div>
       <div v-if="theme === 'custom'" :class="b('sidebar')">
         <key :text="'delete'" :type="['delete', 'big']" @press="onPressKey" />
-        <key :text="closeButtonText" :type="['green', 'big']" @press="onPressKey" />
+        <key :text="closeButtonText" :type="['blue', 'big']" @press="onPressKey" />
       </div>
     </div>
   </transition>

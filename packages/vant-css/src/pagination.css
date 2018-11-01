@@ -8,17 +8,16 @@
 
   &__item {
     flex: 1;
+    color: $blue;
     height: 40px;
     min-width: 36px;
-    color: $blue;
     background-color: $white;
     box-sizing: border-box;
     user-select: none;
 
     &:active {
-      background-color: $blue;
       color: $white;
-      opacity: 0.8;
+      background-color: $blue;
     }
 
     &::after {

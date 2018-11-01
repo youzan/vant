@@ -137,11 +137,13 @@ export default {
 </script>
 
 <style lang="postcss">
+@import '../../vant-css/src/common/var.css';
+
 .demo-field {
   padding-bottom: 30px;
 
-  .van-field__icon {
-    color: #38f;
+  .van-field__icon .van-icon {
+    color: $blue;
   }
 }
 </style>
