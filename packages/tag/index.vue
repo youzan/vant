@@ -16,12 +16,13 @@
 
 <script>
 import create from '../utils/create';
+import { RED, BLUE, GREEN } from '../utils/color';
 
 const DEFAULT_COLOR = '#999';
 const COLOR_MAP = {
-  danger: '#f44',
-  primary: '#38f',
-  success: '#06bf04'
+  danger: RED,
+  primary: BLUE,
+  success: GREEN
 };
 
 export default create({

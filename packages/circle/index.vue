@@ -13,6 +13,7 @@
 <script>
 import create from '../utils/create';
 import { raf, cancel } from '../utils/raf';
+import { BLUE } from '../utils/color';
 
 export default create({
   name: 'circle',
@@ -39,7 +40,7 @@ export default create({
     },
     color: {
       type: String,
-      default: '#38f'
+      default: BLUE
     },
     strokeWidth: {
       type: Number,

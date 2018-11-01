@@ -1,5 +1,5 @@
 <template>
-  <demo-section background="#fff">
+  <demo-section background="white">
     <demo-block :title="$t('basicUsage')">
       <van-card
         num="2"

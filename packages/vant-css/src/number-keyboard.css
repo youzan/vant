@@ -75,17 +75,17 @@ $van-number-keyboard-key-height: 54px;
     line-height: calc($van-number-keyboard-key-height * 2);
   }
 
-  &--green {
+  &--blue {
     font-size: 20px;
     color: $white;
-    background-color: $green;
+    background-color: $blue;
 
     &.van-key--active {
-      background-color: #308305;
+      background-color: $blue;
     }
 
     &::after {
-      border-color: $green;
+      border-color: $blue;
     }
   }
 
@@ -96,7 +96,7 @@ $van-number-keyboard-key-height: 54px;
   }
 
   &--gray {
-    background-color: #f3f3f6;
+    background-color: $background-color;
   }
 
   &--active {

@@ -33,7 +33,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #6c6c6c;
+      background-color: $gray-darker;
     }
 
     &:active {

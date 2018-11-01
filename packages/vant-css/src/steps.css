@@ -140,8 +140,8 @@
     display: block;
     width: 5px;
     height: 5px;
-    background-color: #888;
     border-radius: 50%;
+    background-color: $gray-dark;
   }
 
   &--vertical {

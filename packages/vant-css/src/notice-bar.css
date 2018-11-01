@@ -2,14 +2,14 @@
 
 .van-notice-bar {
   display: flex;
-  color: #ed6a0c;
   height: 40px;
   padding: 0 15px;
   font-size: 14px;
   line-height: 24px;
   position: relative;
   align-items: center;
-  background-color: #fffbe8;
+  color: $orange-dark;
+  background-color: $orange-light;
 
   &--withicon {
     position: relative;

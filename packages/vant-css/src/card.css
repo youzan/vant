@@ -5,10 +5,10 @@
   color: $text-color;
   height: 100px;
   font-size: 12px;
-  background: #fafafa;
   position: relative;
   box-sizing: border-box;
   padding: 5px 15px 5px 115px;
+  background-color: $background-color-light;
 
   &:not(:first-child) {
     margin-top: 10px;

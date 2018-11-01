@@ -46,7 +46,7 @@ exports[`renders demo correctly 1`] = `
       </div>
       <div class="van-number-keyboard__sidebar">
         <i class="van-hairline van-key van-key van-key--delete van-key van-key--big">delete</i>
-        <i class="van-hairline van-key van-key van-key--green van-key van-key--big">完成</i>
+        <i class="van-hairline van-key van-key van-key--blue van-key van-key--big">完成</i>
       </div>
     </div>
   </div>

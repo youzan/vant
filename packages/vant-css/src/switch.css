@@ -31,7 +31,7 @@
   }
 
   &--on {
-    background-color: #44db5e;
+    background-color: $blue;
 
     .van-switch__node {
       transform: translateX(.6em);
