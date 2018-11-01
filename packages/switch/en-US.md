@@ -41,7 +41,13 @@ export default {
 #### Advanced usage
 
 ```html
-<van-switch :value="checked" size="36px" @input="onInput" />
+<van-switch
+  :value="checked"
+  size="36px"
+  active-color="#4b0"
+  inactive-color="#f44"
+  @input="onInput"
+/>
 ```
 
 ```js
@@ -73,6 +79,8 @@ export default {
 | loading | Whether to show loading icon | `Boolean` | `false` |
 | disabled | Whether to disable switch | `Boolean` | `false` |
 | size | Size of switch | `String` | `30px` |
+| active-color | Background color when active | `String` | `#1989fa` |
+| inactive-color | Background color when inactive | `String` | `#fff` |
 
 ### Event
 

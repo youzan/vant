@@ -2,13 +2,14 @@
 
 .van-switch {
   height: 1em;
-  width: 1.6em;
+  width: 1.8em;
   display: inline-block;
   position: relative;
-  background: $white;
+  border-radius: 1em;
   box-sizing: content-box;
   border: 1px solid rgba(0, 0, 0, .1);
-  border-radius: 1em;
+  background-color: $white;
+  transition: background-color .3s;
 
   &__node {
     top: 0;
@@ -34,7 +35,7 @@
     background-color: $blue;
 
     .van-switch__node {
-      transform: translateX(.6em);
+      transform: translateX(.8em);
     }
   }
 
