@@ -63,7 +63,7 @@ export default {
     background-color: #fff;
 
     &::after {
-      top: 15px;
+      top: 5px;
     }
   }
 

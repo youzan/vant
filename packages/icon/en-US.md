@@ -20,7 +20,7 @@ View all usable icons on the right.
 Icon uses font file in `yzcdn.cn` by default，if you want to use the local font file，please import the following css file.
 
 ```js
-import 'vant/lib/style/icon-local.css';
+import 'vant/lib/icon/local.css';
 ```
 
 #### Add custom iconfont

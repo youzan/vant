@@ -13,7 +13,6 @@ const config = require('../packages/icon/config');
 const local = require('../packages/icon/config/template-local');
 
 const iconDir = path.join(__dirname, '../packages/icon');
-const cssDir = path.join(__dirname, '../packages/style');
 const svgDir = path.join(iconDir, 'svg');
 const sketch = path.join(iconDir, 'assets/icons.sketch');
 const template = path.join(iconDir, 'config/template.css');
@@ -67,7 +66,7 @@ gulp.task('ttf', () => {
 gulp.task('default', ['ttf'], () => {
   // generate icon-local.css
   fs.writeFileSync(
-    path.join(cssDir, 'icon-local.css'),
+    path.join(iconDir, 'local.css'),
     local(config.name, ttf)
   );
 
