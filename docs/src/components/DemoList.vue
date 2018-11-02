@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../../packages/style/common/var.css';
+@import '../../../packages/style/var.css';
 
 .side-nav {
   width: 100%;

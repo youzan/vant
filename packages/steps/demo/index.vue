@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../style/common/var';
+@import '../../style/var';
 
 .demo-steps {
   .steps-success,

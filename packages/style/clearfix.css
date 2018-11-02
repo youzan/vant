@@ -1,4 +1,4 @@
-@import '../mixins/clearfix';
+@import './mixins/clearfix';
 
 .van-clearfix {
   @include clearfix;

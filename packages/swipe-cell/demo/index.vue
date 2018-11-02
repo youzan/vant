@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../style/common/var';
+@import '../../style/var';
 
 .demo-swipe-cell {
   user-select: none;

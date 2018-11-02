@@ -1,4 +1,4 @@
-@import '../style/common/var';
+@import '../style/var';
 
 .van-goods-action-mini-btn {
   color: $gray-darker;

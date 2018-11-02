@@ -1,4 +1,4 @@
-@import '../mixins/hairline';
+@import './mixins/hairline';
 
 [class*='van-hairline'] {
   position: relative;

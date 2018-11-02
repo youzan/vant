@@ -1,4 +1,4 @@
-@import '../style/common/var';
+@import '../style/var';
 @import '../style/mixins/ellipsis';
 
 .van-card {

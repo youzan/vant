@@ -137,7 +137,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../style/common/var';
+@import '../../style/var';
 
 .demo-field {
   padding-bottom: 30px;

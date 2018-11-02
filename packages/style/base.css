@@ -2,12 +2,12 @@
  * Entry of basic styles
  */
 
-@import './common/var';
-@import './common/normalize';
-@import './common/ellipsis';
-@import './common/clearfix';
-@import './common/hairline';
-@import './common/animation';
+@import './var';
+@import './normalize';
+@import './ellipsis';
+@import './clearfix';
+@import './hairline';
+@import './animation';
 @import '../info/index';
 @import '../icon/index';
 @import '../loading/index';
