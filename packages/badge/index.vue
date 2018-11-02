@@ -32,7 +32,7 @@ export default create({
     this.parent.badges.push(this);
   },
 
-  beforeDestroyed() {
+  beforeDestroy() {
     this.parent.badges = this.parent.badges.filter(item => item !== this);
   },
 
