@@ -15,7 +15,7 @@ const local = require('../packages/icon/config/template-local');
 const iconDir = path.join(__dirname, '../packages/icon');
 const svgDir = path.join(iconDir, 'svg');
 const sketch = path.join(iconDir, 'assets/icons.sketch');
-const template = path.join(iconDir, 'config/template.css');
+const template = path.join(iconDir, 'config/template.tpl');
 
 // get md5 from sketch
 const md5 = md5File.sync(sketch).slice(0, 6);
