@@ -17,6 +17,12 @@ export default create({
     }
   },
 
+  provide() {
+    return {
+      vanBadgeGroup: this
+    };
+  },
+
   data() {
     return {
       badges: []
