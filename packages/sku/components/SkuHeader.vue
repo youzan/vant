@@ -1,6 +1,6 @@
 <template>
   <div :class="b()" class="van-hairline--bottom">
-    <div :class="b('img-wrap')">
+    <div :class="b('img-wrap')" @click="previewImage">
       <img :src="goodsImg" >
     </div>
     <div :class="b('goods-info')">
@@ -49,6 +49,10 @@ export default create({
       if (matchedSku && matchedSku.imgUrl) {
         return matchedSku.imgUrl;
       }
+    },
+
+    previewImage() {
+      this.skuEventBus.$emit('sku:previewImage', this.goodsImg);
     }
   }
 });
