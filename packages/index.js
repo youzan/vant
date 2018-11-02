@@ -28,6 +28,7 @@ import GoodsActionBigBtn from './goods-action-big-btn';
 import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
+import IndexCss from './index.css';
 import Info from './info';
 import Lazyload from './lazyload';
 import List from './list';
@@ -53,7 +54,6 @@ import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
-import Style from './style';
 import SubmitBar from './submit-bar';
 import Swipe from './swipe';
 import SwipeCell from './swipe-cell';
@@ -101,6 +101,7 @@ const components = [
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
+  IndexCss,
   Info,
   List,
   Loading,
@@ -125,7 +126,6 @@ const components = [
   Step,
   Stepper,
   Steps,
-  Style,
   SubmitBar,
   Swipe,
   SwipeCell,
@@ -185,6 +185,7 @@ export {
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
+  IndexCss,
   Info,
   Lazyload,
   List,
@@ -210,7 +211,6 @@ export {
   Step,
   Stepper,
   Steps,
-  Style,
   SubmitBar,
   Swipe,
   SwipeCell,

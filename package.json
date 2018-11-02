@@ -4,7 +4,7 @@
   "description": "Lightweight Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "style": "lib/style/index.css",
+  "style": "lib/index.css",
   "typings": "types/index.d.ts",
   "files": [
     "es",
