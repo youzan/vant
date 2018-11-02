@@ -13,8 +13,8 @@ components.forEach(component => {
   const deps = analyzeDependencies(component);
   const esEntry = path.join(dir, component, 'style/index.js');
   const libEntry = path.join(__dirname, '../lib', component, 'style/index.js');
-  const esContent = deps.map(dep => `import '../../vant-css/${dep}.css';`).join('\n');
-  const libContent = deps.map(dep => `require('../../vant-css/${dep}.css');`).join('\n');
+  const esContent = deps.map(dep => `import '../../style/${dep}.css';`).join('\n');
+  const libContent = deps.map(dep => `require('../../style/${dep}.css');`).join('\n');
 
   fs.outputFileSync(esEntry, esContent);
   fs.outputFileSync(libEntry, libContent);
@@ -56,6 +56,6 @@ function search(tree, component, checkList) {
 
 function checkComponentHasStyle(component) {
   return fs.existsSync(
-    path.join(__dirname, `../es/vant-css/`, `${component}.css`)
+    path.join(__dirname, `../es/style/`, `${component}.css`)
   );
 }

@@ -42,6 +42,7 @@ export default {
   'slider': () => wrapper(import('../../packages/slider/demo'), 'slider'),
   'stepper': () => wrapper(import('../../packages/stepper/demo'), 'stepper'),
   'steps': () => wrapper(import('../../packages/steps/demo'), 'steps'),
+  'style': () => wrapper(import('../../packages/style/demo'), 'style'),
   'submit-bar': () => wrapper(import('../../packages/submit-bar/demo'), 'submit-bar'),
   'swipe': () => wrapper(import('../../packages/swipe/demo'), 'swipe'),
   'swipe-cell': () => wrapper(import('../../packages/swipe-cell/demo'), 'swipe-cell'),
@@ -53,6 +54,5 @@ export default {
   'toast': () => wrapper(import('../../packages/toast/demo'), 'toast'),
   'tree-select': () => wrapper(import('../../packages/tree-select/demo'), 'tree-select'),
   'uploader': () => wrapper(import('../../packages/uploader/demo'), 'uploader'),
-  'vant-css': () => wrapper(import('../../packages/vant-css/demo'), 'vant-css'),
   'waterfall': () => wrapper(import('../../packages/waterfall/demo'), 'waterfall')
 };

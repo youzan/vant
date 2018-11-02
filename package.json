@@ -4,7 +4,7 @@
   "description": "Lightweight Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
-  "style": "lib/vant-css/index.css",
+  "style": "lib/style/index.css",
   "typings": "types/index.d.ts",
   "files": [
     "es",
@@ -13,12 +13,12 @@
     "types"
   ],
   "scripts": {
-    "bootstrap": "yarn || npm i && cd ./packages/vant-css/ && yarn || npm i && cd ../../",
+    "bootstrap": "yarn || npm i && cd ./packages/style/ && yarn || npm i && cd ../../",
     "dev": "npm run build:entry && webpack-serve --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/vant-css/src/*.css\"",
+    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/style/*.css\"",
     "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
-    "build:vant-css": "gulp build --gulpfile packages/vant-css/gulpfile.js --color --silent",
+    "build:style": "gulp build --gulpfile packages/style/gulpfile.js --color --silent",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",

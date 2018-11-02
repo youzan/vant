@@ -47,7 +47,7 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/style/index.css">
 
 <!-- 引入组件 -->
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
@@ -104,8 +104,8 @@ import { Button, Cell } from 'vant';
 
 ```js
 import Button from 'vant/lib/button';
-import 'vant/lib/vant-css/base.css';
-import 'vant/lib/vant-css/button.css';
+import 'vant/lib/style/base.css';
+import 'vant/lib/style/button.css';
 ```
  
 #### 方式三. 导入所有组件
@@ -113,7 +113,7 @@ import 'vant/lib/vant-css/button.css';
 ```js
 import Vue from 'vue';
 import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+import 'vant/lib/style/index.css';
 
 Vue.use(Vant);
 ```

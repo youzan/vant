@@ -83,7 +83,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../vant-css/src/common/var.css';
+@import '../../style/common/var';
 
 .demo-submit-bar {
   .van-submit-bar {

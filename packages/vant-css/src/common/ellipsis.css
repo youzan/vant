@@ -1,5 +1,0 @@
-@import '../mixins/ellipsis.css';
-
-.van-ellipsis {
-  @include ellipsis;
-}

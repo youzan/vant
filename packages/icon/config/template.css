@@ -1,4 +1,4 @@
-@import './common/var.css';
+@import '../style/common/var';
 
 @font-face {
   font-style: normal;

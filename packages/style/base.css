@@ -1,0 +1,16 @@
+/**
+ * Entry of basic styles
+ */
+
+@import './common/var';
+@import './common/normalize';
+@import './common/ellipsis';
+@import './common/clearfix';
+@import './common/hairline';
+@import './common/animation';
+@import '../info/index';
+@import '../icon/index';
+@import '../loading/index';
+@import '../button/index';
+@import '../cell/index';
+@import '../cell-group/index';

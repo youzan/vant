@@ -137,7 +137,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../vant-css/src/common/var.css';
+@import '../../style/common/var';
 
 .demo-field {
   padding-bottom: 30px;

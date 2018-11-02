@@ -53,6 +53,7 @@ import Slider from './slider';
 import Step from './step';
 import Stepper from './stepper';
 import Steps from './steps';
+import Style from './style';
 import SubmitBar from './submit-bar';
 import Swipe from './swipe';
 import SwipeCell from './swipe-cell';
@@ -124,6 +125,7 @@ const components = [
   Step,
   Stepper,
   Steps,
+  Style,
   SubmitBar,
   Swipe,
   SwipeCell,
@@ -208,6 +210,7 @@ export {
   Step,
   Stepper,
   Steps,
+  Style,
   SubmitBar,
   Swipe,
   SwipeCell,

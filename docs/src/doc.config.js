@@ -40,7 +40,7 @@ module.exports = {
                 title: '更新日志'
               },
               {
-                path: '/vant-css',
+                path: '/style',
                 title: '内置样式'
               },
               {
@@ -344,7 +344,7 @@ module.exports = {
                 title: 'Changelog'
               },
               {
-                path: '/vant-css',
+                path: '/style',
                 title: 'Built-in style'
               },
               {

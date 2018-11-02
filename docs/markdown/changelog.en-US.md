@@ -339,7 +339,7 @@
 - fix Progress text empty [\#1411](https://github.com/youzan/vant/pull/1411)
 - fix Tab random insert order [\#1429](https://github.com/youzan/vant/pull/1429)
 - fix error when use Vue.use in typescript [\#1410](https://github.com/youzan/vant/pull/1410)
-- fix vant-css missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
+- fix style missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
@@ -1332,7 +1332,7 @@
 
 **Breaking changes**
 
-* remove reset.css in vant-css [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
+* remove reset.css in style [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
 * reconstruct Swipe component, adjust some API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200)
 * optimize Search component，adjust struct [\#198](https://github.com/youzan/vant/pull/198)
 
@@ -1388,7 +1388,7 @@
 * fix Button active border color [\#150](https://github.com/youzan/vant/issues/150)
 * fix Stepper input style [\#159](https://github.com/youzan/vant/pull/159)
 * fix Waterfall disable props not work when display none [\#166](https://github.com/youzan/vant/pull/166)
-* fix vant-css not compile calc property after build
+* fix style not compile calc property after build
 * fix npm run dev error in MacOS [\#152](https://github.com/youzan/vant/issues/152)
 * fix document router not work in some browsers [\#158](https://github.com/youzan/vant/pull/158)
 

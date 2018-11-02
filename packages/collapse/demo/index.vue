@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import "../../../packages/vant-css/src/common/var.css";
+@import "../../../packages/style/common/var";
 
 .demo-collapse {
   .van-collapse-item__content {

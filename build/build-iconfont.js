@@ -13,7 +13,7 @@ const config = require('../packages/icon/config');
 const local = require('../packages/icon/config/template-local');
 
 const iconDir = path.join(__dirname, '../packages/icon');
-const cssDir = path.join(__dirname, '../packages/vant-css/src');
+const cssDir = path.join(__dirname, '../packages/style');
 const svgDir = path.join(iconDir, 'svg');
 const sketch = path.join(iconDir, 'assets/icons.sketch');
 const template = path.join(iconDir, 'config/template.css');
@@ -49,7 +49,7 @@ gulp.task('ttf', () => {
       iconfontCss({
         fontName: config.name,
         path: template,
-        targetPath: '../vant-css/src/icon.css',
+        targetPath: '../icon/index.css',
         normalize: true,
         firstGlyph: 0xf000,
         cssClass: ttf // this is a trick to pass ttf to template

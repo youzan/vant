@@ -1,0 +1,5 @@
+@import '../style/common/var';
+
+.van-cell-group {
+  background-color: $white;
+}

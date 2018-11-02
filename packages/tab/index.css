@@ -1,0 +1,30 @@
+@import '../style/common/var';
+
+$van-tabs-line-height: 44px;
+$van-tabs-card-height: 30px;
+
+.van-tab {
+  flex: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  font-size: 14px;
+  position: relative;
+  color: $text-color;
+  line-height: $van-tabs-line-height;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: $white;
+  min-width: 0; /* hack for flex ellipsis */
+
+  span {
+    display: block;
+  }
+
+  &--active {
+    color: $red;
+  }
+
+  &--disabled {
+    color: $gray;
+  }
+}

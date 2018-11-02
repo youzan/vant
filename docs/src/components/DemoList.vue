@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../../../packages/vant-css/src/common/var.css';
+@import '../../../packages/style/common/var.css';
 
 .side-nav {
   width: 100%;

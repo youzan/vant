@@ -339,7 +339,7 @@
 - 修复 Progress 文字为空时样式错误的问题 [\#1411](https://github.com/youzan/vant/pull/1411)
 - 修复 Tab 同时进行插入和删除时顺序错误的问题 [\#1429](https://github.com/youzan/vant/pull/1429)
 - 修复 Vue.use 方法 TypeScript 类型错误 [\#1410](https://github.com/youzan/vant/pull/1410)
-- 修复 vant-css 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
+- 修复 style 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
@@ -1325,7 +1325,7 @@
 
 **Breaking changes**
 
-* 移除 vant-css 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
+* 移除 style 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
 * 重写 Swipe 组件，调整部分 API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200)
 * 优化 Search 组件，修改原有结构 [\#198](https://github.com/youzan/vant/pull/198)
 
@@ -1381,7 +1381,7 @@
 * 修复 Button active 状态下边框样式问题 [\#150](https://github.com/youzan/vant/issues/150)
 * 修复 Stepper 组件输入框样式错误 [\#159](https://github.com/youzan/vant/pull/159)
 * 修复 Waterfall 未显示时 disable 属性无法生效的问题 [\#166](https://github.com/youzan/vant/pull/166)
-* 修复 vant-css 构建过程中未编译 calc 属性的问题
+* 修复 style 构建过程中未编译 calc 属性的问题
 * 修复 MacOS 下 npm run dev 报错的问题 [\#152](https://github.com/youzan/vant/issues/152)
 * 修复文档在部分低版本浏览器路由失效的问题 [\#158](https://github.com/youzan/vant/pull/158)
 * 修复文档中遗漏 SwipeItem 组件引入方式的问题 [\#167](https://github.com/youzan/vant/pull/167)
