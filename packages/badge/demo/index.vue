@@ -1,11 +1,11 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-badge-group :active-key="activeKey">
-        <van-badge :title="$t('title')" @click="onClick" />
-        <van-badge :title="$t('title')" @click="onClick" info="8" />
-        <van-badge :title="$t('title')" @click="onClick" info="99" />
-        <van-badge :title="$t('title')" @click="onClick" info="199" />
+      <van-badge-group :active-key="activeKey" @change="onChange">
+        <van-badge :title="$t('title')" />
+        <van-badge :title="$t('title')" info="8" />
+        <van-badge :title="$t('title')" info="99" />
+        <van-badge :title="$t('title')" info="199" />
       </van-badge-group>
     </demo-block>
   </demo-section>
@@ -26,7 +26,7 @@ export default {
   },
 
   methods: {
-    onClick(key) {
+    onChange(key) {
       this.activeKey = key;
     }
   }
