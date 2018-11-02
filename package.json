@@ -13,13 +13,13 @@
     "types"
   ],
   "scripts": {
-    "bootstrap": "yarn || npm i && cd ./packages/style/ && yarn || npm i && cd ../../",
+    "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-serve --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/style/*.css\"",
+    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/*.css\"",
     "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
-    "build:style": "gulp build --gulpfile packages/style/gulpfile.js --color --silent",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
+    "build:style": "node build/build-style.js",
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:iconfont": "gulp --gulpfile ./build/build-iconfont.js",
