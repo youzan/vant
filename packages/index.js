@@ -28,7 +28,6 @@ import GoodsActionBigBtn from './goods-action-big-btn';
 import GoodsActionMiniBtn from './goods-action-mini-btn';
 import Icon from './icon';
 import ImagePreview from './image-preview';
-import IndexCss from './index.css';
 import Info from './info';
 import Lazyload from './lazyload';
 import List from './list';
@@ -101,7 +100,6 @@ const components = [
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
-  IndexCss,
   Info,
   List,
   Loading,
@@ -185,7 +183,6 @@ export {
   GoodsActionMiniBtn,
   Icon,
   ImagePreview,
-  IndexCss,
   Info,
   Lazyload,
   List,
