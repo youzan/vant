@@ -19,7 +19,7 @@
     "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
-    "build:style": "node build/build-style.js",
+    "build:style": "gulp --gulpfile ./build/build-style.js",
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:iconfont": "gulp --gulpfile ./build/build-iconfont.js",
@@ -58,6 +58,8 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.2",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-postcss": "^8.0.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
