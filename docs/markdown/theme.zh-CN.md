@@ -14,7 +14,7 @@ import 'vant/packages/style/button/index.css';
 import 'vant/packages/style/checkbox/index.css';
 ```
 
-接着在 postcss.config.js 中引入所需的 postcss 插件，并根据项目需求配置颜色变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/packages/style/var.css)
+接着在 postcss.config.js 中引入所需的 postcss 插件，并根据项目需求配置颜色变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/packages/style/var.less)
 
 ```javascript
 module.exports = {
@@ -45,7 +45,7 @@ git clone git@github.com:youzan/vant.git
 cd packages/style
 ```
 
-在本地 style 仓库中，修改 src/var.css 中的颜色变量，然后执行以下构建命令，即可生成对应的样式文件
+在本地 style 仓库中，修改 src/var.less 中的颜色变量，然后执行以下构建命令，即可生成对应的样式文件
 ```bash
 npm run build
 ```

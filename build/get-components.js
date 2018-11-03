@@ -3,7 +3,7 @@ const path = require('path');
 
 const excludes = [
   'index.js',
-  'index.css',
+  'index.less',
   'style',
   'mixins',
   'utils',

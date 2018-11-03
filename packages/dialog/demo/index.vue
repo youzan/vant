@@ -88,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-dialog {
   .van-doc-demo-block > .van-button {
     margin-left: 15px;

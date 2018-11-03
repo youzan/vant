@@ -58,11 +58,11 @@ packages
 |  ├─ test        # 单元测试
 |  ├─ zh-CN.md    # 中文文档
 |  ├─ en-US.md    # 英文文档
-|  ├─ index.css   # 组件样式
+|  ├─ index.less  # 组件样式
 |  └─ index.vue   # 组件入口
 |
 ├─ index.js       # 所有组件入口
-└─ index.css      # 所有组件样式
+└─ index.less     # 所有组件样式
 ```
 
 ### 组件文档

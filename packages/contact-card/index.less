@@ -1,0 +1,44 @@
+@import '../style/var';
+
+.van-contact-card {
+  padding: 15px;
+
+  .van-cell__value {
+    margin-left: 5px;
+    line-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--add {
+    .van-cell__value {
+      line-height: 40px;
+    }
+
+    .van-cell__left-icon {
+      color: @blue;
+      font-size: 40px;
+    }
+  }
+
+  &::before {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    position: absolute;
+    background: repeating-linear-gradient(
+      -45deg,
+      #ff6c6c 0,
+      #ff6c6c 20%,
+      transparent 0,
+      transparent 25%,
+      @blue 0,
+      @blue 45%,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 80px;
+  }
+}

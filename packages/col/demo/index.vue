@@ -74,7 +74,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-col {
   .van-doc-demo-block {
     padding: 0 15px;

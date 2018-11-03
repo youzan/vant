@@ -82,7 +82,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 @import '../../style/var';
 
 .demo-submit-bar {
@@ -91,7 +91,7 @@ export default {
   }
 
   .edit-address {
-    color: $blue;
+    color: @blue;
   }
 
   .van-checkbox {

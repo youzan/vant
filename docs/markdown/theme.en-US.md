@@ -14,7 +14,7 @@ import 'vant/packages/button/index.css';
 import 'vant/packages/checkbox/index.css';
 ```
 
-Then require the plugin in the postcss.config.js, and configure the variables according to project needs, you can view all the available variables in [profile](https://github.com/youzan/vant/blob/dev/packages/style/var.css).
+Then require the plugin in the postcss.config.js, and configure the variables according to project needs, you can view all the available variables in [profile](https://github.com/youzan/vant/blob/dev/packages/style/var.less).
 
 ```javascript
 module.exports = {
@@ -48,7 +48,7 @@ git clone git@github.com:youzan/vant.git
 cd packages/style
 ```
 
-In the local style repository, modify the variables in src/var.css, then execute the following build command to generate the style file.
+In the local style repository, modify the variables in src/var.less, then execute the following build command to generate the style file.
 ```bash
 npm run build
 ```

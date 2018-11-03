@@ -1,0 +1,39 @@
+@import '../style/var';
+
+.van-slider {
+  position: relative;
+  border-radius: 999px;
+  background-color: @gray-light;
+
+  &__bar {
+    position: relative;
+    border-radius: inherit;
+    background-color: @blue;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: @white;
+    transform: translate3d(50%, -50%, 0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+
+    /* use pseudo element to expand touch area */
+    &::after {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+    }
+  }
+
+  &--disabled {
+    opacity: .3;
+  }
+}

@@ -67,7 +67,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 @import '../../style/var';
 
 .demo-swipe-cell {
@@ -76,14 +76,14 @@ export default {
   .van-swipe-cell {
     &__left,
     &__right {
-      color: $white;
+      color: @white;
       font-size: 15px;
       width: 65px;
       height: 44px;
       display: inline-block;
       text-align: center;
       line-height: 44px;
-      background-color: $red;
+      background-color: @red;
     }
   }
 }

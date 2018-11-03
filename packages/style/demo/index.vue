@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-style {
   .van-ellipsis {
     font-size: 13px;

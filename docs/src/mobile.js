@@ -1,4 +1,4 @@
-import '../../packages/index.css';
+import '../../packages/index.less';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';

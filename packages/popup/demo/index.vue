@@ -90,7 +90,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-popup {
   .van-button {
     margin: 10px 0 10px 15px;

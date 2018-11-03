@@ -101,7 +101,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-swipe {
   padding-bottom: 30px;
 

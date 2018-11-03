@@ -88,13 +88,13 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 @import '../../style/var';
 
 .demo-steps {
   .steps-success,
   .van-icon-location {
-    color: $green;
+    color: @green;
   }
 
   .van-button {

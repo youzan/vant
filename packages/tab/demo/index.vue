@@ -120,7 +120,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-tab {
   margin-bottom: 300px;
 

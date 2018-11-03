@@ -87,7 +87,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-toast {
   .van-button {
     margin-left: 15px;

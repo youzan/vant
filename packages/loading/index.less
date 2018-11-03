@@ -1,0 +1,113 @@
+@import '../style/var';
+
+.van-loading {
+  width: 30px;
+  height: 30px;
+  z-index: 0;
+  font-size: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: middle;
+
+  &--circle {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__spinner {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: van-rotate 0.8s linear infinite;
+
+    &--circle {
+      border-radius: 100%;
+      border: 3px solid transparent;
+      border-color: @gray;
+      border-top-color: @gray-darker;
+    }
+
+    &--gradient-circle {
+      background-size: contain;
+      background-image: url('https://img.yzcdn.cn/vant/gradient-circle-black.png');
+    }
+
+    &--spinner {
+      animation-timing-function: steps(12);
+
+      i {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        &::before {
+          width: 2px;
+          height: 25%;
+          content: ' ';
+          display: block;
+          margin: 0 auto;
+          border-radius: 40%;
+          background-color: currentColor;
+        }
+      }
+    }
+
+    &--circular {
+      animation-duration: 2s;
+    }
+  }
+
+  &__circular {
+    width: 100%;
+    height: 100%;
+
+    circle {
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      animation: van-circular 1.5s ease-in-out infinite;
+    }
+  }
+
+  &--white {
+    .van-loading__spinner--circle {
+      border-color: rgba(0, 0, 0, .1);
+      border-top-color: rgba(255, 255, 255, .7);
+    }
+
+    .van-loading__spinner--gradient-circle {
+      background-image: url('https://img.yzcdn.cn/vant/gradient-circle-white.png');
+    }
+  }
+}
+
+@keyframes van-circular {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120;
+  }
+}
+
+.generate-spinner(@n, @i: 1) when (@i =< @n) {
+  .van-loading__spinner--spinner i:nth-of-type(@{i}) {
+    opacity: 1 - (0.75 / 12) * (@i - 1);
+    transform: rotate(@i * 30deg);
+  }
+  .generate-spinner(@n, (@i + 1));
+}
+.generate-spinner(12);

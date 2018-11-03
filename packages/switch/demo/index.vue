@@ -57,7 +57,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-switch {
   .van-switch {
     margin: 0 15px;

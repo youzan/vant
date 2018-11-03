@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-cell {
   .van-cell-text {
     margin-right: 5px;
