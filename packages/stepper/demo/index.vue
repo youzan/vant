@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-stepper {
   .van-stepper {
     margin-left: 15px;

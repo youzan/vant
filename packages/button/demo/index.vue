@@ -79,7 +79,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-button {
   .van-button {
     user-select: none;

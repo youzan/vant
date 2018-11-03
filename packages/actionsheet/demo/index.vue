@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-actionsheet {
   .van-button {
     margin-left: 15px;

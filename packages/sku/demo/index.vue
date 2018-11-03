@@ -156,7 +156,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-sku {
   .sku-container {
     padding: 0 15px;

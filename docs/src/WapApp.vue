@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 body {
   color: #333;
   line-height: 1;

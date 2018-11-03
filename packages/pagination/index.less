@@ -1,0 +1,67 @@
+@import '../style/var';
+
+.van-pagination {
+  display: flex;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+
+  &__item {
+    flex: 1;
+    color: @blue;
+    height: 40px;
+    min-width: 36px;
+    background-color: @white;
+    box-sizing: border-box;
+    user-select: none;
+
+    &:active {
+      color: @white;
+      background-color: @blue;
+    }
+
+    &::after {
+      border-width: 1px 0 1px 1px;
+    }
+
+    &:last-child::after {
+      border-right-width: 1px;
+    }
+
+    &--disabled,
+    &--disabled:active {
+      background-color: @background-color;
+      color: @gray-darker;
+      opacity: 0.6;
+    }
+
+    &--active {
+      color: @white;
+      background-color: @blue;
+    }
+  }
+
+  &__prev,
+  &__next {
+    padding: 0 5px;
+  }
+
+  &__page {
+    flex-grow: 0;
+  }
+
+  &__page-desc {
+    flex: 1;
+    height: 40px;
+    color: @gray-darker;
+  }
+
+  &--simple {
+    .van-pagination__prev,
+    .van-pagination__next {
+      &::after {
+        border-width: 1px;
+      }
+    }
+  }
+}

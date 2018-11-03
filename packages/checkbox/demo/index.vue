@@ -108,7 +108,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-checkbox {
   .van-checkbox {
     margin: 10px 0 0 20px;

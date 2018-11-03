@@ -7,14 +7,14 @@ You can import the postcss source code in your own project, then use [postcss-th
 
 ```javascript
 // import base style
-import 'vant/packages/vant-css/src/base.css';
+import 'vant/packages/style/base.css';
 
 // import component style
-import 'vant/packages/vant-css/src/button.css';
-import 'vant/packages/vant-css/src/checkbox.css';
+import 'vant/packages/button/index.css';
+import 'vant/packages/checkbox/index.css';
 ```
 
-Then require the plugin in the postcss.config.js, and configure the variables according to project needs, you can view all the available variables in [profile](https://github.com/youzan/vant/blob/dev/packages/vant-css/src/common/var.css).
+Then require the plugin in the postcss.config.js, and configure the variables according to project needs, you can view all the available variables in [profile](https://github.com/youzan/vant/blob/dev/packages/style/var.less).
 
 ```javascript
 module.exports = {
@@ -45,10 +45,10 @@ Vant also support local build to custom themes.
 ```bash
 # Clone the repository
 git clone git@github.com:youzan/vant.git
-cd packages/vant-css
+cd packages/style
 ```
 
-In the local vant-css repository, modify the variables in src/common/var.css, then execute the following build command to generate the style file.
+In the local style repository, modify the variables in src/var.less, then execute the following build command to generate the style file.
 ```bash
 npm run build
 ```

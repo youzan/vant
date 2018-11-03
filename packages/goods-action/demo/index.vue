@@ -58,7 +58,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-goods-action {
   .van-goods-action {
     position: relative;

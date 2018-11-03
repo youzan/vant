@@ -12,7 +12,7 @@
     <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
     <img src="https://img.shields.io/npm/dt/vant.svg" alt="downloads" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
-    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant-css/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
+    <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
     <img src="https://isitmaintained.com/badge/open/youzan/vant.svg" alt="issue" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg" alt="Coverage Status" />
 </p>
@@ -54,7 +54,7 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
@@ -100,8 +100,7 @@ import { Button } from 'vant';
 
 ```js
 import Button from 'vant/lib/button';
-import 'vant/lib/vant-css/base.css';
-import 'vant/lib/vant-css/button.css';
+import 'vant/lib/button/style';
 ```
 
 #### 方式三. 导入所有组件
@@ -109,7 +108,7 @@ import 'vant/lib/vant-css/button.css';
 ```js
 import Vue from 'vue';
 import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+import 'vant/lib/index.css';
 
 Vue.use(Vant);
 ```

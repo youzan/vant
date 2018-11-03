@@ -36,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-progress {
   .van-progress {
     margin: 20px;

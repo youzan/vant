@@ -82,8 +82,8 @@ export default {
 };
 </script>
 
-<style lang="postcss">
-@import '../../vant-css/src/common/var.css';
+<style lang="less">
+@import '../../style/var';
 
 .demo-submit-bar {
   .van-submit-bar {
@@ -91,7 +91,7 @@ export default {
   }
 
   .edit-address {
-    color: $blue;
+    color: @blue;
   }
 
   .van-checkbox {

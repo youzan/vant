@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-rate {
   .van-rate {
     margin-left: 15px;

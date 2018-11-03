@@ -67,8 +67,8 @@ export default {
 };
 </script>
 
-<style lang="postcss">
-@import '../../vant-css/src/common/var.css';
+<style lang="less">
+@import '../../style/var';
 
 .demo-swipe-cell {
   user-select: none;
@@ -76,14 +76,14 @@ export default {
   .van-swipe-cell {
     &__left,
     &__right {
-      color: $white;
+      color: @white;
       font-size: 15px;
       width: 65px;
       height: 44px;
       display: inline-block;
       text-align: center;
       line-height: 44px;
-      background-color: $red;
+      background-color: @red;
     }
   }
 }

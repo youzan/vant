@@ -56,8 +56,8 @@ export default {
 };
 </script>
 
-<style lang="postcss">
-@import '../../../packages/vant-css/src/common/var.css';
+<style lang="less">
+@import '../../../packages/style/var';
 
 .side-nav {
   width: 100%;
@@ -103,9 +103,9 @@ export default {
   top: 15px;
   right: 15px;
   font-size: 11px;
-  border: 1px solid $blue;
+  border: 1px solid @blue;
   border-radius: 3px;
-  color: $blue;
+  color: @blue;
   cursor: pointer;
 
   span {
@@ -116,7 +116,7 @@ export default {
 
     &.active {
       color: #fff;
-      background-color: $blue;
+      background-color: @blue;
     }
   }
 }

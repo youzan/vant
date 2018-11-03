@@ -53,7 +53,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-waterfall {
   ul {
     max-height: 360px;

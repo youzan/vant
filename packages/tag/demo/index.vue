@@ -64,7 +64,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-tag {
   .van-tag + .van-tag {
     margin-left: 10px;

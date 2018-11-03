@@ -1,5 +1,0 @@
-@import '../mixins/clearfix.css';
-
-.van-clearfix {
-  @include clearfix;
-}

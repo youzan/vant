@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .mobile-nav {
   &__item {
     margin-bottom: 20px;

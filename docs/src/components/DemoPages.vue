@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .van-doc-demo-pages {
   &__gallery {
     margin-top: 30px;

@@ -1,0 +1,42 @@
+@import '../style/var';
+
+.van-search {
+  display: flex;
+  padding: 7px 15px;
+  align-items: center;
+  box-sizing: border-box;
+
+  .van-cell {
+    flex: 1;
+    padding: 3px 10px;
+    border-radius: 4px;
+
+    &__left-icon {
+      color: @gray-dark;
+    }
+  }
+
+  &--show-action {
+    padding-right: 0;
+  }
+
+  input {
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+  }
+
+  &__action {
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 30px;
+    color: @gray-darker;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+}

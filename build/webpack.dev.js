@@ -56,11 +56,12 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.(css|postcss)$/,
+        test: /\.less$/,
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader'
+          'postcss-loader',
+          'less-loader'
         ]
       },
       {

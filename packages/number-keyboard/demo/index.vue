@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-number-keyboard {
   .van-button {
     margin-left: 15px;

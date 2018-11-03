@@ -34,7 +34,6 @@ npm run dev
 ### 目录结构
 
 - 仓库的组件代码位于 packages 下，每个组件一个文件夹
-- 组件样式代码位于 packages/vant-css/src 下，vant-css 也会在发布时单独发包
 - docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
 
 项目目录大致如下：
@@ -59,10 +58,11 @@ packages
 |  ├─ test        # 单元测试
 |  ├─ zh-CN.md    # 中文文档
 |  ├─ en-US.md    # 英文文档
+|  ├─ index.less  # 组件样式
 |  └─ index.vue   # 组件入口
-└─ vant-css
-   ├─ index.css   # 样式入口
-   └─ button.css  # 组件样式
+|
+├─ index.js       # 所有组件入口
+└─ index.less     # 所有组件样式
 ```
 
 ### 组件文档

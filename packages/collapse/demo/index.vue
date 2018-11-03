@@ -65,18 +65,18 @@ export default {
 };
 </script>
 
-<style lang="postcss">
-@import "../../../packages/vant-css/src/common/var.css";
+<style lang="less">
+@import "../../../packages/style/var";
 
 .demo-collapse {
   .van-collapse-item__content {
     font-size: 13px;
     line-height: 1.5;
-    color: $gray-darker;
+    color: @gray-darker;
   }
 
   .van-icon-question {
-    color: $blue;
+    color: @blue;
     vertical-align: -3px;
     margin-left: 5px;
     font-size: 15px;

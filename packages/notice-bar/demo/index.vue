@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-notice-bar {
   .van-notice-bar:not(:first-of-type) {
     margin-top: 15px;

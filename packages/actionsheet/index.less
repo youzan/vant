@@ -1,0 +1,68 @@
+@import '../style/var';
+
+.van-actionsheet {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: @text-color;
+  max-height: 90%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: @background-color;
+
+  &--withtitle {
+    background-color: @white;
+  }
+
+  &__item,
+  &__cancel {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-color: @white;
+
+    &:active {
+      background-color: @active-color;
+    }
+  }
+
+  &__item--disabled {
+    color: @gray;
+
+    &:active {
+      background-color: @white;
+    }
+  }
+
+  &__subname {
+    font-size: 12px;
+    color: @gray-darker;
+    margin-left: 5px;
+  }
+
+  &__loading {
+    display: inline-block;
+  }
+
+  &__cancel {
+    margin-top: 10px;
+  }
+
+  &__header {
+    font-size: 16px;
+    line-height: 44px;
+    text-align: center;
+
+    .van-icon-close {
+      top: 0;
+      right: 0;
+      padding: 0 15px;
+      font-size: 18px;
+      color: @gray-dark;
+      position: absolute;
+      line-height: inherit;
+    }
+  }
+}

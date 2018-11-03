@@ -56,7 +56,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-radio {
   &-group {
     padding: 0 17px;

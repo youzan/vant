@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-list {
   .van-cell {
     text-align: center;

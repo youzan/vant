@@ -22,7 +22,7 @@ Vue.use(Icon);
 Icon 组件默认引用 `yzcdn.cn` 域名下的字体文件，如果想要使用本地字体文件，请引入下面的 css 文件
 
 ```js
-import 'vant/lib/vant-css/icon-local.css';
+import 'vant/lib/icon/local.css';
 ```
 
 #### 自定义图标

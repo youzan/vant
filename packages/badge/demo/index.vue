@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-badge {
   .van-badge-group {
     width: auto;

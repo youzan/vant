@@ -7,14 +7,14 @@
 
 ```javascript
 // 引入基础样式
-import 'vant/packages/vant-css/src/base.css';
+import 'vant/packages/style/base.css';
 
 // 引入组件对应的样式
-import 'vant/packages/vant-css/src/button.css';
-import 'vant/packages/vant-css/src/checkbox.css';
+import 'vant/packages/style/button/index.css';
+import 'vant/packages/style/checkbox/index.css';
 ```
 
-接着在 postcss.config.js 中引入所需的 postcss 插件，并根据项目需求配置颜色变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/packages/vant-css/src/common/var.css)
+接着在 postcss.config.js 中引入所需的 postcss 插件，并根据项目需求配置颜色变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/packages/style/var.less)
 
 ```javascript
 module.exports = {
@@ -37,15 +37,15 @@ module.exports = {
 ```
 
 ### 方案二. 本地构建
-可以通过在本地构建 vant-css 的方式生成所需的主题
+可以通过在本地构建 style 的方式生成所需的主题
 
 ```bash
 # 克隆仓库
 git clone git@github.com:youzan/vant.git
-cd packages/vant-css
+cd packages/style
 ```
 
-在本地 vant-css 仓库中，修改 src/common/var.css 中的颜色变量，然后执行以下构建命令，即可生成对应的样式文件
+在本地 style 仓库中，修改 src/var.less 中的颜色变量，然后执行以下构建命令，即可生成对应的样式文件
 ```bash
 npm run build
 ```

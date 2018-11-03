@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-pull-refresh {
   .van-pull-refresh {
     &,
