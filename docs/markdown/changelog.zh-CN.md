@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v1.4.1](https://github.com/youzan/vant/tree/v1.4.1)
+`2018-11-04`
+
+**Breaking changes**
+
+- 优化引入样式的文件路径（仅影响手动引入样式的方式）详见[快速上手](#/zh-CN/quickstart). [\#2021](https://github.com/youzan/vant/pull/2021)
+- 支持基于 Less 变量的定制主题方式，不再支持原先的定制主题方式，详见[定制主题](#/en-US/theme). [\#2027](https://github.com/youzan/vant/pull/2027)
+
+**Improvements**
+
+- Sku: 支持预览商品图片 [\#2019](https://github.com/youzan/vant/pull/2019)
+- i18n: 支持土耳其语 [\#1998](https://github.com/youzan/vant/pull/1998)
+- i18n: 支持繁体中文（台） [\#1999](https://github.com/youzan/vant/pull/1999)
+- Icon: 新增 question2 图标 [\#2005](https://github.com/youzan/vant/pull/2005)
+- Badge: 新增 change 事件 [\#2017](https://github.com/youzan/vant/pull/2017)
+- Switch: 新增 active-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
+- Switch: 新增 inactive-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
+- Radio: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
+- Checkbox: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
+
+
 ## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
 `2018-10-29`
 

@@ -1,5 +1,27 @@
 ## Changelog
 
+## [v1.4.1](https://github.com/youzan/vant/tree/v1.4.1)
+`2018-11-04`
+
+**Breaking changes**
+
+- New path to manually import component style, see more in [quickstart](#/en-US/quickstart). [\#2021](https://github.com/youzan/vant/pull/2021)
+- New ways to customize the theme，see more in [custom theme](#/en-US/theme). [\#2027](https://github.com/youzan/vant/pull/2027)
+
+
+**Improvements**
+
+- Badge: add change event [\#2017](https://github.com/youzan/vant/pull/2017)
+- Radio: update color [\#2018](https://github.com/youzan/vant/pull/2018)
+- Checkbox: update color [\#2018](https://github.com/youzan/vant/pull/2018)
+- Sku: support image preview [\#2019](https://github.com/youzan/vant/pull/2019)
+- i18n: support zh-TW [\#1999](https://github.com/youzan/vant/pull/1999)
+- i18n: support turkish [\#1998](https://github.com/youzan/vant/pull/1998)
+- Icon: add new icon question2 [\#2005](https://github.com/youzan/vant/pull/2005)
+- Switch: add active-color prop [\#2013](https://github.com/youzan/vant/pull/2013)
+- Switch: add inactive-color prop [\#2013](https://github.com/youzan/vant/pull/2013)
+
+
 ## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
 `2018-10-29`
 
