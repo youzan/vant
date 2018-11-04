@@ -25,7 +25,11 @@ vue ui
 
 ### 示例工程
 
-我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)
+我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+
+- 基于 vant 搭建单页面应用
+- 配置 rem 适配方案
+- 自定义主题色方案
 
 ### 安装
 
@@ -135,7 +139,7 @@ module.exports = {
   plugins: {
     'autoprefixer': {
       browsers: ['Android >= 4.0', 'iOS >= 7']
-    }
+    },
     'postcss-pxtorem': {
       rootValue: 37.5,
       propList: ['*']
