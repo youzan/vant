@@ -67,9 +67,10 @@ import Tag from './tag';
 import Toast from './toast';
 import TreeSelect from './tree-select';
 import Uploader from './uploader';
+import VantCss from './vant-css';
 import Waterfall from './waterfall';
 
-const version = '1.3.10';
+const version = '1.4.0';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -137,7 +138,8 @@ const components = [
   Tag,
   Toast,
   TreeSelect,
-  Uploader
+  Uploader,
+  VantCss
 ];
 
 const install = Vue => {
@@ -222,6 +224,7 @@ export {
   Toast,
   TreeSelect,
   Uploader,
+  VantCss,
   Waterfall
 };
 
