@@ -10,17 +10,25 @@ const whiteList = ['info', 'icon', 'loading', 'cell', 'cell-group', 'button'];
 const dir = path.join(__dirname, '../es');
 
 components.forEach(component => {
+  // css entry
+  destEntryFile(component, 'index.js', '.css');
+  // less entry
+  destEntryFile(component, 'less.js', '.less');
+});
+
+function destEntryFile(component, filename, ext = '') {
   const deps = analyzeDependencies(component).map(dep =>
-    getStyleRelativePath(component, dep)
+    getStyleRelativePath(component, dep, ext)
   );
-  const esEntry = path.join(dir, component, 'style/index.js');
-  const libEntry = path.join(__dirname, '../lib', component, 'style/index.js');
+
+  const esEntry = path.join(dir, component, `style/${filename}`);
+  const libEntry = path.join(__dirname, '../lib', component, `style/${filename}`);
   const esContent = deps.map(dep => `import '${dep}';`).join('\n');
   const libContent = deps.map(dep => `require('${dep}');`).join('\n');
 
   fs.outputFileSync(esEntry, esContent);
   fs.outputFileSync(libEntry, libContent);
-});
+}
 
 // analyze component dependencies
 function analyzeDependencies(component) {
@@ -65,17 +73,17 @@ function search(tree, component, checkList) {
   });
 }
 
-function getStylePath(component) {
+function getStylePath(component, ext = '.css') {
   if (component === 'base') {
-    return path.join(__dirname, '../es/style/base.css');
+    return path.join(__dirname, `../es/style/base${ext}`);
   }
-  return path.join(__dirname, `../es/${component}/index.css`);
+  return path.join(__dirname, `../es/${component}/index${ext}`);
 }
 
-function getStyleRelativePath(component, style) {
+function getStyleRelativePath(component, style, ext) {
   return path.relative(
     path.join(__dirname, `../es/${component}/style`),
-    getStylePath(style)
+    getStylePath(style, ext)
   );
 }
 
