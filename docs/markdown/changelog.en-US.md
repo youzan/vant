@@ -1,6 +1,6 @@
 ## Changelog
 
-## [v1.4.1](https://github.com/youzan/vant/tree/v1.4.1)
+## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
 `2018-11-04`
 
 **Breaking changes**
