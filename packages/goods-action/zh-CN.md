@@ -1,4 +1,4 @@
-## GoodsAction 商品页行动点
+## GoodsAction 商品导航
 
 ### 使用指南
 ``` javascript
