@@ -16,7 +16,7 @@ const compilerOption = {
 };
 
 const isDir = dir => fs.lstatSync(dir).isDirectory();
-const isJs = path => /\.js$/.test(isJs);
+const isJs = path => /\.js$/.test(path);
 const isSfc = path => /\.vue$/.test(path);
 const isCode = path => !/(demo|test|\.md)$/.test(path);
 
