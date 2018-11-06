@@ -16,7 +16,7 @@ test('change head content when pulling down', () => {
 
   // pulling
   trigger(track, 'touchstart', 0, 0);
-  trigger(track, 'touchmove', 0, 10);
+  trigger(track, 'touchmove', 0, 20);
   expect(wrapper).toMatchSnapshot();
 
   // loosing
