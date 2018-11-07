@@ -1,11 +1,11 @@
 <template>
   <i
     v-text="text"
+    :class="['van-hairline', className]"
     @touchstart.stop.prevent="onFocus"
     @touchmove="onBlur"
     @touchend="onBlur"
     @touchcancel="onBlur"
-    :class="['van-hairline', className]"
   />
 </template>
 
