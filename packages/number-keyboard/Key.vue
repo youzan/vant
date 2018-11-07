@@ -33,7 +33,7 @@ export default create({
     className() {
       const types = this.type.slice(0);
       this.active && types.push('active');
-      return this.b([types]);
+      return this.b(types);
     }
   },
 
