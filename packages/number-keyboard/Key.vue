@@ -1,12 +1,11 @@
 <template>
   <i
     v-text="text"
+    :class="['van-hairline', className]"
     @touchstart.stop.prevent="onFocus"
     @touchmove="onBlur"
     @touchend="onBlur"
     @touchcancel="onBlur"
-    class="van-hairline"
-    :class="[b(), className]"
   />
 </template>
 
@@ -34,8 +33,7 @@ export default create({
     className() {
       const types = this.type.slice(0);
       this.active && types.push('active');
-
-      return types.map(type => this.b([type]));
+      return this.b(types);
     }
   },
 
