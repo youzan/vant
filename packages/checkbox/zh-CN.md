@@ -32,7 +32,14 @@ export default {
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
 
+#### 自定义颜色
+
+```html
+<van-checkbox v-model="checked" checked-color="#4b0">复选框</van-checkbox>
+```
+
 #### 自定义图标
+
 通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
 
 ```html
@@ -58,9 +65,9 @@ export default {
 }
 ```
 
-#### Checkbox 组
+#### 复选框组
 
-需要与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
+与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
 
 ```html
 <van-checkbox-group v-model="result">
@@ -99,7 +106,7 @@ export default {
 </van-checkbox-group>
 ```
 
-#### 与 Cell 组件一起使用
+#### 搭配单元格组件使用
 
 此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 
@@ -139,6 +146,7 @@ export default {
 | disabled | 是否禁用单选框 | `Boolean` | `false` | - |
 | label-disabled | 是否禁用单选框文本点击 | `Boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
+| checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
 
 ### CheckboxGroup API
 

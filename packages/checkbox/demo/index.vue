@@ -9,8 +9,14 @@
       <van-checkbox :value="true" disabled>{{ $t('checkbox') }}</van-checkbox>
     </demo-block>
 
+    <demo-block :title="$t('customColor')">
+      <van-checkbox v-model="checkbox2" checked-color="#4b0">
+        {{ $t('customColor') }}
+      </van-checkbox>
+    </demo-block>
+
     <demo-block :title="$t('customIcon')">
-      <van-checkbox v-model="checkbox2">
+      <van-checkbox v-model="checkbox3">
         {{ $t('customIcon') }}
         <img
           slot="icon"
@@ -68,13 +74,15 @@ export default {
     'zh-CN': {
       checkbox: '复选框',
       customIcon: '自定义图标',
-      title3: 'Checkbox 组',
+      customColor: '自定义颜色',
+      title3: '复选框组',
       title4: '设置最大可选数',
-      title5: '与 Cell 组件一起使用'
+      title5: '搭配单元格组件使用'
     },
     'en-US': {
       checkbox: 'Checkbox',
       customIcon: 'Custom Icon',
+      customColor: 'Custom Color',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
       title5: 'Inside a Cell'
@@ -85,6 +93,7 @@ export default {
     return {
       checkbox1: true,
       checkbox2: true,
+      checkbox3: true,
       list: [
         'a',
         'b',
