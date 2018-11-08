@@ -139,12 +139,12 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | name | Checkbox name | `any` | - |
+| shape | Can be set to `round` `square` | `String` | `round` |
 | v-model | Check status | `Boolean` | `false` |
 | disabled | Diable checkbox | `Boolean` | `false` |
-| checked-color | Checked color | `String` | `#1989fa` | - |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
 | label-position | Can be set to `left` | `String` | `right` |
-| shape | Can be set to `round` `square` | `String` | `round` |
+| checked-color | Checked color | `String` | `#1989fa` | - |
 
 ### CheckboxGroup API
 
