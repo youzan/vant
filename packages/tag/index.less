@@ -1,0 +1,40 @@
+@import '../style/var';
+
+.van-tag {
+  color: @white;
+  font-size: 10px;
+  padding: .2em .5em;
+  line-height: normal;
+  border-radius: .2em;
+  display: inline-block;
+
+  &::after {
+    border-color: currentColor;
+    border-radius: .4em;
+  }
+
+  &--mark {
+    padding-right: .6em;
+    border-radius: 0 .8em .8em 0;
+
+    &::after {
+      border-radius: 0 1.6em 1.6em 0;
+    }
+  }
+
+  &--round {
+    border-radius: .8em;
+
+    &::after {
+      border-radius: 1.6em;
+    }
+  }
+
+  &--medium {
+    font-size: 12px;
+  }
+
+  &--large {
+    font-size: 14px;
+  }
+}

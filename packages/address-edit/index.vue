@@ -1,78 +1,80 @@
 <template>
-  <div class="van-address-edit">
-    <cell-group>
-      <field
-        maxlength="15"
-        :placeholder="$t('name')"
-        :label="$t('label.name')"
-        v-model="data.name"
-        :error="errorInfo.name"
-        @focus="onFocus('name')"
-      />
-      <field
-        type="tel"
-        :label="$t('tel')"
-        :placeholder="$t('telPlaceholder')"
-        v-model="data.tel"
-        :error="errorInfo.tel"
-        @focus="onFocus('tel')"
-      />
-      <cell
-        clickable
-        class="van-address-edit__area"
-        :title="$t('area')"
-        @click="showArea = true"
-      >
-        <span>{{ data.province || $t('province') }}</span>
-        <span>{{ data.city || $t('city') }}</span>
-        <span>{{ data.county || $t('county') }}</span>
-      </cell>
-      <address-edit-detail
-        :value="data.address_detail"
-        :is-error="errorInfo.address_detail"
-        :show-search-result="showSearchResult"
-        :search-result="searchResult"
-        @focus="onFocus('address_detail')"
-        @blur="detailFocused = false"
-        @input="onChangeDetail"
-        @select-search="$emit('select-search', $event)"
-      />
-      <field
-        v-if="showPostal"
-        v-show="!hideBottomFields"
-        type="tel"
-        :label="$t('label.postal')"
-        :placeholder="$t('placeholder.postal')"
-        v-model="data.postal_code"
-        maxlength="6"
-        class="van-hairline--top"
-        :error="errorInfo.postal_code"
-        @focus="onFocus('postal_code')"
-      />
-      <slot />
-      <switch-cell
-        v-if="showSetDefault"
-        v-show="!hideBottomFields"
-        v-model="data.is_default"
-        :title="$t('defaultAddress')"
-      />
-    </cell-group>
-    <div v-show="!hideBottomFields" class="van-address-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSave" type="primary">
-        {{ $t('save') }}
+  <div :class="b()">
+    <field
+      v-model="data.name"
+      clearable
+      :label="$t('name')"
+      :placeholder="$t('namePlaceholder')"
+      :error="errorInfo.name"
+      @focus="onFocus('name')"
+    />
+    <field
+      v-model="data.tel"
+      clearable
+      type="tel"
+      :label="$t('tel')"
+      :placeholder="$t('telPlaceholder')"
+      :error="errorInfo.tel"
+      @focus="onFocus('tel')"
+    />
+    <field
+      v-show="showArea"
+      readonly
+      :label="$t('area')"
+      :placeholder="$t('areaPlaceholder')"
+      :value="areaText"
+      @click="showAreaPopup = true"
+    />
+    <address-edit-detail
+      v-show="showDetail"
+      :focused="detailFocused"
+      :value="data.addressDetail"
+      :error="errorInfo.addressDetail"
+      :detail-rows="detailRows"
+      :search-result="searchResult"
+      :show-search-result="showSearchResult"
+      @focus="onFocus('addressDetail')"
+      @blur="detailFocused = false"
+      @input="onChangeDetail"
+      @select-search="$emit('select-search', $event)"
+    />
+    <field
+      v-if="showPostal"
+      v-show="!hideBottomFields"
+      v-model="data.postalCode"
+      type="tel"
+      maxlength="6"
+      :label="$t('postal')"
+      :placeholder="$t('postal')"
+      :error="errorInfo.postalCode"
+      @focus="onFocus('postalCode')"
+    />
+    <slot />
+    <switch-cell
+      v-if="showSetDefault"
+      v-show="!hideBottomFields"
+      v-model="data.isDefault"
+      :title="$t('defaultAddress')"
+      @change="$emit('change-default', $event)"
+    />
+
+    <div v-show="!hideBottomFields" :class="b('buttons')">
+      <van-button block :loading="isSaving" @click="onSave" type="danger">
+        {{ saveButtonText || $t('save') }}
       </van-button>
-      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">
-        {{ $t('deleteAddress') }}
+      <van-button block :loading="isDeleting" @click="onDelete" v-if="showDelete">
+        {{ deleteButtonText || $t('delete') }}
       </van-button>
     </div>
-    <popup v-model="showArea" position="bottom">
+
+    <popup v-model="showAreaPopup" position="bottom" :lazy-render="false" get-container="body">
       <van-area
         ref="area"
         :loading="!areaListLoaded"
-        :value="data.area_code"
+        :value="data.areaCode"
         :area-list="areaList"
         @confirm="onAreaConfirm"
-        @cancel="showArea = false"
+        @cancel="showAreaPopup = false"
       />
     </popup>
   </div>
@@ -92,16 +94,17 @@ import AddressEditDetail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
 
-const defaultAddress = {
+const defaultData = {
   name: '',
   tel: '',
+  country: '',
   province: '',
   city: '',
   county: '',
-  area_code: '',
-  postal_code: '',
-  address_detail: '',
-  is_default: false
+  areaCode: '',
+  postalCode: '',
+  addressDetail: '',
+  isDefault: false
 };
 
 export default create({
@@ -117,16 +120,31 @@ export default create({
   },
 
   props: {
+    areaList: Object,
     isSaving: Boolean,
     isDeleting: Boolean,
-    areaList: Object,
+    validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
+    saveButtonText: String,
+    deleteButtonText: String,
+    showArea: {
+      type: Boolean,
+      default: true
+    },
+    showDetail: {
+      type: Boolean,
+      default: true
+    },
+    detailRows: {
+      type: Number,
+      default: 1
+    },
     addressInfo: {
       type: Object,
-      default: () => ({ ...defaultAddress })
+      default: () => ({ ...defaultData })
     },
     searchResult: {
       type: Array,
@@ -140,17 +158,14 @@ export default create({
 
   data() {
     return {
-      showArea: false,
-      data: {
-        ...defaultAddress,
-        ...this.addressInfo
-      },
+      data: {},
+      showAreaPopup: false,
       detailFocused: false,
       errorInfo: {
-        name: false,
         tel: false,
-        address_detail: false,
-        postal_code: false
+        name: false,
+        postalCode: false,
+        addressDetail: false
       }
     };
   },
@@ -165,8 +180,16 @@ export default create({
       return isObj(this.areaList) && Object.keys(this.areaList).length;
     },
 
-    isEdit() {
-      return this.showDelete || !!this.data.id;
+    areaText() {
+      const { country, province, city, county, areaCode } = this.data;
+      if (areaCode) {
+        const arr = [country, province, city, county];
+        if (province && province === city) {
+          arr.splice(1, 1);
+        }
+        return arr.filter(text => text).join('/');
+      }
+      return '';
     }
   },
 
@@ -174,70 +197,58 @@ export default create({
     addressInfo: {
       handler(val) {
         this.data = {
-          ...defaultAddress,
+          ...defaultData,
           ...val
         };
 
-        this.setAreaCode(val.area_code);
+        this.setAreaCode(val.areaCode);
       },
-      deep: true
+      deep: true,
+      immediate: true
     },
 
     areaList() {
-      this.setAreaCode(this.data.area_code);
+      this.setAreaCode(this.data.areaCode);
     }
-  },
-
-  created() {
-    this.setAreaCode(this.data.area_code);
   },
 
   methods: {
     onFocus(key) {
       this.errorInfo[key] = false;
-      this.detailFocused = key === 'address_detail';
+      this.detailFocused = key === 'addressDetail';
       this.$emit('focus', key);
     },
 
     onChangeDetail(val) {
-      this.data.address_detail = val;
+      this.data.addressDetail = val;
       this.$emit('change-detail', val);
     },
 
     onAreaConfirm(values) {
-      if (values.length !== 3 || values.some(value => +value.code === -1)) {
-        return Toast(this.$t('areaEmpty'));
-      }
-      this.data.area_code = values[2].code;
-      this.assignAreaValues(values);
-      this.showArea = false;
+      this.showAreaPopup = false;
+      this.assignAreaValues();
       this.$emit('change-area', values);
     },
 
     assignAreaValues(values) {
-      if (values.length >= 3) {
-        Object.assign(this.data, {
-          province: values[0].name,
-          city: values[1].name,
-          county: values[2].name
-        });
+      const { area } = this.$refs;
+      if (area) {
+        const detail = area.getArea();
+        detail.areaCode = detail.code;
+        delete detail.code;
+        Object.assign(this.data, detail);
       }
     },
 
     onSave() {
-      const items = [
-        'name',
-        'tel',
-        'area_code',
-        'address_detail'
-      ];
+      const items = ['name', 'tel', 'areaCode', 'addressDetail'];
 
       if (this.showPostal) {
-        items.push('postal_code');
+        items.push('postalCode');
       }
 
       const isValid = items.every(item => {
-        const msg = this.getErrorMessageByKey(item);
+        const msg = this.getErrorMessage(item);
         if (msg) {
           this.errorInfo[item] = true;
           Toast(msg);
@@ -250,53 +261,56 @@ export default create({
       }
     },
 
-    getErrorMessageByKey(key) {
-      const value = this.data[key];
+    getErrorMessage(key) {
+      const value = String(this.data[key] || '').trim();
       const { $t } = this;
+
+      if (this.validator) {
+        const message = this.validator(key, value);
+        if (message) {
+          return message;
+        }
+      }
 
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : $t('nameOverlimit') : $t('nameEmpty');
+          return value ? '' : $t('nameEmpty');
         case 'tel':
           return this.telValidator(value) ? '' : $t('telInvalid');
-        case 'area_code':
-          return value && +value !== -1 ? '' : $t('areaEmpty');
-        case 'address_detail':
-          return value ? value.length <= 200 ? '' : $t('addressOverlimit') : $t('addressEmpty');
-        case 'postal_code':
+        case 'areaCode':
+          return value ? '' : $t('areaEmpty');
+        case 'addressDetail':
+          return value ? '' : $t('addressEmpty');
+        case 'postalCode':
           return value && !/^\d{6}$/.test(value) ? $t('postalEmpty') : '';
       }
     },
 
     onDelete() {
-      if (this.isDeleting) {
-        return;
-      }
-
       Dialog.confirm({
-        message: this.$t('confirmDelete')
-      }).then(() => {
-        this.$emit('delete', this.data);
-      });
+        title: this.$t('confirmDelete')
+      })
+        .then(() => {
+          this.$emit('delete', this.data);
+        })
+        .catch(() => {
+          this.$emit('cancel-delete', this.data);
+        });
     },
 
     // get values of area component
     getArea() {
-      const { area } = this.$refs;
-      return area ? area.getValues() : [];
+      return this.$refs.area ? this.$refs.area.getValues() : [];
     },
 
     // set area code to area component
     setAreaCode(code) {
-      this.data.area_code = code || '';
-      this.$nextTick(() => {
-        this.$nextTick(() => {
-          const { area } = this.$refs;
-          if (area) {
-            this.assignAreaValues(area.getValues());
-          }
-        });
-      });
+      this.data.areaCode = code || '';
+      code && this.$nextTick(this.assignAreaValues);
+    },
+
+    setAddressDetail(value) {
+      this.data.addressDetail = value;
     }
   }
 });

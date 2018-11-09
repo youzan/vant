@@ -9,26 +9,24 @@ const defaultConfig = {
 
 export default {
   open(vm, config) {
-    const exist = context.stack.some(item => item.vm._popupId === vm._popupId);
-
     /* istanbul ignore next */
-    if (!exist) {
+    if (!context.stack.some(item => item.vm === vm)) {
       const el = vm.$el;
-      const targetNode = el && el.parentNode && el.parentNode.nodeType !== 11 ? el.parentNode : document.body;
-      context.stack.push({ vm, config, targetNode });
+      const target = el && el.parentNode ? el.parentNode : document.body;
+      context.stack.push({ vm, config, target });
       this.update();
     };
   },
 
-  close(id) {
+  close(vm) {
     const { stack } = context;
 
     if (stack.length) {
-      if (context.top.vm._popupId === id) {
+      if (context.top.vm === vm) {
         stack.pop();
         this.update();
       } else {
-        context.stack = stack.filter(item => item.vm._popupId !== id);
+        context.stack = stack.filter(item => item.vm !== vm);
       }
     }
   },
@@ -50,9 +48,9 @@ export default {
     }
 
     if (context.top) {
-      const { targetNode, config } = context.top;
+      const { target, config } = context.top;
 
-      targetNode.appendChild(modal.$el);
+      target.appendChild(modal.$el);
       Object.assign(modal, {
         ...defaultConfig,
         ...config,
@@ -63,10 +61,11 @@ export default {
 
   // close popup when click modal && closeOnClickOverlay is true
   onClick() {
+    /* istanbul ignore else */
     if (context.top) {
       const { vm } = context.top;
       vm.$emit('click-overlay');
-      vm.closeOnClickOverlay && vm.close();
+      vm.closeOnClickOverlay && vm.$emit('input', false);
     }
   }
 };

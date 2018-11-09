@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">2018</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2019</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">21</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">22</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">23</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">24</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">25</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">26</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">27</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">28</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">29</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">30</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">31</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">00</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">21</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">22</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">23</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">00</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">21</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">22</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">23</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">24</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">25</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">26</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">27</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">28</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">29</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">30</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">31</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">32</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">33</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">34</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">35</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">36</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">37</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">38</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">39</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">40</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">41</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">42</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">43</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">44</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">45</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">46</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">47</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">48</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">49</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">50</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">51</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">52</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">53</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">54</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">55</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">56</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">57</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">58</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">59</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">2018</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2019</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2020</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2021</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2022</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2023</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2024</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2025</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2026</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2027</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2028</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">21</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">22</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">23</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">24</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">25</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">26</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">27</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">28</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">29</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">30</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">31</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">2018年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2019年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2020年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2021年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2022年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2023年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2024年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2025年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2026年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2027年</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">2028年</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">01月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11月</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12月</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+          </ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
+            <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height:44px;">00</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">01</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">02</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">03</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">04</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">05</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">06</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">07</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">08</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">09</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">10</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">11</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">12</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">13</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">14</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">15</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">16</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">17</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">18</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">19</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">20</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">21</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">22</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">23</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">24</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">25</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">26</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">27</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">28</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">29</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">30</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">31</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">32</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">33</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">34</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">35</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">36</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">37</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">38</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">39</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">40</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">41</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">42</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">43</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">44</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">45</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">46</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">47</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">48</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">49</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">50</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">51</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">52</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">53</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">54</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">55</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">56</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">57</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">58</li>
+            <li class="van-ellipsis van-picker-column__item" style="height:44px;">59</li>
+          </ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

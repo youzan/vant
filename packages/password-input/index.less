@@ -1,0 +1,59 @@
+@import '../style/var';
+
+.van-password-input {
+  margin: 0 15px;
+  user-select: none;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__info,
+  &__error-info {
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  &__info {
+    color: @gray-dark;
+  }
+
+  &__error-info {
+    color: @red;
+  }
+
+  &__security {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: @white;
+
+    &::after {
+      border-radius: 6px;
+    }
+
+    li {
+      flex: 1;
+      height: 100%;
+      position: relative;
+
+      &:not(:first-of-type)::after {
+        border-left-width: 1px;
+      }
+    }
+
+    i {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      margin: -5px 0 0 -5px;
+      visibility: hidden;
+      border-radius: 100%;
+      background-color: @black;
+    }
+  }
+}

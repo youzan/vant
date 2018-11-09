@@ -1,5 +1,5 @@
 <template>
-  <div class="van-cell-group" :class="{ 'van-hairline--top-bottom': border }">
+  <div :class="[b(), { 'van-hairline--top-bottom': border }]">
     <slot />
   </div>
 </template>

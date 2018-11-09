@@ -1,0 +1,52 @@
+@import '../style/var';
+
+.van-steps {
+  overflow: hidden;
+  background-color: @white;
+
+  &--horizontal {
+    padding: 0 10px;
+
+    .van-steps__items {
+      display: flex;
+      margin: 0 0 10px;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 22px;
+
+      &.van-steps__items--alone {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  &--vertical {
+    padding: 0 0 0 35px;
+  }
+
+  &__icon {
+    float: left;
+    margin-right: 10px;
+  }
+
+  .van-icon {
+    font-size: 40px;
+  }
+
+  &__message {
+    height: 40px;
+    margin: 15px 0;
+  }
+
+  &__title {
+    font-size: 14px;
+    color: @text-color;
+    padding-top: 4px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: @gray-dark;
+  }
+}

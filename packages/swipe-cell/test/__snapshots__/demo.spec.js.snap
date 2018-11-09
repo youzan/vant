@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-notice-bar" style="color:undefined;background:undefined;">
+      <!---->
+      <div class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">建议在手机模式下浏览本示例</div>
+      </div>
+      <!---->
+    </div>
+    <div>
+      <div class="van-swipe-cell">
+        <div class="van-swipe-cell__wrapper" style="transform:translate3d(0px, 0, 0);transition:.6s cubic-bezier(0.18, 0.89, 0.32, 1);">
+          <div class="van-swipe-cell__left"><span>选择</span></div>
+          <div class="van-cell-group van-hairline--top-bottom">
+            <div class="van-cell">
+              <!---->
+              <div class="van-cell__title"><span>单元格</span>
+                <!---->
+              </div>
+              <div class="van-cell__value"><span>内容</span></div>
+              <!---->
+            </div>
+          </div>
+          <div class="van-swipe-cell__right"><span>删除</span></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="van-swipe-cell">
+        <div class="van-swipe-cell__wrapper" style="transform:translate3d(0px, 0, 0);transition:.6s cubic-bezier(0.18, 0.89, 0.32, 1);">
+          <div class="van-swipe-cell__left"><span>选择</span></div>
+          <div class="van-cell-group van-hairline--top-bottom">
+            <div class="van-cell">
+              <!---->
+              <div class="van-cell__title"><span>单元格</span>
+                <!---->
+              </div>
+              <div class="van-cell__value"><span>内容</span></div>
+              <!---->
+            </div>
+          </div>
+          <div class="van-swipe-cell__right"><span>删除</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

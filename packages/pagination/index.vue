@@ -1,28 +1,27 @@
 <template>
-  <ul class="van-pagination" :class="{ 'van-pagination-simple': !isMultiMode }">
+  <ul :class="b({ simple: !isMultiMode })">
     <li
-      class="van-pagination__item van-pagination__prev van-hairline"
-      :class="{ 'van-pagination--disabled': value === 1 }"
+      class="van-hairline"
+      :class="[b('item', { disabled: value === 1 }), b('prev')]"
       @click="selectPage(value - 1)"
     >
       {{ prevText || $t('prev') }}
     </li>
     <li
       v-if="isMultiMode"
-      v-for="(page, index) in pages"
-      :key="index"
-      class="van-pagination__item van-pagination__page van-hairline"
-      :class="{ 'van-pagination--active': page.active }"
+      v-for="page in pages"
+      class="van-hairline"
+      :class="[b('item', { active: page.active }), b('page')]"
       @click="selectPage(page.number)"
     >
       {{ page.text }}
     </li>
-    <li v-if="!isMultiMode" class="van-pagination__page-desc">
+    <li v-if="!isMultiMode" :class="b('page-desc')">
       <slot name="pageDesc">{{ pageDesc }}</slot>
     </li>
     <li
-      class="van-pagination__item van-pagination__next van-hairline"
-      :class="{ 'van-pagination--disabled': value === computedPageCount }"
+      class="van-hairline"
+      :class="[b('item', { disabled: value === computedPageCount }), b('next')]"
       @click="selectPage(value + 1)"
     >
       {{ nextText || $t('next') }}
@@ -119,13 +118,12 @@ export default create({
     }
   },
 
-  created() {
-    this.selectPage(this.value);
-  },
-
   watch: {
-    value(page) {
-      this.selectPage(page);
+    value: {
+      handler(page) {
+        this.selectPage(page || this.value);
+      },
+      immediate: true
     }
   },
 

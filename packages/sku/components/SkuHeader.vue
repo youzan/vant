@@ -1,9 +1,9 @@
 <template>
-  <div class="van-sku-header van-hairline--bottom">
-    <div class="van-sku-header__img-wrap">
+  <div :class="b()" class="van-hairline--bottom">
+    <div :class="b('img-wrap')" @click="previewImage">
       <img :src="goodsImg" >
     </div>
-    <div class="van-sku-header__goods-info">
+    <div :class="b('goods-info')">
       <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
       <!-- price display area -->
       <slot />
@@ -49,6 +49,10 @@ export default create({
       if (matchedSku && matchedSku.imgUrl) {
         return matchedSku.imgUrl;
       }
+    },
+
+    previewImage() {
+      this.skuEventBus.$emit('sku:previewImage', this.goodsImg);
     }
   }
 });

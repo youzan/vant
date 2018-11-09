@@ -1,0 +1,51 @@
+@import '../style/var';
+
+.van-submit-bar {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+  user-select: none;
+
+  &__tip {
+    color: #f56723;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 18px;
+    background-color: #fff7cc;
+  }
+
+  &__bar {
+    height: 50px;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    background-color: @white;
+  }
+
+  &__text {
+    flex: 1;
+    font-weight: 500;
+    text-align: right;
+    color: @text-color;
+    padding-right: 12px;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  &__price {
+    color: @red;
+    font-size: 18px;
+
+    &::first-letter {
+      font-size: 14px;
+    }
+  }
+
+  .van-button {
+    width: 110px;
+  }
+}

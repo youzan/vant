@@ -1,20 +1,19 @@
 <template>
-  <div class="van-stepper" :class="{ 'van-stepper--disabled': disabled }">
+  <div :class="b()">
     <button
-      class="van-stepper__stepper van-stepper__minus"
-      :class="{ 'van-stepper__minus--disabled': isMinusDisabled }"
+      :class="b('minus', { disabled: minusDisabled })"
       @click="onChange('minus')"
     />
     <input
       type="number"
-      class="van-stepper__input"
+      :class="b('input')"
       :value="currentValue"
       :disabled="disabled || disableInput"
       @input="onInput"
+      @blur="onBlur"
     >
     <button
-      class="van-stepper__stepper van-stepper__plus"
-      :class="{ 'van-stepper__plus--disabled': isPlusDisabled }"
+      :class="b('plus', { disabled: plusDisabled })"
       @click="onChange('plus')"
     />
   </div>
@@ -27,7 +26,8 @@ export default create({
   name: 'stepper',
 
   props: {
-    value: {},
+    value: null,
+    integer: Boolean,
     disabled: Boolean,
     disableInput: Boolean,
     min: {
@@ -49,10 +49,8 @@ export default create({
   },
 
   data() {
-    let value = this.value ? +this.value : +this.defaultValue;
-    const correctedValue = this.correctValue(value);
-    if (value !== correctedValue) {
-      value = correctedValue;
+    const value = this.range(this.isDef(this.value) ? this.value : this.defaultValue);
+    if (value !== +this.value) {
       this.$emit('input', value);
     }
 
@@ -62,67 +60,66 @@ export default create({
   },
 
   computed: {
-    isMinusDisabled() {
-      const min = +this.min;
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      return min === currentValue || (currentValue - step) < min || this.disabled;
+    minusDisabled() {
+      return this.disabled || this.currentValue <= this.min;
     },
 
-    isPlusDisabled() {
-      const max = +this.max;
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      return max === currentValue || (currentValue + step) > max || this.disabled;
+    plusDisabled() {
+      return this.disabled || this.currentValue >= this.max;
     }
   },
 
   watch: {
     value(val) {
-      if (val !== '') {
-        val = this.correctValue(+val);
-        if (val !== this.currentValue) {
-          this.currentValue = val;
-        }
+      if (val !== this.currentValue) {
+        this.currentValue = this.format(val);
       }
+    },
+
+    currentValue(val) {
+      this.$emit('input', val);
+      this.$emit('change', val);
     }
   },
 
   methods: {
-    correctValue(value) {
-      if (Number.isNaN(value)) {
-        value = this.min;
-      } else {
-        value = Math.max(this.min, value);
-        value = Math.min(this.max, value);
-      }
+    // filter illegal characters
+    format(value) {
+      value = String(value).replace(/[^0-9\.-]/g, '');
+      return value === '' ? 0 : this.integer ? Math.floor(value) : +value;
+    },
 
-      return value;
+    // limit value range
+    range(value) {
+      return Math.max(Math.min(this.max, this.format(value)), this.min);
     },
 
     onInput(event) {
       const { value } = event.target;
-      this.currentValue = value ? this.correctValue(+value) : value;
-      event.target.value = this.currentValue;
-      this.emitInput();
+      const formatted = this.format(value);
+
+      if (+value !== formatted) {
+        event.target.value = formatted;
+      }
+
+      this.currentValue = formatted;
     },
 
     onChange(type) {
-      if ((this.isMinusDisabled && type === 'minus') || (this.isPlusDisabled && type === 'plus')) {
+      if (this[`${type}Disabled`]) {
         this.$emit('overlimit', type);
         return;
       }
 
-      const step = +this.step;
-      const currentValue = +this.currentValue;
-      this.currentValue = type === 'minus' ? (currentValue - step) : (currentValue + step);
-      this.emitInput();
+      const diff = type === 'minus' ? -this.step : +this.step;
+      const value = Math.round((this.currentValue + diff) * 100) / 100;
+      this.currentValue = this.range(value);
       this.$emit(type);
     },
 
-    emitInput() {
-      this.$emit('input', this.currentValue);
-      this.$emit('change', this.currentValue);
+    onBlur(event) {
+      this.currentValue = this.range(this.currentValue);
+      this.$emit('blur', event);
     }
   }
 });

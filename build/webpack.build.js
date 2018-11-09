@@ -1,12 +1,13 @@
 const path = require('path');
-const webpack = require('webpack');
-const config = require('./webpack.config.dev.js');
+const config = require('./webpack.dev.js');
 const isMinify = process.argv.indexOf('-p') !== -1;
 
-module.exports = Object.assign({}, config, {
+delete config.serve;
+
+module.exports = Object.assign(config, {
   mode: 'production',
   entry: {
-    'vant': './packages/index.js'
+    'vant': './es/index.js'
   },
   output: {
     path: path.join(__dirname, '../lib'),
@@ -24,7 +25,6 @@ module.exports = Object.assign({}, config, {
       amd: 'vue'
     }
   },
-  plugins: [],
   performance: false,
   optimization: {
     minimize: isMinify

@@ -1,6 +1,6 @@
 <template>
   <transition :name="currentTransition">
-    <div v-show="value" class="van-popup" :class="{ [`van-popup--${position}`]: position }">
+    <div v-if="shouldRender" v-show="value" :class="b({ [position]: position })">
       <slot />
     </div>
   </transition>
@@ -31,12 +31,10 @@ export default create({
     }
   },
 
-  data() {
-    const transition = this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
-    return {
-      currentValue: false,
-      currentTransition: transition
-    };
+  computed: {
+    currentTransition() {
+      return this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
+    }
   }
 });
 </script>

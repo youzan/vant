@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty list 1`] = `
+<div class="van-tree-select" style="height: 300px;">
+  <div class="van-tree-select__nav"></div>
+  <div class="van-tree-select__content"></div>
+</div>
+`;

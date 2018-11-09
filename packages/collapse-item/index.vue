@@ -1,24 +1,27 @@
 <template>
-  <div
-    class="van-collapse-item"
-    :class="{
-      'van-hairline--top': index,
-      'van-collapse-item--expanded': expanded
-    }"
-  >
-    <cell class="van-collapse-item__title" is-link @click="onClick">
-      <slot name="title">{{ title }}</slot>
+  <div :class="[b(), { 'van-hairline--top': index }]">
+    <cell
+      v-bind="$props"
+      :class="b('title', { disabled, expanded })"
+      @click="onClick"
+    >
+      <slot name="title" slot="title" />
+      <slot name="icon" slot="icon" />
+      <slot name="value" />
+      <slot name="right-icon" slot="right-icon" />
     </cell>
-    <div class="van-collapse-item__content" v-show="expanded">
-      <slot />
+    <div v-if="inited" v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
+      <div ref="content" :class="b('content')">
+        <slot />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import findParent from '../mixins/find-parent';
+import { raf } from '../utils/raf';
 import create from '../utils/create';
-import { isDef } from '../utils';
+import findParent from '../mixins/find-parent';
 
 export default create({
   name: 'collapse-item',
@@ -27,7 +30,26 @@ export default create({
 
   props: {
     name: [String, Number],
-    title: String
+    icon: String,
+    label: String,
+    title: [String, Number],
+    value: [String, Number],
+    disabled: Boolean,
+    border: {
+      type: Boolean,
+      default: true
+    },
+    isLink: {
+      type: Boolean,
+      default: true
+    }
+  },
+
+  data() {
+    return {
+      show: null,
+      inited: null
+    };
   },
 
   computed: {
@@ -40,10 +62,14 @@ export default create({
     },
 
     currentName() {
-      return isDef(this.name) ? this.name : this.index;
+      return this.isDef(this.name) ? this.name : this.index;
     },
 
     expanded() {
+      if (!this.parent) {
+        return null;
+      }
+
       const { value } = this.parent;
       return this.parent.accordion
         ? value === this.currentName
@@ -54,17 +80,58 @@ export default create({
   created() {
     this.findParent('van-collapse');
     this.items.push(this);
+    this.show = this.expanded;
+    this.inited = this.expanded;
   },
 
   destroyed() {
     this.items.splice(this.index, 1);
   },
 
+  watch: {
+    expanded(expanded, prev) {
+      if (prev === null) {
+        return;
+      }
+
+      if (expanded) {
+        this.show = true;
+        this.inited = true;
+      }
+
+      this.$nextTick(() => {
+        const { content, wrapper } = this.$refs;
+        if (!content || !wrapper) {
+          return;
+        }
+
+        const contentHeight = content.clientHeight + 'px';
+        wrapper.style.height = expanded ? 0 : contentHeight;
+        raf(() => {
+          wrapper.style.height = expanded ? contentHeight : 0;
+        });
+      });
+    }
+  },
+
   methods: {
     onClick() {
+      if (this.disabled) {
+        return;
+      }
+
       const { parent } = this;
       const name = parent.accordion && this.currentName === parent.value ? '' : this.currentName;
-      this.parent.switch(name, !this.expanded);
+      const expanded = !this.expanded;
+      this.parent.switch(name, expanded);
+    },
+
+    onTransitionEnd() {
+      if (!this.expanded) {
+        this.show = false;
+      } else {
+        this.$refs.wrapper.style.height = null;
+      }
     }
   }
 });

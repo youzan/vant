@@ -1,23 +1,23 @@
 <template>
-  <div class="van-pull-refresh">
+  <div :class="b()">
     <div
-      class="van-pull-refresh__track"
+      :class="b('track')"
       :style="style"
       @touchstart="onTouchStart"
       @touchmove="onTouchMove"
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
     >
-      <div class="van-pull-refresh__head">
-        <slot name="normal" v-if="status === 'normal'"/>
-        <slot name="pulling" v-if="status === 'pulling'">
-          <span class="van-pull-refresh__text">{{ pullingText || $t('pulling') }}</span>
+      <div :class="b('head')">
+        <slot v-if="status === 'normal'" name="normal" />
+        <slot v-if="status === 'pulling'" name="pulling">
+          <span :class="b('text')">{{ pullingText || $t('pulling') }}</span>
         </slot>
-        <slot name="loosing" v-if="status === 'loosing'">
-          <span class="van-pull-refresh__text">{{ loosingText || $t('loosing') }}</span>
+        <slot v-if="status === 'loosing'" name="loosing">
+          <span :class="b('text')">{{ loosingText || $t('loosing') }}</span>
         </slot>
-        <slot name="loading" v-if="status === 'loading'">
-          <div class="van-pull-refresh__loading">
+        <slot v-if="status === 'loading'" name="loading">
+          <div :class="b('loading')">
             <loading />
             <span>{{ loadingText || $t('loadingTip') }}</span>
           </div>
@@ -31,11 +31,15 @@
 <script>
 import create from '../utils/create';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'pull-refresh',
 
+  mixins: [Touch],
+
   props: {
+    disabled: Boolean,
     pullingText: String,
     loosingText: String,
     loadingText: String,
@@ -67,6 +71,10 @@ export default create({
         transition: `${this.duration}ms`,
         transform: `translate3d(0,${this.height}px, 0)`
       };
+    },
+
+    untouchable() {
+      return this.status === 'loading' || this.disabled;
     }
   },
 
@@ -83,23 +91,21 @@ export default create({
 
   methods: {
     onTouchStart(event) {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
       if (this.getCeiling()) {
         this.duration = 0;
-        this.startX = event.touches[0].clientX;
-        this.startY = event.touches[0].clientY;
+        this.touchStart(event);
       }
     },
 
     onTouchMove(event) {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
 
-      this.deltaY = event.touches[0].clientY - this.startY;
-      this.direction = this.getDirection(event.touches[0]);
+      this.touchMove(event);
 
       if (!this.ceiling && this.getCeiling()) {
         this.duration = 0;
@@ -110,13 +116,13 @@ export default create({
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
           this.getStatus(this.ease(this.deltaY));
-          event.preventDefault();
+          event.cancelable && event.preventDefault();
         }
       }
     },
 
     onTouchEnd() {
-      if (this.status === 'loading') {
+      if (this.untouchable) {
         return;
       }
 
@@ -157,12 +163,6 @@ export default create({
       if (status !== this.status) {
         this.status = status;
       }
-    },
-
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     }
   }
 });

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-tree-select" style="height:300px;">
+      <div class="van-tree-select__nav">
+        <div class="van-ellipsis van-tree-select__nitem van-tree-select__nitem--active">
+          所有城市
+        </div>
+        <div class="van-ellipsis van-tree-select__nitem">
+          浙江
+        </div>
+        <div class="van-ellipsis van-tree-select__nitem">
+          江苏
+        </div>
+      </div>
+      <div class="van-tree-select__content">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--active">
+          杭州
+          <i class="van-icon van-icon-success van-tree-select__selected" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          温州
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          宁波
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          义乌
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          无锡
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          常州
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          莆田
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
+          三明
+          <!---->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

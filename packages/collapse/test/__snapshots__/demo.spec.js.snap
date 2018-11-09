@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item">
+        <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+          <!---->
+          <div class="van-cell__title"><span>有赞微商城</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__wrapper">
+          <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        </div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-collapse-item__title">
+          <!---->
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div disabled="disabled" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled">
+          <!---->
+          <div class="van-cell__title"><span>有赞美业</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item">
+        <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+          <!---->
+          <div class="van-cell__title"><span>有赞微商城</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <div class="van-collapse-item__wrapper">
+          <div class="van-collapse-item__content">提供多样店铺模板，快速搭建网上商城</div>
+        </div>
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-collapse-item__title">
+          <!---->
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-collapse-item__title">
+          <!---->
+          <div class="van-cell__title"><span>有赞美业</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-hairline--top-bottom van-collapse">
+      <div class="van-collapse-item">
+        <div class="van-cell van-cell--clickable van-collapse-item__title">
+          <!---->
+          <div class="van-cell__title">
+            <div>有赞微商城
+              <i class="van-icon van-icon-question" style="color:undefined;font-size:undefined;">
+                <!---->
+              </i>
+            </div>
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+      <div class="van-collapse-item van-hairline--top">
+        <div class="van-cell van-cell--clickable van-collapse-item__title">
+          <i class="van-icon van-icon-shop van-cell__left-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+          <div class="van-cell__title"><span>有赞零售</span>
+            <!---->
+          </div>
+          <div class="van-cell__value"> </div>
+          <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+            <!---->
+          </i>
+        </div>
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;

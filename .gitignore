@@ -3,11 +3,15 @@
 .DS_Store
 .idea
 .vscode
-packages/**/lib
-lib/
+
+# npm
 node_modules
-example/dist
-/docs/dist
+package-lock.json
+
+# dist file
+es
+lib
+docs/dist
+changelog.generated.md
 test/coverage
-packages/vant-css/build
-packages/vant-css/icons
+packages/icon/svg

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { VanComponent } from './component';
 import { Toast } from './toast';
 import { Dialog } from './dialog';
+import { Locale } from './locale';
 import { Lazyload } from './lazyload';
 import { Waterfall } from './waterfall';
 import { ImagePreview } from './image-preview';
@@ -18,9 +19,10 @@ export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
 export class CellGroup extends VanComponent {}
-export class CellSwipe extends VanComponent {}
+export class SwipeCell extends VanComponent {}
 export class Checkbox extends VanComponent {}
 export class CheckboxGroup extends VanComponent {}
+export class Circle extends VanComponent {}
 export class Col extends VanComponent {}
 export class Collapse extends VanComponent {}
 export class CollapseItem extends VanComponent {}
@@ -49,9 +51,11 @@ export class Progress extends VanComponent {}
 export class PullRefresh extends VanComponent {}
 export class Radio extends VanComponent {}
 export class RadioGroup extends VanComponent {}
+export class Rate extends VanComponent {}
 export class Row extends VanComponent {}
 export class Search extends VanComponent {}
 export class Sku extends VanComponent {}
+export class Slider extends VanComponent {}
 export class Step extends VanComponent {}
 export class Stepper extends VanComponent {}
 export class Steps extends VanComponent {}
@@ -70,6 +74,7 @@ export class Uploader extends VanComponent {}
 export {
   Toast,
   Dialog,
+  Locale,
   Lazyload,
   Waterfall,
   ImagePreview

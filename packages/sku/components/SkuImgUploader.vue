@@ -1,20 +1,19 @@
 <template>
-  <div class="van-sku-img-uploader">
+  <div :class="b()">
     <!-- 头部 -->
     <van-uploader
       :disabled="!!paddingImg"
       :after-read="afterReadFile"
       :max-size="maxSize * 1024 * 1024"
-      accept="image/*"
-      @oversize="$toast($t('maxSize', maxSize))"
+      @oversize="onOversize"
     >
-      <div class="van-sku-img-uploader__header">
-        <div v-if="paddingImg">{{ $t('uploading') }}</div>
+      <div :class="b('header')">
+        <div v-if="paddingImg">正在上传...</div>
         <template v-else>
           <icon name="photograph" />
-          <span class="label">{{ $t(value ? 'rephoto' : 'photo') }}</span> {{ $t('or') }}
+          <span class="label">{{ value ? '重拍' : '拍照' }}</span> 或
           <icon name="photo" />
-          <span class="label">{{ $t(value ? 'reselect' : 'select') }}</span>
+          <span class="label">{{ value ? '重新选择照片' : '选择照片' }}</span>
         </template>
       </div>
     </van-uploader>
@@ -22,17 +21,16 @@
     <div class="van-clearfix" v-if="paddingImg || imgList.length > 0">
       <!-- 已有的图片,图片右上角显示删除按钮 -->
       <div
-        v-for="(img, index) in imgList"
-        :key="index"
-        class="van-sku-img-uploader__img"
+        v-for="img in imgList"
+        :class="b('img')"
       >
         <img :src="img">
-        <icon name="clear" class="van-sku-img-uploader__delete" @click="$emit('input', '')" />
+        <icon name="clear" :class="b('delete')" @click="$emit('input', '')" />
       </div>
       <!-- 正在上传的图片,有上传等待提示 -->
-      <div v-if="paddingImg" class="van-sku-img-uploader__img">
+      <div v-if="paddingImg" :class="b('img')">
         <img :src="paddingImg">
-        <loading class="van-sku-img-uploader__uploading" type="spinner" color="black" />
+        <loading :class="b('uploading')" type="spinner" />
       </div>
     </div>
   </div>
@@ -86,6 +84,10 @@ export default create({
       }).catch(() => {
         this.paddingImg = '';
       });
+    },
+
+    onOversize() {
+      this.$toast(`最大可上传图片为${this.maxSize}MB，请尝试压缩图片尺寸`);
     }
   }
 });

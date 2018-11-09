@@ -3,32 +3,32 @@
     <div
       v-show="show"
       :style="style"
-      class="van-number-keyboard"
-      :class="`van-number-keyboard--${theme}`"
+      :class="b([theme])"
+      @touchstart.stop
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
-      <div class="van-number-keyboard__title van-hairline--top" v-if="title || showTitleClose">
+      <div :class="b('title')" class="van-hairline--top" v-if="title || showTitleClose">
         <span v-text="title" />
         <span
-          class="van-number-keyboard__close"
+          :class="b('close')"
           v-if="showTitleClose"
           v-text="closeButtonText"
-          @click="onBlur"
+          @click="onClose"
         />
       </div>
-      <div class="van-number-keyboard__body">
+      <div :class="b('body')">
         <key
-          v-for="(key, index) in keys"
-          :key="index"
+          v-for="key in keys"
+          :key="key.text"
           :text="key.text"
           :type="key.type"
           @press="onPressKey"
         />
       </div>
-      <div class="van-number-keyboard__sidebar" v-if="theme === 'custom'">
-        <key :text="'delete'" :type="['delete', 'big']" @press="onPressKey" />
-        <key :text="closeButtonText" :type="['green', 'big']" @press="onPressKey" />
+      <div v-if="theme === 'custom'" :class="b('sidebar')">
+        <key :text="deleteText" :type="['delete', 'big', 'gray']" @press="onPressKey" />
+        <key :text="closeButtonText" :type="['blue', 'big']" @press="onPressKey" />
       </div>
     </div>
   </transition>
@@ -47,6 +47,7 @@ export default create({
     show: Boolean,
     title: String,
     closeButtonText: String,
+    deleteButtonText: String,
     theme: {
       type: String,
       default: 'default'
@@ -109,7 +110,7 @@ export default create({
           keys.push(
             { text: this.extraKey, type: ['gray'] },
             { text: 0 },
-            { text: 'delete', type: ['gray', 'delete'] }
+            { text: this.deleteText, type: ['gray', 'delete'] }
           );
           break;
         case 'custom':
@@ -131,11 +132,20 @@ export default create({
 
     showTitleClose() {
       return this.closeButtonText && this.theme === 'default';
+    },
+
+    deleteText() {
+      return this.deleteButtonText || this.$t('delete');
     }
   },
 
   methods: {
     handler(action) {
+      /* istanbul ignore if */
+      if (this.$isServer) {
+        return;
+      }
+
       if (action !== this.handlerStatus && this.hideOnClickOutside) {
         this.handlerStatus = action;
         document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.onBlur);
@@ -144,6 +154,11 @@ export default create({
 
     onBlur() {
       this.$emit('blur');
+    },
+
+    onClose() {
+      this.$emit('close');
+      this.onBlur();
     },
 
     onAnimationEnd() {
@@ -155,10 +170,10 @@ export default create({
         return;
       }
 
-      if (text === 'delete') {
+      if (text === this.deleteText) {
         this.$emit('delete');
       } else if (text === this.closeButtonText) {
-        this.onBlur();
+        this.onClose();
       } else {
         this.$emit('input', text);
       }

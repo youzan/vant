@@ -1,21 +1,21 @@
 <template>
   <div
-    class="van-nav-bar van-hairline--bottom"
-    :class="{ 'van-nav-bar--fixed': fixed }"
+    class="van-hairline--bottom"
+    :class="b({ fixed })"
     :style="style"
   >
-    <div class="van-nav-bar__left" @click="$emit('click-left')">
+    <div :class="b('left')" @click="$emit('click-left')">
       <slot name="left">
-        <icon v-if="leftArrow" class="van-nav-bar__arrow" name="arrow" />
-        <span v-if="leftText" v-text="leftText" class="van-nav-bar__text" />
+        <icon v-if="leftArrow" :class="b('arrow')" name="arrow" />
+        <span v-if="leftText" v-text="leftText" :class="b('text')" />
       </slot>
     </div>
-    <div class="van-nav-bar__title">
+    <div :class="b('title')" class="van-ellipsis">
       <slot name="title">{{ title }}</slot>
     </div>
-    <div class="van-nav-bar__right" @click="$emit('click-right')">
+    <div :class="b('right')" @click="$emit('click-right')">
       <slot name="right">
-        <span v-if="rightText" v-text="rightText" class="van-nav-bar__text" />
+        <span v-if="rightText" v-text="rightText" :class="b('text')" />
       </slot>
     </div>
   </div>

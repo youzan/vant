@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`click bar 1`] = `
+<div class="van-slider van-slider--disabled">
+  <div class="van-slider__bar" style="width: 50%; height: 2px;"><span class="van-slider__button"></span></div>
+</div>
+`;
+
+exports[`click bar 2`] = `
+<div class="van-slider">
+  <div class="van-slider__bar" style="width: 100%; height: 2px;"><span class="van-slider__button"></span></div>
+</div>
+`;
+
+exports[`drag button 1`] = `
+<div class="van-slider van-slider--disabled">
+  <div class="van-slider__bar" style="width: 50%; height: 2px;"><span class="van-slider__button"></span></div>
+</div>
+`;
+
+exports[`drag button 2`] = `
+<div class="van-slider">
+  <div class="van-slider__bar" style="width: 100%; height: 2px;"><span class="van-slider__button"></span></div>
+</div>
+`;

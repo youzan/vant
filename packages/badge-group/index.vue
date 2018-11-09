@@ -1,5 +1,5 @@
 <template>
-  <div class="van-badge-group van-hairline--top-bottom">
+  <div :class="b()" class="van-hairline--top-bottom">
     <slot />
   </div>
 </template>
@@ -15,6 +15,12 @@ export default create({
       type: [Number, String],
       default: 0
     }
+  },
+
+  provide() {
+    return {
+      vanBadgeGroup: this
+    };
   },
 
   data() {

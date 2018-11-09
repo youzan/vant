@@ -1,7 +1,15 @@
 <template>
-  <div class="van-row" :style="style">
+  <component
+    :is="tag"
+    :class="b({
+      flex,
+      [`align-${align}`]: flex && align,
+      [`justify-${justify}`]: flex && justify
+    })"
+    :style="style"
+  >
     <slot />
-  </div>
+  </component>
 </template>
 
 <script>
@@ -11,6 +19,13 @@ export default create({
   name: 'row',
 
   props: {
+    type: String,
+    align: String,
+    justify: String,
+    tag: {
+      type: String,
+      default: 'div'
+    },
     gutter: {
       type: [Number, String],
       default: 0
@@ -18,6 +33,10 @@ export default create({
   },
 
   computed: {
+    flex() {
+      return this.type === 'flex';
+    },
+
     style() {
       const margin = `-${Number(this.gutter) / 2}px`;
       return this.gutter

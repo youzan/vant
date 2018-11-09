@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <ul class="van-pagination">
+      <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
+        上一页
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__item--active van-pagination__page">
+        1
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        2
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        3
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        4
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        5
+      </li>
+      <!---->
+      <li class="van-hairline van-pagination__item van-pagination__next">
+        下一页
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul size="small" class="van-pagination van-pagination--simple">
+      <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
+        上一页
+      </li>
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <!---->
+      <li class="van-pagination__page-desc">1/12</li>
+      <li class="van-hairline van-pagination__item van-pagination__next">
+        下一页
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul class="van-pagination">
+      <li class="van-hairline van-pagination__item van-pagination__item--disabled van-pagination__prev">
+        上一页
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__item--active van-pagination__page">
+        1
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        2
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        3
+      </li>
+      <li class="van-hairline van-pagination__item van-pagination__page">
+        ...
+      </li>
+      <!---->
+      <li class="van-hairline van-pagination__item van-pagination__next">
+        下一页
+      </li>
+    </ul>
+  </div>
+</div>
+`;

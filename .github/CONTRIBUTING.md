@@ -27,7 +27,9 @@ It's welcomed to pull request, And there are some tips about that:
 ```bash
 git clone git@github.com:youzan/vant.git
 
-yarn
+cd vant
+
+npm run bootstrap
 
 npm run dev
 
@@ -36,6 +38,5 @@ npm run dev
 
 ## Component Developing Guidelines
 - Create new directory under `packages` for a new component.
-- All the style code are located under `packages/vant-css/src`.
 - Refer to `Sku` for nested components.
 - Refer to `Button` for components that depend on other components.

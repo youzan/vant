@@ -1,6 +1,11 @@
 <template>
-  <cell-group class="van-coupon-cell">
-    <cell :title="title || $t('title')" :value="value" :is-link="editable" @click="$emit('click')" />
+  <cell-group :class="b()" :border="border">
+    <cell
+      :title="title || $t('title')"
+      :value="value"
+      :is-link="editable"
+      @click="$emit('click')"
+    />
   </cell-group>
 </template>
 
@@ -16,6 +21,10 @@ export default create({
 
   props: {
     title: String,
+    border: {
+      type: Boolean,
+      default: true
+    },
     coupons: {
       type: Array,
       default: () => []
@@ -35,7 +44,8 @@ export default create({
       const { coupons } = this;
       const coupon = coupons[this.chosenCoupon];
       if (coupon) {
-        return `${this.$t('reduce')}￥${(coupon.value / 100).toFixed(2)}`;
+        const value = coupon.denominations || coupon.value;
+        return `-￥${(value / 100).toFixed(2)}`;
       }
       return coupons.length === 0 ? this.$t('tips') : this.$t('count', coupons.length);
     }

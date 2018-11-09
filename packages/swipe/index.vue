@@ -1,9 +1,8 @@
 <template>
-  <div class="van-swipe">
+  <div :class="b()">
     <div
-      v-if="count > 1"
       :style="trackStyle"
-      class="van-swipe__track"
+      :class="b('track')"
       @touchstart="onTouchStart"
       @touchmove="onTouchMove"
       @touchend="onTouchEnd"
@@ -12,24 +11,40 @@
     >
       <slot />
     </div>
-    <div v-else class="van-swipe__track">
-      <slot />
-    </div>
-    <div class="van-swipe__indicators" v-if="showIndicators && count > 1">
-      <i v-for="index in count" :class="{ 'van-swipe__indicator--active': index - 1 === activeIndicator }" />
-    </div>
+    <slot name="indicator">
+      <div
+        v-if="showIndicators && count > 1"
+        :class="b('indicators', { vertical })"
+      >
+        <i
+          v-for="index in count"
+          :class="b('indicator', { active: index - 1 === activeIndicator })"
+        />
+      </div>
+    </slot>
   </div>
 </template>
 
 <script>
 import create from '../utils/create';
+import Touch from '../mixins/touch';
+import { on, off } from '../utils/event';
 
 export default create({
   name: 'swipe',
 
+  mixins: [Touch],
+
   props: {
+    width: Number,
+    height: Number,
     autoplay: Number,
+    vertical: Boolean,
     loop: {
+      type: Boolean,
+      default: true
+    },
+    touchable: {
       type: Boolean,
       default: true
     },
@@ -49,24 +64,31 @@ export default create({
 
   data() {
     return {
-      width: 0,
+      computedWidth: 0,
+      computedHeight: 0,
       offset: 0,
-      startX: 0,
-      startY: 0,
       active: 0,
       deltaX: 0,
+      deltaY: 0,
       swipes: [],
-      direction: '',
-      currentDuration: 0
+      swiping: false
     };
   },
 
   mounted() {
     this.initialize();
+
+    if (!this.$isServer) {
+      on(window, 'resize', this.onResize, true);
+    }
   },
 
   destroyed() {
-    clearTimeout(this.timer);
+    this.clear();
+
+    if (!this.$isServer) {
+      off(window, 'resize', this.onResize, true);
+    }
   },
 
   watch: {
@@ -80,7 +102,9 @@ export default create({
 
     autoplay(autoplay) {
       if (!autoplay) {
-        clearTimeout(this.timer);
+        this.clear();
+      } else {
+        this.autoPlay();
       }
     }
   },
@@ -90,43 +114,128 @@ export default create({
       return this.swipes.length;
     },
 
-    trackStyle() {
-      return {
-        paddingLeft: this.width + 'px',
-        width: (this.count + 2) * this.width + 'px',
-        transitionDuration: `${this.currentDuration}ms`,
-        transform: `translate(${this.offset}px, 0)`
-      };
+    delta() {
+      return this.vertical ? this.deltaY : this.deltaX;
+    },
+
+    size() {
+      return this[this.vertical ? 'computedHeight' : 'computedWidth'];
+    },
+
+    trackSize() {
+      return this.count * this.size;
     },
 
     activeIndicator() {
       return (this.active + this.count) % this.count;
+    },
+
+    isCorrectDirection() {
+      const expect = this.vertical ? 'vertical' : 'horizontal';
+      return this.direction === expect;
+    },
+
+    trackStyle() {
+      const mainAxis = this.vertical ? 'height' : 'width';
+      const crossAxis = this.vertical ? 'width' : 'height';
+      return {
+        [mainAxis]: `${this.trackSize}px`,
+        [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
+        transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
+        transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`
+      };
     }
   },
 
   methods: {
-    initialize() {
-      // reset offset when children changes
+    // initialize swipe position
+    initialize(active = this.initialSwipe) {
       clearTimeout(this.timer);
-      this.width = this.$el.getBoundingClientRect().width;
-      this.active = this.initialSwipe;
-      this.currentDuration = 0;
-      this.offset = this.count > 1 ? -this.width * (this.active + 1) : 0;
+      if (this.$el) {
+        const rect = this.$el.getBoundingClientRect();
+        this.computedWidth = this.width || rect.width;
+        this.computedHeight = this.height || rect.height;
+      }
+      this.swiping = true;
+      this.active = active;
+      this.offset = this.count > 1 ? -this.size * this.active : 0;
       this.swipes.forEach(swipe => {
         swipe.offset = 0;
       });
       this.autoPlay();
     },
 
+    onResize() {
+      this.initialize(this.activeIndicator);
+    },
+
     onTouchStart(event) {
-      clearTimeout(this.timer);
+      if (!this.touchable) return;
 
-      this.deltaX = 0;
-      this.direction = '';
-      this.currentDuration = 0;
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
+      this.clear();
+      this.swiping = true;
+      this.touchStart(event);
+      this.correctPosition();
+    },
 
+    onTouchMove(event) {
+      if (!this.touchable || !this.swiping) return;
+
+      this.touchMove(event);
+
+      if (this.isCorrectDirection) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
+      }
+    },
+
+    onTouchEnd() {
+      if (!this.touchable || !this.swiping) return;
+
+      if (this.delta && this.isCorrectDirection) {
+        const offset = this.vertical ? this.offsetY : this.offsetX;
+        this.move(offset > 0 ? (this.delta > 0 ? -1 : 1) : 0);
+      }
+
+      this.swiping = false;
+      this.autoPlay();
+    },
+
+    move(move = 0, offset = 0) {
+      const { delta, active, count, swipes, trackSize } = this;
+      const atFirst = active === 0;
+      const atLast = active === count - 1;
+      const outOfBounds =
+        !this.loop &&
+        ((atFirst && (offset > 0 || move < 0)) ||
+          (atLast && (offset < 0 || move > 0)));
+
+      if (outOfBounds || count <= 1) {
+        return;
+      }
+
+      swipes[0].offset = atLast && (delta < 0 || move > 0) ? trackSize : 0;
+      swipes[count - 1].offset =
+        atFirst && (delta > 0 || move < 0) ? -trackSize : 0;
+
+      if (move && active + move >= -1 && active + move <= count) {
+        this.active += move;
+      }
+
+      this.offset = offset - this.active * this.size;
+    },
+
+    swipeTo(index) {
+      this.swiping = true;
+      this.correctPosition();
+      setTimeout(() => {
+        this.swiping = false;
+        this.move((index % this.count) - this.active);
+      }, 30);
+    },
+
+    correctPosition() {
       if (this.active <= -1) {
         this.move(this.count);
       }
@@ -135,80 +244,27 @@ export default create({
       }
     },
 
-    onTouchMove(event) {
-      this.direction = this.direction || this.getDirection(event.touches[0]);
-
-      if (this.direction === 'horizontal') {
-        event.preventDefault();
-        this.deltaX = event.touches[0].clientX - this.startX;
-        this.move(0, this.range(this.deltaX, [-this.width, this.width]));
-      }
-    },
-
-    onTouchEnd() {
-      if (this.deltaX) {
-        this.move(Math.abs(this.deltaX) > 50 ? (this.deltaX > 0 ? -1 : 1) : 0);
-        this.currentDuration = this.duration;
-      }
-      this.autoPlay();
-    },
-
-    move(move = 0, offset = 0) {
-      const { active, count, swipes, deltaX, width } = this;
-
-      if (
-        !this.loop &&
-        ((active === 0 && (offset > 0 || move < 0)) ||
-          (active === count - 1 && (offset < 0 || move > 0)))
-      ) {
-        return;
-      }
-
-      if (move) {
-        if (active === -1) {
-          swipes[count - 1].offset = 0;
-        }
-        swipes[0].offset = active === count - 1 && move > 0 ? count * width : 0;
-
-        this.active += move;
-      } else {
-        if (active === 0) {
-          swipes[count - 1].offset = deltaX > 0 ? -count * width : 0;
-        } else if (active === count - 1) {
-          swipes[0].offset = deltaX < 0 ? count * width : 0;
-        }
-      }
-      this.offset = offset - (this.active + 1) * this.width;
+    clear() {
+      clearTimeout(this.timer);
     },
 
     autoPlay() {
       const { autoplay } = this;
-      if (autoplay && this.count > 1) {
-        clearTimeout(this.timer);
-        this.timer = setTimeout(() => {
-          this.currentDuration = 0;
 
-          if (this.active >= this.count) {
-            this.move(-this.count);
-          }
+      if (autoplay && this.count > 1) {
+        this.clear();
+        this.timer = setTimeout(() => {
+          this.swiping = true;
+          this.resetTouchStatus();
+          this.correctPosition();
 
           setTimeout(() => {
-            this.currentDuration = this.duration;
+            this.swiping = false;
             this.move(1);
             this.autoPlay();
           }, 30);
         }, autoplay);
       }
-    },
-
-    getDirection(touch) {
-      const offsetX = Math.abs(touch.clientX - this.startX);
-      const offsetY = Math.abs(touch.clientY - this.startY);
-      return offsetX > offsetY ? 'horizontal' : offsetX < offsetY ? 'vertical' : '';
-    },
-
-    range(num, arr) {
-      return Math.min(Math.max(num, arr[0]), arr[1]);
     }
   }
 });

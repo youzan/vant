@@ -1,10 +1,11 @@
 <template>
   <van-button
-    tag="a"
-    :href="url"
-    class="van-goods-action__big-btn"
-    :type="primary ? 'primary' : 'default'"
-    bottom-action
+    square
+    :class="b()"
+    size="large"
+    :loading="loading"
+    :disabled="disabled"
+    :type="primary ? 'danger' : 'warning'"
     @click="onClick"
   >
     <slot>{{ text }}</slot>
@@ -26,9 +27,10 @@ export default create({
   },
 
   props: {
-    url: String,
     text: String,
-    primary: Boolean
+    primary: Boolean,
+    loading: Boolean,
+    disabled: Boolean
   },
 
   methods: {

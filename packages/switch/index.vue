@@ -1,15 +1,14 @@
 <template>
   <div
-    class="van-switch"
-    :class="[{
-      'van-switch--on': value,
-      'van-switch--disabled': disabled
-    }]"
+    :class="b({
+      on: value,
+      disabled
+    })"
     :style="style"
     @click="onClick"
   >
-    <div class="van-switch__node">
-      <loading v-if="loading" class="van-switch__loading" />
+    <div :class="b('node')">
+      <loading v-if="loading" :class="b('loading')" />
     </div>
   </div>
 </template>
@@ -24,6 +23,8 @@ export default create({
     value: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     size: {
       type: String,
       default: '30px'
@@ -33,7 +34,8 @@ export default create({
   computed: {
     style() {
       return {
-        fontSize: this.size
+        fontSize: this.size,
+        backgroundColor: this.value ? this.activeColor : this.inactiveColor
       };
     }
   },
