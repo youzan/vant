@@ -30,7 +30,7 @@ export default create({
   },
 
   props: {
-    value: {},
+    value: null,
     title: String,
     itemHeight: Number,
     visibleItemCount: Number,
@@ -264,12 +264,13 @@ export default create({
     },
 
     onChange(picker) {
-      const values = picker.getValues();
       let value;
 
       if (this.type === 'time') {
-        value = values.join(':');
+        const indexes = picker.getIndexes();
+        value = `${indexes[0] + this.minHour}:${indexes[1] + this.minMinute}`;
       } else {
+        const values = picker.getValues();
         const year = this.getTrueValue(values[0]);
         const month = this.getTrueValue(values[1]);
         const maxDate = this.getMonthEndDay(year, month);
@@ -284,10 +285,11 @@ export default create({
           hour = this.getTrueValue(values[3]);
           minute = this.getTrueValue(values[4]);
         }
+
         value = new Date(year, month - 1, date, hour, minute);
       }
-      value = this.correctValue(value);
-      this.innerValue = value;
+
+      this.innerValue = this.correctValue(value);
 
       this.$nextTick(() => {
         this.$nextTick(() => {
@@ -301,10 +303,10 @@ export default create({
       const { formatter, pad } = this;
 
       if (this.type === 'time') {
-        const currentValue = value.split(':');
+        const pair = value.split(':');
         values = [
-          formatter('hour', currentValue[0]),
-          formatter('minute', currentValue[1])
+          formatter('hour', pair[0]),
+          formatter('minute', pair[1])
         ];
       } else {
         values = [
