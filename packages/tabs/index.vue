@@ -298,8 +298,6 @@ export default create({
         }
         index += diff;
       }
-
-      return active;
     },
 
     // emit event when clicked
