@@ -61,7 +61,7 @@
 
     <demo-block :title="$t('title8')">
       <van-tabs :active="active" swipeable>
-        <van-tab :title="$t('tab') + index" v-for="index in tabs" :disabled="index === 4" :key="index">
+        <van-tab :title="$t('tab') + index" v-for="index in tabs" :key="index">
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>
