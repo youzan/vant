@@ -26,10 +26,7 @@ export default create({
     disabled: Boolean,
     checkedColor: String,
     labelPosition: String,
-    labelDisabled: {
-      type: Boolean,
-      default: false
-    },
+    labelDisabled: Boolean,
     shape: {
       type: String,
       default: 'round'
