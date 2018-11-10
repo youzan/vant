@@ -2,6 +2,9 @@ import deepClone from '../deep-clone';
 import { isAndroid, isDef, camelize, get } from '..';
 import { raf, cancel } from '../raf';
 import { later } from '../../../test/utils';
+import isEmail from '../validate/email';
+import isMobile from '../validate/mobile';
+import isNumber from '../validate/number';
 
 test('deepClone', () => {
   const a = { foo: 0 };
@@ -51,4 +54,25 @@ test('raf', async() => {
   await later(50);
   expect(spy.mock.calls.length).toBe(1);
   cancel(1);
+});
+
+test('is-email', () => {
+  expect(isEmail('abc@gmail.com')).toBeTruthy();
+  expect(isEmail('abc@@gmail.com')).toBeFalsy();
+  expect(isEmail('@gmail.com')).toBeFalsy();
+  expect(isEmail('abc@')).toBeFalsy();
+});
+
+test('is-mobile', () => {
+  expect(isMobile('13000000000')).toBeTruthy();
+  expect(isMobile('+8613000000000')).toBeTruthy();
+  expect(isMobile('8613000000000')).toBeTruthy();
+  expect(isMobile('1300000000')).toBeFalsy();
+  expect(isMobile('abc')).toBeFalsy();
+});
+
+test('is-number', () => {
+  expect(isNumber('1')).toBeTruthy();
+  expect(isNumber('abc')).toBeFalsy();
+  expect(isNumber('1b2')).toBeFalsy();
 });
