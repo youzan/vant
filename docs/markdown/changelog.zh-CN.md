@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
+`2018-11-10`
+
+**Improvements**
+
+- Checkbox: 新增 checked-color 属性 [\#2057](https://github.com/youzan/vant/pull/2057)
+- NumberKeyboard: 新增 close-button-text 属性 [\#2051](https://github.com/youzan/vant/pull/2051)
+- Swipe: 优化手势操作体验 [\#2039](https://github.com/youzan/vant/pull/2039)
+- 文档：重新对组件进行了分类 [\#2032](https://github.com/youzan/vant/pull/2032)
+
+**Bug Fixes**
+
+- 修复 Circle 在部分安卓手机上样式错误的问题 [\#2062](https://github.com/youzan/vant/pull/2062)
+- 修复 DatetimePicker time 类型且使用 formatter 时获取当前值错误的问题 [\#2059](https://github.com/youzan/vant/pull/2059)
+- 修复 Tab 可以通过手势切换到禁用项的问题 [\#2064](https://github.com/youzan/vant/pull/2064)
+
+
 ## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
 `2018-11-04`
 

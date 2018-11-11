@@ -1,5 +1,22 @@
 ## Changelog
 
+## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
+`2018-11-10`
+
+**Improvements**
+
+- Checkbox: add checked-color prop [\#2057](https://github.com/youzan/vant/pull/2057)
+- NumberKeyboard: add close-button-text prop [\#2051](https://github.com/youzan/vant/pull/2051)
+- Swipe: optimize swipe gesture [\#2039](https://github.com/youzan/vant/pull/2039)
+- Document：reorgnize components [\#2032](https://github.com/youzan/vant/pull/2032)
+
+**Bug Fixes**
+
+- fix Circle incorrect style in android devices [\#2062](https://github.com/youzan/vant/pull/2062)
+- fix DatetimePicker incorrect value when use formatter [\#2059](https://github.com/youzan/vant/pull/2059)
+- fix Tab can swipe to disabled tab [\#2064](https://github.com/youzan/vant/pull/2064)
+
+
 ## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
 `2018-11-04`
 
