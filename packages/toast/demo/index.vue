@@ -1,7 +1,8 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button @click="showToast">{{ $t('title1') }}</van-button>
+      <van-button @click="$toast($t('text'))">{{ $t('title1') }}</van-button>
+      <van-button @click="$toast($t('longText'))">{{ $t('longTextButton') }}</van-button>
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -29,10 +30,12 @@ export default {
       title3: '成功/失败提示',
       success: '成功提示',
       fail: '失败提示',
-      text1: '我是提示文案，建议不超过十五字~',
+      text: '提示内容',
+      longText: '这是一条长文字提示，超过一定字数就会换行',
       text2: '成功文案',
       text3: '失败文案',
-      text4: second => `倒计时 ${second} 秒`
+      text4: second => `倒计时 ${second} 秒`,
+      longTextButton: '长文字提示'
     },
     'en-US': {
       title1: 'Text',
@@ -40,18 +43,16 @@ export default {
       title3: 'Success/Fail',
       success: 'Success',
       fail: 'Fail',
-      text1: 'Some messages',
+      text: 'Some messages',
+      longText: 'This is a long message, text will wrap when over a certain length',
       text2: 'Success',
       text3: 'Fail',
-      text4: second => `${second} seconds`
+      text4: second => `${second} seconds`,
+      longTextButton: 'Long Text'
     }
   },
 
   methods: {
-    showToast() {
-      this.$toast(this.$t('text1'));
-    },
-
     showLoadingToast() {
       this.$toast.loading({ mask: true, message: this.$t('loading') + '...' });
     },
