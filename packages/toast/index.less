@@ -6,8 +6,9 @@
   left: 50%;
   display: flex;
   color: @white;
-  font-size: 12px;
-  line-height: 1.2;
+  max-width: 80%;
+  font-size: 14px;
+  line-height: 20px;
   border-radius: 5px;
   word-break: break-all;
   align-items: center;
@@ -17,10 +18,11 @@
   transform: translate3d(-50%, -50%, 0);
   background-color: rgba(0, 0, 0, .7);
 
-  /**
-   * should not add pointer-events: none directly to body tag
-   * that will cause unexpected tap-highlight-color in mobile safari
-   */
+  // hack for avoid max-width when use left & fixed
+  width: fit-content; 
+
+  // should not add pointer-events: none directly to body tag
+  // that will cause unexpected tap-highlight-color in mobile safari
   &--unclickable {
     * {
       pointer-events: none;
@@ -28,8 +30,8 @@
   }
 
   &--text {
-    padding: 12px;
-    min-width: 220px;
+    min-width: 120px;
+    padding: 8px 12px;
   }
 
   &--default {
