@@ -4,11 +4,11 @@ import enUS from '../../../packages/locale/lang/en-US';
 
 const langMap = {
   'en-US': {
-    title: 'Vant - A Vue.js 2.0 Mobile UI at YouZan',
+    title: 'Vant - Lightweight Mobile UI Components built on Vue',
     messages: enUS
   },
   'zh-CN': {
-    title: 'Vant - 有赞移动端 Vue 组件库',
+    title: 'Vant - 轻量、可靠的移动端 Vue 组件库',
     messages: zhCN
   }
 };

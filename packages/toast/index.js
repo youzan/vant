@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import VueToast from './toast';
-import { isObj } from '../utils';
+import VueToast from './Toast';
+import { isObj, isServer } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -9,6 +9,7 @@ const defaultOptions = {
   value: true,
   duration: 3000,
   position: 'middle',
+  loadingType: 'circular',
   forbidClick: false,
   overlayStyle: {}
 };
@@ -19,6 +20,11 @@ let singleton = true;
 let currentOptions = { ...defaultOptions };
 
 function createInstance() {
+  /* istanbul ignore if */
+  if (isServer) {
+    return {};
+  }
+
   if (!queue.length || !singleton) {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
@@ -32,10 +38,6 @@ function createInstance() {
 // transform toast options to popup props
 function transformer(options) {
   options.overlay = options.mask;
-  if (options.forbidClick && !options.overlay) {
-    options.overlay = true;
-    options.overlayStyle = { background: 'transparent' };
-  }
   return options;
 }
 
@@ -47,6 +49,11 @@ function Toast(options = {}) {
     ...parseOptions(options),
     clear() {
       toast.value = false;
+
+      if (!singleton && !isServer) {
+        document.body.removeChild(toast.$el);
+        toast.$destroy();
+      }
     }
   };
 

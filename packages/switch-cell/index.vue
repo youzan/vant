@@ -1,5 +1,5 @@
 <template>
-  <cell :title="title" :border="border" class="van-switch-cell">
+  <cell center :title="title" :border="border" :class="b()">
     <van-switch v-bind="$props" @input="$emit('input', $event)" />
   </cell>
 </template>
@@ -20,7 +20,11 @@ export default create({
     value: Boolean,
     border: Boolean,
     loading: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    size: {
+      type: String,
+      default: '26px'
+    }
   },
 
   watch: {

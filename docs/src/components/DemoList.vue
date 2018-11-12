@@ -9,11 +9,14 @@
       <span :class="{ active: $vantLang === 'zh-CN' }" @click="switchLang('zh-CN')">中文</span>
     </div>
     <h2 class="zanui-desc">{{ description }}</h2>
-    <div class="mobile-navs">
-      <div class="mobile-nav-item" v-for="(item, index) in navList" v-if="item.showInMobile" :key="index">
-        <mobile-nav v-for="(group, index) in item.groups" :group="group" :base="$vantLang" :nav-key="index" :key="index" />
-      </div>
-    </div>
+    <template v-for="item in navList" v-if="item.showInMobile">
+      <mobile-nav
+        v-for="(group, index) in item.groups"
+        :group="group"
+        :base="$vantLang"
+        :key="index"
+      />
+    </template>
   </div>
 </template>
 
@@ -39,7 +42,7 @@ export default {
     },
 
     description() {
-      return this.$vantLang === 'zh-CN' ? '有赞移动端 Vue 组件库' : 'A Vue.js 2.0 Mobile UI at YouZan';
+      return this.$vantLang === 'zh-CN' ? '轻量、可靠的移动端 Vue 组件库' : 'Lightweight Mobile UI Components built on Vue';
     }
   },
 
@@ -53,8 +56,8 @@ export default {
 };
 </script>
 
-<style lang="postcss">
-@import '../../../packages/vant-css/src/common/var.css';
+<style lang="less">
+@import '../../../packages/style/var';
 
 .side-nav {
   width: 100%;
@@ -100,9 +103,9 @@ export default {
   top: 15px;
   right: 15px;
   font-size: 11px;
-  border: 1px solid $blue;
+  border: 1px solid @blue;
   border-radius: 3px;
-  color: $blue;
+  color: @blue;
   cursor: pointer;
 
   span {
@@ -113,7 +116,7 @@ export default {
 
     &.active {
       color: #fff;
-      background-color: $blue;
+      background-color: @blue;
     }
   }
 }

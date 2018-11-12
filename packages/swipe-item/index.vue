@@ -1,5 +1,5 @@
 <template>
-  <div class="van-swipe-item" :style="style">
+  <div :class="b()" :style="style">
     <slot />
   </div>
 </template>
@@ -18,9 +18,12 @@ export default create({
 
   computed: {
     style() {
+      const { vertical, computedWidth, computedHeight } = this.$parent;
+
       return {
-        width: this.$parent.width + 'px',
-        transform: `translate(${this.offset}px, 0)`
+        width: computedWidth + 'px',
+        height: vertical ? computedHeight + 'px' : '100%',
+        transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
       };
     }
   },

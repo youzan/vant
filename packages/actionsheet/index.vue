@@ -1,32 +1,30 @@
 <template>
   <transition name="van-slide-bottom">
-    <div class="van-actionsheet" :class="{ 'van-actionsheet--withtitle': title }" v-show="value">
-      <div class="van-actionsheet__header van-hairline--top-bottom" v-if="title">
+    <div v-if="shouldRender" v-show="value" :class="b({ 'withtitle': title })">
+      <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
         <div v-text="title" />
-        <icon name="close" @click="handleCancel" />
+        <icon name="close" @click="onCancel" />
       </div>
       <ul v-else class="van-hairline--bottom">
         <li
-          v-for="(item, index) in actions"
-          :key="index"
-          class="van-actionsheet__item van-hairline--top"
-          :class="[item.className, { 'van-actionsheet__item--loading': item.loading }]"
-          @click.stop="onClickItem(item)"
+          v-for="item in actions"
+          :class="[b('item', { disabled: item.disabled || item.loading }), item.className, 'van-hairline--top']"
+          @click.stop="onSelect(item)"
         >
           <template v-if="!item.loading">
-            <span class="van-actionsheet__name">{{ item.name }}</span>
-            <span class="van-actionsheet__subname" v-if="item.subname">{{ item.subname }}</span>
+            <span :class="b('name')">{{ item.name }}</span>
+            <span :class="b('subname')" v-if="item.subname">{{ item.subname }}</span>
           </template>
-          <loading v-else class="van-actionsheet__loading" size="20px" />
+          <loading v-else :class="b('loading')" size="20px" />
         </li>
       </ul>
       <div
         v-if="cancelText"
         v-text="cancelText"
-        class="van-actionsheet__item van-actionsheet__cancel van-hairline--top"
-        @click="handleCancel"
+        :class="[b('cancel'), 'van-hairline--top']"
+        @click="onCancel"
       />
-      <div v-else class="van-actionsheet__content">
+      <div v-else :class="b('content')">
         <slot />
       </div>
     </div>
@@ -61,13 +59,14 @@ export default create({
   },
 
   methods: {
-    onClickItem(item) {
-      if (typeof item.callback === 'function') {
-        item.callback(item);
+    onSelect(item) {
+      if (!item.disabled && !item.loading) {
+        item.callback && item.callback(item);
+        this.$emit('select', item);
       }
     },
 
-    handleCancel() {
+    onCancel() {
       this.$emit('input', false);
       this.$emit('cancel');
     }

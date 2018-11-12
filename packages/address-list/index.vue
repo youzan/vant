@@ -1,21 +1,36 @@
 <template>
-  <div class="van-address-list">
-    <radio-group :value="value" @input="$emit('input', $event)" class="van-address-list__group">
+  <div :class="b()">
+    <slot name="top" />
+    <radio-group :value="value" @input="$emit('input', $event)">
       <cell-group>
-        <cell v-for="(item, index) in list" :key="item.id" is-link>
-          <radio :name="item.id" @click="$emit('select', item, index)">
-            <div class="van-address-list__name">{{ item.name }}，{{ item.tel }}</div>
-            <div class="van-address-list__address">{{ $t('address') }}：{{ item.address }}</div>
-          </radio>
-          <icon slot="right-icon" name="edit" class="van-address-list__edit" @click="$emit('edit', item, index)" />
-        </cell>
+        <address-item
+          v-for="(item, index) in list"
+          :data="item"
+          :key="item.id"
+          :switchable="switchable"
+          @select="$emit('select', item, index)"
+          @edit="$emit('edit', item, index)"
+        />
       </cell-group>
     </radio-group>
-    <cell
-      icon="add"
-      is-link
-      class="van-address-list__add van-hairline--top"
-      :title="addButtonText || $t('add')"
+    <div v-if="disabledText" :class="b('disabled-text')">{{ disabledText }}</div>
+    <cell-group v-if="disabledList.length">
+      <address-item
+        v-for="(item, index) in disabledList"
+        disabled
+        :data="item"
+        :key="item.id"
+        @select="$emit('select-disabled', item, index)"
+        @edit="$emit('edit-disabled', item, index)"
+      />
+    </cell-group>
+    <slot />
+    <van-button
+      square
+      size="large"
+      type="danger"
+      :class="b('add')"
+      :text="addButtonText || $t('add')"
       @click="$emit('add')"
     />
   </div>
@@ -23,21 +38,32 @@
 
 <script>
 import create from '../utils/create';
-import Radio from '../radio';
 import RadioGroup from '../radio-group';
+import VanButton from '../button';
+import AddressItem from './Item';
 
 export default create({
   name: 'address-list',
 
   components: {
-    Radio,
-    RadioGroup
+    RadioGroup,
+    VanButton,
+    AddressItem
   },
 
   props: {
+    disabledText: String,
     addButtonText: String,
     value: [String, Number],
+    switchable: {
+      type: Boolean,
+      default: true
+    },
     list: {
+      type: Array,
+      default: () => []
+    },
+    disabledList: {
       type: Array,
       default: () => []
     }

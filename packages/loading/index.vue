@@ -1,8 +1,8 @@
 <template>
-  <div class="van-loading" :class="['van-loading--' + type, 'van-loading--' + color]" :style="style">
-    <span class="van-loading__spinner" :class="'van-loading__spinner--' + type">
-      <i v-for="item in (type === 'spinner' ? 12 : 0)" />
-      <svg v-if="type === 'circular'" class="van-loading__circular" viewBox="25 25 50 50">
+  <div :class="b([type, colorType])" :style="style">
+    <span :class="b('spinner', type)">
+      <i v-for="(item, index) in (type === 'spinner' ? 12 : 0)" :key="index" />
+      <svg v-if="type === 'circular'" :class="b('circular')" viewBox="25 25 50 50">
         <circle cx="50" cy="50" r="20" fill="none"/>
       </svg>
     </span>
@@ -11,6 +11,8 @@
 
 <script>
 import create from '../utils/create-basic';
+
+const DEFAULT_COLOR = '#c9c9c9';
 
 export default create({
   name: 'loading',
@@ -23,16 +25,22 @@ export default create({
     },
     color: {
       type: String,
-      default: 'black'
+      default: DEFAULT_COLOR
     }
   },
 
   computed: {
+    colorType() {
+      const { color } = this;
+      return color === 'white' || color === 'black' ? color : '';
+    },
+
     style() {
-      return this.size ? {
+      return {
+        color: this.color === 'black' ? DEFAULT_COLOR : this.color,
         width: this.size,
         height: this.size
-      } : {};
+      };
     }
   }
 });

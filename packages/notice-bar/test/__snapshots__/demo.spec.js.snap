@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-notice-bar" style="color:undefined;background:undefined;">
+      <div class="van-notice-bar__left-icon">
+        <img src="//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png">
+      </div>
+      <div class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-notice-bar" style="color:undefined;background:undefined;">
+      <!---->
+      <div class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content van-ellipsis" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+      <!---->
+    </div>
+  </div>
+  <div>
+    <div class="van-notice-bar van-notice-bar--withicon" style="color:undefined;background:undefined;">
+      <!---->
+      <div class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+      <i class="van-icon van-icon-close van-notice-bar__right-icon" style="color:undefined;font-size:undefined;">
+        <!---->
+      </i>
+    </div>
+    <div class="van-notice-bar van-notice-bar--withicon" style="color:undefined;background:undefined;">
+      <!---->
+      <div class="van-notice-bar__wrap">
+        <div class="van-notice-bar__content" style="padding-left:0;animation-delay:1s;animation-duration:0s;">足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。</div>
+      </div>
+      <i class="van-icon van-icon-arrow van-notice-bar__right-icon" style="color:undefined;font-size:undefined;">
+        <!---->
+      </i>
+    </div>
+  </div>
+</div>
+`;

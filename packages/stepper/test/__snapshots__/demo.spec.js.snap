@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-stepper">
+      <button class="van-stepper__minus van-stepper__minus--disabled"></button>
+      <input type="number" value="1" class="van-stepper__input">
+      <button class="van-stepper__plus"></button>
+    </div>
+  </div>
+  <div>
+    <div class="van-stepper">
+      <button class="van-stepper__minus van-stepper__minus--disabled"></button>
+      <input type="number" disabled="disabled" value="1" class="van-stepper__input">
+      <button class="van-stepper__plus van-stepper__plus--disabled"></button>
+    </div>
+  </div>
+  <div>
+    <div class="van-stepper">
+      <button class="van-stepper__minus"></button>
+      <input type="number" value="9" class="van-stepper__input">
+      <button class="van-stepper__plus"></button>
+    </div>
+  </div>
+</div>
+`;

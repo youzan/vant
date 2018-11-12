@@ -1,20 +1,16 @@
 <template>
-  <div
-    class="van-radio"
-    :class="{ 'van-radio--disabled': isDisabled }"
-    @click="$emit('click')"
-  >
-    <span class="van-radio__input">
+  <div :class="b({ disabled: isDisabled })" @click="$emit('click')">
+    <span :class="b('input')">
       <input
         :value="name"
         v-model="currentValue"
         type="radio"
-        class="van-radio__control"
+        :class="b('control')"
         :disabled="isDisabled"
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span class="van-radio__label" @click="onClickLabel">
+    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClickLabel">
       <slot />
     </span>
   </div>
@@ -30,9 +26,11 @@ export default create({
   mixins: [findParent],
 
   props: {
-    value: {},
+    name: null,
+    value: null,
     disabled: Boolean,
-    name: [String, Number]
+    labelDisabled: Boolean,
+    labelPosition: Boolean
   },
 
   computed: {
@@ -59,7 +57,7 @@ export default create({
 
   methods: {
     onClickLabel() {
-      if (!this.isDisabled) {
+      if (!this.isDisabled && !this.labelDisabled) {
         this.currentValue = this.name;
       }
     }

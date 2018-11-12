@@ -1,5 +1,5 @@
 <template>
-  <div class="van-radio-group">
+  <div :class="b()">
     <slot />
   </div>
 </template>
@@ -11,7 +11,7 @@ export default create({
   name: 'radio-group',
 
   props: {
-    value: {},
+    value: null,
     disabled: Boolean
   },
 

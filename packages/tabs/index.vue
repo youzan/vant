@@ -1,32 +1,31 @@
 <template>
-  <div class="van-tabs" :class="`van-tabs--${type}`">
+  <div :class="b([type])">
     <div
       ref="wrap"
-      class="van-tabs__wrap"
-      :class="[`van-tabs__wrap--${position}`, {
-        'van-tabs--scrollable': scrollable,
-        'van-hairline--top-bottom': type === 'line'
-      }]"
+      :style="wrapStyle"
+      :class="[
+        b('wrap', { scrollable }),
+        { 'van-hairline--top-bottom': type === 'line' }
+      ]"
     >
-      <div class="van-tabs__nav" :class="`van-tabs__nav--${type}`" ref="nav">
-        <div v-if="type === 'line'" class="van-tabs__nav-bar" :style="navBarStyle" />
+      <div :class="b('nav', [type])" ref="nav" :style="navStyle">
+        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
         <div
           v-for="(tab, index) in tabs"
-          :key="index"
           ref="tabs"
           class="van-tab"
           :class="{
             'van-tab--active': index === curActive,
             'van-tab--disabled': tab.disabled
           }"
+          :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
-          <van-node v-if="tab.$slots.title" :node="tab.$slots.title" />
-          <span class="van-ellipsis" v-else>{{ tab.title }}</span>
+          <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
         </div>
       </div>
     </div>
-    <div class="van-tabs__content" ref="content">
+    <div :class="b('content')" ref="content">
       <slot />
     </div>
   </div>
@@ -36,18 +35,23 @@
 import create from '../utils/create';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
-import VanNode from '../utils/node';
 import scrollUtils from '../utils/scroll';
+import Touch from '../mixins/touch';
 
 export default create({
   name: 'tabs',
 
-  components: {
-    VanNode
+  mixins: [Touch],
+
+  model: {
+    prop: 'active'
   },
 
   props: {
+    color: String,
     sticky: Boolean,
+    lineWidth: Number,
+    swipeable: Boolean,
     active: {
       type: [Number, String],
       default: 0
@@ -64,15 +68,23 @@ export default create({
       type: Number,
       default: 4
     },
-    swipeable: Boolean
+    offsetTop: {
+      type: Number,
+      default: 0
+    }
   },
 
   data() {
     return {
       tabs: [],
-      position: 'content-top',
-      curActive: 0,
-      navBarStyle: {}
+      position: '',
+      curActive: null,
+      lineStyle: {},
+      events: {
+        resize: false,
+        sticky: false,
+        swipeable: false
+      }
     };
   },
 
@@ -80,90 +92,125 @@ export default create({
     // whether the nav is scrollable
     scrollable() {
       return this.tabs.length > this.swipeThreshold;
+    },
+
+    wrapStyle() {
+      switch (this.position) {
+        case 'top':
+          return {
+            top: this.offsetTop + 'px',
+            position: 'fixed'
+          };
+        case 'bottom':
+          return {
+            top: 'auto',
+            bottom: 0
+          };
+        default:
+          return null;
+      }
+    },
+
+    navStyle() {
+      return {
+        borderColor: this.color
+      };
     }
   },
 
   watch: {
     active(val) {
-      this.correctActive(val);
+      if (val !== this.curActive) {
+        this.correctActive(val);
+      }
+    },
+
+    color() {
+      this.setLine();
     },
 
     tabs(tabs) {
       this.correctActive(this.curActive || this.active);
-      this.setNavBar();
+      this.scrollIntoView();
+      this.setLine();
     },
 
     curActive() {
       this.scrollIntoView();
-      this.setNavBar();
+      this.setLine();
 
       // scroll to correct position
       if (this.position === 'page-top' || this.position === 'content-bottom') {
-        scrollUtils.setScrollTop(this.scrollEl, scrollUtils.getElementTop(this.$el));
+        scrollUtils.setScrollTop(window, scrollUtils.getElementTop(this.$el));
       }
     },
 
-    sticky(isSticky) {
-      this.scrollHandler(isSticky);
+    sticky() {
+      this.handlers(true);
+    },
+
+    swipeable() {
+      this.handlers(true);
     }
   },
 
   mounted() {
     this.correctActive(this.active);
-    this.setNavBar();
+    this.setLine();
 
     this.$nextTick(() => {
-      if (this.sticky) {
-        this.scrollHandler(true);
-      }
-      if (this.swipeable) {
-        this.swipeableHandler(true);
-      }
-      this.scrollIntoView();
+      this.handlers(true);
+      this.scrollIntoView(true);
     });
   },
 
+  activated() {
+    this.$nextTick(() => {
+      this.handlers(true);
+      this.scrollIntoView(true);
+    });
+  },
+
+  deactivated() {
+    this.handlers(false);
+  },
+
   beforeDestroy() {
-    /* istanbul ignore next */
-    if (this.sticky) {
-      this.scrollHandler(false);
-    }
-    /* istanbul ignore next */
-    if (this.swipeable) {
-      this.swipeableHandler(false);
-    }
+    this.handlers(false);
   },
 
   methods: {
     // whether to bind sticky listener
-    scrollHandler(init) {
-      this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
-      (init ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
-      if (init) {
+    handlers(bind) {
+      const { events } = this;
+      const sticky = this.sticky && bind;
+      const swipeable = this.swipeable && bind;
+
+      // listen to window resize event
+      if (events.resize !== bind) {
+        events.resize = bind;
+        (bind ? on : off)(window, 'resize', this.setLine, true);
+      }
+
+      // listen to scroll event
+      if (events.sticky !== sticky) {
+        events.sticky = sticky;
+        this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
+        (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
         this.onScroll();
       }
-    },
 
-    // whether to bind content swipe listener
-    swipeableHandler(init) {
-      const swipeableEl = this.$refs.content;
+      // listen to touch event
+      if (events.swipeable !== swipeable) {
+        events.swipeable = swipeable;
+        const { content } = this.$refs;
+        const action = swipeable ? on : off;
 
-      (init ? on : off)(swipeableEl, 'touchstart', this.onTouchStart, false);
-      (init ? on : off)(swipeableEl, 'touchmove', this.onTouchMove, false);
-      (init ? on : off)(swipeableEl, 'touchend', this.onTouchEnd, false);
-      (init ? on : off)(swipeableEl, 'touchcancel', this.onTouchEnd, false);
-    },
-
-    // record swipe touch start position
-    onTouchStart(event) {
-      this.startX = event.touches[0].clientX;
-      this.startY = event.touches[0].clientY;
-    },
-
-    // watch swipe touch move
-    onTouchMove(event) {
-      this.deltaX = event.touches[0].clientX - this.startX;
-      this.direction = this.getDirection(event.touches[0]);
+        action(content, 'touchstart', this.touchStart);
+        action(content, 'touchmove', this.touchMove);
+        action(content, 'touchend', this.onTouchEnd);
+        action(content, 'touchcancel', this.onTouchEnd);
+      }
     },
 
     // watch swipe touch end
@@ -172,48 +219,50 @@ export default create({
       const minSwipeDistance = 50;
 
       /* istanbul ignore else */
-      if (direction === 'horizontal' && Math.abs(deltaX) >= minSwipeDistance) {
+      if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
         /* istanbul ignore else */
         if (deltaX > 0 && curActive !== 0) {
-          this.curActive = curActive - 1;
+          this.setCurActive(curActive - 1);
         } else if (deltaX < 0 && curActive !== this.tabs.length - 1) {
-          this.curActive = curActive + 1;
+          this.setCurActive(curActive + 1);
         }
       }
-    },
-
-    // get swipe direction
-    getDirection(touch) {
-      const distanceX = Math.abs(touch.clientX - this.startX);
-      const distanceY = Math.abs(touch.clientY - this.startY);
-      return distanceX > distanceY ? 'horizontal' : distanceX < distanceY ? 'vertical' : '';
     },
 
     // adjust tab position
     onScroll() {
-      const scrollTop = scrollUtils.getScrollTop(this.scrollEl);
+      const scrollTop = scrollUtils.getScrollTop(window) + this.offsetTop;
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
       const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
-        this.position = 'content-bottom';
+        this.position = 'bottom';
       } else if (scrollTop > elTopToPageTop) {
-        this.position = 'page-top';
+        this.position = 'top';
       } else {
-        this.position = 'content-top';
+        this.position = '';
       }
+      const scrollParams = {
+        scrollTop,
+        isFixed: this.position === 'top'
+      };
+      this.$emit('scroll', scrollParams);
     },
 
     // update nav bar style
-    setNavBar() {
+    setLine() {
       this.$nextTick(() => {
-        if (!this.$refs.tabs) {
+        if (!this.$refs.tabs || this.type !== 'line') {
           return;
         }
 
         const tab = this.$refs.tabs[this.curActive];
-        this.navBarStyle = {
-          width: `${tab.offsetWidth || 0}px`,
-          transform: `translate(${tab.offsetLeft || 0}px, 0)`,
+        const width = this.lineWidth || (tab.offsetWidth / 2);
+        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+
+        this.lineStyle = {
+          width: `${width}px`,
+          backgroundColor: this.color,
+          transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
       });
@@ -224,7 +273,33 @@ export default create({
       active = +active;
       const exist = this.tabs.some(tab => tab.index === active);
       const defaultActive = (this.tabs[0] || {}).index || 0;
-      this.curActive = exist ? active : defaultActive;
+      this.setCurActive(exist ? active : defaultActive);
+    },
+
+    setCurActive(active) {
+      active = this.findAvailableTab(active, active < this.curActive);
+      if (this.isDef(active) && active !== this.curActive) {
+        this.$emit('input', active);
+
+        if (this.curActive !== null) {
+          this.$emit('change', active, this.tabs[active].title);
+        }
+        this.curActive = active;
+      }
+    },
+
+    findAvailableTab(active, reverse) {
+      const diff = reverse ? -1 : 1;
+      let index = active;
+
+      while (index >= 0 && index < this.tabs.length) {
+        if (!this.tabs[index].disabled) {
+          return index;
+        }
+        index += diff;
+      }
+
+      return active;
     },
 
     // emit event when clicked
@@ -233,13 +308,13 @@ export default create({
       if (disabled) {
         this.$emit('disabled', index, title);
       } else {
+        this.setCurActive(index);
         this.$emit('click', index, title);
-        this.curActive = index;
       }
     },
 
     // scroll active tab into view
-    scrollIntoView() {
+    scrollIntoView(immediate) {
       if (!this.scrollable || !this.$refs.tabs) {
         return;
       }
@@ -249,11 +324,16 @@ export default create({
       const { scrollLeft, offsetWidth: navWidth } = nav;
       const { offsetLeft, offsetWidth: tabWidth } = tab;
 
-      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2);
+      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
     },
 
     // animate the scrollLeft of nav
-    scrollTo(el, from, to) {
+    scrollTo(el, from, to, immediate) {
+      if (immediate) {
+        el.scrollLeft += to - from;
+        return;
+      }
+
       let count = 0;
       const frames = Math.round(this.duration * 1000 / 16);
       const animate = () => {
@@ -264,6 +344,35 @@ export default create({
         }
       };
       animate();
+    },
+
+    // render title slot of child tab
+    renderTitle(el, index) {
+      this.$nextTick(() => {
+        const title = this.$refs.title[index];
+        title.parentNode.replaceChild(el, title);
+      });
+    },
+
+    getTabStyle(item, index) {
+      const style = {};
+      const { color } = this;
+      const active = index === this.curActive;
+      const isCard = this.type === 'card';
+
+      if (color) {
+        if (!item.disabled && isCard !== active) {
+          style.color = color;
+        }
+        if (!item.disabled && isCard && active) {
+          style.backgroundColor = color;
+        }
+        if (isCard) {
+          style.borderColor = color;
+        }
+      }
+
+      return style;
     }
   }
 });

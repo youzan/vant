@@ -1,9 +1,0 @@
-@import './common/var.css';
-
-.van-row {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}

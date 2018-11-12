@@ -77,6 +77,7 @@
           :disable-stepper-input="disableStepperInput"
           :hide-stock="hideStock"
           :custom-stepper-config="customStepperConfig"
+          @change="$emit('stepper-change', $event)"
         />
       </slot>
       <!-- sku-messages -->
@@ -105,6 +106,7 @@
 import Vue from 'vue';
 import Popup from '../popup';
 import Toast from '../toast';
+import ImagePreview from '../image-preview';
 import SkuHeader from './components/SkuHeader';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
@@ -179,7 +181,8 @@ export default create({
     customStepperConfig: {
       type: Object,
       default: () => ({})
-    }
+    },
+    customSkuValidator: Function
   },
 
   data() {
@@ -271,6 +274,25 @@ export default create({
 
     skuTree() {
       return this.sku.tree || [];
+    },
+
+    imageList() {
+      const imageList = [this.goods.picture];
+      if (this.skuTree.length > 0) {
+        const treeItem = this.skuTree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
+
+        if (!treeItem.v) {
+          return;
+        }
+
+        treeItem.v.forEach(vItem => {
+          if (vItem.imgUrl) {
+            imageList.push(vItem.imgUrl);
+          }
+        });
+      }
+
+      return imageList;
     }
   },
 
@@ -281,6 +303,7 @@ export default create({
     skuEventBus.$on('sku:close', this.onClose);
     skuEventBus.$on('sku:select', this.onSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
+    skuEventBus.$on('sku:previewImage', this.onPreviewImage);
     skuEventBus.$on('sku:overLimit', this.onOverLimit);
     skuEventBus.$on('sku:addCart', this.onAddCart);
     skuEventBus.$on('sku:buy', this.onBuy);
@@ -328,14 +351,20 @@ export default create({
 
     validateSku() {
       if (this.selectedNum === 0) {
-        return this.$t('unavailable');
+        return '商品已经无法购买啦';
       }
 
       if (this.isSkuCombSelected) {
         return this.validateSkuMessages();
       }
 
-      return this.$t('spec');
+      // 自定义sku校验
+      if (this.customSkuValidator) {
+        const err = this.customSkuValidator(this);
+        if (err) return err;
+      }
+
+      return '请先选择商品规格';
     },
 
     onClose() {
@@ -360,6 +389,28 @@ export default create({
       this.selectedNum = num;
     },
 
+    onPreviewImage(indexImage) {
+      const index = this.imageList.findIndex(image => {
+        return image === indexImage;
+      });
+
+      const cbParams = {
+        index,
+        imageList: this.imageList,
+        indexImage
+      };
+
+      this.$emit('preview-on', cbParams);
+
+      ImagePreview({
+        images: this.imageList,
+        startPosition: index,
+        onClose: () => {
+          this.$emit('preview-close', cbParams);
+        }
+      });
+    },
+
     onOverLimit(data) {
       const { action, limitType, quota, quotaUsed } = data;
       const { handleOverLimit } = this.customStepperConfig;
@@ -370,14 +421,14 @@ export default create({
       }
 
       if (action === 'minus') {
-        Toast(this.$t('least'));
+        Toast('至少选择一件');
       } else if (action === 'plus') {
         if (limitType === QUOTA_LIMIT) {
-          let msg = this.$t('quota', quota);
-          if (quotaUsed > 0) msg += `，${this.$t('purchase', quotaUsed)}`;
+          let msg = `限购${quota}件`;
+          if (quotaUsed > 0) msg += `，${`你已购买${quotaUsed}件`}`;
           Toast(msg);
         } else {
-          Toast(this.$t('inventory'));
+          Toast('库存不足');
         }
       }
     },

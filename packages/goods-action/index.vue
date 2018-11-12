@@ -1,5 +1,5 @@
 <template>
-  <div class="van-goods-action">
+  <div :class="b()">
     <slot />
   </div>
 </template>

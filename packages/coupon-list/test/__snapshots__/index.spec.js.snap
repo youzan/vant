@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`coupon cell 1`] = `
+<div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
+  <div class="van-cell van-cell--clickable">
+    <!---->
+    <div class="van-cell__title"><span>优惠券</span>
+      <!---->
+    </div>
+    <div class="van-cell__value"><span>使用优惠</span></div>
+    <i class="van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+    </i>
+  </div>
+</div>
+`;
+
+exports[`coupon cell 2`] = `
+<div class="van-cell-group van-hairline--top-bottom van-coupon-cell">
+  <div class="van-cell van-cell--clickable">
+    <!---->
+    <div class="van-cell__title"><span>优惠券</span>
+      <!---->
+    </div>
+    <div class="van-cell__value"><span>-￥1.00</span></div>
+    <i class="van-icon van-icon-arrow van-cell__right-icon">
+      <!---->
+    </i>
+  </div>
+</div>
+`;

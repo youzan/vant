@@ -3,22 +3,24 @@
     :is="tag"
     :type="nativeType"
     :disabled="disabled"
-    class="van-button"
-    :class="[
-      'van-button--' + type,
-      'van-button--' + size,
+    :class="b([
+      type,
+      size,
       {
-        'van-button--disabled': disabled,
-        'van-button--loading': loading,
-        'van-button--block': block,
-        'van-button--bottom-action': bottomAction,
-        'van-button--unclickable': disabled || loading
+        block,
+        plain,
+        round,
+        square,
+        loading,
+        disabled,
+        unclickable: disabled || loading,
+        'bottom-action': bottomAction
       }
-    ]"
+    ])"
     @click="onClick"
   >
-    <loading v-if="loading" size="20px" :color="type === 'default' ? 'black' : 'white'" />
-    <span class="van-button__text">
+    <loading v-if="loading" size="20px" :color="type === 'default' ? void 0 : ''" />
+    <span v-else :class="b('text')">
       <slot>{{ text }}</slot>
     </span>
   </component>
@@ -33,6 +35,9 @@ export default create({
   props: {
     text: String,
     block: Boolean,
+    plain: Boolean,
+    round: Boolean,
+    square: Boolean,
     loading: Boolean,
     disabled: Boolean,
     nativeType: String,

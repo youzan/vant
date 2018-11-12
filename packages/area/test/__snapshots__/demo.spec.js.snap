@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-picker van-area">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker van-area">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <!---->
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-picker van-area">
+      <div class="van-hairline--top-bottom van-picker__toolbar">
+        <div class="van-picker__cancel">取消</div>
+        <div class="van-ellipsis van-picker__title">标题</div>
+        <div class="van-picker__confirm">确认</div>
+      </div>
+      <!---->
+      <div class="van-picker__columns" style="height:220px;">
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-picker-column" style="height:220px;">
+          <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;"></ul>
+        </div>
+        <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

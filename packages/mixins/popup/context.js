@@ -1,11 +1,7 @@
 export default {
-  id: 1,
   zIndex: 2000,
   stack: [],
-
-  plusKey(key) {
-    return this[key]++;
-  },
+  lockCount: 0,
 
   get top() {
     return this.stack[this.stack.length - 1];

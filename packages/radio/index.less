@@ -1,0 +1,59 @@
+@import '../style/var';
+
+.van-radio {
+  overflow: hidden;
+  user-select: none;
+
+  &__input,
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__input {
+    height: 1em;
+    position: relative;
+    font-size: @radio-size;
+  }
+
+  &__control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__label {
+    line-height: @radio-size;
+    margin-left: 10px;
+
+    &--left {
+      float: left;
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .van-icon {
+    width: 1em;
+    pointer-events: none;
+  }
+
+  .van-icon-checked {
+    color: @blue;
+  }
+
+  .van-icon-check {
+    color: @gray-dark;
+  }
+
+  &--disabled {
+    .van-icon {
+      color: @gray-light;
+      border-radius: 100%;
+      background-color: @background-color;
+    }
+  }
+}

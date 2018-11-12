@@ -1,0 +1,88 @@
+@import '../style/var';
+
+.van-address-list {
+  height: 100%;
+  padding-bottom: 100px;
+  box-sizing: border-box;
+
+  &__add {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+  }
+
+  &__disabled-text {
+    color: @gray-dark;
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 30px;
+  }
+}
+
+.van-address-item {
+  padding: 15px;
+
+  .van-cell__value {
+    color: @text-color;
+    padding-right: 34px;
+    position: relative;
+  }
+
+  .van-radio__label {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 27px;
+    box-sizing: border-box;
+  }
+
+  .van-radio__input {
+    top: 50%;
+    left: 0;
+    font-size: 16px;
+    position: absolute;
+    transform: translate(0, -50%);
+  }
+
+  .van-icon-checked {
+    color: @red;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__address {
+    font-size: 12px;
+    line-height: 16px;
+    color: @gray-darker;
+  }
+
+  &--unswitchable {
+    .van-radio__input {
+      display: none;
+    }
+
+    .van-radio__label {
+      padding-left: 0;
+    }
+  }
+
+  &--disabled {
+    .van-address-item__name,
+    .van-address-item__address {
+      color: @gray-dark;
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    font-size: 16px;
+    transform: translate(0, -50%);
+  }
+}

@@ -1,11 +1,11 @@
 <template>
-  <div class="van-contact-edit">
+  <div :class="b()">
     <cell-group>
       <field
         v-model="data.name"
         maxlength="30"
-        :label="$t('contact')"
-        :placeholder="$t('name')"
+        :label="$t('name')"
+        :placeholder="$t('nameEmpty')"
         :error="errorInfo.name"
         @focus="onFocus('name')"
       />
@@ -13,13 +13,13 @@
         v-model="data.tel"
         type="tel"
         :label="$t('tel')"
-        :placeholder="$t('telPlaceholder')"
+        :placeholder="$t('telEmpty')"
         :error="errorInfo.tel"
         @focus="onFocus('tel')"
       />
     </cell-group>
-    <div class="van-contact-edit__buttons">
-      <van-button block :loading="isSaving" @click="onSave" type="primary">{{ $t('save') }}</van-button>
+    <div :class="b('buttons')">
+      <van-button block :loading="isSaving" @click="onSave" type="danger">{{ $t('save') }}</van-button>
       <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
     </div>
   </div>
@@ -32,6 +32,12 @@ import Dialog from '../dialog';
 import Toast from '../toast';
 import validateMobile from '../utils/validate/mobile';
 import create from '../utils/create';
+
+const defaultContact = {
+  id: '',
+  tel: '',
+  name: ''
+};
 
 export default create({
   name: 'contact-edit',
@@ -47,11 +53,7 @@ export default create({
     isDeleting: Boolean,
     contactInfo: {
       type: Object,
-      default: () => ({
-        id: '',
-        tel: '',
-        name: ''
-      })
+      default: () => ({ ...defaultContact })
     },
     telValidator: {
       type: Function,
@@ -61,7 +63,10 @@ export default create({
 
   data() {
     return {
-      data: this.contactInfo,
+      data: {
+        ...this.defaultContact,
+        ...this.contactInfo
+      },
       errorInfo: {
         name: false,
         tel: false
@@ -81,10 +86,10 @@ export default create({
     },
 
     getErrorMessageByKey(key) {
-      const value = this.data[key];
+      const value = this.data[key].trim();
       switch (key) {
         case 'name':
-          return value ? value.length <= 15 ? '' : this.$t('nameOverlimit') : this.$t('nameEmpty');
+          return value ? '' : this.$t('nameEmpty');
         case 'tel':
           return this.telValidator(value) ? '' : this.$t('telInvalid');
       }
@@ -106,13 +111,11 @@ export default create({
     },
 
     onDelete() {
-      if (!this.isDeleting) {
-        Dialog.confirm({
-          message: this.$t('confirmDelete')
-        }).then(() => {
-          this.$emit('delete', this.data);
-        });
-      }
+      Dialog.confirm({
+        message: this.$t('confirmDelete')
+      }).then(() => {
+        this.$emit('delete', this.data);
+      });
     }
   }
 });

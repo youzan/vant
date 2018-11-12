@@ -1,11 +1,14 @@
 <template>
   <span
-    class="van-tag van-hairline--surround"
-    :class="{
-      [`van-tag--${type}`]: type,
-      'van-tag--plain': plain,
-      'van-tag--mark': mark
-    }"
+    :class="[b({
+      mark,
+      plain,
+      round,
+      [size]: size
+    }), {
+      'van-hairline--surround': plain
+    }]"
+    :style="style"
   >
     <slot />
   </span>
@@ -13,13 +16,33 @@
 
 <script>
 import create from '../utils/create';
+import { RED, BLUE, GREEN } from '../utils/color';
+
+const DEFAULT_COLOR = '#999';
+const COLOR_MAP = {
+  danger: RED,
+  primary: BLUE,
+  success: GREEN
+};
 
 export default create({
   name: 'tag',
+
   props: {
+    size: String,
     type: String,
     mark: Boolean,
-    plain: Boolean
+    color: String,
+    plain: Boolean,
+    round: Boolean
+  },
+
+  computed: {
+    style() {
+      const color = this.color || COLOR_MAP[this.type] || DEFAULT_COLOR;
+      const key = this.plain ? 'color' : 'backgroundColor';
+      return { [key]: color };
+    }
   }
 });
 </script>

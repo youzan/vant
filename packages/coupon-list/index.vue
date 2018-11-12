@@ -1,47 +1,62 @@
 <template>
-  <div class="van-coupon-list">
-    <cell-group class="van-coupon-list__top" v-if="showExchangeBar">
-      <field
-        class="van-coupon-list__filed van-hairline--surround"
-        v-model="currentCode"
-        :placeholder="inputPlaceholder || $t('placeholder')"
-        :maxlength="20"
-      />
+  <div :class="b()">
+    <field
+      v-if="showExchangeBar"
+      v-model="currentCode"
+      clearable
+      :border="false"
+      :class="b('field')"
+      :placeholder="inputPlaceholder || $t('placeholder')"
+      :maxlength="20"
+    >
       <van-button
+        slot="button"
         size="small"
         type="danger"
-        class="van-coupon-list__exchange"
+        :class="b('exchange')"
         :text="exchangeButtonText || $t('exchange')"
         :loading="exchangeButtonLoading"
         :disabled="buttonDisabled"
         @click="onClickExchangeButton"
       />
-    </cell-group>
-    <div class="van-coupon-list__list" :class="{ 'van-coupon-list--with-exchange': showExchangeBar }" ref="list">
-      <coupon-item
-        ref="card"
-        v-for="(item, index) in coupons"
-        :key="item.id || item.name"
-        :data="item"
-        :chosen="index === chosenCoupon"
-        @click.native="$emit('change', index)"
-      />
-      <h3 v-if="disabledCoupons.length">{{ disabledListTitle || $t('disabled') }}</h3>
-      <coupon-item
-        disabled
-        v-for="item in disabledCoupons"
-        :key="item.id || item.name"
-        :data="item"
-      />
-      <div class="van-coupon-list__empty" v-if="!coupons.length && !disabledCoupons.length">
-        <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
-        <p>{{ $t('empty') }}</p>
-      </div>
-    </div>
-    <div
+    </field>
+    <tabs v-model="tab" :class="b('tab')" :line-width="120">
+      <tab :title="title">
+        <div :class="b('list')" :style="listStyle">
+          <coupon-item
+            ref="card"
+            v-for="(item, index) in coupons"
+            :key="item.id || item.name"
+            :data="item"
+            :chosen="index === chosenCoupon"
+            @click.native="$emit('change', index)"
+          />
+          <div v-if="!coupons.length" :class="b('empty')">
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <p>{{ $t('empty') }}</p>
+          </div>
+        </div>
+      </tab>
+      <tab :title="disabledTitle">
+        <div :class="b('list')" :style="listStyle">
+          <coupon-item
+            disabled
+            v-for="item in disabledCoupons"
+            :key="item.id || item.name"
+            :data="item"
+          />
+          <div v-if="!disabledCoupons.length" :class="b('empty')">
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <p>{{ $t('empty') }}</p>
+          </div>
+        </div>
+      </tab>
+    </tabs>
+    <van-button
       v-show="showCloseButton"
-      v-text="closeButtonText || $t('close')"
-      class="van-coupon-list__close van-hairline--top"
+      size="large"
+      :class="b('close')"
+      :text="closeButtonText || $t('close')"
       @click="$emit('change', -1)"
     />
   </div>
@@ -52,13 +67,17 @@ import create from '../utils/create';
 import CouponItem from './Item';
 import Field from '../field';
 import VanButton from '../button';
+import Tab from '../tab';
+import Tabs from '../tabs';
 
 export default create({
   name: 'coupon-list',
 
   components: {
-    VanButton,
+    Tab,
+    Tabs,
     Field,
+    VanButton,
     CouponItem
   },
 
@@ -70,7 +89,6 @@ export default create({
     code: String,
     closeButtonText: String,
     inputPlaceholder: String,
-    disabledListTitle: String,
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
@@ -106,6 +124,8 @@ export default create({
 
   data() {
     return {
+      tab: 0,
+      winHeight: window.innerHeight,
       currentCode: this.code || ''
     };
   },
@@ -114,9 +134,23 @@ export default create({
     buttonDisabled() {
       return (
         !this.exchangeButtonLoading &&
-        (this.exchangeButtonDisabled ||
+        (this.exchangeButtonDisabled || !this.currentCode ||
           this.currentCode.length < this.exchangeMinLength)
       );
+    },
+
+    title() {
+      return `${this.$t('enable')} (${this.coupons.length})`;
+    },
+
+    disabledTitle() {
+      return `${this.$t('disabled')} (${this.disabledCoupons.length})`;
+    },
+
+    listStyle() {
+      return {
+        height: this.winHeight - (this.showExchangeBar ? 140 : 94) + 'px'
+      };
     }
   },
 
@@ -157,6 +191,7 @@ export default create({
       this.$nextTick(() => {
         const { card, list } = this.$refs;
 
+        /* istanbul ignore next */
         if (list && card && card[index]) {
           list.scrollTop = card[index].$el.offsetTop - 100;
         }

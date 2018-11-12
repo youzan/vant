@@ -1,18 +1,25 @@
 <template>
-  <div class="van-submit-bar">
-    <div class="van-submit-bar__tip" v-show="tip || $slots.tip">
+  <div :class="b()">
+    <slot name="top" />
+    <div :class="b('tip')" v-if="tip || $slots.tip">
       {{ tip }}<slot name="tip" />
     </div>
-    <div class="van-submit-bar__bar">
+    <div :class="b('bar')">
       <slot />
-      <div class="van-submit-bar__price">
+      <div :class="b('text')">
         <template v-if="hasPrice">
-          <span class="van-submit-bar__price-text">{{ label || $t('label') }}</span>
-          <span class="van-submit-bar__price-interger">¥{{ priceInterger }}.</span>
-          <span class="van-submit-bar__price-decimal">{{ priceDecimal }}</span>
+          <span>{{ label || $t('label') }}</span>
+          <span :class="b('price')">{{ currency }} {{ price | format }}</span>
         </template>
       </div>
-      <van-button :type="buttonType" :disabled="disabled" :loading="loading" @click="onSubmit">
+      <van-button
+        square
+        size="large"
+        :type="buttonType"
+        :disabled="disabled"
+        :loading="loading"
+        @click="$emit('submit')"
+      >
         {{ loading ? '' : buttonText }}
       </van-button>
     </div>
@@ -38,6 +45,10 @@ export default create({
     loading: Boolean,
     disabled: Boolean,
     buttonText: String,
+    currency: {
+      type: String,
+      default: '¥'
+    },
     buttonType: {
       type: String,
       default: 'danger'
@@ -47,21 +58,12 @@ export default create({
   computed: {
     hasPrice() {
       return typeof this.price === 'number';
-    },
-    priceInterger() {
-      return Math.floor(this.price / 100);
-    },
-    priceDecimal() {
-      const decimal = this.price % 100;
-      return (decimal < 10 ? '0' : '') + decimal;
     }
   },
 
-  methods: {
-    onSubmit() {
-      if (!this.disabled && !this.loading) {
-        this.$emit('submit');
-      }
+  filters: {
+    format(price) {
+      return (price / 100).toFixed(2);
     }
   }
 });
