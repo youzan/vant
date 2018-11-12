@@ -68,6 +68,7 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 |------|------|------|
 | cancel | 取消搜索 | - |
 | search | 确定搜索 | - |
+| clear | 点击清除按钮后触发 | - |
 
 ### Slot
 
