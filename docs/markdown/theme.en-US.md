@@ -47,7 +47,7 @@ module.exports = {
       {
         libraryName: 'vant',
         libraryDirectory: 'es',
-        // specify less file path
+        // specify less file path or set true
         style: name => `${name}/style/less`
       },
       'vant'

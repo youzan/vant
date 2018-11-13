@@ -52,8 +52,8 @@ module.exports = {
       {
         libraryName: 'vant',
         libraryDirectory: 'es',
-        // 指定样式路径
-        style: name => `${name}/style/less`
+        // 指定样式路径 或者 设为 true
+        style: name => `${name}/style`
       },
       'vant'
     ]

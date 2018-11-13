@@ -11,9 +11,9 @@ const dir = path.join(__dirname, '../es');
 
 components.forEach(component => {
   // css entry
-  destEntryFile(component, 'index.js', '.css');
+  destEntryFile(component, 'index.js', '.less');
   // less entry
-  destEntryFile(component, 'less.js', '.less');
+  destEntryFile(component, 'css.js', '.css');
 });
 
 function destEntryFile(component, filename, ext = '') {
