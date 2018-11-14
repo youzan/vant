@@ -11,7 +11,7 @@ Vue.use(Cell).use(CellGroup);
 
 #### 基础用法
 
-将`van-cell-group`组件看成一个容器即可
+`Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框。
 
 ```html
 <van-cell-group>
@@ -20,52 +20,65 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### 只设置value
-只设置`value`时会向左对齐
+#### 单元格大小
+
+通过`size`属性可以控制单元格的大小
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" />
-</van-cell-group>
+<van-cell title="单元格" value="内容" size="large" />
+<van-cell title="单元格" value="内容" size="large" label="描述信息" />
 ```
 
 #### 展示图标
+
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" icon="location" />
-</van-cell-group>
+<van-cell title="单元格" icon="location" />
 ```
 
+#### 只设置 value
+
+只设置`value`时会向左对齐
+
+```html
+<van-cell value="内容" />
+```
 
 #### 展示箭头
+
 传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
 
 ```html
-<van-cell-group>
-  <van-cell title="单元格" is-link />
-  <van-cell title="单元格" is-link value="内容" />
-  <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
-</van-cell-group>
+<van-cell title="单元格" is-link />
+<van-cell title="单元格" is-link value="内容" />
+<van-cell title="单元格" is-link arrow-direction="down" value="内容" />
+```
+
+#### 页面跳转
+
+可以通过`url`属性进行页面跳转，或通过`to`属性进行 vue-router 跳转
+
+```html
+<van-cell title="单元格" is-link url="//youzan.github.io/vant/mobile.html" />
+<van-cell title="单元格" is-link to="index" />
 ```
 
 #### 高级用法
+
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell-group>
-  <van-cell value="内容" icon="shop" is-link>
-    <template slot="title">
-      <span class="van-cell-text">单元格</span>
-      <van-tag type="danger">标签</van-tag>
-    </template>
-  </van-cell>
-  <van-cell title="单元格" icon="location" is-link />
-  <van-cell title="单元格">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
-  </van-cell>
-</van-cell-group>
+<van-cell value="内容" icon="shop" is-link>
+  <template slot="title">
+    <span class="custom-text">单元格</span>
+    <van-tag type="danger">标签</van-tag>
+  </template>
+</van-cell>
+<van-cell title="单元格" icon="location" is-link />
+<van-cell title="单元格">
+  <van-icon slot="right-icon" name="search" class="custom-icon" />
+</van-cell>
 ```
 
 ### CellGroup API
@@ -82,10 +95,11 @@ Vue.use(Cell).use(CellGroup);
 | title | 左侧标题 | `String | Number` | - | - |
 | value | 右侧内容 | `String | Number` | - | - |
 | label | 标题下方的描述信息 | `String` | - | - |
+| size | 单元格大小，可选值为 `large` | `String` | - | 1.4.4 |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | border | 是否显示内边框 | `Boolean` | `true` | - |
-| replace | 跳转时是否替换当前 history | `String` | `false` | - |
+| replace | 跳转时是否替换当前页面历史 | `String` | `false` | - |
 | clickable | 是否开启点击反馈 | `Boolean` | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
 | required | 是否显示表单必填星号 | `Boolean` | `false` | - |
@@ -96,14 +110,13 @@ Vue.use(Cell).use(CellGroup);
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
-| click | 点击 cell 时触发 | - |
+| click | 点击单元格时触发 | - |
 
 ### Cell Slot
 
 | 名称 | 说明 |
 |------|------|
-| - | 自定义显示内容 |
+| - | 自定义`value`显示内容 |
+| title | 自定义`title`显示内容 |
 | icon | 自定义`icon` |
-| title | 自定义`title` |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
-

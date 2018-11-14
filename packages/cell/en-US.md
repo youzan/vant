@@ -18,11 +18,12 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Value only
+#### Size
 
 ```html
 <van-cell-group>
-  <van-cell value="Content" />
+  <van-cell title="Cell title" value="Content" size="large" />
+  <van-cell title="Cell title" value="Content" size="large" label="Description" />
 </van-cell-group>
 ```
 
@@ -31,6 +32,14 @@ Vue.use(Cell).use(CellGroup);
 ```html
 <van-cell-group>
   <van-cell title="Cell title" icon="location" />
+</van-cell-group>
+```
+
+#### Value only
+
+```html
+<van-cell-group>
+  <van-cell value="Content" />
 </van-cell-group>
 ```
 
@@ -44,19 +53,28 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
+#### Router
+
+```html
+<van-cell-group>
+  <van-cell title="Cell title" is-link url="//youzan.github.io/vant/mobile.html" />
+  <van-cell title="Cell title" is-link to="index" />
+</van-cell-group>
+```
+
 #### Advanced Usage
 
 ```html
 <van-cell-group>
   <van-cell value="Content" icon="shop" is-link>
     <template slot="title">
-      <span class="van-cell-text">Cell title</span>
+      <span class="custom-text">Cell title</span>
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
   <van-cell title="Cell title" icon="location" is-link />
   <van-cell title="Cell title">
-    <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
+    <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>
 </van-cell-group>
 ```
@@ -75,6 +93,7 @@ Vue.use(Cell).use(CellGroup);
 | title | Title | `String | Number` | - |
 | value | Right text | `String | Number` | - |
 | label | Description below the title | `String` | - |
+| size | Size，can be set to `large` | `String` | - |
 | border | Whether to show inner border | `Boolean` | `true` |
 | center | Whether to center content vertically | `Boolean` | `true` |
 | url | Link URL | `String` | - |
