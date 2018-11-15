@@ -1,8 +1,19 @@
 <template>
-  <div :class="b()" :style="style">
+  <div
+    :class="b()"
+    :style="style"
+  >
     <svg viewBox="0 0 1060 1060">
-      <path :class="b('hover')" :style="hoverStyle" :d="path" />
-      <path :class="b('layer')" :style="layerStyle" :d="path" />
+      <path
+        :class="b('hover')"
+        :style="hoverStyle"
+        :d="path"
+      />
+      <path
+        :class="b('layer')"
+        :style="layerStyle"
+        :d="path"
+      />
     </svg>
     <slot>
       <div :class="b('text')">{{ text }}</div>

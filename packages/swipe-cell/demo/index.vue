@@ -3,20 +3,33 @@
     <demo-section>
       <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
-        <van-swipe-cell :right-width="65" :left-width="65">
+        <van-swipe-cell
+          :right-width="65"
+          :left-width="65"
+        >
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')" />
+            <van-cell
+              :title="$t('title')"
+              :value="$t('content')"
+            />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-swipe-cell>
       </demo-block>
 
       <demo-block :title="$t('title2')">
-        <van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
+        <van-swipe-cell
+          :right-width="65"
+          :left-width="65"
+          :on-close="onClose"
+        >
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')" />
+            <van-cell
+              :title="$t('title')"
+              :value="$t('content')"
+            />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-swipe-cell>

@@ -5,11 +5,17 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-switch v-model="checked" disabled />
+      <van-switch
+        v-model="checked"
+        disabled
+      />
     </demo-block>
 
     <demo-block :title="$t('loading')">
-      <van-switch v-model="checked" loading />
+      <van-switch
+        v-model="checked"
+        loading
+      />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">

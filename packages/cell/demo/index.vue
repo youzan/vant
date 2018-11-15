@@ -2,18 +2,38 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-cell :title="$t('cell')" :value="$t('content')" />
-        <van-cell :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+        />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+          :label="$t('desc')"
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('largeSize')">
-      <van-cell :title="$t('cell')" :value="$t('content')" size="large" />
-      <van-cell :title="$t('cell')" :value="$t('content')" size="large" :label="$t('desc')" />
+      <van-cell
+        :title="$t('cell')"
+        :value="$t('content')"
+        size="large"
+      />
+      <van-cell
+        :title="$t('cell')"
+        :value="$t('content')"
+        size="large"
+        :label="$t('desc')"
+      />
     </demo-block>
 
     <demo-block :title="$t('showIcon')">
-      <van-cell :title="$t('cell')" :value="$t('content')" icon="location" />
+      <van-cell
+        :title="$t('cell')"
+        :value="$t('content')"
+        icon="location"
+      />
     </demo-block>
 
     <demo-block :title="$t('valueOnly')">
@@ -21,26 +41,58 @@
     </demo-block>
 
     <demo-block :title="$t('showArrow')">
-      <van-cell :title="$t('cell')" is-link />
-      <van-cell :title="$t('cell')" is-link :value="$t('content')" />
-      <van-cell :title="$t('cell')" is-link arrow-direction="down" :value="$t('content')" />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+      />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        :value="$t('content')"
+      />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        arrow-direction="down"
+        :value="$t('content')"
+      />
     </demo-block>
 
     <demo-block :title="$t('router')">
-      <van-cell :title="$t('cell')" is-link url="//youzan.github.io/vant/mobile.html" />
-      <van-cell :title="$t('cell')" is-link to="index" />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        url="//youzan.github.io/vant/mobile.html"
+      />
+      <van-cell
+        :title="$t('cell')"
+        is-link
+        to="index"
+      />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-cell :value="$t('content')" icon="shop" is-link>
+      <van-cell
+        :value="$t('content')"
+        icon="shop"
+        is-link
+      >
         <template slot="title">
           <span class="custom-text">{{ $t('cell') }}</span>
           <van-tag type="danger">{{ $t('tag') }}</van-tag>
         </template>
       </van-cell>
-      <van-cell :title="$t('cell')" icon="location" is-link />
+      <van-cell
+        :title="$t('cell')"
+        icon="location"
+        is-link
+      />
       <van-cell :title="$t('cell')">
-        <van-icon slot="right-icon" name="search" class="custom-icon" />
+        <van-icon
+          slot="right-icon"
+          name="search"
+          class="custom-icon"
+        />
       </van-cell>
     </demo-block>
   </demo-section>

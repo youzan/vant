@@ -13,8 +13,14 @@
       'min-height': type === 'textarea' && !autosize
     })"
   >
-    <slot name="left-icon" slot="icon" />
-    <slot name="label" slot="title" />
+    <slot
+      name="left-icon"
+      slot="icon"
+    />
+    <slot
+      name="label"
+      slot="title"
+    />
     <div :class="b('body')">
       <textarea
         v-if="type === 'textarea'"
@@ -41,12 +47,19 @@
         :class="b('clear')"
         @touchstart.prevent="onClear"
       />
-      <div v-if="$slots.icon || icon" :class="b('icon')" @click="onClickIcon">
+      <div
+        v-if="$slots.icon || icon"
+        :class="b('icon')"
+        @click="onClickIcon"
+      >
         <slot name="icon">
           <icon :name="icon" />
         </slot>
       </div>
-      <div v-if="$slots.button" :class="b('button')">
+      <div
+        v-if="$slots.button"
+        :class="b('button')"
+      >
         <slot name="button" />
       </div>
     </div>

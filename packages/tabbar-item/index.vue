@@ -1,8 +1,17 @@
 <template>
-  <div :class="b({ active })" @click="onClick">
+  <div
+    :class="b({ active })"
+    @click="onClick"
+  >
     <div :class="b('icon', { dot })">
-      <slot name="icon" :active="active">
-        <icon v-if="icon" :name="icon" />
+      <slot
+        name="icon"
+        :active="active"
+      >
+        <icon
+          v-if="icon"
+          :name="icon"
+        />
       </slot>
       <van-info :info="info" />
     </div>

@@ -1,7 +1,10 @@
 <template>
   <div :class="b()">
     <slot />
-    <div v-show="loading" :class="b('loading')">
+    <div
+      v-show="loading"
+      :class="b('loading')"
+    >
       <slot name="loading">
         <loading />
         <span :class="b('loading-text')">{{ loadingText || $t('loadingTip') }}</span>

@@ -80,7 +80,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "dependency-tree": "^6.2.1",
-    "eslint": "^5.8.0",
+    "eslint": "^5.9.0",
     "eslint-plugin-vue-libs": "^3.0.0",
     "fast-glob": "^2.2.3",
     "fast-vue-md-loader": "^1.0.3",

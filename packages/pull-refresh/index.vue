@@ -9,14 +9,26 @@
       @touchcancel="onTouchEnd"
     >
       <div :class="b('head')">
-        <slot v-if="status === 'normal'" name="normal" />
-        <slot v-if="status === 'pulling'" name="pulling">
+        <slot
+          v-if="status === 'normal'"
+          name="normal"
+        />
+        <slot
+          v-if="status === 'pulling'"
+          name="pulling"
+        >
           <span :class="b('text')">{{ pullingText || $t('pulling') }}</span>
         </slot>
-        <slot v-if="status === 'loosing'" name="loosing">
+        <slot
+          v-if="status === 'loosing'"
+          name="loosing"
+        >
           <span :class="b('text')">{{ loosingText || $t('loosing') }}</span>
         </slot>
-        <slot v-if="status === 'loading'" name="loading">
+        <slot
+          v-if="status === 'loading'"
+          name="loading"
+        >
           <div :class="b('loading')">
             <loading />
             <span>{{ loadingText || $t('loadingTip') }}</span>

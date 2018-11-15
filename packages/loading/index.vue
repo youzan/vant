@@ -1,9 +1,24 @@
 <template>
-  <div :class="b([type, colorType])" :style="style">
+  <div
+    :class="b([type, colorType])"
+    :style="style"
+  >
     <span :class="b('spinner', type)">
-      <i v-for="(item, index) in (type === 'spinner' ? 12 : 0)" :key="index" />
-      <svg v-if="type === 'circular'" :class="b('circular')" viewBox="25 25 50 50">
-        <circle cx="50" cy="50" r="20" fill="none"/>
+      <i
+        v-for="(item, index) in (type === 'spinner' ? 12 : 0)"
+        :key="index"
+      />
+      <svg
+        v-if="type === 'circular'"
+        :class="b('circular')"
+        viewBox="25 25 50 50"
+      >
+        <circle
+          cx="50"
+          cy="50"
+          r="20"
+          fill="none"
+        />
       </svg>
     </span>
   </div>

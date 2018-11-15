@@ -9,14 +9,28 @@
     </demo-block>
 
     <demo-block :title="$t('animation')">
-      <van-switch-cell v-model="show" :title="$t('toggle')" :border="false" />
+      <van-switch-cell
+        v-model="show"
+        :title="$t('toggle')"
+        :border="false"
+      />
       <van-row>
         <transition name="van-fade">
-          <van-col span="8" v-show="show">Fade</van-col>
+          <van-col
+            v-show="show"
+            span="8"
+          >
+            Fade
+          </van-col>
         </transition>
 
         <transition name="van-slide-bottom">
-          <van-col span="8" v-show="show">Slide Bottom</van-col>
+          <van-col
+            v-show="show"
+            span="8"
+          >
+            Slide Bottom
+          </van-col>
         </transition>
       </van-row>
     </demo-block>

@@ -19,7 +19,13 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button type="primary" @click="showBase = true" block>{{ $t('basicUsage') }}</van-button>
+        <van-button
+          block
+          type="primary"
+          @click="showBase = true"
+        >
+          {{ $t('basicUsage') }}
+        </van-button>
       </div>
     </demo-block>
 
@@ -38,7 +44,13 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         />
-        <van-button type="primary" @click="showStepper = true" block>{{ $t('title2') }}</van-button>
+        <van-button
+          block
+          type="primary"
+          @click="showStepper = true"
+        >
+          {{ $t('title2') }}
+        </van-button>
       </div>
     </demo-block>
 
@@ -60,19 +72,42 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         >
-          <template slot="sku-header-price" slot-scope="props">
+          <template
+            slot="sku-header-price"
+            slot-scope="props"
+          >
             <div class="van-sku__goods-price">
               <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
             </div>
           </template>
-          <template slot="sku-actions" slot-scope="props">
+          <template
+            slot="sku-actions"
+            slot-scope="props"
+          >
             <div class="van-sku-actions">
-              <van-button bottom-action @click="onPointClicked">{{ $t('button1') }}</van-button>
-              <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">{{ $t('button2') }}</van-button>
+              <van-button
+                bottom-action
+                @click="onPointClicked"
+              >
+                {{ $t('button1') }}
+              </van-button>
+              <van-button
+                type="primary"
+                bottom-action
+                @click="props.skuEventBus.$emit('sku:buy')"
+              >
+                {{ $t('button2') }}
+              </van-button>
             </div>
           </template>
         </van-sku>
-        <van-button type="primary" @click="showCustom = true" block>{{ $t('advancedUsage') }}</van-button>
+        <van-button
+          block
+          type="primary"
+          @click="showCustom = true"
+        >
+          {{ $t('advancedUsage') }}
+        </van-button>
       </div>
     </demo-block>
   </demo-section>

@@ -1,11 +1,15 @@
 <template>
-  <div :class="b()" :style="{ height: height + 'px' }">
+  <div
+    :class="b()"
+    :style="{ height: height + 'px' }"
+  >
     <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
         class="van-ellipsis"
         :class="b('nitem', { active: mainActiveIndex === index })"
-        @click="$emit('navclick', index)">
+        @click="$emit('navclick', index)"
+      >
         {{ item.text }}
       </div>
     </div>

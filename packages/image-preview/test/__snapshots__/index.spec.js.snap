@@ -2,7 +2,9 @@
 
 exports[`render image 1`] = `
 <div class="van-image-preview">
-  <div class="van-image-preview__index">1/3</div>
+  <div class="van-image-preview__index">
+    1/3
+  </div>
   <div class="van-swipe">
     <div class="van-swipe__track" style="width: 0px;">
       <div class="van-swipe-item" style="width: 0px; height: 100%;">
@@ -22,7 +24,9 @@ exports[`render image 1`] = `
 
 exports[`zoom 1`] = `
 <div class="van-image-preview">
-  <div class="van-image-preview__index">1/3</div>
+  <div class="van-image-preview__index">
+    1/3
+  </div>
   <div class="van-swipe">
     <div class="van-swipe__track" style="width: 300px;">
       <div class="van-swipe-item" style="width: 100px; height: 100%;">

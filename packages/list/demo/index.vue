@@ -2,13 +2,20 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <p class="page-desc">{{ $t('text') }}</p>
-      <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+      <van-pull-refresh
+        v-model="refreshing"
+        @refresh="onRefresh"
+      >
         <van-list
           v-model="loading"
           :finished="finished"
           @load="onLoad"
         >
-          <van-cell v-for="item in list" :key="item" :title="item + ''" />
+          <van-cell
+            v-for="item in list"
+            :key="item"
+            :title="item + ''"
+          />
         </van-list>
       </van-pull-refresh>
     </demo-block>

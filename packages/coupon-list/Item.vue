@@ -8,10 +8,19 @@
       <div :class="b('body')">
         <h2>{{ data.name }}</h2>
         <p>{{ validPeriod }}</p>
-        <checkbox v-if="chosen" :class="b('corner')" :value="true" />
+        <checkbox
+          v-if="chosen"
+          :class="b('corner')"
+          value
+        />
       </div>
     </div>
-    <p v-if="disabled && data.reason" :class="b('reason')">{{ data.reason }}</p>
+    <p
+      v-if="disabled && data.reason"
+      :class="b('reason')"
+    >
+      {{ data.reason }}
+    </p>
   </div>
 </template>
 

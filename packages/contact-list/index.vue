@@ -1,9 +1,19 @@
 <template>
   <div :class="b()">
-    <radio-group :value="value" @input="$emit('input', $event)">
+    <radio-group
+      :value="value"
+      @input="$emit('input', $event)"
+    >
       <cell-group>
-        <cell v-for="(item, index) in list" :key="item.id" is-link>
-          <radio :name="item.id" @click="$emit('select', item, index)">
+        <cell
+          v-for="(item, index) in list"
+          :key="item.id"
+          is-link
+        >
+          <radio
+            :name="item.id"
+            @click="$emit('select', item, index)"
+          >
             <div :class="b('name')">{{ item.name }}，{{ item.tel }}</div>
           </radio>
           <icon

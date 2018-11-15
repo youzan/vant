@@ -1,16 +1,42 @@
 <template>
   <div :class="b()">
-    <div :class="b('toolbar')" class="van-hairline--top-bottom" v-if="showToolbar">
+    <div
+      v-if="showToolbar"
+      :class="b('toolbar')"
+      class="van-hairline--top-bottom"
+    >
       <slot>
-        <div :class="b('cancel')" @click="emit('cancel')">{{ cancelButtonText || $t('cancel') }}</div>
-        <div :class="b('title')" class="van-ellipsis" v-if="title" v-text="title" />
-        <div :class="b('confirm')" @click="emit('confirm')">{{ confirmButtonText || $t('confirm') }}</div>
+        <div
+          :class="b('cancel')"
+          @click="emit('cancel')"
+        >
+          {{ cancelButtonText || $t('cancel') }}
+        </div>
+        <div
+          v-if="title"
+          v-text="title"
+          :class="b('title')"
+          class="van-ellipsis"
+        />
+        <div
+          :class="b('confirm')"
+          @click="emit('confirm')"
+        >
+          {{ confirmButtonText || $t('confirm') }}
+        </div>
       </slot>
     </div>
-    <div v-if="loading" :class="b('loading')">
+    <div
+      v-if="loading"
+      :class="b('loading')"
+    >
       <loading />
     </div>
-    <div :class="b('columns')" :style="columnsStyle" @touchmove.prevent>
+    <div
+      :class="b('columns')"
+      :style="columnsStyle"
+      @touchmove.prevent
+    >
       <picker-column
         v-for="(item, index) in (simple ? [columns] : columns)"
         :key="index"
@@ -22,7 +48,11 @@
         :visible-item-count="visibleItemCount"
         @change="onChange(index)"
       />
-      <div :class="b('frame')" class="van-hairline--top-bottom" :style="frameStyle" />
+      <div
+        :class="b('frame')"
+        class="van-hairline--top-bottom"
+        :style="frameStyle"
+      />
     </div>
   </div>
 </template>

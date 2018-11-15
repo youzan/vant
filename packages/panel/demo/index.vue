@@ -1,17 +1,30 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-panel :title="$t('title')" :desc="$t('desc')" :status="$t('status')">
+      <van-panel
+        :title="$t('title')"
+        :desc="$t('desc')"
+        :status="$t('status')"
+      >
         <div>{{ $t('content') }}</div>
       </van-panel>
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-panel :title="$t('title')" :desc="$t('desc')" :status="$t('status')">
+      <van-panel
+        :title="$t('title')"
+        :desc="$t('desc')"
+        :status="$t('status')"
+      >
         <div>{{ $t('content') }}</div>
         <div slot="footer">
           <van-button size="small">{{ $t('button') }}</van-button>
-          <van-button size="small" type="danger">{{ $t('button') }}</van-button>
+          <van-button
+            size="small"
+            type="danger"
+          >
+            {{ $t('button') }}
+          </van-button>
         </div>
       </van-panel>
     </demo-block>

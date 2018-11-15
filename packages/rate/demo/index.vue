@@ -15,7 +15,10 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-rate disabled v-model="value3" />
+      <van-rate
+        v-model="value3"
+        disabled
+      />
     </demo-block>
   </demo-section>
 </template>

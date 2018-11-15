@@ -1,7 +1,13 @@
 <template>
-  <div :class="b('pane')" v-show="isSelected">
+  <div
+    :class="b('pane')"
+    v-show="isSelected"
+  >
     <slot v-if="inited" />
-    <div v-if="$slots.title" ref="title">
+    <div
+      v-if="$slots.title"
+      ref="title"
+    >
       <slot name="title" />
     </div>
   </div>

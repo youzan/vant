@@ -27,7 +27,11 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-steps direction="vertical" :active="0" active-color="#f44">
+      <van-steps
+        :active="0"
+        direction="vertical"
+        active-color="#f44"
+      >
         <van-step>
           <h3>{{ $t('status1') }}</h3>
           <p>2016-07-12 12:40</p>

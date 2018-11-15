@@ -9,15 +9,21 @@ exports[`renders demo correctly 1`] = `
         标签名称
       </a>
       <a class="van-badge van-hairline">
-        <div class="van-info van-badge__info">8</div>
+        <div class="van-info van-badge__info">
+          8
+        </div>
         标签名称
       </a>
       <a class="van-badge van-hairline">
-        <div class="van-info van-badge__info">99</div>
+        <div class="van-info van-badge__info">
+          99
+        </div>
         标签名称
       </a>
       <a class="van-badge van-hairline">
-        <div class="van-info van-badge__info">199</div>
+        <div class="van-info van-badge__info">
+          199
+        </div>
         标签名称
       </a>
     </div>

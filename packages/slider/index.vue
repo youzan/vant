@@ -1,6 +1,12 @@
 <template>
-  <div :class="b({ disabled })" @click.stop="onClick">
-    <div :class="b('bar')" :style="barStyle">
+  <div
+    :class="b({ disabled })"
+    @click.stop="onClick"
+  >
+    <div
+      :class="b('bar')"
+      :style="barStyle"
+    >
       <span
         :class="b('button')"
         @touchstart="onTouchStart"

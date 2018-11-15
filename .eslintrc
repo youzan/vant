@@ -3,21 +3,19 @@
   "env": {
     "jest": true
   },
-  "extends": ["plugin:vue-libs/recommended", "plugin:vue/strongly-recommended"],
+  "extends": ["plugin:vue-libs/recommended", "plugin:vue/recommended"],
   "rules": {
     "semi": ["error", "always"],
     "space-before-function-paren": ["error", "never"],
+    "vue/attributes-order": 0,
     "vue/require-v-for-key": 0,
     "vue/require-default-prop": 0,
-    "vue/name-property-casing": 0,
-    "vue/max-attributes-per-line": [
-      2,
+    "vue/name-property-casing": ["error", "kebab-case"],
+    "vue/html-closing-bracket-newline": [
+      "error",
       {
-        "singleline": 5,
-        "multiline": {
-          "max": 5,
-          "allowFirstLine": false
-        }
+        "singleline": "never",
+        "multiline": "always"
       }
     ]
   }

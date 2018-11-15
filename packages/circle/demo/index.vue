@@ -21,8 +21,18 @@
         :text="currentRate2.toFixed(0) + '%'"
       />
       <div>
-        <van-button :text="$t('add')" type="primary" size="small" @click="add" />
-        <van-button :text="$t('decrease')" type="danger" size="small" @click="reduce" />
+        <van-button
+          :text="$t('add')"
+          type="primary"
+          size="small"
+          @click="add"
+        />
+        <van-button
+          :text="$t('decrease')"
+          type="danger"
+          size="small"
+          @click="reduce"
+        />
       </div>
     </demo-block>
   </demo-section>

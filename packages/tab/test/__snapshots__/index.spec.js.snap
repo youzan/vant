@@ -5,9 +5,15 @@ exports[`click to switch tab 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -31,9 +37,15 @@ exports[`click to switch tab 2`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -56,9 +68,15 @@ exports[`swipe to switch tab 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -82,9 +100,15 @@ exports[`swipe to switch tab 2`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -107,9 +131,15 @@ exports[`swipe to switch tab 3`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -132,9 +162,15 @@ exports[`swipe to switch tab 4`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line">
       <div class="van-tabs__line" style="width: 0px;"></div>
-      <div class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
+          title1
+        </span></div>
+      <div class="van-tab"><span class="van-ellipsis">
+          title2
+        </span></div>
+      <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
+          title3
+        </span></div>
     </div>
   </div>
   <div class="van-tabs__content">

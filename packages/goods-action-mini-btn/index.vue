@@ -1,6 +1,14 @@
 <template>
-  <div :class="b()" class="van-hairline" @click="onClick">
-    <icon :class="[b('icon'), iconClass]" :info="info" :name="icon" />
+  <div
+    :class="b()"
+    class="van-hairline"
+    @click="onClick"
+  >
+    <icon
+      :class="[b('icon'), iconClass]"
+      :info="info"
+      :name="icon"
+    />
     <slot>{{ text }}</slot>
   </div>
 </template>

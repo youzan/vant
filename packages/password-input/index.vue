@@ -1,7 +1,14 @@
 <template>
   <div :class="b()">
-    <ul :class="b('security')" class="van-hairline--surround" @touchstart.stop="$emit('focus')">
-      <li v-for="visibility in points" class="van-hairline">
+    <ul
+      :class="b('security')"
+      class="van-hairline--surround"
+      @touchstart.stop="$emit('focus')"
+    >
+      <li
+        v-for="visibility in points"
+        class="van-hairline"
+      >
         <i :style="`visibility: ${visibility}`" />
       </li>
     </ul>

@@ -1,11 +1,24 @@
 <template>
   <div :class="b()">
-    <div :class="[b('icon', [shape, { disabled: isDisabled, checked }])]" @click="toggle">
-      <slot name="icon" :checked="checked">
-        <icon name="success" :style="iconStyle" />
+    <div
+      :class="[b('icon', [shape, { disabled: isDisabled, checked }])]"
+      @click="toggle"
+    >
+      <slot
+        name="icon"
+        :checked="checked"
+      >
+        <icon
+          name="success"
+          :style="iconStyle"
+        />
       </slot>
     </div>
-    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="toggle('label')">
+    <span
+      v-if="$slots.default"
+      :class="b('label', labelPosition)"
+      @click="toggle('label')"
+    >
       <slot />
     </span>
   </div>

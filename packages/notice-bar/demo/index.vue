@@ -8,12 +8,21 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-notice-bar :scrollable="false" :text="$t('text')" />
+      <van-notice-bar
+        :scrollable="false"
+        :text="$t('text')"
+      />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-notice-bar mode="closeable" :text="$t('text')" />
-      <van-notice-bar mode="link" :text="$t('text')" />
+      <van-notice-bar
+        mode="closeable"
+        :text="$t('text')"
+      />
+      <van-notice-bar
+        mode="link"
+        :text="$t('text')"
+      />
     </demo-block>
   </demo-section>
 </template>

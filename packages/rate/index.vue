@@ -1,5 +1,8 @@
 <template>
-  <div :class="b()" @touchmove="onTouchMove">
+  <div
+    :class="b()"
+    @touchmove="onTouchMove"
+  >
     <svg
       v-for="(isFull, index) in list"
       :fill="disabled ? disabledColor : isFull ? color : voidColor"

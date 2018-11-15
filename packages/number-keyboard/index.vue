@@ -8,7 +8,11 @@
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
-      <div :class="b('title')" class="van-hairline--top" v-if="title || showTitleClose">
+      <div
+        v-if="title || showTitleClose"
+        :class="b('title')"
+        class="van-hairline--top"
+      >
         <span v-text="title" />
         <span
           :class="b('close')"
@@ -26,9 +30,20 @@
           @press="onPressKey"
         />
       </div>
-      <div v-if="theme === 'custom'" :class="b('sidebar')">
-        <key :text="deleteText" :type="['delete', 'big', 'gray']" @press="onPressKey" />
-        <key :text="closeButtonText" :type="['blue', 'big']" @press="onPressKey" />
+      <div
+        v-if="theme === 'custom'"
+        :class="b('sidebar')"
+      >
+        <key
+          :text="deleteText"
+          :type="['delete', 'big', 'gray']"
+          @press="onPressKey"
+        />
+        <key
+          :text="closeButtonText"
+          :type="['blue', 'big']"
+          @press="onPressKey"
+        />
       </div>
     </div>
   </transition>
