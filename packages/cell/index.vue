@@ -4,6 +4,7 @@
       b({
         center,
         required,
+        [size]: size,
         borderless: !border,
         clickable: isLink || clickable
       })
@@ -65,6 +66,7 @@ export default create({
 
   props: {
     icon: String,
+    size: String,
     label: String,
     center: Boolean,
     isLink: Boolean,
