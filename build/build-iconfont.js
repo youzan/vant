@@ -48,7 +48,7 @@ gulp.task('ttf', () => {
       iconfontCss({
         fontName: config.name,
         path: template,
-        targetPath: '../icon/index.css',
+        targetPath: '../icon/index.less',
         normalize: true,
         firstGlyph: 0xf000,
         cssClass: ttf // this is a trick to pass ttf to template
@@ -66,7 +66,7 @@ gulp.task('ttf', () => {
 gulp.task('default', ['ttf'], () => {
   // generate icon-local.css
   fs.writeFileSync(
-    path.join(iconDir, 'local.css'),
+    path.join(iconDir, 'local.less'),
     local(config.name, ttf)
   );
 
