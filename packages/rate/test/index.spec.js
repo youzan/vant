@@ -22,7 +22,7 @@ test('touchmove', () => {
   const wrapper = mount(Rate);
   triggerDrag(wrapper, 100, 0);
 
-  const icons = wrapper.findAll('svg');
+  const icons = wrapper.findAll('.van-icon');
   document.elementFromPoint = function(x, y) {
     const index = Math.round(x / 20);
     if (index < icons.length) {
