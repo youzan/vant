@@ -5,12 +5,25 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-checkbox :value="false" disabled>{{ $t('checkbox') }}</van-checkbox>
-      <van-checkbox :value="true" disabled>{{ $t('checkbox') }}</van-checkbox>
+      <van-checkbox
+        :value="false"
+        disabled
+      >
+        {{ $t('checkbox') }}
+      </van-checkbox>
+      <van-checkbox
+        :value="true"
+        disabled
+      >
+        {{ $t('checkbox') }}
+      </van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-checkbox v-model="checkbox2" checked-color="#4b0">
+      <van-checkbox
+        v-model="checkbox2"
+        checked-color="#4b0"
+      >
         {{ $t('customColor') }}
       </van-checkbox>
     </demo-block>
@@ -39,7 +52,10 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-checkbox-group v-model="result2" :max="2">
+      <van-checkbox-group
+        v-model="result2"
+        :max="2"
+      >
         <van-checkbox
           v-for="(item, index) in list"
           :key="index"
@@ -60,7 +76,10 @@
             :title="$t('checkbox') + item"
             @click="toggle(index)"
           >
-            <van-checkbox ref="checkboxes" :name="item" />
+            <van-checkbox
+              ref="checkboxes"
+              :name="item"
+            />
           </van-cell>
         </van-cell-group>
       </van-checkbox-group>

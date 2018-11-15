@@ -1,13 +1,30 @@
 <template>
   <transition name="van-dialog-bounce">
-    <div v-show="value" :class="[b(), className]">
-      <div v-if="title" v-text="title" :class="b('header', { isolated: !message && !$slots.default })" />
-      <div :class="b('content')" v-if="message || $slots.default">
+    <div
+      v-show="value"
+      :class="[b(), className]"
+    >
+      <div
+        v-if="title"
+        v-text="title"
+        :class="b('header', { isolated: !message && !$slots.default })"
+      />
+      <div
+        :class="b('content')"
+        v-if="message || $slots.default"
+      >
         <slot>
-          <div v-if="message" v-html="message" :class="b('message', { 'has-title': title })" />
+          <div
+            v-if="message"
+            v-html="message"
+            :class="b('message', { 'has-title': title })"
+          />
         </slot>
       </div>
-      <div class="van-hairline--top" :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })">
+      <div
+        class="van-hairline--top"
+        :class="b('footer', { 'buttons': showCancelButton && showConfirmButton })"
+      >
         <van-button
           v-show="showCancelButton"
           :loading="loading.cancel"

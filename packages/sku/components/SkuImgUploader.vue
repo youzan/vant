@@ -18,19 +18,32 @@
       </div>
     </van-uploader>
     <!-- 图片列表区域 -->
-    <div class="van-clearfix" v-if="paddingImg || imgList.length > 0">
+    <div
+      v-if="paddingImg || imgList.length > 0"
+      class="van-clearfix"
+    >
       <!-- 已有的图片,图片右上角显示删除按钮 -->
       <div
         v-for="img in imgList"
         :class="b('img')"
       >
         <img :src="img">
-        <icon name="clear" :class="b('delete')" @click="$emit('input', '')" />
+        <icon
+          name="clear"
+          :class="b('delete')"
+          @click="$emit('input', '')"
+        />
       </div>
       <!-- 正在上传的图片,有上传等待提示 -->
-      <div v-if="paddingImg" :class="b('img')">
+      <div
+        v-if="paddingImg"
+        :class="b('img')"
+      >
         <img :src="paddingImg">
-        <loading :class="b('uploading')" type="spinner" />
+        <loading
+          type="spinner"
+          :class="b('uploading')"
+        />
       </div>
     </div>
   </div>

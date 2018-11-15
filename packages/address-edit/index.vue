@@ -58,16 +58,34 @@
       @change="$emit('change-default', $event)"
     />
 
-    <div v-show="!hideBottomFields" :class="b('buttons')">
-      <van-button block :loading="isSaving" @click="onSave" type="danger">
+    <div
+      v-show="!hideBottomFields"
+      :class="b('buttons')"
+    >
+      <van-button
+        block
+        :loading="isSaving"
+        type="danger"
+        @click="onSave"
+      >
         {{ saveButtonText || $t('save') }}
       </van-button>
-      <van-button block :loading="isDeleting" @click="onDelete" v-if="showDelete">
+      <van-button
+        v-if="showDelete"
+        block
+        :loading="isDeleting"
+        @click="onDelete"
+      >
         {{ deleteButtonText || $t('delete') }}
       </van-button>
     </div>
 
-    <popup v-model="showAreaPopup" position="bottom" :lazy-render="false" get-container="body">
+    <popup
+      v-model="showAreaPopup"
+      position="bottom"
+      :lazy-render="false"
+      get-container="body"
+    >
       <van-area
         ref="area"
         :loading="!areaListLoaded"

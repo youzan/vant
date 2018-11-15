@@ -5,7 +5,10 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-stepper v-model="stepper1" disabled />
+      <van-stepper
+        v-model="stepper1"
+        disabled
+      />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">

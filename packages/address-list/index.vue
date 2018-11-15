@@ -1,7 +1,10 @@
 <template>
   <div :class="b()">
     <slot name="top" />
-    <radio-group :value="value" @input="$emit('input', $event)">
+    <radio-group
+      :value="value"
+      @input="$emit('input', $event)"
+    >
       <cell-group>
         <address-item
           v-for="(item, index) in list"
@@ -13,7 +16,12 @@
         />
       </cell-group>
     </radio-group>
-    <div v-if="disabledText" :class="b('disabled-text')">{{ disabledText }}</div>
+    <div
+      v-if="disabledText"
+      :class="b('disabled-text')"
+    >
+      {{ disabledText }}
+    </div>
     <cell-group v-if="disabledList.length">
       <address-item
         v-for="(item, index) in disabledList"

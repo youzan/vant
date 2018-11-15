@@ -2,8 +2,15 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-cell :title="$t('cell')" :value="$t('content')" />
-        <van-cell :title="$t('cell')" :value="$t('content')" :label="$t('desc')" />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+        />
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+          :label="$t('desc')"
+        />
       </van-cell-group>
     </demo-block>
 
@@ -15,29 +22,56 @@
 
     <demo-block :title="$t('title3')">
       <van-cell-group>
-        <van-cell :title="$t('cell')" icon="location" />
+        <van-cell
+          :title="$t('cell')"
+          icon="location"
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('title4')">
       <van-cell-group>
-        <van-cell :title="$t('cell')" is-link />
-        <van-cell :title="$t('cell')" is-link :value="$t('content')" />
-        <van-cell :title="$t('cell')" is-link arrow-direction="down" :value="$t('content')" />
+        <van-cell
+          :title="$t('cell')"
+          is-link
+        />
+        <van-cell
+          :title="$t('cell')"
+          is-link
+          :value="$t('content')"
+        />
+        <van-cell
+          :title="$t('cell')"
+          is-link
+          arrow-direction="down"
+          :value="$t('content')"
+        />
       </van-cell-group>
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
       <van-cell-group>
-        <van-cell :value="$t('content')" icon="shop" is-link>
+        <van-cell
+          :value="$t('content')"
+          icon="shop"
+          is-link
+        >
           <template slot="title">
             <span class="van-cell-text">{{ $t('cell') }}</span>
             <van-tag type="danger">{{ $t('tag') }}</van-tag>
           </template>
         </van-cell>
-        <van-cell :title="$t('cell')" icon="location" is-link />
+        <van-cell
+          :title="$t('cell')"
+          icon="location"
+          is-link
+        />
         <van-cell :title="$t('cell')">
-          <van-icon slot="right-icon" name="search" class="van-cell__right-icon" />
+          <van-icon
+            slot="right-icon"
+            name="search"
+            class="van-cell__right-icon"
+          />
         </van-cell>
       </van-cell-group>
     </demo-block>

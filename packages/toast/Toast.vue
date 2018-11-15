@@ -1,15 +1,34 @@
 <template>
   <transition name="van-fade">
-    <div v-show="value" :class="b([style, position])">
+    <div
+      v-show="value"
+      :class="b([style, position])"
+    >
       <!-- text only -->
       <div v-if="style === 'text'">{{ message }}</div>
-      <div v-if="style === 'html'" v-html="message" />
+      <div
+        v-if="style === 'html'"
+        v-html="message"
+      />
 
       <!-- with icon -->
       <template v-if="style === 'default'">
-        <loading v-if="type === 'loading'" color="white" :type="loadingType" />
-        <icon v-else :class="b('icon')" :name="type" />
-        <div v-if="isDef(message)" :class="b('text')">{{ message }}</div>
+        <loading
+          v-if="type === 'loading'"
+          color="white"
+          :type="loadingType"
+        />
+        <icon
+          v-else
+          :class="b('icon')"
+          :name="type"
+        />
+        <div
+          v-if="isDef(message)"
+          :class="b('text')"
+        >
+          {{ message }}
+        </div>
       </template>
     </div>
   </transition>

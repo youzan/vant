@@ -8,8 +8,16 @@
         { 'van-hairline--top-bottom': type === 'line' }
       ]"
     >
-      <div :class="b('nav', [type])" ref="nav" :style="navStyle">
-        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
+      <div
+        ref="nav"
+        :class="b('nav', [type])"
+        :style="navStyle"
+      >
+        <div
+          v-if="type === 'line'"
+          :class="b('line')"
+          :style="lineStyle"
+        />
         <div
           v-for="(tab, index) in tabs"
           ref="tabs"
@@ -21,11 +29,19 @@
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
-          <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
+          <span
+            ref="title"
+            class="van-ellipsis"
+          >
+            {{ tab.title }}
+          </span>
         </div>
       </div>
     </div>
-    <div :class="b('content')" ref="content">
+    <div
+      ref="content"
+      :class="b('content')"
+    >
       <slot />
     </div>
   </div>

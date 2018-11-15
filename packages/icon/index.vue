@@ -1,5 +1,9 @@
 <template>
-  <i :class="[classPrefix, `${classPrefix}-${name}`]" :style="style" v-on="$listeners">
+  <i
+    v-on="$listeners"
+    :class="[classPrefix, `${classPrefix}-${name}`]"
+    :style="style"
+  >
     <slot />
     <van-info :info="info" />
   </i>

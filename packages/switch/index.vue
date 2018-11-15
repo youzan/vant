@@ -8,7 +8,10 @@
     @click="onClick"
   >
     <div :class="b('node')">
-      <loading v-if="loading" :class="b('loading')" />
+      <loading
+        v-if="loading"
+        :class="b('loading')"
+      />
     </div>
   </div>
 </template>

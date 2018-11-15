@@ -5,10 +5,16 @@
     :style="barStyle"
     @click="$emit('click')"
   >
-    <div v-if="leftIcon" :class="b('left-icon')">
+    <div
+      v-if="leftIcon"
+      :class="b('left-icon')"
+    >
       <img :src="leftIcon" >
     </div>
-    <div :class="b('wrap')" ref="wrap">
+    <div
+      ref="wrap"
+      :class="b('wrap')"
+    >
       <div
         ref="content"
         :class="[b('content'), animationClass, { 'van-ellipsis': !scrollable }]"

@@ -1,11 +1,24 @@
 <template>
-  <div class="van-hairline" :class="b([$parent.direction, { [status]: status }])">
-    <div :class="b('title')" :style="titleStyle">
+  <div
+    class="van-hairline"
+    :class="b([$parent.direction, { [status]: status }])"
+  >
+    <div
+      :class="b('title')"
+      :style="titleStyle"
+    >
       <slot />
     </div>
     <div :class="b('circle-container')">
-      <i :class="b('circle')" v-if="status !== 'process'" />
-      <icon v-else name="checked" :style="{ color: $parent.activeColor }" />
+      <i
+        v-if="status !== 'process'"
+        :class="b('circle')"
+      />
+      <icon
+        v-else
+        name="checked"
+        :style="{ color: $parent.activeColor }"
+      />
     </div>
     <div :class="b('line')" />
   </div>

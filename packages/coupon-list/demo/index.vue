@@ -7,7 +7,10 @@
         @click="showList = true"
       />
 
-      <van-popup v-model="showList" position="bottom">
+      <van-popup
+        v-model="showList"
+        position="bottom"
+      >
         <van-coupon-list
           :coupons="coupons"
           :chosen-coupon="chosenCoupon"

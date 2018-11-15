@@ -26,7 +26,12 @@
         show-action
         @search="onSearch"
       >
-        <div slot="action" @click="onSearch">{{ $t('search') }}</div>
+        <div
+          slot="action"
+          @click="onSearch"
+        >
+          {{ $t('search') }}
+        </div>
       </van-search>
     </demo-block>
   </demo-section>

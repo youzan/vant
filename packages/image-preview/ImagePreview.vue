@@ -6,14 +6,22 @@
     @touchend="onWrapperTouchEnd"
     @touchcancel="onWrapperTouchEnd"
   >
-    <div v-if="showIndex" :class="b('index')">{{ active + 1 }}/{{ count }}</div>
+    <div
+      v-if="showIndex"
+      :class="b('index')"
+    >
+      {{ active + 1 }}/{{ count }}
+    </div>
     <swipe
       ref="swipe"
       :initial-swipe="startPosition"
       :show-indicators="showIndicators"
       @change="onChange"
     >
-      <swipe-item v-for="(item, index) in images" :key="index">
+      <swipe-item
+        v-for="(item, index) in images"
+        :key="index"
+      >
         <img
           :class="b('image')"
           :src="item"

@@ -12,8 +12,18 @@
         @change="onChange"
       />
     </div>
-    <div v-if="!hideStock" class="van-sku__stock">{{ stockText }}</div>
-    <div v-if="quotaText" class="van-sku__quota">{{ quotaText }}</div>
+    <div
+      v-if="!hideStock"
+      class="van-sku__stock"
+    >
+      {{ stockText }}
+    </div>
+    <div
+      v-if="quotaText"
+      class="van-sku__quota"
+    >
+      {{ quotaText }}
+    </div>
   </div>
 </template>
 

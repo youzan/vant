@@ -20,25 +20,35 @@ exports[`renders demo correctly 1`] = `
           </i>
           <!---->
         </div>
-        <div class="van-tabbar-item__text">标签</div>
+        <div class="van-tabbar-item__text">
+          标签
+        </div>
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
           <i class="van-icon van-icon-records" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
-          <div class="van-info">5</div>
+          <div class="van-info">
+            5
+          </div>
         </div>
-        <div class="van-tabbar-item__text">标签</div>
+        <div class="van-tabbar-item__text">
+          标签
+        </div>
       </div>
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
           <i class="van-icon van-icon-gold-coin" style="color:undefined;font-size:undefined;">
             <!---->
           </i>
-          <div class="van-info">20</div>
+          <div class="van-info">
+            20
+          </div>
         </div>
-        <div class="van-tabbar-item__text">标签</div>
+        <div class="van-tabbar-item__text">
+          标签
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +57,9 @@ exports[`renders demo correctly 1`] = `
       <div class="van-tabbar-item">
         <div class="van-tabbar-item__icon">
           <img src="https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png">
-          <div class="van-info">3</div>
+          <div class="van-info">
+            3
+          </div>
         </div>
         <div class="van-tabbar-item__text"><span>自定义</span></div>
       </div>

@@ -10,23 +10,59 @@
     </demo-block>
 
     <demo-block :title="$t('plain')">
-      <van-button plain type="primary">{{ $t('plain') }}</van-button>
-      <van-button plain type="danger">{{ $t('plain') }}</van-button>
+      <van-button
+        plain
+        type="primary"
+      >
+        {{ $t('plain') }}
+      </van-button>
+      <van-button
+        plain
+        type="danger"
+      >
+        {{ $t('plain') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-button disabled type="primary">{{ $t('disabled') }}</van-button>
-      <van-button disabled type="danger">{{ $t('disabled') }}</van-button>
+      <van-button
+        disabled
+        type="primary"
+      >
+        {{ $t('disabled') }}
+      </van-button>
+      <van-button
+        disabled
+        type="danger"
+      >
+        {{ $t('disabled') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('loading')">
-      <van-button loading type="primary" />
-      <van-button loading type="danger" />
+      <van-button
+        loading
+        type="primary"
+      />
+      <van-button
+        loading
+        type="danger"
+      />
     </demo-block>
 
     <demo-block :title="$t('shape')">
-      <van-button type="primary" square>{{ $t('square') }}</van-button>
-      <van-button type="danger" round>{{ $t('round') }}</van-button>
+      <van-button
+        type="primary"
+        square
+      >
+        {{ $t('square') }}
+      </van-button>
+      <van-button
+        type="danger"
+        round
+      >
+        {{ $t('round') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('size')">

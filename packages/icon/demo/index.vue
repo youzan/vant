@@ -1,7 +1,11 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title')">
-      <van-col span="8" v-for="icon in icons" :key="icon">
+      <van-col
+        v-for="icon in icons"
+        :key="icon"
+        span="8"
+      >
         <van-icon :name="icon" />
         <span>{{ icon }}</span>
       </van-col>

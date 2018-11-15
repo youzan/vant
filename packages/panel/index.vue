@@ -12,7 +12,11 @@
     <div :class="b('content')">
       <slot />
     </div>
-    <div v-if="$slots.footer" :class="b('footer')" class="van-hairline--top">
+    <div
+      v-if="$slots.footer"
+      :class="b('footer')"
+      class="van-hairline--top"
+    >
       <slot name="footer" />
     </div>
   </cell-group>

@@ -1,7 +1,10 @@
 <template>
   <div :class="b()">
     <slot name="top" />
-    <div :class="b('tip')" v-if="tip || $slots.tip">
+    <div
+      v-if="tip || $slots.tip"
+      :class="b('tip')"
+    >
       {{ tip }}<slot name="tip" />
     </div>
     <div :class="b('bar')">

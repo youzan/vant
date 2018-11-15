@@ -1,5 +1,8 @@
 <template>
-  <div :class="b({ disabled: isDisabled })" @click="$emit('click')">
+  <div
+    :class="b({ disabled: isDisabled })"
+    @click="$emit('click')"
+  >
     <span :class="b('input')">
       <input
         :value="name"
@@ -10,7 +13,11 @@
       >
       <icon :name="currentValue === name ? 'checked' : 'check'" />
     </span>
-    <span v-if="$slots.default" :class="b('label', labelPosition)" @click="onClickLabel">
+    <span
+      v-if="$slots.default"
+      :class="b('label', labelPosition)"
+      @click="onClickLabel"
+    >
       <slot />
     </span>
   </div>

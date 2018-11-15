@@ -7,7 +7,10 @@
 
     <demo-block :title="$t('title2')">
       <van-loading type="spinner" />
-      <van-loading type="spinner" color="white" />
+      <van-loading
+        type="spinner"
+        color="white"
+      />
     </demo-block>
   </demo-section>
 </template>

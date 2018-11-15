@@ -40,7 +40,10 @@ exports[`renders demo correctly 1`] = `
     <div class="van-submit-bar">
       <div class="van-submit-bar__tip">
         <span>
-        你的收货地址不支持同城送, <span class="edit-address">修改地址</span></span>
+        你的收货地址不支持同城送, 
+        <span class="edit-address">
+          修改地址
+        </span></span>
       </div>
       <div class="van-submit-bar__bar">
         <div class="van-checkbox">

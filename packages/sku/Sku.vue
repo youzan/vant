@@ -31,12 +31,26 @@
         </slot>
       </sku-header>
     </slot>
-    <div class="van-sku-body" :style="bodyStyle">
+    <div
+      class="van-sku-body"
+      :style="bodyStyle"
+    >
       <!-- sku-body-top -->
-      <slot name="sku-body-top" :selected-sku="selectedSku" :sku-event-bus="skuEventBus" />
+      <slot
+        name="sku-body-top"
+        :selected-sku="selectedSku"
+        :sku-event-bus="skuEventBus"
+      />
       <!-- sku-group -->
-      <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
-        <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
+      <slot
+        name="sku-group"
+        :selected-sku="selectedSku"
+        :sku-event-bus="skuEventBus"
+      >
+        <div
+          v-if="hasSku"
+          class="van-sku-group-container van-hairline--bottom"
+        >
           <sku-row
             v-for="(skuTreeItem, index) in skuTree"
             :key="index"
@@ -55,7 +69,10 @@
         </div>
       </slot>
       <!-- extra-sku-group -->
-      <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
+      <slot
+        name="extra-sku-group"
+        :sku-event-bus="skuEventBus"
+      />
       <!-- sku-stepper -->
       <slot
         name="sku-stepper"
@@ -91,7 +108,10 @@
       </slot>
     </div>
     <!-- sku-actions -->
-    <slot name="sku-actions" :sku-event-bus="skuEventBus">
+    <slot
+      name="sku-actions"
+      :sku-event-bus="skuEventBus"
+    >
       <sku-actions
         :sku-event-bus="skuEventBus"
         :buy-text="buyText"

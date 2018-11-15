@@ -1,6 +1,10 @@
 <template>
   <transition :name="currentTransition">
-    <div v-if="shouldRender" v-show="value" :class="b({ [position]: position })">
+    <div
+      v-if="shouldRender"
+      v-show="value"
+      :class="b({ [position]: position })"
+    >
       <slot />
     </div>
   </transition>

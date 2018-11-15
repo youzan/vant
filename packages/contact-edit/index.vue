@@ -19,8 +19,22 @@
       />
     </cell-group>
     <div :class="b('buttons')">
-      <van-button block :loading="isSaving" @click="onSave" type="danger">{{ $t('save') }}</van-button>
-      <van-button block :loading="isDeleting" @click="onDelete" v-if="isEdit">{{ $t('delete') }}</van-button>
+      <van-button
+        block
+        :loading="isSaving"
+        @click="onSave"
+        type="danger"
+      >
+        {{ $t('save') }}
+      </van-button>
+      <van-button
+        block
+        :loading="isDeleting"
+        @click="onDelete"
+        v-if="isEdit"
+      >
+        {{ $t('delete') }}
+      </van-button>
     </div>
   </div>
 </template>

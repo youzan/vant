@@ -12,8 +12,15 @@
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-nav-bar :title="$t('title')" :left-text="$t('back')" left-arrow>
-        <van-icon name="search" slot="right" />
+      <van-nav-bar
+        :title="$t('title')"
+        :left-text="$t('back')"
+        left-arrow
+      >
+        <van-icon
+          name="search"
+          slot="right"
+        />
       </van-nav-bar>
     </demo-block>
   </demo-section>

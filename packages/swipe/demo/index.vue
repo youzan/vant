@@ -11,7 +11,10 @@
 
     <demo-block :title="$t('title2')">
       <van-swipe :autoplay="3000">
-        <van-swipe-item v-for="(image, index) in images" :key="index">
+        <van-swipe-item
+          v-for="(image, index) in images"
+          :key="index"
+        >
           <img v-lazy="image" >
         </van-swipe-item>
       </van-swipe>
@@ -27,7 +30,11 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-swipe :autoplay="3000" vertical class="demo-swipe--vertical">
+      <van-swipe
+        vertical
+        :autoplay="3000"
+        class="demo-swipe--vertical"
+      >
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -36,7 +43,11 @@
     </demo-block>
 
     <demo-block :title="$t('title5')">
-      <van-swipe :autoplay="3000" :width="300" :loop="false">
+      <van-swipe
+        :autoplay="3000"
+        :width="300"
+        :loop="false"
+      >
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -51,7 +62,10 @@
         <van-swipe-item>3</van-swipe-item>
         <van-swipe-item>4</van-swipe-item>
 
-        <div class="custom-indicator" slot="indicator">
+        <div
+          class="custom-indicator"
+          slot="indicator"
+        >
           {{ current + 1 }}/4
         </div>
       </van-swipe>

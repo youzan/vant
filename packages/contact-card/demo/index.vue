@@ -8,7 +8,11 @@
         @click="showList = true"
       />
 
-      <van-popup v-model="showList" position="bottom" :lazy-render="false">
+      <van-popup
+        v-model="showList"
+        position="bottom"
+        :lazy-render="false"
+      >
         <van-contact-list
           v-model="chosenContactId"
           :list="list"
@@ -18,7 +22,11 @@
         />
       </van-popup>
 
-      <van-popup v-model="showEdit" position="bottom" :lazy-render="false">
+      <van-popup
+        v-model="showEdit"
+        position="bottom"
+        :lazy-render="false"
+      >
         <van-contact-edit
           :contact-info="editingContact"
           :is-edit="isEdit"
@@ -61,10 +69,6 @@ export default {
     };
   },
 
-  created() {
-    this.list.push(this.mockContact);
-  },
-
   computed: {
     mockContact() {
       return {
@@ -82,6 +86,10 @@ export default {
       const id = this.chosenContactId;
       return id !== null ? this.list.filter(item => item.id === id)[0] : {};
     }
+  },
+
+  created() {
+    this.list.push(this.mockContact);
   },
 
   methods: {

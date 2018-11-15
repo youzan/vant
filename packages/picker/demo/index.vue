@@ -1,7 +1,10 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-picker :columns="$t('column1')" @change="onChange1" />
+      <van-picker
+        :columns="$t('column1')"
+        @change="onChange1"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -19,11 +22,17 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-picker :columns="columns" @change="onChange2" />
+      <van-picker
+        :columns="columns"
+        @change="onChange2"
+      />
     </demo-block>
 
     <demo-block :title="$t('loading')">
-      <van-picker :columns="columns" loading />
+      <van-picker
+        loading
+        :columns="columns"
+      />
     </demo-block>
   </demo-section>
 </template>

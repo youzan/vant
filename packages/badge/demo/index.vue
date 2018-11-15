@@ -1,11 +1,23 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-badge-group :active-key="activeKey" @change="onChange">
+      <van-badge-group
+        :active-key="activeKey"
+        @change="onChange"
+      >
         <van-badge :title="$t('title')" />
-        <van-badge :title="$t('title')" info="8" />
-        <van-badge :title="$t('title')" info="99" />
-        <van-badge :title="$t('title')" info="199" />
+        <van-badge
+          :title="$t('title')"
+          info="8"
+        />
+        <van-badge
+          :title="$t('title')"
+          info="99"
+        />
+        <van-badge
+          :title="$t('title')"
+          info="199"
+        />
       </van-badge-group>
     </demo-block>
   </demo-section>

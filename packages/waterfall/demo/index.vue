@@ -6,7 +6,8 @@
       <ul
         v-waterfall-lower="loadMore"
         waterfall-disabled="disabled"
-        waterfall-offset="400">
+        waterfall-offset="400"
+      >
         <li v-for="item in list">{{ item }}</li>
       </ul>
     </demo-block>
@@ -28,15 +29,15 @@ export default {
     }
   },
 
+  directives: {
+    WaterfallLower: Waterfall('lower')
+  },
+
   data() {
     return {
       list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       disabled: false
     };
-  },
-
-  directives: {
-    WaterfallLower: Waterfall('lower')
   },
 
   methods: {

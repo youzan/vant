@@ -11,12 +11,23 @@
     @click="onClick"
   >
     <slot name="icon">
-      <icon v-if="icon" :class="b('left-icon')" :name="icon" />
+      <icon
+        v-if="icon"
+        :class="b('left-icon')"
+        :name="icon"
+      />
     </slot>
-    <div v-if="isDef(title) || $slots.title" :class="b('title')">
+    <div
+      v-if="isDef(title) || $slots.title"
+      :class="b('title')"
+    >
       <slot name="title">
         <span v-text="title" />
-        <div v-if="label" v-text="label" :class="b('label')" />
+        <div
+          v-if="label"
+          v-text="label"
+          :class="b('label')"
+        />
       </slot>
     </div>
     <div
@@ -28,7 +39,11 @@
       </slot>
     </div>
     <slot name="right-icon">
-      <icon v-if="isLink" :class="b('right-icon', arrowDirection)" name="arrow" />
+      <icon
+        v-if="isLink"
+        :class="b('right-icon', arrowDirection)"
+        name="arrow"
+      />
     </slot>
     <slot name="extra" />
   </div>

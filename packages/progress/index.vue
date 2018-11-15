@@ -1,7 +1,17 @@
 <template>
   <div :class="b()">
-    <span :class="b('portion', { 'with-pivot': showPivot && text })" :style="portionStyle">
-      <span v-if="showPivot && text" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ text }}</span>
+    <span
+      :class="b('portion', { 'with-pivot': showPivot && text })"
+      :style="portionStyle"
+    >
+      <span
+        v-if="showPivot && text"
+        ref="pivot"
+        :style="pivotStyle"
+        :class="b('pivot')"
+      >
+        {{ text }}
+      </span>
     </span>
   </div>
 </template>
