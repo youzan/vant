@@ -35,19 +35,19 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-ellipsis van-tree-select__item">
+          南京
+          <!---->
+        </div>
+        <div class="van-ellipsis van-tree-select__item">
           无锡
           <!---->
         </div>
         <div class="van-ellipsis van-tree-select__item">
-          常州
+          徐州
           <!---->
         </div>
         <div class="van-ellipsis van-tree-select__item">
-          莆田
-          <!---->
-        </div>
-        <div class="van-ellipsis van-tree-select__item">
-          三明
+          苏州
           <!---->
         </div>
       </div>

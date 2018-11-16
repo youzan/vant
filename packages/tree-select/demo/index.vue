@@ -33,16 +33,16 @@ export default {
         id: 1004
       }],
       city2: [{
-        text: '无锡',
+        text: '南京',
         id: 1011
       }, {
-        text: '常州',
+        text: '无锡',
         id: 1012
       }, {
-        text: '莆田',
+        text: '徐州',
         id: 1013
       }, {
-        text: '三明',
+        text: '苏州',
         id: 1014
       }]
     },
