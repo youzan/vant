@@ -44,7 +44,7 @@ const PLACEHOLDER = {
   date: '点击选择日期',
   time: '点击选择时间',
   textarea: '点击填写段落文本',
-  mobile: '请输入手机号码'
+  mobile: '输入手机号码'
 };
 
 export default create({
