@@ -43,7 +43,8 @@ const PLACEHOLDER = {
   email: '输入邮箱',
   date: '点击选择日期',
   time: '点击选择时间',
-  textarea: '点击填写段落文本'
+  textarea: '点击填写段落文本',
+  mobile: '输入手机号码'
 };
 
 export default create({
