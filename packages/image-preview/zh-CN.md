@@ -61,4 +61,5 @@ setTimeout(() => {
 | startPosition | 图片预览起始位置索引 | `Number` | `0` | 1.1.16 |
 | showIndex | 是否显示页码 | `Boolean` | `true` | 1.3.4 |
 | showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
+| loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |

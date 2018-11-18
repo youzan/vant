@@ -53,4 +53,5 @@ setTimeout(() => {
 | startPosition | Start position | `Number` | `0` |
 | showIndex | Whether to show index | `Boolean` | `true` |
 | showIndicators | Whether to show indicators | `Boolean` | `false` |
+| loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
