@@ -1,5 +1,25 @@
 ## Changelog
 
+## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
+`2018-11-18`
+
+**Improvements**
+
+- Cell: add size prop [\#2086](https://github.com/youzan/vant/pull/2086)
+- Icon: add star、star-o icon [\#2092](https://github.com/youzan/vant/pull/2092)
+- ImagePreview: add loop prop [\#2103](https://github.com/youzan/vant/pull/2103)
+- Rate: update star icon [\#2093](https://github.com/youzan/vant/pull/2093)
+- Dialog: add message max-height [\#2104](https://github.com/youzan/vant/pull/2104)
+
+**Bug Fixes**
+
+- fix Sku placeholder of mobile type message [\#2098](https://github.com/youzan/vant/pull/2098)
+- fix Tab line-width can be zero [\#2081](https://github.com/youzan/vant/pull/2081)
+- fix Tab auto scroll top when switched in sticky mode [\#2105](https://github.com/youzan/vant/pull/2105)
+- fix Toast max width of text type [\#2074](https://github.com/youzan/vant/pull/2074)
+- fix Steps css selector priority [\#2072](https://github.com/youzan/vant/pull/2072)
+
+
 ## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
 `2018-11-10`
 

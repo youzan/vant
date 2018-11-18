@@ -1,5 +1,25 @@
 ## 更新日志
 
+## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
+`2018-11-18`
+
+**Improvements**
+
+- Cell: 新增 size 属性 [\#2086](https://github.com/youzan/vant/pull/2086)
+- Icon: 新增 star、star-o 图标 [\#2092](https://github.com/youzan/vant/pull/2092)
+- ImagePreview: 新增 loop 属性 [\#2103](https://github.com/youzan/vant/pull/2103)
+- Rate: 更新星星图标样式 [\#2093](https://github.com/youzan/vant/pull/2093)
+- Dialog: 内容超过屏幕高度时展示滚动条 [\#2104](https://github.com/youzan/vant/pull/2104)
+
+**Bug Fixes**
+
+- 修复 Sku mobile 类型留言缺少 placeholder 的问题 [\#2098](https://github.com/youzan/vant/pull/2098)
+- 修复 Tab line-width 传入 0 时不生效的问题 [\#2081](https://github.com/youzan/vant/pull/2081)
+- 修复 Tab 在 sticky 模式下切换标签未自动滚动到顶部的问题 [\#2105](https://github.com/youzan/vant/pull/2105)
+- 修复 Toast 最大宽度错误的问题 [\#2074](https://github.com/youzan/vant/pull/2074)
+- 修复 Steps CSS 选择器优先级错误 [\#2072](https://github.com/youzan/vant/pull/2072)
+
+
 ## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
 `2018-11-10`
 
