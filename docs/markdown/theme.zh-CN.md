@@ -45,6 +45,7 @@ Vant 支持通过 babel 插件按需引入和手动引入两种方式，推荐�
 
 ```js
 // 在 babel.config.js 中配置按需引入样式源文件
+// 注意：babel6 不支持按需引入样式，请手动引入
 module.exports = {
   plugins: [
     [
