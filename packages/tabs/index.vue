@@ -156,7 +156,7 @@ export default create({
       this.setLine();
 
       // scroll to correct position
-      if (this.position === 'page-top' || this.position === 'content-bottom') {
+      if (this.position === 'top' || this.position === 'bottom') {
         scrollUtils.setScrollTop(window, scrollUtils.getElementTop(this.$el));
       }
     },
