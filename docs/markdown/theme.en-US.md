@@ -40,6 +40,7 @@ First you should import the less source file to your project. you can use babel-
 
 ```js
 // configure babel plugin in babel.config.js
+// For users who use babel6, please manually import less file
 module.exports = {
   plugins: [
     [
