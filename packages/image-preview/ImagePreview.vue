@@ -14,6 +14,7 @@
     </div>
     <swipe
       ref="swipe"
+      :loop="loop"
       :initial-swipe="startPosition"
       :show-indicators="showIndicators"
       @change="onChange"
@@ -62,6 +63,10 @@ export default create({
     images: {
       type: Array,
       default: () => []
+    },
+    loop: {
+      type: Boolean,
+      default: true
     },
     startPosition: {
       type: Number,
