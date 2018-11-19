@@ -77,13 +77,13 @@ In every tree object, `text` property defines `id` stands for the unique key whi
         // name of the leaf node
         text: 'Washington',
         // id of the leaf node, component highlights leaf node by comparing the activeId with this.
-        id: 1002,
+        id: 1,
         // disable options
         disabled: true
       },
       {
         text: 'Baltimore',
-        id: 1001
+        id: 2
       }
     ]
   }

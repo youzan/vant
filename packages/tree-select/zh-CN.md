@@ -77,13 +77,13 @@ export default {
         // 名称
         text: '温州',
         // id，作为匹配选中状态的标识
-        id: 1002,
+        id: 1,
         // 禁用选项
         disabled: true
       },
       {
         text: '杭州',
-        id: 1001
+        id: 2
       }
     ]
   }
