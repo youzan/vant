@@ -14,11 +14,17 @@ test('select item', () => {
     propsData: {
       items: [{
         text: 'group1',
-        children: [item]
+        children: [
+          item,
+          { ...item, disabled: true }
+        ]
       }]
     }
   });
 
-  wrapper.find('.van-tree-select__item').trigger('click');
+  const items = wrapper.findAll('.van-tree-select__item');
+  items.at(0).trigger('click');
   expect(wrapper.emitted('itemclick')[0][0]).toEqual(item);
+  items.at(1).trigger('click');
+  expect(wrapper.emitted('itemclick')[1]).toBeFalsy();
 });
