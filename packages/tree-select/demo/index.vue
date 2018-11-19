@@ -21,29 +21,30 @@ export default {
       group3: '江苏',
       city1: [{
         text: '杭州',
-        id: 1001
+        id: 1
       }, {
         text: '温州',
-        id: 1002
+        id: 2
       }, {
         text: '宁波',
-        id: 1003
+        id: 3,
+        disabled: true
       }, {
         text: '义乌',
-        id: 1004
+        id: 4
       }],
       city2: [{
         text: '南京',
-        id: 1011
+        id: 5
       }, {
         text: '无锡',
-        id: 1012
+        id: 6
       }, {
         text: '徐州',
-        id: 1013
+        id: 7
       }, {
         text: '苏州',
-        id: 1014
+        id: 8
       }]
     },
     'en-US': {
@@ -52,29 +53,30 @@ export default {
       group3: 'Group2',
       city1: [{
         text: 'Delaware',
-        id: 1001
+        id: 1
       }, {
         text: 'Florida',
-        id: 1002
+        id: 2
       }, {
         text: 'Georqia',
-        id: 1003
+        id: 3,
+        disabled: true
       }, {
         text: 'Indiana',
-        id: 1004
+        id: 4
       }],
       city2: [{
         text: 'Alabama',
-        id: 1011
+        id: 5
       }, {
         text: 'Kansas',
-        id: 1012
+        id: 6
       }, {
         text: 'Louisiana',
-        id: 1013
+        id: 7
       }, {
         text: 'Texas',
-        id: 1014
+        id: 8
       }]
     }
   },
@@ -82,7 +84,7 @@ export default {
   data() {
     return {
       mainActiveIndex: 0,
-      activeId: 1001
+      activeId: 1
     };
   },
 

@@ -25,7 +25,7 @@ Vue.use(TreeSelect);
 export default {
   data() {
     return {
-      items: items,
+      items,
       // the index of parent item
       mainActiveIndex: 0,
       // the id of selected item
@@ -77,13 +77,13 @@ In every tree object, `text` property defines `id` stands for the unique key whi
         // name of the leaf node
         text: 'Washington',
         // id of the leaf node, component highlights leaf node by comparing the activeId with this.
-        id: 1002
+        id: 1,
+        // disable options
+        disabled: true
       },
       {
-        // name of the leaf node
         text: 'Baltimore',
-        // id of the leaf node, component highlights leaf node by comparing the activeId with this.
-        id: 1001
+        id: 2
       }
     ]
   }

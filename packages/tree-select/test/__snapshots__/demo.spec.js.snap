@@ -26,7 +26,7 @@ exports[`renders demo correctly 1`] = `
           温州
           <!---->
         </div>
-        <div class="van-ellipsis van-tree-select__item">
+        <div class="van-ellipsis van-tree-select__item van-tree-select__item--disabled">
           宁波
           <!---->
         </div>
