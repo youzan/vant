@@ -11,7 +11,6 @@ Vue.use(TreeSelect);
 
 #### 基础用法
 
-
 ```html
 <van-tree-select
   :items="items"
@@ -26,11 +25,11 @@ Vue.use(TreeSelect);
 export default {
   data() {
     return {
-      items: items,
+      items,
       // 左侧高亮元素的index
       mainActiveIndex: 0,
       // 被选中元素的id
-      activeId: 1001
+      activeId: 1
     };
   },
   methods: {
@@ -64,9 +63,9 @@ export default {
 
 ### 数据格式
 #### items 分类显示所需数据的数据结构
-`items` 整体为一个数组，数组内包含一系列描述分类的 object。
+`items` 整体为一个数组，数组内包含一系列描述分类的对象。
 
-每个分类里，text表示当前分类的名称。children 表示分类里的可选项，为数组结构，id被用来唯一标识每个选项
+每个分类里，text 表示当前分类的名称。children 表示分类里的可选项，为数组结构，id 被用来唯一标识每个选项
 ```javascript
 [
   {
@@ -75,15 +74,15 @@ export default {
     // 该导航下所有的可选项
     children: [
       {
-        // 可选项的名称
+        // 名称
         text: '温州',
-        // 可选项的id，高亮的时候是根据id是否和选中的id是否相同进行判断的
-        id: 1002
+        // id，作为匹配选中状态的标识
+        id: 1002,
+        // 禁用选项
+        disabled: true
       },
       {
-        // 可选项的名称
         text: '杭州',
-        // 可选项的id，高亮的时候是根据id是否和选中的id是否相同进行判断的
         id: 1001
       }
     ]

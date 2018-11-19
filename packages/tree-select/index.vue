@@ -18,7 +18,10 @@
         v-for="item in subItems"
         :key="item.id"
         class="van-ellipsis"
-        :class="b('item', { active: activeId === item.id })"
+        :class="b('item', {
+          active: activeId === item.id,
+          disabled: item.disabled
+        })"
         @click="onItemSelect(item)"
       >
         {{ item.text }}
@@ -66,7 +69,9 @@ export default create({
 
   methods: {
     onItemSelect(data) {
-      this.$emit('itemclick', data);
+      if (!data.disabled) {
+        this.$emit('itemclick', data);
+      }
     }
   }
 });
