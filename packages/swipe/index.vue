@@ -19,6 +19,7 @@
         <i
           v-for="index in count"
           :class="b('indicator', { active: index - 1 === activeIndicator })"
+          :style="indicatorStyle"
         />
       </div>
     </slot>
@@ -40,6 +41,7 @@ export default create({
     height: Number,
     autoplay: Number,
     vertical: Boolean,
+    indicatorColor: String,
     loop: {
       type: Boolean,
       default: true
@@ -143,6 +145,12 @@ export default create({
         [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
         transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
         transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`
+      };
+    },
+
+    indicatorStyle() {
+      return {
+        backgroundColor: this.indicatorColor
       };
     }
   },
