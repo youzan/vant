@@ -13,7 +13,7 @@ Vue.use(Swipe).use(SwipeItem);
 通过`autoplay`属性设置自动轮播间隔
 
 ```html
-<van-swipe :autoplay="3000">
+<van-swipe :autoplay="3000" indicator-color="white">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
@@ -128,6 +128,7 @@ export default {
 | initial-swipe | 初始位置索引值 | `Number` | `0` | - |
 | loop | 是否开启循环播放 | `Boolean` | `true` | - |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
+| indicator-color | 指示器颜色 | `String` | `#1989fa` | 1.4.5 |
 | vertical | 是否为纵向滚动 | `Boolean` | `false` | 1.1.1 |
 | touchable | 是否可以通过手势滑动 | `Boolean` | `true` | 1.1.1 |
 | width | 滑块宽度 | `Number` | `0` | 1.2.1 |

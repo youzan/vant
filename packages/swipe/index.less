@@ -30,17 +30,19 @@
   }
 
   &__indicator {
+    opacity: .3;
     border-radius: 100%;
-    background-color: @gray-dark;
+    background-color: @blue;
     width: @swipe-indicator;
     height: @swipe-indicator;
+    transition: opacity .2s;
 
     &:not(:last-child) {
       margin-right: @swipe-indicator;
     }
 
     &--active {
-      background-color: @orange;
+      opacity: 1;
     }
   }
 }
