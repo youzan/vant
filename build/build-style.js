@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const less = require('gulp-less');
+const csso = require('gulp-csso');
 const postcss = require('gulp-postcss');
-const cssmin = require('gulp-clean-css');
 
 // compile component css
 gulp.task('compile', () => {
@@ -9,7 +9,7 @@ gulp.task('compile', () => {
     .src(['../es/**/*.less', '../lib/**/*.less'])
     .pipe(less())
     .pipe(postcss())
-    .pipe(cssmin())
+    .pipe(csso())
     .pipe(gulp.dest(file => file.base.replace('.less', '.css')));
 });
 
