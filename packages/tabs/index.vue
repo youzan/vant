@@ -375,7 +375,7 @@ export default create({
       const isCard = this.type === 'card';
 
       if (color) {
-        if (!item.disabled && isCard !== active) {
+        if (!item.disabled && isCard && !active) {
           style.color = color;
         }
         if (!item.disabled && isCard && active) {
