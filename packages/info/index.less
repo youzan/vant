@@ -1,27 +1,30 @@
 @import '../style/var';
 
 @van-info-size: 16px;
+@van-info-color: @white;
 @van-info-padding: 0 3px;
 @van-info-font-size: 12px;
+@van-info-font-weight: 500;
 @van-info-border-width: 1px;
 @van-info-background-color: @red;
+@van-info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 
 .van-info {
+  position: absolute;
   right: 0;
   top: -@van-info-size / 2;
-  color: @white;
-  font-weight: 500;
-  position: absolute;
+  color: @van-info-color;
+  font-size: @van-info-font-size;
+  font-weight: @van-info-font-weight;
+  font-family: @van-info-font-family;
   text-align: center;
   box-sizing: border-box;
-  border: @van-info-border-width solid @white;
   padding: @van-info-padding;
   min-width: @van-info-size;
-  font-size: @van-info-font-size;
   line-height: @van-info-size - @van-info-border-width * 2;
+  border: @van-info-border-width solid @white;
   border-radius: @van-info-size;
   background-color: @van-info-background-color;
   transform: translateX(50%);
   transform-origin: 100%;
-  font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 }
