@@ -36,7 +36,13 @@ export default {
 
 #### 高级用法
 ```html
-<van-switch :value="checked" size="36px" @input="onInput" />
+<van-switch
+  :value="checked"
+  size="36px"
+  active-color="#4b0"
+  inactive-color="#f44"
+  @input="onInput"
+/>
 ```
 
 ```js
@@ -69,6 +75,8 @@ export default {
 | loading | 是否为加载状态 | `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
 | size | 开关尺寸 | `String` | `30px` | 1.0.0 |
+| active-color | 打开时的背景色 | `String` | `#1989fa` | 1.4.2 |
+| inactive-color | 关闭时的背景色 | `String` | `#fff` | 1.4.2 |
 
 ### Event
 

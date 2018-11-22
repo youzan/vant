@@ -5,15 +5,27 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-switch v-model="checked" disabled />
+      <van-switch
+        v-model="checked"
+        disabled
+      />
     </demo-block>
 
     <demo-block :title="$t('loading')">
-      <van-switch v-model="checked" loading />
+      <van-switch
+        v-model="checked"
+        loading
+      />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-switch :value="checked2" size="36px" @input="onInput" />
+      <van-switch
+        :value="checked2"
+        size="36px"
+        active-color="#4b0"
+        inactive-color="#f44"
+        @input="onInput"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -51,7 +63,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-switch {
   .van-switch {
     margin: 0 15px;

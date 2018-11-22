@@ -19,6 +19,7 @@
         <i
           v-for="index in count"
           :class="b('indicator', { active: index - 1 === activeIndicator })"
+          :style="indicatorStyle"
         />
       </div>
     </slot>
@@ -40,6 +41,7 @@ export default create({
     height: Number,
     autoplay: Number,
     vertical: Boolean,
+    indicatorColor: String,
     loop: {
       type: Boolean,
       default: true
@@ -130,6 +132,11 @@ export default create({
       return (this.active + this.count) % this.count;
     },
 
+    isCorrectDirection() {
+      const expect = this.vertical ? 'vertical' : 'horizontal';
+      return this.direction === expect;
+    },
+
     trackStyle() {
       const mainAxis = this.vertical ? 'height' : 'width';
       const crossAxis = this.vertical ? 'width' : 'height';
@@ -138,6 +145,12 @@ export default create({
         [crossAxis]: this[crossAxis] ? `${this[crossAxis]}px` : '',
         transitionDuration: `${this.swiping ? 0 : this.duration}ms`,
         transform: `translate${this.vertical ? 'Y' : 'X'}(${this.offset}px)`
+      };
+    },
+
+    indicatorStyle() {
+      return {
+        backgroundColor: this.indicatorColor
       };
     }
   },
@@ -178,10 +191,7 @@ export default create({
 
       this.touchMove(event);
 
-      if (
-        (this.vertical && this.direction === 'vertical') ||
-        this.direction === 'horizontal'
-      ) {
+      if (this.isCorrectDirection) {
         event.preventDefault();
         event.stopPropagation();
         this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
@@ -191,9 +201,9 @@ export default create({
     onTouchEnd() {
       if (!this.touchable || !this.swiping) return;
 
-      if (this.delta) {
+      if (this.delta && this.isCorrectDirection) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
-        this.move(offset > 50 ? (this.delta > 0 ? -1 : 1) : 0);
+        this.move(offset > 0 ? (this.delta > 0 ? -1 : 1) : 0);
       }
 
       this.swiping = false;
@@ -204,14 +214,18 @@ export default create({
       const { delta, active, count, swipes, trackSize } = this;
       const atFirst = active === 0;
       const atLast = active === count - 1;
-      const outOfBounds = !this.loop && ((atFirst && (offset > 0 || move < 0)) || (atLast && (offset < 0 || move > 0)));
+      const outOfBounds =
+        !this.loop &&
+        ((atFirst && (offset > 0 || move < 0)) ||
+          (atLast && (offset < 0 || move > 0)));
 
       if (outOfBounds || count <= 1) {
         return;
       }
 
-      swipes[0].offset = (atLast && (delta < 0 || move > 0)) ? trackSize : 0;
-      swipes[count - 1].offset = (atFirst && (delta > 0 || move < 0)) ? -trackSize : 0;
+      swipes[0].offset = atLast && (delta < 0 || move > 0) ? trackSize : 0;
+      swipes[count - 1].offset =
+        atFirst && (delta > 0 || move < 0) ? -trackSize : 0;
 
       if (move && active + move >= -1 && active + move <= count) {
         this.active += move;
@@ -225,7 +239,7 @@ export default create({
       this.correctPosition();
       setTimeout(() => {
         this.swiping = false;
-        this.move(index % this.count - this.active);
+        this.move((index % this.count) - this.active);
       }, 30);
     },
 

@@ -38,9 +38,9 @@ exports[`renders demo correctly 1`] = `
         <i class="van-hairline van-key">7</i>
         <i class="van-hairline van-key">8</i>
         <i class="van-hairline van-key">9</i>
-        <i class="van-hairline van-key van-key van-key--gray"></i>
+        <i class="van-hairline van-key van-key--gray"></i>
         <i class="van-hairline van-key">0</i>
-        <i class="van-hairline van-key van-key van-key--gray van-key van-key--delete">delete</i>
+        <i class="van-hairline van-key van-key--gray van-key--delete">删除</i>
       </div>
       <!---->
     </div>

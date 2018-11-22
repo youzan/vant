@@ -75,7 +75,7 @@ export default {
 | title | Title | `String` | - |
 | description | Description | `String` | - |
 | direction | Can be set to `horizontal` `vertical` | `String` | `horizontal` |
-| active-color | Active step color | `String` | `#06bf04` |
+| active-color | Active step color | `String` | `#4b0` |
 
 ### Steps Slot
 

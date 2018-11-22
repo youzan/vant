@@ -1,13 +1,24 @@
 <template>
   <div :class="b()">
-    <span :class="b('portion', { 'with-pivot': showPivot && text })" :style="portionStyle">
-      <span v-if="showPivot && text" ref="pivot" :style="pivotStyle" :class="b('pivot')">{{ text }}</span>
+    <span
+      :class="b('portion', { 'with-pivot': showPivot && text })"
+      :style="portionStyle"
+    >
+      <span
+        v-if="showPivot && text"
+        ref="pivot"
+        :style="pivotStyle"
+        :class="b('pivot')"
+      >
+        {{ text }}
+      </span>
     </span>
   </div>
 </template>
 
 <script>
 import create from '../utils/create';
+import { BLUE } from '../utils/color';
 
 export default create({
   name: 'progress',
@@ -27,7 +38,7 @@ export default create({
     },
     color: {
       type: String,
-      default: '#38f'
+      default: BLUE
     },
     textColor: {
       type: String,

@@ -8,7 +8,10 @@
     <demo-block :title="$t('position')">
       <van-button @click="show2 = true;">{{ $t('button2') }}</van-button>
 
-      <van-popup v-model="show2" position="bottom">
+      <van-popup
+        v-model="show2"
+        position="bottom"
+      >
         <van-picker
           show-toolbar
           :columns="$t('columns')"
@@ -18,15 +21,25 @@
       </van-popup>
 
       <van-button @click="show3 = true">{{ $t('button4') }}</van-button>
-      <van-popup v-model="show3" position="top" :overlay="false">
+      <van-popup
+        v-model="show3"
+        position="top"
+        :overlay="false"
+      >
         {{ $t('content') }}
       </van-popup>
 
       <van-button @click="show4 = true">{{ $t('button5') }}</van-button>
-      <van-popup v-model="show4" position="right">
+      <van-popup
+        v-model="show4"
+        position="right"
+      >
         <van-button @click="show4 = false">{{ $t('button6') }}</van-button>
         <van-button @click="show5 = true">{{ $t('button5') }}</van-button>
-        <van-popup v-model="show5" position="right">
+        <van-popup
+          v-model="show5"
+          position="right"
+        >
           <van-button @click="show5 = false">{{ $t('button6') }}</van-button>
         </van-popup>
       </van-popup>
@@ -90,7 +103,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-popup {
   .van-button {
     margin: 10px 0 10px 15px;

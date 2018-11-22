@@ -3,20 +3,33 @@
     <demo-section>
       <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
-        <van-swipe-cell :right-width="65" :left-width="65">
+        <van-swipe-cell
+          :right-width="65"
+          :left-width="65"
+        >
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')" />
+            <van-cell
+              :title="$t('title')"
+              :value="$t('content')"
+            />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-swipe-cell>
       </demo-block>
 
       <demo-block :title="$t('title2')">
-        <van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
+        <van-swipe-cell
+          :right-width="65"
+          :left-width="65"
+          :on-close="onClose"
+        >
           <span slot="left">{{ $t('button1') }}</span>
           <van-cell-group>
-            <van-cell :title="$t('title')" :value="$t('content')" />
+            <van-cell
+              :title="$t('title')"
+              :value="$t('content')"
+            />
           </van-cell-group>
           <span slot="right">{{ $t('button2') }}</span>
         </van-swipe-cell>
@@ -67,21 +80,23 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
+@import '../../style/var';
+
 .demo-swipe-cell {
   user-select: none;
 
   .van-swipe-cell {
     &__left,
     &__right {
-      color: #FFFFFF;
+      color: @white;
       font-size: 15px;
       width: 65px;
       height: 44px;
       display: inline-block;
       text-align: center;
       line-height: 44px;
-      background-color: #F44;
+      background-color: @red;
     }
   }
 }

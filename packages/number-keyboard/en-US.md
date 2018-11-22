@@ -70,6 +70,7 @@ export default {
 | z-index | Keyboard z-index | `Number` | `100` |
 | extra-key | Content of bottom left key | `String` | `''` |
 | close-button-text | Close button text | `String` | `-` |
+| delete-button-text | Delete button text | `String` | `delete` |
 | show-delete-key | Whether to show delete button | `Boolean` | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` |
 

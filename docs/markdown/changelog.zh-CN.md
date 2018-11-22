@@ -1,5 +1,63 @@
 ## 更新日志
 
+## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
+`2018-11-18`
+
+**Improvements**
+
+- Cell: 新增 size 属性 [\#2086](https://github.com/youzan/vant/pull/2086)
+- Icon: 新增 star、star-o 图标 [\#2092](https://github.com/youzan/vant/pull/2092)
+- ImagePreview: 新增 loop 属性 [\#2103](https://github.com/youzan/vant/pull/2103)
+- Rate: 更新星星图标样式 [\#2093](https://github.com/youzan/vant/pull/2093)
+- Dialog: 内容超过屏幕高度时展示滚动条 [\#2104](https://github.com/youzan/vant/pull/2104)
+
+**Bug Fixes**
+
+- 修复 Sku mobile 类型留言缺少 placeholder 的问题 [\#2098](https://github.com/youzan/vant/pull/2098)
+- 修复 Tab line-width 传入 0 时不生效的问题 [\#2081](https://github.com/youzan/vant/pull/2081)
+- 修复 Tab 在 sticky 模式下切换标签未自动滚动到顶部的问题 [\#2105](https://github.com/youzan/vant/pull/2105)
+- 修复 Toast 最大宽度错误的问题 [\#2074](https://github.com/youzan/vant/pull/2074)
+- 修复 Steps CSS 选择器优先级错误 [\#2072](https://github.com/youzan/vant/pull/2072)
+
+
+## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
+`2018-11-10`
+
+**Improvements**
+
+- Checkbox: 新增 checked-color 属性 [\#2057](https://github.com/youzan/vant/pull/2057)
+- NumberKeyboard: 新增 close-button-text 属性 [\#2051](https://github.com/youzan/vant/pull/2051)
+- Swipe: 优化手势操作体验 [\#2039](https://github.com/youzan/vant/pull/2039)
+- 文档：重新对组件进行了分类 [\#2032](https://github.com/youzan/vant/pull/2032)
+
+**Bug Fixes**
+
+- 修复 Circle 在部分安卓手机上样式错误的问题 [\#2062](https://github.com/youzan/vant/pull/2062)
+- 修复 DatetimePicker time 类型且使用 formatter 时获取当前值错误的问题 [\#2059](https://github.com/youzan/vant/pull/2059)
+- 修复 Tab 可以通过手势切换到禁用项的问题 [\#2064](https://github.com/youzan/vant/pull/2064)
+
+
+## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
+`2018-11-04`
+
+**Breaking changes**
+
+- 优化引入样式的文件路径（仅影响手动引入样式的方式）详见[快速上手](#/zh-CN/quickstart). [\#2021](https://github.com/youzan/vant/pull/2021)
+- 支持基于 Less 变量的定制主题方式，不再支持原先的定制主题方式，详见[定制主题](#/en-US/theme). [\#2027](https://github.com/youzan/vant/pull/2027)
+
+**Improvements**
+
+- Sku: 支持预览商品图片 [\#2019](https://github.com/youzan/vant/pull/2019)
+- i18n: 支持土耳其语 [\#1998](https://github.com/youzan/vant/pull/1998)
+- i18n: 支持繁体中文（台） [\#1999](https://github.com/youzan/vant/pull/1999)
+- Icon: 新增 question2 图标 [\#2005](https://github.com/youzan/vant/pull/2005)
+- Badge: 新增 change 事件 [\#2017](https://github.com/youzan/vant/pull/2017)
+- Switch: 新增 active-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
+- Switch: 新增 inactive-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
+- Radio: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
+- Checkbox: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
+
+
 ## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
 `2018-10-29`
 
@@ -339,7 +397,7 @@
 - 修复 Progress 文字为空时样式错误的问题 [\#1411](https://github.com/youzan/vant/pull/1411)
 - 修复 Tab 同时进行插入和删除时顺序错误的问题 [\#1429](https://github.com/youzan/vant/pull/1429)
 - 修复 Vue.use 方法 TypeScript 类型错误 [\#1410](https://github.com/youzan/vant/pull/1410)
-- 修复 vant-css 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
+- 修复 style 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
@@ -1325,7 +1383,7 @@
 
 **Breaking changes**
 
-* 移除 vant-css 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
+* 移除 style 中对 reset.css 的默认引用 [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
 * 重写 Swipe 组件，调整部分 API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200)
 * 优化 Search 组件，修改原有结构 [\#198](https://github.com/youzan/vant/pull/198)
 
@@ -1381,7 +1439,7 @@
 * 修复 Button active 状态下边框样式问题 [\#150](https://github.com/youzan/vant/issues/150)
 * 修复 Stepper 组件输入框样式错误 [\#159](https://github.com/youzan/vant/pull/159)
 * 修复 Waterfall 未显示时 disable 属性无法生效的问题 [\#166](https://github.com/youzan/vant/pull/166)
-* 修复 vant-css 构建过程中未编译 calc 属性的问题
+* 修复 style 构建过程中未编译 calc 属性的问题
 * 修复 MacOS 下 npm run dev 报错的问题 [\#152](https://github.com/youzan/vant/issues/152)
 * 修复文档在部分低版本浏览器路由失效的问题 [\#158](https://github.com/youzan/vant/pull/158)
 * 修复文档中遗漏 SwipeItem 组件引入方式的问题 [\#167](https://github.com/youzan/vant/pull/167)

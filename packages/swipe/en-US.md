@@ -13,7 +13,7 @@ Vue.use(Swipe).use(SwipeItem);
 Use `autoplay` prop to set autoplay interval
 
 ```html
-<van-swipe :autoplay="3000">
+<van-swipe :autoplay="3000" indicator-color="white">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>
@@ -128,7 +128,8 @@ export default {
 | loop | Whether to enable loop | `Boolean` | `true` |
 | vertical | Vertical Scrolling | `Boolean` | `false` |
 | touchable | Whether touchable | `Boolean` | `true` |
-| show-indicators | Whether to show indocators | `Boolean` | `true` |
+| show-indicators | Whether to show indicators | `Boolean` | `true` |
+| indicator-color | Indicator color | `String` | `#1989fa` |
 | initial-swipe | Index of initial swipe, start from 0 | `Number` | `0` |
 | width | Set Swiper Item Width | `Number` | `0` |
 | height | Set Swiper Item Height | `Number` | `0` |

@@ -9,7 +9,7 @@ const tasks = [
   'lint',
   'build:entry',
   'build:components',
-  'build:vant-css',
+  'build:style',
   'build:style-entry',
   'build:vant'
 ];

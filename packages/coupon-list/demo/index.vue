@@ -7,7 +7,10 @@
         @click="showList = true"
       />
 
-      <van-popup v-model="showList" position="bottom">
+      <van-popup
+        v-model="showList"
+        position="bottom"
+      >
         <van-coupon-list
           :coupons="coupons"
           :chosen-coupon="chosenCoupon"
@@ -122,7 +125,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-coupon-list {
   .van-popup {
     height: 100%;

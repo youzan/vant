@@ -31,12 +31,26 @@
         </slot>
       </sku-header>
     </slot>
-    <div class="van-sku-body" :style="bodyStyle">
+    <div
+      class="van-sku-body"
+      :style="bodyStyle"
+    >
       <!-- sku-body-top -->
-      <slot name="sku-body-top" :selected-sku="selectedSku" :sku-event-bus="skuEventBus" />
+      <slot
+        name="sku-body-top"
+        :selected-sku="selectedSku"
+        :sku-event-bus="skuEventBus"
+      />
       <!-- sku-group -->
-      <slot name="sku-group" :selected-sku="selectedSku" :sku-event-bus="skuEventBus">
-        <div v-if="hasSku" class="van-sku-group-container van-hairline--bottom">
+      <slot
+        name="sku-group"
+        :selected-sku="selectedSku"
+        :sku-event-bus="skuEventBus"
+      >
+        <div
+          v-if="hasSku"
+          class="van-sku-group-container van-hairline--bottom"
+        >
           <sku-row
             v-for="(skuTreeItem, index) in skuTree"
             :key="index"
@@ -55,7 +69,10 @@
         </div>
       </slot>
       <!-- extra-sku-group -->
-      <slot name="extra-sku-group" :sku-event-bus="skuEventBus"/>
+      <slot
+        name="extra-sku-group"
+        :sku-event-bus="skuEventBus"
+      />
       <!-- sku-stepper -->
       <slot
         name="sku-stepper"
@@ -91,7 +108,10 @@
       </slot>
     </div>
     <!-- sku-actions -->
-    <slot name="sku-actions" :sku-event-bus="skuEventBus">
+    <slot
+      name="sku-actions"
+      :sku-event-bus="skuEventBus"
+    >
       <sku-actions
         :sku-event-bus="skuEventBus"
         :buy-text="buyText"
@@ -106,6 +126,7 @@
 import Vue from 'vue';
 import Popup from '../popup';
 import Toast from '../toast';
+import ImagePreview from '../image-preview';
 import SkuHeader from './components/SkuHeader';
 import SkuRow from './components/SkuRow';
 import SkuRowItem from './components/SkuRowItem';
@@ -273,6 +294,25 @@ export default create({
 
     skuTree() {
       return this.sku.tree || [];
+    },
+
+    imageList() {
+      const imageList = [this.goods.picture];
+      if (this.skuTree.length > 0) {
+        const treeItem = this.skuTree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
+
+        if (!treeItem.v) {
+          return;
+        }
+
+        treeItem.v.forEach(vItem => {
+          if (vItem.imgUrl) {
+            imageList.push(vItem.imgUrl);
+          }
+        });
+      }
+
+      return imageList;
     }
   },
 
@@ -283,6 +323,7 @@ export default create({
     skuEventBus.$on('sku:close', this.onClose);
     skuEventBus.$on('sku:select', this.onSelect);
     skuEventBus.$on('sku:numChange', this.onNumChange);
+    skuEventBus.$on('sku:previewImage', this.onPreviewImage);
     skuEventBus.$on('sku:overLimit', this.onOverLimit);
     skuEventBus.$on('sku:addCart', this.onAddCart);
     skuEventBus.$on('sku:buy', this.onBuy);
@@ -366,6 +407,28 @@ export default create({
 
     onNumChange(num) {
       this.selectedNum = num;
+    },
+
+    onPreviewImage(indexImage) {
+      const index = this.imageList.findIndex(image => {
+        return image === indexImage;
+      });
+
+      const cbParams = {
+        index,
+        imageList: this.imageList,
+        indexImage
+      };
+
+      this.$emit('preview-on', cbParams);
+
+      ImagePreview({
+        images: this.imageList,
+        startPosition: index,
+        onClose: () => {
+          this.$emit('preview-close', cbParams);
+        }
+      });
     },
 
     onOverLimit(data) {

@@ -2,7 +2,11 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
-      <van-actionsheet v-model="show1" :actions="actions" @select="onSelect" />
+      <van-actionsheet
+        v-model="show1"
+        :actions="actions"
+        @select="onSelect"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -18,7 +22,10 @@
 
     <demo-block :title="$t('title3')">
       <van-button @click="show3 = true">{{ $t('button3') }}</van-button>
-      <van-actionsheet v-model="show3" :title="$t('title')">
+      <van-actionsheet
+        v-model="show3"
+        :title="$t('title')"
+      >
         <p>{{ $t('content') }}</p>
       </van-actionsheet>
     </demo-block>
@@ -81,7 +88,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-actionsheet {
   .van-button {
     margin-left: 15px;

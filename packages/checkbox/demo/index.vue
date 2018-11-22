@@ -5,12 +5,31 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-checkbox :value="false" disabled>{{ $t('checkbox') }}</van-checkbox>
-      <van-checkbox :value="true" disabled>{{ $t('checkbox') }}</van-checkbox>
+      <van-checkbox
+        :value="false"
+        disabled
+      >
+        {{ $t('checkbox') }}
+      </van-checkbox>
+      <van-checkbox
+        :value="true"
+        disabled
+      >
+        {{ $t('checkbox') }}
+      </van-checkbox>
+    </demo-block>
+
+    <demo-block :title="$t('customColor')">
+      <van-checkbox
+        v-model="checkbox2"
+        checked-color="#4b0"
+      >
+        {{ $t('customColor') }}
+      </van-checkbox>
     </demo-block>
 
     <demo-block :title="$t('customIcon')">
-      <van-checkbox v-model="checkbox2">
+      <van-checkbox v-model="checkbox3">
         {{ $t('customIcon') }}
         <img
           slot="icon"
@@ -33,7 +52,10 @@
     </demo-block>
 
     <demo-block :title="$t('title4')">
-      <van-checkbox-group v-model="result2" :max="2">
+      <van-checkbox-group
+        v-model="result2"
+        :max="2"
+      >
         <van-checkbox
           v-for="(item, index) in list"
           :key="index"
@@ -54,7 +76,10 @@
             :title="$t('checkbox') + item"
             @click="toggle(index)"
           >
-            <van-checkbox ref="checkboxes" :name="item" />
+            <van-checkbox
+              ref="checkboxes"
+              :name="item"
+            />
           </van-cell>
         </van-cell-group>
       </van-checkbox-group>
@@ -68,13 +93,15 @@ export default {
     'zh-CN': {
       checkbox: '复选框',
       customIcon: '自定义图标',
-      title3: 'Checkbox 组',
+      customColor: '自定义颜色',
+      title3: '复选框组',
       title4: '设置最大可选数',
-      title5: '与 Cell 组件一起使用'
+      title5: '搭配单元格组件使用'
     },
     'en-US': {
       checkbox: 'Checkbox',
       customIcon: 'Custom Icon',
+      customColor: 'Custom Color',
       title3: 'Checkbox Group',
       title4: 'Maximum amount of checked options',
       title5: 'Inside a Cell'
@@ -85,6 +112,7 @@ export default {
     return {
       checkbox1: true,
       checkbox2: true,
+      checkbox3: true,
       list: [
         'a',
         'b',
@@ -108,7 +136,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-checkbox {
   .van-checkbox {
     margin: 10px 0 0 20px;

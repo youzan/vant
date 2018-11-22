@@ -8,7 +8,6 @@
       {{ prevText || $t('prev') }}
     </li>
     <li
-      v-if="isMultiMode"
       v-for="page in pages"
       class="van-hairline"
       :class="[b('item', { active: page.active }), b('page')]"
@@ -16,7 +15,10 @@
     >
       {{ page.text }}
     </li>
-    <li v-if="!isMultiMode" :class="b('page-desc')">
+    <li
+      v-if="!isMultiMode"
+      :class="b('page-desc')"
+    >
       <slot name="pageDesc">{{ pageDesc }}</slot>
     </li>
     <li
@@ -76,6 +78,10 @@ export default create({
     pages() {
       const pages = [];
       const pageCount = this.computedPageCount;
+
+      if (!this.isMultiMode) {
+        return pages;
+      }
 
       // Default page limits
       let startPage = 1;

@@ -14,8 +14,8 @@ export default create({
     value: Array,
     disabled: Boolean,
     max: {
-      default: 0,
-      type: Number
+      type: Number,
+      default: 0
     }
   },
 

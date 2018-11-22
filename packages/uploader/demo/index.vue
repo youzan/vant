@@ -2,7 +2,11 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <div class="demo-uploader-container">
-        <van-uploader :max-size="102400" @oversize="logContent('oversize')" :before-read="beforeRead(1)">
+        <van-uploader
+          :max-size="102400"
+          @oversize="logContent('oversize')"
+          :before-read="beforeRead(1)"
+        >
           <van-icon name="photograph" />
         </van-uploader>
       </div>
@@ -10,7 +14,12 @@
 
     <demo-block :title="$t('title2')">
       <div class="demo-uploader-container">
-        <van-uploader accept="image/gif, image/jpeg" multiple :max-size="36000" @oversize="logContent">
+        <van-uploader
+          accept="image/gif, image/jpeg"
+          multiple
+          :max-size="36000"
+          @oversize="logContent"
+        >
           <van-icon name="photograph" />
         </van-uploader>
       </div>
@@ -43,7 +52,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-uploader {
   &-container {
     padding: 10px 20px;

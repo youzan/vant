@@ -2,7 +2,10 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-cell-group>
-        <van-field v-model="value" :placeholder="$t('usernamePlaceholder')" />
+        <van-field
+          v-model="value"
+          :placeholder="$t('usernamePlaceholder')"
+        />
       </van-cell-group>
     </demo-block>
 
@@ -78,7 +81,13 @@
           :label="$t('sms')"
           :placeholder="$t('smsPlaceholder')"
         >
-          <van-button slot="button" size="small" type="primary">{{ $t('sendSMS') }}</van-button>
+          <van-button
+            slot="button"
+            size="small"
+            type="primary"
+          >
+            {{ $t('sendSMS') }}
+          </van-button>
         </van-field>
       </van-cell-group>
     </demo-block>
@@ -136,12 +145,14 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
+@import '../../style/var';
+
 .demo-field {
   padding-bottom: 30px;
 
-  .van-field__icon {
-    color: #38f;
+  .van-field__icon .van-icon {
+    color: @blue;
   }
 }
 </style>

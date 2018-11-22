@@ -1,16 +1,40 @@
 <template>
   <demo-section>
     <demo-block :title="$t('alert1')">
-      <van-button type="primary" plain @click="onClickAlert">{{ $t('alert1') }}</van-button>
-      <van-button type="primary" plain @click="onClickAlert2">{{ $t('alert2') }}</van-button>
+      <van-button
+        type="primary"
+        plain
+        @click="onClickAlert"
+      >
+        {{ $t('alert1') }}
+      </van-button>
+      <van-button
+        type="primary"
+        plain
+        @click="onClickAlert2"
+      >
+        {{ $t('alert2') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('confirm')">
-      <van-button type="primary" plain @click="onClickConfirm">{{ $t('confirm') }}</van-button>
+      <van-button
+        type="primary"
+        plain
+        @click="onClickConfirm"
+      >
+        {{ $t('confirm') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-button type="danger" plain @click="show = true">{{ $t('advancedUsage') }}</van-button>
+      <van-button
+        type="danger"
+        plain
+        @click="show = true"
+      >
+        {{ $t('advancedUsage') }}
+      </van-button>
       <van-dialog
         v-model="show"
         show-cancel-button
@@ -88,7 +112,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-dialog {
   .van-doc-demo-block > .van-button {
     margin-left: 15px;

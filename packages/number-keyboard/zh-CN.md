@@ -70,6 +70,7 @@ export default {
 | z-index | 键盘 z-index | `Number` | `100` | - |
 | extra-key | 左下角按键内容 | `String` | `''` | - |
 | close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` | - |
+| delete-button-text | 删除按钮文字 | `String` | `删除` | 1.4.3 |
 | show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
 | hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 

@@ -8,7 +8,11 @@
       @animationend="onAnimationEnd"
       @webkitAnimationEnd="onAnimationEnd"
     >
-      <div :class="b('title')" class="van-hairline--top" v-if="title || showTitleClose">
+      <div
+        v-if="title || showTitleClose"
+        :class="b('title')"
+        class="van-hairline--top"
+      >
         <span v-text="title" />
         <span
           :class="b('close')"
@@ -26,9 +30,20 @@
           @press="onPressKey"
         />
       </div>
-      <div v-if="theme === 'custom'" :class="b('sidebar')">
-        <key :text="'delete'" :type="['delete', 'big']" @press="onPressKey" />
-        <key :text="closeButtonText" :type="['green', 'big']" @press="onPressKey" />
+      <div
+        v-if="theme === 'custom'"
+        :class="b('sidebar')"
+      >
+        <key
+          :text="deleteText"
+          :type="['delete', 'big', 'gray']"
+          @press="onPressKey"
+        />
+        <key
+          :text="closeButtonText"
+          :type="['blue', 'big']"
+          @press="onPressKey"
+        />
       </div>
     </div>
   </transition>
@@ -47,6 +62,7 @@ export default create({
     show: Boolean,
     title: String,
     closeButtonText: String,
+    deleteButtonText: String,
     theme: {
       type: String,
       default: 'default'
@@ -109,7 +125,7 @@ export default create({
           keys.push(
             { text: this.extraKey, type: ['gray'] },
             { text: 0 },
-            { text: 'delete', type: ['gray', 'delete'] }
+            { text: this.deleteText, type: ['gray', 'delete'] }
           );
           break;
         case 'custom':
@@ -131,6 +147,10 @@ export default create({
 
     showTitleClose() {
       return this.closeButtonText && this.theme === 'default';
+    },
+
+    deleteText() {
+      return this.deleteButtonText || this.$t('delete');
     }
   },
 
@@ -165,7 +185,7 @@ export default create({
         return;
       }
 
-      if (text === 'delete') {
+      if (text === this.deleteText) {
         this.$emit('delete');
       } else if (text === this.closeButtonText) {
         this.onClose();

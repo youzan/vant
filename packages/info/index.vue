@@ -1,5 +1,10 @@
 <template>
-  <div v-if="isDef(info)" :class="b()">{{ info }}</div>
+  <div
+    v-if="isDef(info)"
+    :class="b()"
+  >
+    {{ info }}
+  </div>
 </template>
 
 <script>

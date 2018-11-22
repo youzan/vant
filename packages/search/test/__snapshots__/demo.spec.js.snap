@@ -67,7 +67,9 @@ exports[`renders demo correctly 1`] = `
         <!---->
       </div>
       <div class="van-search__action">
-        <div>搜索</div>
+        <div>
+          搜索
+        </div>
       </div>
     </div>
   </div>

@@ -13,9 +13,8 @@ Vue.use(Toast);
 #### 文字提示
 
 ```javascript
-Toast('我是提示文案，建议不超过十五字~');
+Toast('提示内容');
 ```
-
 
 #### 加载提示
 
@@ -26,14 +25,12 @@ Toast.loading({
 });
 ```
 
-
 #### 成功/失败提示
 
 ```javascript
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
-
 
 #### 高级用法
 
@@ -80,7 +77,6 @@ const toast2 = Toast.success('第二个 Toast');
 toast1.clear();
 toast2.clear();
 ```
-
 
 ### 方法
 

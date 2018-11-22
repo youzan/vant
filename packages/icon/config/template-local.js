@@ -3,7 +3,7 @@ module.exports = (fontName, ttf) => {
   font-style: normal;
   font-weight: normal;
   font-family: '${fontName}';
-  src: url('../icon/${ttf}') format('truetype');
+  src: url('./${ttf}') format('truetype');
 }
 `;
 };

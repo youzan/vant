@@ -15,7 +15,10 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-rate disabled v-model="value3" />
+      <van-rate
+        v-model="value3"
+        disabled
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -43,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-rate {
   .van-rate {
     margin-left: 15px;

@@ -5,13 +5,31 @@
       :class="b('title', { disabled, expanded })"
       @click="onClick"
     >
-      <slot name="title" slot="title" />
-      <slot name="icon" slot="icon" />
+      <slot
+        name="title"
+        slot="title"
+      />
+      <slot
+        name="icon"
+        slot="icon"
+      />
       <slot name="value" />
-      <slot name="right-icon" slot="right-icon" />
+      <slot
+        name="right-icon"
+        slot="right-icon"
+      />
     </cell>
-    <div v-if="inited" v-show="show" ref="wrapper" :class="b('wrapper')" @transitionend="onTransitionEnd">
-      <div ref="content" :class="b('content')">
+    <div
+      v-if="inited"
+      v-show="show"
+      ref="wrapper"
+      :class="b('wrapper')"
+      @transitionend="onTransitionEnd"
+    >
+      <div
+        ref="content"
+        :class="b('content')"
+      >
         <slot />
       </div>
     </div>

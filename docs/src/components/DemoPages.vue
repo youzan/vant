@@ -8,8 +8,16 @@
         v-for="(demo, index) in demos"
       >
         <h4>{{ demo.title }}</h4>
-        <a :href="demo.source" target="_blank">{{ $t('source') }}</a>
-        <img :src="demo.preview" @click="onChangeDemo(demo, index)" >
+        <a
+          :href="demo.source"
+          target="_blank"
+        >
+          {{ $t('source') }}
+        </a>
+        <img
+          :src="demo.preview"
+          @click="onChangeDemo(demo, index)"
+        >
       </div>
     </div>
   </section>
@@ -84,7 +92,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .van-doc-demo-pages {
   &__gallery {
     margin-top: 30px;

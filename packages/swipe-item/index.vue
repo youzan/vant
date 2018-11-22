@@ -1,5 +1,8 @@
 <template>
-  <div :class="b()" :style="style">
+  <div
+    :class="b()"
+    :style="style"
+  >
     <slot />
   </div>
 </template>

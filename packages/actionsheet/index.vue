@@ -1,11 +1,25 @@
 <template>
   <transition name="van-slide-bottom">
-    <div v-if="shouldRender" v-show="value" :class="b({ 'withtitle': title })">
-      <div v-if="title" class="van-hairline--top-bottom" :class="b('header')">
+    <div
+      v-if="shouldRender"
+      v-show="value"
+      :class="b({ 'withtitle': title })"
+    >
+      <div
+        v-if="title"
+        :class="b('header')"
+        class="van-hairline--top-bottom"
+      >
         <div v-text="title" />
-        <icon name="close" @click="onCancel" />
+        <icon
+          name="close"
+          @click="onCancel"
+        />
       </div>
-      <ul v-else class="van-hairline--bottom">
+      <ul
+        v-else
+        class="van-hairline--bottom"
+      >
         <li
           v-for="item in actions"
           :class="[b('item', { disabled: item.disabled || item.loading }), item.className, 'van-hairline--top']"
@@ -13,9 +27,18 @@
         >
           <template v-if="!item.loading">
             <span :class="b('name')">{{ item.name }}</span>
-            <span :class="b('subname')" v-if="item.subname">{{ item.subname }}</span>
+            <span
+              v-if="item.subname"
+              :class="b('subname')"
+            >
+              {{ item.subname }}
+            </span>
           </template>
-          <loading v-else :class="b('loading')" size="20px" />
+          <loading
+            v-else
+            :class="b('loading')"
+            size="20px"
+          />
         </li>
       </ul>
       <div
@@ -24,7 +47,10 @@
         :class="[b('cancel'), 'van-hairline--top']"
         @click="onCancel"
       />
-      <div v-else :class="b('content')">
+      <div
+        v-else
+        :class="b('content')"
+      >
         <slot />
       </div>
     </div>

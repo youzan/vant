@@ -10,13 +10,19 @@ exports[`renders demo correctly 1`] = `
       </a>
       <div class="van-card__content">
         <div class="van-card__left">
-          <div class="van-card__title">商品标题</div>
-          <div class="van-card__desc van-ellipsis">描述信息</div>
+          <div class="van-card__title">
+            商品标题
+          </div>
+          <div class="van-card__desc van-ellipsis">
+            描述信息
+          </div>
         </div>
         <div class="van-card__right">
           <div>¥ 2.00</div>
           <!---->
-          <div class="van-card__num">x 2</div>
+          <div class="van-card__num">
+            x 2
+          </div>
         </div>
       </div>
       <!---->
@@ -30,13 +36,21 @@ exports[`renders demo correctly 1`] = `
     </span></a>
       <div class="van-card__content">
         <div class="van-card__left">
-          <div class="van-card__title">商品标题</div>
-          <div class="van-card__desc van-ellipsis">描述信息</div>
+          <div class="van-card__title">
+            商品标题
+          </div>
+          <div class="van-card__desc van-ellipsis">
+            描述信息
+          </div>
         </div>
         <div class="van-card__right">
           <div>¥ 2.00</div>
-          <div class="van-card__origin-price">¥ 10.00</div>
-          <div class="van-card__num">x 2</div>
+          <div class="van-card__origin-price">
+            ¥ 10.00
+          </div>
+          <div class="van-card__num">
+            x 2
+          </div>
         </div>
       </div>
       <div class="van-card__footer">

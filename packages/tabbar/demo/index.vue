@@ -3,9 +3,24 @@
     <demo-block :title="$t('basicUsage')">
       <van-tabbar v-model="active">
         <van-tabbar-item icon="shop">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="chat" dot>{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="records" info="5">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="gold-coin" info="20">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item
+          icon="chat"
+          dot
+        >
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item
+          icon="records"
+          info="5"
+        >
+          {{ $t('tab') }}
+        </van-tabbar-item>
+        <van-tabbar-item
+          icon="gold-coin"
+          info="20"
+        >
+          {{ $t('tab') }}
+        </van-tabbar-item>
       </van-tabbar>
     </demo-block>
 
@@ -50,7 +65,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-tabbar {
   .van-tabbar {
     position: relative;

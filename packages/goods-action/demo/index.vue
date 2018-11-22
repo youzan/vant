@@ -2,20 +2,55 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
-        <van-goods-action-mini-btn icon="chat" :text="$t('icon1')" @click="onClickMiniBtn" />
-        <van-goods-action-mini-btn icon="cart" :text="$t('icon2')" @click="onClickMiniBtn" />
-        <van-goods-action-big-btn :text="$t('button1')" @click="onClickBigBtn" />
-        <van-goods-action-big-btn :text="$t('button2')" @click="onClickBigBtn" primary />
+        <van-goods-action-mini-btn
+          icon="chat"
+          :text="$t('icon1')"
+          @click="onClickMiniBtn"
+        />
+        <van-goods-action-mini-btn
+          icon="cart"
+          :text="$t('icon2')"
+          @click="onClickMiniBtn"
+        />
+        <van-goods-action-big-btn
+          :text="$t('button1')"
+          @click="onClickBigBtn"
+        />
+        <van-goods-action-big-btn
+          primary
+          :text="$t('button2')"
+          @click="onClickBigBtn"
+        />
       </van-goods-action>
     </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-goods-action>
-        <van-goods-action-mini-btn icon="chat" :text="$t('icon1')" @click="onClickMiniBtn" />
-        <van-goods-action-mini-btn icon="cart" info="5" :text="$t('icon2')" @click="onClickMiniBtn" />
-        <van-goods-action-mini-btn icon="shop" :text="$t('icon3')" @click="onClickMiniBtn" />
-        <van-goods-action-big-btn :text="$t('button1')" @click="onClickBigBtn" />
-        <van-goods-action-big-btn :text="$t('button2')" @click="onClickBigBtn" primary />
+        <van-goods-action-mini-btn
+          icon="chat"
+          :text="$t('icon1')"
+          @click="onClickMiniBtn"
+        />
+        <van-goods-action-mini-btn
+          icon="cart"
+          info="5"
+          :text="$t('icon2')"
+          @click="onClickMiniBtn"
+        />
+        <van-goods-action-mini-btn
+          icon="shop"
+          :text="$t('icon3')"
+          @click="onClickMiniBtn"
+        />
+        <van-goods-action-big-btn
+          :text="$t('button1')"
+          @click="onClickBigBtn"
+        />
+        <van-goods-action-big-btn
+          primary
+          :text="$t('button2')"
+          @click="onClickBigBtn"
+        />
       </van-goods-action>
     </demo-block>
   </demo-section>
@@ -58,7 +93,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-goods-action {
   .van-goods-action {
     position: relative;

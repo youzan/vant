@@ -61,7 +61,7 @@ export default {
 | v-model | 当前进度 | `Number` | - | - |
 | rate | 目标进度 | `Number` | `100` | - |
 | size | 圆环直径 | `String` | `100px` | - |
-| color | 进度条颜色 | `String` | `#38f` | - |
+| color | 进度条颜色 | `String` | `#1989fa` | - |
 | layer-color | 轨道颜色 | `String` | `#fff` | - |
 | fill | 填充颜色 | `String` | `none` | - |
 | speed | 动画速度（单位为 rate/s）| `Number` | - | - |

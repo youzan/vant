@@ -1,7 +1,10 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-slider v-model="value1" @change="onChange" />
+      <van-slider
+        v-model="value1"
+        @change="onChange"
+      />
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -14,7 +17,10 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-slider v-model="value3" disabled />
+      <van-slider
+        v-model="value3"
+        disabled
+      />
     </demo-block>
 
     <demo-block :title="$t('title4')">
@@ -64,7 +70,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-slider {
   user-select: none;
 

@@ -8,7 +8,10 @@
     @click="onClick"
   >
     <div :class="b('node')">
-      <loading v-if="loading" :class="b('loading')" />
+      <loading
+        v-if="loading"
+        :class="b('loading')"
+      />
     </div>
   </div>
 </template>
@@ -23,6 +26,8 @@ export default create({
     value: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     size: {
       type: String,
       default: '30px'
@@ -32,7 +37,8 @@ export default create({
   computed: {
     style() {
       return {
-        fontSize: this.size
+        fontSize: this.size,
+        backgroundColor: this.value ? this.activeColor : this.inactiveColor
       };
     }
   },

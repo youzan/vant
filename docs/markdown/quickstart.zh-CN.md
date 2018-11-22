@@ -25,7 +25,11 @@ vue ui
 
 ### 示例工程
 
-我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)
+我们提供了一个基于 Vue Cli 3 的示例工程，仓库地址为 [Vant Demo](https://github.com/youzan/vant-demo)，示例工程会帮助你了解如下内容：
+
+- 基于 vant 搭建单页面应用
+- 配置 rem 适配方案
+- 自定义主题色方案
 
 ### 安装
 
@@ -47,7 +51,7 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+<link rel="stylesheet" href="https://unpkg.com/vant/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
@@ -104,8 +108,7 @@ import { Button, Cell } from 'vant';
 
 ```js
 import Button from 'vant/lib/button';
-import 'vant/lib/vant-css/base.css';
-import 'vant/lib/vant-css/button.css';
+import 'vant/lib/button/style';
 ```
  
 #### 方式三. 导入所有组件
@@ -113,7 +116,7 @@ import 'vant/lib/vant-css/button.css';
 ```js
 import Vue from 'vue';
 import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+import 'vant/lib/index.css';
 
 Vue.use(Vant);
 ```
@@ -135,7 +138,7 @@ module.exports = {
   plugins: {
     'autoprefixer': {
       browsers: ['Android >= 4.0', 'iOS >= 7']
-    }
+    },
     'postcss-pxtorem': {
       rootValue: 37.5,
       propList: ['*']

@@ -15,51 +15,56 @@ const compilerOption = {
   }
 };
 
-const whiteList = /(demo|vant-css|test|\.md)$/;
+const isDir = dir => fs.lstatSync(dir).isDirectory();
+const isJs = path => /\.js$/.test(path);
+const isSfc = path => /\.vue$/.test(path);
+const isCode = path => !/(demo|test|\.md)$/.test(path);
+
+function compile(dir) {
+  const files = fs.readdirSync(dir);
+
+  files.forEach(file => {
+    const filePath = path.join(dir, file);
+
+    // reomve unnecessary files
+    if (!isCode(file)) {
+      return fs.removeSync(filePath);
+    }
+
+    // scan dir
+    if (isDir(filePath)) {
+      return compile(filePath);
+    }
+
+    // compile sfc
+    if (isSfc(file)) {
+      const source = fs.readFileSync(filePath, 'utf-8');
+      fs.removeSync(filePath);
+
+      const jsPath = filePath.replace('.vue', '.js');
+      const vuePath = filePath + '.js';
+      const output = fs.existsSync(jsPath) ? vuePath : jsPath;
+
+      return fs.outputFileSync(output, compiler(source, compilerOption).js);
+    }
+
+    // compile js
+    if (isJs(file)) {
+      const { code } = babel.transformFileSync(filePath, compilerOption.babel);
+      fs.outputFileSync(filePath, code);
+    }
+  });
+}
 
 // clear dir
 fs.emptyDirSync(esDir);
 fs.emptyDirSync(libDir);
 
-// copy packages
+// compile es dir
 fs.copySync(srcDir, esDir);
-
 compile(esDir);
 
-function compile(dir, jsOnly = false) {
-  const files = fs.readdirSync(dir);
-
-  files.forEach(file => {
-    const absolutePath = path.join(dir, file);
-
-    // reomve unnecessary files
-    if (whiteList.test(file)) {
-      fs.removeSync(absolutePath);
-      // scan dir
-    } else if (isDir(absolutePath)) {
-      return compile(absolutePath);
-      // compile sfc
-    } else if (/\.vue$/.test(file) && !jsOnly) {
-      const source = fs.readFileSync(absolutePath, 'utf-8');
-      fs.removeSync(absolutePath);
-
-      const outputVuePath = absolutePath + '.js';
-      const outputJsPath = absolutePath.replace('.vue', '.js');
-      const output = fs.existsSync(outputJsPath) ? outputVuePath : outputJsPath;
-
-      fs.outputFileSync(output, compiler(source, compilerOption).js);
-    } else if (/\.js$/.test(file)) {
-      const { code } = babel.transformFileSync(absolutePath, compilerOption.babel);
-      fs.outputFileSync(absolutePath, code);
-    }
-  });
-}
-
+// compile lib dir
 process.env.BABEL_MODULE = 'commonjs';
-
 fs.copySync(srcDir, libDir);
 compile(libDir);
-
-function isDir(dir) {
-  return fs.lstatSync(dir).isDirectory();
-}

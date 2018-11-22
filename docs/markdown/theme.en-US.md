@@ -2,53 +2,93 @@
 
 `Vant` provides a set of default themes, if you want to custom the theme color or other styles, you can use the following methods:
 
-### Option 1. PostCSS Plugin
-You can import the postcss source code in your own project, then use [postcss-theme-variables](https://www.npmjs.com/package/postcss-theme-variables) to replace the postcss variable.
+### Less variables
 
-```javascript
-// import base style
-import 'vant/packages/vant-css/src/base.css';
+Vant use [Less](http://lesscss.org/) as css preprocessor，you can modify less variables to custom theme.
 
-// import component style
-import 'vant/packages/vant-css/src/button.css';
-import 'vant/packages/vant-css/src/checkbox.css';
+There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/dev/packages/style/var.less)。
+
+```less
+// color variables
+@black: #000;
+@white: #fff;
+@red: #f44;
+@blue: #1989fa;
+@orange: #ff976a;
+@orange-dark: #ed6a0c;
+@orange-light: #fffbe8;
+@green: #4b0;
+@gray: #c9c9c9;
+@gray-light: #e5e5e5;
+@gray-darker: #666;
+@gray-dark: #999;
+
+// default colors
+@text-color: #333;
+@border-color: #eee;
+@active-color: #e8e8e8;
+@background-color: #f8f8f8;
+@background-color-light: #fafafa;
 ```
 
-Then require the plugin in the postcss.config.js, and configure the variables according to project needs, you can view all the available variables in [profile](https://github.com/youzan/vant/blob/dev/packages/vant-css/src/common/var.css).
+### How to custom theme
 
-```javascript
+
+#### Step 1: import less file
+
+First you should import the less source file to your project. you can use babel-plugin-import to automatically import or just manually import less file.
+
+```js
+// configure babel plugin in babel.config.js
+// For users who use babel6, please manually import less file
 module.exports = {
   plugins: [
-    require('postcss-easy-import')({
-      extensions: ['pcss', 'css']
-    }),
-    require('postcss-theme-variables')({
-      vars: {
-        red: '#F60',
-        gray: '#CCC',
-        blue: '#03A9F4'
+    [
+      'import',
+      {
+        libraryName: 'vant',
+        libraryDirectory: 'es',
+        // specify less file path
+        style: name => `${name}/style/less`
       },
-      prefix: '$'
-    }),
-    require('precss')(),
-    require('postcss-calc')(),
-    require('autoprefixer')({
-      browsers: ['Android >= 4.0', 'iOS >= 7']
-    })
+      'vant'
+    ]
   ]
 };
 ```
 
-### Option 2. Local build
-Vant also support local build to custom themes.
+manually import less file：
 
-```bash
-# Clone the repository
-git clone git@github.com:youzan/vant.git
-cd packages/vant-css
+```js
+import Button from 'vant/lib/button';
+import 'vant/lib/button/style/less';
 ```
 
-In the local vant-css repository, modify the variables in src/common/var.css, then execute the following build command to generate the style file.
-```bash
-npm run build
+#### Step 2: modify less variables
+
+Use [modifyVars](http://lesscss.org/usage/#using-less-in-the-browser-modify-variables) provided by less.js to modify less variables，webpack config for reference:
+
+```js
+// webpack.config.js
+module.exports = {
+  rules: [
+    {
+      test: /\.less$/,
+      use: [
+        // ...other loaders
+        {
+          loader: 'less-loader',
+          options: {
+            modifyVars: {
+              red: '#03a9f4',
+              blue: '#3eaf7c',
+              orange: '#f08d49',
+              'text-color': '#111'
+            }
+          }
+        }
+      ]
+    }
+  ]
+};
 ```

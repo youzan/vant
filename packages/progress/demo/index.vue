@@ -5,12 +5,23 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-progress inactive :percentage="50" />
+      <van-progress
+        inactive
+        :percentage="50"
+      />
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-progress :pivot-text="$t('orange')" color="#f2826a" :percentage="25" />
-      <van-progress :pivot-text="$t('red')" color="#f44" :percentage="50" />
+      <van-progress
+        color="#f2826a"
+        :percentage="25"
+        :pivot-text="$t('orange')"
+      />
+      <van-progress
+        color="#f44"
+        :percentage="50"
+        :pivot-text="$t('red')"
+      />
       <van-progress
         :percentage="75"
         :pivot-text="$t('purple')"
@@ -36,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-progress {
   .van-progress {
     margin: 20px;

@@ -1,4 +1,21 @@
+const MIN_DISTANCE = 10;
+function getDirection(x, y) {
+  if (x > y && x > MIN_DISTANCE) {
+    return 'horizontal';
+  }
+  if (y > x && y > MIN_DISTANCE) {
+    return 'vertical';
+  }
+  return '';
+}
+
 export default {
+  data() {
+    return {
+      direction: ''
+    };
+  },
+
   methods: {
     touchStart(event) {
       this.resetTouchStatus();
@@ -12,7 +29,7 @@ export default {
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);
-      this.direction = this.offsetX > this.offsetY ? 'horizontal' : this.offsetX < this.offsetY ? 'vertical' : '';
+      this.direction = this.direction || getDirection(this.offsetX, this.offsetY);
     },
 
     resetTouchStatus() {

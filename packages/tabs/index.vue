@@ -8,8 +8,16 @@
         { 'van-hairline--top-bottom': type === 'line' }
       ]"
     >
-      <div :class="b('nav', [type])" ref="nav" :style="navStyle">
-        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle" />
+      <div
+        ref="nav"
+        :class="b('nav', [type])"
+        :style="navStyle"
+      >
+        <div
+          v-if="type === 'line'"
+          :class="b('line')"
+          :style="lineStyle"
+        />
         <div
           v-for="(tab, index) in tabs"
           ref="tabs"
@@ -21,11 +29,19 @@
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
-          <span class="van-ellipsis" ref="title">{{ tab.title }}</span>
+          <span
+            ref="title"
+            class="van-ellipsis"
+          >
+            {{ tab.title }}
+          </span>
         </div>
       </div>
     </div>
-    <div :class="b('content')" ref="content">
+    <div
+      ref="content"
+      :class="b('content')"
+    >
       <slot />
     </div>
   </div>
@@ -140,7 +156,7 @@ export default create({
       this.setLine();
 
       // scroll to correct position
-      if (this.position === 'page-top' || this.position === 'content-bottom') {
+      if (this.position === 'top' || this.position === 'bottom') {
         scrollUtils.setScrollTop(window, scrollUtils.getElementTop(this.$el));
       }
     },
@@ -256,7 +272,7 @@ export default create({
         }
 
         const tab = this.$refs.tabs[this.curActive];
-        const width = this.lineWidth || (tab.offsetWidth / 2);
+        const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
         this.lineStyle = {
@@ -298,8 +314,6 @@ export default create({
         }
         index += diff;
       }
-
-      return active;
     },
 
     // emit event when clicked

@@ -1,5 +1,8 @@
 <template>
-  <cell-group :class="b()" :border="border">
+  <cell-group
+    :class="b()"
+    :border="border"
+  >
     <cell
       :title="title || $t('title')"
       :value="value"

@@ -1,4 +1,4 @@
-import '../../packages/vant-css/src/index.css';
+import '../../packages/index.less';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 new Vue({ // eslint-disable-line
+  el: '#app',
   render: h => h(App),
-  router,
-  el: '#app'
+  router
 });

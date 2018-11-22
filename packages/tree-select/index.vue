@@ -1,11 +1,15 @@
 <template>
-  <div :class="b()" :style="{ height: height + 'px' }">
+  <div
+    :class="b()"
+    :style="{ height: height + 'px' }"
+  >
     <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
         class="van-ellipsis"
         :class="b('nitem', { active: mainActiveIndex === index })"
-        @click="$emit('navclick', index)">
+        @click="$emit('navclick', index)"
+      >
         {{ item.text }}
       </div>
     </div>
@@ -14,7 +18,10 @@
         v-for="item in subItems"
         :key="item.id"
         class="van-ellipsis"
-        :class="b('item', { active: activeId === item.id })"
+        :class="b('item', {
+          active: activeId === item.id,
+          disabled: item.disabled
+        })"
         @click="onItemSelect(item)"
       >
         {{ item.text }}
@@ -62,7 +69,9 @@ export default create({
 
   methods: {
     onItemSelect(data) {
-      this.$emit('itemclick', data);
+      if (!data.disabled) {
+        this.$emit('itemclick', data);
+      }
     }
   }
 });

@@ -1,0 +1,48 @@
+@import '../style/var';
+
+.van-swipe {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+
+  &__track {
+    height: 100%;
+  }
+
+  &__indicators {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+
+    &--vertical {
+      left: 10px;
+      top: 50%;
+      bottom: auto;
+      flex-direction: column;
+      transform: translateY(-50%);
+
+      .van-swipe__indicator:not(:last-child) {
+        margin-bottom: @swipe-indicator;
+      }
+    }
+  }
+
+  &__indicator {
+    opacity: .3;
+    border-radius: 100%;
+    background-color: @blue;
+    width: @swipe-indicator;
+    height: @swipe-indicator;
+    transition: opacity .2s;
+
+    &:not(:last-child) {
+      margin-right: @swipe-indicator;
+    }
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}

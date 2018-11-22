@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .van-doc-intro {
   text-align: center;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;

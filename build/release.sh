@@ -14,13 +14,6 @@ then
   npm version $VERSION --no-git-tag-version
   VERSION=$VERSION npm run build:lib
 
-  # publish vant-css
-  echo "Releasing vant-css $VERSION ..."
-  cd packages/vant-css
-  npm version $VERSION
-  npm publish
-  cd ../..
-
   # commit
   git tag v$VERSION
   git commit -am "[release] $VERSION"

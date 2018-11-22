@@ -13,11 +13,19 @@
       :style="wrapperStyle"
       @transitionend="swipe = false"
     >
-      <div v-if="leftWidth" :class="b('left')" @click.stop="onClick('left')">
+      <div
+        v-if="leftWidth"
+        :class="b('left')"
+        @click.stop="onClick('left')"
+      >
         <slot name="left" />
       </div>
       <slot />
-      <div v-if="rightWidth" :class="b('right')" @click.stop="onClick('right')">
+      <div
+        v-if="rightWidth"
+        :class="b('right')"
+        @click.stop="onClick('right')"
+      >
         <slot name="right" />
       </div>
     </div>

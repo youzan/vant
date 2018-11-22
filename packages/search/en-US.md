@@ -76,6 +76,7 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 |------|------|------|
 | cancel | Triggered when click cancel button | - |
 | search | Triggered when confirm search | - |
+| clear | Triggered when click clear icon | - |
 
 ### Slot
 

@@ -7,7 +7,11 @@
       left-arrow
       @click-left="onBack"
     >
-      <a slot="right" :href="demoLink" target="_blank">
+      <a
+        slot="right"
+        :href="demoLink"
+        target="_blank"
+      >
         <van-icon name="edit" />
       </a>
     </van-nav-bar>
@@ -38,7 +42,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 body {
   color: #333;
   line-height: 1;

@@ -1,5 +1,64 @@
 ## Changelog
 
+## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
+`2018-11-18`
+
+**Improvements**
+
+- Cell: add size prop [\#2086](https://github.com/youzan/vant/pull/2086)
+- Icon: add star、star-o icon [\#2092](https://github.com/youzan/vant/pull/2092)
+- ImagePreview: add loop prop [\#2103](https://github.com/youzan/vant/pull/2103)
+- Rate: update star icon [\#2093](https://github.com/youzan/vant/pull/2093)
+- Dialog: add message max-height [\#2104](https://github.com/youzan/vant/pull/2104)
+
+**Bug Fixes**
+
+- fix Sku placeholder of mobile type message [\#2098](https://github.com/youzan/vant/pull/2098)
+- fix Tab line-width can be zero [\#2081](https://github.com/youzan/vant/pull/2081)
+- fix Tab auto scroll top when switched in sticky mode [\#2105](https://github.com/youzan/vant/pull/2105)
+- fix Toast max width of text type [\#2074](https://github.com/youzan/vant/pull/2074)
+- fix Steps css selector priority [\#2072](https://github.com/youzan/vant/pull/2072)
+
+
+## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
+`2018-11-10`
+
+**Improvements**
+
+- Checkbox: add checked-color prop [\#2057](https://github.com/youzan/vant/pull/2057)
+- NumberKeyboard: add close-button-text prop [\#2051](https://github.com/youzan/vant/pull/2051)
+- Swipe: optimize swipe gesture [\#2039](https://github.com/youzan/vant/pull/2039)
+- Document：reorgnize components [\#2032](https://github.com/youzan/vant/pull/2032)
+
+**Bug Fixes**
+
+- fix Circle incorrect style in android devices [\#2062](https://github.com/youzan/vant/pull/2062)
+- fix DatetimePicker incorrect value when use formatter [\#2059](https://github.com/youzan/vant/pull/2059)
+- fix Tab can swipe to disabled tab [\#2064](https://github.com/youzan/vant/pull/2064)
+
+
+## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
+`2018-11-04`
+
+**Breaking changes**
+
+- New path to manually import component style, see more in [quickstart](#/en-US/quickstart). [\#2021](https://github.com/youzan/vant/pull/2021)
+- New ways to customize the theme，see more in [custom theme](#/en-US/theme). [\#2027](https://github.com/youzan/vant/pull/2027)
+
+
+**Improvements**
+
+- Badge: add change event [\#2017](https://github.com/youzan/vant/pull/2017)
+- Radio: update color [\#2018](https://github.com/youzan/vant/pull/2018)
+- Checkbox: update color [\#2018](https://github.com/youzan/vant/pull/2018)
+- Sku: support image preview [\#2019](https://github.com/youzan/vant/pull/2019)
+- i18n: support zh-TW [\#1999](https://github.com/youzan/vant/pull/1999)
+- i18n: support turkish [\#1998](https://github.com/youzan/vant/pull/1998)
+- Icon: add new icon question2 [\#2005](https://github.com/youzan/vant/pull/2005)
+- Switch: add active-color prop [\#2013](https://github.com/youzan/vant/pull/2013)
+- Switch: add inactive-color prop [\#2013](https://github.com/youzan/vant/pull/2013)
+
+
 ## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
 `2018-10-29`
 
@@ -339,7 +398,7 @@
 - fix Progress text empty [\#1411](https://github.com/youzan/vant/pull/1411)
 - fix Tab random insert order [\#1429](https://github.com/youzan/vant/pull/1429)
 - fix error when use Vue.use in typescript [\#1410](https://github.com/youzan/vant/pull/1410)
-- fix vant-css missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
+- fix style missing dependencies [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
 ## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
@@ -1332,7 +1391,7 @@
 
 **Breaking changes**
 
-* remove reset.css in vant-css [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
+* remove reset.css in style [\#192](https://github.com/youzan/vant/issues/192) [\#196](https://github.com/youzan/vant/pull/196)
 * reconstruct Swipe component, adjust some API [#174](https://github.com/youzan/vant/issues/174) [#180](https://github.com/youzan/vant/issues/180) [\#194](https://github.com/youzan/vant/pull/194) [\#200](https://github.com/youzan/vant/pull/200)
 * optimize Search component，adjust struct [\#198](https://github.com/youzan/vant/pull/198)
 
@@ -1388,7 +1447,7 @@
 * fix Button active border color [\#150](https://github.com/youzan/vant/issues/150)
 * fix Stepper input style [\#159](https://github.com/youzan/vant/pull/159)
 * fix Waterfall disable props not work when display none [\#166](https://github.com/youzan/vant/pull/166)
-* fix vant-css not compile calc property after build
+* fix style not compile calc property after build
 * fix npm run dev error in MacOS [\#152](https://github.com/youzan/vant/issues/152)
 * fix document router not work in some browsers [\#158](https://github.com/youzan/vant/pull/158)
 

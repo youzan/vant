@@ -20,9 +20,16 @@
         @click="onClickExchangeButton"
       />
     </field>
-    <tabs v-model="tab" :class="b('tab')" :line-width="120">
+    <tabs
+      v-model="tab"
+      :class="b('tab')"
+      :line-width="120"
+    >
       <tab :title="title">
-        <div :class="b('list')" :style="listStyle">
+        <div
+          :class="b('list')"
+          :style="listStyle"
+        >
           <coupon-item
             ref="card"
             v-for="(item, index) in coupons"
@@ -31,21 +38,30 @@
             :chosen="index === chosenCoupon"
             @click.native="$emit('change', index)"
           />
-          <div v-if="!coupons.length" :class="b('empty')">
+          <div
+            v-if="!coupons.length"
+            :class="b('empty')"
+          >
             <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
             <p>{{ $t('empty') }}</p>
           </div>
         </div>
       </tab>
       <tab :title="disabledTitle">
-        <div :class="b('list')" :style="listStyle">
+        <div
+          :class="b('list')"
+          :style="listStyle"
+        >
           <coupon-item
             disabled
             v-for="item in disabledCoupons"
             :key="item.id || item.name"
             :data="item"
           />
-          <div v-if="!disabledCoupons.length" :class="b('empty')">
+          <div
+            v-if="!disabledCoupons.length"
+            :class="b('empty')"
+          >
             <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
             <p>{{ $t('empty') }}</p>
           </div>

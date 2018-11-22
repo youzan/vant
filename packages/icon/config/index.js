@@ -382,8 +382,16 @@ module.exports = {
       css: 'cart-o'
     },
     {
-      src: '答疑2.svg',
+      src: 'question2.svg',
       css: 'question2'
+    },
+    {
+      src: 'star.svg',
+      css: 'star'
+    },
+    {
+      src: 'star-o.svg',
+      css: 'star-o'
     }
   ]
 };

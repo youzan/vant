@@ -1,7 +1,11 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title')">
-      <van-col span="8" v-for="icon in icons" :key="icon">
+      <van-col
+        v-for="icon in icons"
+        :key="icon"
+        span="8"
+      >
         <van-icon :name="icon" />
         <span>{{ icon }}</span>
       </van-col>
@@ -29,7 +33,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-icon {
   font-size: 0;
 

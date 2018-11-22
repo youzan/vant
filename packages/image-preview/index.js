@@ -5,11 +5,12 @@ import { isServer } from '../utils';
 let instance;
 
 const defaultConfig = {
-  value: true,
   images: [],
+  loop: true,
+  value: true,
   showIndex: true,
-  showIndicators: false,
-  startPosition: 0
+  startPosition: 0,
+  showIndicators: false
 };
 
 const initInstance = () => {

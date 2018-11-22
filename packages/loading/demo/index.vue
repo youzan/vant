@@ -7,7 +7,10 @@
 
     <demo-block :title="$t('title2')">
       <van-loading type="spinner" />
-      <van-loading type="spinner" color="white" />
+      <van-loading
+        type="spinner"
+        color="white"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -27,7 +30,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-loading {
   .van-loading {
     display: inline-block;

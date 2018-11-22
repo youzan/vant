@@ -35,7 +35,13 @@
       >
         <van-checkbox v-model="checked">{{ $t('check') }}</van-checkbox>
         <span slot="tip">
-          {{ $t('tip2') }}<span class="van-edit-address" @click="onClickLink">{{ $t('tip3') }}</span>
+          {{ $t('tip2') }}
+          <span
+            class="edit-address"
+            @click="onClickLink"
+          >
+            {{ $t('tip3') }}
+          </span>
         </span>
       </van-submit-bar>
     </demo-block>
@@ -82,14 +88,16 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
+@import '../../style/var';
+
 .demo-submit-bar {
   .van-submit-bar {
     position: relative;
   }
 
-  .van-edit-address {
-    color: #38f;
+  .edit-address {
+    color: @blue;
   }
 
   .van-checkbox {

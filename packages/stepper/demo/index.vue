@@ -5,7 +5,10 @@
     </demo-block>
 
     <demo-block :title="$t('disabled')">
-      <van-stepper v-model="stepper1" disabled />
+      <van-stepper
+        v-model="stepper1"
+        disabled
+      />
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
@@ -32,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="less">
 .demo-stepper {
   .van-stepper {
     margin-left: 15px;
