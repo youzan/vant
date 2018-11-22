@@ -16,7 +16,7 @@
         />
         <van-badge
           :title="$t('title')"
-          info="199"
+          info="99+"
         />
       </van-badge-group>
     </demo-block>
