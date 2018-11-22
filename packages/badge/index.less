@@ -13,6 +13,10 @@
   background-color: @background-color;
   border-left: 3px solid transparent;
 
+  &__text {
+    position: relative;
+  }
+
   &:active {
     background-color: @active-color;
   }
@@ -36,11 +40,7 @@
     }
   }
 
-  &__info {
-    top: 7px;
-    left: auto;
-    right: 5px;
-    font-size: 12px;
-    transform: scale(0.9);
+  .van-info {
+    right: 4px;
   }
 }

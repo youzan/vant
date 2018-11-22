@@ -19,7 +19,7 @@ Vue.use(BadgeGroup);
   <van-badge title="标签名称" />
   <van-badge title="标签名称" info="8" />
   <van-badge title="标签名称" info="99" />
-  <van-badge title="标签名称" info="199" />
+  <van-badge title="标签名称" info="99+" />
 </van-badge-group>
 ```
 

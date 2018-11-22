@@ -18,7 +18,7 @@ Use `active-key` prop to set index of chosen 'badge'
   <van-badge title="Title" />
   <van-badge title="Title" info="8" />
   <van-badge title="Title" info="99" />
-  <van-badge title="Title" info="199" />
+  <van-badge title="Title" info="99+" />
 </van-badge-group>
 ```
 

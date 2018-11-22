@@ -1,19 +1,27 @@
 @import '../style/var';
 
+@van-info-size: 16px;
+@van-info-padding: 0 3px;
+@van-info-font-size: 12px;
+@van-info-border-width: 1px;
+@van-info-background-color: @red;
+
 .van-info {
-  left: 100%;
-  top: -.5em;
+  right: 0;
+  top: -@van-info-size / 2;
   color: @white;
-  font-size: .6em;
   font-weight: 500;
-  padding: 0 .25em;
-  text-align: center;
-  min-width: 1.4em;
-  line-height: 1.4;
   position: absolute;
-  border-radius: .7em;
+  text-align: center;
   box-sizing: border-box;
-  background-color: @red;
-  transform: translateX(-50%);
+  border: @van-info-border-width solid @white;
+  padding: @van-info-padding;
+  min-width: @van-info-size;
+  font-size: @van-info-font-size;
+  line-height: @van-info-size - @van-info-border-width * 2;
+  border-radius: @van-info-size;
+  background-color: @van-info-background-color;
+  transform: translateX(50%);
+  transform-origin: 100%;
   font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 }

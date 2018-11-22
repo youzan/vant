@@ -4,11 +4,13 @@
     :href="url"
     @click="onClick"
   >
-    <van-info
-      :info="info"
-      :class="b('info')"
-    />
-    {{ title }}
+    <div :class="b('text')">
+      {{ title }}
+      <van-info
+        :info="info"
+        :class="b('info')"
+      />
+    </div>
   </a>
 </template>
 
