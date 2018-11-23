@@ -128,7 +128,7 @@ export default {
 
 #### 切换动画
 
-通过`animated`属性可以开启切换tab时的动画
+通过`animated`属性可以开启切换标签内容时的转场动画
 
 ```html
 <van-tabs v-model="active" animated>
@@ -140,7 +140,7 @@ export default {
 
 #### 滑动切换
 
-通过`swipeable`属性可以开启滑动切换tab
+通过`swipeable`属性可以开启滑动切换标签页
 
 ```html
 <van-tabs v-model="active" swipeable>
@@ -163,7 +163,7 @@ export default {
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | 1.1.15 |
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `Number` | `4` | - |
-| animated | 是否使用动画切换 Tabs | `false` | - | 1.4.5 |
+| animated | 是否开启切换标签内容时的转场动画 | `false` | - | 1.4.5 |
 
 ### Tab API
 

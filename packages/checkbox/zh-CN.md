@@ -10,6 +10,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 ### 代码演示
 
 #### 基础用法
+
 通过`v-model`绑定 checkbox 的勾选状态
 
 ```html
