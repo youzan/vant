@@ -1,5 +1,32 @@
 @import '../style/var';
 
+.van-tab {
+  flex: 1;
+  cursor: pointer;
+  padding: 0 5px;
+  font-size: 14px;
+  position: relative;
+  color: @gray-darker;
+  line-height: @tabs-line-height;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: @white;
+  min-width: 0; /* hack for flex ellipsis */
+
+  span {
+    display: block;
+  }
+
+  &--active {
+    font-weight: 500;
+    color: @text-color;
+  }
+
+  &--disabled {
+    color: @gray;
+  }
+}
+
 .van-tabs {
   position: relative;
 
@@ -83,7 +110,7 @@
     bottom: 15px;
     height: 2px;
     position: absolute;
-    border-radius: 2px 0;
+    border-radius: 2px;
     background-color: @red;
   }
 
