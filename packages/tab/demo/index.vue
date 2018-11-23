@@ -176,6 +176,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-tab {
   margin-bottom: 300px;
 
@@ -185,7 +187,7 @@ export default {
   }
 
   .van-tab__pane {
-    background-color: #fff;
+    background-color: @white;
     padding: 20px;
   }
 

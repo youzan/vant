@@ -46,12 +46,14 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-badge {
   .van-badge-group {
     width: auto;
     margin: 0 15px;
     padding: 20px 0;
-    background-color: #fff;
+    background-color: @white;
 
     &::after {
       display: none;

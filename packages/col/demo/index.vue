@@ -97,6 +97,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-col {
   .van-doc-demo-block {
     padding: 0 15px;
@@ -107,7 +109,7 @@ export default {
   }
 
   .van-col {
-    color: #fff;
+    color: @white;
     font-size: 13px;
     line-height: 30px;
     text-align: center;

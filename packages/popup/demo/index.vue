@@ -104,6 +104,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-popup {
   .van-button {
     margin: 10px 0 10px 15px;
@@ -129,11 +131,11 @@ export default {
     .van-tab__pane:not(:first-child) {
       padding: 10px;
       line-height: 1.4;
-      color: #666;
+      color: @gray-darker;
     }
 
     &--top {
-      color: #fff;
+      color: @white;
       width: 100%;
       border-radius: 0;
       line-height: 20px;
