@@ -386,6 +386,10 @@ export default create({
         }
       }
 
+      if (this.scrollable) {
+        style.flexBasis = 88 / (this.swipeThreshold) + '%';
+      }
+
       return style;
     }
   }
