@@ -21,7 +21,18 @@
       </van-radio-group>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block :title="$t('customColor')">
+      <van-radio
+        name="1"
+        value="1"
+        checked-color="#4b0"
+        class="demo-radio-group"
+      >
+        {{ $t('radio') }}
+      </van-radio>
+    </demo-block>
+
+    <demo-block :title="$t('withCell')">
       <van-radio-group v-model="radio3">
         <van-cell-group>
           <van-cell
@@ -51,13 +62,15 @@ export default {
       radio: '单选框',
       text1: '未选中禁用',
       text2: '选中且禁用',
-      title3: '与 Cell 组件一起使用'
+      customColor: '自定义颜色',
+      withCell: '与 Cell 组件一起使用'
     },
     'en-US': {
       radio: 'Radio',
       text1: 'Disabled',
       text2: 'Disabled and checked',
-      title: 'Inside a Cell'
+      customColor: 'Custom Color',
+      withCell: 'Inside a Cell'
     }
   },
 
