@@ -7,7 +7,11 @@
       left-arrow
       @click-left="onBack"
     >
-      <a slot="right" :href="demoLink" target="_blank">
+      <a
+        slot="right"
+        :href="demoLink"
+        target="_blank"
+      >
         <van-icon name="edit" />
       </a>
     </van-nav-bar>

@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 new Vue({ // eslint-disable-line
+  el: '#app',
   render: h => h(App),
-  router,
-  el: '#app'
+  router
 });

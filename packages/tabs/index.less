@@ -114,6 +114,10 @@
     background-color: @red;
   }
 
+  &__content {
+    overflow: hidden;
+  }
+
   &--line {
     padding-top: @tabs-line-height;
 
@@ -127,6 +131,14 @@
 
     .van-tabs__wrap {
       height: @tabs-card-height;
+    }
+  }
+
+  .van-tab__pane {
+    box-sizing: border-box;
+  
+    &--float {
+      float: left;
     }
   }
 }

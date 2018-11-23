@@ -5,11 +5,24 @@
       <span>Vant</span>
     </h1>
     <div class="mobile-switch-lang">
-      <span :class="{ active: $vantLang === 'en-US' }" @click="switchLang('en-US')">EN</span>
-      <span :class="{ active: $vantLang === 'zh-CN' }" @click="switchLang('zh-CN')">中文</span>
+      <span
+        :class="{ active: $vantLang === 'en-US' }"
+        @click="switchLang('en-US')"
+      >
+        EN
+      </span>
+      <span
+        :class="{ active: $vantLang === 'zh-CN' }"
+        @click="switchLang('zh-CN')"
+      >
+        中文
+      </span>
     </div>
     <h2 class="zanui-desc">{{ description }}</h2>
-    <template v-for="item in navList" v-if="item.showInMobile">
+    <template
+      v-for="item in navList"
+      v-if="item.showInMobile"
+    >
       <mobile-nav
         v-for="(group, index) in item.groups"
         :group="group"
@@ -26,14 +39,14 @@ import MobileNav from './MobileNav';
 import { setLang } from '../utils/lang';
 
 export default {
+  components: {
+    MobileNav
+  },
+
   data() {
     return {
       docConfig
     };
-  },
-
-  components: {
-    MobileNav
   },
 
   computed: {

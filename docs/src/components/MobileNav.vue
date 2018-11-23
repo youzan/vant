@@ -1,6 +1,13 @@
 <template>
-  <van-collapse v-model="active" class="mobile-nav">
-    <van-collapse-item :title="group.groupName" :name="group.groupName" class="mobile-nav__item">
+  <van-collapse
+    v-model="active"
+    class="mobile-nav"
+  >
+    <van-collapse-item
+      class="mobile-nav__item"
+      :title="group.groupName"
+      :name="group.groupName"
+    >
       <van-cell
         v-if="!navItem.disabled"
         v-for="(navItem, index) in group.list"

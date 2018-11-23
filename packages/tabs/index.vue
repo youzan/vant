@@ -42,7 +42,13 @@
       ref="content"
       :class="b('content')"
     >
-      <slot />
+      <div
+        v-show="computedWidth !== 0"
+        :class="b('track')"
+        :style="trackStyle"
+      >
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -78,7 +84,7 @@ export default create({
     },
     duration: {
       type: Number,
-      default: 0.2
+      default: 0.4
     },
     swipeThreshold: {
       type: Number,
@@ -87,7 +93,8 @@ export default create({
     offsetTop: {
       type: Number,
       default: 0
-    }
+    },
+    animated: Boolean
   },
 
   data() {
@@ -100,7 +107,8 @@ export default create({
         resize: false,
         sticky: false,
         swipeable: false
-      }
+      },
+      computedWidth: 0
     };
   },
 
@@ -130,6 +138,23 @@ export default create({
     navStyle() {
       return {
         borderColor: this.color
+      };
+    },
+
+    trackStyle() {
+      const {
+        curActive,
+        computedWidth = 0,
+        tabs,
+        animated
+      } = this;
+      if (!animated) return {};
+
+      const offset = -1 * computedWidth * curActive;
+      return {
+        width: `${computedWidth * tabs.length}px`,
+        transitionDuration: `${this.duration}s`,
+        transform: `translateX(${offset}px)`
       };
     }
   },
@@ -173,6 +198,7 @@ export default create({
   mounted() {
     this.correctActive(this.active);
     this.setLine();
+    this.setWidth();
 
     this.$nextTick(() => {
       this.handlers(true);
@@ -196,6 +222,13 @@ export default create({
   },
 
   methods: {
+    setWidth() {
+      if (this.$el) {
+        const rect = this.$el.getBoundingClientRect() || {};
+        this.computedWidth = rect.width;
+      }
+    },
+
     // whether to bind sticky listener
     handlers(bind) {
       const { events } = this;
@@ -267,11 +300,13 @@ export default create({
     // update nav bar style
     setLine() {
       this.$nextTick(() => {
-        if (!this.$refs.tabs || this.type !== 'line') {
+        const { tabs } = this.$refs;
+
+        if (!tabs || this.type !== 'line') {
           return;
         }
 
-        const tab = this.$refs.tabs[this.curActive];
+        const tab = tabs[this.curActive];
         const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
@@ -329,11 +364,13 @@ export default create({
 
     // scroll active tab into view
     scrollIntoView(immediate) {
-      if (!this.scrollable || !this.$refs.tabs) {
+      const { tabs } = this.$refs;
+
+      if (!this.scrollable || !tabs) {
         return;
       }
 
-      const tab = this.$refs.tabs[this.curActive];
+      const tab = tabs[this.curActive];
       const { nav } = this.$refs;
       const { scrollLeft, offsetWidth: navWidth } = nav;
       const { offsetLeft, offsetWidth: tabWidth } = tab;

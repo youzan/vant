@@ -5,15 +5,34 @@ import { mount, later, triggerDrag } from '../../../test/utils';
 function createWrapper(options) {
   return mount({
     template: `
-      <tabs @change="onChange" swipeable>
-        <tab title="title1">Text</tab>
-        <tab title="title2">Text</tab>
+      <tabs @change="onChange"
+        :color="color"
+        :type="type"
+        :swipeable="swipeable"
+        :sticky="sticky"
+        :line-width="lineWidth"
+      >
+        <tab :title="title1">Text</tab>
+        <tab>
+          <span slot="title">title2</span>
+          Text
+        </tab>
         <tab title="title3" disabled>Text</tab>
       </tabs>
     `,
     components: {
       Tab,
       Tabs
+    },
+    data() {
+      return {
+        title1: 'title1',
+        color: '#f44',
+        type: 'line',
+        swipeable: true,
+        sticky: true,
+        lineWidth: 2
+      };
     },
     ...options
   });
@@ -60,4 +79,19 @@ test('swipe to switch tab', async() => {
 
   await later();
   wrapper.destroy();
+});
+
+test('change tabs data', async() => {
+  const wrapper = createWrapper();
+
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.setData({
+    swipeable: false,
+    sticky: false,
+    type: 'card',
+    color: 'blue',
+    title1: 'new title1'
+  });
+  expect(wrapper).toMatchSnapshot();
 });
