@@ -2,22 +2,22 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><span class="van-tag" style="background-color:#999;">标签</span> <span class="van-tag" style="background-color:#f44;">标签</span> <span class="van-tag" style="background-color:#1989fa;">标签</span> <span class="van-tag" style="background-color:#4b0;">标签</span></div>
-  <div><span class="van-tag van-tag--plain van-hairline--surround" style="color:#999;">标签</span> <span class="van-tag van-tag--plain van-tag--round van-hairline--surround" style="color:#f44;">
+  <div><span class="van-tag" style="background-color:#969799;">标签</span> <span class="van-tag" style="background-color:#f44;">标签</span> <span class="van-tag" style="background-color:#1989fa;">标签</span> <span class="van-tag" style="background-color:#4b0;">标签</span></div>
+  <div><span class="van-tag van-tag--plain van-hairline--surround" style="color:#969799;">标签</span> <span class="van-tag van-tag--plain van-tag--round van-hairline--surround" style="color:#f44;">
       标签
     </span> <span class="van-tag van-tag--plain van-tag--round van-hairline--surround" style="color:#1989fa;">
       标签
     </span> <span class="van-tag van-tag--plain van-hairline--surround" style="color:#4b0;">
       标签
     </span></div>
-  <div><span class="van-tag van-tag--round" style="background-color:#999;">标签</span> <span class="van-tag van-tag--round" style="background-color:#f44;">
+  <div><span class="van-tag van-tag--round" style="background-color:#969799;">标签</span> <span class="van-tag van-tag--round" style="background-color:#f44;">
       标签
     </span> <span class="van-tag van-tag--round" style="background-color:#1989fa;">
       标签
     </span> <span class="van-tag van-tag--round" style="background-color:#4b0;">
       标签
     </span></div>
-  <div><span class="van-tag van-tag--mark" style="background-color:#999;">标签</span> <span class="van-tag van-tag--mark" style="background-color:#f44;">
+  <div><span class="van-tag van-tag--mark" style="background-color:#969799;">标签</span> <span class="van-tag van-tag--mark" style="background-color:#f44;">
       标签
     </span> <span class="van-tag van-tag--mark" style="background-color:#1989fa;">
       标签
