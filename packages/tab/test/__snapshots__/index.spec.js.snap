@@ -31,7 +31,7 @@ exports[`change tabs data 2`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line"></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
       <div class="van-tab"><span class="van-ellipsis">
@@ -66,7 +66,7 @@ exports[`click to switch tab 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
       <div class="van-tab"><span class="van-ellipsis">
@@ -100,10 +100,10 @@ exports[`click to switch tab 2`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab" style=""><span class="van-ellipsis">
+      <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title2
         </span></div>
       <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
@@ -133,7 +133,7 @@ exports[`swipe to switch tab 1`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
       <div class="van-tab"><span class="van-ellipsis">
@@ -167,10 +167,10 @@ exports[`swipe to switch tab 2`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab" style=""><span class="van-ellipsis">
+      <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title2
         </span></div>
       <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
@@ -200,10 +200,10 @@ exports[`swipe to switch tab 3`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab" style=""><span class="van-ellipsis">
+      <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title2
         </span></div>
       <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
@@ -233,10 +233,10 @@ exports[`swipe to switch tab 4`] = `
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
       <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
-      <div class="van-tab van-tab--active" style="color: rgb(255, 68, 68);"><span class="van-ellipsis">
+      <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
-      <div class="van-tab" style=""><span class="van-ellipsis">
+      <div class="van-tab"><span class="van-ellipsis">
           title2
         </span></div>
       <div class="van-tab van-tab--disabled"><span class="van-ellipsis">

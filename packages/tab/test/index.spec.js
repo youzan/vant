@@ -12,7 +12,7 @@ function createWrapper(options) {
         :sticky="sticky"
         :line-width="lineWidth"
       >
-        <tab :title="title1">Text</tab>
+        <tab title="title1">Text</tab>
         <tab title="title2">Text</tab>
         <tab title="title3" disabled>Text</tab>
       </tabs>
@@ -25,7 +25,6 @@ function createWrapper(options) {
       return {
         color: '#f44',
         type: 'line',
-        title1: 'title1',
         swipeable: true,
         sticky: true,
         lineWidth: 2
@@ -87,8 +86,7 @@ test('change tabs data', async() => {
     swipeable: false,
     sticky: false,
     type: 'card',
-    color: 'blue',
-    title: 'new title1'
+    color: 'blue'
   });
   expect(wrapper).toMatchSnapshot();
 });
