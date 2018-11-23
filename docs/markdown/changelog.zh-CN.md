@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
+`2018-11-23`
+
+**Improvements**
+
+- Tab: 新增 animated 属性 [\#2126](https://github.com/youzan/vant/pull/2126)
+- Tab: 更新标题栏样式 [\#2120](https://github.com/youzan/vant/pull/2120)
+- Badge: 更新提示样式 [\#2122](https://github.com/youzan/vant/pull/2122)
+- Radio: 新增 checked-color 属性 [\#2129](https://github.com/youzan/vant/pull/2129)
+- Swipe: 新增 indicator-color 属性 [\#2110](https://github.com/youzan/vant/pull/2110)
+- TreeSelect: 支持禁用选项 [\#2107](https://github.com/youzan/vant/pull/2107)
+
+**Bug Fixes**
+
+- 修复 Tab swipe-threshold 属性小于 4 时不生效的问题 [\#2128](https://github.com/youzan/vant/pull/2128)
+
+
 ## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
 `2018-11-18`
 
