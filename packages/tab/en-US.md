@@ -122,6 +122,18 @@ Use title slot to custom tab title
 </van-tabs>
 ```
 
+#### Switch Animation
+
+Use `animated` props to change tabs with animation
+
+```html
+<van-tabs v-model="active" animated>
+  <van-tab v-for="index in 4" :title="'tab ' + index">
+    content {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 #### Swipeable
 
 In swipeable mode, you can switch tabs with swipe gestrue in the content
@@ -141,12 +153,13 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | v-model | Index of active tab | `String` `Number` | `0` |
 | color | Tab color | `String` | `#f44` |
 | type | Can be set to `line` `card` | `String` | `line` |
-| duration | Toggle tab's animation time | `Number` | `0.2` | - |
+| duration | Toggle tab's animation time | `Number` | `0.4` | - |
 | line-width | Width of tab line (px) | `Number` | Width of active tab |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
 | sticky | Whether to use sticky mode | `Boolean` | `false` |
 | offset-top | Offset top when use sticky mode | `Number` | `0` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
+| animated | Whether to change tabs with animation | `false` | - |
 
 ### Tab API
 

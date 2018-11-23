@@ -126,6 +126,18 @@ export default {
 </van-tabs>
 ```
 
+#### 切换动画
+
+通过`animated`属性可以开启切换tab时的动画
+
+```html
+<van-tabs v-model="active" animated>
+  <van-tab v-for="index in 4" :title="'选项 ' + index">
+    内容 {{ index }}
+  </van-tab>
+</van-tabs>
+```
+
 #### 滑动切换
 
 通过`swipeable`属性可以开启滑动切换tab
@@ -145,12 +157,13 @@ export default {
 | v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
 | color | 标签颜色 | `String` | `#f44` | 1.2.0 |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
-| duration | 动画时间，单位秒 | `Number` | `0.2` | - |
+| duration | 动画时间，单位秒 | `Number` | `0.4` | - |
 | line-width | 底部条宽度，单位 px | `Number` | - | 1.1.1 |
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | 1.0.0 |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | 1.1.15 |
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `Number` | `4` | - |
+| animated | 是否使用动画切换 Tabs | `false` | - | 1.4.5 |
 
 ### Tab API
 

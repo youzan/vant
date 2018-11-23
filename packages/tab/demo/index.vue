@@ -93,6 +93,21 @@
     <demo-block :title="$t('title8')">
       <van-tabs
         :active="active"
+        animated
+      >
+        <van-tab
+          :title="$t('tab') + index"
+          v-for="index in tabs"
+          :key="index"
+        >
+          {{ $t('content') }} {{ index }}
+        </van-tab>
+      </van-tabs>
+    </demo-block>
+
+    <demo-block :title="$t('title9')">
+      <van-tabs
+        :active="active"
         swipeable
       >
         <van-tab
@@ -118,7 +133,8 @@ export default {
       title5: '点击事件',
       title6: '粘性布局',
       title7: '自定义标签',
-      title8: '滑动切换',
+      title8: '切换动画',
+      title9: '滑动切换',
       disabled: ' 已被禁用'
     },
     'en-US': {
@@ -130,7 +146,8 @@ export default {
       title5: 'Click Event',
       title6: 'Sticky',
       title7: 'Custom Tab',
-      title8: 'Swipeable',
+      title8: 'Switch Animation',
+      title9: 'Swipeable',
       disabled: ' is disabled'
     }
   },
