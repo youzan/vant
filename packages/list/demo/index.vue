@@ -70,6 +70,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-list {
   .van-cell {
     text-align: center;
@@ -80,7 +82,7 @@ export default {
     line-height: 1.4;
     font-size: 14px;
     text-align: center;
-    color: #666;
+    color: @gray-darker;
   }
 }
 </style>

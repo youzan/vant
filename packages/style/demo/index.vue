@@ -65,6 +65,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-style {
   .van-ellipsis {
     font-size: 13px;
@@ -74,7 +76,7 @@ export default {
 
   .van-hairline--top {
     height: 30px;
-    background-color: #fff;
+    background-color: @white;
 
     &::after {
       top: 5px;
@@ -83,7 +85,7 @@ export default {
 
   .van-col {
     height: 50px;
-    color: #fff;
+    color: @white;
     font-size: 14px;
     border-radius: 3px;
     text-align: center;

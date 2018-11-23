@@ -43,7 +43,7 @@ export default {
   color="#13ce66"
   fill="#fff"
   size="120px"
-  layer-color="#eee"
+  layer-color="#ebedf0"
   :text="text"
   :rate="rate"
   :speed="100"

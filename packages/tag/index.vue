@@ -18,7 +18,7 @@
 import create from '../utils/create';
 import { RED, BLUE, GREEN } from '../utils/color';
 
-const DEFAULT_COLOR = '#999';
+const DEFAULT_COLOR = '#969799';
 const COLOR_MAP = {
   danger: RED,
   primary: BLUE,

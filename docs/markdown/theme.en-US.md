@@ -20,12 +20,12 @@ There are some basic variables below, all available variables could be found in 
 @green: #4b0;
 @gray: #c9c9c9;
 @gray-light: #e5e5e5;
-@gray-darker: #666;
-@gray-dark: #999;
+@gray-darker: #7d7e80;
+@gray-dark: #969799;
 
 // default colors
-@text-color: #333;
-@border-color: #eee;
+@text-color: #323233;
+@border-color: #ebedf0;
 @active-color: #e8e8e8;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
