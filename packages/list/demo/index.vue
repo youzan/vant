@@ -9,6 +9,7 @@
         <van-list
           v-model="loading"
           :finished="finished"
+          :finished-text="$t('finishedText')"
           @load="onLoad"
         >
           <van-cell
@@ -26,10 +27,12 @@
 export default {
   i18n: {
     'zh-CN': {
-      text: '当即将滚动到元素底部时，会自动加载更多'
+      text: '当即将滚动到元素底部时，会自动加载更多',
+      finishedText: '没有更多了'
     },
     'en-US': {
-      text: 'This list will load items will scroll to bottom.'
+      text: 'This list will load items will scroll to bottom.',
+      finishedText: 'Finished'
     }
   },
 

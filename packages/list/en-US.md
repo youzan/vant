@@ -16,6 +16,7 @@ Vue.use(List);
 <van-list
   v-model="loading"
   :finished="finished"
+  :finished-text="Finished"
   @load="onLoad"
 >
   <van-cell
@@ -61,6 +62,7 @@ export default {
 | finished | Whether loading is finished，the `load` event will not be triggered when finished | `Boolean` | `false` |
 | offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `Number` | `300` |
 | loading-text | Loading text | `String` | `Loading...` |
+| finished-text | Finished text | `String` | - |
 | immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
 
 ### Event
