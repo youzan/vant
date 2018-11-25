@@ -11,14 +11,16 @@
 </template>
 
 <script>
+import Popup from '../mixins/popup';
 import create from '../utils/create';
 import { RED, WHITE } from '../utils/color';
 
 export default create({
   name: 'notify',
 
+  mixins: [Popup],
+
   props: {
-    value: Boolean,
     message: [String, Number],
     color: {
       type: String,
@@ -31,6 +33,10 @@ export default create({
     duration: {
       type: Number,
       value: 3000
+    },
+    lockScroll: {
+      type: Boolean,
+      default: false
     }
   },
 

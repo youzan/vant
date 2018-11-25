@@ -1,13 +1,12 @@
 @import '../style/var';
 
 .van-notify {
+  position: fixed;
   top: 0;
   width: 100%;
-  z-index: 110;
-  color: @white;
-  position: fixed;
-  min-height: 32px;
-  line-height: 2.3;
-  font-size: 14px;
   text-align: center;
+  box-sizing: border-box;
+  padding: @notify-padding;
+  font-size: @notify-font-size;
+  line-height: @notify-line-height;
 }
