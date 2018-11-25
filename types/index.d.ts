@@ -2,6 +2,7 @@ import Vue from 'vue';
 import { VanComponent } from './component';
 import { Toast } from './toast';
 import { Dialog } from './dialog';
+import { Notify } from './notify';
 import { Locale } from './locale';
 import { Lazyload } from './lazyload';
 import { Waterfall } from './waterfall';
@@ -74,6 +75,7 @@ export class Uploader extends VanComponent {}
 export {
   Toast,
   Dialog,
+  Notify,
   Locale,
   Lazyload,
   Waterfall,

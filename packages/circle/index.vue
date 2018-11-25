@@ -24,7 +24,7 @@
 <script>
 import create from '../utils/create';
 import { raf, cancel } from '../utils/raf';
-import { BLUE } from '../utils/color';
+import { BLUE, WHITE } from '../utils/color';
 
 export default create({
   name: 'circle',
@@ -47,7 +47,7 @@ export default create({
     },
     layerColor: {
       type: String,
-      default: '#fff'
+      default: WHITE
     },
     color: {
       type: String,

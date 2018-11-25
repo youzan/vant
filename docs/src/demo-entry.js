@@ -27,6 +27,7 @@ export default {
   'loading': () => wrapper(import('../../packages/loading/demo'), 'loading'),
   'nav-bar': () => wrapper(import('../../packages/nav-bar/demo'), 'nav-bar'),
   'notice-bar': () => wrapper(import('../../packages/notice-bar/demo'), 'notice-bar'),
+  'notify': () => wrapper(import('../../packages/notify/demo'), 'notify'),
   'number-keyboard': () => wrapper(import('../../packages/number-keyboard/demo'), 'number-keyboard'),
   'pagination': () => wrapper(import('../../packages/pagination/demo'), 'pagination'),
   'panel': () => wrapper(import('../../packages/panel/demo'), 'panel'),
