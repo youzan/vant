@@ -62,6 +62,8 @@ export default {
   'nav-bar.zh-CN': () => import('../../packages/nav-bar/zh-CN.md'),
   'notice-bar.en-US': () => import('../../packages/notice-bar/en-US.md'),
   'notice-bar.zh-CN': () => import('../../packages/notice-bar/zh-CN.md'),
+  'notify.en-US': () => import('../../packages/notify/en-US.md'),
+  'notify.zh-CN': () => import('../../packages/notify/zh-CN.md'),
   'number-keyboard.en-US': () => import('../../packages/number-keyboard/en-US.md'),
   'number-keyboard.zh-CN': () => import('../../packages/number-keyboard/zh-CN.md'),
   'pagination.en-US': () => import('../../packages/pagination/en-US.md'),

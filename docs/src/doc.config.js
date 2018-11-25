@@ -173,6 +173,10 @@ module.exports = {
                 title: 'Loading 加载'
               },
               {
+                path: '/notify',
+                title: 'Notify 消息通知'
+              },
+              {
                 path: '/pull-refresh',
                 title: 'PullRefresh 下拉刷新'
               },
@@ -468,6 +472,10 @@ module.exports = {
               {
                 path: '/loading',
                 title: 'Loading'
+              },
+              {
+                path: '/notify',
+                title: 'Notify'
               },
               {
                 path: '/pull-refresh',

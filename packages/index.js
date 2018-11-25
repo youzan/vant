@@ -35,6 +35,7 @@ import Loading from './loading';
 import Locale from './locale';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
+import Notify from './notify';
 import NumberKeyboard from './number-keyboard';
 import Pagination from './pagination';
 import Panel from './panel';
@@ -106,6 +107,7 @@ const components = [
   Locale,
   NavBar,
   NoticeBar,
+  Notify,
   NumberKeyboard,
   Pagination,
   Panel,
@@ -190,6 +192,7 @@ export {
   Locale,
   NavBar,
   NoticeBar,
+  Notify,
   NumberKeyboard,
   Pagination,
   Panel,
