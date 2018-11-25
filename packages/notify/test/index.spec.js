@@ -39,3 +39,11 @@ test('notify disappear', async() => {
   await later();
   expect(notify.$el.outerHTML).toMatchSnapshot();
 });
+
+test('set default options', () => {
+  Notify.setDefaultOptions({ duration: 1000 });
+  expect(Notify().duration).toEqual(1000);
+  Notify.resetDefaultOptions();
+  expect(Notify().duration).toEqual(3000);
+  Notify.clear();
+});

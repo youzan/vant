@@ -43,6 +43,8 @@ export default {
 |------|------|------|------|
 | Notify | `options | message` | notify 实例 | 展示提示 |
 | Notify.clear | - | `void` | 关闭提示 |
+| Notify.setDefaultOptions | `options` | `void` | 修改默认配置，对所有 Notify 生效 |
+| Notify.resetDefaultOptions | - | `void` | 重置默认配置，对所有 Notify 生效 |
 
 ### Options
 

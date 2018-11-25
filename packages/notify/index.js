@@ -27,7 +27,7 @@ const Notify = options => {
   }
 
   options = {
-    ...Notify.defaultOptions,
+    ...Notify.currentOptions,
     ...parseOptions(options)
   };
 
@@ -55,9 +55,19 @@ Notify.defaultOptions = {
   duration: 3000
 };
 
+Notify.setDefaultOptions = options => {
+  Object.assign(Notify.currentOptions, options);
+};
+
+Notify.resetDefaultOptions = () => {
+  Notify.currentOptions = { ...Notify.defaultOptions };
+};
+
 Notify.install = () => {
   Vue.use(VanNotify);
 };
+
+Notify.resetDefaultOptions();
 
 Vue.prototype.$notify = Notify;
 
