@@ -1,5 +1,5 @@
 <template>
-  <transition :name="transition ? 'van-slide-bottom' : ''">
+  <transition :name="transition ? 'van-slide-up' : ''">
     <div
       v-show="show"
       :style="style"

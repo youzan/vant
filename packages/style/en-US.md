@@ -41,8 +41,13 @@ Add 1px border under the Retina screen for the element, based on a pseudo elemen
   <div v-show="visible">Fade</div>
 </transition>
 
-<!-- slide bottom -->
-<transition name="van-slide-bottom">
-  <div v-show="visible">Fade</div>
+<!-- slide up -->
+<transition name="van-slide-up">
+  <div v-show="visible">Slide Up</div>
+</transition>
+
+<!-- slide down -->
+<transition name="van-slide-down">
+  <div v-show="visible">Slide Down</div>
 </transition>
 ```

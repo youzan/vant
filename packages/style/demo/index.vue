@@ -9,30 +9,28 @@
     </demo-block>
 
     <demo-block :title="$t('animation')">
-      <van-switch-cell
-        v-model="show"
-        :title="$t('toggle')"
-        :border="false"
+      <van-cell
+        is-link
+        title="Fade"
+        @click="animate('van-fade')"
       />
-      <van-row>
-        <transition name="van-fade">
-          <van-col
-            v-show="show"
-            span="8"
-          >
-            Fade
-          </van-col>
-        </transition>
+      <van-cell
+        is-link
+        title="Slide Up"
+        @click="animate('van-slide-up')"
+      />
+      <van-cell
+        is-link
+        title="Slide Down"
+        @click="animate('van-slide-down')"
+      />
 
-        <transition name="van-slide-bottom">
-          <van-col
-            v-show="show"
-            span="8"
-          >
-            Slide Bottom
-          </van-col>
-        </transition>
-      </van-row>
+      <transition :name="transitionName">
+        <div
+          v-show="show"
+          class="demo-animate-block"
+        />
+      </transition>
     </demo-block>
   </demo-section>
 </template>
@@ -58,8 +56,20 @@ export default {
 
   data() {
     return {
-      show: true
+      show: false,
+      transitionName: ''
     };
+  },
+
+  methods: {
+    animate(transitionName) {
+      this.show = true;
+      this.transitionName = transitionName;
+
+      setTimeout(() => {
+        this.show = false;
+      }, 500);
+    }
   }
 };
 </script>
@@ -83,19 +93,19 @@ export default {
     }
   }
 
-  .van-col {
-    height: 50px;
-    color: @white;
-    font-size: 14px;
-    border-radius: 3px;
-    text-align: center;
-    line-height: 50px;
-    margin-left: 15px;
-    background-color: #39a9ed;
-  }
-
   .van-switch-cell {
     margin-bottom: 15px;
+  }
+
+  .demo-animate-block {
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    border-radius: 3px;
+    margin: -50px 0 0 -50px;
+    background-color: @blue;
   }
 }
 </style>
