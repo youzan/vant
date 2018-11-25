@@ -93,10 +93,6 @@ export default {
     }
   }
 
-  .van-switch-cell {
-    margin-bottom: 15px;
-  }
-
   .demo-animate-block {
     top: 50%;
     left: 50%;
