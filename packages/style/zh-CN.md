@@ -40,8 +40,13 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
   <div v-show="visible">Fade</div>
 </transition>
 
-<!-- 下滑 -->
-<transition name="van-slide-bottom">
-  <div v-show="visible">Fade</div>
+<!-- 上滑进入 -->
+<transition name="van-slide-up">
+  <div v-show="visible">Slide Up</div>
+</transition>
+
+<!-- 下滑进入 -->
+<transition name="van-slide-down">
+  <div v-show="visible">Slide Down</div>
 </transition>
 ```
