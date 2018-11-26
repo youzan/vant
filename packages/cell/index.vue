@@ -20,20 +20,20 @@
     </slot>
     <div
       v-if="isDef(title) || $slots.title"
-      :class="b('title')"
+      :class="[b('title'), titleClass]"
     >
       <slot name="title">
         <span v-text="title" />
         <div
           v-if="label"
           v-text="label"
-          :class="b('label')"
+          :class="[b('label'), labelClass]"
         />
       </slot>
     </div>
     <div
       v-if="isDef(value) || $slots.default"
-      :class="b('value', { alone: !$slots.title && !title })"
+      :class="[b('value', { alone: !$slots.title && !title }), valueClass]"
     >
       <slot>
         <span v-text="value" />
@@ -67,13 +67,16 @@ export default create({
   props: {
     icon: String,
     size: String,
-    label: String,
     center: Boolean,
     isLink: Boolean,
     required: Boolean,
     clickable: Boolean,
+    titleClass: String,
+    valueClass: String,
+    labelClass: String,
     title: [String, Number],
     value: [String, Number],
+    label: [String, Number],
     arrowDirection: String,
     border: {
       type: Boolean,
