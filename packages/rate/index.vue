@@ -9,7 +9,7 @@
       :class="b('item')"
       :size="size + 'px'"
       :data-index="index"
-      :name="full ? 'star' : 'star-o'"
+      :name="full ? icon : voidIcon"
       :color="disabled ? disabledColor : full ? color : voidColor"
       @click="onSelect(index)"
     />
@@ -28,6 +28,14 @@ export default create({
     size: {
       type: Number,
       default: 20
+    },
+    icon: {
+      type: String,
+      default: 'star'
+    },
+    voidIcon: {
+      type: String,
+      default: 'star-o'
     },
     color: {
       type: String,
