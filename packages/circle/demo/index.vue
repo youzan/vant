@@ -14,7 +14,7 @@
         fill="#fff"
         :rate="rate"
         size="120px"
-        layer-color="#eee"
+        layer-color="#ebedf0"
         :speed="100"
         :stroke-width="60"
         :clockwise="false"

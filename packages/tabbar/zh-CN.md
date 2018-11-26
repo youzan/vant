@@ -83,7 +83,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| icon | 图标名称 (可选值见 Icon 组件) | `String` | - | - |
+| icon | 图标名称或图片链接，可选值见 Icon 组件| `String` | - | - |
 | dot | 是否显示小红点 | `Boolean` | - | - |
 | info | 图标右上角提示信息 | `String | Number` | - | - |
 | url | 跳转链接 | `String` | - | - |

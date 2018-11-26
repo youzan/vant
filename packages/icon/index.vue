@@ -1,10 +1,14 @@
 <template>
   <i
     v-on="$listeners"
-    :class="[classPrefix, `${classPrefix}-${name}`]"
+    :class="[classPrefix, isSrc ? 'van-icon--image' : `${classPrefix}-${name}`]"
     :style="style"
   >
     <slot />
+    <img
+      v-if="isSrc"
+      :src="name"
+    >
     <van-info :info="info" />
   </i>
 </template>
@@ -12,6 +16,7 @@
 <script>
 import Info from '../info';
 import create from '../utils/create-basic';
+import isSrc from '../utils/validate/src';
 
 export default create({
   name: 'icon',
@@ -22,9 +27,9 @@ export default create({
 
   props: {
     name: String,
-    info: [String, Number],
-    color: String,
     size: String,
+    color: String,
+    info: [String, Number],
     classPrefix: {
       type: String,
       default: 'van-icon'
@@ -37,6 +42,10 @@ export default create({
         color: this.color,
         fontSize: this.size
       };
+    },
+
+    isSrc() {
+      return isSrc(this.name);
     }
   }
 });

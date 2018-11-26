@@ -43,9 +43,11 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../packages/style/var';
+
 body {
-  color: #333;
   line-height: 1;
+  color: @text-color;
   background-color: #fafafa;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,5 +1,5 @@
 <template>
-  <transition name="van-slide-bottom">
+  <transition name="van-slide-up">
     <div
       v-if="shouldRender"
       v-show="value"

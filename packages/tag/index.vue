@@ -16,9 +16,8 @@
 
 <script>
 import create from '../utils/create';
-import { RED, BLUE, GREEN } from '../utils/color';
+import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
-const DEFAULT_COLOR = '#999';
 const COLOR_MAP = {
   danger: RED,
   primary: BLUE,
@@ -39,7 +38,7 @@ export default create({
 
   computed: {
     style() {
-      const color = this.color || COLOR_MAP[this.type] || DEFAULT_COLOR;
+      const color = this.color || COLOR_MAP[this.type] || GRAY_DARK;
       const key = this.plain ? 'color' : 'backgroundColor';
       return { [key]: color };
     }

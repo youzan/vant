@@ -1,7 +1,6 @@
 <template>
   <div
-    class="van-hairline--bottom"
-    :class="b({ fixed })"
+    :class="[b({ fixed }), { 'van-hairline--bottom': border }]"
     :style="style"
   >
     <div
@@ -50,10 +49,14 @@ export default create({
 
   props: {
     title: String,
+    fixed: Boolean,
     leftText: String,
     rightText: String,
     leftArrow: Boolean,
-    fixed: Boolean,
+    border: {
+      type: Boolean,
+      default: true
+    },
     zIndex: {
       type: Number,
       default: 1

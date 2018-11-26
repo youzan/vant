@@ -55,17 +55,19 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-waterfall {
   ul {
     max-height: 360px;
     overflow: scroll;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid @gray-light;
   }
 
   li {
     line-height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
+    border-bottom: 1px solid @gray-light;
+    background: @white;
     text-align: center;
   }
 
@@ -74,7 +76,7 @@ export default {
     line-height: 1.4;
     font-size: 14px;
     text-align: center;
-    color: #666;
+    color: @gray-darker;
   }
 }
 </style>

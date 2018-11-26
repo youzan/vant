@@ -1,5 +1,22 @@
 ## Changelog
 
+## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
+`2018-11-23`
+
+**Improvements**
+
+- Tab: add animated props [\#2126](https://github.com/youzan/vant/pull/2126)
+- Tab: update title style [\#2120](https://github.com/youzan/vant/pull/2120)
+- Badge: update info style [\#2122](https://github.com/youzan/vant/pull/2122)
+- Radio: add checked-color prop [\#2129](https://github.com/youzan/vant/pull/2129)
+- Swipe: add indicator-color prop [\#2110](https://github.com/youzan/vant/pull/2110)
+- TreeSelect: support disable option [\#2107](https://github.com/youzan/vant/pull/2107)
+
+**Bug Fixes**
+
+- fix Tab swipe-threshold not work when less than 4 [\#2128](https://github.com/youzan/vant/pull/2128)
+
+
 ## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
 `2018-11-18`
 

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a notify 1`] = `
+<div class="van-notify" style="color: rgb(255, 255, 255); background: rgb(255, 68, 68); z-index: 2000;" name="van-slide-down">
+  test
+</div>
+`;
+
+exports[`notify disappear 1`] = `
+<div class="van-notify" style="color: red; z-index: 2000; background: blue;" name="van-slide-down">
+  test
+</div>
+`;
+
+exports[`notify disappear 2`] = `
+<div class="van-notify" style="color: red; z-index: 2000; background: blue; display: none;" name="van-slide-down">
+  test
+</div>
+`;
+
+exports[`notify disappear 3`] = `
+<div class="van-notify" style="color: rgb(255, 255, 255); z-index: 2001; background: rgb(255, 68, 68);" name="van-slide-down">
+  text2
+</div>
+`;
+
+exports[`notify disappear 4`] = `
+<div class="van-notify" style="color: rgb(255, 255, 255); z-index: 2001; background: rgb(255, 68, 68); display: none;" name="van-slide-down">
+  text2
+</div>
+`;

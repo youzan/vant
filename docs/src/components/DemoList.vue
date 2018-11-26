@@ -128,7 +128,7 @@ export default {
     display: inline-block;
 
     &.active {
-      color: #fff;
+      color: @white;
       background-color: @blue;
     }
   }

@@ -1,30 +1,21 @@
 @import '../style/var';
 
-@van-info-size: 16px;
-@van-info-color: @white;
-@van-info-padding: 0 3px;
-@van-info-font-size: 12px;
-@van-info-font-weight: 500;
-@van-info-border-width: 1px;
-@van-info-background-color: @red;
-@van-info-font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
-
 .van-info {
   position: absolute;
   right: 0;
-  top: -@van-info-size / 2;
-  color: @van-info-color;
-  font-size: @van-info-font-size;
-  font-weight: @van-info-font-weight;
-  font-family: @van-info-font-family;
+  top: -@info-size / 2;
+  color: @info-color;
+  font-size: @info-font-size;
+  font-weight: @info-font-weight;
+  font-family: @info-font-family;
   text-align: center;
   box-sizing: border-box;
-  padding: @van-info-padding;
-  min-width: @van-info-size;
-  line-height: @van-info-size - @van-info-border-width * 2;
-  border: @van-info-border-width solid @white;
-  border-radius: @van-info-size;
-  background-color: @van-info-background-color;
+  padding: @info-padding;
+  min-width: @info-size;
+  line-height: @info-size - @info-border-width * 2;
+  border: @info-border-width solid @white;
+  border-radius: @info-size;
+  background-color: @info-background-color;
   transform: translateX(50%);
   transform-origin: 100%;
 }

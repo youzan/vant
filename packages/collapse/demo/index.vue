@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style lang="less">
-@import "../../../packages/style/var";
+@import '../../style/var';
 
 .demo-collapse {
   .van-collapse-item__content {

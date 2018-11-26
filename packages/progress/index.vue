@@ -18,7 +18,7 @@
 
 <script>
 import create from '../utils/create';
-import { BLUE } from '../utils/color';
+import { BLUE, WHITE } from '../utils/color';
 
 export default create({
   name: 'progress',
@@ -42,7 +42,7 @@ export default create({
     },
     textColor: {
       type: String,
-      default: '#fff'
+      default: WHITE
     }
   },
 

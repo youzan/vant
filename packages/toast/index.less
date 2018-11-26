@@ -5,18 +5,18 @@
   top: 50%;
   left: 50%;
   display: flex;
-  color: @white;
-  max-width: 80%;
-  font-size: 14px;
-  line-height: 20px;
-  border-radius: 4px;
+  color: @toast-text-color;
+  max-width: @toast-max-width;
+  font-size: @toast-font-size;
+  line-height: @toast-line-height;
+  border-radius: @toast-border-radius;
   word-break: break-all;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  box-sizing: border-box;
+  justify-content: center;
+  box-sizing: content-box;
   transform: translate3d(-50%, -50%, 0);
-  background-color: rgba(0, 0, 0, .7);
+  background-color: @toast-background-color;
 
   // hack for avoid max-width when use left & fixed
   width: fit-content; 
@@ -30,17 +30,17 @@
   }
 
   &--text {
-    min-width: 120px;
-    padding: 8px 12px;
+    padding: @toast-text-padding;
+    min-width: @toast-text-min-width;
   }
 
   &--default {
-    width: 120px;
-    min-height: 120px;
-    padding: 15px;
+    width: @toast-default-width;
+    padding: @toast-default-padding;
+    min-height: @toast-default-min-height;
 
     .van-toast__icon {
-      font-size: 50px;
+      font-size: @toast-icon-size;
     }
 
     .van-loading {
@@ -48,17 +48,16 @@
     }
 
     .van-toast__text {
-      font-size: 14px;
       padding-top: 10px;
     }
   }
 
   &--top {
-    top: 50px;
+    top: @toast-position-top-distance;
   }
 
   &--bottom {
     top: auto;
-    bottom: 50px;
+    bottom: @toast-position-bottom-distance;
   }
 }

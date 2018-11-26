@@ -124,6 +124,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-swipe {
   padding-bottom: 30px;
 
@@ -131,7 +133,7 @@ export default {
     cursor: pointer;
 
     &-item {
-      color: #fff;
+      color: @white;
       font-size: 20px;
       text-align: center;
       line-height: 150px;
@@ -151,7 +153,7 @@ export default {
       display: block;
       padding: 30px 60px;
       box-sizing: border-box;
-      background-color: #fff;
+      background-color: @white;
       pointer-events: none;
     }
   }
@@ -170,7 +172,7 @@ export default {
     bottom: 5px;
     padding: 2px 5px;
     font-size: 12px;
-    color: #fff;
+    color: @white;
     background: rgba(0, 0, 0, .1);
   }
 }

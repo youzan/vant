@@ -35,6 +35,7 @@ import Loading from './loading';
 import Locale from './locale';
 import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
+import Notify from './notify';
 import NumberKeyboard from './number-keyboard';
 import Pagination from './pagination';
 import Panel from './panel';
@@ -69,7 +70,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.4.4';
+const version = '1.4.5';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -106,6 +107,7 @@ const components = [
   Locale,
   NavBar,
   NoticeBar,
+  Notify,
   NumberKeyboard,
   Pagination,
   Panel,
@@ -190,6 +192,7 @@ export {
   Locale,
   NavBar,
   NoticeBar,
+  Notify,
   NumberKeyboard,
   Pagination,
   Panel,

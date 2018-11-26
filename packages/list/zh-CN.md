@@ -18,6 +18,7 @@ List 组件通过`loading`和`finished`两个变量控制加载状态，当组�
 <van-list
   v-model="loading"
   :finished="finished"
+  :finished-text="没有更多了"
   @load="onLoad"
 >
   <van-cell
@@ -65,7 +66,8 @@ export default {
 | loading | 是否处于加载状态，加载过程中不触发`load`事件 | `Boolean` | `false` | - |
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` | - |
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
-| loading-text | 加载中提示文案 | `String` | `加载中...` | 1.1.1 |
+| loading-text | 加载过程中的提示文案 | `String` | `加载中...` | 1.1.1 |
+| finished-text | 加载完成后的提示文案 | `String` | - | 1.4.6 |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
 
 ### Event
