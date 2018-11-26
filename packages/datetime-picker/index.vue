@@ -190,12 +190,8 @@ export default create({
       }
 
       // date type
-      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', value);
-      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', value);
-      const minDay = new Date(minYear, minMonth - 1, minDate, minHour, minMinute);
-      const maxDay = new Date(maxYear, maxMonth - 1, maxDate, maxHour, maxMinute);
-      value = Math.max(value, minDay);
-      value = Math.min(value, maxDay);
+      value = Math.max(value, this.minDate.getTime());
+      value = Math.min(value, this.maxDate.getTime());
 
       return new Date(value);
     },
