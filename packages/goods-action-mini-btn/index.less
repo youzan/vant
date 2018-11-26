@@ -12,12 +12,8 @@
   flex-direction: column;
   justify-content: center;
 
-  &::after {
-    border-width: 1px 0 0 1px;
-  }
-
-  &:first-child::after {
-    border-left-width: 0;
+  &:not(:first-child)::after {
+    border-left-width: 1px;
   }
 
   &:active {
