@@ -3,6 +3,7 @@
 .van-tab {
   flex: 1;
   cursor: pointer;
+  min-width: 0; // hack for flex ellipsis
   padding: 0 5px;
   font-size: 14px;
   position: relative;
@@ -11,7 +12,7 @@
   text-align: center;
   box-sizing: border-box;
   background-color: @white;
-  min-width: 0; /* hack for flex ellipsis */
+  transition: color .3s;
 
   span {
     display: block;

@@ -219,7 +219,7 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tabs__track" style="width:0px;transition-duration:0.4s;transform:translateX(0px);display:none;">
+        <div class="van-tabs__track" style="width:0px;transition-duration:0.3s;transform:translateX(0px);display:none;">
           <div class="van-tab__pane van-tab__pane--float">
             <!---->
             <!---->
