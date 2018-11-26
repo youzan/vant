@@ -157,7 +157,7 @@ export default {
 | v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
 | color | 标签颜色 | `String` | `#f44` | 1.2.0 |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
-| duration | 动画时间，单位秒 | `Number` | `0.4` | - |
+| duration | 动画时间，单位秒 | `Number` | `0.3` | - |
 | line-width | 底部条宽度，单位 px | `Number` | - | 1.1.1 |
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | 1.0.0 |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |

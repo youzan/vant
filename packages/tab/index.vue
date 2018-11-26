@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="b('pane', { float: parent.animated })"
     v-show="parent.animated || isSelected"
+    :class="b('pane', { float: parent.animated })"
     :style="paneStyle"
   >
     <slot v-if="inited" />

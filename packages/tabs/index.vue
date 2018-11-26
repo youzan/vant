@@ -72,6 +72,7 @@ export default create({
   props: {
     color: String,
     sticky: Boolean,
+    animated: Boolean,
     lineWidth: Number,
     swipeable: Boolean,
     active: {
@@ -84,7 +85,7 @@ export default create({
     },
     duration: {
       type: Number,
-      default: 0.4
+      default: 0.3
     },
     swipeThreshold: {
       type: Number,
@@ -93,8 +94,7 @@ export default create({
     offsetTop: {
       type: Number,
       default: 0
-    },
-    animated: Boolean
+    }
   },
 
   data() {
