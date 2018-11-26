@@ -10,8 +10,8 @@
         <p>{{ validPeriod }}</p>
         <checkbox
           v-if="chosen"
+          :value="true"
           :class="b('corner')"
-          value
         />
       </div>
     </div>
