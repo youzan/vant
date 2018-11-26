@@ -11,10 +11,18 @@ Vue.use(Icon);
 
 #### 基础用法
 
-设置`name`属性为对应的图标名称即可，所有可用的图标名称见右侧列表
+`Icon`的`name`属性支持传入图标名称或图片链接
 
 ```html
-<van-icon name="success" />
+<van-icon name="close" />
+<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
+```
+
+#### 显示徽标
+
+```html
+<van-icon name="chat" info="9" />
+<van-icon name="chat" info="99+" />
 ```
 
 #### 使用本地字体文件
@@ -31,28 +39,28 @@ import 'vant/lib/icon/local.css';
 
 ```css
 @font-face {
-  font-family: 'custom-iconfont';
-  src: url('./iconfont.ttf') format('truetype');
+  font-family: 'my-icon';
+  src: url('./my-icon.ttf') format('truetype');
 }
 
-.van-icon {
-  font-family: 'vant-icon', 'custom-iconfont' !important;
+.my-icon {
+  font-family: 'my-icon';
 }
 
-.van-icon-extra:before {
+.my-icon-extra::before {
   content: '\e626';
 }
 ```
 
 ```html
-<van-icon name="extra" />
+<van-icon class-prefix="my-icon" name="extra" />
 ```
 
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 图标名称 | `String` | - | - |
+| name | 图标名称或图片链接 | `String` | - | - |
 | info | 图标右上角文字提示 | `String | Number` | - | - |
 | color | 图标颜色 | `String` | `inherit` | 1.1.3 |
 | size | 图标大小，如 `20px` `2em` | `String` | `inherit` | 1.1.15 |

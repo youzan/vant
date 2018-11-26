@@ -131,8 +131,8 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | 1.0.0 |
-| icon | 输入框尾部图标，可选值见 Icon 组件 | `String` | - | - |
-| left-icon | 输入框左侧图标，可选值见 Icon 组件 | `String` | - | 1.1.4 |
+| icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - | - |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.1.4 |
 
 ### Event
 

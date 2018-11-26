@@ -6,17 +6,22 @@ exports[`renders demo correctly 1`] = `
     <div class="van-rate">
       <i data-index="0" class="van-icon van-icon-star van-rate__item" style="color:#ffd21e;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="1" class="van-icon van-icon-star van-rate__item" style="color:#ffd21e;font-size:20px;">
+        <!---->
         <!---->
       </i>
       <i data-index="2" class="van-icon van-icon-star van-rate__item" style="color:#ffd21e;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="3" class="van-icon van-icon-star-o van-rate__item" style="color:#c7c7c7;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="4" class="van-icon van-icon-star-o van-rate__item" style="color:#c7c7c7;font-size:20px;">
+        <!---->
         <!---->
       </i>
     </div>
@@ -25,17 +30,22 @@ exports[`renders demo correctly 1`] = `
     <div class="van-rate">
       <i data-index="0" class="van-icon van-icon-like van-rate__item" style="color:#ffd21e;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="1" class="van-icon van-icon-like van-rate__item" style="color:#ffd21e;font-size:20px;">
+        <!---->
         <!---->
       </i>
       <i data-index="2" class="van-icon van-icon-like van-rate__item" style="color:#ffd21e;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="3" class="van-icon van-icon-like-o van-rate__item" style="color:#c7c7c7;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="4" class="van-icon van-icon-like-o van-rate__item" style="color:#c7c7c7;font-size:20px;">
+        <!---->
         <!---->
       </i>
     </div>
@@ -44,20 +54,26 @@ exports[`renders demo correctly 1`] = `
     <div class="van-rate">
       <i data-index="0" class="van-icon van-icon-star van-rate__item" style="color:#2ba;font-size:25px;">
         <!---->
+        <!---->
       </i>
       <i data-index="1" class="van-icon van-icon-star van-rate__item" style="color:#2ba;font-size:25px;">
+        <!---->
         <!---->
       </i>
       <i data-index="2" class="van-icon van-icon-star van-rate__item" style="color:#2ba;font-size:25px;">
         <!---->
+        <!---->
       </i>
       <i data-index="3" class="van-icon van-icon-star van-rate__item" style="color:#2ba;font-size:25px;">
+        <!---->
         <!---->
       </i>
       <i data-index="4" class="van-icon van-icon-star-o van-rate__item" style="color:#ceefe8;font-size:25px;">
         <!---->
+        <!---->
       </i>
       <i data-index="5" class="van-icon van-icon-star-o van-rate__item" style="color:#ceefe8;font-size:25px;">
+        <!---->
         <!---->
       </i>
     </div>
@@ -66,17 +82,22 @@ exports[`renders demo correctly 1`] = `
     <div class="van-rate">
       <i data-index="0" class="van-icon van-icon-star van-rate__item" style="color:#bdbdbd;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="1" class="van-icon van-icon-star van-rate__item" style="color:#bdbdbd;font-size:20px;">
+        <!---->
         <!---->
       </i>
       <i data-index="2" class="van-icon van-icon-star-o van-rate__item" style="color:#bdbdbd;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="3" class="van-icon van-icon-star-o van-rate__item" style="color:#bdbdbd;font-size:20px;">
         <!---->
+        <!---->
       </i>
       <i data-index="4" class="van-icon van-icon-star-o van-rate__item" style="color:#bdbdbd;font-size:20px;">
+        <!---->
         <!---->
       </i>
     </div>

@@ -9,6 +9,7 @@ exports[`coupon cell 1`] = `
   <div class="van-cell__value"><span>使用优惠</span></div>
   <i class="van-icon van-icon-arrow van-cell__right-icon">
     <!---->
+    <!---->
   </i>
 </div>
 `;
@@ -21,6 +22,7 @@ exports[`coupon cell 2`] = `
   </div>
   <div class="van-cell__value"><span>-￥1.00</span></div>
   <i class="van-icon van-icon-arrow van-cell__right-icon">
+    <!---->
     <!---->
   </i>
 </div>
