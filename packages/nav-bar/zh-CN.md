@@ -54,6 +54,7 @@ export default {
 | right-text | 右侧文案 | `String` | `''` | - |
 | left-arrow | 是否显示左侧箭头 | `Boolean` | `false` | - |
 | fixed | 是否固定在顶部 | `Boolean` | `false` | - |
+| border | 是否显示下边框 | `Boolean` | `true` | 1.4.7 |
 | z-index | 元素 z-index | `Number` | `1` | - |
 
 ### Slot

@@ -53,6 +53,7 @@ export default {
 | right-text | Right Text | `String` | `''` |
 | left-arrow | Whether to show left arrow | `Boolean` | `false` |
 | fixed | Whether to fixed top | `Boolean` | `false` |
+| border | Whether to show bottom border | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 
 ### Slot
