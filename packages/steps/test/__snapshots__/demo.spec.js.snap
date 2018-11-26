@@ -18,6 +18,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-step__circle-container">
             <i class="van-icon van-icon-checked" style="color:#4b0;font-size:undefined;">
               <!---->
+              <!---->
             </i>
           </div>
           <div class="van-step__line"></div>
@@ -46,6 +47,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-steps__icon">
           <i class="van-icon van-icon-logistics steps-success" style="color:undefined;font-size:undefined;">
             <!---->
+            <!---->
           </i>
         </div>
         <div class="van-steps__message">
@@ -65,6 +67,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-step__title" style="color:#4b0;">商家接单</div>
           <div class="van-step__circle-container">
             <i class="van-icon van-icon-checked" style="color:#4b0;font-size:undefined;">
+              <!---->
               <!---->
             </i>
           </div>
@@ -98,6 +101,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <div class="van-step__circle-container">
             <i class="van-icon van-icon-checked" style="color:#f44;font-size:undefined;">
+              <!---->
               <!---->
             </i>
           </div>

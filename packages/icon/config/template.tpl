@@ -14,6 +14,19 @@
   font-size: inherit;
   text-rendering: auto;
 
+  &--image {
+    width: 1em;
+    height: 1em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
   &::before {
     display: inline-block;
   }

@@ -7,6 +7,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-nav-bar__left">
         <i class="van-icon van-icon-arrow van-nav-bar__arrow" style="color:undefined;font-size:undefined;">
           <!---->
+          <!---->
         </i> <span class="van-nav-bar__text">返回</span></div>
       <div class="van-ellipsis van-nav-bar__title">标题</div>
       <div class="van-nav-bar__right"><span class="van-nav-bar__text">按钮</span></div>
@@ -17,10 +18,12 @@ exports[`renders demo correctly 1`] = `
       <div class="van-nav-bar__left">
         <i class="van-icon van-icon-arrow van-nav-bar__arrow" style="color:undefined;font-size:undefined;">
           <!---->
+          <!---->
         </i> <span class="van-nav-bar__text">返回</span></div>
       <div class="van-ellipsis van-nav-bar__title">标题</div>
       <div class="van-nav-bar__right">
         <i class="van-icon van-icon-search" style="color:undefined;font-size:undefined;">
+          <!---->
           <!---->
         </i>
       </div>
