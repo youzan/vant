@@ -6,6 +6,10 @@ module.exports = {
       css: 'success'
     },
     {
+      src: 'cross.svg',
+      css: 'cross'
+    },
+    {
       src: 'fail.svg',
       css: 'fail'
     },
