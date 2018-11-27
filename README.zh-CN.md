@@ -54,11 +54,11 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/vant/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant/lib/index.css">
 
 <!-- 引入组件 -->
-<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-<script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant/lib/vant.min.js"></script>
 ```
 
 ## 快速上手
