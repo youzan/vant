@@ -33,7 +33,8 @@ const prevTTFs = glob.sync(path.join(iconDir, '*.ttf'));
 prevTTFs.forEach(ttf => fs.removeSync(ttf));
 
 // rename svg
-config.glyphs.forEach((icon, index) => {
+const icons = [].concat(config.glyphs, config.basic);
+icons.forEach((icon, index) => {
   const src = path.join(svgDir, icon.src);
   if (fs.existsSync(src)) {
     fs.renameSync(src, path.join(svgDir, icon.css + '.svg'));

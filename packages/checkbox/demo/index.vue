@@ -149,8 +149,7 @@ export default {
   }
 
   img {
-    width: 20px;
-    display: block;
+    height: 20px;
   }
 }
 </style>

@@ -11,7 +11,7 @@
         <icon
           v-if="leftArrow"
           :class="b('arrow')"
-          name="arrow"
+          name="arrow-left"
         />
         <span
           v-if="leftText"
