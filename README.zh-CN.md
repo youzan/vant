@@ -50,15 +50,13 @@ yarn add vant
 
 #### CDN
 
-访问下面的文件 URL，会自动重定向至最新版本的 CDN 链接，建议使用固定版本的 CDN 链接，避免升级时受到非兼容性更新的影响。
-
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.4/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@1.4/lib/vant.min.js"></script>
 ```
 
 ## 快速上手
