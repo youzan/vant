@@ -24,6 +24,18 @@
       </van-col>
     </demo-block>
 
+    <demo-block :title="$t('basic')">
+      <van-col
+        v-for="icon in basic"
+        :key="icon"
+        span="8"
+        class="demo-col-with-text"
+      >
+        <van-icon :name="icon" />
+        <span>{{ icon }}</span>
+      </van-col>
+    </demo-block>
+
     <demo-block :title="$t('title')">
       <van-col
         v-for="icon in icons"
@@ -45,15 +57,18 @@ export default {
   i18n: {
     'zh-CN': {
       title: '图标列表',
-      info: '显示徽标'
+      info: '显示徽标',
+      basic: '基础图标'
     },
     'en-US': {
       title: 'Icon List',
-      info: 'Show Info'
+      info: 'Show Info',
+      basic: 'Basic Icon'
     }
   },
 
   data() {
+    this.basic = icons.basic.map(icon => icon.css);
     this.icons = icons.glyphs.map(icon => icon.css);
     return {};
   }

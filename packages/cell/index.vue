@@ -42,8 +42,8 @@
     <slot name="right-icon">
       <icon
         v-if="isLink"
-        :class="b('right-icon', arrowDirection)"
-        name="arrow"
+        :class="b('right-icon')"
+        :name="arrowIcon"
       />
     </slot>
     <slot name="extra" />
@@ -81,6 +81,12 @@ export default create({
     border: {
       type: Boolean,
       default: true
+    }
+  },
+
+  computed: {
+    arrowIcon() {
+      return this.arrowDirection ? `arrow-${this.arrowDirection}` : 'arrow';
     }
   },
 

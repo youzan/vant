@@ -43,31 +43,21 @@
     }
   }
 
-  &__left-icon {
+  &__left-icon,
+  &__right-icon {
     height: 24px;
     min-width: 1em;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  &__left-icon {
     margin-right: 5px;
   }
 
   &__right-icon {
     color: @gray-dark;
-    font-size: 12px;
-    line-height: 24px;
     margin-left: 5px;
-
-    &--left::before {
-      transform: rotate(180deg);
-    }
-
-    &--up::before {
-      transform: rotate(-90deg);
-    }
-
-    &--down::before {
-      transform: rotate(90deg);
-    }
   }
 
   &--clickable {

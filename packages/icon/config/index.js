@@ -1,5 +1,31 @@
 module.exports = {
   name: 'vant-icon',
+  basic: [
+    {
+      src: 'success.svg',
+      css: 'success'
+    },
+    {
+      src: 'fail.svg',
+      css: 'fail'
+    },
+    {
+      src: 'arrow.svg',
+      css: 'arrow'
+    },
+    {
+      src: 'arrow-left.svg',
+      css: 'arrow-left'
+    },
+    {
+      src: 'arrow-up.svg',
+      css: 'arrow-up'
+    },
+    {
+      src: 'arrow-down.svg',
+      css: 'arrow-down'
+    }
+  ],
   glyphs: [
     {
       src: 'close.svg',
@@ -202,24 +228,8 @@ module.exports = {
       css: 'check'
     },
     {
-      src: '进入箭头.svg',
-      css: 'arrow'
-    },
-    {
-      src: 'arrow-left.svg',
-      css: 'arrow-left'
-    },
-    {
       src: '搜索.svg',
       css: 'search'
-    },
-    {
-      src: '成功.svg',
-      css: 'success'
-    },
-    {
-      src: '失败.svg',
-      css: 'fail'
     },
     {
       src: '加购.svg',
