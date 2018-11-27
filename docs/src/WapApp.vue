@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-nav-bar
-      v-show="title"
+      v-show="title && showNav"
       class="van-doc-nav-bar"
       :title="title"
       left-arrow
@@ -22,6 +22,17 @@
 </template>
 
 <script>
+function getQueryString(name) {
+  const arr = location.search.substr(1).split('&');
+  for (let i = 0, l = arr.length; i < l; i++) {
+    const item = arr[i].split('=');
+    if (item.shift() === name) {
+      return decodeURIComponent(item.join('='));
+    }
+  }
+  return '';
+}
+
 export default {
   computed: {
     title() {
@@ -30,7 +41,13 @@ export default {
     },
 
     demoLink() {
-      return `https://github.com/youzan/vant/blob/dev/packages/${this.$route.meta.path}/demo/index.vue`;
+      return `https://github.com/youzan/vant/blob/dev/packages/${
+        this.$route.meta.path
+      }/demo/index.vue`;
+    },
+
+    showNav() {
+      return getQueryString('hide_nav') !== '1';
     }
   },
 
