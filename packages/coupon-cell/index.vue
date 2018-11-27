@@ -1,15 +1,12 @@
 <template>
-  <cell-group
+  <cell
     :class="b()"
+    :title="title || $t('title')"
+    :value="value"
     :border="border"
-  >
-    <cell
-      :title="title || $t('title')"
-      :value="value"
-      :is-link="editable"
-      @click="$emit('click')"
-    />
-  </cell-group>
+    :is-link="editable"
+    @click="$emit('click')"
+  />
 </template>
 
 <script>

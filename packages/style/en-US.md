@@ -50,4 +50,14 @@ Add 1px border under the Retina screen for the element, based on a pseudo elemen
 <transition name="van-slide-down">
   <div v-show="visible">Slide Down</div>
 </transition>
+
+<!-- slide left -->
+<transition name="van-slide-left">
+  <div v-show="visible">Slide Left</div>
+</transition>
+
+<!-- slide right -->
+<transition name="van-slide-right">
+  <div v-show="visible">Slide Right</div>
+</transition>
 ```

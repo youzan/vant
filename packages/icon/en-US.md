@@ -10,10 +10,19 @@ Vue.use(Icon);
 ### Usage
 
 #### Basic Usage
-View all usable icons on the right.
+
+Use `name` prop to set icon name or icon URL
 
 ```html
-<van-icon name="success" />
+<van-icon name="close" />
+<van-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png" />
+```
+
+#### Show Info
+
+```html
+<van-icon name="chat" info="9" />
+<van-icon name="chat" info="99+" />
 ```
 
 #### Use local font file
@@ -27,28 +36,28 @@ import 'vant/lib/icon/local.css';
 
 ```css
 @font-face {
-  font-family: 'custom-iconfont';
-  src: url('./iconfont.ttf') format('truetype');
+  font-family: 'my-icon';
+  src: url('./my-icon.ttf') format('truetype');
 }
 
-.van-icon {
-  font-family: 'vant-icon', 'custom-iconfont' !important;
+.my-icon {
+  font-family: 'my-icon';
 }
 
-.van-icon-extra:before {
+.my-icon-extra::before {
   content: '\e626';
 }
 ```
 
 ```html
-<van-icon name="extra" />
+<van-icon class-prefix="my-icon" name="extra" />
 ```
 
 ### API
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Icon name | `String` | `''` |
+| name | Icon name or URL | `String` | `''` |
 | info | Info message | `String | Number` | `''` |
 | color | Icon color | `String` | `inherit` |
 | size | Icon size | `String` | `inherit` |

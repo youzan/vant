@@ -2,6 +2,7 @@ import deepClone from '../deep-clone';
 import { isAndroid, isDef, camelize, get } from '..';
 import { raf, cancel } from '../raf';
 import { later } from '../../../test/utils';
+import isSrc from '../validate/src';
 import isEmail from '../validate/email';
 import isMobile from '../validate/mobile';
 import isNumber from '../validate/number';
@@ -75,4 +76,14 @@ test('is-number', () => {
   expect(isNumber('1')).toBeTruthy();
   expect(isNumber('abc')).toBeFalsy();
   expect(isNumber('1b2')).toBeFalsy();
+});
+
+test('is-src', () => {
+  expect(isSrc('http://img.cdn.com')).toBeTruthy();
+  expect(isSrc('https://img.cdn.com')).toBeTruthy();
+  expect(isSrc('//img.cdn.com')).toBeTruthy();
+  expect(isSrc('data:image/jpeg;base64,/9j/4AAQSkZ')).toBeTruthy();
+  expect(isSrc('img.cdn.com')).toBeFalsy();
+  expect(isSrc('name')).toBeFalsy();
+  expect(isSrc('')).toBeFalsy();
 });

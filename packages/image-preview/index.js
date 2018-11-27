@@ -20,7 +20,7 @@ const initInstance = () => {
   document.body.appendChild(instance.$el);
 };
 
-const ImagePreview = (images, startPosition) => {
+const ImagePreview = (images, startPosition = 0) => {
   /* istanbul ignore if */
   if (isServer) {
     return;

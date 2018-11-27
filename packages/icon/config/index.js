@@ -1,6 +1,32 @@
 module.exports = {
   name: 'vant-icon',
-  glyphs: [
+  basic: [
+    {
+      src: 'success.svg',
+      css: 'success'
+    },
+    {
+      src: 'fail.svg',
+      css: 'fail'
+    },
+    {
+      src: 'arrow.svg',
+      css: 'arrow'
+    },
+    {
+      src: 'arrow-left.svg',
+      css: 'arrow-left'
+    },
+    {
+      src: 'arrow-up.svg',
+      css: 'arrow-up'
+    },
+    {
+      src: 'arrow-down.svg',
+      css: 'arrow-down'
+    }
+  ],
+  outline: [
     {
       src: 'close.svg',
       css: 'close'
@@ -64,6 +90,10 @@ module.exports = {
     {
       src: '喜欢.svg',
       css: 'like-o'
+    },
+    {
+      src: 'star-o.svg',
+      css: 'star-o'
     },
     {
       src: '物流.svg',
@@ -202,25 +232,15 @@ module.exports = {
       css: 'check'
     },
     {
-      src: '进入箭头.svg',
-      css: 'arrow'
-    },
-    {
-      src: 'arrow-left.svg',
-      css: 'arrow-left'
-    },
-    {
       src: '搜索.svg',
       css: 'search'
     },
     {
-      src: '成功.svg',
-      css: 'success'
-    },
-    {
-      src: '失败.svg',
-      css: 'fail'
-    },
+      src: '购物车3.svg',
+      css: 'cart-o'
+    }
+  ],
+  filled: [
     {
       src: '加购.svg',
       css: 'add'
@@ -248,6 +268,10 @@ module.exports = {
     {
       src: '喜欢2.svg',
       css: 'like'
+    },
+    {
+      src: 'star.svg',
+      css: 'star'
     },
     {
       src: '拍照.svg',
@@ -378,20 +402,8 @@ module.exports = {
       css: 'hot-sale'
     },
     {
-      src: '购物车3.svg',
-      css: 'cart-o'
-    },
-    {
       src: 'question2.svg',
       css: 'question2'
-    },
-    {
-      src: 'star.svg',
-      css: 'star'
-    },
-    {
-      src: 'star-o.svg',
-      css: 'star-o'
     }
   ]
 };

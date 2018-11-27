@@ -157,13 +157,13 @@ export default {
 | v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
 | color | 标签颜色 | `String` | `#f44` | 1.2.0 |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
-| duration | 动画时间，单位秒 | `Number` | `0.4` | - |
+| duration | 动画时间，单位秒 | `Number` | `0.3` | - |
 | line-width | 底部条宽度，单位 px | `Number` | - | 1.1.1 |
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | 1.0.0 |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | 1.1.15 |
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `Number` | `4` | - |
-| animated | 是否开启切换标签内容时的转场动画 | `false` | - | 1.4.5 |
+| animated | 是否开启切换标签内容时的转场动画 | `Boolean` | `false` | 1.4.5 |
 
 ### Tab API
 
