@@ -8,7 +8,7 @@
 ### 特性
 
 * 50+ 个经过有赞线上业务检验的组件
-* 单元测试覆盖率超过 90%
+* 单元测试覆盖率超过 80%
 * 完善的文档和示例
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
