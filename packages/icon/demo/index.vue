@@ -24,28 +24,23 @@
       </van-col>
     </demo-block>
 
-    <demo-block :title="$t('basic')">
-      <van-col
-        v-for="icon in basic"
-        :key="icon"
-        span="8"
-        class="demo-col-with-text"
-      >
-        <van-icon :name="icon" />
-        <span>{{ icon }}</span>
-      </van-col>
-    </demo-block>
-
     <demo-block :title="$t('title')">
-      <van-col
-        v-for="icon in icons"
-        :key="icon"
-        span="8"
-        class="demo-col-with-text"
-      >
-        <van-icon :name="icon" />
-        <span>{{ icon }}</span>
-      </van-col>
+      <van-tabs v-model="tab">
+        <van-tab title="基础图标" />
+        <van-tab title="线框风格" />
+        <van-tab title="实底风格" />
+      </van-tabs>
+      <div class="demo-icon-list">
+        <van-col
+          v-for="icon in list"
+          :key="icon"
+          span="8"
+          class="demo-col-with-text"
+        >
+          <van-icon :name="icon" />
+          <span>{{ icon }}</span>
+        </van-col>
+      </div>
     </demo-block>
   </demo-section>
 </template>
@@ -68,9 +63,16 @@ export default {
   },
 
   data() {
-    this.basic = icons.basic.map(icon => icon.css);
-    this.icons = icons.glyphs.map(icon => icon.css);
-    return {};
+    return {
+      tab: 0
+    };
+  },
+
+  computed: {
+    list() {
+      const key = ['basic', 'outline', 'filled'][this.tab];
+      return icons[key].map(icon => icon.css);
+    }
   }
 };
 </script>
@@ -78,6 +80,12 @@ export default {
 <style lang="less">
 .demo-icon {
   font-size: 0;
+
+  &-list {
+    padding-top: 10px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 65px);
+  }
 
   .van-col {
     float: none;
@@ -94,7 +102,7 @@ export default {
   .van-icon {
     font-size: 32px;
     margin: 15px 0;
-    color: rgba(69, 90, 100, .8);
+    color: rgba(69, 90, 100, 0.8);
   }
 
   span {

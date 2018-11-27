@@ -26,7 +26,7 @@ module.exports = {
       css: 'arrow-down'
     }
   ],
-  glyphs: [
+  outline: [
     {
       src: 'close.svg',
       css: 'close'
@@ -90,6 +90,10 @@ module.exports = {
     {
       src: '喜欢.svg',
       css: 'like-o'
+    },
+    {
+      src: 'star-o.svg',
+      css: 'star-o'
     },
     {
       src: '物流.svg',
@@ -232,6 +236,12 @@ module.exports = {
       css: 'search'
     },
     {
+      src: '购物车3.svg',
+      css: 'cart-o'
+    }
+  ],
+  filled: [
+    {
       src: '加购.svg',
       css: 'add'
     },
@@ -258,6 +268,10 @@ module.exports = {
     {
       src: '喜欢2.svg',
       css: 'like'
+    },
+    {
+      src: 'star.svg',
+      css: 'star'
     },
     {
       src: '拍照.svg',
@@ -388,20 +402,8 @@ module.exports = {
       css: 'hot-sale'
     },
     {
-      src: '购物车3.svg',
-      css: 'cart-o'
-    },
-    {
       src: 'question2.svg',
       css: 'question2'
-    },
-    {
-      src: 'star.svg',
-      css: 'star'
-    },
-    {
-      src: 'star-o.svg',
-      css: 'star-o'
     }
   ]
 };
