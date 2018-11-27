@@ -24,14 +24,24 @@
         title="Slide Down"
         @click="animate('van-slide-down')"
       />
-
-      <transition :name="transitionName">
-        <div
-          v-show="show"
-          class="demo-animate-block"
-        />
-      </transition>
+      <van-cell
+        is-link
+        title="Slide Left"
+        @click="animate('van-slide-left')"
+      />
+      <van-cell
+        is-link
+        title="Slide Right"
+        @click="animate('van-slide-right')"
+      />
     </demo-block>
+
+    <transition :name="transitionName">
+      <div
+        v-show="show"
+        class="demo-animate-block"
+      />
+    </transition>
   </demo-section>
 </template>
 
