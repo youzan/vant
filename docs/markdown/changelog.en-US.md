@@ -1,5 +1,29 @@
 ## Changelog
 
+## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
+`2018-11-27`
+
+**Improvements**
+
+- add Notify component [\#2135](https://github.com/youzan/vant/pull/2135)
+- Cell: add title-class、value-class、label-class prop [\#2138](https://github.com/youzan/vant/pull/2138)
+- Icon: add more basic icons [\#2159](https://github.com/youzan/vant/pull/2159) [\#2169](https://github.com/youzan/vant/pull/2169)
+- Icon: name can be URL [\#2149](https://github.com/youzan/vant/pull/2149)
+- List: add finished-text prop [\#2131](https://github.com/youzan/vant/pull/2131)
+- Rate: add icon、void-icon prop [\#2148](https://github.com/youzan/vant/pull/2148)
+- NavBar: add border prop [\#2143](https://github.com/youzan/vant/pull/2143)
+- CouponCell: remove wrapper [\#2145](https://github.com/youzan/vant/pull/2145)
+- Style: add more transition class [\#2163](https://github.com/youzan/vant/pull/2163)
+- update CDN provider to jsdelivr [\#2167](https://github.com/youzan/vant/pull/2167)
+
+**Bug Fixes**
+
+- fix ImagePreview index NaN [\#2146](https://github.com/youzan/vant/pull/2146)
+- fix Toast line wrap in iOS [\#2142](https://github.com/youzan/vant/pull/2142)
+- fix GoodsAction duplicate style [\#2140](https://github.com/youzan/vant/pull/2140)
+- fix DatetimePicker get wrong value when set minDate [\#2137](https://github.com/youzan/vant/pull/2137)
+
+
 ## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
 `2018-11-23`
 

@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
+`2018-11-27`
+
+**Improvements**
+
+- 新增 Notify 消息通知组件 [\#2135](https://github.com/youzan/vant/pull/2135)
+- Cell: 新增 title-class、value-class、label-class 属性 [\#2138](https://github.com/youzan/vant/pull/2138)
+- Icon: 增加更多基础图标 [\#2159](https://github.com/youzan/vant/pull/2159) [\#2169](https://github.com/youzan/vant/pull/2169)
+- Icon: 支持传入图片链接作为图标展示 [\#2149](https://github.com/youzan/vant/pull/2149)
+- List: 新增 finished-text 属性 [\#2131](https://github.com/youzan/vant/pull/2131)
+- Rate: 新增 icon、void-icon 属性 [\#2148](https://github.com/youzan/vant/pull/2148)
+- NavBar: 新增 border 属性 [\#2143](https://github.com/youzan/vant/pull/2143)
+- Style: 新增多个内置 transition 动画 [\#2163](https://github.com/youzan/vant/pull/2163)
+- CouponCell: 移除了默认外边框 [\#2145](https://github.com/youzan/vant/pull/2145)
+- CDN 服务商更换为 jsdelivr，以提供更快的国内访问速度 [\#2167](https://github.com/youzan/vant/pull/2167)
+
+**Bug Fixes**
+
+- 修复 ImagePreview 页码出现 NaN 的问题 [\#2146](https://github.com/youzan/vant/pull/2146)
+- 修复 Toast 在 iOS 设备上文字错误换行的问题 [\#2142](https://github.com/youzan/vant/pull/2142)
+- 修复 GoodsAction 部分样式代码重复的问题 [\#2140](https://github.com/youzan/vant/pull/2140)
+- 修复 DatetimePicker 设置了 minDate 时初始 value 错误的问题 [\#2137](https://github.com/youzan/vant/pull/2137)
+
+PS: 不小心跳过了 1.4.6 版本  ^_^
+
 ## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
 `2018-11-23`
 
