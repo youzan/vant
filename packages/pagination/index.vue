@@ -42,6 +42,7 @@ export default create({
     prevText: String,
     nextText: String,
     pageCount: Number,
+    totalItems: Number,
     forceEllipses: Boolean,
     mode: {
       type: String,
@@ -54,10 +55,6 @@ export default create({
     showPageSize: {
       type: Number,
       default: 5
-    },
-    totalItems: {
-      type: Number,
-      default: 0
     }
   },
 

@@ -59,18 +59,12 @@ export default create({
   },
 
   props: {
+    images: Array,
+    startPosition: Number,
     showIndicators: Boolean,
-    images: {
-      type: Array,
-      default: () => []
-    },
     loop: {
       type: Boolean,
       default: true
-    },
-    startPosition: {
-      type: Number,
-      default: 0
     },
     overlay: {
       type: Boolean,

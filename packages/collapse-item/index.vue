@@ -47,9 +47,9 @@ export default create({
   mixins: [findParent],
 
   props: {
-    name: [String, Number],
     icon: String,
     label: String,
+    name: [String, Number],
     title: [String, Number],
     value: [String, Number],
     disabled: Boolean,

@@ -42,15 +42,15 @@ export default create({
   },
 
   props: {
-    skuEventBus: Object,
-    skuStockNum: Number,
-    selectedSku: Object,
-    selectedSkuComb: Object,
-    selectedNum: Number,
-    stepperTitle: String,
     quota: Number,
     quotaUsed: Number,
     hideStock: Boolean,
+    skuEventBus: Object,
+    skuStockNum: Number,
+    selectedSku: Object,
+    selectedNum: Number,
+    stepperTitle: String,
+    selectedSkuComb: Object,
     disableStepperInput: Boolean,
     customStepperConfig: Object
   },

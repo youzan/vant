@@ -42,14 +42,8 @@ export default create({
   name: 'tree-select',
 
   props: {
-    items: {
-      type: Array,
-      default: () => []
-    },
-    mainActiveIndex: {
-      type: Number,
-      default: 0
-    },
+    items: Array,
+    mainActiveIndex: Number,
     activeId: {
       type: [Number, String],
       default: 0

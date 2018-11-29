@@ -16,8 +16,8 @@ export default {
   name: 'modal',
 
   props: {
-    visible: Boolean,
     zIndex: Number,
+    visible: Boolean,
     className: String,
     customStyle: Object
   },

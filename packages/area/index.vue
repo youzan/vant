@@ -27,11 +27,8 @@ export default create({
   },
 
   props: {
+    ...Picker.props,
     value: String,
-    title: String,
-    loading: Boolean,
-    itemHeight: Number,
-    visibleItemCount: Number,
     areaList: {
       type: Object,
       default: () => ({})
@@ -45,7 +42,7 @@ export default create({
   data() {
     return {
       code: this.value,
-      columns: [{ values: [] }, { values: [] }, { values: [] }]
+      cols: [{ values: [] }, { values: [] }, { values: [] }]
     };
   },
 
@@ -63,7 +60,7 @@ export default create({
     },
 
     displayColumns() {
-      return this.columns.slice(0, +this.columnsNum);
+      return this.cols.slice(0, +this.columnsNum);
     }
   },
 

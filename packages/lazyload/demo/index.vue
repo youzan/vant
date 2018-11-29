@@ -55,12 +55,6 @@ export default {
         'https://img.yzcdn.cn/public_files/2017/09/05/8a4f5be8289cb3a7434fc19a3de780a2.jpg'
       ]
     };
-  },
-
-  methods: {
-    handleComponentShow() {
-      console.log('component show');
-    }
   }
 };
 </script>
