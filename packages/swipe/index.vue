@@ -41,6 +41,7 @@ export default create({
     height: Number,
     autoplay: Number,
     vertical: Boolean,
+    initialSwipe: Number,
     indicatorColor: String,
     loop: {
       type: Boolean,
@@ -49,10 +50,6 @@ export default create({
     touchable: {
       type: Boolean,
       default: true
-    },
-    initialSwipe: {
-      type: Number,
-      default: 0
     },
     showIndicators: {
       type: Boolean,

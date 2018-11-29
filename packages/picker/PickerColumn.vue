@@ -38,15 +38,9 @@ export default create({
     valueKey: String,
     className: String,
     itemHeight: Number,
-    visibleItemCount: Number,
-    initialOptions: {
-      type: Array,
-      default: () => []
-    },
-    defaultIndex: {
-      type: Number,
-      default: 0
-    }
+    defaultIndex: Number,
+    initialOptions: Array,
+    visibleItemCount: Number
   },
 
   data() {

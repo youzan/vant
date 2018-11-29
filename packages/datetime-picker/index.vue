@@ -2,7 +2,7 @@
   <picker
     ref="picker"
     :title="title"
-    :columns="columns"
+    :columns="cols"
     :item-height="itemHeight"
     :show-toolbar="showToolbar"
     :visible-item-count="visibleItemCount"
@@ -30,12 +30,10 @@ export default create({
   },
 
   props: {
+    ...Picker.props,
     value: null,
-    title: String,
-    itemHeight: Number,
-    visibleItemCount: Number,
-    confirmButtonText: String,
-    cancelButtonText: String,
+    minHour: Number,
+    minMinute: Number,
     type: {
       type: String,
       default: 'datetime'
@@ -62,17 +60,9 @@ export default create({
       default: () => new Date(currentYear + 10, 11, 31),
       validator: isValidDate
     },
-    minHour: {
-      type: Number,
-      default: 0
-    },
     maxHour: {
       type: Number,
       default: 23
-    },
-    minMinute: {
-      type: Number,
-      default: 0
     },
     maxMinute: {
       type: Number,
@@ -97,7 +87,7 @@ export default create({
       this.$emit('input', val);
     },
 
-    columns() {
+    cols() {
       this.updateColumnValue(this.innerValue);
     }
   },
@@ -148,7 +138,7 @@ export default create({
       return result;
     },
 
-    columns() {
+    cols() {
       const results = this.ranges.map(({ type, range }) => {
         const values = this.times(range[1] - range[0] + 1, index => {
           let value = range[0] + index;

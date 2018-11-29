@@ -60,20 +60,14 @@ export default create({
   },
 
   props: {
+    list: Array,
+    disabledList: Array,
     disabledText: String,
     addButtonText: String,
     value: [String, Number],
     switchable: {
       type: Boolean,
       default: true
-    },
-    list: {
-      type: Array,
-      default: () => []
-    },
-    disabledList: {
-      type: Array,
-      default: () => []
     }
   }
 });

@@ -160,11 +160,13 @@ export default create({
   props: {
     sku: Object,
     goods: Object,
+    quota: Number,
     value: Boolean,
     buyText: String,
+    quotaUsed: Number,
     goodsId: [Number, String],
-    stepperTitle: String,
     hideStock: Boolean,
+    stepperTitle: String,
     getContainer: Function,
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
@@ -173,14 +175,6 @@ export default create({
     initialSku: {
       type: Object,
       default: () => ({})
-    },
-    quota: {
-      type: Number,
-      default: 0
-    },
-    quotaUsed: {
-      type: Number,
-      default: 0
     },
     showAddCartBtn: {
       type: Boolean,

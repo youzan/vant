@@ -71,6 +71,7 @@ export default create({
 
   props: {
     title: String,
+    columns: Array,
     loading: Boolean,
     showToolbar: Boolean,
     confirmButtonText: String,
@@ -86,10 +87,6 @@ export default create({
     itemHeight: {
       type: Number,
       default: 44
-    },
-    columns: {
-      type: Array,
-      default: () => []
     }
   },
 

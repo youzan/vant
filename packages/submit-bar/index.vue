@@ -42,7 +42,6 @@ export default create({
 
   props: {
     tip: String,
-    type: Number,
     price: Number,
     label: String,
     loading: Boolean,

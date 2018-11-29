@@ -28,22 +28,16 @@ export default create({
   mixins: [Touch],
 
   props: {
+    min: Number,
+    value: Number,
     disabled: Boolean,
     max: {
       type: Number,
       default: 100
     },
-    min: {
-      type: Number,
-      default: 0
-    },
     step: {
       type: Number,
       default: 1
-    },
-    value: {
-      type: Number,
-      default: 0
     },
     barHeight: {
       type: String,

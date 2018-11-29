@@ -62,10 +62,7 @@ export default create({
 
   props: {
     value: String,
-    uploadImg: {
-      type: Function,
-      required: true
-    },
+    uploadImg: Function,
     maxSize: {
       type: Number,
       default: 6

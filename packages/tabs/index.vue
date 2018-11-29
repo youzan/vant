@@ -73,8 +73,12 @@ export default create({
     color: String,
     sticky: Boolean,
     animated: Boolean,
-    lineWidth: Number,
+    offsetTop: Number,
     swipeable: Boolean,
+    lineWidth: {
+      type: Number,
+      default: null
+    },
     active: {
       type: [Number, String],
       default: 0
@@ -90,10 +94,6 @@ export default create({
     swipeThreshold: {
       type: Number,
       default: 4
-    },
-    offsetTop: {
-      type: Number,
-      default: 0
     }
   },
 

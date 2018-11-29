@@ -23,6 +23,7 @@ export default create({
   name: 'rate',
 
   props: {
+    value: Number,
     readonly: Boolean,
     disabled: Boolean,
     size: {
@@ -52,10 +53,6 @@ export default create({
     count: {
       type: Number,
       default: 5
-    },
-    value: {
-      type: Number,
-      default: 0
     }
   },
 

@@ -67,13 +67,10 @@ export default create({
   mixins: [Popup],
 
   props: {
-    value: Boolean,
     title: String,
+    value: Boolean,
+    actions: Array,
     cancelText: String,
-    actions: {
-      type: Array,
-      default: () => []
-    },
     overlay: {
       type: Boolean,
       default: true

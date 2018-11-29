@@ -20,6 +20,7 @@ export default create({
   mixins: [Popup],
 
   props: {
+    position: String,
     transition: String,
     overlay: {
       type: Boolean,
@@ -28,16 +29,12 @@ export default create({
     closeOnClickOverlay: {
       type: Boolean,
       default: true
-    },
-    position: {
-      type: String,
-      default: ''
     }
   },
 
   computed: {
     currentTransition() {
-      return this.transition || (this.position === '' ? 'van-fade' : `popup-slide-${this.position}`);
+      return this.transition || (this.position ? `popup-slide-${this.position}` : 'van-fade');
     }
   }
 });

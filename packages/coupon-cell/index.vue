@@ -21,13 +21,10 @@ export default create({
 
   props: {
     title: String,
+    coupons: Array,
     border: {
       type: Boolean,
       default: true
-    },
-    coupons: {
-      type: Array,
-      default: () => []
     },
     chosenCoupon: {
       type: Number,
