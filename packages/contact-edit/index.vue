@@ -42,8 +42,8 @@
 <script>
 import Field from '../field';
 import VanButton from '../button';
-import Dialog from '../dialog';
 import Toast from '../toast';
+import Dialog from '../dialog';
 import validateMobile from '../utils/validate/mobile';
 import create from '../utils/create';
 
