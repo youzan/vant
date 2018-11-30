@@ -52,6 +52,7 @@
 
 <script>
 import Icon from '../icon';
+import CellMixin from '../mixins/cell';
 import RouterLink from '../mixins/router-link';
 import create from '../utils/create-basic';
 
@@ -62,26 +63,12 @@ export default create({
     Icon
   },
 
-  mixins: [RouterLink],
+  mixins: [CellMixin, RouterLink],
 
   props: {
-    icon: String,
     size: String,
-    center: Boolean,
-    isLink: Boolean,
-    required: Boolean,
     clickable: Boolean,
-    titleClass: String,
-    valueClass: String,
-    labelClass: String,
-    title: [String, Number],
-    value: [String, Number],
-    label: [String, Number],
-    arrowDirection: String,
-    border: {
-      type: Boolean,
-      default: true
-    }
+    arrowDirection: String
   },
 
   computed: {

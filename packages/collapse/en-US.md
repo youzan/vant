@@ -92,6 +92,9 @@ export default {
 | border | Whether to show inner border | `Boolean` | `true` |
 | disabled | Whether to disabled collapse | `Boolean` | `false` |
 | is-link | Whether to show link icon | `Boolean` | `true` |
+| title-class | Title className | `String` | - |
+| value-class | Value className | `String` | - |
+| label-class | Label className | `String` | - |
 
 ### CollapseItem Slot
 

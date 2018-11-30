@@ -39,24 +39,17 @@
 <script>
 import { raf } from '../utils/raf';
 import create from '../utils/create';
-import findParent from '../mixins/find-parent';
+import CellMixin from '../mixins/cell';
+import FindParent from '../mixins/find-parent';
 
 export default create({
   name: 'collapse-item',
 
-  mixins: [findParent],
+  mixins: [CellMixin, FindParent],
 
   props: {
-    icon: String,
-    label: String,
     name: [String, Number],
-    title: [String, Number],
-    value: [String, Number],
     disabled: Boolean,
-    border: {
-      type: Boolean,
-      default: true
-    },
     isLink: {
       type: Boolean,
       default: true
