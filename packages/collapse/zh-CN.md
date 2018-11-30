@@ -97,13 +97,16 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | `String | Number` | `index` | - |
-| title | 标题栏左侧内容 | `String | Number` | - | - |
 | icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.2.1 |
+| title | 标题栏左侧内容 | `String | Number` | - | - |
 | value | 标题栏右侧内容 | `String | Number` | - | 1.2.1 |
-| label | 标题栏描述信息 | `String` | - | 1.2.1 |
+| label | 标题栏描述信息 | `String | Number`  | - | 1.2.1 |
 | border | 是否显示内边框 | `Boolean` | `true` | 1.2.1 |
 | is-link | 是否展示标题栏右侧箭头并开启点击反馈 | `Boolean` | `true` | 1.2.1 |
 | disabled | 是否禁用面板 | `Boolean` | `false` | 1.3.6 |
+| title-class | 左侧标题额外类名 | `String` | - | 1.4.8 |
+| value-class | 右侧内容额外类名 | `String` | - | 1.4.8 |
+| label-class | 描述信息额外类名 | `String` | - | 1.4.8 |
 
 ### CollapseItem Slot
 

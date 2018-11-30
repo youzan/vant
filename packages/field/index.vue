@@ -73,6 +73,7 @@
 
 <script>
 import create from '../utils/create';
+import CellMixin from '../mixins/cell';
 import { isObj } from '../utils';
 
 export default create({
@@ -80,16 +81,12 @@ export default create({
 
   inheritAttrs: false,
 
+  mixins: [CellMixin],
+
   props: {
-    value: [String, Number],
-    icon: String,
-    label: String,
     error: Boolean,
-    center: Boolean,
-    isLink: Boolean,
     leftIcon: String,
     readonly: Boolean,
-    required: Boolean,
     clearable: Boolean,
     labelAlign: String,
     inputAlign: String,
@@ -99,10 +96,6 @@ export default create({
     type: {
       type: String,
       default: 'text'
-    },
-    border: {
-      type: Boolean,
-      default: true
     }
   },
 
