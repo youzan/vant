@@ -6,7 +6,15 @@ const fs = require('fs-extra');
 const path = require('path');
 const components = require('./get-components')();
 const dependencyTree = require('dependency-tree');
-const whiteList = ['info', 'icon', 'loading', 'cell', 'cell-group', 'button'];
+const whiteList = [
+  'info',
+  'icon',
+  'loading',
+  'cell',
+  'cell-group',
+  'button',
+  'overlay'
+];
 const dir = path.join(__dirname, '../es');
 
 components.forEach(component => {
@@ -22,7 +30,12 @@ function destEntryFile(component, filename, ext = '') {
   );
 
   const esEntry = path.join(dir, component, `style/${filename}`);
-  const libEntry = path.join(__dirname, '../lib', component, `style/${filename}`);
+  const libEntry = path.join(
+    __dirname,
+    '../lib',
+    component,
+    `style/${filename}`
+  );
   const esContent = deps.map(dep => `import '${dep}';`).join('\n');
   const libContent = deps.map(dep => `require('${dep}');`).join('\n');
 
