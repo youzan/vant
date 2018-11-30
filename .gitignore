@@ -11,6 +11,7 @@ package-lock.json
 # dist file
 es
 lib
+dist
 docs/dist
 changelog.generated.md
 test/coverage
