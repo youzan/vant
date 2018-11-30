@@ -18,16 +18,18 @@
 <script>
 import create from '../utils/create';
 import Picker from '../picker';
+import PickerMixin from '../mixins/picker';
 
 export default create({
   name: 'area',
+
+  mixins: [PickerMixin],
 
   components: {
     Picker
   },
 
   props: {
-    ...Picker.props,
     value: String,
     areaList: {
       type: Object,
@@ -42,7 +44,7 @@ export default create({
   data() {
     return {
       code: this.value,
-      cols: [{ values: [] }, { values: [] }, { values: [] }]
+      columns: [{ values: [] }, { values: [] }, { values: [] }]
     };
   },
 
@@ -60,7 +62,7 @@ export default create({
     },
 
     displayColumns() {
-      return this.cols.slice(0, +this.columnsNum);
+      return this.columns.slice(0, +this.columnsNum);
     }
   },
 
