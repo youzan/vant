@@ -11,9 +11,9 @@ export default {
     titleClass: String,
     valueClass: String,
     labelClass: String,
+    title: [String, Number],
     value: [String, Number],
     label: [String, Number],
-    title: [String, Number],
     border: {
       type: Boolean,
       default: true

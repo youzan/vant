@@ -2,7 +2,7 @@
   <picker
     ref="picker"
     :title="title"
-    :columns="cols"
+    :columns="columns"
     :item-height="itemHeight"
     :show-toolbar="showToolbar"
     :visible-item-count="visibleItemCount"
@@ -18,6 +18,7 @@
 import Picker from '../picker';
 import create from '../utils/create';
 import { range } from '../utils';
+import PickerMixin from '../mixins/picker';
 
 const currentYear = new Date().getFullYear();
 const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
@@ -25,12 +26,13 @@ const isValidDate = date => Object.prototype.toString.call(date) === '[object Da
 export default create({
   name: 'datetime-picker',
 
+  mixins: [PickerMixin],
+
   components: {
     Picker
   },
 
   props: {
-    ...Picker.props,
     value: null,
     minHour: Number,
     minMinute: Number,
@@ -87,7 +89,7 @@ export default create({
       this.$emit('input', val);
     },
 
-    cols() {
+    columns() {
       this.updateColumnValue(this.innerValue);
     }
   },
@@ -138,7 +140,7 @@ export default create({
       return result;
     },
 
-    cols() {
+    columns() {
       const results = this.ranges.map(({ type, range }) => {
         const values = this.times(range[1] - range[0] + 1, index => {
           let value = range[0] + index;
