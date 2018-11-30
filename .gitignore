@@ -11,7 +11,7 @@ package-lock.json
 # dist file
 es
 lib
-docs/dist
+dist
 changelog.generated.md
 test/coverage
 packages/icon/svg
