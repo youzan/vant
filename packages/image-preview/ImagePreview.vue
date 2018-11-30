@@ -15,6 +15,7 @@
     <swipe
       ref="swipe"
       :loop="loop"
+      indicator-color="white"
       :initial-swipe="startPosition"
       :show-indicators="showIndicators"
       @change="onChange"
