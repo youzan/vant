@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import Modal from './Modal';
 import context from './context';
+import Overlay from '../../overlay';
 
 const defaultConfig = {
   className: '',
@@ -35,7 +35,7 @@ export default {
     let { modal } = context;
 
     if (!modal) {
-      modal = new (Vue.extend(Modal))({
+      modal = new (Vue.extend(Overlay))({
         el: document.createElement('div')
       });
       modal.$on('click', this.onClick);
