@@ -60,7 +60,8 @@ export default {
 | - | 自定义 uploader 内容 |
 
 ### after-read 回调参数
-| key | 说明 | 类型 |
+
+| 参数名 | 说明 | 类型 |
 |------|------|------|
 | file | 文件解析后的 file 对象 | `Object` |
 | content | 文件内容 | `String` |

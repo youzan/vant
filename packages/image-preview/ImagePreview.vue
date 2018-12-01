@@ -141,8 +141,14 @@ export default create({
 
       // prevent long tap to close component
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
-        this.$emit('input', false);
+        const index = this.active;
+
         this.resetScale();
+        this.$emit('input', false);
+        this.$emit('close', {
+          index,
+          url: this.images[index]
+        });
       }
     },
 

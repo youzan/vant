@@ -63,3 +63,10 @@ setTimeout(() => {
 | showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
 | loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |
+
+### onClose 回调参数
+
+| 参数名 | 说明 | 类型 |
+|------|------|------|
+| url | 当前图片 URL | `String` |
+| index | 当前图片的索引值 | `Number` |
