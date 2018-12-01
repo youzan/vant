@@ -39,6 +39,22 @@ test('render image', () => {
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
 });
 
+test('async close', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      asyncClose: true
+    }
+  });
+
+  const swipe = wrapper.find('.van-swipe__track');
+  triggerDrag(swipe, 0, 0);
+  expect(wrapper.emitted('input')).toBeFalsy();
+  wrapper.vm.close();
+  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+});
+
 test('function call', done => {
   ImagePreview(images);
   ImagePreview(images.slice(0, 1));

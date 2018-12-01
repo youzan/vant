@@ -38,15 +38,18 @@ ImagePreview({
 });
 ```
 
-#### 手动关闭
+#### 异步关闭
 
-通过实例上的 close 方法可以手动关闭图片预览
+通过`asyncClose`属性可以开启异步关闭，开启后异步关闭后，只能通过实例上的 close 方法关闭图片预览
 
 ```javascript
-const instance = ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-]);
+const instance = ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/1.jpg',
+    'https://img.yzcdn.cn/2.jpg'
+  ],
+  asyncClose: true
+});
 
 setTimeout(() => {
   instance.close();
@@ -63,6 +66,7 @@ setTimeout(() => {
 | showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
 | loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |
+| asyncClose | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
 
 ### onClose 回调参数
 
