@@ -1,41 +1,43 @@
 <template>
-  <div
-    v-if="value"
-    :class="b()"
-    @touchstart="onWrapperTouchStart"
-    @touchend="onWrapperTouchEnd"
-    @touchcancel="onWrapperTouchEnd"
-  >
+  <transition name="van-fade">
     <div
-      v-if="showIndex"
-      :class="b('index')"
+      v-if="value"
+      :class="b()"
+      @touchstart="onWrapperTouchStart"
+      @touchend="onWrapperTouchEnd"
+      @touchcancel="onWrapperTouchEnd"
     >
-      {{ active + 1 }}/{{ count }}
-    </div>
-    <swipe
-      ref="swipe"
-      :loop="loop"
-      indicator-color="white"
-      :initial-swipe="startPosition"
-      :show-indicators="showIndicators"
-      @change="onChange"
-    >
-      <swipe-item
-        v-for="(item, index) in images"
-        :key="index"
+      <div
+        v-if="showIndex"
+        :class="b('index')"
       >
-        <img
-          :class="b('image')"
-          :src="item"
-          :style="index === active ? imageStyle : null"
-          @touchstart="onTouchStart"
-          @touchmove="onTouchMove"
-          @touchend="onTouchEnd"
-          @touchcancel="onTouchEnd"
+        {{ active + 1 }}/{{ count }}
+      </div>
+      <swipe
+        ref="swipe"
+        :loop="loop"
+        indicator-color="white"
+        :initial-swipe="startPosition"
+        :show-indicators="showIndicators"
+        @change="onChange"
+      >
+        <swipe-item
+          v-for="(item, index) in images"
+          :key="index"
         >
-      </swipe-item>
-    </swipe>
-  </div>
+          <img
+            :class="b('image')"
+            :src="item"
+            :style="index === active ? imageStyle : null"
+            @touchstart="onTouchStart"
+            @touchmove="onTouchMove"
+            @touchend="onTouchEnd"
+            @touchcancel="onTouchEnd"
+          >
+        </swipe-item>
+      </swipe>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -176,7 +178,7 @@ export default create({
 
     onTouchStart(event) {
       const { touches } = event;
-      const { offsetX } = this.$refs.swipe;
+      const { offsetX = 0 } = this.$refs.swipe || {};
 
       if (touches.length === 1 && this.scale !== 1) {
         this.startMove(event);
