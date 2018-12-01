@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render image 1`] = `
-<div class="van-image-preview">
+<div class="van-image-preview" name="van-fade">
   <div class="van-image-preview__index">
     1/3
   </div>
@@ -23,7 +23,7 @@ exports[`render image 1`] = `
 `;
 
 exports[`zoom 1`] = `
-<div class="van-image-preview">
+<div class="van-image-preview" name="van-fade">
   <div class="van-image-preview__index">
     1/3
   </div>
