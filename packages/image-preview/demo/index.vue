@@ -29,12 +29,12 @@ export default {
     'zh-CN': {
       button1: '预览图片',
       button2: '指定初始位置',
-      button3: '手动关闭'
+      button3: '异步关闭'
     },
     'en-US': {
       button1: 'Show Images',
       button2: 'Custom Start Position',
-      button3: 'Close Manually'
+      button3: 'Async Close'
     }
   },
 
@@ -42,6 +42,7 @@ export default {
     showImagePreview(position, timer) {
       const instance = ImagePreview({
         images,
+        asyncClose: !!timer,
         startPosition: typeof position === 'number' ? position : 0
       });
 

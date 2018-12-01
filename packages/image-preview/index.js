@@ -9,6 +9,7 @@ const defaultConfig = {
   loop: true,
   value: true,
   showIndex: true,
+  asyncClose: false,
   startPosition: 0,
   showIndicators: false
 };

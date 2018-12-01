@@ -63,6 +63,7 @@ export default create({
 
   props: {
     images: Array,
+    asyncClose: Boolean,
     startPosition: Number,
     showIndicators: Boolean,
     loop: {
@@ -144,11 +145,14 @@ export default create({
         const index = this.active;
 
         this.resetScale();
-        this.$emit('input', false);
         this.$emit('close', {
           index,
           url: this.images[index]
         });
+
+        if (!this.asyncClose) {
+          this.$emit('input', false);
+        }
       }
     },
 
