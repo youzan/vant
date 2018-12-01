@@ -61,8 +61,9 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 |------|------|
 | - | Custom icon |
 
-### afterRead parematers
-| Key | Description | Type |
+### afterRead Parematers
+
+| Attribute | Description | Type |
 |------|------|------|
 | file | file object | `Object` |
 | content | file content | `String` |

@@ -55,3 +55,10 @@ setTimeout(() => {
 | showIndicators | Whether to show indicators | `Boolean` | `false` |
 | loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
+
+### onClose Parematers
+
+| Attribute | Description | Type |
+|------|------|------|
+| url | Url of current image | `Number` |
+| index | Index of current image | `String` |

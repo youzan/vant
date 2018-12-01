@@ -37,13 +37,13 @@ const ImagePreview = (images, startPosition = 0) => {
     ...options
   });
 
-  instance.$on('input', show => {
+  instance.$once('input', show => {
     instance.value = show;
-    if (!show) {
-      instance.$off('input');
-      options.onClose && options.onClose();
-    }
   });
+
+  if (options.onClose) {
+    instance.$once('close', options.onClose);
+  }
 
   return instance;
 };
