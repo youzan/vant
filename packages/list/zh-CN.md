@@ -18,7 +18,7 @@ List 组件通过`loading`和`finished`两个变量控制加载状态，当组�
 <van-list
   v-model="loading"
   :finished="finished"
-  :finished-text="没有更多了"
+  finished-text="没有更多了"
   @load="onLoad"
 >
   <van-cell
