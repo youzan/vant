@@ -16,7 +16,7 @@ Vue.use(List);
 <van-list
   v-model="loading"
   :finished="finished"
-  :finished-text="Finished"
+  finished-text="Finished"
   @load="onLoad"
 >
   <van-cell
