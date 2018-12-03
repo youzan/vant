@@ -19,6 +19,7 @@ export interface VanNotify extends Vue {
 export interface Notify {
   (message: NotifyOptions | NotifyMessage): VanNotify;
   clear(): void;
+  install(): void;
   setDefaultOptions(options: NotifyOptions): void;
   resetDefaultOptions(): void;
 }
