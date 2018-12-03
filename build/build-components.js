@@ -28,7 +28,7 @@ function compile(dir) {
   files.forEach(file => {
     const filePath = path.join(dir, file);
 
-    // reomve unnecessary files
+    // remove unnecessary files
     if (!isCode(file)) {
       return fs.removeSync(filePath);
     }
