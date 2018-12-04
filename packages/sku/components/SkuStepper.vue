@@ -42,16 +42,16 @@ export default create({
   },
 
   props: {
+    quota: Number,
+    hideQuotaText: Boolean,
+    quotaUsed: Number,
+    hideStock: Boolean,
     skuEventBus: Object,
     skuStockNum: Number,
     selectedSku: Object,
     selectedSkuComb: Object,
     selectedNum: Number,
     stepperTitle: String,
-    quota: Number,
-    hideQuotaText: Boolean,
-    quotaUsed: Number,
-    hideStock: Boolean,
     disableStepperInput: Boolean,
     customStepperConfig: Object
   },
