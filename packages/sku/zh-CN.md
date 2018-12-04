@@ -90,6 +90,7 @@ Vue.use(Sku);
 | goods | 商品信息 | `Object` | - | - |
 | goods-id | 商品 id | `String | Number` | - | - |
 | hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
+| hide-quota-text | 是否显示限购提示 | `Boolean` | `false` | - |
 | show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
 | quota | 限购数，0 表示不限购 | `Number` | `0` | - |
 | quota-used | 已经购买过的数量 | `Number` | `0` | - |
