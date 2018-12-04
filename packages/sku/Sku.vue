@@ -89,6 +89,7 @@
           :selected-num="selectedNum"
           :stepper-title="stepperTitle"
           :sku-stock-num="sku.stock_num"
+          :hide-quota-text="hideQuotaText"
           :quota="quota"
           :quota-used="quotaUsed"
           :disable-stepper-input="disableStepperInput"
@@ -166,6 +167,7 @@ export default create({
     quotaUsed: Number,
     goodsId: [Number, String],
     hideStock: Boolean,
+    hideQuotaText: Boolean,
     stepperTitle: String,
     getContainer: Function,
     resetStepperOnHide: Boolean,

@@ -19,7 +19,7 @@
       {{ stockText }}
     </div>
     <div
-      v-if="quotaText"
+      v-if="!hideQuotaText && quotaText"
       class="van-sku__quota"
     >
       {{ quotaText }}
@@ -42,15 +42,16 @@ export default create({
   },
 
   props: {
-    quota: Number,
-    quotaUsed: Number,
-    hideStock: Boolean,
     skuEventBus: Object,
     skuStockNum: Number,
     selectedSku: Object,
+    selectedSkuComb: Object,
     selectedNum: Number,
     stepperTitle: String,
-    selectedSkuComb: Object,
+    quota: Number,
+    hideQuotaText: Boolean,
+    quotaUsed: Number,
+    hideStock: Boolean,
     disableStepperInput: Boolean,
     customStepperConfig: Object
   },
@@ -91,7 +92,10 @@ export default create({
     },
 
     quotaText() {
-      const { quotaText } = this.customStepperConfig;
+      const { quotaText, hideQuotaText } = this.customStepperConfig;
+
+      if (hideQuotaText) return '';
+
       let text = '';
 
       if (quotaText) {
