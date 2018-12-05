@@ -32,6 +32,7 @@
     <demo-block :title="$t('title2')">
       <div class="sku-container">
         <van-sku
+          hide-quota-text
           v-model="showStepper"
           :sku="skuData.sku"
           :goods="skuData.goods_info"

@@ -90,6 +90,7 @@ Vue.use(Sku);
 | goods | Goods info | `Object` | - |
 | goods-id | Goods id | `String | Number` | - |
 | hide-stock | Whether to hide stock | `Boolean` | `false` |
+| hide-quota-text | Whether to hide quota text | `Boolean` | `false` |
 | show-add-cart-btn | Whether to show cart button | `Boolean` | `true` |
 | quota | Quota (0 as no limit) | `Number` | `0` |
 | quota-used | Used quota | `Number` | `0` |

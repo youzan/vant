@@ -1,5 +1,22 @@
 ## Changelog
 
+## [v1.4.8](https://github.com/youzan/vant/tree/v1.4.8)
+`2018-12-05`
+
+**Improvements**
+
+- Sku: add hide-quota-text prop [\#2216](https://github.com/youzan/vant/pull/2216)
+- ImagePreview: add asyncClose prop [\#2198](https://github.com/youzan/vant/pull/2198)
+- ImagePreview: add onClose params [\#2197](https://github.com/youzan/vant/pull/2197)
+- ImagePreview: add fade transition [\#2196](https://github.com/youzan/vant/pull/2196)
+
+**Bug Fixes**
+
+- fix Notify type definition [\#2210](https://github.com/youzan/vant/pull/2210)
+- fix Dialog default options [\#2208](https://github.com/youzan/vant/pull/2208)
+- fix ImagePreview indicator color [\#2187](https://github.com/youzan/vant/pull/2187)
+
+
 ## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
 `2018-11-27`
 

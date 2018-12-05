@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v1.4.8](https://github.com/youzan/vant/tree/v1.4.8)
+`2018-12-05`
+
+**Improvements**
+
+- Sku: 新增 hide-quota-text 属性 [\#2216](https://github.com/youzan/vant/pull/2216)
+- ImagePreview: 新增 asyncClose 属性 [\#2198](https://github.com/youzan/vant/pull/2198)
+- ImagePreview: 新增 onClose 回调参数 [\#2197](https://github.com/youzan/vant/pull/2197)
+- ImagePreview: 新增淡入淡出动画效果 [\#2196](https://github.com/youzan/vant/pull/2196)
+
+**Bug Fixes**
+
+- 修复 Notify TS 类型定义错误 [\#2210](https://github.com/youzan/vant/pull/2210)
+- 修复 Dialog 通过函数调用时默认值错误 [\#2208](https://github.com/youzan/vant/pull/2208)
+- 修复 ImagePreview 指示器颜色错误 [\#2187](https://github.com/youzan/vant/pull/2187)
+
+
 ## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
 `2018-11-27`
 
