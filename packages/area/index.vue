@@ -18,9 +18,12 @@
 <script>
 import create from '../utils/create';
 import Picker from '../picker';
+import PickerMixin from '../mixins/picker';
 
 export default create({
   name: 'area',
+
+  mixins: [PickerMixin],
 
   components: {
     Picker
@@ -28,10 +31,6 @@ export default create({
 
   props: {
     value: String,
-    title: String,
-    loading: Boolean,
-    itemHeight: Number,
-    visibleItemCount: Number,
     areaList: {
       type: Object,
       default: () => ({})

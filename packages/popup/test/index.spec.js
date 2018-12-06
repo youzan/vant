@@ -114,7 +114,7 @@ test('render overlay', () => {
     }
   });
 
-  expect(div.querySelector('.van-modal')).toBeTruthy();
+  expect(div.querySelector('.van-overlay')).toBeTruthy();
 });
 
 test('close on click modal', () => {
@@ -136,7 +136,7 @@ test('close on click modal', () => {
     }
   });
 
-  const modal = div.querySelector('.van-modal');
+  const modal = div.querySelector('.van-overlay');
   triggerDrag(modal, 0, -30);
   modal.click();
   expect(wrapper.vm.value).toBeFalsy();

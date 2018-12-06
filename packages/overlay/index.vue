@@ -2,7 +2,7 @@
   <transition name="van-fade">
     <div
       v-show="visible"
-      class="van-modal"
+      class="van-overlay"
       :class="className"
       :style="style"
       @touchmove.prevent.stop
@@ -13,11 +13,11 @@
 
 <script>
 export default {
-  name: 'modal',
+  name: 'overlay',
 
   props: {
-    visible: Boolean,
     zIndex: Number,
+    visible: Boolean,
     className: String,
     customStyle: Object
   },

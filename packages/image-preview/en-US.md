@@ -32,13 +32,16 @@ ImagePreview({
 });
 ```
 
-#### Close Manually
+#### Async Close
 
 ```javascript
-const instance = ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
-]);
+const instance = ImagePreview({
+  images: [
+    'https://img.yzcdn.cn/1.jpg',
+    'https://img.yzcdn.cn/2.jpg'
+  ],
+  asyncClose: true
+});
 
 setTimeout(() => {
   instance.close();
@@ -55,3 +58,11 @@ setTimeout(() => {
 | showIndicators | Whether to show indicators | `Boolean` | `false` |
 | loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
+| asyncClose | Whether to enable async close | `Boolean` | `false` |
+
+### onClose Parematers
+
+| Attribute | Description | Type |
+|------|------|------|
+| url | Url of current image | `Number` |
+| index | Index of current image | `String` |

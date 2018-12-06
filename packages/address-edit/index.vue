@@ -144,6 +144,7 @@ export default create({
     validator: Function,
     showDelete: Boolean,
     showPostal: Boolean,
+    searchResult: Array,
     showSetDefault: Boolean,
     showSearchResult: Boolean,
     saveButtonText: String,
@@ -163,10 +164,6 @@ export default create({
     addressInfo: {
       type: Object,
       default: () => ({ ...defaultData })
-    },
-    searchResult: {
-      type: Array,
-      default: () => []
     },
     telValidator: {
       type: Function,

@@ -49,4 +49,14 @@ Vant 中默认包含了一些常用样式，可以直接通过 className 的方�
 <transition name="van-slide-down">
   <div v-show="visible">Slide Down</div>
 </transition>
+
+<!-- 左滑进入 -->
+<transition name="van-slide-left">
+  <div v-show="visible">Slide Left</div>
+</transition>
+
+<!-- 右滑进入 -->
+<transition name="van-slide-right">
+  <div v-show="visible">Slide Right</div>
+</transition>
 ```

@@ -1,7 +1,14 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag } from '../../../test/utils';
+import {
+  mount,
+  trigger,
+  triggerDrag,
+  transitionStub
+} from '../../../test/utils';
+
+transitionStub();
 
 function triggerZoom(el, x, y) {
   trigger(el, 'touchstart', 0, 0, { x, y });
@@ -29,6 +36,22 @@ test('render image', () => {
   triggerDrag(swipe, 500, 0);
   expect(wrapper.emitted('input')).toBeFalsy();
   triggerDrag(swipe, 0, 0);
+  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+});
+
+test('async close', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      asyncClose: true
+    }
+  });
+
+  const swipe = wrapper.find('.van-swipe__track');
+  triggerDrag(swipe, 0, 0);
+  expect(wrapper.emitted('input')).toBeFalsy();
+  wrapper.vm.close();
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
 });
 
@@ -61,6 +84,9 @@ test('function call options', done => {
     const swipe = wrapper.querySelector('.van-swipe__track');
     triggerDrag(swipe, 0, 0);
     expect(onClose.mock.calls.length).toEqual(1);
+    expect(onClose.mock.calls).toEqual([
+      [{ index: 0, url: 'https://img.yzcdn.cn/1.png' }]
+    ]);
     done();
   });
 });

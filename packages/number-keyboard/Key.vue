@@ -16,11 +16,8 @@ export default create({
   name: 'key',
 
   props: {
-    text: [String, Number],
-    type: {
-      type: Array,
-      default: () => []
-    }
+    type: Array,
+    text: [String, Number]
   },
 
   data() {

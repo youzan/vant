@@ -50,7 +50,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| message | 展示文案 | `String` | - | 1.4.6 |
-| duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `Number` | `3000` | 1.4.6 |
-| color | 字体颜色 | `String` | `#fff` | 1.4.6 |
-| background | 背景颜色 | `String` | `#f44` | 1.4.6 |
+| message | 展示文案 | `String` | - | 1.4.7 |
+| duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `Number` | `3000` | 1.4.7 |
+| color | 字体颜色 | `String` | `#fff` | 1.4.7 |
+| background | 背景颜色 | `String` | `#f44` | 1.4.7 |

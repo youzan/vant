@@ -61,35 +61,22 @@
 import create from '../utils/create';
 import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
+import PickerMixin from '../mixins/picker';
 
 export default create({
   name: 'picker',
+
+  mixins: [PickerMixin],
 
   components: {
     PickerColumn
   },
 
   props: {
-    title: String,
-    loading: Boolean,
-    showToolbar: Boolean,
-    confirmButtonText: String,
-    cancelButtonText: String,
-    visibleItemCount: {
-      type: Number,
-      default: 5
-    },
+    columns: Array,
     valueKey: {
       type: String,
       default: 'text'
-    },
-    itemHeight: {
-      type: Number,
-      default: 44
-    },
-    columns: {
-      type: Array,
-      default: () => []
     }
   },
 

@@ -103,6 +103,8 @@ export default create({
 
   props: {
     code: String,
+    coupons: Array,
+    disabledCoupons: Array,
     closeButtonText: String,
     inputPlaceholder: String,
     exchangeButtonText: String,
@@ -115,14 +117,6 @@ export default create({
     chosenCoupon: {
       type: Number,
       default: -1
-    },
-    coupons: {
-      type: Array,
-      default: () => []
-    },
-    disabledCoupons: {
-      type: Array,
-      default: () => []
     },
     displayedCouponIndex: {
       type: Number,

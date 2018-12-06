@@ -50,12 +50,9 @@ export default create({
   },
 
   props: {
-    value: {},
-    addText: String,
-    list: {
-      type: Array,
-      default: () => []
-    }
+    value: null,
+    list: Array,
+    addText: String
   }
 });
 </script>

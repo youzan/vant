@@ -32,6 +32,7 @@
     <demo-block :title="$t('title2')">
       <div class="sku-container">
         <van-sku
+          hide-quota-text
           v-model="showStepper"
           :sku="skuData.sku"
           :goods="skuData.goods_info"
@@ -159,7 +160,7 @@ export default {
             if (limitType === LIMIT_TYPE.QUOTA_LIMIT) {
               this.$toast(`限购${quota}件`);
             } else {
-              this.$toast('库存不够了~~');
+              this.$toast('库存不够了');
             }
           }
         }

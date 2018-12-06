@@ -47,14 +47,8 @@ export default create({
   props: {
     onClose: Function,
     disabled: Boolean,
-    leftWidth: {
-      type: Number,
-      default: 0
-    },
-    rightWidth: {
-      type: Number,
-      default: 0
-    }
+    leftWidth: Number,
+    rightWidth: Number
   },
 
   directives: {

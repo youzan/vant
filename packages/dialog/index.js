@@ -30,6 +30,7 @@ const Dialog = options => {
     Object.assign(instance, {
       resolve,
       reject,
+      ...Dialog.currentOptions,
       ...options
     });
   });
@@ -53,13 +54,9 @@ Dialog.defaultOptions = {
   }
 };
 
-Dialog.alert = options => Dialog({
-  ...Dialog.currentOptions,
-  ...options
-});
+Dialog.alert = Dialog;
 
 Dialog.confirm = options => Dialog({
-  ...Dialog.currentOptions,
   showCancelButton: true,
   ...options
 });

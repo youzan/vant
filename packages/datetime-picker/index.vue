@@ -18,6 +18,7 @@
 import Picker from '../picker';
 import create from '../utils/create';
 import { range } from '../utils';
+import PickerMixin from '../mixins/picker';
 
 const currentYear = new Date().getFullYear();
 const isValidDate = date => Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
@@ -25,17 +26,16 @@ const isValidDate = date => Object.prototype.toString.call(date) === '[object Da
 export default create({
   name: 'datetime-picker',
 
+  mixins: [PickerMixin],
+
   components: {
     Picker
   },
 
   props: {
     value: null,
-    title: String,
-    itemHeight: Number,
-    visibleItemCount: Number,
-    confirmButtonText: String,
-    cancelButtonText: String,
+    minHour: Number,
+    minMinute: Number,
     type: {
       type: String,
       default: 'datetime'
@@ -62,17 +62,9 @@ export default create({
       default: () => new Date(currentYear + 10, 11, 31),
       validator: isValidDate
     },
-    minHour: {
-      type: Number,
-      default: 0
-    },
     maxHour: {
       type: Number,
       default: 23
-    },
-    minMinute: {
-      type: Number,
-      default: 0
     },
     maxMinute: {
       type: Number,

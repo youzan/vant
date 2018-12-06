@@ -1,40 +1,43 @@
 <template>
-  <div
-    v-if="value"
-    :class="b()"
-    @touchstart="onWrapperTouchStart"
-    @touchend="onWrapperTouchEnd"
-    @touchcancel="onWrapperTouchEnd"
-  >
+  <transition name="van-fade">
     <div
-      v-if="showIndex"
-      :class="b('index')"
+      v-if="value"
+      :class="b()"
+      @touchstart="onWrapperTouchStart"
+      @touchend="onWrapperTouchEnd"
+      @touchcancel="onWrapperTouchEnd"
     >
-      {{ active + 1 }}/{{ count }}
-    </div>
-    <swipe
-      ref="swipe"
-      :loop="loop"
-      :initial-swipe="startPosition"
-      :show-indicators="showIndicators"
-      @change="onChange"
-    >
-      <swipe-item
-        v-for="(item, index) in images"
-        :key="index"
+      <div
+        v-if="showIndex"
+        :class="b('index')"
       >
-        <img
-          :class="b('image')"
-          :src="item"
-          :style="index === active ? imageStyle : null"
-          @touchstart="onTouchStart"
-          @touchmove="onTouchMove"
-          @touchend="onTouchEnd"
-          @touchcancel="onTouchEnd"
+        {{ active + 1 }}/{{ count }}
+      </div>
+      <swipe
+        ref="swipe"
+        :loop="loop"
+        indicator-color="white"
+        :initial-swipe="startPosition"
+        :show-indicators="showIndicators"
+        @change="onChange"
+      >
+        <swipe-item
+          v-for="(item, index) in images"
+          :key="index"
         >
-      </swipe-item>
-    </swipe>
-  </div>
+          <img
+            :class="b('image')"
+            :src="item"
+            :style="index === active ? imageStyle : null"
+            @touchstart="onTouchStart"
+            @touchmove="onTouchMove"
+            @touchend="onTouchEnd"
+            @touchcancel="onTouchEnd"
+          >
+        </swipe-item>
+      </swipe>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -59,18 +62,13 @@ export default create({
   },
 
   props: {
+    images: Array,
+    asyncClose: Boolean,
+    startPosition: Number,
     showIndicators: Boolean,
-    images: {
-      type: Array,
-      default: () => []
-    },
     loop: {
       type: Boolean,
       default: true
-    },
-    startPosition: {
-      type: Number,
-      default: 0
     },
     overlay: {
       type: Boolean,
@@ -144,8 +142,17 @@ export default create({
 
       // prevent long tap to close component
       if (deltaTime < 300 && offsetX < 10 && offsetY < 10) {
-        this.$emit('input', false);
+        const index = this.active;
+
         this.resetScale();
+        this.$emit('close', {
+          index,
+          url: this.images[index]
+        });
+
+        if (!this.asyncClose) {
+          this.$emit('input', false);
+        }
       }
     },
 
@@ -181,7 +188,7 @@ export default create({
 
     onTouchStart(event) {
       const { touches } = event;
-      const { offsetX } = this.$refs.swipe;
+      const { offsetX = 0 } = this.$refs.swipe || {};
 
       if (touches.length === 1 && this.scale !== 1) {
         this.startMove(event);

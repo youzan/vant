@@ -1,5 +1,47 @@
 ## 更新日志
 
+## [v1.4.8](https://github.com/youzan/vant/tree/v1.4.8)
+`2018-12-05`
+
+**Improvements**
+
+- Sku: 新增 hide-quota-text 属性 [\#2216](https://github.com/youzan/vant/pull/2216)
+- ImagePreview: 新增 asyncClose 属性 [\#2198](https://github.com/youzan/vant/pull/2198)
+- ImagePreview: 新增 onClose 回调参数 [\#2197](https://github.com/youzan/vant/pull/2197)
+- ImagePreview: 新增淡入淡出动画效果 [\#2196](https://github.com/youzan/vant/pull/2196)
+
+**Bug Fixes**
+
+- 修复 Notify TS 类型定义错误 [\#2210](https://github.com/youzan/vant/pull/2210)
+- 修复 Dialog 通过函数调用时默认值错误 [\#2208](https://github.com/youzan/vant/pull/2208)
+- 修复 ImagePreview 指示器颜色错误 [\#2187](https://github.com/youzan/vant/pull/2187)
+
+
+## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
+`2018-11-27`
+
+**Improvements**
+
+- 新增 Notify 消息通知组件 [\#2135](https://github.com/youzan/vant/pull/2135)
+- Cell: 新增 title-class、value-class、label-class 属性 [\#2138](https://github.com/youzan/vant/pull/2138)
+- Icon: 增加更多基础图标 [\#2159](https://github.com/youzan/vant/pull/2159) [\#2169](https://github.com/youzan/vant/pull/2169)
+- Icon: 支持传入图片链接作为图标展示 [\#2149](https://github.com/youzan/vant/pull/2149)
+- List: 新增 finished-text 属性 [\#2131](https://github.com/youzan/vant/pull/2131)
+- Rate: 新增 icon、void-icon 属性 [\#2148](https://github.com/youzan/vant/pull/2148)
+- NavBar: 新增 border 属性 [\#2143](https://github.com/youzan/vant/pull/2143)
+- Style: 新增多个内置 transition 动画 [\#2163](https://github.com/youzan/vant/pull/2163)
+- CouponCell: 移除了默认外边框 [\#2145](https://github.com/youzan/vant/pull/2145)
+- CDN 服务商更换为 jsdelivr，以提供更快的国内访问速度 [\#2167](https://github.com/youzan/vant/pull/2167)
+
+**Bug Fixes**
+
+- 修复 ImagePreview 页码出现 NaN 的问题 [\#2146](https://github.com/youzan/vant/pull/2146)
+- 修复 Toast 在 iOS 设备上文字错误换行的问题 [\#2142](https://github.com/youzan/vant/pull/2142)
+- 修复 GoodsAction 部分样式代码重复的问题 [\#2140](https://github.com/youzan/vant/pull/2140)
+- 修复 DatetimePicker 设置了 minDate 时初始 value 错误的问题 [\#2137](https://github.com/youzan/vant/pull/2137)
+
+PS: 不小心跳过了 1.4.6 版本  ^_^
+
 ## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
 `2018-11-23`
 

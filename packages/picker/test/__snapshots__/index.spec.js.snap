@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`column watch default index 1`] = `
-<div class="van-picker-column">
+<div class="van-picker-column" style="height: 0px;">
   <ul style="line-height: 50px;">
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1990</li>
@@ -15,7 +15,7 @@ exports[`column watch default index 1`] = `
 `;
 
 exports[`column watch default index 2`] = `
-<div class="van-picker-column">
+<div class="van-picker-column" style="height: 0px;">
   <ul style="line-height: 50px;">
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>

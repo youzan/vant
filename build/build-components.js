@@ -5,10 +5,12 @@ const fs = require('fs-extra');
 const path = require('path');
 const babel = require('@babel/core');
 const compiler = require('vue-sfc-compiler');
+const markdownVetur = require('markdown-vetur');
 
 const esDir = path.join(__dirname, '../es');
 const libDir = path.join(__dirname, '../lib');
 const srcDir = path.join(__dirname, '../packages');
+const distDir = path.join(__dirname, '../dist');
 const compilerOption = {
   babel: {
     configFile: path.join(__dirname, '../babel.config.js')
@@ -26,7 +28,7 @@ function compile(dir) {
   files.forEach(file => {
     const filePath = path.join(dir, file);
 
-    // reomve unnecessary files
+    // remove unnecessary files
     if (!isCode(file)) {
       return fs.removeSync(filePath);
     }
@@ -68,3 +70,11 @@ compile(esDir);
 process.env.BABEL_MODULE = 'commonjs';
 fs.copySync(srcDir, libDir);
 compile(libDir);
+
+// generate vetur tags & attributes
+markdownVetur.parseAndWrite({
+  path: srcDir,
+  test: /zh-CN\.md/,
+  tagPrefix: 'van-',
+  outputDir: distDir
+});

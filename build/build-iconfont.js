@@ -33,7 +33,8 @@ const prevTTFs = glob.sync(path.join(iconDir, '*.ttf'));
 prevTTFs.forEach(ttf => fs.removeSync(ttf));
 
 // rename svg
-config.glyphs.forEach((icon, index) => {
+const icons = [...config.basic, ...config.outline, ...config.filled];
+icons.forEach((icon, index) => {
   const src = path.join(svgDir, icon.src);
   if (fs.existsSync(src)) {
     fs.renameSync(src, path.join(svgDir, icon.css + '.svg'));
@@ -65,10 +66,7 @@ gulp.task('ttf', () => {
 
 gulp.task('default', ['ttf'], () => {
   // generate icon-local.css
-  fs.writeFileSync(
-    path.join(iconDir, 'local.less'),
-    local(config.name, ttf)
-  );
+  fs.writeFileSync(path.join(iconDir, 'local.less'), local(config.name, ttf));
 
   // remove svg
   fs.removeSync(svgDir);

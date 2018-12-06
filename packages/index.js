@@ -37,6 +37,7 @@ import NavBar from './nav-bar';
 import NoticeBar from './notice-bar';
 import Notify from './notify';
 import NumberKeyboard from './number-keyboard';
+import Overlay from './overlay';
 import Pagination from './pagination';
 import Panel from './panel';
 import PasswordInput from './password-input';
@@ -70,7 +71,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.4.5';
+const version = '1.4.8';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -109,6 +110,7 @@ const components = [
   NoticeBar,
   Notify,
   NumberKeyboard,
+  Overlay,
   Pagination,
   Panel,
   PasswordInput,
@@ -194,6 +196,7 @@ export {
   NoticeBar,
   Notify,
   NumberKeyboard,
+  Overlay,
   Pagination,
   Panel,
   PasswordInput,
