@@ -79,7 +79,7 @@ function buildDocsEntry() {
     ])
     .map(fullPath => {
       const name = getName(fullPath);
-      return `'${name}': () => import('${path.relative(join('docs/src'), fullPath)}')`;
+      return `'${name}': () => import('${path.relative(join('docs/src'), fullPath).replace(/\\/g, '/')}')`;
     });
 
   const content = `${tips}
