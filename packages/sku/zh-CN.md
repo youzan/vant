@@ -215,7 +215,7 @@ customStepperConfig: {
         if (quotaUsed > 0) msg += `，你已购买${quotaUsed}`;
         Toast(msg);
       } else {
-        Toast('库存不够了~~');
+        Toast('库存不够了');
       }
     }
   }
