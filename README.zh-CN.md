@@ -10,7 +10,7 @@
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat" alt="npm version" />
     <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
-    <img src="https://img.shields.io/npm/dt/vant.svg" alt="downloads" />
+    <img src="https://img.shields.io/npm/dm/vant.svg" alt="downloads" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
     <img src="https://isitmaintained.com/badge/open/youzan/vant.svg" alt="issue" />
