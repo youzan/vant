@@ -125,7 +125,7 @@ export default create({
       return {
         ...this.$listeners,
         input: this.onInput,
-        keypress: this.onKeypress,
+        keydown: this.onKeydown,
         focus: this.onFocus,
         blur: this.onBlur
       };
@@ -184,7 +184,7 @@ export default create({
       this.$emit('clear');
     },
 
-    onKeypress(event) {
+    onKeydown(event) {
       if (this.type === 'number') {
         const { keyCode } = event;
         const allowPoint = String(this.value).indexOf('.') === -1;
