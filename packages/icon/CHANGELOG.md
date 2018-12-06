@@ -2,15 +2,9 @@
 - more
 - more-o
 - aim
-- wap-home
 - discount
-- edit-data
 - idcard
-- points-mall
 - exchange-record
-- pending-orders
-- pending-deliver
-- pending-evaluate
 - underway
 - add2
 - gift-card
@@ -19,6 +13,10 @@
 - new
 
 移除：
+- edit-data
+- pending-deliver
+- pending-evaluate
+- points-mall
 
 
 重命名：
@@ -30,4 +28,6 @@
 - value-card -> balance-o
 - question2 -> question
 - receive-gift -> gift
-
+- pending-orders -> orders-o
+- wap-nav -> nav
+- wap-home -> home-o
