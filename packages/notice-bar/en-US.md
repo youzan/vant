@@ -14,7 +14,7 @@ Vue.use(NoticeBar);
 ```html
 <van-notice-bar
   text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily."
-  left-icon="https://img.yzcdn.cn/1.png"
+  left-icon="//img.yzcdn.cn/vant/volume.png"
 />
 ```
 

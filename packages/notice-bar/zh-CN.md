@@ -14,7 +14,7 @@ Vue.use(NoticeBar);
 ```html
 <van-notice-bar
   text="足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。"
-  left-icon="https://img.yzcdn.cn/1.png"
+  left-icon="//img.yzcdn.cn/vant/volume.png"
 />
 ```
 
