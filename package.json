@@ -57,7 +57,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "vant-icons": "^0.0.1-beta",
+    "vant-icons": "0.0.1",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {

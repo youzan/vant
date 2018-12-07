@@ -7283,13 +7283,6 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
-path@^0.12.7:
-  version "0.12.7"
-  resolved "https://registry.yarnpkg.com/path/-/path-0.12.7.tgz#d4dc2a506c4ce2197eb481ebfcd5b36c0140b10f"
-  dependencies:
-    process "^0.11.1"
-    util "^0.10.3"
-
 pbkdf2@^3.0.3:
   version "3.0.16"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.16.tgz#7404208ec6b01b62d85bf83853a8064f8d9c2a5c"
@@ -7649,7 +7642,7 @@ process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
-process@^0.11.1, process@^0.11.10:
+process@^0.11.10:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
@@ -9624,9 +9617,9 @@ vant-doc@1.0.19:
     nprogress "^0.2.0"
     shelljs "^0.8.2"
 
-vant-icons@^0.0.1-beta:
-  version "0.0.1-beta"
-  resolved "https://registry.yarnpkg.com/vant-icons/-/vant-icons-0.0.1-beta.tgz#29ffb40788891748a031896bf8695d1683821dba"
+vant-icons@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/vant-icons/-/vant-icons-0.0.1.tgz#03be9d2c3223cccce45e7f38e7cc375fa901605f"
   dependencies:
     fast-glob "^2.2.4"
     fs-extra "^7.0.1"
@@ -9634,7 +9627,6 @@ vant-icons@^0.0.1-beta:
     gulp-iconfont "^10.0.2"
     gulp-iconfont-css "^2.3.0"
     md5-file "^4.0.0"
-    path "^0.12.7"
     shelljs "^0.8.3"
 
 varstream@^0.3.2:
