@@ -31,7 +31,7 @@ export default create({
     disabled: Boolean,
     size: {
       type: String,
-      default: '26px'
+      default: '24px'
     }
   },
 
