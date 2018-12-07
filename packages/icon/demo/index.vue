@@ -6,7 +6,7 @@
     >
       <van-tab title="基础图标">
         <van-col
-          v-for="icon in basic"
+          v-for="icon in icons.basic"
           :key="icon"
           span="6"
         >
@@ -16,7 +16,7 @@
       </van-tab>
       <van-tab title="线框风格">
         <van-col
-          v-for="icon in outline"
+          v-for="icon in icons.outline"
           :key="icon"
           span="6"
         >
@@ -26,7 +26,7 @@
       </van-tab>
       <van-tab title="实底风格">
         <van-col
-          v-for="icon in filled"
+          v-for="icon in icons.filled"
           :key="icon"
           span="6"
         >
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import icons from '../../../packages/icon/config';
+import icons from 'vant-icons';
 
 export default {
   i18n: {
@@ -56,9 +56,7 @@ export default {
   },
 
   data() {
-    this.basic = icons.basic;
-    this.outline = icons.outline;
-    this.filled = icons.filled;
+    this.icons = icons;
     return {
       tab: 0
     };

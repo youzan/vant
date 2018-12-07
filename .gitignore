@@ -15,4 +15,3 @@ dist
 docs/dist
 changelog.generated.md
 test/coverage
-packages/icon/svg

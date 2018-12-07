@@ -22,7 +22,6 @@
     "build:style": "gulp --gulpfile ./build/build-style.js",
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
-    "build:iconfont": "gulp --gulpfile ./build/build-iconfont.js",
     "build:lib": "node build/build-lib.js",
     "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
     "test": "jest",
@@ -58,6 +57,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "vant-icons": "^0.0.1-beta",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
@@ -87,8 +87,6 @@
     "gh-pages": "^2.0.1",
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.1",
-    "gulp-iconfont": "^10.0.2",
-    "gulp-iconfont-css": "^2.3.0",
     "gulp-less": "^4.0.1",
     "gulp-postcss": "^8.0.0",
     "html-webpack-plugin": "3.2.0",
@@ -99,7 +97,6 @@
     "less-loader": "^4.1.0",
     "lint-staged": "^8.1.0",
     "markdown-vetur": "0.0.2",
-    "md5-file": "^4.0.0",
     "postcss": "^7.0.6",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
