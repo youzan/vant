@@ -115,7 +115,10 @@
   }
 
   &__content {
-    overflow: hidden;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
   }
 
   &--line {
@@ -135,10 +138,18 @@
   }
 
   .van-tab__pane {
+    width: 100%;
     box-sizing: border-box;
-  
-    &--float {
-      float: left;
+    flex-shrink: 0;
+    overflow-y: auto;
+
+    &--inactive {
+      height: 0;
+      overflow: visible;
+    }
+
+    &--active {
+      height: auto;
     }
   }
 }

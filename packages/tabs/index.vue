@@ -41,14 +41,9 @@
     <div
       ref="content"
       :class="b('content')"
+      :style="contentStyle"
     >
-      <div
-        v-show="computedWidth !== 0"
-        :class="b('track')"
-        :style="trackStyle"
-      >
-        <slot />
-      </div>
+      <slot />
     </div>
   </div>
 </template>
@@ -107,8 +102,7 @@ export default create({
         resize: false,
         sticky: false,
         swipeable: false
-      },
-      computedWidth: 0
+      }
     };
   },
 
@@ -141,21 +135,21 @@ export default create({
       };
     },
 
-    trackStyle() {
+    contentStyle() {
       const {
         curActive,
-        computedWidth = 0,
-        tabs,
         animated
       } = this;
-      if (!animated) return {};
 
-      const offset = -1 * computedWidth * curActive;
-      return {
-        width: `${computedWidth * tabs.length}px`,
-        transitionDuration: `${this.duration}s`,
-        transform: `translateX(${offset}px)`
+      const contentStyle = {
+        transform: `translate3d(${-1 * curActive * 100}%, 0, 1px)`
       };
+
+      if (animated) {
+        contentStyle.transitionDuration = `${this.duration}s`;
+      }
+
+      return contentStyle;
     }
   },
 
@@ -198,7 +192,6 @@ export default create({
   mounted() {
     this.correctActive(this.active);
     this.setLine();
-    this.setWidth();
 
     this.$nextTick(() => {
       this.handlers(true);
@@ -222,13 +215,6 @@ export default create({
   },
 
   methods: {
-    setWidth() {
-      if (this.$el) {
-        const rect = this.$el.getBoundingClientRect() || {};
-        this.computedWidth = rect.width;
-      }
-    },
-
     // whether to bind sticky listener
     handlers(bind) {
       const { events } = this;
