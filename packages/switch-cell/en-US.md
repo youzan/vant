@@ -56,7 +56,7 @@ use `loading` property to keep component in loading state
 | title | the leftside title |  `String` | `''` |
 | loading | whether switch is loading |  `Boolean` | `false` |
 | disabled | whether to disable switch |  `Boolean` | `false` |
-| size | Size of switch | `String` | `26px` |
+| size | Size of switch | `String` | `24px` |
 
 ### Event
 

@@ -9598,9 +9598,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vant-doc@1.0.19:
-  version "1.0.19"
-  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.19.tgz#9e6ebef52c53fac698472099154df074400d3b56"
+vant-doc@1.0.20:
+  version "1.0.20"
+  resolved "https://registry.yarnpkg.com/vant-doc/-/vant-doc-1.0.20.tgz#a497c7140c167f8d4013c0833dbccf3bd099f8e0"
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"

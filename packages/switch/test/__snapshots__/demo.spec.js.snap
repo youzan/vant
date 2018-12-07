@@ -24,7 +24,21 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-switch van-switch--on" style="font-size:36px;background-color:#4b0;">
+    <div class="van-switch van-switch--on" style="font-size:24px;background-color:undefined;">
+      <div class="van-switch__node">
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-switch van-switch--on" style="font-size:30px;background-color:#4b0;">
+      <div class="van-switch__node">
+        <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-switch van-switch--on" style="font-size:30px;background-color:undefined;">
       <div class="van-switch__node">
         <!---->
       </div>
