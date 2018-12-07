@@ -146,7 +146,7 @@ export default create({
       } = this;
 
       const trackStyle = {
-        transform: `translate3d(${-1 * curActive * 100}%, 0, 1px)`
+        left: `${-1 * curActive * 100}%`
       };
 
       if (animated) {

@@ -9,65 +9,24 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tabs__line"></div>
         </div>
       </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-hairline--top-bottom">
-        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -79,18 +38,65 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tabs__line"></div>
         </div>
       </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
         </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
+          <div class="van-tabs__line"></div>
         </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -102,95 +108,103 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
       </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-hairline--top-bottom">
-        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-hairline--top-bottom">
-        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-hairline--top-bottom">
-        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <div>
-            <div>
-              <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
-                <!---->
-                <!---->
-              </i>标签
-            </div>
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
           </div>
         </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
+          <div class="van-tabs__line"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
+          <div class="van-tabs__line"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
+          <div class="van-tabs__line"></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
             <div>
-              <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
-                <!---->
-                <!---->
-              </i>标签
+              <div>
+                <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
+                  <!---->
+                  <!---->
+                </i>标签
+              </div>
+            </div>
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <div>
+              <div>
+                <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
+                  <!---->
+                  <!---->
+                </i>标签
+              </div>
             </div>
           </div>
         </div>
@@ -204,22 +218,24 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tabs__line"></div>
         </div>
       </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);transition-duration:0.3s;">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;transition-duration:0.3s;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
         </div>
       </div>
     </div>
@@ -231,22 +247,24 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tabs__line"></div>
         </div>
       </div>
-      <div class="van-tabs__content" style="transform:translate3d(0%, 0, 1px);">
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
-        </div>
-        <div class="van-tab__pane van-tab__pane--inactive">
-          <!---->
-          <!---->
+      <div class="van-tabs__content">
+        <div class="van-tabs__track" style="left:0%;">
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
+          <div class="van-tab__pane van-tab__pane--inactive">
+            <!---->
+            <!---->
+          </div>
         </div>
       </div>
     </div>
