@@ -27,6 +27,7 @@
     "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:clear-cache": "jest --clearCache",
     "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh"
   },
