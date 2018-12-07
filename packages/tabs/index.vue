@@ -41,9 +41,13 @@
     <div
       ref="content"
       :class="b('content')"
-      :style="contentStyle"
     >
-      <slot />
+      <div
+        :class="b('track')"
+        :style="trackStyle"
+      >
+        <slot />
+      </div>
     </div>
   </div>
 </template>
@@ -135,21 +139,21 @@ export default create({
       };
     },
 
-    contentStyle() {
+    trackStyle() {
       const {
         curActive,
         animated
       } = this;
 
-      const contentStyle = {
+      const trackStyle = {
         transform: `translate3d(${-1 * curActive * 100}%, 0, 1px)`
       };
 
       if (animated) {
-        contentStyle.transitionDuration = `${this.duration}s`;
+        trackStyle.transitionDuration = `${this.duration}s`;
       }
 
-      return contentStyle;
+      return trackStyle;
     }
   },
 
