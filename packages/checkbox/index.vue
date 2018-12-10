@@ -1,7 +1,7 @@
 <template>
   <div :class="b()">
     <div
-      :class="[b('icon', [shape, { disabled: isDisabled, checked }])]"
+      :class="b('icon', [shape, { disabled: isDisabled, checked }])"
       @click="toggle"
     >
       <slot
@@ -16,7 +16,7 @@
     </div>
     <span
       v-if="$slots.default"
-      :class="b('label', labelPosition)"
+      :class="b('label', [labelPosition, { disabled: isDisabled }])"
       @click="toggle('label')"
     >
       <slot />
