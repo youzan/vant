@@ -10,6 +10,7 @@ Vue.use(Switch);
 ### 代码演示
 
 #### 基础用法
+
 ```html
 <van-switch v-model="checked" />
 ```
@@ -25,22 +26,47 @@ export default {
 ```
 
 #### 禁用状态
+
 ```html
-<van-switch v-model="checked" disabled />
+<van-switch
+  v-model="checked"
+  disabled
+/>
 ```
 
 #### 加载状态
+
 ```html
-<van-switch v-model="checked" loading />
+<van-switch
+  v-model="checked"
+  loading
+/>
 ```
 
-#### 高级用法
+#### 自定义大小
+
+```html
+<van-switch
+  v-model="checked"
+  size="24px"
+/>
+```
+
+#### 自定义颜色
+
+```html
+<van-switch
+  v-model="checked"
+  active-color="#4b0"
+  inactive-color="#f44"
+/>
+```
+
+#### 异步控制
+
 ```html
 <van-switch
   :value="checked"
-  size="36px"
-  active-color="#4b0"
-  inactive-color="#f44"
   @input="onInput"
 />
 ```
@@ -65,7 +91,6 @@ export default {
   }
 }; 
 ```
-
 
 ### API
 

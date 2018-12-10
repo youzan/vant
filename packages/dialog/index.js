@@ -44,6 +44,7 @@ Dialog.defaultOptions = {
   className: '',
   lockScroll: true,
   beforeClose: null,
+  messageAlign: '',
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,

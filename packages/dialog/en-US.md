@@ -11,6 +11,7 @@ Vue.use(Dialog);
 ### Usage
 
 #### Alert dialog
+
 Used to prompt for some messages, only including one confirm button
 
 ```javascript
@@ -29,6 +30,7 @@ Dialog.alert({
 ```
 
 #### Confirm dialog
+
 Used to confirm some messages, including a confirm button and a cancel button
 
 ```javascript
@@ -43,6 +45,7 @@ Used to confirm some messages, including a confirm button and a cancel button
 ```
 
 #### $dialog Method
+
 After import the Dialog component, the $dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
@@ -72,6 +75,7 @@ export default {
 |------|------|------|------|
 | title | Title | `String` | - |
 | message | Message | `String` | - |
+| messageAlign | Message text align，can be set to `left` `right` | `String` | `center` |
 | className | Custom className | `String | Array | Object` | - |
 | showConfirmButton | Whether to show confirm button | `Boolean` | `true` |
 | showCancelButton | Whether to show cancel button | `Boolean` | `false` |
@@ -83,6 +87,7 @@ export default {
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
 
 #### Advanced Usage
+
 If you need to render vue components within a dialog, you can use dialog component.
 
 ```html
@@ -132,7 +137,7 @@ export default {
 | v-model | Whether to show dialog | `Boolean` | - |
 | title | Title | `String` | - |
 | message | Message | `String` | - |
-| async-confirm | Whether to close async，The incoming function is triggered when you click confirm. | `Function` | - |
+| message-align | Message align，can be set to `left` `right` | `String` | `center` |
 | show-confirm-button | Whether to show confirm button | `Boolean` |  `true` |
 | show-cancel-button | Whether to show cancel button | `Boolean` |  `false` |
 | confirm-button-text | Confirm button text | `String` |  `Confirm` |

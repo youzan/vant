@@ -26,6 +26,7 @@
     "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:clear-cache": "jest --clearCache",
     "test:coverage": "open test/coverage/index.html",
     "release": "sh build/release.sh"
   },
@@ -108,7 +109,7 @@
     "stylelint-config-standard": "^18.2.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.1.2",
-    "vant-doc": "1.0.19",
+    "vant-doc": "1.0.20",
     "vue": "2.5.17",
     "vue-jest": "^3.0.1",
     "vue-loader": "^15.4.2",

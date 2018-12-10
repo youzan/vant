@@ -28,24 +28,45 @@ export default {
 #### Disabled
 
 ```html
-<van-switch v-model="checked" disabled />
+<van-switch
+  v-model="checked"
+  disabled
+/>
 ```
 
 #### Loading
 
-
 ```html
-<van-switch v-model="checked" loading />
+<van-switch
+  v-model="checked"
+  loading
+/>
 ```
 
-#### Advanced usage
+#### Custom Size
+
+```html
+<van-switch
+  v-model="checked"
+  size="24px"
+/>
+```
+
+#### Custom Color
+
+```html
+<van-switch
+  v-model="checked"
+  active-color="#4b0"
+  inactive-color="#f44"
+/>
+```
+
+#### Async Control
 
 ```html
 <van-switch
   :value="checked"
-  size="36px"
-  active-color="#4b0"
-  inactive-color="#f44"
   @input="onInput"
 />
 ```

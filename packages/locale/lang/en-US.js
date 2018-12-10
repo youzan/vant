@@ -31,7 +31,7 @@ export default {
   vanCouponCell: {
     title: 'Coupon',
     tips: 'Select coupon',
-    count: count => `You have ${count} offers`
+    count: count => `You have ${count} coupons`
   },
   vanCouponList: {
     empty: 'No coupons',

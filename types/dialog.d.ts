@@ -7,6 +7,7 @@ export type DialogOptions = {
   overlay?: boolean;
   className?: string;
   lockScroll?: boolean;
+  messageAlign?: string;
   confirmButtonText?: string;
   cancelButtonText?: string;
   showConfirmButton?: boolean;
