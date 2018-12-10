@@ -31,7 +31,7 @@ export default {
   vanCouponCell: {
     title: '优惠券',
     tips: '使用优惠',
-    count: count => `你有 ${count} 个可用优惠`
+    count: count => `${count}张可用`
   },
   vanCouponList: {
     empty: '暂无优惠券',
