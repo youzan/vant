@@ -6,8 +6,8 @@ export default {
     let currentNode = element;
     // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
     while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1 && currentNode !== rootParent) {
-      const overflowY = this.getComputedStyle(currentNode).overflowY;
-      if (overflowY === 'scroll' || overflowY === 'auto') {
+      const { overflowY, overflowX } = this.getComputedStyle(currentNode);
+      if (overflowX === 'visible' && (overflowY === 'scroll' || overflowY === 'auto')) {
         return currentNode;
       }
       currentNode = currentNode.parentNode;
