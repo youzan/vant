@@ -19,7 +19,6 @@
 - points-mall
 
 重命名：
-- cash-back-record -> cash-back
 - password-view -> eye
 - password-not-view -> closed-eye
 - check -> circle
@@ -28,5 +27,4 @@
 - question2 -> question
 - receive-gift -> gift
 - pending-orders -> orders-o
-- wap-nav -> nav
-- wap-home -> home-o
+
