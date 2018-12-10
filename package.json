@@ -10,7 +10,8 @@
     "es",
     "lib",
     "packages",
-    "types"
+    "types",
+    "vetur"
   ],
   "scripts": {
     "bootstrap": "yarn || npm i",
@@ -99,7 +100,7 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "lint-staged": "^8.1.0",
-    "markdown-vetur": "0.0.2",
+    "markdown-vetur": "0.0.5",
     "md5-file": "^4.0.0",
     "postcss": "^7.0.6",
     "postcss-loader": "^3.0.0",
@@ -126,7 +127,7 @@
     "webpack-serve": "^2.0.3"
   },
   "vetur": {
-    "tags": "dist/tags.json",
-    "attributes": "dist/attributes.json"
+    "tags": "vetur/tags.json",
+    "attributes": "vetur/attributes.json"
   }
 }

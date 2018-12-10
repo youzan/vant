@@ -10,7 +10,7 @@ const markdownVetur = require('markdown-vetur');
 const esDir = path.join(__dirname, '../es');
 const libDir = path.join(__dirname, '../lib');
 const srcDir = path.join(__dirname, '../packages');
-const distDir = path.join(__dirname, '../dist');
+const veturDir = path.join(__dirname, '../vetur');
 const compilerOption = {
   babel: {
     configFile: path.join(__dirname, '../babel.config.js')
@@ -76,5 +76,5 @@ markdownVetur.parseAndWrite({
   path: srcDir,
   test: /zh-CN\.md/,
   tagPrefix: 'van-',
-  outputDir: distDir
+  outputDir: veturDir
 });
