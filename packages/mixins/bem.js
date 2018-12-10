@@ -22,7 +22,7 @@ const prefix = (name, mods) => {
   }
 
   const ret = {};
-  Object.keys(mods).forEach(key => {
+  mods && Object.keys(mods).forEach(key => {
     ret[name + MODS + key] = mods[key];
   });
   return ret;
