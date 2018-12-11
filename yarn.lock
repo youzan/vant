@@ -6237,9 +6237,9 @@ markdown-table@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
 
-markdown-vetur@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/markdown-vetur/-/markdown-vetur-0.0.2.tgz#1a05901a8e501171ebd625ae5cfaaaac05a66e3f"
+markdown-vetur@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/markdown-vetur/-/markdown-vetur-0.0.5.tgz#293e23e21e2bd937b3e61dd848bccea8bfc6f27f"
 
 matcher@^1.0.0:
   version "1.1.1"
