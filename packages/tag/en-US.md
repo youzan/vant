@@ -71,7 +71,9 @@ Vue.use(Tag);
 | color | Custom color | `String` | - |
 | plain | Whether to be plain style | `Boolean` | `false` |
 | round | Whether to be round style | `Boolean` | `false` |
-| mark | Wtether to be mark style | `Boolean` | `false` |
+| mark | Whether to be mark style | `Boolean` | `false` |
+| text-color | Text color | `String` | `white` |
+
 
 ### Slot
 
