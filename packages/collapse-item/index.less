@@ -3,7 +3,7 @@
 .van-collapse-item {
   &__title {
     .van-cell__right-icon::before {
-      transition: .3s;
+      transition: @collapse-item-transition-duration;
       transform: rotate(90deg);
     }
 
@@ -24,7 +24,7 @@
     &--disabled {
       &,
       & .van-cell__right-icon {
-        color: @gray;
+        color: @collapse-item-title-disabled-color;
       }
 
       &:active {
@@ -36,11 +36,14 @@
   &__wrapper {
     overflow: hidden;
     will-change: height;
-    transition: height .3s ease-in-out;
+    transition: height @collapse-item-transition-duration ease-in-out;
   }
 
   &__content {
-    padding: 15px;
-    background-color: @white;
+    color: @collapse-item-content-text-color;
+    padding: @collapse-item-content-padding;
+    font-size: @collapse-item-content-font-size;
+    line-height: @collapse-item-content-line-height;
+    background-color: @collapse-item-content-background-color;
   }
 }
