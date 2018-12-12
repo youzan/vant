@@ -74,6 +74,7 @@ export default {
 | coupons | Coupon list | `Array` | `[]` |
 | editable | Cell editable | `Boolean` | `true` |
 | border | Whether to show innner border | `Boolean` | `true` |
+| currency | Currency symbol |  `String` | `¥` |
 
 ### CouponList API
 
@@ -90,6 +91,7 @@ export default {
 | displayed-coupon-index | Index of displayed coupon | `Number` | - |
 | close-button-text | Close button text | `String` | `Close` |
 | input-placeholder | Input placeholder | `String` | `Coupon code` |
+| currency | Currency symbol |  `String` | `¥` |
 
 ### CouponList Event
 

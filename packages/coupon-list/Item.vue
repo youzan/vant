@@ -34,7 +34,8 @@ export default create({
   props: {
     data: Object,
     chosen: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    currency: String
   },
 
   components: {
@@ -48,7 +49,7 @@ export default create({
 
     faceAmount() {
       return this.data.denominations !== 0
-        ? `<span>¥</span> ${this.formatAmount(this.data.denominations)}`
+        ? `<span>${this.currency}</span> ${this.formatAmount(this.data.denominations)}`
         : this.data.discount !== 0
           ? this.formatDiscount(this.data.discount)
           : '';
