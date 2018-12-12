@@ -90,6 +90,12 @@
       >
         {{ $t('tag') }}
       </van-tag>
+      <van-tag
+        color="#ffe1e1"
+        text-color="#ad0000"
+      >
+        {{ $t('tag') }}
+      </van-tag>
     </demo-block>
 
     <demo-block :title="$t('customSize')">

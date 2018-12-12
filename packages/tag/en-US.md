@@ -52,6 +52,7 @@ Vue.use(Tag);
 <van-tag color="#f2826a" plain>Tag</van-tag>
 <van-tag color="#7232dd">Tag</van-tag>
 <van-tag color="#7232dd" plain>Tag</van-tag>
+<van-tag color="#ffe1e1" text-color="#ad0000">Tag</van-tag>
 ```
 
 #### Custom Size

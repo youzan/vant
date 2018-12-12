@@ -60,6 +60,7 @@ Vue.use(Tag);
 <van-tag color="#f2826a" plain>标签</van-tag>
 <van-tag color="#7232dd">标签</van-tag>
 <van-tag color="#7232dd" plain>标签</van-tag>
+<van-tag color="#ffe1e1" text-color="#ad0000">标签</van-tag>
 ```
 
 #### 标签大小
