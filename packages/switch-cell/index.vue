@@ -29,6 +29,8 @@ export default create({
     border: Boolean,
     loading: Boolean,
     disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     size: {
       type: String,
       default: '24px'
