@@ -75,6 +75,7 @@ export default {
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
 | border | 是否显示内边框 | `Boolean` | `true` | 1.3.10 |
+| currency | 货币符号 |  `String` | `¥` | - | 1.4.10 |
 
 ### CouponList API
 
@@ -93,6 +94,7 @@ export default {
 | close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
 | input-placeholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
 | show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
+| currency | 货币符号 |  `String` | `¥` | - | 1.4.10 |
 
 ### CouponList Event
 
@@ -102,6 +104,7 @@ export default {
 | exchange | 兑换优惠券回调 | code, 兑换码 |
 
 ### 数据格式
+
 #### 优惠券字段说明
 
 | key | 说明 | 类型 |
