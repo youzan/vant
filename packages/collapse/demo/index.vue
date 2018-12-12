@@ -81,12 +81,6 @@ export default {
 @import '../../style/var';
 
 .demo-collapse {
-  .van-collapse-item__content {
-    font-size: 13px;
-    line-height: 1.5;
-    color: @gray-darker;
-  }
-
   .van-icon-question {
     color: @blue;
     vertical-align: -3px;
