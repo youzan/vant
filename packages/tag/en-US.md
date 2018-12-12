@@ -52,6 +52,7 @@ Vue.use(Tag);
 <van-tag color="#f2826a" plain>Tag</van-tag>
 <van-tag color="#7232dd">Tag</van-tag>
 <van-tag color="#7232dd" plain>Tag</van-tag>
+<van-tag color="#ffe1e1" text-color="#ad0000">Tag</van-tag>
 ```
 
 #### Custom Size
@@ -71,7 +72,9 @@ Vue.use(Tag);
 | color | Custom color | `String` | - |
 | plain | Whether to be plain style | `Boolean` | `false` |
 | round | Whether to be round style | `Boolean` | `false` |
-| mark | Wtether to be mark style | `Boolean` | `false` |
+| mark | Whether to be mark style | `Boolean` | `false` |
+| text-color | Text color | `String` | `white` |
+
 
 ### Slot
 
