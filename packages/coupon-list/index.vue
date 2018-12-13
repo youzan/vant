@@ -35,6 +35,7 @@
             v-for="(item, index) in coupons"
             :key="item.id || item.name"
             :data="item"
+            :currency="currency"
             :chosen="index === chosenCoupon"
             @click.native="$emit('change', index)"
           />
@@ -57,6 +58,7 @@
             v-for="item in disabledCoupons"
             :key="item.id || item.name"
             :data="item"
+            :currency="currency"
           />
           <div
             v-if="!disabledCoupons.length"
@@ -129,6 +131,10 @@ export default create({
     showCloseButton: {
       type: Boolean,
       default: true
+    },
+    currency: {
+      type: String,
+      default: '¥'
     }
   },
 

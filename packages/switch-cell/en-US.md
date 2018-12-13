@@ -57,6 +57,8 @@ use `loading` property to keep component in loading state
 | loading | whether switch is loading |  `Boolean` | `false` |
 | disabled | whether to disable switch |  `Boolean` | `false` |
 | size | Size of switch | `String` | `24px` |
+| active-color | Background of switch color when active | `String` | `#1989fa` |
+| inactive-color | Background of switch color when inactive | `String` | `#fff` |
 
 ### Event
 
