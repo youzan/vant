@@ -1,15 +1,6 @@
 缺少：
-- more
-- more-o
-- aim
-- discount
-- idcard
 - exchange-record
-- underway
 - add2
-- gift-card
-- gift-card-pay
-- card
 - new
 
 移除：
@@ -27,4 +18,4 @@
 - question2 -> question
 - receive-gift -> gift
 - pending-orders -> orders-o
-
+- gift-card-pay -> gift-card
