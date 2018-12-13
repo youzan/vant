@@ -57,8 +57,8 @@
             :sku-row="skuTreeItem"
           >
             <sku-row-item
-              v-for="(skuValue, index) in skuTreeItem.v"
-              :key="index"
+              v-for="(skuValue, valueIndex) in skuTreeItem.v"
+              :key="valueIndex"
               :sku-key-str="skuTreeItem.k_s"
               :sku-value="skuValue"
               :sku-event-bus="skuEventBus"

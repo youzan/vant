@@ -18,7 +18,7 @@
           v-for="(image, index) in images"
           :key="index"
         >
-          <img v-lazy="image" >
+          <img v-lazy="image">
         </van-swipe-item>
       </van-swipe>
     </demo-block>
