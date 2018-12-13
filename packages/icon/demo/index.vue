@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import icons from 'vant-icons';
+import icons from '@vant/icons';
 
 export default {
   i18n: {

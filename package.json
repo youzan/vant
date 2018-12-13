@@ -59,7 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "vant-icons": "0.0.1",
+    "@vant/icons": "^0.0.2",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
@@ -72,6 +72,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
+    "@vant/doc": "^1.0.20",
     "@vue/server-test-utils": "^1.0.0-beta.26",
     "@vue/test-utils": "^1.0.0-beta.26",
     "autoprefixer": "^9.3.1",
@@ -110,7 +111,6 @@
     "stylelint-config-standard": "^18.2.0",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.1.2",
-    "vant-doc": "1.0.20",
     "vue": "2.5.17",
     "vue-jest": "^3.0.1",
     "vue-loader": "^15.4.2",

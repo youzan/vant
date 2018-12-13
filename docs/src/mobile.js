@@ -3,8 +3,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './WapApp';
 import routes from './router';
-import { progress } from 'vant-doc';
-import 'vant-doc/helper/touch-simulator';
+import { progress } from '@vant/doc';
+import '@vant/doc/helper/touch-simulator';
 
 const router = new VueRouter({
   mode: 'hash',
