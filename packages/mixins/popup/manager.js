@@ -51,9 +51,7 @@ export default {
       const { target, config } = context.top;
 
       target.appendChild(modal.$el);
-      Object.assign(modal, {
-        ...defaultConfig,
-        ...config,
+      Object.assign(modal, defaultConfig, config, {
         visible: true
       });
     }
