@@ -5,8 +5,7 @@ exports[`clearable 1`] = `
   <!---->
   <!---->
   <div class="van-cell__value van-cell__value--alone">
-    <div class="van-field__body">
-      <input type="text" class="van-field__control">
+    <div class="van-field__body"><input type="text" class="van-field__control">
       <!---->
       <!---->
       <!---->
@@ -22,12 +21,9 @@ exports[`clearable 2`] = `
   <!---->
   <!---->
   <div class="van-cell__value van-cell__value--alone">
-    <div class="van-field__body">
-      <input type="text" class="van-field__control">
-      <i class="van-icon van-icon-clear van-field__clear">
+    <div class="van-field__body"><input type="text" class="van-field__control"> <i class="van-icon van-icon-clear van-field__clear">
         <!---->
-        <!---->
-      </i>
+        <!----></i>
       <!---->
       <!---->
     </div>
@@ -42,8 +38,7 @@ exports[`render textarea 1`] = `
   <!---->
   <!---->
   <div class="van-cell__value van-cell__value--alone">
-    <div class="van-field__body">
-      <textarea class="van-field__control" style="height: auto;"></textarea>
+    <div class="van-field__body"><textarea class="van-field__control" style="height: auto;"></textarea>
       <!---->
       <!---->
       <!---->

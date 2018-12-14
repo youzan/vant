@@ -3,11 +3,8 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-card">
-      <a href="javascript:;" class="van-card__thumb">
-        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
-        <!---->
-      </a>
+    <div class="van-card"><a class="van-card__thumb"><img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
+        <!----></a>
       <div class="van-card__content">
         <div class="van-card__left">
           <div class="van-card__title">
@@ -29,9 +26,7 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-card">
-      <a href="javascript:;" class="van-card__thumb">
-        <img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-card__tag" style="background-color:#f44;">
+    <div class="van-card"><a class="van-card__thumb"><img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img"> <span class="van-tag van-tag--mark van-card__tag" style="background-color:#f44;">
       标签
     </span></a>
       <div class="van-card__content">
@@ -54,10 +49,7 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-card__footer">
-        <div>
-          <button class="van-button van-button--default van-button--mini"><span class="van-button__text">按钮</span></button>
-          <button class="van-button van-button--default van-button--mini"><span class="van-button__text">按钮</span></button>
-        </div>
+        <div><button class="van-button van-button--default van-button--mini"><span class="van-button__text">按钮</span></button> <button class="van-button van-button--default van-button--mini"><span class="van-button__text">按钮</span></button></div>
       </div>
     </div>
   </div>
