@@ -1,6 +1,6 @@
-import Waterfall from './directive.js';
+import Waterfall from './directive';
 
-Waterfall.install = function(Vue) {
+Waterfall.install = function (Vue) {
   if (process.env.NODE_ENV !== 'production') {
     console.warn('[Vant] Waterfall is deprecated, please use List component instread');
   }

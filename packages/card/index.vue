@@ -81,16 +81,13 @@ export default create({
     thumb: String,
     title: String,
     centered: Boolean,
+    thumbLink: String,
     num: [Number, String],
     price: [Number, String],
     originPrice: [Number, String],
     currency: {
       type: String,
       default: '¥'
-    },
-    thumbLink: {
-      type: String,
-      default: 'javascript:;'
     }
   }
 });

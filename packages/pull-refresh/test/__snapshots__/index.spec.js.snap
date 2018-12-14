@@ -2,9 +2,9 @@
 
 exports[`change head content when pulling down 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,20px, 0);">
     <div class="van-pull-refresh__head">
-      <!----><span class="van-pull-refresh__text">下拉即可刷新...</span>
+      <!----> <span class="van-pull-refresh__text">下拉即可刷新...</span>
       <!---->
       <!---->
     </div>
@@ -14,10 +14,10 @@ exports[`change head content when pulling down 1`] = `
 
 exports[`change head content when pulling down 2`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,75px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
-      <!----><span class="van-pull-refresh__text">释放即可刷新...</span>
+      <!----> <span class="van-pull-refresh__text">释放即可刷新...</span>
       <!---->
     </div>
   </div>
@@ -26,13 +26,14 @@ exports[`change head content when pulling down 2`] = `
 
 exports[`change head content when pulling down 3`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,50px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
       <!---->
       <!---->
       <div class="van-pull-refresh__loading">
-        <div class="van-loading van-loading--circular van-loading" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span>加载中...</span></div>
+        <div class="van-loading van-loading--circular van-loading" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span>加载中...</span>
+      </div>
     </div>
   </div>
 </div>
@@ -40,13 +41,14 @@ exports[`change head content when pulling down 3`] = `
 
 exports[`change head content when pulling down 4`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,50px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
       <!---->
       <!---->
       <div class="van-pull-refresh__loading">
-        <div class="van-loading van-loading--circular van-loading" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span>加载中...</span></div>
+        <div class="van-loading van-loading--circular van-loading" style="color: rgb(201, 201, 201);"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div> <span>加载中...</span>
+      </div>
     </div>
   </div>
 </div>
@@ -54,7 +56,7 @@ exports[`change head content when pulling down 4`] = `
 
 exports[`change head content when pulling down 5`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,0px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
       <!---->
@@ -66,7 +68,7 @@ exports[`change head content when pulling down 5`] = `
 
 exports[`not in page top 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track">
+  <div class="van-pull-refresh__track" style="transform: translate3d(0,0px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
       <!---->

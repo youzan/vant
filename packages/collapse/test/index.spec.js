@@ -24,7 +24,7 @@ const component = {
   }
 };
 
-test('basic mode', async() => {
+test('basic mode', async () => {
   const wrapper = mount(component);
 
   const titles = wrapper.findAll('.van-collapse-item__title');
@@ -41,7 +41,7 @@ test('basic mode', async() => {
   wrapper.destroy();
 });
 
-it('accordion', async() => {
+it('accordion', async () => {
   const wrapper = mount(component, {
     propsData: {
       accordion: true

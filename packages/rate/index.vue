@@ -17,6 +17,7 @@
 </template>
 
 <script>
+/* eslint-disable prefer-spread */
 import create from '../utils/create';
 
 export default create({

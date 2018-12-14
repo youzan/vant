@@ -93,9 +93,9 @@ export default create({
       }
 
       const list = this[type];
-      result = Object.keys(list).map(code => ({
-        code,
-        name: list[code]
+      result = Object.keys(list).map(listCode => ({
+        code: listCode,
+        name: list[listCode]
       }));
 
       if (code) {
@@ -150,7 +150,7 @@ export default create({
       picker.setColumnValues(1, city);
 
       if (city.length && code.slice(2, 4) === '00') {
-        code = city[0].code;
+        [{ code }] = city;
       }
 
       picker.setColumnValues(2, this.getList('county', code.slice(0, 4)));

@@ -7,7 +7,7 @@
       :class="b('img-wrap')"
       @click="previewImage"
     >
-      <img :src="goodsImg" >
+      <img :src="goodsImg">
     </div>
     <div :class="b('goods-info')">
       <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
@@ -49,7 +49,7 @@ export default create({
       if (!id) return;
 
       // 目前skuImg都挂载在skuTree中s1那类sku上
-      const treeItem = this.sku.tree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
+      const treeItem = this.sku.tree.filter(item => item.k_s === 's1')[0] || {};
 
       if (!treeItem.v) {
         return;

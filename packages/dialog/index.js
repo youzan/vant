@@ -55,11 +55,10 @@ Dialog.defaultOptions = {
 
 Dialog.alert = Dialog;
 
-Dialog.confirm = options =>
-  Dialog({
-    showCancelButton: true,
-    ...options
-  });
+Dialog.confirm = options => Dialog({
+  showCancelButton: true,
+  ...options
+});
 
 Dialog.close = () => {
   if (instance) {

@@ -188,22 +188,18 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tab__pane" style="display:none;">
             <!---->
             <div>
-              <div>
-                <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
+              <div><i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
                   <!---->
-                  <!---->
-                </i>标签
+                  <!----></i>标签
               </div>
             </div>
           </div>
           <div class="van-tab__pane" style="display:none;">
             <!---->
             <div>
-              <div>
-                <i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
+              <div><i class="van-icon van-icon-more-o" style="color:undefined;font-size:undefined;">
                   <!---->
-                  <!---->
-                </i>标签
+                  <!----></i>标签
               </div>
             </div>
           </div>

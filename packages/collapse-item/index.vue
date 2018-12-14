@@ -116,7 +116,7 @@ export default create({
           return;
         }
 
-        const contentHeight = content.clientHeight + 'px';
+        const contentHeight = `${content.clientHeight}px`;
         wrapper.style.height = expanded ? 0 : contentHeight;
         raf(() => {
           wrapper.style.height = expanded ? contentHeight : 0;

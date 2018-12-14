@@ -13,7 +13,7 @@ const defaultOptions = {
   forbidClick: false,
   overlayStyle: {}
 };
-const parseOptions = message => isObj(message) ? message : { message };
+const parseOptions = message => (isObj(message) ? message : { message });
 
 let queue = [];
 let singleton = true;
@@ -33,7 +33,7 @@ function createInstance() {
     queue.push(toast);
   }
   return queue[queue.length - 1];
-};
+}
 
 // transform toast options to popup props
 function transformer(options) {
@@ -67,7 +67,7 @@ function Toast(options = {}) {
   }
 
   return toast;
-};
+}
 
 const createMethod = type => options => Toast({
   type, ...parseOptions(options)

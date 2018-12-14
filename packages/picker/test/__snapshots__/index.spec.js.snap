@@ -2,7 +2,7 @@
 
 exports[`column watch default index 1`] = `
 <div class="van-picker-column" style="height: 0px;">
-  <ul style="line-height: 50px;">
+  <ul style="transform: translate3d(0, -75px, 0); line-height: 50px;">
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1990</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
@@ -16,7 +16,7 @@ exports[`column watch default index 1`] = `
 
 exports[`column watch default index 2`] = `
 <div class="van-picker-column" style="height: 0px;">
-  <ul style="line-height: 50px;">
+  <ul style="transform: translate3d(0, -125px, 0); line-height: 50px;">
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
     <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
     <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>

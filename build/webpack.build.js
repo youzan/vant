@@ -1,5 +1,6 @@
 const path = require('path');
 const config = require('./webpack.dev.js');
+
 const isMinify = process.argv.indexOf('-p') !== -1;
 
 delete config.serve;
@@ -7,7 +8,7 @@ delete config.serve;
 module.exports = Object.assign(config, {
   mode: 'production',
   entry: {
-    'vant': './es/index.js'
+    vant: './es/index.js'
   },
   output: {
     path: path.join(__dirname, '../lib'),
