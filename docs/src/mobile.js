@@ -1,7 +1,7 @@
 import '../../packages/index.less';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { progress } from 'vant-doc';
+import { progress } from '@vant/doc';
 import App from './WapApp';
 import routes from './router';
 import '@vant/doc/helper/touch-simulator';
