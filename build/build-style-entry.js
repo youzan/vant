@@ -1,11 +1,13 @@
+/* eslint-disable no-use-before-define */
 /**
  * Build style entry of all components
  */
 
 const fs = require('fs-extra');
 const path = require('path');
-const components = require('./get-components')();
 const dependencyTree = require('dependency-tree');
+const components = require('./get-components')();
+
 const whiteList = [
   'info',
   'icon',
@@ -17,17 +19,10 @@ const whiteList = [
 ];
 const dir = path.join(__dirname, '../es');
 
-components.forEach(component => {
-  // css entry
-  destEntryFile(component, 'index.js', '.css');
-  // less entry
-  destEntryFile(component, 'less.js', '.less');
-});
-
 function destEntryFile(component, filename, ext = '') {
-  const deps = analyzeDependencies(component).map(dep =>
+  const deps = analyzeDependencies(component).map(dep => (
     getStyleRelativePath(component, dep, ext)
-  );
+  ));
 
   const esEntry = path.join(dir, component, `style/${filename}`);
   const libEntry = path.join(
@@ -68,12 +63,12 @@ function search(tree, component, checkList) {
   Object.keys(tree).forEach(key => {
     search(tree[key], component, checkList);
     components
-      .filter(item =>
+      .filter(item => (
         key
           .replace(dir, '')
           .split('/')
           .includes(item)
-      )
+      ))
       .forEach(item => {
         if (
           !checkList.includes(item) &&
@@ -103,3 +98,10 @@ function getStyleRelativePath(component, style, ext) {
 function checkComponentHasStyle(component) {
   return fs.existsSync(getStylePath(component));
 }
+
+components.forEach(component => {
+  // css entry
+  destEntryFile(component, 'index.js', '.css');
+  // less entry
+  destEntryFile(component, 'less.js', '.less');
+});

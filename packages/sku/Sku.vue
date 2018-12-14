@@ -57,8 +57,8 @@
             :sku-row="skuTreeItem"
           >
             <sku-row-item
-              v-for="(skuValue, index) in skuTreeItem.v"
-              :key="index"
+              v-for="(skuValue, valueIndex) in skuTreeItem.v"
+              :key="valueIndex"
               :sku-key-str="skuTreeItem.k_s"
               :sku-value="skuValue"
               :sku-event-bus="skuEventBus"
@@ -274,7 +274,8 @@ export default create({
           price: Math.round(this.sku.price * 100),
           stock_num: this.sku.stock_num
         };
-      } else if (this.isSkuCombSelected) {
+      }
+      if (this.isSkuCombSelected) {
         return getSkuComb(this.sku.list, this.selectedSku);
       }
       return null;
@@ -295,7 +296,7 @@ export default create({
     imageList() {
       const imageList = [this.goods.picture];
       if (this.skuTree.length > 0) {
-        const treeItem = this.skuTree.filter(treeItem => treeItem.k_s === 's1')[0] || {};
+        const treeItem = this.skuTree.filter(item => item.k_s === 's1')[0] || {};
 
         if (!treeItem.v) {
           return;
@@ -406,9 +407,7 @@ export default create({
     },
 
     onPreviewImage(indexImage) {
-      const index = this.imageList.findIndex(image => {
-        return image === indexImage;
-      });
+      const index = this.imageList.findIndex(image => image === indexImage);
 
       const cbParams = {
         index,

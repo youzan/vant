@@ -1,9 +1,9 @@
-import Notify from '../';
+import Notify from '..';
 import { transitionStub, later } from '../../../test/utils';
 
 transitionStub();
 
-test('create a notify', async() => {
+test('create a notify', async () => {
   // should not cause error when call clear before show notify
   Notify.clear();
 
@@ -13,7 +13,7 @@ test('create a notify', async() => {
   expect(notify.$el.outerHTML).toMatchSnapshot();
 });
 
-test('notify disappear', async() => {
+test('notify disappear', async () => {
   const notify = Notify({
     message: 'test',
     color: 'red',

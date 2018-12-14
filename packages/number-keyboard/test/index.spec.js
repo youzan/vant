@@ -1,4 +1,4 @@
-import NumberKeyboard from '../';
+import NumberKeyboard from '..';
 import { mount } from '../../../test/utils';
 
 function mockTouch(wrapper, event, keyIndex) {

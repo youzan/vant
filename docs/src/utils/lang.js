@@ -14,11 +14,9 @@ const langMap = {
 };
 let currentLang = '';
 
-setLang(getDefaultLang());
-
 function getDefaultLang() {
   const langs = Object.keys(langMap);
-  const hash = location.hash;
+  const { hash } = location;
 
   for (let i = 0; i < langs.length; i++) {
     if (hash.indexOf(langs[i]) !== -1) {
@@ -42,3 +40,5 @@ export function setLang(lang) {
   Locale.use(lang, langMap[lang].messages);
   document.title = langMap[lang].title;
 }
+
+setLang(getDefaultLang());

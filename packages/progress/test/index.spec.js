@@ -1,4 +1,4 @@
-import Progress from '../';
+import Progress from '..';
 import { mount } from '../../../test/utils';
 
 test('calc width', () => {

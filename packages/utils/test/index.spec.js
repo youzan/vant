@@ -40,15 +40,15 @@ test('camelize', () => {
 
 test('get', () => {
   expect(get({ a: 1 }, 'a')).toEqual(1);
-  expect(get({ a: { b: 2 }}, 'a.b')).toEqual(2);
-  expect(get({ a: { b: 2 }}, 'a.b.c')).toEqual('');
+  expect(get({ a: { b: 2 } }, 'a.b')).toEqual(2);
+  expect(get({ a: { b: 2 } }, 'a.b.c')).toEqual('');
 });
 
 test('isAndroid', () => {
   expect(isAndroid()).toBeFalsy();
 });
 
-test('raf', async() => {
+test('raf', async () => {
   const spy = jest.fn();
   raf(spy);
 

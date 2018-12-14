@@ -96,8 +96,8 @@ test('register component', () => {
   expect(Vue.component(ImagePreviewVue.name)).toBeTruthy();
 });
 
-test('zoom', async() => {
-  const getBoundingClientRect = Element.prototype.getBoundingClientRect;
+test('zoom', async () => {
+  const { getBoundingClientRect } = Element.prototype;
   Element.prototype.getBoundingClientRect = jest.fn(() => ({ width: 100 }));
 
   const wrapper = mount(ImagePreviewVue, {

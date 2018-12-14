@@ -170,7 +170,7 @@ export default create({
       this.setLine();
     },
 
-    tabs(tabs) {
+    tabs() {
       this.correctActive(this.curActive || this.active);
       this.scrollIntoView();
       this.setLine();

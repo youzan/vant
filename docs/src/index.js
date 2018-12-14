@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VantDoc, { progress } from '@vant/doc';
 import App from './DocsApp';
 import routes from './router';
-import VantDoc, { progress } from '@vant/doc';
 import { isMobile } from './utils';
 
 Vue.use(VueRouter).use(VantDoc);
@@ -33,7 +33,7 @@ if (process.env.NODE_ENV !== 'production') {
   Vue.config.productionTip = false;
 }
 
-new Vue({ // eslint-disable-line
+new Vue({
   el: '#app',
   render: h => h(App),
   router

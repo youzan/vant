@@ -1,43 +1,14 @@
+/* eslint-disable no-underscore-dangle */
 import Utils from '../utils/scroll';
 import { on, off } from '../utils/event';
 
 const CONTEXT = '@@Waterfall';
 const OFFSET = 300;
 
-// 绑定事件到元素上
-// 读取基本的控制变量
-function doBindEvent() {
-  if (this.el[CONTEXT].binded) {
-    return;
-  }
-  this.el[CONTEXT].binded = true;
-
-  this.scrollEventListener = handleScrollEvent.bind(this);
-  this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
-
-  const disabledExpr = this.el.getAttribute('waterfall-disabled');
-  let disabled = false;
-  if (disabledExpr) {
-    this.vm.$watch(disabledExpr, (value) => {
-      this.disabled = value;
-      this.scrollEventListener();
-    });
-    disabled = Boolean(this.vm[disabledExpr]);
-  }
-  this.disabled = disabled;
-
-  const offset = this.el.getAttribute('waterfall-offset');
-  this.offset = Number(offset) || OFFSET;
-
-  on(this.scrollEventTarget, 'scroll', this.scrollEventListener, true);
-
-  this.scrollEventListener();
-}
-
 // 处理滚动函数
 function handleScrollEvent() {
   const element = this.el;
-  const scrollEventTarget = this.scrollEventTarget;
+  const { scrollEventTarget } = this;
   // 已被禁止的滚动处理
   if (this.disabled) return;
 
@@ -74,6 +45,36 @@ function handleScrollEvent() {
   }
 }
 
+// 绑定事件到元素上
+// 读取基本的控制变量
+function doBindEvent() {
+  if (this.el[CONTEXT].binded) {
+    return;
+  }
+  this.el[CONTEXT].binded = true;
+
+  this.scrollEventListener = handleScrollEvent.bind(this);
+  this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
+
+  const disabledExpr = this.el.getAttribute('waterfall-disabled');
+  let disabled = false;
+  if (disabledExpr) {
+    this.vm.$watch(disabledExpr, (value) => {
+      this.disabled = value;
+      this.scrollEventListener();
+    });
+    disabled = Boolean(this.vm[disabledExpr]);
+  }
+  this.disabled = disabled;
+
+  const offset = this.el.getAttribute('waterfall-offset');
+  this.offset = Number(offset) || OFFSET;
+
+  on(this.scrollEventTarget, 'scroll', this.scrollEventListener, true);
+
+  this.scrollEventListener();
+}
+
 // 绑定事件
 function startBind(el) {
   const context = el[CONTEXT];
@@ -90,13 +91,13 @@ function doCheckStartBind(el) {
   if (context.vm._isMounted) {
     startBind(el);
   } else {
-    context.vm.$on('hook:mounted', function() {
+    context.vm.$on('hook:mounted', () => {
       startBind(el);
     });
   }
 }
 
-export default function(type) {
+export default function (type) {
   return {
     bind(el, binding, vnode) {
       if (!el[CONTEXT]) {
@@ -123,4 +124,4 @@ export default function(type) {
       }
     }
   };
-};
+}

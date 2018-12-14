@@ -68,7 +68,7 @@
 
     <demo-block :title="$t('title5')">
       <van-checkbox-group v-model="result3">
-        <van-cell-group >
+        <van-cell-group>
           <van-cell
             v-for="(item, index) in list"
             clickable

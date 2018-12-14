@@ -9,7 +9,7 @@
       v-if="leftIcon"
       :class="b('left-icon')"
     >
-      <img :src="leftIcon" >
+      <img :src="leftIcon">
     </div>
     <div
       ref="wrap"

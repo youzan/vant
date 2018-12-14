@@ -43,7 +43,7 @@ const Component = {
   }
 };
 
-test('swipeTo', async() => {
+test('swipeTo', async () => {
   const wrapper = mount(Component);
   const { swipe } = wrapper.vm.$refs;
   swipe.swipeTo(2);

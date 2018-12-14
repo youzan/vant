@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { renderToString } from '@vue/server-test-utils';
-import AddressEdit from '../';
+import AddressEdit from '..';
 import areaList from '../../area/demo/area.simple';
 import { mount, later, transitionStub } from '../../../test/utils';
 
@@ -132,11 +132,11 @@ test('on change detail', () => {
 
 test('watch address info', () => {
   const wrapper = mount(AddressEdit);
-  wrapper.setProps({ addressInfo: { name: '123' }});
+  wrapper.setProps({ addressInfo: { name: '123' } });
   expect(wrapper.vm.data.name).toEqual('123');
 });
 
-test('set/get area code', async() => {
+test('set/get area code', async () => {
   const wrapper = mount(AddressEdit, {
     propsData: { areaList }
   });
@@ -162,7 +162,7 @@ test('set/get area code', async() => {
   expect(wrapper.vm.getArea()).toEqual([]);
 });
 
-test('watch area code', async() => {
+test('watch area code', async () => {
   const wrapper = mount(AddressEdit, {
     propsData: {
       areaList: {},
@@ -179,7 +179,7 @@ test('watch area code', async() => {
   expect(wrapper.vm.data.city).toEqual('北京市');
 });
 
-test('show search result', async() => {
+test('show search result', async () => {
   const wrapper = mount(AddressEdit, {
     propsData: {
       showSearchResult: true,
@@ -208,7 +208,7 @@ test('show search result', async() => {
   expect(wrapper.vm.detailFocused).toBeFalsy();
 });
 
-test('delete address', async() => {
+test('delete address', async () => {
   const wrapper = mount(AddressEdit, {
     attachToDocument: true,
     propsData: {

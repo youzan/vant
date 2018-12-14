@@ -43,7 +43,7 @@
             v-if="!coupons.length"
             :class="b('empty')"
           >
-            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
             <p>{{ $t('empty') }}</p>
           </div>
         </div>
@@ -64,7 +64,7 @@
             v-if="!disabledCoupons.length"
             :class="b('empty')"
           >
-            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
             <p>{{ $t('empty') }}</p>
           </div>
         </div>

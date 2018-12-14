@@ -1,5 +1,5 @@
 import { mount } from '../../../test/utils';
-import Badge from '../';
+import Badge from '..';
 import BadgeGroup from '../../badge-group';
 
 test('event', () => {
