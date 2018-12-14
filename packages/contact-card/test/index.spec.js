@@ -82,11 +82,11 @@ describe('ContactEdit', () => {
 
   test('watch contact info', () => {
     const wrapper = mount(ContactEdit);
-    wrapper.setProps({ contactInfo: { name: '123' }});
+    wrapper.setProps({ contactInfo: { name: '123' } });
     expect(wrapper.vm.data.name).toEqual('123');
   });
 
-  test('delete contact', async() => {
+  test('delete contact', async () => {
     const wrapper = mount(ContactEdit, {
       propsData: {
         isEdit: true

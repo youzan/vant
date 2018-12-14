@@ -1,4 +1,4 @@
-import Rate from '../';
+import Rate from '..';
 import { mount, triggerDrag } from '../../../test/utils';
 
 test('change event', () => {
@@ -23,7 +23,7 @@ test('touchmove', () => {
   triggerDrag(wrapper, 100, 0);
 
   const icons = wrapper.findAll('.van-icon');
-  document.elementFromPoint = function(x, y) {
+  document.elementFromPoint = function (x) {
     const index = Math.round(x / 20);
     if (index < icons.length) {
       return icons.at(index).element;

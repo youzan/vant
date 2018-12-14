@@ -130,14 +130,14 @@ export default create({
       const { deltaX } = this;
 
       if ((deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
-        (deltaX > 0 && (deltaX > this.leftWidth || deltaX > 0 && !this.leftWidth))) {
+        (deltaX > 0 && ((deltaX > this.leftWidth || deltaX > 0) && !this.leftWidth))) {
         return;
       }
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
         this.swipeMove(deltaX);
-      };
+      }
     },
 
     endDrag() {
@@ -148,7 +148,7 @@ export default create({
       this.draging = false;
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
-      };
+      }
     },
 
     onClick(position = 'outside') {

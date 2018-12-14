@@ -63,7 +63,7 @@ export default create({
     searchList() {
       if (this.showSearchResult && this.focused) {
         return this.searchResult || [];
-      };
+      }
       return [];
     },
 

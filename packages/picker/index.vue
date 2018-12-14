@@ -113,8 +113,8 @@ export default create({
   methods: {
     setColumns() {
       const columns = this.simple ? [{ values: this.columns }] : this.columns;
-      columns.forEach((columns, index) => {
-        this.setColumnValues(index, deepClone(columns.values));
+      columns.forEach((column, index) => {
+        this.setColumnValues(index, deepClone(column.values));
       });
     },
 

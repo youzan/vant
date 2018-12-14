@@ -245,7 +245,7 @@ export default create({
       this.$emit('change-area', values);
     },
 
-    assignAreaValues(values) {
+    assignAreaValues() {
       const { area } = this.$refs;
       if (area) {
         const detail = area.getArea();
@@ -321,7 +321,10 @@ export default create({
     // set area code to area component
     setAreaCode(code) {
       this.data.areaCode = code || '';
-      code && this.$nextTick(this.assignAreaValues);
+
+      if (code) {
+        this.$nextTick(this.assignAreaValues);
+      }
     },
 
     setAddressDetail(value) {

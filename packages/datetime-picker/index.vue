@@ -141,9 +141,9 @@ export default create({
     },
 
     columns() {
-      const results = this.ranges.map(({ type, range }) => {
-        const values = this.times(range[1] - range[0] + 1, index => {
-          let value = range[0] + index;
+      const results = this.ranges.map(({ type, range: rangeArr }) => {
+        const values = this.times(rangeArr[1] - rangeArr[0] + 1, index => {
+          let value = rangeArr[0] + index;
           value = value < 10 ? `0${value}` : `${value}`;
           return this.formatter(type, value);
         });

@@ -1,4 +1,4 @@
-import SubmitBar from '../';
+import SubmitBar from '..';
 import { mount } from '../../../test/utils';
 
 test('submit', () => {

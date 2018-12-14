@@ -75,7 +75,8 @@ export default {
     formatter(type, value) {
       if (type === 'year') {
         return value + this.$t('year');
-      } else if (type === 'month') {
+      }
+      if (type === 'month') {
         return value + this.$t('month');
       }
       return value;

@@ -98,7 +98,7 @@ export default create({
       const messages = {};
 
       this.messageValues.forEach((item, index) => {
-        let value = item.value;
+        let { value } = item;
         if (this.messages[index].datetime > 0) {
           value = value.replace(/T/g, ' ');
         }
@@ -112,7 +112,7 @@ export default create({
       const messages = {};
 
       this.messageValues.forEach((item, index) => {
-        let value = item.value;
+        let { value } = item;
         const message = this.messages[index];
         if (message.datetime > 0) {
           value = value.replace(/T/g, ' ');
@@ -132,7 +132,7 @@ export default create({
       const values = this.messageValues;
 
       for (let i = 0; i < values.length; i++) {
-        const value = values[i].value;
+        const { value } = values[i];
         const message = this.messages[i];
 
         if (value === '') {

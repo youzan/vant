@@ -1,6 +1,10 @@
-import { isServer } from './';
+/* eslint-disable no-empty */
+/* eslint-disable getter-return */
+/* eslint-disable import/no-mutable-exports */
+import { isServer } from '.';
 
 export let supportsPassive = false;
+
 if (!isServer) {
   try {
     const opts = {};

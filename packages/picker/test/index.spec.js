@@ -1,4 +1,4 @@
-import Picker from '../';
+import Picker from '..';
 import PickerColumn from '../PickerColumn';
 import { mount, triggerDrag, later } from '../../../test/utils';
 
@@ -101,7 +101,7 @@ test('drag simple columns', () => {
   expect(wrapper.emitted('change')[0][1]).toEqual('1992');
 });
 
-test('column watch default index', async() => {
+test('column watch default index', async () => {
   const disabled = { disabled: true, text: 1 };
   const wrapper = mount(PickerColumn, {
     propsData: {

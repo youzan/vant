@@ -15,7 +15,7 @@ export default {
       const target = el && el.parentNode ? el.parentNode : document.body;
       context.stack.push({ vm, config, target });
       this.update();
-    };
+    }
   },
 
   close(vm) {

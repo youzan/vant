@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { ImagePreview } from '../../../packages';
+import { ImagePreview } from '../..';
 
 const images = [
   'https://img.yzcdn.cn/public_files/2017/09/05/3bd347e44233a868c99cf0fe560232be.jpg',

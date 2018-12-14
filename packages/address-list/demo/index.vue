@@ -84,7 +84,7 @@ export default {
     },
 
     onEdit(item, index) {
-      this.$toast(this.$t('edit') + ':' + index);
+      this.$toast(`${this.$t('edit')}:${index}`);
     }
   }
 };

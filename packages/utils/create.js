@@ -7,7 +7,7 @@ import Loading from '../loading';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 
-export default function(sfc) {
+export default function (sfc) {
   sfc.components = Object.assign(sfc.components || {}, {
     Icon,
     Loading,
@@ -15,4 +15,4 @@ export default function(sfc) {
     CellGroup
   });
   return createBasic(sfc);
-};
+}

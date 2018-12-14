@@ -15,6 +15,7 @@
 </template>
 
 <script>
+/* eslint-disable object-shorthand */
 import create from '../utils/create';
 import findParent from '../mixins/find-parent';
 

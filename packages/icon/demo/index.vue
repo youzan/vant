@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import icons from '../../../packages/icon/config';
+import icons from '../config';
 
 export default {
   i18n: {

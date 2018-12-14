@@ -1,16 +1,16 @@
-import { isServer } from './';
+import { isServer } from '.';
 
 export default {
   // get nearest scroll element
   getScrollEventTarget(element, rootParent = window) {
-    let currentNode = element;
+    let node = element;
     // bugfix, see http://w3help.org/zh-cn/causes/SD9013 and http://stackoverflow.com/questions/17016740/onscroll-function-is-not-working-for-chrome
-    while (currentNode && currentNode.tagName !== 'HTML' && currentNode.tagName !== 'BODY' && currentNode.nodeType === 1 && currentNode !== rootParent) {
-      const overflowY = this.getComputedStyle(currentNode).overflowY;
+    while (node && node.tagName !== 'HTML' && node.tagName !== 'BODY' && node.nodeType === 1 && node !== rootParent) {
+      const { overflowY } = this.getComputedStyle(node);
       if (overflowY === 'scroll' || overflowY === 'auto') {
-        return currentNode;
+        return node;
       }
-      currentNode = currentNode.parentNode;
+      node = node.parentNode;
     }
     return rootParent;
   },

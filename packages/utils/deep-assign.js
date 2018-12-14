@@ -1,4 +1,5 @@
-import { isDef, isObj } from './';
+/* eslint-disable no-use-before-define */
+import { isDef, isObj } from '.';
 
 const { hasOwnProperty } = Object.prototype;
 
@@ -17,10 +18,9 @@ function assignKey(to, from, key) {
 }
 
 export default function assign(to, from) {
-  for (const key in from) {
-    if (hasOwnProperty.call(from, key)) {
-      assignKey(to, from, key);
-    }
-  }
+  Object.keys(from).forEach(key => {
+    assignKey(to, from, key);
+  });
+
   return to;
 }
