@@ -72,7 +72,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
-    "@vant/eslint-config": "^1.0.5",
+    "@vant/eslint-config": "^1.0.6",
     "@vue/server-test-utils": "^1.0.0-beta.26",
     "@vue/test-utils": "^1.0.0-beta.26",
     "autoprefixer": "^9.3.1",

@@ -618,9 +618,9 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
 
-"@vant/eslint-config@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.0.5.tgz#f34cf53af79a53a657dfed33b8cc7512fd726194"
+"@vant/eslint-config@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@vant/eslint-config/-/eslint-config-1.0.6.tgz#eff2db461cda45b6f2f43e752899d9d928c19ab9"
   dependencies:
     babel-eslint "^10.0.1"
     eslint-config-airbnb-base "^13.1.0"
