@@ -1,3 +1,4 @@
+/* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 export default {
   'changelog.en-US': () => import('../markdown/changelog.en-US.md'),

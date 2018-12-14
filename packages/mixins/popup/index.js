@@ -1,5 +1,3 @@
-/* eslint-disable no-bitwise */
-
 import manager from './manager';
 import context from './context';
 import scrollUtils from '../../utils/scroll';

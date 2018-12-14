@@ -1,9 +1,9 @@
 import '../../packages/index.less';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { progress } from 'vant-doc';
 import App from './WapApp';
 import routes from './router';
-import { progress } from 'vant-doc';
 import 'vant-doc/helper/touch-simulator';
 
 const router = new VueRouter({
@@ -32,7 +32,7 @@ if (process.env.NODE_ENV !== 'production') {
   Vue.config.productionTip = false;
 }
 
-new Vue({ // eslint-disable-line
+new Vue({
   el: '#app',
   render: h => h(App),
   router

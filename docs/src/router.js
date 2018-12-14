@@ -9,10 +9,10 @@ import './utils/iframe-router';
 const registerRoute = (isDemo) => {
   const route = [{
     path: '*',
-    redirect: to => `/${Vue.prototype.$vantLang}/`
+    redirect: () => `/${Vue.prototype.$vantLang}/`
   }];
 
-  Object.keys(docConfig).forEach((lang, index) => {
+  Object.keys(docConfig).forEach((lang) => {
     if (isDemo) {
       route.push({
         path: `/${lang}`,
@@ -25,17 +25,6 @@ const registerRoute = (isDemo) => {
         redirect: `/${lang}/intro`
       });
     }
-
-    const navs = docConfig[lang].nav || [];
-    navs.forEach(nav => {
-      if (nav.groups) {
-        nav.groups.forEach(group => {
-          group.list.forEach(page => addRoute(page, lang));
-        });
-      } else {
-        addRoute(nav, lang);
-      }
-    });
 
     function addRoute(page, lang) {
       let { path } = page;
@@ -65,6 +54,17 @@ const registerRoute = (isDemo) => {
         });
       }
     }
+
+    const navs = docConfig[lang].nav || [];
+    navs.forEach(nav => {
+      if (nav.groups) {
+        nav.groups.forEach(group => {
+          group.list.forEach(page => addRoute(page, lang));
+        });
+      } else {
+        addRoute(nav, lang);
+      }
+    });
   });
 
   return route;

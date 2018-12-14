@@ -10,7 +10,7 @@ const excludes = [
   '.DS_Store'
 ];
 
-module.exports = function() {
+module.exports = function () {
   const dirs = fs.readdirSync(path.resolve(__dirname, '../packages'));
   return dirs.filter(dirName => excludes.indexOf(dirName) === -1);
 };
