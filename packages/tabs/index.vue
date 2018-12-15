@@ -24,14 +24,15 @@
           class="van-tab"
           :class="{
             'van-tab--active': index === curActive,
-            'van-tab--disabled': tab.disabled
+            'van-tab--disabled': tab.disabled,
+            'van-tab--complete': !ellipsis
           }"
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
           <span
             ref="title"
-            class="van-ellipsis"
+            :class="{ 'van-ellipsis': ellipsis }"
           >
             {{ tab.title }}
           </span>
@@ -75,6 +76,10 @@ export default create({
     animated: Boolean,
     offsetTop: Number,
     swipeable: Boolean,
+    ellipsis: {
+      type: Boolean,
+      default: true
+    },
     lineWidth: {
       type: Number,
       default: null
@@ -115,7 +120,7 @@ export default create({
   computed: {
     // whether the nav is scrollable
     scrollable() {
-      return this.tabs.length > this.swipeThreshold;
+      return this.tabs.length > this.swipeThreshold || !this.ellipsis;
     },
 
     wrapStyle() {
@@ -423,7 +428,7 @@ export default create({
         }
       }
 
-      if (this.scrollable) {
+      if (this.scrollable && this.ellipsis) {
         style.flexBasis = 88 / (this.swipeThreshold) + '%';
       }
 
