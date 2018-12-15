@@ -82,6 +82,14 @@ export default create({
     }
   },
 
+  activated() {
+    if (this.rendered) {
+      this.initialize();
+    }
+
+    this.rendered = true;
+  },
+
   destroyed() {
     this.clear();
 
