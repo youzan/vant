@@ -55,6 +55,7 @@ Use `slot` to custom content.
 | centered | Whether content vertical centered | `String` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
 | thumb-link | Thumb link URL | `String` | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
 
 ### Slot
 

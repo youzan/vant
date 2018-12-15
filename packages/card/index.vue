@@ -6,6 +6,12 @@
     >
       <slot name="thumb">
         <img
+          v-if="lazyLoad"
+          v-lazy="thumb"
+          :class="b('img')"
+        >
+        <img
+          v-else
           :src="thumb"
           :class="b('img')"
         >
@@ -81,6 +87,7 @@ export default create({
     thumb: String,
     title: String,
     centered: Boolean,
+    lazyLoad: Boolean,
     thumbLink: String,
     num: [Number, String],
     price: [Number, String],
