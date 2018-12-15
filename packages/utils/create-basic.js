@@ -4,10 +4,12 @@
 import '../locale';
 import bem from '../mixins/bem';
 import i18n from '../mixins/i18n';
-import { isDef } from '.';
+import { isDef, camelize } from '.';
 
 function install(Vue) {
-  Vue.component(this.name, this);
+  const { name } = this;
+  Vue.component(name, this);
+  Vue.component((camelize(`-${name}`)), this);
 }
 
 function returnArray() {
