@@ -13,10 +13,10 @@ Vue.use(Tabbar).use(TabbarItem);
 
 ```html
 <van-tabbar v-model="active">
-  <van-tabbar-item icon="shop">Tab</van-tabbar-item>
-  <van-tabbar-item icon="chat" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="records" info="5">Tab</van-tabbar-item>
-  <van-tabbar-item icon="gold-coin" info="20">Tab</van-tabbar-item>
+  <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
+  <van-tabbar-item icon="freinds-o" info="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -43,8 +43,8 @@ Use `icon` slot to custom icon
       :src="props.active ? icon.active : icon.normal"
     >
   </van-tabbar-item>
-  <van-tabbar-item icon="chat">Tab</van-tabbar-item>
-  <van-tabbar-item icon="records">Tab</van-tabbar-item>
+  <van-tabbar-item icon="search">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 

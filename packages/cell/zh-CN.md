@@ -34,7 +34,7 @@ Vue.use(Cell).use(CellGroup);
 通过`icon`属性在标题左侧展示图标
 
 ```html
-<van-cell title="单元格" icon="location" />
+<van-cell title="单元格" icon="location-o" />
 ```
 
 #### 只设置 value
@@ -69,13 +69,13 @@ Vue.use(Cell).use(CellGroup);
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell value="内容" icon="shop" is-link>
+<van-cell value="内容" icon="shop-o" is-link>
   <template slot="title">
     <span class="custom-text">单元格</span>
     <van-tag type="danger">标签</van-tag>
   </template>
 </van-cell>
-<van-cell title="单元格" icon="location" is-link />
+<van-cell title="单元格" icon="location-o" is-link />
 <van-cell title="单元格">
   <van-icon slot="right-icon" name="search" class="custom-icon" />
 </van-cell>

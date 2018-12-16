@@ -30,22 +30,6 @@ export default {
 }
 ```
 
-#### Description
-
-```html
-<van-steps
-  :active="active"
-  icon="logistics"
-  title="Title"
-  description="Description"
->
-  <van-step>Step1</van-step>
-  <van-step>Step2</van-step>
-  <van-step>Step3</van-step>
-  <van-step>Step4</van-step>
-</van-steps>
-```
-
 #### Vertical Steps
 
 ```html

@@ -27,13 +27,13 @@
     <demo-block :title="$t('titleSlot')">
       <van-collapse v-model="active3">
         <van-collapse-item>
-          <div slot="title">{{ $t('title1') }}<van-icon name="question" /></div>
+          <div slot="title">{{ $t('title1') }}<van-icon name="question-o" /></div>
           {{ $t('content1') }}
         </van-collapse-item>
         <van-collapse-item
           :title="$t('title2')"
           :value="$t('content')"
-          icon="shop"
+          icon="shop-o"
         >
           {{ $t('content2') }}
         </van-collapse-item>
@@ -81,7 +81,7 @@ export default {
 @import '../../style/var';
 
 .demo-collapse {
-  .van-icon-question {
+  .van-icon-question-o {
     color: @blue;
     vertical-align: -3px;
     margin-left: 5px;

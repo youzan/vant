@@ -4,7 +4,7 @@
     :border="false"
     :class="b([type])"
     :is-link="editable"
-    :icon="type === 'edit' ? 'contact' : 'add2'"
+    :icon="type === 'edit' ? 'contact' : 'add-square'"
     @click="onClick"
   >
     <template v-if="type === 'add'">{{ addText || $t('addText') }}</template>

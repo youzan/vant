@@ -32,7 +32,7 @@
       <van-cell
         :title="$t('cell')"
         :value="$t('content')"
-        icon="location"
+        icon="location-o"
       />
     </demo-block>
 
@@ -74,7 +74,7 @@
     <demo-block :title="$t('advancedUsage')">
       <van-cell
         :value="$t('content')"
-        icon="shop"
+        icon="shop-o"
         is-link
       >
         <template slot="title">
@@ -84,7 +84,7 @@
       </van-cell>
       <van-cell
         :title="$t('cell')"
-        icon="location"
+        icon="location-o"
         is-link
       />
       <van-cell :title="$t('cell')">

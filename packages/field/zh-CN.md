@@ -30,7 +30,7 @@ Vue.use(Field);
     required
     clearable
     label="用户名"
-    icon="question"
+    icon="question-o"
     placeholder="请输入用户名"
     @click-icon="$toast('question')"
   />

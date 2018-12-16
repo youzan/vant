@@ -31,7 +31,7 @@ Vue.use(Cell).use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell title="Cell title" icon="location" />
+  <van-cell title="Cell title" icon="location-o" />
 </van-cell-group>
 ```
 
@@ -66,13 +66,13 @@ Vue.use(Cell).use(CellGroup);
 
 ```html
 <van-cell-group>
-  <van-cell value="Content" icon="shop" is-link>
+  <van-cell value="Content" icon="shop-o" is-link>
     <template slot="title">
       <span class="custom-text">Cell title</span>
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
-  <van-cell title="Cell title" icon="location" is-link />
+  <van-cell title="Cell title" icon="location-o" is-link />
   <van-cell title="Cell title">
     <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>

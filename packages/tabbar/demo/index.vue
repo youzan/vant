@@ -2,21 +2,21 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-tabbar v-model="active">
-        <van-tabbar-item icon="shop">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="home-o">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item
-          icon="chat"
+          icon="search"
           dot
         >
           {{ $t('tab') }}
         </van-tabbar-item>
         <van-tabbar-item
-          icon="records"
+          icon="friends-o"
           info="5"
         >
           {{ $t('tab') }}
         </van-tabbar-item>
         <van-tabbar-item
-          icon="gold-coin"
+          icon="setting-o"
           info="20"
         >
           {{ $t('tab') }}
@@ -34,8 +34,8 @@
             :src="props.active ? icon.active : icon.normal"
           >
         </van-tabbar-item>
-        <van-tabbar-item icon="chat">{{ $t('tab') }}</van-tabbar-item>
-        <van-tabbar-item icon="records">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">{{ $t('tab') }}</van-tabbar-item>
       </van-tabbar>
     </demo-block>
   </demo-section>
