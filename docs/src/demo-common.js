@@ -4,7 +4,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
+import VantDoc, { DemoBlock, DemoSection } from '@vant/doc';
 import i18n from '../../packages/mixins/i18n';
 import Vant, { Lazyload, Locale } from '../../packages';
 import { camelize } from '../../packages/utils';

@@ -6,9 +6,9 @@
     >
       <van-tab title="基础图标">
         <van-col
-          v-for="icon in basic"
+          v-for="icon in icons.basic"
           :key="icon"
-          span="8"
+          span="6"
         >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
@@ -16,9 +16,9 @@
       </van-tab>
       <van-tab title="线框风格">
         <van-col
-          v-for="icon in outline"
+          v-for="icon in icons.outline"
           :key="icon"
-          span="8"
+          span="6"
         >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
@@ -26,9 +26,9 @@
       </van-tab>
       <van-tab title="实底风格">
         <van-col
-          v-for="icon in filled"
+          v-for="icon in icons.filled"
           :key="icon"
-          span="8"
+          span="6"
         >
           <van-icon :name="icon" />
           <span>{{ icon }}</span>
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import icons from '../config';
+import icons from '@vant/icons';
 
 export default {
   i18n: {
@@ -56,9 +56,7 @@ export default {
   },
 
   data() {
-    this.basic = icons.basic.map(icon => icon.css);
-    this.outline = icons.outline.map(icon => icon.css);
-    this.filled = icons.filled.map(icon => icon.css);
+    this.icons = icons;
     return {
       tab: 0
     };
@@ -82,21 +80,23 @@ export default {
     height: 100px;
     display: inline-block;
     vertical-align: middle;
+
+    span {
+      display: block;
+      padding: 0 5px;
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 
   .van-icon {
     font-size: 32px;
     margin: 15px 0;
-    color: rgba(69, 90, 100, 0.8);
+    color: rgb(69, 90, 100);
   }
 
   .van-tab__pane {
     padding-top: 10px;
-  }
-
-  span {
-    display: block;
-    font-size: 14px;
   }
 }
 </style>
