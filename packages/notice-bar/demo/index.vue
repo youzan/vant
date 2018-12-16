@@ -3,7 +3,7 @@
     <demo-block :title="$t('basicUsage')">
       <van-notice-bar
         :text="$t('text')"
-        left-icon="//img.yzcdn.cn/vant/volume.png"
+        left-icon="volume-o"
       />
     </demo-block>
 
