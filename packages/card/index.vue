@@ -1,6 +1,7 @@
 <template>
   <div :class="b({ center: centered })">
     <a
+      v-if="thumb || $slots.thumb"
       :href="thumbLink"
       :class="b('thumb')"
     >
@@ -25,28 +26,33 @@
         {{ tag }}
       </van-tag>
     </a>
+
     <div :class="b('content')">
-      <div :class="b('left')">
-        <slot name="title">
-          <div
-            v-if="title"
-            :class="b('title')"
-          >
-            {{ title }}
-          </div>
-        </slot>
-        <slot name="desc">
-          <div
-            v-if="desc"
-            :class="[b('desc'), 'van-ellipsis']"
-          >
-            {{ desc }}
-          </div>
-        </slot>
-        <slot name="tags" />
-      </div>
-      <div :class="b('right')">
-        <div v-if="isDef(price)">{{ currency }} {{ price }}</div>
+      <slot name="title">
+        <div
+          v-if="title"
+          :class="b('title')"
+        >
+          {{ title }}
+        </div>
+      </slot>
+      <slot name="desc">
+        <div
+          v-if="desc"
+          :class="[b('desc'), 'van-ellipsis']"
+        >
+          {{ desc }}
+        </div>
+      </slot>
+      <slot name="tags" />
+
+      <div class="van-card__bottom">
+        <div
+          v-if="isDef(price)"
+          :class="b('price')"
+        >
+          {{ currency }} {{ price }}
+        </div>
         <div
           v-if="isDef(originPrice)"
           :class="b('origin-price')"
@@ -61,6 +67,7 @@
         </div>
       </div>
     </div>
+
     <div
       :class="b('footer')"
       v-if="$slots.footer"

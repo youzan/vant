@@ -3,12 +3,13 @@
 
 .van-card {
   color: @text-color;
-  height: 100px;
+  display: flex;
   font-size: 12px;
   position: relative;
   box-sizing: border-box;
-  padding: 5px 15px 5px 115px;
+  padding: 5px 15px;
   background-color: @background-color-light;
+  flex-wrap: wrap;
 
   &:not(:first-child) {
     margin-top: 10px;
@@ -21,11 +22,11 @@
   }
 
   &__thumb {
-    top: 5px;
-    left: 15px;
+    position: relative;
     width: 90px;
     height: 90px;
-    position: absolute;
+    margin-right: 10px;
+    flex: none;
 
     img {
       border: none;
@@ -34,52 +35,52 @@
     }
   }
 
-  &,
-  &__thumb,
   &__content {
-    display: flex;
-  }
-
-  &__content {
-    width: 100%;
+    position: relative;
+    height: 90px;
+    flex: 1;
   }
 
   &__title,
   &__desc {
-    line-height: 20px;
+    line-height: 17px;
     word-break: break-all;
   }
 
   &__title {
-    max-height: 40px;
+    max-height: 34px;
+    font-weight: bold;
 
     .multi-ellipsis(2);
   }
 
   &__desc {
     color: @gray-darker;
-    max-height: 20px;
+    max-height: 17px;
   }
 
-  &__left {
-    flex: 1;
-    min-width: 0; /* hack for flex box ellipsis */
+  &__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 17px;
   }
 
-  &__right {
-    flex-shrink: 0;
-    line-height: 20px;
-    padding-left: 10px;
-    text-align: right;
+  &__price {
+    display: inline-block;
   }
 
   &__origin-price {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 10px;
     color: @gray-darker;
     text-decoration: line-through;
   }
 
   &__num {
-    color: @gray-darker;
+    float: right;
   }
 
   &__tag {
@@ -89,9 +90,9 @@
   }
 
   &__footer {
-    right: 15px;
-    bottom: 8px;
-    position: absolute;
+    width: 100%;
+    text-align: right;
+    flex: none;
 
     .van-button {
       margin-left: 5px;

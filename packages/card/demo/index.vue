@@ -10,6 +10,15 @@
       />
     </demo-block>
 
+    <demo-block :title="$t('basicUsage')">
+      <van-card
+        num="2"
+        price="2.00"
+        :desc="$t('desc')"
+        :title="$t('title')"
+      />
+    </demo-block>
+
     <demo-block :title="$t('advancedUsage')">
       <van-card
         num="2"
