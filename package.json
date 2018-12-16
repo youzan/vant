@@ -59,21 +59,21 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@vant/icons": "^0.0.2",
+    "@vant/icons": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
+    "@babel/core": "^7.2.2",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-transform-object-assign": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.6",
     "@vant/doc": "^1.0.20",
-    "@vant/eslint-config": "^1.0.6",
+    "@vant/eslint-config": "^1.0.7",
     "@vue/server-test-utils": "^1.0.0-beta.26",
     "@vue/test-utils": "^1.0.0-beta.26",
     "autoprefixer": "^9.3.1",
@@ -82,7 +82,7 @@
     "babel-loader": "^8.0.4",
     "codecov": "^3.1.0",
     "cross-env": "^5.2.0",
-    "css-loader": "^2.0.0",
+    "css-loader": "^2.0.1",
     "dependency-tree": "^6.3.0",
     "eslint": "^5.9.0",
     "fast-glob": "^2.2.4",
