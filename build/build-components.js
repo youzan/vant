@@ -4,7 +4,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const babel = require('@babel/core');
-const compiler = require('vue-sfc-compiler');
+const compiler = require('@vant/compiler');
 const markdownVetur = require('markdown-vetur');
 
 const esDir = path.join(__dirname, '../es');
