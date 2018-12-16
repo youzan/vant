@@ -1,13 +1,9 @@
-缺少：
-- exchange-record
-- add2
-- new
-
 移除：
 - edit-data
 - pending-deliver
 - pending-evaluate
 - points-mall
+- exchange-record
 
 重命名：
 - password-view -> eye
@@ -19,3 +15,4 @@
 - receive-gift -> gift
 - pending-orders -> orders-o
 - gift-card-pay -> gift-card
+- add2 -> add-square
