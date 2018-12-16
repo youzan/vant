@@ -160,6 +160,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | offset-top | Offset top when use sticky mode | `Number` | `0` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 | animated | Whether to change tabs with animation | `Boolean` | `false` |
+| ellipsis | Whether to ellipsis too long title | `Boolean` | `true` |
 
 ### Tab API
 

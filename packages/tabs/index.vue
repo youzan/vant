@@ -24,14 +24,15 @@
           class="van-tab"
           :class="{
             'van-tab--active': index === curActive,
-            'van-tab--disabled': tab.disabled
+            'van-tab--disabled': tab.disabled,
+            'van-tab--complete': !ellipsis
           }"
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
           <span
             ref="title"
-            class="van-ellipsis"
+            :class="{ 'van-ellipsis': ellipsis }"
           >
             {{ tab.title }}
           </span>
@@ -43,7 +44,6 @@
       :class="b('content')"
     >
       <div
-        v-show="computedWidth !== 0"
         :class="b('track')"
         :style="trackStyle"
       >
@@ -75,6 +75,10 @@ export default create({
     animated: Boolean,
     offsetTop: Number,
     swipeable: Boolean,
+    ellipsis: {
+      type: Boolean,
+      default: true
+    },
     lineWidth: {
       type: Number,
       default: null
@@ -107,15 +111,14 @@ export default create({
         resize: false,
         sticky: false,
         swipeable: false
-      },
-      computedWidth: 0
+      }
     };
   },
 
   computed: {
     // whether the nav is scrollable
     scrollable() {
-      return this.tabs.length > this.swipeThreshold;
+      return this.tabs.length > this.swipeThreshold || !this.ellipsis;
     },
 
     wrapStyle() {
@@ -144,18 +147,18 @@ export default create({
     trackStyle() {
       const {
         curActive,
-        computedWidth = 0,
-        tabs,
         animated
       } = this;
-      if (!animated) return {};
 
-      const offset = -1 * computedWidth * curActive;
-      return {
-        width: `${computedWidth * tabs.length}px`,
-        transitionDuration: `${this.duration}s`,
-        transform: `translateX(${offset}px)`
+      const trackStyle = {
+        left: `${-1 * curActive * 100}%`
       };
+
+      if (animated) {
+        trackStyle.transitionDuration = `${this.duration}s`;
+      }
+
+      return trackStyle;
     }
   },
 
@@ -198,7 +201,6 @@ export default create({
   mounted() {
     this.correctActive(this.active);
     this.setLine();
-    this.setWidth();
 
     this.$nextTick(() => {
       this.handlers(true);
@@ -222,13 +224,6 @@ export default create({
   },
 
   methods: {
-    setWidth() {
-      if (this.$el) {
-        const rect = this.$el.getBoundingClientRect() || {};
-        this.computedWidth = rect.width;
-      }
-    },
-
     // whether to bind sticky listener
     handlers(bind) {
       const { events } = this;
@@ -423,7 +418,7 @@ export default create({
         }
       }
 
-      if (this.scrollable) {
+      if (this.scrollable && this.ellipsis) {
         style.flexBasis = 88 / (this.swipeThreshold) + '%';
       }
 

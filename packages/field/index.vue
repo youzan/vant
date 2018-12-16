@@ -146,7 +146,7 @@ export default create({
       let { value } = target;
       const { maxlength } = this.$attrs;
 
-      if (this.isDef(maxlength) && value.length > maxlength) {
+      if (this.type === 'number' && this.isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
         target.value = value;
       }

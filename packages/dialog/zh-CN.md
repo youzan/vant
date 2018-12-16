@@ -76,7 +76,7 @@ export default {
 |------|------|------|------|------|
 | title | 标题 | `String` | - | - |
 | message | 内容 | `String` | - | - |
-| messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.4.10 |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.1.7 |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` | - |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` | - |
@@ -140,7 +140,7 @@ export default {
 | v-model | 是否显示弹窗 | `Boolean` | - | - |
 | title | 标题 | `String` | - | - |
 | message | 内容 | `String` | - | - |
-| message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.4.10 |
+| message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` | - |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` | - |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` | - |

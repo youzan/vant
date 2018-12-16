@@ -92,15 +92,15 @@
 
     <demo-block :title="$t('title8')">
       <van-tabs
-        :active="active"
         animated
+        class="animated-tabs"
       >
         <van-tab
           :title="$t('tab') + index"
           v-for="index in tabs"
           :key="index"
         >
-          {{ $t('content') }} {{ index }}
+          <div class="custom-content-wrap">{{ $t('content') }} {{ index }}</div>
         </van-tab>
       </van-tabs>
     </demo-block>
@@ -213,6 +213,17 @@ export default {
     .van-tab__pane {
       padding: 50px 20px;
     }
+  }
+
+  .animated-tabs {
+    .van-tab__pane {
+      padding: 0 20px;
+    }
+  }
+
+  .custom-content-wrap {
+    height: 60px;
+    line-height: 60px;
   }
 }
 </style>

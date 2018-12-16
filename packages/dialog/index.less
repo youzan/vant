@@ -11,6 +11,7 @@
   border-radius: 4px;
   background-color: @white;
   transform: translate3d(-50%, -50%, 0);
+  backface-visibility: hidden; // avoid blurry text after scale animation
 
   &__header {
     font-weight: 500;
