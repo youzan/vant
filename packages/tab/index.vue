@@ -1,6 +1,7 @@
 <template>
   <div
-    :class="b('pane', { inactive: !isSelected, active: isSelected })"
+    v-show="isSelected || parent.animated"
+    :class="b('pane')"
   >
     <slot v-if="inited" />
     <div
@@ -29,8 +30,7 @@ export default create({
 
   data() {
     return {
-      inited: false,
-      paneStyle: {}
+      inited: false
     };
   },
 

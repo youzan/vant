@@ -44,11 +44,13 @@
       :class="b('content')"
     >
       <div
+        v-if="animated"
         :class="b('track')"
         :style="trackStyle"
       >
         <slot />
       </div>
+      <slot v-else />
     </div>
   </div>
 </template>
@@ -145,20 +147,12 @@ export default create({
     },
 
     trackStyle() {
-      const {
-        curActive,
-        animated
-      } = this;
-
-      const trackStyle = {
-        left: `${-1 * curActive * 100}%`
-      };
-
-      if (animated) {
-        trackStyle.transitionDuration = `${this.duration}s`;
+      if (this.animated) {
+        return {
+          left: `${-1 * this.curActive * 100}%`,
+          transitionDuration: `${this.duration}s`
+        };
       }
-
-      return trackStyle;
     }
   },
 
