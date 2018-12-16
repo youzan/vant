@@ -11,21 +11,6 @@
       <van-button @click="nextStep">{{ $t('nextStep') }}</van-button>
     </demo-block>
 
-    <demo-block :title="$t('title2')">
-      <van-steps
-        :active="active"
-        icon="logistics"
-        icon-class="steps-success"
-        :title="$t('title')"
-        :description="$t('desc')"
-      >
-        <van-step>{{ $t('step1') }}</van-step>
-        <van-step>{{ $t('step2') }}</van-step>
-        <van-step>{{ $t('step3') }}</van-step>
-        <van-step>{{ $t('step4') }}</van-step>
-      </van-steps>
-    </demo-block>
-
     <demo-block :title="$t('title3')">
       <van-steps
         :active="0"

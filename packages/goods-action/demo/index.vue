@@ -3,12 +3,12 @@
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
         <van-goods-action-mini-btn
-          icon="chat"
+          icon="chat-o"
           :text="$t('icon1')"
           @click="onClickMiniBtn"
         />
         <van-goods-action-mini-btn
-          icon="cart"
+          icon="cart-o"
           :text="$t('icon2')"
           @click="onClickMiniBtn"
         />
@@ -27,18 +27,18 @@
     <demo-block :title="$t('title2')">
       <van-goods-action>
         <van-goods-action-mini-btn
-          icon="chat"
+          icon="chat-o"
           :text="$t('icon1')"
           @click="onClickMiniBtn"
         />
         <van-goods-action-mini-btn
-          icon="cart"
+          icon="cart-o"
           info="5"
           :text="$t('icon2')"
           @click="onClickMiniBtn"
         />
         <van-goods-action-mini-btn
-          icon="shop"
+          icon="shop-o"
           :text="$t('icon3')"
           @click="onClickMiniBtn"
         />

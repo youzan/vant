@@ -16,7 +16,7 @@
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
           clearable
-          icon="question"
+          icon="question-o"
           required
           @click-icon="$toast('question')"
         />

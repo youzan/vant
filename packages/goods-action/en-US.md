@@ -19,10 +19,25 @@ Vue
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn icon="chat" text="Icon1" @click="onClickMiniBtn" />
-  <van-goods-action-mini-btn icon="cart" text="Icon2" @click="onClickMiniBtn" />
-  <van-goods-action-big-btn text="Button1" @click="onClickBigBtn" />
-  <van-goods-action-big-btn text="Button2" @click="onClickBigBtn" primary />
+  <van-goods-action-mini-btn
+    icon="chat-o"
+    text="Icon1"
+    @click="onClickMiniBtn"
+  />
+  <van-goods-action-mini-btn
+    icon="cart-o"
+    text="Icon2"
+    @click="onClickMiniBtn"
+  />
+  <van-goods-action-big-btn
+    text="Button1"
+    @click="onClickBigBtn"
+  />
+  <van-goods-action-big-btn
+    primary
+    text="Button2"
+    @click="onClickBigBtn"
+  />
 </van-goods-action>
 ```
 
@@ -40,15 +55,29 @@ export default {
 ```
 
 #### Icon info
+
 Use `info` prop to show messages in upper right corner of icon
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn icon="chat" text="Icon1" />
-  <van-goods-action-mini-btn icon="cart" text="Icon2" info="5" />
-  <van-goods-action-mini-btn icon="shop" text="Icon3" />
+  <van-goods-action-mini-btn
+    icon="chat-o"
+    text="Icon1"
+  />
+  <van-goods-action-mini-btn
+    info="5"
+    icon="cart-o"
+    text="Icon2"
+  />
+  <van-goods-action-mini-btn
+    icon="shop-o"
+    text="Icon3"
+  />
   <van-goods-action-big-btn text="Button1" />
-  <van-goods-action-big-btn text="Button2" primary />
+  <van-goods-action-big-btn
+    primary
+    text="Button2"
+  />
 </van-goods-action>
 ```
 

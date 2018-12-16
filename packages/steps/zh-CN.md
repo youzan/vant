@@ -30,24 +30,6 @@ export default {
 }
 ```
 
-#### 描述信息
-
-通过`title`和`description`属性来定义描述信息信息
-
-```html
-<van-steps
-  :active="active"
-  icon="logistics"
-  title="标题"
-  description="描述信息"
->
-  <van-step>买家下单</van-step>
-  <van-step>商家接单</van-step>
-  <van-step>买家提货</van-step>
-  <van-step>交易完成</van-step>
-</van-steps>
-```
-
 #### 竖向步骤条
 可以通过设置`direction`属性来改变步骤条的显示方式
 
