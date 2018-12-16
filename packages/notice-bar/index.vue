@@ -5,12 +5,11 @@
     :style="barStyle"
     @click="$emit('click')"
   >
-    <div
+    <icon
       v-if="leftIcon"
       :class="b('left-icon')"
-    >
-      <img :src="leftIcon">
-    </div>
+      :name="leftIcon"
+    />
     <div
       ref="wrap"
       :class="b('wrap')"
@@ -73,7 +72,7 @@ export default create({
 
   computed: {
     iconName() {
-      return this.mode === 'closeable' ? 'close' : this.mode === 'link' ? 'arrow' : '';
+      return this.mode === 'closeable' ? 'cross' : this.mode === 'link' ? 'arrow' : '';
     },
 
     barStyle() {
