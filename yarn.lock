@@ -705,9 +705,9 @@
     eslint-plugin-import "^2.14.0"
     eslint-plugin-vue "^5.0.0"
 
-"@vant/icons@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.0.0.tgz#2e94cef445ab7f9ec99019f2126c2b7e6dfe3c25"
+"@vant/icons@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.0.1.tgz#e098f90b8420655b7caf0047b2e33c6115bf5c5c"
 
 "@vant/markdown-loader@^1.0.3":
   version "1.0.3"
