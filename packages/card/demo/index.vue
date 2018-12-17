@@ -20,13 +20,39 @@
         :title="$t('title')"
         :thumb="imageURL"
       >
-        <div slot="tags" class="card__tags">
-          <van-tag plain type="danger">标签1</van-tag>
-          <van-tag plain type="danger">标签2</van-tag>
+        <div
+          slot="tags"
+          class="card__tags"
+        >
+          <van-tag
+            plain
+            type="danger"
+          >
+            标签1
+          </van-tag>
+          <van-tag
+            plain
+            type="danger"
+          >
+            标签2
+          </van-tag>
         </div>
-        <div slot="footer" class="card__footer">
-          <van-button round size="mini">{{ $t('button') }}</van-button>
-          <van-button round size="mini">{{ $t('button') }}</van-button>
+        <div
+          slot="footer"
+          class="card__footer"
+        >
+          <van-button
+            round
+            size="mini"
+          >
+            {{ $t('button') }}
+          </van-button>
+          <van-button
+            round
+            size="mini"
+          >
+            {{ $t('button') }}
+          </van-button>
         </div>
       </van-card>
     </demo-block>
