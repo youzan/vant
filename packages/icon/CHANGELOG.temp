@@ -6,13 +6,13 @@
 - exchange-record
 
 重命名：
+- warn -> info
+- check -> circle
+- add2 -> add-square
+- question2 -> question
 - password-view -> eye
 - password-not-view -> closed-eye
-- check -> circle
-- warn -> info
 - value-card -> balance-o
-- question2 -> question
 - receive-gift -> gift
 - pending-orders -> orders-o
 - gift-card-pay -> gift-card
-- add2 -> add-square
