@@ -29,6 +29,7 @@ export default create({
     value: null,
     integer: Boolean,
     disabled: Boolean,
+    asyncChange: Boolean,
     disableInput: Boolean,
     min: {
       type: [String, Number],
@@ -98,11 +99,16 @@ export default create({
       const { value } = event.target;
       const formatted = this.format(value);
 
-      if (+value !== formatted) {
-        event.target.value = formatted;
+      if (!this.asyncChange) {
+        if (+value !== formatted) {
+          event.target.value = formatted;
+        }
+        this.currentValue = formatted;
+      } else {
+        event.target.value = this.currentValue;
+        this.$emit('input', formatted);
+        this.$emit('change', formatted);
       }
-
-      this.currentValue = formatted;
     },
 
     onChange(type) {
@@ -113,7 +119,13 @@ export default create({
 
       const diff = type === 'minus' ? -this.step : +this.step;
       const value = Math.round((this.currentValue + diff) * 100) / 100;
-      this.currentValue = this.range(value);
+
+      if (!this.asyncChange) {
+        this.currentValue = this.range(value);
+      } else {
+        this.$emit('input', value);
+        this.$emit('change', value);
+      }
       this.$emit(type);
     },
 
