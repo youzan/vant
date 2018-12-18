@@ -1,3 +1,5 @@
+const fs = require('fs-extra');
+const glob = require('fast-glob');
 const path = require('path');
 const gulp = require('gulp');
 const less = require('gulp-less');
@@ -16,4 +18,15 @@ gulp.task('compile', () => (
     .pipe(gulp.dest(file => file.base.replace('.less', '.css')))
 ));
 
-gulp.task('default', ['compile']);
+// icon.less should be replaced by compiled file
+gulp.task('default', ['compile'], () => (
+  glob([
+    '../es/icon/*.css',
+    '../lib/icon/*.css'
+  ]).then(files => {
+    files.forEach(file => {
+      file = path.join(__dirname, file);
+      fs.copyFileSync(file, file.replace('.css', '.less'));
+    });
+  })
+));
