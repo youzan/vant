@@ -19,7 +19,7 @@ exports[`renders demo correctly 1`] = `
               <!---->
               <!---->
               <div class="van-cell__value van-cell__value--alone">
-                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-check" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span> <span class="van-radio__label"><div class="van-contact-list__name">张三，13000000000</div></span></div>
+                <div class="van-radio"><span class="van-radio__input"><input type="radio" value="0" class="van-radio__control"> <i class="van-icon van-icon-circle" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span> <span class="van-radio__label"><div class="van-contact-list__name">张三，13000000000</div></span></div>
               </div> <i class="van-icon van-icon-edit van-contact-list__edit" style="color:undefined;font-size:undefined;">
                 <!---->
                 <!----></i>
