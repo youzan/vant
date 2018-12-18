@@ -17,12 +17,17 @@
     width: 100%;
     resize: none;
     display: block;
+    color: @text-color;
     box-sizing: border-box;
     background-color: transparent;
 
+    &::placeholder {
+      color: @gray-dark;
+    }
+
     &:disabled {
       opacity: 1;
-      color: @gray-darker;
+      color: @gray-dark;
       background-color: transparent;
     }
 
