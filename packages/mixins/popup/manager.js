@@ -15,7 +15,7 @@ export default {
       const target = el && el.parentNode ? el.parentNode : document.body;
       context.stack.push({ vm, config, target });
       this.update();
-    };
+    }
   },
 
   close(vm) {
@@ -51,9 +51,7 @@ export default {
       const { target, config } = context.top;
 
       target.appendChild(modal.$el);
-      Object.assign(modal, {
-        ...defaultConfig,
-        ...config,
+      Object.assign(modal, defaultConfig, config, {
         visible: true
       });
     }

@@ -1,12 +1,12 @@
 import Uploader from '..';
 import { mount, later } from '../../../test/utils';
 
-window.File = function() {
+window.File = function () {
   this.size = 10000;
 };
 
-window.FileReader = function() {
-  this.readAsDataURL = this.readAsText = function() {
+window.FileReader = function () {
+  this.readAsText = function () {
     this.onload &&
       this.onload({
         target: {
@@ -14,11 +14,12 @@ window.FileReader = function() {
         }
       });
   };
+  this.readAsDataURL = this.readAsText;
 };
 
 const mockFile = new File([], '/Users');
-const file = { target: { files: [mockFile] }};
-const multiFile = { target: { files: [mockFile, mockFile] }};
+const file = { target: { files: [mockFile] } };
+const multiFile = { target: { files: [mockFile, mockFile] } };
 
 test('disabled', () => {
   const afterRead = jest.fn();
@@ -37,8 +38,8 @@ it('read text', done => {
   const wrapper = mount(Uploader, {
     propsData: {
       resultType: 'text',
-      afterRead: file => {
-        expect(file.content).toEqual('test');
+      afterRead: readFile => {
+        expect(readFile.content).toEqual('test');
         done();
       }
     }
@@ -72,7 +73,7 @@ it('before read return false', () => {
   expect(afterRead.mock.calls.length).toBeFalsy();
 });
 
-test('file size overlimit', async() => {
+test('file size overlimit', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
       maxSize: 1

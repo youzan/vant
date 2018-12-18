@@ -3,9 +3,9 @@
  */
 
 import { setLang } from './lang';
-import { iframeReady, isMobile } from './';
+import { iframeReady, isMobile } from '.';
 
-window.syncPath = function(dir) {
+window.syncPath = function () {
   const router = window.vueRouter;
   const isInIframe = window !== window.top;
   const currentDir = router.history.current.path;
@@ -28,7 +28,7 @@ window.syncPath = function(dir) {
   }
 };
 
-window.changePath = function(lang, path = '') {
+window.changePath = function (lang, path = '') {
   setLang(lang);
   window.vueRouter.replace(path);
 };

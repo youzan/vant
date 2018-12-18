@@ -116,7 +116,7 @@
 
 <script>
 import skuData from './data';
-import { LIMIT_TYPE } from '../../../packages/sku/constants';
+import { LIMIT_TYPE } from '../constants';
 
 export default {
   i18n: {
@@ -145,9 +145,7 @@ export default {
         s1: '30349',
         s2: '1193'
       },
-      customSkuValidator: (component) => {
-        return '请选择xxx';
-      },
+      customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
         quotaText: '单次限购100件',
         stockFormatter: (stock) => `剩余${stock}件`,
@@ -166,11 +164,9 @@ export default {
         }
       },
       messageConfig: {
-        uploadImg: (file, img) => {
-          return new Promise(resolve => {
-            setTimeout(() => resolve(img), 1000);
-          });
-        },
+        uploadImg: (file, img) => new Promise(resolve => {
+          setTimeout(() => resolve(img), 1000);
+        }),
         uploadMaxSize: 3
       }
     };

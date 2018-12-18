@@ -8,7 +8,7 @@ const firstOption = [
   { code: '110101', name: '东城区' }
 ];
 
-test('confirm & cancel event', async() => {
+test('confirm & cancel event', async () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList
@@ -24,7 +24,7 @@ test('confirm & cancel event', async() => {
   expect(wrapper.emitted('cancel')[0][0]).toEqual(firstOption);
 });
 
-test('watch areaList & code', async() => {
+test('watch areaList & code', async () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList
@@ -71,7 +71,7 @@ test('getValues method', () => {
   expect(wrapper.vm.getValues()).toEqual(firstOption);
 });
 
-test('reset method', async() => {
+test('reset method', async () => {
   const wrapper = mount(Area, {
     propsData: {
       areaList,

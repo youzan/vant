@@ -19,6 +19,7 @@ export default {
       group1: '所有城市',
       group2: '浙江',
       group3: '江苏',
+      group4: '福建',
       city1: [{
         text: '杭州',
         id: 1
@@ -45,12 +46,20 @@ export default {
       }, {
         text: '苏州',
         id: 8
+      }],
+      city3: [{
+        text: '泉州',
+        id: 9
+      }, {
+        text: '厦门',
+        id: 10
       }]
     },
     'en-US': {
       group1: 'All',
       group2: 'Group1',
       group3: 'Group2',
+      group4: 'Group3',
       city1: [{
         text: 'Delaware',
         id: 1
@@ -77,7 +86,14 @@ export default {
       }, {
         text: 'Texas',
         id: 8
-      }]
+      }],
+      city3: [{
+        text: 'Alabama',
+        id: 9
+      }, {
+        text: 'Kansas',
+        id: 10
+      }],
     }
   },
 
@@ -99,6 +115,10 @@ export default {
       }, {
         text: this.$t('group3'),
         children: this.$t('city2')
+      }, {
+        text: this.$t('group4'),
+        disabled: true,
+        children: this.$t('city3')
       }];
     }
   },

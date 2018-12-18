@@ -68,10 +68,14 @@ export default {
 ```html
 <van-collapse v-model="activeNames">
   <van-collapse-item name="1">
-    <div slot="title">有赞微商城<van-icon name="question" /></div>
+    <div slot="title">有赞微商城<van-icon name="question-o" /></div>
     提供多样店铺模板，快速搭建网上商城
   </van-collapse-item>
-  <van-collapse-item title="有赞零售" name="2">
+  <van-collapse-item
+    title="有赞零售"
+    name="2"
+    icon="shop-o"
+  >
     网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失
   </van-collapse-item>
 </van-collapse>

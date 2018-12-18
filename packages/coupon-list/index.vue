@@ -35,6 +35,7 @@
             v-for="(item, index) in coupons"
             :key="item.id || item.name"
             :data="item"
+            :currency="currency"
             :chosen="index === chosenCoupon"
             @click.native="$emit('change', index)"
           />
@@ -42,7 +43,7 @@
             v-if="!coupons.length"
             :class="b('empty')"
           >
-            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
             <p>{{ $t('empty') }}</p>
           </div>
         </div>
@@ -57,12 +58,13 @@
             v-for="item in disabledCoupons"
             :key="item.id || item.name"
             :data="item"
+            :currency="currency"
           />
           <div
             v-if="!disabledCoupons.length"
             :class="b('empty')"
           >
-            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png" >
+            <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
             <p>{{ $t('empty') }}</p>
           </div>
         </div>
@@ -129,6 +131,10 @@ export default create({
     showCloseButton: {
       type: Boolean,
       default: true
+    },
+    currency: {
+      type: String,
+      default: '¥'
     }
   },
 

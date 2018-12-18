@@ -8,19 +8,17 @@ exports[`change tabs data 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: 0%;">
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <div><span>title2</span></div>
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <div><span>title2</span></div>
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -35,7 +33,7 @@ exports[`change tabs data 2`] = `
           title1
         </span></div>
       <div class="van-tab"><span class="van-ellipsis">
-          
+
         </span></div>
       <div class="van-tab van-tab--disabled"><span class="van-ellipsis">
           title3
@@ -43,19 +41,17 @@ exports[`change tabs data 2`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: 0%;">
-      <div class="van-tab__pane van-tab__pane--active">
-        <!---->
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <div><span>title2</span></div>
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="">
+      <!---->
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <div><span>title2</span></div>
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -65,7 +61,7 @@ exports[`click to switch tab 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
@@ -78,17 +74,15 @@ exports[`click to switch tab 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: 0%;">
-      <div class="van-tab__pane van-tab__pane--active">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -98,7 +92,7 @@ exports[`click to switch tab 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
@@ -111,17 +105,15 @@ exports[`click to switch tab 2`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: -100%;">
-      <div class="van-tab__pane van-tab__pane--inactive">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--active">
-        Text
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="display: none;">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -131,7 +123,7 @@ exports[`swipe to switch tab 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
@@ -144,17 +136,15 @@ exports[`swipe to switch tab 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: 0%;">
-      <div class="van-tab__pane van-tab__pane--active">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -164,7 +154,7 @@ exports[`swipe to switch tab 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
@@ -177,17 +167,15 @@ exports[`swipe to switch tab 2`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: -100%;">
-      <div class="van-tab__pane van-tab__pane--inactive">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--active">
-        Text
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="display: none;">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -197,7 +185,7 @@ exports[`swipe to switch tab 3`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab"><span class="van-ellipsis">
           title1
         </span></div>
@@ -210,17 +198,15 @@ exports[`swipe to switch tab 3`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: -100%;">
-      <div class="van-tab__pane van-tab__pane--inactive">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--active">
-        Text
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="display: none;">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>
@@ -230,7 +216,7 @@ exports[`swipe to switch tab 4`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line" style="width: 2px; background-color: rgb(255, 68, 68); transform: translateX(-1px);"></div>
       <div class="van-tab van-tab--active"><span class="van-ellipsis">
           title1
         </span></div>
@@ -243,17 +229,15 @@ exports[`swipe to switch tab 4`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tabs__track" style="left: 0%;">
-      <div class="van-tab__pane van-tab__pane--active">Text
-        <!---->
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        Text
-      </div>
-      <div class="van-tab__pane van-tab__pane--inactive">
-        <!---->
-        <!---->
-      </div>
+    <div class="van-tab__pane" style="">Text
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+      <!---->
     </div>
   </div>
 </div>

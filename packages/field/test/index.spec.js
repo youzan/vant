@@ -1,4 +1,4 @@
-import Field from '../';
+import Field from '..';
 import { mount, later } from '../../../test/utils';
 
 test('input event', () => {
@@ -55,7 +55,7 @@ test('keypress event', () => {
   expect(calls.length).toBe(2);
 });
 
-test('render textarea', async() => {
+test('render textarea', async () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
@@ -82,7 +82,7 @@ test('autosize textarea field', () => {
   expect(textarea.element.value).toEqual(value);
 });
 
-test('autosize object', async() => {
+test('autosize object', async () => {
   const wrapper = mount(Field, {
     propsData: {
       type: 'textarea',
@@ -120,7 +120,7 @@ test('focus method', () => {
   expect(fn.mock.calls.length).toEqual(1);
 });
 
-test('maxlength', async() => {
+test('maxlength', async () => {
   const wrapper = mount(Field, {
     attrs: {
       maxlength: 3

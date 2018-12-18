@@ -65,7 +65,7 @@ export default {
       this.$toast.fail(this.$t('text3'));
     },
 
-    showCustomizedToast(duration) {
+    showCustomizedToast() {
       const toast = this.$toast.loading({
         duration: 0,
         forbidClick: true,

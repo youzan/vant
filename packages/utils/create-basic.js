@@ -4,15 +4,17 @@
 import '../locale';
 import bem from '../mixins/bem';
 import i18n from '../mixins/i18n';
-import { isDef } from './';
+import { isDef, camelize } from '.';
 
 function install(Vue) {
-  Vue.component(this.name, this);
-};
+  const { name } = this;
+  Vue.component(name, this);
+  Vue.component((camelize(`-${name}`)), this);
+}
 
 function returnArray() {
   return [];
-};
+}
 
 function defaultProps(props) {
   Object.keys(props).forEach(key => {
@@ -30,7 +32,7 @@ function defaultProps(props) {
   });
 }
 
-export default function(sfc) {
+export default function (sfc) {
   sfc.name = 'van-' + sfc.name;
   sfc.install = sfc.install || install;
   sfc.mixins = sfc.mixins || [];

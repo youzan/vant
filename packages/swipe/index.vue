@@ -82,6 +82,14 @@ export default create({
     }
   },
 
+  activated() {
+    if (this.rendered) {
+      this.initialize();
+    }
+
+    this.rendered = true;
+  },
+
   destroyed() {
     this.clear();
 
@@ -220,9 +228,13 @@ export default create({
         return;
       }
 
-      swipes[0].offset = atLast && (delta < 0 || move > 0) ? trackSize : 0;
-      swipes[count - 1].offset =
-        atFirst && (delta > 0 || move < 0) ? -trackSize : 0;
+      if (swipes[0]) {
+        swipes[0].offset = atLast && (delta < 0 || move > 0) ? trackSize : 0;
+      }
+
+      if (swipes[count - 1]) {
+        swipes[count - 1].offset = atFirst && (delta > 0 || move < 0) ? -trackSize : 0;
+      }
 
       if (move && active + move >= -1 && active + move <= count) {
         this.active += move;

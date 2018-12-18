@@ -1,27 +1,27 @@
 @import '../style/var';
 
 .van-switch {
-  height: 1em;
-  width: 1.8em;
   display: inline-block;
   position: relative;
-  border-radius: 1em;
+  width: @switch-width;
+  height: @switch-height;
+  border: @switch-border;
+  border-radius: @switch-node-size;
   box-sizing: content-box;
-  border: 1px solid rgba(0, 0, 0, .1);
-  background-color: @white;
-  transition: background-color .3s;
+  background-color: @switch-background-color;
+  transition: background-color @switch-transition-duration;
 
   &__node {
     top: 0;
     left: 0;
-    z-index: 1;
-    width: 1em;
-    height: 1em;
-    transition: .3s;
     position: absolute;
     border-radius: 100%;
-    background-color: @white;
-    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+    width: @switch-node-size;
+    height: @switch-node-size;
+    z-index: @switch-node-z-index;
+    transition: @switch-transition-duration;
+    box-shadow: @switch-node-box-shadow;
+    background-color: @switch-node-background-color;
   }
 
   &__loading {
@@ -32,14 +32,14 @@
   }
 
   &--on {
-    background-color: @blue;
+    background-color: @switch-on-background-color;
 
     .van-switch__node {
-      transform: translateX(.8em);
+      transform: translateX(@switch-width - @switch-node-size);
     }
   }
 
   &--disabled {
-    opacity: .4;
+    opacity: @switch-disabled-opacity;
   }
 }

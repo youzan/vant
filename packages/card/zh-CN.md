@@ -55,6 +55,7 @@ Vue.use(Card);
 | centered | 内容是否垂直居中 | `String` | `false` | - |
 | currency | 货币符号 |  `String` | `¥` | - |
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - | 1.3.4 |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.0 |
 
 ### Slot
 

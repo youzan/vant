@@ -1,3 +1,4 @@
+/* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import Actionsheet from './actionsheet';
 import AddressEdit from './address-edit';
@@ -71,7 +72,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.4.8';
+const version = '1.5.0-beta';
 const components = [
   Actionsheet,
   AddressEdit,

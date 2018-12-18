@@ -28,7 +28,7 @@ Use `type` prop to custom diffrent type fields.
     required
     clearable
     label="Username"
-    icon="question"
+    icon="question-o"
     placeholder="Username"
     @click-icon="$toast('question')"
   />

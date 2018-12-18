@@ -1,5 +1,5 @@
 import { mount } from '../../../test/utils';
-import Actionsheet from '../';
+import Actionsheet from '..';
 
 test('callback events', () => {
   const callback = jest.fn();

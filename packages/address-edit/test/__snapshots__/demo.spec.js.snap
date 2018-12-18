@@ -10,8 +10,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value">
-          <div class="van-field__body">
-            <input type="text" placeholder="收货人姓名" value="" class="van-field__control">
+          <div class="van-field__body"><input type="text" placeholder="收货人姓名" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
@@ -26,8 +25,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value">
-          <div class="van-field__body">
-            <input type="tel" placeholder="收货人手机号" value="" class="van-field__control">
+          <div class="van-field__body"><input type="tel" placeholder="收货人手机号" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
@@ -42,8 +40,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value">
-          <div class="van-field__body">
-            <input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" value="" class="van-field__control">
+          <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
@@ -62,8 +59,7 @@ exports[`renders demo correctly 1`] = `
               <!---->
             </div>
             <div class="van-cell__value">
-              <div class="van-field__body">
-                <textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea>
+              <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea>
                 <!---->
                 <!---->
                 <!---->
@@ -81,8 +77,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value">
-          <div class="van-field__body">
-            <input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control">
+          <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control">
             <!---->
             <!---->
             <!---->
@@ -97,7 +92,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
         </div>
         <div class="van-cell__value">
-          <div title="设为默认收货地址" class="van-switch" style="font-size:26px;background-color:undefined;">
+          <div title="设为默认收货地址" class="van-switch" style="font-size:24px;background-color:undefined;">
             <div class="van-switch__node">
               <!---->
             </div>
@@ -105,15 +100,12 @@ exports[`renders demo correctly 1`] = `
         </div>
         <!---->
       </div>
-      <div class="van-address-edit__buttons">
-        <button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">
+      <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">
       保存
-    </span></button>
-        <button class="van-button van-button--default van-button--normal van-button--block"><span class="van-button__text">
+    </span></button> <button class="van-button van-button--default van-button--normal van-button--block"><span class="van-button__text">
       删除
-    </span></button>
-      </div>
-      <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
+    </span></button></div>
+      <div class="van-popup van-popup--bottom" style="display:none;">
         <div class="van-picker van-area">
           <div class="van-hairline--top-bottom van-picker__toolbar">
             <div class="van-picker__cancel">

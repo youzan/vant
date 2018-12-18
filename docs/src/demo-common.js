@@ -3,11 +3,10 @@
  */
 
 import Vue from 'vue';
-import i18n from '../../packages/mixins/i18n';
-import Vant, { Lazyload } from '../../packages';
-import VantDoc, { DemoBlock, DemoSection } from 'vant-doc';
 import VueRouter from 'vue-router';
-import { Locale } from '../../packages';
+import VantDoc, { DemoBlock, DemoSection } from '@vant/doc';
+import i18n from '../../packages/mixins/i18n';
+import Vant, { Lazyload, Locale } from '../../packages';
 import { camelize } from '../../packages/utils';
 
 Vue
@@ -86,12 +85,12 @@ export function wrapper(promise, name) {
     component = component.default;
     name = 'demo-' + name;
     component.name = name;
-    const { i18n } = component;
-    if (i18n) {
+    const { i18n: config } = component;
+    if (config) {
       const formattedI18n = {};
       const camelizedName = camelize(name);
-      Object.keys(i18n).forEach(key => {
-        formattedI18n[key] = { [camelizedName]: i18n[key] };
+      Object.keys(config).forEach(key => {
+        formattedI18n[key] = { [camelizedName]: config[key] };
       });
       Locale.add(formattedI18n);
     }

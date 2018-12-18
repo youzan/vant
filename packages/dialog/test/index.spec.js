@@ -5,7 +5,7 @@ import { mount, later, transitionStub } from '../../../test/utils';
 
 transitionStub();
 
-test('Dialog function call', async() => {
+test('Dialog function call', async () => {
   Dialog.close();
   Dialog.alert('1');
 

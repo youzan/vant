@@ -55,6 +55,7 @@ export default {
 | integer | Whether to allow only integers | `Boolean` | `false` |
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
+| async-change | not change input value, only emit event | `Boolean` | `false` | - |
 
 ### Event
 

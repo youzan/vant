@@ -1,9 +1,9 @@
-import Toast from '../';
+import Toast from '..';
 import { transitionStub, later } from '../../../test/utils';
 
 transitionStub();
 
-test('create a forbidClick toast', async() => {
+test('create a forbidClick toast', async () => {
   const toast = Toast({
     forbidClick: true,
     type: 'success'
@@ -19,7 +19,7 @@ test('create a forbidClick toast', async() => {
   expect(document.body.classList.contains('van-toast--unclickable')).toBeFalsy();
 });
 
-it('toast disappeared after duration', async() => {
+it('toast disappeared after duration', async () => {
   const toast = Toast({
     duration: 10
   });

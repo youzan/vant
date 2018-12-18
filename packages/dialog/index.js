@@ -27,11 +27,9 @@ const Dialog = options => {
       initInstance();
     }
 
-    Object.assign(instance, {
+    Object.assign(instance, Dialog.currentOptions, options, {
       resolve,
-      reject,
-      ...Dialog.currentOptions,
-      ...options
+      reject
     });
   });
 };
@@ -44,6 +42,7 @@ Dialog.defaultOptions = {
   className: '',
   lockScroll: true,
   beforeClose: null,
+  messageAlign: '',
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,

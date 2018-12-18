@@ -33,14 +33,21 @@ export default create({
     mark: Boolean,
     color: String,
     plain: Boolean,
-    round: Boolean
+    round: Boolean,
+    textColor: String
   },
 
   computed: {
     style() {
       const color = this.color || COLOR_MAP[this.type] || GRAY_DARK;
       const key = this.plain ? 'color' : 'backgroundColor';
-      return { [key]: color };
+      const style = { [key]: color };
+
+      if (this.textColor) {
+        style.color = this.textColor;
+      }
+
+      return style;
     }
   }
 });

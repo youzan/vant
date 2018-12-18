@@ -18,12 +18,24 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('advancedUsage')">
+    <demo-block :title="$t('customSize')">
       <van-switch
-        :value="checked2"
-        size="36px"
+        v-model="checked2"
+        size="24px"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('customColor')">
+      <van-switch
+        v-model="checked3"
         active-color="#4b0"
         inactive-color="#f44"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('asyncControl')">
+      <van-switch
+        :value="checked4"
         @input="onInput"
       />
     </demo-block>
@@ -35,18 +47,26 @@ export default {
   i18n: {
     'zh-CN': {
       title: '提醒',
-      message: '是否切换开关？'
+      message: '是否切换开关？',
+      customSize: '自定义大小',
+      customColor: '自定义颜色',
+      asyncControl: '异步控制'
     },
     'en-US': {
       title: 'Confirm',
-      message: 'Are you sure to toggle switch?'
+      message: 'Are you sure to toggle switch?',
+      customSize: 'Custom Size',
+      customColor: 'Custom Color',
+      asyncControl: 'Async Control'
     }
   },
 
   data() {
     return {
       checked: true,
-      checked2: true
+      checked2: true,
+      checked3: true,
+      checked4: true
     };
   },
 
@@ -56,7 +76,7 @@ export default {
         title: this.$t('title'),
         message: this.$t('message')
       }).then(() => {
-        this.checked2 = checked;
+        this.checked4 = checked;
       });
     }
   }

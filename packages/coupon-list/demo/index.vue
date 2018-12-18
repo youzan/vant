@@ -111,7 +111,7 @@ export default {
       this.showList = false;
       this.chosenCoupon = index;
     },
-    onExchange(code) {
+    onExchange() {
       this.$toast(this.$t('exchange'));
       this.exchangedCoupons.push({
         ...this.coupon,

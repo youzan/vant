@@ -3,38 +3,33 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-hairline--top-bottom van-badge-group">
-      <a class="van-badge van-badge--select van-hairline">
+    <div class="van-hairline--top-bottom van-badge-group"><a class="van-badge van-badge--select van-hairline">
         <div class="van-badge__text">
           标签名称
           <!---->
         </div>
-      </a>
-      <a class="van-badge van-hairline">
+      </a> <a class="van-badge van-hairline">
         <div class="van-badge__text">
           标签名称
           <div class="van-info van-badge__info">
             8
           </div>
         </div>
-      </a>
-      <a class="van-badge van-hairline">
+      </a> <a class="van-badge van-hairline">
         <div class="van-badge__text">
           标签名称
           <div class="van-info van-badge__info">
             99
           </div>
         </div>
-      </a>
-      <a class="van-badge van-hairline">
+      </a> <a class="van-badge van-hairline">
         <div class="van-badge__text">
           标签名称
           <div class="van-info van-badge__info">
             99+
           </div>
         </div>
-      </a>
-    </div>
+      </a></div>
   </div>
 </div>
 `;

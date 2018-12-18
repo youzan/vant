@@ -6,23 +6,24 @@
 
   &__icon,
   &__label {
-    height: @checkbox-size;
     display: inline-block;
     vertical-align: middle;
     line-height: @checkbox-size;
   }
 
   &__icon {
+    height: @checkbox-size;
+
     .van-icon {
       font-size: 14px;
       color: transparent;
       text-align: center;
       line-height: inherit;
-      border: 1px solid @gray-light;
       width: @checkbox-size;
       height: @checkbox-size;
       box-sizing: border-box;
-      transition: .2s;
+      border: 1px solid @checkbox-border-color;
+      transition: @checkbox-transition-duration;
     }
 
     &--round {
@@ -34,33 +35,36 @@
     &--checked {
       .van-icon {
         color: @white;
-        border-color: @blue;
-        background-color: @blue;
+        border-color: @checkbox-checked-icon-color;
+        background-color: @checkbox-checked-icon-color;
       }
     }
 
     &--disabled {
       .van-icon {
-        color: @background-color;
-        border-color: @border-color;
-        background-color: currentColor;
+        border-color: @checkbox-disabled-icon-color;
+        background-color: @checkbox-disabled-background-color;
       }
     }
 
     &--disabled&--checked {
       .van-icon {
-        border-color: @border-color;
-        background-color: @border-color;
+        color: @checkbox-disabled-icon-color;
       }
     }
   }
 
   &__label {
-    margin-left: 10px;
+    color: @checkbox-label-color;
+    margin-left: @checkbox-label-margin;
 
     &--left {
       float: left;
-      margin: 0 10px 0 0;
+      margin: 0 @checkbox-label-margin 0 0;
+    }
+
+    &--disabled {
+      color: @checkbox-disabled-label-color;
     }
   }
 }

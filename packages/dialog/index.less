@@ -11,6 +11,7 @@
   border-radius: 4px;
   background-color: @white;
   transform: translate3d(-50%, -50%, 0);
+  backface-visibility: hidden; // avoid blurry text after scale animation
 
   &__header {
     font-weight: 500;
@@ -28,11 +29,20 @@
     line-height: 1.5;
     max-height: 60vh;
     overflow-y: auto;
+    text-align: center;
     -webkit-overflow-scrolling: touch;
 
     &--has-title {
       padding-top: 12px;
       color: @gray-darker;
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
     }
   }
 

@@ -37,11 +37,12 @@ export default create({
   computed: {
     status() {
       const index = this.$parent.steps.indexOf(this);
-      const active = this.$parent.active;
+      const { active } = this.$parent;
 
       if (index < active) {
         return 'finish';
-      } else if (index === active) {
+      }
+      if (index === active) {
         return 'process';
       }
     },

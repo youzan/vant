@@ -2,6 +2,7 @@
 
 .van-tree-select {
   user-select: none;
+  font-size: 14px;
   position: relative;
 
   &__nav {
@@ -10,39 +11,57 @@
     left: 0;
     top: 0;
     bottom: 0;
+    min-width: 120px;
     overflow: scroll;
-    background-color: @white;
+    background-color: @background-color-light;
     -webkit-overflow-scrolling: touch;
   }
 
   &__nitem {
+    position: relative;
     line-height: 44px;
-    padding: 0 15px;
-    background-color: @white;
+    padding: 0 9px 0 15px;
 
-    &:active,
-    &--active {
-      background-color: @background-color;
+    &:active::after,
+    &--active::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 3.6px;
+      background-color: @red;
+      content: '';
     }
 
     &--active {
-      font-weight: 500;
+      font-weight: bold;
+      background-color: @white;
+    }
+
+    &--disabled {
+      color: @gray-dark;
+    }
+
+    &--disabled:active::after {
+      display: none;
     }
   }
 
   &__content {
+    width: 65%;
     height: 100%;
-    padding: 0 15px;
+    padding-left: 15px;
     margin-left: 35%;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    background-color: @white;
+    box-sizing: border-box;
   }
 
   &__item {
     position: relative;
+    font-weight: bold;
     line-height: 44px;
-    padding-left: 5px;
-    padding-right: 18px;
 
     &:active,
     &--active {
@@ -56,11 +75,12 @@
   }
 
   &__selected {
-    float: right;
     position: absolute;
-    right: 0;
     top: 0;
+    right: 15px;
     bottom: 0;
-    line-height: inherit;
+    height: 24px;
+    margin: auto 0;
+    line-height: 24px;
   }
 }

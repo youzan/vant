@@ -1,4 +1,4 @@
-import Popup from '../';
+import Popup from '..';
 import { mount, triggerDrag, transitionStub } from '../../../test/utils';
 
 transitionStub();

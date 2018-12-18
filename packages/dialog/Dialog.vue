@@ -17,7 +17,7 @@
           <div
             v-if="message"
             v-html="message"
-            :class="b('message', { 'has-title': title })"
+            :class="b('message', { 'has-title': title, [messageAlign]: messageAlign })"
           />
         </slot>
       </div>
@@ -68,6 +68,7 @@ export default create({
     callback: Function,
     className: [String, Object, Array],
     beforeClose: Function,
+    messageAlign: String,
     confirmButtonText: String,
     cancelButtonText: String,
     showCancelButton: Boolean,

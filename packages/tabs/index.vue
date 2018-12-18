@@ -24,14 +24,15 @@
           class="van-tab"
           :class="{
             'van-tab--active': index === curActive,
-            'van-tab--disabled': tab.disabled
+            'van-tab--disabled': tab.disabled,
+            'van-tab--complete': !ellipsis
           }"
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
           <span
             ref="title"
-            class="van-ellipsis"
+            :class="{ 'van-ellipsis': ellipsis }"
           >
             {{ tab.title }}
           </span>
@@ -43,11 +44,13 @@
       :class="b('content')"
     >
       <div
+        v-if="animated"
         :class="b('track')"
         :style="trackStyle"
       >
         <slot />
       </div>
+      <slot v-else />
     </div>
   </div>
 </template>
@@ -74,6 +77,10 @@ export default create({
     animated: Boolean,
     offsetTop: Number,
     swipeable: Boolean,
+    ellipsis: {
+      type: Boolean,
+      default: true
+    },
     lineWidth: {
       type: Number,
       default: null
@@ -113,7 +120,7 @@ export default create({
   computed: {
     // whether the nav is scrollable
     scrollable() {
-      return this.tabs.length > this.swipeThreshold;
+      return this.tabs.length > this.swipeThreshold || !this.ellipsis;
     },
 
     wrapStyle() {
@@ -140,20 +147,12 @@ export default create({
     },
 
     trackStyle() {
-      const {
-        curActive,
-        animated
-      } = this;
-
-      const trackStyle = {
-        left: `${-1 * curActive * 100}%`
-      };
-
-      if (animated) {
-        trackStyle.transitionDuration = `${this.duration}s`;
+      if (this.animated) {
+        return {
+          left: `${-1 * this.curActive * 100}%`,
+          transitionDuration: `${this.duration}s`
+        };
       }
-
-      return trackStyle;
     }
   },
 
@@ -168,7 +167,7 @@ export default create({
       this.setLine();
     },
 
-    tabs(tabs) {
+    tabs() {
       this.correctActive(this.curActive || this.active);
       this.scrollIntoView();
       this.setLine();
@@ -413,7 +412,7 @@ export default create({
         }
       }
 
-      if (this.scrollable) {
+      if (this.scrollable && this.ellipsis) {
         style.flexBasis = 88 / (this.swipeThreshold) + '%';
       }
 

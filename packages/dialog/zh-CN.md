@@ -12,6 +12,7 @@ Vue.use(Dialog);
 ### 代码演示
 
 #### 消息提示
+
 用于提示一些消息，只包含一个确认按钮
 
 ```javascript
@@ -30,6 +31,7 @@ Dialog.alert({
 ```
 
 #### 消息确认
+
 用于确认消息，包含取消和确认按钮
 
 ```javascript
@@ -44,6 +46,7 @@ Dialog.confirm({
 ```
 
 #### 全局方法
+
 引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，在所有组件内部都可以直接调用此方法
 
 ```js
@@ -73,6 +76,7 @@ export default {
 |------|------|------|------|------|
 | title | 标题 | `String` | - | - |
 | message | 内容 | `String` | - | - |
+| messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.1.7 |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` | - |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` | - |
@@ -136,6 +140,7 @@ export default {
 | v-model | 是否显示弹窗 | `Boolean` | - | - |
 | title | 标题 | `String` | - | - |
 | message | 内容 | `String` | - | - |
+| message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` | - |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` | - |
 | confirm-button-text | 确认按钮的文案 | `String` |  `确认` | - |
