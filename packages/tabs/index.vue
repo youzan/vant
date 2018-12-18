@@ -41,7 +41,7 @@
     </div>
     <div
       ref="content"
-      :class="b('content', { animated: animated })"
+      :class="b('content', { animated })"
     >
       <div
         v-if="animated"
