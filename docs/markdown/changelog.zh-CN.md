@@ -1,5 +1,17 @@
 ## 更新日志
 
+## [v1.5.0-beta2](https://github.com/youzan/vant/tree/v1.5.0-beta2)
+`2018-12-18`
+
+**Bug Fixes**
+
+- 修复自定义主题时引入 icon.less 编译报错的问题 [\#2325](https://github.com/youzan/vant/pull/2325)为
+- 修复 Tab 在未开启 animted 时设置了 overflow: hidden 属性导致样式错误的问题 [\#2322](https://github.com/youzan/vant/pull/2322)
+- 修复 Field 输入框文字颜色错误 [\#2323](https://github.com/youzan/vant/pull/2323)
+- 修复 Swipe 指示器颜色错误 [\#2324](https://github.com/youzan/vant/pull/2324)
+- 修复 Radio 未选中状态图标不显示的问题 [\#2321](https://github.com/youzan/vant/pull/2321)
+
+
 ## [v1.5.0-beta](https://github.com/youzan/vant/tree/v1.5.0-beta)
 `2018-12-17`
 

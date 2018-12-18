@@ -1,5 +1,17 @@
 ## Changelog
 
+## [v1.5.0-beta2](https://github.com/youzan/vant/tree/v1.5.0-beta2)
+`2018-12-18`
+
+**Bug Fixes**
+
+- fix icon.less compile error when custom style [\#2325](https://github.com/youzan/vant/pull/2325)为
+- fix Tab should only set overflow when use animated prop [\#2322](https://github.com/youzan/vant/pull/2322)
+- fix Field text color [\#2323](https://github.com/youzan/vant/pull/2323)
+- fix Swipe indicator color [\#2324](https://github.com/youzan/vant/pull/2324)
+- fix Radio unchecked icon name [\#2321](https://github.com/youzan/vant/pull/2321)
+
+
 ## [v1.5.0-beta](https://github.com/youzan/vant/tree/v1.5.0-beta)
 `2018-12-17`
 
