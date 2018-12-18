@@ -13,7 +13,7 @@
       >
       <icon
         :style="iconStyle"
-        :name="checked ? 'checked' : 'check'"
+        :name="checked ? 'checked' : 'circle'"
       />
     </span>
     <span
