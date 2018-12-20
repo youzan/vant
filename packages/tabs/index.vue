@@ -108,7 +108,9 @@ export default create({
       tabs: [],
       position: '',
       curActive: null,
-      lineStyle: {},
+      lineStyle: {
+        backgroundColor: this.color
+      },
       events: {
         resize: false,
         sticky: false,
