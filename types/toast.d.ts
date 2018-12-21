@@ -19,6 +19,7 @@ export interface VanToast extends Vue, VanPopupMixin {
   loadingType: string;
   forbidClick: boolean;
   message: ToastMessage;
+  clear(): void;
 }
 
 export interface Toast {
