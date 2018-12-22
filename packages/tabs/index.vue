@@ -292,12 +292,12 @@ export default create({
     setLine() {
       this.$nextTick(() => {
         const { tabs } = this.$refs;
-        const tab = tabs[this.curActive];
 
-        if (!tabs || !tab || this.type !== 'line') {
+        if (!tabs || !tabs[this.curActive] || this.type !== 'line') {
           return;
         }
 
+        const tab = tabs[this.curActive];
         const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
