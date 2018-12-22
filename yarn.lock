@@ -685,9 +685,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vant/compiler/-/compiler-1.0.0.tgz#aecf1014c40db590026781cead28c951b538b461"
 
-"@vant/doc@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-1.0.20.tgz#fea85519ecf7d25f3df652c78f2b761cb8734771"
+"@vant/doc@^1.0.21":
+  version "1.0.21"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-1.0.21.tgz#605d289e3de1c5b3101ad8239abecdd890fb6692"
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
