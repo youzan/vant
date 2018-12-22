@@ -12,7 +12,7 @@
         <template v-else>
           <icon name="photograph" />
           <span class="label">{{ value ? '重拍' : '拍照' }}</span> 或
-          <icon name="picture" />
+          <icon name="photo" />
           <span class="label">{{ value ? '重新选择照片' : '选择照片' }}</span>
         </template>
       </div>
