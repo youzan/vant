@@ -6,6 +6,7 @@
     <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
+        :key="index"
         class="van-ellipsis"
         :class="b('nitem', { active: mainActiveIndex === index, disabled: item.disabled })"
         @click="onClickNav(item, index)"
