@@ -292,12 +292,12 @@ export default create({
     setLine() {
       this.$nextTick(() => {
         const { tabs } = this.$refs;
+        const tab = tabs[this.curActive];
 
-        if (!tabs || this.type !== 'line') {
+        if (!tabs || !tab || this.type !== 'line') {
           return;
         }
 
-        const tab = tabs[this.curActive];
         const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
@@ -357,14 +357,13 @@ export default create({
     scrollIntoView(immediate) {
       const { tabs } = this.$refs;
 
-      if (!this.scrollable || !tabs) {
+      if (!this.scrollable || !tabs || !tabs[this.curActive]) {
         return;
       }
 
-      const tab = tabs[this.curActive];
       const { nav } = this.$refs;
       const { scrollLeft, offsetWidth: navWidth } = nav;
-      const { offsetLeft, offsetWidth: tabWidth } = tab;
+      const { offsetLeft, offsetWidth: tabWidth } = tabs[this.curActive];
 
       this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
     },
