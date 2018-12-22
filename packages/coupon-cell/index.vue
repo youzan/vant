@@ -5,6 +5,7 @@
     :value="value"
     :border="border"
     :is-link="editable"
+    :value-class="valueClass"
     @click="$emit('click')"
   />
 </template>
@@ -49,6 +50,10 @@ export default create({
         return `-${this.currency}${(value / 100).toFixed(2)}`;
       }
       return coupons.length === 0 ? this.$t('tips') : this.$t('count', coupons.length);
+    },
+
+    valueClass() {
+      return this.coupons[this.chosenCoupon] ? 'van-coupon-cell--selected' : '';
     }
   }
 });
