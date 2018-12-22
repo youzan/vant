@@ -85,6 +85,10 @@ export default create({
       type: Number,
       default: null
     },
+    lineHeight: {
+      type: Number,
+      default: null
+    },
     active: {
       type: [Number, String],
       default: 0
@@ -298,15 +302,24 @@ export default create({
         }
 
         const tab = tabs[this.curActive];
-        const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
+        const { lineWidth, lineHeight } = this;
+        const width = this.isDef(lineWidth) ? lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
-        this.lineStyle = {
+        const lineStyle = {
           width: `${width}px`,
           backgroundColor: this.color,
           transform: `translateX(${left}px)`,
           transitionDuration: `${this.duration}s`
         };
+
+        if (this.isDef(lineHeight)) {
+          const height = `${lineHeight}px`;
+          lineStyle.height = height;
+          lineStyle.borderRadius = height;
+        }
+
+        this.lineStyle = lineStyle;
       });
     },
 
