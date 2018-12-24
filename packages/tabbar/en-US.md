@@ -15,7 +15,7 @@ Vue.use(Tabbar).use(TabbarItem);
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o" info="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="5">Tab</van-tabbar-item>
   <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
 </van-tabbar>
 ```
