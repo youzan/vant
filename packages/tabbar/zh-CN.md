@@ -11,7 +11,6 @@ Vue.use(Tabbar).use(TabbarItem);
 
 #### 基础用法
 
-
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
@@ -33,6 +32,7 @@ export default {
 
 
 #### 自定义图标
+
 通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断标签是否选中
 
 ```html
@@ -64,6 +64,19 @@ export default {
 }
 ```
 
+#### 自定义颜色
+
+```html
+<van-tabbar
+  v-model="active"
+  active-color="#4b0"
+>
+  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="freinds-o"">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
+```
 
 ### Tabbar API
 
@@ -72,6 +85,7 @@ export default {
 | v-model | 当前选中标签的索引 | `Number` | - | - |
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
+| active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
 
 ### Tabbar Event
 

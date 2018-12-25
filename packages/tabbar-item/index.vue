@@ -1,6 +1,7 @@
 <template>
   <div
     :class="b({ active })"
+    :style="style"
     @click="onClick"
   >
     <div :class="b('icon', { dot })">
@@ -45,6 +46,12 @@ export default create({
     return {
       active: false
     };
+  },
+
+  computed: {
+    style() {
+      return this.active ? { color: this.$parent.activeColor } : null;
+    }
   },
 
   beforeCreate() {

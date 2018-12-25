@@ -31,6 +31,7 @@ export default {
 ```
 
 #### Custom icon
+
 Use `icon` slot to custom icon
 
 ```html
@@ -69,6 +70,7 @@ export default {
 | v-model | Index of current tab | `Number` | - |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
+| active-color | Color of active tab item | `String` | `#1989fa` |
 
 ### Tabbar Event
 
