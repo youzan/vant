@@ -1,6 +1,7 @@
 <template>
   <div
     :class="b({ disabled })"
+    :style="style"
     @click.stop="onClick"
   >
     <div
@@ -35,6 +36,8 @@ export default create({
     min: Number,
     value: Number,
     disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
     max: {
       type: Number,
       default: 100
@@ -50,10 +53,17 @@ export default create({
   },
 
   computed: {
+    style() {
+      return {
+        background: this.inactiveColor
+      };
+    },
+
     barStyle() {
       return {
         width: this.format(this.value) + '%',
-        height: this.barHeight
+        height: this.barHeight,
+        background: this.activeColor
       };
     }
   },

@@ -3,8 +3,8 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width:50%;height:2px;">
+    <div class="van-slider" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:2px;background:undefined;">
         <div class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
@@ -12,8 +12,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width:50%;height:2px;">
+    <div class="van-slider" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:2px;background:undefined;">
         <div class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
@@ -21,8 +21,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider van-slider--disabled">
-      <div class="van-slider__bar" style="width:50%;height:2px;">
+    <div class="van-slider van-slider--disabled" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:2px;background:undefined;">
         <div class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
@@ -30,8 +30,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width:50%;height:2px;">
+    <div class="van-slider" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:2px;background:undefined;">
         <div class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
@@ -39,8 +39,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width:50%;height:4px;">
+    <div class="van-slider" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:4px;background:#f44;">
         <div class="van-slider__button-wrapper">
           <div class="van-slider__button"></div>
         </div>
@@ -48,8 +48,8 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
-    <div class="van-slider">
-      <div class="van-slider__bar" style="width:50%;height:2px;">
+    <div class="van-slider" style="background:undefined;">
+      <div class="van-slider__bar" style="width:50%;height:2px;background:#f44;">
         <div class="van-slider__button-wrapper">
           <div class="custom-button">
             50

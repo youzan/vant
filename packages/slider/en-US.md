@@ -51,13 +51,20 @@ export default {
 #### Custom style
 
 ```html
-<van-slider v-model="value" bar-height="4px" />
+<van-slider
+  v-model="value"
+  bar-height="4px"
+  active-color="#f44"
+/>
 ```
 
 #### Custom button
 
 ```html
-<van-slider v-model="value">
+<van-slider
+  v-model="value"
+  active-color="#f44"
+>
   <div
     slot="button"
     class="custom-button"
@@ -77,6 +84,8 @@ export default {
 | min | Min value | `Number` | `0` |
 | step | Step size | `Number` | `1` |
 | bar-height | Height of bar | `String` | `2px` |
+| active-color | Active color of bar | `String` | `#1989fa` |
+| inactive-color | Inactive color of bar | `String` | `#e5e5e5` |
 
 ### Event
 
