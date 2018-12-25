@@ -44,7 +44,26 @@ export default {
 #### 指定步长
 
 ```html
-<van-slider v-model="value" :step="10" bar-height="4px" />
+<van-slider v-model="value" :step="10" />
+```
+
+#### 自定义样式
+
+```html
+<van-slider v-model="value" bar-height="4px" />
+```
+
+#### 自定义按钮
+
+```html
+<van-slider v-model="value">
+  <div
+    slot="button"
+    class="custom-button"
+  >
+    {{ value }}
+  </div>
+</van-slider>
 ```
 
 ### API
@@ -63,3 +82,9 @@ export default {
 | 事件名 | 说明 | 参数 |
 |------|------|------|
 | change | 进度值改变后触发 | value: 当前进度 |
+
+### Slot
+
+| 名称 | 说明 |
+|------|------|
+| button | 自定义滑动按钮 |

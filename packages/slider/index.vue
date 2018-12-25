@@ -7,13 +7,17 @@
       :class="b('bar')"
       :style="barStyle"
     >
-      <span
-        :class="b('button')"
+      <div
+        :class="b('button-wrapper')"
         @touchstart="onTouchStart"
         @touchmove.prevent.stop="onTouchMove"
         @touchend="onTouchEnd"
         @touchcancel="onTouchEnd"
-      />
+      >
+        <slot name="button">
+          <div :class="b('button')" />
+        </slot>
+      </div>
     </div>
   </div>
 </template>
