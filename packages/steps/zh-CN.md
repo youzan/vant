@@ -64,7 +64,7 @@ export default {
 
 ### Steps Slot
 
-| Name | 说明 |
+| 名称 | 说明 |
 |------|------|
 | icon | 自定义icon区域 |
 | message-extra | 状态栏添加额外的元素 |

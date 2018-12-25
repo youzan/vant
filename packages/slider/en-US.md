@@ -45,7 +45,26 @@ export default {
 #### Step size
 
 ```html
-<van-slider v-model="value" :step="10" bar-height="4px" />
+<van-slider v-model="value" :step="10" />
+```
+
+#### Custom style
+
+```html
+<van-slider v-model="value" bar-height="4px" />
+```
+
+#### Custom button
+
+```html
+<van-slider v-model="value">
+  <div
+    slot="button"
+    class="custom-button"
+  >
+    {{ value }}
+  </div>
+</van-slider>
 ```
 
 ### API
@@ -64,3 +83,9 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered after value change | value: current rate |
+
+### Slot
+
+| Name | Description |
+|------|------|
+| button | Custom button |

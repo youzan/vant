@@ -12,24 +12,27 @@
   }
 
   &__button {
-    position: absolute;
-    top: 50%;
-    right: 0;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: @white;
-    transform: translate3d(50%, -50%, 0);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
 
-    /* use pseudo element to expand touch area */
-    &::after {
-      content: '';
+    &-wrapper {
       position: absolute;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
+      top: 50%;
+      right: 0;
+      transform: translate3d(50%, -50%, 0);
+
+      /* use pseudo element to expand touch area */
+      &::after {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -50%;
+        left: -50%;
+      }
     }
   }
 
