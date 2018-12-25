@@ -35,12 +35,16 @@
       <van-slider
         v-model="value5"
         bar-height="4px"
+        active-color="#f44"
         @change="onChange"
       />
     </demo-block>
 
     <demo-block :title="$t('customButton')">
-      <van-slider v-model="value6">
+      <van-slider
+        v-model="value6"
+        active-color="#f44"
+      >
         <div
           slot="button"
           class="custom-button"
