@@ -34,6 +34,10 @@
 <script>
 import create from '../utils/create';
 
+function makePage(number, text, active) {
+  return { number, text, active };
+}
+
 export default create({
   name: 'pagination',
 
@@ -100,19 +104,19 @@ export default create({
 
       // Add page number links
       for (let number = startPage; number <= endPage; number++) {
-        const page = this.makePage(number, number, number === this.value);
+        const page = makePage(number, number, number === this.value);
         pages.push(page);
       }
 
       // Add links to move between page sets
       if (isMaxSized && this.showPageSize > 0 && this.forceEllipses) {
         if (startPage > 1) {
-          const previousPageSet = this.makePage(startPage - 1, '...', false);
+          const previousPageSet = makePage(startPage - 1, '...', false);
           pages.unshift(previousPageSet);
         }
 
         if (endPage < pageCount) {
-          const nextPageSet = this.makePage(endPage + 1, '...', false);
+          const nextPageSet = makePage(endPage + 1, '...', false);
           pages.push(nextPageSet);
         }
       }
@@ -138,10 +142,6 @@ export default create({
         this.$emit('input', page);
         this.$emit('change', page);
       }
-    },
-
-    makePage(number, text, active) {
-      return { number, text, active };
     }
   }
 });
