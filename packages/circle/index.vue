@@ -26,6 +26,10 @@ import create from '../utils/create';
 import { raf, cancel } from '../utils/raf';
 import { BLUE, WHITE } from '../utils/color';
 
+function format(rate) {
+  return Math.min(Math.max(rate, 0), 100);
+}
+
 export default create({
   name: 'circle',
 
@@ -100,7 +104,7 @@ export default create({
       handler() {
         this.startTime = Date.now();
         this.startRate = this.value;
-        this.endRate = this.format(this.rate);
+        this.endRate = format(this.rate);
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs((this.startRate - this.endRate) * 1000 / this.speed);
         if (this.speed) {
@@ -119,14 +123,10 @@ export default create({
       const now = Date.now();
       const progress = Math.min((now - this.startTime) / this.duration, 1);
       const rate = progress * (this.endRate - this.startRate) + this.startRate;
-      this.$emit('input', this.format(parseFloat(rate.toFixed(1))));
+      this.$emit('input', format(parseFloat(rate.toFixed(1))));
       if (this.increase ? rate < this.endRate : rate > this.endRate) {
         this.rafId = raf(this.animate);
       }
-    },
-
-    format(rate) {
-      return Math.min(Math.max(rate, 0), 100);
     }
   }
 });
