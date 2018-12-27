@@ -27,6 +27,7 @@ export default create({
     gutter() {
       return (this.$parent && Number(this.$parent.gutter)) || 0;
     },
+
     style() {
       const padding = `${this.gutter / 2}px`;
       return this.gutter ? { paddingLeft: padding, paddingRight: padding } : {};
