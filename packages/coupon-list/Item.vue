@@ -28,6 +28,23 @@
 import create from '../utils/create';
 import Checkbox from '../checkbox';
 
+function padZero(num) {
+  return (num < 10 ? '0' : '') + num;
+}
+
+function getDate(timeStamp) {
+  const date = new Date(timeStamp * 1000);
+  return `${date.getFullYear()}.${padZero(date.getMonth() + 1)}.${padZero(date.getDate())}`;
+}
+
+function formatDiscount(discount) {
+  return (discount / 10).toFixed(discount % 10 === 0 ? 0 : 1);
+}
+
+function formatAmount(amount) {
+  return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
+}
+
 export default create({
   name: 'coupon-item',
 
@@ -44,14 +61,14 @@ export default create({
 
   computed: {
     validPeriod() {
-      return `${this.$t('valid')}：${this.getDate(this.data.startAt)} - ${this.getDate(this.data.endAt)}`;
+      return `${this.$t('valid')}：${getDate(this.data.startAt)} - ${getDate(this.data.endAt)}`;
     },
 
     faceAmount() {
       return this.data.denominations !== 0
-        ? `<span>${this.currency}</span> ${this.formatAmount(this.data.denominations)}`
+        ? `<span>${this.currency}</span> ${formatAmount(this.data.denominations)}`
         : this.data.discount !== 0
-          ? this.formatDiscount(this.data.discount)
+          ? this.$t('discount', formatDiscount(this.data.discount))
           : '';
     },
 
@@ -59,25 +76,6 @@ export default create({
       let condition = this.data.originCondition;
       condition = condition % 100 === 0 ? Math.round(condition / 100) : (condition / 100).toFixed(2);
       return this.data.originCondition === 0 ? this.$t('unlimited') : this.$t('condition', condition);
-    }
-  },
-
-  methods: {
-    getDate(timeStamp) {
-      const date = new Date(timeStamp * 1000);
-      return `${date.getFullYear()}.${this.padZero(date.getMonth() + 1)}.${this.padZero(date.getDate())}`;
-    },
-
-    padZero(num) {
-      return (num < 10 ? '0' : '') + num;
-    },
-
-    formatDiscount(discount) {
-      return this.$t('discount', `${(discount / 10).toFixed(discount % 10 === 0 ? 0 : 1)}`);
-    },
-
-    formatAmount(amount) {
-      return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
     }
   }
 });
