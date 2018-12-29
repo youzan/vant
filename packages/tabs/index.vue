@@ -8,16 +8,8 @@
         { 'van-hairline--top-bottom': type === 'line' }
       ]"
     >
-      <div
-        ref="nav"
-        :class="b('nav', [type])"
-        :style="navStyle"
-      >
-        <div
-          v-if="type === 'line'"
-          :class="b('line')"
-          :style="lineStyle"
-        />
+      <div ref="nav" :class="b('nav', [type])" :style="navStyle">
+        <div v-if="type === 'line'" :class="b('line')" :style="lineStyle"/>
         <div
           v-for="(tab, index) in tabs"
           ref="tabs"
@@ -30,27 +22,16 @@
           :style="getTabStyle(tab, index)"
           @click="onClick(index)"
         >
-          <span
-            ref="title"
-            :class="{ 'van-ellipsis': ellipsis }"
-          >
-            {{ tab.title }}
-          </span>
+          <span ref="title" :class="{ 'van-ellipsis': ellipsis }">{{ tab.title }}</span>
         </div>
       </div>
+      <slot name="right"></slot>
     </div>
-    <div
-      ref="content"
-      :class="b('content', { animated })"
-    >
-      <div
-        v-if="animated"
-        :class="b('track')"
-        :style="trackStyle"
-      >
-        <slot />
+    <div ref="content" :class="b('content', { animated })">
+      <div v-if="animated" :class="b('track')" :style="trackStyle">
+        <slot/>
       </div>
-      <slot v-else />
+      <slot v-else/>
     </div>
   </div>
 </template>
@@ -199,6 +180,7 @@ export default create({
   },
 
   mounted() {
+    console.log('create tabs');
     this.correctActive(this.active);
     this.setLine();
 
