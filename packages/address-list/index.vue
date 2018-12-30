@@ -18,10 +18,9 @@
     </radio-group>
     <div
       v-if="disabledText"
+      v-text="disabledText"
       :class="b('disabled-text')"
-    >
-      {{ disabledText }}
-    </div>
+    />
     <cell-group v-if="disabledList.length">
       <address-item
         v-for="(item, index) in disabledList"

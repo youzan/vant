@@ -31,11 +31,10 @@
           @click="onClick(index)"
         >
           <span
+            v-text="tab.title"
             ref="title"
             :class="{ 'van-ellipsis': ellipsis }"
-          >
-            {{ tab.title }}
-          </span>
+          />
         </div>
       </div>
     </div>

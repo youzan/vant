@@ -21,20 +21,18 @@
     <div :class="b('buttons')">
       <van-button
         block
+        type="danger"
+        :text="$t('save')"
         :loading="isSaving"
         @click="onSave"
-        type="danger"
-      >
-        {{ $t('save') }}
-      </van-button>
+      />
       <van-button
+        v-if="isEdit"
         block
+        :text="$t('delete')"
         :loading="isDeleting"
         @click="onDelete"
-        v-if="isEdit"
-      >
-        {{ $t('delete') }}
-      </van-button>
+      />
     </div>
   </div>
 </template>

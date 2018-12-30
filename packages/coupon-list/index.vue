@@ -44,7 +44,7 @@
             :class="b('empty')"
           >
             <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
-            <p>{{ $t('empty') }}</p>
+            <p v-text="$t('empty')" />
           </div>
         </div>
       </tab>
@@ -65,7 +65,7 @@
             :class="b('empty')"
           >
             <img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
-            <p>{{ $t('empty') }}</p>
+            <p v-text="$t('empty')" />
           </div>
         </div>
       </tab>

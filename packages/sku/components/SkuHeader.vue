@@ -10,7 +10,10 @@
       <img :src="goodsImg">
     </div>
     <div :class="b('goods-info')">
-      <div class="van-sku__goods-name van-ellipsis">{{ goods.title }}</div>
+      <div
+        v-text="goods.title"
+        class="van-sku__goods-name van-ellipsis"
+      />
       <!-- price display area -->
       <slot />
       <icon

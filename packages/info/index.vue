@@ -1,10 +1,9 @@
 <template>
   <div
     v-if="isDef(info)"
+    v-text="info"
     :class="b()"
-  >
-    {{ info }}
-  </div>
+  />
 </template>
 
 <script>

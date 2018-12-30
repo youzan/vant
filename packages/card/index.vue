@@ -31,18 +31,16 @@
       <slot name="title">
         <div
           v-if="title"
+          v-text="title"
           :class="b('title')"
-        >
-          {{ title }}
-        </div>
+        />
       </slot>
       <slot name="desc">
         <div
           v-if="desc"
+          v-text="desc"
           :class="[b('desc'), 'van-ellipsis']"
-        >
-          {{ desc }}
-        </div>
+        />
       </slot>
       <slot name="tags" />
 

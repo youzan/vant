@@ -16,7 +16,10 @@
       />
     </svg>
     <slot>
-      <div :class="b('text')">{{ text }}</div>
+      <div
+        v-text="text"
+        :class="b('text')"
+      />
     </slot>
   </div>
 </template>

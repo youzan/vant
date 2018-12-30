@@ -6,12 +6,11 @@
     <div :class="b('nav')">
       <div
         v-for="(item, index) in items"
+        v-text="item.text"
         class="van-ellipsis"
         :class="b('nitem', { active: mainActiveIndex === index, disabled: item.disabled })"
         @click="onClickNav(item, index)"
-      >
-        {{ item.text }}
-      </div>
+      />
     </div>
     <div :class="b('content')">
       <div
