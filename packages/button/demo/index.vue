@@ -39,7 +39,7 @@
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="$t('loadingStatus')">
       <van-button
         loading
         type="primary"

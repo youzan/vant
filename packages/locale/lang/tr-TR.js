@@ -6,7 +6,7 @@ export default {
   cancel: 'İptal',
   delete: 'Sil',
   complete: 'Tamamla',
-  loadingTip: 'Yükleniyor...',
+  loading: 'Yükleniyor...',
   telEmpty: 'Lütfen tel. no giriniz',
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',

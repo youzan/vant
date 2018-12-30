@@ -6,7 +6,7 @@ export default {
   cancel: '取消',
   delete: '刪除',
   complete: '完成',
-  loadingTip: '載入中...',
+  loading: '載入中...',
   telEmpty: '請填寫電話',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除嗎',

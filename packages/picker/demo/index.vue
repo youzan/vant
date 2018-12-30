@@ -28,7 +28,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="$t('loadingStatus')">
       <van-picker
         loading
         :columns="columns"
