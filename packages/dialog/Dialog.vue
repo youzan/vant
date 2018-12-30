@@ -27,22 +27,20 @@
       >
         <van-button
           v-show="showCancelButton"
-          :loading="loading.cancel"
           size="large"
           :class="b('cancel')"
+          :loading="loading.cancel"
+          :text="cancelButtonText || $t('cancel')"
           @click="handleAction('cancel')"
-        >
-          {{ cancelButtonText || $t('cancel') }}
-        </van-button>
+        />
         <van-button
           v-show="showConfirmButton"
           size="large"
-          :loading="loading.confirm"
           :class="[b('confirm'), { 'van-hairline--left': showCancelButton && showConfirmButton }]"
+          :loading="loading.confirm"
+          :text="confirmButtonText || $t('confirm')"
           @click="handleAction('confirm')"
-        >
-          {{ confirmButtonText || $t('confirm') }}
-        </van-button>
+        />
       </div>
     </div>
   </transition>

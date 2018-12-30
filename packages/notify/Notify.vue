@@ -2,11 +2,10 @@
   <transition name="van-slide-down">
     <div
       v-show="value"
+      v-text="message"
       :class="b()"
       :style="style"
-    >
-      {{ message }}
-    </div>
+    />
   </transition>
 </template>
 

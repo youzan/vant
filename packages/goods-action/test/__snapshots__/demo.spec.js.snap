@@ -19,9 +19,7 @@ exports[`renders demo correctly 1`] = `
           <!----></i> 客服</div>
       <div class="van-hairline van-goods-action-mini-btn"><i class="van-icon van-icon-cart-o van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->
-          <div class="van-info">
-            5
-          </div>
+          <div class="van-info">5</div>
         </i> 购物车</div>
       <div class="van-hairline van-goods-action-mini-btn"><i class="van-icon van-icon-shop-o van-goods-action-mini-btn__icon" style="color:undefined;font-size:undefined;">
           <!---->

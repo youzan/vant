@@ -7,15 +7,17 @@
     >
       <slot name="loading">
         <loading :class="b('loading-icon')" />
-        <span :class="b('loading-text')">{{ loadingText || $t('loadingTip') }}</span>
+        <span
+          v-text="loadingText || $t('loadingTip')"
+          :class="b('loading-text')"
+        />
       </slot>
     </div>
     <div
       v-if="finished && finishedText"
+      v-text="finishedText"
       :class="b('finished-text')"
-    >
-      {{ finishedText }}
-    </div>
+    />
   </div>
 </template>
 

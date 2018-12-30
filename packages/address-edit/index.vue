@@ -66,18 +66,16 @@
         block
         :loading="isSaving"
         type="danger"
+        :text="saveButtonText || $t('save')"
         @click="onSave"
-      >
-        {{ saveButtonText || $t('save') }}
-      </van-button>
+      />
       <van-button
         v-if="showDelete"
         block
         :loading="isDeleting"
+        :text="deleteButtonText || $t('delete')"
         @click="onDelete"
-      >
-        {{ deleteButtonText || $t('delete') }}
-      </van-button>
+      />
     </div>
 
     <popup

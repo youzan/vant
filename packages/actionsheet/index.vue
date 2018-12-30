@@ -30,13 +30,15 @@
           @click.stop="onSelect(item)"
         >
           <template v-if="!item.loading">
-            <span :class="b('name')">{{ item.name }}</span>
+            <span
+              :class="b('name')"
+              v-text="item.name"
+            />
             <span
               v-if="item.subname"
+              v-text="item.subname"
               :class="b('subname')"
-            >
-              {{ item.subname }}
-            </span>
+            />
           </template>
           <loading
             v-else

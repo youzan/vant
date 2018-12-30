@@ -15,12 +15,11 @@
     >
       <span
         v-if="showIcon && isAndroid"
+        v-text="$t('complete')"
         slot="icon"
         :class="b('finish')"
         @click="$refs.field.blur()"
-      >
-        {{ $t('complete') }}
-      </span>
+      />
     </field>
     <cell
       v-for="express in searchList"

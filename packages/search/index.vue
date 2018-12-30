@@ -22,7 +22,10 @@
       :class="b('action')"
     >
       <slot name="action">
-        <div @click="onBack">{{ $t('cancel') }}</div>
+        <div
+          v-text="$t('cancel')"
+          @click="onBack"
+        />
       </slot>
     </div>
   </div>

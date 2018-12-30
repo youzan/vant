@@ -6,12 +6,8 @@ exports[`renders demo correctly 1`] = `
     <div class="van-card"><a class="van-card__thumb"><img src="//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg" class="van-card__img">
         <!----></a>
       <div class="van-card__content">
-        <div class="van-card__title">
-          2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男
-        </div>
-        <div class="van-card__desc van-ellipsis">
-          描述信息
-        </div>
+        <div class="van-card__title">2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男</div>
+        <div class="van-card__desc van-ellipsis">描述信息</div>
         <div class="van-card__bottom">
           <div class="van-card__price">
             ¥ 2.00
@@ -30,12 +26,8 @@ exports[`renders demo correctly 1`] = `
       标签
     </span></a>
       <div class="van-card__content">
-        <div class="van-card__title">
-          2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男
-        </div>
-        <div class="van-card__desc van-ellipsis">
-          描述信息
-        </div>
+        <div class="van-card__title">2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男</div>
+        <div class="van-card__desc van-ellipsis">描述信息</div>
         <div class="card__tags"><span class="van-tag van-tag--plain van-hairline--surround" style="color:#f44;">
           标签1
         </span> <span class="van-tag van-tag--plain van-hairline--surround" style="color:#f44;">

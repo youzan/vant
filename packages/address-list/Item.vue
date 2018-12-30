@@ -6,7 +6,10 @@
   >
     <radio :name="data.id">
       <div :class="b('name')">{{ data.name }}，{{ data.tel }}</div>
-      <div :class="b('address')">{{ data.address }}</div>
+      <div
+        v-text="data.address"
+        :class="b('address')"
+      />
     </radio>
     <icon
       slot="right-icon"

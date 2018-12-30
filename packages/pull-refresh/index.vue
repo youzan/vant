@@ -17,13 +17,19 @@
           v-if="status === 'pulling'"
           name="pulling"
         >
-          <span :class="b('text')">{{ pullingText || $t('pulling') }}</span>
+          <span
+            v-text="pullingText || $t('pulling')"
+            :class="b('text')"
+          />
         </slot>
         <slot
           v-if="status === 'loosing'"
           name="loosing"
         >
-          <span :class="b('text')">{{ loosingText || $t('loosing') }}</span>
+          <span
+            v-text="loosingText || $t('loosing')"
+            :class="b('text')"
+          />
         </slot>
         <slot
           v-if="status === 'loading'"
@@ -31,7 +37,7 @@
         >
           <div :class="b('loading')">
             <loading />
-            <span>{{ loadingText || $t('loadingTip') }}</span>
+            <span v-text="loadingText || $t('loadingTip')" />
           </div>
         </slot>
       </div>

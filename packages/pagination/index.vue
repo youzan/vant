@@ -1,20 +1,18 @@
 <template>
   <ul :class="b({ simple: !isMultiMode })">
     <li
+      v-text="prevText || $t('prev')"
       class="van-hairline"
       :class="[b('item', { disabled: value === 1 }), b('prev')]"
       @click="selectPage(value - 1)"
-    >
-      {{ prevText || $t('prev') }}
-    </li>
+    />
     <li
       v-for="page in pages"
+      v-text="page.text"
       class="van-hairline"
       :class="[b('item', { active: page.active }), b('page')]"
       @click="selectPage(page.number)"
-    >
-      {{ page.text }}
-    </li>
+    />
     <li
       v-if="!isMultiMode"
       :class="b('page-desc')"
@@ -22,12 +20,11 @@
       <slot name="pageDesc">{{ pageDesc }}</slot>
     </li>
     <li
+      v-text="nextText || $t('next')"
       class="van-hairline"
       :class="[b('item', { disabled: value === computedPageCount }), b('next')]"
       @click="selectPage(value + 1)"
-    >
-      {{ nextText || $t('next') }}
-    </li>
+    />
   </ul>
 </template>
 

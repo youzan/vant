@@ -14,16 +14,14 @@
     </div>
     <div
       v-if="!hideStock"
+      v-text="stockText"
       class="van-sku__stock"
-    >
-      {{ stockText }}
-    </div>
+    />
     <div
       v-if="!hideQuotaText && quotaText"
+      v-text="quotaText"
       class="van-sku__quota"
-    >
-      {{ quotaText }}
-    </div>
+    />
   </div>
 </template>
 

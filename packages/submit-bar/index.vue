@@ -11,7 +11,7 @@
       <slot />
       <div :class="b('text')">
         <template v-if="hasPrice">
-          <span>{{ label || $t('label') }}</span>
+          <span v-text="label || $t('label')" />
           <span :class="b('price')">{{ currency }} {{ price | format }}</span>
         </template>
       </div>
@@ -21,10 +21,9 @@
         :type="buttonType"
         :disabled="disabled"
         :loading="loading"
+        :text="loading ? '' : buttonText"
         @click="$emit('submit')"
-      >
-        {{ loading ? '' : buttonText }}
-      </van-button>
+      />
     </div>
   </div>
 </template>
