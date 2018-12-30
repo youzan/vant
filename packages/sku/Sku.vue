@@ -26,7 +26,11 @@
           :selected-sku-comb="selectedSkuComb"
         >
           <div class="van-sku__goods-price">
-            <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
+            <span class="van-sku__price-symbol">￥</span>
+            <span
+              v-text="price"
+              class="van-sku__price-num"
+            />
           </div>
         </slot>
       </sku-header>

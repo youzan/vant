@@ -3,11 +3,11 @@
     <div :class="b('content')">
       <div :class="b('head')">
         <h2 v-html="faceAmount" />
-        <p>{{ conditionMessage }}</p>
+        <p v-text="conditionMessage" />
       </div>
       <div :class="b('body')">
-        <h2>{{ data.name }}</h2>
-        <p>{{ validPeriod }}</p>
+        <h2 v-text="data.name" />
+        <p v-text="validPeriod" />
         <checkbox
           v-if="chosen"
           :value="true"
@@ -17,10 +17,9 @@
     </div>
     <p
       v-if="disabled && data.reason"
+      v-text="data.reason"
       :class="b('reason')"
-    >
-      {{ data.reason }}
-    </p>
+    />
   </div>
 </template>
 
