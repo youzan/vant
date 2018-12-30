@@ -4,7 +4,8 @@ exports[`change head content when pulling down 1`] = `
 <div class="van-pull-refresh">
   <div class="van-pull-refresh__track" style="transform: translate3d(0,20px, 0);">
     <div class="van-pull-refresh__head">
-      <!----> <span class="van-pull-refresh__text">下拉即可刷新...</span>
+      <!---->
+      <div class="van-pull-refresh__text">下拉即可刷新...</div>
       <!---->
       <!---->
     </div>
@@ -17,7 +18,8 @@ exports[`change head content when pulling down 2`] = `
   <div class="van-pull-refresh__track" style="transform: translate3d(0,75px, 0);">
     <div class="van-pull-refresh__head">
       <!---->
-      <!----> <span class="van-pull-refresh__text">释放即可刷新...</span>
+      <!---->
+      <div class="van-pull-refresh__text">释放即可刷新...</div>
       <!---->
     </div>
   </div>

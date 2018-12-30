@@ -17,7 +17,7 @@
           v-if="status === 'pulling'"
           name="pulling"
         >
-          <span
+          <div
             v-text="pullingText || $t('pulling')"
             :class="b('text')"
           />
@@ -26,7 +26,7 @@
           v-if="status === 'loosing'"
           name="loosing"
         >
-          <span
+          <div
             v-text="loosingText || $t('loosing')"
             :class="b('text')"
           />
