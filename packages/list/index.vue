@@ -8,7 +8,7 @@
       <slot name="loading">
         <loading :class="b('loading-icon')" />
         <span
-          v-text="loadingText || $t('loadingTip')"
+          v-text="loadingText || $t('loading')"
           :class="b('loading-text')"
         />
       </slot>

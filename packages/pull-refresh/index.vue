@@ -9,35 +9,18 @@
       @touchcancel="onTouchEnd"
     >
       <div :class="b('head')">
-        <slot
-          v-if="status === 'normal'"
-          name="normal"
-        />
-        <slot
-          v-if="status === 'pulling'"
-          name="pulling"
-        >
+        <slot :name="status">
           <div
-            v-text="pullingText || $t('pulling')"
+            v-if="status === 'pulling' || status === 'loosing'"
+            v-text="text"
             :class="b('text')"
           />
-        </slot>
-        <slot
-          v-if="status === 'loosing'"
-          name="loosing"
-        >
           <div
-            v-text="loosingText || $t('loosing')"
-            :class="b('text')"
-          />
-        </slot>
-        <slot
-          v-if="status === 'loading'"
-          name="loading"
-        >
-          <div :class="b('loading')">
+            v-if="status === 'loading'"
+            :class="b('loading')"
+          >
             <loading />
-            <span v-text="loadingText || $t('loadingTip')" />
+            <span v-text="text" />
           </div>
         </slot>
       </div>
@@ -93,11 +76,11 @@ export default create({
 
     untouchable() {
       return this.status === 'loading' || this.disabled;
-    }
-  },
+    },
 
-  mounted() {
-    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
+    text() {
+      return this[`${this.status}Text`] || this.$t(this.status);
+    }
   },
 
   watch: {
@@ -107,12 +90,13 @@ export default create({
     }
   },
 
+  mounted() {
+    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
+  },
+
   methods: {
     onTouchStart(event) {
-      if (this.untouchable) {
-        return;
-      }
-      if (this.getCeiling()) {
+      if (!this.untouchable && this.getCeiling()) {
         this.duration = 0;
         this.touchStart(event);
       }
@@ -140,11 +124,7 @@ export default create({
     },
 
     onTouchEnd() {
-      if (this.untouchable) {
-        return;
-      }
-
-      if (this.ceiling && this.deltaY) {
+      if (!this.untouchable && this.ceiling && this.deltaY) {
         this.duration = this.animationDuration;
         if (this.status === 'loosing') {
           this.getStatus(this.headHeight, true);

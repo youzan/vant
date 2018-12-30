@@ -11,7 +11,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="$t('loadingStatus')">
       <van-switch
         v-model="checked"
         loading
