@@ -13,7 +13,7 @@
       :label="$t('label')"
       :placeholder="$t('placeholder')"
     >
-      <span
+      <div
         v-if="showIcon && isAndroid"
         v-text="$t('complete')"
         slot="icon"
