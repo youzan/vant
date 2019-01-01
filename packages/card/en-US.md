@@ -63,6 +63,8 @@ Use `slot` to custom content.
 |------|------|
 | title | Custom title |
 | desc | Custom description |
-| tags | Custom tags |
+| num | Custom num |
+| price | Custom price |
 | thumb | Custom thumb |
+| tags | Custom tags |
 | footer | Custom footer |
