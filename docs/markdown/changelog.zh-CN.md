@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
+`2019-01-01`
+
+**Improvements**
+
+- Card: 新增 price、num 插槽 [\#2416](https://github.com/youzan/vant/pull/2416)
+- Slider: 新增 button 插槽 [\#2373](https://github.com/youzan/vant/pull/2373)
+- Slider: 新增 active-color、inactive-color 属性 [\#2374](https://github.com/youzan/vant/pull/2374)
+- Tabbar: 新增 active-color 属性 [\#2372](https://github.com/youzan/vant/pull/2372)
+- Sku: 新增 sku-selected 事件 [\#2386](https://github.com/youzan/vant/pull/2386)
+
+**Bug Fixes**
+
+- 修复 Card 描述过长时的样式问题 [\#2414](https://github.com/youzan/vant/pull/2414)
+- 修复 ContactList 未注册依赖的 button 组件的问题 [\#2415](https://github.com/youzan/vant/pull/2415)
+- 修复 Icon 在 file 协议网页下无法展示的问题 [\#2385](https://github.com/youzan/vant/pull/2385)
+
+
 ## [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
 `2018-12-22`
 
