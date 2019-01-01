@@ -4,7 +4,6 @@ exports[`ContactList render 1`] = `
 <div class="van-contact-list">
   <div class="van-radio-group">
     <div class="van-cell-group van-hairline--top-bottom"></div>
-  </div>
-  <van-button square="" size="large" type="danger" text="新建联系人" class="van-contact-list__add"></van-button>
+  </div> <button class="van-button van-button--danger van-button--large van-button--square van-contact-list__add"><span class="van-button__text">新建联系人</span></button>
 </div>
 `;
