@@ -9,13 +9,9 @@ exports[`renders demo correctly 1`] = `
         <div class="van-card__title">2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男</div>
         <div class="van-card__desc van-ellipsis">描述信息</div>
         <div class="van-card__bottom">
-          <div class="van-card__price">
-            ¥ 2.00
-          </div>
+          <div class="van-card__price">¥ 2.00</div>
           <!---->
-          <div class="van-card__num">
-            x 2
-          </div>
+          <div class="van-card__num">x 2</div>
         </div>
       </div>
       <!---->
@@ -34,15 +30,11 @@ exports[`renders demo correctly 1`] = `
           标签2
         </span></div>
         <div class="van-card__bottom">
-          <div class="van-card__price">
-            ¥ 2.00
-          </div>
+          <div class="van-card__price">¥ 2.00</div>
           <div class="van-card__origin-price">
             ¥ 10.00
           </div>
-          <div class="van-card__num">
-            x 2
-          </div>
+          <div class="van-card__num">x 2</div>
         </div>
       </div>
       <div class="van-card__footer">
