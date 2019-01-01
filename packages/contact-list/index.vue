@@ -38,6 +38,7 @@
 
 <script>
 import Radio from '../radio';
+import VanButton from '../button';
 import RadioGroup from '../radio-group';
 import create from '../utils/create';
 
@@ -46,6 +47,7 @@ export default create({
 
   components: {
     Radio,
+    VanButton,
     RadioGroup
   },
 
