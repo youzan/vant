@@ -83,7 +83,6 @@ export default {
   .card__tags {
     .van-tag {
       margin-right: 5px;
-      padding: .1em .5em;
     }
   }
 </style>
