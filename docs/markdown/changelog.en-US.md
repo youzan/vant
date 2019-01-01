@@ -1,5 +1,23 @@
 ## Changelog
 
+## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
+`2019-01-01`
+
+**Improvements**
+
+- Card: add price、num slot [\#2416](https://github.com/youzan/vant/pull/2416)
+- Slider: add button slot [\#2373](https://github.com/youzan/vant/pull/2373)
+- Slider: add active-color、inactive-color prop [\#2374](https://github.com/youzan/vant/pull/2374)
+- Tabbar: add active-color prop [\#2372](https://github.com/youzan/vant/pull/2372)
+- Sku: add sku-selected event [\#2386](https://github.com/youzan/vant/pull/2386)
+
+**Bug Fixes**
+
+- fix Card desc ellipsis [\#2414](https://github.com/youzan/vant/pull/2414)
+- fix ContactList missing dependencies [\#2415](https://github.com/youzan/vant/pull/2415)
+- fix Icon missing protocol [\#2385](https://github.com/youzan/vant/pull/2385)
+
+
 ## [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
 `2018-12-22`
 
