@@ -49,7 +49,7 @@
           v-if="isDef(price)"
           :class="b('price')"
         >
-          {{ currency }} {{ price }}
+          <slot name="price">{{ currency }} {{ price }}</slot>
         </div>
         <div
           v-if="isDef(originPrice)"
@@ -58,10 +58,10 @@
           {{ currency }} {{ originPrice }}
         </div>
         <div
-          v-if="isDef(num)"
+          v-if="isDef(num) || $slots.num"
           :class="b('num')"
         >
-          x {{ num }}
+          <slot name="num">x {{ num }}</slot>
         </div>
       </div>
     </div>
