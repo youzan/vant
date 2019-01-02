@@ -111,7 +111,11 @@ export default create({
     value(val) {
       val = this.correctValue(val);
       const isEqual = this.type === 'time' ? val === this.innerValue : val.valueOf() === this.innerValue.valueOf();
-      if (!isEqual) this.innerValue = val;
+
+      if (!isEqual) {
+        this.innerValue = val;
+        this.updateColumnValue(val);
+      }
     },
 
     innerValue(val) {
