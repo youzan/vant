@@ -114,7 +114,10 @@ export default create({
 
       if (!isEqual) {
         this.innerValue = val;
-        this.updateColumnValue(val);
+
+        if (this.type === 'time') {
+          this.updateColumnValue(val);
+        }
       }
     },
 
