@@ -59,6 +59,7 @@ setTimeout(() => {
 | loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
+| className | Custom className | `String | Array | Object` | - |
 
 ### onClose Parematers
 

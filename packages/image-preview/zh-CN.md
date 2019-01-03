@@ -67,6 +67,7 @@ setTimeout(() => {
 | loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |
 | asyncClose | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
+| className | 自定义类名 | `String | Array | Object` | - | 1.5.2 |
 
 ### onClose 回调参数
 
