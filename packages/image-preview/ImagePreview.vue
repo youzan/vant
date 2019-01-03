@@ -2,7 +2,7 @@
   <transition name="van-fade">
     <div
       v-if="value"
-      :class="b()"
+      :class="[b(), className]"
       @touchstart="onWrapperTouchStart"
       @touchend="onWrapperTouchEnd"
       @touchcancel="onWrapperTouchEnd"
@@ -75,6 +75,7 @@ export default create({
     asyncClose: Boolean,
     startPosition: Number,
     showIndicators: Boolean,
+    className: [String, Object, Array],
     loop: {
       type: Boolean,
       default: true

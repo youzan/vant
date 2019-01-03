@@ -1,9 +1,12 @@
 import { VanPopupMixin } from './mixins/popup';
 
 export type ImagePreviewOptions = string[] | {
+  loop?: boolean;
   images: string[];
+  className?: any;
   startPosition?: number;
   showIndex?: boolean;
+  asyncClose?: boolean;
   showIndicators?: boolean;
   onClose?: () => any;
 };
