@@ -1,10 +1,10 @@
-import create from '../utils/create';
+import createSfc from '../utils/create';
 import createBem from '../utils/bem';
 import Popup from '../mixins/popup';
 
 const bem = createBem('van-actionsheet');
 
-export default create({
+export default createSfc({
   name: 'actionsheet',
 
   mixins: [Popup],
@@ -25,7 +25,7 @@ export default create({
   },
 
   methods: {
-    onSelect(item, event) {
+    onSelect(event, item) {
       event.stopPropagation();
 
       if (!item.disabled && !item.loading) {
@@ -64,7 +64,9 @@ export default create({
           item.className,
           'van-hairline--top'
         ]}
-        onClick={this.onSelect.bind(this, item)}
+        onClick={event => {
+          this.onSelect(event, item);
+        }}
       >
         {item.loading ? (
           <loading class={bem('loading')} size="20px" />

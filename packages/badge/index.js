@@ -1,10 +1,10 @@
 import Info from '../info';
-import create from '../utils/create';
+import createSfc from '../utils/create';
 import createBem from '../utils/bem';
 
 const bem = createBem('van-badge');
 
-export default create({
+export default createSfc({
   name: 'badge',
 
   props: {
