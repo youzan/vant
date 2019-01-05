@@ -24,6 +24,7 @@ module.exports = function (api) {
           useESModules
         }
       ],
+      'transform-vue-jsx',
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-transform-object-assign'
     ]
