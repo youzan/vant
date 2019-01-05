@@ -2,7 +2,7 @@
  * Create a basic component with common options
  */
 import '../locale';
-import bem from '../mixins/bem';
+import createBem from './bem';
 import i18n from '../mixins/i18n';
 import { isDef, camelize } from '.';
 
@@ -36,9 +36,10 @@ export default function (sfc) {
   sfc.name = 'van-' + sfc.name;
   sfc.install = sfc.install || install;
   sfc.mixins = sfc.mixins || [];
-  sfc.mixins.push(i18n, bem);
+  sfc.mixins.push(i18n);
   sfc.methods = sfc.methods || {};
   sfc.methods.isDef = isDef;
+  sfc.methods.b = createBem(sfc.name);
   sfc.props && defaultProps(sfc.props);
 
   return sfc;
