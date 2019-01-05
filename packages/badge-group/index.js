@@ -1,13 +1,3 @@
-<template>
-  <div
-    :class="b()"
-    class="van-hairline--top-bottom"
-  >
-    <slot />
-  </div>
-</template>
-
-<script>
 import create from '../utils/create';
 
 export default create({
@@ -30,6 +20,13 @@ export default create({
     return {
       badges: []
     };
+  },
+
+  render(h) {
+    return (
+      <div class={['van-hairline--top-bottom', this.b()]}>
+        {this.$slots.default}
+      </div>
+    );
   }
 });
-</script>
