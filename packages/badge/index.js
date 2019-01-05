@@ -1,29 +1,8 @@
-<template>
-  <a
-    :class="[b({ select }), 'van-hairline']"
-    :href="url"
-    @click="onClick"
-  >
-    <div :class="b('text')">
-      {{ title }}
-      <van-info
-        :info="info"
-        :class="b('info')"
-      />
-    </div>
-  </a>
-</template>
-
-<script>
 import Info from '../info';
 import create from '../utils/create';
 
 export default create({
   name: 'badge',
-
-  components: {
-    [Info.name]: Info
-  },
 
   props: {
     url: String,
@@ -50,9 +29,7 @@ export default create({
     },
 
     select() {
-      return (
-        this.parent.badges.indexOf(this) === +this.parent.activeKey
-      );
+      return this.parent.badges.indexOf(this) === +this.parent.activeKey;
     }
   },
 
@@ -62,6 +39,20 @@ export default create({
       this.$emit('click', index);
       this.parent.$emit('change', index);
     }
+  },
+
+  render(h) {
+    return (
+      <a
+        href={this.url}
+        class={[this.b({ select: this.select }), 'van-hairline']}
+        onClick={this.onClick}
+      >
+        <div class={this.b('text')}>
+          {this.title}
+          <Info info={this.info} class={this.b('info')} />
+        </div>
+      </a>
+    );
   }
 });
-</script>
