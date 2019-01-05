@@ -1,4 +1,7 @@
 import create from '../utils/create';
+import createBem from '../utils/bem';
+
+const bem = createBem('van-badge-group');
 
 export default create({
   name: 'badge-group',
@@ -24,7 +27,7 @@ export default create({
 
   render(h) {
     return (
-      <div class={['van-hairline--top-bottom', this.b()]}>
+      <div class={['van-hairline--top-bottom', bem()]}>
         {this.$slots.default}
       </div>
     );
