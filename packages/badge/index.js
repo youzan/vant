@@ -1,5 +1,8 @@
 import Info from '../info';
 import create from '../utils/create';
+import createBem from '../utils/bem';
+
+const bem = createBem('van-badge');
 
 export default create({
   name: 'badge',
@@ -45,12 +48,12 @@ export default create({
     return (
       <a
         href={this.url}
-        class={[this.b({ select: this.select }), 'van-hairline']}
+        class={[bem({ select: this.select }), 'van-hairline']}
         onClick={this.onClick}
       >
-        <div class={this.b('text')}>
+        <div class={bem('text')}>
           {this.title}
-          <Info info={this.info} class={this.b('info')} />
+          <Info info={this.info} class={bem('info')} />
         </div>
       </a>
     );
