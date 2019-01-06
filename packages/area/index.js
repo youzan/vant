@@ -41,6 +41,13 @@ export default createSfc({
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
+    },
+
+    listeners() {
+      return {
+        ...this.$listeners,
+        change: this.onChange
+      };
     }
   },
 
@@ -190,13 +197,7 @@ export default createSfc({
         columns={this.displayColumns}
         item-height={this.itemHeight}
         visible-item-count={this.visibleItemCount}
-        onChange={this.onChange}
-        onConfirm={values => {
-          this.$emit('confirm', values);
-        }}
-        onCancel={values => {
-          this.$emit('cancel', values);
-        }}
+        {...{ on: this.listeners }}
       />
     );
   }
