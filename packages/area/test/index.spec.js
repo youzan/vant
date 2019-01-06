@@ -9,9 +9,15 @@ const firstOption = [
 ];
 
 test('confirm & cancel event', async () => {
+  const onConfirm = jest.fn();
+  const onCancel = jest.fn();
   const wrapper = mount(Area, {
     propsData: {
       areaList
+    },
+    listeners: {
+      confirm: onConfirm,
+      cancel: onCancel
     }
   });
 
@@ -20,8 +26,8 @@ test('confirm & cancel event', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   wrapper.find('.van-picker__cancel').trigger('click');
 
-  expect(wrapper.emitted('confirm')[0][0]).toEqual(firstOption);
-  expect(wrapper.emitted('cancel')[0][0]).toEqual(firstOption);
+  expect(onConfirm.mock.calls[0][0]).toEqual(firstOption);
+  expect(onCancel.mock.calls[0][0]).toEqual(firstOption);
 });
 
 test('watch areaList & code', async () => {
