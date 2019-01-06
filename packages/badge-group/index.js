@@ -1,7 +1,4 @@
 import createSfc from '../utils/create';
-import createBem from '../utils/bem';
-
-const bem = createBem('van-badge-group');
 
 export default createSfc({
   name: 'badge-group',
@@ -26,10 +23,6 @@ export default createSfc({
   },
 
   render(h) {
-    return (
-      <div class={['van-hairline--top-bottom', bem()]}>
-        {this.$slots.default}
-      </div>
-    );
+    return <div class="van-hairline--top-bottom van-badge-group">{this.$slots.default}</div>;
   }
 });

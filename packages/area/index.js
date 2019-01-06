@@ -1,9 +1,6 @@
 import createSfc from '../utils/create';
-import createBem from '../utils/bem';
 import Picker from '../picker';
 import PickerMixin from '../mixins/picker';
-
-const bem = createBem('van-area');
 
 export default createSfc({
   name: 'area',
@@ -185,7 +182,7 @@ export default createSfc({
     return (
       <Picker
         ref="picker"
-        class={bem()}
+        class="van-area"
         show-toolbar
         value-key="name"
         title={this.title}
@@ -194,8 +191,12 @@ export default createSfc({
         item-height={this.itemHeight}
         visible-item-count={this.visibleItemCount}
         onChange={this.onChange}
-        onConfirm={values => { this.$emit('confirm', values); }}
-        onCancel={values => { this.$emit('cancel', values); }}
+        onConfirm={values => {
+          this.$emit('confirm', values);
+        }}
+        onCancel={values => {
+          this.$emit('cancel', values);
+        }}
       />
     );
   }
