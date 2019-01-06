@@ -1,11 +1,9 @@
-import createSfc from '../utils/create';
-import createBem from '../utils/bem';
+import { use } from '../utils';
+import Loading from '../loading';
 
-const bem = createBem('van-button');
+const [sfc, bem] = use('button');
 
-export default createSfc({
-  name: 'button',
-
+export default sfc({
   props: {
     text: String,
     block: Boolean,
@@ -59,7 +57,7 @@ export default createSfc({
         onClick={this.onClick}
       >
         {this.loading ? (
-          <loading size="20px" color={this.type === 'default' ? undefined : ''} />
+          <Loading size="20px" color={this.type === 'default' ? undefined : ''} />
         ) : (
           <span class={bem('text')}>{this.$slots.default || this.text}</span>
         )}

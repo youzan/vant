@@ -1,12 +1,9 @@
-import createSfc from '../utils/create';
-import createBem from '../utils/bem';
+import { use, isDef } from '../utils';
 import Tag from '../tag';
 
-const bem = createBem('van-card');
+const [sfc, bem] = use('card');
 
-export default createSfc({
-  name: 'card',
-
+export default sfc({
   props: {
     tag: String,
     desc: String,
@@ -25,7 +22,7 @@ export default createSfc({
   },
 
   render(h) {
-    const { thumb, isDef, $slots: slots } = this;
+    const { thumb, $slots: slots } = this;
 
     const Thumb = (slots.thumb || thumb) && (
       <a href={this.thumbLink} class={bem('thumb')}>

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import use from './use';
 
 const isServer = Vue.prototype.$isServer;
 
@@ -37,6 +38,7 @@ function range(num, min, max) {
 }
 
 export {
+  use,
   get,
   range,
   isObj,

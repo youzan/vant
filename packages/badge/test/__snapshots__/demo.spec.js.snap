@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-hairline--top-bottom van-badge-group"><a class="van-badge van-badge--select van-hairline">
+    <div class="van-badge-group van-hairline--top-bottom"><a class="van-badge van-badge--select van-hairline">
         <div class="van-badge__text">标签名称
           <!---->
         </div>

@@ -1,10 +1,10 @@
-import createSfc from '../utils/create';
+import { use } from '../utils';
 import Picker from '../picker';
 import PickerMixin from '../mixins/picker';
 
-export default createSfc({
-  name: 'area',
+const [sfc, bem] = use('area');
 
+export default sfc({
   mixins: [PickerMixin],
 
   props: {
@@ -189,7 +189,7 @@ export default createSfc({
     return (
       <Picker
         ref="picker"
-        class="van-area"
+        class={bem()}
         show-toolbar
         value-key="name"
         title={this.title}

@@ -1,12 +1,9 @@
+import { use } from '../utils';
 import Info from '../info';
-import createSfc from '../utils/create';
-import createBem from '../utils/bem';
 
-const bem = createBem('van-badge');
+const [sfc, bem] = use('badge');
 
-export default createSfc({
-  name: 'badge',
-
+export default sfc({
   props: {
     url: String,
     info: [String, Number],
