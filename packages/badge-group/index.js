@@ -1,8 +1,8 @@
-import createSfc from '../utils/create';
+import { use } from '../utils';
 
-export default createSfc({
-  name: 'badge-group',
+const [sfc, bem] = use('badge-group');
 
+export default sfc({
   props: {
     activeKey: {
       type: [Number, String],
@@ -23,6 +23,6 @@ export default createSfc({
   },
 
   render(h) {
-    return <div class="van-hairline--top-bottom van-badge-group">{this.$slots.default}</div>;
+    return <div class={[bem(), 'van-hairline--top-bottom']}>{this.$slots.default}</div>;
   }
 });

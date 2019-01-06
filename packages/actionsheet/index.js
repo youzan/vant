@@ -1,13 +1,12 @@
-import createSfc from '../utils/create';
-import createBem from '../utils/bem';
-import Popup from '../mixins/popup';
+import { use } from '../utils';
+import Icon from '../icon';
+import Loading from '../loading';
+import PopupMixin from '../mixins/popup';
 
-const bem = createBem('van-actionsheet');
+const [sfc, bem] = use('actionsheet');
 
-export default createSfc({
-  name: 'actionsheet',
-
-  mixins: [Popup],
+export default sfc({
+  mixins: [PopupMixin],
 
   props: {
     title: String,
@@ -53,7 +52,7 @@ export default createSfc({
     const Header = () => (
       <div class={[bem('header'), 'van-hairline--top-bottom']}>
         {title}
-        <icon name="close" onClick={onCancel} />
+        <Icon name="close" onClick={onCancel} />
       </div>
     );
 
@@ -69,7 +68,7 @@ export default createSfc({
         }}
       >
         {item.loading ? (
-          <loading class={bem('loading')} size="20px" />
+          <Loading class={bem('loading')} size="20px" />
         ) : (
           [
             <span class={bem('name')}>{item.name}</span>,

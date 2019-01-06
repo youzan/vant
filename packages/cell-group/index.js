@@ -1,8 +1,8 @@
-import createSfc from '../utils/create-basic';
+import { use } from '../utils';
 
-export default createSfc({
-  name: 'cell-group',
+const [sfc, bem] = use('cell-group');
 
+export default sfc({
   props: {
     border: {
       type: Boolean,
@@ -12,7 +12,7 @@ export default createSfc({
 
   render(h) {
     return (
-      <div class={['van-cell-group', { 'van-hairline--top-bottom': this.border }]}>
+      <div class={[bem(), { 'van-hairline--top-bottom': this.border }]}>
         {this.$slots.default}
       </div>
     );
