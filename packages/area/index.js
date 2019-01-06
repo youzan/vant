@@ -1,33 +1,11 @@
-<template>
-  <picker
-    ref="picker"
-    :class="b()"
-    show-toolbar
-    value-key="name"
-    :title="title"
-    :loading="loading"
-    :columns="displayColumns"
-    :item-height="itemHeight"
-    :visible-item-count="visibleItemCount"
-    @change="onChange"
-    @confirm="$emit('confirm', $event)"
-    @cancel="$emit('cancel', $event)"
-  />
-</template>
-
-<script>
-import create from '../utils/create';
+import createSfc from '../utils/create';
 import Picker from '../picker';
 import PickerMixin from '../mixins/picker';
 
-export default create({
+export default createSfc({
   name: 'area',
 
   mixins: [PickerMixin],
-
-  components: {
-    Picker
-  },
 
   props: {
     value: String,
@@ -63,6 +41,13 @@ export default create({
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
+    },
+
+    listeners() {
+      return {
+        ...this.$listeners,
+        change: this.onChange
+      };
     }
   },
 
@@ -198,6 +183,22 @@ export default create({
       this.code = '';
       this.setValues();
     }
+  },
+
+  render(h) {
+    return (
+      <Picker
+        ref="picker"
+        class="van-area"
+        show-toolbar
+        value-key="name"
+        title={this.title}
+        loading={this.loading}
+        columns={this.displayColumns}
+        item-height={this.itemHeight}
+        visible-item-count={this.visibleItemCount}
+        {...{ on: this.listeners }}
+      />
+    );
   }
 });
-</script>
