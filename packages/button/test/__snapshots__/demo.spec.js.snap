@@ -5,26 +5,14 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="demo-button-row"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">主要按钮</span></button> <button class="van-button van-button--danger van-button--normal"><span class="van-button__text">危险按钮</span></button></div> <button class="van-button van-button--default van-button--normal"><span class="van-button__text">默认按钮</span></button> <button class="van-button van-button--warning van-button--normal"><span class="van-button__text">警告按钮</span></button>
   </div>
-  <div><button class="van-button van-button--primary van-button--normal van-button--plain"><span class="van-button__text">
-      朴素按钮
-    </span></button> <button class="van-button van-button--danger van-button--normal van-button--plain"><span class="van-button__text">
-      朴素按钮
-    </span></button></div>
-  <div><button disabled="disabled" class="van-button van-button--primary van-button--normal van-button--disabled van-button--unclickable"><span class="van-button__text">
-      禁用状态
-    </span></button> <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled van-button--unclickable"><span class="van-button__text">
-      禁用状态
-    </span></button></div>
-  <div><button class="van-button van-button--primary van-button--normal van-button--loading van-button--unclickable">
+  <div><button class="van-button van-button--primary van-button--normal van-button--plain"><span class="van-button__text">朴素按钮</span></button> <button class="van-button van-button--danger van-button--normal van-button--plain"><span class="van-button__text">朴素按钮</span></button></div>
+  <div><button disabled="disabled" class="van-button van-button--primary van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button> <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal van-button--loading">
       <div class="van-loading van-loading--circular van-loading" style="color:;width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
-    </button> <button class="van-button van-button--danger van-button--normal van-button--loading van-button--unclickable">
+    </button> <button class="van-button van-button--danger van-button--normal van-button--loading">
       <div class="van-loading van-loading--circular van-loading" style="color:;width:20px;height:20px;"><span class="van-loading__spinner van-loading__spinner--circular"> <svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
     </button></div>
-  <div><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">
-      方形按钮
-    </span></button> <button class="van-button van-button--danger van-button--normal van-button--round"><span class="van-button__text">
-      圆形按钮
-    </span></button></div>
+  <div><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">方形按钮</span></button> <button class="van-button van-button--danger van-button--normal van-button--round"><span class="van-button__text">圆形按钮</span></button></div>
   <div><button class="van-button van-button--default van-button--large"><span class="van-button__text">大号按钮</span></button> <button class="van-button van-button--default van-button--normal"><span class="van-button__text">普通按钮</span></button> <button class="van-button van-button--default van-button--small"><span class="van-button__text">小型按钮</span></button> <button class="van-button van-button--default van-button--mini"><span class="van-button__text">迷你按钮</span></button></div>
 </div>
 `;

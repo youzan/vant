@@ -4,7 +4,7 @@ exports[`submit 1`] = `
 <div class="van-submit-bar">
   <!---->
   <div class="van-submit-bar__bar">
-    <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 0.00</span></div> <button disabled="disabled" class="van-button van-button--danger van-button--large van-button--square van-button--disabled van-button--unclickable"><span class="van-button__text"></span></button>
+    <div class="van-submit-bar__text"><span>合计：</span> <span class="van-submit-bar__price">¥ 0.00</span></div> <button disabled="disabled" class="van-button van-button--danger van-button--large van-button--square van-button--disabled"><span class="van-button__text"></span></button>
   </div>
 </div>
 `;

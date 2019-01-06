@@ -13,30 +13,26 @@
       <van-button
         plain
         type="primary"
-      >
-        {{ $t('plain') }}
-      </van-button>
+        :text="$t('plain')"
+      />
       <van-button
         plain
         type="danger"
-      >
-        {{ $t('plain') }}
-      </van-button>
+        :text="$t('plain')"
+      />
     </demo-block>
 
     <demo-block :title="$t('disabled')">
       <van-button
         disabled
         type="primary"
-      >
-        {{ $t('disabled') }}
-      </van-button>
+        :text="$t('disabled')"
+      />
       <van-button
         disabled
         type="danger"
-      >
-        {{ $t('disabled') }}
-      </van-button>
+        :text="$t('disabled')"
+      />
     </demo-block>
 
     <demo-block :title="$t('loadingStatus')">
@@ -54,15 +50,13 @@
       <van-button
         type="primary"
         square
-      >
-        {{ $t('square') }}
-      </van-button>
+        :text="$t('square')"
+      />
       <van-button
         type="danger"
         round
-      >
-        {{ $t('round') }}
-      </van-button>
+        :text="$t('round')"
+      />
     </demo-block>
 
     <demo-block :title="$t('size')">
