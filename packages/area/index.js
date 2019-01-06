@@ -1,33 +1,14 @@
-<template>
-  <picker
-    ref="picker"
-    :class="b()"
-    show-toolbar
-    value-key="name"
-    :title="title"
-    :loading="loading"
-    :columns="displayColumns"
-    :item-height="itemHeight"
-    :visible-item-count="visibleItemCount"
-    @change="onChange"
-    @confirm="$emit('confirm', $event)"
-    @cancel="$emit('cancel', $event)"
-  />
-</template>
-
-<script>
-import create from '../utils/create';
+import createSfc from '../utils/create';
+import createBem from '../utils/bem';
 import Picker from '../picker';
 import PickerMixin from '../mixins/picker';
 
-export default create({
+const bem = createBem('van-area');
+
+export default createSfc({
   name: 'area',
 
   mixins: [PickerMixin],
-
-  components: {
-    Picker
-  },
 
   props: {
     value: String,
@@ -198,6 +179,24 @@ export default create({
       this.code = '';
       this.setValues();
     }
+  },
+
+  render(h) {
+    return (
+      <Picker
+        ref="picker"
+        class={bem()}
+        show-toolbar
+        value-key="name"
+        title={this.title}
+        loading={this.loading}
+        columns={this.displayColumns}
+        item-height={this.itemHeight}
+        visible-item-count={this.visibleItemCount}
+        onChange={this.onChange}
+        onConfirm={values => { this.$emit('confirm', values); }}
+        onCancel={values => { this.$emit('cancel', values); }}
+      />
+    );
   }
 });
-</script>
