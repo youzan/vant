@@ -116,5 +116,6 @@ export default {
 | originCondition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
 | startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
 | endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
-| reason | 不可用原因 | `String` |
+| description | 描述信息，优惠券可用时展示 | `String` |
+| reason | 不可用原因，优惠券不可用时展示 | `String` |
 | value | 折扣券优惠金额，单位分 | `Number` |
