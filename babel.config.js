@@ -12,6 +12,14 @@ module.exports = function (api) {
           loose: true,
           modules: useESModules ? false : 'commonjs'
         }
+      ],
+      [
+        '@vue/babel-preset-jsx',
+        {
+          vModel: true,
+          injectH: true,
+          functional: true
+        }
       ]
     ],
     plugins: [
@@ -24,7 +32,6 @@ module.exports = function (api) {
           useESModules
         }
       ],
-      'transform-vue-jsx',
       '@babel/plugin-syntax-dynamic-import',
       '@babel/plugin-transform-object-assign'
     ]
