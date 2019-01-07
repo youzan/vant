@@ -25,7 +25,10 @@ export default sfc({
     coupon: Object,
     chosen: Boolean,
     disabled: Boolean,
-    currency: String
+    currency: {
+      type: String,
+      default: '¥'
+    }
   },
 
   computed: {
@@ -34,9 +37,9 @@ export default sfc({
     },
 
     faceAmount() {
-      return this.coupon.denominations !== 0
+      return this.coupon.denominations
         ? `<span>${this.currency}</span> ${formatAmount(this.coupon.denominations)}`
-        : this.coupon.discount !== 0
+        : this.coupon.discount
           ? t('discount', formatDiscount(this.coupon.discount))
           : '';
     },
