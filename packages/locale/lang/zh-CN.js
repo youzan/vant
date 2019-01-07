@@ -28,6 +28,12 @@ export default {
   vanSubmitBar: {
     label: '合计：'
   },
+  vanCoupon: {
+    valid: '有效期',
+    unlimited: '无使用门槛',
+    discount: discount => `${discount}折`,
+    condition: (condition) => `满${condition}元可用`
+  },
   vanCouponCell: {
     title: '优惠券',
     tips: '使用优惠',
@@ -40,12 +46,6 @@ export default {
     enable: '可使用优惠券',
     disabled: '不可使用优惠券',
     placeholder: '请输入优惠码'
-  },
-  vanCouponItem: {
-    valid: '有效期',
-    unlimited: '无使用门槛',
-    discount: discount => `${discount}折`,
-    condition: (condition) => `满${condition}元可用`
   },
   vanAddressEdit: {
     area: '地区',

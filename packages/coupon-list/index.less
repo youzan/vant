@@ -1,148 +1,47 @@
 @import '../style/var';
-@import '../style/mixins/ellipsis';
 
-.van-coupon {
-  &-cell--selected {
-    color: @text-color;
+.van-coupon-list {
+  height: 100%;
+  position: relative;
+  background-color: @background-color;
+
+  &__field {
+    padding: 7px 15px;
   }
 
-  &-list {
-    height: 100%;
-    position: relative;
-    background-color: @background-color;
-
-    &__field {
-      padding: 7px 15px;
-    }
-
-    &__exchange {
-      height: 32px;
-      line-height: 30px;
-    }
-
-    &__list {
-      overflow-y: auto;
-      padding: 15px 0;
-      box-sizing: border-box;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    &__close {
-      left: 0;
-      bottom: 0;
-      position: absolute;
-      font-weight: 500;
-    }
-
-    &__empty {
-      padding-top: 100px;
-      text-align: center;
-
-      p {
-        color: @gray-dark;
-        margin: 15px 0;
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      img {
-        width: 80px;
-        height: 84px;
-      }
-    }
+  &__exchange {
+    height: 32px;
+    line-height: 30px;
   }
 
-  &-item {
-    overflow: hidden;
-    border-radius: 4px;
-    margin: 0 15px 15px;
-    background-color: @white;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  &__list {
+    overflow-y: auto;
+    padding: 15px 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+  }
 
-    &:active {
-      background-color: @active-color;
-    }
+  &__close {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    font-weight: 500;
+  }
 
-    &__content {
-      display: flex;
-      height: 100px;
-      padding: 24px 0 0 15px;
-      box-sizing: border-box;
-    }
-
-    p,
-    h2 {
-      margin: 0;
-
-      .ellipsis();
-    }
-
-    h2 {
-      height: 34px;
-      font-weight: 500;
-      line-height: 34px;
-    }
+  &__empty {
+    padding-top: 100px;
+    text-align: center;
 
     p {
-      font-size: 12px;
-      line-height: 16px;
       color: @gray-dark;
+      margin: 15px 0;
+      font-size: 14px;
+      line-height: 20px;
     }
 
-    &__head {
-      min-width: 90px;
-
-      h2 {
-        color: @red;
-        font-size: 24px;
-
-        span {
-          font-size: 50%;
-        }
-      }
-    }
-
-    &__body {
-      flex: 1;
-      position: relative;
-      border-radius: 0 4px 4px 0;
-
-      h2 {
-        font-size: 16px;
-      }
-    }
-
-    &__corner {
-      top: 16px;
-      right: 15px;
-      position: absolute;
-
-      .van-icon {
-        border-color: @red;
-        background-color: @red;
-      }
-    }
-
-    &__reason {
-      padding: 7px 15px;
-      border-top: 1px dashed @border-color;
-      background-color: @background-color-light;
-    }
-
-    &--disabled {
-      &:active {
-        background-color: @white;
-      }
-
-      .van-coupon-item__content {
-        height: 90px;
-      }
-
-      p,
-      h2,
-      span {
-        color: @gray-dark;
-      }
+    img {
+      width: 80px;
+      height: 84px;
     }
   }
 }
