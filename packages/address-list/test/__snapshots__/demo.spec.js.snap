@@ -7,20 +7,20 @@ exports[`renders demo correctly 1`] = `
       <div class="van-radio-group">
         <div class="van-cell-group van-hairline--top-bottom">
           <div class="van-cell van-cell--clickable van-address-item">
-            <!---->
-            <!---->
+
             <div class="van-cell__value van-cell__value--alone">
               <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span> <span class="van-radio__label"><div class="van-address-item__name">张三，13000000000</div> <div class="van-address-item__address">浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室</div></span></div>
-            </div> <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
+            </div>
+            <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
               <!---->
               <!----></i>
           </div>
           <div class="van-cell van-cell--clickable van-address-item">
-            <!---->
-            <!---->
+
             <div class="van-cell__value van-cell__value--alone">
               <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-circle" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span> <span class="van-radio__label"><div class="van-address-item__name">李四，1310000000</div> <div class="van-address-item__address">浙江省杭州市拱墅区莫干山路 50 号</div></span></div>
-            </div> <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
+            </div>
+            <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
               <!---->
               <!----></i>
           </div>
@@ -29,11 +29,11 @@ exports[`renders demo correctly 1`] = `
       <div class="van-address-list__disabled-text">以下地址超出配送范围</div>
       <div class="van-cell-group van-hairline--top-bottom">
         <div class="van-cell van-address-item van-address-item--disabled van-address-item--unswitchable">
-          <!---->
-          <!---->
+
           <div class="van-cell__value van-cell__value--alone">
             <div class="van-radio"><span class="van-radio__input"><input type="radio" value="3" class="van-radio__control"> <i class="van-icon van-icon-circle" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span> <span class="van-radio__label"><div class="van-address-item__name">王五，1320000000</div> <div class="van-address-item__address">浙江省杭州市滨江区江南大道 15 号</div></span></div>
-          </div> <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
+          </div>
+          <i class="van-icon van-icon-edit van-address-item__edit" style="color:undefined;font-size:undefined;">
             <!---->
             <!----></i>
         </div>

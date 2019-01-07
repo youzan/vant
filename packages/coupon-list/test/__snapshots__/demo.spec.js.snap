@@ -4,11 +4,10 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-cell van-cell--clickable van-coupon-cell">
-      <!---->
       <div class="van-cell__title"><span>优惠券</span>
-        <!---->
       </div>
-      <div class="van-cell__value"><span>2张可用</span></div> <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
+      <div class="van-cell__value"><span>2张可用</span></div>
+      <i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
         <!---->
         <!----></i>
     </div>

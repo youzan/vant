@@ -5,12 +5,11 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
       <div class="van-cell van-panel__header">
-        <!---->
         <div class="van-cell__title"><span>标题</span>
           <div class="van-cell__label">描述信息</div>
         </div>
         <div class="van-cell__value"><span>状态</span></div>
-        <!---->
+
       </div>
       <div class="van-panel__content">
         <div>内容</div>
@@ -21,12 +20,11 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom van-panel">
       <div class="van-cell van-panel__header">
-        <!---->
         <div class="van-cell__title"><span>标题</span>
           <div class="van-cell__label">描述信息</div>
         </div>
         <div class="van-cell__value"><span>状态</span></div>
-        <!---->
+
       </div>
       <div class="van-panel__content">
         <div>内容</div>

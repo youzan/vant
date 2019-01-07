@@ -16,12 +16,10 @@ exports[`renders demo correctly 1`] = `
           <div class="van-swipe-cell__left"><span>选择</span></div>
           <div class="van-cell-group van-hairline--top-bottom">
             <div class="van-cell">
-              <!---->
               <div class="van-cell__title"><span>单元格</span>
-                <!---->
               </div>
               <div class="van-cell__value"><span>内容</span></div>
-              <!---->
+
             </div>
           </div>
           <div class="van-swipe-cell__right"><span>删除</span></div>
@@ -34,12 +32,10 @@ exports[`renders demo correctly 1`] = `
           <div class="van-swipe-cell__left"><span>选择</span></div>
           <div class="van-cell-group van-hairline--top-bottom">
             <div class="van-cell">
-              <!---->
               <div class="van-cell__title"><span>单元格</span>
-                <!---->
               </div>
               <div class="van-cell__value"><span>内容</span></div>
-              <!---->
+
             </div>
           </div>
           <div class="van-swipe-cell__right"><span>删除</span></div>
