@@ -53,9 +53,10 @@ export default sfc({
 
   render(h) {
     const { coupon, disabled } = this;
+    const description = (disabled && coupon.reason) || coupon.description;
 
     return (
-      <div class={bem({ disabled: this.disabled })}>
+      <div class={bem({ disabled })}>
         <div class={bem('content')}>
           <div class={bem('head')}>
             <h2 domPropsInnerHTML={this.faceAmount} />
@@ -67,7 +68,7 @@ export default sfc({
             {this.chosen && <Checkbox value={true} class={bem('corner')} />}
           </div>
         </div>
-        {(disabled && coupon.reason) && <p class={bem('reason')}>{coupon.reason}</p>}
+        {description && <p class={bem('description')}>{description}</p>}
       </div>
     );
   }

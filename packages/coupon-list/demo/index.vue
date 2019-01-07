@@ -30,14 +30,16 @@ export default {
     'zh-CN': {
       coupon: {
         name: '优惠券名称',
-        reason: '优惠券不可用原因'
+        reason: '优惠券不可用原因',
+        description: '描述信息'
       },
       exchange: '兑换成功'
     },
     'en-US': {
       coupon: {
         name: 'Coupon name',
-        reason: 'Coupon unavailable reason'
+        reason: 'Coupon unavailable reason',
+        description: 'Description'
       },
       exchange: 'Success'
     }
@@ -63,13 +65,13 @@ export default {
     coupon() {
       return {
         id: 1,
-        available: 1,
         discount: 0,
         denominations: 150,
         originCondition: 0,
         reason: '',
         value: 150,
         name: this.$t('coupon.name'),
+        description: this.$t('coupon.description'),
         startAt: 1489104000,
         endAt: 1514592000
       };
@@ -90,7 +92,6 @@ export default {
       return {
         ...this.coupon,
         id: 3,
-        available: 0,
         reason: this.$t('coupon.reason')
       };
     },
@@ -100,7 +101,6 @@ export default {
         ...this.discountCoupon,
         discount: 10,
         id: 4,
-        available: 0,
         reason: this.$t('coupon.reason')
       };
     }

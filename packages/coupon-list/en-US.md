@@ -111,5 +111,6 @@ export default {
 | originCondition | Condition | `Number` |
 | startAt | Start time (Timestmap, unit second) | `Number` |
 | endAt | End time (Timestmap, unit second) | `Number` |
+| description | Description | `String` |
 | reason | Unavailable reason | `String` |
 | value | Value | `Number` |
