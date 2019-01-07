@@ -93,5 +93,7 @@ test('change tabs data', async () => {
     color: 'blue',
     title1: 'new title1'
   });
+
+  await later();
   expect(wrapper).toMatchSnapshot();
 });
