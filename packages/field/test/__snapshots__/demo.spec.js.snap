@@ -5,8 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-field">
-        <!---->
-        <!---->
+
         <div class="van-cell__value van-cell__value--alone">
           <div class="van-field__body"><input type="text" placeholder="请输入用户名" value="" class="van-field__control">
             <!---->
@@ -15,16 +14,14 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-cell--required van-field">
-        <!---->
         <div class="van-cell__title"><span>用户名</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入用户名" value="" class="van-field__control">
@@ -36,12 +33,10 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div placeholder="请输入密码" class="van-cell van-cell--required van-field">
-        <!---->
         <div class="van-cell__title"><span>密码</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="password" placeholder="请输入密码" value="" class="van-field__control">
@@ -51,7 +46,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
@@ -61,7 +56,6 @@ exports[`renders demo correctly 1`] = `
           <!---->
           <!----></i>
         <div class="van-cell__title"><span>用户名</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" disabled="disabled" value="输入框已禁用" class="van-field__control">
@@ -71,16 +65,14 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入用户名" class="van-cell van-field van-field--error">
-        <!---->
         <div class="van-cell__title"><span>用户名</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入用户名" value="" class="van-field__control">
@@ -90,12 +82,10 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div placeholder="请输入手机号" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>手机号</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入手机号" value="1365577" class="van-field__control">
@@ -105,16 +95,14 @@ exports[`renders demo correctly 1`] = `
           </div>
           <div class="van-field__error-message">手机号格式错误</div>
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入留言" rows="1" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>留言</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><textarea placeholder="请输入留言" rows="1" class="van-field__control"></textarea>
@@ -124,16 +112,14 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div placeholder="请输入短信验证码" class="van-cell van-cell--center van-field">
-        <!---->
         <div class="van-cell__title"><span>短信验证码</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="请输入短信验证码" value="" class="van-field__control">
@@ -145,7 +131,7 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
     </div>
   </div>

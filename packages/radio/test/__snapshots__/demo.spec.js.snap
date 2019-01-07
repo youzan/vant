@@ -23,28 +23,24 @@ exports[`renders demo correctly 1`] = `
     <div class="van-radio-group">
       <div class="van-cell-group van-hairline--top-bottom">
         <div class="van-cell van-cell--clickable">
-          <!---->
           <div class="van-cell__title"><span>单选框1</span>
-            <!---->
           </div>
           <div class="van-cell__value">
             <div class="van-radio"><span class="van-radio__input"><input type="radio" value="1" checked="checked" class="van-radio__control"> <i class="van-icon van-icon-checked" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span>
               <!---->
             </div>
           </div>
-          <!---->
+
         </div>
         <div class="van-cell van-cell--clickable">
-          <!---->
           <div class="van-cell__title"><span>单选框2</span>
-            <!---->
           </div>
           <div class="van-cell__value">
             <div class="van-radio"><span class="van-radio__input"><input type="radio" value="2" class="van-radio__control"> <i class="van-icon van-icon-circle" style="color:undefined;font-size:undefined;"> <!----> <!----></i></span>
               <!---->
             </div>
           </div>
-          <!---->
+
         </div>
       </div>
     </div>

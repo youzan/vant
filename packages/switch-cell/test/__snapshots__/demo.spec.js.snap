@@ -5,9 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
-        <!---->
         <div class="van-cell__title"><span>标题</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div title="标题" class="van-switch van-switch--on" style="font-size:24px;background-color:undefined;">
@@ -16,16 +14,14 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
-        <!---->
         <div class="van-cell__title"><span>标题</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div title="标题" class="van-switch van-switch--on van-switch--disabled" style="font-size:24px;background-color:undefined;">
@@ -34,16 +30,14 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <!---->
+
       </div>
     </div>
   </div>
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
-        <!---->
         <div class="van-cell__title"><span>标题</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div title="标题" class="van-switch van-switch--on" style="font-size:24px;background-color:undefined;">
@@ -52,7 +46,7 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <!---->
+
       </div>
     </div>
   </div>

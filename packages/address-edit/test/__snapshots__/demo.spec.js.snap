@@ -5,9 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-address-edit">
       <div placeholder="收货人姓名" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>姓名</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" placeholder="收货人姓名" value="" class="van-field__control">
@@ -17,12 +15,10 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div placeholder="收货人手机号" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>电话</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="tel" placeholder="收货人手机号" value="" class="van-field__control">
@@ -32,12 +28,10 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div placeholder="选择省 / 市 / 区" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>地区</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="text" readonly="readonly" placeholder="选择省 / 市 / 区" value="" class="van-field__control">
@@ -47,16 +41,13 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div class="van-cell van-address-edit-detail">
-        <!---->
-        <!---->
+
         <div class="van-cell__value van-cell__value--alone">
           <div rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-cell van-field">
-            <!---->
             <div class="van-cell__title"><span>详细地址</span>
-              <!---->
             </div>
             <div class="van-cell__value">
               <div class="van-field__body"><textarea rows="1" maxlength="200" placeholder="街道门牌、楼层房间号等信息" class="van-field__control"></textarea>
@@ -66,15 +57,13 @@ exports[`renders demo correctly 1`] = `
               </div>
               <!---->
             </div>
-            <!---->
+
           </div>
         </div>
-        <!---->
+
       </div>
       <div maxlength="6" placeholder="邮政编码" class="van-cell van-field">
-        <!---->
         <div class="van-cell__title"><span>邮政编码</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control">
@@ -84,12 +73,10 @@ exports[`renders demo correctly 1`] = `
           </div>
           <!---->
         </div>
-        <!---->
+
       </div>
       <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
-        <!---->
         <div class="van-cell__title"><span>设为默认收货地址</span>
-          <!---->
         </div>
         <div class="van-cell__value">
           <div title="设为默认收货地址" class="van-switch" style="font-size:24px;background-color:undefined;">
@@ -98,7 +85,7 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
         </div>
-        <!---->
+
       </div>
       <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">保存</span></button> <button class="van-button van-button--default van-button--normal van-button--block"><span class="van-button__text">删除</span></button></div>
       <div class="van-popup van-popup--bottom" style="display:none;">

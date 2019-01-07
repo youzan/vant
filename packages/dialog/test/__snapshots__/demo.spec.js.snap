@@ -17,9 +17,7 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-dialog__content">
         <div placeholder="请输入用户名" class="van-cell van-field">
-          <!---->
           <div class="van-cell__title"><span>用户名</span>
-            <!---->
           </div>
           <div class="van-cell__value">
             <div class="van-field__body"><input type="text" placeholder="请输入用户名" value="" class="van-field__control">
@@ -29,12 +27,10 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <!---->
+
         </div>
         <div placeholder="请输入密码" class="van-cell van-field">
-          <!---->
           <div class="van-cell__title"><span>密码</span>
-            <!---->
           </div>
           <div class="van-cell__value">
             <div class="van-field__body"><input type="password" placeholder="请输入密码" value="" class="van-field__control">
@@ -44,7 +40,7 @@ exports[`renders demo correctly 1`] = `
             </div>
             <!---->
           </div>
-          <!---->
+
         </div>
       </div>
       <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel"><span class="van-button__text">取消</span></button> <button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"><span class="van-button__text">消息确认</span></button></div>
