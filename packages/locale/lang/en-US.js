@@ -28,6 +28,12 @@ export default {
   vanSubmitBar: {
     label: 'Total：'
   },
+  vanCoupon: {
+    valid: 'Valid',
+    unlimited: 'Unlimited',
+    discount: discount => `${discount * 10}% off`,
+    condition: condition => `At least ${condition}`
+  },
   vanCouponCell: {
     title: 'Coupon',
     tips: 'Select coupon',
@@ -40,12 +46,6 @@ export default {
     enable: 'Available',
     disabled: 'Unavailable',
     placeholder: 'Coupon code'
-  },
-  vanCouponItem: {
-    valid: 'Valid',
-    unlimited: 'Unlimited',
-    discount: discount => `${discount * 10}% off`,
-    condition: condition => `At least ${condition}`
   },
   vanAddressEdit: {
     area: 'Area',

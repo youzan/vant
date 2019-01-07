@@ -1,4 +1,4 @@
-import CouponList from '../../coupon-list';
+import CouponList from '..';
 import CouponCell from '../../coupon-cell';
 import { mount } from '../../../test/utils';
 
