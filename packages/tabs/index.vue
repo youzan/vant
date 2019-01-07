@@ -198,12 +198,9 @@ export default create({
   },
 
   mounted() {
-    this.correctActive(this.active);
-    this.setLine();
-
     this.$nextTick(() => {
+      this.inited = true;
       this.handlers(true);
-      this.scrollIntoView(true);
     });
   },
 
@@ -293,6 +290,8 @@ export default create({
 
     // update nav bar style
     setLine() {
+      const shouldAnimate = this.inited;
+
       this.$nextTick(() => {
         const { tabs } = this.$refs;
 
@@ -308,9 +307,12 @@ export default create({
         const lineStyle = {
           width: `${width}px`,
           backgroundColor: this.color,
-          transform: `translateX(${left}px)`,
-          transitionDuration: `${this.duration}s`
+          transform: `translateX(${left}px)`
         };
+
+        if (shouldAnimate) {
+          lineStyle.transitionDuration = `${this.duration}s`;
+        }
 
         if (this.isDef(lineHeight)) {
           const height = `${lineHeight}px`;
