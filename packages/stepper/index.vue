@@ -132,6 +132,11 @@ export default create({
     onBlur(event) {
       this.currentValue = this.range(this.currentValue);
       this.$emit('blur', event);
+
+      // fix edge case when input is empty and min is 0
+      if (this.currentValue === 0) {
+        event.target.value = this.currentValue;
+      }
     }
   }
 });
