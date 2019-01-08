@@ -41,11 +41,14 @@ export default create({
 
   props: {
     tip: String,
-    price: Number,
     label: String,
     loading: Boolean,
     disabled: Boolean,
     buttonText: String,
+    price: {
+      type: Number,
+      default: null
+    },
     currency: {
       type: String,
       default: '¥'
