@@ -246,6 +246,7 @@ export default create({
 
     swipeTo(index) {
       this.swiping = true;
+      this.resetTouchStatus();
       this.correctPosition();
       setTimeout(() => {
         this.swiping = false;
