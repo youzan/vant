@@ -60,7 +60,7 @@ export default {
 | icon | 描述栏图标 | `String` | - | - |
 | icon-class | 图标额外类名 | `String` | - | - |
 | direction | 显示方向，可选值为 `vertical` | `String` | `horizontal` | - |
-| active-color | 激活状态颜色 | `String` | `#4b0` | - |
+| active-color | 激活状态颜色 | `String` | `#07c160` | - |
 
 ### Steps Slot
 

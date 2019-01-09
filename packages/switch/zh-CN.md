@@ -57,7 +57,7 @@ export default {
 ```html
 <van-switch
   v-model="checked"
-  active-color="#4b0"
+  active-color="#07c160"
   inactive-color="#f44"
 />
 ```

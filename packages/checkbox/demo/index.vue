@@ -22,7 +22,7 @@
     <demo-block :title="$t('customColor')">
       <van-checkbox
         v-model="checkbox2"
-        checked-color="#4b0"
+        checked-color="#07c160"
       >
         {{ $t('customColor') }}
       </van-checkbox>

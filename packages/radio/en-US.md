@@ -43,7 +43,7 @@ export default {
 #### Custom Color
 
 ```html
-<van-radio checked-color="#4b0">Radio</van-radio>
+<van-radio checked-color="#07c160">Radio</van-radio>
 ```
 
 #### Inside a Cell
