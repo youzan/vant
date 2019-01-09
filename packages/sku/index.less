@@ -19,11 +19,6 @@
     }
   }
 
-  &-group-container {
-    margin-left: 15px;
-    padding: 12px 0 2px;
-  }
-
   /* sku header */
   &-header {
     margin-left: 15px;
@@ -83,6 +78,17 @@
     color: @gray-dark;
     position: absolute;
     text-align: center;
+  }
+
+  &-group-container {
+    margin-left: 15px;
+    padding: 12px 0 2px;
+
+    &--hide-soldout {
+      .van-sku-row__item--disabled {
+        display: none;
+      }
+    }
   }
 
   /* sku row */

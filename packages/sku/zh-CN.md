@@ -102,6 +102,8 @@ Vue.use(Sku);
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
+| initial-sku | 默认选中的sku，具体参考高级用法 | `Object` | `{}` | - |
+| show-soldout-sku | 是否展示售罄的sku，如果展示，则为置灰不可选状态，不展示则直接隐藏 | `Boolean` | `true` | - |
 
 ### Event
 
@@ -124,7 +126,7 @@ Vue.use(Sku);
 
 Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，可以按需进行替换。区块顺序见下表：
 
-| 名称 | 说明 | 
+| 名称 | 说明 |
 |------|------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
 | sku-header-price | 自定义 sku 头部价格展示 |
