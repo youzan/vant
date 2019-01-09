@@ -1,5 +1,6 @@
 <template>
   <demo-section>
+    <!-- 基础用法 -->
     <demo-block :title="$t('basicUsage')">
       <div class="sku-container">
         <van-sku
@@ -29,6 +30,7 @@
       </div>
     </demo-block>
 
+    <!-- 自定义步进器 -->
     <demo-block :title="$t('title2')">
       <div class="sku-container">
         <van-sku
@@ -51,6 +53,34 @@
           @click="showStepper = true"
         >
           {{ $t('title2') }}
+        </van-button>
+      </div>
+    </demo-block>
+
+    <!-- 隐藏售罄sku -->
+    <demo-block :title="$t('hideSoldoutSku')">
+      <div class="sku-container">
+        <van-sku
+          hide-quota-text
+          v-model="showSoldout"
+          :sku="skuData.sku"
+          :goods="skuData.goods_info"
+          :goods-id="skuData.goods_id"
+          :hide-stock="skuData.sku.hide_stock"
+          :quota="skuData.quota"
+          :quota-used="skuData.quota_used"
+          :custom-stepper-config="customStepperConfig"
+          :message-config="messageConfig"
+          :show-soldout-sku="false"
+          @buy-clicked="onBuyClicked"
+          @add-cart="onAddCartClicked"
+        />
+        <van-button
+          block
+          type="primary"
+          @click="showSoldout = true"
+        >
+          {{ $t('hideSoldoutSku') }}
         </van-button>
       </div>
     </demo-block>
@@ -122,12 +152,14 @@ export default {
   i18n: {
     'zh-CN': {
       title2: '自定义步进器相关配置',
+      hideSoldoutSku: '隐藏售罄sku',
       stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买'
     },
     'en-US': {
       title2: 'Custom Stepper Related Config',
+      hideSoldoutSku: 'Hide Soldout Sku',
       stepperTitle: 'Stepper title',
       button1: 'Button',
       button2: 'Button'
@@ -140,6 +172,7 @@ export default {
       showBase: false,
       showCustom: false,
       showStepper: false,
+      showSoldout: false,
       closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',

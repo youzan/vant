@@ -54,14 +54,10 @@ export default create({
       // 目前skuImg都挂载在skuTree中s1那类sku上
       const treeItem = this.sku.tree.filter(item => item.k_s === 's1')[0] || {};
 
-      if (!treeItem.v) {
-        return;
-      }
+      if (!treeItem.v) return;
 
       const matchedSku = treeItem.v.filter(skuValue => skuValue.id === id)[0];
-      if (matchedSku && matchedSku.imgUrl) {
-        return matchedSku.imgUrl;
-      }
+      if (matchedSku) return (matchedSku.imgUrl || matchedSku.img_url);
     },
 
     previewImage() {

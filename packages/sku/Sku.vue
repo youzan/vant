@@ -53,7 +53,7 @@
       >
         <div
           v-if="hasSku"
-          class="van-sku-group-container van-hairline--bottom"
+          :class="skuGroupClass"
         >
           <sku-row
             v-for="(skuTreeItem, index) in skuTree"
@@ -182,6 +182,10 @@ export default create({
       type: Object,
       default: () => ({})
     },
+    showSoldoutSku: {
+      type: Boolean,
+      default: true
+    },
     showAddCartBtn: {
       type: Boolean,
       default: true
@@ -246,6 +250,16 @@ export default create({
   },
 
   computed: {
+    skuGroupClass() {
+      return [
+        'van-sku-group-container',
+        'van-hairline--bottom',
+        {
+          'van-sku-group-container--hide-soldout': !this.showSoldoutSku
+        }
+      ];
+    },
+
     bodyStyle() {
       if (this.$isServer) {
         return;
@@ -307,8 +321,9 @@ export default create({
         }
 
         treeItem.v.forEach(vItem => {
-          if (vItem.imgUrl) {
-            imageList.push(vItem.imgUrl);
+          const img = vItem.imgUrl || vItem.img_url;
+          if (img) {
+            imageList.push(img);
           }
         });
       }
