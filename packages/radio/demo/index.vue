@@ -25,7 +25,7 @@
       <van-radio
         name="1"
         value="1"
-        checked-color="#4b0"
+        checked-color="#07c160"
         class="demo-radio-group"
       >
         {{ $t('radio') }}

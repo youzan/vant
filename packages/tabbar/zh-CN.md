@@ -69,7 +69,7 @@ export default {
 ```html
 <van-tabbar
   v-model="active"
-  active-color="#4b0"
+  active-color="#07c160"
 >
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>

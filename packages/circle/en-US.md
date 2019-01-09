@@ -40,7 +40,7 @@ export default {
 ```html
 <van-circle
   v-model="currentRate"
-  color="#13ce66"
+  color="#07c160"
   fill="#fff"
   size="120px"
   layer-color="#ebedf0"
