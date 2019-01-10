@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
+`2019-01-10`
+
+**Improvements**
+
+- Color: 基础绿色调整为微信绿 [\#2479](https://github.com/youzan/vant/pull/2479)
+- Icon: 新增 cart-circle 图标 [\#2480](https://github.com/youzan/vant/pull/2480)
+- Coupon: 新增 description 属性 [\#2458](https://github.com/youzan/vant/pull/2458)
+- ImagePreview: 新增 className 属性 [\#2433](https://github.com/youzan/vant/pull/2433)
+- Sku: 支持隐藏已售罄的规格 [\#2472](https://github.com/youzan/vant/pull/2472)
+
+**Bug Fixes**
+
+- 修复 Icon 部分图标的线条应使用圆角的问题 [\#2437](https://github.com/youzan/vant/pull/2437)
+- 修复 DatetimePicker time 类型 v-model 变化后未触发更新的问题 [\#2427](https://github.com/youzan/vant/pull/2427)
+- 修复 SubmitBar 未传 price 时无法隐藏价格和文本的问题 [\#2469](https://github.com/youzan/vant/pull/2469)
+- 修复 Swipe 在使用 swipeTo 时可能导致轮播空白的问题 [\#2471](https://github.com/youzan/vant/pull/2471)
+- 修复 Stepper 输入框为空且最小值为 0 时无法自动设置默认值的问题 [\#2470](https://github.com/youzan/vant/pull/2470)
+- 修复 Tab 首次渲染时会触发底部条动画的问题 [\#2459](https://github.com/youzan/vant/pull/2459)
+
+
 ## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
 `2019-01-01`
 

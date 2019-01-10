@@ -1,5 +1,26 @@
 ## Changelog
 
+## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
+`2019-01-10`
+
+**Improvements**
+
+- Icon: add cart-circle icon [\#2480](https://github.com/youzan/vant/pull/2480)
+- Color: update base green to wechat green [\#2479](https://github.com/youzan/vant/pull/2479)
+- Coupon: add description prop [\#2458](https://github.com/youzan/vant/pull/2458)
+- ImagePreview: add className prop [\#2433](https://github.com/youzan/vant/pull/2433)
+- Sku: support hide soldout sku [\#2472](https://github.com/youzan/vant/pull/2472)
+
+**Bug Fixes**
+
+- fix DatetimePicker value observable [\#2427](https://github.com/youzan/vant/pull/2427)
+- fix Icon rounded lines [\#2437](https://github.com/youzan/vant/pull/2437)
+- fix SubmitBar can not hide price [\#2469](https://github.com/youzan/vant/pull/2469)
+- fix Swipe position wrong when use swipeTo [\#2471](https://github.com/youzan/vant/pull/2471)
+- fix Stepper wrong value when input is empty and min is zero [\#2470](https://github.com/youzan/vant/pull/2470)
+- fix Tab should not have line animation when inited [\#2459](https://github.com/youzan/vant/pull/2459)
+
+
 ## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
 `2019-01-01`
 
