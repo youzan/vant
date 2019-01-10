@@ -74,7 +74,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "@vant/compiler": "^1.0.0",
-    "@vant/doc": "^1.0.21",
+    "@vant/doc": "^1.0.22",
     "@vant/eslint-config": "^1.0.8",
     "@vant/markdown-loader": "^1.0.3",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.1",
