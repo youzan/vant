@@ -40,8 +40,8 @@ export default create({
     value: null,
     disabled: Boolean,
     checkedColor: String,
-    labelDisabled: Boolean,
-    labelPosition: Boolean
+    labelPosition: String,
+    labelDisabled: Boolean
   },
 
   computed: {
