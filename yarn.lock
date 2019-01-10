@@ -711,10 +711,10 @@
   resolved "https://registry.yarnpkg.com/@vant/compiler/-/compiler-1.0.0.tgz#aecf1014c40db590026781cead28c951b538b461"
   integrity sha512-c0HGv56gQVrwFxvR0YyIH8qtADAIyUvnUv2NgHaODn+1XkG2NF+wdyzIc4n0Pb3DuvT3oCdN5jKx4mnOOzqKOQ==
 
-"@vant/doc@^1.0.21":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-1.0.21.tgz#605d289e3de1c5b3101ad8239abecdd890fb6692"
-  integrity sha512-qcA2aK+6t5NWxG941BBfRCMUnM4zhp1FLRUTYyz8/nx30bVE8Xr5DBC1HyCrU7qn+fpl1bPTgXPfPCuq2Jn6qQ==
+"@vant/doc@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-1.0.22.tgz#5b7b193d9fe7cd6b69bf64bc77684c7524089e2b"
+  integrity sha512-iFzioV5kCDonm6NE88hmYWnr0Op0GpkTnz4E8YahvA/FbSs7FptGTgRU4adB7PzfMAUC3cam6wXCLJxwCM5vhA==
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
