@@ -38,6 +38,7 @@
       <van-dialog
         v-model="show"
         show-cancel-button
+        :lazy-render="false"
         :before-close="beforeClose"
       >
         <van-field
