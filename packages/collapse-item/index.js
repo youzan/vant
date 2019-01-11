@@ -1,50 +1,13 @@
-<template>
-  <div :class="[b(), { 'van-hairline--top': index }]">
-    <cell
-      v-bind="$props"
-      :class="b('title', { disabled, expanded })"
-      @click="onClick"
-    >
-      <slot
-        name="title"
-        slot="title"
-      />
-      <slot
-        name="icon"
-        slot="icon"
-      />
-      <slot name="value" />
-      <slot
-        name="right-icon"
-        slot="right-icon"
-      />
-    </cell>
-    <div
-      v-if="inited"
-      v-show="show"
-      ref="wrapper"
-      :class="b('wrapper')"
-      @transitionend="onTransitionEnd"
-    >
-      <div
-        ref="content"
-        :class="b('content')"
-      >
-        <slot />
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
+import { use, isDef } from '../utils';
 import { raf } from '../utils/raf';
-import create from '../utils/create';
+import Cell from '../cell';
 import CellMixin from '../mixins/cell';
 import FindParent from '../mixins/find-parent';
 
-export default create({
-  name: 'collapse-item',
+const [sfc, bem] = use('collapse-item');
+const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
+export default sfc({
   mixins: [CellMixin, FindParent],
 
   props: {
@@ -73,7 +36,7 @@ export default create({
     },
 
     currentName() {
-      return this.isDef(this.name) ? this.name : this.index;
+      return isDef(this.name) ? this.name : this.index;
     },
 
     expanded() {
@@ -144,6 +107,38 @@ export default create({
         this.$refs.wrapper.style.height = null;
       }
     }
+  },
+
+  render(h) {
+    const Title = (
+      <Cell
+        class={bem('title', { disabled: this.disabled, expanded: this.expanded })}
+        onClick={this.onClick}
+        {...{ props: this.$props }}
+      >
+        {this.$slots.value}
+        {CELL_SLOTS.map(slot => h('template', { slot }, this.$slots[slot]))}
+      </Cell>
+    );
+
+    const Content = this.inited && (
+      <div
+        v-show={this.show}
+        ref="wrapper"
+        class={bem('wrapper')}
+        onTransitionend={this.onTransitionEnd}
+      >
+        <div ref="content" class={bem('content')}>
+          {this.$slots.default}
+        </div>
+      </div>
+    );
+
+    return (
+      <div class={[bem(), { 'van-hairline--top': this.index }]}>
+        {Title}
+        {Content}
+      </div>
+    );
   }
 });
-</script>
