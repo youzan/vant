@@ -110,7 +110,7 @@ export default sfc({
           <path class={bem('hover')} style={this.hoverStyle} d={PATH} />
           <path class={bem('layer')} style={this.layerStyle} d={PATH} />
         </svg>
-        {this.$slots.default || <div class={bem('text')}>{this.text}</div>}
+        {this.$slots.default || (this.text && <div class={bem('text')}>{this.text}</div>)}
       </div>
     );
   }
