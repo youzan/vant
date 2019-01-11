@@ -9,10 +9,11 @@ test('Dialog function call', async () => {
   Dialog.close();
   Dialog.alert('1');
 
+  await later();
+
   const callback = jest.fn();
   const dialog = document.querySelector('.van-dialog');
 
-  await later();
   expect(dialog.style.display).toEqual('');
   Dialog.close();
 
@@ -33,6 +34,7 @@ test('Dialog function call', async () => {
 test('before close', () => {
   const wrapper = mount(DialogVue, {
     propsData: {
+      value: true,
       beforeClose: (action, done) => done(false)
     }
   });
