@@ -19,7 +19,10 @@
   background-color: @toast-background-color;
 
   // hack for avoid max-width when use left & fixed
-  width: fit-content; 
+  width: fit-content;
+
+  // allow newline charactor
+  white-space: pre-wrap;
 
   // should not add pointer-events: none directly to body tag
   // that will cause unexpected tap-highlight-color in mobile safari
