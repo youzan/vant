@@ -1,6 +1,7 @@
 <template>
   <transition name="van-dialog-bounce">
     <div
+      v-if="shouldRender"
       v-show="value"
       :class="[b(), className]"
     >
