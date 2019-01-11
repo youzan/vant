@@ -72,7 +72,6 @@ exports[`render coupon list 1`] = `
                   <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
                       <!---->
                       <!----></i></div>
-                  <!---->
                 </div>
               </div>
             </div>
