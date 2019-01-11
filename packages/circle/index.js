@@ -103,7 +103,7 @@ export default sfc({
     }
   },
 
-  render() {
+  render(h) {
     return (
       <div class={bem()} style={this.style}>
         <svg viewBox="0 0 1060 1060">
