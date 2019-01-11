@@ -218,6 +218,8 @@ test('delete address', async () => {
 
   const deleteButton = wrapper.findAll('.van-button').at(1);
   deleteButton.trigger('click');
+
+  await later();
   document.querySelector('.van-dialog__cancel').click();
   deleteButton.trigger('click');
   document.querySelector('.van-dialog__confirm').click();
