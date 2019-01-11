@@ -1,18 +1,8 @@
-<template>
-  <div
-    :class="b()"
-    class="van-hairline--top-bottom"
-  >
-    <slot />
-  </div>
-</template>
+import { use } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('collapse');
 
-export default create({
-  name: 'collapse',
-
+export default sfc({
   props: {
     accordion: Boolean,
     value: [String, Number, Array]
@@ -34,6 +24,9 @@ export default create({
       this.$emit('change', name);
       this.$emit('input', name);
     }
+  },
+
+  render(h) {
+    return <div class={[bem(), 'van-hairline--top-bottom']}>{this.$slots.default}</div>;
   }
 });
-</script>
