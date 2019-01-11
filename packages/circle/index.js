@@ -1,41 +1,16 @@
-<template>
-  <div
-    :class="b()"
-    :style="style"
-  >
-    <svg viewBox="0 0 1060 1060">
-      <path
-        :class="b('hover')"
-        :style="hoverStyle"
-        :d="path"
-      />
-      <path
-        :class="b('layer')"
-        :style="layerStyle"
-        :d="path"
-      />
-    </svg>
-    <slot>
-      <div
-        v-text="text"
-        :class="b('text')"
-      />
-    </slot>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import { raf, cancel } from '../utils/raf';
 import { BLUE, WHITE } from '../utils/color';
+
+const [sfc, bem] = use('circle');
+const PERIMETER = 3140;
+const PATH = 'M 530 530 m -500, 0 a 500, 500 0 1, 1 1000, 0 a 500, 500 0 1, 1 -1000, 0';
 
 function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
 }
 
-export default create({
-  name: 'circle',
-
+export default sfc({
   props: {
     text: String,
     value: Number,
@@ -70,11 +45,6 @@ export default create({
     }
   },
 
-  beforeCreate() {
-    this.perimeter = 3140;
-    this.path = 'M 530 530 m -500, 0 a 500, 500 0 1, 1 1000, 0 a 500, 500 0 1, 1 -1000, 0';
-  },
-
   computed: {
     style() {
       return {
@@ -84,8 +54,8 @@ export default create({
     },
 
     layerStyle() {
-      let offset = this.perimeter * (100 - this.value) / 100;
-      offset = this.clockwise ? offset : this.perimeter * 2 - offset;
+      let offset = (PERIMETER * (100 - this.value)) / 100;
+      offset = this.clockwise ? offset : PERIMETER * 2 - offset;
       return {
         stroke: `${this.color}`,
         strokeDashoffset: `${offset}px`,
@@ -109,7 +79,7 @@ export default create({
         this.startRate = this.value;
         this.endRate = format(this.rate);
         this.increase = this.endRate > this.startRate;
-        this.duration = Math.abs((this.startRate - this.endRate) * 1000 / this.speed);
+        this.duration = Math.abs(((this.startRate - this.endRate) * 1000) / this.speed);
         if (this.speed) {
           cancel(this.rafId);
           this.rafId = raf(this.animate);
@@ -131,6 +101,17 @@ export default create({
         this.rafId = raf(this.animate);
       }
     }
+  },
+
+  render() {
+    return (
+      <div class={bem()} style={this.style}>
+        <svg viewBox="0 0 1060 1060">
+          <path class={bem('hover')} style={this.hoverStyle} d={PATH} />
+          <path class={bem('layer')} style={this.layerStyle} d={PATH} />
+        </svg>
+        {this.$slots.default || <div class={bem('text')}>{this.text}</div>}
+      </div>
+    );
   }
 });
-</script>
