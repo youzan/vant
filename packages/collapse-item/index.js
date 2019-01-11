@@ -123,7 +123,7 @@ export default sfc({
 
     const Content = this.inited && (
       <div
-        v-show="show"
+        v-show={this.show}
         ref="wrapper"
         class={bem('wrapper')}
         onTransitionend={this.onTransitionEnd}
