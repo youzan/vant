@@ -190,13 +190,13 @@ export default sfc({
       <Picker
         ref="picker"
         class={bem()}
-        show-toolbar
-        value-key="name"
+        showToolbar
+        valueKey="name"
         title={this.title}
         loading={this.loading}
         columns={this.displayColumns}
-        item-height={this.itemHeight}
-        visible-item-count={this.visibleItemCount}
+        itemHeight={this.itemHeight}
+        visibleItemCount={this.visibleItemCount}
         {...{ on: this.listeners }}
       />
     );
