@@ -2,10 +2,8 @@
 
 exports[`coupon cell 1`] = `
 <div class="van-cell van-cell--clickable van-coupon-cell">
-  <div class="van-cell__title"><span>优惠券</span>
-  </div>
-  <div class="van-cell__value"><span>使用优惠</span></div>
-  <i class="van-icon van-icon-arrow van-cell__right-icon">
+  <div class="van-cell__title"><span>优惠券</span></div>
+  <div class="van-cell__value"><span>使用优惠</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
     <!---->
     <!----></i>
 </div>
@@ -13,10 +11,8 @@ exports[`coupon cell 1`] = `
 
 exports[`coupon cell 2`] = `
 <div class="van-cell van-cell--clickable van-coupon-cell">
-  <div class="van-cell__title"><span>优惠券</span>
-  </div>
-  <div class="van-cell__value van-coupon-cell--selected"><span>-¥1.00</span></div>
-  <i class="van-icon van-icon-arrow van-cell__right-icon">
+  <div class="van-cell__title"><span>优惠券</span></div>
+  <div class="van-cell__value van-coupon-cell--selected"><span>-¥1.00</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
     <!---->
     <!----></i>
 </div>
@@ -25,7 +21,6 @@ exports[`coupon cell 2`] = `
 exports[`render coupon list 1`] = `
 <div class="van-coupon-list">
   <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
-
     <div class="van-cell__value van-cell__value--alone">
       <div class="van-field__body"><input type="text" placeholder="请输入优惠码" maxlength="20" class="van-field__control">
         <!---->
@@ -34,7 +29,6 @@ exports[`render coupon list 1`] = `
       </div>
       <!---->
     </div>
-
   </div>
   <div class="van-tabs van-tabs--line van-coupon-list__tab">
     <div class="van-tabs__wrap van-hairline--top-bottom">
@@ -135,8 +129,7 @@ exports[`render coupon list 1`] = `
         <!---->
       </div>
     </div>
-  </div>
-  <button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠</span></button>
+  </div><button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠</span></button>
 </div>
 `;
 
