@@ -1,65 +1,13 @@
-<template>
-  <picker
-    ref="picker"
-    :title="title"
-    :columns="columns"
-    :item-height="itemHeight"
-    :show-toolbar="showToolbar"
-    :visible-item-count="visibleItemCount"
-    :confirm-button-text="confirmButtonText"
-    :cancel-button-text="cancelButtonText"
-    @change="onChange"
-    @confirm="onConfirm"
-    @cancel="$emit('cancel')"
-  />
-</template>
-
-<script>
+import { use, range } from '../utils';
 import Picker from '../picker';
-import create from '../utils/create';
-import { range } from '../utils';
 import PickerMixin from '../mixins/picker';
+import { times, padZero, isValidDate, getTrueValue, getMonthEndDay } from './utils';
 
+const [sfc, bem] = use('datetime-picker');
 const currentYear = new Date().getFullYear();
 
-function isValidDate(date) {
-  return Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
-}
-
-function padZero(val) {
-  return `00${val}`.slice(-2);
-}
-
-function times(n, iteratee) {
-  let index = -1;
-  const result = Array(n);
-
-  while (++index < n) {
-    result[index] = iteratee(index);
-  }
-  return result;
-}
-
-function getTrueValue(formattedValue) {
-  if (!formattedValue) return;
-  while (isNaN(parseInt(formattedValue, 10))) {
-    formattedValue = formattedValue.slice(1);
-  }
-  return parseInt(formattedValue, 10);
-}
-
-function getMonthEndDay(year, month) {
-  return 32 - new Date(year, month - 1, 32).getDate();
-}
-
-export default create({
-  name: 'datetime-picker',
-
+export default sfc({
   mixins: [PickerMixin],
-
-  components: {
-    Picker
-  },
 
   props: {
     value: null,
@@ -110,7 +58,10 @@ export default create({
   watch: {
     value(val) {
       val = this.correctValue(val);
-      const isEqual = this.type === 'time' ? val === this.innerValue : val.valueOf() === this.innerValue.valueOf();
+      const isEqual =
+        this.type === 'time'
+          ? val === this.innerValue
+          : val.valueOf() === this.innerValue.valueOf();
 
       if (!isEqual) {
         this.innerValue = val;
@@ -145,8 +96,14 @@ export default create({
         ];
       }
 
-      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary('max', this.innerValue);
-      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary('min', this.innerValue);
+      const { maxYear, maxDate, maxMonth, maxHour, maxMinute } = this.getBoundary(
+        'max',
+        this.innerValue
+      );
+      const { minYear, minDate, minMonth, minHour, minMinute } = this.getBoundary(
+        'min',
+        this.innerValue
+      );
 
       const result = [
         {
@@ -306,10 +263,7 @@ export default create({
 
       if (this.type === 'time') {
         const pair = value.split(':');
-        values = [
-          formatter('hour', pair[0]),
-          formatter('minute', pair[1])
-        ];
+        values = [formatter('hour', pair[0]), formatter('minute', pair[1])];
       } else {
         values = [
           formatter('year', `${value.getFullYear()}`),
@@ -331,6 +285,26 @@ export default create({
         this.$refs.picker.setValues(values);
       });
     }
+  },
+
+  render(h) {
+    const props = {};
+    Object.keys(PickerMixin.props).forEach(key => {
+      props[key] = this[key];
+    });
+
+    return (
+      <Picker
+        class={bem()}
+        ref="picker"
+        columns={this.columns}
+        onChange={this.onChange}
+        onConfirm={this.onConfirm}
+        onCancel={() => {
+          this.$emit('cancel');
+        }}
+        {...{ props }}
+      />
+    );
   }
 });
-</script>
