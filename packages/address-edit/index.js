@@ -1,114 +1,15 @@
-<template>
-  <div :class="b()">
-    <field
-      v-model="data.name"
-      clearable
-      :label="$t('name')"
-      :placeholder="$t('namePlaceholder')"
-      :error="errorInfo.name"
-      @focus="onFocus('name')"
-    />
-    <field
-      v-model="data.tel"
-      clearable
-      type="tel"
-      :label="$t('tel')"
-      :placeholder="$t('telPlaceholder')"
-      :error="errorInfo.tel"
-      @focus="onFocus('tel')"
-    />
-    <field
-      v-show="showArea"
-      readonly
-      :label="$t('area')"
-      :placeholder="$t('areaPlaceholder')"
-      :value="areaText"
-      @click="showAreaPopup = true"
-    />
-    <address-edit-detail
-      v-show="showDetail"
-      :focused="detailFocused"
-      :value="data.addressDetail"
-      :error="errorInfo.addressDetail"
-      :detail-rows="detailRows"
-      :search-result="searchResult"
-      :show-search-result="showSearchResult"
-      @focus="onFocus('addressDetail')"
-      @blur="detailFocused = false"
-      @input="onChangeDetail"
-      @select-search="$emit('select-search', $event)"
-    />
-    <field
-      v-if="showPostal"
-      v-show="!hideBottomFields"
-      v-model="data.postalCode"
-      type="tel"
-      maxlength="6"
-      :label="$t('postal')"
-      :placeholder="$t('postal')"
-      :error="errorInfo.postalCode"
-      @focus="onFocus('postalCode')"
-    />
-    <slot />
-    <switch-cell
-      v-if="showSetDefault"
-      v-show="!hideBottomFields"
-      v-model="data.isDefault"
-      :title="$t('defaultAddress')"
-      @change="$emit('change-default', $event)"
-    />
-
-    <div
-      v-show="!hideBottomFields"
-      :class="b('buttons')"
-    >
-      <van-button
-        block
-        :loading="isSaving"
-        type="danger"
-        :text="saveButtonText || $t('save')"
-        @click="onSave"
-      />
-      <van-button
-        v-if="showDelete"
-        block
-        :loading="isDeleting"
-        :text="deleteButtonText || $t('delete')"
-        @click="onDelete"
-      />
-    </div>
-
-    <popup
-      v-model="showAreaPopup"
-      position="bottom"
-      :lazy-render="false"
-      get-container="body"
-    >
-      <van-area
-        ref="area"
-        :loading="!areaListLoaded"
-        :value="data.areaCode"
-        :area-list="areaList"
-        @confirm="onAreaConfirm"
-        @cancel="showAreaPopup = false"
-      />
-    </popup>
-  </div>
-</template>
-
-<script>
-/* eslint-disable camelcase */
-import create from '../utils/create';
-import { isObj } from '../utils';
+import { use, isObj } from '../utils';
+import Area from '../area';
 import Field from '../field';
-import VanButton from '../button';
 import Popup from '../popup';
 import Toast from '../toast';
+import Button from '../button';
 import Dialog from '../dialog';
-import VanArea from '../area';
-import AddressEditDetail from './Detail';
+import Detail from './Detail';
 import SwitchCell from '../switch-cell';
 import validateMobile from '../utils/validate/mobile';
+
+const [sfc, bem, t] = use('address-edit');
 
 const defaultData = {
   name: '',
@@ -123,18 +24,7 @@ const defaultData = {
   isDefault: false
 };
 
-export default create({
-  name: 'address-edit',
-
-  components: {
-    Field,
-    Popup,
-    VanArea,
-    VanButton,
-    SwitchCell,
-    AddressEditDetail
-  },
-
+export default sfc({
   props: {
     areaList: Object,
     isSaving: Boolean,
@@ -276,7 +166,6 @@ export default create({
 
     getErrorMessage(key) {
       const value = String(this.data[key] || '').trim();
-      const { $t } = this;
 
       if (this.validator) {
         const message = this.validator(key, value);
@@ -287,21 +176,21 @@ export default create({
 
       switch (key) {
         case 'name':
-          return value ? '' : $t('nameEmpty');
+          return value ? '' : t('nameEmpty');
         case 'tel':
-          return this.telValidator(value) ? '' : $t('telInvalid');
+          return this.telValidator(value) ? '' : t('telInvalid');
         case 'areaCode':
-          return value ? '' : $t('areaEmpty');
+          return value ? '' : t('areaEmpty');
         case 'addressDetail':
-          return value ? '' : $t('addressEmpty');
+          return value ? '' : t('addressEmpty');
         case 'postalCode':
-          return value && !/^\d{6}$/.test(value) ? $t('postalEmpty') : '';
+          return value && !/^\d{6}$/.test(value) ? t('postalEmpty') : '';
       }
     },
 
     onDelete() {
       Dialog.confirm({
-        title: this.$t('confirmDelete')
+        title: t('confirmDelete')
       })
         .then(() => {
           this.$emit('delete', this.data);
@@ -328,6 +217,116 @@ export default create({
     setAddressDetail(value) {
       this.data.addressDetail = value;
     }
+  },
+
+  render(h) {
+    const { data, errorInfo, hideBottomFields } = this;
+    const onFocus = name => () => this.onFocus(name);
+
+    return (
+      <div class={bem()}>
+        <Field
+          v-model={data.name}
+          clearable
+          label={t('name')}
+          placeholder={t('namePlaceholder')}
+          error={errorInfo.name}
+          onFocus={onFocus('name')}
+        />
+        <Field
+          v-model={data.tel}
+          clearable
+          type="tel"
+          label={t('tel')}
+          placeholder={t('telPlaceholder')}
+          error={errorInfo.tel}
+          onFocus={onFocus('tel')}
+        />
+        <Field
+          v-show={this.showArea}
+          readonly
+          label={t('area')}
+          placeholder={t('areaPlaceholder')}
+          value={this.areaText}
+          onClick={() => {
+            this.showAreaPopup = true;
+          }}
+        />
+        <Detail
+          v-show={this.showDetail}
+          focused={this.detailFocused}
+          value={data.addressDetail}
+          error={errorInfo.addressDetail}
+          detail-rows={this.detailRows}
+          search-result={this.searchResult}
+          show-search-result={this.showSearchResult}
+          onFocus={onFocus('addressDetail')}
+          onBlur={() => {
+            this.detailFocused = false;
+          }}
+          onInput={this.onChangeDetail}
+          onSelect-search={event => {
+            this.$emit('select-search', event);
+          }}
+        />
+        {this.showPostal && (
+          <Field
+            v-show={!hideBottomFields}
+            v-model={data.postalCode}
+            type="tel"
+            maxlength="6"
+            label={t('postal')}
+            placeholder={t('postal')}
+            error={errorInfo.postalCode}
+            onFocus={onFocus('postalCode')}
+          />
+        )}
+        {this.$slots.default}
+        {this.showSetDefault && (
+          <SwitchCell
+            v-model={data.isDefault}
+            v-show={!hideBottomFields}
+            title={t('defaultAddress')}
+            onChange={event => {
+              this.$emit('change-default', event);
+            }}
+          />
+        )}
+        <div v-show={!hideBottomFields} class={bem('buttons')}>
+          <Button
+            block
+            loading={this.isSaving}
+            type="danger"
+            text={this.saveButtonText || t('save')}
+            onClick={this.onSave}
+          />
+          {this.showDelete && (
+            <Button
+              block
+              loading={this.isDeleting}
+              text={this.deleteButtonText || t('delete')}
+              onClick={this.onDelete}
+            />
+          )}
+        </div>
+        <Popup
+          v-model={this.showAreaPopup}
+          position="bottom"
+          lazy-render={false}
+          get-container="body"
+        >
+          <Area
+            ref="area"
+            loading={!this.areaListLoaded}
+            value={data.areaCode}
+            area-list={this.areaList}
+            onConfirm={this.onAreaConfirm}
+            onCancel={() => {
+              this.showAreaPopup = false;
+            }}
+          />
+        </Popup>
+      </div>
+    );
   }
 });
-</script>

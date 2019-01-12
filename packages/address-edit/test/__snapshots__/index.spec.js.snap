@@ -60,10 +60,10 @@ exports[`create a AddressEdit 1`] = `
     </div>
 
   </div>
-  <!---->
-  <!---->
+
+
+
   <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">保存</span></button>
-    <!---->
   </div>
   <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
     <div class="van-picker van-area">
@@ -165,6 +165,7 @@ exports[`create a AddressEdit with props 1`] = `
     </div>
 
   </div>
+
   <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
     <div class="van-cell__title"><span>设为默认收货地址</span>
     </div>
@@ -178,7 +179,6 @@ exports[`create a AddressEdit with props 1`] = `
 
   </div>
   <div class="van-address-edit__buttons"><button class="van-button van-button--danger van-button--normal van-button--block"><span class="van-button__text">保存</span></button>
-    <!---->
   </div>
   <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
     <div class="van-picker van-area">
