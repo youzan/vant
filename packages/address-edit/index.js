@@ -257,9 +257,9 @@ export default sfc({
           focused={this.detailFocused}
           value={data.addressDetail}
           error={errorInfo.addressDetail}
-          detail-rows={this.detailRows}
-          search-result={this.searchResult}
-          show-search-result={this.showSearchResult}
+          detailRows={this.detailRows}
+          searchResult={this.searchResult}
+          showSearchResult={this.showSearchResult}
           onFocus={onFocus('addressDetail')}
           onBlur={() => {
             this.detailFocused = false;
@@ -312,14 +312,14 @@ export default sfc({
         <Popup
           v-model={this.showAreaPopup}
           position="bottom"
-          lazy-render={false}
-          get-container="body"
+          lazyRender={false}
+          getContainer="body"
         >
           <Area
             ref="area"
             loading={!this.areaListLoaded}
             value={data.areaCode}
-            area-list={this.areaList}
+            areaList={this.areaList}
             onConfirm={this.onAreaConfirm}
             onCancel={() => {
               this.showAreaPopup = false;
