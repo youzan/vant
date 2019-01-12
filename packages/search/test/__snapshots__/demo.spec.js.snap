@@ -8,12 +8,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
           <!----></i>
         <div class="van-cell__value van-cell__value--alone">
-          <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词" value="" class="van-field__control">
-            <!---->
-            <!---->
-            <!---->
-          </div>
-          <!---->
+          <div class="van-field__body"><input placeholder="请输入搜索关键词" value="" class="van-field__control"></div>
         </div>
       </div>
       <!---->
@@ -26,12 +21,7 @@ exports[`renders demo correctly 1`] = `
             <!---->
             <!----></i>
           <div class="van-cell__value van-cell__value--alone">
-            <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词" value="" class="van-field__control">
-              <!---->
-              <!---->
-              <!---->
-            </div>
-            <!---->
+            <div class="van-field__body"><input placeholder="请输入搜索关键词" value="" class="van-field__control"></div>
           </div>
         </div>
         <div class="van-search__action">
@@ -46,12 +36,7 @@ exports[`renders demo correctly 1`] = `
           <!---->
           <!----></i>
         <div class="van-cell__value van-cell__value--alone">
-          <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词" value="" class="van-field__control">
-            <!---->
-            <!---->
-            <!---->
-          </div>
-          <!---->
+          <div class="van-field__body"><input placeholder="请输入搜索关键词" value="" class="van-field__control"></div>
         </div>
       </div>
       <div class="van-search__action">
