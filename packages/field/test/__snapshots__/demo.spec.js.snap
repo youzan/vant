@@ -18,7 +18,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell__value">
           <div class="van-field__body"><input placeholder="请输入用户名" value="" class="van-field__control">
             <div class="van-field__icon"><i class="van-icon van-icon-question-o" style="color:undefined;font-size:undefined;">
-                <!---->
                 <!----></i></div>
           </div>
         </div>
@@ -34,7 +33,6 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-cell-group van-hairline--top-bottom">
       <div disabled="disabled" class="van-cell van-field"><i class="van-icon van-icon-contact van-cell__left-icon" style="color:undefined;font-size:undefined;">
-          <!---->
           <!----></i>
         <div class="van-cell__title"><span>用户名</span></div>
         <div class="van-cell__value">
