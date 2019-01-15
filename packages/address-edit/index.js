@@ -74,11 +74,6 @@ export default sfc({
   },
 
   computed: {
-    // hide bottom field when use search && detail get focused
-    hideBottomFields() {
-      return this.searchResult.length && this.detailFocused;
-    },
-
     areaListLoaded() {
       return isObj(this.areaList) && Object.keys(this.areaList).length;
     },
@@ -220,8 +215,11 @@ export default sfc({
   },
 
   render(h) {
-    const { data, errorInfo, hideBottomFields } = this;
+    const { data, errorInfo } = this;
     const onFocus = name => () => this.onFocus(name);
+
+    // hide bottom field when use search && detail get focused
+    const hideBottomFields = this.searchResult.length && this.detailFocused;
 
     return (
       <div class={bem()}>
