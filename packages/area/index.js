@@ -41,13 +41,6 @@ export default sfc({
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
-    },
-
-    listeners() {
-      return {
-        ...this.$listeners,
-        change: this.onChange
-      };
     }
   },
 
@@ -186,6 +179,11 @@ export default sfc({
   },
 
   render(h) {
+    const on = {
+      ...this.$listeners,
+      change: this.onChange
+    };
+
     return (
       <Picker
         ref="picker"
@@ -197,7 +195,7 @@ export default sfc({
         columns={this.displayColumns}
         itemHeight={this.itemHeight}
         visibleItemCount={this.visibleItemCount}
-        {...{ on: this.listeners }}
+        {...{ on }}
       />
     );
   }

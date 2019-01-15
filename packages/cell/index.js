@@ -14,12 +14,6 @@ export default sfc({
     arrowDirection: String
   },
 
-  computed: {
-    arrowIcon() {
-      return this.arrowDirection ? `arrow-${this.arrowDirection}` : 'arrow';
-    }
-  },
-
   methods: {
     onClick() {
       this.$emit('click');
@@ -49,8 +43,9 @@ export default sfc({
       this.icon && <Icon class={bem('left-icon')} name={this.icon} />
     );
 
+    const arrowIcon = this.arrowDirection ? `arrow-${this.arrowDirection}` : 'arrow';
     const RightIcon = slots['right-icon'] || (
-      this.isLink && <Icon class={bem('right-icon')} name={this.arrowIcon} />
+      this.isLink && <Icon class={bem('right-icon')} name={arrowIcon} />
     );
 
     return (

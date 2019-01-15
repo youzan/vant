@@ -15,19 +15,6 @@ export default sfc({
     showSearchResult: Boolean
   },
 
-  computed: {
-    searchList() {
-      if (this.showSearchResult && this.focused) {
-        return this.searchResult || [];
-      }
-      return [];
-    },
-
-    showIcon() {
-      return this.value && this.focused;
-    }
-  },
-
   methods: {
     onSelect(express) {
       this.$emit('select-search', express);
@@ -36,6 +23,37 @@ export default sfc({
   },
 
   render(h) {
+    const { value, focused, searchResult } = this;
+
+    const Finish = value && focused && android && (
+      <div
+        slot="icon"
+        class={bem('finish')}
+        onClick={() => {
+          this.$refs.field.blur();
+        }}
+      >
+        {t('complete')}
+      </div>
+    );
+
+    const SearchList =
+      focused &&
+      searchResult &&
+      this.showSearchResult &&
+      searchResult.map(express => (
+        <Cell
+          key={express.name + express.address}
+          title={express.name}
+          label={express.address}
+          icon="location-o"
+          clickable
+          onClick={() => {
+            this.onSelect(express);
+          }}
+        />
+      ));
+
     return (
       <Cell class={bem()}>
         <Field
@@ -51,30 +69,9 @@ export default sfc({
           placeholder={t('placeholder')}
           {...{ on: this.$listeners }}
         >
-          {this.showIcon && android && (
-            <div
-              slot="icon"
-              class={bem('finish')}
-              onClick={() => {
-                this.$refs.field.blur();
-              }}
-            >
-              {t('complete')}
-            </div>
-          )}
+          {Finish}
         </Field>
-        {this.searchList.map(express => (
-          <Cell
-            key={express.name + express.address}
-            title={express.name}
-            label={express.address}
-            icon="location-o"
-            clickable
-            onClick={() => {
-              this.onSelect(express);
-            }}
-          />
-        ))}
+        {SearchList}
       </Cell>
     );
   }
