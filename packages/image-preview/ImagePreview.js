@@ -1,53 +1,10 @@
-<template>
-  <transition name="van-fade">
-    <div
-      v-if="value"
-      :class="[b(), className]"
-      @touchstart="onWrapperTouchStart"
-      @touchend="onWrapperTouchEnd"
-      @touchcancel="onWrapperTouchEnd"
-    >
-      <div
-        v-if="showIndex"
-        :class="b('index')"
-      >
-        {{ active + 1 }}/{{ count }}
-      </div>
-      <swipe
-        ref="swipe"
-        :loop="loop"
-        indicator-color="white"
-        :initial-swipe="startPosition"
-        :show-indicators="showIndicators"
-        @change="onChange"
-      >
-        <swipe-item
-          v-for="(item, index) in images"
-          :key="index"
-        >
-          <img
-            :class="b('image')"
-            :src="item"
-            :style="index === active ? imageStyle : null"
-            @touchstart="onTouchStart"
-            @touchmove="onTouchMove"
-            @touchend="onTouchEnd"
-            @touchcancel="onTouchEnd"
-          >
-        </swipe-item>
-      </swipe>
-    </div>
-  </transition>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use, range } from '../utils';
 import Popup from '../mixins/popup';
 import Touch from '../mixins/touch';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
-import { range } from '../utils';
 
+const [sfc, bem] = use('image-preview');
 const MAX_ZOOM = 3;
 const MIN_ZOOM = 1 / 3;
 
@@ -60,15 +17,8 @@ function getDistance(touches) {
   );
 }
 
-export default create({
-  name: 'image-preview',
-
+export default sfc({
   mixins: [Popup, Touch],
-
-  components: {
-    Swipe,
-    SwipeItem
-  },
 
   props: {
     images: Array,
@@ -110,10 +60,6 @@ export default create({
   },
 
   computed: {
-    count() {
-      return this.images.length;
-    },
-
     imageStyle() {
       const { scale } = this;
       const style = {
@@ -262,6 +208,56 @@ export default create({
       this.moveX = 0;
       this.moveY = 0;
     }
+  },
+
+  render(h) {
+    if (!this.value) {
+      return;
+    }
+
+    const { active, images } = this;
+
+    const Index = this.showIndex && (
+      <div class={bem('index')}>{`${active + 1}/${images.length}`}</div>
+    );
+
+    const Images = (
+      <Swipe
+        ref="swipe"
+        loop={this.loop}
+        indicator-color="white"
+        initial-swipe={this.startPosition}
+        show-indicators={this.showIndicators}
+        onChange={this.onChange}
+      >
+        {images.map((item, index) => (
+          <SwipeItem>
+            <img
+              class={bem('image')}
+              src={item}
+              style={index === active ? this.imageStyle : null}
+              onTouchstart={this.onTouchStart}
+              onTouchmove={this.onTouchMove}
+              onTouchend={this.onTouchEnd}
+              onTouchcancel={this.onTouchEnd}
+            />
+          </SwipeItem>
+        ))}
+      </Swipe>
+    );
+
+    return (
+      <transition name="van-fade">
+        <div
+          class={[bem(), this.className]}
+          onTouchstart={this.onWrapperTouchStart}
+          onTouchend={this.onWrapperTouchEnd}
+          onTouchcancel={this.onWrapperTouchEnd}
+        >
+          {Index}
+          {Images}
+        </div>
+      </transition>
+    );
   }
 });
-</script>
