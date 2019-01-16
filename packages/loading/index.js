@@ -16,21 +16,6 @@ export default sfc({
     }
   },
 
-  computed: {
-    colorType() {
-      const { color } = this;
-      return color === 'white' || color === 'black' ? color : '';
-    },
-
-    style() {
-      return {
-        color: this.color === 'black' ? DEFAULT_COLOR : this.color,
-        width: this.size,
-        height: this.size
-      };
-    }
-  },
-
   render(h) {
     const { color, size, type } = this;
 
