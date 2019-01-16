@@ -1,34 +1,11 @@
-<template>
-  <div :class="b()">
-    <slot />
-    <div
-      v-if="loading"
-      :class="b('loading')"
-    >
-      <slot name="loading">
-        <loading :class="b('loading-icon')" />
-        <span
-          v-text="loadingText || $t('loading')"
-          :class="b('loading-text')"
-        />
-      </slot>
-    </div>
-    <div
-      v-if="finished && finishedText"
-      v-text="finishedText"
-      :class="b('finished-text')"
-    />
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import utils from '../utils/scroll';
+import Loading from '../loading';
 import { on, off } from '../utils/event';
 
-export default create({
-  name: 'list',
+const [sfc, bem, t] = use('list');
 
+export default sfc({
   model: {
     prop: 'loading'
   },
@@ -108,9 +85,7 @@ export default create({
         reachBottom = scroller.scrollHeight - targetBottom < this.offset;
       } else {
         const elBottom =
-          utils.getElementTop(el) -
-          utils.getElementTop(scroller) +
-          utils.getVisibleHeight(el);
+          utils.getElementTop(el) - utils.getElementTop(scroller) + utils.getVisibleHeight(el);
         reachBottom = elBottom - scrollerHeight < this.offset;
       }
 
@@ -128,6 +103,24 @@ export default create({
         (bind ? on : off)(this.scroller, 'scroll', this.check);
       }
     }
+  },
+
+  render(h) {
+    return (
+      <div class={bem()}>
+        {this.$slots.default}
+        {this.loading && (
+          <div class={bem('loading')}>
+            {this.$slots.loading || [
+              <Loading class={bem('loading-icon')} />,
+              <span class={bem('loading-text')}>{this.loadingText || t('loading')}</span>
+            ]}
+          </div>
+        )}
+        {this.finished && this.finishedText && (
+          <div class={bem('finished-text')}>{this.finishedText}</div>
+        )}
+      </div>
+    );
   }
 });
-</script>
