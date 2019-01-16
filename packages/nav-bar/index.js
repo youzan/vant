@@ -21,14 +21,10 @@ export default sfc({
   },
 
   render(h) {
-    const style = {
-      zIndex: this.zIndex
-    };
-
     return (
       <div
         class={[bem({ fixed: this.fixed }), { 'van-hairline--bottom': this.border }]}
-        style={style}
+        style={{ zIndex: this.zIndex }}
       >
         <div
           class={bem('left')}
