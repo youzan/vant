@@ -36,7 +36,7 @@ const coupon = {
   available: 1,
   discount: 0,
   denominations: 150,
-  originCondition: 0,
+  condition: '无使用门槛\n最多优惠12元',
   reason: '',
   value: 150,
   name: '优惠券名称',
@@ -113,7 +113,7 @@ export default {
 | name | 优惠券名称 | `String` |
 | discount | 折扣（0为满减券）88=>8.8折 | `Number` |
 | denominations | 面值（0为折扣券）单位分 | `Number` |
-| originCondition | 满减条件（0为无门槛，满XX元可用）单位分 | `Number` |
+| condition | 满减条件 | `String` |
 | startAt | 卡有效开始时间 (时间戳, 单位秒) | `Number` |
 | endAt | 卡失效日期 (时间戳, 单位秒) | `Number` |
 | description | 描述信息，优惠券可用时展示 | `String` |
