@@ -60,7 +60,7 @@ export default sfc({
         <div class={bem('content')}>
           <div class={bem('head')}>
             <h2 domPropsInnerHTML={this.faceAmount} />
-            <p>{this.conditionMessage}</p>
+            <p>{this.coupon.condition || this.conditionMessage}</p>
           </div>
           <div class={bem('body')}>
             <h2>{coupon.name}</h2>
