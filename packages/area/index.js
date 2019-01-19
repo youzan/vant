@@ -41,13 +41,6 @@ export default sfc({
 
     displayColumns() {
       return this.columns.slice(0, +this.columnsNum);
-    },
-
-    listeners() {
-      return {
-        ...this.$listeners,
-        change: this.onChange
-      };
     }
   },
 
@@ -186,18 +179,25 @@ export default sfc({
   },
 
   render(h) {
+    const on = {
+      ...this.$listeners,
+      change: this.onChange
+    };
+
     return (
       <Picker
         ref="picker"
         class={bem()}
-        show-toolbar
-        value-key="name"
+        showToolbar
+        valueKey="name"
         title={this.title}
         loading={this.loading}
         columns={this.displayColumns}
-        item-height={this.itemHeight}
-        visible-item-count={this.visibleItemCount}
-        {...{ on: this.listeners }}
+        itemHeight={this.itemHeight}
+        visibleItemCount={this.visibleItemCount}
+        cancelButtonText={this.cancelButtonText}
+        confirmButtonText={this.confirmButtonText}
+        {...{ on }}
       />
     );
   }

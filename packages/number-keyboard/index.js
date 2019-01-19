@@ -1,63 +1,11 @@
-<template>
-  <transition :name="transition ? 'van-slide-up' : ''">
-    <div
-      v-show="show"
-      :style="style"
-      :class="b([theme])"
-      @touchstart.stop
-      @animationend="onAnimationEnd"
-      @webkitAnimationEnd="onAnimationEnd"
-    >
-      <div
-        v-if="title || showTitleClose"
-        :class="b('title')"
-        class="van-hairline--top"
-      >
-        <span v-text="title" />
-        <span
-          :class="b('close')"
-          v-if="showTitleClose"
-          v-text="closeButtonText"
-          @click="onClose"
-        />
-      </div>
-      <div :class="b('body')">
-        <key
-          v-for="key in keys"
-          :key="key.text"
-          :text="key.text"
-          :type="key.type"
-          @press="onPressKey"
-        />
-      </div>
-      <div
-        v-if="theme === 'custom'"
-        :class="b('sidebar')"
-      >
-        <key
-          :text="deleteText"
-          :type="['delete', 'big', 'gray']"
-          @press="onPressKey"
-        />
-        <key
-          :text="closeButtonText"
-          :type="['blue', 'big']"
-          @press="onPressKey"
-        />
-      </div>
-    </div>
-  </transition>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import Key from './Key';
 
-export default create({
-  name: 'number-keyboard',
+const [sfc, bem, t] = use('number-keyboard');
+const CLOSE_KEY_TYPE = ['blue', 'big'];
+const DELETE_KEY_TYPE = ['delete', 'big', 'gray'];
 
-  components: { Key },
-
+export default sfc({
   props: {
     show: Boolean,
     title: String,
@@ -129,28 +77,15 @@ export default create({
           );
           break;
         case 'custom':
-          keys.push(
-            { text: 0, type: ['middle'] },
-            { text: this.extraKey }
-          );
+          keys.push({ text: 0, type: ['middle'] }, { text: this.extraKey });
           break;
       }
 
       return keys;
     },
 
-    style() {
-      return {
-        zIndex: this.zIndex
-      };
-    },
-
-    showTitleClose() {
-      return this.closeButtonText && this.theme === 'default';
-    },
-
     deleteText() {
-      return this.deleteButtonText || this.$t('delete');
+      return this.deleteButtonText || t('delete');
     }
   },
 
@@ -180,7 +115,7 @@ export default create({
       this.$emit(this.show ? 'show' : 'hide');
     },
 
-    onPressKey(text) {
+    onPress(text) {
       if (text === '') {
         return;
       }
@@ -193,6 +128,47 @@ export default create({
         this.$emit('input', text);
       }
     }
+  },
+
+  render(h) {
+    const { theme, onPress, closeButtonText } = this;
+    const showTitleClose = closeButtonText && theme === 'default';
+
+    return (
+      <transition name={this.transition ? 'van-slide-up' : ''}>
+        <div
+          v-show={this.show}
+          style={{ zIndex: this.zIndex }}
+          class={bem([theme])}
+          onTouchstart={event => {
+            event.stopPropagation();
+          }}
+          onAnimationend={this.onAnimationEnd}
+          onWebkitAnimationEnd={this.onAnimationEnd}
+        >
+          {(this.title || showTitleClose) && (
+            <div class={[bem('title'), 'van-hairline--top']}>
+              <span>{this.title}</span>
+              {showTitleClose && (
+                <span class={bem('close')} onClick={this.onClose}>
+                  {closeButtonText}
+                </span>
+              )}
+            </div>
+          )}
+          <div class={bem('body')}>
+            {this.keys.map(key => (
+              <Key key={key.text} text={key.text} type={key.type} onPress={onPress} />
+            ))}
+          </div>
+          {theme === 'custom' && (
+            <div class={bem('sidebar')}>
+              <Key text={this.deleteText} type={DELETE_KEY_TYPE} onPress={onPress} />
+              <Key text={closeButtonText} type={CLOSE_KEY_TYPE} onPress={onPress} />
+            </div>
+          )}
+        </div>
+      </transition>
+    );
   }
 });
-</script>

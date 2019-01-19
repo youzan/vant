@@ -1,84 +1,11 @@
-<template>
-  <cell
-    :icon="leftIcon"
-    :title="label"
-    :center="center"
-    :border="border"
-    :is-link="isLink"
-    :required="required"
-    :class="b({
-      error,
-      disabled: $attrs.disabled,
-      [`label-${labelAlign}`]: labelAlign,
-      'min-height': type === 'textarea' && !autosize
-    })"
-  >
-    <slot
-      name="left-icon"
-      slot="icon"
-    />
-    <slot
-      name="label"
-      slot="title"
-    />
-    <div :class="b('body')">
-      <textarea
-        v-if="type === 'textarea'"
-        v-bind="$attrs"
-        v-on="listeners"
-        ref="input"
-        :class="b('control', inputAlign)"
-        :value="value"
-        :readonly="readonly"
-      />
-      <input
-        v-else
-        v-bind="$attrs"
-        v-on="listeners"
-        ref="input"
-        :class="b('control', inputAlign)"
-        :type="type"
-        :value="value"
-        :readonly="readonly"
-      >
-      <icon
-        v-if="showClear"
-        name="clear"
-        :class="b('clear')"
-        @touchstart.prevent="onClear"
-      />
-      <div
-        v-if="$slots.icon || icon"
-        :class="b('icon')"
-        @click="onClickIcon"
-      >
-        <slot name="icon">
-          <icon :name="icon" />
-        </slot>
-      </div>
-      <div
-        v-if="$slots.button"
-        :class="b('button')"
-      >
-        <slot name="button" />
-      </div>
-    </div>
-    <div
-      v-if="errorMessage"
-      v-text="errorMessage"
-      :class="b('error-message')"
-    />
-  </cell>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use, isObj, isDef } from '../utils';
+import Icon from '../icon';
+import Cell from '../cell';
 import CellMixin from '../mixins/cell';
-import { isObj } from '../utils';
 
-export default create({
-  name: 'field',
+const [sfc, bem] = use('field');
 
+export default sfc({
   inheritAttrs: false,
 
   mixins: [CellMixin],
@@ -118,7 +45,9 @@ export default create({
 
   computed: {
     showClear() {
-      return this.clearable && this.focused && this.value !== '' && this.isDef(this.value) && !this.readonly;
+      return (
+        this.clearable && this.focused && this.value !== '' && isDef(this.value) && !this.readonly
+      );
     },
 
     listeners() {
@@ -146,7 +75,7 @@ export default create({
       let { value } = target;
       const { maxlength } = this.$attrs;
 
-      if (this.type === 'number' && this.isDef(maxlength) && value.length > maxlength) {
+      if (this.type === 'number' && isDef(maxlength) && value.length > maxlength) {
         value = value.slice(0, maxlength);
         target.value = value;
       }
@@ -179,7 +108,8 @@ export default create({
       this.onIconClick && this.onIconClick();
     },
 
-    onClear() {
+    onClear(event) {
+      event.preventDefault();
       this.$emit('input', '');
       this.$emit('clear');
     },
@@ -188,7 +118,8 @@ export default create({
       if (this.type === 'number') {
         const { keyCode } = event;
         const allowPoint = String(this.value).indexOf('.') === -1;
-        const isValidKey = (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
+        const isValidKey =
+          (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
         if (!isValidKey) {
           event.preventDefault();
         }
@@ -226,6 +157,55 @@ export default create({
         input.style.height = height + 'px';
       }
     }
+  },
+
+  render(h) {
+    const { type, labelAlign, $slots: slots } = this;
+
+    const inputProps = {
+      ref: 'input',
+      class: bem('control', this.inputAlign),
+      domProps: {
+        value: this.value
+      },
+      attrs: {
+        ...this.$attrs,
+        readonly: this.readonly
+      },
+      on: this.listeners
+    };
+
+    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input {...inputProps} />;
+
+    return (
+      <Cell
+        icon={this.leftIcon}
+        title={this.label}
+        center={this.center}
+        border={this.border}
+        isLink={this.isLink}
+        required={this.required}
+        class={bem({
+          error: this.error,
+          disabled: this.$attrs.disabled,
+          [`label-${labelAlign}`]: labelAlign,
+          'min-height': type === 'textarea' && !this.autosize
+        })}
+      >
+        {h('template', { slot: 'icon' }, slots['left-icon'])}
+        {h('template', { slot: 'title' }, slots.label)}
+        <div class={bem('body')}>
+          {Input}
+          {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
+          {(slots.icon || this.icon) && (
+            <div class={bem('icon')} onClick={this.onClickIcon}>
+              {slots.icon || <Icon name={this.icon} />}
+            </div>
+          )}
+          {slots.button && <div class={bem('button')}>{slots.button}</div>}
+        </div>
+        {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
+      </Cell>
+    );
   }
 });
-</script>

@@ -121,4 +121,3 @@ export default {
 | icon | 自定义`icon` |
 | title | 自定义`title` |
 | right-icon | 自定义右侧按钮，默认是`arrow` |
-

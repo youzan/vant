@@ -95,6 +95,8 @@ describe('ContactEdit', () => {
 
     const deleteButton = wrapper.findAll('.van-button').at(1);
     deleteButton.trigger('click');
+
+    await later();
     document.querySelector('.van-dialog__confirm').click();
 
     await later();

@@ -1,36 +1,10 @@
-<template>
-  <div :class="b()">
-    <div
-      :class="b('icon', [shape, { disabled: isDisabled, checked }])"
-      @click="toggle"
-    >
-      <slot
-        name="icon"
-        :checked="checked"
-      >
-        <icon
-          name="success"
-          :style="iconStyle"
-        />
-      </slot>
-    </div>
-    <span
-      v-if="$slots.default"
-      :class="b('label', [labelPosition, { disabled: isDisabled }])"
-      @click="toggle('label')"
-    >
-      <slot />
-    </span>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
+import Icon from '../icon';
 import findParent from '../mixins/find-parent';
 
-export default create({
-  name: 'checkbox',
+const [sfc, bem] = use('checkbox');
 
+export default sfc({
   mixins: [findParent],
 
   props: {
@@ -49,9 +23,7 @@ export default create({
   computed: {
     checked: {
       get() {
-        return this.parent
-          ? this.parent.value.indexOf(this.name) !== -1
-          : this.value;
+        return this.parent ? this.parent.value.indexOf(this.name) !== -1 : this.value;
       },
 
       set(val) {
@@ -119,6 +91,36 @@ export default create({
         }
       }
     }
+  },
+
+  render(h) {
+    const CheckIcon = this.$scopedSlots.icon ? (
+      this.$scopedSlots.icon({ checked: this.checked })
+    ) : (
+      <Icon name="success" style={this.iconStyle} />
+    );
+
+    const Label = this.$slots.default && (
+      <span
+        class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
+        onClick={() => {
+          this.toggle('label');
+        }}
+      >
+        {this.$slots.default}
+      </span>
+    );
+
+    return (
+      <div class={bem()}>
+        <div
+          class={bem('icon', [this.shape, { disabled: this.isDisabled, checked: this.checked }])}
+          onClick={this.toggle}
+        >
+          {CheckIcon}
+        </div>
+        {Label}
+      </div>
+    );
   }
 });
-</script>

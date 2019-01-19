@@ -1,19 +1,8 @@
-<template>
-  <component
-    :is="tag"
-    :class="b({ [span]: span, [`offset-${offset}`]: offset })"
-    :style="style"
-  >
-    <slot />
-  </component>
-</template>
+import { use } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('col');
 
-export default create({
-  name: 'col',
-
+export default sfc({
   props: {
     span: [Number, String],
     offset: [Number, String],
@@ -32,6 +21,14 @@ export default create({
       const padding = `${this.gutter / 2}px`;
       return this.gutter ? { paddingLeft: padding, paddingRight: padding } : {};
     }
+  },
+
+  render(h) {
+    const { span, offset } = this;
+    return (
+      <this.tag class={bem({ [span]: span, [`offset-${offset}`]: offset })} style={this.style}>
+        {this.$slots.default}
+      </this.tag>
+    );
   }
 });
-</script>
