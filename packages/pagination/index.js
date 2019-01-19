@@ -1,43 +1,12 @@
-<template>
-  <ul :class="b({ simple: !isMultiMode })">
-    <li
-      v-text="prevText || $t('prev')"
-      class="van-hairline"
-      :class="[b('item', { disabled: value === 1 }), b('prev')]"
-      @click="selectPage(value - 1)"
-    />
-    <li
-      v-for="page in pages"
-      v-text="page.text"
-      class="van-hairline"
-      :class="[b('item', { active: page.active }), b('page')]"
-      @click="selectPage(page.number)"
-    />
-    <li
-      v-if="!isMultiMode"
-      :class="b('page-desc')"
-    >
-      <slot name="pageDesc">{{ pageDesc }}</slot>
-    </li>
-    <li
-      v-text="nextText || $t('next')"
-      class="van-hairline"
-      :class="[b('item', { disabled: value === computedPageCount }), b('next')]"
-      @click="selectPage(value + 1)"
-    />
-  </ul>
-</template>
+import { use } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem, t] = use('pagination');
 
 function makePage(number, text, active) {
   return { number, text, active };
 }
 
-export default create({
-  name: 'pagination',
-
+export default sfc({
   props: {
     value: Number,
     prevText: String,
@@ -60,24 +29,16 @@ export default create({
   },
 
   computed: {
-    isMultiMode() {
-      return this.mode === 'multi';
-    },
-
-    computedPageCount() {
+    count() {
       const count = this.pageCount || Math.ceil(this.totalItems / this.itemsPerPage);
       return Math.max(1, count);
     },
 
-    pageDesc() {
-      return this.value + '/' + this.computedPageCount;
-    },
-
     pages() {
       const pages = [];
-      const pageCount = this.computedPageCount;
+      const pageCount = this.count;
 
-      if (!this.isMultiMode) {
+      if (this.mode !== 'multi') {
         return pages;
       }
 
@@ -125,21 +86,56 @@ export default create({
   watch: {
     value: {
       handler(page) {
-        this.selectPage(page || this.value);
+        this.select(page || this.value);
       },
       immediate: true
     }
   },
 
   methods: {
-    selectPage(page) {
-      page = Math.max(1, page);
-      page = Math.min(this.computedPageCount, page);
+    select(page) {
+      page = Math.min(this.count, Math.max(1, page));
       if (this.value !== page) {
         this.$emit('input', page);
         this.$emit('change', page);
       }
     }
+  },
+
+  render(h) {
+    const { value } = this;
+    const simple = this.mode !== 'multi';
+
+    const onSelect = value => () => {
+      this.select(value);
+    };
+
+    return (
+      <ul class={bem({ simple })}>
+        <li
+          class={[bem('item', { disabled: value === 1 }), bem('prev'), 'van-hairline']}
+          onClick={onSelect(value - 1)}
+        >
+          {this.prevText || t('prev')}
+        </li>
+        {this.pages.map(page => (
+          <li
+            class={[bem('item', { active: page.active }), bem('page'), 'van-hairline']}
+            onClick={onSelect(page.number)}
+          >
+            {page.text}
+          </li>
+        ))}
+        {simple && (
+          <li class={bem('page-desc')}>{this.$slots.pageDesc || `${value}/${this.count}`}</li>
+        )}
+        <li
+          class={[bem('item', { disabled: value === this.count }), bem('next'), 'van-hairline']}
+          onClick={onSelect(value + 1)}
+        >
+          {this.nextText || t('next')}
+        </li>
+      </ul>
+    );
   }
 });
-</script>
