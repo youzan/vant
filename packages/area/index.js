@@ -195,6 +195,8 @@ export default sfc({
         columns={this.displayColumns}
         itemHeight={this.itemHeight}
         visibleItemCount={this.visibleItemCount}
+        cancelButtonText={this.cancelButtonText}
+        confirmButtonText={this.confirmButtonText}
         {...{ on }}
       />
     );

@@ -48,6 +48,8 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | item-height | Option height | `Number` | `44` |
 | loading | Whether to show loading prompt | `Boolean` | `false` |
 | visible-item-count | Count of visible columns | `Number` | `5` |
+| confirm-button-text | Text of confirm button | `String` | `Confirm` |
+| cancel-button-text | Text of cancel button | `String` | `Cancel` |
 
 ### Event
 

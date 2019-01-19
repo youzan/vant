@@ -46,6 +46,8 @@ Vue.use(Area);
 | loading | 是否显示加载状态 | `Boolean` | `false` | - |
 | item-height | 选项高度 | `Number` | `44` | - |
 | visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` | 1.5.3 |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` | 1.5.3 |
 
 ### Event
 
