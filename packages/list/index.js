@@ -136,8 +136,8 @@ export default sfc({
         {this.finished && this.finishedText && (
           <div class={bem('finished-text')}>{this.finishedText}</div>
         )}
-        {this.error && (
-          <div onClick={this.clickErrorText} class={bem('error-text')}>{this.errorText || t('errorText')}</div>
+        {this.error && this.errorText && (
+          <div onClick={this.clickErrorText} class={bem('error-text')}>{this.errorText}</div>
         )}
       </div>
     );

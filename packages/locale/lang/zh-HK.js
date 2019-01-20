@@ -11,9 +11,6 @@ export default {
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除麽',
   telInvalid: '請填寫正確的電話',
-  vanList: {
-    errorText: '請求失敗，點擊重新加載...'
-  },
   vanContactCard: {
     addText: '添加聯系人'
   },

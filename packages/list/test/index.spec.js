@@ -53,7 +53,11 @@ test('error loaded', async () => {
 });
 
 test('click error-text and reload', async () => {
-  const wrapper = mount(List);
+  const wrapper = mount(List, {
+    propsData: {
+      errorText: 'Request failed. Click to reload...'
+    }
+  });
   wrapper.vm.$on('load', handleError => {
     handleError();
   });

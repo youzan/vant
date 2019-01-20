@@ -17,6 +17,7 @@ Vue.use(List);
   v-model="loading"
   :finished="finished"
   finished-text="Finished"
+  error-text="Request failed. Click to reload..."
   @load="onLoad"
 >
   <van-cell
@@ -66,7 +67,7 @@ export default {
 | offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `Number` | `300` |
 | loading-text | Loading text | `String` | `Loading...` |
 | finished-text | Finished text | `String` | - |
-| error-text | Error loaded text | `String` | `Request failed. Click to reload...` |
+| error-text | Error loaded text | `String` | - |
 | immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
 
 ### Event
