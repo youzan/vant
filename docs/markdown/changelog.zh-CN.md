@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: 新增 error-text 属性 [\#2568](https://github.com/youzan/vant/pull/2568)
+- Coupon: 新增 condition 属性 [\#2551](https://github.com/youzan/vant/pull/2551)
+- ImagePreview: 新增 lazyLoad 属性 [\#2569](https://github.com/youzan/vant/pull/2569)
+- NavBar: 新增样式相关 Less 变量 [\#2570](https://github.com/youzan/vant/pull/2570)
+- Dialog: 默认开启 lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- Toast: 支持在 message 中使用换行符 [\#2496](https://github.com/youzan/vant/pull/2496)
+- Area: 新增 confirm-button-text、cancel-button-text 属性 [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- 修复 Card 价格区域样式 [\#2549](https://github.com/youzan/vant/pull/2549)
+- 修复 Radio 未选中状态图标颜色错误 [\#2484](https://github.com/youzan/vant/pull/2484)
+- 修复 Radio label-position 类型定义错误 [\#2485](https://github.com/youzan/vant/pull/2485)
+- 修复 Dialog 按钮点击事件触发时机错误 [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
 ## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
 `2019-01-10`
 

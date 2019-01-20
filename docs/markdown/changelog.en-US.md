@@ -1,5 +1,26 @@
 ## Changelog
 
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: add error-text prop [\#2568](https://github.com/youzan/vant/pull/2568)
+- Toast: allow newline charactor [\#2496](https://github.com/youzan/vant/pull/2496)
+- Coupon: add condition prop [\#2551](https://github.com/youzan/vant/pull/2551)
+- Dialog: enable lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- NavBar: support custom theme [\#2570](https://github.com/youzan/vant/pull/2570)
+- ImagePreview: add lazyLoad prop [\#2569](https://github.com/youzan/vant/pull/2569)
+- Area: add confirm-button-text、cancel-button-text prop [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- fix Card price style [\#2549](https://github.com/youzan/vant/pull/2549)
+- fix Radio unchecked icon color [\#2484](https://github.com/youzan/vant/pull/2484)
+- fix Radio label-position type [\#2485](https://github.com/youzan/vant/pull/2485)
+- fix Dialog action event [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
 ## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
 `2019-01-10`
 
