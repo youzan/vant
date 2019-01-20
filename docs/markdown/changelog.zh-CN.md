@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+`2019-01-20`
+
+**Bug Fixes**
+
+- 修复缺少 @vue/babel-helper-vue-jsx-merge-props 依赖的问题 [\#2474](https://github.com/youzan/vant/issues/2474)
+
+
 ## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
 `2019-01-20`
 
