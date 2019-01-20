@@ -9,7 +9,6 @@ export default sfc({
     desc: String,
     thumb: String,
     title: String,
-    centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
     num: [Number, String],
