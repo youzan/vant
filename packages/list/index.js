@@ -13,6 +13,7 @@ export default sfc({
   props: {
     loading: Boolean,
     finished: Boolean,
+    error: Boolean,
     loadingText: String,
     finishedText: String,
     errorText: String,
@@ -24,12 +25,6 @@ export default sfc({
       type: Number,
       default: 300
     }
-  },
-
-  data() {
-    return {
-      error: false
-    };
   },
 
   mounted() {
@@ -99,17 +94,13 @@ export default sfc({
       /* istanbul ignore else */
       if (reachBottom) {
         this.$emit('input', true);
-        this.$emit('load', this.handleError);
+        this.$emit('load');
       }
     },
 
-    handleError() {
-      this.error = true;
-    },
-
     clickErrorText() {
-      this.error = false;
-      this.check();
+      this.$emit('update:error', false);
+      this.$nextTick(this.check);
     },
 
     handler(bind) {

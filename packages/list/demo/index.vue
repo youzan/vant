@@ -17,6 +17,7 @@
         <van-list
           v-model="loading"
           :finished="finished"
+          :error.sync="error"
           :finished-text="$t('finishedText')"
           :error-text="$t('errorText')"
           @load="onLoad"
@@ -52,19 +53,20 @@ export default {
       list: [],
       refreshing: false,
       loading: false,
+      error: false,
       finished: false,
       loadedError: false
     };
   },
 
   methods: {
-    onLoad(handleError) {
+    onLoad() {
       if (this.loadedError) {
         setTimeout(() => {
           fetch('http://www.baidu.com').then(res => {
           }).catch(err => {
             this.loading = false;
-            handleError();
+            this.error = true;
           });
         }, 500);
       } else {

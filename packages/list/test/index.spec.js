@@ -29,52 +29,32 @@ test('load event', async () => {
   wrapper.destroy();
 });
 
-test('error loaded', async () => {
-  const wrapper = mount(List);
-  wrapper.vm.$on('load', handleError => {
-    handleError();
-  });
-
-  mockOffsetParent(wrapper.vm.$el);
-
-  await later();
-
-  expect(wrapper.emitted('load')).toBeTruthy();
-  expect(wrapper.emitted('input')).toBeTruthy();
-  expect(wrapper.vm.$data.error).toBeTruthy();
-
-  await later();
-
-  expect(wrapper.emitted('load')[1]).toBeFalsy();
-  expect(wrapper.emitted('input')[1]).toBeFalsy();
-  expect(wrapper.vm.$data.error).toBeTruthy();
-
-  wrapper.destroy();
-});
-
-test('click error-text and reload', async () => {
+test('error loaded, click error-text and reload', async () => {
   const wrapper = mount(List, {
     propsData: {
-      errorText: 'Request failed. Click to reload...'
+      errorText: 'Request failed. Click to reload...',
+      error: true
     }
-  });
-  wrapper.vm.$on('load', handleError => {
-    handleError();
   });
 
   mockOffsetParent(wrapper.vm.$el);
 
   await later();
 
+  expect(wrapper.emitted('load')).toBeFalsy();
+  expect(wrapper.emitted('input')).toBeFalsy();
+
+  // 模拟点击error-text的行为
+  wrapper.setProps({
+    error: false
+  });
+  wrapper.vm.$emit('input', true);
+  wrapper.vm.$emit('load');
+
+  expect(wrapper.vm.$props.error).toBeFalsy();
   expect(wrapper.emitted('load')).toBeTruthy();
   expect(wrapper.emitted('input')).toBeTruthy();
-  expect(wrapper.vm.$data.error).toBeTruthy();
 
-  wrapper.find('.van-list__error-text').trigger('click');
-
-  expect(wrapper.emitted('load')[1]).toBeTruthy();
-  expect(wrapper.emitted('input')[1]).toBeTruthy();
-  expect(wrapper.vm.$data.error).toBeTruthy();
   wrapper.destroy();
 });
 

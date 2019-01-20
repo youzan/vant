@@ -16,6 +16,7 @@ Vue.use(List);
 <van-list
   v-model="loading"
   :finished="finished"
+  :error.sync="error"
   finished-text="Finished"
   error-text="Request failed. Click to reload..."
   @load="onLoad"
@@ -35,11 +36,12 @@ export default {
       list: [],
       loading: false,
       finished: false
+      error: false
     };
   },
 
   methods: {
-    onLoad(handleError) {
+    onLoad() {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
           this.list.push(this.list.length + 1);
@@ -47,7 +49,7 @@ export default {
         this.loading = false;
 
         // when error loaded:
-        // handleError();
+        // this.error = true;
 
         if (this.list.length >= 40) {
           this.finished = true;
@@ -64,6 +66,7 @@ export default {
 |------|------|------|------|
 | loading | Whether to show loading info，the `load` event will not be triggered when loading | `Boolean` | `false` |
 | finished | Whether loading is finished，the `load` event will not be triggered when finished | `Boolean` | `false` |
+| error | Whether loading is error，the `load` event will be triggered only when error text clicked, the `sync` modifier is needed | `Boolean` | `false` |
 | offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `Number` | `300` |
 | loading-text | Loading text | `String` | `Loading...` |
 | finished-text | Finished text | `String` | - |
@@ -74,7 +77,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| load | Triggered when the distance between the scrollbar and the bottom is less than offset | handleError: Method to notify component to deal with error load |
+| load | Triggered when the distance between the scrollbar and the bottom is less than offset | - |
 
 ### Methods
 
