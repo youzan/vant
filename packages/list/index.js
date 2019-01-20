@@ -13,8 +13,10 @@ export default sfc({
   props: {
     loading: Boolean,
     finished: Boolean,
+    error: Boolean,
     loadingText: String,
     finishedText: String,
+    errorText: String,
     immediateCheck: {
       type: Boolean,
       default: true
@@ -58,7 +60,7 @@ export default sfc({
 
   methods: {
     check() {
-      if (this.loading || this.finished) {
+      if (this.loading || this.finished || this.error) {
         return;
       }
 
@@ -96,6 +98,11 @@ export default sfc({
       }
     },
 
+    clickErrorText() {
+      this.$emit('update:error', false);
+      this.$nextTick(this.check);
+    },
+
     handler(bind) {
       /* istanbul ignore else */
       if (this.binded !== bind) {
@@ -119,6 +126,9 @@ export default sfc({
         )}
         {this.finished && this.finishedText && (
           <div class={bem('finished-text')}>{this.finishedText}</div>
+        )}
+        {this.error && this.errorText && (
+          <div onClick={this.clickErrorText} class={bem('error-text')}>{this.errorText}</div>
         )}
       </div>
     );

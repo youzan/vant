@@ -1,7 +1,15 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <p class="page-desc">{{ $t('text') }}</p>
+      <div class="page-desc">
+        <p class="page-desc--text">{{ $t('text') }}</p>
+        <van-checkbox
+          class="page-desc--option"
+          v-model="loadedError"
+        >
+          模拟加载失败
+        </van-checkbox>
+      </div>
       <van-pull-refresh
         v-model="refreshing"
         @refresh="onRefresh"
@@ -9,7 +17,9 @@
         <van-list
           v-model="loading"
           :finished="finished"
+          :error.sync="error"
           :finished-text="$t('finishedText')"
+          :error-text="$t('errorText')"
           @load="onLoad"
         >
           <van-cell
@@ -28,11 +38,13 @@ export default {
   i18n: {
     'zh-CN': {
       text: '当即将滚动到元素底部时，会自动加载更多',
-      finishedText: '没有更多了'
+      finishedText: '没有更多了',
+      errorText: '请求失败，点击重新加载...'
     },
     'en-US': {
       text: 'This list will load items will scroll to bottom.',
-      finishedText: 'Finished'
+      finishedText: 'Finished',
+      errorText: 'Request failed. Click to reload...'
     }
   },
 
@@ -41,23 +53,35 @@ export default {
       list: [],
       refreshing: false,
       loading: false,
-      finished: false
+      error: false,
+      finished: false,
+      loadedError: false
     };
   },
 
   methods: {
     onLoad() {
-      setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-          const text = this.list.length + 1;
-          this.list.push(text < 10 ? '0' + text : text);
-        }
-        this.loading = false;
+      if (this.loadedError) {
+        setTimeout(() => {
+          fetch('http://www.baidu.com').then(res => {
+          }).catch(err => {
+            this.loading = false;
+            this.error = true;
+          });
+        }, 500);
+      } else {
+        setTimeout(() => {
+          for (let i = 0; i < 10; i++) {
+            const text = this.list.length + 1;
+            this.list.push(text < 10 ? '0' + text : text);
+          }
+          this.loading = false;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
-        }
-      }, 500);
+          if (this.list.length >= 40) {
+            this.finished = true;
+          }
+        }, 500);
+      }
     },
 
     onRefresh() {
@@ -82,9 +106,21 @@ export default {
 
   .page-desc {
     padding: 5px 0;
-    line-height: 1.4;
+    margin: 0;
     font-size: 14px;
     text-align: center;
+    color: @gray-darker;
+
+    &--text {
+      margin: 0;
+    }
+
+    &--option {
+      margin: 12px;
+    }
+  }
+
+  .van-checkbox__label {
     color: @gray-darker;
   }
 }
