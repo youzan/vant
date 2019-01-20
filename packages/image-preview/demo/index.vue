@@ -43,6 +43,7 @@ export default {
       const instance = ImagePreview({
         images,
         asyncClose: !!timer,
+        lazyLoad: true,
         startPosition: typeof position === 'number' ? position : 0
       });
 
