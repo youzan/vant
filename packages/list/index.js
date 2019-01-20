@@ -11,12 +11,12 @@ export default sfc({
   },
 
   props: {
+    error: Boolean,
     loading: Boolean,
     finished: Boolean,
-    error: Boolean,
+    errorText: String,
     loadingText: String,
     finishedText: String,
-    errorText: String,
     immediateCheck: {
       type: Boolean,
       default: true
