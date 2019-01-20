@@ -42,13 +42,13 @@ test('before close', () => {
   const cancel = wrapper.find('.van-dialog__cancel');
 
   cancel.trigger('click');
-  expect(wrapper.emitted('cancel')).toBeFalsy();
+  expect(wrapper.emitted('input')).toBeFalsy();
 
   wrapper.setProps({
     beforeClose: (action, done) => done()
   });
   cancel.trigger('click');
-  expect(wrapper.emitted('cancel')).toBeTruthy();
+  expect(wrapper.emitted('input')).toBeTruthy();
 });
 
 test('set default options', () => {
