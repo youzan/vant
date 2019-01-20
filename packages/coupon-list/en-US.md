@@ -75,6 +75,7 @@ export default {
 | editable | Cell editable | `Boolean` | `true` |
 | border | Whether to show innner border | `Boolean` | `true` |
 | currency | Currency symbol |  `String` | `¥` |
+| couponText | Custom coupon display message |  `String` | - | - |
 
 ### CouponList API
 

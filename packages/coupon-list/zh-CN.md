@@ -76,6 +76,7 @@ export default {
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
 | border | 是否显示内边框 | `Boolean` | `true` | 1.3.10 |
 | currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
+| couponText | 优惠券自定义显示文案 |  `String` | - | - | 1.5.4 |
 
 ### CouponList API
 
