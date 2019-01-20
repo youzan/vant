@@ -42,6 +42,7 @@ export default sfc({
 
   methods: {
     handleAction(action) {
+      this.$emit(action);
       if (this.beforeClose) {
         this.loading[action] = true;
         this.beforeClose(action, state => {
@@ -57,7 +58,6 @@ export default sfc({
 
     onClose(action) {
       this.$emit('input', false);
-      this.$emit(action);
       this.callback && this.callback(action);
     }
   },
