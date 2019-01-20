@@ -39,8 +39,6 @@ test('error loaded', async () => {
 
   await later();
 
-  console.log(wrapper.emitted('load'));
-
   expect(wrapper.emitted('load')).toBeTruthy();
   expect(wrapper.emitted('input')).toBeTruthy();
   expect(wrapper.vm.$data.error).toBeTruthy();

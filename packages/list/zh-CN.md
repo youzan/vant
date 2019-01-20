@@ -12,7 +12,7 @@ Vue.use(List);
 
 #### 基础用法
 
-List 组件通过`loading`和`finished`两个变量控制加载状态，当组件滚动到底部时，会触发`load`事件并将`loading`设置成`true`。此时可以发起异步操作并更新数据，数据更新完毕后，将`loading`设置成`false`即可。若数据已全部加载完毕，则直接将`finished`设置成`true`即可。
+List 组件通过`loading`和`finished`两个变量控制加载状态，当组件滚动到底部时，会触发`load`事件并将`loading`设置成`true`。此时可以发起异步操作并更新数据，数据更新完毕后，将`loading`设置成`false`即可。若数据已全部加载完毕，则直接将`finished`设置成`true`即可。若数据加载失败，可以通过`handleError`方法，通知组件处理错误情况，出现错误提示，用户点击错误提示，重新请求。
 
 ```html
 <van-list
@@ -40,7 +40,7 @@ export default {
   },
 
   methods: {
-    onLoad() {
+    onLoad(handleError) {
       // 异步更新数据
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
@@ -48,6 +48,9 @@ export default {
         }
         // 加载状态结束
         this.loading = false;
+
+        // 当请求错误时
+        // handleError();
 
         // 数据全部加载完成
         if (this.list.length >= 40) {
@@ -68,13 +71,14 @@ export default {
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
 | loading-text | 加载过程中的提示文案 | `String` | `加载中...` | 1.1.1 |
 | finished-text | 加载完成后的提示文案 | `String` | - | 1.4.7 |
+| error-text | 加载失败后的提示文案 | `String` | `请求失败，点击重新加载...` | - |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
-| load | 滚动条与底部距离小于 offset 时触发 | - |
+| load | 滚动条与底部距离小于 offset 时触发 | handleError: 通知组件处理错误的方法 |
 
 ### 方法
 

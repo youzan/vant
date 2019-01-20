@@ -5,7 +5,7 @@
         <p class="page-desc--text">{{ $t('text') }}</p>
         <van-checkbox
           class="page-desc--option"
-          v-model="mockFail"
+          v-model="loadedError"
         >
           模拟加载失败
         </van-checkbox>
@@ -50,15 +50,13 @@ export default {
       refreshing: false,
       loading: false,
       finished: false,
-      mockFail: false
+      loadedError: false
     };
   },
 
   methods: {
     onLoad(handleError) {
-      this.loading = true;
-
-      if (this.mockFail) {
+      if (this.loadedError) {
         setTimeout(() => {
           fetch('http://www.baidu.com').then(res => {
           }).catch(err => {

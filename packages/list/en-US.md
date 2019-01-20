@@ -38,12 +38,15 @@ export default {
   },
 
   methods: {
-    onLoad() {
+    onLoad(handleError) {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
           this.list.push(this.list.length + 1);
         }
         this.loading = false;
+
+        // when error loaded:
+        // handleError();
 
         if (this.list.length >= 40) {
           this.finished = true;
@@ -63,13 +66,14 @@ export default {
 | offset | The load event will be triggered when the distance between the scrollbar and the bottom is less than offset | `Number` | `300` |
 | loading-text | Loading text | `String` | `Loading...` |
 | finished-text | Finished text | `String` | - |
+| error-text | Error loaded text | `String` | `Request failed. Click to reload...` |
 | immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
 
 ### Event
 
 | Event | Description | Arguments |
 |------|------|------|
-| load | Triggered when the distance between the scrollbar and the bottom is less than offset | - |
+| load | Triggered when the distance between the scrollbar and the bottom is less than offset | handleError: Method to notify component to deal with error load |
 
 ### Methods
 
