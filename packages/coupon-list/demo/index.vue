@@ -4,6 +4,7 @@
       <van-coupon-cell
         :coupons="coupons"
         :chosen-coupon="chosenCoupon"
+        :coupon-text="couponText"
         @click="showList = true"
       />
 
@@ -31,7 +32,7 @@ export default {
       coupon: {
         name: '优惠券名称',
         reason: '优惠券不可用原因',
-        description: '描述信息'
+        description: '描述信息',
       },
       exchange: '兑换成功'
     },
@@ -49,7 +50,7 @@ export default {
     return {
       showList: false,
       chosenCoupon: -1,
-      exchangedCoupons: []
+      exchangedCoupons: [],
     };
   },
 

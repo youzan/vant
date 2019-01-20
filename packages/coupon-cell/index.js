@@ -26,11 +26,15 @@ export default sfc({
     chosenCoupon: {
       type: Number,
       default: -1
-    }
+    },
+    couponText: {
+      type: String,
+    },
   },
 
   computed: {
     value() {
+      if (this.couponText !== undefined) return this.couponText;
       const { coupons } = this;
       const coupon = coupons[this.chosenCoupon];
       if (coupon) {
