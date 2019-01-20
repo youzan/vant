@@ -18,7 +18,8 @@ module.exports = function (api) {
         {
           functional: false
         }
-      ]
+      ],
+      '@babel/preset-typescript'
     ],
     plugins: [
       [
