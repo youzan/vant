@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "jsx": "preserve",
+    "allowJs": true,
+    "noImplicitThis": true,
+    "noImplicitUseStrict": true
+  },
+  "include": [
+    "types/**/*",
+    "packages/**/*"
+  ]
+}
