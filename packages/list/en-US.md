@@ -16,9 +16,7 @@ Vue.use(List);
 <van-list
   v-model="loading"
   :finished="finished"
-  :error.sync="error"
   finished-text="Finished"
-  error-text="Request failed. Click to reload..."
   @load="onLoad"
 >
   <van-cell
@@ -36,7 +34,6 @@ export default {
       list: [],
       loading: false,
       finished: false
-      error: false
     };
   },
 
@@ -48,13 +45,47 @@ export default {
         }
         this.loading = false;
 
-        // when error loaded:
-        // this.error = true;
-
         if (this.list.length >= 40) {
           this.finished = true;
         }
       }, 500);
+    }
+  }
+}
+```
+
+### Error Info
+
+```html
+<van-list
+  v-model="loading"
+  :error.sync="error"
+  error-text="Request failed. Click to reload"
+  @load="onLoad"
+>
+  <van-cell
+    v-for="item in list"
+    :key="item"
+    :title="item"
+  />
+</van-list>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [],
+      error: false,
+      loading: false
+    };
+  },
+
+  methods: {
+    onLoad() {
+      fetchSomeThing().catch(() => {
+        this.error = true;
+      })
     }
   }
 }
