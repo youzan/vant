@@ -1,7 +1,15 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <p class="page-desc">{{ $t('text') }}</p>
+      <div class="page-desc">
+        <p class="page-desc--text">{{ $t('text') }}</p>
+        <van-checkbox
+          class="page-desc--option"
+          v-model="mockFail"
+        >
+          模拟加载失败
+        </van-checkbox>
+      </div>
       <van-pull-refresh
         v-model="refreshing"
         @refresh="onRefresh"
@@ -41,23 +49,36 @@ export default {
       list: [],
       refreshing: false,
       loading: false,
-      finished: false
+      finished: false,
+      mockFail: false
     };
   },
 
   methods: {
-    onLoad() {
-      setTimeout(() => {
-        for (let i = 0; i < 10; i++) {
-          const text = this.list.length + 1;
-          this.list.push(text < 10 ? '0' + text : text);
-        }
-        this.loading = false;
+    onLoad(handleError) {
+      this.loading = true;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
-        }
-      }, 500);
+      if (this.mockFail) {
+        setTimeout(() => {
+          fetch('http://www.baidu.com').then(res => {
+          }).catch(err => {
+            this.loading = false;
+            handleError();
+          });
+        }, 500);
+      } else {
+        setTimeout(() => {
+          for (let i = 0; i < 10; i++) {
+            const text = this.list.length + 1;
+            this.list.push(text < 10 ? '0' + text : text);
+          }
+          this.loading = false;
+
+          if (this.list.length >= 40) {
+            this.finished = true;
+          }
+        }, 500);
+      }
     },
 
     onRefresh() {
@@ -82,9 +103,21 @@ export default {
 
   .page-desc {
     padding: 5px 0;
-    line-height: 1.4;
+    margin: 0;
     font-size: 14px;
     text-align: center;
+    color: @gray-darker;
+
+    &--text {
+      margin: 0;
+    }
+
+    &--option {
+      margin: 12px;
+    }
+  }
+
+  .van-checkbox__label {
     color: @gray-darker;
   }
 }

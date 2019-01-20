@@ -11,6 +11,9 @@ export default {
   nameEmpty: 'Please fill in the name',
   confirmDelete: 'Are you sure you want to delete?',
   telInvalid: 'Malformed phone number',
+  vanList: {
+    errorText: 'Request failed. Click to reload...'
+  },
   vanContactCard: {
     addText: 'Add contact info'
   },

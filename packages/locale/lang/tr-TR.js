@@ -11,6 +11,9 @@ export default {
   nameEmpty: 'Lütfen isim giriniz',
   confirmDelete: 'Silmek istediğinize emin misiniz?',
   telInvalid: 'Geçersiz tel. numarası',
+  vanList: {
+    errorText: 'İstek başarısız oldu, yeniden yükle ...'
+  },
   vanContactCard: {
     addText: 'Kişi bilgisi ekle'
   },

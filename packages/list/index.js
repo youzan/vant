@@ -15,6 +15,7 @@ export default sfc({
     finished: Boolean,
     loadingText: String,
     finishedText: String,
+    errorText: String,
     immediateCheck: {
       type: Boolean,
       default: true
@@ -23,6 +24,12 @@ export default sfc({
       type: Number,
       default: 300
     }
+  },
+
+  data() {
+    return {
+      error: false
+    };
   },
 
   mounted() {
@@ -58,7 +65,7 @@ export default sfc({
 
   methods: {
     check() {
-      if (this.loading || this.finished) {
+      if (this.loading || this.finished || this.error) {
         return;
       }
 
@@ -92,8 +99,17 @@ export default sfc({
       /* istanbul ignore else */
       if (reachBottom) {
         this.$emit('input', true);
-        this.$emit('load');
+        this.$emit('load', this.handleError);
       }
+    },
+
+    handleError() {
+      this.error = true;
+    },
+
+    clickErrorText() {
+      this.error = false;
+      this.check();
     },
 
     handler(bind) {
@@ -119,6 +135,9 @@ export default sfc({
         )}
         {this.finished && this.finishedText && (
           <div class={bem('finished-text')}>{this.finishedText}</div>
+        )}
+        {this.error && (
+          <div onClick={this.clickErrorText} class={bem('error-text')}>{this.errorText || t('errorText')}</div>
         )}
       </div>
     );

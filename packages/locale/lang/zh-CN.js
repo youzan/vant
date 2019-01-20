@@ -11,6 +11,9 @@ export default {
   nameEmpty: '请填写姓名',
   confirmDelete: '确定要删除么',
   telInvalid: '请填写正确的电话',
+  vanList: {
+    errorText: '请求失败，点击重新加载...'
+  },
   vanContactCard: {
     addText: '添加联系人'
   },
