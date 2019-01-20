@@ -1,21 +1,21 @@
 @import '../style/var';
 
 .van-nav-bar {
-  height: 46px;
   position: relative;
   user-select: none;
   text-align: center;
-  line-height: 46px;
-  background-color: @white;
+  height: @nav-bar-height;
+  line-height: @nav-bar-height;
+  background-color: @nav-bar-background-color;
 
   .van-icon {
-    color: @blue;
+    color: @nav-bar-icon-color;
     vertical-align: middle;
   }
 
   &__arrow {
     min-width: 1em;
-    font-size: 16px;
+    font-size: @nav-bar-arrow-size;
 
     + .van-nav-bar__text {
       margin-left: -20px;
@@ -33,7 +33,8 @@
   &__title {
     margin: 0 auto;
     max-width: 60%;
-    font-size: 16px;
+    color: @nav-bar-title-text-color;
+    font-size: @nav-bar-title-font-size;
     font-weight: 500;
   }
 
@@ -53,7 +54,7 @@
   }
 
   &__text {
-    color: @blue;
+    color: @nav-bar-text-color;
     margin: 0 -15px;
     padding: 0 15px;
     display: inline-block;
