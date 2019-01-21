@@ -1,5 +1,13 @@
 ## Changelog
 
+## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
+`2019-01-21`
+
+**Bug Fixes**
+
+- fix Field type prop not work [\#2579](https://github.com/youzan/vant/pull/2579)
+
+
 ## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
 `2019-01-20`
 
