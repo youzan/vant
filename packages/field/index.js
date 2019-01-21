@@ -170,6 +170,7 @@ export default sfc({
       },
       attrs: {
         ...this.$attrs,
+        type,
         readonly: this.readonly
       },
       on: this.listeners
