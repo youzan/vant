@@ -17,7 +17,7 @@ There are some basic variables below, all available variables could be found in 
 @orange: #ff976a;
 @orange-dark: #ed6a0c;
 @orange-light: #fffbe8;
-@green: #4b0;
+@green: #07c160;
 @gray: #c9c9c9;
 @gray-light: #e5e5e5;
 @gray-darker: #7d7e80;

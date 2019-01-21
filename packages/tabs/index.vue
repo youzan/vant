@@ -31,17 +31,16 @@
           @click="onClick(index)"
         >
           <span
+            v-text="tab.title"
             ref="title"
             :class="{ 'van-ellipsis': ellipsis }"
-          >
-            {{ tab.title }}
-          </span>
+          />
         </div>
       </div>
     </div>
     <div
       ref="content"
-      :class="b('content', { animated: animated })"
+      :class="b('content', { animated })"
     >
       <div
         v-if="animated"
@@ -85,6 +84,10 @@ export default create({
       type: Number,
       default: null
     },
+    lineHeight: {
+      type: Number,
+      default: null
+    },
     active: {
       type: [Number, String],
       default: 0
@@ -108,7 +111,9 @@ export default create({
       tabs: [],
       position: '',
       curActive: null,
-      lineStyle: {},
+      lineStyle: {
+        backgroundColor: this.color
+      },
       events: {
         resize: false,
         sticky: false,
@@ -193,12 +198,9 @@ export default create({
   },
 
   mounted() {
-    this.correctActive(this.active);
-    this.setLine();
-
     this.$nextTick(() => {
+      this.inited = true;
       this.handlers(true);
-      this.scrollIntoView(true);
     });
   },
 
@@ -288,23 +290,37 @@ export default create({
 
     // update nav bar style
     setLine() {
+      const shouldAnimate = this.inited;
+
       this.$nextTick(() => {
         const { tabs } = this.$refs;
 
-        if (!tabs || this.type !== 'line') {
+        if (!tabs || !tabs[this.curActive] || this.type !== 'line') {
           return;
         }
 
         const tab = tabs[this.curActive];
-        const width = this.isDef(this.lineWidth) ? this.lineWidth : (tab.offsetWidth / 2);
+        const { lineWidth, lineHeight } = this;
+        const width = this.isDef(lineWidth) ? lineWidth : (tab.offsetWidth / 2);
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
-        this.lineStyle = {
+        const lineStyle = {
           width: `${width}px`,
           backgroundColor: this.color,
-          transform: `translateX(${left}px)`,
-          transitionDuration: `${this.duration}s`
+          transform: `translateX(${left}px)`
         };
+
+        if (shouldAnimate) {
+          lineStyle.transitionDuration = `${this.duration}s`;
+        }
+
+        if (this.isDef(lineHeight)) {
+          const height = `${lineHeight}px`;
+          lineStyle.height = height;
+          lineStyle.borderRadius = height;
+        }
+
+        this.lineStyle = lineStyle;
       });
     },
 
@@ -355,14 +371,13 @@ export default create({
     scrollIntoView(immediate) {
       const { tabs } = this.$refs;
 
-      if (!this.scrollable || !tabs) {
+      if (!this.scrollable || !tabs || !tabs[this.curActive]) {
         return;
       }
 
-      const tab = tabs[this.curActive];
       const { nav } = this.$refs;
       const { scrollLeft, offsetWidth: navWidth } = nav;
-      const { offsetLeft, offsetWidth: tabWidth } = tab;
+      const { offsetLeft, offsetWidth: tabWidth } = tabs[this.curActive];
 
       this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
     },

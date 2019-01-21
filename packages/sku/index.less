@@ -19,11 +19,6 @@
     }
   }
 
-  &-group-container {
-    margin-left: 15px;
-    padding: 12px 0 2px;
-  }
-
   /* sku header */
   &-header {
     margin-left: 15px;
@@ -83,6 +78,17 @@
     color: @gray-dark;
     position: absolute;
     text-align: center;
+  }
+
+  &-group-container {
+    margin-left: 15px;
+    padding: 12px 0 2px;
+
+    &--hide-soldout {
+      .van-sku-row__item--disabled {
+        display: none;
+      }
+    }
   }
 
   /* sku row */
@@ -179,11 +185,12 @@
     display: inline-block;
 
     &__header {
+      color: @text-color;
       padding: 0 10px;
-      border: 1px solid @border-color;
+      font-size: 12px;
       line-height: 24px;
       border-radius: 3px;
-      font-size: 12px;
+      border: 1px solid @border-color;
 
       .van-icon {
         top: 3px;

@@ -102,6 +102,8 @@ Vue.use(Sku);
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
+| initial-sku | 默认选中的sku，具体参考高级用法 | `Object` | `{}` | - |
+| show-soldout-sku | 是否展示售罄的sku，如果展示，则为置灰不可选状态，不展示则直接隐藏 | `Boolean` | `true` | - |
 
 ### Event
 
@@ -110,6 +112,7 @@ Vue.use(Sku);
 | add-cart | 点击添加购物车回调 | skuData: Object |
 | buy-clicked | 点击购买回调 | skuData: Object |
 | stepper-change | 购买数量变化时触发 | value: number |
+| sku-selected | 切换规格类目时触发 | { skuValue, selectedSku, selectedSkuComb } |
 
 ### 方法
 
@@ -123,19 +126,21 @@ Vue.use(Sku);
 
 Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，可以按需进行替换。区块顺序见下表：
 
-| 名称 | 说明 | 
+| 名称 | 说明 |
 |------|------|
 | sku-header | 商品信息展示区，包含商品图片、名称、价格等信息 |
-| sku-header-price | 自定义sku头部价格展示 |
-| sku-body-top | sku展示区上方的slot，无默认展示内容，按需使用 |
-| sku-group | 商品sku展示区 |
-| extra-sku-group | 额外商品sku展示区，一般用不到 |
+| sku-header-price | 自定义 sku 头部价格展示 |
+| sku-body-top |  sku 展示区上方的内容，无默认展示内容，按需使用 |
+| sku-group | 商品 sku 展示区 |
+| extra-sku-group | 额外商品 sku 展示区，一般用不到 |
 | sku-stepper | 商品数量选择区 |
 | sku-messages | 商品留言区 |
 | sku-actions | 操作按钮区 |
 
 ### 数据结构
+
 #### sku对象结构
+
 ```javascript
 sku: {
   // 所有sku规格类目与其值的从属关系，比如商品有颜色和尺码两大类规格，颜色下面又有红色和蓝色两个规格值。
@@ -188,6 +193,7 @@ sku: {
 ```
 
 #### goods 对象结构
+
 ```javascript
 goods: {
   // 商品标题
@@ -198,6 +204,7 @@ goods: {
 ```
 
 #### customStepperConfig 对象结构
+
 ```javascript
 customStepperConfig: {
   // 自定义限购文案
@@ -223,6 +230,7 @@ customStepperConfig: {
 ```
 
 #### messageConfig Data Structure
+
 ```javascript
 messageConfig: {
   // 图片上传回调，需要返回一个promise，promise正确执行的结果需要是一个图片url
@@ -243,6 +251,7 @@ messageConfig: {
 ```
 
 #### 添加购物车和点击购买回调函数接收的 skuData 对象结构
+
 ```javascript
 skuData: {
   // 商品 id

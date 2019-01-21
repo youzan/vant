@@ -1,7 +1,3 @@
-<p>
-    <a href="https://github.com/youzan/"><img alt="logo" width="36" height="36" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-    </a>
-</p>
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
@@ -53,11 +49,11 @@ yarn add vant
 
 ```html
 <!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.4/lib/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.5/lib/index.css" />
 
 <!-- import script -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.4/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@1.5/lib/vant.min.js"></script>
 ```
 
 ## Quickstart

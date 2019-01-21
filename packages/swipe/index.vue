@@ -7,7 +7,7 @@
       @touchmove="onTouchMove"
       @touchend="onTouchEnd"
       @touchcancel="onTouchEnd"
-      @transitionend="$emit('change', activeIndicator)"
+      @transitionend.stop="$emit('change', activeIndicator)"
     >
       <slot />
     </div>
@@ -15,11 +15,12 @@
       <div
         v-if="showIndicators && count > 1"
         :class="b('indicators', { vertical })"
+        @transitionend.stop
       >
         <i
           v-for="index in count"
           :class="b('indicator', { active: index - 1 === activeIndicator })"
-          :style="indicatorStyle"
+          :style="index - 1 === activeIndicator ? indicatorStyle : null"
         />
       </div>
     </slot>
@@ -245,6 +246,7 @@ export default create({
 
     swipeTo(index) {
       this.swiping = true;
+      this.resetTouchStatus();
       this.correctPosition();
       setTimeout(() => {
         this.swiping = false;

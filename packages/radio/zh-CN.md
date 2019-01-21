@@ -45,7 +45,7 @@ export default {
 #### 自定义颜色
 
 ```html
-<van-radio checked-color="#4b0">复选框</van-radio>
+<van-radio checked-color="#07c160">复选框</van-radio>
 ```
 
 #### 与 Cell 组件一起使用

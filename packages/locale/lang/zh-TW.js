@@ -6,7 +6,7 @@ export default {
   cancel: '取消',
   delete: '刪除',
   complete: '完成',
-  loadingTip: '載入中...',
+  loading: '載入中...',
   telEmpty: '請填寫電話',
   nameEmpty: '請填寫姓名',
   confirmDelete: '確定要刪除嗎',
@@ -28,6 +28,12 @@ export default {
   vanSubmitBar: {
     label: '合計：'
   },
+  vanCoupon: {
+    valid: '有效期限',
+    unlimited: '無使用門檻',
+    discount: discount => `${discount}折`,
+    condition: (condition) => `滿${condition}元可用`
+  },
   vanCouponCell: {
     title: '優惠券',
     tips: '使用優惠',
@@ -40,12 +46,6 @@ export default {
     enable: '可使用優惠券',
     disabled: '不可使用優惠券',
     placeholder: '請輸入優惠代碼'
-  },
-  vanCouponItem: {
-    valid: '有效期限',
-    unlimited: '無使用門檻',
-    discount: discount => `${discount}折`,
-    condition: (condition) => `滿${condition}元可用`
   },
   vanAddressEdit: {
     area: '地區',

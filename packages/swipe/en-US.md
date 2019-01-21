@@ -105,13 +105,12 @@ export default {
 
 ```js
 export default {
+  data() {
+    return {
+      current: 0
+    }
+  },
   methods: {
-    data() {
-      return {
-        current: 0
-      }
-    },
-
     onChange(index) {
       this.current = index;
     }

@@ -10,7 +10,7 @@
       />
       <van-circle
         v-model="currentRate2"
-        color="#13ce66"
+        color="#07c160"
         fill="#fff"
         :rate="rate"
         size="120px"

@@ -19,7 +19,7 @@
       </van-cell-group>
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="$t('loadingStatus')">
       <van-cell-group>
         <van-switch-cell
           v-model="checked"

@@ -1,6 +1,94 @@
-import CouponList from '../../coupon-list';
+import Coupon from '../../coupon';
+import CouponList from '..';
 import CouponCell from '../../coupon-cell';
-import { mount } from '../../../test/utils';
+import { later, mount } from '../../../test/utils';
+
+const coupon = {
+  id: 1,
+  discount: 0,
+  denominations: 150,
+  originCondition: 0,
+  reason: '',
+  value: 150,
+  name: 'name',
+  description: 'description',
+  startAt: 1489104000,
+  endAt: 1514592000
+};
+
+const coupon2 = {
+  ...coupon,
+  denominations: 100
+};
+
+const coupon3 = {
+  ...coupon,
+  denominations: 123
+};
+
+const emptyCoupon = {
+  id: 0,
+  discount: 0,
+  denominations: 0,
+  originCondition: 0,
+  startAt: 1489104000,
+  endAt: 1514592000
+};
+
+const discountCoupon = {
+  ...coupon,
+  id: 2,
+  discount: 88,
+  denominations: 0,
+  originCondition: 50,
+  value: 12,
+  description: ''
+};
+
+const discountCoupon2 = {
+  ...coupon,
+  id: 2,
+  discount: 90,
+  denominations: 0,
+  originCondition: 50,
+  value: 12,
+  description: ''
+};
+
+const disabledCoupon = {
+  ...coupon,
+  id: 3,
+  reason: 'reason'
+};
+
+const disabledDiscountCoupon = {
+  ...discountCoupon,
+  discount: 10,
+  id: 4,
+  reason: ''
+};
+
+test('render disabled coupon', () => {
+  const wrapper = mount(Coupon, {
+    propsData: {
+      coupon: disabledCoupon,
+      disabled: true
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render coupon list', async () => {
+  const wrapper = mount(CouponList, {
+    propsData: {
+      chosenCoupon: 1,
+      coupons: [emptyCoupon, coupon, coupon2, coupon3, discountCoupon, discountCoupon2],
+      disabledCoupons: [disabledCoupon, disabledDiscountCoupon]
+    }
+  });
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});
 
 test('exchange coupon', () => {
   const wrapper = mount(CouponList);
@@ -22,7 +110,12 @@ test('exchange coupon', () => {
 });
 
 test('coupon cell', () => {
-  const wrapper = mount(CouponCell);
+  const onClick = jest.fn();
+  const wrapper = mount(CouponCell, {
+    listeners: {
+      click: onClick
+    }
+  });
   expect(wrapper).toMatchSnapshot();
 
   wrapper.setProps({
@@ -30,4 +123,7 @@ test('coupon cell', () => {
     chosenCoupon: 0
   });
   expect(wrapper).toMatchSnapshot();
+
+  wrapper.trigger('click');
+  expect(onClick.mock.calls.length).toEqual(1);
 });

@@ -2,14 +2,8 @@
 
 exports[`callback events 1`] = `
 <div class="van-actionsheet" name="van-slide-up">
-  <ul class="van-hairline--bottom">
-    <li class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">Option</span>
-      <!---->
-    </li>
-    <li class="van-actionsheet__item van-actionsheet__item--disabled van-hairline--top"><span class="van-actionsheet__name">Option</span>
-      <!---->
-    </li>
-  </ul>
-  <div class="van-actionsheet__cancel van-hairline--top">Cancel</div>
+  <div class="van-actionsheet__item van-hairline--top"><span class="van-actionsheet__name">Option</span></div>
+  <div class="van-actionsheet__item van-actionsheet__item--disabled van-hairline--top"><span class="van-actionsheet__name">Option</span></div>
+  <div class="van-actionsheet__cancel">Cancel</div>
 </div>
 `;

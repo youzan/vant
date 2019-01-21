@@ -1,11 +1,84 @@
 ## 更新日志
 
-## [v1.5.0-beta](https://github.com/youzan/vant/tree/v1.5.0-beta)
-`2018-12-17`
+## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+`2019-01-20`
 
-**Icon Breaking changes**
+**Bug Fixes**
 
-- 制定图标规范，重绘所有图标, 增加 100 个新图标
+- 修复缺少 @vue/babel-helper-vue-jsx-merge-props 依赖的问题 [\#2474](https://github.com/youzan/vant/issues/2474)
+
+
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: 新增 error-text 属性 [\#2568](https://github.com/youzan/vant/pull/2568)
+- Coupon: 新增 condition 属性 [\#2551](https://github.com/youzan/vant/pull/2551)
+- ImagePreview: 新增 lazyLoad 属性 [\#2569](https://github.com/youzan/vant/pull/2569)
+- NavBar: 新增样式相关 Less 变量 [\#2570](https://github.com/youzan/vant/pull/2570)
+- Dialog: 默认开启 lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- Toast: 支持在 message 中使用换行符 [\#2496](https://github.com/youzan/vant/pull/2496)
+- Area: 新增 confirm-button-text、cancel-button-text 属性 [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- 修复 Card 价格区域样式 [\#2549](https://github.com/youzan/vant/pull/2549)
+- 修复 Radio 未选中状态图标颜色错误 [\#2484](https://github.com/youzan/vant/pull/2484)
+- 修复 Radio label-position 类型定义错误 [\#2485](https://github.com/youzan/vant/pull/2485)
+- 修复 Dialog 按钮点击事件触发时机错误 [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
+## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
+`2019-01-10`
+
+**Improvements**
+
+- Color: 基础绿色调整为微信绿 [\#2479](https://github.com/youzan/vant/pull/2479)
+- Icon: 新增 cart-circle 图标 [\#2480](https://github.com/youzan/vant/pull/2480)
+- Coupon: 新增 description 属性 [\#2458](https://github.com/youzan/vant/pull/2458)
+- ImagePreview: 新增 className 属性 [\#2433](https://github.com/youzan/vant/pull/2433)
+- Sku: 支持隐藏已售罄的规格 [\#2472](https://github.com/youzan/vant/pull/2472)
+
+**Bug Fixes**
+
+- 修复 Icon 部分图标的线条应使用圆角的问题 [\#2437](https://github.com/youzan/vant/pull/2437)
+- 修复 DatetimePicker time 类型 v-model 变化后未触发更新的问题 [\#2427](https://github.com/youzan/vant/pull/2427)
+- 修复 SubmitBar 未传 price 时无法隐藏价格和文本的问题 [\#2469](https://github.com/youzan/vant/pull/2469)
+- 修复 Swipe 在使用 swipeTo 时可能导致轮播空白的问题 [\#2471](https://github.com/youzan/vant/pull/2471)
+- 修复 Stepper 输入框为空且最小值为 0 时无法自动设置默认值的问题 [\#2470](https://github.com/youzan/vant/pull/2470)
+- 修复 Tab 首次渲染时会触发底部条动画的问题 [\#2459](https://github.com/youzan/vant/pull/2459)
+
+
+## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
+`2019-01-01`
+
+**Improvements**
+
+- Card: 新增 price、num 插槽 [\#2416](https://github.com/youzan/vant/pull/2416)
+- Slider: 新增 button 插槽 [\#2373](https://github.com/youzan/vant/pull/2373)
+- Slider: 新增 active-color、inactive-color 属性 [\#2374](https://github.com/youzan/vant/pull/2374)
+- Tabbar: 新增 active-color 属性 [\#2372](https://github.com/youzan/vant/pull/2372)
+- Sku: 新增 sku-selected 事件 [\#2386](https://github.com/youzan/vant/pull/2386)
+
+**Bug Fixes**
+
+- 修复 Card 描述过长时的样式问题 [\#2414](https://github.com/youzan/vant/pull/2414)
+- 修复 ContactList 未注册依赖的 button 组件的问题 [\#2415](https://github.com/youzan/vant/pull/2415)
+- 修复 Icon 在 file 协议网页下无法展示的问题 [\#2385](https://github.com/youzan/vant/pull/2385)
+
+
+## [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
+`2018-12-22`
+
+**Breaking changes**
+
+在 1.5.0 版本中，我们统一图标规范并重绘了所有图标，同时增加约 100 个新图标。对于同一个图标，我们会提供`实底`和`线框`两种风格，以星星图标为例，`star`表示实底风格的星星，`star-o`表示线框风格的星星。
+
+<img width="375" height="124" src="//img.yzcdn.cn/vant/icon-style-1222.png">
+
+同时我们也对原有图标做了一定调整，具体改动如下：
+
 - 移除 edit-data
 - 移除 pending-deliver
 - 移除 pending-evaluate
@@ -22,36 +95,46 @@
 - 重命名 pending-orders 为 orders-o
 - 重命名 gift-card-pay 为 gift-card
 
+同时我们对下列组件的样式细节进行了优化：
+
+- Cell 单元格
+- Card 卡片
+- Checkbox 复选框
+- Collapse 折叠面板
+- Tab 标签页
+- Toast 轻提示
+- Switch 开关
+- Swipe 轮播
+- TreeSelect 分类选择
+
 **Improvements**
 
-- 通过 vetur 插件实现组件标签/属性名的提示和自动补全 [\#2261](https://github.com/youzan/vant/pull/2261)
+- 支持通过 vetur 插件实现组件标签/属性名的提示和自动补全 [\#2261](https://github.com/youzan/vant/pull/2261)
 - 支持通过大驼峰格式的标签名使用组件 [\#2296](https://github.com/youzan/vant/pull/2296)
-- Cell: 样式升级 [\#2311](https://github.com/youzan/vant/pull/2311) [\#2312](https://github.com/youzan/vant/pull/2312)
-- Card: 样式升级 [\#2307](https://github.com/youzan/vant/pull/2307) [\#2313](https://github.com/youzan/vant/pull/2313)
-- Toast: 样式升级 [\#2241](https://github.com/youzan/vant/pull/2241)
-- Switch: 样式升级 [\#2242](https://github.com/youzan/vant/pull/2242)
-- Collapse: 样式升级 [\#2275](https://github.com/youzan/vant/pull/2275)
-- Checkbox: 样式升级 [\#2260](https://github.com/youzan/vant/pull/2260)
-- TreeSelect: 样式升级 [\#2308](https://github.com/youzan/vant/pull/2308)
+- Tab: 新增 ellipsis 属性 [\#2299](https://github.com/youzan/vant/pull/2299)
+- Tab: 新增 line-height 属性 [\#2357](https://github.com/youzan/vant/pull/2357)
+- Tag: 新增 text-color 属性 [\#2277](https://github.com/youzan/vant/pull/2277)
 - Card: 新增 lazy-load 属性 [\#2301](https://github.com/youzan/vant/pull/2301)
 - Coupon: 新增 currency 属性 [\#2274](https://github.com/youzan/vant/pull/2274) [\#2256](https://github.com/youzan/vant/pull/2256)
 - Dialog: 新增 message-align 属性 [\#2259](https://github.com/youzan/vant/pull/2259)
 - Stepper: 新增 async-change 属性 [\#2318](https://github.com/youzan/vant/pull/2318)
 - SwitchCell: 新增 active-color、inactive-color 属性 [\#2273](https://github.com/youzan/vant/pull/2273)
-- Tab: 新增 ellipsis 属性 [\#2299](https://github.com/youzan/vant/pull/2299)
-- Tag: 新增 text-color 属性 [\#2277](https://github.com/youzan/vant/pull/2277)
 - NoticeBar: 支持使用内置图标 [\#2305](https://github.com/youzan/vant/pull/2305)
 - TreeSelect: 支持禁用左侧栏选项 [\#2308](https://github.com/youzan/vant/pull/2308)
 
 **Bug Fixes**
 
 - 修复 Dialog 在部分低端机型上文字模糊的问题 [\#2300](https://github.com/youzan/vant/pull/2300)
-- 修复 Checkbox label 高度错误的问题 [\#2293](https://github.com/youzan/vant/pull/2293)
+- 修复 Checkbox 文字高度错误的问题 [\#2293](https://github.com/youzan/vant/pull/2293)
 - 修复 Field 使用 maxlength 属性后中文输入法截断的问题 [\#2295](https://github.com/youzan/vant/pull/2295)
 - 修复 Swipe 包裹在 keep-alive 组件内时未重新初始化的问题 [\#2297](https://github.com/youzan/vant/pull/2297)
-- 修复 Swipe 在某些情况下报错的问题 [\#2253](https://github.com/youzan/vant/pull/2253)
-- 修复 Tab 在使用 animated 属性时标签内容无法展示的问题 [\#2238](https://github.com/youzan/vant/pull/2238)
-- 修复 Tabbar info 位置错误的问题 [\#2257](https://github.com/youzan/vant/pull/2257)
+- 修复 Swipe 在边界情况下可能报错的问题 [\#2253](https://github.com/youzan/vant/pull/2253)
+- 修复 Swipe 事件冒泡导致无法嵌套使用的问题 [\#2355](https://github.com/youzan/vant/pull/2355) ([chenjiahan](https://github.com/chenjiahan))
+- 修复 Tab 在使用 animated 属性时标签内容无法展示的问题 [\#2238](https://github.com/youzan/vant/pull/2238) [\#2322](https://github.com/youzan/vant/pull/2322)
+- 修复 Tab 在禁用所有选项时报错的问题 [\#2356](https://github.com/youzan/vant/pull/2356) ([chenjiahan](https://github.com/chenjiahan))
+- 修复 Tab 在使用 color 属性时下划线初始颜色错误的问题 [\#2344](https://github.com/youzan/vant/pull/2344)
+- 修复 Tabbar 提示位置错误的问题 [\#2257](https://github.com/youzan/vant/pull/2257)
+- 修复 Toast 实例上缺少 clear 方法类型定义的问题 [\#2354](https://github.com/youzan/vant/pull/2354)
 - 修复 dev 命令在 node 10 环境下报错的问题 [\#2251](https://github.com/youzan/vant/pull/2251)
 - 修复 dev 命令在 windows 环境下报错的问题 [\#2229](https://github.com/youzan/vant/pull/2229)
 

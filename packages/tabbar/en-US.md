@@ -15,7 +15,7 @@ Vue.use(Tabbar).use(TabbarItem);
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
   <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="freinds-o" info="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="5">Tab</van-tabbar-item>
   <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
 </van-tabbar>
 ```
@@ -31,6 +31,7 @@ export default {
 ```
 
 #### Custom icon
+
 Use `icon` slot to custom icon
 
 ```html
@@ -69,6 +70,7 @@ export default {
 | v-model | Index of current tab | `Number` | - |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
+| active-color | Color of active tab item | `String` | `#1989fa` |
 
 ### Tabbar Event
 

@@ -6,12 +6,11 @@
     >
       <span
         v-if="showPivot && text"
+        v-text="text"
         ref="pivot"
         :style="pivotStyle"
         :class="b('pivot')"
-      >
-        {{ text }}
-      </span>
+      />
     </span>
   </div>
 </template>

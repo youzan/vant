@@ -36,7 +36,7 @@ export default {
 #### 自定义颜色
 
 ```html
-<van-checkbox v-model="checked" checked-color="#4b0">复选框</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
 ```
 
 #### 自定义图标

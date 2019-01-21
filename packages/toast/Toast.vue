@@ -5,7 +5,12 @@
       :class="b([style, position])"
     >
       <!-- text only -->
-      <div v-if="style === 'text'">{{ message }}</div>
+      <div
+        v-if="style === 'text'"
+        v-text="message"
+      />
+
+      <!-- html only -->
       <div
         v-if="style === 'html'"
         v-html="message"
@@ -25,10 +30,9 @@
         />
         <div
           v-if="isDef(message)"
+          v-text="message"
           :class="b('text')"
-        >
-          {{ message }}
-        </div>
+        />
       </template>
     </div>
   </transition>

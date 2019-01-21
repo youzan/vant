@@ -14,7 +14,7 @@ test('callback events', () => {
     }
   });
 
-  const options = wrapper.findAll('li');
+  const options = wrapper.findAll('.van-actionsheet__item');
   options.at(0).trigger('click');
   options.at(1).trigger('click');
   wrapper.find('.van-actionsheet__cancel').trigger('click');

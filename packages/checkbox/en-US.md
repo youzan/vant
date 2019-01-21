@@ -34,7 +34,7 @@ export default {
 #### Custom Color
 
 ```html
-<van-checkbox v-model="checked" checked-color="#4b0">Checkbox</van-checkbox>
+<van-checkbox v-model="checked" checked-color="#07c160">Checkbox</van-checkbox>
 ```
 
 #### Custom Icon

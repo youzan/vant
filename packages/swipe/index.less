@@ -32,10 +32,10 @@
   &__indicator {
     opacity: .3;
     border-radius: 100%;
-    background-color: @blue;
     width: @swipe-indicator;
     height: @swipe-indicator;
     transition: opacity .2s;
+    background-color: @border-color;
 
     &:not(:last-child) {
       margin-right: @swipe-indicator;
@@ -43,6 +43,7 @@
 
     &--active {
       opacity: 1;
+      background-color: @blue;
     }
   }
 }

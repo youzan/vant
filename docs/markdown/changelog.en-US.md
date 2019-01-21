@@ -1,11 +1,84 @@
 ## Changelog
 
-## [v1.5.0-beta](https://github.com/youzan/vant/tree/v1.5.0-beta)
-`2018-12-17`
+## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+`2019-01-20`
 
-**Icon Breaking changes**
+**Bug Fixes**
 
-- repaint all icons, add 100 new icons
+- fix missing dependencie @vue/babel-helper-vue-jsx-merge-props [\#2474](https://github.com/youzan/vant/issues/2474)
+
+
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: add error-text prop [\#2568](https://github.com/youzan/vant/pull/2568)
+- Toast: allow newline charactor [\#2496](https://github.com/youzan/vant/pull/2496)
+- Coupon: add condition prop [\#2551](https://github.com/youzan/vant/pull/2551)
+- Dialog: enable lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- NavBar: support custom theme [\#2570](https://github.com/youzan/vant/pull/2570)
+- ImagePreview: add lazyLoad prop [\#2569](https://github.com/youzan/vant/pull/2569)
+- Area: add confirm-button-text、cancel-button-text prop [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- fix Card price style [\#2549](https://github.com/youzan/vant/pull/2549)
+- fix Radio unchecked icon color [\#2484](https://github.com/youzan/vant/pull/2484)
+- fix Radio label-position type [\#2485](https://github.com/youzan/vant/pull/2485)
+- fix Dialog action event [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
+## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
+`2019-01-10`
+
+**Improvements**
+
+- Icon: add cart-circle icon [\#2480](https://github.com/youzan/vant/pull/2480)
+- Color: update base green to wechat green [\#2479](https://github.com/youzan/vant/pull/2479)
+- Coupon: add description prop [\#2458](https://github.com/youzan/vant/pull/2458)
+- ImagePreview: add className prop [\#2433](https://github.com/youzan/vant/pull/2433)
+- Sku: support hide soldout sku [\#2472](https://github.com/youzan/vant/pull/2472)
+
+**Bug Fixes**
+
+- fix DatetimePicker value observable [\#2427](https://github.com/youzan/vant/pull/2427)
+- fix Icon rounded lines [\#2437](https://github.com/youzan/vant/pull/2437)
+- fix SubmitBar can not hide price [\#2469](https://github.com/youzan/vant/pull/2469)
+- fix Swipe position wrong when use swipeTo [\#2471](https://github.com/youzan/vant/pull/2471)
+- fix Stepper wrong value when input is empty and min is zero [\#2470](https://github.com/youzan/vant/pull/2470)
+- fix Tab should not have line animation when inited [\#2459](https://github.com/youzan/vant/pull/2459)
+
+
+## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
+`2019-01-01`
+
+**Improvements**
+
+- Card: add price、num slot [\#2416](https://github.com/youzan/vant/pull/2416)
+- Slider: add button slot [\#2373](https://github.com/youzan/vant/pull/2373)
+- Slider: add active-color、inactive-color prop [\#2374](https://github.com/youzan/vant/pull/2374)
+- Tabbar: add active-color prop [\#2372](https://github.com/youzan/vant/pull/2372)
+- Sku: add sku-selected event [\#2386](https://github.com/youzan/vant/pull/2386)
+
+**Bug Fixes**
+
+- fix Card desc ellipsis [\#2414](https://github.com/youzan/vant/pull/2414)
+- fix ContactList missing dependencies [\#2415](https://github.com/youzan/vant/pull/2415)
+- fix Icon missing protocol [\#2385](https://github.com/youzan/vant/pull/2385)
+
+
+## [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
+`2018-12-22`
+
+**Breaking changes**
+
+In version 1.5.0, we unified the icon specification and redrawed all the icons, adding about 100 new icons. For the same icon, we will provide two styles of `outlined` and `filled`. 
+
+<img width="375" height="124" src="//img.yzcdn.cn/vant/icon-style-1222.png">
+
+At the same time, we also made some adjustments to the original icons：
+
 - remove edit-data
 - remove pending-deliver
 - remove pending-evaluate
@@ -22,25 +95,31 @@
 - rename pending-orders to orders-o
 - rename gift-card-pay to gift-card
 
+Also we have optimized the UI of the following components:：
+
+- Cell
+- Card 
+- Checkbox
+- Collapse
+- Tab
+- Toast
+- Switch
+- Swipe
+- TreeSelect
+
 **Improvements**
 
 - support tag/attribute auto-completion via the vetur plugin [\#2261](https://github.com/youzan/vant/pull/2261)
 - support use component by PascalCase tag name [\#2296](https://github.com/youzan/vant/pull/2296)
+- Tab: add ellipsis prop [\#2299](https://github.com/youzan/vant/pull/2299)
+- Tab: add line-height prop [\#2357](https://github.com/youzan/vant/pull/2357)
+- Tag: add text-color prop [\#2277](https://github.com/youzan/vant/pull/2277)
 - Card: add lazy-load prop [\#2301](https://github.com/youzan/vant/pull/2301)
-- Card: update style [\#2307](https://github.com/youzan/vant/pull/2307) [\#2313](https://github.com/youzan/vant/pull/2313)
-- Cell: update style [\#2311](https://github.com/youzan/vant/pull/2311) [\#2312](https://github.com/youzan/vant/pull/2312)
 - Coupon: add currency prop [\#2274](https://github.com/youzan/vant/pull/2274) [\#2256](https://github.com/youzan/vant/pull/2256)
-- Collapse: update style [\#2275](https://github.com/youzan/vant/pull/2275)
-- Checkbox: update style [\#2260](https://github.com/youzan/vant/pull/2260)
 - Dialog: add message-align prop [\#2259](https://github.com/youzan/vant/pull/2259)
 - Stepper: add async-change prop [\#2318](https://github.com/youzan/vant/pull/2318)
-- Switch: update style [\#2242](https://github.com/youzan/vant/pull/2242)
 - SwitchCell: add active-color、inactive-color prop [\#2273](https://github.com/youzan/vant/pull/2273)
 - NoticeBar: support use built-in icon [\#2305](https://github.com/youzan/vant/pull/2305)
-- Tab: add ellipsis prop [\#2299](https://github.com/youzan/vant/pull/2299)
-- Tag: add text-color prop [\#2277](https://github.com/youzan/vant/pull/2277)
-- Toast: update icon size [\#2241](https://github.com/youzan/vant/pull/2241)
-- TreeSelect: update style [\#2308](https://github.com/youzan/vant/pull/2308)
 - TreeSelect: support disable nav item [\#2308](https://github.com/youzan/vant/pull/2308)
 
 **Bug Fixes**
@@ -50,8 +129,12 @@
 - fix Field cut off charactor input when use maxlength [\#2295](https://github.com/youzan/vant/pull/2295)
 - fix Swipe not re-initialize when inside keep-alive component [\#2297](https://github.com/youzan/vant/pull/2297)
 - fix Swipe cause error in some cases [\#2253](https://github.com/youzan/vant/pull/2253)
+- fix Swipe transitionend event bubble [\#2355](https://github.com/youzan/vant/pull/2355)
 - fix Tab display error when use animated prop [\#2238](https://github.com/youzan/vant/pull/2238)
+- fix Tab incorrect initial line color when use color prop [\#2344](https://github.com/youzan/vant/pull/2344)
+- fix Tab log error when all tab disabled [\#2356](https://github.com/youzan/vant/pull/2356)
 - fix Tabbar update info position [\#2257](https://github.com/youzan/vant/pull/2257)
+- fix Toast missing clear method type definition [\#2354](https://github.com/youzan/vant/pull/2354)
 - fix compile failure in node 10 [\#2251](https://github.com/youzan/vant/pull/2251)
 - fix compile failure in windows [\#2229](https://github.com/youzan/vant/pull/2229)
 

@@ -6,7 +6,7 @@ export default {
   cancel: 'Cancel',
   delete: 'Delete',
   complete: 'Complete',
-  loadingTip: 'Loading...',
+  loading: 'Loading...',
   telEmpty: 'Please fill in the tel',
   nameEmpty: 'Please fill in the name',
   confirmDelete: 'Are you sure you want to delete?',
@@ -28,6 +28,12 @@ export default {
   vanSubmitBar: {
     label: 'Total：'
   },
+  vanCoupon: {
+    valid: 'Valid',
+    unlimited: 'Unlimited',
+    discount: discount => `${discount * 10}% off`,
+    condition: condition => `At least ${condition}`
+  },
   vanCouponCell: {
     title: 'Coupon',
     tips: 'Select coupon',
@@ -40,12 +46,6 @@ export default {
     enable: 'Available',
     disabled: 'Unavailable',
     placeholder: 'Coupon code'
-  },
-  vanCouponItem: {
-    valid: 'Valid',
-    unlimited: 'Unlimited',
-    discount: discount => `${discount * 10}% off`,
-    condition: condition => `At least ${condition}`
   },
   vanAddressEdit: {
     area: 'Area',

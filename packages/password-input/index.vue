@@ -9,7 +9,7 @@
         v-for="visibility in points"
         class="van-hairline"
       >
-        <i :style="`visibility: ${visibility}`" />
+        <i :style="{ visibility } " />
       </li>
     </ul>
     <div

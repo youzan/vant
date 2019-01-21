@@ -19,6 +19,7 @@ import CollapseItem from './collapse-item';
 import ContactCard from './contact-card';
 import ContactEdit from './contact-edit';
 import ContactList from './contact-list';
+import Coupon from './coupon';
 import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
@@ -72,7 +73,7 @@ import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
 
-const version = '1.5.0-beta';
+const version = '1.5.4';
 const components = [
   Actionsheet,
   AddressEdit,
@@ -93,6 +94,7 @@ const components = [
   ContactCard,
   ContactEdit,
   ContactList,
+  Coupon,
   CouponCell,
   CouponList,
   DatetimePicker,
@@ -178,6 +180,7 @@ export {
   ContactCard,
   ContactEdit,
   ContactList,
+  Coupon,
   CouponCell,
   CouponList,
   DatetimePicker,

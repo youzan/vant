@@ -1,14 +1,13 @@
 <template>
   <span
+    v-text="skuValue.name"
     class="van-sku-row__item"
     :class="{
       'van-sku-row__item--active': isChoosed,
       'van-sku-row__item--disabled': !isChoosable
     }"
     @click="onSelect"
-  >
-    {{ skuValue.name }}
-  </span>
+  />
 </template>
 
 <script>

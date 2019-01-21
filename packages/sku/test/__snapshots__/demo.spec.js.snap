@@ -17,6 +17,12 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="sku-container">
       <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
+        隐藏售罄sku
+      </span></button></div>
+  </div>
+  <div>
+    <div class="sku-container">
+      <!----> <button class="van-button van-button--primary van-button--normal van-button--block"><span class="van-button__text">
         高级用法
       </span></button></div>
   </div>

@@ -22,6 +22,7 @@ export default create({
 
   props: {
     value: Number,
+    activeColor: String,
     fixed: {
       type: Boolean,
       default: true

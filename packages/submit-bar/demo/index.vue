@@ -18,7 +18,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('loading')">
+    <demo-block :title="$t('loadingStatus')">
       <van-submit-bar
         loading
         :price="3050"

@@ -195,7 +195,7 @@ test('show search result', async () => {
   const input = field.element;
   field.trigger('focus');
 
-  const items = wrapper.findAll('.van-icon-location');
+  const items = wrapper.findAll('.van-icon-location-o');
   items.at(0).element.parentNode.click();
   expect(input.value).toEqual('address1 name1');
   items.at(1).element.parentNode.click();
@@ -218,6 +218,8 @@ test('delete address', async () => {
 
   const deleteButton = wrapper.findAll('.van-button').at(1);
   deleteButton.trigger('click');
+
+  await later();
   document.querySelector('.van-dialog__cancel').click();
   deleteButton.trigger('click');
   document.querySelector('.van-dialog__confirm').click();

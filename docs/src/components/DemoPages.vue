@@ -64,17 +64,17 @@ export default {
         title: this.$t('goodsDetail'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/24/7070a8d1d6504b864c605114d32f2aae.png',
         url: 'https://youzan.github.io/vant-demo/#/goods',
-        source: 'https://github.com/youzan/vant-demo/tree/master/src/view/goods/index.vue'
+        source: 'https://github.com/youzan/vant-demo/blob/master/base/src/view/goods/index.vue'
       }, {
         title: this.$t('userCenter'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/23/e1d70757e3ab88d39a360b704be8f43f.png',
         url: 'https://youzan.github.io/vant-demo/#/user',
-        source: 'https://github.com/youzan/vant-demo/tree/master/src/view/user/index.vue'
+        source: 'https://github.com/youzan/vant-demo/blob/master/base/src/view/user/index.vue'
       }, {
         title: this.$t('shoppingCart'),
         preview: 'https://img.yzcdn.cn/public_files/2017/10/24/06b8b5ed3692314d434db7f6854dcdbe.png',
         url: 'https://youzan.github.io/vant-demo/#/cart',
-        source: 'https://github.com/youzan/vant-demo/tree/master/src/view/cart/index.vue'
+        source: 'https://github.com/youzan/vant-demo/blob/master/base/src/view/cart/index.vue'
       }];
     }
   },

@@ -12,6 +12,12 @@ module.exports = function (api) {
           loose: true,
           modules: useESModules ? false : 'commonjs'
         }
+      ],
+      [
+        '@vue/babel-preset-jsx',
+        {
+          functional: false
+        }
       ]
     ],
     plugins: [

@@ -1,25 +1,47 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('basicUsage')">
-      <p class="page-desc">{{ $t('text') }}</p>
-      <van-pull-refresh
-        v-model="refreshing"
-        @refresh="onRefresh"
-      >
-        <van-list
-          v-model="loading"
-          :finished="finished"
-          :finished-text="$t('finishedText')"
-          @load="onLoad"
+    <van-tabs>
+      <van-tab :title="$t('basicUsage')">
+        <van-pull-refresh
+          v-model="list[0].refreshing"
+          @refresh="onRefresh(0)"
         >
-          <van-cell
-            v-for="item in list"
-            :key="item"
-            :title="item + ''"
-          />
-        </van-list>
-      </van-pull-refresh>
-    </demo-block>
+          <van-list
+            v-model="list[0].loading"
+            :finished="list[0].finished"
+            :finished-text="$t('finishedText')"
+            @load="onLoad(0)"
+          >
+            <van-cell
+              v-for="item in list[0].items"
+              :key="item"
+              :title="item"
+            />
+          </van-list>
+        </van-pull-refresh>
+      </van-tab>
+
+      <van-tab :title="$t('errorInfo')">
+        <van-pull-refresh
+          v-model="list[1].refreshing"
+          @refresh="onRefresh(1)"
+        >
+          <van-list
+            v-model="list[1].loading"
+            :finished="list[1].finished"
+            :error.sync="list[1].error"
+            :error-text="$t('errorText')"
+            @load="onLoad(1)"
+          >
+            <van-cell
+              v-for="item in list[1].items"
+              :key="item"
+              :title="item"
+            />
+          </van-list>
+        </van-pull-refresh>
+      </van-tab>
+    </van-tabs>
   </demo-section>
 </template>
 
@@ -27,44 +49,65 @@
 export default {
   i18n: {
     'zh-CN': {
-      text: '当即将滚动到元素底部时，会自动加载更多',
-      finishedText: '没有更多了'
+      errorInfo: '错误提示',
+      finishedText: '没有更多了',
+      errorText: '请求失败，点击重新加载'
     },
     'en-US': {
-      text: 'This list will load items will scroll to bottom.',
-      finishedText: 'Finished'
+      errorInfo: 'Error Info',
+      finishedText: 'Finished',
+      errorText: 'Request failed. Click to reload'
     }
   },
 
   data() {
     return {
-      list: [],
-      refreshing: false,
-      loading: false,
-      finished: false
+      list: [{
+        items: [],
+        refreshing: false,
+        loading: false,
+        error: false,
+        finished: false
+      }, {
+        items: [],
+        refreshing: false,
+        loading: false,
+        error: false,
+        finished: false
+      }]
     };
   },
 
   methods: {
-    onLoad() {
+    onLoad(index) {
+      const list = this.list[index];
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          const text = this.list.length + 1;
-          this.list.push(text < 10 ? '0' + text : text);
+          const text = list.items.length + 1;
+          list.items.push(text < 10 ? '0' + text : text);
         }
-        this.loading = false;
+        list.loading = false;
 
-        if (this.list.length >= 40) {
-          this.finished = true;
+        // show error info in second demo
+        if (index === 1 && list.items.length === 10 && !list.error) {
+          list.error = true;
+        } else {
+          list.error = false;
+        }
+
+        if (list.items.length >= 40) {
+          list.finished = true;
         }
       }, 500);
     },
 
-    onRefresh() {
+    onRefresh(index) {
+      const list = this.list[index];
       setTimeout(() => {
-        this.list = [];
-        this.finished = false;
-        this.refreshing = false;
+        list.items = [];
+        list.error = false;
+        list.finished = false;
+        list.refreshing = false;
         window.scrollTo(0, 10);
       }, 1000);
     }
@@ -82,9 +125,21 @@ export default {
 
   .page-desc {
     padding: 5px 0;
-    line-height: 1.4;
+    margin: 0;
     font-size: 14px;
     text-align: center;
+    color: @gray-darker;
+
+    &--text {
+      margin: 0;
+    }
+
+    &--option {
+      margin: 12px;
+    }
+  }
+
+  .van-checkbox__label {
     color: @gray-darker;
   }
 }

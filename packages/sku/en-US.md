@@ -110,7 +110,7 @@ Vue.use(Sku);
 | add-cart | Triggered when click cart button | data: Object |
 | buy-clicked | Triggered when click buy button | data: Object |
 | stepper-change | Triggered when stepper value changed | value: number |
-
+| sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
 
 ### Methods
 
@@ -134,7 +134,9 @@ Use ref to get sku instance and call instance methods
 | sku-actions | Custom button actions |
 
 #### Data Structure
+
 #### Sku Data Structure
+
 ```javascript
 sku: {
   tree: [
@@ -193,6 +195,7 @@ goods: {
 
 
 #### customStepperConfig Data Structure
+
 ```javascript
 customStepperConfig: {
   // custom quota text
@@ -218,6 +221,7 @@ customStepperConfig: {
 ```
 
 #### messageConfig Data Structure
+
 ```javascript
 messageConfig: {
   // the upload image callback

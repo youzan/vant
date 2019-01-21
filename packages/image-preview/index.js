@@ -8,6 +8,8 @@ const defaultConfig = {
   images: [],
   loop: true,
   value: true,
+  className: '',
+  lazyLoad: false,
   showIndex: true,
   asyncClose: false,
   startPosition: 0,

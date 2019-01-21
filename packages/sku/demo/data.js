@@ -15,6 +15,10 @@ export default {
             name: '天蓝色',
             imgUrl:
               'https://img.yzcdn.cn/upload_files/2017/02/21/FjKTOxjVgnUuPmHJRdunvYky9OHP.jpg!100x100.jpg'
+          },
+          {
+            id: '1215',
+            name: '白色'
           }
         ],
         k_s: 's1',

@@ -1,5 +1,5 @@
 ## List 列表
-瀑布流滚动加载，用于控制长列表的展示
+瀑布流滚动加载，用于展示长列表，当列表即将滚动到底部时，会触发事件并加载更多列表项。
 
 ### 使用指南
 ``` javascript
@@ -59,15 +59,56 @@ export default {
 }
 ```
 
+### 错误提示
+
+若列表数据加载失败，将`error`设置成`true`即可显示错误提示，用户点击错误提示后会重新触发 load 事件。
+
+```html
+<van-list
+  v-model="loading"
+  :error.sync="error"
+  error-text="请求失败，点击重新加载"
+  @load="onLoad"
+>
+  <van-cell
+    v-for="item in list"
+    :key="item"
+    :title="item"
+  />
+</van-list>
+```
+
+```js
+export default {
+  data() {
+    return {
+      list: [],
+      error: false,
+      loading: false
+    };
+  },
+
+  methods: {
+    onLoad() {
+      fetchSomeThing().catch(() => {
+        this.error = true;
+      })
+    }
+  }
+}
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | loading | 是否处于加载状态，加载过程中不触发`load`事件 | `Boolean` | `false` | - |
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` | - |
+| error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | `Boolean` | `false` | - |
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
 | loading-text | 加载过程中的提示文案 | `String` | `加载中...` | 1.1.1 |
 | finished-text | 加载完成后的提示文案 | `String` | - | 1.4.7 |
+| error-text | 加载失败后的提示文案 | `String` | - | 1.5.3 |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
 
 ### Event

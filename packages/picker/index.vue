@@ -7,11 +7,10 @@
     >
       <slot>
         <div
+          v-text="cancelButtonText || $t('cancel')"
           :class="b('cancel')"
           @click="emit('cancel')"
-        >
-          {{ cancelButtonText || $t('cancel') }}
-        </div>
+        />
         <div
           v-if="title"
           v-text="title"
@@ -19,11 +18,10 @@
           class="van-ellipsis"
         />
         <div
+          v-text="confirmButtonText || $t('confirm')"
           :class="b('confirm')"
           @click="emit('confirm')"
-        >
-          {{ confirmButtonText || $t('confirm') }}
-        </div>
+        />
       </slot>
     </div>
     <div

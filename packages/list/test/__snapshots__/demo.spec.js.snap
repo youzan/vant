@@ -2,19 +2,20 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div>
-    <p class="page-desc">当即将滚动到元素底部时，会自动加载更多</p>
-    <div class="van-pull-refresh">
-      <div class="van-pull-refresh__track" style="transition:0ms;transform:translate3d(0,0px, 0);">
-        <div class="van-pull-refresh__head">
-          <!---->
-          <!---->
-          <!---->
-        </div>
-        <div class="van-list">
-          <!---->
-          <!---->
-        </div>
+  <div class="van-tabs van-tabs--line">
+    <div class="van-tabs__wrap van-hairline--top-bottom">
+      <div class="van-tabs__nav van-tabs__nav--line" style="border-color:undefined;">
+        <div class="van-tabs__line" style="background-color:undefined;"></div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div class="van-tab__pane" style="display:none;">
+        <!---->
+        <!---->
+      </div>
+      <div class="van-tab__pane" style="display:none;">
+        <!---->
+        <!---->
       </div>
     </div>
   </div>

@@ -1,7 +1,3 @@
-<p>
-    <a href="https://github.com/youzan/"><img alt="logo" width="36px" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-    </a>
-</p>
 <p align="center">
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" style="margin-bottom: 10px;">
 </p>
@@ -28,7 +24,7 @@
 ## 特性
 
 * 50+ 个经过有赞线上业务检验的组件
-* 单元测试覆盖率超过 80%
+* 80%+ 单元测试覆盖率
 * 完善的中英文文档和示例
 * 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 * 支持 TypeScript
@@ -52,11 +48,11 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.4/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.5/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.4/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@1.5/lib/vant.min.js"></script>
 ```
 
 ## 快速上手

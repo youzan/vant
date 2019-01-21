@@ -59,6 +59,8 @@ setTimeout(() => {
 | loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
+| className | Custom className | `String | Array | Object` | - |
+| lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
 
 ### onClose Parematers
 

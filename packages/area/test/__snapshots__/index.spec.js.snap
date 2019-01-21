@@ -3,13 +3,9 @@
 exports[`change option 1`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -30,13 +26,9 @@ exports[`change option 1`] = `
 exports[`change option 2`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -66,13 +58,9 @@ exports[`change option 2`] = `
 exports[`change option 3`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -102,13 +90,9 @@ exports[`change option 3`] = `
 exports[`reset method 1`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -137,13 +121,9 @@ exports[`reset method 1`] = `
 exports[`reset method 2`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -173,13 +153,9 @@ exports[`reset method 2`] = `
 exports[`watch areaList & code 1`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -200,13 +176,9 @@ exports[`watch areaList & code 1`] = `
 exports[`watch areaList & code 2`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
@@ -236,13 +208,9 @@ exports[`watch areaList & code 2`] = `
 exports[`watch areaList & code 3`] = `
 <div class="van-picker van-area">
   <div class="van-hairline--top-bottom van-picker__toolbar">
-    <div class="van-picker__cancel">
-      取消
-    </div>
+    <div class="van-picker__cancel">取消</div>
     <!---->
-    <div class="van-picker__confirm">
-      确认
-    </div>
+    <div class="van-picker__confirm">确认</div>
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">

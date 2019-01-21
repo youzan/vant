@@ -32,8 +32,11 @@
     opacity: .15;
   }
 
-  &--unclickable::before {
-    display: none;
+  &--loading,
+  &--disabled {
+    &::before {
+      display: none;
+    }
   }
 
   &--default {
@@ -101,7 +104,6 @@
     }
   }
 
-  /* mini图标默认宽度50px，文字不能超过4个 */
   &--mini {
     display: inline-block;
     width: 50px;
