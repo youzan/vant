@@ -170,13 +170,12 @@ export default sfc({
       },
       attrs: {
         ...this.$attrs,
-        type,
         readonly: this.readonly
       },
       on: this.listeners
     };
 
-    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input {...inputProps} />;
+    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input type={type} {...inputProps} />;
 
     return (
       <Cell
