@@ -36,7 +36,7 @@ export default sfc({
         {...{ on: this.$listeners }}
       >
         {this.$slots.default}
-        {this.isSrc && <img src={name} />}
+        {this.isSrc && <img src={this.name} />}
         <Info info={this.info} />
       </i>
     );
