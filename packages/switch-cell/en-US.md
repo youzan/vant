@@ -30,6 +30,7 @@ export default {
 
 
 #### Disabled
+
 use `disabled` property to disable the component
 
 ```html
@@ -40,6 +41,7 @@ use `disabled` property to disable the component
 
 
 #### Loading
+
 use `loading` property to keep component in loading state
 
 ```html
@@ -52,13 +54,15 @@ use `loading` property to keep component in loading state
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | on-off state of the switch | `Boolean` | - |
+| v-model | on-off state of the switch | `any` | `false` |
 | title | the leftside title |  `String` | `''` |
 | loading | whether switch is loading |  `Boolean` | `false` |
 | disabled | whether to disable switch |  `Boolean` | `false` |
 | size | Size of switch | `String` | `24px` |
 | active-color | Background of switch color when active | `String` | `#1989fa` |
 | inactive-color | Background of switch color when inactive | `String` | `#fff` |
+| active-value | Value when active | `any` | `true` |
+| inactive-value | Value when inactive | `any` | `false` |
 
 ### Event
 

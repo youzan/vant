@@ -24,13 +24,21 @@ export default create({
   },
 
   props: {
+    value: null,
     title: String,
-    value: Boolean,
     border: Boolean,
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
+    activeValue: {
+      type: null,
+      default: true
+    },
+    inactiveValue: {
+      type: null,
+      default: false
+    },
     size: {
       type: String,
       default: '24px'
