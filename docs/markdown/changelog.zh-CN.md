@@ -1,5 +1,20 @@
 ## 更新日志
 
+## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
+`2019-01-22`
+
+**Improvements**
+
+- Card: 新增 origin-price slot [\#2588](https://github.com/youzan/vant/pull/2588)
+- Switch: 新增 active-value、inactive-value 属性 [\#2590](https://github.com/youzan/vant/pull/2590)
+- SwitchCell: 新增 active-value、inactive-value 属性 [\#2591](https://github.com/youzan/vant/pull/2591)
+
+**Bug Fixes**
+
+- 修复 Card centered 属性不生效的问题 [\#2589](https://github.com/youzan/vant/pull/2589)
+- 修复 Icon name 属性传入 URL 不生效的问题 [\#2585](https://github.com/youzan/vant/pull/2585)
+
+
 ## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
 `2019-01-21`
 
