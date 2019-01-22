@@ -9,6 +9,7 @@ export default sfc({
     desc: String,
     thumb: String,
     title: String,
+    centered: Boolean,
     lazyLoad: Boolean,
     thumbLink: String,
     num: [Number, String],
@@ -67,7 +68,7 @@ export default sfc({
       <div class={bem()}>
         <div class={bem('header')}>
           {Thumb}
-          <div class={bem('content')}>
+          <div class={bem('content', { centered: this.centered })}>
             {Title}
             {Desc}
             {slots.tags}

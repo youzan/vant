@@ -13,12 +13,6 @@
     margin-top: 10px;
   }
 
-  &--center,
-  &__thumb {
-    align-items: center;
-    justify-content: center;
-  }
-
   &__header {
     display: flex;
   }
@@ -29,6 +23,8 @@
     height: 90px;
     margin-right: 10px;
     flex: none;
+    align-items: center;
+    justify-content: center;
 
     img {
       border: none;
@@ -39,9 +35,15 @@
 
   &__content {
     position: relative;
+    display: flex;
     flex: 1;
     height: 90px;
+    flex-direction: column;
     min-width: 0; /* hack for flex box ellipsis */
+
+    &--centered {
+      justify-content: center;
+    }
   }
 
   &__title,
