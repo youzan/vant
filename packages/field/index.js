@@ -178,7 +178,7 @@ export default sfc({
       </div>
     );
     const RightIcon = showRightIcon && (
-      <div class={bem('icon')} onClick={this.onClickRightIcon}>
+      <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
         {slots['right-icon'] || slots.icon || <Icon name={this.rightIcon || this.icon} />}
       </div>
     );

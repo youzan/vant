@@ -15,13 +15,17 @@ test('click icon event', () => {
   const wrapper = mount(Field, {
     propsData: {
       value: 'a',
-      icon: 'search',
+      leftIcon: 'contact',
+      rightIcon: 'search',
       onIconClick
     }
   });
 
-  wrapper.find('.van-field__icon').trigger('click');
+  wrapper.find('.van-field__left-icon').trigger('click');
+  wrapper.find('.van-field__right-icon').trigger('click');
   expect(wrapper.emitted('click-icon')).toBeTruthy();
+  expect(wrapper.emitted('click-left-icon')).toBeTruthy();
+  expect(wrapper.emitted('click-right-icon')).toBeTruthy();
   expect(onIconClick.mock.calls.length).toBe(1);
 });
 

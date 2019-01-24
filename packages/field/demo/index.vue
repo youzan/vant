@@ -151,7 +151,7 @@ export default {
 .demo-field {
   padding-bottom: 30px;
 
-  .van-field__icon .van-icon {
+  .van-field__right-icon .van-icon {
     color: @blue;
   }
 }
