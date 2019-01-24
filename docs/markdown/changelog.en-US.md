@@ -1,5 +1,28 @@
 ## Changelog
 
+## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+`2019-01-24`
+
+**Improvements**
+
+- add live icon
+- add lock icon
+- add audio icon
+- add column icon
+- add replay icon
+- add shrink icon
+- add graphic icon
+- add invition icon
+- add ascending icon
+- add descending icon
+- add play-circle icon
+- add stop-circle icon
+- add pause-circle icon
+- add play-circle-o icon
+- add stop-circle-o icon
+- add pause-circle-o icon
+- Field: add click-left-icon event [\#2605](https://github.com/youzan/vant/pull/2605)
+
 ## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
 `2019-01-22`
 

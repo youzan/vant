@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+`2019-01-24`
+
+**Improvements**
+
+- 新增 live 图标
+- 新增 lock 图标
+- 新增 audio 图标
+- 新增 column 图标
+- 新增 replay 图标
+- 新增 shrink 图标
+- 新增 graphic 图标
+- 新增 invition 图标
+- 新增 ascending 图标
+- 新增 descending 图标
+- 新增 play-circle 图标
+- 新增 stop-circle 图标
+- 新增 pause-circle 图标
+- 新增 play-circle-o 图标
+- 新增 stop-circle-o 图标
+- 新增 pause-circle-o 图标
+- Field: 新增 click-left-icon 事件 [\#2605](https://github.com/youzan/vant/pull/2605)
+
 ## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
 `2019-01-22`
 
