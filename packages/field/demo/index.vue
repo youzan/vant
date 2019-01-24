@@ -16,9 +16,9 @@
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
           clearable
-          icon="question-o"
+          right-icon="question-o"
           required
-          @click-icon="$toast('question')"
+          @click-right-icon="$toast('question')"
         />
 
         <van-field

@@ -64,11 +64,20 @@
     font-size: 16px;
   }
 
-  &__icon .van-icon {
+  &__icon .van-icon,
+  &__left-icon .van-icon {
     display: block;
+    min-width: 1em;
     font-size: 16px;
-    color: @gray-dark;
     line-height: inherit;
+  }
+
+  &__icon {
+    color: @gray-dark;
+  }
+
+  &__left-icon {
+    margin-right: 5px;
   }
 
   &__button {
