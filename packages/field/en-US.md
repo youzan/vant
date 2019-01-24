@@ -28,9 +28,9 @@ Use `type` prop to custom diffrent type fields.
     required
     clearable
     label="Username"
-    icon="question-o"
+    right-icon="question-o"
     placeholder="Username"
-    @click-icon="$toast('question')"
+    @click-right-icon="$toast('question')"
   />
 
   <van-field
@@ -129,8 +129,8 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | label-align | Label text align, can be set to `center` `right` | `String` | `left` |
 | input-align | Input text align, can be set to `center` `right` | `String` | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
-| icon | Right side icon name | `String` | - |
 | left-icon | Left side icon name | `String` | - |
+| right-icon | Right side icon name | `String` | - |
 
 ### Event
 
@@ -138,8 +138,9 @@ Field support all native events of input tag，such as `focus`、`blur`、`keypr
 
 | Event | Description | Parameters |
 |------|------|------|
-| click-icon | Triggered when click the icon of Field | - |
 | clear | Triggered when click clear icon | - |
+| click-left-icon | Triggered when click the left icon of Field | - |
+| click-right-icon | Triggered when click the right icon of Field | - |
 
 ### Methods
 
@@ -156,5 +157,5 @@ Use ref to get field instance and call instance methods
 |------|------|
 | label | Custom label |
 | left-icon | Custom left icon |
-| icon | Custom right icon |
+| right-icon | Custom right icon |
 | button | Insert button |
