@@ -8,7 +8,7 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell__value van-cell__value--alone">添加联系人</div><i class="van-icon van-icon-arrow van-cell__right-icon" style="color:undefined;font-size:undefined;">
         <!----></i>
     </div>
-    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
+    <div name="van-popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-list">
         <div class="van-radio-group">
           <div class="van-cell van-cell--clickable">
@@ -20,7 +20,7 @@ exports[`renders demo correctly 1`] = `
         </div><button class="van-button van-button--danger van-button--large van-button--square van-contact-list__add"><span class="van-button__text">新建联系人</span></button>
       </div>
     </div>
-    <div name="popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
+    <div name="van-popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-edit">
         <div maxlength="30" placeholder="请填写姓名" class="van-cell van-field">
           <div class="van-cell__title"><span>张三</span></div>
