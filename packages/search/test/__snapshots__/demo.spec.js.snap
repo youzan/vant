@@ -11,7 +11,6 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="search" placeholder="请输入搜索关键词" value="" class="van-field__control"></div>
         </div>
       </div>
-      <!---->
     </div>
   </div>
   <div>
