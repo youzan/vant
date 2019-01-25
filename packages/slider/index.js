@@ -1,35 +1,9 @@
-<template>
-  <div
-    :class="b({ disabled })"
-    :style="style"
-    @click.stop="onClick"
-  >
-    <div
-      :class="b('bar')"
-      :style="barStyle"
-    >
-      <div
-        :class="b('button-wrapper')"
-        @touchstart="onTouchStart"
-        @touchmove.prevent.stop="onTouchMove"
-        @touchend="onTouchEnd"
-        @touchcancel="onTouchEnd"
-      >
-        <slot name="button">
-          <div :class="b('button')" />
-        </slot>
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import Touch from '../mixins/touch';
 
-export default create({
-  name: 'slider',
+const [sfc, bem] = use('slider');
 
+export default sfc({
   mixins: [Touch],
 
   props: {
@@ -52,22 +26,6 @@ export default create({
     }
   },
 
-  computed: {
-    style() {
-      return {
-        background: this.inactiveColor
-      };
-    },
-
-    barStyle() {
-      return {
-        width: this.format(this.value) + '%',
-        height: this.barHeight,
-        background: this.activeColor
-      };
-    }
-  },
-
   methods: {
     onTouchStart(event) {
       if (this.disabled) return;
@@ -77,11 +35,14 @@ export default create({
     },
 
     onTouchMove(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
       if (this.disabled) return;
 
       this.touchMove(event);
       const rect = this.$el.getBoundingClientRect();
-      const diff = this.deltaX / rect.width * 100;
+      const diff = (this.deltaX / rect.width) * 100;
       this.updateValue(this.startValue + diff);
     },
 
@@ -91,10 +52,12 @@ export default create({
     },
 
     onClick(event) {
+      event.stopPropagation();
+
       if (this.disabled) return;
 
       const rect = this.$el.getBoundingClientRect();
-      const value = (event.clientX - rect.left) / rect.width * 100;
+      const value = ((event.clientX - rect.left) / rect.width) * 100;
       this.updateValue(value, true);
     },
 
@@ -108,8 +71,35 @@ export default create({
     },
 
     format(value) {
-      return (Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step);
+      return Math.round(Math.max(this.min, Math.min(value, this.max)) / this.step) * this.step;
     }
+  },
+
+  render(h) {
+    const style = {
+      background: this.inactiveColor
+    };
+
+    const barStyle = {
+      width: `${this.format(this.value)}%`,
+      height: this.barHeight,
+      background: this.activeColor
+    };
+
+    return (
+      <div style={style} class={bem({ disabled: this.disabled })} onClick={this.onClick}>
+        <div class={bem('bar')} style={barStyle}>
+          <div
+            class={bem('button-wrapper')}
+            onTouchstart={this.onTouchStart}
+            onTouchmove={this.onTouchMove}
+            onTouchend={this.onTouchEnd}
+            onTouchcancel={this.onTouchEnd}
+          >
+            {this.$slots.button || <div class={bem('button')} />}
+          </div>
+        </div>
+      </div>
+    );
   }
 });
-</script>
