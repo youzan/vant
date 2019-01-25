@@ -1,74 +1,13 @@
-<template>
-  <div :class="b()">
-    <div
-      v-if="showToolbar"
-      :class="b('toolbar')"
-      class="van-hairline--top-bottom"
-    >
-      <slot>
-        <div
-          v-text="cancelButtonText || $t('cancel')"
-          :class="b('cancel')"
-          @click="emit('cancel')"
-        />
-        <div
-          v-if="title"
-          v-text="title"
-          :class="b('title')"
-          class="van-ellipsis"
-        />
-        <div
-          v-text="confirmButtonText || $t('confirm')"
-          :class="b('confirm')"
-          @click="emit('confirm')"
-        />
-      </slot>
-    </div>
-    <div
-      v-if="loading"
-      :class="b('loading')"
-    >
-      <loading />
-    </div>
-    <div
-      :class="b('columns')"
-      :style="columnsStyle"
-      @touchmove.prevent
-    >
-      <picker-column
-        v-for="(item, index) in (simple ? [columns] : columns)"
-        :key="index"
-        :value-key="valueKey"
-        :initial-options="simple ? item : item.values"
-        :class-name="item.className"
-        :default-index="item.defaultIndex"
-        :item-height="itemHeight"
-        :visible-item-count="visibleItemCount"
-        @change="onChange(index)"
-      />
-      <div
-        :class="b('frame')"
-        class="van-hairline--top-bottom"
-        :style="frameStyle"
-      />
-    </div>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
+import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
 import PickerMixin from '../mixins/picker';
 
-export default create({
-  name: 'picker',
+const [sfc, bem, t] = use('picker');
 
+export default sfc({
   mixins: [PickerMixin],
-
-  components: {
-    PickerColumn
-  },
 
   props: {
     columns: Array,
@@ -85,18 +24,6 @@ export default create({
   },
 
   computed: {
-    frameStyle() {
-      return {
-        height: this.itemHeight + 'px'
-      };
-    },
-
-    columnsStyle() {
-      return {
-        height: this.itemHeight * this.visibleItemCount + 'px'
-      };
-    },
-
     simple() {
       return this.columns.length && !this.columns[0].values;
     }
@@ -196,7 +123,74 @@ export default create({
       indexes.forEach((optionIndex, columnIndex) => {
         this.setColumnIndex(columnIndex, optionIndex);
       });
+    },
+
+    onConfirm() {
+      this.emit('confirm');
+    },
+
+    onCancel() {
+      this.emit('cancel');
     }
+  },
+
+  render(h) {
+    const { itemHeight } = this;
+    const columns = this.simple ? [this.columns] : this.columns;
+
+    const frameStyle = {
+      height: `${itemHeight}px`
+    };
+
+    const columnsStyle = {
+      height: `${itemHeight * this.visibleItemCount}px`
+    };
+
+    const Toolbar = this.showToolbar && (
+      <div class={['van-hairline--top-bottom', bem('toolbar')]}>
+        {this.$slots.default || [
+          <div class={bem('cancel')} onClick={this.onCancel}>
+            {this.cancelButtonText || t('cancel')}
+          </div>,
+          this.title && <div class={['van-ellipsis', bem('title')]}>{this.title}</div>,
+          <div class={bem('confirm')} onClick={this.onConfirm}>
+            {this.confirmButtonText || t('confirm')}
+          </div>
+        ]}
+      </div>
+    );
+
+    return (
+      <div class={bem()}>
+        {Toolbar}
+        {this.loading && (
+          <div class={bem('loading')}>
+            <Loading />
+          </div>
+        )}
+        <div
+          class={bem('columns')}
+          style={columnsStyle}
+          onTouchmove={event => {
+            event.preventDefault();
+          }}
+        >
+          {columns.map((item, index) => (
+            <PickerColumn
+              valueKey={this.valueKey}
+              className={item.className}
+              itemHeight={this.itemHeight}
+              defaultIndex={item.defaultIndex}
+              visibleItemCount={this.visibleItemCount}
+              initialOptions={this.simple ? item : item.values}
+              onChange={() => {
+                this.onChange(index);
+              }}
+            />
+          ))}
+          <div class={['van-hairline--top-bottom', bem('frame')]} style={frameStyle} />
+        </div>
+      </div>
+    );
   }
 });
-</script>
