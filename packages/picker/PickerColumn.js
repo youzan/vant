@@ -1,39 +1,10 @@
-
-<template>
-  <div
-    :class="[b(), className]"
-    :style="columnStyle"
-    @touchstart="onTouchStart"
-    @touchmove.prevent="onTouchMove"
-    @touchend="onTouchEnd"
-    @touchcancel="onTouchEnd"
-  >
-    <ul :style="wrapperStyle">
-      <li
-        v-for="(option, index) in options"
-        v-html="getOptionText(option)"
-        :style="optionStyle"
-        class="van-ellipsis"
-        :class="b('item', {
-          disabled: isDisabled(option),
-          selected: index === currentIndex
-        })"
-        @click="setIndex(index, true)"
-      />
-    </ul>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
 import deepClone from '../utils/deep-clone';
-import { isObj, range } from '../utils';
+import { use, isObj, range } from '../utils';
 
 const DEFAULT_DURATION = 200;
+const [sfc, bem] = use('picker-column');
 
-export default create({
-  name: 'picker-column',
-
+export default sfc({
   props: {
     valueKey: String,
     className: String,
@@ -73,30 +44,6 @@ export default create({
   computed: {
     count() {
       return this.options.length;
-    },
-
-    baseOffset() {
-      return this.itemHeight * (this.visibleItemCount - 1) / 2;
-    },
-
-    columnStyle() {
-      return {
-        height: this.itemHeight * this.visibleItemCount + 'px'
-      };
-    },
-
-    wrapperStyle() {
-      return {
-        transition: `${this.duration}ms`,
-        transform: `translate3d(0, ${this.offset + this.baseOffset}px, 0)`,
-        lineHeight: this.itemHeight + 'px'
-      };
-    },
-
-    optionStyle() {
-      return {
-        height: this.itemHeight + 'px'
-      };
     }
   },
 
@@ -108,6 +55,7 @@ export default create({
     },
 
     onTouchMove(event) {
+      event.preventDefault();
       const deltaY = event.touches[0].clientY - this.startY;
       this.offset = range(
         this.startOffset + deltaY,
@@ -119,11 +67,7 @@ export default create({
     onTouchEnd() {
       if (this.offset !== this.startOffset) {
         this.duration = DEFAULT_DURATION;
-        const index = range(
-          Math.round(-this.offset / this.itemHeight),
-          0,
-          this.count - 1
-        );
+        const index = range(Math.round(-this.offset / this.itemHeight), 0, this.count - 1);
         this.setIndex(index, true);
       }
     },
@@ -143,9 +87,7 @@ export default create({
     },
 
     getOptionText(option) {
-      return isObj(option) && this.valueKey in option
-        ? option[this.valueKey]
-        : option;
+      return isObj(option) && this.valueKey in option ? option[this.valueKey] : option;
     },
 
     setIndex(index, userAction) {
@@ -170,6 +112,55 @@ export default create({
     getValue() {
       return this.options[this.currentIndex];
     }
+  },
+
+  render(h) {
+    const { itemHeight, visibleItemCount } = this;
+
+    const columnStyle = {
+      height: itemHeight * visibleItemCount + 'px'
+    };
+
+    const baseOffset = (itemHeight * (visibleItemCount - 1)) / 2;
+
+    const wrapperStyle = {
+      transition: `${this.duration}ms`,
+      transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
+      lineHeight: `${itemHeight}px`
+    };
+
+    const optionStyle = {
+      height: `${itemHeight}px`
+    };
+
+    return (
+      <div
+        style={columnStyle}
+        class={[bem(), this.className]}
+        onTouchstart={this.onTouchStart}
+        onTouchmove={this.onTouchMove}
+        onTouchend={this.onTouchEnd}
+        onTouchcancel={this.onTouchEnd}
+      >
+        <ul style={wrapperStyle}>
+          {this.options.map((option, index) => (
+            <li
+              style={optionStyle}
+              class={[
+                'van-ellipsis',
+                bem('item', {
+                  disabled: this.isDisabled(option),
+                  selected: index === this.currentIndex
+                })
+              ]}
+              domPropsInnerHTML={this.getOptionText(option)}
+              onClick={() => {
+                this.setIndex(index, true);
+              }}
+            />
+          ))}
+        </ul>
+      </div>
+    );
   }
 });
-</script>
