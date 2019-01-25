@@ -177,12 +177,12 @@ export default sfc({
         >
           {columns.map((item, index) => (
             <PickerColumn
-              value-key={this.valueKey}
-              class-name={item.className}
-              item-height={this.itemHeight}
-              default-index={item.defaultIndex}
-              visible-item-count={this.visibleItemCount}
-              initial-options={this.simple ? item : item.values}
+              valueKey={this.valueKey}
+              className={item.className}
+              itemHeight={this.itemHeight}
+              defaultIndex={item.defaultIndex}
+              visibleItemCount={this.visibleItemCount}
+              initialOptions={this.simple ? item : item.values}
               onChange={() => {
                 this.onChange(index);
               }}
