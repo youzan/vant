@@ -1,40 +1,10 @@
-<template>
-  <div :class="b()">
-    <div
-      :style="trackStyle"
-      :class="b('track')"
-      @touchstart="onTouchStart"
-      @touchmove="onTouchMove"
-      @touchend="onTouchEnd"
-      @touchcancel="onTouchEnd"
-      @transitionend.stop="$emit('change', activeIndicator)"
-    >
-      <slot />
-    </div>
-    <slot name="indicator">
-      <div
-        v-if="showIndicators && count > 1"
-        :class="b('indicators', { vertical })"
-        @transitionend.stop
-      >
-        <i
-          v-for="index in count"
-          :class="b('indicator', { active: index - 1 === activeIndicator })"
-          :style="index - 1 === activeIndicator ? indicatorStyle : null"
-        />
-      </div>
-    </slot>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import Touch from '../mixins/touch';
-import { on, off } from '../utils/event';
+import { on, off, stop } from '../utils/event';
 
-export default create({
-  name: 'swipe',
+const [sfc, bem] = use('swipe');
 
+export default sfc({
   mixins: [Touch],
 
   props: {
@@ -222,8 +192,7 @@ export default create({
       const atLast = active === count - 1;
       const outOfBounds =
         !this.loop &&
-        ((atFirst && (offset > 0 || move < 0)) ||
-          (atLast && (offset < 0 || move > 0)));
+        ((atFirst && (offset > 0 || move < 0)) || (atLast && (offset < 0 || move > 0)));
 
       if (outOfBounds || count <= 1) {
         return;
@@ -284,7 +253,45 @@ export default create({
           }, 30);
         }, autoplay);
       }
+    },
+
+    onTransitionend(event) {
+      event.stopPropagation();
+      this.$emit('change', this.activeIndicator);
     }
+  },
+
+  render(h) {
+    const { count, activeIndicator } = this;
+
+    const Indicator =
+      this.$slots.indicator ||
+      (this.showIndicators && count > 1 && (
+        <div class={bem('indicators', { vertical: this.vertical })} onTransitionend={stop}>
+          {Array(...Array(count)).map((empty, index) => (
+            <i
+              class={bem('indicator', { active: index === activeIndicator })}
+              style={index === activeIndicator ? this.indicatorStyle : null}
+            />
+          ))}
+        </div>
+      ));
+
+    return (
+      <div class={bem()}>
+        <div
+          style={this.trackStyle}
+          class={bem('track')}
+          onTouchstart={this.onTouchStart}
+          onTouchmove={this.onTouchMove}
+          onTouchend={this.onTouchEnd}
+          onTouchcancel={this.onTouchEnd}
+          onTransitionend={this.onTransitionend}
+        >
+          {this.$slots.default}
+        </div>
+        {Indicator}
+      </div>
+    );
   }
 });
-</script>
