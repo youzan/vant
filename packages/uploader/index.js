@@ -97,10 +97,10 @@ export default sfc({
       <div class={bem()}>
         {this.$slots.default}
         <input
+          { ...{ attrs: this.$attrs } }
           ref="input"
           type="file"
           accept={accept}
-          attrs={this.$attrs}
           class={bem('input')}
           disabled={disabled}
           onChange={this.onChange}
