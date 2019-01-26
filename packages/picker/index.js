@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { prevent } from '../utils/event';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 import deepClone from '../utils/deep-clone';
@@ -171,9 +172,7 @@ export default sfc({
         <div
           class={bem('columns')}
           style={columnsStyle}
-          onTouchmove={event => {
-            event.preventDefault();
-          }}
+          onTouchmove={prevent}
         >
           {columns.map((item, index) => (
             <PickerColumn
