@@ -22,7 +22,8 @@ Vue.use(Card);
 ```
 
 #### Advanced Usage
-Use `slot` to custom content.
+
+Use slot to custom content.
 
 ```html
 <van-card
@@ -52,6 +53,7 @@ Use `slot` to custom content.
 | num | Number | `String | Number` | - |
 | price | Price | `String | Number` | - |
 | origin-price | Origin price | `String | Number` | - |
+| centered | Whether content vertical centered | `String` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
 | thumb-link | Thumb link URL | `String` | - |
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
@@ -64,6 +66,7 @@ Use `slot` to custom content.
 | desc | Custom description |
 | num | Custom num |
 | price | Custom price |
+| origin-price | Custom origin price |
 | thumb | Custom thumb |
 | tags | Custom tags |
 | footer | Custom footer |

@@ -26,10 +26,39 @@ export default {
 ```
 
 #### 禁用状态
+
 通过设置`disabled`属性来禁用 stepper
 
 ```html
 <van-stepper v-model="value" disabled />
+```
+
+#### 异步变更
+
+```html
+<van-stepper
+  :value="value"
+  async-change
+  @change="onChange"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: 1
+    }
+  },
+
+  methods: {
+    onChange(value) {
+      setTimeout(() => {
+        this.value = value;
+      }, 500);
+    }
+  }
+}
 ```
 
 #### 高级用法
@@ -57,7 +86,7 @@ export default {
 | integer | 是否只允许输入整数 | `Boolean` | `false` | 1.1.1 |
 | disabled | 是否禁用步进器 | `Boolean` | `false` | - |
 | disable-input | 是否禁用输入框 | `Boolean` | `false` | - |
-| async-change | 异步变更，为 `true` 时input值不变化，仅触发事件 | `Boolean` | `false` | - |
+| async-change | 是否开启异步变更，开启后需要手动控制输入值 | `Boolean` | `false` | - |
 
 ### Event
 

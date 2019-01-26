@@ -1,5 +1,51 @@
 ## 更新日志
 
+## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+`2019-01-24`
+
+**Improvements**
+
+- 新增 live 图标
+- 新增 lock 图标
+- 新增 audio 图标
+- 新增 column 图标
+- 新增 replay 图标
+- 新增 shrink 图标
+- 新增 graphic 图标
+- 新增 invition 图标
+- 新增 ascending 图标
+- 新增 descending 图标
+- 新增 play-circle 图标
+- 新增 stop-circle 图标
+- 新增 pause-circle 图标
+- 新增 play-circle-o 图标
+- 新增 stop-circle-o 图标
+- 新增 pause-circle-o 图标
+- Field: 新增 click-left-icon 事件 [\#2605](https://github.com/youzan/vant/pull/2605)
+
+## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
+`2019-01-22`
+
+**Improvements**
+
+- Card: 新增 origin-price slot [\#2588](https://github.com/youzan/vant/pull/2588)
+- Switch: 新增 active-value、inactive-value 属性 [\#2590](https://github.com/youzan/vant/pull/2590)
+- SwitchCell: 新增 active-value、inactive-value 属性 [\#2591](https://github.com/youzan/vant/pull/2591)
+
+**Bug Fixes**
+
+- 修复 Card centered 属性不生效的问题 [\#2589](https://github.com/youzan/vant/pull/2589)
+- 修复 Icon name 属性传入 URL 不生效的问题 [\#2585](https://github.com/youzan/vant/pull/2585)
+
+
+## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
+`2019-01-21`
+
+**Bug Fixes**
+
+- 修复 Field type 属性不生效的问题 [\#2579](https://github.com/youzan/vant/pull/2579)
+
+
 ## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
 `2019-01-20`
 

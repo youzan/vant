@@ -31,6 +31,34 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
+#### Async Change
+
+```html
+<van-stepper
+  :value="value"
+  async-change
+  @change="onChange"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: 1
+    }
+  },
+
+  methods: {
+    onChange(value) {
+      setTimeout(() => {
+        this.value = value;
+      }, 500);
+    }
+  }
+}
+```
+
 #### Advanced Usage
 
 ```html
@@ -55,7 +83,7 @@ export default {
 | integer | Whether to allow only integers | `Boolean` | `false` |
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
-| async-change | not change input value, only emit event | `Boolean` | `false` | - |
+| async-change | Whether to enable async change | `Boolean` | `false` | - |
 
 ### Event
 

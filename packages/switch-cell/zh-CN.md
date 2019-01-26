@@ -13,7 +13,6 @@ Vue.use(SwitchCell);
 
 #### 基础用法
 
-
 ```html
 <van-cell-group>
   <van-switch-cell v-model="checked" title="标题" />
@@ -31,6 +30,7 @@ export default {
 ```
 
 #### 禁用状态
+
 通过`disabled`属性可以将组件设置为禁用状态
 
 ```html
@@ -40,6 +40,7 @@ export default {
 ```
 
 #### 加载状态
+
 通过`loading`属性可以将组件设置为加载状态
 
 ```html
@@ -52,13 +53,15 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 开关状态 | `Boolean` | - | - |
+| v-model | 开关状态 | `null` | `false` | - |
 | title | 左侧标题 |  `String` | `''` | - |
 | loading | 是否为加载状态 |  `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
 | size | 开关尺寸 | `String` | `24px` | 1.1.11 |
 | active-color | 开关时的背景色 | `String` | `#1989fa` | 1.5.0 |
 | inactive-color | 开关时的背景色 | `String` | `#fff` | 1.5.0 |
+| active-value | 打开时的值 | `any` | `true` | 1.5.6 |
+| inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
 
 ### Event
 

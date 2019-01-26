@@ -1,42 +1,11 @@
-<template>
-  <div :class="b()">
-    <div
-      :class="b('track')"
-      :style="style"
-      @touchstart="onTouchStart"
-      @touchmove="onTouchMove"
-      @touchend="onTouchEnd"
-      @touchcancel="onTouchEnd"
-    >
-      <div :class="b('head')">
-        <slot :name="status">
-          <div
-            v-if="status === 'pulling' || status === 'loosing'"
-            v-text="text"
-            :class="b('text')"
-          />
-          <div
-            v-if="status === 'loading'"
-            :class="b('loading')"
-          >
-            <loading />
-            <span v-text="text" />
-          </div>
-        </slot>
-      </div>
-      <slot />
-    </div>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
+import Loading from '../loading';
 import scrollUtils from '../utils/scroll';
 import Touch from '../mixins/touch';
 
-export default create({
-  name: 'pull-refresh',
+const [sfc, bem, t] = use('pull-refresh');
 
+export default sfc({
   mixins: [Touch],
 
   props: {
@@ -67,19 +36,8 @@ export default create({
   },
 
   computed: {
-    style() {
-      return {
-        transition: `${this.duration}ms`,
-        transform: `translate3d(0,${this.height}px, 0)`
-      };
-    },
-
     untouchable() {
       return this.status === 'loading' || this.disabled;
-    },
-
-    text() {
-      return this[`${this.status}Text`] || this.$t(this.status);
     }
   },
 
@@ -154,14 +112,51 @@ export default create({
       this.height = height;
 
       const status = isLoading
-        ? 'loading' : height === 0
-          ? 'normal' : height < this.headHeight
-            ? 'pulling' : 'loosing';
+        ? 'loading'
+        : height === 0
+          ? 'normal'
+          : height < this.headHeight
+            ? 'pulling'
+            : 'loosing';
 
       if (status !== this.status) {
         this.status = status;
       }
     }
+  },
+
+  render(h) {
+    const { status } = this;
+    const text = this[`${status}Text`] || t(status);
+    const style = {
+      transition: `${this.duration}ms`,
+      transform: `translate3d(0,${this.height}px, 0)`
+    };
+
+    const Status = this.$slots[status] || [
+      (status === 'pulling' || status === 'loosing') && <div class={bem('text')}>{text}</div>,
+      status === 'loading' && (
+        <div class={bem('loading')}>
+          <Loading />
+          <span>{text}</span>
+        </div>
+      )
+    ];
+
+    return (
+      <div class={bem()}>
+        <div
+          class={bem('track')}
+          style={style}
+          onTouchstart={this.onTouchStart}
+          onTouchmove={this.onTouchMove}
+          onTouchend={this.onTouchEnd}
+          onTouchcancel={this.onTouchEnd}
+        >
+          <div class={bem('head')}>{Status}</div>
+          {this.$slots.default}
+        </div>
+      </div>
+    );
   }
 });
-</script>

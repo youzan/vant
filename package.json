@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "1.5.4",
+  "version": "1.5.7",
   "description": "Lightweight Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -59,7 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.1.5",
-    "@vant/icons": "1.0.7",
+    "@vant/icons": "1.0.8",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.2",
     "vue-lazyload": "1.2.3"
   },

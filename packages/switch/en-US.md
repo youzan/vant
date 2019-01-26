@@ -96,12 +96,14 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Check status of Switch | `Boolean` | `false` |
+| v-model | Check status of Switch | `any` | `false` |
 | loading | Whether to show loading icon | `Boolean` | `false` |
 | disabled | Whether to disable switch | `Boolean` | `false` |
 | size | Size of switch | `String` | `30px` |
 | active-color | Background color when active | `String` | `#1989fa` |
 | inactive-color | Background color when inactive | `String` | `#fff` |
+| active-value | Value when active | `any` | `true` |
+| inactive-value | Value when inactive | `any` | `false` |
 
 ### Event
 

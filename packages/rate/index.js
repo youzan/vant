@@ -1,28 +1,10 @@
-<template>
-  <div
-    :class="b()"
-    @touchmove="onTouchMove"
-  >
-    <icon
-      v-for="(full, index) in list"
-      :key="index"
-      :class="b('item')"
-      :size="size + 'px'"
-      :data-index="index"
-      :name="full ? icon : voidIcon"
-      :color="disabled ? disabledColor : full ? color : voidColor"
-      @click="onSelect(index)"
-    />
-  </div>
-</template>
-
-<script>
 /* eslint-disable prefer-spread */
-import create from '../utils/create';
+import { use } from '../utils';
+import Icon from '../icon';
 
-export default create({
-  name: 'rate',
+const [sfc, bem] = use('rate');
 
+export default sfc({
   props: {
     value: Number,
     readonly: Boolean,
@@ -88,6 +70,25 @@ export default create({
         }
       }
     }
+  },
+
+  render(h) {
+    return (
+      <div class={bem()} onTouchmove={this.onTouchMove}>
+        {this.list.map((full, index) => (
+          <Icon
+            key={index}
+            class={bem('item')}
+            size={`${this.size}px`}
+            data-index={index}
+            name={full ? this.icon : this.voidIcon}
+            color={this.disabled ? this.disabledColor : full ? this.color : this.voidColor}
+            onClick={() => {
+              this.onSelect(index);
+            }}
+          />
+        ))}
+      </div>
+    );
   }
 });
-</script>

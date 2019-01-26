@@ -16,9 +16,9 @@
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
           clearable
-          icon="question-o"
+          right-icon="question-o"
           required
-          @click-icon="$toast('question')"
+          @click-right-icon="$toast('question')"
         />
 
         <van-field
@@ -151,7 +151,7 @@ export default {
 .demo-field {
   padding-bottom: 30px;
 
-  .van-field__icon .van-icon {
+  .van-field__right-icon .van-icon {
     color: @blue;
   }
 }

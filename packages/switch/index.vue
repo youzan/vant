@@ -1,7 +1,7 @@
 <template>
   <div
     :class="b({
-      on: value,
+      on: value === activeValue,
       disabled
     })"
     :style="style"
@@ -23,11 +23,19 @@ export default create({
   name: 'switch',
 
   props: {
-    value: Boolean,
+    value: null,
     loading: Boolean,
     disabled: Boolean,
     activeColor: String,
     inactiveColor: String,
+    activeValue: {
+      type: null,
+      default: true
+    },
+    inactiveValue: {
+      type: null,
+      default: false
+    },
     size: {
       type: String,
       default: '30px'
@@ -46,8 +54,10 @@ export default create({
   methods: {
     onClick() {
       if (!this.disabled && !this.loading) {
-        this.$emit('input', !this.value);
-        this.$emit('change', !this.value);
+        const checked = this.value === this.activeValue;
+        const value = checked ? this.inactiveValue : this.activeValue;
+        this.$emit('input', value);
+        this.$emit('change', value);
       }
     }
   }

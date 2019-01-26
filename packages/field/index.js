@@ -13,6 +13,7 @@ export default sfc({
   props: {
     error: Boolean,
     leftIcon: String,
+    rightIcon: String,
     readonly: Boolean,
     clearable: Boolean,
     labelAlign: String,
@@ -103,8 +104,14 @@ export default sfc({
       this.$emit('blur', event);
     },
 
-    onClickIcon() {
+    onClickLeftIcon() {
+      this.$emit('click-left-icon');
+    },
+
+    onClickRightIcon() {
+      // compatible old version
       this.$emit('click-icon');
+      this.$emit('click-right-icon');
       this.onIconClick && this.onIconClick();
     },
 
@@ -162,6 +169,20 @@ export default sfc({
   render(h) {
     const { type, labelAlign, $slots: slots } = this;
 
+    const showLeftIcon = slots['left-icon'] || this.leftIcon;
+    const showRightIcon = slots['right-icon'] || slots.icon || this.rightIcon || this.icon;
+
+    const LeftIcon = showLeftIcon && (
+      <div slot="icon" class={bem('left-icon')} onClick={this.onClickLeftIcon}>
+        {slots['left-icon'] || <Icon name={this.leftIcon} />}
+      </div>
+    );
+    const RightIcon = showRightIcon && (
+      <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
+        {slots['right-icon'] || slots.icon || <Icon name={this.rightIcon || this.icon} />}
+      </div>
+    );
+
     const inputProps = {
       ref: 'input',
       class: bem('control', this.inputAlign),
@@ -176,7 +197,7 @@ export default sfc({
       on: this.listeners
     };
 
-    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input {...inputProps} />;
+    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input type={type} {...inputProps} />;
 
     return (
       <Cell
@@ -193,16 +214,12 @@ export default sfc({
           'min-height': type === 'textarea' && !this.autosize
         })}
       >
-        {h('template', { slot: 'icon' }, slots['left-icon'])}
+        {LeftIcon}
         {h('template', { slot: 'title' }, slots.label)}
         <div class={bem('body')}>
           {Input}
           {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
-          {(slots.icon || this.icon) && (
-            <div class={bem('icon')} onClick={this.onClickIcon}>
-              {slots.icon || <Icon name={this.icon} />}
-            </div>
-          )}
+          {RightIcon}
           {slots.button && <div class={bem('button')}>{slots.button}</div>}
         </div>
         {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
