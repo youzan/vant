@@ -52,8 +52,10 @@ export default {
     };
   },
   methods: {
-    onChange(event) {
-      this.$toast(`change: ${event}`);
+    onChange(value) {
+      setTimeout(() => {
+        this.stepper2 = value;
+      }, 500);
     }
   }
 };

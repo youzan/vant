@@ -1,30 +1,8 @@
-<template>
-  <div :class="b()">
-    <button
-      :class="b('minus', { disabled: minusDisabled })"
-      @click="onChange('minus')"
-    />
-    <input
-      type="number"
-      :class="b('input')"
-      :value="currentValue"
-      :disabled="disabled || disableInput"
-      @input="onInput"
-      @blur="onBlur"
-    >
-    <button
-      :class="b('plus', { disabled: plusDisabled })"
-      @click="onChange('plus')"
-    />
-  </div>
-</template>
+import { use, isDef } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('stepper');
 
-export default create({
-  name: 'stepper',
-
+export default sfc({
   props: {
     value: null,
     integer: Boolean,
@@ -50,7 +28,7 @@ export default create({
   },
 
   data() {
-    const value = this.range(this.isDef(this.value) ? this.value : this.defaultValue);
+    const value = this.range(isDef(this.value) ? this.value : this.defaultValue);
     if (value !== +this.value) {
       this.$emit('input', value);
     }
@@ -138,6 +116,32 @@ export default create({
         event.target.value = this.currentValue;
       }
     }
+  },
+
+  render(h) {
+    const onChange = type => () => {
+      this.onChange(type);
+    };
+
+    return (
+      <div class={bem()}>
+        <button
+          class={bem('minus', { disabled: this.minusDisabled })}
+          onClick={onChange('minus')}
+        />
+        <input
+          type="number"
+          class={bem('input')}
+          value={this.currentValue}
+          disabled={this.disabled || this.disableInput}
+          onInput={this.onInput}
+          onBlur={this.onBlur}
+        />
+        <button
+          class={bem('plus', { disabled: this.plusDisabled })}
+          onClick={onChange('plus')}
+        />
+      </div>
+    );
   }
 });
-</script>
