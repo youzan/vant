@@ -1,11 +1,3 @@
-/**
- * v-clickoutside
- *
- * ```vue
- * <div v-clickoutside="onClose">
- * ```
- */
-
 import { on, off } from '../utils/event';
 
 export default function (config) {
