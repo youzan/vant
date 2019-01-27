@@ -1,22 +1,7 @@
-<template>
-  <span
-    :class="[b({
-      mark,
-      plain,
-      round,
-      [size]: size
-    }), {
-      'van-hairline--surround': plain
-    }]"
-    :style="style"
-  >
-    <slot />
-  </span>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use } from '../utils';
 import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
+
+const [sfc, bem] = use('tag');
 
 const COLOR_MAP = {
   danger: RED,
@@ -24,9 +9,7 @@ const COLOR_MAP = {
   success: GREEN
 };
 
-export default create({
-  name: 'tag',
-
+export default sfc({
   props: {
     size: String,
     type: String,
@@ -49,6 +32,28 @@ export default create({
 
       return style;
     }
+  },
+
+  render(h) {
+    const {
+      mark,
+      plain,
+      round,
+      size
+    } = this;
+
+    return (
+      <span
+        class={[
+          bem({ mark, plain, round, [size]: size }),
+          {
+            'van-hairline--surround': plain
+          }
+        ]}
+        style={this.style}
+      >
+        {this.$slots.default}
+      </span>
+    );
   }
 });
-</script>

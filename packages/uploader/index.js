@@ -1,24 +1,8 @@
-<template>
-  <div :class="b()">
-    <slot />
-    <input
-      v-bind="$attrs"
-      ref="input"
-      type="file"
-      :class="b('input')"
-      :accept="accept"
-      :disabled="disabled"
-      @change="onChange"
-    >
-  </div>
-</template>
+import { use } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('uploader');
 
-export default create({
-  name: 'uploader',
-
+export default sfc({
   inheritAttrs: false,
 
   props: {
@@ -101,6 +85,27 @@ export default create({
         this.$refs.input && (this.$refs.input.value = '');
       }
     }
+  },
+
+  render(h) {
+    const {
+      accept,
+      disabled
+    } = this;
+
+    return (
+      <div class={bem()}>
+        {this.$slots.default}
+        <input
+          { ...{ attrs: this.$attrs } }
+          ref="input"
+          type="file"
+          accept={accept}
+          class={bem('input')}
+          disabled={disabled}
+          onChange={this.onChange}
+        />
+      </div>
+    );
   }
 });
-</script>
