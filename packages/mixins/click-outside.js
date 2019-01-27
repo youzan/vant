@@ -12,7 +12,7 @@ export default function (config) {
       on(document, config.event, config.handler);
     },
 
-    beforeDestroyed() {
+    beforeDestroy() {
       off(document, config.event, config.handler);
     }
   };
