@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, range } from '../utils';
 import Touch from '../mixins/touch';
 import ClickOutside from '../mixins/click-outside';
 
@@ -42,9 +42,12 @@ export default sfc({
     },
 
     swipeMove(offset = 0) {
-      this.offset = offset;
-      offset && (this.swiping = true);
-      !offset && (this.opened = false);
+      this.offset = range(offset, -this.rightWidth, this.leftWidth);
+      if (this.offset) {
+        this.swiping = true;
+      } else {
+        this.opened = false;
+      }
     },
 
     swipeLeaveTransition(direction) {
@@ -81,18 +84,10 @@ export default sfc({
       }
 
       this.touchMove(event);
-      const { deltaX } = this;
-
-      if (
-        (deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
-        (deltaX > 0 && ((deltaX > this.leftWidth || deltaX > 0) && !this.leftWidth))
-      ) {
-        return;
-      }
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
-        this.swipeMove(deltaX);
+        this.swipeMove(this.deltaX);
       }
     },
 
