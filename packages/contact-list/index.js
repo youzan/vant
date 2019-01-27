@@ -19,6 +19,7 @@ export default sfc({
       <div class={bem()}>
         <RadioGroup
           value={this.value}
+          class={bem('group')}
           onInput={event => {
             this.$emit('input', event);
           }}

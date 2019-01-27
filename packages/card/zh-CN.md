@@ -49,7 +49,7 @@ Vue.use(Card);
 | thumb | 左侧图片 URL | `String` | - | - |
 | title | 标题 | `String` | - | - |
 | desc | 描述 | `String` | - | - |
-| tag | 标签 | `String` | - | 1.3.4 |
+| tag | 图片角标 | `String` | - | 1.3.4 |
 | num | 商品数量 | `String | Number` | - | - |
 | price | 商品价格 | `String | Number` | - | - |
 | origin-price | 商品划线原价 | `String | Number` | - | 1.3.6 |
@@ -68,5 +68,6 @@ Vue.use(Card);
 | price | 自定义价格 |
 | origin-price | 自定义商品原价 |
 | thumb | 自定义图片 |
-| tags | 自定义描述下方的内容 |
+| tag | 自定义图片角标 |
+| tags | 自定义描述下方标签区域 |
 | footer | 自定义右下角内容 |
