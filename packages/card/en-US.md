@@ -68,5 +68,6 @@ Use slot to custom content.
 | price | Custom price |
 | origin-price | Custom origin price |
 | thumb | Custom thumb |
+| tag | Custom thumb tag |
 | tags | Custom tags |
 | footer | Custom footer |
