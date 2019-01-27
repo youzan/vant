@@ -25,6 +25,7 @@ export default sfc({
     const { thumb, $slots: slots } = this;
 
     const showThumb = slots.thumb || thumb;
+    const showTag = slots.tag || this.tag;
     const showNum = slots.num || isDef(this.num);
     const showPrice = slots.price || isDef(this.price);
     const showOriginPrice = slots['origin-price'] || isDef(this.originPrice);
@@ -37,10 +38,14 @@ export default sfc({
           ) : (
             <img class={bem('img')} src={thumb} />
           ))}
-        {this.tag && (
-          <Tag mark type="danger" class={bem('tag')}>
-            {this.tag}
-          </Tag>
+        {showTag && (
+          <div class={bem('tag')}>
+            {slots.tag || (
+              <Tag mark type="danger">
+                {this.tag}
+              </Tag>
+            )}
+          </div>
         )}
       </a>
     );
