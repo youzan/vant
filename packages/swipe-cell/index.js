@@ -1,48 +1,15 @@
-<template>
-  <div
-    v-clickoutside:touchstart="onClick"
-    :class="b()"
-    @click="onClick('cell')"
-    @touchstart="startDrag"
-    @touchmove="onDrag"
-    @touchend="endDrag"
-    @touchcancel="endDrag"
-  >
-    <div
-      :class="b('wrapper')"
-      :style="wrapperStyle"
-      @transitionend="swipe = false"
-    >
-      <div
-        v-if="leftWidth"
-        :class="b('left')"
-        @click.stop="onClick('left')"
-      >
-        <slot name="left" />
-      </div>
-      <slot />
-      <div
-        v-if="rightWidth"
-        :class="b('right')"
-        @click.stop="onClick('right')"
-      >
-        <slot name="right" />
-      </div>
-    </div>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
-import Clickoutside from '../utils/clickoutside';
+import { use } from '../utils';
 import Touch from '../mixins/touch';
+import ClickOutside from '../mixins/click-outside';
 
+const [sfc, bem] = use('swipe-cell');
 const THRESHOLD = 0.15;
 
-export default create({
-  name: 'swipe-cell',
-
-  mixins: [Touch],
+export default sfc({
+  mixins: [Touch, ClickOutside({
+    event: 'touchstart',
+    method: 'onClick'
+  })],
 
   props: {
     onClose: Function,
@@ -51,24 +18,11 @@ export default create({
     rightWidth: Number
   },
 
-  directives: {
-    Clickoutside
-  },
-
   data() {
     return {
       offset: 0,
       draging: false
     };
-  },
-
-  computed: {
-    wrapperStyle() {
-      return {
-        transform: `translate3d(${this.offset}px, 0, 0)`,
-        transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
-      };
-    }
   },
 
   methods: {
@@ -95,12 +49,12 @@ export default create({
 
     swipeLeaveTransition(direction) {
       const { offset, leftWidth, rightWidth } = this;
-      const threshold = this.opened ? (1 - THRESHOLD) : THRESHOLD;
+      const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
 
       // right
       if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
         this.open('right');
-      // left
+        // left
       } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
         this.open('left');
       } else {
@@ -129,8 +83,10 @@ export default create({
       this.touchMove(event);
       const { deltaX } = this;
 
-      if ((deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
-        (deltaX > 0 && ((deltaX > this.leftWidth || deltaX > 0) && !this.leftWidth))) {
+      if (
+        (deltaX < 0 && (-deltaX > this.rightWidth || !this.rightWidth)) ||
+        (deltaX > 0 && ((deltaX > this.leftWidth || deltaX > 0) && !this.leftWidth))
+      ) {
         return;
       }
 
@@ -164,6 +120,50 @@ export default create({
         this.swipeMove(0);
       }
     }
+  },
+
+  render(h) {
+    const onClick = (position, stop) => event => {
+      if (stop) {
+        event.stopPropagation();
+      }
+      this.onClick(position);
+    };
+
+    const wrapperStyle = {
+      transform: `translate3d(${this.offset}px, 0, 0)`,
+      transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
+    };
+
+    return (
+      <div
+        class={bem()}
+        onClick={onClick('cell')}
+        onTouchstart={this.startDrag}
+        onTouchmove={this.onDrag}
+        onTouchend={this.endDrag}
+        onTouchcancel={this.endDrag}
+      >
+        <div
+          class={bem('wrapper')}
+          style={wrapperStyle}
+          onTransitionend={() => {
+            this.swipe = false;
+          }}
+        >
+          {this.leftWidth && (
+            <div class={bem('left')} onClick={onClick('left', true)}>
+              {this.$slots.left}
+            </div>
+          )}
+          {this.$slots.default}
+          {this.rightWidth && (
+            <div class={bem('right')} onClick={onClick('right', true)}>
+              {this.$slots.right}
+            </div>
+          )}
+        </div>
+      </div>
+    );
   }
 });
-</script>
