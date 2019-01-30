@@ -18,11 +18,11 @@ export default sfc({
   },
 
   render(h) {
-    const { vertical } = this.$parent;
+    const { vertical, computedWidth, computedHeight } = this.$parent;
 
     const style = {
-      width: this.computedWidth + 'px',
-      height: vertical ? this.computedHeight + 'px' : '100%',
+      width: computedWidth + 'px',
+      height: vertical ? computedHeight + 'px' : '100%',
       transform: `translate${vertical ? 'Y' : 'X'}(${this.offset}px)`
     };
 
