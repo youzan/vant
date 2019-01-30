@@ -48,8 +48,10 @@ export default {
 
   watch: {
     value(val) {
+      const type = val ? 'open' : 'close';
       this.inited = this.inited || this.value;
-      this[val ? 'open' : 'close']();
+      this[type]();
+      this.$emit(type);
     },
 
     getContainer() {
