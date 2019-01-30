@@ -13,7 +13,11 @@ export default sfc({
     disabled: Boolean,
     checkedColor: String,
     labelPosition: String,
-    labelDisabled: Boolean
+    labelDisabled: Boolean,
+    shape: {
+      type: String,
+      default: 'round'
+    }
   },
 
   computed: {
@@ -29,6 +33,16 @@ export default sfc({
 
     isDisabled() {
       return this.parent ? this.parent.disabled || this.disabled : this.disabled;
+    },
+
+    iconStyle() {
+      const { checkedColor } = this;
+      if (checkedColor && this.currentValue === this.name && !this.isDisabled) {
+        return {
+          borderColor: checkedColor,
+          backgroundColor: checkedColor
+        };
+      }
     }
   },
 
@@ -37,6 +51,12 @@ export default sfc({
   },
 
   methods: {
+    onClickIcon() {
+      if (!this.isDisabled) {
+        this.currentValue = this.name;
+      }
+    },
+
     onClickLabel() {
       if (!this.isDisabled && !this.labelDisabled) {
         this.currentValue = this.name;
@@ -46,31 +66,35 @@ export default sfc({
 
   render(h) {
     const checked = this.currentValue === this.name;
-    const { isDisabled, checkedColor } = this;
-    const iconStyle = checkedColor && checked && !isDisabled && { color: checkedColor };
+    const CheckIcon = this.$scopedSlots.icon ? (
+      this.$scopedSlots.icon({ checked })
+    ) : (
+      <Icon name="success" style={this.iconStyle} />
+    );
+
+    const Label = this.$slots.default && (
+      <span
+        class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
+        onClick={this.onClickLabel}
+      >
+        {this.$slots.default}
+      </span>
+    );
 
     return (
       <div
-        class={bem({ disabled: isDisabled })}
+        class={bem()}
         onClick={() => {
           this.$emit('click');
         }}
       >
-        <span class={bem('input')}>
-          <input
-            vModel={this.currentValue}
-            type="radio"
-            class={bem('control')}
-            value={this.name}
-            disabled={isDisabled}
-          />
-          <Icon style={iconStyle} name={checked ? 'checked' : 'circle'} />
-        </span>
-        {this.$slots.default && (
-          <span class={bem('label', this.labelPosition)} onClick={this.onClickLabel}>
-            {this.$slots.default}
-          </span>
-        )}
+        <div
+          class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
+          onClick={this.onClickIcon}
+        >
+          {CheckIcon}
+        </div>
+        {Label}
       </div>
     );
   }

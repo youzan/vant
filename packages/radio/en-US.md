@@ -46,6 +46,33 @@ export default {
 <van-radio checked-color="#07c160">Radio</van-radio>
 ```
 
+#### Custom Icon
+
+Use icon slot to custom icon
+
+```html
+<van-radio v-model="checked">
+  Custom Icon
+  <img
+    slot="icon"
+    slot-scope="props"
+    :src="props.checked ? icon.active : icon.normal"
+  >
+</van-radio>
+```
+
+```js
+export default {
+  data() {
+    checked: true,
+    icon: {
+      normal: '//img.yzcdn.cn/icon-normal.png',
+      active: '//img.yzcdn.cn/icon-active.png'
+    }
+  }
+}
+```
+
 #### Inside a Cell
 
 ```html
@@ -66,10 +93,12 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | name | Radio name | `any` | - |
+| shape | Can be set to `square` | `String` | `round` |
 | disabled | Whether to disable radio | `Boolean` | `false` |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |
+
 
 ### RadioGroup API
 
@@ -83,3 +112,10 @@ export default {
 | Event | Description | Parameters |
 |------|------|------|
 | change | Triggered when value changed | current value |
+
+### Radio Slot
+
+| Name | Description | slot-scope |
+|------|------|------|
+| - | Custom label | - |
+| icon | Custom icon | checked: whether to be checked |
