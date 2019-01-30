@@ -4,56 +4,67 @@
   overflow: hidden;
   user-select: none;
 
-  &__input,
+  &__icon,
   &__label {
     display: inline-block;
     vertical-align: middle;
-  }
-
-  &__input {
-    height: 1em;
-    position: relative;
-    font-size: @radio-size;
-  }
-
-  &__control {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__label {
     line-height: @radio-size;
-    margin-left: 10px;
+  }
 
-    &--left {
-      float: left;
-      margin: 0 10px 0 0;
+  &__icon {
+    height: @radio-size;
+
+    .van-icon {
+      font-size: 14px;
+      color: transparent;
+      text-align: center;
+      line-height: inherit;
+      width: @radio-size;
+      height: @radio-size;
+      box-sizing: border-box;
+      border: 1px solid @radio-border-color;
+      transition: @radio-transition-duration;
+    }
+
+    &--round {
+      .van-icon {
+        border-radius: 100%;
+      }
+    }
+
+    &--checked {
+      .van-icon {
+        color: @white;
+        border-color: @radio-checked-icon-color;
+        background-color: @radio-checked-icon-color;
+      }
+    }
+
+    &--disabled {
+      .van-icon {
+        border-color: @radio-disabled-icon-color;
+        background-color: @radio-disabled-background-color;
+      }
+    }
+
+    &--disabled&--checked {
+      .van-icon {
+        color: @radio-disabled-icon-color;
+      }
     }
   }
 
-  .van-icon {
-    width: 1em;
-    pointer-events: none;
-  }
+  &__label {
+    color: @radio-label-color;
+    margin-left: @radio-label-margin;
 
-  .van-icon-checked {
-    color: @blue;
-  }
+    &--left {
+      float: left;
+      margin: 0 @radio-label-margin 0 0;
+    }
 
-  .van-icon-circle {
-    color: @gray;
-  }
-
-  &--disabled {
-    .van-icon {
-      color: @gray-light;
-      border-radius: 100%;
-      background-color: @background-color;
+    &--disabled {
+      color: @radio-disabled-label-color;
     }
   }
 }
