@@ -9,14 +9,8 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
     <div class="van-tabs__content">
-      <div class="van-tab__pane" style="display:none;">
-        <!---->
-        <!---->
-      </div>
-      <div class="van-tab__pane" style="display:none;">
-        <!---->
-        <!---->
-      </div>
+      <div class="van-tab__pane" style="display:none;"></div>
+      <div class="van-tab__pane" style="display:none;"></div>
     </div>
   </div>
 </div>
