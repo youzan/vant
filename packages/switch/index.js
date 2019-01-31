@@ -1,28 +1,11 @@
 import { use } from '../utils';
 import Loading from '../loading';
+import SwitchMixin from '../mixins/switch';
 
 const [sfc, bem] = use('switch');
 
 export default sfc({
-  props: {
-    value: null,
-    loading: Boolean,
-    disabled: Boolean,
-    activeColor: String,
-    inactiveColor: String,
-    activeValue: {
-      type: null,
-      default: true
-    },
-    inactiveValue: {
-      type: null,
-      default: false
-    },
-    size: {
-      type: String,
-      default: '30px'
-    }
-  },
+  mixins: [SwitchMixin],
 
   methods: {
     onClick() {
