@@ -1,27 +1,9 @@
-<template>
-  <div
-    :class="b({
-      on: value === activeValue,
-      disabled
-    })"
-    :style="style"
-    @click="onClick"
-  >
-    <div :class="b('node')">
-      <loading
-        v-if="loading"
-        :class="b('loading')"
-      />
-    </div>
-  </div>
-</template>
+import { use } from '../utils';
+import Loading from '../loading';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('switch');
 
-export default create({
-  name: 'switch',
-
+export default sfc({
   props: {
     value: null,
     loading: Boolean,
@@ -42,15 +24,6 @@ export default create({
     }
   },
 
-  computed: {
-    style() {
-      return {
-        fontSize: this.size,
-        backgroundColor: this.value ? this.activeColor : this.inactiveColor
-      };
-    }
-  },
-
   methods: {
     onClick() {
       if (!this.disabled && !this.loading) {
@@ -60,6 +33,26 @@ export default create({
         this.$emit('change', value);
       }
     }
+  },
+
+  render(h) {
+    const { value } = this;
+    const style = {
+      fontSize: this.size,
+      backgroundColor: value ? this.activeColor : this.inactiveColor
+    };
+
+    return (
+      <div
+        class={bem({
+          on: value === this.activeValue,
+          disabled: this.disabled
+        })}
+        style={style}
+        onClick={this.onClick}
+      >
+        <div class={bem('node')}>{this.loading && <Loading class={bem('loading')} />}</div>
+      </div>
+    );
   }
 });
-</script>
