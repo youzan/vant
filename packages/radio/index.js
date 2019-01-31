@@ -1,24 +1,15 @@
 import { use } from '../utils';
-import Icon from '../icon';
-import findParent from '../mixins/find-parent';
+import CheckboxMixin from '../mixins/checkbox';
 
 const [sfc, bem] = use('radio');
 
 export default sfc({
-  mixins: [findParent],
-
-  props: {
-    name: null,
-    value: null,
-    disabled: Boolean,
-    checkedColor: String,
-    labelPosition: String,
-    labelDisabled: Boolean,
-    shape: {
-      type: String,
-      default: 'round'
-    }
-  },
+  mixins: [
+    CheckboxMixin({
+      bem,
+      parent: 'van-radio-group'
+    })
+  ],
 
   computed: {
     currentValue: {
@@ -31,23 +22,9 @@ export default sfc({
       }
     },
 
-    isDisabled() {
-      return this.parent ? this.parent.disabled || this.disabled : this.disabled;
-    },
-
-    iconStyle() {
-      const { checkedColor } = this;
-      if (checkedColor && this.currentValue === this.name && !this.isDisabled) {
-        return {
-          borderColor: checkedColor,
-          backgroundColor: checkedColor
-        };
-      }
+    checked() {
+      return this.currentValue === this.name;
     }
-  },
-
-  created() {
-    this.findParent('van-radio-group');
   },
 
   methods: {
@@ -62,40 +39,5 @@ export default sfc({
         this.currentValue = this.name;
       }
     }
-  },
-
-  render(h) {
-    const checked = this.currentValue === this.name;
-    const CheckIcon = this.$scopedSlots.icon ? (
-      this.$scopedSlots.icon({ checked })
-    ) : (
-      <Icon name="success" style={this.iconStyle} />
-    );
-
-    const Label = this.$slots.default && (
-      <span
-        class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
-        onClick={this.onClickLabel}
-      >
-        {this.$slots.default}
-      </span>
-    );
-
-    return (
-      <div
-        class={bem()}
-        onClick={() => {
-          this.$emit('click');
-        }}
-      >
-        <div
-          class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
-          onClick={this.onClickIcon}
-        >
-          {CheckIcon}
-        </div>
-        {Label}
-      </div>
-    );
   }
 });
