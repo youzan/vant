@@ -1,26 +1,16 @@
 import { use } from '../utils';
 import Cell from '../cell';
 import Switch from '../switch';
+import SwitchMixin from '../mixins/switch';
 
 const [sfc, bem] = use('switch-cell');
 
 export default sfc({
+  mixins: [SwitchMixin],
+
   props: {
-    value: null,
     title: String,
     border: Boolean,
-    loading: Boolean,
-    disabled: Boolean,
-    activeColor: String,
-    inactiveColor: String,
-    activeValue: {
-      type: null,
-      default: true
-    },
-    inactiveValue: {
-      type: null,
-      default: false
-    },
     size: {
       type: String,
       default: '24px'
