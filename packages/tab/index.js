@@ -1,26 +1,10 @@
-<template>
-  <div
-    v-show="isSelected || parent.animated"
-    :class="b('pane')"
-  >
-    <slot v-if="inited" />
-    <div
-      v-if="$slots.title"
-      ref="title"
-    >
-      <slot name="title" />
-    </div>
-  </div>
-</template>
-
-<script>
 /* eslint-disable object-shorthand */
-import create from '../utils/create';
+import { use } from '../utils';
 import findParent from '../mixins/find-parent';
 
-export default create({
-  name: 'tab',
+const [sfc, bem] = use('tab');
 
+export default sfc({
   mixins: [findParent],
 
   props: {
@@ -39,14 +23,14 @@ export default create({
       return this.parent.tabs.indexOf(this);
     },
 
-    isSelected() {
+    selected() {
       return this.index === this.parent.curActive;
     }
   },
 
   watch: {
     'parent.curActive'() {
-      this.inited = this.inited || this.isSelected;
+      this.inited = this.inited || this.selected;
     },
 
     title() {
@@ -70,6 +54,15 @@ export default create({
 
   beforeDestroy() {
     this.parent.tabs.splice(this.index, 1);
+  },
+
+  render(h) {
+    const slots = this.$slots;
+    return (
+      <div v-show={this.selected || this.parent.animated} class={bem('pane')}>
+        {this.inited && slots.default}
+        {slots.title && <div ref="title">{slots.title}</div>}
+      </div>
+    );
   }
 });
-</script>
