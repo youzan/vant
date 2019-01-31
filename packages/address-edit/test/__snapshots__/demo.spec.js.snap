@@ -41,10 +41,8 @@ exports[`renders demo correctly 1`] = `
       <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
         <div class="van-cell__title"><span>设为默认收货地址</span></div>
         <div class="van-cell__value">
-          <div title="设为默认收货地址" class="van-switch" style="font-size:24px;background-color:undefined;">
-            <div class="van-switch__node">
-              <!---->
-            </div>
+          <div class="van-switch" style="font-size:24px;background-color:undefined;">
+            <div class="van-switch__node"></div>
           </div>
         </div>
       </div>
