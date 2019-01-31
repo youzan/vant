@@ -1,28 +1,10 @@
-<template>
-  <cell
-    center
-    :title="title"
-    :border="border"
-    :class="b()"
-  >
-    <van-switch
-      v-bind="$props"
-      @input="$emit('input', $event)"
-    />
-  </cell>
-</template>
+import { use } from '../utils';
+import Cell from '../cell';
+import Switch from '../switch';
 
-<script>
-import VanSwitch from '../switch';
-import create from '../utils/create';
+const [sfc, bem] = use('switch-cell');
 
-export default create({
-  name: 'switch-cell',
-
-  components: {
-    VanSwitch
-  },
-
+export default sfc({
   props: {
     value: null,
     title: String,
@@ -49,6 +31,18 @@ export default create({
     value() {
       this.$emit('change', this.value);
     }
+  },
+
+  render(h) {
+    return (
+      <Cell center title={this.title} border={this.border} class={bem()}>
+        <Switch
+          {...{ props: this.$props }}
+          onInput={value => {
+            this.$emit('input', value);
+          }}
+        />
+      </Cell>
+    );
   }
 });
-</script>

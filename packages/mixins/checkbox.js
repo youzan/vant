@@ -4,7 +4,7 @@
 import Icon from '../icon';
 import findParent from './find-parent';
 
-export default ({ parent, bem }) => ({
+export default (parent, bem) => ({
   mixins: [findParent],
 
   props: {
