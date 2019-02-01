@@ -1,40 +1,12 @@
-<template>
-  <cell-group :class="b()">
-    <template v-for="(message, index) in messages">
-      <cell
-        v-if="message.type === 'image'"
-        :class="b('image-cell')"
-        label="仅限一张"
-        :key="`${goodsId}-${index}`"
-        :required="message.required == '1'"
-        :title="message.name"
-      >
-        <sku-img-uploader
-          v-model="messageValues[index].value"
-          :upload-img="messageConfig.uploadImg"
-          :max-size="messageConfig.uploadMaxSize"
-        />
-      </cell>
-      <field
-        v-else
-        v-model="messageValues[index].value"
-        maxlength="200"
-        :key="`${goodsId}-${index}`"
-        :required="message.required == '1'"
-        :label="message.name"
-        :placeholder="getPlaceholder(message)"
-        :type="getType(message)"
-      />
-    </template>
-  </cell-group>
-</template>
-
-<script>
-import create from '../../utils/create';
+import { use } from '../../utils';
+import Cell from '../../cell';
+import CellGroup from '../../cell-group';
 import Field from '../../field';
 import validateEmail from '../../utils/validate/email';
 import validateNumber from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
+
+const [sfc, bem] = use('sku-messages');
 
 const PLACEHOLDER = {
   id_no: '输入身份证号码',
@@ -47,14 +19,7 @@ const PLACEHOLDER = {
   mobile: '输入手机号码'
 };
 
-export default create({
-  name: 'sku-messages',
-
-  components: {
-    SkuImgUploader,
-    Field
-  },
-
+export default sfc({
   props: {
     messages: Array,
     messageConfig: Object,
@@ -70,12 +35,6 @@ export default create({
   watch: {
     messages(val) {
       this.messageValues = this.resetMessageValues(val);
-    }
-  },
-
-  computed: {
-    messagePlaceholderMap() {
-      return this.messageConfig.placeholderMap || {};
     }
   },
 
@@ -125,7 +84,8 @@ export default create({
 
     getPlaceholder(message) {
       const type = +message.multiple === 1 ? 'textarea' : message.type;
-      return this.messagePlaceholderMap[type] || PLACEHOLDER[type];
+      const map = this.messageConfig.placeholderMap || {};
+      return map[type] || PLACEHOLDER[type];
     },
 
     validateMessages() {
@@ -137,7 +97,7 @@ export default create({
 
         if (value === '') {
           // 必填字段的校验
-          if (message.required == '1') { // eslint-disable-line
+          if (String(message.required) === '1') { // eslint-disable-line
             const textType = message.type === 'image'
               ? '请上传'
               : '请填写';
@@ -159,6 +119,37 @@ export default create({
         }
       }
     }
+  },
+
+  render(h) {
+    return (
+      <CellGroup class={bem()}>
+        {this.messages.map((message, index) => (message.type === 'image' ? (
+          <Cell
+            class={bem('image-cell')}
+            label="仅限一张"
+            title={message.name}
+            key={`${this.goodsId}-${index}`}
+            required={String(message.required) === '1'}
+          >
+            <SkuImgUploader
+              vModel={this.messageValues[index].value}
+              uploadImg={this.messageConfig.uploadImg}
+              maxSize={this.messageConfig.uploadMaxSize}
+            />
+          </Cell>
+        ) : (
+          <Field
+            vModel={this.messageValues[index].value}
+            maxlength="200"
+            label={message.name}
+            key={`${this.goodsId}-${index}`}
+            required={String(message.required) === '1'}
+            placeholder={this.getPlaceholder(message)}
+            type={this.getType(message)}
+          />
+        )))}
+      </CellGroup>
+    );
   }
 });
-</script>

@@ -1,132 +1,3 @@
-<template>
-  <popup
-    v-if="!isSkuEmpty"
-    v-model="show"
-    position="bottom"
-    class="van-sku-container"
-    :close-on-click-overlay="closeOnClickOverlay"
-    :get-container="getContainer"
-  >
-    <!-- sku-header -->
-    <slot
-      name="sku-header"
-      :sku-event-bus="skuEventBus"
-      :selected-sku="selectedSku"
-      :selected-sku-comb="selectedSkuComb"
-    >
-      <sku-header
-        :sku-event-bus="skuEventBus"
-        :selected-sku="selectedSku"
-        :goods="goods"
-        :sku="sku"
-      >
-        <slot
-          name="sku-header-price"
-          :price="price"
-          :selected-sku-comb="selectedSkuComb"
-        >
-          <div class="van-sku__goods-price">
-            <span class="van-sku__price-symbol">￥</span>
-            <span
-              v-text="price"
-              class="van-sku__price-num"
-            />
-          </div>
-        </slot>
-      </sku-header>
-    </slot>
-    <div
-      class="van-sku-body"
-      :style="bodyStyle"
-    >
-      <!-- sku-body-top -->
-      <slot
-        name="sku-body-top"
-        :selected-sku="selectedSku"
-        :sku-event-bus="skuEventBus"
-      />
-      <!-- sku-group -->
-      <slot
-        name="sku-group"
-        :selected-sku="selectedSku"
-        :sku-event-bus="skuEventBus"
-      >
-        <div
-          v-if="hasSku"
-          :class="skuGroupClass"
-        >
-          <sku-row
-            v-for="(skuTreeItem, index) in skuTree"
-            :key="index"
-            :sku-row="skuTreeItem"
-          >
-            <sku-row-item
-              v-for="(skuValue, valueIndex) in skuTreeItem.v"
-              :key="valueIndex"
-              :sku-key-str="skuTreeItem.k_s"
-              :sku-value="skuValue"
-              :sku-event-bus="skuEventBus"
-              :selected-sku="selectedSku"
-              :sku-list="sku.list"
-            />
-          </sku-row>
-        </div>
-      </slot>
-      <!-- extra-sku-group -->
-      <slot
-        name="extra-sku-group"
-        :sku-event-bus="skuEventBus"
-      />
-      <!-- sku-stepper -->
-      <slot
-        name="sku-stepper"
-        :sku-event-bus="skuEventBus"
-        :selected-sku="selectedSku"
-        :selected-sku-comb="selectedSkuComb"
-        :selected-num="selectedNum"
-      >
-        <sku-stepper
-          ref="skuStepper"
-          :sku-event-bus="skuEventBus"
-          :selected-sku="selectedSku"
-          :selected-sku-comb="selectedSkuComb"
-          :selected-num="selectedNum"
-          :stepper-title="stepperTitle"
-          :sku-stock-num="sku.stock_num"
-          :hide-quota-text="hideQuotaText"
-          :quota="quota"
-          :quota-used="quotaUsed"
-          :disable-stepper-input="disableStepperInput"
-          :hide-stock="hideStock"
-          :custom-stepper-config="customStepperConfig"
-          @change="$emit('stepper-change', $event)"
-        />
-      </slot>
-      <!-- sku-messages -->
-      <slot name="sku-messages">
-        <sku-messages
-          ref="skuMessages"
-          :goods-id="goodsId"
-          :message-config="messageConfig"
-          :messages="sku.messages"
-        />
-      </slot>
-    </div>
-    <!-- sku-actions -->
-    <slot
-      name="sku-actions"
-      :sku-event-bus="skuEventBus"
-    >
-      <sku-actions
-        :sku-event-bus="skuEventBus"
-        :buy-text="buyText"
-        :show-add-cart-btn="showAddCartBtn"
-      />
-    </slot>
-  </popup>
-</template>
-
-<script>
 /* eslint-disable camelcase */
 import Vue from 'vue';
 import Popup from '../popup';
@@ -138,30 +9,14 @@ import SkuRowItem from './components/SkuRowItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import {
-  isAllSelected,
-  isSkuChoosable,
-  getSkuComb,
-  getSelectedSkuValues
-} from './utils/skuHelper';
+import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
-import create from '../utils/create';
+import { use, useSlots } from '../utils';
 
+const [sfc] = use('sku');
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
-export default create({
-  name: 'sku',
-
-  components: {
-    Popup,
-    SkuHeader,
-    SkuRow,
-    SkuRowItem,
-    SkuStepper,
-    SkuMessages,
-    SkuActions
-  },
-
+export default sfc({
   props: {
     sku: Object,
     goods: Object,
@@ -221,10 +76,7 @@ export default create({
     show(val) {
       this.$emit('input', val);
       if (!val) {
-        const selectedSkuValues = getSelectedSkuValues(
-          this.sku.tree,
-          this.selectedSku
-        );
+        const selectedSkuValues = getSelectedSkuValues(this.sku.tree, this.selectedSku);
 
         this.$emit('sku-close', {
           selectedSkuValues,
@@ -374,15 +226,11 @@ export default create({
     },
 
     getSkuCartMessages() {
-      return this.$refs.skuMessages
-        ? this.$refs.skuMessages.getCartMessages()
-        : {};
+      return this.$refs.skuMessages ? this.$refs.skuMessages.getCartMessages() : {};
     },
 
     validateSkuMessages() {
-      return this.$refs.skuMessages
-        ? this.$refs.skuMessages.validateMessages()
-        : '';
+      return this.$refs.skuMessages ? this.$refs.skuMessages.validateMessages() : '';
     },
 
     validateSku() {
@@ -493,6 +341,121 @@ export default create({
         cartMessages: this.getSkuCartMessages()
       };
     }
+  },
+
+  render(h) {
+    if (this.isSkuEmpty) {
+      return;
+    }
+
+    const {
+      sku,
+      goods,
+      price,
+      skuEventBus,
+      selectedSku,
+      selectedNum,
+      stepperTitle,
+      hideQuotaText,
+      selectedSkuComb
+    } = this;
+
+    const slotsProps = {
+      price,
+      selectedNum,
+      skuEventBus,
+      selectedSku,
+      selectedSkuComb
+    };
+    const slots = name => useSlots(this)(name, slotsProps);
+
+    const Header = slots('sku-header') || (
+      <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>
+        {slots('sku-header-price') || (
+          <div class="van-sku__goods-price">
+            <span class="van-sku__price-symbol">￥</span>
+            <span class="van-sku__price-num">{price}</span>
+          </div>
+        )}
+      </SkuHeader>
+    );
+
+    const Group =
+      slots('sku-group') ||
+      (this.hasSku && (
+        <div class={this.skuGroupClass}>
+          {this.skuTree.map(skuTreeItem => (
+            <SkuRow skuRow={skuTreeItem}>
+              {skuTreeItem.v.map(skuValue => (
+                <SkuRowItem
+                  skuList={sku.list}
+                  skuValue={skuValue}
+                  selectedSku={selectedSku}
+                  skuEventBus={skuEventBus}
+                  skuKeyStr={skuTreeItem.k_s}
+                />
+              ))}
+            </SkuRow>
+          ))}
+        </div>
+      ));
+
+    const Stepper = slots('sku-stepper') || (
+      <SkuStepper
+        ref="skuStepper"
+        quota={this.quota}
+        hideStock={this.hideStock}
+        quotaUsed={this.quotaUsed}
+        skuEventBus={skuEventBus}
+        selectedNum={selectedNum}
+        selectedSku={selectedSku}
+        stepperTitle={stepperTitle}
+        skuStockNum={sku.stock_num}
+        hideQuotaText={hideQuotaText}
+        selectedSkuComb={selectedSkuComb}
+        disableStepperInput={this.disableStepperInput}
+        customStepperConfig={this.customStepperConfig}
+        onChange={event => {
+          this.$emit('stepper-change', event);
+        }}
+      />
+    );
+
+    const Messages = slots('sku-messages') || (
+      <SkuMessages
+        ref="skuMessages"
+        goodsId={this.goodsId}
+        messageConfig={this.messageConfig}
+        messages={sku.messages}
+      />
+    );
+
+    const Actions = slots('sku-actions') || (
+      <SkuActions
+        buyText={this.buyText}
+        skuEventBus={skuEventBus}
+        showAddCartBtn={this.showAddCartBtn}
+      />
+    );
+
+    return (
+      <Popup
+        vModel={this.show}
+        position="bottom"
+        class="van-sku-container"
+        getContainer={this.getContainer}
+        closeOnClickOverlay={this.closeOnClickOverlay}
+      >
+        {Header}
+        <div class="van-sku-body" style={this.bodyStyle}>
+          {slots('sku-body-top')}
+          {Group}
+          {slots('extra-sku-group')}
+          {Stepper}
+          {Messages}
+        </div>
+        {Actions}
+      </Popup>
+    );
   }
 });
-</script>

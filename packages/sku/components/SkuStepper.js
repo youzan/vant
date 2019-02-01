@@ -1,55 +1,22 @@
-<template>
-  <div class="van-sku-stepper-stock">
-    <div class="van-sku-stepper-container">
-      <div class="van-sku__stepper-title">{{ stepperTitle || '购买数量' }}：</div>
-      <stepper
-        class="van-sku__stepper"
-        v-model="currentNum"
-        :min="1"
-        :max="stepperLimit"
-        :disable-input="disableStepperInput"
-        @overlimit="onOverLimit"
-        @change="onChange"
-      />
-    </div>
-    <div
-      v-if="!hideStock"
-      v-text="stockText"
-      class="van-sku__stock"
-    />
-    <div
-      v-if="!hideQuotaText && quotaText"
-      v-text="quotaText"
-      class="van-sku__quota"
-    />
-  </div>
-</template>
-
-<script>
-import create from '../../utils/create';
+import { use } from '../../utils';
 import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
 
+const [sfc] = use('sku-stepper');
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
-export default create({
-  name: 'sku-stepper',
-
-  components: {
-    Stepper
-  },
-
+export default sfc({
   props: {
     quota: Number,
-    hideQuotaText: Boolean,
     quotaUsed: Number,
     hideStock: Boolean,
     skuEventBus: Object,
     skuStockNum: Number,
     selectedSku: Object,
-    selectedSkuComb: Object,
     selectedNum: Number,
     stepperTitle: String,
+    hideQuotaText: Boolean,
+    selectedSkuComb: Object,
     disableStepperInput: Boolean,
     customStepperConfig: Object
   },
@@ -142,6 +109,27 @@ export default create({
       handleStepperChange && handleStepperChange(currentValue);
       this.$emit('change', currentValue);
     }
+  },
+
+  render(h) {
+    return (
+      <div class="van-sku-stepper-stock">
+        <div class="van-sku-stepper-container">
+          <div class="van-sku__stepper-title">{this.stepperTitle || '购买数量'}：</div>
+          <Stepper
+            vModel={this.currentNum}
+            class="van-sku__stepper"
+            max={this.stepperLimit}
+            disableInput={this.disableStepperInput}
+            onOverlimit={this.onOverLimit}
+            onChange={this.onChange}
+          />
+        </div>
+        {!this.hideStock && <div class="van-sku__stock">{this.stockText}</div>}
+        {!this.hideQuotaText && this.quotaText && (
+          <div class="van-sku__quota">{this.quotaText}</div>
+        )}
+      </div>
+    );
   }
 });
-</script>
