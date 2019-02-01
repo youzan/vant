@@ -1,19 +1,8 @@
-<template>
-  <div
-    class="van-hairline--top-bottom"
-    :class="b({ fixed })"
-    :style="style"
-  >
-    <slot />
-  </div>
-</template>
+import { use } from '../utils';
 
-<script>
-import create from '../utils/create';
+const [sfc, bem] = use('tabbar');
 
-export default create({
-  name: 'tabbar',
-
+export default sfc({
   data() {
     return {
       items: []
@@ -30,14 +19,6 @@ export default create({
     zIndex: {
       type: Number,
       default: 1
-    }
-  },
-
-  computed: {
-    style() {
-      return {
-        zIndex: this.zIndex
-      };
     }
   },
 
@@ -64,6 +45,16 @@ export default create({
         this.$emit('change', active);
       }
     }
+  },
+
+  render(h) {
+    return (
+      <div
+        style={{ zIndex: this.zIndex }}
+        class={['van-hairline--top-bottom', bem({ fixed: this.fixed })]}
+      >
+        {this.$slots.default}
+      </div>
+    );
   }
 });
-</script>

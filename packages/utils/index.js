@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import use from './use';
+import { useSlots } from './slots';
 
 const isServer = Vue.prototype.$isServer;
 
@@ -44,6 +45,7 @@ export {
   isObj,
   isDef,
   isServer,
+  useSlots,
   camelize,
   isAndroid
 };
