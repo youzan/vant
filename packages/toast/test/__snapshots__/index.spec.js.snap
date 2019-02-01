@@ -3,7 +3,5 @@
 exports[`create a forbidClick toast 1`] = `
 <div class="van-toast van-toast--text van-toast--middle" style="display: none;" name="van-fade">
   <div></div>
-  <!---->
-  <!---->
 </div>
 `;
