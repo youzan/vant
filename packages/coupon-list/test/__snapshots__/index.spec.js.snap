@@ -117,7 +117,9 @@ exports[`render coupon list 1`] = `
           </div>
         </div>
       </div>
-      <div class="van-tab__pane" style="display: none;"></div>
+      <div class="van-tab__pane" style="display: none;">
+        <!---->
+      </div>
     </div>
   </div><button class="van-button van-button--default van-button--large van-coupon-list__close"><span class="van-button__text">不使用优惠</span></button>
 </div>

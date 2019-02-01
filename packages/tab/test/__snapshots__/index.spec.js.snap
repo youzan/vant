@@ -8,11 +8,16 @@ exports[`change tabs data 1`] = `
     </div>
   </div>
   <div class="van-tabs__content">
-    <div class="van-tab__pane" style="display: none;"></div>
     <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
       <div><span>title2</span></div>
     </div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -31,8 +36,12 @@ exports[`change tabs data 2`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="">Text</div>
-    <div class="van-tab__pane" style="display: none;"></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -51,8 +60,12 @@ exports[`click to switch tab 1`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="">Text</div>
-    <div class="van-tab__pane" style="display: none;"></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -71,8 +84,12 @@ exports[`click to switch tab 2`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="display: none;">Text</div>
-    <div class="van-tab__pane" style=""></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -91,8 +108,12 @@ exports[`swipe to switch tab 1`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="">Text</div>
-    <div class="van-tab__pane" style="display: none;"></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -111,8 +132,12 @@ exports[`swipe to switch tab 2`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="display: none;">Text</div>
-    <div class="van-tab__pane" style=""></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -131,8 +156,12 @@ exports[`swipe to switch tab 3`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="display: none;">Text</div>
-    <div class="van-tab__pane" style=""></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;
@@ -151,8 +180,12 @@ exports[`swipe to switch tab 4`] = `
   </div>
   <div class="van-tabs__content">
     <div class="van-tab__pane" style="">Text</div>
-    <div class="van-tab__pane" style="display: none;"></div>
-    <div class="van-tab__pane" style="display: none;"></div>
+    <div class="van-tab__pane" style="display: none;">
+      Text
+    </div>
+    <div class="van-tab__pane" style="display: none;">
+      <!---->
+    </div>
   </div>
 </div>
 `;

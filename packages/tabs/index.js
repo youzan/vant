@@ -1,69 +1,13 @@
-<template>
-  <div :class="b([type])">
-    <div
-      ref="wrap"
-      :style="wrapStyle"
-      :class="[
-        b('wrap', { scrollable }),
-        { 'van-hairline--top-bottom': type === 'line' }
-      ]"
-    >
-      <div
-        ref="nav"
-        :class="b('nav', [type])"
-        :style="navStyle"
-      >
-        <div
-          v-if="type === 'line'"
-          :class="b('line')"
-          :style="lineStyle"
-        />
-        <div
-          v-for="(tab, index) in tabs"
-          ref="tabs"
-          class="van-tab"
-          :class="{
-            'van-tab--active': index === curActive,
-            'van-tab--disabled': tab.disabled,
-            'van-tab--complete': !ellipsis
-          }"
-          :style="getTabStyle(tab, index)"
-          @click="onClick(index)"
-        >
-          <span
-            v-text="tab.title"
-            ref="title"
-            :class="{ 'van-ellipsis': ellipsis }"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      ref="content"
-      :class="b('content', { animated })"
-    >
-      <div
-        v-if="animated"
-        :class="b('track')"
-        :style="trackStyle"
-      >
-        <slot />
-      </div>
-      <slot v-else />
-    </div>
-  </div>
-</template>
-
-<script>
-import create from '../utils/create';
+import { use, isDef } from '../utils';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
 import scrollUtils from '../utils/scroll';
 import Touch from '../mixins/touch';
 
-export default create({
-  name: 'tabs',
+const [sfc, bem] = use('tabs');
+const tabBem = use('tab')[1];
 
+export default sfc({
   mixins: [Touch],
 
   model: {
@@ -273,7 +217,8 @@ export default create({
     onScroll() {
       const scrollTop = scrollUtils.getScrollTop(window) + this.offsetTop;
       const elTopToPageTop = scrollUtils.getElementTop(this.$el);
-      const elBottomToPageTop = elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
+      const elBottomToPageTop =
+        elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
         this.position = 'bottom';
       } else if (scrollTop > elTopToPageTop) {
@@ -301,7 +246,7 @@ export default create({
 
         const tab = tabs[this.curActive];
         const { lineWidth, lineHeight } = this;
-        const width = this.isDef(lineWidth) ? lineWidth : (tab.offsetWidth / 2);
+        const width = isDef(lineWidth) ? lineWidth : tab.offsetWidth / 2;
         const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
 
         const lineStyle = {
@@ -314,7 +259,7 @@ export default create({
           lineStyle.transitionDuration = `${this.duration}s`;
         }
 
-        if (this.isDef(lineHeight)) {
+        if (isDef(lineHeight)) {
           const height = `${lineHeight}px`;
           lineStyle.height = height;
           lineStyle.borderRadius = height;
@@ -334,7 +279,7 @@ export default create({
 
     setCurActive(active) {
       active = this.findAvailableTab(active, active < this.curActive);
-      if (this.isDef(active) && active !== this.curActive) {
+      if (isDef(active) && active !== this.curActive) {
         this.$emit('input', active);
 
         if (this.curActive !== null) {
@@ -390,7 +335,7 @@ export default create({
       }
 
       let count = 0;
-      const frames = Math.round(this.duration * 1000 / 16);
+      const frames = Math.round((this.duration * 1000) / 16);
       const animate = () => {
         el.scrollLeft += (to - from) / frames;
         /* istanbul ignore next */
@@ -428,11 +373,58 @@ export default create({
       }
 
       if (this.scrollable && this.ellipsis) {
-        style.flexBasis = 88 / (this.swipeThreshold) + '%';
+        style.flexBasis = 88 / this.swipeThreshold + '%';
       }
 
       return style;
     }
+  },
+
+  render(h) {
+    const { type, ellipsis, animated, scrollable } = this;
+
+    const Nav = this.tabs.map((tab, index) => (
+      <div
+        ref="tabs"
+        refInFor
+        class={tabBem({
+          active: index === this.curActive,
+          disabled: tab.disabled,
+          complete: !ellipsis
+        })}
+        style={this.getTabStyle(tab, index)}
+        onClick={() => {
+          this.onClick(index);
+        }}
+      >
+        <span ref="title" refInFor class={{ 'van-ellipsis': ellipsis }}>
+          {tab.title}
+        </span>
+      </div>
+    ));
+
+    return (
+      <div class={bem([type])}>
+        <div
+          ref="wrap"
+          style={this.wrapStyle}
+          class={[bem('wrap', { scrollable }), { 'van-hairline--top-bottom': type === 'line' }]}
+        >
+          <div ref="nav" class={bem('nav', [type])} style={this.navStyle}>
+            {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
+            {Nav}
+          </div>
+        </div>
+        <div ref="content" class={bem('content', { animated })}>
+          {animated ? (
+            <div class={bem('track')} style={this.trackStyle}>
+              {this.$slots.default}
+            </div>
+          ) : (
+            this.$slots.default
+          )}
+        </div>
+      </div>
+    );
   }
 });
-</script>
