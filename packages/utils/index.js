@@ -4,6 +4,8 @@ export { use, useSlots } from './use';
 
 export const isServer = Vue.prototype.$isServer;
 
+export function noop() {}
+
 export function isDef(value) {
   return value !== undefined && value !== null;
 }
