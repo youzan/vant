@@ -25,14 +25,14 @@ export default sfc(
       }
     },
 
-    render(h, context) {
+    render(h, context, inherit) {
       const { props, listeners } = context;
       const { tip, price } = props;
       const slots = context.slots();
       const hasPrice = typeof price === 'number';
 
       return (
-        <div class={bem()} {...context.data}>
+        <div class={bem()} {...inherit}>
           {slots.top}
           {(slots.tip || tip) && (
             <div class={bem('tip')}>

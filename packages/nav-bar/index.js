@@ -21,7 +21,7 @@ export default sfc(
       }
     },
 
-    render(h, context) {
+    render(h, context, inherit) {
       const { props, listeners } = context;
       const slots = context.slots();
 
@@ -29,7 +29,7 @@ export default sfc(
         <div
           class={[bem({ fixed: props.fixed }), { 'van-hairline--bottom': props.border }]}
           style={{ zIndex: props.zIndex }}
-          {...context.data}
+          {...inherit}
         >
           <div
             class={bem('left')}
