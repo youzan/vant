@@ -1,7 +1,7 @@
 import { use } from '../utils';
 import Loading from '../loading';
-import scrollUtils from '../utils/scroll';
 import Touch from '../mixins/touch';
+import { getScrollTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem, t] = use('pull-refresh');
 
@@ -49,7 +49,7 @@ export default sfc({
   },
 
   mounted() {
-    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
+    this.scrollEl = getScrollEventTarget(this.$el);
   },
 
   methods: {
@@ -95,7 +95,7 @@ export default sfc({
     },
 
     getCeiling() {
-      this.ceiling = scrollUtils.getScrollTop(this.scrollEl) === 0;
+      this.ceiling = getScrollTop(this.scrollEl) === 0;
       return this.ceiling;
     },
 
