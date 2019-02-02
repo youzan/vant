@@ -224,7 +224,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <Field
-          v-model={data.name}
+          vModel={data.name}
           clearable
           label={t('name')}
           placeholder={t('namePlaceholder')}
@@ -232,7 +232,7 @@ export default sfc({
           onFocus={onFocus('name')}
         />
         <Field
-          v-model={data.tel}
+          vModel={data.tel}
           clearable
           type="tel"
           label={t('tel')}
@@ -241,7 +241,7 @@ export default sfc({
           onFocus={onFocus('tel')}
         />
         <Field
-          v-show={this.showArea}
+          vShow={this.showArea}
           readonly
           label={t('area')}
           placeholder={t('areaPlaceholder')}
@@ -251,7 +251,7 @@ export default sfc({
           }}
         />
         <Detail
-          v-show={this.showDetail}
+          vShow={this.showDetail}
           focused={this.detailFocused}
           value={data.addressDetail}
           error={errorInfo.addressDetail}
@@ -269,8 +269,8 @@ export default sfc({
         />
         {this.showPostal && (
           <Field
-            v-show={!hideBottomFields}
-            v-model={data.postalCode}
+            vShow={!hideBottomFields}
+            vModel={data.postalCode}
             type="tel"
             maxlength="6"
             label={t('postal')}
@@ -282,15 +282,15 @@ export default sfc({
         {this.$slots.default}
         {this.showSetDefault && (
           <SwitchCell
-            v-model={data.isDefault}
-            v-show={!hideBottomFields}
+            vModel={data.isDefault}
+            vShow={!hideBottomFields}
             title={t('defaultAddress')}
             onChange={event => {
               this.$emit('change-default', event);
             }}
           />
         )}
-        <div v-show={!hideBottomFields} class={bem('buttons')}>
+        <div vShow={!hideBottomFields} class={bem('buttons')}>
           <Button
             block
             loading={this.isSaving}
@@ -308,7 +308,7 @@ export default sfc({
           )}
         </div>
         <Popup
-          v-model={this.showAreaPopup}
+          vModel={this.showAreaPopup}
           position="bottom"
           lazyRender={false}
           getContainer="body"

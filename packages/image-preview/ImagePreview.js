@@ -219,9 +219,9 @@ export default sfc({
       <Swipe
         ref="swipe"
         loop={this.loop}
-        indicator-color="white"
-        initial-swipe={this.startPosition}
-        show-indicators={this.showIndicators}
+        indicatorColor="white"
+        initialSwipe={this.startPosition}
+        showIndicators={this.showIndicators}
         onChange={this.onChange}
       >
         {images.map((image, index) => {
@@ -237,7 +237,7 @@ export default sfc({
           };
           return (
             <SwipeItem>
-              {this.lazyLoad ? <img v-lazy={image} {...props} /> : <img src={image} {...props} />}
+              {this.lazyLoad ? <img vLazy={image} {...props} /> : <img src={image} {...props} />}
             </SwipeItem>
           );
         })}
