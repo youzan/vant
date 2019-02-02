@@ -30,10 +30,17 @@ function install(Vue) {
   Vue.component((camelize(`-${name}`)), this);
 }
 
-export default name => sfc => {
+export default name => (sfc, functional) => {
   sfc.name = name;
   sfc.install = install;
-  sfc.props && defaultProps(sfc.props);
+
+  if (sfc.props) {
+    defaultProps(sfc.props);
+  }
+
+  if (functional) {
+    sfc.functional = true;
+  }
 
   return sfc;
 };

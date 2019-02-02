@@ -4,41 +4,41 @@ import isSrc from '../utils/validate/src';
 
 const [sfc] = use('icon');
 
-export default sfc({
-  props: {
-    name: String,
-    size: String,
-    color: String,
-    info: [String, Number],
-    classPrefix: {
-      type: String,
-      default: 'van-icon'
+export default sfc(
+  {
+    props: {
+      name: String,
+      size: String,
+      color: String,
+      info: [String, Number],
+      classPrefix: {
+        type: String,
+        default: 'van-icon'
+      }
+    },
+
+    render(h, context) {
+      const { props } = context;
+      const urlIcon = isSrc(props.name);
+
+      return (
+        <i
+          class={[
+            props.classPrefix,
+            urlIcon ? 'van-icon--image' : `${props.classPrefix}-${props.name}`
+          ]}
+          style={{
+            color: props.color,
+            fontSize: props.size
+          }}
+          {...context.data}
+        >
+          {context.children}
+          {urlIcon && <img src={props.name} />}
+          <Info info={props.info} />
+        </i>
+      );
     }
   },
-
-  computed: {
-    isSrc() {
-      return isSrc(this.name);
-    }
-  },
-
-  render(h) {
-    return (
-      <i
-        class={[
-          this.classPrefix,
-          this.isSrc ? 'van-icon--image' : `${this.classPrefix}-${this.name}`
-        ]}
-        style={{
-          color: this.color,
-          fontSize: this.size
-        }}
-        {...{ on: this.$listeners }}
-      >
-        {this.$slots.default}
-        {this.isSrc && <img src={this.name} />}
-        <Info info={this.info} />
-      </i>
-    );
-  }
-});
+  true
+);
