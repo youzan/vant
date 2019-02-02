@@ -59,7 +59,7 @@ export default sfc({
   render(h) {
     const slots = this.$slots;
     return (
-      <div v-show={this.selected || this.parent.animated} class={bem('pane')}>
+      <div vShow={this.selected || this.parent.animated} class={bem('pane')}>
         {this.inited ? slots.default : h()}
         {slots.title && <div ref="title">{slots.title}</div>}
       </div>

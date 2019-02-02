@@ -88,7 +88,7 @@ export default sfc({
 
     return (
       <transition name="van-slide-up">
-        <div v-show={this.value} class={bem({ withtitle: title })}>
+        <div vShow={this.value} class={bem({ withtitle: title })}>
           {title ? Header() : this.actions.map(Option)}
           {Footer}
         </div>
