@@ -19,16 +19,24 @@
     margin-left: 27px;
   }
 
-  .van-radio__input {
+  .van-radio__icon {
     top: 50%;
     left: 0;
-    font-size: 16px;
+    height: 16px;
     position: absolute;
+    line-height: 16px;
     transform: translate(0, -50%);
+
+    .van-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 12px;
+    }
   }
 
-  .van-icon-checked {
-    color: @red;
+  .van-radio__icon--checked .van-icon {
+    border-color: @red;
+    background-color: @red;
   }
 
   &__group {

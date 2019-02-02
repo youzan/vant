@@ -4,31 +4,35 @@ import CellGroup from '../cell-group';
 
 const [sfc, bem] = use('panel');
 
-export default sfc({
-  props: {
-    icon: String,
-    desc: String,
-    title: String,
-    status: String
+export default sfc(
+  {
+    props: {
+      icon: String,
+      desc: String,
+      title: String,
+      status: String
+    },
+
+    render(h, context) {
+      const { props } = context;
+      const slots = context.slots();
+
+      return (
+        <CellGroup class={bem()} {...context.data}>
+          {slots.header || (
+            <Cell
+              class={bem('header')}
+              icon={props.icon}
+              label={props.desc}
+              title={props.title}
+              value={props.status}
+            />
+          )}
+          <div class={bem('content')}>{slots.default}</div>
+          {slots.footer && <div class={[bem('footer'), 'van-hairline--top']}>{slots.footer}</div>}
+        </CellGroup>
+      );
+    }
   },
-
-  render(h) {
-    const slots = this.$slots;
-
-    return (
-      <CellGroup class={bem()}>
-        {slots.header || (
-          <Cell
-            class={bem('header')}
-            icon={this.icon}
-            label={this.desc}
-            title={this.title}
-            value={this.status}
-          />
-        )}
-        <div class={bem('content')}>{slots.default}</div>
-        {slots.footer && <div class={[bem('footer'), 'van-hairline--top']}>{slots.footer}</div>}
-      </CellGroup>
-    );
-  }
-});
+  true
+);

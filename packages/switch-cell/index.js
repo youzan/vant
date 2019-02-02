@@ -5,34 +5,34 @@ import SwitchMixin from '../mixins/switch';
 
 const [sfc, bem] = use('switch-cell');
 
-export default sfc({
-  mixins: [SwitchMixin],
+export default sfc(
+  {
+    mixins: [SwitchMixin],
 
-  props: {
-    title: String,
-    border: Boolean,
-    size: {
-      type: String,
-      default: '24px'
+    props: {
+      title: String,
+      border: Boolean,
+      size: {
+        type: String,
+        default: '24px'
+      }
+    },
+
+    render(h, context) {
+      const { props } = context;
+
+      return (
+        <Cell
+          center
+          title={props.title}
+          border={props.border}
+          style={context.style}
+          class={[bem(), context.class, context.staticClass]}
+        >
+          <Switch {...{ props, on: context.listeners }} />
+        </Cell>
+      );
     }
   },
-
-  watch: {
-    value() {
-      this.$emit('change', this.value);
-    }
-  },
-
-  render(h) {
-    return (
-      <Cell center title={this.title} border={this.border} class={bem()}>
-        <Switch
-          {...{ props: this.$props }}
-          onInput={value => {
-            this.$emit('input', value);
-          }}
-        />
-      </Cell>
-    );
-  }
-});
+  true
+);

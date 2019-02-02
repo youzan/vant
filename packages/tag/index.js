@@ -9,51 +9,45 @@ const COLOR_MAP = {
   success: GREEN
 };
 
-export default sfc({
-  props: {
-    size: String,
-    type: String,
-    mark: Boolean,
-    color: String,
-    plain: Boolean,
-    round: Boolean,
-    textColor: String
-  },
+export default sfc(
+  {
+    props: {
+      size: String,
+      type: String,
+      mark: Boolean,
+      color: String,
+      plain: Boolean,
+      round: Boolean,
+      textColor: String
+    },
 
-  computed: {
-    style() {
-      const color = this.color || COLOR_MAP[this.type] || GRAY_DARK;
-      const key = this.plain ? 'color' : 'backgroundColor';
+    render(h, context) {
+      const { props } = context;
+      const { mark, plain, round, size } = context.props;
+
+      const color = props.color || COLOR_MAP[props.type] || GRAY_DARK;
+      const key = plain ? 'color' : 'backgroundColor';
       const style = { [key]: color };
 
-      if (this.textColor) {
-        style.color = this.textColor;
+      if (props.textColor) {
+        style.color = props.textColor;
       }
 
-      return style;
+      return (
+        <span
+          style={style}
+          class={[
+            bem({ mark, plain, round, [size]: size }),
+            {
+              'van-hairline--surround': plain
+            }
+          ]}
+          {...context.data}
+        >
+          {context.children}
+        </span>
+      );
     }
   },
-
-  render(h) {
-    const {
-      mark,
-      plain,
-      round,
-      size
-    } = this;
-
-    return (
-      <span
-        class={[
-          bem({ mark, plain, round, [size]: size }),
-          {
-            'van-hairline--surround': plain
-          }
-        ]}
-        style={this.style}
-      >
-        {this.$slots.default}
-      </span>
-    );
-  }
-});
+  true
+);
