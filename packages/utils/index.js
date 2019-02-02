@@ -1,19 +1,19 @@
 import Vue from 'vue';
-import use from './use';
-import { useSlots } from './slots';
 
-const isServer = Vue.prototype.$isServer;
+export { use, useSlots } from './use';
 
-function isDef(value) {
+export const isServer = Vue.prototype.$isServer;
+
+export function isDef(value) {
   return value !== undefined && value !== null;
 }
 
-function isObj(x) {
+export function isObj(x) {
   const type = typeof x;
   return x !== null && (type === 'object' || type === 'function');
 }
 
-function get(object, path) {
+export function get(object, path) {
   const keys = path.split('.');
   let result = object;
 
@@ -25,27 +25,15 @@ function get(object, path) {
 }
 
 const camelizeRE = /-(\w)/g;
-function camelize(str) {
+export function camelize(str) {
   return str.replace(camelizeRE, (_, c) => c.toUpperCase());
 }
 
-function isAndroid() {
+export function isAndroid() {
   /* istanbul ignore next */
   return isServer ? false : /android/.test(navigator.userAgent.toLowerCase());
 }
 
-function range(num, min, max) {
+export function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
-
-export {
-  use,
-  get,
-  range,
-  isObj,
-  isDef,
-  isServer,
-  useSlots,
-  camelize,
-  isAndroid
-};

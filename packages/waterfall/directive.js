@@ -1,6 +1,11 @@
 /* eslint-disable no-underscore-dangle */
-import Utils from '../utils/scroll';
 import { on, off } from '../utils/event';
+import {
+  getScrollTop,
+  getElementTop,
+  getVisibleHeight,
+  getScrollEventTarget
+} from '../utils/scroll';
 
 const CONTEXT = '@@Waterfall';
 const OFFSET = 300;
@@ -12,8 +17,8 @@ function handleScrollEvent() {
   // 已被禁止的滚动处理
   if (this.disabled) return;
 
-  const targetScrollTop = Utils.getScrollTop(scrollEventTarget);
-  const targetVisibleHeight = Utils.getVisibleHeight(scrollEventTarget);
+  const targetScrollTop = getScrollTop(scrollEventTarget);
+  const targetVisibleHeight = getVisibleHeight(scrollEventTarget);
   // 滚动元素可视区域下边沿到滚动元素元素最顶上 距离
   const targetBottom = targetScrollTop + targetVisibleHeight;
 
@@ -25,7 +30,8 @@ function handleScrollEvent() {
   if (element === scrollEventTarget) {
     needLoadMoreToLower = scrollEventTarget.scrollHeight - targetBottom < this.offset;
   } else {
-    const elementBottom = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget) + Utils.getVisibleHeight(element);
+    const elementBottom =
+      getElementTop(element) - getElementTop(scrollEventTarget) + getVisibleHeight(element);
     needLoadMoreToLower = elementBottom - targetVisibleHeight < this.offset;
   }
   if (needLoadMoreToLower) {
@@ -37,7 +43,7 @@ function handleScrollEvent() {
   if (element === scrollEventTarget) {
     needLoadMoreToUpper = targetScrollTop < this.offset;
   } else {
-    const elementTop = Utils.getElementTop(element) - Utils.getElementTop(scrollEventTarget);
+    const elementTop = getElementTop(element) - getElementTop(scrollEventTarget);
     needLoadMoreToUpper = elementTop + this.offset > 0;
   }
   if (needLoadMoreToUpper) {
@@ -54,12 +60,12 @@ function doBindEvent() {
   this.el[CONTEXT].binded = true;
 
   this.scrollEventListener = handleScrollEvent.bind(this);
-  this.scrollEventTarget = Utils.getScrollEventTarget(this.el);
+  this.scrollEventTarget = getScrollEventTarget(this.el);
 
   const disabledExpr = this.el.getAttribute('waterfall-disabled');
   let disabled = false;
   if (disabledExpr) {
-    this.vm.$watch(disabledExpr, (value) => {
+    this.vm.$watch(disabledExpr, value => {
       this.disabled = value;
       this.scrollEventListener();
     });

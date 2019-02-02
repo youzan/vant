@@ -1,8 +1,8 @@
 import { use, isDef } from '../utils';
+import Touch from '../mixins/touch';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
-import scrollUtils from '../utils/scroll';
-import Touch from '../mixins/touch';
+import { setScrollTop, getScrollTop, getElementTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem] = use('tabs');
 const tabBem = use('tab')[1];
@@ -128,7 +128,7 @@ export default sfc({
 
       // scroll to correct position
       if (this.position === 'top' || this.position === 'bottom') {
-        scrollUtils.setScrollTop(window, scrollUtils.getElementTop(this.$el));
+        setScrollTop(window, getElementTop(this.$el));
       }
     },
 
@@ -179,7 +179,7 @@ export default sfc({
       // listen to scroll event
       if (events.sticky !== sticky) {
         events.sticky = sticky;
-        this.scrollEl = this.scrollEl || scrollUtils.getScrollEventTarget(this.$el);
+        this.scrollEl = this.scrollEl || getScrollEventTarget(this.$el);
         (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
         this.onScroll();
       }
@@ -215,8 +215,8 @@ export default sfc({
 
     // adjust tab position
     onScroll() {
-      const scrollTop = scrollUtils.getScrollTop(window) + this.offsetTop;
-      const elTopToPageTop = scrollUtils.getElementTop(this.$el);
+      const scrollTop = getScrollTop(window) + this.offsetTop;
+      const elTopToPageTop = getElementTop(this.$el);
       const elBottomToPageTop =
         elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
       if (scrollTop > elBottomToPageTop) {
