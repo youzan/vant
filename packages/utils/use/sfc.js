@@ -27,10 +27,21 @@ function defaultProps(props) {
 function install(Vue) {
   const { name } = this;
   Vue.component(name, this);
-  Vue.component((camelize(`-${name}`)), this);
+  Vue.component(camelize(`-${name}`), this);
 }
 
-export default name => (sfc, functional) => {
+function functional(sfc) {
+  const { render } = sfc;
+  sfc.functional = true;
+  sfc.render = (h, context) =>
+    render(h, context, {
+      style: context.data.style,
+      class: context.data.class,
+      staticClass: context.data.staticClass
+    });
+}
+
+export default name => (sfc, isFunctional) => {
   sfc.name = name;
   sfc.install = install;
 
@@ -38,8 +49,8 @@ export default name => (sfc, functional) => {
     defaultProps(sfc.props);
   }
 
-  if (functional) {
-    sfc.functional = true;
+  if (isFunctional) {
+    functional(sfc);
   }
 
   return sfc;

@@ -18,7 +18,7 @@ export default sfc(
       }
     },
 
-    render(h, context) {
+    render(h, context, inherit) {
       const { props } = context;
 
       return (
@@ -26,8 +26,8 @@ export default sfc(
           center
           title={props.title}
           border={props.border}
-          style={context.style}
-          class={[bem(), context.class, context.staticClass]}
+          class={bem()}
+          {...inherit}
         >
           <Switch {...{ props, on: context.listeners }} />
         </Cell>

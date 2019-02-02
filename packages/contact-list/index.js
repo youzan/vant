@@ -15,7 +15,7 @@ export default sfc(
       addText: String
     },
 
-    render(h, context) {
+    render(h, context, inherit) {
       const { props, listeners } = context;
 
       const List = props.list.map((item, index) => (
@@ -43,7 +43,7 @@ export default sfc(
       ));
 
       return (
-        <div class={bem()} {...context.data}>
+        <div class={bem()} {...inherit}>
           <RadioGroup value={props.value} class={bem('group')}>
             {List}
           </RadioGroup>
