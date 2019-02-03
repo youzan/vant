@@ -34,7 +34,7 @@ export default sfc({
       <a href={this.thumbLink} class={bem('thumb')}>
         {slots.thumb ||
           (this.lazyLoad ? (
-            <img class={bem('img')} v-lazy={thumb} />
+            <img class={bem('img')} vLazy={thumb} />
           ) : (
             <img class={bem('img')} src={thumb} />
           ))}

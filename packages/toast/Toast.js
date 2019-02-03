@@ -90,7 +90,7 @@ export default sfc({
 
     return (
       <transition name="van-fade">
-        <div v-show={this.value} class={[bem([style, this.position]), this.className]}>
+        <div vShow={this.value} class={[bem([style, this.position]), this.className]}>
           {Content()}
         </div>
       </transition>

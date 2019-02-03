@@ -103,7 +103,7 @@ export default sfc({
     onClickExchangeButton() {
       this.$emit('exchange', this.currentCode);
 
-      // auto clear currentCode when not use v-model
+      // auto clear currentCode when not use vModel
       if (!this.code) {
         this.currentCode = '';
       }
@@ -129,7 +129,7 @@ export default sfc({
   render(h) {
     const ExchangeBar = this.showExchangeBar && (
       <Field
-        v-model={this.currentCode}
+        vModel={this.currentCode}
         clearable
         border={false}
         class={bem('field')}
@@ -190,12 +190,12 @@ export default sfc({
     return (
       <div class={bem()}>
         {ExchangeBar}
-        <Tabs v-model={this.tab} class={bem('tab')} line-width={120}>
+        <Tabs vModel={this.tab} class={bem('tab')} line-width={120}>
           {CouponTab}
           {DisabledCouponTab}
         </Tabs>
         <Button
-          v-show={this.showCloseButton}
+          vShow={this.showCloseButton}
           size="large"
           class={bem('close')}
           text={this.closeButtonText || t('close')}

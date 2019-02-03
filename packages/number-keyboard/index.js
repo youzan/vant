@@ -138,7 +138,7 @@ export default sfc({
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
-          v-show={this.show}
+          vShow={this.show}
           style={{ zIndex: this.zIndex }}
           class={bem([theme])}
           onTouchstart={stop}

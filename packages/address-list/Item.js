@@ -25,7 +25,7 @@ export default sfc({
     return (
       <Cell
         class={bem({ disabled, unswitchable: !switchable })}
-        is-link={!disabled && switchable}
+        isLink={!disabled && switchable}
         onClick={this.onSelect}
       >
         <Radio name={data.id}>

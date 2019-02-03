@@ -90,7 +90,7 @@ export default sfc({
 
     return (
       <div
-        v-show={this.showNoticeBar}
+        vShow={this.showNoticeBar}
         class={bem({ withicon: mode })}
         style={barStyle}
         onClick={() => {

@@ -19,7 +19,7 @@ export default sfc({
     return (
       <transition name="van-fade">
         <div
-          v-show={this.visible}
+          vShow={this.visible}
           style={style}
           class={[bem(), this.className]}
           onTouchmove={event => {
