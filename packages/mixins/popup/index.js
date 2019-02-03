@@ -82,7 +82,7 @@ export default {
   beforeDestroy() {
     this.close();
 
-    if (this.getContainer) {
+    if (this.getContainer && this.$parent.$el) {
       this.$parent.$el.appendChild(this.$el);
     }
   },
