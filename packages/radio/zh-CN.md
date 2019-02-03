@@ -97,7 +97,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标识符 | 任意类型 | - | - |
-| shape | 形状，可选值为 `square` | `String` | `round` | 1.5.8 |
+| shape | 形状，可选值为 `square` | `String` | `round` | 1.6.0 |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
 | label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` | 1.1.13 |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.13 |
