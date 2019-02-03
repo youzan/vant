@@ -10,6 +10,7 @@ export default sfc({
   mixins: [Popup],
 
   props: {
+    className: String,
     forbidClick: Boolean,
     message: [String, Number],
     type: {
@@ -89,7 +90,7 @@ export default sfc({
 
     return (
       <transition name="van-fade">
-        <div vShow={this.value} class={bem([style, this.position])}>
+        <div vShow={this.value} class={[bem([style, this.position]), this.className]}>
           {Content()}
         </div>
       </transition>

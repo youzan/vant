@@ -8,6 +8,7 @@ export type ToastOptions = {
   mask?: boolean;
   position?: string;
   duration?: number;
+  className?: any;
   forbidClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;
