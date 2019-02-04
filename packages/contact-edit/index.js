@@ -95,7 +95,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <Field
-          v-model={data.name}
+          vModel={data.name}
           clearable
           maxlength="30"
           label={t('name')}
@@ -104,7 +104,7 @@ export default sfc({
           onFocus={onFocus('name')}
         />
         <Field
-          v-model={data.tel}
+          vModel={data.tel}
           clearable
           type="tel"
           label={t('tel')}

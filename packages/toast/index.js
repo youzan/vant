@@ -8,6 +8,7 @@ const defaultOptions = {
   message: '',
   value: true,
   duration: 3000,
+  className: '',
   position: 'middle',
   loadingType: 'circular',
   forbidClick: false,

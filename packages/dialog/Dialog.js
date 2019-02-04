@@ -89,7 +89,7 @@ export default sfc({
     const ButtonGroup = (
       <div class={['van-hairline--top', bem('footer', { buttons: hasButtons })]}>
         <Button
-          v-show={this.showCancelButton}
+          vShow={this.showCancelButton}
           size="large"
           class={bem('cancel')}
           loading={this.loading.cancel}
@@ -99,7 +99,7 @@ export default sfc({
           }}
         />
         <Button
-          v-show={this.showConfirmButton}
+          vShow={this.showConfirmButton}
           size="large"
           class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
           loading={this.loading.confirm}
@@ -113,7 +113,7 @@ export default sfc({
 
     return (
       <transition name="van-dialog-bounce">
-        <div v-show={this.value} class={[bem(), this.className]}>
+        <div vShow={this.value} class={[bem(), this.className]}>
           {Title}
           {Content}
           {ButtonGroup}
