@@ -35,7 +35,7 @@ export default sfc({
     };
     return (
       <transition name="van-slide-down">
-        <div vShow={this.value} class={bem()} style={style}>
+        <div vShow={this.value} class={[bem(), this.className]} style={style}>
           {this.message}
         </div>
       </transition>
