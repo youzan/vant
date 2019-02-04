@@ -8,6 +8,7 @@ export default sfc({
   mixins: [PopupMixin],
 
   props: {
+    className: null,
     message: [String, Number],
     color: {
       type: String,
@@ -34,7 +35,7 @@ export default sfc({
     };
     return (
       <transition name="van-slide-down">
-        <div vShow={this.value} class={bem()} style={style}>
+        <div vShow={this.value} class={[bem(), this.className]} style={style}>
           {this.message}
         </div>
       </transition>

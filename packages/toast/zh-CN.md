@@ -102,3 +102,4 @@ toast2.clear();
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |
+| className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |

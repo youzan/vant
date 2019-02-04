@@ -5,8 +5,8 @@ const [sfc, bem] = use('overlay');
 export default sfc({
   props: {
     zIndex: Number,
+    className: null,
     visible: Boolean,
-    className: String,
     customStyle: Object
   },
 

@@ -10,7 +10,7 @@ export default sfc({
   mixins: [Popup],
 
   props: {
-    className: String,
+    className: null,
     forbidClick: Boolean,
     message: [String, Number],
     type: {

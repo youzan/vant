@@ -19,11 +19,11 @@ export default sfc({
 
   props: {
     images: Array,
+    className: null,
     lazyLoad: Boolean,
     asyncClose: Boolean,
     startPosition: Number,
     showIndicators: Boolean,
-    className: [String, Object, Array],
     loop: {
       type: Boolean,
       default: true

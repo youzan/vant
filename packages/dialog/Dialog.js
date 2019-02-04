@@ -8,10 +8,10 @@ export default sfc({
   mixins: [Popup],
 
   props: {
+    className: null,
     title: String,
     message: String,
     callback: Function,
-    className: [String, Object, Array],
     beforeClose: Function,
     messageAlign: String,
     confirmButtonText: String,
