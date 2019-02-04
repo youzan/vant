@@ -1,5 +1,33 @@
 ## Changelog
 
+## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+`2019-02-04`
+
+**Breaking changes**
+
+- Radio: refactored, now has the same stuct as Checkbox [\#2651](https://github.com/youzan/vant/pull/2651)
+
+**Improvements**
+
+- Use JSX to rewrite all components
+- Transform part components to functional for better performance
+- Card: add tag slot [\#2636](https://github.com/youzan/vant/pull/2636)
+- Icon: add weapp-nav icon [\#2682](https://github.com/youzan/vant/pull/2682)
+- Radio: add icon slot [\#2651](https://github.com/youzan/vant/pull/2651)
+- Radio: add shape prop [\#2651](https://github.com/youzan/vant/pull/2651)
+- Toast: add className prop [\#2680](https://github.com/youzan/vant/pull/2680)
+- Notify: add className prop [\#2681](https://github.com/youzan/vant/pull/2681)
+- Popup: add open/close event [\#2649](https://github.com/youzan/vant/pull/2649)
+- Popup: add opened/closed event [\#2650](https://github.com/youzan/vant/pull/2650)
+
+**Bug Fixes**
+
+- fix ContactList button position [\#2634](https://github.com/youzan/vant/pull/2634)
+- fix Toast clear in multiple mode [\#2635](https://github.com/youzan/vant/pull/2635)
+- fix SwipeCell maximum left offset [\#2633](https://github.com/youzan/vant/pull/2633)
+- fix Popup get-container error when destoryed [\#2679](https://github.com/youzan/vant/pull/2679)
+
+
 ## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
 `2019-01-24`
 

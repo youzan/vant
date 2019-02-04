@@ -1,5 +1,33 @@
 ## 更新日志
 
+## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+`2019-02-04`
+
+**Breaking changes**
+
+- Radio: 重写了组件结构，现在提供和 Checkbox 一致的 UI 和 DOM 结构 [\#2651](https://github.com/youzan/vant/pull/2651)
+
+**Improvements**
+
+- 使用 JSX 重写了所有组件
+- 部分组件现在是函数式组件了，渲染性能更佳
+- Card: 新增 tag 插槽 [\#2636](https://github.com/youzan/vant/pull/2636)
+- Radio: 新增 icon 插槽 [\#2651](https://github.com/youzan/vant/pull/2651)
+- Radio: 新增 shape 属性 [\#2651](https://github.com/youzan/vant/pull/2651)
+- Icon: 新增 weapp-nav 图标 [\#2682](https://github.com/youzan/vant/pull/2682)
+- Toast: 新增 className 属性 [\#2680](https://github.com/youzan/vant/pull/2680)
+- Notify: 新增 className 属性 [\#2681](https://github.com/youzan/vant/pull/2681)
+- Popup: 新增 open/close 事件 [\#2649](https://github.com/youzan/vant/pull/2649)
+- Popup: 新增 opened/closed 事件 [\#2650](https://github.com/youzan/vant/pull/2650)
+
+**Bug Fixes**
+
+- 修复 SwipeCell 左侧内容滑动距离过大的问题 [\#2633](https://github.com/youzan/vant/pull/2633)
+- 修复 ContactList 列表内容较多时按钮位置错误的问题 [\#2634](https://github.com/youzan/vant/pull/2634)
+- 修复 Toast clear 方法在 multiple 模式下可能报错的问题 [\#2635](https://github.com/youzan/vant/pull/2635)
+- 修复 Popup 使用 get-container 属性后销毁时可能报错的问题 [\#2679](https://github.com/youzan/vant/pull/2679)
+
+
 ## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
 `2019-01-24`
 
