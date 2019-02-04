@@ -8,6 +8,7 @@ export default sfc({
   mixins: [PopupMixin],
 
   props: {
+    className: null,
     message: [String, Number],
     color: {
       type: String,
