@@ -88,26 +88,28 @@ export default sfc({
     const hasButtons = this.showCancelButton && this.showConfirmButton;
     const ButtonGroup = (
       <div class={['van-hairline--top', bem('footer', { buttons: hasButtons })]}>
-        <Button
-          vShow={this.showCancelButton}
-          size="large"
-          class={bem('cancel')}
-          loading={this.loading.cancel}
-          text={this.cancelButtonText || t('cancel')}
-          onClick={() => {
-            this.handleAction('cancel');
-          }}
-        />
-        <Button
-          vShow={this.showConfirmButton}
-          size="large"
-          class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
-          loading={this.loading.confirm}
-          text={this.confirmButtonText || t('confirm')}
-          onClick={() => {
-            this.handleAction('confirm');
-          }}
-        />
+        {this.showCancelButton && (
+          <Button
+            size="large"
+            class={bem('cancel')}
+            loading={this.loading.cancel}
+            text={this.cancelButtonText || t('cancel')}
+            onClick={() => {
+              this.handleAction('cancel');
+            }}
+          />
+        )}
+        {this.showConfirmButton && (
+          <Button
+            size="large"
+            class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
+            loading={this.loading.confirm}
+            text={this.confirmButtonText || t('confirm')}
+            onClick={() => {
+              this.handleAction('confirm');
+            }}
+          />
+        )}
       </div>
     );
 

@@ -7,7 +7,10 @@ transitionStub();
 
 test('Dialog function call', async () => {
   Dialog.close();
-  Dialog.alert('1');
+  Dialog.alert({
+    message: '1',
+    showCancelButton: true
+  });
 
   await later();
 
@@ -35,6 +38,7 @@ test('before close', () => {
   const wrapper = mount(DialogVue, {
     propsData: {
       value: true,
+      showCancelButton: true,
       beforeClose: (action, done) => done(false)
     }
   });
