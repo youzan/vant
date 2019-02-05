@@ -22,10 +22,12 @@ const prefix = (name, mods) => {
   }
 
   const ret = {};
-  mods &&
+  if (mods) {
     Object.keys(mods).forEach(key => {
       ret[name + MODS + key] = mods[key];
     });
+  }
+
   return ret;
 };
 
