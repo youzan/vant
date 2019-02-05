@@ -114,7 +114,6 @@ export default sfc({
   },
 
   render(h) {
-    console.log(this.$slots, this.$scopedSlots);
     return (
       <div class={bem()}>
         {this.slots()}
