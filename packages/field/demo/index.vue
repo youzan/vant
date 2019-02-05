@@ -4,9 +4,91 @@
       <van-cell-group>
         <van-field
           v-model="value"
-          clearable
           :placeholder="$t('usernamePlaceholder')"
         />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title2')">
+      <van-cell-group>
+        <van-field
+          v-model="username"
+          :label="$t('username')"
+          :placeholder="$t('usernamePlaceholder')"
+          clearable
+          right-icon="question-o"
+          required
+          @click-right-icon="$toast('question')"
+        />
+
+        <van-field
+          v-model="password"
+          type="password"
+          :label="$t('password')"
+          :placeholder="$t('passwordPlaceholder')"
+          required
+        />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title3')">
+      <van-cell-group>
+        <van-field
+          :value="$t('inputDisabled')"
+          :label="$t('username')"
+          left-icon="contact"
+          disabled
+        />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title4')">
+      <van-cell-group>
+        <van-field
+          v-model="username2"
+          :label="$t('username')"
+          :placeholder="$t('usernamePlaceholder')"
+          error
+        />
+        <van-field
+          v-model="phone"
+          :label="$t('phone')"
+          :placeholder="$t('phonePlaceholder')"
+          :error-message="$t('phoneError')"
+        />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title5')">
+      <van-cell-group>
+        <van-field
+          v-model="message"
+          :label="$t('message')"
+          type="textarea"
+          :placeholder="$t('messagePlaceholder')"
+          rows="1"
+          autosize
+        />
+      </van-cell-group>
+    </demo-block>
+
+    <demo-block :title="$t('title6')">
+      <van-cell-group>
+        <van-field
+          center
+          clearable
+          v-model="sms"
+          :label="$t('sms')"
+          :placeholder="$t('smsPlaceholder')"
+        >
+          <van-button
+            slot="button"
+            size="small"
+            type="primary"
+          >
+            {{ $t('sendSMS') }}
+          </van-button>
+        </van-field>
       </van-cell-group>
     </demo-block>
   </demo-section>
