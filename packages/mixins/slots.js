@@ -4,15 +4,13 @@
  */
 
 export default {
-  computed: {
-    slots() {
+  methods: {
+    slots(name = 'default', props) {
       const { $slots, $scopedSlots } = this;
-      return (name = 'default', props) => {
-        if ($scopedSlots[name]) {
-          return $scopedSlots[name](props);
-        }
-        return $slots[name];
-      };
+      if ($scopedSlots[name]) {
+        return $scopedSlots[name](props);
+      }
+      return $slots[name];
     }
   }
 };
