@@ -30,15 +30,21 @@ function install(Vue) {
   Vue.component(camelize(`-${name}`), this);
 }
 
+const inheritKey = ['style', 'class', 'nativeOn', 'directives', 'staticClass', 'staticStyle'];
+const mapInheritKey = { nativeOn: 'on' };
+
 function functional(sfc) {
   const { render } = sfc;
   sfc.functional = true;
-  sfc.render = (h, context) =>
-    render(h, context, {
-      style: context.data.style,
-      class: context.data.class,
-      staticClass: context.data.staticClass
-    });
+  sfc.render = (h, context) => {
+    const inherit = inheritKey.reduce((obj, key) => {
+      if (context.data[key]) {
+        obj[mapInheritKey[key] || key] = context.data[key];
+      }
+      return obj;
+    }, {});
+    return render(h, context, inherit);
+  };
 }
 
 export default name => (sfc, isFunctional) => {
