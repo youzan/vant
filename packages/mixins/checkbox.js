@@ -47,12 +47,12 @@ export default (parent, bem) => ({
       <Icon name="success" style={this.iconStyle} />
     );
 
-    const Label = slots('default') && (
+    const Label = slots() && (
       <span
         class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
         onClick={this.onClickLabel}
       >
-        {slots('default')}
+        {slots()}
       </span>
     );
 

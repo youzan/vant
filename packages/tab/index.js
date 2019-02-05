@@ -44,7 +44,7 @@ export default sfc({
 
   mounted() {
     const { tabs } = this.parent;
-    const index = this.parent.slots('default').indexOf(this.$vnode);
+    const index = this.parent.slots().indexOf(this.$vnode);
     tabs.splice(index === -1 ? tabs.length : index, 0, this);
 
     if (this.slots('title')) {

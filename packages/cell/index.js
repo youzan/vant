@@ -24,7 +24,7 @@ export default sfc({
   render(h) {
     const { slots } = this;
     const showTitle = slots('title') || isDef(this.title);
-    const showValue = slots('default') || isDef(this.value);
+    const showValue = slots() || isDef(this.value);
 
     const Title = showTitle && (
       <div class={[bem('title'), this.titleClass]}>
@@ -35,7 +35,7 @@ export default sfc({
 
     const Value = showValue && (
       <div class={[bem('value', { alone: !slots('title') && !this.title }), this.valueClass]}>
-        {slots('default') || <span>{this.value}</span>}
+        {slots() || <span>{this.value}</span>}
       </div>
     );
 
