@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+`2019-02-05`
+
+**Improvements**
+
+- 修复函数式组件无法继承指令和原生事件的问题 [\#2686](https://github.com/youzan/vant/pull/2686)
+
+
 ## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
 `2019-02-04`
 

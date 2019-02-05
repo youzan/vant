@@ -1,5 +1,13 @@
 ## Changelog
 
+## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+`2019-02-05`
+
+**Improvements**
+
+- fix functional component can not inherit directives and native events. [\#2686](https://github.com/youzan/vant/pull/2686)
+
+
 ## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
 `2019-02-04`
 
