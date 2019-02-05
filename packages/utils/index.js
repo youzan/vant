@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export { use, useSlots } from './use';
+export { use } from './use';
 
 export const isServer = Vue.prototype.$isServer;
 

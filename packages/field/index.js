@@ -167,19 +167,19 @@ export default sfc({
   },
 
   render(h) {
-    const { type, labelAlign, $slots: slots } = this;
+    const { type, labelAlign, slots } = this;
 
-    const showLeftIcon = slots['left-icon'] || this.leftIcon;
-    const showRightIcon = slots['right-icon'] || slots.icon || this.rightIcon || this.icon;
+    const showLeftIcon = slots('left-icon') || this.leftIcon;
+    const showRightIcon = slots('right-icon') || slots('icon') || this.rightIcon || this.icon;
 
     const LeftIcon = showLeftIcon && (
       <div slot="icon" class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-        {slots['left-icon'] || <Icon name={this.leftIcon} />}
+        {slots('left-icon') || <Icon name={this.leftIcon} />}
       </div>
     );
     const RightIcon = showRightIcon && (
       <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-        {slots['right-icon'] || slots.icon || <Icon name={this.rightIcon || this.icon} />}
+        {slots('right-icon') || slots('icon') || <Icon name={this.rightIcon || this.icon} />}
       </div>
     );
 
@@ -214,12 +214,12 @@ export default sfc({
         })}
       >
         {LeftIcon}
-        {h('template', { slot: 'title' }, slots.label)}
+        {h('template', { slot: 'title' }, slots('label'))}
         <div class={bem('body')}>
           {Input}
           {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
           {RightIcon}
-          {slots.button && <div class={bem('button')}>{slots.button}</div>}
+          {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
         {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
       </Cell>

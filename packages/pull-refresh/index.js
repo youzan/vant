@@ -133,7 +133,7 @@ export default sfc({
       transform: `translate3d(0,${this.height}px, 0)`
     };
 
-    const Status = this.$slots[status] || [
+    const Status = this.slots(status) || [
       (status === 'pulling' || status === 'loosing') && <div class={bem('text')}>{text}</div>,
       status === 'loading' && (
         <div class={bem('loading')}>
@@ -154,7 +154,7 @@ export default sfc({
           onTouchcancel={this.onTouchEnd}
         >
           <div class={bem('head')}>{Status}</div>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </div>
     );

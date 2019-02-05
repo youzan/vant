@@ -96,7 +96,7 @@ export default sfc({
             onTouchend={this.onTouchEnd}
             onTouchcancel={this.onTouchEnd}
           >
-            {this.$slots.button || <div class={bem('button')} />}
+            {this.slots('button') || <div class={bem('button')} />}
           </div>
         </div>
       </div>

@@ -83,7 +83,7 @@ export default sfc({
         {cancelText}
       </div>
     ) : (
-      <div class={bem('content')}>{this.$slots.default}</div>
+      <div class={bem('content')}>{this.slots()}</div>
     );
 
     return (

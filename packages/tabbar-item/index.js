@@ -1,4 +1,4 @@
-import { use, useSlots } from '../utils';
+import { use } from '../utils';
 import Icon from '../icon';
 import Info from '../info';
 import RouterLink from '../mixins/router-link';
@@ -37,8 +37,7 @@ export default sfc({
   },
 
   render(h) {
-    const { icon, active } = this;
-    const slots = useSlots(this);
+    const { icon, slots, active } = this;
     const style = active ? { color: this.$parent.activeColor } : null;
 
     return (

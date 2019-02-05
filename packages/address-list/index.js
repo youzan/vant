@@ -40,13 +40,13 @@ export default sfc({
 
     return (
       <div class={bem()}>
-        {this.$slots.top}
+        {this.slots('top')}
         <RadioGroup value={this.value} onInput={event => this.$emit('input', event)}>
           {List}
         </RadioGroup>
         {this.disabledText && <div class={bem('disabled-text')}>{this.disabledText}</div>}
         {DisabledList}
-        {this.$slots.default}
+        {this.slots()}
         <Button
           square
           size="large"

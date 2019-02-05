@@ -1,7 +1,6 @@
 /**
  * Common part of Checkbox & Radio
  */
-import { useSlots } from '../utils';
 import Icon from '../icon';
 import findParent from './find-parent';
 
@@ -42,18 +41,18 @@ export default (parent, bem) => ({
   },
 
   render(h) {
-    const { checked } = this;
-    const slots = useSlots(this);
+    const { slots, checked } = this;
+
     const CheckIcon = slots('icon', { checked }) || (
       <Icon name="success" style={this.iconStyle} />
     );
 
-    const Label = slots('default') && (
+    const Label = slots() && (
       <span
         class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
         onClick={this.onClickLabel}
       >
-        {slots('default')}
+        {slots()}
       </span>
     );
 

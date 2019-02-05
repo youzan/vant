@@ -9,9 +9,9 @@ import SkuRowItem from './components/SkuRowItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
+import { use } from '../utils';
 import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
-import { use, useSlots } from '../utils';
 
 const [sfc] = use('sku');
 const { QUOTA_LIMIT } = LIMIT_TYPE;
@@ -367,7 +367,7 @@ export default sfc({
       selectedSku,
       selectedSkuComb
     };
-    const slots = name => useSlots(this)(name, slotsProps);
+    const slots = name => this.slots(name, slotsProps);
 
     const Header = slots('sku-header') || (
       <SkuHeader sku={sku} goods={goods} skuEventBus={skuEventBus} selectedSku={selectedSku}>

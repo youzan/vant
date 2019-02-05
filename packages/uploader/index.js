@@ -95,7 +95,7 @@ export default sfc({
 
     return (
       <div class={bem()}>
-        {this.$slots.default}
+        {this.slots()}
         <input
           { ...{ attrs: this.$attrs } }
           ref="input"

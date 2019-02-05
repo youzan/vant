@@ -53,7 +53,7 @@ export default sfc({
         style={{ zIndex: this.zIndex }}
         class={['van-hairline--top-bottom', bem({ fixed: this.fixed })]}
       >
-        {this.$slots.default}
+        {this.slots()}
       </div>
     );
   }

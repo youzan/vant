@@ -46,7 +46,7 @@ export default sfc({
         </div>
         <div class={bem('goods-info')}>
           <div class="van-sku__goods-name van-ellipsis">{this.goods.title}</div>
-          {this.$slots.default}
+          {this.slots()}
           <Icon
             name="close"
             class="van-sku__close-icon"

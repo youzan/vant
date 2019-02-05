@@ -149,7 +149,7 @@ export default sfc({
 
     const Toolbar = this.showToolbar && (
       <div class={['van-hairline--top-bottom', bem('toolbar')]}>
-        {this.$slots.default || [
+        {this.slots() || [
           <div class={bem('cancel')} onClick={this.onCancel}>
             {this.cancelButtonText || t('cancel')}
           </div>,

@@ -3,6 +3,7 @@
  */
 import '../../locale';
 import { camelize } from '..';
+import SlotsMixin from '../../mixins/slots';
 
 const arrayProp = {
   type: Array,
@@ -50,6 +51,8 @@ function functional(sfc) {
 export default name => (sfc, isFunctional) => {
   sfc.name = name;
   sfc.install = install;
+  sfc.mixins = sfc.mixins || [];
+  sfc.mixins.push(SlotsMixin);
 
   if (sfc.props) {
     defaultProps(sfc.props);

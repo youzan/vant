@@ -44,10 +44,10 @@ export default sfc({
 
   mounted() {
     const { tabs } = this.parent;
-    const index = this.parent.$slots.default.indexOf(this.$vnode);
+    const index = this.parent.slots().indexOf(this.$vnode);
     tabs.splice(index === -1 ? tabs.length : index, 0, this);
 
-    if (this.$slots.title) {
+    if (this.slots('title')) {
       this.parent.renderTitle(this.$refs.title, this.index);
     }
   },
@@ -57,11 +57,11 @@ export default sfc({
   },
 
   render(h) {
-    const slots = this.$slots;
+    const { slots } = this;
     return (
       <div vShow={this.selected || this.parent.animated} class={bem('pane')}>
-        {this.inited ? slots.default : h()}
-        {slots.title && <div ref="title">{slots.title}</div>}
+        {this.inited ? slots() : h()}
+        {slots('title') && <div ref="title">{slots('title')}</div>}
       </div>
     );
   }

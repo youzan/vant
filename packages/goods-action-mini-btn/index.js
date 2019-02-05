@@ -25,7 +25,7 @@ export default sfc({
     return (
       <div class={[bem(), 'van-hairline']} onClick={this.onClick}>
         <Icon class={[bem('icon'), this.iconClass]} info={this.info} name={this.icon} />
-        {this.$slots.default || this.text}
+        {this.slots() || this.text}
       </div>
     );
   }

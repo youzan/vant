@@ -106,7 +106,7 @@ export default sfc({
             onAnimationend={this.onAnimationEnd}
             onWebkitAnimationEnd={this.onAnimationEnd}
           >
-            {this.$slots.default || this.text}
+            {this.slots() || this.text}
           </div>
         </div>
         {iconName && <Icon class={bem('right-icon')} name={iconName} onClick={this.onClickIcon} />}
