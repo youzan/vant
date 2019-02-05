@@ -22,29 +22,29 @@ export default sfc({
   },
 
   render(h) {
-    const slots = this.$slots;
-    const showTitle = slots.title || isDef(this.title);
-    const showValue = slots.default || isDef(this.value);
+    const { slots } = this;
+    const showTitle = slots('title') || isDef(this.title);
+    const showValue = slots('default') || isDef(this.value);
 
     const Title = showTitle && (
       <div class={[bem('title'), this.titleClass]}>
-        {slots.title || <span>{this.title}</span>}
+        {slots('title') || <span>{this.title}</span>}
         {this.label && <div class={[bem('label'), this.labelClass]}>{this.label}</div>}
       </div>
     );
 
     const Value = showValue && (
-      <div class={[bem('value', { alone: !slots.title && !this.title }), this.valueClass]}>
-        {slots.default || <span>{this.value}</span>}
+      <div class={[bem('value', { alone: !slots('title') && !this.title }), this.valueClass]}>
+        {slots('default') || <span>{this.value}</span>}
       </div>
     );
 
-    const LeftIcon = slots.icon || (
+    const LeftIcon = slots('icon') || (
       this.icon && <Icon class={bem('left-icon')} name={this.icon} />
     );
 
     const arrowIcon = this.arrowDirection ? `arrow-${this.arrowDirection}` : 'arrow';
-    const RightIcon = slots['right-icon'] || (
+    const RightIcon = slots('right-icon') || (
       this.isLink && <Icon class={bem('right-icon')} name={arrowIcon} />
     );
 
@@ -63,7 +63,7 @@ export default sfc({
         {Title}
         {Value}
         {RightIcon}
-        {slots.extra}
+        {slots('extra')}
       </div>
     );
   }

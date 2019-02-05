@@ -11,7 +11,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <div class={bem('title')}>{this.skuRow.k}：</div>
-        {this.$slots.default}
+        {this.slots()}
       </div>
     );
   }

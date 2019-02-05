@@ -279,7 +279,7 @@ export default sfc({
             onFocus={onFocus('postalCode')}
           />
         )}
-        {this.$slots.default}
+        {this.slots()}
         {this.showSetDefault && (
           <SwitchCell
             vModel={data.isDefault}

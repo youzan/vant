@@ -28,7 +28,7 @@ export default sfc({
 
     return (
       <div class={bem()} style={style}>
-        {this.$slots.default}
+        {this.slots()}
       </div>
     );
   }

@@ -418,10 +418,10 @@ export default sfc({
         <div ref="content" class={bem('content', { animated })}>
           {animated ? (
             <div class={bem('track')} style={this.trackStyle}>
-              {this.$slots.default}
+              {this.slots()}
             </div>
           ) : (
-            this.$slots.default
+            this.slots()
           )}
         </div>
       </div>

@@ -68,7 +68,7 @@ export default sfc({
     }
 
     const { title, message, messageAlign } = this;
-    const children = this.$slots.default;
+    const children = this.slots();
 
     const Title = title && (
       <div class={bem('header', { isolated: !message && !children })}>{title}</div>

@@ -22,17 +22,17 @@ export default sfc({
   },
 
   render(h) {
-    const { thumb, $slots: slots } = this;
+    const { thumb, slots } = this;
 
-    const showThumb = slots.thumb || thumb;
-    const showTag = slots.tag || this.tag;
-    const showNum = slots.num || isDef(this.num);
-    const showPrice = slots.price || isDef(this.price);
-    const showOriginPrice = slots['origin-price'] || isDef(this.originPrice);
+    const showThumb = slots('thumb') || thumb;
+    const showTag = slots('tag') || this.tag;
+    const showNum = slots('num') || isDef(this.num);
+    const showPrice = slots('price') || isDef(this.price);
+    const showOriginPrice = slots('origin-price') || isDef(this.originPrice);
 
     const Thumb = showThumb && (
       <a href={this.thumbLink} class={bem('thumb')}>
-        {slots.thumb ||
+        {slots('thumb') ||
           (this.lazyLoad ? (
             <img class={bem('img')} vLazy={thumb} />
           ) : (
@@ -40,7 +40,7 @@ export default sfc({
           ))}
         {showTag && (
           <div class={bem('tag')}>
-            {slots.tag || (
+            {slots('tag') || (
               <Tag mark type="danger">
                 {this.tag}
               </Tag>
@@ -50,24 +50,24 @@ export default sfc({
       </a>
     );
 
-    const Title = slots.title || (this.title && <div class={bem('title')}>{this.title}</div>);
+    const Title = slots('title') || (this.title && <div class={bem('title')}>{this.title}</div>);
 
     const Desc =
-      slots.desc || (this.desc && <div class={[bem('desc'), 'van-ellipsis']}>{this.desc}</div>);
+      slots('desc') || (this.desc && <div class={[bem('desc'), 'van-ellipsis']}>{this.desc}</div>);
 
     const Price = showPrice && (
-      <div class={bem('price')}>{slots.price || `${this.currency} ${this.price}`}</div>
+      <div class={bem('price')}>{slots('price') || `${this.currency} ${this.price}`}</div>
     );
 
     const OriginPrice = showOriginPrice && (
       <div class={bem('origin-price')}>
-        {slots['origin-price'] || `${this.currency} ${this.originPrice}`}
+        {slots('origin-price') || `${this.currency} ${this.originPrice}`}
       </div>
     );
 
-    const Num = showNum && <div class={bem('num')}>{slots.num || `x ${this.num}`}</div>;
+    const Num = showNum && <div class={bem('num')}>{slots('num') || `x ${this.num}`}</div>;
 
-    const Footer = slots.footer && <div class={bem('footer')}>{slots.footer}</div>;
+    const Footer = slots('footer') && <div class={bem('footer')}>{slots('footer')}</div>;
 
     return (
       <div class={bem()}>
@@ -76,7 +76,7 @@ export default sfc({
           <div class={bem('content', { centered: this.centered })}>
             {Title}
             {Desc}
-            {slots.tags}
+            {slots('tags')}
             <div class="van-card__bottom">
               {Price}
               {OriginPrice}

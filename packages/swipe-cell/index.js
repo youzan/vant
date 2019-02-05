@@ -148,13 +148,13 @@ export default sfc({
         >
           {this.leftWidth && (
             <div class={bem('left')} onClick={onClick('left', true)}>
-              {this.$slots.left}
+              {this.slots('left')}
             </div>
           )}
-          {this.$slots.default}
+          {this.slots()}
           {this.rightWidth && (
             <div class={bem('right')} onClick={onClick('right', true)}>
-              {this.$slots.right}
+              {this.slots('right')}
             </div>
           )}
         </div>

@@ -265,7 +265,7 @@ export default sfc({
     const { count, activeIndicator } = this;
 
     const Indicator =
-      this.$slots.indicator ||
+      this.slots('indicator') ||
       (this.showIndicators && count > 1 && (
         <div class={bem('indicators', { vertical: this.vertical })} onTransitionend={stop}>
           {Array(...Array(count)).map((empty, index) => (
@@ -288,7 +288,7 @@ export default sfc({
           onTouchcancel={this.onTouchEnd}
           onTransitionend={this.onTransitionend}
         >
-          {this.$slots.default}
+          {this.slots()}
         </div>
         {Indicator}
       </div>

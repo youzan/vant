@@ -28,10 +28,10 @@ export default sfc({
   },
 
   render(h) {
-    const { icon, title, description, $slots } = this;
+    const { icon, title, description, slots } = this;
 
-    const StatusIcon = ($slots.icon || icon) && (
-      <div class={bem('icon')}>{$slots.icon || <Icon name={icon} class={this.iconClass} />}</div>
+    const StatusIcon = (slots('icon') || icon) && (
+      <div class={bem('icon')}>{slots('icon') || <Icon name={icon} class={this.iconClass} />}</div>
     );
 
     const StatusMessage = (
@@ -47,10 +47,10 @@ export default sfc({
           <div class={bem('status')}>
             {StatusIcon}
             {StatusMessage}
-            {$slots['message-extra']}
+            {slots('message-extra')}
           </div>
         )}
-        <div class={bem('items', { alone: !title && !description })}>{$slots.default}</div>
+        <div class={bem('items', { alone: !title && !description })}>{slots()}</div>
       </div>
     );
   }

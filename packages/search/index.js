@@ -63,11 +63,11 @@ export default sfc({
           leftIcon="search"
           {...props}
         >
-          {h('template', { slot: 'left-icon' }, this.$slots['left-icon'])}
+          {h('template', { slot: 'left-icon' }, this.slots('left-icon'))}
         </Field>
         {showAction && (
           <div class={bem('action')}>
-            {this.$slots.action || <div onClick={this.onBack}>{t('cancel')}</div>}
+            {this.slots('action') || <div onClick={this.onBack}>{t('cancel')}</div>}
           </div>
         )}
       </div>

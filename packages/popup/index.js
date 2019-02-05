@@ -35,7 +35,7 @@ export default sfc({
         onAfterLeave={emit('closed')}
       >
         <div vShow={this.value} class={bem({ [position]: position })}>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </transition>
     );
