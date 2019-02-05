@@ -211,6 +211,13 @@ export default sfc({
 
     setAddressDetail(value) {
       this.data.addressDetail = value;
+    },
+
+    onDetailBlur() {
+      // await for click search event
+      setTimeout(() => {
+        this.detailFocused = false;
+      });
     }
   },
 
@@ -259,9 +266,7 @@ export default sfc({
           searchResult={this.searchResult}
           showSearchResult={this.showSearchResult}
           onFocus={onFocus('addressDetail')}
-          onBlur={() => {
-            this.detailFocused = false;
-          }}
+          onBlur={this.onDetailBlur}
           onInput={this.onChangeDetail}
           onSelect-search={event => {
             this.$emit('select-search', event);
