@@ -36,7 +36,6 @@ const mapInheritKey = { nativeOn: 'on' };
 
 function functional(sfc) {
   const { render } = sfc;
-  sfc.functional = true;
   sfc.render = (h, context) => {
     const inherit = inheritKey.reduce((obj, key) => {
       if (context.data[key]) {
@@ -48,7 +47,7 @@ function functional(sfc) {
   };
 }
 
-export default name => (sfc, isFunctional) => {
+export default name => sfc => {
   sfc.name = name;
   sfc.install = install;
   sfc.mixins = sfc.mixins || [];
@@ -58,7 +57,7 @@ export default name => (sfc, isFunctional) => {
     defaultProps(sfc.props);
   }
 
-  if (isFunctional) {
+  if (sfc.functional) {
     functional(sfc);
   }
 
