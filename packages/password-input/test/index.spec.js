@@ -1,0 +1,16 @@
+import PasswordInput from '..';
+import { mount } from '../../../test/utils';
+
+test('focus event', () => {
+  const focus = jest.fn();
+  const wrapper = mount(PasswordInput, {
+    context: {
+      on: {
+        focus
+      }
+    }
+  });
+
+  wrapper.find('.van-password-input__security').trigger('touchstart');
+  expect(focus.mock.calls.length).toEqual(1);
+});

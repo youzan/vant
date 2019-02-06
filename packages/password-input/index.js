@@ -2,50 +2,50 @@ import { use } from '../utils';
 
 const [sfc, bem] = use('password-input');
 
-export default sfc({
-  props: {
-    info: String,
-    errorInfo: String,
-    value: {
-      type: String,
-      default: ''
-    },
-    length: {
-      type: Number,
-      default: 6
-    }
-  },
-
-  computed: {
-    points() {
-      const arr = [];
-      for (let i = 0; i < this.length; i++) {
-        arr[i] = this.value[i] ? 'visible' : 'hidden';
+export default sfc(
+  {
+    props: {
+      info: String,
+      errorInfo: String,
+      value: {
+        type: String,
+        default: ''
+      },
+      length: {
+        type: Number,
+        default: 6
       }
-      return arr;
+    },
+
+    render(h, context) {
+      const { props, listeners } = context;
+      const info = props.errorInfo || props.info;
+
+      const Points = [];
+      for (let i = 0; i < props.length; i++) {
+        Points.push(
+          <li class="van-hairline">
+            <i style={{ visibility: props.value[i] ? 'visible' : 'hidden' }} />
+          </li>
+        );
+      }
+
+      return (
+        <div class={bem()}>
+          <ul
+            class={[bem('security'), 'van-hairline--surround']}
+            onTouchstart={event => {
+              event.stopPropagation();
+              listeners.focus && listeners.focus();
+            }}
+            {...context.data}
+          >
+            {Points}
+          </ul>
+          {info && <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>}
+        </div>
+      );
     }
   },
-
-  render(h) {
-    const info = this.errorInfo || this.info;
-
-    return (
-      <div class={bem()}>
-        <ul
-          class={[bem('security'), 'van-hairline--surround']}
-          onTouchstart={event => {
-            event.stopPropagation();
-            this.$emit('focus');
-          }}
-        >
-          {this.points.map(visibility => (
-            <li class="van-hairline">
-              <i style={{ visibility }} />
-            </li>
-          ))}
-        </ul>
-        {info && <div class={bem(this.errorInfo ? 'error-info' : 'info')}>{info}</div>}
-      </div>
-    );
-  }
-});
+  true
+);
