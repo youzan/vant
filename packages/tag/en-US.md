@@ -81,3 +81,9 @@ Vue.use(Tag);
 | name | Description |
 |------|------|
 | - | Default slot |
+
+### Event
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when clicked | - |
