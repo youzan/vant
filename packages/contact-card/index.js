@@ -4,6 +4,8 @@ import Cell from '../cell';
 const [sfc, bem, t] = use('contact-card');
 
 export default sfc({
+  functional: true,
+
   props: {
     tel: String,
     name: String,
@@ -18,28 +20,27 @@ export default sfc({
     }
   },
 
-  methods: {
-    onClick(event) {
-      if (this.editable) {
-        this.$emit('click', event);
-      }
-    }
-  },
+  render(h, context, inherit) {
+    const { props, listeners } = context;
+    const { type, editable } = props;
 
-  render(h) {
-    const { type } = this;
     return (
       <Cell
         center
         border={false}
         class={bem([type])}
-        isLink={this.editable}
+        isLink={editable}
         icon={type === 'edit' ? 'contact' : 'add-square'}
-        onClick={this.onClick}
+        onClick={event => {
+          if (editable && listeners.click) {
+            listeners.click(event);
+          }
+        }}
+        {...inherit}
       >
         {type === 'add'
-          ? this.addText || t('addText')
-          : [<div>{`${t('name')}：${this.name}`}</div>, <div>{`${t('tel')}：${this.tel}`}</div>]}
+          ? props.addText || t('addText')
+          : [<div>{`${t('name')}：${props.name}`}</div>, <div>{`${t('tel')}：${props.tel}`}</div>]}
       </Cell>
     );
   }
