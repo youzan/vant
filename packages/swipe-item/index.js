@@ -27,7 +27,7 @@ export default sfc({
     };
 
     return (
-      <div class={bem()} style={style}>
+      <div class={bem()} style={style} {...{ on: this.$listeners }}>
         {this.slots()}
       </div>
     );
