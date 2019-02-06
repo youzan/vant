@@ -60,7 +60,10 @@ export default sfc({
 
   methods: {
     onClickIcon() {
-      this.showNoticeBar = this.mode !== 'closeable';
+      if (this.mode === 'closeable') {
+        this.showNoticeBar = false;
+        this.$emit('close');
+      }
     },
 
     onAnimationEnd() {
