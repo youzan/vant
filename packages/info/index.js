@@ -2,21 +2,20 @@ import { use, isDef } from '../utils';
 
 const [sfc, bem] = use('info');
 
-export default sfc(
-  {
-    props: {
-      info: [String, Number]
-    },
+export default sfc({
+  functional: true,
 
-    render(h, { props, data }) {
-      return (
-        isDef(props.info) && (
-          <div class={bem()} {...data}>
-            {props.info}
-          </div>
-        )
-      );
-    }
+  props: {
+    info: [String, Number]
   },
-  true
-);
+
+  render(h, { props, data }) {
+    return (
+      isDef(props.info) && (
+        <div class={bem()} {...data}>
+          {props.info}
+        </div>
+      )
+    );
+  }
+});
