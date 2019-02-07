@@ -112,6 +112,7 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
+    "ts-jest": "^23.10.5",
     "typescript": "^3.2.4",
     "uppercamelcase": "^3.0.0",
     "url-loader": "^1.1.2",
