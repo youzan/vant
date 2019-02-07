@@ -73,7 +73,7 @@ export default sfc({
         this.inited = true;
       }
 
-      this.$nextTick(() => {
+      raf(() => {
         const { content, wrapper } = this.$refs;
         if (!content || !wrapper) {
           return;
