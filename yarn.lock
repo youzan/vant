@@ -777,11 +777,6 @@
     "@types/unist" "*"
     "@types/vfile-message" "*"
 
-"@vant/compiler@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@vant/compiler/-/compiler-1.0.0.tgz#aecf1014c40db590026781cead28c951b538b461"
-  integrity sha512-c0HGv56gQVrwFxvR0YyIH8qtADAIyUvnUv2NgHaODn+1XkG2NF+wdyzIc4n0Pb3DuvT3oCdN5jKx4mnOOzqKOQ==
-
 "@vant/doc@^1.0.23":
   version "1.0.23"
   resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-1.0.23.tgz#401752f576f39e46ac8dacf6225906a2355b8093"

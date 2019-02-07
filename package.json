@@ -75,7 +75,6 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-typescript": "^7.1.0",
-    "@vant/compiler": "^1.0.0",
     "@vant/doc": "^1.0.23",
     "@vant/eslint-config": "^1.0.8",
     "@vant/markdown-loader": "^1.0.3",
