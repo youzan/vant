@@ -1,14 +1,17 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "target": "es6",
     "jsx": "preserve",
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
     "allowJs": true,
     "noImplicitThis": true,
-    "noImplicitUseStrict": true
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "include": [
     "types/**/*",
-    "packages/**/*"
+    "packages/**/*",
   ]
 }
