@@ -13,5 +13,10 @@
   "include": [
     "types/**/*",
     "packages/**/*",
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.spec.js",
+    "node_modules"
   ]
 }

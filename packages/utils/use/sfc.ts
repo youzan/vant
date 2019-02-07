@@ -62,5 +62,5 @@ export default (name: string) => (sfc) => {
     functional(sfc);
   }
 
-  return Vue.extend(sfc);
+  return sfc;
 };
