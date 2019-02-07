@@ -14,9 +14,10 @@ const babelConfig = {
   configFile: path.join(__dirname, '../babel.config.js')
 };
 
+const scriptRegExp = /\.(js|ts|tsx)$/;
 const isDir = dir => fs.lstatSync(dir).isDirectory();
-const isJs = path => /\.js$/.test(path);
 const isCode = path => !/(demo|test|\.md)$/.test(path);
+const isScript = path => scriptRegExp.test(path);
 
 function compile(dir) {
   const files = fs.readdirSync(dir);
@@ -34,10 +35,11 @@ function compile(dir) {
       return compile(filePath);
     }
 
-    // compile js
-    if (isJs(file)) {
+    // compile js or ts
+    if (isScript(file)) {
       const { code } = babel.transformFileSync(filePath, babelConfig);
-      fs.outputFileSync(filePath, code);
+      fs.removeSync(filePath);
+      fs.outputFileSync(filePath.replace(scriptRegExp, '.js'), code);
     }
   });
 }
