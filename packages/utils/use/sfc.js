@@ -1,7 +1,6 @@
 /**
  * Create a basic component with common options
  */
-import Vue from 'vue';
 import '../../locale';
 import { camelize } from '..';
 import SlotsMixin from '../../mixins/slots';
@@ -48,7 +47,7 @@ function functional(sfc) {
   };
 }
 
-export default (name: string) => (sfc) => {
+export default name => sfc => {
   sfc.name = name;
   sfc.install = install;
   sfc.mixins = sfc.mixins || [];

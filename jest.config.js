@@ -1,6 +1,7 @@
 module.exports = {
+  preset: 'ts-jest',
   setupFiles: ['<rootDir>/test/jest.init.js'],
-  moduleFileExtensions: ['js', 'vue'],
+  moduleFileExtensions: ['js', 'vue', 'ts', 'tsx'],
   transform: {
     '^.+\\.js$': '<rootDir>/test/jest.transform.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
