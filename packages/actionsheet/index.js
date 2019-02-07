@@ -3,8 +3,6 @@ import Icon from '../icon';
 import Loading from '../loading';
 import PopupMixin from '../mixins/popup';
 
-import { VNode } from 'vue/types'
-
 const [sfc, bem] = use('actionsheet');
 
 export default sfc({
@@ -26,7 +24,7 @@ export default sfc({
   },
 
   methods: {
-    onSelect(event: Event, item) {
+    onSelect(event, item) {
       event.stopPropagation();
 
       if (!item.disabled && !item.loading) {
@@ -44,7 +42,7 @@ export default sfc({
     }
   },
 
-  render(h): VNode {
+  render(h) {
     if (!this.shouldRender) {
       return;
     }
