@@ -7,21 +7,26 @@
  * b(['disabled', 'primary']) // 'button button--disabled button--primary'
  */
 
+type Mod = string | { [key: string]: any };
+type Mods = Mod | Mod[];
+
 const ELEMENT = '__';
 const MODS = '--';
 
-const join = (name: string, el: string, symbol: string) => (el ? name + symbol + el : name);
+function join(name: string, el: string, symbol: string): string {
+  return el ? name + symbol + el : name;
+}
 
-const prefix = (name: string, mods: any): any => {
+function prefix(name: string, mods: Mods): Mods {
   if (typeof mods === 'string') {
     return join(name, mods, MODS);
   }
 
   if (Array.isArray(mods)) {
-    return mods.map(item => prefix(name, item));
+    return mods.map(item => <Mod>prefix(name, item));
   }
 
-  const ret: { [key: string]: any } = {};
+  const ret: Mods = {};
   if (mods) {
     Object.keys(mods).forEach(key => {
       ret[name + MODS + key] = mods[key];
@@ -29,9 +34,9 @@ const prefix = (name: string, mods: any): any => {
   }
 
   return ret;
-};
+}
 
-export default (name: string) => (el: any, mods?: any) => {
+export default (name: string) => (el: Mods, mods?: Mods): Mods => {
   if (el && typeof el !== 'string') {
     mods = el;
     el = '';
