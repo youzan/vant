@@ -1,9 +1,11 @@
-import { use } from '../utils';
+import { use, noop } from '../utils';
 import Icon from '../icon';
 
 const [sfc, bem] = use('nav-bar');
 
 export default sfc({
+  functional: true,
+
   props: {
     title: String,
     fixed: Boolean,
@@ -20,32 +22,25 @@ export default sfc({
     }
   },
 
-  render(h) {
+  render(h, context, inherit) {
+    const { props, listeners } = context;
+    const slots = context.slots();
+
     return (
       <div
-        class={[bem({ fixed: this.fixed }), { 'van-hairline--bottom': this.border }]}
-        style={{ zIndex: this.zIndex }}
+        class={[bem({ fixed: props.fixed }), { 'van-hairline--bottom': props.border }]}
+        style={{ zIndex: props.zIndex }}
+        {...inherit}
       >
-        <div
-          class={bem('left')}
-          onClick={() => {
-            this.$emit('click-left');
-          }}
-        >
-          {this.$slots.left || [
-            this.leftArrow && <Icon class={bem('arrow')} name="arrow-left" />,
-            this.leftText && <span class={bem('text')}>{this.leftText}</span>
+        <div class={bem('left')} onClick={listeners['click-left'] || noop}>
+          {slots.left || [
+            props.leftArrow && <Icon class={bem('arrow')} name="arrow-left" />,
+            props.leftText && <span class={bem('text')}>{props.leftText}</span>
           ]}
         </div>
-        <div class={[bem('title'), 'van-ellipsis']}>{this.$slots.title || this.title}</div>
-        <div
-          class={bem('right')}
-          onClick={() => {
-            this.$emit('click-right');
-          }}
-        >
-          {this.$slots.right ||
-            (this.rightText && <span class={bem('text')}>{this.rightText}</span>)}
+        <div class={[bem('title'), 'van-ellipsis']}>{slots.title || props.title}</div>
+        <div class={bem('right')} onClick={listeners['click-right'] || noop}>
+          {slots.right || (props.rightText && <span class={bem('text')}>{props.rightText}</span>)}
         </div>
       </div>
     );

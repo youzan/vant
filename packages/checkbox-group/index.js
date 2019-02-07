@@ -16,6 +16,6 @@ export default sfc({
   },
 
   render(h) {
-    return <div class={bem()}>{this.$slots.default}</div>;
+    return <div class={bem()}>{this.slots()}</div>;
   }
 });

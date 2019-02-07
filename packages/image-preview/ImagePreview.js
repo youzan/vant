@@ -10,10 +10,7 @@ const MIN_ZOOM = 1 / 3;
 
 function getDistance(touches) {
   return Math.sqrt(
-    Math.abs(
-      (touches[0].clientX - touches[1].clientX) *
-        (touches[0].clientY - touches[1].clientY)
-    )
+    Math.abs((touches[0].clientX - touches[1].clientX) * (touches[0].clientY - touches[1].clientY))
   );
 }
 
@@ -22,10 +19,11 @@ export default sfc({
 
   props: {
     images: Array,
+    className: null,
+    lazyLoad: Boolean,
     asyncClose: Boolean,
     startPosition: Number,
     showIndicators: Boolean,
-    className: [String, Object, Array],
     loop: {
       type: Boolean,
       default: true
@@ -67,8 +65,8 @@ export default sfc({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this
-          .moveX / scale}px, ${this.moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX / scale}px, ${this
+          .moveY / scale}px)`;
       }
 
       return style;
@@ -171,11 +169,7 @@ export default sfc({
       if (this.moving || this.zooming) {
         let stopPropagation = true;
 
-        if (
-          this.moving &&
-          this.startMoveX === this.moveX &&
-          this.startMoveY === this.moveY
-        ) {
+        if (this.moving && this.startMoveX === this.moveX && this.startMoveY === this.moveY) {
           stopPropagation = false;
         }
 
@@ -225,24 +219,28 @@ export default sfc({
       <Swipe
         ref="swipe"
         loop={this.loop}
-        indicator-color="white"
-        initial-swipe={this.startPosition}
-        show-indicators={this.showIndicators}
+        indicatorColor="white"
+        initialSwipe={this.startPosition}
+        showIndicators={this.showIndicators}
         onChange={this.onChange}
       >
-        {images.map((item, index) => (
-          <SwipeItem>
-            <img
-              class={bem('image')}
-              src={item}
-              style={index === active ? this.imageStyle : null}
-              onTouchstart={this.onTouchStart}
-              onTouchmove={this.onTouchMove}
-              onTouchend={this.onTouchEnd}
-              onTouchcancel={this.onTouchEnd}
-            />
-          </SwipeItem>
-        ))}
+        {images.map((image, index) => {
+          const props = {
+            class: bem('image'),
+            style: index === active ? this.imageStyle : null,
+            on: {
+              touchstart: this.onTouchStart,
+              touchmove: this.onTouchMove,
+              touchend: this.onTouchEnd,
+              touchcancel: this.onTouchEnd
+            }
+          };
+          return (
+            <SwipeItem>
+              {this.lazyLoad ? <img vLazy={image} {...props} /> : <img src={image} {...props} />}
+            </SwipeItem>
+          );
+        })}
       </Swipe>
     );
 

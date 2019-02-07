@@ -32,7 +32,7 @@ export default sfc({
         type={this.primary ? 'danger' : 'warning'}
         onClick={this.onClick}
       >
-        {this.$slots.default || this.text}
+        {this.slots() || this.text}
       </Button>
     );
   }

@@ -5,8 +5,9 @@ type NotifyMessage = string | number;
 export type NotifyOptions = {
   message?: NotifyMessage;
   color?: string;
-  background?: string;
   duration?: number;
+  className?: any;
+  background?: string;
 }
 
 export interface VanNotify extends Vue {

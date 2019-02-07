@@ -4,6 +4,8 @@ import Loading from '../loading';
 const [sfc, bem] = use('button');
 
 export default sfc({
+  functional: true,
+
   props: {
     text: String,
     block: Boolean,
@@ -28,40 +30,42 @@ export default sfc({
     }
   },
 
-  methods: {
-    onClick(event) {
-      if (!this.loading && !this.disabled) {
-        this.$emit('click', event);
-      }
-    }
-  },
+  render(h, context, inherit) {
+    const { props, listeners } = context;
+    const { type, disabled, loading } = props;
 
-  render(h) {
+    const onClick = event => {
+      if (!loading && !disabled && listeners.click) {
+        listeners.click(event);
+      }
+    };
+
     return (
-      <this.tag
-        type={this.nativeType}
-        disabled={this.disabled}
+      <props.tag
+        type={props.nativeType}
+        disabled={disabled}
         class={bem([
-          this.type,
-          this.size,
+          type,
+          props.size,
           {
-            block: this.block,
-            plain: this.plain,
-            round: this.round,
-            square: this.square,
-            loading: this.loading,
-            disabled: this.disabled,
-            'bottom-action': this.bottomAction
+            loading,
+            disabled,
+            block: props.block,
+            plain: props.plain,
+            round: props.round,
+            square: props.square,
+            'bottom-action': props.bottomAction
           }
         ])}
-        onClick={this.onClick}
+        onClick={onClick}
+        {...inherit}
       >
-        {this.loading ? (
-          <Loading size="20px" color={this.type === 'default' ? undefined : ''} />
+        {loading ? (
+          <Loading size="20px" color={type === 'default' ? undefined : ''} />
         ) : (
-          <span class={bem('text')}>{this.$slots.default || this.text}</span>
+          <span class={bem('text')}>{context.children || props.text}</span>
         )}
-      </this.tag>
+      </props.tag>
     );
   }
 });

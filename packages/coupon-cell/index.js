@@ -52,8 +52,8 @@ export default sfc({
         title={this.title || t('title')}
         value={this.value}
         border={this.border}
-        is-link={this.editable}
-        value-class={this.valueClass}
+        isLink={this.editable}
+        valueClass={this.valueClass}
         onClick={() => {
           this.$emit('click');
         }}

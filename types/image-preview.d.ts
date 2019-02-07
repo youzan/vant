@@ -5,6 +5,7 @@ export type ImagePreviewOptions = string[] | {
   images: string[];
   className?: any;
   startPosition?: number;
+  lazyLoad?: boolean;
   showIndex?: boolean;
   asyncClose?: boolean;
   showIndicators?: boolean;

@@ -60,7 +60,10 @@ export default sfc({
 
   methods: {
     onClickIcon() {
-      this.showNoticeBar = this.mode !== 'closeable';
+      if (this.mode === 'closeable') {
+        this.showNoticeBar = false;
+        this.$emit('close');
+      }
     },
 
     onAnimationEnd() {
@@ -90,7 +93,7 @@ export default sfc({
 
     return (
       <div
-        v-show={this.showNoticeBar}
+        vShow={this.showNoticeBar}
         class={bem({ withicon: mode })}
         style={barStyle}
         onClick={() => {
@@ -106,7 +109,7 @@ export default sfc({
             onAnimationend={this.onAnimationEnd}
             onWebkitAnimationEnd={this.onAnimationEnd}
           >
-            {this.$slots.default || this.text}
+            {this.slots() || this.text}
           </div>
         </div>
         {iconName && <Icon class={bem('right-icon')} name={iconName} onClick={this.onClickIcon} />}

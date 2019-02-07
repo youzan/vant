@@ -1,8 +1,8 @@
 import manager from './manager';
 import context from './context';
-import scrollUtils from '../../utils/scroll';
-import { on, off } from '../../utils/event';
 import Touch from '../touch';
+import { on, off } from '../../utils/event';
+import { getScrollEventTarget } from '../../utils/scroll';
 
 export default {
   mixins: [Touch],
@@ -48,8 +48,10 @@ export default {
 
   watch: {
     value(val) {
+      const type = val ? 'open' : 'close';
       this.inited = this.inited || this.value;
-      this[val ? 'open' : 'close']();
+      this[type]();
+      this.$emit(type);
     },
 
     getContainer() {
@@ -80,7 +82,7 @@ export default {
   beforeDestroy() {
     this.close();
 
-    if (this.getContainer) {
+    if (this.getContainer && this.$parent && this.$parent.$el) {
       this.$parent.$el.appendChild(this.$el);
     }
   },
@@ -157,7 +159,7 @@ export default {
     onTouchMove(e) {
       this.touchMove(e);
       const direction = this.deltaY > 0 ? '10' : '01';
-      const el = scrollUtils.getScrollEventTarget(e.target, this.$el);
+      const el = getScrollEventTarget(e.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
       let status = '11';
 

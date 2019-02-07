@@ -1,5 +1,116 @@
 ## Changelog
 
+## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+`2019-02-05`
+
+**Improvements**
+
+- fix functional component can not inherit directives and native events. [\#2686](https://github.com/youzan/vant/pull/2686)
+
+
+## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+`2019-02-04`
+
+**Breaking changes**
+
+- Radio: refactored, now has the same stuct as Checkbox [\#2651](https://github.com/youzan/vant/pull/2651)
+
+**Improvements**
+
+- Use JSX to rewrite all components
+- Transform part components to functional for better performance
+- Card: add tag slot [\#2636](https://github.com/youzan/vant/pull/2636)
+- Icon: add weapp-nav icon [\#2682](https://github.com/youzan/vant/pull/2682)
+- Radio: add icon slot [\#2651](https://github.com/youzan/vant/pull/2651)
+- Radio: add shape prop [\#2651](https://github.com/youzan/vant/pull/2651)
+- Toast: add className prop [\#2680](https://github.com/youzan/vant/pull/2680)
+- Notify: add className prop [\#2681](https://github.com/youzan/vant/pull/2681)
+- Popup: add open/close event [\#2649](https://github.com/youzan/vant/pull/2649)
+- Popup: add opened/closed event [\#2650](https://github.com/youzan/vant/pull/2650)
+
+**Bug Fixes**
+
+- fix ContactList button position [\#2634](https://github.com/youzan/vant/pull/2634)
+- fix Toast clear in multiple mode [\#2635](https://github.com/youzan/vant/pull/2635)
+- fix SwipeCell maximum left offset [\#2633](https://github.com/youzan/vant/pull/2633)
+- fix Popup get-container error when destoryed [\#2679](https://github.com/youzan/vant/pull/2679)
+
+
+## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+`2019-01-24`
+
+**Improvements**
+
+- add live icon
+- add lock icon
+- add audio icon
+- add column icon
+- add replay icon
+- add shrink icon
+- add graphic icon
+- add invition icon
+- add ascending icon
+- add descending icon
+- add play-circle icon
+- add stop-circle icon
+- add pause-circle icon
+- add play-circle-o icon
+- add stop-circle-o icon
+- add pause-circle-o icon
+- Field: add click-left-icon event [\#2605](https://github.com/youzan/vant/pull/2605)
+
+## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
+`2019-01-22`
+
+**Improvements**
+
+- Card: add origin-price slot [\#2588](https://github.com/youzan/vant/pull/2588)
+- Switch: add active-value & inactive-value prop [\#2590](https://github.com/youzan/vant/pull/2590)
+- SwitchCell: add active-value & inactive-value prop [\#2591](https://github.com/youzan/vant/pull/2591)
+
+**Bug Fixes**
+
+- fix Card: centered prop not work [\#2589](https://github.com/youzan/vant/pull/2589)
+- fix Icon name not work when passing url [\#2585](https://github.com/youzan/vant/pull/2585)
+
+
+## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
+`2019-01-21`
+
+**Bug Fixes**
+
+- fix Field type prop not work [\#2579](https://github.com/youzan/vant/pull/2579)
+
+
+## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+`2019-01-20`
+
+**Bug Fixes**
+
+- fix missing dependencie @vue/babel-helper-vue-jsx-merge-props [\#2474](https://github.com/youzan/vant/issues/2474)
+
+
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: add error-text prop [\#2568](https://github.com/youzan/vant/pull/2568)
+- Toast: allow newline charactor [\#2496](https://github.com/youzan/vant/pull/2496)
+- Coupon: add condition prop [\#2551](https://github.com/youzan/vant/pull/2551)
+- Dialog: enable lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- NavBar: support custom theme [\#2570](https://github.com/youzan/vant/pull/2570)
+- ImagePreview: add lazyLoad prop [\#2569](https://github.com/youzan/vant/pull/2569)
+- Area: add confirm-button-text、cancel-button-text prop [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- fix Card price style [\#2549](https://github.com/youzan/vant/pull/2549)
+- fix Radio unchecked icon color [\#2484](https://github.com/youzan/vant/pull/2484)
+- fix Radio label-position type [\#2485](https://github.com/youzan/vant/pull/2485)
+- fix Dialog action event [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
 ## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
 `2019-01-10`
 

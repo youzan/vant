@@ -20,7 +20,7 @@ exports[`render coupon list 1`] = `
 <div class="van-coupon-list">
   <div class="van-cell van-cell--borderless van-field van-coupon-list__field">
     <div class="van-cell__value van-cell__value--alone">
-      <div class="van-field__body"><input placeholder="请输入优惠码" maxlength="20" class="van-field__control">
+      <div class="van-field__body"><input type="text" placeholder="请输入优惠码" maxlength="20" class="van-field__control">
         <div class="van-field__button"><button disabled="disabled" class="van-button van-button--danger van-button--small van-button--disabled van-coupon-list__exchange"><span class="van-button__text">兑换</span></button></div>
       </div>
     </div>
@@ -116,10 +116,8 @@ exports[`render coupon list 1`] = `
             </div>
           </div>
         </div>
-        <!---->
       </div>
       <div class="van-tab__pane" style="display: none;">
-        <!---->
         <!---->
       </div>
     </div>

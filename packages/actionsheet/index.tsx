@@ -85,12 +85,12 @@ export default sfc({
         {cancelText}
       </div>
     ) : (
-      <div class={bem('content')}>{this.$slots.default}</div>
+      <div class={bem('content')}>{this.slots()}</div>
     );
 
     return (
       <transition name="van-slide-up">
-        <div v-show={this.value} class={bem({ withtitle: title })}>
+        <div vShow={this.value} class={bem({ withtitle: title })}>
           {title ? Header() : this.actions.map(Option)}
           {Footer}
         </div>

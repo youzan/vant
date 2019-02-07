@@ -127,7 +127,7 @@ export default sfc({
           </li>
         ))}
         {simple && (
-          <li class={bem('page-desc')}>{this.$slots.pageDesc || `${value}/${this.count}`}</li>
+          <li class={bem('page-desc')}>{this.slots('pageDesc') || `${value}/${this.count}`}</li>
         )}
         <li
           class={[bem('item', { disabled: value === this.count }), bem('next'), 'van-hairline']}

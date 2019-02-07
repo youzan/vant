@@ -3,6 +3,8 @@ import { use } from '../utils';
 const [sfc, bem] = use('cell-group');
 
 export default sfc({
+  functional: true,
+
   props: {
     border: {
       type: Boolean,
@@ -10,10 +12,10 @@ export default sfc({
     }
   },
 
-  render(h) {
+  render(h, context) {
     return (
-      <div class={[bem(), { 'van-hairline--top-bottom': this.border }]}>
-        {this.$slots.default}
+      <div class={[bem(), { 'van-hairline--top-bottom': context.props.border }]} {...context.data}>
+        {context.children}
       </div>
     );
   }

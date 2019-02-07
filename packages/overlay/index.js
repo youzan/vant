@@ -5,8 +5,8 @@ const [sfc, bem] = use('overlay');
 export default sfc({
   props: {
     zIndex: Number,
+    className: null,
     visible: Boolean,
-    className: String,
     customStyle: Object
   },
 
@@ -19,7 +19,7 @@ export default sfc({
     return (
       <transition name="van-fade">
         <div
-          v-show={this.visible}
+          vShow={this.visible}
           style={style}
           class={[bem(), this.className]}
           onTouchmove={event => {

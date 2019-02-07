@@ -53,7 +53,7 @@
   }
 
   &__clear,
-  &__icon {
+  &__right-icon {
     padding: 0 10px;
     line-height: inherit;
     margin-right: -10px;
@@ -64,11 +64,20 @@
     font-size: 16px;
   }
 
-  &__icon .van-icon {
+  &__left-icon .van-icon,
+  &__right-icon .van-icon {
     display: block;
+    min-width: 1em;
     font-size: 16px;
-    color: @gray-dark;
     line-height: inherit;
+  }
+
+  &__left-icon {
+    margin-right: 5px;
+  }
+
+  &__right-icon {
+    color: @gray-dark;
   }
 
   &__button {

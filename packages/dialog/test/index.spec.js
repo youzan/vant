@@ -7,7 +7,10 @@ transitionStub();
 
 test('Dialog function call', async () => {
   Dialog.close();
-  Dialog.alert('1');
+  Dialog.alert({
+    message: '1',
+    showCancelButton: true
+  });
 
   await later();
 
@@ -35,6 +38,7 @@ test('before close', () => {
   const wrapper = mount(DialogVue, {
     propsData: {
       value: true,
+      showCancelButton: true,
       beforeClose: (action, done) => done(false)
     }
   });
@@ -42,13 +46,13 @@ test('before close', () => {
   const cancel = wrapper.find('.van-dialog__cancel');
 
   cancel.trigger('click');
-  expect(wrapper.emitted('cancel')).toBeFalsy();
+  expect(wrapper.emitted('input')).toBeFalsy();
 
   wrapper.setProps({
     beforeClose: (action, done) => done()
   });
   cancel.trigger('click');
-  expect(wrapper.emitted('cancel')).toBeTruthy();
+  expect(wrapper.emitted('input')).toBeTruthy();
 });
 
 test('set default options', () => {

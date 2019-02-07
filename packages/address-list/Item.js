@@ -22,16 +22,18 @@ export default sfc({
 
   render(h) {
     const { data, disabled, switchable } = this;
+    const Info = [
+      <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
+      <div class={bem('address')}>{data.address}</div>
+    ];
+
     return (
       <Cell
         class={bem({ disabled, unswitchable: !switchable })}
-        is-link={!disabled && switchable}
+        isLink={!disabled && switchable}
         onClick={this.onSelect}
       >
-        <Radio name={data.id}>
-          <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>
-          <div class={bem('address')}>{data.address}</div>
-        </Radio>
+        {disabled ? Info : <Radio name={data.id}>{Info}</Radio>}
         <Icon
           slot="right-icon"
           name="edit"

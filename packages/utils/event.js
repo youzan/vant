@@ -30,3 +30,11 @@ export function on(target, event, handler, passive = false) {
 export function off(target, event, handler) {
   !isServer && target.removeEventListener(event, handler);
 }
+
+export function stop(event) {
+  event.stopPropagation();
+}
+
+export function prevent(event) {
+  event.preventDefault();
+}

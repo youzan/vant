@@ -10,7 +10,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
       </div>
-      <!---->
     </div>
   </div>
   <div>
@@ -21,7 +20,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);"><img></div>
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);"><img></div>
       </div>
-      <!---->
     </div>
   </div>
   <div>
@@ -32,7 +30,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
       </div>
-      <!---->
     </div>
   </div>
   <div>
@@ -43,7 +40,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">3</div>
         <div class="van-swipe-item" style="width:0px;height:0px;transform:translateY(0px);">4</div>
       </div>
-      <!---->
     </div>
   </div>
   <div>
@@ -54,7 +50,6 @@ exports[`renders demo correctly 1`] = `
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">3</div>
         <div class="van-swipe-item" style="width:0px;height:100%;transform:translateX(0px);">4</div>
       </div>
-      <!---->
     </div>
   </div>
   <div>

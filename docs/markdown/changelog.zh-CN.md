@@ -1,5 +1,116 @@
 ## 更新日志
 
+## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+`2019-02-05`
+
+**Improvements**
+
+- 修复函数式组件无法继承指令和原生事件的问题 [\#2686](https://github.com/youzan/vant/pull/2686)
+
+
+## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+`2019-02-04`
+
+**Breaking changes**
+
+- Radio: 重写了组件结构，现在提供和 Checkbox 一致的 UI 和 DOM 结构 [\#2651](https://github.com/youzan/vant/pull/2651)
+
+**Improvements**
+
+- 使用 JSX 重写了所有组件
+- 部分组件现在是函数式组件了，渲染性能更佳
+- Card: 新增 tag 插槽 [\#2636](https://github.com/youzan/vant/pull/2636)
+- Radio: 新增 icon 插槽 [\#2651](https://github.com/youzan/vant/pull/2651)
+- Radio: 新增 shape 属性 [\#2651](https://github.com/youzan/vant/pull/2651)
+- Icon: 新增 weapp-nav 图标 [\#2682](https://github.com/youzan/vant/pull/2682)
+- Toast: 新增 className 属性 [\#2680](https://github.com/youzan/vant/pull/2680)
+- Notify: 新增 className 属性 [\#2681](https://github.com/youzan/vant/pull/2681)
+- Popup: 新增 open/close 事件 [\#2649](https://github.com/youzan/vant/pull/2649)
+- Popup: 新增 opened/closed 事件 [\#2650](https://github.com/youzan/vant/pull/2650)
+
+**Bug Fixes**
+
+- 修复 SwipeCell 左侧内容滑动距离过大的问题 [\#2633](https://github.com/youzan/vant/pull/2633)
+- 修复 ContactList 列表内容较多时按钮位置错误的问题 [\#2634](https://github.com/youzan/vant/pull/2634)
+- 修复 Toast clear 方法在 multiple 模式下可能报错的问题 [\#2635](https://github.com/youzan/vant/pull/2635)
+- 修复 Popup 使用 get-container 属性后销毁时可能报错的问题 [\#2679](https://github.com/youzan/vant/pull/2679)
+
+
+## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+`2019-01-24`
+
+**Improvements**
+
+- 新增 live 图标
+- 新增 lock 图标
+- 新增 audio 图标
+- 新增 column 图标
+- 新增 replay 图标
+- 新增 shrink 图标
+- 新增 graphic 图标
+- 新增 invition 图标
+- 新增 ascending 图标
+- 新增 descending 图标
+- 新增 play-circle 图标
+- 新增 stop-circle 图标
+- 新增 pause-circle 图标
+- 新增 play-circle-o 图标
+- 新增 stop-circle-o 图标
+- 新增 pause-circle-o 图标
+- Field: 新增 click-left-icon 事件 [\#2605](https://github.com/youzan/vant/pull/2605)
+
+## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
+`2019-01-22`
+
+**Improvements**
+
+- Card: 新增 origin-price slot [\#2588](https://github.com/youzan/vant/pull/2588)
+- Switch: 新增 active-value、inactive-value 属性 [\#2590](https://github.com/youzan/vant/pull/2590)
+- SwitchCell: 新增 active-value、inactive-value 属性 [\#2591](https://github.com/youzan/vant/pull/2591)
+
+**Bug Fixes**
+
+- 修复 Card centered 属性不生效的问题 [\#2589](https://github.com/youzan/vant/pull/2589)
+- 修复 Icon name 属性传入 URL 不生效的问题 [\#2585](https://github.com/youzan/vant/pull/2585)
+
+
+## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
+`2019-01-21`
+
+**Bug Fixes**
+
+- 修复 Field type 属性不生效的问题 [\#2579](https://github.com/youzan/vant/pull/2579)
+
+
+## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+`2019-01-20`
+
+**Bug Fixes**
+
+- 修复缺少 @vue/babel-helper-vue-jsx-merge-props 依赖的问题 [\#2474](https://github.com/youzan/vant/issues/2474)
+
+
+## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+`2019-01-20`
+
+**Improvements**
+
+- List: 新增 error-text 属性 [\#2568](https://github.com/youzan/vant/pull/2568)
+- Coupon: 新增 condition 属性 [\#2551](https://github.com/youzan/vant/pull/2551)
+- ImagePreview: 新增 lazyLoad 属性 [\#2569](https://github.com/youzan/vant/pull/2569)
+- NavBar: 新增样式相关 Less 变量 [\#2570](https://github.com/youzan/vant/pull/2570)
+- Dialog: 默认开启 lazy-render [\#2495](https://github.com/youzan/vant/pull/2495)
+- Toast: 支持在 message 中使用换行符 [\#2496](https://github.com/youzan/vant/pull/2496)
+- Area: 新增 confirm-button-text、cancel-button-text 属性 [\#2556](https://github.com/youzan/vant/pull/2556)
+
+**Bug Fixes**
+
+- 修复 Card 价格区域样式 [\#2549](https://github.com/youzan/vant/pull/2549)
+- 修复 Radio 未选中状态图标颜色错误 [\#2484](https://github.com/youzan/vant/pull/2484)
+- 修复 Radio label-position 类型定义错误 [\#2485](https://github.com/youzan/vant/pull/2485)
+- 修复 Dialog 按钮点击事件触发时机错误 [\#2571](https://github.com/youzan/vant/pull/2571)
+
+
 ## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
 `2019-01-10`
 

@@ -3,6 +3,7 @@
     <van-tabs
       v-model="tab"
       sticky
+      :color="BLUE"
     >
       <van-tab title="基础图标">
         <van-col
@@ -40,6 +41,7 @@
 
 <script>
 import icons from '@vant/icons';
+import { BLUE } from '../../utils/color';
 
 export default {
   i18n: {
@@ -56,6 +58,7 @@ export default {
   },
 
   data() {
+    this.BLUE = BLUE;
     this.icons = icons;
     return {
       tab: 0
@@ -65,6 +68,8 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../style/var';
+
 .demo-icon {
   font-size: 0;
 
@@ -92,7 +97,7 @@ export default {
   .van-icon {
     font-size: 32px;
     margin: 15px 0;
-    color: rgb(69, 90, 100);
+    color: @text-color;
   }
 
   .van-tab__pane {

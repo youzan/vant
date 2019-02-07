@@ -52,7 +52,8 @@ Notify.defaultOptions = {
   text: '',
   color: WHITE,
   background: RED,
-  duration: 3000
+  duration: 3000,
+  className: ''
 };
 
 Notify.setDefaultOptions = options => {

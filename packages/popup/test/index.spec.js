@@ -141,3 +141,11 @@ test('close on click modal', () => {
   modal.click();
   expect(wrapper.vm.value).toBeFalsy();
 });
+
+test('oepn & close event', () => {
+  wrapper = mount(Popup);
+  wrapper.vm.value = true;
+  expect(wrapper.emitted('open')).toBeTruthy();
+  wrapper.vm.value = false;
+  expect(wrapper.emitted('close')).toBeTruthy();
+});

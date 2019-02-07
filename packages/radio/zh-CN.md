@@ -48,6 +48,33 @@ export default {
 <van-radio checked-color="#07c160">复选框</van-radio>
 ```
 
+#### 自定义图标
+
+通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
+
+```html
+<van-radio v-model="checked">
+  自定义图标
+  <img
+    slot="icon"
+    slot-scope="props"
+    :src="props.checked ? icon.active : icon.normal"
+  >
+</van-radio>
+```
+
+```js
+export default {
+  data() {
+    checked: true,
+    icon: {
+      normal: '//img.yzcdn.cn/icon-normal.png',
+      active: '//img.yzcdn.cn/icon-active.png'
+    }
+  }
+}
+```
+
 #### 与 Cell 组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件。
@@ -70,6 +97,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | name | 标识符 | 任意类型 | - | - |
+| shape | 形状，可选值为 `square` | `String` | `round` | 1.6.0 |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
 | label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` | 1.1.13 |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.13 |
@@ -87,3 +115,10 @@ export default {
 | 事件名称 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前选中项的 name |
+
+### Radio 插槽
+
+| 名称 | 说明 | slot-scope |
+|------|------|------|
+| - | 自定义文本 | - |
+| icon | 自定义图标 | checked: 是否为选中状态 |

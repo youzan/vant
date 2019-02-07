@@ -10,18 +10,34 @@ const contactInfo = {
 
 describe('ContactCard', () => {
   test('click event', () => {
+    const click = jest.fn();
     const wrapper = mount(ContactCard, {
-      propsData: {
-        editable: false
+      context: {
+        on: {
+          click
+        }
       }
     });
 
     wrapper.trigger('click');
-    expect(wrapper.emitted('click')).toBeFalsy();
+    expect(click.mock.calls.length).toEqual(1);
+  });
 
-    wrapper.setProps({ editable: true });
+  test('not editable', () => {
+    const click = jest.fn();
+    const wrapper = mount(ContactCard, {
+      propsData: {
+        editable: false
+      },
+      context: {
+        on: {
+          click
+        }
+      }
+    });
+
     wrapper.trigger('click');
-    expect(wrapper.emitted('click')).toBeTruthy();
+    expect(click.mock.calls.length).toEqual(0);
   });
 });
 

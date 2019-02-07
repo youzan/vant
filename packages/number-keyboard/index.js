@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { stop } from '../utils/event';
 import Key from './Key';
 
 const [sfc, bem, t] = use('number-keyboard');
@@ -137,12 +138,10 @@ export default sfc({
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
-          v-show={this.show}
+          vShow={this.show}
           style={{ zIndex: this.zIndex }}
           class={bem([theme])}
-          onTouchstart={event => {
-            event.stopPropagation();
-          }}
+          onTouchstart={stop}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
         >

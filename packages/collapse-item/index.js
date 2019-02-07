@@ -116,20 +116,20 @@ export default sfc({
         onClick={this.onClick}
         {...{ props: this.$props }}
       >
-        {this.$slots.value}
-        {CELL_SLOTS.map(slot => h('template', { slot }, this.$slots[slot]))}
+        {this.slots('value')}
+        {CELL_SLOTS.map(slot => h('template', { slot }, this.slots(slot)))}
       </Cell>
     );
 
     const Content = this.inited && (
       <div
-        v-show={this.show}
+        vShow={this.show}
         ref="wrapper"
         class={bem('wrapper')}
         onTransitionend={this.onTransitionEnd}
       >
         <div ref="content" class={bem('content')}>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </div>
     );

@@ -8,6 +8,7 @@ const defaultOptions = {
   message: '',
   value: true,
   duration: 3000,
+  className: '',
   position: 'middle',
   loadingType: 'circular',
   forbidClick: false,
@@ -51,6 +52,8 @@ function Toast(options = {}) {
       toast.value = false;
 
       if (!singleton && !isServer) {
+        clearTimeout(toast.timer);
+        queue = queue.filter(item => item !== toast);
         document.body.removeChild(toast.$el);
         toast.$destroy();
       }

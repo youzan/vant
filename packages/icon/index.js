@@ -5,6 +5,8 @@ import isSrc from '../utils/validate/src';
 const [sfc] = use('icon');
 
 export default sfc({
+  functional: true,
+
   props: {
     name: String,
     size: String,
@@ -16,28 +18,25 @@ export default sfc({
     }
   },
 
-  computed: {
-    isSrc() {
-      return isSrc(this.name);
-    }
-  },
+  render(h, context) {
+    const { props } = context;
+    const urlIcon = isSrc(props.name);
 
-  render(h) {
     return (
       <i
         class={[
-          this.classPrefix,
-          this.isSrc ? 'van-icon--image' : `${this.classPrefix}-${this.name}`
+          props.classPrefix,
+          urlIcon ? 'van-icon--image' : `${props.classPrefix}-${props.name}`
         ]}
         style={{
-          color: this.color,
-          fontSize: this.size
+          color: props.color,
+          fontSize: props.size
         }}
-        {...{ on: this.$listeners }}
+        {...context.data}
       >
-        {this.$slots.default}
-        {this.isSrc && <img src={name} />}
-        <Info info={this.info} />
+        {context.children}
+        {urlIcon && <img src={props.name} />}
+        <Info info={props.info} />
       </i>
     );
   }

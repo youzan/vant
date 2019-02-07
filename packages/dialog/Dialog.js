@@ -8,10 +8,10 @@ export default sfc({
   mixins: [Popup],
 
   props: {
+    className: null,
     title: String,
     message: String,
     callback: Function,
-    className: [String, Object, Array],
     beforeClose: Function,
     messageAlign: String,
     confirmButtonText: String,
@@ -42,6 +42,7 @@ export default sfc({
 
   methods: {
     handleAction(action) {
+      this.$emit(action);
       if (this.beforeClose) {
         this.loading[action] = true;
         this.beforeClose(action, state => {
@@ -57,7 +58,6 @@ export default sfc({
 
     onClose(action) {
       this.$emit('input', false);
-      this.$emit(action);
       this.callback && this.callback(action);
     }
   },
@@ -68,7 +68,7 @@ export default sfc({
     }
 
     const { title, message, messageAlign } = this;
-    const children = this.$slots.default;
+    const children = this.slots();
 
     const Title = title && (
       <div class={bem('header', { isolated: !message && !children })}>{title}</div>
@@ -88,32 +88,34 @@ export default sfc({
     const hasButtons = this.showCancelButton && this.showConfirmButton;
     const ButtonGroup = (
       <div class={['van-hairline--top', bem('footer', { buttons: hasButtons })]}>
-        <Button
-          v-show={this.showCancelButton}
-          size="large"
-          class={bem('cancel')}
-          loading={this.loading.cancel}
-          text={this.cancelButtonText || t('cancel')}
-          onClick={() => {
-            this.handleAction('cancel');
-          }}
-        />
-        <Button
-          v-show={this.showConfirmButton}
-          size="large"
-          class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
-          loading={this.loading.confirm}
-          text={this.confirmButtonText || t('confirm')}
-          onClick={() => {
-            this.handleAction('confirm');
-          }}
-        />
+        {this.showCancelButton && (
+          <Button
+            size="large"
+            class={bem('cancel')}
+            loading={this.loading.cancel}
+            text={this.cancelButtonText || t('cancel')}
+            onClick={() => {
+              this.handleAction('cancel');
+            }}
+          />
+        )}
+        {this.showConfirmButton && (
+          <Button
+            size="large"
+            class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
+            loading={this.loading.confirm}
+            text={this.confirmButtonText || t('confirm')}
+            onClick={() => {
+              this.handleAction('confirm');
+            }}
+          />
+        )}
       </div>
     );
 
     return (
       <transition name="van-dialog-bounce">
-        <div v-show={this.value} class={[bem(), this.className]}>
+        <div vShow={this.value} class={[bem(), this.className]}>
           {Title}
           {Content}
           {ButtonGroup}

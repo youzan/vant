@@ -8,7 +8,7 @@ type UseReturn = [
   ReturnType<typeof useI18n>
 ];
 
-export default function(name: string): UseReturn {
+export function use(name: string): UseReturn {
   name = 'van-' + name;
   return [useSfc(name), useBem(name), useI18n(name)];
 }

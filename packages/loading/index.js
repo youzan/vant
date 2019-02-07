@@ -4,6 +4,8 @@ const [sfc, bem] = use('loading');
 const DEFAULT_COLOR = '#c9c9c9';
 
 export default sfc({
+  functional: true,
+
   props: {
     size: String,
     type: {
@@ -16,8 +18,8 @@ export default sfc({
     }
   },
 
-  render(h) {
-    const { color, size, type } = this;
+  render(h, context) {
+    const { color, size, type } = context.props;
 
     const colorType = color === 'white' || color === 'black' ? color : '';
 
@@ -41,7 +43,7 @@ export default sfc({
     );
 
     return (
-      <div class={bem([type, colorType])} style={style}>
+      <div class={bem([type, colorType])} style={style} {...context.data}>
         <span class={bem('spinner', type)}>
           {Spin}
           {Circular}
