@@ -3,7 +3,11 @@ import { isDef, isObj } from '.';
 
 const { hasOwnProperty } = Object.prototype;
 
-function assignKey(to, from, key) {
+type Object = {
+  [key: string]: any;
+}
+
+function assignKey(to: Object, from: Object, key: string) {
   const val = from[key];
 
   if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {
@@ -17,7 +21,7 @@ function assignKey(to, from, key) {
   }
 }
 
-export default function assign(to, from) {
+export default function assign(to: Object, from: Object) {
   Object.keys(from).forEach(key => {
     assignKey(to, from, key);
   });
