@@ -63,7 +63,14 @@ export default {
     if (context.top) {
       const { vm } = context.top;
       vm.$emit('click-overlay');
-      vm.closeOnClickOverlay && vm.$emit('input', false);
+
+      if (vm.closeOnClickOverlay) {
+        if (vm.onClickOverlay) {
+          vm.onClickOverlay();
+        } else {
+          vm.close();
+        }
+      }
     }
   }
 };
