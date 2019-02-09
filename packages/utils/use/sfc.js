@@ -31,7 +31,15 @@ function install(Vue) {
   Vue.component(camelize(`-${name}`), this);
 }
 
-const inheritKey = ['style', 'class', 'nativeOn', 'directives', 'staticClass', 'staticStyle'];
+const inheritKey = [
+  'style',
+  'class',
+  'attrs',
+  'nativeOn',
+  'directives',
+  'staticClass',
+  'staticStyle'
+];
 const mapInheritKey = { nativeOn: 'on' };
 
 function functional(sfc) {
