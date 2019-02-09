@@ -34,7 +34,7 @@ test('Dialog function call', async () => {
   expect(callback.mock.calls[1][0]).toEqual('confirm');
 });
 
-test('before close', async () => {
+test('before close', () => {
   const wrapper = mount(DialogVue, {
     propsData: {
       value: true,
