@@ -5,7 +5,6 @@ import {
   getScrollTop,
   getElementTop,
   getVisibleHeight,
-  getComputedStyle,
   getScrollEventTarget
 } from '../utils/scroll';
 
@@ -75,7 +74,7 @@ export default sfc({
       const scrollerHeight = getVisibleHeight(scroller);
 
       /* istanbul ignore next */
-      if (!scrollerHeight || getComputedStyle(el).display === 'none' || el.offsetParent === null) {
+      if (!scrollerHeight || window.getComputedStyle(el).display === 'none' || el.offsetParent === null) {
         return;
       }
 
