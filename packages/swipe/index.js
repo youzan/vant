@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import Touch from '../mixins/touch';
-import { on, off, stop } from '../utils/event';
+import { on, off } from '../utils/event';
 
 const [sfc, bem] = use('swipe');
 
@@ -256,8 +256,9 @@ export default sfc({
     },
 
     onTransitionend(event) {
-      event.stopPropagation();
-      this.$emit('change', this.activeIndicator);
+      if (event.currentTarget === this.$refs.track) {
+        this.$emit('change', this.activeIndicator);
+      }
     }
   },
 
@@ -267,7 +268,7 @@ export default sfc({
     const Indicator =
       this.slots('indicator') ||
       (this.showIndicators && count > 1 && (
-        <div class={bem('indicators', { vertical: this.vertical })} onTransitionend={stop}>
+        <div class={bem('indicators', { vertical: this.vertical })}>
           {Array(...Array(count)).map((empty, index) => (
             <i
               class={bem('indicator', { active: index === activeIndicator })}
@@ -280,6 +281,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <div
+          ref="track"
           style={this.trackStyle}
           class={bem('track')}
           onTouchstart={this.onTouchStart}

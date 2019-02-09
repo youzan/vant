@@ -8,9 +8,9 @@ export default sfc({
   mixins: [Popup],
 
   props: {
-    className: null,
     title: String,
     message: String,
+    className: null,
     callback: Function,
     beforeClose: Function,
     messageAlign: String,
