@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Dialog from '..';
 import DialogVue from '../Dialog';
-import { mount, later, transitionStub } from '../../../test/utils';
+import { mount, later, trigger, transitionStub } from '../../../test/utils';
 
 transitionStub();
 
@@ -39,6 +39,7 @@ test('before close', () => {
     propsData: {
       value: true,
       showCancelButton: true,
+      closeOnClickOverlay: true,
       beforeClose: (action, done) => done(false)
     }
   });
@@ -49,10 +50,19 @@ test('before close', () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 
   wrapper.setProps({
-    beforeClose: (action, done) => done()
+    beforeClose: (action, done) => {
+      if (action === 'cancel') {
+        done();
+      }
+    }
   });
+
+  const overlay = document.querySelector('.van-overlay');
+  trigger(overlay, 'click');
+  expect(wrapper.emitted('input')).toBeFalsy();
+
   cancel.trigger('click');
-  expect(wrapper.emitted('input')).toBeTruthy();
+  expect(wrapper.emitted('input')[0]).toBeTruthy();
 });
 
 test('set default options', () => {

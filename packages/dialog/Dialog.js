@@ -41,8 +41,13 @@ export default sfc({
   },
 
   methods: {
+    onClickOverlay() {
+      this.handleAction('overlay');
+    },
+
     handleAction(action) {
       this.$emit(action);
+
       if (this.beforeClose) {
         this.loading[action] = true;
         this.beforeClose(action, state => {
@@ -57,8 +62,11 @@ export default sfc({
     },
 
     onClose(action) {
-      this.$emit('input', false);
-      this.callback && this.callback(action);
+      this.close();
+
+      if (this.callback) {
+        this.callback(action);
+      }
     }
   },
 
