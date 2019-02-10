@@ -1,5 +1,26 @@
 ## Changelog
 
+## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
+`2019-02-10`
+
+**Improvements**
+
+- Tag: add click event [\#2693](https://github.com/youzan/vant/pull/2693)
+- Swipe: add click event [\#2690](https://github.com/youzan/vant/pull/2690)
+- NoticeBar: add close event [\#2692](https://github.com/youzan/vant/pull/2692)
+- PullRefresh: add success-text、success-duration props [\#2709](https://github.com/youzan/vant/pull/2709)
+- Use scoped-slots in Vue 2.6 [\#2688](https://github.com/youzan/vant/pull/2688)
+
+**Bug Fixes**
+
+- fix Swipe lazy-image not appeared [\#2708](https://github.com/youzan/vant/pull/2708)
+- fix Dialog beforeClose not work for click overlay [\#2707](https://github.com/youzan/vant/pull/2707)
+- fix Collpase height calc error when set user-select none [\#2702](https://github.com/youzan/vant/pull/2702)
+- fix functional component should inherit attrs [\#2706](https://github.com/youzan/vant/pull/2706)
+- fix AddressEdit select search not work in Vue 2.6 [\#2689](https://github.com/youzan/vant/pull/2689)
+- fix AddressList should hide radio of disabled item [\#2687](https://github.com/youzan/vant/pull/2687)
+
+
 ## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
 `2019-02-05`
 

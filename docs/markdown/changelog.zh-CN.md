@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
+`2019-02-10`
+
+**Improvements**
+
+- Tag: 新增 click 事件 [\#2693](https://github.com/youzan/vant/pull/2693)
+- Swipe: 新增 click 事件 [\#2690](https://github.com/youzan/vant/pull/2690)
+- NoticeBar: 新增 close 事件 [\#2692](https://github.com/youzan/vant/pull/2692)
+- PullRefresh: 新增 success-text、success-duration 属性 [\#2709](https://github.com/youzan/vant/pull/2709)
+- 针对 Vue 2.6 优化插槽渲染效率  [\#2688](https://github.com/youzan/vant/pull/2688)
+
+**Bug Fixes**
+
+- 修复函数式组件未继承标签属性的问题 [\#2706](https://github.com/youzan/vant/pull/2706)
+- 修复 Swipe 内懒加载图片无法正确加载的问题 [\#2708](https://github.com/youzan/vant/pull/2708)
+- 修复 Collpase 在特定情况下高度计算错误的问题 [\#2702](https://github.com/youzan/vant/pull/2702)
+- 修复 Dialog 点击蒙层时无法触发 beforeClose 属性的问题 [\#2707](https://github.com/youzan/vant/pull/2707)
+- 修复 AddressList 在禁用状态下样式错误的问题 [\#2687](https://github.com/youzan/vant/pull/2687)
+- 修复 AddressEdit 在 Vue 2.6 版本下无法选择推荐地址的问题 [\#2689](https://github.com/youzan/vant/pull/2689)
+
+
 ## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
 `2019-02-05`
 
