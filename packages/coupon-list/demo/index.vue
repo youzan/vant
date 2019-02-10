@@ -65,15 +65,15 @@ export default {
     coupon() {
       return {
         id: 1,
-        discount: 0,
-        denominations: 150,
         condition: '无使用门槛\n最多优惠12元',
         reason: '',
         value: 150,
         name: this.$t('coupon.name'),
         description: this.$t('coupon.description'),
         startAt: 1489104000,
-        endAt: 1514592000
+        endAt: 1514592000,
+        valueDesc: '1.5',
+        unitDesc: '元'
       };
     },
 
@@ -81,10 +81,9 @@ export default {
       return {
         ...this.coupon,
         id: 2,
-        discount: 88,
-        denominations: 0,
-        originCondition: 50,
-        value: 12
+        value: 12,
+        valueDesc: '8.8',
+        unitDesc: '折'
       };
     },
 
@@ -99,7 +98,8 @@ export default {
     disabledDiscountCoupon() {
       return {
         ...this.discountCoupon,
-        discount: 10,
+        valueDesc: '1',
+        unitDesc: '折',
         id: 4,
         reason: this.$t('coupon.reason')
       };
