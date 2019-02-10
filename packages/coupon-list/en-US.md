@@ -34,14 +34,14 @@ Vue.use(CouponCell).use(CouponList);
 ```javascript
 const coupon = {
   available: 1,
-  discount: 0,
-  denominations: 150,
   originCondition: 0,
   reason: '',
   value: 150,
   name: 'Coupon name',
   startAt: 1489104000,
-  endAt: 1514592000
+  endAt: 1514592000,
+  valueDesc: '1.5',
+  unitDesc: '元'
 };
 
 export default {
@@ -91,7 +91,7 @@ export default {
 | displayed-coupon-index | Index of displayed coupon | `Number` | - |
 | close-button-text | Close button text | `String` | `Close` |
 | input-placeholder | Input placeholder | `String` | `Coupon code` |
-| currency | Currency symbol |  `String` | `¥` |
+| currency | Currency symbol |  `String` | `元` |
 
 ### CouponList Event
 
@@ -106,11 +106,11 @@ export default {
 |------|------|------|
 | id | Id | `String` |
 | name | Name | `String` |
-| discount | Discount | `Number` |
-| denominations | Denominations | `Number` |
 | condition | Condition | `String` |
 | startAt | Start time (Timestmap, unit second) | `Number` |
 | endAt | End time (Timestmap, unit second) | `Number` |
 | description | Description | `String` |
 | reason | Unavailable reason | `String` |
 | value | Value | `Number` |
+| valueDesc | Value Text | `String` |
+| unitDesc | Unit Text | `String` |
