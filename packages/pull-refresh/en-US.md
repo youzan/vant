@@ -47,6 +47,8 @@ export default {
 | pulling-text | Text to show when pulling | `String` | `Pull to refresh...` |
 | loosing-text | Text to show when loosing | `String` | `Loose to refresh...` |
 | loading-text | Text to show when loading | `String` | `Loading...` |
+| success-text | Text to show when loading success | `String` | - |
+| success-duration | Success text display duration(ms) | `String` | 500 |
 | animation-duration | Animation duration | `Number` | `300` |
 | head-height | Height of head | `Number` | `50` |
 | disabled | Whether to disable | `Boolean` | `false` |
