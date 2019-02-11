@@ -22,11 +22,12 @@ export default sfc({
       <CellGroup class={bem()} {...context.data}>
         {slots.header || (
           <Cell
-            class={bem('header')}
             icon={props.icon}
             label={props.desc}
             title={props.title}
             value={props.status}
+            class={bem('header')}
+            value-class={bem('header-value')}
           />
         )}
         <div class={bem('content')}>{slots.default}</div>

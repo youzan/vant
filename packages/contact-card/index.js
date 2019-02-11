@@ -28,8 +28,9 @@ export default sfc({
       <Cell
         center
         border={false}
-        class={bem([type])}
         isLink={editable}
+        class={bem([type])}
+        value-class={bem('value')}
         icon={type === 'edit' ? 'contact' : 'add-square'}
         onClick={event => {
           if (editable && listeners.click) {
