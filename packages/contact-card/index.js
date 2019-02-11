@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inheritContext } from '../utils/functional';
 import Cell from '../cell';
 
 const [sfc, bem, t] = use('contact-card');
@@ -20,7 +21,7 @@ export default sfc({
     }
   },
 
-  render(h, context, inherit) {
+  render(h, context) {
     const { props, listeners } = context;
     const { type, editable } = props;
 
@@ -37,7 +38,7 @@ export default sfc({
             listeners.click(event);
           }
         }}
-        {...inherit}
+        {...inheritContext(context)}
       >
         {type === 'add'
           ? props.addText || t('addText')

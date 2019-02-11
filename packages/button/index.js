@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inheritContext } from '../utils/functional';
 import Loading from '../loading';
 
 const [sfc, bem] = use('button');
@@ -30,7 +31,7 @@ export default sfc({
     }
   },
 
-  render(h, context, inherit) {
+  render(h, context) {
     const { props, listeners } = context;
     const { type, disabled, loading } = props;
 
@@ -58,7 +59,7 @@ export default sfc({
           }
         ])}
         onClick={onClick}
-        {...inherit}
+        {...inheritContext(context)}
       >
         {loading ? (
           <Loading size="20px" color={type === 'default' ? undefined : ''} />

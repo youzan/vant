@@ -1,4 +1,5 @@
 import { use, noop } from '../utils';
+import { inheritContext } from '../utils/functional';
 import Icon from '../icon';
 
 const [sfc, bem] = use('nav-bar');
@@ -22,7 +23,7 @@ export default sfc({
     }
   },
 
-  render(h, context, inherit) {
+  render(h, context) {
     const { props, listeners } = context;
     const slots = context.slots();
 
@@ -30,7 +31,7 @@ export default sfc({
       <div
         class={[bem({ fixed: props.fixed }), { 'van-hairline--bottom': props.border }]}
         style={{ zIndex: props.zIndex }}
-        {...inherit}
+        {...inheritContext(context)}
       >
         <div class={bem('left')} onClick={listeners['click-left'] || noop}>
           {slots.left || [

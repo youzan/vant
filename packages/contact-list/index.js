@@ -1,4 +1,5 @@
 import { use, noop } from '../utils';
+import { inheritContext } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
 import Button from '../button';
@@ -16,7 +17,7 @@ export default sfc({
     addText: String
   },
 
-  render(h, context, inherit) {
+  render(h, context) {
     const { props, listeners } = context;
 
     const List = props.list.map((item, index) => (
@@ -50,7 +51,7 @@ export default sfc({
     ));
 
     return (
-      <div class={bem()} {...inherit}>
+      <div class={bem()} {...inheritContext(context)}>
         <RadioGroup value={props.value} class={bem('group')}>
           {List}
         </RadioGroup>
