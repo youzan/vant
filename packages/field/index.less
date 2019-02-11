@@ -1,8 +1,16 @@
 @import '../style/var';
 
 .van-field {
-  .van-cell__title {
+  &__label {
     max-width: 90px;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 
   &__body {
@@ -109,20 +117,6 @@
   &--min-height {
     .van-field__control {
       min-height: 60px;
-    }
-  }
-
-  &--label {
-    &-center {
-      .van-cell__title {
-        text-align: center;
-      }
-    }
-
-    &-right {
-      .van-cell__title {
-        text-align: right;
-      }
     }
   }
 }

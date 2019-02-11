@@ -45,6 +45,7 @@ export default sfc({
     return (
       <Cell
         class={bem({ disabled, unswitchable: !switchable })}
+        value-class={bem('value')}
         isLink={!disabled && switchable}
         scopedSlots={{
           default: this.renderContent,

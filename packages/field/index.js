@@ -220,6 +220,7 @@ export default sfc({
         border={this.border}
         isLink={this.isLink}
         required={this.required}
+        title-class={bem('label', labelAlign)}
         class={bem({
           error: this.error,
           disabled: this.$attrs.disabled,

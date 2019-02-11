@@ -23,6 +23,8 @@ export default sfc({
       <Cell
         key={item.id}
         isLink
+        class={bem('item')}
+        value-class={bem('item-value')}
         scopedSlots={{
           default: () => (
             <Radio name={item.id}>
