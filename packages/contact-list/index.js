@@ -23,24 +23,28 @@ export default sfc({
       <Cell
         key={item.id}
         isLink
+        scopedSlots={{
+          default: () => (
+            <Radio name={item.id}>
+              <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
+            </Radio>
+          ),
+          'right-icon': () => (
+            <Icon
+              name="edit"
+              class={bem('edit')}
+              onClick={event => {
+                event.stopPropagation();
+                listeners.edit && listeners.edit(item, index);
+              }}
+            />
+          )
+        }}
         onClick={() => {
           listeners.input && listeners.input(item.id);
           listeners.select && listeners.select(item, index);
         }}
-      >
-        <Radio name={item.id}>
-          <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
-        </Radio>
-        <Icon
-          slot="right-icon"
-          name="edit"
-          class={bem('edit')}
-          onClick={event => {
-            event.stopPropagation();
-            listeners.edit && listeners.edit(item, index);
-          }}
-        />
-      </Cell>
+      />
     ));
 
     return (
