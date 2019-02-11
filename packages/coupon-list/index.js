@@ -123,6 +123,29 @@ export default sfc({
           list.scrollTop = card[index].$el.offsetTop - 100;
         }
       });
+    },
+
+    renderEmpty() {
+      return (
+        <div class={bem('empty')}>
+          <img src={EMPTY_IMAGE} />
+          <p>{t('empty')}</p>
+        </div>
+      );
+    },
+
+    renderExchangeButton() {
+      return (
+        <Button
+          size="small"
+          type="danger"
+          class={bem('exchange')}
+          text={this.exchangeButtonText || t('exchange')}
+          loading={this.exchangeButtonLoading}
+          disabled={this.buttonDisabled}
+          onClick={this.onClickExchangeButton}
+        />
+      );
     }
   },
 
@@ -135,25 +158,10 @@ export default sfc({
         class={bem('field')}
         placeholder={this.inputPlaceholder || t('placeholder')}
         maxlength="20"
-      >
-        <Button
-          slot="button"
-          size="small"
-          type="danger"
-          class={bem('exchange')}
-          text={this.exchangeButtonText || t('exchange')}
-          loading={this.exchangeButtonLoading}
-          disabled={this.buttonDisabled}
-          onClick={this.onClickExchangeButton}
-        />
-      </Field>
-    );
-
-    const Empty = (
-      <div class={bem('empty')}>
-        <img src={EMPTY_IMAGE} />
-        <p>{t('empty')}</p>
-      </div>
+        scopedSlots={{
+          button: this.renderExchangeButton
+        }}
+      />
     );
 
     const onChange = index => () => this.$emit('change', index);
@@ -171,7 +179,7 @@ export default sfc({
               nativeOnClick={onChange(index)}
             />
           ))}
-          {!this.coupons.length && Empty}
+          {!this.coupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );
@@ -182,7 +190,7 @@ export default sfc({
           {this.disabledCoupons.map(coupon => (
             <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
           ))}
-          {!this.disabledCoupons.length && Empty}
+          {!this.disabledCoupons.length && this.renderEmpty}
         </div>
       </Tab>
     );

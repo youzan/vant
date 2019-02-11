@@ -17,33 +17,41 @@ export default sfc({
       if (this.switchable) {
         this.$emit('select');
       }
+    },
+
+    onClickRightIcon(event) {
+      event.stopPropagation();
+      this.$emit('edit');
+    },
+
+    renderRightIcon() {
+      return <Icon name="edit" class={bem('edit')} onClick={this.onClickRightIcon} />;
+    },
+
+    renderContent() {
+      const { data } = this;
+      const Info = [
+        <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
+        <div class={bem('address')}>{data.address}</div>
+      ];
+
+      return this.disabled ? Info : <Radio name={data.id}>{Info}</Radio>;
     }
   },
 
   render(h) {
-    const { data, disabled, switchable } = this;
-    const Info = [
-      <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
-      <div class={bem('address')}>{data.address}</div>
-    ];
+    const { disabled, switchable } = this;
 
     return (
       <Cell
         class={bem({ disabled, unswitchable: !switchable })}
         isLink={!disabled && switchable}
+        scopedSlots={{
+          default: this.renderContent,
+          'right-icon': this.renderRightIcon
+        }}
         onClick={this.onSelect}
-      >
-        {disabled ? Info : <Radio name={data.id}>{Info}</Radio>}
-        <Icon
-          slot="right-icon"
-          name="edit"
-          class={bem('edit')}
-          onClick={event => {
-            event.stopPropagation();
-            this.$emit('edit');
-          }}
-        />
-      </Cell>
+      />
     );
   }
 });
