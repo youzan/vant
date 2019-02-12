@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { emit } from '../utils/functional';
 
 const [sfc, bem] = use('password-input');
 
@@ -19,7 +20,7 @@ export default sfc({
   },
 
   render(h, context) {
-    const { props, listeners } = context;
+    const { props } = context;
     const info = props.errorInfo || props.info;
 
     const Points = [];
@@ -37,7 +38,7 @@ export default sfc({
           class={[bem('security'), 'van-hairline--surround']}
           onTouchstart={event => {
             event.stopPropagation();
-            listeners.focus && listeners.focus();
+            emit(context, 'focus', event);
           }}
           {...context.data}
         >

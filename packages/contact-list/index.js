@@ -1,5 +1,5 @@
 import { use, noop } from '../utils';
-import { inheritContext } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
 import Button from '../button';
@@ -25,7 +25,7 @@ export default sfc({
         key={item.id}
         isLink
         class={bem('item')}
-        value-class={bem('item-value')}
+        valueClass={bem('item-value')}
         scopedSlots={{
           default: () => (
             <Radio name={item.id}>
@@ -38,20 +38,20 @@ export default sfc({
               class={bem('edit')}
               onClick={event => {
                 event.stopPropagation();
-                listeners.edit && listeners.edit(item, index);
+                emit(context, 'edit', item, index);
               }}
             />
           )
         }}
         onClick={() => {
-          listeners.input && listeners.input(item.id);
-          listeners.select && listeners.select(item, index);
+          emit(context, 'input', item.id);
+          emit(context, 'select', item, index);
         }}
       />
     ));
 
     return (
-      <div class={bem()} {...inheritContext(context)}>
+      <div class={bem()} {...inherit(context)}>
         <RadioGroup value={props.value} class={bem('group')}>
           {List}
         </RadioGroup>

@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { inheritContext } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 import Cell from '../cell';
 
 const [sfc, bem, t] = use('contact-card');
@@ -22,7 +22,7 @@ export default sfc({
   },
 
   render(h, context) {
-    const { props, listeners } = context;
+    const { props } = context;
     const { type, editable } = props;
 
     return (
@@ -31,14 +31,14 @@ export default sfc({
         border={false}
         isLink={editable}
         class={bem([type])}
-        value-class={bem('value')}
+        valueClass={bem('value')}
         icon={type === 'edit' ? 'contact' : 'add-square'}
         onClick={event => {
-          if (editable && listeners.click) {
-            listeners.click(event);
+          if (editable) {
+            emit(context, 'click', event);
           }
         }}
-        {...inheritContext(context)}
+        {...inherit(context)}
       >
         {type === 'add'
           ? props.addText || t('addText')

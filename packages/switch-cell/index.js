@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { inheritContext } from '../utils/functional';
+import { inherit } from '../utils/functional';
 import Cell from '../cell';
 import Switch from '../switch';
 import SwitchMixin from '../mixins/switch';
@@ -24,7 +24,7 @@ export default sfc({
     const { props } = context;
 
     return (
-      <Cell center title={props.title} border={props.border} class={bem()} {...inheritContext(context)}>
+      <Cell center title={props.title} border={props.border} class={bem()} {...inherit(context)}>
         <Switch {...{ props, on: context.listeners }} />
       </Cell>
     );

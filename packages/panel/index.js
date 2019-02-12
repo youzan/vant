@@ -27,7 +27,7 @@ export default sfc({
             title={props.title}
             value={props.status}
             class={bem('header')}
-            value-class={bem('header-value')}
+            valueClass={bem('header-value')}
           />
         )}
         <div class={bem('content')}>{slots.default}</div>
