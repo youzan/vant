@@ -108,7 +108,6 @@ const components = [
   Info,
   List,
   Loading,
-  Locale,
   NavBar,
   NoticeBar,
   Notify,

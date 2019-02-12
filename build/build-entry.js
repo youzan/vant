@@ -13,6 +13,7 @@ const join = dir => path.join(root, dir);
 
 function buildVantEntry() {
   const uninstallComponents = [
+    'Locale',
     'Lazyload',
     'Waterfall'
   ];
