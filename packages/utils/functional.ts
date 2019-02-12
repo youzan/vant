@@ -20,7 +20,8 @@ const inheritKey = [
 
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
 
-export function inheritContext(context: Context): InheritContext {
+// inherit partial context, map nativeOn to on
+export function inherit(context: Context): InheritContext {
   return inheritKey.reduce(
     (obj, key) => {
       if (context.data[key]) {
@@ -30,4 +31,18 @@ export function inheritContext(context: Context): InheritContext {
     },
     {} as InheritContext
   );
+}
+
+// emit event
+export function emit(context: Context, eventName: string, ...args: any[]) {
+  const listeners = context.listeners[eventName];
+  if (listeners) {
+    if (Array.isArray(listeners)) {
+      listeners.forEach(listener => {
+        listener(...args);
+      })
+    } else {
+      listeners(...args);
+    }
+  }
 }

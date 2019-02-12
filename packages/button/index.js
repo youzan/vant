@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { inheritContext } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 import Loading from '../loading';
 
 const [sfc, bem] = use('button');
@@ -32,12 +32,12 @@ export default sfc({
   },
 
   render(h, context) {
-    const { props, listeners } = context;
+    const { props } = context;
     const { type, disabled, loading } = props;
 
     const onClick = event => {
-      if (!loading && !disabled && listeners.click) {
-        listeners.click(event);
+      if (!loading && !disabled) {
+        emit(context, 'click', event);
       }
     };
 
@@ -59,7 +59,7 @@ export default sfc({
           }
         ])}
         onClick={onClick}
-        {...inheritContext(context)}
+        {...inherit(context)}
       >
         {loading ? (
           <Loading size="20px" color={type === 'default' ? undefined : ''} />

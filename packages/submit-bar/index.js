@@ -1,5 +1,5 @@
 import { use, noop } from '../utils';
-import { inheritContext } from '../utils/functional';
+import { inherit } from '../utils/functional';
 import Button from '../button';
 
 const [sfc, bem, t] = use('submit-bar');
@@ -34,7 +34,7 @@ export default sfc({
     const hasPrice = typeof price === 'number';
 
     return (
-      <div class={bem()} {...inheritContext(context)}>
+      <div class={bem()} {...inherit(context)}>
         {slots.top}
         {(slots.tip || tip) && (
           <div class={bem('tip')}>
