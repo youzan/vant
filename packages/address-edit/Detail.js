@@ -18,7 +18,10 @@ export default sfc({
   methods: {
     onSelect(express) {
       this.$emit('select-search', express);
-      this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+      this.$emit(
+        'input',
+        `${express.address || ''} ${express.name || ''}`.trim()
+      );
     },
 
     onFinish() {
@@ -26,8 +29,8 @@ export default sfc({
     },
 
     renderFinish() {
-      const showFinish = this.value && this.focused && android;
-      if (showFinish) {
+      const show = this.value && this.focused && android;
+      if (show) {
         return (
           <div class={bem('finish')} onClick={this.onFinish}>
             {t('complete')}
@@ -37,9 +40,10 @@ export default sfc({
     },
 
     renderSearchResult() {
-      const showSearchList = this.focused && this.searchResult && this.showSearchResult;
-      if (showSearchList) {
-        return this.searchResult.map(express => (
+      const { searchResult } = this;
+      const show = this.focused && searchResult && this.showSearchResult;
+      if (show) {
+        return searchResult.map(express => (
           <Cell
             key={express.name + express.address}
             title={express.name}
