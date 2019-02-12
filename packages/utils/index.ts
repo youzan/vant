@@ -36,6 +36,11 @@ export function isAndroid(): boolean {
   return isServer ? false : /android/.test(navigator.userAgent.toLowerCase());
 }
 
+export function isIOS(): boolean {
+  /* istanbul ignore next */
+  return isServer ? false : /ios|iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+}
+
 export function range(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
 }
