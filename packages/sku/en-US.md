@@ -184,6 +184,17 @@ sku: {
 }
 ```
 
+#### initialSku Data Structure
+
+```javascript
+{
+  // Key：skuKeyStr
+  // Value：skuValueId
+  s1: '30349',
+  s2: '1193'
+}
+```
+
 #### Goods Data Structure
 
 ```javascript
