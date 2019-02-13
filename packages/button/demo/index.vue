@@ -42,6 +42,7 @@
       />
       <van-button
         loading
+        :loading-text="$t('loadingText')"
         type="danger"
       />
     </demo-block>
@@ -86,7 +87,8 @@ export default {
       mini: '迷你按钮',
       plain: '朴素按钮',
       square: '方形按钮',
-      round: '圆形按钮'
+      round: '圆形按钮',
+      loadingText: '加载中...'
     },
     'en-US': {
       type: 'Type',
@@ -103,7 +105,8 @@ export default {
       mini: 'Mini',
       plain: 'Plain',
       square: 'Square',
-      round: 'Round'
+      round: 'Round',
+      loadingText: 'Loading...'
     }
   }
 };
@@ -121,10 +124,6 @@ export default {
     &--small,
     &--normal:not(:last-child) {
       margin-right: 10px;
-    }
-
-    .van-loading {
-      margin: 0 18px;
     }
   }
 
