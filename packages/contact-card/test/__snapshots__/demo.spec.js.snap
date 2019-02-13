@@ -25,13 +25,13 @@ exports[`renders demo correctly 1`] = `
     </div>
     <div name="van-popup-slide-bottom" class="van-popup van-popup--bottom" style="display:none;">
       <div class="van-contact-edit">
-        <div maxlength="30" placeholder="请填写姓名" class="van-cell van-field">
+        <div class="van-cell van-field">
           <div class="van-cell__title van-field__label"><span>张三</span></div>
           <div class="van-cell__value">
             <div class="van-field__body"><input type="text" maxlength="30" placeholder="请填写姓名" value="" class="van-field__control"></div>
           </div>
         </div>
-        <div placeholder="请填写电话" class="van-cell van-field">
+        <div class="van-cell van-field">
           <div class="van-cell__title van-field__label"><span>电话</span></div>
           <div class="van-cell__value">
             <div class="van-field__body"><input type="tel" placeholder="请填写电话" value="" class="van-field__control"></div>

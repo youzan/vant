@@ -1,14 +1,13 @@
 import { use } from '../utils';
 import Icon from '../icon';
 import Info from '../info';
-import RouterLink from '../mixins/router-link';
+import { route, routeProps } from '../mixins/router-link';
 
 const [sfc, bem] = use('tabbar-item');
 
 export default sfc({
-  mixins: [RouterLink],
-
   props: {
+    ...routeProps,
     icon: String,
     dot: Boolean,
     info: [String, Number]
@@ -32,7 +31,7 @@ export default sfc({
     onClick(event) {
       this.$parent.onChange(this.$parent.items.indexOf(this));
       this.$emit('click', event);
-      this.routerLink();
+      route(this.$router, this);
     }
   },
 

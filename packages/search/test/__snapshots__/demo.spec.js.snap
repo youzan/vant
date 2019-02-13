@@ -4,7 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-search" style="background:#f2f2f2;">
-      <div placeholder="请输入搜索关键词" class="van-cell van-cell--borderless van-field">
+      <div class="van-cell van-cell--borderless van-field">
         <div class="van-field__left-icon"><i class="van-icon van-icon-search">
             <!----></i></div>
         <div class="van-cell__value van-cell__value--alone">
@@ -16,7 +16,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <form action="/">
       <div class="van-search van-search--show-action" style="background:#f2f2f2;">
-        <div placeholder="请输入搜索关键词" class="van-cell van-cell--borderless van-field">
+        <div class="van-cell van-cell--borderless van-field">
           <div class="van-field__left-icon"><i class="van-icon van-icon-search">
               <!----></i></div>
           <div class="van-cell__value van-cell__value--alone">
@@ -31,7 +31,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-search van-search--show-action" style="background:#f2f2f2;">
-      <div placeholder="请输入搜索关键词" class="van-cell van-cell--borderless van-field">
+      <div class="van-cell van-cell--borderless van-field">
         <div class="van-field__left-icon"><i class="van-icon van-icon-search">
             <!----></i></div>
         <div class="van-cell__value van-cell__value--alone">

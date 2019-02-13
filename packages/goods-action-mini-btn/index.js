@@ -1,13 +1,12 @@
 import { use } from '../utils';
 import Icon from '../icon';
-import RouterLink from '../mixins/router-link';
+import { route, routeProps } from '../mixins/router-link';
 
 const [sfc, bem] = use('goods-action-mini-btn');
 
 export default sfc({
-  mixins: [RouterLink],
-
   props: {
+    ...routeProps,
     text: String,
     info: [String, Number],
     icon: String,
@@ -17,7 +16,7 @@ export default sfc({
   methods: {
     onClick(event) {
       this.$emit('click', event);
-      this.routerLink();
+      route(this.$router, this);
     }
   },
 
