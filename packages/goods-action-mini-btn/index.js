@@ -1,30 +1,42 @@
 import { use } from '../utils';
 import Icon from '../icon';
-import { route, routeProps } from '../mixins/router-link';
+import { emit, inherit, unifySlots } from '../utils/functional';
+import { functionalRoute, routeProps } from '../mixins/router';
 
 const [sfc, bem] = use('goods-action-mini-btn');
 
 export default sfc({
+  functional: true,
+
   props: {
     ...routeProps,
     text: String,
-    info: [String, Number],
     icon: String,
+    info: [String, Number],
     iconClass: String
   },
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    }
-  },
+  render(h, context) {
+    const { props } = context;
+    const slots = unifySlots(context);
 
-  render(h) {
+    const onClick = event => {
+      emit(context, 'click', event);
+      functionalRoute(context);
+    };
+
     return (
-      <div class={[bem(), 'van-hairline']} onClick={this.onClick}>
-        <Icon class={[bem('icon'), this.iconClass]} info={this.info} name={this.icon} />
-        {this.slots() || this.text}
+      <div
+        class={[bem(), 'van-hairline']}
+        onClick={onClick}
+        {...inherit(context)}
+      >
+        <Icon
+          class={[bem('icon'), props.iconClass]}
+          info={props.info}
+          name={props.icon}
+        />
+        {slots.default ? slots.default() : props.text}
       </div>
     );
   }

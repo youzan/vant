@@ -1,8 +1,8 @@
 /**
- * add Vue-Router support
+ * Vue Router support
  */
 
-import { RenderContext } from 'vue';
+import { RenderContext } from 'vue/types';
 import VueRouter, { RawLocation } from 'vue-router/types';
 
 export type RouteConfig = {

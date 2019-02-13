@@ -1,10 +1,13 @@
 import { use } from '../utils';
 import Button from '../button';
-import { route, routeProps } from '../mixins/router-link';
+import { emit, inherit, unifySlots } from '../utils/functional';
+import { functionalRoute, routeProps } from '../mixins/router';
 
 const [sfc, bem] = use('goods-action-big-btn');
 
 export default sfc({
+  functional: true,
+
   props: {
     ...routeProps,
     text: String,
@@ -13,25 +16,27 @@ export default sfc({
     disabled: Boolean
   },
 
-  methods: {
-    onClick(event) {
-      this.$emit('click', event);
-      route(this.$router, this);
-    }
-  },
+  render(h, context) {
+    const { props } = context;
+    const slots = unifySlots(context);
 
-  render(h) {
+    const onClick = event => {
+      emit(context, 'click', event);
+      functionalRoute(context);
+    };
+
     return (
       <Button
         square
         class={bem()}
         size="large"
-        loading={this.loading}
-        disabled={this.disabled}
-        type={this.primary ? 'danger' : 'warning'}
-        onClick={this.onClick}
+        loading={props.loading}
+        disabled={props.disabled}
+        type={props.primary ? 'danger' : 'warning'}
+        onClick={onClick}
+        {...inherit(context)}
       >
-        {this.slots() || this.text}
+        {slots.default ? slots.default() : props.text}
       </Button>
     );
   }
