@@ -1,7 +1,7 @@
 import { use, isDef } from '../utils';
 import { cellProps } from './shared';
 import { emit, inherit, unifySlots } from '../utils/functional';
-import { routeProps, functionalRoute } from '../mixins/router-link';
+import { routeProps, functionalRoute } from '../mixins/router';
 import Icon from '../icon';
 
 const [sfc, bem] = use('cell');
