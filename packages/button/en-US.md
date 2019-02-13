@@ -36,7 +36,7 @@ Vue.use(Button);
 
 ```html 
 <van-button loading type="primary" />
-<van-button loading type="primary" />
+<van-button loading type="primary" loading-text="Loading..." />
 ```
 
 #### Shape
@@ -65,11 +65,12 @@ Vue.use(Button);
 | tag | Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |
 | plain | Whether to be plain button | `Boolean` | `false` |
-| disabled | Whether to disable button | `Boolean` | `false` |
-| loading | Whether show loading status | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |
 | round | Whether to be round button | `Boolean` | `false` |
 | square | Whether to be square button | `Boolean` | `false` |
+| disabled | Whether to disable button | `Boolean` | `false` |
+| loading | Whether show loading status | `Boolean` | `false` |
+| loading-text | Loading text | `String` | - |
 
 ### Event
 

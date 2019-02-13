@@ -16,6 +16,7 @@ export default sfc({
     loading: Boolean,
     disabled: Boolean,
     nativeType: String,
+    loadingText: String,
     bottomAction: Boolean,
     tag: {
       type: String,
@@ -33,7 +34,7 @@ export default sfc({
 
   render(h, context) {
     const { props } = context;
-    const { type, disabled, loading } = props;
+    const { type, disabled, loading, loadingText } = props;
 
     const onClick = event => {
       if (!loading && !disabled) {
@@ -62,7 +63,12 @@ export default sfc({
         {...inherit(context)}
       >
         {loading ? (
-          <Loading size="20px" color={type === 'default' ? undefined : ''} />
+          [
+            <Loading size="20px" color={type === 'default' ? undefined : ''} />,
+            loadingText && (
+              <span class={bem('loading-text')}>{loadingText}</span>
+            )
+          ]
         ) : (
           <span class={bem('text')}>{context.children || props.text}</span>
         )}
