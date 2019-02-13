@@ -11,9 +11,6 @@ test('change event', () => {
     }
   });
 
-  wrapper.vm.$on('input', value => {
-    wrapper.setProps({ value });
-  });
   wrapper.find('.van-switch').trigger('click');
 
   expect(onChange.mock.calls[0]).toBeTruthy();

@@ -1,16 +1,15 @@
 import { use, isObj, isDef } from '../utils';
 import Icon from '../icon';
 import Cell from '../cell';
-import CellMixin from '../mixins/cell';
+import { cellProps } from '../cell/shared';
 
 const [sfc, bem] = use('field');
 
 export default sfc({
   inheritAttrs: false,
 
-  mixins: [CellMixin],
-
   props: {
+    ...cellProps,
     error: Boolean,
     leftIcon: String,
     rightIcon: String,
