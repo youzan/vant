@@ -53,6 +53,11 @@ export default sfc({
       on: this.listeners
     };
 
+    const scopedSlots = {};
+    if (this.slots('left-icon')) {
+      scopedSlots['left-icon'] = () => this.slots('left-icon');
+    }
+
     return (
       <div class={bem({ 'show-action': showAction })} style={{ background: this.background }}>
         <Field
@@ -61,9 +66,9 @@ export default sfc({
           value={this.value}
           border={false}
           leftIcon="search"
+          scopedSlots={scopedSlots}
           {...props}
         >
-          {h('template', { slot: 'left-icon' }, this.slots('left-icon'))}
         </Field>
         {showAction && (
           <div class={bem('action')}>

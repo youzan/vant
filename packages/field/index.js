@@ -211,6 +211,14 @@ export default sfc({
 
   render(h) {
     const { slots, labelAlign } = this;
+
+    const scopedSlots = {
+      icon: this.renderLeftIcon
+    };
+    if (slots('label')) {
+      scopedSlots.label = () => slots('title');
+    }
+
     return (
       <Cell
         icon={this.leftIcon}
@@ -226,11 +234,8 @@ export default sfc({
           [`label-${labelAlign}`]: labelAlign,
           'min-height': this.type === 'textarea' && !this.autosize
         })}
-        scopedSlots={{
-          icon: this.renderLeftIcon
-        }}
+        scopedSlots={scopedSlots}
       >
-        {h('template', { slot: 'title' }, slots('label'))}
         <div class={bem('body')}>
           {this.renderInput()}
           {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
