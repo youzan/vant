@@ -37,9 +37,13 @@ export default sfc({
     },
 
     faceAmount() {
-      return this.coupon.denominations
+      const { coupon } = this;
+      if (coupon.valueDesc && coupon.unitDesc) {
+        return `${coupon.valueDesc}<span>${coupon.unitDesc}</span>`;
+      }
+      return coupon.denominations
         ? `<span>${this.currency}</span> ${formatAmount(this.coupon.denominations)}`
-        : this.coupon.discount
+        : coupon.discount
           ? t('discount', formatDiscount(this.coupon.discount))
           : '';
     },
