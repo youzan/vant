@@ -1,41 +1,43 @@
 import { use } from '../utils';
 import Loading from '../loading';
 import { switchProps } from './shared';
+import { emit, inherit } from '../utils/functional';
 
 const [sfc, bem] = use('switch');
 
-export default sfc({
-  props: switchProps,
+function Switch(h, props, slots, ctx) {
+  const { value, loading, disabled, activeValue, inactiveValue } = props;
 
-  methods: {
-    onClick() {
-      if (!this.disabled && !this.loading) {
-        const checked = this.value === this.activeValue;
-        const value = checked ? this.inactiveValue : this.activeValue;
-        this.$emit('input', value);
-        this.$emit('change', value);
-      }
+  const style = {
+    fontSize: props.size,
+    backgroundColor: value ? props.activeColor : props.inactiveColor
+  };
+
+  const onClick = event => {
+    if (!disabled && !loading) {
+      const newValue = value === activeValue ? inactiveValue : activeValue;
+      emit(ctx, 'input', newValue);
+      emit(ctx, 'change', newValue);
     }
-  },
+  };
 
-  render(h) {
-    const { value } = this;
-    const style = {
-      fontSize: this.size,
-      backgroundColor: value ? this.activeColor : this.inactiveColor
-    };
-
-    return (
-      <div
-        class={bem({
-          on: value === this.activeValue,
-          disabled: this.disabled
-        })}
-        style={style}
-        onClick={this.onClick}
-      >
-        <div class={bem('node')}>{this.loading && <Loading class={bem('loading')} />}</div>
+  return (
+    <div
+      class={bem({
+        on: value === activeValue,
+        disabled
+      })}
+      style={style}
+      onClick={onClick}
+      {...inherit(ctx)}
+    >
+      <div class={bem('node')}>
+        {loading && <Loading class={bem('loading')} />}
       </div>
-    );
-  }
-});
+    </div>
+  );
+}
+
+Switch.props = switchProps;
+
+export default sfc(Switch);
