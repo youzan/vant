@@ -58,6 +58,12 @@ Use slot to custom content.
 | thumb-link | Thumb link URL | `String` | - |
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
 
+### Event
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when clicked | - |
+
 ### Slot
 
 | name | Description |
