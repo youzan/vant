@@ -64,3 +64,13 @@ test('on close prop', () => {
   wrapper.trigger('click');
   expect(wrapper.vm.offset).toEqual(0);
 });
+
+it('width equals zero', () => {
+  const wrapper = mount(SwipeCell, {
+    propsData: {
+      leftWidth: 0,
+      rightWidth: 0
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

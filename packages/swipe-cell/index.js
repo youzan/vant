@@ -146,17 +146,17 @@ export default sfc({
             this.swipe = false;
           }}
         >
-          {this.leftWidth && (
+          {this.leftWidth ? (
             <div class={bem('left')} onClick={onClick('left', true)}>
               {this.slots('left')}
             </div>
-          )}
+          ) : null}
           {this.slots()}
-          {this.rightWidth && (
+          {this.rightWidth ? (
             <div class={bem('right')} onClick={onClick('right', true)}>
               {this.slots('right')}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     );
