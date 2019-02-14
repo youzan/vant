@@ -12,7 +12,7 @@ export default sfc({
 
   render(h) {
     const emit = name => () => {
-      this.skuEventBus.$emit('sku:addCart');
+      this.skuEventBus.$emit(name);
     };
 
     return (
