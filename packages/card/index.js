@@ -68,7 +68,7 @@ function Card(h, props, slots, ctx) {
   );
 
   return (
-    <div class={bem()}>
+    <div class={bem()} {...ctx.data}>
       <div class={bem('header')}>
         {Thumb}
         <div class={bem('content', { centered: props.centered })}>
