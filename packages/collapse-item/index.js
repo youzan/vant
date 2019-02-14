@@ -96,7 +96,10 @@ export default sfc({
       }
 
       const { parent } = this;
-      const name = parent.accordion && this.currentName === parent.value ? '' : this.currentName;
+      const name =
+        parent.accordion && this.currentName === parent.value
+          ? ''
+          : this.currentName;
       const expanded = !this.expanded;
       this.parent.switch(name, expanded);
     },
@@ -111,15 +114,28 @@ export default sfc({
   },
 
   render(h) {
+    const titleSlots = CELL_SLOTS.reduce(
+      (slots, name) => {
+        if (this.slots(name)) {
+          slots[name] = () => this.slots(name);
+        }
+        return slots;
+      },
+      {
+        default: () => this.slots('value')
+      }
+    );
+
     const Title = (
       <Cell
-        class={bem('title', { disabled: this.disabled, expanded: this.expanded })}
+        class={bem('title', {
+          disabled: this.disabled,
+          expanded: this.expanded
+        })}
         onClick={this.onClick}
+        scopedSlots={titleSlots}
         {...{ props: this.$props }}
-      >
-        {this.slots('value')}
-        {CELL_SLOTS.map(slot => h('template', { slot }, this.slots(slot)))}
-      </Cell>
+      />
     );
 
     const Content = this.inited && (
