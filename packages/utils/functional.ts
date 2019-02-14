@@ -1,5 +1,4 @@
 import { RenderContext, VNodeData } from 'vue/types';
-import { ScopedSlot } from 'vue/types/vnode';
 
 type ObjectIndex = {
   [key: string]: any;
@@ -46,18 +45,4 @@ export function emit(context: Context, eventName: string, ...args: any[]) {
       listeners(...args);
     }
   }
-}
-
-// unify slots & scopedSlots
-export function unifySlots(context: Context) {
-  const { scopedSlots } = context;
-  const slots = context.slots();
-
-  Object.keys(slots).forEach(key => {
-    if (!scopedSlots[key]) {
-      scopedSlots[key] = () => slots[key];
-    }
-  });
-
-  return scopedSlots;
 }

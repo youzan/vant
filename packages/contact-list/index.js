@@ -8,62 +8,58 @@ import RadioGroup from '../radio-group';
 
 const [sfc, bem, t] = use('contact-list');
 
-export default sfc({
-  functional: true,
+function ContactList(h, props, slots, ctx) {
+  const List = props.list.map((item, index) => (
+    <Cell
+      key={item.id}
+      isLink
+      class={bem('item')}
+      valueClass={bem('item-value')}
+      scopedSlots={{
+        default: () => (
+          <Radio name={item.id}>
+            <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
+          </Radio>
+        ),
+        'right-icon': () => (
+          <Icon
+            name="edit"
+            class={bem('edit')}
+            onClick={event => {
+              event.stopPropagation();
+              emit(ctx, 'edit', item, index);
+            }}
+          />
+        )
+      }}
+      onClick={() => {
+        emit(ctx, 'input', item.id);
+        emit(ctx, 'select', item, index);
+      }}
+    />
+  ));
 
-  props: {
-    value: null,
-    list: Array,
-    addText: String
-  },
-
-  render(h, context) {
-    const { props, listeners } = context;
-
-    const List = props.list.map((item, index) => (
-      <Cell
-        key={item.id}
-        isLink
-        class={bem('item')}
-        valueClass={bem('item-value')}
-        scopedSlots={{
-          default: () => (
-            <Radio name={item.id}>
-              <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
-            </Radio>
-          ),
-          'right-icon': () => (
-            <Icon
-              name="edit"
-              class={bem('edit')}
-              onClick={event => {
-                event.stopPropagation();
-                emit(context, 'edit', item, index);
-              }}
-            />
-          )
-        }}
-        onClick={() => {
-          emit(context, 'input', item.id);
-          emit(context, 'select', item, index);
-        }}
+  return (
+    <div class={bem()} {...inherit(ctx)}>
+      <RadioGroup value={props.value} class={bem('group')}>
+        {List}
+      </RadioGroup>
+      <Button
+        square
+        size="large"
+        type="danger"
+        class={bem('add')}
+        text={props.addText || t('addText')}
+        onClick={ctx.listeners.add || noop}
       />
-    ));
+    </div>
+  );
+}
 
-    return (
-      <div class={bem()} {...inherit(context)}>
-        <RadioGroup value={props.value} class={bem('group')}>
-          {List}
-        </RadioGroup>
-        <Button
-          square
-          size="large"
-          type="danger"
-          class={bem('add')}
-          text={props.addText || t('addText')}
-          onClick={listeners.add || noop}
-        />
-      </div>
-    );
-  }
-});
+ContactList.props = {
+  value: null,
+  list: Array,
+  addText: String
+};
+
+export default sfc(ContactList);

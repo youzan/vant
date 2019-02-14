@@ -2,14 +2,12 @@ import { use } from '../utils';
 
 const [sfc, bem] = use('goods-action');
 
-export default sfc({
-  functional: true,
+function GoodsAction(h, props, slots, ctx) {
+  return (
+    <div class={bem()} {...ctx.data}>
+      {slots.default && slots.default()}
+    </div>
+  );
+}
 
-  render(h, context) {
-    return (
-      <div class={bem()} {...context.data}>
-        {context.children}
-      </div>
-    );
-  }
-});
+export default sfc(GoodsAction);
