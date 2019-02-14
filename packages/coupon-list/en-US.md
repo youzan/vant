@@ -91,7 +91,7 @@ export default {
 | displayed-coupon-index | Index of displayed coupon | `Number` | - |
 | close-button-text | Close button text | `String` | `Close` |
 | input-placeholder | Input placeholder | `String` | `Coupon code` |
-| currency | Currency symbol |  `String` | `元` |
+| currency | Currency symbol |  `String` | `¥` |
 
 ### CouponList Event
 

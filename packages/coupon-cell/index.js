@@ -13,7 +13,7 @@ export default sfc({
     coupons: Array,
     currency: {
       type: String,
-      default: '元'
+      default: '¥'
     },
     border: {
       type: Boolean,

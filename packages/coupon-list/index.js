@@ -44,7 +44,7 @@ export default sfc({
     },
     currency: {
       type: String,
-      default: '元'
+      default: '¥'
     }
   },
 

@@ -42,9 +42,9 @@ export default sfc({
         return `${coupon.valueDesc}<span>${coupon.unitDesc}</span>`;
       }
       return coupon.denominations
-        ? `${formatAmount(coupon.denominations)}<span>${this.currency}</span>`
+        ? `<span>${this.currency}</span> ${formatAmount(this.coupon.denominations)}`
         : coupon.discount
-          ? `${formatDiscount(coupon.discount)}<span>折</span>`
+          ? t('discount', formatDiscount(this.coupon.discount))
           : '';
     },
 

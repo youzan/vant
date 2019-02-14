@@ -94,7 +94,7 @@ export default {
 | close-button-text | 列表底部按钮文字 | `String` | `不使用优惠` | - |
 | input-placeholder | 输入框文字提示 | `String` | `请输入优惠码` | - |
 | show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
-| currency | 货币符号 |  `String` | `元` | - | 1.5.0 |
+| currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
 
 ### CouponList Event
 
