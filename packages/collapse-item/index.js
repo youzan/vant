@@ -114,17 +114,16 @@ export default sfc({
   },
 
   render(h) {
-    const titleSlots = CELL_SLOTS.reduce(
-      (slots, name) => {
-        if (this.slots(name)) {
-          slots[name] = () => this.slots(name);
-        }
-        return slots;
-      },
-      {
-        default: () => this.slots('value')
+    const titleSlots = CELL_SLOTS.reduce((slots, name) => {
+      if (this.slots(name)) {
+        slots[name] = () => this.slots(name);
       }
-    );
+      return slots;
+    }, {});
+
+    if (this.slots('value')) {
+      titleSlots.default = this.slots('value');
+    }
 
     const Title = (
       <Cell

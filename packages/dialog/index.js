@@ -6,7 +6,11 @@ let instance;
 
 const initInstance = () => {
   instance = new (Vue.extend(VanDialog))({
-    el: document.createElement('div')
+    el: document.createElement('div'),
+    // avoid missing animation when first rendered
+    propsData: {
+      lazyRender: false
+    }
   });
 
   instance.$on('input', value => {
