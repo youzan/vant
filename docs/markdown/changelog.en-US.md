@@ -1,5 +1,13 @@
 ## Changelog
 
+## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
+`2019-02-14`
+
+**Bug Fixes**
+
+- Sku: buy event incorrect triggered [\#2741](https://github.com/youzan/vant/pull/2741)
+
+
 ## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
 `2019-02-14`
 

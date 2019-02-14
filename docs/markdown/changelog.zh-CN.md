@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
+`2019-02-14`
+
+**Bug Fixes**
+
+- 修复 Sku 购买事件错误地触发为加入购物车事件的问题 [\#2741](https://github.com/youzan/vant/pull/2741)
+
+
 ## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
 `2019-02-14`
 
