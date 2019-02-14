@@ -1,11 +1,11 @@
 import { use } from '../utils';
 import Loading from '../loading';
-import SwitchMixin from '../mixins/switch';
+import { switchProps } from './shared';
 
 const [sfc, bem] = use('switch');
 
 export default sfc({
-  mixins: [SwitchMixin],
+  props: switchProps,
 
   methods: {
     onClick() {

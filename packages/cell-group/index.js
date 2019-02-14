@@ -2,21 +2,22 @@ import { use } from '../utils';
 
 const [sfc, bem] = use('cell-group');
 
-export default sfc({
-  functional: true,
+function CellGroup(h, props, slots, ctx) {
+  return (
+    <div
+      class={[bem(), { 'van-hairline--top-bottom': props.border }]}
+      {...ctx.data}
+    >
+      {slots.default && slots.default()}
+    </div>
+  );
+}
 
-  props: {
-    border: {
-      type: Boolean,
-      default: true
-    }
-  },
-
-  render(h, context) {
-    return (
-      <div class={[bem(), { 'van-hairline--top-bottom': context.props.border }]} {...context.data}>
-        {context.children}
-      </div>
-    );
+CellGroup.props = {
+  border: {
+    type: Boolean,
+    default: true
   }
-});
+};
+
+export default sfc(CellGroup);
