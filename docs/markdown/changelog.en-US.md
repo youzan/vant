@@ -1,5 +1,27 @@
 ## Changelog
 
+## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
+`2019-02-14`
+
+**Improvements**
+
+- Toast: add getContainer prop [\#2724](https://github.com/youzan/vant/pull/2724)
+- Button: add loading-text prop [\#2732](https://github.com/youzan/vant/pull/2732)
+- Coupon: add value-desc、unit-desc prop [\#2710](https://github.com/youzan/vant/pull/2710)
+- Card: refactored into functional component [\#2740](https://github.com/youzan/vant/pull/2740)
+- Cell: refactored into functional component [\#2729](https://github.com/youzan/vant/pull/2729)
+- Switch: refactored into functional component [\#2736](https://github.com/youzan/vant/pull/2736)
+- GoodsAction: refactored into functional component [\#2730](https://github.com/youzan/vant/pull/2730)
+
+**Bug Fixes**
+
+- fix Field right icon flex shrink [\#2713](https://github.com/youzan/vant/pull/2713)
+- fix Field wrong height in datetime-local type [\#2720](https://github.com/youzan/vant/pull/2720)
+- fix Sku click area dislocation in iOS 12 [\#2722](https://github.com/youzan/vant/pull/2722)
+- fix SwipeCell incorrect render when left-width equals zero [\#2737](https://github.com/youzan/vant/pull/2737)
+- fix functional component multi listeners [\#2717](https://github.com/youzan/vant/pull/2717)
+
+
 ## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
 `2019-02-10`
 

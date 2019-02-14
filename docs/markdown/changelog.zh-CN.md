@@ -1,5 +1,27 @@
 ## 更新日志
 
+## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
+`2019-02-14`
+
+**Improvements**
+
+- Toast: 新增 getContainer 属性 [\#2724](https://github.com/youzan/vant/pull/2724)
+- Button: 新增 loading-text 属性 [\#2732](https://github.com/youzan/vant/pull/2732)
+- Coupon: 新增 value-desc、unit-desc 属性 [\#2710](https://github.com/youzan/vant/pull/2710)
+- Card: 重构为函数式组件 [\#2740](https://github.com/youzan/vant/pull/2740)
+- Cell: 重构为函数式组件 [\#2729](https://github.com/youzan/vant/pull/2729)
+- Switch: 重构为函数式组件 [\#2736](https://github.com/youzan/vant/pull/2736)
+- GoodsAction: 重构为函数式组件 [\#2730](https://github.com/youzan/vant/pull/2730)
+
+**Bug Fixes**
+
+- 修复 Field 左侧内容较多时右侧按钮样式错误的问题 [\#2713](https://github.com/youzan/vant/pull/2713)
+- 修复 Field 设置为 datetime-local 类型时在 iOS 下高度错误的问题 [\#2720](https://github.com/youzan/vant/pull/2720)
+- 修复 Sku 在 iOS 12 下点击区域可能出现偏移的问题 [\#2722](https://github.com/youzan/vant/pull/2722)
+- 修复 SwipeCell left-width 设置为 0 时渲染错误的问题 [\#2737](https://github.com/youzan/vant/pull/2737)
+- 修复函数式组件传入多个同名事件导致错误的问题 [\#2717](https://github.com/youzan/vant/pull/2717)
+
+
 ## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
 `2019-02-10`
 
@@ -232,9 +254,9 @@
 - 修复 Field 使用 maxlength 属性后中文输入法截断的问题 [\#2295](https://github.com/youzan/vant/pull/2295)
 - 修复 Swipe 包裹在 keep-alive 组件内时未重新初始化的问题 [\#2297](https://github.com/youzan/vant/pull/2297)
 - 修复 Swipe 在边界情况下可能报错的问题 [\#2253](https://github.com/youzan/vant/pull/2253)
-- 修复 Swipe 事件冒泡导致无法嵌套使用的问题 [\#2355](https://github.com/youzan/vant/pull/2355) ([chenjiahan](https://github.com/chenjiahan))
+- 修复 Swipe 事件冒泡导致无法嵌套使用的问题 [\#2355](https://github.com/youzan/vant/pull/2355)
 - 修复 Tab 在使用 animated 属性时标签内容无法展示的问题 [\#2238](https://github.com/youzan/vant/pull/2238) [\#2322](https://github.com/youzan/vant/pull/2322)
-- 修复 Tab 在禁用所有选项时报错的问题 [\#2356](https://github.com/youzan/vant/pull/2356) ([chenjiahan](https://github.com/chenjiahan))
+- 修复 Tab 在禁用所有选项时报错的问题 [\#2356](https://github.com/youzan/vant/pull/2356)
 - 修复 Tab 在使用 color 属性时下划线初始颜色错误的问题 [\#2344](https://github.com/youzan/vant/pull/2344)
 - 修复 Tabbar 提示位置错误的问题 [\#2257](https://github.com/youzan/vant/pull/2257)
 - 修复 Toast 实例上缺少 clear 方法类型定义的问题 [\#2354](https://github.com/youzan/vant/pull/2354)
