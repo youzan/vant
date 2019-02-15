@@ -1,4 +1,5 @@
 import { use, isDef } from '../utils';
+import { inherit } from '../utils/functional';
 import Tag from '../tag';
 
 const [sfc, bem] = use('card');
@@ -68,7 +69,7 @@ function Card(h, props, slots, ctx) {
   );
 
   return (
-    <div class={bem()} {...ctx.data}>
+    <div class={bem()} {...inherit(ctx, true)}>
       <div class={bem('header')}>
         {Thumb}
         <div class={bem('content', { centered: props.centered })}>

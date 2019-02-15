@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inherit } from '../utils/functional';
 
 const [sfc, bem] = use('cell-group');
 
@@ -6,7 +7,7 @@ function CellGroup(h, props, slots, ctx) {
   return (
     <div
       class={[bem(), { 'van-hairline--top-bottom': props.border }]}
-      {...ctx.data}
+      {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}
     </div>

@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inherit } from '../utils/functional';
 import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
 const [sfc, bem] = use('tag');
@@ -29,7 +30,7 @@ function Tag(h, props, slots, ctx) {
           'van-hairline--surround': plain
         }
       ]}
-      {...ctx.data}
+      {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}
     </span>

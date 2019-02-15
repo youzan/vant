@@ -21,8 +21,8 @@ const inheritKey = [
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
 
 // inherit partial context, map nativeOn to on
-export function inherit(context: Context): InheritContext {
-  return inheritKey.reduce(
+export function inherit(context: Context, inheritListeners: boolean): InheritContext {
+  const result = inheritKey.reduce(
     (obj, key) => {
       if (context.data[key]) {
         obj[mapInheritKey[key] || key] = context.data[key];
@@ -31,6 +31,13 @@ export function inherit(context: Context): InheritContext {
     },
     {} as InheritContext
   );
+
+  if (inheritListeners) {
+    result.on = result.on || {};
+    Object.assign(result.on, context.data.on);
+  }
+
+  return result;
 }
 
 // emit event
