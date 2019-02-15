@@ -1,18 +1,19 @@
 import { use } from '../../utils';
+import { inherit } from '../../utils/functional';
 
 const [sfc, bem] = use('sku-row');
 
-export default sfc({
-  props: {
-    skuRow: Object
-  },
+function SkuRow(h, props, slots, ctx) {
+  return (
+    <div class={bem()} {...inherit(ctx)}>
+      <div class={bem('title')}>{props.skuRow.k}：</div>
+      {slots.default && slots.default()}
+    </div>
+  );
+}
 
-  render(h) {
-    return (
-      <div class={bem()}>
-        <div class={bem('title')}>{this.skuRow.k}：</div>
-        {this.slots()}
-      </div>
-    );
-  }
-});
+SkuRow.props = {
+  skuRow: Object
+};
+
+export default sfc(SkuRow);
