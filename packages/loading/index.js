@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inherit } from '../utils/functional';
 
 const [sfc, bem] = use('loading');
 const DEFAULT_COLOR = '#c9c9c9';
@@ -28,7 +29,7 @@ function Loading(h, props, slots, ctx) {
   );
 
   return (
-    <div class={bem([type, colorType])} style={style} {...ctx.data}>
+    <div class={bem([type, colorType])} style={style} {...inherit(ctx, true)}>
       <span class={bem('spinner', type)}>
         {Spin}
         {Circular}

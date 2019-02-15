@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { emit } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 
 const [sfc, bem] = use('password-input');
 
@@ -23,7 +23,7 @@ function PasswordInput(h, props, slots, ctx) {
           event.stopPropagation();
           emit(ctx, 'focus', event);
         }}
-        {...ctx.data}
+        {...inherit(ctx, true)}
       >
         {Points}
       </ul>

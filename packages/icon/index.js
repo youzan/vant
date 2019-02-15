@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { inherit } from '../utils/functional';
 import Info from '../info';
 import isSrc from '../utils/validate/src';
 
@@ -17,7 +18,7 @@ function Icon(h, props, slots, ctx) {
         color: props.color,
         fontSize: props.size
       }}
-      {...ctx.data}
+      {...inherit(ctx, true)}
     >
       {ctx.default && ctx.default()}
       {urlIcon && <img src={props.name} />}
