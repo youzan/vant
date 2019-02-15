@@ -122,7 +122,7 @@ export default sfc({
     }, {});
 
     if (this.slots('value')) {
-      titleSlots.default = this.slots('value');
+      titleSlots.default = () => this.slots('value');
     }
 
     const Title = (
