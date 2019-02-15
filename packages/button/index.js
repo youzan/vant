@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
+import { routeProps, functionalRoute } from '../mixins/router';
 import Loading from '../loading';
 
 const [sfc, bem] = use('button');
@@ -10,6 +11,7 @@ function Button(h, props, slots, ctx) {
   const onClick = event => {
     if (!loading && !disabled) {
       emit(ctx, 'click', event);
+      functionalRoute(ctx);
     }
   };
 
@@ -48,6 +50,7 @@ function Button(h, props, slots, ctx) {
 }
 
 Button.props = {
+  ...routeProps,
   text: String,
   block: Boolean,
   plain: Boolean,
