@@ -21,7 +21,7 @@ const inheritKey = [
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
 
 // inherit partial context, map nativeOn to on
-export function inherit(context: Context, inheritListeners: boolean): InheritContext {
+export function inherit(context: Context, inheritListeners?: boolean): InheritContext {
   const result = inheritKey.reduce(
     (obj, key) => {
       if (context.data[key]) {
