@@ -3,7 +3,7 @@ module.exports = {
   setupFiles: ['<rootDir>/test/jest.init.js'],
   moduleFileExtensions: ['js', 'vue', 'ts', 'tsx'],
   transform: {
-    '^.+\\.js$': '<rootDir>/test/jest.transform.js',
+    '^.+\\.(js|ts|tsx)$': '<rootDir>/test/jest.transform.js',
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   moduleNameMapper: {
