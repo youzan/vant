@@ -3,12 +3,21 @@ import { emit, inherit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../mixins/router';
 import Loading from '../loading';
 
+// Types
+import { RouteProps } from '../mixins/router';
+import { FunctionalComponent } from '../utils/use/sfc';
+
 const [sfc, bem] = use('button');
 
-function Button(h, props, slots, ctx) {
-  const { type, disabled, loading, loadingText } = props;
+const Button: FunctionalComponent<ButtonProps> = function(
+  h,
+  props,
+  slots,
+  ctx
+) {
+  const { tag, type, disabled, loading, loadingText } = props;
 
-  const onClick = event => {
+  const onClick = (event: Event) => {
     if (!loading && !disabled) {
       emit(ctx, 'click', event);
       functionalRoute(ctx);
@@ -16,7 +25,7 @@ function Button(h, props, slots, ctx) {
   };
 
   return (
-    <props.tag
+    <tag
       type={props.nativeType}
       disabled={disabled}
       class={bem([
@@ -45,9 +54,25 @@ function Button(h, props, slots, ctx) {
           {slots.default ? slots.default() : props.text}
         </span>
       )}
-    </props.tag>
+    </tag>
   );
-}
+};
+
+export type ButtonProps = RouteProps & {
+  tag?: string;
+  type?: string;
+  size?: string;
+  text?: string;
+  block?: boolean;
+  plain?: boolean;
+  round?: boolean;
+  square?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
+  nativeType?: string;
+  loadingText?: string;
+  bottomAction?: boolean;
+};
 
 Button.props = {
   ...routeProps,
@@ -75,4 +100,4 @@ Button.props = {
   }
 };
 
-export default sfc(Button);
+export default sfc<ButtonProps>(Button);
