@@ -1,58 +1,60 @@
 import { use } from '../utils';
+import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
 
 const [sfc, bem] = use('address-item');
 
-export default sfc({
-  props: {
-    data: Object,
-    disabled: Boolean,
-    switchable: Boolean
-  },
+function AddressItem(h, props, slots, ctx) {
+  const { disabled, switchable } = props;
 
-  methods: {
-    onSelect() {
-      if (this.switchable) {
-        this.$emit('select');
-      }
-    },
+  const renderRightIcon = () => (
+    <Icon
+      name="edit"
+      class={bem('edit')}
+      onClick={event => {
+        event.stopPropagation();
+        emit(ctx, 'edit');
+      }}
+    />
+  );
 
-    onClickRightIcon(event) {
-      event.stopPropagation();
-      this.$emit('edit');
-    },
+  const renderContent = () => {
+    const { data } = props;
+    const Info = [
+      <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
+      <div class={bem('address')}>{data.address}</div>
+    ];
 
-    renderRightIcon() {
-      return <Icon name="edit" class={bem('edit')} onClick={this.onClickRightIcon} />;
-    },
+    return props.disabled ? Info : <Radio name={data.id}>{Info}</Radio>;
+  };
 
-    renderContent() {
-      const { data } = this;
-      const Info = [
-        <div class={bem('name')}>{`${data.name}，${data.tel}`}</div>,
-        <div class={bem('address')}>{data.address}</div>
-      ];
-
-      return this.disabled ? Info : <Radio name={data.id}>{Info}</Radio>;
+  const onSelect = () => {
+    if (props.switchable) {
+      emit(ctx, 'select');
     }
-  },
+  };
 
-  render(h) {
-    const { disabled, switchable } = this;
+  return (
+    <Cell
+      class={bem({ disabled, unswitchable: !switchable })}
+      valueClass={bem('value')}
+      isLink={!disabled && switchable}
+      scopedSlots={{
+        default: renderContent,
+        'right-icon': renderRightIcon
+      }}
+      onClick={onSelect}
+      {...inherit(ctx)}
+    />
+  );
+}
 
-    return (
-      <Cell
-        class={bem({ disabled, unswitchable: !switchable })}
-        valueClass={bem('value')}
-        isLink={!disabled && switchable}
-        scopedSlots={{
-          default: this.renderContent,
-          'right-icon': this.renderRightIcon
-        }}
-        onClick={this.onSelect}
-      />
-    );
-  }
-});
+AddressItem.props = {
+  data: Object,
+  disabled: Boolean,
+  switchable: Boolean
+};
+
+export default sfc(AddressItem);
