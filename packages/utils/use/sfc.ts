@@ -10,25 +10,27 @@ import Vue, {
   CreateElement,
   RenderContext
 } from 'vue/types';
-import { VNode, ScopedSlot } from 'vue/types/vnode';
+import { VNode } from 'vue/types/vnode';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
-type VantComponentOptions = ComponentOptions<Vue> & {
+export type ScopedSlot = (props?: any) => VNode[] | undefined;
+
+export type VantComponentOptions = ComponentOptions<Vue> & {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
 };
 
-type DefaultProps = Record<string, any>;
+export type DefaultProps = Record<string, any>;
 
-type VantPureComponent<
+export type FunctionalComponent<
   Props = DefaultProps,
   PropDefs = PropsDefinition<Props>
 > = {
   (
     h: CreateElement,
-    props: { [key: string]: any },
+    props: Props,
     slots: { [key: string]: ScopedSlot | undefined },
-    context: RenderContext
+    context: RenderContext<Props>
   ): VNode;
   props?: PropDefs;
   model?: {
@@ -37,6 +39,8 @@ type VantPureComponent<
   };
   inject?: InjectOptions;
 };
+
+export type VantTsxComponent<T> = (props: T) => VNode;
 
 const arrayProp = {
   type: Array,
@@ -80,7 +84,9 @@ export function unifySlots(context: RenderContext) {
   return scopedSlots;
 }
 
-function transformPureComponent(pure: VantPureComponent): VantComponentOptions {
+function transformFunctionalComponent(
+  pure: FunctionalComponent
+): VantComponentOptions {
   return {
     functional: true,
     props: pure.props,
@@ -89,11 +95,11 @@ function transformPureComponent(pure: VantPureComponent): VantComponentOptions {
   };
 }
 
-export default (name: string) => (
-  sfc: VantComponentOptions | VantPureComponent
-) => {
+export default (name: string) => <T = DefaultProps>(
+  sfc: VantComponentOptions | FunctionalComponent
+): VantTsxComponent<T> => {
   if (typeof sfc === 'function') {
-    sfc = transformPureComponent(sfc);
+    sfc = transformFunctionalComponent(sfc);
   }
 
   if (!sfc.functional) {
@@ -108,5 +114,5 @@ export default (name: string) => (
   sfc.name = name;
   sfc.install = install;
 
-  return sfc;
+  return sfc as VantTsxComponent<T>;
 };
