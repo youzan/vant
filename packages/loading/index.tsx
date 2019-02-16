@@ -1,10 +1,16 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
+import { FunctionalComponent } from '../utils/use/sfc';
 
 const [sfc, bem] = use('loading');
 const DEFAULT_COLOR = '#c9c9c9';
 
-function Loading(h, props, slots, ctx) {
+const Loading: FunctionalComponent<LoadingProps> = function(
+  h,
+  props,
+  slots,
+  ctx
+) {
   const { color, size, type } = props;
 
   const colorType = color === 'white' || color === 'black' ? color : '';
@@ -36,7 +42,7 @@ function Loading(h, props, slots, ctx) {
       </span>
     </div>
   );
-}
+};
 
 Loading.props = {
   size: String,
@@ -50,4 +56,10 @@ Loading.props = {
   }
 };
 
-export default sfc(Loading);
+export type LoadingProps = {
+  size?: string;
+  type?: string;
+  color?: string;
+};
+
+export default sfc<LoadingProps>(Loading);
