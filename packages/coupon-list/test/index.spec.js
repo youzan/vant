@@ -109,21 +109,27 @@ test('exchange coupon', () => {
   expect(wrapper.emitted('input')[2][0]).toBe('2');
 });
 
-test('coupon cell', () => {
+test('render coupon cell', () => {
   const onClick = jest.fn();
   const wrapper = mount(CouponCell, {
-    listeners: {
-      click: onClick
+    context: {
+      on: {
+        click: onClick
+      }
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+  wrapper.trigger('click');
+  expect(onClick.mock.calls.length).toEqual(1);
+});
+
+test('render coupon cell with coupon', () => {
+  const wrapper = mount(CouponCell, {
+    propsData: {
+      coupons: [{ value: 100 }],
+      chosenCoupon: 0
     }
   });
   expect(wrapper).toMatchSnapshot();
-
-  wrapper.setProps({
-    coupons: [{ value: 100 }],
-    chosenCoupon: 0
-  });
-  expect(wrapper).toMatchSnapshot();
-
-  wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(1);
 });
