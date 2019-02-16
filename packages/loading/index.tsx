@@ -1,5 +1,7 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
+
+// Types
 import { FunctionalComponent } from '../utils/use/sfc';
 
 const [sfc, bem] = use('loading');
