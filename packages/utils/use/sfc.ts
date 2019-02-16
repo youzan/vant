@@ -11,20 +11,31 @@ import Vue, {
   RenderContext
 } from 'vue/types';
 import { VNode, ScopedSlot } from 'vue/types/vnode';
+import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
 type VantComponentOptions = ComponentOptions<Vue> & {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
 };
 
-type VantPureComponent = {
+type DefaultProps = Record<string, any>;
+
+type VantPureComponent<
+  Props = DefaultProps,
+  PropDefs = PropsDefinition<Props>
+> = {
   (
     h: CreateElement,
     props: { [key: string]: any },
     slots: { [key: string]: ScopedSlot | undefined },
     context: RenderContext
   ): VNode;
-  props: any;
+  props?: PropDefs;
+  model?: {
+    prop?: string;
+    event?: string;
+  };
+  inject?: InjectOptions;
 };
 
 const arrayProp = {
@@ -73,6 +84,7 @@ function transformPureComponent(pure: VantPureComponent): VantComponentOptions {
   return {
     functional: true,
     props: pure.props,
+    model: pure.model,
     render: (h, context) => pure(h, context.props, unifySlots(context), context)
   };
 }
