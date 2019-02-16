@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`coupon cell 1`] = `
+exports[`render coupon cell 1`] = `
 <div class="van-cell van-cell--clickable van-coupon-cell">
   <div class="van-cell__title"><span>优惠券</span></div>
   <div class="van-cell__value"><span>使用优惠</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
@@ -8,10 +8,10 @@ exports[`coupon cell 1`] = `
 </div>
 `;
 
-exports[`coupon cell 2`] = `
+exports[`render coupon cell with coupon 1`] = `
 <div class="van-cell van-cell--clickable van-coupon-cell">
   <div class="van-cell__title"><span>优惠券</span></div>
-  <div class="van-cell__value van-coupon-cell--selected"><span>-¥1.00</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
+  <div class="van-cell__value"><span>-¥1.00</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
     <!----></i>
 </div>
 `;
