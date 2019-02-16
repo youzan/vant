@@ -1,63 +1,63 @@
 import { use } from '../utils';
+import { inherit } from '../utils/functional';
 import Cell from '../cell';
 
 const [sfc, bem, t] = use('coupon-cell');
 
-export default sfc({
-  model: {
-    prop: 'chosenCoupon'
-  },
+function formatValue(props) {
+  const { coupons, chosenCoupon, currency } = props;
+  const coupon = coupons[chosenCoupon];
 
-  props: {
-    title: String,
-    coupons: Array,
-    currency: {
-      type: String,
-      default: '¥'
-    },
-    border: {
-      type: Boolean,
-      default: true
-    },
-    editable: {
-      type: Boolean,
-      default: true
-    },
-    chosenCoupon: {
-      type: Number,
-      default: -1
-    }
-  },
-
-  computed: {
-    value() {
-      const { coupons } = this;
-      const coupon = coupons[this.chosenCoupon];
-      if (coupon) {
-        const value = coupon.denominations || coupon.value;
-        return `-${this.currency}${(value / 100).toFixed(2)}`;
-      }
-      return coupons.length === 0 ? t('tips') : t('count', coupons.length);
-    },
-
-    valueClass() {
-      return this.coupons[this.chosenCoupon] ? 'van-coupon-cell--selected' : '';
-    }
-  },
-
-  render(h) {
-    return (
-      <Cell
-        class={bem()}
-        title={this.title || t('title')}
-        value={this.value}
-        border={this.border}
-        isLink={this.editable}
-        valueClass={this.valueClass}
-        onClick={() => {
-          this.$emit('click');
-        }}
-      />
-    );
+  if (coupon) {
+    const value = coupon.denominations || coupon.value;
+    return `-${currency}${(value / 100).toFixed(2)}`;
   }
-});
+
+  return coupons.length === 0 ? t('tips') : t('count', coupons.length);
+}
+
+function CouponCell(h, props, slots, ctx) {
+  const valueClass = props[props.chosenCoupon]
+    ? 'van-coupon-cell--selected'
+    : '';
+  const value = formatValue(props);
+
+  return (
+    <Cell
+      class={bem()}
+      value={value}
+      title={props.title || t('title')}
+      border={props.border}
+      isLink={props.editable}
+      valueClass={valueClass}
+      {...inherit(ctx, true)}
+    />
+  );
+}
+
+CouponCell.model = {
+  prop: 'chosenCoupon'
+};
+
+CouponCell.props = {
+  title: String,
+  coupons: Array,
+  currency: {
+    type: String,
+    default: '¥'
+  },
+  border: {
+    type: Boolean,
+    default: true
+  },
+  editable: {
+    type: Boolean,
+    default: true
+  },
+  chosenCoupon: {
+    type: Number,
+    default: -1
+  }
+};
+
+export default sfc(CouponCell);
