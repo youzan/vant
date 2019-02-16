@@ -24,6 +24,12 @@ export function functionalRoute(context: RenderContext) {
   route(context.parent && context.parent.$router, context.props);
 }
 
+export type RouteProps = {
+  url?: string,
+  replace?: boolean;
+  to?: RawLocation;
+}
+
 export const routeProps = {
   url: String,
   replace: Boolean,
