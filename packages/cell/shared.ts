@@ -1,3 +1,17 @@
+export type SharedCellProps = {
+  icon?: string;
+  border?: boolean;
+  center?: boolean;
+  isLink?: boolean;
+  required?: boolean;
+  titleClass?: string;
+  valueClass?: string;
+  labelClass?: string;
+  title?: string | number;
+  value?: string | number;
+  label?: string | number;
+}
+
 export const cellProps = {
   icon: String,
   center: Boolean,

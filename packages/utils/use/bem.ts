@@ -7,8 +7,8 @@
  * b(['disabled', 'primary']) // 'button button--disabled button--primary'
  */
 
-type Mod = string | { [key: string]: any };
-type Mods = Mod | Mod[];
+export type Mod = string | { [key: string]: any };
+export type Mods = Mod | Mod[];
 
 const ELEMENT = '__';
 const MODS = '--';

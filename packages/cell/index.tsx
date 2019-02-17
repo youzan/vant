@@ -4,9 +4,14 @@ import { emit, inherit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../mixins/router';
 import Icon from '../icon';
 
+// Types
+import { SharedCellProps } from './shared';
+import { FunctionalComponent } from '../utils/use/sfc';
+import { Mods } from '../utils/use/bem';
+
 const [sfc, bem] = use('cell');
 
-function Cell(h, props, slots, ctx) {
+const Cell: FunctionalComponent<CellProps> = function(h, props, slots, ctx) {
   const { icon, size, title, label, value, isLink, arrowDirection } = props;
 
   const showTitle = slots.title || isDef(title);
@@ -34,8 +39,9 @@ function Cell(h, props, slots, ctx) {
     ? slots.icon()
     : icon && <Icon class={bem('left-icon')} name={icon} />;
 
-  const RightIcon = slots['right-icon']
-    ? slots['right-icon']()
+  const rightIconSlot = slots['right-icon'];
+  const RightIcon = rightIconSlot
+    ? rightIconSlot()
     : isLink && (
         <Icon
           class={bem('right-icon')}
@@ -43,20 +49,25 @@ function Cell(h, props, slots, ctx) {
         />
     );
 
-  const onClick = event => {
+  const onClick = (event: Event) => {
     emit(ctx, 'click', event);
     functionalRoute(ctx);
   };
 
+  const classes: Mods = {
+    center: props.center,
+    required: props.required,
+    borderless: !props.border,
+    clickable: isLink || props.clickable
+  };
+
+  if (size) {
+    classes[size] = size;
+  }
+
   return (
     <div
-      class={bem({
-        center: props.center,
-        required: props.required,
-        borderless: !props.border,
-        clickable: isLink || props.clickable,
-        [size]: size
-      })}
+      class={bem(classes)}
       onClick={onClick}
       {...inherit(ctx)}
     >
@@ -69,6 +80,12 @@ function Cell(h, props, slots, ctx) {
   );
 }
 
+export type CellProps = SharedCellProps & {
+  size?: string;
+  clickable?: boolean;
+  arrowDirection?: string;
+}
+
 Cell.props = {
   ...cellProps,
   ...routeProps,
@@ -77,4 +94,4 @@ Cell.props = {
   arrowDirection: String
 };
 
-export default sfc(Cell);
+export default sfc<CellProps>(Cell);
