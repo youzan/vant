@@ -20,6 +20,8 @@ export default sfc({
     animated: Boolean,
     offsetTop: Number,
     swipeable: Boolean,
+    titleActiveColor: String,
+    titleInactiveColor: String,
     ellipsis: {
       type: Boolean,
       default: true
@@ -360,6 +362,7 @@ export default sfc({
       const active = index === this.curActive;
       const isCard = this.type === 'card';
 
+      // theme color
       if (color) {
         if (!item.disabled && isCard && !active) {
           style.color = color;
@@ -370,6 +373,11 @@ export default sfc({
         if (isCard) {
           style.borderColor = color;
         }
+      }
+
+      const titleColor = active ? this.titleActiveColor : this.titleInactiveColor;
+      if (titleColor) {
+        style.color = titleColor;
       }
 
       if (this.scrollable && this.ellipsis) {
