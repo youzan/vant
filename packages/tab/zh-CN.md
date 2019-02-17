@@ -157,6 +157,7 @@ export default {
 | v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
 | duration | 动画时间，单位秒 | `Number` | `0.3` | - |
+| background | 标签栏背景色 | `String` | `white` | 1.6.5 |
 | line-width | 底部条宽度，单位 px | `Number` | - | 1.1.1 |
 | line-height | 底部条高度，单位 px | `Number` | 3 | 1.5.0 |
 | color | 标签主题色 | `String` | `#f44` | 1.2.0 |
