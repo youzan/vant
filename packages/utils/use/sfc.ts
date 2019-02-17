@@ -47,7 +47,11 @@ export type FunctionalComponent<
   inject?: InjectOptions;
 };
 
-export type VantTsxComponent<T> = (props: T) => VNode;
+export type TsxBaseProps = {
+  class?: any;
+  style?: any;
+}
+export type TsxComponent<T> = (props: T & TsxBaseProps) => VNode;
 
 const arrayProp = {
   type: Array,
@@ -104,7 +108,7 @@ function transformFunctionalComponent(
 
 export default (name: string) => <T = DefaultProps>(
   sfc: VantComponentOptions | FunctionalComponent
-): VantTsxComponent<T> => {
+): TsxComponent<T> => {
   if (typeof sfc === 'function') {
     sfc = transformFunctionalComponent(sfc);
   }
@@ -121,5 +125,5 @@ export default (name: string) => <T = DefaultProps>(
   sfc.name = name;
   sfc.install = install;
 
-  return sfc as VantTsxComponent<T>;
+  return sfc as TsxComponent<T>;
 };
