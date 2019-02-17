@@ -26,4 +26,4 @@ Info.props = {
   info: [String, Number]
 };
 
-export default sfc(Info);
+export default sfc<InfoProps>(Info);

@@ -33,4 +33,4 @@ CellGroup.props = {
   }
 };
 
-export default sfc(CellGroup);
+export default sfc<CellGroupProps>(CellGroup);

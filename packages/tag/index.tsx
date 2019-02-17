@@ -2,18 +2,21 @@ import { use } from '../utils';
 import { inherit } from '../utils/functional';
 import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
+// Types
+import { FunctionalComponent } from '../utils/use/sfc';
+
 const [sfc, bem] = use('tag');
 
-const COLOR_MAP = {
+const COLOR_MAP: { [key: string]: string } = {
   danger: RED,
   primary: BLUE,
   success: GREEN
 };
 
-function Tag(h, props, slots, ctx) {
-  const { mark, plain, round, size } = ctx.props;
+const Tag: FunctionalComponent<TagProps> = function(h, props, slots, ctx) {
+  const { type, mark, plain, round, size } = ctx.props;
 
-  const color = props.color || COLOR_MAP[props.type] || GRAY_DARK;
+  const color = props.color || (type && COLOR_MAP[type]) || GRAY_DARK;
   const key = plain ? 'color' : 'backgroundColor';
   const style = { [key]: color };
 
@@ -21,11 +24,16 @@ function Tag(h, props, slots, ctx) {
     style.color = props.textColor;
   }
 
+  const classes: { [key: string]: any } = { mark, plain, round };
+  if (size) {
+    classes[size] = size;
+  }
+
   return (
     <span
       style={style}
       class={[
-        bem({ mark, plain, round, [size]: size }),
+        bem(classes),
         {
           'van-hairline--surround': plain
         }
@@ -35,7 +43,17 @@ function Tag(h, props, slots, ctx) {
       {slots.default && slots.default()}
     </span>
   );
-}
+};
+
+export type TagProps = {
+  size?: string;
+  type?: string;
+  mark?: boolean;
+  color?: string;
+  plain?: boolean;
+  round?: boolean;
+  textColor?: string;
+};
 
 Tag.props = {
   size: String,
@@ -47,4 +65,4 @@ Tag.props = {
   textColor: String
 };
 
-export default sfc(Tag);
+export default sfc<TagProps>(Tag);
