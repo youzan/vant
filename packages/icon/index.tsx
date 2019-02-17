@@ -3,9 +3,12 @@ import { inherit } from '../utils/functional';
 import Info from '../info';
 import isSrc from '../utils/validate/src';
 
+// Types
+import { FunctionalComponent } from '../utils/use/sfc';
+
 const [sfc] = use('icon');
 
-function Icon(h, props, slots, ctx) {
+const Icon: FunctionalComponent<IconProps> = function(h, props, slots, ctx) {
   const urlIcon = isSrc(props.name);
 
   return (
@@ -20,12 +23,20 @@ function Icon(h, props, slots, ctx) {
       }}
       {...inherit(ctx, true)}
     >
-      {ctx.default && ctx.default()}
+      {slots.default && slots.default()}
       {urlIcon && <img src={props.name} />}
       <Info info={props.info} />
     </i>
   );
-}
+};
+
+export type IconProps = {
+  name: string;
+  size?: string;
+  color?: string;
+  info?: string | number;
+  classPrefix?: string;
+};
 
 Icon.props = {
   name: String,
@@ -38,4 +49,4 @@ Icon.props = {
   }
 };
 
-export default sfc(Icon);
+export default sfc<IconProps>(Icon);
