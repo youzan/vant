@@ -1,9 +1,17 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
 
+// Types
+import { FunctionalComponent } from '../utils/use/sfc';
+
 const [sfc, bem] = use('cell-group');
 
-function CellGroup(h, props, slots, ctx) {
+const CellGroup: FunctionalComponent<CellGroupProps> = function (
+  h,
+  props,
+  slots,
+  ctx
+) {
   return (
     <div
       class={[bem(), { 'van-hairline--top-bottom': props.border }]}
@@ -12,7 +20,11 @@ function CellGroup(h, props, slots, ctx) {
       {slots.default && slots.default()}
     </div>
   );
-}
+};
+
+export type CellGroupProps = {
+  border?: boolean
+};
 
 CellGroup.props = {
   border: {

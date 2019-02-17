@@ -46,6 +46,12 @@ const Loading: FunctionalComponent<LoadingProps> = function(
   );
 };
 
+export type LoadingProps = {
+  size?: string;
+  type?: string;
+  color?: string;
+};
+
 Loading.props = {
   size: String,
   type: {
@@ -56,12 +62,6 @@ Loading.props = {
     type: String,
     default: DEFAULT_COLOR
   }
-};
-
-export type LoadingProps = {
-  size?: string;
-  type?: string;
-  color?: string;
 };
 
 export default sfc<LoadingProps>(Loading);
