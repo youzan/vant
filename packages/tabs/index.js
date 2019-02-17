@@ -20,6 +20,7 @@ export default sfc({
     animated: Boolean,
     offsetTop: Number,
     swipeable: Boolean,
+    background: String,
     ellipsis: {
       type: Boolean,
       default: true
@@ -91,7 +92,8 @@ export default sfc({
 
     navStyle() {
       return {
-        borderColor: this.color
+        borderColor: this.color,
+        background: this.background
       };
     },
 
