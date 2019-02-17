@@ -29,7 +29,10 @@ export type FunctionalComponent<
   (
     h: CreateElement,
     props: Props,
-    slots: { [key: string]: ScopedSlot | undefined },
+    slots: {
+      [key: string]: ScopedSlot | undefined
+      default: ScopedSlot | undefined
+    },
     context: RenderContext<Props>
   ): VNode;
   props?: PropDefs;
