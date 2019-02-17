@@ -1,5 +1,23 @@
 ## Changelog
 
+## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
+`2019-02-17`
+
+**Improvements**
+
+- Button: add url、to、replace props [\#2754](https://github.com/youzan/vant/pull/2754)
+- Tabs: add background prop [\#2772](https://github.com/youzan/vant/pull/2772)
+- Tabs: add title-active-color、title-inactive-color prop [\#2773](https://github.com/youzan/vant/pull/2773)
+- CouponCell: refactored into functional component [\#2759](https://github.com/youzan/vant/pull/2759)
+- AddressList: refactored into functional component [\#2757](https://github.com/youzan/vant/pull/2757)
+- Sku: partial refactored into functional component [\#2756](https://github.com/youzan/vant/pull/2756)
+
+**Bug Fixes**
+
+- fix Collapse title slot not work [\#2753](https://github.com/youzan/vant/pull/2753)
+- fix Panel v-slot now work [\#2752](https://github.com/youzan/vant/pull/2752)
+
+
 ## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
 `2019-02-14`
 

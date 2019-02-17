@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
+`2019-02-17`
+
+**Improvements**
+
+- Button: 新增 url、to、replace 属性 [\#2754](https://github.com/youzan/vant/pull/2754)
+- Tabs: 新增 background 属性 [\#2772](https://github.com/youzan/vant/pull/2772)
+- Tabs: 新增 title-active-color、title-inactive-color 属性 [\#2773](https://github.com/youzan/vant/pull/2773)
+- CouponCell: 重构为函数式组件 [\#2759](https://github.com/youzan/vant/pull/2759)
+- AddressList: 重构为函数式组件 [\#2757](https://github.com/youzan/vant/pull/2757)
+- Sku: 部分重构为函数式组件 [\#2756](https://github.com/youzan/vant/pull/2756)
+
+**Bug Fixes**
+
+- 修复 Collapse title 插槽不生效的问题 [\#2753](https://github.com/youzan/vant/pull/2753)
+- 修复 Panel 使用 v-slot 不生效的问题 [\#2752](https://github.com/youzan/vant/pull/2752)
+
+
 ## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
 `2019-02-14`
 
