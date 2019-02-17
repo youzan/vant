@@ -15,7 +15,17 @@ import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
 export type ScopedSlot = (props?: any) => VNode[] | undefined;
 
-export type VantComponentOptions = ComponentOptions<Vue> & {
+export type ScopedSlots = {
+  [key: string]: ScopedSlot | undefined;
+  default?: ScopedSlot;
+};
+
+export type ModelOptions = {
+  prop?: string;
+  event?: string;
+};
+
+export interface VantComponentOptions extends ComponentOptions<Vue> {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
 };
@@ -29,17 +39,11 @@ export type FunctionalComponent<
   (
     h: CreateElement,
     props: Props,
-    slots: {
-      [key: string]: ScopedSlot | undefined
-      default: ScopedSlot | undefined
-    },
+    slots: ScopedSlots,
     context: RenderContext<Props>
-  ): VNode;
+  ): VNode | undefined;
   props?: PropDefs;
-  model?: {
-    prop?: string;
-    event?: string;
-  };
+  model?: ModelOptions;
   inject?: InjectOptions;
 };
 
@@ -94,7 +98,7 @@ function transformFunctionalComponent(
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context) => pure(h, context.props, unifySlots(context), context)
+    render: (h, context): any => pure(h, context.props, unifySlots(context), context)
   };
 }
 
