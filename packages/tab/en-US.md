@@ -151,12 +151,14 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Index of active tab | `String` `Number` | `0` |
-| color | Tab color | `String` | `#f44` |
 | type | Can be set to `line` `card` | `String` | `line` |
 | duration | Toggle tab's animation time | `Number` | `0.3` | - |
 | background | Background color | `String` | `white` |
 | line-width | Width of tab line (px) | `Number` | Width of active tab |
 | line-height | Height of tab line (px) | `Number` | 3 |
+| color | Tab color | `String` | `#f44` |
+| title-active-color | Title active color | `String` | - |
+| title-inactive-color | Title inactive color | `String` | - |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
 | sticky | Whether to use sticky mode | `Boolean` | `false` |
 | offset-top | Offset top when use sticky mode | `Number` | `0` |

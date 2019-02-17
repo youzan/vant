@@ -155,12 +155,14 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
-| color | 标签颜色 | `String` | `#f44` | 1.2.0 |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
 | duration | 动画时间，单位秒 | `Number` | `0.3` | - |
 | background | 标签栏背景色 | `String` | `white` | 1.6.5 |
 | line-width | 底部条宽度，单位 px | `Number` | - | 1.1.1 |
 | line-height | 底部条高度，单位 px | `Number` | 3 | 1.5.0 |
+| color | 标签主题色 | `String` | `#f44` | 1.2.0 |
+| title-active-color | 标题选中态颜色 | `String` | - | 1.6.5 |
+| title-inactive-color | 标题默认态颜色 | `String` | - | 1.6.5 |
 | swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | 1.0.0 |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
 | offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | 1.1.15 |
