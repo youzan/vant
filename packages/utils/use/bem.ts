@@ -13,7 +13,7 @@ type Mods = Mod | Mod[];
 const ELEMENT = '__';
 const MODS = '--';
 
-function join(name: string, el: string, symbol: string): string {
+function join(name: string, el?: string, symbol?: string): string {
   return el ? name + symbol + el : name;
 }
 
@@ -36,7 +36,7 @@ function prefix(name: string, mods: Mods): Mods {
   return ret;
 }
 
-export default (name: string) => (el: Mods, mods?: Mods): Mods => {
+export default (name: string) => (el?: Mods, mods?: Mods): Mods => {
   if (el && typeof el !== 'string') {
     mods = el;
     el = '';
