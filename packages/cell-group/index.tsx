@@ -25,7 +25,7 @@ function CellGroup(
       {slots.default && slots.default()}
     </div>
   );
-};
+}
 
 CellGroup.props = {
   border: {
