@@ -55,6 +55,8 @@ export type FunctionalComponent<
 export type TsxBaseProps = {
   class?: any;
   style?: any;
+  // hack for jsx prop spread
+  props?: any;
 };
 export type TsxComponent<Props, Events> = (
   props: Props & Events & TsxBaseProps

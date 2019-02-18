@@ -15,6 +15,10 @@ export type IconProps = {
   classPrefix?: string;
 };
 
+export type IconEvents = {
+  onClick?(event: Event): void;
+};
+
 const [sfc] = use('icon');
 
 function Icon(
@@ -55,4 +59,4 @@ Icon.props = {
   }
 };
 
-export default sfc<IconProps>(Icon);
+export default sfc<IconProps, IconEvents>(Icon);
