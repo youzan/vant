@@ -2,11 +2,21 @@ import { use, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type InfoProps = {
+  info?: string | number;
+};
 
 const [sfc, bem] = use('info');
 
-const Info: FunctionalComponent<InfoProps> = function (h, props, slots, ctx) {
+function Info(
+  h: CreateElement,
+  props: InfoProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<InfoProps>
+) {
   if (!isDef(props.info)) {
     return;
   }
@@ -16,11 +26,7 @@ const Info: FunctionalComponent<InfoProps> = function (h, props, slots, ctx) {
       {props.info}
     </div>
   );
-};
-
-export type InfoProps = {
-  info?: string | number;
-};
+}
 
 Info.props = {
   info: [String, Number]

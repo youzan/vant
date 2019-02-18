@@ -2,15 +2,20 @@ import { use } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type CellGroupProps = {
+  border?: boolean
+};
 
 const [sfc, bem] = use('cell-group');
 
-const CellGroup: FunctionalComponent<CellGroupProps> = function (
-  h,
-  props,
-  slots,
-  ctx
+function CellGroup(
+  h: CreateElement,
+  props: CellGroupProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<CellGroupProps>
 ) {
   return (
     <div
@@ -20,10 +25,6 @@ const CellGroup: FunctionalComponent<CellGroupProps> = function (
       {slots.default && slots.default()}
     </div>
   );
-};
-
-export type CellGroupProps = {
-  border?: boolean
 };
 
 CellGroup.props = {

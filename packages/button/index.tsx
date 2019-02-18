@@ -4,15 +4,32 @@ import { routeProps, RouteProps, functionalRoute } from '../mixins/router';
 import Loading from '../loading';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type ButtonProps = RouteProps & {
+  tag?: string;
+  type?: string;
+  size?: string;
+  text?: string;
+  block?: boolean;
+  plain?: boolean;
+  round?: boolean;
+  square?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
+  nativeType?: string;
+  loadingText?: string;
+  bottomAction?: boolean;
+};
 
 const [sfc, bem] = use('button');
 
-const Button: FunctionalComponent<ButtonProps> = function (
-  h,
-  props,
-  slots,
-  ctx
+function Button(
+  h: CreateElement,
+  props: ButtonProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<ButtonProps>
 ) {
   const { tag, type, disabled, loading, loadingText } = props;
 
@@ -55,23 +72,7 @@ const Button: FunctionalComponent<ButtonProps> = function (
       )}
     </tag>
   );
-};
-
-export type ButtonProps = RouteProps & {
-  tag?: string;
-  type?: string;
-  size?: string;
-  text?: string;
-  block?: boolean;
-  plain?: boolean;
-  round?: boolean;
-  square?: boolean;
-  loading?: boolean;
-  disabled?: boolean;
-  nativeType?: string;
-  loadingText?: string;
-  bottomAction?: boolean;
-};
+}
 
 Button.props = {
   ...routeProps,

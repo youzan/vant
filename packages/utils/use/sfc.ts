@@ -13,11 +13,14 @@ import Vue, {
 import { VNode } from 'vue/types/vnode';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
-export type ScopedSlot = (props?: any) => VNode[] | undefined;
+export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | undefined;
 
-export type ScopedSlots = {
-  [key: string]: ScopedSlot | undefined;
+export type DefaultSlots = {
   default?: ScopedSlot;
+};
+
+export type ScopedSlots = DefaultSlots & {
+  [key: string]: ScopedSlot | undefined;
 };
 
 export type ModelOptions = {
@@ -50,7 +53,7 @@ export type FunctionalComponent<
 export type TsxBaseProps = {
   class?: any;
   style?: any;
-}
+};
 export type TsxComponent<T> = (props: T & TsxBaseProps) => VNode;
 
 const arrayProp = {
@@ -102,7 +105,8 @@ function transformFunctionalComponent(
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context): any => pure(h, context.props, unifySlots(context), context)
+    render: (h, context): any =>
+      pure(h, context.props, unifySlots(context), context)
   };
 }
 

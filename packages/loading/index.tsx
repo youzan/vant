@@ -2,16 +2,23 @@ import { use } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type LoadingProps = {
+  size?: string;
+  type?: string;
+  color?: string;
+};
 
 const [sfc, bem] = use('loading');
 const DEFAULT_COLOR = '#c9c9c9';
 
-const Loading: FunctionalComponent<LoadingProps> = function (
-  h,
-  props,
-  slots,
-  ctx
+function Loading(
+  h: CreateElement,
+  props: LoadingProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<LoadingProps>
 ) {
   const { color, size, type } = props;
 
@@ -44,13 +51,7 @@ const Loading: FunctionalComponent<LoadingProps> = function (
       </span>
     </div>
   );
-};
-
-export type LoadingProps = {
-  size?: string;
-  type?: string;
-  color?: string;
-};
+}
 
 Loading.props = {
   size: String,

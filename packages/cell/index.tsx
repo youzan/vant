@@ -5,12 +5,31 @@ import { routeProps, functionalRoute } from '../mixins/router';
 import Icon from '../icon';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
 import { Mods } from '../utils/use/bem';
+
+export type CellProps = SharedCellProps & {
+  size?: string;
+  clickable?: boolean;
+  arrowDirection?: string;
+};
+
+export type CellSlots = DefaultSlots & {
+  icon?: ScopedSlot;
+  title?: ScopedSlot;
+  extra?: ScopedSlot;
+  'right-icon'?: ScopedSlot;
+};
 
 const [sfc, bem] = use('cell');
 
-const Cell: FunctionalComponent<CellProps> = function (h, props, slots, ctx) {
+function Cell(
+  h: CreateElement,
+  props: CellProps,
+  slots: CellSlots,
+  ctx: RenderContext<CellProps>
+) {
   const { icon, size, title, label, value, isLink, arrowDirection } = props;
 
   const showTitle = slots.title || isDef(title);
@@ -65,11 +84,7 @@ const Cell: FunctionalComponent<CellProps> = function (h, props, slots, ctx) {
   }
 
   return (
-    <div
-      class={bem(classes)}
-      onClick={onClick}
-      {...inherit(ctx)}
-    >
+    <div class={bem(classes)} onClick={onClick} {...inherit(ctx)}>
       {LeftIcon}
       {Title}
       {Value}
@@ -77,12 +92,6 @@ const Cell: FunctionalComponent<CellProps> = function (h, props, slots, ctx) {
       {slots.extra && slots.extra()}
     </div>
   );
-};
-
-export type CellProps = SharedCellProps & {
-  size?: string;
-  clickable?: boolean;
-  arrowDirection?: string;
 }
 
 Cell.props = {
