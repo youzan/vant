@@ -1,15 +1,14 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { routeProps, functionalRoute } from '../mixins/router';
+import { routeProps, RouteProps, functionalRoute } from '../mixins/router';
 import Loading from '../loading';
 
 // Types
-import { RouteProps } from '../mixins/router';
 import { FunctionalComponent } from '../utils/use/sfc';
 
 const [sfc, bem] = use('button');
 
-const Button: FunctionalComponent<ButtonProps> = function(
+const Button: FunctionalComponent<ButtonProps> = function (
   h,
   props,
   slots,

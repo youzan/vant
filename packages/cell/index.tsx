@@ -1,17 +1,16 @@
 import { use, isDef } from '../utils';
-import { cellProps } from './shared';
+import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, functionalRoute } from '../mixins/router';
 import Icon from '../icon';
 
 // Types
-import { SharedCellProps } from './shared';
 import { FunctionalComponent } from '../utils/use/sfc';
 import { Mods } from '../utils/use/bem';
 
 const [sfc, bem] = use('cell');
 
-const Cell: FunctionalComponent<CellProps> = function(h, props, slots, ctx) {
+const Cell: FunctionalComponent<CellProps> = function (h, props, slots, ctx) {
   const { icon, size, title, label, value, isLink, arrowDirection } = props;
 
   const showTitle = slots.title || isDef(title);
@@ -78,7 +77,7 @@ const Cell: FunctionalComponent<CellProps> = function(h, props, slots, ctx) {
       {slots.extra && slots.extra()}
     </div>
   );
-}
+};
 
 export type CellProps = SharedCellProps & {
   size?: string;
