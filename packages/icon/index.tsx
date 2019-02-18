@@ -8,7 +8,7 @@ import { FunctionalComponent } from '../utils/use/sfc';
 
 const [sfc] = use('icon');
 
-const Icon: FunctionalComponent<IconProps> = function(h, props, slots, ctx) {
+const Icon: FunctionalComponent<IconProps> = function (h, props, slots, ctx) {
   const urlIcon = isSrc(props.name);
 
   return (

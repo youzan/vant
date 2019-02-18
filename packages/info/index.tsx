@@ -6,7 +6,7 @@ import { FunctionalComponent } from '../utils/use/sfc';
 
 const [sfc, bem] = use('info');
 
-const Info: FunctionalComponent<InfoProps> = function(h, props, slots, ctx) {
+const Info: FunctionalComponent<InfoProps> = function (h, props, slots, ctx) {
   if (!isDef(props.info)) {
     return;
   }

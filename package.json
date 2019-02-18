@@ -16,7 +16,7 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-serve --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue && stylelint \"packages/*.css\"",
+    "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/*.css\"",
     "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
@@ -76,7 +76,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-typescript": "^7.1.0",
     "@vant/doc": "^1.0.23",
-    "@vant/eslint-config": "^1.0.8",
+    "@vant/eslint-config": "^1.1.0",
     "@vant/markdown-loader": "^1.0.3",
     "@vue/babel-preset-jsx": "^1.0.0-beta.2",
     "@vue/server-test-utils": "^1.0.0-beta.29",

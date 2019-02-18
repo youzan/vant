@@ -7,7 +7,7 @@ import { FunctionalComponent } from '../utils/use/sfc';
 const [sfc, bem] = use('loading');
 const DEFAULT_COLOR = '#c9c9c9';
 
-const Loading: FunctionalComponent<LoadingProps> = function(
+const Loading: FunctionalComponent<LoadingProps> = function (
   h,
   props,
   slots,

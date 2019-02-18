@@ -28,7 +28,7 @@ export type ModelOptions = {
 export interface VantComponentOptions extends ComponentOptions<Vue> {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
-};
+}
 
 export type DefaultProps = Record<string, any>;
 

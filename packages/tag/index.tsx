@@ -13,7 +13,7 @@ const COLOR_MAP: { [key: string]: string } = {
   success: GREEN
 };
 
-const Tag: FunctionalComponent<TagProps> = function(h, props, slots, ctx) {
+const Tag: FunctionalComponent<TagProps> = function (h, props, slots, ctx) {
   const { type, mark, plain, round, size } = ctx.props;
 
   const color = props.color || (type && COLOR_MAP[type]) || GRAY_DARK;
