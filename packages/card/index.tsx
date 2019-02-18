@@ -2,9 +2,44 @@ import { use, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 import Tag from '../tag';
 
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots, ScopedSlot } from '../utils/use/sfc';
+
+export type CardProps = {
+  tag?: string;
+  num?: number | string;
+  desc?: string;
+  thumb?: string;
+  title?: string;
+  price?: number | string;
+  currency?: string;
+  centered?: boolean;
+  lazyLoad?: boolean;
+  thumbLink?: string;
+  originPrice?: number | string;
+};
+
+export type CardSlots = DefaultSlots & {
+  num?: ScopedSlot;
+  tag?: ScopedSlot;
+  tags?: ScopedSlot;
+  desc?: ScopedSlot;
+  title?: ScopedSlot;
+  thumb?: ScopedSlot;
+  price?: ScopedSlot;
+  footer?: ScopedSlot;
+  'origin-price'?: ScopedSlot;
+};
+
 const [sfc, bem] = use('card');
 
-function Card(h, props, slots, ctx) {
+function Card(
+  h: CreateElement,
+  props: CardProps,
+  slots: CardSlots,
+  ctx: RenderContext<CardProps>
+) {
   const { thumb } = props;
 
   const showThumb = slots.thumb || thumb;
@@ -105,4 +140,4 @@ Card.props = {
   }
 };
 
-export default sfc(Card);
+export default sfc<CardProps>(Card);
