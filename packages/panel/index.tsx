@@ -3,9 +3,30 @@ import Cell from '../cell';
 import CellGroup from '../cell-group';
 import { inherit } from '../utils/functional';
 
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+
+export type PanelProps = {
+  icon?: string;
+  desc?: string;
+  title?: string;
+  status?: string;
+};
+
+export type PanelSlots = DefaultSlots & {
+  header?: ScopedSlot;
+  footer?: ScopedSlot;
+};
+
 const [sfc, bem] = use('panel');
 
-function Panel(h, props, slots, ctx) {
+function Panel(
+  h: CreateElement,
+  props: PanelProps,
+  slots: PanelSlots,
+  ctx: RenderContext<PanelProps>
+) {
   const Content = () => [
     slots.header ? (
       slots.header()
@@ -41,4 +62,4 @@ Panel.props = {
   status: String
 };
 
-export default sfc(Panel);
+export default sfc<PanelProps>(Panel);

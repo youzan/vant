@@ -23,7 +23,7 @@ export type CellSlots = DefaultSlots & {
 };
 
 export type CellEvents = {
-  onClick(event: Event): void;
+  onClick?(event: Event): void;
 };
 
 const [sfc, bem] = use('cell');
