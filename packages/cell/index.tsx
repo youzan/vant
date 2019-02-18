@@ -22,6 +22,10 @@ export type CellSlots = DefaultSlots & {
   'right-icon'?: ScopedSlot;
 };
 
+export type CellEvents = {
+  onClick(event: Event): void;
+};
+
 const [sfc, bem] = use('cell');
 
 function Cell(
@@ -102,4 +106,4 @@ Cell.props = {
   arrowDirection: String
 };
 
-export default sfc<CellProps>(Cell);
+export default sfc<CellProps, CellEvents>(Cell);
