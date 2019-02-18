@@ -4,11 +4,25 @@ import Info from '../info';
 import isSrc from '../utils/validate/src';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type IconProps = {
+  name: string;
+  size?: string;
+  color?: string;
+  info?: string | number;
+  classPrefix?: string;
+};
 
 const [sfc] = use('icon');
 
-const Icon: FunctionalComponent<IconProps> = function (h, props, slots, ctx) {
+function Icon(
+  h: CreateElement,
+  props: IconProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<IconProps>
+) {
   const urlIcon = isSrc(props.name);
 
   return (
@@ -28,15 +42,7 @@ const Icon: FunctionalComponent<IconProps> = function (h, props, slots, ctx) {
       <Info info={props.info} />
     </i>
   );
-};
-
-export type IconProps = {
-  name: string;
-  size?: string;
-  color?: string;
-  info?: string | number;
-  classPrefix?: string;
-};
+}
 
 Icon.props = {
   name: String,

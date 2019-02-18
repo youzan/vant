@@ -3,7 +3,18 @@ import { inherit } from '../utils/functional';
 import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
 // Types
-import { FunctionalComponent } from '../utils/use/sfc';
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type TagProps = {
+  size?: string;
+  type?: string;
+  mark?: boolean;
+  color?: string;
+  plain?: boolean;
+  round?: boolean;
+  textColor?: string;
+};
 
 const [sfc, bem] = use('tag');
 
@@ -13,8 +24,13 @@ const COLOR_MAP: { [key: string]: string } = {
   success: GREEN
 };
 
-const Tag: FunctionalComponent<TagProps> = function (h, props, slots, ctx) {
-  const { type, mark, plain, round, size } = ctx.props;
+function Tag(
+  h: CreateElement,
+  props: TagProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<TagProps>
+) {
+  const { type, mark, plain, round, size } = props;
 
   const color = props.color || (type && COLOR_MAP[type]) || GRAY_DARK;
   const key = plain ? 'color' : 'backgroundColor';
@@ -43,17 +59,7 @@ const Tag: FunctionalComponent<TagProps> = function (h, props, slots, ctx) {
       {slots.default && slots.default()}
     </span>
   );
-};
-
-export type TagProps = {
-  size?: string;
-  type?: string;
-  mark?: boolean;
-  color?: string;
-  plain?: boolean;
-  round?: boolean;
-  textColor?: string;
-};
+}
 
 Tag.props = {
   size: String,
