@@ -1,7 +1,7 @@
 import { use, isDef } from '../utils';
 import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
-import { routeProps, functionalRoute } from '../mixins/router';
+import { routeProps, RouteProps, functionalRoute } from '../mixins/router';
 import Icon from '../icon';
 
 // Types
@@ -9,7 +9,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
 import { Mods } from '../utils/use/bem';
 
-export type CellProps = SharedCellProps & {
+export type CellProps = RouteProps & SharedCellProps & {
   size?: string;
   clickable?: boolean;
   arrowDirection?: string;
