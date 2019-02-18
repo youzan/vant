@@ -2,9 +2,39 @@ import { use, noop } from '../utils';
 import { inherit } from '../utils/functional';
 import Icon from '../icon';
 
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+
+export type NavBarProps = {
+  title?: string;
+  fixed?: boolean;
+  zIndex?: number;
+  border?: boolean;
+  leftText?: string;
+  rightText?: string;
+  leftArrow?: boolean;
+};
+
+export type NavBarSlots = DefaultSlots & {
+  left?: ScopedSlot;
+  title?: ScopedSlot;
+  right?: ScopedSlot;
+};
+
+export type NavBarEvents = {
+  'click-left'?(event: Event): void;
+  'click-right'?(event: Event): void;
+};
+
 const [sfc, bem] = use('nav-bar');
 
-function NavBar(h, props, slots, ctx) {
+function NavBar(
+  h: CreateElement,
+  props: NavBarProps,
+  slots: NavBarSlots,
+  ctx: RenderContext<NavBarProps>
+) {
   return (
     <div
       class={[
@@ -56,4 +86,4 @@ NavBar.props = {
   }
 };
 
-export default sfc(NavBar);
+export default sfc<NavBarProps, NavBarEvents>(NavBar);

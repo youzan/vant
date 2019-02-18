@@ -140,6 +140,12 @@ export default {
 | tel | Phone | `String` | - |
 | add-text | Add card text | `String` | `Add contact info` |
 
+### ContactCard Event
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when clicked | - |
+
 ### ContactList API
 
 | Attribute | Description | Type | Default |

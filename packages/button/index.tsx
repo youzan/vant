@@ -23,6 +23,10 @@ export type ButtonProps = RouteProps & {
   bottomAction?: boolean;
 };
 
+export type ButtonEvents = {
+  onClick?(event: Event): void;
+};
+
 const [sfc, bem] = use('button');
 
 function Button(
@@ -100,4 +104,4 @@ Button.props = {
   }
 };
 
-export default sfc<ButtonProps>(Button);
+export default sfc<ButtonProps, ButtonEvents>(Button);

@@ -32,6 +32,10 @@ export type CardSlots = DefaultSlots & {
   'origin-price'?: ScopedSlot;
 };
 
+export type CardEvents = {
+  onClick?(event: Event): void;
+};
+
 const [sfc, bem] = use('card');
 
 function Card(
@@ -140,4 +144,4 @@ Card.props = {
   }
 };
 
-export default sfc<CardProps>(Card);
+export default sfc<CardProps, CardEvents>(Card);
