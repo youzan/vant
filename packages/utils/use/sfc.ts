@@ -35,6 +35,8 @@ export interface VantComponentOptions extends ComponentOptions<Vue> {
 
 export type DefaultProps = Record<string, any>;
 
+export type DefaultEvents = {};
+
 export type FunctionalComponent<
   Props = DefaultProps,
   PropDefs = PropsDefinition<Props>
@@ -54,7 +56,9 @@ export type TsxBaseProps = {
   class?: any;
   style?: any;
 };
-export type TsxComponent<T> = (props: T & TsxBaseProps) => VNode;
+export type TsxComponent<Props, Events> = (
+  props: Props & Events & TsxBaseProps
+) => VNode;
 
 const arrayProp = {
   type: Array,
@@ -110,9 +114,9 @@ function transformFunctionalComponent(
   };
 }
 
-export default (name: string) => <T = DefaultProps>(
+export default (name: string) => <Props = DefaultProps, Events = DefaultEvents>(
   sfc: VantComponentOptions | FunctionalComponent
-): TsxComponent<T> => {
+): TsxComponent<Props, Events> => {
   if (typeof sfc === 'function') {
     sfc = transformFunctionalComponent(sfc);
   }
@@ -129,5 +133,5 @@ export default (name: string) => <T = DefaultProps>(
   sfc.name = name;
   sfc.install = install;
 
-  return sfc as TsxComponent<T>;
+  return sfc as TsxComponent<Props, Events>;
 };
