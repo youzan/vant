@@ -1,10 +1,35 @@
-import { use, noop } from '../utils';
-import { inherit } from '../utils/functional';
+import { use } from '../utils';
+import { emit, inherit } from '../utils/functional';
 import Button from '../button';
+
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+
+export type SubmitBarProps = {
+  tip?: string;
+  label?: string;
+  price?: number;
+  loading?: boolean;
+  currency: string;
+  disabled?: boolean;
+  buttonType: string;
+  buttonText?: string;
+};
+
+export type SubmitBarSlots = DefaultSlots & {
+  top?: ScopedSlot;
+  tip?: ScopedSlot;
+};
 
 const [sfc, bem, t] = use('submit-bar');
 
-function SubmitBar(h, props, slots, ctx) {
+function SubmitBar(
+  h: CreateElement,
+  props: SubmitBarProps,
+  slots: SubmitBarSlots,
+  ctx: RenderContext<SubmitBarProps>
+) {
   const { tip, price } = props;
   const hasPrice = typeof price === 'number';
 
@@ -23,7 +48,7 @@ function SubmitBar(h, props, slots, ctx) {
           {hasPrice && [
             <span>{props.label || t('label')}</span>,
             <span class={bem('price')}>{`${props.currency} ${(
-              price / 100
+              (price as number) / 100
             ).toFixed(2)}`}</span>
           ]}
         </div>
@@ -34,7 +59,9 @@ function SubmitBar(h, props, slots, ctx) {
           loading={props.loading}
           disabled={props.disabled}
           text={props.loading ? '' : props.buttonText}
-          onClick={ctx.listeners.submit || noop}
+          onClick={() => {
+            emit(ctx, 'submit');
+          }}
         />
       </div>
     </div>
@@ -61,4 +88,4 @@ SubmitBar.props = {
   }
 };
 
-export default sfc(SubmitBar);
+export default sfc<SubmitBarProps, {}, SubmitBarSlots>(SubmitBar);
