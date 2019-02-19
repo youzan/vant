@@ -27,6 +27,10 @@ export default sfc({
       type: Boolean,
       default: true
     },
+    lazyRender: {
+      type: Boolean,
+      default: true
+    },
     lineWidth: {
       type: Number,
       default: null

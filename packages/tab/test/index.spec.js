@@ -11,6 +11,7 @@ function createWrapper(options) {
         :swipeable="swipeable"
         :sticky="sticky"
         :line-width="lineWidth"
+        :lazy-render="lazyRender"
       >
         <tab :title="title1">Text</tab>
         <tab>
@@ -31,7 +32,8 @@ function createWrapper(options) {
         type: 'line',
         swipeable: true,
         sticky: true,
-        lineWidth: 2
+        lineWidth: 2,
+        lazyRender: true
       };
     },
     ...options
@@ -92,6 +94,19 @@ test('change tabs data', async () => {
     type: 'card',
     color: 'blue',
     title1: 'new title1'
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('lazy render', async () => {
+  const wrapper = createWrapper();
+
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.setData({
+    lazyRender: false
   });
 
   await later();
