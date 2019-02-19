@@ -49,12 +49,24 @@ export default {
 }
 ```
 
+#### 明文展示
+
+```html
+<!-- 密码输入框 -->
+<van-password-input
+  :value="value"
+  :mask="false"
+  @focus="showKeyboard = true"
+/>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | value | 密码值 | `String` | `''` | - |
 | length | 密码最大长度 | `Number` | `6` | - |
+| mask | 是否隐藏密码内容 | `Boolean` | `true` | 1.6.6 |
 | info | 输入框下方文字提示 | `String` | - | - |
 | error-info | 输入框下方错误提示 | `String` | - | - |
 
