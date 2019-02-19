@@ -1,11 +1,11 @@
 import manager from './manager';
 import context from './context';
-import Touch from '../touch';
+import { TouchMixin } from '../touch';
 import { on, off } from '../../utils/event';
 import { getScrollEventTarget } from '../../utils/scroll';
 
-export default {
-  mixins: [Touch],
+export const PopupMixin = {
+  mixins: [TouchMixin],
 
   props: {
     // whether to show popup

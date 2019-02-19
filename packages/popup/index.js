@@ -1,10 +1,10 @@
 import { use } from '../utils';
-import Popup from '../mixins/popup';
+import { PopupMixin } from '../mixins/popup';
 
 const [sfc, bem] = use('popup');
 
 export default sfc({
-  mixins: [Popup],
+  mixins: [PopupMixin],
 
   props: {
     position: String,

@@ -2,8 +2,8 @@ import { use, isIOS } from '../../utils';
 import Cell from '../../cell';
 import CellGroup from '../../cell-group';
 import Field from '../../field';
-import validateEmail from '../../utils/validate/email';
-import validateNumber from '../../utils/validate/number';
+import { isEmail } from '../../utils/validate/email';
+import { isNumber } from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
 const [sfc, bem] = use('sku-messages');
@@ -104,13 +104,13 @@ export default sfc({
             return textType + message.name;
           }
         } else {
-          if (message.type === 'tel' && !validateNumber(value)) {
+          if (message.type === 'tel' && !isNumber(value)) {
             return '请填写正确的数字格式留言';
           }
           if (message.type === 'mobile' && !/^\d{6,20}$/.test(value)) {
             return '手机号长度为6-20位数字';
           }
-          if (message.type === 'email' && !validateEmail(value)) {
+          if (message.type === 'email' && !isEmail(value)) {
             return '请填写正确的邮箱';
           }
           if (message.type === 'id_no' && (value.length < 15 || value.length > 18)) {

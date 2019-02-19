@@ -1,9 +1,9 @@
 import { use } from '../utils';
 import { prevent } from '../utils/event';
+import { deepClone } from '../utils/deep-clone';
+import { PickerMixin } from '../mixins/picker';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
-import deepClone from '../utils/deep-clone';
-import PickerMixin from '../mixins/picker';
 
 const [sfc, bem, t] = use('picker');
 

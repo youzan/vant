@@ -36,7 +36,7 @@ function prefix(name: string, mods: Mods): Mods {
   return ret;
 }
 
-export default (name: string) => (el?: Mods, mods?: Mods): Mods => {
+export const useBEM = (name: string) => (el?: Mods, mods?: Mods): Mods => {
   if (el && typeof el !== 'string') {
     mods = el;
     el = '';

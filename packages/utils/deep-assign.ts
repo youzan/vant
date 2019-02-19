@@ -17,11 +17,11 @@ function assignKey(to: Object, from: Object, key: string) {
   if (!hasOwnProperty.call(to, key) || !isObj(val)) {
     to[key] = val;
   } else {
-    to[key] = assign(Object(to[key]), from[key]);
+    to[key] = deepAssign(Object(to[key]), from[key]);
   }
 }
 
-export default function assign(to: Object, from: Object) {
+export function deepAssign(to: Object, from: Object) {
   Object.keys(from).forEach(key => {
     assignKey(to, from, key);
   });

@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import Picker from '../picker';
-import PickerMixin from '../mixins/picker';
+import { PickerMixin } from '../mixins/picker';
 
 const [sfc, bem] = use('area');
 

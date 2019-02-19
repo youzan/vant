@@ -2,10 +2,10 @@
  * Common part of Checkbox & Radio
  */
 import Icon from '../icon';
-import findParent from './find-parent';
+import { FindParentMixin } from './find-parent';
 
-export default (parent, bem) => ({
-  mixins: [findParent],
+export const CheckboxMixin = (parent, bem) => ({
+  mixins: [FindParentMixin],
 
   props: {
     name: null,

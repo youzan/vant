@@ -1,13 +1,13 @@
 import { use } from '../utils';
 import Loading from '../loading';
-import Touch from '../mixins/touch';
+import { TouchMixin } from '../mixins/touch';
 import { getScrollTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem, t] = use('pull-refresh');
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
 export default sfc({
-  mixins: [Touch],
+  mixins: [TouchMixin],
 
   props: {
     disabled: Boolean,

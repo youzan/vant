@@ -1,11 +1,11 @@
 import { use } from '../utils';
-import Touch from '../mixins/touch';
 import { on, off } from '../utils/event';
+import { TouchMixin } from '../mixins/touch';
 
 const [sfc, bem] = use('swipe');
 
 export default sfc({
-  mixins: [Touch],
+  mixins: [TouchMixin],
 
   props: {
     width: Number,

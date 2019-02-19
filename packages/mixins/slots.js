@@ -3,7 +3,7 @@
  * downgrade to slots in lower version
  */
 
-export default {
+export const SlotsMixin = {
   methods: {
     slots(name = 'default', props) {
       const { $slots, $scopedSlots } = this;

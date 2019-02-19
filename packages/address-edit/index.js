@@ -1,4 +1,5 @@
 import { use, isObj } from '../utils';
+import { isMobile } from '../utils/validate/mobile';
 import Area from '../area';
 import Field from '../field';
 import Popup from '../popup';
@@ -7,7 +8,6 @@ import Button from '../button';
 import Dialog from '../dialog';
 import Detail from './Detail';
 import SwitchCell from '../switch-cell';
-import validateMobile from '../utils/validate/mobile';
 
 const [sfc, bem, t] = use('address-edit');
 
@@ -55,7 +55,7 @@ export default sfc({
     },
     telValidator: {
       type: Function,
-      default: validateMobile
+      default: isMobile
     }
   },
 

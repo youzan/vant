@@ -2,7 +2,7 @@
  * find parent component by name
  */
 
-export default {
+export const FindParentMixin = {
   data() {
     return {
       parent: null

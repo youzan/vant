@@ -1,7 +1,7 @@
 import { use, isDef } from '../utils';
 import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
-import { routeProps, RouteProps, functionalRoute } from '../mixins/router';
+import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import Icon from '../icon';
 
 // Types

@@ -1,6 +1,6 @@
 import { use, range } from '../utils';
-import Popup from '../mixins/popup';
-import Touch from '../mixins/touch';
+import { PopupMixin } from '../mixins/popup';
+import { TouchMixin } from '../mixins/touch';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
@@ -15,7 +15,7 @@ function getDistance(touches) {
 }
 
 export default sfc({
-  mixins: [Popup, Touch],
+  mixins: [PopupMixin, TouchMixin],
 
   props: {
     images: Array,

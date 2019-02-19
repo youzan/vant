@@ -3,7 +3,7 @@ import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
-import validateMobile from '../utils/validate/mobile';
+import { isMobile } from '../utils/validate/mobile';
 
 const [sfc, bem, t] = use('contact-edit');
 
@@ -23,7 +23,7 @@ export default sfc({
     },
     telValidator: {
       type: Function,
-      default: validateMobile
+      default: isMobile
     }
   },
 

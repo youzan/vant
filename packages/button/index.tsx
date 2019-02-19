@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { routeProps, RouteProps, functionalRoute } from '../mixins/router';
+import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import Loading from '../loading';
 
 // Types

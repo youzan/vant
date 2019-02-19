@@ -2,13 +2,13 @@ import { use, isDef } from '../utils';
 import { raf } from '../utils/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import FindParent from '../mixins/find-parent';
+import { FindParentMixin } from '../mixins/find-parent';
 
 const [sfc, bem] = use('collapse-item');
 const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
 export default sfc({
-  mixins: [FindParent],
+  mixins: [FindParentMixin],
 
   props: {
     ...cellProps,

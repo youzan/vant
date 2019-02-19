@@ -1,11 +1,11 @@
 /* eslint-disable object-shorthand */
 import { use } from '../utils';
-import findParent from '../mixins/find-parent';
+import { FindParentMixin } from '../mixins/find-parent';
 
 const [sfc, bem] = use('tab');
 
 export default sfc({
-  mixins: [findParent],
+  mixins: [FindParentMixin],
 
   props: {
     title: String,

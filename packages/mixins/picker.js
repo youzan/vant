@@ -2,7 +2,7 @@
  * Common Picker Props
  */
 
-export default {
+export const PickerMixin = {
   props: {
     title: String,
     loading: Boolean,
