@@ -13,7 +13,7 @@ import Vue, {
 import { VNode } from 'vue/types/vnode';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
-export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | undefined;
+export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
 
 export type DefaultSlots = {
   default?: ScopedSlot;
@@ -35,8 +35,6 @@ export interface VantComponentOptions extends ComponentOptions<Vue> {
 
 export type DefaultProps = Record<string, any>;
 
-export type DefaultEvents = {};
-
 export type FunctionalComponent<
   Props = DefaultProps,
   PropDefs = PropsDefinition<Props>
@@ -52,18 +50,17 @@ export type FunctionalComponent<
   inject?: InjectOptions;
 };
 
-export type TsxBaseProps = {
+export type TsxBaseProps<Slots> = {
   key: string | number;
   // hack for jsx prop spread
   props: any;
   class: any;
-  style: {
-    [key: string]: string | number;
-  };
+  style: object[] | object;
+  scopedSlots: Slots;
 };
 
-export type TsxComponent<Props, Events> = (
-  props: Partial<Props & Events & TsxBaseProps>
+export type TsxComponent<Props, Events, Slots> = (
+  props: Partial<Props & Events & TsxBaseProps<Slots>>
 ) => VNode;
 
 const arrayProp = {
@@ -120,9 +117,9 @@ function transformFunctionalComponent(
   };
 }
 
-export default (name: string) => <Props = DefaultProps, Events = DefaultEvents>(
+export default (name: string) => <Props = DefaultProps, Events = {}, Slots = {}>(
   sfc: VantComponentOptions | FunctionalComponent
-): TsxComponent<Props, Events> => {
+): TsxComponent<Props, Events, Slots> => {
   if (typeof sfc === 'function') {
     sfc = transformFunctionalComponent(sfc);
   }
@@ -139,5 +136,5 @@ export default (name: string) => <Props = DefaultProps, Events = DefaultEvents>(
   sfc.name = name;
   sfc.install = install;
 
-  return sfc as TsxComponent<Props, Events>;
+  return sfc as TsxComponent<Props, Events, Slots>;
 };
