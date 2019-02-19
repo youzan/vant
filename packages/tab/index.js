@@ -58,9 +58,11 @@ export default sfc({
 
   render(h) {
     const { slots } = this;
+    const shouldRender = this.inited || !this.parent.lazyRender;
+
     return (
       <div vShow={this.selected || this.parent.animated} class={bem('pane')}>
-        {this.inited ? slots() : h()}
+        {shouldRender ? slots() : h()}
         {slots('title') && <div ref="title">{slots('title')}</div>}
       </div>
     );
