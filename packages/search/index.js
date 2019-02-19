@@ -8,6 +8,7 @@ export default sfc({
 
   props: {
     value: String,
+    label: String,
     showAction: Boolean,
     shape: {
       type: String,
@@ -16,8 +17,7 @@ export default sfc({
     background: {
       type: String,
       default: '#ffffff'
-    },
-    label: String
+    }
   },
 
   computed: {
