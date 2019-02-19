@@ -9,8 +9,8 @@ import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
 export type NavBarProps = {
   title?: string;
   fixed?: boolean;
-  zIndex?: number;
-  border?: boolean;
+  zIndex: number;
+  border: boolean;
   leftText?: string;
   rightText?: string;
   leftArrow?: boolean;

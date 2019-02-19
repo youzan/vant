@@ -53,13 +53,13 @@ export type FunctionalComponent<
 };
 
 export type TsxBaseProps = {
-  class?: any;
-  style?: any;
+  class: any;
+  style: any;
   // hack for jsx prop spread
-  props?: any;
+  props: any;
 };
 export type TsxComponent<Props, Events> = (
-  props: Props & Events & TsxBaseProps
+  props: Partial<Props & Events & TsxBaseProps>
 ) => VNode;
 
 const arrayProp = {
