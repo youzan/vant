@@ -90,7 +90,7 @@ export default {
 |------|------|------|
 | id | Id | `String | Number` |
 | name | Name | `String` |
-| tel | Phone | `String` |
+| tel | Phone | `String | Number` |
 | address | Address | `String` |
 
 ### Slot

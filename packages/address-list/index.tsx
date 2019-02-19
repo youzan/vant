@@ -2,12 +2,34 @@ import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Button from '../button';
 import RadioGroup from '../radio-group';
-import AddressItem from './Item';
+import AddressItem, { AddressItemData } from './Item';
+
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+
+export type AddressListProps = {
+  value?: string | number;
+  switchable: boolean;
+  disabledText?: string;
+  addButtonText?: string;
+  list: AddressItemData[];
+  disabledList: AddressItemData[];
+};
+
+export type AddressListSlots = DefaultSlots & {
+  top?: ScopedSlot;
+};
 
 const [sfc, bem, t] = use('address-list');
 
-function AddressList(h, props, slots, ctx) {
-  const getList = (list, disabled) =>
+function AddressList(
+  h: CreateElement,
+  props: AddressListProps,
+  slots: AddressListSlots,
+  ctx: RenderContext<AddressListProps>
+) {
+  const getList = (list: AddressItemData[], disabled?: boolean) =>
     list.map((item, index) => (
       <AddressItem
         data={item}
@@ -31,7 +53,7 @@ function AddressList(h, props, slots, ctx) {
       {slots.top && slots.top()}
       <RadioGroup
         value={props.value}
-        onInput={event => {
+        onInput={(event: Event) => {
           emit(ctx, 'input', event);
         }}
       >
@@ -68,4 +90,4 @@ AddressList.props = {
   }
 };
 
-export default sfc(AddressList);
+export default sfc<AddressListProps>(AddressList);

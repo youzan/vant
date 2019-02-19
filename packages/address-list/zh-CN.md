@@ -94,7 +94,7 @@ export default {
 |------|------|------|
 | id | 每条地址的唯一标识 | `String | Number` |
 | name | 收货人姓名 | `String` |
-| tel | 收货人手机号 | `String` |
+| tel | 收货人手机号 | `String | Number` |
 | address | 收货地址 | `String` |
 
 ### Slot
