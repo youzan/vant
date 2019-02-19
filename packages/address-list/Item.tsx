@@ -4,16 +4,43 @@ import Icon from '../icon';
 import Cell from '../cell';
 import Radio from '../radio';
 
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type AddressItemData = {
+  id: string | number;
+  tel: string | number;
+  name: string;
+  address: string;
+};
+
+export type AddressItemProps = {
+  data: AddressItemData;
+  disabled?: boolean;
+  switchable?: boolean;
+};
+
+export type AddressItemEvents = {
+  onEdit(): void;
+  onSelect(): void;
+};
+
 const [sfc, bem] = use('address-item');
 
-function AddressItem(h, props, slots, ctx) {
+function AddressItem(
+  h: CreateElement,
+  props: AddressItemProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<AddressItemProps>
+) {
   const { disabled, switchable } = props;
 
   const renderRightIcon = () => (
     <Icon
       name="edit"
       class={bem('edit')}
-      onClick={event => {
+      onClick={(event: Event) => {
         event.stopPropagation();
         emit(ctx, 'edit');
       }}
@@ -57,4 +84,4 @@ AddressItem.props = {
   switchable: Boolean
 };
 
-export default sfc(AddressItem);
+export default sfc<AddressItemProps, AddressItemEvents>(AddressItem);
