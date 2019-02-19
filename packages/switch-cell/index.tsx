@@ -9,7 +9,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type SwitchCellProps = SharedSwitchProps & {
-  size?: string;
+  size: string;
   title?: string;
   border?: boolean;
 };

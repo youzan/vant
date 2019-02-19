@@ -13,7 +13,7 @@ export type CardProps = {
   thumb?: string;
   title?: string;
   price?: number | string;
-  currency?: string;
+  currency: string;
   centered?: boolean;
   lazyLoad?: boolean;
   thumbLink?: string;

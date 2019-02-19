@@ -7,8 +7,8 @@ import { DefaultSlots } from '../utils/use/sfc';
 
 export type LoadingProps = {
   size?: string;
-  type?: string;
-  color?: string;
+  type: string;
+  color: string;
 };
 
 const [sfc, bem] = use('loading');

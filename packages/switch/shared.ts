@@ -3,12 +3,12 @@
  */
 
 export type SharedSwitchProps = {
-  size?: string;
+  size: string;
   value?: any;
   loading?: boolean;
   disabled?: boolean;
-  activeValue?: any;
-  inactiveValue?: any;
+  activeValue: any;
+  inactiveValue: any;
   activeColor?: string;
   inactiveColor?: string;
 };

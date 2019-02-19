@@ -1,6 +1,6 @@
 export type SharedCellProps = {
   icon?: string;
-  border?: boolean;
+  border: boolean;
   center?: boolean;
   isLink?: boolean;
   required?: boolean;

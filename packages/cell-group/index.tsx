@@ -6,7 +6,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type CellGroupProps = {
-  border?: boolean
+  border: boolean
 };
 
 const [sfc, bem] = use('cell-group');

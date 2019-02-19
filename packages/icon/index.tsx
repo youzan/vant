@@ -12,7 +12,7 @@ export type IconProps = {
   size?: string;
   color?: string;
   info?: string | number;
-  classPrefix?: string;
+  classPrefix: string;
 };
 
 export type IconEvents = {

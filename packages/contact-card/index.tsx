@@ -12,8 +12,8 @@ export type ContactCardProps = {
   tel?: string;
   name?: string;
   type?: string;
-  addText?: string;
-  editable?: boolean;
+  addText: string;
+  editable: boolean;
 };
 
 function ContactCard(
