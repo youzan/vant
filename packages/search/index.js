@@ -9,10 +9,15 @@ export default sfc({
   props: {
     value: String,
     showAction: Boolean,
+    shape: {
+      type: String,
+      default: 'square'
+    },
     background: {
       type: String,
-      default: '#f2f2f2'
-    }
+      default: '#ffffff'
+    },
+    label: String
   },
 
   computed: {
@@ -42,6 +47,12 @@ export default sfc({
     onBack() {
       this.$emit('input', '');
       this.$emit('cancel');
+    },
+
+    renderLabel() {
+      return this.slots('label')
+        ? this.slots('label')
+        : this.label && (<div class={bem('label')}>{this.label}</div>);
     }
   },
 
@@ -60,16 +71,19 @@ export default sfc({
 
     return (
       <div class={bem({ 'show-action': showAction })} style={{ background: this.background }}>
-        <Field
-          clearable
-          type="search"
-          value={this.value}
-          border={false}
-          leftIcon="search"
-          scopedSlots={scopedSlots}
-          {...props}
-        >
-        </Field>
+        <div class={bem('content', [this.shape])}>
+          {this.renderLabel()}
+          <Field
+            clearable
+            type="search"
+            value={this.value}
+            border={false}
+            leftIcon="search"
+            scopedSlots={scopedSlots}
+            {...props}
+          >
+          </Field>
+        </div>
         {showAction && (
           <div class={bem('action')}>
             {this.slots('action') || <div onClick={this.onBack}>{t('cancel')}</div>}
