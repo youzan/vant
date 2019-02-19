@@ -1,12 +1,12 @@
 import { use, range } from '../utils';
-import Touch from '../mixins/touch';
-import ClickOutside from '../mixins/click-outside';
+import { TouchMixin } from '../mixins/touch';
+import { ClickOutsideMixin } from '../mixins/click-outside';
 
 const [sfc, bem] = use('swipe-cell');
 const THRESHOLD = 0.15;
 
 export default sfc({
-  mixins: [Touch, ClickOutside({
+  mixins: [TouchMixin, ClickOutsideMixin({
     event: 'touchstart',
     method: 'onClick'
   })],

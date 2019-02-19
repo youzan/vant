@@ -3,7 +3,7 @@
  */
 import '../../locale';
 import { camelize } from '..';
-import SlotsMixin from '../../mixins/slots';
+import { SlotsMixin } from '../../mixins/slots';
 import Vue, {
   VueConstructor,
   ComponentOptions,
@@ -35,7 +35,7 @@ export interface VantComponentOptions extends ComponentOptions<Vue> {
 
 export type DefaultProps = Record<string, any>;
 
-export type FunctionalComponent<
+export type FunctionComponent<
   Props = DefaultProps,
   PropDefs = PropsDefinition<Props>
 > = {
@@ -93,6 +93,7 @@ function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
 
 // unify slots & scopedSlots
 export function unifySlots(context: RenderContext) {
+  // use data.scopedSlots in lower Vue version
   const scopedSlots = context.scopedSlots || context.data.scopedSlots || {};
   const slots = context.slots();
 
@@ -105,8 +106,9 @@ export function unifySlots(context: RenderContext) {
   return scopedSlots;
 }
 
-function transformFunctionalComponent(
-  pure: FunctionalComponent
+// should be removed after Vue 3
+function transformFunctionComponent(
+  pure: FunctionComponent
 ): VantComponentOptions {
   return {
     functional: true,
@@ -117,11 +119,11 @@ function transformFunctionalComponent(
   };
 }
 
-export default (name: string) => <Props = DefaultProps, Events = {}, Slots = {}>(
-  sfc: VantComponentOptions | FunctionalComponent
+export const useSFC = (name: string) => <Props = DefaultProps, Events = {}, Slots = {}>(
+  sfc: VantComponentOptions | FunctionComponent
 ): TsxComponent<Props, Events, Slots> => {
   if (typeof sfc === 'function') {
-    sfc = transformFunctionalComponent(sfc);
+    sfc = transformFunctionComponent(sfc);
   }
 
   if (!sfc.functional) {

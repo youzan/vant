@@ -1,13 +1,13 @@
 import { use, isDef } from '../utils';
+import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
 import Loading from '../loading';
-import Popup from '../mixins/popup';
 
 const [sfc, bem] = use('toast');
 const STYLE = ['success', 'fail', 'loading'];
 
 export default sfc({
-  mixins: [Popup],
+  mixins: [PopupMixin],
 
   props: {
     className: null,

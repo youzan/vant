@@ -1,11 +1,11 @@
-import deepClone from '../deep-clone';
+import { deepClone } from '../deep-clone';
 import { isAndroid, isDef, camelize, get } from '..';
 import { raf, cancel } from '../raf';
 import { later } from '../../../test/utils';
-import isSrc from '../validate/src';
-import isEmail from '../validate/email';
-import isMobile from '../validate/mobile';
-import isNumber from '../validate/number';
+import { isSrc } from '../validate/src';
+import { isEmail } from '../validate/email';
+import { isMobile } from '../validate/mobile';
+import { isNumber } from '../validate/number';
 
 test('deepClone', () => {
   const a = { foo: 0 };

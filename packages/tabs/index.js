@@ -1,14 +1,14 @@
 import { use, isDef } from '../utils';
-import Touch from '../mixins/touch';
 import { raf } from '../utils/raf';
 import { on, off } from '../utils/event';
+import { TouchMixin } from '../mixins/touch';
 import { setScrollTop, getScrollTop, getElementTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem] = use('tabs');
 const tabBem = use('tab')[1];
 
 export default sfc({
-  mixins: [Touch],
+  mixins: [TouchMixin],
 
   model: {
     prop: 'active'

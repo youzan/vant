@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import deepAssign from '../utils/deep-assign';
+import { deepAssign } from '../utils/deep-assign';
 import defaultMessages from './lang/zh-CN';
 
 declare module 'vue' {

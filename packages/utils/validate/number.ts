@@ -1,3 +1,3 @@
-export default function number(value: string): boolean {
+export function isNumber(value: string): boolean {
   return /^\d+$/.test(value);
 }

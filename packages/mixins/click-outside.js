@@ -1,6 +1,6 @@
 import { on, off } from '../utils/event';
 
-export default config => ({
+export const ClickOutsideMixin = config => ({
   mounted() {
     config.handler = event => {
       if (!this.$el.contains(event.target)) {

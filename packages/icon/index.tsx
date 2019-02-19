@@ -1,7 +1,7 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
-import isSrc from '../utils/validate/src';
+import { isSrc } from '../utils/validate/src';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';

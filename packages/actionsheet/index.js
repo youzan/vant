@@ -1,7 +1,7 @@
 import { use } from '../utils';
+import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
 import Loading from '../loading';
-import PopupMixin from '../mixins/popup';
 
 const [sfc, bem] = use('actionsheet');
 

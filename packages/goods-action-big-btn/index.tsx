@@ -1,7 +1,7 @@
 import { use } from '../utils';
 import Button, { ButtonEvents } from '../button';
 import { emit, inherit } from '../utils/functional';
-import { functionalRoute, routeProps, RouteProps } from '../mixins/router';
+import { functionalRoute, routeProps, RouteProps } from '../utils/router';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';

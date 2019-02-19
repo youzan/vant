@@ -1,6 +1,6 @@
 import { use } from '../utils';
-import PopupMixin from '../mixins/popup';
 import { RED, WHITE } from '../utils/color';
+import { PopupMixin } from '../mixins/popup';
 
 const [sfc, bem] = use('notify');
 
