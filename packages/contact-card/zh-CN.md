@@ -130,7 +130,6 @@ export default {
 />
 ```
 
-
 ### ContactCard API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -187,4 +186,4 @@ export default {
 |------|------|------|
 | id | 每位联系人的唯一标识 | `String | Number` |
 | name | 联系人姓名 | `String` |
-| tel | 联系人手机号 | `String` |
+| tel | 联系人手机号 | `String | Number` |

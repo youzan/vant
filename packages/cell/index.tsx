@@ -9,11 +9,12 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
 import { Mods } from '../utils/use/bem';
 
-export type CellProps = RouteProps & SharedCellProps & {
-  size?: string;
-  clickable?: boolean;
-  arrowDirection?: string;
-};
+export type CellProps = RouteProps &
+  SharedCellProps & {
+    size?: string;
+    clickable?: boolean;
+    arrowDirection?: string;
+  };
 
 export type CellSlots = DefaultSlots & {
   icon?: ScopedSlot;
@@ -106,4 +107,4 @@ Cell.props = {
   arrowDirection: String
 };
 
-export default sfc<CellProps, CellEvents>(Cell);
+export default sfc<CellProps, CellEvents, CellSlots>(Cell);
