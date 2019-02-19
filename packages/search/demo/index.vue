@@ -46,7 +46,7 @@ export default {
       title2: '监听对应事件',
       title3: '高级用法',
       placeholder: '请输入搜索关键词',
-      label: '收货地址'
+      label: '地址'
     },
     'en-US': {
       title2: 'Listen to Events',

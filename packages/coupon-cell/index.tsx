@@ -2,9 +2,23 @@ import { use } from '../utils';
 import { inherit } from '../utils/functional';
 import Cell from '../cell';
 
+// Types
+import { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../utils/use/sfc';
+import { Coupon } from '../coupon/shared';
+
+export type CouponCellProps = {
+  title?: string;
+  border: boolean;
+  coupons: Coupon[];
+  currency: string;
+  editable: boolean;
+  chosenCoupon: number;
+};
+
 const [sfc, bem, t] = use('coupon-cell');
 
-function formatValue(props) {
+function formatValue(props: CouponCellProps) {
   const { coupons, chosenCoupon, currency } = props;
   const coupon = coupons[chosenCoupon];
 
@@ -16,8 +30,13 @@ function formatValue(props) {
   return coupons.length === 0 ? t('tips') : t('count', coupons.length);
 }
 
-function CouponCell(h, props, slots, ctx) {
-  const valueClass = props[props.chosenCoupon]
+function CouponCell(
+  h: CreateElement,
+  props: CouponCellProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<CouponCellProps>
+) {
+  const valueClass = props.coupons[props.chosenCoupon]
     ? 'van-coupon-cell--selected'
     : '';
   const value = formatValue(props);
@@ -60,4 +79,4 @@ CouponCell.props = {
   }
 };
 
-export default sfc(CouponCell);
+export default sfc<CouponCellProps>(CouponCell);
