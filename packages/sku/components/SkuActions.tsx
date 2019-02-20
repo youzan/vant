@@ -2,10 +2,25 @@ import { use } from '../../utils';
 import { inherit } from '../../utils/functional';
 import Button from '../../button';
 
+// Types
+import Vue, { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../../utils/use/sfc';
+
+export type SkuActionsProps = {
+  buyText?: string;
+  skuEventBus: Vue;
+  showAddCartBtn?: boolean;
+};
+
 const [sfc, bem] = use('sku-actions');
 
-function SkuActions(h, props, slots, ctx) {
-  const emit = name => () => {
+function SkuActions(
+  h: CreateElement,
+  props: SkuActionsProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<SkuActionsProps>
+) {
+  const emit = (name: string) => () => {
     props.skuEventBus.$emit(name);
   };
 
@@ -30,4 +45,4 @@ SkuActions.props = {
   showAddCartBtn: Boolean
 };
 
-export default sfc(SkuActions);
+export default sfc<SkuActionsProps>(SkuActions);

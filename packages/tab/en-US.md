@@ -165,6 +165,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 | animated | Whether to change tabs with animation | `Boolean` | `false` |
 | ellipsis | Whether to ellipsis too long title | `Boolean` | `true` |
+| lazy-render | Whether to enable tab content lazy render | `Boolean` | `true` |
 
 ### Tab API
 

@@ -2,9 +2,21 @@ import { use } from '../../utils';
 import { inherit } from '../../utils/functional';
 import Icon from '../../icon';
 
+// Types
+import Vue, { CreateElement, RenderContext } from 'vue/types';
+import { DefaultSlots } from '../../utils/use/sfc';
+import { SkuData, SkuGoodsData, SelectedSkuData } from '../type';
+
+export type SkuHeaderProps = {
+  sku: SkuData;
+  goods: SkuGoodsData;
+  skuEventBus: Vue;
+  selectedSku: SelectedSkuData;
+};
+
 const [sfc, bem] = use('sku-header');
 
-function getSkuImg(sku, selectedSku) {
+function getSkuImg(sku: SkuData, selectedSku: SelectedSkuData) {
   const id = selectedSku.s1;
 
   if (id) {
@@ -19,7 +31,12 @@ function getSkuImg(sku, selectedSku) {
   }
 }
 
-function SkuHeader(h, props, slots, ctx) {
+function SkuHeader(
+  h: CreateElement,
+  props: SkuHeaderProps,
+  slots: DefaultSlots,
+  ctx: RenderContext<SkuHeaderProps>
+) {
   const { sku, goods, skuEventBus, selectedSku } = props;
   const goodsImg = getSkuImg(sku, selectedSku) || goods.picture;
 
@@ -54,4 +71,4 @@ SkuHeader.props = {
   selectedSku: Object
 };
 
-export default sfc(SkuHeader);
+export default sfc<SkuHeaderProps>(SkuHeader);
