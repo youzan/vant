@@ -99,6 +99,7 @@ export default sfc({
       if (column && JSON.stringify(column.options) !== JSON.stringify(options)) {
         column.options = options;
         column.setIndex(0);
+        this.onChange(index);
       }
     },
 
