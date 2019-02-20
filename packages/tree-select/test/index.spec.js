@@ -6,10 +6,12 @@ test('empty list', () => {
 });
 
 test('select item', () => {
+  const onItemClick = jest.fn();
   const item = {
     text: 'city1',
     id: 1
   };
+
   const wrapper = mount(TreeSelect, {
     propsData: {
       items: [{
@@ -19,12 +21,17 @@ test('select item', () => {
           { ...item, disabled: true }
         ]
       }]
+    },
+    context: {
+      on: {
+        itemclick: onItemClick
+      }
     }
   });
 
   const items = wrapper.findAll('.van-tree-select__item');
   items.at(0).trigger('click');
-  expect(wrapper.emitted('itemclick')[0][0]).toEqual(item);
+  expect(onItemClick.mock.calls[0][0]).toEqual(item);
   items.at(1).trigger('click');
-  expect(wrapper.emitted('itemclick')[1]).toBeFalsy();
+  expect(onItemClick.mock.calls[1]).toBeFalsy();
 });
