@@ -1,5 +1,6 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
+import { VueConstructor } from 'vue/types';
 import Actionsheet from './actionsheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
@@ -72,6 +73,12 @@ import Toast from './toast';
 import TreeSelect from './tree-select';
 import Uploader from './uploader';
 import Waterfall from './waterfall';
+
+declare global {
+  interface Window {
+    Vue?: VueConstructor;
+  }
+}
 
 const version = '1.6.5';
 const components = [
@@ -146,7 +153,7 @@ const components = [
   Uploader
 ];
 
-const install = Vue => {
+const install = (Vue: VueConstructor) => {
   components.forEach(Component => {
     Vue.use(Component);
   });
