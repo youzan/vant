@@ -1,4 +1,4 @@
-import { RenderContext, VNodeData } from 'vue/types';
+import Vue, { RenderContext, VNodeData } from 'vue';
 
 type ObjectIndex = {
   [key: string]: any;
@@ -21,7 +21,10 @@ const inheritKey = [
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
 
 // inherit partial context, map nativeOn to on
-export function inherit(context: Context, inheritListeners?: boolean): InheritContext {
+export function inherit(
+  context: Context,
+  inheritListeners?: boolean
+): InheritContext {
   const result = inheritKey.reduce(
     (obj, key) => {
       if (context.data[key]) {
@@ -52,4 +55,19 @@ export function emit(context: Context, eventName: string, ...args: any[]) {
       listeners(...args);
     }
   }
+}
+
+// mount functional component
+export function mount(Component: any) {
+  const instance = new Vue({
+    el: document.createElement('div'),
+    props: Component.props,
+    render(h) {
+      return h(Component, { props: this.$props });
+    }
+  });
+
+  document.body.appendChild(instance.$el);
+
+  return instance;
 }

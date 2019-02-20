@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+
 export type SkuData = {
   price: string;
   none_sku: boolean;
