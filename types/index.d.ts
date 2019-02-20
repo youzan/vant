@@ -8,7 +8,7 @@ import { Lazyload } from './lazyload';
 import { Waterfall } from './waterfall';
 import { ImagePreview } from './image-preview';
 
-export const version: string
+export const version: string;
 export function install (vue: typeof Vue): void
 export class Actionsheet extends VanComponent {}
 export class AddressEdit extends VanComponent {}
@@ -80,4 +80,4 @@ export {
   Lazyload,
   Waterfall,
   ImagePreview
-}
+};
