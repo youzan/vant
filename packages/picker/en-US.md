@@ -147,6 +147,11 @@ Picker events will pass different parameters according to the columns are single
 | cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
 | change | Triggered when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
 
+### Slot
+
+| name | Description |
+|------|------|
+| title | Custom title |
 
 ### Data struct of columns
 

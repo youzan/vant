@@ -54,7 +54,12 @@ export default sfc({
 
     onChange(columnIndex) {
       if (this.simple) {
-        this.$emit('change', this, this.getColumnValue(0), this.getColumnIndex(0));
+        this.$emit(
+          'change',
+          this,
+          this.getColumnValue(0),
+          this.getColumnIndex(0)
+        );
       } else {
         this.$emit('change', this, this.getValues(), columnIndex);
       }
@@ -96,7 +101,10 @@ export default sfc({
     // set options of column by index
     setColumnValues(index, options) {
       const column = this.children[index];
-      if (column && JSON.stringify(column.options) !== JSON.stringify(options)) {
+      if (
+        column &&
+        JSON.stringify(column.options) !== JSON.stringify(options)
+      ) {
         column.options = options;
         column.setIndex(0);
       }
@@ -153,7 +161,10 @@ export default sfc({
           <div class={bem('cancel')} onClick={this.onCancel}>
             {this.cancelButtonText || t('cancel')}
           </div>,
-          this.title && <div class={['van-ellipsis', bem('title')]}>{this.title}</div>,
+          this.slots('title') ||
+            (this.title && (
+              <div class={['van-ellipsis', bem('title')]}>{this.title}</div>
+            )),
           <div class={bem('confirm')} onClick={this.onConfirm}>
             {this.confirmButtonText || t('confirm')}
           </div>
@@ -169,11 +180,7 @@ export default sfc({
             <Loading />
           </div>
         )}
-        <div
-          class={bem('columns')}
-          style={columnsStyle}
-          onTouchmove={prevent}
-        >
+        <div class={bem('columns')} style={columnsStyle} onTouchmove={prevent}>
           {columns.map((item, index) => (
             <PickerColumn
               valueKey={this.valueKey}
@@ -187,7 +194,10 @@ export default sfc({
               }}
             />
           ))}
-          <div class={['van-hairline--top-bottom', bem('frame')]} style={frameStyle} />
+          <div
+            class={['van-hairline--top-bottom', bem('frame')]}
+            style={frameStyle}
+          />
         </div>
       </div>
     );
