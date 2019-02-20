@@ -117,3 +117,18 @@ test('column watch default index', async () => {
   wrapper.vm.defaultIndex = 2;
   expect(wrapper).toMatchSnapshot();
 });
+
+test('render title slot', () => {
+  const wrapper = mount({
+    template: `
+      <picker show-toolbar>
+        <template v-slot:title>Custom title</template>
+      </picker>
+    `,
+    components: {
+      Picker
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

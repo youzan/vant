@@ -27,3 +27,14 @@ exports[`column watch default index 2`] = `
   </ul>
 </div>
 `;
+
+exports[`render title slot 1`] = `
+<div class="van-picker">
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div class="van-picker__cancel">取消</div>Custom title<div class="van-picker__confirm">确认</div>
+  </div>
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+</div>
+`;
