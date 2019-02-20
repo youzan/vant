@@ -169,6 +169,7 @@ export default {
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `Number` | `4` | - |
 | animated | 是否开启切换标签内容时的转场动画 | `Boolean` | `false` | 1.4.5 |
 | ellipsis | 是否省略过长的标题文字 | `Boolean` | `true` | 1.5.0 |
+| lazy-render | 是否开启标签页内容延迟渲染 | `Boolean` | `true` | 1.6.6 |
 
 ### Tab API
 
