@@ -2,15 +2,14 @@ import { use } from '../utils';
 import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
 import Loading from '../loading';
+import Popup from '../popup';
 
 const [sfc, bem] = use('actionsheet');
 
 export default sfc({
-  mixins: [PopupMixin],
-
   props: {
+    ...PopupMixin.props,
     title: String,
-    value: Boolean,
     actions: Array,
     cancelText: String,
     overlay: {
@@ -43,16 +42,12 @@ export default sfc({
   },
 
   render(h) {
-    if (!this.shouldRender) {
-      return;
-    }
-
     const { title, cancelText, onCancel } = this;
 
     const Header = () => (
       <div class={[bem('header'), 'van-hairline--top-bottom']}>
         {title}
-        <Icon name="close" onClick={onCancel} />
+        <Icon name="close" class={bem('close')} onClick={onCancel} />
       </div>
     );
 
@@ -87,12 +82,17 @@ export default sfc({
     );
 
     return (
-      <transition name="van-slide-up">
-        <div vShow={this.value} class={bem({ withtitle: title })}>
-          {title ? Header() : this.actions.map(Option)}
-          {Footer}
-        </div>
-      </transition>
+      <Popup
+        class={bem()}
+        value={this.value}
+        position="bottom"
+        onInput={value => {
+          this.$emit('input', value);
+        }}
+      >
+        {title ? Header() : this.actions.map(Option)}
+        {Footer}
+      </Popup>
     );
   }
 });
