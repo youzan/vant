@@ -2,24 +2,55 @@ import Rate from '..';
 import { mount, triggerDrag } from '../../../test/utils';
 
 test('change event', () => {
+  const onInput = jest.fn();
+  const onChange = jest.fn();
+
   const wrapper = mount(Rate, {
-    propsData: {
-      disabled: true
+    context: {
+      on: {
+        input: onInput,
+        change: onChange
+      }
     }
   });
   const item4 = wrapper.findAll('.van-rate__item').at(3);
 
   item4.trigger('click');
-  expect(wrapper.emitted('change')).toBeFalsy();
+  expect(onInput.mock.calls[0][0]).toEqual(4);
+  expect(onChange.mock.calls[0][0]).toEqual(4);
+});
 
-  wrapper.vm.disabled = false;
+test('disabled', () => {
+  const onInput = jest.fn();
+  const onChange = jest.fn();
+
+  const wrapper = mount(Rate, {
+    propsData: {
+      disabled: true
+    },
+    context: {
+      on: {
+        input: onInput,
+        change: onChange
+      }
+    }
+  });
+  const item4 = wrapper.findAll('.van-rate__item').at(3);
+
   item4.trigger('click');
-  expect(wrapper.emitted('input')[0][0]).toEqual(4);
-  expect(wrapper.emitted('change')[0][0]).toEqual(4);
+  expect(onInput.mock.calls.length).toEqual(0);
+  expect(onChange.mock.calls.length).toEqual(0);
 });
 
 test('touchmove', () => {
-  const wrapper = mount(Rate);
+  const onChange = jest.fn();
+  const wrapper = mount(Rate, {
+    context: {
+      on: {
+        change: onChange
+      }
+    }
+  });
   triggerDrag(wrapper, 100, 0);
 
   const icons = wrapper.findAll('.van-icon');
@@ -29,6 +60,7 @@ test('touchmove', () => {
       return icons.at(index).element;
     }
   };
+
   triggerDrag(wrapper, 100, 0);
-  expect(wrapper.emitted('change')).toEqual([[2], [3], [4]]);
+  expect(onChange.mock.calls).toEqual([[2], [3], [4]]);
 });
