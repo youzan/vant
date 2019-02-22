@@ -58,12 +58,15 @@ export function emit(context: Context, eventName: string, ...args: any[]) {
 }
 
 // mount functional component
-export function mount(Component: any) {
+export function mount(Component: any, data?: VNodeData) {
   const instance = new Vue({
     el: document.createElement('div'),
     props: Component.props,
     render(h) {
-      return h(Component, { props: this.$props });
+      return h(Component, {
+        props: this.$props,
+        ...data
+      });
     }
   });
 
