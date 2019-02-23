@@ -174,7 +174,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | title | Title | `String` | - |
 | disabled | Whether to disable tab | `Boolean` | `false` |
 
-### Tab Slot
+### Tabs Slot
 
 | name | Description |
 |------|------|
