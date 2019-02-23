@@ -178,8 +178,15 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 
 | name | Description |
 |------|------|
-| - | Content |
-| title | Custom tab |
+| nav-left | Custom nav left content |
+| nav-right | Custom nav right content |
+
+### Tab Slot
+
+| name | Description |
+|------|------|
+| default | Content of tab |
+| title | Custom tab title |
 
 ### Tabs Event
 

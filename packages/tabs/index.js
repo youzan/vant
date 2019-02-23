@@ -425,8 +425,10 @@ export default sfc({
           class={[bem('wrap', { scrollable }), { 'van-hairline--top-bottom': type === 'line' }]}
         >
           <div ref="nav" class={bem('nav', [type])} style={this.navStyle}>
+            {this.slots('nav-left')}
             {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
             {Nav}
+            {this.slots('nav-right')}
           </div>
         </div>
         <div ref="content" class={bem('content', { animated })}>
