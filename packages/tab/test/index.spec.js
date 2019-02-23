@@ -2,17 +2,19 @@ import Tab from '..';
 import Tabs from '../../tabs';
 import { mount, later, triggerDrag } from '../../../test/utils';
 
-function createWrapper(options) {
+function createWrapper(options = {}) {
   return mount({
     template: `
-      <tabs @change="onChange"
+      <tabs
         :color="color"
         :type="type"
-        :swipeable="swipeable"
         :sticky="sticky"
+        :swipeable="swipeable"
         :line-width="lineWidth"
         :lazy-render="lazyRender"
+        @change="onChange"
       >
+        ${options.extraTemplate || ''}
         <tab :title="title1">Text</tab>
         <tab>
           <span slot="title">title2</span>
@@ -110,5 +112,16 @@ test('lazy render', async () => {
   });
 
   await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render nav-left & nav-right slot', async () => {
+  const wrapper = createWrapper({
+    extraTemplate: `
+      <template v-slot:nav-left>Nav Left</template>
+      <template v-slot:nav-right>Nav Right</template>
+    `
+  });
+
   expect(wrapper).toMatchSnapshot();
 });

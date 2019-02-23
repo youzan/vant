@@ -178,11 +178,18 @@ export default {
 | title | 标题 | `String` | - | - |
 | disabled | 是否禁用标签 | `Boolean` | `false` | - |
 
+### Tabs Slot
+
+| 名称 | 说明 |
+|------|------|
+| nav-left | 标题左侧内容 |
+| nav-right | 标题右侧内容 |
+
 ### Tab Slot
 
 | 名称 | 说明 |
 |------|------|
-| - | 标签页内容 |
+| default | 标签页内容 |
 | title | 自定义标签 |
 
 ### Tabs Event
