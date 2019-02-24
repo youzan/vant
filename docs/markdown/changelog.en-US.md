@@ -1,5 +1,26 @@
 ## Changelog
 
+## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
+`2019-02-24`
+
+**Improvements**
+
+- Button: add info type [\#2831](https://github.com/youzan/vant/pull/2831)
+- Picker: add title slot [\#2811](https://github.com/youzan/vant/pull/2811)
+- Tab: add lazy-render props [\#2800](https://github.com/youzan/vant/pull/2800)
+- Tab: add nav-left、nav-right slots [\#2828](https://github.com/youzan/vant/pull/2828)
+- PasswordInput: add mask prop [\#2796](https://github.com/youzan/vant/pull/2796)
+- Stepper: update style [\#2790](https://github.com/youzan/vant/pull/2790)
+- Search: update style, add shape、label props [\#2788](https://github.com/youzan/vant/pull/2788)
+- Dialog: allow use newline charactor in message [\#2799](https://github.com/youzan/vant/pull/2799)
+- Notify: allow use newline charactor in message [\#2798](https://github.com/youzan/vant/pull/2798)
+
+**Bug Fixes**
+
+- fix Cell title-class wrong type [\#2780](https://github.com/youzan/vant/pull/2780)
+- fix Tab wrong height when use line style tab inside card style tab [\#2825](https://github.com/youzan/vant/pull/2825)
+
+
 ## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
 `2019-02-17`
 

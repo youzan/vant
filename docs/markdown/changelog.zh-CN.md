@@ -1,5 +1,26 @@
 ## 更新日志
 
+## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
+`2019-02-24`
+
+**Improvements**
+
+- Button: 新增 info 类型 [\#2831](https://github.com/youzan/vant/pull/2831)
+- Picker: 新增 title 插槽 [\#2811](https://github.com/youzan/vant/pull/2811)
+- Tab: 新增 lazy-render 属性 [\#2800](https://github.com/youzan/vant/pull/2800)
+- Tab: 新增 nav-left、nav-right 插槽 [\#2828](https://github.com/youzan/vant/pull/2828)
+- PasswordInput: 新增 mask 属性 [\#2796](https://github.com/youzan/vant/pull/2796)
+- Stepper: 样式升级 [\#2790](https://github.com/youzan/vant/pull/2790)
+- Search: 样式升级, 新增 shape、label 属性 [\#2788](https://github.com/youzan/vant/pull/2788)
+- Dialog: 支持在 message 中使用换行符 [\#2799](https://github.com/youzan/vant/pull/2799)
+- Notify: 支持在 message 中使用换行符 [\#2798](https://github.com/youzan/vant/pull/2798)
+
+**Bug Fixes**
+
+- 修复 Cell title-class 类型定义错误 [\#2780](https://github.com/youzan/vant/pull/2780)
+- 修复 Tab 在 card 类型中嵌套 line 类型时样式错误的问题 [\#2825](https://github.com/youzan/vant/pull/2825)
+
+
 ## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
 `2019-02-17`
 
