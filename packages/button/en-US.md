@@ -12,9 +12,10 @@ Vue.use(Button);
 #### Type
 
 ```html
-<van-button type="primary">Primary</van-button>
-<van-button type="danger">Danger</van-button>
 <van-button type="default">Default</van-button>
+<van-button type="primary">Primary</van-button>
+<van-button type="info">Info</van-button>
+<van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
 ```
 
@@ -59,7 +60,7 @@ Vue.use(Button);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Can be set to `primary` `warning` `danger` | `String` | `default` |
+| type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
 | tag | Tag | `String` | `button` |

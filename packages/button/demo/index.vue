@@ -2,10 +2,11 @@
   <demo-section>
     <demo-block :title="$t('type')">
       <div class="demo-button-row">
+        <van-button type="default">{{ $t('default') }}</van-button>
         <van-button type="primary">{{ $t('primary') }}</van-button>
-        <van-button type="danger">{{ $t('danger') }}</van-button>
+        <van-button type="info">{{ $t('info') }}</van-button>
       </div>
-      <van-button type="default">{{ $t('default') }}</van-button>
+      <van-button type="danger">{{ $t('danger') }}</van-button>
       <van-button type="warning">{{ $t('warning') }}</van-button>
     </demo-block>
 
@@ -79,6 +80,7 @@ export default {
       shape: '按钮形状',
       default: '默认按钮',
       primary: '主要按钮',
+      info: '信息按钮',
       danger: '危险按钮',
       warning: '警告按钮',
       large: '大号按钮',
@@ -97,6 +99,7 @@ export default {
       shape: 'Shape',
       default: 'Default',
       primary: 'Primary',
+      info: 'Info',
       danger: 'Danger',
       warning: 'Warning',
       large: 'Large',
