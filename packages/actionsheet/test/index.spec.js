@@ -37,3 +37,18 @@ test('callback events', () => {
   expect(onSelect.mock.calls[0][1]).toBeFalsy();
   expect(wrapper).toMatchSnapshot();
 });
+
+test('disable lazy-render', () => {
+  const wrapper = mount(Actionsheet, {
+    propsData: {
+      lazyRender: false,
+      actions: [
+        { name: 'Option' },
+        { name: 'Option' }
+      ],
+      cancelText: 'Cancel'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
