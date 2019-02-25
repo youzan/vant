@@ -80,6 +80,13 @@ test('only allow interger', () => {
   expect(wrapper.emitted('input')).toEqual([[1]]);
 });
 
+test('stepper focus', () => {
+  const wrapper = mount(Stepper);
+  const input = wrapper.find('input');
+  input.trigger('focus');
+  expect(wrapper.emitted('focus')).toBeTruthy();
+});
+
 test('stepper blur', () => {
   const wrapper = mount(Stepper, {
     propsData: {
