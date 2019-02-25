@@ -68,7 +68,7 @@ export default create({
   computed: {
     stock() {
       const { stockNum } = this.customStepperConfig;
-      if (stockNum) {
+      if (stockNum !== undefined) {
         return stockNum;
       }
       if (this.selectedSkuComb) {
