@@ -43,6 +43,10 @@ export default sfc({
 
   computed: {
     stock() {
+      const { stockNum } = this.customStepperConfig;
+      if (stockNum !== undefined) {
+        return stockNum;
+      }
       if (this.selectedSkuComb) {
         return this.selectedSkuComb.stock_num;
       }
