@@ -150,17 +150,11 @@ export default sfc({
   },
 
   mounted() {
-    this.$nextTick(() => {
-      this.inited = true;
-      this.handlers(true);
-    });
+    this.onShow();
   },
 
   activated() {
-    this.$nextTick(() => {
-      this.handlers(true);
-      this.scrollIntoView(true);
-    });
+    this.onShow();
   },
 
   deactivated() {
@@ -172,6 +166,14 @@ export default sfc({
   },
 
   methods: {
+    onShow() {
+      this.$nextTick(() => {
+        this.inited = true;
+        this.handlers(true);
+        this.scrollIntoView(true);
+      });
+    },
+
     // whether to bind sticky listener
     handlers(bind) {
       const { events } = this;
