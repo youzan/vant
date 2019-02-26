@@ -639,10 +639,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.1.tgz#574b03e8e8a9898eaf4a872a92ea20b7846f6f2a"
-  integrity sha512-7jGW8ppV0ant637pIqAcFfQDDH1orEPGJb8aXfUozuCU3QqX7rX4DA8iwrbPrR1hcH0FTTHz47yQnk+bl5xHQA==
+"@babel/runtime@^7.3.4":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.3.4.tgz#73d12ba819e365fcf7fd152aed56d6df97d21c83"
+  integrity sha512-IvfvnMdSaLBateu0jfsYIpZTxAc2cKEXEMiezGGN75QcBcecDUKd3PgLAncT0oOgxKy8dd8hrJKj9MfzgfZd6g==
   dependencies:
     regenerator-runtime "^0.12.0"
 
@@ -827,10 +827,10 @@
     eslint-plugin-import "^2.14.0"
     eslint-plugin-vue "^5.0.0"
 
-"@vant/icons@1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.0.9.tgz#20750abe2447312e25ddf5b85e98ea0c2aea69a7"
-  integrity sha512-UbVgL1C1GDcLIZYasdTgKiLsyyFIs9qCG80O7wStxYxF4Pm3qFxaUYwmb5KKsjqN4E+HSewBqZaPZaPk5hiVCw==
+"@vant/icons@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.1.tgz#35ae3c5e5184db3832e9276f9c1bc2e9ff6893f6"
+  integrity sha512-1Jcg0A8rbrR+R7W5UnGCAnl6EJz0BDdKWnIdhMcxtRmDc+KTl40cn4Nfpts1+08KBWMtxVmtQCK4mCs/l4joBg==
 
 "@vant/markdown-loader@^1.0.3":
   version "1.0.3"
