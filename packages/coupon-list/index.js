@@ -190,7 +190,7 @@ export default sfc({
           {this.disabledCoupons.map(coupon => (
             <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
           ))}
-          {!this.disabledCoupons.length && this.renderEmpty}
+          {!this.disabledCoupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );

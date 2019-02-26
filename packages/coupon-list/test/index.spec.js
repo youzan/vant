@@ -75,6 +75,7 @@ test('render disabled coupon', () => {
       disabled: true
     }
   });
+
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -87,6 +88,17 @@ test('render coupon list', async () => {
     }
   });
   await later();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render empty coupon list', () => {
+  const wrapper = mount(CouponList, {
+    propsData: {
+      coupons: [],
+      disabledCoupons: []
+    }
+  });
+  wrapper.findAll('.van-tab').at(1).trigger('click');
   expect(wrapper).toMatchSnapshot();
 });
 
