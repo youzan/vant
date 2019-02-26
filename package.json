@@ -58,8 +58,8 @@
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
-    "@vant/icons": "1.0.9",
+    "@babel/runtime": "^7.3.4",
+    "@vant/icons": "1.1.2",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.2",
     "vue-lazyload": "1.2.3"
   },
