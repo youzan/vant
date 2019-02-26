@@ -52,3 +52,14 @@ test('disable lazy-render', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('get container', () => {
+  const wrapper = mount(Actionsheet, {
+    propsData: {
+      value: true,
+      getContainer: 'body'
+    }
+  });
+
+  expect(wrapper.vm.$el.parentNode).toEqual(document.body);
+});

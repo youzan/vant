@@ -92,6 +92,7 @@ function Actionsheet(
       position="bottom"
       overlay={props.overlay}
       lazyRender={props.lazyRender}
+      getContainer={props.getContainer}
       closeOnClickOverlay={props.closeOnClickOverlay}
       onInput={(value: boolean) => {
         emit(ctx, 'input', value);
