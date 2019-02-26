@@ -1,5 +1,24 @@
 ## Changelog
 
+## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
+`2019-02-26`
+
+**Improvements**
+
+- Button: add loading-size prop [\#2854](https://github.com/youzan/vant/pull/2854)
+- Icon: optimzie round corner of some icons [\#2856](https://github.com/youzan/vant/pull/2856)
+- Sku: Add custom settings in stepper stock [\#2839](https://github.com/youzan/vant/pull/2839)
+- Stepper: add focus event [\#2841](https://github.com/youzan/vant/pull/2841)
+
+**Bug Fixes**
+
+- fix Actionsheet lazy-render not work [\#2840](https://github.com/youzan/vant/pull/2840)
+- fix Actionsheet get-container not work [\#2853](https://github.com/youzan/vant/pull/2853)
+- fix Tab should scroll to active tab when inited [\#2857](https://github.com/youzan/vant/pull/2857)
+- fix Checkbox uncheckable when inside cell [\#2855](https://github.com/youzan/vant/pull/2855)
+- fix CouponList incorrectly render when disabled list empty [\#2845](https://github.com/youzan/vant/pull/2845)
+
+
 ## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
 `2019-02-24`
 

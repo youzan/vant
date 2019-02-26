@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
+`2019-02-26`
+
+**Improvements**
+
+- Button: 新增 loading-size 属性 [\#2854](https://github.com/youzan/vant/pull/2854)
+- Stepper: 新增 focus 事件 [\#2841](https://github.com/youzan/vant/pull/2841)
+- Sku: 支持自定义 Stepper 库存信息 [\#2839](https://github.com/youzan/vant/pull/2839)
+- Icon: 优化部分图标的圆角线条 [\#2856](https://github.com/youzan/vant/pull/2856)
+
+**Bug Fixes**
+
+- 修复 Actionsheet lazy-render 属性不生效的问题 [\#2840](https://github.com/youzan/vant/pull/2840)
+- 修复 Actionsheet get-container 属性不生效的问题 [\#2853](https://github.com/youzan/vant/pull/2853)
+- 修复 Tab 初始化时导航栏未自动滚动到当前标签位置的问题 [\#2857](https://github.com/youzan/vant/pull/2857)
+- 修复 Checkbox 与 Cell 组件嵌套用法在 Vue 2.6+ 上的兼容问题 [\#2855](https://github.com/youzan/vant/pull/2855)
+- 修复 CouponList 不可用券列表为空时展示错误的问题 [\#2845](https://github.com/youzan/vant/pull/2845)
+
+
 ## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
 `2019-02-24`
 
