@@ -19,6 +19,7 @@ export type ButtonProps = RouteProps & {
   loading?: boolean;
   disabled?: boolean;
   nativeType?: string;
+  loadingSize: string;
   loadingText?: string;
   bottomAction?: boolean;
 };
@@ -66,7 +67,7 @@ function Button(
     >
       {loading ? (
         [
-          <Loading size="20px" color={type === 'default' ? undefined : ''} />,
+          <Loading size={props.loadingSize} color={type === 'default' ? undefined : ''} />,
           loadingText && <span class={bem('loading-text')}>{loadingText}</span>
         ]
       ) : (
@@ -101,6 +102,10 @@ Button.props = {
   size: {
     type: String,
     default: 'normal'
+  },
+  loadingSize: {
+    type: String,
+    default: '20px'
   }
 };
 

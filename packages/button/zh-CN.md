@@ -78,6 +78,7 @@ Vue.use(Button);
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - |
 | loading-text | 加载状态提示文字 | `String` | - | 1.6.3 |
+| loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
 | url | 跳转链接 | `String` | - | 1.6.5 |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | 1.6.5 |
 | replace | 跳转时是否替换当前页面历史 | `String` | `false` | 1.6.5 |
