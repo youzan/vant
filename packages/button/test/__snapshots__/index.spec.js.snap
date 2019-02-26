@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading size 1`] = `
+<button class="van-button van-button--default van-button--normal van-button--loading">
+  <div class="van-loading van-loading--circular van-loading" style="color: rgb(201, 201, 201); width: 10px; height: 10px;"><span class="van-loading__spinner van-loading__spinner--circular"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+</button>
+`;
