@@ -9,6 +9,7 @@ type Context = RenderContext & { data: VNodeData & ObjectIndex };
 type InheritContext = Partial<VNodeData> & ObjectIndex;
 
 const inheritKey = [
+  'ref',
   'style',
   'class',
   'attrs',
