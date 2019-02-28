@@ -216,7 +216,7 @@ export default sfc({
       icon: this.renderLeftIcon
     };
     if (slots('label')) {
-      scopedSlots.label = () => slots('title');
+      scopedSlots.title = () => slots('label');
     }
 
     return (
