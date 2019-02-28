@@ -136,7 +136,7 @@ export default sfc({
 
       // scroll to correct position
       if (this.position === 'top' || this.position === 'bottom') {
-        setScrollTop(window, getElementTop(this.$el));
+        setScrollTop(window, getElementTop(this.$el) - this.offsetTop);
       }
     },
 
