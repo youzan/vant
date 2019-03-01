@@ -161,14 +161,14 @@ exports[`render empty coupon list 1`] = `
     <div class="van-tabs__content">
       <div class="van-tab__pane" style="display: none;">
         <div class="van-coupon-list__list" style="height: 628px;">
-          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
+          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>
       </div>
       <div class="van-tab__pane" style="">
         <div class="van-coupon-list__list" style="height: 628px;">
-          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png">
+          <div class="van-coupon-list__empty"><img src="https://img.yzcdn.cn/vant/coupon-empty.png">
             <p>暂无优惠券</p>
           </div>
         </div>
