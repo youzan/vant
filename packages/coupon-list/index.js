@@ -6,7 +6,7 @@ import Button from '../button';
 import Coupon from '../coupon';
 
 const [sfc, bem, t] = use('coupon-list');
-const EMPTY_IMAGE = 'https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png';
+const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default sfc({
   model: {
