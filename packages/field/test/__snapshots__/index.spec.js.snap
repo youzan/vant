@@ -26,6 +26,17 @@ exports[`render label slot 1`] = `
 </div>
 `;
 
+exports[`render right icon with icon prop for old version 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control">
+      <div class="van-field__right-icon"><i class="van-icon van-icon-success">
+          <!----></i></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`render textarea 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone">
