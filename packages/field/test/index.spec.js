@@ -178,3 +178,12 @@ test('render label slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('render right icon with icon prop for old version', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      icon: 'success'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
