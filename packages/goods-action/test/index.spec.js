@@ -29,3 +29,23 @@ test('MiniBtn click event', () => {
   wrapper.trigger('click');
   expect(click.mock.calls.length).toEqual(1);
 });
+
+test('BigBtn render default slot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(BigBtn, null, ['Default Content']);
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('Mini render default slot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(MiniBtn, null, ['Default Content']);
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
