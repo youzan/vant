@@ -827,10 +827,10 @@
     eslint-plugin-import "^2.14.0"
     eslint-plugin-vue "^5.0.0"
 
-"@vant/icons@1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.2.tgz#0b5f03fb9013e84a9c90274975ec19adfc621c61"
-  integrity sha512-OMu5KwYag73LsXQeA5VlzLxwMbRRfjiZsvvmtfHweNMQ+3u/NcIRfflAd4ks7OCac6lQb+5qSO/j0YNmsTbjmQ==
+"@vant/icons@1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.3.tgz#15bd7d58f2fa57c736875f0ecf7ce81992fc49ea"
+  integrity sha512-ENzfQICWQQGsbLLXdjCIk3ZML7c0HktDpfGwpI0xsP+wfCO+6O6aCvbPwfaWxX2/+xM5qLZrL70sdueekdvWnA==
 
 "@vant/markdown-loader@^1.0.3":
   version "1.0.3"
