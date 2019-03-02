@@ -1,6 +1,6 @@
 import { use, range } from '../utils';
 import Picker from '../picker';
-import { PickerMixin } from '../mixins/picker';
+import { pickerProps } from '../picker/shared';
 import {
   times,
   padZero,
@@ -13,9 +13,8 @@ const [sfc, bem] = use('datetime-picker');
 const currentYear = new Date().getFullYear();
 
 export default sfc({
-  mixins: [PickerMixin],
-
   props: {
+    ...pickerProps,
     value: null,
     minHour: Number,
     minMinute: Number,
@@ -302,7 +301,7 @@ export default sfc({
 
   render(h) {
     const props = {};
-    Object.keys(PickerMixin.props).forEach(key => {
+    Object.keys(pickerProps).forEach(key => {
       props[key] = this[key];
     });
 
