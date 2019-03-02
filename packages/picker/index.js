@@ -1,16 +1,15 @@
 import { use } from '../utils';
 import { prevent } from '../utils/event';
 import { deepClone } from '../utils/deep-clone';
-import { PickerMixin } from '../mixins/picker';
+import { pickerProps } from './shared';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
 const [sfc, bem, t] = use('picker');
 
 export default sfc({
-  mixins: [PickerMixin],
-
   props: {
+    ...pickerProps,
     columns: Array,
     valueKey: {
       type: String,
