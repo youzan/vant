@@ -54,7 +54,7 @@ function AddressItem(
       <div class={bem('address')}>{data.address}</div>
     ];
 
-    return props.disabled ? Info : <Radio name={data.id}>{Info}</Radio>;
+    return props.switchable ? <Radio name={data.id}>{Info}</Radio> : Info;
   };
 
   const onSelect = () => {
