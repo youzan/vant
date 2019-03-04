@@ -1,5 +1,21 @@
 ## 更新日志
 
+## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
+`2019-03-02`
+
+**Improvements**
+
+- CouponList: 优化列表为空的样式 [\#2878](https://github.com/youzan/vant/pull/2878)
+- 支持在函数式组件上使用 ref 属性 [\#2863](https://github.com/youzan/vant/pull/2863)
+
+**Bug Fixes**
+
+- 修复 Field label 插槽未生效的问题 [\#2872](https://github.com/youzan/vant/pull/2872)
+- 修复 Icon new 图标无法展示的问题 [\#2887](https://github.com/youzan/vant/pull/2887)
+- 修复 AddressList 使用 switchable 属性时的样式错误 [\#2886](https://github.com/youzan/vant/pull/2886)
+- 修复 Tab 使用 offset-top 属性时切换标签未滚动到正确位置的问题 [\#2873](https://github.com/youzan/vant/pull/2873)
+
+
 ## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
 `2019-02-26`
 

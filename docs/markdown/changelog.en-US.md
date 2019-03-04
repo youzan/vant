@@ -1,5 +1,21 @@
 ## Changelog
 
+## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
+`2019-03-02`
+
+**Improvements**
+
+- CouponList: optimize style of empty tip [\#2878](https://github.com/youzan/vant/pull/2878)
+- allow use ref in functional components [\#2863](https://github.com/youzan/vant/pull/2863)
+
+**Bug Fixes**
+
+- fix Field label slot not work [\#2872](https://github.com/youzan/vant/pull/2872)
+- fix Icon missing new icon [\#2887](https://github.com/youzan/vant/pull/2887)
+- fix AddressList should hide radio when unswitchable [\#2886](https://github.com/youzan/vant/pull/2886)
+- fix Tab scroll to correct position when use offset-top [\#2873](https://github.com/youzan/vant/pull/2873)
+
+
 ## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
 `2019-02-26`
 
