@@ -170,7 +170,7 @@ export default sfc({
       if (this.isCorrectDirection) {
         event.preventDefault();
         event.stopPropagation();
-        this.move(0, Math.min(Math.max(this.delta, -this.size), this.size));
+        this.move({ offset: Math.min(Math.max(this.delta, -this.size), this.size) });
       }
     },
 
@@ -179,35 +179,42 @@ export default sfc({
 
       if (this.delta && this.isCorrectDirection) {
         const offset = this.vertical ? this.offsetY : this.offsetX;
-        this.move(offset > 0 ? (this.delta > 0 ? -1 : 1) : 0);
+        this.move({
+          pace: offset > 0 ? (this.delta > 0 ? -1 : 1) : 0,
+          emitChange: true
+        });
       }
 
       this.swiping = false;
       this.autoPlay();
     },
 
-    move(move = 0, offset = 0) {
+    move({ pace = 0, offset = 0, emitChange }) {
       const { delta, active, count, swipes, trackSize } = this;
       const atFirst = active === 0;
       const atLast = active === count - 1;
       const outOfBounds =
         !this.loop &&
-        ((atFirst && (offset > 0 || move < 0)) || (atLast && (offset < 0 || move > 0)));
+        ((atFirst && (offset > 0 || pace < 0)) || (atLast && (offset < 0 || pace > 0)));
 
       if (outOfBounds || count <= 1) {
         return;
       }
 
       if (swipes[0]) {
-        swipes[0].offset = atLast && (delta < 0 || move > 0) ? trackSize : 0;
+        swipes[0].offset = atLast && (delta < 0 || pace > 0) ? trackSize : 0;
       }
 
       if (swipes[count - 1]) {
-        swipes[count - 1].offset = atFirst && (delta > 0 || move < 0) ? -trackSize : 0;
+        swipes[count - 1].offset = atFirst && (delta > 0 || pace < 0) ? -trackSize : 0;
       }
 
-      if (move && active + move >= -1 && active + move <= count) {
-        this.active += move;
+      if (pace && active + pace >= -1 && active + pace <= count) {
+        this.active += pace;
+
+        if (emitChange) {
+          this.$emit('change', this.activeIndicator);
+        }
       }
 
       this.offset = offset - this.active * this.size;
@@ -219,16 +226,19 @@ export default sfc({
       this.correctPosition();
       setTimeout(() => {
         this.swiping = false;
-        this.move((index % this.count) - this.active);
+        this.move({
+          pace: (index % this.count) - this.active,
+          emitChange: true
+        });
       }, 30);
     },
 
     correctPosition() {
       if (this.active <= -1) {
-        this.move(this.count);
+        this.move({ pace: this.count });
       }
       if (this.active >= this.count) {
-        this.move(-this.count);
+        this.move({ pace: -this.count });
       }
     },
 
@@ -248,16 +258,13 @@ export default sfc({
 
           setTimeout(() => {
             this.swiping = false;
-            this.move(1);
+            this.move({
+              pace: 1,
+              emitChange: true
+            });
             this.autoPlay();
           }, 30);
         }, autoplay);
-      }
-    },
-
-    onTransitionend(event) {
-      if (event.currentTarget === this.$refs.track) {
-        this.$emit('change', this.activeIndicator);
       }
     }
   },
@@ -288,7 +295,6 @@ export default sfc({
           onTouchmove={this.onTouchMove}
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
-          onTransitionend={this.onTransitionend}
         >
           {this.slots()}
         </div>
