@@ -33,7 +33,8 @@ test('callback events', () => {
   expect(callback.mock.calls.length).toBe(1);
   expect(onCancel.mock.calls.length).toBeTruthy();
   expect(onInput.mock.calls[0][0]).toBeFalsy();
-  expect(onSelect.mock.calls[0][0]).toBeTruthy();
+  expect(onSelect.mock.calls[0][0].name).toEqual('Option');
+  expect(onSelect.mock.calls[0][1]).toEqual(0);
   expect(onSelect.mock.calls[0][1]).toBeFalsy();
   expect(wrapper).toMatchSnapshot();
 });

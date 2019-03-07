@@ -47,7 +47,7 @@ function Actionsheet(
     </div>
   );
 
-  const Option = (item: ActionsheetItem) => (
+  const Option = (item: ActionsheetItem, index: number) => (
     <div
       class={[
         bem('item', { disabled: item.disabled || item.loading }),
@@ -62,7 +62,7 @@ function Actionsheet(
             item.callback(item);
           }
 
-          emit(ctx, 'select', item);
+          emit(ctx, 'select', item, index);
         }
       }}
     >

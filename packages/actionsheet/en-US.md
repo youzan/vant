@@ -90,7 +90,7 @@ Actionsheet will get another style if there is a `title` prop.
 
 | Event | Description | Arguments |
 |------|------|------|
-| select | Triggered when click option | item |
+| select | Triggered when click option | item, index |
 | cancel | Triggered when cancel click | - |
 
 ### Data struct of actions
