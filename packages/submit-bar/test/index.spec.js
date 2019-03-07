@@ -2,10 +2,30 @@ import SubmitBar from '..';
 import { mount } from '../../../test/utils';
 
 test('submit', () => {
+  const submit = jest.fn();
   const wrapper = mount(SubmitBar, {
-    propsData: {
-      price: 0.01,
-      disabled: true
+    context: {
+      props: {
+        price: 0.01
+      },
+      on: { submit }
+    }
+  });
+
+  const button = wrapper.find('.van-button');
+  button.trigger('click');
+  expect(submit.mock.calls[0]).toBeTruthy();
+});
+
+test('disable submit', () => {
+  const submit = jest.fn();
+  const wrapper = mount(SubmitBar, {
+    context: {
+      props: {
+        price: 0.01,
+        disabled: true
+      },
+      on: { submit }
     }
   });
 
@@ -14,10 +34,5 @@ test('submit', () => {
   // disabled
   const button = wrapper.find('.van-button');
   button.trigger('click');
-  expect(wrapper.emitted('submit')).toBeFalsy();
-
-  // submit
-  wrapper.vm.disabled = false;
-  button.trigger('click');
-  expect(wrapper.emitted('submit')).toBeTruthy();
+  expect(submit.mock.calls[0]).toBeFalsy();
 });

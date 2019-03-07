@@ -55,3 +55,4 @@ export default {
 | duration | Duration(ms), won't disappear if value is 0 | `Number` | `3000` |
 | color | Message color | `String` | `#fff` | |
 | background | Background color | `String` | `#f44` |
+| className | Custom className | `String | Array | Object` | - |

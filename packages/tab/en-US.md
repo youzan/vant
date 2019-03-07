@@ -151,17 +151,21 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Index of active tab | `String` `Number` | `0` |
-| color | Tab color | `String` | `#f44` |
 | type | Can be set to `line` `card` | `String` | `line` |
 | duration | Toggle tab's animation time | `Number` | `0.3` | - |
+| background | Background color | `String` | `white` |
 | line-width | Width of tab line (px) | `Number` | Width of active tab |
 | line-height | Height of tab line (px) | `Number` | 3 |
+| color | Tab color | `String` | `#f44` |
+| title-active-color | Title active color | `String` | - |
+| title-inactive-color | Title inactive color | `String` | - |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
 | sticky | Whether to use sticky mode | `Boolean` | `false` |
 | offset-top | Offset top when use sticky mode | `Number` | `0` |
 | swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 | animated | Whether to change tabs with animation | `Boolean` | `false` |
 | ellipsis | Whether to ellipsis too long title | `Boolean` | `true` |
+| lazy-render | Whether to enable tab content lazy render | `Boolean` | `true` |
 
 ### Tab API
 
@@ -170,12 +174,19 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | title | Title | `String` | - |
 | disabled | Whether to disable tab | `Boolean` | `false` |
 
+### Tabs Slot
+
+| name | Description |
+|------|------|
+| nav-left | Custom nav left content |
+| nav-right | Custom nav right content |
+
 ### Tab Slot
 
 | name | Description |
 |------|------|
-| - | Content |
-| title | Custom tab |
+| default | Content of tab |
+| title | Custom tab title |
 
 ### Tabs Event
 
@@ -184,4 +195,4 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | click | Triggered when click tab | index：index of current tab，title: tab title |
 | change | Triggered when active tab changed | index：index of current tab，title: tab title |
 | disabled | Triggered when click disabled tab | index：index of current tab, title: tab title |
-| scroll | Triggered when tab scroll | Object: { scrollTop, isFixed } |
+| scroll | Triggered when tab scroll in sticky mode | Object: { scrollTop, isFixed } |

@@ -13,6 +13,7 @@ const join = dir => path.join(root, dir);
 
 function buildVantEntry() {
   const uninstallComponents = [
+    'Locale',
     'Lazyload',
     'Waterfall'
   ];
@@ -21,14 +22,21 @@ function buildVantEntry() {
   const exportList = Components.map(name => `${uppercamelize(name)}`);
   const intallList = exportList.filter(name => !~uninstallComponents.indexOf(uppercamelize(name)));
   const content = `${tips}
+import { VueConstructor } from 'vue/types';
 ${importList.join('\n')}
+
+declare global {
+  interface Window {
+    Vue?: VueConstructor;
+  }
+}
 
 const version = '${version}';
 const components = [
   ${intallList.join(',\n  ')}
 ];
 
-const install = Vue => {
+const install = (Vue: VueConstructor) => {
   components.forEach(Component => {
     Vue.use(Component);
   });
@@ -51,7 +59,7 @@ export default {
 };
 `;
 
-  fs.writeFileSync(path.join(__dirname, '../packages/index.js'), content);
+  fs.writeFileSync(path.join(__dirname, '../packages/index.ts'), content);
 }
 
 function buildDemoEntry() {

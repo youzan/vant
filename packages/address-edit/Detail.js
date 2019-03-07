@@ -18,42 +18,48 @@ export default sfc({
   methods: {
     onSelect(express) {
       this.$emit('select-search', express);
-      this.$emit('input', `${express.address || ''} ${express.name || ''}`.trim());
+      this.$emit(
+        'input',
+        `${express.address || ''} ${express.name || ''}`.trim()
+      );
+    },
+
+    onFinish() {
+      this.$refs.field.blur();
+    },
+
+    renderFinish() {
+      const show = this.value && this.focused && android;
+      if (show) {
+        return (
+          <div class={bem('finish')} onClick={this.onFinish}>
+            {t('complete')}
+          </div>
+        );
+      }
+    },
+
+    renderSearchResult() {
+      const { searchResult } = this;
+      const show = this.focused && searchResult && this.showSearchResult;
+      if (show) {
+        return searchResult.map(express => (
+          <Cell
+            key={express.name + express.address}
+            title={express.name}
+            label={express.address}
+            icon="location-o"
+            clickable
+            onClick={() => {
+              this.onSelect(express);
+            }}
+          />
+        ));
+      }
     }
   },
 
   render(h) {
-    const { value, focused, searchResult } = this;
-
-    const Finish = value && focused && android && (
-      <div
-        slot="icon"
-        class={bem('finish')}
-        onClick={() => {
-          this.$refs.field.blur();
-        }}
-      >
-        {t('complete')}
-      </div>
-    );
-
-    const SearchList =
-      focused &&
-      searchResult &&
-      this.showSearchResult &&
-      searchResult.map(express => (
-        <Cell
-          key={express.name + express.address}
-          title={express.name}
-          label={express.address}
-          icon="location-o"
-          clickable
-          onClick={() => {
-            this.onSelect(express);
-          }}
-        />
-      ));
-
     return (
       <Cell class={bem()}>
         <Field
@@ -67,11 +73,10 @@ export default sfc({
           error={this.error}
           label={t('label')}
           placeholder={t('placeholder')}
+          scopedSlots={{ icon: this.renderFinish }}
           {...{ on: this.$listeners }}
-        >
-          {Finish}
-        </Field>
-        {SearchList}
+        />
+        {this.renderSearchResult()}
       </Cell>
     );
   }

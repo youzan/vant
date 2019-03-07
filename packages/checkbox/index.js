@@ -1,24 +1,10 @@
 import { use } from '../utils';
-import Icon from '../icon';
-import findParent from '../mixins/find-parent';
+import { CheckboxMixin } from '../mixins/checkbox';
 
 const [sfc, bem] = use('checkbox');
 
 export default sfc({
-  mixins: [findParent],
-
-  props: {
-    name: null,
-    value: null,
-    disabled: Boolean,
-    checkedColor: String,
-    labelPosition: String,
-    labelDisabled: Boolean,
-    shape: {
-      type: String,
-      default: 'round'
-    }
-  },
+  mixins: [CheckboxMixin('van-checkbox-group', bem)],
 
   computed: {
     checked: {
@@ -33,20 +19,6 @@ export default sfc({
           this.$emit('input', val);
         }
       }
-    },
-
-    isDisabled() {
-      return (this.parent && this.parent.disabled) || this.disabled;
-    },
-
-    iconStyle() {
-      const { checkedColor } = this;
-      if (checkedColor && this.checked && !this.isDisabled) {
-        return {
-          borderColor: checkedColor,
-          backgroundColor: checkedColor
-        };
-      }
     }
   },
 
@@ -56,14 +28,20 @@ export default sfc({
     }
   },
 
-  created() {
-    this.findParent('van-checkbox-group');
-  },
-
   methods: {
-    toggle(target) {
-      if (!this.isDisabled && !(target === 'label' && this.labelDisabled)) {
-        this.checked = !this.checked;
+    toggle() {
+      this.checked = !this.checked;
+    },
+
+    onClickIcon() {
+      if (!this.isDisabled) {
+        this.toggle();
+      }
+    },
+
+    onClickLabel() {
+      if (!this.isDisabled && !this.labelDisabled) {
+        this.toggle();
       }
     },
 
@@ -91,36 +69,5 @@ export default sfc({
         }
       }
     }
-  },
-
-  render(h) {
-    const CheckIcon = this.$scopedSlots.icon ? (
-      this.$scopedSlots.icon({ checked: this.checked })
-    ) : (
-      <Icon name="success" style={this.iconStyle} />
-    );
-
-    const Label = this.$slots.default && (
-      <span
-        class={bem('label', [this.labelPosition, { disabled: this.isDisabled }])}
-        onClick={() => {
-          this.toggle('label');
-        }}
-      >
-        {this.$slots.default}
-      </span>
-    );
-
-    return (
-      <div class={bem()}>
-        <div
-          class={bem('icon', [this.shape, { disabled: this.isDisabled, checked: this.checked }])}
-          onClick={this.toggle}
-        >
-          {CheckIcon}
-        </div>
-        {Label}
-      </div>
-    );
   }
 });

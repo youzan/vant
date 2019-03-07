@@ -1,10 +1,10 @@
 import { use } from '../utils';
-import Popup from '../mixins/popup';
+import { PopupMixin } from '../mixins/popup';
 
 const [sfc, bem] = use('popup');
 
 export default sfc({
-  mixins: [Popup],
+  mixins: [PopupMixin],
 
   props: {
     position: String,
@@ -25,12 +25,17 @@ export default sfc({
     }
 
     const { position } = this;
+    const emit = event => () => this.$emit(event);
     const transitionName = this.transition || (position ? `van-popup-slide-${position}` : 'van-fade');
 
     return (
-      <transition name={transitionName}>
+      <transition
+        name={transitionName}
+        onAfterEnter={emit('opened')}
+        onAfterLeave={emit('closed')}
+      >
         <div vShow={this.value} class={bem({ [position]: position })}>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </transition>
     );

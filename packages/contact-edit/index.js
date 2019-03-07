@@ -3,7 +3,7 @@ import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
-import validateMobile from '../utils/validate/mobile';
+import { isMobile } from '../utils/validate/mobile';
 
 const [sfc, bem, t] = use('contact-edit');
 
@@ -23,7 +23,7 @@ export default sfc({
     },
     telValidator: {
       type: Function,
-      default: validateMobile
+      default: isMobile
     }
   },
 
@@ -95,7 +95,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <Field
-          v-model={data.name}
+          vModel={data.name}
           clearable
           maxlength="30"
           label={t('name')}
@@ -104,7 +104,7 @@ export default sfc({
           onFocus={onFocus('name')}
         />
         <Field
-          v-model={data.tel}
+          vModel={data.tel}
           clearable
           type="tel"
           label={t('tel')}

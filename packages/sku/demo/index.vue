@@ -207,11 +207,11 @@ export default {
 
   methods: {
     onBuyClicked(data) {
-      this.$toast(JSON.stringify(data));
+      this.$toast('buy:' + JSON.stringify(data));
     },
 
     onAddCartClicked(data) {
-      this.$toast(JSON.stringify(data));
+      this.$toast('add cart:' + JSON.stringify(data));
     },
 
     onPointClicked() {

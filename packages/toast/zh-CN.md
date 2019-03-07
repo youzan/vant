@@ -95,10 +95,12 @@ toast2.clear();
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 提示类型，可选值为 `loading` `success` `fail` `html` | `String` | `text` | - |
+| type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | `String` | `text` | - |
 | position | 位置，可选值为 `top` `middle` `bottom` | `String` | `middle` | - |
 | message | 内容 | `String` | `''` | - | - |
 | mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |
+| className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.3 |

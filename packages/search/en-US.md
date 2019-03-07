@@ -49,6 +49,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 <van-search
   v-model="value"
   show-action
+  shape="round"
   @search="onSearch"
 >
   <div slot="action" @click="onSearch">Search</div>
@@ -61,6 +62,8 @@ Search support all native properties of input tag，such as `maxlength`、`place
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| label | Search label | `String` | - |
+| shape | Can be set to `round` | `String` | `square` |
 | background | Background color | `String` | `#f2f2f2` |
 | show-action | Whether to show right button | `Boolean` | `false` |
 | disabled | Whether to disable field | `Boolean` | `false` |
@@ -84,3 +87,4 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 |------|------|
 | action | Custom right button, displayed when `showAction` is true |
 | left-icon | Custom left icon |
+| label | Custom Search label |

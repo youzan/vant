@@ -1,17 +1,51 @@
 import BigBtn from '../../goods-action-big-btn';
-import SmallBtn from '../../goods-action-mini-btn';
+import MiniBtn from '../../goods-action-mini-btn';
 import { mount } from '../../../test/utils';
 
-test('big btn click event', () => {
-  const wrapper = mount(BigBtn);
+test('BigBtn click event', () => {
+  const click = jest.fn();
+  const wrapper = mount(BigBtn, {
+    context: {
+      on: {
+        click
+      }
+    }
+  });
 
   wrapper.trigger('click');
-  expect(wrapper.emitted('click')).toBeTruthy();
+  expect(click.mock.calls.length).toEqual(1);
 });
 
-test('small btn click event', () => {
-  const wrapper = mount(SmallBtn);
+test('MiniBtn click event', () => {
+  const click = jest.fn();
+  const wrapper = mount(MiniBtn, {
+    context: {
+      on: {
+        click
+      }
+    }
+  });
 
   wrapper.trigger('click');
-  expect(wrapper.emitted('click')).toBeTruthy();
+  expect(click.mock.calls.length).toEqual(1);
+});
+
+test('BigBtn render default slot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(BigBtn, null, ['Default Content']);
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('Mini render default slot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(MiniBtn, null, ['Default Content']);
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

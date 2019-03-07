@@ -5,13 +5,15 @@ import { isObj, isServer } from '../utils';
 const defaultOptions = {
   type: 'text',
   mask: false,
-  message: '',
   value: true,
+  message: '',
+  className: '',
   duration: 3000,
   position: 'middle',
-  loadingType: 'circular',
   forbidClick: false,
-  overlayStyle: {}
+  loadingType: 'circular',
+  getContainer: 'body',
+  overlayStyle: null
 };
 const parseOptions = message => (isObj(message) ? message : { message });
 

@@ -27,7 +27,7 @@ export default sfc({
     const { span, offset } = this;
     return (
       <this.tag class={bem({ [span]: span, [`offset-${offset}`]: offset })} style={this.style}>
-        {this.$slots.default}
+        {this.slots()}
       </this.tag>
     );
   }

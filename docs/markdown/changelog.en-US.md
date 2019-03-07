@@ -1,5 +1,166 @@
 ## Changelog
 
+## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
+`2019-03-02`
+
+**Improvements**
+
+- CouponList: optimize style of empty tip [\#2878](https://github.com/youzan/vant/pull/2878)
+- allow use ref in functional components [\#2863](https://github.com/youzan/vant/pull/2863)
+
+**Bug Fixes**
+
+- fix Field label slot not work [\#2872](https://github.com/youzan/vant/pull/2872)
+- fix Icon missing new icon [\#2887](https://github.com/youzan/vant/pull/2887)
+- fix AddressList should hide radio when unswitchable [\#2886](https://github.com/youzan/vant/pull/2886)
+- fix Tab scroll to correct position when use offset-top [\#2873](https://github.com/youzan/vant/pull/2873)
+
+
+## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
+`2019-02-26`
+
+**Improvements**
+
+- Button: add loading-size prop [\#2854](https://github.com/youzan/vant/pull/2854)
+- Icon: optimzie round corner of some icons [\#2856](https://github.com/youzan/vant/pull/2856)
+- Sku: Add custom settings in stepper stock [\#2839](https://github.com/youzan/vant/pull/2839)
+- Stepper: add focus event [\#2841](https://github.com/youzan/vant/pull/2841)
+
+**Bug Fixes**
+
+- fix Actionsheet lazy-render not work [\#2840](https://github.com/youzan/vant/pull/2840)
+- fix Actionsheet get-container not work [\#2853](https://github.com/youzan/vant/pull/2853)
+- fix Tab should scroll to active tab when inited [\#2857](https://github.com/youzan/vant/pull/2857)
+- fix Checkbox uncheckable when inside cell [\#2855](https://github.com/youzan/vant/pull/2855)
+- fix CouponList incorrectly render when disabled list empty [\#2845](https://github.com/youzan/vant/pull/2845)
+
+
+## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
+`2019-02-24`
+
+**Improvements**
+
+- Button: add info type [\#2831](https://github.com/youzan/vant/pull/2831)
+- Picker: add title slot [\#2811](https://github.com/youzan/vant/pull/2811)
+- Tab: add lazy-render props [\#2800](https://github.com/youzan/vant/pull/2800)
+- Tab: add nav-left、nav-right slots [\#2828](https://github.com/youzan/vant/pull/2828)
+- PasswordInput: add mask prop [\#2796](https://github.com/youzan/vant/pull/2796)
+- Stepper: update style [\#2790](https://github.com/youzan/vant/pull/2790)
+- Search: update style, add shape、label props [\#2788](https://github.com/youzan/vant/pull/2788)
+- Dialog: allow use newline charactor in message [\#2799](https://github.com/youzan/vant/pull/2799)
+- Notify: allow use newline charactor in message [\#2798](https://github.com/youzan/vant/pull/2798)
+
+**Bug Fixes**
+
+- fix Cell title-class wrong type [\#2780](https://github.com/youzan/vant/pull/2780)
+- fix Tab wrong height when use line style tab inside card style tab [\#2825](https://github.com/youzan/vant/pull/2825)
+
+
+## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
+`2019-02-17`
+
+**Improvements**
+
+- Button: add url、to、replace props [\#2754](https://github.com/youzan/vant/pull/2754)
+- Tabs: add background prop [\#2772](https://github.com/youzan/vant/pull/2772)
+- Tabs: add title-active-color、title-inactive-color prop [\#2773](https://github.com/youzan/vant/pull/2773)
+- CouponCell: refactored into functional component [\#2759](https://github.com/youzan/vant/pull/2759)
+- AddressList: refactored into functional component [\#2757](https://github.com/youzan/vant/pull/2757)
+- Sku: partial refactored into functional component [\#2756](https://github.com/youzan/vant/pull/2756)
+
+**Bug Fixes**
+
+- fix Collapse title slot not work [\#2753](https://github.com/youzan/vant/pull/2753)
+- fix Panel v-slot now work [\#2752](https://github.com/youzan/vant/pull/2752)
+
+
+## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
+`2019-02-14`
+
+**Bug Fixes**
+
+- Sku: buy event incorrect triggered [\#2741](https://github.com/youzan/vant/pull/2741)
+
+
+## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
+`2019-02-14`
+
+**Improvements**
+
+- Toast: add getContainer prop [\#2724](https://github.com/youzan/vant/pull/2724)
+- Button: add loading-text prop [\#2732](https://github.com/youzan/vant/pull/2732)
+- Coupon: add value-desc、unit-desc prop [\#2710](https://github.com/youzan/vant/pull/2710)
+- Card: refactored into functional component [\#2740](https://github.com/youzan/vant/pull/2740)
+- Cell: refactored into functional component [\#2729](https://github.com/youzan/vant/pull/2729)
+- Switch: refactored into functional component [\#2736](https://github.com/youzan/vant/pull/2736)
+- GoodsAction: refactored into functional component [\#2730](https://github.com/youzan/vant/pull/2730)
+
+**Bug Fixes**
+
+- fix Field right icon flex shrink [\#2713](https://github.com/youzan/vant/pull/2713)
+- fix Field wrong height in datetime-local type [\#2720](https://github.com/youzan/vant/pull/2720)
+- fix Sku click area dislocation in iOS 12 [\#2722](https://github.com/youzan/vant/pull/2722)
+- fix SwipeCell incorrect render when left-width equals zero [\#2737](https://github.com/youzan/vant/pull/2737)
+- fix functional component multi listeners [\#2717](https://github.com/youzan/vant/pull/2717)
+
+
+## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
+`2019-02-10`
+
+**Improvements**
+
+- Tag: add click event [\#2693](https://github.com/youzan/vant/pull/2693)
+- Swipe: add click event [\#2690](https://github.com/youzan/vant/pull/2690)
+- NoticeBar: add close event [\#2692](https://github.com/youzan/vant/pull/2692)
+- PullRefresh: add success-text、success-duration props [\#2709](https://github.com/youzan/vant/pull/2709)
+- Use scoped-slots in Vue 2.6 [\#2688](https://github.com/youzan/vant/pull/2688)
+
+**Bug Fixes**
+
+- fix Swipe lazy-image not appeared [\#2708](https://github.com/youzan/vant/pull/2708)
+- fix Dialog beforeClose not work for click overlay [\#2707](https://github.com/youzan/vant/pull/2707)
+- fix Collpase height calc error when set user-select none [\#2702](https://github.com/youzan/vant/pull/2702)
+- fix functional component should inherit attrs [\#2706](https://github.com/youzan/vant/pull/2706)
+- fix AddressEdit select search not work in Vue 2.6 [\#2689](https://github.com/youzan/vant/pull/2689)
+- fix AddressList should hide radio of disabled item [\#2687](https://github.com/youzan/vant/pull/2687)
+
+
+## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+`2019-02-05`
+
+**Improvements**
+
+- fix functional component can not inherit directives and native events. [\#2686](https://github.com/youzan/vant/pull/2686)
+
+
+## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+`2019-02-04`
+
+**Breaking changes**
+
+- Radio: refactored, now has the same stuct as Checkbox [\#2651](https://github.com/youzan/vant/pull/2651)
+
+**Improvements**
+
+- Use JSX to rewrite all components
+- Transform part components to functional for better performance
+- Card: add tag slot [\#2636](https://github.com/youzan/vant/pull/2636)
+- Icon: add weapp-nav icon [\#2682](https://github.com/youzan/vant/pull/2682)
+- Radio: add icon slot [\#2651](https://github.com/youzan/vant/pull/2651)
+- Radio: add shape prop [\#2651](https://github.com/youzan/vant/pull/2651)
+- Toast: add className prop [\#2680](https://github.com/youzan/vant/pull/2680)
+- Notify: add className prop [\#2681](https://github.com/youzan/vant/pull/2681)
+- Popup: add open/close event [\#2649](https://github.com/youzan/vant/pull/2649)
+- Popup: add opened/closed event [\#2650](https://github.com/youzan/vant/pull/2650)
+
+**Bug Fixes**
+
+- fix ContactList button position [\#2634](https://github.com/youzan/vant/pull/2634)
+- fix Toast clear in multiple mode [\#2635](https://github.com/youzan/vant/pull/2635)
+- fix SwipeCell maximum left offset [\#2633](https://github.com/youzan/vant/pull/2633)
+- fix Popup get-container error when destoryed [\#2679](https://github.com/youzan/vant/pull/2679)
+
+
 ## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
 `2019-01-24`
 

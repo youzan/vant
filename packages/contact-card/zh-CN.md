@@ -130,7 +130,6 @@ export default {
 />
 ```
 
-
 ### ContactCard API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -139,6 +138,12 @@ export default {
 | name | 联系人姓名 | `String` | - | - |
 | tel | 联系人手机号 | `String` | - | - |
 | add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
+
+### ContactCard Event
+
+| 事件名 | 说明 | 参数 |
+|------|------|------|
+| click | 点击时触发 | - |
 
 ### ContactList API
 
@@ -181,4 +186,4 @@ export default {
 |------|------|------|
 | id | 每位联系人的唯一标识 | `String | Number` |
 | name | 联系人姓名 | `String` |
-| tel | 联系人手机号 | `String` |
+| tel | 联系人手机号 | `String | Number` |

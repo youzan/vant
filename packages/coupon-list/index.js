@@ -6,7 +6,7 @@ import Button from '../button';
 import Coupon from '../coupon';
 
 const [sfc, bem, t] = use('coupon-list');
-const EMPTY_IMAGE = 'https://img.yzcdn.cn/v2/image/wap/trade/new_order/empty@2x.png';
+const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
 export default sfc({
   model: {
@@ -103,7 +103,7 @@ export default sfc({
     onClickExchangeButton() {
       this.$emit('exchange', this.currentCode);
 
-      // auto clear currentCode when not use v-model
+      // auto clear currentCode when not use vModel
       if (!this.code) {
         this.currentCode = '';
       }
@@ -123,21 +123,20 @@ export default sfc({
           list.scrollTop = card[index].$el.offsetTop - 100;
         }
       });
-    }
-  },
+    },
 
-  render(h) {
-    const ExchangeBar = this.showExchangeBar && (
-      <Field
-        v-model={this.currentCode}
-        clearable
-        border={false}
-        class={bem('field')}
-        placeholder={this.inputPlaceholder || t('placeholder')}
-        maxlength="20"
-      >
+    renderEmpty() {
+      return (
+        <div class={bem('empty')}>
+          <img src={EMPTY_IMAGE} />
+          <p>{t('empty')}</p>
+        </div>
+      );
+    },
+
+    renderExchangeButton() {
+      return (
         <Button
-          slot="button"
           size="small"
           type="danger"
           class={bem('exchange')}
@@ -146,14 +145,23 @@ export default sfc({
           disabled={this.buttonDisabled}
           onClick={this.onClickExchangeButton}
         />
-      </Field>
-    );
+      );
+    }
+  },
 
-    const Empty = (
-      <div class={bem('empty')}>
-        <img src={EMPTY_IMAGE} />
-        <p>{t('empty')}</p>
-      </div>
+  render(h) {
+    const ExchangeBar = this.showExchangeBar && (
+      <Field
+        vModel={this.currentCode}
+        clearable
+        border={false}
+        class={bem('field')}
+        placeholder={this.inputPlaceholder || t('placeholder')}
+        maxlength="20"
+        scopedSlots={{
+          button: this.renderExchangeButton
+        }}
+      />
     );
 
     const onChange = index => () => this.$emit('change', index);
@@ -171,7 +179,7 @@ export default sfc({
               nativeOnClick={onChange(index)}
             />
           ))}
-          {!this.coupons.length && Empty}
+          {!this.coupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );
@@ -182,7 +190,7 @@ export default sfc({
           {this.disabledCoupons.map(coupon => (
             <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
           ))}
-          {!this.disabledCoupons.length && Empty}
+          {!this.disabledCoupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );
@@ -190,12 +198,12 @@ export default sfc({
     return (
       <div class={bem()}>
         {ExchangeBar}
-        <Tabs v-model={this.tab} class={bem('tab')} line-width={120}>
+        <Tabs vModel={this.tab} class={bem('tab')} line-width={120}>
           {CouponTab}
           {DisabledCouponTab}
         </Tabs>
         <Button
-          v-show={this.showCloseButton}
+          vShow={this.showCloseButton}
           size="large"
           class={bem('close')}
           text={this.closeButtonText || t('close')}

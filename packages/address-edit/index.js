@@ -1,4 +1,5 @@
 import { use, isObj } from '../utils';
+import { isMobile } from '../utils/validate/mobile';
 import Area from '../area';
 import Field from '../field';
 import Popup from '../popup';
@@ -7,7 +8,6 @@ import Button from '../button';
 import Dialog from '../dialog';
 import Detail from './Detail';
 import SwitchCell from '../switch-cell';
-import validateMobile from '../utils/validate/mobile';
 
 const [sfc, bem, t] = use('address-edit');
 
@@ -55,7 +55,7 @@ export default sfc({
     },
     telValidator: {
       type: Function,
-      default: validateMobile
+      default: isMobile
     }
   },
 
@@ -211,6 +211,13 @@ export default sfc({
 
     setAddressDetail(value) {
       this.data.addressDetail = value;
+    },
+
+    onDetailBlur() {
+      // await for click search event
+      setTimeout(() => {
+        this.detailFocused = false;
+      });
     }
   },
 
@@ -224,7 +231,7 @@ export default sfc({
     return (
       <div class={bem()}>
         <Field
-          v-model={data.name}
+          vModel={data.name}
           clearable
           label={t('name')}
           placeholder={t('namePlaceholder')}
@@ -232,7 +239,7 @@ export default sfc({
           onFocus={onFocus('name')}
         />
         <Field
-          v-model={data.tel}
+          vModel={data.tel}
           clearable
           type="tel"
           label={t('tel')}
@@ -241,7 +248,7 @@ export default sfc({
           onFocus={onFocus('tel')}
         />
         <Field
-          v-show={this.showArea}
+          vShow={this.showArea}
           readonly
           label={t('area')}
           placeholder={t('areaPlaceholder')}
@@ -251,7 +258,7 @@ export default sfc({
           }}
         />
         <Detail
-          v-show={this.showDetail}
+          vShow={this.showDetail}
           focused={this.detailFocused}
           value={data.addressDetail}
           error={errorInfo.addressDetail}
@@ -259,9 +266,7 @@ export default sfc({
           searchResult={this.searchResult}
           showSearchResult={this.showSearchResult}
           onFocus={onFocus('addressDetail')}
-          onBlur={() => {
-            this.detailFocused = false;
-          }}
+          onBlur={this.onDetailBlur}
           onInput={this.onChangeDetail}
           onSelect-search={event => {
             this.$emit('select-search', event);
@@ -269,8 +274,8 @@ export default sfc({
         />
         {this.showPostal && (
           <Field
-            v-show={!hideBottomFields}
-            v-model={data.postalCode}
+            vShow={!hideBottomFields}
+            vModel={data.postalCode}
             type="tel"
             maxlength="6"
             label={t('postal')}
@@ -279,18 +284,18 @@ export default sfc({
             onFocus={onFocus('postalCode')}
           />
         )}
-        {this.$slots.default}
+        {this.slots()}
         {this.showSetDefault && (
           <SwitchCell
-            v-model={data.isDefault}
-            v-show={!hideBottomFields}
+            vModel={data.isDefault}
+            vShow={!hideBottomFields}
             title={t('defaultAddress')}
             onChange={event => {
               this.$emit('change-default', event);
             }}
           />
         )}
-        <div v-show={!hideBottomFields} class={bem('buttons')}>
+        <div vShow={!hideBottomFields} class={bem('buttons')}>
           <Button
             block
             loading={this.isSaving}
@@ -308,7 +313,7 @@ export default sfc({
           )}
         </div>
         <Popup
-          v-model={this.showAreaPopup}
+          vModel={this.showAreaPopup}
           position="bottom"
           lazyRender={false}
           getContainer="body"

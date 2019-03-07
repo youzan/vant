@@ -1,16 +1,15 @@
 import { use, isObj, isDef } from '../utils';
 import Icon from '../icon';
 import Cell from '../cell';
-import CellMixin from '../mixins/cell';
+import { cellProps } from '../cell/shared';
 
 const [sfc, bem] = use('field');
 
 export default sfc({
   inheritAttrs: false,
 
-  mixins: [CellMixin],
-
   props: {
+    ...cellProps,
     error: Boolean,
     leftIcon: String,
     rightIcon: String,
@@ -163,40 +162,62 @@ export default sfc({
       if (height) {
         input.style.height = height + 'px';
       }
+    },
+
+    renderInput() {
+      const inputProps = {
+        ref: 'input',
+        class: bem('control', this.inputAlign),
+        domProps: {
+          value: this.value
+        },
+        attrs: {
+          ...this.$attrs,
+          readonly: this.readonly
+        },
+        on: this.listeners
+      };
+
+      if (this.type === 'textarea') {
+        return <textarea {...inputProps} />;
+      }
+
+      return <input type={this.type} {...inputProps} />;
+    },
+
+    renderLeftIcon() {
+      const showLeftIcon = this.slots('left-icon') || this.leftIcon;
+      if (showLeftIcon) {
+        return (
+          <div class={bem('left-icon')} onClick={this.onClickLeftIcon}>
+            {this.slots('left-icon') || <Icon name={this.leftIcon} />}
+          </div>
+        );
+      }
+    },
+
+    renderRightIcon() {
+      const { slots } = this;
+      const showRightIcon = slots('right-icon') || slots('icon') || this.rightIcon || this.icon;
+      if (showRightIcon) {
+        return (
+          <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
+            {slots('right-icon') || slots('icon') || <Icon name={this.rightIcon || this.icon} />}
+          </div>
+        );
+      }
     }
   },
 
   render(h) {
-    const { type, labelAlign, $slots: slots } = this;
+    const { slots, labelAlign } = this;
 
-    const showLeftIcon = slots['left-icon'] || this.leftIcon;
-    const showRightIcon = slots['right-icon'] || slots.icon || this.rightIcon || this.icon;
-
-    const LeftIcon = showLeftIcon && (
-      <div slot="icon" class={bem('left-icon')} onClick={this.onClickLeftIcon}>
-        {slots['left-icon'] || <Icon name={this.leftIcon} />}
-      </div>
-    );
-    const RightIcon = showRightIcon && (
-      <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-        {slots['right-icon'] || slots.icon || <Icon name={this.rightIcon || this.icon} />}
-      </div>
-    );
-
-    const inputProps = {
-      ref: 'input',
-      class: bem('control', this.inputAlign),
-      domProps: {
-        value: this.value
-      },
-      attrs: {
-        ...this.$attrs,
-        readonly: this.readonly
-      },
-      on: this.listeners
+    const scopedSlots = {
+      icon: this.renderLeftIcon
     };
-
-    const Input = type === 'textarea' ? <textarea {...inputProps} /> : <input type={type} {...inputProps} />;
+    if (slots('label')) {
+      scopedSlots.title = () => slots('label');
+    }
 
     return (
       <Cell
@@ -206,20 +227,20 @@ export default sfc({
         border={this.border}
         isLink={this.isLink}
         required={this.required}
+        titleClass={bem('label', labelAlign)}
         class={bem({
           error: this.error,
           disabled: this.$attrs.disabled,
           [`label-${labelAlign}`]: labelAlign,
-          'min-height': type === 'textarea' && !this.autosize
+          'min-height': this.type === 'textarea' && !this.autosize
         })}
+        scopedSlots={scopedSlots}
       >
-        {LeftIcon}
-        {h('template', { slot: 'title' }, slots.label)}
         <div class={bem('body')}>
-          {Input}
+          {this.renderInput()}
           {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
-          {RightIcon}
-          {slots.button && <div class={bem('button')}>{slots.button}</div>}
+          {this.renderRightIcon()}
+          {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
         {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
       </Cell>

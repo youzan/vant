@@ -1,16 +1,17 @@
 import { use, isDef } from '../utils';
 import { raf } from '../utils/raf';
 import Cell from '../cell';
-import CellMixin from '../mixins/cell';
-import FindParent from '../mixins/find-parent';
+import { cellProps } from '../cell/shared';
+import { FindParentMixin } from '../mixins/find-parent';
 
 const [sfc, bem] = use('collapse-item');
 const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
 export default sfc({
-  mixins: [CellMixin, FindParent],
+  mixins: [FindParentMixin],
 
   props: {
+    ...cellProps,
     name: [String, Number],
     disabled: Boolean,
     isLink: {
@@ -73,7 +74,7 @@ export default sfc({
         this.inited = true;
       }
 
-      this.$nextTick(() => {
+      raf(() => {
         const { content, wrapper } = this.$refs;
         if (!content || !wrapper) {
           return;
@@ -95,7 +96,10 @@ export default sfc({
       }
 
       const { parent } = this;
-      const name = parent.accordion && this.currentName === parent.value ? '' : this.currentName;
+      const name =
+        parent.accordion && this.currentName === parent.value
+          ? ''
+          : this.currentName;
       const expanded = !this.expanded;
       this.parent.switch(name, expanded);
     },
@@ -110,26 +114,38 @@ export default sfc({
   },
 
   render(h) {
+    const titleSlots = CELL_SLOTS.reduce((slots, name) => {
+      if (this.slots(name)) {
+        slots[name] = () => this.slots(name);
+      }
+      return slots;
+    }, {});
+
+    if (this.slots('value')) {
+      titleSlots.default = () => this.slots('value');
+    }
+
     const Title = (
       <Cell
-        class={bem('title', { disabled: this.disabled, expanded: this.expanded })}
+        class={bem('title', {
+          disabled: this.disabled,
+          expanded: this.expanded
+        })}
         onClick={this.onClick}
+        scopedSlots={titleSlots}
         {...{ props: this.$props }}
-      >
-        {this.$slots.value}
-        {CELL_SLOTS.map(slot => h('template', { slot }, this.$slots[slot]))}
-      </Cell>
+      />
     );
 
     const Content = this.inited && (
       <div
-        v-show={this.show}
+        vShow={this.show}
         ref="wrapper"
         class={bem('wrapper')}
         onTransitionend={this.onTransitionEnd}
       >
         <div ref="content" class={bem('content')}>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </div>
     );

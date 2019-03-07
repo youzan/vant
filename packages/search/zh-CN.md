@@ -41,6 +41,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   v-model="value"
   placeholder="请输入搜索关键词"
   show-action
+  shape="round"
   @search="onSearch"
 >
   <div slot="action" @click="onSearch">搜索</div>
@@ -53,6 +54,8 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| label | 搜索框左侧文本 | `String` | - | 1.6.6 |
+| shape | 形状，可选值为 `round` | `String` | `square` | 1.6.6 |
 | background | 搜索框背景色 | `String` | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
@@ -76,3 +79,4 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 |------|------|
 | action | 自定义搜索框右侧按钮，需要在`showAction`为 true 时才会显示 |
 | left-icon | 自定义输入框头部图标 |
+| label | 自定义搜索框左侧文本 |

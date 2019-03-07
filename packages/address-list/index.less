@@ -23,7 +23,7 @@
 .van-address-item {
   padding: 15px;
 
-  .van-cell__value {
+  &__value {
     color: @text-color;
     padding-right: 34px;
     position: relative;
@@ -36,16 +36,24 @@
     box-sizing: border-box;
   }
 
-  .van-radio__input {
+  .van-radio__icon {
     top: 50%;
     left: 0;
-    font-size: 16px;
+    height: 16px;
     position: absolute;
+    line-height: 16px;
     transform: translate(0, -50%);
+
+    .van-icon {
+      width: 16px;
+      height: 16px;
+      font-size: 12px;
+    }
   }
 
-  .van-icon-checked {
-    color: @red;
+  .van-radio__icon--checked .van-icon {
+    border-color: @red;
+    background-color: @red;
   }
 
   &__name {
@@ -62,10 +70,6 @@
   }
 
   &--unswitchable {
-    .van-radio__input {
-      display: none;
-    }
-
     .van-radio__label {
       padding-left: 0;
     }

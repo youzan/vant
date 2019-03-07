@@ -1,4 +1,4 @@
-import deepClone from '../utils/deep-clone';
+import { deepClone } from '../utils/deep-clone';
 import { use, isObj, range } from '../utils';
 
 const DEFAULT_DURATION = 200;

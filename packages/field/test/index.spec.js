@@ -163,3 +163,27 @@ test('clearable', () => {
   expect(wrapper.emitted('input')[0][0]).toEqual('');
   expect(wrapper.emitted('clear')).toBeTruthy();
 });
+
+test('render label slot', () => {
+  const wrapper = mount({
+    template: `
+      <field label="Default Label">
+        <template v-slot:label>Custom Label</template>
+      </field>
+    `,
+    components: {
+      Field
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render right icon with icon prop for old version', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      icon: 'success'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

@@ -1,21 +1,27 @@
 import { use } from '../utils';
 import Loading from '../loading';
-import scrollUtils from '../utils/scroll';
-import Touch from '../mixins/touch';
+import { TouchMixin } from '../mixins/touch';
+import { getScrollTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem, t] = use('pull-refresh');
+const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
 export default sfc({
-  mixins: [Touch],
+  mixins: [TouchMixin],
 
   props: {
     disabled: Boolean,
+    successText: String,
     pullingText: String,
     loosingText: String,
     loadingText: String,
     value: {
       type: Boolean,
       required: true
+    },
+    successDuration: {
+      type: Number,
+      default: 500
     },
     animationDuration: {
       type: Number,
@@ -37,19 +43,27 @@ export default sfc({
 
   computed: {
     untouchable() {
-      return this.status === 'loading' || this.disabled;
+      return this.status === 'loading' || this.status === 'success' || this.disabled;
     }
   },
 
   watch: {
-    value(val) {
+    value(loading) {
       this.duration = this.animationDuration;
-      this.getStatus(val ? this.headHeight : 0, val);
+
+      if (!loading && this.successText) {
+        this.status = 'success';
+        setTimeout(() => {
+          this.setStatus(0);
+        }, this.successDuration);
+      } else {
+        this.setStatus(loading ? this.headHeight : 0, loading);
+      }
     }
   },
 
   mounted() {
-    this.scrollEl = scrollUtils.getScrollEventTarget(this.$el);
+    this.scrollEl = getScrollEventTarget(this.$el);
   },
 
   methods: {
@@ -75,7 +89,7 @@ export default sfc({
 
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
-          this.getStatus(this.ease(this.deltaY));
+          this.setStatus(this.ease(this.deltaY));
           event.cancelable && event.preventDefault();
         }
       }
@@ -85,17 +99,17 @@ export default sfc({
       if (!this.untouchable && this.ceiling && this.deltaY) {
         this.duration = this.animationDuration;
         if (this.status === 'loosing') {
-          this.getStatus(this.headHeight, true);
+          this.setStatus(this.headHeight, true);
           this.$emit('input', true);
           this.$emit('refresh');
         } else {
-          this.getStatus(0);
+          this.setStatus(0);
         }
       }
     },
 
     getCeiling() {
-      this.ceiling = scrollUtils.getScrollTop(this.scrollEl) === 0;
+      this.ceiling = getScrollTop(this.scrollEl) === 0;
       return this.ceiling;
     },
 
@@ -108,7 +122,7 @@ export default sfc({
           : Math.round(headHeight * 1.5 + (height - headHeight * 2) / 4);
     },
 
-    getStatus(height, isLoading) {
+    setStatus(height, isLoading) {
       this.height = height;
 
       const status = isLoading
@@ -133,8 +147,8 @@ export default sfc({
       transform: `translate3d(0,${this.height}px, 0)`
     };
 
-    const Status = this.$slots[status] || [
-      (status === 'pulling' || status === 'loosing') && <div class={bem('text')}>{text}</div>,
+    const Status = this.slots(status) || [
+      TEXT_STATUS.indexOf(status) !== -1 && <div class={bem('text')}>{text}</div>,
       status === 'loading' && (
         <div class={bem('loading')}>
           <Loading />
@@ -154,7 +168,7 @@ export default sfc({
           onTouchcancel={this.onTouchEnd}
         >
           <div class={bem('head')}>{Status}</div>
-          {this.$slots.default}
+          {this.slots()}
         </div>
       </div>
     );

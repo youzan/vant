@@ -107,6 +107,10 @@ export default sfc({
       this.$emit(type);
     },
 
+    onFocus(event) {
+      this.$emit('focus', event);
+    },
+
     onBlur(event) {
       this.currentValue = this.range(this.currentValue);
       this.$emit('blur', event);
@@ -135,6 +139,7 @@ export default sfc({
           value={this.currentValue}
           disabled={this.disabled || this.disableInput}
           onInput={this.onInput}
+          onFocus={this.onFocus}
           onBlur={this.onBlur}
         />
         <button

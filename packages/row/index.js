@@ -32,7 +32,7 @@ export default sfc({
           [`justify-${justify}`]: flex && justify
         })}
       >
-        {this.$slots.default}
+        {this.slots()}
       </this.tag>
     );
   }

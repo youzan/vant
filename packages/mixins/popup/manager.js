@@ -1,6 +1,6 @@
-import Vue from 'vue';
 import context from './context';
 import Overlay from '../../overlay';
+import { mount } from '../../utils/functional';
 
 const defaultConfig = {
   className: '',
@@ -35,10 +35,11 @@ export default {
     let { modal } = context;
 
     if (!modal) {
-      modal = new (Vue.extend(Overlay))({
-        el: document.createElement('div')
+      modal = mount(Overlay, {
+        on: {
+          click: this.onClick
+        }
       });
-      modal.$on('click', this.onClick);
 
       context.modal = modal;
     }
@@ -63,7 +64,14 @@ export default {
     if (context.top) {
       const { vm } = context.top;
       vm.$emit('click-overlay');
-      vm.closeOnClickOverlay && vm.$emit('input', false);
+
+      if (vm.closeOnClickOverlay) {
+        if (vm.onClickOverlay) {
+          vm.onClickOverlay();
+        } else {
+          vm.close();
+        }
+      }
     }
   }
 };

@@ -2,16 +2,24 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-password-input
-        :value="value"
+        :value="value1"
         :info="$t('info')"
-        @focus="showKeyboard = true"
+        @focus="keyboard = 'value1'"
       />
 
       <van-number-keyboard
-        :show="showKeyboard"
+        :show="!!keyboard"
         @input="onInput"
         @delete="onDelete"
-        @blur="showKeyboard = false"
+        @blur="keyboard = ''"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('removeMask')">
+      <van-password-input
+        :value="value2"
+        :mask="false"
+        @focus="keyboard = 'value2'"
       />
     </demo-block>
   </demo-section>
@@ -21,26 +29,32 @@
 export default {
   i18n: {
     'zh-CN': {
-      info: '密码为 6 位数字'
+      info: '密码为 6 位数字',
+      removeMask: '明文展示'
     },
     'en-US': {
-      info: 'Some tips'
+      info: 'Some tips',
+      removeMask: 'Remove Mask'
     }
   },
 
   data() {
     return {
-      value: '123',
-      showKeyboard: true
+      value1: '123',
+      value2: '123',
+      keyboard: 'value1'
     };
   },
 
   methods: {
     onInput(key) {
-      this.value = (this.value + key).slice(0, 6);
+      const { keyboard } = this;
+      this[keyboard] = (this[keyboard] + key).slice(0, 6);
     },
+
     onDelete() {
-      this.value = this.value.slice(0, this.value.length - 1);
+      const { keyboard } = this;
+      this[keyboard] = this[keyboard].slice(0, this[keyboard].length - 1);
     }
   }
 };

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unswitchable 1`] = `
+<div class="van-address-list">
+  <div class="van-radio-group">
+    <div class="van-cell van-address-item van-address-item--unswitchable">
+      <div class="van-cell__value van-cell__value--alone van-address-item__value">
+        <div class="van-address-item__name">张三，13000000000</div>
+        <div class="van-address-item__address">浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室</div>
+      </div><i class="van-icon van-icon-edit van-address-item__edit">
+        <!----></i>
+    </div>
+    <div class="van-cell van-address-item van-address-item--unswitchable">
+      <div class="van-cell__value van-cell__value--alone van-address-item__value">
+        <div class="van-address-item__name">李四，1310000000</div>
+        <div class="van-address-item__address">浙江省杭州市拱墅区莫干山路 50 号</div>
+      </div><i class="van-icon van-icon-edit van-address-item__edit">
+        <!----></i>
+    </div>
+  </div><button class="van-button van-button--danger van-button--large van-button--square van-address-list__add"><span class="van-button__text">新增地址</span></button>
+</div>
+`;

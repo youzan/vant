@@ -1,8 +1,16 @@
 @import '../style/var';
 
 .van-field {
-  .van-cell__title {
+  &__label {
     max-width: 90px;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 
   &__body {
@@ -41,14 +49,16 @@
 
     /* for ios wechat */
     &[type="date"],
-    &[type="time"] {
+    &[type="time"],
+    &[type="datetime-local"] {
       min-height: 24px;
     }
   }
 
   &__clear,
   &__icon,
-  &__button {
+  &__button,
+  &__right-icon {
     flex-shrink: 0;
   }
 
@@ -108,20 +118,6 @@
   &--min-height {
     .van-field__control {
       min-height: 60px;
-    }
-  }
-
-  &--label {
-    &-center {
-      .van-cell__title {
-        text-align: center;
-      }
-    }
-
-    &-right {
-      .van-cell__title {
-        text-align: right;
-      }
     }
   }
 }

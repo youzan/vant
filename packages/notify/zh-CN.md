@@ -54,3 +54,4 @@ export default {
 | duration | 展示时长(ms)，值为 0 时，notify 不会消失 | `Number` | `3000` | 1.4.7 |
 | color | 字体颜色 | `String` | `#fff` | 1.4.7 |
 | background | 背景颜色 | `String` | `#f44` | 1.4.7 |
+| className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |

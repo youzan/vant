@@ -51,6 +51,12 @@
     border: 1px solid @button-primary-border-color;
   }
 
+  &--info {
+    color: @button-info-color;
+    background-color: @button-info-background-color;
+    border: 1px solid @button-info-border-color;
+  }
+
   &--danger {
     color: @button-danger-color;
     background-color: @button-danger-background-color;
@@ -68,6 +74,10 @@
 
     &.van-button--primary {
       color: @button-primary-background-color;
+    }
+
+    &.van-button--info {
+      color: @button-info-background-color;
     }
 
     &.van-button--danger {
@@ -146,5 +156,11 @@
 
   &--square {
     border-radius: 0;
+  }
+
+  &__loading-text {
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
   }
 }

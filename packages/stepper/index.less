@@ -5,11 +5,12 @@
 
   &__minus,
   &__plus {
-    width: 40px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     box-sizing: border-box;
-    background-color: @white;
-    border: 1px solid @border-color;
+    background-color: @stepper-background-color;
+    border: 0;
+    margin: 1px;
     position: relative;
     padding: 5px;
     vertical-align: middle;
@@ -33,7 +34,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: @gray-darker;
+      background-color: @text-color;
     }
 
     &:active {
@@ -41,7 +42,7 @@
     }
 
     &--disabled {
-      background-color: @background-color;
+      background-color: @stepper-button-disabled-color;
 
       &::before,
       &::after {
@@ -50,12 +51,12 @@
     }
 
     &--disabled:active {
-      background-color: @background-color;
+      background-color: @stepper-button-disabled-color;
     }
   }
 
   &__minus {
-    border-radius: 2px 0 0 2px;
+    border-radius: @stepper-border-radius 0 0 @stepper-border-radius;
 
     &::after {
       display: none;
@@ -63,18 +64,20 @@
   }
 
   &__plus {
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 @stepper-border-radius @stepper-border-radius 0;
   }
 
   &__input {
-    width: 33px;
+    width: 30px;
     height: 26px;
     padding: 1px;
-    border: 1px solid @border-color;
+    border: 0;
+    margin: 1px;
+    background-color: @stepper-background-color;
     border-width: 1px 0;
     border-radius: 0;
     box-sizing: content-box;
-    color: @gray-darker;
+    color: @text-color;
     font-size: 14px;
     vertical-align: middle;
     text-align: center;
@@ -82,7 +85,7 @@
 
     &[disabled] {
       color: @gray;
-      background-color: @background-color;
+      background-color: @stepper-input-disabled-color;
     }
   }
 

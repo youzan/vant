@@ -1,6 +1,6 @@
 import { use, range } from '../utils';
-import Popup from '../mixins/popup';
-import Touch from '../mixins/touch';
+import { PopupMixin } from '../mixins/popup';
+import { TouchMixin } from '../mixins/touch';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
@@ -15,15 +15,15 @@ function getDistance(touches) {
 }
 
 export default sfc({
-  mixins: [Popup, Touch],
+  mixins: [PopupMixin, TouchMixin],
 
   props: {
     images: Array,
+    className: null,
     lazyLoad: Boolean,
     asyncClose: Boolean,
     startPosition: Number,
     showIndicators: Boolean,
-    className: [String, Object, Array],
     loop: {
       type: Boolean,
       default: true
@@ -219,9 +219,9 @@ export default sfc({
       <Swipe
         ref="swipe"
         loop={this.loop}
-        indicator-color="white"
-        initial-swipe={this.startPosition}
-        show-indicators={this.showIndicators}
+        indicatorColor="white"
+        initialSwipe={this.startPosition}
+        showIndicators={this.showIndicators}
         onChange={this.onChange}
       >
         {images.map((image, index) => {
@@ -237,7 +237,7 @@ export default sfc({
           };
           return (
             <SwipeItem>
-              {this.lazyLoad ? <img v-lazy={image} {...props} /> : <img src={image} {...props} />}
+              {this.lazyLoad ? <img vLazy={image} {...props} /> : <img src={image} {...props} />}
             </SwipeItem>
           );
         })}

@@ -169,7 +169,7 @@ export default {
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
-### Checkbox Slot
+### Checkbox 插槽
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|

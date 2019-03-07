@@ -44,3 +44,9 @@ exports[`drag and show left part 5`] = `
   </div>
 </div>
 `;
+
+exports[`width equals zero 1`] = `
+<div class="van-swipe-cell">
+  <div class="van-swipe-cell__wrapper" style="transform: translate3d(0px, 0, 0);"></div>
+</div>
+`;

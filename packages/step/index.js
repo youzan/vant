@@ -30,7 +30,7 @@ export default sfc({
     return (
       <div class={['van-hairline', bem([direction, { [status]: status }])]}>
         <div class={bem('title')} style={titleStyle}>
-          {this.$slots.default}
+          {this.slots()}
         </div>
         <div class={bem('circle-container')}>
           {status !== 'process' ? (

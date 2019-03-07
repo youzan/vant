@@ -1,13 +1,17 @@
 import SwitchCell from '..';
 import { mount } from '../../../test/utils';
 
-test('emit event', () => {
-  const wrapper = mount(SwitchCell);
-
-  wrapper.vm.$on('input', value => {
-    wrapper.setProps({ value });
+test('change event', () => {
+  const onChange = jest.fn();
+  const wrapper = mount(SwitchCell, {
+    context: {
+      on: {
+        change: onChange
+      }
+    }
   });
+
   wrapper.find('.van-switch').trigger('click');
 
-  expect(wrapper.emitted('change')).toBeTruthy();
+  expect(onChange.mock.calls[0]).toBeTruthy();
 });

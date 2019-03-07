@@ -1,10 +1,10 @@
 import { use } from '../utils';
-import Touch from '../mixins/touch';
+import { TouchMixin } from '../mixins/touch';
 
 const [sfc, bem] = use('slider');
 
 export default sfc({
-  mixins: [Touch],
+  mixins: [TouchMixin],
 
   props: {
     min: Number,
@@ -96,7 +96,7 @@ export default sfc({
             onTouchend={this.onTouchEnd}
             onTouchcancel={this.onTouchEnd}
           >
-            {this.$slots.button || <div class={bem('button')} />}
+            {this.slots('button') || <div class={bem('button')} />}
           </div>
         </div>
       </div>

@@ -31,6 +31,7 @@ test('basic mode', async () => {
   titles.at(0).trigger('click');
   expect(wrapper.vm.active).toEqual(['first']);
 
+  await later();
   titles.at(1).trigger('click');
   expect(wrapper.vm.active).toEqual(['first', 1]);
 
@@ -61,4 +62,30 @@ it('accordion', async () => {
 
   titles.at(0).trigger('click');
   expect(wrapper.vm.active).toEqual('');
+});
+
+it('render collapse-item slot', () => {
+  const wrapper = mount({
+    template: `
+      <collapse v-model="active">
+        <collapse-item>
+          <template v-slot:title>this is title</template>
+          <template v-slot:value>this is value</template>
+          <template v-slot:icon>this is icon</template>
+          <template v-slot:right-icon>this is right icon</template>
+        </collapse-item>
+      </collapse>
+      `,
+    components: {
+      Collapse,
+      CollapseItem
+    },
+    data() {
+      return {
+        active: []
+      };
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

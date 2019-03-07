@@ -12,9 +12,10 @@ Vue.use(Button);
 #### Type
 
 ```html
-<van-button type="primary">Primary</van-button>
-<van-button type="danger">Danger</van-button>
 <van-button type="default">Default</van-button>
+<van-button type="primary">Primary</van-button>
+<van-button type="info">Info</van-button>
+<van-button type="danger">Danger</van-button>
 <van-button type="warning">Warning</van-button>
 ```
 
@@ -36,7 +37,7 @@ Vue.use(Button);
 
 ```html 
 <van-button loading type="primary" />
-<van-button loading type="primary" />
+<van-button loading type="primary" loading-text="Loading..." />
 ```
 
 #### Shape
@@ -59,17 +60,22 @@ Vue.use(Button);
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| type | Can be set to `primary` `warning` `danger` | `String` | `default` |
+| type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
 | tag | Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |
 | plain | Whether to be plain button | `Boolean` | `false` |
-| disabled | Whether to disable button | `Boolean` | `false` |
-| loading | Whether show loading status | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |
 | round | Whether to be round button | `Boolean` | `false` |
 | square | Whether to be square button | `Boolean` | `false` |
+| disabled | Whether to disable button | `Boolean` | `false` |
+| loading | Whether show loading status | `Boolean` | `false` |
+| loading-text | Loading text | `String` | - |
+| loading-size | Loading icon size | `String` | `20px` |
+| url | Link URL | `String` | - |
+| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| replace | If true, the navigation will not leave a history record | `String` | `false` |
 
 ### Event
 

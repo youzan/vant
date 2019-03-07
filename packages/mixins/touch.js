@@ -9,7 +9,7 @@ function getDirection(x, y) {
   return '';
 }
 
-export default {
+export const TouchMixin = {
   data() {
     return {
       direction: ''

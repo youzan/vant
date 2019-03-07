@@ -1,12 +1,12 @@
 import { use, range } from '../utils';
-import Touch from '../mixins/touch';
-import ClickOutside from '../mixins/click-outside';
+import { TouchMixin } from '../mixins/touch';
+import { ClickOutsideMixin } from '../mixins/click-outside';
 
 const [sfc, bem] = use('swipe-cell');
 const THRESHOLD = 0.15;
 
 export default sfc({
-  mixins: [Touch, ClickOutside({
+  mixins: [TouchMixin, ClickOutsideMixin({
     event: 'touchstart',
     method: 'onClick'
   })],
@@ -146,17 +146,17 @@ export default sfc({
             this.swipe = false;
           }}
         >
-          {this.leftWidth && (
+          {this.leftWidth ? (
             <div class={bem('left')} onClick={onClick('left', true)}>
-              {this.$slots.left}
+              {this.slots('left')}
             </div>
-          )}
-          {this.$slots.default}
-          {this.rightWidth && (
+          ) : null}
+          {this.slots()}
+          {this.rightWidth ? (
             <div class={bem('right')} onClick={onClick('right', true)}>
-              {this.$slots.right}
+              {this.slots('right')}
             </div>
-          )}
+          ) : null}
         </div>
       </div>
     );
