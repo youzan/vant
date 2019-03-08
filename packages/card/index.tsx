@@ -94,7 +94,7 @@ function Card(
   const OriginPrice = showOriginPrice && (
     <div class={bem('origin-price')}>
       {slots['origin-price']
-        ? slots['origin-price']
+        ? slots['origin-price']()
         : `${props.currency} ${props.originPrice}`}
     </div>
   );
