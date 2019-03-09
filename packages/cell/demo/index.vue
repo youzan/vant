@@ -71,6 +71,21 @@
       />
     </demo-block>
 
+    <demo-block :title="$t('groupTitle')">
+      <van-cell-group :title="`${$t('group')} 1`">
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+        />
+      </van-cell-group>
+      <van-cell-group :title="`${$t('group')} 2`">
+        <van-cell
+          :title="$t('cell')"
+          :value="$t('content')"
+        />
+      </van-cell-group>
+    </demo-block>
+
     <demo-block :title="$t('advancedUsage')">
       <van-cell
         :value="$t('content')"
@@ -107,6 +122,8 @@ export default {
       showIcon: '展示图标',
       showArrow: '展示箭头',
       largeSize: '单元格大小',
+      group: '分组',
+      groupTitle: '分组标题',
       router: '页面跳转'
     },
     'en-US': {
@@ -115,6 +132,8 @@ export default {
       showIcon: 'Left Icon',
       showArrow: 'Link',
       largeSize: 'Size',
+      group: 'Group',
+      groupTitle: 'Group Title',
       router: 'Router'
     }
   }
