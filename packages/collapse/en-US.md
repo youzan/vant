@@ -77,6 +77,7 @@ export default {
 |------|------|------|------|
 | v-model | names of current active panels | `Array | String | Number` | - |
 | accordion | Whether to be accordion mode | `Boolean` | `false` |
+| border | Whether to show outer border | `Boolean` | `true` |
 
 ### Collapse Event
 

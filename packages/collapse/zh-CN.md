@@ -87,8 +87,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前展开面板的 name | `Array | String | Number` | - |
-| accordion | 是否开启手风琴模式 | `Boolean` | `false` |
+| v-model | 当前展开面板的 name | `Array | String | Number` | - | - |
+| accordion | 是否开启手风琴模式 | `Boolean` | `false` | - |
+| border | 是否显示外边框 | `Boolean` | `true` | 1.6.9 |
 
 ### Collapse Event
 

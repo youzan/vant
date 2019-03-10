@@ -4,7 +4,7 @@ import { later, mount } from '../../../test/utils';
 
 const component = {
   template: `
-  <collapse v-model="active" :accordion="accordion">
+  <collapse v-model="active" :accordion="accordion" :border="border">
     <collapse-item title="a" name="first">content</collapse-item>
     <collapse-item title="b">content</collapse-item>
     <collapse-item title="c">content</collapse-item>
@@ -15,7 +15,11 @@ const component = {
     CollapseItem
   },
   props: {
-    accordion: Boolean
+    accordion: Boolean,
+    border: {
+      type: Boolean,
+      default: true
+    }
   },
   data() {
     return {
@@ -84,6 +88,16 @@ it('render collapse-item slot', () => {
       return {
         active: []
       };
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('disable border', () => {
+  const wrapper = mount(component, {
+    propsData: {
+      border: false
     }
   });
 
