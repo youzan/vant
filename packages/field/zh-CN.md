@@ -120,6 +120,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | label | 输入框左侧文本 | `String` | - | - |
 | value | 当前输入的值 | `String | Number` | - | - |
 | type | 可设置为原生类型, 如 `number` `tel` `textarea` | `String` | `text` | - |
+| size | 大小，可选值为 `large` | `String` | - | 1.6.9 |
 | border | 是否显示内边框 | `Boolean` | `true` | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | readonly | 是否只读 | `Boolean` | `false` | - |
