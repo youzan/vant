@@ -187,3 +187,12 @@ test('render right icon with icon prop for old version', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('size prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      size: 'large'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
