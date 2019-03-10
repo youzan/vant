@@ -18,6 +18,10 @@ export default sfc({
     activeColor: {
       type: String,
       default: GREEN
+    },
+    activeIcon: {
+      type: String,
+      default: 'checked'
     }
   },
 
