@@ -11,6 +11,10 @@ export default sfc({
   props: {
     ...pickerProps,
     columns: Array,
+    defaultIndex: {
+      type: Number,
+      default: 0
+    },
     valueKey: {
       type: String,
       default: 'text'
@@ -185,7 +189,7 @@ export default sfc({
               valueKey={this.valueKey}
               className={item.className}
               itemHeight={this.itemHeight}
-              defaultIndex={item.defaultIndex}
+              defaultIndex={item.defaultIndex || this.defaultIndex}
               visibleItemCount={this.visibleItemCount}
               initialOptions={this.simple ? item : item.values}
               onChange={() => {
