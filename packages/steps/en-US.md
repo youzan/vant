@@ -30,7 +30,7 @@ export default {
 }
 ```
 
-#### Custom Color
+#### Custom Style
 
 ```html
 <van-steps
