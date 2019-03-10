@@ -7,8 +7,12 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
-      <van-picker :columns="$t('column2')" />
+    <demo-block :title="$t('defaultIndex')">
+      <van-picker
+        :columns="$t('column1')"
+        :default-index="2"
+        @change="onChange1"
+      />
     </demo-block>
 
     <demo-block :title="$t('title3')">
@@ -19,6 +23,10 @@
         @cancel="onCancel"
         @confirm="onConfirm"
       />
+    </demo-block>
+
+    <demo-block :title="$t('title2')">
+      <van-picker :columns="$t('column2')" />
     </demo-block>
 
     <demo-block :title="$t('title4')">
@@ -45,6 +53,7 @@ export default {
       title2: '禁用选项',
       title3: '展示顶部栏',
       title4: '多列联动',
+      defaultIndex: '默认选中项',
       column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       column2: [
         { text: '杭州', disabled: true },
@@ -62,6 +71,7 @@ export default {
       title2: 'Disable Option',
       title3: 'Show Toolbar',
       title4: 'Multi Columns',
+      defaultIndex: 'Default Index',
       column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       column2: [
         { text: 'Delaware', disabled: true },
