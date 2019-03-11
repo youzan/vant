@@ -11,7 +11,6 @@ import { Mods } from '../utils/use/bem';
 
 export type CellProps = RouteProps &
   SharedCellProps & {
-    size?: string;
     clickable?: boolean;
     arrowDirection?: string;
   };
@@ -102,7 +101,6 @@ function Cell(
 Cell.props = {
   ...cellProps,
   ...routeProps,
-  size: String,
   clickable: Boolean,
   arrowDirection: String
 };
