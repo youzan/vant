@@ -10,6 +10,7 @@ export default sfc({
 
   props: {
     ...cellProps,
+    size: String,
     error: Boolean,
     leftIcon: String,
     rightIcon: String,
@@ -222,6 +223,7 @@ export default sfc({
     return (
       <Cell
         icon={this.leftIcon}
+        size={this.size}
         title={this.label}
         center={this.center}
         border={this.border}
