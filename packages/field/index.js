@@ -10,7 +10,6 @@ export default sfc({
 
   props: {
     ...cellProps,
-    size: String,
     error: Boolean,
     leftIcon: String,
     rightIcon: String,
