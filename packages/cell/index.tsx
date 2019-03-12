@@ -18,6 +18,7 @@ export type CellProps = RouteProps &
 export type CellSlots = DefaultSlots & {
   icon?: ScopedSlot;
   title?: ScopedSlot;
+  label?: ScopedSlot;
   extra?: ScopedSlot;
   'right-icon'?: ScopedSlot;
 };
@@ -38,11 +39,18 @@ function Cell(
 
   const showTitle = slots.title || isDef(title);
   const showValue = slots.default || isDef(value);
+  const showLabel = slots.label || isDef(label);
+
+  const Label = showLabel && (
+    <div class={[bem('label'), props.labelClass]}>
+      {slots.label ? slots.label() : label}
+    </div>
+  );
 
   const Title = showTitle && (
     <div class={[bem('title'), props.titleClass]}>
       {slots.title ? slots.title() : <span>{title}</span>}
-      {label && <div class={[bem('label'), props.labelClass]}>{label}</div>}
+      {Label}
     </div>
   );
 
