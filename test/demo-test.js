@@ -10,8 +10,8 @@ const empty = {
 Vue.component('demo-block', empty);
 Vue.component('demo-section', empty);
 
-export default function(Demo) {
-  test(`renders demo correctly`, () => {
+export default function (Demo) {
+  test('renders demo correctly', () => {
     if (Demo.i18n) {
       Locale.add(Demo.i18n);
     }

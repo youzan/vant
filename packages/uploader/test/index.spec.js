@@ -69,8 +69,11 @@ it('before read return false', () => {
     }
   });
 
+  const input = wrapper.find('input');
+
   wrapper.vm.onChange(file);
   expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(input.element.value).toEqual('');
 });
 
 test('file size overlimit', async () => {
