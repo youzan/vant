@@ -87,8 +87,9 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前展开面板的 name | `Array | String | Number` | - |
-| accordion | 是否开启手风琴模式 | `Boolean` | `false` |
+| v-model | 当前展开面板的 name | `Array | String | Number` | - | - |
+| accordion | 是否开启手风琴模式 | `Boolean` | `false` | - |
+| border | 是否显示外边框 | `Boolean` | `true` | 1.6.9 |
 
 ### Collapse Event
 
@@ -102,6 +103,7 @@ export default {
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | `String | Number` | `index` | - |
 | icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.2.1 |
+| size | 标题栏大小，可选值为 `large` | `String` | - | 1.6.9 |
 | title | 标题栏左侧内容 | `String | Number` | - | - |
 | value | 标题栏右侧内容 | `String | Number` | - | 1.2.1 |
 | label | 标题栏描述信息 | `String | Number`  | - | 1.2.1 |

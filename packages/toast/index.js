@@ -8,6 +8,7 @@ const defaultOptions = {
   value: true,
   message: '',
   className: '',
+  onClose: null,
   duration: 3000,
   position: 'middle',
   forbidClick: false,
@@ -51,6 +52,10 @@ function Toast(options = {}) {
     ...parseOptions(options),
     clear() {
       toast.value = false;
+
+      if (options.onClose) {
+        options.onClose();
+      }
 
       if (!singleton && !isServer) {
         clearTimeout(toast.timer);

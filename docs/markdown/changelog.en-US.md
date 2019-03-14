@@ -1,5 +1,24 @@
 ## Changelog
 
+## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
+`2019-03-11`
+
+**Improvements**
+
+- Field: add size prop [\#2936](https://github.com/youzan/vant/pull/2936)
+- Collapse: add size prop [\#2946](https://github.com/youzan/vant/pull/2946)
+- Collapse: add border prop [\#2933](https://github.com/youzan/vant/pull/2933)
+- CellGroup: add title prop [\#2928](https://github.com/youzan/vant/pull/2928)
+- Steps: add active-icon prop [\#2934](https://github.com/youzan/vant/pull/2934)
+- Picker: add default-index prop [\#2935](https://github.com/youzan/vant/pull/2935)
+- Actionsheet: add index param for select event [\#2917](https://github.com/youzan/vant/pull/2917)
+
+**Bug Fixes**
+
+- fix Card origin-price slot not work [\#2927](https://github.com/youzan/vant/pull/2927)
+- fix Swipe emit change event in correct time [\#2909](https://github.com/youzan/vant/pull/2909)
+
+
 ## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
 `2019-03-02`
 

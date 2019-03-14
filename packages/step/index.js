@@ -24,7 +24,7 @@ export default sfc({
 
   render(h) {
     const { status } = this;
-    const { activeColor, direction } = this.$parent;
+    const { activeIcon, activeColor, direction } = this.$parent;
     const titleStyle = status === 'process' && { color: activeColor };
 
     return (
@@ -36,7 +36,7 @@ export default sfc({
           {status !== 'process' ? (
             <i class={bem('circle')} />
           ) : (
-            <Icon name="checked" style={{ color: activeColor }} />
+            <Icon name={activeIcon} style={{ color: activeColor }} />
           )}
         </div>
         <div class={bem('line')} />

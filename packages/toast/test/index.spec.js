@@ -73,3 +73,16 @@ test('toast duration 0', () => {
   expect(toast.timer).toBeFalsy();
   Toast.allowMultiple(false);
 });
+
+test('onClose callback', () => {
+  Toast.allowMultiple();
+  const onClose = jest.fn();
+  const toast = Toast({
+    message: 'toast',
+    onClose
+  });
+
+  toast.clear();
+  Toast.allowMultiple(false);
+  expect(onClose.mock.calls.length).toEqual(1);
+});

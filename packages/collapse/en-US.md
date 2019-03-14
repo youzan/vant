@@ -77,6 +77,7 @@ export default {
 |------|------|------|------|
 | v-model | names of current active panels | `Array | String | Number` | - |
 | accordion | Whether to be accordion mode | `Boolean` | `false` |
+| border | Whether to show outer border | `Boolean` | `true` |
 
 ### Collapse Event
 
@@ -90,6 +91,7 @@ export default {
 |------|------|------|------|
 | name | Name | `String | Number` | `index` |
 | icon | Left Icon | `String` | - |
+| size | Title size，can be set to `large` | `String` | - |
 | title | Title | `String | Number` | - |
 | value | Right text | `String | Number` | - |
 | label | Description below the title | `String` | - |

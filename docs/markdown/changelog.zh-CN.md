@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
+`2019-03-11`
+
+**Improvements**
+
+- Field: 新增 size 属性 [\#2936](https://github.com/youzan/vant/pull/2936)
+- Collapse: 新增 size 属性 [\#2946](https://github.com/youzan/vant/pull/2946)
+- Collapse: 新增 border 属性 [\#2933](https://github.com/youzan/vant/pull/2933)
+- CellGroup: 新增 title 属性 [\#2928](https://github.com/youzan/vant/pull/2928)
+- Steps: 新增 active-icon 属性 [\#2934](https://github.com/youzan/vant/pull/2934)
+- Picker: 新增 default-index 属性 [\#2935](https://github.com/youzan/vant/pull/2935)
+- Actionsheet: 新增 index 作为 select 事件的回调参数 [\#2917](https://github.com/youzan/vant/pull/2917)
+
+**Bug Fixes**
+
+- 修复 Card origin-price 插槽未生效的问题 [\#2927](https://github.com/youzan/vant/pull/2927)
+- 修复 Swipe change 事件触发时机错误的问题 [\#2909](https://github.com/youzan/vant/pull/2909)
+
+
 ## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
 `2019-03-02`
 

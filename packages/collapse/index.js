@@ -5,7 +5,11 @@ const [sfc, bem] = use('collapse');
 export default sfc({
   props: {
     accordion: Boolean,
-    value: [String, Number, Array]
+    value: [String, Number, Array],
+    border: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -27,6 +31,10 @@ export default sfc({
   },
 
   render(h) {
-    return <div class={[bem(), 'van-hairline--top-bottom']}>{this.slots()}</div>;
+    return (
+      <div class={[bem(), { 'van-hairline--top-bottom': this.border }]}>
+        {this.slots()}
+      </div>
+    );
   }
 });

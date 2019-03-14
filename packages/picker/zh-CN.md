@@ -10,8 +10,9 @@ Vue.use(Picker);
 
 ### 代码演示
 
-
 #### 基础用法
+
+对于单列选择器，传入数值格式的 columns 即可，同时可以监听选项改变的 change 事件
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -32,28 +33,21 @@ export default {
 };
 ```
 
-#### 禁用选项
-选项可以为对象结构，通过设置 disabled 来禁用该选项
+#### 默认选中项
+
+单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
 
 ```html
-<van-picker :columns="columns" />
-```
-
-```javascript
-export default {
-  data() {
-    return {
-      columns: [
-        { text: '杭州', disabled: true },
-        { text: '宁波' },
-        { text: '温州' }
-      ]
-    };
-  }
-};
+<van-picker
+  :columns="columns"
+  :default-index="2"
+  @change="onChange"
+/>
 ```
 
 #### 展示顶部栏
+
+通常选择器组件会传入`show-toolbar`属性以展示顶部操作栏，并可以监听对应的`confirm`和`cancel`事件
 
 ```html
 <van-picker
@@ -79,6 +73,28 @@ export default {
     onCancel() {
       Toast('取消');
     }
+  }
+};
+```
+
+#### 禁用选项
+
+选项可以为对象结构，通过设置 disabled 来禁用该选项
+
+```html
+<van-picker :columns="columns" />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      columns: [
+        { text: '杭州', disabled: true },
+        { text: '宁波' },
+        { text: '温州' }
+      ]
+    };
   }
 };
 ```
@@ -120,7 +136,8 @@ export default {
 ```
 
 #### 加载状态
-当 Picker 数据是通过异步获取时，可以通过 `loading` 属性显示加载提示
+
+若选择器数据是异步获取的，可以通过 `loading` 属性显示加载提示
 
 ```html
 <van-picker :columns="columns" loading />
@@ -139,6 +156,7 @@ export default {
 | confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
 | visible-item-count | 可见的选项个数 | `Number` | `5` | - |
+| default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` | 1.6.9 |
 
 ### Event
 
