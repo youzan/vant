@@ -32,6 +32,7 @@ export default sfc({
 
       files = files.length === 1 ? files[0] : [].slice.call(files, 0);
       if (!files || (this.beforeRead && !this.beforeRead(files))) {
+        this.resetInput();
         return;
       }
 
@@ -82,7 +83,13 @@ export default sfc({
         this.$emit('oversize', files);
       } else {
         this.afterRead && this.afterRead(files);
-        this.$refs.input && (this.$refs.input.value = '');
+      }
+      this.resetInput();
+    },
+
+    resetInput() {
+      if (this.$refs.input) {
+        this.$refs.input.value = '';
       }
     }
   },
