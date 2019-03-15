@@ -38,7 +38,7 @@ export default sfc({
 
     faceAmount() {
       const { coupon } = this;
-      if (coupon.valueDesc && coupon.unitDesc) {
+      if (coupon.valueDesc) {
         return `${coupon.valueDesc}<span>${coupon.unitDesc}</span>`;
       }
       return coupon.denominations
