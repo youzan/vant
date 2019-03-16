@@ -92,6 +92,14 @@ export default {
 |------|------|
 | - | 在邮政编码下方插入内容 |
 
+### 方法
+
+通过 ref 可以获取到 address-edit 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|------|------|------|------|
+| setAddressDetail | addressDetail: string | - | 设置详细地址 |
+
 ### 数据格式
 
 #### addressInfo 数据格式
