@@ -117,7 +117,7 @@ export default sfc({
       <div class={bem()}>
         {this.slots()}
         {this.loading && (
-          <div class={bem('loading')}>
+          <div class={bem('loading')} key="loading">
             {this.slots('loading') || [
               <Loading class={bem('loading-icon')} />,
               <span class={bem('loading-text')}>{this.loadingText || t('loading')}</span>
