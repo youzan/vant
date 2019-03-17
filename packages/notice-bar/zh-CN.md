@@ -47,6 +47,7 @@ Vue.use(NoticeBar);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | mode | 通告栏模式，可选值为 `closeable` `link` | `String` | `''` | - |
+| text | 通告文本内容 | `String` | `''` | - |
 | delay | 动画延迟时间 (s) | `Number` | `1` | - |
 | speed | 滚动速率 (px/s) | `Number` | `50` | - |
 | scrollable | 是否在长度溢出时滚动播放 | `Boolean` | `true` | - |
@@ -60,3 +61,9 @@ Vue.use(NoticeBar);
 |------|------|------|
 | click | 点击时触发 | - |
 | close | 关闭时触发 | - |
+
+### Slot
+
+| 名称 | 内容 |
+|------|------|
+| - | 通告文本内容

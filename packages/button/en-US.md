@@ -75,7 +75,7 @@ Vue.use(Button);
 | loading-size | Loading icon size | `String` | `20px` |
 | url | Link URL | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` |
+| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 ### Event
 

@@ -81,7 +81,7 @@ Vue.use(Button);
 | loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
 | url | 跳转链接 | `String` | - | 1.6.5 |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | 1.6.5 |
-| replace | 跳转时是否替换当前页面历史 | `String` | `false` | 1.6.5 |
+| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 1.6.5 |
 
 ### Event
 
