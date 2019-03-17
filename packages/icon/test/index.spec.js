@@ -27,3 +27,12 @@ test('render icon default slot', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('tag prop', () => {
+  const wrapper = mount(Icon, {
+    propsData: {
+      tag: 'div'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
