@@ -8,7 +8,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type ButtonProps = RouteProps & {
-  tag: string;
+  tag: keyof HTMLElementTagNameMap;
   type: string;
   size: string;
   text?: string;
