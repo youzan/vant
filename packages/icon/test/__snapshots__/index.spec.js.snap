@@ -14,3 +14,9 @@ exports[`render icon with url name 1`] = `
 <i class="van-icon van-icon--image"><img src="https://img.yzcdn.com/icon.jpg">
   <!----></i>
 `;
+
+exports[`tag prop 1`] = `
+<div class="van-icon van-icon-undefined">
+  <!---->
+</div>
+`;

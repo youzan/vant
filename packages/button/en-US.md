@@ -63,7 +63,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
-| tag | Tag | `String` | `button` |
+| tag | HTML Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |
 | plain | Whether to be plain button | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |

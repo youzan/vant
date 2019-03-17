@@ -65,10 +65,10 @@ import 'vant/lib/icon/local.css';
 | color | 图标颜色 | `String` | `inherit` | 1.1.3 |
 | size | 图标大小，如 `20px` `2em` | `String` | `inherit` | 1.1.15 |
 | class-prefix | 类名前缀 | `String` | `van-icon` | 1.2.1 |
+| tag | HTML 标签 | `String` | `i` | 1.6.10 |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
 | click | 点击图标时触发 | - |
-
