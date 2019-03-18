@@ -48,7 +48,10 @@
       font-size: 24px;
 
       span {
-        margin-left: 2px;
+        &:not(:empty) {
+          margin-left: 2px;
+        }
+
         font-size: 50%;
       }
     }
