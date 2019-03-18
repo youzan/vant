@@ -99,13 +99,18 @@ export default {
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |
 
-
 ### RadioGroup API
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Name of checked radio | `any` | - |
 | disabled | Diable all radios | `Boolean` | `false` |
+
+### Radio Event
+
+| Event | Description | Parameters |
+|------|------|------|
+| click | Triggered when click radio | event: Event |
 
 ### RadioGroup Event
 
