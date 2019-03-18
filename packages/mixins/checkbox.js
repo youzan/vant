@@ -59,8 +59,8 @@ export const CheckboxMixin = (parent, bem) => ({
     return (
       <div
         class={bem()}
-        onClick={() => {
-          this.$emit('click');
+        onClick={event => {
+          this.$emit('click', event);
         }}
       >
         <div
@@ -68,6 +68,7 @@ export const CheckboxMixin = (parent, bem) => ({
           onClick={event => {
             event.stopPropagation();
             this.onClickIcon();
+            this.$emit('click', event);
           }}
         >
           {CheckIcon}
