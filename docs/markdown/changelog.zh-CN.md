@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+`2019-03-17`
+
+**Improvements**
+
+- Icon: 新增 tag 属性 [\#2986](https://github.com/youzan/vant/pull/2986)
+- Cell: 新增 label 插槽 [\#2956](https://github.com/youzan/vant/pull/2956)
+- Toast: 新增 onClose 属性 [\#2964](https://github.com/youzan/vant/pull/2964)
+- AddressEdit: 新增 setAddressDetail 方法 [\#2984](https://github.com/youzan/vant/pull/2984)
+
+**Bug Fixes**
+
+- 修复 List 子元素 scoped 样式无法生效的问题 [\#2983](https://github.com/youzan/vant/pull/2983)
+- 修复 Steps 设置为 vertical 时样式错误的问题 [\#2981](https://github.com/youzan/vant/pull/2981)
+- 修复 Coupon 单独传入 value-desc 属性时不展示的问题 [\#2980](https://github.com/youzan/vant/pull/2980)
+- 修复 Uploader 使用 before-read 属性后重复上传同个文件不触发事件的问题 [\#2971](https://github.com/youzan/vant/pull/2971)
+
+
 ## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
 `2019-03-11`
 

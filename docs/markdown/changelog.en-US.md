@@ -1,5 +1,23 @@
 ## Changelog
 
+## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+`2019-03-17`
+
+**Improvements**
+
+- Icon: add tag prop [\#2986](https://github.com/youzan/vant/pull/2986)
+- Cell: add label slot [\#2956](https://github.com/youzan/vant/pull/2956)
+- Toast: add onClose prop [\#2964](https://github.com/youzan/vant/pull/2964)
+- AddressEdit: add setAddressDetail method [\#2984](https://github.com/youzan/vant/pull/2984)
+
+**Bug Fixes**
+
+- fix List render error by adding a loading key [\#2983](https://github.com/youzan/vant/pull/2983)
+- fix Steps incorrect active style in vertical direction [\#2981](https://github.com/youzan/vant/pull/2981)
+- fix Coupon value-desc display condition [\#2980](https://github.com/youzan/vant/pull/2980)
+- fix Uploader can not upload same file when before-read [\#2971](https://github.com/youzan/vant/pull/2971)
+
+
 ## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
 `2019-03-11`
 
