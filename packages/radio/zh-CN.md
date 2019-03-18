@@ -110,6 +110,12 @@ export default {
 | v-model | 当前选中项的标识符 | 任意类型 | - | - |
 | disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
 
+### Radio Event
+
+| 事件名称 | 说明 | 回调参数 |
+|------|------|------|
+| click | 点击单选框时触发 | event: Event |
+
 ### RadioGroup Event
 
 | 事件名称 | 说明 | 回调参数 |
