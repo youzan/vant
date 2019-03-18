@@ -18,14 +18,6 @@ Vue.use(NoticeBar);
 />
 ```
 
-#### Disable scroll
-
-```html
-<van-notice-bar :scrollable="false">
-  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
-</van-notice-bar>
-```
-
 #### Mode
 
 ```html
@@ -38,6 +30,22 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
+#### Disable scroll
+
+```html
+<van-notice-bar :scrollable="false">
+  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
+</van-notice-bar>
+```
+
+#### Wrapable
+
+```html
+<van-notice-bar wrapable :scrollable="false">
+  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
+</van-notice-bar>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
@@ -46,6 +54,7 @@ Vue.use(NoticeBar);
 | delay | Animation delay (s) | `Number` | `1` |
 | speed | Scroll speed (px/s) | `Number` | `50` |
 | scrollable | Whether to scroll content | `Boolean` | `true` |
+| wrapable | Whether to enable text wrap | `Boolean` | `false` | - |
 | left-icon | Left Icon | `String` | - |
 | color | Text color | `String` | `#f60` |
 | background | Background color | `String` | `#fff7cc` |
