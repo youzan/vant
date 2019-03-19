@@ -46,7 +46,7 @@ test('basic mode', async () => {
   wrapper.destroy();
 });
 
-it('accordion', async () => {
+test('accordion', async () => {
   const wrapper = mount(component, {
     propsData: {
       accordion: true
@@ -68,7 +68,7 @@ it('accordion', async () => {
   expect(wrapper.vm.active).toEqual('');
 });
 
-it('render collapse-item slot', () => {
+test('render collapse-item slot', () => {
   const wrapper = mount({
     template: `
       <collapse v-model="active">
@@ -94,12 +94,41 @@ it('render collapse-item slot', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('disable border', () => {
+test('disable border', () => {
   const wrapper = mount(component, {
     propsData: {
       border: false
     }
   });
 
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('lazy render collapse content', async () => {
+  const wrapper = mount({
+    template: `
+      <collapse v-model="active">
+        <collapse-item title="a" name="first" style="padding: 0;">content</collapse-item>
+        <collapse-item title="b" style="padding: 0;">{{ content }}</collapse-item>
+      </collapse>
+    `,
+    components: {
+      Collapse,
+      CollapseItem
+    },
+    data() {
+      return {
+        content: '',
+        active: []
+      };
+    }
+  });
+
+  const titles = wrapper.findAll('.van-collapse-item__title');
+
+  titles.at(1).trigger('click');
+  await later(50);
+
+  wrapper.vm.content = 'content';
   expect(wrapper).toMatchSnapshot();
 });
