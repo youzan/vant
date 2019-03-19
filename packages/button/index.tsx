@@ -8,9 +8,9 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type ButtonProps = RouteProps & {
-  tag: keyof HTMLElementTagNameMap;
-  type: string;
-  size: string;
+  tag: keyof HTMLElementTagNameMap | string;
+  type: 'default' | 'primary' | 'info' | 'warning' | 'danger';
+  size: 'large' | 'normal' | 'small' | 'mini'
   text?: string;
   block?: boolean;
   plain?: boolean;
