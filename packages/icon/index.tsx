@@ -8,7 +8,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type IconProps = {
-  tag: keyof HTMLElementTagNameMap;
+  tag: keyof HTMLElementTagNameMap | string;
   name: string;
   size?: string;
   color?: string;
