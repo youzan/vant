@@ -5,12 +5,12 @@ import '../../locale';
 import { camelize } from '..';
 import { SlotsMixin } from '../../mixins/slots';
 import Vue, {
+  VNode,
   VueConstructor,
   ComponentOptions,
   CreateElement,
   RenderContext
-} from 'vue/types';
-import { VNode } from 'vue/types/vnode';
+} from 'vue';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
 export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
