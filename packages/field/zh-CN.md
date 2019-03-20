@@ -131,6 +131,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - |
 | label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `String` | `left` | - |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | 1.0.0 |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
 | right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
