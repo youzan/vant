@@ -51,6 +51,7 @@ Vue.use(NoticeBar);
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | mode | Mode, can be set to `closeable` `link` | `String` | `''` |
+| text | Notice text content | `String` | `''` | - |
 | delay | Animation delay (s) | `Number` | `1` |
 | speed | Scroll speed (px/s) | `Number` | `50` |
 | scrollable | Whether to scroll content | `Boolean` | `true` |
@@ -65,3 +66,9 @@ Vue.use(NoticeBar);
 |------|------|------|
 | click | Triggered when click NoticeBar | - |
 | click | Triggered when closed | - |
+
+### Slot
+
+| Name | Description |
+|------|------|
+| - | Notice text content

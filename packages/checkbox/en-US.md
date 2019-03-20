@@ -111,7 +111,7 @@ export default {
 <van-checkbox-group v-model="result">
   <van-cell-group>
     <van-cell
-      v-for="item in list"
+      v-for="(item, index) in list"
       clickable
       :key="item"
       :title="`Checkbox ${item}`"
