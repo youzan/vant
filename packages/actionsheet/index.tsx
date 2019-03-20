@@ -77,14 +77,6 @@ function Actionsheet(
     </div>
   );
 
-  const Footer = cancelText ? (
-    <div class={bem('cancel')} onClick={onCancel}>
-      {cancelText}
-    </div>
-  ) : (
-    <div class={bem('content')}>{slots.default && slots.default()}</div>
-  );
-
   return (
     <Popup
       class={bem()}
@@ -100,7 +92,12 @@ function Actionsheet(
       {...inherit(ctx)}
     >
       {title ? Header() : props.actions.map(Option)}
-      {Footer}
+      {slots.default && <div class={bem('content')}>{slots.default()}</div>}
+      {cancelText && (
+        <div class={bem('cancel')} onClick={onCancel}>
+          {cancelText}
+        </div>
+      )}
     </Popup>
   );
 }
