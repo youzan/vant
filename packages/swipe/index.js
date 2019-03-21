@@ -217,7 +217,7 @@ export default sfc({
         }
       }
 
-      this.offset = offset - this.active * this.size;
+      this.offset = Math.round(offset - this.active * this.size);
     },
 
     swipeTo(index) {
