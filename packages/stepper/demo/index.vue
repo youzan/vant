@@ -63,6 +63,8 @@ export default {
 
 <style lang="less">
 .demo-stepper {
+  background-color: #fff;
+
   .van-stepper {
     margin-left: 15px;
   }
