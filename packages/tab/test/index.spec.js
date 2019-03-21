@@ -58,7 +58,7 @@ test('click to switch tab', async () => {
   tabs.at(2).trigger('click');
   await later();
   expect(wrapper).toMatchSnapshot();
-  expect(onChange.mock.calls.length).toEqual(1);
+  expect(onChange).toHaveBeenCalledTimes(1);
 });
 
 test('swipe to switch tab', async () => {
@@ -74,7 +74,7 @@ test('swipe to switch tab', async () => {
   expect(wrapper).toMatchSnapshot();
   triggerDrag(content, -100, 0);
   expect(wrapper).toMatchSnapshot();
-  expect(onChange.mock.calls.length).toEqual(1);
+  expect(onChange).toHaveBeenCalledTimes(1);
   triggerDrag(content, -100, 0);
   expect(wrapper).toMatchSnapshot();
   triggerDrag(content, 100, 0);

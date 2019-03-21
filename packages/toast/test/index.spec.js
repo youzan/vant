@@ -84,5 +84,5 @@ test('onClose callback', () => {
 
   toast.clear();
   Toast.allowMultiple(false);
-  expect(onClose.mock.calls.length).toEqual(1);
+  expect(onClose).toHaveBeenCalledTimes(1);
 });

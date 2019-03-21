@@ -26,12 +26,12 @@ test('Dialog function call', async () => {
   document.querySelector('.van-dialog__cancel').click();
 
   await later();
-  expect(callback.mock.calls[0][0]).toEqual('cancel');
+  expect(callback).toHaveBeenCalledWith('cancel');
   Dialog.confirm().then(callback);
   document.querySelector('.van-dialog__confirm').click();
 
   await later();
-  expect(callback.mock.calls[1][0]).toEqual('confirm');
+  expect(callback).toHaveBeenNthCalledWith(2, 'confirm');
 });
 
 test('before close', () => {

@@ -111,7 +111,7 @@ test('blur method', () => {
   wrapper.find('input').element.focus();
   wrapper.vm.blur();
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(fn).toHaveBeenCalledTimes(1);
 });
 
 test('focus method', () => {
@@ -121,7 +121,7 @@ test('focus method', () => {
   wrapper.vm.$on('focus', fn);
   wrapper.vm.focus();
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(fn).toHaveBeenCalledTimes(1);
 });
 
 test('maxlength', async () => {

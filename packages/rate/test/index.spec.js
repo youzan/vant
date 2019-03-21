@@ -38,8 +38,8 @@ test('disabled', () => {
   const item4 = wrapper.findAll('.van-rate__item').at(3);
 
   item4.trigger('click');
-  expect(onInput.mock.calls.length).toEqual(0);
-  expect(onChange.mock.calls.length).toEqual(0);
+  expect(onInput).toHaveBeenCalledTimes(0);
+  expect(onChange).toHaveBeenCalledTimes(0);
 });
 
 test('touchmove', () => {

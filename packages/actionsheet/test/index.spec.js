@@ -7,13 +7,15 @@ test('callback events', () => {
   const onCancel = jest.fn();
   const onSelect = jest.fn();
 
+  const actions = [
+    { name: 'Option', callback },
+    { name: 'Option', disabled: true }
+  ];
+
   const wrapper = mount(Actionsheet, {
     propsData: {
       value: true,
-      actions: [
-        { name: 'Option', callback },
-        { name: 'Option', disabled: true }
-      ],
+      actions,
       cancelText: 'Cancel'
     },
     context: {
@@ -30,12 +32,10 @@ test('callback events', () => {
   options.at(1).trigger('click');
   wrapper.find('.van-actionsheet__cancel').trigger('click');
 
-  expect(callback.mock.calls.length).toBe(1);
-  expect(onCancel.mock.calls.length).toBeTruthy();
-  expect(onInput.mock.calls[0][0]).toBeFalsy();
-  expect(onSelect.mock.calls[0][0].name).toEqual('Option');
-  expect(onSelect.mock.calls[0][1]).toEqual(0);
-  expect(onSelect.mock.calls[0][1]).toBeFalsy();
+  expect(callback).toHaveBeenCalled();
+  expect(onCancel).toHaveBeenCalled();
+  expect(onInput).toHaveBeenCalledWith(false);
+  expect(onSelect).toHaveBeenCalledWith(actions[0], 0);
   expect(wrapper).toMatchSnapshot();
 });
 
