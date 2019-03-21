@@ -151,8 +151,8 @@ import { LIMIT_TYPE } from '../constants';
 export default {
   i18n: {
     'zh-CN': {
-      title2: '自定义步进器相关配置',
-      hideSoldoutSku: '隐藏售罄sku',
+      title2: '自定义步进器',
+      hideSoldoutSku: '隐藏售罄规格',
       stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买'

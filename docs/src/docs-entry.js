@@ -4,6 +4,7 @@ export default {
   'changelog.en-US': () => import('../markdown/changelog.en-US.md'),
   'changelog.zh-CN': () => import('../markdown/changelog.zh-CN.md'),
   'contribution.zh-CN': () => import('../markdown/contribution.zh-CN.md'),
+  'design.zh-CN': () => import('../markdown/design.zh-CN.md'),
   'intro.en-US': () => import('../markdown/intro.en-US.md'),
   'intro.zh-CN': () => import('../markdown/intro.zh-CN.md'),
   'quickstart.en-US': () => import('../markdown/quickstart.en-US.md'),
