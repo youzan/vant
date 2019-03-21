@@ -35,8 +35,9 @@ Locale.add(messages);
 | 语言 | 文件名 |
 |------|------|
 | 简体中文 | zh-CN |
+| 繁體中文（港） | zh-HK |
+| 繁體中文（台） | zh-TW |
 | 英语 | en-US |
-| 繁體中文 | zh-HK |
 | 土耳其语 | tr-TR |
 
 在 [这里](https://github.com/youzan/vant/tree/dev/packages/locale/lang) 查看所有的 i18n 配置文件。
