@@ -30,7 +30,7 @@ Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置�
 // default colors
 @text-color: #323233;
 @border-color: #ebedf0;
-@active-color: #e8e8e8;
+@active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
 ```
