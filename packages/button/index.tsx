@@ -10,13 +10,14 @@ import { DefaultSlots } from '../utils/use/sfc';
 export type ButtonProps = RouteProps & {
   tag: keyof HTMLElementTagNameMap | string;
   type: 'default' | 'primary' | 'info' | 'warning' | 'danger';
-  size: 'large' | 'normal' | 'small' | 'mini'
+  size: 'large' | 'normal' | 'small' | 'mini';
   text?: string;
   block?: boolean;
   plain?: boolean;
   round?: boolean;
   square?: boolean;
   loading?: boolean;
+  hairline?: boolean;
   disabled?: boolean;
   nativeType?: string;
   loadingSize: string;
@@ -36,7 +37,7 @@ function Button(
   slots: DefaultSlots,
   ctx: RenderContext<ButtonProps>
 ) {
-  const { tag, type, disabled, loading, loadingText } = props;
+  const { tag, type, disabled, loading, hairline, loadingText } = props;
 
   const onClick = (event: Event) => {
     if (!loading && !disabled) {
@@ -49,31 +50,36 @@ function Button(
     <tag
       type={props.nativeType}
       disabled={disabled}
-      class={bem([
-        type,
-        props.size,
-        {
-          loading,
-          disabled,
-          block: props.block,
-          plain: props.plain,
-          round: props.round,
-          square: props.square,
-          'bottom-action': props.bottomAction
-        }
-      ])}
+      class={[
+        bem([
+          type,
+          props.size,
+          {
+            loading,
+            disabled,
+            hairline,
+            block: props.block,
+            plain: props.plain,
+            round: props.round,
+            square: props.square,
+            'bottom-action': props.bottomAction
+          }
+        ]),
+        { 'van-hairline--surround': hairline }
+      ]}
       onClick={onClick}
       {...inherit(ctx)}
     >
       {loading ? (
         [
-          <Loading size={props.loadingSize} color={type === 'default' ? undefined : ''} />,
+          <Loading
+            size={props.loadingSize}
+            color={type === 'default' ? undefined : ''}
+          />,
           loadingText && <span class={bem('loading-text')}>{loadingText}</span>
         ]
       ) : (
-        <span class={bem('text')}>
-          {slots.default ? slots.default() : props.text}
-        </span>
+        <span class={bem('text')}>{slots.default ? slots.default() : props.text}</span>
       )}
     </tag>
   );
@@ -87,6 +93,7 @@ Button.props = {
   round: Boolean,
   square: Boolean,
   loading: Boolean,
+  hairline: Boolean,
   disabled: Boolean,
   nativeType: String,
   loadingText: String,

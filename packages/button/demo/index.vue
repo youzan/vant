@@ -23,6 +23,21 @@
       />
     </demo-block>
 
+    <demo-block :title="$t('hairline')">
+      <van-button
+        plain
+        hairline
+        type="primary"
+        :text="$t('hairlineButton')"
+      />
+      <van-button
+        plain
+        hairline
+        type="danger"
+        :text="$t('hairlineButton')"
+      />
+    </demo-block>
+
     <demo-block :title="$t('disabled')">
       <van-button
         disabled
@@ -90,6 +105,8 @@ export default {
       plain: '朴素按钮',
       square: '方形按钮',
       round: '圆形按钮',
+      hairline: '细边框',
+      hairlineButton: '细边框按钮',
       loadingText: '加载中...'
     },
     'en-US': {
@@ -109,6 +126,8 @@ export default {
       plain: 'Plain',
       square: 'Square',
       round: 'Round',
+      hairline: 'Hairline',
+      hairlineButton: 'Hairline',
       loadingText: 'Loading...'
     }
   }

@@ -26,6 +26,13 @@ Vue.use(Button);
 <van-button plain type="danger">Danger</van-button>
 ```
 
+#### Hairline
+
+```html
+<van-button plain hairline type="primary">Hairline</van-button>
+<van-button plain hairline type="danger">Hairline</van-button>
+```
+
 #### Disabled
 
 ```html
