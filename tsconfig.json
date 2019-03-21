@@ -6,6 +6,7 @@
     "module": "esnext",
     "strict": true,
     "allowJs": true,
+    "noEmit": true,
     "noImplicitThis": true,
     "esModuleInterop": true,
     "moduleResolution": "node"
