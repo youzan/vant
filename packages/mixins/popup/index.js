@@ -1,7 +1,7 @@
-import manager from './manager';
-import context from './context';
+import { context } from './context';
 import { TouchMixin } from '../touch';
 import { on, off } from '../../utils/event';
+import { openOverlay, closeOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/scroll';
 
 export const PopupMixin = {
@@ -134,7 +134,7 @@ export const PopupMixin = {
       }
 
       this.opened = false;
-      manager.close(this);
+      closeOverlay(this);
       this.$emit('input', false);
     },
 
@@ -187,13 +187,13 @@ export const PopupMixin = {
 
     renderOverlay() {
       if (this.overlay) {
-        manager.open(this, {
+        openOverlay(this, {
           zIndex: context.zIndex++,
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
       } else {
-        manager.close(this);
+        closeOverlay(this);
       }
 
       this.$nextTick(() => {
