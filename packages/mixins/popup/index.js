@@ -186,6 +186,10 @@ export const PopupMixin = {
     },
 
     renderOverlay() {
+      if (this.$isServer || !this.value) {
+        return;
+      }
+
       if (this.overlay) {
         openOverlay(this, {
           zIndex: context.zIndex++,
