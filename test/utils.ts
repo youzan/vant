@@ -1,14 +1,12 @@
 import Vue from 'vue';
-import { mount, TransitionStub } from '@vue/test-utils';
+import { mount, TransitionStub, Wrapper } from '@vue/test-utils';
 
 // prevent vue warning log
 Vue.config.silent = true;
 
-export {
-  mount
-};
+export { mount };
 
-function getTouch(el, x, y) {
+function getTouch(el: HTMLElement, x: number, y: number) {
   return {
     identifier: Date.now(),
     target: el,
@@ -24,8 +22,14 @@ function getTouch(el, x, y) {
 }
 
 // Trigger pointer/touch event
-export function trigger(wrapper, eventName, x = 0, y = 0, options = {}) {
-  const el = wrapper.element ? wrapper.element : wrapper;
+export function trigger(
+  wrapper: Wrapper<Vue> | HTMLElement,
+  eventName: string,
+  x: number = 0,
+  y: number = 0,
+  options: any = {}
+) {
+  const el = 'element' in wrapper ? wrapper.element : wrapper;
   const touchList = options.touchList || [getTouch(el, x, y)];
 
   if (options.x || options.y) {
@@ -34,17 +38,20 @@ export function trigger(wrapper, eventName, x = 0, y = 0, options = {}) {
 
   const event = document.createEvent('CustomEvent');
   event.initCustomEvent(eventName, true, true, {});
-  event.touches = touchList;
-  event.targetTouches = touchList;
-  event.changedTouches = touchList;
-  event.clientX = x;
-  event.clientY = y;
+
+  Object.assign(event, {
+    clientX: x,
+    clientY: y,
+    touches: touchList,
+    targetTouches: touchList,
+    changedTouches: touchList
+  });
 
   el.dispatchEvent(event);
 }
 
 // simulate drag gesture
-export function triggerDrag(el, x = 0, y = 0) {
+export function triggerDrag(el: Wrapper<Vue> | HTMLElement, x = 0, y = 0): void {
   trigger(el, 'touchstart', 0, 0);
   trigger(el, 'touchmove', x / 4, y / 4);
   trigger(el, 'touchmove', x / 3, y / 3);
@@ -54,12 +61,12 @@ export function triggerDrag(el, x = 0, y = 0) {
 }
 
 // promisify setTimeout
-export function later(delay) {
+export function later(delay: number = 0): Promise<void> {
   return new Promise(resolve => {
     setTimeout(resolve, delay);
   });
 }
 
-export function transitionStub() {
-  Vue.component('transition', TransitionStub);
+export function transitionStub(): void {
+  Vue.component('transition', TransitionStub as any);
 }
