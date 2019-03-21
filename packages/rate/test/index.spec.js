@@ -16,8 +16,8 @@ test('change event', () => {
   const item4 = wrapper.findAll('.van-rate__item').at(3);
 
   item4.trigger('click');
-  expect(onInput.mock.calls[0][0]).toEqual(4);
-  expect(onChange.mock.calls[0][0]).toEqual(4);
+  expect(onInput).toHaveBeenCalledWith(4);
+  expect(onChange).toHaveBeenCalledWith(4);
 });
 
 test('disabled', () => {
@@ -62,5 +62,7 @@ test('touchmove', () => {
   };
 
   triggerDrag(wrapper, 100, 0);
-  expect(onChange.mock.calls).toEqual([[2], [3], [4]]);
+  expect(onChange).toHaveBeenNthCalledWith(1, 2);
+  expect(onChange).toHaveBeenNthCalledWith(2, 3);
+  expect(onChange).toHaveBeenNthCalledWith(3, 4);
 });

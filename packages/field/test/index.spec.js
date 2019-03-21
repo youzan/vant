@@ -26,7 +26,7 @@ test('click icon event', () => {
   expect(wrapper.emitted('click-icon')).toBeTruthy();
   expect(wrapper.emitted('click-left-icon')).toBeTruthy();
   expect(wrapper.emitted('click-right-icon')).toBeTruthy();
-  expect(onIconClick.mock.calls.length).toBe(1);
+  expect(onIconClick).toHaveBeenCalled();
 });
 
 test('keypress event', () => {

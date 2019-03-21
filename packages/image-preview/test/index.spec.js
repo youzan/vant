@@ -84,9 +84,7 @@ test('function call options', done => {
     const swipe = wrapper.querySelector('.van-swipe__track');
     triggerDrag(swipe, 0, 0);
     expect(onClose).toHaveBeenCalledTimes(1);
-    expect(onClose.mock.calls).toEqual([
-      [{ index: 0, url: 'https://img.yzcdn.cn/1.png' }]
-    ]);
+    expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
     done();
   });
 });
