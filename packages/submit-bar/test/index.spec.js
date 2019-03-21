@@ -14,7 +14,7 @@ test('submit', () => {
 
   const button = wrapper.find('.van-button');
   button.trigger('click');
-  expect(submit.mock.calls[0]).toBeTruthy();
+  expect(submit).toHaveBeenCalled();
 });
 
 test('disable submit', () => {
@@ -34,5 +34,5 @@ test('disable submit', () => {
   // disabled
   const button = wrapper.find('.van-button');
   button.trigger('click');
-  expect(submit.mock.calls[0]).toBeFalsy();
+  expect(submit).toHaveBeenCalledTimes(0);
 });

@@ -13,10 +13,9 @@ test('emit event', () => {
     }
   });
   wrapper.trigger('click');
-  wrapper.trigger('click');
 
-  expect(input.mock.calls).toEqual([[true], [true]]);
-  expect(change.mock.calls).toEqual([[true], [true]]);
+  expect(input).toHaveBeenCalledWith(true);
+  expect(change).toHaveBeenCalledWith(true);
 });
 
 test('disabled', () => {
@@ -35,6 +34,6 @@ test('disabled', () => {
   });
   wrapper.trigger('click');
 
-  expect(input.mock.calls.length).toBeFalsy();
-  expect(change.mock.calls.length).toBeFalsy();
+  expect(input).toHaveBeenCalledTimes(0);
+  expect(change).toHaveBeenCalledTimes(0);
 });

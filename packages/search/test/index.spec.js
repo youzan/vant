@@ -15,7 +15,7 @@ test('listen input event', () => {
   input.element.value = '1';
   input.trigger('input');
 
-  expect(onInput).toBeCalledWith('1');
+  expect(onInput).toHaveBeenCalledWith('1');
 });
 
 test('cancel search', () => {
@@ -38,8 +38,8 @@ test('cancel search', () => {
   const cancel = wrapper.find('.van-search__action div');
   cancel.trigger('click');
 
-  expect(onInput).toBeCalledWith('');
-  expect(onCancel).toBeCalled();
+  expect(onInput).toHaveBeenCalledWith('');
+  expect(onCancel).toHaveBeenCalled();
 });
 
 test('emit a search event', () => {
@@ -59,8 +59,8 @@ test('emit a search event', () => {
   input.trigger('keypress.enter');
   input.trigger('keypress.a');
 
-  expect(onSearch).toBeCalled();
-  expect(onKeypress).toBeCalled();
+  expect(onSearch).toHaveBeenCalled();
+  expect(onKeypress).toHaveBeenCalled();
 });
 
 test('render label slot', () => {

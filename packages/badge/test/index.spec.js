@@ -22,8 +22,8 @@ test('event', () => {
   });
 
   wrapper.find('.van-badge').trigger('click');
-  expect(onClick.mock.calls[0][0]).toBe(0);
-  expect(onChange.mock.calls[0][0]).toBe(0);
+  expect(onClick).toHaveBeenCalledWith(0);
+  expect(onChange).toHaveBeenCalledWith(0);
   wrapper.vm.$destroy();
 });
 

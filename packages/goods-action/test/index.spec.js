@@ -13,7 +13,7 @@ test('BigBtn click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(click.mock.calls.length).toEqual(1);
+  expect(click).toHaveBeenCalledTimes(1);
 });
 
 test('MiniBtn click event', () => {
@@ -27,7 +27,7 @@ test('MiniBtn click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(click.mock.calls.length).toEqual(1);
+  expect(click).toHaveBeenCalledTimes(1);
 });
 
 test('BigBtn render default slot', () => {

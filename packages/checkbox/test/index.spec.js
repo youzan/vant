@@ -80,9 +80,9 @@ test('click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(1);
+  expect(onClick).toHaveBeenCalledTimes(1);
 
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(2);
+  expect(onClick).toHaveBeenCalledTimes(2);
 });
