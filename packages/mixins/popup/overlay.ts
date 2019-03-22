@@ -5,7 +5,7 @@ import { mount } from '../../utils/functional';
 export type OverlayConfig = {
   zIndex?: number;
   className?: string;
-  customStyle?: object[] | object;
+  customStyle?: string | object[] | object;
 };
 
 const defaultConfig: OverlayConfig = {

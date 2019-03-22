@@ -55,7 +55,7 @@ export type TsxBaseProps<Slots> = {
   // hack for jsx prop spread
   props: any;
   class: any;
-  style: object[] | object;
+  style: string | object[] | object;
   scopedSlots: Slots;
 };
 
