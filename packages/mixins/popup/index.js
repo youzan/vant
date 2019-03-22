@@ -1,7 +1,7 @@
 import { context } from './context';
 import { TouchMixin } from '../touch';
 import { on, off } from '../../utils/event';
-import { openOverlay, closeOverlay } from './overlay';
+import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/scroll';
 
 export const PopupMixin = {
@@ -154,6 +154,8 @@ export const PopupMixin = {
       if (container && container !== this.$el.parentNode) {
         container.appendChild(this.$el);
       }
+
+      updateOverlay();
     },
 
     onTouchMove(e) {
