@@ -176,7 +176,8 @@ export default {
       closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',
-        s2: '1193'
+        s2: '1193',
+        selectedNum: 3
       },
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {
