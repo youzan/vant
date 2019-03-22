@@ -143,14 +143,10 @@ export const PopupMixin = {
       const { getContainer } = this;
 
       if (getContainer) {
-        if (typeof getContainer === 'string') {
-          container =
-            getContainer === 'body'
-              ? document.body
-              : document.querySelector(getContainer);
-        } else {
-          container = getContainer();
-        }
+        container =
+          typeof getContainer === 'string'
+            ? document.querySelector(getContainer)
+            : getContainer();
       } else if (this.$parent) {
         container = this.$parent.$el;
       }
