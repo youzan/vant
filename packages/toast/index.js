@@ -60,9 +60,11 @@ function Toast(options = {}) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
 
-        if (document.body.contains(toast.$el)) {
-          document.body.removeChild(toast.$el);
+        const parent = toast.$el.parentNode;
+        if (parent) {
+          parent.removeChild(toast.$el);
         }
+
         toast.$destroy();
       }
     }

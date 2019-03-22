@@ -155,7 +155,9 @@ export const PopupMixin = {
         container.appendChild(this.$el);
       }
 
-      updateOverlay();
+      if (this.overlay) {
+        updateOverlay();
+      }
     },
 
     onTouchMove(e) {
