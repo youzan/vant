@@ -58,3 +58,17 @@ test('not trigger click event when loading', () => {
   wrapper.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(0);
 });
+
+test('touchstart event', () => {
+  const onTouchstart = jest.fn();
+  const wrapper = mount(Button, {
+    context: {
+      on: {
+        touchstart: onTouchstart
+      }
+    }
+  });
+
+  wrapper.trigger('touchstart');
+  expect(onTouchstart).toHaveBeenCalled();
+});
