@@ -86,6 +86,7 @@ export default {
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
 | lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
+| getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.11 |
 
 
 #### 高级用法
@@ -149,7 +150,7 @@ export default {
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
-| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | 1.1.6 |
+| get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.1.6 |
 
 ### Event
 

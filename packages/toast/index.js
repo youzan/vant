@@ -32,7 +32,6 @@ function createInstance() {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
-    document.body.appendChild(toast.$el);
     queue.push(toast);
   }
   return queue[queue.length - 1];
