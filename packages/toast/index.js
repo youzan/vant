@@ -59,7 +59,10 @@ function Toast(options = {}) {
       if (!singleton && !isServer) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
-        document.body.removeChild(toast.$el);
+
+        if (document.body.contains(toast.$el)) {
+          document.body.removeChild(toast.$el);
+        }
         toast.$destroy();
       }
     }
