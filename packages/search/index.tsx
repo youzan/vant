@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { emit } from '../utils/functional';
+import { inherit, emit } from '../utils/functional';
 import Field from '../field';
 
 // Types
@@ -78,10 +78,14 @@ function Search(
     }
   };
 
+  const inheritData = inherit(ctx);
+  delete inheritData.attrs;
+
   return (
     <div
       class={bem({ 'show-action': props.showAction })}
       style={{ background: props.background }}
+      {...inheritData}
     >
       <div class={bem('content', props.shape)}>
         {Label()}
