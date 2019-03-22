@@ -31,7 +31,7 @@ function onClickOverlay(): void {
   }
 }
 
-function updateOverlay(): void {
+export function updateOverlay(): void {
   if (!overlay) {
     overlay = mount(Overlay, {
       on: {
@@ -40,26 +40,26 @@ function updateOverlay(): void {
     });
   }
 
-  if (overlay.$el.parentNode) {
-    overlay.visible = false;
-  }
-
   if (context.top) {
-    const { target, config } = context.top;
+    const { vm, config } = context.top;
 
-    target.appendChild(overlay.$el);
+    const el = vm.$el;
+    const target = el && el.parentNode ? el.parentNode : document.body;
+    if (target) {
+      target.appendChild(overlay.$el);
+    }
+
     Object.assign(overlay, defaultConfig, config, {
       visible: true
     });
+  } else {
+    overlay.visible = false;
   }
 }
 
 export function openOverlay(vm: any, config: OverlayConfig): void {
-  /* istanbul ignore next */
   if (!context.stack.some(item => item.vm === vm)) {
-    const el = vm.$el;
-    const target = el && el.parentNode ? el.parentNode : document.body;
-    context.stack.push({ vm, config, target });
+    context.stack.push({ vm, config });
     updateOverlay();
   }
 }

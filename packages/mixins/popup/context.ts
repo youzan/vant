@@ -2,7 +2,6 @@ import { OverlayConfig } from './overlay';
 
 export type StackItem = {
   vm: any;
-  target: HTMLElement;
   config: OverlayConfig;
 };
 
