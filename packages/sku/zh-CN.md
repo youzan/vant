@@ -200,7 +200,9 @@ sku: {
   // 键：skuKeyStr（sku 组合列表中当前类目对应的 key 值）
   // 值：skuValueId（规格值 id）
   s1: '30349',
-  s2: '1193'
+  s2: '1193',
+  // 初始选中数量
+  selectedNum: 3
 }
 ```
 

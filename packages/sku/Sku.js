@@ -9,7 +9,7 @@ import SkuRowItem from './components/SkuRowItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { use } from '../utils';
+import { use, isDef } from '../utils';
 import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
@@ -29,10 +29,11 @@ export default sfc({
     hideQuotaText: Boolean,
     stepperTitle: String,
     getContainer: Function,
+    customSkuValidator: Function,
+    closeOnClickOverlay: Boolean,
+    disableStepperInput: Boolean,
     resetStepperOnHide: Boolean,
     resetSelectedSkuOnHide: Boolean,
-    disableStepperInput: Boolean,
-    closeOnClickOverlay: Boolean,
     initialSku: {
       type: Object,
       default: () => ({})
@@ -61,7 +62,6 @@ export default sfc({
       type: Object,
       default: () => ({})
     },
-    customSkuValidator: Function
   },
 
   data() {
@@ -85,7 +85,7 @@ export default sfc({
         });
 
         if (this.resetStepperOnHide) {
-          this.$refs.skuStepper && this.$refs.skuStepper.setCurrentNum(1);
+          this.resetStepper();
         }
 
         if (this.resetSelectedSkuOnHide) {
@@ -93,9 +93,11 @@ export default sfc({
         }
       }
     },
+
     value(val) {
       this.show = val;
     },
+
     skuTree(val) {
       this.resetSelectedSku(val);
     }
@@ -196,19 +198,35 @@ export default sfc({
     skuEventBus.$on('sku:addCart', this.onAddCart);
     skuEventBus.$on('sku:buy', this.onBuy);
 
+    this.resetStepper();
     this.resetSelectedSku(this.skuTree);
+
     // 组件初始化后的钩子，抛出skuEventBus
     this.$emit('after-sku-create', skuEventBus);
   },
 
   methods: {
+    resetStepper() {
+      const { skuStepper } = this.$refs;
+      const { selectedNum } = this.initialSku;
+      const num = isDef(selectedNum) ? selectedNum : 1;
+
+      if (skuStepper) {
+        skuStepper.setCurrentNum(num);
+      } else {
+        this.selectedNum = num;
+      }
+    },
+
     resetSelectedSku(skuTree) {
       this.selectedSku = {};
-      // 重置selectedSku
+
+      // 重置 selectedSku
       skuTree.forEach(item => {
         this.selectedSku[item.k_s] = this.initialSku[item.k_s] || UNSELECTED_SKU_VALUE_ID;
       });
-      // 只有一个sku规格值时默认选中
+
+      // 只有一个 sku 规格值时默认选中
       skuTree.forEach(item => {
         const key = item.k_s;
         const valueId = item.v[0].id;
