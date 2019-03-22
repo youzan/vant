@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('default')">
-      <van-button @touchstart.native.stop="keyboard = 'default'">
+      <van-button @touchstart.stop="keyboard = 'default'">
         {{ $t('button1') }}
       </van-button>
 
@@ -16,7 +16,7 @@
     </demo-block>
 
     <demo-block :title="$t('custom')">
-      <van-button @touchstart.native.stop="keyboard = 'custom'">
+      <van-button @touchstart.stop="keyboard = 'custom'">
         {{ $t('button2') }}
       </van-button>
 

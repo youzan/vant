@@ -99,4 +99,5 @@ Vue.use(Button);
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
-| click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
+| click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: Event |
+| touchstart | 原生 touchstart 事件 | event: TouchEvent |

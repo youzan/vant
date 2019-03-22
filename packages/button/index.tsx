@@ -46,28 +46,35 @@ function Button(
     }
   };
 
+  const onTouchstart = (event: TouchEvent) => {
+    emit(ctx, 'touchstart', event);
+  };
+
+  const classes = [
+    bem([
+      type,
+      props.size,
+      {
+        loading,
+        disabled,
+        hairline,
+        block: props.block,
+        plain: props.plain,
+        round: props.round,
+        square: props.square,
+        'bottom-action': props.bottomAction
+      }
+    ]),
+    { 'van-hairline--surround': hairline }
+  ];
+
   return (
     <tag
+      class={classes}
       type={props.nativeType}
       disabled={disabled}
-      class={[
-        bem([
-          type,
-          props.size,
-          {
-            loading,
-            disabled,
-            hairline,
-            block: props.block,
-            plain: props.plain,
-            round: props.round,
-            square: props.square,
-            'bottom-action': props.bottomAction
-          }
-        ]),
-        { 'van-hairline--surround': hairline }
-      ]}
       onClick={onClick}
+      onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
       {loading ? (
