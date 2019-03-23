@@ -1,5 +1,30 @@
 ## Changelog
 
+## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+`2019-03-22`
+
+**Improvements**
+
+- Icon: update shop icons [\#3044](https://github.com/youzan/vant/pull/3044)
+- Button: add hairline prop [\#3031](https://github.com/youzan/vant/pull/3031)
+- Button: add touchstart event [\#3039](https://github.com/youzan/vant/pull/3039)
+- Dialog: add getContainer option [\#3040](https://github.com/youzan/vant/pull/3040)
+- Radio: add click event [\#2990](https://github.com/youzan/vant/pull/2990)
+- Checkbox: add click event [\#2990](https://github.com/youzan/vant/pull/2990)
+- NoticeBar: add wrapable prop [\#2992](https://github.com/youzan/vant/pull/2992)
+- Field: add error-message-align prop [\#3016](https://github.com/youzan/vant/pull/3016)
+- Sku: support set selectedNum when inited [\#3045](https://github.com/youzan/vant/pull/3045)
+- Actionsheet: support use slot and cancel-text at same time [\#3021](https://github.com/youzan/vant/pull/3021)
+
+**Bug Fixes**
+
+- fix Dialog overlay incorrect locate when use getContainer [\#3041](https://github.com/youzan/vant/pull/3041)
+- fix Swipe text blur in some browsers [\#3030](https://github.com/youzan/vant/pull/3030)
+- fix Toast should not render overlay when cleared [\#3025](https://github.com/youzan/vant/pull/3025)
+- fix Steps active-icon prop style error when vertical [\#3007](https://github.com/youzan/vant/pull/3007)
+- fix Collapse can not expand when clientHeight equals zero [\#2993](https://github.com/youzan/vant/pull/2993)
+
+
 ## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
 `2019-03-17`
 

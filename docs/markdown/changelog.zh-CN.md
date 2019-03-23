@@ -1,5 +1,30 @@
 ## 更新日志
 
+## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+`2019-03-22`
+
+**Improvements**
+
+- Icon: 更新店铺相关图标 [\#3044](https://github.com/youzan/vant/pull/3044)
+- Radio: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Checkbox: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Button: 新增 hairline 属性 [\#3031](https://github.com/youzan/vant/pull/3031)
+- Button: 新增 touchstart 属性 [\#3039](https://github.com/youzan/vant/pull/3039)
+- Dialog: 新增 getContainer 选项 [\#3040](https://github.com/youzan/vant/pull/3040)
+- NoticeBar: 新增 wrapable 属性 [\#2992](https://github.com/youzan/vant/pull/2992)
+- Field: 新增 error-message-align 属性 [\#3016](https://github.com/youzan/vant/pull/3016)
+- Sku: 支持在初始化时设置选中商品数量 [\#3045](https://github.com/youzan/vant/pull/3045)
+- Actionsheet: 支持同时设置默认插槽和 cancel-text [\#3021](https://github.com/youzan/vant/pull/3021)
+
+**Bug Fixes**
+
+- 修复 Swipe 在部分浏览器上文字模糊的问题 [\#3030](https://github.com/youzan/vant/pull/3030)
+- 修复 Steps 垂直方向 active-icon 样式错误的问题 [\#3007](https://github.com/youzan/vant/pull/3007)
+- 修复 Toast 在某些情况下遮罩层无法被清除的问题 [\#3025](https://github.com/youzan/vant/pull/3025)
+- 修复 Dialog 使用 getContainer 属性时遮罩层位置错误的问题 [\#3041](https://github.com/youzan/vant/pull/3041)
+- 修复 Collapse 在渲染较慢的情况下可能出现高度为 0 的问题 [\#2993](https://github.com/youzan/vant/pull/2993)
+
+
 ## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
 `2019-03-17`
 
