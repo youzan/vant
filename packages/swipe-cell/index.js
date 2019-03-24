@@ -21,7 +21,7 @@ export default sfc({
   data() {
     return {
       offset: 0,
-      draging: false
+      dragging: false
     };
   },
 
@@ -70,7 +70,7 @@ export default sfc({
         return;
       }
 
-      this.draging = true;
+      this.dragging = true;
       this.touchStart(event);
 
       if (this.opened) {
@@ -96,7 +96,7 @@ export default sfc({
         return;
       }
 
-      this.draging = false;
+      this.dragging = false;
       if (this.swiping) {
         this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
       }
@@ -127,7 +127,7 @@ export default sfc({
 
     const wrapperStyle = {
       transform: `translate3d(${this.offset}px, 0, 0)`,
-      transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
+      transition: this.dragging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
     };
 
     return (
