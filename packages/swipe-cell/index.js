@@ -55,10 +55,10 @@ export default sfc({
       const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
 
       // right
-      if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
+      if (direction === 'right' && -offset > rightWidth * threshold && rightWidth > 0) {
         this.open('right');
         // left
-      } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
+      } else if (direction === 'left' && offset > leftWidth * threshold && leftWidth > 0) {
         this.open('left');
       } else {
         this.swipeMove();
@@ -98,7 +98,7 @@ export default sfc({
 
       this.dragging = false;
       if (this.swiping) {
-        this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
+        this.swipeLeaveTransition(this.offset > 0 ? 'left' : 'right');
       }
     },
 
