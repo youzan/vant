@@ -60,8 +60,9 @@ export default sfc({
         // left
       } else if (direction === 'left' && offset > leftWidth * threshold && leftWidth > 0) {
         this.open('left');
+        // reset
       } else {
-        this.swipeMove();
+        this.swipeMove(0);
       }
     },
 
