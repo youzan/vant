@@ -144,7 +144,7 @@ export default sfc({
           class={bem('wrapper')}
           style={wrapperStyle}
           onTransitionend={() => {
-            this.swipe = false;
+            this.swiping = false;
           }}
         >
           {this.leftWidth ? (
