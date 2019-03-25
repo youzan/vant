@@ -12,7 +12,7 @@ Vue.use(NumberKeyboard);
 #### Default Style
 
 ```html
-<van-button @touchstart.native.stop="show = true">
+<van-button @touchstart.stop="show = true">
   Show Keyboard
 </van-button>
 

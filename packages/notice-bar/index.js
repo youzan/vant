@@ -9,6 +9,7 @@ export default sfc({
     mode: String,
     color: String,
     leftIcon: String,
+    wrapable: Boolean,
     background: String,
     delay: {
       type: [String, Number],
@@ -94,17 +95,23 @@ export default sfc({
     return (
       <div
         vShow={this.showNoticeBar}
-        class={bem({ withicon: mode })}
+        class={bem({ withicon: mode, wrapable: this.wrapable })}
         style={barStyle}
         onClick={() => {
           this.$emit('click');
         }}
       >
-        {this.leftIcon && <Icon class={bem('left-icon')} name={this.leftIcon} />}
+        {this.leftIcon && (
+          <Icon class={bem('left-icon')} name={this.leftIcon} />
+        )}
         <div ref="wrap" class={bem('wrap')}>
           <div
             ref="content"
-            class={[bem('content'), this.animationClass, { 'van-ellipsis': !this.scrollable }]}
+            class={[
+              bem('content'),
+              this.animationClass,
+              { 'van-ellipsis': !this.scrollable && !this.wrapable }
+            ]}
             style={contentStyle}
             onAnimationend={this.onAnimationEnd}
             onWebkitAnimationEnd={this.onAnimationEnd}
@@ -112,7 +119,13 @@ export default sfc({
             {this.slots() || this.text}
           </div>
         </div>
-        {iconName && <Icon class={bem('right-icon')} name={iconName} onClick={this.onClickIcon} />}
+        {iconName && (
+          <Icon
+            class={bem('right-icon')}
+            name={iconName}
+            onClick={this.onClickIcon}
+          />
+        )}
       </div>
     );
   }

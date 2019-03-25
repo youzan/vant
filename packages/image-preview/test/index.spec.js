@@ -77,16 +77,14 @@ test('function call options', done => {
   });
 
   instance.$emit('input', true);
-  expect(onClose.mock.calls.length).toEqual(0);
+  expect(onClose).toHaveBeenCalledTimes(0);
 
   Vue.nextTick(() => {
     const wrapper = document.querySelector('.van-image-preview');
     const swipe = wrapper.querySelector('.van-swipe__track');
     triggerDrag(swipe, 0, 0);
-    expect(onClose.mock.calls.length).toEqual(1);
-    expect(onClose.mock.calls).toEqual([
-      [{ index: 0, url: 'https://img.yzcdn.cn/1.png' }]
-    ]);
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
     done();
   });
 });

@@ -159,6 +159,7 @@ export default {
 | Event | Description | Parameters |
 |------|------|------|
 | change | Triggered when value changed | current value |
+| click | Triggered when click checkbox | event: Event |
 
 ### CheckboxGroup Event
 

@@ -1,7 +1,7 @@
-import manager from './manager';
-import context from './context';
+import { context } from './context';
 import { TouchMixin } from '../touch';
 import { on, off } from '../../utils/event';
+import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/scroll';
 
 export const PopupMixin = {
@@ -134,7 +134,7 @@ export const PopupMixin = {
       }
 
       this.opened = false;
-      manager.close(this);
+      closeOverlay(this);
       this.$emit('input', false);
     },
 
@@ -143,20 +143,20 @@ export const PopupMixin = {
       const { getContainer } = this;
 
       if (getContainer) {
-        if (typeof getContainer === 'string') {
-          container =
-            getContainer === 'body'
-              ? document.body
-              : document.querySelector(getContainer);
-        } else {
-          container = getContainer();
-        }
+        container =
+          typeof getContainer === 'string'
+            ? document.querySelector(getContainer)
+            : getContainer();
       } else if (this.$parent) {
         container = this.$parent.$el;
       }
 
       if (container && container !== this.$el.parentNode) {
         container.appendChild(this.$el);
+      }
+
+      if (this.overlay) {
+        updateOverlay();
       }
     },
 
@@ -186,14 +186,18 @@ export const PopupMixin = {
     },
 
     renderOverlay() {
+      if (this.$isServer || !this.value) {
+        return;
+      }
+
       if (this.overlay) {
-        manager.open(this, {
+        openOverlay(this, {
           zIndex: context.zIndex++,
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
       } else {
-        manager.close(this);
+        closeOverlay(this);
       }
 
       this.$nextTick(() => {

@@ -132,4 +132,5 @@ Vue.use(Cell).use(CellGroup);
 | - | Default slot |
 | icon | Custom icon |
 | title | Custom title |
+| label | Custom label |
 | right-icon | Custom right icon |

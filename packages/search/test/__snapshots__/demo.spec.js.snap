@@ -3,7 +3,7 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-search" style="background:#ffffff;">
+    <div class="van-search" style="background:#fff;">
       <div class="van-search__content van-search__content--square">
         <div class="van-cell van-cell--borderless van-field">
           <div class="van-field__left-icon"><i class="van-icon van-icon-search">
@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <form action="/">
-      <div class="van-search van-search--show-action" style="background:#ffffff;">
+      <div class="van-search van-search--show-action" style="background:#fff;">
         <div class="van-search__content van-search__content--square">
           <div class="van-cell van-cell--borderless van-field">
             <div class="van-field__left-icon"><i class="van-icon van-icon-search">
@@ -34,7 +34,7 @@ exports[`renders demo correctly 1`] = `
     </form>
   </div>
   <div>
-    <div class="van-search van-search--show-action" style="background:#ffffff;">
+    <div class="van-search van-search--show-action" style="background:#fff;">
       <div class="van-search__content van-search__content--round">
         <div class="van-search__label">地址</div>
         <div class="van-cell van-cell--borderless van-field">

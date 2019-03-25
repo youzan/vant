@@ -1,6 +1,7 @@
 import SwipeCell from '..';
 import { mount, triggerDrag } from '../../../test/utils';
 
+const THRESHOLD = 0.15;
 const defaultProps = {
   propsData: {
     leftWidth: 100,
@@ -24,14 +25,14 @@ it('drag and show left part', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('drag and show left part', () => {
+it('drag and show right part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
   triggerDrag(wrapper, -50, 0);
   expect(wrapper).toMatchSnapshot();
 });
 
-test('on close prop', () => {
+it('on close prop', () => {
   let position;
   let instance;
 
@@ -73,4 +74,23 @@ it('width equals zero', () => {
     }
   });
   expect(wrapper).toMatchSnapshot();
+});
+
+it('should reset after drag', () => {
+  const wrapper = mount(SwipeCell, defaultProps);
+
+  triggerDrag(wrapper, (defaultProps.leftWidth * THRESHOLD - 1), 0);
+  expect(wrapper.vm.offset).toEqual(0);
+});
+
+it('disabled prop', () => {
+  const wrapper = mount(SwipeCell, {
+    propsData: {
+      ...defaultProps.propsData,
+      disabled: true,
+    }
+  });
+
+  triggerDrag(wrapper, 50, 0);
+  expect(wrapper.vm.offset).toEqual(0);
 });

@@ -8,6 +8,7 @@ const defaultOptions = {
   value: true,
   message: '',
   className: '',
+  onClose: null,
   duration: 3000,
   position: 'middle',
   forbidClick: false,
@@ -31,7 +32,6 @@ function createInstance() {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
-    document.body.appendChild(toast.$el);
     queue.push(toast);
   }
   return queue[queue.length - 1];
@@ -52,10 +52,19 @@ function Toast(options = {}) {
     clear() {
       toast.value = false;
 
+      if (options.onClose) {
+        options.onClose();
+      }
+
       if (!singleton && !isServer) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
-        document.body.removeChild(toast.$el);
+
+        const parent = toast.$el.parentNode;
+        if (parent) {
+          parent.removeChild(toast.$el);
+        }
+
         toast.$destroy();
       }
     }

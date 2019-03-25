@@ -20,6 +20,7 @@ export default sfc({
     onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
+    errorMessageAlign: String,
     type: {
       type: String,
       default: 'text'
@@ -222,6 +223,7 @@ export default sfc({
     return (
       <Cell
         icon={this.leftIcon}
+        size={this.size}
         title={this.label}
         center={this.center}
         border={this.border}
@@ -242,7 +244,7 @@ export default sfc({
           {this.renderRightIcon()}
           {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
-        {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
+        {this.errorMessage && <div class={bem('error-message', this.errorMessageAlign)}>{this.errorMessage}</div>}
       </Cell>
     );
   }

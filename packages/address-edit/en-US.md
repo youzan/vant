@@ -94,6 +94,14 @@ export default {
 |------|------|
 | - | Custom content below postal |
 
+### Methods
+
+Use ref to get address-edit instance and call instance methods
+
+| Name | Attribute | Return value | Description |
+|------|------|------|------|
+| setAddressDetail | addressDetail: string | - | Set address detail |
+
 ### Data Structure
 
 #### addressInfo Data Structure

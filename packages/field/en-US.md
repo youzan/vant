@@ -118,6 +118,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | value | Field value | `String | Number` | - |
 | label | Field label | `String` | - |
 | type | Input type | `String` | `text` |
+| size | Size，can be set to `large` | `String` | - |
 | border | Whether to show inner border | `Boolean` | `true` |
 | disabled | Whether to disable field | `Boolean` | `false` |
 | readonly | Whether to be readonly | `Boolean` | `false` |
@@ -128,6 +129,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | error-message | Error message | `String` | `''` |
 | label-align | Label text align, can be set to `center` `right` | `String` | `left` |
 | input-align | Input text align, can be set to `center` `right` | `String` | `left` |
+| error-message-align | Error message text align, can be set to `center` `right` | `String` | `left` |
 | autosize | Textarea auto resize，can accpet an object,<br>e.g. { maxHeight: 100, minHeight: 50 } | `Boolean | Object` | `false` |
 | left-icon | Left side icon name | `String` | - |
 | right-icon | Right side icon name | `String` | - |

@@ -80,11 +80,16 @@ export default sfc({
           return;
         }
 
-        const contentHeight = `${content.clientHeight}px`;
-        wrapper.style.height = expanded ? 0 : contentHeight;
-        raf(() => {
-          wrapper.style.height = expanded ? contentHeight : 0;
-        });
+        const { clientHeight } = content;
+        if (clientHeight) {
+          const contentHeight = `${clientHeight}px`;
+          wrapper.style.height = expanded ? 0 : contentHeight;
+          raf(() => {
+            wrapper.style.height = expanded ? contentHeight : 0;
+          });
+        } else {
+          this.onTransitionEnd();
+        }
       });
     }
   },

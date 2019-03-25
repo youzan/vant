@@ -1,5 +1,67 @@
 ## 更新日志
 
+## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+`2019-03-22`
+
+**Improvements**
+
+- Icon: 更新店铺相关图标 [\#3044](https://github.com/youzan/vant/pull/3044)
+- Radio: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Checkbox: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Button: 新增 hairline 属性 [\#3031](https://github.com/youzan/vant/pull/3031)
+- Button: 新增 touchstart 属性 [\#3039](https://github.com/youzan/vant/pull/3039)
+- Dialog: 新增 getContainer 选项 [\#3040](https://github.com/youzan/vant/pull/3040)
+- NoticeBar: 新增 wrapable 属性 [\#2992](https://github.com/youzan/vant/pull/2992)
+- Field: 新增 error-message-align 属性 [\#3016](https://github.com/youzan/vant/pull/3016)
+- Sku: 支持在初始化时设置选中商品数量 [\#3045](https://github.com/youzan/vant/pull/3045)
+- Actionsheet: 支持同时设置默认插槽和 cancel-text [\#3021](https://github.com/youzan/vant/pull/3021)
+
+**Bug Fixes**
+
+- 修复 Swipe 在部分浏览器上文字模糊的问题 [\#3030](https://github.com/youzan/vant/pull/3030)
+- 修复 Steps 垂直方向 active-icon 样式错误的问题 [\#3007](https://github.com/youzan/vant/pull/3007)
+- 修复 Toast 在某些情况下遮罩层无法被清除的问题 [\#3025](https://github.com/youzan/vant/pull/3025)
+- 修复 Dialog 使用 getContainer 属性时遮罩层位置错误的问题 [\#3041](https://github.com/youzan/vant/pull/3041)
+- 修复 Collapse 在渲染较慢的情况下可能出现高度为 0 的问题 [\#2993](https://github.com/youzan/vant/pull/2993)
+
+
+## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+`2019-03-17`
+
+**Improvements**
+
+- Icon: 新增 tag 属性 [\#2986](https://github.com/youzan/vant/pull/2986)
+- Cell: 新增 label 插槽 [\#2956](https://github.com/youzan/vant/pull/2956)
+- Toast: 新增 onClose 属性 [\#2964](https://github.com/youzan/vant/pull/2964)
+- AddressEdit: 新增 setAddressDetail 方法 [\#2984](https://github.com/youzan/vant/pull/2984)
+
+**Bug Fixes**
+
+- 修复 List 子元素 scoped 样式无法生效的问题 [\#2983](https://github.com/youzan/vant/pull/2983)
+- 修复 Steps 设置为 vertical 时样式错误的问题 [\#2981](https://github.com/youzan/vant/pull/2981)
+- 修复 Coupon 单独传入 value-desc 属性时不展示的问题 [\#2980](https://github.com/youzan/vant/pull/2980)
+- 修复 Uploader 使用 before-read 属性后重复上传同个文件不触发事件的问题 [\#2971](https://github.com/youzan/vant/pull/2971)
+
+
+## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
+`2019-03-11`
+
+**Improvements**
+
+- Field: 新增 size 属性 [\#2936](https://github.com/youzan/vant/pull/2936)
+- Collapse: 新增 size 属性 [\#2946](https://github.com/youzan/vant/pull/2946)
+- Collapse: 新增 border 属性 [\#2933](https://github.com/youzan/vant/pull/2933)
+- CellGroup: 新增 title 属性 [\#2928](https://github.com/youzan/vant/pull/2928)
+- Steps: 新增 active-icon 属性 [\#2934](https://github.com/youzan/vant/pull/2934)
+- Picker: 新增 default-index 属性 [\#2935](https://github.com/youzan/vant/pull/2935)
+- Actionsheet: 新增 index 作为 select 事件的回调参数 [\#2917](https://github.com/youzan/vant/pull/2917)
+
+**Bug Fixes**
+
+- 修复 Card origin-price 插槽未生效的问题 [\#2927](https://github.com/youzan/vant/pull/2927)
+- 修复 Swipe change 事件触发时机错误的问题 [\#2909](https://github.com/youzan/vant/pull/2909)
+
+
 ## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
 `2019-03-02`
 

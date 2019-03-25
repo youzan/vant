@@ -26,8 +26,8 @@ test('confirm & cancel event', async () => {
   wrapper.find('.van-picker__confirm').trigger('click');
   wrapper.find('.van-picker__cancel').trigger('click');
 
-  expect(onConfirm.mock.calls[0][0]).toEqual(firstOption);
-  expect(onCancel.mock.calls[0][0]).toEqual(firstOption);
+  expect(onConfirm).toHaveBeenCalledWith(firstOption, [0, 0, 0]);
+  expect(onCancel).toHaveBeenCalledWith(firstOption, [0, 0, 0]);
 });
 
 test('watch areaList & code', async () => {

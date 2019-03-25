@@ -133,7 +133,7 @@ test('render coupon cell', () => {
 
   expect(wrapper).toMatchSnapshot();
   wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(1);
+  expect(onClick).toHaveBeenCalledTimes(1);
 });
 
 test('render coupon cell with coupon', () => {

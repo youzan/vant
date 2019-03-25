@@ -151,8 +151,8 @@ import { LIMIT_TYPE } from '../constants';
 export default {
   i18n: {
     'zh-CN': {
-      title2: '自定义步进器相关配置',
-      hideSoldoutSku: '隐藏售罄sku',
+      title2: '自定义步进器',
+      hideSoldoutSku: '隐藏售罄规格',
       stepperTitle: '我要买',
       button1: '积分兑换',
       button2: '买买买'
@@ -176,7 +176,8 @@ export default {
       closeOnClickOverlay: true,
       initialSku: {
         s1: '30349',
-        s2: '1193'
+        s2: '1193',
+        selectedNum: 3
       },
       customSkuValidator: () => '请选择xxx',
       customStepperConfig: {

@@ -26,6 +26,13 @@ Vue.use(Button);
 <van-button plain type="danger">Danger</van-button>
 ```
 
+#### Hairline
+
+```html
+<van-button plain hairline type="primary">Hairline</van-button>
+<van-button plain hairline type="danger">Hairline</van-button>
+```
+
 #### Disabled
 
 ```html
@@ -63,7 +70,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
-| tag | Tag | `String` | `button` |
+| tag | HTML Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |
 | plain | Whether to be plain button | `Boolean` | `false` |
 | block | Whether to set display block | `Boolean` | `false` |
@@ -81,4 +88,5 @@ Vue.use(Button);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click button and not disabled or loading | - |
+| click | Triggered when click button and not disabled or loading | event: Event |
+| touchstart | Triggered when touch start | event: TouchEvent |

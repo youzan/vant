@@ -15,9 +15,22 @@
 // Default colors
 @text-color: #323233;
 @border-color: #ebedf0;
-@active-color: #e8e8e8;
+@active-color: #f2f3f5;
 @background-color: #f8f8f8;
 @background-color-light: #fafafa;
+
+// ActionSheet
+@action-sheet-max-height: 90%;
+@action-sheet-header-height: 44px;
+@action-sheet-header-font-size: 16px;
+@action-sheet-item-height: 50px;
+@action-sheet-item-background: @white;
+@action-sheet-item-font-size: 16px;
+@action-sheet-item-text-color: @text-color;
+@action-sheet-subname-color: @gray-darker;
+@action-sheet-subname-font-size: 12px;
+@action-sheet-close-icon-size: 18px;
+@action-sheet-close-icon-color: @gray-dark;
 
 // Button
 @button-default-color: @text-color;
@@ -39,6 +52,8 @@
 @button-bottom-action-default-background-color: @orange;
 @button-bottom-action-primary-color: @white;
 @button-bottom-action-primary-background-color: @red;
+@button-border-radius: 2px;
+@button-round-border-radius: 10em;
 
 // Checkbox
 @checkbox-size: 20px;
@@ -153,7 +168,8 @@
 @search-background-color: #f7f8fA;
 
 // Stepper
-@stepper-background-color: #f2f3f5;
+@stepper-active-color: #e8e8e8;
+@stepper-background-color: @active-color;
 @stepper-button-disabled-color: #f7f8fa;
+@stepper-input-disabled-color: @active-color;
 @stepper-border-radius: 4px;
-@stepper-input-disabled-color: #f2f3f5;

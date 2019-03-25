@@ -16,8 +16,6 @@ const initInstance = () => {
   instance.$on('input', value => {
     instance.value = value;
   });
-
-  document.body.appendChild(instance.$el);
 };
 
 const Dialog = options => {
@@ -47,6 +45,7 @@ Dialog.defaultOptions = {
   lockScroll: true,
   beforeClose: null,
   messageAlign: '',
+  getContainer: 'body',
   confirmButtonText: '',
   cancelButtonText: '',
   showConfirmButton: true,

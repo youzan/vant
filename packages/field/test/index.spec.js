@@ -26,7 +26,7 @@ test('click icon event', () => {
   expect(wrapper.emitted('click-icon')).toBeTruthy();
   expect(wrapper.emitted('click-left-icon')).toBeTruthy();
   expect(wrapper.emitted('click-right-icon')).toBeTruthy();
-  expect(onIconClick.mock.calls.length).toBe(1);
+  expect(onIconClick).toHaveBeenCalled();
 });
 
 test('keypress event', () => {
@@ -111,7 +111,7 @@ test('blur method', () => {
   wrapper.find('input').element.focus();
   wrapper.vm.blur();
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(fn).toHaveBeenCalledTimes(1);
 });
 
 test('focus method', () => {
@@ -121,7 +121,7 @@ test('focus method', () => {
   wrapper.vm.$on('focus', fn);
   wrapper.vm.focus();
 
-  expect(fn.mock.calls.length).toEqual(1);
+  expect(fn).toHaveBeenCalledTimes(1);
 });
 
 test('maxlength', async () => {
@@ -183,6 +183,15 @@ test('render right icon with icon prop for old version', () => {
   const wrapper = mount(Field, {
     propsData: {
       icon: 'success'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('size prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      size: 'large'
     }
   });
   expect(wrapper).toMatchSnapshot();

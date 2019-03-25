@@ -44,3 +44,11 @@ exports[`render textarea 1`] = `
   </div>
 </div>
 `;
+
+exports[`size prop 1`] = `
+<div class="van-cell van-cell--large van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;

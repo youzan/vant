@@ -22,7 +22,7 @@ test('click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(1);
+  expect(onClick).toHaveBeenCalled();
 });
 
 test('not trigger click event when disabled', () => {
@@ -39,7 +39,7 @@ test('not trigger click event when disabled', () => {
   });
 
   wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(0);
+  expect(onClick).toHaveBeenCalledTimes(0);
 });
 
 test('not trigger click event when loading', () => {
@@ -56,5 +56,19 @@ test('not trigger click event when loading', () => {
   });
 
   wrapper.trigger('click');
-  expect(onClick.mock.calls.length).toEqual(0);
+  expect(onClick).toHaveBeenCalledTimes(0);
+});
+
+test('touchstart event', () => {
+  const onTouchstart = jest.fn();
+  const wrapper = mount(Button, {
+    context: {
+      on: {
+        touchstart: onTouchstart
+      }
+    }
+  });
+
+  wrapper.trigger('touchstart');
+  expect(onTouchstart).toHaveBeenCalled();
 });

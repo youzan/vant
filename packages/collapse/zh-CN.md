@@ -103,6 +103,7 @@ export default {
 |------|------|------|------|------|------|
 | name | 唯一标识符，默认为索引值 | `String | Number` | `index` | - |
 | icon | 标题栏左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.2.1 |
+| size | 标题栏大小，可选值为 `large` | `String` | - | 1.6.9 |
 | title | 标题栏左侧内容 | `String | Number` | - | - |
 | value | 标题栏右侧内容 | `String | Number` | - | 1.2.1 |
 | label | 标题栏描述信息 | `String | Number`  | - | 1.2.1 |

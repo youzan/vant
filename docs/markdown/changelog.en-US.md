@@ -1,5 +1,67 @@
 ## Changelog
 
+## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+`2019-03-22`
+
+**Improvements**
+
+- Icon: update shop icons [\#3044](https://github.com/youzan/vant/pull/3044)
+- Button: add hairline prop [\#3031](https://github.com/youzan/vant/pull/3031)
+- Button: add touchstart event [\#3039](https://github.com/youzan/vant/pull/3039)
+- Dialog: add getContainer option [\#3040](https://github.com/youzan/vant/pull/3040)
+- Radio: add click event [\#2990](https://github.com/youzan/vant/pull/2990)
+- Checkbox: add click event [\#2990](https://github.com/youzan/vant/pull/2990)
+- NoticeBar: add wrapable prop [\#2992](https://github.com/youzan/vant/pull/2992)
+- Field: add error-message-align prop [\#3016](https://github.com/youzan/vant/pull/3016)
+- Sku: support set selectedNum when inited [\#3045](https://github.com/youzan/vant/pull/3045)
+- Actionsheet: support use slot and cancel-text at same time [\#3021](https://github.com/youzan/vant/pull/3021)
+
+**Bug Fixes**
+
+- fix Dialog overlay incorrect locate when use getContainer [\#3041](https://github.com/youzan/vant/pull/3041)
+- fix Swipe text blur in some browsers [\#3030](https://github.com/youzan/vant/pull/3030)
+- fix Toast should not render overlay when cleared [\#3025](https://github.com/youzan/vant/pull/3025)
+- fix Steps active-icon prop style error when vertical [\#3007](https://github.com/youzan/vant/pull/3007)
+- fix Collapse can not expand when clientHeight equals zero [\#2993](https://github.com/youzan/vant/pull/2993)
+
+
+## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+`2019-03-17`
+
+**Improvements**
+
+- Icon: add tag prop [\#2986](https://github.com/youzan/vant/pull/2986)
+- Cell: add label slot [\#2956](https://github.com/youzan/vant/pull/2956)
+- Toast: add onClose prop [\#2964](https://github.com/youzan/vant/pull/2964)
+- AddressEdit: add setAddressDetail method [\#2984](https://github.com/youzan/vant/pull/2984)
+
+**Bug Fixes**
+
+- fix List render error by adding a loading key [\#2983](https://github.com/youzan/vant/pull/2983)
+- fix Steps incorrect active style in vertical direction [\#2981](https://github.com/youzan/vant/pull/2981)
+- fix Coupon value-desc display condition [\#2980](https://github.com/youzan/vant/pull/2980)
+- fix Uploader can not upload same file when before-read [\#2971](https://github.com/youzan/vant/pull/2971)
+
+
+## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
+`2019-03-11`
+
+**Improvements**
+
+- Field: add size prop [\#2936](https://github.com/youzan/vant/pull/2936)
+- Collapse: add size prop [\#2946](https://github.com/youzan/vant/pull/2946)
+- Collapse: add border prop [\#2933](https://github.com/youzan/vant/pull/2933)
+- CellGroup: add title prop [\#2928](https://github.com/youzan/vant/pull/2928)
+- Steps: add active-icon prop [\#2934](https://github.com/youzan/vant/pull/2934)
+- Picker: add default-index prop [\#2935](https://github.com/youzan/vant/pull/2935)
+- Actionsheet: add index param for select event [\#2917](https://github.com/youzan/vant/pull/2917)
+
+**Bug Fixes**
+
+- fix Card origin-price slot not work [\#2927](https://github.com/youzan/vant/pull/2927)
+- fix Swipe emit change event in correct time [\#2909](https://github.com/youzan/vant/pull/2909)
+
+
 ## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
 `2019-03-02`
 

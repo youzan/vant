@@ -134,6 +134,7 @@ Vue.use(Cell).use(CellGroup);
 | 名称 | 说明 |
 |------|------|
 | - | 自定义`value`显示内容 |
-| title | 自定义`title`显示内容 |
-| icon | 自定义`icon` |
-| right-icon | 自定义右侧按钮，默认是`arrow` |
+| title | 自定义标题显示内容 |
+| label | 自定义标题下方描述显示内容 |
+| icon | 自定义左侧图标 |
+| right-icon | 自定义右侧按钮，默认为`arrow` |

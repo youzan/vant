@@ -117,6 +117,35 @@ test('render overlay', () => {
   expect(div.querySelector('.van-overlay')).toBeTruthy();
 });
 
+test('watch overlay prop', () => {
+  const div = document.createElement('div');
+  wrapper = mount({
+    template: `
+      <div>
+        <popup :value="show" :overlay="overlay" :get-container="getContainer" />
+      </div>
+    `,
+    components: {
+      Popup
+    },
+    data() {
+      return {
+        show: false,
+        overlay: false,
+        getContainer: () => div
+      };
+    }
+  });
+
+  expect(div.querySelector('.van-overlay')).toBeFalsy();
+
+  wrapper.setData({ overlay: true });
+  expect(div.querySelector('.van-overlay')).toBeFalsy();
+
+  wrapper.setData({ show: true });
+  expect(div.querySelector('.van-overlay')).toBeTruthy();
+});
+
 test('close on click modal', () => {
   const div = document.createElement('div');
   wrapper = mount({

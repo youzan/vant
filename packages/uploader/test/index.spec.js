@@ -31,7 +31,7 @@ test('disabled', () => {
   });
 
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
 it('read text', done => {
@@ -57,7 +57,7 @@ it('unknown resultType', () => {
     }
   });
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
 it('before read return false', () => {
@@ -69,8 +69,11 @@ it('before read return false', () => {
     }
   });
 
+  const input = wrapper.find('input');
+
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
+  expect(input.element.value).toEqual('');
 });
 
 test('file size overlimit', async () => {

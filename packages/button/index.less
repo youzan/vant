@@ -6,10 +6,10 @@
   display: inline-block;
   height: 44px;
   line-height: 42px;
-  border-radius: 2px;
-  box-sizing: border-box;
   font-size: 16px;
   text-align: center;
+  box-sizing: border-box;
+  border-radius: @button-border-radius;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
@@ -29,7 +29,7 @@
   }
 
   &:active::before {
-    opacity: .15;
+    opacity: .1;
   }
 
   &--loading,
@@ -132,12 +132,12 @@
   }
 
   &--bottom-action {
+    border: 0;
     width: 100%;
     height: 50px;
-    line-height: 50px;
-    border: 0;
-    border-radius: 0;
     font-size: 16px;
+    line-height: 50px;
+    border-radius: 0;
     color: @button-bottom-action-default-color;
     background-color: @button-bottom-action-default-background-color;
 
@@ -151,7 +151,7 @@
   }
 
   &--round {
-    border-radius: 10em;
+    border-radius: @button-round-border-radius;
   }
 
   &--square {
@@ -162,5 +162,18 @@
     margin-left: 5px;
     display: inline-block;
     vertical-align: middle;
+  }
+
+  &--hairline {
+    border-width: 0;
+
+    &::after {
+      border-color: inherit;
+      border-radius: @button-border-radius * 2;
+    }
+
+    &.van-button--round::after {
+      border-radius: @button-round-border-radius;
+    }
   }
 }

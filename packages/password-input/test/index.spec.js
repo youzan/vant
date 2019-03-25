@@ -12,5 +12,5 @@ test('focus event', () => {
   });
 
   wrapper.find('.van-password-input__security').trigger('touchstart');
-  expect(focus.mock.calls.length).toEqual(1);
+  expect(focus).toHaveBeenCalledTimes(1);
 });
