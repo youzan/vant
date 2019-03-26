@@ -7,11 +7,6 @@
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
     <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square" alt="Coverage Status" />
-    <img src="https://img.shields.io/npm/l/vant.svg?style=flat-square" alt="license" />
-    <img src="https://isitmaintained.com/badge/open/youzan/vant.svg" alt="issue" />
-</p>
-
-<p align="center">
     <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
     <img src="https://img.shields.io/npm/dt/vant.svg?style=flat-square" alt="downloads" />
     <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square" alt="downloads" />

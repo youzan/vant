@@ -72,11 +72,8 @@ export default sfc({
       }
 
       this.dragging = true;
+      this.startOffset = this.offset;
       this.touchStart(event);
-
-      if (this.opened) {
-        this.startX -= this.offset;
-      }
     },
 
     onDrag(event) {
@@ -88,7 +85,7 @@ export default sfc({
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
-        this.swipeMove(this.deltaX);
+        this.swipeMove(this.deltaX + this.startOffset);
       }
     },
 
