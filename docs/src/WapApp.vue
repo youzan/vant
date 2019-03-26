@@ -1,10 +1,10 @@
 <template>
   <div>
     <van-nav-bar
-      v-show="title && showNav"
+      v-show="title"
       class="van-doc-nav-bar"
       :title="title"
-      left-arrow
+      :left-arrow="showNav"
       @click-left="onBack"
     >
       <a
