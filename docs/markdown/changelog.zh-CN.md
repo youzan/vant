@@ -1,5 +1,19 @@
 ## 更新日志
 
+## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
+`2019-03-28`
+
+**Improvements**
+
+- Actionsheet: 新增 less 变量 [\#3049](https://github.com/youzan/vant/pull/3049)
+
+**Bug Fixes**
+
+- 修复 SwipeCell 展示时无法触发滚动事件的问题 [\#3056](https://github.com/youzan/vant/pull/3056)
+- 修复 Button 细边框状态下 square 属性失效的问题 [\#3058](https://github.com/youzan/vant/pull/3058)
+- 修复 Picker 使用 loading 属性时展示出现异常的问题 [\#3064](https://github.com/youzan/vant/pull/3064)
+
+
 ## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
 `2019-03-22`
 

@@ -1,5 +1,19 @@
 ## Changelog
 
+## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
+`2019-03-28`
+
+**Improvements**
+
+- Actionsheet: add less vars [\#3049](https://github.com/youzan/vant/pull/3049)
+
+**Bug Fixes**
+
+- fix SwipeCell unable to scroll page when opened [\#3056](https://github.com/youzan/vant/pull/3056)
+- fix Picker render error when set data async [\#3064](https://github.com/youzan/vant/pull/3064)
+- fix Button square prop not work when use hairline [\#3058](https://github.com/youzan/vant/pull/3058)
+
+
 ## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
 `2019-03-22`
 
