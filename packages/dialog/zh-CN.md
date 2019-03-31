@@ -45,6 +45,24 @@ Dialog.confirm({
 });
 ```
 
+#### 异步关闭
+
+```js
+function beforeClose(action, done) {
+  if (action === 'confirm') {
+    setTimeout(done, 1000);
+  } else {
+    done();
+  }
+}
+
+Dialog.confirm({
+  title: '标题',
+  message: '弹窗内容',
+  beforeClose
+});
+```
+
 #### 全局方法
 
 引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，在所有组件内部都可以直接调用此方法
@@ -55,6 +73,30 @@ export default {
     this.$dialog.alert({
       message: '弹窗内容'
     });
+  }
+}
+```
+
+#### 组件调用
+
+如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件
+
+```html
+<van-dialog
+  v-model="show"
+  title="标题"
+  show-cancel-button
+>
+  <img src="https://img.yzcdn.cn/1.jpg">
+</van-dialog>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false
+    };
   }
 }
 ```
@@ -72,6 +114,8 @@ export default {
 
 ### Options
 
+通过函数调用 `Dialog` 时，支持传入以下选项：
+
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 标题 | `String` | - | - |
@@ -88,53 +132,9 @@ export default {
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.11 |
 
-
-#### 高级用法
-如果需要在弹窗内实现更复杂的交互，可以通过组件形式来调用 Dialog，调用前需要通过 Vue.use 注册组件
-
-```html
-<van-dialog
-  v-model="show"
-  show-cancel-button
-  :before-close="beforeClose"
->
-  <van-field
-    v-model="username"
-    label="用户名"
-    placeholder="请输入用户名"
-  />
-  <van-field
-    v-model="password"
-    type="password"
-    label="密码"
-    placeholder="请输入密码"
-  />
-</van-dialog>
-```
-
-```js
-export default {
-  data() {
-    return {
-      show: false,
-      username: '',
-      password: ''
-    };
-  },
-  
-  methods: {
-    beforeClose(action, done) {
-      if (action === 'confirm') {
-        setTimeout(done, 1000);
-      } else {
-        done();
-      }
-    }
-  }
-}
-```
-
 ### API
+
+通过组件调用 `Dialog` 时，支持以下 API：
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -153,6 +153,8 @@ export default {
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.1.6 |
 
 ### Event
+
+通过组件调用 `Dialog` 时，支持以下事件：
 
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
