@@ -44,6 +44,24 @@ Used to confirm some messages, including a confirm button and a cancel button
 });
 ```
 
+#### Asnyc Close
+
+```js
+function beforeClose(action, done) {
+  if (action === 'confirm') {
+    setTimeout(done, 1000);
+  } else {
+    done();
+  }
+}
+
+Dialog.confirm({
+  title: 'Title',
+  message: 'Content',
+  beforeClose
+});
+```
+
 #### $dialog Method
 
 After import the Dialog component, the $dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
@@ -54,6 +72,30 @@ export default {
     this.$dialog.alert({
       message: 'Content'
     });
+  }
+}
+```
+
+#### Advanced Usage
+
+If you need to render vue components within a dialog, you can use dialog component.
+
+```html
+<van-dialog
+  v-model="show"
+  title="Title"
+  show-cancel-button
+>
+  <img src="https://img.yzcdn.cn/1.jpg">
+</van-dialog>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false
+    };
   }
 }
 ```
@@ -86,51 +128,6 @@ export default {
 | lockScroll | Whether to lock body scroll | `Boolean` | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
 | getContainer | Return the mount node for Dialog | `String | () => HTMLElement` | `body` |
-
-
-#### Advanced Usage
-
-If you need to render vue components within a dialog, you can use dialog component.
-
-```html
-<van-dialog v-model="show" :asyncConfirm="onClickConfirmAsync">
-  <van-field
-    v-model="username"
-    label="Username"
-    placeholder="Username"
-  />
-  <van-field
-    v-model="password"
-    type="password"
-    label="Password"
-    placeholder="Password"
-  />
-</van-dialog>
-```
-
-```js
-Vue.use(Dialog);
-
-export default {
-  data() {
-    return {
-      show: false,
-      username: '',
-      password: ''
-    };
-  },
-  
-  methods: {
-    beforeClose(action, done) {
-      if (action === 'confirm') {
-        setTimeout(done, 1000);
-      } else {
-        done();
-      }
-    }
-  }
-}
-```
 
 ### API
 
