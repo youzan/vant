@@ -108,3 +108,12 @@ test('stepper blur', () => {
   expect(wrapper.emitted('input')).toEqual([[0], [3]]);
   expect(wrapper.emitted('blur')).toBeTruthy();
 });
+
+test('input width', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      inputWidth: '10rem'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

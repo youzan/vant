@@ -84,6 +84,7 @@ export default {
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
 | async-change | Whether to enable async change | `Boolean` | `false` | - |
+| input-width | Input width | `String` | `30px` |
 
 ### Event
 
