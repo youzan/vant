@@ -73,6 +73,16 @@ export default {
 </van-slider>
 ```
 
+#### 垂直方向
+
+Slider 垂直展示时，高度为 100% 父元素高度
+
+```html
+<div :style="{ height: '100px' }">
+  <van-slider v-model="value" vertical />
+</div>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -85,6 +95,7 @@ export default {
 | bar-height | 进度条高度 | `String` | `2px` | 1.1.0 |
 | active-color | 进度条激活态颜色 | `String` | `#1989fa` | 1.5.1 |
 | inactive-color | 进度条默认颜色 | `String` | `#e5e5e5` | 1.5.1 |
+| vertical | 是否垂直展示 | `Boolean` | `false` | 1.6.13 |
 
 ### Event
 

@@ -53,6 +53,16 @@
         </div>
       </van-slider>
     </demo-block>
+
+    <demo-block :title="$t('vertical')">
+      <div :style="{ height: '120px', paddingLeft: '30px' }">
+        <van-slider
+          v-model="value7"
+          vertical
+          @change="onChange"
+        />
+      </div>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -66,7 +76,8 @@ export default {
       title4: '指定步长',
       customStyle: '自定义样式',
       customButton: '自定义按钮',
-      text: '当前值：'
+      text: '当前值：',
+      vertical: '垂直方向'
     },
     'en-US': {
       title1: 'Basic Usage',
@@ -75,7 +86,8 @@ export default {
       title4: 'Step size',
       customStyle: 'Custom Style',
       customButton: 'Custom Button',
-      text: 'Current value: '
+      text: 'Current value: ',
+      vertical: 'Vertical'
     }
   },
 
@@ -86,7 +98,8 @@ export default {
       value3: 50,
       value4: 50,
       value5: 50,
-      value6: 50
+      value6: 50,
+      value7: 50
     };
   },
 
