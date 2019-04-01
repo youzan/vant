@@ -125,6 +125,7 @@ export default {
     text-align: center;
     display: inline-block;
     border: 1px solid #dcdee0;
+    background-color: #f7f8fa;
 
     &:first-child {
       border-right: none;
