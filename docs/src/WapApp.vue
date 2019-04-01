@@ -4,6 +4,7 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
+      :border="false"
       :left-arrow="showNav"
       @click-left="onBack"
     >
@@ -72,7 +73,6 @@ body {
 
 .van-doc-nav-bar {
   .van-nav-bar__title {
-    font-size: 15px;
     text-transform: capitalize;
   }
 

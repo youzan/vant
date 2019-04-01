@@ -101,7 +101,9 @@ export default {
   }
 
   .van-tab__pane {
-    padding-top: 10px;
+    width: auto;
+    margin: 20px;
+    background-color: #fff;
   }
 }
 </style>
