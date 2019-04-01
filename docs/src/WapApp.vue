@@ -4,6 +4,7 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
+      :border="false"
       :left-arrow="showNav"
       @click-left="onBack"
     >
@@ -65,28 +66,24 @@ export default {
 body {
   line-height: 1;
   color: @text-color;
-  background-color: #fafafa;
+  background-color: #f2f3f5;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 .van-doc-nav-bar {
+  height: 56px;
+  line-height: 56px;
+
   .van-nav-bar__title {
-    font-size: 15px;
+    font-size: 18px;
     text-transform: capitalize;
   }
 
-  .van-nav-bar__left,
-  .van-nav-bar__right {
+  .van-icon {
+    font-size: 24px;
     cursor: pointer;
-  }
-
-  .van-nav-bar__right {
-    font-size: 16px;
-
-    .van-icon {
-      vertical-align: -3px;
-    }
+    color: @gray-dark;
   }
 }
 

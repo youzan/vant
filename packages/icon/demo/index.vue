@@ -90,18 +90,21 @@ export default {
       display: block;
       padding: 0 5px;
       font-size: 12px;
-      line-height: 14px;
+      line-height: 18px;
+      color: @gray-darker;
     }
   }
 
   .van-icon {
     font-size: 32px;
-    margin: 15px 0;
+    margin: 20px 0 10px;
     color: @text-color;
   }
 
   .van-tab__pane {
-    padding-top: 10px;
+    width: auto;
+    margin: 20px;
+    background-color: #fff;
   }
 }
 </style>
