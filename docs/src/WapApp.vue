@@ -72,21 +72,18 @@ body {
 }
 
 .van-doc-nav-bar {
+  height: 56px;
+  line-height: 56px;
+
   .van-nav-bar__title {
+    font-size: 18px;
     text-transform: capitalize;
   }
 
-  .van-nav-bar__left,
-  .van-nav-bar__right {
+  .van-icon {
+    font-size: 24px;
     cursor: pointer;
-  }
-
-  .van-nav-bar__right {
-    font-size: 16px;
-
-    .van-icon {
-      vertical-align: -3px;
-    }
+    color: @gray-dark;
   }
 }
 
