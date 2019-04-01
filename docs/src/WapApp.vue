@@ -65,7 +65,7 @@ export default {
 body {
   line-height: 1;
   color: @text-color;
-  background-color: #fafafa;
+  background-color: #f2f3f5;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

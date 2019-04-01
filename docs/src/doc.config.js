@@ -77,6 +77,7 @@ module.exports = {
         groups: [
           {
             groupName: '基础组件',
+            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
             list: [
               {
                 path: '/button',
@@ -102,6 +103,7 @@ module.exports = {
           },
           {
             groupName: '表单组件',
+            icon: 'https://img.yzcdn.cn/vant/form-0401.svg',
             list: [
               {
                 path: '/checkbox',
@@ -163,6 +165,7 @@ module.exports = {
           },
           {
             groupName: '反馈组件',
+            icon: 'passed',
             list: [
               {
                 path: '/actionsheet',
@@ -196,6 +199,7 @@ module.exports = {
           },
           {
             groupName: '展示组件',
+            icon: 'photo-o',
             list: [
               {
                 path: '/circle',
@@ -245,6 +249,7 @@ module.exports = {
           },
           {
             groupName: '导航组件',
+            icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
                 path: '/badge',
@@ -274,6 +279,7 @@ module.exports = {
           },
           {
             groupName: '业务组件',
+            icon: 'ellipsis',
             list: [
               {
                 path: '/address-edit',
@@ -378,6 +384,7 @@ module.exports = {
         groups: [
           {
             groupName: 'Basic Components',
+            icon: 'https://img.yzcdn.cn/vant/basic-0401.svg',
             list: [
               {
                 path: '/button',
@@ -403,6 +410,7 @@ module.exports = {
           },
           {
             groupName: 'Form Components',
+            icon: 'https://img.yzcdn.cn/vant/form-0401.svg',
             list: [
               {
                 path: '/checkbox',
@@ -464,6 +472,7 @@ module.exports = {
           },
           {
             groupName: 'Action Components',
+            icon: 'passed',
             list: [
               {
                 path: '/actionsheet',
@@ -497,6 +506,7 @@ module.exports = {
           },
           {
             groupName: 'Display Components',
+            icon: 'photo-o',
             list: [
               {
                 path: '/circle',
@@ -546,6 +556,7 @@ module.exports = {
           },
           {
             groupName: 'Navigation Components',
+            icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
                 path: '/badge',
@@ -575,6 +586,7 @@ module.exports = {
           },
           {
             groupName: 'Business Components',
+            icon: 'ellipsis',
             list: [
               {
                 path: '/address-edit',

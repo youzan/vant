@@ -1,6 +1,7 @@
 <template>
   <van-collapse
     v-model="active"
+    :border="false"
     class="mobile-nav"
   >
     <van-collapse-item
@@ -8,14 +9,20 @@
       :title="group.groupName"
       :name="group.groupName"
     >
-      <van-cell
-        v-if="!navItem.disabled"
-        v-for="(navItem, index) in group.list"
-        :key="index"
-        :to="'/' + base + navItem.path"
-        :title="navItem.title"
-        is-link
+      <van-icon
+        :name="group.icon"
+        slot="right-icon"
+        class="mobile-nav__icon"
       />
+      <template v-for="(navItem, index) in group.list">
+        <van-cell
+          v-if="!navItem.disabled"
+          :key="index"
+          :to="'/' + base + navItem.path"
+          :title="navItem.title"
+          is-link
+        />
+      </template>
     </van-collapse-item>
   </van-collapse>
 </template>
@@ -38,11 +45,15 @@ export default {
 <style lang="less">
 .mobile-nav {
   &__item {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
-  &::after {
-    display: none;
+  &__icon {
+    font-size: 24px;
+
+    img {
+      width: 100%;
+    }
   }
 
   .van-collapse-item__content {
@@ -51,8 +62,10 @@ export default {
 
   .van-collapse-item__title {
     font-size: 16px;
-    line-height: 36px;
+    font-weight: 500;
+    line-height: 40px;
     align-items: center;
+    border-radius: 2px;
   }
 }
 </style>
