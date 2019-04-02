@@ -48,7 +48,7 @@ export default {
 | loosing-text | Text to show when loosing | `String` | `Loose to refresh...` |
 | loading-text | Text to show when loading | `String` | `Loading...` |
 | success-text | Text to show when loading success | `String` | - |
-| success-duration | Success text display duration(ms) | `String` | 500 |
+| success-duration | Success text display duration(ms) | `Number` | `500` |
 | animation-duration | Animation duration | `Number` | `300` |
 | head-height | Height of head | `Number` | `50` |
 | disabled | Whether to disable | `Boolean` | `false` |

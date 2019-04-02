@@ -102,7 +102,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| loading | 是否处于加载状态，加载过程中不触发`load`事件 | `Boolean` | `false` | - |
+| v-model | 是否处于加载状态，加载过程中不触发`load`事件 | `Boolean` | `false` | - |
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` | - |
 | error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | `Boolean` | `false` | - |
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
