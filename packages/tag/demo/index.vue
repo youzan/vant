@@ -139,6 +139,8 @@ export default {
 
 <style lang="less">
 .demo-tag {
+  background-color: #fff;
+
   .van-tag + .van-tag {
     margin-left: 10px;
   }
