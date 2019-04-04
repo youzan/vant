@@ -4,7 +4,7 @@ import enUS from '../../../packages/locale/lang/en-US';
 
 const langMap = {
   'en-US': {
-    title: 'Vant - Lightweight Mobile UI Components built on Vue',
+    title: 'Vant - Mobile UI Components built on Vue',
     messages: enUS
   },
   'zh-CN': {
