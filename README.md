@@ -2,7 +2,7 @@
     <img alt="logo" src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" width="120" height="120" style="margin-bottom: 10px;">
 </p>
 
-<h3 align="center" style="margin: 30px 0 35px;">Lightweight Mobile UI Components built on Vue</h3>
+<h3 align="center" style="margin: 30px 0 35px;">Mobile UI Components built on Vue</h3>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
