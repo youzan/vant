@@ -48,6 +48,24 @@ it('read text', done => {
   wrapper.vm.onChange(file);
 });
 
+it('set input name', done => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      name: 'uploader',
+      beforeRead: (readFile, detail) => {
+        expect(detail.name).toEqual('uploader');
+        return true;
+      },
+      afterRead: (readFile, detail) => {
+        expect(detail.name).toEqual('uploader');
+        done();
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+});
+
 it('unknown resultType', () => {
   const afterRead = jest.fn();
   const wrapper = mount(Uploader, {
