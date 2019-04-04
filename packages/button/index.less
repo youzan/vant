@@ -1,15 +1,15 @@
 @import '../style/var';
 
 .van-button {
+  display: inline-block;
   position: relative;
   padding: 0;
-  display: inline-block;
-  height: 44px;
-  line-height: 42px;
-  font-size: 16px;
+  height: @button-default-height;
+  line-height: @button-default-line-height;
+  font-size: @button-default-font-size;
+  border-radius: @button-border-radius;
   text-align: center;
   box-sizing: border-box;
-  border-radius: @button-border-radius;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
@@ -42,35 +42,35 @@
   &--default {
     color: @button-default-color;
     background-color: @button-default-background-color;
-    border: 1px solid @button-default-border-color;
+    border: @button-border-width solid @button-default-border-color;
   }
 
   &--primary {
     color: @button-primary-color;
     background-color: @button-primary-background-color;
-    border: 1px solid @button-primary-border-color;
+    border: @button-border-width solid @button-primary-border-color;
   }
 
   &--info {
     color: @button-info-color;
     background-color: @button-info-background-color;
-    border: 1px solid @button-info-border-color;
+    border: @button-border-width solid @button-info-border-color;
   }
 
   &--danger {
     color: @button-danger-color;
     background-color: @button-danger-background-color;
-    border: 1px solid @button-danger-border-color;
+    border: @button-border-width solid @button-danger-border-color;
   }
 
   &--warning {
     color: @button-warning-color;
     background-color: @button-warning-background-color;
-    border: 1px solid @button-warning-border-color;
+    border: @button-border-width solid @button-warning-border-color;
   }
 
   &--plain {
-    background-color: @white;
+    background-color: @button-plain-background-color;
 
     &.van-button--primary {
       color: @button-primary-background-color;
@@ -91,21 +91,21 @@
 
   &--large {
     width: 100%;
-    height: 50px;
-    line-height: 48px;
+    height: @button-large-height;
+    line-height: @button-large-line-height;
   }
 
   &--normal {
     padding: 0 15px;
-    font-size: 14px;
+    font-size: @button-normal-font-size;
   }
 
   &--small {
-    height: 30px;
     padding: 0 8px;
-    min-width: 60px;
-    font-size: 12px;
-    line-height: 28px;
+    height: @button-small-height;
+    min-width: @button-small-min-width;
+    font-size: @button-small-font-size;
+    line-height: @button-small-line-height;
   }
 
   &--loading {
@@ -116,10 +116,10 @@
 
   &--mini {
     display: inline-block;
-    width: 50px;
-    height: 22px;
-    line-height: 20px;
-    font-size: 10px;
+    height: @button-mini-height;
+    min-width: @button-mini-min-width;
+    font-size: @button-mini-font-size;
+    line-height: @button-mini-line-height;
 
     & + .van-button--mini {
       margin-left: 5px;
@@ -147,7 +147,7 @@
   }
 
   &--disabled {
-    opacity: .5;
+    opacity: @button-disabled-opacity;
   }
 
   &--round {
