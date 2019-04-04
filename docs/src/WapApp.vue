@@ -76,7 +76,7 @@ body {
   line-height: 56px;
 
   .van-nav-bar__title {
-    font-size: 18px;
+    font-size: 17px;
     text-transform: capitalize;
   }
 
