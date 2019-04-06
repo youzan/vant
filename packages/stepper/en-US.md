@@ -51,8 +51,14 @@ export default {
 
   methods: {
     onChange(value) {
+      if (this.changing) {
+        return;
+      }
+
+      this.changing = true;
       setTimeout(() => {
         this.value = value;
+        this.changing = false;
       }, 500);
     }
   }
