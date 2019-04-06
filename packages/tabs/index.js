@@ -155,6 +155,7 @@ export default sfc({
 
   activated() {
     this.onShow();
+    this.setLine();
   },
 
   deactivated() {
