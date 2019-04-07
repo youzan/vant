@@ -7,10 +7,12 @@
 ### Features
 
 * 50+ Reusable components
-* 80%+ Unit test coverage
+* 90% Unit test coverage
 * Extensive documentation and demos
 * Support [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-* Support TypeScript
+* Support Custom Theme
+* Support i18n
+* Support TS
 * Support SSR
 
 ### Quickstart

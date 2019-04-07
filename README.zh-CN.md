@@ -23,11 +23,13 @@
 
 ## 特性
 
-* 50+ 个经过有赞线上业务检验的组件
-* 80%+ 单元测试覆盖率
+* 50+ 个组件
+* 90% 单元测试覆盖率
 * 完善的中英文文档和示例
-* 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-* 支持 TypeScript
+* 支持按需引入
+* 支持主题定制
+* 支持国际化
+* 支持 TS
 * 支持 SSR
 
 ## 安装
