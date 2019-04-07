@@ -1,5 +1,22 @@
 ## 更新日志
 
+## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
+`2019-04-06`
+
+**Improvements**
+
+- Uploader: 新增 name 属性 [\#3096](https://github.com/youzan/vant/pull/3096)
+- Slider: 新增 vertical 属性 [\#3078](https://github.com/youzan/vant/pull/3078)
+- Stepper: 新增 input-width 属性 [\#3076](https://github.com/youzan/vant/pull/3076)
+- Tag: 新增多个 Less 变量 [\#3087](https://github.com/youzan/vant/pull/3087)
+- Button: 新增多个 Less 变量 [\#3093](https://github.com/youzan/vant/pull/3093)
+- CellGroup: 新增多个 Less 变量 [\#3094](https://github.com/youzan/vant/pull/3094)
+
+**Bug Fixes**
+
+- 修复 Tab 包裹在`keep-alive`内时底部条渲染错误的问题 [\#3097](https://github.com/youzan/vant/pull/3097)
+
+
 ## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
 `2019-03-28`
 

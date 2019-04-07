@@ -1,5 +1,22 @@
 ## Changelog
 
+## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
+`2019-04-06`
+
+**Improvements**
+
+- Uploader: add name prop [\#3096](https://github.com/youzan/vant/pull/3096)
+- Slider: add vertical prop [\#3078](https://github.com/youzan/vant/pull/3078)
+- Stepper: add input-width prop [\#3076](https://github.com/youzan/vant/pull/3076)
+- Tag: add less vars [\#3087](https://github.com/youzan/vant/pull/3087)
+- Button: add less vars [\#3093](https://github.com/youzan/vant/pull/3093)
+- CellGroup: add less vars [\#3094](https://github.com/youzan/vant/pull/3094)
+
+**Bug Fixes**
+
+- fix Tab should set line position when activated [\#3097](https://github.com/youzan/vant/pull/3097)
+
+
 ## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
 `2019-03-28`
 
