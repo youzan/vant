@@ -10,7 +10,7 @@ type Object = {
 function assignKey(to: Object, from: Object, key: string) {
   const val = from[key];
 
-  if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {
+  if (!isDef(val)) {
     return;
   }
 
