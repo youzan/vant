@@ -85,10 +85,8 @@ function defaultProps(props: any) {
 
 function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
   const { name } = this;
-  if (name) {
-    Vue.component(name, this);
-    Vue.component(camelize(`-${name}`), this);
-  }
+  Vue.component(name as string, this);
+  Vue.component(camelize(`-${name}`), this);
 }
 
 // unify slots & scopedSlots
