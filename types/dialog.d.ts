@@ -8,8 +8,10 @@ export type DialogOptions = {
   className?: any;
   lockScroll?: boolean;
   messageAlign?: string;
-  confirmButtonText?: string;
   cancelButtonText?: string;
+  cancelButtonColor?: string;
+  confirmButtonText?: string;
+  confirmButtonColor?: string;
   showConfirmButton?: boolean;
   showCancelButton?: boolean;
   closeOnClickOverlay?: boolean;

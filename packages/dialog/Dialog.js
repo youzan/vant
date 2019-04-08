@@ -14,8 +14,10 @@ export default sfc({
     callback: Function,
     beforeClose: Function,
     messageAlign: String,
-    confirmButtonText: String,
     cancelButtonText: String,
+    cancelButtonColor: String,
+    confirmButtonText: String,
+    confirmButtonColor: String,
     showCancelButton: Boolean,
     showConfirmButton: {
       type: Boolean,
@@ -102,6 +104,7 @@ export default sfc({
             class={bem('cancel')}
             loading={this.loading.cancel}
             text={this.cancelButtonText || t('cancel')}
+            style={{ color: this.cancelButtonColor }}
             onClick={() => {
               this.handleAction('cancel');
             }}
@@ -113,6 +116,7 @@ export default sfc({
             class={[bem('confirm'), { 'van-hairline--left': hasButtons }]}
             loading={this.loading.confirm}
             text={this.confirmButtonText || t('confirm')}
+            style={{ color: this.confirmButtonColor }}
             onClick={() => {
               this.handleAction('confirm');
             }}
