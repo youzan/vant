@@ -5,8 +5,7 @@ const { hasOwnProperty } = Object.prototype;
 
 function assignKey(to, from, key) {
   const val = from[key];
-
-  if (!isDef(val) || (hasOwnProperty.call(to, key) && !isDef(to[key]))) {
+  if (!isDef(val)) {
     return;
   }
 
