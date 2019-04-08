@@ -121,8 +121,10 @@ export default {
 | className | Custom className | `String | Array | Object` | - |
 | showConfirmButton | Whether to show confirm button | `Boolean` | `true` |
 | showCancelButton | Whether to show cancel button | `Boolean` | `false` |
+| cancelButtonText | Cancel button text | `String` | `Cancel` |
+| cancelButtonColor | Cancel button color | `String` | `#000` |
 | confirmButtonText | Confirm button text | `String` | `Confirm` |
-| cancelButtonText | Cancel button test | `String` | `Cancel` |
+| confirmButtonColor | Confirm button color | `String` | `#1989fa` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |
 | lockScroll | Whether to lock body scroll | `Boolean` | `true` |
@@ -139,8 +141,10 @@ export default {
 | message-align | Message align，can be set to `left` `right` | `String` | `center` |
 | show-confirm-button | Whether to show confirm button | `Boolean` |  `true` |
 | show-cancel-button | Whether to show cancel button | `Boolean` |  `false` |
-| confirm-button-text | Confirm button text | `String` |  `Confirm` |
-| cancel-button-text | Cancel button test | `String` | `Cancel` |
+| cancel-button-text | Cancel button text | `String` | `Cancel` |
+| cancel-button-color | Cancel button color | `String` | `#000` |
+| confirm-button-text | Confirm button text | `String` | `Confirm` |
+| confirm-button-color | Confirm button color | `String` | `#1989fa` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` |
 | lock-scroll | Whether to lock background scroll | `Boolean` | `true` |

@@ -124,8 +124,10 @@ export default {
 | className | 自定义类名 | `String | Array | Object` | - | 1.1.7 |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` | - |
 | showCancelButton | 是否展示取消按钮 | `Boolean` | `false` | - |
-| confirmButtonText | 确认按钮的文案 | `String` | `确认` | - |
-| cancelButtonText | 取消按钮的文案 | `String` | `取消` | - |
+| cancelButtonText | 取消按钮文案 | `String` | `取消` | - |
+| cancelButtonColor | 取消按钮颜色 | `String` | `#000` | 1.6.14 |
+| confirmButtonText | 确认按钮文案 | `String` | `确认` | - |
+| confirmButtonColor | 确认按钮颜色 | `String` | `#1989fa` | 1.6.14 |
 | overlay | 是否展示蒙层 | `Boolean` | `true` | - |
 | closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
 | lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
@@ -144,8 +146,10 @@ export default {
 | message-align | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | show-confirm-button | 是否展示确认按钮 | `Boolean` |  `true` | - |
 | show-cancel-button | 是否展示取消按钮 | `Boolean` |  `false` | - |
-| confirm-button-text | 确认按钮的文案 | `String` |  `确认` | - |
-| cancel-button-text | 取消按钮的文案 | `String` | `取消` | - |
+| cancel-button-text | 取消按钮文案 | `String` | `取消` | - |
+| cancel-button-color | 取消按钮颜色 | `String` | `#000` | 1.6.14 |
+| confirm-button-text | 确认按钮文案 | `String` | `确认` | - |
+| confirm-button-color | 确认按钮颜色 | `String` | `#1989fa` | 1.6.14 |
 | overlay | 是否展示蒙层 | `Boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |

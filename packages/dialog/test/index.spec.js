@@ -76,3 +76,27 @@ test('register component', () => {
   Vue.use(Dialog);
   expect(Vue.component(DialogVue.name)).toBeTruthy();
 });
+
+test('button color', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true,
+      showCancelButton: true,
+      cancelButtonColor: 'white',
+      confirmButtonColor: 'red'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('button text', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true,
+      showCancelButton: true,
+      cancelButtonText: 'Custom cancel',
+      confirmButtonText: 'Custom confirm'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
