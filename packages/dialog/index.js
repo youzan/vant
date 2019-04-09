@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VanDialog from './Dialog';
-import { isServer } from '../utils';
+import { isServer, isInDocument } from '../utils';
 
 let instance;
 
@@ -29,7 +29,7 @@ function Dialog(options) {
   }
 
   return new Promise((resolve, reject) => {
-    if (!instance || !document.body.contains(instance.$el)) {
+    if (!instance || !isInDocument(instance.$el)) {
       initInstance();
     }
 
