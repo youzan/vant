@@ -4,7 +4,11 @@ import { isServer } from '../utils';
 
 let instance;
 
-const initInstance = () => {
+function initInstance() {
+  if (instance) {
+    instance.$destroy();
+  }
+
   instance = new (Vue.extend(VanDialog))({
     el: document.createElement('div'),
     // avoid missing animation when first rendered
@@ -16,16 +20,16 @@ const initInstance = () => {
   instance.$on('input', value => {
     instance.value = value;
   });
-};
+}
 
-const Dialog = options => {
+function Dialog(options) {
   /* istanbul ignore if */
   if (isServer) {
     return Promise.resolve();
   }
 
   return new Promise((resolve, reject) => {
-    if (!instance) {
+    if (!instance || !document.body.contains(instance.$el)) {
       initInstance();
     }
 
@@ -34,7 +38,7 @@ const Dialog = options => {
       reject
     });
   });
-};
+}
 
 Dialog.defaultOptions = {
   value: true,
@@ -79,11 +83,12 @@ Dialog.resetDefaultOptions = () => {
   Dialog.currentOptions = { ...Dialog.defaultOptions };
 };
 
+Dialog.resetDefaultOptions();
+
 Dialog.install = () => {
   Vue.use(VanDialog);
 };
 
 Vue.prototype.$dialog = Dialog;
-Dialog.resetDefaultOptions();
 
 export default Dialog;
