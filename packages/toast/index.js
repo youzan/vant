@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueToast from './Toast';
-import { isObj, isServer } from '../utils';
+import { isObj, isServer, isInDocument } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -19,7 +19,7 @@ const defaultOptions = {
 const parseOptions = message => (isObj(message) ? message : { message });
 
 let queue = [];
-let singleton = true;
+let multiple = false;
 let currentOptions = { ...defaultOptions };
 
 function createInstance() {
@@ -28,12 +28,13 @@ function createInstance() {
     return {};
   }
 
-  if (!queue.length || !singleton) {
+  if (!queue.length || multiple || !isInDocument(queue[0].$el)) {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
     queue.push(toast);
   }
+
   return queue[queue.length - 1];
 }
 
@@ -56,7 +57,7 @@ function Toast(options = {}) {
         options.onClose();
       }
 
-      if (!singleton && !isServer) {
+      if (multiple && !isServer) {
         clearTimeout(toast.timer);
         queue = queue.filter(item => item !== toast);
 
@@ -97,7 +98,7 @@ Toast.clear = all => {
         toast.clear();
       });
       queue = [];
-    } else if (singleton) {
+    } else if (!multiple) {
       queue[0].clear();
     } else {
       queue.shift().clear();
@@ -113,8 +114,8 @@ Toast.resetDefaultOptions = () => {
   currentOptions = { ...defaultOptions };
 };
 
-Toast.allowMultiple = (allow = true) => {
-  singleton = !allow;
+Toast.allowMultiple = (value = true) => {
+  multiple = value;
 };
 
 Toast.install = () => {
