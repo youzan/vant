@@ -2,19 +2,19 @@
 @import "../style/mixins/hairline";
 
 .van-cell {
-  width: 100%;
-  display: flex;
-  padding: 10px 15px;
-  box-sizing: border-box;
-  line-height: 24px;
   position: relative;
-  background-color: @white;
-  color: @text-color;
-  font-size: 14px;
+  display: flex;
+  width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  color: @cell-text-color;
+  font-size: @cell-font-size;
+  line-height: @cell-line-height;
+  background-color: @cell-background-color;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
 
   &:not(:last-child)::after {
-    .hairline-bottom(@border-color, 15px);
+    .hairline-bottom(@cell-border-color, 15px);
   }
 
   &--borderless::after {
@@ -22,10 +22,10 @@
   }
 
   &__label {
-    color: @gray-dark;
-    font-size: 12px;
-    margin-top: 3px;
-    line-height: 18px;
+    color: @cell-label-color;
+    font-size: @cell-label-font-size;
+    margin-top: @cell-label-margin-top;
+    line-height: @cell-label-line-height;
   }
 
   &__title,
@@ -34,7 +34,7 @@
   }
 
   &__value {
-    color: @gray-dark;
+    color: @cell-value-color;
     overflow: hidden;
     text-align: right;
     position: relative;
@@ -48,10 +48,10 @@
 
   &__left-icon,
   &__right-icon {
-    height: 24px;
     min-width: 1em;
-    font-size: 16px;
-    line-height: 24px;
+    height: @cell-line-height;
+    font-size: @cell-icon-size;
+    line-height: @cell-line-height;
   }
 
   &__left-icon {
@@ -59,13 +59,13 @@
   }
 
   &__right-icon {
-    color: @gray-dark;
     margin-left: 5px;
+    color: @cell-right-icon-color;
   }
 
   &--clickable {
     &:active {
-      background-color: @active-color;
+      background-color: @cell-active-color;
     }
   }
 
@@ -76,8 +76,8 @@
       content: '*';
       position: absolute;
       left: 7px;
-      font-size: 14px;
-      color: @red;
+      font-size: @cell-font-size;
+      color: @cell-required-color;
     }
   }
 
@@ -86,15 +86,15 @@
   }
 
   &--large {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: @cell-large-vertical-padding;
+    padding-bottom: @cell-large-vertical-padding;
 
     .van-cell__title {
-      font-size: 16px;
+      font-size: @cell-large-title-font-size;
     }
 
     .van-cell__label {
-      font-size: 14px;
+      font-size: @cell-large-label-font-size;
     }
   }
 }
