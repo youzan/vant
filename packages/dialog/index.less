@@ -4,30 +4,30 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 85%;
-  font-size: 16px;
   overflow: hidden;
-  transition: .3s;
-  border-radius: 4px;
-  background-color: @white;
+  width: @dialog-width;
+  font-size: @dialog-font-size;
+  transition: @dialog-transition;
+  border-radius: @dialog-border-radius;
+  background-color: @dialog-background-color;
   transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
 
   &__header {
-    font-weight: 500;
-    padding-top: 25px;
     text-align: center;
+    font-weight: @dialog-header-font-weight;
+    padding-top: @dialog-header-padding-top;
 
     &--isolated {
-      padding: 25px 0;
+      padding: @dialog-header-isolated-padding;
     }
   }
 
   &__message {
-    padding: 25px;
-    font-size: 14px;
-    line-height: 1.5;
-    max-height: 60vh;
+    padding: @dialog-message-padding;
+    font-size: @dialog-message-font-size;
+    line-height: @dialog-message-line-height;
+    max-height: @dialog-message-max-height;
     overflow-y: auto;
     text-align: center;
     -webkit-overflow-scrolling: touch;
@@ -36,8 +36,8 @@
     white-space: pre-wrap;
 
     &--has-title {
-      padding-top: 12px;
-      color: @gray-darker;
+      color: @dialog-has-title-message-text-color;
+      padding-top: @dialog-has-title-message-padding-top;
     }
 
     &--left {
@@ -69,7 +69,7 @@
   &__confirm {
     &,
     &:active {
-      color: @blue;
+      color: @dialog-confirm-button-text-color;
     }
   }
 
