@@ -3,6 +3,8 @@ import { VanPopupMixin } from './mixins/popup';
 export type ImagePreviewOptions = string[] | {
   loop?: boolean;
   images: string[];
+  maxZoom?: number;
+  minZoom?: number;
   className?: any;
   startPosition?: number;
   lazyLoad?: boolean;

@@ -5,8 +5,6 @@ import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
 const [sfc, bem] = use('image-preview');
-const MAX_ZOOM = 3;
-const MIN_ZOOM = 1 / 3;
 
 function getDistance(touches) {
   return Math.sqrt(
@@ -35,6 +33,14 @@ export default sfc({
     showIndex: {
       type: Boolean,
       default: true
+    },
+    minZoom: {
+      type: Number,
+      default: 1 / 3
+    },
+    maxZoom: {
+      type: Number,
+      default: 3
     },
     overlayClass: {
       type: String,
@@ -160,7 +166,7 @@ export default sfc({
       if (this.zooming && touches.length === 2) {
         const distance = getDistance(touches);
         const scale = (this.startScale * distance) / this.startDistance;
-        this.scale = range(scale, MIN_ZOOM, MAX_ZOOM);
+        this.scale = range(scale, this.minZoom, this.maxZoom);
       }
     },
 

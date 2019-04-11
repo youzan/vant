@@ -69,6 +69,8 @@ setTimeout(() => {
 | asyncClose | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.5.2 |
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.3 |
+| maxZoom | 手势缩放时，最大缩放比例 | `Number` | `3` | 1.6.14 |
+| minZoom | 手势缩放时，最小缩放比例 | `Number` | `1/3` | 1.6.14 |
 
 ### onClose 回调参数
 

@@ -61,6 +61,8 @@ setTimeout(() => {
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
 | className | Custom className | `String | Array | Object` | - |
 | lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
+| maxZoom | Max zoom | `Number` | `3` |
+| minZoom | Min zoom | `Number` | `1/3` |
 
 ### onClose Parematers
 
