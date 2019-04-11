@@ -3,14 +3,14 @@
 .van-badge {
   display: block;
   overflow: hidden;
-  font-size: 14px;
-  line-height: 1.4;
   user-select: none;
-  color: @gray-darker;
   word-break: break-all;
   box-sizing: border-box;
-  padding: 20px 12px 20px 9px;
-  background-color: @background-color;
+  color: @badge-text-color;
+  padding: @badge-padding;
+  font-size: @badge-font-size;
+  line-height: @badge-line-height;
+  background-color: @badge-background-color;
   border-left: 3px solid transparent;
 
   &__text {
@@ -18,7 +18,7 @@
   }
 
   &:active {
-    background-color: @active-color;
+    background-color: @badge-active-color;
   }
 
   &:not(:last-child)::after {
@@ -26,9 +26,9 @@
   }
 
   &--select {
-    font-weight: 500;
-    color: @text-color;
-    border-color: @red;
+    color: @badge-selected-text-color;
+    font-weight: @badge-selected-font-weight;
+    border-color: @badge-selected-border-color;
 
     &::after {
       border-right-width: 1px;
@@ -36,7 +36,7 @@
 
     &,
     &:active {
-      background-color: @white;
+      background-color: @badge-selected-background-color;
     }
   }
 
