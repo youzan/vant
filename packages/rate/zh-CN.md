@@ -41,16 +41,49 @@ export default {
 <van-rate
   v-model="value"
   :size="25"
-  :count="6"
-  color="#07c160"
-  void-color="#ceefe8"
+  color="#f44"
+  void-icon="star"
+  void-color="#eee"
 />
+```
+
+#### 半星
+
+```html
+<van-rate
+  v-model="value"
+  allow-half
+  void-icon="star"
+  void-color="#eee"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      value: 2.5
+    };
+  }
+}
+```
+
+#### 自定义数量
+
+```html
+<van-rate v-model="value" :count="6" />
 ```
 
 #### 禁用状态
 
 ```html
- <van-rate v-model="value" disabled />
+<van-rate v-model="value" disabled />
+```
+
+#### 只读状态
+
+```html
+<van-rate v-model="value" readonly />
 ```
 
 ### API
@@ -64,6 +97,7 @@ export default {
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` | - |
 | icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` | 1.4.7 |
 | void-icon | 未选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star-o`  | 1.4.7 |
+| allow-half | 是否允许半选 | `Boolean` | `false` | 1.6.14 |
 | readonly | 是否为只读状态 | `Boolean` | `false` | 1.3.0 |
 | disabled | 是否禁用评分 | `Boolean` | `false` | - |
 | disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` | - |

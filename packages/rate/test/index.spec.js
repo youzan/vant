@@ -13,11 +13,33 @@ test('change event', () => {
       }
     }
   });
-  const item4 = wrapper.findAll('.van-rate__item').at(3);
+  const item4 = wrapper.findAll('.van-rate__icon').at(3);
 
   item4.trigger('click');
   expect(onInput).toHaveBeenCalledWith(4);
   expect(onChange).toHaveBeenCalledWith(4);
+});
+
+test('allow half', () => {
+  const onInput = jest.fn();
+  const onChange = jest.fn();
+
+  const wrapper = mount(Rate, {
+    propsData: {
+      allowHalf: true
+    },
+    context: {
+      on: {
+        input: onInput,
+        change: onChange
+      }
+    }
+  });
+  const item4 = wrapper.findAll('.van-rate__icon--half').at(3);
+
+  item4.trigger('click');
+  expect(onInput).toHaveBeenCalledWith(3.5);
+  expect(onChange).toHaveBeenCalledWith(3.5);
 });
 
 test('disabled', () => {
