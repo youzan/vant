@@ -88,7 +88,7 @@ body {
 }
 
 .van-doc-demo-section {
-  margin-top: -46px;
-  padding-top: 46px;
+  margin-top: -56px;
+  padding-top: 56px;
 }
 </style>
