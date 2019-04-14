@@ -1,5 +1,29 @@
 ## Changelog
 
+## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
+`2019-04-13`
+
+**Improvements**
+
+
+- Rate: add allow-half prop [\#3134](https://github.com/youzan/vant/pull/3134)
+- ImagePreview: add max-zoom、min-zoom prop [\#3133](https://github.com/youzan/vant/pull/3133)
+- Dialog: add confirm-button-text、cancel-button-text prop [\#3107](https://github.com/youzan/vant/pull/3107)
+- Cell: add less vars [\#3122](https://github.com/youzan/vant/pull/3122)
+- Rate: add less vars [\#3135](https://github.com/youzan/vant/pull/3135)
+- Panel: add less vars [\#3136](https://github.com/youzan/vant/pull/3136)
+- Badge: add less vars [\#3131](https://github.com/youzan/vant/pull/3131)
+- Dialog: add less vars [\#3123](https://github.com/youzan/vant/pull/3123)
+- Slider: add less vars [\#3125](https://github.com/youzan/vant/pull/3125)
+- Tabbar: add less vars [\#3124](https://github.com/youzan/vant/pull/3124)
+
+**Bug Fixes**
+
+- fix Step incorrect active step when destory step [\#3140](https://github.com/youzan/vant/pull/3140)
+- fix Toast may render error when use getContainer [\#3115](https://github.com/youzan/vant/pull/3115)
+- fix Dialog may render error when use getContainer [\#3111](https://github.com/youzan/vant/pull/3111)
+
+
 ## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
 `2019-04-06`
 

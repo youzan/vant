@@ -1,5 +1,28 @@
 ## 更新日志
 
+## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
+`2019-04-13`
+
+**Improvements**
+
+
+- Rate: 新增 allow-half 属性 [\#3134](https://github.com/youzan/vant/pull/3134)
+- ImagePreview: 新增 max-zoom、min-zoom 属性 [\#3133](https://github.com/youzan/vant/pull/3133)
+- Dialog: 新增 confirm-button-text、cancel-button-text 属性 [\#3107](https://github.com/youzan/vant/pull/3107)
+- Cell: 新增多个 Less 变量 [\#3122](https://github.com/youzan/vant/pull/3122)
+- Rate: 新增多个 Less 变量 [\#3135](https://github.com/youzan/vant/pull/3135)
+- Panel: 新增多个 Less 变量 [\#3136](https://github.com/youzan/vant/pull/3136)
+- Badge: 新增多个 Less 变量 [\#3131](https://github.com/youzan/vant/pull/3131)
+- Dialog: 新增多个 Less 变量 [\#3123](https://github.com/youzan/vant/pull/3123)
+- Slider: 新增多个 Less 变量 [\#3125](https://github.com/youzan/vant/pull/3125)
+- Tabbar: 新增多个 Less 变量 [\#3124](https://github.com/youzan/vant/pull/3124)
+
+**Bug Fixes**
+
+- 修复 Steps 子组件销毁后未正确选中当前选项的问题 [\#3140](https://github.com/youzan/vant/pull/3140)
+- 修复 Toast 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3115](https://github.com/youzan/vant/pull/3115)
+- 修复 Dialog 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3111](https://github.com/youzan/vant/pull/3111)
+
 ## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
 `2019-04-06`
 
