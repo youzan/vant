@@ -8,7 +8,7 @@
 
 - Rate: add allow-half prop [\#3134](https://github.com/youzan/vant/pull/3134)
 - ImagePreview: add max-zoom、min-zoom prop [\#3133](https://github.com/youzan/vant/pull/3133)
-- Dialog: add confirm-button-text、cancel-button-text prop [\#3107](https://github.com/youzan/vant/pull/3107)
+- Dialog: add confirm-button-color、cancel-button-color prop [\#3107](https://github.com/youzan/vant/pull/3107)
 - Cell: add less vars [\#3122](https://github.com/youzan/vant/pull/3122)
 - Rate: add less vars [\#3135](https://github.com/youzan/vant/pull/3135)
 - Panel: add less vars [\#3136](https://github.com/youzan/vant/pull/3136)

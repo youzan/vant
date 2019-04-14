@@ -8,7 +8,7 @@
 
 - Rate: 新增 allow-half 属性 [\#3134](https://github.com/youzan/vant/pull/3134)
 - ImagePreview: 新增 max-zoom、min-zoom 属性 [\#3133](https://github.com/youzan/vant/pull/3133)
-- Dialog: 新增 confirm-button-text、cancel-button-text 属性 [\#3107](https://github.com/youzan/vant/pull/3107)
+- Dialog: 新增 confirm-button-color、cancel-button-color 属性 [\#3107](https://github.com/youzan/vant/pull/3107)
 - Cell: 新增多个 Less 变量 [\#3122](https://github.com/youzan/vant/pull/3122)
 - Rate: 新增多个 Less 变量 [\#3135](https://github.com/youzan/vant/pull/3135)
 - Panel: 新增多个 Less 变量 [\#3136](https://github.com/youzan/vant/pull/3136)
