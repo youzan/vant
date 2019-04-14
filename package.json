@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "1.6.13",
+  "version": "1.6.14",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
