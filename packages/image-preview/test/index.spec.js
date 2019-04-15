@@ -1,12 +1,7 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import {
-  mount,
-  trigger,
-  triggerDrag,
-  transitionStub
-} from '../../../test/utils';
+import { mount, trigger, triggerDrag, transitionStub } from '../../../test/utils';
 
 transitionStub();
 
@@ -108,4 +103,16 @@ test('zoom', async () => {
   triggerDrag(image, 300, 300);
   expect(wrapper).toMatchSnapshot();
   Element.prototype.getBoundingClientRect = getBoundingClientRect;
+});
+
+test('index slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-image-preview :value="true">
+        <template v-slot:index>Custom Index</template>
+      </van-image-preview>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

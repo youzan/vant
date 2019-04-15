@@ -66,7 +66,10 @@ setTimeout(() => {
 <van-image-preview
   v-model="show"
   :images="images"
-/>
+  @change="onChange"
+>
+  <template v-slot:index>第{ index }页</template>
+</van-image-preview>
 ```
 
 ```js
@@ -74,11 +77,18 @@ export default {
   data() {
     return {
       show: false,
+      index: 0,
       images: [
         'https://img.yzcdn.cn/1.jpg',
         'https://img.yzcdn.cn/2.jpg'
       ]
     };
+  },
+
+  methods: {
+    onChange(index) {
+      this.index = index;
+    }
   }
 }
 ```
@@ -126,6 +136,15 @@ export default {
 |------|------|------|
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
 | change | 切换当前图片时触发 | index, 当前图片的索引 |
+
+### Slot
+
+通过组件调用 `ImagePreview` 时，支持以下插槽：
+
+| 名称 | 说明 |
+|------|------|
+| index | 自定义页码内容 |
+
 
 ### onClose 回调参数
 
