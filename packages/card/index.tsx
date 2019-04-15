@@ -51,6 +51,7 @@ function Card(
   const showNum = slots.num || isDef(props.num);
   const showPrice = slots.price || isDef(props.price);
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
+  const showBottom = showNum || showPrice || showOriginPrice;
 
   const Thumb = showThumb && (
     <a href={props.thumbLink} class={bem('thumb')}>
@@ -81,9 +82,7 @@ function Card(
 
   const Desc = slots.desc
     ? slots.desc()
-    : props.desc && (
-        <div class={[bem('desc'), 'van-ellipsis']}>{props.desc}</div>
-    );
+    : props.desc && <div class={[bem('desc'), 'van-ellipsis']}>{props.desc}</div>;
 
   const Price = showPrice && (
     <div class={bem('price')}>
@@ -103,9 +102,7 @@ function Card(
     <div class={bem('num')}>{slots.num ? slots.num() : `x ${props.num}`}</div>
   );
 
-  const Footer = slots.footer && (
-    <div class={bem('footer')}>{slots.footer()}</div>
-  );
+  const Footer = slots.footer && <div class={bem('footer')}>{slots.footer()}</div>;
 
   return (
     <div class={bem()} {...inherit(ctx, true)}>
@@ -115,11 +112,13 @@ function Card(
           {Title}
           {Desc}
           {slots.tags && slots.tags()}
-          <div class="van-card__bottom">
-            {Price}
-            {OriginPrice}
-            {Num}
-          </div>
+          {showBottom && (
+            <div class="van-card__bottom">
+              {Price}
+              {OriginPrice}
+              {Num}
+            </div>
+          )}
         </div>
       </div>
       {Footer}
