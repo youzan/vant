@@ -46,7 +46,16 @@ function Rate(
   slots: DefaultSlots,
   ctx: RenderContext<RateProps>
 ) {
-  const { size, icon, voidIcon, color, voidColor, disabled, disabledColor } = props;
+  const {
+    icon,
+    size,
+    color,
+    voidIcon,
+    readonly,
+    disabled,
+    voidColor,
+    disabledColor
+  } = props;
 
   const list: RateStatus[] = [];
   for (let i = 1; i <= props.count; i++) {
@@ -54,14 +63,14 @@ function Rate(
   }
 
   function onSelect(index: number) {
-    if (!disabled && !props.readonly) {
+    if (!disabled && !readonly) {
       emit(ctx, 'input', index);
       emit(ctx, 'change', index);
     }
   }
 
   function onTouchMove(event: TouchEvent) {
-    if (!document.elementFromPoint || props.readonly || props.disabled) {
+    if (readonly || disabled || !document.elementFromPoint) {
       return;
     }
 

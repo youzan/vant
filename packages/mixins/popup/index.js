@@ -160,10 +160,10 @@ export const PopupMixin = {
       }
     },
 
-    onTouchMove(e) {
-      this.touchMove(e);
+    onTouchMove(event) {
+      this.touchMove(event);
       const direction = this.deltaY > 0 ? '10' : '01';
-      const el = getScrollEventTarget(e.target, this.$el);
+      const el = getScrollEventTarget(event.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
       let status = '11';
 
@@ -176,12 +176,13 @@ export const PopupMixin = {
 
       /* istanbul ignore next */
       if (
+        event.cancelable &&
         status !== '11' &&
         this.direction === 'vertical' &&
         !(parseInt(status, 2) & parseInt(direction, 2))
       ) {
-        e.preventDefault();
-        e.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
       }
     },
 
