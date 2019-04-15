@@ -109,6 +109,7 @@ export default {
 | Event | Description | Parameters |
 |------|------|------|
 | close | Triggered when close | { index, url } |
+| change | Triggered when current image change | index: index of current image |
 
 ### onClose Parematers
 

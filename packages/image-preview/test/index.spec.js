@@ -37,6 +37,7 @@ test('render image', () => {
   expect(wrapper.emitted('input')).toBeFalsy();
   triggerDrag(swipe, 0, 0);
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+  expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
 test('async close', () => {
