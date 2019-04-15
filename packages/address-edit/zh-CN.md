@@ -115,7 +115,7 @@ export default {
 | city | 城市 | `String` |
 | county | 区县 | `String` |
 | addressDetail | 详细地址 | `String` |
-| areaCode | 地区编码，通过省市区选择获取 | `String` |
+| areaCode | 地区编码，通过`省市区选择`获取（必填） | `String` |
 | postalCode | 邮政编码 | `String` |
 | isDefault | 是否为默认地址 | `Boolean` |
 
