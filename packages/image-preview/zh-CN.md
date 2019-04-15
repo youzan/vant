@@ -6,6 +6,8 @@
 
 ```js
 import { ImagePreview } from 'vant';
+
+Vue.use(ImagePreview);
 ```
 
 ### 代码演示
@@ -56,7 +58,34 @@ setTimeout(() => {
 }, 1000);
 ```
 
-### 配置项
+#### 组件调用
+
+如果需要在图片预览内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件
+
+```html
+<van-image-preview
+  v-model="show"
+  :images="images"
+/>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      images: [
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
+      ]
+    };
+  }
+}
+```
+
+### Options
+
+通过函数调用 `ImagePreview` 时，支持传入以下选项：
 
 | 参数名 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -71,6 +100,31 @@ setTimeout(() => {
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.3 |
 | maxZoom | 手势缩放时，最大缩放比例 | `Number` | `3` | 1.6.14 |
 | minZoom | 手势缩放时，最小缩放比例 | `Number` | `1/3` | 1.6.14 |
+
+### API
+
+通过组件调用 `ImagePreview` 时，支持以下 API：
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| images | 需要预览的图片 URL 数组 | `Array` | `[]` | 1.1.16 |
+| start-position | 图片预览起始位置索引 | `Number` | `0` | 1.1.16 |
+| show-index | 是否显示页码 | `Boolean` | `true` | 1.3.4 |
+| show-indicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
+| loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
+| async-close | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
+| class-name | 自定义类名 | `String | Array | Object` | - | 1.5.2 |
+| lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.3 |
+| max-zoom | 手势缩放时，最大缩放比例 | `Number` | `3` | 1.6.14 |
+| min-zoom | 手势缩放时，最小缩放比例 | `Number` | `1/3` | 1.6.14 |
+
+### Event
+
+通过组件调用 `ImagePreview` 时，支持以下事件：
+
+| 事件 | 说明 | 回调参数 |
+|------|------|------|
+| close | 关闭时触发 | { index: 索引, url: 图片链接 } |
 
 ### onClose 回调参数
 
