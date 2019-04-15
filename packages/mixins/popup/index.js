@@ -201,6 +201,10 @@ export const PopupMixin = {
         closeOverlay(this);
       }
 
+      this.updateZIndex();
+    },
+
+    updateZIndex() {
       this.$nextTick(() => {
         this.$el.style.zIndex = context.zIndex++;
       });
