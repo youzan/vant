@@ -72,6 +72,7 @@ Use slot to add custom contents.
 | disabled | Whether to disable button |  `Boolean` | `false` |
 | loading | Whether to show loading icon |  `Boolean` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
+| decimal-length | Number of digits to appear after the decimal point | `Number` | `2` |
 
 ### Event
 

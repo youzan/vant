@@ -6,7 +6,7 @@ test('submit', () => {
   const wrapper = mount(SubmitBar, {
     context: {
       props: {
-        price: 0.01
+        price: 1
       },
       on: { submit }
     }
@@ -22,7 +22,7 @@ test('disable submit', () => {
   const wrapper = mount(SubmitBar, {
     context: {
       props: {
-        price: 0.01,
+        price: 1,
         disabled: true
       },
       on: { submit }
@@ -35,4 +35,17 @@ test('disable submit', () => {
   const button = wrapper.find('.van-button');
   button.trigger('click');
   expect(submit).toHaveBeenCalledTimes(0);
+});
+
+test('decimal length', () => {
+  const wrapper = mount(SubmitBar, {
+    context: {
+      props: {
+        price: 111,
+        decimalLength: 1
+      }
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });
