@@ -61,7 +61,7 @@ function Rate(
   }
 
   function onTouchMove(event: TouchEvent) {
-    if (!document.elementFromPoint) {
+    if (!document.elementFromPoint || props.readonly || props.disabled) {
       return;
     }
 
