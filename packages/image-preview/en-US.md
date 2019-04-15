@@ -56,7 +56,10 @@ setTimeout(() => {
 <van-image-preview
   v-model="show"
   :images="images"
-/>
+  @change="onChange"
+>
+  <template v-slot:index>Page: { index }</template>
+</van-image-preview>
 ```
 
 ```js
@@ -64,11 +67,18 @@ export default {
   data() {
     return {
       show: false,
+      index: 0,
       images: [
         'https://img.yzcdn.cn/1.jpg',
         'https://img.yzcdn.cn/2.jpg'
       ]
     };
+  },
+
+  methods: {
+    onChange(index) {
+      this.index = index;
+    }
   }
 }
 ```
@@ -110,6 +120,12 @@ export default {
 |------|------|------|
 | close | Triggered when close | { index, url } |
 | change | Triggered when current image change | index: index of current image |
+
+### Slot
+
+| name | Description |
+|------|------|
+| index | Custom index |
 
 ### onClose Parematers
 

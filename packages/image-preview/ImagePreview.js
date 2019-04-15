@@ -8,7 +8,10 @@ const [sfc, bem] = use('image-preview');
 
 function getDistance(touches) {
   return Math.sqrt(
-    Math.abs((touches[0].clientX - touches[1].clientX) * (touches[0].clientY - touches[1].clientY))
+    Math.abs(
+      (touches[0].clientX - touches[1].clientX) *
+        (touches[0].clientY - touches[1].clientY)
+    )
   );
 }
 
@@ -71,8 +74,8 @@ export default sfc({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX / scale}px, ${this
-          .moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX /
+          scale}px, ${this.moveY / scale}px)`;
       }
 
       return style;
@@ -175,7 +178,11 @@ export default sfc({
       if (this.moving || this.zooming) {
         let stopPropagation = true;
 
-        if (this.moving && this.startMoveX === this.moveX && this.startMoveY === this.moveY) {
+        if (
+          this.moving &&
+          this.startMoveX === this.moveX &&
+          this.startMoveY === this.moveY
+        ) {
           stopPropagation = false;
         }
 
@@ -219,7 +226,9 @@ export default sfc({
     const { active, images } = this;
 
     const Index = this.showIndex && (
-      <div class={bem('index')}>{`${active + 1}/${images.length}`}</div>
+      <div class={bem('index')}>
+        {this.slots('index') || `${active + 1}/${images.length}`}
+      </div>
     );
 
     const Images = (
@@ -244,7 +253,11 @@ export default sfc({
           };
           return (
             <SwipeItem>
-              {this.lazyLoad ? <img vLazy={image} {...props} /> : <img src={image} {...props} />}
+              {this.lazyLoad ? (
+                <img vLazy={image} {...props} />
+              ) : (
+                <img src={image} {...props} />
+              )}
             </SwipeItem>
           );
         })}
