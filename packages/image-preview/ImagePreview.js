@@ -201,6 +201,7 @@ export default sfc({
     onChange(active) {
       this.resetScale();
       this.active = active;
+      this.$emit('change', active);
     },
 
     resetScale() {

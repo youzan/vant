@@ -125,6 +125,7 @@ export default {
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
+| change | 切换当前图片时触发 | index, 当前图片的索引 |
 
 ### onClose 回调参数
 
