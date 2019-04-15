@@ -16,6 +16,10 @@ export default sfc({
       type: Boolean,
       default: true
     },
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: false
+    },
     zIndex: {
       type: Number,
       default: 1
@@ -51,7 +55,13 @@ export default sfc({
     return (
       <div
         style={{ zIndex: this.zIndex }}
-        class={['van-hairline--top-bottom', bem({ fixed: this.fixed })]}
+        class={[
+          'van-hairline--top-bottom',
+          bem({
+            fixed: this.fixed,
+            'safe-area-inset-bottom': this.fixed && this.safeAreaInsetBottom
+          })
+        ]}
       >
         {this.slots()}
       </div>
