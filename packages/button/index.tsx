@@ -7,10 +7,14 @@ import Loading from '../loading';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
+export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
+
+export type ButtonSize = 'large' | 'normal' | 'small' | 'mini';
+
 export type ButtonProps = RouteProps & {
   tag: keyof HTMLElementTagNameMap | string;
-  type: 'default' | 'primary' | 'info' | 'warning' | 'danger';
-  size: 'large' | 'normal' | 'small' | 'mini';
+  type: ButtonType;
+  size: ButtonSize;
   text?: string;
   block?: boolean;
   plain?: boolean;
