@@ -69,7 +69,7 @@ export default {
 |------|------|------|------|
 | v-model | Index of current tab | `Number` | - |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
-| safe-area-inset-bottom | Whether to iPhone X bottom safe area adaptation, only valid when enabled `fixed`, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` | 1.6.15 |
+| safe-area-inset-bottom | Whether to iPhone X bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` | 1.6.15 |
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
 

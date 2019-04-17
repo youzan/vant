@@ -59,7 +59,7 @@ export default sfc({
           'van-hairline--top-bottom',
           bem({
             fixed: this.fixed,
-            'safe-area-inset-bottom': this.fixed && this.safeAreaInsetBottom
+            'safe-area-inset-bottom': this.safeAreaInsetBottom
           })
         ]}
       >
