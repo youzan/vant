@@ -3,11 +3,11 @@
 
 .van-card {
   position: relative;
-  color: @text-color;
-  font-size: 12px;
-  padding: 5px 15px;
+  color: @card-text-color;
+  padding: @card-padding;
+  font-size: @card-font-size;
   box-sizing: border-box;
-  background-color: @background-color-light;
+  background-color: @card-background-color;
 
   &:not(:first-child) {
     margin-top: 10px;
@@ -19,8 +19,8 @@
 
   &__thumb {
     position: relative;
-    width: 90px;
-    height: 90px;
+    width: @card-thumb-size;
+    height: @card-thumb-size;
     margin-right: 10px;
     flex: none;
     align-items: center;
@@ -37,7 +37,7 @@
     position: relative;
     display: flex;
     flex: 1;
-    height: 90px;
+    height: @card-thumb-size;
     flex-direction: column;
     min-width: 0; /* hack for flex box ellipsis */
 
@@ -52,17 +52,17 @@
   }
 
   &__title {
-    line-height: 16px;
+    line-height: @card-title-line-height;
     max-height: 32px;
-    font-weight: bold;
+    font-weight: 500;
 
     .multi-ellipsis(2);
   }
 
   &__desc {
-    color: @gray-darker;
-    max-height: 20px;
-    line-height: 20px;
+    color: @card-desc-color;
+    max-height: @card-desc-line-height;
+    line-height: @card-desc-line-height;
   }
 
   &__bottom {
@@ -71,15 +71,15 @@
 
   &__price {
     display: inline-block;
-    color: @red;
-    font-weight: bold;
+    color: @card-price-color;
+    font-weight: 500;
   }
 
   &__origin-price {
     display: inline-block;
     margin-left: 5px;
-    font-size: 10px;
-    color: @gray-darker;
+    color: @card-origin-price-color;
+    font-size: @card-origin-price-font-size;
     text-decoration: line-through;
   }
 
