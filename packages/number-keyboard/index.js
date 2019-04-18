@@ -12,6 +12,7 @@ export default sfc({
     title: String,
     closeButtonText: String,
     deleteButtonText: String,
+    safeAreaInsetBottom: Boolean,
     theme: {
       type: String,
       default: 'default'
@@ -140,7 +141,7 @@ export default sfc({
         <div
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
-          class={bem([theme])}
+          class={bem([theme, { 'safe-area-inset-bottom': this.safeAreaInsetBottom }])}
           onTouchstart={stop}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
