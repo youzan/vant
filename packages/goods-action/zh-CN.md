@@ -82,6 +82,12 @@ export default {
 
 ### API
 
+#### GoodsAction
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+|------|------|------|------|------|
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
+
 #### GoodsActionMiniBtn
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
