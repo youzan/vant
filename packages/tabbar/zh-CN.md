@@ -84,6 +84,7 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前选中标签的索引 | `Number` | - | - |
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，同时需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
 
