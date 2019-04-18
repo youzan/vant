@@ -7,6 +7,7 @@
   z-index: 100;
   position: fixed;
   user-select: none;
+  background-color: @white;
 
   &__tip {
     color: #f56723;
@@ -21,7 +22,6 @@
     display: flex;
     font-size: 14px;
     align-items: center;
-    background-color: @white;
   }
 
   &__text {
@@ -47,5 +47,10 @@
 
   .van-button {
     width: 110px;
+  }
+
+  &--safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
