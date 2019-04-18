@@ -83,6 +83,11 @@ Use `info` prop to show messages in upper right corner of icon
 
 ### API
 
+#### GoodsAction
+
+| Attribute | Description | Type | Default |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
+
 #### GoodsActionMiniBtn
 
 | Attribute | Description | Type | Default |
