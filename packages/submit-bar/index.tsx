@@ -16,6 +16,7 @@ export type SubmitBarProps = {
   buttonType: ButtonType;
   buttonText?: string;
   decimalLength: number;
+  safeAreaInsetBottom?: boolean;
 };
 
 export type SubmitBarSlots = DefaultSlots & {
@@ -35,7 +36,10 @@ function SubmitBar(
   const hasPrice = typeof price === 'number';
 
   return (
-    <div class={bem()} {...inherit(ctx)}>
+    <div
+      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
+      {...inherit(ctx)}
+    >
       {slots.top && slots.top()}
       {(slots.tip || tip) && (
         <div class={bem('tip')}>
@@ -75,6 +79,7 @@ SubmitBar.props = {
   loading: Boolean,
   disabled: Boolean,
   buttonText: String,
+  safeAreaInsetBottom: Boolean,
   price: {
     type: Number,
     default: null
