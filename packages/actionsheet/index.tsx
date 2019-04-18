@@ -23,6 +23,7 @@ export type ActionsheetProps = PopupMixinProps & {
   title?: string;
   actions: ActionsheetItem[];
   cancelText?: string;
+  safeAreaInsetBottom?: boolean;
 };
 
 const [sfc, bem] = use('actionsheet');
@@ -79,7 +80,7 @@ function Actionsheet(
 
   return (
     <Popup
-      class={bem()}
+      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
       value={props.value}
       position="bottom"
       overlay={props.overlay}
@@ -107,6 +108,7 @@ Actionsheet.props = {
   title: String,
   actions: Array,
   cancelText: String,
+  safeAreaInsetBottom: Boolean,
   overlay: {
     type: Boolean,
     default: true
