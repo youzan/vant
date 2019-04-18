@@ -12,13 +12,10 @@ export default sfc({
   props: {
     value: Number,
     activeColor: String,
+    safeAreaInsetBottom: Boolean,
     fixed: {
       type: Boolean,
       default: true
-    },
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: false
     },
     zIndex: {
       type: Number,
