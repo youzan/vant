@@ -1,10 +1,34 @@
 ## 更新日志
 
+## [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
+`2019-04-19`
+
+**Improvements**
+
+- Card: 新增多个 Less 变量 [\#3167](https://github.com/youzan/vant/pull/3167)
+- Swipe: 新增多个 Less 变量 [\#3169](https://github.com/youzan/vant/pull/3169)
+- Field: 新增多个 Less 变量 [\#3168](https://github.com/youzan/vant/pull/3168)
+- ImagePreview: 支持组件调用 [\#3154](https://github.com/youzan/vant/pull/3154)
+- ImagePreview: 新增 index 插槽 [\#3157](https://github.com/youzan/vant/pull/3157)
+- ImagePreview: 新增 change 事件 [\#3155](https://github.com/youzan/vant/pull/3155)
+- SubmitBar: 新增 decimal-length 属性 [\#3151](https://github.com/youzan/vant/pull/3151)
+- Tabbar: 新增 safe-area-inset-bottom 属性 [\#3149](https://github.com/youzan/vant/pull/3149)
+- SubmitBar: 新增 safe-area-inset-bottom 属性 [\#3172](https://github.com/youzan/vant/pull/3172)
+- GoodsAction: 新增 safe-area-inset-bottom 属性 [\#3174](https://github.com/youzan/vant/pull/3174)
+- Actionsheet: 新增 safe-area-inset-bottom 属性 [\#3171](https://github.com/youzan/vant/pull/3171)
+- NumberKeyboard: 新增 safe-area-inset-bottom 属性 [\#3173](https://github.com/youzan/vant/pull/3173)
+
+**Bug Fixes**
+
+- 修复 Card 渲染空标签的问题 [\#3152](https://github.com/youzan/vant/pull/3152)
+- 修复 Popup 会触发浏览器事件 uncancelable 提示的问题 [\#3150](https://github.com/youzan/vant/pull/3150)
+- 修复 Toast z-index 未正确递增的问题 [\#3153](https://github.com/youzan/vant/pull/3153)
+
+
 ## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
 `2019-04-13`
 
 **Improvements**
-
 
 - Rate: 新增 allow-half 属性 [\#3134](https://github.com/youzan/vant/pull/3134)
 - ImagePreview: 新增 max-zoom、min-zoom 属性 [\#3133](https://github.com/youzan/vant/pull/3133)
@@ -22,6 +46,7 @@
 - 修复 Steps 子组件销毁后未正确选中当前选项的问题 [\#3140](https://github.com/youzan/vant/pull/3140)
 - 修复 Toast 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3115](https://github.com/youzan/vant/pull/3115)
 - 修复 Dialog 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3111](https://github.com/youzan/vant/pull/3111)
+
 
 ## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
 `2019-04-06`

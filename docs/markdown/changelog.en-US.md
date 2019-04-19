@@ -1,10 +1,34 @@
 ## Changelog
 
+## [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
+`2019-04-19`
+
+**Improvements**
+
+- Card: add less vars [\#3167](https://github.com/youzan/vant/pull/3167)
+- Swipe: add less vars [\#3169](https://github.com/youzan/vant/pull/3169)
+- Field: add less vars [\#3168](https://github.com/youzan/vant/pull/3168)
+- ImagePreview: add index slot [\#3157](https://github.com/youzan/vant/pull/3157)
+- ImagePreview: add change event [\#3155](https://github.com/youzan/vant/pull/3155)
+- ImagePreview: support component call [\#3154](https://github.com/youzan/vant/pull/3154)
+- SubmitBar: add decimal-length prop [\#3151](https://github.com/youzan/vant/pull/3151)
+- Tabbar: add safe-area-inset-bottom prop [\#3149](https://github.com/youzan/vant/pull/3149)
+- SubmitBar: add safe-area-inset-bottom prop [\#3172](https://github.com/youzan/vant/pull/3172)
+- GoodsAction: add safe-area-inset-bottom prop [\#3174](https://github.com/youzan/vant/pull/3174)
+- Actionsheet: add safe-area-inset-bottom prop [\#3171](https://github.com/youzan/vant/pull/3171)
+- NumberKeyboard: add safe-area-inset-bottom prop [\#3173](https://github.com/youzan/vant/pull/3173)
+
+**Bug Fixes**
+
+- fix Card should not render empty bottom div [\#3152](https://github.com/youzan/vant/pull/3152)
+- fix Popup may cause event uncancelable warning [\#3150](https://github.com/youzan/vant/pull/3150)
+- fix Toast should add z-index if previous toast has not disappeared [\#3153](https://github.com/youzan/vant/pull/3153)
+
+
 ## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
 `2019-04-13`
 
 **Improvements**
-
 
 - Rate: add allow-half prop [\#3134](https://github.com/youzan/vant/pull/3134)
 - ImagePreview: add max-zoom、min-zoom prop [\#3133](https://github.com/youzan/vant/pull/3133)
