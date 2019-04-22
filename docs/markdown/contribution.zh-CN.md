@@ -103,11 +103,11 @@ export default {
 
 #### 5. API 说明
 
-组件的 API 说明，请以表格的形式书写，表格包含以下列：
+组件的 API 说明以表格的形式书写，表格包含以下列：
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ------------ | ------------- | -------- | ---------- |
-| visible | 是否可见 | bool | `false` |
+| visible | 是否可见 | `Boolean` | `false` |
 
 #### 6. Event 说明
 
@@ -116,29 +116,3 @@ export default {
 | 事件名 | 说明 | 参数 |
 |-----------|-----------|-----------|
 | click | 点击按钮时触发 | event：事件对象 |
-
-### 实用技巧
-
-#### 组件互相引用
-
-比如说 `Dialog` 里面引用了 `Button` 组件，直接写相对路径引用即可。
-
-```js
-import Button from '../button';
-```
-
-#### 组件创建
-
-Vant 中的组件会通过 `create` 方法统一创建，`create` 方法会在选项文件中注入基本的依赖和方法。
-
-```js
-import create from '../utils/create';
-
-export default create({
-  name: 'button'
-});
-```
-
-#### 样式
-
-组件样式使用 `precss 3.0` 作为预处理器，具体语法请参考 [precss 文档](https://github.com/jonathantneal/precss).
