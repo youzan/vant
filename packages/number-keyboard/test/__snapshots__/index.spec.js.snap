@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`title-left slot 1`] = `
+<div class="van-number-keyboard van-number-keyboard--default" style="z-index: 100;" name="van-slide-up">
+  <div class="van-number-keyboard__title van-hairline--top"><span class="van-number-keyboard__title-left">Custom Title Left</span></div>
+  <div class="van-number-keyboard__body"><i class="van-hairline van-key">1</i><i class="van-hairline van-key">2</i><i class="van-hairline van-key">3</i><i class="van-hairline van-key">4</i><i class="van-hairline van-key">5</i><i class="van-hairline van-key">6</i><i class="van-hairline van-key">7</i><i class="van-hairline van-key">8</i><i class="van-hairline van-key">9</i><i class="van-hairline van-key van-key--gray"></i><i class="van-hairline van-key">0</i><i class="van-hairline van-key van-key--gray van-key--delete">删除</i></div>
+</div>
+`;

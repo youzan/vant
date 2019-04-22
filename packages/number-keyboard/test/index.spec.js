@@ -83,3 +83,19 @@ test('listen to show event when no transtion', () => {
   expect(wrapper.emitted('show')).toBeTruthy();
   expect(wrapper.emitted('hide')).toBeTruthy();
 });
+
+test('title-left slot', () => {
+  const wrapper = mount({
+    template: `
+      <number-keyboard show>
+        <template v-slot:title-left>Custom Title Left</template>
+      </number-keyboard>
+    `
+  }, {
+    components: {
+      NumberKeyboard
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
