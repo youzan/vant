@@ -1,4 +1,4 @@
-import { use, isObj, isDef } from '../utils';
+import { use, isObj, isDef, isIOS } from '../utils';
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
@@ -102,6 +102,13 @@ export default sfc({
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', event);
+
+      // Hack for iOS12 page scroll
+      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
+      /* istanbul ignore next */
+      if (isIOS()) {
+        window.scrollTo(0, window.pageYOffset);
+      }
     },
 
     onClickLeftIcon() {

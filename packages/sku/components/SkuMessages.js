@@ -1,4 +1,4 @@
-import { use, isIOS } from '../../utils';
+import { use } from '../../utils';
 import Cell from '../../cell';
 import CellGroup from '../../cell-group';
 import Field from '../../field';
@@ -118,15 +118,6 @@ export default sfc({
           }
         }
       }
-    },
-
-    onBlur() {
-      // 修复 ios12 键盘弹起后点击错位的问题
-      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
-      /* istanbul ignore next */
-      if (isIOS()) {
-        window.scrollTo(0, 0);
-      }
     }
   },
 
@@ -156,7 +147,6 @@ export default sfc({
             required={String(message.required) === '1'}
             placeholder={this.getPlaceholder(message)}
             type={this.getType(message)}
-            onBlur={this.onBlur}
           />
         )))}
       </CellGroup>
