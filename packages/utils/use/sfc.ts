@@ -5,12 +5,12 @@ import '../../locale';
 import { camelize } from '..';
 import { SlotsMixin } from '../../mixins/slots';
 import Vue, {
+  VNode,
   VueConstructor,
   ComponentOptions,
   CreateElement,
   RenderContext
-} from 'vue/types';
-import { VNode } from 'vue/types/vnode';
+} from 'vue';
 import { InjectOptions, PropsDefinition } from 'vue/types/options';
 
 export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
@@ -55,7 +55,7 @@ export type TsxBaseProps<Slots> = {
   // hack for jsx prop spread
   props: any;
   class: any;
-  style: object[] | object;
+  style: string | object[] | object;
   scopedSlots: Slots;
 };
 
@@ -85,10 +85,8 @@ function defaultProps(props: any) {
 
 function install(this: ComponentOptions<Vue>, Vue: VueConstructor) {
   const { name } = this;
-  if (name) {
-    Vue.component(name, this);
-    Vue.component(camelize(`-${name}`), this);
-  }
+  Vue.component(name as string, this);
+  Vue.component(camelize(`-${name}`), this);
 }
 
 // unify slots & scopedSlots

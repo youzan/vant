@@ -1,4 +1,4 @@
-import { use, isObj, isDef } from '../utils';
+import { use, isObj, isDef, isIOS } from '../utils';
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
@@ -20,6 +20,7 @@ export default sfc({
     onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
+    errorMessageAlign: String,
     type: {
       type: String,
       default: 'text'
@@ -101,6 +102,13 @@ export default sfc({
     onBlur(event) {
       this.focused = false;
       this.$emit('blur', event);
+
+      // Hack for iOS12 page scroll
+      // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
+      /* istanbul ignore next */
+      if (isIOS()) {
+        window.scrollTo(0, window.pageYOffset);
+      }
     },
 
     onClickLeftIcon() {
@@ -243,7 +251,7 @@ export default sfc({
           {this.renderRightIcon()}
           {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
-        {this.errorMessage && <div class={bem('error-message')}>{this.errorMessage}</div>}
+        {this.errorMessage && <div class={bem('error-message', this.errorMessageAlign)}>{this.errorMessage}</div>}
       </Cell>
     );
   }

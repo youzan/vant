@@ -12,5 +12,5 @@ test('click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(click.mock.calls.length).toEqual(1);
+  expect(click).toHaveBeenCalledTimes(1);
 });

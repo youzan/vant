@@ -53,7 +53,7 @@ test('raf', async () => {
   raf(spy);
 
   await later(50);
-  expect(spy.mock.calls.length).toBe(1);
+  expect(spy).toHaveBeenCalledTimes(1);
   cancel(1);
 });
 

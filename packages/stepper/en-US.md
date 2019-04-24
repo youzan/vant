@@ -51,8 +51,14 @@ export default {
 
   methods: {
     onChange(value) {
+      if (this.changing) {
+        return;
+      }
+
+      this.changing = true;
       setTimeout(() => {
         this.value = value;
+        this.changing = false;
       }, 500);
     }
   }
@@ -84,6 +90,7 @@ export default {
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
 | async-change | Whether to enable async change | `Boolean` | `false` | - |
+| input-width | Input width | `String` | `30px` |
 
 ### Event
 

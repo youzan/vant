@@ -31,13 +31,13 @@ export default {
   vanCoupon: {
     valid: '有效期',
     unlimited: '无使用门槛',
-    discount: discount => `${discount}折`,
-    condition: (condition) => `满${condition}元可用`
+    discount: (discount: number) => `${discount}折`,
+    condition: (condition: number) => `满${condition}元可用`
   },
   vanCouponCell: {
     title: '优惠券',
     tips: '使用优惠',
-    count: count => `${count}张可用`
+    count: (count: number) => `${count}张可用`
   },
   vanCouponList: {
     empty: '暂无优惠券',

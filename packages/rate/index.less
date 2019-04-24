@@ -4,8 +4,20 @@
   user-select: none;
 
   &__item {
+    display: inline-block;
+    position: relative;
+    padding: 0 @rate-horizontal-padding;
+  }
+
+  &__icon {
     width: 1em;
-    padding: 0 2px;
-    box-sizing: content-box;
+
+    &--half {
+      position: absolute;
+      top: 0;
+      left: @rate-horizontal-padding;
+      width: .5em;;
+      overflow: hidden;
+    }
   }
 }

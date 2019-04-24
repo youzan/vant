@@ -5,12 +5,13 @@ import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
 const [sfc, bem] = use('image-preview');
-const MAX_ZOOM = 3;
-const MIN_ZOOM = 1 / 3;
 
 function getDistance(touches) {
   return Math.sqrt(
-    Math.abs((touches[0].clientX - touches[1].clientX) * (touches[0].clientY - touches[1].clientY))
+    Math.abs(
+      (touches[0].clientX - touches[1].clientX) *
+        (touches[0].clientY - touches[1].clientY)
+    )
   );
 }
 
@@ -35,6 +36,14 @@ export default sfc({
     showIndex: {
       type: Boolean,
       default: true
+    },
+    minZoom: {
+      type: Number,
+      default: 1 / 3
+    },
+    maxZoom: {
+      type: Number,
+      default: 3
     },
     overlayClass: {
       type: String,
@@ -65,8 +74,8 @@ export default sfc({
       };
 
       if (scale !== 1) {
-        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX / scale}px, ${this
-          .moveY / scale}px)`;
+        style.transform = `scale3d(${scale}, ${scale}, 1) translate(${this.moveX /
+          scale}px, ${this.moveY / scale}px)`;
       }
 
       return style;
@@ -160,7 +169,7 @@ export default sfc({
       if (this.zooming && touches.length === 2) {
         const distance = getDistance(touches);
         const scale = (this.startScale * distance) / this.startDistance;
-        this.scale = range(scale, MIN_ZOOM, MAX_ZOOM);
+        this.scale = range(scale, this.minZoom, this.maxZoom);
       }
     },
 
@@ -169,7 +178,11 @@ export default sfc({
       if (this.moving || this.zooming) {
         let stopPropagation = true;
 
-        if (this.moving && this.startMoveX === this.moveX && this.startMoveY === this.moveY) {
+        if (
+          this.moving &&
+          this.startMoveX === this.moveX &&
+          this.startMoveY === this.moveY
+        ) {
           stopPropagation = false;
         }
 
@@ -195,6 +208,7 @@ export default sfc({
     onChange(active) {
       this.resetScale();
       this.active = active;
+      this.$emit('change', active);
     },
 
     resetScale() {
@@ -212,7 +226,9 @@ export default sfc({
     const { active, images } = this;
 
     const Index = this.showIndex && (
-      <div class={bem('index')}>{`${active + 1}/${images.length}`}</div>
+      <div class={bem('index')}>
+        {this.slots('index') || `${active + 1}/${images.length}`}
+      </div>
     );
 
     const Images = (
@@ -237,7 +253,11 @@ export default sfc({
           };
           return (
             <SwipeItem>
-              {this.lazyLoad ? <img vLazy={image} {...props} /> : <img src={image} {...props} />}
+              {this.lazyLoad ? (
+                <img vLazy={image} {...props} />
+              ) : (
+                <img src={image} {...props} />
+              )}
             </SwipeItem>
           );
         })}

@@ -26,12 +26,12 @@ test('Dialog function call', async () => {
   document.querySelector('.van-dialog__cancel').click();
 
   await later();
-  expect(callback.mock.calls[0][0]).toEqual('cancel');
+  expect(callback).toHaveBeenCalledWith('cancel');
   Dialog.confirm().then(callback);
   document.querySelector('.van-dialog__confirm').click();
 
   await later();
-  expect(callback.mock.calls[1][0]).toEqual('confirm');
+  expect(callback).toHaveBeenNthCalledWith(2, 'confirm');
 });
 
 test('before close', () => {
@@ -75,4 +75,28 @@ test('set default options', () => {
 test('register component', () => {
   Vue.use(Dialog);
   expect(Vue.component(DialogVue.name)).toBeTruthy();
+});
+
+test('button color', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true,
+      showCancelButton: true,
+      cancelButtonColor: 'white',
+      confirmButtonColor: 'red'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('button text', () => {
+  const wrapper = mount(DialogVue, {
+    propsData: {
+      value: true,
+      showCancelButton: true,
+      cancelButtonText: 'Custom cancel',
+      confirmButtonText: 'Custom confirm'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
 });

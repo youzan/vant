@@ -31,6 +31,7 @@ function GoodsActionMiniBtn(
     <div class={[bem(), 'van-hairline']} onClick={onClick} {...inherit(ctx)}>
       <Icon
         class={[bem('icon'), props.iconClass]}
+        tag="div"
         info={props.info}
         name={props.icon}
       />

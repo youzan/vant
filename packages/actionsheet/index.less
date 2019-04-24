@@ -1,15 +1,15 @@
 @import '../style/var';
 
 .van-actionsheet {
-  max-height: 90%;
-  color: @text-color;
+  color: @action-sheet-item-text-color;
+  max-height: @action-sheet-max-height;
 
   &__item,
   &__cancel {
-    line-height: 50px;
-    font-size: 16px;
     text-align: center;
-    background-color: @white;
+    font-size: @action-sheet-item-font-size;
+    line-height: @action-sheet-item-height;
+    background-color: @action-sheet-item-background;
 
     &:active {
       background-color: @active-color;
@@ -17,7 +17,7 @@
   }
 
   &__item {
-    height: 50px;
+    height: @action-sheet-item-height;
   }
 
   &__item--disabled {
@@ -29,8 +29,8 @@
   }
 
   &__subname {
-    font-size: 12px;
-    color: @gray-darker;
+    color: @action-sheet-subname-color;
+    font-size: @action-sheet-subname-font-size;
     margin-left: 5px;
   }
 
@@ -46,8 +46,8 @@
   }
 
   &__header {
-    font-size: 16px;
-    line-height: 44px;
+    font-size: @action-sheet-header-font-size;
+    line-height: @action-sheet-header-height;
     text-align: center;
   }
 
@@ -55,9 +55,14 @@
     top: 0;
     right: 0;
     padding: 0 15px;
-    font-size: 18px;
-    color: @gray-dark;
     position: absolute;
     line-height: inherit;
+    color: @action-sheet-close-icon-color;
+    font-size: @action-sheet-close-icon-size;
+  }
+
+  &--safe-area-inset-bottom {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }

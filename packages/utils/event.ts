@@ -1,7 +1,7 @@
 /* eslint-disable no-empty */
 /* eslint-disable getter-return */
 /* eslint-disable import/no-mutable-exports */
-import { noop, isServer } from '.';
+import { isServer } from '.';
 
 type EventHanlder = (event?: Event) => void;
 
@@ -16,18 +16,29 @@ if (!isServer) {
         supportsPassive = true;
       }
     });
-    window.addEventListener('test-passive', noop, opts);
+    window.addEventListener('test-passive', null as any, opts);
   } catch (e) {}
 }
 
-export function on(target: HTMLElement, event: string, handler: EventHanlder, passive = false) {
+export function on(
+  target: HTMLElement,
+  event: string,
+  handler: EventHanlder,
+  passive = false
+) {
   if (!isServer) {
-    target.addEventListener(event, handler, supportsPassive ? { capture: false, passive } : false);
+    target.addEventListener(
+      event,
+      handler,
+      supportsPassive ? { capture: false, passive } : false
+    );
   }
 }
 
 export function off(target: HTMLElement, event: string, handler: EventHanlder) {
-  !isServer && target.removeEventListener(event, handler);
+  if (!isServer) {
+    target.removeEventListener(event, handler);
+  }
 }
 
 export function stop(event: Event) {

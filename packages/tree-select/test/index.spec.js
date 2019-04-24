@@ -31,7 +31,7 @@ test('select item', () => {
 
   const items = wrapper.findAll('.van-tree-select__item');
   items.at(0).trigger('click');
-  expect(onItemClick.mock.calls[0][0]).toEqual(item);
+  expect(onItemClick).toHaveBeenCalledWith(item);
   items.at(1).trigger('click');
-  expect(onItemClick.mock.calls[1]).toBeFalsy();
+  expect(onItemClick).toHaveBeenCalledTimes(1);
 });

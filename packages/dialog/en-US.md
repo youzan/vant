@@ -44,6 +44,24 @@ Used to confirm some messages, including a confirm button and a cancel button
 });
 ```
 
+#### Asnyc Close
+
+```js
+function beforeClose(action, done) {
+  if (action === 'confirm') {
+    setTimeout(done, 1000);
+  } else {
+    done();
+  }
+}
+
+Dialog.confirm({
+  title: 'Title',
+  message: 'Content',
+  beforeClose
+});
+```
+
 #### $dialog Method
 
 After import the Dialog component, the $dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
@@ -54,6 +72,30 @@ export default {
     this.$dialog.alert({
       message: 'Content'
     });
+  }
+}
+```
+
+#### Advanced Usage
+
+If you need to render vue components within a dialog, you can use dialog component.
+
+```html
+<van-dialog
+  v-model="show"
+  title="Title"
+  show-cancel-button
+>
+  <img src="https://img.yzcdn.cn/1.jpg">
+</van-dialog>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false
+    };
   }
 }
 ```
@@ -79,56 +121,15 @@ export default {
 | className | Custom className | `String | Array | Object` | - |
 | showConfirmButton | Whether to show confirm button | `Boolean` | `true` |
 | showCancelButton | Whether to show cancel button | `Boolean` | `false` |
+| cancelButtonText | Cancel button text | `String` | `Cancel` |
+| cancelButtonColor | Cancel button color | `String` | `#000` |
 | confirmButtonText | Confirm button text | `String` | `Confirm` |
-| cancelButtonText | Cancel button test | `String` | `Cancel` |
+| confirmButtonColor | Confirm button color | `String` | `#1989fa` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |
 | lockScroll | Whether to lock body scroll | `Boolean` | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
-
-#### Advanced Usage
-
-If you need to render vue components within a dialog, you can use dialog component.
-
-```html
-<van-dialog v-model="show" :asyncConfirm="onClickConfirmAsync">
-  <van-field
-    v-model="username"
-    label="Username"
-    placeholder="Username"
-  />
-  <van-field
-    v-model="password"
-    type="password"
-    label="Password"
-    placeholder="Password"
-  />
-</van-dialog>
-```
-
-```js
-Vue.use(Dialog);
-
-export default {
-  data() {
-    return {
-      show: false,
-      username: '',
-      password: ''
-    };
-  },
-  
-  methods: {
-    beforeClose(action, done) {
-      if (action === 'confirm') {
-        setTimeout(done, 1000);
-      } else {
-        done();
-      }
-    }
-  }
-}
-```
+| getContainer | Return the mount node for Dialog | `String | () => HTMLElement` | `body` |
 
 ### API
 
@@ -140,13 +141,15 @@ export default {
 | message-align | Message align，can be set to `left` `right` | `String` | `center` |
 | show-confirm-button | Whether to show confirm button | `Boolean` |  `true` |
 | show-cancel-button | Whether to show cancel button | `Boolean` |  `false` |
-| confirm-button-text | Confirm button text | `String` |  `Confirm` |
-| cancel-button-text | Cancel button test | `String` | `Cancel` |
+| cancel-button-text | Cancel button text | `String` | `Cancel` |
+| cancel-button-color | Cancel button color | `String` | `#000` |
+| confirm-button-text | Confirm button text | `String` | `Confirm` |
+| confirm-button-color | Confirm button color | `String` | `#1989fa` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | `false` |
 | lock-scroll | Whether to lock background scroll | `Boolean` | `true` |
 | before-close | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
-| get-container | Return the mount node for Dialog | `String | () => HTMLElement` | - |
+| get-container | Return the mount node for Dialog | `String | () => HTMLElement` | `body` |
 
 ### Event
 

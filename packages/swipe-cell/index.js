@@ -21,7 +21,7 @@ export default sfc({
   data() {
     return {
       offset: 0,
-      draging: false
+      dragging: false
     };
   },
 
@@ -55,13 +55,14 @@ export default sfc({
       const threshold = this.opened ? 1 - THRESHOLD : THRESHOLD;
 
       // right
-      if (direction > 0 && -offset > rightWidth * threshold && rightWidth > 0) {
+      if (direction === 'right' && -offset > rightWidth * threshold && rightWidth > 0) {
         this.open('right');
         // left
-      } else if (direction < 0 && offset > leftWidth * threshold && leftWidth > 0) {
+      } else if (direction === 'left' && offset > leftWidth * threshold && leftWidth > 0) {
         this.open('left');
+        // reset
       } else {
-        this.swipeMove();
+        this.swipeMove(0);
       }
     },
 
@@ -70,12 +71,9 @@ export default sfc({
         return;
       }
 
-      this.draging = true;
+      this.dragging = true;
+      this.startOffset = this.offset;
       this.touchStart(event);
-
-      if (this.opened) {
-        this.startX -= this.offset;
-      }
     },
 
     onDrag(event) {
@@ -87,7 +85,7 @@ export default sfc({
 
       if (this.direction === 'horizontal') {
         event.preventDefault();
-        this.swipeMove(this.deltaX);
+        this.swipeMove(this.deltaX + this.startOffset);
       }
     },
 
@@ -96,9 +94,9 @@ export default sfc({
         return;
       }
 
-      this.draging = false;
+      this.dragging = false;
       if (this.swiping) {
-        this.swipeLeaveTransition(this.offset > 0 ? -1 : 1);
+        this.swipeLeaveTransition(this.offset > 0 ? 'left' : 'right');
       }
     },
 
@@ -127,7 +125,7 @@ export default sfc({
 
     const wrapperStyle = {
       transform: `translate3d(${this.offset}px, 0, 0)`,
-      transition: this.draging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
+      transition: this.dragging ? 'none' : '.6s cubic-bezier(0.18, 0.89, 0.32, 1)'
     };
 
     return (
@@ -143,7 +141,7 @@ export default sfc({
           class={bem('wrapper')}
           style={wrapperStyle}
           onTransitionend={() => {
-            this.swipe = false;
+            this.swiping = false;
           }}
         >
           {this.leftWidth ? (

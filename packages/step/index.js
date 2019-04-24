@@ -8,6 +8,13 @@ export default sfc({
     this.$parent.steps.push(this);
   },
 
+  beforeDestroy() {
+    const index = this.$parent.steps.indexOf(this);
+    if (index > -1) {
+      this.$parent.steps.splice(index, 1);
+    }
+  },
+
   computed: {
     status() {
       const index = this.$parent.steps.indexOf(this);
@@ -36,7 +43,9 @@ export default sfc({
           {status !== 'process' ? (
             <i class={bem('circle')} />
           ) : (
-            <Icon name={activeIcon} style={{ color: activeColor }} />
+            this.slots('active-icon') || (
+              <Icon name={activeIcon} style={{ color: activeColor }} />
+            )
           )}
         </div>
         <div class={bem('line')} />

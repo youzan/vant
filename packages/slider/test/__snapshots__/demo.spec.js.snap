@@ -58,5 +58,16 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <div style="height:120px;padding-left:30px;">
+      <div class="van-slider van-slider--vertical">
+        <div class="van-slider__bar" style="height:50%;width:2px;">
+          <div class="van-slider__button-wrapper">
+            <div class="van-slider__button"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;

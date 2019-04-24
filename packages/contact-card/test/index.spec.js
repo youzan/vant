@@ -20,7 +20,7 @@ describe('ContactCard', () => {
     });
 
     wrapper.trigger('click');
-    expect(click.mock.calls.length).toEqual(1);
+    expect(click).toHaveBeenCalledTimes(1);
   });
 
   test('not editable', () => {
@@ -37,7 +37,7 @@ describe('ContactCard', () => {
     });
 
     wrapper.trigger('click');
-    expect(click.mock.calls.length).toEqual(0);
+    expect(click).toHaveBeenCalledTimes(0);
   });
 });
 

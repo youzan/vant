@@ -74,6 +74,14 @@ export default {
 </van-slider>
 ```
 
+#### Vertical
+
+```html
+<div :style="{ height: '100px' }">
+  <van-slider v-model="value" vertical />
+</div>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
@@ -86,6 +94,7 @@ export default {
 | bar-height | Height of bar | `String` | `2px` |
 | active-color | Active color of bar | `String` | `#1989fa` |
 | inactive-color | Inactive color of bar | `String` | `#e5e5e5` |
+| vertical | Whether to display vertical | `Boolean` | `false` |
 
 ### Event
 

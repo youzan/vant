@@ -86,6 +86,7 @@ export default {
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
 ### Tabbar Event
 
@@ -102,7 +103,7 @@ export default {
 | info | 图标右上角提示信息 | `String | Number` | - | - |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
-| replace | 跳转时是否替换当前页面历史 | `String` | `false` | - |
+| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 
 ### TabbarItem Slot
 

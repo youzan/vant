@@ -2,7 +2,7 @@
 
 .van-field {
   &__label {
-    max-width: 90px;
+    max-width: @field-label-max-width;
 
     &--center {
       text-align: center;
@@ -25,17 +25,17 @@
     width: 100%;
     resize: none;
     display: block;
-    color: @text-color;
+    color: @field-input-text-color;
     box-sizing: border-box;
     background-color: transparent;
 
     &::placeholder {
-      color: @gray-dark;
+      color: @field-placeholder-text-color;
     }
 
     &:disabled {
       opacity: 1;
-      color: @gray-dark;
+      color: @field-input-disabled-text-color;
       background-color: transparent;
     }
 
@@ -51,7 +51,7 @@
     &[type="date"],
     &[type="time"],
     &[type="datetime-local"] {
-      min-height: 24px;
+      min-height: @cell-line-height;
     }
   }
 
@@ -70,15 +70,15 @@
   }
 
   &__clear {
-    color: @gray;
-    font-size: 16px;
+    color: @field-clear-icon-color;
+    font-size: @field-clear-icon-size;
   }
 
   &__left-icon .van-icon,
   &__right-icon .van-icon {
     display: block;
     min-width: 1em;
-    font-size: 16px;
+    font-size: @field-icon-size;
     line-height: inherit;
   }
 
@@ -87,7 +87,7 @@
   }
 
   &__right-icon {
-    color: @gray-dark;
+    color: @field-right-icon-color;
   }
 
   &__button {
@@ -95,14 +95,22 @@
   }
 
   &__error-message {
-    color: @red;
-    font-size: 12px;
+    color: @field-error-message-color;
+    font-size: @field-error-message-text-color;
     text-align: left;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
   }
 
   &--disabled {
     .van-field__control {
-      color: @gray-dark;
+      color: @field-input-disabled-text-color;
     }
   }
 
@@ -110,14 +118,14 @@
     .van-field__control {
       &,
       &::placeholder {
-        color: @red;
+        color: @field-input-error-text-color;
       }
     }
   }
 
   &--min-height {
     .van-field__control {
-      min-height: 60px;
+      min-height: @field-text-area-min-height;
     }
   }
 }

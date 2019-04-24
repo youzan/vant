@@ -31,7 +31,7 @@ test('disabled', () => {
   });
 
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
 it('read text', done => {
@@ -40,6 +40,24 @@ it('read text', done => {
       resultType: 'text',
       afterRead: readFile => {
         expect(readFile.content).toEqual('test');
+        done();
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+});
+
+it('set input name', done => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      name: 'uploader',
+      beforeRead: (readFile, detail) => {
+        expect(detail.name).toEqual('uploader');
+        return true;
+      },
+      afterRead: (readFile, detail) => {
+        expect(detail.name).toEqual('uploader');
         done();
       }
     }
@@ -57,7 +75,7 @@ it('unknown resultType', () => {
     }
   });
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
 });
 
 it('before read return false', () => {
@@ -69,8 +87,11 @@ it('before read return false', () => {
     }
   });
 
+  const input = wrapper.find('input');
+
   wrapper.vm.onChange(file);
-  expect(afterRead.mock.calls.length).toBeFalsy();
+  expect(afterRead).toHaveBeenCalledTimes(0);
+  expect(input.element.value).toEqual('');
 });
 
 test('file size overlimit', async () => {

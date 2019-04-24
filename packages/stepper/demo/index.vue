@@ -51,9 +51,16 @@ export default {
       stepper3: null
     };
   },
+
   methods: {
     onChange(value) {
+      if (this.changing) {
+        return;
+      }
+
+      this.changing = true;
       setTimeout(() => {
+        this.changing = false;
         this.stepper2 = value;
       }, 500);
     }
@@ -63,6 +70,8 @@ export default {
 
 <style lang="less">
 .demo-stepper {
+  background-color: #fff;
+
   .van-stepper {
     margin-left: 15px;
   }

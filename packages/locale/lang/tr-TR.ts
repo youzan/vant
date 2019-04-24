@@ -28,10 +28,16 @@ export default {
   vanSubmitBar: {
     label: 'Toplam:'
   },
+  vanCoupon: {
+    valid: 'Geçerli',
+    unlimited: 'Sınırsız',
+    discount: (discount: number) => `%${discount * 10} indirim`,
+    condition: (condition: number) => `En az ${condition}`
+  },
   vanCouponCell: {
     title: 'Kupon',
     tips: 'Kupon seç',
-    count: count => `${count} adet teklif var`
+    count: (count: number) => `${count} adet teklif var`
   },
   vanCouponList: {
     empty: 'Kupon yok',
@@ -40,12 +46,6 @@ export default {
     enable: 'Mevcut',
     disabled: 'Mevcut değil',
     placeholder: 'Kupon kodu'
-  },
-  vanCouponItem: {
-    valid: 'Geçerli',
-    unlimited: 'Sınırsız',
-    discount: discount => `%${discount * 10} indirim`,
-    condition: condition => `En az ${condition}`
   },
   vanAddressEdit: {
     area: 'Alan',

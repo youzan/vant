@@ -11,14 +11,9 @@
   color: @orange-dark;
   background-color: @orange-light;
 
-  &--withicon {
-    position: relative;
-    padding-right: 40px;
-  }
-
   &__left-icon {
     font-size: 16px;
-    min-width: 20px;
+    min-width: 22px;
   }
 
   &__right-icon {
@@ -47,10 +42,31 @@
 
   &__play {
     animation: van-notice-bar-play linear both;
+
+    &--infinite {
+      animation: van-notice-bar-play-infinite linear infinite both;
+    }
   }
 
-  &__play--infinite {
-    animation: van-notice-bar-play-infinite linear infinite both;
+  &--wrapable {
+    height: auto;
+    padding: 8px 15px;
+
+    .van-notice-bar {
+      &__wrap {
+        height: auto;
+      }
+
+      &__content {
+        position: relative;
+        white-space: normal;
+      }
+    }
+  }
+
+  &--withicon {
+    position: relative;
+    padding-right: 40px;
   }
 }
 

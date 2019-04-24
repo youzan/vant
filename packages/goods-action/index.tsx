@@ -3,21 +3,32 @@ import { inherit } from '../utils/functional';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultProps, DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/use/sfc';
+
+export type GoodsActionProps = {
+  safeAreaInsetBottom?: boolean;
+};
 
 const [sfc, bem] = use('goods-action');
 
 function GoodsAction(
   h: CreateElement,
-  props: DefaultProps,
+  props: GoodsActionProps,
   slots: DefaultSlots,
   ctx: RenderContext
 ) {
   return (
-    <div class={bem()} {...inherit(ctx, true)}>
+    <div
+      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
+      {...inherit(ctx, true)}
+    >
       {slots.default && slots.default()}
     </div>
   );
 }
 
-export default sfc(GoodsAction);
+GoodsAction.props = {
+  safeAreaInsetBottom: Boolean
+};
+
+export default sfc<GoodsActionProps>(GoodsAction);

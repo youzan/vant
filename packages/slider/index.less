@@ -3,20 +3,20 @@
 .van-slider {
   position: relative;
   border-radius: 999px;
-  background-color: @gray-light;
+  background-color: @slider-inactive-background-color;
 
   &__bar {
     position: relative;
     border-radius: inherit;
-    background-color: @blue;
+    background-color: @slider-active-background-color;
   }
 
   &__button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: @white;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+    width: @slider-button-width;
+    height: @slider-button-height;
+    box-shadow: @slider-button-box-shadow;
+    border-radius: @slider-button-border-radius;
+    background-color: @slider-button-background-color;
 
     &-wrapper {
       position: absolute;
@@ -37,6 +37,17 @@
   }
 
   &--disabled {
-    opacity: .3;
+    opacity: @slider-disabled-opacity;
+  }
+
+  &--vertical {
+    height: 100%;
+    display: inline-block;
+
+    .van-slider__button-wrapper {
+      top: auto;
+      bottom: 0;
+      transform: translate3d(50%, 50%, 0);
+    }
   }
 }

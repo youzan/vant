@@ -191,7 +191,8 @@ sku: {
   // Key：skuKeyStr
   // Value：skuValueId
   s1: '30349',
-  s2: '1193'
+  s2: '1193',
+  selectedNum: 3
 }
 ```
 

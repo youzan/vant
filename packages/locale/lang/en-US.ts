@@ -31,13 +31,13 @@ export default {
   vanCoupon: {
     valid: 'Valid',
     unlimited: 'Unlimited',
-    discount: discount => `${discount * 10}% off`,
-    condition: condition => `At least ${condition}`
+    discount: (discount: number) => `${discount * 10}% off`,
+    condition: (condition: number) => `At least ${condition}`
   },
   vanCouponCell: {
     title: 'Coupon',
     tips: 'Select coupon',
-    count: count => `You have ${count} coupons`
+    count: (count: number) => `You have ${count} coupons`
   },
   vanCouponList: {
     empty: 'No coupons',

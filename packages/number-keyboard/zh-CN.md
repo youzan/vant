@@ -12,7 +12,7 @@ Vue.use(NumberKeyboard);
 #### 默认样式
 
 ```html
-<van-button @touchstart.native.stop="show = true">
+<van-button @touchstart.stop="show = true">
   弹出默认键盘
 </van-button>
 
@@ -73,6 +73,7 @@ export default {
 | delete-button-text | 删除按钮文字 | `String` | `删除` | 1.4.3 |
 | show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
 | hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
+| safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
 ### Event
 
@@ -84,3 +85,9 @@ export default {
 | blur | 点击关闭按钮或非键盘区域时触发 | - |
 | show | 键盘完全弹出时触发 | - |
 | hide | 键盘完全收起时触发 | - |
+
+### Slot
+
+| 名称 | 说明 |
+|------|------|
+| title-left | 自定义标题栏左侧内容 |

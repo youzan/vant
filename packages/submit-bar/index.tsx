@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import Button from '../button';
+import Button, { ButtonType } from '../button';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -13,8 +13,10 @@ export type SubmitBarProps = {
   loading?: boolean;
   currency: string;
   disabled?: boolean;
-  buttonType: string;
+  buttonType: ButtonType;
   buttonText?: string;
+  decimalLength: number;
+  safeAreaInsetBottom?: boolean;
 };
 
 export type SubmitBarSlots = DefaultSlots & {
@@ -34,7 +36,10 @@ function SubmitBar(
   const hasPrice = typeof price === 'number';
 
   return (
-    <div class={bem()} {...inherit(ctx)}>
+    <div
+      class={bem({ 'safe-area-inset-bottom': props.safeAreaInsetBottom })}
+      {...inherit(ctx)}
+    >
       {slots.top && slots.top()}
       {(slots.tip || tip) && (
         <div class={bem('tip')}>
@@ -49,7 +54,7 @@ function SubmitBar(
             <span>{props.label || t('label')}</span>,
             <span class={bem('price')}>{`${props.currency} ${(
               (price as number) / 100
-            ).toFixed(2)}`}</span>
+            ).toFixed(props.decimalLength)}`}</span>
           ]}
         </div>
         <Button
@@ -74,9 +79,14 @@ SubmitBar.props = {
   loading: Boolean,
   disabled: Boolean,
   buttonText: String,
+  safeAreaInsetBottom: Boolean,
   price: {
     type: Number,
     default: null
+  },
+  decimalLength: {
+    type: Number,
+    default: 2
   },
   currency: {
     type: String,

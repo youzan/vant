@@ -71,6 +71,7 @@ export default {
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
 ### Tabbar Event
 
@@ -87,7 +88,7 @@ export default {
 | info | Info message | `String | Number` | - |
 | url | Link | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` |
+| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 ### TabbarItem Slot
 

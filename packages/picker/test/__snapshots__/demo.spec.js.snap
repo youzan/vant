@@ -4,6 +4,7 @@ exports[`renders demo correctly 1`] = `
 <div>
   <div>
     <div class="van-picker">
+      <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
@@ -20,6 +21,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker">
+      <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 0px, 0);line-height:44px;">
@@ -41,6 +43,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-ellipsis van-picker__title">标题</div>
         <div class="van-picker__confirm">确认</div>
       </div>
+      <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">
@@ -57,6 +60,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker">
+      <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 44px, 0);line-height:44px;">
@@ -71,6 +75,7 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-picker">
+      <!---->
       <div class="van-picker__columns" style="height:220px;">
         <div class="van-picker-column column1" style="height:220px;">
           <ul style="transition:0ms;transform:translate3d(0, 88px, 0);line-height:44px;">

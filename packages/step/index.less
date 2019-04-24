@@ -6,6 +6,14 @@
   position: relative;
   color: @gray-dark;
 
+  &__circle {
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: @gray-dark;
+  }
+
   &--horizontal {
     float: left;
 
@@ -29,10 +37,6 @@
       .van-step__circle-container {
         left: auto;
         right: -9px;
-      }
-
-      .van-step__line {
-        width: 0;
       }
     }
 
@@ -61,15 +65,6 @@
       background-color: @border-color;
     }
 
-    &.van-step--finish {
-      color: @text-color;
-
-      .van-step__circle,
-      .van-step__line {
-        background-color: @green;
-      }
-    }
-
     &.van-step--process {
       color: @text-color;
 
@@ -83,14 +78,6 @@
         display: block;
       }
     }
-  }
-
-  .van-step__circle {
-    display: block;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background-color: @gray-dark;
   }
 
   &--vertical {
@@ -129,21 +116,35 @@
 
     .van-step__line {
       position: absolute;
-      top: 0;
+      top: 16px;
       left: -15px;
       width: 1px;
       height: 100%;
       background-color: @border-color;
     }
-    
+
     &.van-step--process {
-      .van-icon-checked {
+      .van-icon {
         top: 12px;
         left: -20px;
         line-height: 1;
         font-size: 12px;
       }
     }
+  }
 
+  &:last-child {
+    .van-step__line {
+      width: 0;
+    }
+  }
+
+  &--finish {
+    color: @text-color;
+
+    .van-step__circle,
+    .van-step__line {
+      background-color: @green;
+    }
   }
 }

@@ -8,6 +8,8 @@ const defaultConfig = {
   images: [],
   loop: true,
   value: true,
+  minZoom: 1 / 3,
+  maxZoom: 3,
   className: '',
   lazyLoad: false,
   showIndex: true,

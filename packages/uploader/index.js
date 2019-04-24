@@ -23,6 +23,14 @@ export default sfc({
     }
   },
 
+  computed: {
+    detail() {
+      return {
+        name: this.$attrs.name || ''
+      };
+    }
+  },
+
   methods: {
     onChange(event) {
       let { files } = event.target;
@@ -31,7 +39,8 @@ export default sfc({
       }
 
       files = files.length === 1 ? files[0] : [].slice.call(files, 0);
-      if (!files || (this.beforeRead && !this.beforeRead(files))) {
+      if (!files || (this.beforeRead && !this.beforeRead(files, this.detail))) {
+        this.resetInput();
         return;
       }
 
@@ -81,8 +90,14 @@ export default sfc({
       if (oversize) {
         this.$emit('oversize', files);
       } else {
-        this.afterRead && this.afterRead(files);
-        this.$refs.input && (this.$refs.input.value = '');
+        this.afterRead && this.afterRead(files, this.detail);
+      }
+      this.resetInput();
+    },
+
+    resetInput() {
+      if (this.$refs.input) {
+        this.$refs.input.value = '';
       }
     }
   },

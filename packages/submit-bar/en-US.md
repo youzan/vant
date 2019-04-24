@@ -72,6 +72,8 @@ Use slot to add custom contents.
 | disabled | Whether to disable button |  `Boolean` | `false` |
 | loading | Whether to show loading icon |  `Boolean` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
+| decimal-length | Number of digits to appear after the decimal point | `Number` | `2` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
 ### Event
 

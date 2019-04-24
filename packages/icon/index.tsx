@@ -8,6 +8,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type IconProps = {
+  tag: keyof HTMLElementTagNameMap | string;
   name: string;
   size?: string;
   color?: string;
@@ -30,7 +31,7 @@ function Icon(
   const urlIcon = isSrc(props.name);
 
   return (
-    <i
+    <props.tag
       class={[
         props.classPrefix,
         urlIcon ? 'van-icon--image' : `${props.classPrefix}-${props.name}`
@@ -44,7 +45,7 @@ function Icon(
       {slots.default && slots.default()}
       {urlIcon && <img src={props.name} />}
       <Info info={props.info} />
-    </i>
+    </props.tag>
   );
 }
 
@@ -53,6 +54,10 @@ Icon.props = {
   size: String,
   color: String,
   info: [String, Number],
+  tag: {
+    type: String,
+    default: 'i'
+  },
   classPrefix: {
     type: String,
     default: 'van-icon'

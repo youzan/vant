@@ -23,9 +23,20 @@ Vue.use(Button);
 
 #### 朴素按钮
 
+通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
+
 ```html
 <van-button plain type="primary">朴素按钮</van-button>
 <van-button plain type="danger">朴素按钮</van-button>
+```
+
+#### 细边框
+
+设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
+
+```html
+<van-button plain hairline type="primary">细边框按钮</van-button>
+<van-button plain hairline type="danger">细边框按钮</van-button>
 ```
 
 #### 禁用状态
@@ -76,15 +87,17 @@ Vue.use(Button);
 | square | 是否为方形按钮 | `Boolean` | `false` | 1.2.0 |
 | round | 是否为圆形按钮 | `Boolean` | `false` | 1.3.4 |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
+| hairline | 是否使用 0.5px 边框 | `Boolean` | `false` | 1.6.11 |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - |
 | loading-text | 加载状态提示文字 | `String` | - | 1.6.3 |
 | loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
 | url | 跳转链接 | `String` | - | 1.6.5 |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | 1.6.5 |
-| replace | 跳转时是否替换当前页面历史 | `String` | `false` | 1.6.5 |
+| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 1.6.5 |
 
 ### Event
 
 | 事件名 | 说明 | 参数 |
 |------|------|------|
-| click | 点击按钮且按钮状态不为加载或禁用时触发 | - |
+| click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: Event |
+| touchstart | 原生 touchstart 事件 | event: TouchEvent |

@@ -92,6 +92,14 @@ export default {
 |------|------|
 | - | 在邮政编码下方插入内容 |
 
+### 方法
+
+通过 ref 可以获取到 address-edit 实例并调用实例方法
+
+| 方法名 | 参数 | 返回值 | 介绍 |
+|------|------|------|------|
+| setAddressDetail | addressDetail: string | - | 设置详细地址 |
+
 ### 数据格式
 
 #### addressInfo 数据格式
@@ -107,7 +115,7 @@ export default {
 | city | 城市 | `String` |
 | county | 区县 | `String` |
 | addressDetail | 详细地址 | `String` |
-| areaCode | 地区编码，通过省市区选择获取 | `String` |
+| areaCode | 地区编码，通过`省市区选择`获取（必填） | `String` |
 | postalCode | 邮政编码 | `String` |
 | isDefault | 是否为默认地址 | `Boolean` |
 

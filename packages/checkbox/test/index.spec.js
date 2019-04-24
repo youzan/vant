@@ -70,3 +70,19 @@ test('checkbox group', () => {
   icons.at(0).trigger('click');
   expect(wrapper.vm.result).toEqual(['b']);
 });
+
+test('click event', () => {
+  const onClick = jest.fn();
+  const wrapper = mount(Checkbox, {
+    listeners: {
+      click: onClick
+    }
+  });
+
+  wrapper.trigger('click');
+  expect(onClick).toHaveBeenCalledTimes(1);
+
+  const icon = wrapper.find('.van-checkbox__icon');
+  icon.trigger('click');
+  expect(onClick).toHaveBeenCalledTimes(2);
+});

@@ -13,11 +13,33 @@ test('change event', () => {
       }
     }
   });
-  const item4 = wrapper.findAll('.van-rate__item').at(3);
+  const item4 = wrapper.findAll('.van-rate__icon').at(3);
 
   item4.trigger('click');
-  expect(onInput.mock.calls[0][0]).toEqual(4);
-  expect(onChange.mock.calls[0][0]).toEqual(4);
+  expect(onInput).toHaveBeenCalledWith(4);
+  expect(onChange).toHaveBeenCalledWith(4);
+});
+
+test('allow half', () => {
+  const onInput = jest.fn();
+  const onChange = jest.fn();
+
+  const wrapper = mount(Rate, {
+    propsData: {
+      allowHalf: true
+    },
+    context: {
+      on: {
+        input: onInput,
+        change: onChange
+      }
+    }
+  });
+  const item4 = wrapper.findAll('.van-rate__icon--half').at(3);
+
+  item4.trigger('click');
+  expect(onInput).toHaveBeenCalledWith(3.5);
+  expect(onChange).toHaveBeenCalledWith(3.5);
 });
 
 test('disabled', () => {
@@ -38,8 +60,8 @@ test('disabled', () => {
   const item4 = wrapper.findAll('.van-rate__item').at(3);
 
   item4.trigger('click');
-  expect(onInput.mock.calls.length).toEqual(0);
-  expect(onChange.mock.calls.length).toEqual(0);
+  expect(onInput).toHaveBeenCalledTimes(0);
+  expect(onChange).toHaveBeenCalledTimes(0);
 });
 
 test('touchmove', () => {
@@ -62,5 +84,7 @@ test('touchmove', () => {
   };
 
   triggerDrag(wrapper, 100, 0);
-  expect(onChange.mock.calls).toEqual([[2], [3], [4]]);
+  expect(onChange).toHaveBeenNthCalledWith(1, 2);
+  expect(onChange).toHaveBeenNthCalledWith(2, 3);
+  expect(onChange).toHaveBeenNthCalledWith(3, 4);
 });

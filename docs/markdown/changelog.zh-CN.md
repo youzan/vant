@@ -1,5 +1,102 @@
 ## 更新日志
 
+## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
+`2019-04-13`
+
+**Improvements**
+
+
+- Rate: 新增 allow-half 属性 [\#3134](https://github.com/youzan/vant/pull/3134)
+- ImagePreview: 新增 max-zoom、min-zoom 属性 [\#3133](https://github.com/youzan/vant/pull/3133)
+- Dialog: 新增 confirm-button-color、cancel-button-color 属性 [\#3107](https://github.com/youzan/vant/pull/3107)
+- Cell: 新增多个 Less 变量 [\#3122](https://github.com/youzan/vant/pull/3122)
+- Rate: 新增多个 Less 变量 [\#3135](https://github.com/youzan/vant/pull/3135)
+- Panel: 新增多个 Less 变量 [\#3136](https://github.com/youzan/vant/pull/3136)
+- Badge: 新增多个 Less 变量 [\#3131](https://github.com/youzan/vant/pull/3131)
+- Dialog: 新增多个 Less 变量 [\#3123](https://github.com/youzan/vant/pull/3123)
+- Slider: 新增多个 Less 变量 [\#3125](https://github.com/youzan/vant/pull/3125)
+- Tabbar: 新增多个 Less 变量 [\#3124](https://github.com/youzan/vant/pull/3124)
+
+**Bug Fixes**
+
+- 修复 Steps 子组件销毁后未正确选中当前选项的问题 [\#3140](https://github.com/youzan/vant/pull/3140)
+- 修复 Toast 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3115](https://github.com/youzan/vant/pull/3115)
+- 修复 Dialog 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3111](https://github.com/youzan/vant/pull/3111)
+
+## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
+`2019-04-06`
+
+**Improvements**
+
+- Uploader: 新增 name 属性 [\#3096](https://github.com/youzan/vant/pull/3096)
+- Slider: 新增 vertical 属性 [\#3078](https://github.com/youzan/vant/pull/3078)
+- Stepper: 新增 input-width 属性 [\#3076](https://github.com/youzan/vant/pull/3076)
+- Tag: 新增多个 Less 变量 [\#3087](https://github.com/youzan/vant/pull/3087)
+- Button: 新增多个 Less 变量 [\#3093](https://github.com/youzan/vant/pull/3093)
+- CellGroup: 新增多个 Less 变量 [\#3094](https://github.com/youzan/vant/pull/3094)
+
+**Bug Fixes**
+
+- 修复 Tab 包裹在`keep-alive`内时底部条渲染错误的问题 [\#3097](https://github.com/youzan/vant/pull/3097)
+
+
+## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
+`2019-03-28`
+
+**Improvements**
+
+- Actionsheet: 新增 less 变量 [\#3049](https://github.com/youzan/vant/pull/3049)
+
+**Bug Fixes**
+
+- 修复 SwipeCell 展示时无法触发滚动事件的问题 [\#3056](https://github.com/youzan/vant/pull/3056)
+- 修复 Button 细边框状态下 square 属性失效的问题 [\#3058](https://github.com/youzan/vant/pull/3058)
+- 修复 Picker 使用 loading 属性时展示出现异常的问题 [\#3064](https://github.com/youzan/vant/pull/3064)
+
+
+## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+`2019-03-22`
+
+**Improvements**
+
+- Icon: 更新店铺相关图标 [\#3044](https://github.com/youzan/vant/pull/3044)
+- Radio: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Checkbox: 新增 click 事件 [\#2990](https://github.com/youzan/vant/pull/2990)
+- Button: 新增 hairline 属性 [\#3031](https://github.com/youzan/vant/pull/3031)
+- Button: 新增 touchstart 属性 [\#3039](https://github.com/youzan/vant/pull/3039)
+- Dialog: 新增 getContainer 选项 [\#3040](https://github.com/youzan/vant/pull/3040)
+- NoticeBar: 新增 wrapable 属性 [\#2992](https://github.com/youzan/vant/pull/2992)
+- Field: 新增 error-message-align 属性 [\#3016](https://github.com/youzan/vant/pull/3016)
+- Sku: 支持在初始化时设置选中商品数量 [\#3045](https://github.com/youzan/vant/pull/3045)
+- Actionsheet: 支持同时设置默认插槽和 cancel-text [\#3021](https://github.com/youzan/vant/pull/3021)
+
+**Bug Fixes**
+
+- 修复 Swipe 在部分浏览器上文字模糊的问题 [\#3030](https://github.com/youzan/vant/pull/3030)
+- 修复 Steps 垂直方向 active-icon 样式错误的问题 [\#3007](https://github.com/youzan/vant/pull/3007)
+- 修复 Toast 在某些情况下遮罩层无法被清除的问题 [\#3025](https://github.com/youzan/vant/pull/3025)
+- 修复 Dialog 使用 getContainer 属性时遮罩层位置错误的问题 [\#3041](https://github.com/youzan/vant/pull/3041)
+- 修复 Collapse 在渲染较慢的情况下可能出现高度为 0 的问题 [\#2993](https://github.com/youzan/vant/pull/2993)
+
+
+## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+`2019-03-17`
+
+**Improvements**
+
+- Icon: 新增 tag 属性 [\#2986](https://github.com/youzan/vant/pull/2986)
+- Cell: 新增 label 插槽 [\#2956](https://github.com/youzan/vant/pull/2956)
+- Toast: 新增 onClose 属性 [\#2964](https://github.com/youzan/vant/pull/2964)
+- AddressEdit: 新增 setAddressDetail 方法 [\#2984](https://github.com/youzan/vant/pull/2984)
+
+**Bug Fixes**
+
+- 修复 List 子元素 scoped 样式无法生效的问题 [\#2983](https://github.com/youzan/vant/pull/2983)
+- 修复 Steps 设置为 vertical 时样式错误的问题 [\#2981](https://github.com/youzan/vant/pull/2981)
+- 修复 Coupon 单独传入 value-desc 属性时不展示的问题 [\#2980](https://github.com/youzan/vant/pull/2980)
+- 修复 Uploader 使用 before-read 属性后重复上传同个文件不触发事件的问题 [\#2971](https://github.com/youzan/vant/pull/2971)
+
+
 ## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
 `2019-03-11`
 

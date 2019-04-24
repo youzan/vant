@@ -12,7 +12,7 @@ Vue.use(NumberKeyboard);
 #### Default Style
 
 ```html
-<van-button @touchstart.native.stop="show = true">
+<van-button @touchstart.stop="show = true">
   Show Keyboard
 </van-button>
 
@@ -73,6 +73,7 @@ export default {
 | delete-button-text | Delete button text | `String` | `delete` |
 | show-delete-key | Whether to show delete button | `Boolean` | `true` |
 | hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
 ### Event
 
@@ -84,3 +85,9 @@ export default {
 | blur | Triggered when click close button or blur keyboard | - |
 | show | Triggered when keyboard is fully displayed. | - |
 | hide | Triggered when keyboard is fully hidden. | - |
+
+### Slot
+
+| name | Description |
+|------|------|
+| title-left | Custom title left content |

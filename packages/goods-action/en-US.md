@@ -83,6 +83,11 @@ Use `info` prop to show messages in upper right corner of icon
 
 ### API
 
+#### GoodsAction
+
+| Attribute | Description | Type | Default |
+| safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
+
 #### GoodsActionMiniBtn
 
 | Attribute | Description | Type | Default |
@@ -93,7 +98,7 @@ Use `info` prop to show messages in upper right corner of icon
 | info | Info message | `String | Number` | - |
 | url | Link | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` |
+| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 #### GoodsActionBigBtn
 
@@ -105,4 +110,4 @@ Use `info` prop to show messages in upper right corner of icon
 | loading | Whether show loading status | `Boolean` | `false` |
 | url | Link | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
-| replace | If true, the navigation will not leave a history record | `String` | `false` |
+| replace | If true, the navigation will not leave a history record | `Boolean` | `false` |

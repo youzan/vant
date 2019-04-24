@@ -115,7 +115,7 @@ export default {
 <van-checkbox-group v-model="result">
   <van-cell-group>
     <van-cell
-      v-for="item in list"
+      v-for="(item, index) in list"
       clickable
       :key="item"
       :title="`复选框 ${item}`"
@@ -144,8 +144,8 @@ export default {
 | name | 标识符 | `any` | - | - |
 | shape | 形状，可选值为 `square` | `String` | `round` | - |
 | v-model | 是否为选中状态 | `Boolean` | `false` | - |
-| disabled | 是否禁用单选框 | `Boolean` | `false` | - |
-| label-disabled | 是否禁用单选框文本点击 | `Boolean` | `false` | - |
+| disabled | 是否禁用复选框 | `Boolean` | `false` | - |
+| label-disabled | 是否禁用复选框文本点击 | `Boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
 
@@ -154,7 +154,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 所有选中项的标识符 | `Array` | - | - |
-| disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
+| disabled | 是否禁用所有复选框 | `Boolean` | `false` | - |
 | max | 设置最大可选数，0 为无限制 | `Number` | `0` | - |
 
 ### Checkbox Event
@@ -162,6 +162,7 @@ export default {
 | 事件名称 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
+| click | 点击复选框时触发 | event: Event |
 
 ### CheckboxGroup Event
 

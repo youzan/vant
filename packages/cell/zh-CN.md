@@ -113,7 +113,7 @@ Vue.use(Cell).use(CellGroup);
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | border | 是否显示内边框 | `Boolean` | `true` | - |
-| replace | 跳转时是否替换当前页面历史 | `String` | `false` | - |
+| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 | clickable | 是否开启点击反馈 | `Boolean` | `false` | - |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
 | required | 是否显示表单必填星号 | `Boolean` | `false` | - |

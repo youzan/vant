@@ -27,7 +27,26 @@ export default {
 };
 ```
 
+#### 标识名称
+
+```html
+<van-uploader name="uploader" :after-read="onRead">
+  <van-icon name="photograph" />
+</van-uploader>
+```
+
+```javascript
+export default {
+  methods: {
+    onRead(file, detail) {
+      this.$toast(detail.name);
+    }
+  }
+};
+```
+
 #### 设置 Input 属性
+
 可以直接在 Uploader 上设置 accpet、multiple 等原生属性，input 会自动继承该属性
 
 ```html
@@ -40,6 +59,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| name | 标识符，可以在回调函数的第二项参数中获取 | `String` | - | 1.6.13 |
 | result-type | 文件读取结果类型，可选值为 `text` | `String` | `dataUrl` | - |
 | accept | 接受的文件类型 | `String` | `image/*` | - |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
@@ -59,9 +79,9 @@ export default {
 |------|------|
 | - | 自定义 uploader 内容 |
 
-### after-read 回调参数
+### before-read、after-read 回调参数
 
 | 参数名 | 说明 | 类型 |
 |------|------|------|
 | file | 文件解析后的 file 对象 | `Object` |
-| content | 文件内容 | `String` |
+| detail | 额外信息，包含 name 字段 | `Object` |

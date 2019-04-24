@@ -49,7 +49,7 @@ export default {
 | loosing-text | 释放过程文案 | `String` | `释放即可刷新...` | - |
 | loading-text | 加载过程文案 | `String` | `加载中...` | - |
 | success-text | 加载成功提示文案 | `String` | - | 1.6.2 |
-| success-duration | 加载成功提示时长(ms) | `String` | 500 | 1.6.2 |
+| success-duration | 加载成功提示时长(ms) | `Number` | `500` | 1.6.2 |
 | animation-duration | 动画时长 | `Number` | `300` | - |
 | head-height | 顶部内容高度 | `Number` | `50` | - |
 | disabled | 是否禁用 | `Boolean` | `false` | 1.1.10 |

@@ -4,6 +4,8 @@
 
 ```js
 import { ImagePreview } from 'vant';
+
+Vue.use(ImagePreview);
 ```
 
 ### Usage
@@ -48,7 +50,40 @@ setTimeout(() => {
 }, 1000);
 ```
 
-### Arguments
+#### Component Call
+
+```html
+<van-image-preview
+  v-model="show"
+  :images="images"
+  @change="onChange"
+>
+  <template v-slot:index>Page: { index }</template>
+</van-image-preview>
+```
+
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      index: 0,
+      images: [
+        'https://img.yzcdn.cn/1.jpg',
+        'https://img.yzcdn.cn/2.jpg'
+      ]
+    };
+  },
+
+  methods: {
+    onChange(index) {
+      this.index = index;
+    }
+  }
+}
+```
+
+### Options
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -61,6 +96,36 @@ setTimeout(() => {
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
 | className | Custom className | `String | Array | Object` | - |
 | lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
+| maxZoom | Max zoom | `Number` | `3` |
+| minZoom | Min zoom | `Number` | `1/3` |
+
+### Props
+
+| Attribute | Description | Type | Default |
+|------|------|------|------|
+| images | Images URL list | `Array` | `[]` |
+| start-position | Start position | `Number` | `0` |
+| show-index | Whether to show index | `Boolean` | `true` |
+| show-indicators | Whether to show indicators | `Boolean` | `false` |
+| loop | Whether to enable loop | `Boolean` | `true` |
+| async-close | Whether to enable async close | `Boolean` | `false` |
+| class-name | Custom className | `String | Array | Object` | - |
+| lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
+| max-zoom | Max zoom | `Number` | `3` |
+| min-zoom | Min zoom | `Number` | `1/3` |
+
+### Event
+
+| Event | Description | Parameters |
+|------|------|------|
+| close | Triggered when close | { index, url } |
+| change | Triggered when current image change | index: index of current image |
+
+### Slot
+
+| name | Description |
+|------|------|
+| index | Custom index |
 
 ### onClose Parematers
 

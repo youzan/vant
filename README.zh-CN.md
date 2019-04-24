@@ -4,13 +4,13 @@
 <h3 align="center" style="margin: 30px 0 35px;">轻量、可靠的移动端 Vue 组件库</h3>
 
 <p align="center">
-    <img src="https://img.shields.io/npm/v/vant.svg?style=flat" alt="npm version" />
+    <img src="https://img.shields.io/npm/v/vant.svg?style=flat-square" alt="npm version" />
+    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg?style=flat-square" alt="Coverage Status" />
     <img src="https://travis-ci.org/youzan/vant.svg?branch=master" alt="Build Status" />
-    <img src="https://img.shields.io/npm/dm/vant.svg" alt="downloads" />
+    <img src="https://img.shields.io/npm/dt/vant.svg?style=flat-square" alt="downloads" />
+    <img src="https://img.shields.io/npm/dm/vant.svg?style=flat-square" alt="downloads" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/vant.min.js?compression=gzip&style=flat-square&label=JS%20gzip%20size" alt="JS Gzip Size" />
     <img src="https://img.badgesize.io/https://unpkg.com/vant/lib/index.css?compression=gzip&style=flat-square&label=CSS%20gzip%20size" alt="CSS Gzip Size" />
-    <img src="https://isitmaintained.com/badge/open/youzan/vant.svg" alt="issue" />
-    <img src="https://img.shields.io/codecov/c/github/youzan/vant/dev.svg" alt="Coverage Status" />
 </p>
 
 <p align="center">
@@ -23,11 +23,13 @@
 
 ## 特性
 
-* 50+ 个经过有赞线上业务检验的组件
-* 80%+ 单元测试覆盖率
+* 50+ 个组件
+* 90% 单元测试覆盖率
 * 完善的中英文文档和示例
-* 支持 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
-* 支持 TypeScript
+* 支持按需引入
+* 支持主题定制
+* 支持国际化
+* 支持 TS
 * 支持 SSR
 
 ## 安装

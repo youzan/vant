@@ -1,12 +1,7 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import {
-  mount,
-  trigger,
-  triggerDrag,
-  transitionStub
-} from '../../../test/utils';
+import { mount, trigger, triggerDrag, transitionStub } from '../../../test/utils';
 
 transitionStub();
 
@@ -37,6 +32,7 @@ test('render image', () => {
   expect(wrapper.emitted('input')).toBeFalsy();
   triggerDrag(swipe, 0, 0);
   expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+  expect(wrapper.emitted('change')[0][0]).toEqual(2);
 });
 
 test('async close', () => {
@@ -77,16 +73,14 @@ test('function call options', done => {
   });
 
   instance.$emit('input', true);
-  expect(onClose.mock.calls.length).toEqual(0);
+  expect(onClose).toHaveBeenCalledTimes(0);
 
   Vue.nextTick(() => {
     const wrapper = document.querySelector('.van-image-preview');
     const swipe = wrapper.querySelector('.van-swipe__track');
     triggerDrag(swipe, 0, 0);
-    expect(onClose.mock.calls.length).toEqual(1);
-    expect(onClose.mock.calls).toEqual([
-      [{ index: 0, url: 'https://img.yzcdn.cn/1.png' }]
-    ]);
+    expect(onClose).toHaveBeenCalledTimes(1);
+    expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
     done();
   });
 });
@@ -109,4 +103,16 @@ test('zoom', async () => {
   triggerDrag(image, 300, 300);
   expect(wrapper).toMatchSnapshot();
   Element.prototype.getBoundingClientRect = getBoundingClientRect;
+});
+
+test('index slot', () => {
+  const wrapper = mount({
+    template: `
+      <van-image-preview :value="true">
+        <template v-slot:index>Custom Index</template>
+      </van-image-preview>
+    `
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

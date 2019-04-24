@@ -12,6 +12,17 @@
       </div>
     </demo-block>
 
+    <demo-block :title="$t('name')">
+      <div class="demo-uploader-container">
+        <van-uploader
+          name="uploader"
+          :after-read="toastName"
+        >
+          <van-icon name="photograph" />
+        </van-uploader>
+      </div>
+    </demo-block>
+
     <demo-block :title="$t('title2')">
       <div class="demo-uploader-container">
         <van-uploader
@@ -31,10 +42,12 @@
 export default {
   i18n: {
     'zh-CN': {
+      name: '标识名称',
       title2: '设置 input 属性'
     },
     'en-US': {
-      title2: 'Set input attr'
+      name: 'Name',
+      title2: 'Set input attrs'
     }
   },
 
@@ -47,6 +60,10 @@ export default {
       return file => {
         console.log(index, file);
       };
+    },
+
+    toastName(file, detail) {
+      this.$toast(detail.name);
     }
   }
 };

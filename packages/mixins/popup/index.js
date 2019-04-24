@@ -1,7 +1,7 @@
-import manager from './manager';
-import context from './context';
+import { context } from './context';
 import { TouchMixin } from '../touch';
 import { on, off } from '../../utils/event';
+import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/scroll';
 
 export const PopupMixin = {
@@ -134,7 +134,7 @@ export const PopupMixin = {
       }
 
       this.opened = false;
-      manager.close(this);
+      closeOverlay(this);
       this.$emit('input', false);
     },
 
@@ -143,14 +143,10 @@ export const PopupMixin = {
       const { getContainer } = this;
 
       if (getContainer) {
-        if (typeof getContainer === 'string') {
-          container =
-            getContainer === 'body'
-              ? document.body
-              : document.querySelector(getContainer);
-        } else {
-          container = getContainer();
-        }
+        container =
+          typeof getContainer === 'string'
+            ? document.querySelector(getContainer)
+            : getContainer();
       } else if (this.$parent) {
         container = this.$parent.$el;
       }
@@ -158,12 +154,16 @@ export const PopupMixin = {
       if (container && container !== this.$el.parentNode) {
         container.appendChild(this.$el);
       }
+
+      if (this.overlay) {
+        updateOverlay();
+      }
     },
 
-    onTouchMove(e) {
-      this.touchMove(e);
+    onTouchMove(event) {
+      this.touchMove(event);
       const direction = this.deltaY > 0 ? '10' : '01';
-      const el = getScrollEventTarget(e.target, this.$el);
+      const el = getScrollEventTarget(event.target, this.$el);
       const { scrollHeight, offsetHeight, scrollTop } = el;
       let status = '11';
 
@@ -176,26 +176,35 @@ export const PopupMixin = {
 
       /* istanbul ignore next */
       if (
+        event.cancelable &&
         status !== '11' &&
         this.direction === 'vertical' &&
         !(parseInt(status, 2) & parseInt(direction, 2))
       ) {
-        e.preventDefault();
-        e.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
       }
     },
 
     renderOverlay() {
+      if (this.$isServer || !this.value) {
+        return;
+      }
+
       if (this.overlay) {
-        manager.open(this, {
+        openOverlay(this, {
           zIndex: context.zIndex++,
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
       } else {
-        manager.close(this);
+        closeOverlay(this);
       }
 
+      this.updateZIndex();
+    },
+
+    updateZIndex() {
       this.$nextTick(() => {
         this.$el.style.zIndex = context.zIndex++;
       });

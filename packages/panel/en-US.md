@@ -38,7 +38,6 @@ Vue.use(Panel);
 | desc | Description | `String` | - |
 | status | Status | `String` | - |
 
-
 ### Slot
 
 | name | Description |

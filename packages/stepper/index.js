@@ -7,6 +7,7 @@ export default sfc({
     value: null,
     integer: Boolean,
     disabled: Boolean,
+    inputWidth: String,
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
@@ -138,6 +139,7 @@ export default sfc({
           class={bem('input')}
           value={this.currentValue}
           disabled={this.disabled || this.disableInput}
+          style={{ width: this.inputWidth }}
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

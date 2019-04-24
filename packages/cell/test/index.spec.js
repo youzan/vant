@@ -12,7 +12,7 @@ test('click event', () => {
   });
 
   wrapper.trigger('click');
-  expect(click.mock.calls.length).toBeTruthy();
+  expect(click).toHaveBeenCalled();
 });
 
 test('arrow direction', () => {

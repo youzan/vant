@@ -53,8 +53,14 @@ export default {
 
   methods: {
     onChange(value) {
+      if (this.changing) {
+        return;
+      }
+
+      this.changing = true;
       setTimeout(() => {
         this.value = value;
+        this.changing = false;
       }, 500);
     }
   }
@@ -87,6 +93,7 @@ export default {
 | disabled | 是否禁用步进器 | `Boolean` | `false` | - |
 | disable-input | 是否禁用输入框 | `Boolean` | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | `Boolean` | `false` | - |
+| input-width | 输入框宽度，须指定单位 | `String` | `30px` | 1.6.13 |
 
 ### Event
 

@@ -12,6 +12,7 @@ Vue.use(Field);
 ### 代码演示
 
 #### 基础用法
+
 通过 v-model 绑定输入框的值
 
 ```html
@@ -21,6 +22,7 @@ Vue.use(Field);
 ```
 
 #### 自定义类型
+
 根据`type`属性定义不同类型的输入框
 
 ```html
@@ -59,6 +61,7 @@ Vue.use(Field);
 ```
 
 #### 错误提示
+
 通过`error`或者`error-message`属性增加对应的错误提示
 
 ```html
@@ -79,6 +82,7 @@ Vue.use(Field);
 ```
 
 #### 高度自适应
+
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
 ```html
@@ -95,7 +99,8 @@ Vue.use(Field);
 ```
 
 #### 插入按钮
-通过 button slot 可以在输入框尾部插入按钮
+
+通过 button 插槽可以在输入框尾部插入按钮
 
 ```html
 <van-cell-group>
@@ -131,6 +136,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - |
 | label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
+| error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `String` | `left` | 1.6.11 |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | 1.0.0 |
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
 | right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |

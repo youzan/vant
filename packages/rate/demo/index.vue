@@ -16,16 +16,40 @@
       <van-rate
         v-model="value3"
         :size="25"
+        color="#f44"
+        void-icon="star"
+        void-color="#eee"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('halfStar')">
+      <van-rate
+        v-model="value4"
+        :size="25"
+        allow-half
+        void-icon="star"
+        void-color="#eee"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('customCount')">
+      <van-rate
+        v-model="value5"
         :count="6"
-        color="#07c160"
-        void-color="#ceefe8"
       />
     </demo-block>
 
     <demo-block :title="$t('disabled')">
       <van-rate
-        v-model="value4"
+        v-model="value6"
         disabled
+      />
+    </demo-block>
+
+    <demo-block :title="$t('readonly')">
+      <van-rate
+        v-model="value6"
+        readonly
       />
     </demo-block>
   </demo-section>
@@ -35,14 +59,20 @@
 export default {
   i18n: {
     'zh-CN': {
+      halfStar: '半星',
       disabled: '禁用状态',
       customIcon: '自定义图标',
-      customStyle: '自定义样式'
+      customStyle: '自定义样式',
+      customCount: '自定义数量',
+      readonly: '只读状态'
     },
     'en-US': {
+      halfStar: 'Half Star',
       disabled: 'Disabled',
       customIcon: 'Custom Icon',
-      customStyle: 'Custom Style'
+      customStyle: 'Custom Style',
+      customCount: 'Custom Count',
+      readonly: 'Readonly'
     }
   },
 
@@ -50,8 +80,10 @@ export default {
     return {
       value1: 3,
       value2: 3,
-      value3: 4,
-      value4: 2
+      value3: 3,
+      value4: 2.5,
+      value5: 4,
+      value6: 3
     };
   }
 };
@@ -59,6 +91,9 @@ export default {
 
 <style lang="less">
 .demo-rate {
+  padding-bottom: 20px;
+  background-color: #fff;
+
   .van-rate {
     margin-left: 15px;
   }

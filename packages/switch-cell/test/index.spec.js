@@ -13,5 +13,5 @@ test('change event', () => {
 
   wrapper.find('.van-switch').trigger('click');
 
-  expect(onChange.mock.calls[0]).toBeTruthy();
+  expect(onChange).toHaveBeenCalledWith(true);
 });
