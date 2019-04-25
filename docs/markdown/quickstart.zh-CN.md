@@ -29,7 +29,8 @@ vue ui
 
 - 基于 vant 搭建单页面应用
 - 配置 rem 适配方案
-- 自定义主题色方案
+- 配置 TypeScript 工程
+- 配置自定义主题色方案
 
 ### 安装
 
@@ -120,7 +121,6 @@ Vue.use(Vant);
 ```
 
 > 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
-
 
 ### Rem 适配
 
