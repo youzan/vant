@@ -36,6 +36,12 @@ function AddressItem(
 ) {
   const { disabled, switchable } = props;
 
+  const onSelect = () => {
+    if (props.switchable) {
+      emit(ctx, 'select');
+    }
+  };
+
   const renderRightIcon = () => (
     <Icon
       name="edit"
@@ -54,13 +60,13 @@ function AddressItem(
       <div class={bem('address')}>{data.address}</div>
     ];
 
-    return props.switchable ? <Radio name={data.id}>{Info}</Radio> : Info;
-  };
-
-  const onSelect = () => {
-    if (props.switchable) {
-      emit(ctx, 'select');
-    }
+    return props.switchable ? (
+      <Radio name={data.id} onClick={onSelect}>
+        {Info}
+      </Radio>
+    ) : (
+      Info
+    );
   };
 
   return (
