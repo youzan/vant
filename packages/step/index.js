@@ -43,7 +43,9 @@ export default sfc({
           {status !== 'process' ? (
             <i class={bem('circle')} />
           ) : (
-            <Icon name={activeIcon} style={{ color: activeColor }} />
+            this.slots('active-icon') || (
+              <Icon name={activeIcon} style={{ color: activeColor }} />
+            )
           )}
         </div>
         <div class={bem('line')} />

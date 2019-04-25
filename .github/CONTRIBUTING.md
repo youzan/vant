@@ -5,11 +5,13 @@ The following is a set of guidelines for contributing to Vant. Please spend seve
 Anyway, these are just guidelines, not rules, use your best judgment and feel free to propose changes to this document in a pull request.
 
 ## Opening an Issue
+
 If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been reported or fixed. You can search through existing issues and PRs to see if someone has reported one similar to yours.
 
 Next, create a new issue that briefly explains the problem, and provides a bit of background as to the circumstances that triggered it, and steps to reproduce it.
 
 ## Submitting a Pull Request
+
 It's welcomed to pull request, And there are some tips about that:
 
 - Before working on a large change, it is best to open an issue first to discuss it with the maintainers.
@@ -35,8 +37,3 @@ npm run dev
 
 # open http://localhost:8080
 ```
-
-## Component Developing Guidelines
-- Create new directory under `packages` for a new component.
-- Refer to `Sku` for nested components.
-- Refer to `Button` for components that depend on other components.

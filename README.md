@@ -141,4 +141,4 @@ Scan the qrcode to join our wechat discussion group, please note that you want t
 
 ## LICENSE
 
-[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89)
+[MIT](https://en.wikipedia.org/wiki/MIT_License)

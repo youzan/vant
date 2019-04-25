@@ -85,3 +85,9 @@ export default {
 | blur | Triggered when click close button or blur keyboard | - |
 | show | Triggered when keyboard is fully displayed. | - |
 | hide | Triggered when keyboard is fully hidden. | - |
+
+### Slot
+
+| name | Description |
+|------|------|
+| title-left | Custom title left content |
