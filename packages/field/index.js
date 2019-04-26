@@ -1,7 +1,8 @@
-import { use, isObj, isDef, isIOS } from '../utils';
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
+import { use, isObj, isDef, isIOS } from '../utils';
+import { getRootScrollTop } from '../utils/scroll';
 
 const [sfc, bem] = use('field');
 
@@ -107,7 +108,7 @@ export default sfc({
       // https://developers.weixin.qq.com/community/develop/doc/00044ae90742f8c82fb78fcae56800
       /* istanbul ignore next */
       if (isIOS()) {
-        window.scrollTo(0, window.pageYOffset);
+        window.scrollTo(0, getRootScrollTop());
       }
     },
 
