@@ -103,6 +103,7 @@ export default {
 | finished-text | Finished text | `String` | - |
 | error-text | Error loaded text | `String` | - |
 | immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
+| direction | Scroll direction，can be set to `up` | `String` | `down` |
 
 ### Event
 
