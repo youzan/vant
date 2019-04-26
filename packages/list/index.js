@@ -86,28 +86,29 @@ export default sfc({
         return;
       }
 
-      const { offset } = this;
-      const upper = this.direction === 'up';
+      const { offset, direction } = this;
 
-      let load = false;
+      function isReachEdge() {
+        if (el === scroller) {
+          const scrollTop = getScrollTop(el);
 
-      if (el === scroller) {
-        const scrollTop = getScrollTop(scroller);
-        if (upper) {
-          load = scrollTop <= offset;
-        } else {
+          if (direction === 'up') {
+            return scrollTop <= offset;
+          }
+
           const targetBottom = scrollTop + scrollerHeight;
-          load = scroller.scrollHeight - targetBottom <= offset;
+          return scroller.scrollHeight - targetBottom <= offset;
         }
-      } else if (upper) {
-        load = getScrollTop(scroller) - getElementTop(el) <= offset;
-      } else {
-        const elBottom = getElementTop(el) - getElementTop(scroller) + getVisibleHeight(el);
-        load = elBottom - scrollerHeight <= offset;
+
+        if (direction === 'up') {
+          return getScrollTop(scroller) - getElementTop(el) <= offset;
+        }
+
+        const elBottom = getElementTop(el) + getVisibleHeight(el) - getElementTop(scroller);
+        return elBottom - scrollerHeight <= offset;
       }
 
-      /* istanbul ignore else */
-      if (load) {
+      if (isReachEdge()) {
         this.$emit('input', true);
         this.$emit('load');
       }

@@ -10,7 +10,6 @@
             v-model="list[0].loading"
             :finished="list[0].finished"
             :finished-text="$t('finishedText')"
-            direction="up"
             @load="onLoad(0)"
           >
             <van-cell
@@ -64,7 +63,7 @@ export default {
   data() {
     return {
       list: [{
-        items: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        items: [],
         refreshing: false,
         loading: false,
         error: false,
@@ -86,7 +85,6 @@ export default {
         for (let i = 0; i < 10; i++) {
           const text = list.items.length + 1;
           list.items.push(text < 10 ? '0' + text : text);
-          window.scrollTo(0, 1000000);
         }
         list.loading = false;
 
