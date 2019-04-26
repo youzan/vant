@@ -69,17 +69,13 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | active | Active step | `Number` | 0 |
-| icon | Action step icon | `String` | - |
-| icon-class | Icon class | `String` | - |
-| title | Title | `String` | - |
 | description | Description | `String` | - |
 | direction | Can be set to `vertical` | `String` | `horizontal` |
 | active-icon | Active icon name | `String` | `checked` |
 | active-color | Active step color | `String` | `#07c160` |
 
-### Steps Slot
+### Step Slot
 
 | Name | Description |
 |------|------|
 | icon | Custom icon |
-| message-extra | Extra content |

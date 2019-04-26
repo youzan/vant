@@ -48,12 +48,13 @@ export default sfc({
       const total = this.vertical ? rect.height : rect.width;
       const diff = (delta / total) * 100;
 
-      this.updateValue(this.startValue + diff);
+      this.newValue = this.startValue + diff;
+      this.updateValue(this.newValue);
     },
 
     onTouchEnd() {
       if (this.disabled) return;
-      this.updateValue(this.value, true);
+      this.updateValue(this.newValue, true);
     },
 
     onClick(event) {

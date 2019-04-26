@@ -110,7 +110,7 @@ export default sfc({
     onChange(picker, values, index) {
       this.code = values[index].code;
       this.setValues();
-      this.$emit('change', picker, values, index);
+      this.$emit('change', picker, picker.getValues(), index);
     },
 
     setValues() {
