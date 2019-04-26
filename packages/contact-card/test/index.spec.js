@@ -43,8 +43,30 @@ describe('ContactCard', () => {
 
 describe('ContactList', () => {
   test('render', () => {
-    const wrapper = mount(ContactList);
+    const wrapper = mount(ContactList, {
+      propsData: {
+        list: [contactInfo]
+      }
+    });
     expect(wrapper).toMatchSnapshot();
+  });
+
+  test('select event', () => {
+    const onSelect = jest.fn();
+    const wrapper = mount(ContactList, {
+      propsData: {
+        list: [contactInfo]
+      },
+      context: {
+        on: {
+          select: onSelect
+        }
+      }
+    });
+
+    wrapper.find('.van-radio__icon').trigger('click');
+
+    expect(onSelect).toHaveBeenCalled();
   });
 });
 
