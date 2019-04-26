@@ -29,6 +29,10 @@ export function setScrollTop(element: ScrollElement, value: number) {
   'scrollTop' in element ? (element.scrollTop = value) : element.scrollTo(element.scrollX, value);
 }
 
+export function getRootScrollTop(): number {
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+}
+
 // get distance from element top to page top
 export function getElementTop(element: ScrollElement) {
   return (
