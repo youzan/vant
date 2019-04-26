@@ -29,6 +29,10 @@ export default sfc({
     offset: {
       type: Number,
       default: 300
+    },
+    direction: {
+      type: String,
+      default: 'down'
     }
   },
 
@@ -74,25 +78,36 @@ export default sfc({
       const scrollerHeight = getVisibleHeight(scroller);
 
       /* istanbul ignore next */
-      if (!scrollerHeight || window.getComputedStyle(el).display === 'none' || el.offsetParent === null) {
+      if (
+        !scrollerHeight ||
+        window.getComputedStyle(el).display === 'none' ||
+        el.offsetParent === null
+      ) {
         return;
       }
 
-      const scrollTop = getScrollTop(scroller);
-      const targetBottom = scrollTop + scrollerHeight;
+      const { offset } = this;
+      const upper = this.direction === 'up';
 
-      let reachBottom = false;
+      let load = false;
 
-      /* istanbul ignore next */
       if (el === scroller) {
-        reachBottom = scroller.scrollHeight - targetBottom < this.offset;
+        const scrollTop = getScrollTop(scroller);
+        if (upper) {
+          load = scrollTop <= offset;
+        } else {
+          const targetBottom = scrollTop + scrollerHeight;
+          load = scroller.scrollHeight - targetBottom <= offset;
+        }
+      } else if (upper) {
+        load = getScrollTop(scroller) - getElementTop(el) <= offset;
       } else {
         const elBottom = getElementTop(el) - getElementTop(scroller) + getVisibleHeight(el);
-        reachBottom = elBottom - scrollerHeight < this.offset;
+        load = elBottom - scrollerHeight <= offset;
       }
 
       /* istanbul ignore else */
-      if (reachBottom) {
+      if (load) {
         this.$emit('input', true);
         this.$emit('load');
       }
@@ -115,7 +130,7 @@ export default sfc({
   render(h) {
     return (
       <div class={bem()}>
-        {this.slots()}
+        {this.direction === 'down' && this.slots()}
         {this.loading && (
           <div class={bem('loading')} key="loading">
             {this.slots('loading') || [
@@ -132,6 +147,7 @@ export default sfc({
             {this.errorText}
           </div>
         )}
+        {this.direction === 'up' && this.slots()}
       </div>
     );
   }
