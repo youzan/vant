@@ -1,5 +1,24 @@
 ## 更新日志
 
+## [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
+`2019-04-26`
+
+**Improvements**
+
+- Step: 新增 active-icon 插槽 [\#3193](https://github.com/youzan/vant/pull/3193)
+- NumberKeyboard: 新增 title-left 插槽 [\#3194](https://github.com/youzan/vant/pull/3194)
+- Icon: 更新 new、hot 图标 [\#3203](https://github.com/youzan/vant/pull/3203)
+
+**Bug Fixes**
+
+- 修复 Field 在 iOS12 上滚动位置偏移的问题 [\#3204](https://github.com/youzan/vant/pull/3204)
+- 修复 Row align 设置为 bottom 时不生效的问题 [\#3209](https://github.com/youzan/vant/pull/3209)
+- 修复 Area change 事件回传的 values 参数错误的问题 [\#3219](https://github.com/youzan/vant/pull/3219)
+- 修复 AddressList 点击单选框无法触发 select 事件的问题 [\#3214](https://github.com/youzan/vant/pull/3214)
+- 修复 ContactList 点击单选框无法触发 select 事件的问题 [\#3218](https://github.com/youzan/vant/pull/3218)
+- 修复 Slider 拖动同时设置 value 属性导致拖动失败的问题 [\#3206](https://github.com/youzan/vant/pull/3206)
+
+
 ## [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
 `2019-04-19`
 

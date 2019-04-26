@@ -1,5 +1,24 @@
 ## Changelog
 
+## [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
+`2019-04-26`
+
+**Improvements**
+
+- Step: add active-icon slot [\#3193](https://github.com/youzan/vant/pull/3193)
+- NumberKeyboard: add title-left slot [\#3194](https://github.com/youzan/vant/pull/3194)
+- Icon: update new icon & hot icon [\#3203](https://github.com/youzan/vant/pull/3203)
+
+**Bug Fixes**
+
+- fix Row align bottom not work [\#3209](https://github.com/youzan/vant/pull/3209)
+- fix Area change event values incorrect [\#3219](https://github.com/youzan/vant/pull/3219)
+- fix Field add hack for iOS 12 scroll position [\#3204](https://github.com/youzan/vant/pull/3204)
+- fix AddressList not trigger select event when click radio icon [\#3214](https://github.com/youzan/vant/pull/3214)
+- fix ContactList not trigger select event when click radio icon [\#3218](https://github.com/youzan/vant/pull/3218)
+- fix Slider drag and `value` props change at the same time can not drag success [\#3206](https://github.com/youzan/vant/pull/3206)
+
+
 ## [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
 `2019-04-19`
 
