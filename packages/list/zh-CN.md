@@ -110,6 +110,7 @@ export default {
 | finished-text | 加载完成后的提示文案 | `String` | - | 1.4.7 |
 | error-text | 加载失败后的提示文案 | `String` | - | 1.5.3 |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
+| direction | 滚动触发加载的方向，可选值为`up` | `String` | `down` | 1.6.16 |
 
 ### Event
 

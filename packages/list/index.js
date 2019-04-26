@@ -29,6 +29,10 @@ export default sfc({
     offset: {
       type: Number,
       default: 300
+    },
+    direction: {
+      type: String,
+      default: 'down'
     }
   },
 
@@ -74,25 +78,37 @@ export default sfc({
       const scrollerHeight = getVisibleHeight(scroller);
 
       /* istanbul ignore next */
-      if (!scrollerHeight || window.getComputedStyle(el).display === 'none' || el.offsetParent === null) {
+      if (
+        !scrollerHeight ||
+        window.getComputedStyle(el).display === 'none' ||
+        el.offsetParent === null
+      ) {
         return;
       }
 
-      const scrollTop = getScrollTop(scroller);
-      const targetBottom = scrollTop + scrollerHeight;
+      const { offset, direction } = this;
 
-      let reachBottom = false;
+      function isReachEdge() {
+        if (el === scroller) {
+          const scrollTop = getScrollTop(el);
 
-      /* istanbul ignore next */
-      if (el === scroller) {
-        reachBottom = scroller.scrollHeight - targetBottom < this.offset;
-      } else {
-        const elBottom = getElementTop(el) - getElementTop(scroller) + getVisibleHeight(el);
-        reachBottom = elBottom - scrollerHeight < this.offset;
+          if (direction === 'up') {
+            return scrollTop <= offset;
+          }
+
+          const targetBottom = scrollTop + scrollerHeight;
+          return scroller.scrollHeight - targetBottom <= offset;
+        }
+
+        if (direction === 'up') {
+          return getScrollTop(scroller) - getElementTop(el) <= offset;
+        }
+
+        const elBottom = getElementTop(el) + getVisibleHeight(el) - getElementTop(scroller);
+        return elBottom - scrollerHeight <= offset;
       }
 
-      /* istanbul ignore else */
-      if (reachBottom) {
+      if (isReachEdge()) {
         this.$emit('input', true);
         this.$emit('load');
       }
@@ -115,7 +131,7 @@ export default sfc({
   render(h) {
     return (
       <div class={bem()}>
-        {this.slots()}
+        {this.direction === 'down' && this.slots()}
         {this.loading && (
           <div class={bem('loading')} key="loading">
             {this.slots('loading') || [
@@ -132,6 +148,7 @@ export default sfc({
             {this.errorText}
           </div>
         )}
+        {this.direction === 'up' && this.slots()}
       </div>
     );
   }
