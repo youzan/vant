@@ -26,3 +26,21 @@ test('unswitchable', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('select event', () => {
+  const onSelect = jest.fn();
+  const wrapper = mount(AddressList, {
+    propsData: {
+      list
+    },
+    context: {
+      on: {
+        select: onSelect
+      }
+    }
+  });
+
+  wrapper.find('.van-radio__icon').trigger('click');
+
+  expect(onSelect).toHaveBeenCalled();
+});
