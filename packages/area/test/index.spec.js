@@ -8,6 +8,12 @@ const firstOption = [
   { code: '110101', name: '东城区' }
 ];
 
+const secondOption = [
+  { code: '120000', name: '天津市' },
+  { code: '120100', name: '天津市' },
+  { code: '120101', name: '和平区' }
+];
+
 test('confirm & cancel event', async () => {
   const onConfirm = jest.fn();
   const onCancel = jest.fn();
@@ -50,9 +56,13 @@ test('watch areaList & code', async () => {
 });
 
 test('change option', () => {
+  const onChange = jest.fn();
   const wrapper = mount(Area, {
     propsData: {
       areaList
+    },
+    listeners: {
+      change: onChange
     }
   });
 
@@ -62,6 +72,7 @@ test('change option', () => {
   expect(wrapper).toMatchSnapshot();
   triggerDrag(columns.at(2), 0, -100);
   expect(wrapper).toMatchSnapshot();
+  expect(onChange.mock.calls[0][1]).toEqual(secondOption);
 });
 
 test('getValues method', () => {
