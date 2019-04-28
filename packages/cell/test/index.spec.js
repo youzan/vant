@@ -42,3 +42,16 @@ test('render slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('title-style prop', () => {
+  const wrapper = mount(Cell, {
+    propsData: {
+      title: 'title',
+      titleStyle: {
+        color: 'red'
+      }
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
