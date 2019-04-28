@@ -85,6 +85,7 @@ export function wrapper(promise, name) {
     component = component.default;
     name = 'demo-' + name;
     component.name = name;
+
     const { i18n: config } = component;
     if (config) {
       const formattedI18n = {};
@@ -94,6 +95,10 @@ export function wrapper(promise, name) {
       });
       Locale.add(formattedI18n);
     }
+
+    component.props = component.props || {};
+    component.props.weapp = Boolean;
+
     return component;
   });
 }

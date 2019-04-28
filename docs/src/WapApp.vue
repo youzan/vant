@@ -17,7 +17,7 @@
       </a>
     </van-nav-bar>
     <keep-alive>
-      <router-view />
+      <router-view :weapp="weapp" />
     </keep-alive>
   </div>
 </template>
@@ -49,6 +49,10 @@ export default {
 
     showNav() {
       return getQueryString('hide_nav') !== '1';
+    },
+
+    weapp() {
+      return getQueryString('weapp') === '1';
     }
   },
 

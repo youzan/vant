@@ -35,7 +35,10 @@
       </van-row>
     </demo-block>
 
-    <demo-block :title="$t('title3')">
+    <demo-block
+      v-if="!weapp"
+      :title="$t('title3')"
+    >
       <van-row type="flex">
         <van-col span="6">span: 6</van-col>
         <van-col span="6">span: 6</van-col>
