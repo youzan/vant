@@ -11,3 +11,9 @@ exports[`render slot 1`] = `
   </div>Custom Extra
 </div>
 `;
+
+exports[`title-style prop 1`] = `
+<div class="van-cell">
+  <div class="van-cell__title" style="color: red;"><span>title</span></div>
+</div>
+`;

@@ -119,6 +119,7 @@ Vue.use(Cell).use(CellGroup);
 | required | 是否显示表单必填星号 | `Boolean` | `false` | - |
 | center | 是否使内容垂直居中 | `Boolean` | `false` | 1.0.3 |
 | arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - | 1.1.10 |
+| title-style | 左侧标题额外样式 | `any` | - | 1.6.17 |
 | title-class | 左侧标题额外类名 | `any` | - | 1.4.8 |
 | value-class | 右侧内容额外类名 | `any` | - | 1.4.8 |
 | label-class | 描述信息额外类名 | `any` | - | 1.4.8 |

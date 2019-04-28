@@ -48,19 +48,14 @@ function Cell(
   );
 
   const Title = showTitle && (
-    <div class={[bem('title'), props.titleClass]}>
+    <div class={[bem('title'), props.titleClass]} style={props.titleStyle}>
       {slots.title ? slots.title() : <span>{title}</span>}
       {Label}
     </div>
   );
 
   const Value = showValue && (
-    <div
-      class={[
-        bem('value', { alone: !slots.title && !title }),
-        props.valueClass
-      ]}
-    >
+    <div class={[bem('value', { alone: !slots.title && !title }), props.valueClass]}>
       {slots.default ? slots.default() : <span>{value}</span>}
     </div>
   );
