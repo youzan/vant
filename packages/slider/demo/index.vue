@@ -54,7 +54,10 @@
       </van-slider>
     </demo-block>
 
-    <demo-block :title="$t('vertical')">
+    <demo-block
+      v-if="!weapp"
+      :title="$t('vertical')"
+    >
       <div :style="{ height: '120px', paddingLeft: '30px' }">
         <van-slider
           v-model="value7"
