@@ -115,6 +115,7 @@ Vue.use(Cell).use(CellGroup);
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | required | Whether to show required mark | `Boolean` | `false` |
 | arrow-direction | Can be set to `left` `up` `down` | `String` | - |
+| title-style | Title style | `any` | - |
 | title-class | Title className | `any` | - |
 | value-class | Value className | `any` | - |
 | label-class | Label className | `any` | - |
