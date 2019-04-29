@@ -134,7 +134,8 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | 1.1.10 |
 | error | 是否将输入内容标红 | `Boolean` | `false` | - |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - |
-| label-align | 文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
+| label-width | 左侧文本宽度，可指定单位，默认为 px | `String | Number` | `90px` | 1.6.17 |
+| label-align | 左侧文本对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | 1.1.10 |
 | error-message-align | 错误提示文案对齐方式，可选值为 `center` `right` | `String` | `left` | 1.6.11 |
 | autosize | 自适应内容高度，只对 textarea 有效，可传入对象,<br>如 { maxHeight: 100, minHeight: 50 }，单位为 px | `Boolean | Object` | `false` | 1.0.0 |

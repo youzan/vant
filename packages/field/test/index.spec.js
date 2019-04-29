@@ -196,3 +196,23 @@ test('size prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('label-width prop with unit', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      label: 'Label',
+      labelWidth: '10rem'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('label-width prop without unit', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      label: 'Label',
+      labelWidth: 100
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
