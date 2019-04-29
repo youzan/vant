@@ -20,7 +20,6 @@ export default sfc({
     labelWidth: [String, Number],
     labelAlign: String,
     inputAlign: String,
-    onIconClick: Function,
     autosize: [Boolean, Object],
     errorMessage: String,
     errorMessageAlign: String,
@@ -130,10 +129,7 @@ export default sfc({
     },
 
     onClickRightIcon() {
-      // compatible old version
-      this.$emit('click-icon');
       this.$emit('click-right-icon');
-      this.onIconClick && this.onIconClick();
     },
 
     onClear(event) {
@@ -220,11 +216,11 @@ export default sfc({
 
     renderRightIcon() {
       const { slots } = this;
-      const showRightIcon = slots('right-icon') || slots('icon') || this.rightIcon || this.icon;
+      const showRightIcon = slots('right-icon') || this.rightIcon;
       if (showRightIcon) {
         return (
           <div class={bem('right-icon')} onClick={this.onClickRightIcon}>
-            {slots('right-icon') || slots('icon') || <Icon name={this.rightIcon || this.icon} />}
+            {slots('right-icon') || <Icon name={this.rightIcon} />}
           </div>
         );
       }

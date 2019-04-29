@@ -1,10 +1,10 @@
-import BigBtn from '../../goods-action-big-btn';
-import MiniBtn from '../../goods-action-mini-btn';
+import Button from '../../goods-action-button';
+import Icon from '../../goods-action-icon';
 import { mount } from '../../../test/utils';
 
-test('BigBtn click event', () => {
+test('Button click event', () => {
   const click = jest.fn();
-  const wrapper = mount(BigBtn, {
+  const wrapper = mount(Button, {
     context: {
       on: {
         click
@@ -16,9 +16,9 @@ test('BigBtn click event', () => {
   expect(click).toHaveBeenCalledTimes(1);
 });
 
-test('MiniBtn click event', () => {
+test('Icon click event', () => {
   const click = jest.fn();
-  const wrapper = mount(MiniBtn, {
+  const wrapper = mount(Icon, {
     context: {
       on: {
         click
@@ -30,20 +30,20 @@ test('MiniBtn click event', () => {
   expect(click).toHaveBeenCalledTimes(1);
 });
 
-test('BigBtn render default slot', () => {
+test('Button render default slot', () => {
   const wrapper = mount({
     render(h) {
-      return h(BigBtn, null, ['Default Content']);
+      return h(Button, null, ['Default Content']);
     }
   });
 
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Mini render default slot', () => {
+test('Icon render default slot', () => {
   const wrapper = mount({
     render(h) {
-      return h(MiniBtn, null, ['Default Content']);
+      return h(Icon, null, ['Default Content']);
     }
   });
 

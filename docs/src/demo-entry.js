@@ -3,11 +3,10 @@
 import { wrapper } from './demo-common';
 
 export default {
-  'actionsheet': () => wrapper(import('../../packages/actionsheet/demo'), 'actionsheet'),
+  'action-sheet': () => wrapper(import('../../packages/action-sheet/demo'), 'action-sheet'),
   'address-edit': () => wrapper(import('../../packages/address-edit/demo'), 'address-edit'),
   'address-list': () => wrapper(import('../../packages/address-list/demo'), 'address-list'),
   'area': () => wrapper(import('../../packages/area/demo'), 'area'),
-  'badge': () => wrapper(import('../../packages/badge/demo'), 'badge'),
   'button': () => wrapper(import('../../packages/button/demo'), 'button'),
   'card': () => wrapper(import('../../packages/card/demo'), 'card'),
   'cell': () => wrapper(import('../../packages/cell/demo'), 'cell'),
@@ -40,6 +39,7 @@ export default {
   'radio': () => wrapper(import('../../packages/radio/demo'), 'radio'),
   'rate': () => wrapper(import('../../packages/rate/demo'), 'rate'),
   'search': () => wrapper(import('../../packages/search/demo'), 'search'),
+  'sidebar': () => wrapper(import('../../packages/sidebar/demo'), 'sidebar'),
   'sku': () => wrapper(import('../../packages/sku/demo'), 'sku'),
   'slider': () => wrapper(import('../../packages/slider/demo'), 'slider'),
   'stepper': () => wrapper(import('../../packages/stepper/demo'), 'stepper'),
@@ -55,6 +55,5 @@ export default {
   'tag': () => wrapper(import('../../packages/tag/demo'), 'tag'),
   'toast': () => wrapper(import('../../packages/toast/demo'), 'toast'),
   'tree-select': () => wrapper(import('../../packages/tree-select/demo'), 'tree-select'),
-  'uploader': () => wrapper(import('../../packages/uploader/demo'), 'uploader'),
-  'waterfall': () => wrapper(import('../../packages/waterfall/demo'), 'waterfall')
+  'uploader': () => wrapper(import('../../packages/uploader/demo'), 'uploader')
 };

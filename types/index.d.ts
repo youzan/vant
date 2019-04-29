@@ -5,17 +5,16 @@ import { Dialog } from './dialog';
 import { Notify } from './notify';
 import { Locale } from './locale';
 import { Lazyload } from './lazyload';
-import { Waterfall } from './waterfall';
 import { ImagePreview } from './image-preview';
 
 export const version: string;
 export function install (vue: typeof Vue): void
-export class Actionsheet extends VanComponent {}
+export class ActionSheet extends VanComponent {}
 export class AddressEdit extends VanComponent {}
 export class AddressList extends VanComponent {}
 export class Area extends VanComponent {}
-export class Badge extends VanComponent {}
-export class BadgeGroup extends VanComponent {}
+export class Sidebar extends VanComponent {}
+export class SidebarGroup extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}
@@ -35,8 +34,8 @@ export class CouponList extends VanComponent {}
 export class DatetimePicker extends VanComponent {}
 export class Field extends VanComponent {}
 export class GoodsAction extends VanComponent {}
-export class GoodsActionBigBtn extends VanComponent {}
-export class GoodsActionMiniBtn extends VanComponent {}
+export class GoodsActionButton extends VanComponent {}
+export class GoodsActionIcon extends VanComponent {}
 export class Icon extends VanComponent {}
 export class List extends VanComponent {}
 export class Loading extends VanComponent {}
@@ -78,6 +77,5 @@ export {
   Notify,
   Locale,
   Lazyload,
-  Waterfall,
   ImagePreview
 };

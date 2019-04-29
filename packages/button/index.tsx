@@ -26,7 +26,6 @@ export type ButtonProps = RouteProps & {
   nativeType?: string;
   loadingSize: string;
   loadingText?: string;
-  bottomAction?: boolean;
 };
 
 export type ButtonEvents = {
@@ -65,8 +64,7 @@ function Button(
         block: props.block,
         plain: props.plain,
         round: props.round,
-        square: props.square,
-        'bottom-action': props.bottomAction
+        square: props.square
       }
     ]),
     { 'van-hairline--surround': hairline }
@@ -108,7 +106,6 @@ Button.props = {
   disabled: Boolean,
   nativeType: String,
   loadingText: String,
-  bottomAction: Boolean,
   tag: {
     type: String,
     default: 'button'

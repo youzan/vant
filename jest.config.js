@@ -15,8 +15,7 @@ module.exports = {
     '!**/style/**',
     '!**/demo/**',
     '!**/locale/lang/**',
-    '!**/sku/**',
-    '!**/waterfall/**'
+    '!**/sku/**'
   ],
   collectCoverage: true,
   coverageReporters: ['html', 'lcov', 'text-summary'],

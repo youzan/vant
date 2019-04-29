@@ -4,14 +4,14 @@
 ``` javascript
 import {
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn
+  GoodsActionButton,
+  GoodsActionIcon
 } from 'vant';
 
 Vue
   .use(GoodsAction)
-  .use(GoodsActionBigBtn)
-  .use(GoodsActionMiniBtn);
+  .use(GoodsActionButton)
+  .use(GoodsActionIcon);
 ```
 
 ### Usage
@@ -19,24 +19,25 @@ Vue
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="chat-o"
     text="Icon1"
-    @click="onClickMiniBtn"
+    @click="onClickIcon"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="cart-o"
     text="Icon2"
-    @click="onClickMiniBtn"
+    @click="onClickIcon"
   />
-  <van-goods-action-big-btn
+  <van-goods-action-button
+    type="warning"
     text="Button1"
-    @click="onClickBigBtn"
+    @click="onClickButton"
   />
-  <van-goods-action-big-btn
-    primary
+  <van-goods-action-button
+    type="danger"
     text="Button2"
-    @click="onClickBigBtn"
+    @click="onClickButton"
   />
 </van-goods-action>
 ```
@@ -44,10 +45,10 @@ Vue
 ```javascript
 export default {
   methods: {
-    onClickMiniBtn() {
+    onClickIcon() {
       Toast('Click Icon');
     },
-    onClickBigBtn() {
+    onClickButton() {
       Toast('Click Button');
     }
   }
@@ -60,22 +61,25 @@ Use `info` prop to show messages in upper right corner of icon
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="chat-o"
     text="Icon1"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     info="5"
     icon="cart-o"
     text="Icon2"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="shop-o"
     text="Icon3"
   />
-  <van-goods-action-big-btn text="Button1" />
-  <van-goods-action-big-btn
-    primary
+  <van-goods-action-button
+    type="warning"
+    text="Button1"
+  />
+  <van-goods-action-button
+    type="danger"
     text="Button2"
   />
 </van-goods-action>
@@ -88,7 +92,7 @@ Use `info` prop to show messages in upper right corner of icon
 | Attribute | Description | Type | Default |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-#### GoodsActionMiniBtn
+#### GoodsActionIcon
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -100,10 +104,11 @@ Use `info` prop to show messages in upper right corner of icon
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
-#### GoodsActionBigBtn
+#### GoodsActionButton
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| type | Button type, Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | text | Button text | `String` | - |
 | primary | Is primary button (red color) | `Boolean` | `false` |
 | disabled | Whether to disable button | `Boolean` | `false` |

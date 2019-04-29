@@ -168,8 +168,8 @@ module.exports = {
             icon: 'passed',
             list: [
               {
-                path: '/actionsheet',
-                title: 'Actionsheet 上拉菜单'
+                path: '/action-sheet',
+                title: 'ActionSheet 上拉菜单'
               },
               {
                 path: '/dialog',
@@ -252,16 +252,16 @@ module.exports = {
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
-                path: '/badge',
-                title: 'Badge 徽章'
-              },
-              {
                 path: '/nav-bar',
                 title: 'NavBar 导航栏'
               },
               {
                 path: '/pagination',
                 title: 'Pagination 分页'
+              },
+              {
+                path: '/sidebar',
+                title: 'Sidebar 侧边导航'
               },
               {
                 path: '/tab',
@@ -475,8 +475,8 @@ module.exports = {
             icon: 'passed',
             list: [
               {
-                path: '/actionsheet',
-                title: 'Actionsheet'
+                path: '/action-sheet',
+                title: 'ActionSheet'
               },
               {
                 path: '/dialog',
@@ -559,16 +559,16 @@ module.exports = {
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
-                path: '/badge',
-                title: 'Badge'
-              },
-              {
                 path: '/nav-bar',
                 title: 'NavBar'
               },
               {
                 path: '/pagination',
                 title: 'Pagination'
+              },
+              {
+                path: '/sidebar',
+                title: 'Sidebar'
               },
               {
                 path: '/tab',

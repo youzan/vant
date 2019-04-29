@@ -1,12 +1,10 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import { VueConstructor } from 'vue/types';
-import Actionsheet from './actionsheet';
+import ActionSheet from './action-sheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
 import Area from './area';
-import Badge from './badge';
-import BadgeGroup from './badge-group';
 import Button from './button';
 import Card from './card';
 import Cell from './cell';
@@ -27,8 +25,8 @@ import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
 import Field from './field';
 import GoodsAction from './goods-action';
-import GoodsActionBigBtn from './goods-action-big-btn';
-import GoodsActionMiniBtn from './goods-action-mini-btn';
+import GoodsActionButton from './goods-action-button';
+import GoodsActionIcon from './goods-action-icon';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import Info from './info';
@@ -53,6 +51,8 @@ import RadioGroup from './radio-group';
 import Rate from './rate';
 import Row from './row';
 import Search from './search';
+import Sidebar from './sidebar';
+import SidebarItem from './sidebar-item';
 import Sku from './sku';
 import Slider from './slider';
 import Step from './step';
@@ -72,7 +72,6 @@ import Tag from './tag';
 import Toast from './toast';
 import TreeSelect from './tree-select';
 import Uploader from './uploader';
-import Waterfall from './waterfall';
 
 declare global {
   interface Window {
@@ -82,12 +81,10 @@ declare global {
 
 const version = '1.6.16';
 const components = [
-  Actionsheet,
+  ActionSheet,
   AddressEdit,
   AddressList,
   Area,
-  Badge,
-  BadgeGroup,
   Button,
   Card,
   Cell,
@@ -108,8 +105,8 @@ const components = [
   Dialog,
   Field,
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn,
+  GoodsActionButton,
+  GoodsActionIcon,
   Icon,
   ImagePreview,
   Info,
@@ -132,6 +129,8 @@ const components = [
   Rate,
   Row,
   Search,
+  Sidebar,
+  SidebarItem,
   Sku,
   Slider,
   Step,
@@ -167,12 +166,10 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  Actionsheet,
+  ActionSheet,
   AddressEdit,
   AddressList,
   Area,
-  Badge,
-  BadgeGroup,
   Button,
   Card,
   Cell,
@@ -193,8 +190,8 @@ export {
   Dialog,
   Field,
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn,
+  GoodsActionButton,
+  GoodsActionIcon,
   Icon,
   ImagePreview,
   Info,
@@ -219,6 +216,8 @@ export {
   Rate,
   Row,
   Search,
+  Sidebar,
+  SidebarItem,
   Sku,
   Slider,
   Step,
@@ -237,8 +236,7 @@ export {
   Tag,
   Toast,
   TreeSelect,
-  Uploader,
-  Waterfall
+  Uploader
 };
 
 export default {

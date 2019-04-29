@@ -9,11 +9,6 @@
   position: relative;
   vertical-align: middle;
 
-  &--circle {
-    width: 16px;
-    height: 16px;
-  }
-
   &__spinner {
     z-index: -1;
     width: 100%;
@@ -22,18 +17,6 @@
     display: inline-block;
     box-sizing: border-box;
     animation: van-rotate 0.8s linear infinite;
-
-    &--circle {
-      border-radius: 100%;
-      border: 3px solid transparent;
-      border-color: @gray;
-      border-top-color: @gray-darker;
-    }
-
-    &--gradient-circle {
-      background-size: contain;
-      background-image: url('https://img.yzcdn.cn/vant/gradient-circle-black.png');
-    }
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -71,17 +54,6 @@
       stroke-width: 3;
       stroke-linecap: round;
       animation: van-circular 1.5s ease-in-out infinite;
-    }
-  }
-
-  &--white {
-    .van-loading__spinner--circle {
-      border-color: rgba(0, 0, 0, .1);
-      border-top-color: rgba(255, 255, 255, .7);
-    }
-
-    .van-loading__spinner--gradient-circle {
-      background-image: url('https://img.yzcdn.cn/vant/gradient-circle-white.png');
     }
   }
 }

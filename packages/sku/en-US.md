@@ -70,12 +70,27 @@ Vue.use(Sku);
       <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
+
   <!-- custom sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="onPointClicked">Button</van-button>
+      <van-button
+        square
+        size="large"
+        type="warning"
+        @click="onPointClicked"
+      >
+        Button
+      </van-button>
       <!-- trigger sku inner event -->
-      <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">Button</van-button>
+      <van-button
+        square
+        size="large"
+        type="danger"
+        @click="props.skuEventBus.$emit('sku:buy')"
+      >
+        Button
+      </van-button>
     </div>
   </template>
 </van-sku>

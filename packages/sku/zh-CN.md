@@ -71,12 +71,27 @@ Vue.use(Sku);
       <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ props.price }}</span>
     </div>
   </template>
+
   <!-- 自定义 sku actions -->
   <template slot="sku-actions" slot-scope="props">
     <div class="van-sku-actions">
-      <van-button bottom-action @click="onPointClicked">积分兑换</van-button>
+      <van-button
+        square
+        size="large"
+        type="warning"
+        @click="onPointClicked"
+      >
+        积分兑换
+      </van-button>
       <!-- 直接触发 sku 内部事件，通过内部事件执行 onBuyClicked 回调 -->
-      <van-button type="primary" bottom-action @click="props.skuEventBus.$emit('sku:buy')">买买买</van-button>
+      <van-button
+        square
+        size="large"
+        type="danger"
+        @click="props.skuEventBus.$emit('sku:buy')"
+      >
+        买买买
+      </van-button>
     </div>
   </template>
 </van-sku>

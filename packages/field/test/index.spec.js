@@ -11,22 +11,18 @@ test('input event', () => {
 });
 
 test('click icon event', () => {
-  const onIconClick = jest.fn();
   const wrapper = mount(Field, {
     propsData: {
       value: 'a',
       leftIcon: 'contact',
-      rightIcon: 'search',
-      onIconClick
+      rightIcon: 'search'
     }
   });
 
   wrapper.find('.van-field__left-icon').trigger('click');
   wrapper.find('.van-field__right-icon').trigger('click');
-  expect(wrapper.emitted('click-icon')).toBeTruthy();
   expect(wrapper.emitted('click-left-icon')).toBeTruthy();
   expect(wrapper.emitted('click-right-icon')).toBeTruthy();
-  expect(onIconClick).toHaveBeenCalled();
 });
 
 test('keypress event', () => {
@@ -176,15 +172,6 @@ test('render label slot', () => {
     }
   });
 
-  expect(wrapper).toMatchSnapshot();
-});
-
-test('render right icon with icon prop for old version', () => {
-  const wrapper = mount(Field, {
-    propsData: {
-      icon: 'success'
-    }
-  });
   expect(wrapper).toMatchSnapshot();
 });
 

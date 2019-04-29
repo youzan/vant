@@ -2,54 +2,56 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-goods-action>
-        <van-goods-action-mini-btn
+        <van-goods-action-icon
           icon="chat-o"
           :text="$t('icon1')"
-          @click="onClickMiniBtn"
+          @click="onClickIcon"
         />
-        <van-goods-action-mini-btn
+        <van-goods-action-icon
           icon="cart-o"
           :text="$t('icon2')"
-          @click="onClickMiniBtn"
+          @click="onClickIcon"
         />
-        <van-goods-action-big-btn
+        <van-goods-action-button
+          type="warning"
           :text="$t('button1')"
-          @click="onClickBigBtn"
+          @click="onClickButton"
         />
-        <van-goods-action-big-btn
-          primary
+        <van-goods-action-button
+          type="danger"
           :text="$t('button2')"
-          @click="onClickBigBtn"
+          @click="onClickButton"
         />
       </van-goods-action>
     </demo-block>
 
     <demo-block :title="$t('title2')">
       <van-goods-action>
-        <van-goods-action-mini-btn
+        <van-goods-action-icon
           icon="chat-o"
           :text="$t('icon1')"
-          @click="onClickMiniBtn"
+          @click="onClickIcon"
         />
-        <van-goods-action-mini-btn
+        <van-goods-action-icon
           icon="cart-o"
           info="5"
           :text="$t('icon2')"
-          @click="onClickMiniBtn"
+          @click="onClickIcon"
         />
-        <van-goods-action-mini-btn
+        <van-goods-action-icon
           icon="shop-o"
           :text="$t('icon3')"
-          @click="onClickMiniBtn"
+          @click="onClickIcon"
         />
-        <van-goods-action-big-btn
+        <van-goods-action-button
+          type="warning"
           :text="$t('button1')"
-          @click="onClickBigBtn"
+          @click="onClickButton"
         />
-        <van-goods-action-big-btn
-          primary
+        <van-goods-action-button
+          type="danger"
           :text="$t('button2')"
-          @click="onClickBigBtn"
+          @click="onClickButton"
         />
       </van-goods-action>
     </demo-block>
@@ -82,11 +84,11 @@ export default {
   },
 
   methods: {
-    onClickMiniBtn() {
+    onClickIcon() {
       this.$toast(this.$t('clickIcon'));
     },
 
-    onClickBigBtn() {
+    onClickButton() {
       this.$toast(this.$t('clickButton'));
     }
   }

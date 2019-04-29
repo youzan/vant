@@ -4,14 +4,14 @@
 ``` javascript
 import {
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn
+  GoodsActionIcon,
+  GoodsActionButton
 } from 'vant';
 
 Vue
   .use(GoodsAction)
-  .use(GoodsActionBigBtn)
-  .use(GoodsActionMiniBtn);
+  .use(GoodsActionIcon)
+  .use(GoodsActionButton);
 ```
 
 ### 代码演示
@@ -19,24 +19,25 @@ Vue
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="chat-o"
     text="客服"
-    @click="onClickMiniBtn"
+    @click="onClickIcon"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="cart-o"
     text="购物车"
-    @click="onClickMiniBtn"
+    @click="onClickIcon"
   />
-  <van-goods-action-big-btn
+  <van-goods-action-button
+    type="warning"
     text="加入购物车"
-    @click="onClickBigBtn"
+    @click="onClickButton"
   />
-  <van-goods-action-big-btn
-    primary
+  <van-goods-action-button
+    type="danger"
     text="立即购买"
-    @click="onClickBigBtn"
+    @click="onClickButton"
   />
 </van-goods-action>
 ```
@@ -44,10 +45,10 @@ Vue
 ```javascript
 export default {
   methods: {
-    onClickMiniBtn() {
+    onClickIcon() {
       Toast('点击图标');
     },
-    onClickBigBtn() {
+    onClickButton() {
       Toast('点击按钮');
     }
   }
@@ -59,22 +60,25 @@ export default {
 
 ```html
 <van-goods-action>
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="chat-o"
     text="客服"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     info="5"
     icon="cart-o"
     text="购物车"
   />
-  <van-goods-action-mini-btn
+  <van-goods-action-icon
     icon="shop-o"
     text="店铺"
   />
-  <van-goods-action-big-btn text="加入购物车" />
-  <van-goods-action-big-btn
-    primary
+  <van-goods-action-button
+    type="warning"
+    text="加入购物车"
+  />
+  <van-goods-action-button
+    type="danger"
     text="立即购买"
   />
 </van-goods-action>
@@ -88,7 +92,7 @@ export default {
 |------|------|------|------|------|
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
-#### GoodsActionMiniBtn
+#### GoodsActionIcon
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -100,12 +104,12 @@ export default {
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 
-#### GoodsActionBigBtn
+#### GoodsActionButton
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 按钮文字 | `String` | - | - |
-| primary | 是否为红色按钮 | `Boolean` | `false` | - |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - | 1.3.10 |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - | 1.3.10 |
 | url | 跳转链接 | `String` | - | - |

@@ -27,11 +27,18 @@ function SkuActions(
   return (
     <div class={bem()} {...inherit(ctx)}>
       {props.showAddCartBtn && (
-        <Button bottomAction text="加入购物车" onClick={emit('sku:addCart')} />
+        <Button
+          square
+          size="large"
+          type="warning"
+          text="加入购物车"
+          onClick={emit('sku:addCart')}
+        />
       )}
       <Button
-        type="primary"
-        bottomAction
+        square
+        size="large"
+        type="danger"
         text={props.buyText || '立即购买'}
         onClick={emit('sku:buy')}
       />

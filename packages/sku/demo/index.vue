@@ -117,14 +117,17 @@
           >
             <div class="van-sku-actions">
               <van-button
-                bottom-action
+                square
+                size="large"
+                type="warning"
                 @click="onPointClicked"
               >
                 {{ $t('button1') }}
               </van-button>
               <van-button
-                type="primary"
-                bottom-action
+                square
+                size="large"
+                type="danger"
                 @click="props.skuEventBus.$emit('sku:buy')"
               >
                 {{ $t('button2') }}
