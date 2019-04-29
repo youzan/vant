@@ -23,7 +23,7 @@
     </demo-block>
 
     <demo-block
-      v-if="!weapp"
+      v-if="!$attrs.weapp"
       :title="$t('halfStar')"
     >
       <van-rate
