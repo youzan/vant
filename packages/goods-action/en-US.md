@@ -30,11 +30,12 @@ Vue
     @click="onClickIcon"
   />
   <van-goods-action-button
+    type="warning"
     text="Button1"
     @click="onClickButton"
   />
   <van-goods-action-button
-    primary
+    type="danger"
     text="Button2"
     @click="onClickButton"
   />
@@ -73,9 +74,12 @@ Use `info` prop to show messages in upper right corner of icon
     icon="shop-o"
     text="Icon3"
   />
-  <van-goods-action-button text="Button1" />
   <van-goods-action-button
-    primary
+    type="warning"
+    text="Button1"
+  />
+  <van-goods-action-button
+    type="danger"
     text="Button2"
   />
 </van-goods-action>
@@ -104,6 +108,7 @@ Use `info` prop to show messages in upper right corner of icon
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| type | Button type, Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | text | Button text | `String` | - |
 | primary | Is primary button (red color) | `Boolean` | `false` |
 | disabled | Whether to disable button | `Boolean` | `false` |

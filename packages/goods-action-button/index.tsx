@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import Button, { ButtonEvents } from '../button';
+import Button, { ButtonType, ButtonEvents } from '../button';
 import { emit, inherit } from '../utils/functional';
 import { functionalRoute, routeProps, RouteProps } from '../utils/router';
 
@@ -9,6 +9,7 @@ import { DefaultSlots } from '../utils/use/sfc';
 
 export type GoodsActionButtonProps = RouteProps & {
   text?: string;
+  type?: ButtonType;
   primary?: boolean;
   loading?: boolean;
   disabled?: boolean;
@@ -32,9 +33,9 @@ function GoodsActionButton(
       square
       class={bem()}
       size="large"
+      type={props.type}
       loading={props.loading}
       disabled={props.disabled}
-      type={props.primary ? 'danger' : 'warning'}
       onClick={onClick}
       {...inherit(ctx)}
     >
@@ -45,8 +46,8 @@ function GoodsActionButton(
 
 GoodsActionButton.props = {
   ...routeProps,
+  type: String,
   text: String,
-  primary: Boolean,
   loading: Boolean,
   disabled: Boolean
 };

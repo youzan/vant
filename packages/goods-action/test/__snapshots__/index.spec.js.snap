@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button render default slot 1`] = `<button class="van-button van-button--warning van-button--large van-button--square van-goods-action-button"><span class="van-button__text">Default Content</span></button>`;
+exports[`Button render default slot 1`] = `<button class="van-button van-button--default van-button--large van-button--square van-goods-action-button"><span class="van-button__text">Default Content</span></button>`;
 
 exports[`Icon render default slot 1`] = `
 <div class="van-goods-action-icon van-hairline">

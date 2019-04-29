@@ -23,8 +23,11 @@
 
 ### GoodsAction
 
-- [ ] GoodsActionBigBtn 重命名为 GoodsActionButton
-- [ ] GoodsActionMiniBtn 重命名为 GoodsActionIcon
+- [x] GoodsActionBigBtn 重命名为 GoodsActionButton
+- [x] GoodsActionMiniBtn 重命名为 GoodsActionIcon
+- [x] GoodsActionBigBtn 移除 primary 属性，新增 type 属性
+
+改动原因：规范命名，统一用法
 
 ### Step
 

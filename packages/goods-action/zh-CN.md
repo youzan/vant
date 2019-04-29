@@ -30,11 +30,12 @@ Vue
     @click="onClickIcon"
   />
   <van-goods-action-button
+    type="warning"
     text="加入购物车"
     @click="onClickButton"
   />
   <van-goods-action-button
-    primary
+    type="danger"
     text="立即购买"
     @click="onClickButton"
   />
@@ -72,9 +73,12 @@ export default {
     icon="shop-o"
     text="店铺"
   />
-  <van-goods-action-button text="加入购物车" />
   <van-goods-action-button
-    primary
+    type="warning"
+    text="加入购物车"
+  />
+  <van-goods-action-button
+    type="danger"
     text="立即购买"
   />
 </van-goods-action>
@@ -105,7 +109,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 按钮文字 | `String` | - | - |
-| primary | 是否为红色按钮 | `Boolean` | `false` | - |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - | 1.3.10 |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - | 1.3.10 |
 | url | 跳转链接 | `String` | - | - |

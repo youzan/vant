@@ -13,11 +13,12 @@
           @click="onClickIcon"
         />
         <van-goods-action-button
+          type="warning"
           :text="$t('button1')"
           @click="onClickButton"
         />
         <van-goods-action-button
-          primary
+          type="danger"
           :text="$t('button2')"
           @click="onClickButton"
         />
@@ -43,11 +44,12 @@
           @click="onClickIcon"
         />
         <van-goods-action-button
+          type="warning"
           :text="$t('button1')"
           @click="onClickButton"
         />
         <van-goods-action-button
-          primary
+          type="danger"
           :text="$t('button2')"
           @click="onClickButton"
         />
