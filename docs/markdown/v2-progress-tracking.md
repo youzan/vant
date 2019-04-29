@@ -14,8 +14,12 @@
 
 ### Field
 
-- [ ] icon 属性重命名为 right-icon
-- [ ] icon 插槽重命名为 right-icon
+- [x] 移除 onIconClick 属性
+- [x] icon 属性重命名为 right-icon
+- [x] icon 插槽重命名为 right-icon
+- [x] click-icon 事件重命名为 click-right-icon
+
+改动原因：规范命名，onIconClick 属性可以被 click-right-icon 代替
 
 ### GoodsAction
 
