@@ -31,11 +31,13 @@
 
 ### Step
 
-- [ ] 移除 icon 属性
-- [ ] 移除 title 属性
-- [ ] 移除 iconClass 属性
-- [ ] 移除 description 属性
-- [ ] 移除 message-extra 插槽
+- [x] 移除 icon 属性
+- [x] 移除 title 属性
+- [x] 移除 iconClass 属性
+- [x] 移除 description 属性
+- [x] 移除 message-extra 插槽
+
+改动原因：步骤条顶部内容的通用性较低，不适合在组件内实现
 
 ### Badge
 
