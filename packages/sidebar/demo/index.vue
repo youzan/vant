@@ -1,24 +1,24 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-badge-group
+      <van-sidebar
         :active-key="activeKey"
         @change="onChange"
       >
-        <van-badge :title="$t('title')" />
-        <van-badge
+        <van-sidebar-item :title="$t('title')" />
+        <van-sidebar-item
           :title="$t('title')"
           info="8"
         />
-        <van-badge
+        <van-sidebar-item
           :title="$t('title')"
           info="99"
         />
-        <van-badge
+        <van-sidebar-item
           :title="$t('title')"
           info="99+"
         />
-      </van-badge-group>
+      </van-sidebar>
     </demo-block>
   </demo-section>
 </template>
@@ -48,8 +48,8 @@ export default {
 <style lang="less">
 @import '../../style/var';
 
-.demo-badge {
-  .van-badge-group {
+.demo-sidebar {
+  .van-sidebar {
     width: auto;
     margin: 0 15px;
     padding: 20px 0;
@@ -60,7 +60,7 @@ export default {
     }
   }
 
-  .van-badge {
+  .van-sidebar-item {
     width: 85px;
     margin: 0 auto;
   }

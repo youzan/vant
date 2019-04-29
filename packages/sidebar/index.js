@@ -1,6 +1,6 @@
 import { use } from '../utils';
 
-const [sfc, bem] = use('badge-group');
+const [sfc, bem] = use('sidebar');
 
 export default sfc({
   props: {
@@ -12,13 +12,13 @@ export default sfc({
 
   provide() {
     return {
-      vanBadgeGroup: this
+      vanSidebar: this
     };
   },
 
   data() {
     return {
-      badges: []
+      items: []
     };
   },
 

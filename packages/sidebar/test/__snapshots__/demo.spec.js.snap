@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-sidebar van-hairline--top-bottom"><a class="van-sidebar-item van-sidebar-item--select van-hairline">
+        <div class="van-sidebar-item__text">标签名称
+          <!---->
+        </div>
+      </a> <a class="van-sidebar-item van-hairline">
+        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">8</div>
+        </div>
+      </a> <a class="van-sidebar-item van-hairline">
+        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">99</div>
+        </div>
+      </a> <a class="van-sidebar-item van-hairline">
+        <div class="van-sidebar-item__text">标签名称<div class="van-info van-sidebar-item__info">99+</div>
+        </div>
+      </a></div>
+  </div>
+</div>
+`;

@@ -35,7 +35,8 @@
 
 ### Badge
 
-- [ ] 重命名为`SideNav`
+- [x] `BadgeGroup`重命名为`Sidebar`
+- [x] `Badge`重命名为`SlideBarItem`
 
 ### Loading
 

@@ -1,7 +1,7 @@
 import { use } from '../utils';
 import Info from '../info';
 
-const [sfc, bem] = use('badge');
+const [sfc, bem] = use('sidebar-item');
 
 export default sfc({
   props: {
@@ -10,32 +10,32 @@ export default sfc({
     title: String
   },
 
-  inject: ['vanBadgeGroup'],
+  inject: ['vanSidebar'],
 
   created() {
-    this.parent.badges.push(this);
+    this.parent.items.push(this);
   },
 
   beforeDestroy() {
-    this.parent.badges = this.parent.badges.filter(item => item !== this);
+    this.parent.items = this.parent.items.filter(item => item !== this);
   },
 
   computed: {
     parent() {
-      if (process.env.NODE_ENV !== 'production' && !this.vanBadgeGroup) {
-        console.error('[Vant] Badge needs to be child of BadgeGroup');
+      if (process.env.NODE_ENV !== 'production' && !this.vanSidebar) {
+        console.error('[Vant] SidebarItem needs to be child of Sidebar');
       }
-      return this.vanBadgeGroup;
+      return this.vanSidebar;
     },
 
     select() {
-      return this.parent.badges.indexOf(this) === +this.parent.activeKey;
+      return this.parent.items.indexOf(this) === +this.parent.activeKey;
     }
   },
 
   methods: {
     onClick() {
-      const index = this.parent.badges.indexOf(this);
+      const index = this.parent.items.indexOf(this);
       this.$emit('click', index);
       this.parent.$emit('change', index);
     }

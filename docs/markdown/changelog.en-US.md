@@ -55,7 +55,7 @@
 - Cell: add less vars [\#3122](https://github.com/youzan/vant/pull/3122)
 - Rate: add less vars [\#3135](https://github.com/youzan/vant/pull/3135)
 - Panel: add less vars [\#3136](https://github.com/youzan/vant/pull/3136)
-- Badge: add less vars [\#3131](https://github.com/youzan/vant/pull/3131)
+- Sidebar: add less vars [\#3131](https://github.com/youzan/vant/pull/3131)
 - Dialog: add less vars [\#3123](https://github.com/youzan/vant/pull/3123)
 - Slider: add less vars [\#3125](https://github.com/youzan/vant/pull/3125)
 - Tabbar: add less vars [\#3124](https://github.com/youzan/vant/pull/3124)
@@ -554,7 +554,7 @@ Also we have optimized the UI of the following components:：
 
 - Tab: add animated props [\#2126](https://github.com/youzan/vant/pull/2126)
 - Tab: update title style [\#2120](https://github.com/youzan/vant/pull/2120)
-- Badge: update info style [\#2122](https://github.com/youzan/vant/pull/2122)
+- Sidebar: update info style [\#2122](https://github.com/youzan/vant/pull/2122)
 - Radio: add checked-color prop [\#2129](https://github.com/youzan/vant/pull/2129)
 - Swipe: add indicator-color prop [\#2110](https://github.com/youzan/vant/pull/2110)
 - TreeSelect: support disable option [\#2107](https://github.com/youzan/vant/pull/2107)
@@ -612,7 +612,7 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-- Badge: add change event [\#2017](https://github.com/youzan/vant/pull/2017)
+- Sidebar: add change event [\#2017](https://github.com/youzan/vant/pull/2017)
 - Radio: update color [\#2018](https://github.com/youzan/vant/pull/2018)
 - Checkbox: update color [\#2018](https://github.com/youzan/vant/pull/2018)
 - Sku: support image preview [\#2019](https://github.com/youzan/vant/pull/2019)
@@ -710,7 +710,7 @@ Also we have optimized the UI of the following components:：
 **Improvements**
 
 - Tab: upgrade style [\#1908](https://github.com/youzan/vant/pull/1908)
-- Badge: upgrade style [\#1907](https://github.com/youzan/vant/pull/1907)
+- Sidebar: upgrade style [\#1907](https://github.com/youzan/vant/pull/1907)
 - Dialog: upgrade style [\#1906](https://github.com/youzan/vant/pull/1906)
 - NoticeBar: upgrade style [\#1893](https://github.com/youzan/vant/pull/1893)
 - Collapse: add disabled prop [\#1892](https://github.com/youzan/vant/pull/1892)
@@ -1362,7 +1362,7 @@ Also we have optimized the UI of the following components:：
 * fix ActionSheet bottom border missing [\#686](https://github.com/youzan/vant/pull/686)
 * fix AddressEdit area not selected when area_code changed [\#680](https://github.com/youzan/vant/pull/680)
 * fix Stepper value overlimit [\#691](https://github.com/youzan/vant/issues/691)
-* fix Badge info font weight when selected [\#687](https://github.com/youzan/vant/pull/687)
+* fix Sidebar info font weight when selected [\#687](https://github.com/youzan/vant/pull/687)
 
 
 ## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
@@ -1652,7 +1652,7 @@ Also we have optimized the UI of the following components:：
 * Search: support native input attrs [\#418](https://github.com/youzan/vant/pull/418)
 * CellGroup: add 'border' prop [\#420](https://github.com/youzan/vant/pull/420)
 * AddressEdit: add focus、change-area、select-search events [\#426](https://github.com/youzan/vant/pull/426)
-* Badge、CouponList、ContactCard: add active color [\#419](https://github.com/youzan/vant/pull/419)
+* Sidebar、CouponList、ContactCard: add active color [\#419](https://github.com/youzan/vant/pull/419)
 
 **Bug Fixes**
 

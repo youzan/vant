@@ -5,8 +5,6 @@ import ActionSheet from './action-sheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
 import Area from './area';
-import Badge from './badge';
-import BadgeGroup from './badge-group';
 import Button from './button';
 import Card from './card';
 import Cell from './cell';
@@ -53,6 +51,8 @@ import RadioGroup from './radio-group';
 import Rate from './rate';
 import Row from './row';
 import Search from './search';
+import Sidebar from './sidebar';
+import SidebarItem from './sidebar-item';
 import Sku from './sku';
 import Slider from './slider';
 import Step from './step';
@@ -85,8 +85,6 @@ const components = [
   AddressEdit,
   AddressList,
   Area,
-  Badge,
-  BadgeGroup,
   Button,
   Card,
   Cell,
@@ -131,6 +129,8 @@ const components = [
   Rate,
   Row,
   Search,
+  Sidebar,
+  SidebarItem,
   Sku,
   Slider,
   Step,
@@ -170,8 +170,6 @@ export {
   AddressEdit,
   AddressList,
   Area,
-  Badge,
-  BadgeGroup,
   Button,
   Card,
   Cell,
@@ -218,6 +216,8 @@ export {
   Rate,
   Row,
   Search,
+  Sidebar,
+  SidebarItem,
   Sku,
   Slider,
   Step,

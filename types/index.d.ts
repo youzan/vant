@@ -13,8 +13,8 @@ export class ActionSheet extends VanComponent {}
 export class AddressEdit extends VanComponent {}
 export class AddressList extends VanComponent {}
 export class Area extends VanComponent {}
-export class Badge extends VanComponent {}
-export class BadgeGroup extends VanComponent {}
+export class Sidebar extends VanComponent {}
+export class SidebarGroup extends VanComponent {}
 export class Button extends VanComponent {}
 export class Card extends VanComponent {}
 export class Cell extends VanComponent {}

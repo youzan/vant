@@ -55,7 +55,7 @@
 - Cell: 新增多个 Less 变量 [\#3122](https://github.com/youzan/vant/pull/3122)
 - Rate: 新增多个 Less 变量 [\#3135](https://github.com/youzan/vant/pull/3135)
 - Panel: 新增多个 Less 变量 [\#3136](https://github.com/youzan/vant/pull/3136)
-- Badge: 新增多个 Less 变量 [\#3131](https://github.com/youzan/vant/pull/3131)
+- Sidebar: 新增多个 Less 变量 [\#3131](https://github.com/youzan/vant/pull/3131)
 - Dialog: 新增多个 Less 变量 [\#3123](https://github.com/youzan/vant/pull/3123)
 - Slider: 新增多个 Less 变量 [\#3125](https://github.com/youzan/vant/pull/3125)
 - Tabbar: 新增多个 Less 变量 [\#3124](https://github.com/youzan/vant/pull/3124)
@@ -555,7 +555,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 - Tab: 新增 animated 属性 [\#2126](https://github.com/youzan/vant/pull/2126)
 - Tab: 更新标题栏样式 [\#2120](https://github.com/youzan/vant/pull/2120)
-- Badge: 更新提示样式 [\#2122](https://github.com/youzan/vant/pull/2122)
+- Sidebar: 更新提示样式 [\#2122](https://github.com/youzan/vant/pull/2122)
 - Radio: 新增 checked-color 属性 [\#2129](https://github.com/youzan/vant/pull/2129)
 - Swipe: 新增 indica为r-color 属性 [\#2110](https://github.com/youzan/vant/pull/2110)
 - TreeSelect: 支持禁用选项 [\#2107](https://github.com/youzan/vant/pull/2107)
@@ -616,7 +616,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - i18n: 支持土耳其语 [\#1998](https://github.com/youzan/vant/pull/1998)
 - i18n: 支持繁体中文（台） [\#1999](https://github.com/youzan/vant/pull/1999)
 - Icon: 新增 question2 图标 [\#2005](https://github.com/youzan/vant/pull/2005)
-- Badge: 新增 change 事件 [\#2017](https://github.com/youzan/vant/pull/2017)
+- Sidebar: 新增 change 事件 [\#2017](https://github.com/youzan/vant/pull/2017)
 - Switch: 新增 active-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
 - Switch: 新增 inactive-color 属性 [\#2013](https://github.com/youzan/vant/pull/2013)
 - Radio: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
@@ -710,7 +710,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 **Improvements**
 
 - Tab: 样式升级 [\#1908](https://github.com/youzan/vant/pull/1908)
-- Badge: 样式升级 [\#1907](https://github.com/youzan/vant/pull/1907)
+- Sidebar: 样式升级 [\#1907](https://github.com/youzan/vant/pull/1907)
 - Dialog: 样式升级 [\#1906](https://github.com/youzan/vant/pull/1906)
 - NoticeBar: 样式升级 [\#1893](https://github.com/youzan/vant/pull/1893)
 - Collapse: 新增 disabled 属性 [\#1892](https://github.com/youzan/vant/pull/1892)
@@ -1356,7 +1356,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 ActionSheet 下边框未展示的问题 [\#686](https://github.com/youzan/vant/pull/686)
 * 修复 AddressEdit 在数据变更时未正确选中省市区的问题 [\#680](https://github.com/youzan/vant/pull/680)
 * 修复 Stepper value 溢出的问题 [\#691](https://github.com/youzan/vant/issues/691)
-* 修复 Badge 选中时字体粗细 [\#687](https://github.com/youzan/vant/pull/687)
+* 修复 Sidebar 选中时字体粗细 [\#687](https://github.com/youzan/vant/pull/687)
 
 ## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
 `2018-03-09`
@@ -1644,7 +1644,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Search: 支持 input 标签原生属性 [\#418](https://github.com/youzan/vant/pull/418)
 * CellGroup: 新增 'border' 属性 [\#420](https://github.com/youzan/vant/pull/420)
 * AddressEdit: 新增 focus、change-area、select-search 事件 [\#426](https://github.com/youzan/vant/pull/426)
-* Badge、CouponList、ContactCard: 增加点击反馈 [\#419](https://github.com/youzan/vant/pull/419)
+* Sidebar、CouponList、ContactCard: 增加点击反馈 [\#419](https://github.com/youzan/vant/pull/419)
 
 **Bug Fixes**
 
@@ -2126,7 +2126,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 新增 GoodsAction 组件 [\#102](https://github.com/youzan/vant/pull/102)
 * 新增 OrderGoods 组件 [\#99](https://github.com/youzan/vant/pull/99)
 * 新增 PayOrder 组件 [\#98](https://github.com/youzan/vant/pull/98)
-* 优化 Step、Loading、Tag、Badge 文档 [\#101](https://github.com/youzan/vant/pull/101)
+* 优化 Step、Loading、Tag、Sidebar 文档 [\#101](https://github.com/youzan/vant/pull/101)
 * Checkbox: 支持 change 事件 [\#104](https://github.com/youzan/vant/pull/104)
 
 **Bug Fixes**

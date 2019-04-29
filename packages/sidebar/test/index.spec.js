@@ -1,19 +1,19 @@
 import { mount } from '../../../test/utils';
-import Badge from '..';
-import BadgeGroup from '../../badge-group';
+import Sidebar from '..';
+import SidebarItem from '../../sidebar-item';
 
 test('event', () => {
   const onClick = jest.fn();
   const onChange = jest.fn();
   const wrapper = mount({
     template: `
-      <badge-group @change="onChange">
-        <badge @click="onClick">Text</badge>
-      </badge-group>
+      <sidebar @change="onChange">
+        <sidebar-item @click="onClick">Text</sidebar-item>
+      </sidebar>
     `,
     components: {
-      Badge,
-      BadgeGroup
+      Sidebar,
+      SidebarItem
     },
     methods: {
       onClick,
@@ -21,7 +21,7 @@ test('event', () => {
     }
   });
 
-  wrapper.find('.van-badge').trigger('click');
+  wrapper.find('.van-sidebar-item').trigger('click');
   expect(onClick).toHaveBeenCalledWith(0);
   expect(onChange).toHaveBeenCalledWith(0);
   wrapper.vm.$destroy();
@@ -31,7 +31,7 @@ test('without parent', () => {
   const consoleError = console.error;
   try {
     console.error = jest.fn();
-    mount(Badge);
+    mount(Sidebar);
   } catch (err) {
     console.error = consoleError;
     expect(err).toBeTruthy();
