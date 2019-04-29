@@ -3,6 +3,7 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { use, isObj, isDef, isIOS } from '../utils';
 import { getRootScrollTop } from '../utils/scroll';
+import { isNumber } from '../utils/validate/number';
 
 const [sfc, bem] = use('field');
 
@@ -16,6 +17,7 @@ export default sfc({
     rightIcon: String,
     readonly: Boolean,
     clearable: Boolean,
+    labelWidth: [String, Number],
     labelAlign: String,
     inputAlign: String,
     onIconClick: Function,
@@ -60,6 +62,17 @@ export default sfc({
         focus: this.onFocus,
         blur: this.onBlur
       };
+    },
+
+    labelStyle() {
+      const { labelWidth } = this;
+      if (labelWidth) {
+        const width = isNumber(String(labelWidth)) ? `${labelWidth}px` : labelWidth;
+        return {
+          maxWidth: width,
+          minWidth: width
+        };
+      }
     }
   },
 
@@ -237,6 +250,7 @@ export default sfc({
         border={this.border}
         isLink={this.isLink}
         required={this.required}
+        titleStyle={this.labelStyle}
         titleClass={bem('label', labelAlign)}
         class={bem({
           error: this.error,

@@ -127,6 +127,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
+| label-width | Label width | `String | Number` | `90px` |
 | label-align | Label text align, can be set to `center` `right` | `String` | `left` |
 | input-align | Input text align, can be set to `center` `right` | `String` | `left` |
 | error-message-align | Error message text align, can be set to `center` `right` | `String` | `left` |
