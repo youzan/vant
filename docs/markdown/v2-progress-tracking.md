@@ -6,47 +6,50 @@
 
 ### Actionsheet
 
-- [x] 重命名为`ActionSheet`
+- 重命名为`ActionSheet`
 
 ### Button
 
-- [x] 移除`bottom-action`属性，请使用`square`和`size`代替
+- 移除`bottom-action`属性，请使用`square`和`size`代替
 
 ### Field
 
-- [x] 移除`on-icon-click`属性，请使用`click-right-icon`事件代替
-- [x] `icon`属性重命名为`right-icon`
-- [x] `icon`插槽重命名为`right-icon`
-- [x] `click-icon`事件重命名为`click-right-icon`
+- 移除`on-icon-click`属性，请使用`click-right-icon`事件代替
+- `icon`属性重命名为`right-icon`
+- `icon`插槽重命名为`right-icon`
+- `click-icon`事件重命名为`click-right-icon`
 
 ### GoodsAction
 
-- [x] `GoodsActionBigBtn`重命名为`GoodsActionButton`
-- [x] `GoodsActionMiniBtn`重命名为`GoodsActionIcon`
-- [x] `GoodsActionBigBtn`移除`primary`属性，请使用`type`属性代替
+- `GoodsActionBigBtn`重命名为`GoodsActionButton`
+- `GoodsActionMiniBtn`重命名为`GoodsActionIcon`
+- `GoodsActionBigBtn`移除`primary`属性，请使用`type`属性代替
 
 ### Step
 
-- [x] 移除`icon`属性
-- [x] 移除`title`属性
-- [x] 移除`icon-class`属性
-- [x] 移除`description`属性
-- [x] 移除`message-extra`插槽
+- 移除`icon`属性
+- 移除`title`属性
+- 移除`icon-class`属性
+- 移除`description`属性
+- 移除`message-extra`插槽
 
 ### Badge
 
-- [x] `BadgeGroup`重命名为`Sidebar`
-- [x] `Badge`重命名为`SlideBarItem`
+- `BadgeGroup`重命名为`Sidebar`
+- `Badge`重命名为`SlideBarItem`
 
 ### Loading
 
-- [x] 移除`circle`类型
-- [x] 移除`gradient-circle`类型
+- 移除`circle`类型
+- 移除`gradient-circle`类型
 
 ### Waterfall
 
-- [x] 彻底移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
+- 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
 
 ## 新特性
 
-TODO
+### Sku
+
+- 新增`preview-open`事件
+- 新增`preview-close`事件
