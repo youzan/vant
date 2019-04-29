@@ -96,9 +96,6 @@ export function wrapper(promise, name) {
       Locale.add(formattedI18n);
     }
 
-    component.props = component.props || {};
-    component.props.weapp = Boolean;
-
     return component;
   });
 }
