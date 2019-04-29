@@ -55,6 +55,5 @@ export default {
   'tag': () => wrapper(import('../../packages/tag/demo'), 'tag'),
   'toast': () => wrapper(import('../../packages/toast/demo'), 'toast'),
   'tree-select': () => wrapper(import('../../packages/tree-select/demo'), 'tree-select'),
-  'uploader': () => wrapper(import('../../packages/uploader/demo'), 'uploader'),
-  'waterfall': () => wrapper(import('../../packages/waterfall/demo'), 'waterfall')
+  'uploader': () => wrapper(import('../../packages/uploader/demo'), 'uploader')
 };

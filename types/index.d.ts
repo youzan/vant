@@ -5,7 +5,6 @@ import { Dialog } from './dialog';
 import { Notify } from './notify';
 import { Locale } from './locale';
 import { Lazyload } from './lazyload';
-import { Waterfall } from './waterfall';
 import { ImagePreview } from './image-preview';
 
 export const version: string;
@@ -78,6 +77,5 @@ export {
   Notify,
   Locale,
   Lazyload,
-  Waterfall,
   ImagePreview
 };

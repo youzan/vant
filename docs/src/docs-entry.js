@@ -120,7 +120,5 @@ export default {
   'tree-select.en-US': () => import('../../packages/tree-select/en-US.md'),
   'tree-select.zh-CN': () => import('../../packages/tree-select/zh-CN.md'),
   'uploader.en-US': () => import('../../packages/uploader/en-US.md'),
-  'uploader.zh-CN': () => import('../../packages/uploader/zh-CN.md'),
-  'waterfall.en-US': () => import('../../packages/waterfall/en-US.md'),
-  'waterfall.zh-CN': () => import('../../packages/waterfall/zh-CN.md')
+  'uploader.zh-CN': () => import('../../packages/uploader/zh-CN.md')
 };

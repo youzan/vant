@@ -42,6 +42,10 @@
 - [x] 移除`circle`类型
 - [x] 移除`gradient-circle`类型
 
+### Waterfall
+
+- [x] 彻底移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
+
 ## 新特性
 
 TODO

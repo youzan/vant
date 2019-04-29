@@ -72,7 +72,6 @@ import Tag from './tag';
 import Toast from './toast';
 import TreeSelect from './tree-select';
 import Uploader from './uploader';
-import Waterfall from './waterfall';
 
 declare global {
   interface Window {
@@ -237,8 +236,7 @@ export {
   Tag,
   Toast,
   TreeSelect,
-  Uploader,
-  Waterfall
+  Uploader
 };
 
 export default {
