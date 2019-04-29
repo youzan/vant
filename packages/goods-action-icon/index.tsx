@@ -7,20 +7,20 @@ import { functionalRoute, routeProps, RouteProps } from '../utils/router';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
-export type GoodsActionMiniBtnProps = RouteProps & {
+export type GoodsActionIconProps = RouteProps & {
   icon: string;
   text?: string;
   info?: string | number;
   iconClass?: any;
 };
 
-const [sfc, bem] = use('goods-action-mini-btn');
+const [sfc, bem] = use('goods-action-icon');
 
-function GoodsActionMiniBtn(
+function GoodsActionIcon(
   h: CreateElement,
-  props: GoodsActionMiniBtnProps,
+  props: GoodsActionIconProps,
   slots: DefaultSlots,
-  ctx: RenderContext<GoodsActionMiniBtnProps>
+  ctx: RenderContext<GoodsActionIconProps>
 ) {
   const onClick = (event: Event) => {
     emit(ctx, 'click', event);
@@ -40,7 +40,7 @@ function GoodsActionMiniBtn(
   );
 }
 
-GoodsActionMiniBtn.props = {
+GoodsActionIcon.props = {
   ...routeProps,
   text: String,
   icon: String,
@@ -48,4 +48,4 @@ GoodsActionMiniBtn.props = {
   iconClass: null as any
 };
 
-export default sfc<GoodsActionMiniBtnProps, IconEvents>(GoodsActionMiniBtn);
+export default sfc<GoodsActionIconProps, IconEvents>(GoodsActionIcon);

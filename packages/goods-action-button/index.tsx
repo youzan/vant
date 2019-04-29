@@ -7,20 +7,20 @@ import { functionalRoute, routeProps, RouteProps } from '../utils/router';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
-export type GoodsActionBigBtnProps = RouteProps & {
+export type GoodsActionButtonProps = RouteProps & {
   text?: string;
   primary?: boolean;
   loading?: boolean;
   disabled?: boolean;
 };
 
-const [sfc, bem] = use('goods-action-big-btn');
+const [sfc, bem] = use('goods-action-button');
 
-function GoodsActionBigBtn(
+function GoodsActionButton(
   h: CreateElement,
-  props: GoodsActionBigBtnProps,
+  props: GoodsActionButtonProps,
   slots: DefaultSlots,
-  ctx: RenderContext<GoodsActionBigBtnProps>
+  ctx: RenderContext<GoodsActionButtonProps>
 ) {
   const onClick = (event: Event) => {
     emit(ctx, 'click', event);
@@ -43,7 +43,7 @@ function GoodsActionBigBtn(
   );
 }
 
-GoodsActionBigBtn.props = {
+GoodsActionButton.props = {
   ...routeProps,
   text: String,
   primary: Boolean,
@@ -51,4 +51,4 @@ GoodsActionBigBtn.props = {
   disabled: Boolean
 };
 
-export default sfc<GoodsActionBigBtnProps, ButtonEvents>(GoodsActionBigBtn);
+export default sfc<GoodsActionButtonProps, ButtonEvents>(GoodsActionButton);

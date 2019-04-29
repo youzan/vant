@@ -27,8 +27,8 @@ import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
 import Field from './field';
 import GoodsAction from './goods-action';
-import GoodsActionBigBtn from './goods-action-big-btn';
-import GoodsActionMiniBtn from './goods-action-mini-btn';
+import GoodsActionButton from './goods-action-button';
+import GoodsActionIcon from './goods-action-icon';
 import Icon from './icon';
 import ImagePreview from './image-preview';
 import Info from './info';
@@ -108,8 +108,8 @@ const components = [
   Dialog,
   Field,
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn,
+  GoodsActionButton,
+  GoodsActionIcon,
   Icon,
   ImagePreview,
   Info,
@@ -193,8 +193,8 @@ export {
   Dialog,
   Field,
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn,
+  GoodsActionButton,
+  GoodsActionIcon,
   Icon,
   ImagePreview,
   Info,

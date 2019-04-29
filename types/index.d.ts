@@ -35,8 +35,8 @@ export class CouponList extends VanComponent {}
 export class DatetimePicker extends VanComponent {}
 export class Field extends VanComponent {}
 export class GoodsAction extends VanComponent {}
-export class GoodsActionBigBtn extends VanComponent {}
-export class GoodsActionMiniBtn extends VanComponent {}
+export class GoodsActionButton extends VanComponent {}
+export class GoodsActionIcon extends VanComponent {}
 export class Icon extends VanComponent {}
 export class List extends VanComponent {}
 export class Loading extends VanComponent {}
