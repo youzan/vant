@@ -1,10 +1,10 @@
-## Actionsheet 上拉菜单
+## ActionSheet 上拉菜单
 
 ### 使用指南
 ``` javascript
-import { Actionsheet } from 'vant';
+import { ActionSheet } from 'vant';
 
-Vue.use(Actionsheet);
+Vue.use(ActionSheet);
 ```
 
 ### 代码演示
@@ -14,7 +14,7 @@ Vue.use(Actionsheet);
 需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
-<van-actionsheet
+<van-action-sheet
   v-model="show"
   :actions="actions"
   @select="onSelect"
@@ -55,12 +55,12 @@ export default {
 }
 ```
 
-#### 带取消按钮的 Actionsheet
+#### 带取消按钮的 ActionSheet
 
-如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`Actionsheet`关闭。
+如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
 
 ```html
-<van-actionsheet
+<van-action-sheet
   v-model="show"
   :actions="actions"
   cancel-text="取消"
@@ -69,14 +69,14 @@ export default {
 />
 ```
 
-#### 带标题的 Actionsheet
+#### 带标题的 ActionSheet
 
-如果传入了`title`属性，且不为空，则另外一种样式的`Actionsheet`，里面内容需要自定义。
+如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
 
 ```html
-<van-actionsheet v-model="show" title="支持以下配送方式">
+<van-action-sheet v-model="show" title="支持以下配送方式">
   <p>一些内容</p>
-</van-actionsheet>
+</van-action-sheet>
 ```
 
 ### API

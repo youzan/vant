@@ -1,5 +1,5 @@
 import { mount } from '../../../test/utils';
-import Actionsheet from '..';
+import ActionSheet from '..';
 
 test('callback events', () => {
   const callback = jest.fn();
@@ -12,7 +12,7 @@ test('callback events', () => {
     { name: 'Option', disabled: true }
   ];
 
-  const wrapper = mount(Actionsheet, {
+  const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
       actions,
@@ -27,10 +27,10 @@ test('callback events', () => {
     }
   });
 
-  const options = wrapper.findAll('.van-actionsheet__item');
+  const options = wrapper.findAll('.van-action-sheet__item');
   options.at(0).trigger('click');
   options.at(1).trigger('click');
-  wrapper.find('.van-actionsheet__cancel').trigger('click');
+  wrapper.find('.van-action-sheet__cancel').trigger('click');
 
   expect(callback).toHaveBeenCalled();
   expect(onCancel).toHaveBeenCalled();
@@ -40,7 +40,7 @@ test('callback events', () => {
 });
 
 test('disable lazy-render', () => {
-  const wrapper = mount(Actionsheet, {
+  const wrapper = mount(ActionSheet, {
     propsData: {
       lazyRender: false,
       actions: [
@@ -55,7 +55,7 @@ test('disable lazy-render', () => {
 });
 
 test('get container', () => {
-  const wrapper = mount(Actionsheet, {
+  const wrapper = mount(ActionSheet, {
     propsData: {
       value: true,
       getContainer: 'body'

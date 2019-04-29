@@ -10,29 +10,29 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 import { PopupMixinProps } from '../mixins/popup/type';
 
-export type ActionsheetItem = {
+export type ActionSheetItem = {
   name: string;
   subname?: string;
   loading?: boolean;
   disabled?: boolean;
   className?: string;
-  callback?: (item: ActionsheetItem) => void;
+  callback?: (item: ActionSheetItem) => void;
 };
 
-export type ActionsheetProps = PopupMixinProps & {
+export type ActionSheetProps = PopupMixinProps & {
   title?: string;
-  actions: ActionsheetItem[];
+  actions: ActionSheetItem[];
   cancelText?: string;
   safeAreaInsetBottom?: boolean;
 };
 
-const [sfc, bem] = use('actionsheet');
+const [sfc, bem] = use('action-sheet');
 
-function Actionsheet(
+function ActionSheet(
   h: CreateElement,
-  props: ActionsheetProps,
+  props: ActionSheetProps,
   slots: DefaultSlots,
-  ctx: RenderContext<ActionsheetProps>
+  ctx: RenderContext<ActionSheetProps>
 ) {
   const { title, cancelText } = props;
 
@@ -48,7 +48,7 @@ function Actionsheet(
     </div>
   );
 
-  const Option = (item: ActionsheetItem, index: number) => (
+  const Option = (item: ActionSheetItem, index: number) => (
     <div
       class={[
         bem('item', { disabled: item.disabled || item.loading }),
@@ -103,7 +103,7 @@ function Actionsheet(
   );
 }
 
-Actionsheet.props = {
+ActionSheet.props = {
   ...PopupMixin.props,
   title: String,
   actions: Array,
@@ -119,4 +119,4 @@ Actionsheet.props = {
   }
 };
 
-export default sfc<ActionsheetProps>(Actionsheet);
+export default sfc<ActionSheetProps>(ActionSheet);

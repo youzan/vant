@@ -1,7 +1,7 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import { VueConstructor } from 'vue/types';
-import Actionsheet from './actionsheet';
+import ActionSheet from './action-sheet';
 import AddressEdit from './address-edit';
 import AddressList from './address-list';
 import Area from './area';
@@ -82,7 +82,7 @@ declare global {
 
 const version = '1.6.16';
 const components = [
-  Actionsheet,
+  ActionSheet,
   AddressEdit,
   AddressList,
   Area,
@@ -167,7 +167,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  Actionsheet,
+  ActionSheet,
   AddressEdit,
   AddressList,
   Area,

@@ -168,8 +168,8 @@ module.exports = {
             icon: 'passed',
             list: [
               {
-                path: '/actionsheet',
-                title: 'Actionsheet 上拉菜单'
+                path: '/action-sheet',
+                title: 'ActionSheet 上拉菜单'
               },
               {
                 path: '/dialog',
@@ -475,8 +475,8 @@ module.exports = {
             icon: 'passed',
             list: [
               {
-                path: '/actionsheet',
-                title: 'Actionsheet'
+                path: '/action-sheet',
+                title: 'ActionSheet'
               },
               {
                 path: '/dialog',

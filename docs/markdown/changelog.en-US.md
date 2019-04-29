@@ -34,7 +34,7 @@
 - Tabbar: add safe-area-inset-bottom prop [\#3149](https://github.com/youzan/vant/pull/3149)
 - SubmitBar: add safe-area-inset-bottom prop [\#3172](https://github.com/youzan/vant/pull/3172)
 - GoodsAction: add safe-area-inset-bottom prop [\#3174](https://github.com/youzan/vant/pull/3174)
-- Actionsheet: add safe-area-inset-bottom prop [\#3171](https://github.com/youzan/vant/pull/3171)
+- ActionSheet: add safe-area-inset-bottom prop [\#3171](https://github.com/youzan/vant/pull/3171)
 - NumberKeyboard: add safe-area-inset-bottom prop [\#3173](https://github.com/youzan/vant/pull/3173)
 
 **Bug Fixes**
@@ -89,7 +89,7 @@
 
 **Improvements**
 
-- Actionsheet: add less vars [\#3049](https://github.com/youzan/vant/pull/3049)
+- ActionSheet: add less vars [\#3049](https://github.com/youzan/vant/pull/3049)
 
 **Bug Fixes**
 
@@ -112,7 +112,7 @@
 - NoticeBar: add wrapable prop [\#2992](https://github.com/youzan/vant/pull/2992)
 - Field: add error-message-align prop [\#3016](https://github.com/youzan/vant/pull/3016)
 - Sku: support set selectedNum when inited [\#3045](https://github.com/youzan/vant/pull/3045)
-- Actionsheet: support use slot and cancel-text at same time [\#3021](https://github.com/youzan/vant/pull/3021)
+- ActionSheet: support use slot and cancel-text at same time [\#3021](https://github.com/youzan/vant/pull/3021)
 
 **Bug Fixes**
 
@@ -152,7 +152,7 @@
 - CellGroup: add title prop [\#2928](https://github.com/youzan/vant/pull/2928)
 - Steps: add active-icon prop [\#2934](https://github.com/youzan/vant/pull/2934)
 - Picker: add default-index prop [\#2935](https://github.com/youzan/vant/pull/2935)
-- Actionsheet: add index param for select event [\#2917](https://github.com/youzan/vant/pull/2917)
+- ActionSheet: add index param for select event [\#2917](https://github.com/youzan/vant/pull/2917)
 
 **Bug Fixes**
 
@@ -188,8 +188,8 @@
 
 **Bug Fixes**
 
-- fix Actionsheet lazy-render not work [\#2840](https://github.com/youzan/vant/pull/2840)
-- fix Actionsheet get-container not work [\#2853](https://github.com/youzan/vant/pull/2853)
+- fix ActionSheet lazy-render not work [\#2840](https://github.com/youzan/vant/pull/2840)
+- fix ActionSheet get-container not work [\#2853](https://github.com/youzan/vant/pull/2853)
 - fix Tab should scroll to active tab when inited [\#2857](https://github.com/youzan/vant/pull/2857)
 - fix Checkbox uncheckable when inside cell [\#2855](https://github.com/youzan/vant/pull/2855)
 - fix CouponList incorrectly render when disabled list empty [\#2845](https://github.com/youzan/vant/pull/2845)
@@ -873,14 +873,14 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-- Actionsheet: add select event [\#1594](https://github.com/youzan/vant/pull/1594)
+- ActionSheet: add select event [\#1594](https://github.com/youzan/vant/pull/1594)
 - ImagePreview: suppot onClose callback [\#1589](https://github.com/youzan/vant/pull/1589)
 - List: add check method [\#1590](https://github.com/youzan/vant/pull/1590)
 - Search: update style [\#1603](https://github.com/youzan/vant/pull/1603)
 
 **Bug Fixes**
 
-- fix Actionsheet item unclickable when loading [\#1587](https://github.com/youzan/vant/pull/1587)
+- fix ActionSheet item unclickable when loading [\#1587](https://github.com/youzan/vant/pull/1587)
 - fix DatetimePicker value uncorrect when use formatter [\#1591](https://github.com/youzan/vant/pull/1591)
 
 
@@ -970,7 +970,7 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-- Actionsheet: support lazy render [\#1365](https://github.com/youzan/vant/pull/1365)
+- ActionSheet: support lazy render [\#1365](https://github.com/youzan/vant/pull/1365)
 - AddressEdit: adjust event order [\#1402](https://github.com/youzan/vant/pull/1402)
 - SwitchCell: add size prop [\#1371](https://github.com/youzan/vant/pull/1371)
 - Checkbox: add label-position prop [\#1394](https://github.com/youzan/vant/pull/1394)
@@ -1015,7 +1015,7 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-- Actionsheet: support disable option [\#1293](https://github.com/youzan/vant/pull/1293)
+- ActionSheet: support disable option [\#1293](https://github.com/youzan/vant/pull/1293)
 - Field: support clearable [\#1309](https://github.com/youzan/vant/pull/1309)
 - Layout: support flex layout [\#1305](https://github.com/youzan/vant/pull/1305)
 - Locale: add type definition [\#1294](https://github.com/youzan/vant/pull/1294)
@@ -1046,7 +1046,7 @@ Also we have optimized the UI of the following components:：
 
 **Bug Fixes**
 
-- fix Actionsheet title font size [\#1267](https://github.com/youzan/vant/pull/1267)
+- fix ActionSheet title font size [\#1267](https://github.com/youzan/vant/pull/1267)
 - fix CheckboxGroup v-model type check [\#1254](https://github.com/youzan/vant/pull/1254)
 - fix Popup max height [\#1256](https://github.com/youzan/vant/pull/1256)
 - fix Tab resize line when title changed [\#1260](https://github.com/youzan/vant/pull/1260)
@@ -1273,8 +1273,8 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-* Actionsheet: add cancel event [\#796](https://github.com/youzan/vant/pull/796)
-* Actionsheet: support maxHeight [\#777](https://github.com/youzan/vant/pull/777)
+* ActionSheet: add cancel event [\#796](https://github.com/youzan/vant/pull/796)
+* ActionSheet: support maxHeight [\#777](https://github.com/youzan/vant/pull/777)
 * DatetimePicker: support all picker props [\#788](https://github.com/youzan/vant/pull/788)
 * SubmitBar: unite font-size [\#774](https://github.com/youzan/vant/pull/774)
 * i18n: support zh-HK language [\#812](https://github.com/youzan/vant/pull/812)
@@ -1359,7 +1359,7 @@ Also we have optimized the UI of the following components:：
 
 **Bug Fixes**
 
-* fix Actionsheet bottom border missing [\#686](https://github.com/youzan/vant/pull/686)
+* fix ActionSheet bottom border missing [\#686](https://github.com/youzan/vant/pull/686)
 * fix AddressEdit area not selected when area_code changed [\#680](https://github.com/youzan/vant/pull/680)
 * fix Stepper value overlimit [\#691](https://github.com/youzan/vant/issues/691)
 * fix Badge info font weight when selected [\#687](https://github.com/youzan/vant/pull/687)
@@ -1781,7 +1781,7 @@ Also we have optimized the UI of the following components:：
 
 **Improvements**
 
-* Actionsheet: update close icon style [\#340](https://github.com/youzan/vant/pull/340)
+* ActionSheet: update close icon style [\#340](https://github.com/youzan/vant/pull/340)
 * Popup: add overlayClass and overlayStyle props [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343)
 * Icon: adjust unicode for better display [\#330](https://github.com/youzan/vant/pull/330)
 * ImagePreview: support manually close [\#346](https://github.com/youzan/vant/pull/346)

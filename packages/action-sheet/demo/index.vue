@@ -2,7 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
-      <van-actionsheet
+      <van-action-sheet
         v-model="show1"
         :actions="actions"
         @select="onSelect"
@@ -11,7 +11,7 @@
 
     <demo-block :title="$t('title2')">
       <van-button @click="show2 = true">{{ $t('button2') }}</van-button>
-      <van-actionsheet
+      <van-action-sheet
         v-model="show2"
         :actions="actions"
         :cancel-text="$t('cancel')"
@@ -22,12 +22,12 @@
 
     <demo-block :title="$t('title3')">
       <van-button @click="show3 = true">{{ $t('button3') }}</van-button>
-      <van-actionsheet
+      <van-action-sheet
         v-model="show3"
         :title="$t('title')"
       >
         <p>{{ $t('content') }}</p>
-      </van-actionsheet>
+      </van-action-sheet>
     </demo-block>
   </demo-section>
 </template>
@@ -36,20 +36,20 @@
 export default {
   i18n: {
     'zh-CN': {
-      button1: '弹出 Actionsheet',
-      button2: '弹出带取消按钮的 Actionsheet',
-      button3: '弹出带标题的 Actionsheet',
-      title2: '带取消按钮的 Actionsheet',
-      title3: '带标题的 Actionsheet',
+      button1: '弹出 ActionSheet',
+      button2: '弹出带取消按钮的 ActionSheet',
+      button3: '弹出带标题的 ActionSheet',
+      title2: '带取消按钮的 ActionSheet',
+      title3: '带标题的 ActionSheet',
       description: '描述信息',
       disabledOption: '禁用选项'
     },
     'en-US': {
-      button1: 'Show Actionsheet',
-      button2: 'Show Actionsheet with cancel button',
-      button3: 'Show Actionsheet with title',
-      title2: 'Actionsheet with cancel button',
-      title3: 'Actionsheet with title',
+      button1: 'Show ActionSheet',
+      button2: 'Show ActionSheet with cancel button',
+      button3: 'Show ActionSheet with title',
+      title2: 'ActionSheet with cancel button',
+      title3: 'ActionSheet with title',
       description: 'Description',
       disabledOption: 'Disabled Option'
     }
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="less">
-.demo-actionsheet {
+.demo-action-sheet {
   .van-button {
     margin-left: 15px;
   }

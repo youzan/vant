@@ -2,7 +2,7 @@
 
 ### Actionsheet
 
-- [ ] 重命名为 ActionSheet
+- [x] 重命名为 ActionSheet
 
 ### Button
 

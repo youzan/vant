@@ -34,7 +34,7 @@
 - Tabbar: 新增 safe-area-inset-bottom 属性 [\#3149](https://github.com/youzan/vant/pull/3149)
 - SubmitBar: 新增 safe-area-inset-bottom 属性 [\#3172](https://github.com/youzan/vant/pull/3172)
 - GoodsAction: 新增 safe-area-inset-bottom 属性 [\#3174](https://github.com/youzan/vant/pull/3174)
-- Actionsheet: 新增 safe-area-inset-bottom 属性 [\#3171](https://github.com/youzan/vant/pull/3171)
+- ActionSheet: 新增 safe-area-inset-bottom 属性 [\#3171](https://github.com/youzan/vant/pull/3171)
 - NumberKeyboard: 新增 safe-area-inset-bottom 属性 [\#3173](https://github.com/youzan/vant/pull/3173)
 
 **Bug Fixes**
@@ -89,7 +89,7 @@
 
 **Improvements**
 
-- Actionsheet: 新增 less 变量 [\#3049](https://github.com/youzan/vant/pull/3049)
+- ActionSheet: 新增 less 变量 [\#3049](https://github.com/youzan/vant/pull/3049)
 
 **Bug Fixes**
 
@@ -112,7 +112,7 @@
 - NoticeBar: 新增 wrapable 属性 [\#2992](https://github.com/youzan/vant/pull/2992)
 - Field: 新增 error-message-align 属性 [\#3016](https://github.com/youzan/vant/pull/3016)
 - Sku: 支持在初始化时设置选中商品数量 [\#3045](https://github.com/youzan/vant/pull/3045)
-- Actionsheet: 支持同时设置默认插槽和 cancel-text [\#3021](https://github.com/youzan/vant/pull/3021)
+- ActionSheet: 支持同时设置默认插槽和 cancel-text [\#3021](https://github.com/youzan/vant/pull/3021)
 
 **Bug Fixes**
 
@@ -152,7 +152,7 @@
 - CellGroup: 新增 title 属性 [\#2928](https://github.com/youzan/vant/pull/2928)
 - Steps: 新增 active-icon 属性 [\#2934](https://github.com/youzan/vant/pull/2934)
 - Picker: 新增 default-index 属性 [\#2935](https://github.com/youzan/vant/pull/2935)
-- Actionsheet: 新增 index 作为 select 事件的回调参数 [\#2917](https://github.com/youzan/vant/pull/2917)
+- ActionSheet: 新增 index 作为 select 事件的回调参数 [\#2917](https://github.com/youzan/vant/pull/2917)
 
 **Bug Fixes**
 
@@ -188,8 +188,8 @@
 
 **Bug Fixes**
 
-- 修复 Actionsheet lazy-render 属性不生效的问题 [\#2840](https://github.com/youzan/vant/pull/2840)
-- 修复 Actionsheet get-container 属性不生效的问题 [\#2853](https://github.com/youzan/vant/pull/2853)
+- 修复 ActionSheet lazy-render 属性不生效的问题 [\#2840](https://github.com/youzan/vant/pull/2840)
+- 修复 ActionSheet get-container 属性不生效的问题 [\#2853](https://github.com/youzan/vant/pull/2853)
 - 修复 Tab 初始化时导航栏未自动滚动到当前标签位置的问题 [\#2857](https://github.com/youzan/vant/pull/2857)
 - 修复 Checkbox 与 Cell 组件嵌套用法在 Vue 2.6+ 上的兼容问题 [\#2855](https://github.com/youzan/vant/pull/2855)
 - 修复 CouponList 不可用券列表为空时展示错误的问题 [\#2845](https://github.com/youzan/vant/pull/2845)
@@ -875,14 +875,14 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Improvements**
 
-- Actionsheet: 新增 select 事件 [\#1594](https://github.com/youzan/vant/pull/1594)
+- ActionSheet: 新增 select 事件 [\#1594](https://github.com/youzan/vant/pull/1594)
 - ImagePreview: 支持传入 onClose 回调函数 [\#1589](https://github.com/youzan/vant/pull/1589)
 - List: 新增 check 方法 [\#1590](https://github.com/youzan/vant/pull/1590)
 - Search: 优化样式结构 [\#1603](https://github.com/youzan/vant/pull/1603)
 
 **Bug Fixes**
 
-- 修复 Actionsheet 选项加载中时仍然有点击态的问题 [\#1587](https://github.com/youzan/vant/pull/1587)
+- 修复 ActionSheet 选项加载中时仍然有点击态的问题 [\#1587](https://github.com/youzan/vant/pull/1587)
 - 修复 DatetimePicker 使用 formatter 时默认值错误的问题 [\#1591](https://github.com/youzan/vant/pull/1591)
 
 
@@ -970,7 +970,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Improvements**
 
-- Actionsheet: 支持 lazy-render [\#1365](https://github.com/youzan/vant/pull/1365)
+- ActionSheet: 支持 lazy-render [\#1365](https://github.com/youzan/vant/pull/1365)
 - AddressEdit: 优化事件触发顺序 [\#1402](https://github.com/youzan/vant/pull/1402)
 - SwitchCell: 新增 size 属性 [\#1371](https://github.com/youzan/vant/pull/1371)
 - Checkbox: 新增 label-position 属性 [\#1394](https://github.com/youzan/vant/pull/1394)
@@ -1015,7 +1015,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Improvements**
 
-- Actionsheet: 支持禁用选项 [\#1293](https://github.com/youzan/vant/pull/1293)
+- ActionSheet: 支持禁用选项 [\#1293](https://github.com/youzan/vant/pull/1293)
 - Field: 支持展示清除控件 [\#1309](https://github.com/youzan/vant/pull/1309)
 - Layout: 支持 Flex 布局 [\#1305](https://github.com/youzan/vant/pull/1305)
 - Locale: 新增 TS 类型定义 [\#1294](https://github.com/youzan/vant/pull/1294)
@@ -1046,7 +1046,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Bug Fixes**
 
-- 修复 Actionsheet 在 rem 布局下标题文字大小错误的问题 [\#1267](https://github.com/youzan/vant/pull/1267)
+- 修复 ActionSheet 在 rem 布局下标题文字大小错误的问题 [\#1267](https://github.com/youzan/vant/pull/1267)
 - 修复 CheckboxGroup v-model 类型检查错误 [\#1254](https://github.com/youzan/vant/pull/1254)
 - 修复 Tab 标题长度变化时底部条未重新渲染的问题 [\#1260](https://github.com/youzan/vant/pull/1260)
 - 修复 Popup 内容过高时超出屏幕可视范围的问题 [\#1256](https://github.com/youzan/vant/pull/1256)
@@ -1269,8 +1269,8 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Improvements**
 
-- Actionsheet: 新增 cancel 事件 [\#796](https://github.com/youzan/vant/pull/796)
-- Actionsheet: 增加最大高度限制 [\#777](https://github.com/youzan/vant/pull/777)
+- ActionSheet: 新增 cancel 事件 [\#796](https://github.com/youzan/vant/pull/796)
+- ActionSheet: 增加最大高度限制 [\#777](https://github.com/youzan/vant/pull/777)
 - DatetimePicker: 支持所有 picker 组件配置 [\#788](https://github.com/youzan/vant/pull/788)
 - SubmitBar: 统一文字大小 [\#774](https://github.com/youzan/vant/pull/774)
 - i18n: 支持 zh-HK 语言 [\#812](https://github.com/youzan/vant/pull/812)
@@ -1353,7 +1353,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Bug Fixes**
 
-* 修复 Actionsheet 下边框未展示的问题 [\#686](https://github.com/youzan/vant/pull/686)
+* 修复 ActionSheet 下边框未展示的问题 [\#686](https://github.com/youzan/vant/pull/686)
 * 修复 AddressEdit 在数据变更时未正确选中省市区的问题 [\#680](https://github.com/youzan/vant/pull/680)
 * 修复 Stepper value 溢出的问题 [\#691](https://github.com/youzan/vant/issues/691)
 * 修复 Badge 选中时字体粗细 [\#687](https://github.com/youzan/vant/pull/687)
@@ -1774,7 +1774,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Improvements**
 
-* Actionsheet: 更新关闭按钮样式 [\#340](https://github.com/youzan/vant/pull/340)
+* ActionSheet: 更新关闭按钮样式 [\#340](https://github.com/youzan/vant/pull/340)
 * Popup: 新增 overlayClass、overlayStyle 属性 [\#349](https://github.com/youzan/vant/pull/349) [\#343](https://github.com/youzan/vant/pull/343)
 * Icon: 调整 unicode，避免展示特殊字符 [\#330](https://github.com/youzan/vant/pull/330)
 * ImagePreview: 支持手动关闭 [\#346](https://github.com/youzan/vant/pull/346)

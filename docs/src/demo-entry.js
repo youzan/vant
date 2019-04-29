@@ -3,7 +3,7 @@
 import { wrapper } from './demo-common';
 
 export default {
-  'actionsheet': () => wrapper(import('../../packages/actionsheet/demo'), 'actionsheet'),
+  'action-sheet': () => wrapper(import('../../packages/action-sheet/demo'), 'action-sheet'),
   'address-edit': () => wrapper(import('../../packages/address-edit/demo'), 'address-edit'),
   'address-list': () => wrapper(import('../../packages/address-list/demo'), 'address-list'),
   'area': () => wrapper(import('../../packages/area/demo'), 'area'),
