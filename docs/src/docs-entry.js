@@ -12,6 +12,7 @@ export default {
   'style-guide.zh-CN': () => import('../markdown/style-guide.zh-CN.md'),
   'theme.en-US': () => import('../markdown/theme.en-US.md'),
   'theme.zh-CN': () => import('../markdown/theme.zh-CN.md'),
+  'v2-progress-tracking': () => import('../markdown/v2-progress-tracking.md'),
   'action-sheet.en-US': () => import('../../packages/action-sheet/en-US.md'),
   'action-sheet.zh-CN': () => import('../../packages/action-sheet/zh-CN.md'),
   'address-edit.en-US': () => import('../../packages/address-edit/en-US.md'),

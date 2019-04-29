@@ -2,11 +2,15 @@
 
 ### Actionsheet
 
-- [x] 重命名为 ActionSheet
+- [x] 重命名为 ActionSheet 
+
+改动原因：规范命名
 
 ### Button
 
-- [ ] 移除 bottom-action 属性
+- [x] 移除 bottom-action 属性
+
+改动原因：冗余属性，可以被 square 和 size="large" 代替
 
 ### Field
 
