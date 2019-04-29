@@ -22,10 +22,8 @@ function Loading(
 ) {
   const { color, size, type } = props;
 
-  const colorType = color === 'white' || color === 'black' ? color : '';
-
   const style = {
-    color: color === 'black' ? DEFAULT_COLOR : color,
+    color,
     width: size,
     height: size
   };
@@ -44,7 +42,7 @@ function Loading(
   );
 
   return (
-    <div class={bem([type, colorType])} style={style} {...inherit(ctx, true)}>
+    <div class={bem([type])} style={style} {...inherit(ctx, true)}>
       <span class={bem('spinner', type)}>
         {Spin}
         {Circular}

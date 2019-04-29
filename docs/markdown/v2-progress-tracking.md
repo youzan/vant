@@ -45,8 +45,10 @@
 
 ### Loading
 
-- [ ] 移除 circle 类型
-- [ ] 移除 gradient-circle 类型
+- [x] 移除 circle 类型
+- [x] 移除 gradient-circle 类型
+
+改动原因：视觉规范变更
 
 ### Area
 
