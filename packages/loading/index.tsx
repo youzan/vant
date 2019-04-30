@@ -6,8 +6,8 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type LoadingProps = {
-  type: string;
-  size?: string;
+  type: 'circular' | 'spinner';
+  size?: string | number;
   color: string;
   textSize?: string | number;
 };
@@ -23,11 +23,12 @@ function Loading(
 ) {
   const { color, size, type } = props;
 
-  const style = {
-    color,
-    width: size,
-    height: size
-  };
+  const style: { [key: string]: string } = { color };
+  if (size) {
+    const iconSize = suffixPx(size);
+    style.width = iconSize;
+    style.height = iconSize;
+  }
 
   const Spin = [];
   if (type === 'spinner') {
@@ -68,7 +69,7 @@ function Loading(
 }
 
 Loading.props = {
-  size: String,
+  size: [String, Number],
   textSize: [String, Number],
   type: {
     type: String,

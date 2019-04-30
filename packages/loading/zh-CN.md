@@ -35,7 +35,7 @@ Vue.use(Loading);
 |------|------|------|------|------|
 | color | 颜色 | `String` | `#c9c9c9` | - |
 | type | 类型，可选值为 `spinner` | `String` | `circular` | - |
-| size | 加载图标大小 | `String` | `30px` | - |
+| size | 加载图标大小 | `String | Number` | `30px` | - |
 | text-size | 文字大小 | `String | Number` | `14px` | 2.0.0 |
 
 ### Slot
