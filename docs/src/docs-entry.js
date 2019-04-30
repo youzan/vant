@@ -89,6 +89,8 @@ export default {
   'search.zh-CN': () => import('../../packages/search/zh-CN.md'),
   'sidebar.en-US': () => import('../../packages/sidebar/en-US.md'),
   'sidebar.zh-CN': () => import('../../packages/sidebar/zh-CN.md'),
+  'skeleton.en-US': () => import('../../packages/skeleton/en-US.md'),
+  'skeleton.zh-CN': () => import('../../packages/skeleton/zh-CN.md'),
   'sku.en-US': () => import('../../packages/sku/en-US.md'),
   'sku.zh-CN': () => import('../../packages/sku/zh-CN.md'),
   'slider.en-US': () => import('../../packages/slider/en-US.md'),

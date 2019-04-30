@@ -53,6 +53,7 @@ import Row from './row';
 import Search from './search';
 import Sidebar from './sidebar';
 import SidebarItem from './sidebar-item';
+import Skeleton from './skeleton';
 import Sku from './sku';
 import Slider from './slider';
 import Step from './step';
@@ -131,6 +132,7 @@ const components = [
   Search,
   Sidebar,
   SidebarItem,
+  Skeleton,
   Sku,
   Slider,
   Step,
@@ -218,6 +220,7 @@ export {
   Search,
   Sidebar,
   SidebarItem,
+  Skeleton,
   Sku,
   Slider,
   Step,

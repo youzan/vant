@@ -1,4 +1,4 @@
-## Vant 2.0 改动一览
+# Vant 2.0 改动一览
 
 ## 不兼容更新
 
@@ -48,6 +48,8 @@
 - 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
 
 ## 新特性
+
+- 新增`Skeleton`骨架屏组件
 
 ### Sku
 

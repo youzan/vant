@@ -40,6 +40,7 @@ export default {
   'rate': () => wrapper(import('../../packages/rate/demo'), 'rate'),
   'search': () => wrapper(import('../../packages/search/demo'), 'search'),
   'sidebar': () => wrapper(import('../../packages/sidebar/demo'), 'sidebar'),
+  'skeleton': () => wrapper(import('../../packages/skeleton/demo'), 'skeleton'),
   'sku': () => wrapper(import('../../packages/sku/demo'), 'sku'),
   'slider': () => wrapper(import('../../packages/slider/demo'), 'slider'),
   'stepper': () => wrapper(import('../../packages/stepper/demo'), 'stepper'),
