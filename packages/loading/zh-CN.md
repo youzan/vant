@@ -9,18 +9,18 @@ Vue.use(Loading);
 
 ### 代码演示
 
-#### Circular
+#### 加载类型
 
 ```html
 <van-loading />
-<van-loading color="white" />
+<van-loading type="spinner" />
 ```
 
-#### Spinner
+#### 自定义颜色
 
 ```html
-<van-loading type="spinner" />
-<van-loading type="spinner" color="white" />
+<van-loading color="#1989fa" />
+<van-loading type="spinner" color="#1989fa" />
 ```
 
 ### API

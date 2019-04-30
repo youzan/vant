@@ -9,18 +9,18 @@ Vue.use(Loading);
 
 ### Usage
 
-#### Circular
+#### Type
 
 ```html
 <van-loading />
-<van-loading color="white" />
+<van-loading type="spinner" />
 ```
 
-#### Spinner
+#### Color
 
 ```html
-<van-loading type="spinner" />
-<van-loading type="spinner" color="white" />
+<van-loading color="#1989fa" />
+<van-loading type="spinner" color="#1989fa" />
 ```
 
 ### API

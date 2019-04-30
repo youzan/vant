@@ -1,15 +1,15 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('title1')">
+    <demo-block :title="$t('loadingType')">
       <van-loading />
-      <van-loading color="white" />
+      <van-loading type="spinner" />
     </demo-block>
 
-    <demo-block :title="$t('title2')">
-      <van-loading type="spinner" />
+    <demo-block :title="$t('loadingColor')">
+      <van-loading color="#1989fa" />
       <van-loading
         type="spinner"
-        color="white"
+        color="#1989fa"
       />
     </demo-block>
   </demo-section>
@@ -19,12 +19,12 @@
 export default {
   i18n: {
     'zh-CN': {
-      title1: 'Circular',
-      title2: 'Spinner'
+      loadingType: '加载类型',
+      loadingColor: '自定义颜色'
     },
     'en-US': {
-      title1: 'Circular',
-      title2: 'Spinner'
+      loadingType: 'Type',
+      loadingColor: 'Color'
     }
   }
 };
@@ -35,12 +35,6 @@ export default {
   .van-loading {
     display: inline-block;
     margin: 5px 0 5px 20px;
-  }
-
-  .van-loading--white {
-    padding: 10px;
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, .5);
   }
 }
 </style>
