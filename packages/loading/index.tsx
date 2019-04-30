@@ -42,11 +42,12 @@ function Loading(
   );
 
   return (
-    <div class={bem([type])} style={style} {...inherit(ctx, true)}>
-      <span class={bem('spinner', type)}>
+    <div class={bem([type])} {...inherit(ctx, true)}>
+      <span class={bem('spinner', type)} style={style}>
         {Spin}
         {Circular}
       </span>
+      {slots.default && <span class={bem('text')}>{slots.default()}</span>}
     </div>
   );
 }

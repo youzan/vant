@@ -23,6 +23,12 @@ Vue.use(Loading);
 <van-loading type="spinner" color="#1989fa" />
 ```
 
+#### 加载文案
+
+```html
+<van-loading size="24px">加载中...</van-loading>
+```
+
 ### API
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -30,3 +36,9 @@ Vue.use(Loading);
 | color | 颜色 | `String` | `#c9c9c9` | - |
 | type | 类型，可选值为 `spinner` | `String` | `circular` | - |
 | size | 大小 | `String` | `30px` | - |
+
+### Slot
+
+| 名称 | 说明 |
+|------|------|
+| default | 加载文案 |

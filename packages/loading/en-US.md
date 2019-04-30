@@ -23,6 +23,12 @@ Vue.use(Loading);
 <van-loading type="spinner" color="#1989fa" />
 ```
 
+#### Text
+
+```html
+<van-loading size="24px">Loading...</van-loading>
+```
+
 ### API
 
 | Attribute | Description | Type | Default |
@@ -30,3 +36,9 @@ Vue.use(Loading);
 | color | Loading color | `String` | `#c9c9c9` |  |
 | type | Can be set to `spinner` | `String` | `circular` |
 | size | Size | `String` | `30px` |
+
+### Slot
+
+| Name | Description |
+|------|------|
+| default | Loading text |

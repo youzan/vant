@@ -51,6 +51,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+## Loading
+
+- 新增`default`插槽
+
 ## NoticeBar
 
 - 新增`left-icon`插槽

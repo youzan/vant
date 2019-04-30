@@ -1,8 +1,6 @@
 @import '../style/var';
 
 .van-loading {
-  width: 30px;
-  height: 30px;
   z-index: 0;
   font-size: 0;
   line-height: 0;
@@ -11,12 +9,17 @@
 
   &__spinner {
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 30px;
+    height: 30px;
     position: relative;
     display: inline-block;
     box-sizing: border-box;
+    vertical-align: middle;
     animation: van-rotate 0.8s linear infinite;
+
+    // compatible for 1.x, users may set width or height in root element
+    max-width: 100%;
+    max-height: 100%;
 
     &--spinner {
       animation-timing-function: steps(12);
@@ -55,6 +58,15 @@
       stroke-linecap: round;
       animation: van-circular 1.5s ease-in-out infinite;
     }
+  }
+
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+    color: @loading-text-color;
+    font-size: @loading-text-font-size;
+    line-height: @loading-text-line-height;
+    margin-left: 10px;
   }
 }
 

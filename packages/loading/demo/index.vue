@@ -1,16 +1,22 @@
 <template>
   <demo-section>
-    <demo-block :title="$t('loadingType')">
+    <demo-block :title="$t('type')">
       <van-loading />
       <van-loading type="spinner" />
     </demo-block>
 
-    <demo-block :title="$t('loadingColor')">
+    <demo-block :title="$t('color')">
       <van-loading color="#1989fa" />
       <van-loading
         type="spinner"
         color="#1989fa"
       />
+    </demo-block>
+
+    <demo-block :title="$t('text')">
+      <van-loading size="24px">
+        {{ $t('loading') }}
+      </van-loading>
     </demo-block>
   </demo-section>
 </template>
@@ -19,12 +25,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      loadingType: '加载类型',
-      loadingColor: '自定义颜色'
+      type: '加载类型',
+      color: '自定义颜色',
+      text: '加载文案'
     },
     'en-US': {
-      loadingType: 'Type',
-      loadingColor: 'Color'
+      type: 'Type',
+      color: 'Color',
+      text: 'Text'
     }
   }
 };
