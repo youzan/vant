@@ -38,7 +38,10 @@ function SwitchCell(
 SwitchCell.props = {
   ...switchProps,
   title: String,
-  border: Boolean,
+  border: {
+    type: Boolean,
+    default: true
+  },
   size: {
     type: String,
     default: '24px'

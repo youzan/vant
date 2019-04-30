@@ -56,6 +56,10 @@
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
 
+## SwitchCell
+
+- 新增`border`属性
+
 ### Sku
 
 - 新增`preview-open`事件

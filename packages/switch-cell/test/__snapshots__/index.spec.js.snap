@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`border prop 1`] = `
+<div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-switch" style="font-size: 24px;">
+      <div class="van-switch__node"></div>
+    </div>
+  </div>
+</div>
+`;
