@@ -38,7 +38,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-field__body"><input type="tel" maxlength="6" placeholder="邮政编码" value="" class="van-field__control"></div>
         </div>
       </div>
-      <div class="van-cell van-cell--center van-cell--borderless van-switch-cell">
+      <div class="van-cell van-cell--center van-switch-cell">
         <div class="van-cell__title"><span>设为默认收货地址</span></div>
         <div class="van-cell__value">
           <div class="van-switch" style="font-size:24px;">
