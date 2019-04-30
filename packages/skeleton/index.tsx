@@ -1,6 +1,5 @@
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
-import { isNumber } from '../utils/validate/number';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -21,11 +20,6 @@ export type SkeletonProps = {
 const [sfc, bem] = use('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
 const DEFAULT_LAST_ROW_WIDTH = '60%';
-
-function suffixPx(value: string | number): string {
-  value = String(value);
-  return isNumber(value) ? `${value}px` : value;
-}
 
 function Skeleton(
   h: CreateElement,

@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -6,9 +6,10 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
 export type LoadingProps = {
-  size?: string;
   type: string;
+  size?: string;
   color: string;
+  textSize?: string | number;
 };
 
 const [sfc, bem] = use('loading');
@@ -41,19 +42,34 @@ function Loading(
     </svg>
   );
 
+  function Text() {
+    if (slots.default) {
+      const style = props.textSize && {
+        fontSize: suffixPx(props.textSize)
+      };
+
+      return (
+        <span class={bem('text')} style={style}>
+          {slots.default()}
+        </span>
+      );
+    }
+  }
+
   return (
     <div class={bem([type])} {...inherit(ctx, true)}>
       <span class={bem('spinner', type)} style={style}>
         {Spin}
         {Circular}
       </span>
-      {slots.default && <span class={bem('text')}>{slots.default()}</span>}
+      {Text()}
     </div>
   );
 }
 
 Loading.props = {
   size: String,
+  textSize: [String, Number],
   type: {
     type: String,
     default: 'circular'

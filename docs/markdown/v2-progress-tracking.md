@@ -54,6 +54,7 @@
 ## Loading
 
 - 新增`default`插槽
+- 新增`text-size`属性
 
 ## NoticeBar
 

@@ -35,7 +35,8 @@ Vue.use(Loading);
 |------|------|------|------|
 | color | Loading color | `String` | `#c9c9c9` |  |
 | type | Can be set to `spinner` | `String` | `circular` |
-| size | Size | `String` | `30px` |
+| size | Icon size | `String` | `30px` |
+| text-size | Text font size | `String | Number` | `14px` |
 
 ### Slot
 

@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { isNumber } from './validate/number';
 
 export { use } from './use';
 
@@ -47,4 +48,9 @@ export function range(num: number, min: number, max: number): number {
 
 export function isInDocument(element: HTMLElement): boolean {
   return document.body.contains(element);
+}
+
+export function suffixPx(value: string | number): string {
+  value = String(value);
+  return isNumber(value) ? `${value}px` : value;
 }

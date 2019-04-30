@@ -122,7 +122,7 @@ export default {
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前选中项的 name |
 
-### Radio Slots
+### Radio Slot
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|

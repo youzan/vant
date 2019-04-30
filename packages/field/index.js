@@ -1,9 +1,8 @@
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { use, isObj, isDef, isIOS } from '../utils';
 import { getRootScrollTop } from '../utils/scroll';
-import { isNumber } from '../utils/validate/number';
+import { use, isObj, isDef, isIOS, suffixPx } from '../utils';
 
 const [sfc, bem] = use('field');
 
@@ -66,8 +65,7 @@ export default sfc({
     labelStyle() {
       const { labelWidth } = this;
       if (labelWidth) {
-        const width = isNumber(String(labelWidth)) ? `${labelWidth}px` : labelWidth;
-        return { width };
+        return { width: suffixPx(labelWidth) };
       }
     }
   },
