@@ -11,17 +11,14 @@
   color: @orange-dark;
   background-color: @orange-light;
 
-  &__left-icon {
+  &__left-icon,
+  &__right-icon {
     font-size: 16px;
     min-width: 22px;
   }
 
   &__right-icon {
-    top: 50%;
-    right: 15px;
-    font-size: 16px;
-    position: absolute;
-    margin-top: -0.5em;
+    text-align: right;
   }
 
   &__wrap {
@@ -62,11 +59,6 @@
         white-space: normal;
       }
     }
-  }
-
-  &--withicon {
-    position: relative;
-    padding-right: 40px;
   }
 }
 

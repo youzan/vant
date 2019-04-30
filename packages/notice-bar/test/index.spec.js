@@ -13,12 +13,13 @@ test('close event', () => {
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 
-test('left-icon slot', () => {
+test('icon slot', () => {
   const wrapper = mount({
     template: `
       <notice-bar>
         Content
         <template v-slot:left-icon>Custom Left Icon</template>
+        <template v-slot:right-icon>Custom Right Icon</template>
       </notice-bar>
     `,
     components: {

@@ -54,6 +54,7 @@
 ## NoticeBar
 
 - 新增`left-icon`插槽
+- 新增`right-icon`插槽
 
 ### Sku
 

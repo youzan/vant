@@ -77,9 +77,7 @@ export default sfc({
   },
 
   render(h) {
-    const { mode } = this;
-
-    const iconName = mode === 'closeable' ? 'cross' : mode === 'link' ? 'arrow' : '';
+    const { slots, mode, leftIcon, onClickIcon } = this;
 
     const barStyle = {
       color: this.color,
@@ -92,20 +90,41 @@ export default sfc({
       animationDuration: this.duration + 's'
     };
 
-    const LeftIcon =
-      this.slots('left-icon') ||
-      (this.leftIcon && <Icon class={bem('left-icon')} name={this.leftIcon} />);
+    function LeftIcon() {
+      const slot = slots('left-icon');
+
+      if (slot) {
+        return slot;
+      }
+
+      if (leftIcon) {
+        return <Icon class={bem('left-icon')} name={leftIcon} />;
+      }
+    }
+
+    function RightIcon() {
+      const slot = slots('right-icon');
+
+      if (slot) {
+        return slot;
+      }
+
+      const iconName = mode === 'closeable' ? 'cross' : mode === 'link' ? 'arrow' : '';
+      if (iconName) {
+        return <Icon class={bem('right-icon')} name={iconName} onClick={onClickIcon} />;
+      }
+    }
 
     return (
       <div
         vShow={this.showNoticeBar}
-        class={bem({ withicon: mode, wrapable: this.wrapable })}
+        class={bem({ wrapable: this.wrapable })}
         style={barStyle}
         onClick={() => {
           this.$emit('click');
         }}
       >
-        {LeftIcon}
+        {LeftIcon()}
         <div ref="wrap" class={bem('wrap')}>
           <div
             ref="content"
@@ -121,9 +140,7 @@ export default sfc({
             {this.slots() || this.text}
           </div>
         </div>
-        {iconName && (
-          <Icon class={bem('right-icon')} name={iconName} onClick={this.onClickIcon} />
-        )}
+        {RightIcon()}
       </div>
     );
   }
