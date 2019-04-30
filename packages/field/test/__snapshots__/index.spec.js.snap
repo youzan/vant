@@ -19,7 +19,7 @@ exports[`clearable 2`] = `
 
 exports[`label-width prop with unit 1`] = `
 <div class="van-cell van-field">
-  <div class="van-cell__title van-field__label" style="max-width: 10rem; min-width: 10rem;"><span>Label</span></div>
+  <div class="van-cell__title van-field__label" style="width: 10rem;"><span>Label</span></div>
   <div class="van-cell__value">
     <div class="van-field__body"><input type="text" class="van-field__control"></div>
   </div>
@@ -28,7 +28,7 @@ exports[`label-width prop with unit 1`] = `
 
 exports[`label-width prop without unit 1`] = `
 <div class="van-cell van-field">
-  <div class="van-cell__title van-field__label" style="max-width: 100px; min-width: 100px;"><span>Label</span></div>
+  <div class="van-cell__title van-field__label" style="width: 100px;"><span>Label</span></div>
   <div class="van-cell__value">
     <div class="van-field__body"><input type="text" class="van-field__control"></div>
   </div>

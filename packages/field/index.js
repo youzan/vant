@@ -67,10 +67,7 @@ export default sfc({
       const { labelWidth } = this;
       if (labelWidth) {
         const width = isNumber(String(labelWidth)) ? `${labelWidth}px` : labelWidth;
-        return {
-          maxWidth: width,
-          minWidth: width
-        };
+        return { width };
       }
     }
   },
