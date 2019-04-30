@@ -141,7 +141,7 @@ export default {
 
 ### ContactCard Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | - |
 
@@ -155,7 +155,7 @@ export default {
 
 ### ContactList Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | add | 点击新增按钮时触发 | - |
 | edit | 点击编辑按钮时触发 | item: 当前联系人对象，index: 索引 |
@@ -173,7 +173,7 @@ export default {
 
 ### ContactEdit Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |

@@ -95,7 +95,7 @@ export default {
 
 ### Slot
 
-| 名称 | 说明 |
+| Name | Description |
 |------|------|
-| - | Custom content after list |
+| default | Custom content after list |
 | top | Custom content before list |

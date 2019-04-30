@@ -194,7 +194,7 @@ export default {
 
 ### Tabs Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击标签时触发 | index：标签索引，title：标题 |
 | change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |

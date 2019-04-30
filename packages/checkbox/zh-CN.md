@@ -159,22 +159,22 @@ export default {
 
 ### Checkbox Event
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 | click | 点击复选框时触发 | event: Event |
 
 ### CheckboxGroup Event
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
-### Checkbox 插槽
+### Checkbox Slots
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|
-| - | 自定义文本 | - |
+| default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |
 
 ### Checkbox 方法

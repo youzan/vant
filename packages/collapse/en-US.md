@@ -104,9 +104,9 @@ export default {
 
 ### CollapseItem Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Content |
+| default | Content |
 | value | Custom value |
 | icon | Custom icon |
 | title | Custom title |

@@ -128,9 +128,9 @@ Vue.use(Cell).use(CellGroup);
 
 ### Cell Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Default slot |
+| default | Default slot |
 | icon | Custom icon |
 | title | Custom title |
 | label | Custom label |

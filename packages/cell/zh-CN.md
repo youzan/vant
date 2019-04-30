@@ -126,7 +126,7 @@ Vue.use(Cell).use(CellGroup);
 
 ### Cell Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击单元格时触发 | - |
 
@@ -134,7 +134,7 @@ Vue.use(Cell).use(CellGroup);
 
 | 名称 | 说明 |
 |------|------|
-| - | 自定义`value`显示内容 |
+| default | 自定义`value`显示内容 |
 | title | 自定义标题显示内容 |
 | label | 自定义标题下方描述显示内容 |
 | icon | 自定义左侧图标 |

@@ -69,7 +69,7 @@ export default {
 
 ### Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同 after-read |
 
@@ -77,7 +77,7 @@ export default {
 
 | 名称 | 说明 |
 |------|------|
-| - | 自定义 uploader 内容 |
+| default | 自定义 uploader 内容 |
 
 ### before-read、after-read 回调参数
 

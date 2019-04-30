@@ -44,6 +44,6 @@ Vue.use(Panel);
 
 | 名称 | 说明 |
 |------|------|
-| - | 自定义内容 |
+| default | 自定义内容 |
 | header | 自定义 header |
 | footer | 自定义 footer |

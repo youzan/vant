@@ -85,6 +85,6 @@ Use slot to add custom contents.
 
 | Name | Description |
 |------|------|
-| - | Custom left content |
+| default | Custom left content |
 | top | Custom top content |
 | tip | Custom tips |

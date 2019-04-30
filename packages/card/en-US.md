@@ -66,7 +66,7 @@ Use slot to custom content.
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | title | Custom title |
 | desc | Custom description |

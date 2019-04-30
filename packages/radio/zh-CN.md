@@ -112,19 +112,19 @@ export default {
 
 ### Radio Event
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击单选框时触发 | event: Event |
 
 ### RadioGroup Event
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前选中项的 name |
 
-### Radio 插槽
+### Radio Slots
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|
-| - | 自定义文本 | - |
+| default | 自定义文本 | - |
 | icon | 自定义图标 | checked: 是否为选中状态 |

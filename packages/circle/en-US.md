@@ -70,6 +70,6 @@ export default {
 
 ### Cell Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | custom text content |
+| default | custom text content |

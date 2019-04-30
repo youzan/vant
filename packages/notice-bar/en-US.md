@@ -71,6 +71,6 @@ Vue.use(NoticeBar);
 
 | Name | Description |
 |------|------|
-| - | Notice text content |
+| default | Notice text content |
 | left-icon | Custom left icon |
 | right-icon | Custom right icon |

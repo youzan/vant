@@ -63,9 +63,9 @@ export default {
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Default slot |
+| default | Default slot |
 | normal | Content of head when at normal status |
 | pulling | Content of head when at pulling |
 | loosing | Content of head when at loosing |

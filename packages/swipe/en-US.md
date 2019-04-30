@@ -149,7 +149,7 @@ Use ref to get swipe instance and call instance methods
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Content |
+| default | Content |
 | indicator | Custom indicator |

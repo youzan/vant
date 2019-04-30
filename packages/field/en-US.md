@@ -157,7 +157,7 @@ Use ref to get field instance and call instance methods
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | label | Custom label |
 | left-icon | Custom left icon |

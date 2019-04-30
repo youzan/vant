@@ -58,7 +58,7 @@ export default {
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | title | Custom title |
 | left | Custom left side content |

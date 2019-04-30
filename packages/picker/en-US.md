@@ -160,7 +160,7 @@ Picker events will pass different parameters according to the columns are single
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | title | Custom title |
 

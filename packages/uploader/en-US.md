@@ -79,7 +79,7 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 
 | Name | Description |
 |------|------|
-| - | Custom icon |
+| default | Custom icon |
 
 ### Parematers of before-read、after-read
 

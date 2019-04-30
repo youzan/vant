@@ -123,5 +123,5 @@ Use ref to get list instance and call instance methods
 
 | Name | Description |
 |------|------|
-| - | List content |
+| default | List content |
 | loading | Custom loading tips |

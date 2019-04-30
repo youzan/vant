@@ -123,7 +123,7 @@ export default {
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | index | Custom index |
 

@@ -67,9 +67,9 @@ export default {
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | custom content |
+| default | custom content |
 | left | content of left scrollable area |
 | right | content of right scrollabe area |
 

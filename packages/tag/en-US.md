@@ -78,9 +78,9 @@ Vue.use(Tag);
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Default slot |
+| default | Default slot |
 
 ### Event
 

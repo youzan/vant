@@ -131,13 +131,13 @@ export default {
 
 ### Event
 
-| 事件名称 | 说明 | 回调参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当值变化时触发的事件 | picker 实例 |
 | confirm | 点击完成按钮时触发的事件 | 当前 value |
 | cancel | 点击取消按钮时触发的事件 | - |
 
-### change事件
+### change 事件
 
 在`change`事件中，可以获取到`picker`实例，对`picker`进行相应的更新等操作：
 

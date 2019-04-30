@@ -93,7 +93,7 @@ export default {
 
 ### Collapse Event
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 切换面板时触发 | activeNames: `string | array` |
 
@@ -118,7 +118,7 @@ export default {
 
 | 名称 | 说明 |
 |------|------|
-| - | 面板内容 |
+| default | 面板内容 |
 | value | 自定义显示内容 |
 | icon | 自定义`icon` |
 | title | 自定义`title` |

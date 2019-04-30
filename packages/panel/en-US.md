@@ -40,8 +40,8 @@ Vue.use(Panel);
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
-| - | Default slot |
+| default | Default slot |
 | header | Custom header |
 | footer | Custom footer |

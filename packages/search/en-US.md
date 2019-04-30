@@ -83,7 +83,7 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 
 ### Slot
 
-| name | Description |
+| Name | Description |
 |------|------|
 | action | Custom right button, displayed when `showAction` is true |
 | left-icon | Custom left icon |

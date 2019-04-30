@@ -92,7 +92,7 @@ export default {
 
 | Name | Description |
 |------|------|
-| - | Custom content below postal |
+| default | Custom content below postal |
 
 ### Methods
 

@@ -67,7 +67,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 
 Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
-| 事件名 | 说明 | 参数 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | cancel | 取消搜索 | - |
 | search | 确定搜索 | - |
