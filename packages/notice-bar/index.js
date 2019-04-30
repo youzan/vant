@@ -92,6 +92,10 @@ export default sfc({
       animationDuration: this.duration + 's'
     };
 
+    const LeftIcon =
+      this.slots('left-icon') ||
+      (this.leftIcon && <Icon class={bem('left-icon')} name={this.leftIcon} />);
+
     return (
       <div
         vShow={this.showNoticeBar}
@@ -101,9 +105,7 @@ export default sfc({
           this.$emit('click');
         }}
       >
-        {this.leftIcon && (
-          <Icon class={bem('left-icon')} name={this.leftIcon} />
-        )}
+        {LeftIcon}
         <div ref="wrap" class={bem('wrap')}>
           <div
             ref="content"
@@ -120,11 +122,7 @@ export default sfc({
           </div>
         </div>
         {iconName && (
-          <Icon
-            class={bem('right-icon')}
-            name={iconName}
-            onClick={this.onClickIcon}
-          />
+          <Icon class={bem('right-icon')} name={iconName} onClick={this.onClickIcon} />
         )}
       </div>
     );

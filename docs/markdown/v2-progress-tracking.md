@@ -51,6 +51,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+## NoticeBar
+
+- 新增`left-icon`插槽
+
 ### Sku
 
 - 新增`preview-open`事件
