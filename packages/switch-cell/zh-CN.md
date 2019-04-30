@@ -56,6 +56,7 @@ export default {
 | v-model | 开关状态 | `null` | `false` | - |
 | title | 左侧标题 |  `String` | `''` | - |
 | border | 是否展示单元格内边框 | `Boolean` | `true` | 2.0.0 |
+| cell-size | 单元格大小，可选值为 `large` | `String` | 2.0.0 |
 | loading | 是否为加载状态 |  `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
 | size | 开关尺寸 | `String` | `24px` | 1.1.11 |

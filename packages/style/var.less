@@ -267,8 +267,10 @@
 @switch-border: 1px solid rgba(0, 0, 0, .1);
 
 // SwitchCell
-@switch-cell-padding-top: 9px;
-@switch-cell-padding-bottom: 9px;
+@switch-cell-padding-top: @cell-vertical-padding - 1px;
+@switch-cell-padding-bottom: @cell-vertical-padding -1px;
+@switch-cell-large-padding-top: @cell-large-vertical-padding - 1px;
+@switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px;
 
 // Tab
 @tabs-line-height: 44px;

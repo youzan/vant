@@ -57,6 +57,7 @@ use `loading` property to keep component in loading state
 | v-model | on-off state of the switch | `any` | `false` |
 | title | the left side title | `String` | `''` |
 | border | whether to show cell border | `Boolean` | `true` |
+| cell-size | Cell size，can be set to `large` | `String` | - |
 | loading | whether switch is loading | `Boolean` | `false` |
 | disabled | whether to disable switch | `Boolean` | `false` |
 | size | Size of switch | `String` | `24px` |

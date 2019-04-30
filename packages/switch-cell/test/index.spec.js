@@ -25,3 +25,13 @@ test('border prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('cell-size prop', () => {
+  const wrapper = mount(SwitchCell, {
+    propsData: {
+      cellSize: 'large'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

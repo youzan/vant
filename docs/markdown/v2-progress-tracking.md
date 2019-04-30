@@ -59,6 +59,7 @@
 ## SwitchCell
 
 - 新增`border`属性
+- 新增`cell-size`属性
 
 ### Sku
 

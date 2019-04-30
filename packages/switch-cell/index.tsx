@@ -12,6 +12,7 @@ export type SwitchCellProps = SharedSwitchProps & {
   size: string;
   title?: string;
   border?: boolean;
+  cellSize?: string;
 };
 
 const [sfc, bem] = use('switch-cell');
@@ -25,9 +26,10 @@ function SwitchCell(
   return (
     <Cell
       center
+      size={props.cellSize}
       title={props.title}
       border={props.border}
-      class={bem()}
+      class={bem([props.cellSize])}
       {...inherit(ctx)}
     >
       <Switch {...{ props, on: ctx.listeners }} />
@@ -38,6 +40,7 @@ function SwitchCell(
 SwitchCell.props = {
   ...switchProps,
   title: String,
+  cellSize: String,
   border: {
     type: Boolean,
     default: true
