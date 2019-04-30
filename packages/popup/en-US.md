@@ -54,6 +54,7 @@ Use `position` prop to set popup display position
 
 | Event | Description | Arguments |
 |------|------|------|
+| click | Triggered when click Popup | - |
 | open | Triggered when open Popup | - |
 | opened | Triggered when opened Popup | - |
 | close | Triggered when close Popup | - |

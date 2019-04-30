@@ -25,7 +25,7 @@ export default sfc({
     }
 
     const { position } = this;
-    const emit = event => () => this.$emit(event);
+    const emit = eventName => event => this.$emit(eventName, event);
     const transitionName = this.transition || (position ? `van-popup-slide-${position}` : 'van-fade');
 
     return (
@@ -34,7 +34,7 @@ export default sfc({
         onAfterEnter={emit('opened')}
         onAfterLeave={emit('closed')}
       >
-        <div vShow={this.value} class={bem({ [position]: position })}>
+        <div vShow={this.value} class={bem({ [position]: position })} onClick={emit('click')}>
           {this.slots()}
         </div>
       </transition>

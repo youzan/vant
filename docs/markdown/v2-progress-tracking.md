@@ -53,6 +53,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+### Popup
+
+- 新增`click`事件
+
 ### Loading
 
 - 新增`default`插槽
