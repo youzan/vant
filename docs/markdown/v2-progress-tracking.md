@@ -47,22 +47,24 @@
 
 - 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
 
+---
+
 ## 新特性
 
 - 新增`Skeleton`骨架屏组件
 
-## Loading
+### Loading
 
 - 新增`default`插槽
 - 新增`text-size`属性
 - 支持`Number`类型的`size`属性
 
-## NoticeBar
+### NoticeBar
 
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
 
-## SwitchCell
+### SwitchCell
 
 - 新增`border`属性
 - 新增`cell-size`属性
