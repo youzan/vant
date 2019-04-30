@@ -300,13 +300,13 @@ export default sfc({
         indexImage
       };
 
-      this.$emit('preview-open', params);
+      this.$emit('open-preview', params);
 
       ImagePreview({
         images: this.imageList,
         startPosition: index,
         onClose: () => {
-          this.$emit('preview-close', params);
+          this.$emit('close-preview', params);
         }
       });
     },
