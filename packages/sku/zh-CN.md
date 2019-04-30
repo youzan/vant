@@ -129,6 +129,8 @@ Vue.use(Sku);
 | buy-clicked | 点击购买回调 | skuData: Object |
 | stepper-change | 购买数量变化时触发 | value: number |
 | sku-selected | 切换规格类目时触发 | { skuValue, selectedSku, selectedSkuComb } |
+| open-preview | 打开商品图片预览时触发 | data: Object |
+| close-preview | 关闭商品图片预览时触发 | data: Object |
 
 ### 方法
 

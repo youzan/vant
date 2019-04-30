@@ -294,19 +294,19 @@ export default sfc({
     onPreviewImage(indexImage) {
       const index = this.imageList.findIndex(image => image === indexImage);
 
-      const cbParams = {
+      const params = {
         index,
         imageList: this.imageList,
         indexImage
       };
 
-      this.$emit('preview-on', cbParams);
+      this.$emit('open-preview', params);
 
       ImagePreview({
         images: this.imageList,
         startPosition: index,
         onClose: () => {
-          this.$emit('preview-close', cbParams);
+          this.$emit('close-preview', params);
         }
       });
     },

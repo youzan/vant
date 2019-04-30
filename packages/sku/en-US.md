@@ -126,6 +126,8 @@ Vue.use(Sku);
 | buy-clicked | Triggered when click buy button | data: Object |
 | stepper-change | Triggered when stepper value changed | value: number |
 | sku-selected | Triggered when select sku | { skuValue, selectedSku, selectedSkuComb } |
+| open-preview | Triggered when open image preview | data: Object |
+| close-preview | Triggered when close image preview | data: Object |
 
 ### Methods
 
