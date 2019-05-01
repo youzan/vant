@@ -63,6 +63,10 @@
 - 新增`text-size`属性
 - 支持`Number`类型的`size`属性
 
+### Notify
+
+- 新增`onClick`属性
+
 ### NoticeBar
 
 - 新增`left-icon`插槽

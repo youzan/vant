@@ -55,3 +55,4 @@ export default {
 | color | 字体颜色 | `String` | `#fff` | 1.4.7 |
 | background | 背景颜色 | `String` | `#f44` | 1.4.7 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
+| onClick | 点击时的回调函数 | `Function` | - | 2.0.0 |

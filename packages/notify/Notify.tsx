@@ -41,6 +41,9 @@ function Notify(
       onInput={(value: boolean) => {
         emit(ctx, 'input', value);
       }}
+      onClick={(event: Event) => {
+        emit(ctx, 'click', event);
+      }}
       {...inherit(ctx)}
     >
       {props.message}

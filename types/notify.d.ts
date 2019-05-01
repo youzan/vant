@@ -9,6 +9,7 @@ export type NotifyOptions = {
   duration?: number;
   className?: any;
   background?: string;
+  onClick?: ((event: Event) => void) | null;
 }
 
 export interface VanNotify extends Vue {

@@ -47,3 +47,14 @@ test('set default options', () => {
   expect(Notify().duration).toEqual(3000);
   Notify.clear();
 });
+
+test('onClick prop', async () => {
+  const onClick = jest.fn();
+  const notify = Notify({
+    message: 'test',
+    onClick
+  });
+
+  notify.$el.click();
+  expect(onClick).toHaveBeenCalled();
+});

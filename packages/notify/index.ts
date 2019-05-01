@@ -19,7 +19,15 @@ function Notify(options: NotifyOptions) {
   }
 
   if (!instance) {
-    instance = mount(VanNotify);
+    instance = mount(VanNotify, {
+      on: {
+        click(event: Event) {
+          if (instance.onClick) {
+            instance.onClick(event);
+          }
+        }
+      }
+    });
   }
 
   options = {
@@ -44,7 +52,8 @@ function defaultOptions(): NotifyOptions {
     color: WHITE,
     background: RED,
     duration: 3000,
-    className: ''
+    className: '',
+    onClick: null
   };
 }
 

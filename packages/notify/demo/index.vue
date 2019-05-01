@@ -42,7 +42,8 @@ export default {
       this.$notify({
         message: this.$t('content'),
         duration: 1000,
-        background: '#1989fa'
+        background: '#1989fa',
+        onClick: () => this.$toast('click!!!')
       });
     }
   }
