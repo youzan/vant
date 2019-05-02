@@ -43,8 +43,9 @@ export default sfc({
         );
       }
 
-      if (inactiveIcon) {
-        return <Icon class={bem('icon')} name={inactiveIcon} />;
+      const inactiveIconSlot = slots('inactive-icon');
+      if (inactiveIcon || inactiveIconSlot) {
+        return inactiveIconSlot || <Icon class={bem('icon')} name={inactiveIcon} />;
       }
 
       return <i class={bem('circle')} />;

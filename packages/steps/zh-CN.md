@@ -83,3 +83,4 @@ export default {
 | 名称 | 说明 |
 |------|------|
 | active-icon | 自定义激活状态图标 |
+| inactive-icon | 自定义未激活状态图标 |

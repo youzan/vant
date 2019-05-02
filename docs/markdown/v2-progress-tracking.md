@@ -75,6 +75,7 @@
 ### Steps
 
 - 新增`inactive-icon`属性
+- 新增`inactive-icon`插槽
 
 ### SwitchCell
 

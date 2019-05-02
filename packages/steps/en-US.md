@@ -79,4 +79,5 @@ export default {
 
 | Name | Description |
 |------|------|
-| icon | Custom icon |
+| active-icon | Custom active icon |
+| inactive-icon | Custom inactive icon |
