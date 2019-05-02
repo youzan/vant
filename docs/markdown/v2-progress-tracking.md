@@ -72,6 +72,10 @@
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
 
+### Steps
+
+- 新增`inactive-icon`属性
+
 ### SwitchCell
 
 - 新增`border`属性

@@ -6,6 +6,7 @@ const [sfc, bem] = use('steps');
 export default sfc({
   props: {
     active: Number,
+    inactiveIcon: String,
     direction: {
       type: String,
       default: 'horizontal'

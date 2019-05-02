@@ -74,8 +74,9 @@ export default {
 |------|------|------|------|------|
 | active | 当前步骤 | `Number` | 0 | - |
 | direction | 显示方向，可选值为 `vertical` | `String` | `horizontal` | - |
-| active-icon | 激活状态底部图标，可选值见 Icon 组件 | `String` | `checked` | 1.6.9 |
 | active-color | 激活状态颜色 | `String` | `#07c160` | - |
+| active-icon | 激活状态底部图标，可选值见 Icon 组件 | `String` | `checked` | 1.6.9 |
+| inactive-icon | 未激活状态底部图标，可选值见 Icon 组件 | `String` | - | 2.0.0 |
 
 ### Step Slot
 

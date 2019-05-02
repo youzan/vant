@@ -42,18 +42,19 @@
 
     .van-step__circle-container {
       position: absolute;
-      top: 28px;
+      top: 30px;
       left: -8px;
       padding: 0 8px;
-      background-color: @white;
       z-index: 1;
+      background-color: @white;
+      transform: translateY(-50%);
     }
 
     .van-step__title {
-      font-size: 12px;
-      transform: translate3d(-50%, 0, 0);
       display: inline-block;
+      font-size: 12px;
       margin-left: 3px;
+      transform: translateX(-50%);
     }
 
     .van-step__line {
@@ -65,18 +66,13 @@
       background-color: @border-color;
     }
 
-    &.van-step--process {
+    .van-step__icon {
+      display: block;
+      font-size: 12px;
+    }
+
+    .van-step--process {
       color: @text-color;
-
-      .van-step__circle-container {
-        top: 24px;
-      }
-
-      .van-icon {
-        font-size: 12px;
-        color: @green;
-        display: block;
-      }
     }
   }
 
@@ -104,14 +100,14 @@
       }
     }
 
-    .van-step__circle-container > i {
+    .van-step__circle-container {
       position: absolute;
       z-index: 2;
-    }
-
-    .van-step__circle {
-      top: 16px;
-      left: -17px;
+      top: 19px;
+      left: -15px;
+      line-height: 1;
+      font-size: 12px;
+      transform: translate(-50%, -50%);
     }
 
     .van-step__line {
@@ -121,15 +117,6 @@
       width: 1px;
       height: 100%;
       background-color: @border-color;
-    }
-
-    &.van-step--process {
-      .van-icon {
-        top: 12px;
-        left: -20px;
-        line-height: 1;
-        font-size: 12px;
-      }
     }
   }
 

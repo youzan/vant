@@ -30,24 +30,32 @@ export default sfc({
   },
 
   render(h) {
-    const { status } = this;
-    const { activeIcon, activeColor, direction } = this.$parent;
+    const { slots, status } = this;
+    const { activeIcon, activeColor, inactiveIcon, direction } = this.$parent;
     const titleStyle = status === 'process' && { color: activeColor };
+
+    function Circle() {
+      if (status === 'process') {
+        return (
+          slots('active-icon') || (
+            <Icon class={bem('icon')} name={activeIcon} color={activeColor} />
+          )
+        );
+      }
+
+      if (inactiveIcon) {
+        return <Icon class={bem('icon')} name={inactiveIcon} />;
+      }
+
+      return <i class={bem('circle')} />;
+    }
 
     return (
       <div class={['van-hairline', bem([direction, { [status]: status }])]}>
         <div class={bem('title')} style={titleStyle}>
           {this.slots()}
         </div>
-        <div class={bem('circle-container')}>
-          {status !== 'process' ? (
-            <i class={bem('circle')} />
-          ) : (
-            this.slots('active-icon') || (
-              <Icon name={activeIcon} style={{ color: activeColor }} />
-            )
-          )}
-        </div>
+        <div class={bem('circle-container')}>{Circle()}</div>
         <div class={bem('line')} />
       </div>
     );

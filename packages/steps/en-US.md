@@ -71,8 +71,9 @@ export default {
 | active | Active step | `Number` | 0 |
 | description | Description | `String` | - |
 | direction | Can be set to `vertical` | `String` | `horizontal` |
-| active-icon | Active icon name | `String` | `checked` |
 | active-color | Active step color | `String` | `#07c160` |
+| active-icon | Active icon name | `String` | `checked` |
+| inactive-icon | Active icon name | `String` | - |
 
 ### Step Slot
 
