@@ -53,6 +53,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+### Field
+
+- 新增`label-class`属性
+
 ### Popup
 
 - 新增`click`事件

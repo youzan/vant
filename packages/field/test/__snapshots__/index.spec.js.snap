@@ -17,6 +17,15 @@ exports[`clearable 2`] = `
 </div>
 `;
 
+exports[`label-class prop 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__title van-field__label custom-label-class"><span>Label</span></div>
+  <div class="van-cell__value">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div>
+</div>
+`;
+
 exports[`label-width prop with unit 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label" style="width: 10rem;"><span>Label</span></div>

@@ -17,6 +17,7 @@ export default sfc({
     readonly: Boolean,
     clearable: Boolean,
     labelWidth: [String, Number],
+    labelClass: null,
     labelAlign: String,
     inputAlign: String,
     autosize: [Boolean, Object],
@@ -242,7 +243,7 @@ export default sfc({
         isLink={this.isLink}
         required={this.required}
         titleStyle={this.labelStyle}
-        titleClass={bem('label', labelAlign)}
+        titleClass={[bem('label', labelAlign), this.labelClass]}
         class={bem({
           error: this.error,
           disabled: this.$attrs.disabled,

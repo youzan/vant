@@ -203,3 +203,13 @@ test('label-width prop without unit', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('label-class prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      label: 'Label',
+      labelClass: 'custom-label-class'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
