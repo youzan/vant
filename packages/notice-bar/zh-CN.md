@@ -54,7 +54,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -68,14 +68,14 @@ Vue.use(NoticeBar);
 | color | 文本颜色 | `String` | `#f60` | - |
 | background | 滚动条背景 | `String` | `#fff7cc` | - |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | - |
 | close | 关闭时触发 | - |
 
-### Slot
+### Slots
 
 | 名称 | 内容 |
 |------|------|

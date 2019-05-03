@@ -48,7 +48,7 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 </van-search>
 ```
 
-### API
+### Props
 
 Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
 
@@ -63,7 +63,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | error | 是否将输入内容标红 | `Boolean` | `false` | - |
 | input-align | 输入框内容对齐方式，可选值为 `center` `right` | `String` | `left` | - |
 
-### Event
+### Events
 
 Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
@@ -73,7 +73,7 @@ Search 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`
 | search | 确定搜索 | - |
 | clear | 点击清除按钮后触发 | - |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

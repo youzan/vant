@@ -45,7 +45,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -57,7 +57,7 @@ export default {
 | border | 是否显示下边框 | `Boolean` | `true` | 1.4.7 |
 | z-index | 元素 z-index | `Number` | `1` | - |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|
@@ -65,7 +65,7 @@ export default {
 | left | 自定义左侧区域内容 |
 | right | 自定义右侧区域内容 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

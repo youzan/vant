@@ -50,7 +50,7 @@ use `loading` property to keep component in loading state
 </van-cell-group>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -66,7 +66,7 @@ use `loading` property to keep component in loading state
 | active-value | Value when active | `any` | `true` |
 | inactive-value | Value when inactive | `any` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

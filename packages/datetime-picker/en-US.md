@@ -108,7 +108,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
@@ -127,7 +127,7 @@ export default {
 | cancel-button-text | Text of cancel button | `String` | `Cancel` |
 | visible-item-count | Count of visible columns | `Number` | `5` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

@@ -63,7 +63,7 @@ export default {
 }
 ```
 
-### Tabbar API
+### Tabbar Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -73,13 +73,13 @@ export default {
 | active-color | Color of active tab item | `String` | `#1989fa` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-### Tabbar Event
+### Tabbar Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered when change active tab | active: index of current tab |
 
-### TabbarItem API
+### TabbarItem Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -90,7 +90,7 @@ export default {
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
-### TabbarItem Slot
+### TabbarItem Slots
 
 | Name | Description | slot-scope |
 |------|------|------|

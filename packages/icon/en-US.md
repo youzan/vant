@@ -53,7 +53,7 @@ import 'vant/lib/icon/local.css';
 <van-icon class-prefix="my-icon" name="extra" />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -64,7 +64,7 @@ import 'vant/lib/icon/local.css';
 | class-prefix | ClassName prefix | `String` | `van-icon` |
 | tag | HTML Tag | `String` | `i` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

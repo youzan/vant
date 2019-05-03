@@ -29,7 +29,7 @@ Vue.use(Panel);
 </van-panel>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -38,7 +38,7 @@ Vue.use(Panel);
 | desc | Description | `String` | - |
 | status | Status | `String` | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

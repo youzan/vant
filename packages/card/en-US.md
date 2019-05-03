@@ -42,7 +42,7 @@ Use slot to custom content.
 </van-card>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -58,13 +58,13 @@ Use slot to custom content.
 | thumb-link | Thumb link URL | `String` | - |
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

@@ -49,7 +49,7 @@ export default {
 </van-cell-group>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -65,7 +65,7 @@ export default {
 | active-value | 打开时的值 | `any` | `true` | 1.5.6 |
 | inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

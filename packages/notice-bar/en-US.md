@@ -46,7 +46,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -60,14 +60,14 @@ Vue.use(NoticeBar);
 | color | Text color | `String` | `#f60` |
 | background | Background color | `String` | `#fff7cc` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when click NoticeBar | - |
 | close | Triggered when closed | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

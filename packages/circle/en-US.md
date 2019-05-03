@@ -53,7 +53,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -68,7 +68,7 @@ export default {
 | stroke-width | Stroke width | `Number` | `40` |
 | clockwise | Is clockwise | `Boolean` | `true` |
 
-### Cell Slot
+### Slots
 
 | Name | Description |
 |------|------|

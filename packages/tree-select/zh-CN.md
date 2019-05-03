@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 #### 传入参数
 

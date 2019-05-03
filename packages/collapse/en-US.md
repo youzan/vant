@@ -71,7 +71,7 @@ export default {
 
 
 
-### Collapse API
+### Collapse Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -79,13 +79,13 @@ export default {
 | accordion | Whether to be accordion mode | `Boolean` | `false` |
 | border | Whether to show outer border | `Boolean` | `true` |
 
-### Collapse Event
+### Collapse Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered when switch panel | activeNames: `string | array` |
 
-### CollapseItem API
+### CollapseItem Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -102,7 +102,7 @@ export default {
 | value-class | Value className | `String` | - |
 | label-class | Label className | `String` | - |
 
-### CollapseItem Slot
+### CollapseItem Slots
 
 | Name | Description |
 |------|------|

@@ -35,7 +35,7 @@ Vue.use(Area);
 <van-area :area-list="areaList" :columns-num="2" title="标题" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -49,7 +49,7 @@ Vue.use(Area);
 | confirm-button-text | 确认按钮文字 | `String` | `确认` | 1.5.3 |
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | 1.5.3 |
 
-### Event
+### Events
 
 | 事件 | 说明 | 回调参数 |
 | --- | --- | --- |

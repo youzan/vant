@@ -52,7 +52,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -66,7 +66,7 @@ export default {
 | show-page-size | 显示的页码个数 | `Number` | `5` | - |
 | force-ellipses | 显示省略号 | `Boolean` | `false` | - |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

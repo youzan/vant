@@ -92,7 +92,7 @@ export default {
 };  
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -105,7 +105,7 @@ export default {
 | active-value | Value when active | `any` | `true` |
 | inactive-value | Value when inactive | `any` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Parameters |
 |------|------|------|

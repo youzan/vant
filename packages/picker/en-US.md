@@ -134,7 +134,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 <van-picker :columns="columns" loading />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -149,7 +149,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 | visible-item-count | Count of visible columns | `Number` | `5` |
 | default-index | Default value index of single column picker | `Number` | `0` |
 
-### Event
+### Events
 Picker events will pass different parameters according to the columns are single or multiple
 
 | Event | Description | Arguments |
@@ -158,7 +158,7 @@ Picker events will pass different parameters according to the columns are single
 | cancel | Triggered when click cancel button | Single column：current value，current index<br>Multiple columns：current values，current indexes |
 | change | Triggered when current option changed | Single column：Picker instance, current value，current index<br>Multiple columns：Picker instance, current values，column index |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

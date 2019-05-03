@@ -83,7 +83,7 @@ export default {
 
 
 
-### Collapse API
+### Collapse Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -91,13 +91,13 @@ export default {
 | accordion | 是否开启手风琴模式 | `Boolean` | `false` | - |
 | border | 是否显示外边框 | `Boolean` | `true` | 1.6.9 |
 
-### Collapse Event
+### Collapse Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 切换面板时触发 | activeNames: `string | array` |
 
-### CollapseItem API
+### CollapseItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|------|
@@ -114,7 +114,7 @@ export default {
 | value-class | 右侧内容额外类名 | `String` | - | 1.4.8 |
 | label-class | 描述信息额外类名 | `String` | - | 1.4.8 |
 
-### CollapseItem Slot
+### CollapseItem Slots
 
 | 名称 | 说明 |
 |------|------|

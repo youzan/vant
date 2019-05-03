@@ -109,7 +109,7 @@ Use button slot to insert button
 </van-cell-group>
 ```
 
-### API
+### Props
 
 Field support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
@@ -136,7 +136,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | left-icon | Left side icon name | `String` | - |
 | right-icon | Right side icon name | `String` | - |
 
-### Event
+### Events
 
 Field support all native events of input tag，such as `focus`、`blur`、`keypress`
 
@@ -156,7 +156,7 @@ Use ref to get field instance and call instance methods
 | focus | - | - | Trigger input focus |
 | blur | - | - | Trigger input blur |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

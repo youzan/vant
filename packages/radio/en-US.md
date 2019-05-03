@@ -88,7 +88,7 @@ export default {
 </van-radio-group>
 ```
 
-### Radio API
+### Radio Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -99,26 +99,26 @@ export default {
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |
 
-### RadioGroup API
+### RadioGroup Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | v-model | Name of checked radio | `any` | - |
 | disabled | Diable all radios | `Boolean` | `false` |
 
-### Radio Event
+### Radio Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | click | Triggered when click radio | event: Event |
 
-### RadioGroup Event
+### RadioGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | change | Triggered when value changed | current value |
 
-### Radio Slot
+### Radio Slots
 
 | Name | Description | slot-scope |
 |------|------|------|

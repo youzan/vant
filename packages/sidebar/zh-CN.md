@@ -40,19 +40,19 @@ export default {
 };
 ```
 
-### Sidebar API
+### Sidebar Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | active-key | 当前导航项的索引 | `String | Number` | `0` | - |
 
-### Sidebar Event
+### Sidebar Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 切换当前导航项时触发 | key: 当前导航项的索引 |
 
-### SidebarItem API
+### SidebarItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -60,7 +60,7 @@ export default {
 | info | 提示消息 | `String | Number` | `''` | - |
 | url | 跳转链接 | `String` | - | - |
 
-### SidebarItem Event
+### SidebarItem Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

@@ -29,7 +29,7 @@ Vue.use(Loading);
 <van-loading size="24px">Loading...</van-loading>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -38,7 +38,7 @@ Vue.use(Loading);
 | size | Icon size | `String | Number` | `30px` |
 | text-size | Text font size | `String | Number` | `14px` |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

@@ -40,19 +40,19 @@ export default {
 };
 ```
 
-### Sidebar API
+### Sidebar Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | active-key | Index of chosen item | `String | Number` | `0` |
 
-### Sidebar Event
+### Sidebar Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered when item changed | key: index of current item |
 
-### SidebarItem API
+### SidebarItem Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -60,7 +60,7 @@ export default {
 | info | Info Message | `String | Number` | `''` |
 | url | Link | `String` | - |
 
-### SidebarItem Event
+### SidebarItem Events
 
 | Event | Description | Arguments |
 |------|------|------|

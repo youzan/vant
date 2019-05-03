@@ -54,7 +54,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -69,7 +69,7 @@ export default {
 | stroke-width | 进度条宽度 | `Number` | `40` | - |
 | clockwise | 是否顺时针增加 | `Boolean` | `true` | - |
 
-### Circle Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

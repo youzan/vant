@@ -90,14 +90,14 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-### CellGroup API
+### CellGroup Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Group title | `String` | - |
 | border | Whether to show outer border | `Boolean` | `true` |
 
-### Cell API
+### Cell Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -120,13 +120,13 @@ Vue.use(Cell).use(CellGroup);
 | value-class | Value className | `any` | - |
 | label-class | Label className | `any` | - |
 
-### Cell Event
+### Cell Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when click cell | - |
 
-### Cell Slot
+### Cell Slots
 
 | Name | Description |
 |------|------|

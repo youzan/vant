@@ -96,7 +96,7 @@ Vue.use(Sku);
 </van-sku>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -118,7 +118,7 @@ Vue.use(Sku);
 | message-config | Message related config | `Object` | `{}` |
 | get-container | Return the mount node for sku | `String | () => HTMLElement` | - |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -137,7 +137,7 @@ Use ref to get sku instance and call instance methods
 |------|------|------|------|
 | getSkuData | - | skuData | Get current skuData |
 
-### Slot
+### Slots
 
 | Name | Description | 
 |------|------|
@@ -270,7 +270,7 @@ messageConfig: {
 }
 ```
 
-#### Event Params Data Structure
+#### Events Params Data Structure
 
 ```javascript
 skuData: {

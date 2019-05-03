@@ -91,7 +91,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -105,7 +105,7 @@ export default {
 | immediate-check | Whether to check loading position immediately after mounted | `Boolean` | `true` |
 | direction | Scroll direction，can be set to `up` | `String` | `down` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -119,7 +119,7 @@ Use ref to get list instance and call instance methods
 |------|------|------|------|
 | check | - | - | Check scroll position |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

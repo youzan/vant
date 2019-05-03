@@ -66,7 +66,7 @@ export default {
 ```
 
 
-### CouponCell API
+### CouponCell Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -77,7 +77,7 @@ export default {
 | border | 是否显示内边框 | `Boolean` | `true` | 1.3.10 |
 | currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
 
-### CouponList API
+### CouponList Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -96,7 +96,7 @@ export default {
 | show-exchange-bar | 是否展示兑换栏 | `Boolean` | `true` | - |
 | currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
 
-### CouponList Event
+### CouponList Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

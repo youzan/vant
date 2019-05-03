@@ -134,7 +134,7 @@ export default {
 ```
 
 
-### Checkbox API
+### Checkbox Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -146,7 +146,7 @@ export default {
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |
 
-### CheckboxGroup API
+### CheckboxGroup Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -154,20 +154,20 @@ export default {
 | disabled | Disable all checkboxes | `Boolean` | `false` |
 | max | Maximum amount of checked options | `Number` | `0`(Unlimited) |
 
-### Checkbox Event
+### Checkbox Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | change | Triggered when value changed | current value |
 | click | Triggered when click checkbox | event: Event |
 
-### CheckboxGroup Event
+### CheckboxGroup Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | change | Triggered when value changed | current value |
 
-### Checkbox Slot
+### Checkbox Slots
 
 | Name | Description | slot-scope |
 |------|------|------|

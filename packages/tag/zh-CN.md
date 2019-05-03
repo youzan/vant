@@ -71,7 +71,7 @@ Vue.use(Tag);
 <van-tag size="large">标签</van-tag>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -83,13 +83,13 @@ Vue.use(Tag);
 | mark | 是否为标记样式 | `Boolean` | `false` | - |
 | text-color | 文本颜色，优先级高于`color`属性 | `String` | `white` | 1.5.0 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|
 | default | 自定义 Tag 显示内容 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

@@ -55,7 +55,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -73,7 +73,7 @@ export default {
 | tel-validator | 手机号格式校验函数 | `string => boolean` | - | - |
 | validator | 自定义校验函数 | `(key, value) => string` | - | 1.3.9 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
@@ -86,7 +86,7 @@ export default {
 | change-detail | 修改详细地址时触发 | value: 详细地址内容 |
 | change-default | 切换是否使用默认地址时触发 | value: 是否选中 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

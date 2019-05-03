@@ -56,7 +56,7 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
 </van-search>
 ```
 
-### API
+### Props
 
 Search support all native properties of input tag，such as `maxlength`、`placeholder`、`autofocus`
 
@@ -71,7 +71,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | error | Whether to show error info | `Boolean` | `false` |
 | input-align | Input text align, can be set to `center` `right` | `String` | `left` |
 
-### Event
+### Events
 
 Search support all native events of input tag，such as `focus`、`blur`、`keypress`
 
@@ -81,7 +81,7 @@ Search support all native events of input tag，such as `focus`、`blur`、`keyp
 | search | Triggered when confirm search | - |
 | clear | Triggered when click clear icon | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

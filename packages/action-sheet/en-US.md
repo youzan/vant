@@ -74,7 +74,7 @@ ActionSheet will get another style if there is a `title` prop.
 </van-action-sheet>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -87,7 +87,7 @@ ActionSheet will get another style if there is a `title` prop.
 | get-container | Return the mount node for action-sheet | `String | () => HTMLElement` | - |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

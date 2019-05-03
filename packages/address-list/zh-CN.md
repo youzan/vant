@@ -65,7 +65,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -76,7 +76,7 @@ export default {
 | disabled-text | 不可配送提示文案 | `String` | - | 1.3.0 |
 | switchable | 是否允许切换地址 | `Boolean` | `true` | 1.3.8 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 | 版本 |
 |------|------|------|------|
@@ -97,7 +97,7 @@ export default {
 | tel | 收货人手机号 | `String | Number` |
 | address | 收货地址 | `String` |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

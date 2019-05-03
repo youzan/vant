@@ -86,7 +86,7 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -102,7 +102,7 @@ export default {
 | disabled | Whether to disable rate | `Boolean` | `false` |
 | disabled-color | Disabled color | `String` | `#bdbdbd` | 
 
-### Event
+### Events
 
 | Event | Description | Parameters |
 |------|------|------|

@@ -92,7 +92,7 @@ export default {
 </van-radio-group>
 ```
 
-### Radio API
+### Radio Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -103,26 +103,26 @@ export default {
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.13 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.5 |
 
-### RadioGroup API
+### RadioGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | v-model | 当前选中项的标识符 | 任意类型 | - | - |
 | disabled | 是否禁用所有单选框 | `Boolean` | `false` | - |
 
-### Radio Event
+### Radio Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击单选框时触发 | event: Event |
 
-### RadioGroup Event
+### RadioGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前选中项的 name |
 
-### Radio Slot
+### Radio Slots
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|

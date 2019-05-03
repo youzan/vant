@@ -84,7 +84,7 @@ export default {
 </van-goods-action>
 ```
 
-### API
+### Props
 
 #### GoodsAction
 

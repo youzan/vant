@@ -79,7 +79,7 @@ export default {
 </van-action-sheet>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -92,7 +92,7 @@ export default {
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
@@ -101,7 +101,7 @@ export default {
 
 ### actions
 
-`API`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
+`Props`中的`actions`为一个对象数组，数组中的每一个对象配置每一列，每一列有以下`key`：
 
 | key | 说明 |
 |------|------|

@@ -130,7 +130,7 @@ export default {
 />
 ```
 
-### ContactCard API
+### ContactCard Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -139,13 +139,13 @@ export default {
 | tel | 联系人手机号 | `String` | - | - |
 | add-text | 添加时的文案提示 | `String` | `添加订单联系人信息` | - |
 
-### ContactCard Event
+### ContactCard Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | - |
 
-### ContactList API
+### ContactList Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -153,7 +153,7 @@ export default {
 | list | 联系人列表 | `Array` | `[]` | - |
 | add-text | 新建按钮文案 | `String` | `新建联系人` | - |
 
-### ContactList Event
+### ContactList Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
@@ -161,7 +161,7 @@ export default {
 | edit | 点击编辑按钮时触发 | item: 当前联系人对象，index: 索引 |
 | select | 切换选中的联系人时触发 | item: 当前联系人对象，index: 索引 |
 
-### ContactEdit API
+### ContactEdit Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -171,7 +171,7 @@ export default {
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
 | tel-validator | 手机号格式校验函数 | `(tel: string) => boolean` | - | - |
 
-### ContactEdit Event
+### ContactEdit Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

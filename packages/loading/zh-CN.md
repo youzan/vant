@@ -29,7 +29,7 @@ Vue.use(Loading);
 <van-loading size="24px">加载中...</van-loading>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -38,7 +38,7 @@ Vue.use(Loading);
 | size | 加载图标大小 | `String | Number` | `30px` | - |
 | text-size | 文字大小 | `String | Number` | `14px` | 2.0.0 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

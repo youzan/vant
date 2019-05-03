@@ -59,7 +59,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -75,7 +75,7 @@ export default {
 | hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
@@ -86,7 +86,7 @@ export default {
 | show | 键盘完全弹出时触发 | - |
 | hide | 键盘完全收起时触发 | - |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

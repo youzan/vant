@@ -63,7 +63,7 @@ Vue.use(Tag);
 <van-tag size="large">Tag</van-tag>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -76,13 +76,13 @@ Vue.use(Tag);
 | text-color | Text color | `String` | `white` |
 
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|
 | default | Default slot |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

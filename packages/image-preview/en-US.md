@@ -114,14 +114,14 @@ export default {
 | max-zoom | Max zoom | `Number` | `3` |
 | min-zoom | Min zoom | `Number` | `1/3` |
 
-### Event
+### Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | close | Triggered when close | { index, url } |
 | change | Triggered when current image change | index: index of current image |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

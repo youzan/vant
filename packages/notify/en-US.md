@@ -47,7 +47,7 @@ export default {
 | Notify.setDefaultOptions | `options` | `void` | Set default options of all notifies |
 | Notify.resetDefaultOptions | - | `void` | Reset default options of all notifies |
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|

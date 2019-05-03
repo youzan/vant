@@ -35,7 +35,7 @@ Use `position` prop to set popup display position
 </van-popup>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -50,7 +50,7 @@ Use `position` prop to set popup display position
 | lazy-render | Whether to lazy render util appeared | `Boolean` | `true` |
 | get-container | Return the mount node for Popup | `String | () => HTMLElement` | - |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

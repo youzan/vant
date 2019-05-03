@@ -134,9 +134,9 @@ export default {
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.11 |
 
-### API
+### Props
 
-通过组件调用 `Dialog` 时，支持以下 API：
+通过组件调用 `Dialog` 时，支持以下 Props：
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -156,7 +156,7 @@ export default {
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.1.6 |
 
-### Event
+### Events
 
 通过组件调用 `Dialog` 时，支持以下事件：
 

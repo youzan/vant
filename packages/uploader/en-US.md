@@ -57,7 +57,7 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 </van-uploader>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -69,13 +69,13 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | oversize | Triggered when file size over limit | Same as after-read |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

@@ -137,7 +137,7 @@ export default {
 }
 ```
 
-### Checkbox API
+### Checkbox Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -149,7 +149,7 @@ export default {
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
 
-### CheckboxGroup API
+### CheckboxGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -157,20 +157,20 @@ export default {
 | disabled | 是否禁用所有复选框 | `Boolean` | `false` | - |
 | max | 设置最大可选数，0 为无限制 | `Number` | `0` | - |
 
-### Checkbox Event
+### Checkbox Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 | click | 点击复选框时触发 | event: Event |
 
-### CheckboxGroup Event
+### CheckboxGroup Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 当绑定值变化时触发的事件 | 当前组件的值 |
 
-### Checkbox Slot
+### Checkbox Slots
 
 | 名称 | 说明 | slot-scope |
 |------|------|------|

@@ -68,7 +68,7 @@ Vue.use(Button);
 <van-button size="mini">Mini</van-button>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -90,7 +90,7 @@ Vue.use(Button);
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

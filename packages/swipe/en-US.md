@@ -118,7 +118,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -133,7 +133,7 @@ export default {
 | width | Set Swiper Item Width | `Number` | `0` |
 | height | Set Swiper Item Height | `Number` | `0` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -147,7 +147,7 @@ Use ref to get swipe instance and call instance methods
 |------|------|------|------|
 | swipeTo | index: target index | void | Swipe to target index |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

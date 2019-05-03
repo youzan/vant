@@ -86,7 +86,7 @@ export default {
 <van-rate v-model="value" readonly />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -102,7 +102,7 @@ export default {
 | disabled | 是否禁用评分 | `Boolean` | `false` | - |
 | disabled-color | 禁用时的颜色 | `String` | `#bdbdbd` | - |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

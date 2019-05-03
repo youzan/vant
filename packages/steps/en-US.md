@@ -64,7 +64,7 @@ export default {
 </van-steps>
 ```
 
-### Steps API
+### Steps Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -75,7 +75,7 @@ export default {
 | active-icon | Active icon name | `String` | `checked` |
 | inactive-icon | Active icon name | `String` | - |
 
-### Step Slot
+### Step Slots
 
 | Name | Description |
 |------|------|

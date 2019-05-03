@@ -85,9 +85,7 @@ Setting `type` to `flex` to enable flex layout
 ```
 
 
-### API
-
-#### Row
+### Row Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -97,7 +95,7 @@ Setting `type` to `flex` to enable flex layout
 | justify | Flex main axis，can be set to  end/center/space-around/space-between | `String` | `start` |
 | align | Flex cross axis, be set to  center/bottom | `String` | `top` |
 
-#### Col
+### Col Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|

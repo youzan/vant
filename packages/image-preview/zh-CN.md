@@ -111,9 +111,9 @@ export default {
 | maxZoom | 手势缩放时，最大缩放比例 | `Number` | `3` | 1.6.14 |
 | minZoom | 手势缩放时，最小缩放比例 | `Number` | `1/3` | 1.6.14 |
 
-### API
+### Props
 
-通过组件调用 `ImagePreview` 时，支持以下 API：
+通过组件调用 `ImagePreview` 时，支持以下 Props：
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -128,7 +128,7 @@ export default {
 | max-zoom | 手势缩放时，最大缩放比例 | `Number` | `3` | 1.6.14 |
 | min-zoom | 手势缩放时，最小缩放比例 | `Number` | `1/3` | 1.6.14 |
 
-### Event
+### Events
 
 通过组件调用 `ImagePreview` 时，支持以下事件：
 
@@ -137,7 +137,7 @@ export default {
 | close | 关闭时触发 | { index: 索引, url: 图片链接 } |
 | change | 切换当前图片时触发 | index, 当前图片的索引 |
 
-### Slot
+### Slots
 
 通过组件调用 `ImagePreview` 时，支持以下插槽：
 

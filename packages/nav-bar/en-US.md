@@ -44,7 +44,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -56,7 +56,7 @@ export default {
 | border | Whether to show bottom border | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|
@@ -64,7 +64,7 @@ export default {
 | left | Custom left side content |
 | right | Custom right side content |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

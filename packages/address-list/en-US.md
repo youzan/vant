@@ -63,7 +63,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -74,7 +74,7 @@ export default {
 | switchable | Whether to allow switch address | `Boolean` | `true` |
 | add-button-text | Add button text | String | `Add new address` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -93,7 +93,7 @@ export default {
 | tel | Phone | `String | Number` |
 | address | Address | `String` |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

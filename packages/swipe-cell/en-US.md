@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -65,7 +65,7 @@ export default {
 | on-close | Callback function before close | `Function` | - |
 | disabled | Whether to disabled swipe | `Boolean` | `false` |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|
@@ -73,7 +73,7 @@ export default {
 | left | content of left scrollable area |
 | right | content of right scrollabe area |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

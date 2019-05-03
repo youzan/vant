@@ -143,7 +143,7 @@ export default {
 <van-picker :columns="columns" loading />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -158,7 +158,7 @@ export default {
 | visible-item-count | 可见的选项个数 | `Number` | `5` | - |
 | default-index | 单列选择器的默认选中项索引，<br>多列选择器请参考下方的 Columns 配置 | `Number` | `0` | 1.6.9 |
 
-### Event
+### Events
 
 Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 
@@ -168,7 +168,7 @@ Picker 组件的事件会根据 columns 是单列或多列返回不同的参数
 | cancel | 点击取消按钮时触发 | 单列：选中值，选中值对应的索引<br>多列：所有列选中值，所有列选中值对应的索引 |
 | change | 选项改变时触发 | 单列：Picker 实例，选中值，选中值对应的索引<br>多列：Picker 实例，所有列选中值，当前列对应的索引 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

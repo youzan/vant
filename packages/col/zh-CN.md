@@ -86,9 +86,7 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 </van-row>
 ```
 
-### API
-
-#### Row
+### Row Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -98,7 +96,7 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 | justify | Flex 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | `String` | `start` | 1.1.9  |
 | align | Flex 交叉轴对齐方式，可选值为 `center` `bottom` | `String` | `top` | 1.1.9 |
 
-#### Col
+### Col Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|

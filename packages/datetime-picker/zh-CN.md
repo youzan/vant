@@ -109,7 +109,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -129,7 +129,7 @@ export default {
 | cancel-button-text | 取消按钮文字 | `String` | `取消` | 1.0.4 |
 | visible-item-count | 可见的选项个数 | `Number` | `5` | 1.0.4 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

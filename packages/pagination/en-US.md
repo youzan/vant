@@ -50,7 +50,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -64,7 +64,7 @@ export default {
 | show-page-size | Count of page size to show | `Number` | `5` |
 | force-ellipses | Whether to show ellipses | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

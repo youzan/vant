@@ -94,14 +94,14 @@ Vue.use(Cell).use(CellGroup);
 </van-cell>
 ```
 
-### CellGroup API
+### CellGroup Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 分组标题 | `String` | `-` | 1.6.9 |
 | border | 是否显示外边框 | `Boolean` | `true` | - |
 
-### Cell API
+### Cell Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -124,13 +124,13 @@ Vue.use(Cell).use(CellGroup);
 | value-class | 右侧内容额外类名 | `any` | - | 1.4.8 |
 | label-class | 描述信息额外类名 | `any` | - | 1.4.8 |
 
-### Cell Event
+### Cell Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击单元格时触发 | - |
 
-### Cell Slot
+### Cell Slots
 
 | 名称 | 说明 |
 |------|------|

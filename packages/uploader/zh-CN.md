@@ -55,7 +55,7 @@ export default {
 </van-uploader>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -67,13 +67,13 @@ export default {
 | after-read | 读取完成后的回调函数 | `Function` | - | - |
 | max-size | 文件大小限制，单位为 byte | `Number` | - | - |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | oversize | 文件大小超过限制时触发 | 同 after-read |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

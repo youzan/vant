@@ -146,7 +146,7 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 </van-tabs>
 ```
 
-### Tabs API
+### Tabs Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -167,28 +167,28 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | ellipsis | Whether to ellipsis too long title | `Boolean` | `true` |
 | lazy-render | Whether to enable tab content lazy render | `Boolean` | `true` |
 
-### Tab API
+### Tab Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | title | Title | `String` | - |
 | disabled | Whether to disable tab | `Boolean` | `false` |
 
-### Tabs Slot
+### Tabs Slots
 
 | Name | Description |
 |------|------|
 | nav-left | Custom nav left content |
 | nav-right | Custom nav right content |
 
-### Tab Slot
+### Tab Slots
 
 | Name | Description |
 |------|------|
 | default | Content of tab |
 | title | Custom tab title |
 
-### Tabs Event
+### Tabs Events
 
 | Event | Description | Arguments |
 |------|------|------|

@@ -43,9 +43,9 @@ export default {
 }
 ```
 
-### API
+### Props
 
-#### API
+#### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -54,7 +54,7 @@ export default {
 | main-Active-index | The index of selected parent node | `Number` | `0` |
 | active-id | Id of selected item | `String | Number` | `0` |
 
-#### Event
+#### Events
 
 | Event | Description | Arguments |
 |------|------|------|

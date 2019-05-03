@@ -60,7 +60,7 @@ Use slot to add custom contents.
 </van-submit-bar>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -75,13 +75,13 @@ Use slot to add custom contents.
 | decimal-length | Number of digits to appear after the decimal point | `Number` | `2` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | submit | Triggerd when click submit button | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

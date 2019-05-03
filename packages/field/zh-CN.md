@@ -116,7 +116,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-### API
+### Props
 
 Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`placeholder`、`autofocus` 等
 
@@ -143,7 +143,7 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
 | right-icon | 输入框尾部图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 1.5.7 |
 
-### Event
+### Events
 
 Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`keypress` 等
 
@@ -163,7 +163,7 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | focus | - | - | 获取输入框焦点 |
 | blur | - | - | 取消输入框焦点 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

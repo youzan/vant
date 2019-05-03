@@ -59,7 +59,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -75,7 +75,7 @@ export default {
 | hide-on-click-outside | Whether to hide keyboard when click outside | `Boolean` | `true` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -86,7 +86,7 @@ export default {
 | show | Triggered when keyboard is fully displayed. | - |
 | hide | Triggered when keyboard is fully hidden. | - |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

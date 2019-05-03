@@ -131,7 +131,7 @@ export default {
 ```
 
 
-### ContactCard API
+### ContactCard Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -140,13 +140,13 @@ export default {
 | tel | Phone | `String` | - |
 | add-text | Add card text | `String` | `Add contact info` |
 
-### ContactCard Event
+### ContactCard Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | - |
 
-### ContactList API
+### ContactList Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
@@ -154,7 +154,7 @@ export default {
 | list | Contact list | `Array` | `[]` |
 | add-text | Add button text | `String` | `Add new contact` |
 
-### ContactList Event
+### ContactList Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -162,7 +162,7 @@ export default {
 | edit | Triggered when click edit button | item: contact object，index |
 | select | Triggered when select contact | item: contact object |
 
-### ContactEdit API
+### ContactEdit Props
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
 | contact-info | Contact Info | `Object` | `[]` |
@@ -171,7 +171,7 @@ export default {
 | is-deleting | Whether to show delete button loading status | `Boolean` | `false` |
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 
-### ContactEdit Event
+### ContactEdit Events
 
 | Event | Description | Arguments |
 |------|------|------|

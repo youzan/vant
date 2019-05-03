@@ -48,7 +48,7 @@ Use `pivot-text` to custom text，use `color` to custom bar color
 />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|

@@ -78,7 +78,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -92,7 +92,7 @@ export default {
 | async-change | Whether to enable async change | `Boolean` | `false` | - |
 | input-width | Input width | `String` | `30px` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

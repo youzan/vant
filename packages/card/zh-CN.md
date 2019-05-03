@@ -42,7 +42,7 @@ Vue.use(Card);
 </van-card>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -58,13 +58,13 @@ Vue.use(Card);
 | thumb-link | 点击左侧图片后的跳转链接 | `String` | - | 1.3.4 |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.0 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | - |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|

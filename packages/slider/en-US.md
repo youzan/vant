@@ -82,7 +82,7 @@ export default {
 </div>
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
@@ -96,13 +96,13 @@ export default {
 | inactive-color | Inactive color of bar | `String` | `#e5e5e5` |
 | vertical | Whether to display vertical | `Boolean` | `false` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered after value change | value: current rate |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

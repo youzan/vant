@@ -68,7 +68,7 @@ export default {
 </van-steps>
 ```
 
-### Steps API
+### Steps Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -78,7 +78,7 @@ export default {
 | active-icon | 激活状态底部图标，可选值见 Icon 组件 | `String` | `checked` | 1.6.9 |
 | inactive-icon | 未激活状态底部图标，可选值见 Icon 组件 | `String` | - | 2.0.0 |
 
-### Step Slot
+### Step Slots
 
 | 名称 | 说明 |
 |------|------|

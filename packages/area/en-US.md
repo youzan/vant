@@ -37,7 +37,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 ```
 
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -51,7 +51,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 | confirm-button-text | Text of confirm button | `String` | `Confirm` |
 | cancel-button-text | Text of cancel button | `String` | `Cancel` |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

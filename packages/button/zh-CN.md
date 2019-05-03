@@ -78,7 +78,7 @@ Vue.use(Button);
 <van-button size="mini">迷你按钮</van-button>
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -101,7 +101,7 @@ Vue.use(Button);
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | 1.6.5 |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 1.6.5 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

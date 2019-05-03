@@ -56,7 +56,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -65,7 +65,7 @@ export default {
 | on-close | 关闭时的回调函数 | `Function` | - | - |
 | disabled | 是否禁用滑动 | `Boolean` | `false` | 1.3.4 |
 
-### Slot
+### Slots
 
 | 名称 | 说明 |
 |------|------|
@@ -73,7 +73,7 @@ export default {
 | left | 左侧滑动内容 |
 | right | 右侧滑动内容 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

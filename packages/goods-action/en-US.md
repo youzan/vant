@@ -85,7 +85,7 @@ Use `info` prop to show messages in upper right corner of icon
 </van-goods-action>
 ```
 
-### API
+### Props
 
 #### GoodsAction
 

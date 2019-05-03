@@ -39,7 +39,7 @@ export default {
 }
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -54,14 +54,14 @@ export default {
 | disabled | Whether to disable | `Boolean` | `false` |
 
 
-### Event
+### Events
 
 | Event | Description | Parameters |
 |------|------|------|
 | refresh | Triggered when pull refresh | - |
 
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

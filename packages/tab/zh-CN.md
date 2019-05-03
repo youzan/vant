@@ -150,7 +150,7 @@ export default {
 </van-tabs>
 ```
 
-### Tabs API
+### Tabs Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -171,28 +171,28 @@ export default {
 | ellipsis | 是否省略过长的标题文字 | `Boolean` | `true` | 1.5.0 |
 | lazy-render | 是否开启标签页内容延迟渲染 | `Boolean` | `true` | 1.6.6 |
 
-### Tab API
+### Tab Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 标题 | `String` | - | - |
 | disabled | 是否禁用标签 | `Boolean` | `false` | - |
 
-### Tabs Slot
+### Tabs Slots
 
 | 名称 | 说明 |
 |------|------|
 | nav-left | 标题左侧内容 |
 | nav-right | 标题右侧内容 |
 
-### Tab Slot
+### Tab Slots
 
 | 名称 | 说明 |
 |------|------|
 | default | 标签页内容 |
 | title | 自定义标签 |
 
-### Tabs Event
+### Tabs Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|

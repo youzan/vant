@@ -59,7 +59,7 @@ export default {
 />
 ```
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -69,7 +69,7 @@ export default {
 | info | Bottom info | `String` | - |
 | error-info | Bottom error info | `String` | - |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|

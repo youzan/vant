@@ -57,7 +57,7 @@ export default {
 ```
 
 
-### API
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -75,7 +75,7 @@ export default {
 | tel-validator | The method to validate tel | `(tel: string) => boolean` | - |
 | validator | Custom validator | `(key, value) => string` | - | 1.3.9 |
 
-### Event
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -88,7 +88,7 @@ export default {
 | change-detail | Triggered when address detail changed | value: address detail |
 | change-default | Triggered when switch default address | value: checked |
 
-### Slot
+### Slots
 
 | Name | Description |
 |------|------|

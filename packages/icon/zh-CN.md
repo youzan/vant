@@ -56,7 +56,7 @@ import 'vant/lib/icon/local.css';
 <van-icon class-prefix="my-icon" name="extra" />
 ```
 
-### API
+### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -67,7 +67,7 @@ import 'vant/lib/icon/local.css';
 | class-prefix | 类名前缀 | `String` | `van-icon` | 1.2.1 |
 | tag | HTML 标签 | `String` | `i` | 1.6.10 |
 
-### Event
+### Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
