@@ -58,6 +58,7 @@
       />
       <van-button
         loading
+        loading-type="spinner"
         :loading-text="$t('loadingText')"
         type="danger"
       />

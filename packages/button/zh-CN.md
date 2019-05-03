@@ -52,7 +52,12 @@ Vue.use(Button);
 
 ```html 
 <van-button loading type="primary" />
-<van-button loading type="danger" loading-text="加载中..." />
+<van-button
+  loading
+  type="danger"
+  loading-type="spinner"
+  loading-text="加载中..."
+/>
 ```
 
 #### 按钮形状
@@ -90,6 +95,7 @@ Vue.use(Button);
 | hairline | 是否使用 0.5px 边框 | `Boolean` | `false` | 1.6.11 |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - |
 | loading-text | 加载状态提示文字 | `String` | - | 1.6.3 |
+| loading-type | 加载图标类型，可选值为`spinner` | `String` | `circular` | 2.0.0 |
 | loading-size | 加载图标大小 | `String` | `20px` | 1.6.7 |
 | url | 跳转链接 | `String` | - | 1.6.5 |
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | 1.6.5 |

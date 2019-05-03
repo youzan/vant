@@ -1,7 +1,7 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
-import Loading from '../loading';
+import Loading, { LoadingType } from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -25,6 +25,7 @@ export type ButtonProps = RouteProps & {
   disabled?: boolean;
   nativeType?: string;
   loadingSize: string;
+  loadingType?: LoadingType;
   loadingText?: string;
 };
 
@@ -83,6 +84,7 @@ function Button(
         [
           <Loading
             size={props.loadingSize}
+            type={props.loadingType}
             color={type === 'default' ? undefined : ''}
           />,
           loadingText && <span class={bem('loading-text')}>{loadingText}</span>
@@ -106,6 +108,7 @@ Button.props = {
   disabled: Boolean,
   nativeType: String,
   loadingText: String,
+  loadingType: String,
   tag: {
     type: String,
     default: 'button'

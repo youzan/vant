@@ -44,7 +44,12 @@ Vue.use(Button);
 
 ```html 
 <van-button loading type="primary" />
-<van-button loading type="primary" loading-text="Loading..." />
+<van-button
+  loading
+  type="danger"
+  loading-type="spinner"
+  loading-text="Loading..."
+/>
 ```
 
 #### Shape
@@ -79,6 +84,7 @@ Vue.use(Button);
 | disabled | Whether to disable button | `Boolean` | `false` |
 | loading | Whether show loading status | `Boolean` | `false` |
 | loading-text | Loading text | `String` | - |
+| loading-type | Loading type, can be set to `spinner` | `String` | `circular` |
 | loading-size | Loading icon size | `String` | `20px` |
 | url | Link URL | `String` | - |
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |

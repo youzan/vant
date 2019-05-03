@@ -53,6 +53,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+### Button
+
+- 新增`loading-type`属性
+
 ### Field
 
 - 新增`label-class`属性

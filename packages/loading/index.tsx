@@ -5,8 +5,10 @@ import { inherit } from '../utils/functional';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/use/sfc';
 
+export type LoadingType = 'circular' | 'spinner';
+
 export type LoadingProps = {
-  type: 'circular' | 'spinner';
+  type: LoadingType;
   size?: string | number;
   color: string;
   textSize?: string | number;
