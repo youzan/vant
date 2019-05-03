@@ -1,6 +1,7 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Button, { ButtonType } from '../button';
+import Icon from '../icon';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -8,6 +9,7 @@ import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
 
 export type SubmitBarProps = {
   tip?: string;
+  tipIcon?: string;
   label?: string;
   price?: number;
   loading?: boolean;
@@ -32,7 +34,7 @@ function SubmitBar(
   slots: SubmitBarSlots,
   ctx: RenderContext<SubmitBarProps>
 ) {
-  const { tip, price } = props;
+  const { tip, price, tipIcon } = props;
   const hasPrice = typeof price === 'number';
 
   return (
@@ -43,7 +45,12 @@ function SubmitBar(
       {slots.top && slots.top()}
       {(slots.tip || tip) && (
         <div class={bem('tip')}>
-          {tip}
+          {tipIcon && (
+            <Icon class={bem('tip-icon')} name={tipIcon} />
+          )}
+          {tip && (
+            <span class={bem('tip-text')}>{tip}</span>
+          )}
           {slots.tip && slots.tip()}
         </div>
       )}
@@ -75,6 +82,7 @@ function SubmitBar(
 
 SubmitBar.props = {
   tip: String,
+  tipIcon: String,
   label: String,
   loading: Boolean,
   disabled: Boolean,
