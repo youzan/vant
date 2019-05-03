@@ -11,7 +11,8 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-submit-bar">
-      <div class="van-submit-bar__tip">你的收货地址不支持同城送, 我们已为你推荐快递</div>
+      <div class="van-submit-bar__tip"><i class="van-icon van-icon-info-o van-submit-bar__tip-icon">
+          <!----></i><span class="van-submit-bar__tip-text">你的收货地址不支持同城送, 我们已为你推荐快递</span></div>
       <div class="van-submit-bar__bar">
         <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 30.50</span></div><button disabled="disabled" class="van-button van-button--danger van-button--large van-button--disabled van-button--square"><span class="van-button__text">提交订单</span></button>
       </div>
