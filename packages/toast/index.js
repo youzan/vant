@@ -12,7 +12,7 @@ const defaultOptions = {
   duration: 3000,
   position: 'middle',
   forbidClick: false,
-  loadingType: 'circular',
+  loadingType: undefined,
   getContainer: 'body',
   overlayStyle: null
 };

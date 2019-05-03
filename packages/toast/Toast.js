@@ -11,15 +11,12 @@ export default sfc({
 
   props: {
     className: null,
+    loadingType: String,
     forbidClick: Boolean,
     message: [String, Number],
     type: {
       type: String,
       default: 'text'
-    },
-    loadingType: {
-      type: String,
-      default: 'circular'
     },
     position: {
       type: String,
