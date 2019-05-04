@@ -14,6 +14,7 @@
         :price="3050"
         :button-text="$t('submit')"
         :tip="$t('tip1')"
+        tip-icon="info-o"
         @submit="onClickButton"
       />
     </demo-block>

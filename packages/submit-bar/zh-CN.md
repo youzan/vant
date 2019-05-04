@@ -29,6 +29,7 @@ Vue.use(SubmitBar);
   :price="3050"
   button-text="提交订单"
   tip="你的收货地址不支持同城送, 我们已为你推荐快递"
+  tip-icon="info-o"
   @submit="onSubmit"
 />
 ```
@@ -72,6 +73,7 @@ Vue.use(SubmitBar);
 | button-text | 按钮文字 | `String` | - | - |
 | button-type | 按钮类型 | `String` | `danger` | - |
 | tip | 提示文案 |  `String` | - | - |
+| tip-icon | 左侧图标名称或图片链接，可选值见 Icon 组件 |  `String` | - | - |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
 | loading | 是否显示加载中的按钮 |  `Boolean` | `false` | - |
 | currency | 货币符号 | `String` | `¥` | 1.0.6 |
