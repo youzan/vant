@@ -68,6 +68,7 @@
 ### Loading
 
 - 新增`default`插槽
+- 新增`vertical`属性
 - 新增`text-size`属性
 - 支持`Number`类型的`size`属性
 
@@ -79,6 +80,10 @@
 
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
+
+### SubmitBar
+
+- 新增`tip-icon`属性
 
 ### Steps
 
@@ -94,3 +99,4 @@
 
 - 新增`preview-open`事件
 - 新增`preview-close`事件
+ 

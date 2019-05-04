@@ -18,6 +18,15 @@
         {{ $t('loading') }}
       </van-loading>
     </demo-block>
+
+    <demo-block :title="$t('vertical')">
+      <van-loading
+        size="24px"
+        vertical
+      >
+        {{ $t('loading') }}
+      </van-loading>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -27,12 +36,14 @@ export default {
     'zh-CN': {
       type: '加载类型',
       color: '自定义颜色',
-      text: '加载文案'
+      text: '加载文案',
+      vertical: '垂直排列'
     },
     'en-US': {
       type: 'Type',
       color: 'Color',
-      text: 'Text'
+      text: 'Text',
+      vertical: 'Vertical'
     }
   }
 };
@@ -43,6 +54,10 @@ export default {
   .van-loading {
     display: inline-block;
     margin: 5px 0 5px 20px;
+
+    &--vertical {
+      display: inline-flex;
+    }
   }
 }
 </style>

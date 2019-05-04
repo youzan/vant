@@ -29,6 +29,12 @@ Vue.use(Loading);
 <van-loading size="24px">Loading...</van-loading>
 ```
 
+#### Vertical
+
+```html
+<van-loading size="24px" vertical>Loading...</van-loading>
+```
+
 ### Props
 
 | Attribute | Description | Type | Default |
@@ -37,6 +43,7 @@ Vue.use(Loading);
 | type | Can be set to `spinner` | `String` | `circular` |
 | size | Icon size | `String | Number` | `30px` |
 | text-size | Text font size | `String | Number` | `14px` |
+| vertical | Whether to arrange icons and text content vertically | `Boolean` | `false` |
 
 ### Slots
 

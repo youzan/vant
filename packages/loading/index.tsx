@@ -11,6 +11,7 @@ export type LoadingProps = {
   type: LoadingType;
   size?: string | number;
   color: string;
+  vertical?: boolean;
   textSize?: string | number;
 };
 
@@ -60,7 +61,7 @@ function Loading(
   }
 
   return (
-    <div class={bem([type])} {...inherit(ctx, true)}>
+    <div class={bem([type, { vertical: props.vertical }])} {...inherit(ctx, true)}>
       <span class={bem('spinner', type)} style={style}>
         {Spin}
         {Circular}
@@ -73,6 +74,7 @@ function Loading(
 Loading.props = {
   size: [String, Number],
   textSize: [String, Number],
+  vertical: Boolean,
   type: {
     type: String,
     default: 'circular'

@@ -68,6 +68,17 @@
     line-height: @loading-text-line-height;
     margin-left: 10px;
   }
+
+  &--vertical {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .van-loading__text {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
 }
 
 @keyframes van-circular {
