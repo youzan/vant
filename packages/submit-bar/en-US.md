@@ -28,6 +28,7 @@ Vue.use(SubmitBar);
   :price="3050"
   button-text="Submit"
   tip="Some tips"
+  tip-icon="info-o"
   @submit="onSubmit"
 />
 ```
@@ -69,6 +70,7 @@ Use slot to add custom contents.
 | button-text | Button text | `String` | - |
 | button-type | Button type |  `String` | `danger` |
 | tip | Tip |  `String` | - |
+| tip-icon | Icon |  `String` | - |
 | disabled | Whether to disable button |  `Boolean` | `false` |
 | loading | Whether to show loading icon |  `Boolean` | `false` |
 | currency | Currency symbol |  `String` | `¥` |
