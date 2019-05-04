@@ -10,7 +10,7 @@ import { DefaultSlots } from '../utils/use/sfc';
 export type IconProps = {
   tag: keyof HTMLElementTagNameMap | string;
   name: string;
-  size?: string;
+  size?: string | number;
   color?: string;
   info?: string | number;
   classPrefix: string;
