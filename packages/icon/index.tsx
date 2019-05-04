@@ -51,7 +51,7 @@ function Icon(
 
 Icon.props = {
   name: String,
-  size: String,
+  size: [String, Number],
   color: String,
   info: [String, Number],
   tag: {
