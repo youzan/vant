@@ -41,8 +41,8 @@ Vue.use(Loading);
 |------|------|------|------|------|
 | color | 颜色 | `String` | `#c9c9c9` | - |
 | type | 类型，可选值为 `spinner` | `String` | `circular` | - |
-| size | 加载图标大小 | `String | Number` | `30px` | - |
-| text-size | 文字大小 | `String | Number` | `14px` | 2.0.0 |
+| size | 加载图标大小，默认单位为`px` | `String | Number` | `30px` | - |
+| text-size | 文字大小，默认单位为`px` | `String | Number` | `14px` | 2.0.0 |
 | vertical | 是否垂直排列图标和文字内容 | `Boolean` | `false` | 2.0.0 |
 
 ### Slots

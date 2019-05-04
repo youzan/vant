@@ -61,6 +61,10 @@
 
 - 新增`label-class`属性
 
+### Icon
+
+- 支持`Number`类型的`size`属性
+
 ### Popup
 
 - 新增`click`事件

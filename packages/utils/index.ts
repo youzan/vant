@@ -50,7 +50,11 @@ export function isInDocument(element: HTMLElement): boolean {
   return document.body.contains(element);
 }
 
-export function suffixPx(value: string | number): string {
+export function suffixPx(value?: string | number): string | undefined {
+  if (!isDef(value)) {
+    return undefined;
+  }
+
   value = String(value);
   return isNumber(value) ? `${value}px` : value;
 }

@@ -60,7 +60,7 @@ import 'vant/lib/icon/local.css';
 | name | Icon name or URL | `String` | `''` |
 | info | Info message | `String | Number` | `''` |
 | color | Icon color | `String` | `inherit` |
-| size | Icon size | `String` | `inherit` |
+| size | Icon size | `String | Number` | `inherit` |
 | class-prefix | ClassName prefix | `String` | `van-icon` |
 | tag | HTML Tag | `String` | `i` |
 

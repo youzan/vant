@@ -36,3 +36,12 @@ test('tag prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('size without unit', () => {
+  const wrapper = mount(Icon, {
+    propsData: {
+      size: 20
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
 import { isSrc } from '../utils/validate/src';
@@ -38,7 +38,7 @@ function Icon(
       ]}
       style={{
         color: props.color,
-        fontSize: props.size
+        fontSize: suffixPx(props.size)
       }}
       {...inherit(ctx, true)}
     >

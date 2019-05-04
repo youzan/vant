@@ -15,6 +15,11 @@ exports[`render icon with url name 1`] = `
   <!----></i>
 `;
 
+exports[`size without unit 1`] = `
+<i class="van-icon van-icon-undefined" style="font-size: 20px;">
+  <!----></i>
+`;
+
 exports[`tag prop 1`] = `
 <div class="van-icon van-icon-undefined">
   <!---->
