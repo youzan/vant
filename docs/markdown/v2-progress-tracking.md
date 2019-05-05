@@ -55,6 +55,7 @@
 
 ### ActionSheet
 
+- 新增`close-on-click-action`属性
 - 支持同时使用`title`和`actions`属性
 
 ### Button

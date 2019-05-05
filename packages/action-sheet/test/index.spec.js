@@ -64,3 +64,24 @@ test('get container', () => {
 
   expect(wrapper.vm.$el.parentNode).toEqual(document.body);
 });
+
+test('close-on-click-action prop', () => {
+  const onInput = jest.fn();
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      value: true,
+      actions: [{ name: 'Option' }],
+      closeOnClickAction: true
+    },
+    context: {
+      on: {
+        input: onInput
+      }
+    }
+  });
+
+  const option = wrapper.find('.van-action-sheet__item');
+  option.trigger('click');
+
+  expect(onInput).toHaveBeenCalledWith(false);
+});

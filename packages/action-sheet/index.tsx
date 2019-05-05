@@ -23,6 +23,7 @@ export type ActionSheetProps = PopupMixinProps & {
   title?: string;
   actions: ActionSheetItem[];
   cancelText?: string;
+  closeOnClickAction?: boolean;
   safeAreaInsetBottom?: boolean;
 };
 
@@ -52,6 +53,26 @@ function ActionSheet(
     }
   }
 
+  function onClickOption(item: ActionSheetItem, index: number) {
+    return function (event: Event) {
+      event.stopPropagation();
+
+      if (item.disabled || item.loading) {
+        return;
+      }
+
+      if (item.callback) {
+        item.callback(item);
+      }
+
+      emit(ctx, 'select', item, index);
+
+      if (props.closeOnClickAction) {
+        emit(ctx, 'input', false);
+      }
+    };
+  }
+
   const Option = (item: ActionSheetItem, index: number) => (
     <div
       class={[
@@ -59,17 +80,7 @@ function ActionSheet(
         item.className,
         'van-hairline--top'
       ]}
-      onClick={(event: Event) => {
-        event.stopPropagation();
-
-        if (!item.disabled && !item.loading) {
-          if (item.callback) {
-            item.callback(item);
-          }
-
-          emit(ctx, 'select', item, index);
-        }
-      }}
+      onClick={onClickOption(item, index)}
     >
       {item.loading ? (
         <Loading class={bem('loading')} size="20px" />
@@ -113,6 +124,7 @@ ActionSheet.props = {
   title: String,
   actions: Array,
   cancelText: String,
+  closeOnClickAction: Boolean,
   safeAreaInsetBottom: Boolean,
   overlay: {
     type: Boolean,

@@ -102,6 +102,7 @@ export default {
 | title | 标题 | `String` | - | - |
 | cancel-text | 取消按钮文字 | `String` | - | - |
 | overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
+| close-on-click-action | 是否在点击选项后关闭 | `Boolean` | `false` | 2.0.0 |
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `true` | - |
 | lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | 1.1.11 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
