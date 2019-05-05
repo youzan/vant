@@ -46,82 +46,111 @@ function Card(
 ) {
   const { thumb } = props;
 
-  const showThumb = slots.thumb || thumb;
-  const showTag = slots.tag || props.tag;
   const showNum = slots.num || isDef(props.num);
   const showPrice = slots.price || isDef(props.price);
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
   const showBottom = showNum || showPrice || showOriginPrice;
 
-  const Thumb = showThumb && (
-    <a href={props.thumbLink} class={bem('thumb')}>
-      {slots.thumb ? (
-        slots.thumb()
-      ) : props.lazyLoad ? (
+  function ThumbTag() {
+    if (slots.tag || props.tag) {
+      const DefaultTag = (
+        <Tag mark type="danger">
+          {props.tag}
+        </Tag>
+      );
+
+      return <div class={bem('tag')}>{slots.tag ? slots.tag() : DefaultTag}</div>;
+    }
+  }
+
+  function Thumb() {
+    if (slots.thumb || thumb) {
+      const DefaultThumb = props.lazyLoad ? (
         <img class={bem('img')} vLazy={thumb} />
       ) : (
         <img class={bem('img')} src={thumb} />
-      )}
-      {showTag && (
-        <div class={bem('tag')}>
-          {slots.tag ? (
-            slots.tag()
-          ) : (
-            <Tag mark type="danger">
-              {props.tag}
-            </Tag>
-          )}
+      );
+
+      return (
+        <a href={props.thumbLink} class={bem('thumb')}>
+          {slots.thumb ? slots.thumb() : DefaultThumb}
+          {ThumbTag()}
+        </a>
+      );
+    }
+  }
+
+  function Title() {
+    if (slots.title) {
+      return slots.title();
+    }
+
+    if (props.title) {
+      return <div class={bem('title')}>{props.title}</div>;
+    }
+  }
+
+  function Desc() {
+    if (slots.desc) {
+      return slots.desc();
+    }
+
+    if (props.desc) {
+      return <div class={[bem('desc'), 'van-ellipsis']}>{props.desc}</div>;
+    }
+  }
+
+  function Price() {
+    if (showPrice) {
+      return (
+        <div class={bem('price')}>
+          {slots.price ? slots.price() : `${props.currency} ${props.price}`}
         </div>
-      )}
-    </a>
-  );
+      );
+    }
+  }
 
-  const Title = slots.title
-    ? slots.title()
-    : props.title && <div class={bem('title')}>{props.title}</div>;
+  function OriginPrice() {
+    if (showOriginPrice) {
+      const slot = slots['origin-price'];
+      return (
+        <div class={bem('origin-price')}>
+          {slot ? slot() : `${props.currency} ${props.originPrice}`}
+        </div>
+      );
+    }
+  }
 
-  const Desc = slots.desc
-    ? slots.desc()
-    : props.desc && <div class={[bem('desc'), 'van-ellipsis']}>{props.desc}</div>;
+  function Num() {
+    if (showNum) {
+      return <div class={bem('num')}>{slots.num ? slots.num() : `x ${props.num}`}</div>;
+    }
+  }
 
-  const Price = showPrice && (
-    <div class={bem('price')}>
-      {slots.price ? slots.price() : `${props.currency} ${props.price}`}
-    </div>
-  );
-
-  const OriginPrice = showOriginPrice && (
-    <div class={bem('origin-price')}>
-      {slots['origin-price']
-        ? slots['origin-price']()
-        : `${props.currency} ${props.originPrice}`}
-    </div>
-  );
-
-  const Num = showNum && (
-    <div class={bem('num')}>{slots.num ? slots.num() : `x ${props.num}`}</div>
-  );
-
-  const Footer = slots.footer && <div class={bem('footer')}>{slots.footer()}</div>;
+  function Footer() {
+    if (slots.footer) {
+      return <div class={bem('footer')}>{slots.footer()}</div>;
+    }
+  }
 
   return (
     <div class={bem()} {...inherit(ctx, true)}>
       <div class={bem('header')}>
-        {Thumb}
+        {Thumb()}
         <div class={bem('content', { centered: props.centered })}>
-          {Title}
-          {Desc}
+          {Title()}
+          {Desc()}
           {slots.tags && slots.tags()}
           {showBottom && (
             <div class="van-card__bottom">
-              {Price}
-              {OriginPrice}
-              {Num}
+              {Price()}
+              {OriginPrice()}
+              {Num()}
             </div>
           )}
         </div>
       </div>
-      {Footer}
+      {Footer()}
     </div>
   );
 }
