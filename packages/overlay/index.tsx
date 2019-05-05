@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { emit, inherit } from '../utils/functional';
+import { inherit } from '../utils/functional';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -38,9 +38,6 @@ function Overlay(
         onTouchmove={(event: TouchEvent) => {
           event.preventDefault();
           event.stopPropagation();
-        }}
-        onClick={(event: Event) => {
-          emit(ctx, 'click', event);
         }}
         {...inherit(ctx, true)}
       />

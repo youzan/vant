@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "1.6.16",
+  "version": "1.6.17",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -37,7 +37,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,vue}": [
+    "*.{ts,tsx,js,vue}": [
       "eslint",
       "git add"
     ],
@@ -59,7 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.4.3",
-    "@vant/icons": "1.1.6",
+    "@vant/icons": "1.1.7",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
     "vue-lazyload": "1.2.3"
   },

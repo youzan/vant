@@ -1,5 +1,23 @@
 ## Changelog
 
+## [1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
+`2019-05-05`
+
+**Improvements**
+
+- List: add direction prop [\#3223](https://github.com/youzan/vant/pull/3223)
+- Cell: add title-style prop [\#3233](https://github.com/youzan/vant/pull/3233)
+- Field: add label-width prop [\#3235](https://github.com/youzan/vant/pull/3235)
+
+**Bug Fixes**
+
+- fix Card thumb image align center [\#3229](https://github.com/youzan/vant/pull/3229)
+- fix Icon new and question icon incomplete render
+- fix Step text display overlapping in small screen devices
+- fix Step incorrect active step when insert step asynchronously
+- fix Popup click-overlay event triggered twice when show multiple popup
+
+
 ## [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
 `2019-04-26`
 

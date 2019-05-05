@@ -1,5 +1,23 @@
 ## 更新日志
 
+## [1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
+`2019-05-05`
+
+**Improvements**
+
+- List: 新增 direction 属性 [\#3223](https://github.com/youzan/vant/pull/3223)
+- Cell: 新增 title-style 属性 [\#3233](https://github.com/youzan/vant/pull/3233)
+- Field: 新增 label-width 属性 [\#3235](https://github.com/youzan/vant/pull/3235)
+
+**Bug Fixes**
+
+- 修复 Card 图片未居中的问题 [\#3229](https://github.com/youzan/vant/pull/3229)
+- 修复 Icon new、question 图标展示不全的问题
+- 修复 Step 异步插入步骤时顺序错误的问题
+- 修复 Step 步骤超过五项时在小屏设备上文字重叠的问题
+- 修复 Popup 弹出多个弹层时 click-overlay 事件重复触发的问题
+
+
 ## [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
 `2019-04-26`
 

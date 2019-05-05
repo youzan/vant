@@ -5,7 +5,9 @@ const [sfc, bem] = use('step');
 
 export default sfc({
   beforeCreate() {
-    this.$parent.steps.push(this);
+    const { steps } = this.$parent;
+    const index = this.$parent.slots().indexOf(this.$vnode);
+    steps.splice(index === -1 ? steps.length : index, 0, this);
   },
 
   beforeDestroy() {
