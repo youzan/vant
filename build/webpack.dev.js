@@ -25,10 +25,7 @@ module.exports = {
     clientLogLevel: 'warning'
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.vue', '.css'],
-    alias: {
-      packages: path.join(__dirname, '../packages')
-    }
+    extensions: ['.js', '.ts', '.tsx', '.vue', '.css']
   },
   module: {
     rules: [

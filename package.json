@@ -20,11 +20,11 @@
     "build:entry": "node build/build-entry.js",
     "build:components": "node build/build-components.js --color",
     "build:vant": "cross-env NODE_ENV=production webpack --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --color --config build/webpack.build.js",
-    "build:style": "gulp --gulpfile ./build/build-style.js",
+    "build:style": "node build/build-style.js",
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:lib": "node build/build-lib.js",
-    "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
+    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",
@@ -61,8 +61,7 @@
     "@babel/runtime": "^7.4.4",
     "@vant/icons": "1.1.7",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
-    "vue-lazyload": "1.2.3",
-    "webpack-dev-server": "^3.3.1"
+    "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
     "vue": ">= 2.5.0"
@@ -89,14 +88,11 @@
     "codecov": "^3.3.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
+    "csso": "^3.5.1",
     "dependency-tree": "^7.0.2",
     "eslint": "^5.16.0",
     "fast-glob": "^2.2.4",
     "gh-pages": "^2.0.1",
-    "gulp": "3.9.1",
-    "gulp-csso": "^3.0.1",
-    "gulp-less": "^4.0.1",
-    "gulp-postcss": "^8.0.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "^2.2.0",
     "jest": "^24.8.0",
@@ -108,7 +104,6 @@
     "postcss": "^7.0.16",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.12.1",
-    "rimraf": "^2.5.4",
     "shelljs": "^0.8.3",
     "signale": "^1.4.0",
     "style-loader": "^0.23.1",
@@ -126,7 +121,8 @@
     "vue-template-compiler": "2.6.10",
     "vue-template-es2015-compiler": "^1.9.1",
     "webpack": "^4.30.0",
-    "webpack-cli": "^3.3.2"
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
   },
   "vetur": {
     "tags": "vetur/tags.json",
