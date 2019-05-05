@@ -22,10 +22,10 @@ function GoodsActionIcon(
   slots: DefaultSlots,
   ctx: RenderContext<GoodsActionIconProps>
 ) {
-  const onClick = (event: Event) => {
+  function onClick(event: Event) {
     emit(ctx, 'click', event);
     functionalRoute(ctx);
-  };
+  }
 
   return (
     <div class={[bem(), 'van-hairline']} onClick={onClick} {...inherit(ctx)}>

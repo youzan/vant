@@ -35,30 +35,28 @@ function Search(
   slots: SearchSlots,
   ctx: RenderContext<SearchProps>
 ) {
-  const Label = () => {
-    if (!slots.label && !props.label) {
-      return null;
+  function Label() {
+    if (slots.label || props.label) {
+      return <div class={bem('label')}>{slots.label ? slots.label() : props.label}</div>;
     }
+  }
 
-    return <div class={bem('label')}>{slots.label ? slots.label() : props.label}</div>;
-  };
-
-  const Action = () => {
+  function Action() {
     if (!props.showAction) {
-      return null;
+      return;
     }
 
-    const onCancel = () => {
+    function onCancel() {
       emit(ctx, 'input', '');
       emit(ctx, 'cancel');
-    };
+    }
 
     return (
       <div class={bem('action')}>
         {slots.action ? slots.action() : <div onClick={onCancel}>{t('cancel')}</div>}
       </div>
     );
-  };
+  }
 
   const fieldData = {
     attrs: ctx.data.attrs,

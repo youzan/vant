@@ -46,7 +46,7 @@ export default {
 | position | 位置，可选值为 `top` `bottom` <br> `right` `left` | `String` | `center` | - |
 | overlay-class | 自定义蒙层类名 | `String` | - | - |
 | overlay-style | 自定义蒙层样式 | `Object` | - | - |
-| transition | transition 名称 | `String` | - | - |
+| transition | 动画类名，用法与原生`transtion`组件的`name`属性一致 | `String` | - | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `true` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | 1.0.0 |

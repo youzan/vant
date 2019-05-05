@@ -24,6 +24,12 @@ function ContactCard(
 ) {
   const { type, editable } = props;
 
+  function onClick(event: Event) {
+    if (editable) {
+      emit(ctx, 'click', event);
+    }
+  }
+
   return (
     <Cell
       center
@@ -32,11 +38,7 @@ function ContactCard(
       class={bem([type])}
       valueClass={bem('value')}
       icon={type === 'edit' ? 'contact' : 'add-square'}
-      onClick={(event: Event) => {
-        if (editable) {
-          emit(ctx, 'click', event);
-        }
-      }}
+      onClick={onClick}
       {...inherit(ctx)}
     >
       {type === 'add'

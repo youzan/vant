@@ -36,11 +36,11 @@ function AddressItem(
 ) {
   const { disabled, switchable } = props;
 
-  const onSelect = () => {
+  function onSelect() {
     if (props.switchable) {
       emit(ctx, 'select');
     }
-  };
+  }
 
   const renderRightIcon = () => (
     <Icon

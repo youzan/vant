@@ -43,16 +43,16 @@ function Button(
 ) {
   const { tag, type, disabled, loading, hairline, loadingText } = props;
 
-  const onClick = (event: Event) => {
+  function onClick(event: Event) {
     if (!loading && !disabled) {
       emit(ctx, 'click', event);
       functionalRoute(ctx);
     }
-  };
+  }
 
-  const onTouchstart = (event: TouchEvent) => {
+  function onTouchstart(event: TouchEvent) {
     emit(ctx, 'touchstart', event);
-  };
+  }
 
   const classes = [
     bem([

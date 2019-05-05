@@ -28,7 +28,7 @@ function Loading(
 
   const style: { [key: string]: string } = { color };
   if (size) {
-    const iconSize = suffixPx(size);
+    const iconSize = suffixPx(size) as string;
     style.width = iconSize;
     style.height = iconSize;
   }

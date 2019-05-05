@@ -23,10 +23,10 @@ function GoodsActionButton(
   slots: DefaultSlots,
   ctx: RenderContext<GoodsActionButtonProps>
 ) {
-  const onClick = (event: Event) => {
+  function onClick(event: Event) {
     emit(ctx, 'click', event);
     functionalRoute(ctx);
-  };
+  }
 
   return (
     <Button

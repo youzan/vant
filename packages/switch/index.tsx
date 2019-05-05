@@ -26,13 +26,13 @@ function Switch(
     backgroundColor: value ? props.activeColor : props.inactiveColor
   };
 
-  const onClick = () => {
+  function onClick() {
     if (!disabled && !loading) {
       const newValue = value === activeValue ? inactiveValue : activeValue;
       emit(ctx, 'input', newValue);
       emit(ctx, 'change', newValue);
     }
-  };
+  }
 
   return (
     <div

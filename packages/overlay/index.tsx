@@ -18,6 +18,11 @@ export type OverlayEvents = {
 
 const [sfc, bem] = use('overlay');
 
+function preventTouchMove(event: TouchEvent) {
+  event.preventDefault();
+  event.stopPropagation();
+}
+
 function Overlay(
   h: CreateElement,
   props: OverlayProps,
@@ -35,10 +40,7 @@ function Overlay(
         vShow={props.visible}
         style={style}
         class={[bem(), props.className]}
-        onTouchmove={(event: TouchEvent) => {
-          event.preventDefault();
-          event.stopPropagation();
-        }}
+        onTouchmove={preventTouchMove}
         {...inherit(ctx, true)}
       />
     </transition>

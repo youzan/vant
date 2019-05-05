@@ -74,10 +74,10 @@ function Cell(
         />
     );
 
-  const onClick = (event: Event) => {
+  function onClick(event: Event) {
     emit(ctx, 'click', event);
     functionalRoute(ctx);
-  };
+  }
 
   const classes: Mods = {
     center: props.center,
