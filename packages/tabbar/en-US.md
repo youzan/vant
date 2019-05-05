@@ -63,6 +63,21 @@ export default {
 }
 ```
 
+#### Custom Color
+
+```html
+<van-tabbar
+  v-model="active"
+  active-color="#07c160"
+  inactive-color="#000"
+>
+  <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="search">Tab</van-tabbar-item>
+  <van-tabbar-item icon="freinds-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">Tab</van-tabbar-item>
+</van-tabbar>
+```
+
 ### Tabbar Props
 
 | Attribute | Description | Type | Default |
@@ -71,6 +86,7 @@ export default {
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
+| inactive-color | Color of inactive tab item | `String` | `#7d7e80` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
 ### Tabbar Events

@@ -70,6 +70,7 @@ export default {
 <van-tabbar
   v-model="active"
   active-color="#07c160"
+  inactive-color="#000"
 >
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
   <van-tabbar-item icon="search">标签</van-tabbar-item>
@@ -86,6 +87,7 @@ export default {
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
+| inactive-color | 未选中标签的颜色 | `String` | `#7d7e80` | 2.0.0 |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
 ### Tabbar Events

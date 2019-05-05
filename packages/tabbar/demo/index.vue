@@ -43,6 +43,7 @@
       <van-tabbar
         v-model="active3"
         active-color="#07c160"
+        inactive-color="#000"
       >
         <van-tabbar-item icon="home-o">{{ $t('tab') }}</van-tabbar-item>
         <van-tabbar-item icon="search">{{ $t('tab') }}</van-tabbar-item>

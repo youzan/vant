@@ -37,10 +37,10 @@ export default sfc({
 
   render(h) {
     const { icon, slots, active } = this;
-    const style = active ? { color: this.$parent.activeColor } : null;
+    const color = this.$parent[active ? 'activeColor' : 'inactiveColor'];
 
     return (
-      <div class={bem({ active })} style={style} onClick={this.onClick}>
+      <div class={bem({ active })} style={{ color }} onClick={this.onClick}>
         <div class={bem('icon', { dot: this.dot })}>
           {slots('icon', { active }) || (icon && <Icon name={icon} />)}
           <Info info={this.info} />

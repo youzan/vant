@@ -12,6 +12,7 @@ export default sfc({
   props: {
     value: Number,
     activeColor: String,
+    inactiveColor: String,
     safeAreaInsetBottom: Boolean,
     fixed: {
       type: Boolean,
