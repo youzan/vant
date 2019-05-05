@@ -10,7 +10,8 @@ Vue.use(Popup);
 ### 代码演示
 
 #### 基础用法
-`popup`默认从中间弹出
+
+`Popup`默认从中间弹出
 
 ```html
 <van-popup v-model="show">内容</van-popup>
@@ -27,7 +28,8 @@ export default {
 ```
 
 #### 弹出位置
-通过`position`属性设置 Popup 弹出位置
+
+通过`position`属性设置`Popup`弹出位置
 
 ```html
 <van-popup v-model="show" position="top" :overlay="false">
@@ -41,7 +43,7 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前组件是否显示 | `Boolean` | `false` | - |
 | overlay | 是否显示蒙层 | `Boolean` | `true` | - |
-| position | 位置，可选值为 `top` `bottom` <br> `right` `left` | `String` | - | - |
+| position | 位置，可选值为 `top` `bottom` <br> `right` `left` | `String` | `center` | - |
 | overlay-class | 自定义蒙层类名 | `String` | - | - |
 | overlay-style | 自定义蒙层样式 | `Object` | - | - |
 | transition | transition 名称 | `String` | - | - |

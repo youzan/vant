@@ -7,8 +7,11 @@ export default sfc({
   mixins: [PopupMixin],
 
   props: {
-    position: String,
     transition: String,
+    position: {
+      type: String,
+      default: 'center'
+    },
     overlay: {
       type: Boolean,
       default: true
@@ -26,7 +29,9 @@ export default sfc({
 
     const { position } = this;
     const emit = eventName => event => this.$emit(eventName, event);
-    const transitionName = this.transition || (position ? `van-popup-slide-${position}` : 'van-fade');
+    const transitionName =
+      this.transition ||
+      (position === 'center' ? 'van-fade' : `van-popup-slide-${position}`);
 
     return (
       <transition
@@ -34,7 +39,11 @@ export default sfc({
         onAfterEnter={emit('opened')}
         onAfterLeave={emit('closed')}
       >
-        <div vShow={this.value} class={bem({ [position]: position })} onClick={emit('click')}>
+        <div
+          vShow={this.value}
+          class={bem({ [position]: position })}
+          onClick={emit('click')}
+        >
           {this.slots()}
         </div>
       </transition>

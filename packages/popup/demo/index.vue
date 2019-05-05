@@ -90,15 +90,6 @@ export default {
         }, 2000);
       }
     }
-  },
-
-  methods: {
-    showDialog() {
-      this.$dialog.confirm({
-        title: 'confirm标题',
-        message: '弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。弹窗提示文字，左右始终距离边20PX，上下距离20PX，文字左对齐。'
-      });
-    }
   }
 };
 </script>
@@ -108,36 +99,25 @@ export default {
 
 .demo-popup {
   .van-button {
-    margin: 10px 0 10px 15px;
+    margin-left: 15px;
   }
 
   .van-popup {
-    width: 60%;
     padding: 20px;
     box-sizing: border-box;
+
+    &--center {
+      width: 60%;
+    }
 
     &--bottom {
       width: 100%;
       padding: 0;
-      border-radius: 0;
-    }
-
-    .van-tabs__content {
-      height: 156px;
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .van-tab__pane:not(:first-child) {
-      padding: 10px;
-      line-height: 1.4;
-      color: @gray-darker;
     }
 
     &--top {
       color: @white;
       width: 100%;
-      border-radius: 0;
       line-height: 20px;
       background-color: rgba(0, 0, 0, 0.8);
     }

@@ -45,7 +45,7 @@ function ActionSheet(
   function Header() {
     if (title) {
       return (
-        <div class={[bem('header'), 'van-hairline--top-bottom']}>
+        <div class={[bem('header'), 'van-hairline--bottom']}>
           {title}
           <Icon name="close" class={bem('close')} onClick={onCancel} />
         </div>

@@ -10,6 +10,7 @@ Vue.use(Popup);
 ### Usage
 
 #### Basic Usage
+
 Popup is located in the middle of the screen by default
 
 ```html
@@ -27,6 +28,7 @@ export default {
 ```
 
 #### Position
+
 Use `position` prop to set popup display position
 
 ```html
@@ -41,7 +43,7 @@ Use `position` prop to set popup display position
 |------|------|------|------|
 | v-model | Whether to show popup | `Boolean` | `false` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
-| position | Can be set to `top` `bottom` `right` `left` | `String` | - |
+| position | Can be set to `top` `bottom` `right` `left` | `String` | `center` |
 | overlay-class | Custom overlay class | `String` | - |
 | overlay-style | Custom overlay style | `Object` | - |
 | close-on-click-overlay | Close popup when click overlay | `Boolean` | `true` |
