@@ -103,7 +103,7 @@
 
 - 新增`preview-open`事件
 - 新增`preview-close`事件
- 
+
 ### Tabbar
 
 - 新增`inactive-color`属性
