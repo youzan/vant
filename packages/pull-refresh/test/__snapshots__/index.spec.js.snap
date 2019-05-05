@@ -46,7 +46,7 @@ exports[`change head content when pulling down 4`] = `
 
 exports[`change head content when pulling down 5`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 300ms; transform: translate3d(0,0px, 0);">
+  <div class="van-pull-refresh__track" style="transition: 300ms;">
     <div class="van-pull-refresh__head"></div>
   </div>
 </div>
@@ -54,7 +54,7 @@ exports[`change head content when pulling down 5`] = `
 
 exports[`not in page top 1`] = `
 <div class="van-pull-refresh">
-  <div class="van-pull-refresh__track" style="transition: 0ms; transform: translate3d(0,0px, 0);">
+  <div class="van-pull-refresh__track" style="transition: 0ms;">
     <div class="van-pull-refresh__head"></div>
   </div>
 </div>
