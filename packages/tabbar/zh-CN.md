@@ -14,9 +14,9 @@ Vue.use(Tabbar).use(TabbarItem);
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
+  <van-tabbar-item icon="search">标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -30,6 +30,16 @@ export default {
 }
 ```
 
+#### 显示徽标
+
+```html
+<van-tabbar v-model="active">
+  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="search" dot>标签</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="5">标签</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">标签</van-tabbar-item>
+</van-tabbar>
+```
 
 #### 自定义图标
 

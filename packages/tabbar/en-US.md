@@ -14,9 +14,9 @@ Vue.use(Tabbar).use(TabbarItem);
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
-  <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
-  <van-tabbar-item icon="friends-o" info="5">Tab</van-tabbar-item>
-  <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
+  <van-tabbar-item icon="search">Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o">Tab</van-tabbar-item>
 </van-tabbar>
 ```
 
@@ -30,7 +30,18 @@ export default {
 }
 ```
 
-#### Custom icon
+#### Show Badge
+
+```html
+<van-tabbar v-model="active">
+  <van-tabbar-item icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item icon="search" dot>Tab</van-tabbar-item>
+  <van-tabbar-item icon="friends-o" info="5">Tab</van-tabbar-item>
+  <van-tabbar-item icon="setting-o" info="20">Tab</van-tabbar-item>
+</van-tabbar>
+```
+
+#### Custom Icon
 
 Use `icon` slot to custom icon
 
