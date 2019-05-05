@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { emit, inherit } from '../utils/functional';
+import { inherit } from '../utils/functional';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
