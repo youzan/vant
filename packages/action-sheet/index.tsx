@@ -36,17 +36,21 @@ function ActionSheet(
 ) {
   const { title, cancelText } = props;
 
-  const onCancel = () => {
+  function onCancel() {
     emit(ctx, 'input', false);
     emit(ctx, 'cancel');
-  };
+  }
 
-  const Header = () => (
-    <div class={[bem('header'), 'van-hairline--top-bottom']}>
-      {title}
-      <Icon name="close" class={bem('close')} onClick={onCancel} />
-    </div>
-  );
+  function Header() {
+    if (title) {
+      return (
+        <div class={[bem('header'), 'van-hairline--top-bottom']}>
+          {title}
+          <Icon name="close" class={bem('close')} onClick={onCancel} />
+        </div>
+      );
+    }
+  }
 
   const Option = (item: ActionSheetItem, index: number) => (
     <div
@@ -92,7 +96,8 @@ function ActionSheet(
       }}
       {...inherit(ctx)}
     >
-      {title ? Header() : props.actions.map(Option)}
+      {Header()}
+      {props.actions.map(Option)}
       {slots.default && <div class={bem('content')}>{slots.default()}</div>}
       {cancelText && (
         <div class={bem('cancel')} onClick={onCancel}>

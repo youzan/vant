@@ -1,19 +1,28 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
+      <van-button @click="show1 = true">{{ $t('buttonText') }}</van-button>
       <van-action-sheet
         v-model="show1"
-        :actions="actions"
+        :actions="simpleActions"
+        @select="onSelect"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('status')">
+      <van-button @click="show2 = true">{{ $t('buttonText') }}</van-button>
+      <van-action-sheet
+        v-model="show2"
+        :actions="statusActions"
         @select="onSelect"
       />
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button @click="show2 = true">{{ $t('button2') }}</van-button>
+      <van-button @click="show3 = true">{{ $t('buttonText') }}</van-button>
       <van-action-sheet
-        v-model="show2"
-        :actions="actions"
+        v-model="show3"
+        :actions="simpleActions"
         :cancel-text="$t('cancel')"
         @cancel="onCancel"
         @select="onSelect"
@@ -21,9 +30,9 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button @click="show3 = true">{{ $t('button3') }}</van-button>
+      <van-button @click="show4 = true">{{ $t('buttonText') }}</van-button>
       <van-action-sheet
-        v-model="show3"
+        v-model="show4"
         :title="$t('title')"
       >
         <p>{{ $t('content') }}</p>
@@ -36,20 +45,18 @@
 export default {
   i18n: {
     'zh-CN': {
-      button1: '弹出 ActionSheet',
-      button2: '弹出带取消按钮的 ActionSheet',
-      button3: '弹出带标题的 ActionSheet',
-      title2: '带取消按钮的 ActionSheet',
-      title3: '带标题的 ActionSheet',
+      buttonText: '弹出菜单',
+      title2: '展示取消按钮',
+      title3: '展示标题栏',
+      status: '选项状态',
       description: '描述信息',
       disabledOption: '禁用选项'
     },
     'en-US': {
-      button1: 'Show ActionSheet',
-      button2: 'Show ActionSheet with cancel button',
-      button3: 'Show ActionSheet with title',
+      buttonText: 'Show ActionSheet',
       title2: 'ActionSheet with cancel button',
       title3: 'ActionSheet with title',
+      status: 'Status',
       description: 'Description',
       disabledOption: 'Disabled Option'
     }
@@ -59,15 +66,23 @@ export default {
     return {
       show1: false,
       show2: false,
-      show3: false
+      show3: false,
+      show4: false
     };
   },
 
   computed: {
-    actions() {
+    simpleActions() {
       return [
         { name: this.$t('option') },
-        { name: this.$t('option'), subname: this.$t('description') },
+        { name: this.$t('option') },
+        { name: this.$t('option'), subname: this.$t('description') }
+      ];
+    },
+
+    statusActions() {
+      return [
+        { name: this.$t('option') },
         { loading: true },
         { name: this.$t('disabledOption'), disabled: true }
       ];

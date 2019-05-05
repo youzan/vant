@@ -10,6 +10,7 @@ Vue.use(ActionSheet);
 ### Usage
 
 #### Basic Usage
+
 Use `actions` prop to set options of action-sheet. 
 
 ```html
@@ -26,20 +27,9 @@ export default {
     return {
       show: false,
       actions: [
-        {
-          name: 'Option'
-        },
-        {
-          name: 'Option',
-          description: 'Description'
-        },
-        {
-          loading: true
-        },
-        {
-          name: 'Disabled Option',
-          disabled: true
-        }
+        { name: 'Option' },
+        { name: 'Option' },
+        { name: 'Option', subname: 'Description' }
       ]
     };
   },
@@ -49,6 +39,30 @@ export default {
       this.show = false;
       Toast(item.name);
     }
+  }
+}
+```
+
+#### Status
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: 'Option' },
+        { loading: true },
+        { name: 'Disabled Option', disabled: true }
+      ]
+    };
   }
 }
 ```
@@ -66,7 +80,6 @@ export default {
 ```
 
 #### ActionSheet with title
-ActionSheet will get another style if there is a `title` prop.
 
 ```html
 <van-action-sheet v-model="show" title="Title">

@@ -11,7 +11,7 @@ Vue.use(ActionSheet);
 
 #### 基础用法
 
-需要传入一个`actions`的数组，数组的每一项是一个对象，对象属性见文档下方表格。
+`ActionSheet`通过`actions`数组来定义展示的选项，数组的每一项是一个对象，对象属性见文档下方表格。
 
 ```html
 <van-action-sheet
@@ -27,20 +27,9 @@ export default {
     return {
       show: false,
       actions: [
-        {
-          name: '选项'
-        },
-        {
-          name: '选项',
-          subname: '描述信息'
-        },
-        {
-          loading: true
-        },
-        {
-          name: '禁用选项',
-          disabled: true
-        }
+        { name: '选项' },
+        { name: '选项' },
+        { name: '选项', subname: '描述信息' }
       ]
     };
   },
@@ -55,9 +44,35 @@ export default {
 }
 ```
 
-#### 带取消按钮的 ActionSheet
+#### 选项状态
 
-如果传入了`cancelText`属性，且不为空，则会在下方显示一个取消按钮，点击会将当前`ActionSheet`关闭。
+选项可以设置为加载状态或禁用状态
+
+```html
+<van-action-sheet
+  v-model="show"
+  :actions="actions"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      show: false,
+      actions: [
+        { name: '选项' },
+        { name: '选项', loading: true },
+        { name: '禁用选项', disabled: true }
+      ]
+    };
+  }
+}
+```
+
+#### 展示取消按钮
+
+设置`cancelText`属性后，会在底部展示取消按钮，点击后关闭当前菜单
 
 ```html
 <van-action-sheet
@@ -69,13 +84,13 @@ export default {
 />
 ```
 
-#### 带标题的 ActionSheet
+#### 展示标题栏
 
-如果传入了`title`属性，且不为空，则另外一种样式的`ActionSheet`，里面内容需要自定义。
+通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
 
 ```html
-<van-action-sheet v-model="show" title="支持以下配送方式">
-  <p>一些内容</p>
+<van-action-sheet v-model="show" title="标题">
+  <p>内容</p>
 </van-action-sheet>
 ```
 
@@ -85,7 +100,7 @@ export default {
 |------|------|------|------|------|
 | actions | 菜单选项 | `Array` | `[]` | - |
 | title | 标题 | `String` | - | - |
-| cancel-text | 取消按钮文字，为空时不展示取消按钮 | `String` | - | - |
+| cancel-text | 取消按钮文字 | `String` | - | - |
 | overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `true` | - |
 | lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | 1.1.11 |

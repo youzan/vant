@@ -1,6 +1,7 @@
 ## AddressEdit
 
 ### Install
+
 ``` javascript
 import { AddressEdit } from 'vant';
 
@@ -10,7 +11,6 @@ Vue.use(AddressEdit);
 ### Usage
 
 #### Basic Usage
-
 
 ```html
 <van-address-edit

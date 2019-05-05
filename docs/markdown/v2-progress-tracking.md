@@ -53,6 +53,10 @@
 
 - 新增`Skeleton`骨架屏组件
 
+### ActionSheet
+
+- 支持同时使用`title`和`actions`属性
+
 ### Button
 
 - 新增`loading-type`属性
