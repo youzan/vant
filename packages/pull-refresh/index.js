@@ -144,7 +144,7 @@ export default sfc({
     const text = this[`${status}Text`] || t(status);
     const style = {
       transition: `${this.duration}ms`,
-      transform: `translate3d(0,${this.height}px, 0)`
+      transform: this.height ? `translate3d(0,${this.height}px, 0)` : 'unset'
     };
 
     const Status = this.slots(status) || [
