@@ -146,12 +146,18 @@ test('watch overlay prop', () => {
   expect(div.querySelector('.van-overlay')).toBeTruthy();
 });
 
-test('close on click modal', () => {
+test('close on click overlay', () => {
   const div = document.createElement('div');
+  const onClickOverlay = jest.fn();
+
   wrapper = mount({
     template: `
       <div>
-        <popup v-model="value" :get-container="getContainer" />
+        <popup
+          v-model="value"
+          :get-container="getContainer"
+          @click-overlay="onClickOverlay"
+        />
       </div>
     `,
     components: {
@@ -162,13 +168,18 @@ test('close on click modal', () => {
         value: true,
         getContainer: () => div
       };
+    },
+    methods: {
+      onClickOverlay
     }
   });
 
   const modal = div.querySelector('.van-overlay');
   triggerDrag(modal, 0, -30);
   modal.click();
+
   expect(wrapper.vm.value).toBeFalsy();
+  expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 
 test('oepn & close event', () => {

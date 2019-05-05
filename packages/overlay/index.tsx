@@ -39,9 +39,6 @@ function Overlay(
           event.preventDefault();
           event.stopPropagation();
         }}
-        onClick={(event: Event) => {
-          emit(ctx, 'click', event);
-        }}
         {...inherit(ctx, true)}
       />
     </transition>
