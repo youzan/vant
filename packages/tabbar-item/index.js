@@ -2,10 +2,13 @@ import { use } from '../utils';
 import Icon from '../icon';
 import Info from '../info';
 import { route, routeProps } from '../utils/router';
+import { ChildrenMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('tabbar-item');
 
 export default sfc({
+  mixins: [ChildrenMixin('vanTabbar')],
+
   props: {
     ...routeProps,
     icon: String,
@@ -19,17 +22,9 @@ export default sfc({
     };
   },
 
-  beforeCreate() {
-    this.$parent.items.push(this);
-  },
-
-  destroyed() {
-    this.$parent.items.splice(this.$parent.items.indexOf(this), 1);
-  },
-
   methods: {
     onClick(event) {
-      this.$parent.onChange(this.$parent.items.indexOf(this));
+      this.parent.onChange(this.index);
       this.$emit('click', event);
       route(this.$router, this);
     }
@@ -37,7 +32,7 @@ export default sfc({
 
   render(h) {
     const { icon, slots, active } = this;
-    const color = this.$parent[active ? 'activeColor' : 'inactiveColor'];
+    const color = this.parent[active ? 'activeColor' : 'inactiveColor'];
 
     return (
       <div class={bem({ active })} style={{ color }} onClick={this.onClick}>

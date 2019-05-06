@@ -15,7 +15,12 @@ export function ChildrenMixin(parent) {
     created() {
       const { children } = this.parent;
       const index = this.parent.slots().indexOf(this.$vnode);
-      children.splice(index === -1 ? children.length : index, 0, this);
+
+      if (index === -1) {
+        children.push(this);
+      } else {
+        children.splice(index, 0, this);
+      }
     },
 
     beforeDestroy() {

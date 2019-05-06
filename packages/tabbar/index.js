@@ -1,13 +1,10 @@
 import { use } from '../utils';
+import { ParentMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('tabbar');
 
 export default sfc({
-  data() {
-    return {
-      items: []
-    };
-  },
+  mixins: [ParentMixin('vanTabbar')],
 
   props: {
     value: Number,
@@ -25,7 +22,7 @@ export default sfc({
   },
 
   watch: {
-    items() {
+    children() {
       this.setActiveItem();
     },
 
@@ -36,7 +33,7 @@ export default sfc({
 
   methods: {
     setActiveItem() {
-      this.items.forEach((item, index) => {
+      this.children.forEach((item, index) => {
         item.active = index === this.value;
       });
     },
