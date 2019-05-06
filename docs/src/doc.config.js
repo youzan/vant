@@ -176,6 +176,10 @@ module.exports = {
                 title: 'Dialog 弹出框'
               },
               {
+                path: '/dropdown-menu',
+                title: 'DropdownMenu 下拉菜单'
+              },
+              {
                 path: '/loading',
                 title: 'Loading 加载'
               },
@@ -485,6 +489,10 @@ module.exports = {
               {
                 path: '/dialog',
                 title: 'Dialog'
+              },
+              {
+                path: '/dropdown-menu',
+                title: 'DropdownMenu'
               },
               {
                 path: '/loading',

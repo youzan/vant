@@ -52,6 +52,7 @@
 ## 新特性
 
 - 新增`Skeleton`骨架屏组件
+- 新增`DropdownMenu`下拉菜单组件
 
 ### ActionSheet
 

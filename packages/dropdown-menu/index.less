@@ -1,0 +1,43 @@
+@import '../style/var';
+
+.van-dropdown-menu {
+  display: flex;
+  height: 50px;
+  user-select: none;
+  background-color: @white;
+
+  &__item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:active {
+      opacity: .7;
+    }
+  }
+
+  &__title {
+    font-size: 15px;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 3px;
+      right: -12px;
+      opacity: .6;
+      border: 3px solid;
+      transform: rotate(-45deg);
+      border-color: transparent transparent currentColor currentColor;
+    }
+
+    &--active {
+      &::after {
+        top: 7px;
+        opacity: 1;
+        transform: rotate(135deg);
+      }
+    }
+  }
+}

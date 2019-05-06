@@ -47,6 +47,7 @@ export default {
   }
 };
 ```
+
 ### Props
 
 | Attribute | Description | Type | Default |

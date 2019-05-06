@@ -18,6 +18,7 @@ export default {
   'coupon-list': () => wrapper(import('../../packages/coupon-list/demo'), 'coupon-list'),
   'datetime-picker': () => wrapper(import('../../packages/datetime-picker/demo'), 'datetime-picker'),
   'dialog': () => wrapper(import('../../packages/dialog/demo'), 'dialog'),
+  'dropdown-menu': () => wrapper(import('../../packages/dropdown-menu/demo'), 'dropdown-menu'),
   'field': () => wrapper(import('../../packages/field/demo'), 'field'),
   'goods-action': () => wrapper(import('../../packages/goods-action/demo'), 'goods-action'),
   'icon': () => wrapper(import('../../packages/icon/demo'), 'icon'),

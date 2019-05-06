@@ -43,6 +43,8 @@ export default {
   'datetime-picker.zh-CN': () => import('../../packages/datetime-picker/zh-CN.md'),
   'dialog.en-US': () => import('../../packages/dialog/en-US.md'),
   'dialog.zh-CN': () => import('../../packages/dialog/zh-CN.md'),
+  'dropdown-menu.en-US': () => import('../../packages/dropdown-menu/en-US.md'),
+  'dropdown-menu.zh-CN': () => import('../../packages/dropdown-menu/zh-CN.md'),
   'field.en-US': () => import('../../packages/field/en-US.md'),
   'field.zh-CN': () => import('../../packages/field/zh-CN.md'),
   'goods-action.en-US': () => import('../../packages/goods-action/en-US.md'),

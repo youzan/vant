@@ -23,6 +23,8 @@ import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
+import DropdownItem from './dropdown-item';
+import DropdownMenu from './dropdown-menu';
 import Field from './field';
 import GoodsAction from './goods-action';
 import GoodsActionButton from './goods-action-button';
@@ -104,6 +106,8 @@ const components = [
   CouponList,
   DatetimePicker,
   Dialog,
+  DropdownItem,
+  DropdownMenu,
   Field,
   GoodsAction,
   GoodsActionButton,
@@ -190,6 +194,8 @@ export {
   CouponList,
   DatetimePicker,
   Dialog,
+  DropdownItem,
+  DropdownMenu,
   Field,
   GoodsAction,
   GoodsActionButton,
