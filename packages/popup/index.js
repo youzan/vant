@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, isDef } from '../utils';
 import { PopupMixin } from '../mixins/popup';
 
 const [sfc, bem] = use('popup');
@@ -8,6 +8,10 @@ export default sfc({
 
   props: {
     transition: String,
+    duration: {
+      type: Number,
+      default: null
+    },
     position: {
       type: String,
       default: 'center'
@@ -27,11 +31,17 @@ export default sfc({
       return;
     }
 
-    const { position } = this;
+    const { position, duration } = this;
     const emit = eventName => event => this.$emit(eventName, event);
+
     const transitionName =
       this.transition ||
       (position === 'center' ? 'van-fade' : `van-popup-slide-${position}`);
+
+    const style = {};
+    if (isDef(duration)) {
+      style.transitionDuration = `${duration}s`;
+    }
 
     return (
       <transition
@@ -41,6 +51,7 @@ export default sfc({
       >
         <div
           vShow={this.value}
+          style={style}
           class={bem({ [position]: position })}
           onClick={emit('click')}
         >

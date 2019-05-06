@@ -73,6 +73,7 @@
 ### Popup
 
 - 新增`click`事件
+- 新增`duration`属性
 
 ### Loading
 

@@ -200,3 +200,14 @@ test('click event', () => {
   wrapper.trigger('click');
   expect(wrapper.emitted('click')).toBeTruthy();
 });
+
+test('duration prop', () => {
+  const wrapper = mount(Popup, {
+    propsData: {
+      value: true,
+      duration: 0.5
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

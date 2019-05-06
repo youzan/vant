@@ -47,6 +47,7 @@ export default {
 | overlay-class | 自定义蒙层类名 | `String` | - | - |
 | overlay-style | 自定义蒙层样式 | `Object` | - | - |
 | transition | 动画类名，用法与原生`transtion`组件的`name`属性一致 | `String` | - | - |
+| duration | 动画时长，单位秒 | `Number` | `0.3` | 2.0.0 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 | close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `true` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | 1.0.0 |
