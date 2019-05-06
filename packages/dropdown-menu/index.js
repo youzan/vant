@@ -1,9 +1,12 @@
 import { use } from '../utils';
 import { BLUE } from '../utils/color';
+import { ParentMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('dropdown-menu');
 
 export default sfc({
+  mixins: [ParentMixin('vanDropdownMenu')],
+
   props: {
     zIndex: {
       type: Number,
@@ -15,16 +18,9 @@ export default sfc({
     }
   },
 
-  provide() {
-    return {
-      vanDropdownMenu: this
-    };
-  },
-
   data() {
     return {
-      top: 0,
-      items: []
+      top: 0
     };
   },
 
@@ -34,7 +30,7 @@ export default sfc({
       const rect = menu.getBoundingClientRect();
       this.top = rect.y + rect.height;
 
-      this.items.forEach((item, index) => {
+      this.children.forEach((item, index) => {
         if (index === active) {
           item.toggle();
         } else {
@@ -45,7 +41,7 @@ export default sfc({
   },
 
   render(h) {
-    const Titles = this.items.map((item, index) => (
+    const Titles = this.children.map((item, index) => (
       <div
         class={bem('item')}
         onClick={() => {
