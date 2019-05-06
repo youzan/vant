@@ -5,6 +5,10 @@ export function ChildrenMixin(parent) {
     computed: {
       parent() {
         return this[parent];
+      },
+
+      index() {
+        return this.parent.children.indexOf(this);
       }
     },
 

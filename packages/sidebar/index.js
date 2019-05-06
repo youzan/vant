@@ -1,25 +1,16 @@
 import { use } from '../utils';
+import { ParentMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('sidebar');
 
 export default sfc({
+  mixins: [ParentMixin('vanSidebar')],
+
   props: {
     activeKey: {
       type: [Number, String],
       default: 0
     }
-  },
-
-  provide() {
-    return {
-      vanSidebar: this
-    };
-  },
-
-  data() {
-    return {
-      items: []
-    };
   },
 
   render(h) {
