@@ -88,6 +88,8 @@ test('swipe to switch tab', async () => {
 test('change tabs data', async () => {
   const wrapper = createWrapper();
 
+  await later();
+
   expect(wrapper).toMatchSnapshot();
 
   wrapper.setData({
