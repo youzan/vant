@@ -82,6 +82,7 @@ export default {
 |------|------|------|------|------|
 | active-color | Active color of title and option | `String` | `#1989fa` |
 | z-index | z-index of menu item | `Number` | `10` |
+| overlay | Whether to show overlay | `Boolean` | `true` |
 
 ### DropdownItem Props
 

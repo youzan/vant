@@ -8,6 +8,10 @@ export default sfc({
   mixins: [ParentMixin('vanDropdownMenu')],
 
   props: {
+    overlay: {
+      type: Boolean,
+      default: true
+    },
     zIndex: {
       type: Number,
       default: 10

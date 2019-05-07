@@ -65,6 +65,7 @@ export default sfc({
           position="top"
           duration={0.2}
           class={bem('content')}
+          overlay={this.parent.overlay}
           overlayStyle={{ position: 'absolute' }}
         >
           {Options}
