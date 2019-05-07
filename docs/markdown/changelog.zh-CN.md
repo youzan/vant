@@ -298,7 +298,7 @@
 - 修复函数式组件未继承标签属性的问题 [\#2706](https://github.com/youzan/vant/pull/2706)
 - 修复 Swipe 内懒加载图片无法正确加载的问题 [\#2708](https://github.com/youzan/vant/pull/2708)
 - 修复 Collpase 在特定情况下高度计算错误的问题 [\#2702](https://github.com/youzan/vant/pull/2702)
-- 修复 Dialog 点击蒙层时无法触发 beforeClose 属性的问题 [\#2707](https://github.com/youzan/vant/pull/2707)
+- 修复 Dialog 点击遮罩层时无法触发 beforeClose 属性的问题 [\#2707](https://github.com/youzan/vant/pull/2707)
 - 修复 AddressList 在禁用状态下样式错误的问题 [\#2687](https://github.com/youzan/vant/pull/2687)
 - 修复 AddressEdit 在 Vue 2.6 版本下无法选择推荐地址的问题 [\#2689](https://github.com/youzan/vant/pull/2689)
 
@@ -1118,7 +1118,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Bug Fixes**
 
-- 修复 Toast 使用 forbidClick 属性时导致其他弹层的蒙层失效的问题 [\#1154](https://github.com/youzan/vant/pull/1154)
+- 修复 Toast 使用 forbidClick 属性时导致其他弹层的遮罩层失效的问题 [\#1154](https://github.com/youzan/vant/pull/1154)
 - 修复 Field 在 safari 上不正确的 margin [\#1147](https://github.com/youzan/vant/pull/1147)
 - 修复 Progress 文字超出边界的问题 [\#1135](https://github.com/youzan/vant/pull/1135)
 
@@ -1314,7 +1314,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 **Bug Fixes**
 - 修复 Tag 文字在部分安卓手机上未垂直居中的问题 [\#773](https://github.com/youzan/vant/pull/773)
-- 修复 Toast 蒙层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762)
+- 修复 Toast 遮罩层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762)
 
 ## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
 `2018-03-22`
@@ -1331,7 +1331,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 AddressEdit 初始化时省市区未正确选中的问题 [\#748](https://github.com/youzan/vant/pull/748)
 * 修复 List 隐藏时依然会触发 load 事件的问题 [\#751](https://github.com/youzan/vant/pull/751)
 * 修复 Sku 默认选中不生效的问题 [\#752](https://github.com/youzan/vant/pull/752)
-* 修复 Toast 蒙层被其他元素遮挡的问题 [\#740](https://github.com/youzan/vant/pull/740)
+* 修复 Toast 遮罩层被其他元素遮挡的问题 [\#740](https://github.com/youzan/vant/pull/740)
 * 修复 Tab 内容无法点击的问题 [\#749](https://github.com/youzan/vant/pull/749)
 
 

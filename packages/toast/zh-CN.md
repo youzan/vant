@@ -98,7 +98,7 @@ toast2.clear();
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | `String` | `text` | - |
 | position | 位置，可选值为 `top` `bottom` | `String` | `middle` | - |
 | message | 文本内容，支持通过`\n`换行 | `String` | `''` | - | - |
-| mask | 是否显示背景蒙层 | `Boolean` | `false` | - |
+| mask | 是否显示背景遮罩层 | `Boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |

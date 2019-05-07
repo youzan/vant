@@ -128,8 +128,8 @@ export default {
 | cancelButtonColor | 取消按钮颜色 | `String` | `#000` | 1.6.14 |
 | confirmButtonText | 确认按钮文案 | `String` | `确认` | - |
 | confirmButtonColor | 确认按钮颜色 | `String` | `#1989fa` | 1.6.14 |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
-| closeOnClickOverlay | 点击蒙层时是否关闭弹窗 | `Boolean` | `false` | - |
+| overlay | 是否展示遮罩层 | `Boolean` | `true` | - |
+| closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | `Boolean` | `false` | - |
 | lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.11 |
@@ -150,8 +150,8 @@ export default {
 | cancel-button-color | 取消按钮颜色 | `String` | `#000` | 1.6.14 |
 | confirm-button-text | 确认按钮文案 | `String` | `确认` | - |
 | confirm-button-color | 确认按钮颜色 | `String` | `#1989fa` | 1.6.14 |
-| overlay | 是否展示蒙层 | `Boolean` | `true` | - |
-| close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` | - |
+| overlay | 是否展示遮罩层 | `Boolean` | `true` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `false` | - |
 | lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | before-close | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | 1.1.6 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.1.6 |

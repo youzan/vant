@@ -113,7 +113,7 @@ Vue.use(Sku);
 | reset-stepper-on-hide | 隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
 | reset-selected-sku-on-hide | 隐藏时重置已选择的 sku | `Boolean` | `false` | - |
 | disable-stepper-input | 是否禁用步进器输入 | `Boolean` | `false` | - |
-| close-on-click-overlay | 是否在点击蒙层后关闭 | `Boolean` | `false` | - |
+| close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `false` | - |
 | stepper-title | 数量选择组件左侧文案 | `String` | `购买数量` | - |
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |
