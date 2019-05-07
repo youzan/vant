@@ -57,7 +57,8 @@
     "@babel/runtime": "^7.4.4",
     "@vant/icons": "1.1.7",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0-beta.3",
-    "vue-lazyload": "1.2.3"
+    "vue-lazyload": "1.2.3",
+    "webpack-dev-server": "^3.3.1"
   },
   "peerDependencies": {
     "vue": ">= 2.5.0"

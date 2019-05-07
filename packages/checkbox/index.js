@@ -30,7 +30,15 @@ export default sfc({
 
   methods: {
     toggle() {
-      this.checked = !this.checked;
+      const checked = !this.checked;
+
+      // When toggle method is called multiple times at the same time,
+      // only the last call is valid.
+      // This is a hack for usage inside Cell.
+      clearTimeout(this.toggleTask);
+      this.toggleTask = setTimeout(() => {
+        this.checked = checked;
+      });
     },
 
     onClickIcon() {

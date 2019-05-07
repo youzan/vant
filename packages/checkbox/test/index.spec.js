@@ -1,8 +1,8 @@
 import Checkbox from '..';
 import CheckboxGroup from '../../checkbox-group';
-import { mount } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 
-test('switch checkbox', () => {
+test('switch checkbox', async () => {
   const wrapper = mount(Checkbox);
 
   wrapper.vm.$on('input', value => {
@@ -11,8 +11,9 @@ test('switch checkbox', () => {
 
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
+  await later();
   icon.trigger('click');
-
+  await later();
   expect(wrapper.emitted('input')).toEqual([[true], [false]]);
   expect(wrapper.emitted('change')).toEqual([[true], [false]]);
 });
@@ -42,7 +43,7 @@ test('label disabled', () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 });
 
-test('checkbox group', () => {
+test('checkbox group', async () => {
   const wrapper = mount({
     template: `
       <checkbox-group v-model="result" :max="2">
@@ -63,11 +64,15 @@ test('checkbox group', () => {
 
   const icons = wrapper.findAll('.van-checkbox__icon');
   icons.at(0).trigger('click');
+  await later();
   icons.at(1).trigger('click');
+  await later();
   icons.at(2).trigger('click');
   expect(wrapper.vm.result).toEqual(['a', 'b']);
 
+  await later();
   icons.at(0).trigger('click');
+  await later();
   expect(wrapper.vm.result).toEqual(['b']);
 });
 
