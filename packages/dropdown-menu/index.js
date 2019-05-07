@@ -19,6 +19,10 @@ export default sfc({
     activeColor: {
       type: String,
       default: BLUE
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
     }
   },
 

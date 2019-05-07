@@ -39,7 +39,7 @@ export default sfc({
   },
 
   render(h) {
-    const { top, zIndex, activeColor } = this.parent;
+    const { top, zIndex, overlay, activeColor, closeOnClickOverlay } = this.parent;
 
     const Options = this.options.map(option => {
       const active = option.value === this.value;
@@ -65,7 +65,8 @@ export default sfc({
           position="top"
           duration={0.2}
           class={bem('content')}
-          overlay={this.parent.overlay}
+          overlay={overlay}
+          closeOnClickOverlay={closeOnClickOverlay}
           overlayStyle={{ position: 'absolute' }}
         >
           {Options}

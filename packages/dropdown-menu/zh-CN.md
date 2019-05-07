@@ -84,7 +84,8 @@ export default {
 |------|------|------|------|------|
 | active-color | 菜单标题和选项的选中态颜色 | `String` | `#1989fa` | - |
 | z-index | 菜单栏 z-index 层级 | `Number` | `10` | - |
-| overlay | 是否显示遮罩层 | `Boolean` | `true` | - | - |
+| overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
+| close-on-click-overlay | 是否在点击蒙层后关闭菜单 | `Boolean` | `true` | - |
 
 ### DropdownItem Props
 
