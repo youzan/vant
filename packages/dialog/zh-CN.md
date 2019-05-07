@@ -119,7 +119,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | title | 标题 | `String` | - | - |
-| message | 内容 | `String` | - | - |
+| message | 文本内容，支持通过`\n`换行 | `String` | - | - |
 | messageAlign | 内容对齐方式，可选值为`left` `right` | `String` | `center` | 1.5.0 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.1.7 |
 | showConfirmButton | 是否展示确认按钮 | `Boolean` | `true` | - |
