@@ -2,10 +2,10 @@
  * Common part of Checkbox & Radio
  */
 import Icon from '../icon';
-import { FindParentMixin } from './find-parent';
+import { ChildrenMixin } from './relation';
 
 export const CheckboxMixin = (parent, bem) => ({
-  mixins: [FindParentMixin],
+  mixins: [ChildrenMixin(parent)],
 
   props: {
     name: null,
@@ -18,10 +18,6 @@ export const CheckboxMixin = (parent, bem) => ({
       type: String,
       default: 'round'
     }
-  },
-
-  created() {
-    this.findParent(parent);
   },
 
   computed: {

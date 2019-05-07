@@ -4,7 +4,7 @@ import { CheckboxMixin } from '../mixins/checkbox';
 const [sfc, bem] = use('checkbox');
 
 export default sfc({
-  mixins: [CheckboxMixin('van-checkbox-group', bem)],
+  mixins: [CheckboxMixin('vanCheckbox', bem)],
 
   computed: {
     checked: {

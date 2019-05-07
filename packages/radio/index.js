@@ -4,7 +4,7 @@ import { CheckboxMixin } from '../mixins/checkbox';
 const [sfc, bem] = use('radio');
 
 export default sfc({
-  mixins: [CheckboxMixin('van-radio-group', bem)],
+  mixins: [CheckboxMixin('vanRadio', bem)],
 
   computed: {
     currentValue: {

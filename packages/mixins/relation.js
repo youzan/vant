@@ -1,6 +1,10 @@
 export function ChildrenMixin(parent) {
   return {
-    inject: [parent],
+    inject: {
+      [parent]: {
+        default: null
+      }
+    },
 
     computed: {
       parent() {
@@ -18,11 +22,17 @@ export function ChildrenMixin(parent) {
     },
 
     beforeDestroy() {
-      this.parent.children = this.parent.children.filter(item => item !== this);
+      if (this.parent) {
+        this.parent.children = this.parent.children.filter(item => item !== this);
+      }
     },
 
     methods: {
       bindRelation() {
+        if (!this.parent) {
+          return;
+        }
+
         const { children } = this.parent;
 
         if (children.indexOf(this) === -1) {
