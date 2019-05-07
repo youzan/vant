@@ -1,8 +1,11 @@
 import { use } from '../utils';
+import { ParentMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('collapse');
 
 export default sfc({
+  mixins: [ParentMixin('vanCollapse')],
+
   props: {
     accordion: Boolean,
     value: [String, Number, Array],
@@ -10,12 +13,6 @@ export default sfc({
       type: Boolean,
       default: true
     }
-  },
-
-  data() {
-    return {
-      items: []
-    };
   },
 
   methods: {

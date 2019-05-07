@@ -8,23 +8,33 @@ export function ChildrenMixin(parent) {
       },
 
       index() {
+        this.bindRelation();
         return this.parent.children.indexOf(this);
       }
     },
 
     created() {
-      const { children } = this.parent;
-      const index = this.parent.slots().indexOf(this.$vnode);
-
-      if (index === -1) {
-        children.push(this);
-      } else {
-        children.splice(index, 0, this);
-      }
+      this.bindRelation();
     },
 
     beforeDestroy() {
       this.parent.children = this.parent.children.filter(item => item !== this);
+    },
+
+    methods: {
+      bindRelation() {
+        const { children } = this.parent;
+
+        if (children.indexOf(this) === -1) {
+          const vnodeIndex = this.parent.slots().indexOf(this.$vnode);
+
+          if (vnodeIndex === -1) {
+            children.push(this);
+          } else {
+            children.splice(vnodeIndex, 0, this);
+          }
+        }
+      }
     }
   };
 }

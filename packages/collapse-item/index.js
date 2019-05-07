@@ -2,13 +2,13 @@ import { use, isDef } from '../utils';
 import { raf } from '../utils/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { FindParentMixin } from '../mixins/find-parent';
+import { ChildrenMixin } from '../mixins/relation';
 
 const [sfc, bem] = use('collapse-item');
 const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
 export default sfc({
-  mixins: [FindParentMixin],
+  mixins: [ChildrenMixin('vanCollapse')],
 
   props: {
     ...cellProps,
@@ -28,14 +28,6 @@ export default sfc({
   },
 
   computed: {
-    items() {
-      return this.parent.items;
-    },
-
-    index() {
-      return this.items.indexOf(this);
-    },
-
     currentName() {
       return isDef(this.name) ? this.name : this.index;
     },
@@ -53,14 +45,8 @@ export default sfc({
   },
 
   created() {
-    this.findParent('van-collapse');
-    this.items.push(this);
     this.show = this.expanded;
     this.inited = this.expanded;
-  },
-
-  destroyed() {
-    this.items.splice(this.index, 1);
   },
 
   watch: {
@@ -105,8 +91,7 @@ export default sfc({
         parent.accordion && this.currentName === parent.value
           ? ''
           : this.currentName;
-      const expanded = !this.expanded;
-      this.parent.switch(name, expanded);
+      this.parent.switch(name, !this.expanded);
     },
 
     onTransitionEnd() {
