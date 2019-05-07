@@ -98,3 +98,47 @@ test('destroy one item', async () => {
   wrapper.setData({ render: false });
   expect(wrapper).toMatchSnapshot();
 });
+
+
+test('change event', async () => {
+  const onChange = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <dropdown-menu>
+        <dropdown-item v-model="value" :options="options" @change="onChange" />
+        <dropdown-item v-model="value" :options="options" />
+      </dropdown-menu>
+    `,
+    components: {
+      DropdownItem,
+      DropdownMenu
+    },
+    data() {
+      return {
+        value: 0,
+        options: [
+          { text: 'A', value: 0 },
+          { text: 'B', value: 1 }
+        ]
+      };
+    },
+    methods: {
+      onChange
+    }
+  });
+
+  await later();
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+  titles.at(0).trigger('click');
+
+  const options = wrapper.findAll('.van-dropdown-item .van-cell');
+  options.at(0).trigger('click');
+
+  expect(onChange).toHaveBeenCalledTimes(0);
+
+  options.at(1).trigger('click');
+  expect(onChange).toHaveBeenCalledWith(1);
+  expect(onChange).toHaveBeenCalledTimes(1);
+});

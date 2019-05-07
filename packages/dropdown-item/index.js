@@ -50,7 +50,11 @@ export default sfc({
           titleStyle={{ color: active ? activeColor : '' }}
           onClick={() => {
             this.show = false;
-            this.$emit('input', option.value);
+
+            if (option.value !== this.value) {
+              this.$emit('input', option.value);
+              this.$emit('change', option.value);
+            }
           }}
         >
           {active && <Icon class={bem('icon')} color={activeColor} name="success" />}

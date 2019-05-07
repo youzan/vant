@@ -95,6 +95,12 @@ export default {
 | title | 菜单项标题 | `String` | 当前选中项文字 | - |
 | options | 选项数组 | `Array` | `[]` | - |
 
+### DropdownItem Events
+
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| change | 点击选项导致 value 变化时触发 | value |
+
 ### DropdownItem 方法
 
 通过 ref 可以获取到 DropdownItem 实例并调用实例方法

@@ -93,6 +93,12 @@ export default {
 | title | Item title | `String` | Text of selected option |
 | options | Options | `Array` | `[]` |
 
+### DropdownItem Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| change | Triggered select option and value changed | value |
+
 ### DropdownItem Methods
 
 Use ref to get DropdownItem instance and call instance methods
