@@ -14,7 +14,7 @@ exports[`renders demo correctly 1`] = `
     </ul>
   </div>
   <div>
-    <ul size="small" class="van-pagination van-pagination--simple">
+    <ul class="van-pagination van-pagination--simple" size="small">
       <li class="van-pagination__item van-pagination__item--disabled van-pagination__prev van-hairline">上一页</li>
       <li class="van-pagination__page-desc">1/12</li>
       <li class="van-pagination__item van-pagination__next van-hairline">下一页</li>

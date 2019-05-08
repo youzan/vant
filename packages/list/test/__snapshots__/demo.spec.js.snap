@@ -5,14 +5,21 @@ exports[`renders demo correctly 1`] = `
   <div class="van-tabs van-tabs--line">
     <div class="van-tabs__wrap van-hairline--top-bottom">
       <div class="van-tabs__nav van-tabs__nav--line">
-        <div class="van-tabs__line"></div>
+        <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+        <div class="van-tab van-tab--active"><span class="van-ellipsis">基础用法</span></div>
+        <div class="van-tab"><span class="van-ellipsis">错误提示</span></div>
       </div>
     </div>
     <div class="van-tabs__content">
-      <div class="van-tab__pane" style="display:none;">
-        <!---->
+      <div class="van-tab__pane" style="">
+        <div class="van-pull-refresh">
+          <div class="van-pull-refresh__track" style="transition: 0ms;">
+            <div class="van-pull-refresh__head"></div>
+            <div class="van-list"></div>
+          </div>
+        </div>
       </div>
-      <div class="van-tab__pane" style="display:none;">
+      <div class="van-tab__pane" style="display: none;">
         <!---->
       </div>
     </div>

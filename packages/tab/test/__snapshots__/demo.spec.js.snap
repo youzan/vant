@@ -6,20 +6,67 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 3</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 4</span></div>
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="">
+          内容 3
+        </div>
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="van-tabs van-tabs--line">
+      <div class="van-tabs__wrap van-tabs__wrap--scrollable van-hairline--top-bottom">
+        <div class="van-tabs__nav van-tabs__nav--line">
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab van-tab--active" style="flex-basis: 22%;"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 3</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 4</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 5</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 6</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 7</span></div>
+          <div class="van-tab" style="flex-basis: 22%;"><span class="van-ellipsis">标签 8</span></div>
+        </div>
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane" style="">
+          内容 1
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
+          <!---->
+        </div>
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -29,52 +76,20 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab van-tab--disabled"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 3</span></div>
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="">
+          内容 1
+        </div>
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div class="van-tabs van-tabs--line">
-      <div class="van-tabs__wrap van-hairline--top-bottom">
-        <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -83,16 +98,20 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-tabs van-tabs--card">
       <div class="van-tabs__wrap">
-        <div class="van-tabs__nav van-tabs__nav--card"></div>
+        <div class="van-tabs__nav van-tabs__nav--card">
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 3</span></div>
+        </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="">
+          内容 1
+        </div>
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-        </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -102,14 +121,16 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
+        <div class="van-tab__pane" style="">
+          内容 1
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -119,20 +140,24 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 3</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 4</span></div>
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
+        <div class="van-tab__pane" style="">
+          内容 3
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -142,25 +167,29 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
-        </div>
-      </div>
-      <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
-          <div>
-            <div><i class="van-icon van-icon-more-o">
-                <!----></i>标签
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab van-tab--active">
+            <div>
+              <div><i class="van-icon van-icon-more-o">
+                  <!----></i>标签
+              </div>
+            </div>
+          </div>
+          <div class="van-tab">
+            <div>
+              <div><i class="van-icon van-icon-more-o">
+                  <!----></i>标签
+              </div>
             </div>
           </div>
         </div>
-        <div class="van-tab__pane" style="display:none;">
+      </div>
+      <div class="van-tabs__content">
+        <div class="van-tab__pane" style="">
+          内容 1
+        </div>
+        <div class="van-tab__pane" style="display: none;">
           <!---->
-          <div>
-            <div><i class="van-icon van-icon-more-o">
-                <!----></i>标签
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -169,13 +198,17 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 3</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 4</span></div>
         </div>
       </div>
       <div class="van-tabs__content van-tabs__content--animated">
-        <div class="van-tabs__track" style="left:0%;transition-duration:0.3s;">
+        <div class="van-tabs__track" style="left: 0%; transition-duration: 0.3s;">
           <div class="van-tab__pane">
-            <!---->
+            内容 1
           </div>
           <div class="van-tab__pane">
             <!---->
@@ -194,20 +227,24 @@ exports[`renders demo correctly 1`] = `
     <div class="van-tabs van-tabs--line">
       <div class="van-tabs__wrap van-hairline--top-bottom">
         <div class="van-tabs__nav van-tabs__nav--line">
-          <div class="van-tabs__line"></div>
+          <div class="van-tabs__line" style="width: 0px; transform: translateX(0px);"></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 1</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 2</span></div>
+          <div class="van-tab van-tab--active"><span class="van-ellipsis">标签 3</span></div>
+          <div class="van-tab"><span class="van-ellipsis">标签 4</span></div>
         </div>
       </div>
       <div class="van-tabs__content">
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div class="van-tab__pane" style="display:none;">
-          <!---->
+        <div class="van-tab__pane" style="">
+          内容 3
         </div>
-        <div class="van-tab__pane" style="display:none;">
+        <div class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>

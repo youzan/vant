@@ -74,7 +74,7 @@ test('touch and scroll to anchor', () => {
   triggerDrag(sidebar, 100, 0);
   expect(fn).toHaveBeenCalledTimes(0);
 
-  // vertiacl drag
+  // vertical drag
   trigger(sidebar, 'touchstart', 0, 0);
   trigger(sidebar, 'touchmove', 0, 100);
   trigger(sidebar, 'touchmove', 0, 200);
