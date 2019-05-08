@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div class="van-tabs van-tabs--line">
+    <div class="van-tabs__wrap van-hairline--top-bottom">
+      <div class="van-tabs__nav van-tabs__nav--line">
+        <div class="van-tabs__line"></div>
+      </div>
+    </div>
+    <div class="van-tabs__content">
+      <div class="van-tab__pane" style="display:none;">
+        <!---->
+      </div>
+      <div class="van-tab__pane" style="display:none;">
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
+`;

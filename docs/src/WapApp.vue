@@ -75,6 +75,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 .van-doc-nav-bar {
   height: 56px;
   line-height: 56px;

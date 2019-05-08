@@ -52,7 +52,8 @@
 ## 新特性
 
 - 新增`Skeleton`骨架屏组件
-- 新增`DropdownMenu`下拉菜单组件
+- 新增`IndexBar`、`IndexAnchor`索引栏组件
+- 新增`DropdownMenu`、`DropdownItem`下拉菜单组件
 
 ### ActionSheet
 

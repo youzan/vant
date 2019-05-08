@@ -23,6 +23,7 @@ export default {
   'goods-action': () => wrapper(import('../../packages/goods-action/demo'), 'goods-action'),
   'icon': () => wrapper(import('../../packages/icon/demo'), 'icon'),
   'image-preview': () => wrapper(import('../../packages/image-preview/demo'), 'image-preview'),
+  'index-bar': () => wrapper(import('../../packages/index-bar/demo'), 'index-bar'),
   'lazyload': () => wrapper(import('../../packages/lazyload/demo'), 'lazyload'),
   'list': () => wrapper(import('../../packages/list/demo'), 'list'),
   'loading': () => wrapper(import('../../packages/loading/demo'), 'loading'),

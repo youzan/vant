@@ -1,0 +1,22 @@
+@import '../style/var';
+
+.van-index-bar {
+  &__sidebar {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    right: 0;
+    z-index: 1;
+    user-select: none;
+    text-align: center;
+    flex-direction: column;
+    transform: translateY(-50%);
+  }
+
+  &__index {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    padding: 0 3px 0 15px;
+  }
+}

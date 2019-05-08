@@ -31,6 +31,8 @@ import GoodsActionButton from './goods-action-button';
 import GoodsActionIcon from './goods-action-icon';
 import Icon from './icon';
 import ImagePreview from './image-preview';
+import IndexAnchor from './index-anchor';
+import IndexBar from './index-bar';
 import Info from './info';
 import Lazyload from './lazyload';
 import List from './list';
@@ -114,6 +116,8 @@ const components = [
   GoodsActionIcon,
   Icon,
   ImagePreview,
+  IndexAnchor,
+  IndexBar,
   Info,
   List,
   Loading,
@@ -202,6 +206,8 @@ export {
   GoodsActionIcon,
   Icon,
   ImagePreview,
+  IndexAnchor,
+  IndexBar,
   Info,
   Lazyload,
   List,

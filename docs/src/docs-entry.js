@@ -53,6 +53,8 @@ export default {
   'icon.zh-CN': () => import('../../packages/icon/zh-CN.md'),
   'image-preview.en-US': () => import('../../packages/image-preview/en-US.md'),
   'image-preview.zh-CN': () => import('../../packages/image-preview/zh-CN.md'),
+  'index-bar.en-US': () => import('../../packages/index-bar/en-US.md'),
+  'index-bar.zh-CN': () => import('../../packages/index-bar/zh-CN.md'),
   'lazyload.en-US': () => import('../../packages/lazyload/en-US.md'),
   'lazyload.zh-CN': () => import('../../packages/lazyload/zh-CN.md'),
   'list.en-US': () => import('../../packages/list/en-US.md'),

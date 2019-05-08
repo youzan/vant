@@ -260,6 +260,10 @@ module.exports = {
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
+                path: '/index-bar',
+                title: 'IndexBar 索引栏'
+              },
+              {
                 path: '/nav-bar',
                 title: 'NavBar 导航栏'
               },
@@ -574,6 +578,10 @@ module.exports = {
             groupName: 'Navigation Components',
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
+              {
+                path: '/index-bar',
+                title: 'IndexBar'
+              },
               {
                 path: '/nav-bar',
                 title: 'NavBar'
