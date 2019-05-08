@@ -3,6 +3,7 @@
  */
 import Icon from '../icon';
 import { ChildrenMixin } from './relation';
+import { suffixPx } from '../utils';
 
 export const CheckboxMixin = (parent, bem) => ({
   mixins: [ChildrenMixin(parent)],
@@ -10,6 +11,7 @@ export const CheckboxMixin = (parent, bem) => ({
   props: {
     name: null,
     value: null,
+    iconSize: [String, Number],
     disabled: Boolean,
     checkedColor: String,
     labelPosition: String,
@@ -61,6 +63,7 @@ export const CheckboxMixin = (parent, bem) => ({
       >
         <div
           class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
+          style={{ fontSize: suffixPx(this.iconSize) }}
           onClick={this.onClickIcon}
         >
           {CheckIcon}

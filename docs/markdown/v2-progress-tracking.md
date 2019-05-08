@@ -64,6 +64,10 @@
 
 - 新增`loading-type`属性
 
+### Checkbox
+
+- 新增`icon-size`属性
+
 ### Field
 
 - 新增`label-class`属性

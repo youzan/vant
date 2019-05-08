@@ -142,6 +142,7 @@ export default {
 | shape | Can be set to `square` | `String` | `round` |
 | v-model | Check status | `Boolean` | `false` |
 | disabled | Diable checkbox | `Boolean` | `false` |
+| icon-size | Icon size | `String | Number` | `20px` |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |

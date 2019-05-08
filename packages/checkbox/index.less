@@ -8,19 +8,21 @@
   &__label {
     display: inline-block;
     vertical-align: middle;
-    line-height: @checkbox-size;
   }
 
   &__icon {
-    height: @checkbox-size;
+    height: 1em;
+    line-height: 1em;
+    font-size: @checkbox-size;
 
     .van-icon {
-      font-size: 14px;
+      display: block;
+      width: 1.25em;
+      height: 1.25em;
+      font-size: .8em;
       color: transparent;
       text-align: center;
       line-height: inherit;
-      width: @checkbox-size;
-      height: @checkbox-size;
       box-sizing: border-box;
       border: 1px solid @checkbox-border-color;
       transition: @checkbox-transition-duration;
@@ -56,6 +58,7 @@
 
   &__label {
     color: @checkbox-label-color;
+    line-height: @checkbox-size;
     margin-left: @checkbox-label-margin;
 
     &--left {

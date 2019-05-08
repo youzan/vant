@@ -145,6 +145,7 @@ export default {
 | shape | 形状，可选值为 `square` | `String` | `round` | - |
 | v-model | 是否为选中状态 | `Boolean` | `false` | - |
 | disabled | 是否禁用复选框 | `Boolean` | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | `String | Number` | `20px` | 2.0.0 |
 | label-disabled | 是否禁用复选框文本点击 | `Boolean` | `false` | - |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.11 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.3 |
