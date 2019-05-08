@@ -26,30 +26,40 @@ test('custom anchor text', () => {
 });
 
 test('click and scroll to anchor', () => {
+  const onSelect = jest.fn();
   const wrapper = mount({
     template: `
-      <van-index-bar>
+      <van-index-bar @select="onSelect">
         <van-index-anchor index="A" />
         <van-index-anchor index="B" />
       </van-index-bar>
-    `
+    `,
+    methods: {
+      onSelect
+    }
   });
 
   const fn = mockScrollIntoView();
   const indexes = wrapper.findAll('.van-index-bar__index');
   indexes.at(0).trigger('click');
+
   expect(fn).toHaveBeenCalledTimes(1);
+  expect(onSelect).toHaveBeenCalledWith('A');
 });
 
 test('touch and scroll to anchor', () => {
+  const onSelect = jest.fn();
   const wrapper = mount({
     template: `
-      <van-index-bar>
+      <van-index-bar @select="onSelect">
         <van-index-anchor index="A" />
         <van-index-anchor index="B" />
         <van-index-anchor index="XXX" />
       </van-index-bar>
-    `
+    `,
+    methods: {
+      onSelect
+    }
   });
 
   const fn = mockScrollIntoView();
@@ -82,4 +92,5 @@ test('touch and scroll to anchor', () => {
   trigger(sidebar, 'touchmove', 0, 400);
   trigger(sidebar, 'touchend', 0, 400);
   expect(fn).toHaveBeenCalledTimes(1);
+  expect(onSelect).toHaveBeenCalledWith('B');
 });

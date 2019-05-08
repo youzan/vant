@@ -60,6 +60,7 @@ export default sfc({
       const match = this.children.filter(item => String(item.index) === index);
       if (match[0]) {
         match[0].scrollIntoView();
+        this.$emit('select', match[0].index);
       }
     },
 

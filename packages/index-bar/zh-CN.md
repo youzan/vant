@@ -72,6 +72,12 @@ export default {
 |------|------|------|------|------|
 | index | 索引字符 | `String | Number` | - | - |
 
+### IndexBar Events
+
+| 事件名 | 说明 | 回调参数 |
+|------|------|------|
+| select | 选中字符时触发 | index: 索引字符 |
+
 ### IndexAnchor Slots
 
 | 名称 | 说明 |

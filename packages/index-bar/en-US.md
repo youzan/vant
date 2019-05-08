@@ -68,6 +68,12 @@ export default {
 |------|------|------|------|
 | index | Index | `String | Number` | - |
 
+### IndexBar Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| select | Triggered when select index | index |
+
 ### IndexAnchor Slots
 
 | Name | Description |
