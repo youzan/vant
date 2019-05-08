@@ -58,10 +58,6 @@ export default sfc({
   },
 
   watch: {
-    loading() {
-      this.$nextTick(this.check);
-    },
-
     finished() {
       this.$nextTick(this.check);
     }
