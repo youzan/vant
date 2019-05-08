@@ -99,6 +99,7 @@ export default {
 | name | 标识符 | 任意类型 | - | - |
 | shape | 形状，可选值为 `square` | `String` | `round` | 1.6.0 |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
+| icon-size | 图标大小，默认单位为`px` | `String | Number` | `20px` | 2.0.0 |
 | label-disabled | 是否禁用文本内容点击 | `Boolean` | `false` | 1.1.13 |
 | label-position | 文本位置，可选值为 `left` | `String` | `right` | 1.1.13 |
 | checked-color | 选中状态颜色 | `String` | `#1989fa` | 1.4.5 |

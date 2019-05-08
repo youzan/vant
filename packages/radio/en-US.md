@@ -95,6 +95,7 @@ export default {
 | name | Radio name | `any` | - |
 | shape | Can be set to `square` | `String` | `round` |
 | disabled | Whether to disable radio | `Boolean` | `false` |
+| icon-size | Icon size | `String | Number` | `20px` |
 | label-disabled | Whether to disable label click | `Boolean` | `false` |
 | label-position | Can be set to `left` | `String` | `right` |
 | checked-color | Checked color | `String` | `#1989fa` | - |

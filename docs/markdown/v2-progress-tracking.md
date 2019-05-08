@@ -76,11 +76,6 @@
 
 - 支持`Number`类型的`size`属性
 
-### Popup
-
-- 新增`click`事件
-- 新增`duration`属性
-
 ### Loading
 
 - 新增`default`插槽
@@ -96,6 +91,15 @@
 
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
+
+### Popup
+
+- 新增`click`事件
+- 新增`duration`属性
+
+### Radio
+
+- 新增`icon-size`属性
 
 ### SubmitBar
 
