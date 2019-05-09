@@ -1,19 +1,19 @@
 @import '../style/var';
 
 .van-tabbar-item {
-  flex: 1;
   display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: @tabbar-item-text-color;
   font-size: @tabbar-item-font-size;
   line-height: @tabbar-item-line-height;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
 
   &__icon {
     position: relative;
-    font-size: @tabbar-item-icon-size;
     margin-bottom: @tabbar-item-margin-bottom;
+    font-size: @tabbar-item-icon-size;
 
     .van-icon {
       display: block;
@@ -22,14 +22,14 @@
 
     &--dot {
       &::after {
+        position: absolute;
         top: 0;
         right: -8px;
         width: 8px;
         height: 8px;
-        content: ' ';
-        position: absolute;
-        border-radius: 100%;
         background-color: @red;
+        border-radius: 100%;
+        content: ' ';
       }
     }
 

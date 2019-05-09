@@ -1,8 +1,8 @@
 @import '../style/var';
 
 .van-swipe {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   user-select: none;
 
   &__track {
@@ -10,16 +10,16 @@
   }
 
   &__indicators {
-    display: flex;
     position: absolute;
-    left: 50%;
     bottom: @swipe-indicator-margin;
+    left: 50%;
+    display: flex;
     transform: translateX(-50%);
 
     &--vertical {
-      left: @swipe-indicator-margin;
       top: 50%;
       bottom: auto;
+      left: @swipe-indicator-margin;
       flex-direction: column;
       transform: translateY(-50%);
 
@@ -30,11 +30,11 @@
   }
 
   &__indicator {
-    border-radius: 100%;
-    opacity: @swipe-indicator-inactive-opacity;
     width: @swipe-indicator-size;
     height: @swipe-indicator-size;
     background-color: @swipe-indicator-inactive-background-color;
+    border-radius: 100%;
+    opacity: @swipe-indicator-inactive-opacity;
     transition: opacity .2s;
 
     &:not(:last-child) {
@@ -42,8 +42,8 @@
     }
 
     &--active {
-      opacity: @swipe-indicator-active-opacity;
       background-color: @swipe-indicator-active-background-color;
+      opacity: @swipe-indicator-active-opacity;
     }
   }
 }

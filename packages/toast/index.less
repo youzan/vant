@@ -5,25 +5,25 @@
   top: 50%;
   left: 50%;
   display: flex;
-  text-align: center;
-  color: @toast-text-color;
-  max-width: @toast-max-width;
-  font-size: @toast-font-size;
-  line-height: @toast-line-height;
-  border-radius: @toast-border-radius;
-  word-break: break-all;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   box-sizing: content-box;
-  transform: translate3d(-50%, -50%, 0);
-  background-color: @toast-background-color;
 
   // hack for avoid max-width when use left & fixed
   width: fit-content;
+  max-width: @toast-max-width;
+  color: @toast-text-color;
+  font-size: @toast-font-size;
+  line-height: @toast-line-height;
 
   // allow newline charactor
   white-space: pre-wrap;
+  text-align: center;
+  word-break: break-all;
+  background-color: @toast-background-color;
+  border-radius: @toast-border-radius;
+  transform: translate3d(-50%, -50%, 0);
 
   // should not add pointer-events: none directly to body tag
   // that will cause unexpected tap-highlight-color in mobile safari
@@ -34,14 +34,14 @@
   }
 
   &--text {
-    padding: @toast-text-padding;
     min-width: @toast-text-min-width;
+    padding: @toast-text-padding;
   }
 
   &--default {
     width: @toast-default-width;
-    padding: @toast-default-padding;
     min-height: @toast-default-min-height;
+    padding: @toast-default-padding;
 
     .van-toast__icon {
       font-size: @toast-icon-size;

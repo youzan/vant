@@ -1,44 +1,44 @@
 @import '../style/var';
 
 .van-loading {
+  position: relative;
   z-index: 0;
   font-size: 0;
   line-height: 0;
-  position: relative;
   vertical-align: middle;
 
   &__spinner {
-    z-index: -1;
-    width: 30px;
-    height: 30px;
     position: relative;
+    z-index: -1;
     display: inline-block;
     box-sizing: border-box;
-    vertical-align: middle;
-    animation: van-rotate 0.8s linear infinite;
+    width: 30px;
 
     // compatible for 1.x, users may set width or height in root element
     max-width: 100%;
+    height: 30px;
     max-height: 100%;
+    vertical-align: middle;
+    animation: van-rotate 0.8s linear infinite;
 
     &--spinner {
       animation-timing-function: steps(12);
 
       i {
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        position: absolute;
 
         &::before {
+          display: block;
           width: 2px;
           height: 25%;
-          content: ' ';
-          display: block;
           margin: 0 auto;
-          border-radius: 40%;
           background-color: currentColor;
+          border-radius: 40%;
+          content: ' ';
         }
       }
     }
@@ -53,30 +53,30 @@
     height: 100%;
 
     circle {
+      animation: van-circular 1.5s ease-in-out infinite;
       stroke: currentColor;
       stroke-width: 3;
       stroke-linecap: round;
-      animation: van-circular 1.5s ease-in-out infinite;
     }
   }
 
   &__text {
     display: inline-block;
-    vertical-align: middle;
+    margin-left: 10px;
     color: @loading-text-color;
     font-size: @loading-text-font-size;
     line-height: @loading-text-line-height;
-    margin-left: 10px;
+    vertical-align: middle;
   }
 
   &--vertical {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 
     .van-loading__text {
-      margin-left: 0;
       margin-top: 10px;
+      margin-left: 0;
     }
   }
 }
@@ -100,8 +100,8 @@
 
 .generate-spinner(@n, @i: 1) when (@i =< @n) {
   .van-loading__spinner--spinner i:nth-of-type(@{i}) {
-    opacity: 1 - (0.75 / 12) * (@i - 1);
     transform: rotate(@i * 30deg);
+    opacity: 1 - (0.75 / 12) * (@i - 1);
   }
   .generate-spinner(@n, (@i + 1));
 }

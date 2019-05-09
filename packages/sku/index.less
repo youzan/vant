@@ -3,10 +3,10 @@
 
 .van-sku {
   &-container {
+    max-height: max-content; /* avoid androiod keyboard cover fields */
+    overflow-y: visible;
     font-size: 14px;
     background: @white;
-    overflow-y: visible;
-    max-height: max-content; /* avoid androiod keyboard cover fields */
   }
 
   &-body {
@@ -26,29 +26,29 @@
     &__img-wrap {
       position: relative;
       float: left;
-      margin-top: -10px;
       width: 80px;
       height: 80px;
+      margin-top: -10px;
       background: @background-color;
       border-radius: 2px;
 
       img {
         position: absolute;
-        margin: auto;
         top: 0;
-        left: 0;
         right: 0;
         bottom: 0;
+        left: 0;
         max-width: 100%;
         max-height: 100%;
+        margin: auto;
       }
     }
 
     &__goods-info {
-      padding: 10px 60px 10px 10px;
-      min-height: 82px;
-      overflow: hidden;
       box-sizing: border-box;
+      min-height: 82px;
+      padding: 10px 60px 10px 10px;
+      overflow: hidden;
     }
   }
 
@@ -66,17 +66,17 @@
   }
 
   &__goods-price {
-    color: @red;
     margin-top: 10px;
+    color: @red;
     vertical-align: middle;
   }
 
   &__close-icon {
+    position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 20px;
     color: @gray-dark;
-    position: absolute;
+    font-size: 20px;
     text-align: center;
   }
 
@@ -105,28 +105,28 @@
 
     &__item {
       display: inline-block;
-      padding: 5px 9px;
-      margin: 0 10px 10px 0;
-      height: 28px;
+      box-sizing: border-box;
       min-width: 52px;
-      line-height: 16px;
-      font-size: 12px;
+      height: 28px;
+      margin: 0 10px 10px 0;
+      padding: 5px 9px;
       color: @text-color;
+      font-size: 12px;
+      line-height: 16px;
       text-align: center;
       border: 1px solid @gray-dark;
       border-radius: 3px;
-      box-sizing: border-box;
 
       &--active {
         color: @white;
-        border-color: @red;
         background: @red;
+        border-color: @red;
       }
 
       &--disabled {
+        color: @gray;
         background: @active-color;
         border-color: @border-color;
-        color: @gray;
       }
     }
   }
@@ -134,8 +134,8 @@
   /* sku stepper */
   &-stepper {
     &-stock {
-      padding: 12px 0;
       margin-left: 15px;
+      padding: 12px 0;
     }
 
     &-container {
@@ -185,12 +185,12 @@
     display: inline-block;
 
     &__header {
-      color: @text-color;
       padding: 0 10px;
+      color: @text-color;
       font-size: 12px;
       line-height: 24px;
-      border-radius: 3px;
       border: 1px solid @border-color;
+      border-radius: 3px;
 
       .van-icon {
         top: 3px;
@@ -200,45 +200,45 @@
     }
 
     &__img {
-      height: 60px;
-      width: 60px;
-      float: left;
-      margin: 10px 10px 0 0;
       position: relative;
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin: 10px 10px 0 0;
       border: 1px solid @border-color;
 
       img {
+        position: relative;
+        top: 50%;
         max-width: 100%;
         max-height: 100%;
-        top: 50%;
-        position: relative;
         transform: translateY(-50%);
       }
     }
 
     &__delete {
       position: absolute;
-      color: @red;
       top: -12px;
       right: -14px;
       z-index: 1;
       padding: 6px;
+      color: @red;
 
       &::before {
-        border-radius: 14px;
         background-color: @white;
+        border-radius: 14px;
       }
     }
 
     &__uploading {
       position: absolute;
       top: 0;
-      left: 0;
       right: 0;
       bottom: 0;
-      margin: auto;
+      left: 0;
       width: 20px;
       height: 20px;
+      margin: auto;
     }
   }
 

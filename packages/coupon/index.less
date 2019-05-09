@@ -2,10 +2,10 @@
 @import '../style/mixins/ellipsis';
 
 .van-coupon {
-  overflow: hidden;
-  border-radius: 4px;
   margin: 0 15px 15px;
+  overflow: hidden;
   background-color: @white;
+  border-radius: 4px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 
   &:active {
@@ -14,9 +14,9 @@
 
   &__content {
     display: flex;
+    box-sizing: border-box;
     height: 100px;
     padding: 24px 0 0 15px;
-    box-sizing: border-box;
   }
 
   p,
@@ -33,9 +33,9 @@
   }
 
   p {
+    color: @gray-dark;
     font-size: 12px;
     line-height: 16px;
-    color: @gray-dark;
   }
 
   &__head {
@@ -62,8 +62,8 @@
   }
 
   &__body {
-    flex: 1;
     position: relative;
+    flex: 1;
     border-radius: 0 4px 4px 0;
 
     h2 {
@@ -72,20 +72,20 @@
   }
 
   &__corner {
+    position: absolute;
     top: 16px;
     right: 15px;
-    position: absolute;
 
     .van-icon {
-      border-color: @red;
       background-color: @red;
+      border-color: @red;
     }
   }
 
   &__description {
     padding: 7px 15px;
-    border-top: 1px dashed @border-color;
     background-color: @background-color-light;
+    border-top: 1px dashed @border-color;
   }
 
   &--disabled {

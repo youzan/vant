@@ -1,24 +1,24 @@
 @import '../style/var';
 
 .van-pull-refresh {
-  user-select: none;
   overflow: hidden;
+  user-select: none;
 
   &__track {
     position: relative;
   }
 
   &__head {
+    position: absolute;
+    top: -50px;
+    left: 0;
     width: 100%;
     height: 50px;
-    left: 0;
     overflow: hidden;
-    position: absolute;
-    text-align: center;
-    top: -50px;
-    font-size: 14px;
     color: @gray-dark;
+    font-size: 14px;
     line-height: 50px;
+    text-align: center;
   }
 
   &__loading {
@@ -30,8 +30,8 @@
 
     span,
     .van-loading {
-      vertical-align: middle;
       display: inline-block;
+      vertical-align: middle;
     }
   }
 }

@@ -4,19 +4,19 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  overflow: hidden;
   width: @dialog-width;
+  overflow: hidden;
   font-size: @dialog-font-size;
-  transition: @dialog-transition;
-  border-radius: @dialog-border-radius;
   background-color: @dialog-background-color;
+  border-radius: @dialog-border-radius;
   transform: translate3d(-50%, -50%, 0);
   backface-visibility: hidden; // avoid blurry text after scale animation
+  transition: @dialog-transition;
 
   &__header {
-    text-align: center;
-    font-weight: @dialog-header-font-weight;
     padding-top: @dialog-header-padding-top;
+    font-weight: @dialog-header-font-weight;
+    text-align: center;
 
     &--isolated {
       padding: @dialog-header-isolated-padding;
@@ -24,20 +24,20 @@
   }
 
   &__message {
+    max-height: @dialog-message-max-height;
     padding: @dialog-message-padding;
+    overflow-y: auto;
     font-size: @dialog-message-font-size;
     line-height: @dialog-message-line-height;
-    max-height: @dialog-message-max-height;
-    overflow-y: auto;
-    text-align: center;
-    -webkit-overflow-scrolling: touch;
 
     // allow newline charactor
     white-space: pre-wrap;
+    text-align: center;
+    -webkit-overflow-scrolling: touch;
 
     &--has-title {
-      color: @dialog-has-title-message-text-color;
       padding-top: @dialog-has-title-message-padding-top;
+      color: @dialog-has-title-message-text-color;
     }
 
     &--left {
@@ -74,12 +74,12 @@
   }
 
   &-bounce-enter {
-    opacity: 0;
     transform: translate3d(-50%, -50%, 0) scale(0.7);
+    opacity: 0;
   }
 
   &-bounce-leave-active {
-    opacity: 0;
     transform: translate3d(-50%, -50%, 0) scale(0.9);
+    opacity: 0;
   }
 }

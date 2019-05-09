@@ -2,17 +2,17 @@
 
 .van-pagination {
   display: flex;
-  text-align: center;
-  line-height: 40px;
   font-size: 14px;
+  line-height: 40px;
+  text-align: center;
 
   &__item {
     flex: 1;
-    color: @blue;
-    height: 40px;
-    min-width: 36px;
-    background-color: @white;
     box-sizing: border-box;
+    min-width: 36px;
+    height: 40px;
+    color: @blue;
+    background-color: @white;
     user-select: none;
 
     &:active {
@@ -30,8 +30,8 @@
 
     &--disabled,
     &--disabled:active {
-      background-color: @background-color;
       color: @gray-darker;
+      background-color: @background-color;
       opacity: 0.6;
     }
 

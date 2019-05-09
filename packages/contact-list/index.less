@@ -1,18 +1,18 @@
 @import '../style/var';
 
 .van-contact-list {
+  box-sizing: border-box;
   height: 100%;
   padding-bottom: 50px;
-  box-sizing: border-box;
 
   &__item {
     padding: 15px;
   }
 
   &__item-value {
-    color: @text-color;
-    padding-right: 34px;
     position: relative;
+    padding-right: 34px;
+    color: @text-color;
   }
 
   .van-radio__label {
@@ -20,10 +20,10 @@
   }
 
   .van-radio__icon {
+    position: absolute;
     top: 50%;
     left: 0;
     height: 16px;
-    position: absolute;
     line-height: 16px;
     transform: translate(0, -50%);
 
@@ -35,20 +35,20 @@
   }
 
   .van-radio__icon--checked .van-icon {
-    border-color: @red;
     background-color: @red;
+    border-color: @red;
   }
 
   &__group {
+    box-sizing: border-box;
     height: 100%;
     overflow-y: scroll;
-    box-sizing: border-box;
     -webkit-overflow-scrolling: touch;
   }
 
   &__name {
-    font-size: 14px;
     font-weight: 500;
+    font-size: 14px;
     line-height: 20px;
   }
 
@@ -62,8 +62,8 @@
 
   &__add {
     position: fixed;
-    left: 0;
     bottom: 0;
+    left: 0;
     z-index: 9999;
   }
 }

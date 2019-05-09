@@ -1,20 +1,20 @@
 @import '../style/var';
 
 .van-notice-bar {
+  position: relative;
   display: flex;
+  align-items: center;
   height: 40px;
   padding: 0 15px;
+  color: @orange-dark;
   font-size: 14px;
   line-height: 24px;
-  position: relative;
-  align-items: center;
-  color: @orange-dark;
   background-color: @orange-light;
 
   &__left-icon,
   &__right-icon {
-    font-size: 16px;
     min-width: 22px;
+    font-size: 16px;
   }
 
   &__right-icon {
@@ -22,10 +22,10 @@
   }
 
   &__wrap {
+    position: relative;
     flex: 1;
     height: 24px;
     overflow: hidden;
-    position: relative;
   }
 
   &__content {

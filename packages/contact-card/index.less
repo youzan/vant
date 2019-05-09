@@ -4,9 +4,9 @@
   padding: 15px;
 
   &__value {
+    display: inline-block;
     margin-left: 5px;
     line-height: 20px;
-    display: inline-block;
     vertical-align: middle;
   }
 
@@ -22,12 +22,11 @@
   }
 
   &::before {
-    content: '';
-    left: 0;
+    position: absolute;
     right: 0;
     bottom: 0;
+    left: 0;
     height: 2px;
-    position: absolute;
     background: repeating-linear-gradient(
       -45deg,
       #ff6c6c 0,
@@ -40,5 +39,6 @@
       transparent 50%
     );
     background-size: 80px;
+    content: '';
   }
 }

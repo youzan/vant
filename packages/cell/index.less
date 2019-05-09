@@ -4,14 +4,14 @@
 .van-cell {
   position: relative;
   display: flex;
-  width: 100%;
-  overflow: hidden;
   box-sizing: border-box;
+  width: 100%;
+  padding: @cell-vertical-padding @cell-horizontal-padding;
+  overflow: hidden;
   color: @cell-text-color;
   font-size: @cell-font-size;
   line-height: @cell-line-height;
   background-color: @cell-background-color;
-  padding: @cell-vertical-padding @cell-horizontal-padding;
 
   &:not(:last-child)::after {
     .hairline-bottom(@cell-border-color, 15px);
@@ -22,9 +22,9 @@
   }
 
   &__label {
+    margin-top: @cell-label-margin-top;
     color: @cell-label-color;
     font-size: @cell-label-font-size;
-    margin-top: @cell-label-margin-top;
     line-height: @cell-label-line-height;
   }
 
@@ -34,10 +34,10 @@
   }
 
   &__value {
-    color: @cell-value-color;
-    overflow: hidden;
-    text-align: right;
     position: relative;
+    overflow: hidden;
+    color: @cell-value-color;
+    text-align: right;
     vertical-align: middle;
 
     &--alone {
@@ -73,11 +73,11 @@
     overflow: visible;
 
     &::before {
-      content: '*';
       position: absolute;
       left: 7px;
-      font-size: @cell-font-size;
       color: @cell-required-color;
+      font-size: @cell-font-size;
+      content: '*';
     }
   }
 

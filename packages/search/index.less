@@ -2,16 +2,16 @@
 
 .van-search {
   display: flex;
-  padding: 10px 16px;
   align-items: center;
   box-sizing: border-box;
+  padding: 10px 16px;
 
   &__content {
     display: flex;
     flex: 1;
+    padding-left: 10px;
     background-color: @search-background-color;
     border-radius: 2px;
-    padding-left: 10px;
 
     &--round {
       border-radius: 17px;
@@ -19,10 +19,10 @@
   }
 
   &__label {
-    font-size: 14px;
-    color: @text-color;
-    line-height: 34px;
     padding: 0 5px;
+    color: @text-color;
+    font-size: 14px;
+    line-height: 34px;
   }
 
   .van-cell {
@@ -50,9 +50,9 @@
 
   &__action {
     padding: 0 10px;
+    color: @text-color;
     font-size: 14px;
     line-height: 34px;
-    color: @text-color;
 
     &:active {
       background-color: @active-color;

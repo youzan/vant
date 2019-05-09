@@ -3,12 +3,12 @@
 .van-dropdown-menu {
   display: flex;
   height: 50px;
-  user-select: none;
   background-color: @white;
+  user-select: none;
 
   &__item {
-    flex: 1;
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
 
@@ -18,25 +18,25 @@
   }
 
   &__title {
-    font-size: 15px;
     position: relative;
+    font-size: 15px;
 
     &::after {
       position: absolute;
-      content: '';
       top: 3px;
       right: -12px;
-      opacity: .6;
       border: 3px solid;
-      transform: rotate(-45deg);
       border-color: transparent transparent currentColor currentColor;
+      transform: rotate(-45deg);
+      opacity: .6;
+      content: '';
     }
 
     &--active {
       &::after {
         top: 7px;
-        opacity: 1;
         transform: rotate(135deg);
+        opacity: 1;
       }
     }
   }

@@ -1,25 +1,25 @@
 @import '../style/var';
 
 .van-number-keyboard {
-  left: 0;
-  bottom: 0;
-  width: 100%;
   position: fixed;
-  user-select: none;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: @white;
   animation-timing-function: ease-out;
+  user-select: none;
 
   &__title {
+    position: relative;
     height: 30px;
+    color: @gray-darker;
     font-size: 14px;
     line-height: 30px;
     text-align: center;
-    position: relative;
-    color: @gray-darker;
 
     &-left {
-      left: 0;
       position: absolute;
+      left: 0;
     }
   }
 
@@ -28,11 +28,11 @@
   }
 
   &__close {
+    position: absolute;
     right: 0;
+    padding: 0 15px;
     color: @blue;
     font-size: 14px;
-    padding: 0 15px;
-    position: absolute;
 
     &:active {
       background-color: @active-color;
@@ -40,10 +40,10 @@
   }
 
   &__sidebar {
+    position: absolute;
     top: 0;
     right: 0;
     width: 25%;
-    position: absolute;
     height: @number-keyboard-key-height * 4;
   }
 
@@ -60,14 +60,14 @@
 }
 
 .van-key {
+  display: inline-block;
   width: 100% / 3;
+  height: @number-keyboard-key-height;
   font-size: 24px;
   font-style: normal;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  height: @number-keyboard-key-height;
   line-height: @number-keyboard-key-height;
+  text-align: center;
+  vertical-align: middle;
 
   &::after {
     border-width: 1px 1px 0 0;

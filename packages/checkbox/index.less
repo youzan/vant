@@ -12,18 +12,18 @@
 
   &__icon {
     height: 1em;
-    line-height: 1em;
     font-size: @checkbox-size;
+    line-height: 1em;
 
     .van-icon {
       display: block;
+      box-sizing: border-box;
       width: 1.25em;
       height: 1.25em;
-      font-size: .8em;
       color: transparent;
-      text-align: center;
+      font-size: .8em;
       line-height: inherit;
-      box-sizing: border-box;
+      text-align: center;
       border: 1px solid @checkbox-border-color;
       transition: @checkbox-transition-duration;
     }
@@ -37,15 +37,15 @@
     &--checked {
       .van-icon {
         color: @white;
-        border-color: @checkbox-checked-icon-color;
         background-color: @checkbox-checked-icon-color;
+        border-color: @checkbox-checked-icon-color;
       }
     }
 
     &--disabled {
       .van-icon {
-        border-color: @checkbox-disabled-icon-color;
         background-color: @checkbox-disabled-background-color;
+        border-color: @checkbox-disabled-icon-color;
       }
     }
 
@@ -57,9 +57,9 @@
   }
 
   &__label {
+    margin-left: @checkbox-label-margin;
     color: @checkbox-label-color;
     line-height: @checkbox-size;
-    margin-left: @checkbox-label-margin;
 
     &--left {
       float: left;

@@ -1,24 +1,24 @@
 @import '../style/var';
 
 .van-tab {
+  position: relative;
   flex: 1;
-  cursor: pointer;
+  box-sizing: border-box;
   min-width: 0; // hack for flex ellipsis
   padding: 0 5px;
-  font-size: 14px;
-  position: relative;
   color: @gray-darker;
+  font-size: 14px;
   line-height: @tabs-line-height;
   text-align: center;
-  box-sizing: border-box;
+  cursor: pointer;
 
   span {
     display: block;
   }
 
   &--active {
-    font-weight: 500;
     color: @text-color;
+    font-weight: 500;
   }
 
   &--disabled {
@@ -30,12 +30,12 @@
   position: relative;
 
   &__wrap {
+    position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     z-index: 99;
     overflow: hidden;
-    position: absolute;
 
     &--page-top {
       position: fixed;
@@ -68,28 +68,28 @@
   }
 
   &__nav {
-    display: flex;
-    user-select: none;
     position: relative;
+    display: flex;
     background-color: @white;
+    user-select: none;
 
     &--line {
+      box-sizing: content-box;
       height: 100%;
       padding-bottom: 15px; /* 15px padding to hide scrollbar in mobile safari */
-      box-sizing: content-box;
     }
 
     &--card {
-      margin: 0 15px;
-      border-radius: 2px;
       box-sizing: border-box;
-      border: 1px solid @red;
       height: @tabs-card-height;
+      margin: 0 15px;
+      border: 1px solid @red;
+      border-radius: 2px;
 
       .van-tab {
         color: @red;
-        border-right: 1px solid @red;
         line-height: @tabs-card-height - 2px;
+        border-right: 1px solid @red;
 
         &:last-child {
           border-right: none;
@@ -108,13 +108,13 @@
   }
 
   &__line {
-    z-index: 1;
-    left: 0;
-    bottom: 15px;
-    height: 3px;
     position: absolute;
-    border-radius: 3px;
+    bottom: 15px;
+    left: 0;
+    z-index: 1;
+    height: 3px;
     background-color: @red;
+    border-radius: 3px;
   }
 
   &__content {
@@ -148,8 +148,8 @@
   }
 
   .van-tab__pane {
-    width: 100%;
     flex-shrink: 0;
     box-sizing: border-box;
+    width: 100%;
   }
 }

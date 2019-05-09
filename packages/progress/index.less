@@ -1,15 +1,15 @@
 @import '../style/var';
 
 .van-progress {
-  height: 4px;
   position: relative;
-  border-radius: 4px;
+  height: 4px;
   background: @gray-light;
+  border-radius: 4px;
 
   &__portion {
+    position: absolute;
     left: 0;
     height: 100%;
-    position: absolute;
     border-radius: inherit;
 
     &--with-pivot {
@@ -19,18 +19,18 @@
   }
 
   &__pivot {
+    position: absolute;
     top: 50%;
     right: 0;
+    box-sizing: border-box;
     min-width: 2em;
     padding: 0 5px;
     font-size: 10px;
-    position: absolute;
     line-height: 1.6;
     text-align: center;
-    border-radius: 1em;
     word-break: keep-all;
-    box-sizing: border-box;
     background-color: @gray-light;
+    border-radius: 1em;
     transform: translate(100%, -50%);
   }
 }

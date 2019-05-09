@@ -16,7 +16,7 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/*.less\"",
+    "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:lib": "node build/build-lib.js",
@@ -104,7 +104,9 @@
     "signale": "^1.4.0",
     "style-loader": "^0.23.1",
     "stylelint": "^10.0.1",
+    "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^18.3.0",
+    "stylelint-order": "^3.0.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
     "uppercamelcase": "^3.0.0",

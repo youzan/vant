@@ -1,31 +1,31 @@
 @import '../style/var';
 
 .van-button {
-  display: inline-block;
   position: relative;
-  padding: 0;
-  height: @button-default-height;
-  line-height: @button-default-line-height;
-  font-size: @button-default-font-size;
-  border-radius: @button-border-radius;
-  text-align: center;
+  display: inline-block;
   box-sizing: border-box;
+  height: @button-default-height;
+  padding: 0;
+  font-size: @button-default-font-size;
+  line-height: @button-default-line-height;
+  text-align: center;
+  border-radius: @button-border-radius;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
 
   &::before {
-    content: " ";
     position: absolute;
     top: 50%;
     left: 50%;
-    opacity: 0;
     width: 100%;
     height: 100%;
+    background-color: @black;
     border: inherit;
     border-color: @black;
-    background-color: @black;
     border-radius: inherit; /* inherit parent's border radius */
     transform: translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
   }
 
   &:active::before {
@@ -101,9 +101,9 @@
   }
 
   &--small {
-    padding: 0 8px;
-    height: @button-small-height;
     min-width: @button-small-min-width;
+    height: @button-small-height;
+    padding: 0 8px;
     font-size: @button-small-font-size;
     line-height: @button-small-line-height;
   }
@@ -116,8 +116,8 @@
 
   &--mini {
     display: inline-block;
-    height: @button-mini-height;
     min-width: @button-mini-min-width;
+    height: @button-mini-height;
     font-size: @button-mini-font-size;
     line-height: @button-mini-line-height;
 
@@ -127,8 +127,8 @@
   }
 
   &--block {
-    width: 100%;
     display: block;
+    width: 100%;
   }
 
   &--disabled {
@@ -144,8 +144,8 @@
   }
 
   &__loading-text {
-    margin-left: 5px;
     display: inline-block;
+    margin-left: 5px;
     vertical-align: middle;
   }
 
@@ -160,7 +160,7 @@
     &.van-button--round::after {
       border-radius: @button-round-border-radius;
     }
-    
+
     &.van-button--square::after {
       border-radius: 0;
     }

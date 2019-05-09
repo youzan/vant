@@ -3,10 +3,10 @@
 
 .van-card {
   position: relative;
-  color: @card-text-color;
-  padding: @card-padding;
-  font-size: @card-font-size;
   box-sizing: border-box;
+  padding: @card-padding;
+  color: @card-text-color;
+  font-size: @card-font-size;
   background-color: @card-background-color;
 
   &:not(:first-child) {
@@ -18,19 +18,19 @@
   }
 
   &__thumb {
-    display: flex;
     position: relative;
-    width: @card-thumb-size;
-    height: @card-thumb-size;
-    margin-right: 10px;
+    display: flex;
     flex: none;
     align-items: center;
     justify-content: center;
+    width: @card-thumb-size;
+    height: @card-thumb-size;
+    margin-right: 10px;
 
     img {
-      border: none;
       max-width: 100%;
       max-height: 100%;
+      border: none;
     }
   }
 
@@ -38,9 +38,9 @@
     position: relative;
     display: flex;
     flex: 1;
-    height: @card-thumb-size;
     flex-direction: column;
     min-width: 0; /* hack for flex box ellipsis */
+    height: @card-thumb-size;
 
     &--centered {
       justify-content: center;
@@ -53,16 +53,16 @@
   }
 
   &__title {
-    line-height: @card-title-line-height;
     max-height: 32px;
     font-weight: 500;
+    line-height: @card-title-line-height;
 
     .multi-ellipsis(2);
   }
 
   &__desc {
-    color: @card-desc-color;
     max-height: @card-desc-line-height;
+    color: @card-desc-color;
     line-height: @card-desc-line-height;
   }
 
@@ -95,8 +95,8 @@
   }
 
   &__footer {
-    text-align: right;
     flex: none;
+    text-align: right;
 
     .van-button {
       margin-left: 5px;

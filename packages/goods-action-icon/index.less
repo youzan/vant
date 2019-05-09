@@ -1,16 +1,16 @@
 @import '../style/var';
 
 .van-goods-action-icon {
-  color: @gray-darker;
   display: flex;
-  height: 50px;
-  font-size: 10px;
+  flex-direction: column;
+  justify-content: center;
   min-width: 15%;
+  height: 50px;
+  color: @gray-darker;
+  font-size: 10px;
   line-height: 1;
   text-align: center;
   background-color: @white;
-  flex-direction: column;
-  justify-content: center;
 
   &:not(:first-child)::after {
     border-left-width: 1px;
@@ -22,7 +22,7 @@
 
   &__icon {
     width: 1em;
-    font-size: 20px;
     margin: 0 auto 5px;
+    font-size: 20px;
   }
 }

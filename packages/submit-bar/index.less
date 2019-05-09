@@ -1,25 +1,25 @@
 @import '../style/var';
 
 .van-submit-bar {
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 100;
   position: fixed;
-  user-select: none;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
   background-color: @white;
+  user-select: none;
 
   &__tip {
-    color: #f56723;
     padding: 10px;
+    color: #f56723;
     font-size: 12px;
     line-height: 18px;
     background-color: #fff7cc;
   }
 
   &__tip-icon {
-    font-size: 12px;
     min-width: 18px;
+    font-size: 12px;
     vertical-align: middle;
   }
 
@@ -28,18 +28,18 @@
   }
 
   &__bar {
-    height: 50px;
     display: flex;
-    font-size: 14px;
     align-items: center;
+    height: 50px;
+    font-size: 14px;
   }
 
   &__text {
     flex: 1;
+    padding-right: 12px;
+    color: @text-color;
     font-weight: 500;
     text-align: right;
-    color: @text-color;
-    padding-right: 12px;
 
     span {
       display: inline-block;

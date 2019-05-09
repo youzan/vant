@@ -20,24 +20,24 @@
   }
 
   &__control {
-    border: 0;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-    resize: none;
-    display: block;
     color: @field-input-text-color;
-    box-sizing: border-box;
     background-color: transparent;
+    border: 0;
+    resize: none;
 
     &::placeholder {
       color: @field-placeholder-text-color;
     }
 
     &:disabled {
-      opacity: 1;
       color: @field-input-disabled-text-color;
       background-color: transparent;
+      opacity: 1;
     }
 
     &--center {
@@ -65,9 +65,9 @@
 
   &__clear,
   &__right-icon {
+    margin-right: -10px;
     padding: 0 10px;
     line-height: inherit;
-    margin-right: -10px;
   }
 
   &__clear {

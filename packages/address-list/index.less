@@ -1,20 +1,20 @@
 @import '../style/var';
 
 .van-address-list {
+  box-sizing: border-box;
   height: 100%;
   padding-bottom: 100px;
-  box-sizing: border-box;
 
   &__add {
     position: fixed;
-    left: 0;
     bottom: 0;
+    left: 0;
     z-index: 9999;
   }
 
   &__disabled-text {
-    color: @gray-dark;
     padding: 0 15px;
+    color: @gray-dark;
     font-size: 12px;
     line-height: 30px;
   }
@@ -24,23 +24,23 @@
   padding: 15px;
 
   &__value {
-    color: @text-color;
-    padding-right: 34px;
     position: relative;
+    padding-right: 34px;
+    color: @text-color;
   }
 
   .van-radio__label {
+    box-sizing: border-box;
     width: 100%;
     margin-left: 0;
     padding-left: 27px;
-    box-sizing: border-box;
   }
 
   .van-radio__icon {
+    position: absolute;
     top: 50%;
     left: 0;
     height: 16px;
-    position: absolute;
     line-height: 16px;
     transform: translate(0, -50%);
 
@@ -52,21 +52,21 @@
   }
 
   .van-radio__icon--checked .van-icon {
-    border-color: @red;
     background-color: @red;
+    border-color: @red;
   }
 
   &__name {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
     margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   &__address {
+    color: @gray-darker;
     font-size: 12px;
     line-height: 16px;
-    color: @gray-darker;
   }
 
   &--unswitchable {

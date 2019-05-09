@@ -5,15 +5,15 @@
 
   &__minus,
   &__plus {
+    position: relative;
+    box-sizing: border-box;
     width: 28px;
     height: 28px;
-    box-sizing: border-box;
-    background-color: @stepper-background-color;
-    border: 0;
     margin: 1px;
-    position: relative;
     padding: 5px;
     vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
 
     &::before {
       width: 9px;
@@ -27,14 +27,14 @@
 
     &::before,
     &::after {
-      content: '';
       position: absolute;
-      margin: auto;
       top: 0;
-      left: 0;
       right: 0;
       bottom: 0;
+      left: 0;
+      margin: auto;
       background-color: @text-color;
+      content: '';
     }
 
     &:active {
@@ -68,19 +68,19 @@
   }
 
   &__input {
+    box-sizing: content-box;
     width: 30px;
     height: 26px;
-    padding: 1px;
-    border: 0;
     margin: 1px;
-    background-color: @stepper-background-color;
-    border-width: 1px 0;
-    border-radius: 0;
-    box-sizing: content-box;
+    padding: 1px;
     color: @text-color;
     font-size: 14px;
-    vertical-align: middle;
     text-align: center;
+    vertical-align: middle;
+    background-color: @stepper-background-color;
+    border: 0;
+    border-width: 1px 0;
+    border-radius: 0;
     -webkit-appearance: none;
 
     &[disabled] {
@@ -91,7 +91,7 @@
 
   input[type="number"]::-webkit-inner-spin-button,
   input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
     margin: 0;
+    -webkit-appearance: none;
   }
 }
