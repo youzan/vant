@@ -82,10 +82,10 @@ export default {
 
 .demo-collapse {
   .van-icon-question-o {
-    color: @blue;
-    vertical-align: -3px;
     margin-left: 5px;
+    color: @blue;
     font-size: 15px;
+    vertical-align: -3px;
   }
 }
 </style>

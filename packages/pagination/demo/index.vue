@@ -64,8 +64,8 @@ export default {
 <style lang="less">
 .demo-pagination {
   .van-pagination {
-    margin: 5px 0;
     width: 100%;
+    margin: 5px 0;
   }
 
   .van-doc-demo-block {

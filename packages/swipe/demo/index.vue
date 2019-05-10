@@ -135,8 +135,8 @@ export default {
     &-item {
       color: @white;
       font-size: 20px;
-      text-align: center;
       line-height: 150px;
+      text-align: center;
 
       &:nth-child(even) {
         background-color: #39a9ed;
@@ -148,11 +148,11 @@ export default {
     }
 
     img {
+      display: block;
+      box-sizing: border-box;
       width: 100%;
       height: 240px;
-      display: block;
       padding: 30px 60px;
-      box-sizing: border-box;
       background-color: @white;
       pointer-events: none;
     }
@@ -171,8 +171,8 @@ export default {
     right: 5px;
     bottom: 5px;
     padding: 2px 5px;
-    font-size: 12px;
     color: @white;
+    font-size: 12px;
     background: rgba(0, 0, 0, .1);
   }
 }

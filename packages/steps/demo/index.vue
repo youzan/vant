@@ -112,8 +112,8 @@ export default {
   p,
   h3 {
     margin: 0;
-    font-size: inherit;
     font-weight: normal;
+    font-size: inherit;
   }
 }
 </style>

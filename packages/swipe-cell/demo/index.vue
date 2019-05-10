@@ -89,13 +89,13 @@ export default {
   .van-swipe-cell {
     &__left,
     &__right {
-      color: @white;
-      font-size: 15px;
+      display: inline-block;
       width: 65px;
       height: 44px;
-      display: inline-block;
-      text-align: center;
+      color: @white;
+      font-size: 15px;
       line-height: 44px;
+      text-align: center;
       background-color: @red;
     }
   }

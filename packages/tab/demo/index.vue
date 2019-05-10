@@ -186,8 +186,8 @@ export default {
   }
 
   .van-tab__pane {
-    background-color: @white;
     padding: 20px;
+    background-color: @white;
   }
 
   .van-tabs--card .van-tab__pane {
@@ -203,9 +203,9 @@ export default {
   }
 
   .custom-pane {
-    text-align: center;
     height: 50px;
     line-height: 50px;
+    text-align: center;
   }
 
   .van-doc-demo-block:last-child {

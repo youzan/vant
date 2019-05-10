@@ -130,8 +130,8 @@ export default {
     font-size: 10px;
     line-height: 18px;
     text-align: center;
-    border-radius: 100px;
     background-color: @red;
+    border-radius: 100px;
   }
 
   .van-doc-demo-block__title {

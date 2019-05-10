@@ -103,8 +103,8 @@ export default {
   }
 
   .van-popup {
-    padding: 20px;
     box-sizing: border-box;
+    padding: 20px;
 
     &--center {
       width: 60%;
@@ -116,8 +116,8 @@ export default {
     }
 
     &--top {
-      color: @white;
       width: 100%;
+      color: @white;
       line-height: 20px;
       background-color: rgba(0, 0, 0, 0.8);
     }

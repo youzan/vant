@@ -65,16 +65,16 @@ export default {
 
   img,
   div[lazy] {
-    padding: 15px;
+    box-sizing: border-box;
     width: 100%;
     height: 250px;
     margin: 10px 0 0;
+    padding: 15px;
     background-color: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    background-size: 315px 250px;
-    background-position: 15px;
     background-repeat: no-repeat;
-    box-sizing: border-box;
+    background-position: 15px;
+    background-size: 315px 250px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   }
 
   .van-doc-demo-block__title,

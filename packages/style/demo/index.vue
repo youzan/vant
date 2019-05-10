@@ -89,9 +89,9 @@ export default {
 
 .demo-style {
   .van-ellipsis {
-    font-size: 13px;
-    margin-left: 15px;
     max-width: 250px;
+    margin-left: 15px;
+    font-size: 13px;
   }
 
   .van-hairline--top {
@@ -104,14 +104,14 @@ export default {
   }
 
   .demo-animate-block {
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 100px;
     height: 100px;
-    position: fixed;
-    border-radius: 3px;
     margin: -50px 0 0 -50px;
     background-color: @blue;
+    border-radius: 3px;
   }
 }
 </style>

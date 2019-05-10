@@ -85,16 +85,16 @@ export default {
       }
 
       p {
+        margin: 13px 0 0;
         font-size: 14px;
         line-height: 20px;
-        margin: 13px 0 0;
       }
     }
 
     img {
+      flex-shrink: 0;
       width: 32px;
       height: 32px;
-      flex-shrink: 0;
       margin-right: 15px;
     }
   }

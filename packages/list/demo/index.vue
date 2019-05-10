@@ -124,11 +124,11 @@ export default {
   }
 
   .page-desc {
-    padding: 5px 0;
     margin: 0;
+    padding: 5px 0;
+    color: @gray-darker;
     font-size: 14px;
     text-align: center;
-    color: @gray-darker;
 
     &--text {
       margin: 0;

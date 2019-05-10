@@ -132,9 +132,9 @@ export default {
   }
 
   img {
+    box-sizing: border-box;
     width: 100%;
     padding: 25px 20px 0;
-    box-sizing: border-box;
   }
 }
 </style>

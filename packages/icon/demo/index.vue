@@ -74,31 +74,31 @@ export default {
   font-size: 0;
 
   &-list {
-    padding-top: 10px;
     box-sizing: border-box;
     min-height: calc(100vh - 65px);
+    padding-top: 10px;
   }
 
   .van-col {
-    float: none;
-    text-align: center;
-    height: 100px;
     display: inline-block;
+    float: none;
+    height: 100px;
+    text-align: center;
     vertical-align: middle;
 
     span {
       display: block;
       padding: 0 5px;
+      color: @gray-darker;
       font-size: 12px;
       line-height: 18px;
-      color: @gray-darker;
     }
   }
 
   .van-icon {
-    font-size: 32px;
     margin: 20px 0 10px;
     color: @text-color;
+    font-size: 32px;
   }
 
   .van-tab__pane {
