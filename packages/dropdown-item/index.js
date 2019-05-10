@@ -46,6 +46,7 @@ export default sfc({
       return (
         <Cell
           clickable
+          key={option.value}
           title={option.text}
           titleStyle={{ color: active ? activeColor : '' }}
           onClick={() => {

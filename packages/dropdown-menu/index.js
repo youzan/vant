@@ -1,11 +1,15 @@
 import { use } from '../utils';
 import { BLUE } from '../utils/color';
 import { ParentMixin } from '../mixins/relation';
+import { ClickOutsideMixin } from '../mixins/click-outside';
 
 const [sfc, bem] = use('dropdown-menu');
 
 export default sfc({
-  mixins: [ParentMixin('vanDropdownMenu')],
+  mixins: [ParentMixin('vanDropdownMenu'), ClickOutsideMixin({
+    event: 'click',
+    method: 'onClickOutside'
+  })],
 
   props: {
     overlay: {
@@ -44,6 +48,12 @@ export default sfc({
         } else {
           item.toggle(false);
         }
+      });
+    },
+
+    onClickOutside() {
+      this.children.forEach(item => {
+        item.toggle(false);
       });
     }
   },
