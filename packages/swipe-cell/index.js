@@ -1,4 +1,5 @@
 import { use, range } from '../utils';
+import { preventDefault } from '../utils/event';
 import { TouchMixin } from '../mixins/touch';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
@@ -84,7 +85,7 @@ export default sfc({
       this.touchMove(event);
 
       if (this.direction === 'horizontal') {
-        event.preventDefault();
+        preventDefault(event);
         this.swipeMove(this.deltaX + this.startOffset);
       }
     },

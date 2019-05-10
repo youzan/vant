@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { on, off } from '../utils/event';
+import { on, off, preventDefault } from '../utils/event';
 import { TouchMixin } from '../mixins/touch';
 
 const [sfc, bem] = use('swipe');
@@ -168,8 +168,7 @@ export default sfc({
       this.touchMove(event);
 
       if (this.isCorrectDirection) {
-        event.preventDefault();
-        event.stopPropagation();
+        preventDefault(event, true);
         this.move({ offset: Math.min(Math.max(this.delta, -this.size), this.size) });
       }
     },

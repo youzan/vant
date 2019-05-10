@@ -1,4 +1,5 @@
 import { use, range } from '../utils';
+import { preventDefault } from '../utils/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import Swipe from '../swipe';
@@ -98,7 +99,7 @@ export default sfc({
     },
 
     onWrapperTouchEnd(event) {
-      event.preventDefault();
+      preventDefault(event);
 
       const deltaTime = new Date() - this.touchStartTime;
       const { offsetX = 0, offsetY = 0 } = this.$refs.swipe || {};
@@ -154,8 +155,7 @@ export default sfc({
     onTouchMove(event) {
       const { touches } = event;
       if (this.moving || this.zooming) {
-        event.preventDefault();
-        event.stopPropagation();
+        preventDefault(event, true);
       }
 
       if (this.moving) {
@@ -199,8 +199,7 @@ export default sfc({
         }
 
         if (stopPropagation) {
-          event.preventDefault();
-          event.stopPropagation();
+          preventDefault(event, true);
         }
       }
     },

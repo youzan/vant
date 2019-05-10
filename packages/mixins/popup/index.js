@@ -1,6 +1,6 @@
 import { context } from './context';
 import { TouchMixin } from '../touch';
-import { on, off } from '../../utils/event';
+import { on, off, preventDefault } from '../../utils/event';
 import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/scroll';
 
@@ -176,13 +176,11 @@ export const PopupMixin = {
 
       /* istanbul ignore next */
       if (
-        event.cancelable &&
         status !== '11' &&
         this.direction === 'vertical' &&
         !(parseInt(status, 2) & parseInt(direction, 2))
       ) {
-        event.preventDefault();
-        event.stopPropagation();
+        preventDefault(event, true);
       }
     },
 

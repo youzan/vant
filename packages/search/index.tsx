@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import { inherit, emit } from '../utils/functional';
+import { preventDefault } from '../utils/event';
 import Field from '../field';
 
 // Types
@@ -68,7 +69,7 @@ function Search(
       keypress(event: KeyboardEvent) {
         // press enter
         if (event.keyCode === 13) {
-          event.preventDefault();
+          preventDefault(event);
           emit(ctx, 'search', props.value);
         }
         emit(ctx, 'keypress', event);

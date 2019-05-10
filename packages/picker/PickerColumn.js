@@ -1,5 +1,6 @@
 import { deepClone } from '../utils/deep-clone';
 import { use, isObj, range } from '../utils';
+import { preventDefault } from '../utils/event';
 
 const DEFAULT_DURATION = 200;
 const [sfc, bem] = use('picker-column');
@@ -55,7 +56,7 @@ export default sfc({
     },
 
     onTouchMove(event) {
-      event.preventDefault();
+      preventDefault(event);
       const deltaY = event.touches[0].clientY - this.startY;
       this.offset = range(
         this.startOffset + deltaY,

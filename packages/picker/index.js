@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { prevent } from '../utils/event';
+import { preventDefault } from '../utils/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
 import { BLUE } from '../utils/color';
@@ -172,7 +172,7 @@ export default sfc({
       <div class={bem()}>
         {Toolbar}
         {this.loading ? <Loading class={bem('loading')} color={BLUE} /> : h()}
-        <div class={bem('columns')} style={columnsStyle} onTouchmove={prevent}>
+        <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
           {columns.map((item, index) => (
             <PickerColumn
               valueKey={this.valueKey}

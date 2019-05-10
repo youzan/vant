@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { stop } from '../utils/event';
+import { stopPropagation } from '../utils/event';
 import Key from './Key';
 
 const [sfc, bem, t] = use('number-keyboard');
@@ -145,7 +145,7 @@ export default sfc({
           vShow={this.show}
           style={{ zIndex: this.zIndex }}
           class={bem([theme, { 'safe-area-inset-bottom': this.safeAreaInsetBottom }])}
-          onTouchstart={stop}
+          onTouchstart={stopPropagation}
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
         >

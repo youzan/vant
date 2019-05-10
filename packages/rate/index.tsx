@@ -1,6 +1,7 @@
 /* eslint-disable prefer-spread */
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
+import { preventDefault } from '../utils/event';
 import Icon from '../icon';
 
 // Types
@@ -74,7 +75,7 @@ function Rate(
       return;
     }
 
-    event.preventDefault();
+    preventDefault(event);
     const { clientX, clientY } = event.touches[0];
     const target = document.elementFromPoint(clientX, clientY) as HTMLElement;
 

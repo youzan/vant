@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
+import { preventDefault } from '../utils/event';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -19,8 +20,7 @@ export type OverlayEvents = {
 const [sfc, bem] = use('overlay');
 
 function preventTouchMove(event: TouchEvent) {
-  event.preventDefault();
-  event.stopPropagation();
+  preventDefault(event, true);
 }
 
 function Overlay(
