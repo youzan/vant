@@ -4,22 +4,22 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: @submit-bar-z-index;
   width: 100%;
-  background-color: @white;
+  background-color: @submit-bar-background-color;
   user-select: none;
 
   &__tip {
-    padding: 10px;
-    color: #f56723;
-    font-size: 12px;
-    line-height: 18px;
-    background-color: #fff7cc;
+    padding: @submit-bar-tip-padding;
+    color: @submit-bar-tip-color;
+    font-size: @submit-bar-tip-font-size;
+    line-height: @submit-bar-tip-line-height;
+    background-color: @submit-bar-tip-background-color;
   }
 
   &__tip-icon {
-    min-width: 18px;
-    font-size: 12px;
+    min-width: @submit-bar-tip-icon-size * 1.5;
+    font-size: @submit-bar-tip-icon-size;
     vertical-align: middle;
   }
 
@@ -31,14 +31,14 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 50px;
-    font-size: 14px;
+    height: @submit-bar-height;
+    font-size: @submit-bar-text-font-size;
   }
 
   &__text {
     flex: 1;
     padding-right: 12px;
-    color: @text-color;
+    color: @submit-bar-text-color;
     font-weight: 500;
     text-align: right;
 
@@ -52,16 +52,16 @@
   }
 
   &__price {
-    color: @red;
-    font-size: 18px;
+    color: @submit-bar-price-color;
+    font-size: @submit-bar-price-font-size;
 
     &::first-letter {
-      font-size: 14px;
+      font-size: @submit-bar-currency-font-size;
     }
   }
 
   &__button {
-    width: 110px;
+    width: @submit-bar-button-width;
   }
 
   &--safe-area-inset-bottom {
