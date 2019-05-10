@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { RED } from '../utils/color';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
@@ -44,7 +45,7 @@ function ContactList(
         valueClass={bem('item-value')}
         scopedSlots={{
           default: () => (
-            <Radio name={item.id} onClick={onClick}>
+            <Radio name={item.id} iconSize={16} checkedColor={RED} onClick={onClick}>
               <div class={bem('name')}>{`${item.name}，${item.tel}`}</div>
             </Radio>
           ),

@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { RED } from '../utils/color';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 import Cell from '../cell';
@@ -61,7 +62,7 @@ function AddressItem(
     ];
 
     return props.switchable ? (
-      <Radio name={data.id} onClick={onSelect}>
+      <Radio name={data.id} iconSize={16} checkedColor={RED} onClick={onSelect}>
         {Info}
       </Radio>
     ) : (
