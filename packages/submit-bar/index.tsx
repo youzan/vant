@@ -78,6 +78,7 @@ function SubmitBar(
         <Button
           square
           size="large"
+          class={bem('button')}
           type={props.buttonType}
           loading={props.loading}
           disabled={props.disabled}
