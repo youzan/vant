@@ -1,7 +1,8 @@
 import { use } from '../utils';
-import Loading from '../loading';
+import { BLUE } from '../utils/color';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
+import Loading from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -45,7 +46,7 @@ function Switch(
       {...inherit(ctx)}
     >
       <div class={bem('node')}>
-        {loading && <Loading class={bem('loading')} />}
+        {loading && <Loading class={bem('loading')} color={props.activeColor || BLUE} />}
       </div>
     </div>
   );
