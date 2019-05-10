@@ -50,8 +50,10 @@ export default sfc({
 
   methods: {
     getWidth() {
-      this.progressWidth = this.$el.offsetWidth;
-      this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
+      this.$nextTick(() => {
+        this.progressWidth = this.$el.offsetWidth;
+        this.pivotWidth = this.$refs.pivot ? this.$refs.pivot.offsetWidth : 0;
+      });
     }
   },
 
