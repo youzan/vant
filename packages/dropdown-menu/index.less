@@ -2,8 +2,8 @@
 
 .van-dropdown-menu {
   display: flex;
-  height: 50px;
-  background-color: @white;
+  height: @dropdown-menu-height;
+  background-color: @dropdown-menu-background-color;
   user-select: none;
 
   &__item {
@@ -19,7 +19,7 @@
 
   &__title {
     position: relative;
-    font-size: 15px;
+    font-size: @dropdown-menu-title-font-size;
 
     &::after {
       position: absolute;
