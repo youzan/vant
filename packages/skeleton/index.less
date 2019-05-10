@@ -7,7 +7,7 @@
   &__avatar {
     flex-shrink: 0;
     margin-right: 15px;
-    background-color: @active-color;
+    background-color: @skeleton-avatar-background-color;
 
     &--round {
       border-radius: 100%;
@@ -24,8 +24,8 @@
 
   &__row,
   &__title {
-    height: 16px;
-    background-color: @active-color;
+    height: @skeleton-row-height;
+    background-color: @skeleton-row-background-color;
   }
 
   &__title {
@@ -34,7 +34,7 @@
 
   &__row {
     &:not(:first-child) {
-      margin-top: 12px;
+      margin-top: @skeleton-row-margin-top;
     }
   }
 
@@ -43,7 +43,7 @@
   }
 
   &--animate {
-    animation: van-skeleton-blink 1.2s ease-in-out infinite;
+    animation: van-skeleton-blink @skeleton-animation-duration ease-in-out infinite;
   }
 }
 
