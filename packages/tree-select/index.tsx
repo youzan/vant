@@ -46,7 +46,7 @@ function TreeSelect(
             key={index}
             class={[
               'van-ellipsis',
-              bem('nitem', {
+              bem('nav-item', {
                 active: mainActiveIndex === index,
                 disabled: item.disabled
               })

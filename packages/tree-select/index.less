@@ -2,83 +2,60 @@
 
 .van-tree-select {
   position: relative;
-  font-size: 14px;
+  display: flex;
+  font-size: @tree-select-font-size;
   user-select: none;
 
   &__nav {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 35%;
-    min-width: 120px;
-    overflow: scroll;
-    background-color: @background-color-light;
+    flex: 1;
+    overflow-y: auto;
+    background-color: @tree-select-nav-background-color;
     -webkit-overflow-scrolling: touch;
-  }
 
-  &__nitem {
-    position: relative;
-    padding: 0 9px 0 15px;
-    line-height: 44px;
+    &-item {
+      position: relative;
+      padding: @tree-select-nav-item-padding;
+      line-height: @tree-select-item-height;
+      border-left: 3px solid transparent;
 
-    &--active::after {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 3.6px;
-      background-color: @red;
-      content: '';
-    }
+      &--active {
+        font-weight: bold;
+        background-color: @tree-select-nav-item-active-background-color;
+        border-color: @tree-select-nav-item-active-border-color;
+      }
 
-    &--active {
-      font-weight: bold;
-      background-color: @white;
-    }
-
-    &--disabled {
-      color: @gray-dark;
-    }
-
-    &--disabled:active::after {
-      display: none;
+      &--disabled {
+        color: @tree-select-nav-item-disabled-color;
+      }
     }
   }
 
   &__content {
-    box-sizing: border-box;
-    width: 65%;
-    height: 100%;
-    margin-left: 35%;
-    padding-left: 15px;
-    overflow: scroll;
-    background-color: @white;
+    flex: 2;
+    overflow-y: auto;
+    background-color: @tree-select-content-background-color;
     -webkit-overflow-scrolling: touch;
   }
 
   &__item {
     position: relative;
+    padding-left: 15px;
     font-weight: bold;
-    line-height: 44px;
+    line-height: @tree-select-item-height;
 
     &--active {
-      color: @red;
+      color: @tree-select-item-active-color;
     }
 
-    &--disabled,
-    &--disabled:active {
-      color: @gray;
+    &--disabled {
+      color: @tree-select-item-disabled-color;
     }
   }
 
   &__selected {
     position: absolute;
-    top: 0;
+    top: 50%;
     right: 15px;
-    bottom: 0;
-    height: 24px;
-    margin: auto 0;
-    line-height: 24px;
+    margin-top: -8px;
   }
 }
