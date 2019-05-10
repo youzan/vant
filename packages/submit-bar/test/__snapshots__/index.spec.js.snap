@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`decimal length 1`] = `
+exports[`decimal-length prop 1`] = `
 <div class="van-submit-bar">
   <div class="van-submit-bar__bar">
     <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 1.1</span></div><button class="van-button van-button--danger van-button--large van-button--square"><span class="van-button__text"></span></button>
@@ -13,5 +13,24 @@ exports[`disable submit 1`] = `
   <div class="van-submit-bar__bar">
     <div class="van-submit-bar__text"><span>合计：</span><span class="van-submit-bar__price">¥ 0.01</span></div><button disabled="disabled" class="van-button van-button--danger van-button--large van-button--disabled van-button--square"><span class="van-button__text"></span></button>
   </div>
+</div>
+`;
+
+exports[`suffix-label prop 1`] = `
+<div class="van-submit-bar">
+  <div class="van-submit-bar__bar">
+    <div class="van-submit-bar__text"><span>Label</span><span class="van-submit-bar__price">¥ 1.11</span><span class="van-submit-bar__suffix-label">Suffix Label</span></div><button class="van-button van-button--danger van-button--large van-button--square"><span class="van-button__text"></span></button>
+  </div>
+</div>
+`;
+
+exports[`top slot 1`] = `
+<div class="van-submit-bar">top<div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--large van-button--square"><span class="van-button__text"></span></button></div>
+</div>
+`;
+
+exports[`without price 1`] = `
+<div class="van-submit-bar">
+  <div class="van-submit-bar__bar"><button class="van-button van-button--danger van-button--large van-button--square"><span class="van-button__text"></span></button></div>
 </div>
 `;

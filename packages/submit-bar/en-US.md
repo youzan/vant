@@ -66,7 +66,8 @@ Use slot to add custom contents.
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | price | Price |  `Number` | - |
-| label | Price label |  `String` | `合计：` |
+| label | Price left label |  `String` | `Total：` |
+| suffix-label | Price right label | `String` | - |
 | button-text | Button text | `String` | - |
 | button-type | Button type |  `String` | `danger` |
 | tip | Tip |  `String` | - |

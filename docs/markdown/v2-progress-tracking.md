@@ -104,6 +104,7 @@
 ### SubmitBar
 
 - 新增`tip-icon`属性
+- 新增`suffix-label`属性
 
 ### Steps
 
