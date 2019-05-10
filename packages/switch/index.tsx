@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { BLUE } from '../utils/color';
+import { BLUE, GRAY_DARK } from '../utils/color';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import Loading from '../loading';
@@ -20,12 +20,23 @@ function Switch(
   slots: DefaultSlots,
   ctx: RenderContext<SharedSwitchProps>
 ) {
-  const { value, loading, disabled, activeValue, inactiveValue } = props;
+  const {
+    size,
+    value,
+    loading,
+    disabled,
+    activeColor,
+    activeValue,
+    inactiveColor,
+    inactiveValue
+  } = props;
 
-  const style = {
-    fontSize: props.size,
-    backgroundColor: value ? props.activeColor : props.inactiveColor
+  const switchStyle = {
+    fontSize: size,
+    backgroundColor: value ? activeColor : inactiveColor
   };
+
+  const loadingColor = value ? activeColor || BLUE : inactiveColor || GRAY_DARK;
 
   function onClick() {
     if (!disabled && !loading) {
@@ -41,12 +52,12 @@ function Switch(
         on: value === activeValue,
         disabled
       })}
-      style={style}
+      style={switchStyle}
       onClick={onClick}
       {...inherit(ctx)}
     >
       <div class={bem('node')}>
-        {loading && <Loading class={bem('loading')} color={props.activeColor || BLUE} />}
+        {loading && <Loading class={bem('loading')} color={loadingColor} />}
       </div>
     </div>
   );
