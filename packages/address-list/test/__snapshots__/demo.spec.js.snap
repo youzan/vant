@@ -8,7 +8,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell van-cell--clickable van-address-item">
           <div class="van-cell__value van-cell__value--alone van-address-item__value">
             <div class="van-radio">
-              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked"><i class="van-icon van-icon-success">
+              <div class="van-radio__icon van-radio__icon--round van-radio__icon--checked" style="font-size: 16px;"><i class="van-icon van-icon-success" style="border-color: #f44; background-color: rgb(255, 68, 68);">
                   <!----></i></div><span class="van-radio__label"><div class="van-address-item__name">张三，13000000000</div><div class="van-address-item__address">浙江省杭州市西湖区文三路 138 号东方通信大厦 7 楼 501 室</div></span>
             </div>
           </div><i class="van-icon van-icon-edit van-address-item__edit">
@@ -17,7 +17,7 @@ exports[`renders demo correctly 1`] = `
         <div class="van-cell van-cell--clickable van-address-item">
           <div class="van-cell__value van-cell__value--alone van-address-item__value">
             <div class="van-radio">
-              <div class="van-radio__icon van-radio__icon--round"><i class="van-icon van-icon-success">
+              <div class="van-radio__icon van-radio__icon--round" style="font-size: 16px;"><i class="van-icon van-icon-success">
                   <!----></i></div><span class="van-radio__label"><div class="van-address-item__name">李四，1310000000</div><div class="van-address-item__address">浙江省杭州市拱墅区莫干山路 50 号</div></span>
             </div>
           </div><i class="van-icon van-icon-edit van-address-item__edit">
