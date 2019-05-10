@@ -1,16 +1,13 @@
 @import '../style/var';
 
 .van-checkbox {
+  display: flex;
+  align-items: center;
   overflow: hidden;
   user-select: none;
 
-  &__icon,
-  &__label {
-    display: inline-block;
-    vertical-align: middle;
-  }
-
   &__icon {
+    flex: none;
     height: 1em;
     font-size: @checkbox-size;
     line-height: 1em;
