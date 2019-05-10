@@ -46,7 +46,7 @@ export default sfc({
 
   created() {
     this.show = this.expanded;
-    this.inited = this.expanded;
+   
   },
 
   watch: {
@@ -57,7 +57,7 @@ export default sfc({
 
       if (expanded) {
         this.show = true;
-        this.inited = true;
+        this.refs.wrapper.style.height = 0;
       }
 
       raf(() => {
@@ -127,7 +127,7 @@ export default sfc({
       />
     );
 
-    const Content = this.inited && (
+    const Content = (
       <div
         vShow={this.show}
         ref="wrapper"
