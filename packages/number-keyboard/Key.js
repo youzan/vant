@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import { preventDefault } from '../utils/event';
 
 const [sfc, bem] = use('key');
 
@@ -29,8 +30,7 @@ export default sfc({
     },
 
     onBlur(event) {
-      event.preventDefault();
-      event.stopPropagation();
+      preventDefault(event, true);
       this.active = false;
     }
   },

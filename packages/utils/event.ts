@@ -41,10 +41,17 @@ export function off(target: HTMLElement, event: string, handler: EventHanlder) {
   }
 }
 
-export function stop(event: Event) {
+export function stopPropagation(event: Event) {
   event.stopPropagation();
 }
 
-export function prevent(event: Event) {
-  event.preventDefault();
+export function preventDefault(event: Event, isStopPropagation?: boolean) {
+  /* istanbul ignore else */
+  if (typeof event.cancelable !== 'boolean' || event.cancelable) {
+    event.preventDefault();
+  }
+
+  if (isStopPropagation) {
+    stopPropagation(event);
+  }
 }

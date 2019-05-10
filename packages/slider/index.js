@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
+import { preventDefault } from '../utils/event';
 
 const [sfc, bem] = use('slider');
 
@@ -36,8 +37,7 @@ export default sfc({
     },
 
     onTouchMove(event) {
-      event.preventDefault();
-      event.stopPropagation();
+      preventDefault(event, true);
 
       if (this.disabled) return;
 

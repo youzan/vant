@@ -1,7 +1,8 @@
 import { use } from '../utils';
-import Loading from '../loading';
+import { preventDefault } from '../utils/event';
 import { TouchMixin } from '../mixins/touch';
 import { getScrollTop, getScrollEventTarget } from '../utils/scroll';
+import Loading from '../loading';
 
 const [sfc, bem, t] = use('pull-refresh');
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
@@ -90,7 +91,7 @@ export default sfc({
       if (this.ceiling && this.deltaY >= 0) {
         if (this.direction === 'vertical') {
           this.setStatus(this.ease(this.deltaY));
-          event.cancelable && event.preventDefault();
+          preventDefault(event);
         }
       }
     },

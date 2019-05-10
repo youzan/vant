@@ -2,6 +2,7 @@ import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { use, isObj, isDef, isIOS } from '../utils';
+import { preventDefault } from '../utils/event';
 import { getRootScrollTop } from '../utils/scroll';
 import { isNumber } from '../utils/validate/number';
 
@@ -137,7 +138,7 @@ export default sfc({
     },
 
     onClear(event) {
-      event.preventDefault();
+      preventDefault(event);
       this.$emit('input', '');
       this.$emit('clear');
     },
@@ -148,8 +149,9 @@ export default sfc({
         const allowPoint = String(this.value).indexOf('.') === -1;
         const isValidKey =
           (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
+
         if (!isValidKey) {
-          event.preventDefault();
+          preventDefault(event);
         }
       }
 
