@@ -2,13 +2,11 @@
 
 .van-loading {
   position: relative;
-  z-index: 0;
   font-size: 0;
   vertical-align: middle;
 
   &__spinner {
     position: relative;
-    z-index: -1;
     display: inline-block;
     width: 30px;
     // compatible for 1.x, users may set width or height in root element
@@ -72,8 +70,7 @@
     align-items: center;
 
     .van-loading__text {
-      margin-top: 10px;
-      margin-left: 0;
+      margin: 10px 0 0;
     }
   }
 }
