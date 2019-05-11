@@ -13,28 +13,16 @@ Vue.use(NoticeBar);
 
 ```html
 <van-notice-bar
-  text="Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily."
+  text="Notice Content"
   left-icon="volume-o"
 />
-```
-
-#### Mode
-
-```html
-<van-notice-bar mode="closeable">
-  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
-</van-notice-bar>
-
-<van-notice-bar mode="link">
-  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
-</van-notice-bar>
 ```
 
 #### Disable scroll
 
 ```html
 <van-notice-bar :scrollable="false">
-  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
+  Notice Content
 </van-notice-bar>
 ```
 
@@ -42,7 +30,31 @@ Vue.use(NoticeBar);
 
 ```html
 <van-notice-bar wrapable :scrollable="false">
-  Only those who have the patience to do simple things perfectly ever acquire the skill to do difficult things easily.
+  Notice Content
+</van-notice-bar>
+```
+
+#### Mode
+
+```html
+<van-notice-bar mode="closeable">
+  Notice Content
+</van-notice-bar>
+
+<van-notice-bar mode="link">
+  Notice Content
+</van-notice-bar>
+```
+
+### Custom Style
+
+```html
+<van-notice-bar
+  color="#1989fa"
+  background="#ecf9ff"
+  left-icon="info-o"
+>
+  Notice Content
 </van-notice-bar>
 ```
 

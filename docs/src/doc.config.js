@@ -227,7 +227,7 @@ module.exports = {
               },
               {
                 path: '/notice-bar',
-                title: 'NoticeBar 通告栏'
+                title: 'NoticeBar 通知栏'
               },
               {
                 path: '/panel',
