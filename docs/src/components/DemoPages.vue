@@ -99,10 +99,10 @@ export default {
   }
 
   &__item {
-    width: 28%;
-    text-align: center;
-    margin-bottom: 40px;
     display: inline-block;
+    width: 28%;
+    margin-bottom: 40px;
+    text-align: center;
 
     &:nth-child(3n+1),
     &:nth-child(3n+2) {
@@ -110,23 +110,23 @@ export default {
     }
 
     h4 {
+      font-weight: normal;
       font-size: 14px;
       line-height: 20px;
-      font-weight: normal;
     }
 
     img {
       width: 100%;
-      cursor: pointer;
-      border-radius: 3px;
       background-color: #f8f8f8;
+      border-radius: 3px;
       box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+      cursor: pointer;
     }
 
     a {
-      font-size: 12px;
-      margin: 4px 0 7px;
       display: inline-block;
+      margin: 4px 0 7px;
+      font-size: 12px;
     }
 
     &--active {

@@ -61,10 +61,10 @@ export default {
   }
 
   .van-collapse-item__title {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 40px;
     align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 40px;
     border-radius: 2px;
   }
 }

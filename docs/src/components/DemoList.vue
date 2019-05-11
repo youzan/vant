@@ -71,15 +71,15 @@ export default {
 @import '../../../packages/style/var';
 
 .side-nav {
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
   padding: 64px 20px 20px;
 
   .vant-title,
   .vant-desc {
+    padding-left: 15px;
     font-weight: normal;
     user-select: none;
-    padding-left: 15px;
   }
 
   .vant-title {
@@ -96,16 +96,16 @@ export default {
     }
 
     span {
-      font-size: 36px;
-      font-weight: 500;
       margin-left: 15px;
+      font-weight: 500;
+      font-size: 36px;
     }
   }
 
   .vant-desc {
-    font-size: 14px;
-    color: #7d7e80;
     margin: 0 0 40px;
+    color: #7d7e80;
+    font-size: 14px;
   }
 }
 
@@ -113,19 +113,19 @@ export default {
   position: absolute;
   top: 24px;
   right: 24px;
+  overflow: hidden;
   color: @blue;
   font-size: 12px;
   cursor: pointer;
-  overflow: hidden;
 
   span {
-    color: @gray-dark;
+    display: inline-block;
     width: 48px;
+    color: @gray-dark;
     line-height: 22px;
     text-align: center;
-    display: inline-block;
-    border: 1px solid #dcdee0;
     background-color: #f7f8fa;
+    border: 1px solid #dcdee0;
 
     &:first-child {
       border-right: none;
@@ -139,8 +139,8 @@ export default {
 
     &.active {
       color: @white;
-      border-color: @blue;
       background-color: @blue;
+      border-color: @blue;
     }
   }
 }

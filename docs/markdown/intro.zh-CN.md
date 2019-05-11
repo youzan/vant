@@ -36,8 +36,7 @@
 * [更新日志](#/zh-CN/changelog)
 * [React 组件库](https://www.youzanyun.com/zanui/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
-* [vant-demo](https://github.com/youzan/vant-demo)
-* [vue-cli-template-vant](https://github.com/youzan/vue-cli-template-vant)
+* [Vant 示例仓库](https://github.com/youzan/vant-demo)
 
 ### 开源协议
 
