@@ -134,10 +134,9 @@ export default sfc({
         {this.direction === 'down' && this.slots()}
         {this.loading && (
           <div class={bem('loading')} key="loading">
-            {this.slots('loading') || [
-              <Loading class={bem('loading-icon')} />,
-              <span class={bem('loading-text')}>{this.loadingText || t('loading')}</span>
-            ]}
+            {this.slots('loading') || (
+              <Loading size="16">{this.loadingText || t('loading')}</Loading>
+            )}
           </div>
         )}
         {this.finished && this.finishedText && (
