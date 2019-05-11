@@ -66,6 +66,7 @@
 
 ### Checkbox
 
+- 调整为`flex`布局
 - 新增`icon-size`属性
 
 ### Field
@@ -99,17 +100,23 @@
 
 ### Radio
 
+- 调整为`flex`布局
 - 新增`icon-size`属性
-
-### SubmitBar
-
-- 新增`tip-icon`属性
-- 新增`suffix-label`属性
 
 ### Steps
 
 - 新增`inactive-icon`属性
 - 新增`inactive-icon`插槽
+
+### SubmitBar
+
+- 新增`tip-icon`属性
+- 新增`suffix-label`属性
+- 新增多个`LESS`变量
+
+### Switch
+
+- 加载图标颜色现在会跟随背景色变化
 
 ### SwitchCell
 
@@ -124,3 +131,7 @@
 ### Tabbar
 
 - 新增`inactive-color`属性
+
+### TreeSelect
+
+- 新增多个`LESS`变量
