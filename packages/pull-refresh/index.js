@@ -151,10 +151,9 @@ export default sfc({
     const Status = this.slots(status) || [
       TEXT_STATUS.indexOf(status) !== -1 && <div class={bem('text')}>{text}</div>,
       status === 'loading' && (
-        <div class={bem('loading')}>
-          <Loading />
-          <span>{text}</span>
-        </div>
+        <Loading class={bem('loading')} size="16">
+          {text}
+        </Loading>
       )
     ];
 
