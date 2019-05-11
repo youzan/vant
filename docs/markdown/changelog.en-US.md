@@ -1,5 +1,18 @@
 ## Changelog
 
+## [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
+`2019-05-10`
+
+**Bug Fixes**
+
+- remote some outdated css in AddressEdit
+- fix Radio click event not bubble
+- fix Checkbox click event not bubble
+- fix PullRefresh transform style [\#3258](https://github.com/youzan/vant/pull/3258)
+- fix Progress incorrect width when update pivoit-text
+- fix Swipe map cause warning when prevent touchmove event
+
+
 ## [1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
 `2019-05-05`
 

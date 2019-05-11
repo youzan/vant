@@ -1,5 +1,18 @@
 ## 更新日志
 
+## [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
+`2019-05-10`
+
+**Bug Fixes**
+
+- 移除 AddressEdit 中部分冗余样式
+- 修复 Radio 点击事件未冒泡的问题
+- 修复 Checkbox 点击事件未冒泡的问题
+- 修复 PullRefresh 静止情况下存在 transform 样式的问题 [\#3258](https://github.com/youzan/vant/pull/3258)
+- 修复 Progress 动态更新 pivoit-text 时宽度计算错误的问题
+- 修复 Swipe 在部分情况下提示 preventDefault 警告的问题
+
+
 ## [1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
 `2019-05-05`
 
