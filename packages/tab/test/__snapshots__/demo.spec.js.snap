@@ -205,7 +205,7 @@ exports[`renders demo correctly 1`] = `
           <div class="van-tab"><span class="van-ellipsis">标签 4</span></div>
         </div>
       </div>
-      <div class="van-tabs__content">
+      <div class="van-tabs__content van-tabs__content--animated">
         <div class="van-tabs__track" style="transform: translate3d(0%, 0, 0); transition-duration: 0.3s;">
           <div class="van-tab__pane-wrapper">
             <div class="van-tab__pane">
