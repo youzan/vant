@@ -134,6 +134,7 @@
 
 ### Tab
 
+- 优化`animated`动画性能
 - 修复开启`animated`后高度错误的问题
 
 ### Tabbar

@@ -111,7 +111,7 @@ export default sfc({
     trackStyle() {
       if (this.animated) {
         return {
-          left: `${-1 * this.curActive * 100}%`,
+          transform: `translate3d(${-1 * this.curActive * 100}%, 0, 0)`,
           transitionDuration: `${this.duration}s`
         };
       }
