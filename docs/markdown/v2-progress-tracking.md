@@ -73,6 +73,10 @@
 
 - 新增`label-class`属性
 
+### GoodsActionButton
+
+- 新增`type`属性
+
 ### Icon
 
 - 支持`Number`类型的`size`属性
@@ -127,6 +131,10 @@
 
 - 新增`preview-open`事件
 - 新增`preview-close`事件
+
+### Tab
+
+- 修复开启`animated`后高度错误的问题
 
 ### Tabbar
 

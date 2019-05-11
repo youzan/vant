@@ -117,12 +117,6 @@
     border-radius: 3px;
   }
 
-  &__content {
-    &--animated {
-      overflow: hidden;
-    }
-  }
-
   &__track {
     position: relative;
     display: flex;
@@ -146,10 +140,18 @@
       height: @tabs-card-height;
     }
   }
+}
 
-  .van-tab__pane {
+.van-tab__pane {
+  &,
+  &-wrapper {
     flex-shrink: 0;
     box-sizing: border-box;
     width: 100%;
+  }
+
+  &-wrapper--inactive {
+    height: 0;
+    overflow: visible;
   }
 }

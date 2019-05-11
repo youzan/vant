@@ -44,10 +44,22 @@ export default sfc({
     const { slots } = this;
     const shouldRender = this.inited || !this.parent.lazyRender;
 
+    const Content = [
+      shouldRender ? slots() : h(),
+      slots('title') && <div ref="title">{slots('title')}</div>
+    ];
+
+    if (this.parent.animated) {
+      return (
+        <div class={bem('pane-wrapper', { inactive: !this.selected })}>
+          <div class={bem('pane')}>{Content}</div>
+        </div>
+      );
+    }
+
     return (
-      <div vShow={this.selected || this.parent.animated} class={bem('pane')}>
-        {shouldRender ? slots() : h()}
-        {slots('title') && <div ref="title">{slots('title')}</div>}
+      <div vShow={this.selected} class={bem('pane')}>
+        {Content}
       </div>
     );
   }

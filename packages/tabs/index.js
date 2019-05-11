@@ -442,7 +442,7 @@ export default sfc({
             {this.slots('nav-right')}
           </div>
         </div>
-        <div ref="content" class={bem('content', { animated })}>
+        <div ref="content" class={bem('content')}>
           {animated ? (
             <div class={bem('track')} style={this.trackStyle}>
               {this.slots()}
