@@ -1,0 +1,17 @@
+@import '../style/var';
+
+.van-tab {
+  &__pane {
+    &,
+    &-wrapper {
+      flex-shrink: 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    &-wrapper--inactive {
+      height: 0;
+      overflow: visible;
+    }
+  }
+}
