@@ -81,6 +81,10 @@
 
 - 支持`Number`类型的`size`属性
 
+### ImagePreview
+
+- 新增多个`LESS`变量
+
 ### Loading
 
 - 新增`default`插槽
