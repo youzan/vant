@@ -6,7 +6,7 @@ import Icon from '../icon';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 import { Mods } from '../utils/use/bem';
 
 export type CellProps = RouteProps &

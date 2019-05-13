@@ -6,7 +6,7 @@ import Loading from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type SwitchEvents = {
   onChange?(checked: boolean): void;

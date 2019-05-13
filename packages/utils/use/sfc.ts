@@ -4,51 +4,13 @@
 import '../../locale';
 import { camelize } from '..';
 import { SlotsMixin } from '../../mixins/slots';
-import Vue, {
-  VNode,
-  VueConstructor,
-  ComponentOptions,
-  CreateElement,
-  RenderContext
-} from 'vue';
-import { InjectOptions, PropsDefinition } from 'vue/types/options';
-
-export type ScopedSlot<Props = any> = (props?: Props) => VNode[] | VNode | undefined;
-
-export type DefaultSlots = {
-  default?: ScopedSlot;
-};
-
-export type ScopedSlots = DefaultSlots & {
-  [key: string]: ScopedSlot | undefined;
-};
-
-export type ModelOptions = {
-  prop?: string;
-  event?: string;
-};
+import Vue, { VNode, VueConstructor, ComponentOptions, RenderContext } from 'vue';
+import { DefaultProps, FunctionComponent } from '../types';
 
 export interface VantComponentOptions extends ComponentOptions<Vue> {
   functional?: boolean;
   install?: (Vue: VueConstructor) => void;
 }
-
-export type DefaultProps = Record<string, any>;
-
-export type FunctionComponent<
-  Props = DefaultProps,
-  PropDefs = PropsDefinition<Props>
-> = {
-  (
-    h: CreateElement,
-    props: Props,
-    slots: ScopedSlots,
-    context: RenderContext<Props>
-  ): VNode | undefined;
-  props?: PropDefs;
-  model?: ModelOptions;
-  inject?: InjectOptions;
-};
 
 export type TsxBaseProps<Slots> = {
   key: string | number;
@@ -105,36 +67,35 @@ export function unifySlots(context: RenderContext) {
 }
 
 // should be removed after Vue 3
-function transformFunctionComponent(
-  pure: FunctionComponent
-): VantComponentOptions {
+function transformFunctionComponent(pure: FunctionComponent): VantComponentOptions {
   return {
     functional: true,
     props: pure.props,
     model: pure.model,
-    render: (h, context): any =>
-      pure(h, context.props, unifySlots(context), context)
+    render: (h, context): any => pure(h, context.props, unifySlots(context), context)
   };
 }
 
-export const useSFC = (name: string) => <Props = DefaultProps, Events = {}, Slots = {}>(
-  sfc: VantComponentOptions | FunctionComponent
-): TsxComponent<Props, Events, Slots> => {
-  if (typeof sfc === 'function') {
-    sfc = transformFunctionComponent(sfc);
-  }
+export function useSFC(name: string) {
+  return function<Props = DefaultProps, Events = {}, Slots = {}> (
+    sfc: VantComponentOptions | FunctionComponent
+  ): TsxComponent<Props, Events, Slots> {
+    if (typeof sfc === 'function') {
+      sfc = transformFunctionComponent(sfc);
+    }
 
-  if (!sfc.functional) {
-    sfc.mixins = sfc.mixins || [];
-    sfc.mixins.push(SlotsMixin);
-  }
+    if (!sfc.functional) {
+      sfc.mixins = sfc.mixins || [];
+      sfc.mixins.push(SlotsMixin);
+    }
 
-  if (sfc.props) {
-    defaultProps(sfc.props);
-  }
+    if (sfc.props) {
+      defaultProps(sfc.props);
+    }
 
-  sfc.name = name;
-  sfc.install = install;
+    sfc.name = name;
+    sfc.install = install;
 
-  return sfc as TsxComponent<Props, Events, Slots>;
-};
+    return sfc as TsxComponent<Props, Events, Slots>;
+  };
+}

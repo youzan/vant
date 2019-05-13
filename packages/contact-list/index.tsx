@@ -9,7 +9,7 @@ import RadioGroup from '../radio-group';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type ContactListItem = {
   id: string | number;

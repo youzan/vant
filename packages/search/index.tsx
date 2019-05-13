@@ -5,7 +5,7 @@ import Field from '../field';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots, ScopedSlot } from '../utils/use/sfc';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 const [sfc, bem, t] = use('search');
 

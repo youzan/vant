@@ -3,7 +3,7 @@ import { inherit } from '../../utils/functional';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../../utils/use/sfc';
+import { DefaultSlots } from '../../utils/types';
 import { SkuTreeItemData } from '../type';
 
 export type SkuRowProps = {

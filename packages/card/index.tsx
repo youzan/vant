@@ -4,7 +4,7 @@ import Tag from '../tag';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots, ScopedSlot } from '../utils/use/sfc';
+import { DefaultSlots, ScopedSlot } from '../utils/types';
 
 export type CardProps = {
   tag?: string;

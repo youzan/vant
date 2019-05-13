@@ -5,7 +5,7 @@ import Icon from '../icon';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { ScopedSlot, DefaultSlots } from '../utils/use/sfc';
+import { ScopedSlot, DefaultSlots } from '../utils/types';
 
 export type SubmitBarProps = {
   tip?: string;

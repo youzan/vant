@@ -1,13 +1,10 @@
 /* eslint-disable no-use-before-define */
 import { isDef, isObj } from '.';
+import { ObjectIndex } from './types';
 
 const { hasOwnProperty } = Object.prototype;
 
-type Object = {
-  [key: string]: any;
-}
-
-function assignKey(to: Object, from: Object, key: string) {
+function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
   const val = from[key];
 
   if (!isDef(val)) {
@@ -21,7 +18,7 @@ function assignKey(to: Object, from: Object, key: string) {
   }
 }
 
-export function deepAssign(to: Object, from: Object) {
+export function deepAssign(to: ObjectIndex, from: ObjectIndex): ObjectIndex {
   Object.keys(from).forEach(key => {
     assignKey(to, from, key);
   });

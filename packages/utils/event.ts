@@ -2,8 +2,7 @@
 /* eslint-disable getter-return */
 /* eslint-disable import/no-mutable-exports */
 import { isServer } from '.';
-
-type EventHanlder = (event?: Event) => void;
+import { EventHanlder } from './types';
 
 export let supportsPassive = false;
 

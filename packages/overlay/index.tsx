@@ -4,7 +4,7 @@ import { preventDefault } from '../utils/event';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type OverlayProps = {
   zIndex?: number;

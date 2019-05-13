@@ -1,8 +1,5 @@
 import Vue, { RenderContext, VNodeData } from 'vue';
-
-type ObjectIndex = {
-  [key: string]: any;
-};
+import { ObjectIndex } from './types';
 
 type Context = RenderContext & { data: VNodeData & ObjectIndex };
 
@@ -22,10 +19,7 @@ const inheritKey = [
 const mapInheritKey: ObjectIndex = { nativeOn: 'on' };
 
 // inherit partial context, map nativeOn to on
-export function inherit(
-  context: Context,
-  inheritListeners?: boolean
-): InheritContext {
+export function inherit(context: Context, inheritListeners?: boolean): InheritContext {
   const result = inheritKey.reduce(
     (obj, key) => {
       if (context.data[key]) {

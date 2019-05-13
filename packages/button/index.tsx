@@ -5,7 +5,7 @@ import Loading, { LoadingType } from '../loading';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type ButtonType = 'default' | 'primary' | 'info' | 'warning' | 'danger';
 

@@ -5,7 +5,7 @@ import { isSrc } from '../utils/validate/src';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type IconProps = {
   tag: keyof HTMLElementTagNameMap | string;

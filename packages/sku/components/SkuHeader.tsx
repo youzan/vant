@@ -4,7 +4,7 @@ import Icon from '../../icon';
 
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../../utils/use/sfc';
+import { DefaultSlots } from '../../utils/types';
 import { SkuData, SkuGoodsData, SelectedSkuData } from '../type';
 
 export type SkuHeaderProps = {

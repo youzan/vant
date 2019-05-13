@@ -4,7 +4,7 @@ import Button from '../../button';
 
 // Types
 import Vue, { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../../utils/use/sfc';
+import { DefaultSlots } from '../../utils/types';
 
 export type SkuActionsProps = {
   buyText?: string;

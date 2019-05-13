@@ -4,7 +4,7 @@ import { RED, BLUE, GREEN, GRAY_DARK } from '../utils/color';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type TagType = 'primary' | 'success' | 'danger';
 

@@ -5,7 +5,7 @@ import { functionalRoute, routeProps, RouteProps } from '../utils/router';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type GoodsActionIconProps = RouteProps & {
   icon: string;

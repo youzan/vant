@@ -7,7 +7,7 @@ import Radio from '../radio';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type AddressItemData = {
   id: string | number;

@@ -36,12 +36,14 @@ function prefix(name: string, mods: Mods): Mods {
   return ret;
 }
 
-export const useBEM = (name: string) => (el?: Mods, mods?: Mods): Mods => {
-  if (el && typeof el !== 'string') {
-    mods = el;
-    el = '';
-  }
-  el = join(name, el, ELEMENT);
+export function useBEM(name: string) {
+  return function (el?: Mods, mods?: Mods): Mods {
+    if (el && typeof el !== 'string') {
+      mods = el;
+      el = '';
+    }
+    el = join(name, el, ELEMENT);
 
-  return mods ? [el, prefix(el, mods)] : el;
-};
+    return mods ? [el, prefix(el, mods)] : el;
+  };
+}

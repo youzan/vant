@@ -6,7 +6,7 @@ import { switchProps, SharedSwitchProps } from '../switch/shared';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 
 export type SwitchCellProps = SharedSwitchProps & {
   size: string;

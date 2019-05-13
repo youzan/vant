@@ -4,7 +4,7 @@ import Cell from '../cell';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
-import { DefaultSlots } from '../utils/use/sfc';
+import { DefaultSlots } from '../utils/types';
 import { Coupon } from '../coupon/shared';
 
 export type CouponCellProps = {
