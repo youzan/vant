@@ -86,7 +86,7 @@ function ActionSheet(
 
     function OptionContent() {
       if (item.loading) {
-        return <Loading class={bem('loading')} size="20px" />;
+        return <Loading size="20px" />;
       }
 
       return [
