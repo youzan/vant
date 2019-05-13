@@ -21,9 +21,8 @@
 
     &--top {
       top: 0;
-      left: 50%;
+      left: 0;
       width: 100%;
-      transform: translate3d(-50%, 0, 0);
     }
 
     &--right {
@@ -34,9 +33,8 @@
 
     &--bottom {
       bottom: 0;
-      left: 50%;
+      left: 0;
       width: 100%;
-      transform: translate3d(-50%, 0, 0);
     }
 
     &--left {
@@ -47,7 +45,7 @@
 
     &-slide-top-enter,
     &-slide-top-leave-active {
-      transform: translate3d(-50%, -100%, 0);
+      transform: translate3d(0, -100%, 0);
     }
 
     &-slide-right-enter,
@@ -57,7 +55,7 @@
 
     &-slide-bottom-enter,
     &-slide-bottom-leave-active {
-      transform: translate3d(-50%, 100%, 0);
+      transform: translate3d(0, 100%, 0);
     }
 
     &-slide-left-enter,
