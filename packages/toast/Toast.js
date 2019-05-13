@@ -67,23 +67,23 @@ export default sfc({
     const { type, message } = this;
     const style = STYLE.indexOf(type) !== -1 ? 'default' : type;
 
-    const Content = () => {
+    function Content() {
       switch (style) {
         case 'text':
           return <div>{message}</div>;
         case 'html':
           return <div domPropsInnerHTML={message} />;
-        default:
-          return [
-            type === 'loading' ? (
-              <Loading color="white" type={this.loadingType} />
-            ) : (
-              <Icon class={bem('icon')} name={type} />
-            ),
-            isDef(message) && <div class={bem('text')}>{message}</div>
-          ];
       }
-    };
+
+      return [
+        type === 'loading' ? (
+          <Loading color="white" type={this.loadingType} />
+        ) : (
+          <Icon class={bem('icon')} name={type} />
+        ),
+        isDef(message) && <div class={bem('text')}>{message}</div>
+      ];
+    }
 
     return (
       <transition name="van-fade">
