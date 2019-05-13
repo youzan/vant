@@ -17,7 +17,7 @@ function Info(
   slots: DefaultSlots,
   ctx: RenderContext<InfoProps>
 ) {
-  if (!isDef(props.info)) {
+  if (!isDef(props.info) || props.info === '') {
     return;
   }
 
