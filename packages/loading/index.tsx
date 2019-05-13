@@ -1,4 +1,5 @@
 import { use, suffixPx } from '../utils';
+import { GRAY } from '../utils/color';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -16,7 +17,36 @@ export type LoadingProps = {
 };
 
 const [sfc, bem] = use('loading');
-const DEFAULT_COLOR = '#c9c9c9';
+
+function LoadingIcon(h: CreateElement, props: LoadingProps) {
+  if (props.type === 'spinner') {
+    const Spin = [];
+    for (let i = 0; i < 12; i++) {
+      Spin.push(<i />);
+    }
+    return Spin;
+  }
+
+  return (
+    <svg class={bem('circular')} viewBox="25 25 50 50">
+      <circle cx="50" cy="50" r="20" fill="none" />
+    </svg>
+  );
+}
+
+function LoadingText(h: CreateElement, props: LoadingProps, slots: DefaultSlots) {
+  if (slots.default) {
+    const style = props.textSize && {
+      fontSize: suffixPx(props.textSize)
+    };
+
+    return (
+      <span class={bem('text')} style={style}>
+        {slots.default()}
+      </span>
+    );
+  }
+}
 
 function Loading(
   h: CreateElement,
@@ -33,40 +63,12 @@ function Loading(
     style.height = iconSize;
   }
 
-  const Spin = [];
-  if (type === 'spinner') {
-    for (let i = 0; i < 12; i++) {
-      Spin.push(<i />);
-    }
-  }
-
-  const Circular = type === 'circular' && (
-    <svg class={bem('circular')} viewBox="25 25 50 50">
-      <circle cx="50" cy="50" r="20" fill="none" />
-    </svg>
-  );
-
-  function Text() {
-    if (slots.default) {
-      const style = props.textSize && {
-        fontSize: suffixPx(props.textSize)
-      };
-
-      return (
-        <span class={bem('text')} style={style}>
-          {slots.default()}
-        </span>
-      );
-    }
-  }
-
   return (
     <div class={bem([type, { vertical: props.vertical }])} {...inherit(ctx, true)}>
       <span class={bem('spinner', type)} style={style}>
-        {Spin}
-        {Circular}
+        {LoadingIcon(h, props)}
       </span>
-      {Text()}
+      {LoadingText(h, props, slots)}
     </div>
   );
 }
@@ -81,7 +83,7 @@ Loading.props = {
   },
   color: {
     type: String,
-    default: DEFAULT_COLOR
+    default: GRAY
   }
 };
 
