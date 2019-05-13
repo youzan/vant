@@ -89,6 +89,29 @@ export default {
 </van-tabbar>
 ```
 
+#### Route Mode
+
+```html
+<router-view />
+
+<van-tabbar route>
+  <van-tabbar-item
+    replace
+    to="/home"
+    icon="home-o"
+  >
+    Tab
+  </van-tabbar-item>
+  <van-tabbar-item
+    replace
+    to="/search"
+    icon="search"
+  >
+    Tab
+  </van-tabbar-item>
+</van-tabbar>
+```
+
 ### Tabbar Props
 
 | Attribute | Description | Type | Default |
@@ -98,6 +121,7 @@ export default {
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
 | inactive-color | Color of inactive tab item | `String` | `#7d7e80` |
+| route | Whether to enable route mode | `Boolean` | `false` |
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
 ### Tabbar Events

@@ -8,6 +8,7 @@ export default sfc({
 
   props: {
     value: Number,
+    route: Boolean,
     activeColor: String,
     inactiveColor: String,
     safeAreaInsetBottom: Boolean,

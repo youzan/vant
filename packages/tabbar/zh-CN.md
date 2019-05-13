@@ -89,6 +89,31 @@ export default {
 </van-tabbar>
 ```
 
+#### 路由模式
+
+标签栏支持路由模式，用于搭配`vue-router`使用。路由模式下会匹配页面路径和标签的`to`属性，并自动选中对应的标签
+
+```html
+<router-view />
+
+<van-tabbar route>
+  <van-tabbar-item
+    replace
+    to="/home"
+    icon="home-o"
+  >
+    标签
+  </van-tabbar-item>
+  <van-tabbar-item
+    replace
+    to="/search"
+    icon="search"
+  >
+    标签
+  </van-tabbar-item>
+</van-tabbar>
+```
+
 ### Tabbar Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
@@ -98,6 +123,7 @@ export default {
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
 | inactive-color | 未选中标签的颜色 | `String` | `#7d7e80` | 2.0.0 |
+| route | 是否开启路由模式 | `Boolean` | `false` | 2.0.0 |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
 ### Tabbar Events
