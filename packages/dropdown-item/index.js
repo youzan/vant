@@ -63,6 +63,8 @@ export default sfc({
       );
     });
 
+    const emit = eventName => () => this.$emit(eventName);
+
     return (
       <div vShow={this.show} style={{ top: `${top}px`, zIndex }} class={bem()}>
         <Popup
@@ -73,6 +75,9 @@ export default sfc({
           overlay={overlay}
           closeOnClickOverlay={closeOnClickOverlay}
           overlayStyle={{ position: 'absolute' }}
+          onOpen={emit('open')}
+          onOpened={emit('opened')}
+          onClose={emit('close')}
         >
           {Options}
           {this.slots('default')}

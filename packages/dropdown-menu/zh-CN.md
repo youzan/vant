@@ -100,6 +100,9 @@ export default {
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 点击选项导致 value 变化时触发 | value |
+| open | 打开菜单栏时触发 | - |
+| opened | 打开菜单栏且动画结束后触发 | - |
+| close | 关闭菜单栏时触发 | - |
 
 ### DropdownItem 方法
 

@@ -98,6 +98,9 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered select option and value changed | value |
+| open | Triggered when open menu | - |
+| opened | Triggered when opened menu | - |
+| close | Triggered when close menu | - |
 
 ### DropdownItem Methods
 
