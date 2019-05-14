@@ -2,21 +2,21 @@
 @import '../style/mixins/ellipsis';
 
 .van-coupon {
-  margin: 0 15px 15px;
+  margin: @coupon-margin;
   overflow: hidden;
-  background-color: @white;
-  border-radius: 4px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  background-color: @coupon-background-color;
+  border-radius: @coupon-border-radius;
+  box-shadow: @coupon-box-shadow;
 
   &:active {
-    background-color: @active-color;
+    background-color: @coupon-active-background-color;
   }
 
   &__content {
     display: flex;
     box-sizing: border-box;
-    height: 100px;
-    padding: 24px 0 0 15px;
+    height: @coupon-content-height;
+    padding: @coupon-content-padding;
   }
 
   p,
@@ -40,67 +40,62 @@
 
   &__head {
     position: relative;
-    min-width: 85px;
+    min-width: @coupon-head-width;
     padding-right: 10px;
-
-    h2 {
-      color: @red;
-      font-size: 24px;
-
-      span {
-        &:not(:empty) {
-          margin-left: 2px;
-        }
-
-        font-size: 50%;
-      }
-    }
 
     p {
       white-space: pre-wrap;
     }
   }
 
+  &__amount {
+    color: @coupon-amount-color;
+    font-size: @coupon-amount-font-size;
+
+    span {
+      font-size: @coupon-currency-font-size;
+
+      &:not(:empty) {
+        margin-left: 2px;
+      }
+    }
+  }
+
   &__body {
     position: relative;
     flex: 1;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 @coupon-border-radius @coupon-border-radius 0;
+  }
 
-    h2 {
-      font-size: 16px;
-    }
+  &__name {
+    font-size: @coupon-name-font-size;
   }
 
   &__corner {
     position: absolute;
     top: 16px;
     right: 15px;
-
-    .van-icon {
-      background-color: @red;
-      border-color: @red;
-    }
   }
 
   &__description {
-    padding: 7px 15px;
-    background-color: @background-color-light;
-    border-top: 1px dashed @border-color;
+    padding: @coupon-description-padding;
+    background-color: @coupon-description-background-color;
+    border-top: 1px dashed @coupon-description-border-color;
   }
 
   &--disabled {
     &:active {
-      background-color: @white;
+      background-color: @coupon-background-color;
     }
 
     .van-coupon-item__content {
-      height: 90px;
+      height: @coupon-content-height - 10px;
     }
 
     p,
     h2,
     span {
-      color: @gray-dark;
+      color: @coupon-disabled-text-color;
     }
   }
 }

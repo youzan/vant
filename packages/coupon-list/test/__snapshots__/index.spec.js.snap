@@ -39,11 +39,11 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2></h2>
+                <h2 class="van-coupon__amount"></h2>
                 <p>无使用门槛</p>
               </div>
               <div class="van-coupon__body">
-                <h2></h2>
+                <h2 class="van-coupon__name"></h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
               </div>
             </div>
@@ -51,14 +51,14 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2><span>¥</span> 1.5</h2>
+                <h2 class="van-coupon__amount"><span>¥</span> 1.5</h2>
                 <p>无使用门槛</p>
               </div>
               <div class="van-coupon__body">
-                <h2>name</h2>
+                <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
                 <div class="van-checkbox van-coupon__corner">
-                  <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success">
+                  <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: #f44; background-color: rgb(255, 68, 68);">
                       <!----></i></div>
                 </div>
               </div>
@@ -68,11 +68,11 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2><span>¥</span> 1</h2>
+                <h2 class="van-coupon__amount"><span>¥</span> 1</h2>
                 <p>无使用门槛</p>
               </div>
               <div class="van-coupon__body">
-                <h2>name</h2>
+                <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
               </div>
             </div>
@@ -81,11 +81,11 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2><span>¥</span> 1.23</h2>
+                <h2 class="van-coupon__amount"><span>¥</span> 1.23</h2>
                 <p>无使用门槛</p>
               </div>
               <div class="van-coupon__body">
-                <h2>name</h2>
+                <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
               </div>
             </div>
@@ -94,11 +94,11 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2>8.8折</h2>
-                <p>满0.50元可用</p>
+                <h2 class="van-coupon__amount">8.8折</h2>
+                <p>满0.5元可用</p>
               </div>
               <div class="van-coupon__body">
-                <h2>name</h2>
+                <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
               </div>
             </div>
@@ -106,11 +106,11 @@ exports[`render coupon list 1`] = `
           <div class="van-coupon">
             <div class="van-coupon__content">
               <div class="van-coupon__head">
-                <h2>9折</h2>
-                <p>满0.50元可用</p>
+                <h2 class="van-coupon__amount">9折</h2>
+                <p>满0.5元可用</p>
               </div>
               <div class="van-coupon__body">
-                <h2>name</h2>
+                <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
               </div>
             </div>
@@ -129,11 +129,11 @@ exports[`render disabled coupon 1`] = `
 <div class="van-coupon van-coupon--disabled">
   <div class="van-coupon__content">
     <div class="van-coupon__head">
-      <h2><span>¥</span> 1.5</h2>
+      <h2 class="van-coupon__amount"><span>¥</span> 1.5</h2>
       <p>无使用门槛</p>
     </div>
     <div class="van-coupon__body">
-      <h2>name</h2>
+      <h2 class="van-coupon__name">name</h2>
       <p>有效期：2017.03.10 - 2017.12.30</p>
     </div>
   </div>
