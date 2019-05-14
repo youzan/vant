@@ -9,14 +9,14 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: @address-list-add-button-z-index;
   }
 
   &__disabled-text {
     padding: 0 15px;
-    color: @gray-dark;
-    font-size: 12px;
-    line-height: 30px;
+    color: @address-list-disabled-text-color;
+    font-size: @address-list-disabled-text-font-size;
+    line-height: @address-list-disabled-text-line-height;
   }
 }
 
@@ -35,15 +35,15 @@
   }
 
   &__address {
-    color: @gray-darker;
-    font-size: 12px;
-    line-height: 16px;
+    color: @address-list-item-text-color;
+    font-size: @address-list-item-font-size;
+    line-height: @address-list-item-line-height;
   }
 
   &--disabled {
     .van-address-item__name,
     .van-address-item__address {
-      color: @gray-dark;
+      color: @address-list-item-disabled-text-color;
     }
   }
 
@@ -51,7 +51,7 @@
     position: absolute;
     top: 50%;
     right: 15px;
-    font-size: 16px;
+    font-size: @address-list-edit-icon-size;
     transform: translate(0, -50%);
   }
 }
