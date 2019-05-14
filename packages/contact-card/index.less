@@ -1,21 +1,21 @@
 @import '../style/var';
 
 .van-contact-card {
-  padding: 15px;
+  padding: @contact-card-padding;
 
   &__value {
     margin-left: 5px;
-    line-height: 20px;
+    line-height: @contact-card-value-line-height;
   }
 
   &--add {
     .van-contact-card__value {
-      line-height: 40px;
+      line-height: @contact-card-add-icon-size;
     }
 
     .van-cell__left-icon {
-      color: @blue;
-      font-size: 40px;
+      color: @contact-card-add-icon-color;
+      font-size: @contact-card-add-icon-size;
     }
   }
 

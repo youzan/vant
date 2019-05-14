@@ -6,7 +6,7 @@
   padding-bottom: 50px;
 
   &__item {
-    padding: 15px;
+    padding: @contact-list-item-padding;
   }
 
   &__item-value {
@@ -30,7 +30,7 @@
     position: absolute;
     top: 50%;
     right: 15px;
-    font-size: 16px;
+    font-size: @contact-list-edit-icon-size;
     transform: translate(0, -50%);
   }
 
@@ -38,6 +38,6 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 9999;
+    z-index: @contact-list-add-button-z-index;
   }
 }
