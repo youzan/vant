@@ -34,7 +34,7 @@
 * [意见反馈](https://github.com/youzan/vant/issues)
 * [加入我们](https://job.youzan.com)
 * [更新日志](#/zh-CN/changelog)
-* [React 组件库](https://www.youzanyun.com/zanui/zent)
+* [React 组件库](https://youzan.github.io/zent)
 * [微信小程序组件库](https://github.com/youzan/zanui-weapp)
 * [Vant 示例仓库](https://github.com/youzan/vant-demo)
 

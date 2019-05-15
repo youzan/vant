@@ -124,7 +124,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 * [Changelog](https://youzan.github.io/vant#/en-US/changelog)
 * [Vant Demo](https://github.com/youzan/vant-demo)
 * [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
-* [Zent: PC UI base on React](https://www.youzanyun.com/zanui/zent)
+* [Zent: PC UI base on React](https://youzan.github.io/zent)
 
 
 ## Preview
