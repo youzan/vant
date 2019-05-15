@@ -1,4 +1,4 @@
-## IndexBar
+# IndexBar
 
 ### Install
 
@@ -8,9 +8,9 @@ import { IndexBar } from 'vant';
 Vue.use(IndexBar);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-index-bar>
@@ -28,7 +28,7 @@ Vue.use(IndexBar);
 </van-index-bar>
 ```
 
-#### Custom Index List
+### Custom Index List
 
 ```html
 <van-index-bar :index-list="indexList">
@@ -55,6 +55,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### IndexBar Props
 

@@ -1,15 +1,16 @@
-## Tabbar 标签栏
+# Tabbar 标签栏
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
 
 Vue.use(Tabbar).use(TabbarItem);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-tabbar v-model="active">
@@ -30,7 +31,7 @@ export default {
 }
 ```
 
-#### 显示徽标
+### 显示徽标
 
 ```html
 <van-tabbar v-model="active">
@@ -41,7 +42,7 @@ export default {
 </van-tabbar>
 ```
 
-#### 自定义图标
+### 自定义图标
 
 通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断标签是否选中
 
@@ -74,7 +75,7 @@ export default {
 }
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-tabbar
@@ -89,7 +90,7 @@ export default {
 </van-tabbar>
 ```
 
-#### 路由模式
+### 路由模式
 
 标签栏支持路由模式，用于搭配`vue-router`使用。路由模式下会匹配页面路径和标签的`to`属性，并自动选中对应的标签
 
@@ -113,6 +114,8 @@ export default {
   </van-tabbar-item>
 </van-tabbar>
 ```
+
+## API
 
 ### Tabbar Props
 

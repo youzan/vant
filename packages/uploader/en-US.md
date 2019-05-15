@@ -1,15 +1,16 @@
-## Uploader
+# Uploader
 
 ### Install
+
 ``` javascript
 import { Uploader } from 'vant';
 
 Vue.use(Uploader);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <div class="uploader-container">
@@ -29,7 +30,7 @@ export default {
 };
 ```
 
-#### Name
+### Name
 
 ```html
 <van-uploader name="uploader" :after-read="onRead">
@@ -47,7 +48,7 @@ export default {
 };
 ```
 
-#### Set input attrs
+### Set input attrs
 
 You can set native properties such as `accpet`、`multiple` on Uploader, and the input will automatically inherits the attribute.
 
@@ -56,6 +57,8 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
   <van-icon name="photograph" />
 </van-uploader>
 ```
+
+## API
 
 ### Props
 

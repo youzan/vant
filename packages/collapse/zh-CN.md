@@ -1,15 +1,15 @@
-## Collapse 折叠面板
+# Collapse 折叠面板
 
-### 使用指南
+### 引入
 ``` javascript
 import { Collapse, CollapseItem } from 'vant';
 
 Vue.use(Collapse).use(CollapseItem);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过`v-model`控制展开的面板列表，`activeNames`为数组格式
 
@@ -31,7 +31,7 @@ export default {
 };
 ```
 
-#### 手风琴
+### 手风琴
 
 通过`accordion`可以设置为手风琴模式，最多展开一个面板，此时`activeName`为字符串格式
 
@@ -53,7 +53,7 @@ export default {
 };
 ```
 
-#### 自定义标题内容
+### 自定义标题内容
 
 ```html
 <van-collapse v-model="activeNames">
@@ -71,6 +71,8 @@ export default {
   </van-collapse-item>
 </van-collapse>
 ```
+
+## API
 
 ### Collapse Props
 

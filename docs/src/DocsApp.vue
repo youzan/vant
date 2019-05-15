@@ -48,7 +48,7 @@ export default {
 
 <style lang="less">
 .van-doc-intro {
-  padding-top: 40px;
+  padding-top: 20px;
   font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   text-align: center;
 
@@ -57,15 +57,8 @@ export default {
     height: 120px;
   }
 
-  h2 {
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 60px;
-  }
-
   p {
-    color: #455a64;
-    font-size: 15px;
+    margin-bottom: 20px;
   }
 }
 </style>

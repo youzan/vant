@@ -1,4 +1,4 @@
-## Collapse
+# Collapse
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { Collapse, CollapseItem } from 'vant';
 Vue.use(Collapse).use(CollapseItem);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Use `v-model` to control the name of active panels
 
@@ -31,7 +31,7 @@ export default {
 };
 ```
 
-#### Accordion
+### Accordion
 
 In accordion mode, only one panel can be expanded at the same time.
 
@@ -53,7 +53,7 @@ export default {
 };
 ```
 
-#### Custom title
+### Custom title
 
 ```html
 <van-collapse v-model="activeNames">
@@ -70,6 +70,8 @@ export default {
   </van-collapse-item>
 </van-collapse>
 ```
+
+## API
 
 ### Collapse Props
 

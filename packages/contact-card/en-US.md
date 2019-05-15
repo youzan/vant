@@ -1,6 +1,7 @@
-## Contact
+# Contact
 
 ### Install
+
 ``` javascript
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
@@ -10,10 +11,9 @@ Vue
   .use(ContactEdit);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
-
+### Basic Usage
 
 ```html
 <!-- Contact Card -->
@@ -119,7 +119,7 @@ export default {
 };
 ```
 
-#### Uneditable
+### Uneditable
 
 ```html
 <van-contact-card
@@ -130,6 +130,7 @@ export default {
 />
 ```
 
+## API
 
 ### ContactCard Props
 
@@ -163,6 +164,7 @@ export default {
 | select | Triggered when select contact | item: contact object |
 
 ### ContactEdit Props
+
 | Attribute | Description | Type | Default |
 |------|------|------|------|------|
 | contact-info | Contact Info | `Object` | `[]` |

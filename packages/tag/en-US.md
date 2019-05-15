@@ -1,15 +1,16 @@
-## Tag
+# Tag
 
 ### Install
+
 ``` javascript
 import { Tag } from 'vant';
 
 Vue.use(Tag);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-tag>Tag</van-tag>
@@ -18,7 +19,7 @@ Vue.use(Tag);
 <van-tag type="success">Tag</van-tag>
 ```
 
-#### Plain style
+### Plain style
 
 ```html
 <van-tag plain>Tag</van-tag>
@@ -27,7 +28,7 @@ Vue.use(Tag);
 <van-tag plain type="success">Tag</van-tag>
 ```
 
-#### Round style
+### Round style
 
 ```html
 <van-tag round>Tag</van-tag>
@@ -36,7 +37,7 @@ Vue.use(Tag);
 <van-tag round type="success">Tag</van-tag>
 ```
 
-#### Mark style
+### Mark style
 
 ```html
 <van-tag mark>Tag</van-tag>
@@ -45,7 +46,7 @@ Vue.use(Tag);
 <van-tag mark type="success">Tag</van-tag>
 ```
 
-#### Custom Color
+### Custom Color
 
 ```html
 <van-tag color="#f2826a">Tag</van-tag>
@@ -55,13 +56,15 @@ Vue.use(Tag);
 <van-tag color="#ffe1e1" text-color="#ad0000">Tag</van-tag>
 ```
 
-#### Custom Size
+### Custom Size
 
 ```html
 <van-tag>Tag</van-tag>
 <van-tag size="medium">Tag</van-tag>
 <van-tag size="large">Tag</van-tag>
 ```
+
+## API
 
 ### Props
 
@@ -74,7 +77,6 @@ Vue.use(Tag);
 | round | Whether to be round style | `Boolean` | `false` |
 | mark | Whether to be mark style | `Boolean` | `false` |
 | text-color | Text color | `String` | `white` |
-
 
 ### Slots
 

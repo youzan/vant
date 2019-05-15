@@ -1,16 +1,20 @@
-## List
+# List
+
+### Intro
+
 A list component to show items and control loading status.
 
 ### Install
+
 ``` javascript
 import { List } from 'vant';
 
 Vue.use(List);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-list
@@ -90,6 +94,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

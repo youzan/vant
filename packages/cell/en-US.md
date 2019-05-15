@@ -1,4 +1,4 @@
-## Cell
+# Cell
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { Cell, CellGroup } from 'vant';
 Vue.use(Cell).use(CellGroup);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-cell-group>
@@ -18,7 +18,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Size
+### Size
 
 ```html
 <van-cell-group>
@@ -27,7 +27,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Left Icon
+### Left Icon
 
 ```html
 <van-cell-group>
@@ -35,7 +35,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Value only
+### Value only
 
 ```html
 <van-cell-group>
@@ -43,7 +43,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Link
+### Link
 
 ```html
 <van-cell-group>
@@ -53,7 +53,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Router
+### Router
 
 ```html
 <van-cell-group>
@@ -62,7 +62,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Group Title
+### Group Title
 
 ```html
 <van-cell-group title="Group 1">
@@ -73,7 +73,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 ```html
 <van-cell-group>
@@ -89,6 +89,8 @@ Vue.use(Cell).use(CellGroup);
   </van-cell>
 </van-cell-group>
 ```
+
+## API
 
 ### CellGroup Props
 

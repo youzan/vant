@@ -1,15 +1,16 @@
-## NoticeBar
+# NoticeBar
 
 ### Install
+
 ``` javascript
 import { NoticeBar } from 'vant';
 
 Vue.use(NoticeBar);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-notice-bar
@@ -18,7 +19,7 @@ Vue.use(NoticeBar);
 />
 ```
 
-#### Disable scroll
+### Disable scroll
 
 ```html
 <van-notice-bar :scrollable="false">
@@ -26,7 +27,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-#### Wrapable
+### Wrapable
 
 ```html
 <van-notice-bar wrapable :scrollable="false">
@@ -34,7 +35,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-#### Mode
+### Mode
 
 ```html
 <van-notice-bar mode="closeable">
@@ -57,6 +58,8 @@ Vue.use(NoticeBar);
   Notice Content
 </van-notice-bar>
 ```
+
+## API
 
 ### Props
 

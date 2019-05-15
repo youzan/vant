@@ -1,15 +1,15 @@
-## Cell 单元格
+# Cell 单元格
 
-### 使用指南
+### 引入
 ``` javascript
 import { Cell, CellGroup } from 'vant';
 
 Vue.use(Cell).use(CellGroup);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 `Cell`可以单独使用，也可以与`CellGroup`搭配使用。`CellGroup`可以为`Cell`提供上下外边框。
 
@@ -20,7 +20,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### 单元格大小
+### 单元格大小
 
 通过`size`属性可以控制单元格的大小
 
@@ -29,7 +29,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell title="单元格" value="内容" size="large" label="描述信息" />
 ```
 
-#### 展示图标
+### 展示图标
 
 通过`icon`属性在标题左侧展示图标
 
@@ -37,7 +37,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell title="单元格" icon="location-o" />
 ```
 
-#### 只设置 value
+### 只设置 value
 
 只设置`value`时会向左对齐
 
@@ -45,7 +45,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell value="内容" />
 ```
 
-#### 展示箭头
+### 展示箭头
 
 传入`is-link`属性则会在右侧显示箭头，并且可以通过传入`arrow-direction`属性控制箭头方向
 
@@ -55,7 +55,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell title="单元格" is-link arrow-direction="down" value="内容" />
 ```
 
-#### 页面跳转
+### 页面跳转
 
 可以通过`url`属性进行页面跳转，或通过`to`属性进行 vue-router 跳转
 
@@ -64,7 +64,7 @@ Vue.use(Cell).use(CellGroup);
 <van-cell title="单元格" is-link to="index" />
 ```
 
-#### 分组标题
+### 分组标题
 
 通过`CellGroup`的`title`属性可以指定分组标题
 
@@ -77,7 +77,7 @@ Vue.use(Cell).use(CellGroup);
 </van-cell-group>
 ```
 
-#### 高级用法
+### 高级用法
 
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
@@ -93,6 +93,8 @@ Vue.use(Cell).use(CellGroup);
   <van-icon slot="right-icon" name="search" class="custom-icon" />
 </van-cell>
 ```
+
+## API
 
 ### CellGroup Props
 

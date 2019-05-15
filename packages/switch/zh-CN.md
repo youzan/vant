@@ -1,15 +1,16 @@
-## Switch 开关
+# Switch 开关
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Switch } from 'vant';
 
 Vue.use(Switch);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-switch v-model="checked" />
@@ -25,7 +26,7 @@ export default {
 };  
 ```
 
-#### 禁用状态
+### 禁用状态
 
 ```html
 <van-switch
@@ -34,7 +35,7 @@ export default {
 />
 ```
 
-#### 加载状态
+### 加载状态
 
 ```html
 <van-switch
@@ -43,7 +44,7 @@ export default {
 />
 ```
 
-#### 自定义大小
+### 自定义大小
 
 ```html
 <van-switch
@@ -52,7 +53,7 @@ export default {
 />
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-switch
@@ -62,7 +63,7 @@ export default {
 />
 ```
 
-#### 异步控制
+### 异步控制
 
 ```html
 <van-switch
@@ -91,6 +92,8 @@ export default {
   }
 }; 
 ```
+
+## API
 
 ### Props
 

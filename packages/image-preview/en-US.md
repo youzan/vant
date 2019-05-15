@@ -1,4 +1,4 @@
-## ImagePreview
+# ImagePreview
 
 ### Install
 
@@ -8,9 +8,9 @@ import { ImagePreview } from 'vant';
 Vue.use(ImagePreview);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```javascript
 ImagePreview([
@@ -19,7 +19,7 @@ ImagePreview([
 ]);
 ```
 
-#### Custom config
+### Custom config
 
 ```javascript
 ImagePreview({
@@ -34,7 +34,7 @@ ImagePreview({
 });
 ```
 
-#### Async Close
+### Async Close
 
 ```javascript
 const instance = ImagePreview({
@@ -50,7 +50,7 @@ setTimeout(() => {
 }, 1000);
 ```
 
-#### Component Call
+### Component Call
 
 ```html
 <van-image-preview
@@ -82,6 +82,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Options
 

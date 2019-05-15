@@ -1,15 +1,17 @@
-## Panel 面板
+# Panel 面板
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Panel } from 'vant';
 
 Vue.use(Panel);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
+
 面板只是一个容器，里面可以放入自定义的内容
 
 ```html
@@ -18,7 +20,8 @@ Vue.use(Panel);
 </van-panel>
 ```
 
-#### 高级用法
+### 高级用法
+
 使用`slot`自定义内容
 
 ```html
@@ -30,6 +33,8 @@ Vue.use(Panel);
   </div>
 </van-panel>
 ```
+
+## API
 
 ### Props
 

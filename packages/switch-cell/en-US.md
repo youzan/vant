@@ -1,16 +1,20 @@
-## SwitchCell
+# SwitchCell
+
+### Intro
+
 `SwitchCell` component is an encapsulation of `Switch` and `Cell`.
 
 ### Install
+
 ``` javascript
 import { SwitchCell } from 'vant';
 
 Vue.use(SwitchCell);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-cell-group>
@@ -28,8 +32,7 @@ export default {
 }
 ```
 
-
-#### Disabled
+### Disabled
 
 use `disabled` property to disable the component
 
@@ -39,8 +42,7 @@ use `disabled` property to disable the component
 </van-cell-group>
 ```
 
-
-#### Loading
+### Loading
 
 use `loading` property to keep component in loading state
 
@@ -49,6 +51,8 @@ use `loading` property to keep component in loading state
   <van-switch-cell v-model="checked" loading title="Title" />
 </van-cell-group>
 ```
+
+## API
 
 ### Props
 

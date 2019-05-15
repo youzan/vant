@@ -1,15 +1,16 @@
-## Coupon 优惠券选择器
+# Coupon 优惠券选择器
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
 Vue.use(CouponCell).use(CouponList);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <!-- 优惠券单元格 -->
@@ -65,6 +66,7 @@ export default {
 }
 ```
 
+## API
 
 ### CouponCell Props
 
@@ -103,9 +105,7 @@ export default {
 | change | 优惠券切换回调 | index, 选中优惠券的索引 |
 | exchange | 兑换优惠券回调 | code, 兑换码 |
 
-### 数据格式
-
-#### 优惠券字段说明
+### 优惠券字段说明
 
 | key | 说明 | 类型 |
 |------|------|------|

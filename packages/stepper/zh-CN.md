@@ -1,15 +1,16 @@
-## Stepper 步进器
+# Stepper 步进器
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Stepper } from 'vant';
 
 Vue.use(Stepper);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-stepper v-model="value" />
@@ -25,7 +26,7 @@ export default {
 }
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过设置`disabled`属性来禁用 stepper
 
@@ -33,7 +34,7 @@ export default {
 <van-stepper v-model="value" disabled />
 ```
 
-#### 异步变更
+### 异步变更
 
 ```html
 <van-stepper
@@ -67,7 +68,7 @@ export default {
 }
 ```
 
-#### 高级用法
+### 高级用法
 
 可以对组件设置`step`、`min`、`max`属性
 
@@ -80,6 +81,8 @@ export default {
   :step="2"
 />
 ```
+
+## API
 
 ### Props
 

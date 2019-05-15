@@ -1,6 +1,6 @@
-## Toast 轻提示
+# Toast 轻提示
 
-### 使用指南
+### 引入
 
 ```javascript
 import { Toast } from 'vant';
@@ -8,15 +8,15 @@ import { Toast } from 'vant';
 Vue.use(Toast);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 文字提示
+### 文字提示
 
 ```javascript
 Toast('提示内容');
 ```
 
-#### 加载提示
+### 加载提示
 
 ```javascript
 Toast.loading({
@@ -25,14 +25,14 @@ Toast.loading({
 });
 ```
 
-#### 成功/失败提示
+### 成功/失败提示
 
 ```javascript
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
-#### 高级用法
+### 高级用法
 
 ```javascript
 const toast = Toast.loading({
@@ -54,7 +54,8 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-#### 组件内调用
+### 组件内调用
+
 引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载 $toast 方法，便于在组件内调用。
 
 ```js
@@ -65,7 +66,8 @@ export default {
 }
 ```
 
-#### 单例模式
+### 单例模式
+
 Toast 默认采用单例模式，即同一时间只会存在一个 Toast，如果需要在同一时间弹出多个 Toast，可以参考下面的示例
 
 ```js
@@ -77,6 +79,8 @@ const toast2 = Toast.success('第二个 Toast');
 toast1.clear();
 toast2.clear();
 ```
+
+## API
 
 ### 方法
 

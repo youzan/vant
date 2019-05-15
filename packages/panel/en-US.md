@@ -1,15 +1,16 @@
-## Panel
+# Panel
 
 ### Install
+
 ``` javascript
 import { Panel } from 'vant';
 
 Vue.use(Panel);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-panel title="Title" desc="Description" status="Status">
@@ -17,7 +18,7 @@ Vue.use(Panel);
 </van-panel>
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 ```html
 <van-panel title="Title" desc="Description" status="Status">
@@ -28,6 +29,8 @@ Vue.use(Panel);
   </div>
 </van-panel>
 ```
+
+## API
 
 ### Props
 

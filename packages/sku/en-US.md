@@ -1,14 +1,16 @@
-## Sku
+# Sku
 
 ### Install
+
 ```javascript
 import { Sku } from 'vant';
 
 Vue.use(Sku);
 ```
 
-### Usage
-#### Basic Usage
+## Usage
+
+### Basic Usage
 
 ```html
 <van-sku
@@ -29,7 +31,7 @@ Vue.use(Sku);
 />
 ```
 
-#### Custom Stepper Config
+### Custom Stepper Config
 
 ```html
 <van-sku
@@ -46,7 +48,7 @@ Vue.use(Sku);
 />
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 ```html
 <van-sku
@@ -95,6 +97,8 @@ Vue.use(Sku);
   </template>
 </van-sku>
 ```
+
+## API
 
 ### Props
 
@@ -150,9 +154,7 @@ Use ref to get sku instance and call instance methods
 | sku-messages | Custom messages |
 | sku-actions | Custom button actions |
 
-#### Data Structure
-
-#### Sku Data Structure
+### Sku Data Structure
 
 ```javascript
 sku: {
@@ -201,7 +203,7 @@ sku: {
 }
 ```
 
-#### initialSku Data Structure
+### initialSku Data Structure
 
 ```javascript
 {
@@ -213,7 +215,7 @@ sku: {
 }
 ```
 
-#### Goods Data Structure
+### Goods Data Structure
 
 ```javascript
 goods: {
@@ -223,7 +225,7 @@ goods: {
 ```
 
 
-#### customStepperConfig Data Structure
+### customStepperConfig Data Structure
 
 ```javascript
 customStepperConfig: {
@@ -249,7 +251,7 @@ customStepperConfig: {
 }
 ```
 
-#### messageConfig Data Structure
+### messageConfig Data Structure
 
 ```javascript
 messageConfig: {
@@ -270,7 +272,7 @@ messageConfig: {
 }
 ```
 
-#### Events Params Data Structure
+### Events Params Data Structure
 
 ```javascript
 skuData: {

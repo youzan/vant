@@ -1,15 +1,15 @@
-## AddressEdit 地址编辑
+# AddressEdit 地址编辑
 
-### 使用指南
+### 引入
 ``` javascript
 import { AddressEdit } from 'vant';
 
 Vue.use(AddressEdit);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-address-edit
@@ -54,6 +54,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 
@@ -100,9 +102,7 @@ export default {
 |------|------|------|------|
 | setAddressDetail | addressDetail: string | - | 设置详细地址 |
 
-### 数据格式
-
-#### addressInfo 数据格式
+### addressInfo 数据格式
 
 注意：addressInfo 仅作为初始值传入，表单最终内容可以在 save 事件中获取
 
@@ -119,13 +119,13 @@ export default {
 | postalCode | 邮政编码 | `String` |
 | isDefault | 是否为默认地址 | `Boolean` |
 
-#### searchResult 数据格式
+### searchResult 数据格式
 
 | key | 说明 | 类型 |
 |------|------|------|
 | name | 地名 | `String` |
 | address | 详细地址 | `String` |
 
-#### 省市县列表数据格式
+### 省市县列表数据格式
 
 请参考 [Area](#/zh-CN/area) 组件。

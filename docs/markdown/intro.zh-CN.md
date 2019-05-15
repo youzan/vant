@@ -1,7 +1,9 @@
-<div class="van-doc-intro">
-  <img class="van-doc-intro__logo" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
-  <h2>Vant</h2>
-  <p>轻量、可靠的移动端 Vue 组件库</p>
+<div class="card">
+  <div class="van-doc-intro">
+    <img class="van-doc-intro__logo" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
+    <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
+    <p>轻量、可靠的移动端 Vue 组件库</p>
+  </div>
 </div>
  
 ### 特性

@@ -1,15 +1,16 @@
-## TreeSelect
+# TreeSelect
 
 ### Install
+
 ``` javascript
 import { TreeSelect } from 'vant';
 
 Vue.use(TreeSelect);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-tree-select
@@ -43,9 +44,9 @@ export default {
 }
 ```
 
-### Props
+## API
 
-#### Props
+### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -54,7 +55,7 @@ export default {
 | main-Active-index | The index of selected parent node | `Number` | `0` |
 | active-id | Id of selected item | `String | Number` | `0` |
 
-#### Events
+### Events
 
 | Event | Description | Arguments |
 |------|------|------|
@@ -62,6 +63,7 @@ export default {
 | itemclick | triggered when item is selected | data: selected item |
 
 ### Data Structure
+
 `items` should be an array contains specified tree objects.
 
 In every tree object, `text` property defines `id` stands for the unique key while the `children` contains sub-tree objects.

@@ -1,4 +1,6 @@
-## Custom Theme
+# Custom Theme
+
+### Intro
 
 `Vant` provides a set of default themes, if you want to custom the theme color or other styles, you can use the following methods:
 

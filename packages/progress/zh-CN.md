@@ -1,15 +1,16 @@
-## Progress 进度条
+# Progress 进度条
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Progress } from 'vant';
 
 Vue.use(Progress);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 进度条默认为蓝色，使用`percentage`属性来设置当前进度
 
@@ -17,15 +18,13 @@ Vue.use(Progress);
 <van-progress :percentage="50" />
 ```
 
-
-#### 置灰
+### 置灰
 
 ```html
 <van-progress inactive :percentage="50" />
 ```
 
-
-#### 样式定制
+### 样式定制
 
 可以使用`pivot-text`属性自定义文字，`color`属性自定义进度条颜色
 
@@ -49,6 +48,8 @@ Vue.use(Progress);
   color="linear-gradient(to right, #be99ff, #7232dd)"
 />
 ```
+
+## API
 
 ### Props
 

@@ -1,15 +1,15 @@
-## Rate 评分
+# Rate 评分
 
-### 使用指南
+### 引入
 ``` javascript
 import { Rate } from 'vant';
 
 Vue.use(Rate);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-rate v-model="value" />
@@ -25,7 +25,7 @@ export default {
 }
 ```
 
-#### 自定义图标
+### 自定义图标
 
 ```html
 <van-rate
@@ -35,7 +35,7 @@ export default {
 />
 ```
 
-#### 自定义样式
+### 自定义样式
 
 ```html
 <van-rate
@@ -47,7 +47,7 @@ export default {
 />
 ```
 
-#### 半星
+### 半星
 
 ```html
 <van-rate
@@ -68,23 +68,25 @@ export default {
 }
 ```
 
-#### 自定义数量
+### 自定义数量
 
 ```html
 <van-rate v-model="value" :count="6" />
 ```
 
-#### 禁用状态
+### 禁用状态
 
 ```html
 <van-rate v-model="value" disabled />
 ```
 
-#### 只读状态
+### 只读状态
 
 ```html
 <van-rate v-model="value" readonly />
 ```
+
+## API
 
 ### Props
 

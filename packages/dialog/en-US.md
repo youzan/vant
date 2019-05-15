@@ -1,4 +1,4 @@
-## Dialog
+# Dialog
 
 ### Install
 
@@ -8,9 +8,9 @@ import { Dialog } from 'vant';
 Vue.use(Dialog);
 ```
 
-### Usage
+## Usage
 
-#### Alert dialog
+### Alert dialog
 
 Used to prompt for some messages, only including one confirm button
 
@@ -29,7 +29,7 @@ Dialog.alert({
 });
 ```
 
-#### Confirm dialog
+### Confirm dialog
 
 Used to confirm some messages, including a confirm button and a cancel button
 
@@ -44,7 +44,7 @@ Used to confirm some messages, including a confirm button and a cancel button
 });
 ```
 
-#### Asnyc Close
+### Asnyc Close
 
 ```js
 function beforeClose(action, done) {
@@ -62,7 +62,7 @@ Dialog.confirm({
 });
 ```
 
-#### $dialog Method
+### $dialog Method
 
 After import the Dialog component, the $dialog method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
@@ -76,7 +76,7 @@ export default {
 }
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 If you need to render vue components within a dialog, you can use dialog component.
 
@@ -99,6 +99,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Methods
 

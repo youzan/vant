@@ -1,22 +1,25 @@
-## Search 搜索
+# Search 搜索
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Search } from 'vant';
 
 Vue.use(Search);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
+
 `van-search` 中，v-model 用于控制搜索框中的文字。background 可以自定义搜索框外部背景色。
 
 ```html
 <van-search placeholder="请输入搜索关键词" v-model="value" />
 ```
 
-#### 监听对应事件
+### 监听对应事件
+
 `van-search` 提供了 search 和 cancel 事件。search 事件在用户点击键盘上的 搜索/回车 按钮触发。cancel 事件在用户点击搜索框右侧取消按钮时触发
 
 Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即可在 IOS 弹出的输入法中显示搜索按钮
@@ -33,7 +36,8 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
 </form>
 ```
 
-#### 自定义行动按钮
+### 自定义行动按钮
+
 `van-search` 支持自定义右侧取消按钮，使用名字为 action 的插槽即可。使用此插槽以后，原有的 cancel 事件不再生效。
 
 ```html
@@ -47,6 +51,8 @@ Tips: 在 `van-search` 外层增加 form 标签，并且 action 不为空，即�
   <div slot="action" @click="onSearch">搜索</div>
 </van-search>
 ```
+
+## API
 
 ### Props
 

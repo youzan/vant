@@ -1,15 +1,15 @@
-## AddressList 地址列表
+# AddressList 地址列表
 
-### 使用指南
+### 引入
 ``` javascript
 import { AddressList } from 'vant';
 
 Vue.use(AddressList);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-address-list
@@ -64,6 +64,7 @@ export default {
 }
 ```
 
+## API
 
 ### Props
 
@@ -86,9 +87,7 @@ export default {
 | edit-disabled | 编辑不可配送的地址时触发 | item: 地址对象，index: 索引 | 1.3.0 |
 | select-disabled | 选中不可配送的地址时触发 | item: 地址对象，index: 索引 | 1.3.0 |
 
-### 数据格式
-
-#### 地址列表字段说明
+### 地址列表字段说明
 
 | key | 说明 | 类型 |
 |------|------|------|

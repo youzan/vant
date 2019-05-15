@@ -1,16 +1,20 @@
-## Picker
+# Picker
+
+### Intro
+
 The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
+
 ``` javascript
 import { Picker } from 'vant';
 
 Vue.use(Picker);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -31,7 +35,7 @@ export default {
 };
 ```
 
-#### Default Index
+### Default Index
 
 ```html
 <van-picker
@@ -41,7 +45,7 @@ export default {
 />
 ```
 
-#### Show Toolbar
+### Show Toolbar
 
 ```html
 <van-picker
@@ -71,7 +75,7 @@ export default {
 };
 ```
 
-#### Disable option
+### Disable option
 
 ```html
 <van-picker :columns="columns" />
@@ -91,7 +95,7 @@ export default {
 };
 ```
 
-#### Multi columns
+### Multi columns
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -127,12 +131,15 @@ export default {
 };
 ```
 
-#### Loading
+### Loading
+
 When Picker columns data is acquired asynchronously, use `loading` prop to show loading prompt
 
 ```html
 <van-picker :columns="columns" loading />
 ```
+
+## API
 
 ### Props
 

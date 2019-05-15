@@ -1,15 +1,16 @@
-## Tab
+# Tab
 
 ### Install
+
 ``` javascript
 import { Tab, Tabs } from 'vant';
 
 Vue.use(Tab).use(Tabs);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 The first tab is actived by default, you can set `v-model` to active specified tab.
 
@@ -31,7 +32,7 @@ export default {
 }
 ```
 
-#### Swipe Tabs
+### Swipe Tabs
 
 By default more than 4 tabs, you can scroll through the tabs. You can set `swipe-threshold` attribute to customize threshold number.
 
@@ -43,7 +44,7 @@ By default more than 4 tabs, you can scroll through the tabs. You can set `swipe
 </van-tabs>
 ```
 
-#### Disabled Tab
+### Disabled Tab
 
 You can set `disabled` attribute on the corresponding `van-tab`. 
 
@@ -65,7 +66,7 @@ export default {
 };
 ```
 
-#### Card Style
+### Card Style
 
 Tabs styled as cards.
 
@@ -77,7 +78,7 @@ Tabs styled as cards.
 </van-tabs>
 ```
 
-#### Click Event
+### Click Event
 
 ```html
 <van-tabs @click="onClick">
@@ -97,7 +98,8 @@ export default {
 };
 ```
 
-#### Sticky
+### Sticky
+
 In sticky mode, the tab will be fixed to top when scroll to top
 
 ```html
@@ -108,7 +110,8 @@ In sticky mode, the tab will be fixed to top when scroll to top
 </van-tabs>
 ```
 
-#### Custom title
+### Custom title
+
 Use title slot to custom tab title
 
 ```html
@@ -122,7 +125,7 @@ Use title slot to custom tab title
 </van-tabs>
 ```
 
-#### Switch Animation
+### Switch Animation
 
 Use `animated` props to change tabs with animation
 
@@ -134,7 +137,7 @@ Use `animated` props to change tabs with animation
 </van-tabs>
 ```
 
-#### Swipeable
+### Swipeable
 
 In swipeable mode, you can switch tabs with swipe gestrue in the content
 
@@ -145,6 +148,8 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
   </van-tab>
 </van-tabs>
 ```
+
+## API
 
 ### Tabs Props
 

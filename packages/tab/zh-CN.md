@@ -1,15 +1,16 @@
-## Tab 标签页
+# Tab 标签页
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Tab, Tabs } from 'vant';
 
 Vue.use(Tab).use(Tabs);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 默认情况下启用第一个标签，可以通过`v-model`绑定当前激活的标签索引
 
@@ -32,7 +33,7 @@ export default {
 }
 ```
 
-#### 横向滚动
+### 横向滚动
 
 多于 4 个标签时，Tab 可以横向滚动
 
@@ -44,7 +45,7 @@ export default {
 </van-tabs>
 ```
 
-#### 禁用标签
+### 禁用标签
 
 设置`disabled`属性即可禁用标签。如果需要监听禁用标签的点击事件，可以在`van-tabs`上监听`disabled`事件
 
@@ -66,7 +67,7 @@ export default {
 };
 ```
 
-#### 样式风格
+### 样式风格
 
 `Tab`支持两种样式风格：`line`和`card`，默认为`line`样式，可以通过`type`属性修改样式风格
 
@@ -78,7 +79,7 @@ export default {
 </van-tabs>
 ```
 
-#### 点击事件
+### 点击事件
 
 可以在`van-tabs`上绑定`click`事件，事件传参为标签对应的索引和标题
 
@@ -99,7 +100,7 @@ export default {
 };
 ```
 
-#### 粘性布局
+### 粘性布局
 
 通过`sticky`属性可以开启粘性布局，粘性布局下，当 Tab 滚动到顶部时会自动吸顶
 
@@ -111,7 +112,7 @@ export default {
 </van-tabs>
 ```
 
-#### 自定义标签
+### 自定义标签
 
 通过 title 插槽可以自定义标签内容
 
@@ -126,7 +127,7 @@ export default {
 </van-tabs>
 ```
 
-#### 切换动画
+### 切换动画
 
 通过`animated`属性可以开启切换标签内容时的转场动画
 
@@ -138,7 +139,7 @@ export default {
 </van-tabs>
 ```
 
-#### 滑动切换
+### 滑动切换
 
 通过`swipeable`属性可以开启滑动切换标签页
 
@@ -149,6 +150,8 @@ export default {
   </van-tab>
 </van-tabs>
 ```
+
+## API
 
 ### Tabs Props
 

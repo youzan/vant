@@ -1,4 +1,4 @@
-## DropdownMenu
+# DropdownMenu
 
 ### Install
 
@@ -8,9 +8,9 @@ import { DropdownMenu, DropdownItem } from 'vant';
 Vue.use(DropdownMenu).use(DropdownItem);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-dropdown-menu>
@@ -75,6 +75,8 @@ export default {
   }
 };
 ```
+
+## API
 
 ### DropdownMenu Props
 

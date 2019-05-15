@@ -1,4 +1,4 @@
-## Checkbox
+# Checkbox
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { Checkbox, CheckboxGroup } from 'vant';
 Vue.use(Checkbox).use(CheckboxGroup);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-checkbox v-model="checked">Checkbox</van-checkbox>
@@ -25,19 +25,19 @@ export default {
 };
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-checkbox v-model="checked" disabled>Checkbox</van-checkbox>
 ```
 
-#### Custom Color
+### Custom Color
 
 ```html
 <van-checkbox v-model="checked" checked-color="#07c160">Checkbox</van-checkbox>
 ```
 
-#### Custom Icon
+### Custom Icon
 
 Use icon slot to custom icon
 
@@ -64,7 +64,7 @@ export default {
 }
 ```
 
-#### Checkbox Group
+### Checkbox Group
 
 When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an array and bound with CheckboxGroup by v-model.
 
@@ -91,7 +91,7 @@ export default {
 };
 ```
 
-#### Maximum amount of checked options
+### Maximum amount of checked options
 
 ```html
 <van-checkbox-group v-model="result" :max="2">
@@ -105,7 +105,7 @@ export default {
 </van-checkbox-group>
 ```
 
-#### Inside a Cell
+### Inside a Cell
 
 ```html
 <van-checkbox-group v-model="result">
@@ -133,6 +133,7 @@ export default {
 }
 ```
 
+## API
 
 ### Checkbox Props
 

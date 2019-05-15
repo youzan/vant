@@ -1,4 +1,4 @@
-## Notify
+# Notify
 
 ### Install
 
@@ -8,15 +8,15 @@ import { Notify } from 'vant';
 Vue.use(Notify);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```js
 Notify('Notify Message');
 ```
 
-#### Custom Config
+### Custom Config
 
 ```js
 Notify({
@@ -26,7 +26,7 @@ Notify({
 });
 ```
 
-#### $notify Method
+### $notify Method
 
 After import the Notify component, the $notify method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
@@ -37,6 +37,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Methods
 

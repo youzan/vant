@@ -1,15 +1,17 @@
-## Field
+# Field
 
 ### Install
+
 ``` javascript
 import { Field } from 'vant';
 
 Vue.use(Field);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
+
 The value of field is bound with v-model.
 
 ```html
@@ -18,7 +20,8 @@ The value of field is bound with v-model.
 </van-cell-group>
 ```
 
-#### Custom type
+### Custom type
+
 Use `type` prop to custom diffrent type fields.
 
 ```html
@@ -43,7 +46,7 @@ Use `type` prop to custom diffrent type fields.
 </van-cell-group>
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-cell-group>
@@ -56,7 +59,8 @@ Use `type` prop to custom diffrent type fields.
 </van-cell-group>
 ```
 
-#### Error info
+### Error info
+
 Use `error` or `error-message` to show error info
 
 ```html
@@ -76,7 +80,8 @@ Use `error` or `error-message` to show error info
 </van-cell-group>
 ```
 
-#### Auto resize
+### Auto resize
+
 Textarea Field can be auto resize when has `autosize` prop
 
 ```html
@@ -92,7 +97,8 @@ Textarea Field can be auto resize when has `autosize` prop
 </van-cell-group>
 ```
 
-#### Insert button
+### Insert button
+
 Use button slot to insert button
 
 ```html
@@ -108,6 +114,8 @@ Use button slot to insert button
   </van-field>
 </van-cell-group>
 ```
+
+## API
 
 ### Props
 

@@ -1,15 +1,16 @@
-## NoticeBar 通知栏
+# NoticeBar 通知栏
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { NoticeBar } from 'vant';
 
 Vue.use(NoticeBar);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-notice-bar
@@ -18,7 +19,7 @@ Vue.use(NoticeBar);
 />
 ```
 
-#### 禁用滚动
+### 禁用滚动
 
 文字内容多于一行时，可通过`scrollable`参数控制是否开启滚动
 
@@ -28,7 +29,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-#### 多行展示
+### 多行展示
 
 禁用滚动时，可以设置`wrapable`来开启多行展示
 
@@ -38,7 +39,7 @@ Vue.use(NoticeBar);
 </van-notice-bar>
 ```
 
-#### 通知栏模式
+### 通知栏模式
 
 默认模式为空，支持`closeable`和`link`两种模式
 
@@ -65,6 +66,8 @@ Vue.use(NoticeBar);
   通知内容
 </van-notice-bar>
 ```
+
+## API
 
 ### Props
 

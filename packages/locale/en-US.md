@@ -1,7 +1,11 @@
-## Internationalization
+# Internationalization
+
+### Intro
+
 The default language of Vant is Chinese. If you want to use other languages, you can follow the instructions below.
 
 ### Switch languages
+
 Vant supports multiple languages with the Locale component, and the `Locale.use` method allows you to switch to diffrent languages.
 
 ```js
@@ -12,6 +16,7 @@ Locale.use('en-US', enUS);
 ```
 
 ### Modify default configs
+
 Use `Locale.add` method to modify the default configs.
 
 ```js
@@ -29,6 +34,7 @@ Locale.add(messages);
 ```
 
 ### Config files
+
 Current supported languages:
 
 | Language | Filename |

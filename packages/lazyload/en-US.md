@@ -1,4 +1,4 @@
-## Lazyload
+# Lazyload
 
 ### Install
 
@@ -9,9 +9,9 @@ import { Lazyload } from 'vant';
 Vue.use(Lazyload, options);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <img v-for="img in imageList" v-lazy="img" >
@@ -30,20 +30,23 @@ export default {
 }
 ```
 
-#### Lazyload Background Image
+### Lazyload Background Image
+
 Use `v-lazy:background-image` to set background url, and declare the height of the container.
 
 ```html
 <div v-for="img in imageList" v-lazy:background-image="img" />
 ```
 
-#### Lazyload Component
+### Lazyload Component
 
 ```html
 <lazy-component>
   <img v-for="img in imageList" v-lazy="img" >
 </lazy-component>
 ```
+
+## API
 
 ### Options
 

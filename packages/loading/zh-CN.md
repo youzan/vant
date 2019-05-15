@@ -1,39 +1,42 @@
-## Loading 加载
+# Loading 加载
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Loading } from 'vant';
 
 Vue.use(Loading);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 加载类型
+### 加载类型
 
 ```html
 <van-loading />
 <van-loading type="spinner" />
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-loading color="#1989fa" />
 <van-loading type="spinner" color="#1989fa" />
 ```
 
-#### 加载文案
+### 加载文案
 
 ```html
 <van-loading size="24px">加载中...</van-loading>
 ```
 
-#### 垂直排列
+### 垂直排列
 
 ```html
 <van-loading size="24px" vertical>加载中...</van-loading>
 ```
+
+## API
 
 ### Props
 

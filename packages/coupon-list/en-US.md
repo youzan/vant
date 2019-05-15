@@ -1,15 +1,16 @@
-## Coupon
+# Coupon
 
 ### Install
+
 ``` javascript
 import { CouponCell, CouponList } from 'vant';
 
 Vue.use(CouponCell).use(CouponList);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <!-- Coupon Cell -->
@@ -64,6 +65,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### CouponCell Props
 

@@ -1,7 +1,11 @@
-## Built-in Style
+# Built-in Style
+
+### Intro
+
 Vant contains some common styles that can be used directly by the className.
 
 ### Text ellipsis
+
 When the text content length exceeds the maximum container width, the excess text is automatically omitted.
 
 ```html
@@ -11,6 +15,7 @@ When the text content length exceeds the maximum container width, the excess tex
 ```
 
 ### Hairline
+
 Add 1px border under the Retina screen for the element, based on a pseudo element.
 
 ```html

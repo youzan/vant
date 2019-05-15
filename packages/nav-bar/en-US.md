@@ -1,15 +1,16 @@
-## NavBar
+# NavBar
 
 ### Install
+
 ``` javascript
 import { NavBar } from 'vant';
 
 Vue.use(NavBar);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-nav-bar
@@ -35,7 +36,7 @@ export default {
 }
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 ```html
 <van-nav-bar title="Title" left-text="Back" left-arrow>
@@ -43,6 +44,7 @@ export default {
 </van-nav-bar>
 ```
 
+## API
 
 ### Props
 

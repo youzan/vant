@@ -1,16 +1,20 @@
-## Picker 选择器
+# Picker 选择器
+
+### 介绍
+
 选择器组件通常与 [弹出层](#/zh-CN/popup) 组件配合使用
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Picker } from 'vant';
 
 Vue.use(Picker);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 对于单列选择器，传入数值格式的 columns 即可，同时可以监听选项改变的 change 事件
 
@@ -33,7 +37,7 @@ export default {
 };
 ```
 
-#### 默认选中项
+### 默认选中项
 
 单列选择器可以直接通过`default-index`属性设置初始选中项的索引值
 
@@ -45,7 +49,7 @@ export default {
 />
 ```
 
-#### 展示顶部栏
+### 展示顶部栏
 
 通常选择器组件会传入`show-toolbar`属性以展示顶部操作栏，并可以监听对应的`confirm`和`cancel`事件
 
@@ -77,7 +81,7 @@ export default {
 };
 ```
 
-#### 禁用选项
+### 禁用选项
 
 选项可以为对象结构，通过设置 disabled 来禁用该选项
 
@@ -99,7 +103,7 @@ export default {
 };
 ```
 
-#### 多列联动
+### 多列联动
 
 ```html
 <van-picker :columns="columns" @change="onChange" />
@@ -135,13 +139,15 @@ export default {
 };
 ```
 
-#### 加载状态
+### 加载状态
 
 若选择器数据是异步获取的，可以通过 `loading` 属性显示加载提示
 
 ```html
 <van-picker :columns="columns" loading />
 ```
+
+## API
 
 ### Props
 

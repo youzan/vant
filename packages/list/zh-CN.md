@@ -1,16 +1,20 @@
-## List 列表
+# List 列表
+
+### 介绍
+
 瀑布流滚动加载，用于展示长列表，当列表即将滚动到底部时，会触发事件并加载更多列表项。
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { List } from 'vant';
 
 Vue.use(List);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 List 组件通过`loading`和`finished`两个变量控制加载状态，当组件滚动到底部时，会触发`load`事件并将`loading`设置成`true`。此时可以发起异步操作并更新数据，数据更新完毕后，将`loading`设置成`false`即可。若数据已全部加载完毕，则直接将`finished`设置成`true`即可。
 
@@ -97,6 +101,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

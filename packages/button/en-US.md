@@ -1,15 +1,16 @@
-## Button
+# Button
 
 ### Install
+
 ``` javascript
 import { Button } from 'vant';
 
 Vue.use(Button);
 ```
 
-### Usage
+## Usage
 
-#### Type
+### Type
 
 ```html
 <van-button type="default">Default</van-button>
@@ -19,28 +20,28 @@ Vue.use(Button);
 <van-button type="warning">Warning</van-button>
 ```
 
-#### Plain
+### Plain
 
 ```html
 <van-button plain type="primary">Primary</van-button>
 <van-button plain type="danger">Danger</van-button>
 ```
 
-#### Hairline
+### Hairline
 
 ```html
 <van-button plain hairline type="primary">Hairline</van-button>
 <van-button plain hairline type="danger">Hairline</van-button>
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-button disabled type="primary">Diabled</van-button>
 <van-button disabled type="danger">Diabled</van-button>
 ```
 
-#### Loading
+### Loading
 
 ```html 
 <van-button loading type="primary" />
@@ -52,14 +53,14 @@ Vue.use(Button);
 />
 ```
 
-#### Shape
+### Shape
 
 ```html 
 <van-button square type="primary">Square</van-button>
 <van-button round type="danger">Round</van-button>
 ```
 
-#### Size
+### Size
 
 ```html 
 <van-button size="large">Large</van-button>
@@ -67,6 +68,8 @@ Vue.use(Button);
 <van-button size="small">Small</van-button>
 <van-button size="mini">Mini</van-button>
 ```
+
+## API
 
 ### Props
 

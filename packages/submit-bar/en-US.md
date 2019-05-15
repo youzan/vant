@@ -1,15 +1,16 @@
-## SubmitBar
+# SubmitBar
 
 ### Install
+
 ``` javascript
 import { SubmitBar } from 'vant';
 
 Vue.use(SubmitBar);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-submit-bar
@@ -19,7 +20,8 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### Disabled
+### Disabled
+
 `submit` event will not triggerd when disabled.
 
 ```html
@@ -33,7 +35,8 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### Loading
+### Loading
+
 `submit` event will not triggerd when loading.
 
 ```html
@@ -45,7 +48,8 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### Advanced Usage
+### Advanced Usage
+
 Use slot to add custom contents.
 
 ```html
@@ -60,6 +64,8 @@ Use slot to add custom contents.
   </span>
 </van-submit-bar>
 ```
+
+## API
 
 ### Props
 

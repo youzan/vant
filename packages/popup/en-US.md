@@ -1,15 +1,16 @@
-## Popup
+# Popup
 
 ### Install
+
 ``` javascript
 import { Popup } from 'vant';
 
 Vue.use(Popup);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Popup is located in the middle of the screen by default
 
@@ -27,7 +28,7 @@ export default {
 };
 ```
 
-#### Position
+### Position
 
 Use `position` prop to set popup display position
 
@@ -36,6 +37,8 @@ Use `position` prop to set popup display position
   Content
 </van-popup>
 ```
+
+## API
 
 ### Props
 

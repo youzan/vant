@@ -1,4 +1,4 @@
-## AddressList
+# AddressList
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { AddressList } from 'vant';
 Vue.use(AddressList);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-address-list
@@ -62,6 +62,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

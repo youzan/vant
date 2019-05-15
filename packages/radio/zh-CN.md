@@ -1,6 +1,7 @@
-## Radio 单选框
+# Radio 单选框
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { RadioGroup, Radio } from 'vant';
 
@@ -8,9 +9,9 @@ Vue.use(RadioGroup);
 Vue.use(Radio);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过`v-model`绑定值当前选中项的 name
 
@@ -31,7 +32,7 @@ export default {
 };
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性禁止选项切换，在`van-radio`上设置`disabled`可以禁用单个选项
 
@@ -42,13 +43,13 @@ export default {
 </van-radio-group>
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-radio checked-color="#07c160">复选框</van-radio>
 ```
 
-#### 自定义图标
+### 自定义图标
 
 通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
 
@@ -75,7 +76,7 @@ export default {
 }
 ```
 
-#### 与 Cell 组件一起使用
+### 与 Cell 组件一起使用
 
 此时你需要再引入`Cell`和`CellGroup`组件。
 
@@ -91,6 +92,8 @@ export default {
   </van-cell-group>
 </van-radio-group>
 ```
+
+## API
 
 ### Radio Props
 

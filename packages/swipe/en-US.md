@@ -1,15 +1,17 @@
-## Swipe
+# Swipe
 
 ### Install
+
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
 Vue.use(Swipe).use(SwipeItem);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
+
 Use `autoplay` prop to set autoplay interval
 
 ```html
@@ -21,7 +23,8 @@ Use `autoplay` prop to set autoplay interval
 </van-swipe>
 ```
 
-#### Image Lazyload
+### Image Lazyload
+
 Use [Lazyload](#/en-US/lazyload) component to lazyload image
 
 ```html
@@ -45,7 +48,7 @@ export default {
 }
 ```
 
-#### change event
+### change event
 
 ```html
 <van-swipe @change="onChange">
@@ -66,7 +69,7 @@ export default {
 }
 ```
 
-#### Vertical Scrolling
+### Vertical Scrolling
 
 ```html
 <van-swipe :autoplay="3000" vertical>
@@ -77,7 +80,7 @@ export default {
 </van-swipe>
 ```
 
-#### Set Swiper Item Size
+### Set Swiper Item Size
 
 ```html
 <van-swipe :autoplay="3000" :width="300">
@@ -88,7 +91,7 @@ export default {
 </van-swipe>
 ```
 
-#### Custom Indicator
+### Custom Indicator
 
 ```html
 <van-swipe @change="onChange">
@@ -118,7 +121,9 @@ export default {
 }
 ```
 
-### Props
+## API
+
+### Swipe Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -133,13 +138,13 @@ export default {
 | width | Set Swiper Item Width | `Number` | `0` |
 | height | Set Swiper Item Height | `Number` | `0` |
 
-### Events
+### Swipe Events
 
 | Event | Description | Arguments |
 |------|------|------|
 | change | Triggered when current swipe change | index: index of current swipe |
 
-### Methods
+### Swipe Methods
 
 Use ref to get swipe instance and call instance methods
 
@@ -147,7 +152,7 @@ Use ref to get swipe instance and call instance methods
 |------|------|------|------|
 | swipeTo | index: target index | void | Swipe to target index |
 
-### Slots
+### Swipe Slots
 
 | Name | Description |
 |------|------|

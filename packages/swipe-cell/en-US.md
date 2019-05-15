@@ -1,15 +1,16 @@
-## SwipeCell
+# SwipeCell
 
 ### Install
+
 ``` javascript
 import { SwipeCell } from 'vant';
 
 Vue.use(SwipeCell);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-swipe-cell :right-width="65" :left-width="65">
@@ -21,7 +22,7 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
-#### Async close
+### Async close
 
 ```html
 <van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
@@ -55,6 +56,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

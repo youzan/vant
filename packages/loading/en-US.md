@@ -1,39 +1,42 @@
-## Loading
+# Loading
 
 ### Install
+
 ``` javascript
 import { Loading } from 'vant';
 
 Vue.use(Loading);
 ```
 
-### Usage
+## Usage
 
-#### Type
+### Type
 
 ```html
 <van-loading />
 <van-loading type="spinner" />
 ```
 
-#### Color
+### Color
 
 ```html
 <van-loading color="#1989fa" />
 <van-loading type="spinner" color="#1989fa" />
 ```
 
-#### Text
+### Text
 
 ```html
 <van-loading size="24px">Loading...</van-loading>
 ```
 
-#### Vertical
+### Vertical
 
 ```html
 <van-loading size="24px" vertical>Loading...</van-loading>
 ```
+
+## API
 
 ### Props
 

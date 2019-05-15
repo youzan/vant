@@ -1,21 +1,22 @@
-## Notify 消息提示
+# Notify 消息提示
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Notify } from 'vant';
 
 Vue.use(Notify);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```js
 Notify('通知内容');
 ```
 
-#### 自定义配置
+### 自定义配置
 
 ```js
 Notify({
@@ -25,7 +26,7 @@ Notify({
 });
 ```
 
-#### 组件内调用
+### 组件内调用
 
 引入 Notify 组件后，会自动在 Vue 的 prototype 上挂载 $notify 方法，便于在组件内调用。
 
@@ -36,6 +37,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### 方法
 

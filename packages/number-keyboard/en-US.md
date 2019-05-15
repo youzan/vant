@@ -1,4 +1,4 @@
-## NumberKeyboard
+# NumberKeyboard
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { NumberKeyboard } from 'vant';
 Vue.use(NumberKeyboard);
 ```
 
-### Usage
+## Usage
 
-#### Default Style
+### Default Style
 
 ```html
 <van-button @touchstart.stop="show = true">
@@ -45,7 +45,7 @@ export default {
 }
 ```
 
-#### Custom Style
+### Custom Style
 
 ```html
 <van-number-keyboard
@@ -58,6 +58,8 @@ export default {
   @delete="onDelete"
 />
 ```
+
+## API
 
 ### Props
 

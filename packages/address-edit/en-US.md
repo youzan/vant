@@ -1,4 +1,4 @@
-## AddressEdit
+# AddressEdit
 
 ### Install
 
@@ -8,9 +8,9 @@ import { AddressEdit } from 'vant';
 Vue.use(AddressEdit);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-address-edit
@@ -56,6 +56,7 @@ export default {
 }
 ```
 
+## API
 
 ### Props
 
@@ -102,9 +103,8 @@ Use ref to get address-edit instance and call instance methods
 |------|------|------|------|
 | setAddressDetail | addressDetail: string | - | Set address detail |
 
-### Data Structure
+### addressInfo Data Structure
 
-#### addressInfo Data Structure
 | key | Description | Type |
 |------|------|------|
 | id | Address Id | `String | Number` |
@@ -118,11 +118,13 @@ Use ref to get address-edit instance and call instance methods
 | postalCode | Postal code | `String` |
 | isDefault | Is default address | `Boolean` |
 
-#### searchResult Data Structure
+### searchResult Data Structure
+
 | key | Description | Type |
 |------|------|------|
 | name | Name | `String` |
 | address | Address | `String` |
 
-#### Area Data Structure
+### Area Data Structure
+
 Please refer to [Area](#/en-US/area) component。

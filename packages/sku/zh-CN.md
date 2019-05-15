@@ -1,15 +1,16 @@
-## Sku 商品规格
+# Sku 商品规格
 
-### 使用指南
+### 引入
+
 ```javascript
 import { Sku } from 'vant';
 
 Vue.use(Sku);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-sku
@@ -30,7 +31,7 @@ Vue.use(Sku);
 />
 ```
 
-#### 自定义步进器
+### 自定义步进器
 
 ```html
 <van-sku
@@ -47,7 +48,7 @@ Vue.use(Sku);
 />
 ```
 
-#### 高级用法
+### 高级用法
 
 ```html
 <van-sku
@@ -96,6 +97,8 @@ Vue.use(Sku);
   </template>
 </van-sku>
 ```
+
+## API
 
 ### Props
 
@@ -155,9 +158,7 @@ Sku 组件默认划分好了若干区块，这些区块都定义成了插槽，�
 | sku-messages | 商品留言区 |
 | sku-actions | 操作按钮区 |
 
-### 数据结构
-
-#### sku 对象结构
+### sku 对象结构
 
 ```javascript
 sku: {
@@ -210,7 +211,7 @@ sku: {
 }
 ```
 
-#### initialSku 对象结构
+### initialSku 对象结构
 
 ```javascript
 {
@@ -223,7 +224,7 @@ sku: {
 }
 ```
 
-#### goods 对象结构
+### goods 对象结构
 
 ```javascript
 goods: {
@@ -234,7 +235,7 @@ goods: {
 }
 ```
 
-#### customStepperConfig 对象结构
+### customStepperConfig 对象结构
 
 ```javascript
 customStepperConfig: {
@@ -260,7 +261,7 @@ customStepperConfig: {
 }
 ```
 
-#### messageConfig Data Structure
+### messageConfig Data Structure
 
 ```javascript
 messageConfig: {
@@ -281,7 +282,7 @@ messageConfig: {
 }
 ```
 
-#### 添加购物车和点击购买回调函数接收的 skuData 对象结构
+### 添加购物车和点击购买回调函数接收的 skuData 对象结构
 
 ```javascript
 skuData: {

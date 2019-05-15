@@ -1,17 +1,21 @@
-## Layout 布局
+# Layout 布局
 
-提供了`van-row`和`van-col`两个组件来进行行列布局
+### 介绍
 
-### 使用指南
+Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
+
+
+### 引入
+
 ``` javascript
 import { Row, Col } from 'vant';
 
 Vue.use(Row).use(Col);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基本用法
+### 基本用法
 
 Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置列所占的宽度百分比    
 此外，添加`offset`属性可以设置列的偏移宽度，计算方式与 span 相同
@@ -33,7 +37,7 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 </van-row>
 ```
 
-#### 设置列元素间距
+### 设置列元素间距
 
 通过`gutter`属性可以设置列元素之间的间距，默认间距为 0
 
@@ -45,7 +49,7 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 </van-row>
 ```
 
-#### Flex 布局
+### Flex 布局
 
 将 `type` 属性设置为 flex 可以启用 flex 布局，便于进行灵活的对齐
 
@@ -85,6 +89,8 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
   <van-col span="6">span: 6</van-col>
 </van-row>
 ```
+
+## API
 
 ### Row Props
 

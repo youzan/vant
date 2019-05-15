@@ -1,6 +1,6 @@
-## DropdownMenu 下拉菜单
+# DropdownMenu 下拉菜单
 
-### 使用指南
+### 引入
 
 ``` javascript
 import { DropdownMenu, DropdownItem } from 'vant';
@@ -8,9 +8,9 @@ import { DropdownMenu, DropdownItem } from 'vant';
 Vue.use(DropdownMenu).use(DropdownItem);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-dropdown-menu>
@@ -77,6 +77,8 @@ export default {
   }
 };
 ```
+
+## API
 
 ### DropdownMenu Props
 

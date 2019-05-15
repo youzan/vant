@@ -1,15 +1,16 @@
-## Tabbar
+# Tabbar
 
 ### Install
+
 ``` javascript
 import { Tabbar, TabbarItem } from 'vant';
 
 Vue.use(Tabbar).use(TabbarItem);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-tabbar v-model="active">
@@ -30,7 +31,7 @@ export default {
 }
 ```
 
-#### Show Badge
+### Show Badge
 
 ```html
 <van-tabbar v-model="active">
@@ -41,7 +42,7 @@ export default {
 </van-tabbar>
 ```
 
-#### Custom Icon
+### Custom Icon
 
 Use `icon` slot to custom icon
 
@@ -74,7 +75,7 @@ export default {
 }
 ```
 
-#### Custom Color
+### Custom Color
 
 ```html
 <van-tabbar
@@ -89,7 +90,7 @@ export default {
 </van-tabbar>
 ```
 
-#### Route Mode
+### Route Mode
 
 ```html
 <router-view />
@@ -111,6 +112,8 @@ export default {
   </van-tabbar-item>
 </van-tabbar>
 ```
+
+## API
 
 ### Tabbar Props
 

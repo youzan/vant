@@ -1,6 +1,6 @@
-## Sidebar 侧边导航
+# Sidebar 侧边导航
 
-### 使用指南
+### 引入
 
 ``` javascript
 import { Sidebar, SidebarItem } from 'vant';
@@ -9,9 +9,9 @@ Vue.use(Sidebar);
 Vue.use(SidebarItem);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过在`van-sidebar`上设置`active-key`属性来控制选中项
 
@@ -39,6 +39,8 @@ export default {
   }
 };
 ```
+
+## API
 
 ### Sidebar Props
 

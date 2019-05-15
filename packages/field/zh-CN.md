@@ -1,17 +1,19 @@
-## Field 输入框
+# Field 输入框
 
-`input`或`textarea`的输入框。
+### 介绍
 
-### 使用指南
+表单中的输入框组件，支持`input`和`textarea`两种类型
+
+### 引入
 ``` javascript
 import { Field } from 'vant';
 
 Vue.use(Field);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过 v-model 绑定输入框的值
 
@@ -21,7 +23,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-#### 自定义类型
+### 自定义类型
 
 根据`type`属性定义不同类型的输入框
 
@@ -47,7 +49,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-#### 禁用输入框
+### 禁用输入框
 
 ```html
 <van-cell-group>
@@ -60,7 +62,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-#### 错误提示
+### 错误提示
 
 通过`error`或者`error-message`属性增加对应的错误提示
 
@@ -81,7 +83,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-#### 高度自适应
+### 高度自适应
 
 对于 textarea，可以通过`autosize`属性设置高度自适应
 
@@ -98,7 +100,7 @@ Vue.use(Field);
 </van-cell-group>
 ```
 
-#### 插入按钮
+### 插入按钮
 
 通过 button 插槽可以在输入框尾部插入按钮
 
@@ -115,6 +117,8 @@ Vue.use(Field);
   </van-field>
 </van-cell-group>
 ```
+
+## API
 
 ### Props
 

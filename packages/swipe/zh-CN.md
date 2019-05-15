@@ -1,15 +1,17 @@
-## Swipe 轮播
+# Swipe 轮播
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Swipe, SwipeItem } from 'vant';
 
 Vue.use(Swipe).use(SwipeItem);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
+
 通过`autoplay`属性设置自动轮播间隔
 
 ```html
@@ -21,7 +23,8 @@ Vue.use(Swipe).use(SwipeItem);
 </van-swipe>
 ```
 
-#### 图片懒加载
+### 图片懒加载
+
 配合 [Lazyload](#/zh-CN/lazyload) 组件实现图片懒加载
 
 ```html
@@ -45,7 +48,7 @@ export default {
 }
 ```
 
-#### 监听 change 事件
+### 监听 change 事件
 
 ```html
 <van-swipe @change="onChange">
@@ -66,7 +69,7 @@ export default {
 }
 ```
 
-#### 纵向滚动
+### 纵向滚动
 
 ```html
 <van-swipe :autoplay="3000" vertical>
@@ -77,7 +80,7 @@ export default {
 </van-swipe>
 ```
 
-#### 控制滑块大小
+### 控制滑块大小
 
 ```html
 <van-swipe :autoplay="3000" :width="300">
@@ -88,7 +91,7 @@ export default {
 </van-swipe>
 ```
 
-#### 自定义指示器
+### 自定义指示器
 
 ```html
 <van-swipe @change="onChange">
@@ -118,7 +121,9 @@ export default {
 }
 ```
 
-### Props
+## API
+
+### Swipe Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -133,19 +138,19 @@ export default {
 | width | 滑块宽度 | `Number` | `0` | 1.2.1 |
 | height | 滑块高度 | `Number` | `0` | 1.2.1 |
 
-### Swipe 事件
+### Swipe Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | change | 每一页轮播结束后触发 | index, 当前页的索引 |
 
-### SwipeItem 事件
+### SwipeItem Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击时触发 | - |
 
-### 方法
+### Swipe 方法
 
 通过 ref 可以获取到 swipe 实例并调用实例方法
 
@@ -153,7 +158,7 @@ export default {
 |------|------|------|------|
 | swipeTo | index: 目标位置的索引 | void | 滚动到目标位置 |
 
-### Slots
+### Swipe Slots
 
 | 名称 | 说明 |
 |------|------|

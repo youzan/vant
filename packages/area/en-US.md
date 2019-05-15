@@ -1,4 +1,7 @@
-## Area
+# Area
+
+### Intro
+
 The Picker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
@@ -9,9 +12,9 @@ import { Area } from 'vant';
 Vue.use(Area);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 To initailize `Area` component, `area-list` property is required. Data structure will be introduced later. 
 
@@ -19,7 +22,7 @@ To initailize `Area` component, `area-list` property is required. Data structure
 <van-area :area-list="areaList" />
 ```
 
-#### Initial Value
+### Initial Value
 
 To have a selected value，simply pass the `code` of target area to `value` property.
 
@@ -27,7 +30,7 @@ To have a selected value，simply pass the `code` of target area to `value` prop
 <van-area :area-list="areaList" value="110101" />
 ```
 
-#### Columns Number
+### Columns Number
 
 `columns-num` property is used to config number of columns to be displayed. This component has 3 columns corresponding to a 3 level picker by default.
 Set `columns-num` with 2, you'll have a 2 level picker.
@@ -36,6 +39,7 @@ Set `columns-num` with 2, you'll have a 2 level picker.
 <van-area :area-list="areaList" :columns-num="2" title="Title" />
 ```
 
+## API
 
 ### Props
 
@@ -67,9 +71,7 @@ Use ref to get area instance and call instance methods
 |------|------|------|------|
 | reset | - | - | Reset all options |
 
-### Data Structure
-
-#### areaList
+### areaList Data Structure
 
 An object contains three properties: `province_list`, `city_list` and `county_list`. 
 Each property is a simple key-value object, key is a 6-bit code of the area of which first two bits stand for the province or state, middle two bits are used as city code and the last two are district code, value is the name of the area. If the code stands for an area that has sub-areas, lower bits of it will be filled with 0.
@@ -100,7 +102,8 @@ Example of `AreaList`
 
 All code of China: [Area.json](https://github.com/youzan/vant/blob/dev/packages/area/demo/area-en.js)
 
-#### argument of callback function confirm
+### argument of callback function confirm
+
 An array contains selected area objects.
 
 `code` - code of selected area, `name` - name of selected area

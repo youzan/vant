@@ -1,4 +1,4 @@
-## Card
+# Card
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { Card } from 'vant';
 Vue.use(Card);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-card
@@ -21,7 +21,7 @@ Vue.use(Card);
 />
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 Use slot to custom content.
 
@@ -41,6 +41,8 @@ Use slot to custom content.
   </div>
 </van-card>
 ```
+
+## API
 
 ### Props
 

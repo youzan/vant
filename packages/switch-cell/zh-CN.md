@@ -1,17 +1,20 @@
-## SwitchCell 开关单元格
+# SwitchCell 开关单元格
+
+### 介绍
 
 `SwitchCell`组件是对`Switch`和`Cell`组件的封装
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { SwitchCell } from 'vant';
 
 Vue.use(SwitchCell);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-cell-group>
@@ -29,7 +32,7 @@ export default {
 }
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性可以将组件设置为禁用状态
 
@@ -39,7 +42,7 @@ export default {
 </van-cell-group>
 ```
 
-#### 加载状态
+### 加载状态
 
 通过`loading`属性可以将组件设置为加载状态
 
@@ -48,6 +51,8 @@ export default {
   <van-switch-cell v-model="checked" loading title="标题" />
 </van-cell-group>
 ```
+
+## API
 
 ### Props
 

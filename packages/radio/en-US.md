@@ -1,6 +1,7 @@
-## Radio
+# Radio
 
 ### Install
+
 ``` javascript
 import { RadioGroup, Radio } from 'vant';
 
@@ -8,9 +9,9 @@ Vue.use(RadioGroup);
 Vue.use(Radio);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Use `v-model` to bind the name of checked radio
 
@@ -31,7 +32,7 @@ export default {
 };
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-radio-group v-model="radio" disabled>
@@ -40,13 +41,13 @@ export default {
 </van-radio-group>
 ```
 
-#### Custom Color
+### Custom Color
 
 ```html
 <van-radio checked-color="#07c160">Radio</van-radio>
 ```
 
-#### Custom Icon
+### Custom Icon
 
 Use icon slot to custom icon
 
@@ -73,7 +74,7 @@ export default {
 }
 ```
 
-#### Inside a Cell
+### Inside a Cell
 
 ```html
 <van-radio-group v-model="radio">
@@ -87,6 +88,8 @@ export default {
   </van-cell-group>
 </van-radio-group>
 ```
+
+## API
 
 ### Radio Props
 

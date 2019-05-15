@@ -1,6 +1,6 @@
-## 更新日志
+# 更新日志
 
-## [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
+### [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
 `2019-05-10`
 
 **Bug Fixes**
@@ -13,7 +13,7 @@
 - 修复 Swipe 在部分情况下提示 preventDefault 警告的问题
 
 
-## [1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
+### [v1.6.17](https://github.com/youzan/vant/tree/v1.6.17)
 `2019-05-05`
 
 **Improvements**
@@ -31,7 +31,7 @@
 - 修复 Popup 弹出多个弹层时 click-overlay 事件重复触发的问题
 
 
-## [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
+### [v1.6.16](https://github.com/youzan/vant/tree/v1.6.16)
 `2019-04-26`
 
 **Improvements**
@@ -50,7 +50,7 @@
 - 修复 Slider 拖动同时设置 value 属性导致拖动失败的问题 [\#3206](https://github.com/youzan/vant/pull/3206)
 
 
-## [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
+### [v1.6.15](https://github.com/youzan/vant/tree/v1.6.15)
 `2019-04-19`
 
 **Improvements**
@@ -75,7 +75,7 @@
 - 修复 Toast z-index 未正确递增的问题 [\#3153](https://github.com/youzan/vant/pull/3153)
 
 
-## [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
+### [v1.6.14](https://github.com/youzan/vant/tree/v1.6.14)
 `2019-04-13`
 
 **Improvements**
@@ -98,7 +98,7 @@
 - 修复 Dialog 使用 getContainer 属性后可能出现节点被回收导致无法渲染的问题 [\#3111](https://github.com/youzan/vant/pull/3111)
 
 
-## [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
+### [v1.6.13](https://github.com/youzan/vant/tree/v1.6.13)
 `2019-04-06`
 
 **Improvements**
@@ -115,7 +115,7 @@
 - 修复 Tab 包裹在`keep-alive`内时底部条渲染错误的问题 [\#3097](https://github.com/youzan/vant/pull/3097)
 
 
-## [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
+### [v1.6.12](https://github.com/youzan/vant/tree/v1.6.12)
 `2019-03-28`
 
 **Improvements**
@@ -129,7 +129,7 @@
 - 修复 Picker 使用 loading 属性时展示出现异常的问题 [\#3064](https://github.com/youzan/vant/pull/3064)
 
 
-## [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
+### [v1.6.11](https://github.com/youzan/vant/tree/v1.6.11)
 `2019-03-22`
 
 **Improvements**
@@ -154,7 +154,7 @@
 - 修复 Collapse 在渲染较慢的情况下可能出现高度为 0 的问题 [\#2993](https://github.com/youzan/vant/pull/2993)
 
 
-## [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
+### [v1.6.10](https://github.com/youzan/vant/tree/v1.6.10)
 `2019-03-17`
 
 **Improvements**
@@ -172,7 +172,7 @@
 - 修复 Uploader 使用 before-read 属性后重复上传同个文件不触发事件的问题 [\#2971](https://github.com/youzan/vant/pull/2971)
 
 
-## [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
+### [v1.6.9](https://github.com/youzan/vant/tree/v1.6.9)
 `2019-03-11`
 
 **Improvements**
@@ -191,7 +191,7 @@
 - 修复 Swipe change 事件触发时机错误的问题 [\#2909](https://github.com/youzan/vant/pull/2909)
 
 
-## [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
+### [v1.6.8](https://github.com/youzan/vant/tree/v1.6.8)
 `2019-03-02`
 
 **Improvements**
@@ -207,7 +207,7 @@
 - 修复 Tab 使用 offset-top 属性时切换标签未滚动到正确位置的问题 [\#2873](https://github.com/youzan/vant/pull/2873)
 
 
-## [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
+### [v1.6.7](https://github.com/youzan/vant/tree/v1.6.7)
 `2019-02-26`
 
 **Improvements**
@@ -226,7 +226,7 @@
 - 修复 CouponList 不可用券列表为空时展示错误的问题 [\#2845](https://github.com/youzan/vant/pull/2845)
 
 
-## [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
+### [v1.6.6](https://github.com/youzan/vant/tree/v1.6.6)
 `2019-02-24`
 
 **Improvements**
@@ -247,7 +247,7 @@
 - 修复 Tab 在 card 类型中嵌套 line 类型时样式错误的问题 [\#2825](https://github.com/youzan/vant/pull/2825)
 
 
-## [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
+### [v1.6.5](https://github.com/youzan/vant/tree/v1.6.5)
 `2019-02-17`
 
 **Improvements**
@@ -265,7 +265,7 @@
 - 修复 Panel 使用 v-slot 不生效的问题 [\#2752](https://github.com/youzan/vant/pull/2752)
 
 
-## [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
+### [v1.6.4](https://github.com/youzan/vant/tree/v1.6.4)
 `2019-02-14`
 
 **Bug Fixes**
@@ -273,7 +273,7 @@
 - 修复 Sku 购买事件错误地触发为加入购物车事件的问题 [\#2741](https://github.com/youzan/vant/pull/2741)
 
 
-## [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
+### [v1.6.3](https://github.com/youzan/vant/tree/v1.6.3)
 `2019-02-14`
 
 **Improvements**
@@ -295,7 +295,7 @@
 - 修复函数式组件传入多个同名事件导致错误的问题 [\#2717](https://github.com/youzan/vant/pull/2717)
 
 
-## [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
+### [v1.6.2](https://github.com/youzan/vant/tree/v1.6.2)
 `2019-02-10`
 
 **Improvements**
@@ -316,7 +316,7 @@
 - 修复 AddressEdit 在 Vue 2.6 版本下无法选择推荐地址的问题 [\#2689](https://github.com/youzan/vant/pull/2689)
 
 
-## [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
+### [v1.6.1](https://github.com/youzan/vant/tree/v1.6.1)
 `2019-02-05`
 
 **Improvements**
@@ -324,7 +324,7 @@
 - 修复函数式组件无法继承指令和原生事件的问题 [\#2686](https://github.com/youzan/vant/pull/2686)
 
 
-## [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
+### [v1.6.0](https://github.com/youzan/vant/tree/v1.6.0)
 `2019-02-04`
 
 **Breaking changes**
@@ -352,7 +352,7 @@
 - 修复 Popup 使用 get-container 属性后销毁时可能报错的问题 [\#2679](https://github.com/youzan/vant/pull/2679)
 
 
-## [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
+### [v1.5.7](https://github.com/youzan/vant/tree/v1.5.7)
 `2019-01-24`
 
 **Improvements**
@@ -375,7 +375,7 @@
 - 新增 pause-circle-o 图标
 - Field: 新增 click-left-icon 事件 [\#2605](https://github.com/youzan/vant/pull/2605)
 
-## [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
+### [v1.5.6](https://github.com/youzan/vant/tree/v1.5.6)
 `2019-01-22`
 
 **Improvements**
@@ -390,7 +390,7 @@
 - 修复 Icon name 属性传入 URL 不生效的问题 [\#2585](https://github.com/youzan/vant/pull/2585)
 
 
-## [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
+### [v1.5.5](https://github.com/youzan/vant/tree/v1.5.5)
 `2019-01-21`
 
 **Bug Fixes**
@@ -398,7 +398,7 @@
 - 修复 Field type 属性不生效的问题 [\#2579](https://github.com/youzan/vant/pull/2579)
 
 
-## [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
+### [v1.5.4](https://github.com/youzan/vant/tree/v1.5.4)
 `2019-01-20`
 
 **Bug Fixes**
@@ -406,7 +406,7 @@
 - 修复缺少 @vue/babel-helper-vue-jsx-merge-props 依赖的问题 [\#2474](https://github.com/youzan/vant/issues/2474)
 
 
-## [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
+### [v1.5.3](https://github.com/youzan/vant/tree/v1.5.3)
 `2019-01-20`
 
 **Improvements**
@@ -427,7 +427,7 @@
 - 修复 Dialog 按钮点击事件触发时机错误 [\#2571](https://github.com/youzan/vant/pull/2571)
 
 
-## [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
+### [v1.5.2](https://github.com/youzan/vant/tree/v1.5.2)
 `2019-01-10`
 
 **Improvements**
@@ -448,7 +448,7 @@
 - 修复 Tab 首次渲染时会触发底部条动画的问题 [\#2459](https://github.com/youzan/vant/pull/2459)
 
 
-## [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
+### [v1.5.1](https://github.com/youzan/vant/tree/v1.5.1)
 `2019-01-01`
 
 **Improvements**
@@ -466,7 +466,7 @@
 - 修复 Icon 在 file 协议网页下无法展示的问题 [\#2385](https://github.com/youzan/vant/pull/2385)
 
 
-## [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
+### [v1.5.0](https://github.com/youzan/vant/tree/v1.5.0)
 `2018-12-22`
 
 **Breaking changes**
@@ -537,7 +537,7 @@
 - 修复 dev 命令在 windows 环境下报错的问题 [\#2229](https://github.com/youzan/vant/pull/2229)
 
 
-## [v1.4.8](https://github.com/youzan/vant/tree/v1.4.8)
+### [v1.4.8](https://github.com/youzan/vant/tree/v1.4.8)
 `2018-12-05`
 
 **Improvements**
@@ -554,7 +554,7 @@
 - 修复 ImagePreview 指示器颜色错误 [\#2187](https://github.com/youzan/vant/pull/2187)
 
 
-## [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
+### [v1.4.7](https://github.com/youzan/vant/tree/v1.4.7)
 `2018-11-27`
 
 **Improvements**
@@ -579,7 +579,7 @@
 
 PS: 不小心跳过了 1.4.6 版本  ^_^
 
-## [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
+### [v1.4.5](https://github.com/youzan/vant/tree/v1.4.5)
 `2018-11-23`
 
 **Improvements**
@@ -596,7 +596,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab swipe-threshold 属性小于 4 时不生效的问题 [\#2128](https://github.com/youzan/vant/pull/2128)
 
 
-## [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
+### [v1.4.4](https://github.com/youzan/vant/tree/v1.4.4)
 `2018-11-18`
 
 **Improvements**
@@ -616,7 +616,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Steps CSS 选择器优先级错误 [\#2072](https://github.com/youzan/vant/pull/2072)
 
 
-## [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
+### [v1.4.3](https://github.com/youzan/vant/tree/v1.4.3)
 `2018-11-10`
 
 **Improvements**
@@ -633,7 +633,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab 可以通过手势切换到禁用项的问题 [\#2064](https://github.com/youzan/vant/pull/2064)
 
 
-## [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
+### [v1.4.2](https://github.com/youzan/vant/tree/v1.4.2)
 `2018-11-04`
 
 **Breaking changes**
@@ -654,7 +654,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - Checkbox: 选中态颜色调整为蓝色 [\#2018](https://github.com/youzan/vant/pull/2018)
 
 
-## [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
+### [v1.3.10](https://github.com/youzan/vant/tree/v1.3.10)
 `2018-10-29`
 
 **Improvements**
@@ -672,7 +672,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Toast 在多实例模式下未正确销毁导致无法点击的问题 [\#1991](https://github.com/youzan/vant/pull/1991)
 
 
-## [v1.3.9](https://github.com/youzan/vant/tree/v1.3.9)
+### [v1.3.9](https://github.com/youzan/vant/tree/v1.3.9)
 `2018-10-24`
 
 **Improvements**
@@ -688,7 +688,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Sku 在部分浏览器下键盘弹出时遮挡输入框的问题 [\#1965](https://github.com/youzan/vant/pull/1965)
 
 
-## [v1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
+### [v1.3.8](https://github.com/youzan/vant/tree/v1.3.8)
 `2018-10-17`
 
 **Improvements**
@@ -708,7 +708,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 SubmitBar 按钮文字过大时显示不全的问题 [\#1940](https://github.com/youzan/vant/pull/1940)
 
 
-## [v1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
+### [v1.3.7](https://github.com/youzan/vant/tree/v1.3.7)
 `2018-10-12`
 
 **Improvements**
@@ -723,7 +723,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 SubmitBar 文字颜色
 
 
-## [v1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
+### [v1.3.6](https://github.com/youzan/vant/tree/v1.3.6)
 `2018-10-11`
 
 **Improvements**
@@ -735,7 +735,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Toast 设置 forbidClick 后出现点击高亮背景色的问题 [\#1914](https://github.com/youzan/vant/pull/1914)
 
 
-## [v1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
+### [v1.3.5](https://github.com/youzan/vant/tree/v1.3.5)
 `2018-10-10`
 
 **Improvements**
@@ -754,7 +754,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Swipe 多指触控时可能导致展示错误的问题 [\#1890](https://github.com/youzan/vant/pull/1890)
 
 
-## [v1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
+### [v1.3.4](https://github.com/youzan/vant/tree/v1.3.4)
 `2018-10-02`
 
 **Improvements**
@@ -772,7 +772,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Toast 类型定义错误 [\#1859](https://github.com/youzan/vant/pull/1859)
 
 
-## [v1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
+### [v1.3.3](https://github.com/youzan/vant/tree/v1.3.3)
 `2018-09-23`
 
 **Improvements**
@@ -789,7 +789,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tag 边框颜色错误的问题 [\#1834](https://github.com/youzan/vant/pull/1834)
 
 
-## [v1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
+### [v1.3.2](https://github.com/youzan/vant/tree/v1.3.2)
 `2018-09-14`
 
 **Improvements**
@@ -808,7 +808,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Dialog 缺少 className 类型定义的问题 [\#1799](https://github.com/youzan/vant/pull/1799)
 
 
-## [v1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
+### [v1.3.1](https://github.com/youzan/vant/tree/v1.3.1)
 `2018-09-07`
 
 **Improvements**
@@ -823,7 +823,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 webpack 1 无法引入 babel-runtime 的问题 [\#1753](https://github.com/youzan/vant/pull/1753)
 
 
-## [v1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
+### [v1.3.0](https://github.com/youzan/vant/tree/v1.3.0)
 `2018-08-31`
 
 **Breaking changes**
@@ -853,7 +853,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tabbar 使用 icon 插槽时 info 属性不生效的问题 [\#1705](https://github.com/youzan/vant/pull/1705)
 
 
-## [v1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
+### [v1.2.1](https://github.com/youzan/vant/tree/v1.2.1)
 `2018-08-24`
 
 **Improvements**
@@ -873,7 +873,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Popup 使用 get-conntainer 属性时不能被正确销毁的问题 [\#1665](https://github.com/youzan/vant/pull/1665)
 
 
-## [v1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
+### [v1.2.0](https://github.com/youzan/vant/tree/v1.2.0)
 `2018-08-20`
 
 **Breaking changes**
@@ -901,7 +901,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Icon size 属性不生效的问题 [\#1634](https://github.com/youzan/vant/pull/1634)
 
 
-## [v1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
+### [v1.1.16](https://github.com/youzan/vant/tree/v1.1.16)
 `2018-08-10`
 
 **Improvements**
@@ -917,7 +917,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 DatetimePicker 使用 formatter 时默认值错误的问题 [\#1591](https://github.com/youzan/vant/pull/1591)
 
 
-## [v1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
+### [v1.1.15](https://github.com/youzan/vant/tree/v1.1.15)
 `2018-08-03`
 
 **Improvements**
@@ -937,7 +937,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 van-clearfix 样式类未生效的问题 [\#1559](https://github.com/youzan/vant/pull/1559)
 - 修复 Tabbar 点击当前标签时依然会触发 change 事件的问题 [\#1571](https://github.com/youzan/vant/pull/1571)
 
-## [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
+### [v1.1.14](https://github.com/youzan/vant/tree/v1.1.14)
 `2018-07-19`
 
 **Improvements**
@@ -957,7 +957,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab sticky 属性在局部滚动元素下无法生效的问题 [\#1496](https://github.com/youzan/vant/pull/1496)
 
 
-## [v1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
+### [v1.1.13](https://github.com/youzan/vant/tree/v1.1.13)
 `2018-07-13`
 
 **Improvements**
@@ -977,7 +977,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 vue-lazyload 1.2.6 版本出现不兼容更新的问题，暂时降级至 1.2.3 版本 [\#1481](https://github.com/youzan/vant/pull/1481)
 
 
-## [v1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
+### [v1.1.12](https://github.com/youzan/vant/tree/v1.1.12)
 `2018-07-06`
 
 **Improvements**
@@ -996,7 +996,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 style 依赖丢失 [\#1426](https://github.com/youzan/vant/pull/1426)
 
 
-## [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
+### [v1.1.11](https://github.com/youzan/vant/tree/v1.1.11)
 `2018-07-04`
 
 **Improvements**
@@ -1018,7 +1018,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab 动态渲染时顺序错误的问题 [\#1372](https://github.com/youzan/vant/pull/1372)
 
 
-## [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
+### [v1.1.10](https://github.com/youzan/vant/tree/v1.1.10)
 `2018-06-28`
 
 **Breaking changes**
@@ -1041,7 +1041,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Sku 图片截断问题 [\#1334](https://github.com/youzan/vant/pull/1334)
 
 
-## [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
+### [v1.1.9](https://github.com/youzan/vant/tree/v1.1.9)
 `2018-06-22`
 
 **Improvements**
@@ -1059,7 +1059,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab 在屏幕尺寸变化时未重新渲染的问题 [\#1304](https://github.com/youzan/vant/pull/1304)
 
 
-## [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
+### [v1.1.8](https://github.com/youzan/vant/tree/v1.1.8)
 `2018-06-14`
 
 **Improvements**
@@ -1083,7 +1083,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Popup 内容过高时超出屏幕可视范围的问题 [\#1256](https://github.com/youzan/vant/pull/1256)
 
 
-## [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
+### [v1.1.7](https://github.com/youzan/vant/tree/v1.1.7)
 `2018-06-06`
 
 **Improvements**
@@ -1095,7 +1095,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - Document: 新增 ts-import-plugin 指引 [\#1230](https://github.com/youzan/vant/pull/1230)
 
 
-## [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
+### [v1.1.6](https://github.com/youzan/vant/tree/v1.1.6)
 `2018-06-01`
 
 **Improvements**
@@ -1114,7 +1114,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 AddressEdit 省市区弹层样式错误的问题 [\#1211](https://github.com/youzan/vant/pull/1211)
 
 
-## [v1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
+### [v1.1.5](https://github.com/youzan/vant/tree/v1.1.5)
 `2018-05-24`
 
 **Improvements**
@@ -1136,7 +1136,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Progress 文字超出边界的问题 [\#1135](https://github.com/youzan/vant/pull/1135)
 
 
-## [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
+### [v1.1.4](https://github.com/youzan/vant/tree/v1.1.4)
 `2018-05-18`
 
 **Improvements**
@@ -1157,7 +1157,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 icon 样式模板错误 [\#1091](https://github.com/youzan/vant/pull/1091)
 
 
-## [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
+### [v1.1.3](https://github.com/youzan/vant/tree/v1.1.3)
 `2018-05-12`
 
 **Improvements**
@@ -1177,7 +1177,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 ImagePreview 只有一张图片时无法关闭的问题 [\#1046](https://github.com/youzan/vant/pull/1046)
 
 
-## [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
+### [v1.1.2](https://github.com/youzan/vant/tree/v1.1.2)
 `2018-05-08`
 
 **Improvements**
@@ -1197,7 +1197,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Stepper integer 属性拼写错误 [\#992](https://github.com/youzan/vant/pull/992)
 
 
-## [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
+### [v1.1.1](https://github.com/youzan/vant/tree/v1.1.1)
 `2018-05-04`
 
 **Improvements**
@@ -1216,7 +1216,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Search 在 iOS 下文字被遮挡的问题 [\#974](https://github.com/youzan/vant/pull/974)
 
 
-## [v1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
+### [v1.1.0](https://github.com/youzan/vant/tree/v1.1.0)
 `2018-04-25`
 
 **Improvements**
@@ -1241,7 +1241,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Picker 在系统字体大小缩放时布局错乱的问题 [\#916](https://github.com/youzan/vant/pull/916)
 
 
-## [v1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
+### [v1.0.8](https://github.com/youzan/vant/tree/v1.0.8)
 `2018-04-20`
 
 **Improvements**
@@ -1254,14 +1254,14 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Popup lock-scroll 属性在 iOS 下无效的问题 [\#891](https://github.com/youzan/vant/pull/891)
 
 
-## [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
+### [v1.0.7](https://github.com/youzan/vant/tree/v1.0.7)
 `2018-04-17`
 
 **Bug Fixes**
 
 * 修复构建结果 lib 目录下样式丢失的问题
 
-## [v1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
+### [v1.0.6](https://github.com/youzan/vant/tree/v1.0.6)
 `2018-04-17`
 
 **Improvements**
@@ -1275,7 +1275,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 DatetimePicker change 事件参数错误 [\#878](https://github.com/youzan/vant/pull/878)
 
-## [v1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
+### [v1.0.5](https://github.com/youzan/vant/tree/v1.0.5)
 `2018-04-13`
 
 **Improvements**
@@ -1295,7 +1295,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Swipe 为uch 事件冒泡问题 [\#846](https://github.com/youzan/vant/pull/846)
 
 
-## [v1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
+### [v1.0.4](https://github.com/youzan/vant/tree/v1.0.4)
 `2018-04-10`
 
 **Improvements**
@@ -1315,7 +1315,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Sku row 行高错误 [\#840](https://github.com/youzan/vant/pull/840)
 
 
-## [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
+### [v1.0.3](https://github.com/youzan/vant/tree/v1.0.3)
 `2018-03-26`
 
 **Improvements**
@@ -1329,7 +1329,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tag 文字在部分安卓手机上未垂直居中的问题 [\#773](https://github.com/youzan/vant/pull/773)
 - 修复 Toast 遮罩层在某些情况下无法收起的问题 [\#762](https://github.com/youzan/vant/pull/762)
 
-## [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
+### [v1.0.2](https://github.com/youzan/vant/tree/v1.0.2)
 `2018-03-22`
 
 **Improvements**
@@ -1348,7 +1348,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Tab 内容无法点击的问题 [\#749](https://github.com/youzan/vant/pull/749)
 
 
-## [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
+### [v1.0.1](https://github.com/youzan/vant/tree/v1.0.1)
 `2018-03-19`
 
 **Bug Fixes**
@@ -1356,7 +1356,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 create 模块循环引用导致某些情况下编译错误的问题 [\#728](https://github.com/youzan/vant/pull/728)
 
 
-## [v1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
+### [v1.0.0](https://github.com/youzan/vant/tree/v1.0.0)
 `2018-03-19`
 
 **Breaking changes**
@@ -1389,14 +1389,14 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Stepper value 溢出的问题 [\#691](https://github.com/youzan/vant/issues/691)
 * 修复 Sidebar 选中时字体粗细 [\#687](https://github.com/youzan/vant/pull/687)
 
-## [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
+### [v0.12.14](https://github.com/youzan/vant/tree/v0.12.14)
 `2018-03-09`
 
 **Bug Fixes**
 * Area: 修复 area-list 更新时未正确选中省市区的问题 [\#678](https://github.com/youzan/vant/pull/678)
 
 
-## [v0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
+### [v0.12.13](https://github.com/youzan/vant/tree/v0.12.13)
 `2018-03-09`
 
 **Improvements**
@@ -1408,7 +1408,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 CouponList 文字截断的问题 [\#675](https://github.com/youzan/vant/pull/675)
 
 
-## [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
+### [v0.12.12](https://github.com/youzan/vant/tree/v0.12.12)
 `2018-03-06`
 
 **Improvements**
@@ -1422,7 +1422,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Field 在 safari 下禁用态颜色过浅的问题 [\#669](https://github.com/youzan/vant/pull/669)
 * 修复 Swipe au为play 设置为 0 时不会立刻取消的问题 [\#660](https://github.com/youzan/vant/pull/660)
 
-## [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
+### [v0.12.11](https://github.com/youzan/vant/tree/v0.12.11)
 `2018-02-27`
 
 **Improvements**
@@ -1436,7 +1436,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 But为n loading 样式未居中的问题 [\#645](https://github.com/youzan/vant/pull/645)
 
-## [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
+### [v0.12.10](https://github.com/youzan/vant/tree/v0.12.10)
 `2018-02-12`
 
 **Improvements**
@@ -1449,7 +1449,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 *  Stepper: 修复清空输入框时 change 事件未正确触发的问题 [\#635](https://github.com/youzan/vant/pull/635)
 
-## [v0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
+### [v0.12.9](https://github.com/youzan/vant/tree/v0.12.9)
 `2018-02-08`
 
 **Improvements**
@@ -1465,7 +1465,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Sku message 更新时未重新渲染的问题 [\#627](https://github.com/youzan/vant/pull/627)
 
 
-## [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
+### [v0.12.8](https://github.com/youzan/vant/tree/v0.12.8)
 `2018-02-07`
 
 **Improvements**
@@ -1481,7 +1481,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 TreeSelect 箭头位置错误 [\#605](https://github.com/youzan/vant/pull/605)
 
 
-## [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
+### [v0.12.7](https://github.com/youzan/vant/tree/v0.12.7)
 `2018-01-31`
 
 **Improvements**
@@ -1494,7 +1494,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Field label 多行时样式错误的问题 [\#583](https://github.com/youzan/vant/pull/583)
 
 
-## [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
+### [v0.12.6](https://github.com/youzan/vant/tree/v0.12.6)
 `2018-01-25`
 
 **Improvements**
@@ -1510,7 +1510,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 - 修复 Tab active 在初始化时未生效的问题 [\#572](https://github.com/youzan/vant/pull/572)
 
 
-## [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
+### [v0.12.5](https://github.com/youzan/vant/tree/v0.12.5)
 `2018-01-23`
 
 **Improvements**
@@ -1525,7 +1525,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Cell: 修复 required 样式错误的问题 [\#553](https://github.com/youzan/vant/pull/553)
 
 
-## [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
+### [v0.12.4](https://github.com/youzan/vant/tree/v0.12.4)
 `2018-01-18`
 
 **Improvements**
@@ -1539,7 +1539,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Stepper: 修改 value 值时不触发 change 事件 [\#546](https://github.com/youzan/vant/pull/546)
 * Picker: 修复 visibleItemCount 属性拼写错误 [\#549](https://github.com/youzan/vant/pull/549)
 
-## [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
+### [v0.12.3](https://github.com/youzan/vant/tree/v0.12.3)
 
 `2018-01-12`
 
@@ -1555,7 +1555,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Picker 点击选项时无法触发 change 事件的问题 [\#532](https://github.com/youzan/vant/pull/532)
 * 修复 PullRefresh 在横向滑动时也会触发的问题 [\#521](https://github.com/youzan/vant/pull/521)
 
-## [v0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
+### [v0.12.2](https://github.com/youzan/vant/tree/v0.12.2)
 
 `2018-01-08`
 
@@ -1566,7 +1566,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * NoticeBar: 修复 text 属性变化时未重新计算的问题 [\#515](https://github.com/youzan/vant/pull/515)
 * AddressEdit: 修复搜索结果样式错误 [\#514](https://github.com/youzan/vant/pull/514)
 
-## [v0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
+### [v0.12.1](https://github.com/youzan/vant/tree/v0.12.1)
 
 `2018-01-05`
 
@@ -1582,7 +1582,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 CouponList 输入框样式错误 [\#502](https://github.com/youzan/vant/pull/502)
 * 修复 Radio 图标无法点击的问题 [\#505](https://github.com/youzan/vant/pull/505)
 
-## [v0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
+### [v0.12.0](https://github.com/youzan/vant/tree/v0.12.0)
 
 `2017-12-29`
 
@@ -1601,7 +1601,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Tab 使用 sticky 时高度计算错误的问题 [\#493](https://github.com/youzan/vant/pull/493)
 * 修复组件使用 $attrs 时继承的问题 [\#488](https://github.com/youzan/vant/pull/488)
 
-## [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
+### [v0.11.15](https://github.com/youzan/vant/tree/v0.11.15)
 
 `2017-12-25`
 
@@ -1618,7 +1618,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复使用 popup mixin 的组件未设定 props 类型的问题 [\#468](https://github.com/youzan/vant/pull/468)
 * 修复 package.json 配置中未包含 types 目录的问题 [\#462](https://github.com/youzan/vant/pull/462)
 
-## [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
+### [v0.11.14](https://github.com/youzan/vant/tree/v0.11.14)
 
 `2017-12-21`
 
@@ -1632,7 +1632,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复全局引入样式时 Cell 箭头错位的问题
 
-## [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
+### [v0.11.13](https://github.com/youzan/vant/tree/v0.11.13)
 
 `2017-12-19`
 
@@ -1649,7 +1649,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 GoodsAction 在小屏下文字显示不全的问题 [\#446](https://github.com/youzan/vant/pull/446)
 
-## [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
+### [v0.11.12](https://github.com/youzan/vant/tree/v0.11.12)
 
 `2017-12-15`
 
@@ -1665,7 +1665,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Picker 底部区域无法滑动的问题 [\#433](https://github.com/youzan/vant/pull/433)
 * 修复 PullRefresh 顶部内容遮挡的问题 [\#436](https://github.com/youzan/vant/pull/436)
 
-## [v0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
+### [v0.11.11](https://github.com/youzan/vant/tree/v0.11.11)
 
 `2017-12-13`
 
@@ -1682,7 +1682,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Checkbox 在 CheckboxGroup 内时 disabled 属性无法生效的问题 [\#425](https://github.com/youzan/vant/pull/425)
 * 修复 AddressEdit 搜索结果展示错误 [\#417](https://github.com/youzan/vant/pull/417)
 
-## [v0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
+### [v0.11.10](https://github.com/youzan/vant/tree/v0.11.10)
 
 `2017-12-12`
 
@@ -1695,7 +1695,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * Icon: 修复 'shopping-cart' 图标高度不居中的问题 [\#415](https://github.com/youzan/vant/pull/415)
 
-## [v0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
+### [v0.11.9](https://github.com/youzan/vant/tree/v0.11.9)
 
 `2017-12-11`
 
@@ -1709,7 +1709,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 raf SSR 报错的问题 [\#405](https://github.com/youzan/vant/pull/405)
 * 修复 NoticeBar animationend 事件兼容问题 [\#402](https://github.com/youzan/vant/pull/402)
 
-## [v0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
+### [v0.11.8](https://github.com/youzan/vant/tree/v0.11.8)
 
 `2017-12-08`
 
@@ -1723,7 +1723,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Tab: 修复 safari 下的滚动条问题 [\#390](https://github.com/youzan/vant/pull/390)
 * Tab: 修复 active 标签不能自动居中的问题 [\#394](https://github.com/youzan/vant/pull/394)
 
-## [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
+### [v0.11.7](https://github.com/youzan/vant/tree/v0.11.7)
 
 `2017-12-07`
 
@@ -1735,7 +1735,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 Tab 初始标签滚动位置 [\#389](https://github.com/youzan/vant/pull/389) [chenjiahan](https://github.com/chenjiahan)
 
-## [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
+### [v0.11.6](https://github.com/youzan/vant/tree/v0.11.6)
 
 `2017-12-07`
 
@@ -1754,7 +1754,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Radio & Checkbox 禁用态样式 [\#383](https://github.com/youzan/vant/pull/383)
 * 修复 Field disabled 在安卓下的显示问题 [\#388](https://github.com/youzan/vant/pull/388)
 
-## [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
+### [v0.11.5](https://github.com/youzan/vant/tree/v0.11.5)
 
 `2017-12-04`
 
@@ -1768,7 +1768,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 Tab 删除时未自动切换 active 值的问题 [\#372](https://github.com/youzan/vant/pull/372)
 
-## [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
+### [v0.11.4](https://github.com/youzan/vant/tree/v0.11.4)
 
 `2017-11-30`
 
@@ -1777,7 +1777,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 新增类型定义文件，增强对 TypeScript 支持 [\#361](https://github.com/youzan/vant/pull/361)
 * Toast/Dialog 自动挂载至 Vue.pro为type, 支持 this.$为ast 等方式调用 [\#363](https://github.com/youzan/vant/pull/363)
 
-## [v0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
+### [v0.11.3](https://github.com/youzan/vant/tree/v0.11.3)
 
 `2017-11-28`
 
@@ -1791,7 +1791,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Uploader: 支持继承原生属性 [\#357](https://github.com/youzan/vant/pull/357)
 * 优化本地构建速度 [\#355](https://github.com/youzan/vant/pull/355)
 
-## [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
+### [v0.11.2](https://github.com/youzan/vant/tree/v0.11.2)
 
 `2017-11-24`
 
@@ -1799,7 +1799,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * Icon: 增加 7 个新图标 [\#351](https://github.com/youzan/vant/pull/351)
 
-## [v0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
+### [v0.11.1](https://github.com/youzan/vant/tree/v0.11.1)
 
 `2017-11-24`
 
@@ -1820,7 +1820,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 SSR 过程中报错的问题 [\#344](https://github.com/youzan/vant/pull/344)
 * 修复 DateTimePicker 接受非法参数时卡死的问题 [\#333](https://github.com/youzan/vant/pull/333)
 
-## [v0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
+### [v0.11.0](https://github.com/youzan/vant/tree/v0.11.0)
 
 `2017-11-17`
 
@@ -1836,7 +1836,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 新增国际化文档 [\#321](https://github.com/youzan/vant/pull/321)
 * Icon: add-o 图标更正为圆角 [\#326](https://github.com/youzan/vant/pull/326)
 
-## [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9)
+### [v0.10.9](https://github.com/youzan/vant/tree/v0.10.9)
 
 `2017-11-15`
 
@@ -1848,7 +1848,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * Search: 修复 box-sizing 错误 [\#312](https://github.com/youzan/vant/pull/312)
 
-## [v0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
+### [v0.10.8](https://github.com/youzan/vant/tree/v0.10.8)
 
 `2017-11-11`
 
@@ -1866,7 +1866,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 npm run dist 在 windows 下报错的问题 [\#301](https://github.com/youzan/vant/pull/301)
 
-## [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
+### [v0.10.7](https://github.com/youzan/vant/tree/v0.10.7)
 
 `2017-11-08`
 
@@ -1880,7 +1880,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Sku 滚动锁定问题 [\#291](https://github.com/youzan/vant/pull/291)
 * 修复 Steps 超过四项时样式错误 [\#287](https://github.com/youzan/vant/pull/287)
 
-## [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
+### [v0.10.6](https://github.com/youzan/vant/tree/v0.10.6)
 
 `2017-11-06`
 
@@ -1894,7 +1894,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Tab 动态生成问题 [\#284](https://github.com/youzan/vant/pull/284)
 * 修复 NoticeBar 在页面返回时文字消失的问题 [\#280](https://github.com/youzan/vant/pull/280)
 
-## [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
+### [v0.10.5](https://github.com/youzan/vant/tree/v0.10.5)
 
 `2017-10-30`
 
@@ -1907,7 +1907,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Tabbar 使用 icon 插槽时 info prop 失效的问题 [\#269](https://github.com/youzan/vant/pull/269)
 * 修复 Uploader input 类型错误 [\#265](https://github.com/youzan/vant/pull/265)
 
-## [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
+### [v0.10.4](https://github.com/youzan/vant/tree/v0.10.4)
 
 `2017-10-26`
 
@@ -1924,7 +1924,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 PullRefreash 父元素可滚动时无法正常运行的问题 [\#247](https://github.com/youzan/vant/pull/247)
 * 修复 CouponList 空列表样式一直存在的问题 [\#246](https://github.com/youzan/vant/pull/246)
 
-## [v0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
+### [v0.10.3](https://github.com/youzan/vant/tree/v0.10.3)
 
 `2017-10-25`
 
@@ -1942,7 +1942,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 popup 被依赖时未自动引入样式的问题 [\#231](https://github.com/youzan/vant/pull/231)
 * 修复 PullRefresh 为uchcancel 事件名拼写错误 [\#239](https://github.com/youzan/vant/pull/239)
 
-## [v0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
+### [v0.10.2](https://github.com/youzan/vant/tree/v0.10.2)
 
 `2017-10-20`
 
@@ -1955,7 +1955,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复组件间样式依赖分析遗漏的问题 [\#224](https://github.com/youzan/vant/pull/224)
 
-## [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
+### [v0.10.1](https://github.com/youzan/vant/tree/v0.10.1)
 
 `2017-10-18`
 
@@ -1973,7 +1973,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Popup modal 层在某些情况下无法展示的问题 [\#211](https://github.com/youzan/vant/pull/211)
 * 修复 Waterfall 重复绑定事件的问题
 
-## [v0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
+### [v0.10.0](https://github.com/youzan/vant/tree/v0.10.0)
 
 `2017-10-13`
 
@@ -1994,7 +1994,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 ImagePreview 图片加载过程中跳动的问题 [\#201](https://github.com/youzan/vant/pull/201)
 * 修复 Field 组件 type 为 textarea 且 display none 时高度计算错误的问题 [\#181](https://github.com/youzan/vant/issues/181)
 
-## [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12)
+### [v0.9.12](https://github.com/youzan/vant/tree/v0.9.12)
 
 `2017-10-11`
 
@@ -2002,7 +2002,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 Search 样式问题 [\#191](https://github.com/youzan/vant/pull/191)
 
-## [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
+### [v0.9.11](https://github.com/youzan/vant/tree/v0.9.11)
 
 `2017-10-11`
 
@@ -2016,7 +2016,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Field type 为 textarea 且 display none 时高度计算错误的问题 [\#188](https://github.com/youzan/vant/pull/188)
 * 修复 windows 下项目编译失败的问题 [\#185](https://github.com/youzan/vant/pull/182)
 
-## [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
+### [v0.9.10](https://github.com/youzan/vant/tree/v0.9.10)
 
 `2017-10-09`
 
@@ -2040,7 +2040,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复文档在部分低版本浏览器路由失效的问题 [\#158](https://github.com/youzan/vant/pull/158)
 * 修复文档中遗漏 SwipeItem 组件引入方式的问题 [\#167](https://github.com/youzan/vant/pull/167)
 
-## [v0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
+### [v0.9.9](https://github.com/youzan/vant/tree/v0.9.9)
 
 `2017-09-26`
 
@@ -2053,7 +2053,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 packages.json 中 license 标注错误 [\#144](https://github.com/youzan/vant/pull/144)
 * 修复 Waterfall 滚动计算错误的问题 [\#145](https://github.com/youzan/vant/pull/145)
 
-## [v0.9.8](https://github.com/youzan/vant/tree/v0.9.8)
+### [v0.9.8](https://github.com/youzan/vant/tree/v0.9.8)
 
 `2017-09-24`
 
@@ -2066,7 +2066,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 Sku 留言渲染错误 [\#142](https://github.com/youzan/vant/pull/142)
 
-## [v0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
+### [v0.9.7](https://github.com/youzan/vant/tree/v0.9.7)
 
 `2017-09-21`
 
@@ -2074,7 +2074,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * Checkbox: 支持 shape 属性 [\#137](https://github.com/youzan/vant/pull/137)
 
-## [v0.9.6](https://github.com/youzan/vant/tree/v0.9.6)
+### [v0.9.6](https://github.com/youzan/vant/tree/v0.9.6)
 
 `2017-09-20`
 
@@ -2088,7 +2088,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 ImagePreview 滑动后无法展示图片的问题 [\#126](https://github.com/youzan/vant/issues/126)
 * 修复 reset.css 编译失败的问题 [\#136](https://github.com/youzan/vant/pull/136)
 
-## [v0.9.4](https://github.com/youzan/vant/tree/v0.9.4)
+### [v0.9.4](https://github.com/youzan/vant/tree/v0.9.4)
 
 `2017-09-15`
 
@@ -2101,7 +2101,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 But为n 同时使用 disabled 和 bot为mAction 属性时颜色错误的问题 [\#131](https://github.com/youzan/vant/pull/131)
 * 修复 But为n 不可用状态下 acitive 背景色错误的问题 [\#132](https://github.com/youzan/vant/pull/132)
 
-## [v0.9.3](https://github.com/youzan/vant/tree/v0.9.3)
+### [v0.9.3](https://github.com/youzan/vant/tree/v0.9.3)
 
 `2017-09-13`
 
@@ -2115,7 +2115,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复部分组件样式依赖 reset.css 的问题 [\#128](https://github.com/youzan/vant/pull/128)
 
-## [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2)
+### [v0.9.2](https://github.com/youzan/vant/tree/v0.9.2)
 
 `2017-09-08`
 
@@ -2147,7 +2147,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Toast: 支持 loading 和 text 属性同时使用，优化渲染性能 [\#114](https://github.com/youzan/vant/pull/114)
 * Toast：布局方式改为 Flex 布局 [\#114](https://github.com/youzan/vant/pull/114)
 
-## [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8)
+### [v0.8.8](https://github.com/youzan/vant/tree/v0.8.8)
 
 `2017-09-01`
 
@@ -2164,7 +2164,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 make init 命令报错的问题 [\#97](https://github.com/youzan/vant/pull/97)
 
-## [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7)
+### [v0.8.7](https://github.com/youzan/vant/tree/v0.8.7)
 
 `2017-08-29`
 
@@ -2176,7 +2176,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Progress: 简化 DOM 结构 [\#90](https://github.com/youzan/vant/pull/90)
 * SwipeCell: 性能优化，补充单元测试 [\#91](https://github.com/youzan/vant/pull/91)
 
-## [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6)
+### [v0.8.6](https://github.com/youzan/vant/tree/v0.8.6)
 
 `2017-08-24`
 
@@ -2191,7 +2191,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复 DatetimePicker 初始值错误的问题 [\#89](https://github.com/youzan/vant/pull/89)
 
-## [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5)
+### [v0.8.5](https://github.com/youzan/vant/tree/v0.8.5)
 
 `2017-08-21`
 
@@ -2211,7 +2211,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Field au为size 高度错误的问题 [\#78](https://github.com/youzan/vant/pull/78)
 * 修复 Dialog z-index 错误的问题 [\#77](https://github.com/youzan/vant/pull/77)
 
-## [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8)
+### [v0.7.8](https://github.com/youzan/vant/tree/v0.7.8)
 
 `2017-08-10`
 
@@ -2227,7 +2227,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 DatetimePicker cancel 事件无法触发的问题 [\#45](https://github.com/youzan/vant/issues/45)
 * 修复 utils 编译时未转成 ES5 的问题 [\#67](https://github.com/youzan/vant/pull/67)
 
-## [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2)
+### [v0.7.2](https://github.com/youzan/vant/tree/v0.7.2)
 
 `2017-07-31`
 
@@ -2246,7 +2246,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Switch：增加过渡动画效果 [\#59](https://github.com/youzan/vant/pull/59) [BosenY](https://github.com/BosenY)
 * Card：支持 centered 属性 [\#54](https://github.com/youzan/vant/pull/54)
 
-## [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6)
+### [v0.6.6](https://github.com/youzan/vant/tree/v0.6.6)
 
 `2017-07-15`
 
@@ -2257,7 +2257,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * Card：支持 thumb 插槽 [\#48](https://github.com/youzan/vant/pull/48)
 * Field：支持 blur 事件，新增 icon 插槽 [\#53](https://github.com/youzan/vant/pull/53)
 
-## [v0.6.2](https://github.com/youzan/vant/tree/v0.6.2)
+### [v0.6.2](https://github.com/youzan/vant/tree/v0.6.2)
 
 `2017-06-26`
 
@@ -2270,7 +2270,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 修复 Toast 样式问题 [\#42](https://github.com/youzan/vant/pull/42)
 * 修复人民币符号在 iOS 下显示问题 [\#44](https://github.com/youzan/vant/pull/44)
 
-## [v0.6.0](https://github.com/youzan/vant/tree/v0.6.0)
+### [v0.6.0](https://github.com/youzan/vant/tree/v0.6.0)
 
 `2017-06-15`
 
@@ -2281,7 +2281,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 新增 SwipeCell 组件 [\#39](https://github.com/youzan/vant/pull/39)
 * 新增 Search 组件微杂志样式 [\#38](https://github.com/youzan/vant/pull/38)
 
-## [v0.5.8](https://github.com/youzan/vant/tree/v0.5.8)
+### [v0.5.8](https://github.com/youzan/vant/tree/v0.5.8)
 
 `2017-05-25`
 
@@ -2296,7 +2296,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 
 * 修复长按图片后隐藏的问题 [\#32](https://github.com/youzan/vant/pull/32)
 
-## [v0.5.4](https://github.com/youzan/vant/tree/v0.5.4)
+### [v0.5.4](https://github.com/youzan/vant/tree/v0.5.4)
 
 `2017-05-09`
 
@@ -2311,7 +2311,7 @@ PS: 不小心跳过了 1.4.6 版本  ^_^
 * 新增 reset.css [\#27](https://github.com/youzan/vant/pull/27)
 * Cell: 新增 right-icon 插槽 [\#27](https://github.com/youzan/vant/pull/27)
 
-## [v0.5.2](https://github.com/youzan/vant/tree/v0.5.2)
+### [v0.5.2](https://github.com/youzan/vant/tree/v0.5.2)
 
 `2017-04-26`
 

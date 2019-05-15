@@ -1,15 +1,16 @@
-## Stepper
+# Stepper
 
 ### Install
+
 ``` javascript
 import { Stepper } from 'vant';
 
 Vue.use(Stepper);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-stepper v-model="value" />
@@ -25,13 +26,13 @@ export default {
 }
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-stepper v-model="value" disabled />
 ```
 
-#### Async Change
+### Async Change
 
 ```html
 <van-stepper
@@ -65,7 +66,7 @@ export default {
 }
 ```
 
-#### Advanced Usage
+### Advanced Usage
 
 ```html
 <van-stepper
@@ -77,6 +78,8 @@ export default {
   :default-value="9"
 />
 ```
+
+## API
 
 ### Props
 

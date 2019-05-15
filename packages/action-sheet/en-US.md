@@ -1,4 +1,4 @@
-## ActionSheet
+# ActionSheet
 
 ### Install
 ``` javascript
@@ -7,9 +7,9 @@ import { ActionSheet } from 'vant';
 Vue.use(ActionSheet);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Use `actions` prop to set options of action-sheet. 
 
@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-#### Status
+### Status
 
 ```html
 <van-action-sheet
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-#### ActionSheet with cancel button
+### ActionSheet with cancel button
 
 ```html
 <van-action-sheet
@@ -79,13 +79,15 @@ export default {
 />
 ```
 
-#### ActionSheet with title
+### ActionSheet with title
 
 ```html
 <van-action-sheet v-model="show" title="Title">
   <p>Content</p>
 </van-action-sheet>
 ```
+
+## API
 
 ### Props
 

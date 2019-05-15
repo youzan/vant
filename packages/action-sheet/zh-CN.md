@@ -1,15 +1,15 @@
-## ActionSheet 上拉菜单
+# ActionSheet 上拉菜单
 
-### 使用指南
+### 引入
 ``` javascript
 import { ActionSheet } from 'vant';
 
 Vue.use(ActionSheet);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 `ActionSheet`通过`actions`数组来定义展示的选项，数组的每一项是一个对象，对象属性见文档下方表格。
 
@@ -44,7 +44,7 @@ export default {
 }
 ```
 
-#### 选项状态
+### 选项状态
 
 选项可以设置为加载状态或禁用状态
 
@@ -70,7 +70,7 @@ export default {
 }
 ```
 
-#### 展示取消按钮
+### 展示取消按钮
 
 设置`cancelText`属性后，会在底部展示取消按钮，点击后关闭当前菜单
 
@@ -84,7 +84,7 @@ export default {
 />
 ```
 
-#### 展示标题栏
+### 展示标题栏
 
 通过设置`title`属性展示标题栏，同时可以使用插槽自定义菜单内容
 
@@ -93,6 +93,8 @@ export default {
   <p>内容</p>
 </van-action-sheet>
 ```
+
+## API
 
 ### Props
 

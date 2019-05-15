@@ -1,15 +1,16 @@
-## SubmitBar 提交订单栏
+# SubmitBar 提交订单栏
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { SubmitBar } from 'vant';
 
 Vue.use(SubmitBar);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-submit-bar
@@ -19,7 +20,7 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### 禁用状态
+### 禁用状态
 
 禁用状态下不会触发`submit`事件
 
@@ -34,7 +35,7 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### 加载状态
+### 加载状态
 
 加载状态下不会触发`submit`事件
 
@@ -47,7 +48,7 @@ Vue.use(SubmitBar);
 />
 ```
 
-#### 高级用法
+### 高级用法
 
 通过插槽插入自定义内容
 
@@ -63,6 +64,8 @@ Vue.use(SubmitBar);
   </span>
 </van-submit-bar>
 ```
+
+## API
 
 ### Props
 

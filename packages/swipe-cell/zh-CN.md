@@ -1,15 +1,16 @@
-## SwipeCell 滑动单元格
+# SwipeCell 滑动单元格
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { SwipeCell } from 'vant';
 
 Vue.use(SwipeCell);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-swipe-cell :right-width="65" :left-width="65">
@@ -21,7 +22,7 @@ Vue.use(SwipeCell);
 </van-swipe-cell>
 ```
 
-#### 异步关闭
+### 异步关闭
 
 ```html
 <van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
@@ -55,6 +56,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

@@ -1,15 +1,16 @@
-## Button 按钮
+# Button 按钮
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Button } from 'vant';
 
 Vue.use(Button);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 按钮类型
+### 按钮类型
 
 支持`default`、`primary`、`info`、`warning`、`danger`五种类型，默认为`default`
 
@@ -21,7 +22,7 @@ Vue.use(Button);
 <van-button type="danger">危险按钮</van-button>
 ```
 
-#### 朴素按钮
+### 朴素按钮
 
 通过`plain`属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
 
@@ -30,7 +31,7 @@ Vue.use(Button);
 <van-button plain type="danger">朴素按钮</van-button>
 ```
 
-#### 细边框
+### 细边框
 
 设置`hairline`属性可以开启 0.5px 边框，基于伪类实现
 
@@ -39,7 +40,7 @@ Vue.use(Button);
 <van-button plain hairline type="danger">细边框按钮</van-button>
 ```
 
-#### 禁用状态
+### 禁用状态
 
 通过`disabled`属性来禁用按钮，此时按钮不可点击
 
@@ -48,7 +49,7 @@ Vue.use(Button);
 <van-button disabled type="danger">禁用状态</van-button>
 ```
 
-#### 加载状态
+### 加载状态
 
 ```html 
 <van-button loading type="primary" />
@@ -60,14 +61,14 @@ Vue.use(Button);
 />
 ```
 
-#### 按钮形状
+### 按钮形状
 
 ```html 
 <van-button square type="primary">方形按钮</van-button>
 <van-button round type="danger">圆形按钮</van-button>
 ```
 
-#### 按钮尺寸
+### 按钮尺寸
 
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
@@ -77,6 +78,8 @@ Vue.use(Button);
 <van-button size="small">小型按钮</van-button>
 <van-button size="mini">迷你按钮</van-button>
 ```
+
+## API
 
 ### Props
 

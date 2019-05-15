@@ -1,15 +1,16 @@
-## Switch
+# Switch
 
 ### Install
+
 ``` javascript
 import { Switch } from 'vant';
 
 Vue.use(Switch);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-switch v-model="checked" />
@@ -25,7 +26,7 @@ export default {
 };  
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-switch
@@ -34,7 +35,7 @@ export default {
 />
 ```
 
-#### Loading
+### Loading
 
 ```html
 <van-switch
@@ -43,7 +44,7 @@ export default {
 />
 ```
 
-#### Custom Size
+### Custom Size
 
 ```html
 <van-switch
@@ -52,7 +53,7 @@ export default {
 />
 ```
 
-#### Custom Color
+### Custom Color
 
 ```html
 <van-switch
@@ -62,7 +63,7 @@ export default {
 />
 ```
 
-#### Async Control
+### Async Control
 
 ```html
 <van-switch
@@ -91,6 +92,8 @@ export default {
   }
 };  
 ```
+
+## API
 
 ### Props
 

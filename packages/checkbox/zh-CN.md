@@ -1,15 +1,15 @@
-## Checkbox 复选框
+# Checkbox 复选框
 
-### 使用指南
+### 引入
 ``` javascript
 import { Checkbox, CheckboxGroup } from 'vant';
 
 Vue.use(Checkbox).use(CheckboxGroup);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 通过`v-model`绑定 checkbox 的勾选状态
 
@@ -27,19 +27,19 @@ export default {
 };
 ```
 
-#### 禁用状态
+### 禁用状态
 
 ```html
 <van-checkbox v-model="checked" disabled>复选框</van-checkbox>
 ```
 
-#### 自定义颜色
+### 自定义颜色
 
 ```html
 <van-checkbox v-model="checked" checked-color="#07c160">复选框</van-checkbox>
 ```
 
-#### 自定义图标
+### 自定义图标
 
 通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
 
@@ -66,7 +66,7 @@ export default {
 }
 ```
 
-#### 复选框组
+### 复选框组
 
 与`van-checkbox-group`一起使用，选中值是一个数组，通过`v-model`绑定在`van-checkbox-group`上，数组中的项即为选中的`Checkbox`的`name`属性设置的值
 
@@ -93,7 +93,7 @@ export default {
 };
 ```
 
-#### 设置最大可选数
+### 设置最大可选数
 
 ```html
 <van-checkbox-group v-model="result" :max="2">
@@ -107,7 +107,7 @@ export default {
 </van-checkbox-group>
 ```
 
-#### 搭配单元格组件使用
+### 搭配单元格组件使用
 
 此时你需要再引入`Cell`和`CellGroup`组件，并通过 checkbox 的 toggle 方法手动触发切换
 
@@ -136,6 +136,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Checkbox Props
 

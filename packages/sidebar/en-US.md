@@ -1,4 +1,4 @@
-## Sidebar
+# Sidebar
 
 ### Install
 
@@ -9,9 +9,9 @@ Vue.use(Sidebar);
 Vue.use(SidebarItem);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Use `active-key` prop to set index of chosen item
 
@@ -39,6 +39,8 @@ export default {
   }
 };
 ```
+
+## API
 
 ### Sidebar Props
 

@@ -1,15 +1,15 @@
-## Card 卡片
+# Card 卡片
 
-### 使用指南
+### 引入
 ``` javascript
 import { Card } from 'vant';
 
 Vue.use(Card);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-card
@@ -21,7 +21,7 @@ Vue.use(Card);
 />
 ```
 
-#### 高级用法
+### 高级用法
 
 可以通过具名插槽添加定制内容
 
@@ -41,6 +41,8 @@ Vue.use(Card);
   </div>
 </van-card>
 ```
+
+## API
 
 ### Props
 

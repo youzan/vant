@@ -1,14 +1,16 @@
-## Slider
+# Slider
 
 ### Install
+
 ``` javascript
 import { Slider } from 'vant';
 
 Vue.use(Slider);
 ```
 
-### Usage
-#### Basic Usage
+## Usage
+
+### Basic Usage
 
 ```html
 <van-slider v-model="value" @change="onChange" />
@@ -30,25 +32,25 @@ export default {
 };
 ```
 
-#### Range
+### Range
 
 ```html
 <van-slider v-model="value" :min="10" :max="90" />
 ```
 
-#### Disabled
+### Disabled
 
 ```html
 <van-slider v-model="value" disabled />
 ```
 
-#### Step size
+### Step size
 
 ```html
 <van-slider v-model="value" :step="10" />
 ```
 
-#### Custom style
+### Custom style
 
 ```html
 <van-slider
@@ -58,7 +60,7 @@ export default {
 />
 ```
 
-#### Custom button
+### Custom button
 
 ```html
 <van-slider
@@ -74,13 +76,15 @@ export default {
 </van-slider>
 ```
 
-#### Vertical
+### Vertical
 
 ```html
 <div :style="{ height: '100px' }">
   <van-slider v-model="value" vertical />
 </div>
 ```
+
+## API
 
 ### Props
 

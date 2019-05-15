@@ -1,15 +1,16 @@
-## Steps
+# Steps
 
 ### Install
+
 ``` javascript
 import { Step, Steps } from 'vant';
 
 Vue.use(Step).use(Steps);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-steps :active="active">
@@ -30,7 +31,7 @@ export default {
 }
 ```
 
-#### Custom Style
+### Custom Style
 
 ```html
 <van-steps
@@ -45,7 +46,7 @@ export default {
 </van-steps>
 ```
 
-#### Vertical Steps
+### Vertical Steps
 
 ```html
 <van-steps direction="vertical" :active="0">
@@ -63,6 +64,8 @@ export default {
   </van-step>
 </van-steps>
 ```
+
+## API
 
 ### Steps Props
 

@@ -1,15 +1,16 @@
-## NavBar 导航栏
+# NavBar 导航栏
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { NavBar } from 'vant';
 
 Vue.use(NavBar);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-nav-bar
@@ -35,7 +36,8 @@ export default {
 }
 ```
 
-#### 高级用法
+### 高级用法
+
 通过插槽定制内容
 
 ```html
@@ -44,6 +46,7 @@ export default {
 </van-nav-bar>
 ```
 
+## API
 
 ### Props
 

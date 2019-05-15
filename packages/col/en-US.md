@@ -1,20 +1,22 @@
-## Layout
+# Layout
+
+### Intro
 
 Quickly and easily create layouts with `van-row` and `van-col`
 
 ### Install
+
 ``` javascript
 import { Row, Col } from 'vant';
 
 Vue.use(Row).use(Col);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 Layout are based on 24-column. The attribute `span` in `Col` means the number of column the grid spans. Of course, You can use `offset` attribute to set number of spacing on the left side of the grid.
-
 
 ```html
 <van-row>
@@ -35,7 +37,7 @@ Layout are based on 24-column. The attribute `span` in `Col` means the number of
 ```
 
 
-#### Column Spacing
+### Column Spacing
 
 Set grid spacing using `gutter` attribute. The default value is 0
 
@@ -48,7 +50,7 @@ Set grid spacing using `gutter` attribute. The default value is 0
 </van-row>
 ```
 
-#### Flex Layout
+### Flex Layout
 
 Setting `type` to `flex` to enable flex layout
 
@@ -84,6 +86,7 @@ Setting `type` to `flex` to enable flex layout
 </van-row>
 ```
 
+## API
 
 ### Row Props
 

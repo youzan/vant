@@ -1,6 +1,7 @@
-## GoodsAction
+# GoodsAction
 
 ### Install
+
 ``` javascript
 import {
   GoodsAction,
@@ -14,8 +15,9 @@ Vue
   .use(GoodsActionIcon);
 ```
 
-### Usage
-#### Basic Usage
+## Usage
+
+### Basic Usage
 
 ```html
 <van-goods-action>
@@ -55,7 +57,7 @@ export default {
 }
 ```
 
-#### Icon info
+### Icon info
 
 Use `info` prop to show messages in upper right corner of icon
 
@@ -85,14 +87,15 @@ Use `info` prop to show messages in upper right corner of icon
 </van-goods-action>
 ```
 
-### Props
+## API
 
-#### GoodsAction
+### GoodsAction Props
 
 | Attribute | Description | Type | Default |
+|------|------|------|------|
 | safe-area-inset-bottom | Whether to enable bottom safe area adaptation, to enable those features use `viewport-fit=cover` in the `viewport` meta tag | `Boolean` | `false` |
 
-#### GoodsActionIcon
+### GoodsActionIcon Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
@@ -104,7 +107,7 @@ Use `info` prop to show messages in upper right corner of icon
 | to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
-#### GoodsActionButton
+### GoodsActionButton Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|

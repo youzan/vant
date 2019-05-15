@@ -1,15 +1,16 @@
-## PullRefresh 下拉刷新
+# PullRefresh 下拉刷新
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { PullRefresh } from 'vant';
 
 Vue.use(PullRefresh);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 下拉刷新时会触发 `refresh` 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 `v-model` 设置为 `false`，表示加载完成。
 
@@ -39,6 +40,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

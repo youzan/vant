@@ -1,7 +1,10 @@
-## Dialog 弹出框
-Dialog 组件支持函数调用和组件调用两种形式
+# Dialog 弹出框
 
-### 使用指南
+### 介绍
+
+弹出框组件支持函数调用和组件调用两种形式
+
+### 引入
 
 ```js
 import { Dialog } from 'vant';
@@ -9,9 +12,9 @@ import { Dialog } from 'vant';
 Vue.use(Dialog);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 消息提示
+### 消息提示
 
 用于提示一些消息，只包含一个确认按钮
 
@@ -30,7 +33,7 @@ Dialog.alert({
 });
 ```
 
-#### 消息确认
+### 消息确认
 
 用于确认消息，包含取消和确认按钮
 
@@ -45,7 +48,7 @@ Dialog.confirm({
 });
 ```
 
-#### 异步关闭
+### 异步关闭
 
 ```js
 function beforeClose(action, done) {
@@ -63,7 +66,7 @@ Dialog.confirm({
 });
 ```
 
-#### 全局方法
+### 全局方法
 
 引入 Dialog 组件后，会自动在 Vue 的 prototype 上挂载 $dialog 方法，在所有组件内部都可以直接调用此方法
 
@@ -77,7 +80,7 @@ export default {
 }
 ```
 
-#### 组件调用
+### 组件调用
 
 如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件
 
@@ -100,6 +103,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### 方法
 

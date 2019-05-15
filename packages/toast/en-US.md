@@ -1,4 +1,4 @@
-## Toast
+# Toast
 
 ### Install
 
@@ -8,16 +8,15 @@ import { Toast } from 'vant';
 Vue.use(Toast);
 ```
 
-### Usage
+## Usage
 
-#### Text
+### Text
 
 ```javascript
 Toast('Some messages');
 ```
 
-
-#### Loading
+### Loading
 
 ```javascript
 Toast.loading({
@@ -26,16 +25,14 @@ Toast.loading({
 });
 ```
 
-
-#### Success/Fail
+### Success/Fail
 
 ```javascript
 Toast.success('Success');
 Toast.fail('Fail');
 ```
 
-
-#### Advanced Usage
+### Advanced Usage
 
 ```javascript
 const toast = Toast.loading({
@@ -57,7 +54,8 @@ const timer = setInterval(() => {
 }, 1000);
 ```
 
-#### $toast Method
+### $toast Method
+
 After import the Toast component, the $toast method is automatically mounted on Vue.prototype, making it easy to call within a vue component.
 
 ```js
@@ -68,7 +66,8 @@ export default {
 }
 ```
 
-#### Singleton
+### Singleton
+
 Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example
 
 ```js
@@ -80,6 +79,8 @@ const toast2 = Toast.success('Second Toast');
 toast1.clear();
 toast2.clear();
 ```
+
+## API
 
 ### Methods
 

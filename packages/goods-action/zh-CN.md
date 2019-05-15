@@ -1,6 +1,7 @@
-## GoodsAction 商品导航
+# GoodsAction 商品导航
 
-### 使用指南
+### 引入
+
 ``` javascript
 import {
   GoodsAction,
@@ -14,8 +15,9 @@ Vue
   .use(GoodsActionButton);
 ```
 
-### 代码演示
-#### 基础用法
+## 代码演示
+
+### 基础用法
 
 ```html
 <van-goods-action>
@@ -55,7 +57,8 @@ export default {
 }
 ```
 
-#### 图标提示
+### 图标提示
+
 通过`info`属性在图标右上角增加相应的提示
 
 ```html
@@ -84,15 +87,15 @@ export default {
 </van-goods-action>
 ```
 
-### Props
+## API
 
-#### GoodsAction
+### GoodsAction Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
 
-#### GoodsActionIcon
+### GoodsActionIcon Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
@@ -104,7 +107,7 @@ export default {
 | to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 
-#### GoodsActionButton
+### GoodsActionButton Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|

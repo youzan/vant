@@ -1,15 +1,16 @@
-## Search
+# Search
 
 ### Install
+
 ``` javascript
 import { Search } from 'vant';
 
 Vue.use(Search);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-search placeholder="Placeholder" v-model="value" />
@@ -23,7 +24,8 @@ export default {
 }
 ```
 
-#### Listen to Events
+### Listen to Events
+
 `search` event will be triggered when click the search button on the keyboard.
 
 `cancel` event will be triggered when click the cancel button.
@@ -42,7 +44,8 @@ Tips: There will be a search button on the keyboard when Search is inside a form
 </form>
 ```
 
-#### Custom Button
+### Custom Button
+
 Use `action` slot to custom right button, `cancel` event will no longer be triggered when use this slot
 
 ```html
@@ -55,6 +58,8 @@ Use `action` slot to custom right button, `cancel` event will no longer be trigg
   <div slot="action" @click="onSearch">Search</div>
 </van-search>
 ```
+
+## API
 
 ### Props
 

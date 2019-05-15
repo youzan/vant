@@ -1,15 +1,16 @@
-## Popup 弹出层
+# Popup 弹出层
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Popup } from 'vant';
 
 Vue.use(Popup);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 `Popup`默认从中间弹出
 
@@ -27,7 +28,7 @@ export default {
 };
 ```
 
-#### 弹出位置
+### 弹出位置
 
 通过`position`属性设置`Popup`弹出位置
 
@@ -36,6 +37,8 @@ export default {
   内容
 </van-popup>
 ```
+
+## API
 
 ### Props
 

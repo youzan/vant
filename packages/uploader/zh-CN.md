@@ -1,15 +1,16 @@
-## Uploader 图片上传
+# Uploader 图片上传
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Uploader } from 'vant';
 
 Vue.use(Uploader);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-uploader :after-read="onRead">
@@ -27,7 +28,7 @@ export default {
 };
 ```
 
-#### 标识名称
+### 标识名称
 
 ```html
 <van-uploader name="uploader" :after-read="onRead">
@@ -45,7 +46,7 @@ export default {
 };
 ```
 
-#### 设置 Input 属性
+### 设置 Input 属性
 
 可以直接在 Uploader 上设置 accpet、multiple 等原生属性，input 会自动继承该属性
 
@@ -54,6 +55,8 @@ export default {
   <van-icon name="photograph" />
 </van-uploader>
 ```
+
+## API
 
 ### Props
 

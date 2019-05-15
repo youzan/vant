@@ -1,4 +1,4 @@
-## Skeleton
+# Skeleton
 
 ### Install
 
@@ -8,21 +8,21 @@ import { Skeleton } from 'vant';
 Vue.use(Skeleton);
 ```
 
-### Usage
+## Usage
 
-#### Basic Usage
+### Basic Usage
 
 ```html
 <van-skeleton title :row="3" />
 ```
 
-#### Show Avatar
+### Show Avatar
 
 ```html
 <van-skeleton title avatar :row="3" />
 ```
 
-#### Show Children
+### Show Children
 
 ```html
 <van-skeleton
@@ -47,6 +47,8 @@ export default {
   }
 };
 ```
+
+## API
 
 ### Props
 

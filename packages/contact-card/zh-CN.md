@@ -1,7 +1,11 @@
-## Contact 联系人
+# Contact 联系人
+
+### 介绍
+
 通过 Contact 组件可以实现联系人的展示、选择、编辑等功能。
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { ContactCard, ContactList, ContactEdit } from 'vant';
 
@@ -11,9 +15,9 @@ Vue
   .use(ContactEdit);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <!-- 联系人卡片 -->
@@ -119,7 +123,7 @@ export default {
 };
 ```
 
-#### 不可编辑
+### 不可编辑
 
 ```html
 <van-contact-card
@@ -129,6 +133,8 @@ export default {
   :editable="false"
 />
 ```
+
+## API
 
 ### ContactCard Props
 
@@ -178,9 +184,7 @@ export default {
 | save | 点击保存按钮时触发 | content：表单内容 |
 | delete | 点击删除按钮时触发 | content：表单内容 |
 
-### 数据格式
-
-#### 联系人数据格式
+### 联系人数据格式
 
 | key | 说明 | 类型 |
 |------|------|------|

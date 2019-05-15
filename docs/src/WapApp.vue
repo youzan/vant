@@ -4,7 +4,6 @@
       v-show="title"
       class="van-doc-nav-bar"
       :title="title"
-      :border="false"
       :left-arrow="showNav"
       @click-left="onBack"
     >
@@ -71,7 +70,7 @@ body {
   color: @text-color;
   font-family: 'PingFang SC', Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, Arial, sans-serif;
   line-height: 1;
-  background-color: #f2f3f5;
+  background-color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
 }
 

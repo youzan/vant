@@ -1,4 +1,7 @@
-## DatetimePicker
+# DatetimePicker
+
+### Intro
+
 The DatetimePicker component is usually used with [Popup](#/en-US/popup) Component.
 
 ### Install
@@ -8,9 +11,9 @@ import { DatetimePicker } from 'vant';
 Vue.use(DatetimePicker);
 ```
 
-### Usage
+## Usage
 
-#### Choose DateTime
+### Choose DateTime
 
 ```html
 <van-datetime-picker
@@ -35,7 +38,7 @@ export default {
 };
 ```
 
-#### Choose Date
+### Choose Date
 
 ```html
 <van-datetime-picker
@@ -55,7 +58,7 @@ export default {
 }
 ```
 
-#### Choose Year-Month
+### Choose Year-Month
 
 ```html
 <van-datetime-picker
@@ -87,7 +90,7 @@ export default {
 }
 ```
 
-#### Choose Time
+### Choose Time
 
 ```html
 <van-datetime-picker
@@ -107,6 +110,8 @@ export default {
   }
 }
 ```
+
+## API
 
 ### Props
 

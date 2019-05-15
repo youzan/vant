@@ -1,6 +1,6 @@
-## Lazyload 图片懒加载
+# Lazyload 图片懒加载
 
-### 使用指南
+### 引入
 
 `Lazyload` 是 `Vue` 指令，使用前需要对指令进行注册
 
@@ -12,9 +12,10 @@ import { Lazyload } from 'vant';
 Vue.use(Lazyload, options);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
+
 将`v-lazy`指令的值设置为你需要懒加载的图片
 
 ```html
@@ -34,7 +35,7 @@ export default {
 }
 ```
 
-#### 背景图懒加载
+### 背景图懒加载
 
 和图片懒加载不同，背景图懒加载需要使用`v-lazy:background-image`，值设置为背景图片的地址，需要注意的是必须声明容器高度。
 
@@ -42,7 +43,7 @@ export default {
 <div v-for="img in imageList" v-lazy:background-image="img" />
 ```
 
-#### 懒加载模块
+### 懒加载模块
 
 懒加载模块需要使用到`lazy-component`，将需要懒加载的内容放在`lazy-component`中即可。
 
@@ -51,6 +52,8 @@ export default {
   <img v-for="img in imageList" v-lazy="img" >
 </lazy-component>
 ```
+
+## API
 
 ### Options
 

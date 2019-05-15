@@ -1,17 +1,17 @@
 
-## Pagination 分页
+# Pagination 分页
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Pagination } from 'vant';
 
 Vue.use(Pagination);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
-
+### 基础用法
 
 ```html
 <van-pagination 
@@ -31,7 +31,7 @@ export default {
 }
 ```
 
-#### 简单模式
+### 简单模式
 
 ```html
 <van-pagination 
@@ -41,7 +41,7 @@ export default {
 />
 ```
 
-#### 显示省略号
+### 显示省略号
 
 ```html
 <van-pagination 
@@ -51,6 +51,8 @@ export default {
   force-ellipses
 />
 ```
+
+## API
 
 ### Props
 

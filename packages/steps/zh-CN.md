@@ -1,15 +1,16 @@
-## Steps 步骤条
+# Steps 步骤条
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Step, Steps } from 'vant';
 
 Vue.use(Step).use(Steps);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 基础用法
+### 基础用法
 
 ```html
 <van-steps :active="active">
@@ -30,7 +31,7 @@ export default {
 }
 ```
 
-#### 自定义样式
+### 自定义样式
 
 可以通过`active-icon`和`active-color`属性设置激活状态下的图标和颜色
 
@@ -47,7 +48,7 @@ export default {
 </van-steps>
 ```
 
-#### 竖向步骤条
+### 竖向步骤条
 
 可以通过设置`direction`属性来改变步骤条的显示方向
 
@@ -67,6 +68,8 @@ export default {
   </van-step>
 </van-steps>
 ```
+
+## API
 
 ### Steps Props
 

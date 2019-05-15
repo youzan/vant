@@ -1,15 +1,16 @@
-## NumberKeyboard 数字键盘
+# NumberKeyboard 数字键盘
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { NumberKeyboard } from 'vant';
 
 Vue.use(NumberKeyboard);
 ```
 
-### 代码演示
+## 代码演示
 
-#### 默认样式
+### 默认样式
 
 ```html
 <van-button @touchstart.stop="show = true">
@@ -45,7 +46,7 @@ export default {
 }
 ```
 
-#### 自定义样式
+### 自定义样式
 
 ```html
 <van-number-keyboard
@@ -58,6 +59,8 @@ export default {
   @delete="onDelete"
 />
 ```
+
+## API
 
 ### Props
 

@@ -1,13 +1,16 @@
-## Slider 滑块
+# Slider 滑块
 
-### 使用指南
+### 引入
+
 ``` javascript
 import { Slider } from 'vant';
 
 Vue.use(Slider);
 ```
 
-#### 基本用法
+## 代码演示
+
+### 基本用法
 
 ```html
 <van-slider v-model="value" @change="onChange" />
@@ -29,25 +32,25 @@ export default {
 };
 ```
 
-#### 指定选择范围
+### 指定选择范围
 
 ```html
 <van-slider v-model="value" :min="10" :max="90" />
 ```
 
-#### 禁用
+### 禁用
 
 ```html
 <van-slider v-model="value" disabled />
 ```
 
-#### 指定步长
+### 指定步长
 
 ```html
 <van-slider v-model="value" :step="10" />
 ```
 
-#### 自定义样式
+### 自定义样式
 
 ```html
 <van-slider
@@ -57,7 +60,7 @@ export default {
 />
 ```
 
-#### 自定义按钮
+### 自定义按钮
 
 ```html
 <van-slider
@@ -73,7 +76,7 @@ export default {
 </van-slider>
 ```
 
-#### 垂直方向
+### 垂直方向
 
 Slider 垂直展示时，高度为 100% 父元素高度
 
@@ -82,6 +85,8 @@ Slider 垂直展示时，高度为 100% 父元素高度
   <van-slider v-model="value" vertical />
 </div>
 ```
+
+## API
 
 ### Props
 
