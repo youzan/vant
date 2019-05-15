@@ -64,7 +64,7 @@ export default sfc({
   },
 
   render(h) {
-    const { type, message } = this;
+    const { type, message, loadingType } = this;
     const style = STYLE.indexOf(type) !== -1 ? 'default' : type;
 
     function Content() {
@@ -77,7 +77,7 @@ export default sfc({
 
       return [
         type === 'loading' ? (
-          <Loading color="white" type={this.loadingType} />
+          <Loading color="white" type={loadingType} />
         ) : (
           <Icon class={bem('icon')} name={type} />
         ),
