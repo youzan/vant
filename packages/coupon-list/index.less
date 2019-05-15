@@ -3,15 +3,15 @@
 .van-coupon-list {
   position: relative;
   height: 100%;
-  background-color: @background-color;
+  background-color: @coupon-list-background-color;
 
   &__field {
-    padding: 7px 15px;
+    padding: @coupon-list-field-padding;
   }
 
   &__exchange {
-    height: 32px;
-    line-height: 30px;
+    height: @coupon-list-exchange-button-height;
+    line-height: @coupon-list-exchange-button-height - 2px;
   }
 
   &__list {
@@ -34,14 +34,14 @@
 
     p {
       margin: 15px 0;
-      color: @gray-dark;
-      font-size: 14px;
-      line-height: 20px;
+      color: @coupon-list-empty-tip-color;
+      font-size: @coupon-list-empty-tip-font-size;
+      line-height: @coupon-list-empty-tip-line-height;
     }
 
     img {
-      width: 200px;
-      height: 200px;
+      width: @coupon-list-empty-image-size;
+      height: @coupon-list-empty-image-size;
     }
   }
 }

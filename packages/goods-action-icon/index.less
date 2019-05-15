@@ -4,10 +4,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 15%;
-  height: 50px;
-  color: @gray-darker;
-  font-size: 10px;
+  min-width: @goods-action-icon-width;
+  height: @goods-action-icon-height;
+  color: @goods-action-icon-color;
+  font-size: @goods-action-icon-font-size;
   line-height: 1;
   text-align: center;
   background-color: @white;
@@ -17,12 +17,12 @@
   }
 
   &:active {
-    background-color: @active-color;
+    background-color: @goods-action-icon-active-color;
   }
 
   &__icon {
     width: 1em;
     margin: 0 auto 5px;
-    font-size: 20px;
+    font-size: @goods-action-icon-size;
   }
 }
