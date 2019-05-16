@@ -1,19 +1,39 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button @click="showImagePreview">{{ $t('button1') }}</van-button>
+      <van-button
+        type="primary"
+        @click="showImagePreview"
+      >
+        {{ $t('button1') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('button2')">
-      <van-button @click="showImagePreview(1)">{{ $t('button2') }}</van-button>
+      <van-button
+        type="primary"
+        @click="showImagePreview(1)"
+      >
+        {{ $t('button2') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('button3')">
-      <van-button @click="showImagePreview(0, 1000)">{{ $t('button3') }}</van-button>
+      <van-button
+        type="primary"
+        @click="showImagePreview(0, 1000)"
+      >
+        {{ $t('button3') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('componentCall')">
-      <van-button @click="componentCall">{{ $t('componentCall') }}</van-button>
+      <van-button
+        type="primary"
+        @click="componentCall"
+      >
+        {{ $t('componentCall') }}
+      </van-button>
       <van-image-preview
         v-model="show"
         :images="images"
@@ -88,7 +108,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-image-preview {
+  background-color: @white;
+
   .van-button {
     margin-left: 15px;
   }

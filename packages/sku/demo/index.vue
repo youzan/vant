@@ -226,7 +226,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-sku {
+  background-color: @white;
+
   .sku-container {
     padding: 0 15px;
   }

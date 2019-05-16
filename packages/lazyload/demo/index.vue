@@ -61,7 +61,7 @@ export default {
 
 <style lang="less">
 .demo-lazyload {
-  padding: 0 15px;
+  padding: 15px;
 
   img,
   div[lazy] {

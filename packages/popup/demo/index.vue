@@ -1,12 +1,22 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button @click="show1 = true">{{ $t('button1') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show1 = true"
+      >
+        {{ $t('button1') }}
+      </van-button>
       <van-popup v-model="show1">{{ $t('content') }}</van-popup>
     </demo-block>
 
     <demo-block :title="$t('position')">
-      <van-button @click="show2 = true;">{{ $t('button2') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show2 = true"
+      >
+        {{ $t('button2') }}
+      </van-button>
 
       <van-popup
         v-model="show2"
@@ -20,7 +30,12 @@
         />
       </van-popup>
 
-      <van-button @click="show3 = true">{{ $t('button4') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show3 = true"
+      >
+        {{ $t('button4') }}
+      </van-button>
       <van-popup
         v-model="show3"
         position="top"
@@ -29,18 +44,38 @@
         {{ $t('content') }}
       </van-popup>
 
-      <van-button @click="show4 = true">{{ $t('button5') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show4 = true"
+      >
+        {{ $t('button5') }}
+      </van-button>
       <van-popup
         v-model="show4"
         position="right"
       >
-        <van-button @click="show4 = false">{{ $t('button6') }}</van-button>
-        <van-button @click="show5 = true">{{ $t('button5') }}</van-button>
+        <van-button
+          type="primary"
+          @click="show4 = false"
+        >
+          {{ $t('button6') }}
+        </van-button>
+        <van-button
+          type="primary"
+          @click="show5 = true"
+        >
+          {{ $t('button5') }}
+        </van-button>
         <van-popup
           v-model="show5"
           position="right"
         >
-          <van-button @click="show5 = false">{{ $t('button6') }}</van-button>
+          <van-button
+            type="primary"
+            @click="show5 = false"
+          >
+            {{ $t('button6') }}
+          </van-button>
         </van-popup>
       </van-popup>
     </demo-block>

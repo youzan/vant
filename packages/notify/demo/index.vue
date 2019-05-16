@@ -2,6 +2,7 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-button
+        type="primary"
         :text="$t('showNotify')"
         @click="showNotify"
       />
@@ -9,6 +10,7 @@
 
     <demo-block :title="$t('customConfig')">
       <van-button
+        type="primary"
         :text="$t('showCustomNotify')"
         @click="showCustomNotify"
       />
@@ -50,7 +52,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-notify {
+  background-color: @white;
+
   .van-button {
     margin-left: 15px;
   }

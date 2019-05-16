@@ -1,7 +1,12 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-button @click="show1 = true">{{ $t('buttonText') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show1 = true"
+      >
+        {{ $t('buttonText') }}
+      </van-button>
       <van-action-sheet
         v-model="show1"
         :actions="simpleActions"
@@ -10,7 +15,12 @@
     </demo-block>
 
     <demo-block :title="$t('status')">
-      <van-button @click="show2 = true">{{ $t('buttonText') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show2 = true"
+      >
+        {{ $t('buttonText') }}
+      </van-button>
       <van-action-sheet
         v-model="show2"
         :actions="statusActions"
@@ -19,7 +29,12 @@
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button @click="show3 = true">{{ $t('buttonText') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show3 = true"
+      >
+        {{ $t('buttonText') }}
+      </van-button>
       <van-action-sheet
         v-model="show3"
         :actions="simpleActions"
@@ -30,7 +45,12 @@
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button @click="show4 = true">{{ $t('buttonText') }}</van-button>
+      <van-button
+        type="primary"
+        @click="show4 = true"
+      >
+        {{ $t('buttonText') }}
+      </van-button>
       <van-action-sheet
         v-model="show4"
         :title="$t('title')"
@@ -104,7 +124,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-action-sheet {
+  background-color: @white;
+
   .van-button {
     margin-left: 15px;
   }

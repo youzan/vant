@@ -1,21 +1,51 @@
 <template>
   <demo-section>
     <demo-block :title="$t('title1')">
-      <van-button @click="$toast($t('text'))">{{ $t('title1') }}</van-button>
-      <van-button @click="$toast($t('longText'))">{{ $t('longTextButton') }}</van-button>
+      <van-button
+        type="primary"
+        @click="$toast($t('text'))"
+      >
+        {{ $t('title1') }}
+      </van-button>
+      <van-button
+        type="primary"
+        @click="$toast($t('longText'))"
+      >
+        {{ $t('longTextButton') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('title2')">
-      <van-button @click="showLoadingToast">{{ $t('title2') }}</van-button>
+      <van-button
+        type="primary"
+        @click="showLoadingToast"
+      >
+        {{ $t('title2') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('title3')">
-      <van-button @click="showSuccessToast">{{ $t('success') }}</van-button>
-      <van-button @click="showFailToast">{{ $t('fail') }}</van-button>
+      <van-button
+        type="info"
+        @click="showSuccessToast"
+      >
+        {{ $t('success') }}
+      </van-button>
+      <van-button
+        type="danger"
+        @click="showFailToast"
+      >
+        {{ $t('fail') }}
+      </van-button>
     </demo-block>
 
     <demo-block :title="$t('advancedUsage')">
-      <van-button @click="showCustomizedToast">{{ $t('advancedUsage') }}</van-button>
+      <van-button
+        type="primary"
+        @click="showCustomizedToast"
+      >
+        {{ $t('advancedUsage') }}
+      </van-button>
     </demo-block>
   </demo-section>
 </template>
@@ -88,7 +118,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-toast {
+  background-color: @white;
+
   .van-button {
     margin-left: 15px;
   }

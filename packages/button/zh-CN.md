@@ -73,10 +73,10 @@ Vue.use(Button);
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
 
 ```html 
-<van-button size="large">大号按钮</van-button>
-<van-button size="normal">普通按钮</van-button>
-<van-button size="small">小型按钮</van-button>
-<van-button size="mini">迷你按钮</van-button>
+<van-button type="primary" size="large">大号按钮</van-button>
+<van-button type="primary" size="normal">普通按钮</van-button>
+<van-button type="primary" size="small">小型按钮</van-button>
+<van-button type="primary" size="mini">迷你按钮</van-button>
 ```
 
 ## API

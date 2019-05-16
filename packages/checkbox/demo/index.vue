@@ -143,6 +143,10 @@ export default {
   }
 
   .van-cell {
+    &__value {
+      flex: none;
+    }
+
     .van-checkbox {
       margin: 0;
     }

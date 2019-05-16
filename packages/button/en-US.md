@@ -63,10 +63,10 @@ Vue.use(Button);
 ### Size
 
 ```html 
-<van-button size="large">Large</van-button>
-<van-button size="normal">Normal</van-button>
-<van-button size="small">Small</van-button>
-<van-button size="mini">Mini</van-button>
+<van-button type="primary" size="large">Large</van-button>
+<van-button type="primary" size="normal">Normal</van-button>
+<van-button type="primary" size="small">Small</van-button>
+<van-button type="primary" size="mini">Mini</van-button>
 ```
 
 ## API

@@ -44,7 +44,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-pull-refresh {
+  background-color: @white;
+
   .van-pull-refresh {
     &,
     &__track {

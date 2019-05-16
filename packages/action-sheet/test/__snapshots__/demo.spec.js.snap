@@ -2,16 +2,24 @@
 
 exports[`renders demo correctly 1`] = `
 <div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">弹出菜单</span></button>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      弹出菜单
+    </span></button>
     <!---->
   </div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">弹出菜单</span></button>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      弹出菜单
+    </span></button>
     <!---->
   </div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">弹出菜单</span></button>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      弹出菜单
+    </span></button>
     <!---->
   </div>
-  <div><button class="van-button van-button--default van-button--normal"><span class="van-button__text">弹出菜单</span></button>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      弹出菜单
+    </span></button>
     <!---->
   </div>
 </div>

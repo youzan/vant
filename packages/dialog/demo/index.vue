@@ -3,14 +3,12 @@
     <demo-block :title="$t('alert1')">
       <van-button
         type="primary"
-        plain
         @click="onClickAlert"
       >
         {{ $t('alert1') }}
       </van-button>
       <van-button
         type="primary"
-        plain
         @click="onClickAlert2"
       >
         {{ $t('alert2') }}
@@ -20,7 +18,6 @@
     <demo-block :title="$t('confirm')">
       <van-button
         type="primary"
-        plain
         @click="onClickConfirm"
       >
         {{ $t('confirm') }}
@@ -30,7 +27,6 @@
     <demo-block :title="$t('asyncClose')">
       <van-button
         type="primary"
-        plain
         @click="onClickAsyncClose"
       >
         {{ $t('asyncClose') }}
@@ -39,8 +35,7 @@
 
     <demo-block :title="$t('componentCall')">
       <van-button
-        type="danger"
-        plain
+        type="primary"
         @click="show = true"
       >
         {{ $t('componentCall') }}
@@ -126,7 +121,11 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../style/var";
+
 .demo-dialog {
+  background-color: @white;
+
   .van-doc-demo-block > .van-button {
     margin-left: 15px;
   }

@@ -78,10 +78,30 @@
     </demo-block>
 
     <demo-block :title="$t('size')">
-      <van-button size="large">{{ $t('large') }}</van-button>
-      <van-button size="normal">{{ $t('normal') }}</van-button>
-      <van-button size="small">{{ $t('small') }}</van-button>
-      <van-button size="mini">{{ $t('mini') }}</van-button>
+      <van-button
+        type="primary"
+        size="large"
+      >
+        {{ $t('large') }}
+      </van-button>
+      <van-button
+        type="primary"
+        size="normal"
+      >
+        {{ $t('normal') }}
+      </van-button>
+      <van-button
+        type="primary"
+        size="small"
+      >
+        {{ $t('small') }}
+      </van-button>
+      <van-button
+        type="primary"
+        size="mini"
+      >
+        {{ $t('mini') }}
+      </van-button>
     </demo-block>
   </demo-section>
 </template>

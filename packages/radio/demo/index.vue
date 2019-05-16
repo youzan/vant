@@ -115,6 +115,10 @@ export default {
     }
   }
 
+  .van-cell__value {
+    flex: none;
+  }
+
   img {
     height: 20px;
   }
