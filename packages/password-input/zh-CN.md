@@ -52,10 +52,20 @@ export default {
 }
 ```
 
+### 自定义长度
+
+```html
+<van-password-input
+  :value="value"
+  :length="4"
+  :gutter="15"
+  @focus="showKeyboard = true"
+/>
+```
+
 ### 明文展示
 
 ```html
-<!-- 密码输入框 -->
 <van-password-input
   :value="value"
   :mask="false"
@@ -72,6 +82,7 @@ export default {
 | mask | 是否隐藏密码内容 | `Boolean` | `true` | 1.6.6 |
 | info | 输入框下方文字提示 | `String` | - | - |
 | error-info | 输入框下方错误提示 | `String` | - | - |
+| gutter | 输入框格子之间的间距，如 `20px` `2em`，默认单位为`px` | `Number | String` | `0` | 2.0.0 |
 
 ### Events
 

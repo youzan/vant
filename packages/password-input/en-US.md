@@ -53,6 +53,17 @@ export default {
 }
 ```
 
+### Custom length
+
+```html
+<van-password-input
+  :value="value"
+  :length="4"
+  :gutter="15"
+  @focus="showKeyboard = true"
+/>
+```
+
 ### Without mask
 
 ```html
@@ -74,6 +85,7 @@ export default {
 | mask | Whether to mask value | `Boolean` | `true` |
 | info | Bottom info | `String` | - |
 | error-info | Bottom error info | `String` | - |
+| gutter | Gutter of input | `Number | String` | `0` |
 
 ### Events
 

@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import { emit, inherit } from '../utils/functional';
 
 // Types
@@ -10,6 +10,7 @@ export type PasswordInputProps = {
   info?: string;
   value: string;
   length: number;
+  gutter: number;
   errorInfo?: string;
 };
 
@@ -26,13 +27,16 @@ function PasswordInput(
   const Points = [];
   for (let i = 0; i < props.length; i++) {
     const char = props.value[i];
+    const showBorder = i !== 0 && !props.gutter;
+
+    let style;
+    if (i !== 0 && props.gutter) {
+      style = { marginLeft: suffixPx(props.gutter) };
+    }
+
     Points.push(
-      <li class="van-hairline">
-        {props.mask ? (
-          <i style={{ visibility: char ? 'visible' : 'hidden' }} />
-        ) : (
-          char
-        )}
+      <li class={{ 'van-hairline--left': showBorder }} style={style}>
+        {props.mask ? <i style={{ visibility: char ? 'visible' : 'hidden' }} /> : char}
       </li>
     );
   }
@@ -40,7 +44,7 @@ function PasswordInput(
   return (
     <div class={bem()}>
       <ul
-        class={[bem('security'), 'van-hairline--surround']}
+        class={[bem('security'), { 'van-hairline--surround': !props.gutter }]}
         onTouchstart={(event: TouchEvent) => {
           event.stopPropagation();
           emit(ctx, 'focus', event);
@@ -49,9 +53,7 @@ function PasswordInput(
       >
         {Points}
       </ul>
-      {info && (
-        <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>
-      )}
+      {info && <div class={bem(props.errorInfo ? 'error-info' : 'info')}>{info}</div>}
     </div>
   );
 }
@@ -59,6 +61,7 @@ function PasswordInput(
 PasswordInput.props = {
   info: String,
   errorInfo: String,
+  gutter: [String, Number],
   mask: {
     type: Boolean,
     default: true

@@ -116,6 +116,10 @@
 - 新增`left-icon`插槽
 - 新增`right-icon`插槽
 
+### PasswordInput
+
+- 新增`gutter`属性
+
 ### Popup
 
 - 新增`click`事件

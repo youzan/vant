@@ -15,9 +15,18 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('removeMask')">
+    <demo-block :title="$t('customLength')">
       <van-password-input
         :value="value2"
+        :length="4"
+        gutter="15"
+        @focus="keyboard = 'value2'"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('removeMask')">
+      <van-password-input
+        :value="value3"
         :mask="false"
         @focus="keyboard = 'value2'"
       />
@@ -30,10 +39,12 @@ export default {
   i18n: {
     'zh-CN': {
       info: '密码为 6 位数字',
+      customLength: '自定义长度',
       removeMask: '明文展示'
     },
     'en-US': {
       info: 'Some tips',
+      customLength: 'Custom Length',
       removeMask: 'Remove Mask'
     }
   },
@@ -42,6 +53,7 @@ export default {
     return {
       value1: '123',
       value2: '123',
+      value3: '123',
       keyboard: 'value1'
     };
   },

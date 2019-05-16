@@ -5,12 +5,12 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-password-input">
       <ul class="van-password-input__security van-hairline--surround">
-        <li class="van-hairline"><i style="visibility: visible;"></i></li>
-        <li class="van-hairline"><i style="visibility: visible;"></i></li>
-        <li class="van-hairline"><i style="visibility: visible;"></i></li>
-        <li class="van-hairline"><i style="visibility: hidden;"></i></li>
-        <li class="van-hairline"><i style="visibility: hidden;"></i></li>
-        <li class="van-hairline"><i style="visibility: hidden;"></i></li>
+        <li class=""><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: visible;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
+        <li class="van-hairline--left"><i style="visibility: hidden;"></i></li>
       </ul>
       <div class="van-password-input__info">密码为 6 位数字</div>
     </div>
@@ -20,13 +20,23 @@ exports[`renders demo correctly 1`] = `
   </div>
   <div>
     <div class="van-password-input">
+      <ul class="van-password-input__security">
+        <li class=""><i style="visibility: visible;"></i></li>
+        <li class="" style="margin-left: 15px;"><i style="visibility: visible;"></i></li>
+        <li class="" style="margin-left: 15px;"><i style="visibility: visible;"></i></li>
+        <li class="" style="margin-left: 15px;"><i style="visibility: hidden;"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="van-password-input">
       <ul class="van-password-input__security van-hairline--surround">
-        <li class="van-hairline">1</li>
-        <li class="van-hairline">2</li>
-        <li class="van-hairline">3</li>
-        <li class="van-hairline"></li>
-        <li class="van-hairline"></li>
-        <li class="van-hairline"></li>
+        <li class="">1</li>
+        <li class="van-hairline--left">2</li>
+        <li class="van-hairline--left">3</li>
+        <li class="van-hairline--left"></li>
+        <li class="van-hairline--left"></li>
+        <li class="van-hairline--left"></li>
       </ul>
     </div>
   </div>
