@@ -88,4 +88,5 @@ test('is-src', () => {
   expect(isSrc('')).toBeFalsy();
   expect(isSrc('blob:http://img.cdn.com')).toBeTruthy();
   expect(isSrc('blob:https://img.cdn.com')).toBeTruthy();
+  expect(isSrc('xdata:image/jpeg;base64,/9j/4AAQSkZ')).toBeFalsy();
 });
