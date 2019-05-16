@@ -3,15 +3,20 @@
 .van-step {
   position: relative;
   flex: 1;
-  color: @gray-dark;
-  font-size: 14px;
+  color: @step-text-color;
+  font-size: @step-font-size;
 
   &__circle {
     display: block;
-    width: 5px;
-    height: 5px;
-    background-color: @gray-dark;
+    width: @step-circle-size;
+    height: @step-circle-size;
+    background-color: @step-circle-color;
     border-radius: 50%;
+  }
+
+  &__line {
+    position: absolute;
+    background-color: @step-line-color;
   }
 
   &--horizontal {
@@ -53,30 +58,28 @@
     .van-step__title {
       display: inline-block;
       margin-left: 3px;
-      font-size: 12px;
+      font-size: @step-horizontal-title-font-size;
       transform: translateX(-50%);
 
       @media (max-width: 321px) {
-        font-size: 11px;
+        font-size: @step-horizontal-title-font-size - 1px;
       }
     }
 
     .van-step__line {
-      position: absolute;
       top: 30px;
       left: 0;
       width: 100%;
       height: 1px;
-      background-color: @border-color;
     }
 
     .van-step__icon {
       display: block;
-      font-size: 12px;
+      font-size: @step-icon-size;
     }
 
     .van-step--process {
-      color: @text-color;
+      color: @step-process-text-color;
     }
   }
 
@@ -84,7 +87,6 @@
     display: block;
     float: none;
     padding: 10px 10px 10px 0;
-    font-size: 14px;
     line-height: 18px;
 
     &:not(:last-child)::after {
@@ -109,18 +111,16 @@
       top: 19px;
       left: -15px;
       z-index: 2;
-      font-size: 12px;
+      font-size: @step-icon-size;
       line-height: 1;
       transform: translate(-50%, -50%);
     }
 
     .van-step__line {
-      position: absolute;
       top: 16px;
       left: -15px;
       width: 1px;
       height: 100%;
-      background-color: @border-color;
     }
   }
 
@@ -131,11 +131,11 @@
   }
 
   &--finish {
-    color: @text-color;
+    color: @step-finish-text-color;
 
     .van-step__circle,
     .van-step__line {
-      background-color: @green;
+      background-color: @step-finish-line-color;
     }
   }
 }
