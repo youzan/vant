@@ -4,17 +4,17 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 40px;
-  padding: 0 15px;
-  color: @orange-dark;
-  font-size: 14px;
-  line-height: 24px;
-  background-color: @orange-light;
+  height: @notice-bar-height;
+  padding: @notice-bar-padding;
+  color: @notice-bar-text-color;
+  font-size: @notice-bar-font-size;
+  line-height: @notice-bar-line-height;
+  background-color: @notice-bar-background-color;
 
   &__left-icon,
   &__right-icon {
-    min-width: 22px;
-    font-size: 16px;
+    min-width: @notice-bar-icon-min-width;
+    font-size: @notice-bar-icon-size;
   }
 
   &__right-icon {
@@ -24,7 +24,7 @@
   &__wrap {
     position: relative;
     flex: 1;
-    height: 24px;
+    height: @notice-bar-line-height;
     overflow: hidden;
   }
 
@@ -47,7 +47,7 @@
 
   &--wrapable {
     height: auto;
-    padding: 8px 15px;
+    padding: @notice-bar-wrapable-padding;
 
     .van-notice-bar {
       &__wrap {
