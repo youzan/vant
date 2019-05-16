@@ -61,9 +61,11 @@ export default sfc({
   render(h) {
     const Titles = this.children.map((item, index) => (
       <div
-        class={bem('item')}
+        class={bem('item', { disabled: item.disabled })}
         onClick={() => {
-          this.toggleItem(index);
+          if (!item.disabled) {
+            this.toggleItem(index);
+          }
         }}
       >
         <span

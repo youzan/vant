@@ -41,6 +41,21 @@
         </van-dropdown-item>
       </van-dropdown-menu>
     </demo-block>
+
+    <demo-block :title="$t('disableMenu')">
+      <van-dropdown-menu>
+        <van-dropdown-item
+          v-model="value1"
+          disabled
+          :options="option1"
+        />
+        <van-dropdown-item
+          v-model="value2"
+          disabled
+          :options="option2"
+        />
+      </van-dropdown-menu>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -49,6 +64,7 @@ export default {
   i18n: {
     'zh-CN': {
       customContent: '自定义菜单内容',
+      disableMenu: '禁用菜单',
       switchTitle1: '包邮',
       switchTitle2: '团购',
       itemTitle: '筛选',
@@ -65,6 +81,7 @@ export default {
     },
     'en-US': {
       customContent: 'Custom Content',
+      disableMenu: 'Disable Menu',
       switchTitle1: 'Title',
       switchTitle2: 'Title',
       itemTitle: 'Title',

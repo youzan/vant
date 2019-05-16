@@ -45,6 +45,15 @@ exports[`didn\`t find matched option 1`] = `
 </div>
 `;
 
+exports[`disable dropdown item 1`] = `
+<div class="van-dropdown-menu van-hairline--top-bottom">
+  <div class="van-dropdown-menu__item van-dropdown-menu__item--disabled"><span class="van-dropdown-menu__title">A</span></div>
+  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+    <!---->
+  </div>
+</div>
+`;
+
 exports[`show dropdown item 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--active" style="color: rgb(25, 137, 250);">A</span></div>

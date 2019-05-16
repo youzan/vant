@@ -26,5 +26,17 @@ exports[`renders demo correctly 1`] = `
       </div>
     </div>
   </div>
+  <div>
+    <div class="van-dropdown-menu van-hairline--top-bottom">
+      <div class="van-dropdown-menu__item van-dropdown-menu__item--disabled"><span class="van-dropdown-menu__title">全部商品</span></div>
+      <div class="van-dropdown-menu__item van-dropdown-menu__item--disabled"><span class="van-dropdown-menu__title">默认排序</span></div>
+      <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+        <!---->
+      </div>
+      <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+        <!---->
+      </div>
+    </div>
+  </div>
 </div>
 `;

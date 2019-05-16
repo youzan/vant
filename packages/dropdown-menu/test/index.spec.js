@@ -99,6 +99,32 @@ test('destroy one item', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('disable dropdown item', async () => {
+  const wrapper = mount({
+    template: `
+      <dropdown-menu>
+        <dropdown-item disabled v-model="value" :options="options" />
+      </dropdown-menu>
+    `,
+    components: {
+      DropdownItem,
+      DropdownMenu
+    },
+    data() {
+      return {
+        value: 0,
+        options: [
+          { text: 'A', value: 0 },
+          { text: 'B', value: 1 }
+        ]
+      };
+    }
+  });
+
+  const title = wrapper.find('.van-dropdown-menu__title');
+  title.trigger('click');
+  expect(wrapper).toMatchSnapshot();
+});
 
 test('change event', async () => {
   const onChange = jest.fn();

@@ -78,6 +78,15 @@ export default {
 };
 ```
 
+### 禁用菜单
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" disabled :options="option1" />
+  <van-dropdown-item v-model="value2" disabled :options="option2" />
+</van-dropdown-menu>
+```
+
 ## API
 
 ### DropdownMenu Props
@@ -96,6 +105,7 @@ export default {
 | value | 当前选中项对应的 value，可以通过`v-model`双向绑定 | `String | Number` | - | - |
 | title | 菜单项标题 | `String` | 当前选中项文字 | - |
 | options | 选项数组 | `Array` | `[]` | - |
+| disabled | 是否禁用菜单 | `Boolean` | `false` | - |
 
 ### DropdownItem Events
 

@@ -12,7 +12,8 @@ export default sfc({
   props: {
     value: null,
     title: String,
-    options: Array
+    options: Array,
+    disabled: Boolean
   },
 
   data() {

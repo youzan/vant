@@ -15,6 +15,16 @@
     &:active {
       opacity: .7;
     }
+
+    &--disabled {
+      &:active {
+        opacity: 1;
+      }
+
+      .van-dropdown-menu__title {
+        color: @gray-dark;
+      }
+    }
   }
 
   &__title {
