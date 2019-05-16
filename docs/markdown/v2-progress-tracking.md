@@ -1,8 +1,24 @@
 # Vant 2.0 改动一览
 
+## 主要变动
+
+- 增加三个新组件
+- 增加数十个 API
+- 全新的卡片风格文档，更直观
+- 所有组件支持通过`less`变量自定义样式
+- 调整了部分不合理的命名，废弃少量 API
+
+## 新组件
+
+在 2.0 版本中，我们按照社区反馈新增以下组件：
+
+- `Skeleton`骨架屏组件
+- `IndexBar`、`IndexAnchor`索引栏组件
+- `DropdownMenu`、`DropdownItem`下拉菜单组件
+
 ## 不兼容更新
 
-在 2.0 版本中，我们对组件和 API 进行重命名，以更加符合业界的命名规范，同时移除了少量不常用的属性，具体改动如下：
+在 2.0 版本中，我们对部分组件和 API 进行重命名，以更加符合业界的命名规范，同时移除了少量不常用的属性，具体改动如下：
 
 ### Actionsheet
 
@@ -43,6 +59,14 @@
 - 移除`circle`类型
 - 移除`gradient-circle`类型
 
+### Checkbox
+
+- 调整为`flex`布局，可能对原有布局产生影响
+
+### Radio
+
+- 调整为`flex`布局，可能对原有布局产生影响
+
 ### Waterfall
 
 - 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
@@ -50,10 +74,6 @@
 ---
 
 ## 新特性
-
-- 新增`Skeleton`骨架屏组件
-- 新增`IndexBar`、`IndexAnchor`索引栏组件
-- 新增`DropdownMenu`、`DropdownItem`下拉菜单组件
 
 ### ActionSheet
 
@@ -66,7 +86,6 @@
 
 ### Checkbox
 
-- 调整为`flex`布局
 - 新增`icon-size`属性
 
 ### Field
@@ -80,10 +99,6 @@
 ### Icon
 
 - 支持`Number`类型的`size`属性
-
-### ImagePreview
-
-- 新增多个`LESS`变量
 
 ### Loading
 
@@ -108,7 +123,6 @@
 
 ### Radio
 
-- 调整为`flex`布局
 - 新增`icon-size`属性
 
 ### Steps
@@ -120,7 +134,6 @@
 
 - 新增`tip-icon`属性
 - 新增`suffix-label`属性
-- 新增多个`LESS`变量
 
 ### Switch
 
@@ -145,7 +158,3 @@
 
 - 新增`route`属性
 - 新增`inactive-color`属性
-
-### TreeSelect
-
-- 新增多个`LESS`变量
