@@ -3,32 +3,32 @@
 .van-picker {
   position: relative;
   overflow: hidden;
-  background-color: @white;
+  background-color: @picker-background-color;
   user-select: none;
   -webkit-text-size-adjust: 100%; /* avoid iOS text size adjust */
 
   &__toolbar {
     display: flex;
     justify-content: space-between;
-    height: 44px;
-    line-height: 44px;
+    height: @picker-toolbar-height;
+    line-height: @picker-toolbar-height;
   }
 
   &__cancel,
   &__confirm {
-    padding: 0 15px;
-    color: @blue;
-    font-size: 14px;
+    padding: @picker-action-padding;
+    color: @picker-action-text-color;
+    font-size: @picker-action-font-size;
 
     &:active {
-      background-color: @active-color;
+      background-color: @picker-action-active-color;
     }
   }
 
   &__title {
     max-width: 50%;
     font-weight: 500;
-    font-size: 16px;
+    font-size: @picker-title-font-size;
     text-align: center;
   }
 
@@ -64,20 +64,20 @@
   &-column {
     flex: 1;
     overflow: hidden;
-    font-size: 16px;
+    font-size: @picker-option-font-size;
     text-align: center;
 
     &__item {
       padding: 0 5px;
-      color: @gray-dark;
+      color: @picker-option-text-color;
 
       &--selected {
-        color: @text-color;
+        color: @picker-option-selected-text-color;
         font-weight: 500;
       }
 
       &--disabled {
-        opacity: .3;
+        opacity: @picker-option-disabled-opacity;
       }
     }
   }
