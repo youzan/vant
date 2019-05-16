@@ -8,6 +8,10 @@ export default sfc({
   mixins: [TouchMixin, ParentMixin('vanIndexBar')],
 
   props: {
+    zIndex: {
+      type: Number,
+      default: 1
+    },
     indexList: {
       type: Array,
       default() {
@@ -74,6 +78,7 @@ export default sfc({
       <div class={bem()}>
         <div
           class={bem('sidebar')}
+          style={{ zIndex: this.zIndex }}
           onClick={this.onClick}
           onTouchstart={this.onTouchStart}
           onTouchmove={this.onTouchMove}

@@ -67,6 +67,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | index-list | 索引字符列表 | `Array` | `A-Z` | - |
+| z-index | z-index 层级 | `Number` | `1` | - |
 
 ### IndexAnchor Props
 

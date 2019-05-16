@@ -63,6 +63,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | index-list | Index List | `Array` | `A-Z` |
+| z-index | z-index | `Number` | `1` |
 
 ### IndexAnchor Props
 
