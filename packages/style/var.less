@@ -324,7 +324,9 @@
 @pagination-height: 40px;
 @pagination-font-size: 14px;
 @pagination-item-width: 36px;
-@pagination-item-theme-color: @blue;
+@pagination-item-default-color: @blue;
+@pagination-item-disabled-color: @gray-darker;
+@pagination-item-disabled-background-color: @background-color;
 @pagination-background-color: @white;
 @pagination-desc-color: @gray-darker;
 @pagination-disabled-opacity: 0.6;
@@ -500,10 +502,6 @@
 @switch-cell-large-padding-top: @cell-large-vertical-padding - 1px;
 @switch-cell-large-padding-bottom: @cell-large-vertical-padding - 1px;
 
-// Tab
-@tabs-line-height: 44px;
-@tabs-card-height: 30px;
-
 // Tabbar
 @tabbar-height: 50px;
 @tabbar-background-color: @white;
@@ -515,6 +513,20 @@
 @tabbar-item-line-height: 1;
 @tabbar-item-icon-size: 18px;
 @tabbar-item-margin-bottom: 5px;
+
+// Tab
+@tab-text-color: @gray-darker;
+@tab-active-text-color: @text-color;
+@tab-disabled-text-color: @gray;
+@tab-font-size: 14px;
+
+// Tabs
+@tabs-default-color: @red;
+@tabs-line-height: 44px;
+@tabs-card-height: 30px;
+@tabs-nav-background-color: @white;
+@tabs-bottom-bar-height: 3px;
+@tabs-bottom-bar-color: @tabs-default-color;
 
 // Tag
 @tag-padding: .2em .5em;

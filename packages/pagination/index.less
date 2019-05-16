@@ -11,13 +11,13 @@
     box-sizing: border-box;
     min-width: @pagination-item-width;
     height: @pagination-height;
-    color: @pagination-item-theme-color;
+    color: @pagination-item-default-color;
     background-color: @pagination-background-color;
     user-select: none;
 
     &:active {
       color: @white;
-      background-color: @pagination-item-theme-color;
+      background-color: @pagination-item-default-color;
     }
 
     &::after {
@@ -30,14 +30,14 @@
 
     &--disabled,
     &--disabled:active {
-      color: @gray-darker;
-      background-color: @background-color;
+      color: @pagination-item-disabled-color;
+      background-color: @pagination-item-disabled-background-color;
       opacity: @pagination-disabled-opacity;
     }
 
     &--active {
       color: @white;
-      background-color: @pagination-item-theme-color;
+      background-color: @pagination-item-default-color;
     }
   }
 
