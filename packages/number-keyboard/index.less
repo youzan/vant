@@ -5,16 +5,16 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: @white;
+  background-color: @number-keyboard-background-color;
   animation-timing-function: ease-out;
   user-select: none;
 
   &__title {
     position: relative;
-    height: 30px;
-    color: @gray-darker;
-    font-size: 14px;
-    line-height: 30px;
+    height: @number-keyboard-title-height;
+    color: @number-keyboard-title-color;
+    font-size: @number-keyboard-title-font-size;
+    line-height: @number-keyboard-title-height;
     text-align: center;
 
     &-left {
@@ -30,12 +30,12 @@
   &__close {
     position: absolute;
     right: 0;
-    padding: 0 15px;
-    color: @blue;
-    font-size: 14px;
+    padding: @number-keyboard-close-padding;
+    color: @number-keyboard-close-color;
+    font-size: @number-keyboard-close-font-size;
 
     &:active {
-      background-color: @active-color;
+      background-color: @number-keyboard-key-active-color;
     }
   }
 
@@ -63,7 +63,7 @@
   display: inline-block;
   width: 100% / 3;
   height: @number-keyboard-key-height;
-  font-size: 24px;
+  font-size: @number-keyboard-key-font-size;
   font-style: normal;
   line-height: @number-keyboard-key-height;
   text-align: center;
@@ -85,19 +85,19 @@
 
   &--blue,
   &--delete {
-    font-size: 16px;
+    font-size: @number-keyboard-delete-font-size;
   }
 
   &--blue {
-    color: @white;
-    background-color: @blue;
+    color: @number-keyboard-button-text-color;
+    background-color: @number-keyboard-button-background-color;
 
     &.van-key--active {
-      background-color: @blue;
+      background-color: @number-keyboard-button-background-color;
     }
 
     &::after {
-      border-color: @blue;
+      border-color: @number-keyboard-button-background-color;
     }
   }
 
@@ -106,6 +106,6 @@
   }
 
   &--active {
-    background-color: @active-color;
+    background-color: @number-keyboard-key-active-color;
   }
 }
