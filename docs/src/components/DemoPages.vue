@@ -1,23 +1,25 @@
 <template>
   <section class="van-doc-demo-pages">
-    <h2>{{ $t('title') }}</h2>
-    <p>{{ $t('description') }}</p>
-    <div class="van-doc-demo-pages__gallery">
-      <div
-        :class="['van-doc-demo-pages__item', { 'van-doc-demo-pages__item--active': index === currentDemo }]"
-        v-for="(demo, index) in demos"
-      >
-        <h4>{{ demo.title }}</h4>
-        <a
-          :href="demo.source"
-          target="_blank"
+    <h1>{{ $t('title') }}</h1>
+    <div class="card">
+      <p>{{ $t('description') }}</p>
+      <div class="van-doc-demo-pages__gallery">
+        <div
+          :class="['van-doc-demo-pages__item', { 'van-doc-demo-pages__item--active': index === currentDemo }]"
+          v-for="(demo, index) in demos"
         >
-          {{ $t('source') }}
-        </a>
-        <img
-          :src="demo.preview"
-          @click="onChangeDemo(demo, index)"
-        >
+          <h4>{{ demo.title }}</h4>
+          <a
+            :href="demo.source"
+            target="_blank"
+          >
+            {{ $t('source') }}
+          </a>
+          <img
+            :src="demo.preview"
+            @click="onChangeDemo(demo, index)"
+          >
+        </div>
       </div>
     </div>
   </section>
