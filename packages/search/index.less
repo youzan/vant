@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding: 10px 16px;
+  padding: @search-padding;
 
   &__content {
     display: flex;
@@ -14,15 +14,15 @@
     border-radius: 2px;
 
     &--round {
-      border-radius: 17px;
+      border-radius: @search-input-height / 2;
     }
   }
 
   &__label {
-    padding: 0 5px;
-    color: @text-color;
-    font-size: 14px;
-    line-height: 34px;
+    padding: @search-label-padding;
+    color: @search-label-color;
+    font-size: @search-label-font-size;
+    line-height: @search-input-height;
   }
 
   .van-cell {
@@ -31,7 +31,7 @@
     background-color: transparent;
 
     &__left-icon {
-      color: @gray-dark;
+      color: @search-left-icon-color;
     }
   }
 
@@ -49,10 +49,10 @@
   }
 
   &__action {
-    padding: 0 10px;
-    color: @text-color;
-    font-size: 14px;
-    line-height: 34px;
+    padding: @search-action-padding;
+    color: @search-action-text-color;
+    font-size: @search-action-font-size;
+    line-height: @search-input-height;
 
     &:active {
       background-color: @active-color;
