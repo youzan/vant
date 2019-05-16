@@ -2,22 +2,22 @@
 
 .van-pagination {
   display: flex;
-  font-size: 14px;
-  line-height: 40px;
+  font-size: @pagination-font-size;
+  line-height: @pagination-height;
   text-align: center;
 
   &__item {
     flex: 1;
     box-sizing: border-box;
-    min-width: 36px;
-    height: 40px;
-    color: @blue;
-    background-color: @white;
+    min-width: @pagination-item-width;
+    height: @pagination-height;
+    color: @pagination-item-theme-color;
+    background-color: @pagination-background-color;
     user-select: none;
 
     &:active {
       color: @white;
-      background-color: @blue;
+      background-color: @pagination-item-theme-color;
     }
 
     &::after {
@@ -32,12 +32,12 @@
     &--disabled:active {
       color: @gray-darker;
       background-color: @background-color;
-      opacity: 0.6;
+      opacity: @pagination-disabled-opacity;
     }
 
     &--active {
       color: @white;
-      background-color: @blue;
+      background-color: @pagination-item-theme-color;
     }
   }
 
@@ -52,8 +52,8 @@
 
   &__page-desc {
     flex: 1;
-    height: 40px;
-    color: @gray-darker;
+    height: @pagination-height;
+    color: @pagination-desc-color;
   }
 
   &--simple {
