@@ -2,7 +2,7 @@
 
 exports[`lazy load 1`] = `
 <div class="van-image"><img class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 20px;">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
       <!----></i></div>
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`load event 1`] = `<div class="van-image"><img src="https://img.yzcdn.cn
 
 exports[`load event 2`] = `
 <div class="van-image"><img src="" class="van-image__img">
-  <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 20px;">
+  <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
       <!----></i></div>
 </div>
 `;

@@ -50,12 +50,24 @@ Vue.use(Lazyload);
 
 ### 加载中提示
 
-`Image`组件默认提供了图片加载中的提示，可以通过插槽自定义加载中提示
+`Image`组件提供了默认的加载中提示，可以通过`loading`插槽自定义加载中提示
 
 ```html
 <van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
   <template v-slot:loading>
     <van-loading type="spinner" size="20" />
+  </template>
+</van-image>
+```
+
+### 加载失败提示
+
+`Image`组件提供了默认的加载失败提示，可以通过`error`插槽自定义加载失败提示
+
+```html
+<van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
+  <template v-slot:error>
+    <van-icon name="close" size="20" />
   </template>
 </van-image>
 ```
@@ -95,4 +107,5 @@ Vue.use(Lazyload);
 
 | 名称 | 说明 |
 |------|------|
-| loading | 自定义加载状态显示内容 |
+| loading | 自定义加载中的提示内容 |
+| error | 自定义加载失败时的提示内容 |

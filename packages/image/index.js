@@ -51,6 +51,7 @@ export default sfc({
 
     onError(event) {
       this.error = true;
+      this.loading = false;
       this.$emit('error', event);
     },
 
@@ -58,11 +59,19 @@ export default sfc({
       this.$emit('click', event);
     },
 
-    renderContent() {
+    renderPlaceholder() {
       if (this.loading) {
         return (
           <div class={bem('loading')}>
-            {this.slots('loading') || <Icon name="photo-o" size="20" />}
+            {this.slots('loading') || <Icon name="photo-o" size="22" />}
+          </div>
+        );
+      }
+
+      if (this.error) {
+        return (
+          <div class={bem('error')}>
+            {this.slots('error') || <Icon name="warning-o" size="22" />}
           </div>
         );
       }
@@ -83,6 +92,10 @@ export default sfc({
         }
       };
 
+      if (this.error) {
+        return;
+      }
+
       if (this.lazyLoad) {
         return <img vLazy={this.src} {...imgData} />;
       }
@@ -95,7 +108,7 @@ export default sfc({
     return (
       <div class={bem()} style={this.style} onClick={this.onClick}>
         {this.renderImage()}
-        {this.renderContent()}
+        {this.renderPlaceholder()}
       </div>
     );
   }

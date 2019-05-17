@@ -54,6 +54,32 @@
         </van-col>
       </van-row>
     </demo-block>
+
+    <demo-block :title="$t('error')">
+      <van-row gutter="20">
+        <van-col span="8">
+          <van-image
+            width="100%"
+            height="27vw"
+            src="x"
+          />
+          <div class="text">{{ $t('defaultTip') }}</div>
+        </van-col>
+
+        <van-col span="8">
+          <van-image
+            width="100%"
+            height="27vw"
+            src="x"
+          >
+            <template v-slot:error>
+              {{ $t('loadFail') }}
+            </template>
+          </van-image>
+          <div class="text">{{ $t('customTip') }}</div>
+        </van-col>
+      </van-row>
+    </demo-block>
   </demo-section>
 </template>
 
@@ -65,14 +91,16 @@ export default {
       loading: '加载中提示',
       error: '加载失败提示',
       defaultTip: '默认提示',
-      customTip: '自定义提示'
+      customTip: '自定义提示',
+      loadFail: '加载失败'
     },
     'en-US': {
       fitMode: 'Fit Mode',
       loading: 'Loading',
       error: 'Error',
       defaultTip: 'Default Tip',
-      customTip: 'Custom Tip'
+      customTip: 'Custom Tip',
+      loadFail: 'Load failed'
     }
   },
 

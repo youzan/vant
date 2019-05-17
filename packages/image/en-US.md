@@ -84,3 +84,4 @@ Vue.use(Lazyload);
 | Name | Description |
 |------|------|
 | loading | Custom loading placeholder |
+| error | Custom error placeholder |
