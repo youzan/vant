@@ -1,5 +1,16 @@
 ## 更新日志
 
+## [v1.6.19](https://github.com/youzan/vant/tree/v1.6.19)
+`2019-05-16`
+
+**Bug Fixes**
+
+- 修复 Col 内容为空时宽度错误的问题
+- 修复 Uploader 在 safari 浏览器上最小宽度错误的问题
+- 修复 Tabbar info 传入空字符串时会渲染空节点的问题
+- 修复 Icon 等组件判断图片 URL 时不支持 blob 格式的问题 [\#3308](https://github.com/youzan/vant/pull/3308) [\#3300](https://github.com/youzan/vant/pull/3300)
+
+
 ## [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
 `2019-05-10`
 
