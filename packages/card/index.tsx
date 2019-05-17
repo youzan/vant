@@ -1,6 +1,7 @@
 import { use, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 import Tag from '../tag';
+import Image from '../image';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -53,27 +54,35 @@ function Card(
 
   function ThumbTag() {
     if (slots.tag || props.tag) {
-      const DefaultTag = (
-        <Tag mark type="danger">
-          {props.tag}
-        </Tag>
+      return (
+        <div class={bem('tag')}>
+          {slots.tag ? (
+            slots.tag()
+          ) : (
+            <Tag mark type="danger">
+              {props.tag}
+            </Tag>
+          )}
+        </div>
       );
-
-      return <div class={bem('tag')}>{slots.tag ? slots.tag() : DefaultTag}</div>;
     }
   }
 
   function Thumb() {
     if (slots.thumb || thumb) {
-      const DefaultThumb = props.lazyLoad ? (
-        <img class={bem('img')} vLazy={thumb} />
-      ) : (
-        <img class={bem('img')} src={thumb} />
-      );
-
       return (
         <a href={props.thumbLink} class={bem('thumb')}>
-          {slots.thumb ? slots.thumb() : DefaultThumb}
+          {slots.thumb ? (
+            slots.thumb()
+          ) : (
+            <Image
+              src={thumb}
+              width="100%"
+              height="100%"
+              fit="contain"
+              lazy-load={props.lazyLoad}
+            />
+          )}
           {ThumbTag()}
         </a>
       );
