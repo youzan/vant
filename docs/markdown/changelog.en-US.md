@@ -1,5 +1,16 @@
 # Changelog
 
+### [v1.6.19](https://github.com/youzan/vant/tree/v1.6.19)
+`2019-05-16`
+
+**Bug Fixes**
+
+- fix Col should set min-height
+- fix Uploader should clip file-upload-button
+- fix Tabbar should not render info when info is empty string
+- fix is-src utils data URLs should be prefixed with the data:image [\#3308](https://github.com/youzan/vant/pull/3308) [\#3300](https://github.com/youzan/vant/pull/3300)
+
+
 ### [v1.6.18](https://github.com/youzan/vant/tree/v1.6.18)
 `2019-05-10`
 
