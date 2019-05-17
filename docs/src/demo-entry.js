@@ -22,6 +22,7 @@ export default {
   'field': () => wrapper(import('../../packages/field/demo'), 'field'),
   'goods-action': () => wrapper(import('../../packages/goods-action/demo'), 'goods-action'),
   'icon': () => wrapper(import('../../packages/icon/demo'), 'icon'),
+  'image': () => wrapper(import('../../packages/image/demo'), 'image'),
   'image-preview': () => wrapper(import('../../packages/image-preview/demo'), 'image-preview'),
   'index-bar': () => wrapper(import('../../packages/index-bar/demo'), 'index-bar'),
   'lazyload': () => wrapper(import('../../packages/lazyload/demo'), 'lazyload'),

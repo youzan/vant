@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders demo correctly 1`] = `
+<div>
+  <div>
+    <div class="van-row">
+      <div class="van-image" style="width: 100px; height: 100px;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img"></div>
+    </div>
+  </div>
+  <div>
+    <div class="van-row" style="margin-left: -10px; margin-right: -10px;">
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image" style="height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: contain;"></div>
+        <div class="text">contain</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image" style="height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: cover;"></div>
+        <div class="text">cover</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image" style="height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: fill;"></div>
+        <div class="text">fill</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image" style="height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: none;"></div>
+        <div class="text">none</div>
+      </div>
+      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">
+        <div class="van-image" style="height: 27vw;"><img src="https://img.yzcdn.cn/vant/cat.jpeg" class="van-image__img" style="object-fit: scale-down;"></div>
+        <div class="text">scale-down</div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

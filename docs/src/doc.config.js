@@ -90,6 +90,10 @@ module.exports = {
                 title: 'Icon 图标'
               },
               {
+                path: '/image',
+                title: 'Image 图片'
+              },
+              {
                 path: '/col',
                 title: 'Layout 布局'
               },
@@ -407,6 +411,10 @@ module.exports = {
               {
                 path: '/icon',
                 title: 'Icon'
+              },
+              {
+                path: '/image',
+                title: 'Image'
               },
               {
                 path: '/col',

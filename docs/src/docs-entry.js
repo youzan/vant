@@ -51,6 +51,8 @@ export default {
   'goods-action.zh-CN': () => import('../../packages/goods-action/zh-CN.md'),
   'icon.en-US': () => import('../../packages/icon/en-US.md'),
   'icon.zh-CN': () => import('../../packages/icon/zh-CN.md'),
+  'image.en-US': () => import('../../packages/image/en-US.md'),
+  'image.zh-CN': () => import('../../packages/image/zh-CN.md'),
   'image-preview.en-US': () => import('../../packages/image-preview/en-US.md'),
   'image-preview.zh-CN': () => import('../../packages/image-preview/zh-CN.md'),
   'index-bar.en-US': () => import('../../packages/index-bar/en-US.md'),
