@@ -1,4 +1,5 @@
 import { use, isDef, suffixPx } from '../utils';
+import Icon from '../icon';
 
 const [sfc, bem] = use('image');
 
@@ -17,6 +18,13 @@ export default sfc({
       loading: true,
       error: false
     };
+  },
+
+  watch: {
+    src() {
+      this.loading = true;
+      this.error = false;
+    }
   },
 
   computed: {
@@ -48,33 +56,46 @@ export default sfc({
 
     onClick(event) {
       this.$emit('click', event);
+    },
+
+    renderContent() {
+      if (this.loading) {
+        return (
+          <div class={bem('loading')}>
+            {this.slots('loading') || <Icon name="photo-o" size="20" />}
+          </div>
+        );
+      }
+    },
+
+    renderImage() {
+      const imgData = {
+        class: bem('img'),
+        attrs: {
+          alt: this.alt
+        },
+        style: {
+          objectFit: this.fit
+        },
+        on: {
+          load: this.onLoad,
+          error: this.onError
+        }
+      };
+
+      if (this.lazyLoad) {
+        return <img vLazy={this.src} {...imgData} />;
+      }
+
+      return <img src={this.src} {...imgData} />;
     }
   },
 
   render(h) {
-    const imgData = {
-      class: bem('img'),
-      attrs: {
-        alt: this.alt
-      },
-      style: {
-        objectFit: this.fit
-      },
-      on: {
-        load: this.onLoad,
-        error: this.onError
-      }
-    };
-
-    const Image = this.lazyLoad ? (
-      <img vLazy={this.src} {...imgData} />
-    ) : (
-      <img src={this.src} {...imgData} />
-    );
-
     return (
       <div class={bem()} style={this.style} onClick={this.onClick}>
-        {Image}
+        {this.renderImage()}
+        {this.renderContent()}
       </div>
     );
   }

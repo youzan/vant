@@ -20,7 +20,7 @@ Vue.use(Image);
 />
 ```
 
-### 缩放模式
+### 填充模式
 
 ```html
 <van-image
@@ -48,6 +48,18 @@ import { Lazyload } from 'vant';
 Vue.use(Lazyload);
 ```
 
+### 加载中提示
+
+`Image`组件默认提供了图片加载中的提示，可以通过插槽自定义加载中提示
+
+```html
+<van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
+  <template v-slot:loading>
+    <van-loading type="spinner" size="20" />
+  </template>
+</van-image>
+```
+
 ## API
 
 ### Props
@@ -55,13 +67,13 @@ Vue.use(Lazyload);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | src | 图片链接 | `String` | - | - |
-| fit | 图片裁剪、缩放的模式 | `String` | `fill` | - |
+| fit | 图片填充模式 | `String` | `fill` | - |
 | alt | 替代文本 | `String` | - | - |
 | width | 宽度，默认单位为 px | `String | Number` | - | - |
 | height | 高度，默认单位为 px | `String | Number` | - | - |
 | lazy-load | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | - |
 
-### fit 可选值
+### 图片填充模式
 
 | 名称 | 含义 |
 |------|------|
@@ -78,3 +90,9 @@ Vue.use(Lazyload);
 | click | 点击图片时触发 | event: Event |
 | load | 图片加载完毕时触发 | - |
 | error | 图片加载失败时触发 | - |
+
+### Slots
+
+| 名称 | 说明 |
+|------|------|
+| loading | 自定义加载状态显示内容 |

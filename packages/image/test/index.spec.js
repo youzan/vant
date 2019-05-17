@@ -19,6 +19,10 @@ test('load event', () => {
   wrapper.find('img').trigger('load');
 
   expect(wrapper.emitted('load')[0][0]).toBeTruthy();
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.setProps({ src: '' });
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('error event', () => {

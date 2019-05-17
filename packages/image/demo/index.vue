@@ -19,10 +19,38 @@
         >
           <van-image
             :fit="fit"
+            width="100%"
             height="27vw"
             :src="image"
           />
           <div class="text">{{ fit }}</div>
+        </van-col>
+      </van-row>
+    </demo-block>
+
+    <demo-block :title="$t('loading')">
+      <van-row gutter="20">
+        <van-col span="8">
+          <van-image
+            width="100%"
+            height="27vw"
+          />
+          <div class="text">{{ $t('defaultTip') }}</div>
+        </van-col>
+
+        <van-col span="8">
+          <van-image
+            width="100%"
+            height="27vw"
+          >
+            <template v-slot:loading>
+              <van-loading
+                type="spinner"
+                size="20"
+              />
+            </template>
+          </van-image>
+          <div class="text">{{ $t('customTip') }}</div>
         </van-col>
       </van-row>
     </demo-block>
@@ -33,10 +61,18 @@
 export default {
   i18n: {
     'zh-CN': {
-      fitMode: '缩放模式'
+      fitMode: '填充模式',
+      loading: '加载中提示',
+      error: '加载失败提示',
+      defaultTip: '默认提示',
+      customTip: '自定义提示'
     },
     'en-US': {
-      fitMode: 'Fit Mode'
+      fitMode: 'Fit Mode',
+      loading: 'Loading',
+      error: 'Error',
+      defaultTip: 'Default Tip',
+      customTip: 'Custom Tip'
     }
   },
 

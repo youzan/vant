@@ -78,3 +78,9 @@ Vue.use(Lazyload);
 | click | Triggered when click image | event: Event |
 | load | Triggered when image loaded | - |
 | error | Triggered when image load failed | - |
+
+### Slots
+
+| Name | Description |
+|------|------|
+| loading | Custom loading placeholder |
