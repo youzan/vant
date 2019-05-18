@@ -75,6 +75,12 @@ export default sfc({
       }
     },
 
+    onClickItem(e) {
+      const index = Number(e.currentTarget.getAttribute('data-index'));
+      this.duration = DEFAULT_DURATION;
+      this.setIndex(index, true);
+    },
+
     adjustIndex(index) {
       index = range(index, 0, this.count);
       for (let i = index; i < this.count; i++) {
@@ -157,9 +163,8 @@ export default sfc({
                 })
               ]}
               domPropsInnerHTML={this.getOptionText(option)}
-              onClick={() => {
-                this.setIndex(index, true);
-              }}
+              data-index={index}
+              onClick={this.onClickItem}
             />
           ))}
         </ul>
