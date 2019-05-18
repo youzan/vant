@@ -55,10 +55,13 @@ export default sfc({
       this.touchStart(event);
       this.startOffset = this.offset;
       this.duration = 0;
+      this.hasTouchMove = false;
+      this.transitionEndTrigger = null;
     },
 
     onTouchMove(event) {
       preventDefault(event);
+      this.hasTouchMove = true;
       this.touchMove(event);
       this.offset = range(
         this.startOffset + this.deltaY,
@@ -72,6 +75,14 @@ export default sfc({
         this.duration = DEFAULT_DURATION;
         const index = range(Math.round(-this.offset / this.itemHeight), 0, this.count - 1);
         this.setIndex(index, true);
+      }
+      this.hasTouchMove = false;
+    },
+
+    onTransitionEnd() {
+      if (this.transitionEndTrigger) {
+        this.transitionEndTrigger();
+        this.transitionEndTrigger = null;
       }
     },
 
@@ -103,9 +114,19 @@ export default sfc({
       index = this.adjustIndex(index) || 0;
       this.offset = -index * this.itemHeight;
 
-      if (index !== this.currentIndex) {
-        this.currentIndex = index;
-        userAction && this.$emit('change', index);
+      const trigger = () => {
+        if (index !== this.currentIndex) {
+          this.currentIndex = index;
+          userAction && this.$emit('change', index);
+        }
+      };
+
+      // 若有触发过 `touchmove` 事件，那应该
+      // 在 `transitionend` 后再触发 `change` 事件
+      if (this.hasTouchMove) {
+        this.transitionEndTrigger = trigger;
+      } else {
+        trigger();
       }
     },
 
@@ -151,7 +172,10 @@ export default sfc({
         onTouchend={this.onTouchEnd}
         onTouchcancel={this.onTouchEnd}
       >
-        <ul style={wrapperStyle}>
+        <ul
+          style={wrapperStyle}
+          onTransitionend={this.onTransitionEnd}
+        >
           {this.options.map((option, index) => (
             <li
               style={optionStyle}
