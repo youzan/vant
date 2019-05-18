@@ -1,11 +1,14 @@
 import { deepClone } from '../utils/deep-clone';
 import { use, isObj, range } from '../utils';
 import { preventDefault } from '../utils/event';
+import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
 const [sfc, bem] = use('picker-column');
 
 export default sfc({
+  mixins: [TouchMixin],
+
   props: {
     valueKey: String,
     className: String,
@@ -17,7 +20,6 @@ export default sfc({
 
   data() {
     return {
-      startY: 0,
       offset: 0,
       duration: 0,
       startOffset: 0,
@@ -50,16 +52,16 @@ export default sfc({
 
   methods: {
     onTouchStart(event) {
-      this.startY = event.touches[0].clientY;
+      this.touchStart(event);
       this.startOffset = this.offset;
       this.duration = 0;
     },
 
     onTouchMove(event) {
       preventDefault(event);
-      const deltaY = event.touches[0].clientY - this.startY;
+      this.touchMove(event);
       this.offset = range(
-        this.startOffset + deltaY,
+        this.startOffset + this.deltaY,
         -(this.count * this.itemHeight),
         this.itemHeight
       );
