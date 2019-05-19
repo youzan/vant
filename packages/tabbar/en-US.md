@@ -31,6 +31,27 @@ export default {
 }
 ```
 
+### Item Name
+
+```html
+<van-tabbar v-model="active">
+  <van-tabbar-item name="home" icon="home-o">Tab</van-tabbar-item>
+  <van-tabbar-item name="search" icon="search">Tab</van-tabbar-item>
+  <van-tabbar-item name="friends" icon="friends-o">Tab</van-tabbar-item>
+  <van-tabbar-item name="setting" icon="setting-o">Tab</van-tabbar-item>
+</van-tabbar>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      active: 'home'
+    }
+  }
+}
+```
+
 ### Show Badge
 
 ```html
@@ -119,7 +140,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| v-model | Index of current tab | `Number` | - |
+| v-model | Identifier of current tab | `String | Number` | `0` |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
@@ -137,6 +158,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| name | Identifier | `String | Number` | Item index |
 | icon | Icon name | `String` | - |
 | dot | Whether to show red dot | `Boolean` | - |
 | info | Info message | `String | Number` | - |

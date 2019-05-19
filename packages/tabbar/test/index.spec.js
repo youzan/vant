@@ -88,3 +88,27 @@ test('click event', () => {
   expect(onClick).toHaveBeenCalledTimes(1);
   expect(onChange).toHaveBeenCalledTimes(0);
 });
+
+test('name prop', () => {
+  const onChange = jest.fn();
+  const wrapper = mount({
+    template: `
+      <van-tabbar :value="value" @change="onChange">
+        <van-tabbar-item name="a">Tab</van-tabbar-item>
+        <van-tabbar-item name="b">Tab</van-tabbar-item>
+      </van-tabbar>
+    `,
+    data() {
+      return {
+        value: 'a'
+      };
+    },
+    methods: {
+      onChange
+    }
+  });
+
+  wrapper.findAll('.van-tabbar-item').at(1).trigger('click');
+
+  expect(onChange).toHaveBeenCalledWith('b');
+});

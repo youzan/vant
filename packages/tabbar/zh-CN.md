@@ -12,6 +12,8 @@ Vue.use(Tabbar).use(TabbarItem);
 
 ### 基础用法
 
+`v-model`默认绑定选中标签的索引值，通过修改`v-model`即可切换选中的标签
+
 ```html
 <van-tabbar v-model="active">
   <van-tabbar-item icon="home-o">标签</van-tabbar-item>
@@ -26,6 +28,29 @@ export default {
   data() {
     return {
       active: 0
+    }
+  }
+}
+```
+
+### 通过名称匹配
+
+在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+
+```html
+<van-tabbar v-model="active">
+  <van-tabbar-item name="home" icon="home-o">标签</van-tabbar-item>
+  <van-tabbar-item name="search" icon="search">标签</van-tabbar-item>
+  <van-tabbar-item name="friends" icon="friends-o">标签</van-tabbar-item>
+  <van-tabbar-item name="setting" icon="setting-o">标签</van-tabbar-item>
+</van-tabbar>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      active: 'home'
     }
   }
 }
@@ -121,7 +146,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前选中标签的索引 | `Number` | - | - |
+| v-model | 当前选中标签的名称或索引值 | `String | Number` | `0` | - |
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
@@ -133,12 +158,13 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 切换标签时触发 | active: 当前选中标签 |
+| change | 切换标签时触发 | active: 当前选中标签的名称或索引值 |
 
 ### TabbarItem Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| name | 标签名称，作为匹配的标识符 | `String | Number` | 当前标签的索引值 | 2.0.0 |
 | icon | 图标名称或图片链接，可选值见 Icon 组件| `String` | - | - |
 | dot | 是否显示小红点 | `Boolean` | - | - |
 | info | 图标右上角提示信息 | `String | Number` | - | - |

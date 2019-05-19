@@ -163,3 +163,7 @@
 
 - 新增`route`属性
 - 新增`inactive-color`属性
+
+### TabbarItem
+
+- 新增`name`属性

@@ -7,11 +7,14 @@ export default sfc({
   mixins: [ParentMixin('vanTabbar')],
 
   props: {
-    value: Number,
     route: Boolean,
     activeColor: String,
     inactiveColor: String,
     safeAreaInsetBottom: Boolean,
+    value: {
+      type: [String, Number],
+      default: 0
+    },
     fixed: {
       type: Boolean,
       default: true
@@ -35,7 +38,7 @@ export default sfc({
   methods: {
     setActiveItem() {
       this.children.forEach((item, index) => {
-        item.active = index === this.value;
+        item.active = (item.name || index) === this.value;
       });
     },
 

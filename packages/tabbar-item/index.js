@@ -13,6 +13,7 @@ export default sfc({
     ...routeProps,
     icon: String,
     dot: Boolean,
+    name: [String, Number],
     info: [String, Number]
   },
 
@@ -34,7 +35,7 @@ export default sfc({
 
   methods: {
     onClick(event) {
-      this.parent.onChange(this.index);
+      this.parent.onChange(this.name || this.index);
       this.$emit('click', event);
       route(this.$router, this);
     }
