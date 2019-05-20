@@ -139,3 +139,45 @@ test('render title slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('simulation finger swipe again before transitionend', () => {
+  // mock getComputedStyle
+  // see: https://github.com/jsdom/jsdom/issues/2588
+  const originGetComputedStyle = window.getComputedStyle;
+  window.getComputedStyle = ele => {
+    const style = originGetComputedStyle(ele);
+
+    return {
+      ...style,
+      transform: 'matrix(1, 0, 0, 1, 0, -5)'
+    };
+  };
+
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns: simpleColumn
+    }
+  });
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -5);
+  triggerDrag(wrapper.find('.van-picker-column'), -5, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  expect(wrapper.emitted('change')[0][1]).toEqual('1995');
+});
+
+test('click column\'s item', () => {
+  const columns = [
+    { text: '杭州' },
+    { text: '宁波' },
+    { text: '温州', disabled: true },
+    { text: '嘉兴', disabled: true }
+  ];
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns
+    }
+  });
+
+  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
+});
