@@ -112,3 +112,13 @@ test('name prop', () => {
 
   expect(onChange).toHaveBeenCalledWith('b');
 });
+
+test('disable border', () => {
+  const wrapper = mount(Tabbar, {
+    propsData: {
+      border: false
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

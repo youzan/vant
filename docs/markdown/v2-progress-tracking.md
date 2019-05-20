@@ -162,6 +162,7 @@
 ### Tabbar
 
 - 新增`route`属性
+- 新增`border`属性
 - 新增`inactive-color`属性
 
 ### TabbarItem

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`disable border 1`] = `<div class="van-tabbar van-tabbar--fixed" style="z-index: 1;"></div>`;
+
 exports[`route mode 1`] = `
 <div class="van-hairline--top-bottom van-tabbar van-tabbar--fixed" style="z-index: 1;">
   <div class="van-tabbar-item van-tabbar-item--active">

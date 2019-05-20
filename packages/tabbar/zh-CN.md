@@ -148,6 +148,7 @@ export default {
 |------|------|------|------|------|
 | v-model | 当前选中标签的名称或索引值 | `String | Number` | `0` | - |
 | fixed | 是否固定在底部 | `Boolean` | `true` | - |
+| border | 是否显示外边框 | `Boolean` | `true` | 2.0.0 |
 | z-index | 元素 z-index | `Number` | `1` | 1.1.9 |
 | active-color | 选中标签的颜色 | `String` | `#1989fa` | 1.5.1 |
 | inactive-color | 未选中标签的颜色 | `String` | `#7d7e80` | 2.0.0 |

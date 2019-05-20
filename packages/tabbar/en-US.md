@@ -142,6 +142,7 @@ export default {
 |------|------|------|------|
 | v-model | Identifier of current tab | `String | Number` | `0` |
 | fixed | Whether to fixed bottom | `Boolean` | `true` |
+| border | Whether to show border | `Boolean` | `true` |
 | z-index | Z-index | `Number` | `1` |
 | active-color | Color of active tab item | `String` | `#1989fa` |
 | inactive-color | Color of inactive tab item | `String` | `#7d7e80` |

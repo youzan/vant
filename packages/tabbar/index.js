@@ -15,6 +15,10 @@ export default sfc({
       type: [String, Number],
       default: 0
     },
+    border: {
+      type: Boolean,
+      default: true
+    },
     fixed: {
       type: Boolean,
       default: true
@@ -55,7 +59,7 @@ export default sfc({
       <div
         style={{ zIndex: this.zIndex }}
         class={[
-          'van-hairline--top-bottom',
+          { 'van-hairline--top-bottom': this.border },
           bem({
             fixed: this.fixed,
             'safe-area-inset-bottom': this.safeAreaInsetBottom
