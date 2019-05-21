@@ -6,7 +6,7 @@
 
 Vant use [Less](http://lesscss.org/) as css preprocessor，you can modify less variables to custom theme.
 
-There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/dev/packages/style/var.less)。
+There are some basic variables below, all available variables could be found in [var.less](https://github.com/youzan/vant/blob/1.x/packages/style/var.less)。
 
 ```less
 // color variables

@@ -42,7 +42,7 @@ export default {
     },
 
     demoLink() {
-      return `https://github.com/youzan/vant/blob/dev/packages/${
+      return `https://github.com/youzan/vant/blob/1.x/packages/${
         this.$route.meta.path
       }/demo/index.vue`;
     },

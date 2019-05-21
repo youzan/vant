@@ -10,7 +10,7 @@
 
 Vant 使用了 [Less](http://lesscss.org/) 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
 
-下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/dev/packages/style/var.less)。
+下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/youzan/vant/blob/1.x/packages/style/var.less)。
 
 ```less
 // color variables
