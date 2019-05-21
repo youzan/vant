@@ -1,11 +1,17 @@
-/* eslint-disable */
-const version = require('../../package.json').version;
+import pkgJson from '../../package.json';
 
-module.exports = {
-  searchConfig: {
-    apiKey: '90067aecdaa2c85220e2783cd305caac', 
-    indexName: 'vant', 
-  },
+const { version } = pkgJson;
+
+export const searchConfig = {
+  apiKey: '90067aecdaa2c85220e2783cd305caac',
+  indexName: 'vant'
+};
+
+export const versions = [version, '1.x'];
+
+export const github = 'https://github.com/youzan/vant';
+
+export default {
   'zh-CN': {
     header: {
       logo: {
@@ -18,8 +24,7 @@ module.exports = {
           text: 'En',
           from: 'zh-CN',
           to: 'en-US'
-        },
-        github: 'https://github.com/youzan/vant'
+        }
       }
     },
     nav: [
@@ -343,7 +348,8 @@ module.exports = {
   'en-US': {
     header: {
       logo: {
-        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        image:
+          'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
         title: 'Vant',
         href: '#/'
       },
@@ -352,8 +358,7 @@ module.exports = {
           text: '中文',
           from: 'en-US',
           to: 'zh-CN'
-        },
-        github: 'https://github.com/youzan/vant'
+        }
       }
     },
     nav: [

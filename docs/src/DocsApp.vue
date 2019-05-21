@@ -3,11 +3,13 @@
     <van-doc
       :base="base"
       :config="config"
-      active="Vue 组件"
       :lang="$vantLang"
+      :github="github"
+      :versions="versions"
       :simulators="simulators"
       :search-config="searchConfig"
       :current-simulator="currentSimulator"
+      @switch-version="onSwitchVersion"
     >
       <router-view @changeDemoURL="onChangeDemoURL" />
     </van-doc>
@@ -15,11 +17,15 @@
 </template>
 
 <script>
-import docConfig from './doc.config';
+import pkgJson from '../../package.json';
+import docConfig, { github, versions, searchConfig } from './doc.config';
 
 export default {
   data() {
-    this.searchConfig = docConfig.searchConfig;
+    this.github = github;
+    this.versions = versions;
+    this.searchConfig = searchConfig;
+
     return {
       simulators: [`mobile.html${location.hash}`],
       demoURL: ''
@@ -44,6 +50,12 @@ export default {
   methods: {
     onChangeDemoURL(url) {
       this.simulators = [this.simulators[0], url];
+    },
+
+    onSwitchVersion(version) {
+      if (version !== pkgJson.version) {
+        location.href = `https://youzan.github.io/vant/${version}`;
+      }
     }
   }
 };
@@ -52,7 +64,7 @@ export default {
 <style lang="less">
 .van-doc-intro {
   padding-top: 20px;
-  font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
   &__logo {
