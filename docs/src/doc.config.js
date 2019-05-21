@@ -2,12 +2,15 @@
 const version = require('../../package.json').version;
 
 module.exports = {
+  searchConfig: {
+    apiKey: '90067aecdaa2c85220e2783cd305caac', 
+    indexName: 'vant', 
+  },
   'zh-CN': {
     header: {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
         title: 'Vant',
-        version,
         href: '#/'
       },
       nav: {
@@ -342,7 +345,6 @@ module.exports = {
       logo: {
         image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
         title: 'Vant',
-        version,
         href: '#/'
       },
       nav: {

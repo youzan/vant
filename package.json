@@ -56,6 +56,7 @@
     "@babel/runtime": "^7.4.4",
     "@vant/icons": "1.1.7",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "docsearch.js": "^2.6.3",
     "vue-lazyload": "1.2.3"
   },
   "peerDependencies": {
@@ -71,7 +72,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.13",
-    "@vant/doc": "^2.0.1",
+    "@vant/doc": "^2.1.0",
     "@vant/eslint-config": "^1.1.2",
     "@vant/markdown-loader": "^2.0.0",
     "@vue/babel-preset-jsx": "^1.0.0",
@@ -86,7 +87,7 @@
     "csso": "^3.5.1",
     "dependency-tree": "^7.0.2",
     "eslint": "^5.16.0",
-    "fast-glob": "^2.2.4",
+    "fast-glob": "^2.2.7",
     "gh-pages": "^2.0.1",
     "html-webpack-plugin": "3.2.0",
     "husky": "^2.3.0",
@@ -117,9 +118,9 @@
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "2.6.10",
     "vue-template-es2015-compiler": "^1.9.1",
-    "webpack": "^4.31.0",
+    "webpack": "^4.32.0",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.4.1"
   },
   "vetur": {
     "tags": "vetur/tags.json",

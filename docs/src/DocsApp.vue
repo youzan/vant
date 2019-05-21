@@ -4,7 +4,9 @@
       :base="base"
       :config="config"
       active="Vue 组件"
+      :lang="$vantLang"
       :simulators="simulators"
+      :search-config="searchConfig"
       :current-simulator="currentSimulator"
     >
       <router-view @changeDemoURL="onChangeDemoURL" />
@@ -17,6 +19,7 @@ import docConfig from './doc.config';
 
 export default {
   data() {
+    this.searchConfig = docConfig.searchConfig;
     return {
       simulators: [`mobile.html${location.hash}`],
       demoURL: ''
