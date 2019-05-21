@@ -62,7 +62,7 @@
       <van-cell
         :title="$t('cell')"
         is-link
-        url="//youzan.github.io/vant/mobile.html"
+        url="//youzan.github.io/vant/1.x/mobile.html"
       />
       <van-cell
         :title="$t('cell')"

@@ -24,7 +24,7 @@
     "build:style-entry": "node build/build-style-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:lib": "node build/build-lib.js",
-    "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
+    "build:site": "rimraf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist --dest 1.x",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",

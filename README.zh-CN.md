@@ -111,7 +111,7 @@ Vue.use(Vant);
 
 > 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
 
-更多内容请参考 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
+更多内容请参考 [快速上手](https://youzan.github.io/vant/1.x#/zh-CN/quickstart).
 
 ## 贡献代码
 
@@ -125,8 +125,8 @@ Vue.use(Vant);
 
 ## 链接
 
-* [详细文档](https://youzan.github.io/vant)
-* [更新日志](https://youzan.github.io/vant#/zh-CN/changelog)
+* [详细文档](https://youzan.github.io/vant/1.x)
+* [更新日志](https://youzan.github.io/vant/1.x#/zh-CN/changelog)
 * [Vant Demo: 示例工程](https://github.com/youzan/vant-demo)
 * [Vant Weapp: 小程序 UI](https://github.com/youzan/vant-weapp)
 * [Zent: PC 端 React UI](https://www.youzanyun.com/zanui/zent)

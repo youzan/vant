@@ -11,7 +11,7 @@ module.exports = {
         href: '#/'
       },
       nav: {
-        'Vue 组件': 'https://youzan.github.io/vant/',
+        'Vue 组件': 'https://youzan.github.io/vant/1.x/',
         '小程序组件': 'https://youzan.github.io/vant-weapp/',
         lang: {
           text: 'En',

@@ -108,7 +108,7 @@ Vue.use(Vant);
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.
 
-See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
+See more in [Quickstart](https://youzan.github.io/vant/1.x#/en-US/quickstart).
 
 ## Contribution
 
@@ -120,8 +120,8 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 ## Links
 
-* [Documentation](https://youzan.github.io/vant)
-* [Changelog](https://youzan.github.io/vant#/en-US/changelog)
+* [Documentation](https://youzan.github.io/vant/1.x)
+* [Changelog](https://youzan.github.io/vant/1.x#/en-US/changelog)
 * [Vant Demo](https://github.com/youzan/vant-demo)
 * [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
 * [Zent: PC UI base on React](https://www.youzanyun.com/zanui/zent)
