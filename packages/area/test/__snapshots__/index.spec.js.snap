@@ -26,6 +26,7 @@ exports[`change option 1`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -57,6 +58,7 @@ exports[`change option 2`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">河东区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -88,6 +90,7 @@ exports[`change option 3`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">河东区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -118,6 +121,7 @@ exports[`reset method 1`] = `
         <li data-index="0" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 44px;">蓟县</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -149,6 +153,7 @@ exports[`reset method 2`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -180,6 +185,7 @@ exports[`watch areaList & code 1`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -211,6 +217,7 @@ exports[`watch areaList & code 2`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
@@ -242,6 +249,7 @@ exports[`watch areaList & code 3`] = `
         <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 44px;">西城区</li>
       </ul>
     </div>
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>

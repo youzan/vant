@@ -48,6 +48,7 @@ exports[`create a AddressEdit 1`] = `
         <div class="van-picker-column" style="height:220px;">
           <ul style="transform:translate3d(0, 88px, 0);transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1);transition-duration:0ms;line-height:44px;"></ul>
         </div>
+        <div class="van-picker__mask" style="background-size:100% 88px;"></div>
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
@@ -117,6 +118,7 @@ exports[`create a AddressEdit with props 1`] = `
         <div class="van-picker-column" style="height:220px;">
           <ul style="transform:translate3d(0, 88px, 0);transition-timing-function:cubic-bezier(0.23, 1, 0.32, 1);transition-duration:0ms;line-height:44px;"></ul>
         </div>
+        <div class="van-picker__mask" style="background-size:100% 88px;"></div>
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
     </div>
