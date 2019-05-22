@@ -2,9 +2,13 @@
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
 
+##### ActionSheet
+
+- 新增`lock-scroll`属性
+
 ##### Picker
 
-- 新增惯性滚动
+- 支持惯性滚动
 
 ##### Tab
 

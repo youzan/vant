@@ -122,6 +122,7 @@ function ActionSheet(
       value={props.value}
       overlay={props.overlay}
       lazyRender={props.lazyRender}
+      lockScroll={props.lockScroll}
       getContainer={props.getContainer}
       closeOnClickOverlay={props.closeOnClickOverlay}
       onInput={onInput}
