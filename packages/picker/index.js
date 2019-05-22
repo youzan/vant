@@ -141,6 +141,7 @@ export default sfc({
 
   render(h) {
     const { itemHeight } = this;
+    const wrapHeight = itemHeight * this.visibleItemCount;
     const columns = this.simple ? [this.columns] : this.columns;
 
     const frameStyle = {
@@ -148,7 +149,11 @@ export default sfc({
     };
 
     const columnsStyle = {
-      height: `${itemHeight * this.visibleItemCount}px`
+      height: `${wrapHeight}px`
+    };
+
+    const maskStyle = {
+      backgroundSize: `100% ${(wrapHeight - itemHeight) / 2}px`
     };
 
     const Toolbar = this.showToolbar && (
@@ -186,6 +191,7 @@ export default sfc({
               }}
             />
           ))}
+          <div class={bem('mask')} style={maskStyle} />
           <div class={['van-hairline--top-bottom', bem('frame')]} style={frameStyle} />
         </div>
       </div>

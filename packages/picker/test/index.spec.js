@@ -80,25 +80,32 @@ test('set picker values', () => {
   expect(vm.getColumnValue(2)).toEqual(undefined);
 });
 
-test('drag columns', () => {
+test('drag columns', async () => {
   const wrapper = mount(Picker, {
     propsData: {
       columns
     }
   });
-  triggerDrag(wrapper.find('.van-picker-column'), 0, 0);
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+
+  // 由于在极短的时间（大约几毫秒）移动 `100px`，因此再计算惯性滚动的距离时，
+  // 会得到一个很大的值，导致会滚动到且选中列表的最后一项
   expect(wrapper.emitted('change')[0][1]).toEqual(['normal', '1990']);
 });
 
-test('drag simple columns', () => {
+test('drag simple columns', async () => {
   const wrapper = mount(Picker, {
     propsData: {
       columns: simpleColumn
     }
   });
   triggerDrag(wrapper.find('.van-picker-column'), 0, -100);
-  expect(wrapper.emitted('change')[0][1]).toEqual('1992');
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+
+  // 由于在极短的时间（大约几毫秒）移动 `100px`，因此再计算惯性滚动的距离时，
+  // 会得到一个很大的值，导致会滚动到且选中列表的最后一项
+  expect(wrapper.emitted('change')[0][1]).toEqual('1995');
 });
 
 test('column watch default index', async () => {
@@ -131,4 +138,46 @@ test('render title slot', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('simulation finger swipe again before transitionend', () => {
+  // mock getComputedStyle
+  // see: https://github.com/jsdom/jsdom/issues/2588
+  const originGetComputedStyle = window.getComputedStyle;
+  window.getComputedStyle = ele => {
+    const style = originGetComputedStyle(ele);
+
+    return {
+      ...style,
+      transform: 'matrix(1, 0, 0, 1, 0, -5)'
+    };
+  };
+
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns: simpleColumn
+    }
+  });
+
+  triggerDrag(wrapper.find('.van-picker-column'), 0, -5);
+  triggerDrag(wrapper.find('.van-picker-column'), -5, -100);
+  wrapper.find('.van-picker-column ul').trigger('transitionend');
+  expect(wrapper.emitted('change')[0][1]).toEqual('1995');
+});
+
+test('click column\'s item', () => {
+  const columns = [
+    { text: '杭州' },
+    { text: '宁波' },
+    { text: '温州', disabled: true },
+    { text: '嘉兴', disabled: true }
+  ];
+  const wrapper = mount(Picker, {
+    propsData: {
+      columns
+    }
+  });
+
+  wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
+  expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });

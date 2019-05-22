@@ -2,28 +2,28 @@
 
 exports[`column watch default index 1`] = `
 <div class="van-picker-column" style="height: 0px;">
-  <ul style="transition: 0ms; transform: translate3d(0, -75px, 0); line-height: 50px;">
-    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
-    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1990</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  <ul style="transform: translate3d(0, -75px, 0); transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; line-height: 50px;">
+    <li data-index="0" class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li data-index="1" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1990</li>
+    <li data-index="2" class="van-ellipsis van-picker-column__item" style="height: 50px;">1991</li>
+    <li data-index="3" class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li data-index="4" class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li data-index="5" class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li data-index="6" class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
   </ul>
 </div>
 `;
 
 exports[`column watch default index 2`] = `
 <div class="van-picker-column" style="height: 0px;">
-  <ul style="transition: 0ms; transform: translate3d(0, -125px, 0); line-height: 50px;">
-    <li class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
-    <li class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
-    <li class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
+  <ul style="transform: translate3d(0, -125px, 0); transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); transition-duration: 0ms; line-height: 50px;">
+    <li data-index="0" class="van-ellipsis van-picker-column__item van-picker-column__item--disabled" style="height: 50px;">1</li>
+    <li data-index="1" class="van-ellipsis van-picker-column__item" style="height: 50px;">1990</li>
+    <li data-index="2" class="van-ellipsis van-picker-column__item van-picker-column__item--selected" style="height: 50px;">1991</li>
+    <li data-index="3" class="van-ellipsis van-picker-column__item" style="height: 50px;">1992</li>
+    <li data-index="4" class="van-ellipsis van-picker-column__item" style="height: 50px;">1993</li>
+    <li data-index="5" class="van-ellipsis van-picker-column__item" style="height: 50px;">1994</li>
+    <li data-index="6" class="van-ellipsis van-picker-column__item" style="height: 50px;">1995</li>
   </ul>
 </div>
 `;
@@ -35,6 +35,7 @@ exports[`render title slot 1`] = `
   </div>
   <!---->
   <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
 </div>
