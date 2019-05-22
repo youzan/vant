@@ -219,10 +219,6 @@ export default sfc({
 
     const baseOffset = (itemHeight * (visibleItemCount - 1)) / 2;
 
-    const columnStyle = {
-      height: `${itemHeight * visibleItemCount}px`
-    };
-
     const wrapperStyle = {
       transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
@@ -235,7 +231,6 @@ export default sfc({
 
     return (
       <div
-        style={columnStyle}
         class={[bem(), this.className]}
         onTouchstart={this.onTouchStart}
         onTouchmove={this.onTouchMove}
@@ -253,10 +248,7 @@ export default sfc({
               style={optionStyle}
               class={[
                 'van-ellipsis',
-                bem('item', {
-                  disabled: isOptionDisabled(option),
-                  selected: index === this.currentIndex
-                })
+                bem('item', { disabled: isOptionDisabled(option) })
               ]}
               domPropsInnerHTML={this.getOptionText(option)}
               onClick={() => {

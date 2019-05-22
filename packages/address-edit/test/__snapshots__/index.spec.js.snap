@@ -39,13 +39,13 @@ exports[`create a AddressEdit 1`] = `
       </div>
       <div class="van-loading van-loading--circular van-picker__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="color:#1989fa;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
       <div class="van-picker__columns" style="height:220px;">
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
         <div class="van-picker__mask" style="background-size:100% 88px;"></div>
@@ -109,13 +109,13 @@ exports[`create a AddressEdit with props 1`] = `
       </div>
       <!---->
       <div class="van-picker__columns" style="height:220px;">
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
-        <div class="van-picker-column" style="height:220px;">
+        <div class="van-picker-column">
           <ul class="van-picker-column__wrapper" style="transform:translate3d(0, 88px, 0);transition-duration:0ms;line-height:44px;"></ul>
         </div>
         <div class="van-picker__mask" style="background-size:100% 88px;"></div>
