@@ -19,5 +19,10 @@ then
   git push origin 1.x
   git push origin refs/tags/v$VERSION
 
-  npm publish
+  if [[ $VERSION =~ [beta] ]]
+  then
+    npm publish --tag beta
+  else 
+    npm publish
+  fi
 fi
