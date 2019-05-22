@@ -20,7 +20,7 @@
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant-doc changelog ./changelog.generated.md",
     "build:lib": "node build/build-lib.js",
-    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist",
+    "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist --add",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:clear-cache": "jest --clearCache",
