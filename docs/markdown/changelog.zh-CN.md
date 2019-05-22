@@ -1,5 +1,11 @@
 # 更新日志
 
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
+
+##### Uploader
+
+- `oversize`事件增加`detail`参数
+
 ### [v2.0.0-beta.0](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
 `2019-05-21`
 

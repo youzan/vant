@@ -88,7 +88,7 @@ export default sfc({
 
     onAfterRead(files, oversize) {
       if (oversize) {
-        this.$emit('oversize', files);
+        this.$emit('oversize', files, this.detail);
       } else {
         this.afterRead && this.afterRead(files, this.detail);
       }
