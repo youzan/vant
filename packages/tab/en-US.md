@@ -165,11 +165,12 @@ In swipeable mode, you can switch tabs with swipe gestrue in the content
 | title-active-color | Title active color | `String` | - |
 | title-inactive-color | Title inactive color | `String` | - |
 | swipe-threshold | Set swipe tabs threshold | `Number` | `4` | - |
-| sticky | Whether to use sticky mode | `Boolean` | `false` |
 | offset-top | Offset top when use sticky mode | `Number` | `0` |
-| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 | animated | Whether to change tabs with animation | `Boolean` | `false` |
+| border | Whether to show border when `type="line"` | `Boolean` | `true` |
 | ellipsis | Whether to ellipsis too long title | `Boolean` | `true` |
+| sticky | Whether to use sticky mode | `Boolean` | `false` |
+| swipeable | Whether to switch tabs with swipe gestrue in the content | `Boolean` | `false` |
 | lazy-render | Whether to enable tab content lazy render | `Boolean` | `true` |
 
 ### Tab Props

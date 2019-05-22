@@ -29,6 +29,10 @@ export default sfc({
     background: String,
     titleActiveColor: String,
     titleInactiveColor: String,
+    border: {
+      type: Boolean,
+      default: true
+    },
     ellipsis: {
       type: Boolean,
       default: true
@@ -432,7 +436,7 @@ export default sfc({
           style={this.wrapStyle}
           class={[
             bem('wrap', { scrollable }),
-            { 'van-hairline--top-bottom': type === 'line' }
+            { 'van-hairline--top-bottom': type === 'line' && this.border }
           ]}
         >
           <div ref="nav" class={bem('nav', [type])} style={this.navStyle}>

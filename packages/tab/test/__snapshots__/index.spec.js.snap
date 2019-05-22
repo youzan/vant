@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`border props 1`] = `
+<div class="van-tabs van-tabs--line">
+  <div class="van-tabs__wrap">
+    <div class="van-tabs__nav van-tabs__nav--line">
+      <div class="van-tabs__line"></div>
+    </div>
+  </div>
+  <div class="van-tabs__content"></div>
+</div>
+`;
+
 exports[`change tabs data 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">

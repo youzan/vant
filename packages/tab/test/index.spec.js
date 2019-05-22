@@ -1,11 +1,15 @@
+import Vue from 'vue';
 import Tab from '..';
 import Tabs from '../../tabs';
 import { mount, later, triggerDrag } from '../../../test/utils';
 
+Vue.use(Tab);
+Vue.use(Tabs);
+
 function createWrapper(options = {}) {
   return mount({
     template: `
-      <tabs
+      <van-tabs
         :color="color"
         :type="type"
         :sticky="sticky"
@@ -15,18 +19,14 @@ function createWrapper(options = {}) {
         @change="onChange"
       >
         ${options.extraTemplate || ''}
-        <tab :title="title1">Text</tab>
-        <tab>
+        <van-tab :title="title1">Text</van-tab>
+        <van-tab>
           <span slot="title">title2</span>
           Text
-        </tab>
-        <tab title="title3" disabled>Text</tab>
-      </tabs>
+        </van-tab>
+        <van-tab title="title3" disabled>Text</van-tab>
+      </van-tabs>
     `,
-    components: {
-      Tab,
-      Tabs
-    },
     data() {
       return {
         title1: 'title1',
@@ -123,6 +123,16 @@ test('render nav-left & nav-right slot', async () => {
       <template v-slot:nav-left>Nav Left</template>
       <template v-slot:nav-right>Nav Right</template>
     `
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('border props', async () => {
+  const wrapper = mount({
+    template: `
+      <van-tabs :border="false" />
+    `,
   });
 
   expect(wrapper).toMatchSnapshot();
