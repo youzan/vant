@@ -6,13 +6,24 @@ import { TouchMixin } from '../mixins/touch';
 const DEFAULT_DURATION = 200;
 
 // 惯性滑动思路:
-// 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move 距
-// 离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动，持续 `MOMENTUM_DURATION`
+// 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
+// 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动，持续 `MOMENTUM_DURATION`
 const MOMENTUM_DURATION = 1500;
 const MOMENTUM_LIMIT_TIME = 300;
 const MOMENTUM_LIMIT_DISTANCE = 15;
 
 const [sfc, bem] = use('picker-column');
+
+function getElementTranslateY(element) {
+  const { transform } = window.getComputedStyle(element);
+  const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
+
+  return Number(translateY);
+}
+
+function isOptionDisabled(option) {
+  return isObj(option) && option.disabled;
+}
 
 export default sfc({
   mixins: [TouchMixin],
@@ -30,23 +41,25 @@ export default sfc({
     return {
       offset: 0,
       duration: 0,
-      startOffset: 0,
-      momentumOffset: 0,
-      touchTimestamp: 0,
-      moving: false,
       options: deepClone(this.initialOptions),
       currentIndex: this.defaultIndex
     };
   },
 
   created() {
-    this.$parent.children && this.$parent.children.push(this);
+    if (this.$parent.children) {
+      this.$parent.children.push(this);
+    }
+
     this.setIndex(this.currentIndex);
   },
 
   destroyed() {
     const { children } = this.$parent;
-    children && children.splice(children.indexOf(this), 1);
+
+    if (children) {
+      children.splice(children.indexOf(this), 1);
+    }
   },
 
   watch: {
@@ -66,7 +79,7 @@ export default sfc({
       this.touchStart(event);
 
       if (this.moving) {
-        const { translateY } = this.getEleTransform(this.$refs.wrapper);
+        const translateY = getElementTranslateY(this.$refs.wrapper);
         this.startOffset = Math.min(0, translateY);
       } else {
         this.startOffset = this.offset;
@@ -75,7 +88,7 @@ export default sfc({
       this.duration = 0;
       this.moving = false;
       this.transitionEndTrigger = null;
-      this.touchTimestamp = Date.now();
+      this.touchStartTime = Date.now();
       this.momentumOffset = this.startOffset;
     },
 
@@ -90,15 +103,15 @@ export default sfc({
       );
 
       const now = Date.now();
-      if (now - this.touchTimestamp > MOMENTUM_LIMIT_TIME) {
-        this.touchTimestamp = now;
+      if (now - this.touchStartTime > MOMENTUM_LIMIT_TIME) {
+        this.touchStartTime = now;
         this.momentumOffset = this.offset;
       }
     },
 
     onTouchEnd() {
       const distance = this.offset - this.momentumOffset;
-      const duration = Date.now() - this.touchTimestamp;
+      const duration = Date.now() - this.touchStartTime;
       const allowMomentum =
         duration < MOMENTUM_LIMIT_TIME &&
         Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
@@ -124,24 +137,21 @@ export default sfc({
       }
     },
 
-    onClickItem(e) {
-      const index = Number(e.currentTarget.getAttribute('data-index'));
+    onClickItem(index) {
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
     },
 
     adjustIndex(index) {
       index = range(index, 0, this.count);
-      for (let i = index; i < this.count; i++) {
-        if (!this.isDisabled(this.options[i])) return i;
-      }
-      for (let i = index - 1; i >= 0; i--) {
-        if (!this.isDisabled(this.options[i])) return i;
-      }
-    },
 
-    isDisabled(option) {
-      return isObj(option) && option.disabled;
+      for (let i = index; i < this.count; i++) {
+        if (!isOptionDisabled(this.options[i])) return i;
+      }
+
+      for (let i = index - 1; i >= 0; i--) {
+        if (!isOptionDisabled(this.options[i])) return i;
+      }
     },
 
     getOptionText(option) {
@@ -155,7 +165,10 @@ export default sfc({
       const trigger = () => {
         if (index !== this.currentIndex) {
           this.currentIndex = index;
-          userAction && this.$emit('change', index);
+
+          if (userAction) {
+            this.$emit('change', index);
+          }
         }
       };
 
@@ -189,23 +202,6 @@ export default sfc({
       );
     },
 
-    getEleTransform(ele) {
-      const { transform } = window.getComputedStyle(ele);
-      const matrix = transform
-        .slice(7, transform.length - 1)
-        .split(', ')
-        .map(val => Number(val));
-
-      return {
-        scaleX: matrix[0],
-        skewY: matrix[1],
-        skewX: matrix[2],
-        scaleY: matrix[3],
-        translateX: matrix[4],
-        translateY: matrix[5]
-      };
-    },
-
     momentum(distance, duration) {
       const speed = Math.abs(distance / duration);
 
@@ -221,15 +217,14 @@ export default sfc({
   render(h) {
     const { itemHeight, visibleItemCount } = this;
 
-    const columnStyle = {
-      height: itemHeight * visibleItemCount + 'px'
-    };
-
     const baseOffset = (itemHeight * (visibleItemCount - 1)) / 2;
+
+    const columnStyle = {
+      height: `${itemHeight * visibleItemCount}px`
+    };
 
     const wrapperStyle = {
       transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
-      transitionTimingFunction: 'cubic-bezier(0.23, 1, 0.32, 1)',
       transitionDuration: `${this.duration}ms`,
       lineHeight: `${itemHeight}px`
     };
@@ -250,6 +245,7 @@ export default sfc({
         <ul
           ref="wrapper"
           style={wrapperStyle}
+          class={bem('wrapper')}
           onTransitionend={this.onTransitionEnd}
         >
           {this.options.map((option, index) => (
@@ -258,13 +254,14 @@ export default sfc({
               class={[
                 'van-ellipsis',
                 bem('item', {
-                  disabled: this.isDisabled(option),
+                  disabled: isOptionDisabled(option),
                   selected: index === this.currentIndex
                 })
               ]}
               domPropsInnerHTML={this.getOptionText(option)}
-              data-index={index}
-              onClick={this.onClickItem}
+              onClick={() => {
+                this.onClickItem(index);
+              }}
             />
           ))}
         </ul>

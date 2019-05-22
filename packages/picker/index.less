@@ -81,9 +81,13 @@
     font-size: @picker-option-font-size;
     text-align: center;
 
+    &__wrapper {
+      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
     &__item {
       padding: 0 5px;
-      color: @picker-option-selected-text-color;
+      color: @picker-option-text-color;
 
       &--selected {
         font-weight: 500;

@@ -2,6 +2,10 @@
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
 
+##### Picker
+
+- 新增惯性滚动
+
 ##### Tab
 
 - 新增`border`属性
