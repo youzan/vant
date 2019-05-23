@@ -95,6 +95,7 @@ export default {
 | title | Item title | `String` | Text of selected option |
 | options | Options | `Array` | `[]` |
 | disabled | Whether to disable dropdown item | `Boolean` | `false` |
+| title-class | Title class | `String` | - |
 
 ### DropdownItem Events
 

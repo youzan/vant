@@ -13,7 +13,8 @@ export default sfc({
     value: null,
     title: String,
     options: Array,
-    disabled: Boolean
+    disabled: Boolean,
+    titleClass: String
   },
 
   data() {

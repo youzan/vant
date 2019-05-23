@@ -106,6 +106,7 @@ export default {
 | title | 菜单项标题 | `String` | 当前选中项文字 | - |
 | options | 选项数组 | `Array` | `[]` | - |
 | disabled | 是否禁用菜单 | `Boolean` | `false` | - |
+| title-class | 标题额外类名 | `String` | - | - |
 
 ### DropdownItem Events
 

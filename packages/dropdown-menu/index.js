@@ -69,7 +69,7 @@ export default sfc({
         }}
       >
         <span
-          class={bem('title', { active: item.show })}
+          class={[bem('title', { active: item.show }), item.titleClass]}
           style={{ color: item.show ? this.activeColor : '' }}
         >
           {item.displayTitle}
