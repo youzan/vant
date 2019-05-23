@@ -38,7 +38,7 @@ function AddressItem(
   const { disabled, switchable } = props;
 
   function onSelect() {
-    if (props.switchable) {
+    if (switchable) {
       emit(ctx, 'select');
     }
   }
@@ -61,7 +61,7 @@ function AddressItem(
       <div class={bem('address')}>{data.address}</div>
     ];
 
-    return props.switchable ? (
+    return switchable && !disabled ? (
       <Radio name={data.id} iconSize={16} checkedColor={RED} onClick={onSelect}>
         {Info}
       </Radio>
@@ -72,9 +72,9 @@ function AddressItem(
 
   return (
     <Cell
-      class={bem({ disabled, unswitchable: !switchable })}
+      class={bem({ disabled })}
       valueClass={bem('value')}
-      isLink={!disabled && switchable}
+      clickable={switchable && !disabled}
       scopedSlots={{
         default: renderContent,
         'right-icon': renderRightIcon
