@@ -58,3 +58,7 @@ export function suffixPx(value?: string | number): string | undefined {
   value = String(value);
   return isNumber(value) ? `${value}px` : value;
 }
+
+export function padZero(num: number | string): string {
+  return (num < 10 ? '0' : '') + num;
+}

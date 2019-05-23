@@ -1,9 +1,8 @@
-import { use, range } from '../utils';
+import { use, range, padZero } from '../utils';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
 import {
   times,
-  padZero,
   isValidDate,
   getTrueValue,
   getMonthEndDay

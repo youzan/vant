@@ -1,12 +1,8 @@
-import { use } from '../utils';
+import { use, padZero } from '../utils';
 import { RED } from '../utils/color';
 import Checkbox from '../checkbox';
 
 const [sfc, bem, t] = use('coupon');
-
-function padZero(num) {
-  return (num < 10 ? '0' : '') + num;
-}
 
 function getDate(timeStamp) {
   const date = new Date(timeStamp * 1000);

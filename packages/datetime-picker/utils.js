@@ -2,10 +2,6 @@ export function isValidDate(date) {
   return Object.prototype.toString.call(date) === '[object Date]' && !isNaN(date.getTime());
 }
 
-export function padZero(val) {
-  return `00${val}`.slice(-2);
-}
-
 export function times(n, iteratee) {
   let index = -1;
   const result = Array(n);
