@@ -28,10 +28,18 @@
 
     <demo-block :title="$t('title4')">
       <van-datetime-picker
-        v-model="currentDate4"
+        v-model="currentTime1"
         type="time"
-        :min-hour="minHour"
-        :max-hour="maxHour"
+        :min-hour="10"
+        :max-hour="20"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('optionFilter')">
+      <van-datetime-picker
+        v-model="currentTime2"
+        type="time"
+        :filter="filter"
       />
     </demo-block>
   </demo-section>
@@ -46,7 +54,8 @@ export default {
       title3: '选择日期（年月）',
       title4: '选择时间',
       year: '年',
-      month: '月'
+      month: '月',
+      optionFilter: '选项过滤器'
     },
     'en-US': {
       title1: 'Choose DateTime',
@@ -54,20 +63,20 @@ export default {
       title3: 'Choose Year-Month',
       title4: 'Choose Time',
       year: ' Year',
-      month: ' Month'
+      month: ' Month',
+      optionFilter: 'Option Filter'
     }
   },
 
   data() {
     return {
-      minHour: 10,
-      maxHour: 20,
       minDate: new Date(2018, 0, 1),
       maxDate: new Date(2019, 10, 1),
       currentDate1: new Date(2018, 0, 1),
       currentDate2: null,
       currentDate3: new Date(2018, 0, 1),
-      currentDate4: '12:00'
+      currentTime1: '12:00',
+      currentTime2: '12:00',
     };
   },
 
@@ -80,6 +89,14 @@ export default {
         return value + this.$t('month');
       }
       return value;
+    },
+
+    filter(type, values) {
+      if (type === 'minute') {
+        return values.filter(value => value % 5 === 0);
+      }
+
+      return values;
     }
   }
 };

@@ -6,6 +6,10 @@
 
 - 新增`lock-scroll`属性
 
+##### DatetimePicker
+
+- 新增`filter`属性
+
 ##### DropdownItem
 
 - 新增`title-class`属性
