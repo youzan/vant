@@ -10,6 +10,10 @@
 
 - 新增`filter`属性
 
+##### DropdownMenu
+
+- 新增`duration`属性
+
 ##### DropdownItem
 
 - 新增`title-class`属性

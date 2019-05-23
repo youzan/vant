@@ -55,7 +55,7 @@ export default sfc({
   },
 
   render(h) {
-    const { top, zIndex, overlay, activeColor, closeOnClickOverlay } = this.parent;
+    const { top, zIndex, overlay, duration, activeColor, closeOnClickOverlay } = this.parent;
 
     const Options = this.options.map(option => {
       const active = option.value === this.value;
@@ -86,7 +86,7 @@ export default sfc({
         <Popup
           vModel={this.showPopup}
           position="top"
-          duration={this.transition ? 0.2 : 0}
+          duration={this.transition ? duration : 0}
           class={bem('content')}
           overlay={overlay}
           closeOnClickOverlay={closeOnClickOverlay}

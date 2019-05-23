@@ -20,6 +20,10 @@ export default sfc({
       type: Number,
       default: 10
     },
+    duration: {
+      type: Number,
+      default: 0.2
+    },
     activeColor: {
       type: String,
       default: BLUE
