@@ -149,8 +149,7 @@ export default sfc({
     columns() {
       const results = this.ranges.map(({ type, range: rangeArr }) => {
         let values = times(rangeArr[1] - rangeArr[0] + 1, index => {
-          let value = rangeArr[0] + index;
-          value = value < 10 ? `0${value}` : `${value}`;
+          const value = padZero(rangeArr[0] + index);
           return this.formatter(type, value);
         });
 
@@ -179,8 +178,7 @@ export default sfc({
       if (isDateType && !isValidDate(value)) {
         value = this.minDate;
       } else if (!value) {
-        const { minHour } = this;
-        value = `${minHour > 10 ? minHour : '0' + minHour}:00`;
+        value = `${padZero(this.minHour)}:00`;
       }
 
       // time type
