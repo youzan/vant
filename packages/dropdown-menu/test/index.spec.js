@@ -53,8 +53,9 @@ test('click option', async () => {
   titles.at(0).trigger('click');
 
   const options = wrapper.findAll('.van-dropdown-item .van-cell');
-
   options.at(1).trigger('click');
+
+  await later();
   expect(wrapper).toMatchSnapshot();
 });
 

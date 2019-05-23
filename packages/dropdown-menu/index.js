@@ -45,15 +45,15 @@ export default sfc({
       this.children.forEach((item, index) => {
         if (index === active) {
           item.toggle();
-        } else {
-          item.toggle(false);
+        } else if (item.showPopup) {
+          item.hide(true);
         }
       });
     },
 
     onClickOutside() {
       this.children.forEach(item => {
-        item.toggle(false);
+        item.hide();
       });
     }
   },
@@ -70,7 +70,7 @@ export default sfc({
       >
         <span
           class={[bem('title', { active: item.show }), item.titleClass]}
-          style={{ color: item.show ? this.activeColor : '' }}
+          style={{ color: item.showPopup ? this.activeColor : '' }}
         >
           {item.displayTitle}
         </span>

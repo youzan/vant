@@ -4,8 +4,8 @@ exports[`click option 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">B</span></div>
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">B</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
-    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
+  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none; z-index: 2005;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style=""><span>A</span></div>
       </div>
@@ -56,7 +56,7 @@ exports[`disable dropdown item 1`] = `
 
 exports[`show dropdown item 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
-  <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--active" style="color: rgb(25, 137, 250);">A</span></div>
+  <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="color: rgb(25, 137, 250);">A</span></div>
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
   <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
     <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s;" name="van-popup-slide-top">
@@ -81,7 +81,7 @@ exports[`show dropdown item 2`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
     <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
@@ -103,8 +103,8 @@ exports[`show dropdown item 2`] = `
 exports[`show dropdown item 3`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
-  <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--active" style="color: rgb(25, 137, 250);">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="color: rgb(25, 137, 250);">A</span></div>
+  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
     <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
