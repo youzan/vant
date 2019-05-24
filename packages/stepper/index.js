@@ -136,8 +136,12 @@ export default sfc({
         />
         <input
           type="number"
+          role="spinbutton"
           class={bem('input')}
           value={this.currentValue}
+          aria-valuemax={this.max}
+          aria-valuemin={this.min}
+          aria-valuenow={this.currentValue}
           disabled={this.disabled || this.disableInput}
           style={{ width: this.inputWidth }}
           onInput={this.onInput}
