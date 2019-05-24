@@ -2,7 +2,7 @@
 
 exports[`unswitchable 1`] = `
 <div class="van-address-list">
-  <div class="van-radio-group">
+  <div role="radiogroup" class="van-radio-group">
     <div class="van-cell van-address-item">
       <div class="van-cell__value van-cell__value--alone van-address-item__value">
         <div class="van-address-item__name">张三，13000000000</div>

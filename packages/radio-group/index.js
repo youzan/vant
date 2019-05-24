@@ -18,6 +18,10 @@ export default sfc({
   },
 
   render(h) {
-    return <div class={bem()}>{this.slots()}</div>;
+    return (
+      <div class={bem()} role="radiogroup">
+        {this.slots()}
+      </div>
+    );
   }
 });

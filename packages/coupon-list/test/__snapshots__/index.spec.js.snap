@@ -57,7 +57,7 @@ exports[`render coupon list 1`] = `
               <div class="van-coupon__body">
                 <h2 class="van-coupon__name">name</h2>
                 <p>有效期：2017.03.10 - 2017.12.30</p>
-                <div class="van-checkbox van-coupon__corner">
+                <div role="checkbox" tabindex="0" aria-checked="true" class="van-checkbox van-coupon__corner">
                   <div class="van-checkbox__icon van-checkbox__icon--round van-checkbox__icon--checked"><i class="van-icon van-icon-success" style="border-color: #f44; background-color: rgb(255, 68, 68);">
                       <!----></i></div>
                 </div>

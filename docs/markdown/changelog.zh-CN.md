@@ -2,13 +2,19 @@
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
 
+#### 无障碍访问
+
+对以下组件增加了无障碍访问的支持：
+
+- Accordion
+- Checkbox
+- Radio
+- Stepper
+- Tab
+
 ##### ActionSheet
 
 - 新增`lock-scroll`属性
-
-##### Accordion
-
-- 优化无障碍访问
 
 ##### DatetimePicker
 
@@ -26,13 +32,8 @@
 
 - 支持惯性滚动
 
-##### Stepper
-
-- 优化无障碍访问
-
 ##### Tab
 
-- 优化无障碍访问
 - 新增`border`属性
 
 ##### Uploader
