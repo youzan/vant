@@ -95,6 +95,7 @@ export default {
 | showIndicators | Whether to show indicators | `Boolean` | `false` |
 | loop | Whether to enable loop | `Boolean` | `true` |
 | onClose | Close callback | `Function` | - |
+| closeOnPopstate | Whether to close when popstate | `Boolean` | `false` |
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
 | className | Custom className | `String | Array | Object` | - |
 | lazyLoad | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
@@ -111,6 +112,7 @@ export default {
 | show-indicators | Whether to show indicators | `Boolean` | `false` |
 | loop | Whether to enable loop | `Boolean` | `true` |
 | async-close | Whether to enable async close | `Boolean` | `false` |
+| close-on-popstate | Whether to close when popstate | `Boolean` | `false` |
 | class-name | Custom className | `String | Array | Object` | - |
 | lazy-load | Whether to enable thumb lazy load，should register [Lazyload](#/en-US/lazyload) component | `Boolean` | `false` |
 | max-zoom | Max zoom | `Number` | `3` |

@@ -116,3 +116,24 @@ test('index slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('closeOnPopstate', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      value: true,
+      closeOnPopstate: true
+    }
+  });
+
+  trigger(window, 'popstate');
+  expect(wrapper.emitted('input')[0][0]).toBeFalsy();
+
+  wrapper.setProps({
+    value: true,
+    closeOnPopstate: false
+  });
+
+  trigger(window, 'popstate');
+  expect(wrapper.emitted('input')[1]).toBeFalsy();
+});

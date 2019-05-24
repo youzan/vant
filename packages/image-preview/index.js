@@ -15,7 +15,8 @@ const defaultConfig = {
   showIndex: true,
   asyncClose: false,
   startPosition: 0,
-  showIndicators: false
+  showIndicators: false,
+  closeOnPopstate: false
 };
 
 const initInstance = () => {
