@@ -27,6 +27,7 @@
 ##### DropdownItem
 
 - 新增`title-class`属性
+- 修复在部分浏览器上定位错误的问题
 
 ##### Picker
 
