@@ -5,7 +5,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-collapse van-hairline--top-bottom">
       <div class="van-collapse-item">
-        <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+        <div role="button" tabindex="0" aria-expanded="true" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
           <div class="van-cell__title"><span>标题1</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
@@ -14,13 +14,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
-        <div class="van-cell van-cell--clickable van-collapse-item__title">
+        <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
           <div class="van-cell__title"><span>标题2</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
-        <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled">
+        <div role="button" tabindex="-1" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--disabled">
           <div class="van-cell__title"><span>标题3</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
@@ -30,7 +30,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-collapse van-hairline--top-bottom">
       <div class="van-collapse-item">
-        <div class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
+        <div role="button" tabindex="0" aria-expanded="true" class="van-cell van-cell--clickable van-collapse-item__title van-collapse-item__title--expanded">
           <div class="van-cell__title"><span>标题1</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
@@ -39,13 +39,13 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
-        <div class="van-cell van-cell--clickable van-collapse-item__title">
+        <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
           <div class="van-cell__title"><span>标题2</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
-        <div class="van-cell van-cell--clickable van-collapse-item__title">
+        <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
           <div class="van-cell__title"><span>标题3</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
@@ -55,7 +55,7 @@ exports[`renders demo correctly 1`] = `
   <div>
     <div class="van-collapse van-hairline--top-bottom">
       <div class="van-collapse-item">
-        <div class="van-cell van-cell--clickable van-collapse-item__title">
+        <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
           <div class="van-cell__title">
             <div>标题1<i class="van-icon van-icon-question-o">
                 <!----></i></div>
@@ -64,7 +64,7 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-collapse-item van-hairline--top">
-        <div class="van-cell van-cell--clickable van-collapse-item__title"><i class="van-icon van-icon-shop-o van-cell__left-icon">
+        <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title"><i class="van-icon van-icon-shop-o van-cell__left-icon">
             <!----></i>
           <div class="van-cell__title"><span>标题2</span></div>
           <div class="van-cell__value"><span>内容</span></div><i class="van-icon van-icon-arrow van-cell__right-icon">

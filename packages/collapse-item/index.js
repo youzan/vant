@@ -88,9 +88,7 @@ export default sfc({
 
       const { parent } = this;
       const name =
-        parent.accordion && this.currentName === parent.value
-          ? ''
-          : this.currentName;
+        parent.accordion && this.currentName === parent.value ? '' : this.currentName;
       this.parent.switch(name, !this.expanded);
     },
 
@@ -104,6 +102,8 @@ export default sfc({
   },
 
   render(h) {
+    const { disabled, expanded } = this;
+
     const titleSlots = CELL_SLOTS.reduce((slots, name) => {
       if (this.slots(name)) {
         slots[name] = () => this.slots(name);
@@ -117,12 +117,12 @@ export default sfc({
 
     const Title = (
       <Cell
-        class={bem('title', {
-          disabled: this.disabled,
-          expanded: this.expanded
-        })}
+        role="button"
+        class={bem('title', { disabled, expanded })}
         onClick={this.onClick}
         scopedSlots={titleSlots}
+        tabindex={disabled ? -1 : 0}
+        aria-expanded={String(expanded)}
         {...{ props: this.$props }}
       />
     );
