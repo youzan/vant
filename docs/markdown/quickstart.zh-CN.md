@@ -42,11 +42,11 @@ yarn add vant
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
 ```
 
 ## 引入组件

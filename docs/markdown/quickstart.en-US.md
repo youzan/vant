@@ -33,11 +33,11 @@ yarn add vant
 
 ```html
 <!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css" />
 
 <!-- import script -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
 ```
 
 ## Usage
