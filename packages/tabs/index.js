@@ -413,6 +413,8 @@ export default sfc({
       <div
         ref="tabs"
         refInFor
+        role="tab"
+        aria-selected={index === this.curActive}
         class={tabBem({
           active: index === this.curActive,
           disabled: tab.disabled,
@@ -439,7 +441,7 @@ export default sfc({
             { 'van-hairline--top-bottom': type === 'line' && this.border }
           ]}
         >
-          <div ref="nav" class={bem('nav', [type])} style={this.navStyle}>
+          <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
             {this.slots('nav-left')}
             {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
             {Nav}

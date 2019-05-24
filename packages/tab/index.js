@@ -51,14 +51,23 @@ export default sfc({
 
     if (this.parent.animated) {
       return (
-        <div class={bem('pane-wrapper', { inactive: !this.selected })}>
+        <div
+          role="tabpanel"
+          aria-hidden={!this.selected}
+          class={bem('pane-wrapper', { inactive: !this.selected })}
+        >
           <div class={bem('pane')}>{Content}</div>
         </div>
       );
     }
 
     return (
-      <div vShow={this.selected} class={bem('pane')}>
+      <div
+        vShow={this.selected}
+        role="tabpanel"
+        class={bem('pane')}
+        aria-hidden={!this.selected}
+      >
         {Content}
       </div>
     );
