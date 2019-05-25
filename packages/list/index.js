@@ -130,7 +130,7 @@ export default sfc({
 
   render(h) {
     return (
-      <div class={bem()}>
+      <div class={bem()} role="feed" aria-busy={this.loading}>
         {this.direction === 'down' && this.slots()}
         {this.loading && (
           <div class={bem('loading')} key="loading">

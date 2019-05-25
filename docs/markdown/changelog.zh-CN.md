@@ -6,6 +6,7 @@
 
 对以下组件增加了无障碍访问的支持：
 
+- List
 - Dialog
 - Slider
 - NoticeBar
