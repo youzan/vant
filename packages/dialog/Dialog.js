@@ -127,7 +127,12 @@ export default sfc({
 
     return (
       <transition name="van-dialog-bounce">
-        <div vShow={this.value} class={[bem(), this.className]}>
+        <div
+          vShow={this.value}
+          role="dialog"
+          aria-labelledby={title || message}
+          class={[bem(), this.className]}
+        >
           {Title}
           {Content}
           {ButtonGroup}

@@ -1,6 +1,19 @@
 # 更新日志
 
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+
+#### 无障碍访问
+
+对以下组件增加了无障碍访问的支持：
+
+- Dialog
+
+##### ImagePreview
+
+- 新增`close-on-popstate`属性
+
+
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
 
 #### 无障碍访问
 
