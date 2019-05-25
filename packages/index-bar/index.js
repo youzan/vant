@@ -1,6 +1,7 @@
 import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
+import { on, off } from '../utils/event';
 
 const [sfc, bem] = use('index-bar');
 
@@ -52,7 +53,7 @@ export default sfc({
   },
 
   beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
+    off(window, 'scroll', this.onScroll);
   },
 
   methods: {
@@ -139,7 +140,7 @@ export default sfc({
     },
 
     bindScrollEvent() {
-      window.addEventListener('scroll', this.onScroll, false);
+      on(window, 'scroll', this.onScroll);
     }
   },
 
