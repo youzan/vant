@@ -14,8 +14,11 @@ exports[`renders demo correctly 1`] = `
       <div role="tabpanel" class="van-tab__pane" style="">
         <div class="van-index-bar">
           <div class="van-index-bar__sidebar" style="z-index: 1;"><span data-index="A" class="van-index-bar__index">A</span><span data-index="B" class="van-index-bar__index">B</span><span data-index="C" class="van-index-bar__index">C</span><span data-index="D" class="van-index-bar__index">D</span><span data-index="E" class="van-index-bar__index">E</span><span data-index="F" class="van-index-bar__index">F</span><span data-index="G" class="van-index-bar__index">G</span><span data-index="H" class="van-index-bar__index">H</span><span data-index="I" class="van-index-bar__index">I</span><span data-index="J" class="van-index-bar__index">J</span><span data-index="K" class="van-index-bar__index">K</span><span data-index="L" class="van-index-bar__index">L</span><span data-index="M" class="van-index-bar__index">M</span><span data-index="N" class="van-index-bar__index">N</span><span data-index="O" class="van-index-bar__index">O</span><span data-index="P" class="van-index-bar__index">P</span><span data-index="Q" class="van-index-bar__index">Q</span><span data-index="R" class="van-index-bar__index">R</span><span data-index="S" class="van-index-bar__index">S</span><span data-index="T" class="van-index-bar__index">T</span><span data-index="U" class="van-index-bar__index">U</span><span data-index="V" class="van-index-bar__index">V</span><span data-index="W" class="van-index-bar__index">W</span><span data-index="X" class="van-index-bar__index">X</span><span data-index="Y" class="van-index-bar__index">Y</span><span data-index="Z" class="van-index-bar__index">Z</span></div>
+          <div class="van-index-bar__active van-hairline--bottom" style="z-index: 1; display: none;"></div>
           <div>
-            <div class="van-index-anchor">A</div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">A</div>
+            </div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -27,19 +30,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">B</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">A</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">B</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">C</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -51,19 +47,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">D</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">B</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">C</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">E</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -75,19 +64,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">F</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">C</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">D</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">G</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -99,19 +81,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">H</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">D</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">E</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">I</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -123,19 +98,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">J</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">E</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">F</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">K</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -147,19 +115,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">L</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">F</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">G</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">M</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -171,19 +132,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">N</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">G</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">H</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">O</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -195,19 +149,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">P</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">H</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">I</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">Q</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -219,19 +166,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">R</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">I</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">J</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">S</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -243,19 +183,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">T</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">J</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">K</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">U</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -267,19 +200,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">V</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">K</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">L</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">W</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -291,19 +217,12 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">X</div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">L</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">M</div>
             </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-            <div class="van-cell">
-              <div class="van-cell__title"><span>文本</span></div>
-            </div>
-          </div>
-          <div>
-            <div class="van-index-anchor">Y</div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
@@ -315,7 +234,216 @@ exports[`renders demo correctly 1`] = `
             </div>
           </div>
           <div>
-            <div class="van-index-anchor">Z</div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">M</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">N</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">N</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">O</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">O</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">P</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">P</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">Q</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">Q</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">R</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">R</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">S</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">S</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">T</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">T</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">U</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">U</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">V</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">V</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">W</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">W</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">X</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">X</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">Y</div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+            <div class="van-cell">
+              <div class="van-cell__title"><span>文本</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="van-index-anchor">
+              <div class="van-index-anchor__prev" style="display: none;">
+                <div class="van-index-anchor__content van-hairline--bottom" style="background-color: rgba(248, 248, 248, 0);">Y</div>
+              </div>
+              <div class="van-index-anchor__content" style="background-color: rgb(248, 248, 248);">Z</div>
+            </div>
             <div class="van-cell">
               <div class="van-cell__title"><span>文本</span></div>
             </div>
