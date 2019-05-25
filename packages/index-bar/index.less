@@ -1,6 +1,7 @@
 @import '../style/var';
 
 .van-index-bar {
+  position: relative;
   &__sidebar {
     position: fixed;
     top: 50%;
@@ -12,10 +13,28 @@
     user-select: none;
   }
 
+  &__active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: @index-anchor-padding;
+    font-weight: @index-anchor-font-weight;
+    font-size: @index-anchor-font-size;
+    line-height: @index-anchor-line-height;
+    background: #fff;
+    color: @green;
+  }
+
   &__index {
     padding: 0 3px 0 15px;
     font-weight: 500;
     font-size: @index-bar-index-font-size;
     line-height: @index-bar-index-line-height;
+    &--highlight {
+      font-weight: bold;
+      color: @green;
+      text-shadow: 0 0 1px @green;
+    }
   }
 }

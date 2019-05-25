@@ -27,6 +27,34 @@ export default sfc({
     }
   },
 
+  data() {
+    return {
+      childrenTopList: [],
+      isInTransition: false,
+      currentAnchorIndex: -1,
+      nextAnchorIndex: -1,
+      alpha: 1
+    };
+  },
+
+  computed: {
+    childrenLen() {
+      return this.childrenTopList.length;
+    },
+
+    activeAnchorSlot() {
+      return this.currentAnchorIndex > -1 ? this.children[this.currentAnchorIndex].defaultSlot : '';
+    },
+
+    activeAnchorVisible() {
+      return !this.isInTransition && this.currentAnchorIndex > -1;
+    }
+  },
+
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
+
   methods: {
     onClick(event) {
       this.scrollToElement(event.target);
@@ -70,12 +98,57 @@ export default sfc({
 
     onTouchEnd() {
       this.active = null;
+    },
+
+    getTop() {
+      let currentElem = this.$refs.indexBar;
+      let top = 0;
+      while (currentElem) {
+        top += currentElem.offsetTop;
+        currentElem = currentElem.offsetParent;
+      }
+      return top;
+    },
+
+    onScroll() {
+      const { scrollTop } = document.scrollingElement;
+      if (scrollTop < 0) {
+        this.currentAnchorIndex = -1;
+        return;
+      }
+
+      const nextAnchorIndex = this.childrenTopList.findIndex(top => top > scrollTop);
+      const currentAnchorIndex = nextAnchorIndex === -1 ? this.childrenLen - 1 : nextAnchorIndex - 1;
+      const currentAnchorHeight = this.children[currentAnchorIndex === -1 ? 0 : currentAnchorIndex].offsetHeight;
+      let isInTransition = false;
+      let alpha = 1;
+      let diffTop;
+
+      if (nextAnchorIndex > -1) {
+        diffTop = this.childrenTopList[nextAnchorIndex] - scrollTop;
+        if (diffTop >= 0 && diffTop <= currentAnchorHeight) {
+          alpha = diffTop / currentAnchorHeight;
+          isInTransition = true;
+        }
+      }
+
+      this.isInTransition = isInTransition;
+      this.alpha = alpha;
+      this.currentAnchorIndex = currentAnchorIndex;
+      this.nextAnchorIndex = nextAnchorIndex;
+    },
+
+    bindScrollEvent() {
+      window.addEventListener('scroll', this.onScroll, false);
     }
   },
 
   render(h) {
     return (
-      <div class={bem()}>
+      <div
+        ref="indexBar"
+        class={bem()}
+      >
         <div
           class={bem('sidebar')}
           style={{ zIndex: this.zIndex }}
@@ -85,11 +158,19 @@ export default sfc({
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
         >
-          {this.indexList.map(index => (
-            <span class={bem('index')} data-index={index}>
+          {this.indexList.map((index, id) => (
+            <span class={bem('index', { highlight: id === this.currentAnchorIndex })} data-index={index}>
               {index}
             </span>
           ))}
+        </div>
+
+        <div
+          vShow={this.activeAnchorVisible}
+          class={[bem('active'), 'van-hairline--bottom']}
+          style={{ zIndex: this.zIndex }}
+        >
+          {this.activeAnchorSlot}
         </div>
         {this.slots('default')}
       </div>

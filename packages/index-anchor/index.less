@@ -1,8 +1,23 @@
 @import '../style/var';
 
 .van-index-anchor {
-  padding: @index-anchor-padding;
+  position: relative;
   font-weight: @index-anchor-font-weight;
   font-size: @index-anchor-font-size;
   line-height: @index-anchor-line-height;
+  background-color: #fff;
+  &--highlight {
+    color: @green;
+  }
+  &__prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    transform: translateY(-100%);
+  }
+  &__content {
+    padding: @index-anchor-padding;
+  }
 }

@@ -70,6 +70,7 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | index | Index | `String | Number` | - |
+| background-color-value | RGB background color value | `String` | `248,248,248` |
 
 ### IndexBar Events
 
