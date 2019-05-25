@@ -65,6 +65,8 @@ export default sfc({
   render(h) {
     const Titles = this.children.map((item, index) => (
       <div
+        role="button"
+        tabindex={item.disabled ? -1 : 0}
         class={bem('item', { disabled: item.disabled })}
         onClick={() => {
           if (!item.disabled) {

@@ -13,6 +13,7 @@
 - Switch
 - NoticeBar
 - GoodsAction
+- DropdownMenu
 - NumberKeyboard
 
 ##### ImagePreview

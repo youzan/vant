@@ -49,14 +49,16 @@ export default {
       custom: '自定义样式',
       button1: '弹出默认键盘',
       button2: '弹出自定义键盘',
-      close: '完成'
+      close: '完成',
+      input: '输入'
     },
     'en-US': {
       default: 'Default style',
       custom: 'Custom style',
       button1: 'Show Default Keyboard',
       button2: 'Show Custom Keyboard',
-      close: 'Close'
+      close: 'Close',
+      input: 'Input'
     }
   },
 
@@ -68,10 +70,11 @@ export default {
 
   methods: {
     onInput(value) {
-      this.$toast('Input: ' + value);
+      this.$toast(`${this.$t('input')}: ${value}`);
     },
+
     onDelete() {
-      this.$toast('Delete');
+      this.$toast(this.$t('delete'));
     }
   }
 };
