@@ -11,6 +11,7 @@
 - Slider
 - Switch
 - NoticeBar
+- GoodsAction
 
 ##### ImagePreview
 

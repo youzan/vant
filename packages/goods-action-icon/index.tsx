@@ -28,7 +28,12 @@ function GoodsActionIcon(
   }
 
   return (
-    <div class={[bem(), 'van-hairline']} onClick={onClick} {...inherit(ctx)}>
+    <div
+      role="button"
+      class={[bem(), 'van-hairline']}
+      onClick={onClick}
+      {...inherit(ctx)}
+    >
       <Icon
         class={[bem('icon'), props.iconClass]}
         tag="div"
