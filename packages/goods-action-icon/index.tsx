@@ -30,6 +30,7 @@ function GoodsActionIcon(
   return (
     <div
       role="button"
+      tabindex="0"
       class={[bem(), 'van-hairline']}
       onClick={onClick}
       {...inherit(ctx)}
