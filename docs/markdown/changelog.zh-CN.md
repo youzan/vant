@@ -8,6 +8,7 @@
 
 - Dialog
 - Slider
+- NoticeBar
 
 ##### ImagePreview
 
