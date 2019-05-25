@@ -11,6 +11,7 @@ export type ImagePreviewOptions = string[] | {
   showIndex?: boolean;
   asyncClose?: boolean;
   showIndicators?: boolean;
+  closeOnPopstate?: boolean;
   onClose?: () => any;
 };
 

@@ -5,7 +5,7 @@ import Icon from '../icon';
 import { ChildrenMixin } from './relation';
 import { suffixPx } from '../utils';
 
-export const CheckboxMixin = (parent, bem) => ({
+export const CheckboxMixin = ({ parent, bem, role }) => ({
   mixins: [ChildrenMixin(parent)],
 
   props: {
@@ -35,6 +35,14 @@ export const CheckboxMixin = (parent, bem) => ({
           backgroundColor: checkedColor
         };
       }
+    },
+
+    tabindex() {
+      if (this.isDisabled || (role === 'radio' && !this.checked)) {
+        return -1;
+      }
+
+      return 0;
     }
   },
 
@@ -56,7 +64,10 @@ export const CheckboxMixin = (parent, bem) => ({
 
     return (
       <div
+        role={role}
         class={bem()}
+        tabindex={this.tabindex}
+        aria-checked={String(this.checked)}
         onClick={event => {
           this.$emit('click', event);
         }}

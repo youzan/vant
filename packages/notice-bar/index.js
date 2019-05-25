@@ -117,6 +117,7 @@ export default sfc({
 
     return (
       <div
+        role="alert"
         vShow={this.showNoticeBar}
         class={bem({ wrapable: this.wrapable })}
         style={barStyle}
@@ -125,7 +126,7 @@ export default sfc({
         }}
       >
         {LeftIcon()}
-        <div ref="wrap" class={bem('wrap')}>
+        <div ref="wrap" class={bem('wrap')} role="marquee">
           <div
             ref="content"
             class={[

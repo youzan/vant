@@ -16,7 +16,7 @@ exports[`renders demo correctly 1`] = `
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
       组件调用
     </span></button>
-    <div class="van-dialog" style="display: none;" name="van-dialog-bounce">
+    <div role="dialog" aria-labelledby="标题" class="van-dialog" style="display: none;" name="van-dialog-bounce">
       <div class="van-dialog__header">标题</div>
       <div class="van-dialog__content"><img src="https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg"></div>
       <div class="van-hairline--top van-dialog__footer van-dialog__footer--buttons"><button class="van-button van-button--default van-button--large van-dialog__cancel"><span class="van-button__text">取消</span></button><button class="van-button van-button--default van-button--large van-dialog__confirm van-hairline--left"><span class="van-button__text">确认弹窗</span></button></div>

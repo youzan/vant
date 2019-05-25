@@ -1,6 +1,6 @@
 {
   "name": "vant",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.1",
   "description": "Mobile UI Components built on Vue",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -53,7 +53,7 @@
   "author": "youzanfe",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
     "@vant/icons": "1.1.7",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
@@ -62,16 +62,16 @@
     "vue": ">= 2.5.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "^7.4.5",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-jsx": "^7.2.0",
     "@babel/plugin-transform-object-assign": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/polyfill": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.13",
-    "@vant/doc": "^2.2.2",
+    "@vant/doc": "^2.2.3",
     "@vant/eslint-config": "^1.1.2",
     "@vant/markdown-loader": "^2.0.0",
     "@vue/babel-preset-jsx": "^1.0.0",

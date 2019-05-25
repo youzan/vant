@@ -109,6 +109,12 @@ export default sfc({
       >
         <div class={bem('bar')} style={barStyle}>
           <div
+            role="slider"
+            tabindex={this.disabled ? -1 : 0}
+            aria-valuemin={this.min}
+            aria-valuenow={this.value}
+            aria-valuemax={this.max}
+            aria-orientation={this.vertical ? 'vertical' : 'horizontal'}
             class={bem('button-wrapper')}
             onTouchstart={this.onTouchStart}
             onTouchmove={this.onTouchMove}

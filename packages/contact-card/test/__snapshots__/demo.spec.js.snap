@@ -10,10 +10,10 @@ exports[`renders demo correctly 1`] = `
     </div>
     <div class="van-popup van-popup--bottom" style="display: none;" name="van-popup-slide-bottom">
       <div class="van-contact-list">
-        <div class="van-radio-group van-contact-list__group">
+        <div role="radiogroup" class="van-radio-group van-contact-list__group">
           <div class="van-cell van-cell--clickable van-contact-list__item">
             <div class="van-cell__value van-cell__value--alone van-contact-list__item-value">
-              <div class="van-radio">
+              <div role="radio" tabindex="-1" aria-checked="false" class="van-radio">
                 <div class="van-radio__icon van-radio__icon--round" style="font-size: 16px;"><i class="van-icon van-icon-success">
                     <!----></i></div><span class="van-radio__label"><div class="van-contact-list__name">张三，13000000000</div></span>
               </div>

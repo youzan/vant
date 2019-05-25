@@ -1,14 +1,38 @@
 # 更新日志
 
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+
+#### 无障碍访问
+
+对以下组件增加了无障碍访问的支持：
+
+- List
+- Dialog
+- Slider
+- Switch
+- NoticeBar
+- GoodsAction
+
+##### ImagePreview
+
+- 新增`close-on-popstate`属性
+
+
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+
+#### 无障碍访问
+
+对以下组件增加了无障碍访问的支持：
+
+- Accordion
+- Checkbox
+- Radio
+- Stepper
+- Tab
 
 ##### ActionSheet
 
 - 新增`lock-scroll`属性
-
-##### Accordion
-
-- 优化无障碍访问
 
 ##### DatetimePicker
 
@@ -21,6 +45,7 @@
 ##### DropdownItem
 
 - 新增`title-class`属性
+- 修复在部分浏览器上定位错误的问题
 
 ##### Picker
 
@@ -28,7 +53,6 @@
 
 ##### Tab
 
-- 优化无障碍访问
 - 新增`border`属性
 
 ##### Uploader

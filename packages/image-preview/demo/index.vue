@@ -94,6 +94,7 @@ export default {
       const instance = ImagePreview({
         images,
         asyncClose: !!timer,
+        closeOnPopstate: true,
         startPosition: typeof position === 'number' ? position : 0
       });
 

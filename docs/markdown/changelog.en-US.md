@@ -1,5 +1,47 @@
 # Changelog
 
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
+
+#### Accessibility
+
+Improve accessibility for those components：
+
+- Accordion
+- Checkbox
+- Radio
+- Stepper
+- Tab
+
+##### ActionSheet
+
+- Add `lock-scroll` prop
+
+##### DatetimePicker
+
+- Add `filter` prop
+
+##### DropdownMenu
+
+- Add `duration` prop
+
+##### DropdownItem
+
+- Add `title-class` prop
+- Fix incorrect position in some browsers
+
+##### Picker
+
+- Support inertial scrolling
+
+##### Tab
+
+- Add `border` prop
+
+##### Uploader
+
+- `oversize` event add `detail` param
+
+
 ### [v2.0.0-beta.0](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
 `2019-05-21`
 
