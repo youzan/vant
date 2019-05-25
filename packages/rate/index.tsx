@@ -92,17 +92,26 @@ function Rate(
   function renderStar(status: RateStatus, index: number) {
     const isFull = status === 'full';
     const isVoid = status === 'void';
+    const score = index + 1;
 
     return (
-      <div key={index} class={bem('item')}>
+      <div
+        key={index}
+        role="radio"
+        tabindex="0"
+        aria-posinset={score}
+        aria-setsize={props.count}
+        aria-checked={String(!isVoid)}
+        class={bem('item')}
+      >
         <Icon
           name={isFull ? icon : voidIcon}
           size={`${size}px`}
           class={bem('icon')}
-          data-score={index + 1}
+          data-score={score}
           color={disabled ? disabledColor : isFull ? color : voidColor}
           onClick={() => {
-            onSelect(index + 1);
+            onSelect(score);
           }}
         />
         {props.allowHalf && (
@@ -110,10 +119,10 @@ function Rate(
             name={isVoid ? voidIcon : icon}
             size={`${size}px`}
             class={bem('icon', 'half')}
-            data-score={index + 0.5}
+            data-score={score - 0.5}
             color={disabled ? disabledColor : isVoid ? voidColor : color}
             onClick={() => {
-              onSelect(index + 0.5);
+              onSelect(score - 0.5);
             }}
           />
         )}
@@ -122,7 +131,13 @@ function Rate(
   }
 
   return (
-    <div class={bem()} {...inherit(ctx)} onTouchmove={onTouchMove}>
+    <div
+      class={bem()}
+      tabindex="0"
+      role="radiogroup"
+      {...inherit(ctx)}
+      onTouchmove={onTouchMove}
+    >
       {list.map((status, index) => renderStar(status, index))}
     </div>
   );

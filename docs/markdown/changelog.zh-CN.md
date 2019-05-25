@@ -7,6 +7,7 @@
 对以下组件增加了无障碍访问的支持：
 
 - List
+- Rate
 - Dialog
 - Slider
 - Switch
