@@ -95,7 +95,7 @@ exports[`create a AddressEdit with props 1`] = `
   <div class="van-cell van-cell--center van-switch-cell">
     <div class="van-cell__title"><span>设为默认收货地址</span></div>
     <div class="van-cell__value">
-      <div class="van-switch van-switch--on" style="font-size:24px;">
+      <div role="switch" aria-checked="true" class="van-switch van-switch--on" style="font-size:24px;">
         <div class="van-switch__node"></div>
       </div>
     </div>

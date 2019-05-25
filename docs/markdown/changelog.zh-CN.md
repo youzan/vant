@@ -9,6 +9,7 @@
 - List
 - Dialog
 - Slider
+- Switch
 - NoticeBar
 
 ##### ImagePreview
