@@ -74,6 +74,7 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | index | 索引字符 | `String | Number` | - | - |
+| background-color-value | RGB背景颜色值 | `String` | `248,248,248` | - |
 
 ### IndexBar Events
 

@@ -75,7 +75,10 @@ export default sfc({
 
   render(h) {
     return (
-      <div class={bem()}>
+      <div
+        ref="indexBar"
+        class={bem()}
+      >
         <div
           class={bem('sidebar')}
           style={{ zIndex: this.zIndex }}
@@ -85,11 +88,19 @@ export default sfc({
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
         >
-          {this.indexList.map(index => (
-            <span class={bem('index')} data-index={index}>
+          {this.indexList.map((index, id) => (
+            <span class={bem('index', { highlight: id === this.currentAnchorIndex })} data-index={index}>
               {index}
             </span>
           ))}
+        </div>
+
+        <div
+          vShow={this.activeAnchorVisible}
+          class={[bem('active'), 'van-hairline--bottom']}
+          style={{ zIndex: this.zIndex }}
+        >
+          {this.activeAnchorSlot}
         </div>
         {this.slots('default')}
       </div>

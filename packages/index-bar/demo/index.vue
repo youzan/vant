@@ -22,7 +22,12 @@
             :key="index"
           >
             <van-index-anchor :index="index">
-              {{ $t('title') + index }}
+              <template v-if="index === 2">
+                <div :style="{lineHeight: '50px'}">{{ $t('different') + $t('title') + index }}</div>
+              </template>
+              <template v-else>
+                {{ $t('title') + index }}
+              </template>
             </van-index-anchor>
             <van-cell :title="$t('text')" />
             <van-cell :title="$t('text')" />
@@ -39,11 +44,13 @@ export default {
   i18n: {
     'zh-CN': {
       text: '文本',
-      customIndexList: '自定义索引列表'
+      customIndexList: '自定义索引列表',
+      different: '不一样的'
     },
     'en-US': {
       text: 'Text',
-      customIndexList: 'Custom Index List'
+      customIndexList: 'Custom Index List',
+      different: 'Different'
     }
   },
 
