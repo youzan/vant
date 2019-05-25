@@ -12,6 +12,7 @@
         :show="keyboard === 'default'"
         :close-button-text="$t('close')"
         extra-key="."
+        safe-area-inset-bottom
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"
@@ -31,6 +32,7 @@
         :close-button-text="$t('close')"
         theme="custom"
         extra-key="."
+        safe-area-inset-bottom
         @blur="keyboard = ''"
         @input="onInput"
         @delete="onDelete"

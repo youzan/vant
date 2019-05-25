@@ -1,13 +1,6 @@
 import NumberKeyboard from '..';
 import { mount } from '../../../test/utils';
 
-function mockTouch(wrapper, event, keyIndex) {
-  const key = wrapper.element.querySelectorAll('.van-key')[keyIndex];
-  const touchStart = document.createEvent('CustomEvent');
-  touchStart.initCustomEvent(event, true, true, {});
-  key.dispatchEvent(touchStart);
-}
-
 test('click number key', () => {
   const wrapper = mount(NumberKeyboard, {
     propsData: {
@@ -16,16 +9,15 @@ test('click number key', () => {
     }
   });
 
-  mockTouch(wrapper, 'touchstart', 10);
-  mockTouch(wrapper, 'touchstart', 0);
-  mockTouch(wrapper, 'touchend', 0);
-  wrapper.destroy();
+  wrapper.findAll('.van-key').at(0).trigger('click');
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
+
+  wrapper.destroy();
 });
 
 it('click delete key', () => {
   const wrapper = mount(NumberKeyboard);
-  mockTouch(wrapper, 'touchstart', 11);
+  wrapper.findAll('.van-key').at(11).trigger('click');
   expect(wrapper.emitted('delete')).toBeTruthy();
 });
 
@@ -37,7 +29,7 @@ test('click close button', () => {
     }
   });
 
-  mockTouch(wrapper, 'touchstart', 12);
+  wrapper.findAll('.van-key').at(12).trigger('click');
   expect(wrapper.emitted('close')).toBeTruthy();
 });
 

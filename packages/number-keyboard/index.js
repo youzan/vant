@@ -100,7 +100,10 @@ export default sfc({
 
       if (action !== this.handlerStatus && this.hideOnClickOutside) {
         this.handlerStatus = action;
-        document.body[(action ? 'add' : 'remove') + 'EventListener']('touchstart', this.onBlur);
+        document.body[(action ? 'add' : 'remove') + 'EventListener'](
+          'touchstart',
+          this.onBlur
+        );
       }
     },
 
@@ -139,6 +142,18 @@ export default sfc({
     const showTitleClose = closeButtonText && theme === 'default';
     const showTitle = title || showTitleClose || titleLeftSlot;
 
+    const Title = showTitle && (
+      <div class={[bem('title'), 'van-hairline--top']}>
+        {titleLeftSlot && <span class={bem('title-left')}>{titleLeftSlot}</span>}
+        {title && <span>{title}</span>}
+        {showTitleClose && (
+          <span role="button" tabindex="0" class={bem('close')} onClick={this.onClose}>
+            {closeButtonText}
+          </span>
+        )}
+      </div>
+    );
+
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
@@ -149,21 +164,7 @@ export default sfc({
           onAnimationend={this.onAnimationEnd}
           onWebkitAnimationEnd={this.onAnimationEnd}
         >
-          {showTitle && (
-            <div class={[bem('title'), 'van-hairline--top']}>
-              {titleLeftSlot && (
-                <span class={bem('title-left')}>
-                  {titleLeftSlot}
-                </span>
-              )}
-              {title && <span>{title}</span>}
-              {showTitleClose && (
-                <span class={bem('close')} onClick={this.onClose}>
-                  {closeButtonText}
-                </span>
-              )}
-            </div>
-          )}
+          {Title}
           <div class={bem('body')}>
             {this.keys.map(key => (
               <Key key={key.text} text={key.text} type={key.type} onPress={onPress} />

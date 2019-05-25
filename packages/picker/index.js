@@ -159,14 +159,14 @@ export default sfc({
     const Toolbar = this.showToolbar && (
       <div class={['van-hairline--top-bottom', bem('toolbar')]}>
         {this.slots() || [
-          <div class={bem('cancel')} onClick={this.onCancel}>
+          <div role="button" tabindex="0" class={bem('cancel')} onClick={this.onCancel}>
             {this.cancelButtonText || t('cancel')}
           </div>,
           this.slots('title') ||
             (this.title && (
               <div class={['van-ellipsis', bem('title')]}>{this.title}</div>
             )),
-          <div class={bem('confirm')} onClick={this.onConfirm}>
+          <div role="button" tabindex="0" class={bem('confirm')} onClick={this.onConfirm}>
             {this.confirmButtonText || t('confirm')}
           </div>
         ]}
