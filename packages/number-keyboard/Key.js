@@ -1,5 +1,4 @@
 import { use } from '../utils';
-import { preventDefault } from '../utils/event';
 
 const [sfc, bem] = use('key');
 
@@ -26,12 +25,14 @@ export default sfc({
   methods: {
     onFocus() {
       this.active = true;
-      this.$emit('press', this.text);
     },
 
     onBlur(event) {
-      preventDefault(event, true);
       this.active = false;
+    },
+
+    onClick() {
+      this.$emit('press', this.text);
     }
   },
 
@@ -39,7 +40,10 @@ export default sfc({
     const { onBlur } = this;
     return (
       <i
+        role="button"
+        tabindex="0"
         class={['van-hairline', this.className]}
+        onClick={this.onClick}
         onTouchstart={this.onFocus}
         onTouchmove={onBlur}
         onTouchend={onBlur}
