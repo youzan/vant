@@ -22,11 +22,11 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 ### Install
 
 ```bash
-# npm
+# install vant 1.x
 npm i vant -S
 
-# yarn
-yarn add vant
+# install vant 2.0 beta
+npm i vant@beta -S
 ```
 
 ### CDN

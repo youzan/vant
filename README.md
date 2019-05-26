@@ -35,19 +35,15 @@
 
 ## Install
 
-#### NPM
-
-```shell
+```bash
+# install vant 1.x
 npm i vant -S
+
+# install vant 2.0 beta
+npm i vant@beta -S
 ```
 
-#### YARN
-
-```shell
-yarn add vant
-```
-
-#### CDN
+## CDN
 
 ```html
 <!-- import style -->

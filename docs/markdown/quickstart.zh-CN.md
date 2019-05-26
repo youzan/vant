@@ -31,11 +31,11 @@ vue ui
 ### 安装
 
 ```bash
-# npm
+# 安装 vant 1.x 稳定版本
 npm i vant -S
 
-# yarn
-yarn add vant
+# 安装 vant 2.0 测试版本
+npm i vant@beta -S
 ```
 
 ### 通过 CDN 引入

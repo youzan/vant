@@ -34,19 +34,15 @@
 
 ## 安装
 
-#### NPM
-
-```shell
+```bash
+# 安装 vant 1.x 稳定版本
 npm i vant -S
+
+# 安装 vant 2.0 测试版本
+npm i vant@beta -S
 ```
 
-#### YARN
-
-```shell
-yarn add vant
-```
-
-#### CDN
+## CDN
 
 ```html
 <!-- 引入样式 -->
