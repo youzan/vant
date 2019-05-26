@@ -71,7 +71,9 @@ export default sfc({
 
   methods: {
     onClick(event) {
-      this.scrollToElement(event.target);
+      const { id } = event.target.dataset;
+
+      this.scrollToElement(this.children[id]);
     },
 
     onTouchStart(event) {
@@ -89,27 +91,21 @@ export default sfc({
 
         const { clientX, clientY } = event.touches[0];
         const target = document.elementFromPoint(clientX, clientY);
+
         if (target) {
-          const { index } = target.dataset;
-          if (this.currentTouchIndex !== index) {
-            this.currentTouchIndex = index;
-            this.scrollToElement(target);
+          const { id } = target.dataset;
+
+          if (this.currentTouchIndex !== id) {
+            this.currentTouchIndex = id;
+            this.scrollToElement(this.children[id]);
           }
         }
       }
     },
 
-    scrollToElement(element, setActive) {
-      const { index } = element.dataset;
-      if (!index) {
-        return;
-      }
-
-      const match = this.children.filter(item => String(item.index) === index);
-      if (match[0]) {
-        match[0].scrollIntoView();
-        this.$emit('select', match[0].index);
-      }
+    scrollToElement(child) {
+      child.scrollIntoView();
+      this.$emit('select', child.index);
     },
 
     onTouchEnd() {
@@ -182,7 +178,7 @@ export default sfc({
           onTouchcancel={this.onTouchEnd}
         >
           {this.indexList.map((index, id) => (
-            <span class={bem('index', { highlight: id === this.currentAnchorIndex })} data-index={index}>
+            <span class={bem('index', { highlight: id === this.currentAnchorIndex })} data-id={id} data-index={index}>
               {index}
             </span>
           ))}
