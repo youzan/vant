@@ -10,6 +10,7 @@
       <van-action-sheet
         v-model="show1"
         :actions="simpleActions"
+        safe-area-inset-bottom
         @select="onSelect"
       />
     </demo-block>
@@ -24,6 +25,7 @@
       <van-action-sheet
         v-model="show2"
         :actions="statusActions"
+        safe-area-inset-bottom
         @select="onSelect"
       />
     </demo-block>
@@ -39,6 +41,7 @@
         v-model="show3"
         :actions="simpleActions"
         :cancel-text="$t('cancel')"
+        safe-area-inset-bottom
         @cancel="onCancel"
         @select="onSelect"
       />
@@ -54,6 +57,7 @@
       <van-action-sheet
         v-model="show4"
         :title="$t('title')"
+        safe-area-inset-bottom
       >
         <p>{{ $t('content') }}</p>
       </van-action-sheet>

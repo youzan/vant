@@ -40,7 +40,7 @@ export default {
       Toast(value);
     },
     onDelete() {
-      Toast('delete');
+      Toast('删除');
     }
   }
 }

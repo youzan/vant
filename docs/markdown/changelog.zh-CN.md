@@ -1,6 +1,6 @@
 # 更新日志
 
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
 
 #### 无障碍访问
 
@@ -13,6 +13,7 @@
 - Switch
 - NoticeBar
 - GoodsAction
+- DropdownMenu
 - NumberKeyboard
 
 ##### ImagePreview
