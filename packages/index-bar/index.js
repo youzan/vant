@@ -95,7 +95,7 @@ export default sfc({
         if (target) {
           const { id } = target.dataset;
 
-          if (this.currentTouchIndex !== id) {
+          if (id && this.currentTouchIndex !== id) {
             this.currentTouchIndex = id;
             this.scrollToElement(this.children[id]);
           }
