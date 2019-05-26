@@ -2,6 +2,10 @@ import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { on, off } from '../utils/event';
+import {
+  getScrollTop,
+  getScrollEventTarget
+} from '../utils/scroll';
 
 const [sfc, bem] = use('index-bar');
 
@@ -25,11 +29,20 @@ export default sfc({
 
         return indexList;
       }
+    },
+    hoverIndexOffset: {
+      type: Number,
+      default: 0
+    },
+    anchorBgColorValue: {
+      type: String,
+      default: '248,248,248'
     }
   },
 
   data() {
     return {
+      scroller: null,
       childrenTopList: [],
       isInTransition: false,
       currentAnchorIndex: -1,
@@ -40,7 +53,7 @@ export default sfc({
 
   computed: {
     childrenLen() {
-      return this.childrenTopList.length;
+      return this.children.length;
     },
 
     activeAnchorSlot() {
@@ -53,7 +66,7 @@ export default sfc({
   },
 
   beforeDestroy() {
-    off(window, 'scroll', this.onScroll);
+    off(this.scroller, 'scroll', this.onScroll);
   },
 
   methods: {
@@ -102,17 +115,24 @@ export default sfc({
     },
 
     getTop() {
-      let currentElem = this.$refs.indexBar;
+      this.scroller = getScrollEventTarget(this.$el);
+      return this.getOffsetTop(this.$el) - this.getOffsetTop(this.scroller);
+    },
+
+    getOffsetTop(element) {
       let top = 0;
-      while (currentElem) {
-        top += currentElem.offsetTop;
-        currentElem = currentElem.offsetParent;
+      if (element === window || element === document) {
+        return 0;
+      }
+      while (element) {
+        top += element.offsetTop;
+        element = element.offsetParent;
       }
       return top;
     },
 
     onScroll() {
-      const { scrollTop } = document.scrollingElement;
+      const scrollTop = getScrollTop(this.scroller);
       if (scrollTop < 0) {
         this.currentAnchorIndex = -1;
         return;
@@ -140,15 +160,15 @@ export default sfc({
     },
 
     bindScrollEvent() {
-      on(window, 'scroll', this.onScroll);
+      on(this.scroller, 'scroll', this.onScroll);
     }
   },
 
   render(h) {
     return (
       <div
-        ref="indexBar"
         class={bem()}
+        style={{ zIndex: this.zIndex }}
       >
         <div
           class={bem('sidebar')}
@@ -169,7 +189,7 @@ export default sfc({
         <div
           vShow={this.activeAnchorVisible}
           class={[bem('active'), 'van-hairline--bottom']}
-          style={{ zIndex: this.zIndex }}
+          style={{ top: `${this.hoverIndexOffset}px`, zIndex: this.zIndex }}
         >
           {this.activeAnchorSlot}
         </div>

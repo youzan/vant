@@ -68,13 +68,15 @@ export default {
 |------|------|------|------|------|
 | index-list | 索引字符列表 | `Array` | `A-Z` | - |
 | z-index | z-index 层级 | `Number` | `1` | - |
+| hover-index-offset | 悬停索引的top值 | `Number` | `0` | - |
+| anchor-bg-color-value | 组件IndexAnchorRGB背景颜色值 | `String` | `248,248,248` | - |
 
 ### IndexAnchor Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | index | 索引字符 | `String | Number` | - | - |
-| background-color-value | RGB背景颜色值 | `String` | `248,248,248` | - |
+| bg-color-value | RGB背景颜色值 | `String` | - | - |
 
 ### IndexBar Events
 

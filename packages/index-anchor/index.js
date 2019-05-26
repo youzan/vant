@@ -8,16 +8,14 @@ export default sfc({
 
   props: {
     index: [String, Number],
-    backgroundColorValue: {
-      type: String,
-      default: '248,248,248'
-    }
+    bgColorValue: String
   },
 
   data() {
     return {
       id: 0,
-      offsetHeight: 0
+      offsetHeight: 0,
+      isReady: false
     };
   },
 
@@ -31,18 +29,19 @@ export default sfc({
     },
 
     defaultSlot() {
-      return this.slots('default') ? this.slots('default') : this.index;
+      return this.slots('default') || this.index;
     }
   },
 
   created() {
+    this.isReady = true;
     if (!this.parent) {
       return;
     }
 
-    const { children, indexList } = this.parent;
+    const { children, childrenLen, indexList } = this.parent;
 
-    if (indexList && children.length === indexList.length) {
+    if (indexList && childrenLen === indexList.length && !children.some(child => !child.isReady)) {
       this.$nextTick(() => {
         const parentTop = this.parent.getTop();
         const childrenTopList = [];
@@ -55,6 +54,7 @@ export default sfc({
         });
 
         this.parent.childrenTopList = childrenTopList;
+        this.parent.onScroll();
         this.parent.bindScrollEvent();
       });
     }
@@ -72,7 +72,7 @@ export default sfc({
             bem('content'),
             { 'van-hairline--bottom': border }
           ]}
-          style={{ backgroundColor: `rgba(${this.backgroundColorValue},${alpha})` }}
+          style={{ backgroundColor: `rgba(${this.bgColorValue || this.parent.anchorBgColorValue},${alpha})` }}
         >
           {slot}
         </div>

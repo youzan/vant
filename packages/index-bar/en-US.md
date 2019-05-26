@@ -64,13 +64,15 @@ export default {
 |------|------|------|------|
 | index-list | Index List | `Array` | `A-Z` |
 | z-index | z-index | `Number` | `1` |
+| hover-index-offset | The top value of the hover index | `Number` | `0` |
+| anchor-bg-color-value | RGB background color value of component IndexAnchor | `String` | `248,248,248` |
 
 ### IndexAnchor Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | index | Index | `String | Number` | - |
-| background-color-value | RGB background color value | `String` | `248,248,248` |
+| bg-color-value | RGB background color value | `String` | - |
 
 ### IndexBar Events
 

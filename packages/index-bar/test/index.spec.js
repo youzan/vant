@@ -45,11 +45,6 @@ test('click and scroll to anchor', () => {
 
   expect(fn).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('A');
-  setTimeout(() => {
-    expect(wrapper.find('.van-index-bar__active').isVisible()).toBe(true);
-    expect(wrapper.find('.van-index-bar__active').text()).toBe('A');
-    expect(wrapper.find('.van-index-bar__index--highlight').text()).toBe('A');
-  }, 100);
 });
 
 test('touch and scroll to anchor', () => {
@@ -98,9 +93,4 @@ test('touch and scroll to anchor', () => {
   trigger(sidebar, 'touchend', 0, 400);
   expect(fn).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('B');
-  setTimeout(() => {
-    expect(wrapper.find('.van-index-bar__active').isVisible()).toBe(true);
-    expect(wrapper.find('.van-index-bar__active').text()).toBe('B');
-    expect(wrapper.find('.van-index-bar__index--highlight').text()).toBe('B');
-  }, 200);
 });
