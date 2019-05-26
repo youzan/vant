@@ -89,15 +89,17 @@ export default sfc({
 
         const { clientX, clientY } = event.touches[0];
         const target = document.elementFromPoint(clientX, clientY);
-        this.scrollToElement(target);
+        if (target) {
+          const { index } = target.dataset;
+          if (this.currentTouchIndex !== index) {
+            this.currentTouchIndex = index;
+            this.scrollToElement(target);
+          }
+        }
       }
     },
 
     scrollToElement(element, setActive) {
-      if (!element) {
-        return;
-      }
-
       const { index } = element.dataset;
       if (!index) {
         return;
