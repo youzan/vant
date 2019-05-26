@@ -91,6 +91,6 @@ test('touch and scroll to anchor', () => {
   trigger(sidebar, 'touchmove', 0, 300);
   trigger(sidebar, 'touchmove', 0, 400);
   trigger(sidebar, 'touchend', 0, 400);
-  expect(fn).toHaveBeenCalledTimes(1);
+  expect(fn).toHaveBeenCalledTimes(2);
   expect(onSelect).toHaveBeenCalledWith('B');
 });
