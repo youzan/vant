@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import Search from '..';
 import { mount } from '../../../test/utils';
 
@@ -89,6 +90,18 @@ test('right-icon prop', () => {
   const wrapper = mount(Search, {
     propsData: {
       rightIcon: 'setting-o'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('right-icon slot', () => {
+  const wrapper = mount(Search, {
+    scopedSlots: {
+      'right-icon'() {
+        return 'Custom Right Icon';
+      }
     }
   });
 

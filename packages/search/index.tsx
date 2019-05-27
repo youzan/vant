@@ -23,6 +23,7 @@ export type SearchSlots = DefaultSlots & {
   label?: ScopedSlot;
   action?: ScopedSlot;
   'left-icon'?: ScopedSlot;
+  'right-icon'?: ScopedSlot;
 };
 
 export type SearchEvents = {
@@ -97,7 +98,10 @@ function Search(
           value={props.value}
           leftIcon={props.leftIcon}
           rightIcon={props.rightIcon}
-          scopedSlots={{ 'left-icon': slots['left-icon'] }}
+          scopedSlots={{
+            'left-icon': slots['left-icon'],
+            'right-icon': slots['right-icon']
+          }}
           {...fieldData}
         />
       </div>

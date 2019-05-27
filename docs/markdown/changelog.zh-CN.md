@@ -24,6 +24,12 @@
 
 - 新增`close-on-popstate`属性
 
+##### Search
+
+- 新增`left-icon`属性
+- 新增`right-icon`属性
+- 新增`right-icon`插槽
+
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
 
