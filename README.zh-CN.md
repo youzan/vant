@@ -35,10 +35,10 @@
 ## 安装
 
 ```bash
-# 安装 vant 1.x 稳定版本
+# 安装 1.x 稳定版本
 npm i vant -S
 
-# 安装 vant 2.0 测试版本
+# 安装 2.0 测试版本
 npm i vant@beta -S
 ```
 

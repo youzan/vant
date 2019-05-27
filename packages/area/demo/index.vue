@@ -1,10 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-area
-        ref="area"
-        :area-list="$t('areaList')"
-      />
+      <van-area :area-list="$t('areaList')" />
     </demo-block>
 
     <demo-block :title="$t('title2')">

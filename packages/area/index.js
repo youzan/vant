@@ -171,8 +171,8 @@ export default sfc({
       return area;
     },
 
-    reset() {
-      this.code = '';
+    reset(code) {
+      this.code = code || '';
       this.setValues();
     }
   },

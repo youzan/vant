@@ -36,10 +36,10 @@
 ## Install
 
 ```bash
-# install vant 1.x
+# install 1.x stable
 npm i vant -S
 
-# install vant 2.0 beta
+# install 2.0 beta
 npm i vant@beta -S
 ```
 

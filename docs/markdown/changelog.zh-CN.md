@@ -16,6 +16,10 @@
 - DropdownMenu
 - NumberKeyboard
 
+##### Area
+
+- 支持`reset`方法传入`code`参数
+
 ##### ImagePreview
 
 - 新增`close-on-popstate`属性

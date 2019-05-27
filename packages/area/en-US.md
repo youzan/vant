@@ -69,7 +69,7 @@ Use ref to get area instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |------|------|------|------|
-| reset | - | - | Reset all options |
+| reset | code: string | - | Reset all options by code |
 
 ### areaList Data Structure
 
