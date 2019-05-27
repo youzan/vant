@@ -1,4 +1,5 @@
 import { use } from '../utils';
+import Icon from '../icon';
 
 const [sfc, bem] = use('uploader');
 
@@ -7,6 +8,7 @@ export default sfc({
 
   props: {
     disabled: Boolean,
+    uploadText: String,
     beforeRead: Function,
     afterRead: Function,
     accept: {
@@ -62,10 +64,7 @@ export default sfc({
         });
       } else {
         this.readFile(files).then(content => {
-          this.onAfterRead(
-            { file: files, content },
-            files.size > this.maxSize
-          );
+          this.onAfterRead({ file: files, content }, files.size > this.maxSize);
         });
       }
     },
@@ -103,16 +102,28 @@ export default sfc({
   },
 
   render(h) {
-    const {
-      accept,
-      disabled
-    } = this;
+    const { slots, accept, disabled, uploadText } = this;
+
+    function Upload() {
+      const slot = slots();
+
+      if (slot) {
+        return slot;
+      }
+
+      return (
+        <div class={bem('upload')}>
+          <Icon name="plus" class={bem('upload-icon')} />
+          {uploadText && <span class={bem('upload-text')}>{uploadText}</span>}
+        </div>
+      );
+    }
 
     return (
       <div class={bem()}>
-        {this.slots()}
+        {Upload()}
         <input
-          { ...{ attrs: this.$attrs } }
+          {...{ attrs: this.$attrs }}
           ref="input"
           type="file"
           accept={accept}

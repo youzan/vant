@@ -24,7 +24,6 @@ test('drag button', () => {
     wrapper.setProps({ value });
   });
 
-
   const button = wrapper.find('.van-slider__button');
   triggerDrag(button, 50, 0);
   expect(wrapper).toMatchSnapshot();

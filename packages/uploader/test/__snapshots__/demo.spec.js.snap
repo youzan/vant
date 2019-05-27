@@ -3,16 +3,16 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="demo-uploader-container">
-      <div class="van-uploader"><i class="van-icon van-icon-photograph">
-          <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+    <div class="van-uploader">
+      <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+          <!----></i></div><input type="file" accept="image/*" class="van-uploader__input">
     </div>
   </div>
   <div>
-    <div class="demo-uploader-container">
-      <div class="van-uploader"><i class="van-icon van-icon-photograph">
-          <!----></i><input name="uploader" type="file" accept="image/*" class="van-uploader__input"></div>
-    </div>
+    <div class="van-uploader"><button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-photo van-button__icon">
+          <!----></i><span class="van-button__text">
+        上传图片
+      </span></button><input type="file" accept="image/*" class="van-uploader__input"></div>
   </div>
 </div>
 `;

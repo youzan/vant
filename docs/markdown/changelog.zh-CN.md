@@ -39,6 +39,11 @@
 - 新增`drag-start`事件
 - 新增`drag-end`事件
 
+##### Uploader
+
+- 增加上传区域默认样式
+- 新增`upload-text`属性
+
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
 

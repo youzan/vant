@@ -1,26 +1,18 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <div class="demo-uploader-container">
-        <van-uploader
-          :max-size="102400"
-          @oversize="logContent('oversize')"
-          :before-read="beforeRead(1)"
-        >
-          <van-icon name="photograph" />
-        </van-uploader>
-      </div>
+      <van-uploader />
     </demo-block>
 
-    <demo-block :title="$t('name')">
-      <div class="demo-uploader-container">
-        <van-uploader
-          name="uploader"
-          :after-read="toastName"
+    <demo-block :title="$t('uploadStyle')">
+      <van-uploader>
+        <van-button
+          type="primary"
+          icon="photo"
         >
-          <van-icon name="photograph" />
-        </van-uploader>
-      </div>
+          {{ this.$t('upload') }}
+        </van-button>
+      </van-uploader>
     </demo-block>
   </demo-section>
 </template>
@@ -30,11 +22,13 @@ export default {
   i18n: {
     'zh-CN': {
       name: '标识名称',
-      title2: '设置 input 属性'
+      upload: '上传图片',
+      uploadStyle: '自定义上传样式'
     },
     'en-US': {
       name: 'Name',
-      title2: 'Set input attrs'
+      upload: 'Upload Image',
+      uploadStyle: 'Upload Style'
     }
   },
 
@@ -58,9 +52,10 @@ export default {
 
 <style lang="less">
 .demo-uploader {
-  &-container {
-    padding: 10px 20px;
-    font-size: 20px;
+  background-color: #fff;
+
+  .van-uploader {
+    margin-left: 15px;
   }
 }
 </style>

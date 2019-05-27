@@ -13,11 +13,7 @@ Vue.use(Uploader);
 ### Basic Usage
 
 ```html
-<div class="uploader-container">
-  <van-uploader :after-read="onRead">
-    <van-icon name="photograph" />
-  </van-uploader>
-</div>
+<van-uploader :after-read="onRead" />
 ```
 
 ```javascript
@@ -30,22 +26,12 @@ export default {
 };
 ```
 
-### Name
+### Upload Style
 
 ```html
-<van-uploader name="uploader" :after-read="onRead">
-  <van-icon name="photograph" />
+<van-uploader :after-read="onRead">
+  <van-button icon="photo" type="primary">Upload Image</van-button>
 </van-uploader>
-```
-
-```javascript
-export default {
-  methods: {
-    onRead(file, detail) {
-      this.$toast(detail.name);
-    }
-  }
-};
 ```
 
 ## API
@@ -55,14 +41,15 @@ export default {
 | Attribute | Description | Type | Default |
 |------|------|------|------|
 | name | Input name | `String` | - |
-| result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
 | accept | Accepted file type | `String` | `image/*` |
-| disabled | Whether to disabled the upload | `Boolean` | `false` |
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
+| disabled | Whether to disabled the upload | `Boolean` | `false` |
 | capture | Capture，can be set to `camera` | `String` | - |
 | before-read | Hook before reading the file, return false to stop reading the file | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |
+| result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
+| upload-text | Upload text | `String` | - |
 
 ### Events
 
