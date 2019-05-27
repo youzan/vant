@@ -14,6 +14,7 @@ export type SearchProps = {
   value?: string;
   label?: string;
   leftIcon: string;
+  rightIcon?: string;
   background: string;
   showAction?: boolean;
 };
@@ -95,6 +96,7 @@ function Search(
           border={false}
           value={props.value}
           leftIcon={props.leftIcon}
+          rightIcon={props.rightIcon}
           scopedSlots={{ 'left-icon': slots['left-icon'] }}
           {...fieldData}
         />
@@ -107,6 +109,7 @@ function Search(
 Search.props = {
   value: String,
   label: String,
+  rightIcon: String,
   showAction: Boolean,
   shape: {
     type: String,

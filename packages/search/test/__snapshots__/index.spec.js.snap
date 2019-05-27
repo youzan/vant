@@ -28,3 +28,20 @@ exports[`render label slot 1`] = `
   </div>
 </div>
 `;
+
+exports[`right-icon prop 1`] = `
+<div class="van-search" style="background: rgb(255, 255, 255);">
+  <div class="van-search__content van-search__content--square">
+    <div class="van-cell van-cell--borderless van-field">
+      <div class="van-field__left-icon"><i class="van-icon van-icon-search">
+          <!----></i></div>
+      <div class="van-cell__value van-cell__value--alone">
+        <div class="van-field__body"><input type="search" class="van-field__control">
+          <div class="van-field__right-icon"><i class="van-icon van-icon-setting-o">
+              <!----></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

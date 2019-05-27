@@ -84,3 +84,13 @@ test('left-icon prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('right-icon prop', () => {
+  const wrapper = mount(Search, {
+    propsData: {
+      rightIcon: 'setting-o'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
