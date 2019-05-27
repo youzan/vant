@@ -74,3 +74,13 @@ test('render label slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('left-icon prop', () => {
+  const wrapper = mount(Search, {
+    propsData: {
+      leftIcon: 'setting-o'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

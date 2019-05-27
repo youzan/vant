@@ -13,6 +13,7 @@ export type SearchProps = {
   shape: string;
   value?: string;
   label?: string;
+  leftIcon: string;
   background: string;
   showAction?: boolean;
 };
@@ -91,9 +92,9 @@ function Search(
         <Field
           clearable
           type="search"
-          value={props.value}
           border={false}
-          leftIcon="search"
+          value={props.value}
+          leftIcon={props.leftIcon}
           scopedSlots={{ 'left-icon': slots['left-icon'] }}
           {...fieldData}
         />
@@ -114,6 +115,10 @@ Search.props = {
   background: {
     type: String,
     default: '#fff'
+  },
+  leftIcon: {
+    type: String,
+    default: 'search'
   }
 };
 

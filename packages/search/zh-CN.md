@@ -61,6 +61,7 @@ Search 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pl
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | label | 搜索框左侧文本 | `String` | - | 1.6.6 |
+| left-icon | 输入框左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | `search` | 2.0.0 |
 | shape | 形状，可选值为 `round` | `String` | `square` | 1.6.6 |
 | background | 搜索框背景色 | `String` | `#f2f2f2` | - |
 | show-action | 是否在搜索框右侧显示取消按钮 | `Boolean` | `false` | - |

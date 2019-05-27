@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`left-icon prop 1`] = `
+<div class="van-search" style="background: rgb(255, 255, 255);">
+  <div class="van-search__content van-search__content--square">
+    <div class="van-cell van-cell--borderless van-field">
+      <div class="van-field__left-icon"><i class="van-icon van-icon-setting-o">
+          <!----></i></div>
+      <div class="van-cell__value van-cell__value--alone">
+        <div class="van-field__body"><input type="search" class="van-field__control"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`render label slot 1`] = `
 <div class="van-search" style="background: rgb(255, 255, 255);">
   <div class="van-search__content van-search__content--square">
