@@ -93,11 +93,14 @@ export default sfc({
   },
 
   methods: {
-    select(page) {
+    select(page, emitChange) {
       page = Math.min(this.count, Math.max(1, page));
       if (this.value !== page) {
         this.$emit('input', page);
-        this.$emit('change', page);
+
+        if (emitChange) {
+          this.$emit('change', page);
+        }
       }
     }
   },
@@ -107,7 +110,7 @@ export default sfc({
     const simple = this.mode !== 'multi';
 
     const onSelect = value => () => {
-      this.select(value);
+      this.select(value, true);
     };
 
     return (
