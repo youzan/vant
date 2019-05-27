@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, isDef } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/event';
 
@@ -30,17 +30,26 @@ export default sfc({
 
   methods: {
     onTouchStart(event) {
-      if (this.disabled) return;
+      if (this.disabled) {
+        return;
+      }
 
       this.touchStart(event);
       this.startValue = this.format(this.value);
+      this.dragStatus = 'start';
     },
 
     onTouchMove(event) {
+      if (this.disabled) {
+        return;
+      }
+
+      if (this.dragStatus === 'start') {
+        this.dragStatus = 'draging';
+        this.$emit('drag-start');
+      }
+
       preventDefault(event, true);
-
-      if (this.disabled) return;
-
       this.touchMove(event);
 
       const rect = this.$el.getBoundingClientRect();
@@ -53,8 +62,18 @@ export default sfc({
     },
 
     onTouchEnd() {
-      if (this.disabled) return;
-      this.updateValue(this.newValue, true);
+      if (this.disabled) {
+        return;
+      }
+
+      if (isDef(this.newValue)) {
+        this.updateValue(this.newValue, true);
+      }
+
+      if (this.dragStatus === 'draging') {
+        this.$emit('drag-end');
+        this.dragStatus = '';
+      }
     },
 
     onClick(event) {

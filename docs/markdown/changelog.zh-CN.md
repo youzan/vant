@@ -20,6 +20,10 @@
 
 - 支持`reset`方法传入`code`参数
 
+##### Button
+
+- 新增`icon`属性
+
 ##### ImagePreview
 
 - 新增`close-on-popstate`属性
@@ -29,6 +33,11 @@
 - 新增`left-icon`属性
 - 新增`right-icon`属性
 - 新增`right-icon`插槽
+
+##### Slider
+
+- 新增`drag-start`事件
+- 新增`drag-end`事件
 
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
