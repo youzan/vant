@@ -59,6 +59,7 @@ export default {
 | accept | Accepted file type | `String` | `image/*` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
+| capture | Capture，can be set to `camera` | `String` | - |
 | before-read | Hook before reading the file, return false to stop reading the file | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |

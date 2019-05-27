@@ -57,6 +57,7 @@ export default {
 | accept | 接受的文件类型 | `String` | `image/*` | - |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
+| capture | 捕获模式，可选值为`camera`(直接调起摄像头) | `String` | - | 2.0.0 |
 | before-read | 读取前的回调函数，返回 false 可终止文件读取 | `Function` | - | - |
 | after-read | 读取完成后的回调函数 | `Function` | - | - |
 | max-size | 文件大小限制，单位为 byte | `Number` | - | - |
