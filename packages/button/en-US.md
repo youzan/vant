@@ -60,6 +60,13 @@ Vue.use(Button);
 <van-button round type="danger">Round</van-button>
 ```
 
+### Icon
+
+```html 
+<van-button icon="star-o" type="primary" />
+<van-button icon="star-o" type="danger">Button</van-button>
+```
+
 ### Size
 
 ```html 
@@ -78,6 +85,7 @@ Vue.use(Button);
 | type | Can be set to `primary` `info` `warning` `danger` | `String` | `default` |
 | size | Can be set to `large` `small` `mini` | `String` | `normal` |
 | text | Text | `String` | - |
+| icon | Left Icon | `String` | - |
 | tag | HTML Tag | `String` | `button` |
 | native-type | Native Type Attribute | `String` | `''` |
 | plain | Whether to be plain button | `Boolean` | `false` |

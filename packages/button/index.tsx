@@ -1,6 +1,7 @@
 import { use } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
+import Icon from '../icon';
 import Loading, { LoadingType } from '../loading';
 
 // Types
@@ -16,6 +17,7 @@ export type ButtonProps = RouteProps & {
   type: ButtonType;
   size: ButtonSize;
   text?: string;
+  icon?: string;
   block?: boolean;
   plain?: boolean;
   round?: boolean;
@@ -41,7 +43,7 @@ function Button(
   slots: DefaultSlots,
   ctx: RenderContext<ButtonProps>
 ) {
-  const { tag, type, disabled, loading, hairline, loadingText } = props;
+  const { tag, icon, type, disabled, loading, hairline, loadingText } = props;
 
   function onClick(event: Event) {
     if (!loading && !disabled) {
@@ -59,7 +61,6 @@ function Button(
       type,
       props.size,
       {
-        loading,
         disabled,
         hairline,
         block: props.block,
@@ -71,6 +72,36 @@ function Button(
     { 'van-hairline--surround': hairline }
   ];
 
+  function Content() {
+    const content = [];
+
+    if (loading) {
+      content.push(
+        <Loading
+          class={bem('loading')}
+          size={props.loadingSize}
+          type={props.loadingType}
+          color={type === 'default' ? undefined : ''}
+        />
+      );
+    } else if (icon) {
+      content.push(<Icon name={icon} class={bem('icon')} />);
+    }
+
+    let text;
+    if (loading) {
+      text = loadingText;
+    } else {
+      text = slots.default ? slots.default() : props.text;
+    }
+
+    if (text) {
+      content.push(<span class={bem('text')}>{text}</span>);
+    }
+
+    return content;
+  }
+
   return (
     <tag
       class={classes}
@@ -80,18 +111,7 @@ function Button(
       onTouchstart={onTouchstart}
       {...inherit(ctx)}
     >
-      {loading ? (
-        [
-          <Loading
-            size={props.loadingSize}
-            type={props.loadingType}
-            color={type === 'default' ? undefined : ''}
-          />,
-          loadingText && <span class={bem('loading-text')}>{loadingText}</span>
-        ]
-      ) : (
-        <span class={bem('text')}>{slots.default ? slots.default() : props.text}</span>
-      )}
+      {Content()}
     </tag>
   );
 }
@@ -99,6 +119,7 @@ function Button(
 Button.props = {
   ...routeProps,
   text: String,
+  icon: String,
   block: Boolean,
   plain: Boolean,
   round: Boolean,

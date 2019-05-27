@@ -68,6 +68,13 @@ Vue.use(Button);
 <van-button round type="danger">圆形按钮</van-button>
 ```
 
+### 图标按钮
+
+```html 
+<van-button icon="star-o" type="primary" />
+<van-button icon="star-o" type="danger">按钮</van-button>
+```
+
 ### 按钮尺寸
 
 支持`large`、`normal`、`small`、`mini`四种尺寸，默认为`normal`
@@ -87,9 +94,10 @@ Vue.use(Button);
 |------|------|------|------|------|
 | type | 类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` | 1.6.6 |
 | size | 尺寸，可选值为 `large` `small` `mini` | `String` | `normal` | - |
-| text | 文字 | `String` | - | - |
+| text | 按钮文字 | `String` | - | - |
+| icon | 左侧图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.0 |
 | tag | HTML 标签 | `String` | `button` | - |
-| native-type | 原生 type 属性 | `String` | - | - |
+| native-type | 原生 button 标签 type 属性 | `String` | - | - |
 | block | 是否为块级元素 | `Boolean` | `false` | - |
 | plain | 是否为朴素按钮 | `Boolean` | `false` | 1.1.13 |
 | square | 是否为方形按钮 | `Boolean` | `false` | 1.2.0 |

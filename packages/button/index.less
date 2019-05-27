@@ -108,10 +108,9 @@
     line-height: @button-small-line-height;
   }
 
-  &--loading {
-    .van-loading {
-      display: inline-block;
-    }
+  &__loading {
+    display: inline-block;
+    vertical-align: top;
   }
 
   &--mini {
@@ -143,10 +142,18 @@
     border-radius: 0;
   }
 
-  &__loading-text {
+  &__icon {
+    min-width: 1em;
+    font-size: 1.2em;
+    line-height: inherit;
+    vertical-align: top;
+  }
+
+  &__icon + &__text,
+  &__loading + &__text {
     display: inline-block;
     margin-left: 5px;
-    vertical-align: middle;
+    vertical-align: top;
   }
 
   &--hairline {

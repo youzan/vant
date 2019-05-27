@@ -77,6 +77,18 @@
       />
     </demo-block>
 
+    <demo-block :title="$t('icon')">
+      <van-button
+        type="primary"
+        icon="star-o"
+      />
+      <van-button
+        type="danger"
+        icon="star-o"
+        :text="$t('button')"
+      />
+    </demo-block>
+
     <demo-block :title="$t('size')">
       <van-button
         type="primary"
@@ -112,6 +124,7 @@ export default {
     'zh-CN': {
       type: '按钮类型',
       size: '按钮尺寸',
+      icon: '图标按钮',
       loading: '加载状态',
       shape: '按钮形状',
       default: '默认按钮',
@@ -133,6 +146,7 @@ export default {
     'en-US': {
       type: 'Type',
       size: 'Size',
+      icon: 'Icon',
       loading: 'Loading',
       shape: 'Shape',
       default: 'Default',
@@ -158,8 +172,6 @@ export default {
 <style lang="less">
 .demo-button {
   .van-button {
-    user-select: none;
-
     &--large {
       margin-bottom: 15px;
     }
