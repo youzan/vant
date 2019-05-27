@@ -48,16 +48,6 @@ export default {
 };
 ```
 
-### Set input attrs
-
-You can set native properties such as `accpet`、`multiple` on Uploader, and the input will automatically inherits the attribute.
-
-```html
-<van-uploader :after-read="onRead" accept="image/gif, image/jpeg" multiple>
-  <van-icon name="photograph" />
-</van-uploader>
-```
-
 ## API
 
 ### Props
@@ -68,6 +58,7 @@ You can set native properties such as `accpet`、`multiple` on Uploader, and the
 | result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
 | accept | Accepted file type | `String` | `image/*` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
+| multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
 | before-read | Hook before reading the file, return false to stop reading the file | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |

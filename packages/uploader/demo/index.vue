@@ -22,19 +22,6 @@
         </van-uploader>
       </div>
     </demo-block>
-
-    <demo-block :title="$t('title2')">
-      <div class="demo-uploader-container">
-        <van-uploader
-          accept="image/gif, image/jpeg"
-          multiple
-          :max-size="36000"
-          @oversize="logContent"
-        >
-          <van-icon name="photograph" />
-        </van-uploader>
-      </div>
-    </demo-block>
   </demo-section>
 </template>
 
