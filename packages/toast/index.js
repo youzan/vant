@@ -9,6 +9,7 @@ const defaultOptions = {
   message: '',
   className: '',
   onClose: null,
+  onOpened: null,
   duration: 3000,
   position: 'middle',
   forbidClick: false,
@@ -16,11 +17,20 @@ const defaultOptions = {
   getContainer: 'body',
   overlayStyle: null
 };
-const parseOptions = message => (isObj(message) ? message : { message });
 
 let queue = [];
 let multiple = false;
-let currentOptions = { ...defaultOptions };
+let currentOptions = {
+  ...defaultOptions
+};
+
+function parseOptions(message) {
+  if (isObj(message)) {
+    return message;
+  }
+
+  return { message };
+}
 
 function createInstance() {
   /* istanbul ignore if */
@@ -39,7 +49,7 @@ function createInstance() {
 }
 
 // transform toast options to popup props
-function transformer(options) {
+function transformOptions(options) {
   options.overlay = options.mask;
   return options;
 }
@@ -76,7 +86,7 @@ function Toast(options = {}) {
     }
   };
 
-  Object.assign(toast, transformer(options));
+  Object.assign(toast, transformOptions(options));
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {
@@ -88,9 +98,11 @@ function Toast(options = {}) {
   return toast;
 }
 
-const createMethod = type => options => Toast({
-  type, ...parseOptions(options)
-});
+const createMethod = type => options =>
+  Toast({
+    type,
+    ...parseOptions(options)
+  });
 
 ['loading', 'success', 'fail'].forEach(method => {
   Toast[method] = createMethod(method);

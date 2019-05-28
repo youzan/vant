@@ -107,5 +107,6 @@ toast2.clear();
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |
 | duration | 展示时长(ms)，值为 0 时，toast 不会消失 | `Number` | `3000` | - |
 | className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
+| onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.6.10 |
 | getContainer | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | `body` | 1.6.3 |

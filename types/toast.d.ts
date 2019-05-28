@@ -10,6 +10,7 @@ export type ToastOptions = {
   duration?: number;
   className?: any;
   onClose?(): void;
+  onOpened?(): void;
   forbidClick?: boolean;
   loadingType?: string;
   message?: ToastMessage;

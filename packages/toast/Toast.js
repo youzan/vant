@@ -60,6 +60,14 @@ export default sfc({
         const action = clickable ? 'add' : 'remove';
         document.body.classList[action]('van-toast--unclickable');
       }
+    },
+
+    onAfterEnter() {
+      this.$emit('opened');
+
+      if (this.onOpened) {
+        this.onOpened();
+      }
     }
   },
 
@@ -86,7 +94,7 @@ export default sfc({
     }
 
     return (
-      <transition name="van-fade">
+      <transition name="van-fade" onAfterEnter={this.onAfterEnter}>
         <div vShow={this.value} class={[bem([style, this.position]), this.className]}>
           {Content()}
         </div>
