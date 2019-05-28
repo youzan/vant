@@ -15,6 +15,8 @@
 </p>
 
 <p align="center">
+  🔥 <a href="https://youzan.github.io/vant">文档网站</a>
+  &nbsp;
   🇨🇳 <a href="./README.zh-CN.md">访问中文版</a>
   &nbsp;
   🚀 <a href="https://github.com/youzan/vant-weapp" target="_blank">Vant Weapp - 小程序版</a>
