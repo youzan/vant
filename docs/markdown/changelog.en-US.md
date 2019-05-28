@@ -1,6 +1,52 @@
 # Changelog
 
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
+### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
+
+#### Accessibility
+
+Improve accessibility for those components：
+
+- List
+- Rate
+- Dialog
+- Slider
+- Switch
+- NoticeBar
+- GoodsAction
+- DropdownMenu
+- NumberKeyboard
+
+##### Area
+
+- `reset` method support `code` param
+
+##### Button
+
+- Add `icon` prop
+
+##### ImagePreview
+
+- Add `close-on-popstate` prop
+
+##### Search
+
+- Add `clearable` prop
+- Add `left-icon` prop
+- Add `right-icon` prop
+- Add `right-icon` slot
+
+##### Slider
+
+- Add `drag-start` event
+- Add `drag-end` event
+
+##### Uploader
+
+- Add default upload style
+- Add `upload-text` prop
+
+
+### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
 
 #### Accessibility
 
