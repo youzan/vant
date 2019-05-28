@@ -42,84 +42,17 @@ npm i vant -S
 npm i vant@beta -S
 ```
 
-## CDN
-
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css">
-
-<!-- 引入组件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
-```
-
 ## 快速上手
-
-### 方式一. 自动按需引入组件 (推荐)
-
-[babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式
-```bash
-# 安装插件
-npm i babel-plugin-import -D
-```
-
-```js
-// 在.babelrc 中添加配置
-// 注意：webpack 1 无需设置 libraryDirectory
-{
-  "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
-  ]
-}
-
-// 对于使用 babel7 的用户，可以在 babel.config.js 中配置
-module.exports = {
-  plugins: [
-    ['import', {
-      libraryName: 'vant',
-      libraryDirectory: 'es',
-      style: true
-    }, 'vant']
-  ]
-};
-```
-
-```js
-// 接着你可以在代码中直接引入 Vant 组件
-// 插件会自动将代码转化为方式二中的按需引入形式
-import { Button } from 'vant';
-```
-
-> 如果你在使用 TypeScript，可以使用 [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) 实现按需引入
-
-### 方式二. 手动按需引入组件
-
-在不使用插件的情况下，可以手动引入需要的组件
-
-```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
-
-### 方式三. 导入所有组件
-
-Vant 支持一次性导入所有组件，引入所有组件会增加代码包体积，因此不推荐这种做法
 
 ```js
 import Vue from 'vue';
-import Vant from 'vant';
+import { Button } from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+Vue.use(Button);
 ```
 
-> 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
-
-更多内容请参考 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
+vant 也支持按需引入、CDN 引入等方式，详细说明见 [快速上手](https://youzan.github.io/vant#/zh-CN/quickstart).
 
 ## 贡献代码
 

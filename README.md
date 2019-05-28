@@ -43,66 +43,15 @@ npm i vant -S
 npm i vant@beta -S
 ```
 
-## CDN
-
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css" />
-
-<!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
-```
-
 ## Quickstart
-
-#### 1. Use [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) (Recommended)
-
-```bash
-# Install babel-plugin-import
-npm i babel-plugin-import -D
-```
-
-```js
-// set babel config in .babelrc or babel-loader
-// Note: Don't set libraryDirectory if you are using webpack 1.
-{
-  "plugins": [
-    ["import", {
-      "libraryName": "vant",
-      "libraryDirectory": "es",
-      "style": true
-    }]
-  ]
-}
-```
-
-Then you can import components from vant, equivalent to import manually below.
-
-```js
-import { Button } from 'vant';
-```
-
-> If you are using TypeScript，please use [ts-import-plugin](https://github.com/Brooooooklyn/ts-import-plugin) instead
-
-#### 2. Manually import
-
-```js
-import Button from 'vant/lib/button';
-import 'vant/lib/button/style';
-```
-
-#### 3. Import all components
 
 ```js
 import Vue from 'vue';
-import Vant from 'vant';
+import { Button } from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(Vant);
+Vue.use(Button);
 ```
-
-> If you configured babel-plugin-import, you won't be allowed to import all components.
 
 See more in [Quickstart](https://youzan.github.io/vant#/en-US/quickstart).
 
@@ -121,7 +70,6 @@ Modern browsers and Android 4.0+, iOS 6+.
 * [Vant Demo](https://github.com/youzan/vant-demo)
 * [Vant Weapp: Weapp UI](https://github.com/youzan/vant-weapp)
 * [Zent: PC UI base on React](https://youzan.github.io/zent)
-
 
 ## Preview
 

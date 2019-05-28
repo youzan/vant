@@ -29,17 +29,6 @@ npm i vant -S
 npm i vant@beta -S
 ```
 
-### CDN
-
-```html
-<!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css" />
-
-<!-- import script -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
-```
-
 ## Usage
 
 ### 1. Import on demand
@@ -101,6 +90,28 @@ Vue.use(Vant);
 ```
 
 > If you configured babel-plugin-import, you won't be allowed to import all components.
+
+### 4. CDN
+
+```html
+<!-- import style -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css" />
+
+<!-- import script -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
+
+<script>
+var Vue = window.Vue;
+var vant = window.vant;
+
+// Register components
+Vue.use(vant);
+
+// Call function components
+vant.Toast('message');
+</script>
+```
 
 ## Other
 

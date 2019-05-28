@@ -38,17 +38,6 @@ npm i vant -S
 npm i vant@beta -S
 ```
 
-### 通过 CDN 引入
-
-```html
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css">
-
-<!-- 引入组件 -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
-```
-
 ## 引入组件
 
 ### 方式一. 自动按需引入组件 (推荐)
@@ -115,6 +104,28 @@ Vue.use(Vant);
 ```
 
 > 注意：配置 babel-plugin-import 插件后将不允许导入所有组件
+
+### 方式四. 通过 CDN 引入
+
+```html
+<!-- 引入样式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css">
+
+<!-- 引入组件 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
+
+<script>
+var Vue = window.Vue;
+var vant = window.vant;
+
+// 注册组件
+Vue.use(vant);
+
+// 调用函数式组件
+vant.Toast('提示');
+</script>
+```
 
 ## 其他
 
