@@ -1,5 +1,5 @@
 /* eslint-disable prefer-spread */
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { preventDefault } from '../utils/event';
 import Icon from '../icon';
@@ -16,6 +16,7 @@ export type RateProps = {
   count: number;
   color: string;
   value: number;
+  gutter?: string | number;
   voidIcon: string;
   voidColor: string;
   readonly?: boolean;
@@ -51,6 +52,7 @@ function Rate(
     icon,
     size,
     color,
+    count,
     voidIcon,
     readonly,
     disabled,
@@ -59,7 +61,7 @@ function Rate(
   } = props;
 
   const list: RateStatus[] = [];
-  for (let i = 1; i <= props.count; i++) {
+  for (let i = 1; i <= count; i++) {
     list.push(getRateStatus(props.value, i, props.allowHalf));
   }
 
@@ -89,18 +91,26 @@ function Rate(
     }
   }
 
+  const gutter = suffixPx(props.gutter);
+
   function renderStar(status: RateStatus, index: number) {
     const isFull = status === 'full';
     const isVoid = status === 'void';
     const score = index + 1;
 
+    let style;
+    if (gutter && score !== count) {
+      style = { paddingRight: gutter };
+    }
+
     return (
       <div
         key={index}
         role="radio"
+        style={style}
         tabindex="0"
+        aria-setsize={count}
         aria-posinset={score}
-        aria-setsize={props.count}
         aria-checked={String(!isVoid)}
         class={bem('item')}
       >
@@ -145,6 +155,7 @@ function Rate(
 
 Rate.props = {
   value: Number,
+  gutter: [String, Number],
   readonly: Boolean,
   disabled: Boolean,
   allowHalf: Boolean,

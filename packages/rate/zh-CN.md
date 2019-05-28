@@ -95,6 +95,7 @@ export default {
 | v-model | 当前分值 | `Number` | - | - |
 | count | 图标总数 | `Number` | `5` | - |
 | size | 图标大小 (px) | `Number` | `20` | - |
+| gutter | 图标间距，默认单位为`px` | `String | Number` | `4px` | 2.0.0 |
 | color | 选中时的颜色 | `String` | `#ffd21e` | - |
 | void-color | 未选中时的颜色 | `String` | `#c7c7c7` | - |
 | icon | 选中时的图标名称或图片链接，可选值见 Icon 组件 | `String` | `star` | 1.4.7 |

@@ -6,16 +6,20 @@
   &__item {
     position: relative;
     display: inline-block;
-    padding: 0 @rate-horizontal-padding;
+
+    &:not(:last-child) {
+      padding-right: @rate-icon-gutter;
+    }
   }
 
   &__icon {
+    display: block;
     width: 1em;
 
     &--half {
       position: absolute;
       top: 0;
-      left: @rate-horizontal-padding;
+      left: 0;
       width: .5em;
       overflow: hidden;
     }
