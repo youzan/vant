@@ -1,5 +1,14 @@
 ## 更新日志
 
+## [v1.6.20](https://github.com/youzan/vant/tree/v1.6.20)
+`2019-05-28`
+
+**Bug Fixes**
+
+- 修复 AddressList select-disabled 事件不触发的问题
+- 修复 Pagination 异步传入 total-items 时会触发 change 事件的问题
+
+
 ## [v1.6.19](https://github.com/youzan/vant/tree/v1.6.19)
 `2019-05-16`
 

@@ -1,5 +1,14 @@
 ## Changelog
 
+## [v1.6.20](https://github.com/youzan/vant/tree/v1.6.20)
+`2019-05-28`
+
+**Bug Fixes**
+
+- fix AddressList select-disabled event not triggered
+- fix Pagination should not emit change event when total-items changed
+
+
 ## [v1.6.19](https://github.com/youzan/vant/tree/v1.6.19)
 `2019-05-16`
 
