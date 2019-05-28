@@ -8,7 +8,7 @@ const DEFAULT_DURATION = 200;
 // 惯性滑动思路:
 // 在手指离开屏幕时，如果和上一次 move 时的间隔小于 `MOMENTUM_LIMIT_TIME` 且 move
 // 距离大于 `MOMENTUM_LIMIT_DISTANCE` 时，执行惯性滑动，持续 `MOMENTUM_DURATION`
-const MOMENTUM_DURATION = 1500;
+const MOMENTUM_DURATION = 1000;
 const MOMENTUM_LIMIT_TIME = 300;
 const MOMENTUM_LIMIT_DISTANCE = 15;
 
@@ -132,6 +132,7 @@ export default sfc({
       this.moving = false;
 
       if (this.transitionEndTrigger) {
+        this.duration = DEFAULT_DURATION;
         this.transitionEndTrigger();
         this.transitionEndTrigger = null;
       }
