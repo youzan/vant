@@ -5,6 +5,7 @@
 ##### Rate
 
 - 新增`guter`属性
+- 支持`String`类型的`size`属性
 
 ### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
 

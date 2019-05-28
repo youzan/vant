@@ -50,7 +50,6 @@ function Rate(
 ) {
   const {
     icon,
-    size,
     color,
     count,
     voidIcon,
@@ -97,6 +96,7 @@ function Rate(
     const isFull = status === 'full';
     const isVoid = status === 'void';
     const score = index + 1;
+    const size = suffixPx(props.size);
 
     let style;
     if (gutter && score !== count) {
@@ -115,8 +115,8 @@ function Rate(
         class={bem('item')}
       >
         <Icon
+          size={size}
           name={isFull ? icon : voidIcon}
-          size={`${size}px`}
           class={bem('icon')}
           data-score={score}
           color={disabled ? disabledColor : isFull ? color : voidColor}
@@ -126,8 +126,8 @@ function Rate(
         />
         {props.allowHalf && (
           <Icon
+            size={size}
             name={isVoid ? voidIcon : icon}
-            size={`${size}px`}
             class={bem('icon', 'half')}
             data-score={score - 0.5}
             color={disabled ? disabledColor : isVoid ? voidColor : color}
@@ -155,14 +155,11 @@ function Rate(
 
 Rate.props = {
   value: Number,
+  size: [String, Number],
   gutter: [String, Number],
   readonly: Boolean,
   disabled: Boolean,
   allowHalf: Boolean,
-  size: {
-    type: Number,
-    default: 20
-  },
   icon: {
     type: String,
     default: 'star'

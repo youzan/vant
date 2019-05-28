@@ -98,3 +98,13 @@ test('gutter prop', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('size prop', () => {
+  const wrapper = mount(Rate, {
+    propsData: {
+      size: '2rem'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

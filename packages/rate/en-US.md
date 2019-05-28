@@ -95,7 +95,7 @@ export default {
 |------|------|------|------|
 | v-model | Current rate | `Number` | - |
 | count | Count | `Number` | `5` |
-| size | Icon size (px) | `Number` | `20` |
+| size | Icon size| `String | Number` | `20px` |
 | gutter | Icon gutter | `String | Number` | `4px` |
 | color | Selected color | `String` | `#ffd21e` |
 | void-color | Void color | `String` | `#c7c7c7` |
