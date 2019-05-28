@@ -74,6 +74,7 @@
     "@vant/doc": "^2.2.4",
     "@vant/eslint-config": "^1.1.2",
     "@vant/markdown-loader": "^2.0.0",
+    "@vant/touch-emulator": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.0.0",
     "@vue/server-test-utils": "^1.0.0-beta.29",
     "@vue/test-utils": "^1.0.0-beta.29",

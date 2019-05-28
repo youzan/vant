@@ -153,3 +153,16 @@ module.exports = {
 ```
 
 > 注意：在配置 postcss-loader 时，应避免 ignore node_modules 目录，这会导致 Vant 的样式无法被编译
+
+### 在桌面端使用
+
+Vant 组件默认只适配了移动端设备，如果你需要在桌面端使用 vant，可以引入我们提供的 [@vant/touch-emulator](https://github.com/chenjiahan/vant-touch-emulator).
+
+```bash
+npm i @vant/touch-emulator -S
+```
+
+```js
+// 引入模块后自动生效
+import '@vant/touch-emulator';
+```

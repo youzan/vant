@@ -1109,6 +1109,11 @@
     highlight.js "^9.15.6"
     markdown-it "^8.4.2"
 
+"@vant/touch-emulator@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.0.0.tgz#e9ea133fd874a534481c84e12089b2e9d552544b"
+  integrity sha512-XDiQ4Cp7uU1PjsNwyXBymnH6f1I0hwEGa0HN0fvGstP7oFb8QGICUNMiNV0PHmYiBdql60lk1oTGi+refLypGQ==
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0.tgz#048fe579958da408fb7a8b2a3ec050b50a661040"
