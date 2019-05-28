@@ -15,7 +15,12 @@
     left: 0;
     right: 0;
     background-color: #fff;
+    color: @green;
     transform: translateY(-100%);
+    &--fixed {
+      position: fixed;
+      transform: translateY(0);
+    }
   }
   &__content {
     padding: @index-anchor-padding;

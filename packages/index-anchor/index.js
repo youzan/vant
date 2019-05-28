@@ -8,24 +8,21 @@ export default sfc({
 
   props: {
     index: [String, Number],
+    // 背景颜色值
     bgColorValue: String
   },
 
   data() {
     return {
-      id: 0,
       offsetHeight: 0,
       isReady: false
     };
   },
 
   computed: {
-    isCurrentAnchor() {
-      return this.id === this.parent.currentAnchorIndex;
-    },
-
+    // 当前是否处于下一个索引
     isNextAnchor() {
-      return this.id === this.parent.nextAnchorIndex;
+      return this.childrenIndex === this.parent.nextAnchorIndex;
     },
 
     defaultSlot() {
@@ -34,21 +31,24 @@ export default sfc({
   },
 
   created() {
+    // 组件就绪
     this.isReady = true;
+
     if (!this.parent) {
       return;
     }
 
     const { children, childrenLen, indexList } = this.parent;
 
+    // 等待所有index-anchor初始化完成后计算
     if (indexList && childrenLen === indexList.length && !children.some(child => !child.isReady)) {
       this.$nextTick(() => {
         const parentTop = this.parent.getTop();
         const childrenTopList = [];
 
+        // 缓存所有index-anchor的高度以及距离index-bar顶部的距离
         children.forEach((child, index) => {
           const { offsetHeight, offsetTop } = child.$el;
-          child.id = index;
           child.offsetHeight = offsetHeight;
           childrenTopList.push(parentTop + offsetTop);
         });
@@ -72,6 +72,7 @@ export default sfc({
             bem('content'),
             { 'van-hairline--bottom': border }
           ]}
+          // 控制背景色透明度
           style={{ backgroundColor: `rgba(${this.bgColorValue || this.parent.anchorBgColorValue},${alpha})` }}
         >
           {slot}
@@ -83,13 +84,15 @@ export default sfc({
   render(h) {
     let prevAnchor = '';
 
-    if (this.id > 0) {
+    if (this.childrenIndex > 0) {
+      // 可能是插槽，所以复用
       prevAnchor = (
         <div
-          vShow={this.isNextAnchor && this.parent.isInTransition}
-          class={bem('prev')}
+          vShow={this.isNextAnchor}
+          class={bem('prev', { fixed: !this.parent.isInTransition })}
+          style={{ top: `${this.parent.hoverIndexOffset}px`, zIndex: this.parent.zIndex }}
         >
-          {this.content(this.parent.children[this.id - 1].defaultSlot, this.isNextAnchor ? 1 - this.parent.alpha : 0, true)}
+          {this.content(this.parent.children[this.childrenIndex - 1].defaultSlot, this.isNextAnchor ? 1 - this.parent.alpha : 0, true)}
         </div>
       );
     }

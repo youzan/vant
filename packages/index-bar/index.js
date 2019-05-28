@@ -30,10 +30,12 @@ export default sfc({
         return indexList;
       }
     },
+    // 吸顶top值
     hoverIndexOffset: {
       type: Number,
       default: 0
     },
+    // index-anchor背景颜色值
     anchorBgColorValue: {
       type: String,
       default: '248,248,248'
@@ -54,14 +56,6 @@ export default sfc({
   computed: {
     childrenLen() {
       return this.children.length;
-    },
-
-    activeAnchorSlot() {
-      return this.currentAnchorIndex > -1 ? this.children[this.currentAnchorIndex].defaultSlot : '';
-    },
-
-    activeAnchorVisible() {
-      return !this.isInTransition && this.currentAnchorIndex > -1;
     }
   },
 
@@ -95,6 +89,7 @@ export default sfc({
         if (target) {
           const { id } = target.dataset;
 
+          // 一个索引范围内touchmove只触发一次
           if (id && this.currentTouchIndex !== id) {
             this.currentTouchIndex = id;
             this.scrollToElement(this.children[id]);
@@ -113,7 +108,9 @@ export default sfc({
     },
 
     getTop() {
+      // 动态获取滚动容器，支持在固定高度的滚动容器中使用
       this.scroller = getScrollEventTarget(this.$el);
+      // 拿到index-bar距离滚动容器顶部的距离
       return this.getOffsetTop(this.$el) - this.getOffsetTop(this.scroller);
     },
 
@@ -136,10 +133,15 @@ export default sfc({
         return;
       }
 
+      // 当前索引的下一个索引
       const nextAnchorIndex = this.childrenTopList.findIndex(top => top > scrollTop);
+      // 当前索引
       const currentAnchorIndex = nextAnchorIndex === -1 ? this.childrenLen - 1 : nextAnchorIndex - 1;
+      // 拿到当前的index-anchor的缓存高度，考虑到index-anchor支持默认插槽无法预知高度的情况
       const currentAnchorHeight = this.children[currentAnchorIndex === -1 ? 0 : currentAnchorIndex].offsetHeight;
+      // 是否处于过渡区间
       let isInTransition = false;
+      // anchor背景色透明度
       let alpha = 1;
       let diffTop;
 
@@ -184,13 +186,6 @@ export default sfc({
           ))}
         </div>
 
-        <div
-          vShow={this.activeAnchorVisible}
-          class={[bem('active'), 'van-hairline--bottom']}
-          style={{ top: `${this.hoverIndexOffset}px`, zIndex: this.zIndex }}
-        >
-          {this.activeAnchorSlot}
-        </div>
         {this.slots('default')}
       </div>
     );
