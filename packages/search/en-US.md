@@ -70,6 +70,7 @@ Search support all native properties of input tag，such as `maxlength`、`place
 | label | Search label | `String` | - |
 | shape | Can be set to `round` | `String` | `square` |
 | background | Background color | `String` | `#f2f2f2` |
+| clearable | Whether to be clearable | `Boolean` | `true` |
 | show-action | Whether to show right button | `Boolean` | `false` |
 | disabled | Whether to disable field | `Boolean` | `false` |
 | readonly | Whether to be readonly | `Boolean` | `false` |

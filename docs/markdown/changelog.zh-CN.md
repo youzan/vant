@@ -30,6 +30,7 @@
 
 ##### Search
 
+- 新增`clearable`属性
 - 新增`left-icon`属性
 - 新增`right-icon`属性
 - 新增`right-icon`插槽

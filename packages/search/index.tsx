@@ -15,6 +15,7 @@ export type SearchProps = {
   label?: string;
   leftIcon: string;
   rightIcon?: string;
+  clearable: boolean;
   background: string;
   showAction?: boolean;
 };
@@ -92,12 +93,12 @@ function Search(
       <div class={bem('content', props.shape)}>
         {Label()}
         <Field
-          clearable
           type="search"
           border={false}
           value={props.value}
           leftIcon={props.leftIcon}
           rightIcon={props.rightIcon}
+          clearable={props.clearable}
           scopedSlots={{
             'left-icon': slots['left-icon'],
             'right-icon': slots['right-icon']
@@ -118,6 +119,10 @@ Search.props = {
   shape: {
     type: String,
     default: 'square'
+  },
+  clearable: {
+    type: Boolean,
+    default: true
   },
   background: {
     type: String,
