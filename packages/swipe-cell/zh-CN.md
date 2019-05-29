@@ -13,24 +13,48 @@ Vue.use(SwipeCell);
 ### 基础用法
 
 ```html
-<van-swipe-cell :right-width="65" :left-width="65">
-  <span slot="left">选择</span>
-  <van-cell-group>
-    <van-cell title="单元格" value="内容" />
-  </van-cell-group>
-  <span slot="right">删除</span>
+<van-swipe-cell :right-width="60" :left-width="60">
+  <van-button
+    square
+    slot="left"
+    type="danger"
+    text="选择"
+  />
+  <van-cell
+    :border="false"
+    title="单元格"
+    value="内容"
+  />
+  <van-button
+    square
+    slot="right"
+    type="danger"
+    text="删除"
+  />
 </van-swipe-cell>
 ```
 
 ### 异步关闭
 
 ```html
-<van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
-  <span slot="left">选择</span>
-  <van-cell-group>
-    <van-cell title="单元格" value="内容" />
-  </van-cell-group>
-  <span slot="right">删除</span>
+<van-swipe-cell :right-width="60" :left-width="60" :on-close="onClose">
+  <van-button
+    square
+    slot="left"
+    type="danger"
+    text="选择"
+  />
+  <van-cell
+    :border="false"
+    title="单元格"
+    value="内容"
+  />
+  <van-button
+    square
+    slot="right"
+    type="danger"
+    text="删除"
+  />
 </van-swipe-cell>
 ```
 
