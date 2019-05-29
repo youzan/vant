@@ -4,7 +4,7 @@
 
 ##### Rate
 
-- 新增`guter`属性
+- 新增`gutter`属性
 - 支持`String`类型的`size`属性
 
 ##### Toast
