@@ -1,13 +1,23 @@
 import SwipeCell from '..';
-import { mount, triggerDrag } from '../../../test/utils';
+import { mount, triggerDrag, later } from '../../../test/utils';
 
 const THRESHOLD = 0.15;
 const defaultProps = {
   propsData: {
     leftWidth: 100,
     rightWidth: 100
+  },
+  scopedSlots: {
+    left: () => 'Left',
+    right: () => 'Right'
   }
 };
+
+function mockGetBoundingClientRect(vertical) {
+  Element.prototype.getBoundingClientRect = jest.fn(() => ({
+    width: 50
+  }));
+}
 
 it('drag and show left part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
@@ -37,6 +47,7 @@ it('on close prop', () => {
   let instance;
 
   const wrapper = mount(SwipeCell, {
+    ...defaultProps,
     propsData: {
       ...defaultProps.propsData,
       onClose(pos, ins) {
@@ -45,6 +56,7 @@ it('on close prop', () => {
       }
     }
   });
+
   wrapper.trigger('click');
   expect(position).toEqual(undefined);
 
@@ -66,16 +78,6 @@ it('on close prop', () => {
   expect(wrapper.vm.offset).toEqual(0);
 });
 
-it('width equals zero', () => {
-  const wrapper = mount(SwipeCell, {
-    propsData: {
-      leftWidth: 0,
-      rightWidth: 0
-    }
-  });
-  expect(wrapper).toMatchSnapshot();
-});
-
 it('should reset after drag', () => {
   const wrapper = mount(SwipeCell, defaultProps);
 
@@ -93,4 +95,16 @@ it('disabled prop', () => {
 
   triggerDrag(wrapper, 50, 0);
   expect(wrapper.vm.offset).toEqual(0);
+});
+
+it('auto calc width', async () => {
+  mockGetBoundingClientRect();
+
+  const wrapper = mount(SwipeCell, {
+    scopedSlots: defaultProps.scopedSlots
+  });
+
+  await later();
+  triggerDrag(wrapper, 100, 0);
+  expect(wrapper).toMatchSnapshot();
 });

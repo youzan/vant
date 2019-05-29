@@ -3,10 +3,7 @@
     <demo-section>
       <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
-        <van-swipe-cell
-          :right-width="60"
-          :left-width="60"
-        >
+        <van-swipe-cell>
           <van-button
             square
             slot="left"
@@ -28,11 +25,7 @@
       </demo-block>
 
       <demo-block :title="$t('title2')">
-        <van-swipe-cell
-          :right-width="60"
-          :left-width="60"
-          :on-close="onClose"
-        >
+        <van-swipe-cell :on-close="onClose">
           <van-button
             square
             slot="left"

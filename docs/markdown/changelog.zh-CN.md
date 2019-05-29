@@ -7,6 +7,10 @@
 - 新增`gutter`属性
 - 支持`String`类型的`size`属性
 
+##### SwipeCell
+
+- 支持自动计算`left-width`和`right-width`
+
 ##### Toast
 
 - 新增`onOpened`属性

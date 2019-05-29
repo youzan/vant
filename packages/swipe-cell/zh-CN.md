@@ -87,10 +87,10 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| left-width | 左侧滑动区域宽度 | `Number` | `0` | - |
-| right-width | 右侧滑动区域宽度 | `Number` | `0` | - |
 | on-close | 关闭时的回调函数 | `Function` | - | - |
 | disabled | 是否禁用滑动 | `Boolean` | `false` | 1.3.4 |
+| left-width | 指定左侧滑动区域宽度 | `Number` | `auto` | - |
+| right-width | 指定右侧滑动区域宽度 | `Number` | `auto` | - |
 
 ### Slots
 
