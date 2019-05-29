@@ -1071,17 +1071,16 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@vant/doc@^2.2.4":
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.2.4.tgz#b32941edaab7fbc63a224bae746ca4ab8733df0b"
-  integrity sha512-KmS5mf5SJAThxjGDCRPKOYw89Y28iyktvzfBDpqWimW9S3oDY24GMlf5sJ/ehbTr0osMe4Xa2yiqGmkfGIoIEQ==
+"@vant/doc@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.0.tgz#27ab1d8cf763a5e5128b205a217daae4601ce703"
+  integrity sha512-O6tk9UN9DXfHA8VJljr8tDtvaIIRUhHbKo+BIpanucfe4wJiWYJ/L793itulh2ussKdb8oO8i3GDnymZ3zkxAA==
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
     decamelize "^1.2.0"
     docsearch.js "^2.6.3"
     fs-extra "^4.0.2"
-    nprogress "^0.2.0"
     shelljs "^0.8.2"
 
 "@vant/eslint-config@^1.1.2":
@@ -6839,11 +6838,6 @@ npmlog@^4.0.2:
     console-control-strings "~1.1.0"
     gauge "~2.7.3"
     set-blocking "~2.0.0"
-
-nprogress@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/nprogress/-/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
-  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 nth-check@~1.0.1:
   version "1.0.2"

@@ -12,6 +12,7 @@ const langMap = {
     messages: zhCN
   }
 };
+
 let currentLang = '';
 
 function getDefaultLang() {

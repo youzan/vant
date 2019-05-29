@@ -80,22 +80,20 @@ Locale.add({
   }
 });
 
-export function wrapper(promise, name) {
-  return promise.then(component => {
-    component = component.default;
-    name = 'demo-' + name;
-    component.name = name;
+export function demoWrapper(module, name) {
+  const component = module.default;
+  name = 'demo-' + name;
+  component.name = name;
 
-    const { i18n: config } = component;
-    if (config) {
-      const formattedI18n = {};
-      const camelizedName = camelize(name);
-      Object.keys(config).forEach(key => {
-        formattedI18n[key] = { [camelizedName]: config[key] };
-      });
-      Locale.add(formattedI18n);
-    }
+  const { i18n: config } = component;
+  if (config) {
+    const formattedI18n = {};
+    const camelizedName = camelize(name);
+    Object.keys(config).forEach(key => {
+      formattedI18n[key] = { [camelizedName]: config[key] };
+    });
+    Locale.add(formattedI18n);
+  }
 
-    return component;
-  });
+  return component;
 }

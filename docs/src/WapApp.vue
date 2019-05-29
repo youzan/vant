@@ -8,6 +8,7 @@
       @click-left="onBack"
     >
       <a
+        v-if="showNav"
         slot="right"
         :href="demoLink"
         target="_blank"

@@ -1,25 +1,11 @@
 import Vue from 'vue';
 import docConfig from './doc.config';
 import DemoList from './components/DemoList';
-import componentDemos from './demo-entry';
 import DemoPages from './components/DemoPages';
+import { demoWrapper } from './demo-common';
 import './utils/iframe-router';
 
-const docs = {};
-
-function importAll(map, r) {
-  r.keys().forEach(key => {
-    map[key] = r(key);
-  });
-}
-
-const docsFromMarkdown = require.context('../markdown', false, /(en-US|zh-CN)\.md$/);
-const docsFromPackages = require.context('../../packages', true, /(en-US|zh-CN)\.md$/);
-
-importAll(docs, docsFromMarkdown);
-importAll(docs, docsFromPackages);
-
-const registerRoute = isDemo => {
+const registerRoute = ({ mobile, componentMap }) => {
   const route = [
     {
       path: '*',
@@ -28,7 +14,7 @@ const registerRoute = isDemo => {
   ];
 
   Object.keys(docConfig).forEach(lang => {
-    if (isDemo) {
+    if (mobile) {
       route.push({
         path: `/${lang}`,
         component: DemoList,
@@ -49,12 +35,15 @@ const registerRoute = isDemo => {
         let component;
         if (path === 'demo') {
           component = DemoPages;
-        } else if (isDemo) {
-          component = componentDemos[path];
+        } else if (mobile) {
+          const module = componentMap[`./${path}/demo/index.vue`];
+          if (module) {
+            component = demoWrapper(module, path);
+          }
         } else {
           const module =
-            docs[`./${path}/${lang}.md`] ||
-            docs[`./${path}.${lang}.md`];
+            componentMap[`./${path}/${lang}.md`] ||
+            componentMap[`./${path}.${lang}.md`];
 
           component = module.default;
         }

@@ -8,7 +8,7 @@ const version = process.env.VERSION || packageJson.version;
 const tips = `/* eslint-disable */
 // This file is auto gererated by build/build-entry.js`;
 
-function buildVantEntry() {
+function buildEntry() {
   const uninstallComponents = [
     'Locale',
     'Lazyload',
@@ -59,21 +59,4 @@ export default {
   fs.writeFileSync(path.join(__dirname, '../packages/index.ts'), content);
 }
 
-function buildDemoEntry() {
-  const dir = path.join(__dirname, '../packages');
-  const demos = fs.readdirSync(dir)
-    .filter(name => fs.existsSync(path.join(dir, `${name}/demo/index.vue`)))
-    .map(name => `'${name}': () => wrapper(import('../../packages/${name}/demo'), '${name}')`);
-
-  const content = `${tips}
-import { wrapper } from './demo-common';
-
-export default {
-  ${demos.join(',\n  ')}
-};
-`;
-  fs.writeFileSync(path.join(dir, '../docs/src/demo-entry.js'), content);
-}
-
-buildVantEntry();
-buildDemoEntry();
+buildEntry();
