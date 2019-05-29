@@ -1,18 +1,33 @@
 import Vue from 'vue';
 import docConfig from './doc.config';
 import DemoList from './components/DemoList';
-import componentDocs from './docs-entry';
 import componentDemos from './demo-entry';
 import DemoPages from './components/DemoPages';
 import './utils/iframe-router';
 
-const registerRoute = (isDemo) => {
-  const route = [{
-    path: '*',
-    redirect: () => `/${Vue.prototype.$vantLang}/`
-  }];
+const docs = {};
 
-  Object.keys(docConfig).forEach((lang) => {
+function importAll(map, r) {
+  r.keys().forEach(key => {
+    map[key] = r(key);
+  });
+}
+
+const docsFromMarkdown = require.context('../markdown', false, /(en-US|zh-CN)\.md$/);
+const docsFromPackages = require.context('../../packages', true, /(en-US|zh-CN)\.md$/);
+
+importAll(docs, docsFromMarkdown);
+importAll(docs, docsFromPackages);
+
+const registerRoute = isDemo => {
+  const route = [
+    {
+      path: '*',
+      redirect: () => `/${Vue.prototype.$vantLang}/`
+    }
+  ];
+
+  Object.keys(docConfig).forEach(lang => {
     if (isDemo) {
       route.push({
         path: `/${lang}`,
@@ -34,8 +49,14 @@ const registerRoute = (isDemo) => {
         let component;
         if (path === 'demo') {
           component = DemoPages;
+        } else if (isDemo) {
+          component = componentDemos[path];
         } else {
-          component = isDemo ? componentDemos[path] : componentDocs[`${path}.${lang}`];
+          const module =
+            docs[`./${path}/${lang}.md`] ||
+            docs[`./${path}.${lang}.md`];
+
+          component = module.default;
         }
 
         if (!component) {
