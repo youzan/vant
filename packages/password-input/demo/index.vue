@@ -28,7 +28,7 @@
       <van-password-input
         :value="value3"
         :mask="false"
-        @focus="keyboard = 'value2'"
+        @focus="keyboard = 'value3'"
       />
     </demo-block>
   </demo-section>

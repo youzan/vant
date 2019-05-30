@@ -59,4 +59,5 @@ export default {
 | background | 背景颜色 | `String` | `#f44` | 1.4.7 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.6.0 |
 | onClick | 点击时的回调函数 | `Function` | - | 2.0.0 |
+| onOpened | 完全展示后的回调函数 | `Function` | - | 2.0.0 |
 | onClose | 关闭时的回调函数 | `Function` | - | 2.0.0 |

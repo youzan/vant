@@ -10,6 +10,7 @@ export type NotifyOptions = {
   className?: any;
   background?: string;
   onClose?: (() => void) | null;
+  onOpened?: (() => void) | null;
   onClick?: ((event: Event) => void) | null;
 }
 

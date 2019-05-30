@@ -9,6 +9,7 @@
 ##### Notify
 
 - 新增`onClose`选项
+- 新增`onOpened`选项
 
 ##### Rate
 

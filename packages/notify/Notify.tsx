@@ -44,6 +44,9 @@ function Notify(
       onClick={(event: Event) => {
         emit(ctx, 'click', event);
       }}
+      onOpened={() => {
+        emit(ctx, 'opened');
+      }}
       {...inherit(ctx)}
     >
       {props.message}
