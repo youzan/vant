@@ -25,7 +25,7 @@ export default sfc({
     anchorStyle() {
       if (this.sticky) {
         return {
-          top: `${this.top}px`,
+          transform: `translate3d(0, ${this.top}px, 0)`,
           color: this.parent.highlightColor,
           zIndex: `${this.parent.zIndex}`
         };
