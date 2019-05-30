@@ -4,11 +4,13 @@
 
 ##### IndexBar
 
-- 新增`sticky`参数
+- 新增`sticky`属性
+- 新增`highlight-color`属性
 
 ##### Notify
 
 - 新增`onClose`选项
+- 新增`onOpened`选项
 
 ##### Rate
 

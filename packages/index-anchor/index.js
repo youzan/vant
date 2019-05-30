@@ -26,6 +26,7 @@ export default sfc({
       if (this.sticky) {
         return {
           top: `${this.top}px`,
+          color: this.parent.highlightColor,
           zIndex: `${this.parent.zIndex}`
         };
       }

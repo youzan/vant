@@ -25,6 +25,11 @@ function Notify(options: NotifyOptions) {
           if (instance.onClick) {
             instance.onClick(event);
           }
+        },
+        opened() {
+          if (instance.onOpened) {
+            instance.onOpened();
+          }
         }
       }
     });
@@ -54,7 +59,8 @@ function defaultOptions(): NotifyOptions {
     duration: 3000,
     className: '',
     onClose: null,
-    onClick: null
+    onClick: null,
+    onOpened: null
   };
 }
 

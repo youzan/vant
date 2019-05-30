@@ -59,4 +59,5 @@ export default {
 | background | Background color | `String` | `#f44` |
 | className | Custom className | `String | Array | Object` | - |
 | onClick | Callback function after click | `Function` | - |
+| onOpened | Callback function after opened | `Function` | - |
 | onClose | Callback function after close | `Function` | - |
