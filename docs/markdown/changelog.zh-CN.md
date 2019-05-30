@@ -6,6 +6,10 @@
 
 - 新增`sticky`参数
 
+##### Notify
+
+- 新增`onClose`选项
+
 ##### Rate
 
 - 新增`gutter`属性
@@ -17,7 +21,7 @@
 
 ##### Toast
 
-- 新增`onOpened`属性
+- 新增`onOpened`选项
 
 
 ### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)

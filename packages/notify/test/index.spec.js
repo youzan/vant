@@ -14,11 +14,13 @@ test('create a notify', async () => {
 });
 
 test('notify disappear', async () => {
+  const onClose = jest.fn();
   const notify = Notify({
     message: 'test',
     color: 'red',
     background: 'blue',
-    duration: 10
+    duration: 10,
+    onClose
   });
 
   await later();
@@ -26,6 +28,7 @@ test('notify disappear', async () => {
 
   await later(20);
   expect(notify.$el.outerHTML).toMatchSnapshot();
+  expect(onClose).toHaveBeenCalledTimes(1);
 
   Notify({
     message: 'text2',

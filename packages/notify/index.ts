@@ -53,6 +53,7 @@ function defaultOptions(): NotifyOptions {
     background: RED,
     duration: 3000,
     className: '',
+    onClose: null,
     onClick: null
   };
 }
@@ -60,6 +61,10 @@ function defaultOptions(): NotifyOptions {
 Notify.clear = () => {
   if (instance) {
     instance.value = false;
+
+    if (instance.onClose) {
+      instance.onClose();
+    }
   }
 };
 
