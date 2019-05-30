@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`render bottom slot 1`] = `
+<div class="van-card">
+  <div class="van-card__header">
+    <div class="van-card__content">
+      <div class="van-card__bottom">
+        <div class="van-card__price">¥ 100</div>Custom Bottom
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`render origin-price slot 1`] = `
 <div class="van-card">
   <div class="van-card__header">

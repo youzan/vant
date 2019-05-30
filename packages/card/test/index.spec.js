@@ -15,3 +15,18 @@ test('render origin-price slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('render bottom slot', () => {
+  const wrapper = mount({
+    template: `
+      <card :price="100">
+        <template v-slot:bottom>Custom Bottom</template>
+      </card>
+    `,
+    components: {
+      Card
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

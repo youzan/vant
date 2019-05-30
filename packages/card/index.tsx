@@ -28,6 +28,7 @@ export type CardSlots = DefaultSlots & {
   title?: ScopedSlot;
   thumb?: ScopedSlot;
   price?: ScopedSlot;
+  bottom?: ScopedSlot;
   footer?: ScopedSlot;
   'origin-price'?: ScopedSlot;
 };
@@ -117,6 +118,7 @@ function Card(
               {Price}
               {OriginPrice}
               {Num}
+              {slots.bottom && slots.bottom()}
             </div>
           )}
         </div>
