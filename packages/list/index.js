@@ -87,8 +87,6 @@ export default sfc({
       }
 
       const { offset, direction } = this;
-      console.log('offset', offset);
-      console.log('scrollerHeight', scrollerHeight);
 
       function isReachEdge() {
         if (el === scroller) {
@@ -99,7 +97,6 @@ export default sfc({
           }
 
           const targetBottom = scrollTop + scrollerHeight;
-          console.log('scrollTop', scrollTop);
           return scroller.scrollHeight - targetBottom <= offset;
         }
 
@@ -108,10 +105,6 @@ export default sfc({
         }
 
         const elBottom = getElementTop(el) + getVisibleHeight(el) - getElementTop(scroller);
-        console.log('elBottom', elBottom);
-        console.log('getElementTop(el)', getElementTop(el));
-        console.log('getVisibleHeight(el)', getVisibleHeight(el));
-        console.log('getElementTop(scroller)', getElementTop(scroller));
         return elBottom - scrollerHeight <= offset;
       }
 
