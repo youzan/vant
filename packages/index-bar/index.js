@@ -136,15 +136,19 @@ export default sfc({
 
         const { clientX, clientY } = event.touches[0];
         const target = document.elementFromPoint(clientX, clientY);
-        this.scrollToElement(target);
+        if (target) {
+          const { idx } = target.dataset;
+
+          /* istanbul ignore else */
+          if (this.touchActiveIdx !== idx) {
+            this.touchActiveIdx = idx;
+            this.scrollToElement(target);
+          }
+        }
       }
     },
 
     scrollToElement(element, setActive) {
-      if (!element) {
-        return;
-      }
-
       const { index } = element.dataset;
       if (!index) {
         return;
@@ -178,6 +182,7 @@ export default sfc({
             <span
               class={bem('index')}
               style={idx === this.activeAnchorIndex ? this.highlightStyle : null}
+              data-idx={idx}
               data-index={index}
             >
               {index}
