@@ -9,6 +9,7 @@ export type NotifyOptions = {
   duration?: number;
   className?: any;
   background?: string;
+  onClose?: (() => void) | null;
   onClick?: ((event: Event) => void) | null;
 }
 
