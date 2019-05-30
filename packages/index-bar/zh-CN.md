@@ -68,6 +68,7 @@ export default {
 |------|------|------|------|------|
 | index-list | 索引字符列表 | `Array` | `A-Z` | - |
 | z-index | z-index 层级 | `Number` | `1` | - |
+| sticky | 是否开启锚点自动吸顶 | `Boolean` | `true` | - |
 
 ### IndexAnchor Props
 

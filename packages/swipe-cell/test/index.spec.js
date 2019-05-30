@@ -1,5 +1,5 @@
 import SwipeCell from '..';
-import { mount, triggerDrag, later } from '../../../test/utils';
+import { mount, triggerDrag, later, mockGetBoundingClientRect } from '../../../test/utils';
 
 const THRESHOLD = 0.15;
 const defaultProps = {
@@ -12,12 +12,6 @@ const defaultProps = {
     right: () => 'Right'
   }
 };
-
-function mockGetBoundingClientRect(vertical) {
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({
-    width: 50
-  }));
-}
 
 it('drag and show left part', () => {
   const wrapper = mount(SwipeCell, defaultProps);
@@ -98,7 +92,9 @@ it('disabled prop', () => {
 });
 
 it('auto calc width', async () => {
-  mockGetBoundingClientRect();
+  const restoreMock = mockGetBoundingClientRect({
+    width: 50
+  });
 
   const wrapper = mount(SwipeCell, {
     scopedSlots: defaultProps.scopedSlots
@@ -107,4 +103,6 @@ it('auto calc width', async () => {
   await later();
   triggerDrag(wrapper, 100, 0);
   expect(wrapper).toMatchSnapshot();
+
+  restoreMock();
 });
