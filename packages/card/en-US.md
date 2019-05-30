@@ -75,6 +75,7 @@ Use slot to custom content.
 | num | Custom num |
 | price | Custom price |
 | origin-price | Custom origin price |
+| bottom | Custom price bottom |
 | thumb | Custom thumb |
 | tag | Custom thumb tag |
 | tags | Custom tags |

@@ -75,6 +75,7 @@ Vue.use(Card);
 | num | 自定义数量 |
 | price | 自定义价格 |
 | origin-price | 自定义商品原价 |
+| bottom | 自定义价格下方区域 |
 | thumb | 自定义图片 |
 | tag | 自定义图片角标 |
 | tags | 自定义描述下方标签区域 |
