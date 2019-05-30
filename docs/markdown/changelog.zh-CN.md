@@ -4,7 +4,8 @@
 
 ##### IndexBar
 
-- 新增`sticky`参数
+- 新增`sticky`属性
+- 新增`highlight-color`属性
 
 ##### Notify
 

@@ -2,18 +2,19 @@
 
 .van-index-anchor {
   padding: @index-anchor-padding;
+  color: @index-anchor-text-color;
   font-weight: @index-anchor-font-weight;
   font-size: @index-anchor-font-size;
   line-height: @index-anchor-line-height;
-  background-color: transparent;
-  transition: background-color .2s;
+  background-color: @index-anchor-background-color;
+  transition: color @index-anchor-transition-duration,
+    background-color @index-anchor-transition-duration;
 
   &--sticky {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
-    background-color: #fff;
+    background-color: @index-anchor-sticky-background-color;
   }
 }

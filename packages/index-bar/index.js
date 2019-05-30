@@ -1,6 +1,7 @@
 import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
+import { GREEN } from '../utils/color';
 import { on, off } from '../utils/event';
 import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/scroll';
 
@@ -18,7 +19,10 @@ export default sfc({
       type: Number,
       default: 1
     },
-    highlightColor: String,
+    highlightColor: {
+      type: String,
+      default: GREEN
+    },
     indexList: {
       type: Array,
       default() {
