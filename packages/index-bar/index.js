@@ -18,6 +18,7 @@ export default sfc({
       type: Number,
       default: 1
     },
+    highlightColor: String,
     indexList: {
       type: Array,
       default() {
@@ -29,6 +30,24 @@ export default sfc({
         }
 
         return indexList;
+      }
+    }
+  },
+
+  data() {
+    return {
+      activeAnchorIndex: -1
+    };
+  },
+
+  computed: {
+    highlightStyle() {
+      const { highlightColor } = this;
+      if (highlightColor) {
+        /* istanbul ignore else */
+        return {
+          color: highlightColor
+        };
       }
     }
   },
@@ -72,6 +91,7 @@ export default sfc({
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
 
+      this.activeAnchorIndex = active;
       this.children.forEach((item, index) => {
         if (index === active) {
           item.active = true;
@@ -150,8 +170,12 @@ export default sfc({
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
         >
-          {this.indexList.map(index => (
-            <span class={bem('index')} data-index={index}>
+          {this.indexList.map((index, idx) => (
+            <span
+              class={bem('index')}
+              style={idx === this.activeAnchorIndex ? this.highlightStyle : null}
+              data-index={index}
+            >
               {index}
             </span>
           ))}
