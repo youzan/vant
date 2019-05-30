@@ -18,7 +18,7 @@ test('load event', async () => {
 
   mockOffsetParent(wrapper.vm.$el);
 
-  await later();
+  await later(50);
   expect(wrapper.emitted('load')).toBeTruthy();
   expect(wrapper.emitted('input')).toBeTruthy();
 
@@ -67,7 +67,7 @@ test('finished', async () => {
 
   mockOffsetParent(wrapper.vm.$el);
 
-  await later();
+  await later(50);
   expect(wrapper.emitted('load')).toBeFalsy();
   expect(wrapper.emitted('input')).toBeFalsy();
   wrapper.vm.finished = false;
