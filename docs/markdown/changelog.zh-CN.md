@@ -2,6 +2,10 @@
 
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
 
+##### IndexBar
+
+- 新增`sticky`参数
+
 ##### Rate
 
 - 新增`gutter`属性

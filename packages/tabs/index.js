@@ -239,6 +239,7 @@ export default sfc({
       const elTopToPageTop = getElementTop(this.$el);
       const elBottomToPageTop =
         elTopToPageTop + this.$el.offsetHeight - this.$refs.wrap.offsetHeight;
+
       if (scrollTop > elBottomToPageTop) {
         this.position = 'bottom';
       } else if (scrollTop > elTopToPageTop) {
@@ -246,10 +247,12 @@ export default sfc({
       } else {
         this.position = '';
       }
+
       const scrollParams = {
         scrollTop,
         isFixed: this.position === 'top'
       };
+
       this.$emit('scroll', scrollParams);
     },
 

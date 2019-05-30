@@ -1,12 +1,17 @@
 import Demo from '../demo';
 import demoTest from '../../../test/demo-test';
+import { mockGetBoundingClientRect } from '../../../test/utils';
 
-function mockGetBoundingClientRect(vertical) {
-  Element.prototype.getBoundingClientRect = jest.fn(() => ({
-    width: 100,
-    height: 100
-  }));
-}
+let restore;
 
-mockGetBoundingClientRect();
-demoTest(Demo);
+demoTest(Demo, {
+  hookBeforeTest: () => {
+    restore = mockGetBoundingClientRect({
+      width: 100,
+      height: 100
+    });
+  },
+  hookAfterTest: () => {
+    restore();
+  }
+});
