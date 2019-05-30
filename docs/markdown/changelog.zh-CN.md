@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.21](https://github.com/youzan/vant/tree/v1.6.21)
+`2019-05-30`
+
+**Improvements**
+
+- Card: 新增 bottom 插槽
+
+
 ## [v1.6.20](https://github.com/youzan/vant/tree/v1.6.20)
 `2019-05-28`
 
