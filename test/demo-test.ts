@@ -13,8 +13,12 @@ const empty = {
 Vue.component('demo-block', empty);
 Vue.component('demo-section', empty);
 
-export default function (Demo: any) {
+export default function (Demo: any, option: any = {}) {
   test('renders demo correctly', async () => {
+    if (option.hookBeforeTest) {
+      option.hookBeforeTest();
+    }
+
     if (Demo.i18n) {
       Locale.add(Demo.i18n);
     }
@@ -24,5 +28,9 @@ export default function (Demo: any) {
     await later();
 
     expect(wrapper).toMatchSnapshot();
+
+    if (option.hookAfterTest) {
+      option.hookAfterTest();
+    }
   });
 }
