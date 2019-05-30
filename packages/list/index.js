@@ -109,6 +109,9 @@ export default sfc({
 
         const elBottom = getElementTop(el) + getVisibleHeight(el) - getElementTop(scroller);
         console.log('elBottom', elBottom);
+        console.log('getElementTop(el)', getElementTop(el));
+        console.log('getVisibleHeight(el)', getVisibleHeight(el));
+        console.log('getElementTop(scroller)', getElementTop(scroller));
         return elBottom - scrollerHeight <= offset;
       }
 
