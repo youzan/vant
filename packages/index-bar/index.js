@@ -77,9 +77,9 @@ export default sfc({
           item.active = true;
           item.top = Math.max(0, rects[index].top - scrollTop);
         } else if (index === active - 1) {
-          const nextItemTop = rects[index + 1].top - scrollTop;
-          item.active = nextItemTop > 0;
-          item.top = nextItemTop - rects[index + 1].height;
+          const activeItemTop = rects[active].top - scrollTop;
+          item.active = activeItemTop > 0;
+          item.top = activeItemTop - rects[active].height;
         } else {
           item.active = false;
         }
