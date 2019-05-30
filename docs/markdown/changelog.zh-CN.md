@@ -21,6 +21,10 @@
 - 新增`gutter`属性
 - 支持`String`类型的`size`属性
 
+##### Search
+
+- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
+
 ##### SwipeCell
 
 - 支持自动计算`left-width`和`right-width`
