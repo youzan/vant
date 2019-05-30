@@ -35,25 +35,25 @@ export default sfc({
   },
 
   mounted() {
-    this.toggleClickale();
+    this.toggleClickable();
   },
 
   destroyed() {
-    this.toggleClickale();
+    this.toggleClickable();
   },
 
   watch: {
     value() {
-      this.toggleClickale();
+      this.toggleClickable();
     },
 
     forbidClick() {
-      this.toggleClickale();
+      this.toggleClickable();
     }
   },
 
   methods: {
-    toggleClickale() {
+    toggleClickable() {
       const clickable = this.value && this.forbidClick;
       if (this.clickable !== clickable) {
         this.clickable = clickable;
