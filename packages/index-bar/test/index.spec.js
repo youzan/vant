@@ -1,7 +1,7 @@
-import { mount, trigger, triggerDrag } from '../../../test/utils';
 import Vue from 'vue';
 import IndexBar from '..';
 import IndexAnchor from '../../index-anchor';
+import { mount, trigger, triggerDrag } from '../../../test/utils';
 
 Vue.use(IndexBar);
 Vue.use(IndexAnchor);
@@ -10,6 +10,14 @@ function mockScrollIntoView() {
   const fn = jest.fn();
   Element.prototype.scrollIntoView = fn;
   return fn;
+}
+
+function mockOffsetHeight(offsetHeight) {
+  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+    get() {
+      return offsetHeight;
+    }
+  });
 }
 
 test('custom anchor text', () => {
@@ -93,4 +101,45 @@ test('touch and scroll to anchor', () => {
   trigger(sidebar, 'touchend', 0, 400);
   expect(fn).toHaveBeenCalledTimes(1);
   expect(onSelect).toHaveBeenCalledWith('B');
+});
+
+test('scroll and update active anchor', () => {
+  const nativeRect = Element.prototype.getBoundingClientRect;
+  Element.prototype.getBoundingClientRect = function () {
+    const { index } = this.dataset;
+    return {
+      top: index ? index * 10 : 0
+    };
+  };
+
+  mockOffsetHeight(10);
+
+  const wrapper = mount({
+    template: `
+      <van-index-bar :sticky="sticky">
+        <van-index-anchor
+          v-for="index in 4"
+          :key="index"
+          :index="index"
+          :data-index="index - 1"
+        />
+      </van-index-bar>
+    `,
+    data() {
+      return {
+        sticky: false
+      };
+    }
+  });
+
+  window.scrollTop = 0;
+  trigger(window, 'scroll');
+  expect(wrapper).toMatchSnapshot();
+
+  wrapper.setData({ sticky: true });
+  trigger(window, 'scroll');
+  expect(wrapper).toMatchSnapshot();
+  wrapper.vm.$destroy();
+
+  Element.prototype.getBoundingClientRect = nativeRect;
 });
