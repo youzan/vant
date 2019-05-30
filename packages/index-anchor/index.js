@@ -10,6 +10,32 @@ export default sfc({
     index: [String, Number]
   },
 
+  data() {
+    return {
+      top: 0,
+      fixed: false
+    };
+  },
+
+  computed: {
+    sticky() {
+      return this.fixed && this.parent.sticky;
+    },
+
+    anchorStyle() {
+      if (this.sticky) {
+        return {
+          top: `${this.top}px`,
+          zIndex: `${this.parent.zIndex}`
+        };
+      }
+    }
+  },
+
+  mounted() {
+    this.height = this.$el.offsetHeight;
+  },
+
   methods: {
     scrollIntoView() {
       this.$el.scrollIntoView();
@@ -17,9 +43,16 @@ export default sfc({
   },
 
   render(h) {
+    const { sticky } = this;
+
     return (
-      <div class={bem()}>
-        {this.slots('default') ? this.slots('default') : this.index}
+      <div style={{ height: sticky ? `${this.height}px` : null }}>
+        <div
+          style={this.anchorStyle}
+          class={[bem({ sticky }), { 'van-hairline--bottom': sticky }]}
+        >
+          {this.slots('default') || this.index}
+        </div>
       </div>
     );
   }

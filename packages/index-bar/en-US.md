@@ -64,6 +64,7 @@ export default {
 |------|------|------|------|
 | index-list | Index List | `Array` | `A-Z` |
 | z-index | z-index | `Number` | `1` |
+| sticky | Whether to enable anchor sticky top | `Boolean` | `true` |
 
 ### IndexAnchor Props
 
