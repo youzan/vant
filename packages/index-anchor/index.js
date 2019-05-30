@@ -13,13 +13,13 @@ export default sfc({
   data() {
     return {
       top: 0,
-      fixed: false
+      active: false
     };
   },
 
   computed: {
     sticky() {
-      return this.fixed && this.parent.sticky;
+      return this.active && this.parent.sticky;
     },
 
     anchorStyle() {

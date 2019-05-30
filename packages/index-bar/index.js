@@ -74,14 +74,14 @@ export default sfc({
 
       this.children.forEach((item, index) => {
         if (index === active) {
-          item.fixed = true;
+          item.active = true;
           item.top = Math.max(0, rects[index].top - scrollTop);
         } else if (index === active - 1) {
           const nextItemTop = rects[index + 1].top - scrollTop;
-          item.fixed = nextItemTop > 0;
+          item.active = nextItemTop > 0;
           item.top = nextItemTop - rects[index + 1].height;
         } else {
-          item.fixed = false;
+          item.active = false;
         }
       });
     },
