@@ -103,7 +103,7 @@ export default sfc({
         } else if (index === active - 1) {
           const activeItemTop = rects[active].top - scrollTop;
           item.active = activeItemTop > 0;
-          item.top = activeItemTop - rects[active].height;
+          item.top = activeItemTop - item.height;
         } else {
           item.active = false;
         }
