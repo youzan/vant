@@ -62,6 +62,22 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
       </span>
     );
 
+    const Children = [
+      <div
+        class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
+        style={{ fontSize: suffixPx(this.iconSize) }}
+        onClick={this.onClickIcon}
+      >
+        {CheckIcon}
+      </div>
+    ];
+
+    if (this.labelPosition === 'left') {
+      Children.unshift(Label);
+    } else {
+      Children.push(Label);
+    }
+
     return (
       <div
         role={role}
@@ -72,14 +88,7 @@ export const CheckboxMixin = ({ parent, bem, role }) => ({
           this.$emit('click', event);
         }}
       >
-        <div
-          class={bem('icon', [this.shape, { disabled: this.isDisabled, checked }])}
-          style={{ fontSize: suffixPx(this.iconSize) }}
-          onClick={this.onClickIcon}
-        >
-          {CheckIcon}
-        </div>
-        {Label}
+        {Children}
       </div>
     );
   }

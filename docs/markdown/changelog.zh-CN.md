@@ -2,10 +2,18 @@
 
 ### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
 
+##### Checkbox
+
+- 修复`label-position`不生效的问题
+
 ##### Field
 
 - 新增`click`事件
 - 新增`clickable`属性
+
+##### Radio
+
+- 修复`label-position`不生效的问题
 
 ##### Stepper
 
