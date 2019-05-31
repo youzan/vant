@@ -1,5 +1,44 @@
 # Changelog
 
+### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
+`2019-05-31`
+
+##### Field
+
+- No longer update v-model during IME composition
+
+##### IndexBar
+
+- Add `sticky` prop
+- Add `highlight-color` prop
+
+##### Notify
+
+- Add `onClose` option
+- Add `onOpened` option
+
+##### Picker
+
+- Optimize animation
+
+##### Rate
+
+- Add `gutter` prop
+- Support `size` prop of `String` type
+
+##### Search
+
+- No longer update v-model during IME composition
+
+##### SwipeCell
+
+- Support auto calc `left-width` and `right-width`
+
+##### Toast
+
+- Add `onOpened` option
+
+
 ### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
 
 #### Accessibility

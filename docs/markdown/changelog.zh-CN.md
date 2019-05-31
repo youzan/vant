@@ -1,6 +1,7 @@
 # 更新日志
 
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
+`2019-05-31`
 
 ##### Field
 
@@ -15,6 +16,11 @@
 
 - 新增`onClose`选项
 - 新增`onOpened`选项
+
+##### Picker
+
+- 优化动画延时
+- 点击确认按钮时自动终止动画
 
 ##### Rate
 
@@ -35,6 +41,7 @@
 
 
 ### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
+`2019-05-28`
 
 #### 无障碍访问
 
@@ -81,6 +88,7 @@
 
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+`2019-05-24`
 
 #### 无障碍访问
 
