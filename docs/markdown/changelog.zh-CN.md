@@ -2,6 +2,10 @@
 
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
 
+##### Field
+
+- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
+
 ##### IndexBar
 
 - 新增`sticky`属性
@@ -16,6 +20,10 @@
 
 - 新增`gutter`属性
 - 支持`String`类型的`size`属性
+
+##### Search
+
+- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
 
 ##### SwipeCell
 

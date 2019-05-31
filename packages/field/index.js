@@ -50,7 +50,11 @@ export default sfc({
   computed: {
     showClear() {
       return (
-        this.clearable && this.focused && this.value !== '' && isDef(this.value) && !this.readonly
+        this.clearable &&
+        this.focused &&
+        this.value !== '' &&
+        isDef(this.value) &&
+        !this.readonly
       );
     },
 
@@ -95,6 +99,11 @@ export default sfc({
     },
 
     onInput(event) {
+      // not update v-model when composing
+      if (event.target.composing) {
+        return;
+      }
+
       this.$emit('input', this.format(event.target));
     },
 
@@ -140,7 +149,9 @@ export default sfc({
         const { keyCode } = event;
         const allowPoint = String(this.value).indexOf('.') === -1;
         const isValidKey =
-          (keyCode >= 48 && keyCode <= 57) || (keyCode === 46 && allowPoint) || keyCode === 45;
+          (keyCode >= 48 && keyCode <= 57) ||
+          (keyCode === 46 && allowPoint) ||
+          keyCode === 45;
 
         if (!isValidKey) {
           preventDefault(event);
@@ -191,7 +202,14 @@ export default sfc({
           ...this.$attrs,
           readonly: this.readonly
         },
-        on: this.listeners
+        on: this.listeners,
+        // add model directive to skip IME composition
+        directives: [
+          {
+            name: 'model',
+            value: this.value
+          }
+        ]
       };
 
       if (this.type === 'textarea') {
@@ -256,11 +274,17 @@ export default sfc({
       >
         <div class={bem('body')}>
           {this.renderInput()}
-          {this.showClear && <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />}
+          {this.showClear && (
+            <Icon name="clear" class={bem('clear')} onTouchstart={this.onClear} />
+          )}
           {this.renderRightIcon()}
           {slots('button') && <div class={bem('button')}>{slots('button')}</div>}
         </div>
-        {this.errorMessage && <div class={bem('error-message', this.errorMessageAlign)}>{this.errorMessage}</div>}
+        {this.errorMessage && (
+          <div class={bem('error-message', this.errorMessageAlign)}>
+            {this.errorMessage}
+          </div>
+        )}
       </Cell>
     );
   }
