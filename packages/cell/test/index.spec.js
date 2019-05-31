@@ -30,6 +30,7 @@ test('render slot', () => {
   const wrapper = mount({
     template: `
       <cell>
+        <template v-slot:icon>Custom Icon</template>
         <template v-slot:title>Custom Title</template>
         <template v-slot:label>Custom Label</template>
         <template v-slot:extra>Custom Extra</template>
