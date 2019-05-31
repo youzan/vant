@@ -26,6 +26,24 @@ export default {
 }
 ```
 
+### 步长设置
+
+```html
+<van-stepper v-model="value" step="2" />
+```
+
+### 限制输入范围
+
+```html
+<van-stepper v-model="value" min="5" max="8" />
+```
+
+### 限制输入整数
+
+```html
+<van-stepper v-model="value" integer />
+```
+
 ### 禁用状态
 
 通过设置`disabled`属性来禁用 stepper
@@ -66,20 +84,6 @@ export default {
     }
   }
 }
-```
-
-### 高级用法
-
-可以对组件设置`step`、`min`、`max`属性
-
-```html
-<van-stepper
-  v-model="value"
-  integer
-  :min="5"
-  :max="40"
-  :step="2"
-/>
 ```
 
 ## API
