@@ -11,13 +11,13 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2018</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2019</li>
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">03</li>
@@ -33,7 +33,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">03</li>
@@ -68,7 +68,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">00</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
@@ -96,7 +96,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">00</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
@@ -173,7 +173,7 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2018</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2019</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2020</li>
@@ -189,7 +189,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">03</li>
@@ -205,7 +205,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">03</li>
@@ -253,7 +253,7 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2018年</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2019年</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">2020年</li>
@@ -269,7 +269,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01月</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02月</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">03月</li>
@@ -298,7 +298,7 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 0px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">10</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">11</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">12</li>
@@ -313,7 +313,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">00</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
@@ -390,7 +390,7 @@ exports[`renders demo correctly 1`] = `
       <!---->
       <div class="van-picker__columns" style="height: 220px;">
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, -440px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, -440px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">00</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">01</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">02</li>
@@ -418,7 +418,7 @@ exports[`renders demo correctly 1`] = `
           </ul>
         </div>
         <div class="van-picker-column">
-          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; line-height: 44px;">
+          <ul class="van-picker-column__wrapper" style="transform: translate3d(0, 88px, 0); transition-duration: 0ms; transition-property: none; line-height: 44px;">
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">00</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">05</li>
             <li class="van-ellipsis van-picker-column__item" style="height: 44px;">10</li>

@@ -129,13 +129,7 @@ export default sfc({
     },
 
     onTransitionEnd() {
-      this.moving = false;
-
-      if (this.transitionEndTrigger) {
-        this.duration = DEFAULT_DURATION;
-        this.transitionEndTrigger();
-        this.transitionEndTrigger = null;
-      }
+      this.stopMomentum();
     },
 
     onClickItem(index) {
@@ -213,6 +207,16 @@ export default sfc({
       this.duration = MOMENTUM_DURATION;
       this.setIndex(index, true);
     },
+
+    stopMomentum() {
+      this.moving = false;
+      this.duration = 0;
+
+      if (this.transitionEndTrigger) {
+        this.transitionEndTrigger();
+        this.transitionEndTrigger = null;
+      }
+    }
   },
 
   render(h) {
@@ -223,6 +227,7 @@ export default sfc({
     const wrapperStyle = {
       transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
+      transitionProperty: this.duration ? 'transform' : 'none',
       lineHeight: `${itemHeight}px`
     };
 

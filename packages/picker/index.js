@@ -131,6 +131,7 @@ export default sfc({
     },
 
     onConfirm() {
+      this.children.map(child => child.stopMomentum());
       this.emit('confirm');
     },
 
