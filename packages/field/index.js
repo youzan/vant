@@ -262,6 +262,7 @@ export default sfc({
         border={this.border}
         isLink={this.isLink}
         required={this.required}
+        clickable={this.clickable}
         titleStyle={this.labelStyle}
         titleClass={[bem('label', labelAlign), this.labelClass]}
         class={bem({

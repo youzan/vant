@@ -2,6 +2,10 @@
 
 ### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
 
+##### Field
+
+- 新增`clickable`属性
+
 ##### Stepper
 
 - 支持`Number`类型的`input-width`属性
