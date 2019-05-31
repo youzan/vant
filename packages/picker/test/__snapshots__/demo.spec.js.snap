@@ -62,6 +62,15 @@ exports[`renders demo correctly 1`] = `
     </div>
   </div>
   <div>
+    <div class="van-cell van-cell--clickable van-field">
+      <div class="van-cell__title van-field__label"><span>城市</span></div>
+      <div class="van-cell__value">
+        <div class="van-field__body"><input type="text" placeholder="选择城市" readonly="readonly" class="van-field__control"></div>
+      </div>
+    </div>
+    <!---->
+  </div>
+  <div>
     <div class="van-picker">
       <!---->
       <div class="van-picker__columns" style="height: 220px;">

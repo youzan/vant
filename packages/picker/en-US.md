@@ -75,6 +75,46 @@ export default {
 };
 ```
 
+### With Popup
+
+```html
+<van-field
+  readonly
+  clickable
+  label="City"
+  :value="value"
+  placeholder="Choose City"
+  @click="showPicker = true"
+/>
+
+<van-popup v-model="showPicker" position="bottom">
+  <van-picker
+    show-toolbar
+    :columns="columns"
+    @cancel="showPicker = false"
+    @confirm="onConfirm"
+  />
+</van-popup>
+```
+
+```js
+export default {
+  data() {
+    return {
+      value: '',
+      showPicker: false,
+      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
+    }
+  },
+  methods: {
+    onConfirm(value) {
+      this.value = value;
+      this.showPicker = false;
+    }
+  }
+};
+```
+
 ### Disable option
 
 ```html

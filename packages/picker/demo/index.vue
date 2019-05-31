@@ -18,11 +18,33 @@
     <demo-block :title="$t('title3')">
       <van-picker
         show-toolbar
-        :title="$t('area')"
+        :title="$t('title')"
         :columns="$t('column1')"
         @cancel="onCancel"
         @confirm="onConfirm"
       />
+    </demo-block>
+
+    <demo-block :title="$t('withPopup')">
+      <van-field
+        readonly
+        clickable
+        :label="$t('city')"
+        :value="fieldValue"
+        :placeholder="$t('chooseCity')"
+        @click="onClickField"
+      />
+      <van-popup
+        v-model="showPicker"
+        position="bottom"
+      >
+        <van-picker
+          show-toolbar
+          :columns="$t('column1')"
+          @cancel="onCancel2"
+          @confirm="onConfirm2"
+        />
+      </van-popup>
     </demo-block>
 
     <demo-block :title="$t('title2')">
@@ -49,11 +71,13 @@
 export default {
   i18n: {
     'zh-CN': {
-      area: '标题',
+      city: '城市',
       title2: '禁用选项',
       title3: '展示顶部栏',
       title4: '多列联动',
       defaultIndex: '默认选中项',
+      withPopup: '搭配弹出层使用',
+      chooseCity: '选择城市',
       column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
       column2: [
         { text: '杭州', disabled: true },
@@ -67,11 +91,13 @@ export default {
       toastContent: (value, index) => `当前值：${value}, 当前索引：${index}`
     },
     'en-US': {
-      area: 'Title',
+      city: 'City',
       title2: 'Disable Option',
       title3: 'Show Toolbar',
       title4: 'Multi Columns',
       defaultIndex: 'Default Index',
+      withPopup: 'With Popup',
+      chooseCity: 'Choose City',
       column1: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine'],
       column2: [
         { text: 'Delaware', disabled: true },
@@ -84,6 +110,13 @@ export default {
       },
       toastContent: (value, index) => `Value: ${value}, Index：${index}`
     }
+  },
+
+  data() {
+    return {
+      showPicker: false,
+      fieldValue: ''
+    };
   },
 
   computed: {
@@ -107,14 +140,30 @@ export default {
     onChange1(picker, value, index) {
       this.$toast(this.$t('toastContent', value, index));
     },
+
     onChange2(picker, values) {
       picker.setColumnValues(1, this.$t('column3')[values[0]]);
     },
+
     onConfirm(value, index) {
       this.$toast(this.$t('toastContent', value, index));
     },
+
     onCancel() {
       this.$toast(this.$t('cancel'));
+    },
+
+    onClickField() {
+      this.showPicker = true;
+    },
+
+    onConfirm2(value) {
+      this.showPicker = false;
+      this.fieldValue = value;
+    },
+
+    onCancel2() {
+      this.showPicker = false;
     }
   }
 };
