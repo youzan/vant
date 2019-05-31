@@ -59,13 +59,17 @@ export default sfc({
     },
 
     listeners() {
-      return {
+      const listeners = {
         ...this.$listeners,
         input: this.onInput,
         keypress: this.onKeypress,
         focus: this.onFocus,
         blur: this.onBlur
       };
+
+      delete listeners.click;
+
+      return listeners;
     },
 
     labelStyle() {
@@ -128,6 +132,10 @@ export default sfc({
       if (isIOS()) {
         window.scrollTo(0, getRootScrollTop());
       }
+    },
+
+    onClick(event) {
+      this.$emit('click', event);
     },
 
     onClickLeftIcon() {
@@ -272,6 +280,7 @@ export default sfc({
           'min-height': this.type === 'textarea' && !this.autosize
         })}
         scopedSlots={scopedSlots}
+        onClick={this.onClick}
       >
         <div class={bem('body')}>
           {this.renderInput()}

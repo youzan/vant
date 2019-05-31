@@ -4,6 +4,7 @@
 
 ##### Field
 
+- 新增`click`事件
 - 新增`clickable`属性
 
 ##### Stepper

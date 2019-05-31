@@ -15,9 +15,9 @@
           v-model="username"
           :label="$t('username')"
           :placeholder="$t('usernamePlaceholder')"
+          required
           clearable
           right-icon="question-o"
-          required
           @click-right-icon="$toast('question')"
         />
 

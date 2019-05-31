@@ -152,6 +152,7 @@ Field support all native events of input tag，such as `focus`、`blur`、`keypr
 | Event | Description | Parameters |
 |------|------|------|
 | input | Triggered when value changed | - |
+| click | Triggered when click field | - |
 | clear | Triggered when click clear icon | - |
 | click-left-icon | Triggered when click the left icon of Field | - |
 | click-right-icon | Triggered when click the right icon of Field | - |
