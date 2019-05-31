@@ -1,5 +1,12 @@
 # 更新日志
 
+### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
+
+##### Stepper
+
+- 支持`Number`类型的`input-width`属性
+
+
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
 `2019-05-31`
 
