@@ -40,7 +40,7 @@ export default sfc({
 
   data() {
     return {
-      activeAnchorIndex: -1
+      activeAnchorIndex: null
     };
   },
 
@@ -95,7 +95,7 @@ export default sfc({
 
       const active = this.getActiveAnchorIndex(scrollTop, rects);
 
-      this.activeAnchorIndex = active;
+      this.activeAnchorIndex = this.indexList[active];
       this.children.forEach((item, index) => {
         if (index === active) {
           item.active = true;
@@ -136,15 +136,19 @@ export default sfc({
 
         const { clientX, clientY } = event.touches[0];
         const target = document.elementFromPoint(clientX, clientY);
-        this.scrollToElement(target);
+        if (target) {
+          const { index } = target.dataset;
+
+          /* istanbul ignore else */
+          if (this.touchActiveIndex !== index) {
+            this.touchActiveIndex = index;
+            this.scrollToElement(target);
+          }
+        }
       }
     },
 
     scrollToElement(element, setActive) {
-      if (!element) {
-        return;
-      }
-
       const { index } = element.dataset;
       if (!index) {
         return;
@@ -174,10 +178,10 @@ export default sfc({
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
         >
-          {this.indexList.map((index, idx) => (
+          {this.indexList.map(index => (
             <span
               class={bem('index')}
-              style={idx === this.activeAnchorIndex ? this.highlightStyle : null}
+              style={index === this.activeAnchorIndex ? this.highlightStyle : null}
               data-index={index}
             >
               {index}

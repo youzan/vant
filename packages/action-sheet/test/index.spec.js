@@ -9,7 +9,9 @@ test('callback events', () => {
 
   const actions = [
     { name: 'Option', callback },
-    { name: 'Option', disabled: true }
+    { name: 'Option', disabled: true },
+    { name: 'Option', loading: true },
+    { name: 'Option', subname: 'Subname' },
   ];
 
   const wrapper = mount(ActionSheet, {
@@ -39,6 +41,37 @@ test('callback events', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('click overlay and close', () => {
+  const onInput = jest.fn();
+  const div = document.createElement('div');
+
+  mount({
+    template: `
+      <div>
+        <action-sheet
+          :value="true"
+          :get-container="getContainer"
+          @input="onInput"
+        />
+      </div>
+    `,
+    components: {
+      ActionSheet
+    },
+    data() {
+      return {
+        getContainer: () => div
+      };
+    },
+    methods: {
+      onInput
+    }
+  });
+
+  div.querySelector('.van-overlay').click();
+  expect(onInput).toHaveBeenCalledWith(false);
+});
+
 test('disable lazy-render', () => {
   const wrapper = mount(ActionSheet, {
     propsData: {
@@ -48,6 +81,21 @@ test('disable lazy-render', () => {
         { name: 'Option' }
       ],
       cancelText: 'Cancel'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('render title and default slot', () => {
+  const wrapper = mount(ActionSheet, {
+    propsData: {
+      title: 'Title'
+    },
+    scopedSlots: {
+      default() {
+        return 'Default';
+      }
     }
   });
 
