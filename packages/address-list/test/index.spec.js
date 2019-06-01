@@ -42,5 +42,5 @@ test('select event', () => {
 
   wrapper.find('.van-radio__icon').trigger('click');
 
-  expect(onSelect).toHaveBeenCalled();
+  expect(onSelect).toHaveBeenCalledTimes(1);
 });

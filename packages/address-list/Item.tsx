@@ -61,7 +61,7 @@ function AddressItem(
     ];
 
     return switchable && !disabled ? (
-      <Radio name={data.id} onClick={onSelect}>
+      <Radio name={data.id}>
         {Info}
       </Radio>
     ) : (
