@@ -54,6 +54,12 @@ export default sfc({
       handler() {
         this.setValues();
       }
+    },
+
+    columnsNum() {
+      this.$nextTick(() => {
+        this.setValues();
+      });
     }
   },
 
