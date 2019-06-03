@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import { stopPropagation } from '../utils/event';
+import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
 const [sfc, bem, t] = use('number-keyboard');
@@ -7,6 +8,14 @@ const CLOSE_KEY_TYPE = ['blue', 'big'];
 const DELETE_KEY_TYPE = ['delete', 'big', 'gray'];
 
 export default sfc({
+  mixins: [
+    BindEventMixin(function (bind) {
+      if (this.hideOnClickOutside) {
+        bind(document.body, 'touchstart', this.onBlur);
+      }
+    })
+  ],
+
   props: {
     show: Boolean,
     title: String,
@@ -37,22 +46,6 @@ export default sfc({
       type: Boolean,
       default: true
     }
-  },
-
-  mounted() {
-    this.handler(true);
-  },
-
-  destroyed() {
-    this.handler(false);
-  },
-
-  activated() {
-    this.handler(true);
-  },
-
-  deactivated() {
-    this.handler(false);
   },
 
   watch: {
@@ -92,21 +85,6 @@ export default sfc({
   },
 
   methods: {
-    handler(action) {
-      /* istanbul ignore if */
-      if (this.$isServer) {
-        return;
-      }
-
-      if (action !== this.handlerStatus && this.hideOnClickOutside) {
-        this.handlerStatus = action;
-        document.body[(action ? 'add' : 'remove') + 'EventListener'](
-          'touchstart',
-          this.onBlur
-        );
-      }
-    },
-
     onBlur() {
       this.$emit('blur');
     },
