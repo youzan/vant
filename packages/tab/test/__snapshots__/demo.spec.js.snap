@@ -14,16 +14,16 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-tabs__content">
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 3
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -48,25 +48,25 @@ exports[`renders demo correctly 1`] = `
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 1
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -86,10 +86,10 @@ exports[`renders demo correctly 1`] = `
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 1
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -108,10 +108,10 @@ exports[`renders demo correctly 1`] = `
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 1
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -130,7 +130,7 @@ exports[`renders demo correctly 1`] = `
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 1
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -148,16 +148,16 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-tabs__content">
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 3
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -188,7 +188,7 @@ exports[`renders demo correctly 1`] = `
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 1
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
@@ -243,16 +243,16 @@ exports[`renders demo correctly 1`] = `
         </div>
       </div>
       <div class="van-tabs__content">
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
         <div role="tabpanel" class="van-tab__pane" style="">
           内容 3
         </div>
-        <div role="tabpanel" aria-hidden="true" class="van-tab__pane" style="display: none;">
+        <div role="tabpanel" class="van-tab__pane" style="display: none;">
           <!---->
         </div>
       </div>
