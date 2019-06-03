@@ -19,6 +19,15 @@ test('render icon with url name', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('render icon with local image', () => {
+  const wrapper = mount(Icon, {
+    propsData: {
+      name: '/assets/icon.jpg'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('render icon default slot', () => {
   const wrapper = mount({
     render(h) {

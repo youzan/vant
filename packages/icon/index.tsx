@@ -1,7 +1,6 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
-import { isSrc } from '../utils/validate/src';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -22,13 +21,17 @@ export type IconEvents = {
 
 const [sfc] = use('icon');
 
+function isImage(name?: string): boolean {
+  return name ? name.indexOf('/') !== -1 : false;
+}
+
 function Icon(
   h: CreateElement,
   props: IconProps,
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const urlIcon = isSrc(props.name);
+  const urlIcon = isImage(props.name);
 
   return (
     <props.tag
