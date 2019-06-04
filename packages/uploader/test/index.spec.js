@@ -113,3 +113,26 @@ test('file size overlimit', async () => {
   await later();
   expect(wrapper.emitted('oversize')[2]).toBeFalsy();
 });
+
+it('render upload-text', () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      uploadText: 'Text'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+it('render preview image', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      preview: true
+    }
+  });
+
+  wrapper.vm.onChange(file);
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});

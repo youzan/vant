@@ -1,7 +1,7 @@
 <template>
   <demo-section>
     <demo-block :title="$t('basicUsage')">
-      <van-uploader />
+      <van-uploader preview />
     </demo-block>
 
     <demo-block :title="$t('uploadStyle')">

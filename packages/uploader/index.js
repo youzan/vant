@@ -1,5 +1,6 @@
 import { use } from '../utils';
 import Icon from '../icon';
+import Image from '../image';
 
 const [sfc, bem] = use('uploader');
 
@@ -7,6 +8,7 @@ export default sfc({
   inheritAttrs: false,
 
   props: {
+    preview: Boolean,
     disabled: Boolean,
     uploadText: String,
     beforeRead: Function,
@@ -23,6 +25,12 @@ export default sfc({
       type: Number,
       default: Number.MAX_VALUE
     }
+  },
+
+  data() {
+    return {
+      previewImages: []
+    };
   },
 
   computed: {
@@ -89,48 +97,79 @@ export default sfc({
       if (oversize) {
         this.$emit('oversize', files, this.detail);
       } else {
-        this.afterRead && this.afterRead(files, this.detail);
+        if (Array.isArray(files)) {
+          files.forEach(this.addPreviewImage);
+        } else {
+          this.addPreviewImage(files);
+        }
+
+        if (this.afterRead) {
+          this.afterRead(files, this.detail);
+        }
       }
       this.resetInput();
     },
 
+    addPreviewImage(file) {
+      this.previewImages.push(file.content);
+    },
+
     resetInput() {
+      /* istanbul ignore else */
       if (this.$refs.input) {
         this.$refs.input.value = '';
       }
-    }
-  },
+    },
 
-  render(h) {
-    const { slots, accept, disabled, uploadText } = this;
+    renderPreview() {
+      if (this.preview) {
+        return this.previewImages.map(image => (
+          <Image fit="cover" class={bem('preview')} src={image} />
+        ));
+      }
+    },
 
-    function Upload() {
-      const slot = slots();
+    renderUpload() {
+      const slot = this.slots();
+
+      const Input = (
+        <input
+          {...{ attrs: this.$attrs }}
+          ref="input"
+          type="file"
+          accept={this.accept}
+          class={bem('input')}
+          disabled={this.disabled}
+          onChange={this.onChange}
+        />
+      );
 
       if (slot) {
-        return slot;
+        return (
+          <div class={bem('input-wrapper')}>
+            {slot}
+            {Input}
+          </div>
+        );
       }
 
       return (
         <div class={bem('upload')}>
           <Icon name="plus" class={bem('upload-icon')} />
-          {uploadText && <span class={bem('upload-text')}>{uploadText}</span>}
+          {this.uploadText && <span class={bem('upload-text')}>{this.uploadText}</span>}
+          {Input}
         </div>
       );
     }
+  },
 
+  render(h) {
     return (
       <div class={bem()}>
-        {Upload()}
-        <input
-          {...{ attrs: this.$attrs }}
-          ref="input"
-          type="file"
-          accept={accept}
-          class={bem('input')}
-          disabled={disabled}
-          onChange={this.onChange}
-        />
+        <div class={bem('wrapper')}>
+          {this.renderPreview()}
+          {this.renderUpload()}
+        </div>
       </div>
     );
   }

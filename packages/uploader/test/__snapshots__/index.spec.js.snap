@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render preview image 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-image van-uploader__preview"><img src="test" class="van-image__img" style="object-fit: cover;">
+      <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+          <!----></i></div>
+    </div>
+    <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+        <!----></i><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;
+
+exports[`render upload-text 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-uploader__upload"><i class="van-icon van-icon-plus van-uploader__upload-icon">
+        <!----></i><span class="van-uploader__upload-text">Text</span><input type="file" accept="image/*" class="van-uploader__input"></div>
+  </div>
+</div>
+`;

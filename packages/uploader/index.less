@@ -4,6 +4,11 @@
   position: relative;
   display: inline-block;
 
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   &__input {
     position: absolute;
     top: 0;
@@ -13,9 +18,14 @@
     overflow: hidden; // to clip file-upload-button
     cursor: pointer;
     opacity: 0;
+
+    &-wrapper {
+      position: relative;
+    }
   }
 
   &__upload {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,6 +33,7 @@
     box-sizing: border-box;
     width: 80px;
     height: 80px;
+    margin: 0 10px 10px 0;
     background-color: @white;
     border: 1px dashed @gray-light;
 
@@ -36,5 +47,11 @@
       color: @gray-dark;
       font-size: 12px;
     }
+  }
+
+  &__preview {
+    width: 80px;
+    height: 80px;
+    margin: 0 10px 10px 0;
   }
 }

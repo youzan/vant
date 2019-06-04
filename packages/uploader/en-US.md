@@ -13,7 +13,7 @@ Vue.use(Uploader);
 ### Basic Usage
 
 ```html
-<van-uploader :after-read="onRead" />
+<van-uploader preview :after-read="onRead" />
 ```
 
 ```javascript
@@ -42,6 +42,7 @@ export default {
 |------|------|------|------|
 | name | Input name | `String` | - |
 | accept | Accepted file type | `String` | `image/*` |
+| preview | Whether to show image preview | `Boolean` | `false` |
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
 | capture | Capture，can be set to `camera` | `String` | - |

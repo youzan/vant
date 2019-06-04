@@ -13,7 +13,7 @@ Vue.use(Uploader);
 ### 基础用法
 
 ```html
-<van-uploader :after-read="onRead" />
+<van-uploader preview :after-read="onRead" />
 ```
 
 ```javascript
@@ -42,6 +42,7 @@ export default {
 |------|------|------|------|------|
 | name | 标识符，可以在回调函数的第二项参数中获取 | `String` | - | 1.6.13 |
 | accept | 接受的文件类型 | `String` | `image/*` | - |
+| preview | 是否在上传完成后展示预览图 | `Boolean` | `false` | 2.0.0 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `String` | - | 2.0.0 |
