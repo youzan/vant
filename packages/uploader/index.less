@@ -31,27 +31,27 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    width: 80px;
-    height: 80px;
+    width: @uploader-size;
+    height: @uploader-size;
     margin: 0 10px 10px 0;
     background-color: @white;
     border: 1px dashed @gray-light;
 
     &-icon {
-      color: @gray-dark;
-      font-size: 24px;
+      color: @uploader-icon-color;
+      font-size: @uploader-icon-size;
     }
 
     &-text {
       margin-top: 10px;
-      color: @gray-dark;
-      font-size: 12px;
+      color: @uploader-text-color;
+      font-size: @uploader-text-font-size;
     }
   }
 
   &__preview {
-    width: 80px;
-    height: 80px;
+    width: @uploader-size;
+    height: @uploader-size;
     margin: 0 10px 10px 0;
   }
 }
