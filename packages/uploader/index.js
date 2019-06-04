@@ -33,7 +33,7 @@ export default sfc({
 
   data() {
     return {
-      previewImages: []
+      uploadedFiles: []
     };
   },
 
@@ -61,7 +61,7 @@ export default sfc({
       }
 
       if (Array.isArray(files)) {
-        const maxCount = this.maxCount - this.previewImages.length;
+        const maxCount = this.maxCount - this.uploadedFiles.length;
         files = files.slice(0, maxCount);
 
         Promise.all(files.map(this.readFile)).then(contents => {
@@ -122,7 +122,7 @@ export default sfc({
     },
 
     addPreviewImage(file) {
-      this.previewImages.push(file.content);
+      this.uploadedFiles.push(file);
     },
 
     resetInput() {
@@ -134,14 +134,14 @@ export default sfc({
 
     renderPreview() {
       if (this.preview) {
-        return this.previewImages.map(image => (
-          <Image fit="cover" class={bem('preview')} src={image} />
+        return this.uploadedFiles.map(file => (
+          <Image fit="cover" class={bem('preview')} src={file.content} />
         ));
       }
     },
 
     renderUpload() {
-      if (this.previewImages.length >= this.maxCount) {
+      if (this.uploadedFiles.length >= this.maxCount) {
         return;
       }
 

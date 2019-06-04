@@ -13,13 +13,13 @@ Vue.use(Uploader);
 ### Basic Usage
 
 ```html
-<van-uploader preview :after-read="onRead" />
+<van-uploader preview :after-read="afterRead" />
 ```
 
 ```javascript
 export default {
   methods: {
-    onRead(file) {
+    afterRead(file) {
       console.log(file)
     }
   }
@@ -39,7 +39,7 @@ export default {
 ### Upload Style
 
 ```html
-<van-uploader :after-read="onRead">
+<van-uploader>
   <van-button icon="photo" type="primary">Upload Image</van-button>
 </van-uploader>
 ```

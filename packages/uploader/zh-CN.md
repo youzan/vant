@@ -15,13 +15,13 @@ Vue.use(Uploader);
 图片上传完毕后会触发`after-read`传入的回调函数，获取到对应的`file`对象
 
 ```html
-<van-uploader preview :after-read="onRead" />
+<van-uploader preview :after-read="afterRead" />
 ```
 
 ```javascript
 export default {
   methods: {
-    onRead(file) {
+    afterRead(file) {
       console.log(file)
     }
   }
@@ -45,7 +45,7 @@ export default {
 通过插槽可以自定义上传区域的样式
 
 ```html
-<van-uploader :after-read="onRead">
+<van-uploader>
   <van-button icon="photo" type="primary">上传图片</van-button>
 </van-uploader>
 ```

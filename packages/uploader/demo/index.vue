@@ -29,32 +29,14 @@
 export default {
   i18n: {
     'zh-CN': {
-      name: '标识名称',
       upload: '上传图片',
       maxCount: '上传数量限制',
       uploadStyle: '自定义上传样式'
     },
     'en-US': {
-      name: 'Name',
       upload: 'Upload Image',
       maxCount: 'Max Count',
       uploadStyle: 'Upload Style'
-    }
-  },
-
-  methods: {
-    logContent(file) {
-      console.log(file);
-    },
-
-    beforeRead(index) {
-      return file => {
-        console.log(index, file);
-      };
-    },
-
-    toastName(file, detail) {
-      this.$toast(detail.name);
     }
   }
 };
