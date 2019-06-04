@@ -4,6 +4,14 @@
       <van-uploader preview />
     </demo-block>
 
+    <demo-block :title="$t('maxCount')">
+      <van-uploader
+        preview
+        multiple
+        :max-count="2"
+      />
+    </demo-block>
+
     <demo-block :title="$t('uploadStyle')">
       <van-uploader>
         <van-button
@@ -23,11 +31,13 @@ export default {
     'zh-CN': {
       name: '标识名称',
       upload: '上传图片',
+      maxCount: '上传数量限制',
       uploadStyle: '自定义上传样式'
     },
     'en-US': {
       name: 'Name',
       upload: 'Upload Image',
+      maxCount: 'Max Count',
       uploadStyle: 'Upload Style'
     }
   },

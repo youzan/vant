@@ -24,6 +24,10 @@ export default sfc({
     maxSize: {
       type: Number,
       default: Number.MAX_VALUE
+    },
+    maxCount: {
+      type: Number,
+      default: Number.MAX_VALUE
     }
   },
 
@@ -44,17 +48,22 @@ export default sfc({
   methods: {
     onChange(event) {
       let { files } = event.target;
+
       if (this.disabled || !files.length) {
         return;
       }
 
       files = files.length === 1 ? files[0] : [].slice.call(files, 0);
+
       if (!files || (this.beforeRead && !this.beforeRead(files, this.detail))) {
         this.resetInput();
         return;
       }
 
       if (Array.isArray(files)) {
+        const maxCount = this.maxCount - this.previewImages.length;
+        files = files.slice(0, maxCount);
+
         Promise.all(files.map(this.readFile)).then(contents => {
           let oversize = false;
           const payload = files.map((file, index) => {
@@ -96,17 +105,19 @@ export default sfc({
     onAfterRead(files, oversize) {
       if (oversize) {
         this.$emit('oversize', files, this.detail);
-      } else {
-        if (Array.isArray(files)) {
-          files.forEach(this.addPreviewImage);
-        } else {
-          this.addPreviewImage(files);
-        }
-
-        if (this.afterRead) {
-          this.afterRead(files, this.detail);
-        }
+        return;
       }
+
+      if (Array.isArray(files)) {
+        files.forEach(this.addPreviewImage);
+      } else {
+        this.addPreviewImage(files);
+      }
+
+      if (this.afterRead) {
+        this.afterRead(files, this.detail);
+      }
+
       this.resetInput();
     },
 
@@ -130,6 +141,10 @@ export default sfc({
     },
 
     renderUpload() {
+      if (this.previewImages.length >= this.maxCount) {
+        return;
+      }
+
       const slot = this.slots();
 
       const Input = (

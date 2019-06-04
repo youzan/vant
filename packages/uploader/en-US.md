@@ -26,6 +26,16 @@ export default {
 };
 ```
 
+### Max Count
+
+```html
+<van-uploader
+  preview
+  multiple
+  :max-count="2"
+/>
+```
+
 ### Upload Style
 
 ```html
@@ -49,6 +59,7 @@ export default {
 | before-read | Hook before reading the file, return false to stop reading the file | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |
+| max-count | Max count of image | `Number` | - |
 | result-type | Type of file read result, can be set to `dataUrl` `text` | `String` | `dataUrl` |
 | upload-text | Upload text | `String` | - |
 

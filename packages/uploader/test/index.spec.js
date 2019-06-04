@@ -136,3 +136,17 @@ it('render preview image', async () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+it('max-count prop', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      preview: true,
+      maxCount: 1
+    }
+  });
+
+  wrapper.vm.onChange(multiFile);
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});

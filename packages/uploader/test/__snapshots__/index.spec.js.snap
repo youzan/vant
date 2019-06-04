@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`max-count prop 1`] = `
+<div class="van-uploader">
+  <div class="van-uploader__wrapper">
+    <div class="van-image van-uploader__preview"><img src="test" class="van-image__img" style="object-fit: cover;">
+      <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+          <!----></i></div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`render preview image 1`] = `
 <div class="van-uploader">
   <div class="van-uploader__wrapper">
