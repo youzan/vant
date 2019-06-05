@@ -19,6 +19,10 @@
 
 - 支持`Number`类型的`input-width`属性
 
+##### SwipeCell
+
+- 修复只渲染单侧内容时报错的问题
+
 ##### Uploader
 
 - 新增`preview`属性
