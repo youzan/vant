@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, suffixPx } from '../utils';
 import Icon from '../icon';
 import Image from '../image';
 
@@ -11,8 +11,9 @@ export default sfc({
     preview: Boolean,
     disabled: Boolean,
     uploadText: String,
-    beforeRead: Function,
     afterRead: Function,
+    beforeRead: Function,
+    previewSize: [Number, String],
     accept: {
       type: String,
       default: 'image/*'
@@ -135,7 +136,13 @@ export default sfc({
     renderPreview() {
       if (this.preview) {
         return this.uploadedFiles.map(file => (
-          <Image fit="cover" class={bem('preview')} src={file.content} />
+          <Image
+            fit="cover"
+            class={bem('preview')}
+            src={file.content}
+            width={this.previewSize}
+            height={this.previewSize}
+          />
         ));
       }
     },
@@ -168,8 +175,17 @@ export default sfc({
         );
       }
 
+      let style;
+      if (this.previewSize) {
+        const size = suffixPx(this.previewSize);
+        style = {
+          width: size,
+          height: size
+        };
+      }
+
       return (
-        <div class={bem('upload')}>
+        <div class={bem('upload')} style={style}>
           <Icon name="plus" class={bem('upload-icon')} />
           {this.uploadText && <span class={bem('upload-text')}>{this.uploadText}</span>}
           {Input}

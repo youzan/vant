@@ -150,3 +150,17 @@ it('max-count prop', async () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+it('preview-size prop', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      preview: true,
+      previewSize: 30
+    }
+  });
+
+  wrapper.vm.onChange(file);
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});

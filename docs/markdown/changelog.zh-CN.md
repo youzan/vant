@@ -23,6 +23,7 @@
 
 - 新增`preview`属性
 - 新增`max-count`属性
+- 新增`preview-size`属性
 
 
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)

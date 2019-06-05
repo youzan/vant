@@ -53,6 +53,7 @@ export default {
 | name | Input name | `String` | - |
 | accept | Accepted file type | `String` | `image/*` |
 | preview | Whether to show image preview | `Boolean` | `false` |
+| preview-size | Size of preview image | `String | Number` | `80px` |
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
 | capture | Capture，can be set to `camera` | `String` | - |
