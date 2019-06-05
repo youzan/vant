@@ -1,5 +1,37 @@
 # Changelog
 
+### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
+`2019-06-05`
+
+##### Checkbox
+
+- Fix `label-position` prop not work
+
+##### Field
+
+- Add `click` event
+- Add `clickable` prop
+
+##### Radio
+
+- Fix `label-position` prop not work
+
+##### Stepper
+
+- Support `Number` type of `input-width` prop
+
+##### SwipeCell
+
+- Fix render error when one side is empty
+
+##### Uploader
+
+- Support bind `v-model`
+- Add `max-count` prop
+- Add `preview-size` prop
+- Add `preview-image` prop
+
+
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
 `2019-05-31`
 
