@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`label disabled 1`] = `
+<div role="checkbox" tabindex="0" aria-checked="undefined" class="van-checkbox">
+  <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
+      <!----></i></div><span class="van-checkbox__label">Label</span>
+</div>
+`;
+
+exports[`label-position prop 1`] = `
+<div role="checkbox" tabindex="0" aria-checked="undefined" class="van-checkbox"><span class="van-checkbox__label van-checkbox__label--left">Label</span>
+  <div class="van-checkbox__icon van-checkbox__icon--round"><i class="van-icon van-icon-success">
+      <!----></i></div>
+</div>
+`;

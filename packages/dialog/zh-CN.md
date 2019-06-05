@@ -2,14 +2,36 @@
 
 ### 介绍
 
-弹出框组件支持函数调用和组件调用两种形式
+弹出模态框，常用于消息提示、消息确认、在当前页面内完成特定的交互操作
 
-### 引入
+弹出框组件支持函数调用和组件调用两种方式
+
+### 函数调用
+
+Dialog 是一个函数而不是组件，因此可以直接调用，展示对应的提示弹窗
 
 ```js
 import { Dialog } from 'vant';
 
+Dialog({ message: '提示' });
+```
+
+### 组件调用
+
+通过组件调用 Dialog 时，可以通过下面的方式进行注册
+
+```js
+import { Dialog } from 'vant';
+
+// 全局注册
 Vue.use(Dialog);
+
+// 局部注册
+export default {
+  components: {
+    [Dialog.Component.name]: Dialog.Component
+  }
+}
 ```
 
 ## 代码演示
@@ -82,7 +104,7 @@ export default {
 
 ### 组件调用
 
-如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式，调用前需要通过 `Vue.use` 注册组件
+如果需要在弹窗内嵌入组件或其他自定义内容，可以使用组件调用的方式
 
 ```html
 <van-dialog
@@ -103,6 +125,7 @@ export default {
   }
 }
 ```
+
 
 ## API
 

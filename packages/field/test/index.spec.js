@@ -10,6 +10,13 @@ test('input event', () => {
   expect(wrapper.emitted('input')[0][0]).toEqual('1');
 });
 
+test('click event', () => {
+  const wrapper = mount(Field);
+
+  wrapper.trigger('click');
+  expect(wrapper.emitted('click')[0][0]).toBeTruthy();
+});
+
 test('click icon event', () => {
   const wrapper = mount(Field, {
     propsData: {

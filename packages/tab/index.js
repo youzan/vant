@@ -41,20 +41,20 @@ export default sfc({
   },
 
   render(h) {
-    const { slots } = this;
+    const { slots, selected } = this;
     const shouldRender = this.inited || !this.parent.lazyRender;
+    const Content = [shouldRender ? slots() : h()];
 
-    const Content = [
-      shouldRender ? slots() : h(),
-      slots('title') && <div ref="title">{slots('title')}</div>
-    ];
+    if (slots('title')) {
+      Content.push(<div ref="title">{slots('title')}</div>);
+    }
 
     if (this.parent.animated) {
       return (
         <div
           role="tabpanel"
-          aria-hidden={!this.selected}
-          class={bem('pane-wrapper', { inactive: !this.selected })}
+          aria-hidden={!selected}
+          class={bem('pane-wrapper', { inactive: !selected })}
         >
           <div class={bem('pane')}>{Content}</div>
         </div>
@@ -62,12 +62,7 @@ export default sfc({
     }
 
     return (
-      <div
-        vShow={this.selected}
-        role="tabpanel"
-        class={bem('pane')}
-        aria-hidden={!this.selected}
-      >
+      <div vShow={selected} role="tabpanel" class={bem('pane')}>
         {Content}
       </div>
     );

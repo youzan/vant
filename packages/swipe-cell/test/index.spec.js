@@ -106,3 +106,21 @@ it('auto calc width', async () => {
 
   restoreMock();
 });
+
+it('render one side', async () => {
+  const restoreMock = mockGetBoundingClientRect({
+    width: 50
+  });
+
+  const wrapper = mount(SwipeCell, {
+    scopedSlots: {
+      left: defaultProps.scopedSlots.left
+    }
+  });
+
+  await later();
+  triggerDrag(wrapper, 100, 0);
+  expect(wrapper).toMatchSnapshot();
+
+  restoreMock();
+});

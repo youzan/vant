@@ -89,6 +89,8 @@ Dialog.install = () => {
   Vue.use(VanDialog);
 };
 
+Dialog.Component = VanDialog;
+
 Vue.prototype.$dialog = Dialog;
 
 export default Dialog;

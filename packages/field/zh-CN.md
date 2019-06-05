@@ -133,8 +133,9 @@ Field 默认支持 Input 标签所有的原生属性，比如 `maxlength`、`pla
 | border | 是否显示内边框 | `Boolean` | `true` | - |
 | disabled | 是否禁用输入框 | `Boolean` | `false` | - |
 | readonly | 是否只读 | `Boolean` | `false` | - |
-| clearable | 是否启用清除控件 | `Boolean` | `false` | 1.1.9 |
 | required | 是否显示表单必填星号 | `Boolean` | `false` | - |
+| clearable | 是否启用清除控件 | `Boolean` | `false` | 1.1.9 |
+| clickable | 是否开启点击反馈 | `Boolean` | `false` | 2.0.0 |
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | 1.1.10 |
 | error | 是否将输入内容标红 | `Boolean` | `false` | - |
 | error-message | 底部错误提示文案，为空时不展示 | `String` | `''` | - 
@@ -154,6 +155,7 @@ Field 默认支持 Input 标签所有的原生事件，如 `focus`、`blur`、`k
 | 事件 | 说明 | 回调参数 |
 |------|------|------|
 | input | 输入框内容变化时触发 | - |
+| click | 点击时触发 | - |
 | clear | 点击清除按钮后触发 | - |
 | click-left-icon | 点击头部图标时触发 | - |
 | click-right-icon | 点击尾部图标时触发 | - |

@@ -31,8 +31,8 @@ test('disabled', () => {
 
 test('label disabled', () => {
   const wrapper = mount(Checkbox, {
-    slots: {
-      default: '<div />'
+    scopedSlots: {
+      default: () => 'Label'
     },
     propsData: {
       labelDisabled: true
@@ -41,6 +41,7 @@ test('label disabled', () => {
 
   wrapper.find('.van-checkbox__label').trigger('click');
   expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper).toMatchSnapshot();
 });
 
 test('checkbox group', async () => {
@@ -90,4 +91,17 @@ test('click event', () => {
   const icon = wrapper.find('.van-checkbox__icon');
   icon.trigger('click');
   expect(onClick).toHaveBeenCalledTimes(2);
+});
+
+test('label-position prop', () => {
+  const wrapper = mount(Checkbox, {
+    scopedSlots: {
+      default: () => 'Label'
+    },
+    propsData: {
+      labelPosition: 'left'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

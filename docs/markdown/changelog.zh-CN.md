@@ -1,6 +1,37 @@
 # 更新日志
 
+### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
+
+##### Checkbox
+
+- 修复`label-position`不生效的问题
+
+##### Field
+
+- 新增`click`事件
+- 新增`clickable`属性
+
+##### Radio
+
+- 修复`label-position`不生效的问题
+
+##### Stepper
+
+- 支持`Number`类型的`input-width`属性
+
+##### SwipeCell
+
+- 修复只渲染单侧内容时报错的问题
+
+##### Uploader
+
+- 新增`preview`属性
+- 新增`max-count`属性
+- 新增`preview-size`属性
+
+
 ### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
+`2019-05-31`
 
 ##### Field
 
@@ -15,6 +46,11 @@
 
 - 新增`onClose`选项
 - 新增`onOpened`选项
+
+##### Picker
+
+- 优化动画延时
+- 点击确认按钮时自动终止动画
 
 ##### Rate
 
@@ -35,6 +71,7 @@
 
 
 ### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
+`2019-05-28`
 
 #### 无障碍访问
 
@@ -81,6 +118,7 @@
 
 
 ### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
+`2019-05-24`
 
 #### 无障碍访问
 

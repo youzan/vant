@@ -1,14 +1,24 @@
 import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
+import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/color';
-import { on, off } from '../utils/event';
 import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/scroll';
 
 const [sfc, bem] = use('index-bar');
 
 export default sfc({
-  mixins: [TouchMixin, ParentMixin('vanIndexBar')],
+  mixins: [
+    TouchMixin,
+    ParentMixin('vanIndexBar'),
+    BindEventMixin(function (bind) {
+      if (!this.scroller) {
+        this.scroller = getScrollEventTarget(this.$el);
+      }
+
+      bind(this.scroller, 'scroll', this.onScroll);
+    })
+  ],
 
   props: {
     sticky: {
@@ -56,32 +66,7 @@ export default sfc({
     }
   },
 
-  mounted() {
-    this.scroller = getScrollEventTarget(this.$el);
-    this.handler(true);
-  },
-
-  destroyed() {
-    this.handler(false);
-  },
-
-  activated() {
-    this.handler(true);
-  },
-
-  deactivated() {
-    this.handler(false);
-  },
-
   methods: {
-    handler(bind) {
-      /* istanbul ignore else */
-      if (this.binded !== bind) {
-        this.binded = bind;
-        (bind ? on : off)(this.scroller, 'scroll', this.onScroll);
-      }
-    },
-
     onScroll() {
       if (!this.sticky) {
         return;
@@ -103,7 +88,7 @@ export default sfc({
         } else if (index === active - 1) {
           const activeItemTop = rects[active].top - scrollTop;
           item.active = activeItemTop > 0;
-          item.top = activeItemTop - rects[active].height;
+          item.top = activeItemTop - item.height;
         } else {
           item.active = false;
         }

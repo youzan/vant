@@ -31,25 +31,24 @@ export default sfc({
 
   computed: {
     computedLeftWidth() {
-      if (this.leftWidth) {
-        return this.leftWidth;
-      }
-
-      const rect = this.$refs.left.getBoundingClientRect();
-      return rect.width;
+      return this.leftWidth || this.getWidthByRef('left');
     },
 
     computedRightWidth() {
-      if (this.rightWidth) {
-        return this.rightWidth;
-      }
-
-      const rect = this.$refs.right.getBoundingClientRect();
-      return rect.width;
+      return this.rightWidth || this.getWidthByRef('right');
     }
   },
 
   methods: {
+    getWidthByRef(ref) {
+      if (this.$refs[ref]) {
+        const rect = this.$refs[ref].getBoundingClientRect();
+        return rect.width;
+      }
+
+      return 0;
+    },
+
     open(position) {
       const offset = position === 'left' ? this.computedLeftWidth : -this.computedRightWidth;
       this.swipeMove(offset);

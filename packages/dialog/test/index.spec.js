@@ -100,3 +100,7 @@ test('button text', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('dialog component', () => {
+  expect(Dialog.Component).toEqual(DialogVue);
+});

@@ -12,24 +12,40 @@ Vue.use(Uploader);
 
 ### 基础用法
 
+图片上传完毕后会触发`after-read`传入的回调函数，获取到对应的`file`对象
+
 ```html
-<van-uploader :after-read="onRead" />
+<van-uploader preview :after-read="afterRead" />
 ```
 
 ```javascript
 export default {
   methods: {
-    onRead(file) {
+    afterRead(file) {
       console.log(file)
     }
   }
 };
 ```
 
-### 自定义上传样式
+### 上传数量限制
+
+通过`max-count`属性可以限制上传图片的数量。上传数量达到限制后，会自动隐藏上传区域
 
 ```html
-<van-uploader :after-read="onRead">
+<van-uploader
+  preview
+  multiple
+  :max-count="2"
+/>
+```
+
+### 自定义上传样式
+
+通过插槽可以自定义上传区域的样式
+
+```html
+<van-uploader>
   <van-button icon="photo" type="primary">上传图片</van-button>
 </van-uploader>
 ```
@@ -42,12 +58,15 @@ export default {
 |------|------|------|------|------|
 | name | 标识符，可以在回调函数的第二项参数中获取 | `String` | - | 1.6.13 |
 | accept | 接受的文件类型 | `String` | `image/*` | - |
+| preview | 是否在上传完成后展示预览图 | `Boolean` | `false` | 2.0.0 |
+| preview-size | 预览图和上传区域的尺寸，单位为`px` | `String | Number` | `80px` | 2.0.0 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `String` | - | 2.0.0 |
 | before-read | 文件读取前的回调函数，返回`false`可终止文件读取 | `Function` | - | - |
 | after-read | 文件读取完成后的回调函数 | `Function` | - | - |
 | max-size | 文件大小限制，单位为`byte` | `Number` | - | - |
+| max-count | 图片上传数量限制 | `Number` | - | 2.0.0 |
 | result-type | 文件读取结果类型，可选值为`text` | `String` | `dataUrl` | - |
 | upload-text | 上传区域文字提示 | `String` | - | 2.0.0 |
 
@@ -55,7 +74,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| oversize | 文件大小超过限制时触发 | 同 after-read |
+| oversize | 文件大小超过限制时触发 | 同`after-read` |
 
 ### Slots
 

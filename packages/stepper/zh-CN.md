@@ -26,6 +26,24 @@ export default {
 }
 ```
 
+### 步长设置
+
+```html
+<van-stepper v-model="value" step="2" />
+```
+
+### 限制输入范围
+
+```html
+<van-stepper v-model="value" min="5" max="8" />
+```
+
+### 限制输入整数
+
+```html
+<van-stepper v-model="value" integer />
+```
+
 ### 禁用状态
 
 通过设置`disabled`属性来禁用 stepper
@@ -68,20 +86,6 @@ export default {
 }
 ```
 
-### 高级用法
-
-可以对组件设置`step`、`min`、`max`属性
-
-```html
-<van-stepper
-  v-model="value"
-  integer
-  :min="5"
-  :max="40"
-  :step="2"
-/>
-```
-
 ## API
 
 ### Props
@@ -96,7 +100,7 @@ export default {
 | disabled | 是否禁用步进器 | `Boolean` | `false` | - |
 | disable-input | 是否禁用输入框 | `Boolean` | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | `Boolean` | `false` | - |
-| input-width | 输入框宽度，须指定单位 | `String` | `30px` | 1.6.13 |
+| input-width | 输入框宽度，默认单位为`px` | `String | Number` | `30px` | 1.6.13 |
 
 ### Events
 

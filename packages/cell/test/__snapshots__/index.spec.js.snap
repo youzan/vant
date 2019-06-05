@@ -6,10 +6,8 @@ exports[`arrow direction 1`] = `
 `;
 
 exports[`render slot 1`] = `
-<div class="van-cell">
-  <div class="van-cell__title">Custom Title<div class="van-cell__label">Custom Label</div>
-  </div>Custom Extra
-</div>
+<div class="van-cell">Custom Icon<div class="van-cell__title">Custom Title<div class="van-cell__label">Custom Label</div>
+  </div>Custom Extra</div>
 `;
 
 exports[`title-style prop 1`] = `

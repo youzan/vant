@@ -27,6 +27,7 @@ export interface Dialog {
   install(): void;
   setDefaultOptions(options: DialogOptions): void;
   resetDefaultOptions(): void;
+  Component: any;
 }
 
 declare module 'vue/types/vue' {

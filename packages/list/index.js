@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import Loading from '../loading';
-import { on, off } from '../utils/event';
+import { BindEventMixin } from '../mixins/bind-event';
 import {
   getScrollTop,
   getElementTop,
@@ -11,6 +11,16 @@ import {
 const [sfc, bem, t] = use('list');
 
 export default sfc({
+  mixins: [
+    BindEventMixin(function (bind) {
+      if (!this.scroller) {
+        this.scroller = getScrollEventTarget(this.$el);
+      }
+
+      bind(this.scroller, 'scroll', this.check);
+    })
+  ],
+
   model: {
     prop: 'loading'
   },
@@ -37,24 +47,9 @@ export default sfc({
   },
 
   mounted() {
-    this.scroller = getScrollEventTarget(this.$el);
-    this.handler(true);
-
     if (this.immediateCheck) {
       this.$nextTick(this.check);
     }
-  },
-
-  destroyed() {
-    this.handler(false);
-  },
-
-  activated() {
-    this.handler(true);
-  },
-
-  deactivated() {
-    this.handler(false);
   },
 
   watch: {
@@ -117,14 +112,6 @@ export default sfc({
     clickErrorText() {
       this.$emit('update:error', false);
       this.$nextTick(this.check);
-    },
-
-    handler(bind) {
-      /* istanbul ignore else */
-      if (this.binded !== bind) {
-        this.binded = bind;
-        (bind ? on : off)(this.scroller, 'scroll', this.check);
-      }
     }
   },
 

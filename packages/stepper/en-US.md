@@ -26,6 +26,24 @@ export default {
 }
 ```
 
+### Step
+
+```html
+<van-stepper v-model="value" step="2" />
+```
+
+### Range
+
+```html
+<van-stepper v-model="value" min="5" max="8" />
+```
+
+### Integer
+
+```html
+<van-stepper v-model="value" integer />
+```
+
 ### Disabled
 
 ```html
@@ -66,19 +84,6 @@ export default {
 }
 ```
 
-### Advanced Usage
-
-```html
-<van-stepper
-  v-model="value"
-  integer
-  :min="5"
-  :max="40"
-  :step="2"
-  :default-value="9"
-/>
-```
-
 ## API
 
 ### Props
@@ -93,7 +98,7 @@ export default {
 | disabled | Disable value change | `Boolean` | `false` |
 | disable-input | Disable input | `Boolean` | `false` |
 | async-change | Whether to enable async change | `Boolean` | `false` | - |
-| input-width | Input width | `String` | `30px` |
+| input-width | Input width | `String | Number` | `30px` |
 
 ### Events
 

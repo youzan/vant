@@ -106,3 +106,19 @@ test('reset method', async () => {
   wrapper.vm.reset();
   expect(wrapper).toMatchSnapshot();
 });
+
+test('columns-num prop', async () => {
+  const wrapper = mount(Area, {
+    propsData: {
+      areaList,
+      columnsNum: 3
+    }
+  });
+
+  wrapper.setProps({
+    columnsNum: 2
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+});

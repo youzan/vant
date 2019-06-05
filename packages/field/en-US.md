@@ -130,8 +130,9 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | border | Whether to show inner border | `Boolean` | `true` |
 | disabled | Whether to disable field | `Boolean` | `false` |
 | readonly | Whether to be readonly | `Boolean` | `false` |
+| required | Whether to show required mark | `Boolean` | `false` |
 | clearable | Whether to be clearable | `Boolean` | `false` |
-| required | Whether to show required mark | `Boolean` | `false` 
+| clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
 | is-link | Whether to show link icon | `Boolean` | `false` |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
@@ -151,6 +152,7 @@ Field support all native events of input tag，such as `focus`、`blur`、`keypr
 | Event | Description | Parameters |
 |------|------|------|
 | input | Triggered when value changed | - |
+| click | Triggered when click field | - |
 | clear | Triggered when click clear icon | - |
 | click-left-icon | Triggered when click the left icon of Field | - |
 | click-right-icon | Triggered when click the right icon of Field | - |
