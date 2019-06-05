@@ -1,4 +1,5 @@
 import { use, suffixPx } from '../utils';
+import { toArray, readFile, isOversize } from './utils';
 import Icon from '../icon';
 import Image from '../image';
 
@@ -56,53 +57,35 @@ export default sfc({
         return;
       }
 
-      files = files.length === 1 ? files[0] : [].slice.call(files, 0);
+      files = files.length === 1 ? files[0] : [].slice.call(files);
 
-      if (!files || (this.beforeRead && !this.beforeRead(files, this.detail))) {
+      if (this.beforeRead && !this.beforeRead(files, this.detail)) {
         this.resetInput();
         return;
       }
 
+      const oversize = isOversize(files, this.maxSize);
+
       if (Array.isArray(files)) {
         const maxCount = this.maxCount - this.fileList.length;
-        files = files.slice(0, maxCount);
 
-        Promise.all(files.map(this.readFile)).then(contents => {
-          let oversize = false;
-          const payload = files.map((file, index) => {
-            if (file.size > this.maxSize) {
-              oversize = true;
-            }
+        if (files.length > maxCount) {
+          files = files.slice(0, maxCount);
+        }
 
-            return {
-              file: files[index],
-              content: contents[index]
-            };
-          });
+        Promise.all(files.map(file => readFile(file, this.resultType))).then(contents => {
+          const fileList = files.map((file, index) => ({
+            file,
+            content: contents[index]
+          }));
 
-          this.onAfterRead(payload, oversize);
+          this.onAfterRead(fileList, oversize);
         });
       } else {
-        this.readFile(files).then(content => {
-          this.onAfterRead({ file: files, content }, files.size > this.maxSize);
+        readFile(files, this.resultType).then(content => {
+          this.onAfterRead({ file: files, content }, oversize);
         });
       }
-    },
-
-    readFile(file) {
-      return new Promise(resolve => {
-        const reader = new FileReader();
-
-        reader.onload = event => {
-          resolve(event.target.result);
-        };
-
-        if (this.resultType === 'dataUrl') {
-          reader.readAsDataURL(file);
-        } else if (this.resultType === 'text') {
-          reader.readAsText(file);
-        }
-      });
     },
 
     onAfterRead(files, oversize) {
@@ -112,19 +95,11 @@ export default sfc({
       }
 
       this.resetInput();
-      this.updateFileList(files);
+      this.$emit('input', [...this.fileList, ...toArray(files)]);
 
       if (this.afterRead) {
         this.afterRead(files, this.detail);
       }
-    },
-
-    updateFileList(files) {
-      if (!Array.isArray(files)) {
-        files = [files];
-      }
-
-      this.$emit('input', [...this.fileList, ...files]);
     },
 
     resetInput() {
