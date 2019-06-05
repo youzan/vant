@@ -1,5 +1,15 @@
 ## 更新日志
 
+## [v1.6.22](https://github.com/youzan/vant/tree/v1.6.22)
+`2019-06-05`
+
+**Improvements**
+
+- 修复 Icon 不支持传入本地图片的问题
+- 修复 Area 动态设置 columns-num 时渲染错误的问题
+- 修复 AddressList select 事件触发两次的问题
+
+
 ## [v1.6.21](https://github.com/youzan/vant/tree/v1.6.21)
 `2019-05-30`
 

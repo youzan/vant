@@ -1,5 +1,23 @@
 ## Changelog
 
+## [v1.6.22](https://github.com/youzan/vant/tree/v1.6.22)
+`2019-06-05`
+
+**Improvements**
+
+- fix Icon should support render local image
+- fix Area should support set columns-num dynamically
+- fix AddressList select event triggered twice
+
+
+## [v1.6.21](https://github.com/youzan/vant/tree/v1.6.21)
+`2019-05-30`
+
+**Improvements**
+
+- Card: add bottom slot
+
+
 ## [v1.6.20](https://github.com/youzan/vant/tree/v1.6.20)
 `2019-05-28`
 
