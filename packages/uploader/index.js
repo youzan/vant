@@ -7,13 +7,21 @@ const [sfc, bem] = use('uploader');
 export default sfc({
   inheritAttrs: false,
 
+  model: {
+    prop: 'fileList'
+  },
+
   props: {
-    preview: Boolean,
+    fileList: Array,
     disabled: Boolean,
     uploadText: String,
     afterRead: Function,
     beforeRead: Function,
     previewSize: [Number, String],
+    previewImage: {
+      type: Boolean,
+      default: true
+    },
     accept: {
       type: String,
       default: 'image/*'
@@ -30,12 +38,6 @@ export default sfc({
       type: Number,
       default: Number.MAX_VALUE
     }
-  },
-
-  data() {
-    return {
-      uploadedFiles: []
-    };
   },
 
   computed: {
@@ -62,7 +64,7 @@ export default sfc({
       }
 
       if (Array.isArray(files)) {
-        const maxCount = this.maxCount - this.uploadedFiles.length;
+        const maxCount = this.maxCount - this.fileList.length;
         files = files.slice(0, maxCount);
 
         Promise.all(files.map(this.readFile)).then(contents => {
@@ -109,21 +111,20 @@ export default sfc({
         return;
       }
 
-      if (Array.isArray(files)) {
-        files.forEach(this.addPreviewImage);
-      } else {
-        this.addPreviewImage(files);
-      }
+      this.resetInput();
+      this.updateFileList(files);
 
       if (this.afterRead) {
         this.afterRead(files, this.detail);
       }
-
-      this.resetInput();
     },
 
-    addPreviewImage(file) {
-      this.uploadedFiles.push(file);
+    updateFileList(files) {
+      if (!Array.isArray(files)) {
+        files = [files];
+      }
+
+      this.$emit('input', [...this.fileList, ...files]);
     },
 
     resetInput() {
@@ -134,21 +135,23 @@ export default sfc({
     },
 
     renderPreview() {
-      if (this.preview) {
-        return this.uploadedFiles.map(file => (
-          <Image
-            fit="cover"
-            class={bem('preview')}
-            src={file.content}
-            width={this.previewSize}
-            height={this.previewSize}
-          />
-        ));
+      if (!this.previewImage) {
+        return;
       }
+
+      return this.fileList.map(file => (
+        <Image
+          fit="cover"
+          class={bem('preview')}
+          src={file.content}
+          width={this.previewSize}
+          height={this.previewSize}
+        />
+      ));
     },
 
     renderUpload() {
-      if (this.uploadedFiles.length >= this.maxCount) {
+      if (this.fileList.length >= this.maxCount) {
         return;
       }
 
