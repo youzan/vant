@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueToast from './Toast';
-import { isObj, isServer, isInDocument } from '../utils';
+import { isObj, isServer } from '../utils';
 
 const defaultOptions = {
   type: 'text',
@@ -28,7 +28,7 @@ function createInstance() {
     return {};
   }
 
-  if (!queue.length || multiple || !isInDocument(queue[0].$el)) {
+  if (!queue.length || multiple) {
     const toast = new (Vue.extend(VueToast))({
       el: document.createElement('div')
     });
