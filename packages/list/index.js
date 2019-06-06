@@ -108,11 +108,11 @@ export default sfc({
   },
 
   render(h) {
-    const placeholder = <div ref="placeholder" class={bem('placeholder')}/>;
+    const Placeholder = <div ref="placeholder" class={bem('placeholder')}/>;
 
     return (
       <div class={bem()} role="feed" aria-busy={this.loading}>
-        {this.direction === 'down' ? this.slots() : placeholder}
+        {this.direction === 'down' ? this.slots() : Placeholder}
         {this.loading && (
           <div class={bem('loading')} key="loading">
             {this.slots('loading') || (
@@ -128,7 +128,7 @@ export default sfc({
             {this.errorText}
           </div>
         )}
-        {this.direction === 'up' ? this.slots() : placeholder}
+        {this.direction === 'up' ? this.slots() : Placeholder}
       </div>
     );
   }

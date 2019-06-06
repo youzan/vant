@@ -116,7 +116,7 @@ test('keep-alive live cycle', () => {
 
   expect(wrapper.vm.$el).toBeTruthy();
   wrapper.vm.show = false;
-  expect(wrapper.vm.el).toBeFalsy();
+  expect(wrapper.vm.$el.nodeType).toEqual(Node.COMMENT_NODE);
 });
 
 test('check the case that scroller is not window', async () => {
