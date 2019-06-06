@@ -82,15 +82,23 @@ export default sfc({
 
   methods: {
     focus() {
-      this.$refs.input && this.$refs.input.focus();
+      if (this.$refs.input) {
+        this.$refs.input.focus();
+      }
     },
 
     blur() {
-      this.$refs.input && this.$refs.input.blur();
+      if (this.$refs.input) {
+        this.$refs.input.blur();
+      }
     },
 
     // native maxlength not work when type = number
     format(target = this.$refs.input) {
+      if (!target) {
+        return;
+      }
+
       let { value } = target;
       const { maxlength } = this.$attrs;
 
@@ -200,6 +208,16 @@ export default sfc({
     },
 
     renderInput() {
+      const inputSlot = this.slots('input');
+
+      if (inputSlot) {
+        return (
+          <div class={bem('control', this.inputAlign)}>
+            {inputSlot}
+          </div>
+        );
+      }
+
       const inputProps = {
         ref: 'input',
         class: bem('control', this.inputAlign),

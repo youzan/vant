@@ -171,6 +171,7 @@ Use ref to get field instance and call instance methods
 | Name | Description |
 |------|------|
 | label | Custom label |
+| input | Custom input |
 | left-icon | Custom left icon |
 | right-icon | Custom right icon |
 | button | Insert button |

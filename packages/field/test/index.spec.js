@@ -167,6 +167,21 @@ test('clearable', () => {
   expect(wrapper.emitted('clear')).toBeTruthy();
 });
 
+test('render input slot', () => {
+  const wrapper = mount({
+    template: `
+      <field>
+        <template v-slot:input>Custom Input</template>
+      </field>
+    `,
+    components: {
+      Field
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('render label slot', () => {
   const wrapper = mount({
     template: `

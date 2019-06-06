@@ -44,6 +44,16 @@ exports[`label-width prop without unit 1`] = `
 </div>
 `;
 
+exports[`render input slot 1`] = `
+<div class="van-cell van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body">
+      <div class="van-field__control">Custom Input</div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`render label slot 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__title van-field__label">Custom Label</div>
