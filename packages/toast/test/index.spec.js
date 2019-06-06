@@ -1,4 +1,6 @@
+import Vue from 'vue';
 import Toast from '..';
+import ToastVue from '../Toast';
 import { transitionStub, later } from '../../../test/utils';
 
 transitionStub();
@@ -85,4 +87,9 @@ test('onClose callback', () => {
   toast.clear();
   Toast.allowMultiple(false);
   expect(onClose).toHaveBeenCalledTimes(1);
+});
+
+test('register component', () => {
+  Vue.use(Toast);
+  expect(Vue.component(ToastVue.name)).toBeTruthy();
 });
