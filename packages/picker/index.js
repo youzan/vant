@@ -16,6 +16,10 @@ export default sfc({
       type: Number,
       default: 0
     },
+    toolbarPosition: {
+      type: String,
+      default: 'top'
+    },
     valueKey: {
       type: String,
       default: 'text'
@@ -176,7 +180,7 @@ export default sfc({
 
     return (
       <div class={bem()}>
-        {Toolbar}
+        {this.toolbarPosition === 'top' ? Toolbar : h()}
         {this.loading ? <Loading class={bem('loading')} color={BLUE} /> : h()}
         <div class={bem('columns')} style={columnsStyle} onTouchmove={preventDefault}>
           {columns.map((item, index) => (
@@ -195,6 +199,7 @@ export default sfc({
           <div class={bem('mask')} style={maskStyle} />
           <div class={['van-hairline--top-bottom', bem('frame')]} style={frameStyle} />
         </div>
+        {this.toolbarPosition === 'bottom' ? Toolbar : h()}
       </div>
     );
   }
