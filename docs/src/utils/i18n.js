@@ -1,5 +1,6 @@
 // component mixin
-import { get, camelize } from '../../../packages/utils';
+import { get } from '../../../packages/utils';
+import { camelize } from '../../../packages/utils/format/string';
 
 export default {
   computed: {

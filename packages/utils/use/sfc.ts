@@ -2,7 +2,7 @@
  * Create a basic component with common options
  */
 import '../../locale';
-import { camelize } from '..';
+import { camelize } from '../format/string';
 import { SlotsMixin } from '../../mixins/slots';
 import Vue, { VNode, VueConstructor, ComponentOptions, RenderContext } from 'vue';
 import { DefaultProps, FunctionComponent } from '../types';

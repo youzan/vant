@@ -1,5 +1,5 @@
 import { use, isDef } from '../utils';
-import { raf } from '../utils/raf';
+import { raf } from '../utils/dom/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { ChildrenMixin } from '../mixins/relation';

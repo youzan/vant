@@ -1,5 +1,6 @@
-import { use, range } from '../utils';
-import { preventDefault } from '../utils/event';
+import { use } from '../utils';
+import { range } from '../utils/format/number';
+import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 

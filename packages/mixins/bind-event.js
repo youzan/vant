@@ -1,4 +1,4 @@
-import { on, off } from '../utils/event';
+import { on, off } from '../utils/dom/event';
 
 export function BindEventMixin(handler) {
   function bind() {

@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import { inherit, emit } from '../utils/functional';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 import Field from '../field';
 
 // Types

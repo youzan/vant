@@ -1,4 +1,6 @@
-import { use, range, padZero } from '../utils';
+import { use } from '../utils';
+import { range } from '../utils/format/number';
+import { padZero } from '../utils/format/string';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
 import {

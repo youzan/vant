@@ -1,9 +1,10 @@
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { preventDefault } from '../utils/event';
-import { getRootScrollTop } from '../utils/scroll';
-import { use, isObj, isDef, isIOS, suffixPx } from '../utils';
+import { preventDefault } from '../utils/dom/event';
+import { getRootScrollTop } from '../utils/dom/scroll';
+import { use, isObj, isDef, suffixPx } from '../utils';
+import { isIOS } from '../utils/validate/system';
 
 const [sfc, bem] = use('field');
 

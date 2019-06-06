@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { on, off, preventDefault } from '../utils/event';
+import { on, off, preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const [sfc, bem] = use('swipe');

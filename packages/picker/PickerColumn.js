@@ -1,6 +1,7 @@
 import { deepClone } from '../utils/deep-clone';
-import { use, isObj, range } from '../utils';
-import { preventDefault } from '../utils/event';
+import { use, isObj } from '../utils';
+import { range } from '../utils/format/number';
+import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 
 const DEFAULT_DURATION = 200;
