@@ -1,5 +1,5 @@
 import List from '..';
-import { mount, later } from '../../../test/utils';
+import { mount, later, mockGetBoundingClientRect } from '../../../test/utils';
 
 function mockOffsetParent(el) {
   Object.defineProperty(el, 'offsetParent', {
@@ -33,7 +33,7 @@ test('error loaded, click error-text and reload', async () => {
   const wrapper = mount(List, {
     propsData: {
       errorText: 'Request failed. Click to reload...',
-      error: true
+      error: true,
     }
   });
 
@@ -45,11 +45,15 @@ test('error loaded, click error-text and reload', async () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 
   // 模拟点击error-text的行为
-  wrapper.setProps({
-    error: false
+  wrapper.vm.$on('update:error', val => {
+    wrapper.setProps({
+      error: val
+    });
   });
-  wrapper.vm.$emit('input', true);
-  wrapper.vm.$emit('load');
+
+  wrapper.find('.van-list__error-text').trigger('click');
+
+  await later();
 
   expect(wrapper.vm.$props.error).toBeFalsy();
   expect(wrapper.emitted('load')).toBeTruthy();
@@ -61,7 +65,8 @@ test('error loaded, click error-text and reload', async () => {
 test('finished', async () => {
   const wrapper = mount(List, {
     propsData: {
-      finished: true
+      finished: true,
+      finishedText: 'Finished'
     }
   });
 
@@ -70,11 +75,13 @@ test('finished', async () => {
   await later();
   expect(wrapper.emitted('load')).toBeFalsy();
   expect(wrapper.emitted('input')).toBeFalsy();
+  expect(wrapper.contains('.van-list__finished-text')).toBeTruthy();
   wrapper.vm.finished = false;
 
   await later();
   expect(wrapper.emitted('load')).toBeTruthy();
   expect(wrapper.emitted('input')).toBeTruthy();
+  expect(wrapper.contains('.van-list__finished-text')).toBeFalsy();
 });
 
 test('immediate check false', async () => {
@@ -89,7 +96,7 @@ test('immediate check false', async () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 });
 
-test('keey-alive live cycle', () => {
+test('keep-alive live cycle', () => {
   const wrapper = mount(
     {
       template: `
@@ -110,4 +117,60 @@ test('keey-alive live cycle', () => {
   expect(wrapper.vm.$el).toBeTruthy();
   wrapper.vm.show = false;
   expect(wrapper.vm.el).toBeFalsy();
+});
+
+test('check the case that scroller is not window', async () => {
+  const restoreMock = mockGetBoundingClientRect({
+    top: 0,
+    bottom: 200
+  });
+
+  const wrapper = mount({
+    template: `
+      <div style="overflow-y: scroll;">
+        <list ref="list"/>
+      </div>
+    `,
+    components: { List }
+  });
+
+  const listRef = wrapper.find({
+    ref: 'list'
+  });
+  mockOffsetParent(listRef.vm.$el);
+
+  await later();
+  expect(listRef.emitted('load')).toBeTruthy();
+  expect(listRef.emitted('input')).toBeTruthy();
+
+  restoreMock();
+});
+
+test('check the direction props', async () => {
+  const wrapper = mount(List, {
+    slots: {
+      default: '<div class="list-item">list item</div>'
+    },
+    propsData: {
+      direction: 'up'
+    }
+  });
+
+  mockOffsetParent(wrapper.vm.$el);
+
+  await later();
+
+  let children = wrapper.findAll('.van-list > div');
+  expect(children.at(0).is('.van-list__placeholder')).toBeTruthy();
+  expect(children.at(1).is('.list-item')).toBeTruthy();
+
+  // change the direction's value
+  wrapper.setProps({
+    direction: 'down'
+  });
+
+  await later();
+  children = wrapper.findAll('.van-list > div');
+  expect(children.at(0).is('.list-item')).toBeTruthy();
+  expect(children.at(1).is('.van-list__placeholder')).toBeTruthy();
 });
