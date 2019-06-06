@@ -12,32 +12,61 @@ Vue.use(Uploader);
 
 ### 基础用法
 
-图片上传完毕后会触发`after-read`传入的回调函数，获取到对应的`file`对象
+图片上传完毕后会触发`after-read`回调函数，获取到对应的`file`对象
 
 ```html
-<van-uploader preview :after-read="afterRead" />
+<van-uploader :after-read="afterRead" />
 ```
 
 ```javascript
 export default {
   methods: {
     afterRead(file) {
-      console.log(file)
+      // 此时可以自行将文件上传至服务器
+      console.log(file);
     }
   }
 };
 ```
 
-### 上传数量限制
+### 图片预览
 
-通过`max-count`属性可以限制上传图片的数量。上传数量达到限制后，会自动隐藏上传区域
+通过`v-model`可以绑定已经上传的图片列表，并展示图片列表的预览图
+
+```html
+<van-uploader v-model="fileList" multiple />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  }
+};
+```
+
+### 限制上传数量
+
+通过`max-count`属性可以限制上传文件的数量，上传数量达到限制后，会自动隐藏上传区域
 
 ```html
 <van-uploader
-  preview
+  v-model="fileList"
   multiple
   :max-count="2"
 />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  }
+};
 ```
 
 ### 自定义上传样式
@@ -58,7 +87,7 @@ export default {
 |------|------|------|------|------|
 | name | 标识符，可以在回调函数的第二项参数中获取 | `String` | - | 1.6.13 |
 | accept | 接受的文件类型 | `String` | `image/*` | - |
-| preview | 是否在上传完成后展示预览图 | `Boolean` | `false` | 2.0.0 |
+| preview-image | 是否在上传完成后展示预览图 | `Boolean` | `true` | 2.0.0 |
 | preview-size | 预览图和上传区域的尺寸，单位为`px` | `String | Number` | `80px` | 2.0.0 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |

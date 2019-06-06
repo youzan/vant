@@ -1,10 +1,12 @@
 import { deepClone } from '../deep-clone';
-import { isAndroid, isDef, camelize, get } from '..';
-import { raf, cancel } from '../raf';
+import { isDef, get } from '..';
+import { raf, cancelRaf } from '../dom/raf';
 import { later } from '../../../test/utils';
 import { isEmail } from '../validate/email';
 import { isMobile } from '../validate/mobile';
 import { isNumber } from '../validate/number';
+import { isAndroid } from '../validate/system';
+import { camelize } from '../format/string';
 
 test('deepClone', () => {
   const a = { foo: 0 };
@@ -53,7 +55,7 @@ test('raf', async () => {
 
   await later(50);
   expect(spy).toHaveBeenCalledTimes(1);
-  cancel(1);
+  cancelRaf(1);
 });
 
 test('is-email', () => {

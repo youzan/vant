@@ -1,5 +1,6 @@
-import { use, range, isServer } from '../utils';
-import { preventDefault } from '../utils/event';
+import { use, isServer } from '../utils';
+import { range } from '../utils/format/number';
+import { preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
 import { TouchMixin } from '../mixins/touch';
 import Swipe from '../swipe';

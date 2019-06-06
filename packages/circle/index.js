@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { raf, cancel } from '../utils/raf';
+import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/color';
 
 const [sfc, bem] = use('circle');
@@ -81,7 +81,7 @@ export default sfc({
         this.increase = this.endRate > this.startRate;
         this.duration = Math.abs(((this.startRate - this.endRate) * 1000) / this.speed);
         if (this.speed) {
-          cancel(this.rafId);
+          cancelRaf(this.rafId);
           this.rafId = raf(this.animate);
         } else {
           this.$emit('input', this.endRate);

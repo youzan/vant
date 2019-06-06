@@ -1,8 +1,8 @@
 import { context } from './context';
 import { TouchMixin } from '../touch';
-import { on, off, preventDefault } from '../../utils/event';
+import { on, off, preventDefault } from '../../utils/dom/event';
 import { openOverlay, closeOverlay, updateOverlay } from './overlay';
-import { getScrollEventTarget } from '../../utils/scroll';
+import { getScrollEventTarget } from '../../utils/dom/scroll';
 
 export const PopupMixin = {
   mixins: [TouchMixin],

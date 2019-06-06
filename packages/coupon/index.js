@@ -1,5 +1,6 @@
-import { use, padZero } from '../utils';
+import { use } from '../utils';
 import { RED } from '../utils/color';
+import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 
 const [sfc, bem, t] = use('coupon');

@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import { inherit } from '../utils/functional';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';

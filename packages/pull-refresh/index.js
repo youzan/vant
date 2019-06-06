@@ -1,7 +1,7 @@
 import { use } from '../utils';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
-import { getScrollTop, getScrollEventTarget } from '../utils/scroll';
+import { getScrollTop, getScrollEventTarget } from '../utils/dom/scroll';
 import Loading from '../loading';
 
 const [sfc, bem, t] = use('pull-refresh');

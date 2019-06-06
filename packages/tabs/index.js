@@ -1,6 +1,6 @@
 import { use, isDef } from '../utils';
-import { raf } from '../utils/raf';
-import { on, off } from '../utils/event';
+import { raf } from '../utils/dom/raf';
+import { on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import {
@@ -8,7 +8,7 @@ import {
   getScrollTop,
   getElementTop,
   getScrollEventTarget
-} from '../utils/scroll';
+} from '../utils/dom/scroll';
 
 const [sfc, bem] = use('tabs');
 const tabBem = use('tab')[1];

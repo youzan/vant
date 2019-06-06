@@ -2,7 +2,7 @@
  * requestAnimationFrame polyfill
  */
 
-import { isServer } from './index';
+import { isServer } from '..';
 
 let prev = Date.now();
 
@@ -28,6 +28,6 @@ export function raf(fn: FrameRequestCallback): number {
   return iRaf.call(root, fn);
 }
 
-export function cancel(id: number) {
+export function cancelRaf(id: number) {
   iCancel.call(root, id);
 }

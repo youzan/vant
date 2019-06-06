@@ -1,4 +1,5 @@
-import { use, isAndroid } from '../utils';
+import { use } from '../utils';
+import { isAndroid } from '../utils/validate/system';
 import Cell from '../cell';
 import Field from '../field';
 

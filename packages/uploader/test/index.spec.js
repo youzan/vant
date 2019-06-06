@@ -127,7 +127,12 @@ it('render upload-text', () => {
 it('render preview image', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      preview: true
+      fileList: []
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
     }
   });
 
@@ -140,8 +145,13 @@ it('render preview image', async () => {
 it('max-count prop', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      preview: true,
+      fileList: [],
       maxCount: 1
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
     }
   });
 
@@ -154,8 +164,13 @@ it('max-count prop', async () => {
 it('preview-size prop', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
-      preview: true,
+      fileList: [],
       previewSize: 30
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
     }
   });
 

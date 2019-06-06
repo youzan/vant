@@ -1,9 +1,10 @@
 import Icon from '../icon';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
-import { preventDefault } from '../utils/event';
-import { getRootScrollTop } from '../utils/scroll';
-import { use, isObj, isDef, isIOS, suffixPx } from '../utils';
+import { preventDefault } from '../utils/dom/event';
+import { getRootScrollTop } from '../utils/dom/scroll';
+import { use, isObj, isDef, suffixPx } from '../utils';
+import { isIOS } from '../utils/validate/system';
 
 const [sfc, bem] = use('field');
 
@@ -82,15 +83,23 @@ export default sfc({
 
   methods: {
     focus() {
-      this.$refs.input && this.$refs.input.focus();
+      if (this.$refs.input) {
+        this.$refs.input.focus();
+      }
     },
 
     blur() {
-      this.$refs.input && this.$refs.input.blur();
+      if (this.$refs.input) {
+        this.$refs.input.blur();
+      }
     },
 
     // native maxlength not work when type = number
     format(target = this.$refs.input) {
+      if (!target) {
+        return;
+      }
+
       let { value } = target;
       const { maxlength } = this.$attrs;
 
@@ -200,6 +209,16 @@ export default sfc({
     },
 
     renderInput() {
+      const inputSlot = this.slots('input');
+
+      if (inputSlot) {
+        return (
+          <div class={bem('control', this.inputAlign)}>
+            {inputSlot}
+          </div>
+        );
+      }
+
       const inputProps = {
         ref: 'input',
         class: bem('control', this.inputAlign),

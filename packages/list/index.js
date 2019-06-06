@@ -6,7 +6,7 @@ import {
   getElementTop,
   getVisibleHeight,
   getScrollEventTarget
-} from '../utils/scroll';
+} from '../utils/dom/scroll';
 
 const [sfc, bem, t] = use('list');
 

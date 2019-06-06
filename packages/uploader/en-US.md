@@ -13,7 +13,7 @@ Vue.use(Uploader);
 ### Basic Usage
 
 ```html
-<van-uploader preview :after-read="afterRead" />
+<van-uploader :after-read="afterRead" />
 ```
 
 ```javascript
@@ -26,14 +26,40 @@ export default {
 };
 ```
 
+### Preview Image
+
+```html
+<van-uploader v-model="fileList" multiple />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  }
+};
+```
+
 ### Max Count
 
 ```html
 <van-uploader
-  preview
+  v-model="fileList"
   multiple
   :max-count="2"
 />
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      fileList: []
+    }
+  }
+};
 ```
 
 ### Upload Style
@@ -52,7 +78,7 @@ export default {
 |------|------|------|------|
 | name | Input name | `String` | - |
 | accept | Accepted file type | `String` | `image/*` |
-| preview | Whether to show image preview | `Boolean` | `false` |
+| preview-image | Whether to show image preview | `Boolean` | `true` |
 | preview-size | Size of preview image | `String | Number` | `80px` |
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |

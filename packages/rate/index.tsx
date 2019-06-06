@@ -1,7 +1,7 @@
 /* eslint-disable prefer-spread */
 import { use, suffixPx } from '../utils';
 import { emit, inherit } from '../utils/functional';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 import Icon from '../icon';
 
 // Types

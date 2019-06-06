@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { stopPropagation } from '../utils/event';
+import { stopPropagation } from '../utils/dom/event';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 

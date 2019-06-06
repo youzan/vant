@@ -3,7 +3,7 @@ import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/color';
-import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/scroll';
+import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/dom/scroll';
 
 const [sfc, bem] = use('index-bar');
 

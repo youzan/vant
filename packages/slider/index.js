@@ -1,6 +1,6 @@
 import { use, isDef } from '../utils';
 import { TouchMixin } from '../mixins/touch';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 
 const [sfc, bem] = use('slider');
 

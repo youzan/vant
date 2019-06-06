@@ -1,5 +1,5 @@
 import { use } from '../utils';
-import { preventDefault } from '../utils/event';
+import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
 import { BLUE } from '../utils/color';
