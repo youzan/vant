@@ -60,3 +60,15 @@ test('active-value & inactive-value prop', () => {
   expect(input).toHaveBeenCalledWith('2');
   expect(change).toHaveBeenCalledWith('2');
 });
+
+test('inactive-color prop', () => {
+  const wrapper = mount(Switch, {
+    propsData: {
+      value: '2',
+      inactiveValue: '2',
+      inactiveColor: 'black'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});

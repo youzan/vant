@@ -35,10 +35,10 @@ function Switch(
 
   const switchStyle = {
     fontSize: size,
-    backgroundColor: value ? activeColor : inactiveColor
+    backgroundColor: checked ? activeColor : inactiveColor
   };
 
-  const loadingColor = value ? activeColor || BLUE : inactiveColor || GRAY_DARK;
+  const loadingColor = checked ? activeColor || BLUE : inactiveColor || GRAY_DARK;
 
   function onClick() {
     if (!disabled && !loading) {
