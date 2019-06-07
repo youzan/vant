@@ -96,29 +96,6 @@ test('immediate check false', async () => {
   expect(wrapper.emitted('input')).toBeFalsy();
 });
 
-test('keep-alive live cycle', () => {
-  const wrapper = mount(
-    {
-      template: `
-      <keep-alive>
-        <list v-if="show" />
-      </keep-alive>
-    `,
-      props: ['show'],
-      components: { List }
-    },
-    {
-      propsData: {
-        show: true
-      }
-    }
-  );
-
-  expect(wrapper.vm.$el).toBeTruthy();
-  wrapper.vm.show = false;
-  expect(wrapper.vm.$el.nodeType).toEqual(Node.COMMENT_NODE);
-});
-
 test('check the case that scroller is not window', async () => {
   const restoreMock = mockGetBoundingClientRect({
     top: 0,
