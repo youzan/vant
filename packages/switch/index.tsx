@@ -21,14 +21,16 @@ function Switch(
 ) {
   const { value, loading, disabled, activeValue, inactiveValue } = props;
 
+  const checked = value === activeValue;
+
   const style = {
     fontSize: props.size,
-    backgroundColor: value ? props.activeColor : props.inactiveColor
+    backgroundColor: checked ? props.activeColor : props.inactiveColor
   };
 
   const onClick = () => {
     if (!disabled && !loading) {
-      const newValue = value === activeValue ? inactiveValue : activeValue;
+      const newValue = checked ? inactiveValue : activeValue;
       emit(ctx, 'input', newValue);
       emit(ctx, 'change', newValue);
     }
@@ -37,7 +39,7 @@ function Switch(
   return (
     <div
       class={bem({
-        on: value === activeValue,
+        on: checked,
         disabled
       })}
       style={style}
