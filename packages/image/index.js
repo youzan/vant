@@ -43,10 +43,40 @@ export default sfc({
     }
   },
 
+  created() {
+    const { $Lazyload } = this;
+
+    if ($Lazyload) {
+      $Lazyload.$on('loaded', this.onLazyLoaded);
+      $Lazyload.$on('error', this.onLazyLoadError);
+    }
+  },
+
+  beforeDestroy() {
+    const { $Lazyload } = this;
+
+    if ($Lazyload) {
+      $Lazyload.$off('loaded', this.onLazyLoaded);
+      $Lazyload.$off('error', this.onLazyLoadError);
+    }
+  },
+
   methods: {
     onLoad(event) {
       this.loading = false;
       this.$emit('load', event);
+    },
+
+    onLazyLoaded({ el }) {
+      if (el === this.$refs.image && this.loading) {
+        this.onLoad();
+      }
+    },
+
+    onLazyLoadError({ el }) {
+      if (el === this.$refs.image && !this.error) {
+        this.onError();
+      }
     },
 
     onError(event) {
@@ -85,10 +115,6 @@ export default sfc({
         },
         style: {
           objectFit: this.fit
-        },
-        on: {
-          load: this.onLoad,
-          error: this.onError
         }
       };
 
@@ -97,10 +123,12 @@ export default sfc({
       }
 
       if (this.lazyLoad) {
-        return <img vLazy={this.src} {...imgData} />;
+        return <img ref="image" vLazy={this.src} {...imgData} />;
       }
 
-      return <img src={this.src} {...imgData} />;
+      return (
+        <img src={this.src} onLoad={this.onLoad} onError={this.onError} {...imgData} />
+      );
     }
   },
 

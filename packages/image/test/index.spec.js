@@ -7,6 +7,7 @@ test('click event', () => {
 
   wrapper.trigger('click');
   expect(wrapper.emitted('click')[0][0]).toBeTruthy();
+  wrapper.destroy();
 });
 
 test('load event', () => {
@@ -46,4 +47,57 @@ test('lazy load', () => {
   });
 
   expect(wrapper).toMatchSnapshot();
+});
+
+test('lazy-load load event', done => {
+  const wrapper = mount(Image, {
+    propsData: {
+      lazyLoad: true,
+      src: 'https://img.yzcdn.cn/vant/cat.jpeg'
+    },
+    mocks: {
+      $Lazyload: {
+        $on(eventName, hanlder) {
+          if (eventName === 'loaded') {
+            setTimeout(() => {
+              hanlder({ el: null });
+              hanlder({ el: wrapper.find('img').element });
+              expect(wrapper.emitted('load').length).toEqual(1);
+              expect(wrapper).toMatchSnapshot();
+              wrapper.destroy();
+            });
+          }
+        },
+        $off() {
+          done();
+        }
+      }
+    }
+  });
+});
+
+test('lazy-load error event', done => {
+  const wrapper = mount(Image, {
+    propsData: {
+      lazyLoad: true
+    },
+    mocks: {
+      $Lazyload: {
+        $on(eventName, hanlder) {
+          if (eventName === 'error') {
+            setTimeout(() => {
+              hanlder({ el: null });
+              hanlder({ el: wrapper.find('img').element });
+              expect(wrapper.emitted('error').length).toEqual(1);
+              expect(wrapper).toMatchSnapshot();
+              wrapper.destroy();
+            });
+          }
+        },
+        $off() {
+          done();
+        }
+      }
+    }
+  });
 });
