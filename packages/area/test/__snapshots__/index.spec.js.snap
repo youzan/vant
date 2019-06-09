@@ -29,6 +29,7 @@ exports[`change option 1`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -61,6 +62,7 @@ exports[`change option 2`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -93,6 +95,7 @@ exports[`change option 3`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -119,6 +122,7 @@ exports[`columns-num prop 1`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -150,6 +154,7 @@ exports[`reset method 1`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -182,6 +187,7 @@ exports[`reset method 2`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -214,6 +220,7 @@ exports[`watch areaList & code 1`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -246,6 +253,7 @@ exports[`watch areaList & code 2`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;
 
@@ -278,5 +286,6 @@ exports[`watch areaList & code 3`] = `
     <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
     <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
   </div>
+  <!---->
 </div>
 `;

@@ -6,6 +6,18 @@
 
 - 新增`input`插槽
 
+##### Image
+
+- 修复懒加载模式下无法展示加载状态和错误状态的问题
+
+##### List
+
+- 优化滚动判断逻辑
+
+##### Toolbar
+
+- 新增`toolbar-position`属性
+
 
 ### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
 `2019-06-05`

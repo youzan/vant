@@ -51,6 +51,7 @@ exports[`create a AddressEdit 1`] = `
         <div class="van-picker__mask" style="background-size:100% 88px;"></div>
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
+      <!---->
     </div>
   </div>
 </div>
@@ -121,6 +122,7 @@ exports[`create a AddressEdit with props 1`] = `
         <div class="van-picker__mask" style="background-size:100% 88px;"></div>
         <div class="van-hairline--top-bottom van-picker__frame" style="height:44px;"></div>
       </div>
+      <!---->
     </div>
   </div>
 </div>

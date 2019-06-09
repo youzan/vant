@@ -187,6 +187,7 @@ When Picker columns data is acquired asynchronously, use `loading` prop to show 
 |------|------|------|------|
 | columns | Columns data | `Array` | `[]` |
 | show-toolbar | Whether to show toolbar | `Boolean` | `false` |
+| toolbar-position | Toolbar position, cat be set to `bottom` | `String` | `top` |
 | title | Toolbar title | `String` | `''` |
 | loading | Whether to show loading prompt | `Boolean` | `false` |
 | value-key | Key of option text | `String` | `text` |
