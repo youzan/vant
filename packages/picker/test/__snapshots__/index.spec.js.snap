@@ -41,3 +41,18 @@ exports[`render title slot 1`] = `
   <!---->
 </div>
 `;
+
+exports[`toolbar-position prop 1`] = `
+<div class="van-picker">
+  <!---->
+  <!---->
+  <div class="van-picker__columns" style="height: 220px;">
+    <div class="van-picker__mask" style="background-size: 100% 88px;"></div>
+    <div class="van-hairline--top-bottom van-picker__frame" style="height: 44px;"></div>
+  </div>
+  <div class="van-hairline--top-bottom van-picker__toolbar">
+    <div role="button" tabindex="0" class="van-picker__cancel">取消</div>
+    <div role="button" tabindex="0" class="van-picker__confirm">确认</div>
+  </div>
+</div>
+`;

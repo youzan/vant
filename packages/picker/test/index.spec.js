@@ -181,3 +181,14 @@ test('click column\'s item', () => {
   wrapper.findAll('.van-picker-column__item').at(3).trigger('click');
   expect(wrapper.emitted('change')[0][1]).toEqual(columns[1]);
 });
+
+test('toolbar-position prop', () => {
+  const wrapper = mount(Picker, {
+    propsData: {
+      showToolbar: true,
+      toolbarPosition: 'bottom'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
