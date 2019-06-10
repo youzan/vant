@@ -1,5 +1,25 @@
 # Changelog
 
+### [v2.0.0-beta.5](https://github.com/youzan/vant/tree/v2.0.0-beta.5)
+`2019-06-10`
+
+##### ActionSheet
+
+- Add `click-overlay` event
+
+##### Field
+
+- Add `input` slot
+
+##### Image
+
+- Fix can not display loading status when use lazy-load prop
+
+##### Toolbar
+
+- Add `toolbar-position` prop
+
+
 ### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
 `2019-06-05`
 

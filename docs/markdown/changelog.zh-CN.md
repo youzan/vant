@@ -1,6 +1,7 @@
 # 更新日志
 
 ### [v2.0.0-beta.5](https://github.com/youzan/vant/tree/v2.0.0-beta.5)
+`2019-06-10`
 
 ##### ActionSheet
 
