@@ -110,6 +110,7 @@ export default {
 |------|------|------|
 | select | Triggered when click option | item, index |
 | cancel | Triggered when cancel click | - |
+| click-overlay | Triggered when click overlay | - |
 
 ### Data struct of actions
 

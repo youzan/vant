@@ -43,6 +43,7 @@ test('callback events', () => {
 
 test('click overlay and close', () => {
   const onInput = jest.fn();
+  const onClickOverlay = jest.fn();
   const div = document.createElement('div');
 
   mount({
@@ -52,6 +53,7 @@ test('click overlay and close', () => {
           :value="true"
           :get-container="getContainer"
           @input="onInput"
+          @click-overlay="onClickOverlay"
         />
       </div>
     `,
@@ -64,12 +66,14 @@ test('click overlay and close', () => {
       };
     },
     methods: {
-      onInput
+      onInput,
+      onClickOverlay
     }
   });
 
   div.querySelector('.van-overlay').click();
   expect(onInput).toHaveBeenCalledWith(false);
+  expect(onClickOverlay).toHaveBeenCalledTimes(1);
 });
 
 test('disable lazy-render', () => {

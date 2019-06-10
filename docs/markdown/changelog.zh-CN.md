@@ -2,6 +2,10 @@
 
 ### [v2.0.0-beta.5](https://github.com/youzan/vant/tree/v2.0.0-beta.5)
 
+##### ActionSheet
+
+- 新增`click-overlay`事件
+
 ##### Field
 
 - 新增`input`插槽

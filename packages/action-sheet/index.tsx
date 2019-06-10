@@ -41,6 +41,10 @@ function ActionSheet(
     emit(ctx, 'input', value);
   }
 
+  function onClickOverlay() {
+    emit(ctx, 'click-overlay');
+  }
+
   function onCancel() {
     emit(ctx, 'input', false);
     emit(ctx, 'cancel');
@@ -126,6 +130,7 @@ function ActionSheet(
       getContainer={props.getContainer}
       closeOnClickOverlay={props.closeOnClickOverlay}
       onInput={onInput}
+      onClick-overlay={onClickOverlay}
       {...inherit(ctx)}
     >
       {Header()}
