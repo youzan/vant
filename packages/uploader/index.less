@@ -50,8 +50,22 @@
   }
 
   &__preview {
-    width: @uploader-size;
-    height: @uploader-size;
+    position: relative;
     margin: 0 10px 10px 0;
+
+    &-image {
+      display: block;
+      width: @uploader-size;
+      height: @uploader-size;
+    }
+
+    &-delete {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 1px;
+      color: @uploader-delete-color;
+      background-color: @uploader-delete-background-color;
+    }
   }
 }

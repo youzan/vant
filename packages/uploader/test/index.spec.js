@@ -142,6 +142,25 @@ it('render preview image', async () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('disable preview image', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [],
+      previewImage: false
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+  await later();
+
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('max-count prop', async () => {
   const wrapper = mount(Uploader, {
     propsData: {
@@ -178,4 +197,27 @@ it('preview-size prop', async () => {
   await later();
 
   expect(wrapper).toMatchSnapshot();
+});
+
+it('delete preview image', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [],
+      previewSize: 30
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+  await later();
+
+  wrapper.find('.van-uploader__preview-delete').trigger('click');
+  expect(wrapper.vm.fileList.length).toEqual(0);
+
+  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.emitted('delete')[0]).toBeTruthy();
 });

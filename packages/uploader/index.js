@@ -102,6 +102,14 @@ export default sfc({
       }
     },
 
+    onDelete(file, index) {
+      const fileList = this.fileList.slice(0);
+      fileList.splice(index, 1);
+
+      this.$emit('input', fileList);
+      this.$emit('delete', file);
+    },
+
     resetInput() {
       /* istanbul ignore else */
       if (this.$refs.input) {
@@ -114,14 +122,23 @@ export default sfc({
         return;
       }
 
-      return this.fileList.map(file => (
-        <Image
-          fit="cover"
-          class={bem('preview')}
-          src={file.content}
-          width={this.previewSize}
-          height={this.previewSize}
-        />
+      return this.fileList.map((file, index) => (
+        <div class={bem('preview')}>
+          <Image
+            fit="cover"
+            src={file.content}
+            class={bem('preview-image')}
+            width={this.previewSize}
+            height={this.previewSize}
+          />
+          <Icon
+            name="delete"
+            class={bem('preview-delete')}
+            onClick={() => {
+              this.onDelete(file, index);
+            }}
+          />
+        </div>
       ));
     },
 

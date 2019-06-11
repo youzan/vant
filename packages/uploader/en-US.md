@@ -95,6 +95,7 @@ export default {
 | Event | Description | Arguments |
 |------|------|------|
 | oversize | Triggered when file size over limit | Same as after-read |
+| delete | Triggered when delete preview file | file |
 
 ### Slots
 
