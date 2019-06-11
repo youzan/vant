@@ -1,5 +1,14 @@
 ## 更新日志
 
+## [v1.6.23](https://github.com/youzan/vant/tree/v1.6.23)
+`2019-06-11`
+
+**Improvements**
+
+- 修复同步调用 Toast 多次时重复创建实例的问题
+- 修复 Switch 在使用 active-value 属性后 active-color 属性无法正确生效的问题
+
+
 ## [v1.6.22](https://github.com/youzan/vant/tree/v1.6.22)
 `2019-06-05`
 

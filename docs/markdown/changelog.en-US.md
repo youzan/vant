@@ -1,5 +1,14 @@
 ## Changelog
 
+## [v1.6.23](https://github.com/youzan/vant/tree/v1.6.23)
+`2019-06-11`
+
+**Improvements**
+
+- fix Switch incorrect activeColor when use activeValue
+- fix Toast redundant instance when sync called multil times
+
+
 ## [v1.6.22](https://github.com/youzan/vant/tree/v1.6.22)
 `2019-06-05`
 
