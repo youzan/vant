@@ -1095,10 +1095,10 @@
     eslint-plugin-import "^2.16.0"
     eslint-plugin-vue "^5.2.1"
 
-"@vant/icons@1.1.7":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.7.tgz#29561adfffa6a750d279dccdbe9a69b743934f3f"
-  integrity sha512-hCHVniOmBIs789UYxICgC3k3wGWI3QGx3/LOtSjMu7DtCyGdFX/6saNzrpDENNAponHAsszvUmBz37v9GQjX9A==
+"@vant/icons@1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@vant/icons/-/icons-1.1.8.tgz#2acd9b1c608fab7cfd25cf82dc0c9960d0f0495a"
+  integrity sha512-w8DVBQ7Hrr3Ut1KAawPy4pkxhEMDCuCTdVfFgbydLrv1k/unp/Ml0REZVEO2NN4W3Do5r1fypbsNOw1Sm33eLg==
 
 "@vant/markdown-loader@^2.0.0":
   version "2.0.0"
