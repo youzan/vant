@@ -1,192 +1,7 @@
 # 更新日志
 
-### [v2.0.0-beta.5](https://github.com/youzan/vant/tree/v2.0.0-beta.5)
-`2019-06-10`
-
-##### ActionSheet
-
-- 新增`click-overlay`事件
-
-##### Field
-
-- 新增`input`插槽
-
-##### Image
-
-- 修复懒加载模式下无法展示加载状态和错误状态的问题
-
-##### List
-
-- 优化滚动判断逻辑
-
-##### Toolbar
-
-- 新增`toolbar-position`属性
-
-
-### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
-`2019-06-05`
-
-##### Checkbox
-
-- 修复`label-position`不生效的问题
-
-##### Field
-
-- 新增`click`事件
-- 新增`clickable`属性
-
-##### Radio
-
-- 修复`label-position`不生效的问题
-
-##### Stepper
-
-- 支持`Number`类型的`input-width`属性
-
-##### SwipeCell
-
-- 修复只渲染单侧内容时报错的问题
-
-##### Uploader
-
-- 支持通过`v-model`绑定文件列表
-- 新增`max-count`属性
-- 新增`preview-size`属性
-- 新增`preview-image`属性
-
-
-### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
-`2019-05-31`
-
-##### Field
-
-- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
-
-##### IndexBar
-
-- 新增`sticky`属性
-- 新增`highlight-color`属性
-
-##### Notify
-
-- 新增`onClose`选项
-- 新增`onOpened`选项
-
-##### Picker
-
-- 优化动画延时
-- 点击确认按钮时自动终止动画
-
-##### Rate
-
-- 新增`gutter`属性
-- 支持`String`类型的`size`属性
-
-##### Search
-
-- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
-
-##### SwipeCell
-
-- 支持自动计算`left-width`和`right-width`
-
-##### Toast
-
-- 新增`onOpened`选项
-
-
-### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
-`2019-05-28`
-
-#### 无障碍访问
-
-对以下组件增加了无障碍访问的支持：
-
-- List
-- Rate
-- Dialog
-- Slider
-- Switch
-- NoticeBar
-- GoodsAction
-- DropdownMenu
-- NumberKeyboard
-
-##### Area
-
-- 支持`reset`方法传入`code`参数
-
-##### Button
-
-- 新增`icon`属性
-
-##### ImagePreview
-
-- 新增`close-on-popstate`属性
-
-##### Search
-
-- 新增`clearable`属性
-- 新增`left-icon`属性
-- 新增`right-icon`属性
-- 新增`right-icon`插槽
-
-##### Slider
-
-- 新增`drag-start`事件
-- 新增`drag-end`事件
-
-##### Uploader
-
-- 增加上传区域默认样式
-- 新增`upload-text`属性
-
-
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
-`2019-05-24`
-
-#### 无障碍访问
-
-对以下组件增加了无障碍访问的支持：
-
-- Accordion
-- Checkbox
-- Radio
-- Stepper
-- Tab
-
-##### ActionSheet
-
-- 新增`lock-scroll`属性
-
-##### DatetimePicker
-
-- 新增`filter`属性
-
-##### DropdownMenu
-
-- 新增`duration`属性
-
-##### DropdownItem
-
-- 新增`title-class`属性
-- 修复在部分浏览器上定位错误的问题
-
-##### Picker
-
-- 支持惯性滚动
-
-##### Tab
-
-- 新增`border`属性
-
-##### Uploader
-
-- `oversize`事件增加`detail`参数
-
-### [v2.0.0-beta.0](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
-`2019-05-21`
+### [v2.0.0](https://github.com/youzan/vant/tree/v2.0.0)
+`2019-06-12`
 
 #### 主要变动
 
@@ -199,16 +14,32 @@
 
 #### 新组件
 
-在 2.0 版本中，我们按照社区反馈新增以下组件：
+在 2.0 版本中，我们引入了社区中呼声最高的四个组件，分别是：
 
 - `Image`图片组件
 - `Skeleton`骨架屏组件
 - `IndexBar`、`IndexAnchor`索引栏组件
 - `DropdownMenu`、`DropdownItem`下拉菜单组件
 
+<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png">
+
+#### 新文档
+
+文档方面，我们重新设计了文档站点，用<b>卡片</b>的方式组织段落，更加直观。对一些较为复杂的组件，我们对示例进行细粒度的拆分，添加更多的用法介绍，以帮助大家更快地上手使用。
+
+此外，文档站点也支持了<b>搜索</b>和<b>版本切换</b>。
+
+<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png">
+
+#### 样式定制
+
+移动端 UI 风格多变，对组件的可定制性要求较高。从 2.0 版本开始，Vant 中的所有组件都支持通过 <b>Less 变量</b>进行样式定制。同时我们新增了较多样式相关的 Props，便于快速定制组件风格。
+
+<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png">
+
 #### 不兼容更新
 
-在 2.0 版本中，我们对部分组件和 API 进行重命名，以更加符合业界的命名规范，同时移除了少量不常用的属性，具体改动如下：
+2.0 版本中包含少量不兼容更新，主要是调整命名和移除个别属性。对于正在使用 1.x 版本的项目，请按照下方的列表依次检查，大部分项目可以<b>无痛升级</b>。
 
 ##### Actionsheet
 
@@ -261,24 +92,60 @@
 
 - 移除在 1.0 版本废弃的 Waterfall 组件，请使用`List`组件代替，或使用独立的[@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)包。
 
+---
+
+#### 无障碍访问
+
+对以下组件增加了无障碍访问的支持：
+
+- Accordion
+- Checkbox
+- Dialog
+- DropdownMenu
+- GoodsAction
+- List
+- NoticeBar
+- NumberKeyboard
+- Radio
+- Rate
+- Stepper
+- Tab
+- Slider
+- Switch
+
 #### 新特性
 
 ##### ActionSheet
 
+- 新增`lock-scroll`属性
+- 新增`click-overlay`事件
 - 新增`close-on-click-action`属性
 - 支持同时使用`title`和`actions`属性
 
+##### Area
+
+- 支持`reset`方法传入`code`参数
+
 ##### Button
 
+- 新增`icon`属性
 - 新增`loading-type`属性
 
 ##### Checkbox
 
 - 新增`icon-size`属性
 
+##### DatetimePicker
+
+- 新增`filter`属性
+
 ##### Field
 
+- 新增`input`插槽
+- 新增`click`事件
+- 新增`clickable`属性
 - 新增`label-class`属性
+- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
 
 ##### GoodsActionButton
 
@@ -287,6 +154,14 @@
 ##### Icon
 
 - 支持`Number`类型的`size`属性
+
+##### ImagePreview
+
+- 新增`close-on-popstate`属性
+
+##### List
+
+- 优化滚动判断逻辑
 
 ##### Loading
 
@@ -297,7 +172,9 @@
 
 ##### Notify
 
-- 新增`onClick`属性
+- 新增`onClick`选项
+- 新增`onClose`选项
+- 新增`onOpened`选项
 
 ##### NoticeBar
 
@@ -308,6 +185,11 @@
 
 - 新增`gutter`属性
 
+##### Picker
+
+- 支持惯性滚动
+- 新增`toolbar-position`属性
+
 ##### Popup
 
 - 新增`click`事件
@@ -317,15 +199,41 @@
 
 - 新增`icon-size`属性
 
+##### Rate
+
+- 新增`gutter`属性
+- 支持`String`类型的`size`属性
+
+##### Search
+
+- 新增`clearable`属性
+- 新增`left-icon`属性
+- 新增`right-icon`属性
+- 新增`right-icon`插槽
+- 优化输入体验，输入法拼写过程中不再会触发`v-model`更新
+
+##### Slider
+
+- 新增`drag-start`事件
+- 新增`drag-end`事件
+
 ##### Steps
 
 - 新增`inactive-icon`属性
 - 新增`inactive-icon`插槽
 
+##### Stepper
+
+- 支持`Number`类型的`input-width`属性
+
 ##### SubmitBar
 
 - 新增`tip-icon`属性
 - 新增`suffix-label`属性
+
+##### SwipeCell
+
+- 支持自动计算`left-width`和`right-width`
 
 ##### Switch
 
@@ -343,6 +251,7 @@
 
 ##### Tab
 
+- 新增`border`属性
 - 优化`animated`动画性能
 - 修复开启`animated`后高度错误的问题
 
@@ -355,3 +264,30 @@
 ##### TabbarItem
 
 - 新增`name`属性
+
+##### Toast
+
+- 新增`onOpened`选项
+
+##### Uploader
+
+- 新增上传区域默认样式
+- 新增`delete`事件
+- 新增`upload-text`属性
+- 新增`max-count`属性
+- 新增`preview-size`属性
+- 新增`preview-image`属性
+- 支持通过`v-model`绑定文件列表
+- `oversize`事件增加`detail`参数
+
+---
+
+#### 后续计划
+
+我们计划在今年下半年推出 <b>VantWeapp 1.0 版本</b>，目标是对标 Vant 2.0 版本，将大部分新组件和新功能同步到小程序端。
+
+同时，Vant 3.0 版本也在酝酿当中，不出意外的话，<b>3.0 版本会基于 Vue 3.0 实现，并争取和 Vue 3.0 同期发布</b>。
+
+对于 Vant 1.x 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
+
+<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png">

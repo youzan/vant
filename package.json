@@ -71,7 +71,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.13",
-    "@vant/doc": "^2.3.0",
+    "@vant/doc": "^2.3.1",
     "@vant/eslint-config": "^1.1.2",
     "@vant/markdown-loader": "^2.0.0",
     "@vant/touch-emulator": "^1.0.0",

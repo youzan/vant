@@ -1,191 +1,13 @@
-# Changelog
+# 更新日志
 
-### [v2.0.0-beta.5](https://github.com/youzan/vant/tree/v2.0.0-beta.5)
-`2019-06-10`
-
-##### ActionSheet
-
-- Add `click-overlay` event
-
-##### Field
-
-- Add `input` slot
-
-##### Image
-
-- Fix can not display loading status when use lazy-load prop
-
-##### Toolbar
-
-- Add `toolbar-position` prop
-
-
-### [v2.0.0-beta.4](https://github.com/youzan/vant/tree/v2.0.0-beta.4)
-`2019-06-05`
-
-##### Checkbox
-
-- Fix `label-position` prop not work
-
-##### Field
-
-- Add `click` event
-- Add `clickable` prop
-
-##### Radio
-
-- Fix `label-position` prop not work
-
-##### Stepper
-
-- Support `Number` type of `input-width` prop
-
-##### SwipeCell
-
-- Fix render error when one side is empty
-
-##### Uploader
-
-- Support bind `v-model`
-- Add `max-count` prop
-- Add `preview-size` prop
-- Add `preview-image` prop
-
-
-### [v2.0.0-beta.3](https://github.com/youzan/vant/tree/v2.0.0-beta.3)
-`2019-05-31`
-
-##### Field
-
-- No longer update v-model during IME composition
-
-##### IndexBar
-
-- Add `sticky` prop
-- Add `highlight-color` prop
-
-##### Notify
-
-- Add `onClose` option
-- Add `onOpened` option
-
-##### Picker
-
-- Optimize animation
-
-##### Rate
-
-- Add `gutter` prop
-- Support `size` prop of `String` type
-
-##### Search
-
-- No longer update v-model during IME composition
-
-##### SwipeCell
-
-- Support auto calc `left-width` and `right-width`
-
-##### Toast
-
-- Add `onOpened` option
-
-
-### [v2.0.0-beta.2](https://github.com/youzan/vant/tree/v2.0.0-beta.2)
-
-#### Accessibility
-
-Improve accessibility for those components：
-
-- List
-- Rate
-- Dialog
-- Slider
-- Switch
-- NoticeBar
-- GoodsAction
-- DropdownMenu
-- NumberKeyboard
-
-##### Area
-
-- `reset` method support `code` param
-
-##### Button
-
-- Add `icon` prop
-
-##### ImagePreview
-
-- Add `close-on-popstate` prop
-
-##### Search
-
-- Add `clearable` prop
-- Add `left-icon` prop
-- Add `right-icon` prop
-- Add `right-icon` slot
-
-##### Slider
-
-- Add `drag-start` event
-- Add `drag-end` event
-
-##### Uploader
-
-- Add default upload style
-- Add `upload-text` prop
-
-
-### [v2.0.0-beta.1](https://github.com/youzan/vant/tree/v2.0.0-beta.1)
-
-#### Accessibility
-
-Improve accessibility for those components：
-
-- Accordion
-- Checkbox
-- Radio
-- Stepper
-- Tab
-
-##### ActionSheet
-
-- Add `lock-scroll` prop
-
-##### DatetimePicker
-
-- Add `filter` prop
-
-##### DropdownMenu
-
-- Add `duration` prop
-
-##### DropdownItem
-
-- Add `title-class` prop
-- Fix incorrect position in some browsers
-
-##### Picker
-
-- Support inertial scrolling
-
-##### Tab
-
-- Add `border` prop
-
-##### Uploader
-
-- `oversize` event add `detail` param
-
-
-### [v2.0.0-beta.0](https://github.com/youzan/vant/tree/v2.0.0-beta.0)
-`2019-05-21`
+### [v2.0.0](https://github.com/youzan/vant/tree/v2.0.0)
+`2019-06-12`
 
 #### Overview
 
 - Add four new components
 - Add dozens of APIs
+- Improve accessibility
 - New card style document, support document search
 - All components support custom styles via `less` variables
 - Rename several components, deprecate several APIs
@@ -196,6 +18,8 @@ Improve accessibility for those components：
 - `Skeleton` Component
 - `IndexBar`、`IndexAnchor` Component
 - `DropdownMenu`、`DropdownItem` Component
+
+<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png">
 
 #### Breaking Changes
 
@@ -250,71 +74,144 @@ Improve accessibility for those components：
 
 - Remove Waterfall component，please use `List` instead，or use [@vant/waterfall](https://github.com/chenjiahan/vant-waterfall)。
 
-#### New Features
+---
+
+#### Accessibility
+
+Improve accessibility for those components：
+
+- Accordion
+- Checkbox
+- Dialog
+- DropdownMenu
+- GoodsAction
+- List
+- NoticeBar
+- NumberKeyboard
+- Radio
+- Rate
+- Stepper
+- Tab
+- Slider
+- Switch
+
+#### New Feature
 
 ##### ActionSheet
 
-- add `close-on-click-action` prop
-- support use `title` and `actions` prop at same time
+- Add `lock-scroll` prop
+- Add `click-overlay` event
+- Add `close-on-click-action` prop
+- Support both use `title` and `actions` prop
+
+##### Area
+
+- `reset` method support `code` param
 
 ##### Button
 
-- add `loading-type` prop
+- Add `icon` prop
+- Add `loading-type` prop
 
 ##### Checkbox
 
-- add `icon-size` prop
+- Add `icon-size` prop
+
+##### DatetimePicker
+
+- Add `filter` prop
 
 ##### Field
 
-- add `label-class` prop
+- Add `input` slot
+- Add `click` event
+- Add `clickable` prop
+- Add `label-class` prop
+- No longer update v-model during IME composition
 
 ##### GoodsActionButton
 
-- add `type` prop
+- Add `type` prop
 
 ##### Icon
 
-- Support `size` prop of `Number` type
+- Support `Number` type of `size` prop
+
+##### ImagePreview
+
+- Add `close-on-popstate` prop
 
 ##### Loading
 
-- add `default` slot
-- add `vertical` prop
-- add `text-size` prop
-- Support `size` prop of `Number` type
+- Add `default` slot
+- Add `vertical` prop
+- Add `text-size` prop
+- Support `Number` type of `size` prop
 
 ##### Notify
 
-- add `onClick` prop
+- Add `onClick` option
+- Add `onClose` option
+- Add `onOpened` option
 
 ##### NoticeBar
 
-- add `left-icon` slot
-- add `right-icon` slot
+- Add `left-icon` slot
+- Add `right-icon` slot
 
 ##### PasswordInput
 
-- add `gutter` prop
+- Add `gutter` prop
+
+##### Picker
+
+- Support inertial scrolling
+- Add `toolbar-position` prop
 
 ##### Popup
 
-- add `click` event
-- add `duration` prop
+- Add `click` event
+- Add `duration` prop
 
 ##### Radio
 
-- add `icon-size` prop
+- Add `icon-size` prop
+
+##### Rate
+
+- Add `gutter` prop
+- Support`String` type of `size` prop
+
+##### Search
+
+- Add `clearable` prop
+- Add `left-icon` prop
+- Add `right-icon` prop
+- Add `right-icon` slot
+- No longer update v-model during IME composition
+
+##### Slider
+
+- Add `drag-start` event
+- Add `drag-end` event
 
 ##### Steps
 
-- add `inactive-icon` prop
-- add `inactive-icon` slot
+- Add `inactive-icon` prop
+- Add `inactive-icon` slot
+
+##### Stepper
+
+- Support`Number` type of `input-width` prop
 
 ##### SubmitBar
 
-- add `tip-icon` prop
-- add `suffix-label` prop
+- Add `tip-icon` prop
+- Add `suffix-label` prop
+
+##### SwipeCell
+
+- Auto calc `left-width` and `right-width`
 
 ##### Switch
 
@@ -322,25 +219,41 @@ Improve accessibility for those components：
 
 ##### SwitchCell
 
-- add `border` prop
-- add `cell-size` prop
+- Add `border` prop
+- Add `cell-size` prop
 
 ##### Sku
 
-- add `preview-open` event
-- add `preview-close` event
+- Add `preview-open` event
+- Add `preview-close` event
 
 ##### Tab
 
-- Optimize `animated` performance
+- Add `border` prop
+- Optimize `animated` animation performance
 - Fix incorrect tab pane height when use `animated` prop
 
 ##### Tabbar
 
-- add `route` prop
-- add `border` prop
-- add `inactive-color` prop
+- Add `route` prop
+- Add `border` prop
+- Add `inactive-color` prop
 
 ##### TabbarItem
 
-- add `name` prop
+- Add `name` prop
+
+##### Toast
+
+- Add `onOpened` option
+
+##### Uploader
+
+- Add default upload style
+- Add `delete` event
+- Add `upload-text` prop
+- Add `max-count` prop
+- Add `preview-size` prop
+- Add `preview-image` prop
+- Support use `v-model` to bind file-list
+- `oversize` event add `detail` param
