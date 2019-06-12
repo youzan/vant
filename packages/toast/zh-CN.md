@@ -2,7 +2,7 @@
 
 ### 引入
 
-```javascript
+```js
 import { Toast } from 'vant';
 
 Vue.use(Toast);
@@ -12,13 +12,13 @@ Vue.use(Toast);
 
 ### 文字提示
 
-```javascript
+```js
 Toast('提示内容');
 ```
 
 ### 加载提示
 
-```javascript
+```js
 Toast.loading({
   mask: true,
   message: '加载中...'
@@ -27,14 +27,28 @@ Toast.loading({
 
 ### 成功/失败提示
 
-```javascript
+```js
 Toast.success('成功文案');
 Toast.fail('失败文案');
 ```
 
+### 自定义图标
+
+```js
+Toast({
+  text: '自定义图标',
+  icon: 'like-o'
+});
+
+Toast({
+  text: '展示图片',
+  icon: 'https://img.yzcdn.cn/vant/logo.png'
+});
+```
+
 ### 高级用法
 
-```javascript
+```js
 const toast = Toast.loading({
   duration: 0,       // 持续展示 toast
   forbidClick: true, // 禁用背景点击
@@ -102,6 +116,7 @@ toast2.clear();
 | type | 提示类型，可选值为 `loading` `success`<br>`fail` `html` | `String` | `text` | - |
 | position | 位置，可选值为 `top` `bottom` | `String` | `middle` | - |
 | message | 文本内容，支持通过`\n`换行 | `String` | `''` | - | - |
+| icon | 自定义图标，支持传入图标名称或图片链接，可选值见 Icon 组件 | `String` | - | 2.0.1 |
 | mask | 是否显示背景遮罩层 | `Boolean` | `false` | - |
 | forbidClick | 是否禁止背景点击 | `Boolean` | `false` | - |
 | loadingType | 加载图标类型, 可选值为 `spinner` | `String` | `circular` | 1.1.3 |

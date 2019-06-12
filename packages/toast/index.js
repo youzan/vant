@@ -3,6 +3,7 @@ import VueToast from './Toast';
 import { isObj, isServer } from '../utils';
 
 const defaultOptions = {
+  icon: '',
   type: 'text',
   mask: false,
   value: true,
