@@ -16,7 +16,7 @@
     </div>
 
     <h1 class="vant-title">
-      <img src="https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png" >
+      <img src="https://img.yzcdn.cn/vant/logo.png" >
       <span>Vant</span>
     </h1>
     <h2 class="vant-desc">{{ description }}</h2>

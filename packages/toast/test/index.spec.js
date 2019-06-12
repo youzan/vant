@@ -11,6 +11,7 @@ test('create a forbidClick toast', async () => {
     type: 'success'
   });
 
+  await later();
   expect(toast.$el.outerHTML).toMatchSnapshot();
 
   await later();
@@ -28,6 +29,35 @@ it('toast disappeared after duration', async () => {
 
   await later(50);
   expect(toast.$el.style.display).toEqual('none');
+});
+
+test('show loading toast', async () => {
+  const toast = Toast.loading({
+    message: 'Message'
+  });
+
+  await later();
+  expect(toast.$el.outerHTML).toMatchSnapshot();
+});
+
+test('show html toast', async () => {
+  const toast = Toast({
+    type: 'html',
+    message: '<div>Message</div>'
+  });
+
+  await later();
+  expect(toast.$el.outerHTML).toMatchSnapshot();
+});
+
+test('icon prop', async () => {
+  const toast = Toast({
+    message: 'Message',
+    icon: 'star-o'
+  });
+
+  await later();
+  expect(toast.$el.outerHTML).toMatchSnapshot();
 });
 
 test('clear toast', () => {

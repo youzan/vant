@@ -4,12 +4,12 @@ import Icon from '../icon';
 import Loading from '../loading';
 
 const [sfc, bem] = use('toast');
-const STYLE = ['success', 'fail', 'loading'];
 
 export default sfc({
   mixins: [PopupMixin],
 
   props: {
+    icon: String,
     className: null,
     loadingType: String,
     forbidClick: Boolean,
@@ -62,6 +62,7 @@ export default sfc({
       }
     },
 
+    /* istanbul ignore next */
     onAfterEnter() {
       this.$emit('opened');
 
@@ -72,31 +73,43 @@ export default sfc({
   },
 
   render(h) {
-    const { type, message, loadingType } = this;
-    const style = STYLE.indexOf(type) !== -1 ? 'default' : type;
+    const { type, icon, message, loadingType } = this;
 
-    function Content() {
-      switch (style) {
-        case 'text':
-          return <div>{message}</div>;
-        case 'html':
-          return <div domPropsInnerHTML={message} />;
+    const hasIcon = icon || (type === 'success' || type === 'fail');
+
+    function ToastIcon() {
+      if (hasIcon) {
+        return <Icon class={bem('icon')} name={icon || type} />;
       }
 
-      return [
-        type === 'loading' ? (
-          <Loading color="white" type={loadingType} />
-        ) : (
-          <Icon class={bem('icon')} name={type} />
-        ),
-        isDef(message) && <div class={bem('text')}>{message}</div>
-      ];
+      if (type === 'loading') {
+        return <Loading class={bem('loading')} color="white" type={loadingType} />;
+      }
+    }
+
+    function Message() {
+      if (!isDef(message) || message === '') {
+        return;
+      }
+
+      if (type === 'html') {
+        return <div class={bem('text')} domPropsInnerHTML={message} />;
+      }
+
+      return <div class={bem('text')}>{message}</div>;
     }
 
     return (
       <transition name="van-fade" onAfterEnter={this.onAfterEnter}>
-        <div vShow={this.value} class={[bem([style, this.position]), this.className]}>
-          {Content()}
+        <div
+          vShow={this.value}
+          class={[
+            bem([this.position, { text: !hasIcon && type !== 'loading' }]),
+            this.className
+          ]}
+        >
+          {ToastIcon()}
+          {Message()}
         </div>
       </transition>
     );

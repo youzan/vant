@@ -15,7 +15,7 @@ export default {
   'zh-CN': {
     header: {
       logo: {
-        image: 'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+        image: 'https://img.yzcdn.cn/vant/logo.png',
         title: 'Vant',
         href: '#/'
       },
@@ -349,7 +349,7 @@ export default {
     header: {
       logo: {
         image:
-          'https://img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png',
+          'https://img.yzcdn.cn/vant/logo.png',
         title: 'Vant',
         href: '#/'
       },

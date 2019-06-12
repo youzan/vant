@@ -11,8 +11,10 @@
   box-sizing: content-box;
 
   // hack for avoid max-width when use left & fixed
-  width: fit-content;
+  width: @toast-default-width;
   max-width: @toast-max-width;
+  min-height: @toast-default-min-height;
+  padding: @toast-default-padding;
   color: @toast-text-color;
   font-size: @toast-font-size;
   line-height: @toast-line-height;
@@ -34,25 +36,13 @@
   }
 
   &--text {
+    width: fit-content;
     min-width: @toast-text-min-width;
+    min-height: unset;
     padding: @toast-text-padding;
-  }
-
-  &--default {
-    width: @toast-default-width;
-    min-height: @toast-default-min-height;
-    padding: @toast-default-padding;
-
-    .van-toast__icon {
-      font-size: @toast-icon-size;
-    }
-
-    .van-loading {
-      margin: 10px 0;
-    }
 
     .van-toast__text {
-      padding-top: 5px;
+      margin-top: 0;
     }
   }
 
@@ -63,5 +53,17 @@
   &--bottom {
     top: auto;
     bottom: @toast-position-bottom-distance;
+  }
+
+  &__icon {
+    font-size: @toast-icon-size;
+  }
+
+  &__loading {
+    padding: 5px;
+  }
+
+  &__text {
+    margin-top: 10px;
   }
 }
