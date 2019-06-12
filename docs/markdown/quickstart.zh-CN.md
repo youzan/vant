@@ -155,6 +155,7 @@ module.exports = {
 Vant 组件默认只适配了移动端设备，如果你需要在桌面端使用 vant，可以引入我们提供的 [@vant/touch-emulator](https://github.com/chenjiahan/vant-touch-emulator).
 
 ```bash
+# 安装模块
 npm i @vant/touch-emulator -S
 ```
 
