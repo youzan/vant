@@ -31,11 +31,7 @@ vue ui
 ### 安装
 
 ```bash
-# 安装 1.x 稳定版本
 npm i vant -S
-
-# 安装 2.0 测试版本
-npm i vant@beta -S
 ```
 
 ## 引入组件
@@ -109,11 +105,11 @@ Vue.use(Vant);
 
 ```html
 <!-- 引入样式 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.0/lib/index.css">
 
 <!-- 引入组件 -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.0/lib/vant.min.js"></script>
 
 <script>
 var Vue = window.Vue;

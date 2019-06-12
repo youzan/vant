@@ -38,11 +38,7 @@
 ## Install
 
 ```bash
-# install 1.x stable
 npm i vant -S
-
-# install 2.0 beta
-npm i vant@beta -S
 ```
 
 ## Quickstart

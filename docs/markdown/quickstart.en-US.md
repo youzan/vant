@@ -22,11 +22,7 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 ### Install
 
 ```bash
-# install 1.x stable
 npm i vant -S
-
-# install 2.0 beta
-npm i vant@beta -S
 ```
 
 ## Usage
@@ -95,11 +91,11 @@ Vue.use(Vant);
 
 ```html
 <!-- import style -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@beta/lib/index.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.0/lib/index.css" />
 
 <!-- import script -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vant@beta/lib/vant.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vant@2.0/lib/vant.min.js"></script>
 
 <script>
 var Vue = window.Vue;
