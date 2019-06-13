@@ -15,7 +15,7 @@ vue create hello-world
 vue ui
 ```
 
-<img width="100%" style="border-radius: 3px; box-shadow: 0 1px 1px rgba(0, 0, 0, .1);" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png" >
+![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
 在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 

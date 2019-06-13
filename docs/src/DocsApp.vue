@@ -98,11 +98,6 @@ export default {
   font-family: 'Dosis', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
 
-  &__logo {
-    width: 120px;
-    height: 120px;
-  }
-
   p {
     margin-bottom: 20px;
   }

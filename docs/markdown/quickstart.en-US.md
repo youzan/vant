@@ -15,7 +15,7 @@ vue create hello-world
 vue ui
 ```
 
-<img width="100%" style="border-radius: 3px; box-shadow: 0 1px 1px rgba(0, 0, 0, .1);" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809030812.png" >
+![](https://img.yzcdn.cn/vant/vue-cli-demo-201809030812.png)
 
 In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to the dependencies.
 

@@ -19,7 +19,7 @@
 - `IndexBar`、`IndexAnchor` Component
 - `DropdownMenu`、`DropdownItem` Component
 
-<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png">
+![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### Breaking Changes
 
