@@ -44,7 +44,7 @@ export default sfc({
     toggleItem(active) {
       const { menu } = this.$refs;
       const rect = menu.getBoundingClientRect();
-      this.top = rect.top + rect.height;
+      this.top = rect.bottom;
 
       this.children.forEach((item, index) => {
         if (index === active) {
