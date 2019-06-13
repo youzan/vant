@@ -4,8 +4,8 @@ import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
 const [sfc, bem, t] = use('number-keyboard');
-const CLOSE_KEY_TYPE = ['blue', 'big'];
-const DELETE_KEY_TYPE = ['delete', 'big', 'gray'];
+const CLOSE_KEY_THEME = ['blue', 'big'];
+const DELETE_KEY_THEME = ['delete', 'big', 'gray'];
 
 export default sfc({
   mixins: [
@@ -66,13 +66,13 @@ export default sfc({
       switch (this.theme) {
         case 'default':
           keys.push(
-            { text: this.extraKey, type: ['gray'] },
+            { text: this.extraKey, theme: ['gray'] },
             { text: 0 },
-            { text: this.deleteText, type: ['gray', 'delete'] }
+            { text: this.deleteText, theme: ['gray'], type: 'delete' }
           );
           break;
         case 'custom':
-          keys.push({ text: 0, type: ['middle'] }, { text: this.extraKey });
+          keys.push({ text: 0, theme: ['middle'] }, { text: this.extraKey });
           break;
       }
 
@@ -98,14 +98,14 @@ export default sfc({
       this.$emit(this.show ? 'show' : 'hide');
     },
 
-    onPress(text) {
+    onPress(text, type) {
       if (text === '') {
         return;
       }
 
-      if (text === this.deleteText) {
+      if (type === 'delete') {
         this.$emit('delete');
-      } else if (text === this.closeButtonText) {
+      } else if (type === 'close') {
         this.onClose();
       } else {
         this.$emit('input', text);
@@ -132,6 +132,37 @@ export default sfc({
       </div>
     );
 
+    const Keys = this.keys.map(key => (
+      <Key
+        key={key.text}
+        text={key.text}
+        type={key.type}
+        theme={key.theme}
+        onPress={onPress}
+      >
+        {key.type === 'delete' && this.slots('delete')}
+      </Key>
+    ));
+
+    const Sidebar = theme === 'custom' && (
+      <div class={bem('sidebar')}>
+        <Key
+          text={this.deleteText}
+          type="delete"
+          theme={DELETE_KEY_THEME}
+          onPress={onPress}
+        >
+          {this.slots('delete')}
+        </Key>
+        <Key
+          text={closeButtonText}
+          type="close"
+          theme={CLOSE_KEY_THEME}
+          onPress={onPress}
+        />
+      </div>
+    );
+
     return (
       <transition name={this.transition ? 'van-slide-up' : ''}>
         <div
@@ -143,17 +174,8 @@ export default sfc({
           onWebkitAnimationEnd={this.onAnimationEnd}
         >
           {Title}
-          <div class={bem('body')}>
-            {this.keys.map(key => (
-              <Key key={key.text} text={key.text} type={key.type} onPress={onPress} />
-            ))}
-          </div>
-          {theme === 'custom' && (
-            <div class={bem('sidebar')}>
-              <Key text={this.deleteText} type={DELETE_KEY_TYPE} onPress={onPress} />
-              <Key text={closeButtonText} type={CLOSE_KEY_TYPE} onPress={onPress} />
-            </div>
-          )}
+          <div class={bem('body')}>{Keys}</div>
+          {Sidebar}
         </div>
       </transition>
     );

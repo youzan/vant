@@ -92,4 +92,5 @@ export default {
 
 | Name | Description |
 |------|------|
+| delete | Custom delete button content |
 | title-left | Custom title left content |

@@ -4,7 +4,8 @@ const [sfc, bem] = use('key');
 
 export default sfc({
   props: {
-    type: Array,
+    type: String,
+    theme: Array,
     text: [String, Number]
   },
 
@@ -16,9 +17,17 @@ export default sfc({
 
   computed: {
     className() {
-      const types = this.type.slice(0);
-      this.active && types.push('active');
-      return bem(types);
+      const classNames = this.theme.slice(0);
+
+      if (this.active) {
+        classNames.push('active');
+      }
+
+      if (this.type) {
+        classNames.push(this.type);
+      }
+
+      return bem(classNames);
     }
   },
 
@@ -32,7 +41,7 @@ export default sfc({
     },
 
     onClick() {
-      this.$emit('press', this.text);
+      this.$emit('press', this.text, this.type);
     }
   },
 
@@ -49,7 +58,7 @@ export default sfc({
         onTouchend={onBlur}
         onTouchcancel={onBlur}
       >
-        {this.text}
+        {this.slots('default') || this.text}
       </i>
     );
   }
