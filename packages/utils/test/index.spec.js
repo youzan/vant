@@ -1,4 +1,5 @@
 import { deepClone } from '../deep-clone';
+import { deepAssign } from '../deep-assign';
 import { isDef, get } from '..';
 import { raf, cancelRaf } from '../dom/raf';
 import { later } from '../../../test/utils';
@@ -11,7 +12,7 @@ import { camelize } from '../format/string';
 test('deepClone', () => {
   const a = { foo: 0 };
   const b = { foo: 0, bar: 1 };
-  const fn = () => { };
+  const fn = () => {};
   const arr = [a, b];
   expect(deepClone(a)).toEqual(a);
   expect(deepClone(b)).toEqual(b);
@@ -21,13 +22,30 @@ test('deepClone', () => {
   expect(deepClone(1)).toEqual(1);
 });
 
+test('deepAssign', () => {
+  const fn = () => {};
+
+  expect(deepAssign({}, { foo: null })).toEqual({});
+  expect(deepAssign({}, { foo: undefined })).toEqual({});
+  expect(deepAssign({ fn: null }, { fn })).toEqual({ fn });
+  expect(deepAssign({ foo: 0 }, { bar: 1 })).toEqual({ foo: 0, bar: 1 });
+  expect(deepAssign({ foo: { bar: false } }, { foo: { bar: true, foo: false } })).toEqual(
+    {
+      foo: {
+        bar: true,
+        foo: false
+      }
+    }
+  );
+});
+
 test('isDef', () => {
   expect(isDef(null)).toBeFalsy();
   expect(isDef(undefined)).toBeFalsy();
   expect(isDef(1)).toBeTruthy();
   expect(isDef('1')).toBeTruthy();
   expect(isDef({})).toBeTruthy();
-  expect(isDef(() => { })).toBeTruthy();
+  expect(isDef(() => {})).toBeTruthy();
 });
 
 test('camelize', () => {
