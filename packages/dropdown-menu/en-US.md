@@ -76,6 +76,24 @@ export default {
 };
 ```
 
+### Expand Direction
+
+```html
+<van-dropdown-menu direction="up">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
+### Disabled
+
+```html
+<van-dropdown-menu>
+  <van-dropdown-item v-model="value1" disabled :options="option1" />
+  <van-dropdown-item v-model="value2" disabled :options="option2" />
+</van-dropdown-menu>
+```
+
 ## API
 
 ### DropdownMenu Props
@@ -85,6 +103,7 @@ export default {
 | active-color | Active color of title and option | `String` | `#1989fa` |
 | z-index | z-index of menu item | `Number` | `10` |
 | duration | Transition duration, unit second | `Number` | `0.2` |
+| direction | Expand direction, can be set to `up` | `String` | `down` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
 | close-on-click-overlay | Whether to close when click overlay | `Boolean` | `true` |
 

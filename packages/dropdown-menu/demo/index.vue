@@ -42,6 +42,19 @@
       </van-dropdown-menu>
     </demo-block>
 
+    <demo-block :title="$t('expandDirection')">
+      <van-dropdown-menu direction="up">
+        <van-dropdown-item
+          v-model="value1"
+          :options="option1"
+        />
+        <van-dropdown-item
+          v-model="value2"
+          :options="option2"
+        />
+      </van-dropdown-menu>
+    </demo-block>
+
     <demo-block :title="$t('disableMenu')">
       <van-dropdown-menu>
         <van-dropdown-item
@@ -68,6 +81,7 @@ export default {
       switchTitle1: '包邮',
       switchTitle2: '团购',
       itemTitle: '筛选',
+      expandDirection: '向上展开',
       option1: [
         { text: '全部商品', value: 0 },
         { text: '新款商品', value: 1 },
@@ -85,6 +99,7 @@ export default {
       switchTitle1: 'Title',
       switchTitle2: 'Title',
       itemTitle: 'Title',
+      expandDirection: 'Expand Direction',
       option1: [
         { text: 'Option1', value: 0 },
         { text: 'Option2', value: 1 },

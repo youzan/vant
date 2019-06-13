@@ -5,7 +5,7 @@ import DropdownItem from '../../dropdown-item';
 function renderWrapper(options = {}) {
   return mount({
     template: `
-      <dropdown-menu>
+      <dropdown-menu :direction="direction">
         <dropdown-item v-model="value" :title="title" :options="options" />
         <dropdown-item v-model="value" :title="title" :options="options" />
       </dropdown-menu>
@@ -18,6 +18,7 @@ function renderWrapper(options = {}) {
       return {
         value: options.value || 0,
         title: options.title || '',
+        direction: options.direction || 'down',
         options: [
           { text: 'A', value: 0 },
           { text: 'B', value: 1 }
@@ -37,10 +38,35 @@ test('show dropdown item', async () => {
   titles.at(0).trigger('click');
   expect(wrapper).toMatchSnapshot();
 
-  titles.at(0).trigger('click');
+  titles.at(1).trigger('click');
   expect(wrapper).toMatchSnapshot();
 
   titles.at(1).trigger('click');
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('close on click outside', async () => {
+  const wrapper = renderWrapper();
+
+  await later();
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+
+  titles.at(0).trigger('click');
+  document.body.click();
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('direction up', async () => {
+  const wrapper = renderWrapper({
+    direction: 'up'
+  });
+
+  await later();
+
+  const titles = wrapper.findAll('.van-dropdown-menu__title');
+
+  titles.at(0).trigger('click');
   expect(wrapper).toMatchSnapshot();
 });
 

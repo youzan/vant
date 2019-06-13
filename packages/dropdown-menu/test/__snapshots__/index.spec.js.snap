@@ -4,8 +4,8 @@ exports[`click option 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">B</span></div>
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">B</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
-    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none; z-index: 2005;" name="van-popup-slide-top">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none; z-index: 2009;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style=""><span>A</span></div>
       </div>
@@ -16,7 +16,30 @@ exports[`click option 1`] = `
       </div>
     </div>
   </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`close on click outside 1`] = `
+<div class="van-dropdown-menu van-hairline--top-bottom">
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
+        <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
+            <!----></i></div>
+      </div>
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>B</span></div>
+      </div>
+    </div>
+    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2004; z-index: 2004; position: absolute;"></div>
+  </div>
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
 </div>
@@ -26,7 +49,7 @@ exports[`destroy one item 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
   <!---->
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
 </div>
@@ -36,10 +59,33 @@ exports[`didn\`t find matched option 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title"></span></div>
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title"></span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`direction up 1`] = `
+<div class="van-dropdown-menu van-hairline--top-bottom">
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down">A</span></div>
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down">A</span></div>
+  <div class="van-dropdown-item van-dropdown-item--up" style="z-index: 10; bottom: 768px;">
+    <div class="van-popup van-popup--bottom van-dropdown-item__content" style="transition-duration: 0.2s;" name="van-popup-slide-bottom">
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
+        <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
+            <!----></i></div>
+      </div>
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>B</span></div>
+      </div>
+    </div>
+    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2006; z-index: 2006; position: absolute;"></div>
+  </div>
+  <div class="van-dropdown-item van-dropdown-item--up" style="z-index: 10; bottom: 768px; display: none;">
     <!---->
   </div>
 </div>
@@ -48,7 +94,7 @@ exports[`didn\`t find matched option 1`] = `
 exports[`disable dropdown item 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="-1" class="van-dropdown-menu__item van-dropdown-menu__item--disabled"><span class="van-dropdown-menu__title">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
 </div>
@@ -56,9 +102,9 @@ exports[`disable dropdown item 1`] = `
 
 exports[`show dropdown item 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
-  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="color: rgb(25, 137, 250);">A</span></div>
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down" style="color: rgb(25, 137, 250);">A</span></div>
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
     <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
@@ -71,7 +117,7 @@ exports[`show dropdown item 1`] = `
     </div>
     <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2000; z-index: 2000; position: absolute;"></div>
   </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
 </div>
@@ -80,32 +126,9 @@ exports[`show dropdown item 1`] = `
 exports[`show dropdown item 2`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
-  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
-    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
-      <div class="van-cell van-cell--clickable">
-        <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
-        <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
-            <!----></i></div>
-      </div>
-      <div class="van-cell van-cell--clickable">
-        <div class="van-cell__title"><span>B</span></div>
-      </div>
-    </div>
-    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2000; z-index: 2000; position: absolute;"></div>
-  </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
-    <!---->
-  </div>
-</div>
-`;
-
-exports[`show dropdown item 3`] = `
-<div class="van-dropdown-menu van-hairline--top-bottom">
-  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
-  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="color: rgb(25, 137, 250);">A</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
-    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title van-dropdown-menu__title--down" style="color: rgb(25, 137, 250);">A</span></div>
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0s; display: none;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
         <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
@@ -116,7 +139,7 @@ exports[`show dropdown item 3`] = `
       </div>
     </div>
   </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
     <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s;" name="van-popup-slide-top">
       <div class="van-cell van-cell--clickable">
         <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
@@ -132,14 +155,46 @@ exports[`show dropdown item 3`] = `
 </div>
 `;
 
+exports[`show dropdown item 3`] = `
+<div class="van-dropdown-menu van-hairline--top-bottom">
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
+  <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title" style="">A</span></div>
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0s; display: none;" name="van-popup-slide-top">
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
+        <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
+            <!----></i></div>
+      </div>
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>B</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px;">
+    <div class="van-popup van-popup--top van-dropdown-item__content" style="transition-duration: 0.2s; display: none;" name="van-popup-slide-top">
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title" style="color: rgb(25, 137, 250);"><span>A</span></div>
+        <div class="van-cell__value"><i class="van-icon van-icon-success van-dropdown-item__icon" style="color: rgb(25, 137, 250);">
+            <!----></i></div>
+      </div>
+      <div class="van-cell van-cell--clickable">
+        <div class="van-cell__title"><span>B</span></div>
+      </div>
+    </div>
+    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2001; z-index: 2001; position: absolute;"></div>
+  </div>
+</div>
+`;
+
 exports[`title prop 1`] = `
 <div class="van-dropdown-menu van-hairline--top-bottom">
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">Title</span></div>
   <div role="button" tabindex="0" class="van-dropdown-menu__item"><span class="van-dropdown-menu__title">Title</span></div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
-  <div class="van-dropdown-item" style="top: 0px; z-index: 10; display: none;">
+  <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
   </div>
 </div>

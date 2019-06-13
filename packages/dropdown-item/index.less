@@ -3,9 +3,16 @@
 .van-dropdown-item {
   position: fixed;
   right: 0;
-  bottom: 0;
   left: 0;
   overflow: hidden;
+
+  &--up {
+    top: 0;
+  }
+
+  &--down {
+    bottom: 0;
+  }
 
   &__content {
     position: absolute;

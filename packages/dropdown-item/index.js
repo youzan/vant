@@ -55,7 +55,15 @@ export default sfc({
   },
 
   render(h) {
-    const { top, zIndex, overlay, duration, activeColor, closeOnClickOverlay } = this.parent;
+    const {
+      zIndex,
+      offset,
+      overlay,
+      duration,
+      direction,
+      activeColor,
+      closeOnClickOverlay
+    } = this.parent;
 
     const Options = this.options.map(option => {
       const active = option.value === this.value;
@@ -81,11 +89,18 @@ export default sfc({
 
     const emit = eventName => () => this.$emit(eventName);
 
+    const style = { zIndex };
+    if (direction === 'down') {
+      style.top = `${offset}px`;
+    } else {
+      style.bottom = `${offset}px`;
+    }
+
     return (
-      <div vShow={this.showWrapper} style={{ top: `${top}px`, zIndex }} class={bem()}>
+      <div vShow={this.showWrapper} style={style} class={bem([direction])}>
         <Popup
           vModel={this.showPopup}
-          position="top"
+          position={direction === 'down' ? 'top' : 'bottom'}
           duration={this.transition ? duration : 0}
           class={bem('content')}
           overlay={overlay}

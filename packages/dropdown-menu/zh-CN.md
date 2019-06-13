@@ -78,6 +78,17 @@ export default {
 };
 ```
 
+### 向上展开
+
+将`direction`属性值设置为`up`，菜单即可向上展开
+
+```html
+<van-dropdown-menu direction="up">
+  <van-dropdown-item v-model="value1" :options="option1" />
+  <van-dropdown-item v-model="value2" :options="option2" />
+</van-dropdown-menu>
+```
+
 ### 禁用菜单
 
 ```html
@@ -96,6 +107,7 @@ export default {
 | active-color | 菜单标题和选项的选中态颜色 | `String` | `#1989fa` | - |
 | z-index | 菜单栏 z-index 层级 | `Number` | `10` | - |
 | duration | 动画时长，单位秒 | `Number` | `0.2` | 2.0.0 |
+| direction | 菜单展开方向，可选值为`up` | `String` | `down` | 2.0.1 |
 | overlay | 是否显示遮罩层 | `Boolean` | `true` | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭菜单 | `Boolean` | `true` | - |
 
