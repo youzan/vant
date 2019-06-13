@@ -6,10 +6,13 @@ import { ClickOutsideMixin } from '../mixins/click-outside';
 const [sfc, bem] = use('dropdown-menu');
 
 export default sfc({
-  mixins: [ParentMixin('vanDropdownMenu'), ClickOutsideMixin({
-    event: 'click',
-    method: 'onClickOutside'
-  })],
+  mixins: [
+    ParentMixin('vanDropdownMenu'),
+    ClickOutsideMixin({
+      event: 'click',
+      method: 'onClickOutside'
+    })
+  ],
 
   props: {
     overlay: {
@@ -24,6 +27,10 @@ export default sfc({
       type: Number,
       default: 0.2
     },
+    direction: {
+      type: String,
+      default: 'down'
+    },
     activeColor: {
       type: String,
       default: BLUE
@@ -36,7 +43,7 @@ export default sfc({
 
   data() {
     return {
-      top: 0
+      offset: 0
     };
   },
 
@@ -44,7 +51,12 @@ export default sfc({
     toggleItem(active) {
       const { menu } = this.$refs;
       const rect = menu.getBoundingClientRect();
-      this.top = rect.bottom;
+
+      if (this.direction === 'down') {
+        this.offset = rect.bottom;
+      } else {
+        this.offset = window.innerHeight - rect.top;
+      }
 
       this.children.forEach((item, index) => {
         if (index === active) {
@@ -75,7 +87,12 @@ export default sfc({
         }}
       >
         <span
-          class={[bem('title', { active: item.show }), item.titleClass]}
+          class={[
+            bem('title', {
+              down: item.showPopup === (this.direction === 'down')
+            }),
+            item.titleClass
+          ]}
           style={{ color: item.showPopup ? this.activeColor : '' }}
         >
           {item.displayTitle}
