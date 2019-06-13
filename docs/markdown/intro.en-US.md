@@ -1,6 +1,6 @@
 <div class="card">
   <div class="van-doc-intro">
-    <img class="van-doc-intro__logo" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
+    <img class="van-doc-intro__logo" style="width: 120px; height: 120px; box-shadow: none;" src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
     <h2 style="margin: 0; font-size: 36px; line-height: 60px;">Vant</h2>
     <p>Mobile UI Components built on Vue</p>
   </div>

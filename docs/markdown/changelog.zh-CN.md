@@ -16,12 +16,12 @@
 
 在 2.0 版本中，我们引入了社区中呼声最高的四个组件，分别是：
 
-- `Image`图片组件
-- `Skeleton`骨架屏组件
-- `IndexBar`、`IndexAnchor`索引栏组件
-- `DropdownMenu`、`DropdownItem`下拉菜单组件
+- <b>Image 图片</b>，类似于小程序原生的 Image 标签，支持多种图片裁剪模式
+- <b>IndexBar 索引栏</b>，通讯录中的字母索引栏，用于长列表快速索引
+- <b>Skeleton 骨架屏</b>，在待加载区域展示的占位区块，提供界面加载过程中的过渡效果
+- <b>DropdownMenu 下拉菜单</b>，用于列表的分类选择、筛选及排序
 
-<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png">
+![](https://img.yzcdn.cn/public_files/2019/06/10/141ac9b67c06be0811c86c4c1c571c9d.png)
 
 #### 新文档
 
@@ -29,13 +29,13 @@
 
 此外，文档站点也支持了<b>搜索</b>和<b>版本切换</b>。
 
-<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png">
+![](https://img.yzcdn.cn/public_files/2019/06/10/63b666fa52493402c87db6146a715341.png)
 
 #### 样式定制
 
 移动端 UI 风格多变，对组件的可定制性要求较高。从 2.0 版本开始，Vant 中的所有组件都支持通过 <b>Less 变量</b>进行样式定制。同时我们新增了较多样式相关的 Props，便于快速定制组件风格。
 
-<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png">
+![](https://img.yzcdn.cn/public_files/2019/06/11/9a066c1a212264c7ae56065e1f13d317.png)
 
 #### 更轻量
 
@@ -296,4 +296,4 @@
 
 对于 Vant 1.x 版本，后续会进入维护期，跟进问题修复，但不再引入功能性改动。
 
-<img style="width: 100%;" src="https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png">
+![](https://img.yzcdn.cn/public_files/2019/06/11/4e7202acbfc399622e428eb1485e1591.png)

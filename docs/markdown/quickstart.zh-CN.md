@@ -15,7 +15,7 @@ vue create hello-world
 vue ui
 ```
 
-<img width="100%" style="border-radius: 3px; box-shadow: 0 1px 1px rgba(0, 0, 0, .1);" src="https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png" >
+![](https://img.yzcdn.cn/vant/vue-cli-demo-201809032000.png)
 
 在图形化界面中，点击`依赖` -> `安装依赖`，然后将 `vant` 添加到依赖中即可。
 
@@ -25,13 +25,18 @@ vue ui
 
 - 基于 vant 搭建单页面应用，配置按需引入
 - 配置 rem 适配方案
+- 配置 viewport 适配方案
 - 配置 TypeScript 工程
 - 配置自定义主题色方案
 
 ### 安装
 
 ```bash
+# 通过 npm 安装
 npm i vant -S
+
+# 通过 yarn 安装
+yarn add vant
 ```
 
 ## 引入组件

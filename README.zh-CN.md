@@ -37,7 +37,11 @@
 ## 安装
 
 ```bash
+# 通过 npm 安装
 npm i vant -S
+
+# 通过 yarn 安装
+yarn add vant
 ```
 
 ## 快速上手
