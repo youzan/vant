@@ -4,6 +4,7 @@ import { VanPopupMixin } from './mixins/popup';
 type ToastMessage = string | number;
 
 export type ToastOptions = {
+  icon?: string;
   type?: string;
   mask?: boolean;
   position?: string;

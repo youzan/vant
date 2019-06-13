@@ -39,6 +39,22 @@
       </van-button>
     </demo-block>
 
+    <demo-block :title="$t('customIcon')">
+      <van-button
+        type="primary"
+        @click="showIconToast"
+      >
+        {{ $t('customIcon') }}
+      </van-button>
+
+      <van-button
+        type="primary"
+        @click="showImageToast"
+      >
+        {{ $t('customImage') }}
+      </van-button>
+    </demo-block>
+
     <demo-block :title="$t('advancedUsage')">
       <van-button
         type="primary"
@@ -63,6 +79,8 @@ export default {
       longText: '这是一条长文字提示，超过一定字数就会换行',
       text2: '成功文案',
       text3: '失败文案',
+      customIcon: '自定义图标',
+      customImage: '展示图片',
       text4: second => `倒计时 ${second} 秒`,
       longTextButton: '长文字提示'
     },
@@ -76,6 +94,8 @@ export default {
       longText: 'This is a long message, text will wrap when over a certain length',
       text2: 'Success',
       text3: 'Fail',
+      customIcon: 'Custom Icon',
+      customImage: 'Custom Image',
       text4: second => `${second} seconds`,
       longTextButton: 'Long Text'
     }
@@ -92,6 +112,20 @@ export default {
 
     showFailToast() {
       this.$toast.fail(this.$t('text3'));
+    },
+
+    showIconToast() {
+      this.$toast({
+        message: this.$t('customIcon'),
+        icon: 'like-o'
+      });
+    },
+
+    showImageToast() {
+      this.$toast({
+        message: this.$t('customImage'),
+        icon: 'https://img.yzcdn.cn/vant/logo.png'
+      });
     },
 
     showCustomizedToast() {
