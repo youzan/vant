@@ -1,5 +1,5 @@
 import NumberKeyboard from '..';
-import { mount } from '../../../test/utils';
+import { mount, trigger } from '../../../test/utils';
 
 test('click number key', () => {
   const wrapper = mount(NumberKeyboard, {
@@ -9,7 +9,10 @@ test('click number key', () => {
     }
   });
 
-  wrapper.findAll('.van-key').at(0).trigger('click');
+  wrapper
+    .findAll('.van-key')
+    .at(0)
+    .trigger('click');
   expect(wrapper.emitted('input')[0][0]).toEqual(1);
 
   wrapper.destroy();
@@ -17,8 +20,20 @@ test('click number key', () => {
 
 it('click delete key', () => {
   const wrapper = mount(NumberKeyboard);
-  wrapper.findAll('.van-key').at(11).trigger('click');
+  wrapper
+    .findAll('.van-key')
+    .at(11)
+    .trigger('click');
   expect(wrapper.emitted('delete')).toBeTruthy();
+});
+
+it('click empty key', () => {
+  const wrapper = mount(NumberKeyboard);
+  wrapper
+    .findAll('.van-key')
+    .at(9)
+    .trigger('click');
+  expect(wrapper.emitted('input')).toBeFalsy();
 });
 
 test('click close button', () => {
@@ -29,29 +44,11 @@ test('click close button', () => {
     }
   });
 
-  wrapper.findAll('.van-key').at(12).trigger('click');
+  wrapper
+    .findAll('.van-key')
+    .at(12)
+    .trigger('click');
   expect(wrapper.emitted('close')).toBeTruthy();
-});
-
-test('keey-alive live cycle', () => {
-  const wrapper = mount({
-    template: `
-      <keep-alive>
-        <number-keyboard v-if="show" />
-      </keep-alive>
-    `,
-    props: ['show'],
-    components: { NumberKeyboard }
-  }, {
-    attachToDocument: true,
-    propsData: {
-      show: true
-    }
-  });
-
-  expect(wrapper.vm.$el).toBeTruthy();
-  wrapper.vm.show = false;
-  expect(wrapper.vm.el).toBeFalsy();
 });
 
 test('listen to show/hide event when has transtion', () => {
@@ -76,18 +73,56 @@ test('listen to show event when no transtion', () => {
   expect(wrapper.emitted('hide')).toBeTruthy();
 });
 
-test('title-left slot', () => {
-  const wrapper = mount({
-    template: `
-      <number-keyboard show>
-        <template v-slot:title-left>Custom Title Left</template>
-      </number-keyboard>
-    `
-  }, {
-    components: {
-      NumberKeyboard
+test('render title', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      title: 'Title',
+      closeButtonText: 'Close'
     }
   });
 
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('title-left slot', () => {
+  const wrapper = mount(NumberKeyboard, {
+    scopedSlots: {
+      'title-left': () => 'Custom Title Left'
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('hideOnClickOutside', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      show: true
+    }
+  });
+
+  trigger(document.body, 'touchstart');
+  expect(wrapper.emitted('blur')).toBeTruthy();
+});
+
+test('disable hideOnClickOutside', () => {
+  const wrapper = mount(NumberKeyboard, {
+    propsData: {
+      show: true,
+      hideOnClickOutside: false
+    }
+  });
+
+  trigger(document.body, 'touchstart');
+  expect(wrapper.emitted('blur')).toBeFalsy();
+});
+
+test('focus on key', () => {
+  const wrapper = mount(NumberKeyboard);
+
+  const key = wrapper.find('.van-key');
+  trigger(key, 'touchstart');
+  expect(wrapper).toMatchSnapshot();
+  trigger(key, 'touchend');
   expect(wrapper).toMatchSnapshot();
 });

@@ -93,4 +93,5 @@ export default {
 
 | 名称 | 说明 |
 |------|------|
+| delete | 自定义删除按钮内容 |
 | title-left | 自定义标题栏左侧内容 |
