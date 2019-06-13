@@ -38,7 +38,11 @@
 ## Install
 
 ```bash
+# Using npm
 npm i vant -S
+
+# Using yarn
+yarn add vant
 ```
 
 ## Quickstart

@@ -22,7 +22,11 @@ In the GUI, click on 'Dependencies' -> `Install Dependencies` and add `vant` to 
 ### Install
 
 ```bash
+# Using npm
 npm i vant -S
+
+# Using yarn
+yarn add vant
 ```
 
 ## Usage

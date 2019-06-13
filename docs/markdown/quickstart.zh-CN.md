@@ -25,13 +25,18 @@ vue ui
 
 - 基于 vant 搭建单页面应用，配置按需引入
 - 配置 rem 适配方案
+- 配置 viewport 适配方案
 - 配置 TypeScript 工程
 - 配置自定义主题色方案
 
 ### 安装
 
 ```bash
+# 通过 npm 安装
 npm i vant -S
+
+# 通过 yarn 安装
+yarn add vant
 ```
 
 ## 引入组件
