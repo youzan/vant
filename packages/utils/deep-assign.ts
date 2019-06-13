@@ -11,7 +11,7 @@ function assignKey(to: ObjectIndex, from: ObjectIndex, key: string) {
     return;
   }
 
-  if (!hasOwnProperty.call(to, key) || !isObj(val)) {
+  if (!hasOwnProperty.call(to, key) || !isObj(val) || typeof val === 'function') {
     to[key] = val;
   } else {
     to[key] = deepAssign(Object(to[key]), from[key]);
