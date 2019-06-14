@@ -3,14 +3,14 @@ import { on, off } from '../utils/dom/event';
 export function BindEventMixin(handler) {
   function bind() {
     if (!this.binded) {
-      handler.call(this, on);
+      handler.call(this, on, true);
       this.binded = true;
     }
   }
 
   function unbind() {
     if (this.binded) {
-      handler.call(this, off);
+      handler.call(this, off, false);
       this.binded = false;
     }
   }
@@ -18,7 +18,7 @@ export function BindEventMixin(handler) {
   return {
     mounted: bind,
     activated: bind,
-    destroyed: unbind,
-    deactivated: unbind
+    deactivated: unbind,
+    beforeDestroy: unbind
   };
 }
