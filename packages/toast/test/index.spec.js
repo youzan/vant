@@ -75,7 +75,7 @@ test('clear toast', () => {
   Toast.allowMultiple(false);
 });
 
-test('multiple toast', () => {
+test('clear multiple toast', () => {
   Toast.allowMultiple();
   Toast.clear(true);
   const toast1 = Toast.success('1');
@@ -86,6 +86,21 @@ test('multiple toast', () => {
   Toast.clear();
   Toast.clear();
   expect(toast2.value).toBeFalsy();
+  Toast.allowMultiple(false);
+});
+
+test('remove toast DOM when cleared in multiple mode', async () => {
+  Toast.allowMultiple();
+  Toast.clear(true);
+  const toast = Toast({ message: '1' });
+  await later();
+
+  // mock onAfterLeave
+  toast.clear();
+  toast.onAfterLeave();
+  await later();
+
+  expect(toast.$el.parentNode).toEqual(null);
   Toast.allowMultiple(false);
 });
 

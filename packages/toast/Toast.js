@@ -69,6 +69,10 @@ export default sfc({
       if (this.onOpened) {
         this.onOpened();
       }
+    },
+
+    onAfterLeave() {
+      this.$emit('closed');
     }
   },
 
@@ -100,7 +104,11 @@ export default sfc({
     }
 
     return (
-      <transition name="van-fade" onAfterEnter={this.onAfterEnter}>
+      <transition
+        name="van-fade"
+        onAfterEnter={this.onAfterEnter}
+        onAfterLeave={this.onAfterLeave}
+      >
         <div
           vShow={this.value}
           class={[
