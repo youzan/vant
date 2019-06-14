@@ -74,15 +74,17 @@ function Toast(options = {}) {
       }
 
       if (multiple && !isServer) {
-        clearTimeout(toast.timer);
-        queue = queue.filter(item => item !== toast);
+        toast.$on('closed', () => {
+          clearTimeout(toast.timer);
+          queue = queue.filter(item => item !== toast);
 
-        const parent = toast.$el.parentNode;
-        if (parent) {
-          parent.removeChild(toast.$el);
-        }
+          const parent = toast.$el.parentNode;
+          if (parent) {
+            parent.removeChild(toast.$el);
+          }
 
-        toast.$destroy();
+          toast.$destroy();
+        });
       }
     }
   };
