@@ -1,6 +1,7 @@
 import { use, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
+import Image from '../image';
 
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
@@ -19,7 +20,7 @@ export type IconEvents = {
   onClick?(event: Event): void;
 };
 
-const [sfc] = use('icon');
+const [sfc, bem] = use('icon');
 
 function isImage(name?: string): boolean {
   return name ? name.indexOf('/') !== -1 : false;
@@ -31,14 +32,11 @@ function Icon(
   slots: DefaultSlots,
   ctx: RenderContext<IconProps>
 ) {
-  const urlIcon = isImage(props.name);
+  const imageIcon = isImage(props.name);
 
   return (
     <props.tag
-      class={[
-        props.classPrefix,
-        urlIcon ? 'van-icon--image' : `${props.classPrefix}-${props.name}`
-      ]}
+      class={[props.classPrefix, imageIcon ? '' : `${props.classPrefix}-${props.name}`]}
       style={{
         color: props.color,
         fontSize: suffixPx(props.size)
@@ -46,7 +44,7 @@ function Icon(
       {...inherit(ctx, true)}
     >
       {slots.default && slots.default()}
-      {urlIcon && <img src={props.name} />}
+      {imageIcon && <Image class={bem('image')} src={props.name} />}
       <Info info={props.info} />
     </props.tag>
   );
@@ -63,7 +61,7 @@ Icon.props = {
   },
   classPrefix: {
     type: String,
-    default: 'van-icon'
+    default: bem()
   }
 };
 
