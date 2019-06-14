@@ -1,3 +1,3 @@
 export function isNumber(value: string): boolean {
-  return /^\d+$/.test(value);
+  return /^\d+(\.\d+)?$/.test(value);
 }

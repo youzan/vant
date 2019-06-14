@@ -62,7 +62,7 @@ exports[`click to switch tab 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(-1px);"></div>
+      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%);"></div>
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab">
         <div><span>title2</span></div>
@@ -86,7 +86,7 @@ exports[`click to switch tab 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(-1px); transition-duration: 0.3s;"></div>
+      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab van-tab--active" aria-selected="true">
         <div><span>title2</span></div>
@@ -133,7 +133,7 @@ exports[`lazy render 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
     <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(-1px);"></div>
+      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%);"></div>
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab">
         <div><span>title2</span></div>

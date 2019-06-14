@@ -1,5 +1,5 @@
-import { use, isDef } from '../utils';
-import { raf } from '../utils/dom/raf';
+import { use, isDef, suffixPx } from '../utils';
+import { scrollLeftTo } from './utils';
 import { on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
@@ -35,6 +35,8 @@ export default sfc({
     offsetTop: Number,
     swipeable: Boolean,
     background: String,
+    lineWidth: [Number, String],
+    lineHeight: [Number, String],
     titleActiveColor: String,
     titleInactiveColor: String,
     border: {
@@ -48,14 +50,6 @@ export default sfc({
     lazyRender: {
       type: Boolean,
       default: true
-    },
-    lineWidth: {
-      type: Number,
-      default: null
-    },
-    lineHeight: {
-      type: Number,
-      default: null
     },
     active: {
       type: [Number, String],
@@ -240,12 +234,12 @@ export default sfc({
         const tab = tabs[this.curActive];
         const { lineWidth, lineHeight } = this;
         const width = isDef(lineWidth) ? lineWidth : tab.offsetWidth / 2;
-        const left = tab.offsetLeft + (tab.offsetWidth - width) / 2;
+        const left = tab.offsetLeft + tab.offsetWidth / 2;
 
         const lineStyle = {
-          width: `${width}px`,
+          width: suffixPx(width),
           backgroundColor: this.color,
-          transform: `translateX(${left}px)`
+          transform: `translateX(${left}px) translateX(-50%)`
         };
 
         if (shouldAnimate) {
@@ -253,7 +247,7 @@ export default sfc({
         }
 
         if (isDef(lineHeight)) {
-          const height = `${lineHeight}px`;
+          const height = suffixPx(lineHeight);
           lineStyle.height = height;
           lineStyle.borderRadius = height;
         }
@@ -314,29 +308,10 @@ export default sfc({
       }
 
       const { nav } = this.$refs;
-      const { scrollLeft, offsetWidth: navWidth } = nav;
-      const { offsetLeft, offsetWidth: tabWidth } = tabs[this.curActive];
+      const active = tabs[this.curActive];
+      const to = active.offsetLeft - (nav.offsetWidth - active.offsetWidth) / 2;
 
-      this.scrollTo(nav, scrollLeft, offsetLeft - (navWidth - tabWidth) / 2, immediate);
-    },
-
-    // animate the scrollLeft of nav
-    scrollTo(el, from, to, immediate) {
-      if (immediate) {
-        el.scrollLeft += to - from;
-        return;
-      }
-
-      let count = 0;
-      const frames = Math.round((this.duration * 1000) / 16);
-      const animate = () => {
-        el.scrollLeft += (to - from) / frames;
-        /* istanbul ignore next */
-        if (++count < frames) {
-          raf(animate);
-        }
-      };
-      animate();
+      scrollLeftTo(nav, to, immediate ? 0 : this.duration);
     },
 
     // render title slot of child tab
