@@ -45,12 +45,8 @@ Vue.use(Button);
 
 ```html 
 <van-button loading type="primary" />
-<van-button
-  loading
-  type="danger"
-  loading-type="spinner"
-  loading-text="Loading..."
-/>
+<van-button loading type="primary" loading-type="spinner" />
+<van-button loading type="danger" loading-text="Loading..." />
 ```
 
 ### Shape
@@ -64,7 +60,8 @@ Vue.use(Button);
 
 ```html 
 <van-button icon="star-o" type="primary" />
-<van-button icon="star-o" type="danger">Button</van-button>
+<van-button icon="star-o" type="primary">Button</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">Button</van-button>
 ```
 
 ### Size
