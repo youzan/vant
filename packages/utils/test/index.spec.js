@@ -93,6 +93,8 @@ test('is-mobile', () => {
 
 test('is-number', () => {
   expect(isNumber('1')).toBeTruthy();
+  expect(isNumber('1.2')).toBeTruthy();
+  expect(isNumber('1..2')).toBeFalsy();
   expect(isNumber('abc')).toBeFalsy();
   expect(isNumber('1b2')).toBeFalsy();
 });

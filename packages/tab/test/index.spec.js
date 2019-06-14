@@ -129,10 +129,10 @@ test('render nav-left & nav-right slot', async () => {
 });
 
 test('border props', async () => {
-  const wrapper = mount({
-    template: `
-      <van-tabs :border="false" />
-    `,
+  const wrapper = mount(Tabs, {
+    propsData: {
+      border: false
+    }
   });
 
   expect(wrapper).toMatchSnapshot();
