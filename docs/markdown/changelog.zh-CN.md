@@ -79,7 +79,7 @@
 ##### Badge
 
 - `BadgeGroup`重命名为`Sidebar`
-- `Badge`重命名为`SlideBarItem`
+- `Badge`重命名为`SlidebarItem`
 
 ##### Loading
 

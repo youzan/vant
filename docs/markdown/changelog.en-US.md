@@ -55,7 +55,7 @@
 ##### Badge
 
 - Rename `BadgeGroup` to `Sidebar`
-- Rename `Badge` to `SlideBarItem`
+- Rename `Badge` to `SlidebarItem`
 
 ##### Loading
 
