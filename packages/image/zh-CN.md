@@ -54,7 +54,7 @@ Vue.use(Image);
 
 ### 加载中提示
 
-`Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义
+`Image`组件提供了默认的加载中提示，支持通过`loading`插槽自定义内容
 
 ```html
 <van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
@@ -66,7 +66,7 @@ Vue.use(Image);
 
 ### 加载失败提示
 
-`Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义
+`Image`组件提供了默认的加载失败提示，支持通过`error`插槽自定义内容
 
 ```html
 <van-image src="https://img.yzcdn.cn/vant/cat.jpeg">
