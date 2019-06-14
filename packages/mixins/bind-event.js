@@ -18,7 +18,7 @@ export function BindEventMixin(handler) {
   return {
     mounted: bind,
     activated: bind,
-    beforeDestroy: unbind,
-    deactivated: unbind
+    deactivated: unbind,
+    beforeDestroy: unbind
   };
 }
