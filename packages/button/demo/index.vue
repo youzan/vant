@@ -58,7 +58,11 @@
       />
       <van-button
         loading
+        type="primary"
         loading-type="spinner"
+      />
+      <van-button
+        loading
         :loading-text="$t('loadingText')"
         type="danger"
       />
@@ -83,8 +87,14 @@
         icon="star-o"
       />
       <van-button
-        type="danger"
+        type="primary"
         icon="star-o"
+        :text="$t('button')"
+      />
+      <van-button
+        plain
+        type="primary"
+        icon="https://img.yzcdn.cn/vant/logo.png"
         :text="$t('button')"
       />
     </demo-block>

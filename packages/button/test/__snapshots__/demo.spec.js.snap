@@ -10,13 +10,21 @@ exports[`renders demo correctly 1`] = `
   <div><button disabled="disabled" class="van-button van-button--primary van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button> <button disabled="disabled" class="van-button van-button--danger van-button--normal van-button--disabled"><span class="van-button__text">禁用状态</span></button></div>
   <div><button class="van-button van-button--primary van-button--normal">
       <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div>
+    </button> <button class="van-button van-button--primary van-button--normal">
+      <div class="van-loading van-loading--spinner van-button__loading"><span class="van-loading__spinner van-loading__spinner--spinner" style="width: 20px; height: 20px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
     </button> <button class="van-button van-button--danger van-button--normal">
-      <div class="van-loading van-loading--spinner van-button__loading"><span class="van-loading__spinner van-loading__spinner--spinner" style="width: 20px; height: 20px;"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div><span class="van-button__text">加载中...</span>
+      <div class="van-loading van-loading--circular van-button__loading"><span class="van-loading__spinner van-loading__spinner--circular" style="width: 20px; height: 20px;"><svg viewBox="25 25 50 50" class="van-loading__circular"><circle cx="50" cy="50" r="20" fill="none"></circle></svg></span></div><span class="van-button__text">加载中...</span>
     </button></div>
   <div><button class="van-button van-button--primary van-button--normal van-button--square"><span class="van-button__text">方形按钮</span></button> <button class="van-button van-button--danger van-button--normal van-button--round"><span class="van-button__text">圆形按钮</span></button></div>
   <div><button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-star-o van-button__icon">
-        <!----></i></button> <button class="van-button van-button--danger van-button--normal"><i class="van-icon van-icon-star-o van-button__icon">
-        <!----></i><span class="van-button__text">按钮</span></button></div>
+        <!----></i></button> <button class="van-button van-button--primary van-button--normal"><i class="van-icon van-icon-star-o van-button__icon">
+        <!----></i><span class="van-button__text">按钮</span></button> <button class="van-button van-button--primary van-button--normal van-button--plain"><i class="van-icon van-button__icon">
+        <div class="van-image van-icon__image"><img src="https://img.yzcdn.cn/vant/logo.png" class="van-image__img">
+          <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+              <!----></i></div>
+        </div>
+        <!---->
+      </i><span class="van-button__text">按钮</span></button></div>
   <div><button class="van-button van-button--primary van-button--large"><span class="van-button__text">
       大号按钮
     </span></button> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">

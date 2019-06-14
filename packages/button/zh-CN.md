@@ -42,7 +42,7 @@ Vue.use(Button);
 
 ### 禁用状态
 
-通过`disabled`属性来禁用按钮，此时按钮不可点击
+通过`disabled`属性来禁用按钮，禁用状态下按钮不可点击
 
 ```html
 <van-button disabled type="primary">禁用状态</van-button>
@@ -51,17 +51,17 @@ Vue.use(Button);
 
 ### 加载状态
 
+通过`loading`属性设置按钮为加载状态，加载状态下默认会隐藏按钮文字，可以通过`loading-text`设置加载状态下的文字
+
 ```html 
 <van-button loading type="primary" />
-<van-button
-  loading
-  type="danger"
-  loading-type="spinner"
-  loading-text="加载中..."
-/>
+<van-button loading type="primary" loading-type="spinner" />
+<van-button loading type="danger" loading-text="加载中..." />
 ```
 
 ### 按钮形状
+
+通过`square`设置方形按钮，通过`round`设置圆形按钮
 
 ```html 
 <van-button square type="primary">方形按钮</van-button>
@@ -70,9 +70,12 @@ Vue.use(Button);
 
 ### 图标按钮
 
+通过`icon`属性设置按钮图标，支持 Icon 组件里的所有图标，也可以传入图标 URL
+
 ```html 
 <van-button icon="star-o" type="primary" />
-<van-button icon="star-o" type="danger">按钮</van-button>
+<van-button icon="star-o" type="primary">按钮</van-button>
+<van-button icon="https://img.yzcdn.cn/vant/logo.png" type="danger">按钮</van-button>
 ```
 
 ### 按钮尺寸
@@ -117,4 +120,4 @@ Vue.use(Button);
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
 | click | 点击按钮，且按钮状态不为加载或禁用时触发 | event: Event |
-| touchstart | 原生 touchstart 事件 | event: TouchEvent |
+| touchstart | 开始触摸按钮时触发 | event: TouchEvent |
