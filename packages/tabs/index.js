@@ -3,6 +3,7 @@ import { raf } from '../utils/dom/raf';
 import { on, off } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
+import { BindEventMixin } from '../mixins/bind-event';
 import {
   setScrollTop,
   getScrollTop,
@@ -14,7 +15,14 @@ const [sfc, bem] = use('tabs');
 const tabBem = use('tab')[1];
 
 export default sfc({
-  mixins: [TouchMixin, ParentMixin('vanTabs')],
+  mixins: [
+    TouchMixin,
+    ParentMixin('vanTabs'),
+    BindEventMixin(function (bind, isBind) {
+      this.bindScrollEvent(isBind);
+      bind(window, 'resize', this.setLine, true);
+    })
+  ],
 
   model: {
     prop: 'active'
@@ -68,16 +76,13 @@ export default sfc({
   },
 
   data() {
+    this.scrollEvent = false;
+
     return {
       position: '',
       curActive: null,
       lineStyle: {
         backgroundColor: this.color
-      },
-      events: {
-        resize: false,
-        sticky: false,
-        swipeable: false
       }
     };
   },
@@ -149,12 +154,8 @@ export default sfc({
       }
     },
 
-    sticky() {
-      this.handlers(true);
-    },
-
-    swipeable() {
-      this.handlers(true);
+    sticky(val) {
+      this.bindScrollEvent(val);
     }
   },
 
@@ -167,53 +168,22 @@ export default sfc({
     this.setLine();
   },
 
-  deactivated() {
-    this.handlers(false);
-  },
-
-  beforeDestroy() {
-    this.handlers(false);
-  },
-
   methods: {
     onShow() {
       this.$nextTick(() => {
         this.inited = true;
-        this.handlers(true);
         this.scrollIntoView(true);
       });
     },
 
-    // whether to bind sticky listener
-    handlers(bind) {
-      const { events } = this;
-      const sticky = this.sticky && bind;
-      const swipeable = this.swipeable && bind;
+    bindScrollEvent(isBind) {
+      const sticky = this.sticky && isBind;
 
-      // listen to window resize event
-      if (events.resize !== bind) {
-        events.resize = bind;
-        (bind ? on : off)(window, 'resize', this.setLine, true);
-      }
-
-      // listen to scroll event
-      if (events.sticky !== sticky) {
-        events.sticky = sticky;
+      if (this.scrollEvent !== sticky) {
+        this.scrollEvent = sticky;
         this.scrollEl = this.scrollEl || getScrollEventTarget(this.$el);
         (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
         this.onScroll();
-      }
-
-      // listen to touch event
-      if (events.swipeable !== swipeable) {
-        events.swipeable = swipeable;
-        const { content } = this.$refs;
-        const action = swipeable ? on : off;
-
-        action(content, 'touchstart', this.touchStart);
-        action(content, 'touchmove', this.touchMove);
-        action(content, 'touchend', this.onTouchEnd);
-        action(content, 'touchcancel', this.onTouchEnd);
       }
     },
 
@@ -434,6 +404,16 @@ export default sfc({
       </div>
     ));
 
+    let contentListeners;
+    if (this.swipeable) {
+      contentListeners = {
+        touchstart: this.touchStart,
+        touchmove: this.touchMove,
+        touchend: this.onTouchEnd,
+        touchcancel: this.onTouchEnd
+      };
+    }
+
     return (
       <div class={bem([type])}>
         <div
@@ -451,7 +431,7 @@ export default sfc({
             {this.slots('nav-right')}
           </div>
         </div>
-        <div ref="content" class={bem('content', { animated })}>
+        <div class={bem('content', { animated })} {...{ on: contentListeners }}>
           {animated ? (
             <div class={bem('track')} style={this.trackStyle}>
               {this.slots()}
