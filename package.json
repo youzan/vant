@@ -18,7 +18,7 @@
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
     "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
-    "build:changelog": "vant-doc changelog ./changelog.generated.md",
+    "build:changelog": "vant-doc changelog ./changelog.generated.md --tag 2.0.0",
     "build:lib": "node build/build-lib.js",
     "build:site": "rm -rf docs/dist && cross-env NODE_ENV=production webpack --config build/webpack.doc.js && gh-pages -d docs/dist --add",
     "test": "jest",

@@ -1,5 +1,24 @@
 # 更新日志
 
+### [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
+`2019-06-15`
+
+**Improvements**
+
+- Toast: 新增 icon 属性 [\#3485](https://github.com/youzan/vant/pull/3485)
+- DropdownMenu: 新增 direction 属性 [\#3490](https://github.com/youzan/vant/pull/3490)
+- NumberKeyboard: 新增 delete 属性 [\#3499](https://github.com/youzan/vant/pull/3499)
+- Icon: 使用 Image 组件优化图片布局 [\#3515](https://github.com/youzan/vant/pull/3515)
+- Tab: 支持 string 类型的 line-width 和 line-height [\#3514](https://github.com/youzan/vant/pull/3514)
+
+**Bug Fixes**
+
+- 修复 Image 组件 TS 定义缺失的问题 [\#3520](https://github.com/youzan/vant/pull/3520)
+- 修复 SwitchCell 加载图标偏移的问题 [\#3501](https://github.com/youzan/vant/pull/3501)
+- 修复 Locale 函数类型文案无法修改的问题 [\#3498](https://github.com/youzan/vant/pull/3498)
+- 修复 Toast 在 multiple 模式下没有淡出动画的问题 [\#3504](https://github.com/youzan/vant/pull/3504)
+
+
 ### [v2.0.0](https://github.com/youzan/vant/tree/v2.0.0)
 `2019-06-12`
 

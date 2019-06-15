@@ -1,5 +1,24 @@
 # 更新日志
 
+## [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
+`2019-06-15`
+
+**Improvements**
+
+- Tab: support string type of line-width & line-height [\#3514](https://github.com/youzan/vant/pull/3514)
+- Icon: use image component to display image [\#3515](https://github.com/youzan/vant/pull/3515)
+- Toast: add icon prop [\#3485](https://github.com/youzan/vant/pull/3485)
+- DropdownMenu: add direction prop [\#3490](https://github.com/youzan/vant/pull/3490)
+- NumberKeyboard: add delete slot [\#3499](https://github.com/youzan/vant/pull/3499)
+
+**Bug Fixes**
+
+- fix Image missing type definition [\#3520](https://github.com/youzan/vant/pull/3520)
+- fix SwitchCell incorrect loading position [\#3501](https://github.com/youzan/vant/pull/3501)
+- fix Toast missing fade-out transition in multiple mode [\#3504](https://github.com/youzan/vant/pull/3504)
+- fix Locale can not modify functional message [\#3498](https://github.com/youzan/vant/pull/3498)
+
+
 ### [v2.0.0](https://github.com/youzan/vant/tree/v2.0.0)
 `2019-06-12`
 
