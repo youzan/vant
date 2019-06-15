@@ -37,6 +37,7 @@ export class GoodsAction extends VanComponent {}
 export class GoodsActionButton extends VanComponent {}
 export class GoodsActionIcon extends VanComponent {}
 export class Icon extends VanComponent {}
+export class Image extends VanComponent {}
 export class IndexAnchor extends VanComponent {}
 export class IndexBar extends VanComponent {}
 export class Info extends VanComponent {}
