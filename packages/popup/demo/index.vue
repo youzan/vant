@@ -3,81 +3,86 @@
     <demo-block :title="$t('basicUsage')">
       <van-button
         type="primary"
-        @click="show1 = true"
+        @click="showBasic = true"
       >
-        {{ $t('button1') }}
-      </van-button>
-      <van-popup v-model="show1">{{ $t('content') }}</van-popup>
-    </demo-block>
-
-    <demo-block :title="$t('position')">
-      <van-button
-        type="primary"
-        @click="show2 = true"
-      >
-        {{ $t('button2') }}
-      </van-button>
-
-      <van-popup
-        v-model="show2"
-        position="bottom"
-      >
-        <van-picker
-          show-toolbar
-          :columns="$t('columns')"
-          @confirm="show2 = false"
-          @cancel="show2 = false"
-        />
-      </van-popup>
-
-      <van-button
-        type="primary"
-        @click="show3 = true"
-      >
-        {{ $t('button4') }}
+        {{ $t('buttonBasic') }}
       </van-button>
       <van-popup
-        v-model="show3"
-        position="top"
-        :overlay="false"
+        v-model="showBasic"
+        :style="{ padding: '30px 50px' }"
       >
         {{ $t('content') }}
       </van-popup>
+    </demo-block>
+
+    <demo-block :title="$t('position')">
+      <van-row>
+        <van-button
+          type="primary"
+          @click="showTop = true"
+        >
+          {{ $t('buttonTop') }}
+        </van-button>
+
+        <van-popup
+          v-model="showTop"
+          position="top"
+          :style="{ height: '20%' }"
+        />
+
+        <van-button
+          type="primary"
+          @click="showBottom = true"
+        >
+          {{ $t('buttonBottom') }}
+        </van-button>
+
+        <van-popup
+          v-model="showBottom"
+          position="bottom"
+          :style="{ height: '20%' }"
+        />
+      </van-row>
 
       <van-button
         type="primary"
-        @click="show4 = true"
+        @click="showLeft = true"
       >
-        {{ $t('button5') }}
+        {{ $t('buttonLeft') }}
+      </van-button>
+
+      <van-popup
+        v-model="showLeft"
+        position="left"
+        :style="{ width: '20%', height: '100%' }"
+      />
+
+      <van-button
+        type="primary"
+        @click="showRight = true"
+      >
+        {{ $t('buttonRight') }}
+      </van-button>
+
+      <van-popup
+        v-model="showRight"
+        position="right"
+        :style="{ width: '20%', height: '100%' }"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('getContainer')">
+      <van-button
+        type="primary"
+        @click="showGetContainer = true"
+      >
+        {{ $t('getContainer') }}
       </van-button>
       <van-popup
-        v-model="show4"
-        position="right"
-      >
-        <van-button
-          type="primary"
-          @click="show4 = false"
-        >
-          {{ $t('button6') }}
-        </van-button>
-        <van-button
-          type="primary"
-          @click="show5 = true"
-        >
-          {{ $t('button5') }}
-        </van-button>
-        <van-popup
-          v-model="show5"
-          position="right"
-        >
-          <van-button
-            type="primary"
-            @click="show5 = false"
-          >
-            {{ $t('button6') }}
-          </van-button>
-        </van-popup>
-      </van-popup>
+        v-model="showGetContainer"
+        get-container="body"
+        :style="{ padding: '30px 50px' }"
+      />
     </demo-block>
   </demo-section>
 </template>
@@ -87,44 +92,33 @@ export default {
   i18n: {
     'zh-CN': {
       position: '弹出位置',
-      button1: '弹出 Popup',
-      button2: '底部弹出',
-      button3: '弹出 Dialog',
-      button4: '顶部弹出',
-      button5: '右侧弹出',
-      button6: '关闭弹层',
-      columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+      buttonBasic: '展示弹出层',
+      buttonTop: '顶部弹出',
+      buttonBottom: '底部弹出',
+      buttonLeft: '左侧弹出',
+      buttonRight: '右侧弹出',
+      getContainer: '指定挂载节点'
     },
     'en-US': {
       position: 'Position',
-      button1: 'Show Popup',
-      button2: 'From Bottom',
-      button3: 'Show Dialog',
-      button4: 'From Top',
-      button5: 'From Right',
-      button6: 'Close Popup',
-      columns: ['Delaware', 'Florida', 'Georqia', 'Indiana', 'Maine']
+      buttonBasic: 'Show Popup',
+      buttonTop: 'From Top',
+      buttonBottom: 'From Bottom',
+      buttonLeft: 'From Left',
+      buttonRight: 'From Right',
+      getContainer: 'Get Container'
     }
   },
 
   data() {
     return {
-      show1: false,
-      show2: false,
-      show3: false,
-      show4: false,
-      show5: false
+      showBasic: false,
+      showTop: false,
+      showBottom: false,
+      showLeft: false,
+      showRight: false,
+      showGetContainer: false
     };
-  },
-
-  watch: {
-    show3(val) {
-      if (val) {
-        setTimeout(() => {
-          this.show3 = false;
-        }, 2000);
-      }
-    }
   }
 };
 </script>
@@ -133,35 +127,12 @@ export default {
 @import '../../style/var';
 
 .demo-popup {
-  .van-button {
-    margin-left: 15px;
+  .van-row {
+    margin-bottom: 15px;
   }
 
-  .van-popup {
-    box-sizing: border-box;
-    padding: 20px;
-
-    &--center {
-      width: 60%;
-    }
-
-    &--bottom {
-      width: 100%;
-      padding: 0;
-    }
-
-    &--top {
-      width: 100%;
-      color: @white;
-      line-height: 20px;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    &--left,
-    &--right {
-      width: 100%;
-      height: 100%;
-    }
+  .van-button {
+    margin-left: 15px;
   }
 }
 </style>

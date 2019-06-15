@@ -3,20 +3,28 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      弹出 Popup
+      展示弹出层
     </span></button>
     <!---->
   </div>
-  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      底部弹出
-    </span></button>
-    <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
-      顶部弹出
+  <div>
+    <div class="van-row"><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+        顶部弹出
+      </span></button>
+      <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+        底部弹出
+      </span></button>
+      <!---->
+    </div> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      左侧弹出
     </span></button>
     <!----> <button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
       右侧弹出
     </span></button>
     <!---->
   </div>
+  <div><button class="van-button van-button--primary van-button--normal"><span class="van-button__text">
+      指定挂载节点
+    </span></button> </div>
 </div>
 `;

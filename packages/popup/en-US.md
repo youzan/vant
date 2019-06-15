@@ -33,9 +33,45 @@ export default {
 Use `position` prop to set popup display position
 
 ```html
-<van-popup v-model="show" position="top" :overlay="false">
-  Content
-</van-popup>
+<van-popup
+  v-model="show"
+  position="top"
+  :style="{ height: '20%' }"
+/>
+```
+
+### Get Container
+
+Use `get-container` prop to specify mount location
+
+```html
+<!-- mount to body -->
+<van-popup
+  v-model="show"
+  get-container="body"
+/>
+
+<!-- mount to #app -->
+<van-popup
+  v-model="show"
+  get-container="#app"
+/>
+
+<!-- Specify the mount location by function -->
+<van-popup
+  v-model="show"
+  :get-container="getContainer"
+/>
+```
+
+```js
+export default {
+  methods: {
+    getContainer() {
+      return document.querySelector('.my-container');
+    }
+  }
+}
 ```
 
 ## API
