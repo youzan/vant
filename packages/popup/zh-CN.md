@@ -2,7 +2,7 @@
 
 ### 介绍
 
-弹出层容器，用于展示弹窗、信息提示等交互动作，支持多层叠加
+弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示
 
 ### 引入
 
@@ -16,9 +16,13 @@ Vue.use(Popup);
 
 ### 基础用法
 
-`Popup`默认从中间弹出
+通过`v-model`控制弹出层是否展示
 
 ```html
+<van-botton type="primary" @click="showPopup">
+  展示弹出层
+</van-button>
+
 <van-popup v-model="show">内容</van-popup>
 ```
 
@@ -27,6 +31,12 @@ export default {
   data() {
     return {
       show: false
+    }
+  },
+
+  methods: {
+    showPopup() {
+      this.show = true;
     }
   }
 };

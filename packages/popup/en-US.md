@@ -12,9 +12,11 @@ Vue.use(Popup);
 
 ### Basic Usage
 
-Popup is located in the middle of the screen by default
-
 ```html
+<van-botton type="primary" @click="showPopup">
+  Show Popup
+</van-button>
+
 <van-popup v-model="show">Content</van-popup>
 ```
 
@@ -23,6 +25,12 @@ export default {
   data() {
     return {
       show: false
+    }
+  },
+
+  methods: {
+    showPopup() {
+      this.show = true;
     }
   }
 };
