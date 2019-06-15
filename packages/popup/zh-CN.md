@@ -1,5 +1,9 @@
 # Popup 弹出层
 
+### 介绍
+
+弹出层容器，用于展示弹窗、信息提示等内容，支持多个弹出层叠加展示
+
 ### 引入
 
 ``` javascript
@@ -12,9 +16,13 @@ Vue.use(Popup);
 
 ### 基础用法
 
-`Popup`默认从中间弹出
+通过`v-model`控制弹出层是否展示
 
 ```html
+<van-botton type="primary" @click="showPopup">
+  展示弹出层
+</van-button>
+
 <van-popup v-model="show">内容</van-popup>
 ```
 
@@ -24,18 +32,61 @@ export default {
     return {
       show: false
     }
+  },
+
+  methods: {
+    showPopup() {
+      this.show = true;
+    }
   }
 };
 ```
 
 ### 弹出位置
 
-通过`position`属性设置`Popup`弹出位置
+通过`position`属性设置弹出位置，默认居中弹出，可以设置为`top`、`bottom`、`left`、`right`
 
 ```html
-<van-popup v-model="show" position="top" :overlay="false">
-  内容
-</van-popup>
+<van-popup
+  v-model="show"
+  position="top"
+  :style="{ height: '20%' }"
+/>
+```
+
+### 指定挂载位置
+
+弹出层默认挂载到组件所在位置，可以通过`get-container`属性指定挂载位置
+
+```html
+<!-- 挂载到 body 节点下 -->
+<van-popup
+  v-model="show"
+  get-container="body"
+/>
+
+<!-- 挂载到 #app 节点下 -->
+<van-popup
+  v-model="show"
+  get-container="#app"
+/>
+
+<!-- 通过函数指定挂载位置 -->
+<van-popup
+  v-model="show"
+  :get-container="getContainer"
+/>
+```
+
+```js
+export default {
+  methods: {
+    // 返回一个特定的 DOM 节点，作为挂载的父节点
+    getContainer() {
+      return document.querySelector('.my-container');
+    }
+  }
+}
 ```
 
 ## API
