@@ -12,10 +12,7 @@ export default sfc({
   props: {
     ...pickerProps,
     columns: Array,
-    defaultIndex: {
-      type: Number,
-      default: 0
-    },
+    defaultIndex: Number,
     toolbarPosition: {
       type: String,
       default: 'top'
