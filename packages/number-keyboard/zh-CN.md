@@ -60,12 +60,43 @@ export default {
 />
 ```
 
+### 双向绑定
+
+可以通过`v-model`绑定键盘当前输入值
+
+```html
+<van-field
+  readonly
+  clickable
+  :value="value"
+  @touchstart.native.stop="show = true"
+/>
+
+<van-number-keyboard
+  v-model="value"
+  :show="show"
+  @blur="show = false"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      show: false,
+      value: ''
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| v-model | 当前输入值 | `String` | - | 2.0.2 |
 | show | 是否显示键盘 | `Boolean` | - | - |
 | theme | 样式风格，可选值为 `default` `custom` | `String` | `default` | - |
 | title | 键盘标题 | `String` | - | - |
@@ -73,7 +104,7 @@ export default {
 | z-index | 键盘 z-index | `Number` | `100` | - |
 | extra-key | 左下角按键内容 | `String` | `''` | - |
 | close-button-text | 关闭按钮文字，空则不展示 | `String` | `-` | - |
-| delete-button-text | 删除按钮文字 | `String` | `删除` | 1.4.3 |
+| delete-button-text | 删除按钮文字 | `String` | `删除` | - |
 | show-delete-key | 是否展示删除按钮 | `Boolean` | `true` | - |
 | hide-on-click-outside | 点击外部时是否收起键盘 | `Boolean` | `true` | - |
 | safe-area-inset-bottom | 是否开启 iPhone X 底部安全区适配，需要在 `viewport` meta 标签中设置 `viewport-fit=cover` | `Boolean` | `false` | 1.6.15 |
