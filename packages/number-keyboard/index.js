@@ -16,6 +16,10 @@ export default sfc({
     })
   ],
 
+  model: {
+    event: 'update:value'
+  },
+
   props: {
     show: Boolean,
     title: String,
@@ -25,6 +29,10 @@ export default sfc({
     theme: {
       type: String,
       default: 'default'
+    },
+    value: {
+      type: String,
+      default: ''
     },
     extraKey: {
       type: String,
@@ -103,12 +111,16 @@ export default sfc({
         return;
       }
 
+      const { value } = this;
+
       if (type === 'delete') {
         this.$emit('delete');
+        this.$emit('update:value', value.slice(0, value.length - 1));
       } else if (type === 'close') {
         this.onClose();
       } else {
         this.$emit('input', text);
+        this.$emit('update:value', value + text);
       }
     }
   },

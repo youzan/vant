@@ -38,6 +38,24 @@
         @delete="onDelete"
       />
     </demo-block>
+
+    <demo-block :title="$t('bindValue')">
+      <van-field
+        readonly
+        clickable
+        :value="value"
+        :placeholder="$t('clickToInput')"
+        @touchstart.native.stop="keyboard = 'bindValue'"
+      />
+
+      <van-number-keyboard
+        v-model="value"
+        :show="keyboard === 'bindValue'"
+        :close-button-text="$t('close')"
+        safe-area-inset-bottom
+        @blur="keyboard = ''"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -50,7 +68,9 @@ export default {
       button1: '弹出默认键盘',
       button2: '弹出自定义键盘',
       close: '完成',
-      input: '输入'
+      input: '输入',
+      bindValue: '双向绑定',
+      clickToInput: '点此输入'
     },
     'en-US': {
       default: 'Default style',
@@ -58,12 +78,15 @@ export default {
       button1: 'Show Default Keyboard',
       button2: 'Show Custom Keyboard',
       close: 'Close',
-      input: 'Input'
+      input: 'Input',
+      bindValue: 'Bind Value',
+      clickToInput: 'Click To Input'
     }
   },
 
   data() {
     return {
+      value: '',
       keyboard: 'default'
     };
   },

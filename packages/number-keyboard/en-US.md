@@ -59,12 +59,41 @@ export default {
 />
 ```
 
+### Bind Value
+
+```html
+<van-field
+  readonly
+  clickable
+  :value="value"
+  @touchstart.native.stop="show = true"
+/>
+
+<van-number-keyboard
+  v-model="value"
+  :show="show"
+  @blur="show = false"
+/>
+```
+
+```javascript
+export default {
+  data() {
+    return {
+      show: false,
+      value: ''
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| v-model | Current value | `String` | - |
 | show | Whether to show keyboard | `Boolean` | - |
 | theme | Keyboard theme，can be set to `default` `custom` | `String` | `default` |
 | title | Keyboard title | `String` | - |
