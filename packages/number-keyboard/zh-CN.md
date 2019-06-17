@@ -75,6 +75,7 @@ export default {
 <van-number-keyboard
   v-model="value"
   :show="show"
+  :maxlength="6"
   @blur="show = false"
 />
 ```
@@ -100,6 +101,7 @@ export default {
 | show | 是否显示键盘 | `Boolean` | - | - |
 | theme | 样式风格，可选值为 `default` `custom` | `String` | `default` | - |
 | title | 键盘标题 | `String` | - | - |
+| maxlength | 输入值最大长度 | `Number | String` | - | 2.0.2 |
 | transition | 是否开启过场动画 | `Boolean` | `true` | - |
 | z-index | 键盘 z-index | `Number` | `100` | - |
 | extra-key | 左下角按键内容 | `String` | `''` | - |

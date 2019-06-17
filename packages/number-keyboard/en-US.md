@@ -72,6 +72,7 @@ export default {
 <van-number-keyboard
   v-model="value"
   :show="show"
+  :maxlength="6"
   @blur="show = false"
 />
 ```
@@ -97,6 +98,7 @@ export default {
 | show | Whether to show keyboard | `Boolean` | - |
 | theme | Keyboard theme，can be set to `default` `custom` | `String` | `default` |
 | title | Keyboard title | `String` | - |
+| maxlength | Value maxlength | `Number | String` | - |
 | transition | Whether to show transition animation | `Boolean` | `true` |
 | z-index | Keyboard z-index | `Number` | `100` |
 | extra-key | Content of bottom left key | `String` | `''` |

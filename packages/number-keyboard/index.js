@@ -38,6 +38,10 @@ export default sfc({
       type: String,
       default: ''
     },
+    maxlength: {
+      type: [Number, String],
+      default: Number.MAX_VALUE
+    },
     zIndex: {
       type: Number,
       default: 100
@@ -118,7 +122,7 @@ export default sfc({
         this.$emit('update:value', value.slice(0, value.length - 1));
       } else if (type === 'close') {
         this.onClose();
-      } else {
+      } else if (value.length < this.maxlength) {
         this.$emit('input', text);
         this.$emit('update:value', value + text);
       }

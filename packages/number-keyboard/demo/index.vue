@@ -51,7 +51,7 @@
       <van-number-keyboard
         v-model="value"
         :show="keyboard === 'bindValue'"
-        :close-button-text="$t('close')"
+        maxlength="6"
         safe-area-inset-bottom
         @blur="keyboard = ''"
       />
