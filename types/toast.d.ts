@@ -32,7 +32,7 @@ export interface Toast {
   loading(options?: ToastOptions | ToastMessage): VanToast;
   success(options?: ToastOptions | ToastMessage): VanToast;
   fail(options?: ToastOptions | ToastMessage): VanToast;
-  clear(): void;
+  clear(all?: boolean): void;
   install(): void;
   setDefaultOptions(options: ToastOptions): void;
   resetDefaultOptions(): void;
