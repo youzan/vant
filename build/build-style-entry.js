@@ -8,6 +8,11 @@ const path = require('path');
 const dependencyTree = require('dependency-tree');
 const components = require('./get-components')();
 
+// replace seq for windows
+function replaceSeq(path) {
+  return path.split(path.sep).join('/');
+}
+
 const whiteList = [
   'info',
   'icon',
@@ -20,9 +25,9 @@ const whiteList = [
 const dir = path.join(__dirname, '../es');
 
 function destEntryFile(component, filename, ext = '') {
-  const deps = analyzeDependencies(component).map(dep => (
+  const deps = analyzeDependencies(component).map(dep =>
     getStyleRelativePath(component, dep, ext)
-  ));
+  );
 
   const esEntry = path.join(dir, component, `style/${filename}`);
   const libEntry = path.join(
@@ -63,12 +68,12 @@ function search(tree, component, checkList) {
   Object.keys(tree).forEach(key => {
     search(tree[key], component, checkList);
     components
-      .filter(item => (
+      .filter(item =>
         key
           .replace(dir, '')
           .split('/')
           .includes(item)
-      ))
+      )
       .forEach(item => {
         if (
           !checkList.includes(item) &&
@@ -85,13 +90,16 @@ function getStylePath(component, ext = '.css') {
   if (component === 'base') {
     return path.join(__dirname, `../es/style/base${ext}`);
   }
+
   return path.join(__dirname, `../es/${component}/index${ext}`);
 }
 
 function getStyleRelativePath(component, style, ext) {
-  return path.relative(
-    path.join(__dirname, `../es/${component}/style`),
-    getStylePath(style, ext)
+  return replaceSeq(
+    path.relative(
+      path.join(__dirname, `../es/${component}/style`),
+      getStylePath(style, ext)
+    )
   );
 }
 
