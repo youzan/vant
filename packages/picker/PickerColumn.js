@@ -201,7 +201,7 @@ export default sfc({
     momentum(distance, duration) {
       const speed = Math.abs(distance / duration);
 
-      distance = this.offset + speed / 0.0015 * (distance < 0 ? -1 : 1);
+      distance = this.offset + speed / 0.002 * (distance < 0 ? -1 : 1);
 
       const index = this.getIndexByOffset(distance);
 
