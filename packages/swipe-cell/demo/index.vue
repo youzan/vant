@@ -4,7 +4,7 @@
       <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
         <van-swipe-cell>
-          <template v-slot:left>
+          <template #left>
             <van-button
               square
               type="danger"
@@ -16,7 +16,7 @@
             :title="$t('title')"
             :value="$t('content')"
           />
-          <template v-slot:right>
+          <template #right>
             <van-button
               square
               type="danger"
@@ -28,7 +28,7 @@
 
       <demo-block :title="$t('title2')">
         <van-swipe-cell :on-close="onClose">
-          <template v-slot:left>
+          <template #left>
             <van-button
               square
               type="danger"
@@ -40,7 +40,7 @@
             :title="$t('title')"
             :value="$t('content')"
           />
-          <template v-slot:right>
+          <template #right>
             <van-button
               square
               type="danger"

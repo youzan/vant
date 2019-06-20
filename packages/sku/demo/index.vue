@@ -103,12 +103,12 @@
           @buy-clicked="onBuyClicked"
           @add-cart="onAddCartClicked"
         >
-          <template v-slot:sku-header-price="{ price }">
+          <template #sku-header-price="{ price }">
             <div class="van-sku__goods-price">
               <span class="van-sku__price-symbol">￥</span><span class="van-sku__price-num">{{ price }}</span>
             </div>
           </template>
-          <template v-slot:sku-actions="{ skuEventBus }">
+          <template #sku-actions="{ skuEventBus }">
             <div class="van-sku-actions">
               <van-button
                 square

@@ -39,7 +39,7 @@
         :images="images"
         @change="onChange"
       >
-        <template v-slot:index>{{ $t('index', index) }}</template>
+        <template #index>{{ $t('index', index) }}</template>
       </van-image-preview>
     </demo-block>
   </demo-section>

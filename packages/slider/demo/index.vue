@@ -45,7 +45,7 @@
         v-model="value6"
         active-color="#f44"
       >
-        <template v-slot:button>
+        <template #button>
           <div class="custom-button">{{ value6 }}</div>
         </template>
       </van-slider>

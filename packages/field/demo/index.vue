@@ -81,7 +81,7 @@
           :label="$t('sms')"
           :placeholder="$t('smsPlaceholder')"
         >
-          <template v-slot:button>
+          <template #button>
             <van-button
               size="small"
               type="primary"

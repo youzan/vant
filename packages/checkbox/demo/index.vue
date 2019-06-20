@@ -31,7 +31,7 @@
     <demo-block :title="$t('customIcon')">
       <van-checkbox v-model="checkbox3">
         {{ $t('customIcon') }}
-        <template v-slot:icon="{ checked }">
+        <template #icon="{ checked }">
           <img :src="checked ? icon.active : icon.inactive">
         </template>
       </van-checkbox>

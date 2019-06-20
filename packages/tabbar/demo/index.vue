@@ -66,7 +66,7 @@
       <van-tabbar v-model="active3">
         <van-tabbar-item info="3">
           <span>{{ $t('custom') }}</span>
-          <template v-slot:icon="{ active }">
+          <template #icon="{ active }">
             <img :src="active ? icon.active : icon.normal">
           </template>
         </van-tabbar-item>

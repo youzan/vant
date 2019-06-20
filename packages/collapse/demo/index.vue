@@ -27,8 +27,8 @@
     <demo-block :title="$t('titleSlot')">
       <van-collapse v-model="active3">
         <van-collapse-item>
-          <template v-slot:title>
-            <div>{{ $t('title') + 1 }}<van-icon name="question-o" /></div>
+          <template #title>
+            {{ $t('title') + 1 }}<van-icon name="question-o" />
           </template>
           {{ $t('text') }}
         </van-collapse-item>
