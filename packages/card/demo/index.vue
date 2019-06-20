@@ -20,40 +20,39 @@
         :title="$t('title')"
         :thumb="imageURL"
       >
-        <div
-          slot="tags"
-          class="card__tags"
-        >
-          <van-tag
-            plain
-            type="danger"
-          >
-            标签1
-          </van-tag>
-          <van-tag
-            plain
-            type="danger"
-          >
-            标签2
-          </van-tag>
-        </div>
-        <div
-          slot="footer"
-          class="card__footer"
-        >
-          <van-button
-            round
-            size="mini"
-          >
-            {{ $t('button') }}
-          </van-button>
-          <van-button
-            round
-            size="mini"
-          >
-            {{ $t('button') }}
-          </van-button>
-        </div>
+        <template v-slot:tags>
+          <div class="card__tags">
+            <van-tag
+              plain
+              type="danger"
+            >
+              标签1
+            </van-tag>
+            <van-tag
+              plain
+              type="danger"
+            >
+              标签2
+            </van-tag>
+          </div>
+        </template>
+
+        <template v-slot:footer>
+          <div class="card__footer">
+            <van-button
+              round
+              size="mini"
+            >
+              {{ $t('button') }}
+            </van-button>
+            <van-button
+              round
+              size="mini"
+            >
+              {{ $t('button') }}
+            </van-button>
+          </div>
+        </template>
       </van-card>
     </demo-block>
   </demo-section>
@@ -63,7 +62,7 @@
 export default {
   i18n: {
     'zh-CN': {
-      title: '2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男'
+      title: '商品名称'
     }
   },
 
@@ -76,13 +75,13 @@ export default {
 </script>
 
 <style lang="less">
-  .card__footer {
-    padding-top: 10px;
-  }
+.card__footer {
+  padding-top: 5px;
+}
 
-  .card__tags {
-    .van-tag {
-      margin-right: 5px;
-    }
+.card__tags {
+  .van-tag {
+    margin-right: 5px;
   }
+}
 </style>

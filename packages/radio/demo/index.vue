@@ -48,19 +48,15 @@
       >
         <van-radio name="1">
           {{ $t('radio') }} 1
-          <img
-            slot="icon"
-            slot-scope="props"
-            :src="props.checked ? icon.active : icon.inactive"
-          >
+          <template v-slot:icon="{ checked }">
+            <img :src="checked ? icon.active : icon.inactive">
+          </template>
         </van-radio>
         <van-radio name="2">
           {{ $t('radio') }} 2
-          <img
-            slot="icon"
-            slot-scope="props"
-            :src="props.checked ? icon.active : icon.inactive"
-          >
+          <template v-slot:icon="{ checked }">
+            <img :src="checked ? icon.active : icon.inactive">
+          </template>
         </van-radio>
       </van-radio-group>
     </demo-block>

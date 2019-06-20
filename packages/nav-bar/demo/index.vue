@@ -17,10 +17,9 @@
         :left-text="$t('back')"
         left-arrow
       >
-        <van-icon
-          name="search"
-          slot="right"
-        />
+        <template v-slot:right>
+          <van-icon name="search" />
+        </template>
       </van-nav-bar>
     </demo-block>
   </demo-section>

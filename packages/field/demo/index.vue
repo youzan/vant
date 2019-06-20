@@ -81,13 +81,14 @@
           :label="$t('sms')"
           :placeholder="$t('smsPlaceholder')"
         >
-          <van-button
-            slot="button"
-            size="small"
-            type="primary"
-          >
-            {{ $t('sendSMS') }}
-          </van-button>
+          <template v-slot:button>
+            <van-button
+              size="small"
+              type="primary"
+            >
+              {{ $t('sendSMS') }}
+            </van-button>
+          </template>
         </van-field>
       </van-cell-group>
     </demo-block>
