@@ -51,12 +51,12 @@ export default sfc({
       }
 
       if (this.dragStatus === 'start') {
-        this.dragStatus = 'draging';
         this.$emit('drag-start');
       }
 
       preventDefault(event, true);
       this.touchMove(event);
+      this.dragStatus = 'draging';
 
       const rect = this.$el.getBoundingClientRect();
       const delta = this.vertical ? this.deltaY : this.deltaX;
