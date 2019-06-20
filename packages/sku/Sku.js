@@ -167,11 +167,12 @@ export default sfc({
 
     imageList() {
       const imageList = [this.goods.picture];
+
       if (this.skuTree.length > 0) {
         const treeItem = this.skuTree.filter(item => item.k_s === 's1')[0] || {};
 
         if (!treeItem.v) {
-          return;
+          return imageList;
         }
 
         treeItem.v.forEach(vItem => {
