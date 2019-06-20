@@ -4,45 +4,49 @@
       <van-notice-bar>{{ $t('tips') }}</van-notice-bar>
       <demo-block :title="$t('basicUsage')">
         <van-swipe-cell>
-          <van-button
-            square
-            slot="left"
-            type="danger"
-            :text="$t('button1')"
-          />
+          <template v-slot:left>
+            <van-button
+              square
+              type="danger"
+              :text="$t('button1')"
+            />
+          </template>
           <van-cell
             :border="false"
             :title="$t('title')"
             :value="$t('content')"
           />
-          <van-button
-            square
-            slot="right"
-            type="danger"
-            :text="$t('button2')"
-          />
+          <template v-slot:right>
+            <van-button
+              square
+              type="danger"
+              :text="$t('button2')"
+            />
+          </template>
         </van-swipe-cell>
       </demo-block>
 
       <demo-block :title="$t('title2')">
         <van-swipe-cell :on-close="onClose">
-          <van-button
-            square
-            slot="left"
-            type="danger"
-            :text="$t('button1')"
-          />
+          <template v-slot:left>
+            <van-button
+              square
+              type="danger"
+              :text="$t('button1')"
+            />
+          </template>
           <van-cell
             :border="false"
             :title="$t('title')"
             :value="$t('content')"
           />
-          <van-button
-            square
-            slot="right"
-            type="danger"
-            :text="$t('button2')"
-          />
+          <template v-slot:right>
+            <van-button
+              square
+              type="danger"
+              :text="$t('button2')"
+            />
+          </template>
         </van-swipe-cell>
       </demo-block>
     </demo-section>

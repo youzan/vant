@@ -82,9 +82,9 @@
           v-for="index in 2"
           :key="index"
         >
-          <div slot="title">
+          <template v-slot:title>
             <van-icon name="more-o" />{{ $t('tab') }}
-          </div>
+          </template>
           {{ $t('content') }} {{ index }}
         </van-tab>
       </van-tabs>

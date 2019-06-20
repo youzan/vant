@@ -17,7 +17,7 @@
         :status="$t('status')"
       >
         <div>{{ $t('content') }}</div>
-        <div slot="footer">
+        <template v-slot:footer>
           <van-button size="small">{{ $t('button') }}</van-button>
           <van-button
             size="small"
@@ -25,7 +25,7 @@
           >
             {{ $t('button') }}
           </van-button>
-        </div>
+        </template>
       </van-panel>
     </demo-block>
   </demo-section>

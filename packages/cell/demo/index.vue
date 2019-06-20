@@ -92,7 +92,7 @@
         icon="shop-o"
         is-link
       >
-        <template slot="title">
+        <template v-slot:title>
           <span class="custom-text">{{ $t('cell') }}</span>
           <van-tag type="danger">{{ $t('tag') }}</van-tag>
         </template>
@@ -104,7 +104,7 @@
       />
       <van-cell :title="$t('cell')">
         <van-icon
-          slot="right-icon"
+          v-slot:right-icon
           name="search"
           class="custom-icon"
         />
