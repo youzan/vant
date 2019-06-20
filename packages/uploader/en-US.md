@@ -70,6 +70,38 @@ export default {
 </van-uploader>
 ```
 
+### Before Read
+
+```html
+<van-uploader :before-read="beforeRead" />
+```
+
+```js
+export default {
+  methods: {
+    beforeRead(file) {
+      if (file.type !== 'image/jpeg') {
+        Toast('Please upload an image in jpg format');
+        return false;
+      }
+    
+      return true;
+    },
+
+    asyncBeforeRead(file) {
+      return new Promise((resolve, reject) => {
+        if (file.type !== 'image/jpeg') {
+          Toast('Please upload an image in jpg format');
+          reject();
+        } else {
+          resolve();
+        }
+      });
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -83,7 +115,7 @@ export default {
 | multiple | Whether to enable multiple selection pictures | `Boolean` | `false` |
 | disabled | Whether to disabled the upload | `Boolean` | `false` |
 | capture | Capture，can be set to `camera` | `String` | - |
-| before-read | Hook before reading the file, return false to stop reading the file | `Function` | - |
+| before-read | Hook before reading the file, return false to stop reading the file, can return Promise | `Function` | - |
 | after-read | Hook after reading the file | `Function` | - |
 | max-size | Max size of file | `Number` | - |
 | max-count | Max count of image | `Number` | - |

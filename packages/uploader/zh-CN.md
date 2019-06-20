@@ -79,6 +79,42 @@ export default {
 </van-uploader>
 ```
 
+### 上传前校验
+
+通过传入`beforeRead`函数可以在上传前进行校验，返回`true`表示校验通过，返回`false`表示校验失败。支持返回`Promise`进行异步校验
+
+```html
+<van-uploader :before-read="beforeRead" />
+```
+
+```js
+export default {
+  methods: {
+    // 返回布尔值
+    beforeRead(file) {
+      if (file.type !== 'image/jpeg') {
+        Toast('请上传 jpg 格式图片');
+        return false;
+      }
+    
+      return true;
+    },
+
+    // 返回 Promise
+    asyncBeforeRead(file) {
+      return new Promise((resolve, reject) => {
+        if (file.type !== 'image/jpeg') {
+          Toast('请上传 jpg 格式图片');
+          reject();
+        } else {
+          resolve();
+        }
+      });
+    }
+  }
+}
+```
+
 ## API
 
 ### Props
@@ -92,7 +128,7 @@ export default {
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
 | disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `String` | - | 2.0.0 |
-| before-read | 文件读取前的回调函数，返回`false`可终止文件读取 | `Function` | - | - |
+| before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
 | after-read | 文件读取完成后的回调函数 | `Function` | - | - |
 | max-size | 文件大小限制，单位为`byte` | `Number` | - | - |
 | max-count | 图片上传数量限制 | `Number` | - | 2.0.0 |

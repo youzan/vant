@@ -29,6 +29,13 @@
         </van-button>
       </van-uploader>
     </demo-block>
+
+    <demo-block :title="$t('beforeRead')">
+      <van-uploader
+        v-model="fileList3"
+        :before-read="beforeRead"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -39,24 +46,38 @@ export default {
       upload: '上传图片',
       preview: '图片预览',
       maxCount: '限制上传数量',
-      uploadStyle: '自定义上传样式'
+      beforeRead: '上传前校验',
+      uploadStyle: '自定义上传样式',
+      invalidType: '请上传 jpg 格式图片'
     },
     'en-US': {
       upload: 'Upload Image',
       preview: 'Preview Image',
       maxCount: 'Max Count',
-      uploadStyle: 'Upload Style'
+      beforeRead: 'Before Read',
+      uploadStyle: 'Upload Style',
+      invalidType: 'Please upload an image in jpg format'
     }
   },
 
   data() {
     return {
       fileList: [],
-      fileList2: []
+      fileList2: [],
+      fileList3: []
     };
   },
 
   methods: {
+    beforeRead(file) {
+      if (file.type !== 'image/jpeg') {
+        this.$toast(this.$t('invalidType'));
+        return false;
+      }
+
+      return true;
+    },
+
     afterRead(file) {
       console.log(file);
     }
