@@ -10,8 +10,8 @@
     <demo-block :title="$t('title2')">
       <van-slider
         v-model="value2"
-        :min="10"
-        :max="90"
+        :min="-50"
+        :max="50"
         @change="onChange"
       />
     </demo-block>
@@ -97,7 +97,7 @@ export default {
   data() {
     return {
       value1: 50,
-      value2: 50,
+      value2: 0,
       value3: 50,
       value4: 50,
       value5: 50,

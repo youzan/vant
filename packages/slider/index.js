@@ -1,4 +1,4 @@
-import { use, isDef } from '../utils';
+import { use } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/dom/event';
 
@@ -28,6 +28,12 @@ export default sfc({
     }
   },
 
+  computed: {
+    range() {
+      return this.max - this.min;
+    }
+  },
+
   methods: {
     onTouchStart(event) {
       if (this.disabled) {
@@ -45,17 +51,17 @@ export default sfc({
       }
 
       if (this.dragStatus === 'start') {
-        this.dragStatus = 'draging';
         this.$emit('drag-start');
       }
 
       preventDefault(event, true);
       this.touchMove(event);
+      this.dragStatus = 'draging';
 
       const rect = this.$el.getBoundingClientRect();
       const delta = this.vertical ? this.deltaY : this.deltaX;
       const total = this.vertical ? rect.height : rect.width;
-      const diff = (delta / total) * 100;
+      const diff = (delta / total) * this.range;
 
       this.newValue = this.startValue + diff;
       this.updateValue(this.newValue);
@@ -66,14 +72,12 @@ export default sfc({
         return;
       }
 
-      if (isDef(this.newValue)) {
+      if (this.dragStatus === 'draging') {
         this.updateValue(this.newValue, true);
+        this.$emit('drag-end');
       }
 
-      if (this.dragStatus === 'draging') {
-        this.$emit('drag-end');
-        this.dragStatus = '';
-      }
+      this.dragStatus = '';
     },
 
     onClick(event) {
@@ -84,7 +88,7 @@ export default sfc({
       const rect = this.$el.getBoundingClientRect();
       const delta = this.vertical ? event.clientY - rect.top : event.clientX - rect.left;
       const total = this.vertical ? rect.height : rect.width;
-      const value = (delta / total) * 100;
+      const value = (delta / total) * this.range + this.min;
 
       this.updateValue(value, true);
     },
@@ -115,7 +119,7 @@ export default sfc({
     const crossAxis = vertical ? 'width' : 'height';
 
     const barStyle = {
-      [mainAxis]: `${this.format(this.value)}%`,
+      [mainAxis]: `${((this.value - this.min) * 100) / this.range}%`,
       [crossAxis]: this.barHeight,
       background: this.activeColor
     };

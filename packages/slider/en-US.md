@@ -35,7 +35,7 @@ export default {
 ### Range
 
 ```html
-<van-slider v-model="value" :min="10" :max="90" />
+<van-slider v-model="value" :min="-50" :max="50" />
 ```
 
 ### Disabled
