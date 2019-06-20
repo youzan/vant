@@ -34,7 +34,7 @@
         <img
           slot="icon"
           slot-scope="props"
-          :src="props.checked ? icon.active : icon.normal"
+          :src="props.checked ? icon.active : icon.inactive"
         >
       </van-checkbox>
     </demo-block>
@@ -122,8 +122,8 @@ export default {
       result2: [],
       result3: [],
       icon: {
-        normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
-        active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
       }
     };
   },

@@ -45,32 +45,47 @@ export default {
 
 ### 自定义颜色
 
+通过`checked-color`属性设置选中状态的图标颜色
+
 ```html
-<van-radio checked-color="#07c160">复选框</van-radio>
+<van-radio-group v-model="radio">
+  <van-radio name="1" checked-color="#07c160">单选框 1</van-radio>
+  <van-radio name="2" checked-color="#07c160">单选框 2</van-radio>
+</van-radio-group>
 ```
 
 ### 自定义图标
 
-通过 icon 插槽自定义图标，可以通过 `slot-scope` 判断是否为选中状态
+通过`icon`插槽自定义图标，并通过`slot-scope`判断是否为选中状态
 
 ```html
-<van-radio v-model="checked">
-  自定义图标
-  <img
-    slot="icon"
-    slot-scope="props"
-    :src="props.checked ? icon.active : icon.normal"
-  >
-</van-radio>
+<van-radio-group v-model="radio">
+  <van-radio name="1">
+    单选框 1
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.checked ? icon.active : icon.inactive"
+    >
+  </van-radio>
+  <van-radio name="2">
+    单选框 2
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.checked ? icon.active : icon.inactive"
+    >
+  </van-radio>
+</van-radio-group>
 ```
 
 ```js
 export default {
   data() {
-    checked: true,
+    radio: '1'
     icon: {
-      normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
+      active: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
     }
   }
 }
