@@ -19,6 +19,8 @@ export default sfc({
     disabledCoupons: Array,
     closeButtonText: String,
     inputPlaceholder: String,
+    enabledTitle: String,
+    disabledTitle: String,
     exchangeButtonText: String,
     exchangeButtonLoading: Boolean,
     exchangeButtonDisabled: Boolean,
@@ -64,14 +66,6 @@ export default sfc({
           !this.currentCode ||
           this.currentCode.length < this.exchangeMinLength)
       );
-    },
-
-    title() {
-      return `${t('enable')} (${this.coupons.length})`;
-    },
-
-    disabledTitle() {
-      return `${t('disabled')} (${this.disabledCoupons.length})`;
     },
 
     listStyle() {
@@ -150,6 +144,12 @@ export default sfc({
   },
 
   render(h) {
+    const { coupons, disabledCoupons } = this;
+    const title = `${this.enabledTitle || t('enable')} (${coupons.length})`;
+    const disabledTitle = `${this.disabledTitle || t('disabled')} (${
+      disabledCoupons.length
+    })`;
+
     const ExchangeBar = this.showExchangeBar && (
       <Field
         vModel={this.currentCode}
@@ -167,9 +167,9 @@ export default sfc({
     const onChange = index => () => this.$emit('change', index);
 
     const CouponTab = (
-      <Tab title={this.title}>
+      <Tab title={title}>
         <div class={bem('list')} style={this.listStyle}>
-          {this.coupons.map((coupon, index) => (
+          {coupons.map((coupon, index) => (
             <Coupon
               ref="card"
               key={coupon.id}
@@ -179,18 +179,18 @@ export default sfc({
               nativeOnClick={onChange(index)}
             />
           ))}
-          {!this.coupons.length && this.renderEmpty()}
+          {!coupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );
 
     const DisabledCouponTab = (
-      <Tab title={this.disabledTitle}>
+      <Tab title={disabledTitle}>
         <div class={bem('list')} style={this.listStyle}>
-          {this.disabledCoupons.map(coupon => (
+          {disabledCoupons.map(coupon => (
             <Coupon disabled key={coupon.id} coupon={coupon} currency={this.currency} />
           ))}
-          {!this.disabledCoupons.length && this.renderEmpty()}
+          {!disabledCoupons.length && this.renderEmpty()}
         </div>
       </Tab>
     );
