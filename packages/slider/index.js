@@ -75,8 +75,9 @@ export default sfc({
       if (this.dragStatus === 'draging') {
         this.updateValue(this.newValue, true);
         this.$emit('drag-end');
-        this.dragStatus = '';
       }
+
+      this.dragStatus = '';
     },
 
     onClick(event) {
