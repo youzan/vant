@@ -86,7 +86,9 @@ export default {
 | v-model | Current exchange code | `String` | - |
 | chosen-coupon | Index of chosen coupon | `Number` | `-1` |
 | coupons | Coupon list | `Array` | `[]` |
-| disabled-coupons | Disabled voupon list | `Array` | `[]` |
+| disabled-coupons | Disabled coupon list | `Array` | `[]` |
+| enabled-title | Title of coupon list | `String` | `Available` | - |
+| disabled-title | Title of disabled coupon list | `String` | `Unavailable` | - |
 | exchange-button-text | Exchange button text | `String` | `Exchange` |
 | exchange-button-loading | Whether to show loading in exchange button | `Boolean` | `false` |
 | exchange-button-disabled | Whether to disable exchange button | `Boolean` | `false` |

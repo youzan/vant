@@ -87,6 +87,8 @@ export default {
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | disabled-coupons | 不可用优惠券列表 | `Array` | `[]` | - |
+| enabled-title | 可用优惠券列表标题 | `String` | `可使用优惠券` | - |
+| disabled-title | 不可用优惠券列表标题 | `String` | `不可使用优惠券` | - |
 | exchange-button-text | 兑换按钮文字 | `String` | `兑换` | - |
 | exchange-button-loading | 是否显示兑换按钮加载动画 | `Boolean` | `false` | - |
 | exchange-button-disabled | 是否禁用兑换按钮 | `Boolean` | `false` | - |
