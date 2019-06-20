@@ -94,6 +94,42 @@ it('before read return false', () => {
   expect(input.element.value).toEqual('');
 });
 
+it('before read return promise and resolve', async () => {
+  const afterRead = jest.fn();
+  const wrapper = mount(Uploader, {
+    propsData: {
+      beforeRead: () => new Promise(resolve => {
+        resolve();
+      }),
+      afterRead
+    }
+  });
+
+  wrapper.vm.onChange(file);
+
+  await later();
+  expect(afterRead).toHaveBeenCalledTimes(1);
+});
+
+it('before read return promise and reject', async () => {
+  const afterRead = jest.fn();
+  const wrapper = mount(Uploader, {
+    propsData: {
+      beforeRead: () => new Promise((resolve, reject) => {
+        reject();
+      }),
+      afterRead
+    }
+  });
+
+  const input = wrapper.find('input');
+
+  await later();
+  wrapper.vm.onChange(file);
+  expect(afterRead).toHaveBeenCalledTimes(0);
+  expect(input.element.value).toEqual('');
+});
+
 test('file size overlimit', async () => {
   const wrapper = mount(Uploader, {
     propsData: {

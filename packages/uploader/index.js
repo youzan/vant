@@ -59,11 +59,29 @@ export default sfc({
 
       files = files.length === 1 ? files[0] : [].slice.call(files);
 
-      if (this.beforeRead && !this.beforeRead(files, this.detail)) {
-        this.resetInput();
-        return;
+      if (this.beforeRead) {
+        const response = this.beforeRead(files, this.detail);
+
+        if (!response) {
+          this.resetInput();
+          return;
+        }
+
+        if (response.then) {
+          response
+            .then(() => {
+              this.readFile(files);
+            })
+            .catch(this.resetInput);
+
+          return;
+        }
       }
 
+      this.readFile(files);
+    },
+
+    readFile(files) {
       const oversize = isOversize(files, this.maxSize);
 
       if (Array.isArray(files)) {
