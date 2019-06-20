@@ -44,7 +44,10 @@ export default {
 ### Custom Color
 
 ```html
-<van-radio checked-color="#07c160">Radio</van-radio>
+<van-radio-group v-model="radio">
+  <van-radio name="1" checked-color="#07c160">Radio 1</van-radio>
+  <van-radio name="2" checked-color="#07c160">Radio 2</van-radio>
+</van-radio-group>
 ```
 
 ### Custom Icon
@@ -52,23 +55,33 @@ export default {
 Use icon slot to custom icon
 
 ```html
-<van-radio v-model="checked">
-  Custom Icon
-  <img
-    slot="icon"
-    slot-scope="props"
-    :src="props.checked ? icon.active : icon.normal"
-  >
-</van-radio>
+<van-radio-group v-model="radio">
+  <van-radio name="1">
+    Radio 1
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.checked ? icon.active : icon.inactive"
+    >
+  </van-radio>
+  <van-radio name="2">
+    Radio 2
+    <img
+      slot="icon"
+      slot-scope="props"
+      :src="props.checked ? icon.active : icon.inactive"
+    >
+  </van-radio>
+</van-radio-group>
 ```
 
 ```js
 export default {
   data() {
-    checked: true,
+    radio: '1',
     icon: {
-      normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
+      active: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
     }
   }
 }

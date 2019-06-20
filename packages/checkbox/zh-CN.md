@@ -49,7 +49,7 @@ export default {
   <img
     slot="icon"
     slot-scope="props"
-    :src="props.checked ? icon.active : icon.normal"
+    :src="props.checked ? icon.active : icon.inactive"
   >
 </van-checkbox>
 ```
@@ -59,8 +59,8 @@ export default {
   data() {
     checked: true,
     icon: {
-      normal: '//img.yzcdn.cn/icon-normal.png',
-      active: '//img.yzcdn.cn/icon-active.png'
+      active: 'https://img.yzcdn.cn/vant/user-active.png',
+      inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
     }
   }
 }

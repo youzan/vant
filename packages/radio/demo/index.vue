@@ -22,45 +22,63 @@
     </demo-block>
 
     <demo-block :title="$t('customColor')">
-      <van-radio
-        name="1"
-        value="1"
-        checked-color="#07c160"
+      <van-radio-group
+        v-model="radio3"
         class="demo-radio-group"
       >
-        {{ $t('radio') }}
-      </van-radio>
+        <van-radio
+          name="1"
+          checked-color="#07c160"
+        >
+          {{ $t('radio') }} 1
+        </van-radio>
+        <van-radio
+          name="2"
+          checked-color="#07c160"
+        >
+          {{ $t('radio') }} 2
+        </van-radio>
+      </van-radio-group>
     </demo-block>
 
     <demo-block :title="$t('customIcon')">
-      <van-radio
-        name="1"
-        value="1"
+      <van-radio-group
+        v-model="radio4"
         class="demo-radio-group"
       >
-        {{ $t('customIcon') }}
-        <img
-          slot="icon"
-          slot-scope="props"
-          :src="props.checked ? icon.active : icon.normal"
-        >
-      </van-radio>
+        <van-radio name="1">
+          {{ $t('radio') }} 1
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="props.checked ? icon.active : icon.inactive"
+          >
+        </van-radio>
+        <van-radio name="2">
+          {{ $t('radio') }} 2
+          <img
+            slot="icon"
+            slot-scope="props"
+            :src="props.checked ? icon.active : icon.inactive"
+          >
+        </van-radio>
+      </van-radio-group>
     </demo-block>
 
     <demo-block :title="$t('withCell')">
-      <van-radio-group v-model="radio3">
+      <van-radio-group v-model="radio5">
         <van-cell-group>
           <van-cell
-            :title="$t('radio') + 1"
             clickable
-            @click="radio3 = '1'"
+            :title="$t('radio') + 1"
+            @click="radio5 = '1'"
           >
             <van-radio name="1" />
           </van-cell>
           <van-cell
-            :title="$t('radio') + 2"
             clickable
-            @click="radio3 = '2'"
+            :title="$t('radio') + 2"
+            @click="radio5 = '2'"
           >
             <van-radio name="2" />
           </van-cell>
@@ -96,9 +114,11 @@ export default {
       radio1: '1',
       radio2: '2',
       radio3: '1',
+      radio4: '1',
+      radio5: '1',
       icon: {
-        normal: 'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
-        active: 'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
+        active: 'https://img.yzcdn.cn/vant/user-active.png',
+        inactive: 'https://img.yzcdn.cn/vant/user-inactive.png'
       }
     };
   }
@@ -110,7 +130,7 @@ export default {
   &-group {
     padding: 0 17px;
 
-    .van-radio {
+    .van-radio:not(:last-child) {
       margin-bottom: 10px;
     }
   }
