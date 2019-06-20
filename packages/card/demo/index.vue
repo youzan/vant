@@ -20,7 +20,7 @@
         :title="$t('title')"
         :thumb="imageURL"
       >
-        <template v-slot:tags>
+        <template #tags>
           <div class="card__tags">
             <van-tag
               plain
@@ -37,7 +37,7 @@
           </div>
         </template>
 
-        <template v-slot:footer>
+        <template #footer>
           <div class="card__footer">
             <van-button
               round

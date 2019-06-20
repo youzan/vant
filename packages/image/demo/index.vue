@@ -43,7 +43,7 @@
             width="100%"
             height="27vw"
           >
-            <template v-slot:loading>
+            <template #loading>
               <van-loading
                 type="spinner"
                 size="20"
@@ -72,9 +72,7 @@
             height="27vw"
             src="x"
           >
-            <template v-slot:error>
-              {{ $t('loadFail') }}
-            </template>
+            <template #error>{{ $t('loadFail') }}</template>
           </van-image>
           <div class="text">{{ $t('customTip') }}</div>
         </van-col>

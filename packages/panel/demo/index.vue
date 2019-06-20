@@ -17,7 +17,7 @@
         :status="$t('status')"
       >
         <div>{{ $t('content') }}</div>
-        <template v-slot:footer>
+        <template #footer>
           <van-button size="small">{{ $t('button') }}</van-button>
           <van-button
             size="small"

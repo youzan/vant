@@ -28,7 +28,7 @@
         :label="$t('label')"
         @search="onSearch"
       >
-        <template v-slot:action>
+        <template #action>
           <div @click="onSearch">{{ $t('search') }}</div>
         </template>
       </van-search>

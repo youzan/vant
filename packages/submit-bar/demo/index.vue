@@ -35,7 +35,7 @@
         @submit="onClickButton"
       >
         <van-checkbox v-model="checked">{{ $t('check') }}</van-checkbox>
-        <template v-slot:tip>
+        <template #tip>
           {{ $t('tip2') }}
           <span
             class="edit-address"

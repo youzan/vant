@@ -57,9 +57,8 @@ exports[`renders demo correctly 1`] = `
       <div class="van-collapse-item">
         <div role="button" tabindex="0" aria-expanded="false" class="van-cell van-cell--clickable van-collapse-item__title">
           <div class="van-cell__title">
-            <div>标题1<i class="van-icon van-icon-question-o">
-                <!----></i></div>
-          </div><i class="van-icon van-icon-arrow van-cell__right-icon">
+            标题1<i class="van-icon van-icon-question-o">
+              <!----></i></div><i class="van-icon van-icon-arrow van-cell__right-icon">
             <!----></i>
         </div>
       </div>

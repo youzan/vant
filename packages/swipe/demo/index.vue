@@ -70,7 +70,7 @@
         <van-swipe-item>3</van-swipe-item>
         <van-swipe-item>4</van-swipe-item>
 
-        <template v-slot:indicator>
+        <template #indicator>
           <div class="custom-indicator">{{ current + 1 }}/4</div>
         </template>
       </van-swipe>

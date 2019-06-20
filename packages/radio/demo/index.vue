@@ -48,13 +48,13 @@
       >
         <van-radio name="1">
           {{ $t('radio') }} 1
-          <template v-slot:icon="{ checked }">
+          <template #icon="{ checked }">
             <img :src="checked ? icon.active : icon.inactive">
           </template>
         </van-radio>
         <van-radio name="2">
           {{ $t('radio') }} 2
-          <template v-slot:icon="{ checked }">
+          <template #icon="{ checked }">
             <img :src="checked ? icon.active : icon.inactive">
           </template>
         </van-radio>
