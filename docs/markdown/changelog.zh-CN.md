@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
+`2019-06-21`
+
+**Improvements**
+
+- Picker: 优化滚动速率 [\#3556](https://github.com/youzan/vant/pull/3556)
+- Card: 新增 click-thumb 事件 [\#3586](https://github.com/youzan/vant/pull/3586)
+- CouponList: 新增 enabled-title、disabled-title 属性 [\#3578](https://github.com/youzan/vant/pull/3578)
+- Slider:  支持传入任意范围的 min、max 值 [\#3566](https://github.com/youzan/vant/pull/3566)
+- Uploader: 支持 before-read 属性返回 Promise [\#3572](https://github.com/youzan/vant/pull/3572)
+- NumberKeyboard: 支持 v-model 绑定输入值 [\#3531](https://github.com/youzan/vant/pull/3531)
+- NumberKeyboard: 新增 maxlength 属性 [\#3532](https://github.com/youzan/vant/pull/3532)
+- 新增 sideEffects 配置以支持 tree shaking [\#3530](https://github.com/youzan/vant/pull/3530)
+
+**Bug Fixes**
+
+- 修复 Sku 图片预览可能报错的问题 [\#3569](https://github.com/youzan/vant/pull/3569)
+- 修复 Button 在 safari 浏览器上存在外边距的问题 [\#3577](https://github.com/youzan/vant/pull/3577)
+- 修复 Toast clear 方法类型定义缺少参数的问题 [\#3542](https://github.com/youzan/vant/pull/3542)
+
+
 ### [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
 `2019-06-15`
 

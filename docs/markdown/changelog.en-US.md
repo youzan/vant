@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
+`2019-06-21`
+
+**Improvements**
+
+- Card: add click-thumb event [\#3586](https://github.com/youzan/vant/pull/3586)
+- CouponList: add enabled-title、disabled-title props [\#3578](https://github.com/youzan/vant/pull/3578)
+- Slider: min/max can set any value [\#3566](https://github.com/youzan/vant/pull/3566)
+- Uploader: before-read prop support promise mode [\#3572](https://github.com/youzan/vant/pull/3572)
+- Picker: update acceleration rate [\#3556](https://github.com/youzan/vant/pull/3556)
+- NumberKeyboard: support v-model [\#3531](https://github.com/youzan/vant/pull/3531)
+- NumberKeyboard: add maxlength prop [\#3532](https://github.com/youzan/vant/pull/3532)
+- add sideEffects to enable tree shaking [\#3530](https://github.com/youzan/vant/pull/3530)
+
+**Bug Fixes**
+
+- fix Button default margin in safari [\#3577](https://github.com/youzan/vant/pull/3577)
+- fix Sku can not preview image when only have goods picture [\#3569](https://github.com/youzan/vant/pull/3569)
+- fix Toast missing type definition of clear method [\#3542](https://github.com/youzan/vant/pull/3542)
+
+
 ## [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
 `2019-06-15`
 
