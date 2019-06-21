@@ -55,7 +55,7 @@ function Card(
   const showBottom = showNum || showPrice || showOriginPrice;
 
   const onThumbClick = () => {
-    emit(ctx, 'thumbclick');
+    emit(ctx, 'click-thumb');
   };
 
   const Thumb = showThumb && (
