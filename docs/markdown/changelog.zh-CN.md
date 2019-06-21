@@ -1,5 +1,13 @@
 ## 更新日志
 
+## [v1.6.24](https://github.com/youzan/vant/tree/v1.6.23)
+`2019-06-21`
+
+**Improvements**
+
+- Card: 新增 click-thumb 事件
+
+
 ## [v1.6.23](https://github.com/youzan/vant/tree/v1.6.23)
 `2019-06-11`
 
