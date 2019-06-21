@@ -1,11 +1,21 @@
 import { context } from './context';
 import { TouchMixin } from '../touch';
+import { PortalMixin } from '../portal';
 import { on, off, preventDefault } from '../../utils/dom/event';
 import { openOverlay, closeOverlay, updateOverlay } from './overlay';
 import { getScrollEventTarget } from '../../utils/dom/scroll';
 
 export const PopupMixin = {
-  mixins: [TouchMixin],
+  mixins: [
+    TouchMixin,
+    PortalMixin({
+      afterPortal() {
+        if (this.overlay) {
+          updateOverlay();
+        }
+      }
+    })
+  ],
 
   props: {
     // whether to show popup
@@ -20,8 +30,6 @@ export const PopupMixin = {
     closeOnClickOverlay: Boolean,
     // z-index
     zIndex: [String, Number],
-    // return the mount node for popup
-    getContainer: [String, Function],
     // prevent body scroll
     lockScroll: {
       type: Boolean,
@@ -54,19 +62,12 @@ export const PopupMixin = {
       this.$emit(type);
     },
 
-    getContainer() {
-      this.move();
-    },
-
     overlay() {
       this.renderOverlay();
     }
   },
 
   mounted() {
-    if (this.getContainer) {
-      this.move();
-    }
     if (this.value) {
       this.open();
     }
@@ -136,28 +137,6 @@ export const PopupMixin = {
       this.opened = false;
       closeOverlay(this);
       this.$emit('input', false);
-    },
-
-    move() {
-      let container;
-      const { getContainer } = this;
-
-      if (getContainer) {
-        container =
-          typeof getContainer === 'string'
-            ? document.querySelector(getContainer)
-            : getContainer();
-      } else if (this.$parent) {
-        container = this.$parent.$el;
-      }
-
-      if (container && container !== this.$el.parentNode) {
-        container.appendChild(this.$el);
-      }
-
-      if (this.overlay) {
-        updateOverlay();
-      }
     },
 
     onTouchMove(event) {
