@@ -71,7 +71,10 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('getContainer')">
+    <demo-block
+      v-if="!$attrs.weapp"
+      :title="$t('getContainer')"
+    >
       <van-button
         type="primary"
         @click="showGetContainer = true"

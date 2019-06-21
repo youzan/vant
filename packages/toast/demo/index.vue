@@ -39,7 +39,10 @@
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('customIcon')">
+    <demo-block
+      v-if="!$attrs.weapp"
+      :title="$t('customIcon')"
+    >
       <van-button
         type="primary"
         @click="showIconToast"

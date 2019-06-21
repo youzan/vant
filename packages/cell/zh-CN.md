@@ -88,7 +88,6 @@ Vue.use(Cell).use(CellGroup);
     <van-tag type="danger">标签</van-tag>
   </template>
 </van-cell>
-<van-cell title="单元格" icon="location-o" is-link />
 <van-cell title="单元格">
   <van-icon slot="right-icon" name="search" class="custom-icon" />
 </van-cell>
