@@ -33,7 +33,10 @@
       </van-button>
     </demo-block>
 
-    <demo-block :title="$t('componentCall')">
+    <demo-block
+      v-if="!$attrs.weapp"
+      :title="$t('componentCall')"
+    >
       <van-button
         type="primary"
         @click="show = true"

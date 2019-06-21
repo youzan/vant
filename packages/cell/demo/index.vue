@@ -97,11 +97,6 @@
           <van-tag type="danger">{{ $t('tag') }}</van-tag>
         </template>
       </van-cell>
-      <van-cell
-        :title="$t('cell')"
-        icon="location-o"
-        is-link
-      />
       <van-cell :title="$t('cell')">
         <template #right-icon>
           <van-icon

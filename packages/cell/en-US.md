@@ -83,7 +83,6 @@ Vue.use(Cell).use(CellGroup);
       <van-tag type="danger">Tag</van-tag>
     </template>
   </van-cell>
-  <van-cell title="Cell title" icon="location-o" is-link />
   <van-cell title="Cell title">
     <van-icon slot="right-icon" name="search" class="custom-icon" />
   </van-cell>
