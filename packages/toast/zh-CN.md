@@ -36,12 +36,12 @@ Toast.fail('失败文案');
 
 ```js
 Toast({
-  text: '自定义图标',
+  message: '自定义图标',
   icon: 'like-o'
 });
 
 Toast({
-  text: '展示图片',
+  message: '展示图片',
   icon: 'https://img.yzcdn.cn/vant/logo.png'
 });
 ```
