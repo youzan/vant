@@ -36,12 +36,12 @@ Toast.fail('Fail');
 
 ```js
 Toast({
-  text: 'Custom Icon',
+  message: 'Custom Icon',
   icon: 'like-o'
 });
 
 Toast({
-  text: 'Custom Image',
+  message: 'Custom Image',
   icon: 'https://img.yzcdn.cn/vant/logo.png'
 });
 ```
