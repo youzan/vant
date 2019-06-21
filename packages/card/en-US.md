@@ -65,6 +65,7 @@ Use slot to custom content.
 | Event | Description | Arguments |
 |------|------|------|
 | click | Triggered when clicked | - |
+| click-thumb | Triggered when thumb clicked | - |
 
 ### Slots
 

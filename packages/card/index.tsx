@@ -1,5 +1,5 @@
 import { use, isDef } from '../utils';
-import { inherit } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 import Tag from '../tag';
 import Image from '../image';
 
@@ -53,6 +53,10 @@ function Card(
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
   const showBottom = showNum || showPrice || showOriginPrice;
 
+  const onThumbClick = () => {
+    emit(ctx, 'click-thumb');
+  };
+
   function ThumbTag() {
     if (slots.tag || props.tag) {
       return (
@@ -72,7 +76,7 @@ function Card(
   function Thumb() {
     if (slots.thumb || thumb) {
       return (
-        <a href={props.thumbLink} class={bem('thumb')}>
+        <a href={props.thumbLink} class={bem('thumb')} onClick={onThumbClick}>
           {slots.thumb ? (
             slots.thumb()
           ) : (
