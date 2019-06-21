@@ -1,3 +1,6 @@
+/**
+ * Bind event when mounted or activated
+ */
 import { on, off } from '../utils/dom/event';
 
 export function BindEventMixin(handler) {
