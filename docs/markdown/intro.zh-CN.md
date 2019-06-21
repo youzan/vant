@@ -37,7 +37,7 @@
 * [加入我们](https://job.youzan.com)
 * [更新日志](#/zh-CN/changelog)
 * [React 组件库](https://youzan.github.io/zent)
-* [微信小程序组件库](https://github.com/youzan/zanui-weapp)
+* [微信小程序组件库](https://github.com/youzan/vant-weapp)
 * [Vant 示例仓库](https://github.com/youzan/vant-demo)
 
 ### 开源协议

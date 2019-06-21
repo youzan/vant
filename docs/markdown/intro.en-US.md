@@ -33,7 +33,7 @@ Modern browsers and Android 4.0+, iOS 6+.
 
 * [Feedback](https://github.com/youzan/vant/issues)
 * [Changelog](#/en-US/changelog)
-* [Weapp UI](https://github.com/youzan/zanui-weapp)
+* [Weapp UI](https://github.com/youzan/vant-weapp)
 * [React UI](https://youzan.github.io/zent)
 * [Vant Demo](https://github.com/youzan/vant-demo)
 
