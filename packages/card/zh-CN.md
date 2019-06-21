@@ -67,7 +67,6 @@ Vue.use(Card);
 | click | 点击时触发 | - |
 | thumbclick | 点击自定义图片时触发 | - |
 
-
 ### Slots
 
 | 名称 | 说明 |
