@@ -1,5 +1,5 @@
 import { use, isDef } from '../utils';
-import { inherit } from '../utils/functional';
+import { emit, inherit } from '../utils/functional';
 import Tag from '../tag';
 
 // Types
@@ -54,8 +54,12 @@ function Card(
   const showOriginPrice = slots['origin-price'] || isDef(props.originPrice);
   const showBottom = showNum || showPrice || showOriginPrice;
 
+  const onThumbClick = () => {
+    emit(ctx, 'click-thumb');
+  };
+
   const Thumb = showThumb && (
-    <a href={props.thumbLink} class={bem('thumb')}>
+    <a href={props.thumbLink} class={bem('thumb')} onClick={onThumbClick}>
       {slots.thumb ? (
         slots.thumb()
       ) : props.lazyLoad ? (
