@@ -49,6 +49,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
+        sideEffects: true,
         use: [
           'style-loader',
           'css-loader',
@@ -63,10 +64,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [
-          'vue-loader',
-          '@vant/markdown-loader'
-        ]
+        use: ['vue-loader', '@vant/markdown-loader']
       },
       {
         test: /\.(ttf|svg)$/,

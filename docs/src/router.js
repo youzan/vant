@@ -3,7 +3,9 @@ import docConfig from './doc.config';
 import DemoList from './components/DemoList';
 import DemoPages from './components/DemoPages';
 import { demoWrapper } from './demo-common';
-import './utils/iframe-router';
+import { initIframeRouter } from './utils/iframe-router';
+
+initIframeRouter();
 
 const registerRoute = ({ mobile, componentMap }) => {
   const route = [
