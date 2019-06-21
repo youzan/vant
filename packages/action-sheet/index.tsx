@@ -146,6 +146,7 @@ ActionSheet.props = {
   title: String,
   actions: Array,
   cancelText: String,
+  getContainer: [String, Function],
   closeOnClickAction: Boolean,
   safeAreaInsetBottom: Boolean,
   overlay: {
