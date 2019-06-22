@@ -257,3 +257,24 @@ it('delete preview image', async () => {
   expect(wrapper).toMatchSnapshot();
   expect(wrapper.emitted('delete')[0]).toBeTruthy();
 });
+
+it('click to preview image', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [],
+      previewSize: 30
+    },
+    listeners: {
+      input(fileList) {
+        wrapper.setProps({ fileList });
+      }
+    }
+  });
+
+  wrapper.vm.onChange(file);
+  await later();
+
+  wrapper.find('.van-image').trigger('click');
+
+  expect(document.querySelector('.van-image-preview')).toBeTruthy();
+});
