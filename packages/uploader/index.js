@@ -2,6 +2,7 @@ import { use, suffixPx } from '../utils';
 import { toArray, readFile, isOversize } from './utils';
 import Icon from '../icon';
 import Image from '../image';
+import ImagePreview from '../image-preview';
 
 const [sfc, bem] = use('uploader');
 
@@ -135,6 +136,13 @@ export default sfc({
       }
     },
 
+    onPreviewImage(startPosition) {
+      ImagePreview({
+        images: this.fileList.map(file => file.content),
+        startPosition
+      });
+    },
+
     renderPreview() {
       if (!this.previewImage) {
         return;
@@ -148,6 +156,9 @@ export default sfc({
             class={bem('preview-image')}
             width={this.previewSize}
             height={this.previewSize}
+            onClick={() => {
+              this.onPreviewImage(index);
+            }}
           />
           <Icon
             name="delete"
