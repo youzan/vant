@@ -169,7 +169,7 @@ export default {
               },
               {
                 path: '/uploader',
-                title: 'Uploader 图片上传'
+                title: 'Uploader 文件上传'
               }
             ]
           },
