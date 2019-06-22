@@ -6,6 +6,10 @@ import ImagePreview from '../image-preview';
 
 const [sfc, bem] = use('uploader');
 
+function isImageDataUrl(dataUrl) {
+  return dataUrl.indexOf('data:image') === 0;
+}
+
 export default sfc({
   inheritAttrs: false,
 
@@ -136,10 +140,14 @@ export default sfc({
       }
     },
 
-    onPreviewImage(startPosition) {
+    onPreviewImage(item) {
+      const imageFiles = this.fileList
+        .map(item => item.content)
+        .filter(content => isImageDataUrl(content));
+
       ImagePreview({
-        images: this.fileList.map(file => file.content),
-        startPosition
+        images: imageFiles,
+        startPosition: imageFiles.indexOf(item.content)
       });
     },
 
@@ -148,23 +156,33 @@ export default sfc({
         return;
       }
 
-      return this.fileList.map((file, index) => (
+      return this.fileList.map((item, index) => (
         <div class={bem('preview')}>
           <Image
             fit="cover"
-            src={file.content}
+            src={item.content}
             class={bem('preview-image')}
             width={this.previewSize}
             height={this.previewSize}
+            scopedSlots={{
+              error() {
+                return [
+                  <Icon class={bem('file-icon')} name="description" />,
+                  <div class={[bem('file-name'), 'van-ellipsis']}>{item.file.name}</div>
+                ];
+              }
+            }}
             onClick={() => {
-              this.onPreviewImage(index);
+              if (isImageDataUrl(item.content)) {
+                this.onPreviewImage(item);
+              }
             }}
           />
           <Icon
             name="delete"
             class={bem('preview-delete')}
             onClick={() => {
-              this.onDelete(file, index);
+              this.onDelete(item, index);
             }}
           />
         </div>

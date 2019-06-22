@@ -5,21 +5,22 @@ window.File = function () {
   this.size = 10000;
 };
 
+const mockFileDataUrl = 'data:image/test';
+const mockFile = new File([], '/Users');
+const file = { target: { files: [mockFile] } };
+const multiFile = { target: { files: [mockFile, mockFile] } };
+
 window.FileReader = function () {
   this.readAsText = function () {
     this.onload &&
       this.onload({
         target: {
-          result: 'test'
+          result: mockFileDataUrl
         }
       });
   };
   this.readAsDataURL = this.readAsText;
 };
-
-const mockFile = new File([], '/Users');
-const file = { target: { files: [mockFile] } };
-const multiFile = { target: { files: [mockFile, mockFile] } };
 
 test('disabled', () => {
   const afterRead = jest.fn();
@@ -39,7 +40,7 @@ it('read text', done => {
     propsData: {
       resultType: 'text',
       afterRead: readFile => {
-        expect(readFile.content).toEqual('test');
+        expect(readFile.content).toEqual(mockFileDataUrl);
         done();
       }
     }
@@ -276,5 +277,26 @@ it('click to preview image', async () => {
 
   wrapper.find('.van-image').trigger('click');
 
-  expect(document.querySelector('.van-image-preview')).toBeTruthy();
+  const imagePreviewNode = document.querySelector('.van-image-preview');
+  expect(imagePreviewNode).toBeTruthy();
+  imagePreviewNode.remove();
+});
+
+it('preview not image file', async () => {
+  const wrapper = mount(Uploader, {
+    propsData: {
+      fileList: [{
+        content: 'data:application',
+        file: {
+          name: 'test.md'
+        }
+      }]
+    }
+  });
+
+  wrapper.find('img').trigger('error');
+  wrapper.find('.van-image').trigger('click');
+
+  expect(document.querySelector('.van-image-preview')).toBeFalsy();
+  expect(wrapper).toMatchSnapshot();
 });
