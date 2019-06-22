@@ -72,14 +72,11 @@ export default {
 
   methods: {
     onChange(value) {
-      if (this.changing) {
-        return;
-      }
+      Toast.loading({ forbidClick: true });
 
-      this.changing = true;
       setTimeout(() => {
+        Toast.claer();
         this.value = value;
-        this.changing = false;
       }, 500);
     }
   }
