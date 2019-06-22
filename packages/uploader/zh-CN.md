@@ -1,4 +1,4 @@
-# Uploader 图片上传
+# Uploader 文件上传
 
 ### 引入
 
@@ -12,7 +12,7 @@ Vue.use(Uploader);
 
 ### 基础用法
 
-图片上传完毕后会触发`after-read`回调函数，获取到对应的`file`对象
+文件上传完毕后会触发`after-read`回调函数，获取到对应的`file`对象
 
 ```html
 <van-uploader :after-read="afterRead" />
@@ -126,12 +126,12 @@ export default {
 | preview-image | 是否在上传完成后展示预览图 | `Boolean` | `true` | 2.0.0 |
 | preview-size | 预览图和上传区域的尺寸，单位为`px` | `String | Number` | `80px` | 2.0.0 |
 | multiple | 是否开启图片多选，部分安卓机型不支持 | `Boolean` | `false` | 2.0.0 |
-| disabled | 是否禁用图片上传 | `Boolean` | `false` | - |
+| disabled | 是否禁用文件上传 | `Boolean` | `false` | - |
 | capture | 图片选取模式，可选值为`camera`(直接调起摄像头) | `String` | - | 2.0.0 |
 | before-read | 文件读取前的回调函数，返回`false`可终止文件读取，支持返回`Promise` | `Function` | - | - |
 | after-read | 文件读取完成后的回调函数 | `Function` | - | - |
 | max-size | 文件大小限制，单位为`byte` | `Number` | - | - |
-| max-count | 图片上传数量限制 | `Number` | - | 2.0.0 |
+| max-count | 文件上传数量限制 | `Number` | - | 2.0.0 |
 | result-type | 文件读取结果类型，可选值为`text` | `String` | `dataUrl` | - |
 | upload-text | 上传区域文字提示 | `String` | - | 2.0.0 |
 

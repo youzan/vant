@@ -26,7 +26,7 @@ export default {
 };
 ```
 
-### Preview Image
+### Preview File
 
 ```html
 <van-uploader v-model="fileList" multiple />

@@ -8,6 +8,7 @@
       <van-uploader
         v-model="fileList"
         multiple
+        accept="*"
       />
     </demo-block>
 
@@ -43,16 +44,16 @@
 export default {
   i18n: {
     'zh-CN': {
-      upload: '上传图片',
-      preview: '图片预览',
+      upload: '上传文件',
+      preview: '文件预览',
       maxCount: '限制上传数量',
       beforeRead: '上传前校验',
       uploadStyle: '自定义上传样式',
       invalidType: '请上传 jpg 格式图片'
     },
     'en-US': {
-      upload: 'Upload Image',
-      preview: 'Preview Image',
+      upload: 'Upload File',
+      preview: 'Preview File',
       maxCount: 'Max Count',
       beforeRead: 'Before Read',
       uploadStyle: 'Upload Style',
