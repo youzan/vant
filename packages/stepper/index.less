@@ -11,6 +11,7 @@
     height: 28px;
     margin: 1px;
     padding: 5px;
+    color: @stepper-button-icon-color;
     vertical-align: middle;
     background-color: @stepper-background-color;
     border: 0;
@@ -33,7 +34,7 @@
       bottom: 0;
       left: 0;
       margin: auto;
-      background-color: @text-color;
+      background-color: currentColor;
       content: '';
     }
 
@@ -42,16 +43,12 @@
     }
 
     &--disabled {
+      color: @stepper-button-disabled-icon-color;
       background-color: @stepper-button-disabled-color;
 
-      &::before,
-      &::after {
-        background-color: @gray;
+      &:active {
+        background-color: @stepper-button-disabled-color;
       }
-    }
-
-    &--disabled:active {
-      background-color: @stepper-button-disabled-color;
     }
   }
 
@@ -69,12 +66,12 @@
 
   &__input {
     box-sizing: content-box;
-    width: 30px;
-    height: 26px;
+    width: @stepper-input-width;
+    height: @stepper-input-height;
     margin: 1px;
     padding: 1px;
-    color: @text-color;
-    font-size: 14px;
+    color: @stepper-input-text-color;
+    font-size: @stepper-input-font-size;
     text-align: center;
     vertical-align: middle;
     background-color: @stepper-background-color;
@@ -84,8 +81,8 @@
     -webkit-appearance: none;
 
     &[disabled] {
-      color: @gray;
-      background-color: @stepper-input-disabled-color;
+      color: @stepper-input-disabled-text-color;
+      background-color: @stepper-input-disabled-background-color;
     }
   }
 
