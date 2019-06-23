@@ -153,7 +153,7 @@ ActionSheet.props = {
   safeAreaInsetBottom: Boolean,
   duration: {
     type: Number,
-    default: 0.3
+    default: null
   },
   overlay: {
     type: Boolean,
