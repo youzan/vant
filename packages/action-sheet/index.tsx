@@ -22,6 +22,7 @@ export type ActionSheetItem = {
 export type ActionSheetProps = PopupMixinProps & {
   title?: string;
   actions: ActionSheetItem[];
+  duration: number;
   cancelText?: string;
   closeOnClickAction?: boolean;
   safeAreaInsetBottom?: boolean;
@@ -125,6 +126,7 @@ function ActionSheet(
       position="bottom"
       value={props.value}
       overlay={props.overlay}
+      duration={props.duration}
       lazyRender={props.lazyRender}
       lockScroll={props.lockScroll}
       getContainer={props.getContainer}
@@ -149,6 +151,10 @@ ActionSheet.props = {
   getContainer: [String, Function],
   closeOnClickAction: Boolean,
   safeAreaInsetBottom: Boolean,
+  duration: {
+    type: Number,
+    default: null
+  },
   overlay: {
     type: Boolean,
     default: true
