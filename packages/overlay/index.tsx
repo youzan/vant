@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { use, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 
@@ -10,6 +10,7 @@ export type OverlayProps = {
   zIndex?: number;
   className?: any;
   visible?: boolean;
+  duration: number | null;
   customStyle?: object;
 };
 
@@ -29,10 +30,14 @@ function Overlay(
   slots: DefaultSlots,
   ctx: RenderContext<OverlayProps>
 ) {
-  const style = {
+  const style: { [key: string]: any } = {
     zIndex: props.zIndex,
     ...props.customStyle
   };
+
+  if (isDef(props.duration)) {
+    style.animationDuration = `${props.duration}s`;
+  }
 
   return (
     <transition name="van-fade">
@@ -51,7 +56,11 @@ Overlay.props = {
   zIndex: Number,
   className: null as any,
   visible: Boolean,
-  customStyle: Object
+  customStyle: Object,
+  duration: {
+    type: Number,
+    default: null
+  }
 };
 
 export default sfc<OverlayProps, OverlayEvents>(Overlay);
