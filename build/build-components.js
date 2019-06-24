@@ -4,7 +4,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const babel = require('@babel/core');
-const markdownVetur = require('markdown-vetur');
+const markdownVetur = require('@vant/markdown-vetur');
 
 const esDir = path.join(__dirname, '../es');
 const libDir = path.join(__dirname, '../lib');
