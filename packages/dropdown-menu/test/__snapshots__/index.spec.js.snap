@@ -37,7 +37,7 @@ exports[`close on click outside 1`] = `
         <div class="van-cell__title"><span>B</span></div>
       </div>
     </div>
-    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2004; z-index: 2004; position: absolute;"></div>
+    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2004; z-index: 2004; position: absolute; animation-duration: 0.2s;"></div>
   </div>
   <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
@@ -83,7 +83,7 @@ exports[`direction up 1`] = `
         <div class="van-cell__title"><span>B</span></div>
       </div>
     </div>
-    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2006; z-index: 2006; position: absolute;"></div>
+    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2006; z-index: 2006; position: absolute; animation-duration: 0.2s;"></div>
   </div>
   <div class="van-dropdown-item van-dropdown-item--up" style="z-index: 10; bottom: 768px; display: none;">
     <!---->
@@ -115,7 +115,7 @@ exports[`show dropdown item 1`] = `
         <div class="van-cell__title"><span>B</span></div>
       </div>
     </div>
-    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2000; z-index: 2000; position: absolute;"></div>
+    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2000; z-index: 2000; position: absolute; animation-duration: 0.2s;"></div>
   </div>
   <div class="van-dropdown-item van-dropdown-item--down" style="z-index: 10; top: 0px; display: none;">
     <!---->
@@ -150,7 +150,7 @@ exports[`show dropdown item 2`] = `
         <div class="van-cell__title"><span>B</span></div>
       </div>
     </div>
-    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2001; z-index: 2001; position: absolute;"></div>
+    <div class="van-overlay van-fade-enter van-fade-enter-active" style="z-index: 2001; z-index: 2001; position: absolute; animation-duration: 0.2s;"></div>
   </div>
 </div>
 `;
@@ -182,7 +182,7 @@ exports[`show dropdown item 3`] = `
         <div class="van-cell__title"><span>B</span></div>
       </div>
     </div>
-    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2001; z-index: 2001; position: absolute;"></div>
+    <div class="van-overlay van-fade-leave van-fade-leave-active" style="z-index: 2001; z-index: 2001; position: absolute; animation-duration: 0.2s;"></div>
   </div>
 </div>
 `;

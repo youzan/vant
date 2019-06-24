@@ -73,8 +73,8 @@ export const PopupMixin = {
     }
   },
 
+  /* istanbul ignore next */
   activated() {
-    /* istanbul ignore next */
     if (this.value) {
       this.open();
     }
@@ -88,8 +88,8 @@ export const PopupMixin = {
     }
   },
 
+  /* istanbul ignore next */
   deactivated() {
-    /* istanbul ignore next */
     this.close();
   },
 
@@ -171,6 +171,7 @@ export const PopupMixin = {
       if (this.overlay) {
         openOverlay(this, {
           zIndex: context.zIndex++,
+          duration: this.duration,
           className: this.overlayClass,
           customStyle: this.overlayStyle
         });
