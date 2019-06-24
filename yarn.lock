@@ -1129,6 +1129,11 @@
     highlight.js "^9.15.6"
     markdown-it "^8.4.2"
 
+"@vant/markdown-vetur@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.0.0.tgz#04774bc45cb6e11c734b8985925558ed8d3aab61"
+  integrity sha512-v6rVoLPJhKc6V4iHnidaueHCdkF6/aCVdQFDGvKcYoNJnVL8t8pem/XGJ+VBFNfD3b2pggwLc1QaWYVJFfaXLw==
+
 "@vant/touch-emulator@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.0.0.tgz#e9ea133fd874a534481c84e12089b2e9d552544b"
@@ -6343,11 +6348,6 @@ markdown-table@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-1.1.2.tgz#c78db948fa879903a41bce522e3b96f801c63786"
   integrity sha512-NcWuJFHDA8V3wkDgR/j4+gZx+YQwstPgfQDV8ndUeWWzta3dnDTBxpVzqS9lkmJAuV5YX35lmyojl6HO5JXAgw==
-
-markdown-vetur@0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/markdown-vetur/-/markdown-vetur-0.0.5.tgz#293e23e21e2bd937b3e61dd848bccea8bfc6f27f"
-  integrity sha512-8V3+cLJqykufYhcg+oM/ejh/59X51Fu/WR1SYTrNWFcqaMZTgWOqcGBDff6VVTfyrCDLzBFHNWlLHMSxks7WIg==
 
 matcher@^1.0.0:
   version "1.1.1"
