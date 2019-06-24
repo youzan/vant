@@ -13,7 +13,7 @@ Vue.use(Popup);
 ### Basic Usage
 
 ```html
-<van-botton type="primary" @click="showPopup">
+<van-button type="primary" @click="showPopup">
   Show Popup
 </van-button>
 

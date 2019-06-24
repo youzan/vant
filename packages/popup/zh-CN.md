@@ -19,7 +19,7 @@ Vue.use(Popup);
 通过`v-model`控制弹出层是否展示
 
 ```html
-<van-botton type="primary" @click="showPopup">
+<van-button type="primary" @click="showPopup">
   展示弹出层
 </van-button>
 
