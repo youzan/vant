@@ -6,16 +6,7 @@
       :title="title"
       :left-arrow="showNav"
       @click-left="onBack"
-    >
-      <a
-        v-if="showNav"
-        slot="right"
-        :href="demoLink"
-        target="_blank"
-      >
-        <van-icon name="edit" />
-      </a>
-    </van-nav-bar>
+    />
     <keep-alive>
       <router-view :weapp="weapp" />
     </keep-alive>
@@ -39,12 +30,6 @@ export default {
     title() {
       const { name } = this.$route.meta;
       return name ? name.replace(/-/g, '') : '';
-    },
-
-    demoLink() {
-      return `https://github.com/youzan/vant/blob/dev/packages/${
-        this.$route.meta.path
-      }/demo/index.vue`;
     },
 
     showNav() {
