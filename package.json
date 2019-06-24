@@ -53,7 +53,7 @@
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "@vant/icons": "1.1.8",
+    "@vant/icons": "1.1.9",
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "vue-lazyload": "1.2.3"
   },
@@ -86,7 +86,7 @@
     "csso": "^3.5.1",
     "dependency-tree": "^7.0.2",
     "eslint": "^5.16.0",
-    "fast-glob": "^3.0.0",
+    "fast-glob": "^3.0.2",
     "gh-pages": "^2.0.1",
     "html-webpack-plugin": "3.2.0",
     "husky": "^2.4.1",
@@ -117,9 +117,9 @@
     "vue-server-renderer": "^2.6.10",
     "vue-template-compiler": "2.6.10",
     "vue-template-es2015-compiler": "^1.9.1",
-    "webpack": "4.34.0",
-    "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "3.7.1"
+    "webpack": "4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "3.7.2"
   },
   "sideEffects": [
     "es/**/style/*",
