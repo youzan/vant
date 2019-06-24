@@ -1092,10 +1092,10 @@
     lodash.unescape "4.0.1"
     semver "5.5.0"
 
-"@vant/doc@^2.3.2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.2.tgz#20f38c3f47f13f0c4dcbc2fdfe7dddeb9943f4b1"
-  integrity sha512-y4g7DzjyKBiEIghkyWNpCPDPND1nrQFb3tX+iMhi484ic7hlCCVnpVmXf74Cp+7FhSeNjCB/6vSDdJFGAXpw5A==
+"@vant/doc@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@vant/doc/-/doc-2.3.3.tgz#2e1f7c8cbfcffee6ad3890400df86ed93f578db7"
+  integrity sha512-2g/dxdkgQxYg1VfpbxIzRAc00s5gb9YUJ3eoYDGMeCpZUVoB6EONPhDr3pOzdqKe/VWGAAZQDnzVaeX6Gab/fg==
   dependencies:
     cheerio "0.22.0"
     commander "^2.17.1"
