@@ -318,7 +318,8 @@ export default sfc({
     renderTitle(el, index) {
       this.$nextTick(() => {
         const title = this.$refs.title[index];
-        title.parentNode.replaceChild(el, title);
+        title.innerHTML = '';
+        title.appendChild(el);
       });
     },
 
