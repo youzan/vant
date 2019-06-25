@@ -10,9 +10,9 @@ import {
   getElementTop,
   getScrollEventTarget
 } from '../utils/dom/scroll';
+import Title from './Title';
 
 const [sfc, bem] = use('tabs');
-const tabBem = use('tab')[1];
 
 export default sfc({
   mixins: [
@@ -225,16 +225,16 @@ export default sfc({
       const shouldAnimate = this.inited;
 
       this.$nextTick(() => {
-        const { tabs } = this.$refs;
+        const { titles } = this.$refs;
 
-        if (!tabs || !tabs[this.curActive] || this.type !== 'line') {
+        if (!titles || !titles[this.curActive] || this.type !== 'line') {
           return;
         }
 
-        const tab = tabs[this.curActive];
+        const title = titles[this.curActive].$el;
         const { lineWidth, lineHeight } = this;
-        const width = isDef(lineWidth) ? lineWidth : tab.offsetWidth / 2;
-        const left = tab.offsetLeft + tab.offsetWidth / 2;
+        const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
+        const left = title.offsetLeft + title.offsetWidth / 2;
 
         const lineStyle = {
           width: suffixPx(width),
@@ -301,15 +301,15 @@ export default sfc({
 
     // scroll active tab into view
     scrollIntoView(immediate) {
-      const { tabs } = this.$refs;
+      const { titles } = this.$refs;
 
-      if (!this.scrollable || !tabs || !tabs[this.curActive]) {
+      if (!this.scrollable || !titles || !titles[this.curActive]) {
         return;
       }
 
       const { nav } = this.$refs;
-      const active = tabs[this.curActive];
-      const to = active.offsetLeft - (nav.offsetWidth - active.offsetWidth) / 2;
+      const title = titles[this.curActive].$el;
+      const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
       scrollLeftTo(nav, to, immediate ? 0 : this.duration);
     },
@@ -317,67 +317,32 @@ export default sfc({
     // render title slot of child tab
     renderTitle(el, index) {
       this.$nextTick(() => {
-        const title = this.$refs.title[index];
-        title.innerHTML = '';
-        title.appendChild(el);
+        this.$refs.titles[index].renderTitle(el);
       });
-    },
-
-    getTabStyle(item, index) {
-      const style = {};
-      const { color } = this;
-      const active = index === this.curActive;
-      const isCard = this.type === 'card';
-
-      // theme color
-      if (color) {
-        if (!item.disabled && isCard && !active) {
-          style.color = color;
-        }
-        if (!item.disabled && isCard && active) {
-          style.backgroundColor = color;
-        }
-        if (isCard) {
-          style.borderColor = color;
-        }
-      }
-
-      const titleColor = active ? this.titleActiveColor : this.titleInactiveColor;
-      if (titleColor) {
-        style.color = titleColor;
-      }
-
-      if (this.scrollable && this.ellipsis) {
-        style.flexBasis = 88 / this.swipeThreshold + '%';
-      }
-
-      return style;
     }
   },
 
   render(h) {
     const { type, ellipsis, animated, scrollable } = this;
 
-    const Nav = this.children.map((tab, index) => (
-      <div
-        ref="tabs"
+    const Nav = this.children.map((item, index) => (
+      <Title
+        ref="titles"
         refInFor
-        role="tab"
-        aria-selected={index === this.curActive}
-        class={tabBem({
-          active: index === this.curActive,
-          disabled: tab.disabled,
-          complete: !ellipsis
-        })}
-        style={this.getTabStyle(tab, index)}
+        type={type}
+        title={item.title}
+        color={this.color}
+        active={index === this.curActive}
+        ellipsis={ellipsis}
+        disabled={item.disabled}
+        scrollable={scrollable}
+        activeColor={this.titleActiveColor}
+        inactiveColor={this.titleInactiveColor}
+        swipeThreshold={this.swipeThreshold}
         onClick={() => {
           this.onClick(index);
         }}
-      >
-        <span ref="title" refInFor class={{ 'van-ellipsis': ellipsis }}>
-          {tab.title}
-        </span>
-      </div>
+      />
     ));
 
     let contentListeners;
@@ -402,8 +367,8 @@ export default sfc({
         >
           <div ref="nav" role="tablist" class={bem('nav', [type])} style={this.navStyle}>
             {this.slots('nav-left')}
-            {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
             {Nav}
+            {type === 'line' && <div class={bem('line')} style={this.lineStyle} />}
             {this.slots('nav-right')}
           </div>
         </div>
