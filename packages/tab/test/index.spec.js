@@ -19,17 +19,13 @@ function createWrapper(options = {}) {
         @change="onChange"
       >
         ${options.extraTemplate || ''}
-        <van-tab :title="title1">Text</van-tab>
-        <van-tab>
-          <span slot="title">title2</span>
-          Text
-        </van-tab>
+        <van-tab title="title1">Text</van-tab>
+        <van-tab title="title2">Text</van-tab>
         <van-tab title="title3" disabled>Text</van-tab>
       </van-tabs>
     `,
     data() {
       return {
-        title1: 'title1',
         color: '#f44',
         type: 'line',
         swipeable: true,
@@ -96,8 +92,7 @@ test('change tabs data', async () => {
     swipeable: false,
     sticky: false,
     type: 'card',
-    color: 'blue',
-    title1: 'new title1'
+    color: 'blue'
   });
 
   await later();
