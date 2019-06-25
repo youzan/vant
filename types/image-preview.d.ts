@@ -12,7 +12,8 @@ export type ImagePreviewOptions = string[] | {
   asyncClose?: boolean;
   showIndicators?: boolean;
   closeOnPopstate?: boolean;
-  onClose?: () => any;
+  onClose?: () => void;
+  onChange?: (index: number) => void;
 };
 
 export class VanImagePreview extends VanPopupMixin {

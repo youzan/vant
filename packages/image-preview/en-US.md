@@ -94,7 +94,8 @@ export default {
 | showIndex | Whether to show index | `Boolean` | `true` |
 | showIndicators | Whether to show indicators | `Boolean` | `false` |
 | loop | Whether to enable loop | `Boolean` | `true` |
-| onClose | Close callback | `Function` | - |
+| onClose | Triggered when close | `Function` | - |
+| onChange | Triggered when current image change | `Function` | - |
 | closeOnPopstate | Whether to close when popstate | `Boolean` | `false` |
 | asyncClose | Whether to enable async close | `Boolean` | `false` |
 | className | Custom className | `String | Array | Object` | - |
