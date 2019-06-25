@@ -107,6 +107,7 @@ export default {
 | showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
 | loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
 | onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |
+| onChange | 切换图片时的回调函数，回调参数为当前索引 | `Function` | - | 2.0.3 |
 | asyncClose | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
 | closeOnPopstate | 是否在页面回退时自动关闭 | `Boolean` | `false` | 2.0.0 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.5.2 |

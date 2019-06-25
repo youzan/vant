@@ -228,7 +228,7 @@ export default sfc({
       }
     },
 
-    onChange(active) {
+    onSwipeChange(active) {
       this.resetScale();
       this.active = active;
       this.$emit('change', active);
@@ -261,7 +261,7 @@ export default sfc({
         indicatorColor="white"
         initialSwipe={this.startPosition}
         showIndicators={this.showIndicators}
-        onChange={this.onChange}
+        onChange={this.onSwipeChange}
       >
         {images.map((image, index) => {
           const props = {

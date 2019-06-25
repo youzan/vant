@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import ImagePreview from '..';
 import ImagePreviewVue from '../ImagePreview';
-import { mount, trigger, triggerDrag, transitionStub } from '../../../test/utils';
+import { mount, trigger, triggerDrag, transitionStub, later } from '../../../test/utils';
 
 transitionStub();
 
@@ -64,7 +64,7 @@ test('function call', done => {
   });
 });
 
-test('function call options', done => {
+test('onClose option', async done => {
   const onClose = jest.fn();
   const instance = ImagePreview({
     images,
@@ -75,14 +75,28 @@ test('function call options', done => {
   instance.$emit('input', true);
   expect(onClose).toHaveBeenCalledTimes(0);
 
-  Vue.nextTick(() => {
-    const wrapper = document.querySelector('.van-image-preview');
-    const swipe = wrapper.querySelector('.van-swipe__track');
-    triggerDrag(swipe, 0, 0);
-    expect(onClose).toHaveBeenCalledTimes(1);
-    expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
-    done();
+  await later();
+
+  const wrapper = document.querySelector('.van-image-preview');
+  const swipe = wrapper.querySelector('.van-swipe__track');
+  triggerDrag(swipe, 0, 0);
+  expect(onClose).toHaveBeenCalledTimes(1);
+  expect(onClose).toHaveBeenCalledWith({ index: 0, url: 'https://img.yzcdn.cn/1.png' });
+  done();
+});
+
+test('onChange option', async done => {
+  const instance = ImagePreview({
+    images,
+    startPostion: 0,
+    onChange(index) {
+      expect(index).toEqual(2);
+      done();
+    }
   });
+
+  const swipe = instance.$el.querySelector('.van-swipe__track');
+  triggerDrag(swipe, 1000, 0);
 });
 
 test('register component', () => {
@@ -136,4 +150,19 @@ test('closeOnPopstate', () => {
 
   trigger(window, 'popstate');
   expect(wrapper.emitted('input')[1]).toBeFalsy();
+});
+
+test('lazy-load prop', () => {
+  const wrapper = mount(ImagePreviewVue, {
+    propsData: {
+      images,
+      lazyLoad: true
+    }
+  });
+
+  wrapper.setProps({
+    value: true
+  });
+
+  expect(wrapper).toMatchSnapshot();
 });

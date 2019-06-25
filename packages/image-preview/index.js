@@ -24,6 +24,12 @@ const initInstance = () => {
     el: document.createElement('div')
   });
   document.body.appendChild(instance.$el);
+
+  instance.$on('change', index => {
+    if (instance.onChange) {
+      instance.onChange(index);
+    }
+  });
 };
 
 const ImagePreview = (images, startPosition = 0) => {
