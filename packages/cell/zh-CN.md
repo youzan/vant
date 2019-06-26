@@ -82,14 +82,19 @@ Vue.use(Cell).use(CellGroup);
 如以上用法不能满足你的需求，可以使用对应的`slot`来自定义显示的内容
 
 ```html
-<van-cell value="内容" icon="shop-o" is-link>
+<van-cell value="内容" is-link>
   <template slot="title">
-    <span class="custom-text">单元格</span>
+    <span class="custom-title">单元格</span>
     <van-tag type="danger">标签</van-tag>
   </template>
 </van-cell>
-<van-cell title="单元格">
-  <van-icon slot="right-icon" name="search" class="custom-icon" />
+
+<van-cell title="单元格" icon="shop-o">
+  <van-icon
+    slot="right-icon"
+    name="search"
+    style="line-height: inherit;"
+  />
 </van-cell>
 ```
 

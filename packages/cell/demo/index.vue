@@ -89,19 +89,21 @@
     <demo-block :title="$t('advancedUsage')">
       <van-cell
         :value="$t('content')"
-        icon="shop-o"
         is-link
       >
         <template #title>
-          <span class="custom-text">{{ $t('cell') }}</span>
+          <span class="custom-title">{{ $t('cell') }}</span>
           <van-tag type="danger">{{ $t('tag') }}</van-tag>
         </template>
       </van-cell>
-      <van-cell :title="$t('cell')">
+      <van-cell
+        icon="shop-o"
+        :title="$t('cell')"
+      >
         <template #right-icon>
           <van-icon
             name="search"
-            class="custom-icon"
+            style="line-height: inherit;"
           />
         </template>
       </van-cell>
@@ -138,13 +140,9 @@ export default {
 
 <style lang="less">
 .demo-cell {
-  .custom-text {
+  .custom-title {
     margin-right: 5px;
     vertical-align: middle;
-  }
-
-  .custom-icon {
-    line-height: 24px;
   }
 }
 </style>

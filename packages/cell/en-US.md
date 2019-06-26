@@ -76,17 +76,20 @@ Vue.use(Cell).use(CellGroup);
 ### Advanced Usage
 
 ```html
-<van-cell-group>
-  <van-cell value="Content" icon="shop-o" is-link>
-    <template slot="title">
-      <span class="custom-text">Cell title</span>
-      <van-tag type="danger">Tag</van-tag>
-    </template>
-  </van-cell>
-  <van-cell title="Cell title">
-    <van-icon slot="right-icon" name="search" class="custom-icon" />
-  </van-cell>
-</van-cell-group>
+<van-cell value="Content" is-link>
+  <template slot="title">
+    <span class="custom-title">Cell title</span>
+    <van-tag type="danger">Tag</van-tag>
+  </template>
+</van-cell>
+
+<van-cell title="Cell title" icon="shop-o">
+  <van-icon
+    slot="right-icon"
+    name="search"
+    style="line-height: inherit;"
+  />
+</van-cell>
 ```
 
 ## API
