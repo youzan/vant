@@ -57,11 +57,11 @@ exports[`change tabs data 2`] = `
 exports[`click to switch tab 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+    <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%);"></div>
+      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%);"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -79,11 +79,11 @@ exports[`click to switch tab 1`] = `
 exports[`click to switch tab 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+    <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" class="van-tab"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab van-tab--active" aria-selected="true"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68); width: 2px; transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
+      <div class="van-tabs__line" style="width: 0px; transform: translateX(0px) translateX(-50%); transition-duration: 0.3s;"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -160,11 +160,11 @@ exports[`render nav-left & nav-right slot 1`] = `
 exports[`swipe to switch tab 1`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+    <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -182,11 +182,11 @@ exports[`swipe to switch tab 1`] = `
 exports[`swipe to switch tab 2`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+    <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line"></div>
     </div>
   </div>
   <div class="van-tabs__content">
@@ -202,36 +202,16 @@ exports[`swipe to switch tab 2`] = `
 exports[`swipe to switch tab 3`] = `
 <div class="van-tabs van-tabs--line">
   <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
+    <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
       <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
       <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
       <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
+      <div class="van-tabs__line"></div>
     </div>
   </div>
   <div class="van-tabs__content">
     <div role="tabpanel" class="van-tab__pane" style="display: none;">Text</div>
     <div role="tabpanel" class="van-tab__pane" style="">Text</div>
-    <div role="tabpanel" class="van-tab__pane" style="display: none;">
-      <!---->
-    </div>
-  </div>
-</div>
-`;
-
-exports[`swipe to switch tab 4`] = `
-<div class="van-tabs van-tabs--line">
-  <div class="van-tabs__wrap van-hairline--top-bottom">
-    <div role="tablist" class="van-tabs__nav van-tabs__nav--line" style="border-color: #f44;">
-      <div role="tab" aria-selected="true" class="van-tab van-tab--active"><span class="van-ellipsis">title1</span></div>
-      <div role="tab" class="van-tab"><span class="van-ellipsis">title2</span></div>
-      <div role="tab" class="van-tab van-tab--disabled"><span class="van-ellipsis">title3</span></div>
-      <div class="van-tabs__line" style="background-color: rgb(255, 68, 68);"></div>
-    </div>
-  </div>
-  <div class="van-tabs__content">
-    <div role="tabpanel" class="van-tab__pane" style="">Text</div>
-    <div role="tabpanel" class="van-tab__pane" style="display: none;">Text</div>
     <div role="tabpanel" class="van-tab__pane" style="display: none;">
       <!---->
     </div>
