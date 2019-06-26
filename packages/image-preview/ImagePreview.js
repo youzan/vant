@@ -165,7 +165,7 @@ export default sfc({
       this.startDistance = getDistance(event.touches);
     },
 
-    onTouchStart(event) {
+    onImageTouchStart(event) {
       const { touches } = event;
       const { offsetX = 0 } = this.$refs.swipe || {};
 
@@ -176,7 +176,7 @@ export default sfc({
       }
     },
 
-    onTouchMove(event) {
+    onImageTouchMove(event) {
       const { touches } = event;
       if (this.moving || this.zooming) {
         preventDefault(event, true);
@@ -197,7 +197,7 @@ export default sfc({
       }
     },
 
-    onTouchEnd(event) {
+    onImageTouchEnd(event) {
       /* istanbul ignore else */
       if (this.moving || this.zooming) {
         let stopPropagation = true;
@@ -268,10 +268,10 @@ export default sfc({
             class: bem('image'),
             style: index === active ? this.imageStyle : null,
             on: {
-              touchstart: this.onTouchStart,
-              touchmove: this.onTouchMove,
-              touchend: this.onTouchEnd,
-              touchcancel: this.onTouchEnd
+              touchstart: this.onImageTouchStart,
+              touchmove: this.onImageTouchMove,
+              touchend: this.onImageTouchEnd,
+              touchcancel: this.onImageTouchEnd
             }
           };
           return (
@@ -292,6 +292,7 @@ export default sfc({
         <div
           class={[bem(), this.className]}
           onTouchstart={this.onWrapperTouchStart}
+          onTouchMove={preventDefault}
           onTouchend={this.onWrapperTouchEnd}
           onTouchcancel={this.onWrapperTouchEnd}
         >
