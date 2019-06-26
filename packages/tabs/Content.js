@@ -44,7 +44,6 @@ export default sfc({
 
       /* istanbul ignore else */
       if (direction === 'horizontal' && this.offsetX >= MIN_SWIPE_DISTANCE) {
-        console.log('on touchend', active, deltaX);
         /* istanbul ignore else */
         if (deltaX > 0 && active !== 0) {
           this.$emit('change', active - 1);
