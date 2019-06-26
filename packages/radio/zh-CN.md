@@ -99,10 +99,10 @@ export default {
 <van-radio-group v-model="radio">
   <van-cell-group>
     <van-cell title="单选框 1" clickable @click="radio = '1'">
-      <van-radio name="1" />
+      <van-radio slot="right-icon" name="1" />
     </van-cell>
     <van-cell title="单选框 2" clickable @click="radio = '2'">
-      <van-radio name="2" />
+      <van-radio slot="right-icon" name="2" />
     </van-cell>
   </van-cell-group>
 </van-radio-group>

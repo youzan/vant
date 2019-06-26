@@ -117,7 +117,11 @@ export default {
       :title="`Checkbox ${item}`"
       @click="toggle(index)"
     >
-      <van-checkbox :name="item" ref="checkboxes" />
+      <van-checkbox
+        :name="item"
+        ref="checkboxes"
+        slot="right-icon"
+      />
     </van-cell>
   </van-cell-group>
 </van-checkbox-group>
