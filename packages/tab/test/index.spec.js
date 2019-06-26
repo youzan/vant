@@ -13,7 +13,6 @@ function createWrapper(options = {}) {
         :color="color"
         :type="type"
         :sticky="sticky"
-        :swipeable="swipeable"
         :line-width="lineWidth"
         :lazy-render="lazyRender"
         @change="onChange"
@@ -28,7 +27,6 @@ function createWrapper(options = {}) {
       return {
         color: '#f44',
         type: 'line',
-        swipeable: true,
         sticky: true,
         lineWidth: 2,
         lazyRender: true
@@ -40,7 +38,14 @@ function createWrapper(options = {}) {
 
 test('click to switch tab', async () => {
   const onChange = jest.fn();
-  const wrapper = createWrapper({
+  const wrapper = mount({
+    template: `
+      <van-tabs @change="onChange">
+        <van-tab title="title1">Text</van-tab>
+        <van-tab title="title2">Text</van-tab>
+        <van-tab title="title3" disabled>Text</van-tab>
+      </van-tabs>
+    `,
     methods: {
       onChange
     }
@@ -59,7 +64,14 @@ test('click to switch tab', async () => {
 
 test('swipe to switch tab', async () => {
   const onChange = jest.fn();
-  const wrapper = createWrapper({
+  const wrapper = mount({
+    template: `
+      <van-tabs swipeable @change="onChange">
+        <van-tab title="title1">Text</van-tab>
+        <van-tab title="title2">Text</van-tab>
+        <van-tab title="title3" disabled>Text</van-tab>
+      </van-tabs>
+    `,
     methods: {
       onChange
     }
@@ -68,13 +80,14 @@ test('swipe to switch tab', async () => {
   const content = wrapper.find('.van-tabs__content');
   await later();
   expect(wrapper).toMatchSnapshot();
+
   triggerDrag(content, -100, 0);
   expect(wrapper).toMatchSnapshot();
   expect(onChange).toHaveBeenCalledTimes(1);
+  expect(onChange).toHaveBeenCalledWith(1, 'title2');
+
   triggerDrag(content, -100, 0);
-  expect(wrapper).toMatchSnapshot();
-  triggerDrag(content, 100, 0);
-  triggerDrag(content, 100, 0);
+  expect(onChange).toHaveBeenCalledTimes(1);
   expect(wrapper).toMatchSnapshot();
 
   await later();

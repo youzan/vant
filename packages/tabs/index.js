@@ -1,7 +1,6 @@
 import { use, isDef, suffixPx } from '../utils';
 import { scrollLeftTo } from './utils';
 import { on, off } from '../utils/dom/event';
-import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import {
@@ -11,12 +10,12 @@ import {
   getScrollEventTarget
 } from '../utils/dom/scroll';
 import Title from './Title';
+import Content from './Content';
 
 const [sfc, bem] = use('tabs');
 
 export default sfc({
   mixins: [
-    TouchMixin,
     ParentMixin('vanTabs'),
     BindEventMixin(function (bind, isBind) {
       this.bindScrollEvent(isBind);
@@ -109,15 +108,6 @@ export default sfc({
         borderColor: this.color,
         background: this.background
       };
-    },
-
-    trackStyle() {
-      if (this.animated) {
-        return {
-          transform: `translate3d(${-1 * this.curActive * 100}%, 0, 0)`,
-          transitionDuration: `${this.duration}s`
-        };
-      }
     }
   },
 
@@ -178,22 +168,6 @@ export default sfc({
         this.scrollEl = this.scrollEl || getScrollEventTarget(this.$el);
         (sticky ? on : off)(this.scrollEl, 'scroll', this.onScroll, true);
         this.onScroll();
-      }
-    },
-
-    // watch swipe touch end
-    onTouchEnd() {
-      const { direction, deltaX, curActive } = this;
-      const minSwipeDistance = 50;
-
-      /* istanbul ignore else */
-      if (direction === 'horizontal' && this.offsetX >= minSwipeDistance) {
-        /* istanbul ignore else */
-        if (deltaX > 0 && curActive !== 0) {
-          this.setCurActive(curActive - 1);
-        } else if (deltaX < 0 && curActive !== this.children.length - 1) {
-          this.setCurActive(curActive + 1);
-        }
       }
     },
 
@@ -272,6 +246,7 @@ export default sfc({
         if (this.curActive !== null) {
           this.$emit('change', active, this.children[active].title);
         }
+
         this.curActive = active;
       }
     },
@@ -345,16 +320,6 @@ export default sfc({
       />
     ));
 
-    let contentListeners;
-    if (this.swipeable) {
-      contentListeners = {
-        touchstart: this.touchStart,
-        touchmove: this.touchMove,
-        touchend: this.onTouchEnd,
-        touchcancel: this.onTouchEnd
-      };
-    }
-
     return (
       <div class={bem([type])}>
         <div
@@ -372,15 +337,16 @@ export default sfc({
             {this.slots('nav-right')}
           </div>
         </div>
-        <div class={bem('content', { animated })} {...{ on: contentListeners }}>
-          {animated ? (
-            <div class={bem('track')} style={this.trackStyle}>
-              {this.slots()}
-            </div>
-          ) : (
-            this.slots()
-          )}
-        </div>
+        <Content
+          count={this.children.length}
+          active={this.curActive}
+          animated={animated}
+          duration={this.duration}
+          swipeable={this.swipeable}
+          onChange={this.setCurActive}
+        >
+          {this.slots()}
+        </Content>
       </div>
     );
   }
