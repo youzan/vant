@@ -10,7 +10,7 @@
       />
     </demo-block>
 
-    <demo-block :title="$t('advancedUsage')">
+    <demo-block :title="$t('discountInfo')">
       <van-card
         num="2"
         price="2.00"
@@ -19,26 +19,37 @@
         :desc="$t('desc')"
         :title="$t('title')"
         :thumb="imageURL"
+      />
+    </demo-block>
+
+    <demo-block :title="$t('customContent')">
+      <van-card
+        num="2"
+        price="2.00"
+        :desc="$t('desc')"
+        :title="$t('title')"
+        :thumb="imageURL"
       >
         <template #tags>
-          <div class="card__tags">
+          <div>
             <van-tag
               plain
               type="danger"
+              style="margin-right: 5px;"
             >
-              标签1
+              标签
             </van-tag>
             <van-tag
               plain
               type="danger"
             >
-              标签2
+              标签
             </van-tag>
           </div>
         </template>
 
         <template #footer>
-          <div class="card__footer">
+          <div>
             <van-button
               round
               size="mini"
@@ -62,26 +73,20 @@
 export default {
   i18n: {
     'zh-CN': {
-      title: '商品名称'
+      title: '商品名称',
+      discountInfo: '营销信息',
+      customContent: '自定义内容'
+    },
+    'en-US': {
+      discountInfo: 'Discount Info',
+      customContent: 'Custom Content'
     }
   },
 
   data() {
     return {
-      imageURL: '//img.yzcdn.cn/upload_files/2017/07/02/af5b9f44deaeb68000d7e4a711160c53.jpg'
+      imageURL: 'https://img.yzcdn.cn/vant/t-thirt.jpg'
     };
   }
 };
 </script>
-
-<style lang="less">
-.card__footer {
-  padding-top: 5px;
-}
-
-.card__tags {
-  .van-tag {
-    margin-right: 5px;
-  }
-}
-</style>

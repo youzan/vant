@@ -13,28 +13,44 @@ Vue.use(Card);
 
 ```html
 <van-card
-  title="Title"
-  desc="Description"
   num="2"
   price="2.00"
-  :thumb="imageURL"
+  title="Title"
+  desc="Description"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 />
 ```
 
-### Advanced Usage
+### Discount Info
+
+```html
+<van-card
+  num="2"
+  tag="Tag"
+  price="2.00"
+  title="Title"
+  desc="Description"
+  origin-price="10.00"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+/>
+```
+
+### Custom Content
 
 Use slot to custom content.
 
 ```html
 <van-card
   num="2"
-  tag="Tag"
   title="Title"
   desc="Description"  
   price="2.00"
-  :thumb="imageURL"
-  origin-price="10.00"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 >
+  <div slot="tags">
+    <van-tag plain type="danger">Tag</van-tag>
+    <van-tag plain type="danger">Tag</van-tag>
+  </div>
   <div slot="footer">
     <van-button size="mini">Button</van-button>
     <van-button size="mini">Button</van-button>
