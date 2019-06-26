@@ -38,14 +38,6 @@ function ActionSheet(
 ) {
   const { title, cancelText } = props;
 
-  function onInput(value: boolean) {
-    emit(ctx, 'input', value);
-  }
-
-  function onClickOverlay() {
-    emit(ctx, 'click-overlay');
-  }
-
   function onCancel() {
     emit(ctx, 'input', false);
     emit(ctx, 'cancel');
@@ -131,9 +123,7 @@ function ActionSheet(
       lockScroll={props.lockScroll}
       getContainer={props.getContainer}
       closeOnClickOverlay={props.closeOnClickOverlay}
-      onInput={onInput}
-      onClick-overlay={onClickOverlay}
-      {...inherit(ctx)}
+      {...inherit(ctx, true)}
     >
       {Header()}
       {props.actions.map(Option)}
