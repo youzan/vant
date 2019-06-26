@@ -1,6 +1,6 @@
 import { use } from '../utils';
 import { RED, WHITE } from '../utils/color';
-import { emit, inherit } from '../utils/functional';
+import { inherit } from '../utils/functional';
 import { PopupMixin } from '../mixins/popup';
 import Popup from '../popup';
 
@@ -38,16 +38,7 @@ function Notify(
       overlay={false}
       lockScroll={false}
       class={[bem(), props.className]}
-      onInput={(value: boolean) => {
-        emit(ctx, 'input', value);
-      }}
-      onClick={(event: Event) => {
-        emit(ctx, 'click', event);
-      }}
-      onOpened={() => {
-        emit(ctx, 'opened');
-      }}
-      {...inherit(ctx)}
+      {...inherit(ctx, true)}
     >
       {props.message}
     </Popup>

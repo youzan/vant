@@ -26,6 +26,11 @@ function Notify(options: NotifyOptions) {
             instance.onClick(event);
           }
         },
+        close() {
+          if (instance.onClose) {
+            instance.onClose();
+          }
+        },
         opened() {
           if (instance.onOpened) {
             instance.onOpened();
@@ -67,10 +72,6 @@ function defaultOptions(): NotifyOptions {
 Notify.clear = () => {
   if (instance) {
     instance.value = false;
-
-    if (instance.onClose) {
-      instance.onClose();
-    }
   }
 };
 
