@@ -1,11 +1,23 @@
 import { use } from '../utils';
-import { on, off, preventDefault } from '../utils/dom/event';
+import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
+import { BindEventMixin } from '../mixins/bind-event';
 
 const [sfc, bem] = use('swipe');
 
 export default sfc({
-  mixins: [TouchMixin],
+  mixins: [
+    TouchMixin,
+    BindEventMixin(function (bind, isBind) {
+      bind(window, 'resize', this.onResize, true);
+
+      if (isBind) {
+        this.initialize();
+      } else {
+        this.clear();
+      }
+    })
+  ],
 
   props: {
     width: Number,
@@ -43,30 +55,6 @@ export default sfc({
       swipes: [],
       swiping: false
     };
-  },
-
-  mounted() {
-    this.initialize();
-
-    if (!this.$isServer) {
-      on(window, 'resize', this.onResize, true);
-    }
-  },
-
-  activated() {
-    if (this.rendered) {
-      this.initialize();
-    }
-
-    this.rendered = true;
-  },
-
-  destroyed() {
-    this.clear();
-
-    if (!this.$isServer) {
-      off(window, 'resize', this.onResize, true);
-    }
   },
 
   watch: {
@@ -265,25 +253,32 @@ export default sfc({
           }, 30);
         }, autoplay);
       }
+    },
+
+    renderIndicator() {
+      const { count, activeIndicator } = this;
+      const slot = this.slots('indicator');
+
+      if (slot) {
+        return slot;
+      }
+
+      if (this.showIndicators && count > 1) {
+        return (
+          <div class={bem('indicators', { vertical: this.vertical })}>
+            {Array(...Array(count)).map((empty, index) => (
+              <i
+                class={bem('indicator', { active: index === activeIndicator })}
+                style={index === activeIndicator ? this.indicatorStyle : null}
+              />
+            ))}
+          </div>
+        );
+      }
     }
   },
 
   render(h) {
-    const { count, activeIndicator } = this;
-
-    const Indicator =
-      this.slots('indicator') ||
-      (this.showIndicators && count > 1 && (
-        <div class={bem('indicators', { vertical: this.vertical })}>
-          {Array(...Array(count)).map((empty, index) => (
-            <i
-              class={bem('indicator', { active: index === activeIndicator })}
-              style={index === activeIndicator ? this.indicatorStyle : null}
-            />
-          ))}
-        </div>
-      ));
-
     return (
       <div class={bem()}>
         <div
@@ -297,7 +292,7 @@ export default sfc({
         >
           {this.slots()}
         </div>
-        {Indicator}
+        {this.renderIndicator()}
       </div>
     );
   }
