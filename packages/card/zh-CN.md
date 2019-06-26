@@ -17,13 +17,13 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"  
   title="商品标题"
-  :thumb="imageURL"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 />
 ```
 
-### 高级用法
+### 营销信息
 
-可以通过具名插槽添加定制内容
+通过`origin-price`设置商品原价，通过`tag`设置商品左上角标签
 
 ```html
 <van-card
@@ -32,9 +32,27 @@ Vue.use(Card);
   price="2.00"
   desc="描述信息"  
   title="商品标题"
-  :thumb="imageURL"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
   origin-price="10.00"
+/>
+```
+
+### 自定义内容
+
+`Card`组件提供了多个插槽，可以灵活地自定义内容
+
+```html
+<van-card
+  num="2"
+  price="2.00"
+  desc="描述信息"  
+  title="商品标题"
+  thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
 >
+  <div slot="tags">
+    <van-tag plain type="danger">标签</van-tag>
+    <van-tag plain type="danger">标签</van-tag>
+  </div>
   <div slot="footer">
     <van-button size="mini">按钮</van-button>
     <van-button size="mini">按钮</van-button>
