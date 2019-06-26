@@ -69,14 +69,20 @@
             :title="$t('radio') + 1"
             @click="radio5 = '1'"
           >
-            <van-radio name="1" />
+            <van-radio
+              name="1"
+              slot="right-icon"
+            />
           </van-cell>
           <van-cell
             clickable
             :title="$t('radio') + 2"
             @click="radio5 = '2'"
           >
-            <van-radio name="2" />
+            <van-radio
+              name="2"
+              slot="right-icon"
+            />
           </van-cell>
         </van-cell-group>
       </van-radio-group>
@@ -129,10 +135,6 @@ export default {
     .van-radio:not(:last-child) {
       margin-bottom: 10px;
     }
-  }
-
-  .van-cell__value {
-    flex: none;
   }
 
   img {

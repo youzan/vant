@@ -76,6 +76,7 @@
           >
             <van-checkbox
               ref="checkboxes"
+              slot="right-icon"
               :name="item"
             />
           </van-cell>
@@ -141,10 +142,6 @@ export default {
   }
 
   .van-cell {
-    &__value {
-      flex: none;
-    }
-
     .van-checkbox {
       margin: 0;
     }
