@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
 import Icon from '../icon';
@@ -35,7 +35,7 @@ export type ButtonEvents = {
   onClick?(event: Event): void;
 };
 
-const [sfc, bem] = use('button');
+const [createComponent, bem] = createNamespace('button');
 
 function Button(
   h: CreateElement,
@@ -148,4 +148,4 @@ Button.props = {
   }
 };
 
-export default sfc<ButtonProps, ButtonEvents>(Button);
+export default createComponent<ButtonProps, ButtonEvents>(Button);

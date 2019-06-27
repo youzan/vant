@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { range } from '../utils/format/number';
 import { padZero } from '../utils/format/string';
 import Picker from '../picker';
@@ -10,10 +10,10 @@ import {
   getMonthEndDay
 } from './utils';
 
-const [sfc, bem] = use('datetime-picker');
+const [createComponent, bem] = createNamespace('datetime-picker');
 const currentYear = new Date().getFullYear();
 
-export default sfc({
+export default createComponent({
   props: {
     ...pickerProps,
     value: null,

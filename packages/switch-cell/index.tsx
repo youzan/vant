@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 import Cell from '../cell';
 import Switch, { SwitchEvents } from '../switch';
@@ -15,7 +15,7 @@ export type SwitchCellProps = SharedSwitchProps & {
   cellSize?: string;
 };
 
-const [sfc, bem] = use('switch-cell');
+const [createComponent, bem] = createNamespace('switch-cell');
 
 function SwitchCell(
   h: CreateElement,
@@ -51,4 +51,4 @@ SwitchCell.props = {
   }
 };
 
-export default sfc<SwitchCellProps, SwitchEvents>(SwitchCell);
+export default createComponent<SwitchCellProps, SwitchEvents>(SwitchCell);

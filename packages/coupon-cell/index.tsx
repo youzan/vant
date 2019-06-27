@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 import Cell from '../cell';
 
@@ -16,7 +16,7 @@ export type CouponCellProps = {
   chosenCoupon: number;
 };
 
-const [sfc, bem, t] = use('coupon-cell');
+const [createComponent, bem, t] = createNamespace('coupon-cell');
 
 function formatValue(props: CouponCellProps) {
   const { coupons, chosenCoupon, currency } = props;
@@ -79,4 +79,4 @@ CouponCell.props = {
   }
 };
 
-export default sfc<CouponCellProps>(CouponCell);
+export default createComponent<CouponCellProps>(CouponCell);

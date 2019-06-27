@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -10,7 +10,7 @@ export type CellGroupProps = {
   border: boolean
 };
 
-const [sfc, bem] = use('cell-group');
+const [createComponent, bem] = createNamespace('cell-group');
 
 function CellGroup(
   h: CreateElement,
@@ -47,4 +47,4 @@ CellGroup.props = {
   }
 };
 
-export default sfc<CellGroupProps>(CellGroup);
+export default createComponent<CellGroupProps>(CellGroup);

@@ -1,4 +1,4 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 
@@ -18,7 +18,7 @@ export type OverlayEvents = {
   click(event: Event): void;
 };
 
-const [sfc, bem] = use('overlay');
+const [createComponent, bem] = createNamespace('overlay');
 
 function preventTouchMove(event: TouchEvent) {
   preventDefault(event, true);
@@ -63,4 +63,4 @@ Overlay.props = {
   }
 };
 
-export default sfc<OverlayProps, OverlayEvents>(Overlay);
+export default createComponent<OverlayProps, OverlayEvents>(Overlay);

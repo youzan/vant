@@ -9,14 +9,14 @@ import SkuRowItem from './components/SkuRowItem';
 import SkuStepper from './components/SkuStepper';
 import SkuMessages from './components/SkuMessages';
 import SkuActions from './components/SkuActions';
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { isAllSelected, isSkuChoosable, getSkuComb, getSelectedSkuValues } from './utils/skuHelper';
 import { LIMIT_TYPE, UNSELECTED_SKU_VALUE_ID } from './constants';
 
-const [sfc] = use('sku');
+const [createComponent] = createNamespace('sku');
 const { QUOTA_LIMIT } = LIMIT_TYPE;
 
-export default sfc({
+export default createComponent({
   props: {
     sku: Object,
     goods: Object,

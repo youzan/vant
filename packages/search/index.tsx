@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { inherit, emit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 import Field from '../field';
@@ -7,7 +7,7 @@ import Field from '../field';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots, ScopedSlot } from '../utils/types';
 
-const [sfc, bem, t] = use('search');
+const [createComponent, bem, t] = createNamespace('search');
 
 export type SearchProps = {
   shape: string;
@@ -134,4 +134,4 @@ Search.props = {
   }
 };
 
-export default sfc<SearchProps, SearchEvents, SearchSlots>(Search);
+export default createComponent<SearchProps, SearchEvents, SearchSlots>(Search);

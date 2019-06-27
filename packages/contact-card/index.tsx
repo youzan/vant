@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Cell from '../cell';
 
@@ -6,7 +6,7 @@ import Cell from '../cell';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
-const [sfc, bem, t] = use('contact-card');
+const [createComponent, bem, t] = createNamespace('contact-card');
 
 export type ContactCardProps = {
   tel?: string;
@@ -65,4 +65,4 @@ ContactCard.props = {
   }
 };
 
-export default sfc<ContactCardProps>(ContactCard);
+export default createComponent<ContactCardProps>(ContactCard);

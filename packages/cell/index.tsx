@@ -1,4 +1,4 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { cellProps, SharedCellProps } from './shared';
 import { emit, inherit } from '../utils/functional';
 import { routeProps, RouteProps, functionalRoute } from '../utils/router';
@@ -7,7 +7,7 @@ import Icon from '../icon';
 // Types
 import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/types';
-import { Mods } from '../utils/use/bem';
+import { Mods } from '../utils/create/bem';
 
 export type CellProps = RouteProps &
   SharedCellProps & {
@@ -26,7 +26,7 @@ export type CellEvents = {
   onClick?(event: Event): void;
 };
 
-const [sfc, bem] = use('cell');
+const [createComponent, bem] = createNamespace('cell');
 
 function Cell(
   h: CreateElement,
@@ -106,4 +106,4 @@ Cell.props = {
   arrowDirection: String
 };
 
-export default sfc<CellProps, CellEvents, CellSlots>(Cell);
+export default createComponent<CellProps, CellEvents, CellSlots>(Cell);

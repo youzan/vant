@@ -1,13 +1,13 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { stopPropagation } from '../utils/dom/event';
 import { BindEventMixin } from '../mixins/bind-event';
 import Key from './Key';
 
-const [sfc, bem, t] = use('number-keyboard');
+const [createComponent, bem, t] = createNamespace('number-keyboard');
 const CLOSE_KEY_THEME = ['blue', 'big'];
 const DELETE_KEY_THEME = ['delete', 'big', 'gray'];
 
-export default sfc({
+export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
       if (this.hideOnClickOutside) {

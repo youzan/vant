@@ -1,13 +1,13 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { getScrollTop, getScrollEventTarget } from '../utils/dom/scroll';
 import Loading from '../loading';
 
-const [sfc, bem, t] = use('pull-refresh');
+const [createComponent, bem, t] = createNamespace('pull-refresh');
 const TEXT_STATUS = ['pulling', 'loosing', 'success'];
 
-export default sfc({
+export default createComponent({
   mixins: [TouchMixin],
 
   props: {

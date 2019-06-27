@@ -1,9 +1,9 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import { isSkuChoosable } from '../utils/skuHelper';
 
-const [sfc] = use('sku-row-item');
+const [createComponent] = createNamespace('sku-row-item');
 
-export default sfc({
+export default createComponent({
   props: {
     skuList: Array,
     skuValue: Object,

@@ -1,11 +1,11 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { BindEventMixin } from '../mixins/bind-event';
 
-const [sfc, bem] = use('swipe');
+const [createComponent, bem] = createNamespace('swipe');
 
-export default sfc({
+export default createComponent({
   mixins: [
     TouchMixin,
     BindEventMixin(function (bind, isBind) {

@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { PopupMixin } from '../mixins/popup';
 import Icon from '../icon';
@@ -28,7 +28,7 @@ export type ActionSheetProps = PopupMixinProps & {
   safeAreaInsetBottom?: boolean;
 };
 
-const [sfc, bem] = use('action-sheet');
+const [createComponent, bem] = createNamespace('action-sheet');
 
 function ActionSheet(
   h: CreateElement,
@@ -155,4 +155,4 @@ ActionSheet.props = {
   }
 };
 
-export default sfc<ActionSheetProps>(ActionSheet);
+export default createComponent<ActionSheetProps>(ActionSheet);

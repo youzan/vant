@@ -1,10 +1,10 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 
-const [sfc, bem] = use('tabs');
+const [createComponent, bem] = createNamespace('tabs');
 const MIN_SWIPE_DISTANCE = 50;
 
-export default sfc({
+export default createComponent({
   mixins: [TouchMixin],
 
   props: {

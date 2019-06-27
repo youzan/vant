@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Cell from '../cell';
 import CellGroup from '../cell-group';
 import { inherit } from '../utils/functional';
@@ -19,7 +19,7 @@ export type PanelSlots = DefaultSlots & {
   footer?: ScopedSlot;
 };
 
-const [sfc, bem] = use('panel');
+const [createComponent, bem] = createNamespace('panel');
 
 function Panel(
   h: CreateElement,
@@ -62,4 +62,4 @@ Panel.props = {
   status: String
 };
 
-export default sfc<PanelProps>(Panel);
+export default createComponent<PanelProps>(Panel);

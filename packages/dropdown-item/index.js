@@ -1,12 +1,12 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Cell from '../cell';
 import Icon from '../icon';
 import Popup from '../popup';
 import { ChildrenMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('dropdown-item');
+const [createComponent, bem] = createNamespace('dropdown-item');
 
-export default sfc({
+export default createComponent({
   mixins: [ChildrenMixin('vanDropdownMenu')],
 
   props: {

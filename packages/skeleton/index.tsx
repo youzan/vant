@@ -1,4 +1,4 @@
-import { use, suffixPx } from '../utils';
+import { createNamespace, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -17,7 +17,7 @@ export type SkeletonProps = {
   rowWidth: number | string | (number | string)[];
 };
 
-const [sfc, bem] = use('skeleton');
+const [createComponent, bem] = createNamespace('skeleton');
 const DEFAULT_ROW_WIDTH = '100%';
 const DEFAULT_LAST_ROW_WIDTH = '60%';
 
@@ -113,4 +113,4 @@ Skeleton.props = {
   }
 };
 
-export default sfc<SkeletonProps>(Skeleton);
+export default createComponent<SkeletonProps>(Skeleton);

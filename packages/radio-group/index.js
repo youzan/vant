@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { ParentMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('radio-group');
+const [createComponent, bem] = createNamespace('radio-group');
 
-export default sfc({
+export default createComponent({
   mixins: [ParentMixin('vanRadio')],
 
   props: {

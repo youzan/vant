@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Button, { ButtonType, ButtonEvents } from '../button';
 import { emit, inherit } from '../utils/functional';
 import { functionalRoute, routeProps, RouteProps } from '../utils/router';
@@ -15,7 +15,7 @@ export type GoodsActionButtonProps = RouteProps & {
   disabled?: boolean;
 };
 
-const [sfc, bem] = use('goods-action-button');
+const [createComponent, bem] = createNamespace('goods-action-button');
 
 function GoodsActionButton(
   h: CreateElement,
@@ -52,4 +52,4 @@ GoodsActionButton.props = {
   disabled: Boolean
 };
 
-export default sfc<GoodsActionButtonProps, ButtonEvents>(GoodsActionButton);
+export default createComponent<GoodsActionButtonProps, ButtonEvents>(GoodsActionButton);

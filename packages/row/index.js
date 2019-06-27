@@ -1,8 +1,8 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 
-const [sfc, bem] = use('row');
+const [createComponent, bem] = createNamespace('row');
 
-export default sfc({
+export default createComponent({
   props: {
     type: String,
     align: String,

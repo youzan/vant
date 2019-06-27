@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { deepClone } from '../utils/deep-clone';
 import { pickerProps } from './shared';
@@ -6,9 +6,9 @@ import { BLUE } from '../utils/color';
 import Loading from '../loading';
 import PickerColumn from './PickerColumn';
 
-const [sfc, bem, t] = use('picker');
+const [createComponent, bem, t] = createNamespace('picker');
 
-export default sfc({
+export default createComponent({
   props: {
     ...pickerProps,
     columns: Array,

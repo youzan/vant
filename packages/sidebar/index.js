@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { ParentMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('sidebar');
+const [createComponent, bem] = createNamespace('sidebar');
 
-export default sfc({
+export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
   props: {

@@ -1,18 +1,18 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Button from '../button';
 import Field from '../field';
 import Toast from '../toast';
 import Dialog from '../dialog';
 import { isMobile } from '../utils/validate/mobile';
 
-const [sfc, bem, t] = use('contact-edit');
+const [createComponent, bem, t] = createNamespace('contact-edit');
 
 const defaultContact = {
   tel: '',
   name: ''
 };
 
-export default sfc({
+export default createComponent({
   props: {
     isEdit: Boolean,
     isSaving: Boolean,

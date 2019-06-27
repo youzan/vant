@@ -1,8 +1,8 @@
-import { use, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, suffixPx } from '../utils';
 
-const [sfc, bem] = use('stepper');
+const [createComponent, bem] = createNamespace('stepper');
 
-export default sfc({
+export default createComponent({
   props: {
     value: null,
     integer: Boolean,

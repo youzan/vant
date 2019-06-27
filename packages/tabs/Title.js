@@ -1,6 +1,6 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 
-const bem = use('tab')[1];
+const bem = createNamespace('tab')[1];
 
 export default {
   props: {

@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { RED } from '../utils/color';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
@@ -23,7 +23,7 @@ export type ContactListProps = {
   addText?: string;
 };
 
-const [sfc, bem, t] = use('contact-list');
+const [createComponent, bem, t] = createNamespace('contact-list');
 
 function ContactList(
   h: CreateElement,
@@ -90,4 +90,4 @@ ContactList.props = {
   addText: String
 };
 
-export default sfc(ContactList);
+export default createComponent(ContactList);

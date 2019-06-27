@@ -1,4 +1,4 @@
-import { use, suffixPx } from '../utils';
+import { createNamespace, suffixPx } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
 import Image from '../image';
@@ -20,7 +20,7 @@ export type IconEvents = {
   onClick?(event: Event): void;
 };
 
-const [sfc, bem] = use('icon');
+const [createComponent, bem] = createNamespace('icon');
 
 function isImage(name?: string): boolean {
   return name ? name.indexOf('/') !== -1 : false;
@@ -65,4 +65,4 @@ Icon.props = {
   }
 };
 
-export default sfc<IconProps, IconEvents>(Icon);
+export default createComponent<IconProps, IconEvents>(Icon);

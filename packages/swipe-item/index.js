@@ -1,8 +1,8 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 
-const [sfc, bem] = use('swipe-item');
+const [createComponent, bem] = createNamespace('swipe-item');
 
-export default sfc({
+export default createComponent({
   data() {
     return {
       offset: 0

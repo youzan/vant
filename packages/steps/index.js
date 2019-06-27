@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { GREEN } from '../utils/color';
 
-const [sfc, bem] = use('steps');
+const [createComponent, bem] = createNamespace('steps');
 
-export default sfc({
+export default createComponent({
   props: {
     active: Number,
     inactiveIcon: String,

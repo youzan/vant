@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Icon, { IconEvents } from '../icon';
 import { emit, inherit } from '../utils/functional';
 import { functionalRoute, routeProps, RouteProps } from '../utils/router';
@@ -14,7 +14,7 @@ export type GoodsActionIconProps = RouteProps & {
   iconClass?: any;
 };
 
-const [sfc, bem] = use('goods-action-icon');
+const [createComponent, bem] = createNamespace('goods-action-icon');
 
 function GoodsActionIcon(
   h: CreateElement,
@@ -54,4 +54,4 @@ GoodsActionIcon.props = {
   iconClass: null as any
 };
 
-export default sfc<GoodsActionIconProps, IconEvents>(GoodsActionIcon);
+export default createComponent<GoodsActionIconProps, IconEvents>(GoodsActionIcon);

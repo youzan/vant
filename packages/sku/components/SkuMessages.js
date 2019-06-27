@@ -1,4 +1,4 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import Cell from '../../cell';
 import CellGroup from '../../cell-group';
 import Field from '../../field';
@@ -6,7 +6,7 @@ import { isEmail } from '../../utils/validate/email';
 import { isNumber } from '../../utils/validate/number';
 import SkuImgUploader from './SkuImgUploader';
 
-const [sfc, bem] = use('sku-messages');
+const [createComponent, bem] = createNamespace('sku-messages');
 
 const PLACEHOLDER = {
   id_no: '输入身份证号码',
@@ -19,7 +19,7 @@ const PLACEHOLDER = {
   mobile: '输入手机号码'
 };
 
-export default sfc({
+export default createComponent({
   props: {
     messages: Array,
     messageConfig: Object,

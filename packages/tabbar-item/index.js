@@ -1,12 +1,12 @@
-import { use, isObj } from '../utils';
+import { createNamespace, isObj } from '../utils';
 import Icon from '../icon';
 import Info from '../info';
 import { route, routeProps } from '../utils/router';
 import { ChildrenMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('tabbar-item');
+const [createComponent, bem] = createNamespace('tabbar-item');
 
-export default sfc({
+export default createComponent({
   mixins: [ChildrenMixin('vanTabbar')],
 
   props: {

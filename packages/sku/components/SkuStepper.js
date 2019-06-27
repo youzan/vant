@@ -1,11 +1,11 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import Stepper from '../../stepper';
 import { LIMIT_TYPE } from '../constants';
 
-const [sfc] = use('sku-stepper');
+const [createComponent] = createNamespace('sku-stepper');
 const { QUOTA_LIMIT, STOCK_LIMIT } = LIMIT_TYPE;
 
-export default sfc({
+export default createComponent({
   props: {
     quota: Number,
     quotaUsed: Number,

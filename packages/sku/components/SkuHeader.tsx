@@ -1,4 +1,4 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import Icon from '../../icon';
 
@@ -14,7 +14,7 @@ export type SkuHeaderProps = {
   selectedSku: SelectedSkuData;
 };
 
-const [sfc, bem] = use('sku-header');
+const [createComponent, bem] = createNamespace('sku-header');
 
 function getSkuImg(sku: SkuData, selectedSku: SelectedSkuData) {
   const id = selectedSku.s1;
@@ -71,4 +71,4 @@ SkuHeader.props = {
   selectedSku: Object
 };
 
-export default sfc<SkuHeaderProps>(SkuHeader);
+export default createComponent<SkuHeaderProps>(SkuHeader);

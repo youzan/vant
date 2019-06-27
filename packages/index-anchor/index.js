@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('index-anchor');
+const [createComponent, bem] = createNamespace('index-anchor');
 
-export default sfc({
+export default createComponent({
   mixins: [ChildrenMixin('vanIndexBar', { indexKey: 'childrenIndex' })],
 
   props: {

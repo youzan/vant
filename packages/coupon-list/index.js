@@ -1,14 +1,14 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Tab from '../tab';
 import Tabs from '../tabs';
 import Field from '../field';
 import Button from '../button';
 import Coupon from '../coupon';
 
-const [sfc, bem, t] = use('coupon-list');
+const [createComponent, bem, t] = createNamespace('coupon-list');
 const EMPTY_IMAGE = 'https://img.yzcdn.cn/vant/coupon-empty.png';
 
-export default sfc({
+export default createComponent({
   model: {
     prop: 'code'
   },

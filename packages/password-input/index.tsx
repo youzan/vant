@@ -1,4 +1,4 @@
-import { use, suffixPx } from '../utils';
+import { createNamespace, suffixPx } from '../utils';
 import { emit, inherit } from '../utils/functional';
 
 // Types
@@ -14,7 +14,7 @@ export type PasswordInputProps = {
   errorInfo?: string;
 };
 
-const [sfc, bem] = use('password-input');
+const [createComponent, bem] = createNamespace('password-input');
 
 function PasswordInput(
   h: CreateElement,
@@ -76,4 +76,4 @@ PasswordInput.props = {
   }
 };
 
-export default sfc<PasswordInputProps>(PasswordInput);
+export default createComponent<PasswordInputProps>(PasswordInput);

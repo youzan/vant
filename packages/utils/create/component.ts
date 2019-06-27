@@ -76,7 +76,7 @@ function transformFunctionComponent(pure: FunctionComponent): VantComponentOptio
   };
 }
 
-export function useSFC(name: string) {
+export function createComponent(name: string) {
   return function<Props = DefaultProps, Events = {}, Slots = {}> (
     sfc: VantComponentOptions | FunctionComponent
   ): TsxComponent<Props, Events, Slots> {

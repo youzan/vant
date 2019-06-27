@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Button, { ButtonType } from '../button';
 import Icon from '../icon';
@@ -27,7 +27,7 @@ export type SubmitBarSlots = DefaultSlots & {
   tip?: ScopedSlot;
 };
 
-const [sfc, bem, t] = use('submit-bar');
+const [createComponent, bem, t] = createNamespace('submit-bar');
 
 function SubmitBar(
   h: CreateElement,
@@ -119,4 +119,4 @@ SubmitBar.props = {
   }
 };
 
-export default sfc<SubmitBarProps, {}, SubmitBarSlots>(SubmitBar);
+export default createComponent<SubmitBarProps, {}, SubmitBarSlots>(SubmitBar);
