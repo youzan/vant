@@ -44,7 +44,8 @@ const registerRoute = ({ mobile, componentMap }) => {
           }
         } else {
           const module =
-            componentMap[`./${path}/${lang}.md`] ||
+            componentMap[`./${path}/README.${lang}.md`] ||
+            componentMap[`./${path}/README.md`] ||
             componentMap[`./${path}.${lang}.md`];
 
           component = module.default;

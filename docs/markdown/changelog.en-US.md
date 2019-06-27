@@ -21,7 +21,7 @@
 - fix Toast missing type definition of clear method [\#3542](https://github.com/youzan/vant/pull/3542)
 
 
-## [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
+### [v2.0.1](https://github.com/youzan/vant/tree/v2.0.1)
 `2019-06-15`
 
 **Improvements**
