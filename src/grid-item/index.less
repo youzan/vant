@@ -1,0 +1,55 @@
+@import '../style/var';
+
+.van-grid-item {
+  position: relative;
+  box-sizing: border-box;
+
+  &--square {
+    height: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15px 10px;
+    background-color: #fff;
+
+    &--square {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    &--center {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &::after {
+      z-index: 1;
+      border-width: 0 1px 1px 0;
+    }
+
+    &--surround {
+      &::after {
+        border-width: 1px;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 28px;
+  }
+
+  &__text {
+    color: @gray-darker;
+    font-size: 12px;
+  }
+
+  &__icon + &__text {
+    margin-top: 8px;
+  }
+}

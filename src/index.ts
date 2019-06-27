@@ -29,6 +29,8 @@ import Field from './field';
 import GoodsAction from './goods-action';
 import GoodsActionButton from './goods-action-button';
 import GoodsActionIcon from './goods-action-icon';
+import Grid from './grid';
+import GridItem from './grid-item';
 import Icon from './icon';
 import Image from './image';
 import ImagePreview from './image-preview';
@@ -115,6 +117,8 @@ const components = [
   GoodsAction,
   GoodsActionButton,
   GoodsActionIcon,
+  Grid,
+  GridItem,
   Icon,
   Image,
   ImagePreview,
@@ -206,6 +210,8 @@ export {
   GoodsAction,
   GoodsActionButton,
   GoodsActionIcon,
+  Grid,
+  GridItem,
   Icon,
   Image,
   ImagePreview,

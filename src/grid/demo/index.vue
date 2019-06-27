@@ -1,0 +1,87 @@
+<template>
+  <demo-section>
+    <demo-block :title="$t('basicUsage')">
+      <van-grid>
+        <van-grid-item
+          v-for="i in 4"
+          :key="i"
+          icon="photo-o"
+          :text="$t('text')"
+        />
+      </van-grid>
+    </demo-block>
+
+    <demo-block :title="$t('columnNum')">
+      <van-grid :column-num="3">
+        <van-grid-item
+          v-for="i in 6"
+          :key="i"
+          icon="photo-o"
+          :text="$t('text')"
+        />
+      </van-grid>
+    </demo-block>
+
+    <demo-block :title="$t('square')">
+      <van-grid square>
+        <van-grid-item
+          v-for="i in 8"
+          :key="i"
+          icon="photo-o"
+          :text="$t('text')"
+        />
+      </van-grid>
+    </demo-block>
+
+    <demo-block :title="$t('gutter')">
+      <van-grid :gutter="10">
+        <van-grid-item
+          v-for="i in 8"
+          :key="i"
+          icon="photo-o"
+          :text="$t('text')"
+        />
+      </van-grid>
+    </demo-block>
+
+    <demo-block :title="$t('customContent')">
+      <van-grid :column-num="3">
+        <van-grid-item>
+          <van-image src="" />
+        </van-grid-item>
+        <van-grid-item>
+          <van-image src="" />
+        </van-grid-item>
+        <van-grid-item>
+          <van-image src="" />
+        </van-grid-item>
+      </van-grid>
+    </demo-block>
+  </demo-section>
+</template>
+
+<script>
+export default {
+  i18n: {
+    'zh-CN': {
+      text: '文字',
+      gutter: '格子间距',
+      square: '正方形格子',
+      columnNum: '自定义列数',
+      customContent: '自定义内容'
+    },
+    'en-US': {
+      text: 'Text',
+      gutter: 'Gutter',
+      square: 'Square',
+      columnNum: 'Column Num',
+      customContent: 'Custom Content'
+    }
+  }
+};
+</script>
+
+<style lang="less">
+@import '../../style/var';
+
+</style>

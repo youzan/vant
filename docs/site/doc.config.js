@@ -224,6 +224,10 @@ export default {
                 title: 'Collapse 折叠面板'
               },
               {
+                path: '/grid',
+                title: 'Grid 宫格'
+              },
+              {
                 path: '/image-preview',
                 title: 'ImagePreview 图片预览'
               },
@@ -544,6 +548,10 @@ export default {
               {
                 path: '/collapse',
                 title: 'Collapse'
+              },
+              {
+                path: '/grid',
+                title: 'Grid'
               },
               {
                 path: '/image-preview',
