@@ -45,4 +45,4 @@ Locale.add(messages);
 | 英语 | en-US |
 | 土耳其语 | tr-TR |
 
-在 [这里](https://github.com/youzan/vant/tree/dev/packages/locale/lang) 查看所有的 i18n 配置文件。
+在 [这里](https://github.com/youzan/vant/tree/dev/src/locale/lang) 查看所有的 i18n 配置文件。
