@@ -54,6 +54,14 @@ export default sfc({
     }
   },
 
+  beforeCreate() {
+    const createEmitter = eventName => () => this.$emit(eventName);
+
+    this.onOpen = createEmitter('open');
+    this.onClose = createEmitter('close');
+    this.onOpened = createEmitter('opened');
+  },
+
   render(h) {
     const {
       zIndex,
@@ -87,8 +95,6 @@ export default sfc({
       );
     });
 
-    const createEmitter = eventName => () => this.$emit(eventName);
-
     const style = { zIndex };
     if (direction === 'down') {
       style.top = `${offset}px`;
@@ -100,15 +106,15 @@ export default sfc({
       <div vShow={this.showWrapper} style={style} class={bem([direction])}>
         <Popup
           vModel={this.showPopup}
+          overlay={overlay}
+          class={bem('content')}
           position={direction === 'down' ? 'top' : 'bottom'}
           duration={this.transition ? duration : 0}
-          class={bem('content')}
-          overlay={overlay}
           closeOnClickOverlay={closeOnClickOverlay}
           overlayStyle={{ position: 'absolute' }}
-          onOpen={createEmitter('open')}
-          onOpened={createEmitter('opened')}
-          onClose={createEmitter('close')}
+          onOpen={this.onOpen}
+          onClose={this.onClose}
+          onOpened={this.onOpened}
           onClosed={() => {
             this.transition = true;
             this.showWrapper = false;
