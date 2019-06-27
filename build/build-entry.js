@@ -56,7 +56,7 @@ export default {
 };
 `;
 
-  fs.writeFileSync(path.join(__dirname, '../packages/index.ts'), content);
+  fs.writeFileSync(path.join(__dirname, '../src/index.ts'), content);
 }
 
 buildEntry();

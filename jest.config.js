@@ -7,11 +7,11 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   moduleNameMapper: {
-    '^packages/(.*)$': '<rootDir>/packages/$1'
+    '^src/(.*)$': '<rootDir>/src/$1'
   },
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
   collectCoverageFrom: [
-    'packages/**/*.{js,ts,tsx,vue}',
+    'src/**/*.{js,ts,tsx,vue}',
     '!**/style/**',
     '!**/demo/**',
     '!**/locale/lang/**',

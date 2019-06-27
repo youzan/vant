@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { Locale } from '../../../packages';
+import { Locale } from '../../../src';
 
 Locale.add({
   'zh-CN': {
