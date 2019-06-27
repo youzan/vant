@@ -1,5 +1,6 @@
 import { createNamespace, suffixPx } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
+import { route, routeProps } from '../utils/router';
 import Icon from '../icon';
 
 const [createComponent, bem] = createNamespace('grid-item');
@@ -8,6 +9,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanGrid')],
 
   props: {
+    ...routeProps,
     icon: String,
     text: String
   },
@@ -51,6 +53,11 @@ export default createComponent({
   },
 
   methods: {
+    onClick() {
+      this.$emit('click', event);
+      route(this.$router, this);
+    },
+
     renderContent() {
       const slot = this.slots();
 
@@ -69,7 +76,7 @@ export default createComponent({
     const { center, border, square, gutter, clickable } = this.parent;
 
     return (
-      <div class={[bem({ square })]} style={this.style}>
+      <div class={[bem({ square })]} style={this.style} onClick={this.onClick}>
         <div
           style={this.contentStyle}
           class={[
