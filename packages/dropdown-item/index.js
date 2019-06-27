@@ -87,7 +87,7 @@ export default sfc({
       );
     });
 
-    const emit = eventName => () => this.$emit(eventName);
+    const createEmitter = eventName => () => this.$emit(eventName);
 
     const style = { zIndex };
     if (direction === 'down') {
@@ -106,9 +106,9 @@ export default sfc({
           overlay={overlay}
           closeOnClickOverlay={closeOnClickOverlay}
           overlayStyle={{ position: 'absolute' }}
-          onOpen={emit('open')}
-          onOpened={emit('opened')}
-          onClose={emit('close')}
+          onOpen={createEmitter('open')}
+          onOpened={createEmitter('opened')}
+          onClose={createEmitter('close')}
           onClosed={() => {
             this.transition = true;
             this.showWrapper = false;
