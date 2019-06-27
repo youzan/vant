@@ -224,10 +224,6 @@ export default {
                 title: 'Collapse 折叠面板'
               },
               {
-                path: '/grid',
-                title: 'Grid 宫格'
-              },
-              {
                 path: '/image-preview',
                 title: 'ImagePreview 图片预览'
               },
@@ -273,6 +269,10 @@ export default {
             groupName: '导航组件',
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
+              {
+                path: '/grid',
+                title: 'Grid 宫格'
+              },
               {
                 path: '/index-bar',
                 title: 'IndexBar 索引栏'
@@ -550,10 +550,6 @@ export default {
                 title: 'Collapse'
               },
               {
-                path: '/grid',
-                title: 'Grid'
-              },
-              {
                 path: '/image-preview',
                 title: 'ImagePreview'
               },
@@ -599,6 +595,10 @@ export default {
             groupName: 'Navigation Components',
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
+              {
+                path: '/grid',
+                title: 'Grid'
+              },
               {
                 path: '/index-bar',
                 title: 'IndexBar'

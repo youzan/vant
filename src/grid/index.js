@@ -9,6 +9,7 @@ export default createComponent({
   props: {
     gutter: Number,
     square: Boolean,
+    clickable: Boolean,
     columnNum: {
       type: Number,
       default: 4

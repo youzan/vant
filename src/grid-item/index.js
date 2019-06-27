@@ -66,7 +66,7 @@ export default createComponent({
   },
 
   render(h) {
-    const { center, border, square, gutter } = this.parent;
+    const { center, border, square, gutter, clickable } = this.parent;
 
     return (
       <div class={[bem({ square })]} style={this.style}>
@@ -76,6 +76,7 @@ export default createComponent({
             bem('content', {
               center,
               square,
+              clickable,
               surround: border && gutter
             }),
             { 'van-hairline': border }

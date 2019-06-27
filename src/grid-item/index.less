@@ -16,6 +16,11 @@
     padding: 15px 10px;
     background-color: #fff;
 
+    &::after {
+      z-index: 1;
+      border-width: 0 1px 1px 0;
+    }
+
     &--square {
       position: absolute;
       top: 0;
@@ -28,15 +33,14 @@
       justify-content: center;
     }
 
-    &::after {
-      z-index: 1;
-      border-width: 0 1px 1px 0;
-    }
-
     &--surround {
       &::after {
         border-width: 1px;
       }
+    }
+
+    &--clickable:active {
+      background-color: @active-color;
     }
   }
 
