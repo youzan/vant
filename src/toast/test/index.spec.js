@@ -105,10 +105,11 @@ test('remove toast DOM when cleared in multiple mode', async () => {
 });
 
 test('set default options', () => {
-  Toast.setDefaultOptions({ duration: 1000 });
-  expect(Toast().duration).toEqual(1000);
+  const className = 'my-toast';
+  Toast.setDefaultOptions({ className });
+  expect(Toast().className).toEqual(className);
   Toast.resetDefaultOptions();
-  expect(Toast().duration).toEqual(3000);
+  expect(Toast().className).toEqual('');
 });
 
 test('toast duration 0', () => {
