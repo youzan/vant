@@ -131,6 +131,11 @@
     "tags": "vetur/tags.json",
     "attributes": "vetur/attributes.json"
   },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
   "browserslist": [
     "Android >= 4.0",
     "iOS >= 7"
