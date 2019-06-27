@@ -1,10 +1,10 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { preventDefault } from '../utils/dom/event';
 
-const [sfc, bem] = use('slider');
+const [createComponent, bem] = createNamespace('slider');
 
-export default sfc({
+export default createComponent({
   mixins: [TouchMixin],
 
   props: {

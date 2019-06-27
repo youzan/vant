@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -9,7 +9,7 @@ export type GoodsActionProps = {
   safeAreaInsetBottom?: boolean;
 };
 
-const [sfc, bem] = use('goods-action');
+const [createComponent, bem] = createNamespace('goods-action');
 
 function GoodsAction(
   h: CreateElement,
@@ -31,4 +31,4 @@ GoodsAction.props = {
   safeAreaInsetBottom: Boolean
 };
 
-export default sfc<GoodsActionProps>(GoodsAction);
+export default createComponent<GoodsActionProps>(GoodsAction);

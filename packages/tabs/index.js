@@ -1,4 +1,4 @@
-import { use, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, suffixPx } from '../utils';
 import { scrollLeftTo } from './utils';
 import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
@@ -12,9 +12,9 @@ import {
 import Title from './Title';
 import Content from './Content';
 
-const [sfc, bem] = use('tabs');
+const [createComponent, bem] = createNamespace('tabs');
 
-export default sfc({
+export default createComponent({
   mixins: [
     ParentMixin('vanTabs'),
     BindEventMixin(function (bind, isBind) {

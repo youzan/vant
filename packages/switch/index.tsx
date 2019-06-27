@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { BLUE, GRAY_DARK } from '../utils/color';
 import { switchProps, SharedSwitchProps } from './shared';
 import { emit, inherit } from '../utils/functional';
@@ -12,7 +12,7 @@ export type SwitchEvents = {
   onChange?(checked: boolean): void;
 };
 
-const [sfc, bem] = use('switch');
+const [createComponent, bem] = createNamespace('switch');
 
 function Switch(
   h: CreateElement,
@@ -69,4 +69,4 @@ function Switch(
 
 Switch.props = switchProps;
 
-export default sfc<SharedSwitchProps, SwitchEvents>(Switch);
+export default createComponent<SharedSwitchProps, SwitchEvents>(Switch);

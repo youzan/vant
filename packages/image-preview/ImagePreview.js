@@ -1,4 +1,4 @@
-import { use, isServer } from '../utils';
+import { createNamespace, isServer } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { PopupMixin } from '../mixins/popup';
@@ -6,7 +6,7 @@ import { TouchMixin } from '../mixins/touch';
 import Swipe from '../swipe';
 import SwipeItem from '../swipe-item';
 
-const [sfc, bem] = use('image-preview');
+const [createComponent, bem] = createNamespace('image-preview');
 
 function getDistance(touches) {
   return Math.sqrt(
@@ -17,7 +17,7 @@ function getDistance(touches) {
   );
 }
 
-export default sfc({
+export default createComponent({
   mixins: [PopupMixin, TouchMixin],
 
   props: {

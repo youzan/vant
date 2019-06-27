@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export { use } from './use';
+export { createNamespace } from './create';
 export { suffixPx } from './format/unit';
 
 export const isServer: boolean = Vue.prototype.$isServer;

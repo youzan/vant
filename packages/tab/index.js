@@ -1,10 +1,10 @@
 /* eslint-disable object-shorthand */
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('tab');
+const [createComponent, bem] = createNamespace('tab');
 
-export default sfc({
+export default createComponent({
   mixins: [ChildrenMixin('vanTabs')],
 
   props: {

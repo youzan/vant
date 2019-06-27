@@ -1,5 +1,5 @@
 import { deepClone } from '../utils/deep-clone';
-import { use, isObj } from '../utils';
+import { createNamespace, isObj } from '../utils';
 import { range } from '../utils/format/number';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
@@ -13,7 +13,7 @@ const MOMENTUM_DURATION = 1000;
 const MOMENTUM_LIMIT_TIME = 300;
 const MOMENTUM_LIMIT_DISTANCE = 15;
 
-const [sfc, bem] = use('picker-column');
+const [createComponent, bem] = createNamespace('picker-column');
 
 function getElementTranslateY(element) {
   const { transform } = window.getComputedStyle(element);
@@ -26,7 +26,7 @@ function isOptionDisabled(option) {
   return isObj(option) && option.disabled;
 }
 
-export default sfc({
+export default createComponent({
   mixins: [TouchMixin],
 
   props: {

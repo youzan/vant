@@ -1,9 +1,9 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { PopupMixin } from '../mixins/popup';
 
-const [sfc, bem] = use('popup');
+const [createComponent, bem] = createNamespace('popup');
 
-export default sfc({
+export default createComponent({
   mixins: [PopupMixin],
 
   props: {

@@ -1,8 +1,8 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { raf, cancelRaf } from '../utils/dom/raf';
 import { BLUE, WHITE } from '../utils/color';
 
-const [sfc, bem] = use('circle');
+const [createComponent, bem] = createNamespace('circle');
 const PERIMETER = 3140;
 const PATH = 'M 530 530 m -500, 0 a 500, 500 0 1, 1 1000, 0 a 500, 500 0 1, 1 -1000, 0';
 
@@ -10,7 +10,7 @@ function format(rate) {
   return Math.min(Math.max(rate, 0), 100);
 }
 
-export default sfc({
+export default createComponent({
   props: {
     text: String,
     value: Number,

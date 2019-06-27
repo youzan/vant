@@ -1,11 +1,11 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import Icon from '../../icon';
 import Loading from '../../loading';
 import Uploader from '../../uploader';
 
-const [sfc, bem] = use('sku-img-uploader');
+const [createComponent, bem] = createNamespace('sku-img-uploader');
 
-export default sfc({
+export default createComponent({
   props: {
     value: String,
     uploadImg: Function,

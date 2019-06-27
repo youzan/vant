@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
 
@@ -25,7 +25,7 @@ export type TreeSelectProps = {
   mainActiveIndex: number;
 };
 
-const [sfc, bem] = use('tree-select');
+const [createComponent, bem] = createNamespace('tree-select');
 
 function TreeSelect(
   h: CreateElement,
@@ -102,4 +102,4 @@ TreeSelect.props = {
   }
 };
 
-export default sfc<TreeSelectProps>(TreeSelect);
+export default createComponent<TreeSelectProps>(TreeSelect);

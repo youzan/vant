@@ -1,4 +1,4 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 
 // Types
@@ -10,7 +10,7 @@ export type SkuRowProps = {
   skuRow: SkuTreeItemData;
 };
 
-const [sfc, bem] = use('sku-row');
+const [createComponent, bem] = createNamespace('sku-row');
 
 function SkuRow(
   h: CreateElement,
@@ -30,4 +30,4 @@ SkuRow.props = {
   skuRow: Object
 };
 
-export default sfc<SkuRowProps>(SkuRow);
+export default createComponent<SkuRowProps>(SkuRow);

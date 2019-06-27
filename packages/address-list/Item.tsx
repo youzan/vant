@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { RED } from '../utils/color';
 import { emit, inherit } from '../utils/functional';
 import Icon from '../icon';
@@ -27,7 +27,7 @@ export type AddressItemEvents = {
   onSelect(): void;
 };
 
-const [sfc, bem] = use('address-item');
+const [createComponent, bem] = createNamespace('address-item');
 
 function AddressItem(
   h: CreateElement,
@@ -91,4 +91,4 @@ AddressItem.props = {
   switchable: Boolean
 };
 
-export default sfc<AddressItemProps, AddressItemEvents>(AddressItem);
+export default createComponent<AddressItemProps, AddressItemEvents>(AddressItem);

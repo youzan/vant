@@ -1,11 +1,11 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Loading from '../loading';
 import { BindEventMixin } from '../mixins/bind-event';
 import { getScrollEventTarget } from '../utils/dom/scroll';
 
-const [sfc, bem, t] = use('list');
+const [createComponent, bem, t] = createNamespace('list');
 
-export default sfc({
+export default createComponent({
   mixins: [
     BindEventMixin(function (bind) {
       if (!this.scroller) {

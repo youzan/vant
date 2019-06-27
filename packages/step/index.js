@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Icon from '../icon';
 
-const [sfc, bem] = use('step');
+const [createComponent, bem] = createNamespace('step');
 
-export default sfc({
+export default createComponent({
   beforeCreate() {
     const { steps } = this.$parent;
     const index = this.$parent.slots().indexOf(this.$vnode);

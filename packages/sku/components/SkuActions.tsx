@@ -1,4 +1,4 @@
-import { use } from '../../utils';
+import { createNamespace } from '../../utils';
 import { inherit } from '../../utils/functional';
 import Button from '../../button';
 
@@ -12,7 +12,7 @@ export type SkuActionsProps = {
   showAddCartBtn?: boolean;
 };
 
-const [sfc, bem] = use('sku-actions');
+const [createComponent, bem] = createNamespace('sku-actions');
 
 function SkuActions(
   h: CreateElement,
@@ -52,4 +52,4 @@ SkuActions.props = {
   showAddCartBtn: Boolean
 };
 
-export default sfc<SkuActionsProps>(SkuActions);
+export default createComponent<SkuActionsProps>(SkuActions);

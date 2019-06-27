@@ -1,13 +1,13 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { TouchMixin } from '../mixins/touch';
 import { ParentMixin } from '../mixins/relation';
 import { BindEventMixin } from '../mixins/bind-event';
 import { GREEN } from '../utils/color';
 import { getScrollTop, getElementTop, getScrollEventTarget } from '../utils/dom/scroll';
 
-const [sfc, bem] = use('index-bar');
+const [createComponent, bem] = createNamespace('index-bar');
 
-export default sfc({
+export default createComponent({
   mixins: [
     TouchMixin,
     ParentMixin('vanIndexBar'),

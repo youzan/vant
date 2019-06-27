@@ -1,12 +1,12 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { isAndroid } from '../utils/validate/system';
 import Cell from '../cell';
 import Field from '../field';
 
-const [sfc, bem, t] = use('address-edit-detail');
+const [createComponent, bem, t] = createNamespace('address-edit-detail');
 const android = isAndroid();
 
-export default sfc({
+export default createComponent({
   props: {
     value: String,
     error: Boolean,

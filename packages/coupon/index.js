@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { RED } from '../utils/color';
 import { padZero } from '../utils/format/string';
 import Checkbox from '../checkbox';
 
-const [sfc, bem, t] = use('coupon');
+const [createComponent, bem, t] = createNamespace('coupon');
 
 function getDate(timeStamp) {
   const date = new Date(timeStamp * 1000);
@@ -20,7 +20,7 @@ function formatAmount(amount) {
   return (amount / 100).toFixed(amount % 100 === 0 ? 0 : amount % 10 === 0 ? 1 : 2);
 }
 
-export default sfc({
+export default createComponent({
   props: {
     coupon: Object,
     chosen: Boolean,

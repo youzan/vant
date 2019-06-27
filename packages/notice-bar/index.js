@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Icon from '../icon';
 
-const [sfc, bem] = use('notice-bar');
+const [createComponent, bem] = createNamespace('notice-bar');
 
-export default sfc({
+export default createComponent({
   props: {
     text: String,
     mode: String,

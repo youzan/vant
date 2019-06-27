@@ -1,12 +1,12 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 
-const [sfc, bem, t] = use('pagination');
+const [createComponent, bem, t] = createNamespace('pagination');
 
 function makePage(number, text, active) {
   return { number, text, active };
 }
 
-export default sfc({
+export default createComponent({
   props: {
     value: Number,
     prevText: String,

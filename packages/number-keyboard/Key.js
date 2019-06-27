@@ -1,8 +1,8 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 
-const [sfc, bem] = use('key');
+const [createComponent, bem] = createNamespace('key');
 
-export default sfc({
+export default createComponent({
   props: {
     type: String,
     theme: Array,

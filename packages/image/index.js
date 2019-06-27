@@ -1,9 +1,9 @@
-import { use, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, suffixPx } from '../utils';
 import Icon from '../icon';
 
-const [sfc, bem] = use('image');
+const [createComponent, bem] = createNamespace('image');
 
-export default sfc({
+export default createComponent({
   props: {
     src: String,
     fit: String,

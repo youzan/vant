@@ -1,4 +1,4 @@
-import { use, noop } from '../utils';
+import { createNamespace, noop } from '../utils';
 import { inherit } from '../utils/functional';
 import Icon from '../icon';
 
@@ -27,7 +27,7 @@ export type NavBarEvents = {
   'click-right'?(event: Event): void;
 };
 
-const [sfc, bem] = use('nav-bar');
+const [createComponent, bem] = createNamespace('nav-bar');
 
 function NavBar(
   h: CreateElement,
@@ -86,4 +86,4 @@ NavBar.props = {
   }
 };
 
-export default sfc<NavBarProps, NavBarEvents>(NavBar);
+export default createComponent<NavBarProps, NavBarEvents>(NavBar);

@@ -1,4 +1,4 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Tag from '../tag';
 import Image from '../image';
@@ -38,7 +38,7 @@ export type CardEvents = {
   onClick?(event: Event): void;
 };
 
-const [sfc, bem] = use('card');
+const [createComponent, bem] = createNamespace('card');
 
 function Card(
   h: CreateElement,
@@ -187,4 +187,4 @@ Card.props = {
   }
 };
 
-export default sfc<CardProps, CardEvents>(Card);
+export default createComponent<CardProps, CardEvents>(Card);

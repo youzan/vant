@@ -1,4 +1,4 @@
-import { use, suffixPx } from '../utils';
+import { createNamespace, suffixPx } from '../utils';
 import { GRAY } from '../utils/color';
 import { inherit } from '../utils/functional';
 
@@ -16,7 +16,7 @@ export type LoadingProps = {
   textSize?: string | number;
 };
 
-const [sfc, bem] = use('loading');
+const [createComponent, bem] = createNamespace('loading');
 
 function LoadingIcon(h: CreateElement, props: LoadingProps) {
   if (props.type === 'spinner') {
@@ -87,4 +87,4 @@ Loading.props = {
   }
 };
 
-export default sfc<LoadingProps>(Loading);
+export default createComponent<LoadingProps>(Loading);

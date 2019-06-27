@@ -1,9 +1,9 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { CheckboxMixin } from '../mixins/checkbox';
 
-const [sfc, bem] = use('radio');
+const [createComponent, bem] = createNamespace('radio');
 
-export default sfc({
+export default createComponent({
   mixins: [CheckboxMixin({
     bem,
     role: 'radio',

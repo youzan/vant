@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import Button from '../button';
 import RadioGroup from '../radio-group';
@@ -21,7 +21,7 @@ export type AddressListSlots = DefaultSlots & {
   top?: ScopedSlot;
 };
 
-const [sfc, bem, t] = use('address-list');
+const [createComponent, bem, t] = createNamespace('address-list');
 
 function AddressList(
   h: CreateElement,
@@ -90,4 +90,4 @@ AddressList.props = {
   }
 };
 
-export default sfc<AddressListProps>(AddressList);
+export default createComponent<AddressListProps>(AddressList);

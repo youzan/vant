@@ -3,12 +3,12 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
 import { getRootScrollTop } from '../utils/dom/scroll';
-import { use, isObj, isDef, suffixPx } from '../utils';
+import { createNamespace, isObj, isDef, suffixPx } from '../utils';
 import { isIOS } from '../utils/validate/system';
 
-const [sfc, bem] = use('field');
+const [createComponent, bem] = createNamespace('field');
 
-export default sfc({
+export default createComponent({
   inheritAttrs: false,
 
   props: {

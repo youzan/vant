@@ -1,4 +1,4 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { inherit } from '../utils/functional';
 
 // Types
@@ -9,7 +9,7 @@ export type InfoProps = {
   info?: string | number;
 };
 
-const [sfc, bem] = use('info');
+const [createComponent, bem] = createNamespace('info');
 
 function Info(
   h: CreateElement,
@@ -32,4 +32,4 @@ Info.props = {
   info: [String, Number]
 };
 
-export default sfc<InfoProps>(Info);
+export default createComponent<InfoProps>(Info);

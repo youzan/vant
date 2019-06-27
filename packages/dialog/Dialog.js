@@ -1,10 +1,10 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { PopupMixin } from '../mixins/popup';
 import Button from '../button';
 
-const [sfc, bem, t] = use('dialog');
+const [createComponent, bem, t] = createNamespace('dialog');
 
-export default sfc({
+export default createComponent({
   mixins: [PopupMixin],
 
   props: {

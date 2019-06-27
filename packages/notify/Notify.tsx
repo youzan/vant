@@ -1,4 +1,4 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { RED, WHITE } from '../utils/color';
 import { inherit } from '../utils/functional';
 import { PopupMixin } from '../mixins/popup';
@@ -17,7 +17,7 @@ export type NotifyProps = PopupMixinProps & {
   background: string;
 };
 
-const [sfc, bem] = use('notify');
+const [createComponent, bem] = createNamespace('notify');
 
 function Notify(
   h: CreateElement,
@@ -64,4 +64,4 @@ Notify.props = {
   }
 };
 
-export default sfc<NotifyProps>(Notify);
+export default createComponent<NotifyProps>(Notify);

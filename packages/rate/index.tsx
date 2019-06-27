@@ -1,5 +1,5 @@
 /* eslint-disable prefer-spread */
-import { use, suffixPx } from '../utils';
+import { createNamespace, suffixPx } from '../utils';
 import { emit, inherit } from '../utils/functional';
 import { preventDefault } from '../utils/dom/event';
 import Icon from '../icon';
@@ -8,7 +8,7 @@ import Icon from '../icon';
 import { CreateElement, RenderContext } from 'vue/types';
 import { DefaultSlots } from '../utils/types';
 
-const [sfc, bem] = use('rate');
+const [createComponent, bem] = createNamespace('rate');
 
 export type RateProps = {
   size: number;
@@ -186,4 +186,4 @@ Rate.props = {
   }
 };
 
-export default sfc<RateProps, RateEvents>(Rate);
+export default createComponent<RateProps, RateEvents>(Rate);

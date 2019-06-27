@@ -1,10 +1,10 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import Picker from '../picker';
 import { pickerProps } from '../picker/shared';
 
-const [sfc, bem] = use('area');
+const [createComponent, bem] = createNamespace('area');
 
-export default sfc({
+export default createComponent({
   props: {
     ...pickerProps,
     value: String,

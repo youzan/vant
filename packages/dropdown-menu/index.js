@@ -1,11 +1,11 @@
-import { use } from '../utils';
+import { createNamespace } from '../utils';
 import { BLUE } from '../utils/color';
 import { ParentMixin } from '../mixins/relation';
 import { ClickOutsideMixin } from '../mixins/click-outside';
 
-const [sfc, bem] = use('dropdown-menu');
+const [createComponent, bem] = createNamespace('dropdown-menu');
 
-export default sfc({
+export default createComponent({
   mixins: [
     ParentMixin('vanDropdownMenu'),
     ClickOutsideMixin({

@@ -1,13 +1,13 @@
-import { use, isDef } from '../utils';
+import { createNamespace, isDef } from '../utils';
 import { raf } from '../utils/dom/raf';
 import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { ChildrenMixin } from '../mixins/relation';
 
-const [sfc, bem] = use('collapse-item');
+const [createComponent, bem] = createNamespace('collapse-item');
 const CELL_SLOTS = ['title', 'icon', 'right-icon'];
 
-export default sfc({
+export default createComponent({
   mixins: [ChildrenMixin('vanCollapse')],
 
   props: {

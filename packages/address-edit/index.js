@@ -1,4 +1,4 @@
-import { use, isObj } from '../utils';
+import { createNamespace, isObj } from '../utils';
 import { isMobile } from '../utils/validate/mobile';
 import Area from '../area';
 import Field from '../field';
@@ -9,7 +9,7 @@ import Dialog from '../dialog';
 import Detail from './Detail';
 import SwitchCell from '../switch-cell';
 
-const [sfc, bem, t] = use('address-edit');
+const [createComponent, bem, t] = createNamespace('address-edit');
 
 const defaultData = {
   name: '',
@@ -24,7 +24,7 @@ const defaultData = {
   isDefault: false
 };
 
-export default sfc({
+export default createComponent({
   props: {
     areaList: Object,
     isSaving: Boolean,
