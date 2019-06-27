@@ -11,7 +11,7 @@
           :key="icon"
           span="6"
         >
-          <van-icon :name="icon" sr />
+          <van-icon :name="icon" />
           <span>{{ icon }}</span>
         </van-col>
       </van-tab>
