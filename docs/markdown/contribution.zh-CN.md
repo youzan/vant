@@ -61,7 +61,7 @@ npm run dev
 
 ### 目录结构
 
-- 仓库的组件代码位于 packages 下，每个组件一个文件夹
+- 仓库的组件代码位于 src 下，每个组件一个文件夹
 - docs 目录下是文档网站的代码，本地开发时可以在目录下运行 npm run dev 开启文档网站
 
 项目目录大致如下：
@@ -70,7 +70,7 @@ npm run dev
 vant
 ├─ build            # 构建脚本
 ├─ docs             # 文档网站
-├─ packages         # 组件文件
+├─ src              # 组件文件
 ├─ test             # 单元测试
 └─ types            # 类型定义
 ```
@@ -80,7 +80,7 @@ vant
 添加新组件时，请按照下面的目录结构组织文件，并在 `docs/src/doc.config.js` 中配置组件名称
 
 ```
-packages
+src
 |- button
 |  ├─ demo        # 示例代码
 |  ├─ test        # 单元测试
