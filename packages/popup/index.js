@@ -26,13 +26,20 @@ export default sfc({
     }
   },
 
+  beforeCreate() {
+    const createEmitter = eventName => event => this.$emit(eventName, event);
+
+    this.onClick = createEmitter('click');
+    this.onOpened = createEmitter('opened');
+    this.onClosed = createEmitter('closed');
+  },
+
   render(h) {
     if (!this.shouldRender) {
       return;
     }
 
     const { position, duration } = this;
-    const emit = eventName => event => this.$emit(eventName, event);
 
     const transitionName =
       this.transition ||
@@ -46,14 +53,14 @@ export default sfc({
     return (
       <transition
         name={transitionName}
-        onAfterEnter={emit('opened')}
-        onAfterLeave={emit('closed')}
+        onAfterEnter={this.onOpened}
+        onAfterLeave={this.onClosed}
       >
         <div
           vShow={this.value}
           style={style}
           class={bem({ [position]: position })}
-          onClick={emit('click')}
+          onClick={this.onClick}
         >
           {this.slots()}
         </div>

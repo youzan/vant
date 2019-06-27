@@ -20,7 +20,7 @@ function SkuActions(
   slots: DefaultSlots,
   ctx: RenderContext<SkuActionsProps>
 ) {
-  const emit = (name: string) => () => {
+  const createEmitter = (name: string) => () => {
     props.skuEventBus.$emit(name);
   };
 
@@ -32,7 +32,7 @@ function SkuActions(
           size="large"
           type="warning"
           text="加入购物车"
-          onClick={emit('sku:addCart')}
+          onClick={createEmitter('sku:addCart')}
         />
       )}
       <Button
@@ -40,7 +40,7 @@ function SkuActions(
         size="large"
         type="danger"
         text={props.buyText || '立即购买'}
-        onClick={emit('sku:buy')}
+        onClick={createEmitter('sku:buy')}
       />
     </div>
   );
