@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import '../docs/src/demo-common';
-import Locale from '../packages/locale';
+import Locale from '../src/locale';
 import { mount, later } from './utils';
 
 const empty = {

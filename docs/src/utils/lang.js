@@ -1,6 +1,6 @@
-import Locale from '../../../packages/locale';
-import zhCN from '../../../packages/locale/lang/zh-CN';
-import enUS from '../../../packages/locale/lang/en-US';
+import Locale from '../../../src/locale';
+import zhCN from '../../../src/locale/lang/zh-CN';
+import enUS from '../../../src/locale/lang/en-US';
 
 const langMap = {
   'en-US': {

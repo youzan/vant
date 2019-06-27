@@ -8,7 +8,7 @@ const markdownVetur = require('@vant/markdown-vetur');
 
 const esDir = path.join(__dirname, '../es');
 const libDir = path.join(__dirname, '../lib');
-const srcDir = path.join(__dirname, '../packages');
+const srcDir = path.join(__dirname, '../src');
 const veturDir = path.join(__dirname, '../vetur');
 const babelConfig = {
   configFile: path.join(__dirname, '../babel.config.js')

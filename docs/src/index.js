@@ -13,7 +13,7 @@ Vue.use(VueRouter).use(VantDoc);
 
 const docs = {};
 const docsFromMarkdown = require.context('../markdown', false, /(en-US|zh-CN)\.md$/);
-const docsFromPackages = require.context('../../packages', true, /(en-US|zh-CN)\.md$/);
+const docsFromPackages = require.context('../../src', true, /(en-US|zh-CN)\.md$/);
 
 importAll(docs, docsFromMarkdown);
 importAll(docs, docsFromPackages);

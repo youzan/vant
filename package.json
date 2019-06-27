@@ -15,7 +15,7 @@
   "scripts": {
     "bootstrap": "yarn || npm i",
     "dev": "npm run build:entry && webpack-dev-server --config build/webpack.dev.js",
-    "lint": "eslint ./packages --ext .js,.vue,.ts,.tsx && stylelint \"packages/**/*.less\" --fix",
+    "lint": "eslint ./src --ext .js,.vue,.ts,.tsx && stylelint \"src/**/*.less\" --fix",
     "build:entry": "node build/build-entry.js",
     "build:changelog": "vant-doc changelog ./docs/markdown/changelog.generated.md --tag 2.0.0",
     "build:lib": "node build/build-lib.js",
