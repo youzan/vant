@@ -117,7 +117,7 @@ Vue.use(Cell).use(CellGroup);
 | label | 标题下方的描述信息 | `String` | - | - |
 | size | 单元格大小，可选值为 `large` | `String` | - | 1.4.4 |
 | url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
 | border | 是否显示内边框 | `Boolean` | `true` | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 | clickable | 是否开启点击反馈 | `Boolean` | `false` | - |
@@ -134,7 +134,7 @@ Vue.use(Cell).use(CellGroup);
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击单元格时触发 | - |
+| click | 点击单元格时触发 | event: Event |
 
 ### Cell Slots
 

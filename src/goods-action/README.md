@@ -104,7 +104,7 @@ Use `info` prop to show messages in upper right corner of icon
 | icon-class | Icon class name | `any` | `''` |
 | info | Info message | `String | Number` | - |
 | url | Link | `String` | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| to | Target route of the link, same as to of vue-router | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 ### GoodsActionButton Props
@@ -117,5 +117,5 @@ Use `info` prop to show messages in upper right corner of icon
 | disabled | Whether to disable button | `Boolean` | `false` |
 | loading | Whether show loading status | `Boolean` | `false` |
 | url | Link | `String` | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| to | Target route of the link, same as to of vue-router | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |

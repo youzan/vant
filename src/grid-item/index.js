@@ -53,7 +53,7 @@ export default createComponent({
   },
 
   methods: {
-    onClick() {
+    onClick(event) {
       this.$emit('click', event);
       route(this.$router, this);
     },
