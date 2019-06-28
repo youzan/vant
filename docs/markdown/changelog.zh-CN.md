@@ -1,5 +1,28 @@
 # 更新日志
 
+### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
+`2019-06-27`
+
+**Improvements**
+
+- ActionSheet: 新增 duration 属性 [\#3608](https://github.com/youzan/vant/pull/3608)
+- ActionSheet: 新增 open、opened 事件 [\#3639](https://github.com/youzan/vant/pull/3639)
+- ActionSheet: 新增 close、closed 事件 [\#3639](https://github.com/youzan/vant/pull/3639)
+- ImagePreview: 新增 onChange 选项 [\#3630](https://github.com/youzan/vant/pull/3630)
+- Popup: 优化蒙层动画时长 [\#3610](https://github.com/youzan/vant/pull/3610)
+- Uploader: 支持点击查看大图 [\#3603](https://github.com/youzan/vant/pull/3603)
+- Uploader: 支持预览非图片文件 [\#3604](https://github.com/youzan/vant/pull/3604)
+- Stepper: 新增多个 Less 变量 [\#3599](https://github.com/youzan/vant/pull/3599)
+- Icon: 更新 checked、comment、comment-o 图标 [\#3615](https://github.com/youzan/vant/pull/3615)
+
+**Bug Fixes**
+
+- 修复 Icon 传入图片时被拉伸的问题 [\#3667](https://github.com/youzan/vant/pull/3667)
+- 修复 ImagePreview 滚动穿透问题 [\#3645](https://github.com/youzan/vant/pull/3645)
+- 修复 Tab 使用 title slot 时可能报错的问题 [\#3631](https://github.com/youzan/vant/pull/3631)
+- 修复 vetur 插件自动补全组件属性不生效的问题 [\#3617](https://github.com/youzan/vant/pull/3617)
+
+
 ### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
 `2019-06-21`
 

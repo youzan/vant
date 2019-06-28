@@ -1,5 +1,28 @@
 # 更新日志
 
+### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
+`2019-06-27`
+
+**Improvements**
+
+- ActionSheet: add duration prop [\#3608](https://github.com/youzan/vant/pull/3608)
+- ActionSheet: add open、opened events [\#3639](https://github.com/youzan/vant/pull/3639)
+- ActionSheet: add close、closed events [\#3639](https://github.com/youzan/vant/pull/3639)
+- Icon: add fit mode for image content [\#3667](https://github.com/youzan/vant/pull/3667)
+- Icon: update checked、comment、comment-o icon [\#3615](https://github.com/youzan/vant/pull/3615)
+- ImagePreview: add onChange option [\#3630](https://github.com/youzan/vant/pull/3630)
+- Popup: optimize overlay animation duration [\#3610](https://github.com/youzan/vant/pull/3610)
+- Uploader: support preview non-image file [\#3604](https://github.com/youzan/vant/pull/3604)
+- Uploader: support click to preview image [\#3603](https://github.com/youzan/vant/pull/3603)
+- Stepper: add less vars [\#3599](https://github.com/youzan/vant/pull/3599)
+
+**Bug Fixes**
+
+- fix ImagePreview should lock scroll [\#3645](https://github.com/youzan/vant/pull/3645)
+- fix Tab may cause error when render title slot [\#3631](https://github.com/youzan/vant/pull/3631)
+- fix vetur auto-complete [\#3617](https://github.com/youzan/vant/pull/3617)
+
+
 ### [v2.0.2](https://github.com/youzan/vant/tree/v2.0.2)
 `2019-06-21`
 
