@@ -20,7 +20,11 @@ export default createComponent({
     onClose: Function,
     disabled: Boolean,
     leftWidth: Number,
-    rightWidth: Number
+    rightWidth: Number,
+    name: {
+      type: [String, Number],
+      default: ''
+    }
   },
 
   data() {
@@ -141,7 +145,7 @@ export default createComponent({
       }
 
       if (this.onClose) {
-        this.onClose(position, this);
+        this.onClose(position, this, { name: this.name });
       } else {
         this.swipeMove(0);
       }

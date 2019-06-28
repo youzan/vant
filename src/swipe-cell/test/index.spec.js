@@ -36,7 +36,7 @@ it('drag and show right part', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('on close prop', () => {
+it('on-close prop', () => {
   let position;
   let instance;
 
@@ -70,6 +70,23 @@ it('on close prop', () => {
   wrapper.setData({ offset: 100, onClose: null });
   wrapper.trigger('click');
   expect(wrapper.vm.offset).toEqual(0);
+});
+
+it('name prop', done => {
+  const wrapper = mount(SwipeCell, {
+    ...defaultProps,
+    propsData: {
+      ...defaultProps.propsData,
+      name: 'test',
+      onClose(position, instance, detail) {
+        expect(detail.name).toEqual('test');
+        done();
+      }
+    }
+  });
+
+  wrapper.vm.open('left');
+  wrapper.trigger('click');
 });
 
 it('should reset after drag', () => {

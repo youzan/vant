@@ -12,8 +12,10 @@ Vue.use(SwipeCell);
 
 ### 基础用法
 
+`SwipeCell`组件提供了`left`和`right`两个插槽，用于定义两侧滑动区域的内容
+
 ```html
-<van-swipe-cell :right-width="60" :left-width="60">
+<van-swipe-cell>
   <van-button
     square
     slot="left"
@@ -37,7 +39,7 @@ Vue.use(SwipeCell);
 ### 异步关闭
 
 ```html
-<van-swipe-cell :right-width="60" :left-width="60" :on-close="onClose">
+<van-swipe-cell :on-close="onClose">
   <van-button
     square
     slot="left"
@@ -87,6 +89,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| name | 标识符，可以在 onClose 的参数中获取到 | `String | Number` | - | 2.0.4 |
 | on-close | 关闭时的回调函数 | `Function` | - | - |
 | disabled | 是否禁用滑动 | `Boolean` | `false` | 1.3.4 |
 | left-width | 指定左侧滑动区域宽度 | `Number` | `auto` | - |
@@ -108,10 +111,11 @@ export default {
 
 ### onClose 参数
 
-| 参数 | 类型 | 说明 |
+| 参数名 | 说明 | 类型 |
 |------|------|------|
-| clickPosition | `String` | 关闭时的点击位置 (`left` `right` `cell` `outside`) |
-| instance | `Object` | SwipeCell 实例 |
+| clickPosition | 关闭时的点击位置 (`left` `right` `cell` `outside`) | `String` |
+| instance | SwipeCell 实例 | `Object` |
+| detail | 额外信息，包含 name 字段 | `Object` |
 
 ### 方法
 
