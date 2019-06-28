@@ -127,8 +127,6 @@ test('lazy render collapse content', async () => {
   const titles = wrapper.findAll('.van-collapse-item__title');
 
   titles.at(1).trigger('click');
-  await later(50);
-
   wrapper.vm.content = 'content';
   expect(wrapper).toMatchSnapshot();
 });
