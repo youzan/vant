@@ -3,55 +3,151 @@
 exports[`renders demo correctly 1`] = `
 <div>
   <div>
-    <div class="van-row">
-      <div class="van-col van-col--8">span: 8</div>
-      <div class="van-col van-col--8">span: 8</div>
-      <div class="van-col van-col--8">span: 8</div>
-    </div>
-    <div class="van-row">
-      <div class="van-col van-col--4">span: 4</div>
-      <div class="van-col van-col--10 van-col--offset-4">
-        offset: 4, span: 10
+    <div class="van-grid van-hairline--top">
+      <div class="van-grid-item" style="flex-basis: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
       </div>
-    </div>
-    <div class="van-row">
-      <div class="van-col van-col--12 van-col--offset-12">
-        offset: 12, span: 12
+      <div class="van-grid-item" style="flex-basis: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
       </div>
     </div>
   </div>
   <div>
-    <div class="van-row" style="margin-left: -10px; margin-right: -10px;">
-      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">span: 8</div>
-      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">span: 8</div>
-      <div class="van-col van-col--8" style="padding-left: 10px; padding-right: 10px;">span: 8</div>
+    <div class="van-grid van-hairline--top">
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
     </div>
   </div>
   <div>
-    <div class="van-row van-row--flex">
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
+    <div class="van-grid van-hairline--top">
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline">
+          <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-1.jpg" class="van-image__img" style="object-fit: contain;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+                <!----></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline">
+          <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-2.jpg" class="van-image__img" style="object-fit: contain;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+                <!----></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 33.333333333333336%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-hairline">
+          <div class="van-image"><img src="https://img.yzcdn.cn/vant/apple-3.jpg" class="van-image__img" style="object-fit: contain;">
+            <div class="van-image__loading"><i class="van-icon van-icon-photo-o" style="font-size: 22px;">
+                <!----></i></div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="van-row van-row--flex van-row--justify-center">
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
+  </div>
+  <div>
+    <div class="van-grid van-hairline--top">
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item van-grid-item--square" style="flex-basis: 25%; padding-top: 25%;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
     </div>
-    <div class="van-row van-row--flex van-row--justify-end">
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-    </div>
-    <div class="van-row van-row--flex van-row--justify-space-between">
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-    </div>
-    <div class="van-row van-row--flex van-row--justify-space-around">
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
-      <div class="van-col van-col--6">span: 6</div>
+  </div>
+  <div>
+    <div class="van-grid" style="padding-left: 10px;">
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
+      <div class="van-grid-item" style="flex-basis: 25%; padding-right: 10px; margin-top: 10px;">
+        <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--surround van-hairline"><i class="van-icon van-icon-photo-o van-grid-item__icon">
+            <!----></i><span class="van-grid-item__text">文字</span></div>
+      </div>
     </div>
   </div>
 </div>

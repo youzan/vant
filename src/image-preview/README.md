@@ -14,8 +14,8 @@ Vue.use(ImagePreview);
 
 ```javascript
 ImagePreview([
-  'https://img.yzcdn.cn/1.jpg',
-  'https://img.yzcdn.cn/2.jpg'
+  'https://img.yzcdn.cn/vant/apple-1.jpg',
+  'https://img.yzcdn.cn/vant/apple-2.jpg'
 ]);
 ```
 
@@ -24,8 +24,8 @@ ImagePreview([
 ```javascript
 ImagePreview({
   images: [
-    'https://img.yzcdn.cn/1.jpg',
-    'https://img.yzcdn.cn/2.jpg'
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg'
   ],
   startPosition: 1,
   onClose() {
@@ -39,8 +39,8 @@ ImagePreview({
 ```javascript
 const instance = ImagePreview({
   images: [
-    'https://img.yzcdn.cn/1.jpg',
-    'https://img.yzcdn.cn/2.jpg'
+    'https://img.yzcdn.cn/vant/apple-1.jpg',
+    'https://img.yzcdn.cn/vant/apple-2.jpg'
   ],
   asyncClose: true
 });

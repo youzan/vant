@@ -79,7 +79,7 @@ export default {
     return {
       show: false,
       currentRate: 0,
-      image: 'https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg'
+      image: 'https://img.yzcdn.cn/vant/apple-3.jpg'
     };
   },
 
