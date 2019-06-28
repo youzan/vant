@@ -134,6 +134,7 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 | clearable | Whether to be clearable | `Boolean` | `false` |
 | clickable | Whether to show click feedback when clicked | `Boolean` | `false` |
 | is-link | Whether to show link icon | `Boolean` | `false` |
+| arrow-direction | Can be set to `left` `up` `down` | `String` | - |
 | error | Whether to show error info | `Boolean` | `false` |
 | error-message | Error message | `String` | `''` |
 | label-class | Label className | `any` | - |

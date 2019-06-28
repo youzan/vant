@@ -13,6 +13,7 @@ export type SharedCellProps = {
   title?: string | number;
   value?: string | number;
   label?: string | number;
+  arrowDirection?: 'up' | 'down' | 'left' | 'right';
 }
 
 export const cellProps = {
@@ -29,6 +30,7 @@ export const cellProps = {
   title: [String, Number],
   value: [String, Number],
   label: [String, Number],
+  arrowDirection: String,
   border: {
     type: Boolean,
     default: true

@@ -235,3 +235,13 @@ test('label-class prop', () => {
   });
   expect(wrapper).toMatchSnapshot();
 });
+
+test('arrow-direction prop', () => {
+  const wrapper = mount(Field, {
+    propsData: {
+      isLink: true,
+      arrowDirection: 'up'
+    }
+  });
+  expect(wrapper).toMatchSnapshot();
+});

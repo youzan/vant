@@ -292,6 +292,7 @@ export default createComponent({
         clickable={this.clickable}
         titleStyle={this.labelStyle}
         titleClass={[bem('label', labelAlign), this.labelClass]}
+        arrowDirection={this.arrowDirection}
         class={bem({
           error: this.error,
           disabled: this.$attrs.disabled,

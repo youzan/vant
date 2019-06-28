@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`arrow-direction prop 1`] = `
+<div class="van-cell van-cell--clickable van-field">
+  <div class="van-cell__value van-cell__value--alone">
+    <div class="van-field__body"><input type="text" class="van-field__control"></div>
+  </div><i class="van-icon van-icon-arrow-up van-cell__right-icon">
+    <!----></i>
+</div>
+`;
+
 exports[`clearable 1`] = `
 <div class="van-cell van-field">
   <div class="van-cell__value van-cell__value--alone">
