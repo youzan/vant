@@ -13,8 +13,8 @@
     flex-direction: column;
     box-sizing: border-box;
     height: 100%;
-    padding: 15px 10px;
-    background-color: #fff;
+    padding: @grid-item-content-padding;
+    background-color: @grid-item-content-background-color;
 
     &::after {
       z-index: 1;
@@ -40,17 +40,17 @@
     }
 
     &--clickable:active {
-      background-color: @active-color;
+      background-color: @grid-item-content-active-color;
     }
   }
 
   &__icon {
-    font-size: 28px;
+    font-size: @grid-item-icon-size;
   }
 
   &__text {
-    color: @gray-darker;
-    font-size: 12px;
+    color: @grid-item-text-color;
+    font-size: @grid-item-text-font-size;
   }
 
   &__icon + &__text {
