@@ -13,7 +13,7 @@ Vue.use(SwipeCell);
 ### Basic Usage
 
 ```html
-<van-swipe-cell :right-width="65" :left-width="65">
+<van-swipe-cell>
   <van-button
     square
     slot="left"
@@ -37,7 +37,7 @@ Vue.use(SwipeCell);
 ### Async close
 
 ```html
-<van-swipe-cell :right-width="65" :left-width="65" :on-close="onClose">
+<van-swipe-cell :on-close="onClose">
   <van-button
     square
     slot="left"
@@ -87,6 +87,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
+| name | Identifier of SwipeCell | `String | Number` | - |
 | on-close | Callback function before close | `Function` | - |
 | disabled | Whether to disabled swipe | `Boolean` | `false` |
 | left-width | Width of the left swipe area | `Number` | `auto` |
@@ -108,10 +109,11 @@ export default {
 
 ### onClose Params
 
-| Argument | Type | Description |
+| Attribute | Description | Type |
 |------|------|------|
-| clickPosition | `String` | Click positon (`left` `right` `cell` `outside`) |
-| instance | `Object` | SwipeCell instance |
+| clickPosition | Click positon (`left` `right` `cell` `outside`) | `String` |
+| instance | SwipeCell instance | `Object` |
+| detail | Detail info | `Object` |
 
 ### Methods
 
@@ -119,5 +121,5 @@ Use ref to get SwipeCell instance and call instance methods
 
 | Name | Attribute | Return value | Description |
 |------|------|------|------|
-| open | position: 'left' \| 'right' | - | open SwipeCell |
+| open | position: `left | right` | - | open SwipeCell |
 | close | - | - | close SwipeCell |

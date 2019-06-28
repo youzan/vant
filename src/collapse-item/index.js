@@ -60,15 +60,19 @@ export default createComponent({
         this.inited = true;
       }
 
-      raf(() => {
+      // Use raf: flick when opened in safari
+      // Use nextTick: closing animation failed when set `user-select: none`
+      const nextTick = expanded ? this.$nextTick : raf;
+
+      nextTick(() => {
         const { content, wrapper } = this.$refs;
         if (!content || !wrapper) {
           return;
         }
 
-        const { clientHeight } = content;
-        if (clientHeight) {
-          const contentHeight = `${clientHeight}px`;
+        const { offsetHeight } = content;
+        if (offsetHeight) {
+          const contentHeight = `${offsetHeight}px`;
           wrapper.style.height = expanded ? 0 : contentHeight;
           raf(() => {
             wrapper.style.height = expanded ? contentHeight : 0;
@@ -96,7 +100,7 @@ export default createComponent({
       if (!this.expanded) {
         this.show = false;
       } else {
-        this.$refs.wrapper.style.height = null;
+        this.$refs.wrapper.style.height = '';
       }
     }
   },

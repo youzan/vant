@@ -24,6 +24,10 @@ export default createComponent({
     afterRead: Function,
     beforeRead: Function,
     previewSize: [Number, String],
+    name: {
+      type: [String, Number],
+      default: ''
+    },
     previewImage: {
       type: Boolean,
       default: true
@@ -49,7 +53,7 @@ export default createComponent({
   computed: {
     detail() {
       return {
-        name: this.$attrs.name || ''
+        name: this.name
       };
     }
   },

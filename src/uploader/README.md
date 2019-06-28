@@ -108,7 +108,7 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| name | Input name | `String` | - |
+| name | Input name | `String | Number` | - |
 | accept | Accepted file type | `String` | `image/*` |
 | preview-image | Whether to show image preview | `Boolean` | `true` |
 | preview-size | Size of preview image | `String | Number` | `80px` |

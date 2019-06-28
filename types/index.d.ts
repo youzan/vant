@@ -33,6 +33,8 @@ export class DatetimePicker extends VanComponent {}
 export class DropdownItem extends VanComponent {}
 export class DropdownMenu extends VanComponent {}
 export class Field extends VanComponent {}
+export class Grid extends VanComponent {}
+export class GridItem extends VanComponent {}
 export class GoodsAction extends VanComponent {}
 export class GoodsActionButton extends VanComponent {}
 export class GoodsActionIcon extends VanComponent {}
