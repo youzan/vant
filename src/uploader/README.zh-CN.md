@@ -121,7 +121,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| name | 标识符，可以在回调函数的第二项参数中获取 | `String` | - | 1.6.13 |
+| name | 标识符，可以在回调函数的第二项参数中获取 | `String | Number` | - | 2.0.3 |
 | accept | 接受的文件类型 | `String` | `image/*` | - |
 | preview-image | 是否在上传完成后展示预览图 | `Boolean` | `true` | 2.0.0 |
 | preview-size | 预览图和上传区域的尺寸，默认单位为`px` | `String | Number` | `80px` | 2.0.0 |
