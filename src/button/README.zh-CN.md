@@ -102,9 +102,9 @@ Vue.use(Button);
 | tag | HTML 标签 | `String` | `button` | - |
 | native-type | 原生 button 标签 type 属性 | `String` | - | - |
 | block | 是否为块级元素 | `Boolean` | `false` | - |
-| plain | 是否为朴素按钮 | `Boolean` | `false` | 1.1.13 |
-| square | 是否为方形按钮 | `Boolean` | `false` | 1.2.0 |
-| round | 是否为圆形按钮 | `Boolean` | `false` | 1.3.4 |
+| plain | 是否为朴素按钮 | `Boolean` | `false` | - |
+| square | 是否为方形按钮 | `Boolean` | `false` | - |
+| round | 是否为圆形按钮 | `Boolean` | `false` | - |
 | disabled | 是否禁用按钮 | `Boolean` | `false` | - |
 | hairline | 是否使用 0.5px 边框 | `Boolean` | `false` | 1.6.11 |
 | loading | 是否显示为加载状态 | `Boolean` | `false` | - |
