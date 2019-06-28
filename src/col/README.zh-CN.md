@@ -4,7 +4,6 @@
 
 Layout 提供了`van-row`和`van-col`两个组件来进行行列布局
 
-
 ### 引入
 
 ``` javascript

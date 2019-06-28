@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sqaure and set gutter 1`] = `
+<div class="van-grid" style="padding-left: 10rem;">
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+  <div class="van-grid-item van-grid-item--square" style="flex-basis: 50%; padding-top: 50%;">
+    <div class="van-grid-item__content van-grid-item__content--center van-grid-item__content--square van-grid-item__content--surround van-hairline" style="right: 10rem; bottom: 10rem; height: auto;"></div>
+  </div>
+</div>
+`;

@@ -270,6 +270,10 @@ export default {
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
               {
+                path: '/grid',
+                title: 'Grid 宫格'
+              },
+              {
                 path: '/index-bar',
                 title: 'IndexBar 索引栏'
               },
@@ -591,6 +595,10 @@ export default {
             groupName: 'Navigation Components',
             icon: 'https://img.yzcdn.cn/vant/nav-0401.svg',
             list: [
+              {
+                path: '/grid',
+                title: 'Grid'
+              },
               {
                 path: '/index-bar',
                 title: 'IndexBar'

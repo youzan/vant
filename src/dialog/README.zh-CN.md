@@ -112,7 +112,7 @@ export default {
   title="标题"
   show-cancel-button
 >
-  <img src="https://img.yzcdn.cn/1.jpg">
+  <img src="https://img.yzcdn.cn/vant/apple-3.jpg">
 </van-dialog>
 ```
 

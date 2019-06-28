@@ -170,7 +170,7 @@ export default {
 | dot | 是否显示小红点 | `Boolean` | - | - |
 | info | 图标右上角提示信息 | `String | Number` | - | - |
 | url | 跳转链接 | `String` | - | - |
-| to | 路由跳转对象，同 `vue-router` 的 to | `String | Object` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
 
 ### TabbarItem Slots

@@ -164,7 +164,7 @@ export default {
 | dot | Whether to show red dot | `Boolean` | - |
 | info | Info message | `String | Number` | - |
 | url | Link | `String` | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| to | Target route of the link, same as to of vue-router | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 ### TabbarItem Slots

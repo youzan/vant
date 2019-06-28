@@ -40,8 +40,8 @@ export default {
   data() {
     return {
       images: [
-        'https://img.yzcdn.cn/1.jpg',
-        'https://img.yzcdn.cn/2.jpg'
+        'https://img.yzcdn.cn/vant/apple-1.jpg',
+        'https://img.yzcdn.cn/vant/apple-2.jpg'
       ]
     }
   }

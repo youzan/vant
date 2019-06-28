@@ -95,7 +95,7 @@ Vue.use(Button);
 | loading-type | Loading type, can be set to `spinner` | `String` | `circular` |
 | loading-size | Loading icon size | `String` | `20px` |
 | url | Link URL | `String` | - |
-| to | Target route of the link, same as to of `vue-router` | `String | Object` | - |
+| to | Target route of the link, same as to of vue-router | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
 
 ### Events
