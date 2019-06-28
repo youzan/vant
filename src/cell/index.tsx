@@ -9,10 +9,7 @@ import { CreateElement, RenderContext } from 'vue/types';
 import { ScopedSlot, DefaultSlots } from '../utils/types';
 import { Mods } from '../utils/create/bem';
 
-export type CellProps = RouteProps &
-  SharedCellProps & {
-    arrowDirection?: string;
-  };
+export type CellProps = RouteProps & SharedCellProps;
 
 export type CellSlots = DefaultSlots & {
   icon?: ScopedSlot;
@@ -102,8 +99,7 @@ function Cell(
 
 Cell.props = {
   ...cellProps,
-  ...routeProps,
-  arrowDirection: String
+  ...routeProps
 };
 
 export default createComponent<CellProps, CellEvents, CellSlots>(Cell);

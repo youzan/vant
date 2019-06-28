@@ -115,7 +115,7 @@ Vue.use(Cell).use(CellGroup);
 | title | 左侧标题 | `String | Number` | - | - |
 | value | 右侧内容 | `String | Number` | - | - |
 | label | 标题下方的描述信息 | `String` | - | - |
-| size | 单元格大小，可选值为 `large` | `String` | - | 1.4.4 |
+| size | 单元格大小，可选值为 `large` | `String` | - | - |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
 | border | 是否显示内边框 | `Boolean` | `true` | - |
@@ -124,7 +124,7 @@ Vue.use(Cell).use(CellGroup);
 | is-link | 是否展示右侧箭头并开启点击反馈 | `Boolean` | `false` | - |
 | required | 是否显示表单必填星号 | `Boolean` | `false` | - |
 | center | 是否使内容垂直居中 | `Boolean` | `false` | 1.0.3 |
-| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - | 1.1.10 |
+| arrow-direction | 箭头方向，可选值为 `left` `up` `down` | `String` | - | -|
 | title-style | 左侧标题额外样式 | `any` | - | 1.6.17 |
 | title-class | 左侧标题额外类名 | `any` | - | 1.4.8 |
 | value-class | 右侧内容额外类名 | `any` | - | 1.4.8 |
