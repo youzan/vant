@@ -10,3 +10,5 @@ export function createI18N(name: string) {
     return typeof message === 'function' ? message(...args) : message;
   };
 }
+
+export type Translate = ReturnType<typeof createI18N>;
