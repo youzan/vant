@@ -79,10 +79,10 @@ Vue.use(Tag);
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | type | 类型，可选值为`primary` `success` `danger` | `String` | - | - |
-| size | 大小, 可选值为`large` `medium` | `String` | - | 1.3.8 |
-| color | 标签颜色 | `String` | - | 1.3.8 |
+| size | 大小, 可选值为`large` `medium` | `String` | - | - |
+| color | 标签颜色 | `String` | - | - |
 | plain | 是否为空心样式 | `Boolean` | `false` | - |
-| round | 是否为圆角样式 | `Boolean` | `false` | 1.3.8 |
+| round | 是否为圆角样式 | `Boolean` | `false` | - |
 | mark | 是否为标记样式 | `Boolean` | `false` | - |
 | text-color | 文本颜色，优先级高于`color`属性 | `String` | `white` | 1.5.0 |
 

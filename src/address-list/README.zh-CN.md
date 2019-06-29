@@ -73,19 +73,19 @@ export default {
 | v-model | 当前选中地址的 id | `String` | - | - |
 | list | 地址列表 | `Array` | `[]` | - |
 | add-button-text | 底部按钮文字 | `String` | `新增地址` | - |
-| disabled-list | 不可配送地址列表 | `Array` | `[]` | 1.3.0 |
-| disabled-text | 不可配送提示文案 | `String` | - | 1.3.0 |
-| switchable | 是否允许切换地址 | `Boolean` | `true` | 1.3.8 |
+| disabled-list | 不可配送地址列表 | `Array` | `[]` | - |
+| disabled-text | 不可配送提示文案 | `String` | - | - |
+| switchable | 是否允许切换地址 | `Boolean` | `true` | - |
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 | 版本 |
+| 事件名 | 说明 | 回调参数 |
 |------|------|------|------|
-| add | 点击新增按钮时触发 | - | - |
-| edit | 点击编辑按钮时触发 | item: 地址对象，index: 索引 | - |
-| select | 切换选中的地址时触发 | item: 地址对象，index: 索引 | - |
-| edit-disabled | 编辑不可配送的地址时触发 | item: 地址对象，index: 索引 | 1.3.0 |
-| select-disabled | 选中不可配送的地址时触发 | item: 地址对象，index: 索引 | 1.3.0 |
+| add | 点击新增按钮时触发 | - |
+| edit | 点击编辑按钮时触发 | item: 地址对象，index: 索引 |
+| select | 切换选中的地址时触发 | item: 地址对象，index: 索引 |
+| edit-disabled | 编辑不可配送的地址时触发 | item: 地址对象，index: 索引 |
+| select-disabled | 选中不可配送的地址时触发 | item: 地址对象，index: 索引 |
 
 ### 地址列表字段说明
 

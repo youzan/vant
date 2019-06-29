@@ -157,22 +157,22 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前标签的索引 | `String` `Number` | `0` | 1.0.6 |
+| v-model | 当前标签的索引 | `String` `Number` | `0` | - |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
 | duration | 动画时间，单位秒 | `Number` | `0.3` | - |
 | background | 标签栏背景色 | `String` | `white` | 1.6.5 |
-| line-width | 底部条宽度，默认单位 px | `Number | String` | `auto` | 1.1.1 |
+| line-width | 底部条宽度，默认单位 px | `Number | String` | `auto` | - |
 | line-height | 底部条高度，默认单位 px | `Number | String` | `3px` | 1.5.0 |
-| color | 标签主题色 | `String` | `#f44` | 1.2.0 |
+| color | 标签主题色 | `String` | `#f44` | - |
 | title-active-color | 标题选中态颜色 | `String` | - | 1.6.5 |
 | title-inactive-color | 标题默认态颜色 | `String` | - | 1.6.5 |
 | swipe-threshold | 滚动阈值，标签数量超过多少个可滚动 | `Number` | `4` | - |
-| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | 1.1.15 |
-| animated | 是否开启切换标签内容时的转场动画 | `Boolean` | `false` | 1.4.5 |
+| offset-top | 粘性定位布局下与顶部的最小距离，单位 px | `Number` | `0` | - |
+| animated | 是否开启切换标签内容时的转场动画 | `Boolean` | `false` | - |
 | border | 是否显示标签栏外边框，仅在`type="line"`时有效 | `Boolean` | `true` | 2.0.0 |
 | ellipsis | 是否省略过长的标题文字 | `Boolean` | `true` | 1.5.0 |
 | sticky | 是否使用粘性定位布局 | `Boolean` | `false` | - |
-| swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | 1.0.0 |
+| swipeable | 是否开启手势滑动切换 | `Boolean` | `false` | - |
 | lazy-render | 是否开启标签页内容延迟渲染 | `Boolean` | `true` | 1.6.6 |
 
 ### Tab Props

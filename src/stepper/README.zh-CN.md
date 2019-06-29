@@ -93,7 +93,7 @@ export default {
 | min | 最小值 | `String | Number` | `1` | - |
 | max | 最大值 | `String | Number` | - | - |
 | step | 步数 | `String | Number` | `1` | - |
-| integer | 是否只允许输入整数 | `Boolean` | `false` | 1.1.1 |
+| integer | 是否只允许输入整数 | `Boolean` | `false` | - |
 | disabled | 是否禁用步进器 | `Boolean` | `false` | - |
 | disable-input | 是否禁用输入框 | `Boolean` | `false` | - |
 | async-change | 是否开启异步变更，开启后需要手动控制输入值 | `Boolean` | `false` | - |

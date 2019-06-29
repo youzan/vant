@@ -65,7 +65,7 @@ export default {
 | address-info | 收货人信息初始值 | `Object` | `{}` | - |
 | search-result | 详细地址搜索结果 | `Array` | `[]` | - |
 | show-postal | 是否显示邮政编码 | `Boolean` | `false` | - |
-| show-delete | 是否显示删除按钮 | `Boolean` | `false` | 1.0.0 |
+| show-delete | 是否显示删除按钮 | `Boolean` | `false` | - |
 | show-set-default | 是否显示默认地址栏 | `Boolean` | `false` | - |
 | show-search-result | 是否显示搜索结果 | `Boolean` | `false` | - |
 | save-button-text | 保存按钮文字 | `String` | `保存` | - |
@@ -73,7 +73,7 @@ export default {
 | is-saving | 是否显示保存按钮加载动画 | `Boolean` | `false` | - |
 | is-deleting | 是否显示删除按钮加载动画 | `Boolean` | `false` | - |
 | tel-validator | 手机号格式校验函数 | `string => boolean` | - | - |
-| validator | 自定义校验函数 | `(key, value) => string` | - | 1.3.9 |
+| validator | 自定义校验函数 | `(key, value) => string` | - | - |
 
 ### Events
 

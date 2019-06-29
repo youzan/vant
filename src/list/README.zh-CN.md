@@ -137,8 +137,8 @@ List 初始化后会触发一次 load 事件，用于加载第一屏的数据，
 | finished | 是否已加载完成，加载完成后不再触发`load`事件 | `Boolean` | `false` | - |
 | error | 是否加载失败，加载失败后点击错误提示可以重新<br>触发`load`事件，必须使用`sync`修饰符 | `Boolean` | `false` | - |
 | offset | 滚动条与底部距离小于 offset 时触发`load`事件 | `Number` | `300` | - |
-| loading-text | 加载过程中的提示文案 | `String` | `加载中...` | 1.1.1 |
-| finished-text | 加载完成后的提示文案 | `String` | - | 1.4.7 |
+| loading-text | 加载过程中的提示文案 | `String` | `加载中...` | - |
+| finished-text | 加载完成后的提示文案 | `String` | - | - |
 | error-text | 加载失败后的提示文案 | `String` | - | 1.5.3 |
 | immediate-check | 是否在初始化时立即执行滚动位置检查 | `Boolean` | `true` | - |
 | direction | 滚动触发加载的方向，可选值为`up` | `String` | `down` | 1.6.16 |

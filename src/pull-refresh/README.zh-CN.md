@@ -55,7 +55,7 @@ export default {
 | success-duration | 加载成功提示时长(ms) | `Number` | `500` | 1.6.2 |
 | animation-duration | 动画时长 | `Number` | `300` | - |
 | head-height | 顶部内容高度 | `Number` | `50` | - |
-| disabled | 是否禁用 | `Boolean` | `false` | 1.1.10 |
+| disabled | 是否禁用下拉刷新 | `Boolean` | `false` | - |
 
 ### Events
 

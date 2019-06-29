@@ -152,22 +152,22 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 类型，可选值为 `date` <br> `time` `year-month` | `String` | `datetime` | 1.0.2 |
+| type | 类型，可选值为 `date` <br> `time` `year-month` | `String` | `datetime` | - |
 | min-date | 可选的最小时间，精确到分钟 | `Date` | 十年前 | - |
 | max-date | 可选的最大时间，精确到分钟 | `Date` | 十年后 | - |
 | min-hour | 可选的最小小时，针对 time 类型 | `Number` | `0` | - |
 | max-hour | 可选的最大小时，针对 time 类型 | `Number` | `23` | - |
-| min-minute | 可选的最小分钟，针对 time 类型 | `Number` | `0` | 1.1.15 |
-| max-minute | 可选的最大分钟，针对 time 类型 | `Number` | `59` | 1.1.15 |
+| min-minute | 可选的最小分钟，针对 time 类型 | `Number` | `0` | - |
+| max-minute | 可选的最大分钟，针对 time 类型 | `Number` | `59` | - |
 | filter | 选项过滤函数 | `(type, values) => values` | - | 2.0.0 |
-| formatter | 选项格式化函数 | `(type, value) => value` | - | 1.1.14 |
-| title | 顶部栏标题 | `String` | `''` | 1.0.4 |
-| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | 1.0.2 |
-| loading | 是否显示加载状态 | `Boolean` | `false` | 1.0.4 |
-| item-height | 选项高度 | `Number` | `44` | 1.0.4 |
-| confirm-button-text | 确认按钮文字 | `String` | `确认` | 1.0.4 |
-| cancel-button-text | 取消按钮文字 | `String` | `取消` | 1.0.4 |
-| visible-item-count | 可见的选项个数 | `Number` | `5` | 1.0.4 |
+| formatter | 选项格式化函数 | `(type, value) => value` | - | - |
+| title | 顶部栏标题 | `String` | `''` | - |
+| show-toolbar | 是否显示顶部栏 | `Boolean` | `false` | - |
+| loading | 是否显示加载状态 | `Boolean` | `false` | - |
+| item-height | 选项高度 | `Number` | `44` | - |
+| confirm-button-text | 确认按钮文字 | `String` | `确认` | - |
+| cancel-button-text | 取消按钮文字 | `String` | `取消` | - |
+| visible-item-count | 可见的选项个数 | `Number` | `5` | - |
 
 ### Events
 

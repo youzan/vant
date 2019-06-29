@@ -112,9 +112,9 @@ export default {
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
 | text | 按钮文字 | `String` | - | - |
-| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` |
-| disabled | 是否禁用按钮 | `Boolean` | `false` | - | 1.3.10 |
-| loading | 是否显示为加载状态 | `Boolean` | `false` | - | 1.3.10 |
+| type | 按钮类型，可选值为 `primary` `info` `warning` `danger` | `String` | `default` | 2.0.0 |
+| disabled | 是否禁用按钮 | `Boolean` | `false` | - | - |
+| loading | 是否显示为加载状态 | `Boolean` | `false` | - | - |
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |

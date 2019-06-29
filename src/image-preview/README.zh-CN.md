@@ -101,14 +101,14 @@ export default {
 
 | 参数名 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| images | 需要预览的图片 URL 数组 | `Array` | `[]` | 1.1.16 |
-| startPosition | 图片预览起始位置索引 | `Number` | `0` | 1.1.16 |
-| showIndex | 是否显示页码 | `Boolean` | `true` | 1.3.4 |
-| showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | 1.3.10 |
-| loop | 是否开启循环播放 | `Boolean` | `true` | 1.4.4 |
-| onClose | 关闭时的回调函数 | `Function` | - | 1.1.16 |
+| images | 需要预览的图片 URL 数组 | `Array` | `[]` | - |
+| startPosition | 图片预览起始位置索引 | `Number` | `0` | - |
+| showIndex | 是否显示页码 | `Boolean` | `true` | - |
+| showIndicators | 是否显示轮播指示器 | `Boolean` | `false` | - |
+| loop | 是否开启循环播放 | `Boolean` | `true` | - |
+| onClose | 关闭时的回调函数 | `Function` | - | - |
 | onChange | 切换图片时的回调函数，回调参数为当前索引 | `Function` | - | 2.0.3 |
-| asyncClose | 是否开启异步关闭 | `Boolean` | `false` | 1.4.8 |
+| asyncClose | 是否开启异步关闭 | `Boolean` | `false` | - |
 | closeOnPopstate | 是否在页面回退时自动关闭 | `Boolean` | `false` | 2.0.0 |
 | className | 自定义类名 | `String | Array | Object` | - | 1.5.2 |
 | lazyLoad | 是否开启图片懒加载，须配合 [Lazyload](#/zh-CN/lazyload) 组件使用 | `Boolean` | `false` | 1.5.3 |

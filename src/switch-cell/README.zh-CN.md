@@ -64,7 +64,7 @@ export default {
 | cell-size | 单元格大小，可选值为 `large` | `String` | 2.0.0 |
 | loading | 是否为加载状态 |  `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 |  `Boolean` | `false` | - |
-| size | 开关尺寸 | `String` | `24px` | 1.1.11 |
+| size | 开关尺寸 | `String` | `24px` | - |
 | active-color | 开关时的背景色 | `String` | `#1989fa` | 1.5.0 |
 | inactive-color | 开关时的背景色 | `String` | `#fff` | 1.5.0 |
 | active-value | 打开时的值 | `any` | `true` | 1.5.6 |
