@@ -2,10 +2,20 @@
   <demo-section>
     <demo-block :title="$t('basicUsage')">
       <van-sidebar
-        :active-key="activeKey"
-        @change="onChange"
+        :active-key="activeKey1"
+        @change="onChange('activeKey1', $event)"
       >
         <van-sidebar-item :title="$t('title')" />
+        <van-sidebar-item :title="$t('title')" />
+        <van-sidebar-item :title="$t('title')" />
+      </van-sidebar>
+    </demo-block>
+
+    <demo-block :title="$t('showBadge')">
+      <van-sidebar
+        :active-key="activeKey2"
+        @change="onChange('activeKey2', $event)"
+      >
         <van-sidebar-item
           :title="$t('title')"
           info="8"
@@ -27,19 +37,24 @@
 export default {
   i18n: {
     'zh-CN': {
-      title: '标签名称'
+      title: '标签名称',
+      showBadge: '显示徽标'
+    },
+    'en-US': {
+      showBadge: 'Show Badge'
     }
   },
 
   data() {
     return {
-      activeKey: 0
+      activeKey1: 0,
+      activeKey2: 0
     };
   },
 
   methods: {
-    onChange(key) {
-      this.activeKey = key;
+    onChange(name, key) {
+      this[name] = key;
     }
   }
 };

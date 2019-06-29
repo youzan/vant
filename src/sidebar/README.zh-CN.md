@@ -18,9 +18,8 @@ Vue.use(SidebarItem);
 ```html
 <van-sidebar :active-key="activeKey" @change="onChange">
   <van-sidebar-item title="标签名称" />
-  <van-sidebar-item title="标签名称" info="8" />
-  <van-sidebar-item title="标签名称" info="99" />
-  <van-sidebar-item title="标签名称" info="99+" />
+  <van-sidebar-item title="标签名称" />
+  <van-sidebar-item title="标签名称" />
 </van-sidebar>
 ```
 
@@ -38,6 +37,18 @@ export default {
     }
   }
 };
+```
+
+### 显示徽标
+
+通过`info`属性设置徽标内容
+
+```html
+<van-sidebar :active-key="activeKey" @change="onChange">
+  <van-sidebar-item title="标签名称" info="8" />
+  <van-sidebar-item title="标签名称" info="99" />
+  <van-sidebar-item title="标签名称" info="99+" />
+</van-sidebar>
 ```
 
 ## API
