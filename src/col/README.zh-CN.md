@@ -95,11 +95,11 @@ Layout 组件提供了`24列栅格`，通过在`Col`上添加`span`属性设置�
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| type | 布局方式，可选值为`flex` | `String` | - | 1.1.9 |
+| type | 布局方式，可选值为`flex` | `String` | - | - |
 | gutter | 列元素之间的间距（单位为px） | `String | Number` | - | - |
 | tag | 自定义元素标签 | `String` | `div` | - |
-| justify | Flex 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | `String` | `start` | 1.1.9  |
-| align | Flex 交叉轴对齐方式，可选值为 `center` `bottom` | `String` | `top` | 1.1.9 |
+| justify | Flex 主轴对齐方式，可选值为 `end` `center` <br> `space-around` `space-between` | `String` | `start` | - |
+| align | Flex 交叉轴对齐方式，可选值为 `center` `bottom` | `String` | `top` | - |
 
 ### Col Props
 

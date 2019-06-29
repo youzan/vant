@@ -91,7 +91,7 @@ export default {
 |------|------|------|------|------|
 | name | 标识符，可以在 onClose 的参数中获取到 | `String | Number` | - | 2.0.4 |
 | on-close | 关闭时的回调函数 | `Function` | - | - |
-| disabled | 是否禁用滑动 | `Boolean` | `false` | 1.3.4 |
+| disabled | 是否禁用滑动 | `Boolean` | `false` | - |
 | left-width | 指定左侧滑动区域宽度 | `Number` | `auto` | - |
 | right-width | 指定右侧滑动区域宽度 | `Number` | `auto` | - |
 

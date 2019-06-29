@@ -76,7 +76,7 @@ export default {
 | chosen-coupon | 当前选中优惠券的索引 | `Number` | `-1` | - |
 | coupons | 可用优惠券列表 | `Array` | `[]` | - |
 | editable | 能否切换优惠券 | `Boolean` | `true` | - |
-| border | 是否显示内边框 | `Boolean` | `true` | 1.3.10 |
+| border | 是否显示内边框 | `Boolean` | `true` | - |
 | currency | 货币符号 |  `String` | `¥` | - | 1.5.0 |
 
 ### CouponList Props

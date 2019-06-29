@@ -102,9 +102,9 @@ export default {
 | v-model | 开关选中状态 | `any` | `false` | - |
 | loading | 是否为加载状态 | `Boolean` | `false` | - |
 | disabled | 是否为禁用状态 | `Boolean` | `false` | - |
-| size | 开关尺寸 | `String` | `30px` | 1.0.0 |
-| active-color | 打开时的背景色 | `String` | `#1989fa` | 1.4.2 |
-| inactive-color | 关闭时的背景色 | `String` | `#fff` | 1.4.2 |
+| size | 开关尺寸 | `String` | `30px` | - |
+| active-color | 打开时的背景色 | `String` | `#1989fa` | - |
+| inactive-color | 关闭时的背景色 | `String` | `#fff` | - |
 | active-value | 打开时的值 | `any` | `true` | 1.5.6 |
 | inactive-value | 关闭时的值 | `any` | `false` | 1.5.6 |
 

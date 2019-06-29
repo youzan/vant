@@ -132,11 +132,11 @@ export default {
 | initial-swipe | 初始位置索引值 | `Number` | `0` | - |
 | loop | 是否开启循环播放 | `Boolean` | `true` | - |
 | show-indicators | 是否显示指示器 | `Boolean` | `true` | - |
-| indicator-color | 指示器颜色 | `String` | `#1989fa` | 1.4.5 |
-| vertical | 是否为纵向滚动 | `Boolean` | `false` | 1.1.1 |
-| touchable | 是否可以通过手势滑动 | `Boolean` | `true` | 1.1.1 |
-| width | 滑块宽度 | `Number` | `0` | 1.2.1 |
-| height | 滑块高度 | `Number` | `0` | 1.2.1 |
+| indicator-color | 指示器颜色 | `String` | `#1989fa` | - |
+| vertical | 是否为纵向滚动 | `Boolean` | `false` | - |
+| touchable | 是否可以通过手势滑动 | `Boolean` | `true` | - |
+| width | 滑块宽度 | `Number` | `0` | - |
+| height | 滑块高度 | `Number` | `0` | - |
 
 ### Swipe Events
 

@@ -104,8 +104,8 @@ export default {
 | duration | 动画时长，单位秒 | `Number` | `0.3` | 2.0.0 |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
 | close-on-click-overlay | 是否在点击遮罩层后关闭 | `Boolean` | `true` | - |
-| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | 1.0.0 |
-| lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | 1.1.5 |
+| lock-scroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
+| lazy-render | 是否在显示弹层时才渲染节点 | `Boolean` | `true` | - |
 
 ### Events
 
