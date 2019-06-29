@@ -54,8 +54,8 @@ export default {
   data() {
     return {
       rate: 30,
-      currentRate1: 0,
-      currentRate2: 0
+      currentRate1: 30,
+      currentRate2: 30
     };
   },
 
