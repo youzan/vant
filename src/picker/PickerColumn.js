@@ -16,7 +16,8 @@ const MOMENTUM_LIMIT_DISTANCE = 15;
 const [createComponent, bem] = createNamespace('picker-column');
 
 function getElementTranslateY(element) {
-  const { transform } = window.getComputedStyle(element);
+  const style = window.getComputedStyle(element);
+  const transform = style.transform || style.webkitTransform;
   const translateY = transform.slice(7, transform.length - 1).split(', ')[5];
 
   return Number(translateY);
@@ -228,7 +229,7 @@ export default createComponent({
     const wrapperStyle = {
       transform: `translate3d(0, ${this.offset + baseOffset}px, 0)`,
       transitionDuration: `${this.duration}ms`,
-      transitionProperty: this.duration ? 'transform' : 'none',
+      transitionProperty: this.duration ? 'all' : 'none',
       lineHeight: `${itemHeight}px`
     };
 
