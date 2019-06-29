@@ -152,6 +152,20 @@ export default createComponent({
   },
 
   render(h) {
+    const Indexes = this.indexList.map(index => {
+      const active = index === this.activeAnchorIndex;
+
+      return (
+        <span
+          class={bem('index', { active })}
+          style={active ? this.highlightStyle : null}
+          data-index={index}
+        >
+          {index}
+        </span>
+      );
+    });
+
     return (
       <div class={bem()}>
         <div
@@ -163,15 +177,7 @@ export default createComponent({
           onTouchend={this.onTouchEnd}
           onTouchcancel={this.onTouchEnd}
         >
-          {this.indexList.map(index => (
-            <span
-              class={bem('index')}
-              style={index === this.activeAnchorIndex ? this.highlightStyle : null}
-              data-index={index}
-            >
-              {index}
-            </span>
-          ))}
+          {Indexes}
         </div>
         {this.slots('default')}
       </div>
