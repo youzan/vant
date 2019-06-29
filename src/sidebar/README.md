@@ -13,14 +13,11 @@ Vue.use(SidebarItem);
 
 ### Basic Usage
 
-Use `active-key` prop to set index of chosen item
-
 ```html
-<van-sidebar :active-key="activeKey" @change="onChange">
+<van-sidebar v-model="activeKey">
   <van-sidebar-item title="Title" />
-  <van-sidebar-item title="Title" info="8" />
-  <van-sidebar-item title="Title" info="99" />
-  <van-sidebar-item title="Title" info="99+" />
+  <van-sidebar-item title="Title" />
+  <van-sidebar-item title="Title" />
 </van-sidebar>
 ```
 
@@ -30,14 +27,18 @@ export default {
     return {
       activeKey: 0
     };
-  },
-
-  methods: {
-    onChange(key) {
-      this.activeKey = key;
-    }
   }
 };
+```
+
+### Show Badge
+
+```html
+<van-sidebar v-model="activeKey">
+  <van-sidebar-item title="Title" info="8" />
+  <van-sidebar-item title="Title" info="99" />
+  <van-sidebar-item title="Title" info="99+" />
+</van-sidebar>
 ```
 
 ## API
@@ -46,13 +47,13 @@ export default {
 
 | Attribute | Description | Type | Default |
 |------|------|------|------|
-| active-key | Index of chosen item | `String | Number` | `0` |
+| v-model | Index of chosen item | `String | Number` | `0` |
 
 ### Sidebar Events
 
 | Event | Description | Arguments |
 |------|------|------|
-| change | Triggered when item changed | key: index of current item |
+| change | Triggered when item changed | index: index of current item |
 
 ### SidebarItem Props
 
@@ -66,4 +67,4 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click item | key: index of current item |
+| click | Triggered when click item | index: index of current item |

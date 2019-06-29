@@ -13,10 +13,10 @@ Vue.use(SidebarItem);
 
 ### 基础用法
 
-通过在`van-sidebar`上设置`active-key`属性来控制选中项
+通过`v-model`绑定当前选中项的索引
 
 ```html
-<van-sidebar :active-key="activeKey" @change="onChange">
+<van-sidebar v-model="activeKey">
   <van-sidebar-item title="标签名称" />
   <van-sidebar-item title="标签名称" />
   <van-sidebar-item title="标签名称" />
@@ -29,12 +29,6 @@ export default {
     return {
       activeKey: 0
     };
-  },
-
-  methods: {
-    onChange(key) {
-      this.activeKey = key;
-    }
   }
 };
 ```
@@ -44,7 +38,7 @@ export default {
 通过`info`属性设置徽标内容
 
 ```html
-<van-sidebar :active-key="activeKey" @change="onChange">
+<van-sidebar v-model="activeKey">
   <van-sidebar-item title="标签名称" info="8" />
   <van-sidebar-item title="标签名称" info="99" />
   <van-sidebar-item title="标签名称" info="99+" />
@@ -57,13 +51,13 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| active-key | 当前导航项的索引 | `String | Number` | `0` | - |
+| v-model | 当前导航项的索引 | `String | Number` | `0` | 2.0.4 |
 
 ### Sidebar Events
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| change | 切换当前导航项时触发 | key: 当前导航项的索引 |
+| change | 切换导航项时触发 | index: 当前导航项的索引 |
 
 ### SidebarItem Props
 
@@ -79,4 +73,4 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | key: 当前导航项的索引 |
+| click | 点击时触发 | index: 当前导航项的索引 |

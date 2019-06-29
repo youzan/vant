@@ -6,6 +6,10 @@ const [createComponent, bem] = createNamespace('sidebar');
 export default createComponent({
   mixins: [ParentMixin('vanSidebar')],
 
+  model: {
+    prop: 'activeKey'
+  },
+
   props: {
     activeKey: {
       type: [Number, String],
