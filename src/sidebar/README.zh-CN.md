@@ -72,6 +72,8 @@ export default {
 | title | 内容 | `String` | `''` | - |
 | info | 提示消息 | `String | Number` | `''` | - |
 | url | 跳转链接 | `String` | - | - |
+| to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | 2.0.4 |
+| replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | 2.0.4 |
 
 ### SidebarItem Events
 

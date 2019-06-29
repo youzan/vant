@@ -1,6 +1,7 @@
 import { createNamespace } from '../utils';
 import Info from '../info';
 import { ChildrenMixin } from '../mixins/relation';
+import { route, routeProps } from '../utils/router';
 
 const [createComponent, bem] = createNamespace('sidebar-item');
 
@@ -8,7 +9,7 @@ export default createComponent({
   mixins: [ChildrenMixin('vanSidebar')],
 
   props: {
-    url: String,
+    ...routeProps,
     info: [String, Number],
     title: String
   },
@@ -23,13 +24,13 @@ export default createComponent({
     onClick() {
       this.$emit('click', this.index);
       this.parent.$emit('change', this.index);
+      route(this.$router, this);
     }
   },
 
   render(h) {
     return (
       <a
-        href={this.url}
         class={[bem({ select: this.select }), 'van-hairline']}
         onClick={this.onClick}
       >
