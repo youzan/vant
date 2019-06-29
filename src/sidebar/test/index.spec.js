@@ -2,7 +2,7 @@ import { mount } from '../../../test/utils';
 import Sidebar from '..';
 import SidebarItem from '../../sidebar-item';
 
-test('event', () => {
+test('click event & change event', () => {
   const onClick = jest.fn();
   const onChange = jest.fn();
   const wrapper = mount({
