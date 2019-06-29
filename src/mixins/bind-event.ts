@@ -3,15 +3,19 @@
  */
 import { on, off } from '../utils/dom/event';
 
-export function BindEventMixin(handler) {
-  function bind() {
+type BindEventMixinThis = {
+  binded: boolean;
+};
+
+export function BindEventMixin(handler: Function) {
+  function bind(this: BindEventMixinThis) {
     if (!this.binded) {
       handler.call(this, on, true);
       this.binded = true;
     }
   }
 
-  function unbind() {
+  function unbind(this: BindEventMixinThis) {
     if (this.binded) {
       handler.call(this, off, false);
       this.binded = false;

@@ -47,3 +47,5 @@ export function createBEM(name: string) {
     return mods ? [el, prefix(el, mods)] : el;
   };
 }
+
+export type BEM = ReturnType<typeof createBEM>;
