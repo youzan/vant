@@ -23,6 +23,7 @@ export default createComponent({
   methods: {
     onClick() {
       this.$emit('click', this.index);
+      this.parent.$emit('input', this.index);
       this.parent.$emit('change', this.index);
       route(this.$router, this);
     }
