@@ -128,6 +128,7 @@ export default {
 | confirmButtonText | Confirm button text | `String` | `Confirm` |
 | confirmButtonColor | Confirm button color | `String` | `#1989fa` |
 | overlay | Whether to show overlay | `Boolean` | `true` |
+| closeOnPopstate | Whether to close when popstate | `Boolean` | `false` |
 | closeOnClickOverlay | Whether to close when click overlay | `Boolean` | `false` |
 | lockScroll | Whether to lock body scroll | `Boolean` | `true` |
 | beforeClose | Callback before close,<br>call done() to close dialog,<br>call done(false) to cancel loading | (action: string, done: function) => void | - |
