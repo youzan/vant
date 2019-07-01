@@ -157,6 +157,7 @@ export default {
 | confirmButtonText | 确认按钮文案 | `String` | `确认` | - |
 | confirmButtonColor | 确认按钮颜色 | `String` | `#1989fa` | 1.6.14 |
 | overlay | 是否展示遮罩层 | `Boolean` | `true` | - |
+| closeOnPopstate | 是否在页面回退时自动关闭 | `Boolean` | `false` | 2.0.5 |
 | closeOnClickOverlay | 点击遮罩层时是否关闭弹窗 | `Boolean` | `false` | - |
 | lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 | beforeClose | 关闭前的回调函数，<br>调用 done() 后关闭弹窗，<br>调用 done(false) 阻止弹窗关闭 | `(action, done) => void` | - | - |
