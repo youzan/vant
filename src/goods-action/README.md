@@ -119,3 +119,16 @@ Use `info` prop to show messages in upper right corner of icon
 | url | Link | `String` | - |
 | to | Target route of the link, same as to of vue-router | `String | Object` | - |
 | replace | If true, the navigation will not leave a history record | `Boolean` | `false` |
+
+### GoodsActionIcon Slots
+
+| Name | Description |
+|------|------|
+| default | Text |
+| icon | Custom icon |
+
+### GoodsActionButton Slots
+
+| Name | Description |
+|------|------|
+| default | Button content |

@@ -49,3 +49,18 @@ test('Icon render default slot', () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('Icon render icon slot', () => {
+  const wrapper = mount({
+    render(h) {
+      return h(Icon, {
+        scopedSlots: {
+          default: () => 'Text',
+          icon: () => 'Custom Icon'
+        }
+      });
+    }
+  });
+
+  expect(wrapper).toMatchSnapshot();
+});
