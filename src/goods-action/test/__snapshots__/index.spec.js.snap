@@ -9,3 +9,9 @@ exports[`Icon render default slot 1`] = `
   </div>Default Content
 </div>
 `;
+
+exports[`Icon render icon slot 1`] = `
+<div role="button" tabindex="0" class="van-goods-action-icon van-hairline">
+  <div class="van-goods-action-icon__icon">Custom Icon</div>Text
+</div>
+`;

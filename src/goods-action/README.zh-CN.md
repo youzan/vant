@@ -118,3 +118,16 @@ export default {
 | url | 跳转链接 | `String` | - | - |
 | to | 路由跳转对象，同 vue-router 的 to 属性 | `String | Object` | - | - |
 | replace | 跳转时是否替换当前页面历史 | `Boolean` | `false` | - |
+
+### GoodsActionIcon Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 文本内容 |
+| icon | 自定义图标 |
+
+### GoodsActionButton Slots
+
+| 名称 | 说明 |
+|------|------|
+| default | 按钮显示内容 |
