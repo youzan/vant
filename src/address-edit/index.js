@@ -49,6 +49,10 @@ export default createComponent({
       type: Number,
       default: 1
     },
+    detailMaxlength: {
+      type: Number,
+      default: 200
+    },
     addressInfo: {
       type: Object,
       default: () => ({ ...defaultData })
@@ -263,6 +267,7 @@ export default createComponent({
           value={data.addressDetail}
           error={errorInfo.addressDetail}
           detailRows={this.detailRows}
+          detailMaxlength={this.detailMaxlength}
           searchResult={this.searchResult}
           showSearchResult={this.showSearchResult}
           onFocus={onFocus('addressDetail')}
