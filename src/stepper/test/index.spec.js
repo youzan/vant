@@ -1,5 +1,5 @@
 import Stepper from '..';
-import { mount } from '../../../test/utils';
+import { mount, later } from '../../../test/utils';
 
 test('disabled stepper', () => {
   const wrapper = mount(Stepper, {
@@ -37,6 +37,27 @@ test('click button', () => {
 
   expect(wrapper.emitted('input')).toEqual([[2], [1]]);
   expect(wrapper.emitted('overlimit')).toEqual([['plus'], ['minus']]);
+});
+
+test('long press', async () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1
+    }
+  });
+
+  const plus = wrapper.find('.van-stepper__plus');
+
+  plus.trigger('touchstart');
+  plus.trigger('touchend');
+  plus.trigger('click');
+
+  expect(wrapper.emitted('input')[0][0]).toEqual(2);
+
+  plus.trigger('touchstart');
+  await later(1000);
+  plus.trigger('touchend');
+  expect(wrapper.emitted('input')).toEqual([[2], [3], [4]]);
 });
 
 test('correct value when value is not correct', () => {
@@ -116,4 +137,42 @@ test('input width', () => {
     }
   });
   expect(wrapper).toMatchSnapshot();
+});
+
+test('async change', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1,
+      asyncChange: true
+    }
+  });
+
+  const plus = wrapper.find('.van-stepper__plus');
+  plus.trigger('click');
+
+  expect(wrapper.emitted('input')[0][0]).toEqual(2);
+  expect(wrapper.emitted('change')[0][0]).toEqual(2);
+
+  const input = wrapper.find('input');
+  input.element.value = '3';
+  input.trigger('input');
+
+  expect(wrapper.emitted('input')[1][0]).toEqual(3);
+  expect(wrapper.emitted('change')[1][0]).toEqual(3);
+});
+
+test('min value is 0', () => {
+  const wrapper = mount(Stepper, {
+    propsData: {
+      value: 1,
+      min: 0
+    }
+  });
+
+  const input = wrapper.find('input');
+  input.element.value = '';
+  input.trigger('input');
+  input.trigger('blur');
+
+  expect(wrapper.emitted('input')[0][0]).toEqual(0);
 });
