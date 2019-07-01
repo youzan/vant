@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4) 🇨🇳
+`2019-07-01`
+
+**Improvements**
+
+- 新增 Grid、GridItem 组件 [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
+- Field: 新增 arrow-direction 属性 [\#3679](https://github.com/youzan/vant/pull/3679)
+- Sidebar: 新增 to、replace 属性 [\#3696](https://github.com/youzan/vant/pull/3696)
+- Sidebar: 支持通过 v-model 绑定当前项索引 [\#3698](https://github.com/youzan/vant/pull/3698)
+- IndexBar: 新增选中状态的类名，用于定制样式 [\#3692](https://github.com/youzan/vant/pull/3692)
+- Uploader: 支持 Number 类型的 name 属性 [\#3681](https://github.com/youzan/vant/pull/3681)
+- SwipeCell: 新增 name 属性 [\#3680](https://github.com/youzan/vant/pull/3680)
+- AddressEdit: 新增 detail-maxlength 属性 [\#3707](https://github.com/youzan/vant/pull/3707)
+- GoodsActionIcon: 新增 icon 插槽 [\#3705](https://github.com/youzan/vant/pull/3705)
+
+**Bug Fixes**
+
+- 修复 Collapse 在 safari 浏览器上动画可能闪烁的问题 [\#3686](https://github.com/youzan/vant/pull/3686)
+- 修复 Picker 在低版本 Android 机器上的兼容性问题 [\#3688](https://github.com/youzan/vant/pull/3688)
+
+
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`
 

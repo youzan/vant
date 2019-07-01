@@ -1,5 +1,26 @@
 # 更新日志
 
+### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4)
+`2019-07-01`
+
+**Improvements**
+
+- add Grid、GridItem component [\#3669](https://github.com/youzan/vant/pull/3669) [\#3682](https://github.com/youzan/vant/pull/3682) [\#3683](https://github.com/youzan/vant/pull/3683)
+- Field: add arrow-direction prop [\#3679](https://github.com/youzan/vant/pull/3679)
+- Sidebar: add to、replace prop [\#3696](https://github.com/youzan/vant/pull/3696)
+- Sidebar: support use v-model to bind active key [\#3698](https://github.com/youzan/vant/pull/3698)
+- IndexBar: add class for active index [\#3692](https://github.com/youzan/vant/pull/3692)
+- Uploader: support number type of name prop [\#3681](https://github.com/youzan/vant/pull/3681)
+- SwipeCell: add name prop [\#3680](https://github.com/youzan/vant/pull/3680)
+- AddressEdit: add detail-maxlength prop [\#3707](https://github.com/youzan/vant/pull/3707)
+- GoodsActionIcon: add icon slot [\#3705](https://github.com/youzan/vant/pull/3705)
+
+**Bug Fixes**
+
+- fix Collapse flick in safari [\#3686](https://github.com/youzan/vant/pull/3686)
+- fix Picker compatibility issues on lower versions of Android [\#3688](https://github.com/youzan/vant/pull/3688)
+
+
 ### [v2.0.3](https://github.com/youzan/vant/tree/v2.0.3)
 `2019-06-27`
 
