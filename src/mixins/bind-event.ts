@@ -7,7 +7,9 @@ type BindEventMixinThis = {
   binded: boolean;
 };
 
-export function BindEventMixin(handler: Function) {
+type BindEventHandler = (bind: Function, isBind: boolean) => void;
+
+export function BindEventMixin(handler: BindEventHandler) {
   function bind(this: BindEventMixinThis) {
     if (!this.binded) {
       handler.call(this, on, true);
