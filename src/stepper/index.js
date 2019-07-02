@@ -11,6 +11,7 @@ export default createComponent({
     integer: Boolean,
     disabled: Boolean,
     inputWidth: [String, Number],
+    buttonSize: [String, Number],
     asyncChange: Boolean,
     disableInput: Boolean,
     min: {
@@ -49,6 +50,32 @@ export default createComponent({
 
     plusDisabled() {
       return this.disabled || this.currentValue >= this.max;
+    },
+
+    inputStyle() {
+      const style = {};
+
+      if (this.inputWidth) {
+        style.width = suffixPx(this.inputWidth);
+      }
+
+      if (this.buttonSize) {
+        style.height = suffixPx(this.buttonSize);
+      }
+
+      return style;
+    },
+
+    buttonStyle() {
+      const style = {};
+
+      if (this.buttonSize) {
+        const size = suffixPx(this.buttonSize);
+        style.width = size;
+        style.height = size;
+      }
+
+      return style;
     }
   },
 
@@ -174,6 +201,7 @@ export default createComponent({
     return (
       <div class={bem()}>
         <button
+          style={this.buttonStyle}
           class={bem('minus', { disabled: this.minusDisabled })}
           {...createListeners('minus')}
         />
@@ -186,12 +214,13 @@ export default createComponent({
           aria-valuemin={this.min}
           aria-valuenow={this.currentValue}
           disabled={this.disabled || this.disableInput}
-          style={{ width: suffixPx(this.inputWidth) }}
+          style={this.inputStyle}
           onInput={this.onInput}
           onFocus={this.onFocus}
           onBlur={this.onBlur}
         />
         <button
+          style={this.buttonStyle}
           class={bem('plus', { disabled: this.plusDisabled })}
           {...createListeners('plus')}
         />

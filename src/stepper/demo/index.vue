@@ -58,6 +58,17 @@
         @change="onChange"
       />
     </van-cell>
+
+    <van-cell
+      center
+      :title="$t('customSize')"
+    >
+      <van-stepper
+        v-model="stepper7"
+        button-size="32px"
+        input-width="40px"
+      />
+    </van-cell>
   </demo-section>
 </template>
 
@@ -68,13 +79,15 @@ export default {
       step: '步长设置',
       range: '限制输入范围',
       integer: '限制输入整数',
-      asyncChange: '异步变更'
+      asyncChange: '异步变更',
+      customSize: '自定义大小'
     },
     'en-US': {
       step: 'Step',
       range: 'Range',
       integer: 'Integer',
       asyncChange: 'Async Change',
+      customSize: 'Custom Size'
     }
   },
 
@@ -85,7 +98,8 @@ export default {
       stepper3: 1,
       stepper4: 1,
       stepper5: 1,
-      stepper6: 1
+      stepper6: 1,
+      stepper7: 1
     };
   },
 
