@@ -104,8 +104,7 @@ export default createComponent({
       if (!this.expanded) {
         this.show = false;
       } else {
-        console.log('onTransitionEnd');
-        this.$refs.wrapper.style.height = 'auto';
+        this.$refs.wrapper.style.height = '';
       }
     }
   },
