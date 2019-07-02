@@ -2,6 +2,7 @@ import { createNamespace } from '../utils';
 import { preventDefault } from '../utils/dom/event';
 import { TouchMixin } from '../mixins/touch';
 import { BindEventMixin } from '../mixins/bind-event';
+import { range } from '../utils/format/number';
 
 const [createComponent, bem] = createNamespace('swipe');
 
@@ -116,6 +117,11 @@ export default createComponent({
       return {
         backgroundColor: this.indicatorColor
       };
+    },
+
+    minOffset() {
+      const rect = this.$el.getBoundingClientRect();
+      return (this.vertical ? rect.height : rect.width) - this.size * this.count;
     }
   },
 
@@ -123,11 +129,13 @@ export default createComponent({
     // initialize swipe position
     initialize(active = this.initialSwipe) {
       clearTimeout(this.timer);
+
       if (this.$el) {
         const rect = this.$el.getBoundingClientRect();
         this.computedWidth = this.width || rect.width;
         this.computedHeight = this.height || rect.height;
       }
+
       this.swiping = true;
       this.active = active;
       this.offset = this.count > 1 ? -this.size * this.active : 0;
@@ -157,7 +165,7 @@ export default createComponent({
 
       if (this.isCorrectDirection) {
         preventDefault(event, true);
-        this.move({ offset: Math.min(Math.max(this.delta, -this.size), this.size) });
+        this.move({ offset: this.delta });
       }
     },
 
@@ -177,34 +185,42 @@ export default createComponent({
     },
 
     move({ pace = 0, offset = 0, emitChange }) {
-      const { delta, active, count, swipes, trackSize } = this;
-      const atFirst = active === 0;
-      const atLast = active === count - 1;
-      const outOfBounds =
-        !this.loop &&
-        ((atFirst && (offset > 0 || pace < 0)) || (atLast && (offset < 0 || pace > 0)));
+      const { size, loop, count, active, swipes, trackSize, minOffset } = this;
 
-      if (outOfBounds || count <= 1) {
+      if (count <= 1) {
         return;
       }
 
-      if (swipes[0]) {
-        swipes[0].offset = atLast && (delta < 0 || pace > 0) ? trackSize : 0;
-      }
+      const targetActive = pace ? range(active + pace, -1, count) : active;
+      let targetOffset = Math.round(offset - targetActive * size);
+      const outLeftBound = targetOffset > 0;
+      const outRightBound = targetOffset < minOffset;
 
-      if (swipes[count - 1]) {
-        swipes[count - 1].offset = atFirst && (delta > 0 || pace < 0) ? -trackSize : 0;
-      }
+      // auto move first and last swipe in loop mode
+      if (loop) {
+        if (swipes[0]) {
+          swipes[0].offset = outRightBound ? trackSize : 0;
+        }
 
-      if (pace && active + pace >= -1 && active + pace <= count) {
-        this.active += pace;
+        if (swipes[count - 1]) {
+          swipes[count - 1].offset = outLeftBound ? -trackSize : 0;
+        }
+      } else {
+        if (outLeftBound || outRightBound) {
+          return;
+        }
 
-        if (emitChange) {
-          this.$emit('change', this.activeIndicator);
+        if (pace) {
+          targetOffset = Math.max(targetOffset, this.minOffset);
         }
       }
 
-      this.offset = Math.round(offset - this.active * this.size);
+      this.active = targetActive;
+      this.offset = targetOffset;
+
+      if (emitChange && targetActive !== this.active) {
+        this.$emit('change', this.activeIndicator);
+      }
     },
 
     swipeTo(index) {
