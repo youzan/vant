@@ -23,6 +23,7 @@ export default createComponent({
     quota: Number,
     value: Boolean,
     buyText: String,
+    addCartText: String,
     quotaUsed: Number,
     goodsId: [Number, String],
     hideStock: Boolean,
@@ -453,6 +454,7 @@ export default createComponent({
       <SkuActions
         buyText={this.buyText}
         skuEventBus={skuEventBus}
+        addCartText={this.addCartText}
         showAddCartBtn={this.showAddCartBtn}
       />
     );

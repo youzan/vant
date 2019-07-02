@@ -9,6 +9,7 @@ import { DefaultSlots } from '../../utils/types';
 export type SkuActionsProps = {
   buyText?: string;
   skuEventBus: Vue;
+  addCartText?: string;
   showAddCartBtn?: boolean;
 };
 
@@ -31,7 +32,7 @@ function SkuActions(
           square
           size="large"
           type="warning"
-          text="加入购物车"
+          text={props.addCartText || '加入购物车'}
           onClick={createEmitter('sku:addCart')}
         />
       )}
@@ -48,6 +49,7 @@ function SkuActions(
 
 SkuActions.props = {
   buyText: String,
+  addCartText: String,
   skuEventBus: Object,
   showAddCartBtn: Boolean
 };

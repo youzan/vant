@@ -124,6 +124,8 @@ export default {
 | hide-stock | Whether to hide stock | `Boolean` | `false` |
 | hide-quota-text | Whether to hide quota text | `Boolean` | `false` |
 | show-add-cart-btn | Whether to show cart button | `Boolean` | `true` |
+| buy-text | Buy button text | `String` | - | - |
+| add-cart-text | Add cart button text | `String` | - | - |
 | quota | Quota (0 as no limit) | `Number` | `0` |
 | quota-used | Used quota | `Number` | `0` |
 | reset-stepper-on-hide | Whether to reset stepper when hide | `Boolean` | `false` |
