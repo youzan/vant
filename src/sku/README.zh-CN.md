@@ -126,6 +126,8 @@ export default {
 | hide-stock | 是否显示商品剩余库存 | `Boolean` | `false` | - |
 | hide-quota-text | 是否显示限购提示 | `Boolean` | `false` | 1.4.8 |
 | show-add-cart-btn | 是否显示加入购物车按钮 | `Boolean` | `true` | - |
+| buy-text | 购买按钮文字 | `String` | `立即购买` | - |
+| add-cart-text | 加入购物车按钮文字 | `String` | `加入购物车` | - |
 | quota | 限购数，0 表示不限购 | `Number` | `0` | - |
 | quota-used | 已经购买过的数量 | `Number` | `0` | - |
 | reset-stepper-on-hide | 隐藏时重置选择的商品数量 | `Boolean` | `false` | - |
