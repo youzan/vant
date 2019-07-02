@@ -14,7 +14,7 @@ Vue.use(Sku);
 
 ```html
 <van-sku
-  v-model="showBase"
+  v-model="show"
   :sku="sku"
   :goods="goods"
   :goods-id="goodsId"
@@ -31,11 +31,24 @@ Vue.use(Sku);
 />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      sku: {},
+      goods: {},
+      messageConfig: {}
+    };
+  }
+}
+```
+
 ### Custom Stepper Config
 
 ```html
 <van-sku
-  v-model="showBase"
+  v-model="show"
   :sku="sku"
   :goods="goods"
   :goods-id="goodsId"
@@ -52,7 +65,7 @@ Vue.use(Sku);
 
 ```html
 <van-sku
-  v-model="showCustomAction"
+  v-model="show"
   stepper-title="Stepper title"
   :sku="sku"
   :goods="goods"

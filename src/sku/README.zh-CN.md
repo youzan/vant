@@ -14,34 +14,49 @@ Vue.use(Sku);
 
 ```html
 <van-sku
-  v-model="showBase"
+  v-model="show"
   :sku="sku"
   :goods="goods"
   :goods-id="goodsId"
-  :hide-stock="sku.hide_stock"
   :quota="quota"
   :quota-used="quotaUsed"
-  :reset-stepper-on-hide="resetStepperOnHide"
-  :reset-selected-sku-on-hide="resetSelectedSkuOnHide"
-  :close-on-click-overlay="closeOnClickOverlay"
-  :disable-stepper-input="disableStepperInput"
+  :hide-stock="sku.hide_stock"
   :message-config="messageConfig"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
 />
 ```
 
+```js
+export default {
+  data() {
+    return {
+      show: false,
+      sku: {
+        // 数据结构见下方文档
+      },
+      goods: {
+        // 数据结构见下方文档
+      },
+      messageConfig: {
+        // 数据结构见下方文档
+      }
+    };
+  }
+}
+```
+
 ### 自定义步进器
 
 ```html
 <van-sku
-  v-model="showBase"
+  v-model="show"
   :sku="sku"
   :goods="goods"
   :goods-id="goodsId"
-  :hide-stock="sku.hide_stock"
   :quota="quota"
   :quota-used="quotaUsed"
+  :hide-stock="sku.hide_stock"
   :custom-stepper-config="customStepperConfig"
   @buy-clicked="onBuyClicked"
   @add-cart="onAddCartClicked"
@@ -52,14 +67,14 @@ Vue.use(Sku);
 
 ```html
 <van-sku
-  v-model="showCustomAction"
+  v-model="show"
   stepper-title="我要买"
   :sku="sku"
   :goods="goods"
   :goods-id="goodsId"
-  :hide-stock="sku.hide_stock"
   :quota="quota"
   :quota-used="quotaUsed"
+  :hide-stock="sku.hide_stock"
   show-add-cart-btn
   reset-stepper-on-hide
   :initial-sku="initialSku"
@@ -121,8 +136,8 @@ Vue.use(Sku);
 | custom-stepper-config | 步进器相关自定义配置 | `Object` | `{}` | - |
 | message-config | 留言相关配置 | `Object` | `{}` | - |
 | get-container | 指定挂载的节点，可以传入选择器，<br>或一个返回节点的函数 | `String | () => HTMLElement` | - | - |
-| initial-sku | 默认选中的sku，具体参考高级用法 | `Object` | `{}` | - |
-| show-soldout-sku | 是否展示售罄的sku，如果展示，则为置灰不可选状态，不展示则直接隐藏 | `Boolean` | `true` | - |
+| initial-sku | 默认选中的 sku，具体参考高级用法 | `Object` | `{}` | - |
+| show-soldout-sku | 是否展示售罄的 sku，默认展示并置灰 | `Boolean` | `true` | - |
 
 ### Events
 
