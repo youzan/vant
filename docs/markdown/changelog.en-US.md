@@ -1,4 +1,18 @@
-# 更新日志
+# Changelog
+
+### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
+`2019-07-02`
+
+**Improvements**
+
+- Stepper: add button-size prop [\#3714](https://github.com/youzan/vant/pull/3714)
+- Stepper: support long press gesture [\#3711](https://github.com/youzan/vant/pull/3711)
+- Dialog: add close-on-popstate prop [\#3709](https://github.com/youzan/vant/pull/3709)
+
+**Bug Fixes**
+
+- fix postcss config overwritten issue
+
 
 ### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4)
 `2019-07-01`

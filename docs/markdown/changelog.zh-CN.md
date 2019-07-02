@@ -1,5 +1,19 @@
 # 更新日志
 
+### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
+`2019-07-02`
+
+**Improvements**
+
+- Stepper: 支持长按手势 [\#3711](https://github.com/youzan/vant/pull/3711)
+- Stepper: 新增 button-size 属性 [\#3714](https://github.com/youzan/vant/pull/3714)
+- Dialog: 新增 close-on-popstate 属性 [\#3709](https://github.com/youzan/vant/pull/3709)
+
+**Bug Fixes**
+
+- 修复 postcss 配置对 vant 不生效的问题
+
+
 ### [v2.0.4](https://github.com/youzan/vant/tree/v2.0.4) 🇨🇳
 `2019-07-01`
 
