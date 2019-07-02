@@ -99,10 +99,15 @@ export default createComponent({
     onTouchEnd() {
       if (!this.untouchable && this.ceiling && this.deltaY) {
         this.duration = this.animationDuration;
+
         if (this.status === 'loosing') {
           this.setStatus(this.headHeight, true);
           this.$emit('input', true);
-          this.$emit('refresh');
+
+          // ensure value change can be watched
+          this.$nextTick(() => {
+            this.$emit('refresh');
+          });
         } else {
           this.setStatus(0);
         }
