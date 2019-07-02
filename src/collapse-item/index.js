@@ -74,8 +74,12 @@ export default createComponent({
         if (offsetHeight) {
           const contentHeight = `${offsetHeight}px`;
           wrapper.style.height = expanded ? 0 : contentHeight;
+
+          // use double raf to ensure animation can start in mobile safari
           raf(() => {
-            wrapper.style.height = expanded ? contentHeight : 0;
+            raf(() => {
+              wrapper.style.height = expanded ? contentHeight : 0;
+            });
           });
         } else {
           this.onTransitionEnd();
@@ -100,7 +104,8 @@ export default createComponent({
       if (!this.expanded) {
         this.show = false;
       } else {
-        this.$refs.wrapper.style.height = '';
+        console.log('onTransitionEnd');
+        this.$refs.wrapper.style.height = 'auto';
       }
     }
   },
