@@ -1,6 +1,6 @@
 {
-  "name": "@vant/site",
-  "short_name": "@vant/site",
+  "name": "Vant",
+  "short_name": "Vant",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
