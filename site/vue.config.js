@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/vant/' : '/',
+  productionSourceMap: false,
   pages: {
     index: {
       entry: 'src/desktop/main.js',
