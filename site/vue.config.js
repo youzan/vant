@@ -10,7 +10,7 @@ module.exports = {
     },
     mobile: {
       entry: 'src/mobile/main.js',
-      template: 'public/index.html',
+      template: 'public/mobile.html',
       filename: 'mobile.html'
     }
   },
