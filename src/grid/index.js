@@ -7,7 +7,7 @@ export default createComponent({
   mixins: [ParentMixin('vanGrid')],
 
   props: {
-    gutter: Number,
+    gutter: [Number, String],
     square: Boolean,
     clickable: Boolean,
     columnNum: {
