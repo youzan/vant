@@ -27,7 +27,7 @@
         :loading="!show"
       >
         <div class="demo-preview">
-          <img src="//img.yzcdn.cn/public_files/2017/12/18/fd78cf6bb5d12e2a119d0576bedfd230.png">
+          <img src="https://img.yzcdn.cn/vant/logo.png">
           <div class="demo-content">
             <h3>{{ $t('title') }}</h3>
             <p>{{ $t('desc') }}</p>
