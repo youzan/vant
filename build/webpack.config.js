@@ -1,11 +1,8 @@
 const path = require('path');
-const config = require('./webpack.dev.js');
 
 const isMinify = process.argv.indexOf('-p') !== -1;
 
-delete config.serve;
-
-module.exports = Object.assign(config, {
+module.exports = {
   mode: 'production',
   entry: {
     vant: './es/index.js'
@@ -26,8 +23,19 @@ module.exports = Object.assign(config, {
       amd: 'vue'
     }
   },
-  performance: false,
   optimization: {
     minimize: isMinify
+  },
+  resolve: {
+    extensions: ['.js', '.ts', '.tsx']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|ts|tsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
+    ]
   }
-});
+};

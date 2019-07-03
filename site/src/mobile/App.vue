@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../src/style/var';
+@import '../../../src/style/var';
 
 body {
   color: @text-color;
