@@ -875,8 +875,8 @@
 
 "@vue/cli-plugin-pwa@^3.8.0":
   version "3.8.0"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-pwa/-/cli-plugin-pwa-3.8.0.tgz#b1cb3b0f435404a4394479542b7f0f20a500ef97"
-  integrity sha512-czAeWMUuEeU4sp+9nIF6XOBEpQ9CFwHQHQSC57/vtVTn6J9QsbcY2roU/qaCQnqOgiw4Sz9wwRG30WgmsKn6PQ==
+  resolved "https://registry.npm.taobao.org/@vue/cli-plugin-pwa/download/@vue/cli-plugin-pwa-3.8.0.tgz#b1cb3b0f435404a4394479542b7f0f20a500ef97"
+  integrity sha1-scs7D0NUBKQ5RHlUK38PIKUA75c=
   dependencies:
     "@vue/cli-shared-utils" "^3.8.0"
     webpack ">=4 < 4.29"
