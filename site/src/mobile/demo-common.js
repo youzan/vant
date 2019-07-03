@@ -5,9 +5,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VantDoc, { DemoBlock, DemoSection } from '@vant/doc';
-import i18n from './utils/i18n';
-import Vant, { Lazyload, Locale } from '../../src';
-import { camelize } from '../../src/utils/format/string';
+import i18n from '../utils/i18n';
+import Vant, { Lazyload, Locale } from '../../../src';
+import { camelize } from '../../../src/utils/format/string';
 
 Vue
   .use(Vant)
