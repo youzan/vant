@@ -224,6 +224,10 @@ export default {
                 title: 'Collapse 折叠面板'
               },
               {
+                path: '/divider',
+                title: 'Divider 分割线'
+              },
+              {
                 path: '/image-preview',
                 title: 'ImagePreview 图片预览'
               },
@@ -548,6 +552,10 @@ export default {
               {
                 path: '/collapse',
                 title: 'Collapse'
+              },
+              {
+                path: '/divider',
+                title: 'Divider'
               },
               {
                 path: '/image-preview',

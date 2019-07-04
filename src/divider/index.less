@@ -1,0 +1,64 @@
+@import '../style/var';
+
+.van-divider {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  color: @gray-dark;
+  font-size: 14px;
+  line-height: 24px;
+  border-color: @border-color;
+  border-style: solid;
+  border-width: 0;
+
+  &::before,
+  &::after {
+    display: block;
+    flex: 1;
+    box-sizing: border-box;
+    height: 1px;
+    border-color: inherit;
+    border-style: inherit;
+    border-width: 1px 0 0;
+  }
+
+  &::before {
+    content: '';
+  }
+
+  &--hairline {
+    &::before,
+    &::after {
+      transform: scaleY(.5);
+    }
+  }
+
+  &--dashed {
+    border-style: dashed;
+  }
+
+  &--content-center,
+  &--content-left,
+  &--content-right {
+    &::before {
+      margin-right: 15px;
+    }
+
+    &::after {
+      margin-left: 15px;
+      content: '';
+    }
+  }
+
+  &--content-left {
+    &::before {
+      max-width: 10%;
+    }
+  }
+
+  &--content-right {
+    &::after {
+      max-width: 10%;
+    }
+  }
+}

@@ -23,6 +23,7 @@ import CouponCell from './coupon-cell';
 import CouponList from './coupon-list';
 import DatetimePicker from './datetime-picker';
 import Dialog from './dialog';
+import Divider from './divider';
 import DropdownItem from './dropdown-item';
 import DropdownMenu from './dropdown-menu';
 import Field from './field';
@@ -111,6 +112,7 @@ const components = [
   CouponList,
   DatetimePicker,
   Dialog,
+  Divider,
   DropdownItem,
   DropdownMenu,
   Field,
@@ -204,6 +206,7 @@ export {
   CouponList,
   DatetimePicker,
   Dialog,
+  Divider,
   DropdownItem,
   DropdownMenu,
   Field,
