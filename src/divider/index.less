@@ -3,11 +3,11 @@
 .van-divider {
   display: flex;
   align-items: center;
-  margin: 15px 0;
-  color: @gray-dark;
-  font-size: 14px;
-  line-height: 24px;
-  border-color: @border-color;
+  margin: @divider-margin;
+  color: @divider-text-color;
+  font-size: @divider-font-size;
+  line-height: @divider-line-height;
+  border-color: @divider-border-color;
   border-style: solid;
   border-width: 0;
 
@@ -41,24 +41,24 @@
   &--content-left,
   &--content-right {
     &::before {
-      margin-right: 15px;
+      margin-right: @divider-content-padding;
     }
 
     &::after {
-      margin-left: 15px;
+      margin-left: @divider-content-padding;
       content: '';
     }
   }
 
   &--content-left {
     &::before {
-      max-width: 10%;
+      max-width: @divider-content-left-width;
     }
   }
 
   &--content-right {
     &::after {
-      max-width: 10%;
+      max-width: @divider-content-right-width;
     }
   }
 }
