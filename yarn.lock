@@ -1132,10 +1132,10 @@
   resolved "https://registry.yarnpkg.com/@vant/markdown-vetur/-/markdown-vetur-1.0.0.tgz#04774bc45cb6e11c734b8985925558ed8d3aab61"
   integrity sha512-v6rVoLPJhKc6V4iHnidaueHCdkF6/aCVdQFDGvKcYoNJnVL8t8pem/XGJ+VBFNfD3b2pggwLc1QaWYVJFfaXLw==
 
-"@vant/touch-emulator@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.1.0.tgz#3cb2bcf87dbed1f8a2408c57139ee4fb2e761e5f"
-  integrity sha512-aux+dVH4VJPevybRV2nUzZYRZvhW+18jDRmnup8PVMGsGV4qZGwmR7Wkc0fTXU/TTJa1u+W+LEM9spi7spEphg==
+"@vant/touch-emulator@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@vant/touch-emulator/-/touch-emulator-1.0.0.tgz#e9ea133fd874a534481c84e12089b2e9d552544b"
+  integrity sha512-XDiQ4Cp7uU1PjsNwyXBymnH6f1I0hwEGa0HN0fvGstP7oFb8QGICUNMiNV0PHmYiBdql60lk1oTGi+refLypGQ==
 
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0":
   version "1.0.0"
