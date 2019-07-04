@@ -1,3 +1,3 @@
-module.exports = {
-  presets: ['@vue/app']
-};
+const config = require('../babel.config');
+
+module.exports = config;
