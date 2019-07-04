@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VantDoc from '@vant/doc';
-import App from './DocsApp';
-import routes from './router';
-import { isMobile, importAll } from './utils';
+import App from './App';
+import routes from '../router';
+import { isMobile, importAll } from '../utils';
 
 if (isMobile) {
   location.replace('mobile.html' + location.hash);
@@ -12,8 +12,8 @@ if (isMobile) {
 Vue.use(VueRouter).use(VantDoc);
 
 const docs = {};
-const docsFromMarkdown = require.context('../markdown', false, /(en-US|zh-CN)\.md$/);
-const docsFromPackages = require.context('../../src', true, /README(\.zh-CN)?\.md$/);
+const docsFromMarkdown = require.context('../../markdown', false, /(en-US|zh-CN)\.md$/);
+const docsFromPackages = require.context('../../../src', true, /README(\.zh-CN)?\.md$/);
 
 importAll(docs, docsFromMarkdown);
 importAll(docs, docsFromPackages);

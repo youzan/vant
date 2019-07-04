@@ -1,13 +1,13 @@
-import '../../src/index.less';
+import '../../../src/index.less';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import App from './WapApp';
-import routes from './router';
-import { importAll } from './utils';
+import App from './App';
+import routes from '../router';
+import { importAll } from '../utils';
 import '@vant/touch-emulator';
 
 const componentMap = {};
-const context = require.context('../../src', true, /demo\/index.vue$/);
+const context = require.context('../../../src', true, /demo\/index.vue$/);
 
 importAll(componentMap, context);
 

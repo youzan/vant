@@ -17,8 +17,8 @@
 </template>
 
 <script>
-import pkgJson from '../../package.json';
-import docConfig, { github, versions, searchConfig } from './doc.config';
+import pkgJson from '../../../package.json';
+import docConfig, { github, versions, searchConfig } from '../doc.config';
 
 export default {
   data() {
