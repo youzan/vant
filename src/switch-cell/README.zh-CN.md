@@ -1,8 +1,8 @@
 # SwitchCell 开关单元格
 
-### 介绍
+### 废弃提示
 
-`SwitchCell`组件是对`Switch`和`Cell`组件的封装
+<b>SwitchCell 组件将在 3.0 版本中废弃</b>，请直接使用 Cell 和 Switch 组件代替
 
 ### 引入
 
