@@ -2,7 +2,7 @@ import Vue from 'vue';
 import docConfig from './doc.config';
 import DemoList from './components/DemoList';
 import DemoPages from './components/DemoPages';
-import { demoWrapper } from './mobile/demo-common';
+import { demoWrapper } from './demo-common';
 import { initIframeRouter } from './utils/iframe-router';
 
 initIframeRouter();
