@@ -83,7 +83,7 @@ export default {
 ### Set Swiper Item Size
 
 ```html
-<van-swipe :autoplay="3000" :width="300">
+<van-swipe :loop="false" :width="300">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
   <van-swipe-item>3</van-swipe-item>

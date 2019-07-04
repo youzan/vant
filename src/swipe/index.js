@@ -184,41 +184,61 @@ export default createComponent({
       this.autoPlay();
     },
 
+    getTargetActive(pace) {
+      const { active, count } = this;
+
+      if (pace) {
+        if (this.loop) {
+          return range(active + pace, -1, count);
+        }
+
+        return range(active + pace, 0, count - 1);
+      }
+
+      return active;
+    },
+
+    getTargetOffset(targetActive, offset) {
+      let currentPosition;
+
+      if (this.loop) {
+        currentPosition = targetActive * this.size;
+      } else {
+        currentPosition = Math.min(targetActive * this.size, -this.minOffset);
+      }
+
+      return Math.round(offset - currentPosition);
+    },
+
     move({ pace = 0, offset = 0, emitChange }) {
-      const { size, loop, count, active, swipes, trackSize, minOffset } = this;
+      const { loop, count, active, swipes, trackSize, minOffset } = this;
 
       if (count <= 1) {
         return;
       }
 
-      const targetActive = pace ? range(active + pace, -1, count) : active;
-      let targetOffset = Math.round(offset - targetActive * size);
-      const outLeftBound = targetOffset > 0;
-      const outRightBound = targetOffset < minOffset;
+      const targetActive = this.getTargetActive(pace);
+      let targetOffset = this.getTargetOffset(targetActive, offset);
 
       // auto move first and last swipe in loop mode
       if (loop) {
         if (swipes[0]) {
+          const outRightBound = targetOffset < minOffset;
           swipes[0].offset = outRightBound ? trackSize : 0;
         }
 
         if (swipes[count - 1]) {
+          const outLeftBound = targetOffset > 0;
           swipes[count - 1].offset = outLeftBound ? -trackSize : 0;
         }
       } else {
-        if (outLeftBound || outRightBound) {
-          return;
-        }
-
-        if (pace) {
-          targetOffset = Math.max(targetOffset, this.minOffset);
-        }
+        targetOffset = range(targetOffset, minOffset, 0);
       }
 
       this.active = targetActive;
       this.offset = targetOffset;
 
-      if (emitChange && targetActive !== this.active) {
+      if (emitChange && targetActive !== active) {
         this.$emit('change', this.activeIndicator);
       }
     },
@@ -227,6 +247,7 @@ export default createComponent({
       this.swiping = true;
       this.resetTouchStatus();
       this.correctPosition();
+
       setTimeout(() => {
         this.swiping = false;
         this.move({

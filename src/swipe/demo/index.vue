@@ -26,7 +26,7 @@
     <demo-block :title="$t('title3')">
       <van-swipe
         indicator-color="white"
-        @change="onChange"
+        @change="onChange1"
       >
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
@@ -40,6 +40,7 @@
         vertical
         :autoplay="3000"
         indicator-color="white"
+        style="height: 200px;"
         class="demo-swipe--vertical"
       >
         <van-swipe-item>1</van-swipe-item>
@@ -51,7 +52,6 @@
 
     <demo-block :title="$t('title5')">
       <van-swipe
-        :autoplay="3000"
         :width="300"
         :loop="false"
         indicator-color="white"
@@ -64,7 +64,7 @@
     </demo-block>
 
     <demo-block :title="$t('title6')">
-      <van-swipe @change="onChange">
+      <van-swipe @change="onChange2">
         <van-swipe-item>1</van-swipe-item>
         <van-swipe-item>2</van-swipe-item>
         <van-swipe-item>3</van-swipe-item>
@@ -112,9 +112,12 @@ export default {
   },
 
   methods: {
-    onChange(index) {
-      this.current = index;
+    onChange1(index) {
       this.$toast(this.$t('message') + index);
+    },
+
+    onChange2(index) {
+      this.current = index;
     }
   }
 };
@@ -156,8 +159,6 @@ export default {
   }
 
   &--vertical {
-    height: 200px;
-
     .van-swipe-item {
       line-height: 200px;
     }
