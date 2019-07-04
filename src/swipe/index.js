@@ -199,15 +199,17 @@ export default createComponent({
     },
 
     getTargetOffset(targetActive, offset) {
-      let currentPosition;
-
-      if (this.loop) {
-        currentPosition = targetActive * this.size;
-      } else {
-        currentPosition = Math.min(targetActive * this.size, -this.minOffset);
+      let currentPosition = targetActive * this.size;
+      if (!this.loop) {
+        currentPosition = Math.min(currentPosition, -this.minOffset);
       }
 
-      return Math.round(offset - currentPosition);
+      let targetOffset = Math.round(offset - currentPosition);
+      if (!this.loop) {
+        targetOffset = range(targetOffset, this.minOffset, 0);
+      }
+
+      return targetOffset;
     },
 
     move({ pace = 0, offset = 0, emitChange }) {
@@ -218,7 +220,7 @@ export default createComponent({
       }
 
       const targetActive = this.getTargetActive(pace);
-      let targetOffset = this.getTargetOffset(targetActive, offset);
+      const targetOffset = this.getTargetOffset(targetActive, offset);
 
       // auto move first and last swipe in loop mode
       if (loop) {
@@ -231,8 +233,6 @@ export default createComponent({
           const outLeftBound = targetOffset > 0;
           swipes[count - 1].offset = outLeftBound ? -trackSize : 0;
         }
-      } else {
-        targetOffset = range(targetOffset, minOffset, 0);
       }
 
       this.active = targetActive;
