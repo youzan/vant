@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import { renderToString } from '@vue/server-test-utils';
 import AddressEdit from '..';
 import areaList from '../../area/demo/area.simple';
 import { mount, later, transitionStub } from '../../../test/utils';
@@ -41,11 +40,11 @@ const createComponent = () => {
 };
 
 test('create a AddressEdit', () => {
-  expect(renderToString(AddressEdit)).toMatchSnapshot();
+  expect(mount(AddressEdit)).toMatchSnapshot();
 });
 
 test('create a AddressEdit with props', () => {
-  const wrapper = renderToString(AddressEdit, {
+  const wrapper = mount(AddressEdit, {
     propsData: {
       areaList,
       addressInfo,

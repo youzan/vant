@@ -5,7 +5,6 @@ import App from './App';
 import routes from '../router';
 import { importAll } from '../utils';
 import '@vant/touch-emulator';
-import '../sw';
 
 const componentMap = {};
 const context = require.context('../../../src', true, /demo\/index.vue$/);
