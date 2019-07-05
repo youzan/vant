@@ -73,7 +73,7 @@ export default createComponent({
 
     return {
       position: '',
-      curActive: null,
+      currentIndex: null,
       lineStyle: {
         backgroundColor: this.color
       }
@@ -108,13 +108,21 @@ export default createComponent({
         borderColor: this.color,
         background: this.background
       };
+    },
+
+    currentName() {
+      const activeTab = this.children[this.currentIndex];
+
+      if (activeTab) {
+        return activeTab.computedName;
+      }
     }
   },
 
   watch: {
-    active(val) {
-      if (val !== this.curActive) {
-        this.correctActive(val);
+    active(name) {
+      if (name !== this.currentName) {
+        this.setCurrentIndexByName(name);
       }
     },
 
@@ -123,12 +131,12 @@ export default createComponent({
     },
 
     children() {
-      this.correctActive(this.curActive || this.active);
+      this.setCurrentIndexByName(this.currentName || this.active);
       this.scrollIntoView();
       this.setLine();
     },
 
-    curActive() {
+    currentIndex() {
       this.scrollIntoView();
       this.setLine();
 
@@ -201,11 +209,11 @@ export default createComponent({
       this.$nextTick(() => {
         const { titles } = this.$refs;
 
-        if (!titles || !titles[this.curActive] || this.type !== 'line') {
+        if (!titles || !titles[this.currentIndex] || this.type !== 'line') {
           return;
         }
 
-        const title = titles[this.curActive].$el;
+        const title = titles[this.currentIndex].$el;
         const { lineWidth, lineHeight } = this;
         const width = isDef(lineWidth) ? lineWidth : title.offsetWidth / 2;
         const left = title.offsetLeft + title.offsetWidth / 2;
@@ -230,47 +238,47 @@ export default createComponent({
       });
     },
 
-    // correct the value of active
-    correctActive(active) {
-      active = +active;
-      const exist = this.children.some(tab => tab.index === active);
-      const defaultActive = (this.children[0] || {}).index || 0;
-      this.setCurActive(exist ? active : defaultActive);
+    // correct the index of active tab
+    setCurrentIndexByName(name) {
+      const matched = this.children.filter(tab => tab.computedName === name);
+      const defaultIndex = (this.children[0] || {}).index || 0;
+      this.setCurrentIndex(matched.length ? matched[0].index : defaultIndex);
     },
 
-    setCurActive(active) {
-      active = this.findAvailableTab(active, active < this.curActive);
-      if (isDef(active) && active !== this.curActive) {
-        this.$emit('input', active);
+    setCurrentIndex(currentIndex) {
+      currentIndex = this.findAvailableTab(currentIndex);
 
-        if (this.curActive !== null) {
-          this.$emit('change', active, this.children[active].title);
+      if (isDef(currentIndex) && currentIndex !== this.currentIndex) {
+        const shouldEmitChange = this.currentIndex !== null;
+        this.currentIndex = currentIndex;
+        this.$emit('input', this.currentName);
+
+        if (shouldEmitChange) {
+          this.$emit('change', this.currentName, this.children[currentIndex].title);
         }
-
-        this.curActive = active;
       }
     },
 
-    findAvailableTab(active, reverse) {
-      const diff = reverse ? -1 : 1;
-      let index = active;
+    findAvailableTab(index) {
+      const diff = index < this.currentIndex ? -1 : 1;
 
       while (index >= 0 && index < this.children.length) {
         if (!this.children[index].disabled) {
           return index;
         }
+
         index += diff;
       }
     },
 
     // emit event when clicked
     onClick(index) {
-      const { title, disabled } = this.children[index];
+      const { title, disabled, name } = this.children[index];
       if (disabled) {
-        this.$emit('disabled', index, title);
+        this.$emit('disabled', name, title);
       } else {
-        this.setCurActive(index);
-        this.$emit('click', index, title);
+        this.setCurrentIndex(index);
+        this.$emit('click', name, title);
       }
     },
 
@@ -278,12 +286,12 @@ export default createComponent({
     scrollIntoView(immediate) {
       const { titles } = this.$refs;
 
-      if (!this.scrollable || !titles || !titles[this.curActive]) {
+      if (!this.scrollable || !titles || !titles[this.currentIndex]) {
         return;
       }
 
       const { nav } = this.$refs;
-      const title = titles[this.curActive].$el;
+      const title = titles[this.currentIndex].$el;
       const to = title.offsetLeft - (nav.offsetWidth - title.offsetWidth) / 2;
 
       scrollLeftTo(nav, to, immediate ? 0 : this.duration);
@@ -307,7 +315,7 @@ export default createComponent({
         type={type}
         title={item.title}
         color={this.color}
-        active={index === this.curActive}
+        isActive={index === this.currentIndex}
         ellipsis={ellipsis}
         disabled={item.disabled}
         scrollable={scrollable}
@@ -339,11 +347,11 @@ export default createComponent({
         </div>
         <Content
           count={this.children.length}
-          active={this.curActive}
           animated={animated}
           duration={this.duration}
           swipeable={this.swipeable}
-          onChange={this.setCurActive}
+          currentIndex={this.currentIndex}
+          onChange={this.setCurrentIndex}
         >
           {this.slots()}
         </Content>
