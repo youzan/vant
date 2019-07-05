@@ -145,3 +145,38 @@ test('border props', async () => {
 
   expect(wrapper).toMatchSnapshot();
 });
+
+test('name prop', async () => {
+  const onClick = jest.fn();
+  const onChange = jest.fn();
+  const onDisabled = jest.fn();
+
+  const wrapper = mount({
+    template: `
+      <van-tabs @click="onClick" @disabled="onDisabled" @change="onChange">
+        <van-tab title="title1" name="a">Text</van-tab>
+        <van-tab title="title2" name="b">Text</van-tab>
+        <van-tab title="title3" name="c" disabled>Text</van-tab>
+      </van-tabs>
+    `,
+    methods: {
+      onClick,
+      onChange,
+      onDisabled
+    }
+  });
+
+  await later();
+  expect(wrapper).toMatchSnapshot();
+
+  const tabs = wrapper.findAll('.van-tab');
+  tabs.at(1).trigger('click');
+
+  expect(onClick).toHaveBeenCalledWith('b', 'title2');
+  expect(onChange).toHaveBeenCalledWith('b', 'title2');
+  expect(onChange).toHaveBeenCalledTimes(1);
+
+  tabs.at(2).trigger('click');
+  expect(onDisabled).toHaveBeenCalledWith('c', 'title3');
+  expect(onChange).toHaveBeenCalledTimes(1);
+});

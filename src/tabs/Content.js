@@ -9,17 +9,17 @@ export default createComponent({
 
   props: {
     count: Number,
-    active: Number,
     duration: Number,
     animated: Boolean,
-    swipeable: Boolean
+    swipeable: Boolean,
+    currentIndex: Number
   },
 
   computed: {
     style() {
       if (this.animated) {
         return {
-          transform: `translate3d(${-1 * this.active * 100}%, 0, 0)`,
+          transform: `translate3d(${-1 * this.currentIndex * 100}%, 0, 0)`,
           transitionDuration: `${this.duration}s`
         };
       }
@@ -40,15 +40,15 @@ export default createComponent({
   methods: {
     // watch swipe touch end
     onTouchEnd() {
-      const { direction, deltaX, active } = this;
+      const { direction, deltaX, currentIndex } = this;
 
       /* istanbul ignore else */
       if (direction === 'horizontal' && this.offsetX >= MIN_SWIPE_DISTANCE) {
         /* istanbul ignore else */
-        if (deltaX > 0 && active !== 0) {
-          this.$emit('change', active - 1);
-        } else if (deltaX < 0 && active !== this.count - 1) {
-          this.$emit('change', active + 1);
+        if (deltaX > 0 && currentIndex !== 0) {
+          this.$emit('change', currentIndex - 1);
+        } else if (deltaX < 0 && currentIndex !== this.count - 1) {
+          this.$emit('change', currentIndex + 1);
         }
       }
     },

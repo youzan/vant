@@ -7,7 +7,7 @@ export default {
     type: String,
     color: String,
     title: String,
-    active: Boolean,
+    isActive: Boolean,
     ellipsis: Boolean,
     disabled: Boolean,
     scrollable: Boolean,
@@ -19,7 +19,7 @@ export default {
   computed: {
     style() {
       const style = {};
-      const { color, active } = this;
+      const { color, isActive } = this;
       const isCard = this.type === 'card';
 
       // card theme color
@@ -27,7 +27,7 @@ export default {
         style.borderColor = color;
 
         if (!this.disabled) {
-          if (active) {
+          if (isActive) {
             style.backgroundColor = color;
           } else {
             style.color = color;
@@ -35,7 +35,7 @@ export default {
         }
       }
 
-      const titleColor = active ? this.activeColor : this.inactiveColor;
+      const titleColor = isActive ? this.activeColor : this.inactiveColor;
       if (titleColor) {
         style.color = titleColor;
       }
@@ -64,9 +64,9 @@ export default {
     return (
       <div
         role="tab"
-        aria-selected={this.active}
+        aria-selected={this.isActive}
         class={bem({
-          active: this.active,
+          active: this.isActive,
           disabled: this.disabled,
           complete: !this.ellipsis
         })}

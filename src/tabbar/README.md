@@ -31,7 +31,7 @@ export default {
 }
 ```
 
-### Item Name
+### Match by name
 
 ```html
 <van-tabbar v-model="active">

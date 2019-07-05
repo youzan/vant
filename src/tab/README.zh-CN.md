@@ -12,7 +12,7 @@ Vue.use(Tab).use(Tabs);
 
 ### 基础用法
 
-默认情况下启用第一个标签，可以通过`v-model`绑定当前激活的标签索引
+通过`v-model`绑定当前激活标签对应的索引值，默认情况下启用第一个标签
 
 ```html
 <van-tabs v-model="active">
@@ -33,9 +33,31 @@ export default {
 }
 ```
 
-### 横向滚动
+### 通过名称匹配
 
-多于 4 个标签时，Tab 可以横向滚动
+在标签指定`name`属性的情况下，`v-model`的值为当前标签的`name`
+
+```html
+<van-tabs v-model="activeName">
+  <van-tab title="标签 1" name="a">内容 1</van-tab>
+  <van-tab title="标签 2" name="b">内容 2</van-tab>
+  <van-tab title="标签 3" name="c">内容 3</van-tab>
+</van-tabs>
+```
+
+```js
+export default {
+  data() {
+    return {
+      activeName: 'a'
+    };
+  }
+}
+```
+
+### 标签栏滚动
+
+标签数量超过 4 个时，标签栏可以在水平方向上滚动，切换时会自动将当前标签居中
 
 ```html
 <van-tabs>
@@ -60,8 +82,8 @@ export default {
 ```javascript
 export default {
   methods: {
-    onClickDisabled(index, title) {
-      this.$toast(title + '已被禁用');
+    onClickDisabled(name, title) {
+      this.$toast(name + '已被禁用');
     }
   }
 };
@@ -93,7 +115,7 @@ export default {
 ```javascript
 export default {
   methods: {
-    onClick(index, title) {
+    onClick(name, title) {
       this.$toast(title);
     }
   }
@@ -157,7 +179,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
-| v-model | 当前标签的索引 | `String` `Number` | `0` | - |
+| v-model | 绑定当前选中标签的标识符 | `String | Number` | `0` | - |
 | type | 样式类型，可选值为`card` | `String` | `line` | - |
 | duration | 动画时间，单位秒 | `Number` | `0.3` | - |
 | background | 标签栏背景色 | `String` | `white` | 1.6.5 |
@@ -179,6 +201,7 @@ export default {
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 |------|------|------|------|------|
+| name | 标签名称，作为匹配的标识符 | `String | Number` | 标签的索引值 | 2.0.6 |
 | title | 标题 | `String` | - | - |
 | disabled | 是否禁用标签 | `Boolean` | `false` | - |
 
@@ -200,7 +223,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击标签时触发 | index：标签索引，title：标题 |
-| change | 当前激活的标签改变时触发 | index：标签索引，title：标题 |
-| disabled | 点击被禁用的标签时触发 | index：标签索引，title：标题 |
+| click | 点击标签时触发 | name：标签标识符，title：标题 |
+| change | 当前激活的标签改变时触发 | name：标签标识符，title：标题 |
+| disabled | 点击被禁用的标签时触发 | name：标签标识符，title：标题 |
 | scroll | 滚动时触发，仅在 sticky 模式下生效 | { scrollTop: 距离顶部位置, isFixed: 是否吸顶 } |

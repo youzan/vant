@@ -12,8 +12,31 @@
       </van-tabs>
     </demo-block>
 
+    <demo-block :title="$t('matchByName')">
+      <van-tabs v-model="activeName">
+        <van-tab
+          name="a"
+          :title="$t('tab') + 1"
+        >
+          {{ $t('content') }} 1
+        </van-tab>
+        <van-tab
+          name="b"
+          :title="$t('tab') + 2"
+        >
+          {{ $t('content') }} 2
+        </van-tab>
+        <van-tab
+          name="c"
+          :title="$t('tab') + 3"
+        >
+          {{ $t('content') }} 3
+        </van-tab>
+      </van-tabs>
+    </demo-block>
+
     <demo-block :title="$t('title2')">
-      <van-tabs @scroll="onScroll">
+      <van-tabs>
         <van-tab
           v-for="index in 8"
           :title="$t('tab') + index"
@@ -124,7 +147,7 @@ export default {
   i18n: {
     'zh-CN': {
       tab: '标签 ',
-      title2: '横向滚动',
+      title2: '标签栏滚动',
       title3: '禁用标签',
       title4: '样式风格',
       title5: '点击事件',
@@ -132,7 +155,8 @@ export default {
       title7: '自定义标签',
       title8: '切换动画',
       title9: '滑动切换',
-      disabled: ' 已被禁用'
+      disabled: ' 已被禁用',
+      matchByName: '通过名称匹配'
     },
     'en-US': {
       tab: 'Tab ',
@@ -145,13 +169,15 @@ export default {
       title7: 'Custom Tab',
       title8: 'Switch Animation',
       title9: 'Swipeable',
-      disabled: ' is disabled'
+      disabled: ' is disabled',
+      matchByName: 'Match By Name'
     }
   },
 
   data() {
     return {
       active: 2,
+      activeName: 'b',
       tabs: [1, 2, 3, 4]
     };
   },
@@ -163,10 +189,6 @@ export default {
 
     onClick(index, title) {
       this.$toast(title);
-    },
-
-    onScroll(e) {
-      console.log(e);
     }
   }
 };
