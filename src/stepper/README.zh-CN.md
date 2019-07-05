@@ -75,7 +75,7 @@ export default {
       Toast.loading({ forbidClick: true });
 
       setTimeout(() => {
-        Toast.claer();
+        Toast.clear();
         this.value = value;
       }, 500);
     }
