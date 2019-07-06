@@ -64,7 +64,7 @@ export default {
 | color | Progress bar color | `String` | `#1989fa` |
 | layer-color | Layer color | `String` | `#fff` |
 | fill | Fill color | `String` | `none` |
-| speed | Animate speed（rate/s）| `Number` | - |
+| speed | Animate speed（rate/s）| `Number` | `0` |
 | text | Text | `String` | - |
 | stroke-width | Stroke width | `Number` | `40` |
 | clockwise | Is clockwise | `Boolean` | `true` |

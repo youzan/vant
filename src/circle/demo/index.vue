@@ -8,18 +8,6 @@
         size="120px"
         :text="currentRate1.toFixed(0) + '%'"
       />
-      <van-circle
-        v-model="currentRate2"
-        color="#07c160"
-        fill="#fff"
-        :rate="rate"
-        size="120px"
-        layer-color="#ebedf0"
-        :speed="100"
-        :stroke-width="60"
-        :clockwise="false"
-        :text="currentRate2.toFixed(0) + '%'"
-      />
       <div>
         <van-button
           :text="$t('add')"
@@ -35,6 +23,21 @@
         />
       </div>
     </demo-block>
+
+    <demo-block :title="$t('customStyle')">
+      <van-circle
+        v-model="currentRate2"
+        color="#07c160"
+        fill="#fff"
+        :rate="rate"
+        size="120px"
+        layer-color="#ebedf0"
+        :speed="100"
+        :stroke-width="60"
+        :clockwise="false"
+        :text="currentRate2.toFixed(0) + '%'"
+      />
+    </demo-block>
   </demo-section>
 </template>
 
@@ -44,10 +47,10 @@ const format = rate => Math.min(Math.max(rate, 0), 100);
 export default {
   i18n: {
     'zh-CN': {
-      title2: '样式定制'
+      customStyle: '样式定制'
     },
     'en-US': {
-      title2: 'Custom Style'
+      customStyle: 'Custom Style'
     }
   },
 
