@@ -14,23 +14,16 @@ Vue.use(SwipeCell);
 
 ```html
 <van-swipe-cell>
-  <van-button
-    square
-    slot="left"
-    type="danger"
-    text="Select"
-  />
-  <van-cell
-    :border="false"
-    title="Cell"
-    value="Cell Content"
-  />
-  <van-button
-    square
-    slot="right"
-    type="danger"
-    text="Delete"
-  />
+  <template slot="left">
+    <van-button square type="primary" text="Select" />
+  </template>
+
+  <van-cell :border="false" title="Cell" value="Cell Content" />
+
+  <template slot="right">
+    <van-button square type="danger" text="Delete" />
+    <van-button square type="primary" text="Collect"/>
+  </template>
 </van-swipe-cell>
 ```
 
@@ -38,23 +31,15 @@ Vue.use(SwipeCell);
 
 ```html
 <van-swipe-cell :on-close="onClose">
-  <van-button
-    square
-    slot="left"
-    type="danger"
-    text="Select"
-  />
-  <van-cell
-    :border="false"
-    title="Cell"
-    value="Cell Content"
-  />
-  <van-button
-    square
-    slot="right"
-    type="danger"
-    text="Delete"
-  />
+  <template slot="left">
+    <van-button square type="primary" text="Select" />
+  </template>
+
+  <van-cell :border="false" title="Cell" value="Cell Content" />
+
+  <template slot="right">
+    <van-button square type="danger" text="Delete" />
+  </template>
 </van-swipe-cell>
 ```
 
