@@ -198,6 +198,10 @@ export default {
                 title: 'Notify 消息通知'
               },
               {
+                path: '/overlay',
+                title: 'Overlay 遮罩层'
+              },
+              {
                 path: '/pull-refresh',
                 title: 'PullRefresh 下拉刷新'
               },
@@ -526,6 +530,10 @@ export default {
               {
                 path: '/notify',
                 title: 'Notify'
+              },
+              {
+                path: '/overlay',
+                title: 'Overlay 遮罩层'
               },
               {
                 path: '/pull-refresh',
