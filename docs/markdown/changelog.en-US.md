@@ -1,5 +1,22 @@
 # Changelog
 
+### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
+`2019-07-05`
+
+**Improvements**
+
+- add Divider component [\#3755](https://github.com/youzan/vant/pull/3755)
+- Tab: add name prop [\#3762](https://github.com/youzan/vant/pull/3762)
+- Sku: add add-cart-text prop [\#3725](https://github.com/youzan/vant/pull/3725)
+
+**Bug Fixes**
+
+- fix Swipe fix blank area when use width prop [\#3751](https://github.com/youzan/vant/pull/3751)
+- fix Grid gutter can be string type [\#3741](https://github.com/youzan/vant/pull/3741)
+- fix Collapse use double raf to ensure animation can start [\#3723](https://github.com/youzan/vant/pull/3723)
+- fix PullRefresh ensure value change can be watched [\#3719](https://github.com/youzan/vant/pull/3719)
+
+
 ### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
 `2019-07-02`
 

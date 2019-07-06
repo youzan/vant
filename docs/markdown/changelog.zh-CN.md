@@ -1,5 +1,22 @@
 # 更新日志
 
+### [v2.0.6](https://github.com/youzan/vant/tree/v2.0.6)
+`2019-07-05`
+
+**Improvements**
+
+- 新增 Divider 分割线组件 [\#3755](https://github.com/youzan/vant/pull/3755)
+- Tab: 新增 name 属性 [\#3762](https://github.com/youzan/vant/pull/3762)
+- Sku: 新增 add-cart-text 属性 [\#3725](https://github.com/youzan/vant/pull/3725)
+
+**Bug Fixes**
+
+- 修复 Grid gutter 属性不能传入 String 类型的问题 [\#3741](https://github.com/youzan/vant/pull/3741)
+- 修复 Swipe 使用 width 属性后出现空白区域的问题 [\#3751](https://github.com/youzan/vant/pull/3751)
+- 修复 PullRefresh 同步修改 loading 时状态错误的问题 [\#3719](https://github.com/youzan/vant/pull/3719)
+- 修复 Collapse 在 safari 浏览器上渲染内容较多时高度错误的问题 [\#3723](https://github.com/youzan/vant/pull/3723)
+
+
 ### [v2.0.5](https://github.com/youzan/vant/tree/v2.0.5)
 `2019-07-02`
 

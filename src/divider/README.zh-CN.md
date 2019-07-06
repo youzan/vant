@@ -12,7 +12,7 @@ Vue.use(Divider);
 
 ### 基础用法
 
-Divider 默认渲染一条水平分割线
+默认渲染一条水平分割线
 
 ```html
 <van-divider />
