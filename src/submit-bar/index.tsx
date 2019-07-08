@@ -95,16 +95,13 @@ function SubmitBar(
 SubmitBar.props = {
   tip: String,
   label: String,
+  price: Number,
   tipIcon: String,
   loading: Boolean,
   disabled: Boolean,
   buttonText: String,
   suffixLabel: String,
   safeAreaInsetBottom: Boolean,
-  price: {
-    type: Number,
-    default: null
-  },
   decimalLength: {
     type: Number,
     default: 2
