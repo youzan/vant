@@ -148,15 +148,17 @@ Field support all native properties of input tag，such as `maxlength`、`placeh
 
 ### Events
 
-Field support all native events of input tag，such as `focus`、`blur`、`keypress`
+Field support all native events of input tag
 
 | Event | Description | Parameters |
 |------|------|------|
-| input | Triggered when value changed | - |
-| clear | Triggered when click clear icon | - |
-| click | Triggered when click field | - |
-| click-left-icon | Triggered when click the left icon of Field | - |
-| click-right-icon | Triggered when click the right icon of Field | - |
+| input | Triggered when input value changed | value: current value |
+| focus | Triggered when input gets focus | event: Event |
+| blur | Triggered when input loses focus | event: Event |
+| clear | Triggered when click clear icon | event: Event |
+| click | Triggered when click Field | event: Event |
+| click-left-icon | Triggered when click the left icon of Field | event: Event |
+| click-right-icon | Triggered when click the right icon of Field | event: Event |
 
 ### Methods
 

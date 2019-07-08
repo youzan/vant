@@ -149,18 +149,18 @@ export default createComponent({
 
     onClickLeftIcon(event) {
       event.stopPropagation();
-      this.$emit('click-left-icon');
+      this.$emit('click-left-icon', event);
     },
 
     onClickRightIcon(event) {
       event.stopPropagation();
-      this.$emit('click-right-icon');
+      this.$emit('click-right-icon', event);
     },
 
     onClear(event) {
       preventDefault(event);
       this.$emit('input', '');
-      this.$emit('clear');
+      this.$emit('clear', event);
     },
 
     onKeypress(event) {
