@@ -154,7 +154,7 @@ export default {
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击时触发 | - |
+| click | 点击时触发 | event: Event |
 
 ### Swipe 方法
 

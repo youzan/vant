@@ -50,4 +50,4 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | - |
+| click | Triggered when clicked | event: Event |

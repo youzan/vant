@@ -144,6 +144,12 @@ export default {
 |------|------|------|
 | change | Triggered when current swipe change | index: index of current swipe |
 
+### SwipeItem Events
+
+| Event | Description | Arguments |
+|------|------|------|
+| click | Triggered when clicked | event: Event |
+
 ### Swipe Methods
 
 Use ref to get swipe instance and call instance methods

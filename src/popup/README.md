@@ -104,7 +104,7 @@ export default {
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when click Popup | - |
+| click | Triggered when click Popup | event: Event |
 | open | Triggered when open Popup | - |
 | opened | Triggered when opened Popup | - |
 | close | Triggered when close Popup | - |

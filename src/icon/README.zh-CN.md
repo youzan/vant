@@ -74,4 +74,4 @@ import 'vant/lib/icon/local.css';
 
 | 事件名 | 说明 | 回调参数 |
 |------|------|------|
-| click | 点击图标时触发 | - |
+| click | 点击图标时触发 | event: Event |

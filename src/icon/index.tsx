@@ -53,8 +53,8 @@ function Icon(
 Icon.props = {
   name: String,
   size: [Number, String],
-  color: String,
   info: [Number, String],
+  color: String,
   tag: {
     type: String,
     default: 'i'

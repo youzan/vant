@@ -88,4 +88,4 @@ Vue.use(Tag);
 
 | Event | Description | Arguments |
 |------|------|------|
-| click | Triggered when clicked | - |
+| click | Triggered when clicked | event: Event |
