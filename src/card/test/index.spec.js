@@ -1,6 +1,47 @@
 import Card from '..';
 import { mount } from '../../../test/utils';
 
+test('click event', () => {
+  const onClick = jest.fn();
+  const wrapper = mount(Card, {
+    context: {
+      on: {
+        click: onClick
+      }
+    }
+  });
+
+  wrapper.trigger('click');
+
+  expect(onClick).toHaveBeenCalledWith(
+    expect.objectContaining({
+      isTrusted: expect.any(Boolean)
+    })
+  );
+});
+
+test('click-thumb event', () => {
+  const onClickThumb = jest.fn();
+  const wrapper = mount(Card, {
+    propsData: {
+      thumb: 'xx'
+    },
+    context: {
+      on: {
+        'click-thumb': onClickThumb
+      }
+    }
+  });
+
+  wrapper.find('.van-card__thumb').trigger('click');
+
+  expect(onClickThumb).toHaveBeenCalledWith(
+    expect.objectContaining({
+      isTrusted: expect.any(Boolean)
+    })
+  );
+});
+
 test('render price & num slot', () => {
   const wrapper = mount(Card, {
     scopedSlots: {
