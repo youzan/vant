@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { ChildrenMixin } from '../mixins/relation';
 import { route, routeProps } from '../utils/router';
 import Icon from '../icon';
@@ -26,7 +26,7 @@ export default createComponent({
       if (square) {
         style.paddingTop = percent;
       } else if (gutter) {
-        const gutterValue = suffixPx(gutter);
+        const gutterValue = addUnit(gutter);
         style.paddingRight = gutterValue;
 
         if (this.index >= columnNum) {
@@ -41,7 +41,7 @@ export default createComponent({
       const { square, gutter } = this.parent;
 
       if (square && gutter) {
-        const gutterValue = suffixPx(gutter);
+        const gutterValue = addUnit(gutter);
 
         return {
           right: gutterValue,

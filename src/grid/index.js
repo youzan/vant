@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { ParentMixin } from '../mixins/relation';
 
 const [createComponent, bem] = createNamespace('grid');
@@ -30,7 +30,7 @@ export default createComponent({
 
       if (gutter) {
         return {
-          paddingLeft: suffixPx(gutter)
+          paddingLeft: addUnit(gutter)
         };
       }
     }

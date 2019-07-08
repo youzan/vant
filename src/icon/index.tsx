@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { inherit } from '../utils/functional';
 import Info from '../info';
 import Image from '../image';
@@ -39,7 +39,7 @@ function Icon(
       class={[props.classPrefix, imageIcon ? '' : `${props.classPrefix}-${props.name}`]}
       style={{
         color: props.color,
-        fontSize: suffixPx(props.size)
+        fontSize: addUnit(props.size)
       }}
       {...inherit(ctx, true)}
     >

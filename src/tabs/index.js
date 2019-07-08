@@ -1,4 +1,4 @@
-import { createNamespace, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 import { scrollLeftTo } from './utils';
 import { on, off } from '../utils/dom/event';
 import { ParentMixin } from '../mixins/relation';
@@ -222,7 +222,7 @@ export default createComponent({
         const left = title.offsetLeft + title.offsetWidth / 2;
 
         const lineStyle = {
-          width: suffixPx(width),
+          width: addUnit(width),
           backgroundColor: this.color,
           transform: `translateX(${left}px) translateX(-50%)`
         };
@@ -232,7 +232,7 @@ export default createComponent({
         }
 
         if (isDef(lineHeight)) {
-          const height = suffixPx(lineHeight);
+          const height = addUnit(lineHeight);
           lineStyle.height = height;
           lineStyle.borderRadius = height;
         }

@@ -1,4 +1,4 @@
-import { createNamespace, suffixPx } from '../utils';
+import { createNamespace, addUnit } from '../utils';
 import { toArray, readFile, isOversize } from './utils';
 import Icon from '../icon';
 import Image from '../image';
@@ -226,7 +226,7 @@ export default createComponent({
 
       let style;
       if (this.previewSize) {
-        const size = suffixPx(this.previewSize);
+        const size = addUnit(this.previewSize);
         style = {
           width: size,
           height: size

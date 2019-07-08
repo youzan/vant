@@ -1,4 +1,4 @@
-import { createNamespace, isDef, suffixPx } from '../utils';
+import { createNamespace, isDef, addUnit } from '../utils';
 
 const [createComponent, bem] = createNamespace('stepper');
 
@@ -56,11 +56,11 @@ export default createComponent({
       const style = {};
 
       if (this.inputWidth) {
-        style.width = suffixPx(this.inputWidth);
+        style.width = addUnit(this.inputWidth);
       }
 
       if (this.buttonSize) {
-        style.height = suffixPx(this.buttonSize);
+        style.height = addUnit(this.buttonSize);
       }
 
       return style;
@@ -70,7 +70,7 @@ export default createComponent({
       const style = {};
 
       if (this.buttonSize) {
-        const size = suffixPx(this.buttonSize);
+        const size = addUnit(this.buttonSize);
         style.width = size;
         style.height = size;
       }

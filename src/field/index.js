@@ -3,7 +3,7 @@ import Cell from '../cell';
 import { cellProps } from '../cell/shared';
 import { preventDefault } from '../utils/dom/event';
 import { getRootScrollTop } from '../utils/dom/scroll';
-import { createNamespace, isObj, isDef, suffixPx } from '../utils';
+import { createNamespace, isObj, isDef, addUnit } from '../utils';
 import { isIOS } from '../utils/validate/system';
 
 const [createComponent, bem] = createNamespace('field');
@@ -76,7 +76,7 @@ export default createComponent({
     labelStyle() {
       const { labelWidth } = this;
       if (labelWidth) {
-        return { width: suffixPx(labelWidth) };
+        return { width: addUnit(labelWidth) };
       }
     }
   },
