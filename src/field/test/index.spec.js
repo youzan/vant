@@ -28,8 +28,9 @@ test('click icon event', () => {
 
   wrapper.find('.van-field__left-icon').trigger('click');
   wrapper.find('.van-field__right-icon').trigger('click');
-  expect(wrapper.emitted('click-left-icon')).toBeTruthy();
-  expect(wrapper.emitted('click-right-icon')).toBeTruthy();
+  expect(wrapper.emitted('click')).toBeFalsy();
+  expect(wrapper.emitted('click-left-icon').length).toEqual(1);
+  expect(wrapper.emitted('click-right-icon').length).toEqual(1);
 });
 
 test('keypress event', () => {
